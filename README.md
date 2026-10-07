@@ -67,7 +67,7 @@ CodeSwitch app (no blocks, transpiler or JS mode). Lessons embed it for students
 
 ## Create a lesson in the browser
 
-`/create/` is a MakeCode-style lesson maker: paste or upload `lesson.md` and code files, see a live preview
+`/code/create/` is a MakeCode-style lesson maker: paste or upload `lesson.md` and code files, see a live preview
 (with the working playground), get validation messages, copy a share link, and download the lesson folder as a
 .zip to commit under `content/`. It runs entirely in the browser, reusing the same parser, validator and page
 renderer as the build (`tools/lesson-core.mjs`, `tools/lesson-view.mjs`). Clips are placeholders there; they

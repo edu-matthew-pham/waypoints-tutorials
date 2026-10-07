@@ -139,7 +139,7 @@ $('upload').onchange = async (e) => {
 };
 
 // ---------- preview ----------
-const playgroundBase = new URL('../_playground/', location.href).href;
+const playgroundBase = new URL('../../_playground/', location.href).href;
 let timer;
 const schedule = () => { clearTimeout(timer); timer = setTimeout(render, 350); };
 

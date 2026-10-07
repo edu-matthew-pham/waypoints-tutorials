@@ -93,7 +93,7 @@ for (const node of dirs.values()) {
   const isRoot = node.path === '';
   const parentPath = node.path.split('/').slice(0, -1).join('/');
   const crumb = isRoot ? '' : `<a class="crumb" href="../">← ${esc(dirNode(parentPath).title)}</a>`;
-  const items = (isRoot ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].map(([name, k]) => `<li><a href="${esc(name)}/"><b>${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
+  const items = (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].map(([name, k]) => `<li><a href="${esc(name)}/"><b>${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
   const outDir = join(OUT, node.path);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
