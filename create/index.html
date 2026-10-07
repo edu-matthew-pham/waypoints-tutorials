@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create a lesson</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"yaml":"./vendor/yaml/index.js","marked":"./vendor/marked.esm.js"}}</script>
+</head>
+<body>
+<header class="bar">
+  <div><a class="crumb" href="../">← Waypoints tutorials</a><h1>Create a lesson</h1></div>
+  <div class="actions">
+    <button id="example" type="button">Load example</button>
+    <label class="btn">Upload files<input id="upload" type="file" multiple hidden></label>
+    <button id="share" type="button">Copy share link</button>
+    <button id="download" type="button" class="primary">Download folder (.zip)</button>
+  </div>
+</header>
+<p class="hint">Write or paste a <code>lesson.md</code> and its code files. The preview updates as you type, and the playground is live.
+Clips are recorded when the lesson is added to the repository; here they appear as placeholders.
+Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/blob/main/AUTHORING.md">AUTHORING.md</a>.</p>
+<main>
+  <section class="editor">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <label class="namebar">File name <input id="fname" type="text" spellcheck="false"></label>
+    <textarea id="text" spellcheck="false" aria-label="File contents"></textarea>
+    <div class="row"><button id="addfile" type="button">+ Add code file</button><button id="delfile" type="button">Delete this file</button></div>
+    <ul id="problems" class="problems" aria-live="polite"></ul>
+  </section>
+  <section class="preview"><iframe id="preview" title="Lesson preview"></iframe></section>
+</main>
+<script type="module" src="create.js"></script>
+</body>
+</html>
