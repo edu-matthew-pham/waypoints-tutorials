@@ -47,6 +47,14 @@ jobs:
       - name: Validate lessons
         run: npm run validate
 
+      # Recorded clips are reused when nothing that affects them changed (the renderer compares
+      # a per-clip hash). restore-keys lets a run start from the previous run's clips.
+      - uses: actions/cache@v4
+        with:
+          path: dist/**/clips
+          key: clips-${{ hashFiles('content/**', 'tools/**', 'playground/**') }}
+          restore-keys: clips-
+
       - name: Render clips
         run: npm run render
 
