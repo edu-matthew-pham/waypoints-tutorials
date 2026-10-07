@@ -64,6 +64,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     depth: slug.split('/').length,
     title: meta.title || slug,
     summary: meta.summary || '',
+    author: meta.author ? String(meta.author) : '',
     language: meta.language || 'python',
     app: meta.app || null,
     pacing: { ...DEFAULT_PACING, ...(meta.pacing || {}) },

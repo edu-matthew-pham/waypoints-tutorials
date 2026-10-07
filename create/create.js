@@ -2,6 +2,7 @@ import { Marked } from 'marked';
 import { parseLessonText, validateLessonCore, snippetFrom } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
 import { highlightCode } from './highlight.js';
+import { REQUEST_FORM_URL } from './config.js';
 
 const EXAMPLE = {
   'lesson.md': `---
@@ -173,6 +174,18 @@ $('share').onclick = async () => {
   try { await navigator.clipboard.writeText(url); $('share').textContent = 'Link copied'; } catch { prompt('Copy this link', url); }
   setTimeout(() => ($('share').textContent = 'Copy share link'), 1500);
 };
+
+// Request publishing: copy the share link (the form asks for it), then open the form.
+if (REQUEST_FORM_URL) {
+  $('request').hidden = false;
+  $('request').onclick = async () => {
+    const url = `${location.origin}${location.pathname}#l=${await encode(files)}`;
+    let copied = true;
+    try { await navigator.clipboard.writeText(url); } catch { copied = false; prompt('Copy this lesson link, then paste it into the form', url); }
+    if (copied) alert('Your lesson link is copied. Paste it into the form on the next page.');
+    window.open(REQUEST_FORM_URL, '_blank', 'noopener');
+  };
+}
 
 const crcTable = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
 const crc32 = (b) => { let c = 0xffffffff; for (const x of b) c = crcTable[(c ^ x) & 255] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; };

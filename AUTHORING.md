@@ -22,6 +22,8 @@ Investigate prompts as questions; put a prediction question *before* any output 
 
 ## 2. `lesson.md` layout
 
+Frontmatter keys: `title`, `summary`, `author` (optional, shown as "By …"), `language`, `app`, `pacing`.
+
 ```markdown
 ---
 title: Intro to Gradio

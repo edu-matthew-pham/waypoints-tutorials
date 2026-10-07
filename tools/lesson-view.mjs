@@ -28,7 +28,7 @@ export const CSS = `
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px}
 header.top{padding:44px 0 18px}header.top .crumb{font-size:14px;color:var(--muted);text-decoration:none}
-h1{font-size:2.1rem;line-height:1.2;margin:.3em 0 .2em}.lede{color:var(--muted);font-size:1.1rem;margin:0 0 1em}
+h1{font-size:2.1rem;line-height:1.2;margin:.3em 0 .2em}.by{margin:-.6em 0 1em;color:var(--muted);font-size:14px}.lede{color:var(--muted);font-size:1.1rem;margin:0 0 1em}
 nav.steps{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
 nav.steps a{font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:5px 11px;border-radius:99px}
 nav.steps a i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;background:var(--c)}
@@ -101,7 +101,7 @@ export function lessonPageHtml(lesson, deps) {
   }).join('');
 
   return page(lesson.title, `
-<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}</header>
+<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${md.parse(lesson.intro)}
 <ul class="legend">${legend}</ul>
 <nav class="steps">${nav}</nav>
