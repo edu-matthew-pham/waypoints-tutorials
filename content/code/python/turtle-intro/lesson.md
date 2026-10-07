@@ -1,0 +1,76 @@
+---
+title: Drawing with a turtle
+summary: Predict, run and change short Python programs that draw shapes.
+language: python
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground" 8123
+  url: http://127.0.0.1:8123/index.html
+  ready: Python code
+  layout: full
+pacing:
+  keyDelayMs: 30
+---
+A turtle walks across the screen, leaving a line behind. Your program tells it where to go.
+
+## Predict
+
+```step
+stage: predict
+code: square.py#square
+reveal: true
+app: true
+clip:
+  - caption: The turtle starts in the middle, facing right.
+  - type:
+      into: Python code
+      text: "@square.py#square"
+  - click: Run
+  - expect: { selector: "#status", contains: Finished }
+  - expect: { selector: "#turtle-state", contains: "heading 0" }
+```
+
+Read the code. What shape will the turtle draw? Where will it finish?
+
+## Run
+
+```step
+stage: run
+code: square.py#square
+try: { starter: "square.py#square", height: 420 }
+```
+
+Run the program and compare it with your prediction.
+
+## Investigate
+
+```step
+stage: investigate
+code: square.py#loop
+app: true
+clip:
+  - type:
+      into: Python code
+      text: "@square.py#loop"
+  - click: Run
+  - expect: { selector: "#status", contains: Finished }
+```
+
+The same square, in fewer lines. Which part repeats? What does `range(4)` control?
+
+## Modify
+
+```step
+stage: modify
+try: { starter: "square.py#modify", height: 420 }
+```
+
+Change the loop to draw a triangle. Hint: the turtle turns by an exterior angle.
+
+## Make
+
+```step
+stage: make
+try: { starter: "square.py#make", height: 420 }
+```
+
+Design your own shape or pattern. Try `color`-style commands such as `pencolor("red")`.
