@@ -80,6 +80,8 @@ export function parseLessonText(raw, slug = 'lesson') {
     title: meta.title || slug,
     summary: meta.summary || '',
     author: meta.author ? String(meta.author) : '',
+    hook: meta.hook ? String(meta.hook).trim() : '',
+    teachers: meta.teachers ? String(meta.teachers).trim() : '',
     modules: Array.isArray(meta.modules) ? meta.modules.map(String) : [],
     language: meta.language || 'python',
     app: meta.app || null,

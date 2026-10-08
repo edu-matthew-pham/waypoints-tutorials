@@ -52,6 +52,9 @@ figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .try-head span{color:var(--muted)}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
+details.teachers{margin:28px 0 0;border:1px solid var(--line);border-radius:8px;padding:0 16px}
+details.teachers summary{cursor:pointer;font-weight:600;padding:12px 0}
+.hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
 details.reveal summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--c)}
 details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
 .legend{display:grid;gap:6px;margin:10px 0 0;padding:0;list-style:none;font-size:15px;color:var(--muted)}
@@ -157,10 +160,12 @@ export function lessonPageHtml(lesson, deps) {
 
   return page(lesson.title, `
 <header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
+${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
 ${md.parse(lesson.intro)}
 <ul class="legend">${legend}</ul>
 <nav class="steps">${nav}</nav>
 ${steps}
+${lesson.teachers ? `<details class="teachers"><summary>For teachers</summary>${md.parse(lesson.teachers)}</details>` : ''}
 ${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`);
 }
 

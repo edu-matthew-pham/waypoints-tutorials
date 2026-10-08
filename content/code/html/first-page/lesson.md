@@ -9,6 +9,15 @@ app:
   layout: full
 pacing:
   keyDelayMs: 25
+hook: "Every website you have visited, from your school page to a shop, starts as text with tags like these."
+teachers: |
+  **Where it leads:** links and images, forms, layout, then JavaScript. Also accessibility: headings and lists carry meaning for screen readers.
+
+  **Class ideas:** a page for a club or event; a one-page profile; redesign the school canteen menu; compare the same page with and without CSS.
+
+  **Watch for:** unclosed tags; using `<br>` and spaces instead of paragraphs and lists; CSS properties typed without a colon or semicolon.
+
+  **Unlocks:** snippets for structure after Run, lists and links after Investigate, CSS after the style step.
 ---
 Every web page is text with **tags** in it. A tag like `<h1>` tells the browser what the text is, and the browser decides how to show it.
 
@@ -98,3 +107,12 @@ try: { playground: html, starter: "page.html#make", height: 400 }
 ```
 
 Build a page about you: a heading, a paragraph, a list and a link. Then style it.
+
+## Use it
+
+```step
+stage: make
+try: { playground: html, starter: "page.html#use", height: 420 }
+```
+
+Turn the starter into a menu for a school café: a heading, a list of items with prices, and a note in a different colour for today's special.

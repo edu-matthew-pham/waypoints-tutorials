@@ -181,3 +181,19 @@ Two features let students build their own tools, which is how abstraction is tau
 Both are unlockable like snippets: put `save-as-button` or `my-module` in a step's `unlocks:` (the create page lists them under "Playground features"). Until a lesson unlocks them they stay locked, if some lesson claims them.
 
 Suggested order: sequence, loop, variable, function (students write `def`), **save as button** (function as a tool), then **module** (several related functions in one file).
+
+## 9. Hook, "Use it" step and teacher notes
+
+Optional frontmatter, all plain text:
+
+```yaml
+hook: "Loops are how a program draws 100 tiles without 100 lines of code."
+teachers: |
+  **Class ideas:** ...
+  **Watch for:** ...
+```
+
+- `hook`: one or two sentences shown at the top of the lesson: where the skill appears in real life. No project, just the "why".
+- `teachers`: Markdown shown in a collapsed **For teachers** panel at the end: bigger project ideas, misconceptions, curriculum links. Larger real-world projects belong to the teacher and the class, not the tool.
+- **Use it step:** an optional last step (`stage: make`) with one small project (5 to 10 minutes) that uses only what the lesson taught. A baseline, not a ceiling.
+- Clips are optional. Use one for a first-run demo or to explain why; skip it where students are about to do the thing in the playground.

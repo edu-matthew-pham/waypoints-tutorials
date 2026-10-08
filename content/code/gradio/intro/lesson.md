@@ -6,6 +6,15 @@ app:
   command: python app.py
   url: http://127.0.0.1:7860
   ready: Name
+hook: "Behind most tools you use online is a small function with an interface wrapped around it. You can make one in a few lines."
+teachers: |
+  **Where it leads:** simple apps and demos, APIs, and a first look at how machine-learning models are shared.
+
+  **Class ideas:** a converter for a science practical; a class quiz; a tool that solves a maths problem type your students struggle with.
+
+  **Watch for:** the function returning a value versus printing it; inputs and outputs getting out of order; skipping the test-the-function-first step.
+
+  **Run it:** needs Python and `pip install -r requirements.txt` where the app is run, so it is best demonstrated on a teacher machine.
 ---
 
 By the end of this lesson you will have run a small web app built from one Python

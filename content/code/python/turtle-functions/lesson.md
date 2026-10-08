@@ -10,6 +10,17 @@ app:
   layout: full
 pacing:
   keyDelayMs: 30
+hook: "Every app you use is built from small named functions that other code calls. You are about to write some."
+teachers: |
+  **Where it leads:** reusable code, libraries and imports in any language, the idea that you can use a tool without knowing how it is built.
+
+  **Class ideas:** a class library of shape functions where each student contributes one; a garden or town drawn from functions; swap modules and use a classmate's.
+
+  **Watch for:** `def` seen as the thing that draws (it only describes); parameters confused with variables; moving code into a module without the import line.
+
+  **Abstraction:** Save as button is the first layer (reuse an idea without rewriting it). A module is the second (related functions grouped in one file). Not every function needs a module.
+
+  **Unlocks:** variable, def, Save as button and + module are all earned in order; the ready-made shapes module unlocks at the end.
 ---
 You can already repeat steps with a loop. Now you will give names to things, so one idea can be reused.
 
@@ -85,3 +96,12 @@ unlocks: [shapes.square, shapes.triangle, shapes.polygon]
 A **module** is a file of related functions that other programs can `import`. Click **+ module**, name it, and move your shape functions into it. Give each a `"""docstring"""` and they appear as buttons. Clicking one adds the `from ... import ...` line for you.
 
 Not every function needs a module. A module is for a group of functions that belong together. The ready-made **Module: shapes** under Snippets shows how one looks: click **Show how it works**.
+
+## Use it
+
+```step
+stage: make
+try: { starter: "shapes_demo.py#use", height: 420 }
+```
+
+Write `flower(petals)` using a loop and a circle or a rotated shape, then call it three times at different places with `penup()`, `goto(x, y)` and `pendown()`. You have made a garden from one function.

@@ -39,3 +39,18 @@ from turtle import *
 
 # Click + module, then move your shape functions into it.
 # endregion
+
+# region: use
+from turtle import *
+
+
+def flower(petals):
+    for i in range(petals):
+        circle(40, 60)
+        left(120)
+        circle(40, 60)
+        left(360 / petals - 120)
+
+
+flower(6)
+# endregion

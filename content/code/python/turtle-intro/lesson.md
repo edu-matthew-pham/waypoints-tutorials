@@ -9,6 +9,15 @@ app:
   layout: full
 pacing:
   keyDelayMs: 30
+hook: "Loops are how a program draws 100 tiles, sends 100 emails or reads 100 sensors without 100 lines of code."
+teachers: |
+  **Where it leads:** tessellations and logo design, generative art, any task with repetition.
+
+  **Class ideas:** design a floor tile and repeat it; recreate a simple logo from code; compare how many lines the same shape takes with and without a loop.
+
+  **Watch for:** students who type `forward(100)` four times and see no reason to change; ask them to draw a 50-sided shape. Turning angle is often confused with the inside angle.
+
+  **Unlocks:** movement commands after Run, the loop snippets after Investigate, pen and circle after Modify.
 ---
 A turtle walks across the screen, leaving a line behind. Your program tells it where to go.
 
@@ -87,3 +96,12 @@ try: { starter: "square.py#make", height: 420 }
 ```
 
 Design your own shape or pattern. Try `color`-style commands such as `pencolor("red")`.
+
+## Use it
+
+```step
+stage: make
+try: { starter: "square.py#use", height: 420 }
+```
+
+A row of tiles is just a loop inside a loop. The starter draws one tile. Wrap it in a loop that draws five, using `penup()`, `forward(120)` and `pendown()` to move to the next position.
