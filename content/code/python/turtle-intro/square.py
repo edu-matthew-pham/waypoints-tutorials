@@ -42,3 +42,15 @@ for i in range(3):
     forward(100)
     right(120)
 # endregion
+
+# region: use
+from turtle import *
+
+for tile in range(5):
+    for side in range(4):
+        forward(40)
+        right(90)
+    penup()
+    forward(40)
+    pendown()
+# endregion

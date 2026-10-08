@@ -1,107 +1,88 @@
 ---
-order: 2
-title: Variables, functions and your own tools
-summary: Name a value, name a whole shape, turn it into a button, then collect related functions in a module.
+order: 3
+title: Functions
+summary: Give a group of commands a name, then use that name again and again.
 language: python
-modules: [shapes]
-app:
-  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground" 8123
-  url: http://127.0.0.1:8123/index.html
-  ready: Python code
-  layout: full
-pacing:
-  keyDelayMs: 30
-hook: "Every app you use is built from small named functions that other code calls. You are about to write some."
+hook: "Every app is built from small named functions that other code calls. You are about to write your first."
 teachers: |
-  **Where it leads:** reusable code, libraries and imports in any language, the idea that you can use a tool without knowing how it is built.
+  **Where it leads:** parameters (the next lesson), then your own toolbox of functions and modules. Later lessons return to functions with harder uses, which is where mastery comes from. This lesson only builds the idea.
 
-  **Class ideas:** a class library of shape functions where each student contributes one; a garden or town drawn from functions; swap modules and use a classmate's.
+  **Class ideas:** each student writes one shape function and the class combines them into a picture; compare how long it takes to change three copies versus one function.
 
-  **Watch for:** `def` seen as the thing that draws (it only describes); parameters confused with variables; moving code into a module without the import line.
+  **Watch for:** `def` seen as the thing that draws (it only describes the steps); forgetting to call the function; the indented body.
 
-  **Abstraction:** Save as button is the first layer (reuse an idea without rewriting it). A module is the second (related functions grouped in one file). Not every function needs a module.
+  **Checkpoint:** a student who can define and call a function understands the concept. Fluent, repeated use is checked in the next lesson, not here.
 
-  **Unlocks:** variable, def, Save as button and + module are all earned in order; the ready-made shapes module unlocks at the end.
+  **Unlocks:** the `def (function)` snippet after Investigate.
 ---
-You can already repeat steps with a loop. Now you will give names to things, so one idea can be reused.
+You already know how to repeat steps with a loop. Now you will give a whole shape a **name**.
 
 ## Predict
 
 ```step
 stage: predict
-code: shapes_demo.py#variable
+code: functions.py#copies
 ```
 
-`size` is a variable. What will this draw? What single change would make the square twice as big?
+This program draws three squares by repeating the same code. What does it draw? Count how many times the number `100` appears.
 
 ## Run
 
 ```step
 stage: run
-code: shapes_demo.py#variable
-try: { starter: "shapes_demo.py#variable", height: 420 }
-check: { type: reflect, text: "I changed size once and the whole square changed." }
-unlocks: [variable]
+code: functions.py#copies
+try: { starter: "functions.py#copies", height: 440 }
+check: { type: reflect, text: "I changed the same number in several places to resize all three squares." }
 ```
 
-Run it, then change `size = 100` to another number and run it again.
+Run it. Then make all three squares half as big. Notice how many places you had to change.
 
 ## Investigate
 
 ```step
 stage: investigate
-code: shapes_demo.py#function
-try: { starter: "shapes_demo.py#function", height: 420 }
+code: functions.py#def
+try: { starter: "functions.py#def", height: 440 }
 check:
   type: question
-  q: "What does the last line, square(100), do?"
-  options: ["It defines the function", "It runs the function with size 100", "It draws a circle", "Nothing"]
-  answer: 1
-  explain: "def only describes the steps. The call square(100) is what runs them."
+  q: "To make all three squares half as big now, how many numbers change?"
+  options: ["1", "3", "6", "12"]
+  answer: 0
+  explain: "Only the numbers inside def square(): change. The three calls are just the name square(), so they never need editing."
 unlocks: [def-function]
 ```
 
-`def square(size):` gives the loop a name. The name in brackets is a **parameter**: a value the caller provides. Try `square(50)` and then call it twice.
+`def square():` gives the loop a name. The steps only run when the name is **called**: `square()`. Try changing a `100` inside the `def`.
 
 ## Modify
 
 ```step
 stage: modify
-try: { starter: "shapes_demo.py#write", height: 420 }
+try: { starter: "functions.py#modify", height: 440 }
+hint:
+  - "Copy the pattern of `square`: the word `def`, a name, brackets, a colon, then the indented steps."
+  - "A triangle has 3 sides. The turn at each corner is not 90."
 check: { type: reflect, text: "I wrote my own function with a def and called it." }
-unlocks: [save-as-button]
 ```
 
-Write `def triangle(size):` yourself, following the pattern of `square`, then call it. A triangle turns by 120 degrees.
+Write `def triangle():` following the pattern of `square`, then call it.
 
-## Make a button
+## Make
 
 ```step
 stage: make
-try: { starter: "shapes_demo.py#write", height: 420 }
-check: { type: reflect, text: "I saved a function as a button and used it again." }
-unlocks: [my-module]
+try: { starter: "functions.py#make", height: 440 }
+hint:
+  - "Start with a shape you can already draw with a loop, then put `def name():` above it."
 ```
 
-You have unlocked **Save selection as button**. Open **Snippets**, put the cursor inside one of your functions, and click it. Your function is now a tool under **My tools**. A button is the first layer of abstraction: you use the idea without rewriting it.
-
-## Make a module
-
-```step
-stage: make
-try: { starter: "shapes_demo.py#module", height: 420 }
-check: { type: reflect, text: "I put related functions in a module and imported one into my program." }
-unlocks: [shapes.square, shapes.triangle, shapes.polygon]
-```
-
-A **module** is a file of related functions that other programs can `import`. Click **+ module**, name it, and move your shape functions into it. Give each a `"""docstring"""` and they appear as buttons. Clicking one adds the `from ... import ...` line for you.
-
-Not every function needs a module. A module is for a group of functions that belong together. The ready-made **Module: shapes** under Snippets shows how one looks: click **Show how it works**.
+Write a function that draws any shape you like (a rectangle, a hexagon, a star), then call it three times in a row.
 
 ## In the real world
 
 ```step
-stage: info
+stage: modify
+try: { starter: "functions.py#house", height: 440 }
 ```
 
-A function that draws a room is how a floor plan starts. Try `room(width, depth)` and place rooms with `goto`, then represent the layout of your own house. Using a variable like `scale = 20` turns metres into pixels, so one change resizes the whole plan.
+A house plan is a few small named pieces: `wall()` and `roof()`. Run it. Then add a `door()` function and call it. Notice that you never edit `wall` or `roof` to do it.

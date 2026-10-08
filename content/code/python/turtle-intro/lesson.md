@@ -76,7 +76,7 @@ unlocks: [for-loop, square-loop]
 
 The same square, in fewer lines. Which part repeats? What does `range(4)` control?
 
-Next lesson: give a name to the size, then give the whole square a name.
+Try drawing a 20-sided shape both ways: with four copies of the commands repeated, and with a loop. Which would you rather change? In the next lesson you give numbers names.
 
 ## Modify
 
@@ -116,3 +116,12 @@ stage: info
 ```
 
 Tilers and architects plan floors and rooms with exactly this idea. Where could you use it? Try drawing a row of floor tiles, or a plan of your own bedroom, with loops.
+
+## In the real world
+
+```step
+stage: modify
+try: { starter: "square.py#use", height: 420 }
+```
+
+Tilers and architects plan floors like this: one tile, repeated. Run it, then change the number of tiles, make them bigger, or add a second row.
