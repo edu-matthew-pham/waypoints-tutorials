@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 8
 title: Modules
 summary: Keep related functions together in a file you can import, like a toolbox.
 language: python

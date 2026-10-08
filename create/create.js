@@ -234,6 +234,7 @@ const MATCH = ['check:', '  type: match', '  q: "Match each item with what it do
 const TRACE = ['check:', '  type: trace', '  text: "Fill in the missing values."', '  table: |', '    | step | value |', '    | 1 | 10 |', '    | 2 | [20] |', '    | 3 | [30] |'];
 const BUG = ['check:', '  type: bug', '  code: file.py#region', '  text: "Click the line that has the bug."', '  answer: 1'];
 const PARSONS = ['check:', '  type: parsons', '  code: file.py#region', '  text: "Put the lines in order."'];
+const PREDICT = ['check:', '  type: predict', '  q: "What will the program do?"', '  options: ["first guess", "second guess"]', '  actual: "What it really does, shown after Run."'];
 const CODERULE = ['check:', '  type: code', '  text: "Write a function and call it."', '  rules: { defs: 1, calls: 1 }'];
 $('addtick').onclick = () => addCheck(TICK, '…');
 $('addnum').onclick = () => addCheck(NUMBER, 'Your question?');
@@ -241,6 +242,7 @@ $('addmatch').onclick = () => addCheck(MATCH, 'first item');
 $('addtrace').onclick = () => addCheck(TRACE, 'Fill in the missing values.');
 $('addbug').onclick = () => addCheck(BUG, 'file.py#region');
 $('addpars').onclick = () => addCheck(PARSONS, 'file.py#region');
+$('addpred').onclick = () => addCheck(PREDICT, 'What will the program do?');
 $('addcode').onclick = () => addCheck(CODERULE, 'Write a function and call it.');
 $('addtasks').onclick = () => withStep((st) => {
   if (stepKeyLines(st).some((l) => /^tasks:/.test(l))) { alert('This step already has tasks.'); return; }

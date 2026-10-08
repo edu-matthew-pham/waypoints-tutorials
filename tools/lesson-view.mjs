@@ -106,6 +106,7 @@ details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6
 .legend b{color:var(--c)}
 ul.lessons{list-style:none;padding:0;display:grid;gap:14px}ul.lessons a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;text-decoration:none;color:inherit}
 ul.lessons a:hover{border-color:var(--accent)}ul.lessons b{display:block;font-size:1.15rem}ul.lessons span{color:var(--muted);font-size:15px}
+.compare{margin:14px 0;padding:12px 16px;border-left:4px solid var(--predict);background:color-mix(in srgb,var(--predict) 8%,transparent);border-radius:0 8px 8px 0}.compare p{margin:2px 0}
 .check{margin:20px 0 4px;padding:14px 16px;border:1px dashed var(--c);border-radius:10px;background:color-mix(in srgb,var(--c) 6%,transparent)}
 .check legend,.check .check-q{font-weight:600;margin:0 0 8px;padding:0}.check fieldset{border:0;margin:0;padding:0}
 .check label{display:flex;gap:10px;align-items:flex-start;margin:6px 0;cursor:pointer}.check input{margin-top:.35em;accent-color:var(--c)}
@@ -187,8 +188,24 @@ if(all)win();else bad('Some do not match yet. Check the ones outlined in red.')}
 if(ty==='trace'&&btn){btn.addEventListener('click',function(){var all=true;
 [].forEach.call(box.querySelectorAll('input.tcell'),function(inp){var a=inp.dataset.answer,v=inp.value.trim(),ok=v!==''&&(v===a||(!isNaN(Number(v))&&!isNaN(Number(a))&&Number(v)===Number(a)));inp.className='tcell '+(ok?'ok':'no');if(!ok)all=false});
 if(all)win();else bad('Some cells are not right yet. Trace the code again, one step at a time.')})}
+if(ty==='predict'&&btn){var PK='wp-predict';
+function pload(){try{return JSON.parse(localStorage.getItem(PK))||{}}catch(e){return {}}}
+function plock(v){var p=pload();p[key]=v;try{localStorage.setItem(PK,JSON.stringify(p))}catch(e){}}
+function freeze(v){[].forEach.call(box.querySelectorAll('input'),function(i){i.disabled=true;if(i.type==='radio')i.checked=(i.value===v);else i.value=v});btn.hidden=true;msg.className='msg ok';msg.textContent='Locked in. Now run it and compare.'}
+var saved=pload()[key];if(saved!==undefined&&saved!==null)freeze(saved);
+btn.addEventListener('click',function(){var r=box.querySelector('input[type=radio]:checked'),i=box.querySelector('input.pin'),v=r?r.value:(i?i.value.trim():'');
+if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v)})}
 if(ty==='parsons'){parsons(box,win,bad)}
 });
+document.querySelectorAll('.compare').forEach(function(c){var pk=c.dataset.predict;
+function mine(){try{return (JSON.parse(localStorage.getItem('wp-predict'))||{})[pk]}catch(e){return undefined}}
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==c.dataset.play||m.status!=='done')return;
+var v=mine();c.replaceChildren();
+function line(label,text){var p=document.createElement('p');var b=document.createElement('b');b.textContent=label+' ';p.appendChild(b);p.appendChild(document.createTextNode(text));c.appendChild(p)}
+if(v===undefined||v===null){line('No prediction locked in.','Go back to the Predict step if you want to compare next time.')}
+else{line('You predicted:',v);var out=(m.output||'').trim(),a=c.dataset.actual||'';
+if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now compare:','look at the drawing. Was your prediction right? What did you notice?')}
+c.hidden=false})});
 function parsons(box,win,bad){var lines=JSON.parse(box.dataset.lines),extra=JSON.parse(box.dataset.extra||'[]');
 var pool=box.querySelector('.ppool'),prog=box.querySelector('.pprog'),inProg=[];
 var all=lines.concat(extra).map(function(t,i){return {t:t,i:i}});
@@ -256,6 +273,12 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
     return `<div class="check" ${base} data-answers="${esc(JSON.stringify(k.pairs.map((p) => p[1])))}"><p class="check-q">${esc(k.q || 'Match each item with what it does.')}</p>` +
       k.pairs.map((p) => `<div class="mrow"><span>${esc(p[0])}</span><select aria-label="${esc(p[0])}">${opts}</select></div>`).join('') + `<button type="button">Check answers</button>${msg}</div>`;
   }
+  if (k.type === 'predict') {
+    const field = k.options
+      ? `<fieldset><legend class="check-q">${esc(k.q)}</legend>${k.options.map((o, i) => `<label><input type="radio" name="p-${esc(key)}" value="${esc(o)}"><span>${esc(o)}</span></label>`).join('')}</fieldset>`
+      : `<p class="check-q">${esc(k.q)}</p><label class="numrow"><input class="pin" type="${k.kind === 'number' ? 'number' : 'text'}" ${k.kind === 'number' ? 'step="any"' : ''} aria-label="Your prediction"></label>`;
+    return `<div class="check" ${base}>${field}<button type="button">Lock in my prediction</button>${msg}</div>`;
+  }
   if (k.type === 'trace') {
     const t = parseTrace(k.table);
     const head = t.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('');
@@ -307,6 +330,13 @@ export function lessonPageHtml(lesson, deps) {
     const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(t)}</details>`).join('');
     const hints = hintsOf(c.hint);
     const checks = checkHtml(lesson, s, snippetNames, snippet);
+    // A Run step after a Predict step with a predict check shows "You predicted X. It actually did Y." after Run.
+    let compare = '';
+    if (c.stage === 'run') {
+      const at = lesson.steps.indexOf(s);
+      const ps = lesson.steps.slice(0, at).reverse().find((x) => x.config.stage === 'predict' && x.config.check?.type === 'predict');
+      if (ps) compare = `<div class="compare" hidden aria-live="polite" data-predict="${esc(`${lesson.slug}/${ps.id}`)}" data-play="${esc(`${lesson.slug}/${s.id}`)}" data-actual="${esc(ps.config.check.actual || '')}"></div>`;
+    }
     let inner;
     if (s.tasks.length) {
       // Tasks (### headings): sub-pills, one task shown at a time, one playground shared by all of them.
@@ -325,8 +355,8 @@ export function lessonPageHtml(lesson, deps) {
     } else {
       // Predict: code, questions, hidden reveal. A hidden clip on a task comes after the attempt: text, code, try, hints, clip.
       inner = c.stage === 'predict' ? `${showCode}${body}${clip}${tryHtml(s)}${hints}${checks}`
-        : c.reveal ? `${body}${showCode}${tryHtml(s)}${hints}${clip}${checks}`
-        : `${body}${showCode}${clip}${tryHtml(s)}${hints}${checks}`;
+        : c.reveal ? `${body}${showCode}${tryHtml(s)}${compare}${hints}${clip}${checks}`
+        : `${body}${showCode}${clip}${tryHtml(s)}${compare}${hints}${checks}`;
     }
     return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"><div class="chip">${esc(label)}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');

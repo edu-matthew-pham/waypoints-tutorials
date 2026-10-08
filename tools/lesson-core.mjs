@@ -7,7 +7,7 @@ export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
 export const PLAYGROUND_KINDS = ['turtle', 'html'];
-export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons'];
+export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict'];
 
 /**
  * A trace table written as a small pipe table: first row is the header, cells in [brackets] are the blanks
@@ -217,6 +217,12 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     else if (k.type === 'match') {
       if (!Array.isArray(k.pairs) || k.pairs.length < 2 || !k.pairs.every((p) => Array.isArray(p) && p.length === 2 && p.every(str))) err(where, 'check (match) needs pairs: a list of at least two [left, right] pairs');
       else if (new Set(k.pairs.map((p) => p[1].trim())).size !== k.pairs.length) err(where, 'check (match) every right-hand item must be different');
+    }
+    else if (k.type === 'predict') {
+      if (!str(k.q)) err(where, 'check (predict) needs q, e.g. "How many sides will the shape have?"');
+      if (k.kind !== undefined && !['text', 'number'].includes(k.kind)) err(where, 'check (predict) kind must be text or number');
+      if (k.options !== undefined && !(Array.isArray(k.options) && k.options.length >= 2 && k.options.every((o) => typeof o === 'string' && o.trim()))) err(where, 'check (predict) options must be a list of at least two strings');
+      if (k.actual !== undefined && !str(String(k.actual))) err(where, 'check (predict) actual must be text, shown after the Run step');
     }
     else if (k.type === 'trace') {
       if (!str(k.table)) err(where, 'check (trace) needs table: a pipe table with blanks in [brackets]');

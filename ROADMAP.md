@@ -10,12 +10,13 @@ Real-world steps named for the task; Functions III lesson (`turtle-returns`) wit
 
 Tasks in any step (sub-pills, shared playground, "Modify 2/3" on the step pill); check types number, match, trace, bug, parsons; `insight:` for teachers; `uses` code rule; create page templates; Investigate and Modify steps in the six turtle lessons rewritten around stated insights.
 
+## Done: Predict, Decisions, Lists
+
+Predict lock-in (`type: predict`, compare on the Run step, playground reports output); Decisions lesson (3) and Lists lesson (4) before functions; orders now 1 intro, 2 variables, 3 decisions, 4 lists, 5 functions, 6 parameters, 7 returns, 8 modules; `list` and `for each item` snippets. Still to do: a return visit to lists inside functions, and `if` inside a function that decides.
+
 ## Proposed (discussed, not decided)
 
-- **Predict checks, lock in then compare.** Predict steps can carry any check type, but graded-immediately feedback removes the reason to run. PRIMM design: the student locks in a prediction ("Lock in my prediction" button, cannot be changed afterwards, counts as done, no right or wrong shown), stored per step in the browser, and the Run step shows "You predicted X. It actually did Y." Good prompts: what is printed (new small `text` check), where the turtle finishes (x, heading; the playground already reports them), how many sides or repeats (number). Later: picture options; the playground reporting real output so a typed prediction can be compared without the author writing the answer.
-- **Decisions (`if` / `else`) before functions.** New lesson 3, after variables and operations: checkerboard row with `i % 2 == 0`, a trace table of the loop counter, a spot-the-bug using `=` instead of `==`. Claims the existing `if-else` snippet. Order becomes: 1 intro, 2 variables, 3 decisions, 4 functions, 5 parameters, 6 returns (can use `if` in a function that decides), 7 modules.
 
-- **Lists before functions; two blocks.** Control and data (sequence and loops, variables, decisions, **lists**), then abstraction (functions, parameters, returns, modules). Order: 1 intro, 2 variables, 3 decisions, 4 lists (create, index, loop over items, mix with `if`), 5 functions, 6 parameters, 7 returns, 8 modules; later a return visit to lists inside functions (take or return a list) and a strings lesson just before Gradio. Lists need only loops, variables and `if`, give decisions a second visit, and give functions data to work on.
 - **Revisit if/else** later in a new context (a function that decides, `if` over a list, `if` inside a Gradio function), the same spiral as functions.
 - **Python path beyond turtle.** Turtle covers sequence, loops, variables, selection, functions, parameters, returns and modules. Add **lists** (`for c in colours`, a second visit to `if`) and **strings** (`write()`, joining text) while still in turtle, then move to Gradio, where a function with a return value and an `if` becomes a clickable app and `import gradio as gr` is a module someone else wrote. Turtle stays as the foundations sandbox.
 

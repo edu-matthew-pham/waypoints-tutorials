@@ -152,6 +152,16 @@
      "hint": "Give a value a name, so you can reuse and change it."
     },
     {
+     "label": "list",
+     "code": "‹colours› = [‹\"red\"›, ‹\"blue\"›, ‹\"green\"›]\n",
+     "hint": "Keep many values in order under one name. The first item is place 0."
+    },
+    {
+     "label": "for each item",
+     "code": "for ‹c› in ‹colours›:\n    ‹pass›\n",
+     "hint": "Work through a list, one item at a time."
+    },
+    {
      "label": "def (function)",
      "code": "def ‹shape›():\n    ‹pass›\n\n‹shape›()\n",
      "hint": "Name a group of steps, then run it by calling its name."

@@ -105,7 +105,7 @@ runBtn.addEventListener('click', async () => {
     turtle.draw(); turtle.emit();
     setRunning(false);
     // Tell the lesson page (if embedded) what ran, so a code check can look at it.
-    try { if (window.parent !== window) window.parent.postMessage({ wp: 'run', id: params.get('id'), status: window.__playground.status, code: [mainText, ...Object.values(studentMods)].join('\n') }, location.origin); } catch { /* not embedded */ }
+    try { if (window.parent !== window) window.parent.postMessage({ wp: 'run', id: params.get('id'), status: window.__playground.status, output: window.__playground.output, turtle: window.__playground.turtle, code: [mainText, ...Object.values(studentMods)].join('\n') }, location.origin); } catch { /* not embedded */ }
   }
 });
 

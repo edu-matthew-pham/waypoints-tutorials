@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 5
 title: Functions
 summary: Give a group of commands a name, then use that name again and again.
 language: python

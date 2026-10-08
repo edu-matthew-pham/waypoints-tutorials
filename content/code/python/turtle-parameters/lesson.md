@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 6
 title: Functions with parameters
 summary: Make one function draw many different shapes, and keep your best ones as buttons.
 language: python

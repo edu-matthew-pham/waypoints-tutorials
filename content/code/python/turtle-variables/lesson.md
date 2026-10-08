@@ -5,7 +5,7 @@ summary: Give a number a name, then calculate with it.
 language: python
 hook: "Games keep score, maps keep scale and apps keep your settings. All of them store a value under a name and calculate with it."
 teachers: |
-  **Where it leads:** parameters (the next lesson), scores and counters, scale in design and mapping.
+  **Where it leads:** decisions (the next lesson), parameters later, scores and counters, scale in design and mapping.
 
   **Class ideas:** a shape generator where the class compares `sides` values; a spiral gallery; scale drawings of the classroom.
 
@@ -20,6 +20,11 @@ In the last lesson the numbers were typed straight into each command. Here you g
 ```step
 stage: predict
 code: variables.py#polygon
+check:
+  type: predict
+  q: "How many sides will the shape have?"
+  kind: number
+  actual: "Five sides. angle = 360 / 5 = 72, so the turtle turns 72 degrees at each corner and the shape closes."
 ```
 
 `angle = 360 / sides` stores the result of a calculation. What will the turtle draw? How many sides, and why does `right(angle)` turn by that amount?

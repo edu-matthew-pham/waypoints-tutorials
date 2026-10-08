@@ -288,6 +288,7 @@ All except `code` are static and need no running code. Write the check under `ch
 | `trace` | `text`, `table`, `explain` | fills the blanks of a table |
 | `bug` | `code: file#region`, `answer: 7` (or `[7, 19]`), `text`, `explain` | clicks the wrong line |
 | `parsons` | `code: file#region` (the correct program), optional `extra: [spare lines]`, `text`, `explain` | orders scrambled lines |
+| `predict` | `q`, optional `options: [...]` (else typed; `kind: number` for a number), optional `actual` | locks in a prediction before running (cannot change it) |
 | `code` | `text`, `rules` | runs a program that meets the rules |
 
 A **trace table** is a pipe table; the first row is the header and cells in `[brackets]` are the blanks, with the answer inside:
@@ -300,6 +301,6 @@ table: |
   | 2 | [216] |
 ```
 
-Choose the tool from the insight the step should produce: repetition cost, count and predict (`number`); how a loop or variable changes, `trace`; what each part controls, `match`; why code is wrong, `bug`; how code is structured, `parsons`. Code rules now also include `uses: [pencolor]` (a name that must appear in the code).
+Choose the tool from the insight the step should produce: repetition cost, count and predict (`number`); how a loop or variable changes, `trace`; what each part controls, `match`; why code is wrong, `bug`; how code is structured, `parsons`. `predict` goes on a Predict step with no right or wrong. The locked answer is kept in the browser; the next Run step shows "You predicted X. It actually: Y." (Y is `actual`, or what the program printed). Good prompts: what is printed, how many repeats or sides, which colour. Code rules now also include `uses: [pencolor]` (a name that must appear in the code).
 
 On the create page, the helper row adds a starter for each check type and for tasks.

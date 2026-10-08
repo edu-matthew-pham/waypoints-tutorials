@@ -28,6 +28,11 @@ A turtle walks across the screen, leaving a line behind. Your program tells it w
 stage: predict
 code: square.py#square
 reveal: true
+check:
+  type: predict
+  q: "What shape will the turtle draw?"
+  options: ["a square", "a triangle", "a long line", "a rectangle"]
+  actual: "A square: four sides of 100 steps, turning right 90 degrees each time. The turtle finishes back where it started, facing right."
 app: true
 clip:
   - caption: The turtle starts in the middle, facing right.
