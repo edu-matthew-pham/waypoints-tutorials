@@ -44,6 +44,9 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   // Snippets that some lesson step unlocks start locked; the rest are always available.
   let claims = {};
   try { claims = await (await fetch('unlocks.json')).json(); } catch { /* no lessons claim any */ }
+  // The create page's preview passes this lesson's own locks: ?locks=id~Step title|id~Step title
+  const lp = new URLSearchParams(location.search).get('locks');
+  if (lp) for (const pair of lp.split('|')) { const [id, step] = pair.split('~'); if (id) claims[id] = { lesson: 'this lesson', step: step || 'a step' }; }
   // Teacher override: ?unlock=all shows everything (remembered in this browser); ?unlock=off resets it.
   const ov = new URLSearchParams(location.search).get('unlock');
   if (ov) { const p = loadProgress(); p.all = ov === 'all'; try { localStorage.setItem(STORE, JSON.stringify(p)); } catch { /* ignore */ } }

@@ -12,6 +12,7 @@
   <div><a class="crumb" href="../">← Code</a><h1>Create a lesson</h1></div>
   <div class="actions">
     <button id="example" type="button">Load example</button>
+    <button id="resetprog" type="button" title="Forget which checks you passed in the preview">Reset progress</button>
     <label class="btn">Upload files<input id="upload" type="file" multiple hidden></label>
     <button id="share" type="button">Copy share link</button>
     <button id="request" type="button" hidden>Request publishing</button>
@@ -24,6 +25,12 @@ Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/b
 <main>
   <section class="editor">
     <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="helpers" id="helpers">
+      <span>Add to this step:</span>
+      <button id="addtick" type="button">Tick box</button>
+      <button id="addq" type="button">Question</button>
+      <button id="pick" type="button">Snippets to unlock…</button>
+    </div>
     <label class="namebar">File name <input id="fname" type="text" spellcheck="false"></label>
     <textarea id="text" spellcheck="false" aria-label="File contents"></textarea>
     <div class="row"><button id="addfile" type="button">+ Add code file</button><button id="delfile" type="button">Delete this file</button></div>
@@ -31,6 +38,14 @@ Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/b
   </section>
   <section class="preview"><iframe id="preview" title="Lesson preview"></iframe></section>
 </main>
+<dialog id="pickdlg" aria-labelledby="pickttl">
+  <form method="dialog">
+    <h2 id="pickttl">Snippets this step unlocks</h2>
+    <p class="muted" id="pickinfo"></p>
+    <div id="picklist"></div>
+    <div class="row"><button id="pickok" value="ok" type="submit" class="primary">Use these</button><button value="cancel" type="submit">Cancel</button></div>
+  </form>
+</dialog>
 <script type="module" src="create.js"></script>
 </body>
 </html>

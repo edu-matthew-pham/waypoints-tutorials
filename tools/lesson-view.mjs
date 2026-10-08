@@ -170,12 +170,13 @@ export const PLAYGROUNDS = {
 };
 
 /** "Try it yourself" iframe. siteRoot is the URL of the site root (with trailing slash), e.g. "../../../". */
-export function tryEmbed(lesson, step, starter, siteRoot) {
+export function tryEmbed(lesson, step, starter, siteRoot, locks = '') {
   const t = step.config.try;
   const pg = PLAYGROUNDS[t.playground || 'turtle'] || PLAYGROUNDS.turtle;
   const q = new URLSearchParams({ id: `${lesson.slug}/${step.id}`, code: starter });
   if (t.extent) q.set('extent', t.extent);
   if (t.speed) q.set('speed', t.speed);
+  if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
   return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>Your edits are saved in this browser.</span></div>` +
     `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;
 }

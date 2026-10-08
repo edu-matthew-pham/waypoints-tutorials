@@ -1,5 +1,5 @@
 import { Marked } from 'marked';
-import { parseLessonText, validateLessonCore, snippetFrom } from './lesson-core.mjs';
+import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
 import { highlightCode } from './highlight.js';
 import { REQUEST_FORM_URL } from './config.js';
@@ -107,6 +107,7 @@ function sync() {
   $('fname').value = current;
   $('fname').disabled = current === 'lesson.md';
   $('delfile').disabled = current === 'lesson.md';
+  $('helpers').hidden = current !== 'lesson.md';
 }
 $('text').addEventListener('input', () => { files[current] = $('text').value; save(); schedule(); });
 $('text').addEventListener('keydown', (e) => {
@@ -149,24 +150,115 @@ function problemsList(items, ok) {
     const li = document.createElement('li'); li.textContent = t; if (!items.length) li.className = 'ok'; $('problems').append(li);
   }
 }
+// Snippet lists of both playgrounds: used to validate ids and to offer the unlock picker.
+const snippetData = {};
+const loadSnippets = Promise.all(['turtle', 'html'].map(async (k) => {
+  const dir = k === 'turtle' ? '_playground' : '_playground-html';
+  try { snippetData[k] = await (await fetch(new URL(`../../${dir}/snippets.json`, location.href))).json(); } catch { /* validation of ids is skipped */ }
+}));
+const knownIds = () => Object.fromEntries(Object.entries(snippetData).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
+
 function render() {
   const read = (f) => files[f];
   let lesson;
   try { lesson = parseLessonText(files['lesson.md'] || '', 'my-lesson'); }
   catch (e) { problemsList(['lesson.md: ' + e.message.split('\n')[0]]); return; }
-  const errs = validateLessonCore(lesson, read).map((m) => m.replace(/^my-lesson › /, ''));
+  const errs = validateLessonCore(lesson, read, knownIds()).map((m) => m.replace(/^my-lesson › /, ''));
   // clip checks that need an app are skipped here: clips are only recorded by the repository build
   problemsList(errs, 'Looks good.');
   const clipHtml = (s) => s.config.clip
     ? `<div class="placeholder"><b>Clip placeholder · ${s.id}</b><span>Recorded when this lesson is added to the repository.</span></div>` : '';
+  const locksFor = (kind) => lesson.steps.filter((x) => (x.config.unlocks || []).length && unlockKind(lesson, x) === kind)
+    .flatMap((x) => x.config.unlocks.map((id) => `${id}~${x.title.replace(/[|~]/g, ' ')}`)).join('|');
   const tryHtml = (s) => {
     const t = s.config.try; if (!t) return '';
-    try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot); } catch { return ''; }
+    try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot, locksFor(unlockKind(lesson, s))); } catch { return ''; }
   };
   const keep = $('preview').contentWindow?.scrollY || 0;
   $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, crumb: null, source: '' });
   $('preview').onload = () => { try { $('preview').contentWindow.scrollTo(0, keep); } catch { /* ignore */ } };
 }
+
+// ---------- step helpers: add a check or choose snippets to unlock ----------
+/** The step the cursor is in: its section's line range and the line index of its closing ``` fence. */
+function stepAt(text, pos) {
+  const lines = text.split('\n');
+  let offset = 0, sec = -1, secLine = -1, n = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (offset > pos) break;
+    if (/^## /.test(lines[i])) { n++; secLine = i; }
+    offset += lines[i].length + 1;
+  }
+  if (secLine < 0) return null;
+  let open = -1, close = -1;
+  for (let i = secLine + 1; i < lines.length && !/^## /.test(lines[i]); i++) {
+    if (open < 0 && /^```step\s*$/.test(lines[i])) open = i;
+    else if (open >= 0 && /^```\s*$/.test(lines[i])) { close = i; break; }
+  }
+  sec = n;
+  return { lines, index: sec, open, close };
+}
+const stepKeyLines = (st) => st.lines.slice(st.open + 1, st.close);
+function setText(next, selectText) {
+  files['lesson.md'] = next; save(); sync(); schedule();
+  const t = $('text'); t.focus();
+  if (selectText) { const i = next.indexOf(selectText); if (i >= 0) t.setSelectionRange(i, i + selectText.length); }
+}
+function withStep(fn) {
+  const t = $('text'), st = stepAt(t.value, t.selectionStart);
+  if (!st || st.open < 0 || st.close < 0) { alert('Put the cursor inside a step (under a "## Title" heading that has a ```step block) first.'); return; }
+  fn(st);
+}
+const TICK = ['check: { type: reflect, text: "I can explain …" }'];
+const QUESTION = ['check:', '  type: question', '  q: "Your question?"', '  options: ["Option A", "Option B", "Option C"]', '  answer: 0', '  explain: "Why that answer is right."'];
+function addCheck(block, selectText) {
+  withStep((st) => {
+    if (stepKeyLines(st).some((l) => /^check:/.test(l))) { alert('This step already has a check. Edit or delete it first.'); return; }
+    st.lines.splice(st.close, 0, ...block);
+    setText(st.lines.join('\n'), selectText);
+  });
+}
+$('addtick').onclick = () => addCheck(TICK, '…');
+$('addq').onclick = () => addCheck(QUESTION, 'Your question?');
+$('resetprog').onclick = () => { try { localStorage.removeItem('wp-progress'); } catch { /* ignore */ } render(); };
+
+$('pick').onclick = async () => {
+  await loadSnippets;
+  withStep((st) => {
+    let lesson;
+    try { lesson = parseLessonText(files['lesson.md'], 'my-lesson'); } catch { alert('Fix the errors in lesson.md first.'); return; }
+    const step = lesson.steps[st.index];
+    const kind = unlockKind(lesson, step);
+    const data = snippetData[kind];
+    if (!data) { alert('Could not load the snippet list.'); return; }
+    const have = new Set(step.config.unlocks || []);
+    $('pickinfo').textContent = `Tick the snippets students earn by passing this step's check (${kind === 'html' ? 'HTML and CSS' : 'Python turtle'} playground). Unticked ones stay available to everyone unless another step claims them.`;
+    $('picklist').innerHTML = '';
+    for (const g of data.groups) {
+      const h = document.createElement('h3'); h.textContent = g.name; $('picklist').append(h);
+      for (const i of g.items) {
+        const id = snippetId(i.label);
+        const l = document.createElement('label');
+        const c = document.createElement('input'); c.type = 'checkbox'; c.value = id; c.checked = have.has(id);
+        l.append(c, document.createTextNode(i.label)); l.title = i.hint || ''; $('picklist').append(l);
+      }
+    }
+    $('pickdlg').returnValue = '';
+    $('pickdlg').onclose = () => {
+      if ($('pickdlg').returnValue !== 'ok') return;
+      const ids = [...$('picklist').querySelectorAll('input:checked')].map((c) => c.value);
+      const st2 = stepAt(files['lesson.md'], $('text').selectionStart) || st;
+      const lines = st2.lines;
+      let at = -1;
+      for (let i = st2.open + 1; i < st2.close; i++) if (/^unlocks:/.test(lines[i])) at = i;
+      if (!ids.length) { if (at >= 0) lines.splice(at, 1); }
+      else if (at >= 0) lines[at] = `unlocks: [${ids.join(', ')}]`;
+      else lines.splice(st2.close, 0, `unlocks: [${ids.join(', ')}]`);
+      setText(lines.join('\n'));
+    };
+    $('pickdlg').showModal();
+  });
+};
 
 // ---------- share / download ----------
 $('share').onclick = async () => {

@@ -90,6 +90,10 @@ until the student passes a check (a tick box or a short question); see AUTHORING
 renderer as the build (`tools/lesson-core.mjs`, `tools/lesson-view.mjs`). Clips are placeholders there; they
 are recorded by CI once the lesson is in the repository.
 
+While editing `lesson.md`, the helper row adds a **tick box** or **question** check to the step under the cursor and
+opens a picker for the **snippets it unlocks**. The preview locks those snippets in its playgrounds so teachers can
+try the whole flow ("Reset progress" clears what they passed), and unknown snippet ids are flagged.
+
 ## Custom domain
 
 Set the domain under Settings → Pages (DNS CNAME to `<user>.github.io`). Nothing in the build assumes a domain; links are relative.
