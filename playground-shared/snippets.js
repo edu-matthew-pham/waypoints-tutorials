@@ -2,7 +2,7 @@
 // buttons. Each button inserts real, editable code at the cursor. One way only: nothing is parsed back.
 // In a snippet's code, ‹text› marks a placeholder: the first one is selected after inserting, and the
 // markers themselves are removed.
-import { scanModule, callText, ensureImport } from './modules-scan.mjs';
+import { scanModule, callText, ensureImport, defAtCursor } from './modules-scan.mjs';
 
 const OPEN = '‹', CLOSE = '›';
 
@@ -40,9 +40,20 @@ const idOf = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').
 const STORE = 'wp-progress';
 const loadProgress = () => { try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; } };
 
-export async function mountSnippets({ toolbar, textarea, kind, before = null, url = 'snippets.json', modules = {} }) {
+// A student's own buttons (code they saved from the editor) travel with them across lessons, per browser.
+const TOOLS_PREFIX = 'wp-mytools:';
+const loadTools = (kind) => { try { return JSON.parse(localStorage.getItem(TOOLS_PREFIX + kind)) || []; } catch { return []; } };
+const saveTools = (kind, tools) => { try { localStorage.setItem(TOOLS_PREFIX + kind, JSON.stringify(tools)); } catch { /* storage unavailable */ } };
+
+/**
+ * Mounts the palette. Returns a controller:
+ *   setStudentModules({name: source})  buttons for the student's own module tabs
+ *   isLocked(id), onChange(fn)         lock state of a snippet or feature id ("save-as-button", "my-module")
+ * Options: modules (the lesson's {name: source}), beforeModuleInsert() (called before a module button edits the code).
+ */
+export async function mountSnippets({ toolbar, textarea, kind, before = null, url = 'snippets.json', modules = {}, beforeModuleInsert = () => {} }) {
   let data;
-  try { data = await (await fetch(url)).json(); } catch { return; }
+  try { data = await (await fetch(url)).json(); } catch { return null; }
   // Snippets that some lesson step unlocks start locked; the rest are always available.
   let claims = {};
   try { claims = await (await fetch('unlocks.json')).json(); } catch { /* no lessons claim any */ }
@@ -57,6 +68,8 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     const p = loadProgress();
     return !(p.all || (p.unlocked || {})[`${kind}:${id}`]);
   };
+  const changeCallbacks = [];
+
   const btn = document.createElement('button');
   btn.type = 'button'; btn.className = 'btn snippets-toggle'; btn.id = 'snippets-toggle';
   btn.textContent = 'Snippets'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'snippets-panel');
@@ -65,7 +78,9 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   const panel = document.createElement('div');
   panel.id = 'snippets-panel'; panel.className = 'snippets-panel'; panel.hidden = true;
   panel.setAttribute('role', 'region'); panel.setAttribute('aria-label', 'Snippets');
-  const buttons = [];
+  let buttons = []; // [element, id, {hint}, isDynamic]
+  const lockable = (b, id, hint, dyn = false) => { buttons.push([b, id, { hint }, dyn]); b.dataset.id = id; };
+
   for (const group of data.groups) {
     const det = document.createElement('details');
     const sum = document.createElement('summary'); sum.textContent = group.name; det.append(sum);
@@ -73,26 +88,36 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     for (const item of group.items) {
       const id = idOf(item.label);
       const b = document.createElement('button');
-      b.type = 'button'; b.className = 'snippet'; b.textContent = item.label; b.dataset.id = id;
+      b.type = 'button'; b.className = 'snippet'; b.textContent = item.label;
       b.addEventListener('click', () => { if (isLocked(id)) return; insert(item.code); toggle(false); });
-      buttons.push([b, id, item]);
+      lockable(b, id, item.hint);
       row.append(b);
     }
     det.append(row); panel.append(det);
   }
-  // One group per module the lesson offers: a button per function, plus "Show how it works".
-  for (const [mod, source] of Object.entries(modules)) {
+
+  // Groups that change while the page is open: the student's own buttons and modules.
+  const dynamic = document.createElement('div');
+  panel.append(dynamic);
+  toolbar.after(panel);
+  let studentModules = {};
+  let note;
+
+  const say = (text) => { if (!note) return; note.textContent = text; clearTimeout(say.t); say.t = setTimeout(() => (note.textContent = ''), 4000); };
+
+  function moduleGroup(mod, source, owned) {
     const fns = scanModule(source);
-    if (!fns.length) continue;
-    const det = document.createElement('details');
-    const sum = document.createElement('summary'); sum.textContent = `Module: ${mod}`; det.append(sum);
+    if (!fns.length) return null;
+    const det = document.createElement('details'); det.open = owned;
+    const sum = document.createElement('summary'); sum.textContent = owned ? `My module: ${mod}` : `Module: ${mod}`; det.append(sum);
     const row = document.createElement('div'); row.className = 'snippet-row';
     for (const fn of fns) {
       const id = `${mod}.${fn.name}`;
       const b = document.createElement('button');
-      b.type = 'button'; b.className = 'snippet'; b.textContent = fn.name; b.dataset.id = id;
+      b.type = 'button'; b.className = 'snippet'; b.textContent = fn.name;
       b.addEventListener('click', () => {
         if (isLocked(id)) return;
+        beforeModuleInsert(); // imports go in the main program, not in a module tab
         const r = ensureImport(textarea.value, mod, fn.name);
         if (r.added) {
           let a = textarea.selectionStart, z = textarea.selectionEnd;
@@ -103,16 +128,63 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
         }
         insert(callText(fn)); toggle(false);
       });
-      buttons.push([b, id, { hint: fn.doc }]);
+      lockable(b, id, fn.doc, true);
       row.append(b);
     }
-    const how = document.createElement('button');
-    how.type = 'button'; how.className = 'snippet how'; how.textContent = 'Show how it works';
-    how.addEventListener('click', () => showSource(mod, source));
-    row.append(how);
-    det.append(row); panel.append(det);
+    if (!owned) {
+      const how = document.createElement('button');
+      how.type = 'button'; how.className = 'snippet how'; how.textContent = 'Show how it works';
+      how.addEventListener('click', () => showSource(mod, source));
+      row.append(how);
+    }
+    det.append(row);
+    return det;
   }
-  toolbar.after(panel);
+
+  function toolsGroup() {
+    const tools = loadTools(kind);
+    const det = document.createElement('details'); det.open = true;
+    const sum = document.createElement('summary'); sum.textContent = 'My tools'; det.append(sum);
+    const row = document.createElement('div'); row.className = 'snippet-row';
+    tools.forEach((t, i) => {
+      const wrap = document.createElement('span'); wrap.className = 'tool';
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'snippet'; b.textContent = t.label; b.title = 'Insert your saved code';
+      b.addEventListener('click', () => { insert(t.code); toggle(false); });
+      const x = document.createElement('button'); x.type = 'button'; x.className = 'snippet rm'; x.textContent = '×'; x.title = `Remove "${t.label}"`; x.setAttribute('aria-label', `Remove ${t.label}`);
+      x.addEventListener('click', () => { const all = loadTools(kind); all.splice(i, 1); saveTools(kind, all); renderDynamic(); });
+      wrap.append(b, x); row.append(wrap);
+    });
+    const save = document.createElement('button');
+    save.type = 'button'; save.className = 'snippet save'; save.textContent = 'Save selection as button';
+    save.addEventListener('click', () => {
+      if (isLocked('save-as-button')) return;
+      let sel = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+      if (!sel.trim()) sel = defAtCursor(textarea.value, textarea.selectionStart);
+      if (!sel.trim()) { say('Select some code first, or put the cursor inside a def.'); return; }
+      const m = sel.match(/^\s*def\s+([A-Za-z_]\w*)/);
+      const label = (prompt('Name for this button:', m ? m[1] : sel.trim().split('\n')[0].slice(0, 24)) || '').trim();
+      if (!label) return;
+      const all = loadTools(kind); all.push({ label, code: sel.replace(/\s+$/, '') + '\n' }); saveTools(kind, all);
+      renderDynamic(); say(`Saved "${label}". Find it under My tools.`);
+    });
+    lockable(save, 'save-as-button', 'Select some code in the editor (or put the cursor in a def), then click to keep it as a button.', true);
+    row.append(save);
+    det.append(row);
+    return det;
+  }
+
+  function renderDynamic() {
+    buttons = buttons.filter((x) => !x[3]);
+    dynamic.replaceChildren();
+    note = document.createElement('p'); note.className = 'note'; note.setAttribute('aria-live', 'polite');
+    dynamic.append(toolsGroup(), note);
+    for (const [mod, source] of Object.entries(modules)) {
+      if (studentModules[mod] !== undefined) continue; // the student's own module of the same name wins
+      const g = moduleGroup(mod, source, false); if (g) dynamic.append(g);
+    }
+    for (const [mod, source] of Object.entries(studentModules)) { const g = moduleGroup(mod, source, true); if (g) dynamic.append(g); }
+    refresh();
+  }
 
   function refresh() {
     for (const [b, id, item] of buttons) {
@@ -121,8 +193,9 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
       b.setAttribute('aria-disabled', String(locked));
       b.title = locked ? `Unlocks in ${claims[id].lesson}: ${claims[id].step}` : item.hint || '';
     }
+    changeCallbacks.forEach((f) => f());
   }
-  refresh();
+  renderDynamic();
   window.addEventListener('storage', (e) => { if (e.key === STORE) refresh(); }); // a check passed in the lesson page
 
   let dlg;
@@ -150,4 +223,10 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   }
   btn.addEventListener('click', () => toggle());
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) toggle(false); });
+
+  return {
+    setStudentModules(m) { studentModules = m || {}; renderDynamic(); },
+    isLocked,
+    onChange(f) { changeCallbacks.push(f); },
+  };
 }

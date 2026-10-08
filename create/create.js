@@ -1,5 +1,5 @@
 import { Marked } from 'marked';
-import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind } from './lesson-core.mjs';
+import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
 import { scanModule } from './modules-scan.mjs';
 import { highlightCode } from './highlight.js';
@@ -161,7 +161,11 @@ let sharedModules = {};
 const loadModules = (async () => {
   try { sharedModules = await (await fetch(new URL('../../_playground/modules.json', location.href))).json(); } catch { /* none */ }
 })();
-const knownIds = () => Object.fromEntries(Object.entries(snippetData).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
+const knownIds = () => {
+  const o = Object.fromEntries(Object.entries(snippetData).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
+  if (o.turtle) for (const f of FEATURES) o.turtle.add(f.id);
+  return o;
+};
 
 function render() {
   const read = (f) => files[f];
@@ -254,7 +258,7 @@ $('pick').onclick = async () => {
     const modGroups = kind === 'turtle' ? lesson.modules.map((name) => ({ name: `Module: ${name}`, items: scanModule(files[`${name}.py`] ?? sharedModules[name] ?? '').map((f) => ({ id: `${name}.${f.name}`, label: f.name, hint: f.doc })) })).filter((g) => g.items.length) : [];
     $('pickinfo').textContent = `Tick the snippets students earn by passing this step's check (${kind === 'html' ? 'HTML and CSS' : 'Python turtle'} playground). Unticked ones stay available to everyone unless another step claims them.`;
     $('picklist').innerHTML = '';
-    const groups = [...data.groups.map((g) => ({ name: g.name, items: g.items.map((i) => ({ id: snippetId(i.label), label: i.label, hint: i.hint })) })), ...modGroups];
+    const groups = [...data.groups.map((g) => ({ name: g.name, items: g.items.map((i) => ({ id: snippetId(i.label), label: i.label, hint: i.hint })) })), ...(kind === 'turtle' ? [{ name: 'Playground features', items: FEATURES.map((f) => ({ id: f.id, label: f.label, hint: f.hint })) }] : []), ...modGroups];
     for (const g of groups) {
       const h = document.createElement('h3'); h.textContent = g.name; $('picklist').append(h);
       for (const i of g.items) {

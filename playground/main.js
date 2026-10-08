@@ -16,7 +16,14 @@ const speedEl = $('speed');
 const read = () => { try { return storeKey ? localStorage.getItem(storeKey) : null; } catch { return null; } };
 const write = (v) => { try { if (storeKey) (v === null ? localStorage.removeItem(storeKey) : localStorage.setItem(storeKey, v)); } catch { /* storage unavailable */ } };
 
-codeEl.value = read() ?? starter;
+// Files: the main program, plus modules the student writes themselves (saved with this step's edits).
+const modsKey = storeKey ? `${storeKey}:mods` : null;
+let studentMods = {};
+try { studentMods = JSON.parse((modsKey && localStorage.getItem(modsKey)) || '{}') || {}; } catch { studentMods = {}; }
+const saveMods = () => { try { if (modsKey) localStorage.setItem(modsKey, JSON.stringify(studentMods)); } catch { /* storage unavailable */ } };
+let mainText = read() ?? starter;
+let active = 'main'; // 'main' or the name of a student module
+codeEl.value = mainText;
 
 // A small, stable surface for tests and tooling (defined before the renderer, which emits on creation).
 window.__playground = { status: 'idle', output: '', error: null, turtle: null };
@@ -55,13 +62,19 @@ if (params.get('speed')) { speedEl.value = params.get('speed'); $('speed-value')
 speedEl.addEventListener('input', () => { $('speed-value').textContent = speedEl.value; turtle.speed = Number(speedEl.value); });
 turtle.speed = Number(speedEl.value);
 
-codeEl.addEventListener('input', () => write(codeEl.value));
+let ctl = null; // the snippet palette, once it has loaded
+let syncTimer;
+const syncModules = () => { clearTimeout(syncTimer); syncTimer = setTimeout(() => ctl?.setStudentModules(studentMods), 400); };
+codeEl.addEventListener('input', () => {
+  if (active === 'main') { mainText = codeEl.value; write(mainText); }
+  else { studentMods[active] = codeEl.value; saveMods(); syncModules(); }
+});
 codeEl.addEventListener('keydown', (e) => {
   if (e.key === 'Tab') { // keep focus in the editor; indent with spaces
     e.preventDefault();
     const { selectionStart: s, selectionEnd: en } = codeEl;
     codeEl.setRangeText('    ', s, en, 'end');
-    write(codeEl.value);
+    codeEl.dispatchEvent(new Event('input'));
   }
 });
 
@@ -73,8 +86,8 @@ runBtn.addEventListener('click', async () => {
   Object.assign(window.__playground, { output: '', error: null });
   setRunning(true); setStatus('running', 'Running…');
   try {
-    run.setModules(await modulesReady);
-    await run(codeEl.value);
+    run.setModules({ ...(await modulesReady), ...studentMods }); // the student's own module wins a name clash
+    await run(mainText);
     setStatus('done', 'Finished');
   } catch (err) {
     if (err instanceof StopError || /Stopped/.test(String(err))) {
@@ -95,10 +108,67 @@ runBtn.addEventListener('click', async () => {
 stopBtn.addEventListener('click', () => turtle.stop());
 finishBtn.addEventListener('click', () => turtle.finish());
 resetBtn.addEventListener('click', () => {
-  codeEl.value = starter; write(null);
+  mainText = starter; write(null); switchTab('main');
   outEl.textContent = ''; turtle.resetAll();
   setStatus('idle', 'Ready');
   window.__playground.output = ''; window.__playground.error = null;
 });
 
-modulesReady.then((modules) => mountSnippets({ kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed'), modules }));
+// ---------- file tabs: main.py plus the student's own modules ----------
+const tabsEl = $('tabs');
+const RESERVED = new Set(['turtle', 'random', 'math', 'time', 'string', 're', 'json', 'sys', 'os']);
+const MODULE_TEMPLATE = 'from turtle import *\n\n\n# Put your functions here. Start each one with a """docstring""" and it becomes a button.\n';
+
+function switchTab(name) {
+  active = name === 'main' || studentMods[name] !== undefined ? name : 'main';
+  codeEl.value = active === 'main' ? mainText : studentMods[active];
+  codeEl.setAttribute('aria-label', active === 'main' ? 'Python code' : `Python code: ${active}.py`);
+  renderTabs();
+}
+function renderTabs() {
+  const names = Object.keys(studentMods);
+  const canAdd = !ctl?.isLocked('my-module');
+  tabsEl.hidden = !names.length && !canAdd;
+  tabsEl.replaceChildren();
+  const tab = (label, name) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.role = 'tab'; b.className = 'tab'; b.textContent = label;
+    b.setAttribute('aria-selected', String(active === name));
+    b.addEventListener('click', () => switchTab(name));
+    return b;
+  };
+  tabsEl.append(tab('main.py', 'main'));
+  for (const n of names) {
+    tabsEl.append(tab(`${n}.py`, n));
+    const x = document.createElement('button');
+    x.type = 'button'; x.className = 'tab rm'; x.textContent = '×'; x.title = `Delete ${n}.py`; x.setAttribute('aria-label', `Delete ${n}.py`);
+    x.addEventListener('click', () => {
+      if (!confirm(`Delete ${n}.py? This cannot be undone.`)) return;
+      delete studentMods[n]; saveMods(); ctl?.setStudentModules(studentMods);
+      switchTab(active === n ? 'main' : active);
+    });
+    tabsEl.append(x);
+  }
+  if (canAdd) {
+    const add = document.createElement('button');
+    add.type = 'button'; add.className = 'tab add'; add.id = 'add-module'; add.textContent = '+ module';
+    add.title = 'A file of your own functions that your program can import';
+    add.addEventListener('click', () => {
+      const name = (prompt('Name your module (lowercase letters, digits and _):', 'my_tools') || '').trim();
+      if (!name) return;
+      if (!/^[a-z][a-z0-9_]*$/.test(name) || RESERVED.has(name)) { alert('Use lowercase letters, digits and _, starting with a letter, and not a name Python already uses (like turtle or random).'); return; }
+      if (studentMods[name] !== undefined) { switchTab(name); return; }
+      studentMods[name] = MODULE_TEMPLATE; saveMods(); ctl?.setStudentModules(studentMods);
+      switchTab(name);
+    });
+    tabsEl.append(add);
+  }
+}
+
+modulesReady.then(async (modules) => {
+  ctl = await mountSnippets({ kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed'), modules, beforeModuleInsert: () => switchTab('main') });
+  if (ctl) { ctl.setStudentModules(studentMods); ctl.onChange(renderTabs); }
+  renderTabs();
+});
+renderTabs();
+

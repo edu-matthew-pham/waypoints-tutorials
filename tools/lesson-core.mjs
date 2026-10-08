@@ -9,6 +9,12 @@ export const LAYOUTS = ['split', 'full'];
 export const PLAYGROUND_KINDS = ['turtle', 'html'];
 export const CHECK_TYPES = ['reflect', 'question'];
 
+/** Playground features (not snippets) that a step can unlock for the turtle playground. */
+export const FEATURES = [
+  { id: 'save-as-button', label: 'Save selection as button', hint: 'Turn code the student selects (or a def) into their own button.' },
+  { id: 'my-module', label: '+ module (own module file)', hint: 'Let the student write their own module file and import from it.' },
+];
+
 /** Stable id for a snippet, from its label: "for loop" -> "for-loop". */
 export const snippetId = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -91,6 +97,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
   if (lesson.modules?.length) {
     known = { ...known };
     const ids = new Set(known.turtle || []);
+    for (const f of FEATURES) ids.add(f.id);
     for (const name of lesson.modules) {
       const src = /^[a-z][a-z0-9_]*$/.test(name) ? moduleSource(name) : undefined;
       if (src === undefined) { errs.push(`${lesson.slug} › frontmatter: module "${name}" not found (add ${name}.py next to lesson.md or in modules/; names are lowercase letters, digits and _)`); continue; }

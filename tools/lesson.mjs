@@ -7,7 +7,7 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
 import YAML from 'yaml';
-import { snippetFrom, parseLessonText, validateLessonCore, snippetId } from './lesson-core.mjs';
+import { snippetFrom, parseLessonText, validateLessonCore, snippetId, FEATURES } from './lesson-core.mjs';
 
 export * from './lesson-core.mjs';
 
@@ -72,5 +72,6 @@ export function loadSharedModules() {
 export function validateLesson(lesson) {
   const files = loadSnippetFiles();
   const known = Object.fromEntries(Object.entries(files).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
+  if (known.turtle) for (const f of FEATURES) known.turtle.add(f.id);
   return validateLessonCore(lesson, readIn(lesson.dir), known, loadSharedModules());
 }

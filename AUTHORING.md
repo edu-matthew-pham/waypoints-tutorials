@@ -170,3 +170,14 @@ modules: [shapes]
 - **Locking:** module functions are snippets with ids like `shapes.square`, so `unlocks: [shapes.square]` works as in section 7. `npm run validate` checks that the module and function exist.
 - **Limits:** modules can use only what the playground's turtle supports. Detection is a simple pattern, so decorators and nested functions do not become buttons. Only the Python turtle playground supports modules.
 - **On the create page:** "+ Add module" adds a file tab and the `modules:` line.
+
+### Student-made buttons and modules (turtle playground)
+
+Two features let students build their own tools, which is how abstraction is taught:
+
+- **Save selection as button** (feature id `save-as-button`): students select code (or put the cursor in a `def`) and save it under **My tools**. The button inserts that code. Buttons are kept per browser and follow the student across lessons.
+- **+ module** (feature id `my-module`): a tab for a file of their own functions. Functions with a docstring become buttons under "My module: name", and a click adds `from name import fn` to `main.py`. Modules are saved with the step's edits.
+
+Both are unlockable like snippets: put `save-as-button` or `my-module` in a step's `unlocks:` (the create page lists them under "Playground features"). Until a lesson unlocks them they stay locked, if some lesson claims them.
+
+Suggested order: sequence, loop, variable, function (students write `def`), **save as button** (function as a tool), then **module** (several related functions in one file).

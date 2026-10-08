@@ -45,3 +45,20 @@ export function ensureImport(value, module, fn) {
   const prefix = last >= 0 && at > value.length ? '\n' : '';
   return { value: value.slice(0, at) + prefix + line + value.slice(at), at, added: prefix.length + line.length };
 }
+
+/** The `def` block the cursor is in (from the `def` line to the next unindented code), or '' if it is not in one. */
+export function defAtCursor(value, pos) {
+  const lines = value.split('\n');
+  let at = 0, line = 0;
+  for (let i = 0; i < lines.length; i++) { if (at + lines[i].length >= pos) { line = i; break; } at += lines[i].length + 1; line = i; }
+  let start = -1;
+  for (let i = line; i >= 0; i--) if (/^def\s/.test(lines[i])) { start = i; break; }
+  if (start < 0) return '';
+  let end = start;
+  for (let i = start + 1; i < lines.length; i++) {
+    if (lines[i].trim() === '') continue;
+    if (/^\s/.test(lines[i])) end = i; else break;
+  }
+  if (line > end) return '';
+  return lines.slice(start, end + 1).join('\n') + '\n';
+}
