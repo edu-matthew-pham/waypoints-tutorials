@@ -32,9 +32,26 @@ export function planInsert(value, selStart, selEnd, code) {
   return { insert, from, to, selFrom, selTo };
 }
 
-export async function mountSnippets({ toolbar, textarea, before = null, url = 'snippets.json' }) {
+const idOf = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+// Progress is per browser: { all: bool (teacher override), done: {step key: true}, unlocked: {"kind:id": true} }.
+const STORE = 'wp-progress';
+const loadProgress = () => { try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; } };
+
+export async function mountSnippets({ toolbar, textarea, kind, before = null, url = 'snippets.json' }) {
   let data;
   try { data = await (await fetch(url)).json(); } catch { return; }
+  // Snippets that some lesson step unlocks start locked; the rest are always available.
+  let claims = {};
+  try { claims = await (await fetch('unlocks.json')).json(); } catch { /* no lessons claim any */ }
+  // Teacher override: ?unlock=all shows everything (remembered in this browser); ?unlock=off resets it.
+  const ov = new URLSearchParams(location.search).get('unlock');
+  if (ov) { const p = loadProgress(); p.all = ov === 'all'; try { localStorage.setItem(STORE, JSON.stringify(p)); } catch { /* ignore */ } }
+  const isLocked = (id) => {
+    if (!claims[id]) return false;
+    const p = loadProgress();
+    return !(p.all || (p.unlocked || {})[`${kind}:${id}`]);
+  };
   const btn = document.createElement('button');
   btn.type = 'button'; btn.className = 'btn snippets-toggle'; btn.id = 'snippets-toggle';
   btn.textContent = 'Snippets'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'snippets-panel');
@@ -43,19 +60,33 @@ export async function mountSnippets({ toolbar, textarea, before = null, url = 's
   const panel = document.createElement('div');
   panel.id = 'snippets-panel'; panel.className = 'snippets-panel'; panel.hidden = true;
   panel.setAttribute('role', 'region'); panel.setAttribute('aria-label', 'Snippets');
+  const buttons = [];
   for (const group of data.groups) {
     const det = document.createElement('details');
     const sum = document.createElement('summary'); sum.textContent = group.name; det.append(sum);
     const row = document.createElement('div'); row.className = 'snippet-row';
     for (const item of group.items) {
+      const id = idOf(item.label);
       const b = document.createElement('button');
-      b.type = 'button'; b.className = 'snippet'; b.textContent = item.label; b.title = item.hint || '';
-      b.addEventListener('click', () => { insert(item.code); toggle(false); });
+      b.type = 'button'; b.className = 'snippet'; b.textContent = item.label; b.dataset.id = id;
+      b.addEventListener('click', () => { if (isLocked(id)) return; insert(item.code); toggle(false); });
+      buttons.push([b, id, item]);
       row.append(b);
     }
     det.append(row); panel.append(det);
   }
   toolbar.after(panel);
+
+  function refresh() {
+    for (const [b, id, item] of buttons) {
+      const locked = isLocked(id);
+      b.classList.toggle('locked', locked);
+      b.setAttribute('aria-disabled', String(locked));
+      b.title = locked ? `Unlocks in ${claims[id].lesson}: ${claims[id].step}` : item.hint || '';
+    }
+  }
+  refresh();
+  window.addEventListener('storage', (e) => { if (e.key === STORE) refresh(); }); // a check passed in the lesson page
 
   function insert(code) {
     const p = planInsert(textarea.value, textarea.selectionStart, textarea.selectionEnd, code);

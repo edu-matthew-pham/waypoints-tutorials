@@ -7,7 +7,7 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
 import YAML from 'yaml';
-import { snippetFrom, parseLessonText, validateLessonCore } from './lesson-core.mjs';
+import { snippetFrom, parseLessonText, validateLessonCore, snippetId } from './lesson-core.mjs';
 
 export * from './lesson-core.mjs';
 
@@ -51,4 +51,18 @@ export function loadLessons(only) {
     .filter((l) => !only || l.slug === only || l.slug.endsWith('/' + only));
 }
 
-export function validateLesson(lesson) { return validateLessonCore(lesson, readIn(lesson.dir)); }
+/** Snippet files: { turtle: {...}, html: {...} } (parsed JSON), read from snippets/ in the repo root. */
+export function loadSnippetFiles() {
+  const out = {};
+  for (const kind of ['turtle', 'html']) {
+    const p = resolve('snippets', `${kind}.json`);
+    if (existsSync(p)) out[kind] = JSON.parse(readFileSync(p, 'utf8'));
+  }
+  return out;
+}
+
+export function validateLesson(lesson) {
+  const files = loadSnippetFiles();
+  const known = Object.fromEntries(Object.entries(files).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
+  return validateLessonCore(lesson, readIn(lesson.dir), known);
+}

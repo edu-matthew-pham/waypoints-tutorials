@@ -13,7 +13,8 @@ import { createRequire } from 'node:module';
 import { Marked } from 'marked';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
-import { loadLessons, validateLesson, getSnippet, loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
+import { snippetId, unlockKind } from './lesson-core.mjs';
+import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildHtmlPlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 
@@ -52,6 +53,7 @@ function buildLesson(lesson, parentTitle) {
     snippet: (ref) => getSnippet(lesson.dir, ref),
     clipHtml: (s) => clipHtml(lesson, s),
     tryHtml: (s) => tryHtml(lesson, s),
+    snippetNames,
     crumb: { href: '../', title: parentTitle },
     source: `content/${lesson.slug}/lesson.md`,
   }));
@@ -59,6 +61,9 @@ function buildLesson(lesson, parentTitle) {
 
 // ---------- build ----------
 const lessons = loadLessons();
+const snippetFiles = loadSnippetFiles();
+// kind -> { snippet id -> label } so a check can say what it unlocked by name
+const snippetNames = Object.fromEntries(Object.entries(snippetFiles).map(([k, d]) => [k, Object.fromEntries(d.groups.flatMap((g) => g.items.map((i) => [snippetId(i.label), i.label])))]));
 let bad = 0;
 for (const l of lessons) { const e = validateLesson(l); e.forEach((m) => console.error('✗ ' + m)); bad += e.length; }
 if (bad) process.exit(1);
@@ -67,6 +72,16 @@ mkdirSync(OUT, { recursive: true });
 buildPlayground(OUT);
 buildHtmlPlayground(OUT);
 buildCreate(OUT);
+
+// Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
+for (const [kind, dir] of [['turtle', '_playground'], ['html', '_playground-html']]) {
+  const claims = {};
+  for (const l of lessons) for (const s of l.steps) {
+    if (unlockKind(l, s) !== kind) continue;
+    for (const id of s.config.unlocks || []) claims[id] = { lesson: l.title, step: s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '') };
+  }
+  writeFileSync(join(OUT, dir, 'unlocks.json'), JSON.stringify(claims));
+}
 
 // directory tree: path ('' = root) -> { title, summary, kids: [{name, kind, title, summary}] }
 const dirs = new Map();
@@ -96,7 +111,7 @@ for (const r of REFS) {
   const data = JSON.parse(readFileSync(join('snippets', `${r.file}.json`), 'utf8'));
   const parent = r.path.split('/').slice(0, -1).join('/');
   const body = data.groups.map((g) => `<h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map((i) =>
-    `<div class="ref-item">${codeBlock(highlightCode, i.code.split('‹').join('').split('›').join('').replace(/\n$/, '') + '\n', data.language, '')}<div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p></div></div>`).join('')).join('');
+    `<div class="ref-item">${codeBlock(highlightCode, i.code.split('‹').join('').split('›').join('').replace(/\n$/, '') + '\n', data.language, '')}<div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p><p class="ref-id">id: <code>${snippetId(i.label)}</code></p></div></div>`).join('')).join('');
   mkdirSync(join(OUT, r.path), { recursive: true });
   writeFileSync(join(OUT, r.path, 'index.html'), page(data.title,
     `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`));

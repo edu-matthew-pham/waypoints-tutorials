@@ -1,5 +1,6 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
+import { unlockKind } from './lesson-core.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -57,26 +58,76 @@ details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6
 .legend b{color:var(--c)}
 ul.lessons{list-style:none;padding:0;display:grid;gap:14px}ul.lessons a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;text-decoration:none;color:inherit}
 ul.lessons a:hover{border-color:var(--accent)}ul.lessons b{display:block;font-size:1.15rem}ul.lessons span{color:var(--muted);font-size:15px}
+.check{margin:20px 0 4px;padding:14px 16px;border:1px dashed var(--c);border-radius:10px;background:color-mix(in srgb,var(--c) 6%,transparent)}
+.check legend,.check .check-q{font-weight:600;margin:0 0 8px;padding:0}.check fieldset{border:0;margin:0;padding:0}
+.check label{display:flex;gap:10px;align-items:flex-start;margin:6px 0;cursor:pointer}.check input{margin-top:.35em;accent-color:var(--c)}
+.check button{font:inherit;font-size:14px;margin-top:6px;padding:5px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.check .msg{margin:8px 0 0;font-size:14px;color:var(--muted)}.check .msg.ok{color:var(--run);font-weight:600}.check .msg.no{color:var(--make)}
+.check.done{border-style:solid}
 .ref-group{margin:28px 0 8px;font-size:1.15rem}.ref-item{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr);gap:6px 18px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
-.ref-item .code{margin:0}.ref-item p{margin:0;color:var(--muted);font-size:15px}.ref-item b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.ref-item .code{margin:0}.ref-item .ref-id{font-size:12px;margin-top:2px}.ref-item p{margin:0;color:var(--muted);font-size:15px}.ref-item b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
 @media(max-width:640px){.ref-item{grid-template-columns:1fr}}
 @media print{body{background:#fff;color:#000}.ref-item{break-inside:avoid}}
 footer{margin-top:50px;color:var(--muted);font-size:14px}
 `;
 
 export const JS = `document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
-var t=b.closest('.code').querySelector('code').innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1200)})})});`;
+var t=b.closest('.code').querySelector('code').innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1200)})})});
+(function(){
+var KEY='wp-progress';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+var ov=new URLSearchParams(location.search).get('unlock');
+if(ov){var s0=load();s0.all=ov==='all';save(s0)}
+document.querySelectorAll('.check').forEach(function(box){
+var key=box.dataset.key,kind=box.dataset.kind,ids=(box.dataset.unlocks||'').split(',').filter(Boolean),names=(box.dataset.names||'').split('|');
+var msg=box.querySelector('.msg');
+function pass(){
+var s=load();s.done=s.done||{};s.unlocked=s.unlocked||{};s.done[key]=true;
+ids.forEach(function(id){s.unlocked[kind+':'+id]=true});save(s);show(true)}
+function show(fresh){
+box.classList.add('done');
+if(ids.length){msg.className='msg ok';msg.textContent=(fresh?'Unlocked: ':'Unlocked: ')+names.join(', ')+'. Find '+(names.length>1?'them':'it')+' under Snippets in the playground.'}
+else{msg.className='msg ok';msg.textContent='Got it.'}}
+if((load().done||{})[key])show(false);
+var cb=box.querySelector('input[type=checkbox]');
+if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
+var go=box.querySelector('button');
+if(go){go.addEventListener('click',function(){
+var pick=box.querySelector('input[type=radio]:checked');
+if(!pick){msg.className='msg no';msg.textContent='Choose an answer first.';return}
+if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+(ids.length?' ':'')+msg.textContent}
+else{msg.className='msg no';msg.textContent='Not quite. Look at the code again and try another answer.'}})}
+});
+})();`;
 
 export const page = (title, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><style>${CSS}</style></head><body><div class="wrap">${body}</div><script>${JS}</script></body></html>`;
 
+
+/** The "got it?" box under a step: a tick (reflect) or a short question. Passing it unlocks snippets. */
+export function checkHtml(lesson, step, names = {}) {
+  const k = step.config.check;
+  if (!k) return '';
+  const kind = unlockKind(lesson, step);
+  const ids = step.config.unlocks || [];
+  const label = (id) => names[kind]?.[id] || id.replace(/-/g, ' ');
+  const base = `data-key="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}"`;
+  if (k.type === 'reflect') {
+    return `<div class="check" ${base}><label><input type="checkbox"><span>${esc(k.text)}</span></label><p class="msg" aria-live="polite"></p></div>`;
+  }
+  const name = `q-${lesson.slug}-${step.id}`.replace(/[^a-z0-9-]/gi, '-');
+  return `<div class="check" ${base} data-answer="${k.answer}" data-explain="${esc(k.explain || '')}"><fieldset><legend>${esc(k.q)}</legend>` +
+    k.options.map((o, i) => `<label><input type="radio" name="${name}" value="${i}"><span>${esc(o)}</span></label>`).join('') +
+    `</fieldset><button type="button">Check answer</button><p class="msg" aria-live="polite"></p></div>`;
+}
 
 /**
  * The complete lesson page.
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames } = deps;
   const md = new Marked({
     renderer: { code({ text, lang }) { return codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
@@ -100,7 +151,7 @@ export function lessonPageHtml(lesson, deps) {
     const clip = clipHtml(s);
     const body = md.parse(s.body);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
-    const inner = (c.stage === 'predict' ? `${showCode}${body}${clip}` : `${body}${showCode}${clip}`) + tryHtml(s);
+    const inner = (c.stage === 'predict' ? `${showCode}${body}${clip}` : `${body}${showCode}${clip}`) + tryHtml(s) + checkHtml(lesson, s, snippetNames);
     return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"><div class="chip">${esc(label)}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
 

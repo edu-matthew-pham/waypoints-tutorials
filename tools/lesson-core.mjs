@@ -6,6 +6,13 @@ export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
 export const PLAYGROUND_KINDS = ['turtle', 'html'];
+export const CHECK_TYPES = ['reflect', 'question'];
+
+/** Stable id for a snippet, from its label: "for loop" -> "for-loop". */
+export const snippetId = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+/** Which playground (and so which snippet list) a step's unlocks refer to. */
+export const unlockKind = (lesson, step) => step.config.try?.playground || (lesson.language === 'html' ? 'html' : 'turtle');
 
 export const DEFAULT_PACING = {
   typeCps: 55,        // characters per second when code is "typed" into the stage's code panel
@@ -74,7 +81,8 @@ export function parseLessonText(raw, slug = 'lesson') {
   };
 }
 
-export function validateLessonCore(lesson, read) {
+/** known (optional): { turtle: Set<snippet id>, html: Set<...> } to check `unlocks` ids against. */
+export function validateLessonCore(lesson, read, known) {
   const snip = (ref) => snippetFrom(read, ref);
   const errs = [];
   const err = (where, msg) => errs.push(`${lesson.slug} › ${where}: ${msg}`);
@@ -125,6 +133,24 @@ export function validateLessonCore(lesson, read) {
           try { snip(v.text.slice(1)); } catch (e) { err(w, `type.text: ${e.message}`); }
         }
       });
+    }
+    if (c.check !== undefined) {
+      const k = c.check;
+      if (!k || typeof k !== 'object' || Array.isArray(k) || !CHECK_TYPES.includes(k.type)) err(where, `check.type must be one of ${CHECK_TYPES.join(', ')}`);
+      else if (k.type === 'reflect' && !(typeof k.text === 'string' && k.text.trim())) err(where, 'check (reflect) needs text, e.g. "I can explain why the turtle turns"');
+      else if (k.type === 'question') {
+        if (!(typeof k.q === 'string' && k.q.trim())) err(where, 'check (question) needs q');
+        if (!Array.isArray(k.options) || k.options.length < 2 || !k.options.every((o) => typeof o === 'string')) err(where, 'check (question) needs options: a list of at least two strings');
+        else if (!Number.isInteger(k.answer) || k.answer < 0 || k.answer >= k.options.length) err(where, `check.answer must be the number (from 0) of the correct option, 0 to ${k.options.length - 1}`);
+      }
+    }
+    if (c.unlocks !== undefined) {
+      if (!Array.isArray(c.unlocks) || !c.unlocks.every((u) => typeof u === 'string')) err(where, 'unlocks must be a list of snippet ids');
+      else {
+        if (!c.check) err(where, 'unlocks needs a check (what the student does to earn them)');
+        const ids = known?.[unlockKind(lesson, s)];
+        if (ids) for (const u of c.unlocks) if (!ids.has(u)) err(where, `unknown snippet id "${u}" (see the reference page for ids)`);
+      }
     }
     if (c.reveal && !c.clip) err(where, '"reveal" only makes sense on a step with a clip');
   }

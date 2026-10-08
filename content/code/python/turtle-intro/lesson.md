@@ -37,6 +37,8 @@ Read the code. What shape will the turtle draw? Where will it finish?
 stage: run
 code: square.py#square
 try: { starter: "square.py#square", height: 420 }
+check: { type: reflect, text: "I can explain what forward(100) and right(90) do to the turtle." }
+unlocks: [forward, backward, right, left]
 ```
 
 Run the program and compare it with your prediction.
@@ -53,6 +55,13 @@ clip:
       text: "@square.py#loop"
   - click: Run
   - expect: { selector: "#status", contains: Finished }
+check:
+  type: question
+  q: "How many times does the loop repeat?"
+  options: ["2 times", "4 times", "90 times", "100 times"]
+  answer: 1
+  explain: "Right: range(4) repeats the indented lines 4 times, once for each side."
+unlocks: [for-loop, square-loop]
 ```
 
 The same square, in fewer lines. Which part repeats? What does `range(4)` control?
@@ -62,6 +71,8 @@ The same square, in fewer lines. Which part repeats? What does `range(4)` contro
 ```step
 stage: modify
 try: { starter: "square.py#modify", height: 420 }
+check: { type: reflect, text: "I changed one thing, ran it, and checked the result matched what I expected." }
+unlocks: [pencolor, pensize, circle]
 ```
 
 Change the loop to draw a triangle. Hint: the turtle turns by an exterior angle.

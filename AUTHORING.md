@@ -126,3 +126,31 @@ npm run all        # validate, render, build
 - **`query`** (clip step): extra URL parameters for the app, e.g. `query: { speed: 8, code: "@file.py#region" }`.
 - **`pacing`** (frontmatter or a clip step): override `typeCps`, `keyDelayMs`, `preRollMs`, `postRollMs`, `cursorMs`, `afterActionMs`.
 - `$REPO_ROOT` and `$OUT_DIR` are available to `app.command`.
+
+## 7. Checks and unlockable snippets
+
+Each playground has a collapsible **Snippets** palette (`snippets/turtle.json`, `snippets/html.json`). A snippet
+is locked only if some step claims it with `unlocks`; unclaimed snippets are always available. A step earns its
+unlocks with a `check`, shown under the step:
+
+```yaml
+check: { type: reflect, text: "I can explain what forward(100) does." }   # a tick box
+unlocks: [forward, right]                                                   # snippet ids
+```
+
+```yaml
+check:
+  type: question
+  q: "How many times does the loop repeat?"
+  options: ["2 times", "4 times", "90 times"]
+  answer: 1                         # number of the correct option, counting from 0
+  explain: "Right: range(4) repeats 4 times."
+unlocks: [for-loop]
+```
+
+- A snippet's id is its label in lowercase with dashes ("for loop" becomes `for-loop`); the generated reference
+  pages (`/code/python/reference/`, `/code/html/reference/`) show every id. `npm run validate` rejects unknown ids.
+- The playground a step's `unlocks` refer to is its `try.playground` (default `turtle`, or `html` for `language: html`).
+- Progress is stored in the student's browser only. Question answers are in the page source, so this suits
+  practice, not assessment. Teachers can open any lesson or playground with `?unlock=all` to show everything
+  (remembered in that browser), and `?unlock=off` to switch it back.

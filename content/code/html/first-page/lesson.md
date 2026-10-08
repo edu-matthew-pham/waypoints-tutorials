@@ -36,6 +36,8 @@ Read the code. What will the page show? Which word will look different, and why?
 stage: run
 code: page.html#animal
 try: { playground: html, starter: "page.html#animal", height: 360 }
+check: { type: reflect, text: "I can say which tag made the heading and which made the bold word." }
+unlocks: [h1-heading, p-paragraph, strong-bold]
 ```
 
 Compare the page with your prediction.
@@ -54,6 +56,13 @@ clip:
       text: "@page.html#list"
   - expect: { selector: "#preview-text", contains: "Read more on Wikipedia." }
 try: { playground: html, starter: "page.html#list", height: 380 }
+check:
+  type: question
+  q: "In <a href=\"https://example.com\">Visit</a>, where does the web address go?"
+  options: ["Between the tags, where it says Visit", "In the href part of the opening tag", "In a separate <h1> tag", "It is added by the browser"]
+  answer: 1
+  explain: "Right: href holds the address, and the words between the tags are what people click."
+unlocks: [ul-list, a-link, h2-subheading]
 ```
 
 - Which tag made the bigger heading? What is the difference between `<h1>` and `<h2>`?
@@ -75,6 +84,8 @@ Change the heading, then add a second paragraph. Change one thing at a time and 
 stage: modify
 code: page.html#style
 try: { playground: html, starter: "page.html#style", height: 380 }
+check: { type: reflect, text: "I can explain what the h1 { color: darkgreen; } rule does." }
+unlocks: [style-block, rule, color, background-color]
 ```
 
 The `<style>` block holds **CSS**: `selector { property: value; }`. Change `darkgreen` to another colour, then add a rule that makes the paragraph text bigger with `font-size: 20px;`.

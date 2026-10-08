@@ -46,4 +46,4 @@ $('reset').addEventListener('click', () => { codeEl.value = starter; write(null)
 
 render();
 
-mountSnippets({ toolbar: document.querySelector('.bar'), textarea: codeEl });
+mountSnippets({ kind: 'html', toolbar: document.querySelector('.bar'), textarea: codeEl });

@@ -79,7 +79,8 @@ A step picks one with `try: { playground: html }` (default `turtle`). To record 
 `snippets/turtle.json` and `snippets/html.json` are the single source for two things: the collapsible **Snippets**
 palette in each playground (buttons insert real, editable code at the cursor; `‹text›` marks the part to select
 and change), and the generated cheat sheets at `/code/python/reference/` and `/code/html/reference/`.
-Each snippet needs a `label`, `code` and `hint`; `npm run validate` checks them.
+Each snippet needs a `label`, `code` and `hint`; `npm run validate` checks them. Lesson steps can lock snippets
+until the student passes a check (a tick box or a short question); see AUTHORING.md section 7. Progress is per browser.
 
 ## Create a lesson in the browser
 

@@ -87,4 +87,4 @@ resetBtn.addEventListener('click', () => {
   window.__playground.output = ''; window.__playground.error = null;
 });
 
-mountSnippets({ toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed') });
+mountSnippets({ kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed') });

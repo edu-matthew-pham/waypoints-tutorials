@@ -7,3 +7,5 @@
 .snippet { font: 12.5px ui-monospace, Menlo, Consolas, monospace; padding: 3px 9px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
 .snippet:hover { border-color: var(--accent); }
 .snippet:focus-visible, .snippets-panel summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.snippet.locked { opacity: .5; cursor: not-allowed; border-style: dashed; }
+.snippet.locked::after { content: ' 🔒'; font-size: 11px; }
