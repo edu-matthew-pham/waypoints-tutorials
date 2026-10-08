@@ -47,9 +47,6 @@ var $builtinmodule = function (name) {
     reset: function () { T.reset(); },
     dot: function (s, c) { T.dot(s === undefined || s === null ? 10 : s, c); },
     write: function (t, move, align, font) { T.write(t, Array.isArray(font) && font[1] ? font[1] : 14); },
-    done: function () {},
-    mainloop: function () {},
-    exitonclick: function () {},
     shape: function () {},
     title: function () {},
     tracer: function () {},
@@ -74,6 +71,46 @@ var $builtinmodule = function (name) {
   // Skulpt mangles Python names that are reserved JS words ("goto" is one) with a suffix.
   var pyName = function (k) { return k === 'goto' ? 'goto_$rw$' : k; };
   mod[pyName('goto')] = mod.goto;
+
+  // ---- events and input: onscreenclick(fn), onkey(fn, key), ontimer(fn, ms), listen(), mainloop() ----
+  var py = function (f) { return new Sk.builtin.func(f); };
+  mod.onscreenclick = mod.onclick = py(function (fn) { T.ev.click = fn === NONE ? null : fn; return NONE; });
+  mod.onkey = mod.onkeypress = py(function (fn, key) { var k = js(key); if (fn === NONE) delete T.ev.keys[k]; else T.ev.keys[k] = fn; return NONE; });
+  mod.onkeyrelease = py(function () { return NONE; });
+  mod.listen = py(function () { return NONE; });
+  mod.ontimer = py(function (fn, ms) { T.addTimer(fn, ms === undefined ? 0 : js(ms)); return NONE; });
+  // mainloop() / done(): if handlers exist, stay alive and run them one at a time until Stop is pressed.
+  var pump = function () {
+    var ev = T.ev;
+    return (async function () {
+      while (true) {
+        if (T.stopped) throw new Error('Stopped');
+        var item = ev.queue.shift();
+        if (!item) {
+          if (!T.hasEvents) return NONE;
+          await new Promise(function (r) { ev.wake = r; setTimeout(r, 100); });
+          ev.wake = null;
+          continue;
+        }
+        await Sk.misceval.callsimAsync({ '*': function () { T.check(); } }, item.fn, ...item.args.map(num));
+      }
+    })();
+  };
+  var loop = py(function () {
+    if (!T.hasEvents) return NONE;
+    return Sk.misceval.promiseToSuspension(pump().then(function () { return NONE; }));
+  });
+  mod.mainloop = mod.done = mod.exitonclick = loop;
+  var ask = function (kind) {
+    return py(function (title, prompt) {
+      var t = js(title), p = prompt === undefined ? t : js(prompt);
+      var v = window.prompt(p);
+      if (v === null) return NONE;
+      if (kind === 'num') { var n = parseFloat(v); return isNaN(n) ? NONE : num(n); }
+      return new Sk.builtin.str(v);
+    });
+  };
+  mod.textinput = ask('text'); mod.numinput = ask('num');
 
   // colours: pencolor(c) / pencolor(r,g,b), fillcolor, color(pen[, fill])
   var colorFn = function (setter) {
@@ -123,7 +160,9 @@ var $builtinmodule = function (name) {
           return Sk.misceval.callsimOrSuspendArray(f, rest);
         });
       });
-      $loc.exitonclick = $loc.mainloop = $loc.done = new Sk.builtin.func(function () { return NONE; });
+      ['onscreenclick', 'onclick', 'onkey', 'onkeypress', 'onkeyrelease', 'listen', 'ontimer', 'mainloop', 'done', 'exitonclick', 'textinput', 'numinput'].forEach(function (k) {
+        $loc[k] = new Sk.builtin.func(function (self) { return Sk.misceval.callsimOrSuspendArray(mod[k], Array.prototype.slice.call(arguments, 1)); });
+      });
     }, clsName, []);
   };
   mod.Turtle = handleClass('Turtle');

@@ -165,7 +165,7 @@ function paint(res){ul.replaceChildren();res.forEach(function(r){var li=document
 var done0=(load().done||{})[key];paint(evalRules(rules,'').map(function(r){return {label:r.label,ok:!!done0}}));
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==(box.dataset.play||key))return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
 var res=evalRules(rules,m.code||'');paint(res);
-if(res.every(function(r){return r.ok})&&m.status==='done'){pass()}
+if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
 else{msg.className='msg';msg.textContent=m.status==='done'?'Not quite yet. Change your code, then run it again.':'Fix the error, then run it again.'}})}
 var cb=box.querySelector('input[type=checkbox]');
 if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
@@ -199,7 +199,7 @@ if(ty==='parsons'){parsons(box,win,bad)}
 });
 document.querySelectorAll('.compare').forEach(function(c){var pk=c.dataset.predict;
 function mine(){try{return (JSON.parse(localStorage.getItem('wp-predict'))||{})[pk]}catch(e){return undefined}}
-window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==c.dataset.play||m.status!=='done')return;
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==c.dataset.play||m.status!=='done'&&m.status!=='stopped')return;
 var v=mine();c.replaceChildren();
 function line(label,text){var p=document.createElement('p');var b=document.createElement('b');b.textContent=label+' ';p.appendChild(b);p.appendChild(document.createTextNode(text));c.appendChild(p)}
 if(v===undefined||v===null){line('No prediction locked in.','Go back to the Predict step if you want to compare next time.')}

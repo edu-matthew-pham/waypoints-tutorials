@@ -24,8 +24,20 @@ export class CanvasTurtle {
     this.onUpdate = onUpdate || (() => {});
     this.speed = 5;            // 1 (slow) .. 10 (fast); 0 or > 10 = no animation
     this.dpr = window.devicePixelRatio || 1;
+    this.ev = { click: null, keys: {}, timers: new Set(), queue: [], wake: null };
     this.resetAll();
     this.resize();
+    // Events for onscreenclick / onkey: queued here, run by mainloop() in the Python bridge.
+    canvas.addEventListener('click', (e) => {
+      const r = canvas.getBoundingClientRect();
+      if (this.ev.click) this.pushEvent(this.ev.click, [(e.clientX - r.left - this.w / 2) / this.scale, -(e.clientY - r.top - this.h / 2) / this.scale]);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.target && /^(TEXTAREA|INPUT|SELECT)$/.test(e.target.tagName) || e.ctrlKey || e.metaKey || e.altKey) return;
+      const name = e.key === ' ' ? 'space' : e.key.replace(/^Arrow/, '');
+      const fn = this.ev.keys[name] || this.ev.keys[name.toLowerCase()];
+      if (fn) { e.preventDefault(); this.pushEvent(fn, []); }
+    });
     new ResizeObserver(() => this.resize()).observe(canvas.parentElement || canvas);
   }
 
@@ -38,12 +50,29 @@ export class CanvasTurtle {
     this.segments = []; this.fills = []; this.dots = []; this.texts = [];
     this.filling = false; this.fillVertices = [];
     this.stopped = false; this.skipping = false;
+    this.clearEvents();
     this.draw(); this.emit();
   }
 
+  // ---------- events (onscreenclick, onkey, ontimer) ----------
+  clearEvents() {
+    if (!this.ev) return;
+    this.ev.timers.forEach((t) => clearTimeout(t));
+    Object.assign(this.ev, { click: null, keys: {}, timers: new Set(), queue: [], wake: null });
+  }
+  pushEvent(fn, args) {
+    if (this.ev.queue.length < 20) this.ev.queue.push({ fn, args }); // drop a flood of key repeats
+    if (this.ev.wake) this.ev.wake();
+  }
+  addTimer(fn, ms) {
+    const id = setTimeout(() => { this.ev.timers.delete(id); this.pushEvent(fn, []); }, Math.max(0, ms));
+    this.ev.timers.add(id);
+  }
+  get hasEvents() { return !!(this.ev.click || Object.keys(this.ev.keys).length || this.ev.timers.size || this.ev.queue.length); }
+
   /** Called at the start of every run: keeps the picture settings but clears flags. */
   beginRun() { this.stopped = false; this.skipping = false; }
-  stop() { this.stopped = true; }
+  stop() { this.stopped = true; if (this.ev && this.ev.wake) this.ev.wake(); }
   finish() { this.skipping = true; }
 
   get state() {

@@ -11,9 +11,18 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 ## Teaching decisions
 - PRIMM: Predict (lock in, compare after Run), Run, Investigate, Modify, Make. Investigate tools must follow the lesson insight. Several tasks per step show as sub-pills only when more than one.
 - Real-world content is a small complete example students Modify (the heading names the task). Make is an explicit task. Large projects belong to the teacher (For teachers panel).
-- Foundations first, spiral curriculum, mastery shown by repeated use. Order: 1 intro, 2 variables, 3 decisions, 4 lists, 5 functions, 6 parameters, 7 returns, 8 modules.
+- Foundations first, spiral curriculum, mastery shown by repeated use. Order: 1 intro, 2 variables, 3 decisions, 4 lists, 5 functions, 6 parameters, 7 returns, 8 modules, 9 events, 10 build a button.
 - Progress is per-browser localStorage only; no class tracking.
 - Series plan (see ROADMAP): turtle core, events and hand-built widgets, checkpoint, console bridge, then a fork: deepen Python, or Gradio (data/ML) or microStudio (games). Pygame parked.
+
+## Playground runtime
+- The turtle playground is our own Skulpt bridge (`playground/skulpt-bridge.js`) plus a canvas renderer (`playground/canvas-turtle.js`), not Skulpt's turtle.
+- Events: `onscreenclick`, `onkey`, `ontimer`, `listen`, `textinput`, `numinput`. `mainloop()`/`done()` waits for events until Stop; with nothing registered it returns at once. Code checks and the Run-step compare box accept a Stopped run. Keys need the picture clicked first.
+- `predict` check: a locked prediction is stored in `wp-predict`; the next Run step shows it beside the real result.
+
+## Open design decisions (details in ROADMAP.md)
+- Hidden-assumptions audit: `assumes`/`introduces` lint plus better in-lesson scaffolds; no "Before you start" card.
+- Next: checkpoint task, return visit to lists and `if` in functions, console bridge, nicer input UI than `window.prompt`, then the Gradio and microStudio paths.
 
 ## Layout
 - `content/<path>/<lesson>/lesson.md` plus code files with `# region: name` blocks. Frontmatter: title, summary, order, hook, teachers, author, language, modules, app, pacing.

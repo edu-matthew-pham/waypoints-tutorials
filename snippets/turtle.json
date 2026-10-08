@@ -177,6 +177,36 @@
      "hint": "Pick a random whole number between two values."
     }
    ]
+  },
+  {
+   "name": "Events and input",
+   "items": [
+    {
+     "label": "onscreenclick",
+     "code": "def ‹stamp›(x, y):\n    goto(x, y)\n    dot(‹20›)\n\nonscreenclick(‹stamp›)\nlisten()\nmainloop()\n",
+     "hint": "Run a function every time the picture is clicked. It receives the click position."
+    },
+    {
+     "label": "onkey",
+     "code": "def ‹go_up›():\n    forward(‹20›)\n\nonkey(‹go_up›, \"‹Up›\")\nlisten()\nmainloop()\n",
+     "hint": "Run a function every time a key is pressed. Click the picture first so it receives keys."
+    },
+    {
+     "label": "ontimer",
+     "code": "def ‹tick›():\n    forward(‹5›)\n    ontimer(‹tick›, ‹50›)\n\n‹tick›()\nmainloop()\n",
+     "hint": "Run a function again after a number of milliseconds. A function can start its own timer."
+    },
+    {
+     "label": "numinput",
+     "code": "‹n› = numinput(\"‹Title›\", \"‹How many?›\")\n",
+     "hint": "Ask for a number in a pop-up. The answer is None if the pop-up is cancelled."
+    },
+    {
+     "label": "textinput",
+     "code": "‹name› = textinput(\"‹Title›\", \"‹Your name?›\")\n",
+     "hint": "Ask for text in a pop-up."
+    }
+   ]
   }
  ]
 }
