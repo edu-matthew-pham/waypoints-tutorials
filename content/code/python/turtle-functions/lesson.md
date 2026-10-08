@@ -1,4 +1,5 @@
 ---
+order: 2
 title: Variables, functions and your own tools
 summary: Name a value, name a whole shape, turn it into a button, then collect related functions in a module.
 language: python

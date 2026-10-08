@@ -92,7 +92,7 @@ const dirNode = (path) => {
   if (!dirs.has(path)) {
     const meta = loadDirMeta(join(CONTENT_ROOT, path));
     const name = path.split('/').pop() || 'Lessons';
-    dirs.set(path, { path, title: meta.title || titleCase(name), summary: meta.summary || '', kids: new Map() });
+    dirs.set(path, { path, title: meta.title || titleCase(name), summary: meta.summary || '', order: Number.isFinite(Number(meta.order)) && meta.order != null ? Number(meta.order) : null, kids: new Map() });
   }
   return dirs.get(path);
 };
@@ -100,10 +100,10 @@ for (const l of lessons) {
   const segs = l.slug.split('/');
   for (let i = 0; i < segs.length; i++) {
     const parent = dirNode(segs.slice(0, i).join('/'));
-    if (i === segs.length - 1) parent.kids.set(segs[i], { kind: 'lesson', title: l.title, summary: l.summary });
+    if (i === segs.length - 1) parent.kids.set(segs[i], { kind: 'lesson', title: l.title, summary: l.summary, order: l.order });
     else if (!parent.kids.has(segs[i])) {
       const child = dirNode(segs.slice(0, i + 1).join('/'));
-      parent.kids.set(segs[i], { kind: 'dir', title: child.title, summary: child.summary });
+      parent.kids.set(segs[i], { kind: 'dir', title: child.title, summary: child.summary, order: child.order });
     }
   }
 }
@@ -127,7 +127,7 @@ for (const node of dirs.values()) {
   const parentPath = node.path.split('/').slice(0, -1).join('/');
   const crumb = isRoot ? '' : `<a class="crumb" href="../">← ${esc(dirNode(parentPath).title)}</a>`;
   const ref = REFS.find((r) => r.path === `${node.path}/reference`);
-  const items = (ref ? `<li><a href="reference/"><b>Reference</b><span>Every command and tag in the playground, with what it does.</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].map(([name, k]) => `<li><a href="${esc(name)}/"><b>${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
+  const items = (ref ? `<li><a href="reference/"><b>Reference</b><span>Every command and tag in the playground, with what it does.</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
   const outDir = join(OUT, node.path);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,

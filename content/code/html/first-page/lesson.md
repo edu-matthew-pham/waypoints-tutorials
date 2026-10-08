@@ -1,4 +1,5 @@
 ---
+order: 1
 title: Your first web page
 summary: Predict, run and change a short page, then style it with CSS.
 language: html

@@ -212,3 +212,7 @@ clip:
 ```
 
   `view=output` shows only the drawing and `autorun=1` runs the program when the page loads.
+
+### Ordering lessons
+
+Add `order: 1` (a number) to a lesson's frontmatter. Index pages list lessons by `order`, show it as "1. Title", and put unnumbered lessons after the numbered ones, alphabetically. A folder's `index.md` can have `order` too (folders are sorted but not numbered).

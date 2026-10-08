@@ -1,4 +1,5 @@
 ---
+order: 1
 title: Drawing with a turtle
 summary: Predict, run and change short Python programs that draw shapes.
 language: python

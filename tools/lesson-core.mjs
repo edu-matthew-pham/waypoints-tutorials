@@ -80,6 +80,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     title: meta.title || slug,
     summary: meta.summary || '',
     author: meta.author ? String(meta.author) : '',
+    order: Number.isFinite(Number(meta.order)) && meta.order !== null && meta.order !== '' ? Number(meta.order) : null,
     hook: meta.hook ? String(meta.hook).trim() : '',
     teachers: meta.teachers ? String(meta.teachers).trim() : '',
     modules: Array.isArray(meta.modules) ? meta.modules.map(String) : [],

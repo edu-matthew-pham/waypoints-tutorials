@@ -1,4 +1,5 @@
 ---
+order: 1
 title: Intro to Gradio
 summary: Turn a Python function into a web app you can click, in five short PRIMM steps.
 language: python
