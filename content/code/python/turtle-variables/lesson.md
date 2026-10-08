@@ -41,28 +41,68 @@ Run it and compare it with your prediction.
 ```step
 stage: investigate
 code: variables.py#print
-try: { starter: "variables.py#print", height: 420 }
-check:
-  type: question
-  q: "If sides = 6, what is angle?"
-  options: ["45", "60", "72", "90"]
-  answer: 1
-  explain: "360 / 6 = 60. The turtle turns 60 degrees at each corner, six times, and makes one full turn of 360."
+insight: "A variable is a named value: you can follow how it is used, find where it goes wrong, and change it in one place."
+tasks:
+  - check:
+      type: trace
+      text: "sides = 5, so angle is 72. Fill in how many degrees the turtle has turned in total after each corner."
+      table: |
+        | corner | turned so far |
+        | 0 | 72 |
+        | 1 | [144] |
+        | 2 | [216] |
+        | 3 | [288] |
+        | 4 | [360] |
+      explain: "Every corner adds 72, and after 5 corners the turtle has made one full turn."
+  - check:
+      type: number
+      q: "If sides = 6, what is angle?"
+      answer: 60
+      explain: "360 / 6 = 60, so the turtle turns 60 degrees at each corner."
+  - check:
+      type: bug
+      code: variables.py#bug
+      text: "This program should draw a 5-sided shape, but it does not close. Click the wrong line."
+      answer: 5
+      explain: "angle = 360 * sides is too big. To split one full turn between the corners it should be 360 / sides."
 ```
 
-`print(angle)` shows a value under the drawing. Change `sides` and watch what `angle` becomes. Why does it always add up to a full turn?
+`print(angle)` shows a value under the drawing. Change `sides` and watch what `angle` becomes.
+
+### Trace the corners
+
+Follow the turtle round the shape.
+
+### Calculate the angle
+
+Work out `angle` yourself before you check.
+
+### Spot the bug
+
+Here is a version where something is wrong.
 
 ## Modify
 
 ```step
 stage: modify
+insight: "Changing the program through a variable is safer than changing many numbers: one edit, whole shape updated."
 try: { starter: "variables.py#modify", height: 420 }
-hint:
-  - "You should only need to change one number. Which variable controls the number of sides?"
-check: { type: reflect, text: "I changed one variable and the whole shape updated." }
+tasks:
+  - hint: "You should only need to change one number. Which variable controls the number of sides?"
+    check: { type: reflect, text: "I changed one variable and the whole shape updated." }
+  - hint:
+      - "A variable can hold text as well as numbers, for example a colour in quotes."
+      - "Give the colour a name at the top, then use that name inside pencolor( )."
+    check: { type: code, text: "Store a colour in a variable and use it with pencolor.", rules: { uses: [pencolor] } }
 ```
 
-Draw a hexagon, then a 12-sided shape. Compare this with changing every `forward` and `right` by hand.
+### Draw a hexagon, then a 12-sided shape
+
+Change one number at the top and run it each time.
+
+### Choose the colour with a variable
+
+Add a variable for the pen colour and use it.
 
 ## Make
 

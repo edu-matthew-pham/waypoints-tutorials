@@ -1,6 +1,6 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
-import { unlockKind, evalRules } from './lesson-core.mjs';
+import { unlockKind, evalRules, parseTrace } from './lesson-core.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -74,6 +74,29 @@ details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;pad
 details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 details.hints summary{cursor:pointer;font-weight:600;padding:10px 0}
 details.hints[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
+.tasks{margin:14px 0}
+.taskpills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.taskpills .tp{font:inherit;font-size:14px;font-weight:600;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.taskpills .tp i{width:10px;height:10px;border-radius:50%;border:2px solid var(--c)}.taskpills .tp.done i{background:var(--c)}
+.taskpills .tp.active{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.tpanel{display:none}.tpanel.active{display:block}
+.tmsg{margin:8px 0 0;font-size:14px;font-weight:600;color:var(--run)}
+.resetstart{font:inherit;font-size:13px;margin:6px 0;padding:4px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
+nav.steps a .cnt{font-weight:500;color:var(--muted);margin-left:5px}
+.buglines{margin:6px 0;padding:0 0 0 2.2em;background:var(--code);border-radius:10px;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;list-style:decimal;color:var(--com)}
+.buglines li{padding-right:6px}.check .buglines button{display:block;width:100%;margin:0;padding:0 8px;border:0;border-radius:6px;background:none;text-align:left;color:var(--codeink);cursor:pointer}
+.check .buglines button:hover{background:rgba(255,255,255,.1)}.check .buglines button.no{background:rgba(255,100,100,.25)}.check .buglines button.yes{background:rgba(74,222,128,.28)}
+.buglines code{white-space:pre;font:inherit}
+.mrow{display:flex;gap:10px;align-items:center;margin:6px 0;flex-wrap:wrap}.mrow span{flex:1 1 180px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}.mrow select{font:inherit;font-size:14px;padding:4px 6px;border-radius:6px;max-width:100%}
+.mrow select.ok{outline:2px solid var(--run)}.mrow select.no{outline:2px solid var(--make)}
+.tscroll{overflow-x:auto}.trace{border-collapse:collapse;margin:8px 0;font:14px ui-monospace,Menlo,Consolas,monospace}.trace th,.trace td{border:1px solid var(--line);padding:4px 10px;text-align:center}.trace th{background:var(--card)}
+.trace input{width:5em;font:inherit;text-align:center;padding:3px;border-radius:4px;border:1px solid var(--line)}.trace input.ok{outline:2px solid var(--run)}.trace input.no{outline:2px solid var(--make)}
+.numrow input{font:inherit;padding:5px 8px;border-radius:6px;border:1px solid var(--line);width:9em}
+.parsons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}@media(max-width:620px){.parsons{grid-template-columns:1fr}}
+.pcol b{font-size:13px;color:var(--muted)}.pcol ul,.pcol ol{margin:4px 0;padding:0;list-style:none;min-height:3em;border:1px dashed var(--line);border-radius:10px;padding:6px}
+.pcol li{display:flex;align-items:center;gap:6px;margin:3px 0;background:var(--code);border-radius:6px;padding:2px 6px}.pcol code{flex:1;white-space:pre;color:var(--codeink);font:13px ui-monospace,Menlo,Consolas,monospace;overflow-x:auto}
+.check .pcol button{margin:0;padding:1px 8px;border-radius:6px;font-size:13px}.check .pcol button.piece{flex:1;text-align:left;background:none;border:0;padding:0}.pprog li[draggable=true]{cursor:grab}
+details.insights{margin:10px 0}
 details.teachers{margin:28px 0 0;border:1px solid var(--line);border-radius:8px;padding:0 16px}
 details.teachers summary{cursor:pointer;font-weight:600;padding:12px 0}
 .hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
@@ -118,12 +141,19 @@ function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){re
 function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
 var ov=new URLSearchParams(location.search).get('unlock');
 if(ov){var s0=load();s0.all=ov==='all';save(s0)}
+function sync(wrap){var s=load(),d=s.done||{},keys=(wrap.dataset.keys||'').split('|').filter(Boolean),n=0;keys.forEach(function(k){if(d[k])n++});
+[].forEach.call(wrap.querySelectorAll('.tp'),function(p){p.classList.toggle('done',!!d[p.dataset.key])});
+var cnt=document.querySelector('nav.steps a[href="#'+wrap.dataset.step+'"] .cnt');if(cnt)cnt.textContent=keys.length?n+'/'+keys.length:'';
+var tm=wrap.querySelector('.tmsg');
+if(keys.length&&n===keys.length){var ids=(wrap.dataset.unlocks||'').split(',').filter(Boolean);
+if(!d[wrap.dataset.stepkey]){s.done=s.done||{};s.done[wrap.dataset.stepkey]=true;s.unlocked=s.unlocked||{};ids.forEach(function(id){s.unlocked[wrap.dataset.kind+':'+id]=true});save(s)}
+tm.textContent='All tasks done.'+(ids.length?' Unlocked: '+(wrap.dataset.names||'').split('|').join(', ')+'.':'')}else{tm.textContent=''}}
 document.querySelectorAll('.check').forEach(function(box){
 var key=box.dataset.key,kind=box.dataset.kind,ids=(box.dataset.unlocks||'').split(',').filter(Boolean),names=(box.dataset.names||'').split('|');
-var msg=box.querySelector('.msg');
+var msg=box.querySelector('.msg');var wrap=box.closest('.tasks'),ty=box.dataset.type||'';
 function pass(){
 var s=load();s.done=s.done||{};s.unlocked=s.unlocked||{};s.done[key]=true;
-ids.forEach(function(id){s.unlocked[kind+':'+id]=true});save(s);show(true)}
+ids.forEach(function(id){s.unlocked[kind+':'+id]=true});save(s);show(true);if(wrap)sync(wrap)}
 function show(fresh){
 box.classList.add('done');
 if(ids.length){msg.className='msg ok';msg.textContent=(fresh?'Unlocked: ':'Unlocked: ')+names.join(', ')+'. Find '+(names.length>1?'them':'it')+' under Snippets in the playground.'}
@@ -132,43 +162,116 @@ if((load().done||{})[key])show(false);
 if(box.dataset.type==='code'){var rules=JSON.parse(box.dataset.rules),ul=box.querySelector('.rules');
 function paint(res){ul.replaceChildren();res.forEach(function(r){var li=document.createElement('li');li.textContent=r.label;if(r.ok)li.className='ok';ul.appendChild(li)})}
 var done0=(load().done||{})[key];paint(evalRules(rules,'').map(function(r){return {label:r.label,ok:!!done0}}));
-window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==key)return;
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==(box.dataset.play||key))return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
 var res=evalRules(rules,m.code||'');paint(res);
 if(res.every(function(r){return r.ok})&&m.status==='done'){pass()}
 else{msg.className='msg';msg.textContent=m.status==='done'?'Not quite yet. Change your code, then run it again.':'Fix the error, then run it again.'}})}
 var cb=box.querySelector('input[type=checkbox]');
 if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
-var go=box.querySelector('button');
+var go=ty==='question'?box.querySelector('button'):null;
 if(go){go.addEventListener('click',function(){
 var pick=box.querySelector('input[type=radio]:checked');
 if(!pick){msg.className='msg no';msg.textContent='Choose an answer first.';return}
 if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+(ids.length?' ':'')+msg.textContent}
 else{msg.className='msg no';msg.textContent='Not quite. Look at the code again and try another answer.'}})}
+function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+(ids.length?' ':'')+msg.textContent}
+function bad(t){msg.className='msg no';msg.textContent=t}
+var btn=box.querySelector('button');
+if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(box.querySelector('input').value);if(isNaN(v))return bad('Type a number first.');
+if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad('Not quite. Look at the code again and try another number.')})}
+if(ty==='bug'){var good=JSON.parse(box.dataset.answers);[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
+var n=Number(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';win()}else{b.className='no';bad('Not that line. Read the code again, one line at a time.')}})})}
+if(ty==='match'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
+[].forEach.call(box.querySelectorAll('select'),function(sel,i){var ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false});
+if(all)win();else bad('Some do not match yet. Check the ones outlined in red.')})}
+if(ty==='trace'&&btn){btn.addEventListener('click',function(){var all=true;
+[].forEach.call(box.querySelectorAll('input.tcell'),function(inp){var a=inp.dataset.answer,v=inp.value.trim(),ok=v!==''&&(v===a||(!isNaN(Number(v))&&!isNaN(Number(a))&&Number(v)===Number(a)));inp.className='tcell '+(ok?'ok':'no');if(!ok)all=false});
+if(all)win();else bad('Some cells are not right yet. Trace the code again, one step at a time.')})}
+if(ty==='parsons'){parsons(box,win,bad)}
 });
+function parsons(box,win,bad){var lines=JSON.parse(box.dataset.lines),extra=JSON.parse(box.dataset.extra||'[]');
+var pool=box.querySelector('.ppool'),prog=box.querySelector('.pprog'),inProg=[];
+var all=lines.concat(extra).map(function(t,i){return {t:t,i:i}});
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a}
+var order=shuffle(all),tries=0;
+while(tries++<8&&JSON.stringify(order.slice(0,lines.length).map(function(o){return o.t}))===JSON.stringify(lines))order=shuffle(all);
+function code(t){var c=document.createElement('code');c.textContent=t;return c}
+function draw(){pool.replaceChildren();prog.replaceChildren();
+order.filter(function(o){return inProg.indexOf(o)<0}).forEach(function(o){var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.className='piece';b.title='Add to your program';b.appendChild(code(o.t));b.addEventListener('click',function(){inProg.push(o);draw()});li.appendChild(b);pool.appendChild(li)});
+inProg.forEach(function(o,n){var li=document.createElement('li');li.draggable=true;li.appendChild(code(o.t));
+[['\u2191',-1,'Move up'],['\u2193',1,'Move down'],['\u00d7',0,'Remove']].forEach(function(a){var b=document.createElement('button');b.type='button';b.textContent=a[0];b.setAttribute('aria-label',a[2]);
+b.addEventListener('click',function(){if(a[1]===0)inProg.splice(n,1);else{var m=n+a[1];if(m<0||m>=inProg.length)return;var t=inProg[n];inProg[n]=inProg[m];inProg[m]=t}draw()});li.appendChild(b)});
+li.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain',String(n))});li.addEventListener('dragover',function(e){e.preventDefault()});
+li.addEventListener('drop',function(e){e.preventDefault();var f=Number(e.dataTransfer.getData('text/plain'));if(isNaN(f)||f===n)return;var t=inProg.splice(f,1)[0];inProg.splice(n,0,t);draw()});
+prog.appendChild(li)})}
+draw();
+box.querySelector('.pcheck').addEventListener('click',function(){if(JSON.stringify(inProg.map(function(o){return o.t}))===JSON.stringify(lines))win();else bad(inProg.length<lines.length?'Keep going: some lines are still in the pieces list, or not needed.':'Not in the right order yet. Read your program top to bottom and picture what it does.')});
+box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw()})}
+[].forEach.call(document.querySelectorAll('.tasks'),function(w){
+[].forEach.call(w.querySelectorAll('.tp'),function(p){p.addEventListener('click',function(){var i=p.dataset.i;
+[].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))})})});
+[].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=w.querySelector('iframe');if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
+sync(w)});
 })();`;
 
 export const page = (title, body, scripts = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><style>${CSS}</style></head><body><div class="wrap">${body}</div><script>${JS}</script>${scripts}</body></html>`;
 
 
-/** The "got it?" box under a step: a tick (reflect) or a short question. Passing it unlocks snippets. */
-export function checkHtml(lesson, step, names = {}) {
-  const k = step.config.check;
+// A repeatable shuffle (so the page is the same on every build): used for match options.
+const seeded = (seed) => { let h = 7; for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return () => { h = (h * 1664525 + 1013904223) >>> 0; return h / 4294967296; }; };
+const shuffled = (arr, seed) => { const r = seeded(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+/**
+ * The "got it?" box under a step, or under one of its tasks: a tick (reflect), a question, a number, a code rule,
+ * a line to click (bug), pairs (match), a trace table or lines to order (parsons). Passing it unlocks snippets.
+ * snippet(ref) reads code for bug and parsons checks.
+ */
+export function checkHtml(lesson, step, names = {}, snippet = null, task = null) {
+  const k = task ? task.config.check : step.config.check;
   if (!k) return '';
   const kind = unlockKind(lesson, step);
-  const ids = step.config.unlocks || [];
+  const ids = (task ? task.config.unlocks : step.config.unlocks) || [];
   const label = (id) => names[kind]?.[id] || id.replace(/-/g, ' ');
-  const base = `data-key="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}"`;
+  const key = `${lesson.slug}/${task ? task.id : step.id}`;
+  const base = `data-key="${esc(key)}" data-play="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(k.explain || '')}"`;
+  const msg = '<p class="msg" aria-live="polite"></p>';
   if (k.type === 'reflect') {
-    return `<div class="check" ${base}><label><input type="checkbox"><span>${esc(k.text)}</span></label><p class="msg" aria-live="polite"></p></div>`;
+    return `<div class="check" ${base}><label><input type="checkbox"><span>${esc(k.text)}</span></label>${msg}</div>`;
   }
   if (k.type === 'code') {
-    return `<div class="check" ${base} data-type="code" data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"></ul><p class="msg" aria-live="polite">Run your program. This ticks when your code does all of the above.</p></div>`;
+    return `<div class="check" ${base} data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"></ul><p class="msg" aria-live="polite">Run your program. This ticks when your code does all of the above.</p></div>`;
   }
-  const name = `q-${lesson.slug}-${step.id}`.replace(/[^a-z0-9-]/gi, '-');
-  return `<div class="check" ${base} data-answer="${k.answer}" data-explain="${esc(k.explain || '')}"><fieldset><legend>${esc(k.q)}</legend>` +
+  if (k.type === 'number') {
+    return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"><p class="check-q">${esc(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
+  }
+  if (k.type === 'bug') {
+    const lines = (snippet ? snippet(k.code) : '').replace(/\n$/, '').split('\n');
+    const ans = Array.isArray(k.answer) ? k.answer : [k.answer];
+    return `<div class="check" ${base} data-answers="${esc(JSON.stringify(ans))}"><p class="check-q">${esc(k.text || 'Click the line that has the bug.')}</p><ol class="buglines">${lines.map((l, i) => `<li><button type="button" data-line="${i + 1}"><code>${esc(l) || ' '}</code></button></li>`).join('')}</ol>${msg}</div>`;
+  }
+  if (k.type === 'match') {
+    const rights = shuffled(k.pairs.map((p) => p[1]), key);
+    const opts = `<option value="">Choose…</option>` + rights.map((r) => `<option value="${esc(r)}">${esc(r)}</option>`).join('');
+    return `<div class="check" ${base} data-answers="${esc(JSON.stringify(k.pairs.map((p) => p[1])))}"><p class="check-q">${esc(k.q || 'Match each item with what it does.')}</p>` +
+      k.pairs.map((p) => `<div class="mrow"><span>${esc(p[0])}</span><select aria-label="${esc(p[0])}">${opts}</select></div>`).join('') + `<button type="button">Check answers</button>${msg}</div>`;
+  }
+  if (k.type === 'trace') {
+    const t = parseTrace(k.table);
+    const head = t.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('');
+    const rows = t.rows.map((r, ri) => `<tr>${r.map((c, ci) => c.blank ? `<td><input class="tcell" data-answer="${esc(c.v)}" inputmode="decimal" aria-label="Row ${ri + 1}, ${esc(t.head[ci])}"></td>` : `<td>${esc(c.v)}</td>`).join('')}</tr>`).join('');
+    return `<div class="check" ${base}><p class="check-q">${esc(k.text || 'Fill in the missing values.')}</p><div class="tscroll"><table class="trace"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div><button type="button">Check table</button>${msg}</div>`;
+  }
+  if (k.type === 'parsons') {
+    const lines = (snippet ? snippet(k.code) : '').replace(/\n$/, '').split('\n').filter((l) => l.trim());
+    return `<div class="check" ${base} data-lines="${esc(JSON.stringify(lines))}" data-extra="${esc(JSON.stringify(k.extra || []))}"><p class="check-q">${esc(k.text || 'Put the lines in order to make the program work.')}</p>` +
+      `<div class="parsons"><div class="pcol"><b>Pieces (click to add)</b><ul class="ppool"></ul></div><div class="pcol"><b>Your program</b><ol class="pprog"></ol></div></div>` +
+      `<button type="button" class="pcheck">Check order</button> <button type="button" class="preset">Start again</button>${msg}</div>`;
+  }
+  const name = `q-${lesson.slug}-${step.id}${task ? `-t${task.index}` : ''}`.replace(/[^a-z0-9-]/gi, '-');
+  return `<div class="check" ${base} data-answer="${k.answer}"><fieldset><legend>${esc(k.q)}</legend>` +
     k.options.map((o, i) => `<label><input type="radio" name="${name}" value="${i}"><span>${esc(o)}</span></label>`).join('') +
-    `</fieldset><button type="button">Check answer</button><p class="msg" aria-live="polite"></p></div>`;
+    `</fieldset><button type="button">Check answer</button>${msg}</div>`;
 }
 
 /**
@@ -186,7 +289,7 @@ export function lessonPageHtml(lesson, deps) {
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
   const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info'))];
-  const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"><i></i>${heading(s.title)}</a>`).join('');
+  const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
   const legend = stagesUsed.filter((k) => STAGE_INFO[k]).map((k) => `<li style="--c:var(--${k})"><b>${STAGE_INFO[k][0]}</b>: ${esc(STAGE_INFO[k][1])}</li>`).join('');
 
   const steps = lesson.steps.map((s) => {
@@ -201,12 +304,30 @@ export function lessonPageHtml(lesson, deps) {
     const body = md.parse(s.body);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
-    const hs = c.hint === undefined ? [] : [].concat(c.hint);
-    const hints = hs.map((h, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(h)}</details>`).join('');
-    // Predict: code, questions, hidden reveal. A hidden clip on a task comes after the attempt: text, code, try, hints, clip.
-    const inner = c.stage === 'predict' ? `${showCode}${body}${clip}${tryHtml(s)}${hints}${checkHtml(lesson, s, snippetNames)}`
-      : c.reveal ? `${body}${showCode}${tryHtml(s)}${hints}${clip}${checkHtml(lesson, s, snippetNames)}`
-      : `${body}${showCode}${clip}${tryHtml(s)}${hints}${checkHtml(lesson, s, snippetNames)}`;
+    const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(t)}</details>`).join('');
+    const hints = hintsOf(c.hint);
+    const checks = checkHtml(lesson, s, snippetNames, snippet);
+    let inner;
+    if (s.tasks.length) {
+      // Tasks (### headings): sub-pills, one task shown at a time, one playground shared by all of them.
+      const kind = unlockKind(lesson, s);
+      const keys = s.tasks.filter((t) => t.config.check).map((t) => `${lesson.slug}/${t.id}`);
+      const names = (c.unlocks || []).map((id) => snippetNames?.[kind]?.[id] || id.replace(/-/g, ' '));
+      const pills = s.tasks.map((t, n) => `<button type="button" role="tab" class="tp${n ? '' : ' active'}" data-i="${n}" data-key="${esc(`${lesson.slug}/${t.id}`)}" aria-selected="${n ? 'false' : 'true'}"><i></i>${n + 1} · ${md.parseInline(t.title)}</button>`).join('');
+      const bodies = s.tasks.map((t, n) => {
+        let reset = '';
+        if (t.config.starter) { try { reset = `<button type="button" class="resetstart" data-code="${esc(snippet(t.config.starter))}">Reset to this task's start</button>`; } catch { /* reported by validation */ } }
+        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${hintsOf(t.config.hint)}${reset}</div>`;
+      }).join('');
+      const taskChecks = s.tasks.map((t, n) => `<div class="tpanel${n ? '' : ' active'}" data-i="${n}">${checkHtml(lesson, s, snippetNames, snippet, t)}</div>`).join('');
+      const wrap = `<div class="tasks" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})" data-step="${s.id}" data-stepkey="${esc(`${lesson.slug}/${s.id}`)}" data-kind="${kind}" data-keys="${esc(keys.join('|'))}" data-unlocks="${esc((c.unlocks || []).join(','))}" data-names="${esc(names.join('|'))}"><div class="taskpills" role="tablist" aria-label="Tasks">${pills}</div>${bodies}${tryHtml(s)}${taskChecks}<p class="tmsg" aria-live="polite"></p></div>`;
+      inner = c.reveal ? `${body}${showCode}${wrap}${clip}` : `${body}${showCode}${clip}${wrap}`;
+    } else {
+      // Predict: code, questions, hidden reveal. A hidden clip on a task comes after the attempt: text, code, try, hints, clip.
+      inner = c.stage === 'predict' ? `${showCode}${body}${clip}${tryHtml(s)}${hints}${checks}`
+        : c.reveal ? `${body}${showCode}${tryHtml(s)}${hints}${clip}${checks}`
+        : `${body}${showCode}${clip}${tryHtml(s)}${hints}${checks}`;
+    }
     return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"><div class="chip">${esc(label)}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
 
@@ -222,6 +343,14 @@ export function lessonPageHtml(lesson, deps) {
     ? `<a class="nextcard" href="${esc(course.next.href)}"><small>Next lesson</small><b>${esc(lab(course.next))}</b>${course.next.summary ? `<span>${esc(course.next.summary)}</span>` : ''}</a>`
     : `<a class="nextcard" href="${esc(course.pathHref)}"><small>You reached the end</small><b>Back to ${esc(course.pathTitle)}</b></a>`;
 
+  // Teacher notes, plus what each step is for (the optional `insight:` of steps and tasks).
+  const insights = lesson.steps.flatMap((st) => [
+    st.config.insight ? { where: st.title.replace(STAGE_PREFIX, ''), text: st.config.insight } : null,
+    ...st.tasks.filter((t) => t.config.insight).map((t) => ({ where: `${st.title.replace(STAGE_PREFIX, '')} › ${t.title}`, text: t.config.insight })),
+  ]).filter(Boolean);
+  const teachersHtml = (lesson.teachers || insights.length)
+    ? `<details class="teachers"><summary>For teachers</summary>${lesson.teachers ? md.parse(lesson.teachers) : ''}${insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : ''}</details>` : '';
+
   return page(lesson.title, `
 ${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
@@ -229,7 +358,7 @@ ${md.parse(lesson.intro)}
 <ul class="legend">${legend}</ul>
 <nav class="steps">${nav}</nav>
 ${steps}
-${lesson.teachers ? `<details class="teachers"><summary>For teachers</summary>${md.parse(lesson.teachers)}</details>` : ''}
+${teachersHtml}
 ${nextCard}
 ${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`, siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '');
 }

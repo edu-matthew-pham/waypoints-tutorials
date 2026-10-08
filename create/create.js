@@ -229,7 +229,27 @@ function addCheck(block, selectText) {
     setText(st.lines.join('\n'), selectText);
   });
 }
+const NUMBER = ['check:', '  type: number', '  q: "Your question?"', '  answer: 0', '  explain: "Why that answer is right."'];
+const MATCH = ['check:', '  type: match', '  q: "Match each item with what it does."', '  pairs:', '    - ["first item", "what it does"]', '    - ["second item", "what it does instead"]'];
+const TRACE = ['check:', '  type: trace', '  text: "Fill in the missing values."', '  table: |', '    | step | value |', '    | 1 | 10 |', '    | 2 | [20] |', '    | 3 | [30] |'];
+const BUG = ['check:', '  type: bug', '  code: file.py#region', '  text: "Click the line that has the bug."', '  answer: 1'];
+const PARSONS = ['check:', '  type: parsons', '  code: file.py#region', '  text: "Put the lines in order."'];
+const CODERULE = ['check:', '  type: code', '  text: "Write a function and call it."', '  rules: { defs: 1, calls: 1 }'];
 $('addtick').onclick = () => addCheck(TICK, '…');
+$('addnum').onclick = () => addCheck(NUMBER, 'Your question?');
+$('addmatch').onclick = () => addCheck(MATCH, 'first item');
+$('addtrace').onclick = () => addCheck(TRACE, 'Fill in the missing values.');
+$('addbug').onclick = () => addCheck(BUG, 'file.py#region');
+$('addpars').onclick = () => addCheck(PARSONS, 'file.py#region');
+$('addcode').onclick = () => addCheck(CODERULE, 'Write a function and call it.');
+$('addtasks').onclick = () => withStep((st) => {
+  if (stepKeyLines(st).some((l) => /^tasks:/.test(l))) { alert('This step already has tasks.'); return; }
+  const cfg = ['tasks:', '  - check: { type: reflect, text: "I did the first task." }', '  - check: { type: reflect, text: "I did the second task." }'];
+  st.lines.splice(st.close, 0, ...cfg);
+  const fence = st.close + cfg.length; // the closing ``` is now here
+  st.lines.splice(fence + 1, 0, '', '### First task', '', 'What to do first.', '', '### Second task', '', 'What to do next.', '');
+  setText(st.lines.join('\n'), 'What to do first.');
+});
 $('addq').onclick = () => addCheck(QUESTION, 'Your question?');
 $('addmod').onclick = () => {
   let n = 1; while (files[`mymodule${n === 1 ? '' : n}.py`] !== undefined) n++;

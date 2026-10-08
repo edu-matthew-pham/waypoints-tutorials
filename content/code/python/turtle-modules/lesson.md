@@ -45,16 +45,31 @@ Run it. The line `from shapes import square, triangle` brings two ready-made fun
 
 ```step
 stage: investigate
-code: modules.py#copies
-check:
-  type: question
-  q: "You fix the bug in program_a.py. What happens to program_b.py?"
-  options: ["It is fixed too", "It still has the bug, so you fix it separately", "It stops working", "Python warns you"]
-  answer: 1
-  explain: "Each file has its own copy of wall, so each copy needs fixing. If both programs imported wall from one module, you would fix it once."
+insight: "Copied code multiplies the work of fixing it; one shared module is fixed once."
+tasks:
+  - check:
+      type: bug
+      code: modules.py#copies
+      text: "A square should turn 90 degrees. Click a line with the bug."
+      answer: [8, 20]
+      explain: "right(80) is wrong in both programs, because each has its own copy."
+  - check:
+      type: question
+      q: "You fix the bug in program_a.py. What happens to program_b.py?"
+      options: ["It is fixed too", "It still has the bug, so you fix it separately", "It stops working", "Python warns you"]
+      answer: 1
+      explain: "Each file has its own copy of wall, so each copy needs fixing. If both programs imported wall from one module, you would fix it once."
 ```
 
-Two programs both need `wall`, so each has its own copy. Spot the bug (a square should turn 90 degrees). If you fix it in one program, what about the other? This is the problem a module solves.
+Two programs both need `wall`, so each has its own copy. This is the problem a module solves.
+
+### Find the bug
+
+A square should turn 90 degrees.
+
+### Count the fixes
+
+You fix one copy. What about the other?
 
 ## Investigate: where does it come from?
 

@@ -179,3 +179,10 @@ renderTabs();
 
 // ?autorun=1 runs the program once the page is ready (for output-only clips).
 if (params.get('autorun')) modulesReady.then(() => setTimeout(() => runBtn.click(), 400));
+
+// A lesson task can reset the editor to its own starter code.
+window.addEventListener('message', (e) => {
+  const m = e.data;
+  if (e.origin !== location.origin || !m || m.wp !== 'set-code' || typeof m.code !== 'string') return;
+  mainText = m.code; write(mainText); switchTab('main');
+});

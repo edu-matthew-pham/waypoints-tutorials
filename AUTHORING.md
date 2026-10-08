@@ -235,3 +235,71 @@ The box ticks when the student runs a program that meets every rule. Rules (all 
 - **Course bar:** every lesson page has a sticky bar with previous and next lessons (by `order`), a "3 of 6" menu with ticks for finished lessons, and links to the path, the playground and My progress. A "Next lesson" card ends each lesson. Nothing to configure: it follows `order`.
 - **Playground pages:** `/code/python/playground/` and `/code/html/playground/` are free play. They remember the student's last lesson ("Continue lesson"), respect unlock progress, and have an "Unlock all snippets" toggle that applies only to free play.
 - **My progress:** a dialog (course bar, playground page, path pages) comparing this browser's progress with `progress-manifest.json`, which the build writes. It is per browser and nothing is sent anywhere. `window.wpProgressSummary()` returns the same data for a future export.
+
+## 10. Tasks (sub-pills) and more check types
+
+### Tasks: several parts in one step
+
+Put `###` headings inside a step and each becomes a **task**, shown as a sub-pill (only when there are two or more). Per-task settings go in a `tasks:` list in the step's YAML, in the same order:
+
+````markdown
+## Modify
+
+```step
+stage: modify
+insight: "Change a working program one small step at a time."
+try: { starter: "square.py#modify", height: 420 }
+tasks:
+  - hint: "Two numbers change."
+    check: { type: reflect, text: "I drew a triangle." }
+  - starter: "square.py#modify"      # optional: "Reset to this task's start"
+    hint: ["First nudge.", "Second nudge."]
+    check: { type: code, text: "Change the colour.", rules: { uses: [pencolor] } }
+unlocks: [pencolor]                  # fires when every task is done
+```
+
+### Draw a triangle
+...
+### Change the pen
+...
+````
+
+- One playground is shared by all the tasks, so code carries on from task to task. A task `starter` adds a "Reset to this task's start" button.
+- A task can have its own `hint` (text or up to 3), `check`, `unlocks` and `insight`. Checks go on tasks, not on the step.
+- Step-level `unlocks` fire when every task with a check is done; task-level `unlocks` fire when that task passes.
+- Code checks only evaluate for the task that is open, so a later task cannot be ticked by code written for an earlier one.
+- The sticky step pill shows progress, for example "Modify 2/3". Pills are ordered but never locked.
+- Works on any stage (Investigate questions, Modify ladders, Make milestones).
+
+### `insight:` (what the step is for)
+
+A step or a task can have `insight: "..."`: one sentence on what students should come to see. It is shown to teachers only, in **For teachers › What each step is for**.
+
+### Check types
+
+All except `code` are static and need no running code. Write the check under `check:` (a step with no tasks) or under a task.
+
+| `type` | You write | Student does |
+|---|---|---|
+| `reflect` | `text` | ticks a box |
+| `question` | `q`, `options`, `answer` (0-based), `explain` | picks one option |
+| `number` | `q`, `answer`, optional `tolerance`, `explain` | types a number |
+| `match` | `q`, `pairs: [[left, right], ...]`, `explain` | picks each right-hand item from a list (shuffled for them) |
+| `trace` | `text`, `table`, `explain` | fills the blanks of a table |
+| `bug` | `code: file#region`, `answer: 7` (or `[7, 19]`), `text`, `explain` | clicks the wrong line |
+| `parsons` | `code: file#region` (the correct program), optional `extra: [spare lines]`, `text`, `explain` | orders scrambled lines |
+| `code` | `text`, `rules` | runs a program that meets the rules |
+
+A **trace table** is a pipe table; the first row is the header and cells in `[brackets]` are the blanks, with the answer inside:
+
+```yaml
+table: |
+  | corner | turned so far |
+  | 0 | 72 |
+  | 1 | [144] |
+  | 2 | [216] |
+```
+
+Choose the tool from the insight the step should produce: repetition cost, count and predict (`number`); how a loop or variable changes, `trace`; what each part controls, `match`; why code is wrong, `bug`; how code is structured, `parsons`. Code rules now also include `uses: [pencolor]` (a name that must appear in the code).
+
+On the create page, the helper row adds a starter for each check type and for tasks.

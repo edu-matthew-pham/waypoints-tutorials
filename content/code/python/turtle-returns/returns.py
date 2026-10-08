@@ -85,3 +85,16 @@ for i in range(5):
     house(30 + i * 10)
     move(80)
 # endregion
+
+# region: bug
+from turtle import *
+
+scale = 20
+
+
+def metres(m):
+    print(m * scale)
+
+
+forward(metres(5))
+# endregion

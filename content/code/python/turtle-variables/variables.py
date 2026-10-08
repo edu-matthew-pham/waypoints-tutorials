@@ -61,3 +61,15 @@ for i in range(2):
     forward(depth * scale)
     right(90)
 # endregion
+
+# region: bug
+from turtle import *
+
+sides = 5
+size = 80
+angle = 360 * sides
+
+for i in range(sides):
+    forward(size)
+    right(angle)
+# endregion

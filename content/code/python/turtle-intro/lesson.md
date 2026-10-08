@@ -57,7 +57,8 @@ Run the program and compare it with your prediction.
 
 ```step
 stage: investigate
-code: square.py#loop
+code: square.py#compare
+insight: "Repetition has a cost: without a loop the code grows with every side, and a loop does the same work with a number you can change."
 app: true
 clip:
   - type:
@@ -65,23 +66,45 @@ clip:
       text: "@square.py#loop"
   - click: Run
   - expect: { selector: "#status", contains: Finished }
-check:
-  type: question
-  q: "How many times does the loop repeat?"
-  options: ["2 times", "4 times", "90 times", "100 times"]
-  answer: 1
-  explain: "Right: range(4) repeats the indented lines 4 times, once for each side."
+tasks:
+  - check:
+      type: number
+      q: "The square without a loop uses 8 lines of drawing code. A 20-sided shape drawn the same way would use how many lines?"
+      answer: 40
+      explain: "Each side needs 2 lines (forward and a turn), so 20 sides need 40."
+  - check:
+      type: number
+      q: "Now think about the loop version drawing a 20-sided shape. How many numbers in it change?"
+      answer: 2
+      explain: "Only range(20) and the turn (360 / 20 = 18 degrees). The loop is the same 3 lines."
+  - check:
+      type: question
+      q: "In the loop version, which part is repeated?"
+      options: ["Only the first line", "The two indented lines", "The whole program", "Nothing"]
+      answer: 1
+      explain: "Indented lines belong to the loop. range(4) says how many times they repeat."
 unlocks: [for-loop, square-loop]
 ```
 
-The same square, in fewer lines. Which part repeats? What does `range(4)` control?
+Compare the two programs. They draw the same square.
 
-Try drawing a 20-sided shape both ways: with four copies of the commands repeated, and with a loop. Which would you rather change? In the next lesson you give numbers names.
+### Count the lines
+
+How much code does each way need as the shape gets more sides?
+
+### Count the changes
+
+Now imagine the shape needs to change. Which version is easier to change?
+
+### Read the loop
+
+Look at the loop version one more time. What belongs to it, and what controls how often it runs?
 
 ## Modify
 
 ```step
 stage: modify
+insight: "Change a working program one small step at a time and check each result; the turn angle comes from the shape, not from guessing."
 try: { starter: "square.py#modify", height: 420 }
 app: true
 query: { code: "@square.py#triangle", view: output, autorun: 1 }
@@ -91,23 +114,56 @@ clip:
   - expect: { selector: "#turtle-state", contains: "heading 0" }
 caption: "The expected result: a triangle"
 reveal: Show what the triangle should look like
-hint:
-  - "A square turns the turtle 90° four times. How many times does a triangle turn, and what do all the turns add up to?"
-  - "Two numbers change: how many times the loop repeats, and how far the turtle turns each time."
-check: { type: reflect, text: "I changed one thing, ran it, and checked the result matched what I expected." }
+tasks:
+  - hint:
+      - "A square turns the turtle 90 degrees four times. How many times does a triangle turn, and what do all the turns add up to?"
+      - "Two numbers change: how many times the loop repeats, and how far the turtle turns each time."
+    check: { type: reflect, text: "I changed the loop so it draws a triangle." }
+  - hint: "Only one number needs to change."
+    check: { type: reflect, text: "I made the triangle's sides twice as long by changing one number." }
+  - hint: "pencolor(\"red\") goes before the loop. pensize(5) makes the line thicker."
+    check: { type: code, text: "Change the pen colour with pencolor and run it.", rules: { uses: [pencolor] } }
 unlocks: [pencolor, pensize, circle]
 ```
 
-Change the loop so it draws a triangle.
+Change the loop in small steps. Run after each change.
+
+### Draw a triangle
+
+Change the loop so it draws a triangle instead of a square.
+
+### Double the sides
+
+Make each side of your triangle twice as long.
+
+### Change the pen
+
+Give your triangle a colour. Try a thicker line too.
 
 ## Make
 
 ```step
 stage: make
 try: { starter: "square.py#make", height: 420 }
+tasks:
+  - check: { type: reflect, text: "I drew the walls of a house." }
+  - check: { type: reflect, text: "I drew a roof on top of the walls." }
+  - check: { type: reflect, text: "I coloured my house." }
 ```
 
-Draw a house: a square for the walls, and two lines on top that meet in a point for the roof. Then change the colours with `pencolor("red")`.
+Build a house, one part at a time.
+
+### Draw the walls
+
+Draw a square for the walls.
+
+### Add the roof
+
+Add two lines on top that meet in a point for the roof.
+
+### Colour it
+
+Use `pencolor("red")` and other colours to finish your house.
 
 ## Extend a row of floor tiles
 

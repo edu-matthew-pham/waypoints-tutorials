@@ -7,15 +7,31 @@ export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
 export const PLAYGROUND_KINDS = ['turtle', 'html'];
-export const CHECK_TYPES = ['reflect', 'question', 'code'];
-export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports'];
+export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons'];
+
+/**
+ * A trace table written as a small pipe table: first row is the header, cells in [brackets] are the blanks
+ * students fill in (the bracket holds the answer). Returns { head: [..], rows: [[{v, blank}]] }.
+ */
+export function parseTrace(text) {
+  const rows = String(text).split('\n').map((l) => l.trim()).filter(Boolean).map((l) => l.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim()));
+  if (rows.length < 2) throw new Error('needs a header row and at least one data row');
+  const head = rows.shift();
+  const body = rows.map((r) => {
+    if (r.length !== head.length) throw new Error(`every row needs ${head.length} cells (found a row with ${r.length})`);
+    return r.map((c) => { const m = c.match(/^\[(.*)\]$/); return m ? { v: m[1].trim(), blank: true } : { v: c, blank: false }; });
+  });
+  if (!body.some((r) => r.some((c) => c.blank))) throw new Error('needs at least one blank, written in [brackets] with its answer inside');
+  return { head, rows: body };
+}
+export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports', 'uses'];
 
 /**
  * Evaluates a code check's rules against the student's code (all their files joined). Pure and
  * self-contained: the lesson page inlines this function's source, so it must not use anything outside itself.
  * Rules: defs (functions defined), calls (one of the student's functions called this many times, in the text),
  * loops (for/while lines), returns (return lines), params (one function with this many parameters),
- * imports (list of module names). Returns [{ label, ok }].
+ * imports (list of module names), uses (list of names that must appear, such as pencolor). Returns [{ label, ok }].
  */
 export function evalRules(rules, text) {
   const code = String(text).split('\n').map((l) => l.replace(/#.*$/, ''));
@@ -30,6 +46,7 @@ export function evalRules(rules, text) {
   if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...defs.map((d) => callsOf(d.name))) >= rules.calls });
   if (rules.loops) out.push({ label: rules.loops === 1 ? 'Use a loop' : `Use at least ${rules.loops} loops`, ok: count(/^\s*(for|while)\b/) >= rules.loops });
   if (rules.returns) out.push({ label: 'Use return to give a value back', ok: count(/^\s*return\b/) >= rules.returns });
+  (rules.uses || []).forEach((n) => out.push({ label: `Use ${n}`, ok: code.some((l) => new RegExp('\\b' + n + '\\b').test(l)) }));
   (rules.imports || []).forEach((m) => out.push({ label: `Import from ${m}`, ok: code.some((l) => new RegExp('^\\s*(from|import)\\s+' + m + '\\b').test(l)) }));
   return out;
 }
@@ -97,7 +114,18 @@ export function parseLessonText(raw, slug = 'lesson') {
       config = YAML.parse(m[1]) || {};
       body = body.replace(m[0], '');
     }
-    return { index: i + 1, id: `step-${i + 1}`, title, body: body.trim(), config };
+    // "### Heading" lines inside a step are its tasks (sub-pills). One or no heading: the step has a single task.
+    const secs = body.split(/^### /m);
+    const lead = secs.shift();
+    let tasks = [];
+    if (secs.length >= 2) {
+      tasks = secs.map((t, n) => {
+        const nl2 = t.indexOf('\n');
+        return { index: n + 1, id: `step-${i + 1}#t${n + 1}`, title: (nl2 === -1 ? t : t.slice(0, nl2)).trim(), body: (nl2 === -1 ? '' : t.slice(nl2 + 1)).trim(), config: (Array.isArray(config.tasks) && config.tasks[n] && typeof config.tasks[n] === 'object') ? config.tasks[n] : {} };
+      });
+      body = lead;
+    }
+    return { index: i + 1, id: `step-${i + 1}`, title, body: body.trim(), config, tasks };
   });
   return {
     slug,
@@ -144,6 +172,58 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
   }
   if (lesson.app?.layout && !LAYOUTS.includes(lesson.app.layout)) err('frontmatter', `app.layout must be one of ${LAYOUTS.join(', ')}`);
 
+  // One check (a step's, or a task's). c is the step config, for what a check needs from the step (a playground).
+  const validateCheck = (k, where, c) => {
+    if (!k || typeof k !== 'object' || Array.isArray(k) || !CHECK_TYPES.includes(k.type)) return err(where, `check.type must be one of ${CHECK_TYPES.join(', ')}`);
+    const str = (v) => typeof v === 'string' && v.trim();
+    if (k.type === 'reflect') { if (!str(k.text)) err(where, 'check (reflect) needs text, e.g. "I can explain why the turtle turns"'); }
+    else if (k.type === 'code') {
+      if (!str(k.text)) err(where, 'check (code) needs text, e.g. "Write a function and call it"');
+      const r = k.rules;
+      if (!r || typeof r !== 'object' || Array.isArray(r)) err(where, `check (code) needs rules, a mapping using ${CODE_RULES.join(', ')}`);
+      else {
+        for (const key of Object.keys(r)) if (!CODE_RULES.includes(key)) err(where, `unknown code rule "${key}" (use ${CODE_RULES.join(', ')})`);
+        for (const key of ['defs', 'calls', 'loops', 'returns', 'params']) if (r[key] !== undefined && !(Number.isInteger(r[key]) && r[key] > 0)) err(where, `code rule ${key} must be a whole number above 0`);
+        if (r.uses !== undefined && !(Array.isArray(r.uses) && r.uses.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule uses must be a list of names, such as [pencolor]');
+        if (r.imports !== undefined && !(Array.isArray(r.imports) && r.imports.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule imports must be a list of module names');
+        if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
+      }
+      if (!c.try || (c.try.playground && c.try.playground !== 'turtle')) err(where, 'a code check needs a Python turtle playground (try: { starter: ... }) to run');
+    }
+    else if (k.type === 'question') {
+      if (!str(k.q)) err(where, 'check (question) needs q');
+      if (!Array.isArray(k.options) || k.options.length < 2 || !k.options.every((o) => typeof o === 'string')) err(where, 'check (question) needs options: a list of at least two strings');
+      else if (!Number.isInteger(k.answer) || k.answer < 0 || k.answer >= k.options.length) err(where, `check.answer must be the number (from 0) of the correct option, 0 to ${k.options.length - 1}`);
+    }
+    else if (k.type === 'number') {
+      if (!str(k.q)) err(where, 'check (number) needs q');
+      if (typeof k.answer !== 'number' || !Number.isFinite(k.answer)) err(where, 'check (number) needs answer: a number');
+      if (k.tolerance !== undefined && !(typeof k.tolerance === 'number' && k.tolerance >= 0)) err(where, 'check (number) tolerance must be 0 or more');
+    }
+    else if (k.type === 'bug' || k.type === 'parsons') {
+      let code = '';
+      if (!str(k.code)) err(where, `check (${k.type}) needs code: a file#region reference`);
+      else { try { code = snip(k.code); } catch (e) { err(where, `check.code: ${e.message}`); } }
+      const lines = code.replace(/\n$/, '').split('\n');
+      if (k.type === 'bug') {
+        const ans = Array.isArray(k.answer) ? k.answer : [k.answer];
+        if (!ans.length || !ans.every((n) => Number.isInteger(n) && n >= 1)) err(where, 'check (bug) needs answer: a line number, or a list of line numbers (counting from 1)');
+        else if (code && ans.some((n) => n > lines.length)) err(where, `check (bug) answer is past the end of the code (${lines.length} lines)`);
+      } else {
+        if (code && lines.filter((l) => l.trim()).length < 3) err(where, 'check (parsons) needs at least 3 lines of code');
+        if (k.extra !== undefined && !(Array.isArray(k.extra) && k.extra.every((l) => typeof l === 'string' && l.trim()))) err(where, 'check (parsons) extra must be a list of spare lines');
+      }
+    }
+    else if (k.type === 'match') {
+      if (!Array.isArray(k.pairs) || k.pairs.length < 2 || !k.pairs.every((p) => Array.isArray(p) && p.length === 2 && p.every(str))) err(where, 'check (match) needs pairs: a list of at least two [left, right] pairs');
+      else if (new Set(k.pairs.map((p) => p[1].trim())).size !== k.pairs.length) err(where, 'check (match) every right-hand item must be different');
+    }
+    else if (k.type === 'trace') {
+      if (!str(k.table)) err(where, 'check (trace) needs table: a pipe table with blanks in [brackets]');
+      else { try { parseTrace(k.table); } catch (e) { err(where, `check (trace) table ${e.message}`); } }
+    }
+  };
+
   for (const s of lesson.steps) {
     const where = `${s.id} "${s.title}"`;
     const c = s.config;
@@ -184,35 +264,45 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       });
     }
     if (c.check !== undefined) {
-      const k = c.check;
-      if (!k || typeof k !== 'object' || Array.isArray(k) || !CHECK_TYPES.includes(k.type)) err(where, `check.type must be one of ${CHECK_TYPES.join(', ')}`);
-      else if (k.type === 'reflect' && !(typeof k.text === 'string' && k.text.trim())) err(where, 'check (reflect) needs text, e.g. "I can explain why the turtle turns"');
-      else if (k.type === 'code') {
-        if (!(typeof k.text === 'string' && k.text.trim())) err(where, 'check (code) needs text, e.g. "Write a function and call it"');
-        const r = k.rules;
-        if (!r || typeof r !== 'object' || Array.isArray(r)) err(where, `check (code) needs rules, a mapping using ${CODE_RULES.join(', ')}`);
-        else {
-          for (const key of Object.keys(r)) if (!CODE_RULES.includes(key)) err(where, `unknown code rule "${key}" (use ${CODE_RULES.join(', ')})`);
-          for (const key of ['defs', 'calls', 'loops', 'returns', 'params']) if (r[key] !== undefined && !(Number.isInteger(r[key]) && r[key] > 0)) err(where, `code rule ${key} must be a whole number above 0`);
-          if (r.imports !== undefined && !(Array.isArray(r.imports) && r.imports.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule imports must be a list of module names');
-          if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
-        }
-        if (!c.try || (c.try.playground && c.try.playground !== 'turtle')) err(where, 'a code check needs a Python turtle playground (try: { starter: ... }) to run');
-      }
-      else if (k.type === 'question') {
-        if (!(typeof k.q === 'string' && k.q.trim())) err(where, 'check (question) needs q');
-        if (!Array.isArray(k.options) || k.options.length < 2 || !k.options.every((o) => typeof o === 'string')) err(where, 'check (question) needs options: a list of at least two strings');
-        else if (!Number.isInteger(k.answer) || k.answer < 0 || k.answer >= k.options.length) err(where, `check.answer must be the number (from 0) of the correct option, 0 to ${k.options.length - 1}`);
-      }
+      if (s.tasks.length) err(where, 'this step has tasks (### headings): put each check on its task, under tasks:');
+      else validateCheck(c.check, where, c);
     }
+    const tasksHaveChecks = s.tasks.some((t) => t.config.check);
     if (c.unlocks !== undefined) {
       if (!Array.isArray(c.unlocks) || !c.unlocks.every((u) => typeof u === 'string')) err(where, 'unlocks must be a list of snippet ids');
       else {
-        if (!c.check) err(where, 'unlocks needs a check (what the student does to earn them)');
+        if (!c.check && !tasksHaveChecks) err(where, 'unlocks needs a check (what the student does to earn them)');
         const ids = known?.[unlockKind(lesson, s)];
         if (ids) for (const u of c.unlocks) if (!ids.has(u)) err(where, `unknown snippet id "${u}" (see the reference page for ids)`);
       }
     }
+    if (c.insight !== undefined && !(typeof c.insight === 'string' && c.insight.trim())) err(where, 'insight must be a short text: what this step should help students see');
+    if (c.tasks !== undefined) {
+      if (!Array.isArray(c.tasks)) err(where, 'tasks must be a list, one entry per ### heading in the step');
+      else if (c.tasks.length !== s.tasks.length) err(where, `tasks has ${c.tasks.length} entries but the step has ${s.tasks.length} ### headings (they must match, in order)`);
+    }
+    s.tasks.forEach((t) => {
+      const tw = `${where} task ${t.index} "${t.title}"`;
+      const tc = t.config;
+      if (tc.hint !== undefined) {
+        const hs = Array.isArray(tc.hint) ? tc.hint : [tc.hint];
+        if (hs.length > 3 || !hs.every((h) => typeof h === 'string' && h.trim())) err(tw, 'hint must be a short text, or a list of up to 3 texts');
+      }
+      if (tc.starter !== undefined) {
+        if (!c.try) err(tw, 'a task starter needs the step to have a try playground');
+        else { try { snip(tc.starter); } catch (e) { err(tw, `starter: ${e.message}`); } }
+      }
+      if (tc.insight !== undefined && !(typeof tc.insight === 'string' && tc.insight.trim())) err(tw, 'insight must be a short text');
+      if (tc.check !== undefined) validateCheck(tc.check, tw, c);
+      if (tc.unlocks !== undefined) {
+        if (!Array.isArray(tc.unlocks) || !tc.unlocks.every((u) => typeof u === 'string')) err(tw, 'unlocks must be a list of snippet ids');
+        else {
+          if (!tc.check) err(tw, 'unlocks needs a check on this task');
+          const ids = known?.[unlockKind(lesson, s)];
+          if (ids) for (const u of tc.unlocks) if (!ids.has(u)) err(tw, `unknown snippet id "${u}"`);
+        }
+      }
+    });
     if (c.hint !== undefined) {
       const hs = Array.isArray(c.hint) ? c.hint : [c.hint];
       if (hs.length > 3 || !hs.every((h) => typeof h === 'string' && h.trim())) err(where, 'hint must be a short text, or a list of up to 3 texts (nudges, not answers)');

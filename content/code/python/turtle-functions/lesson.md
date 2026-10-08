@@ -42,30 +42,72 @@ Run it. Then make all three squares half as big. Notice how many places you had 
 ```step
 stage: investigate
 code: functions.py#def
-try: { starter: "functions.py#def", height: 440 }
-check:
-  type: question
-  q: "To make all three squares half as big now, how many numbers change?"
-  options: ["1", "3", "6", "12"]
-  answer: 0
-  explain: "Only the numbers inside def square(): change. The three calls are just the name square(), so they never need editing."
+insight: "A def only describes steps; calling its name runs them, so one change inside the def changes every call."
 unlocks: [def-function]
+tasks:
+  - check:
+      type: number
+      q: "To make all three squares half as big now, how many numbers change?"
+      answer: 1
+      explain: "Only the numbers inside def square(): change. The three calls are just the name square(), so they never need editing."
+  - check:
+      type: match
+      q: "Match each part of the program with its job."
+      pairs:
+        - ["def square():", "gives the steps a name"]
+        - ["square()", "runs the steps"]
+        - ["for i in range(4):", "repeats the four sides"]
+        - ["forward(100)", "moves the turtle"]
+      explain: "def only describes the steps. Calling the name is what runs them."
+  - check:
+      type: parsons
+      code: functions.py#parsons
+      text: "Put the lines in order so the program draws one square."
+      explain: "The def comes first, indented lines belong inside it, and the call comes after."
 ```
 
-`def square():` gives the loop a name. The steps only run when the name is **called**: `square()`. Try changing a `100` inside the `def`.
+`def square():` gives the loop a name. The steps only run when the name is **called**: `square()`.
+
+### Count the changes
+
+Compare this with the copy-and-paste version from the last step.
+
+### Match the parts
+
+What does each part of this program do?
+
+### Put it in order
+
+Build the function from scrambled lines.
 
 ## Modify
 
 ```step
 stage: modify
+insight: "Writing your own def, following a pattern, is the step from reading functions to making them."
 try: { starter: "functions.py#modify", height: 440 }
-hint:
-  - "Copy the pattern of `square`: the word `def`, a name, brackets, a colon, then the indented steps."
-  - "A triangle has 3 sides. The turn at each corner is not 90."
-check: { type: reflect, text: "I wrote my own function with a def and called it." }
+tasks:
+  - hint: "Change a number inside the def, not the call."
+    check: { type: reflect, text: "I changed one number inside the def and the square changed." }
+  - hint:
+      - "Copy the pattern of `square`: the word `def`, a name, brackets, a colon, then the indented steps."
+      - "A triangle has 3 sides. The turn at each corner is not 90."
+    check: { type: code, text: "Write def triangle() and run your program.", rules: { defs: 2 } }
+  - hint: "Call each function by its name with brackets, like square()."
+    check: { type: code, text: "Call square twice and triangle at least once.", rules: { defs: 2, calls: 2 } }
 ```
 
-Write `def triangle():` following the pattern of `square`, then call it.
+### Resize the square
+
+Change the size of the square inside `def square():` and run it.
+
+### Write a triangle function
+
+Write `def triangle():` following the pattern of `square`.
+
+### Use both
+
+Draw a square, then a triangle, then a square again.
 
 ## Make
 

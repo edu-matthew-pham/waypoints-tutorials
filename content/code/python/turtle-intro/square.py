@@ -54,3 +54,20 @@ for tile in range(5):
     forward(40)
     pendown()
 # endregion
+
+# region: compare
+# Without a loop
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+
+# With a loop
+for i in range(4):
+    forward(100)
+    right(90)
+# endregion

@@ -93,7 +93,9 @@ for (const [kind, dir] of [['turtle', '_playground'], ['html', '_playground-html
   const claims = claimsByKind[kind] = {};
   for (const l of lessons) for (const s of l.steps) {
     if (unlockKind(l, s) !== kind) continue;
-    for (const id of s.config.unlocks || []) claims[id] = { lesson: l.title, step: s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '') };
+    const stepTitle = s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '');
+    for (const id of s.config.unlocks || []) claims[id] = { lesson: l.title, step: stepTitle };
+    for (const t of s.tasks) for (const id of t.config.unlocks || []) claims[id] = { lesson: l.title, step: `${stepTitle} › ${t.title}` };
   }
   writeFileSync(join(OUT, dir, 'unlocks.json'), JSON.stringify(claims));
 }
@@ -134,7 +136,7 @@ for (const r of REFS) {
 
 // Playground pages live beside Reference on the paths that have a playground.
 const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' } };
-const checkKeys = (l) => l.steps.filter((s) => s.config.check).map((s) => `${l.slug}/${s.id}`);
+const checkKeys = (l) => l.steps.flatMap((s) => s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => `${l.slug}/${t.id}`) : s.config.check ? [`${l.slug}/${s.id}`] : []);
 for (const l of lessons) {
   const parentPath = l.slug.split('/').slice(0, -1).join('/');
   const sibs = lessons.filter((x) => x.slug.split('/').slice(0, -1).join('/') === parentPath);

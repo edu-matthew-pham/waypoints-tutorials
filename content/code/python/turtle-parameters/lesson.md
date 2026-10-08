@@ -42,29 +42,60 @@ Run it and compare it with your prediction. Then call `square` with other sizes.
 ```step
 stage: investigate
 code: params.py#polygon
-try: { starter: "params.py#polygon", height: 440 }
-check:
-  type: question
-  q: "In polygon(6, 80), what does 6 do?"
-  options: ["It is the size of each side", "It is the number of sides", "It is the angle in degrees", "It repeats the function 6 times"]
-  answer: 1
-  explain: "Arguments go to the parameters in order: 6 goes to sides and 80 goes to size."
+insight: "A parameter lets one function make many results: each call passes arguments in order, and the function calculates from them."
+tasks:
+  - check:
+      type: trace
+      text: "Fill in what each call passes to polygon(sides, size), and the angle it calculates."
+      table: |
+        | call | sides | size | angle |
+        | polygon(3, 80) | 3 | 80 | [120] |
+        | polygon(4, 80) | 4 | 80 | [90] |
+        | polygon(6, 80) | [6] | [80] | [60] |
+      explain: "Arguments go to the parameters in order, and angle = 360 / sides inside the function."
+  - check:
+      type: match
+      q: "Match each piece with its role."
+      pairs:
+        - ["sides in def polygon(sides, size):", "a parameter: filled in by each call"]
+        - ["6 in polygon(6, 80)", "an argument: the value for sides"]
+        - ["angle = 360 / sides", "calculated inside the function"]
+        - ["polygon(4, 80)", "a call: runs the function with these values"]
+      explain: "Parameters are the names in the def. Arguments are the values you pass when you call it."
 ```
 
-`polygon(sides, size)` has two parameters. The angle is calculated from `sides`, just like in the variables lesson. Which call draws the biggest shape?
+`polygon(sides, size)` has two parameters. The angle is calculated from `sides`, just like in the variables lesson.
+
+### Trace three calls
+
+What does each call pass in, and what does the function work out?
+
+### Name the parts
+
+Parameters and arguments sound alike. Match them up.
 
 ## Modify
 
 ```step
 stage: modify
+insight: "Extending a function means changing its definition and every call; it shows why parameters are a contract between the def and its callers."
 try: { starter: "params.py#polygon", height: 440 }
-hint:
-  - "A new parameter goes in the brackets of the def, and a new value goes in every call."
-  - "Inside the function, `pencolor(...)` takes the value of your new parameter."
-check: { type: reflect, text: "I added a parameter to a function and updated every call." }
+tasks:
+  - hint: "Add a line like polygon(8, 50) at the bottom."
+    check: { type: code, text: "Add a fourth call to polygon and run it.", rules: { calls: 4 } }
+  - hint:
+      - "A new parameter goes in the brackets of the def, and a new value goes in every call."
+      - "Inside the function, `pencolor(...)` takes the value of your new parameter."
+    check: { type: code, text: "Give polygon a third parameter for the pen colour.", rules: { params: 3, uses: [pencolor] } }
 ```
 
-Add a third parameter, `colour`, so each call can choose its own pen colour: `polygon(3, 80, "red")`.
+### Draw one more shape
+
+Call `polygon` with sides and size of your choice.
+
+### Add a colour parameter
+
+Change `polygon` so each call can choose its own pen colour, like `polygon(3, 80, "red")`.
 
 ## Make
 

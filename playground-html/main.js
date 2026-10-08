@@ -35,6 +35,12 @@ let timer = null;
 const schedule = () => { if (!timer) timer = setTimeout(() => { timer = null; render(); }, 120); };
 
 codeEl.addEventListener('input', () => { write(codeEl.value); schedule(); });
+// A lesson task can reset the editor to its own starter code.
+window.addEventListener('message', (e) => {
+  const m = e.data;
+  if (e.origin !== location.origin || !m || m.wp !== 'set-code' || typeof m.code !== 'string') return;
+  codeEl.value = m.code; write(m.code); schedule();
+});
 codeEl.addEventListener('keydown', (e) => {
   if (e.key === 'Tab') { // keep focus in the editor; indent with two spaces
     e.preventDefault();

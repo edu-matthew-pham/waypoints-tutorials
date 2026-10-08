@@ -42,45 +42,88 @@ Run it and compare it with your prediction. Try `metres(10)`.
 ```step
 stage: investigate
 code: returns.py#print
-try: { starter: "returns.py#print", height: 420 }
-check:
-  type: question
-  q: "What does the word return do in metres?"
-  options: ["It draws the shape again", "It gives the answer back to the code that called the function", "It stops the program", "It prints the answer"]
-  answer: 1
-  explain: "return hands the value back, so forward(metres(5)) can use it. print only shows a value; it does not give it back."
+insight: "return hands a value back so other code can use it; print only shows it. Knowing the difference is what makes functions reusable."
+tasks:
+  - check:
+      type: number
+      q: "scale is 20. What number does metres(5) give back?"
+      answer: 100
+      explain: "metres(5) returns 5 * 20 = 100, so forward(metres(5)) moves 100."
+  - check:
+      type: bug
+      code: returns.py#bug
+      text: "This version prints the answer but the turtle does not move. Click the wrong line."
+      answer: 7
+      explain: "print(m * scale) shows the value but does not give it back. It should be return m * scale."
+  - check:
+      type: question
+      q: "What does the word return do in metres?"
+      options: ["It draws the shape again", "It gives the answer back to the code that called the function", "It stops the program", "It prints the answer"]
+      answer: 1
+      explain: "return hands the value back, so forward(metres(5)) can use it. print only shows a value; it does not give it back."
 ```
 
 `print(metres(5))` shows the answer under the drawing. Change `scale` and watch both the printed value and the drawing change.
+
+### What comes back?
+
+Work out the value before you run anything.
+
+### Spot the bug
+
+Here is a version that does not work.
+
+### Explain return
+
+What is the job of the word `return`?
 
 ## Modify
 
 ```step
 stage: modify
+insight: "A function that returns a value can be combined with other code, and functions can call each other."
 try: { starter: "returns.py#modify", height: 460 }
-hint:
-  - "Your function should work out the answer and give it back with return, not print it."
-  - "Call your function inside print(...), for example with this room's width and depth."
-check: { type: reflect, text: "I wrote a function that returns a value, and I used the value." }
+tasks:
+  - hint:
+      - "Your function should work out the answer and give it back with return, not print it."
+      - "The area of a room is its width times its depth."
+    check: { type: code, text: "Write def area(width, depth) that returns a value.", rules: { defs: 3, returns: 2 } }
+  - hint: "Call your function inside print(...), for example print(area(5, 4))."
+    check: { type: code, text: "Print the area of the room.", rules: { uses: [print, area] } }
 ```
 
-`room` draws a room using `metres`. Functions are working together here: `room` calls `metres`. Write `def area(width, depth)` that **returns** the area, and print the area of this room.
+`room` calls `metres` to turn sizes into pixels. Functions are working together here.
+
+### Write area
+
+Write `def area(width, depth)` that **returns** the area.
+
+### Print the area
+
+Print the area of the room that the program draws.
 
 ## Make a street
 
 ```step
 stage: make
+insight: "Written without a starter, this shows whether a student can define, call and repeat a function on their own."
 try: { starter: "returns.py#make", height: 460 }
-hint:
-  - "Write a function that draws one house, with a size parameter. Then repeat it."
-  - "A loop calls your function five times. A new size for each house can come from the loop variable."
-check:
-  type: code
-  text: "Write a function for a house, call it in a loop, and run it."
-  rules: { defs: 1, calls: 1, loops: 1 }
+tasks:
+  - hint: "Write a function that draws one house, with a size parameter."
+    check: { type: code, text: "Write a function for one house and call it.", rules: { defs: 1, calls: 1 } }
+  - hint: "A loop calls your function five times. A new size for each house can come from the loop variable."
+    check: { type: code, text: "Use a loop to draw five houses.", rules: { defs: 1, calls: 1, loops: 1 } }
 ```
 
-Draw a **street of five houses**. This time there is no starter: write the function yourself, then use a loop to repeat it.
+This time there is no starter. Build the street in two stages.
+
+### Draw one house
+
+Write a function that draws one house.
+
+### Draw five in a row
+
+Use a loop to repeat it for a **street of five houses**.
 
 ## Vary a street of houses
 
