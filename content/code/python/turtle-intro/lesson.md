@@ -88,7 +88,7 @@ clip:
   - wait: 600
   - expect: { selector: "#status", contains: Finished }
   - expect: { selector: "#turtle-state", contains: "heading 0" }
-caption: The expected result: a triangle
+caption: "The expected result: a triangle"
 reveal: Show what the triangle should look like
 hint:
   - "A square turns the turtle 90° four times. How many times does a triangle turn, and what do all the turns add up to?"
