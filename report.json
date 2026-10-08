@@ -1,0 +1,29 @@
+{
+  "status": "loaded",
+  "seconds": "15.4",
+  "title": "Game Making Software - Construct 3",
+  "url": "https://editor.construct.net/",
+  "webgl": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "canvases": 0,
+  "iframes": 3,
+  "controls": [
+    "#000000",
+    "Close",
+    "Create a new project",
+    "View the Start Page",
+    "Open Example Browser",
+    "View tutorials",
+    "Help",
+    "Asset Store",
+    "Menu",
+    "Free edition\nGuest",
+    "Try again",
+    "Take a guided tour ▶",
+    "No thanks, not now"
+  ],
+  "body": "Properties\n\t\nMenu\nFree edition\nGuest\nAsset Browser\nProject\nLayers\nLayers\nTilemap\nWelcome!\nWelcome to Construct!\n\nWell done for picking a powerful and easy-to-use game creation tool! Take a guided tour to start building your first game with step-by-step instructions. You won't believe how quick and easy it is!\n\nTake a guided tour ▶\n\nNo thanks, not now",
+  "problems": [
+    "console: Blocked autofocusing on a <input> element in a cross-origin subframe.",
+    "console: Failed to load resource: the server responded with a status of 400 ()"
+  ]
+}
