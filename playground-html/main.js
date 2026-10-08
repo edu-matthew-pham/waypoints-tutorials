@@ -1,3 +1,5 @@
+import { mountSnippets } from './snippets.js';
+
 // HTML & CSS playground: type HTML, see the page update. The preview is a sandboxed iframe
 // (scripts may run, but it is a separate origin and cannot reach this page or the site).
 //   ?code=<starter html>   ?id=<key for autosaving this student's edits>
@@ -43,3 +45,5 @@ codeEl.addEventListener('keydown', (e) => {
 $('reset').addEventListener('click', () => { codeEl.value = starter; write(null); render(); });
 
 render();
+
+mountSnippets({ toolbar: document.querySelector('.bar'), textarea: codeEl });

@@ -1,0 +1,9 @@
+.snippets-toggle { margin-left: 0 !important; }
+.snippets-panel { max-height: 48%; overflow: auto; padding: 6px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.snippets-panel[hidden] { display: none; }
+.snippets-panel details { padding: 2px 0; }
+.snippets-panel summary { cursor: pointer; font-weight: 600; font-size: 13px; color: var(--muted); padding: 4px 0; }
+.snippet-row { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0 8px; }
+.snippet { font: 12.5px ui-monospace, Menlo, Consolas, monospace; padding: 3px 9px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.snippet:hover { border-color: var(--accent); }
+.snippet:focus-visible, .snippets-panel summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

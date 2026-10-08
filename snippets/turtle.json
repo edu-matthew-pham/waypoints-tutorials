@@ -1,0 +1,172 @@
+{
+ "title": "Python turtle reference",
+ "summary": "Commands you can click to insert, with what each one does.",
+ "language": "python",
+ "groups": [
+  {
+   "name": "Move",
+   "items": [
+    {
+     "label": "forward",
+     "code": "forward(‹100›)\n",
+     "hint": "Move the turtle forward. The number is how many steps."
+    },
+    {
+     "label": "backward",
+     "code": "backward(‹100›)\n",
+     "hint": "Move the turtle backward without turning."
+    },
+    {
+     "label": "right",
+     "code": "right(‹90›)\n",
+     "hint": "Turn clockwise by this many degrees."
+    },
+    {
+     "label": "left",
+     "code": "left(‹90›)\n",
+     "hint": "Turn anticlockwise by this many degrees."
+    },
+    {
+     "label": "goto",
+     "code": "goto(‹0›, ‹0›)\n",
+     "hint": "Jump to a position. (0, 0) is the centre; x goes right, y goes up."
+    },
+    {
+     "label": "setheading",
+     "code": "setheading(‹0›)\n",
+     "hint": "Face a direction. 0 is right, 90 is up, 180 is left."
+    },
+    {
+     "label": "home",
+     "code": "home()\n",
+     "hint": "Go back to the centre, facing right."
+    }
+   ]
+  },
+  {
+   "name": "Pen",
+   "items": [
+    {
+     "label": "penup",
+     "code": "penup()\n",
+     "hint": "Lift the pen so moving does not draw."
+    },
+    {
+     "label": "pendown",
+     "code": "pendown()\n",
+     "hint": "Put the pen down so moving draws again."
+    },
+    {
+     "label": "pensize",
+     "code": "pensize(‹5›)\n",
+     "hint": "Set how thick the line is."
+    },
+    {
+     "label": "pencolor",
+     "code": "pencolor(\"‹red›\")\n",
+     "hint": "Set the line colour, using a colour name."
+    },
+    {
+     "label": "dot",
+     "code": "dot(‹20›)\n",
+     "hint": "Draw a filled dot of this size."
+    },
+    {
+     "label": "write",
+     "code": "write(\"‹Hello›\")\n",
+     "hint": "Write text at the turtle's position."
+    }
+   ]
+  },
+  {
+   "name": "Fill and look",
+   "items": [
+    {
+     "label": "fillcolor",
+     "code": "fillcolor(\"‹blue›\")\n",
+     "hint": "Choose the colour to fill shapes with."
+    },
+    {
+     "label": "begin_fill / end_fill",
+     "code": "begin_fill()\n‹›\nend_fill()\n",
+     "hint": "Everything drawn between these two lines is filled in."
+    },
+    {
+     "label": "bgcolor",
+     "code": "bgcolor(\"‹lightblue›\")\n",
+     "hint": "Set the background colour."
+    },
+    {
+     "label": "hideturtle",
+     "code": "hideturtle()\n",
+     "hint": "Hide the turtle so only the drawing shows."
+    },
+    {
+     "label": "speed",
+     "code": "speed(‹10›)\n",
+     "hint": "How fast the turtle moves, from 1 (slow) to 10 (fast)."
+    },
+    {
+     "label": "clear",
+     "code": "clear()\n",
+     "hint": "Wipe the drawing."
+    }
+   ]
+  },
+  {
+   "name": "Shapes",
+   "items": [
+    {
+     "label": "circle",
+     "code": "circle(‹50›)\n",
+     "hint": "Draw a circle with this radius."
+    },
+    {
+     "label": "square (loop)",
+     "code": "for i in range(‹4›):\n    forward(100)\n    right(90)\n",
+     "hint": "Draw a square by repeating forward and right four times."
+    }
+   ]
+  },
+  {
+   "name": "Code structure",
+   "items": [
+    {
+     "label": "for loop",
+     "code": "for i in range(‹4›):\n    ‹pass›\n",
+     "hint": "Repeat the indented lines this many times."
+    },
+    {
+     "label": "while loop",
+     "code": "while ‹True›:\n    ‹pass›\n",
+     "hint": "Repeat the indented lines for as long as the condition is true."
+    },
+    {
+     "label": "if / else",
+     "code": "if ‹x > 0›:\n    ‹pass›\nelse:\n    ‹pass›\n",
+     "hint": "Do one thing or the other, depending on a condition."
+    },
+    {
+     "label": "variable",
+     "code": "‹size› = ‹50›\n",
+     "hint": "Give a value a name, so you can reuse and change it."
+    },
+    {
+     "label": "def (function)",
+     "code": "def ‹shape›():\n    ‹pass›\n\n‹shape›()\n",
+     "hint": "Name a group of steps, then run it by calling its name."
+    },
+    {
+     "label": "print",
+     "code": "print(‹\"Hello\"›)\n",
+     "hint": "Show text or a value in the output box."
+    },
+    {
+     "label": "random number",
+     "code": "import random\n\n‹n› = random.randint(‹1›, ‹10›)\n",
+     "hint": "Pick a random whole number between two values."
+    }
+   ]
+  }
+ ]
+}

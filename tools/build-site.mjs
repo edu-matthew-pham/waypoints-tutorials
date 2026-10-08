@@ -11,7 +11,8 @@ import { mkdirSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import { Marked } from 'marked';
-import { lessonPageHtml, tryEmbed, esc, titleCase, page } from './lesson-view.mjs';
+import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock } from './lesson-view.mjs';
+import { readFileSync } from 'node:fs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildHtmlPlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
@@ -89,13 +90,26 @@ for (const l of lessons) {
   }
 }
 
+// Reference (cheat sheet) pages are generated from the same snippet files the playgrounds use.
+const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }];
+for (const r of REFS) {
+  const data = JSON.parse(readFileSync(join('snippets', `${r.file}.json`), 'utf8'));
+  const parent = r.path.split('/').slice(0, -1).join('/');
+  const body = data.groups.map((g) => `<h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map((i) =>
+    `<div class="ref-item">${codeBlock(highlightCode, i.code.split('‹').join('').split('›').join('').replace(/\n$/, '') + '\n', data.language, '')}<div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p></div></div>`).join('')).join('');
+  mkdirSync(join(OUT, r.path), { recursive: true });
+  writeFileSync(join(OUT, r.path, 'index.html'), page(data.title,
+    `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`));
+}
+
 for (const l of lessons) buildLesson(l, dirNode(l.slug.split('/').slice(0, -1).join('/')).title);
 
 for (const node of dirs.values()) {
   const isRoot = node.path === '';
   const parentPath = node.path.split('/').slice(0, -1).join('/');
   const crumb = isRoot ? '' : `<a class="crumb" href="../">← ${esc(dirNode(parentPath).title)}</a>`;
-  const items = (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].map(([name, k]) => `<li><a href="${esc(name)}/"><b>${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
+  const ref = REFS.find((r) => r.path === `${node.path}/reference`);
+  const items = (ref ? `<li><a href="reference/"><b>Reference</b><span>Every command and tag in the playground, with what it does.</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].map(([name, k]) => `<li><a href="${esc(name)}/"><b>${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
   const outDir = join(OUT, node.path);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,

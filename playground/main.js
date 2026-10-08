@@ -1,4 +1,5 @@
 import { CanvasTurtle, StopError } from './canvas-turtle.js';
+import { mountSnippets } from './snippets.js';
 import { createRunner, friendlyError } from './skulpt-bridge.js';
 
 // URL parameters (set by the lesson page):
@@ -85,3 +86,5 @@ resetBtn.addEventListener('click', () => {
   setStatus('idle', 'Ready');
   window.__playground.output = ''; window.__playground.error = null;
 });
+
+mountSnippets({ toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed') });

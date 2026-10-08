@@ -57,6 +57,10 @@ details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6
 .legend b{color:var(--c)}
 ul.lessons{list-style:none;padding:0;display:grid;gap:14px}ul.lessons a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;text-decoration:none;color:inherit}
 ul.lessons a:hover{border-color:var(--accent)}ul.lessons b{display:block;font-size:1.15rem}ul.lessons span{color:var(--muted);font-size:15px}
+.ref-group{margin:28px 0 8px;font-size:1.15rem}.ref-item{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr);gap:6px 18px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.ref-item .code{margin:0}.ref-item p{margin:0;color:var(--muted);font-size:15px}.ref-item b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+@media(max-width:640px){.ref-item{grid-template-columns:1fr}}
+@media print{body{background:#fff;color:#000}.ref-item{break-inside:avoid}}
 footer{margin-top:50px;color:var(--muted);font-size:14px}
 `;
 

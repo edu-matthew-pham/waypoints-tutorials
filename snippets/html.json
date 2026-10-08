@@ -1,0 +1,152 @@
+{
+ "title": "HTML and CSS reference",
+ "summary": "Tags and CSS you can click to insert, with what each one does.",
+ "language": "html",
+ "groups": [
+  {
+   "name": "Page structure",
+   "items": [
+    {
+     "label": "<h1> heading",
+     "code": "<h1>‹Heading›</h1>\n",
+     "hint": "The biggest heading. Use it once for the page title."
+    },
+    {
+     "label": "<h2> subheading",
+     "code": "<h2>‹Subheading›</h2>\n",
+     "hint": "A smaller heading for a section."
+    },
+    {
+     "label": "<p> paragraph",
+     "code": "<p>‹Some text›</p>\n",
+     "hint": "A paragraph of text."
+    },
+    {
+     "label": "<div> box",
+     "code": "<div>\n  ‹Content›\n</div>\n",
+     "hint": "A container that groups things together, so you can style them as one."
+    },
+    {
+     "label": "<ul> list",
+     "code": "<ul>\n  <li>‹First›</li>\n  <li>‹Second›</li>\n</ul>\n",
+     "hint": "A bulleted list. Each item is an <li>."
+    },
+    {
+     "label": "<ol> numbered list",
+     "code": "<ol>\n  <li>‹First›</li>\n  <li>‹Second›</li>\n</ol>\n",
+     "hint": "A numbered list."
+    },
+    {
+     "label": "comment",
+     "code": "<!-- ‹A note to yourself› -->\n",
+     "hint": "A note that the browser ignores."
+    }
+   ]
+  },
+  {
+   "name": "Content",
+   "items": [
+    {
+     "label": "<a> link",
+     "code": "<a href=\"‹https://example.com›\">‹Link text›</a>",
+     "hint": "A link. The address goes in href; the words between the tags are what people click."
+    },
+    {
+     "label": "<img> image",
+     "code": "<img src=\"‹https://picsum.photos/200›\" alt=\"‹A description›\">\n",
+     "hint": "An image. alt describes it for people who cannot see it."
+    },
+    {
+     "label": "<strong> bold",
+     "code": "<strong>‹important›</strong>",
+     "hint": "Make text stand out as important (usually bold)."
+    },
+    {
+     "label": "<em> emphasis",
+     "code": "<em>‹emphasis›</em>",
+     "hint": "Emphasise text (usually italic)."
+    },
+    {
+     "label": "<button>",
+     "code": "<button>‹Click me›</button>\n",
+     "hint": "A button."
+    },
+    {
+     "label": "<br> line break",
+     "code": "<br>\n",
+     "hint": "Start a new line."
+    },
+    {
+     "label": "<hr> line",
+     "code": "<hr>\n",
+     "hint": "Draw a line across the page."
+    }
+   ]
+  },
+  {
+   "name": "Table",
+   "items": [
+    {
+     "label": "<table>",
+     "code": "<table>\n  <tr>\n    <th>‹Name›</th>\n    <th>‹Score›</th>\n  </tr>\n  <tr>\n    <td>‹Sam›</td>\n    <td>‹10›</td>\n  </tr>\n</table>\n",
+     "hint": "A table: <tr> is a row, <th> a heading cell, <td> a normal cell."
+    }
+   ]
+  },
+  {
+   "name": "CSS",
+   "items": [
+    {
+     "label": "<style> block",
+     "code": "<style>\n  ‹h1› {\n    color: red;\n  }\n</style>\n",
+     "hint": "Where CSS lives. Each rule is: selector { property: value; }"
+    },
+    {
+     "label": "rule",
+     "code": "‹p› {\n  ‹color›: ‹blue›;\n}\n",
+     "hint": "Style every element matching the selector."
+    },
+    {
+     "label": "color",
+     "code": "color: ‹red›;\n",
+     "hint": "The text colour."
+    },
+    {
+     "label": "background-color",
+     "code": "background-color: ‹lightyellow›;\n",
+     "hint": "The background colour."
+    },
+    {
+     "label": "font-size",
+     "code": "font-size: ‹20px›;\n",
+     "hint": "How big the text is."
+    },
+    {
+     "label": "font-family",
+     "code": "font-family: ‹sans-serif›;\n",
+     "hint": "Which font to use."
+    },
+    {
+     "label": "text-align",
+     "code": "text-align: ‹center›;\n",
+     "hint": "Align text: left, center or right."
+    },
+    {
+     "label": "padding",
+     "code": "padding: ‹10px›;\n",
+     "hint": "Space inside an element, between its edge and its content."
+    },
+    {
+     "label": "margin",
+     "code": "margin: ‹10px›;\n",
+     "hint": "Space outside an element, between it and its neighbours."
+    },
+    {
+     "label": "border",
+     "code": "border: ‹2px solid black›;\n",
+     "hint": "A line around an element: thickness, style, colour."
+    }
+   ]
+  }
+ ]
+}

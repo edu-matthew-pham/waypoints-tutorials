@@ -74,6 +74,13 @@ A step picks one with `try: { playground: html }` (default `turtle`). To record 
 `dist/_playground-html` and clips type into the field labelled "HTML code"; `expect` can check `#preview-text`
 (the text of the rendered page). See `content/code/html/first-page/`.
 
+## Snippets and reference pages
+
+`snippets/turtle.json` and `snippets/html.json` are the single source for two things: the collapsible **Snippets**
+palette in each playground (buttons insert real, editable code at the cursor; `‹text›` marks the part to select
+and change), and the generated cheat sheets at `/code/python/reference/` and `/code/html/reference/`.
+Each snippet needs a `label`, `code` and `hint`; `npm run validate` checks them.
+
 ## Create a lesson in the browser
 
 `/code/create/` is a MakeCode-style lesson maker: paste or upload `lesson.md` and code files, see a live preview

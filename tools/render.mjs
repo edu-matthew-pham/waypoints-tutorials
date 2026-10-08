@@ -22,6 +22,16 @@ const stageHtml = readFileSync(join(here, 'stage.html'), 'utf8').replace('/*HIGH
 const rendererSrc = readFileSync(fileURLToPath(import.meta.url), 'utf8');
 
 // ---------- cache ----------
+// Clips show the playgrounds, so a change to any playground file must re-record them.
+const SHARED_DIRS = ['playground', 'playground-html', 'playground-shared', 'snippets'];
+function sharedFilesHash() {
+  const h = createHash('sha1');
+  const walk = (d) => { if (!existsSync(d)) return; for (const f of readdirSync(d).sort()) { const p = join(d, f); if (statSync(p).isDirectory()) walk(p); else h.update(p).update(readFileSync(p)); } };
+  SHARED_DIRS.forEach(walk);
+  return h.digest('hex');
+}
+const SHARED_HASH = sharedFilesHash();
+
 function stepHash(lesson, step) {
   const h = createHash('sha1');
   h.update(JSON.stringify({ c: step.config, a: lesson.app, p: lesson.pacing, t: lesson.title, l: lesson.language }));
@@ -29,7 +39,7 @@ function stepHash(lesson, step) {
     const p = join(lesson.dir, f);
     if (f !== 'lesson.md' && statSync(p).isFile()) h.update(f).update(readFileSync(p));
   }
-  h.update(stageHtml).update(rendererSrc);
+  h.update(stageHtml).update(rendererSrc).update(SHARED_HASH);
   return h.digest('hex').slice(0, 16);
 }
 

@@ -11,4 +11,17 @@ for (const l of lessons) {
   if (errs.length) { bad += errs.length; errs.forEach((e) => console.error('✗ ' + e)); }
   else console.log(`✓ ${l.slug}: ${l.steps.length} steps, ${clips} clips`);
 }
+import { readFileSync, readdirSync } from 'node:fs';
+for (const f of readdirSync('snippets').filter((n) => n.endsWith('.json'))) {
+  try {
+    const d = JSON.parse(readFileSync(`snippets/${f}`, 'utf8'));
+    let n = 0;
+    for (const g of d.groups) for (const i of g.items) {
+      n++;
+      if (!i.label || !i.code || !i.hint) { bad++; console.error(`✗ snippets/${f} › ${g.name} › ${i.label || '(no label)'}: needs label, code and hint`); }
+      if ((i.code.match(/‹/g) || []).length !== (i.code.match(/›/g) || []).length) { bad++; console.error(`✗ snippets/${f} › ${i.label}: unbalanced ‹ ›`); }
+    }
+    if (!bad) console.log(`✓ snippets/${f}: ${n} snippets`);
+  } catch (e) { bad++; console.error(`✗ snippets/${f}: ${e.message}`); }
+}
 process.exit(bad ? 1 : 0);
