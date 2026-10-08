@@ -197,3 +197,18 @@ teachers: |
 - `teachers`: Markdown shown in a collapsed **For teachers** panel at the end: bigger project ideas, misconceptions, curriculum links. Larger real-world projects belong to the teacher and the class, not the tool.
 - **Make vs In the real world:** Make is an explicit task ("draw a house: a square with two lines on top"). An optional last step "In the real world" (`stage: info`, text only) points to where students might apply the skill ("represent your house layout using turtle"). It suggests, it does not set a task. Larger projects belong to the teacher.
 - Clips are optional. Use one for a first-run demo or to explain why; skip it where students are about to do the thing in the playground.
+
+### Hints and "expected result" clips
+
+- `hint: "text"` or a list of up to 3 texts adds "Need a hint?" (then "Another hint") buttons under the playground. Write nudges, not answers: the first points at the idea, the second at what changes.
+- `reveal: "Show the expected result"` hides a step's clip behind a button with that text, placed after the playground so students try first.
+- An **output-only clip** shows the result without the code. Give the step `app: true` and a query that loads the solution and hides the editor:
+
+```yaml
+app: true
+query: { code: "@square.py#triangle", view: output, autorun: 1 }
+clip:
+  - expect: { selector: "#status", contains: Finished }
+```
+
+  `view=output` shows only the drawing and `autorun=1` runs the program when the page loads.

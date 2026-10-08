@@ -34,7 +34,7 @@ function clipHtml(lesson, step) {
   } else {
     inner = `<div class="placeholder"><b>Clip placeholder · ${esc(step.id)}</b><span>${esc(cap)}</span><span>Rendered automatically by the build.</span></div>`;
   }
-  return c.reveal ? `<details class="reveal"><summary>Reveal what happens</summary>${inner}</details>` : inner;
+  return c.reveal ? `<details class="reveal"><summary>${esc(typeof c.reveal === 'string' ? c.reveal : 'Reveal what happens')}</summary>${inner}</details>` : inner;
 }
 
 

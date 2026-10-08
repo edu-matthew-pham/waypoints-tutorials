@@ -52,6 +52,9 @@ figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .try-head span{color:var(--muted)}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
+details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
+details.hints summary{cursor:pointer;font-weight:600;padding:10px 0}
+details.hints[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
 details.teachers{margin:28px 0 0;border:1px solid var(--line);border-radius:8px;padding:0 16px}
 details.teachers summary{cursor:pointer;font-weight:600;padding:12px 0}
 .hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
@@ -154,7 +157,13 @@ export function lessonPageHtml(lesson, deps) {
     const clip = clipHtml(s);
     const body = md.parse(s.body);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
-    const inner = (c.stage === 'predict' ? `${showCode}${body}${clip}` : `${body}${showCode}${clip}`) + tryHtml(s) + checkHtml(lesson, s, snippetNames);
+    // Hints are nudges, one click each: "Need a hint?", then "Another hint".
+    const hs = c.hint === undefined ? [] : [].concat(c.hint);
+    const hints = hs.map((h, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(h)}</details>`).join('');
+    // Predict: code, questions, hidden reveal. A hidden clip on a task comes after the attempt: text, code, try, hints, clip.
+    const inner = c.stage === 'predict' ? `${showCode}${body}${clip}${tryHtml(s)}${hints}${checkHtml(lesson, s, snippetNames)}`
+      : c.reveal ? `${body}${showCode}${tryHtml(s)}${hints}${clip}${checkHtml(lesson, s, snippetNames)}`
+      : `${body}${showCode}${clip}${tryHtml(s)}${hints}${checkHtml(lesson, s, snippetNames)}`;
     return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"><div class="chip">${esc(label)}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
 

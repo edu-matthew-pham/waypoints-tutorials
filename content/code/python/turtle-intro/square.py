@@ -34,3 +34,11 @@ from turtle import *
 
 # Draw your own shape here.
 # endregion
+
+# region: triangle
+from turtle import *
+
+for i in range(3):
+    forward(100)
+    right(120)
+# endregion

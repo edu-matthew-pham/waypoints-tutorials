@@ -82,11 +82,22 @@ Next lesson: give a name to the size, then give the whole square a name.
 ```step
 stage: modify
 try: { starter: "square.py#modify", height: 420 }
+app: true
+query: { code: "@square.py#triangle", view: output, autorun: 1 }
+clip:
+  - wait: 600
+  - expect: { selector: "#status", contains: Finished }
+  - expect: { selector: "#turtle-state", contains: "heading 0" }
+caption: The expected result: a triangle
+reveal: Show what the triangle should look like
+hint:
+  - "A square turns the turtle 90° four times. How many times does a triangle turn, and what do all the turns add up to?"
+  - "Two numbers change: how many times the loop repeats, and how far the turtle turns each time."
 check: { type: reflect, text: "I changed one thing, ran it, and checked the result matched what I expected." }
 unlocks: [pencolor, pensize, circle]
 ```
 
-Change the loop to draw a triangle. Hint: the turtle turns by an exterior angle.
+Change the loop so it draws a triangle.
 
 ## Make
 

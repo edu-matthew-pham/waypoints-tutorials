@@ -175,6 +175,11 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         if (ids) for (const u of c.unlocks) if (!ids.has(u)) err(where, `unknown snippet id "${u}" (see the reference page for ids)`);
       }
     }
+    if (c.hint !== undefined) {
+      const hs = Array.isArray(c.hint) ? c.hint : [c.hint];
+      if (hs.length > 3 || !hs.every((h) => typeof h === 'string' && h.trim())) err(where, 'hint must be a short text, or a list of up to 3 texts (nudges, not answers)');
+    }
+    if (c.reveal !== undefined && typeof c.reveal !== 'boolean' && !(typeof c.reveal === 'string' && c.reveal.trim())) err(where, 'reveal must be true, or the text of the button, e.g. "Show the expected result"');
     if (c.reveal && !c.clip) err(where, '"reveal" only makes sense on a step with a clip');
   }
   return errs;

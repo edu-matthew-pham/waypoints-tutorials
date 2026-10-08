@@ -50,3 +50,8 @@ canvas { position: absolute; inset: 0; display: block; }
 .tab.rm { padding: 4px 6px; border-radius: 0 6px 0 0; margin-left: -3px; border-left: 0; }
 .tab.add { margin-left: 6px; border-style: dashed; border-radius: 6px; font-family: system-ui, sans-serif; }
 .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ?view=output: only the drawing (used by recorded clips that show the expected result, not the code).
+   The editor stays in the page, invisible, so the clip recorder can still find it. */
+body.output-only .pg { grid-template-columns: 1fr; }
+body.output-only .editor-pane { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; padding: 0; border: 0; }

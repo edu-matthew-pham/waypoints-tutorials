@@ -8,6 +8,8 @@ const params = new URLSearchParams(location.search);
 const starter = params.get('code') ?? 'from turtle import *\n\nforward(100)\n';
 const storeKey = params.get('id') ? `wp-playground:${params.get('id')}` : null;
 
+if (params.get('view') === 'output') document.body.classList.add('output-only');
+
 const $ = (id) => document.getElementById(id);
 const codeEl = $('code'), statusEl = $('status'), outEl = $('output'), stateEl = $('turtle-state');
 const runBtn = $('run'), stopBtn = $('stop'), finishBtn = $('finish'), resetBtn = $('reset');
@@ -172,3 +174,6 @@ modulesReady.then(async (modules) => {
 });
 renderTabs();
 
+
+// ?autorun=1 runs the program once the page is ready (for output-only clips).
+if (params.get('autorun')) modulesReady.then(() => setTimeout(() => runBtn.click(), 400));
