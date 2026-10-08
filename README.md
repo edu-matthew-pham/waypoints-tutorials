@@ -65,6 +65,15 @@ internet). Desktop apps are out of scope.
 CodeSwitch app (no blocks, transpiler or JS mode). Lessons embed it for students with a
 `try` block and record it with `app.layout: full`. See AUTHORING.md.
 
+## Playgrounds
+
+- `playground/`: Python turtle (Skulpt + Canvas) at `/_playground/`.
+- `playground-html/`: HTML & CSS, no dependencies, at `/_playground-html/`. The preview is a sandboxed iframe.
+
+A step picks one with `try: { playground: html }` (default `turtle`). To record the HTML one, a lesson's `app` serves
+`dist/_playground-html` and clips type into the field labelled "HTML code"; `expect` can check `#preview-text`
+(the text of the rendered page). See `content/code/html/first-page/`.
+
 ## Create a lesson in the browser
 
 `/code/create/` is a MakeCode-style lesson maker: paste or upload `lesson.md` and code files, see a live preview

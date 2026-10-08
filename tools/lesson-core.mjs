@@ -5,6 +5,7 @@ import YAML from 'yaml';
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
+export const PLAYGROUND_KINDS = ['turtle', 'html'];
 
 export const DEFAULT_PACING = {
   typeCps: 55,        // characters per second when code is "typed" into the stage's code panel
@@ -102,6 +103,7 @@ export function validateLessonCore(lesson, read) {
     }
     if (c.try !== undefined) {
       if (typeof c.try !== 'object' || Array.isArray(c.try)) err(where, 'try must be a mapping: { starter: file#region, height: 460 }');
+      else if (c.try.playground && !PLAYGROUND_KINDS.includes(c.try.playground)) err(where, `try.playground must be one of ${PLAYGROUND_KINDS.join(', ')}`);
       else if (c.try.starter) { try { snip(c.try.starter); } catch (e) { err(where, `try.starter: ${e.message}`); } }
       else if (!c.code) err(where, 'try needs a starter (file#region) or a step-level code reference to start from');
     }

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML playground</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="pg">
+  <section class="pane editor-pane" aria-label="Code">
+    <div class="bar">
+      <span class="title">HTML &amp; CSS</span>
+      <button id="reset" class="btn ghost" type="button">Reset</button>
+    </div>
+    <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="HTML code" wrap="off"></textarea>
+    <div id="status" role="status" data-state="ready">Preview ready</div>
+  </section>
+  <section class="pane preview-pane" aria-label="Preview">
+    <iframe id="preview" title="Page preview" sandbox="allow-scripts"></iframe>
+    <output id="preview-text" aria-label="Page text"></output>
+  </section>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>

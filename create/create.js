@@ -139,7 +139,7 @@ $('upload').onchange = async (e) => {
 };
 
 // ---------- preview ----------
-const playgroundBase = new URL('../../_playground/', location.href).href;
+const siteRoot = new URL('../../', location.href).href;
 let timer;
 const schedule = () => { clearTimeout(timer); timer = setTimeout(render, 350); };
 
@@ -161,7 +161,7 @@ function render() {
     ? `<div class="placeholder"><b>Clip placeholder · ${s.id}</b><span>Recorded when this lesson is added to the repository.</span></div>` : '';
   const tryHtml = (s) => {
     const t = s.config.try; if (!t) return '';
-    try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), playgroundBase); } catch { return ''; }
+    try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot); } catch { return ''; }
   };
   const keep = $('preview').contentWindow?.scrollY || 0;
   $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, crumb: null, source: '' });

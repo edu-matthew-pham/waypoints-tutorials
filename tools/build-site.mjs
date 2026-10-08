@@ -4,6 +4,7 @@
 //   dist/<subject>/<collection>/...      lessons in a collection         (e.g. /code/python/)
 //   dist/<subject>/<collection>/<lesson>/index.html
 //   dist/_playground/                    the embeddable Python turtle playground
+//   dist/_playground-html/               the embeddable HTML & CSS playground
 // A step with a clip embeds clips/step-N.mp4 if it exists, otherwise a labelled placeholder,
 // so lessons can be written, reviewed and published before any clip is rendered.
 import { mkdirSync, writeFileSync, existsSync } from 'node:fs';
@@ -12,7 +13,7 @@ import { createRequire } from 'node:module';
 import { Marked } from 'marked';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page } from './lesson-view.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
-import { buildPlayground } from './build-playground.mjs';
+import { buildPlayground, buildHtmlPlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 
 const require = createRequire(import.meta.url);
@@ -39,7 +40,7 @@ function clipHtml(lesson, step) {
 function tryHtml(lesson, step) {
   const t = step.config.try;
   if (!t) return '';
-  return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), `${'../'.repeat(lesson.depth)}_playground/`);
+  return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), '../'.repeat(lesson.depth));
 }
 
 function buildLesson(lesson, parentTitle) {
@@ -63,6 +64,7 @@ if (bad) process.exit(1);
 
 mkdirSync(OUT, { recursive: true });
 buildPlayground(OUT);
+buildHtmlPlayground(OUT);
 buildCreate(OUT);
 
 // directory tree: path ('' = root) -> { title, summary, kids: [{name, kind, title, summary}] }

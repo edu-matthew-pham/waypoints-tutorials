@@ -109,12 +109,18 @@ ${steps}
 ${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`);
 }
 
-/** "Try it yourself" iframe. playgroundBase is the URL of the _playground folder (with trailing slash). */
-export function tryEmbed(lesson, step, starter, playgroundBase) {
+export const PLAYGROUNDS = {
+  turtle: { dir: '_playground', title: 'Python turtle playground' },
+  html: { dir: '_playground-html', title: 'HTML and CSS playground' },
+};
+
+/** "Try it yourself" iframe. siteRoot is the URL of the site root (with trailing slash), e.g. "../../../". */
+export function tryEmbed(lesson, step, starter, siteRoot) {
   const t = step.config.try;
+  const pg = PLAYGROUNDS[t.playground || 'turtle'] || PLAYGROUNDS.turtle;
   const q = new URLSearchParams({ id: `${lesson.slug}/${step.id}`, code: starter });
   if (t.extent) q.set('extent', t.extent);
   if (t.speed) q.set('speed', t.speed);
   return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>Your edits are saved in this browser.</span></div>` +
-    `<iframe title="Python turtle playground" loading="lazy" style="height:${Number(t.height) || 480}px" src="${esc(`${playgroundBase}index.html?${q.toString()}`)}"></iframe></div>`;
+    `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;
 }
