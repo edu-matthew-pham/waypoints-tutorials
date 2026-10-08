@@ -10,6 +10,7 @@ Batched for the next "go". Newest decisions first.
 3. **Mastery, not just the concept.** Functions I is the concept checkpoint; Parameters and Functions III are the repeated-use checkpoints. Make this observable with a code check type (for example "defines 2 or more functions", "calls `square` 3 or more times"), reported by the playground.
 4. **Faded scaffolds on return visits:** a later lesson gives a blank file and a hint instead of a starter plus snippet.
 5. **Pain demo for modules:** two programs need the same functions, copy them across, then fix a bug in one copy. Currently only loops and functions have the pain demo.
+6. **Course bar above the sticky step pills:** `‹ prev` · `3 of 5 · Title ▾` · `next ›`, in the same sticky block. The dropdown lists the path's lessons with ticks (from `wp-progress`, per browser, no tracking) and a link back to the path page; a "Next lesson" card at the end of each lesson; collapses to dropdown plus arrows on phones. Open question: how a lesson with no checks counts as done (reaching its last step, or never ticked).
 
 ## Parked
 
