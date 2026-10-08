@@ -1,7 +1,7 @@
 // `node tools/probe.mjs <url> [outDir]`: can a headless browser load this site? Prints a short report
 // and saves a screenshot. Used by the manual "Probe a site" workflow to test recording feasibility.
 import { chromium } from 'playwright-core';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const url = process.argv[2];
@@ -26,7 +26,9 @@ const info = await page.evaluate(() => {
   const texts = [...document.querySelectorAll('button,a,[role=button],[role=menuitem],input,label')].map((e) => (e.innerText || e.value || e.getAttribute('aria-label') || '').trim()).filter(Boolean);
   return { title: document.title, url: location.href, webgl: gl, canvases: document.querySelectorAll('canvas').length, iframes: document.querySelectorAll('iframe').length, controls: [...new Set(texts)].slice(0, 60), body: document.body.innerText.slice(0, 600) };
 });
-console.log(JSON.stringify({ status, seconds: ((Date.now() - t) / 1000).toFixed(1), ...info, problems: problems.slice(0, 15) }, null, 2));
+const report = JSON.stringify({ status, seconds: ((Date.now() - t) / 1000).toFixed(1), ...info, problems: problems.slice(0, 15) }, null, 2);
+console.log(report);
+writeFileSync(join(out, 'report.json'), report);
 await page.screenshot({ path: join(out, 'screenshot.png') });
 await ctx.close();
 await browser.close();
