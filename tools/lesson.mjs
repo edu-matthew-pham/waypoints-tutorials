@@ -61,8 +61,16 @@ export function loadSnippetFiles() {
   return out;
 }
 
+/** Shared modules: { name: source } from modules/*.py in the repo root. */
+export function loadSharedModules() {
+  const dir = resolve('modules');
+  const out = {};
+  if (existsSync(dir)) for (const f of readdirSync(dir)) if (f.endsWith('.py')) out[f.slice(0, -3)] = readFileSync(join(dir, f), 'utf8');
+  return out;
+}
+
 export function validateLesson(lesson) {
   const files = loadSnippetFiles();
   const known = Object.fromEntries(Object.entries(files).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
-  return validateLessonCore(lesson, readIn(lesson.dir), known);
+  return validateLessonCore(lesson, readIn(lesson.dir), known, loadSharedModules());
 }

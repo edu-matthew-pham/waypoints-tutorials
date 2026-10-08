@@ -25,6 +25,19 @@ const turtle = new CanvasTurtle($('canvas'), {
   extent: Number(params.get('extent')) || undefined,
   onUpdate: (s) => { stateEl.textContent = `x ${s.x} · y ${s.y} · heading ${s.heading}°`; window.__playground.turtle = s; },
 });
+// Lesson modules: ?use=shapes,house names the ones offered; ?mods={"name": "source"} supplies ones written
+// in the lesson itself. Shared ones come from modules.json (built from the repo's modules/ folder).
+const useModules = (params.get('use') || '').split(',').map((s) => s.trim()).filter(Boolean);
+const modulesReady = (async () => {
+  if (!useModules.length) return {};
+  let shared = {}, local = {};
+  try { shared = await (await fetch('modules.json')).json(); } catch { /* none shared */ }
+  try { local = JSON.parse(params.get('mods') || '{}'); } catch { /* ignore a bad value */ }
+  const out = {};
+  for (const n of useModules) if (local[n] ?? shared[n]) out[n] = local[n] ?? shared[n];
+  return out;
+})();
+
 const run = createRunner({ turtle, onOutput: (t) => { outEl.append(document.createTextNode(t)); window.__playground.output += t; } });
 
 function setStatus(state, text) {
@@ -60,6 +73,7 @@ runBtn.addEventListener('click', async () => {
   Object.assign(window.__playground, { output: '', error: null });
   setRunning(true); setStatus('running', 'Running…');
   try {
+    run.setModules(await modulesReady);
     await run(codeEl.value);
     setStatus('done', 'Finished');
   } catch (err) {
@@ -87,4 +101,4 @@ resetBtn.addEventListener('click', () => {
   window.__playground.output = ''; window.__playground.error = null;
 });
 
-mountSnippets({ kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed') });
+modulesReady.then((modules) => mountSnippets({ kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed'), modules }));

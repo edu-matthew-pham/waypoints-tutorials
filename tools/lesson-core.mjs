@@ -1,6 +1,7 @@
 // Pure lesson logic shared by the Node build and the in-browser /create/ page: no fs, no DOM.
 // `read(file)` returns the text of a lesson-relative file (or undefined if missing).
 import YAML from 'yaml';
+import { scanModule } from './modules-scan.mjs';
 
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
@@ -73,6 +74,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     title: meta.title || slug,
     summary: meta.summary || '',
     author: meta.author ? String(meta.author) : '',
+    modules: Array.isArray(meta.modules) ? meta.modules.map(String) : [],
     language: meta.language || 'python',
     app: meta.app || null,
     pacing: { ...DEFAULT_PACING, ...(meta.pacing || {}) },
@@ -82,9 +84,21 @@ export function parseLessonText(raw, slug = 'lesson') {
 }
 
 /** known (optional): { turtle: Set<snippet id>, html: Set<...> } to check `unlocks` ids against. */
-export function validateLessonCore(lesson, read, known) {
-  const snip = (ref) => snippetFrom(read, ref);
+export function validateLessonCore(lesson, read, known, shared = {}) {
+  // Modules this lesson offers: a file next to lesson.md wins over a shared one in modules/.
   const errs = [];
+  const moduleSource = (name) => read(`${name}.py`) ?? shared[name];
+  if (lesson.modules?.length) {
+    known = { ...known };
+    const ids = new Set(known.turtle || []);
+    for (const name of lesson.modules) {
+      const src = /^[a-z][a-z0-9_]*$/.test(name) ? moduleSource(name) : undefined;
+      if (src === undefined) { errs.push(`${lesson.slug} › frontmatter: module "${name}" not found (add ${name}.py next to lesson.md or in modules/; names are lowercase letters, digits and _)`); continue; }
+      for (const fn of scanModule(src)) ids.add(`${name}.${fn.name}`);
+    }
+    if (known.turtle) known.turtle = ids;
+  }
+  const snip = (ref) => snippetFrom(read, ref);
   const err = (where, msg) => errs.push(`${lesson.slug} › ${where}: ${msg}`);
   const hasClips = lesson.steps.some((s) => s.config.clip);
 

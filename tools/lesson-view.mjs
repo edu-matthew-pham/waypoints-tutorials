@@ -170,12 +170,14 @@ export const PLAYGROUNDS = {
 };
 
 /** "Try it yourself" iframe. siteRoot is the URL of the site root (with trailing slash), e.g. "../../../". */
-export function tryEmbed(lesson, step, starter, siteRoot, locks = '') {
+export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = null) {
   const t = step.config.try;
   const pg = PLAYGROUNDS[t.playground || 'turtle'] || PLAYGROUNDS.turtle;
   const q = new URLSearchParams({ id: `${lesson.slug}/${step.id}`, code: starter });
   if (t.extent) q.set('extent', t.extent);
   if (t.speed) q.set('speed', t.speed);
+  // Modules the playground offers: ?use=shapes,house, plus ?mods={name: source} for ones that live in the lesson
+  if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
   return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>Your edits are saved in this browser.</span></div>` +
     `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;

@@ -82,6 +82,11 @@ and change), and the generated cheat sheets at `/code/python/reference/` and `/c
 Each snippet needs a `label`, `code` and `hint`; `npm run validate` checks them. Lesson steps can lock snippets
 until the student passes a check (a tick box or a short question); see AUTHORING.md section 7. Progress is per browser.
 
+## Modules
+
+`modules/*.py` are shared Python modules (e.g. `shapes.py`) that a lesson can offer with `modules: [shapes]`; each
+function becomes a palette button, and students can open the source with "Show how it works". See AUTHORING.md section 8.
+
 ## Create a lesson in the browser
 
 `/code/create/` is a MakeCode-style lesson maker: paste or upload `lesson.md` and code files, see a live preview

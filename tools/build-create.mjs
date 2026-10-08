@@ -11,7 +11,7 @@ export function buildCreate(out = 'dist') {
   rmSync(join(out, 'create'), { recursive: true, force: true });
   rmSync(dest, { recursive: true, force: true });
   cpSync(join(root, 'create'), dest, { recursive: true });
-  for (const f of ['lesson-core.mjs', 'lesson-view.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
+  for (const f of ['lesson-core.mjs', 'lesson-view.mjs', 'modules-scan.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
   // highlight.cjs is a plain function declaration; expose it as an ES module for the browser.
   writeFileSync(join(dest, 'highlight.js'), readFileSync(join(root, 'tools', 'highlight.cjs'), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '') + '\nexport { highlightCode };\n');
   mkdirSync(join(dest, 'vendor'), { recursive: true });

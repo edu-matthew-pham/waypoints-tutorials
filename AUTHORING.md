@@ -154,3 +154,19 @@ unlocks: [for-loop]
 - Progress is stored in the student's browser only. Question answers are in the page source, so this suits
   practice, not assessment. Teachers can open any lesson or playground with `?unlock=all` to show everything
   (remembered in that browser), and `?unlock=off` to switch it back.
+
+## 8. Python modules (tools that become buttons)
+
+A module is an ordinary Python file whose functions the playground turns into buttons, so students can use an
+idea (say, "draw a square") before they can write the `def` themselves. Offer modules in the frontmatter:
+
+```yaml
+modules: [shapes]
+```
+
+- **Where the file lives:** `shapes.py` next to `lesson.md` (lesson-local, wins) or in the repo's `modules/` folder (shared by all lessons).
+- **What becomes a button:** each top-level `def name(args):` that starts with a docstring. The first docstring line is the hint; default values become the placeholders: `square(‹100›)`.
+- **What a click does:** inserts the call and adds `from shapes import square` to the code, if it is not there yet. "Show how it works" opens the module's source read-only.
+- **Locking:** module functions are snippets with ids like `shapes.square`, so `unlocks: [shapes.square]` works as in section 7. `npm run validate` checks that the module and function exist.
+- **Limits:** modules can use only what the playground's turtle supports. Detection is a simple pattern, so decorators and nested functions do not become buttons. Only the Python turtle playground supports modules.
+- **On the create page:** "+ Add module" adds a file tab and the `modules:` line.

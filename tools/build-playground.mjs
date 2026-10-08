@@ -1,6 +1,6 @@
 // Assemble the static playground into dist/_playground (our files + vendored Skulpt).
 // Used by `npm run build:playground` and imported by the site build.
-import { cpSync, mkdirSync, copyFileSync, rmSync, existsSync } from 'node:fs';
+import { cpSync, mkdirSync, copyFileSync, rmSync, existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -10,6 +10,12 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 function addSnippets(dest, name) {
   for (const f of ['snippets.js', 'snippets.css']) copyFileSync(join(root, 'playground-shared', f), join(dest, f));
   copyFileSync(join(root, 'snippets', `${name}.json`), join(dest, 'snippets.json'));
+  copyFileSync(join(root, 'tools', 'modules-scan.mjs'), join(dest, 'modules-scan.mjs'));
+  // Shared Python modules (modules/*.py) that lessons can offer: { name: source }
+  const mods = {};
+  const mdir = join(root, 'modules');
+  if (existsSync(mdir)) for (const f of readdirSync(mdir)) if (f.endsWith('.py')) mods[f.slice(0, -3)] = readFileSync(join(mdir, f), 'utf8');
+  writeFileSync(join(dest, 'modules.json'), JSON.stringify(mods));
 }
 
 export function buildPlayground(out = 'dist') {

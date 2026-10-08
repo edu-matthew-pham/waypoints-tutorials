@@ -1,6 +1,7 @@
 import { Marked } from 'marked';
 import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
+import { scanModule } from './modules-scan.mjs';
 import { highlightCode } from './highlight.js';
 import { REQUEST_FORM_URL } from './config.js';
 
@@ -156,6 +157,10 @@ const loadSnippets = Promise.all(['turtle', 'html'].map(async (k) => {
   const dir = k === 'turtle' ? '_playground' : '_playground-html';
   try { snippetData[k] = await (await fetch(new URL(`../../${dir}/snippets.json`, location.href))).json(); } catch { /* validation of ids is skipped */ }
 }));
+let sharedModules = {};
+const loadModules = (async () => {
+  try { sharedModules = await (await fetch(new URL('../../_playground/modules.json', location.href))).json(); } catch { /* none */ }
+})();
 const knownIds = () => Object.fromEntries(Object.entries(snippetData).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
 
 function render() {
@@ -163,16 +168,18 @@ function render() {
   let lesson;
   try { lesson = parseLessonText(files['lesson.md'] || '', 'my-lesson'); }
   catch (e) { problemsList(['lesson.md: ' + e.message.split('\n')[0]]); return; }
-  const errs = validateLessonCore(lesson, read, knownIds()).map((m) => m.replace(/^my-lesson › /, ''));
+  const errs = validateLessonCore(lesson, read, knownIds(), sharedModules).map((m) => m.replace(/^my-lesson › /, ''));
   // clip checks that need an app are skipped here: clips are only recorded by the repository build
   problemsList(errs, 'Looks good.');
   const clipHtml = (s) => s.config.clip
     ? `<div class="placeholder"><b>Clip placeholder · ${s.id}</b><span>Recorded when this lesson is added to the repository.</span></div>` : '';
   const locksFor = (kind) => lesson.steps.filter((x) => (x.config.unlocks || []).length && unlockKind(lesson, x) === kind)
     .flatMap((x) => x.config.unlocks.map((id) => `${id}~${x.title.replace(/[|~]/g, ' ')}`)).join('|');
+  // Modules the lesson offers; ones with a file tab are sent along, shared ones the playground already has.
+  const modsFor = (l) => ({ use: l.modules, local: Object.fromEntries(l.modules.filter((n) => files[`${n}.py`] !== undefined).map((n) => [n, files[`${n}.py`]])) });
   const tryHtml = (s) => {
     const t = s.config.try; if (!t) return '';
-    try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot, locksFor(unlockKind(lesson, s))); } catch { return ''; }
+    try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot, locksFor(unlockKind(lesson, s)), modsFor(lesson)); } catch { return ''; }
   };
   const keep = $('preview').contentWindow?.scrollY || 0;
   $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, crumb: null, source: '' });
@@ -220,11 +227,22 @@ function addCheck(block, selectText) {
 }
 $('addtick').onclick = () => addCheck(TICK, '…');
 $('addq').onclick = () => addCheck(QUESTION, 'Your question?');
+$('addmod').onclick = () => {
+  let n = 1; while (files[`mymodule${n === 1 ? '' : n}.py`] !== undefined) n++;
+  const name = `mymodule${n === 1 ? '' : n}`;
+  files[`${name}.py`] = 'from turtle import *\n\n\ndef my_shape(size=100):\n    """Draw my shape."""\n    for i in range(4):\n        forward(size)\n        right(90)\n';
+  // offer it from the lesson: add to (or create) the modules: line in the frontmatter
+  let md = files['lesson.md'];
+  const m = md.match(/^modules:\s*\[(.*)\]\s*$/m);
+  if (m) md = md.replace(m[0], `modules: [${[...m[1].split(',').map((s) => s.trim()).filter(Boolean), name].join(', ')}]`);
+  else md = md.replace(/^(---\n[\s\S]*?)\n---/, `$1\nmodules: [${name}]\n---`);
+  files['lesson.md'] = md; current = `${name}.py`; save(); sync(); schedule();
+};
 $('resetprog').onclick = () => { try { localStorage.removeItem('wp-progress'); } catch { /* ignore */ } render(); };
 
 $('pick').onclick = async () => {
   await loadSnippets;
-  withStep((st) => {
+  withStep(async (st) => {
     let lesson;
     try { lesson = parseLessonText(files['lesson.md'], 'my-lesson'); } catch { alert('Fix the errors in lesson.md first.'); return; }
     const step = lesson.steps[st.index];
@@ -232,12 +250,15 @@ $('pick').onclick = async () => {
     const data = snippetData[kind];
     if (!data) { alert('Could not load the snippet list.'); return; }
     const have = new Set(step.config.unlocks || []);
+    await loadModules;
+    const modGroups = kind === 'turtle' ? lesson.modules.map((name) => ({ name: `Module: ${name}`, items: scanModule(files[`${name}.py`] ?? sharedModules[name] ?? '').map((f) => ({ id: `${name}.${f.name}`, label: f.name, hint: f.doc })) })).filter((g) => g.items.length) : [];
     $('pickinfo').textContent = `Tick the snippets students earn by passing this step's check (${kind === 'html' ? 'HTML and CSS' : 'Python turtle'} playground). Unticked ones stay available to everyone unless another step claims them.`;
     $('picklist').innerHTML = '';
-    for (const g of data.groups) {
+    const groups = [...data.groups.map((g) => ({ name: g.name, items: g.items.map((i) => ({ id: snippetId(i.label), label: i.label, hint: i.hint })) })), ...modGroups];
+    for (const g of groups) {
       const h = document.createElement('h3'); h.textContent = g.name; $('picklist').append(h);
       for (const i of g.items) {
-        const id = snippetId(i.label);
+        const id = i.id;
         const l = document.createElement('label');
         const c = document.createElement('input'); c.type = 'checkbox'; c.value = id; c.checked = have.has(id);
         l.append(c, document.createTextNode(i.label)); l.title = i.hint || ''; $('picklist').append(l);

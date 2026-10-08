@@ -2,6 +2,7 @@
 title: Drawing with a turtle
 summary: Predict, run and change short Python programs that draw shapes.
 language: python
+modules: [shapes]
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground" 8123
   url: http://127.0.0.1:8123/index.html
@@ -61,10 +62,12 @@ check:
   options: ["2 times", "4 times", "90 times", "100 times"]
   answer: 1
   explain: "Right: range(4) repeats the indented lines 4 times, once for each side."
-unlocks: [for-loop, square-loop]
+unlocks: [for-loop, square-loop, shapes.square]
 ```
 
 The same square, in fewer lines. Which part repeats? What does `range(4)` control?
+
+You have also unlocked a **module** tool: open **Snippets**, then **Module: shapes**, and click `square`. It adds `from shapes import square` and a call. Click **Show how it works** to see the loop inside it.
 
 ## Modify
 
@@ -72,7 +75,7 @@ The same square, in fewer lines. Which part repeats? What does `range(4)` contro
 stage: modify
 try: { starter: "square.py#modify", height: 420 }
 check: { type: reflect, text: "I changed one thing, ran it, and checked the result matched what I expected." }
-unlocks: [pencolor, pensize, circle]
+unlocks: [pencolor, pensize, circle, shapes.triangle, shapes.polygon]
 ```
 
 Change the loop to draw a triangle. Hint: the turtle turns by an exterior angle.

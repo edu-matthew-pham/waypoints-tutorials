@@ -14,7 +14,7 @@ import { Marked } from 'marked';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
 import { snippetId, unlockKind } from './lesson-core.mjs';
-import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, CONTENT_ROOT } from './lesson.mjs';
+import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildHtmlPlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 
@@ -42,7 +42,10 @@ function clipHtml(lesson, step) {
 function tryHtml(lesson, step) {
   const t = step.config.try;
   if (!t) return '';
-  return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), '../'.repeat(lesson.depth));
+  // Modules a lesson offers: a file next to lesson.md overrides a shared one; shared ones the playground loads itself.
+  const local = {};
+  for (const name of lesson.modules) { const f = join(lesson.dir, `${name}.py`); if (existsSync(f)) local[name] = readFileSync(f, 'utf8'); }
+  return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), '../'.repeat(lesson.depth), '', { use: lesson.modules, local });
 }
 
 function buildLesson(lesson, parentTitle) {

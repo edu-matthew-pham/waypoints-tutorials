@@ -2,6 +2,8 @@
 // buttons. Each button inserts real, editable code at the cursor. One way only: nothing is parsed back.
 // In a snippet's code, ‹text› marks a placeholder: the first one is selected after inserting, and the
 // markers themselves are removed.
+import { scanModule, callText, ensureImport } from './modules-scan.mjs';
+
 const OPEN = '‹', CLOSE = '›';
 
 /**
@@ -38,7 +40,7 @@ const idOf = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').
 const STORE = 'wp-progress';
 const loadProgress = () => { try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; } };
 
-export async function mountSnippets({ toolbar, textarea, kind, before = null, url = 'snippets.json' }) {
+export async function mountSnippets({ toolbar, textarea, kind, before = null, url = 'snippets.json', modules = {} }) {
   let data;
   try { data = await (await fetch(url)).json(); } catch { return; }
   // Snippets that some lesson step unlocks start locked; the rest are always available.
@@ -78,6 +80,38 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     }
     det.append(row); panel.append(det);
   }
+  // One group per module the lesson offers: a button per function, plus "Show how it works".
+  for (const [mod, source] of Object.entries(modules)) {
+    const fns = scanModule(source);
+    if (!fns.length) continue;
+    const det = document.createElement('details');
+    const sum = document.createElement('summary'); sum.textContent = `Module: ${mod}`; det.append(sum);
+    const row = document.createElement('div'); row.className = 'snippet-row';
+    for (const fn of fns) {
+      const id = `${mod}.${fn.name}`;
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'snippet'; b.textContent = fn.name; b.dataset.id = id;
+      b.addEventListener('click', () => {
+        if (isLocked(id)) return;
+        const r = ensureImport(textarea.value, mod, fn.name);
+        if (r.added) {
+          let a = textarea.selectionStart, z = textarea.selectionEnd;
+          textarea.value = r.value;
+          if (r.at <= a) a += r.added;
+          if (r.at <= z) z += r.added;
+          textarea.setSelectionRange(a, z);
+        }
+        insert(callText(fn)); toggle(false);
+      });
+      buttons.push([b, id, { hint: fn.doc }]);
+      row.append(b);
+    }
+    const how = document.createElement('button');
+    how.type = 'button'; how.className = 'snippet how'; how.textContent = 'Show how it works';
+    how.addEventListener('click', () => showSource(mod, source));
+    row.append(how);
+    det.append(row); panel.append(det);
+  }
   toolbar.after(panel);
 
   function refresh() {
@@ -90,6 +124,18 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   }
   refresh();
   window.addEventListener('storage', (e) => { if (e.key === STORE) refresh(); }); // a check passed in the lesson page
+
+  let dlg;
+  function showSource(mod, source) {
+    if (!dlg) {
+      dlg = document.createElement('dialog'); dlg.className = 'source-dialog';
+      dlg.innerHTML = '<form method="dialog"><h2></h2><pre></pre><button class="btn">Close</button></form>';
+      document.body.append(dlg);
+    }
+    dlg.querySelector('h2').textContent = `${mod}.py`;
+    dlg.querySelector('pre').textContent = source;
+    dlg.showModal();
+  }
 
   function insert(code) {
     const p = planInsert(textarea.value, textarea.selectionStart, textarea.selectionEnd, code);

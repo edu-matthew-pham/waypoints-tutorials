@@ -154,7 +154,18 @@ export function createRunner({ turtle, onOutput }) {
     return Sk.builtinFiles.files[file];
   };
 
-  return async function run(code) {
+  // Lesson modules (name -> Python source), importable as `from name import ...`.
+  let modules = {};
+  run.setModules = (m) => { modules = m || {}; };
+  function registerModules() {
+    for (const [name, source] of Object.entries(modules)) {
+      Sk.builtinFiles.files[`src/lib/${name}.py`] = source;
+      try { Sk.sysmodules.mp$del_subscript(new Sk.builtin.str(name)); } catch { /* not imported yet */ }
+    }
+  }
+
+  async function run(code) {
+    registerModules();
     Sk.pre = 'output';
     Sk.configure({
       output: onOutput,
@@ -168,5 +179,6 @@ export function createRunner({ turtle, onOutput }) {
     return Sk.misceval.asyncToPromise(() => Sk.importMainWithBody('<stdin>', false, code, true), {
       '*': () => { turtle.check(); }, // runs on every Skulpt yield: lets Stop interrupt tight loops
     });
-  };
+  }
+  return run;
 }
