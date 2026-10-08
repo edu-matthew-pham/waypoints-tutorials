@@ -51,3 +51,29 @@ for i in range(4):
     forward(80)
     pendown()
 # endregion
+
+# region: copies
+# ---- program_a.py ----
+from turtle import *
+
+
+def wall(size):
+    for i in range(4):
+        forward(size)
+        right(80)
+
+
+wall(60)
+
+# ---- program_b.py ----
+from turtle import *
+
+
+def wall(size):
+    for i in range(4):
+        forward(size)
+        right(80)
+
+
+wall(100)
+# endregion

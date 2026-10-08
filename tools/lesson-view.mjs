@@ -1,6 +1,6 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
-import { unlockKind } from './lesson-core.mjs';
+import { unlockKind, evalRules } from './lesson-core.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -30,10 +30,26 @@ body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-ap
 .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px}
 header.top{padding:44px 0 18px}header.top .crumb{font-size:14px;color:var(--muted);text-decoration:none}
 h1{font-size:2.1rem;line-height:1.2;margin:.3em 0 .2em}.by{margin:-.6em 0 1em;color:var(--muted);font-size:14px}.lede{color:var(--muted);font-size:1.1rem;margin:0 0 1em}
-nav.steps{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:18px 0 8px;position:sticky;top:0;z-index:10;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:thin}
+nav.steps{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:18px 0 8px;position:sticky;top:var(--cb,0px);z-index:9;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:thin}
 nav.steps a{flex:none;white-space:nowrap}
 nav.steps a.here{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
-section.step{scroll-margin-top:64px}
+section.step{scroll-margin-top:calc(var(--cb,0px) + 64px)}
+.coursebar{position:sticky;top:0;z-index:11;display:flex;align-items:center;justify-content:space-between;gap:8px;height:46px;background:var(--bg);border-bottom:1px solid var(--line)}
+.coursebar a,.cb-toggle{font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:6px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
+.coursebar a:hover,.cb-toggle:hover{background:var(--card)}
+.cb-prev,.cb-next{flex:0 1 auto;min-width:34px}.cb-next{text-align:right}
+.cb-mid{position:relative;flex:1;text-align:center}.cb-toggle{max-width:100%}
+.cb-menu{position:absolute;left:50%;transform:translateX(-50%);top:42px;width:min(92vw,440px);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);text-align:left}
+.cb-menu[hidden]{display:none}.cb-menu ul{list-style:none;margin:0;padding:0}
+.cb-menu li a{display:flex;gap:8px;align-items:center;max-width:none;white-space:normal;font-weight:500}.cb-menu li a[aria-current]{font-weight:700;background:var(--bg)}
+.cb-menu .tick{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line);display:inline-block}.cb-menu .tick.on{background:var(--run);border-color:var(--run)}
+.cb-menu .cb-tools{display:flex;flex-wrap:wrap;gap:4px;border-top:1px solid var(--line);margin-top:6px;padding-top:6px}
+@media(max-width:560px){.cb-prev span,.cb-next span{display:none}}
+.nextcard{display:block;margin:34px 0 0;padding:18px 22px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);text-decoration:none}
+.nextcard small{display:block;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}.nextcard b{display:block;font-size:1.15rem}.nextcard span{color:var(--muted);font-size:15px}
+.nextcard:hover{border-color:var(--accent)}
+.rules{list-style:none;margin:6px 0 0;padding:0}.rules li{display:flex;gap:8px;align-items:center;margin:3px 0}.rules li::before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid var(--line);flex:none}.rules li.ok::before{background:var(--run);border-color:var(--run)}
+
 nav.steps a{font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:5px 11px;border-radius:99px}
 nav.steps a i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;background:var(--c)}
 section.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin:26px 0;border-top:4px solid var(--c)}
@@ -80,7 +96,16 @@ ul.lessons a:hover{border-color:var(--accent)}ul.lessons b{display:block;font-si
 footer{margin-top:50px;color:var(--muted);font-size:14px}
 `;
 
-export const JS = `(function(){var links=[].slice.call(document.querySelectorAll('nav.steps a'));if(!links.length||!window.IntersectionObserver)return;
+export const JS = `var evalRules=${evalRules.toString()};
+(function(){var t=document.querySelector('.cb-toggle'),m=document.getElementById('cb-menu');if(!t||!m)return;
+t.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;t.setAttribute('aria-expanded',String(o))});
+document.addEventListener('click',function(e){if(!m.hidden&&!e.target.closest('.cb-mid')){m.hidden=true;t.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){m.hidden=true;t.setAttribute('aria-expanded','false');t.focus()}});
+var d=(function(){try{return JSON.parse(localStorage.getItem('wp-progress'))||{}}catch(e){return {}}})().done||{};
+[].forEach.call(m.querySelectorAll('li a'),function(a){var ks=(a.dataset.checks||'').split('|').filter(Boolean);
+if(ks.length&&ks.every(function(k){return d[k]}))a.querySelector('.tick').classList.add('on')});
+var h=document.querySelector('h1');try{localStorage.setItem('wp-last-lesson',JSON.stringify({href:location.pathname,title:h?h.textContent:document.title}))}catch(e){}})();
+(function(){var links=[].slice.call(document.querySelectorAll('nav.steps a'));if(!links.length||!window.IntersectionObserver)return;
 var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
 var io=new IntersectionObserver(function(){var cur=0;secs.forEach(function(el,i){if(el&&el.getBoundingClientRect().top<window.innerHeight*0.4)cur=i});
 links.forEach(function(a,i){a.classList.toggle('here',i===cur);if(i===cur)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current')})},{threshold:[0,0.1,0.5,1]});
@@ -104,6 +129,13 @@ box.classList.add('done');
 if(ids.length){msg.className='msg ok';msg.textContent=(fresh?'Unlocked: ':'Unlocked: ')+names.join(', ')+'. Find '+(names.length>1?'them':'it')+' under Snippets in the playground.'}
 else{msg.className='msg ok';msg.textContent='Got it.'}}
 if((load().done||{})[key])show(false);
+if(box.dataset.type==='code'){var rules=JSON.parse(box.dataset.rules),ul=box.querySelector('.rules');
+function paint(res){ul.replaceChildren();res.forEach(function(r){var li=document.createElement('li');li.textContent=r.label;if(r.ok)li.className='ok';ul.appendChild(li)})}
+var done0=(load().done||{})[key];paint(evalRules(rules,'').map(function(r){return {label:r.label,ok:!!done0}}));
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==key)return;
+var res=evalRules(rules,m.code||'');paint(res);
+if(res.every(function(r){return r.ok})&&m.status==='done'){pass()}
+else{msg.className='msg';msg.textContent=m.status==='done'?'Not quite yet. Change your code, then run it again.':'Fix the error, then run it again.'}})}
 var cb=box.querySelector('input[type=checkbox]');
 if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
 var go=box.querySelector('button');
@@ -115,8 +147,8 @@ else{msg.className='msg no';msg.textContent='Not quite. Look at the code again a
 });
 })();`;
 
-export const page = (title, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)}</title><style>${CSS}</style></head><body><div class="wrap">${body}</div><script>${JS}</script></body></html>`;
+export const page = (title, body, scripts = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(title)}</title><style>${CSS}</style></head><body><div class="wrap">${body}</div><script>${JS}</script>${scripts}</body></html>`;
 
 
 /** The "got it?" box under a step: a tick (reflect) or a short question. Passing it unlocks snippets. */
@@ -130,6 +162,9 @@ export function checkHtml(lesson, step, names = {}) {
   if (k.type === 'reflect') {
     return `<div class="check" ${base}><label><input type="checkbox"><span>${esc(k.text)}</span></label><p class="msg" aria-live="polite"></p></div>`;
   }
+  if (k.type === 'code') {
+    return `<div class="check" ${base} data-type="code" data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"></ul><p class="msg" aria-live="polite">Run your program. This ticks when your code does all of the above.</p></div>`;
+  }
   const name = `q-${lesson.slug}-${step.id}`.replace(/[^a-z0-9-]/gi, '-');
   return `<div class="check" ${base} data-answer="${k.answer}" data-explain="${esc(k.explain || '')}"><fieldset><legend>${esc(k.q)}</legend>` +
     k.options.map((o, i) => `<label><input type="radio" name="${name}" value="${i}"><span>${esc(o)}</span></label>`).join('') +
@@ -141,7 +176,7 @@ export function checkHtml(lesson, step, names = {}) {
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '' } = deps;
   const md = new Marked({
     renderer: { code({ text, lang }) { return codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
@@ -175,15 +210,28 @@ export function lessonPageHtml(lesson, deps) {
     return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"><div class="chip">${esc(label)}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
 
+  // Course bar (prev / where am I / next) and the card at the end. course: { index, total, prev, next, list, pathHref, pathTitle, playground }
+  const lab = (l) => `${l.order != null ? `${l.order}. ` : ''}${l.title}`;
+  const cb = !course ? '' : `<div class="coursebar" role="navigation" aria-label="Lesson navigation"><style>:root{--cb:46px}</style>` +
+    (course.prev ? `<a class="cb-prev" href="${esc(course.prev.href)}" title="${esc(lab(course.prev))}">‹ <span>${esc(lab(course.prev))}</span></a>` : '<span class="cb-prev"></span>') +
+    `<div class="cb-mid"><button type="button" class="cb-toggle" aria-expanded="false" aria-controls="cb-menu">${course.index} of ${course.total} · ${esc(lesson.title)} ▾</button>` +
+    `<div class="cb-menu" id="cb-menu" hidden><ul>${course.list.map((l) => `<li><a href="${esc(l.href)}" data-checks="${esc(l.checks.join('|'))}"${l.current ? ' aria-current="page"' : ''}><i class="tick"></i><span>${esc(lab(l))}</span></a></li>`).join('')}</ul>` +
+    `<div class="cb-tools"><a href="${esc(course.pathHref)}">All ${esc(course.pathTitle)} lessons</a>${course.playground ? `<a href="${esc(course.playground)}">Playground</a>` : ''}<a href="#" data-progress-open>My progress</a></div></div></div>` +
+    (course.next ? `<a class="cb-next" href="${esc(course.next.href)}" title="${esc(lab(course.next))}"><span>${esc(lab(course.next))}</span> ›</a>` : '<span class="cb-next"></span>') + `</div>`;
+  const nextCard = !course ? '' : course.next
+    ? `<a class="nextcard" href="${esc(course.next.href)}"><small>Next lesson</small><b>${esc(lab(course.next))}</b>${course.next.summary ? `<span>${esc(course.next.summary)}</span>` : ''}</a>`
+    : `<a class="nextcard" href="${esc(course.pathHref)}"><small>You reached the end</small><b>Back to ${esc(course.pathTitle)}</b></a>`;
+
   return page(lesson.title, `
-<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
+${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
 ${md.parse(lesson.intro)}
 <ul class="legend">${legend}</ul>
 <nav class="steps">${nav}</nav>
 ${steps}
 ${lesson.teachers ? `<details class="teachers"><summary>For teachers</summary>${md.parse(lesson.teachers)}</details>` : ''}
-${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`);
+${nextCard}
+${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`, siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '');
 }
 
 export const PLAYGROUNDS = {

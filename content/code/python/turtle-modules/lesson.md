@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 6
 title: Modules
 summary: Keep related functions together in a file you can import, like a toolbox.
 language: python
@@ -41,7 +41,22 @@ unlocks: [my-module]
 
 Run it. The line `from shapes import square, triangle` brings two ready-made functions into your program.
 
-## Investigate
+## Investigate: one bug, two copies
+
+```step
+stage: investigate
+code: modules.py#copies
+check:
+  type: question
+  q: "You fix the bug in program_a.py. What happens to program_b.py?"
+  options: ["It is fixed too", "It still has the bug, so you fix it separately", "It stops working", "Python warns you"]
+  answer: 1
+  explain: "Each file has its own copy of wall, so each copy needs fixing. If both programs imported wall from one module, you would fix it once."
+```
+
+Two programs both need `wall`, so each has its own copy. Spot the bug (a square should turn 90 degrees). If you fix it in one program, what about the other? This is the problem a module solves.
+
+## Investigate: where does it come from?
 
 ```step
 stage: investigate
@@ -83,7 +98,7 @@ hint:
 
 Create a module of your own with at least three related functions. Import it and use it to draw a small scene.
 
-## In the real world
+## Extend a street
 
 ```step
 stage: modify

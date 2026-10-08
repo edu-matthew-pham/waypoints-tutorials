@@ -195,7 +195,7 @@ teachers: |
 
 - `hook`: one or two sentences shown at the top of the lesson: where the skill appears in real life. No project, just the "why".
 - `teachers`: Markdown shown in a collapsed **For teachers** panel at the end: bigger project ideas, misconceptions, curriculum links. Larger real-world projects belong to the teacher and the class, not the tool.
-- **Make vs In the real world:** Make is an explicit task ("draw a house: a square with two lines on top"). An optional last step "In the real world" (`stage: info`, text only) points to where students might apply the skill ("represent your house layout using turtle"). It suggests, it does not set a task. Larger projects belong to the teacher.
+- **Make vs a real-world Modify:** Make is an explicit task ("draw a house: a square with two lines on top"). A real-world step is a small, complete, pre-made example the student modifies (`stage: modify`, no check). Give it a heading that names the task ("Resize a room plan", "Extend a street"), not "In the real world": the real-world framing is implied by the example, the hook and the teacher notes. Larger projects belong to the teacher.
 - Clips are optional. Use one for a first-run demo or to explain why; skip it where students are about to do the thing in the playground.
 
 ### Hints and "expected result" clips
@@ -216,3 +216,22 @@ clip:
 ### Ordering lessons
 
 Add `order: 1` (a number) to a lesson's frontmatter. Index pages list lessons by `order`, show it as "1. Title", and put unnumbered lessons after the numbered ones, alphabetically. A folder's `index.md` can have `order` too (folders are sorted but not numbered).
+
+### Code checks (mastery you can see)
+
+A check can look at the student's code instead of asking them to tick a box:
+
+```yaml
+check:
+  type: code
+  text: "Write a function for a house, call it in a loop, and run it."
+  rules: { defs: 1, calls: 1, loops: 1 }
+```
+
+The box ticks when the student runs a program that meets every rule. Rules (all optional, at least one needed): `defs` (functions defined), `params` (a function with this many parameters), `calls` (one of their functions called this many times), `loops` (for/while), `returns` (return statements), `imports` (list of module names). The check reads all the student's files, ignores comments, and needs a Python turtle `try` playground on the step. It can unlock snippets like any check.
+
+### Lesson navigation, playground pages and My progress
+
+- **Course bar:** every lesson page has a sticky bar with previous and next lessons (by `order`), a "3 of 6" menu with ticks for finished lessons, and links to the path, the playground and My progress. A "Next lesson" card ends each lesson. Nothing to configure: it follows `order`.
+- **Playground pages:** `/code/python/playground/` and `/code/html/playground/` are free play. They remember the student's last lesson ("Continue lesson"), respect unlock progress, and have an "Unlock all snippets" toggle that applies only to free play.
+- **My progress:** a dialog (course bar, playground page, path pages) comparing this browser's progress with `progress-manifest.json`, which the build writes. It is per browser and nothing is sent anywhere. `window.wpProgressSummary()` returns the same data for a future export.

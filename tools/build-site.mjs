@@ -7,7 +7,7 @@
 //   dist/_playground-html/               the embeddable HTML & CSS playground
 // A step with a clip embeds clips/step-N.mp4 if it exists, otherwise a labelled placeholder,
 // so lessons can be written, reviewed and published before any clip is rendered.
-import { mkdirSync, writeFileSync, existsSync } from 'node:fs';
+import { mkdirSync, writeFileSync, existsSync, copyFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import { Marked } from 'marked';
@@ -48,7 +48,7 @@ function tryHtml(lesson, step) {
   return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), '../'.repeat(lesson.depth), '', { use: lesson.modules, local });
 }
 
-function buildLesson(lesson, parentTitle) {
+function buildLesson(lesson, parentTitle, course) {
   const dir = join(OUT, lesson.slug);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), lessonPageHtml(lesson, {
@@ -58,12 +58,23 @@ function buildLesson(lesson, parentTitle) {
     tryHtml: (s) => tryHtml(lesson, s),
     snippetNames,
     crumb: { href: '../', title: parentTitle },
+    course,
+    siteRoot: '../'.repeat(lesson.depth),
     source: `content/${lesson.slug}/lesson.md`,
   }));
 }
 
+const PLAYGROUND_PAGE_CSS = `:root{--bg:#fbfaf8;--ink:#1d2430;--line:#e4e1da;--card:#fff;--accent:#c2570a}
+@media(prefers-color-scheme:dark){:root{--bg:#0f141a;--ink:#e6edf3;--line:#26303c;--card:#161d26;--accent:#ff9d3d}}
+html,body{height:100%;margin:0}body{display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.pgbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 14px;border-bottom:1px solid var(--line)}
+.pgbar a,.pgbar button{font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:1px solid transparent;border-radius:8px;padding:5px 8px;cursor:pointer}
+.pgbar a:hover,.pgbar button:hover{background:var(--card);border-color:var(--line)}.pgbar button{font-weight:500;color:inherit;opacity:.85}.grow{flex:1}
+iframe{flex:1;width:100%;border:0;min-height:0}`;
+
 // ---------- build ----------
-const lessons = loadLessons();
+const orderOf = (l) => (l.order ?? Infinity);
+const lessons = loadLessons().sort((a, b) => (a.slug.split('/').slice(0, -1).join('/')).localeCompare(b.slug.split('/').slice(0, -1).join('/')) || orderOf(a) - orderOf(b) || a.slug.localeCompare(b.slug));
 const snippetFiles = loadSnippetFiles();
 // kind -> { snippet id -> label } so a check can say what it unlocked by name
 const snippetNames = Object.fromEntries(Object.entries(snippetFiles).map(([k, d]) => [k, Object.fromEntries(d.groups.flatMap((g) => g.items.map((i) => [snippetId(i.label), i.label])))]));
@@ -77,8 +88,9 @@ buildHtmlPlayground(OUT);
 buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
+const claimsByKind = {};
 for (const [kind, dir] of [['turtle', '_playground'], ['html', '_playground-html']]) {
-  const claims = {};
+  const claims = claimsByKind[kind] = {};
   for (const l of lessons) for (const s of l.steps) {
     if (unlockKind(l, s) !== kind) continue;
     for (const id of s.config.unlocks || []) claims[id] = { lesson: l.title, step: s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '') };
@@ -120,18 +132,72 @@ for (const r of REFS) {
     `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`));
 }
 
-for (const l of lessons) buildLesson(l, dirNode(l.slug.split('/').slice(0, -1).join('/')).title);
+// Playground pages live beside Reference on the paths that have a playground.
+const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' } };
+const checkKeys = (l) => l.steps.filter((s) => s.config.check).map((s) => `${l.slug}/${s.id}`);
+for (const l of lessons) {
+  const parentPath = l.slug.split('/').slice(0, -1).join('/');
+  const sibs = lessons.filter((x) => x.slug.split('/').slice(0, -1).join('/') === parentPath);
+  const i = sibs.indexOf(l);
+  const link = (x) => ({ href: `../${x.slug.split('/').pop()}/`, title: x.title, order: x.order, summary: x.summary });
+  buildLesson(l, dirNode(parentPath).title, {
+    index: i + 1, total: sibs.length,
+    prev: i > 0 ? link(sibs[i - 1]) : null, next: i < sibs.length - 1 ? link(sibs[i + 1]) : null,
+    list: sibs.map((x) => ({ ...link(x), checks: checkKeys(x), current: x === l })),
+    pathHref: '../', pathTitle: dirNode(parentPath).title,
+    playground: PLAY[parentPath] ? '../playground/' : '',
+  });
+}
+
+// progress-manifest.json: every path's lessons, checks and lesson-claimed snippets, for the "My progress" dialog.
+const manifest = { paths: [] };
+for (const path of [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).join('/')))]) {
+  const ls = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === path);
+  const kind = PLAY[path]?.kind || null;
+  const claims = kind ? claimsByKind[kind] : {};
+  manifest.paths.push({
+    title: dirNode(path).title, href: `${path}/`, kind,
+    lessons: ls.map((l) => ({ title: l.title, order: l.order, href: `${l.slug}/`, checks: checkKeys(l) })),
+    snippets: Object.entries(claims).map(([id, c]) => ({ id, label: snippetNames[kind]?.[id] || id, lesson: c.lesson, step: c.step })),
+  });
+}
+writeFileSync(join(OUT, 'progress-manifest.json'), JSON.stringify(manifest));
+copyFileSync(join('site', 'progress.js'), join(OUT, 'progress.js'));
+
+const sharedModuleNames = Object.keys(loadSharedModules());
+for (const [path, pg] of Object.entries(PLAY)) {
+  const depth = path.split('/').length + 1; // .../playground/ -> site root
+  const up = '../'.repeat(depth);
+  const src = `${up}${pg.dir}/index.html?id=free&free=1${pg.kind === 'turtle' && sharedModuleNames.length ? `&use=${sharedModuleNames.join(',')}` : ''}`;
+  mkdirSync(join(OUT, path, 'playground'), { recursive: true });
+  writeFileSync(join(OUT, path, 'playground', 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(pg.label)} playground</title><style>${PLAYGROUND_PAGE_CSS}</style></head><body>
+<header class="pgbar"><a href="../">← ${esc(dirNode(path).title)}</a><b>${esc(pg.label)} playground</b><span class="grow"></span>
+<a id="cont" href="#" hidden>Continue lesson</a><a href="../reference/">Reference</a><a href="#" data-progress-open>My progress</a>
+<button type="button" id="unlock" aria-pressed="false" title="Some snippets are for things you haven't learned yet.">Unlock all snippets (use this if your progress was lost)</button></header>
+<iframe title="${esc(pg.label)} playground" src="${esc(src)}"></iframe>
+<script>
+(function(){var KEY='wp-progress',b=document.getElementById('unlock');
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function paint(){var on=!!load().free;b.setAttribute('aria-pressed',String(on));b.textContent=on?'Re-lock snippets':'Unlock all snippets (use this if your progress was lost)'}
+b.addEventListener('click',function(){var p=load();p.free=!p.free;try{localStorage.setItem(KEY,JSON.stringify(p))}catch(e){}paint();
+var f=document.querySelector('iframe');try{f.contentWindow.dispatchEvent(new StorageEvent('storage',{key:KEY}))}catch(e){}});
+paint();
+try{var l=JSON.parse(localStorage.getItem('wp-last-lesson'));if(l&&l.href){var c=document.getElementById('cont');c.href=l.href;c.title=l.title||'';c.hidden=false}}catch(e){}})();
+</script><script src="${up}progress.js" data-root="${up}" defer></script></body></html>`);
+}
 
 for (const node of dirs.values()) {
   const isRoot = node.path === '';
   const parentPath = node.path.split('/').slice(0, -1).join('/');
   const crumb = isRoot ? '' : `<a class="crumb" href="../">← ${esc(dirNode(parentPath).title)}</a>`;
   const ref = REFS.find((r) => r.path === `${node.path}/reference`);
-  const items = (ref ? `<li><a href="reference/"><b>Reference</b><span>Every command and tag in the playground, with what it does.</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
+  const play = PLAY[node.path];
+  const items = (play ? `<li><a href="playground/"><b>Playground</b><span>Free play: write and run your own ${esc(play.label)} code.</span></a></li>` : '') + (ref ? `<li><a href="reference/"><b>Reference</b><span>Every command and tag in the playground, with what it does.</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
   const outDir = join(OUT, node.path);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
-    `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header><ul class="lessons">${items}</ul>`));
+    `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${play ? '<p><a href="#" data-progress-open>My progress</a></p>' : ''}<ul class="lessons">${items}</ul>`, play ? `<script src="${'../'.repeat(node.path.split('/').length)}progress.js" data-root="${'../'.repeat(node.path.split('/').length)}" defer></script>` : ''));
 }
 writeFileSync(join(OUT, '.nojekyll'), '');
 

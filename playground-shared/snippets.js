@@ -63,10 +63,12 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   // Teacher override: ?unlock=all shows everything (remembered in this browser); ?unlock=off resets it.
   const ov = new URLSearchParams(location.search).get('unlock');
   if (ov) { const p = loadProgress(); p.all = ov === 'all'; try { localStorage.setItem(STORE, JSON.stringify(p)); } catch { /* ignore */ } }
+  // Free play (the playground page): its own "unlock all" toggle, which never touches the lessons' progress.
+  const free = new URLSearchParams(location.search).get('free') === '1';
   const isLocked = (id) => {
     if (!claims[id]) return false;
     const p = loadProgress();
-    return !(p.all || (p.unlocked || {})[`${kind}:${id}`]);
+    return !(p.all || (free && p.free) || (p.unlocked || {})[`${kind}:${id}`]);
   };
   const changeCallbacks = [];
 

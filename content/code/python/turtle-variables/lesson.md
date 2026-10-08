@@ -76,7 +76,7 @@ hint:
 
 Draw a **square spiral**: each time round the loop, the line should be a little longer than the last.
 
-## In the real world
+## Resize a room plan
 
 ```step
 stage: modify

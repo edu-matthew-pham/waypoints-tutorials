@@ -116,3 +116,12 @@ stage: info
 ```
 
 Every school page, shop and club site uses these same tags. Where could you use it? Build a notice page for a club or event you belong to: a heading, when and where, a list, and a link to sign up.
+
+## Update a club notice page
+
+```step
+stage: modify
+try: { playground: html, starter: "page.html#notice", height: 420 }
+```
+
+Every school page, shop and club site is made of these same tags. This one is a finished notice page. Change the club name and meeting time, add a week to the list, and give the heading a colour with CSS.

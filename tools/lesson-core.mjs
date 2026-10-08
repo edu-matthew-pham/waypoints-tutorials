@@ -7,7 +7,32 @@ export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
 export const PLAYGROUND_KINDS = ['turtle', 'html'];
-export const CHECK_TYPES = ['reflect', 'question'];
+export const CHECK_TYPES = ['reflect', 'question', 'code'];
+export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports'];
+
+/**
+ * Evaluates a code check's rules against the student's code (all their files joined). Pure and
+ * self-contained: the lesson page inlines this function's source, so it must not use anything outside itself.
+ * Rules: defs (functions defined), calls (one of the student's functions called this many times, in the text),
+ * loops (for/while lines), returns (return lines), params (one function with this many parameters),
+ * imports (list of module names). Returns [{ label, ok }].
+ */
+export function evalRules(rules, text) {
+  const code = String(text).split('\n').map((l) => l.replace(/#.*$/, ''));
+  const defs = [];
+  code.forEach((l) => { const m = l.match(/^\s*def\s+([A-Za-z_]\w*)\s*\(([^)]*)\)/); if (m) defs.push({ name: m[1], params: m[2].split(',').filter((x) => x.trim()).length }); });
+  const count = (re) => code.filter((l) => re.test(l)).length;
+  const callsOf = (name) => code.filter((l) => !/^\s*def\s/.test(l)).reduce((n, l) => n + (l.match(new RegExp('\\b' + name + '\\s*\\(', 'g')) || []).length, 0);
+  const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+  const out = [];
+  if (rules.defs) out.push({ label: `Define at least ${plural(rules.defs, 'function')} with def`, ok: defs.length >= rules.defs });
+  if (rules.params) out.push({ label: `Write a function with at least ${plural(rules.params, 'parameter')}`, ok: defs.some((d) => d.params >= rules.params) });
+  if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...defs.map((d) => callsOf(d.name))) >= rules.calls });
+  if (rules.loops) out.push({ label: rules.loops === 1 ? 'Use a loop' : `Use at least ${rules.loops} loops`, ok: count(/^\s*(for|while)\b/) >= rules.loops });
+  if (rules.returns) out.push({ label: 'Use return to give a value back', ok: count(/^\s*return\b/) >= rules.returns });
+  (rules.imports || []).forEach((m) => out.push({ label: `Import from ${m}`, ok: code.some((l) => new RegExp('^\\s*(from|import)\\s+' + m + '\\b').test(l)) }));
+  return out;
+}
 
 /** Playground features (not snippets) that a step can unlock for the turtle playground. */
 export const FEATURES = [
@@ -162,6 +187,18 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       const k = c.check;
       if (!k || typeof k !== 'object' || Array.isArray(k) || !CHECK_TYPES.includes(k.type)) err(where, `check.type must be one of ${CHECK_TYPES.join(', ')}`);
       else if (k.type === 'reflect' && !(typeof k.text === 'string' && k.text.trim())) err(where, 'check (reflect) needs text, e.g. "I can explain why the turtle turns"');
+      else if (k.type === 'code') {
+        if (!(typeof k.text === 'string' && k.text.trim())) err(where, 'check (code) needs text, e.g. "Write a function and call it"');
+        const r = k.rules;
+        if (!r || typeof r !== 'object' || Array.isArray(r)) err(where, `check (code) needs rules, a mapping using ${CODE_RULES.join(', ')}`);
+        else {
+          for (const key of Object.keys(r)) if (!CODE_RULES.includes(key)) err(where, `unknown code rule "${key}" (use ${CODE_RULES.join(', ')})`);
+          for (const key of ['defs', 'calls', 'loops', 'returns', 'params']) if (r[key] !== undefined && !(Number.isInteger(r[key]) && r[key] > 0)) err(where, `code rule ${key} must be a whole number above 0`);
+          if (r.imports !== undefined && !(Array.isArray(r.imports) && r.imports.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule imports must be a list of module names');
+          if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
+        }
+        if (!c.try || (c.try.playground && c.try.playground !== 'turtle')) err(where, 'a code check needs a Python turtle playground (try: { starter: ... }) to run');
+      }
       else if (k.type === 'question') {
         if (!(typeof k.q === 'string' && k.q.trim())) err(where, 'check (question) needs q');
         if (!Array.isArray(k.options) || k.options.length < 2 || !k.options.every((o) => typeof o === 'string')) err(where, 'check (question) needs options: a list of at least two strings');

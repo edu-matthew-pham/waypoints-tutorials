@@ -109,7 +109,7 @@ try: { starter: "square.py#make", height: 420 }
 
 Draw a house: a square for the walls, and two lines on top that meet in a point for the roof. Then change the colours with `pencolor("red")`.
 
-## In the real world
+## Extend a row of floor tiles
 
 ```step
 stage: info

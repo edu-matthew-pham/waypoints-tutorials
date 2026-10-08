@@ -74,7 +74,10 @@ try: { starter: "params.py#make", height: 440 }
 hint:
   - "Use a loop to repeat. Inside it, call polygon, then turn a little."
   - "To go round once in total, each turn is 360 divided by the number of copies."
-check: { type: reflect, text: "I wrote a function that calls another function inside a loop." }
+check:
+  type: code
+  text: "Write pattern(sides, copies) and run it."
+  rules: { defs: 2, calls: 1 }
 unlocks: [save-as-button]
 ```
 
@@ -90,7 +93,7 @@ check: { type: reflect, text: "I saved a function as a button and used it again.
 
 You have unlocked **Save selection as button**. Open **Snippets**, put the cursor inside one of your functions, and click it. It appears under **My tools**. A button is the first layer of abstraction: you can use the idea again without rewriting it.
 
-## In the real world
+## Rearrange a floor plan
 
 ```step
 stage: modify

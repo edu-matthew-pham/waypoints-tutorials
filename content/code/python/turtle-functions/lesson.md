@@ -74,11 +74,15 @@ stage: make
 try: { starter: "functions.py#make", height: 440 }
 hint:
   - "Start with a shape you can already draw with a loop, then put `def name():` above it."
+check:
+  type: code
+  text: "Write your function and call it three times."
+  rules: { defs: 1, calls: 3 }
 ```
 
 Write a function that draws any shape you like (a rectangle, a hexagon, a star), then call it three times in a row.
 
-## In the real world
+## Extend the house plan
 
 ```step
 stage: modify
