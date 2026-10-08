@@ -34,12 +34,3 @@ from turtle import *
 
 # Draw your own shape here.
 # endregion
-
-# region: use
-from turtle import *
-
-# One tile. Repeat it along a row.
-for i in range(4):
-    forward(80)
-    right(90)
-# endregion

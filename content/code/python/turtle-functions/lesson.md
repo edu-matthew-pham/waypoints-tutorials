@@ -97,11 +97,10 @@ A **module** is a file of related functions that other programs can `import`. Cl
 
 Not every function needs a module. A module is for a group of functions that belong together. The ready-made **Module: shapes** under Snippets shows how one looks: click **Show how it works**.
 
-## Use it
+## In the real world
 
 ```step
-stage: make
-try: { starter: "shapes_demo.py#use", height: 420 }
+stage: info
 ```
 
-Write `flower(petals)` using a loop and a circle or a rotated shape, then call it three times at different places with `penup()`, `goto(x, y)` and `pendown()`. You have made a garden from one function.
+A function that draws a room is how a floor plan starts. Try `room(width, depth)` and place rooms with `goto`, then represent the layout of your own house. Using a variable like `scale = 20` turns metres into pixels, so one change resizes the whole plan.

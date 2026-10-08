@@ -195,5 +195,5 @@ teachers: |
 
 - `hook`: one or two sentences shown at the top of the lesson: where the skill appears in real life. No project, just the "why".
 - `teachers`: Markdown shown in a collapsed **For teachers** panel at the end: bigger project ideas, misconceptions, curriculum links. Larger real-world projects belong to the teacher and the class, not the tool.
-- **Use it step:** an optional last step (`stage: make`) with one small project (5 to 10 minutes) that uses only what the lesson taught. A baseline, not a ceiling.
+- **Make vs In the real world:** Make is an explicit task ("draw a house: a square with two lines on top"). An optional last step "In the real world" (`stage: info`, text only) points to where students might apply the skill ("represent your house layout using turtle"). It suggests, it does not set a task. Larger projects belong to the teacher.
 - Clips are optional. Use one for a first-run demo or to explain why; skip it where students are about to do the thing in the playground.

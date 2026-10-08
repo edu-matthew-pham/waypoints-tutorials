@@ -95,13 +95,12 @@ stage: make
 try: { starter: "square.py#make", height: 420 }
 ```
 
-Design your own shape or pattern. Try `color`-style commands such as `pencolor("red")`.
+Draw a house: a square for the walls, and two lines on top that meet in a point for the roof. Then change the colours with `pencolor("red")`.
 
-## Use it
+## In the real world
 
 ```step
-stage: make
-try: { starter: "square.py#use", height: 420 }
+stage: info
 ```
 
-A row of tiles is just a loop inside a loop. The starter draws one tile. Wrap it in a loop that draws five, using `penup()`, `forward(120)` and `pendown()` to move to the next position.
+Tilers and architects plan floors and rooms with exactly this idea. Where could you use it? Try drawing a row of floor tiles, or a plan of your own bedroom, with loops.

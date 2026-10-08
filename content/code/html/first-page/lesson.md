@@ -108,11 +108,10 @@ try: { playground: html, starter: "page.html#make", height: 400 }
 
 Build a page about you: a heading, a paragraph, a list and a link. Then style it.
 
-## Use it
+## In the real world
 
 ```step
-stage: make
-try: { playground: html, starter: "page.html#use", height: 420 }
+stage: info
 ```
 
-Turn the starter into a menu for a school café: a heading, a list of items with prices, and a note in a different colour for today's special.
+Every school page, shop and club site uses these same tags. Where could you use it? Build a notice page for a club or event you belong to: a heading, when and where, a list, and a link to sign up.
