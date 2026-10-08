@@ -19,6 +19,8 @@ Tasks in any step (sub-pills, shared playground, "Modify 2/3" on the step pill);
 - **Revisit if/else** later in a new context (a function that decides, `if` over a list, `if` inside a Gradio function), the same spiral as functions.
 - **Python path beyond turtle.** Turtle covers sequence, loops, variables, selection, functions, parameters, returns and modules. Add **lists** (`for c in colours`, a second visit to `if`) and **strings** (`write()`, joining text) while still in turtle, then move to Gradio, where a function with a return value and an `if` becomes a clickable app and `import gradio as gr` is a module someone else wrote. Turtle stays as the foundations sandbox.
 
+- **UI-based Python without a server.** Gradio Lite (Gradio in the browser via Pyodide) is no longer maintained (HF forum, Oct 2025); tkinter has no browser support that I found (not conclusive). Plan: (1) add events and input to the turtle playground (`onclick`, `onkey`, `ontimer`, text and number prompts) to teach callbacks; (2) later, a tiny in-house UI module (`label`, `button(text, fn)`, `text_input`, rendered as HTML beside the code) to teach widgets, layout, callbacks and state; (3) keep Gradio as the real-world and ML endpoint, run on Hugging Face Spaces or locally. PyScript/Pyodide with the page's HTML is a heavier option that would tie the Python and HTML paths together.
+
 ## Next ideas
 
 - A small form on the create page for code-check rules (templates exist; no form yet).
