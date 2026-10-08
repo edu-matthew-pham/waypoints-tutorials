@@ -1,0 +1,29 @@
+name: Probe a site
+
+# Manual: can a headless browser load and use this site? Used to judge whether tutorials for it can be recorded.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Page to open
+        default: https://editor.construct.net/
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --omit=optional && npx playwright-core install --with-deps chromium
+      - run: node tools/probe.mjs "${{ inputs.url }}" probe-out
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probe
+          path: probe-out
