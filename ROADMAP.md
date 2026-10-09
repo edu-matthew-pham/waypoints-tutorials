@@ -117,6 +117,7 @@ This supersedes the earlier "Series shape", "Console bridge and fork" and "Games
 ## Next ideas
 
 - A small form on the create page for code-check rules (templates exist; no form yet).
+- Clips on the create page (future): a helper to write caption and code steps for `explainClip` and step clips, and a live "Preview clip" that plays the steps in the playground without recording. Today teachers can write a clip in the lesson file, but it is recorded only after review and commit.
 - Use the new Investigate tools and tasks in the HTML and Gradio lessons.
 - Drag-and-drop for match items (dropdowns today); persistence of Parsons state across reloads.
 - HTML code checks (for example `has: ul`) using the same message channel.
