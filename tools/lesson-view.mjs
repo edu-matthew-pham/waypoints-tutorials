@@ -1,6 +1,6 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
-import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys } from './lesson-core.mjs';
+import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys, makecodePackage } from './lesson-core.mjs';
 import { MATH_JS } from './math-expr.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
@@ -46,10 +46,11 @@ export function codeBlock(highlightCode, src, lang, label) {
 // MakeCode lessons (language: makecode): display code is MakeCode JavaScript, but students know it as blocks. The page
 // asks MakeCode's renderer (a hidden iframe) for a picture of the blocks, and keeps the code as text one click away
 // (and open, if the renderer cannot be reached). ?mkrender=<origin> points at another renderer (tests only).
-export function makecodeBlock(highlightCode, src, label, target, pic = null) {
+export function makecodeBlock(highlightCode, src, label, target, pic = null, pkg = '') {
   // pic: a picture drawn at build time ({ url, w, h }); without one, the page asks MakeCode's renderer.
+  // pkg: the lesson's extensions as MakeCode's package string (makecodePackage), so their blocks draw as blocks.
   const img = pic ? `<img src="${esc(pic.url)}" alt="The program as blocks" width="${Math.round(pic.w / 2)}" loading="lazy">` : '<span class="mkwait">Drawing the blocks…</span>';
-  return `<div class="mkblocks${pic ? ' ok' : ''}" data-target="${esc(target || 'microbit')}" data-src="${esc(src)}"><div class="mkpic" aria-live="polite">${img}</div>` +
+  return `<div class="mkblocks${pic ? ' ok' : ''}" data-target="${esc(target || 'microbit')}"${pkg ? ` data-pkg="${esc(pkg)}"` : ''} data-src="${esc(src)}"><div class="mkpic" aria-live="polite">${img}</div>` +
     `<details class="mkjs"><summary>Show as code</summary>${codeBlock(highlightCode, src, 'makecode', label)}</details></div>`;
 }
 export const MAKECODE_CSS = `.mkpair.has-out{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start}.mkout{margin:14px 0}.mkout img{display:block;max-width:min(100%,360px);height:auto;image-rendering:pixelated;border-radius:8px;border:1px solid var(--line)}.mkout figcaption{color:var(--muted);font-size:14px;margin-top:4px}@media(max-width:640px){.mkpair.has-out{grid-template-columns:1fr}}
@@ -61,7 +62,7 @@ var f=document.createElement('iframe');f.setAttribute('aria-hidden','true');f.ta
 f.src=t+'/--docs?render=1';document.body.appendChild(f);
 function fallback(el){if(!el.classList.contains('ok')){el.querySelector('.mkpic').hidden=true;el.querySelector('details').open=true}}
 window.addEventListener('message',function(e){if(e.source!==f.contentWindow)return;var d=e.data||{};if(d.source!=='makecode')return;
-if(d.type==='renderready')els.forEach(function(el,i){f.contentWindow.postMessage({type:'renderblocks',id:'mk'+i,code:el.dataset.src,options:{}},t)});
+if(d.type==='renderready')els.forEach(function(el,i){f.contentWindow.postMessage({type:'renderblocks',id:'mk'+i,code:el.dataset.src,options:el.dataset.pkg?{package:el.dataset.pkg}:{}},t)});
 if(d.type==='renderblocks'){var el=els[Number(String(d.id).slice(2))];if(!el)return;
 if(d.uri){var img=new Image();img.alt='The program as blocks';img.src=d.uri;if(d.width)img.style.width=Math.round(d.width)+'px';el.querySelector('.mkpic').replaceChildren(img);el.classList.add('ok')}else fallback(el)}});
 setTimeout(function(){els.forEach(fallback)},20000)})();`;
@@ -535,8 +536,9 @@ export function lessonPageHtml(lesson, deps) {
   // MakeCode lessons show display code as a picture of the blocks (see makecodeBlock).
   const mk = lesson.language === 'makecode';
   const mkTarget = lesson.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
+  const mkPkg = makecodePackage(lesson);
   const md = new Marked({
-    renderer: { code({ text, lang }) { if (lang === 'worked' && isMaths) return maths.workedHtml(text, md); const fs = splitFiles(text); if (mk && (lang || 'makecode') === 'makecode' && !(fs.length > 1 || fs[0]?.name)) { const src = text.replace(/\n$/, '') + '\n'; return makecodeBlock(highlightCode, src, '', mkTarget, blocksPicture(src)); } return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
+    renderer: { code({ text, lang }) { if (lang === 'worked' && isMaths) return maths.workedHtml(text, md); const fs = splitFiles(text); if (mk && (lang || 'makecode') === 'makecode' && !(fs.length > 1 || fs[0]?.name)) { const src = text.replace(/\n$/, '') + '\n'; return makecodeBlock(highlightCode, src, '', mkTarget, blocksPicture(src), mkPkg); } return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
   // "Predict: what will `greet` return?" -> "What will <code>greet</code> return?"
   if (isMaths) md.use(maths.markedMath);
@@ -564,7 +566,7 @@ export function lessonPageHtml(lesson, deps) {
         const files = splitFiles(snippet(c.code));
         showCode = files.length > 1 || files[0]?.name
           ? `<div class="files">${files.map((f) => codeBlock(highlightCode, f.code, lesson.language, f.name)).join('')}</div>`
-          : mk ? makecodeBlock(highlightCode, snippet(c.code), c.code.split('#')[0], mkTarget, blocksPicture(snippet(c.code))) : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
+          : mk ? makecodeBlock(highlightCode, snippet(c.code), c.code.split('#')[0], mkTarget, blocksPicture(snippet(c.code)), mkPkg) : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
       }
       catch (e) { showCode = `<div class="placeholder"><b>${esc(e.message)}</b></div>`; }
     }
@@ -700,7 +702,10 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (t.speed) q.set('speed', t.speed);
   if (t.boxes) q.set('boxes', '1'); // HTML playground: start with the Boxes view on
   if (t.boxmodel) q.set('boxmodel', '1'); // ... or with the Box model view on
-  if (t.playground === 'microbit' || t.playground === 'arcade') q.set('target', t.playground); // one MakeCode playground, two editors
+  if (t.playground === 'microbit' || t.playground === 'arcade') {
+    q.set('target', t.playground); // one MakeCode playground, two editors
+    const pkg = makecodePackage(lesson); if (pkg) q.set('pkg', pkg); // the lesson's extensions (robot), added to the step's project
+  }
   // Modules the playground offers: ?use=shapes,house, plus ?mods={name: source} for ones that live in the lesson
   if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"

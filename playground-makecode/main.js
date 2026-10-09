@@ -4,6 +4,8 @@
 // student's MakeCode account. We report the student's code (main.ts: blocks always compile to it) to the lesson
 // page on the same channel as the HTML playground, so code checks tick as students build.
 //   ?target=microbit|arcade   ?code=<starter JavaScript>   ?id=<key for autosaving this step>
+//   ?pkg=<name=version,...>  extensions the lesson needs (e.g. microbit-robot=github:microsoft/microbit-robot#v2.7.4),
+//           added to every project's pxt.json dependencies; MakeCode fetches them and shows their blocks and simulator
 //   ?editor=<editor URL>  (tests only: a mock editor)   ?debug  (message log over the editor)
 //   ?sim=1  (build only: render-pictures loads a program, starts MakeCode's own simulator and screenshots it;
 //           nothing is saved and nothing is reported)
@@ -23,6 +25,9 @@ const target = TARGETS[params.get('target')] ? params.get('target') : 'microbit'
 const editorUrl = params.get('editor') || TARGETS[target].url;
 const EDITOR = new URL(editorUrl).origin;
 const starter = params.get('code') ?? '';
+// Extensions as { name: version }; names and versions are plain package ids (letters, digits, - _ . : / # @).
+const DEPS = Object.fromEntries((params.get('pkg') || '').split(',').map((d) => d.trim().split('='))
+  .filter(([n, v]) => n && v && /^[\w.-]+$/.test(n) && /^[\w.:/#@*-]+$/.test(v)));
 const SIM = params.has('sim');
 const id = SIM ? null : params.get('id');
 const storeKey = id ? `wp-makecode-playground:${id}` : null;
@@ -68,7 +73,11 @@ function load(code, blocks = '') {
   const hid = 'wp-' + Date.now().toString(36);
   ids = new Set([hid]);
   let pxt = template.pxt;
-  try { const cfg = JSON.parse(template.pxt); cfg.name = NAME; pxt = JSON.stringify(cfg, null, 4); } catch { /* keep MakeCode's own */ }
+  try {
+    const cfg = JSON.parse(template.pxt); cfg.name = NAME;
+    if (Object.keys(DEPS).length) cfg.dependencies = { ...(cfg.dependencies || {}), ...DEPS };
+    pxt = JSON.stringify(cfg, null, 4);
+  } catch { /* keep MakeCode's own */ }
   const header = { ...template.header, id: hid, name: NAME, recentUse: now, modificationTime: now, isDeleted: false };
   const text = { 'main.blocks': blocks || '', 'main.ts': code, 'README.md': ' ', 'pxt.json': pxt };
   projects[hid] = { header, text };
@@ -78,7 +87,7 @@ function load(code, blocks = '') {
   if (!blocks) setTimeout(() => request('switchblocks'), 600);
   // Picture mode: run the program in MakeCode's simulator once the blocks are built (the editor also runs it by itself).
   if (SIM) setTimeout(() => { request('startsimulator'); window.__playground.simStarted = true; }, 1500);
-  dbg('import', JSON.stringify(NAME), blocks ? '(blocks)' : '(javascript)');
+  dbg('import', JSON.stringify(NAME), blocks ? '(blocks)' : '(javascript)', Object.keys(DEPS).length ? 'with ' + Object.keys(DEPS).join(', ') : '');
   report(code);
 }
 

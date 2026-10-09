@@ -162,17 +162,17 @@ Checked in the `pxt-core` 13.2.5 source: controller mode is switched on by the U
 
 **Sample lesson.** "Pictures on the LEDs" (micro:bit lesson 1, one standalone HTML file): Predict (heart, then small heart, from rendered blocks), Run (compare with the prediction), Investigate (move both hearts into forever; question on why it beats), Modify (a show leds frame plus pause), Make (three or more frames, one hand-drawn), with a For teachers panel and `?debug` message log. All five steps work against the live editor. It is the reference for building the playground.
 
-**MOVE Motor in the simulator (tested 9 Oct):** the Kitronik extension's blocks run without errors, but nothing shows a robot moving. The gap is a visual robot, not broken code. Decide the route (add MOVE Motor to `microbit-robot`, our own simulator extension, or the Godot bridge) before the Robotics course, once micro:bit Foundations is underway.
+**MOVE Motor in the simulator (tested 9 Oct):** the Kitronik extension's blocks run without errors, but nothing shows a robot moving. The gap is a visual robot, not broken code. **Decided:** see "MakeCode: Robotics challenges" (lessons use `microbit-robot` with the Cutebot; MOVE Motor support later as a driver contributed to `microbit-robot`).
 
 **Risks.** We depend on Microsoft's hosted editor and an unversioned message API (pin a versioned path if offered; smoke-test in CI). The editor is heavy: one frame per lesson page, projects swapped with `importproject`. Still to check: whether the Kitronik MOVE Motor extension does anything in the simulator (the simulation options above are unchanged), and the embed served from a github.io address rather than a local file.
 
 **Fallback:** link out to MakeCode's own Markdown tutorials (hosted on GitHub): no build, but students leave our site with no code checks or progress.
 
-**Next:** build the `makecode` playground into the site from the sample lesson, then map the micro:bit course onto the shared spine (`BUILDING.md` › 2), with "Pictures on the LEDs" as lesson 1.
+**Next (older note):** build the `makecode` playground into the site from the sample lesson, then map the micro:bit course onto the shared spine (`BUILDING.md` › 2), with "Pictures on the LEDs" as lesson 1.
 
 ## MakeCode: micro:bit Foundations sequence (decided 9 Oct 2026; all 14 lessons written, not built)
 
-**Shape.** Two parallel foundations courses, start with either: **micro:bit Foundations** and **MakeCode Arcade**. Neither depends on the other. Foundations is fully simulator-based (no hardware needed; real micro:bits are a For teachers bonus via Download). Robots come in **Robotics challenges** (extensions, after micro:bit Foundations): each idea learnt in the simulator, then run on a real Kitronik MOVE Motor. That course's sim-first design waits on MOVE Motor simulation (see embedding check); foundations does not.
+**Shape.** Two parallel foundations courses, start with either: **micro:bit Foundations** and **MakeCode Arcade**. Neither depends on the other. Foundations is fully simulator-based (no hardware needed; real micro:bits are a For teachers bonus via Download). Robots come in **Robotics challenges** (extensions, after micro:bit Foundations): each idea learnt in the robot simulator, then run on a real robot. See "MakeCode: Robotics challenges".
 
 **Spine, with one deliberate change: events at lesson 2.** In blocks an event is just a holder you fill (no callback syntax, no `global`, no `mainloop`), the buttons are the device's whole interface, and lessons 3 to 6 need input to count and react to. Radio's `on received` (Unit 5) spirals events back.
 
@@ -238,6 +238,33 @@ Explain it to me (and any `picture:`) in micro:bit and Arcade lessons now shows 
 
 **Still to do:** try every lesson against the live Arcade editor (block names, the toolbox drawers named in hints, the keyboard keys in the simulator, how blocks write each fragment the checks look for); the click-to-load question for Arcade, whose editor is heavier than micro:bit's; tilemaps stay out of the core because a tilemap lives in the project's assets, not in `main.ts` (a later "Worlds" unit could import tilemap projects).
 
+## MakeCode: Robotics challenges (decided 9 Oct 2026; pilot lesson built, not tried against the live editor)
+
+**Robot and simulator.** Lessons use Microsoft's `microbit-robot` extension (MIT, pinned `v2.7.4`): one set of `robot.*` blocks for most two-wheeled micro:bit robots, with an approved simulator extension that appears beside the micro:bit. The same program runs on a real robot; only the first block (which robot) differs. Reference robot: **Elecfreaks Cutebot** (same sensors as MOVE Motor: two line sensors, front ultrasonic, RGB LEDs, buzzer; about $56 at Core Electronics). Vendor blocks (Kitronik's, Elecfreaks' own) drive real robots but move nothing in the simulator.
+
+**Kitronik MOVE Motor.** Not supported by `microbit-robot` (no issue or pull request for it, checked 9 Oct). Route: contribute a MOVE Motor driver to `microbit-robot` (motors on the I2C pins 19/20, line sensors P1 right / P2 left, ultrasonic trigger P13 / echo P14, ZIP LEDs P8, buzzer P0; motor commands from Kitronik's open-source extension). Not a separate extension: the simulator is approved only for Microsoft's. Until merged, each lesson's teacher notes give the Kitronik block equivalents. The repo is lightly maintained, so a merge may take a while.
+
+**What the simulator does (read from its source, tried in the live editor 9 Oct).** One fixed arena: a closed looping line plus a few boxes; robot and boxes can be dragged. Ultrasonic: a 25° beam to 40 cm (Cutebot), reported through a smoothing filter; with nothing in range it reads 40, and readings of 2 cm or less are ignored. Line sensors are on/off only (no analogue values, so difference-based steering like the CGGS mat challenge does not carry over). No sensor noise. 2D physics: the robot has mass, slows over a short distance after a stop, and pushes boxes. Default assists: speed smoothing, display of sensor state on the LEDs, and a line assist that only slows the robot after it loses a line. Robot shapes exist for Cutebot, Cutebot PRO, Maqueen, Maqueen Plus V2, Tiny:bit.
+
+**Shape.** Logic in the simulator, tuning on the real robot: each lesson ends with an optional "On a real robot" info step (noise, floor, batteries, thresholds). Real-world examples stay light (hook, a small example to modify, teacher notes); the arena stands in for every setting. Each lesson's only new idea is the robot one: Foundations already taught events, variables, if/else, functions and radio. ACARA (Digital Technologies) first; MYP framing from the CGGS MOVE Motor tutorials (criteria, scenario projects) stays out, though their techniques (movement functions, state with forever, radio cues, tripwire) are the source of ideas. Two strands run through it: **performance** (dance moves, music cues, synchronised robots) and **assistance and navigation** (sensing, modes, patrol and alerts).
+
+| Unit | Lesson | New idea | Hook | Make |
+|---|---|---|---|---|
+| Drive | 1 Drive and stop | Wheel speeds, timed moves (a timed move does not stop by itself) | A parade float's route | Drive a square |
+| | 2 Moves as functions | One function per move (spirals Functions) | A dance crew's named moves | A four-move routine |
+| Sense | 3 Stop before you crash (**built: pilot**) | Read distance in forever; stop when close; if / else if / else | Parking sensors, robot vacuums | A parking robot: fast, slow, stop |
+| | 4 Avoid and explore | Turn away when close | Robot vacuum | Explore without hitting a box |
+| | 5 Follow the line | Left and right line sensors steer | Warehouse and hospital floor-line robots | Follow the loop, stop at a box on it |
+| Modes | 6 One robot, many jobs | A mode variable set by buttons; forever acts on it | Lawn-mower robot | STOP / GO / FOLLOW |
+| Talk | 7 Remote control | Radio numbers become moves | Rescue robot driven from safety | A three-command remote |
+| | 8 Conductor and dancers | One micro:bit cues several robots in time | Drone and light shows | Robots dancing to phrases of a tune |
+| | 9 Report back | The robot sends an alert by radio | Spill or snake spotter | A patrol bot that alerts on an obstacle |
+| Challenge | 10 Showcase (performance) | Milestones, fading support | | A routine with music |
+| | 11 Patrol and alert (assistance) | Milestones, fading support | | A patrol bot with modes and alerts |
+| | 12 Optional: Tripwire | Two robots working together | | A tripwire that triggers the other robot |
+
+**Built for the pilot (branch `robotics-pilot`, not pushed).** Lessons can name MakeCode extensions (`extensions: [robot]`; keys and pinned versions in `MAKECODE_EXTENSIONS`, `tools/lesson-core.mjs`; validated). The lesson page passes them to each playground (`?pkg=name=version,...`, merged into the step project's `pxt.json` dependencies; malformed entries are dropped) and to the blocks renderer (`options.package`, on the page and in `render-pictures`). Tested headless with a mock editor: the robot dependency reaches MakeCode, lessons without extensions are unchanged. Course `content/code/robotics/` (listed on the MakeCode pathway, after micro:bit Foundations) with lesson 3 only. **Still to check in the live editor:** (1) the robot simulator appears inside our controller-mode embed (the one real unknown); (2) blocks pictures of `robot.*` code draw as blocks; (3) `render-pictures`' simulator screenshot (`explainPicture`) shows the micro:bit, not the robot arena, so robot lessons may want the arena instead; (4) the free course playground has no extension yet.
+
 ## Proposed: turtle companion (discussed, not decided)
 
 A small turtle in the corner of course and lesson pages with a CSS idle animation (blink, bob; none with reduced motion; can be hidden). It earns one item per unit finished: a colourful pen (Drawing and repeating), a signpost and a backpack (Choices and collections), a jigsaw piece (Functions), a remote (Interaction), a crown (Final challenge). Clicking it shows its items and where each was earned; finishing a unit plays a short celebration. Per browser, built from existing progress data.
@@ -247,7 +274,7 @@ A small turtle in the corner of course and lesson pages with a CSS idle animatio
 Three pathways offered as options, not gates. Each shares one concept spine (sequence, loops, variables, decisions, lists, functions, events, building a widget) and the "build it yourself, then meet the real tool" approach. Typical fit is a teacher note only (For teachers panel and here), never a label students see.
 
 **Foundations (build now; typically Years 6–8)**
-- **MakeCode** (typically 6–8): micro:bit (sensors, LEDs, radio, then Kitronik MOVE Motor in simulation, then the real robot) or Arcade (games: sprites, collisions, game loop). Blocks first, then the same programs in MakeCode Python or JavaScript. Embedding is checked and works (see "MakeCode: embedding check"); sequence in "micro:bit Foundations sequence".
+- **MakeCode** (typically 6–8): micro:bit (sensors, LEDs, radio, then a two-wheeled robot in simulation, then the real robot) or Arcade (games: sprites, collisions, game loop). Blocks first, then the same programs in MakeCode Python or JavaScript. Embedding is checked and works (see "MakeCode: embedding check"); sequence in "micro:bit Foundations sequence".
 - **Python Foundations with Turtle** (typically 7–8): the 10 built lessons, then the checkpoint task, which ends foundations.
 - **HTML & CSS basics** (typically 7–8): grow the one lesson into a short sequence (about 4–5 lessons).
 
@@ -256,9 +283,9 @@ Three pathways offered as options, not gates. Each shares one concept spine (seq
 - **Gradio → ML.** Embedded Spaces run the teacher's fixed code: students can use the app but not edit it. Hugging Face accounts need age 13+ (their terms, no parental-consent route) and the platform has no school features, so teacher-hosted Spaces are the baseline and student Spaces are optional for older students with school approval. For in-lesson Modify and Make, the option is our own in-browser Gradio-style playground: Pyodide plus a small `gr.Interface` subset (text, number, slider, image, outputs, Submit), so the same code later runs unchanged in real Gradio. In-browser ML: small models with scikit-learn/numpy (train on a CSV); large pretrained models only through teacher Spaces.
 - **microStudio** (games in text code): a full browser IDE, so students do edit code. Open source (MIT) and self-hostable, so a school-run copy avoids public accounts. Still to check: account and age terms on the public site, Python completeness, iframe embedding.
 - **p5.js → DOM with the browser console:** JavaScript on a canvas mirroring turtle (variables, decisions, arrays, functions, `mousePressed`, the draw loop), then JavaScript driving HTML (`querySelector`, `addEventListener`). The p5 playground in `edu-matthew-pham/codeswitch` (`src/lib/p5-playground`, `src/routes/p5_playground`) is the starting point; not yet reviewed.
-- **Advanced MOVE Motor:** sensors and autonomous behaviour.
+- **Advanced robotics:** beyond Robotics challenges (see "MakeCode: Robotics challenges").
 
-**MakeCode simulation beyond the micro:bit.** MakeCode is open source (`microsoft/pxt`, `microsoft/pxt-microbit`, MIT). Extensions can ship a simulator extension (a static web app in an iframe), but these need MakeCode team approval and a second review. Microsoft's `microbit-robot` (MIT) already simulates two-wheeled robots with line sensors and obstacle detection, but Kitronik MOVE Motor is not on its list. Options, least work first: (1) contribute MOVE Motor support to `microbit-robot`; (2) our own simulator extension (needs approval); (3) bridge MakeCode code into the Godot robotics simulator.
+**MakeCode simulation beyond the micro:bit.** MakeCode is open source (`microsoft/pxt`, `microsoft/pxt-microbit`, MIT). Extensions can ship a simulator extension (a static web app in an iframe), but these need MakeCode team approval and a second review. Microsoft's `microbit-robot` (MIT) already simulates two-wheeled robots with line sensors and obstacle detection, but Kitronik MOVE Motor is not on its list. Options, least work first: (1) contribute MOVE Motor support to `microbit-robot`; (2) our own simulator extension (needs approval); (3) bridge MakeCode code into the Godot robotics simulator. Decided: lessons use `microbit-robot` with the Cutebot now; (1) later (see "MakeCode: Robotics challenges").
 
 **Overlap settled:** Arcade is games with blocks (MakeCode pathway); microStudio is games in text code (Python extension).
 

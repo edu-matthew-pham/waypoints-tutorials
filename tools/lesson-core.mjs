@@ -17,6 +17,18 @@ export const SCIENCE_BOARD_KEYS = ['done'];
 export const TIERS = ['minimum', 'typical', 'wider'];
 /** Playgrounds that host the MakeCode editor: students build with blocks, which always compile to MakeCode JavaScript (main.ts). */
 export const MAKECODE_KINDS = ['microbit', 'arcade'];
+/**
+ * MakeCode extensions a lesson can name (frontmatter `extensions: [robot]`). Each is added to every step's project
+ * (pxt.json dependencies) and to the blocks renderer, so the lesson's blocks and the extension's simulator both work.
+ * Pin a released tag: a new version must not change lessons under students' feet.
+ *   robot: Microsoft's microbit-robot (two-wheeled robots such as the Elecfreaks Cutebot), with its robot simulator.
+ */
+export const MAKECODE_EXTENSIONS = {
+  robot: { name: 'microbit-robot', version: 'github:microsoft/microbit-robot#v2.7.4', target: 'microbit' },
+};
+/** A lesson's extensions as MakeCode's package string ("name=version,name=version"), or '' for none. */
+export const makecodePackage = (lesson) => (Array.isArray(lesson?.extensions) ? lesson.extensions : [])
+  .map((k) => MAKECODE_EXTENSIONS[k]).filter(Boolean).map((e) => `${e.name}=${e.version}`).join(',');
 export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board', 'sort'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
@@ -224,6 +236,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     teachers: meta.teachers ? String(meta.teachers).trim() : '',
     modules: Array.isArray(meta.modules) ? meta.modules.map(String) : [],
     language: meta.language || 'python',
+    extensions: meta.extensions,                     // MakeCode extensions by key (MAKECODE_EXTENSIONS), e.g. [robot]
     app: meta.app || null,
     pacing: { ...DEFAULT_PACING, ...(meta.pacing || {}) },
     intro,
@@ -282,6 +295,15 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (!lesson.app?.url) err('frontmatter', 'app.url is required when any step has a clip');
   }
   if (lesson.app?.layout && !LAYOUTS.includes(lesson.app.layout)) err('frontmatter', `app.layout must be one of ${LAYOUTS.join(', ')}`);
+  if (lesson.extensions !== undefined) {
+    if (lesson.language !== 'makecode') err('frontmatter', 'extensions works in MakeCode lessons only (language: makecode)');
+    else if (!Array.isArray(lesson.extensions)) err('frontmatter', 'extensions must be a list, such as [robot]');
+    else lesson.extensions.forEach((k) => {
+      const e = MAKECODE_EXTENSIONS[k];
+      if (!e) return err('frontmatter', `extensions: "${k}" is not one of ${Object.keys(MAKECODE_EXTENSIONS).join(', ')}`);
+      lesson.steps.forEach((s) => { const pg = s.config.try?.playground; if (pg && MAKECODE_KINDS.includes(pg) && pg !== e.target) err(`step ${s.id}`, `the ${k} extension works in the ${e.target} playground only`); });
+    });
+  }
 
   // One check (a step's, or a task's). c is the step config, for what a check needs from the step (a playground).
   const validateCheck = (k, where, c) => {

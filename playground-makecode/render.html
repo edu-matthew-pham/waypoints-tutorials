@@ -26,8 +26,8 @@ window.addEventListener('message', function (e) {
   if (d.type === 'renderready') ready(true);
   if (d.type === 'renderblocks' && waiting[d.id]) { waiting[d.id](d); delete waiting[d.id]; }
 });
-// Draws code as blocks into #out; resolves { w, h } (CSS pixels), or null when MakeCode cannot draw it.
-window.wpRender = function (code) {
+// Draws code as blocks into #out (pkg: extensions as MakeCode's package string, "name=version,..."); resolves { w, h } (CSS pixels), or null when MakeCode cannot draw it.
+window.wpRender = function (code, pkg) {
   return window.wpReady.then(function () {
     return new Promise(function (res) {
       var id = 'r' + (++n);
@@ -39,7 +39,7 @@ window.wpRender = function (code) {
         if (d.width) img.style.width = Math.round(d.width) + 'px';
         img.src = d.uri;
       };
-      f.contentWindow.postMessage({ type: 'renderblocks', id: id, code: code, options: {} }, ORIGIN);
+      f.contentWindow.postMessage({ type: 'renderblocks', id: id, code: code, options: pkg ? { package: pkg } : {} }, ORIGIN);
       setTimeout(function () { if (waiting[id]) { delete waiting[id]; res(null); } }, 20000);
     });
   });

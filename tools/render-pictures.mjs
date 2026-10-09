@@ -25,7 +25,7 @@ const DIR = join(OUT, '_pictures');
 mkdirSync(DIR, { recursive: true });
 
 // Same slug rule as snippet ids everywhere else (lesson-core snippetId).
-const { snippetId } = await import('./lesson-core.mjs');
+const { snippetId, makecodePackage } = await import('./lesson-core.mjs');
 const strip = (c) => c.replace(/[‹›]/g, '');
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg' };
@@ -265,7 +265,7 @@ if (existsSync('snippets/maths.json')) await pictures({
   const snipJobs = (file, target, prefix) => (existsSync(`snippets/${file}.json`) ? JSON.parse(readFileSync(`snippets/${file}.json`, 'utf8')).groups.flatMap((g) => g.items.map((i) => ({ id: prefix + snippetId(i.label), code: strip(i.code), target }))) : []);
   const mkSnips = [...snipJobs('microbit', 'microbit', ''), ...snipJobs('arcade', 'arcade', 'arcade/')];
   const targetOf = (l) => l.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
-  const mkCode = loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => makecodePrograms(l, (ref) => getSnippet(l.dir, ref)).map((code) => ({ id: blocksId(code), code, target: targetOf(l) })));
+  const mkCode = loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => makecodePrograms(l, (ref) => getSnippet(l.dir, ref)).map((code) => ({ id: blocksId(code), code, target: targetOf(l), pkg: makecodePackage(l) })));
   const seen = new Set();
   const down = new Set();
   let loaded = '';
@@ -283,7 +283,7 @@ if (existsSync('snippets/maths.json')) await pictures({
         if (!ok) { down.add(j.target); console.log(`- makecode: the MakeCode ${j.target} renderer cannot be reached, so no blocks pictures for it (pages show code as text)`); return null; }
         loaded = j.target;
       }
-      const size = await page.evaluate((code) => window.wpRender(code), j.code);
+      const size = await page.evaluate(([code, pkg]) => window.wpRender(code, pkg), [j.code, j.pkg || '']);
       if (!size) return null;
       const buf = await (await page.$('#out')).screenshot();
       return { data: `data:image/png;base64,${buf.toString('base64')}`, w: size.w * 2, h: size.h * 2, div: 2 };
@@ -306,11 +306,13 @@ if (existsSync('snippets/maths.json')) await pictures({
     base: hashDir('playground-makecode', readFileSync(new URL(import.meta.url)), 'makecode-out-v1'),
     jobs: loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => pictureItems(l).map((e) => {
       const target = targetOf(l);
-      return { id: `${l.slug}/${e.key}`, target, src: getSnippet(l.dir, e.ref), code: `// ${target}\n${getSnippet(l.dir, e.ref)}` };
+      const pkg = makecodePackage(l);
+      return { id: `${l.slug}/${e.key}`, target, pkg, src: getSnippet(l.dir, e.ref), code: `// ${target}${pkg ? ` ${pkg}` : ''}\n${getSnippet(l.dir, e.ref)}` };
     })),
     async draw(page, j) {
       if (down.has(j.target)) return null;
       const q = new URLSearchParams({ target: j.target, sim: '1', code: j.src });
+      if (j.pkg) q.set('pkg', j.pkg);
       const mock = process.env.MAKECODE_EDITOR;
       if (mock) q.set('editor', mock.startsWith('/') ? `http://localhost:${port}${mock}` : mock);
       const SIM = '.simframe iframe, iframe[id^="sim-frame"], iframe[src*="simulator"]';
