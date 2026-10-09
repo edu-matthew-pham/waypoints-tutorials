@@ -119,7 +119,10 @@ figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .try-head span{color:var(--muted);flex:1}
 .try-full{font:inherit;font-size:13px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer}.try-full:hover{border-color:var(--c,var(--accent))}
 .try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}
-.try-checks{display:none}.try.full .try-checks{display:flex;flex-wrap:wrap;gap:4px 16px;padding:6px 12px;font-size:14px;border-bottom:1px solid var(--line);background:var(--card);color:var(--muted)}.try-checks .ok{color:var(--run);font-weight:600}.try.full iframe{flex:1;height:auto!important}
+.try-task,.tt-toggle{display:none}.try.full .try-task{display:block;max-height:38vh;overflow:auto;padding:6px 14px 8px;border-bottom:1px solid var(--line);background:var(--card);font-size:15px}
+.try.full .tt-toggle{display:inline-block;margin-left:auto;margin-right:8px;font:inherit;font-size:13px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer}
+.tt-title{font-weight:700;margin:.2em 0 .3em}.tt-body p,.tt-body ul,.tt-body ol{margin:.3em 0}.tt-body img{max-height:24vh;width:auto}.tt-body .hints{margin:.3em 0;padding-top:4px;padding-bottom:4px}
+.try-task.closed .tt-body{display:none}.try-checks{display:flex;flex-wrap:wrap;gap:4px 16px;padding:6px 0 2px;margin-top:4px;position:sticky;bottom:-8px;background:var(--card);border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}.try-task.closed .try-checks{border-top:0;margin-top:0}.try-checks .ok{color:var(--run);font-weight:600}.try.full iframe{flex:1;height:auto!important}
 body.try-open{overflow:hidden}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
 .try iframe[hidden]{display:none}.mkload{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--card);color:var(--muted);font-size:14px;text-align:center;padding:16px}.try.full .mkload{height:calc(100% - 40px)!important}
@@ -331,9 +334,13 @@ if(ids.length){msg.className='msg ok';msg.textContent=(fresh?'Unlocked: ':'Unloc
 else{msg.className='msg ok';msg.textContent='Got it.'}}
 if((load().done||{})[key])show(false);
 if(box.dataset.type==='code'){var rules=JSON.parse(box.dataset.rules),ul=box.querySelector('.rules');
+// The last report from each playground, so a task's check can catch up when its pill opens (window.wpLast, below).
+if(!window.wpLast){window.wpLast={};window.addEventListener('message',function(e){var m=e.data;if(e.origin===location.origin&&m&&m.wp==='run'&&m.id)window.wpLast[m.id]=m})}
 function paint(res){ul.replaceChildren();res.forEach(function(r){var li=document.createElement('li');li.textContent=r.label;if(r.ok)li.className='ok';ul.appendChild(li)})}
 var done0=(load().done||{})[key];paint(evalRules(rules,'',kind).map(function(r){return {label:r.label,ok:!!done0}}));
-window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==(box.dataset.play||key))return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==(box.dataset.play||key))return;var pn=box.closest('.tpanel'),stp=box.closest('.step');
+// Only the open task listens. MakeCode in full screen is the exception: the bar shows every task of the step and pills cannot be switched.
+if(pn&&!pn.classList.contains('active')&&!((m.kind==='microbit'||m.kind==='arcade')&&stp&&stp.querySelector('.try.full')))return;
 var res=evalRules(rules,m.code||'',kind);paint(res);
 if(m.quiet&&!(load().done||{})[key]){}
 else if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
@@ -402,12 +409,23 @@ c.hidden=false}});
 // playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
 function mkOpen(t){var f=t.querySelector('iframe[data-src]'),l=t.querySelector('.mkload');if(!f||f.src)return;f.src=f.dataset.src;f.hidden=false;if(l)l.remove()}
 document.querySelectorAll('.mkopen').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.try');mkOpen(t);if(t.dataset.wide&&t._full)t._full(true)})});
-// In full screen the step's code checks are hidden behind the playground, so a slim bar repeats them with their ticks.
+// In full screen the step's instructions and checks are hidden behind the playground, so a task drawer repeats them:
+// the step's (or the open task's) text, hints and code pictures, then the code checks with their ticks. Hide task folds the text away.
 document.querySelectorAll('.try').forEach(function(t){var s=t.closest('.step'),h=t.querySelector('.try-head');if(!s||!h)return;
-var cs=[].slice.call(s.querySelectorAll('.check[data-type="code"]'));if(!cs.length)return;
-var bar=document.createElement('div');bar.className='try-checks';bar.setAttribute('aria-live','polite');
-function upd(){bar.replaceChildren.apply(bar,cs.map(function(c){var d=c.classList.contains('done'),e=document.createElement('span'),q=c.querySelector('.check-q');e.className=d?'ok':'';e.textContent=(d?'\u2713 ':'\u25CB ')+(q?q.textContent:'');return e}))}
-upd();cs.forEach(function(c){new MutationObserver(upd).observe(c,{attributes:true,attributeFilter:['class']})});h.after(bar)});
+var w=t.closest('.tasks'),cs=[].slice.call(s.querySelectorAll('.check[data-type="code"]'));
+var box=document.createElement('div');box.className='try-task';var body=document.createElement('div');body.className='tt-body';
+var bar=document.createElement('div');bar.className='try-checks';bar.setAttribute('aria-live','polite');box.appendChild(body);if(cs.length)box.appendChild(bar);
+function strip(n){if(n.removeAttribute)n.removeAttribute('id');if(n.querySelectorAll)[].forEach.call(n.querySelectorAll('[id]'),function(x){x.removeAttribute('id')});return n}
+function fill(){var title=document.createElement('p');title.className='tt-title';var src;
+if(w){var tp=w.querySelector('.tp.active');title.textContent=tp?tp.textContent:'';src=[w.querySelector(':scope > .tpanel.active[role="tabpanel"]')]}
+else{var h2=s.querySelector('h2');title.textContent=h2?h2.textContent:'';src=[].filter.call(s.children,function(ch){return !(ch.matches('.chip,h2,.try,.check,.compare,.tasks,video')||ch.querySelector('video,iframe'))})}
+body.replaceChildren.apply(body,[title].concat(src.filter(Boolean).map(function(n){return strip(n.cloneNode(true))})))}
+function upd(){bar.replaceChildren.apply(bar,cs.map(function(c){var d=c.classList.contains('done'),e=document.createElement('span'),q=c.querySelector('.check-q');e.className=d?'ok':'';e.textContent=(d?'✓ ':'○ ')+(q?q.textContent:'');return e}))}
+fill();upd();cs.forEach(function(c){new MutationObserver(upd).observe(c,{attributes:true,attributeFilter:['class']})});
+if(w)[].forEach.call(w.querySelectorAll(':scope > .tpanel[role="tabpanel"]'),function(p){new MutationObserver(fill).observe(p,{attributes:true,attributeFilter:['class']})});
+var tg=document.createElement('button');tg.type='button';tg.className='tt-toggle';tg.setAttribute('aria-expanded','true');tg.textContent='Hide task';
+tg.addEventListener('click',function(){var off=box.classList.toggle('closed');tg.textContent=off?'Show task':'Hide task';tg.setAttribute('aria-expanded',String(!off))});
+h.insertBefore(tg,h.querySelector('.try-full'));h.after(box)});
 document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.try-full');if(!b)return;
 t._full=function(on){t.classList.toggle('full',on);document.body.classList.toggle('try-open',!!document.querySelector('.try.full'));b.setAttribute('aria-pressed',String(on));b.textContent=on?'Exit full screen':'Full screen';if(!on)b.focus()};
 b.addEventListener('click',function(){mkOpen(t);t._full(!t.classList.contains('full'))})});
@@ -441,6 +459,8 @@ box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw(
 [].forEach.call(document.querySelectorAll('.tasks'),function(w){
 [].forEach.call(w.querySelectorAll('.tp'),function(p){p.addEventListener('click',function(){var i=p.dataset.i;
 [].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))});
+// MakeCode: the newly opened task checks the work already in the editor (the last report), without waiting for an edit.
+var oc=w.querySelector('.tpanel.active .check[data-type="code"][data-play]');if(oc&&(oc.dataset.kind==='microbit'||oc.dataset.kind==='arcade')&&window.wpLast&&window.wpLast[oc.dataset.play])window.postMessage(window.wpLast[oc.dataset.play],location.origin);
 if(w.dataset.kind==='board'||w.dataset.kind==='maths'||w.dataset.kind==='science'){var rs=w.querySelector('.tpanel.active .resetstart'),f=w.querySelector('iframe');if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
 [].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=w.querySelector('iframe');if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
 sync(w)});
