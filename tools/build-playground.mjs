@@ -92,6 +92,13 @@ export async function buildMathsPlayground(out = 'dist') {
     if (!existsSync(src)) throw new Error(`Missing ${src}. Run "npm ci" first.`);
     copyFileSync(src, join(dest, 'vendor', f));
   }
+  // The classifier widget loads these on demand: Teachable Machine's image library and the TensorFlow.js version its
+  // export snippet uses (both pinned in package.json), served from this site rather than a CDN.
+  for (const [pkg, f] of [['@tensorflow/tfjs', 'tf.min.js'], ['@teachablemachine/image', 'teachablemachine-image.min.js']]) {
+    const src = join(root, 'node_modules', pkg, 'dist', f);
+    if (!existsSync(src)) throw new Error(`Missing ${src}. Run "npm ci" first.`);
+    copyFileSync(src, join(dest, 'vendor', f));
+  }
   const { MATH_JS } = await import('./math-expr.mjs');
   writeFileSync(join(dest, 'maths.js'), MATH_JS + '\n');
   stampPlayground(dest);

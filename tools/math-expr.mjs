@@ -11,6 +11,9 @@ export function makeMath() {
     while (i < s.length) {
       var c = s[i], m;
       if ((m = /^\d+(\.\d+)?|^\.\d+/.exec(s.slice(i)))) { out.push({ t: 'n', v: parseFloat(m[0]) }); i += m[0].length; }
+      // A name with an underscore is one variable (acc_messy, has_neither): board values with long names. Students
+      // never type "_" in algebra, so 2xy is still 2 × x × y.
+      else if ((m = /^[a-zA-Z]\w*_\w*/.exec(s.slice(i)))) { out.push({ t: 'v', v: m[0] }); i += m[0].length; }
       else if (/[a-zA-Z]/.test(c)) { out.push({ t: 'v', v: c }); i++; }
       else if ('+-*/^()='.indexOf(c) >= 0) { out.push({ t: c }); i++; }
       else throw new Error('I do not understand "' + c + '".');

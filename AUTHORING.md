@@ -483,6 +483,21 @@ Vary, Practise, Make).
     (↑, ↓ or –) and check against the model's cascade with a reason for each (`r`, `p` predictions, `k`, `h` 1 once
     checked, `c` matching). The cascade follows feeding links outward, nearest effects first; disagreeing effects
     at the same distance are "could go either way".
+  - `widget: classifier` (AI; first used by `code/microbit-computer`): students train an image model in Teachable
+    Machine, export it with **Upload my model** and paste the link; the board tests it on a fixed set of photos.
+    - `testset: recycling` (photos and labels in `playground-board/media/classifier/<name>/test.json`; the recycling set
+      is made from TrashNet by `tools/classifier/make-recycling-set.py`, which also writes the two training zips),
+      `groups: plain, messy` (which groups to test; default all), `classes: Paper, Plastic` (expected labels; default
+      the set's), `model: ask` (default; the last model a student loaded fills in) or a link or a folder on this site,
+      `webcam: on` (live preview, not checked).
+    - `serial: on`: a **Connect a micro:bit** button (Web Serial, 115200 baud; Chrome or Edge). Clicking a test photo
+      sends its predicted label as a line; the webcam sends a label once it holds `threshold:` (default 0.8) for 300 ms
+      and differs from the last one sent. Lines the micro:bit sends back are shown; `name:number` lines (MakeCode's
+      **serial write value**) become values.
+    - Values for `when:` checks (every name has an underscore): `acc_all`, `acc_<group>` (0 to 1), `n_correct`,
+      `n_total`, `n_classes`, `has_<label>` (1 or 0), and with serial `n_sent`, `n_replies`, `in_<name>`. Examples:
+      `"acc_messy >= 0.75"`, `"has_neither = 1 and acc_neither >= 0.75"`, `"n_sent >= 3"`. Training is not checked;
+      the model it makes is. The Teachable Machine library and TensorFlow.js load only when this widget is used.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working
