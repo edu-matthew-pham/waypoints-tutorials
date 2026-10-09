@@ -38,7 +38,7 @@ color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin-right:6p
 <script>(function(){var C=['#2563eb','#c2570a','#15803d','#9333ea','#be185d'];
 function walk(el,d){[].forEach.call(el.children,function(c){if(/^(SCRIPT|STYLE|BR|TEMPLATE)$/.test(c.tagName))return;
 c.setAttribute('data-wp-tag',c.tagName.toLowerCase());c.style.setProperty('--wpc',C[d%C.length]);walk(c,d+1)})}
-walk(document.body,0)})()<\/script>`;
+document.addEventListener('DOMContentLoaded',function(){walk(document.body,0)})})()<\/script>`;
 let boxes = params.get('boxes') === '1';
 // ?zoom=1.6 enlarges the code and the preview, for recorded clips (text stays readable at video size).
 const zoom = Math.min(3, Math.max(1, Number(params.get('zoom')) || 1));
@@ -51,7 +51,11 @@ showBoxes();
 
 function render() {
   const html = codeEl.value;
-  previewEl.srcdoc = html + ZOOM + (boxes ? BOXES : ""); // appended, so a page that starts with <!DOCTYPE html> keeps it first
+  // Injected before the student's code (after a <!DOCTYPE> if there is one): appended at the end, a half-typed tag
+// such as "<stro" would swallow it. The Boxes script waits for the page to load.
+  const extra = ZOOM + (boxes ? BOXES : '');
+  const dt = extra && html.match(/^\s*<!doctype[^>]*>/i);
+  previewEl.srcdoc = !extra ? html : dt ? dt[0] + extra + html.slice(dt[0].length) : extra + html;
   // Parse (without running anything) so tests can check what the page says.
   const doc = new DOMParser().parseFromString(html, 'text/html');
   const text = (doc.body.innerText ?? doc.body.textContent ?? '').replace(/\s+/g, ' ').trim();

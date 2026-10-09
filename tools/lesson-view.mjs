@@ -524,7 +524,8 @@ export function lessonPageHtml(lesson, deps) {
     : (lesson.teachers || insights.length)
       ? `<details class="teachers"><summary>For teachers</summary>${lesson.teachers ? md.parse(lesson.teachers) : ''}${insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : ''}</details>` : '';
   // Explain it to me: the idea in more words, collapsed, for students who want it.
-  const explainHtml = T?.explain ? `<details class="explain"><summary>Explain it to me</summary>${md.parse(T.explain)}</details>` : '';
+  const explainClip = lesson.explainStep ? clipHtml(lesson.explainStep) : '';
+  const explainHtml = T?.explain || explainClip ? `<details class="explain"><summary>Explain it to me</summary>${explainClip}${T?.explain ? md.parse(T.explain) : ''}</details>` : '';
 
   return page(lesson.title, `
 ${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>

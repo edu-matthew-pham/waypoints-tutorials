@@ -213,7 +213,7 @@ let failures = 0;
 for (const lesson of lessons) {
   const errs = validateLesson(lesson);
   if (errs.length) { errs.forEach((e) => console.error('✗ ' + e)); failures += errs.length; continue; }
-  const clipSteps = lesson.steps.filter((s) => s.config.clip);
+  const clipSteps = [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])].filter((s) => s.config.clip);
   const outDir = join(OUT, lesson.slug, 'clips');
   mkdirSync(outDir, { recursive: true });
 

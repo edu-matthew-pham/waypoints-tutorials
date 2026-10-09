@@ -185,6 +185,11 @@ export function parseLessonText(raw, slug = 'lesson') {
     pacing: { ...DEFAULT_PACING, ...(meta.pacing || {}) },
     intro,
     steps,
+    // explainClip (frontmatter): a captioned clip shown in the "Explain it to me" panel. It is recorded and validated
+    // like a step's clip, as a pseudo-step with id "explain" (clips/explain.mp4).
+    explainStep: meta.explainClip && typeof meta.explainClip === 'object' && !Array.isArray(meta.explainClip)
+      ? { index: 0, id: 'explain', title: 'Explain it to me', body: '', tasks: [], config: { stage: 'info', app: true, ...meta.explainClip } }
+      : null,
   };
 }
 
@@ -214,7 +219,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     try { snip(v); } catch (e) { err(where, `expected: ${e.message}`); }
   };
   const err = (where, msg) => errs.push(`${lesson.slug} › ${where}: ${msg}`);
-  const hasClips = lesson.steps.some((s) => s.config.clip);
+  const hasClips = lesson.steps.some((s) => s.config.clip) || !!lesson.explainStep?.config.clip;
 
   if (!lesson.steps.length) err('lesson', 'no steps (each step starts with "## Title")');
   if (hasClips) {
@@ -301,7 +306,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     }
   };
 
-  for (const s of lesson.steps) {
+  for (const s of [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])]) {
     const where = `${s.id} "${s.title}"`;
     const c = s.config;
     if (!STAGES.includes(c.stage)) err(where, `stage must be one of ${STAGES.join(', ')} (got "${c.stage}")`);

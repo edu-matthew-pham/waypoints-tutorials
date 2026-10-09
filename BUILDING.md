@@ -45,7 +45,7 @@ The student tutorial stays light on words; the teacher layer carries the explana
 - **Make the expected result clear, and show it.** Every Modify and Make task says what success looks like; where words alone leave it unclear, show it behind "Show the expected result" (after the playground, so students try first; the picture or clip only, never the code):
   - **A picture** when the result is static (most HTML and CSS): `expected: page.html#sol-x` on the step or task; `npm run render` screenshots the solution's page.
   - **A clip** only when the result moves or happens over time (turtle drawing, animation, a click that changes something): an output-only clip (`view: output, autorun: 1`, `reveal: "Show the expected result"`).
-  - **A captioned clip to explain why** (an idea that is spatial or happens in steps, such as nesting): short (under about 30 s), key phrases as captions, no voiceover for now.
+  - **A captioned clip to explain why** (an idea that is spatial or happens in steps, such as nesting): short (under about 30 s), key phrases as captions, no voiceover for now. The lesson's main idea goes in **Explain it to me** as a clip (`explainClip`) with two or three lines of text, not a page of prose.
 - **Clips** only where they earn it: a hook, an expected result that moves, or explaining why.
 - **Code checks** (`type: code`) use `contains` for the exact idea ("the hit test is in the click handler"), not just names: `uses` passes on an import line alone, and `calls` passes on any function called often.
 - **Unlocks**: each lesson unlocks the snippets it teaches; the Reference drawer's "This lesson" also picks up snippets its starter code uses. Add a snippet `matches` regex when its first line is too generic.

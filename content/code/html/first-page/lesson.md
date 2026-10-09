@@ -11,6 +11,23 @@ app:
   layout: full
 pacing:
   keyDelayMs: 45
+explainClip:
+  query: { code: "", zoom: 1.7 }
+  caption: "Tags label text, and the browser shows its best guess"
+  clip:
+    - caption: "A tag is a label. <h1> labels the main heading."
+    - type: { into: HTML code, text: "<h1>Sports day</h1>\n" }
+    - caption: "<p> opens a paragraph and </p> closes it."
+    - type: { into: HTML code, text: "<p>Bring a hat.</p>\n", append: true }
+    - caption: "<strong> marks an important word, inside the paragraph."
+    - type: { into: HTML code, text: "<p>\n  Bring\n  <strong>water</strong>\n</p>", append: true }
+    - caption: "The tags say what the text is. The browser picks the look."
+    - wait: 1500
+    - caption: "Forget a closing tag and there is no error message..."
+    - type: { into: HTML code, text: "<h1>Sports day</h1>\n<p>Bring a hat.</p>\n<p>\n  Bring\n  <strong>water\n</p>\n<p>Races at 9 am.</p>" }
+    - expect: { selector: "#preview-text", contains: "Races at 9 am." }
+    - caption: "...the bold just carries on. Check the page after every change."
+    - wait: 2000
 hook: "Every website you have visited, from your school page to a shop, starts as text with tags like these."
 ---
 Every web page is text with **tags** in it. A tag like `<h1>` tells the browser what the text *is*, and the browser decides how it looks.

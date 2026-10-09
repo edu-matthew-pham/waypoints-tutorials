@@ -34,13 +34,9 @@ exit:
   q: "A student presses Enter in the middle of a paragraph in their code, but the page does not change. Why, and how do they start a new line?"
   a: "The browser ignores line breaks in the code. To start a new paragraph, end the first with </p> and start the next with <p>."
 explain: |
-  A **tag** is a label in angle brackets. `<p>` starts a paragraph and `</p>` (with a slash) ends it. The text between them is what the tag labels.
+  A **tag** is a label: `<p>` opens it and `</p>` closes it. Tags say what the text *is*, the browser picks the look, and a tag inside another closes first.
 
-  Tags say what the text *is*: a main heading (`<h1>`), a section heading (`<h2>`), a paragraph (`<p>`), an important word (`<strong>`), a word with emphasis (`<em>`). The browser decides how each one looks.
-
-  Tags can go inside other tags, like boxes inside boxes. The inner one closes first: `<p>On <strong>Friday</strong>.</p>`.
-
-  If you make a mistake, the browser does not show an error. It shows its best guess, so check the page after every change.
+  A missing tag gives no error message, so check the page after every change.
 solutions:
   step-4#t1: page.html#sol-change
   step-4#t2: page.html#sol-sections

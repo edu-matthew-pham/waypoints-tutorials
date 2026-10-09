@@ -224,6 +224,7 @@ solutions:                     # work item → code region
   step-5: functions.py#sol-make
 ```
 
+- **`explainClip`** (lesson frontmatter; needs `app:`): a captioned clip shown first in the student's **Explain it to me** panel, written like a step's clip (`query`, `caption`, `clip:` actions); it records as `clips/explain.mp4`. Keep the `explain` text to two or three lines beside it.
 - **Where it shows:** the lesson's collapsed **For teachers** panel (no solutions), the teacher guide page `/teach/<course>/<lesson>/`, and the generated slides and worksheet. `explain` is a collapsed panel after the lesson intro.
 - **Solutions** are code regions (`sol-*`) in the lesson's `.py` files, keyed by work item: each Modify or Make step with a playground (`step-N`), or each of its tasks (`step-N#tM`). A solution must pass its task's code check (validate runs the rules). Multi-file solutions use `# file:` lines. Use only what students have met by then. An open Make task with no solution shows "any program that does what the step asks".
 - **Unit primers:** `content/<course>/primers/<unit id>.md` (front matter `title`, for example "Functions in 5 minutes"), shown on the course guide. Sections: the idea in plain words; why programmers use it; an everyday picture and where it breaks; try it yourself (5 minutes); questions students ask; how it connects.
