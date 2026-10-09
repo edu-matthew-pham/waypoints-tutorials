@@ -11,7 +11,7 @@ import { mkdirSync, writeFileSync, existsSync, copyFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import { Marked } from 'marked';
-import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock } from './lesson-view.mjs';
+import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV_CSS, NAV_JS } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
 import { snippetId, unlockKind } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
@@ -61,13 +61,14 @@ function buildLesson(lesson, parentTitle, course) {
     course,
     siteRoot: '../'.repeat(lesson.depth),
     source: `content/${lesson.slug}/lesson.md`,
+    siteNavHtml: navFor(lesson.slug, 'lesson', lesson.slug.split('/').slice(0, -1).join('/')),
   }));
 }
 
 const PLAYGROUND_PAGE_CSS = `:root{--bg:#fbfaf8;--ink:#1d2430;--line:#e4e1da;--card:#fff;--accent:#c2570a}
 @media(prefers-color-scheme:dark){:root{--bg:#0f141a;--ink:#e6edf3;--line:#26303c;--card:#161d26;--accent:#ff9d3d}}
 html,body{height:100%;margin:0}body{display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.pgbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 14px;border-bottom:1px solid var(--line)}
+.pgbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:4px 14px;border-bottom:1px solid var(--line);font-size:14px}
 .pgbar a,.pgbar button{font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:1px solid transparent;border-radius:8px;padding:5px 8px;cursor:pointer}
 .pgbar a:hover,.pgbar button:hover{background:var(--card);border-color:var(--line)}.pgbar button{font-weight:500;color:inherit;opacity:.85}.grow{flex:1}
 iframe{flex:1;width:100%;border:0;min-height:0}`;
@@ -124,8 +125,23 @@ for (const l of lessons) {
   }
 }
 
-// Reference (cheat sheet) pages are generated from the same snippet files the playgrounds use.
+// Paths with a playground, and reference (cheat sheet) pages generated from the snippet files the playgrounds use.
+const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' } };
 const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }];
+
+// The site navbar: every folder that holds lessons is a course. navFor(pagePath, here, coursePath) builds it
+// for a page at pagePath ('' is the site root); here says which kind of page it is (see siteNav).
+const COURSES = [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).join('/')))]
+  .map((path) => ({ path, title: dirNode(path).title, order: dirNode(path).order }))
+  .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
+const navFor = (pagePath, here, coursePath = null) => {
+  const c = coursePath && COURSES.find((x) => x.path === coursePath);
+  return siteNav({
+    root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here,
+    courses: COURSES.map((x) => ({ title: x.title, href: `${x.path}/` })),
+    current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
+  });
+};
 for (const r of REFS) {
   const data = JSON.parse(readFileSync(join('snippets', `${r.file}.json`), 'utf8'));
   const parent = r.path.split('/').slice(0, -1).join('/');
@@ -137,11 +153,10 @@ for (const r of REFS) {
     `<div class="ref-item" data-text="${esc([i.label, i.hint || '', plain(i.code)].join(' ').toLowerCase())}">${codeBlock(highlightCode, i.code.split('‹').join('').split('›').join('').replace(/\n$/, '') + '\n', data.language, '')}<div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p><p class="ref-id">id: <code>${snippetId(i.label)}</code></p></div></div>`).join('') + '</section>').join('') + script;
   mkdirSync(join(OUT, r.path), { recursive: true });
   writeFileSync(join(OUT, r.path, 'index.html'), page(data.title,
-    `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`));
+    `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`, '', navFor(r.path, 'reference', parent)));
 }
 
-// Playground pages live beside Reference on the paths that have a playground.
-const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' } };
+// Playground pages live beside Reference on the paths that have a playground (PLAY is defined above).
 // One segment per check, in lesson order: its progress key, the step anchor and a label (for the course page).
 const segmentsOf = (l) => l.steps.flatMap((s) => {
   const step = s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '');
@@ -187,9 +202,9 @@ for (const [path, pg] of Object.entries(PLAY)) {
   const src = `${up}${pg.dir}/index.html?id=free&free=1&v=${VERSIONS[pg.dir]}${pg.kind === 'turtle' && sharedModuleNames.length ? `&use=${sharedModuleNames.join(',')}` : ''}`;
   mkdirSync(join(OUT, path, 'playground'), { recursive: true });
   writeFileSync(join(OUT, path, 'playground', 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(pg.label)} playground</title><style>${PLAYGROUND_PAGE_CSS}</style></head><body>
-<header class="pgbar"><a href="../">← ${esc(dirNode(path).title)}</a><b>${esc(pg.label)} playground</b><span class="grow"></span>
-<a id="cont" href="#" hidden>Continue lesson</a><a href="../reference/">Reference</a><a href="#" data-progress-open>My progress</a>
+<title>${esc(pg.label)} playground</title><style>${PLAYGROUND_PAGE_CSS}${NAV_CSS}</style></head><body>
+${navFor(`${path}/playground`, 'playground', path)}
+<header class="pgbar"><b>${esc(pg.label)} playground</b><span class="grow"></span>
 <button type="button" id="unlock" aria-pressed="false" title="Some snippets are for things you haven't learned yet.">Unlock all snippets (use this if your progress was lost)</button></header>
 <iframe title="${esc(pg.label)} playground" src="${esc(src)}"></iframe>
 <script>
@@ -198,9 +213,9 @@ function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){re
 function paint(){var on=!!load().free;b.setAttribute('aria-pressed',String(on));b.textContent=on?'Re-lock snippets':'Unlock all snippets (use this if your progress was lost)'}
 b.addEventListener('click',function(){var p=load();p.free=!p.free;try{localStorage.setItem(KEY,JSON.stringify(p))}catch(e){}paint();
 var f=document.querySelector('iframe');try{f.contentWindow.dispatchEvent(new StorageEvent('storage',{key:KEY}))}catch(e){}});
-paint();
-try{var l=JSON.parse(localStorage.getItem('wp-last-lesson'));if(l&&l.href){var c=document.getElementById('cont');c.href=l.href;c.title=l.title||'';c.hidden=false}}catch(e){}})();
-</script><script src="${up}progress.js" data-root="${up}" defer></script></body></html>`);
+paint()})();
+${NAV_JS}
+</script></body></html>`);
 }
 
 for (const node of dirs.values()) {
@@ -231,11 +246,11 @@ for (const node of dirs.values()) {
       (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') +
       `<ol class="course" id="course" data-kind="${play?.kind || ''}">${rows}</ol>` +
       (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : ''),
-      `<script src="${up}progress.js" data-root="${up}" defer></script>`));
+      `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'course', node.path)));
     continue;
   }
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
-    `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header><ul class="lessons">${items}</ul>`, play ? `<script src="${up}progress.js" data-root="${up}" defer></script>` : ''));
+    `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header><ul class="lessons">${items}</ul>`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
 }
 writeFileSync(join(OUT, '.nojekyll'), '');
 

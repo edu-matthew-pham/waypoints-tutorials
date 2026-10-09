@@ -126,7 +126,7 @@ ol.course{list-style:none;margin:0;padding:0;border:1px solid var(--line);border
 .cstat{font-size:13px;color:var(--muted);white-space:nowrap;padding-top:3px;font-variant-numeric:tabular-nums}.crow.done .cstat{color:var(--run);font-weight:600}
 .cfoot{margin:14px 2px;color:var(--muted);font-size:14px}.cfoot b{color:var(--ink);font-weight:600}
 @media(max-width:560px){.crow{grid-template-columns:30px 1fr;padding:12px 14px}.cstat{grid-column:2;padding:0}.csum{display:none}}
-ul.lessons a:hover{border-color:var(--accent)}ul.lessons b{display:block;font-size:1.15rem}ul.lessons span{color:var(--muted);font-size:15px}
+ul.lessons a:hover{border-color:var(--accent)}ul.lessons .cprog{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:8px}ul.lessons .cbar{display:block;height:6px;max-width:260px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:4px}ul.lessons .cbar i{display:block;height:100%;background:var(--run)}ul.lessons b{display:block;font-size:1.15rem}ul.lessons span{color:var(--muted);font-size:15px}
 .compare{margin:14px 0;padding:12px 16px;border-left:4px solid var(--predict);background:color-mix(in srgb,var(--predict) 8%,transparent);border-radius:0 8px 8px 0}.compare p{margin:2px 0}
 .check{margin:20px 0 4px;padding:14px 16px;border:1px dashed var(--c);border-radius:10px;background:color-mix(in srgb,var(--c) 6%,transparent)}
 .check legend,.check .check-q{font-weight:600;margin:0 0 8px;padding:0}.check fieldset{border:0;margin:0;padding:0}
@@ -142,6 +142,55 @@ ul.lessons a:hover{border-color:var(--accent)}ul.lessons b{display:block;font-si
 @media print{body{background:#fff;color:#000}.ref-item{break-inside:avoid}}
 footer{margin-top:50px;color:var(--muted);font-size:14px}
 `;
+
+
+/**
+ * The site navbar, the same on every page: home, the courses (the current one marked), and for the current
+ * course its Playground, Reference and My progress (the course page). It is not sticky: on lesson pages the
+ * course bar below it is. NAV_JS adds the phone menu and "Back to <lesson> › <step>": lesson pages remember
+ * the open step per tab (sessionStorage), other pages offer the way back.
+ * nav: { root, courses: [{ title, href }], current: { href, playground, reference } | null, here }
+ * here: 'lesson' | 'course' | 'playground' | 'reference' | 'home'
+ */
+export function siteNav({ root = '', courses = [], current = null, here = 'home' }) {
+  const link = (href, text, on) => `<a href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
+  const courseLinks = courses.map((c) => link(c.href, c.title, current && current.href === c.href)).join('');
+  const tools = !current ? '' :
+    (current.playground ? link(`${current.href}playground/`, 'Playground', here === 'playground') : '') +
+    (current.reference ? link(`${current.href}reference/`, 'Reference', here === 'reference') : '') +
+    link(current.href, 'My progress', here === 'course');
+  return `<nav class="sitenav" data-here="${esc(here)}" aria-label="Site"><div class="sn-in">` +
+    `<a class="sn-brand" href="${esc(root || './')}">Waypoints</a>` +
+    (courses.length ? `<button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-courses">Courses ▾</button><div class="sn-courses" id="sn-courses">${courseLinks}</div>` : '') +
+    `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
+}
+export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px}
+.sn-in{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:48px;flex-wrap:wrap}
+.sitenav a{color:var(--ink);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap}
+.sitenav a:hover{background:var(--bg)}.sitenav a[aria-current]{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent);border-radius:0}
+.sn-brand{font-weight:800!important;letter-spacing:-.01em;margin-right:6px}
+.sn-courses,.sn-tools{display:flex;gap:2px}.sn-grow{flex:1}
+.sn-menu{display:none;font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
+.sitenav .sn-back{color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;margin-right:6px;max-width:42vw;overflow:hidden;text-overflow:ellipsis}
+.sitenav .sn-back[hidden]{display:none}
+@media(max-width:700px){.sn-menu{display:inline-block}.sn-courses{display:none;order:9;flex-basis:100%;flex-direction:column;padding:4px 0 8px}.sitenav.open .sn-courses{display:flex}
+.sitenav a[aria-current]{box-shadow:none}.sn-tools{order:8;flex-basis:100%;justify-content:flex-start;padding-bottom:6px;overflow-x:auto}.sitenav .sn-back{order:7;flex-basis:100%;max-width:none;margin:2px 0 6px;text-align:center}}
+@media print{.sitenav{display:none}}`;
+export const NAV_JS = `(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
+var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
+if(here==='lesson'){var h=document.querySelector('h1'),worked=null;
+// The step to come back to is the last one the student worked in (clicked, typed, used its playground), not the
+// one in view: reaching the navbar scrolls the lesson back to the top. Before any work, the step in view.
+function pill(id){var a=id?document.querySelector('nav.steps a[href="#'+id+'"]'):(document.querySelector('nav.steps a.here')||document.querySelector('nav.steps a')),t='';if(a)[].forEach.call(a.childNodes,function(c){if(c.nodeType===3)t+=c.textContent});return {a:a,t:t.trim()}}
+var save=function(){var s=pill(worked);try{sessionStorage.setItem(K,JSON.stringify({href:location.pathname+(s.a?s.a.getAttribute('href'):''),title:h?h.textContent:document.title,step:s.t}))}catch(e){}};
+function mark(el){var sec=el&&el.closest&&el.closest('section.step');if(sec&&sec.id){worked=sec.id;save()}}
+['click','input','focusin'].forEach(function(ev){document.addEventListener(ev,function(e){if(!(e.target.closest&&e.target.closest('.sitenav,.coursebar,nav.steps')))mark(e.target)},true)});
+window.addEventListener('blur',function(){setTimeout(function(){var f=document.activeElement;if(f&&f.tagName==='IFRAME')mark(f)},0)});
+try{var prev=JSON.parse(sessionStorage.getItem(K));if(prev&&prev.href&&prev.href.split('#')[0]===location.pathname&&prev.href.indexOf('#')>0)worked=prev.href.split('#')[1]}catch(e){}
+save();window.addEventListener('pagehide',save);return}
+var b=n.querySelector('.sn-back'),f=null;try{f=JSON.parse(sessionStorage.getItem(K))}catch(e){}
+if(f&&f.href){b.href=f.href;b.textContent='\\u2190 Back to '+f.title+(f.step?' \\u203a '+f.step:'');b.title=b.textContent;b.hidden=false;return}
+if(here==='playground'||here==='reference'){try{var l=JSON.parse(localStorage.getItem('wp-last-lesson'));if(l&&l.href){b.href=l.href;b.textContent='Continue: '+(l.title||'your lesson');b.hidden=false}}catch(e){}}})();`;
 
 export const JS = `var evalRules=${evalRules.toString()};
 (function(){var t=document.querySelector('.cb-toggle'),m=document.getElementById('cb-menu');if(!t||!m)return;
@@ -262,8 +311,8 @@ box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw(
 sync(w)});
 })();`;
 
-export const page = (title, body, scripts = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)}</title><style>${CSS}</style></head><body><div class="wrap">${body}</div><script>${JS}</script>${scripts}</body></html>`;
+export const page = (title, body, scripts = '', nav = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(title)}</title><style>${CSS}${nav ? NAV_CSS : ''}</style></head><body>${nav}<div class="wrap">${body}</div><script>${JS}${nav ? NAV_JS : ''}</script>${scripts}</body></html>`;
 
 
 // A repeatable shuffle (so the page is the same on every build): used for match options.
@@ -335,7 +384,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '' } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '' } = deps;
   const md = new Marked({
     renderer: { code({ text, lang }) { const fs = splitFiles(text); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
@@ -405,7 +454,7 @@ export function lessonPageHtml(lesson, deps) {
     (course.prev ? `<a class="cb-prev" href="${esc(course.prev.href)}" title="${esc(lab(course.prev))}">‹ <span>${esc(lab(course.prev))}</span></a>` : '<span class="cb-prev"></span>') +
     `<div class="cb-mid"><button type="button" class="cb-toggle" aria-expanded="false" aria-controls="cb-menu">${course.index} of ${course.total} · ${esc(lesson.title)} ▾</button>` +
     `<div class="cb-menu" id="cb-menu" hidden><ul>${course.list.map((l) => `<li><a href="${esc(l.href)}" data-checks="${esc(l.checks.join('|'))}"${l.current ? ' aria-current="page"' : ''}><i class="tick"></i><span>${esc(lab(l))}</span></a></li>`).join('')}</ul>` +
-    `<div class="cb-tools"><a href="${esc(course.pathHref)}">All ${esc(course.pathTitle)} lessons</a>${course.playground ? `<a href="${esc(course.playground)}">Playground</a>` : ''}<a href="#" data-progress-open>My progress</a></div></div></div>` +
+    `<div class="cb-tools"><a href="${esc(course.pathHref)}">All ${esc(course.pathTitle)} lessons and my progress</a>${course.playground ? `<a href="${esc(course.playground)}">Playground</a>` : ''}</div></div></div>` +
     (course.next ? `<a class="cb-next" href="${esc(course.next.href)}" title="${esc(lab(course.next))}"><span>${esc(lab(course.next))}</span> ›</a>` : '<span class="cb-next"></span>') + `</div>`;
   const nextCard = !course ? '' : course.next
     ? `<a class="nextcard" href="${esc(course.next.href)}"><small>Next lesson</small><b>${esc(lab(course.next))}</b>${course.next.summary ? `<span>${esc(course.next.summary)}</span>` : ''}</a>`
@@ -428,7 +477,7 @@ ${md.parse(lesson.intro)}
 ${steps}
 ${teachersHtml}
 ${nextCard}
-${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`, siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '');
+${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`, siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '', siteNavHtml);
 }
 
 export const PLAYGROUNDS = {
