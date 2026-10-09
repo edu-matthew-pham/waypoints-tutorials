@@ -108,7 +108,7 @@
       return board.create('axis', [p1, p2], {
         name: name, withLabel: true, strokeColor: muted, highlight: false, lastArrow: { size: 6 }, fixed: true,
         label: { position: name === 'x' ? 'rt' : 'urt', offset: name === 'x' ? [-14, 14] : [10, -8], cssClass: 'axisname', highlightCssClass: 'axisname', strokeColor: ink },
-        ticks: { ticksDistance: nice(span), insertTicks: false, minorTicks: 0, majorHeight: 8, strokeColor: muted, drawZero: false, label: { cssClass: 'ticklabel', highlightCssClass: 'ticklabel', strokeColor: muted } },
+        ticks: { ticksDistance: spec.gridStep ? Math.max(nice(span), spec.gridStep) : nice(span), insertTicks: false, minorTicks: 0, majorHeight: 8, strokeColor: muted, drawZero: false, label: { cssClass: 'ticklabel', highlightCssClass: 'ticklabel', strokeColor: muted } },
       });
     };
     axis([0, 0], [1, 0], xr[1] - xr[0], 'x');

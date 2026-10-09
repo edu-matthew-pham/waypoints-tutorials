@@ -5,6 +5,34 @@ title: What m does to a line
 summary: In y = mx + c, the number in front of x sets how steep the line is and which way it goes.
 language: maths
 hook: "Ramps, roofs, ski runs and phone bills all have a steepness: how much more for each step along. In a rule like y = 3x + 1, one number decides it."
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8135
+  url: http://127.0.0.1:8135/index.html
+  readySelector: "#sl-m"
+  layout: full
+explainPicture: { ref: graph.yml#explain-pic, caption: "$y = 3x + 1$: one step right, up 3. That 3 is $m$." }
+explainClip:
+  query: { code: "@graph.yml#explain", fresh: 1, id: explain }
+  caption: "m is how far the line goes up for each step right"
+  clip:
+    - caption: "Here m = 1: one step right, up 1."
+    - wait: 1800
+    - caption: "A bigger m: up 2 for each step, so the line is steeper."
+    - click: Make m bigger
+    - wait: 1800
+    - caption: "m = 3: up 3. The line still crosses the y-axis at 1."
+    - click: Make m bigger
+    - wait: 2200
+    - caption: "m = 0: no steps up, so the line is flat."
+    - click: Make m smaller
+    - click: Make m smaller
+    - click: Make m smaller
+    - wait: 2000
+    - caption: "A negative m goes down: m = −2 is down 2 for each step right."
+    - click: Make m smaller
+    - click: Make m smaller
+    - expect: { selector: "#legend", contains: "y = −2x + 1" }
+    - wait: 2500
 ---
 A rule such as $y = 3x + 1$ gives a **straight line**: work out $y$ for each value of $x$, plot the points, and join them. Every rule of the form $y = mx + c$ gives a straight line. $m$ is the number in front of $x$, and $c$ is the number on its own. In this lesson $c$ stays at 1, and you find out what $m$ does.
 
@@ -45,7 +73,8 @@ Change $m$ with the slider, or the − and + buttons. Watch three things: the li
 stage: investigate
 insight: "m is how far y goes up for each step of 1 to the right. The table and the step both show it, and it is the same all along the line."
 tasks:
-  - check:
+  - picture: { ref: graph.yml#explain-pic, caption: "$y = 3x + 1$: from $x = 1$ to $x = 2$, $y$ goes from 4 to 7: up 3." }
+    check:
       type: answer
       q: "In $y = 5x + 1$, how far does the line go up for each step of 1 to the right?"
       answer: "5"

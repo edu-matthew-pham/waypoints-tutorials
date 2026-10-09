@@ -58,3 +58,22 @@ slider m: -3, 3, 1
 plot: y = mx + 1
 point P: 4, -4, drag
 # endregion
+
+# region: explain
+widget: graph
+x: -1, 4
+y: -6, 12
+slider m: -3, 3, 1
+plot: y = mx + 1
+step: 1
+# endregion
+
+# region: explain-pic
+widget: graph
+x: -1, 4
+y: -2, 14
+plot: y = 3x + 1
+point A: 1, 4
+point B: 2, 7
+step: 1
+# endregion

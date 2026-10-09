@@ -60,7 +60,7 @@ function expectedHtml(lesson, cfg, key) {
 }
 
 // "What this code makes": picture: on steps and tasks, and explainPicture (render-pictures, _pictures/shown/<slug>/<key>.png).
-let SHOWN = null, MKOUT = null;
+let SHOWN = null, MKOUT = null, BOARDPICS = null;
 function pictureHtml(lesson, v, key) {
   const sp = pictureSpec(v);
   if (lesson.language === 'makecode' && sp) {
@@ -70,6 +70,13 @@ function pictureHtml(lesson, v, key) {
     const out = makecodeExtensions(lesson).some((x) => x.noSimPicture) ? null : (MKOUT ||= readPics(['makecode-out']))[`${lesson.slug}/${key}`];
     const outFig = out ? `<figure class="mkout"><img src="${'../'.repeat(lesson.depth)}_pictures/makecode-out/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(out.hash || '')}" alt="What this program shows in the ${target === 'arcade' ? 'game' : 'micro:bit'} simulator" width="${Math.round(out.w / (out.div || 2))}" height="${Math.round(out.h / (out.div || 2))}" loading="lazy"><figcaption>What it makes${target === 'arcade' ? ' (a moment from the game)' : ''}</figcaption></figure>` : '';
     return `<div class="mkpair${out ? ' has-out' : ''}"><figure class="shown mkshown">${makecodeBlock(highlightCode, code, '', target, blocksPic(code, '../'.repeat(lesson.depth)), makecodePackage(lesson))}<figcaption>The example, as blocks</figcaption></figure>${outFig}</div>`;
+  }
+  if (lesson.language === 'maths' && sp) {
+    // A board setup drawn as students see it (render-pictures, board), with its caption.
+    const bp = (BOARDPICS ||= readPics(['board']))[`${lesson.slug}/${key}`];
+    if (!bp) return '';
+    const cap = sp.caption ? textWithMath(sp.caption, esc) : '';
+    return `<figure class="shown boardpic"><img src="${'../'.repeat(lesson.depth)}_pictures/board/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(bp.hash || '')}" alt="${esc(sp.caption ? sp.caption.replace(/\$/g, '') : 'The board')}" width="${Math.round(bp.w / (bp.div || 2))}" height="${Math.round(bp.h / (bp.div || 2))}" loading="lazy">${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
   }
   const pic = sp && (SHOWN ||= readPics(['shown']))[`${lesson.slug}/${key}`];
   if (!pic) return '';
