@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 unit: challenge
 title: Delivery robot
 summary: Build a sign-driven delivery robot in three milestones. Its own distance sensor overrules the model, it reports back through the bridge, and it counts its deliveries.

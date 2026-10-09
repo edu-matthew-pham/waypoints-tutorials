@@ -30,7 +30,7 @@ stuck:
     fix: "Add more varied photos of the confused gestures, or hold each gesture still."
 stretch: "Add a gesture that plays a horn (robot play tone) without changing the mode."
 support: "Run the lesson with the simulator buttons only; demonstrate the model drive at the front."
-leads: "Next: what the robot should do when the model is unsure or goes quiet. Real world: gesture-controlled wheelchairs and drones."
+leads: "Next: the same robot driven by a model on a wrist micro:bit (CreateAI), with no camera or computer. Real world: gesture-controlled wheelchairs and drones."
 exit:
   q: "The model sends Left, then nothing. What does the robot do, and why?"
   a: "It keeps turning left: the radio handler set the mode to Left, and forever keeps acting on the mode until a new label arrives."

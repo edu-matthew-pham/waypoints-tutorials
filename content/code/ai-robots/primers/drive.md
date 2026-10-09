@@ -6,6 +6,7 @@ title: A robot driven by a model in 5 minutes
 A model trained on gestures sends a **word** (Forward, Left, Stop) through the bridge to the robot by radio. The robot's program does the rest:
 
 - **on radio received string** remembers the word as the robot's **mode**; **forever** acts on the mode until a new word arrives.
+- The model can be on the computer (a webcam model and a bridge) or **on a wrist micro:bit** (a CreateAI model sending words by radio). The robot's program is the same either way: it only sees words.
 - So when the model goes quiet, the robot keeps going. Two safety nets fix that:
   - **Unsure**: the board sends it when no label is confident enough, and the robot stops.
   - A **watchdog**: the robot remembers when the last word arrived and stops if too long passes. The board repeats its label every second so a working robot never trips it.
@@ -21,7 +22,8 @@ A train driver must keep pressing a pedal (a dead man's switch): if they stop, t
 ## Try it yourself (5 minutes)
 
 1. In **Drive with gestures**, press A+B on one simulated micro:bit: the other robot drives and keeps going.
-2. In **When the model is unsure**, press A+B once: the robot stops by itself after two seconds.
+2. In **A wrist remote**, open the editor full screen and choose actions in the ML panel.
+3. In **When the model is unsure**, press A+B once: the robot stops by itself after two seconds.
 
 ## Questions students ask
 

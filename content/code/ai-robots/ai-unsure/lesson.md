@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 unit: drive
 title: When the model is unsure
 summary: A robot driven by a model needs a safe action for when the model is unsure and for when it goes quiet. The board sends Unsure and repeats its label; the robot stops on Unsure, and a watchdog stops it when nothing arrives.
@@ -8,7 +8,7 @@ extensions: [robot]
 explainPicture: robot.ts#predict
 hook: "A delivery robot loses its connection in a lift. Should it keep rolling the way it was going, or stop and wait? Safety engineers decide this before anything is built."
 ---
-Last lesson, the robot kept going when your hand left the camera. Two things fix that:
+In Drive with gestures, the robot kept going when your hand left the camera (and a wrist remote only sends when its action changes). Two things fix that:
 
 - The board sends **Unsure** when no label is confident enough (it needs 80% here), so the robot can stop.
 - The board sends the current label **again every second**. If the robot hears **nothing** for two seconds (the laptop sleeps, the cable comes out, the robot drives out of radio range), a **watchdog** stops it.

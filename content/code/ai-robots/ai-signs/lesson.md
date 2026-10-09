@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 unit: signs
 title: "Signs: some mistakes cost more"
 summary: Mistaking Stop for Go is worse than mistaking Left for Right, so the robot should need more confidence before a risky action than a safe one. The board asks 95% for Go and 70% for the rest; the robot also waits for Go twice in a row.
