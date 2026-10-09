@@ -23,7 +23,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## Open design decisions (details in ROADMAP.md)
 - Hidden-assumptions audit: `assumes`/`introduces` lint plus better in-lesson scaffolds; no "Before you start" card. Error-task part is built (fault/misconception lint); the `assumes`/`introduces` construct scan is still to do.
-- Next: the web pathway's HTML & CSS foundations (prerequisites in `BUILDING.md` › Before the web units), the lists/`if` revisit, a nicer input UI than `window.prompt`, then MakeCode. The final challenge replaced the planned checkpoint.
+- Next: the teacher layer (ROADMAP "teacher layer and classroom resources": plain-language notes, unit primers, tested solutions, then Prepare decks, worksheets and cheat sheets), then the web pathway's HTML & CSS foundations (prerequisites in `BUILDING.md` › Before the web units), the lists/`if` revisit, a nicer input UI than `window.prompt`, then MakeCode. The final challenge replaced the planned checkpoint.
 
 ## Layout
 - `content/<path>/<lesson>/lesson.md` plus code files with `# region: name` blocks. Frontmatter: title, summary, order, hook, teachers, author, language, modules, app, pacing.
