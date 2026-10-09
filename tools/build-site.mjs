@@ -160,10 +160,10 @@ for (const l of lessons) {
 }
 
 // Paths with a playground, and reference (cheat sheet) pages generated from the snippet files the playgrounds use.
-const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' }, 'code/microbit': { kind: 'microbit', dir: '_playground-makecode', label: 'micro:bit' } };
+const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' }, 'code/microbit': { kind: 'microbit', dir: '_playground-makecode', label: 'micro:bit' }, 'code/arcade': { kind: 'arcade', dir: '_playground-makecode', label: 'Arcade' } };
 // Maths cards (snippets/maths.json): a Reference page and cheat sheets for the maths course they name.
 const MATHS_CARDS = loadMathsCards();
-const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }, { file: 'microbit', path: 'code/microbit/reference' }, ...(MATHS_CARDS ? [{ file: 'maths', path: `${MATHS_CARDS.course}/reference` }] : [])];
+const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }, { file: 'microbit', path: 'code/microbit/reference' }, { file: 'arcade', path: 'code/arcade/reference' }, ...(MATHS_CARDS ? [{ file: 'maths', path: `${MATHS_CARDS.course}/reference` }] : [])];
 
 // The site navbar: Learning Waypoints, Tutorials, then one menu per subject (a top-level folder, such as Code)
 // listing its pathways (from its index.md); a pathway page is <subject>/paths/<id>/. navFor(pagePath, here,
@@ -192,13 +192,16 @@ const navFor = (pagePath, here, coursePath = null) => {
 // Turtle pictures sit in _pictures/, HTML ones in _pictures/html/, maths boards in _pictures/maths/ (ids can repeat across kinds). div: device px per printed px.
 const readPics = (sub) => { const f = join(OUT, '_pictures', ...sub, 'pictures.json'); return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : {}; };
 const PICS = { python: { pics: readPics([]), dir: '_pictures/' }, html: { pics: readPics(['html']), dir: '_pictures/html/' }, maths: { pics: readPics(['maths']), dir: '_pictures/maths/' }, makecode: { pics: readPics(['makecode']), dir: '_pictures/makecode/' } };
+// Arcade blocks share the MakeCode manifest; render-pictures draws its snippet blocks as arcade/<snippet id>.png,
+// because Arcade and micro:bit snippets can share a label (if, pause).
+PICS.arcade = { pics: Object.fromEntries(Object.entries(PICS.makecode.pics).filter(([k]) => k.startsWith('arcade/')).map(([k, v]) => [k.slice(7), v])), dir: '_pictures/makecode/arcade/' };
 // A MakeCode program's blocks picture (drawn by render-pictures), as { url, w, h } from base (the site root), or null.
 const blocksPic = (code, base) => { const id = blocksId(code), p = PICS.makecode.pics[id]; return p ? { url: `${base}_pictures/makecode/${id}.png?v=${p.hash || ''}`, w: p.w, h: p.h } : null; };
 const picsFor = (lang) => PICS[lang] || PICS.python;
 // A Reference card: the code, then (when the snippet has one) its example program and a picture of what it draws.
-function refItem(i, lang, depth) {
+function refItem(i, lang, depth, picKey = lang) {
   const plain = (t) => String(t).split('‹').join('').split('›').join('');
-  const id = snippetId(i.label), P = picsFor(lang), pic = P.pics[id], div = pic?.div || 5.2;
+  const id = snippetId(i.label), P = picsFor(picKey), pic = P.pics[id], div = pic?.div || 5.2;
   const ex = i.example ? `<p class="ref-ex">Example</p>${codeBlock(highlightCode, plain(i.example).replace(/\n+$/, '') + '\n', lang, '')}` : '';
   const img = pic ? `<figure class="ref-pic"><img src="${'../'.repeat(depth)}${P.dir}${esc(id)}.png?v=${esc(pic.hash || '')}" alt="${lang === 'makecode' ? 'The block' : 'What the example draws'}" width="${Math.round(pic.w / div)}" height="${Math.round(pic.h / div)}" loading="lazy">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
   return `<div class="ref-item" data-text="${esc([i.label, i.hint || '', plain(i.code), i.shows || ''].join(' ').toLowerCase())}"><div>${codeBlock(highlightCode, plain(i.code).replace(/\n$/, '') + '\n', lang, '')}${ex}</div><div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p>${img}<p class="ref-id">id: <code>${id}</code></p></div></div>`;
@@ -214,7 +217,7 @@ for (const r of REFS) {
   const units = Array.isArray(dirs.get(parent)?.meta?.units) && dirs.get(parent).meta.units.length;
   const isM = data.language === 'maths';
   const printLink = units ? `<p class="ref-print"><a href="print/">Print a cheat sheet</a> <span class="muted">(the whole course or one unit, ${isM ? 'with board pictures' : `with a picture of ${data.language === 'makecode' ? 'each block' : 'what each command draws'}`})</span></p>` : '';
-  const item = isM ? (i) => mathsRefItem({ ...i, id: `maths-${snippetId(i.label)}` }, { pictures: PICS.maths.pics, depth, esc }) : (i) => refItem(i, data.language, depth);
+  const item = isM ? (i) => mathsRefItem({ ...i, id: `maths-${snippetId(i.label)}` }, { pictures: PICS.maths.pics, depth, esc }) : (i) => refItem(i, data.language, depth, data.target === 'arcade' ? 'arcade' : data.language);
   const body = (isM ? `<link rel="stylesheet" href="${'../'.repeat(depth)}_katex/katex.min.css"><style>${MATHS_CARD_CSS}</style>` : '') + printLink + search + data.groups.map((g) => `<section class="ref-section"><h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map(item).join('') + '</section>').join('') + script;
   mkdirSync(join(OUT, r.path), { recursive: true });
   writeFileSync(join(OUT, r.path, 'index.html'), page(data.title,
@@ -414,6 +417,8 @@ for (const coursePath of teachCourses) {
   const kind = !ls[0] ? 'turtle' : ls[0].language === 'makecode'
     ? (ls.flatMap((l) => l.steps).map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit')
     : unlockKind(ls[0], ls[0].steps[0] || { config: {} });
+  // Pictures of this course's snippets: Arcade blocks sit apart from micro:bit ones (PICS.arcade).
+  const picKey = kind === 'arcade' ? 'arcade' : (ls[0]?.language || 'python');
   const courseSnips = new Map((snippetFiles[kind]?.groups || []).flatMap((g) => g.items.map((i) => [snippetId(i.label), i])));
   // MakeCode lessons ask students to add blocks their starters do not have yet (show leds, a parameter), so their
   // solutions count too: a cheat sheet lists blocks, never a task's answer.
@@ -431,7 +436,7 @@ for (const coursePath of teachCourses) {
     const up = '../'.repeat(dir.split('/').length);
     const body = mathsCourse
       ? `<link rel="stylesheet" href="${up}_katex/katex.min.css">` + mathsCheatBody({ title, course: node.title, sections, pictures: PICS.maths.pics, picBase: `${up}${PICS.maths.dir}`, esc, back, backLabel, md: mdName, mdUrl, nav })
-      : cheatSheetBody({ title, course: node.title, sections, pictures: picsFor(ls[0]?.language || 'python').pics, picBase: `${up}${picsFor(ls[0]?.language || 'python').dir}`, esc, highlightCode, back, backLabel, md: mdName, mdUrl, nav, lang: ls[0]?.language || 'python' });
+      : cheatSheetBody({ title, course: node.title, sections, pictures: picsFor(picKey).pics, picBase: `${up}${picsFor(picKey).dir}`, esc, highlightCode, back, backLabel, md: mdName, mdUrl, nav, lang: ls[0]?.language || 'python' });
     writeFileSync(join(OUT, dir, 'index.html'), page(title, `<style>${TEACH_CSS}${CHEAT_CSS}${mathsCourse ? MATHS_CARD_CSS : ''}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(dir, here, coursePath)));
   };
   // A row of links between the whole-course sheet and each unit's (base: the folder holding them).
@@ -462,7 +467,7 @@ for (const coursePath of teachCourses) {
     }
     let cheat = '';
     if (u.id) {
-      const sheet = mathsCourse ? mathsCheatMd({ course: node.title, unit: u, items: unitItems[u.id] }) : cheatSheetFor({ course: node.title, unit: u, items: unitItems[u.id], lang: ls[0]?.language || 'python', picture: (id) => (ls[0]?.language === 'makecode' && PICS.makecode.pics[id] ? `${SITE_URL}/_pictures/makecode/${id}.png?v=${PICS.makecode.pics[id].hash || ''}` : null) });
+      const sheet = mathsCourse ? mathsCheatMd({ course: node.title, unit: u, items: unitItems[u.id] }) : cheatSheetFor({ course: node.title, unit: u, items: unitItems[u.id], lang: ls[0]?.language || 'python', picture: (id) => (ls[0]?.language === 'makecode' && picsFor(picKey).pics[id] ? `${SITE_URL}/${picsFor(picKey).dir}${id}.png?v=${picsFor(picKey).pics[id].hash || ''}` : null) });
       writeFileSync(join(courseDir, `cheatsheet-${u.id}.md`), sheet);
       const url = `${SITE_URL}/teach/${coursePath}/cheatsheet-${u.id}.md`;
       cheatPage({ dir: `teach/${coursePath}/cheatsheet-${u.id}`, title: `${u.title}: cheat sheet`, sections: [{ title: u.title, items: unitItems[u.id] }], back: '../', backLabel: 'Teacher guide', mdName: `../cheatsheet-${u.id}.md`, mdUrl: url });

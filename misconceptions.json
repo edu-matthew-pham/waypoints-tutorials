@@ -31,5 +31,16 @@
   "define-not-call": {"home": "code/microbit/microbit-functions", "text": "Making a function runs it; in fact its blocks only run when something calls it."},
   "radio-group-mismatch": {"home": "code/microbit/microbit-radio", "text": "Any micro:bit nearby hears a radio message; in fact only micro:bits in the same group receive it."},
   "shared-code-mismatch": {"home": "code/microbit/microbit-messages", "text": "Each micro:bit can order its list of words its own way; in fact both must share the same list in the same order, because only the place number is sent."},
-  "copied-blocks": {"home": "code/microbit/microbit-duel", "text": "Copying blocks to a second place is free; in fact every copy must be kept the same by hand, which a function avoids."}
+  "copied-blocks": {"home": "code/microbit/microbit-duel", "text": "Copying blocks to a second place is free; in fact every copy must be kept the same by hand, which a function avoids."},
+  "screen-y-up": {"home": "code/arcade/arcade-sprites", "text": "y counts up from the bottom, as in maths; in fact the screen y counts down from the top, so a bigger y is lower."},
+  "position-vs-velocity": {"home": "code/arcade/arcade-moving", "text": "Setting a speed moves a sprite once, like setting its position; in fact velocity keeps moving it every frame until something changes it."},
+  "kind-mismatch": {"home": "code/arcade/arcade-overlaps", "text": "Any two sprites that touch run an overlap event; in fact only the two kinds named in the event do, so a sprite made with the wrong kind is never noticed."},
+  "overlap-repeats": {"home": "code/arcade/arcade-score-lives", "text": "An overlap event runs once per touch; in fact it runs every frame the sprites still touch, unless one is destroyed or moved."},
+  "check-in-start": {"home": "code/arcade/arcade-if", "text": "An if in on start keeps watching the game; in fact it is asked once, before the game begins."},
+  "chase-sign": {"home": "code/arcade/arcade-chase", "text": "Which way a chaser should move can be read either way round, so the speed gets the wrong sign and the chaser moves away from the player."},
+  "projectile-kind": {"home": "code/arcade/arcade-projectiles", "text": "A projectile is the player that fired it; in fact it is its own kind (Projectile), so a Player–Enemy overlap never notices a hit."},
+  "arcade-define-not-call": {"home": "code/arcade/arcade-functions", "text": "Making a function runs it; in fact its blocks only run when something calls it."},
+  "jump-midair": {"home": "code/arcade/arcade-gravity", "text": "A jump only needs a speed upwards; without a check that the sprite is on the ground, every press jumps again, even in the air."},
+  "update-fires-every-frame": {"home": "code/arcade/arcade-levels", "text": "An if in on game update fires once when it becomes true; in fact it fires every frame while it stays true."},
+  "overlap-not-collision": {"home": "code/arcade/arcade-fit", "text": "Touching sprites push each other, like objects; in fact an overlap is only an event, so sprites pass through each other unless your blocks move them."}
 }

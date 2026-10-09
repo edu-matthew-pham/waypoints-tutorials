@@ -255,26 +255,33 @@ if (existsSync('snippets/maths.json')) await pictures({
   },
 });
 
-// ---- MakeCode blocks: each snippets/microbit.json block (for the cheat sheets and Reference) and every program a
+// ---- MakeCode blocks: each snippets/microbit.json and snippets/arcade.json block (for the cheat sheets and Reference) and every program a
 // MakeCode lesson shows (decks, worksheets, guides, explainPicture), drawn by MakeCode's own renderer through
 // _playground-makecode/render.html. Needs makecode.microbit.org: offline, nothing is drawn and the pages keep the
 // code as text. ?render= in MAKECODE_RENDER points at another renderer (tests only).
 {
   const { blocksId, makecodePrograms } = await import('./teach.mjs');
-  const mkSnips = existsSync('snippets/microbit.json') ? JSON.parse(readFileSync('snippets/microbit.json', 'utf8')).groups.flatMap((g) => g.items.map((i) => ({ id: snippetId(i.label), code: strip(i.code) }))) : [];
-  const mkCode = loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => makecodePrograms(l, (ref) => getSnippet(l.dir, ref)).map((code) => ({ id: blocksId(code), code })));
+  // Each job names its editor (target): Arcade blocks are drawn by Arcade's renderer, micro:bit ones by micro:bit's.
+  const snipJobs = (file, target, prefix) => (existsSync(`snippets/${file}.json`) ? JSON.parse(readFileSync(`snippets/${file}.json`, 'utf8')).groups.flatMap((g) => g.items.map((i) => ({ id: prefix + snippetId(i.label), code: strip(i.code), target }))) : []);
+  const mkSnips = [...snipJobs('microbit', 'microbit', ''), ...snipJobs('arcade', 'arcade', 'arcade/')];
+  const targetOf = (l) => l.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
+  const mkCode = loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => makecodePrograms(l, (ref) => getSnippet(l.dir, ref)).map((code) => ({ id: blocksId(code), code, target: targetOf(l) })));
   const seen = new Set();
-  let down = false;
+  const down = new Set();
+  let loaded = '';
   await pictures({
     name: 'makecode', dir: join(DIR, 'makecode'), viewport: { width: 1200, height: 1600 },
     base: hashDir(readFileSync(new URL(import.meta.url)), 'makecode-v1'),
-    jobs: [...mkSnips, ...mkCode].filter((j) => !seen.has(j.id) && seen.add(j.id)),
+    jobs: [...mkSnips, ...mkCode].filter((j) => !seen.has(j.id) && seen.add(j.id)).sort((a, b) => a.target.localeCompare(b.target)),
     async draw(page, j) {
-      if (down) return null;
-      if (!page.url().includes('render.html')) {
-        await page.goto(`http://localhost:${port}/_playground-makecode/render.html${process.env.MAKECODE_RENDER ? `?render=${encodeURIComponent(process.env.MAKECODE_RENDER)}` : ''}`);
+      if (down.has(j.target)) return null;
+      if (loaded !== j.target) {
+        const q = new URLSearchParams({ target: j.target });
+        if (process.env.MAKECODE_RENDER) q.set('render', process.env.MAKECODE_RENDER);
+        await page.goto(`http://localhost:${port}/_playground-makecode/render.html?${q}`);
         const ok = await page.evaluate(() => Promise.race([window.wpReady, new Promise((r) => setTimeout(() => r(false), 30000))]));
-        if (!ok) { down = true; console.log('- makecode: the MakeCode renderer cannot be reached, so no blocks pictures (pages show code as text)'); return null; }
+        if (!ok) { down.add(j.target); console.log(`- makecode: the MakeCode ${j.target} renderer cannot be reached, so no blocks pictures for it (pages show code as text)`); return null; }
+        loaded = j.target;
       }
       const size = await page.evaluate((code) => window.wpRender(code), j.code);
       if (!size) return null;

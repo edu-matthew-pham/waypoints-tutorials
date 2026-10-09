@@ -24,9 +24,9 @@ pathways:
   - id: makecode
     title: MakeCode
     summary: Blocks first, then Python, with real devices and games.
-    about: "MakeCode starts with blocks and shows the same program in Python, so it suits younger students and students new to code. Two foundations courses run side by side, so start with either: **micro:bit Foundations** (pictures, buttons, sensors, decisions, lists, functions and radio, all in the simulator) and **MakeCode Arcade** (games with sprites, collisions and scores). **Robotics challenges** follows micro:bit Foundations: learn each idea in the simulator, then run it on a real Kitronik MOVE Motor."
+    about: "MakeCode starts with blocks and shows the same program in Python, so it suits younger students and students new to code. Two foundations courses run side by side, so start with either: **micro:bit Foundations** (pictures, buttons, sensors, decisions, lists, functions and radio, all in the simulator) and **MakeCode Arcade** (games with sprites, overlaps, scores and levels, ending with working out which games Arcade does well). **Robotics challenges** follows micro:bit Foundations: learn each idea in the simulator, then run it on a real Kitronik MOVE Motor."
     courses:
       - { path: code/microbit, stage: foundations }
-      - { title: MakeCode Arcade, stage: foundations, summary: "Make games with sprites, collisions and scores." }
+      - { path: code/arcade, stage: foundations }
       - { title: Robotics challenges, stage: extensions, summary: "Drive, sense and decide with the Kitronik MOVE Motor: each idea in the simulator first, then on the real robot." }
 ---
