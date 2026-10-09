@@ -93,6 +93,15 @@ export async function buildMathsPlayground(out = 'dist') {
   return dest;
 }
 
+/** The MakeCode playground hosts the MakeCode editor (micro:bit or Arcade) from makecode.com: our page only, copied as is. */
+export function buildMakecodePlayground(out = 'dist') {
+  const dest = join(out, '_playground-makecode');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-makecode'), dest, { recursive: true });
+  stampPlayground(dest);
+  return dest;
+}
+
 /** KaTeX's stylesheet and fonts, for maths lessons (the maths itself is rendered at build time). */
 export function buildKatex(out = 'dist') {
   const dest = join(out, '_katex');
@@ -109,4 +118,5 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   console.log('Playground built into ' + buildPlayground(out));
   console.log('HTML playground built into ' + buildHtmlPlayground(out));
   console.log('Maths board built into ' + await buildMathsPlayground(out));
+  console.log('MakeCode playground built into ' + buildMakecodePlayground(out));
 }

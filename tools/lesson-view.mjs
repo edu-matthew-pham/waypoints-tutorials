@@ -31,6 +31,26 @@ export function codeBlock(highlightCode, src, lang, label) {
   return `<div class="code">${label ? `<div class="code-head"><span>${esc(label)}</span><button type="button" class="copy">Copy</button></div>` : ''}<pre><code>${highlightCode(src, lang)}</code></pre></div>`;
 }
 
+// MakeCode lessons (language: makecode): display code is MakeCode JavaScript, but students know it as blocks. The page
+// asks MakeCode's renderer (a hidden iframe) for a picture of the blocks, and keeps the code as text one click away
+// (and open, if the renderer cannot be reached). ?mkrender=<origin> points at another renderer (tests only).
+export function makecodeBlock(highlightCode, src, label, target) {
+  return `<div class="mkblocks" data-target="${esc(target || 'microbit')}" data-src="${esc(src)}"><div class="mkpic" aria-live="polite"><span class="mkwait">Drawing the blocks…</span></div>` +
+    `<details class="mkjs"><summary>Show as code</summary>${codeBlock(highlightCode, src, 'makecode', label)}</details></div>`;
+}
+export const MAKECODE_CSS = `.mkblocks{margin:14px 0}.mkpic img{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}
+.mkwait{color:var(--muted);font-size:14px}.mkjs summary{cursor:pointer;color:var(--muted);font-size:14px;margin-top:6px}`;
+export const MAKECODE_JS = `(function(){var els=[].slice.call(document.querySelectorAll('.mkblocks'));if(!els.length)return;
+var q=new URLSearchParams(location.search),t=q.get('mkrender')||(els[0].dataset.target==='arcade'?'https://arcade.makecode.com':'https://makecode.microbit.org');
+var f=document.createElement('iframe');f.setAttribute('aria-hidden','true');f.tabIndex=-1;f.style.cssText='position:absolute;width:1px;height:1px;left:-9999px;border:0';
+f.src=t+'/--docs?render=1';document.body.appendChild(f);
+function fallback(el){if(!el.classList.contains('ok')){el.querySelector('.mkpic').hidden=true;el.querySelector('details').open=true}}
+window.addEventListener('message',function(e){if(e.source!==f.contentWindow)return;var d=e.data||{};if(d.source!=='makecode')return;
+if(d.type==='renderready')els.forEach(function(el,i){f.contentWindow.postMessage({type:'renderblocks',id:'mk'+i,code:el.dataset.src,options:{}},t)});
+if(d.type==='renderblocks'){var el=els[Number(String(d.id).slice(2))];if(!el)return;
+if(d.uri){var img=new Image();img.alt='The program as blocks';img.src=d.uri;if(d.width)img.style.width=Math.round(d.width)+'px';el.querySelector('.mkpic').replaceChildren(img);el.classList.add('ok')}else fallback(el)}});
+setTimeout(function(){els.forEach(fallback)},20000)})();`;
+
 export const CSS = `
 :root{--bg:#fbfaf8;--ink:#1d2430;--muted:#5d6978;--card:#fff;--line:#e4e1da;--accent:#c2570a;--code:#141a22;--codeink:#e6edf3;
 --kw:#ff7b72;--str:#a5d6ff;--fn:#d2a8ff;--com:#7f8fa1;--num:#79c0ff;
@@ -289,6 +309,7 @@ var res=evalRules(rules,m.code||'',kind);paint(res);
 if(m.quiet&&!(load().done||{})[key]){}
 else if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
 else if(m.kind==='html'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep going: the list shows what your page still needs.'}}
+else if(m.kind==='microbit'||m.kind==='arcade'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep building: this ticks by itself when your blocks do what is asked.'}}
 else{msg.className='msg';msg.textContent=m.status==='done'?'Not quite yet. Change your code, then run it again.':'Fix the error, then run it again.'}})}
 var cb=box.querySelector('input[type=checkbox]');
 if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
@@ -343,7 +364,7 @@ var v=mine();c.replaceChildren();
 function line(label,text){var p=document.createElement('p');var b=document.createElement('b');b.textContent=label+' ';p.appendChild(b);p.appendChild(document.createTextNode(text));c.appendChild(p)}
 if(v===undefined||v===null){line('No prediction locked in.','Go back to the Predict step if you want to compare next time.')}
 else{line('You predicted:',v);var out=(m.output||'').trim(),a=c.dataset.actual||'';
-if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now compare:','look at the '+(m.kind==='html'?'page':'drawing')+'. Was your prediction right? What did you notice?')}
+if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now compare:','look at the '+(m.kind==='html'?'page':m.kind==='microbit'?'micro:bit':m.kind==='arcade'?'game':'drawing')+'. Was your prediction right? What did you notice?')}
 c.hidden=false}});
 // Full screen / inline for each playground: a class, not the Fullscreen API, so it works on iPads and the
 // playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
@@ -414,7 +435,9 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
     return `<div class="check" ${base}><label><input type="checkbox"><span>${tx(k.text)}</span></label>${msg}</div>`;
   }
   if (k.type === 'code') {
-    return `<div class="check" ${base} data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"></ul><p class="msg" aria-live="polite">${kind === 'html' ? 'This ticks when your page has all of the above.' : 'Run your program. This ticks when your code does all of the above.'}</p></div>`;
+    // MakeCode: students build with blocks, so the rule list (code fragments) stays hidden and the task text says what to do.
+    const mk = kind === 'microbit' || kind === 'arcade';
+    return `<div class="check" ${base} data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"${mk ? ' hidden' : ''}></ul><p class="msg" aria-live="polite">${kind === 'html' ? 'This ticks when your page has all of the above.' : mk ? 'This ticks by itself when your blocks do what is asked.' : 'Run your program. This ticks when your code does all of the above.'}</p></div>`;
   }
   if (k.type === 'answer') {
     const data = k.equation ? `data-equation="${esc(JSON.stringify(k.equation))}"` : `data-answer="${esc(String(k.answer))}"`;
@@ -472,8 +495,11 @@ export function lessonPageHtml(lesson, deps) {
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
   const isMaths = lesson.language === 'maths' && !!maths;
   const tx = isMaths ? (t) => maths.textWithMath(t, esc) : esc;
+  // MakeCode lessons show display code as a picture of the blocks (see makecodeBlock).
+  const mk = lesson.language === 'makecode';
+  const mkTarget = lesson.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
   const md = new Marked({
-    renderer: { code({ text, lang }) { if (lang === 'worked' && isMaths) return maths.workedHtml(text, md); const fs = splitFiles(text); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
+    renderer: { code({ text, lang }) { if (lang === 'worked' && isMaths) return maths.workedHtml(text, md); const fs = splitFiles(text); if (mk && (lang || 'makecode') === 'makecode' && !(fs.length > 1 || fs[0]?.name)) return makecodeBlock(highlightCode, text.replace(/\n$/, '') + '\n', '', mkTarget); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
   // "Predict: what will `greet` return?" -> "What will <code>greet</code> return?"
   if (isMaths) md.use(maths.markedMath);
@@ -495,7 +521,7 @@ export function lessonPageHtml(lesson, deps) {
         const files = splitFiles(snippet(c.code));
         showCode = files.length > 1 || files[0]?.name
           ? `<div class="files">${files.map((f) => codeBlock(highlightCode, f.code, lesson.language, f.name)).join('')}</div>`
-          : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
+          : mk ? makecodeBlock(highlightCode, snippet(c.code), c.code.split('#')[0], mkTarget) : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
       }
       catch (e) { showCode = `<div class="placeholder"><b>${esc(e.message)}</b></div>`; }
     }
@@ -587,13 +613,15 @@ ${explainHtml}
 ${steps}
 ${teachersHtml}
 ${nextCard}
-${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`, siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '', siteNavHtml);
+${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : ''), siteNavHtml);
 }
 
 export const PLAYGROUNDS = {
   turtle: { dir: '_playground', title: 'Python turtle playground' },
   html: { dir: '_playground-html', title: 'HTML and CSS playground' },
   maths: { dir: '_playground-maths', title: 'Maths board' },
+  microbit: { dir: '_playground-makecode', title: 'micro:bit MakeCode editor', height: 640 },
+  arcade: { dir: '_playground-makecode', title: 'MakeCode Arcade editor', height: 640 },
 };
 
 /** Extra styles for maths lessons: display maths, worked examples, typed answers. */
@@ -617,10 +645,11 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (t.speed) q.set('speed', t.speed);
   if (t.boxes) q.set('boxes', '1'); // HTML playground: start with the Boxes view on
   if (t.boxmodel) q.set('boxmodel', '1'); // ... or with the Box model view on
+  if (t.playground === 'microbit' || t.playground === 'arcade') q.set('target', t.playground); // one MakeCode playground, two editors
   // Modules the playground offers: ?use=shapes,house, plus ?mods={name: source} for ones that live in the lesson
   if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
   if (versions?.[pg.dir]) q.set('v', versions[pg.dir]); // a new deploy gets a new URL, never a cached old playground
   return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>Your edits are saved in this browser.</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
-    `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;
+    `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || pg.height || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;
 }

@@ -7,9 +7,11 @@ import { MATH } from './math-expr.mjs';
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
-export const PLAYGROUND_KINDS = ['turtle', 'html', 'maths'];
+export const PLAYGROUND_KINDS = ['turtle', 'html', 'maths', 'microbit', 'arcade'];
 /** What a board check can expect from the maths board's report. */
 export const BOARD_KEYS = ['balanced', 'solved', 'x'];
+/** Playgrounds that host the MakeCode editor: students build with blocks, which always compile to MakeCode JavaScript (main.ts). */
+export const MAKECODE_KINDS = ['microbit', 'arcade'];
 export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
@@ -29,9 +31,11 @@ export function parseTrace(text) {
   if (!body.some((r) => r.some((c) => c.blank))) throw new Error('needs at least one blank, written in [brackets] with its answer inside');
   return { head, rows: body };
 }
-export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports', 'uses', 'contains', 'tags'];
+export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports', 'uses', 'contains', 'tags', 'inside', 'count'];
 /** Code rules the HTML playground can check (HTML has no functions or loops). */
 export const HTML_RULES = ['contains', 'tags'];
+/** Code rules the MakeCode playgrounds can check (read from main.ts, the JavaScript the blocks compile to). */
+export const MAKECODE_RULES = ['contains', 'inside', 'count', 'defs', 'calls', 'params'];
 
 /**
  * Evaluates a code check's rules against the student's code (all their files joined). Pure and
@@ -48,6 +52,37 @@ export function evalRules(rules, text, kind) {
     (rules.tags || []).forEach((t) => out.push({ label: `Use <${t}>`, ok: new RegExp('<' + String(t).toLowerCase() + '[\\s>/]').test(src) }));
     const flatH = src.replace(/\s+/g, '');
     (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flatH.includes(String(frag).toLowerCase().replace(/\s+/g, '')) }));
+    return out;
+  }
+  // kind 'microbit' / 'arcade': MakeCode JavaScript (main.ts). Comments are // and /* */; everything is compared with
+  // spaces removed, so `basic.forever(function () {` and `basic.forever(function(){` match.
+  //   inside: { "basic.forever": [fragments] }   fragments in the first { ... } block after each place the key appears
+  //   count: { "basic.show": 3 }                 a fragment appears at least this many times
+  //   defs / params / calls                      named functions (`function name (points: number)`); event blocks
+  //                                              are anonymous `function ()`, so they never count as a definition
+  // Labels are for teachers and the validator; students working in blocks see the check's own text instead.
+  if (kind === 'microbit' || kind === 'arcade') {
+    const plain = String(text).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+    const flatM = (s) => String(s).replace(/\s+/g, '');
+    const fm = flatM(plain);
+    const block = (key) => {
+      const out = []; let i = 0; const k = flatM(key);
+      while ((i = fm.indexOf(k, i)) >= 0) {
+        const j = fm.indexOf('{', i + k.length); if (j < 0) break; let d = 0;
+        for (let x = j; x < fm.length; x++) { if (fm[x] === '{') d++; else if (fm[x] === '}' && --d === 0) { out.push(fm.slice(j + 1, x)); break; } }
+        i = j;
+      }
+      return out.join('|');
+    };
+    const fdefs = []; plain.replace(/function\s+([A-Za-z_]\w*)\s*\(([^)]*)\)/g, (m, n, ps) => { fdefs.push({ name: n, params: ps.split(',').filter((x) => x.trim()).length }); return m; });
+    const fcalls = (n) => (plain.match(new RegExp('\\b' + n + '\\s*\\(', 'g')) || []).length - 1;
+    const out = [];
+    (rules.contains || []).forEach((frag) => out.push({ label: `Has ${frag}`, ok: fm.includes(flatM(frag)) }));
+    Object.keys(rules.inside || {}).forEach((key) => { const b = block(key); [].concat(rules.inside[key]).forEach((frag) => out.push({ label: `Inside ${key}: ${frag}`, ok: b.includes(flatM(frag)) })); });
+    Object.keys(rules.count || {}).forEach((frag) => out.push({ label: `${frag} at least ${rules.count[frag]} times`, ok: fm.split(flatM(frag)).length - 1 >= rules.count[frag] }));
+    if (rules.defs) out.push({ label: `At least ${rules.defs} function${rules.defs === 1 ? '' : 's'} of your own`, ok: fdefs.length >= rules.defs });
+    if (rules.params) out.push({ label: `A function with at least ${rules.params} parameter${rules.params === 1 ? '' : 's'}`, ok: fdefs.some((d) => d.params >= rules.params) });
+    if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...fdefs.map((d) => fcalls(d.name))) >= rules.calls });
     return out;
   }
   const code = String(text).split('\n').map((l) => l.replace(/#.*$/, ''));
@@ -259,13 +294,17 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         if (r.uses !== undefined && !(Array.isArray(r.uses) && r.uses.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule uses must be a list of names, such as [pencolor]');
         if (r.imports !== undefined && !(Array.isArray(r.imports) && r.imports.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule imports must be a list of module names');
         if (r.contains !== undefined && !(Array.isArray(r.contains) && r.contains.every((f) => typeof f === 'string' && f.trim()))) err(where, 'code rule contains must be a list of code fragments, such as ["inside(x, y"]');
+        const frags = (v) => Array.isArray(v) ? v.every((f) => typeof f === 'string' && f.trim()) : typeof v === 'string' && v.trim();
+        if (r.inside !== undefined && !(r.inside && typeof r.inside === 'object' && !Array.isArray(r.inside) && Object.keys(r.inside).length && Object.values(r.inside).every(frags))) err(where, 'code rule inside must map a block to code fragments, such as { "basic.forever": ["basic.pause("] }');
+        if (r.count !== undefined && !(r.count && typeof r.count === 'object' && !Array.isArray(r.count) && Object.keys(r.count).length && Object.values(r.count).every((n) => Number.isInteger(n) && n > 0))) err(where, 'code rule count must map a code fragment to a whole number, such as { "basic.show": 3 }');
         if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
       }
       const pk = c.try ? (c.try.playground || (lesson.language === 'html' ? 'html' : 'turtle')) : null;
-      if (!pk || !['turtle', 'html'].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
+      if (!pk || !['turtle', 'html', ...MAKECODE_KINDS].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
       else if (r && typeof r === 'object') {
-        const allowedR = pk === 'html' ? HTML_RULES : CODE_RULES.filter((x) => x !== 'tags');
-        for (const key of Object.keys(r)) if (CODE_RULES.includes(key) && !allowedR.includes(key)) err(where, `code rule ${key} does not work in the ${pk === 'html' ? 'HTML' : 'turtle'} playground (use ${allowedR.join(', ')})`);
+        const allowedR = pk === 'html' ? HTML_RULES : MAKECODE_KINDS.includes(pk) ? MAKECODE_RULES : CODE_RULES.filter((x) => !['tags', 'inside', 'count'].includes(x));
+        const pname = pk === 'html' ? 'HTML' : MAKECODE_KINDS.includes(pk) ? 'MakeCode' : 'turtle';
+        for (const key of Object.keys(r)) if (CODE_RULES.includes(key) && !allowedR.includes(key)) err(where, `code rule ${key} does not work in the ${pname} playground (use ${allowedR.join(', ')})`);
         if (r.tags !== undefined && !(Array.isArray(r.tags) && r.tags.every((t) => /^[a-z][a-z0-9]*$/i.test(String(t))))) err(where, 'code rule tags must be a list of tag names without brackets, such as [ul, li]');
       }
     }

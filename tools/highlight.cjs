@@ -20,7 +20,7 @@ function highlightCode(src, lang) {
     return hout + esc(src.slice(hlast));
   }
   var py = !lang || lang === 'python' || lang === 'py';
-  var js = !lang || /^(js|javascript|ts|typescript|json)$/.test(lang);
+  var js = !lang || /^(js|javascript|ts|typescript|json|makecode)$/.test(lang);
   var comment = (py ? '#[^\\n]*' : '') + (py && js ? '|' : '') + (js ? '\\/\\/[^\\n]*' : '');
   if (!comment) comment = '#[^\\n]*';
   var re = new RegExp(

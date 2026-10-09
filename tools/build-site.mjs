@@ -15,7 +15,7 @@ import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV
 import { readFileSync } from 'node:fs';
 import { snippetId, unlockKind, pictureSpec } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
-import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildKatex } from './build-playground.mjs';
+import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildKatex, buildMakecodePlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { loadMathsCards, mathsRefItem, mathsCheatBody, mathsCheatMd, MATHS_CARD_CSS } from './maths-cards.mjs';
@@ -112,8 +112,9 @@ buildPlayground(OUT);
 buildHtmlPlayground(OUT);
 await buildMathsPlayground(OUT);
 buildKatex(OUT);
+buildMakecodePlayground(OUT);
 // Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
-const VERSIONS = Object.fromEntries(['_playground', '_playground-html', '_playground-maths'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
+const VERSIONS = Object.fromEntries(['_playground', '_playground-html', '_playground-maths', '_playground-makecode'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
 buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
