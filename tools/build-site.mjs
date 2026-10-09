@@ -15,8 +15,9 @@ import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV
 import { readFileSync } from 'node:fs';
 import { snippetId, unlockKind, pictureSpec } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
-import { buildPlayground, buildHtmlPlayground } from './build-playground.mjs';
+import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildKatex } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
+import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { deckFor, worksheetFor, cheatSheetFor, cheatSheetBody, unitSnippets, CHEAT_CSS, lessonGuideBody, teachPath, stepUrl, SITE_URL, TEACH_CSS, TEACH_JS } from './teach.mjs';
 
 const require = createRequire(import.meta.url);
@@ -83,6 +84,7 @@ function buildLesson(lesson, parentTitle, course) {
     source: `content/${lesson.slug}/lesson.md`,
     teacherGuide: lesson.teacher ? `${'../'.repeat(lesson.depth)}${teachPath(lesson)}` : '',
     siteNavHtml: navFor(lesson.slug, 'lesson', lesson.slug.split('/').slice(0, -1).join('/')),
+    maths: lesson.language === 'maths' ? { markedMath, textWithMath, workedHtml } : null,
   }));
 }
 
@@ -107,8 +109,10 @@ if (bad) process.exit(1);
 mkdirSync(OUT, { recursive: true });
 buildPlayground(OUT);
 buildHtmlPlayground(OUT);
+await buildMathsPlayground(OUT);
+buildKatex(OUT);
 // Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
-const VERSIONS = Object.fromEntries(['_playground', '_playground-html'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
+const VERSIONS = Object.fromEntries(['_playground', '_playground-html', '_playground-maths'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
 buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
@@ -358,6 +362,9 @@ for (const node of dirs.values()) {
 // ---------- teacher guide: /teach/<course>/ and /teach/<lesson>/ with decks, worksheets and cheat sheets ----------
 const tmd = new Marked();
 const md = (t) => tmd.parse(String(t || ''));
+// Maths lessons' guides render $...$ like the lesson page does (text and markdown both).
+const mmd = new Marked().use(markedMath);
+const mathsGuide = { md: (t) => mmd.parse(String(t || '')), esc: (t) => textWithMath(t, esc) };
 const snippetById = new Map(Object.values(snippetFiles).flatMap((d) => d.groups.flatMap((g) => g.items.map((i) => [snippetId(i.label), i]))));
 const teachCourses = [...new Set(lessons.filter((l) => l.teacher).map((l) => l.slug.split('/').slice(0, -1).join('/')))];
 const teachPage = (title, body, pagePath, coursePath) => page(title, `<style>${TEACH_CSS}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(pagePath, 'home', coursePath));
@@ -379,8 +386,10 @@ for (const coursePath of teachCourses) {
       { label: 'Slides', href: 'deck.md', url: `${SITE_URL}/${teachPath(l)}deck.md`, note: 'Present from the browser, or export to PowerPoint or PDF.' },
       { label: 'Worksheet', href: 'worksheet.md', url: `${SITE_URL}/${teachPath(l)}worksheet.md`, note: 'Print the student copy; the Teacher edition has the answers.' },
     ];
-    const body = lessonGuideBody(l, { esc, md, snip, highlightCode, codeBlock, studentHref: `${'../'.repeat(l.depth + 1)}${l.slug}/`, course: node.title, unit: ctx.unit, files });
-    writeFileSync(join(dir, 'index.html'), teachPage(`Teacher guide: ${l.title}`, body, `teach/${l.slug}`, coursePath));
+    const isM = l.language === 'maths';
+    const body = lessonGuideBody(l, { esc: isM ? mathsGuide.esc : esc, md: isM ? mathsGuide.md : md, snip, highlightCode, codeBlock, studentHref: `${'../'.repeat(l.depth + 1)}${l.slug}/`, course: node.title, unit: ctx.unit, files });
+    const katexCss = isM ? `<link rel="stylesheet" href="${'../'.repeat(l.depth + 1)}_katex/katex.min.css">` : '';
+    writeFileSync(join(dir, 'index.html'), teachPage(`Teacher guide: ${l.title}`, katexCss + body, `teach/${l.slug}`, coursePath));
   }
   // Printable cheat sheets: one per unit, and one for the whole course.
   // Snippets for this course's language only, and the code students see in each lesson.

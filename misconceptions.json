@@ -1,5 +1,6 @@
 {
   "_about": "Misconceptions that error items target. home is the lesson whose concept it belongs to; an item in that lesson or a later one is on the path (a later one is a spiral). See AUTHORING.md, Error tasks.",
+  "algebra-juxtaposition": { "home": "maths/algebra/equation-balance", "text": "2x with x = 4 is read as 24 (the digits side by side) instead of 2 × 4 = 8." },
   "angle-from-sides": { "home": "code/python/turtle-variables", "text": "The turn is guessed or multiplied instead of worked out as 360 / sides." },
   "assign-vs-compare": { "home": "code/python/turtle-decisions", "text": "A single = is used to ask whether two things are equal." },
   "list-index-range": { "home": "code/python/turtle-lists", "text": "A list of n items has a place n; places run from 0 to n - 1." },

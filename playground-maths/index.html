@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maths board</title>
+<link rel="stylesheet" href="vendor/jsxgraph.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <div id="board" class="jxgbox" role="img" aria-label="A balance scale"></div>
+  <div id="controls">
+    <label for="xval" id="xlabel">x</label>
+    <button type="button" id="minus" aria-label="Make x one less">−</button>
+    <input type="range" id="xval" aria-describedby="status">
+    <button type="button" id="plus" aria-label="Make x one more">+</button>
+    <output id="xshow" for="xval"></output>
+  </div>
+  <p id="status" aria-live="polite"></p>
+  <p id="error" hidden></p>
+</main>
+<script src="vendor/jsxgraphcore.js"></script>
+<script src="maths.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

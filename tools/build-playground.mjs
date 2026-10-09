@@ -76,8 +76,37 @@ export function buildHtmlPlayground(out = 'dist') {
   return dest;
 }
 
+/** The maths board: our files, vendored JSXGraph, and the shared maths evaluator (tools/maths.mjs) as maths.js. */
+export async function buildMathsPlayground(out = 'dist') {
+  const dest = join(out, '_playground-maths');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-maths'), dest, { recursive: true });
+  mkdirSync(join(dest, 'vendor'), { recursive: true });
+  for (const f of ['jsxgraphcore.js', 'jsxgraph.css']) {
+    const src = join(root, 'node_modules', 'jsxgraph', 'distrib', f);
+    if (!existsSync(src)) throw new Error(`Missing ${src}. Run "npm ci" first.`);
+    copyFileSync(src, join(dest, 'vendor', f));
+  }
+  const { MATH_JS } = await import('./math-expr.mjs');
+  writeFileSync(join(dest, 'maths.js'), MATH_JS + '\n');
+  stampPlayground(dest);
+  return dest;
+}
+
+/** KaTeX's stylesheet and fonts, for maths lessons (the maths itself is rendered at build time). */
+export function buildKatex(out = 'dist') {
+  const dest = join(out, '_katex');
+  rmSync(dest, { recursive: true, force: true });
+  mkdirSync(dest, { recursive: true });
+  const src = join(root, 'node_modules', 'katex', 'dist');
+  copyFileSync(join(src, 'katex.min.css'), join(dest, 'katex.min.css'));
+  cpSync(join(src, 'fonts'), join(dest, 'fonts'), { recursive: true });
+  return dest;
+}
+
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const out = process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist';
   console.log('Playground built into ' + buildPlayground(out));
   console.log('HTML playground built into ' + buildHtmlPlayground(out));
+  console.log('Maths board built into ' + await buildMathsPlayground(out));
 }

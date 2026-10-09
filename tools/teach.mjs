@@ -10,6 +10,17 @@ export const SITE_URL = (process.env.SITE_URL || 'https://tutorials.learningwayp
 export const PREPARE_URL = 'https://prepare.learningwaypoints.com/';
 const STAGES = /^(Predict|Run|Investigate|Modify|Make|Info):\s*/i;
 const bare = (t) => String(t).replace(STAGES, '');
+// A maths task's text carries its worked example (a numbered list of $maths$ lines), so slides and worksheets keep it.
+const hasWorked = (md) => LANG === 'maths' && /^1\. \$/m.test(String(md || ''));
+
+// Maths lessons: a ```worked block (one step per line, "maths :: reason") becomes a numbered list with the maths
+// typeset, so slides and worksheets show the worked example rather than its source.
+const workedToMd = (md) => String(md || '').replace(/```worked\n([\s\S]*?)```/g, (m, src) => src.split('\n').map((l) => l.trim()).filter(Boolean)
+  .map((l, i) => { const k = l.indexOf('::'); const mth = (k < 0 ? l : l.slice(0, k)).trim(), why = k < 0 ? '' : l.slice(k + 2).trim(); return `${i + 1}. $${mth}$${why ? ` — ${why}` : ''}`; }).join('\n'));
+const forOutput = (lesson) => lesson.language !== 'maths' ? lesson : {
+  ...lesson, intro: workedToMd(lesson.intro),
+  steps: lesson.steps.map((st) => ({ ...st, body: workedToMd(st.body), tasks: st.tasks.map((t) => ({ ...t, body: workedToMd(t.body) })) })),
+};
 const strip = (t) => String(t).split('‹').join('').split('›').join('');
 const oneLine = (t) => String(t || '').replace(/\s+/g, ' ').trim();
 // Markdown that is safe inside a slide or a printed page: no slide separators, no "*" lists.
@@ -85,6 +96,7 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 
 // ---------------------------------------------------------------- deck (Prepare Marp)
 export function deckFor(lesson, { course, unit, snip }) {
+  lesson = forOutput(lesson);
   LANG = lesson.language || 'python';
   const T = lesson.teacher || {};
   const slides = [];
@@ -96,7 +108,7 @@ export function deckFor(lesson, { course, unit, snip }) {
   const showCode = (code, step) => (code.split('\n').length > 27
     ? `*The program is ${code.split('\n').length} lines long: open it in the tutorial and read it together.*\n\n[Open this step](${stepUrl(lesson, step)})`.replace(/^\*|\*(?=\n)/g, '_')
     : fence(code));
-  const runIt = (step, label = 'Run it') => `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
+  const runIt = (step, label = LANG === 'maths' ? 'Try it' : 'Run it') => `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
   let stuckDone = false;
   for (const s of lesson.steps) {
     const c = s.config, stage = c.stage, title = bare(s.title);
@@ -123,7 +135,8 @@ export function deckFor(lesson, { course, unit, snip }) {
           body += '\n\n' + (parts.length === 2 ? `<div class="cols" style="display:grid;grid-template-columns:1fr 1fr;gap:1em">\n<div>\n\n${parts[0]}\n\n</div>\n<div>\n\n${parts[1]}\n\n</div>\n</div>` : parts.join('\n\n'));
         }
         if (p.parsons) body += '\n\n' + fence(p.parsons.join('\n'));
-        if (t && /```/.test(t.body)) body = prose(t.body.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, src) => '\u0000' + src + '\u0000')).replace(/\u0000([\s\S]*?)\u0000/g, (m, src) => fence(src)) + '\n\n' + body;
+        if (t && hasWorked(t.body)) body = prose(t.body) + '\n\n' + body;
+        else if (t && /```/.test(t.body)) body = prose(t.body.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, src) => '\u0000' + src + '\u0000')).replace(/\u0000([\s\S]*?)\u0000/g, (m, src) => fence(src)) + '\n\n' + body;
         const reveal = p.parsons ? '' : `\n\n* Answer: ${oneLine(p.answer)}`;
         slides.push(`${BADGE.check}\n\n## ${t ? t.title : title}\n\n${body}${reveal}` + note(`${p.explain} ${p.parsons ? `Correct order: ${oneLine(p.solution)}` : ''} ${!t && c.insight ? `What this step is for: ${c.insight}` : ''}`));
       }
@@ -179,6 +192,7 @@ function traceTable(t, blanks) {
 
 // ---------------------------------------------------------------- worksheet (Prepare Print)
 export function worksheetFor(lesson, { course, unit, snip }) {
+  lesson = forOutput(lesson);
   LANG = lesson.language || 'python';
   const T = lesson.teacher || {};
   const out = [];
@@ -196,7 +210,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
       part = `## Predict\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
     } else if (stage === 'run') {
-      part = `## Run\n\nRun the program in the tutorial. Was your prediction right? What was different?\n\n{{lines-2}}`;
+      part = `## Run\n\n${LANG === 'maths' ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
     } else if (stage === 'investigate') {
       part = `## ${title}\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}`;
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
@@ -204,7 +218,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
         if (p.reflect || k.type === 'code') continue;
         let q = `${t ? `### ${t.title}\n\n` : ''}**${p.q}**`;
-        if (t && /```/.test(t.body)) q = `${t ? `### ${t.title}\n\n` : ''}${t.body.trim()}\n\n**${p.q}**`;
+        if (t && (/```/.test(t.body) || hasWorked(t.body))) q = `${t ? `### ${t.title}\n\n` : ''}${t.body.trim()}\n\n**${p.q}**`;
         if (p.options) q += '\n\n' + p.options.map((o) => `☐ ${o}`).join('\n\n');
         if (p.field) q += '\n\nAnswer: {{field-15}}';
         if (p.trace) q += '\n\n{{rows 1}}\n\n' + traceTable(p.trace, false);
@@ -222,7 +236,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
         const t = s.tasks.find((x) => x.id === id);
         return `${t ? `**${t.title}:**\n\n` : ''}${splitFiles(snip(sols[id])).map((f) => (f.name ? `*${f.name}*\n\n` : '') + fence(f.code)).join('\n\n')}`;
       }).join('\n\n');
-      part = `## ${stage === 'make' && !/make/i.test(title) ? `Make: ${title}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}` : '');
+      part = `## ${stage === 'make' && !/make/i.test(title) ? `Make: ${title}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
     } else if (s.body.trim()) {
       part = `## ${title}\n\n${prose(s.body)}`;
     }

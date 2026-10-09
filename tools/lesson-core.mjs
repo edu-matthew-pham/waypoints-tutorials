@@ -2,12 +2,15 @@
 // `read(file)` returns the text of a lesson-relative file (or undefined if missing).
 import YAML from 'yaml';
 import { scanModule } from './modules-scan.mjs';
+import { MATH } from './math-expr.mjs';
 
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
-export const PLAYGROUND_KINDS = ['turtle', 'html'];
-export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict'];
+export const PLAYGROUND_KINDS = ['turtle', 'html', 'maths'];
+/** What a board check can expect from the maths board's report. */
+export const BOARD_KEYS = ['balanced', 'x'];
+export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
 
@@ -310,6 +313,24 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       if (k.kind !== undefined && !['text', 'number'].includes(k.kind)) err(where, 'check (predict) kind must be text or number');
       if (k.options !== undefined && !(Array.isArray(k.options) && k.options.length >= 2 && k.options.every((o) => typeof o === 'string' && o.trim()))) err(where, 'check (predict) options must be a list of at least two strings');
       if (k.actual !== undefined && !str(String(k.actual))) err(where, 'check (predict) actual must be text, shown after the Run step');
+    }
+    else if (k.type === 'answer') {
+      // A typed maths answer: any equivalent form passes (answer), or any equation the given values make true (equation).
+      if (!str(k.q)) err(where, 'check (answer) needs q');
+      const hasA = k.answer !== undefined && k.answer !== null && String(k.answer).trim() !== '';
+      if (hasA === (k.equation !== undefined)) err(where, 'check (answer) needs exactly one of answer: (an expression or number) or equation: (values, such as { x: 6 })');
+      if (hasA) { try { MATH.parse(String(k.answer)); } catch (e) { err(where, `check (answer) answer "${k.answer}": ${e.message}`); } }
+      if (k.equation !== undefined && !(k.equation && typeof k.equation === 'object' && !Array.isArray(k.equation) && Object.entries(k.equation).length && Object.entries(k.equation).every(([n, v]) => /^[a-zA-Z]$/.test(n) && typeof v === 'number'))) err(where, 'check (answer) equation must map one-letter variables to numbers, such as { x: 6 }');
+      if (k.feedback !== undefined) {
+        if (!Array.isArray(k.feedback) || !k.feedback.every((f) => Array.isArray(f) && f.length === 2 && str(String(f[0])) && str(f[1]))) err(where, 'check (answer) feedback must be a list of [wrong answer, what to say] pairs');
+        else for (const [w] of k.feedback) { try { MATH.parse(String(w)); if (hasA && MATH.equivalent(String(w), String(k.answer))) err(where, `check (answer) feedback "${w}" is the right answer`); } catch (e) { err(where, `check (answer) feedback "${w}": ${e.message}`); } }
+      }
+    }
+    else if (k.type === 'board') {
+      if (!str(k.text)) err(where, 'check (board) needs text, e.g. "Find the value of x that balances the scale."');
+      if (!k.expect || typeof k.expect !== 'object' || Array.isArray(k.expect) || !Object.keys(k.expect).length) err(where, `check (board) needs expect: a mapping using ${BOARD_KEYS.join(', ')}`);
+      else for (const key of Object.keys(k.expect)) if (!BOARD_KEYS.includes(key)) err(where, `check (board) cannot expect "${key}" (use ${BOARD_KEYS.join(', ')})`);
+      if (!c.try || c.try.playground !== 'maths') err(where, 'a board check needs the maths board on the step (try: { playground: maths, starter: ... })');
     }
     else if (k.type === 'trace') {
       if (!str(k.table)) err(where, 'check (trace) needs table: a pipe table with blanks in [brackets]');

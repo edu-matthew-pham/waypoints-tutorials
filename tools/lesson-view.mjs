@@ -1,6 +1,7 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
 import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys } from './lesson-core.mjs';
+import { MATH_JS } from './math-expr.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -10,6 +11,15 @@ export const STAGE_INFO = {
   investigate: ['Investigate', 'Trace how each line of code connects to what you see.'],
   modify: ['Modify', 'Change the code on purpose and check the result.'],
   make: ['Make', 'Build something new using what you have learned.'],
+  info: ['Info', ''],
+};
+/** The same stages in maths words: there is no code, so students try things on a board and change the problem. */
+export const STAGE_INFO_MATHS = {
+  predict: ['Predict', 'Read the problem and decide what you think before you try anything.'],
+  run: ['Try', 'Try it on the board and compare the result with your prediction.'],
+  investigate: ['Investigate', 'Work out why it happens, one step at a time.'],
+  modify: ['Modify', 'Change the problem on purpose and see what happens.'],
+  make: ['Make', 'Make your own problem using what you have learned.'],
   info: ['Info', ''],
 };
 export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Make|Info):\s*/i;
@@ -229,6 +239,7 @@ if(f&&f.href){b.href=f.href;b.textContent='\\u2190 Back to '+f.title+(f.step?' \
 if(here==='playground'||here==='reference'){try{var l=JSON.parse(localStorage.getItem('wp-last-lesson'));if(l&&l.href){b.href=l.href;b.textContent='Continue: '+(l.title||'your lesson');b.hidden=false}}catch(e){}}})();`;
 
 export const JS = `var evalRules=${evalRules.toString()};
+${MATH_JS}
 (function(){var t=document.querySelector('.cb-toggle'),m=document.getElementById('cb-menu');if(!t||!m)return;
 t.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;t.setAttribute('aria-expanded',String(o))});
 document.addEventListener('click',function(e){if(!m.hidden&&!e.target.closest('.cb-mid')){m.hidden=true;t.setAttribute('aria-expanded','false')}});
@@ -306,6 +317,19 @@ var saved=pload()[key];if(saved!==undefined&&saved!==null)freeze(saved);
 btn.addEventListener('click',function(){var r=box.querySelector('input[type=radio]:checked'),i=box.querySelector('input.pin'),v=r?r.value:(i?i.value.trim():'');
 if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v);try{document.dispatchEvent(new CustomEvent('wp-predict',{detail:key}))}catch(e){}})}
 if(ty==='parsons'){parsons(box,win,bad)}
+if(ty==='answer'&&btn){var inp=box.querySelector('input'),fb=JSON.parse(box.dataset.feedback||'[]');
+function tryIt(){var v=inp.value.trim();if(!v)return bad('Type your answer first.');
+try{if(box.dataset.equation){var vals=JSON.parse(box.dataset.equation),sd=WPM.sides(v);if(!sd)return bad('An equation needs one = sign, with something on each side.');
+var need=Object.keys(vals),used=WPM.vars(sd[0]).concat(WPM.vars(sd[1]));if(!need.some(function(n){return used.indexOf(n)>=0}))return bad('Use '+need.join(' and ')+' in your equation.');
+if(WPM.satisfies(v,vals))return win();var shown=need.map(function(n){return n+' = '+vals[n]}).join(', ');return bad('Not quite: when '+shown+', the two sides are not equal. Check each side.')}
+var a=WPM.splitAnswer(v).value;if(WPM.equivalent(a,box.dataset.answer))return win();
+for(var i=0;i<fb.length;i++){try{if(WPM.equivalent(a,String(fb[i][0])))return bad(fb[i][1])}catch(e){}}
+bad('Not quite. Check your working and try again.')}catch(e){bad(e.message)}}
+btn.addEventListener('click',tryIt);inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryIt()})}
+if(ty==='board'){var want=JSON.parse(box.dataset.expect);
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.kind!=='maths'||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
+var ok=Object.keys(want).every(function(k){var a=m.state&&m.state[k],b=want[k];return typeof b==='number'?Math.abs(Number(a)-b)<1e-9:a===b});
+if(ok){if(!box.classList.contains('done'))win()}else if(!box.classList.contains('done')){msg.className='msg';msg.textContent='Keep going.'}})}
 });
 document.querySelectorAll('.compare').forEach(function(c){var pk=c.dataset.predict;
 function mine(){try{return (JSON.parse(localStorage.getItem('wp-predict'))||{})[pk]}catch(e){return undefined}}
@@ -329,6 +353,10 @@ document.addEventListener('keydown',function(e){var f=document.querySelector('.t
 var ifr=t.querySelector('iframe');if(ifr)ifr.loading='eager';setTimeout(function(){t._full(true)},50)})();
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='esc')return;
 document.querySelectorAll('.try.full').forEach(function(f){var i=f.querySelector('iframe');if(i&&i.contentWindow===e.source)f._full(false)})});
+document.querySelectorAll('.worked').forEach(function(w){var lis=w.querySelectorAll('li'),nx=w.querySelector('.wnext'),al=w.querySelector('.wall');if(!nx)return;
+function upd(){var left=[].filter.call(lis,function(l){return l.hidden}).length;nx.hidden=al.hidden=!left;nx.textContent=left?'Next step ('+left+' left)':''}
+nx.addEventListener('click',function(){var h=[].find.call(lis,function(l){return l.hidden});if(h){h.hidden=false;h.classList.add('new')}upd()});
+al.addEventListener('click',function(){[].forEach.call(lis,function(l){l.hidden=false});upd()});upd()});
 function parsons(box,win,bad){var lines=JSON.parse(box.dataset.lines),extra=JSON.parse(box.dataset.extra||'[]');
 var pool=box.querySelector('.ppool'),prog=box.querySelector('.pprog'),inProg=[];
 var all=lines.concat(extra).map(function(t,i){return {t:t,i:i}});
@@ -349,7 +377,8 @@ box.querySelector('.pcheck').addEventListener('click',function(){if(JSON.stringi
 box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw()})}
 [].forEach.call(document.querySelectorAll('.tasks'),function(w){
 [].forEach.call(w.querySelectorAll('.tp'),function(p){p.addEventListener('click',function(){var i=p.dataset.i;
-[].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))})})});
+[].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))});
+if(w.dataset.kind==='maths'){var rs=w.querySelector('.tpanel.active .resetstart'),f=w.querySelector('iframe');if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
 [].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=w.querySelector('iframe');if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
 sync(w)});
 })();`;
@@ -367,23 +396,33 @@ const shuffled = (arr, seed) => { const r = seeded(seed), a = arr.slice(); for (
  * a line to click (bug), pairs (match), a trace table or lines to order (parsons). Passing it unlocks snippets.
  * snippet(ref) reads code for bug and parsons checks.
  */
-export function checkHtml(lesson, step, names = {}, snippet = null, task = null) {
+export function checkHtml(lesson, step, names = {}, snippet = null, task = null, tx = esc) {
   const k = task ? task.config.check : step.config.check;
   if (!k) return '';
   const kind = unlockKind(lesson, step);
   const ids = (task ? task.config.unlocks : step.config.unlocks) || [];
   const label = (id) => names[kind]?.[id] || id.replace(/-/g, ' ');
   const key = `${lesson.slug}/${task ? task.id : step.id}`;
-  const base = `data-key="${esc(key)}" data-play="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(k.explain || '')}"`;
+  // Explanations are shown with textContent, so maths in them is shown as plain text: "$2x$" becomes "2x".
+  const plain = (t) => (lesson.language === 'maths' ? String(t).replace(/\$([^$]+)\$/g, '$1') : t);
+  const explain = plain(k.explain || '');
+  const base = `data-key="${esc(key)}" data-play="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(explain)}"`;
   const msg = '<p class="msg" aria-live="polite"></p>';
   if (k.type === 'reflect') {
-    return `<div class="check" ${base}><label><input type="checkbox"><span>${esc(k.text)}</span></label>${msg}</div>`;
+    return `<div class="check" ${base}><label><input type="checkbox"><span>${tx(k.text)}</span></label>${msg}</div>`;
   }
   if (k.type === 'code') {
     return `<div class="check" ${base} data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"></ul><p class="msg" aria-live="polite">${kind === 'html' ? 'This ticks when your page has all of the above.' : 'Run your program. This ticks when your code does all of the above.'}</p></div>`;
   }
+  if (k.type === 'answer') {
+    const data = k.equation ? `data-equation="${esc(JSON.stringify(k.equation))}"` : `data-answer="${esc(String(k.answer))}"`;
+    return `<div class="check" ${base} ${data} data-feedback="${esc(JSON.stringify(k.feedback || []))}"><p class="check-q">${tx(k.q)}</p><label class="numrow ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your answer" placeholder="${k.equation ? 'for example 2x = 10' : 'Your answer'}"></label><button type="button">Check answer</button>${msg}</div>`;
+  }
+  if (k.type === 'board') {
+    return `<div class="check" ${base} data-expect="${esc(JSON.stringify(k.expect))}"><p class="check-q">${tx(k.text)}</p><p class="msg" aria-live="polite">Use the board. This ticks when you get there.</p></div>`;
+  }
   if (k.type === 'number') {
-    return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"><p class="check-q">${esc(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
+    return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"><p class="check-q">${tx(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
   }
   if (k.type === 'bug') {
     const files = splitFiles(snippet ? snippet(k.code) : '');
@@ -400,8 +439,8 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
   }
   if (k.type === 'predict') {
     const field = k.options
-      ? `<fieldset><legend class="check-q">${esc(k.q)}</legend>${k.options.map((o, i) => `<label><input type="radio" name="p-${esc(key)}" value="${esc(o)}"><span>${esc(o)}</span></label>`).join('')}</fieldset>`
-      : `<p class="check-q">${esc(k.q)}</p><label class="numrow"><input class="pin" type="${k.kind === 'number' ? 'number' : 'text'}" ${k.kind === 'number' ? 'step="any"' : ''} aria-label="Your prediction"></label>`;
+      ? `<fieldset><legend class="check-q">${tx(k.q)}</legend>${k.options.map((o, i) => `<label><input type="radio" name="p-${esc(key)}" value="${esc(plain(o))}"><span>${tx(o)}</span></label>`).join('')}</fieldset>`
+      : `<p class="check-q">${tx(k.q)}</p><label class="numrow"><input class="pin" type="${k.kind === 'number' ? 'number' : 'text'}" ${k.kind === 'number' ? 'step="any"' : ''} aria-label="Your prediction"></label>`;
     return `<div class="check" ${base}>${field}<button type="button">Lock in my prediction</button>${msg}</div>`;
   }
   if (k.type === 'trace') {
@@ -417,8 +456,8 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
       `<button type="button" class="pcheck">Check order</button> <button type="button" class="preset">Start again</button>${msg}</div>`;
   }
   const name = `q-${lesson.slug}-${step.id}${task ? `-t${task.index}` : ''}`.replace(/[^a-z0-9-]/gi, '-');
-  return `<div class="check" ${base} data-answer="${k.answer}"><fieldset><legend>${esc(k.q)}</legend>` +
-    k.options.map((o, i) => `<label><input type="radio" name="${name}" value="${i}"><span>${esc(o)}</span></label>`).join('') +
+  return `<div class="check" ${base} data-answer="${k.answer}"><fieldset><legend>${tx(k.q)}</legend>` +
+    k.options.map((o, i) => `<label><input type="radio" name="${name}" value="${i}"><span>${tx(o)}</span></label>`).join('') +
     `</fieldset><button type="button">Check answer</button>${msg}</div>`;
 }
 
@@ -427,22 +466,27 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', expectedHtml = () => '', pictureHtml = () => '' } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', expectedHtml = () => '', pictureHtml = () => '', maths = null } = deps;
+  // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
+  const isMaths = lesson.language === 'maths' && !!maths;
+  const tx = isMaths ? (t) => maths.textWithMath(t, esc) : esc;
   const md = new Marked({
-    renderer: { code({ text, lang }) { const fs = splitFiles(text); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
+    renderer: { code({ text, lang }) { if (lang === 'worked' && isMaths) return maths.workedHtml(text, md); const fs = splitFiles(text); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
   // "Predict: what will `greet` return?" -> "What will <code>greet</code> return?"
+  if (isMaths) md.use(maths.markedMath);
   const heading = (t) => {
     const s = t.replace(STAGE_PREFIX, '');
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
   const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info'))];
   const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
-  const legend = stagesUsed.filter((k) => STAGE_INFO[k]).map((k) => `<li style="--c:var(--${k})"><b>${STAGE_INFO[k][0]}</b>: ${esc(STAGE_INFO[k][1])}</li>`).join('');
+  const SI = lesson.language === 'maths' ? STAGE_INFO_MATHS : STAGE_INFO;
+  const legend = stagesUsed.filter((k) => SI[k]).map((k) => `<li style="--c:var(--${k})"><b>${SI[k][0]}</b>: ${esc(SI[k][1])}</li>`).join('');
 
   const steps = lesson.steps.map((s) => {
     const c = s.config;
-    const [label, hint] = STAGE_INFO[c.stage] || STAGE_INFO.info;
+    const [label, hint] = SI[c.stage] || SI.info;
     let showCode = '';
     if (c.code) {
       try {
@@ -460,7 +504,7 @@ export function lessonPageHtml(lesson, deps) {
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
     const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(t)}</details>`).join('');
     const hints = hintsOf(c.hint);
-    const checks = checkHtml(lesson, s, snippetNames, snippet);
+    const checks = checkHtml(lesson, s, snippetNames, snippet, null, tx);
     // A Run step after a Predict step with a predict check shows "You predicted X. It actually did Y." after Run.
     let compare = '';
     if (c.stage === 'run') {
@@ -480,7 +524,7 @@ export function lessonPageHtml(lesson, deps) {
         if (t.config.starter) { try { reset = `<button type="button" class="resetstart" data-code="${esc(snippet(t.config.starter))}">Reset to this task's start</button>`; } catch { /* reported by validation */ } }
         return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
       }).join('');
-      const taskChecks = s.tasks.map((t, n) => `<div class="tpanel${n ? '' : ' active'}" data-i="${n}">${checkHtml(lesson, s, snippetNames, snippet, t)}</div>`).join('');
+      const taskChecks = s.tasks.map((t, n) => `<div class="tpanel${n ? '' : ' active'}" data-i="${n}">${checkHtml(lesson, s, snippetNames, snippet, t, tx)}</div>`).join('');
       const wrap = `<div class="tasks" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})" data-step="${s.id}" data-stepkey="${esc(`${lesson.slug}/${s.id}`)}" data-kind="${kind}" data-keys="${esc(keys.join('|'))}" data-unlocks="${esc((c.unlocks || []).join(','))}" data-names="${esc(names.join('|'))}"><div class="taskpills" role="tablist" aria-label="Tasks">${pills}</div>${bodies}${tryHtml(s)}${taskChecks}<p class="tmsg" aria-live="polite"></p></div>`;
       inner = c.reveal ? `${body}${showCode}${shown}${wrap}${clip}` : `${body}${showCode}${shown}${clip}${wrap}`;
     } else {
@@ -530,8 +574,9 @@ export function lessonPageHtml(lesson, deps) {
   const explainPic = lesson.explainPicture ? pictureHtml(lesson.explainPicture, 'explain') : '';
   const explainHtml = T?.explain || explainClip ? `<details class="explain"><summary>Explain it to me</summary>${explainClip}${T?.explain ? md.parse(T.explain) : ''}${explainPic}</details>` : '';
 
+  const mathsHead = isMaths ? `<link rel="stylesheet" href="${esc(siteRoot)}_katex/katex.min.css"><style>${MATHS_CSS}</style>` : '';
   return page(lesson.title, `
-${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
+${mathsHead}${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
 ${md.parse(lesson.intro)}
 ${explainHtml}
@@ -546,7 +591,20 @@ ${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}`, siteRo
 export const PLAYGROUNDS = {
   turtle: { dir: '_playground', title: 'Python turtle playground' },
   html: { dir: '_playground-html', title: 'HTML and CSS playground' },
+  maths: { dir: '_playground-maths', title: 'Maths board' },
 };
+
+/** Extra styles for maths lessons: display maths, worked examples, typed answers. */
+export const MATHS_CSS = `.mathblock{overflow-x:auto;overflow-y:hidden;margin:.6em 0}.katex{font-size:1.12em}
+.worked{border:1px solid var(--line);border-left:4px solid var(--c,var(--accent));border-radius:10px;background:var(--card);padding:12px 16px;margin:14px 0}
+.worked-head{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-bottom:6px}.worked-head span{color:var(--muted);font-size:14px}
+.worked ol{margin:0;padding-left:1.4em}.worked li{padding:6px 0;border-top:1px dashed var(--line)}.worked li:first-child{border-top:0}
+.worked li.new{animation:wfade .35s ease-out}@keyframes wfade{from{opacity:0;transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.worked li.new{animation:none}}
+.worked .wm{display:block;font-size:1.08em;overflow-x:auto}.worked .why{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.worked-go{display:flex;gap:8px;margin-top:8px}.worked-go button{font:inherit;font-size:14px;font-weight:600;padding:5px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.worked-go button[hidden]{display:none}.worked-go .wnext{background:var(--c,var(--accent));border-color:transparent;color:#fff}@media(prefers-color-scheme:dark){.worked-go .wnext{color:#0f141a}}
+.ansrow input{width:14em;font-family:ui-monospace,Menlo,Consolas,monospace}`;
 
 /** "Try it yourself" iframe. siteRoot is the URL of the site root (with trailing slash), e.g. "../../../". */
 export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = null, versions = null) {
