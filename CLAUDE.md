@@ -17,6 +17,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 - Pathways (see ROADMAP "Pathways"): options, not year gates. Foundations now: MakeCode (micro:bit/MOVE Motor or Arcade, blocks to Python), Python Foundations with Turtle (then checkpoint), HTML & CSS basics. Extensions later: console bridge, Gradio → ML, microStudio, p5.js → DOM. Typical fit (Years 6–8 vs 9+) is a teacher note only. Pygame parked.
 
 ## Playground runtime
+- HTML playground: live preview (no Run); **Boxes** button or `?boxes=1` outlines every element with its tag name, coloured by depth (injected into the preview only); `?zoom=` enlarges code and preview for clips.
 - The turtle playground is our own Skulpt bridge (`playground/skulpt-bridge.js`) plus a canvas renderer (`playground/canvas-turtle.js`), not Skulpt's turtle.
 - Events: `onscreenclick`, `onkey`, `ontimer`, `listen`, `textinput`, `numinput`. `mainloop()`/`done()` waits for events until Stop; with nothing registered it returns at once. Code checks and the Run-step compare box accept a Stopped run. Keys need the picture clicked first.
 - `predict` check: a locked prediction is stored in `wp-predict`; the next Run step shows it beside the real result.

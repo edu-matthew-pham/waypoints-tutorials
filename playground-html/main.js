@@ -29,9 +29,29 @@ function report(html) {
   reported = true;
 }
 
+// Boxes view (?boxes=1 or the Boxes button): the preview draws a labelled outline around every element,
+// coloured by depth, so nesting is visible. Added to the preview only; the student's code is unchanged.
+const BOXES = `
+<style>body *{outline:2px solid var(--wpc);outline-offset:1px}body *:not(br){padding:4px 6px;margin:6px 4px}body ul,body ol{padding-left:32px}
+[data-wp-tag]::before{content:attr(data-wp-tag);display:inline-block;font:600 11px/1.4 ui-monospace,Menlo,Consolas,monospace;
+color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin-right:6px;vertical-align:.15em;text-decoration:none;font-style:normal}</style>
+<script>(function(){var C=['#2563eb','#c2570a','#15803d','#9333ea','#be185d'];
+function walk(el,d){[].forEach.call(el.children,function(c){if(/^(SCRIPT|STYLE|BR|TEMPLATE)$/.test(c.tagName))return;
+c.setAttribute('data-wp-tag',c.tagName.toLowerCase());c.style.setProperty('--wpc',C[d%C.length]);walk(c,d+1)})}
+walk(document.body,0)})()<\/script>`;
+let boxes = params.get('boxes') === '1';
+// ?zoom=1.6 enlarges the code and the preview, for recorded clips (text stays readable at video size).
+const zoom = Math.min(3, Math.max(1, Number(params.get('zoom')) || 1));
+const ZOOM = zoom > 1 ? `<style>html{zoom:${zoom}}</style>` : '';
+if (zoom > 1) codeEl.style.fontSize = `${Math.round(14 * zoom)}px`;
+const boxesBtn = $('boxes');
+const showBoxes = () => { boxesBtn.setAttribute('aria-pressed', String(boxes)); boxesBtn.textContent = boxes ? 'Boxes on' : 'Boxes'; };
+boxesBtn.addEventListener('click', () => { boxes = !boxes; showBoxes(); render(); });
+showBoxes();
+
 function render() {
   const html = codeEl.value;
-  previewEl.srcdoc = html;
+  previewEl.srcdoc = html + ZOOM + (boxes ? BOXES : ""); // appended, so a page that starts with <!DOCTYPE html> keeps it first
   // Parse (without running anything) so tests can check what the page says.
   const doc = new DOMParser().parseFromString(html, 'text/html');
   const text = (doc.body.innerText ?? doc.body.textContent ?? '').replace(/\s+/g, ' ').trim();

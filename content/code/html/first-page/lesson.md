@@ -4,6 +4,13 @@ unit: structure
 title: Tags and nesting
 summary: Label text with tags, put tags inside tags, and see what the browser does with a mistake.
 language: html
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-html" 8124
+  url: http://127.0.0.1:8124/index.html
+  ready: HTML code
+  layout: full
+pacing:
+  keyDelayMs: 45
 hook: "Every website you have visited, from your school page to a shop, starts as text with tags like these."
 ---
 Every web page is text with **tags** in it. A tag like `<h1>` tells the browser what the text *is*, and the browser decides how it looks.
@@ -43,6 +50,23 @@ stage: investigate
 code: page.html#parts
 insight: "Tags open and close around their content, and a tag inside another tag closes first, like boxes inside boxes."
 unlocks: [h2-subheading, em-emphasis]
+app: true
+query: { code: "", boxes: 1, zoom: 1.7 }
+caption: "Tags are boxes: the inner one closes first"
+clip:
+  - caption: "Boxes view: every tag draws a box around its content."
+  - type: { into: HTML code, text: "<h1>Sports day</h1>\n" }
+  - caption: "<p> opens a box for a paragraph..."
+  - type: { into: HTML code, text: "<p>\n  On\n", append: true }
+  - caption: "...and <strong> opens a smaller box inside it."
+  - type: { into: HTML code, text: "  <strong>\n    Friday\n", append: true }
+  - caption: "</strong> closes the inner box first..."
+  - type: { into: HTML code, text: "  </strong>\n", append: true }
+  - caption: "...then </p> closes the outer box."
+  - type: { into: HTML code, text: "</p>", append: true }
+  - expect: { selector: "#preview-text", contains: "On Friday" }
+  - caption: "Inner box first, then the outer one: that is nesting."
+  - wait: 1500
 tasks:
   - check:
       type: match

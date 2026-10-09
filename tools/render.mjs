@@ -165,7 +165,9 @@ async function recordClip(browser, lesson, step, outDir) {
       else if (verb === 'type') {
         const loc = await target(frame, v, ['label', 'placeholder']);
         await go(loc);
-        await loc.fill('');
+        // append: true types at the end of what is there (so captions can explain each part as it appears).
+        if (v.append) { await loc.evaluate((el) => { el.focus(); if ('selectionStart' in el) el.selectionStart = el.selectionEnd = el.value.length; }); }
+        else await loc.fill('');
         const text = typeof v.text === 'string' && v.text.startsWith('@') ? getSnippet(lesson.dir, v.text.slice(1)) : String(v.text);
         await loc.pressSequentially(text, { delay: p.keyDelayMs });
         await sleep(p.afterActionMs);

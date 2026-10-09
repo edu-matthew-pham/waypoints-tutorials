@@ -81,7 +81,7 @@ Each list item has exactly one verb.
 | `run` | `- run: true` | Reveals the app (when `app: false` at start) |
 | `show` | `- show: app.py#launch` | Types that code into the code panel |
 | `clear` | `- clear: app.py` | Empties the code panel |
-| `type` | `- type: { into: Name, text: Ada }` | Moves pointer, clicks field, types |
+| `type` | `- type: { into: Name, text: Ada }` | Moves pointer, clicks field, types (clears it first; `append: true` types at the end instead, so captions can explain each part as it appears) |
 | `click` | `- click: Submit` | Button, then label, link or text with that name |
 | `press` | `- press: Enter` | Key press |
 | `expect` | `- expect: { field: Greeting, value: "Hello" }` | **Fails the build** if the value is wrong (`contains:` also works) |
@@ -124,6 +124,7 @@ npm run all        # validate, render, build
   `expect: { selector: "#status", contains: Finished }` / `{ selector: "#turtle-state", contains: "heading 0" }`.
 - **`try.playground`**: `turtle` (default) or `html`. For HTML, record with `ready: HTML code`, `type: {into: "HTML code", text: "@page.html#region"}` and `expect: {selector: "#preview-text", contains: "..."}`; use `query: { code: "" }` to start from an empty editor. Region markers in HTML are `<!-- region: name -->` / `<!-- endregion -->`.
 - **`query`** (clip step): extra URL parameters for the app, e.g. `query: { speed: 8, code: "@file.py#region" }`.
+- **HTML playground options:** `boxes: 1` turns on the **Boxes** view (a labelled outline around every element, coloured by depth, so nesting shows; students can toggle it with the Boxes button), and `zoom: 1.7` enlarges the code and preview for clips. A step's `try: { boxes: true }` opens its playground with Boxes on. In clips, type nested code over several indented lines: long lines scroll out of the narrow editor.
 - **`pacing`** (frontmatter or a clip step): override `typeCps`, `keyDelayMs`, `preRollMs`, `postRollMs`, `cursorMs`, `afterActionMs`.
 - `$REPO_ROOT` and `$OUT_DIR` are available to `app.command`.
 
