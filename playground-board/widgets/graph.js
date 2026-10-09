@@ -6,6 +6,7 @@
 //   snap: 1                dragged points land on multiples of this (default the grid spacing, or 1)
 //   slider m: 0, 5, 2      a named value: min, max, start, step (default step 1); names are single letters
 //   plot: y = mx + c       a relation y = (an expression in x and the sliders); up to 4
+//   plot: y = 2x + 1, dashed   a dashed line (for a line to compare with)
 //   point A: 2, 5          a fixed point; coordinates may use sliders (point B: 0, c)
 //   point P: 1, 3, drag    a point students drag (it snaps)
 //   segment: A, B          a segment between two points;   line: A, B   the whole line through them
@@ -59,9 +60,10 @@
         s.sliders.push({ name: it.name, min: a[0], max: a[1], start: a[2], step: a[3] || 1 });
         known[it.name] = 1;
       } else if (it.kind === 'plot') {
-        var m = /^\s*y\s*=\s*(.+)$/.exec(it.value);
+        var dashed = /,\s*dashed\s*$/i.test(it.value), rel = it.value.replace(/,\s*dashed\s*$/i, '');
+        var m = /^\s*y\s*=\s*(.+)$/.exec(rel);
         if (!m) throw new Error(where + ': write the relation as "y = …", such as "plot: y = 2x + 1".');
-        s.plots.push({ name: it.name, text: it.value.trim(), rhs: m[1], tree: WPM.compile(m[1]) });
+        s.plots.push({ name: it.name, text: rel.trim(), rhs: m[1], tree: WPM.compile(m[1]), dashed: dashed });
       } else if (it.kind === 'point') {
         if (!/^[A-Z]$/.test(it.name || '')) throw new Error(where + ': a point needs a one-letter capital name, such as "point A: 2, 5".');
         var p = nums(it.value, 2, where), drag = /^drag$/i.test(p[2] || '');
@@ -117,7 +119,7 @@
     plots = spec.plots.map(function (p, i) {
       var colour = B.css(COLOURS[i]) || '#2f6fb3';
       p.colour = colour;
-      return board.create('functiongraph', [function (x) { try { return p.tree(scopeVars(x)); } catch (e) { return NaN; } }, xr[0], xr[1]], { strokeColor: colour, strokeWidth: 3, highlight: false, fixed: true });
+      return board.create('functiongraph', [function (x) { try { return p.tree(scopeVars(x)); } catch (e) { return NaN; } }, xr[0], xr[1]], { strokeColor: colour, strokeWidth: p.dashed ? 2.5 : 3, dash: p.dashed ? 2 : 0, highlight: false, fixed: true });
     });
     objs = {}; dragged = {};
     spec.points.forEach(function (p) {
@@ -130,7 +132,7 @@
       });
       if (p.drag) {
         dragged[p.name] = true;
-        objs[p.name].on('drag', function () { B.moved = true; report(); });
+        objs[p.name].on('drag', function () { B.moved = true; report(true); });   // reported to the lesson when let go
         // Land where the pointer was let go (plus where on the point it was grabbed), so a quick flick does not
         // leave the point at its last drawn position, a square short.
         var grab = null, P = objs[p.name];
@@ -199,15 +201,17 @@
     }
   }
 
-  function report() {
+  // quiet: update the board's own text but tell the lesson nothing yet (a point in the middle of a drag).
+  function report(quiet) {
     sliders.forEach(function (s) { s.out.textContent = s.sl.name + ' = ' + show(vars[s.sl.name]); });
     var lg = B.el('legend');
     if (lg) {
       lg.replaceChildren();
       spec.plots.forEach(function (p) {
-        var li = document.createElement('li'); li.style.setProperty('--c', p.colour);
+        var li = document.createElement('li'); li.style.setProperty('--c', p.colour); if (p.dashed) li.className = 'dashed';
         li.textContent = 'y = ' + withValues(p.rhs);
-        if (spec.sliders.length && withValues(p.rhs) !== p.rhs.replace(/\s+/g, ' ').trim()) { var gen = document.createElement('span'); gen.textContent = p.text; li.appendChild(gen); }
+        if (WPM.vars(p.rhs).some(function (v) { return v in vars; })) {   // the general form, for a rule with sliders in it
+          var gen = document.createElement('span'); gen.textContent = p.text; li.appendChild(gen); }
         lg.appendChild(li);
       });
     }
@@ -227,6 +231,7 @@
     spec.points.forEach(function (p) { var c = sc.points[p.name]; parts.push(p.name + ' (' + show(c[0]) + ', ' + show(c[1]) + ')'); });
     var dragged = spec.points.filter(function (p) { return p.drag; }).map(function (p) { return p.name + ' is at (' + show(sc.points[p.name][0]) + ', ' + show(sc.points[p.name][1]) + ')'; });
     B.say(dragged.join('. ') + (dragged.length ? '.' : ''));
+    if (quiet) return;
     B.save({ vars: vars, points: sc.points });
     B.post({ scope: sc }, parts.join('; '));
   }

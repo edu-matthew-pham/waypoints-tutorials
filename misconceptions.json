@@ -5,6 +5,7 @@
   "one-side-only": {"home": "maths/algebra/balance-method", "text": "An operation is done to one side of an equation only, which breaks the balance."},
   "m-c-swap": {"home": "maths/linear-relations/gradient", "text": "The number on its own (c) is read as the steepness, or a bigger m is expected to lift the line instead of making it steeper."},
   "minus-means-down": {"home": "maths/linear-relations/gradient", "text": "Any minus sign in the rule (such as y = 3x − 2) is taken to mean the line goes down; only a negative m does."},
+  "parallel-same-numbers": {"home": "maths/linear-relations/intercept", "text": "Lines whose rules use the same numbers (y = 2x + 5 and y = 5x + 2) are taken to be parallel; only the same m makes lines parallel."},
   "angle-from-sides": {"home": "code/python/turtle-variables", "text": "The turn is guessed or multiplied instead of worked out as 360 / sides."},
   "assign-vs-compare": {"home": "code/python/turtle-decisions", "text": "A single = is used to ask whether two things are equal."},
   "list-index-range": {"home": "code/python/turtle-lists", "text": "A list of n items has a place n; places run from 0 to n - 1."},

@@ -436,8 +436,9 @@ Vary, Practise, Make).
     - `slider m: 0, 5, 2` (min, max, start, optional step; one lower-case letter, not x or y): shown with − and +
       buttons, and usable in plots and points;
     - `plot: y = mx + c` (up to 4): drawn, and listed under the graph with the slider values put in (`y = 2x + 1`);
+      `plot: y = 2x + 1, dashed` draws a dashed line (a line to compare with);
     - `point A: 2, 5` (fixed; coordinates may use sliders, as in `point B: 0, c`) and `point P: 1, 3, drag`
-      (students drag it; it snaps); one capital letter each;
+      (students drag it; it lands on the nearest grid point, and checks see it only once it is let go); one capital letter each;
     - `segment: A, B` or `line: A, B`; `table: 0, 1, 2, 3` (a table of values of each plot at these x values).
     - `step: 1`: the "1 right, m up" triangle on the first plot from that x, labelled with how far it goes up or down.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
