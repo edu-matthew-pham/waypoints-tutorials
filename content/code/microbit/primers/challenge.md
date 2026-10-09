@@ -37,4 +37,4 @@ Where it breaks: a stopwatch that starts when you press go (not when the pistol 
 
 ## How it connects
 
-Robotics challenges comes next: the same ideas (events, sensors, decisions, functions) driving a real Kitronik MOVE Motor after testing in the simulator.
+Robotics challenges comes next: the same ideas (events, sensors, decisions, functions, radio) driving a two-wheeled robot, first in the robot simulator, then on a real robot.
