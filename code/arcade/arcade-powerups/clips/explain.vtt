@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.102 --> 00:00:04.202
+A power-up has three parts: a variable, an event, and a rule.
+
+2
+00:00:04.455 --> 00:00:08.030
+The variable remembers it: shield is true while it's on.
+
+3
+00:00:08.283 --> 00:00:12.333
+The event changes it: catching a star sets shield to true.
+
+4
+00:00:12.585 --> 00:00:16.860
+The rule uses it: if shield is on, a rock costs no life.

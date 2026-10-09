@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.103 --> 00:00:04.278
+ay is gravity: every frame it adds a little to the falling speed.
+
+2
+00:00:04.531 --> 00:00:09.881
+A jump is a speed upwards. Gravity slows it, stops it, and brings it down.
+
+3
+00:00:10.132 --> 00:00:13.982
+There's no floor, so an if in on game update makes one.
+
+4
+00:00:14.234 --> 00:00:17.884
+Only jump from the ground: put the jump inside an if.

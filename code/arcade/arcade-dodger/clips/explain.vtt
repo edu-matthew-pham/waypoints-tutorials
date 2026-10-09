@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.325
+The game is four building blocks working together.
+
+2
+00:00:03.577 --> 00:00:07.402
+A timer makes a rock every second, at a random height.
+
+3
+00:00:07.653 --> 00:00:12.903
+Velocity carries each rock left, and auto destroy removes it off screen.
+
+4
+00:00:13.156 --> 00:00:17.381
+An overlap takes a life, and a second timer adds to the score.

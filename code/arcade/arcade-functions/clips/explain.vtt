@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.096 --> 00:00:04.021
+A function is a named job. Making it does not run it.
+
+2
+00:00:04.274 --> 00:00:07.274
+A call block runs it, once for each call.
+
+3
+00:00:07.528 --> 00:00:12.428
+speed is a parameter. spawn enemy 50 makes speed fifty inside.
+
+4
+00:00:12.681 --> 00:00:15.206
+So each call can make a different bug.
