@@ -29,4 +29,6 @@ pathways:
       - { path: code/microbit, stage: foundations }
       - { path: code/arcade, stage: foundations }
       - { path: code/robotics, stage: extensions, after: [code/microbit] }
+      - { id: microbit-computer, title: "micro:bit and the computer", stage: extensions, summary: "Send data between a web page and a micro:bit over USB, relay it by radio, and let a model you trained drive a build.", after: [code/microbit] }
+      - { id: ai-robots, title: AI robots, stage: extensions, summary: "A robot driven by a model you trained: what it should do when the model is wrong or unsure.", after: [code/robotics, microbit-computer] }
 ---
