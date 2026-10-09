@@ -6,6 +6,32 @@ summary: Send a number by radio from one micro:bit to another, and react when it
 language: makecode
 explainPicture: radio.ts#predict
 hook: "Wireless doorbells, car keys and walkie-talkies all send small radio messages to a receiver tuned to the same channel."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@radio.ts#predict", lesson: "code/microbit/microbit-radio", target: "microbit" }
+  caption: "radio set group picks a channel"
+  say: "Radio set group picks a channel. Only the same group can hear."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "send number sends to every other micro:bit in the group."
+        say: "send number sends to every other micro:bit in the group, not itself."
+    - caption:
+        text: "on radio received runs each time a message arrives."
+        say: "on radio received is an event. It runs each time a message arrives."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "receivedNumber holds the number that came."
+        say: "received number holds the number that came."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Micro:bits can talk to each other by **radio**. One sends a message; every micro:bit nearby in the same **group** (like a walkie-talkie channel) receives it. You find radio blocks in **Radio**.
 

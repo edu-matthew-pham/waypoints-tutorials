@@ -6,6 +6,32 @@ summary: Build a reaction game that uses everything so far. Wait for the heart, 
 language: makecode
 explainPicture: reaction.ts#timing
 hook: "Sprinters, racing drivers and goalkeepers train their reactions with timers like this. You already know every idea it needs."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@reaction.ts#timing", lesson: "code/microbit/microbit-reaction", target: "microbit" }
+  caption: "running time counts milliseconds since switch-on"
+  say: "Running time counts the milliseconds since the micro:bit switched on."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "Store it as start when the heart appears."
+        say: "Store it as start, at the moment the heart appears."
+    - caption:
+        text: "At the press: reaction = running time − start."
+        say: "At the press, running time minus start is your reaction time."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "waiting catches early presses. best keeps your fastest time."
+        say: "waiting catches early presses, and best keeps your fastest time."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Press **B** to start. After a random wait, a heart appears: press **A** as fast as you can, and the micro:bit shows how many milliseconds you took. You will build it in three milestones, with less help each time.
 

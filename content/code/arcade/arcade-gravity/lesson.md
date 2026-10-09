@@ -6,6 +6,30 @@ summary: Give a sprite gravity, build a floor with an if, and make it jump, but 
 language: makecode
 explainPicture: gravity.ts#jumper
 hook: "Mario, Sonic and every runner game on a phone: you press jump, you rise, you slow down, you fall back. That curve is two numbers and one rule."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@gravity.ts#jumper", lesson: "code/arcade/arcade-gravity", target: "arcade" }
+  caption: "ay is gravity"
+  say: "ay is gravity: every frame it adds a little to the falling speed."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "A jump is a speed upwards: vy = -150."
+        say: "A jump is a speed upwards. Gravity slows it, stops it, and brings it down."
+    - caption:
+        text: "An if in on game update makes a floor."
+        say: "There's no floor, so an if in on game update makes one."
+    - click: "Run"
+    - wait: 600
+    - caption: "Only jump from the ground: put the jump inside an if."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 You know **velocity**: vx and vy say how far the engine moves a sprite every frame. Arcade has a third number, **ay**: the **acceleration** down. Every frame, the engine adds a little to **vy**, so the sprite falls **faster and faster**. That is gravity.
 

@@ -134,6 +134,14 @@ export function buildMakecodePlayground(out = 'dist') {
   return dest;
 }
 
+/** The explain stage: a static page that MakeCode lessons' "Explain it to me" clips record (blocks, then what it makes). */
+export function buildExplainStage(out = 'dist') {
+  const dest = join(out, '_playground-explain');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-explain'), dest, { recursive: true });
+  return dest;
+}
+
 /** KaTeX's stylesheet and fonts, for maths lessons (the maths itself is rendered at build time). */
 export function buildKatex(out = 'dist') {
   const dest = join(out, '_katex');
@@ -151,5 +159,6 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   console.log('HTML playground built into ' + buildHtmlPlayground(out));
   console.log('Board built into ' + await buildMathsPlayground(out));
   console.log('MakeCode playground built into ' + buildMakecodePlayground(out));
+  console.log('Explain stage built into ' + buildExplainStage(out));
   console.log('Science board built into ' + buildSciencePlayground(out));
 }

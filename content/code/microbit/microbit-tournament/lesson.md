@@ -7,6 +7,32 @@ summary: Take the Radio duel further. A scoreboard kept in a list, rounds that s
 language: makecode
 explainPicture: tournament.ts#board
 hook: "A tennis scoreboard, a chess clock and an esports bracket all do the same jobs: keep both scores, start the next round, and declare a winner."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@tournament.ts#board", lesson: "code/microbit/microbit-tournament", target: "microbit" }
+  caption: "scores is a list of two numbers"
+  say: "scores is a list of two numbers: place zero is you, place one is them."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "A win adds at place 0; a loss at place 1."
+        say: "A win adds one at place zero. A loss adds one at place one."
+    - caption:
+        text: "Your partner counts from its side: 2 - 1 for you is 1 - 2 for them."
+        say: "Your partner counts from its side: two one for you is one two for them."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "startRound is a function, so the winner starts the next round."
+        say: "start round is a function, so the winner's micro:bit starts the next round."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 This lesson goes further than the Radio duel, for two players. You will add three things, one milestone each:
 

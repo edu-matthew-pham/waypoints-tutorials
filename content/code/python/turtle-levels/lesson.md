@@ -7,6 +7,36 @@ summary: Turn the game into a real game with screens, levels and a turtle that m
 language: python
 modules: [ui]
 hook: "Every game is a loop that updates its data and redraws, and a few screens it moves between."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@levels.py#solution", view: "output", autorun: 1, use: "ui" }
+  caption: "A state variable remembers which screen you are on"
+  say: "Real games have screens: a title, the game itself, and game over."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 800
+    - caption:
+        text: "state = \"title\" remembers which screen you are on."
+        say: "A variable called state remembers which screen you are on."
+    - caption:
+        text: "Pressing Play changes state to \"play\"."
+        say: "Pressing Play is an event, and it changes the state to play."
+    - click: { selector: "#canvas", at: [0, -160] }
+    - wait: 1500
+    - caption:
+        text: "Every 5 points the level goes up and the turtle hops faster."
+        say: "Every five points, the level goes up and the turtle hops faster."
+    - wait: 800
+    - caption:
+        text: "Smooth moves: one small step every 50 milliseconds."
+        say: "It glides by taking one small step every 50 milliseconds."
+    - wait: 1500
+    - expect: { selector: "#status", contains: "Running" }
 ---
 Your game starts as soon as you press Start and just stops at the end. Real games have **screens** (a title, the game, game over), get harder as you play, and have things that **move**. Each is a small change to the game you already built.
 

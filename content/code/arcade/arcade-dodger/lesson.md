@@ -6,6 +6,32 @@ summary: Build a complete game that uses everything so far. Steer a ship through
 language: makecode
 explainPicture: dodger.ts#predict
 hook: "Asteroids, Flappy Bird and every endless runner are the same game underneath: things come at you, you dodge, and the longer you last the better you score."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@dodger.ts#predict", lesson: "code/arcade/arcade-dodger", target: "arcade" }
+  caption: "The game is four building blocks working together"
+  say: "The game is four building blocks working together."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "A timer makes a rock every second at a random height."
+        say: "A timer makes a rock every second, at a random height."
+    - caption:
+        text: "Velocity carries it left; auto destroy removes it."
+        say: "Velocity carries each rock left, and auto destroy removes it off screen."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "An overlap takes a life. A second timer adds to the score."
+        say: "An overlap takes a life, and a second timer adds to the score."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Your ship sits on the left and moves up and down. Rocks fly in from the right. Touch one and you lose a life; survive and your score climbs. You will build it in three milestones, with less help each time.
 

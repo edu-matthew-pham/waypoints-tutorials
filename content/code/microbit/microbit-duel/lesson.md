@@ -6,6 +6,32 @@ summary: Turn the reaction timer into a two-player race over radio. First to pre
 language: makecode
 explainPicture: duel.ts#start
 hook: "Quiz shows use buzzers that lock out everyone else the moment one player presses. That is a few radio messages and a true/false variable."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@duel.ts#start", lesson: "code/microbit/microbit-duel", target: "microbit" }
+  caption: "Both micro:bits agree a code"
+  say: "Both micro:bits run the same program, and agree a code."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "0 get ready, 1 go, 2 I pressed first."
+        say: "Zero means get ready, one means go, two means I pressed first."
+    - caption:
+        text: "racing is true only while a round is on."
+        say: "racing is true only while a round is on, so only the first press counts."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "The function go keeps one copy of the signal."
+        say: "The go function keeps one copy of the signal, so both see the same."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Two players, two micro:bits. Either player presses **B** to start a round. After a random wait, the heart appears on both; the first to press **A** wins the round. Both micro:bits run the **same** program, and they agree on a code: **0** means get ready, **1** means go, **2** means I pressed first.
 

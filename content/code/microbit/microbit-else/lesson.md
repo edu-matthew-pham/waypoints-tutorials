@@ -6,6 +6,32 @@ summary: Choose between two or more options with else and else if, and see that 
 language: makecode
 explainPicture: else.ts#predict
 hook: "A spirit level shows whether a shelf is flat, tilted left or tilted right. One reading, three possible answers, and exactly one of them shows."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@else.ts#predict", lesson: "code/microbit/microbit-else", target: "microbit" }
+  caption: "if … else chooses between two things"
+  say: "If else chooses between two things."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "True: the first part runs. Else: the second."
+        say: "If the question is true, the first part runs. Otherwise, the second."
+    - caption:
+        text: "else if adds more questions, asked from the top."
+        say: "else if adds more questions. The micro:bit asks them from the top."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "The first true one runs, and the rest are skipped."
+        say: "The first true one runs, and the rest are skipped. So order matters."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson the night light needed two **if** blocks: one to turn the lights on, one to turn them off. An **if … else** block does both: *if* the question is true, run the first part; *else* (otherwise), run the second. Click the **+** at the bottom of an if block to add **else** and **else if**.
 

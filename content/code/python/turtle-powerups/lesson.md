@@ -6,6 +6,33 @@ summary: Add lives, a status bar, a gold turtle and an upgrade you buy with poin
 language: python
 modules: [ui]
 hook: "Games and apps are built from the same parts: buttons that change state, and rules about what each change means."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@powerups.py#solution", view: "output", autorun: 1, use: "ui" }
+  caption: "Games are built from an interface and rules"
+  say: "Games are built from two kinds of parts: an interface, and rules."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 800
+    - caption:
+        text: "The interface: the status bar and the buttons you see."
+        say: "The interface is what you see: the status bar and buttons."
+    - caption:
+        text: "label(x, y, name, value) draws one part. Three calls: Score, Lives, Time."
+        say: "One label function draws each part. Three calls, no copies."
+    - caption:
+        text: "The rules: a miss loses a life, gold is worth 5, an upgrade costs 5."
+        say: "Rules decide what events mean: a miss costs a life."
+    - caption:
+        text: "A fair power-up: strong enough to want, costly enough to think about."
+        say: "A fair power-up is worth wanting, and costly enough to think about."
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Running" }
 ---
 Your game works. Now make it richer: lives instead of misses, a proper status bar, a gold turtle worth more, and an upgrade that costs points. Each one is a small change to the program you already have.
 

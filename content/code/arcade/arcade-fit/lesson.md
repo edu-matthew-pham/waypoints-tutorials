@@ -6,6 +6,32 @@ summary: Work out which games Arcade is built for, which take extra work, and wh
 language: makecode
 explainPicture: fit.ts#predict
 hook: "Game studios choose an engine before they choose a game: a racing game, a card game and a platformer each need different tools. Picking the wrong one costs months."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@fit.ts#predict", lesson: "code/arcade/arcade-fit", target: "arcade" }
+  caption: "Which games suit Arcade?"
+  say: "A game suits Arcade when it's made from the engine's building blocks."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "Built for it: catch, dodge, shooters, runners, mazes, platformers."
+        say: "Built for it: catch, dodge, shooters, runners, mazes and platformers."
+    - caption:
+        text: "Possible with work: cards, quizzes, turning cars."
+        say: "Possible with work: card games, quizzes, turning cars."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "Not a good fit: 3D, real physics, detailed art."
+        say: "Not a good fit: 3D, real physics, or detailed art."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 A **game engine** is the part of a game tool that does the work for you. In this course you have used Arcade's engine every lesson: it moves sprites by their speed, notices overlaps, keeps score and lives, and ends the game.
 

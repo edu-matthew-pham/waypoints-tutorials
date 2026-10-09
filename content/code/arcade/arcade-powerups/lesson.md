@@ -6,6 +6,32 @@ summary: Add a shield that runs out and a blaster with limited ammo to Space dod
 language: makecode
 explainPicture: powerups.ts#predict
 hook: "A mushroom in Mario, a power pellet in Pac-Man, a shield in a space shooter: each one is a variable that changes the rules for a while."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@powerups.ts#predict", lesson: "code/arcade/arcade-powerups", target: "arcade" }
+  caption: "A power-up has three parts"
+  say: "A power-up has three parts: a variable, an event, and a rule."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "The variable: shield is true while it is on."
+        say: "The variable remembers it: shield is true while it's on."
+    - caption:
+        text: "The event: catching a star sets it to true."
+        say: "The event changes it: catching a star sets shield to true."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "The rule: if shield, a rock costs no life."
+        say: "The rule uses it: if shield is on, a rock costs no life."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Your Space dodger now has a yellow **star** that floats past every 5 seconds. Catch it and you get a **shield**: while the shield is on, a rock that hits you is smashed for 5 points instead of costing a life. You will add three power-ups, one milestone each, with less help each time.
 

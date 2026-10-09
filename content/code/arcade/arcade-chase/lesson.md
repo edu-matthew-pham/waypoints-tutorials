@@ -6,6 +6,32 @@ summary: Compare two positions to steer an enemy towards the player with if … 
 language: makecode
 explainPicture: chase.ts#predict
 hook: "The ghosts in Pac-Man, the zombies in Plants vs. Zombies, a guard walking up and down in a stealth game: each one asks 'where is the player?' and turns that way."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@chase.ts#predict", lesson: "code/arcade/arcade-chase", target: "arcade" }
+  caption: "The enemy compares its position with the player's"
+  say: "To chase, the enemy compares its position with the player's, every frame."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "If enemy x < player x, set vx positive: go right."
+        say: "If the enemy is left of the player, a positive speed sends it right."
+    - caption:
+        text: "Else, set vx negative: go left. The same for y."
+        say: "Otherwise a negative speed sends it left. Then the same for y."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "if … else always runs exactly one part."
+        say: "if else always runs exactly one part. The follow block does this for you."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson an **if** in **on game update** kept asking a question. Now the enemy will ask a question about the **player**: *is my x less than the player's x?* If yes, the player is to the right, so go right. **Otherwise** (**else**), go left.
 

@@ -33,6 +33,8 @@ jobs:
       - name: Record voiced clips
         run: |
           node tools/build-playground.mjs
+          # Pictures some clips show (MakeCode explain stage): reuse the live site's, draw any new ones.
+          node tools/render-pictures.mjs --seed https://tutorials.learningwaypoints.com || echo "some pictures could not be drawn"
           lessons="${{ inputs.lesson }}"
           [ -n "$lessons" ] || lessons=$(grep -rl '^voice:' content --include=lesson.md | sed 's|^content/||; s|/lesson.md$||')
           for l in $lessons; do node tools/render.mjs --lesson "$l" --force; done

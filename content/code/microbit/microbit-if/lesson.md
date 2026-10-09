@@ -6,6 +6,32 @@ summary: Make the micro:bit decide what to do, using a sensor and an if block.
 language: makecode
 explainPicture: if.ts#predict
 hook: "Street lights switch on when it gets dark, and a fridge beeps when its door is left open. Each one asks a yes-or-no question about a number, again and again."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@if.ts#predict", lesson: "code/microbit/microbit-if", target: "microbit" }
+  caption: "An if asks a yes-or-no question"
+  say: "An if asks a yes or no question, like: is the light level under 50?"
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "True: it runs the blocks inside."
+        say: "If the answer is true, it runs the blocks inside."
+    - caption:
+        text: "False: it skips them and does nothing."
+        say: "If it's false, it skips them, and does nothing at all."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "So an if can turn lights on, but not off by itself."
+        say: "So an if can turn the lights on, but can't turn them off by itself."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson the micro:bit read sensors and showed numbers. Now it will **decide**. An **if** block (in **Logic**) asks a yes-or-no question, such as *is the light level less than 50?* If the answer is yes (**true**), it runs the blocks inside. If no (**false**), it skips them.
 

@@ -6,6 +6,32 @@ summary: Name a job once as a function, give it a parameter so it can do the job
 language: makecode
 explainPicture: functions.ts#predict
 hook: "A game makes the same thing again and again: another enemy, another coin, another wave. Programmers write that job once, give it a name, and use the name everywhere."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@functions.ts#predict", lesson: "code/arcade/arcade-functions", target: "arcade" }
+  caption: "A function is a named job"
+  say: "A function is a named job. Making it does not run it."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "A call block runs it, once per call."
+        say: "A call block runs it, once for each call."
+    - caption:
+        text: "speed is a parameter: spawnEnemy(50) makes speed 50."
+        say: "speed is a parameter. spawn enemy 50 makes speed fifty inside."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "Each call can make a different bug."
+        say: "So each call can make a different bug."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Making an enemy takes several blocks: create it, place it, set its speed. When a game needs that job in several places, you can **name** the blocks once as a **function**, then **call** the function by name wherever you need it.
 

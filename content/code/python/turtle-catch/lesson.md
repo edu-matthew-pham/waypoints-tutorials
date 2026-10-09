@@ -6,6 +6,37 @@ summary: Build a game that uses everything so far. The turtle hops along a path;
 language: python
 modules: [ui]
 hook: "Every game is a few rules, some data and a loop. You already know all three."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@catch.py#solution", view: "output", autorun: 1, use: "ui" }
+  caption: "A game is a few rules, some data and a loop"
+  say: "A game is a few rules, some data, and a loop."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 800
+    - caption:
+        text: "Start sets the loop going: a timer makes the turtle hop."
+        say: "Press Start, and the loop begins. A timer makes the turtle hop."
+    - click: { selector: "#canvas", at: [0, -160] }
+    - wait: 1500
+    - caption:
+        text: "Data: the score, the turtle's spot, and showing (True or False)."
+        say: "The data is the score, the turtle's spot, and whether it is showing."
+    - wait: 1200
+    - caption:
+        text: "Rules: each click and each hide checks showing first."
+        say: "The rules say what each click means. Each one checks showing first."
+    - wait: 1200
+    - caption:
+        text: "The path is two lists, so you can predict the next spot."
+        say: "The path is two lists of numbers, so good players predict the next spot."
+    - wait: 1500
+    - expect: { selector: "#status", contains: "Running" }
 ---
 The turtle hops around a path. You will turn it into a game: catch the turtle before it hides, score as many as you can in 30 seconds. You will build it in three milestones, with less help each time.
 

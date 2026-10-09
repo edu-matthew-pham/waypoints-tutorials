@@ -82,7 +82,7 @@ Each list item has exactly one verb.
 | `show` | `- show: app.py#launch` | Types that code into the code panel |
 | `clear` | `- clear: app.py` | Empties the code panel |
 | `type` | `- type: { into: Name, text: Ada }` | Moves pointer, clicks field, types (clears it first; `append: true` types at the end instead, and `after: "text"` types just after the first place that text appears, such as inside a `<style>` block, so captions can explain each part as it appears) |
-| `click` | `- click: Submit` | Button, then label, link or text with that name; `{ selector: "#go", preview: true }` clicks inside the HTML preview |
+| `click` | `- click: Submit` | Button, then label, link or text with that name; `{ selector: "#go", preview: true }` clicks inside the HTML preview; `{ selector: "#canvas", at: [-130, -170] }` clicks that point of a turtle drawing (turtle coordinates) |
 | `press` | `- press: Enter` | Key press |
 | `expect` | `- expect: { field: Greeting, value: "Hello" }` | **Fails the build** if the value is wrong (`contains:` also works; `preview: true` checks an element inside the HTML preview) |
 | `wait` | `- wait: 1000` | Pause in milliseconds |
@@ -92,6 +92,23 @@ use `{ selector: "#css" }` instead (works for `click`, `type`, `expect`).
 
 Always end a clip with an `expect`. It turns every clip into a test: if the app changes so
 the lesson is no longer true, CI fails instead of publishing a stale video.
+
+### MakeCode explain clips (explain stage)
+
+MakeCode lessons cannot type code into a clip, so their `explainClip` records the **explain stage** (`playground-explain/`, built to `_playground-explain/`): the program's blocks picture beside "What it makes", revealed by `click: Run`, with captions (and voice) walking through the explain text. The pictures are the lesson's `explainPicture` ones, drawn by `render-pictures`. Frontmatter:
+
+```yaml
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$OUT_DIR" 8131
+  url: http://127.0.0.1:8131/_playground-explain/index.html
+  readySelector: "#stage[data-ready]"
+  layout: full
+explainClip:
+  query: { code: "@if.ts#predict", lesson: "code/microbit/microbit-if", target: microbit }
+  clip: [ ...captions..., click: Run, ..., expect: { selector: "#out h2", contains: Running } ]
+```
+
+`code` must be the `explainPicture` program (its blocks picture is found by the same hash); `lesson` is the slug. A clip's hash includes both pictures, so one recorded while a picture was missing records again once it is drawn.
 
 ### Voiceover (`voice:`)
 

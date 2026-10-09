@@ -6,6 +6,32 @@ summary: Send a small number that stands for a word in a list both micro:bits sh
 language: makecode
 explainPicture: messages.ts#chooser
 hook: "Morse code, flag signals and the numbers a fast-food counter calls out all work because both sides agree what each code means."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@messages.ts#chooser", lesson: "code/microbit/microbit-messages", target: "microbit" }
+  caption: "A shared list is a code"
+  say: "If both micro:bits have the same list, a place number is enough."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "Send the place number, not the word."
+        say: "So you send the place number, not the word itself."
+    - caption:
+        text: "The receiver shows get value at receivedNumber."
+        say: "The receiver shows the word at that place in its own list."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "It only works if both lists match, in the same order."
+        say: "The code only works if both lists match, in the same order."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson, 1 meant "left" and 2 meant "right" because you decided so. A **list** makes that agreement clear: if both micro:bits have the same list of words, sending a **place number** is enough. The receiver looks up the word at that place.
 

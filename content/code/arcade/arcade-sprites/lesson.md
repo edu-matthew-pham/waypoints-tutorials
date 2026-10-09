@@ -6,6 +6,30 @@ summary: Put pictures called sprites on the game screen, and place each one with
 language: makecode
 explainPicture: sprites.ts#corners
 hook: "Every 2D game you have played, from Pac-Man to Mario, is pictures placed on a grid of tiny squares, then moved."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@sprites.ts#corners", lesson: "code/arcade/arcade-sprites", target: "arcade" }
+  caption: "The screen is 160 across and 120 down"
+  say: "The screen is 160 pixels across, and 120 down."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption: "x counts across from the left edge."
+    - caption:
+        text: "y counts down from the top edge."
+        say: "y counts down from the top edge, so a bigger y is lower."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "(0, 0) is the top left. (80, 60) is the middle."
+        say: "Zero zero is the top left corner. 80, 60 is the middle."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 In Arcade, every character, coin and cloud is a **sprite**: a small picture the game can place, move and test. You program with **blocks**, and the **simulator** (the little game console beside the blocks) runs your game straight away.
 

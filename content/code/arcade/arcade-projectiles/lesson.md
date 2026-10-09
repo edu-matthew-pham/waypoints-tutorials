@@ -6,6 +6,32 @@ summary: Fire projectiles with the A button, then use a list of every sprite of 
 language: makecode
 explainPicture: projectiles.ts#predict
 hook: "Space Invaders, Galaga and every 'shoot 'em up' since: you fire, and the game has to keep track of every shot and every alien on the screen at once."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@projectiles.ts#predict", lesson: "code/arcade/arcade-projectiles", target: "arcade" }
+  caption: "A projectile is its own kind"
+  say: "A projectile is fired from a sprite, and it's its own kind: Projectile."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "So a hit is a Projectile–Enemy overlap."
+        say: "So a hit is an overlap between a projectile and an enemy."
+    - caption:
+        text: "array of sprites of kind Enemy is a list of every enemy."
+        say: "Array of sprites of kind enemy is a list of every enemy right now."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "for element runs once for each item: one press destroys them all."
+        say: "A for element loop runs once for each one, so one press destroys them all."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 So far each sprite had its own name: `ship`, `cat`, `car`. A game with shots flying everywhere cannot name them all. Arcade gives you two tools for that.
 

@@ -6,6 +6,32 @@ summary: Keep the player's level in a variable, keep what changes per level in a
 language: makecode
 explainPicture: levels.ts#predict
 hook: "Almost every game gets harder as you play: faster ghosts, more aliens, a new world. Behind it is one number, the level, and a list of what each level is like."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@levels.ts#predict", lesson: "code/arcade/arcade-levels", target: "arcade" }
+  caption: "A variable level remembers where the player is"
+  say: "A variable called level remembers where the player is, starting at zero."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "speeds[level] is the speed for this level."
+        say: "A list holds what changes, so speeds at level is this level's speed."
+    - caption:
+        text: "startLevel clears enemies and sets up the next level."
+        say: "start level clears the old enemies and sets up the new one."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "Level up where the score changes."
+        say: "Level up where the score changes, not in on game update."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 A game with levels needs three things you already know:
 

@@ -6,6 +6,32 @@ summary: Keep many values in one list, pick one by its place, and pick one at ra
 language: makecode
 explainPicture: lists.ts#ball
 hook: "A playlist, a lunch menu, a class roll: each is a list of things in order, and you pick one by its place or at random."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@lists.ts#ball", lesson: "code/microbit/microbit-lists", target: "microbit" }
+  caption: "A list holds many values, in order"
+  say: "A list holds many values, in order, under one name."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "Places count from 0: Yes is at 0, Maybe at 2."
+        say: "Each item has a place, counted from zero. Yes is at zero, Maybe at two."
+    - caption:
+        text: "The last place is length − 1."
+        say: "So the last place is the length minus one."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "Pick random 0 to length − 1, then get the value there."
+        say: "To pick at random, pick a place, then get the value at that place."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 A variable holds one value. A **list** holds many, in order, under one name, such as `answers`. Each item has a **place number** (an **index**), and the micro:bit counts places from **0**. You find list blocks in **Advanced › Arrays** (an array is another name for a list).
 

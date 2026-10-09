@@ -6,6 +6,32 @@ summary: Fly a sprite with the arrow keys, and set a speed so the engine keeps a
 language: makecode
 explainPicture: moving.ts#drift
 hook: "A car in a racing game, a cloud drifting past, a ball in pong: none of them is pushed by hand every frame. The game is told a speed, and keeps them moving."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@moving.ts#drift", lesson: "code/arcade/arcade-moving", target: "arcade" }
+  caption: "A sprite has a position and a velocity"
+  say: "A sprite has a position and a velocity."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "Position (x, y) is where it is now. Setting it moves it once."
+        say: "Position is where it is now. Setting it moves the sprite once."
+    - caption:
+        text: "Velocity (vx, vy) is a speed, in pixels per second."
+        say: "Velocity is a speed. The engine moves the sprite a little every frame."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "It keeps moving until something changes it."
+        say: "So it keeps moving until something changes it, like a wall or a new speed."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson every sprite stood still. Now they move, in two ways:
 

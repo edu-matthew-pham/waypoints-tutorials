@@ -6,6 +6,30 @@ summary: Show pictures on the micro:bit, then make them move with a loop.
 language: makecode
 explainPicture: leds.ts#sign
 hook: "Scrolling signs at train stations and the lights on a pedestrian crossing run the same simple loop: show a picture, wait, show the next one."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@leds.ts#sign", lesson: "code/microbit/microbit-leds", target: "microbit" }
+  caption: "The micro:bit runs blocks in order, top to bottom"
+  say: "The micro:bit runs blocks in order, from top to bottom."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption: "Blocks in on start run once, so the last picture stays on."
+    - caption:
+        text: "Blocks in forever run again and again: a loop."
+        say: "Blocks in forever run again and again. That loop makes an animation."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "pause keeps a picture on longer: 1000 ms is one second."
+        say: "pause keeps a picture on for longer. A thousand milliseconds is one second."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 The micro:bit has 25 small lights (LEDs) in a 5 by 5 grid. You program it with **blocks**, and the **simulator** (the picture of a micro:bit next to the blocks) runs your program straight away. No real micro:bit needed.
 

@@ -12,6 +12,7 @@ import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadLessons, validateLesson, getSnippet, voiceSpec, captionText, captionSay } from './lesson.mjs';
 import { synth, voiceHashInput, ENGINE as VOICE_ENGINE } from './voice.mjs';
+import { blocksId } from './teach.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const argv = process.argv.slice(2);
@@ -28,7 +29,7 @@ const rendererSrc = readFileSync(fileURLToPath(import.meta.url), 'utf8');
 // ---------- cache ----------
 // Clips show a playground, so a change to the playground a lesson uses (or its snippets) must re-record
 // that lesson's clips. Only that playground counts: editing the micro:bit snippets leaves turtle clips alone.
-const SNIPPETS = { playground: 'turtle', 'playground-html': 'html', 'playground-makecode': 'microbit', 'playground-maths': 'maths', 'playground-board': 'maths' };
+const SNIPPETS = { playground: 'turtle', 'playground-html': 'html', 'playground-makecode': 'microbit', 'playground-maths': 'maths', 'playground-board': 'maths', 'playground-explain': 'none' };
 const sharedCache = new Map();
 function sharedFilesHash(lesson) {
   const pg = String(lesson.app?.command ?? '').match(/_(playground[\w-]*)/)?.[1];
@@ -52,6 +53,14 @@ function stepHash(lesson, step) {
   h.update(stageHtml).update(rendererSrc).update(sharedFilesHash(lesson));
   const vs = voiceSpec(lesson.voice);
   if (vs) h.update(voiceHashInput(vs));
+  // The explain stage shows pictures drawn by render-pictures: they are part of the clip, so a missing or redrawn
+  // picture records the clip again (a clip made while makecode.com was down mends itself on the next deploy).
+  if (/_playground-explain/.test(lesson.app?.url || '')) {
+    const q = step.config.query || {};
+    const code = typeof q.code === 'string' && q.code.startsWith('@') ? getSnippet(lesson.dir, q.code.slice(1)) : String(q.code ?? '');
+    for (const f of [join(OUT, '_pictures', 'makecode', `${blocksId(code)}.png`), join(OUT, '_pictures', 'makecode-out', String(q.lesson || ''), 'explain.png')])
+      h.update(existsSync(f) ? readFileSync(f) : 'missing');
+  }
   return h.digest('hex').slice(0, 16);
 }
 
@@ -209,15 +218,19 @@ async function recordClip(browser, lesson, step, outDir) {
   await speak(opening);
   await sleep(p.preRollMs);
 
-  const go = async (loc, { click = true } = {}) => {
+  // at: [x, y] clicks that point of a turtle drawing (turtle coordinates: 0, 0 is the middle, y up; the drawing
+  // spans `extent` units across its shorter side, 500 unless the query sets one), e.g. a button drawn at (-130, -170).
+  const go = async (loc, { click = true, at = null } = {}) => {
     await loc.scrollIntoViewIfNeeded();
     const b = await loc.boundingBox();
-    const x = b.x + b.width / 2, y = b.y + b.height / 2;
+    const k = at ? Math.min(b.width, b.height) / (Number(c.query?.extent) || 500) : 0;
+    const px = b.width / 2 + (at ? at[0] * k : 0), py = b.height / 2 - (at ? at[1] * k : 0);
+    const x = b.x + px, y = b.y + py;
     await page.evaluate(([x, y]) => window.stage.moveCursor(x, y), [x, y]);
     await sleep(p.cursorMs + 80);
     if (click) {
       await page.evaluate(([x, y]) => window.stage.ripple(x, y), [x, y]);
-      await loc.click();
+      await loc.click(at ? { position: { x: px, y: py } } : undefined);
     }
   };
 
@@ -239,7 +252,7 @@ async function recordClip(browser, lesson, step, outDir) {
       }
       else if (verb === 'run') { await openApp(); await sleep(900); }
       else if (verb === 'wait') await sleep(v);
-      else if (verb === 'click') { await go(await target(frame, v, ['button', 'label', 'link', 'text'])); await sleep(p.afterActionMs); }
+      else if (verb === 'click') { await go(await target(frame, v, ['button', 'label', 'link', 'text']), { at: Array.isArray(v?.at) ? v.at : null }); await sleep(p.afterActionMs); }
       else if (verb === 'press') { await page.keyboard.press(v); await sleep(p.afterActionMs); }
       else if (verb === 'type') {
         const loc = await target(frame, v, ['label', 'placeholder']);

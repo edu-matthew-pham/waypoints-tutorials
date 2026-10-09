@@ -6,6 +6,32 @@ summary: Make the micro:bit wait for a button press or a shake, then react.
 language: makecode
 explainPicture: buttons.ts#events
 hook: "A doorbell, a game controller, a TV remote: each one waits for a press, then does one job."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@buttons.ts#events", lesson: "code/microbit/microbit-buttons", target: "microbit" }
+  caption: "Some blocks wait for an event"
+  say: "Some blocks wait. They run only when something happens: an event."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "on button A pressed runs every time A is pressed."
+        say: "on button A pressed runs its blocks every time A is pressed."
+    - caption:
+        text: "on start runs once. forever runs again and again."
+        say: "on start runs once, at the start. forever runs again and again."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "Event blocks run each time that thing happens."
+        say: "Event blocks, like on shake, run each time that thing happens."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson the micro:bit ran its blocks and carried on by itself. Most devices **wait** instead: nothing happens until you press something. A block that waits like this is called an **event** block.
 

@@ -7,6 +7,32 @@ summary: Turn your pitch card into a real game. Get the core loop working, add a
 language: makecode
 explainPicture: own.ts#prototype
 hook: "Every game studio works this way: a one-page pitch, a rough prototype, then playtest, fix, and add one thing at a time until it is fun."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@own.ts#prototype", lesson: "code/arcade/arcade-own-game", target: "arcade" }
+  caption: "Build a game in milestones"
+  say: "Build your game in milestones, and play it after each one."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "1. Core loop: a player, a prize, a danger, a score."
+        say: "First the core loop: a player, something to collect, a danger, a score."
+    - caption:
+        text: "2. Win and lose. 3. One polish."
+        say: "Then a way to win and lose. Then one piece of polish."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "Then watch someone else play, and change one thing."
+        say: "Then watch someone else play it, and change one thing."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 In **Will it work in Arcade?** you wrote a **pitch card** (the genre, the building blocks, the hard part and a workaround) and built a one-screen prototype. Now you make it a real game, in three milestones. This time there is no code to start from: only goals. Keep your pitch card beside you.
 

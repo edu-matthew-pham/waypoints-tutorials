@@ -6,6 +6,32 @@ summary: Make something happen when two sprites touch, and use kinds to decide w
 language: makecode
 explainPicture: overlaps.ts#kinds
 hook: "Pac-Man eats a dot, Mario grabs a coin, a ghost catches you: every game is full of things touching, and each touch means something different."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@overlaps.ts#kinds", lesson: "code/arcade/arcade-overlaps", target: "arcade" }
+  caption: "When two sprites touch, they overlap"
+  say: "When two sprites touch, they overlap."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "on overlap names two kinds, such as Player and Food."
+        say: "An on overlap event names two kinds, like Player and Food."
+    - caption:
+        text: "sprite is the first one, otherSprite the second."
+        say: "Inside it, sprite is the first one, and other sprite the second."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "The kind you choose decides which overlap runs."
+        say: "The kind you choose for a sprite decides which overlap events it runs."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson sprites moved, but flew straight through each other. Now they notice. When two sprites touch, they **overlap**, and an **on overlap** event can run.
 

@@ -6,6 +6,30 @@ summary: Put an if inside on game update, so the game keeps checking a question 
 language: makecode
 explainPicture: if.ts#predict
 hook: "In Pac-Man, go off one side of the screen and you come back on the other. The game is asking 'has Pac-Man gone off the edge?' many times every second."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@if.ts#predict", lesson: "code/arcade/arcade-if", target: "arcade" }
+  caption: "An if runs only when its question is true"
+  say: "An if runs its blocks only when its question is true."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "In on start, it is asked once."
+        say: "In on start, the question is asked once, before the game begins."
+    - caption:
+        text: "In on game update, about 30 times a second."
+        say: "In on game update, it's asked every frame, about 30 times a second."
+    - click: "Run"
+    - wait: 600
+    - caption: "To keep checking something, put the if in on game update."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 A game needs to **decide**: has the car gone off the screen? Is the player in the safe zone? An **if** block (in **Logic**) asks a yes-or-no question, such as *is car x more than 160?* If the answer is yes (**true**), it runs the blocks inside. If no (**false**), it skips them.
 

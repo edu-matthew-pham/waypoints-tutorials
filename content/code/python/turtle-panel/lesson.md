@@ -7,6 +7,33 @@ summary: Turn the game into an app with a panel of buttons made from lists.
 language: python
 modules: [ui]
 hook: "Every app is a panel of controls over some state. Build the panel from data, and adding a control is one more item in a list."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@panel.py#solution", view: "output", autorun: 1, use: "ui" }
+  caption: "Keep the buttons as data"
+  say: "Apps have panels: rows of buttons that change what the program does."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 800
+    - caption:
+        text: "The buttons are data: a list of names and a list of positions."
+        say: "Instead of an if for every button, the buttons are kept in lists."
+    - caption: "One loop draws a button for every name."
+    - caption:
+        text: "Another loop finds which button was clicked."
+        say: "Another loop checks each button in turn, to find which one was clicked."
+    - click: { selector: "#canvas", at: [-130, -170] }
+    - wait: 2500
+    - caption:
+        text: "Adding a button is one more item in each list."
+        say: "Adding a button is one more item in each list. Gradio works this way."
+    - wait: 1500
+    - expect: { selector: "#status", contains: "Running" }
 ---
 Your game has one button. Real apps have panels: rows of controls that change what the program does. Here the buttons come from **lists**, so a loop draws them and a loop finds which one was clicked.
 

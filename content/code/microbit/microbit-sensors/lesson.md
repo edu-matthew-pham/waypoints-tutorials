@@ -6,6 +6,32 @@ summary: Read light, temperature and tilt as numbers, and show them.
 language: makecode
 explainPicture: sensors.ts#investigate
 hook: "A phone dims its screen in the dark and turns the picture when you tilt it. Inside, a sensor is just handing the phone a number."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@sensors.ts#investigate", lesson: "code/microbit/microbit-sensors", target: "microbit" }
+  caption: "A sensor measures something and gives a number"
+  say: "A sensor measures something, and gives your program a number."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "light level: 0 (dark) to 255 (bright)."
+        say: "light level goes from zero, dark, to 255, bright."
+    - caption:
+        text: "temperature in °C. acceleration x: tilt left or right."
+        say: "temperature is in degrees Celsius. acceleration x tells you the tilt."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "The world keeps changing it, so read it again in forever."
+        say: "The world keeps changing the number, so read it again in forever."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 The micro:bit has **sensors**: parts that measure the world around it, such as how bright it is or how warm. Each sensor gives the program a **number**. You find them in **Input**.
 

@@ -500,6 +500,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         if (verb === 'type' && !(v && v.text !== undefined && (v.into || v.selector))) err(w, 'type needs {into|selector, text}');
         if (verb === 'expect' && !(v && (v.field || v.selector) && (v.value !== undefined || v.contains !== undefined))) err(w, 'expect needs {field|selector, value|contains}');
         if (verb === 'click' && !(typeof v === 'string' || (v && v.selector))) err(w, 'click needs a label string or {selector}');
+        if (verb === 'click' && v && typeof v === 'object' && v.at !== undefined && !(Array.isArray(v.at) && v.at.length === 2 && v.at.every(Number.isFinite))) err(w, 'click.at needs turtle coordinates [x, y]');
         if (verb === 'wait' && typeof v !== 'number') err(w, 'wait needs milliseconds');
         if (verb === 'type' && v && typeof v.text === 'string' && v.text.startsWith('@')) {
           try { snip(v.text.slice(1)); } catch (e) { err(w, `type.text: ${e.message}`); }

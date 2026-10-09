@@ -6,6 +6,32 @@ summary: Use a variable to remember a number, and change it each time a button i
 language: makecode
 explainPicture: counting.ts#trace
 hook: "A step counter, a scoreboard, a ticket machine at the deli: each one remembers a number and changes it when something happens."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@counting.ts#trace", lesson: "code/microbit/microbit-counting", target: "microbit" }
+  caption: "A variable is a named box that holds a value"
+  say: "A variable is a named box. count holds a number."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "set count to 0 puts 0 in the box."
+        say: "set count to zero puts zero in the box, and throws the old value away."
+    - caption:
+        text: "change count by 1 adds 1 to what is there."
+        say: "change count by one adds one to what is already there."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "show number count shows it without changing it."
+        say: "show number shows the value without changing it."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 So far the micro:bit has shown pictures but forgotten everything straight away. To count, it needs to **remember** a number. A **variable** is a named place to keep a value, such as `count`. You find variable blocks in **Variables**.
 

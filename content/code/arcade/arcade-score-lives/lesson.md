@@ -6,6 +6,32 @@ summary: Give the player lives, send enemies on a timer, and let the engine end 
 language: makecode
 explainPicture: lives.ts#dodge
 hook: "Three hearts in the corner, a clock ticking down, enemies that keep on coming: that is what turns moving sprites into a game you can win or lose."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@lives.ts#dodge", lesson: "code/arcade/arcade-score-lives", target: "arcade" }
+  caption: "Info blocks and timers do a lot of work"
+  say: "The info blocks and timers do a lot of the work for you."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "set life shows hearts. At 0 the game ends by itself."
+        say: "set life shows hearts, and at zero lives the game ends by itself."
+    - caption:
+        text: "A timer runs its blocks again every second."
+        say: "A timer runs its blocks again every second, so it can make enemies."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "An overlap runs every frame: destroy the enemy when it hits."
+        say: "An overlap runs every frame, so destroy the enemy when it hits."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 Last lesson the score went up and down, but the game never ended. Arcade's **Info** blocks keep a score, **lives** and a **countdown** at the top of the screen, and they end the game by themselves.
 

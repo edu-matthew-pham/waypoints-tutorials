@@ -7,6 +7,32 @@ summary: Make the reaction game harder. Decoys you must not press, a list of tar
 language: makecode
 explainPicture: levels.ts#targets
 hook: "Arcade games keep you playing by getting harder as you improve, and by trying to trick you. Both are a few rules on top of the game you already built."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@levels.ts#targets", lesson: "code/microbit/microbit-levels", target: "microbit" }
+  caption: "Levels from a list of target times"
+  say: "Each level has a target time, kept in a list called targets."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "decoy is true while the cross shows, so a press then is caught."
+        say: "decoy is true while the cross is showing, so a press then is caught."
+    - caption:
+        text: "The level is the place in the list: reaction < targets[level]."
+        say: "The level is the place in the list, so each level's target is harder."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "When level reaches the list's length, you have won."
+        say: "When the level reaches the length of the list, you have won."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 This lesson goes further than the Reaction timer, for one player. You will add three rules, one milestone each:
 

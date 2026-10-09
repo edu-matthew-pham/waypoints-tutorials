@@ -15,7 +15,7 @@ import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV
 import { readFileSync } from 'node:fs';
 import { snippetId, unlockKind, pictureSpec, makecodePackage, makecodeExtensions, captionText } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
-import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildMakecodePlayground } from './build-playground.mjs';
+import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildMakecodePlayground, buildExplainStage } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { loadMathsCards, mathsRefItem, mathsCheatBody, mathsCheatMd, MATHS_CARD_CSS } from './maths-cards.mjs';
@@ -133,6 +133,7 @@ await buildMathsPlayground(OUT);
 buildSciencePlayground(OUT);
 buildKatex(OUT);
 buildMakecodePlayground(OUT);
+buildExplainStage(OUT);
 // Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
 const VERSIONS = Object.fromEntries(['_playground', '_playground-html', '_playground-board', '_playground-makecode', '_playground-science'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
 buildCreate(OUT);

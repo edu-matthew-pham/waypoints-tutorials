@@ -6,6 +6,32 @@ summary: Name a job once as a function, then use it from anywhere. Then see that
 language: makecode
 explainPicture: functions.ts#predict
 hook: "A recipe card says 'make the sauce (see page 12)' instead of writing the sauce out every time. A function is that named job, written once and used everywhere."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
+  url: "http://127.0.0.1:8131/_playground-explain/index.html"
+  readySelector: "#stage[data-ready]"
+  layout: full
+voice: true
+explainClip:
+  query: { code: "@functions.ts#predict", lesson: "code/microbit/microbit-functions", target: "microbit" }
+  caption: "A function is a named job"
+  say: "A function is a named job. Making it does not run it."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - wait: 600
+    - caption:
+        text: "A call block runs it, once per call."
+        say: "A call block runs it, once for each call."
+    - caption:
+        text: "points is a parameter: showScore(5) makes points 5."
+        say: "points is a parameter, an input. Calling show score 5 makes points five."
+    - click: "Run"
+    - wait: 600
+    - caption:
+        text: "Event blocks are functions too, called for you."
+        say: "Every event block is a function too. The micro:bit calls it for you."
+    - wait: 1200
+    - expect: { selector: "#out h2", contains: "Running" }
 ---
 When the same blocks are needed in several places, you can **name** them once as a **function**, then **call** it by name wherever you need it. Make one in **Advanced › Functions › Make a Function**. The **call** block then appears in the same place.
 
