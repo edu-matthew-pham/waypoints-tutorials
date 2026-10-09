@@ -13,7 +13,7 @@ import { createRequire } from 'node:module';
 import { Marked } from 'marked';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV_CSS, NAV_JS } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
-import { snippetId, unlockKind } from './lesson-core.mjs';
+import { snippetId, unlockKind, pictureSpec } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildHtmlPlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
@@ -57,6 +57,15 @@ function expectedHtml(lesson, cfg, key) {
   return `<details class="reveal expected"><summary>Show the expected result</summary><figure><img src="${'../'.repeat(lesson.depth)}_pictures/expected/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(pic.hash || '')}" alt="What the finished page looks like" width="${Math.round(pic.w / (pic.div || 2))}" height="${Math.round(pic.h / (pic.div || 2))}" loading="lazy"><figcaption>What it should look like. Your words can be different.</figcaption></figure></details>`;
 }
 
+// "What this code makes": picture: on steps and tasks, and explainPicture (render-pictures, _pictures/shown/<slug>/<key>.png).
+let SHOWN = null;
+function pictureHtml(lesson, v, key) {
+  const sp = pictureSpec(v);
+  const pic = sp && (SHOWN ||= readPics(['shown']))[`${lesson.slug}/${key}`];
+  if (!pic) return '';
+  return `<figure class="shown"><img src="${'../'.repeat(lesson.depth)}_pictures/shown/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(pic.hash || '')}" alt="The page this code makes${sp.boxes ? ', with Boxes on' : ''}" width="${Math.round(pic.w / (pic.div || 2))}" height="${Math.round(pic.h / (pic.div || 2))}" loading="lazy"><figcaption>What this code makes${sp.boxes ? ' (with Boxes on: each box is a tag)' : ''}</figcaption></figure>`;
+}
+
 function buildLesson(lesson, parentTitle, course) {
   const dir = join(OUT, lesson.slug);
   mkdirSync(dir, { recursive: true });
@@ -66,6 +75,7 @@ function buildLesson(lesson, parentTitle, course) {
     clipHtml: (s) => clipHtml(lesson, s),
     tryHtml: (s) => tryHtml(lesson, s),
     expectedHtml: (cfg, key) => expectedHtml(lesson, cfg, key),
+    pictureHtml: (v, key) => pictureHtml(lesson, v, key),
     snippetNames,
     crumb: { href: '../', title: parentTitle },
     course,

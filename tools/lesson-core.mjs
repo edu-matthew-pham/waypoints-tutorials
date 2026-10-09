@@ -187,6 +187,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     steps,
     // explainClip (frontmatter): a captioned clip shown in the "Explain it to me" panel. It is recorded and validated
     // like a step's clip, as a pseudo-step with id "explain" (clips/explain.mp4).
+    explainPicture: meta.explainPicture || null,   // a picture of a region's page in the Explain it to me panel (see pictureItems)
     explainStep: meta.explainClip && typeof meta.explainClip === 'object' && !Array.isArray(meta.explainClip)
       ? { index: 0, id: 'explain', title: 'Explain it to me', body: '', tasks: [], config: { stage: 'info', app: true, ...meta.explainClip } }
       : null,
@@ -211,6 +212,16 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
   }
   const snip = (ref) => snippetFrom(read, ref);
   // expected: file#region whose page is shown (as a picture, no code) behind "Show the expected result". HTML playground only.
+  // picture: a region's page shown beside the code (HTML lessons; not on Predict or Run, where it would give the answer away).
+  const validatePicture = (v, where, stage) => {
+    if (v === undefined) return;
+    const sp = pictureSpec(v);
+    if (!sp) return err(where, 'picture must be a code reference, such as page.html#combos, or { ref: page.html#combos, boxes: true }');
+    if (lesson.language !== 'html') return err(where, 'picture works in HTML lessons only');
+    if (stage === 'predict' || stage === 'run') return err(where, 'picture would give the prediction away: use it on Investigate, Modify, Make or info steps');
+    try { snip(sp.ref); } catch (e) { err(where, `picture: ${e.message}`); }
+  };
+  validatePicture(lesson.explainPicture ?? undefined, 'explainPicture', 'info');
   const validateExpected = (v, where, c) => {
     if (v === undefined) return;
     if (typeof v !== 'string' || !v.trim()) return err(where, 'expected must be a code reference, such as page.html#sol-make');
@@ -311,6 +322,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     const c = s.config;
     if (!STAGES.includes(c.stage)) err(where, `stage must be one of ${STAGES.join(', ')} (got "${c.stage}")`);
     validateExpected(c.expected, where, c);
+    validatePicture(c.picture, where, c.stage);
     if (c.code) {
       try { snip(c.code); } catch (e) { err(where, e.message); }
     }
@@ -377,6 +389,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       }
       if (tc.insight !== undefined && !(typeof tc.insight === 'string' && tc.insight.trim())) err(tw, 'insight must be a short text');
       validateExpected(tc.expected, tw, c);
+      validatePicture(tc.picture, tw, c.stage);
       if (tc.check !== undefined) validateCheck(tc.check, tw, c);
       if (tc.unlocks !== undefined) {
         if (!Array.isArray(tc.unlocks) || !tc.unlocks.every((u) => typeof u === 'string')) err(tw, 'unlocks must be a list of snippet ids');
@@ -402,6 +415,20 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
 export const TEACHER_TEXT = ['summary', 'before', 'stretch', 'support', 'leads', 'explain', 'timing'];
 
 /** Steps and tasks a solution can be keyed by: "step-4" or "step-4#t2". */
+/** picture: "page.html#x" or { ref: "page.html#x", boxes: true } -> { ref, boxes } (or null). */
+export const pictureSpec = (v) => (typeof v === 'string' ? { ref: v, boxes: false } : v && typeof v === 'object' && typeof v.ref === 'string' ? { ref: v.ref, boxes: !!v.boxes } : null);
+
+/** Every "what this code makes" picture in an HTML lesson: steps' and tasks' picture:, and explainPicture (key "explain"). */
+export function pictureItems(lesson) {
+  const out = [];
+  for (const s of lesson.steps) {
+    if (s.config.picture) out.push({ key: s.id, ...pictureSpec(s.config.picture) });
+    for (const t of s.tasks) if (t.config.picture) out.push({ key: t.id.replace('#', '-'), ...pictureSpec(t.config.picture) });
+  }
+  if (lesson.explainPicture) out.push({ key: 'explain', ...pictureSpec(lesson.explainPicture) });
+  return out.filter((x) => x.ref);
+}
+
 /** Every "Show the expected result" picture a lesson asks for: [{ key: 'step-4-t2', ref: 'page.html#sol-x' }]. */
 export function expectedItems(lesson) {
   return lesson.steps.flatMap((s) => [

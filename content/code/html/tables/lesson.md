@@ -11,6 +11,7 @@ app:
   layout: full
 pacing:
   keyDelayMs: 40
+explainPicture: { ref: page.html#explain, boxes: true }
 explainClip:
   query: { code: "", boxes: 1, zoom: 1.5 }
   caption: "A table is rows, and each row is cells"
@@ -97,6 +98,13 @@ tasks:
       misconception: table-row-cells
       text: "The Hawks have no points, and their row is shorter than the others. Click the line that causes it."
       explain: "Line 4 has only one cell. Every row needs a cell for each column, so the Hawks row needs <td>9</td> after the name."
+  - picture: { ref: page.html#combos, boxes: true }
+    check:
+      type: question
+      q: "What can go inside a <td> cell?"
+      options: ["Only plain text", "Text, and other tags too: links, pictures, strong words", "Only numbers", "Only another <tr>"]
+      answer: 1
+      explain: "A cell is a box like any other. Put a link, a picture or a <strong> word inside it, and close it before the </td>."
 ```
 
 ### Match the tags
@@ -115,6 +123,18 @@ Put the scrambled lines in order.
 
 One row in this table is broken.
 
+### What goes in a cell?
+
+A cell can hold more than words: a link, a picture, an important word.
+
+```html
+<tr>
+  <td><a href="https://example.com/owls">Owls</a></td>
+  <td><strong>12</strong></td>
+  <td><img src="trophy.svg" alt="Trophy" width="40"></td>
+</tr>
+```
+
 ## Modify
 
 ```step
@@ -130,6 +150,11 @@ tasks:
       - "Then every other row needs one more <td>."
     check: { type: code, text: "Add a Wins column.", rules: { contains: ["<th>Wins</th>"] } }
     expected: page.html#sol-col
+  - hint:
+      - "The link goes inside the cell: <td>, then <a href=\"...\">, then the name."
+      - "Close </a> before </td>."
+    check: { type: code, text: "Link the Owls cell to the Owls page.", rules: { contains: ["<td><a href=\"https://example.com/owls\">Owls</a></td>"] } }
+    expected: page.html#sol-cell-link
 ```
 
 ### Add a row
@@ -139,6 +164,10 @@ Add the Kestrels, with 7 points.
 ### Add a column
 
 Add a `Wins` column: the Owls have 4, the Hawks 3 and the Kestrels 2.
+
+### Link a house
+
+Make `Owls` a link to `https://example.com/owls`, inside its cell.
 
 ## Make
 

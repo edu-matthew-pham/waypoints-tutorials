@@ -34,12 +34,19 @@ exit:
   q: "In <a href=\"https://example.com\">Join now</a>, what will people see on the page, and what does href do?"
   a: "They see the words Join now as a link. href holds the address the link goes to; it is an attribute inside the opening tag."
 explain: |
-  `<ul>` (bullets) or `<ol>` (numbers) is a box for a list, and each `<li>` is one item inside it. The browser adds the bullets or numbers.
+  The video and the picture show the same steps:
 
-  A link's address goes inside the opening tag: `<a href="...">`. `href` is an **attribute**, extra information in a tag. Only the words between `<a>` and `</a>` show.
+  1. `<ul>` opens a box for a list (`<ol>` for a numbered one).
+  2. Each `<li>` is one item, inside the list. The browser adds the bullets or numbers.
+  3. `</ul>` closes the list.
+  4. A link: `<a href="...">`. `href` says where it goes. It is an **attribute**: extra information inside the opening tag.
+  5. The words between `<a>` and `</a>` are what people click. The address does not show.
+
+  An item is a box too, so a link (or even a whole list) can go inside an `<li>`.
 solutions:
   step-4#t1: page.html#sol-event
   step-4#t2: page.html#sol-bring
   step-4#t3: page.html#sol-link
+  step-4#t4: page.html#sol-item-link
   step-5: page.html#sol-make
   step-6: page.html#sol-notice

@@ -11,6 +11,7 @@ app:
   layout: full
 pacing:
   keyDelayMs: 45
+explainPicture: page.html#explain
 explainClip:
   query: { code: "", zoom: 1.7 }
   caption: "src names the picture file, and alt describes it"
@@ -94,6 +95,13 @@ tasks:
       misconception: img-file-name
       text: "The trophy shows, but the medal does not: only its alt words appear. The picture file is called medal.svg. Click the line that causes it."
       explain: "Line 4 asks for medal.png, but the file is medal.svg. The name, the ending after the dot and the capitals must all match the file exactly."
+  - picture: { ref: page.html#combos, boxes: true }
+    check:
+      type: question
+      q: "In this code, what happens when someone clicks the trophy?"
+      options: ["Nothing: pictures cannot be clicked", "The link opens, because the picture is inside the <a> tag", "The picture gets bigger", "The alt words appear"]
+      answer: 1
+      explain: "An <img> can go inside other tags. Inside <a>, the picture becomes the thing people click. Inside <li>, it sits in a list item beside the words."
 ```
 
 ### Match the parts
@@ -107,6 +115,18 @@ Imagine describing the picture to someone who cannot see it.
 ### The missing medal
 
 One picture does not show.
+
+### Pictures inside other tags
+
+A picture can go inside a link (click the picture to follow it) or inside a list item, next to words.
+
+```html
+<a href="https://example.com/results"><img src="trophy.svg" alt="A gold trophy: see the results" width="80"></a>
+<ul>
+  <li><img src="medal.svg" alt="A silver medal" width="40"> Second place</li>
+  <li><img src="ball.svg" alt="A soccer ball" width="40"> Soccer final</li>
+</ul>
+```
 
 ## Modify
 
@@ -123,6 +143,10 @@ tasks:
       - "The file is medal.svg. Describe the picture in alt."
     check: { type: code, text: "Add the medal picture with its own alt.", rules: { contains: ["src=\"medal.svg\"", "alt=\""] } }
     expected: page.html#sol-medal
+  - hint:
+      - "Put <a href=\"...\"> just before the trophy's img tag, and </a> just after it."
+    check: { type: code, text: "Make the trophy picture a link to the results.", rules: { contains: ["<a href=\"https://example.com/results\"><img"] } }
+    expected: page.html#sol-link
 ```
 
 ### Make it smaller
@@ -132,6 +156,10 @@ Show the trophy 100 pixels wide.
 ### Add second place
 
 Add the medal picture (`medal.svg`) with a good `alt`, and a line for second place: the Hawks.
+
+### Make the trophy a link
+
+Wrap the trophy picture in a link to `https://example.com/results`, so clicking the picture opens the results.
 
 ## Make
 

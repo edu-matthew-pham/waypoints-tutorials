@@ -11,6 +11,7 @@ app:
   layout: full
 pacing:
   keyDelayMs: 45
+explainPicture: { ref: page.html#explain, boxes: true }
 explainClip:
   query: { code: "", zoom: 1.7 }
   caption: "Tags label text, and the browser shows its best guess"
@@ -117,6 +118,17 @@ tasks:
       fault: syntax
       misconception: html-error-message
       explain: "Browsers never stop on a mistake: they show their best guess. The <strong> is never closed, so the bold carries on into the next paragraph. That is why you check the page after every change."
+  - picture: { ref: page.html#combos, boxes: true }
+    check:
+      type: question
+      q: "Which of these is nested correctly?"
+      options:
+        - "<p>Wear <strong><em>colours</em></strong></p>"
+        - "<p>Wear <strong><em>colours</strong></em></p>"
+        - "<p>Wear <strong>colours</p></strong>"
+        - "<h2>Bring <em>water</h2></em>"
+      answer: 0
+      explain: "Any of these tags can go inside the others, in any order you choose. The one rule: whatever opened last closes first."
 ```
 
 `<h2>` is a smaller heading for a section, and `<em>` marks a word you would say with emphasis.
@@ -138,6 +150,16 @@ This page shows correctly, but it breaks a rule.
 ```html
 <p>Races start at <strong>9 am.</p>
 <p>Bring a hat.</p>
+```
+
+### Mix and match
+
+Tags can go inside each other in many ways: an `<em>` inside a heading, a `<strong>` inside a paragraph, even `<em>` inside `<strong>`.
+
+```html
+<h2>Bring <em>lots</em> of water</h2>
+<p><strong>Races</strong> start at <em>9 am</em>.</p>
+<p>Wear your <strong><em>house colours</em></strong>.</p>
 ```
 
 ## Modify

@@ -34,11 +34,18 @@ exit:
   q: "A table has 3 columns and 4 rows of data under the heading row. How many <td> cells does it need, and why?"
   a: "12 cells: every one of the 4 rows needs a cell for each of the 3 columns (4 × 3)."
 explain: |
-  A table is built row by row. `<tr>` is a row; inside it, `<th>` cells are headings and `<td>` cells hold the data.
+  The video and the picture show the same steps:
 
-  Columns appear because every row has the same number of cells, in the same order. A row with a missing cell breaks the grid.
+  1. `<table>` opens the whole table.
+  2. `<tr>` is one row. In the first row, each `<th>` is a heading cell.
+  3. The next row holds ordinary cells: `<td>`.
+  4. `</table>` closes the table.
+  5. Rows go down and cells go across. Every row needs the same number of cells, or the grid breaks.
+
+  In the picture, Boxes is on: the table holds two rows (orange), and each row holds cells. A cell can hold a link, a picture or a `<strong>` word too.
 solutions:
   step-4#t1: page.html#sol-row
   step-4#t2: page.html#sol-col
+  step-4#t3: page.html#sol-cell-link
   step-5: page.html#sol-make
   step-6: page.html#sol-canteen

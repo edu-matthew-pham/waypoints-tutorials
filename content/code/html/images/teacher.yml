@@ -33,11 +33,18 @@ exit:
   q: "A picture shows only its alt words and a broken icon. Give one likely reason."
   a: "The file name in src does not match the picture file exactly (spelling, ending or capitals), so the browser cannot find it."
 explain: |
-  `<img>` shows a picture. `src` names the picture file and `alt` describes it. There is no closing tag: the picture comes from the file.
+  The video and the picture show the same steps:
 
-  The file name must match exactly. If the browser cannot find the file, people see the alt words instead.
+  1. `<img>` shows a picture. It has no closing tag: the picture comes from a file.
+  2. `src` names the picture file.
+  3. `alt` says what the picture shows, for people who cannot see it (a screen reader reads it aloud).
+  4. If the file name is spelt wrong, people see the alt words instead, as in the top half of the picture.
+  5. Fix the name, and the picture appears.
+
+  A picture can also go inside other tags: inside `<a>` it becomes a link, inside `<li>` it sits in a list.
 solutions:
   step-4#t1: page.html#sol-size
   step-4#t2: page.html#sol-medal
+  step-4#t3: page.html#sol-link
   step-5: page.html#sol-make
   step-6: page.html#sol-newsletter

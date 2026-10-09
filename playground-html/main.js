@@ -35,11 +35,14 @@ const BOXES = `
 <style>body *{outline:2px solid var(--wpc);outline-offset:1px}body *:not(br){padding:4px 6px;margin:6px 4px}body ul,body ol{padding-left:32px}
 [data-wp-tag]::before{content:attr(data-wp-tag);display:inline-block;font:600 11px/1.4 ui-monospace,Menlo,Consolas,monospace;
 color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin-right:6px;vertical-align:.15em;text-decoration:none;font-style:normal}
+.wp-lbl{display:inline-block;font:600 11px/1.4 ui-monospace,Menlo,Consolas,monospace;color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin:0 4px 0 0;vertical-align:top;outline:none!important;text-decoration:none}
 [data-wp-tag=tr]::before{content:none}[data-wp-tag=tr]{outline-width:3px}</style>
 <script>(function(){var C=['#2563eb','#c2570a','#15803d','#9333ea','#be185d'];
-function walk(el,d){[].forEach.call(el.children,function(c){if(/^(SCRIPT|STYLE|BR|TEMPLATE)$/.test(c.tagName))return;
+function walk(el,d){[].slice.call(el.children).forEach(function(c){if(/^(SCRIPT|STYLE|BR|TEMPLATE)$/.test(c.tagName))return;
 if(/^(TBODY|THEAD|TFOOT)$/.test(c.tagName)){c.style.outline='none';c.style.padding='0';walk(c,d);return;} // the browser adds <tbody> by itself: not a box students wrote
-c.setAttribute('data-wp-tag',c.tagName.toLowerCase());c.style.setProperty('--wpc',C[d%C.length]);walk(c,d+1)})}
+c.setAttribute('data-wp-tag',c.tagName.toLowerCase());c.style.setProperty('--wpc',C[d%C.length]);
+if(/^(IMG|INPUT|SELECT|TEXTAREA)$/.test(c.tagName)){var lb=document.createElement('span');lb.className='wp-lbl';lb.textContent=c.tagName.toLowerCase();lb.style.setProperty('--wpc',C[d%C.length]);c.parentNode.insertBefore(lb,c);} // no ::before on pictures and form fields
+walk(c,d+1)})}
 document.addEventListener('DOMContentLoaded',function(){walk(document.body,0)})})()<\/script>`;
 // Every preview: pictures are found in the course's media folder (src="trophy.svg"), and links behave like a
 // real page's without replacing the student's page: web addresses open in a new tab, #name scrolls to that part.

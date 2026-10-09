@@ -73,6 +73,7 @@ figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}.try.full iframe{flex:1;height:auto!important}
 body.try-open{overflow:hidden}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
+figure.shown{margin:10px 0 16px}figure.shown img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}figure.shown figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.expected figure{margin:8px 0 14px}details.expected img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}details.expected figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
@@ -426,7 +427,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', expectedHtml = () => '' } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', expectedHtml = () => '', pictureHtml = () => '' } = deps;
   const md = new Marked({
     renderer: { code({ text, lang }) { const fs = splitFiles(text); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
@@ -453,6 +454,7 @@ export function lessonPageHtml(lesson, deps) {
       catch (e) { showCode = `<div class="placeholder"><b>${esc(e.message)}</b></div>`; }
     }
     const clip = clipHtml(s);
+    const shown = c.picture ? pictureHtml(c.picture, s.id) : '';
     const body = md.parse(s.body);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
@@ -476,16 +478,16 @@ export function lessonPageHtml(lesson, deps) {
       const bodies = s.tasks.map((t, n) => {
         let reset = '';
         if (t.config.starter) { try { reset = `<button type="button" class="resetstart" data-code="${esc(snippet(t.config.starter))}">Reset to this task's start</button>`; } catch { /* reported by validation */ } }
-        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
+        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
       }).join('');
       const taskChecks = s.tasks.map((t, n) => `<div class="tpanel${n ? '' : ' active'}" data-i="${n}">${checkHtml(lesson, s, snippetNames, snippet, t)}</div>`).join('');
       const wrap = `<div class="tasks" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})" data-step="${s.id}" data-stepkey="${esc(`${lesson.slug}/${s.id}`)}" data-kind="${kind}" data-keys="${esc(keys.join('|'))}" data-unlocks="${esc((c.unlocks || []).join(','))}" data-names="${esc(names.join('|'))}"><div class="taskpills" role="tablist" aria-label="Tasks">${pills}</div>${bodies}${tryHtml(s)}${taskChecks}<p class="tmsg" aria-live="polite"></p></div>`;
-      inner = c.reveal ? `${body}${showCode}${wrap}${clip}` : `${body}${showCode}${clip}${wrap}`;
+      inner = c.reveal ? `${body}${showCode}${shown}${wrap}${clip}` : `${body}${showCode}${shown}${clip}${wrap}`;
     } else {
       // Predict: code, questions, hidden reveal. A hidden clip on a task comes after the attempt: text, code, try, hints, clip.
       inner = c.stage === 'predict' ? `${showCode}${body}${clip}${tryHtml(s)}${hints}${checks}`
-        : c.reveal ? `${body}${showCode}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${clip}${checks}`
-        : `${body}${showCode}${clip}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${checks}`;
+        : c.reveal ? `${body}${showCode}${shown}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${clip}${checks}`
+        : `${body}${showCode}${shown}${clip}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${checks}`;
     }
     return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"><div class="chip">${esc(label)}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
@@ -525,7 +527,8 @@ export function lessonPageHtml(lesson, deps) {
       ? `<details class="teachers"><summary>For teachers</summary>${lesson.teachers ? md.parse(lesson.teachers) : ''}${insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : ''}</details>` : '';
   // Explain it to me: the idea in more words, collapsed, for students who want it.
   const explainClip = lesson.explainStep ? clipHtml(lesson.explainStep) : '';
-  const explainHtml = T?.explain || explainClip ? `<details class="explain"><summary>Explain it to me</summary>${explainClip}${T?.explain ? md.parse(T.explain) : ''}</details>` : '';
+  const explainPic = lesson.explainPicture ? pictureHtml(lesson.explainPicture, 'explain') : '';
+  const explainHtml = T?.explain || explainClip ? `<details class="explain"><summary>Explain it to me</summary>${explainClip}${T?.explain ? md.parse(T.explain) : ''}${explainPic}</details>` : '';
 
   return page(lesson.title, `
 ${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>

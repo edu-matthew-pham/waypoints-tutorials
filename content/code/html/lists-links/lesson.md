@@ -11,6 +11,7 @@ app:
   layout: full
 pacing:
   keyDelayMs: 45
+explainPicture: { ref: page.html#explain, boxes: true }
 explainClip:
   query: { code: "", boxes: 1, zoom: 1.7 }
   caption: "A list is a box of items, and a link carries its address inside the tag"
@@ -100,6 +101,13 @@ tasks:
       misconception: list-item-outside
       text: "Long jump should be number 3, but it shows a dot and sits further left. Click the line that causes it."
       explain: "Line 6 is outside the list: </ol> on line 5 already closed it. Move </ol> below Long jump, so every <li> is inside the <ol>."
+  - picture: { ref: page.html#combos, boxes: true }
+    check:
+      type: question
+      q: "In this list, where does the small list of houses sit?"
+      options: ["Inside the Relay item", "After the whole list", "Inside the Sprint link", "Before the heading"]
+      answer: 0
+      explain: "The <ul> is inside the Relay <li>, so it belongs to Relay and is indented under it. An item can hold a link, a whole list, or any tag you have met."
 ```
 
 ### Match the parts
@@ -117,6 +125,23 @@ Put the scrambled lines in order.
 ### The lost item
 
 This list has a problem.
+
+### Lists can hold more
+
+An item is a box, so other tags can go inside it: a link, or even a whole list.
+
+```html
+<ol>
+  <li><a href="https://example.com/sprint">Sprint</a></li>
+  <li>Relay
+    <ul>
+      <li>Owls</li>
+      <li>Hawks</li>
+    </ul>
+  </li>
+  <li>Long jump</li>
+</ol>
+```
 
 ## Modify
 
@@ -138,6 +163,11 @@ tasks:
       - "The address goes inside the quotes after href=."
     check: { type: code, text: "Link timetable to the address.", rules: { contains: ["href=\"https://example.com/timetable\""] } }
     expected: page.html#sol-link
+  - hint:
+      - "The link goes inside the item: <li>, then <a href=\"...\">, then the words."
+      - "Close them in reverse: </a> first, then </li>."
+    check: { type: code, text: "Make Sprint a link inside its list item.", rules: { contains: ["<li><a href=\"https://example.com/sprint\">Sprint</a></li>"] } }
+    expected: page.html#sol-item-link
 ```
 
 ### Add an event
@@ -151,6 +181,10 @@ Under a new heading, `What to bring`, add a bulleted list: hat and water.
 ### Link the timetable
 
 Make the word `timetable` a link to `https://example.com/timetable`.
+
+### Link an event
+
+Make `Sprint` a link to `https://example.com/sprint`, inside its list item.
 
 ## Make
 

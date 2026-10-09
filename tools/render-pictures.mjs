@@ -163,4 +163,29 @@ await pictures({
   },
 });
 
+// ---- "What this code makes": picture: on steps and tasks, and explainPicture, drawn by the HTML playground itself
+// (so the Boxes view looks exactly as students see it), cropped to the page's content.
+const { pictureItems } = await import('./lesson.mjs');
+await pictures({
+  name: 'shown', dir: join(DIR, 'shown'), viewport: { width: 1100, height: 1400 },
+  base: hashDir('media', 'playground-html', readFileSync(new URL(import.meta.url)), 'shown-v1'),
+  jobs: loadLessons().flatMap((l) => pictureItems(l).map((e) => ({ id: `${l.slug}/${e.key}`, code: getSnippet(l.dir, e.ref), boxes: e.boxes }))).map((j) => ({ ...j, code: j.code + (j.boxes ? '\n<!-- boxes -->' : '') })),
+  async draw(page, j) {
+    const boxes = j.code.endsWith('<!-- boxes -->');
+    await page.goto(`http://localhost:${port}/_playground-html/index.html?${boxes ? 'boxes=1&' : ''}code=${encodeURIComponent(j.code)}`);
+    await page.waitForFunction(() => window.__playground?.updates > 0);
+    await page.waitForTimeout(500);
+    const el = await page.$('#preview'), frame = await el.contentFrame(), box = await el.boundingBox();
+    const ext = await frame.evaluate(() => {
+      let r = 0, b = 0;
+      for (const e of document.body.querySelectorAll('*')) { const q = e.getBoundingClientRect(); if (q.width && q.height) { r = Math.max(r, q.right); b = Math.max(b, q.bottom); } }
+      return { r: Math.ceil(r), b: Math.ceil(b) };
+    });
+    if (!ext.b) return null;
+    const width = Math.min(box.width - 2, ext.r + 14), height = Math.min(box.height - 2, ext.b + 14);
+    const buf = await page.screenshot({ clip: { x: box.x + 1, y: box.y + 1, width, height } });
+    return { data: `data:image/png;base64,${buf.toString('base64')}`, w: Math.round(width * 2), h: Math.round(height * 2), div: 2 };
+  },
+});
+
 if (browser) { await browser.close(); server.close(); }
