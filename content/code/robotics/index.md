@@ -5,4 +5,6 @@ order: 3
 units:
   - { id: drive, title: Drive, summary: "Wheel speeds, timed moves, and moves you name as functions." }
   - { id: sense, title: Sense, summary: "Read the distance sensor again and again, and decide what to do." }
+  - { id: modes, title: Modes, summary: "A variable remembers which job the robot is doing; forever does that job." }
+  - { id: talk, title: Talk, summary: "Radio messages drive a robot from afar, cue a dance, and send alerts back." }
 ---
