@@ -51,7 +51,9 @@ jobs:
       # a per-clip hash). restore-keys lets a run start from the previous run's clips.
       - uses: actions/cache@v4
         with:
-          path: dist/**/clips
+          path: |
+            dist/**/clips
+            dist/_pictures
           key: clips-${{ hashFiles('content/**', 'tools/**', 'playground*/**', 'snippets/**') }}
           restore-keys: clips-
 

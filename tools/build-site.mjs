@@ -144,6 +144,16 @@ const navFor = (pagePath, here, coursePath = null) => {
     current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
   });
 };
+// Pictures of what snippet examples draw (tools/render-pictures.mjs, run by `npm run render`): { id: { w, h, hash } }.
+const PICTURES = existsSync(join(OUT, '_pictures', 'pictures.json')) ? JSON.parse(readFileSync(join(OUT, '_pictures', 'pictures.json'), 'utf8')) : {};
+// A Reference card: the code, then (when the snippet has one) its example program and a picture of what it draws.
+function refItem(i, lang, depth) {
+  const plain = (t) => String(t).split('‹').join('').split('›').join('');
+  const id = snippetId(i.label), pic = PICTURES[id];
+  const ex = i.example ? `<p class="ref-ex">Example</p>${codeBlock(highlightCode, plain(i.example).replace(/\n+$/, '') + '\n', lang, '')}` : '';
+  const img = pic ? `<figure class="ref-pic"><img src="${'../'.repeat(depth)}_pictures/${esc(id)}.png?v=${esc(pic.hash || '')}" alt="What the example draws" width="${Math.round(pic.w / 5.2)}" height="${Math.round(pic.h / 5.2)}" loading="lazy">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
+  return `<div class="ref-item" data-text="${esc([i.label, i.hint || '', plain(i.code), i.shows || ''].join(' ').toLowerCase())}"><div>${codeBlock(highlightCode, plain(i.code).replace(/\n$/, '') + '\n', lang, '')}${ex}</div><div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p>${img}<p class="ref-id">id: <code>${id}</code></p></div></div>`;
+}
 for (const r of REFS) {
   const data = JSON.parse(readFileSync(join('snippets', `${r.file}.json`), 'utf8'));
   const parent = r.path.split('/').slice(0, -1).join('/');
@@ -151,8 +161,11 @@ for (const r of REFS) {
   const search = `<input type="search" id="ref-search" class="ref-search" placeholder="Search: a name, or what it does" aria-label="Search the reference"><p id="ref-none" class="lede" hidden></p>`;
   // Same search as the playground drawer: every word must appear in the name, hint or code.
   const script = `<script>(function(){var q=document.getElementById('ref-search'),none=document.getElementById('ref-none');q.addEventListener('input',function(){var w=q.value.toLowerCase().split(/\\s+/).filter(Boolean),n=0;document.querySelectorAll('.ref-section').forEach(function(sec){var any=false;sec.querySelectorAll('.ref-item').forEach(function(it){var t=it.dataset.text,hit=w.every(function(x){return t.indexOf(x)>=0});it.hidden=!hit;if(hit){any=true;n++}});sec.hidden=!any});none.hidden=n>0;none.textContent=n?'':'Nothing matches "'+q.value.trim()+'".'})})();</script>`;
-  const body = search + data.groups.map((g) => `<section class="ref-section"><h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map((i) =>
-    `<div class="ref-item" data-text="${esc([i.label, i.hint || '', plain(i.code)].join(' ').toLowerCase())}">${codeBlock(highlightCode, i.code.split('‹').join('').split('›').join('').replace(/\n$/, '') + '\n', data.language, '')}<div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p><p class="ref-id">id: <code>${snippetId(i.label)}</code></p></div></div>`).join('') + '</section>').join('') + script;
+  const depth = r.path.split('/').length;
+  const units = Array.isArray(dirs.get(parent)?.meta?.units) && dirs.get(parent).meta.units.length;
+  const printLink = units ? `<p class="ref-print"><a href="print/">Print a cheat sheet</a> <span class="muted">(the whole course or one unit, with a picture of what each command draws)</span></p>` : '';
+  const body = printLink + search + data.groups.map((g) => `<section class="ref-section"><h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map((i) =>
+    refItem(i, data.language, depth)).join('') + '</section>').join('') + script;
   mkdirSync(join(OUT, r.path), { recursive: true });
   writeFileSync(join(OUT, r.path, 'index.html'), page(data.title,
     `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`, '', navFor(r.path, 'reference', parent)));
@@ -324,16 +337,28 @@ for (const coursePath of teachCourses) {
     .filter((r) => typeof r === 'string').map((r) => { try { return getSnippet(l.dir, r); } catch { return ''; } });
   const unitSeen = new Set();
   const unitItems = Object.fromEntries(units.map((u) => [u.id, unitSnippets(ls.filter((l) => l.unit === u.id), courseSnips, unitSeen, codeOf)]));
-  const picDir = join(OUT, 'teach', 'clips', 'pictures');
-  const pictures = existsSync(join(picDir, 'pictures.json')) ? JSON.parse(readFileSync(join(picDir, 'pictures.json'), 'utf8')) : {};
-  const cheatPage = (name, title, sections, mdName, mdUrl) => {
-    const dir = join(courseDir, name);
-    mkdirSync(dir, { recursive: true });
-    const up = '../'.repeat(coursePath.split('/').length + 1);
-    const body = cheatSheetBody({ title, course: node.title, sections, pictures, picBase: `${up}clips/pictures/`, esc, highlightCode, back: '../', md: mdName ? `../${mdName}` : '', mdUrl, lang: ls[0]?.language || 'python' });
-    writeFileSync(join(dir, 'index.html'), page(title, `<style>${TEACH_CSS}${CHEAT_CSS}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(`teach/${coursePath}/${name}`, 'home', coursePath)));
+  // dir is relative to OUT. Teacher copies sit in /teach/ with Prepare links; student copies sit under the
+  // course's Reference (reference/print/) and link only back to it, so students are never one click from answers.
+  const cheatPage = ({ dir, title, sections, back, backLabel, mdName = '', mdUrl = '', nav = '', here = 'home' }) => {
+    mkdirSync(join(OUT, dir), { recursive: true });
+    const up = '../'.repeat(dir.split('/').length);
+    const body = cheatSheetBody({ title, course: node.title, sections, pictures: PICTURES, picBase: `${up}_pictures/`, esc, highlightCode, back, backLabel, md: mdName, mdUrl, nav, lang: ls[0]?.language || 'python' });
+    writeFileSync(join(OUT, dir, 'index.html'), page(title, `<style>${TEACH_CSS}${CHEAT_CSS}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(dir, here, coursePath)));
   };
-  if (units.length) cheatPage('cheatsheet', `${node.title}: cheat sheet`, units.map((u) => ({ title: u.title, items: unitItems[u.id] })), '', '');
+  // A row of links between the whole-course sheet and each unit's (base: the folder holding them).
+  const sheetNav = (base, current) => units.length ? `<nav class="cs-nav" aria-label="Cheat sheets">${[['', 'Whole course'], ...units.map((u) => [u.id, u.title])].map(([id, t]) => {
+    const href = `${base}${id ? `${id}/` : ''}`;
+    return id === current ? `<b>${esc(t)}</b>` : `<a href="${esc(href)}">${esc(t)}</a>`;
+  }).join(' · ')}</nav>` : '';
+  if (units.length) {
+    const all = units.map((u) => ({ title: u.title, items: unitItems[u.id] }));
+    cheatPage({ dir: `teach/${coursePath}/cheatsheet`, title: `${node.title}: cheat sheet`, sections: all, back: '../', backLabel: 'Teacher guide' });
+    if (REFS.some((r) => r.path === `${coursePath}/reference`)) {
+      const base = `${coursePath}/reference/print`;
+      cheatPage({ dir: base, title: `${node.title}: cheat sheet`, sections: all, back: '../', backLabel: 'Reference', nav: sheetNav('./', ''), here: 'reference' });
+      for (const u of units) cheatPage({ dir: `${base}/${u.id}`, title: `${u.title}: cheat sheet`, sections: [{ title: u.title, items: unitItems[u.id] }], back: '../../', backLabel: 'Reference', nav: sheetNav('../', u.id), here: 'reference' });
+    }
+  }
   // Course guide: how to use it, then each unit with its primer, cheat sheet and lessons.
   const unitBlocks = (units.length ? units : [{ id: '', title: 'Lessons' }]).map((u) => {
     const mine = ls.filter((l) => (u.id ? l.unit === u.id : true));
@@ -351,7 +376,7 @@ for (const coursePath of teachCourses) {
       const sheet = cheatSheetFor({ course: node.title, unit: u, items: unitItems[u.id], lang: ls[0]?.language || 'python' });
       writeFileSync(join(courseDir, `cheatsheet-${u.id}.md`), sheet);
       const url = `${SITE_URL}/teach/${coursePath}/cheatsheet-${u.id}.md`;
-      cheatPage(`cheatsheet-${u.id}`, `${u.title}: cheat sheet`, [{ title: u.title, items: unitItems[u.id] }], `cheatsheet-${u.id}.md`, url);
+      cheatPage({ dir: `teach/${coursePath}/cheatsheet-${u.id}`, title: `${u.title}: cheat sheet`, sections: [{ title: u.title, items: unitItems[u.id] }], back: '../', backLabel: 'Teacher guide', mdName: `../cheatsheet-${u.id}.md`, mdUrl: url });
       cheat = `<p>Cheat sheet: <a href="cheatsheet-${esc(u.id)}/">Open to print</a> <span class="muted">(A4, with a picture of what each command draws)</span> · <a href="cheatsheet-${esc(u.id)}.md" download>Markdown</a> <button type="button" class="copyurl" data-url="${esc(url)}">Copy address for Prepare</button></p>`;
     }
     const rows = mine.map((l) => l.teacher

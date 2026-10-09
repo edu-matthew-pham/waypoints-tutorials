@@ -104,7 +104,12 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
   let cards = []; // { el, id, hint, dyn, text, lessonFixed, pattern }
 
   /** A card: name, hint, then one or more code parts (each with its own Copy), then any extra actions. */
-  function card({ id, label, hint, parts, dyn = false, actions = [], ours = false, pattern = null }) {
+  // Pictures of what each snippet's example draws (built by tools/render-pictures.mjs), loaded on first use.
+  let pics = null;
+  const picsBase = new URL('../_pictures/', location.href);
+  const loadPics = () => (pics ||= fetch(new URL('pictures.json', picsBase), { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
+
+  function card({ id, label, hint, parts, dyn = false, actions = [], ours = false, pattern = null, example = '', shows = '' }) {
     const c = document.createElement('div'); c.className = 'ref-card'; c.dataset.id = id;
     const head = document.createElement('div'); head.className = 'ref-head';
     const name = document.createElement('span'); name.className = 'ref-name'; name.textContent = label;
@@ -112,8 +117,8 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
     c.append(head);
     if (hint) { const h = document.createElement('p'); h.className = 'ref-hint'; h.textContent = hint; c.append(h); }
     const lock = document.createElement('p'); lock.className = 'ref-lock'; c.append(lock);
-    for (const part of parts) {
-      if (part.note) { const n = document.createElement('p'); n.className = 'ref-where'; n.textContent = part.note; c.append(n); }
+    const codeRow = (part, into) => {
+      if (part.note) { const n = document.createElement('p'); n.className = 'ref-where'; n.textContent = part.note; into.append(n); }
       const row = document.createElement('div'); row.className = 'ref-code';
       const pre = document.createElement('pre'); pre.innerHTML = markPlaceholders(part.code.replace(/\n$/, ''));
       const cp = document.createElement('button'); cp.type = 'button'; cp.className = 'snippet copy'; cp.textContent = 'Copy';
@@ -125,9 +130,29 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
         else { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); say('Copying is blocked here: the code is selected, so copy it yourself.'); }
       });
       row.append(pre, cp);
-      c.append(row);
+      into.append(row);
+    };
+    for (const part of parts) codeRow(part, c);
+    if (example) { // "Example": a short program that uses it, and a picture of what that draws (one card at a time)
+      const box = document.createElement('div'); box.className = 'ref-example'; box.hidden = true;
+      const fig = document.createElement('figure'); fig.hidden = true;
+      const img = document.createElement('img'); img.alt = `What the ${label} example draws`;
+      fig.append(img);
+      if (shows) { const cap = document.createElement('figcaption'); cap.textContent = shows; fig.append(cap); }
+      codeRow({ code: example, note: 'Example' }, box);
+      box.append(fig);
+      const tb = small('Example', 'Show an example and what it draws', async () => {
+        box.hidden = !box.hidden;
+        tb.textContent = box.hidden ? 'Example' : 'Hide example'; tb.setAttribute('aria-expanded', String(!box.hidden));
+        if (!box.hidden && !img.src) {
+          const p = (await loadPics())[id];
+          if (p) { img.src = new URL(`${id}.png?v=${p.hash || ''}`, picsBase).href; img.width = Math.round(p.w / 4); img.height = Math.round(p.h / 4); fig.hidden = false; }
+        }
+      });
+      tb.classList.add('ref-ex-btn'); tb.setAttribute('aria-expanded', 'false');
+      head.append(tb); c.append(box);
     }
-    const text = [label, hint || '', ...parts.map((p) => strip(p.code))].join(' ').toLowerCase();
+    const text = [label, hint || '', shows, ...parts.map((p) => strip(p.code))].join(' ').toLowerCase();
     cards.push({ el: c, id, hint, dyn, text, ours, pattern });
     return c;
   }
@@ -146,7 +171,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
 
   for (const g of data.groups) {
     const [det, grid] = group(g.name);
-    for (const item of g.items) grid.append(card({ id: idOf(item.label), label: item.label, hint: item.hint, parts: [{ code: item.code }], pattern: snippetPattern(item) }));
+    for (const item of g.items) grid.append(card({ id: idOf(item.label), label: item.label, hint: item.hint, parts: [{ code: item.code }], pattern: snippetPattern(item), example: item.example || '', shows: item.shows || '' }));
     body.append(det);
   }
 

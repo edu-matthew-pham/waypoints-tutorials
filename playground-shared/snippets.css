@@ -53,3 +53,10 @@ mark.ph { background: rgba(255, 196, 0, .28); color: inherit; border-radius: 3px
 .ref-field input, .ref-field textarea { font: 13px/1.5 ui-monospace, Menlo, Consolas, monospace; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--code-bg); color: var(--code-ink); }
 .ref-field textarea { resize: vertical; tab-size: 4; }
 .snippets-panel .note { margin: 4px 0 0; font-size: 12.5px; color: var(--accent); min-height: 1em; }
+/* Example: a short program using the snippet and a picture of what it draws, opened per card. */
+.ref-ex-btn { margin-left: auto; }
+.ref-example { margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--line, #ddd); }
+.ref-example figure { margin: 6px 0 0; }
+.ref-example img { max-width: 100%; height: auto; border: 1px solid var(--line, #ddd); border-radius: 6px; background: #fff; display: block; }
+.ref-example figcaption { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.ref-card.locked .ref-ex-btn, .ref-card.locked .ref-example { display: none; }

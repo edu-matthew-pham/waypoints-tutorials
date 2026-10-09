@@ -1,5 +1,6 @@
 // Pictures for the printable cheat sheets: run each turtle snippet's `example` in the playground
-// and save what it draws, cropped, as dist/teach/clips/pictures/<snippet id>.png.
+// and save what it draws, cropped, as dist/_pictures/<snippet id>.png
+// (shared by the Reference page, the playground's Reference drawer and the cheat sheets).
 // Part of `npm run render` (after build-playground). Cached: a picture is redrawn only when its
 // example or the playground changed (pictures.json keeps the hashes). --force redraws all.
 import { chromium } from 'playwright-core';
@@ -10,7 +11,7 @@ import { join, extname, resolve } from 'node:path';
 
 const OUT = resolve(process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist');
 const FORCE = process.argv.includes('--force');
-const DIR = join(OUT, 'teach', 'clips', 'pictures');
+const DIR = join(OUT, '_pictures');
 mkdirSync(DIR, { recursive: true });
 
 // Same slug rule as snippet ids everywhere else (lesson-core snippetId).

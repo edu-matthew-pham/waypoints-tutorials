@@ -163,15 +163,15 @@
      "label": "for loop",
      "code": "for i in range(‹4›):\n    ‹pass›\n",
      "hint": "Repeat the indented lines this many times.",
-     "example": "for i in range(5):\n    forward(80)\n    right(144)\n",
-     "shows": "range(5): five lines, a star"
+     "example": "for i in range(5):\n    forward(15)\n    penup()\n    forward(10)\n    pendown()\n",
+     "shows": "range(5): five dashes"
     },
     {
      "label": "while loop",
      "code": "while ‹True›:\n    ‹pass›\n",
      "hint": "Repeat the indented lines for as long as the condition is true.",
-     "example": "size = 10\nwhile size < 100:\n    forward(size)\n    right(90)\n    size = size + 10\n",
-     "shows": "Keeps going while size < 100"
+     "example": "r = 10\nwhile r < 60:\n    circle(r)\n    r = r + 15\n",
+     "shows": "A circle each time, while r < 60"
     },
     {
      "label": "if / else",
@@ -184,8 +184,8 @@
      "label": "variable",
      "code": "‹size› = ‹50›\n",
      "hint": "Give a value a name, so you can reuse and change it.",
-     "example": "size = 50\nfor i in range(4):\n    forward(size)\n    right(90)\n",
-     "shows": "size = 50"
+     "example": "length = 120\nforward(length)\nleft(90)\nforward(length / 2)\n",
+     "shows": "length = 120, then half of it"
     },
     {
      "label": "list",
@@ -205,8 +205,8 @@
      "matches": "^\\s*def\\s",
      "code": "def ‹shape›():\n    ‹pass›\n\n‹shape›()\n",
      "hint": "Name a group of steps, then run it by calling its name.",
-     "example": "def square():\n    for i in range(4):\n        forward(40)\n        right(90)\n\nsquare()\npenup()\nforward(70)\npendown()\nsquare()\n",
-     "shows": "Defined once, called twice"
+     "example": "def zigzag():\n    left(45)\n    forward(30)\n    right(90)\n    forward(30)\n    left(45)\n\nzigzag()\nzigzag()\nzigzag()\n",
+     "shows": "Defined once, called three times"
     },
     {
      "label": "print",

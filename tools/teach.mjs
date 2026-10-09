@@ -250,10 +250,10 @@ export function unitSnippets(lessons, snippets, seen = new Set(), codeOf = () =>
 // ---------------------------------------------------------------- printable cheat sheet (HTML)
 // sections: [{ title, items: [{ id, label, hint, code, shows }] }]; pictures: { id: { w, h } } from
 // render-pictures (device pixels at 2x, about 2.6 px per turtle step), drawn at one shared scale.
-export function cheatSheetBody({ title, course, sections, pictures = {}, picBase, esc, highlightCode, back, md, mdUrl, lang = 'python' }) {
+export function cheatSheetBody({ title, course, sections, pictures = {}, picBase, esc, highlightCode, back, backLabel = 'Teacher guide', md, mdUrl, nav = '', lang = 'python' }) {
   const card = (i) => {
     const pic = pictures[i.id];
-    const img = pic ? `<figure><img src="${esc(picBase + i.id)}.png" alt="What it draws" width="${Math.round(pic.w / 5.2)}" height="${Math.round(pic.h / 5.2)}">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
+    const img = pic ? `<figure><img src="${esc(picBase + i.id)}.png${pic.hash ? `?v=${esc(pic.hash)}` : ''}" alt="What it draws" width="${Math.round(pic.w / 5.2)}" height="${Math.round(pic.h / 5.2)}">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
     const code = strip(i.code).replace(/\n+$/, '');
     // A picture shows the example program, which can differ from the bare snippet: show that code.
     const ex = pic && i.example && strip(i.example).trim() !== code.trim() ? `<div class="cs-ex">Example</div><pre><code>${highlightCode(strip(i.example).replace(/\n+$/, ''), lang)}</code></pre>` : '';
@@ -272,10 +272,11 @@ export function cheatSheetBody({ title, course, sections, pictures = {}, picBase
     return `<div class="cs-grid"><div class="cs-col">${c[0].join('')}</div><div class="cs-col">${c[1].join('')}</div></div>`;
   };
   const secs = sections.filter((s) => s.items.length).map((s) => `${sections.length > 1 ? `<h2 class="cs-unit">${esc(s.title)}</h2>` : ''}${cols(s.items)}`).join('');
-  return `<div class="cs-bar noprint"><a class="crumb" href="${esc(back)}">← Teacher guide</a><span class="sn-grow"></span><button type="button" onclick="print()">Print</button>${mdUrl ? ` <a href="${esc(md)}" download>Markdown for Prepare</a> <button type="button" class="copyurl" data-url="${esc(mdUrl)}">Copy address for Prepare</button>` : ''}</div>
+  return `<div class="cs-bar noprint"><a class="crumb" href="${esc(back)}">← ${esc(backLabel)}</a><span class="sn-grow"></span><button type="button" onclick="print()">Print</button>${mdUrl ? ` <a href="${esc(md)}" download>Markdown for Prepare</a> <button type="button" class="copyurl" data-url="${esc(mdUrl)}">Copy address for Prepare</button>` : ''}</div>${nav ? `<div class="noprint">${nav}</div>` : ''}
 <div class="cs"><header class="cs-head"><h1>${esc(title)}</h1><p>${esc(course)} · In any playground, open <b>Reference</b> to copy these.</p></header>${secs || '<p>This unit has no new commands; it combines ones from earlier units.</p>'}</div>`;
 }
 export const CHEAT_CSS = `.wrap{max-width:1000px}
+.cs-nav{font-size:14px;margin:-6px 0 14px;line-height:1.8}.cs-nav b{color:var(--ink)}
 .cs-bar{display:flex;gap:10px;align-items:center;margin:18px 0}.cs-bar button{font:inherit;font-size:14px;padding:5px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}.cs-bar a{font-size:14px}.sn-grow{flex:1}
 .cs{--code:#f4f3ef;--codeink:#1d2430;--kw:#b42318;--str:#0a6b3d;--fn:#6a3fb5;--num:#0b5cad;--com:#6b7280;background:#fff;color:#1d2430;border:1px solid var(--line);border-radius:6px;padding:12mm 12mm 8mm}
 .cs-head{border-bottom:2px solid #1d2430;margin-bottom:10px}.cs-head h1{font-size:22px;margin:0 0 2px}.cs-head p{margin:0 0 8px;font-size:12px;color:#5d6978}
