@@ -494,4 +494,23 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
     ring marks each collision that reacts. Simplifications to name for students: 2D, rigid molecules, and reactions with
     more than two reactants (CH4 + 2 O2) take the extra particles from nearby rather than in several steps.
     With about ten of each reactant, run times vary by a factor of two or so: use 15 or more for rate comparisons.
+- **Cooling magma** (`crystals.js`, 8U04 node 2): `widget: cooling`. Students pick a cooling speed (Very slow, Slow,
+  Fast, Very fast, Instant: each names where it happens, from deep underground to lava quenched in seconds), press
+  Cool the magma and watch crystals start and grow; each finished run adds a row (crystals, average and largest size,
+  glass). Typical results: very slow, about 5 crystals of 60 particles (like granite); fast, about 23 of 14 (like
+  basalt); instant, mostly glass (like obsidian). `rates: 1, 3, 5` offers only some speeds; `goal: compare` (default:
+  done after two different speeds) or `none`. Name for students: real granite and basalt also differ in what they are
+  made of; the model shows only the effect of cooling speed.
+- **Heat transfer** (`convection.js`): `widget: convection`. Particles are coloured blue (cool) to red (hot).
+  - Default (a liquid heated from below, 9U04 node 1): a ringed particle and its trail; click another, or press Follow
+    another particle. `goal: loop` (default): done when the followed particle rises, crosses the top and sinks again
+    (usually 6–20 s). Heat: on/off toggle.
+  - `preset: mantle` (8U03 node 2): the same current labelled as the mantle, with two plates on top that move apart
+    above the rising current.
+  - `mode: solid`: a bar heated at one end (conduction): the particles vibrate in place, warmer ones harder, and the
+    panel shows the temperature of each quarter. `goal: spread` (default): done when the far end warms.
+  Name for students: in the model hot particles are pushed up directly; in a real fluid the warm part rises because
+  it has spread out (less dense).
+- Boards with hundreds of particles (cooling, convection) draw on a canvas layer over the board (`SCI.dots`), because
+  SVG points cannot move that many each frame. After changing any engine, run `node tools/check-engines.mjs`.
 - **Science pathways:** `content/science/index.md` lists Chemistry (built), Biology, Physics and Earth and space.

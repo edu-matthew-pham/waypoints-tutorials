@@ -17,6 +17,8 @@
 //   widget: atoms       show: H2 x4, O2 x3, H2O x5     click particles to see their atoms: element, compound, mixture
 //   widget: reaction    show: H2 x10, Cl2 x10, react: H2 + Cl2 -> 2 HCl    a reacting gas: temperature, catalyst,
 //                       ea, release, target, goal: target | react | compare | none (atoms.js; see AUTHORING › 12)
+//   widget: cooling     cool magma at different rates: crystal size (crystals.js)
+//   widget: convection  mode: fluid | solid, preset: beaker | mantle: heat moving by convection or conduction (convection.js)
 //
 // Message to the lesson page after every change: { wp: 'run', id, kind: 'science', status: 'done', moved, output, state: { done } }.
 // `moved` stays false until the student does something; `done` is true once the widget's task is finished.
@@ -612,6 +614,133 @@
     reset();
     // Reset clears `changed`, so a run started after changing the slider counts.
     say(spec.caption || (rules.length === 1 ? 'The reaction: ' + rules[0].text + '. A yellow ring marks each collision that reacts.' : 'A yellow ring marks each collision that reacts.'));
+  };
+
+  // ---------- cooling magma (crystals.js) ----------
+  W.cooling = function (spec) {
+    var C = S.crystals, picks = spec.rates ? String(spec.rates).split(',').map(function (x) { return Number(x.trim()) - 1; }).filter(function (i) { return C.RATES[i]; }) : [0, 1, 2, 3, 4];
+    var goal = spec.goal || 'compare', rate = picks[0], running = false, runs = [];
+    var g = group('top', picks.map(function (i) { return [i, C.RATES[i][1]]; }), rate, function (i) { rate = i; if (!running) { melt.reset(); view.paint(true); } describe(); touch(); });
+    var cool = button('controls', 'Cool the magma', function () { if (melt.solid()) melt.reset(); running = true; cool.disabled = true; touch(); }, 'go');
+    button('controls', 'Reset', function () { running = false; cool.disabled = false; melt.reset(); view.paint(true); describe(); touch(); });
+    area('extra');
+    var b = { x0: 0, x1: 22, y0: 0, y1: 12 };
+    S.newBoard([b.x0 - 0.6, b.y1 + 1.6, b.x1 + 0.6, b.y0 - 0.6]);
+    S.curve([b.x0 - 0.1, b.x1 + 0.1, b.x1 + 0.1, b.x0 - 0.1, b.x0 - 0.1], [b.y0 - 0.1, b.y0 - 0.1, b.y1 + 0.1, b.y1 + 0.1, b.y0 - 0.1], { c: 'muted' });
+    var melt = new C.Melt(b), view = C.draw(melt);
+    var thermo = S.text(b.x0, b.y1 + 0.9, '', { anchorX: 'left', c: 'ink', bold: true });
+    function texture(st) {
+      if (st.glass > st.total / 2) return 'mostly glass (particles frozen with no pattern), with only specks of crystal: like obsidian';
+      if (st.average >= 40) return 'coarse grains you could see by eye: like granite';
+      if (st.average >= 16) return 'medium grains';
+      return 'tiny grains, too small to see without a lens: like basalt' + (st.glass > st.total / 10 ? ', with some glass' : '');
+    }
+    function describe() { say(C.RATES[rate][1] + ' cooling: ' + C.RATES[rate][2] + '. Press Cool the magma.'); }
+    function table() {
+      area('extra').innerHTML = runs.length ? '<table><thead><tr><th>Cooling</th><th>Crystals</th><th>Average size</th><th>Largest</th><th>Glass</th></tr></thead><tbody>' + runs.map(function (r) {
+        return '<tr><td>' + r.name + '</td><td>' + r.crystals + '</td><td>' + Math.round(r.average) + '</td><td>' + r.largest + '</td><td>' + Math.round(100 * r.glass / r.total) + '%</td></tr>';
+      }).join('') + '</tbody></table>' : '';
+    }
+    var tick = 0;
+    S.loop(function () {
+      if (running) {
+        melt.step(C.RATES[rate][0]);
+        if (melt.solid()) {
+          running = false; cool.disabled = false;
+          var st = melt.stats(); st.name = C.RATES[rate][1]; st.rate = rate;
+          runs = runs.filter(function (r) { return r.rate !== rate; }).concat([st]).sort(function (p, q) { return p.rate - q.rate; }); table();
+          var msg = 'Solid rock: ' + (st.glass > st.total / 2 ? '' : st.crystals + ' crystal' + (st.crystals === 1 ? '' : 's') + ', ') + texture(st) + '.';
+          if (goal === 'compare' && runs.length >= 2 && !done) { say(msg + ' Compare the rows: the slower it cooled, the bigger the crystals.', true); finish(runs.map(function (r) { return r.name + ' ' + r.crystals + ' crystals, average ' + Math.round(r.average); }).join('; ')); }
+          else { say(msg + (goal === 'compare' && !done ? ' Now choose a different cooling speed and cool it again.' : ''), done); touch(st.name + ': ' + st.crystals + ' crystals'); }
+        }
+      }
+      var st2 = melt.stats();
+      thermo.setText(Math.round(melt.T) + ' °C · ' + (melt.T > C.TM ? 'all liquid' : st2.crystals + ' crystals' + (melt.liquid() ? ', ' + Math.round(100 * melt.liquid() / st2.total) + '% still liquid' : '')));
+      S.board().update();
+    });
+    view.paint(true); describe();
+  };
+
+  // ---------- heat transfer: convection and conduction (convection.js) ----------
+  W.convection = function (spec) {
+    var F = S.flow, solid = spec.mode === 'solid', mantle = spec.preset === 'mantle', goal = spec.goal || (solid ? 'spread' : 'loop');
+    var b = solid ? { x0: 0, x1: 22, y0: 0, y1: 4 } : { x0: 0, x1: 22, y0: 0, y1: 12 };
+    var run = true, heatOn = true, tracer = null, trail = [], stage = 0, plates = [0, 0];
+    button('controls', 'Pause', function () { run = !run; this.textContent = run ? 'Pause' : 'Play'; touch(); });
+    var hb = button('controls', 'Heat: on', function () { heatOn = !heatOn; flow.heat = heatOn ? 1 : 0; hb.textContent = 'Heat: ' + (heatOn ? 'on' : 'off'); hb.setAttribute('aria-pressed', String(heatOn)); touch(); });
+    hb.setAttribute('aria-pressed', 'true');
+    if (!solid) button('controls', 'Follow another particle', function () { pick(flow.ps[Math.floor(Math.random() * flow.ps.length)]); touch(); });
+    area('extra');
+    S.newBoard([b.x0 - 0.8, b.y1 + (mantle ? 2.4 : 1.4), b.x1 + 0.8, b.y0 - 1.6]);
+    S.curve([b.x0 - 0.1, b.x1 + 0.1, b.x1 + 0.1, b.x0 - 0.1, b.x0 - 0.1], [b.y0 - 0.1, b.y0 - 0.1, b.y1 + 0.1, b.y1 + 0.1, b.y0 - 0.1], { c: 'muted' });
+    var flow = new F.Flow(b, { solid: solid, lift: mantle ? 0.09 : undefined });
+    var board = S.board(), T = S.T;
+    // The heater: a strip of floor under the middle (fluid), or the left end (solid bar).
+    var hx = solid ? [b.x0 - 0.7, b.x0 - 0.2] : [flow.hx0, flow.hx1], hy = solid ? [b.y0, b.y1] : [b.y0 - 0.7, b.y0 - 0.2];
+    var heater = board.create('polygon', [[hx[0], hy[0]], [hx[1], hy[0]], [hx[1], hy[1]], [hx[0], hy[1]]], { fillColor: '#e0412f', fillOpacity: 0.9, borders: { strokeWidth: 0 }, vertices: { visible: false }, fixed: true, highlight: false });
+    S.text(solid ? b.x0 + 0.2 : (hx[0] + hx[1]) / 2, solid ? b.y0 - 0.9 : b.y0 - 1.2, mantle ? 'Heat from the core' : (solid ? 'Heat' : 'Heat'), { anchorX: solid ? 'left' : 'middle', size: 12 });
+    if (!solid) S.text(b.x1 / 2, b.y1 + 0.7, mantle ? '' : 'Cooler at the top', { size: 12 });
+    // Particles and the followed particle's trail on the canvas layer (fast enough for ~170 particles).
+    var cols = []; for (var c = 0; c <= 20; c++) cols.push(F.heatColour(c / 20));
+    S.dots(function (ctx, X, Y, u) {
+      var rad = Math.max(1.5, flow.r * u * 0.92);
+      flow.ps.forEach(function (p) { S.disc(ctx, X(p.x), Y(p.y), rad, cols[Math.round(p.h * 20)]); });
+      if (!tracer) return;
+      ctx.setLineDash([5, 5]); ctx.lineWidth = 2; ctx.strokeStyle = T.ink; ctx.globalAlpha = 0.6; ctx.beginPath();
+      trail.forEach(function (t, i) { if (i) ctx.lineTo(X(t[0]), Y(t[1])); else ctx.moveTo(X(t[0]), Y(t[1])); }); ctx.stroke();
+      ctx.setLineDash([]); ctx.globalAlpha = 1; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(X(tracer.x), Y(tracer.y), rad + 0.25 * u, 0, 6.2832); ctx.stroke();
+    });
+    function pick(p) { tracer = p; trail = []; stage = 0; }
+    // Mantle: two plates riding on the top of the current; they move apart over the rising middle.
+    var plateObjs = [];
+    if (mantle) {
+      [0, 1].forEach(function (k) {
+        var y0 = b.y1 + 0.25, y1 = b.y1 + 1.15;
+        var x = function (end) { return function () { var mid = b.x1 / 2, gap = 0.15; return k === 0 ? (end ? mid - gap + plates[0] : b.x0 + plates[0]) : (end ? b.x1 + plates[1] : mid + gap + plates[1]); }; };
+        plateObjs.push(board.create('polygon', [[x(0), y0], [x(1), y0], [x(1), y1], [x(0), y1]], { fillColor: '#8a7560', fillOpacity: 0.9, borders: { strokeWidth: 0 }, vertices: { visible: false }, fixed: true, highlight: false }));
+      });
+      S.text(b.x1 / 4, b.y1 + 2, 'Plate', { size: 12 }); S.text(3 * b.x1 / 4, b.y1 + 2, 'Plate', { size: 12 });
+    }
+    board.on('down', function (e) {
+      if (solid) return;
+      var c = board.getUsrCoordsOfMouse(e), best = null, bd = 1.2;
+      flow.ps.forEach(function (p) { var d = Math.hypot(p.x - c[0], p.y - c[1]); if (d < bd) { bd = d; best = p; } });
+      if (best) { pick(best); touch(); }
+    });
+    if (!solid) {
+      // Start with a particle on the floor beside the heater, so the first loop comes soon.
+      pick(flow.ps.reduce(function (q, p) { return Math.abs(p.x - flow.hx0) + p.y < Math.abs(q.x - flow.hx0) + q.y ? p : q; }));
+    }
+    var tick = 0;
+    function report() {
+      if (solid) {
+        var q = [0, 1, 2, 3].map(function (k) { return flow.heatAt(b.x0 + k * 5.5, b.x0 + (k + 1) * 5.5); });
+        area('extra').innerHTML = '<div class="bins">' + q.map(function (h, k) { return '<span class="bin"><b>' + ['Near the heat', 'Second quarter', 'Third quarter', 'Far end'][k] + '</b>' + Math.round(20 + 80 * h) + ' °C</span>'; }).join('') + '</div>';
+        if (goal === 'spread' && !done && q[3] > 0.08) { say('The far end is warming, yet no particle has moved along the bar: each one vibrates harder and bumps its neighbours. That is conduction.', true); finish('far end ' + Math.round(20 + 80 * q[3]) + ' °C'); }
+      }
+    }
+    S.loop(function () {
+      if (run) {
+        flow.step();
+        if (tracer) {
+          if (tick % 3 === 0) { trail.push([tracer.x, tracer.y]); if (trail.length > 160) trail.shift(); }
+          var third = (b.y1 - b.y0) / 3, low = tracer.y < b.y0 + third, high = tracer.y > b.y1 - third;
+          if (stage === 0 && low) stage = 1; else if (stage === 1 && high) { stage = 2; if (!done) say('It reached the top. Watch it cool (bluer) and move aside.'); } else if (stage === 2 && low) {
+            stage = 3;
+            if (goal === 'loop' && !done) { say(mantle ? 'One full loop: rock heated by the core rises slowly, spreads under the plates, cools and sinks. The plates ride on top and move apart where the current rises.' : 'One full loop: heated at the bottom, it rose, moved across the top, cooled and sank again. That loop is a convection current.', true); finish('loop'); }
+          }
+        }
+        if (mantle) {
+          var top = flow.ps.filter(function (p) { return p.y > b.y1 - 2; });
+          [0, 1].forEach(function (k) { var side = top.filter(function (p) { return k ? p.x > b.x1 / 2 : p.x < b.x1 / 2; }); if (!side.length) return; var vx = side.reduce(function (s, p) { return s + p.vx; }, 0) / side.length; plates[k] = Math.max(-3, Math.min(3, plates[k] + vx * 0.6)); });
+        }
+      }
+      if (++tick % 3 === 0) heater.setAttribute({ fillOpacity: heatOn ? 0.9 : 0.15 });
+      if (tick % 15 === 0) report();
+      board.update();
+    });
+    say(spec.caption || (solid ? 'A metal bar, heated at one end. Watch the colours: blue is cool, red is hot.' : mantle ? 'A model of the mantle: hot rock rises above the core, cools under the plates and sinks. Follow the ringed particle (or click another).' : 'Water heated from below. Follow the ringed particle (or click another): blue is cool, red is hot.'));
+    report();
   };
 
   // ---------- setup ----------

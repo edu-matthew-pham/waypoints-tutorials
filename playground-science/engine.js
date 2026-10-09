@@ -87,6 +87,7 @@
   }
   function newBoard(area) {
     if (board) JXG.JSXGraph.freeBoard(board);
+    Array.prototype.forEach.call(document.querySelectorAll('#board canvas.dots'), function (c) { c.remove(); });
     loops = []; paints = []; want = area;
     board = JXG.JSXGraph.initBoard('board', { boundingbox: fit(), keepAspectRatio: false, axis: false, grid: false, showNavigation: false, showCopyright: false,
       pan: { enabled: false }, zoom: { enabled: false, wheel: false } });
@@ -162,6 +163,23 @@
     }
     paints.push(draw); draw();
   }
+  // A canvas over the board for boards with hundreds of particles (SVG points are too slow to move each frame).
+  // draw(ctx, X, Y, u) runs every frame: X and Y turn board units into pixels, u is pixels per board unit.
+  function dots(draw) {
+    var el = document.getElementById('board'), cv = document.createElement('canvas'), ctx = cv.getContext('2d');
+    if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+    cv.className = 'dots'; cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none';
+    el.appendChild(cv);
+    loop(function () {
+      var dpr = window.devicePixelRatio || 1, w = el.clientWidth, h = el.clientHeight;
+      if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+      var o = board.origin.scrCoords, ux = board.unitX, uy = board.unitY;
+      draw(ctx, function (x) { return o[1] + x * ux; }, function (y) { return o[2] - y * uy; }, ux);
+    });
+  }
+  function disc(ctx, x, y, r, fill, stroke) { ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fillStyle = fill; ctx.fill(); if (stroke) { ctx.lineWidth = 1; ctx.strokeStyle = stroke; ctx.stroke(); } }
+
   // A seeded random generator, so static diagrams look the same every time.
   function seeded(seed) { return function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }; }
   function spread(rnd, n, x0, y0, w, h, sep, extra) {
@@ -171,5 +189,5 @@
   }
 
   window.SCI = { T: T, Box: Box, newBoard: newBoard, particleBoard: particleBoard, drawer: drawer, loop: loop, onPaint: onPaint, text: text, curve: curve,
-    windows: windows, seeded: seeded, spread: spread, board: function () { return board; }, reduce: reduce };
+    windows: windows, seeded: seeded, spread: spread, dots: dots, disc: disc, board: function () { return board; }, reduce: reduce };
 })();
