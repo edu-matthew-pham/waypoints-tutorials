@@ -261,7 +261,9 @@ check:
   rules: { defs: 1, calls: 1, loops: 1 }
 ```
 
-The box ticks when the student runs a program that meets every rule. Rules (all optional, at least one needed): `defs` (functions defined), `params` (a function with this many parameters), `calls` (one of their functions called this many times), `loops` (for/while), `returns` (return statements), `imports` (list of module names). The check reads all the student's files, ignores comments, and needs a Python turtle `try` playground on the step. It can unlock snippets like any check.
+The box ticks when the student runs a program that meets every rule. Rules (all optional, at least one needed): `defs` (functions defined), `params` (a function with this many parameters), `calls` (one of their functions called this many times), `loops` (for/while), `returns` (return statements), `imports` (list of module names). The check reads all the student's files, ignores comments, and needs a `try` playground on the step. It can unlock snippets like any check.
+
+**In the HTML playground** a code check ticks as the student types (there is no Run): the playground reports its code on every preview update. Only two rules apply: `tags` (tag names that must be used, without brackets: `tags: [ul, li, a]`) and `contains` (fragments, spaces and letter case ignored: `contains: ["display: flex"]`). `<!-- -->` and `/* */` comments are ignored, and `#` is not a comment (colours, links). Validate rejects Python rules on an HTML step. The first report (page load) never ticks a check, so a starter that already passes does not tick itself; still write starters that do not pass. The Run step's compare box also works for HTML: it fills in as soon as the preview loads and updates when the prediction is locked.
 
 ### Lesson navigation, playground pages and My progress
 

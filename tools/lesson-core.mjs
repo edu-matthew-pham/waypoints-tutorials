@@ -26,7 +26,9 @@ export function parseTrace(text) {
   if (!body.some((r) => r.some((c) => c.blank))) throw new Error('needs at least one blank, written in [brackets] with its answer inside');
   return { head, rows: body };
 }
-export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports', 'uses', 'contains'];
+export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports', 'uses', 'contains', 'tags'];
+/** Code rules the HTML playground can check (HTML has no functions or loops). */
+export const HTML_RULES = ['contains', 'tags'];
 
 /**
  * Evaluates a code check's rules against the student's code (all their files joined). Pure and
@@ -35,7 +37,16 @@ export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'impor
  * loops (for/while lines), returns (return lines), params (one function with this many parameters),
  * imports (list of module names), uses (list of names that must appear, such as pencolor). Returns [{ label, ok }].
  */
-export function evalRules(rules, text) {
+export function evalRules(rules, text, kind) {
+  // kind 'html': HTML and CSS (comments are <!-- --> and /* */; # is a colour or a link, not a comment; case does not matter).
+  if (kind === 'html') {
+    const src = String(text).replace(/<!--[\s\S]*?-->/g, '').replace(/\/\*[\s\S]*?\*\//g, '').toLowerCase();
+    const out = [];
+    (rules.tags || []).forEach((t) => out.push({ label: `Use <${t}>`, ok: new RegExp('<' + String(t).toLowerCase() + '[\\s>/]').test(src) }));
+    const flatH = src.replace(/\s+/g, '');
+    (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flatH.includes(String(frag).toLowerCase().replace(/\s+/g, '')) }));
+    return out;
+  }
   const code = String(text).split('\n').map((l) => l.replace(/#.*$/, ''));
   const defs = [];
   code.forEach((l) => { const m = l.match(/^\s*def\s+([A-Za-z_]\w*)\s*\(([^)]*)\)/); if (m) defs.push({ name: m[1], params: m[2].split(',').filter((x) => x.trim()).length }); });
@@ -223,7 +234,13 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         if (r.contains !== undefined && !(Array.isArray(r.contains) && r.contains.every((f) => typeof f === 'string' && f.trim()))) err(where, 'code rule contains must be a list of code fragments, such as ["inside(x, y"]');
         if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
       }
-      if (!c.try || (c.try.playground && c.try.playground !== 'turtle')) err(where, 'a code check needs a Python turtle playground (try: { starter: ... }) to run');
+      const pk = c.try ? (c.try.playground || (lesson.language === 'html' ? 'html' : 'turtle')) : null;
+      if (!pk || !['turtle', 'html'].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
+      else if (r && typeof r === 'object') {
+        const allowedR = pk === 'html' ? HTML_RULES : CODE_RULES.filter((x) => x !== 'tags');
+        for (const key of Object.keys(r)) if (CODE_RULES.includes(key) && !allowedR.includes(key)) err(where, `code rule ${key} does not work in the ${pk === 'html' ? 'HTML' : 'turtle'} playground (use ${allowedR.join(', ')})`);
+        if (r.tags !== undefined && !(Array.isArray(r.tags) && r.tags.every((t) => /^[a-z][a-z0-9]*$/i.test(String(t))))) err(where, 'code rule tags must be a list of tag names without brackets, such as [ul, li]');
+      }
     }
     else if (k.type === 'question') {
       if (!str(k.q)) err(where, 'check (question) needs q');
@@ -396,7 +413,7 @@ function validateTeacher(lesson, snip, err) {
       try { code = snip(ref); } catch (e) { err(w, `solutions.${id}: ${e.message}`); continue; }
       // A solution must pass the check it answers.
       if (item.check?.type === 'code' && item.check.rules) {
-        const failed = evalRules(item.check.rules, code).filter((r) => !r.ok).map((r) => r.label);
+        const failed = evalRules(item.check.rules, code, unlockKind(lesson, item.step)).filter((r) => !r.ok).map((r) => r.label);
         if (failed.length) err(w, `solutions.${id} fails its own check: ${failed.join('; ')}`);
       }
     }

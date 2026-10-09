@@ -18,6 +18,17 @@ codeEl.value = read() ?? starter;
 // A small, stable surface for tests and tooling.
 window.__playground = { html: '', text: '', title: '', updates: 0 };
 
+// Tell the lesson page what the code is now, so its code checks and compare box can follow along.
+// There is no Run button: every preview update counts as a run. `quiet` marks the first one (page load),
+// so a check can tick silently but does not nag before the student has typed anything.
+let reported = false;
+function report(html) {
+  try {
+    if (window.parent !== window && params.get('id')) window.parent.postMessage({ wp: 'run', kind: 'html', id: params.get('id'), status: 'done', quiet: !reported, code: html }, location.origin);
+  } catch { /* not embedded */ }
+  reported = true;
+}
+
 function render() {
   const html = codeEl.value;
   previewEl.srcdoc = html;
@@ -28,6 +39,7 @@ function render() {
   Object.assign(window.__playground, { html, text, title: doc.title, updates: window.__playground.updates + 1 });
   statusEl.dataset.state = 'updated';
   statusEl.textContent = 'Preview updated';
+  report(html);
 }
 
 // Throttle (not debounce): the preview keeps up while someone is typing, and always catches the last keystroke.

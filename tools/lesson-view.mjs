@@ -268,10 +268,12 @@ else{msg.className='msg ok';msg.textContent='Got it.'}}
 if((load().done||{})[key])show(false);
 if(box.dataset.type==='code'){var rules=JSON.parse(box.dataset.rules),ul=box.querySelector('.rules');
 function paint(res){ul.replaceChildren();res.forEach(function(r){var li=document.createElement('li');li.textContent=r.label;if(r.ok)li.className='ok';ul.appendChild(li)})}
-var done0=(load().done||{})[key];paint(evalRules(rules,'').map(function(r){return {label:r.label,ok:!!done0}}));
+var done0=(load().done||{})[key];paint(evalRules(rules,'',kind).map(function(r){return {label:r.label,ok:!!done0}}));
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==(box.dataset.play||key))return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
-var res=evalRules(rules,m.code||'');paint(res);
-if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
+var res=evalRules(rules,m.code||'',kind);paint(res);
+if(m.quiet&&!(load().done||{})[key]){}
+else if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
+else if(m.kind==='html'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep going: the list shows what your page still needs.'}}
 else{msg.className='msg';msg.textContent=m.status==='done'?'Not quite yet. Change your code, then run it again.':'Fix the error, then run it again.'}})}
 var cb=box.querySelector('input[type=checkbox]');
 if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
@@ -300,18 +302,21 @@ function plock(v){var p=pload();p[key]=v;try{localStorage.setItem(PK,JSON.string
 function freeze(v){[].forEach.call(box.querySelectorAll('input'),function(i){i.disabled=true;if(i.type==='radio')i.checked=(i.value===v);else i.value=v});btn.hidden=true;msg.className='msg ok';msg.textContent='Locked in. Now run it and compare.'}
 var saved=pload()[key];if(saved!==undefined&&saved!==null)freeze(saved);
 btn.addEventListener('click',function(){var r=box.querySelector('input[type=radio]:checked'),i=box.querySelector('input.pin'),v=r?r.value:(i?i.value.trim():'');
-if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v)})}
+if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v);try{document.dispatchEvent(new CustomEvent('wp-predict',{detail:key}))}catch(e){}})}
 if(ty==='parsons'){parsons(box,win,bad)}
 });
 document.querySelectorAll('.compare').forEach(function(c){var pk=c.dataset.predict;
 function mine(){try{return (JSON.parse(localStorage.getItem('wp-predict'))||{})[pk]}catch(e){return undefined}}
-window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==c.dataset.play||m.status!=='done'&&m.status!=='stopped')return;
+var last=null;
+document.addEventListener('wp-predict',function(e){if(e.detail===pk&&last)show(last)});
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==c.dataset.play||m.status!=='done'&&m.status!=='stopped')return;last=m;show(m)});
+function show(m){
 var v=mine();c.replaceChildren();
 function line(label,text){var p=document.createElement('p');var b=document.createElement('b');b.textContent=label+' ';p.appendChild(b);p.appendChild(document.createTextNode(text));c.appendChild(p)}
 if(v===undefined||v===null){line('No prediction locked in.','Go back to the Predict step if you want to compare next time.')}
 else{line('You predicted:',v);var out=(m.output||'').trim(),a=c.dataset.actual||'';
-if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now compare:','look at the drawing. Was your prediction right? What did you notice?')}
-c.hidden=false})});
+if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now compare:','look at the '+(m.kind==='html'?'page':'drawing')+'. Was your prediction right? What did you notice?')}
+c.hidden=false}});
 // Full screen / inline for each playground: a class, not the Fullscreen API, so it works on iPads and the
 // playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
 document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.try-full');if(!b)return;
@@ -373,7 +378,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
     return `<div class="check" ${base}><label><input type="checkbox"><span>${esc(k.text)}</span></label>${msg}</div>`;
   }
   if (k.type === 'code') {
-    return `<div class="check" ${base} data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"></ul><p class="msg" aria-live="polite">Run your program. This ticks when your code does all of the above.</p></div>`;
+    return `<div class="check" ${base} data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"></ul><p class="msg" aria-live="polite">${kind === 'html' ? 'This ticks when your page has all of the above.' : 'Run your program. This ticks when your code does all of the above.'}</p></div>`;
   }
   if (k.type === 'number') {
     return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"><p class="check-q">${esc(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
