@@ -17,10 +17,11 @@ pathways:
       - { id: biology-7, title: Year 7 Biology, stage: foundations, summary: "Classifying living things with dichotomous keys, and food webs that model energy flow and predict population changes." }
   - id: physics
     title: Physics
-    summary: Forces and motion, and how energy moves.
+    summary: Forces and motion, how energy moves, and Newton's laws.
     courses:
-      - { id: physics-7, title: Year 7 Physics, stage: foundations, summary: "Balanced and unbalanced forces, gravity, and how forces change motion." }
+      - { path: science/physics-7, stage: foundations }
       - { path: science/physics-9, stage: extensions }
+      - { path: science/physics-10, stage: extensions }
   - id: earth-space
     title: Earth and space
     summary: The Earth, sun and moon, then rocks and moving plates.

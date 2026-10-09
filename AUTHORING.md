@@ -441,6 +441,22 @@ Vary, Practise, Make).
       (students drag it; it lands on the nearest grid point, and checks see it only once it is let go); one capital letter each;
     - `segment: A, B` or `line: A, B`; `table: 0, 1, 2, 3` (a table of values of each plot at these x values).
     - `step: 1`: the "1 right, m up" triangle on the first plot from that x, labelled with how far it goes up or down.
+  - `widget: forces` (any subject; first used by the physics lessons): a force diagram and, with `motion: on`, the
+    motion it causes.
+    - `object: Box` (its name), `mass: 2` (kg; `mass: 1, 10, 2` is a slider), `g: 9.8` (N/kg) or
+      `place: Earth, Moon, Mars, Jupiter` (buttons that set g);
+    - `force P: right, 10, Push, adjust 0-20` (a capital letter, a direction: left, right, up or down, a size in N,
+      then in any order a label and `adjust MIN-MAX` (`by 0.5` for the step) for a slider). The size can be
+      `weight` (m × g, down) or `support` (up, just enough to balance what pushes down);
+    - `friction: 6` (the most friction the surface can give: it matches a push up to this, then stays at it while
+      sliding; drawn as force F), `friction: 6, toggle` for an on/off button;
+    - `motion: on`: Play, Pause and Reset; the object moves along a track (left and right only), dropping a dot every
+      half second, with a live speed–time graph. `speed: 3` (starting speed, m/s, + is right), `track: 40` (m),
+      `time: 10` (s).
+    - Named values for `when:` checks: each force by its letter (`P = 30`, `A = W`), `F` friction, `f` net horizontal
+      force, `a` acceleration, `v` speed, `t` time, `d` distance, `m`, `g`, `w` weight; `expect: { balanced: true }`
+      means both directions balance. Values are rounded to 2 decimal places. Examples: `"f = 0"`,
+      `"t >= 3 and f = 0 and v > 0"` (steady speed), `"m = 4 and a = 2"`. The acceleration shows before Play.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working

@@ -60,3 +60,12 @@ main { display: flex; flex-direction: column; height: 100%; padding: 8px 12px 10
 #gtable tr > th:first-child { font: italic 600 16px "Times New Roman", serif; }
 .gbar { display: flex; justify-content: flex-end; }
 .gbar button { font: 600 13px/1 system-ui, sans-serif; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+/* Forces */
+.srow .fname { font: 600 15px/1.2 system-ui, sans-serif; min-width: 4.5em; }
+.fbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.fbar button { font: 600 14px/1 system-ui, sans-serif; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.fbar button.go, .fbar button[aria-pressed=true] { background: var(--accent); border-color: transparent; color: #fff; }
+@media (prefers-color-scheme: dark) { .fbar button.go, .fbar button[aria-pressed=true] { color: #14181f; } }
+.fbar button.quiet { margin-left: auto; font-size: 13px; padding: 6px 10px; }
+.fbar button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.fsum { margin: 2px 0 0; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
