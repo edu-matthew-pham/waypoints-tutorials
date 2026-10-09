@@ -116,7 +116,9 @@ ul.lessons a:hover{border-color:var(--accent)}ul.lessons b{display:block;font-si
 .check.done{border-style:solid}
 .ref-group{margin:28px 0 8px;font-size:1.15rem}.ref-item{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr);gap:6px 18px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
 .ref-item .code{margin:0}.ref-item .ref-id{font-size:12px;margin-top:2px}.ref-item p{margin:0;color:var(--muted);font-size:15px}.ref-item b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.ref-search{width:100%;box-sizing:border-box;margin:18px 0 0;padding:10px 14px;font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}.ref-search:focus{outline:2px solid var(--accent);outline-offset:1px}.ref-item[hidden],.ref-section[hidden]{display:none}
 @media(max-width:640px){.ref-item{grid-template-columns:1fr}}
+@media print{.ref-search{display:none}}
 @media print{body{background:#fff;color:#000}.ref-item{break-inside:avoid}}
 footer{margin-top:50px;color:var(--muted);font-size:14px}
 `;

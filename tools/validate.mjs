@@ -20,6 +20,7 @@ for (const f of readdirSync('snippets').filter((n) => n.endsWith('.json'))) {
       n++;
       if (!i.label || !i.code || !i.hint) { bad++; console.error(`✗ snippets/${f} › ${g.name} › ${i.label || '(no label)'}: needs label, code and hint`); }
       if ((i.code.match(/‹/g) || []).length !== (i.code.match(/›/g) || []).length) { bad++; console.error(`✗ snippets/${f} › ${i.label}: unbalanced ‹ ›`); }
+      if (i.matches !== undefined) { try { new RegExp(i.matches, 'm'); } catch (e) { bad++; console.error(`✗ snippets/${f} › ${i.label}: matches is not a valid regex (${e.message})`); } }
     }
     if (!bad) console.log(`✓ snippets/${f}: ${n} snippets`);
   } catch (e) { bad++; console.error(`✗ snippets/${f}: ${e.message}`); }

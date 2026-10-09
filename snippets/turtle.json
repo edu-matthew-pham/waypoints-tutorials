@@ -88,6 +88,7 @@
     },
     {
      "label": "begin_fill / end_fill",
+     "matches": "\\b(begin|end)_fill\\(",
      "code": "begin_fill()\n‹›\nend_fill()\n",
      "hint": "Everything drawn between these two lines is filled in."
     },
@@ -153,6 +154,7 @@
     },
     {
      "label": "list",
+     "matches": "=\\s*\\[",
      "code": "‹colours› = [‹\"red\"›, ‹\"blue\"›, ‹\"green\"›]\n",
      "hint": "Keep many values in order under one name. The first item is place 0."
     },
@@ -163,6 +165,7 @@
     },
     {
      "label": "def (function)",
+     "matches": "^\\s*def\\s",
      "code": "def ‹shape›():\n    ‹pass›\n\n‹shape›()\n",
      "hint": "Name a group of steps, then run it by calling its name."
     },
@@ -173,6 +176,7 @@
     },
     {
      "label": "random number",
+     "matches": "\\brandom\\b",
      "code": "import random\n\n‹n› = random.randint(‹1›, ‹10›)\n",
      "hint": "Pick a random whole number between two values."
     }
@@ -183,16 +187,19 @@
    "items": [
     {
      "label": "onscreenclick",
+     "matches": "\\bonscreenclick\\(",
      "code": "def ‹stamp›(x, y):\n    goto(x, y)\n    dot(‹20›)\n\nonscreenclick(‹stamp›)\nlisten()\nmainloop()\n",
      "hint": "Run a function every time the picture is clicked. It receives the click position."
     },
     {
      "label": "onkey",
+     "matches": "\\bonkey(press)?\\(",
      "code": "def ‹go_up›():\n    forward(‹20›)\n\nonkey(‹go_up›, \"‹Up›\")\nlisten()\nmainloop()\n",
      "hint": "Run a function every time a key is pressed. Click the picture first so it receives keys."
     },
     {
      "label": "ontimer",
+     "matches": "\\bontimer\\(",
      "code": "def ‹tick›():\n    forward(‹5›)\n    ontimer(‹tick›, ‹50›)\n\n‹tick›()\nmainloop()\n",
      "hint": "Run a function again after a number of milliseconds. A function can start its own timer."
     },

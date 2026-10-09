@@ -93,6 +93,7 @@ codeEl.addEventListener('keydown', (e) => {
 });
 
 runBtn.addEventListener('click', async () => {
+  ctl?.close(); // the picture matters now, not the reference
   outEl.textContent = '';
   turtle.resetAll();
   turtle.speed = Number(speedEl.value);
@@ -184,6 +185,9 @@ function renderTabs() {
 modulesReady.then(async (modules) => {
   ctl = await mountSnippets({
     kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed'), modules,
+    host: document.querySelector('.canvas-pane'),
+    // "This lesson": the lesson is the step id without its last part; the starter shows what the step uses.
+    lesson: params.get('id') && params.get('free') !== '1' ? { slug: params.get('id').replace(/\/[^/]*$/, ''), code: starter } : null,
     // A lesson module copied to edit: it becomes the student's own module of the same name, which wins the import.
     openCopy: (name, source) => { if (studentMods[name] === undefined) { studentMods[name] = source; saveMods(); ctl?.setStudentModules(studentMods); } switchTab(name); },
     openModule: (name) => switchTab(name),

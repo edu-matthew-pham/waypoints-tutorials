@@ -94,8 +94,8 @@ for (const [kind, dir] of [['turtle', '_playground'], ['html', '_playground-html
   for (const l of lessons) for (const s of l.steps) {
     if (unlockKind(l, s) !== kind) continue;
     const stepTitle = s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '');
-    for (const id of s.config.unlocks || []) claims[id] = { lesson: l.title, step: stepTitle };
-    for (const t of s.tasks) for (const id of t.config.unlocks || []) claims[id] = { lesson: l.title, step: `${stepTitle} › ${t.title}` };
+    for (const id of s.config.unlocks || []) claims[id] = { lesson: l.title, slug: l.slug, step: stepTitle };
+    for (const t of s.tasks) for (const id of t.config.unlocks || []) claims[id] = { lesson: l.title, slug: l.slug, step: `${stepTitle} › ${t.title}` };
   }
   writeFileSync(join(OUT, dir, 'unlocks.json'), JSON.stringify(claims));
 }
@@ -127,8 +127,12 @@ const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html',
 for (const r of REFS) {
   const data = JSON.parse(readFileSync(join('snippets', `${r.file}.json`), 'utf8'));
   const parent = r.path.split('/').slice(0, -1).join('/');
-  const body = data.groups.map((g) => `<h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map((i) =>
-    `<div class="ref-item">${codeBlock(highlightCode, i.code.split('‹').join('').split('›').join('').replace(/\n$/, '') + '\n', data.language, '')}<div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p><p class="ref-id">id: <code>${snippetId(i.label)}</code></p></div></div>`).join('')).join('');
+  const plain = (t) => String(t).split('‹').join('').split('›').join('');
+  const search = `<input type="search" id="ref-search" class="ref-search" placeholder="Search: a name, or what it does" aria-label="Search the reference"><p id="ref-none" class="lede" hidden></p>`;
+  // Same search as the playground drawer: every word must appear in the name, hint or code.
+  const script = `<script>(function(){var q=document.getElementById('ref-search'),none=document.getElementById('ref-none');q.addEventListener('input',function(){var w=q.value.toLowerCase().split(/\\s+/).filter(Boolean),n=0;document.querySelectorAll('.ref-section').forEach(function(sec){var any=false;sec.querySelectorAll('.ref-item').forEach(function(it){var t=it.dataset.text,hit=w.every(function(x){return t.indexOf(x)>=0});it.hidden=!hit;if(hit){any=true;n++}});sec.hidden=!any});none.hidden=n>0;none.textContent=n?'':'Nothing matches "'+q.value.trim()+'".'})})();</script>`;
+  const body = search + data.groups.map((g) => `<section class="ref-section"><h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map((i) =>
+    `<div class="ref-item" data-text="${esc([i.label, i.hint || '', plain(i.code)].join(' ').toLowerCase())}">${codeBlock(highlightCode, i.code.split('‹').join('').split('›').join('').replace(/\n$/, '') + '\n', data.language, '')}<div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p><p class="ref-id">id: <code>${snippetId(i.label)}</code></p></div></div>`).join('') + '</section>').join('') + script;
   mkdirSync(join(OUT, r.path), { recursive: true });
   writeFileSync(join(OUT, r.path, 'index.html'), page(data.title,
     `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`));

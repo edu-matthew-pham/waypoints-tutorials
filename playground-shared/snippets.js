@@ -1,15 +1,41 @@
-// Shared reference panel for the playgrounds: a "Reference" button that opens collapsible groups of cards.
-// Each card shows real code with a Copy button; the student pastes it where it belongs. Nothing is inserted
-// for them, so where the code goes (and why) stays the student's decision.
-// In a snippet's code, ‹text› marks a value to change: it is highlighted on the card and the markers are
-// removed when copied.
+// Shared reference drawer for the playgrounds: a "Reference" button opens a drawer over the output side
+// (the canvas or preview), so the editor stays in view for pasting. Cards show real code with a Copy button;
+// nothing is inserted for the student. A filter shows "This lesson" by default (what the step's code uses,
+// what the lesson unlocks, the lesson's modules and the student's own tools), or "All"; search covers names,
+// hints and code. In a snippet's code, ‹text› marks a value to change: highlighted on the card, removed on copy.
 import { scanModule, callText, defAtCursor } from './modules-scan.mjs';
 
 const OPEN = '‹', CLOSE = '›';
 const strip = (t) => String(t).split(OPEN).join('').split(CLOSE).join('');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /** Card code as HTML: placeholders become <mark> so students can see what to change. */
 export const markPlaceholders = (code) => esc(code).replace(/‹([^›]*)›/g, '<mark class="ph" title="Change this">$1</mark>');
+
+/**
+ * Pure: a pattern that finds a snippet in a program. An item's own `matches` (a regex) wins; otherwise the
+ * snippet's first line, with each placeholder as a wildcard (a name for name-like placeholders).
+ */
+export function snippetPattern(item) {
+  if (item.matches) { try { return new RegExp(item.matches, 'm'); } catch { return null; } }
+  const first = String(item.code).split('\n').find((l) => l.trim()) || '';
+  // A quoted placeholder ("‹red›") matches any argument, quoted or not: pencolor(c) uses pencolor too.
+  let src = '', rest = first.trim().replace(/(["'])‹([^›]*)›\1/g, '‹ $2›');
+  while (rest) {
+    const o = rest.indexOf(OPEN), c = o >= 0 ? rest.indexOf(CLOSE, o) : -1;
+    const fixed = o >= 0 && c > o ? rest.slice(0, o) : rest;
+    src += fixed.split(/\s+/).map(reEsc).join('\\s*');
+    if (!(o >= 0 && c > o)) break;
+    const ph = rest.slice(o + 1, c);
+    src += /^[A-Za-z_]\w*$/.test(ph) ? '[A-Za-z_]\\w*' : ph ? '.+?' : '.*?';
+    rest = rest.slice(c + 1);
+  }
+  if (!src) return null;
+  const head = first.trim().startsWith(OPEN) ? '^\\s*' : /^\w/.test(first.trim()) ? '(?<![\\w.])' : '';
+  try { return new RegExp(head + src, 'm'); } catch { return null; }
+}
+/** Pure: does this card text match every word of the search? */
+export const matchesQuery = (text, q) => String(q).toLowerCase().split(/\s+/).filter(Boolean).every((w) => text.includes(w));
 
 const idOf = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -37,13 +63,18 @@ async function copyText(text) {
 }
 
 /**
- * Mounts the panel. Returns a controller:
+ * Mounts the drawer. Returns a controller:
  *   setStudentModules({name: source})  cards for the student's own module tabs
  *   isLocked(id), onChange(fn)         lock state of a snippet or feature id ("save-as-button", "my-module")
- * Options: modules (the lesson's {name: source}); openCopy(name, source) makes an editable copy of a lesson
- * module as the student's own (offered once "my-module" is unlocked); openModule(name) shows a student module tab.
+ *   close()                            hide the drawer (the playground calls it on Run)
+ * Options:
+ *   host       the element the drawer covers (the output side); it falls back to after the toolbar
+ *   lesson     { slug, code } for the "This lesson" filter: the lesson's slug and the step's starter code
+ *   modules    the lesson's {name: source}
+ *   openCopy(name, source)  make an editable copy of a lesson module (offered once "my-module" is unlocked)
+ *   openModule(name)        show a student module's tab
  */
-export async function mountSnippets({ toolbar, textarea, kind, before = null, url = 'snippets.json', modules = {}, openCopy = null, openModule = null }) {
+export async function mountSnippets({ toolbar, textarea, kind, before = null, host = null, lesson = null, url = 'snippets.json', modules = {}, openCopy = null, openModule = null }) {
   let data;
   try { data = await (await fetch(url)).json(); } catch { return null; }
   // Snippets that some lesson step unlocks start locked; the rest are always available.
@@ -51,7 +82,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   try { claims = await (await fetch('unlocks.json')).json(); } catch { /* no lessons claim any */ }
   // The create page's preview passes this lesson's own locks: ?locks=id~Step title|id~Step title
   const lp = new URLSearchParams(location.search).get('locks');
-  if (lp) for (const pair of lp.split('|')) { const [id, step] = pair.split('~'); if (id) claims[id] = { lesson: 'this lesson', step: step || 'a step' }; }
+  if (lp) for (const pair of lp.split('|')) { const [id, step] = pair.split('~'); if (id) claims[id] = { lesson: 'this lesson', here: true, step: step || 'a step' }; }
   // Teacher override: ?unlock=all shows everything (remembered in this browser); ?unlock=off resets it.
   const ov = new URLSearchParams(location.search).get('unlock');
   if (ov) { const p = loadProgress(); p.all = ov === 'all'; try { localStorage.setItem(STORE, JSON.stringify(p)); } catch { /* ignore */ } }
@@ -62,6 +93,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     const p = loadProgress();
     return !(p.all || (free && p.free) || (p.unlocked || {})[`${kind}:${id}`]);
   };
+  const inThisLesson = (id) => !!claims[id] && (claims[id].here || (lesson?.slug && claims[id].slug === lesson.slug));
   const changeCallbacks = [];
 
   const btn = document.createElement('button');
@@ -70,19 +102,29 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'snippets-panel');
   if (before) toolbar.insertBefore(btn, before); else toolbar.prepend(btn);
 
+  // ---------- the drawer: header (title, close, search, filter), then the cards ----------
   const panel = document.createElement('div');
-  panel.id = 'snippets-panel'; panel.className = 'snippets-panel'; panel.hidden = true;
-  panel.setAttribute('role', 'region'); panel.setAttribute('aria-label', 'Reference');
-  const intro = document.createElement('p'); intro.className = 'ref-intro';
-  intro.innerHTML = `Copy what you need, then paste it into your code with <kbd>${PASTE_KEY}</kbd>. <mark class="ph">Highlighted</mark> values are yours to change.`;
-  const note = document.createElement('p'); note.className = 'note'; note.setAttribute('aria-live', 'polite');
-  panel.append(intro, note);
+  panel.id = 'snippets-panel'; panel.className = 'snippets-panel' + (host ? ' drawer' : ''); panel.hidden = true;
+  panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Reference');
+  const hasLesson = !!lesson?.slug;
+  panel.innerHTML = `<div class="ref-top">
+    <div class="ref-titlebar"><h2>Reference</h2><button type="button" class="ref-close" aria-label="Close reference" title="Close (Esc)">×</button></div>
+    <input type="search" class="ref-search" placeholder="Search: a name, or what it does (turn, colour…)" aria-label="Search the reference">
+    <div class="ref-filter" role="radiogroup" aria-label="Show">
+      <button type="button" role="radio" data-f="lesson"${hasLesson ? '' : ' hidden'}>This lesson</button><button type="button" role="radio" data-f="all">All</button>
+    </div>
+    <p class="note" aria-live="polite"></p>
+  </div>
+  <div class="ref-body"><p class="ref-intro">Copy what you need, then paste it into your code with <kbd>${PASTE_KEY}</kbd>. <mark class="ph">Highlighted</mark> values are yours to change.</p><p class="ref-empty" hidden></p></div>`;
+  const body = panel.querySelector('.ref-body'), search = panel.querySelector('.ref-search');
+  const note = panel.querySelector('.note'), empty = panel.querySelector('.ref-empty');
   const say = (text) => { note.textContent = text; clearTimeout(say.t); say.t = setTimeout(() => (note.textContent = ''), 4000); };
+  let filter = hasLesson ? 'lesson' : 'all';
 
-  let cards = []; // [element, id, hint, isDynamic]
+  let cards = []; // { el, id, hint, dyn, text, lessonFixed, pattern }
 
   /** A card: name, hint, then one or more code parts (each with its own Copy), then any extra actions. */
-  function card({ id, label, hint, parts, dyn = false, actions = [] }) {
+  function card({ id, label, hint, parts, dyn = false, actions = [], ours = false, pattern = null }) {
     const c = document.createElement('div'); c.className = 'ref-card'; c.dataset.id = id;
     const head = document.createElement('div'); head.className = 'ref-head';
     const name = document.createElement('span'); name.className = 'ref-name'; name.textContent = label;
@@ -105,14 +147,17 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
       row.append(pre, cp);
       c.append(row);
     }
-    cards.push([c, id, hint, dyn]);
+    const text = [label, hint || '', ...parts.map((p) => strip(p.code))].join(' ').toLowerCase();
+    cards.push({ el: c, id, hint, dyn, text, ours, pattern });
     return c;
   }
-  // Groups the student opened or closed stay that way when the panel re-renders (a tool saved, a module edited).
+  // Groups the student opened or closed stay that way when the drawer re-renders or the filter changes back.
   const opened = new Map();
+  let syncing = false;
   function group(title, open = false) {
-    const det = document.createElement('details'); det.open = opened.has(title) ? opened.get(title) : open;
-    det.addEventListener('toggle', () => opened.set(title, det.open));
+    const det = document.createElement('details'); det.className = 'ref-group'; det.dataset.title = title; det.dataset.open = String(open);
+    det.open = opened.has(title) ? opened.get(title) : open;
+    det.addEventListener('toggle', () => { if (!syncing) opened.set(title, det.open); });
     const sum = document.createElement('summary'); sum.textContent = title; det.append(sum);
     const grid = document.createElement('div'); grid.className = 'ref-grid'; det.append(grid);
     return [det, grid];
@@ -121,14 +166,15 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
 
   for (const g of data.groups) {
     const [det, grid] = group(g.name);
-    for (const item of g.items) grid.append(card({ id: idOf(item.label), label: item.label, hint: item.hint, parts: [{ code: item.code }] }));
-    panel.append(det);
+    for (const item of g.items) grid.append(card({ id: idOf(item.label), label: item.label, hint: item.hint, parts: [{ code: item.code }], pattern: snippetPattern(item) }));
+    body.append(det);
   }
 
-  // Groups that change while the page is open: the student's own tools and modules.
+  // Groups that change while the page is open: the student's own tools and modules, and the lesson's modules.
   const dynamic = document.createElement('div');
-  panel.append(dynamic);
-  toolbar.after(panel);
+  body.prepend(dynamic);
+  body.prepend(body.querySelector('.ref-intro'));
+  if (host) { host.classList.add('ref-host'); host.append(panel); } else toolbar.after(panel);
   let studentModules = {};
 
   function moduleGroup(mod, source, owned) {
@@ -137,7 +183,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     const [det, grid] = group(owned ? `My module: ${mod}` : `Module: ${mod}`, owned);
     const bar = document.createElement('div'); bar.className = 'ref-bar';
     if (owned) {
-      if (openModule) bar.append(small(`Edit ${mod}.py`, 'Open this module in its tab', () => { openModule(mod); toggle(false); }));
+      if (openModule) bar.append(small(`Edit ${mod}.py`, 'Open this module in its tab', () => { openModule(mod); close(); }));
     } else {
       bar.append(small('Show how it works', `Read the code inside ${mod}.py`, () => showSource(mod, source)));
     }
@@ -145,7 +191,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     if (!fns.length) { const p = document.createElement('p'); p.className = 'ref-hint'; p.textContent = 'No functions with a """docstring""" yet. Each one you add shows up here.'; grid.append(p); }
     for (const fn of fns) {
       grid.append(card({
-        id: `${mod}.${fn.name}`, label: `${fn.name}()`, hint: fn.doc, dyn: true,
+        id: `${mod}.${fn.name}`, label: `${fn.name}()`, hint: fn.doc, dyn: true, ours: true,
         parts: [
           { note: '1. At the top of main.py', code: `from ${mod} import ${fn.name}` },
           { note: '2. Where you want it to run', code: callText(fn) },
@@ -158,9 +204,10 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
   function toolsGroup() {
     const tools = loadTools(kind);
     const [det, grid] = group('My tools', true);
+    det.dataset.always = 'true';
     tools.forEach((t, i) => {
       grid.append(card({
-        id: `tool:${i}`, label: t.label, dyn: true, parts: [{ code: t.code }],
+        id: `tool:${i}`, label: t.label, dyn: true, ours: true, parts: [{ code: t.code }],
         actions: [
           small('Edit', `Change "${t.label}"`, () => editTool(i)),
           small('×', `Remove "${t.label}"`, () => { if (!confirm(`Remove "${t.label}" from My tools?`)) return; const all = loadTools(kind); all.splice(i, 1); saveTools(kind, all); renderDynamic(); }),
@@ -180,13 +227,15 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
       const all = loadTools(kind); all.push({ label, code: sel.replace(/\s+$/, '') + '\n' }); saveTools(kind, all);
       renderDynamic(); say(`Saved "${label}". Find it under My tools.`);
     });
-    cards.push([save, 'save-as-button', 'Select some code in the editor (or put the cursor in a def), then click to keep it under My tools.', true]);
+    save.title = 'Select some code in the editor (or put the cursor in a def), then click to keep it under My tools.';
     grid.append(save);
+    // Only show the save button and an empty group once saving is unlocked.
+    det.dataset.save = 'true';
     return det;
   }
 
   function renderDynamic() {
-    cards = cards.filter((x) => !x[3]);
+    cards = cards.filter((x) => !x.dyn);
     dynamic.replaceChildren(toolsGroup());
     for (const [mod, source] of Object.entries(modules)) {
       if (studentModules[mod] !== undefined) continue; // the student's own module of the same name wins
@@ -196,16 +245,57 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     refresh();
   }
 
-  function refresh() {
-    for (const [el, id, hint] of cards) {
-      const locked = isLocked(id);
-      el.classList.toggle('locked', locked);
-      el.setAttribute('aria-disabled', String(locked));
-      const why = locked ? `Unlocks in ${claims[id].lesson}: ${claims[id].step}` : '';
-      const lock = el.querySelector?.('.ref-lock');
-      if (lock) lock.textContent = why;
-      else el.title = why || hint || '';
+  // ---------- filter and search ----------
+  // Names the step's code uses: the starter, plus whatever is in the editor when the drawer opens.
+  let usedText = '';
+  const inLesson = (c) => c.ours || inThisLesson(c.id) || (!!c.pattern && c.pattern.test(usedText));
+  function apply() {
+    const q = search.value.trim().toLowerCase();
+    const focused = filter === 'lesson' || !!q;
+    let shown = 0, inAll = 0;
+    for (const c of cards) {
+      const hit = !q || matchesQuery(c.text, q);
+      if (hit) inAll++;
+      const show = hit && (filter === 'all' || inLesson(c));
+      c.el.hidden = !show;
+      if (show) shown++;
     }
+    syncing = true;
+    for (const det of panel.querySelectorAll('details.ref-group')) {
+      const any = [...det.querySelectorAll('.ref-card')].some((el) => !el.hidden);
+      const keep = det.dataset.always === 'true' && !q && !isLocked('save-as-button');
+      det.hidden = !any && !keep;
+      if (!det.hidden) det.open = focused ? true : (opened.has(det.dataset.title) ? opened.get(det.dataset.title) : det.dataset.open === 'true');
+    }
+    syncing = false;
+    for (const b of panel.querySelectorAll('.ref-filter button')) b.setAttribute('aria-checked', String(b.dataset.f === filter));
+    empty.replaceChildren();
+    empty.hidden = shown > 0;
+    if (!shown) {
+      const more = filter === 'lesson' ? inAll : 0;
+      empty.append(q ? `Nothing matches "${search.value.trim()}"${filter === 'lesson' ? ' in this lesson' : ''}.` : 'Nothing for this lesson yet.');
+      if (more || (filter === 'lesson' && !q)) {
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'snippet';
+        b.textContent = q ? `Show ${more} in All` : 'Show All';
+        b.addEventListener('click', () => { filter = 'all'; apply(); });
+        empty.append(' ', b);
+      }
+    }
+  }
+  search.addEventListener('input', apply);
+  panel.querySelector('.ref-filter').addEventListener('click', (e) => { const f = e.target.closest('button')?.dataset.f; if (f) { filter = f; apply(); } });
+  search.addEventListener('keydown', (e) => { if (e.key === 'Escape' && search.value) { e.stopPropagation(); search.value = ''; apply(); } });
+
+  function refresh() {
+    for (const c of cards) {
+      const locked = isLocked(c.id);
+      c.el.classList.toggle('locked', locked);
+      c.el.setAttribute('aria-disabled', String(locked));
+      c.el.querySelector('.ref-lock').textContent = locked ? `Unlocks in ${claims[c.id].lesson}: ${claims[c.id].step}` : '';
+    }
+    const save = panel.querySelector('.snippet.save');
+    if (save) { const l = isLocked('save-as-button'); save.hidden = l; }
+    apply();
     changeCallbacks.forEach((f) => f());
   }
   renderDynamic();
@@ -224,7 +314,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
       ? `Open a copy to change it. Your copy is a module of your own called ${esc(mod)}, and it replaces this one in your programs until you delete it.`
       : 'This is the code your program runs when it imports from this module.'}</p><div class="ref-bar">${canCopy ? '<button class="btn" value="copy">Open a copy to edit</button>' : ''}<button class="btn" value="close">Close</button></div></form>`;
     d.querySelector('pre').textContent = source;
-    d.onclose = () => { if (d.returnValue === 'copy') { openCopy(mod, source); toggle(false); } };
+    d.onclose = () => { if (d.returnValue === 'copy') { openCopy(mod, source); close(); } };
     d.returnValue = ''; d.showModal();
   }
   function editTool(i) {
@@ -245,16 +335,25 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ur
     d.returnValue = ''; d.showModal();
   }
 
-  function toggle(open = panel.hidden) {
-    panel.hidden = !open; btn.setAttribute('aria-expanded', String(open));
-    if (!open) textarea.focus();
+  function open() {
+    usedText = `${lesson?.code || ''}\n${textarea.value}`;
+    panel.hidden = false; btn.setAttribute('aria-expanded', 'true');
+    apply();
+    search.focus();
   }
-  btn.addEventListener('click', () => toggle());
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden && !dlg?.open) toggle(false); });
+  function close() {
+    if (panel.hidden) return;
+    panel.hidden = true; btn.setAttribute('aria-expanded', 'false');
+    textarea.focus();
+  }
+  btn.addEventListener('click', () => (panel.hidden ? open() : close()));
+  panel.querySelector('.ref-close').addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden && !dlg?.open) close(); });
 
   return {
     setStudentModules(m) { studentModules = m || {}; renderDynamic(); },
     isLocked,
     onChange(f) { changeCallbacks.push(f); },
+    close,
   };
 }

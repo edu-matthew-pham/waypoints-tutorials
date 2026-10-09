@@ -76,9 +76,9 @@ A step picks one with `try: { playground: html }` (default `turtle`). To record 
 
 ## Snippets and reference pages
 
-`snippets/turtle.json` and `snippets/html.json` are the single source for two things: the collapsible **Reference**
-panel in each playground (cards show real code with a Copy button; students paste it where it belongs; `‹text›`
-marks a value to change, highlighted on the card), and the generated cheat sheets at `/code/python/reference/` and `/code/html/reference/`.
+`snippets/turtle.json` and `snippets/html.json` are the single source for two things: the **Reference**
+drawer in each playground (it covers the canvas or preview; cards show real code with a Copy button and students
+paste it where it belongs; search, plus a This lesson / All filter; `‹text›` marks a value to change), and the generated cheat sheets at `/code/python/reference/` and `/code/html/reference/`.
 Each snippet needs a `label`, `code` and `hint`; `npm run validate` checks them. Lesson steps can lock snippets
 until the student passes a check (a tick box or a short question); see AUTHORING.md section 7. Progress is per browser.
 

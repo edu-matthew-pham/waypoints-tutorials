@@ -131,7 +131,12 @@ npm run all        # validate, render, build
 
 Each playground has a collapsible **Reference** panel built from snippets (`snippets/turtle.json`, `snippets/html.json`).
 Each snippet is a card with its code and a Copy button: students copy and paste it themselves, so deciding where
-code goes stays their job. `‹text›` marks a value to change (highlighted on the card, removed when copied). A snippet
+code goes stays their job. `‹text›` marks a value to change (highlighted on the card, removed when copied).
+The panel is a drawer over the canvas (or preview), with search and a **This lesson / All** filter. This lesson
+(the default inside a lesson) shows the snippets this lesson unlocks, the ones the step's starter code uses, the
+lesson's modules and the student's own tools; free play opens on All. "Uses" is found from each snippet's first
+line, with placeholders as wildcards; when that line is too generic, add `"matches": "regex"` to the snippet
+(as for `def`, lists and the event functions). The full reference pages have the same search. A snippet
 is locked only if some step claims it with `unlocks`; unclaimed snippets are always available. A step earns its
 unlocks with a `check`, shown under the step:
 

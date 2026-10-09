@@ -52,4 +52,8 @@ $('reset').addEventListener('click', () => { codeEl.value = starter; write(null)
 
 render();
 
-mountSnippets({ kind: 'html', toolbar: document.querySelector('.bar'), textarea: codeEl });
+mountSnippets({
+  kind: 'html', toolbar: document.querySelector('.bar'), textarea: codeEl,
+  host: document.querySelector('.preview-pane'),
+  lesson: params.get('id') && params.get('free') !== '1' ? { slug: params.get('id').replace(/\/[^/]*$/, ''), code: starter } : null,
+});

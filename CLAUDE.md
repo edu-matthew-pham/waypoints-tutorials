@@ -30,7 +30,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 - `playground/` (turtle), `playground-html/`, `playground-shared/snippets.js`, `snippets/*.json`, `modules/` (shared Python modules), `site/progress.js`, `create/`.
 - Docs: `AUTHORING.md` (lesson format and check types), `README.md`, `ROADMAP.md` (done and proposed).
 - Check types: reflect, question, code, number, bug, match, trace, parsons, predict. Error items also take `fault:` and `misconception:` (ids in `misconceptions.json`); validate warns on off-path errors (AUTHORING.md, Error tasks).
-- Snippet ids are slugs of labels (for example `if-else`); lessons unlock them with `unlocks:`. Students see snippets as the **Reference** panel: cards with Copy buttons (no click-to-insert). My tools can be copied, edited and removed; student modules are global per browser (`wp-mymodules:turtle`); lesson modules offer "Open a copy to edit" once `my-module` is unlocked.
+- Snippet ids are slugs of labels (for example `if-else`); lessons unlock them with `unlocks:`. Students see snippets as the **Reference** drawer over the canvas/preview: cards with Copy buttons (no click-to-insert), search, and a This lesson / All filter (This lesson = the lesson's unlocks via `slug` in `unlocks.json`, snippets the starter code uses via first-line patterns or a snippet's `matches`, lesson modules, My tools). Run closes it. My tools can be copied, edited and removed; student modules are global per browser (`wp-mymodules:turtle`); lesson modules offer "Open a copy to edit" once `my-module` is unlocked.
 - Multi-file examples: `# file: name.py` lines split code into panels; bug answers then use `"name.py:7"`.
 
 ## Commands
