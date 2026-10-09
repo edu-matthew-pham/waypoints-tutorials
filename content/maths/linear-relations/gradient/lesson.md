@@ -4,6 +4,7 @@ unit: lines
 title: What m does to a line
 summary: In y = mx + c, the number in front of x sets how steep the line is and which way it goes.
 language: maths
+voice: { name: bf_emma, speed: 1.05 }
 hook: "Ramps, roofs, ski runs and phone bills all have a steepness: how much more for each step along. In a rule like y = 3x + 1, one number decides it."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8135
@@ -14,25 +15,26 @@ explainPicture: { ref: graph.yml#explain-pic, caption: "$y = 3x + 1$: one step r
 explainClip:
   query: { code: "@graph.yml#explain", fresh: 1, id: explain }
   caption: "m is how far the line goes up for each step right"
+  say: "m is how far the line goes up for each step to the right."
   clip:
-    - caption: "Here m = 1: one step right, up 1."
-    - wait: 1800
-    - caption: "A bigger m: up 2 for each step, so the line is steeper."
+    - caption: { text: "Here m = 1: one step right, up 1.", say: "Here m is one: one step right, and up one." }
+    - wait: 400
+    - caption: { text: "A bigger m: up 2 for each step, so the line is steeper.", say: "Make m bigger: up two for each step, so the line is steeper." }
     - click: Make m bigger
-    - wait: 1800
-    - caption: "m = 3: up 3. The line still crosses the y-axis at 1."
+    - wait: 400
+    - caption: { text: "m = 3: up 3. The line still crosses the y-axis at 1.", say: "m is three: up three, and it still crosses the y axis at one." }
     - click: Make m bigger
-    - wait: 2200
-    - caption: "m = 0: no steps up, so the line is flat."
+    - wait: 400
+    - caption: { text: "m = 0: no steps up, so the line is flat.", say: "When m is zero, there are no steps up, so the line is flat." }
     - click: Make m smaller
     - click: Make m smaller
     - click: Make m smaller
-    - wait: 2000
-    - caption: "A negative m goes down: m = −2 is down 2 for each step right."
+    - wait: 400
+    - caption: { text: "A negative m goes down: m = −2 is down 2 for each step right.", say: "A negative m goes down: m of negative two is down two each step." }
     - click: Make m smaller
     - click: Make m smaller
     - expect: { selector: "#legend", contains: "y = −2x + 1" }
-    - wait: 2500
+    - wait: 1200
 ---
 A rule such as $y = 3x + 1$ gives a **straight line**: work out $y$ for each value of $x$, plot the points, and join them. Every rule of the form $y = mx + c$ gives a straight line. $m$ is the number in front of $x$, and $c$ is the number on its own. In this lesson $c$ stays at 1, and you find out what $m$ does.
 

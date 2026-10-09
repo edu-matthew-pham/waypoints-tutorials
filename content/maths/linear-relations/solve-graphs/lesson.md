@@ -4,6 +4,7 @@ unit: using
 title: Solving equations with graphs
 summary: Draw each side of an equation as a line. Where the lines meet, both sides are equal, so the x there is the solution.
 language: maths
+voice: { name: bf_emma, speed: 1.05 }
 hook: "A graph can solve an equation you have no method for yet: draw both sides and look where they meet. Calculators, spreadsheets and engineers do exactly this."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8137
@@ -14,24 +15,21 @@ explainPicture: { ref: graph.yml#pic-solve, caption: "$y = 2x + 3$ meets $y = 11
 explainClip:
   query: { code: "@graph.yml#explain", fresh: 1, id: explain }
   caption: "The solution is the x where the two lines meet"
+  say: "The solution is the x where the two lines meet."
   clip:
-    - caption: "2x + 3 = 11: draw y = 2x + 3 and y = 11. They meet at x = 4."
-    - wait: 2400
-    - caption: "Change the right side to 7: the meeting point moves to x = 2."
+    - caption: { text: "2x + 3 = 11: draw y = 2x + 3 and y = 11.", say: "To solve two x plus three equals eleven, draw both sides as lines." }
+    - caption: { text: "They meet at x = 4.", say: "They meet where x is four, so the solution is x equals four." }
+    - wait: 400
+    - caption: { text: "Change the right side to 7: the meeting point moves to x = 2.", say: "Change the right side to seven, and the lines meet where x is two." }
     - click: Make k smaller
     - click: Make k smaller
-    - click: Make k smaller
-    - click: Make k smaller
-    - wait: 2200
-    - caption: "2x + 3 = 1: they meet left of the y-axis, so x = −1."
-    - click: Make k smaller
-    - click: Make k smaller
-    - click: Make k smaller
+    - wait: 400
+    - caption: { text: "2x + 3 = 1: they meet left of the y-axis, so x = −1.", say: "For two x plus three equals one, they meet at x equals negative one." }
     - click: Make k smaller
     - click: Make k smaller
     - click: Make k smaller
     - expect: { selector: "#board", contains: "x = −1" }
-    - wait: 2500
+    - wait: 1200
 ---
 An equation such as $2x + 3 = 11$ says two things are equal. Each side can be drawn as a line: $y = 2x + 3$, and $y = 11$ (a flat line, because 11 does not change with $x$). In the Equations unit you solved equations with a balance and by backtracking. Now you solve them by looking at a graph.
 

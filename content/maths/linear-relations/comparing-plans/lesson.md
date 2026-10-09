@@ -4,6 +4,7 @@ unit: using
 title: Comparing two plans
 summary: Put two rules on one graph. Where the lines cross they cost the same; on either side, the lower line is the cheaper plan. Then check where the model makes sense.
 language: maths
+voice: { name: bf_emma, speed: 1.05 }
 hook: "Phone plans, gyms and streaming services all ask you to choose between a bigger fee and a lower rate. Two lines on one graph answer it for any amount."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8139
@@ -14,18 +15,16 @@ explainPicture: { ref: graph.yml#pic, caption: "Plan A ($T = 5g + 20$) and Plan 
 explainClip:
   query: { code: "@graph.yml#explain", fresh: 1, id: explain }
   caption: "Where the lines cross, the plans cost the same"
+  say: "Where the lines cross, the two plans cost the same."
   clip:
-    - caption: "Plan A: 20 dollars plus 5 per GB. Plan B: a flat amount. Here B is 30 dollars: they cost the same at 2 GB."
-    - wait: 2600
-    - caption: "Make Plan B 40 dollars: now they cost the same at 4 GB."
+    - caption: { text: "Plan A: 20 dollars plus 5 per GB. Plan B: one flat price.", say: "Plan A is twenty dollars plus five per gigabyte; Plan B is one flat price." }
+    - caption: { text: "Here B is 30 dollars: the same as A at 2 GB.", say: "Here Plan B is thirty dollars, the same as Plan A at two gigabytes." }
+    - wait: 400
+    - caption: { text: "Make Plan B 40 dollars: now they cost the same at 4 GB.", say: "Make Plan B forty dollars, and now they cost the same at four gigabytes." }
     - click: Make k bigger
-    - click: Make k bigger
-    - click: Make k bigger
-    - click: Make k bigger
-    - click: Make k bigger
-    - wait: 2400
-    - caption: "Left of the crossing, Plan A's line is lower: cheaper for light users. Right of it, Plan B is cheaper."
-    - wait: 2800
+    - wait: 400
+    - caption: { text: "Left of the crossing, Plan A is cheaper; right of it, Plan B is.", say: "Left of the crossing, Plan A is cheaper; to the right, Plan B is." }
+    - wait: 1200
     - expect: { selector: "#board", contains: "g = 4" }
 ---
 In the last lesson you wrote one rule for one situation. Choosing between two plans needs two rules on the same graph, and a question answered in the situation's own words: which plan, for how much data, and does the answer make sense?

@@ -4,6 +4,7 @@ unit: using
 title: Rules from real situations
 summary: Many real costs and amounts are a starting amount plus a rate. The starting amount is c and the rate is m, so the rule is y = mx + c.
 language: maths
+voice: { name: bf_emma, speed: 1.05 }
 hook: "Taxi fares, phone plans, gym memberships and a phone battery running down all follow the same pattern: where you start, and how much changes each time."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8138
@@ -14,20 +15,21 @@ explainPicture: { ref: graph.yml#explain-pic, caption: "A taxi: 4 dollars to get
 explainClip:
   query: { code: "@graph.yml#explain", fresh: 1, id: explain }
   caption: "The starting amount is c; the rate is m"
+  say: "The starting amount is c, and the rate is m."
   clip:
-    - caption: "A taxi costs 4 dollars to get in. That is paid before you go anywhere: it is c."
+    - caption: { text: "A taxi costs 4 dollars to get in: that is c.", say: "A taxi costs four dollars to get in, before you go anywhere: that is c." }
     - click: Make c bigger
     - click: Make c bigger
     - click: Make c bigger
     - click: Make c bigger
-    - wait: 1800
-    - caption: "Then 2 dollars for each km. That is the rate, how much more for each one more: it is m."
+    - wait: 400
+    - caption: { text: "Then 2 dollars for each km: the rate, m.", say: "Then two dollars for each kilometre: that is the rate, m." }
     - click: Make m bigger
     - click: Make m bigger
-    - wait: 2000
-    - caption: "Together: T = 2d + 4. Starts at 4, up 2 for each km."
+    - wait: 400
+    - caption: { text: "Together: T = 2d + 4. Starts at 4, up 2 for each km.", say: "Together, T equals two d plus four: start at four, up two per kilometre." }
     - expect: { selector: "#legend", contains: "T = 2d + 4" }
-    - wait: 2500
+    - wait: 1200
 ---
 So far the rules had $x$ and $y$. Real situations have their own letters: $T$ for a total cost, $d$ for a distance, $h$ for hours. The graph works the same way: $m$ is still how much the line goes up for each step right, and $c$ is still where it starts.
 

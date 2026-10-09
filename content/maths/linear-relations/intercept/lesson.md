@@ -4,6 +4,7 @@ unit: lines
 title: What c does to a line
 summary: In y = mx + c, the number on its own moves the line up or down without changing its steepness, so lines with the same m are parallel.
 language: maths
+voice: { name: bf_emma, speed: 1.05 }
 hook: "Two phone plans with the same price per gigabyte but different monthly fees never meet: their graphs are parallel. The fee is c."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8136
@@ -14,25 +15,21 @@ explainPicture: { ref: graph.yml#explain-pic, caption: "$y = 2x + 4$ is $y = 2x 
 explainClip:
   query: { code: "@graph.yml#explain", fresh: 1, id: explain }
   caption: "c moves the line up or down; the steepness stays the same"
+  say: "c moves the line up or down, and the steepness stays the same."
   clip:
-    - caption: "The dashed line is y = 2x + 1. The solid line starts the same."
-    - wait: 1800
-    - caption: "A bigger c moves the line up. It stays just as steep."
+    - caption: { text: "The dashed line is y = 2x + 1. The solid line starts the same.", say: "The dashed line is y equals two x plus one; the solid starts the same." }
+    - wait: 400
+    - caption: { text: "A bigger c moves the line up. It stays just as steep.", say: "A bigger c moves the line up, and it stays just as steep." }
     - click: Make c bigger
-    - click: Make c bigger
-    - click: Make c bigger
-    - wait: 2000
-    - caption: "c = 4: the line crosses the y-axis at 4. Same m, so it is parallel to the dashed line."
-    - wait: 2200
-    - caption: "A negative c moves it below: c = −2 crosses at −2."
-    - click: Make c smaller
-    - click: Make c smaller
-    - click: Make c smaller
-    - click: Make c smaller
+    - wait: 400
+    - caption: { text: "c = 4: the line crosses the y-axis at 4.", say: "With c equal to four, the line crosses the y axis at four." }
+    - caption: { text: "Same m, so it is parallel to the dashed line.", say: "It has the same m, so it is parallel to the dashed line." }
+    - wait: 400
+    - caption: { text: "A negative c moves it below: c = −2 crosses at −2.", say: "A negative c moves it down: c of negative two crosses at negative two." }
     - click: Make c smaller
     - click: Make c smaller
     - expect: { selector: "#legend", contains: "y = 2x − 2" }
-    - wait: 2500
+    - wait: 1200
 ---
 In the last lesson $c$ stayed at 1 and you changed $m$, the steepness. Now $m$ stays at 2 and you change $c$, the number on its own.
 

@@ -248,7 +248,7 @@
       var plus = document.createElement('button'); plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', 'Make ' + sl.name + ' bigger');
       var out = document.createElement('output'); out.htmlFor = r.id;
       var set = function (v) {
-        v = Math.max(sl.min, Math.min(sl.max, Math.round(v / sl.step) * sl.step));
+        v = Math.max(sl.min, Math.min(sl.max, sl.min + Math.round((v - sl.min) / sl.step) * sl.step));   // steps counted from the minimum
         vars[sl.name] = round(v); r.value = v; B.moved = true; B.jsxBoard.update(); report();
       };
       r.addEventListener('input', function () { set(Number(r.value)); });

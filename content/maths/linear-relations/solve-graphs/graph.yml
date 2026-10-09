@@ -79,7 +79,7 @@ cross: 1, 2
 widget: graph
 x: -2, 6
 y: -2, 14
-slider k: -1, 13, 11
+slider k: -1, 13, 11, 2
 plot: y = 2x + 3
 plot: y = k, dashed
 cross: 1, 2

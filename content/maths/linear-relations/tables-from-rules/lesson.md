@@ -4,6 +4,7 @@ unit: rules
 title: Tables from rules
 summary: A rule turns each input x into an output y. Choose inputs, work out each output, and write them as a table of ordered pairs (x, y), input first.
 language: maths
+voice: { name: bf_emma, speed: 1.05 }
 hook: "A spreadsheet column, a recipe scaled for more people, a taxi meter: each one takes a number in and gives a number out by the same rule, every time."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8141
@@ -13,21 +14,23 @@ app:
 explainClip:
   query: { code: "@rule.yml#explain", fresh: 1, id: explain }
   caption: "Input x, work out y, write the pair (x, y)"
+  say: "Put in x, work out y, then write the pair, with x first."
   clip:
-    - caption: "The rule y = 3x − 1. Choose an input: x = 0."
+    - caption: { text: "The rule y = 3x − 1. Choose an input: x = 0.", say: "The rule is y equals three x minus one; choose the input zero." }
     - type: { into: "Input x =", text: "0" }
     - click: Put it in
-    - wait: 1600
-    - caption: "Put 0 in place of x: y = 3(0) − 1 = −1. The pair is (0, −1): input first."
-    - wait: 2200
+    - wait: 400
+    - caption: { text: "Put 0 in place of x: y = 3(0) − 1 = −1.", say: "Put zero in place of x: three times zero, minus one, is negative one." }
+    - caption: { text: "The pair is (0, −1): input first.", say: "The pair is zero, negative one, with the input first." }
+    - wait: 400
     - click: Put it in
-    - caption: "x = 1 gives y = 2. Every input gets its own output."
-    - wait: 1800
+    - caption: { text: "x = 1 gives y = 2. Every input gets its own output.", say: "An input of one gives two; every input gets its own output." }
+    - wait: 400
     - click: Put it in
     - click: Put it in
-    - caption: "The table of values: inputs on top, outputs underneath."
+    - caption: { text: "The table of values: inputs on top, outputs underneath.", say: "This is the table of values, with inputs on top and outputs underneath." }
     - expect: { selector: ".rulepairs", contains: "(3, 8)" }
-    - wait: 2600
+    - wait: 1200
 ---
 In the last lesson, a pattern gave a rule. Now we start from the rule. A **rule** such as $y = 2x + 3$ takes an **input** $x$ and gives an **output** $y$. A **table of values** lists inputs and their outputs. Each column is an **ordered pair** $(x, y)$: input first, output second.
 

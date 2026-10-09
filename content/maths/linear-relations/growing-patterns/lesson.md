@@ -4,6 +4,7 @@ unit: rules
 title: Growing patterns
 summary: In a growing pattern, look at what each new figure adds. That gives a rule, and the rule gives any figure without drawing it.
 language: maths
+voice: { name: bf_emma, speed: 1.05 }
 hook: "Tiles along a path, seats around joined tables, fence posts and rails: each one grows by the same amount every time. A rule tells you how many you need for any length."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8140
@@ -14,19 +15,21 @@ explainPicture: { ref: pattern.yml#pic, caption: "Figure 4 has 13 sticks. Each n
 explainClip:
   query: { code: "@pattern.yml#explain", fresh: 1, id: explain }
   caption: "Each figure adds the same amount: that gives the rule"
+  say: "Each figure adds the same amount, and that gives the rule."
   clip:
-    - caption: "Figure 1 is one square: 4 sticks."
-    - wait: 1800
-    - caption: "Figure 2 adds a square, but it shares a side: only 3 new sticks (orange)."
+    - caption: { text: "Figure 1 is one square: 4 sticks.", say: "Figure one is one square, made of four sticks." }
+    - wait: 400
+    - caption: { text: "Figure 2 adds a square, sharing a side: 3 new sticks (orange).", say: "Figure two adds a square, but it shares a side, so only three new sticks." }
     - click: Make n bigger
-    - wait: 2000
-    - caption: "Figure 3 adds 3 more. Every new square adds 3."
+    - wait: 400
+    - caption: { text: "Figure 3 adds 3 more. Every new square adds 3.", say: "Every new square adds three more sticks." }
     - click: Make n bigger
-    - wait: 1800
+    - wait: 400
     - click: Make n bigger
-    - caption: "So Figure n has n lots of 3, plus the 1 stick at the start: s = 3n + 1. Figure 4: 3 × 4 + 1 = 13."
+    - caption: { text: "Figure n: n lots of 3, plus the first stick: s = 3n + 1.", say: "Figure n has n lots of three, plus one: s equals three n plus one." }
+    - caption: { text: "Figure 4: 3 × 4 + 1 = 13.", say: "Figure four is three times four, plus one, which is thirteen." }
     - expect: { selector: ".patlabel", contains: "13 sticks" }
-    - wait: 2800
+    - wait: 1200
 ---
 A **growing pattern** is a set of figures where each one adds the same amount to the one before. Number the figures 1, 2, 3, … and call the figure number $n$. In this lesson you find a **rule** that gives the number of sticks (or dots) in figure $n$, so you can work out a figure you have not drawn.
 
