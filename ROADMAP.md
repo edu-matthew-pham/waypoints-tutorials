@@ -54,7 +54,7 @@ The navbar now plans for more subjects: **Learning Waypoints ↗** (the main sit
 **Unit 3: Components and layout**
 
 7. Flexbox: a navbar from a `ul`, then a gallery with `flex-wrap` (Grid named as the tool when rows must line up). Error: `display: flex` on the items instead of the container.
-8. Page sections and components: semantic tags (`header`, `nav`, `main`, `footer`) name the parts of a page; a hero and cards fill them, built from tags, classes, boxes and Flexbox. Each component built once becomes a Reference card (like My tools); real-world steps are finished components to Modify.
+8. Page sections and components: semantic tags (`header`, `nav`, `main`, `footer`) name the parts of a page; a hero and cards fill them, built from tags, classes, boxes and Flexbox. Each component built once becomes a Reference card (like My tools), unlocked by the lesson that builds it, so its example never answers an open task (students now see examples); real-world steps are finished components to Modify.
 9. Forms: `label`, `input`, `select`, `button`, styled as a card. Insight: submitting does nothing; the form is the front and code behind it does the work (leads to the DOM and to Gradio, where an app is a form plus a function). Error: a `label` whose `for` does not match its input's `id`.
 
 **Challenge unit**
