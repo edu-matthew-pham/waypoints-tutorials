@@ -205,6 +205,14 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (known.turtle) known.turtle = ids;
   }
   const snip = (ref) => snippetFrom(read, ref);
+  // expected: file#region whose page is shown (as a picture, no code) behind "Show the expected result". HTML playground only.
+  const validateExpected = (v, where, c) => {
+    if (v === undefined) return;
+    if (typeof v !== 'string' || !v.trim()) return err(where, 'expected must be a code reference, such as page.html#sol-make');
+    if (!c.try) return err(where, 'expected needs the step to have a try playground');
+    if ((c.try.playground || (lesson.language === 'html' ? 'html' : 'turtle')) !== 'html') return err(where, 'expected works in the HTML playground only (for turtle, use an output-only clip: see AUTHORING.md)');
+    try { snip(v); } catch (e) { err(where, `expected: ${e.message}`); }
+  };
   const err = (where, msg) => errs.push(`${lesson.slug} › ${where}: ${msg}`);
   const hasClips = lesson.steps.some((s) => s.config.clip);
 
@@ -297,6 +305,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     const where = `${s.id} "${s.title}"`;
     const c = s.config;
     if (!STAGES.includes(c.stage)) err(where, `stage must be one of ${STAGES.join(', ')} (got "${c.stage}")`);
+    validateExpected(c.expected, where, c);
     if (c.code) {
       try { snip(c.code); } catch (e) { err(where, e.message); }
     }
@@ -362,6 +371,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         else { try { snip(tc.starter); } catch (e) { err(tw, `starter: ${e.message}`); } }
       }
       if (tc.insight !== undefined && !(typeof tc.insight === 'string' && tc.insight.trim())) err(tw, 'insight must be a short text');
+      validateExpected(tc.expected, tw, c);
       if (tc.check !== undefined) validateCheck(tc.check, tw, c);
       if (tc.unlocks !== undefined) {
         if (!Array.isArray(tc.unlocks) || !tc.unlocks.every((u) => typeof u === 'string')) err(tw, 'unlocks must be a list of snippet ids');
@@ -387,6 +397,14 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
 export const TEACHER_TEXT = ['summary', 'before', 'stretch', 'support', 'leads', 'explain', 'timing'];
 
 /** Steps and tasks a solution can be keyed by: "step-4" or "step-4#t2". */
+/** Every "Show the expected result" picture a lesson asks for: [{ key: 'step-4-t2', ref: 'page.html#sol-x' }]. */
+export function expectedItems(lesson) {
+  return lesson.steps.flatMap((s) => [
+    ...(s.config.expected ? [{ key: s.id, ref: s.config.expected }] : []),
+    ...s.tasks.filter((t) => t.config.expected).map((t) => ({ key: t.id.replace('#', '-'), ref: t.config.expected })),
+  ]);
+}
+
 export function workItems(lesson) {
   return lesson.steps.flatMap((s) => (s.tasks.length ? s.tasks.map((t) => ({ id: t.id, step: s, task: t, check: t.config.check })) : [{ id: s.id, step: s, task: null, check: s.config.check }]))
     .filter((w) => ['modify', 'make'].includes(w.step.config.stage) && w.step.config.try);

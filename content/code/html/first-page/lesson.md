@@ -136,8 +136,10 @@ tasks:
       - "A section heading uses <h2>, just like <h1> but smaller."
       - "Put each <h2> on its own line, just above the paragraph it describes."
     check: { type: code, text: "Add an <h2> heading for each section.", rules: { tags: [h2] } }
+    expected: page.html#sol-sections
   - hint: "Put <em> before the word and </em> after it, inside the paragraph's <p> and </p>."
     check: { type: code, text: "Mark one word with <em>.", rules: { tags: [em] } }
+    expected: page.html#sol-em
 ```
 
 ### Change the event
@@ -165,6 +167,7 @@ check:
   text: "Write a notice with a title, sections, paragraphs and one important word."
   rules: { tags: [h1, h2, p, strong] }
 unlocks: [comment]
+expected: page.html#sol-make
 ```
 
 Write a notice for an event at your school (a concert, a fair, a match): an `<h1>` title, two sections with `<h2>` headings, a paragraph in each, and one important word in `<strong>`.
@@ -176,6 +179,7 @@ The grey line in the editor is a **comment**: `<!--` and `-->` wrap a note that 
 ```step
 stage: modify
 try: { playground: html, starter: "page.html#newsletter", height: 440 }
+expected: page.html#sol-newsletter
 insight: "A real page is the same tags inside a standard wrapper; only what is in <body> shows on the page."
 ```
 

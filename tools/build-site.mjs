@@ -49,6 +49,14 @@ function tryHtml(lesson, step) {
   return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), '../'.repeat(lesson.depth), '', { use: lesson.modules, local }, VERSIONS);
 }
 
+// "Show the expected result": pictures of solution pages (render-pictures), keyed "<slug>/<step-4-t2>".
+let EXPECTED = null; // read on first use (readPics is defined further down)
+function expectedHtml(lesson, cfg, key) {
+  const pic = cfg.expected && (EXPECTED ||= readPics(['expected']))[`${lesson.slug}/${key}`];
+  if (!pic) return '';
+  return `<details class="reveal expected"><summary>Show the expected result</summary><figure><img src="${'../'.repeat(lesson.depth)}_pictures/expected/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(pic.hash || '')}" alt="What the finished page looks like" width="${Math.round(pic.w / (pic.div || 2))}" height="${Math.round(pic.h / (pic.div || 2))}" loading="lazy"><figcaption>What it should look like. Your words can be different.</figcaption></figure></details>`;
+}
+
 function buildLesson(lesson, parentTitle, course) {
   const dir = join(OUT, lesson.slug);
   mkdirSync(dir, { recursive: true });
@@ -57,6 +65,7 @@ function buildLesson(lesson, parentTitle, course) {
     snippet: (ref) => getSnippet(lesson.dir, ref),
     clipHtml: (s) => clipHtml(lesson, s),
     tryHtml: (s) => tryHtml(lesson, s),
+    expectedHtml: (cfg, key) => expectedHtml(lesson, cfg, key),
     snippetNames,
     crumb: { href: '../', title: parentTitle },
     course,

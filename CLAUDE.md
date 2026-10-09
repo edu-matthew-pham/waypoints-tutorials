@@ -10,6 +10,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## Teaching decisions
 - PRIMM: Predict (lock in, compare after Run), Run, Investigate, Modify, Make. Investigate tools must follow the lesson insight. Several tasks per step show as sub-pills only when more than one.
+- Expected results are clear and shown (BUILDING › 4): a picture (`expected:`, HTML) when static, an output-only clip when it moves, a short captioned clip to explain a spatial idea; never the code.
 - Real-world content is a small complete example students Modify (the heading names the task). Make is an explicit task. Large projects belong to the teacher (For teachers panel).
 - Foundations first, spiral curriculum, mastery shown by repeated use. Order: 1 intro, 2 variables, 3 decisions, 4 lists, 5 functions, 6 parameters, 7 returns, 8 modules, 9 events, 10 build a button, then the final challenge: 11 Catch the turtle, 12 Power-ups (these two mark "Challenge complete"), 13 Control panel (optional, UI direction), 14 Game levels (optional, games direction). Low floor, high ceiling: milestones with fading support, creative options in For teachers.
 - Units group lessons (the word "module" is avoided: it means a Python module). A course's `index.md` lists `units:` (id, title, summary) and may name a `challenge:` unit; a lesson has `unit:` and may be `optional: true` (not needed for completion). `code/index.md` lists `pathways:` (Python, Web, MakeCode) with courses by `path` (built) or `title` + `summary` ("Coming later"), each `stage: foundations | extensions`.

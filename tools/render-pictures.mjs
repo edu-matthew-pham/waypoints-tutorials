@@ -10,7 +10,7 @@ import { chromium } from 'playwright-core';
 import { createServer } from 'node:http';
 import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
-import { join, extname, resolve } from 'node:path';
+import { join, extname, resolve, dirname } from 'node:path';
 
 const OUT = resolve(process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist');
 const FORCE = process.argv.includes('--force');
@@ -51,6 +51,7 @@ async function pictures({ name, dir, base, jobs, viewport, draw }) {
     for (const j of todo) {
       const png = await draw(page, j);
       if (!png) { console.log(`- ${name} ${j.id}: draws nothing, no picture`); continue; }
+      mkdirSync(dirname(join(dir, `${j.id}.png`)), { recursive: true }); // expected pictures sit in a folder per lesson
       writeFileSync(join(dir, `${j.id}.png`), Buffer.from(png.data.split(',')[1], 'base64'));
       manifest[j.id] = { hash: hashOf(j), w: png.w, h: png.h, ...(png.div ? { div: png.div } : {}) };
       console.log(`✓ ${name} ${j.id} (${png.w}×${png.h})`);
@@ -132,6 +133,27 @@ await pictures({
     const m = 8, width = Math.min(320, box.r + m), height = Math.min(600, box.b + m);
     const buf = await page.screenshot({ clip: { x: 0, y: 0, width, height } });
     return { data: `data:image/png;base64,${buf.toString('base64')}`, w: width * 2, h: height * 2, div: 3 };
+  },
+});
+
+// ---- Expected results: the page a solution region makes, as a picture (no code), for "Show the expected result"
+// in HTML lessons (expected: on a step or task). 520px wide like a lesson's preview, cropped to the page's height.
+const { loadLessons, getSnippet, expectedItems } = await import('./lesson.mjs');
+await pictures({
+  name: 'expected', dir: join(DIR, 'expected'), viewport: { width: 520, height: 900 },
+  base: hashDir(readFileSync(new URL(import.meta.url)), 'expected-v1'),
+  jobs: loadLessons().flatMap((l) => expectedItems(l).map((e) => ({ id: `${l.slug}/${e.key}`, code: getSnippet(l.dir, e.ref) }))),
+  async draw(page, j) {
+    await page.setContent(j.code, { waitUntil: 'load' });
+    const bottom = await page.evaluate(() => {
+      let b = 0;
+      for (const el of document.body.querySelectorAll('*')) { const q = el.getBoundingClientRect(); if (q.height > 0) b = Math.max(b, q.bottom + parseFloat(getComputedStyle(el).marginBottom || 0)); }
+      return Math.ceil(b);
+    });
+    if (!bottom) return null;
+    const height = Math.min(900, bottom + 8);
+    const buf = await page.screenshot({ clip: { x: 0, y: 0, width: 520, height } });
+    return { data: `data:image/png;base64,${buf.toString('base64')}`, w: 1040, h: height * 2, div: 2 };
   },
 });
 
