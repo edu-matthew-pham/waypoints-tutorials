@@ -442,12 +442,13 @@ Vary, Practise, Make).
   - `widget: machine` with `ops: × 2, + 3` and `output: 11`: students undo the steps from the output, last step
     first; a wrong undo gets a nudge, not the answer.
   - `widget: graph`: axes, with
-    - `x: -1, 10` and `y: -1, 20` (ranges; default -10 to 10), `grid: 1` (spacing, or `off`), `snap: 0.5` (where
+    - `x: -1, 10` and `y: -1, 20` (ranges; default -10 to 10), `grid: 1` (spacing, or `off`), `snap: 0.5` or `snap: 1, 5` for x and y (where
       dragged points land; default the grid spacing);
     - `slider m: 0, 5, 2` (min, max, start, optional step; one lower-case letter, not x or y): shown with − and +
       buttons, and usable in plots and points;
     - `plot: y = mx + c` (up to 4): drawn, and listed under the graph with the slider values put in (`y = 2x + 1`);
       `plot: y = 2x + 1, dashed` draws a dashed line (a line to compare with);
+      `plot: y = 5x + 20, from 0` (and/or `to 10`) draws only where a model makes sense; `cross:` looks only there;
     - `point A: 2, 5` (fixed; coordinates may use sliders, as in `point B: 0, c`) and `point P: 1, 3, drag`
       (students drag it; it lands on the nearest grid point, and checks see it only once it is let go); one capital letter each;
     - `segment: A, B` or `line: A, B`; `table: 0, 1, 2, 3` (a table of values of each plot at these x values).

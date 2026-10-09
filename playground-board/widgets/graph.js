@@ -5,10 +5,11 @@
 //   grid: 1                grid spacing (default 1; "off" for none)
 //   axes: d (km), T ($)    names for a context: the axes are labelled with them, and the legend, table and solution
 //                          use the letters (T = 2d + 4). Plots, points and checks still use x and y.
-//   snap: 1                dragged points land on multiples of this (default the grid spacing, or 1)
+//   snap: 1                dragged points land on multiples of this (default the grid spacing, or 1); snap: 1, 5 for x, y
 //   slider m: 0, 5, 2      a named value: min, max, start, step (default step 1); names are single letters
 //   plot: y = mx + c       a relation y = (an expression in x and the sliders); up to 4
 //   plot: y = 2x + 1, dashed   a dashed line (for a line to compare with)
+//   plot: y = 5x + 20, from 0  only from x = 0 (and/or "to 10"): where a model makes sense
 //   point A: 2, 5          a fixed point; coordinates may use sliders (point B: 0, c)
 //   point P: 1, 3, drag    a point students drag (it snaps)
 //   segment: A, B          a segment between two points;   line: A, B   the whole line through them
@@ -49,7 +50,9 @@
   function parse(s) {
     var g = s.grid === undefined ? 1 : s.grid;
     s.gridStep = /^off$/i.test(g) ? 0 : num(g, 'grid');
-    s.snapStep = s.snap !== undefined ? num(s.snap, 'snap') : (s.gridStep || 1);
+    // snap: one step for both axes, or "snap: 1, 5" for x and y separately (a tall y range needs bigger steps).
+    var sn = s.snap !== undefined ? String(s.snap).split(',').map(function (t) { return num(t.trim(), 'snap'); }) : [s.gridStep || 1];
+    s.snapStep = [sn[0], sn.length > 1 ? sn[1] : sn[0]];
     s.xr = nums(s.x || '-10, 10', 2, 'x').map(function (t) { return num(t, 'x'); });
     s.yr = nums(s.y || '-10, 10', 2, 'y').map(function (t) { return num(t, 'y'); });
     if (!(s.xr[0] < s.xr[1]) || !(s.yr[0] < s.yr[1])) throw new Error('x: and y: need the smaller number first.');
@@ -71,10 +74,18 @@
         s.sliders.push({ name: it.name, min: a[0], max: a[1], start: a[2], step: a[3] || 1 });
         known[it.name] = 1;
       } else if (it.kind === 'plot') {
-        var dashed = /,\s*dashed\s*$/i.test(it.value), rel = it.value.replace(/,\s*dashed\s*$/i, '');
+        // After the relation, comma-separated options: dashed, from N, to N.
+        var bits = it.value.split(','), rel = bits.shift(), dashed = false, from = null, to = null;
+        bits.forEach(function (b) {
+          var t = b.trim(), mm;
+          if (/^dashed$/i.test(t)) dashed = true;
+          else if ((mm = /^from\s+(.+)$/i.exec(t))) from = num(mm[1], where);
+          else if ((mm = /^to\s+(.+)$/i.exec(t))) to = num(mm[1], where);
+          else throw new Error(where + ': after the relation, use dashed, from N or to N (got "' + t + '").');
+        });
         var m = /^\s*y\s*=\s*(.+)$/.exec(rel);
         if (!m) throw new Error(where + ': write the relation as "y = …", such as "plot: y = 2x + 1".');
-        s.plots.push({ name: it.name, text: rel.trim(), rhs: m[1], tree: WPM.compile(m[1]), dashed: dashed });
+        s.plots.push({ name: it.name, text: rel.trim(), rhs: m[1], tree: WPM.compile(m[1]), dashed: dashed, from: from, to: to });
       } else if (it.kind === 'point') {
         if (!/^[A-Z]$/.test(it.name || '')) throw new Error(where + ': a point needs a one-letter capital name, such as "point A: 2, 5".');
         var p = nums(it.value, 2, where), drag = /^drag$/i.test(p[2] || '');
@@ -136,7 +147,7 @@
     plots = spec.plots.map(function (p, i) {
       var colour = B.css(COLOURS[i]) || '#2f6fb3';
       p.colour = colour;
-      return board.create('functiongraph', [function (x) { try { return p.tree(scopeVars(x)); } catch (e) { return NaN; } }, xr[0], xr[1]], { strokeColor: colour, strokeWidth: p.dashed ? 2.5 : 3, dash: p.dashed ? 2 : 0, highlight: false, fixed: true });
+      return board.create('functiongraph', [function (x) { try { return p.tree(scopeVars(x)); } catch (e) { return NaN; } }, p.from !== null ? Math.max(p.from, xr[0]) : xr[0], p.to !== null ? Math.min(p.to, xr[1]) : xr[1]], { strokeColor: colour, strokeWidth: p.dashed ? 2.5 : 3, dash: p.dashed ? 2 : 0, highlight: false, fixed: true });
     });
     objs = {}; dragged = {};
     spec.points.forEach(function (p) {
@@ -185,7 +196,10 @@
       var g1 = spec.plots[spec.cross[0] - 1], g2 = spec.plots[spec.cross[1] - 1];
       var meet = function () {
         var d = function (x) { try { return g1.tree(scopeVars(x)) - g2.tree(scopeVars(x)); } catch (e) { return NaN; } };
-        var a = spec.xr[0], n = 400, h = (spec.xr[1] - a) / n, pa = d(a);   // scan for a change of sign, then halve
+        var lo0 = Math.max(spec.xr[0], g1.from !== null ? g1.from : -Infinity, g2.from !== null ? g2.from : -Infinity);
+        var hi0 = Math.min(spec.xr[1], g1.to !== null ? g1.to : Infinity, g2.to !== null ? g2.to : Infinity);
+        if (!(lo0 < hi0)) return null;
+        var a = lo0, n = 400, h = (hi0 - a) / n, pa = d(a);   // scan for a change of sign, then halve
         for (var i = 1; i <= n; i++) {
           if (Math.abs(pa) < 1e-12) return [round(a), round(g1.tree(scopeVars(a)))];
           var bx = a + h, pb = d(bx);
@@ -209,8 +223,9 @@
       board.create('text', [function () { return cache ? cache[0] + dx : NaN; }, function () { return cache ? cache[1] + dy : NaN; }, function () { return cache ? '(' + show(cache[0]) + ', ' + show(cache[1]) + ')' : ''; }],
         Object.assign({ anchorX: 'left', anchorY: 'bottom' }, cl));
       // Below the axis's own number labels (or above the axis when the crossing is below it).
-      board.create('text', [function () { return cache ? cache[0] : NaN; }, function () { return cache && cache[1] < 0 ? dy * 1.5 : -dy * 2.2; }, function () { return cache ? spec.names.x + ' = ' + show(cache[0]) : ''; }],
-        Object.assign({ anchorX: 'middle', anchorY: 'top' }, cl));
+      var roomBelow = -dy * 2.2 > spec.yr[0] + dy * 0.3;   // when the x-axis sits at the bottom, write it just above instead
+      board.create('text', [function () { return cache ? cache[0] + (roomBelow ? 0 : dx) : NaN; }, function () { return cache && (cache[1] < 0 || !roomBelow) ? dy * 1.5 : -dy * 2.2; }, function () { return cache ? spec.names.x + ' = ' + show(cache[0]) : ''; }],
+        Object.assign({ anchorX: roomBelow ? 'middle' : 'left', anchorY: roomBelow ? 'top' : 'bottom' }, cl));
     }
     board.update();
   }
@@ -218,8 +233,8 @@
   // snapToGrid, which can land a square away from the pointer when dragging upwards.)
   // While dragging, the point follows the pointer and reports where it will land; on release it moves there.
   function landing(P) {
-    var st = spec.snapStep, near = function (v) { return round(Math.round(v / st) * st); };
-    return [Math.max(spec.xr[0], Math.min(spec.xr[1], near(P.X()))), Math.max(spec.yr[0], Math.min(spec.yr[1], near(P.Y())))];
+    var near = function (v, st) { return round(Math.round(v / st) * st); };
+    return [Math.max(spec.xr[0], Math.min(spec.xr[1], near(P.X(), spec.snapStep[0]))), Math.max(spec.yr[0], Math.min(spec.yr[1], near(P.Y(), spec.snapStep[1])))];
   }
   function settle(P) { var at = landing(P); if (at[0] !== P.X() || at[1] !== P.Y()) P.moveTo(at); }
 
