@@ -334,7 +334,7 @@ This supersedes the earlier "Series shape", "Console bridge and fork" and "Games
 
 New subject **Science** with pathways Chemistry (built), Biology, Physics and Earth and space (coming later). Year 7 Chemistry: seven concept tutorials for introducing or revising (AC9S7U05 nodes 1–3; AC9S7U06 nodes 1–4), each a mini 5E cycle on the existing stages, with width tiers (`tier: typical | wider`, `?width=` floor) and a science board (`playground-science/`, particle engine and 15 widgets). New `sort` check and per-option `question` feedback; tiered checks are not needed to finish a lesson. Teacher layer: `teacher.yml` per lesson, primers for both units; decks and worksheets use 5E labels.
 
-Slides embed the live board (`{{embed: URL}}`, Prepare loads it on the active slide only). Science courses have no cheat sheets (no commands to list; the primers carry the key ideas).
+Slides embed the live board (`{{embed: URL}}`, Prepare loads it on the active slide only). Science courses have no cheat sheets (no commands to list; the primers carry the key ideas). Decided 9 Oct: no science revision sheets or glossaries either. Those belong to the planning side of the suite (Prepare, the node glossaries in waypoints-kit); here each lesson ends with a revision summary, and the deck and worksheet go into Prepare.
 
 ## Science engines: Years 7–10 plan (decided 9 Oct 2026, not built)
 
