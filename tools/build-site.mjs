@@ -170,10 +170,10 @@ for (const l of lessons) {
 }
 
 // Paths with a playground, and reference (cheat sheet) pages generated from the snippet files the playgrounds use.
-const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' }, 'code/microbit': { kind: 'microbit', dir: '_playground-makecode', label: 'micro:bit' }, 'code/arcade': { kind: 'arcade', dir: '_playground-makecode', label: 'Arcade' } };
+const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' }, 'code/microbit': { kind: 'microbit', dir: '_playground-makecode', label: 'micro:bit' }, 'code/arcade': { kind: 'arcade', dir: '_playground-makecode', label: 'Arcade' }, 'code/robotics': { kind: 'microbit', dir: '_playground-makecode', label: 'Robot', pkg: makecodePackage({ extensions: ['robot'] }) } };
 // Maths cards (snippets/maths.json): a Reference page and cheat sheets for the maths course they name.
 const MATHS_CARDS = loadMathsCards();
-const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }, { file: 'microbit', path: 'code/microbit/reference' }, { file: 'arcade', path: 'code/arcade/reference' }, ...(MATHS_CARDS ? [{ file: 'maths', path: `${MATHS_CARDS.course}/reference` }] : [])];
+const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }, { file: 'microbit', path: 'code/microbit/reference' }, { file: 'arcade', path: 'code/arcade/reference' }, { file: 'robot', path: 'code/robotics/reference' }, ...(MATHS_CARDS ? [{ file: 'maths', path: `${MATHS_CARDS.course}/reference` }] : [])];
 
 // The site navbar: Learning Waypoints, Tutorials, then one menu per subject (a top-level folder, such as Code)
 // listing its pathways (from its index.md); a pathway page is <subject>/paths/<id>/. navFor(pagePath, here,
@@ -280,7 +280,7 @@ for (const [path, pg] of Object.entries(PLAY)) {
   const depth = path.split('/').length + 1; // .../playground/ -> site root
   const up = '../'.repeat(depth);
   const mkPg = pg.kind === 'microbit' || pg.kind === 'arcade';
-  const src = `${up}${pg.dir}/index.html?id=${mkPg ? `free/${pg.kind}` : 'free'}&free=1&v=${VERSIONS[pg.dir]}${mkPg ? `&target=${pg.kind}` : ''}${pg.kind === 'turtle' && sharedModuleNames.length ? `&use=${sharedModuleNames.join(',')}` : ''}`;
+  const src = `${up}${pg.dir}/index.html?id=${mkPg ? `free/${pg.pkg ? path.split('/').pop() : pg.kind}` : 'free'}&free=1&v=${VERSIONS[pg.dir]}${mkPg ? `&target=${pg.kind}` : ''}${pg.pkg ? `&pkg=${encodeURIComponent(pg.pkg)}` : ''}${pg.kind === 'turtle' && sharedModuleNames.length ? `&use=${sharedModuleNames.join(',')}` : ''}`;
   mkdirSync(join(OUT, path, 'playground'), { recursive: true });
   writeFileSync(join(OUT, path, 'playground', 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(pg.label)} playground</title><style>${PLAYGROUND_PAGE_CSS}${NAV_CSS}</style></head><body>
@@ -431,7 +431,9 @@ for (const coursePath of teachCourses) {
     : unlockKind(ls[0], ls[0].steps[0] || { config: {} });
   // Pictures of this course's snippets: Arcade blocks sit apart from micro:bit ones (PICS.arcade).
   const picKey = kind === 'arcade' ? 'arcade' : (ls[0]?.language || 'python');
-  const courseSnips = new Map((snippetFiles[kind]?.groups || []).flatMap((g) => g.items.map((i) => [snippetId(i.label), i])));
+  // Robot lessons use the robot blocks (snippets/robot.json) first, then the micro:bit ones they build on.
+  const robotCourse = ls.some((l) => makecodeExtensions(l).some((e) => e.name === 'microbit-robot'));
+  const courseSnips = new Map([...(robotCourse ? [snippetFiles.robot] : []), snippetFiles[kind]].flatMap((f) => f?.groups || []).flatMap((g) => g.items.map((i) => [snippetId(i.label), i])));
   // MakeCode lessons ask students to add blocks their starters do not have yet (show leds, a parameter), so their
   // solutions count too: a cheat sheet lists blocks, never a task's answer.
   const codeOf = (l) => [...l.steps.flatMap((s) => [s.config.code, s.config.try?.starter, ...s.tasks.flatMap((t) => [t.config.code, t.config.starter, t.config.try?.starter])]),

@@ -387,7 +387,7 @@ export function cheatSheetBody({ title, course, sections, pictures = {}, picBase
   };
   const secs = sections.filter((s) => s.items.length).map((s) => `${sections.length > 1 ? `<h2 class="cs-unit">${esc(s.title)}</h2>` : ''}${cols(s.items)}`).join('');
   return `<div class="cs-bar noprint"><a class="crumb" href="${esc(back)}">← ${esc(backLabel)}</a><span class="sn-grow"></span><button type="button" onclick="print()">Print</button>${mdUrl ? ` <a href="${esc(md)}" download>Markdown for Prepare</a> <button type="button" class="copyurl" data-url="${esc(mdUrl)}">Copy address for Prepare</button>` : ''}</div>${nav ? `<div class="noprint">${nav}</div>` : ''}
-<div class="cs"><header class="cs-head"><h1>${esc(title)}</h1><p>${esc(course)} · ${lang === 'makecode' ? 'Find each block in the MakeCode toolbox (the category is at the end of each line).' : 'In any playground, open <b>Reference</b> to copy these.'}</p></header>${secs || '<p>This unit has no new commands; it combines ones from earlier units.</p>'}</div>`;
+<div class="cs"><header class="cs-head"><h1>${esc(title)}</h1><p>${esc(course)} · ${lang === 'makecode' ? 'Find each block in the MakeCode toolbox (the category is at the end of each line).' : 'In any playground, open <b>Reference</b> to copy these.'}</p></header>${secs || `<p>This unit has no new ${lang === 'makecode' ? 'blocks' : 'commands'}; it combines ones from earlier units.</p>`}</div>`;
 }
 export const CHEAT_CSS = `.wrap{max-width:1000px}
 .cs-nav{font-size:14px;margin:-6px 0 14px;line-height:1.8}.cs-nav b{color:var(--ink)}

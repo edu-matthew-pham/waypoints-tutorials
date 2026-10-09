@@ -274,8 +274,9 @@ await pictures({
 {
   const { blocksId, makecodePrograms } = await import('./teach.mjs');
   // Each job names its editor (target): Arcade blocks are drawn by Arcade's renderer, micro:bit ones by micro:bit's.
-  const snipJobs = (file, target, prefix) => (existsSync(`snippets/${file}.json`) ? JSON.parse(readFileSync(`snippets/${file}.json`, 'utf8')).groups.flatMap((g) => g.items.map((i) => ({ id: prefix + snippetId(i.label), code: strip(i.code), target }))) : []);
-  const mkSnips = [...snipJobs('microbit', 'microbit', ''), ...snipJobs('arcade', 'arcade', 'arcade/')];
+  const snipJobs = (file, target, prefix, pkg = '') => (existsSync(`snippets/${file}.json`) ? JSON.parse(readFileSync(`snippets/${file}.json`, 'utf8')).groups.flatMap((g) => g.items.map((i) => ({ id: prefix + snippetId(i.label), code: strip(i.code), target, pkg }))) : []);
+  // Robot blocks need the robot extension in the renderer; their labels differ from micro:bit ones, so they share its folder.
+  const mkSnips = [...snipJobs('microbit', 'microbit', ''), ...snipJobs('robot', 'microbit', '', makecodePackage({ extensions: ['robot'] })), ...snipJobs('arcade', 'arcade', 'arcade/')];
   const targetOf = (l) => l.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
   const mkCode = loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => makecodePrograms(l, (ref) => getSnippet(l.dir, ref)).map((code) => ({ id: blocksId(code), code, target: targetOf(l), pkg: makecodePackage(l) })));
   const seen = new Set();
