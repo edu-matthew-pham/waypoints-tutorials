@@ -78,4 +78,18 @@ for (const l of lessons) {
 }
 if (warned) console.warn(`${warned} warning(s) in error tasks (see AUTHORING.md, Error tasks)`);
 else console.log('✓ error tasks: every planted error names its fault and an on-path misconception');
+// Bare tags in Markdown: in an HTML lesson, "<h1>" written outside `backticks` becomes a real tag on the page,
+// the teacher guide and the slides, and swallows the text after it. Write tags as `<h1>`.
+{
+  const TAG = /<\/?(?:[a-z][a-z0-9]*)(?:\s[^<>]*)?>|<!DOCTYPE[^>]*>/i;
+  const bare = (md) => String(md || '').replace(/```[\s\S]*?```/g, '').replace(/`[^`\n]*`/g, '').replace(/<!--[\s\S]*?-->/g, '').match(TAG);
+  let n = 0;
+  for (const l of lessons) {
+    const where = [['intro', l.intro], ...l.steps.flatMap((s) => [[`${s.id} "${s.title}"`, s.body], ...s.tasks.map((t) => [`${t.id} "${t.title}"`, t.body])])];
+    for (const k of ['before', 'leads', 'explain']) where.push([`teacher.yml ${k}`, l.teacher?.[k]]);
+    (l.teacher?.running || []).forEach((r, i) => where.push([`teacher.yml running ${i + 1}`, r]));
+    for (const [w, md] of where) { const m = bare(md); if (m) { n++; console.warn(`⚠ ${l.slug} › ${w}: ${m[0]} outside backticks becomes a real tag; write it as \`${m[0]}\``); } }
+  }
+  if (!n) console.log('✓ markdown: no bare tags outside backticks');
+}
 process.exit(bad ? 1 : 0);

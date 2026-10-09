@@ -19,6 +19,14 @@ const prose = (t) => safe(String(t || '').replace(/```[\s\S]*?```/g, '').replace
 const seeded = (seed) => { let h = 2166136261; for (const c of String(seed)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return () => ((h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0) / 4294967296); };
 const shuffled = (arr, seed) => { const r = seeded(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const letters = 'ABCDEFGH';
+// Plain text (goals, check questions and answers, snippet labels) going into Markdown: escape < > & outside
+// `code` spans, so an HTML lesson's "<h1>" shows as text instead of opening a real tag (decks allow raw HTML).
+const pt = (t) => String(t ?? '').split(/(`[^`]*`)/).map((part, i) => (i % 2 ? part : part.replace(/&(?![a-z#0-9]+;)/gi, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'))).join('');
+/** checkParts, with its plain-text parts made safe for Markdown (decks and worksheets). */
+const checkPartsMd = (k, snip, key) => {
+  const p = checkParts(k, snip, key);
+  return { ...p, q: pt(p.q), answer: pt(p.answer), options: p.options && p.options.map(pt), match: p.match && { lefts: p.match.lefts, rights: p.match.rights.map(pt) } };
+};
 
 const BADGE = {
   check: '<span style="background:#dcfce7; color:#1a1a1a; border:1.5px solid #22c55e; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">✅ Check</span>',
@@ -81,8 +89,8 @@ export function deckFor(lesson, { course, unit, snip }) {
   const T = lesson.teacher || {};
   const slides = [];
   const note = (t) => (t ? `\n\n<!-- Speaker note: ${oneLine(t).replace(/-->/g, '- ->')} -->` : '');
-  slides.push(`# ${lesson.title}\n\n${course}${unit ? ` · ${unit}` : ''}` + note(`${T.summary || lesson.summary}${T.time ? ` About ${T.time} minutes${T.timing ? ` (${T.timing})` : ''}.` : ''}`));
-  slides.push(`## Today\n\n**We are learning to** ${lowerFirst(lesson.summary.replace(/\.$/, ''))}.\n\n${(T.goals || []).map((g) => `- ${g}`).join('\n')}` + note(T.before ? `Before class: ${T.before}` : ''));
+  slides.push(`# ${pt(lesson.title)}\n\n${course}${unit ? ` · ${unit}` : ''}` + note(`${T.summary || lesson.summary}${T.time ? ` About ${T.time} minutes${T.timing ? ` (${T.timing})` : ''}.` : ''}`));
+  slides.push(`## Today\n\n**We are learning to** ${lowerFirst(lesson.summary.replace(/\.$/, ''))}.\n\n${(T.goals || []).map((g) => `- ${pt(g)}`).join('\n')}` + note(T.before ? `Before class: ${T.before}` : ''));
   if (lesson.hook) slides.push(`${BADGE.discussion}\n\n## Why it matters\n\n> ${lesson.hook}` + note(lesson.intro));
   // Programs too long for a slide are read in the tutorial instead.
   const showCode = (code, step) => (code.split('\n').length > 27
@@ -94,7 +102,7 @@ export function deckFor(lesson, { course, unit, snip }) {
     const c = s.config, stage = c.stage, title = bare(s.title);
     const code = c.code ? snip(c.code) : '';
     if (stage === 'predict') {
-      const k = c.check?.type === 'predict' ? checkParts(c.check, snip, s.id) : null;
+      const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
       slides.push(`${BADGE.discussion}\n\n## Predict\n\n${code ? showCode(code, s) + '\n\n' : ''}${k ? `**${k.q}**${k.options ? '\n\n' + k.options.map((o) => `- ${o}`).join('\n') : ''}` : prose(s.body)}` + note(`${k?.answer ? `What happens: ${k.answer}` : ''} Take two or three predictions before anyone runs it.`));
       if (k?.answer) slides.push(`${BADGE.check}\n\n## What happened?\n\n* ${oneLine(k.answer)}` + note('Reveal after running. Ask who predicted it, and what made them think so.'));
     } else if (stage === 'run') {
@@ -103,7 +111,7 @@ export function deckFor(lesson, { course, unit, snip }) {
       if (code) slides.push(`${BADGE.discussion}\n\n## ${title === 'Investigate' ? 'Investigate' : `Investigate: ${title.replace(/^Investigate:\s*/, '')}`}\n\n${showCode(code, s)}` + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
-        const p = checkParts(k, snip, `${s.id}${t ? t.id : ''}`);
+        const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
         if (p.reflect || k.type === 'code') continue;
         let body = `**${p.q}**`;
         if (p.options) body += '\n\n' + p.options.map((o) => `- ${o}`).join('\n');
@@ -130,7 +138,7 @@ export function deckFor(lesson, { course, unit, snip }) {
       slides.push(`## ${title}\n\n${prose(s.body)}`);
     }
   }
-  if (T.exit) slides.push(`${BADGE.check}\n\n## Exit ticket\n\n**${T.exit.q}**\n\n* ${oneLine(T.exit.a)}` + note('Students answer on paper or a mini whiteboard before the reveal. Anyone who cannot answer needs the main idea again next lesson.'));
+  if (T.exit) slides.push(`${BADGE.check}\n\n## Exit ticket\n\n**${pt(T.exit.q)}**\n\n* ${pt(oneLine(T.exit.a))}` + note('Students answer on paper or a mini whiteboard before the reveal. Anyone who cannot answer needs the main idea again next lesson.'));
   return `---\nmarp: true\ntheme: default\nhtml: true\n---\n\n${slides.map(fitCode).join('\n\n---\n\n')}\n`;
 }
 const lowerFirst = (t) => t.charAt(0).toLowerCase() + t.slice(1);
@@ -177,7 +185,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
   const tnote = (t) => (t && t.trim() ? `\n\n:::teacher-note\n\n${t.trim()}\n\n:::\n` : '');
   const keep = (t) => `\n\n:::keep-together\n\n${t.trim()}\n\n:::\n`;
   out.push(`---\ntitle: ${yamlStr(lesson.title)}\nsubtitle: ${yamlStr(`${course}${unit ? ` · ${unit}` : ''}${lesson.order != null ? ` · Lesson ${lesson.order}` : ''}`)}\n---\n\n# ${lesson.title}\n\n**Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}\n\n> **Key question:** ${lesson.hook || lesson.summary}`);
-  out.push(tnote(`**In one sentence:** ${T.summary || lesson.summary}\n\n${T.goals?.length ? `**Students should be able to say:** ${T.goals.join(' ')}\n\n` : ''}**Width:** the unmarked parts are the floor every student does (predict, run, investigate and make). Typical adds the modify practice; wider adds the real-world contexts. They add contexts, not difficulty. Students work in the online tutorial alongside this sheet.`));
+  out.push(tnote(`**In one sentence:** ${T.summary || lesson.summary}\n\n${T.goals?.length ? `**Students should be able to say:** ${T.goals.map(pt).join(' ')}\n\n` : ''}**Width:** the unmarked parts are the floor every student does (predict, run, investigate and make). Typical adds the modify practice; wider adds the real-world contexts. They add contexts, not difficulty. Students work in the online tutorial alongside this sheet.`));
   const makeIndex = lesson.steps.findIndex((s) => s.config.stage === 'make');
   for (const [i, s] of lesson.steps.entries()) {
     const c = s.config, stage = c.stage, title = bare(s.title);
@@ -185,7 +193,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
     const tier = stage === 'modify' ? (makeIndex >= 0 && i > makeIndex ? 'wider' : 'typical') : stage === 'info' && makeIndex >= 0 && i > makeIndex ? 'wider' : '';
     let part = '';
     if (stage === 'predict') {
-      const k = c.check?.type === 'predict' ? checkParts(c.check, snip, s.id) : null;
+      const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
       part = `## Predict\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
     } else if (stage === 'run') {
       part = `## Run\n\nRun the program in the tutorial. Was your prediction right? What was different?\n\n{{lines-2}}`;
@@ -193,7 +201,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
       part = `## ${title}\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}`;
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
-        const p = checkParts(k, snip, `${s.id}${t ? t.id : ''}`);
+        const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
         if (p.reflect || k.type === 'code') continue;
         let q = `${t ? `### ${t.title}\n\n` : ''}**${p.q}**`;
         if (t && /```/.test(t.body)) q = `${t ? `### ${t.title}\n\n` : ''}${t.body.trim()}\n\n**${p.q}**`;
@@ -204,7 +212,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
         if (p.files) q += '\n\n' + p.files.map((f) => (f.name ? `**${f.name}**\n\n` : '') + fence(numbered(f.code), '')).join('\n\n') + '\n\nLine: {{field-15}}\n\nWhy is it wrong?\n\n{{lines-2}}';
         if (p.parsons) q += '\n\n' + p.parsons.map((l, i) => `${letters[i] || i + 1}. \`${l.trim()}\``).join('\n\n') + '\n\nCorrect order (letters): {{field-24}}';
         if (k.type === 'question' && !p.options) q += '\n\n{{lines-2}}';
-        part += keep(q) + tnote(`**Answer:** ${p.answer}${p.explain ? `\n\n${p.explain}` : ''}${p.parsons ? `\n\n${fence(p.solution)}` : ''}`);
+        part += keep(q) + tnote(`**Answer:** ${p.answer}${p.explain ? `\n\n${pt(p.explain)}` : ''}${p.parsons ? `\n\n${fence(p.solution)}` : ''}`);
       }
     } else if (stage === 'modify' || stage === 'make') {
       const tasks = s.tasks.length ? s.tasks.map((t) => `**${t.title}.** ${prose(t.body)}`).join('\n\n') : '';
@@ -221,14 +229,14 @@ export function worksheetFor(lesson, { course, unit, snip }) {
     if (!part) continue;
     out.push(tier ? `\n\n:::${tier}\n\n${part.trim()}\n\n:::\n` : part);
   }
-  if (T.exit) out.push(`## Exit ticket` + keep(`**${T.exit.q}**\n\n{{lines-3}}`) + tnote(`**Answer:** ${T.exit.a}`));
+  if (T.exit) out.push(`## Exit ticket` + keep(`**${pt(T.exit.q)}**\n\n{{lines-3}}`) + tnote(`**Answer:** ${pt(T.exit.a)}`));
   return out.join('\n\n').replace(/\n{4,}/g, '\n\n\n') + '\n';
 }
 const yamlStr = (s) => JSON.stringify(String(s));
 
 // ---------------------------------------------------------------- cheat sheet (Prepare Print reference sheet)
 export function cheatSheetFor({ course, unit, items, lang = 'python' }) {
-  const body = items.map((i) => `:::keep-together\n\n**${i.label}**: ${i.hint || ''}\n\n${fence(strip(i.code), lang)}\n\n:::`).join('\n\n');
+  const body = items.map((i) => `:::keep-together\n\n**${pt(i.label)}**: ${pt(i.hint || '')}\n\n${fence(strip(i.code), lang)}\n\n:::`).join('\n\n');
   return `---\ntitle: ${yamlStr(`${unit.title}: cheat sheet`)}\nsubtitle: ${yamlStr(course)}\n---\n\n# ${unit.title}\n\n> The commands and patterns from this unit. In the tutorial, open **Reference** in any playground to copy them.\n\n${body || '_This unit has no new commands; it combines ones from earlier units._'}\n`;
 }
 

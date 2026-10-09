@@ -47,6 +47,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## Gotchas
 - Quote YAML captions that contain colons.
+- HTML lessons: tags in Markdown text go in backticks (a bare `<h1>` becomes a real tag on the page, guide and slides); validate warns. Plain-text check and teacher fields are escaped by the generators (`pt` in `teach.mjs`).
 - Display-only code regions (bug, compare, parsons) are not meant to run.
 - Commit trailers: the `Co-Authored-By:` and `Claude-Session:` lines from the session reminder (they name the current model and session).
 - Custom domain tutorials.learningwaypoints.com: DNS and the Pages setting are on Matthew's side.

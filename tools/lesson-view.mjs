@@ -281,9 +281,9 @@ var go=ty==='question'?box.querySelector('button'):null;
 if(go){go.addEventListener('click',function(){
 var pick=box.querySelector('input[type=radio]:checked');
 if(!pick){msg.className='msg no';msg.textContent='Choose an answer first.';return}
-if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+(ids.length?' ':'')+msg.textContent}
+if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
 else{msg.className='msg no';msg.textContent='Not quite. Look at the code again and try another answer.'}})}
-function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+(ids.length?' ':'')+msg.textContent}
+function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
 function bad(t){msg.className='msg no';msg.textContent=t}
 var btn=box.querySelector('button');
 if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(box.querySelector('input').value);if(isNaN(v))return bad('Type a number first.');

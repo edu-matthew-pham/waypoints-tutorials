@@ -2,6 +2,23 @@
 // site build, and the renderer inlines the same source into the browser stage page.
 function highlightCode(src, lang) {
   var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+  if (/^(html|css|xml|svg)$/.test(lang || '')) {
+    // HTML and CSS: comments, tag names (and <!DOCTYPE>), attribute names, quoted values. Text between tags stays plain
+    // (Python's keywords, such as "and", are ordinary words on a web page).
+    var hre = /(<!--[\s\S]*?-->|\/\*[\s\S]*?\*\/)|(<\/?[A-Za-z][\w-]*|<![A-Za-z]+|\/?>)|(\s[A-Za-z_:][\w:.-]*)(?==)|("[^"\n]*")/g;
+    var hout = '', hlast = 0, hm, inTag = false;
+    while ((hm = hre.exec(src))) {
+      var ht = hm[0];
+      if ((hm[3] || hm[4]) && !inTag) continue; // an = or a quote in ordinary text, not part of a tag
+      hout += esc(src.slice(hlast, hm.index));
+      if (hm[1]) hout += '<span class="com">' + esc(ht) + '</span>';
+      else if (hm[2]) { inTag = ht.charAt(0) === '<'; hout += '<span class="kw">' + esc(ht) + '</span>'; }
+      else if (hm[3]) hout += esc(ht.charAt(0)) + '<span class="fn">' + esc(ht.slice(1)) + '</span>';
+      else hout += '<span class="str">' + esc(ht) + '</span>';
+      hlast = hre.lastIndex;
+    }
+    return hout + esc(src.slice(hlast));
+  }
   var py = !lang || lang === 'python' || lang === 'py';
   var js = !lang || /^(js|javascript|ts|typescript|json)$/.test(lang);
   var comment = (py ? '#[^\\n]*' : '') + (py && js ? '|' : '') + (js ? '\\/\\/[^\\n]*' : '');
