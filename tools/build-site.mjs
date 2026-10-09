@@ -291,14 +291,18 @@ for (const node of dirs.values()) {
   // extensions; planned courses show as "Coming later" so the whole pathway is visible.
   const pathways = Array.isArray(node.meta?.pathways) ? node.meta.pathways : [];
   if (pathways.length) {
+    // after: courses to do first, by path (built) or id (planned), shown on the card.
+    const all = pathways.flatMap((pw) => pw.courses || []);
+    const nameOf = (ref) => { const c = all.find((x) => x.path === ref || x.id === ref); if (!c) throw new Error(`${node.path}/index.md: "after: ${ref}" names no course`); return c.path ? dirs.get(c.path)?.title || c.path : c.title; };
+    const after = (c) => (Array.isArray(c.after) && c.after.length ? `<small class="pafter">After: ${esc(c.after.map(nameOf).join(' and '))}</small>` : '');
     // up: from the page being written back to the site root, so course links work from any depth.
     const card = (c, up) => {
       if (c.path) {
         const d = dirs.get(c.path);
         if (!d) throw new Error(`${node.path}/index.md: pathway course "${c.path}" is not a folder of lessons`);
-        return `<a class="pcard" href="${esc(up + c.path)}/"><b>${esc(d.title)}</b>${d.summary ? `<span>${esc(d.summary)}</span>` : ''}</a>`;
+        return `<a class="pcard" href="${esc(up + c.path)}/"><b>${esc(d.title)}</b>${d.summary ? `<span>${esc(d.summary)}</span>` : ''}${after(c)}</a>`;
       }
-      return `<div class="pcard soon"><b>${esc(c.title)}</b>${c.summary ? `<span>${esc(c.summary)}</span>` : ''}<em>Coming later</em></div>`;
+      return `<div class="pcard soon"><b>${esc(c.title)}</b>${c.summary ? `<span>${esc(c.summary)}</span>` : ''}${after(c)}<em>Coming later</em></div>`;
     };
     const stage = (courses, name, label, up) => { const cs = courses.filter((c) => (c.stage || 'foundations') === name); return cs.length ? `<div class="pstage"><h3>${label}</h3><div class="pcards">${cs.map((c) => card(c, up)).join('')}</div></div>` : ''; };
     const stages = (pw, up) => stage(pw.courses || [], 'foundations', 'Foundations', up) + stage(pw.courses || [], 'extensions', 'Extensions', up);

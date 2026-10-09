@@ -48,7 +48,7 @@ Three pathways offered as options, not gates. Each shares one concept spine (seq
 - **HTML & CSS basics** (typically 7–8): grow the one lesson into a short sequence (about 4–5 lessons).
 
 **Extensions (plan only, build later; typically Year 9+)**
-- **Console bridge** (`input()`, `print()`, a text menu; strings, dictionaries, files): a console inside our own playgrounds. A real terminal is out of scope; teachers can extend if they want.
+- **Console bridge** (`input()`, `print()`, a text menu; now the last foundations course, see Decided below) and **Deeper console Python** (strings, dictionaries, files): a console inside our own playgrounds. A real terminal is out of scope; teachers can extend if they want.
 - **Gradio → ML.** Embedded Spaces run the teacher's fixed code: students can use the app but not edit it. Hugging Face accounts need age 13+ (their terms, no parental-consent route) and the platform has no school features, so teacher-hosted Spaces are the baseline and student Spaces are optional for older students with school approval. For in-lesson Modify and Make, the option is our own in-browser Gradio-style playground: Pyodide plus a small `gr.Interface` subset (text, number, slider, image, outputs, Submit), so the same code later runs unchanged in real Gradio. In-browser ML: small models with scikit-learn/numpy (train on a CSV); large pretrained models only through teacher Spaces.
 - **microStudio** (games in text code): a full browser IDE, so students do edit code. Open source (MIT) and self-hostable, so a school-run copy avoids public accounts. Still to check: account and age terms on the public site, Python completeness, iframe embedding.
 - **p5.js → DOM with the browser console:** JavaScript on a canvas mirroring turtle (variables, decisions, arrays, functions, `mousePressed`, the draw loop), then JavaScript driving HTML (`querySelector`, `addEventListener`). The p5 playground in `edu-matthew-pham/codeswitch` (`src/lib/p5-playground`, `src/routes/p5_playground`) is the starting point; not yet reviewed.
@@ -60,7 +60,9 @@ Three pathways offered as options, not gates. Each shares one concept spine (seq
 
 **Next builds, in order:** the lists/`if` revisit (the final challenge is built); HTML & CSS sequence; MakeCode (starting with the embedding check).
 
-**Open:** whether the console bridge sits at the end of foundations or in extensions; whether turtle lessons 9–10 (events, build a button) suit foundations or extensions.
+**Decided (9 Oct):** the console bridge (one or two lessons: `input()`, `print()`, a text menu) is the last Python foundations course and comes before every extension. Deeper console Python (strings, dictionaries, files, errors) is its own extension. Machine learning with Gradio comes after both Deeper console Python and the Gradio course. Pathway cards show this as "After: …" (`after:` in `code/index.md`, by course path or planned `id`).
+
+**Open:** whether turtle lessons 9–10 (events, build a button) suit foundations or extensions.
 
 This supersedes the earlier "Series shape", "Console bridge and fork" and "Games path" entries below where they differ (they stay for their reasoning).
 

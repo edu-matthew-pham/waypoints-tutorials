@@ -5,13 +5,14 @@ pathways:
   - id: python
     title: Python
     summary: From drawing with a turtle to apps, games and machine learning.
-    about: "Start with **Python Foundations with Turtle**: commands, loops, variables, decisions, lists, functions and events, ending in a game you build in milestones. The extensions use the same ideas for text programs, web apps with Gradio, machine learning and games."
+    about: "Start with **Python Foundations with Turtle**: commands, loops, variables, decisions, lists, functions and events, ending in a game you build in milestones. The **console bridge** then shows the same logic as text in and text out, and every extension starts from it: deeper Python in the console, web apps with Gradio (and machine learning after both), and games."
     courses:
       - { path: code/python, stage: foundations }
-      - { title: "Console: text in, text out", stage: extensions, summary: "input(), print() and text menus, then strings, dictionaries and files." }
-      - { path: code/gradio, stage: extensions }
-      - { title: Machine learning with Gradio, stage: extensions, summary: "Train small models on data, and put a model behind an app." }
-      - { title: Games with microStudio, stage: extensions, summary: "Sprites, maps, sound and a game loop in text code." }
+      - { id: console-bridge, title: "Console bridge: text in, text out", stage: foundations, summary: "input(), print() and a text menu: the same logic without the turtle. Every extension starts here.", after: [code/python] }
+      - { id: console-deep, title: Deeper Python in the console, stage: extensions, summary: "Strings, dictionaries, files and errors.", after: [console-bridge] }
+      - { path: code/gradio, stage: extensions, after: [console-bridge] }
+      - { title: Machine learning with Gradio, stage: extensions, summary: "Train small models on data, and put a model behind an app.", after: [console-deep, code/gradio] }
+      - { title: Games with microStudio, stage: extensions, summary: "Sprites, maps, sound and a game loop in text code.", after: [console-bridge] }
   - id: web
     title: Web
     summary: Build pages, then make them draw, move and react.

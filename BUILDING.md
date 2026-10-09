@@ -6,7 +6,7 @@ How a course is designed and built here, learned from Python Foundations with Tu
 
 ## 1. Shape: pathway › course › unit › lesson › step › task
 
-- **Pathway** (Python, Web, MakeCode): listed in `content/code/index.md`, courses in order, each `stage: foundations | extensions`, plus a one-line `summary` and an optional `about` (Markdown for its pathway page). Planned courses go in early as "Coming later", so the whole path is visible. Each pathway gets a page at `/code/paths/<id>/` and an item in the navbar's Code menu; a new course is listed under its pathway, never in the navbar itself. Keep course folders where they are once students use them: progress is keyed by the lesson's path.
+- **Pathway** (Python, Web, MakeCode): listed in `content/code/index.md`, courses in order, each `stage: foundations | extensions`, plus a one-line `summary` and an optional `about` (Markdown for its pathway page). A course can list `after:` (course paths, or `id`s of planned courses) to show what comes first. Planned courses go in early as "Coming later", so the whole path is visible. Each pathway gets a page at `/code/paths/<id>/` and an item in the navbar's Code menu; a new course is listed under its pathway, never in the navbar itself. Keep course folders where they are once students use them: progress is keyed by the lesson's path.
 - **Course**: a folder with `index.md` (title, summary, `order`, `units`, optional `challenge`).
 - **Unit**: 2 to 4 lessons that share one idea. Never call it a module (Python meaning).
 - **Lesson**: one concept, PRIMM steps. **Step**: one stage. **Task**: a sub-pill inside a step, only when there are several.
