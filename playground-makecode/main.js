@@ -6,6 +6,9 @@
 //   ?target=microbit|arcade   ?code=<starter JavaScript>   ?id=<key for autosaving this step>
 //   ?pkg=<name=version,...>  extensions the lesson needs (e.g. microbit-robot=github:microsoft/microbit-robot#v2.7.4),
 //           added to every project's pxt.json dependencies; MakeCode fetches them and shows their blocks and simulator
+//   ?tutorial=<path>  open a MakeCode tutorial instead of a starter (startactivity): a built-in one (/projects/flashing-heart)
+//           or one on GitHub (github:owner/repo/file). The tutorial's project is followed and reported like a step's, and
+//           its progress is posted to the lesson ({ wp: 'tutorial', event, step, total }). Not restored on reload.
 //   ?editor=<editor URL>  (tests only: a mock editor)   ?debug  (message log over the editor)
 //   ?sim=1  (build only: render-pictures loads a program, starts MakeCode's own simulator and screenshots it;
 //           nothing is saved and nothing is reported)
@@ -29,6 +32,8 @@ const starter = params.get('code') ?? '';
 const DEPS = Object.fromEntries((params.get('pkg') || '').split(',').map((d) => d.trim().split('='))
   .filter(([n, v]) => n && v && /^[\w.-]+$/.test(n) && /^[\w.:/#@*-]+$/.test(v)));
 const SIM = params.has('sim');
+// A tutorial path: a docs path (/projects/...) or a GitHub one (github:owner/repo/file); nothing else is sent to MakeCode.
+const TUTORIAL = /^(\/[\w\-/]+|github:[\w.\-]+\/[\w.\-]+(\/[\w.\-/]+)?(#[\w.\-]+)?)$/.test(params.get('tutorial') || '') ? params.get('tutorial') : '';
 const id = SIM ? null : params.get('id');
 const storeKey = id ? `wp-makecode-playground:${id}` : null;
 const NAME = 'Waypoints ' + (id ? id.split('/').slice(-2).join(' ') : 'playground');
@@ -92,6 +97,13 @@ function load(code, blocks = '') {
 }
 
 function start() {
+  if (TUTORIAL) {
+    ids = new Set(); loadedCode = '';
+    request('startactivity', { activityType: 'tutorial', path: TUTORIAL });
+    setStatus('Opening the tutorial…');
+    dbg('startactivity', TUTORIAL);
+    return;
+  }
   const saved = read();
   if (saved && typeof saved.ts === 'string') load(saved.ts, saved.blocks || '');
   else load(starter);
@@ -113,6 +125,16 @@ window.addEventListener('message', (e) => {
     dbg('sync, replied with', list.length);
     return;
   }
+  if (d.action === 'tutorialevent') {
+    // Tutorial progress: shown in the bar and passed to the lesson, so a check can follow it.
+    const ev = d.tutorialEvent, step = Number(d.currentStep) + 1, total = Number(d.totalSteps);
+    if (d.projectHeaderId) ids.add(d.projectHeaderId);
+    setStatus(ev === 'completed' ? 'Tutorial complete' : ev === 'progress' && total ? `Tutorial: step ${step} of ${total}` : ev === 'loaded' ? 'Tutorial loaded' : 'Tutorial closed', ev === 'completed' ? 'saved' : '');
+    window.__playground.tutorial = { event: ev, step, total };
+    try { if (window.parent !== window && id) window.parent.postMessage({ wp: 'tutorial', id, event: ev, step, total, completed: ev === 'completed' || !!d.isCompleted }, location.origin); } catch { /* not embedded */ }
+    dbg('tutorial', ev, ev === 'progress' ? `${step}/${total}` : '');
+    return;
+  }
   if (d.action !== 'workspacesave') { dbg('host', d.action); return; }
   if (d.response) post({ type: 'pxthost', id: d.id, success: true });
   const p = d.project || {};
@@ -128,15 +150,17 @@ window.addEventListener('message', (e) => {
     return;
   }
   if (p.header.name === NAME) ids.add(p.header.id);
+  // In tutorial mode, the tutorial's project is the first new project after MakeCode's own default one.
+  if (TUTORIAL && !ids.size && p.header.id !== template.header.id) ids.add(p.header.id);
   if (!ids.has(p.header.id)) { dbg('  ignored: not this step'); return; }
   const code = p.text['main.ts'] || '';
   window.__playground.code = code;
-  write({ ts: code, blocks: p.text['main.blocks'] || '' });
+  if (!TUTORIAL) write({ ts: code, blocks: p.text['main.blocks'] || '' });
   setStatus('Saved', 'saved');
   clearTimeout(timer);
   timer = setTimeout(() => report(code), 500);
 });
 
-$('reset').addEventListener('click', () => { write(null); load(starter); });
+$('reset').addEventListener('click', () => { write(null); if (TUTORIAL) start(); else load(starter); });
 
 frame.src = editorUrl + (editorUrl.includes('?') ? '&' : '?') + 'controller=1#editor';

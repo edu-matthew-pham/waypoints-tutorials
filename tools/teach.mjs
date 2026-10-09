@@ -236,6 +236,9 @@ const blocksDeck = (code) => {
 // Keep each slide on the slide (Marp scoped styles). A 1280x720 slide at 29px type has about
 // 560px for content. Estimate the height of everything but code, then shrink code first
 // (down to 0.5em), then the whole slide. `.render-tmp` overflow checks confirm the estimate.
+// Room for content, a little under the ~560px a slide holds: the estimate runs a few pixels short on text-heavy slides
+// (Reaction timer's Predict ran 5px over), and check-decks flags anything past 690px.
+const ROOM = 545;
 // Height estimate for a slide, as fitCode uses it: the text's height and the code's height at full size.
 function slideSize(slide) {
   const blocks = slide.match(/```[\s\S]*?```/g) || [];
@@ -259,15 +262,15 @@ function slideSize(slide) {
 // True when a slide cannot fit even at fitCode's smallest sizes (code at half size, text at 16px).
 function tooTall(slide) {
   const { text, codeFull } = slideSize(slide);
-  if (text + codeFull <= 560) return false;
-  return 560 / (text + codeFull * 0.5) < 16 / 29;
+  if (text + codeFull <= ROOM) return false;
+  return ROOM / (text + codeFull * 0.5) < 16 / 29;
 }
 function fitCode(slide) {
   const { text, codeFull } = slideSize(slide);
   const code = (s) => codeFull * s;
-  if (text + code(1) <= 560) return slide;
-  let c = Math.min(0.85, (560 - text) / code(1)), s = 1;
-  if (c < 0.5) { c = 0.5; s = 560 / (text + code(0.5)); }
+  if (text + code(1) <= ROOM) return slide;
+  let c = Math.min(0.85, (ROOM - text) / code(1)), s = 1;
+  if (c < 0.5) { c = 0.5; s = ROOM / (text + code(0.5)); }
   const css = [`pre, marp-pre { font-size: ${Math.floor(c * 100) / 100}em; line-height: 1.25; }`];
   if (s < 1) css.push(`section { font-size: ${Math.max(16, Math.floor(29 * s))}px; }`);
   return `${slide}\n\n<style scoped>${css.join(' ')}</style>`;
