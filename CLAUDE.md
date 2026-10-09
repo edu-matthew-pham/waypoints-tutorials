@@ -27,7 +27,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## Open design decisions (details in ROADMAP.md)
 - Hidden-assumptions audit: `assumes`/`introduces` lint plus better in-lesson scaffolds; no "Before you start" card. Error-task part is built (fault/misconception lint); the `assumes`/`introduces` construct scan is still to do.
-- Next: the web pathway's HTML & CSS foundations (sequence in ROADMAP; groundwork built, see `BUILDING.md` › 8; next is lesson 1, reworked from `first-page`), the lists/`if` revisit, a nicer input UI than `window.prompt`, then MakeCode. The final challenge replaced the planned checkpoint.
+- HTML & CSS foundations are built (12 lessons: Structure, Style, Components, Challenge with club page, optional Make it react and Grid). Next: the lists/`if` revisit, a nicer input UI than `window.prompt`, then MakeCode. The final challenge replaced the planned checkpoint.
 
 ## Layout
 - `content/<path>/<lesson>/lesson.md` plus code files with `# region: name` blocks. Frontmatter: title, summary, order, hook, unit, optional, author, language, modules, app, pacing.

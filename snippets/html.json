@@ -292,6 +292,20 @@
      "shows": "A list with no numbers"
     },
     {
+     "label": "display: grid",
+     "code": "display: grid;\n",
+     "hint": "Put it on the box that holds the items: its children are placed in rows and columns (with grid-template-columns).",
+     "example": "<style>\n  .grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  p {\n    background-color: lavender;\n  }\n</style>\n<div class=\"grid\">\n  <p>A</p>\n  <p>B</p>\n  <p>C</p>\n  <p>D</p>\n</div>\n",
+     "shows": "Four boxes in two columns"
+    },
+    {
+     "label": "grid-template-columns",
+     "code": "grid-template-columns: ‹200px 1fr›;\n",
+     "hint": "The width of each column, in order. 1fr means one share of the space left; repeat(3, 1fr) makes three equal columns.",
+     "example": "<style>\n  .grid {\n    display: grid;\n    grid-template-columns: 80px 1fr;\n    gap: 8px;\n  }\n  .cell {\n    background-color: lightblue;\n  }\n</style>\n<div class=\"grid\">\n  <div class=\"cell\">80px</div>\n  <div class=\"cell\">The rest</div>\n</div>\n",
+     "shows": "A fixed column, then one that takes the rest"
+    },
+    {
      "label": "width",
      "code": "width: ‹200px›;\n",
      "hint": "How wide the content is. Padding and border are added on top of it.",
@@ -318,6 +332,29 @@
      "hint": "A line around an element: thickness, style, colour.",
      "example": "<style>\n  p {\n    border: 2px solid black;\n  }\n</style>\n<p>Boxed</p>\n",
      "shows": "A line around the paragraph"
+    }
+   ]
+  },
+  {
+   "name": "JavaScript (recipes)",
+   "items": [
+    {
+     "label": "on click",
+     "code": "document.querySelector('‹#go›').addEventListener('click', function () {\n  ‹what to do›\n});\n",
+     "hint": "When the element with id=\"go\" is clicked, run the lines inside. # means id, as . means class.",
+     "matches": "addEventListener\\s*\\("
+    },
+    {
+     "label": "change the text",
+     "code": "document.querySelector('‹#message›').textContent = '‹Go!›';\n",
+     "hint": "Replace the words inside the element with id=\"message\".",
+     "matches": "\\.textContent\\s*="
+    },
+    {
+     "label": "read a box",
+     "code": "const ‹name› = document.querySelector('‹#name›').value;\n",
+     "hint": "Read what someone typed into the box with id=\"name\".",
+     "matches": "\\.value\\b"
     }
    ]
   }

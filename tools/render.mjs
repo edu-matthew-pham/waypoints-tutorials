@@ -92,7 +92,12 @@ async function find(frame, name, kinds) {
   }
   throw new Error(`could not find "${name}" in the app (tried ${kinds.join(', ')})`);
 }
-const target = (frame, v, kinds) => (typeof v === 'object' && v.selector ? frame.locator(v.selector).first() : find(frame, typeof v === 'object' ? v.into || v.field : v, kinds));
+// { preview: true } looks inside the HTML playground's preview (the student's page), for example
+// - click: { selector: "#go", preview: true } and - expect: { selector: "#message", contains: "Go!", preview: true }.
+const target = (frame, v, kinds) => {
+  const fr = typeof v === 'object' && v.preview ? frame.frameLocator('#preview') : frame;
+  return typeof v === 'object' && v.selector ? fr.locator(v.selector).first() : find(fr, typeof v === 'object' ? v.into || v.field : v, kinds);
+};
 
 // ---------- one clip ----------
 async function recordClip(browser, lesson, step, outDir) {

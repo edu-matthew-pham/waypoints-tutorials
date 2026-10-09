@@ -17,5 +17,6 @@
   "flex-on-items": { "home": "code/html/flexbox", "text": "display: flex goes on the items to line them up, instead of on the box that holds them." },
   "label-not-linked": { "home": "code/html/forms", "text": "A label belongs to the input next to it, whatever its for says." },
   "img-file-name": { "home": "code/html/images", "text": "The browser finds a picture from a name close to the real file name; the name, extension and capitals must match exactly." },
-  "semantic-tags-look": { "home": "code/html/sections", "text": "Section tags such as header and footer change how a page looks or where things go; they only name the parts, and CSS decides the look." }
+  "semantic-tags-look": { "home": "code/html/sections", "text": "Section tags such as header and footer change how a page looks or where things go; they only name the parts, and CSS decides the look." },
+  "grid-on-items": { "home": "code/html/grid", "text": "display: grid and its columns go on each item, instead of on the box that holds them." }
 }

@@ -82,9 +82,9 @@ Each list item has exactly one verb.
 | `show` | `- show: app.py#launch` | Types that code into the code panel |
 | `clear` | `- clear: app.py` | Empties the code panel |
 | `type` | `- type: { into: Name, text: Ada }` | Moves pointer, clicks field, types (clears it first; `append: true` types at the end instead, and `after: "text"` types just after the first place that text appears, such as inside a `<style>` block, so captions can explain each part as it appears) |
-| `click` | `- click: Submit` | Button, then label, link or text with that name |
+| `click` | `- click: Submit` | Button, then label, link or text with that name; `{ selector: "#go", preview: true }` clicks inside the HTML preview |
 | `press` | `- press: Enter` | Key press |
-| `expect` | `- expect: { field: Greeting, value: "Hello" }` | **Fails the build** if the value is wrong (`contains:` also works) |
+| `expect` | `- expect: { field: Greeting, value: "Hello" }` | **Fails the build** if the value is wrong (`contains:` also works; `preview: true` checks an element inside the HTML preview) |
 | `wait` | `- wait: 1000` | Pause in milliseconds |
 
 Targets are found by visible label/name, not position. If something has no usable label,

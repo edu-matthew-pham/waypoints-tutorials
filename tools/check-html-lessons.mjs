@@ -17,11 +17,15 @@ const ok = (c, m) => { if (!c) { fails++; console.log('  ✗ ' + m); } };
 for (const l of lessons) {
   console.log(l.slug);
   const p = await b.newPage({ viewport: { width: 1100, height: 900 } });
-  p.on('pageerror', (e) => errs.push(l.slug + ': ' + e.message)); p.on('response', (r) => { if (r.status() >= 400 && !/trophey|medal\.png/.test(r.url())) bad.push(r.status() + ' ' + r.url()); });
+  // Bug-task regions are meant to be broken: errors while they render are expected.
+  const bugRegions = new Set(l.steps.flatMap((s) => [s.config.check, ...s.tasks.map((t) => t.config.check)]).filter((k) => k?.type === 'bug' && k.code).map((k) => String(k.code).split('#')[1]));
+  let region = null;
+  p.on('pageerror', (e) => { if (!bugRegions.has(region)) errs.push(l.slug + (region ? ' ' + region : '') + ': ' + e.message); }); p.on('response', (r) => { if (r.status() >= 400 && !/trophey|medal\.png/.test(r.url())) bad.push(r.status() + ' ' + r.url()); });
   // 1. regions render
   const src = readFileSync(join(l.dir, 'page.html'), 'utf8');
   const regions = [...src.matchAll(/<!-- region: ([\w-]+) -->\n([\s\S]*?)<!-- endregion -->/g)];
   for (const [, name, code] of regions) {
+    region = name;
     await p.goto(U + '_playground-html/index.html?code=' + encodeURIComponent(code));
     await p.waitForFunction(() => window.__playground?.updates > 0); await p.waitForTimeout(250);
     const f = await (await p.$('#preview')).contentFrame();
@@ -29,6 +33,7 @@ for (const l of lessons) {
     for (const [s, loaded] of imgs) ok(loaded || /trophey|medal\.png/.test(s), `${name}: picture ${s} did not load`);
   }
   // 2. lesson checks
+  region = null;
   await p.goto(U + l.slug + '/'); await p.waitForTimeout(800);
   ok(await p.evaluate(() => typeof window.evalRules === 'function'), 'the lesson script did not run (a bare tag in Markdown, such as <style>, can swallow it)');
   const put = async (step, code) => { const f = await (await p.locator(`#${step} iframe`).elementHandle()).contentFrame(); await f.waitForFunction(() => window.__playground?.updates > 0); await f.locator('#code').fill(code); await f.locator('#code').dispatchEvent('input'); await p.waitForTimeout(450); };

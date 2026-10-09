@@ -36,7 +36,7 @@ The navbar now plans for more subjects: **Learning Waypoints ↗** (the main sit
 
 ## HTML & CSS foundations: sequence (decided 9 Oct 2026, not built)
 
-**Scope rule.** HTML is a few ideas plus a large vocabulary. Keep what is (1) a core idea every tag or property builds on, (2) needed by the DOM extension (the tree, classes, selectors), or (3) used on the challenge page. Everything else is a Reference card. Core ideas: tags label meaning; nesting makes a tree; attributes add information; a CSS rule is a selector plus declarations (a rule that matches nothing fails silently); every element is a box; one layout tool (Flexbox). Dropped to Reference: most other tags, Grid, positioning, units beyond px and %, colour formats beyond names and hex, specificity, media queries.
+**Scope rule.** HTML is a few ideas plus a large vocabulary. Keep what is (1) a core idea every tag or property builds on, (2) needed by the DOM extension (the tree, classes, selectors), or (3) used on the challenge page. Everything else is a Reference card. Core ideas: tags label meaning; nesting makes a tree; attributes add information; a CSS rule is a selector plus declarations (a rule that matches nothing fails silently); every element is a box; one layout tool (Flexbox). Dropped to Reference: most other tags (Grid has an optional lesson, 12), positioning, units beyond px and %, colour formats beyond names and hex, specificity, media queries.
 
 **PRIMM as in Python.** Predict shows display code only (predict check); the Run step has the playground, whose live preview is the reveal and fills the compare box. HTML code checks use `tags` and `contains` (built on the local branch `html-playground-checks`).
 
@@ -101,6 +101,12 @@ Same standard as Unit 1: PRIMM used selectively, a combinations task with a pict
 
 **Groundwork for this batch:** Box model view (`?inspect=selector` pins one element for clips and pictures; hover otherwise); snippets and examples; the Style unit primer ("CSS in 5 minutes"); picture rendering always in standards mode (fixed); `npm run check-html` covers the new lessons automatically.
 
+## Challenge unit (HTML): built 9 Oct
+
+Lessons 10 to 12 are built. Club page: plan the page by naming its parts, then three milestones with fading support (header and menu; hero and cards from an outline in comments; results, sign-up and footer from goals only), then Make it yours; finishing it marks "Challenge complete" (`challenge: challenge` in `code/html/index.md`). Optional Make it react: JavaScript as a recipe (find, wait, change), with the snippets `on click`, `change the text` and `read a box` in a "JavaScript (recipes)" Reference group; error task `#Go` versus `id="go"`; Make a greeting; then the Forms sign-up says thank you. Optional Page layout with Grid: `display: grid`, `grid-template-columns`, `fr`, `repeat`; error task Grid on the items (`grid-on-items`); Grid or Flexbox; a page, cards and a gallery. Clip actions `click` and `expect` take `preview: true`. `check-html` ignores errors from bug-task regions (they are meant to be broken).
+
+Later: a wider code panel for clips (Make it react's recipe lines only fit at zoom 1.0).
+
 ## Unit 3 (Components and layout): built 9 Oct
 
 Lessons 7 (Flexbox), 8 (Page sections and components) and 9 (Forms) are built as designed below. Added on the way: `list-style: none` as part of the menu pattern (bullets sit oddly in a flex row); a note in the preview when a form is sent ("Nothing was sent..."); two more drawn pictures (`star.svg`, `music.svg`); Boxes floats a flex or grid container's label at its corner (it had become a flex item). Next: the final challenge unit (a club page from every component; optional Make it react and Page layout with Grid), after review.
@@ -150,7 +156,7 @@ Three pathways offered as options, not gates. Each shares one concept spine (seq
 
 **Overlap settled:** Arcade is games with blocks (MakeCode pathway); microStudio is games in text code (Python extension).
 
-**Next builds, in order:** the lists/`if` revisit (the final challenge is built); HTML & CSS sequence; MakeCode (starting with the embedding check).
+**Next builds, in order:** the lists/`if` revisit (the final challenge is built); HTML & CSS is built (lessons 1 to 12); MakeCode (starting with the embedding check).
 
 **Decided (9 Oct):** the console bridge (one or two lessons: `input()`, `print()`, a text menu) is the last Python foundations course and comes before every extension. Deeper console Python (strings, dictionaries, files, errors) is its own extension. Machine learning with Gradio comes after both Deeper console Python and the Gradio course. Pathway cards show this as "After: …" (`after:` in `code/index.md`, by course path or planned `id`).
 
