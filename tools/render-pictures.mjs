@@ -1,6 +1,9 @@
 // Pictures for the printable cheat sheets: run each turtle snippet's `example` in the playground
-// and save what it draws, cropped, as dist/_pictures/<snippet id>.png
-// (shared by the Reference page, the playground's Reference drawer and the cheat sheets).
+// and save what it draws, cropped, as dist/_pictures/<snippet id>.png; render each HTML snippet's
+// `example` as a page (as the HTML playground's preview shows it: browser defaults, 320px wide) and
+// save it as dist/_pictures/html/<snippet id>.png (HTML ids can repeat turtle ones, such as `comment`).
+// Shared by the Reference page, the playground's Reference drawer and the cheat sheets.
+// pictures.json: { id: { w, h, hash, div? } }; div is device pixels per printed pixel (default 5.2, turtle).
 // Part of `npm run render` (after build-playground). Cached: a picture is redrawn only when its
 // example or the playground changed (pictures.json keeps the hashes). --force redraws all.
 import { chromium } from 'playwright-core';
@@ -18,39 +21,66 @@ mkdirSync(DIR, { recursive: true });
 const { snippetId } = await import('./lesson-core.mjs');
 const strip = (c) => c.replace(/[‹›]/g, '');
 
-const h = createHash('sha1');
-const walk = (d) => { for (const f of readdirSync(d).sort()) { const p = join(d, f); if (statSync(p).isDirectory()) walk(p); else h.update(p).update(readFileSync(p)); } };
-walk('playground'); h.update(readFileSync(new URL(import.meta.url))).update('v2');
-const BASE = h.digest('hex');
-
-const data = JSON.parse(readFileSync('snippets/turtle.json', 'utf8'));
-const jobs = data.groups.flatMap((g) => g.items.filter((i) => i.example).map((i) => ({ id: snippetId(i.label), code: `from turtle import *\n\n${strip(i.example)}` })));
-const manifestPath = join(DIR, 'pictures.json');
-const old = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : {};
-const hashOf = (j) => createHash('sha1').update(BASE).update(j.code).digest('hex').slice(0, 16);
-const todo = jobs.filter((j) => FORCE || old[j.id]?.hash !== hashOf(j) || !existsSync(join(DIR, `${j.id}.png`)));
-
-const manifest = {};
-for (const j of jobs) if (!todo.includes(j)) manifest[j.id] = old[j.id];
-if (todo.length) {
-  const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm' };
-  const server = createServer((req, res) => {
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm' };
+let browser = null, server = null, port = 0;
+async function open() {
+  if (browser) return;
+  server = createServer((req, res) => {
     const p = join(OUT, decodeURIComponent(req.url.split('?')[0]));
     const f = existsSync(p) && statSync(p).isDirectory() ? join(p, 'index.html') : p;
     if (!existsSync(f)) { res.writeHead(404); return res.end(); }
     res.writeHead(200, { 'content-type': TYPES[extname(f)] || 'application/octet-stream' }); res.end(readFileSync(f));
   }).listen(0);
-  const port = server.address().port;
-  let executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
-  const browser = await chromium.launch({ headless: true, executablePath, args: ['--no-sandbox'] });
-  const page = await browser.newPage({ viewport: { width: 900, height: 700 }, deviceScaleFactor: 2 });
-  for (const j of todo) {
+  port = server.address().port;
+  const executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+  browser = await chromium.launch({ headless: true, executablePath, args: ['--no-sandbox'] });
+}
+
+// One kind of picture: jobs [{ id, code }], drawn by draw(page, job) -> { data, w, h, div? } | null.
+async function pictures({ name, dir, base, jobs, viewport, draw }) {
+  mkdirSync(dir, { recursive: true });
+  const manifestPath = join(dir, 'pictures.json');
+  const old = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : {};
+  const hashOf = (j) => createHash('sha1').update(base).update(j.code).digest('hex').slice(0, 16);
+  const todo = jobs.filter((j) => FORCE || old[j.id]?.hash !== hashOf(j) || !existsSync(join(dir, `${j.id}.png`)));
+  const manifest = {};
+  for (const j of jobs) if (!todo.includes(j) && old[j.id]) manifest[j.id] = old[j.id];
+  if (todo.length) {
+    await open();
+    const page = await browser.newPage({ viewport, deviceScaleFactor: 2 });
+    for (const j of todo) {
+      const png = await draw(page, j);
+      if (!png) { console.log(`- ${name} ${j.id}: draws nothing, no picture`); continue; }
+      writeFileSync(join(dir, `${j.id}.png`), Buffer.from(png.data.split(',')[1], 'base64'));
+      manifest[j.id] = { hash: hashOf(j), w: png.w, h: png.h, ...(png.div ? { div: png.div } : {}) };
+      console.log(`✓ ${name} ${j.id} (${png.w}×${png.h})`);
+    }
+    await page.close();
+  }
+  writeFileSync(manifestPath, JSON.stringify(manifest, null, 1) + '\n');
+  console.log(`Pictures (${name}): ${jobs.length} examples, ${todo.length} drawn, ${jobs.length - todo.length} cached.`);
+}
+
+const examples = (file, wrap) => JSON.parse(readFileSync(file, 'utf8')).groups.flatMap((g) => g.items.filter((i) => i.example).map((i) => ({ id: snippetId(i.label), code: wrap(strip(i.example)) })));
+const hashDir = (...parts) => {
+  const h = createHash('sha1');
+  const walk = (d) => { for (const f of readdirSync(d).sort()) { const p = join(d, f); if (statSync(p).isDirectory()) walk(p); else h.update(p).update(readFileSync(p)); } };
+  for (const p of parts) if (typeof p === 'string' && existsSync(p) && statSync(p).isDirectory()) walk(p); else h.update(String(p));
+  return h.digest('hex');
+};
+
+// ---- turtle: run the example in the playground, crop to what was drawn.
+await pictures({
+  name: 'turtle', dir: DIR, viewport: { width: 900, height: 700 },
+  base: hashDir('playground', readFileSync(new URL(import.meta.url)), 'v2'),
+  jobs: examples('snippets/turtle.json', (c) => `from turtle import *\n\n${c}`),
+  async draw(page, j) {
     await page.goto(`http://localhost:${port}/_playground/?view=output&speed=10&autorun=1&shape=classic&code=${encodeURIComponent(j.code)}`);
     await page.waitForFunction(() => ['done', 'error', 'stopped'].includes(window.__playground?.status), null, { timeout: 20000 });
     const st = await page.evaluate(() => window.__playground);
     if (st.status === 'error') throw new Error(`${j.id}: the example failed: ${st.error}`);
     // Crop to what was drawn (anything unlike the corner pixel), with a margin.
-    const png = await page.evaluate(() => {
+    return page.evaluate(() => {
       const c = document.getElementById('canvas'), x = c.getContext('2d');
       const { width: w, height: hh } = c, px = x.getImageData(0, 0, w, hh).data;
       const bg = px.slice(0, 4);
@@ -72,12 +102,37 @@ if (todo.length) {
       o.getContext('2d').drawImage(c, x0, y0, o.width, o.height, 0, 0, o.width, o.height);
       return { data: o.toDataURL('image/png'), w: o.width, h: o.height };
     });
-    if (!png) { console.log(`- ${j.id}: draws nothing, no picture`); continue; }
-    writeFileSync(join(DIR, `${j.id}.png`), Buffer.from(png.data.split(',')[1], 'base64'));
-    manifest[j.id] = { hash: hashOf(j), w: png.w, h: png.h };
-    console.log(`✓ ${j.id} (${png.w}×${png.h})`);
-  }
-  await browser.close(); server.close();
-}
-writeFileSync(manifestPath, JSON.stringify(manifest, null, 1) + '\n');
-console.log(`Pictures: ${jobs.length} examples, ${todo.length} drawn, ${jobs.length - todo.length} cached.`);
+  },
+});
+
+// ---- HTML: the example as a page, as the HTML playground's preview shows it (browser defaults),
+// 320px wide; cropped to what is on it (text, boxes with a background or border, controls), with a margin.
+await pictures({
+  name: 'html', dir: join(DIR, 'html'), viewport: { width: 320, height: 600 },
+  base: hashDir(readFileSync(new URL(import.meta.url)), 'html-v1'),
+  jobs: examples('snippets/html.json', (c) => c),
+  async draw(page, j) {
+    await page.setContent(j.code, { waitUntil: 'load' });
+    const box = await page.evaluate(() => {
+      let r = 0, b = 0;
+      const add = (q) => { if (q.width > 0 && q.height > 0) { r = Math.max(r, q.right); b = Math.max(b, q.bottom); } };
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      for (let n; (n = w.nextNode());) if (n.textContent.trim()) { const g = document.createRange(); g.selectNodeContents(n); [...g.getClientRects()].forEach(add); }
+      for (const el of document.body.querySelectorAll('*')) {
+        const cs = getComputedStyle(el), q = el.getBoundingClientRect();
+        const paints = /^(IMG|INPUT|BUTTON|SELECT|TEXTAREA|HR|TABLE|TD|TH|SVG|CANVAS)$/i.test(el.tagName)
+          || !/rgba\(0, 0, 0, 0\)|transparent/.test(cs.backgroundColor)
+          || ['Top', 'Right', 'Bottom', 'Left'].some((s) => parseFloat(cs[`border${s}Width`]) > 0 && cs[`border${s}Style`] !== 'none');
+        if (paints) add(q);
+        if (el.tagName === 'LI') add({ ...q.toJSON(), right: q.left + 1 }); // keep its bullet or number
+      }
+      return { r: Math.ceil(r), b: Math.ceil(b) };
+    });
+    if (!box.r || !box.b) return null;
+    const m = 8, width = Math.min(320, box.r + m), height = Math.min(600, box.b + m);
+    const buf = await page.screenshot({ clip: { x: 0, y: 0, width, height } });
+    return { data: `data:image/png;base64,${buf.toString('base64')}`, w: width * 2, h: height * 2, div: 3 };
+  },
+});
+
+if (browser) { await browser.close(); server.close(); }

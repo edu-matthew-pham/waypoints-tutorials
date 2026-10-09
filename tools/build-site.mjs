@@ -155,13 +155,16 @@ const navFor = (pagePath, here, coursePath = null) => {
   });
 };
 // Pictures of what snippet examples draw (tools/render-pictures.mjs, run by `npm run render`): { id: { w, h, hash } }.
-const PICTURES = existsSync(join(OUT, '_pictures', 'pictures.json')) ? JSON.parse(readFileSync(join(OUT, '_pictures', 'pictures.json'), 'utf8')) : {};
+// Turtle pictures sit in _pictures/, HTML ones in _pictures/html/ (ids can repeat across kinds). div: device px per printed px.
+const readPics = (sub) => { const f = join(OUT, '_pictures', ...sub, 'pictures.json'); return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : {}; };
+const PICS = { python: { pics: readPics([]), dir: '_pictures/' }, html: { pics: readPics(['html']), dir: '_pictures/html/' } };
+const picsFor = (lang) => PICS[lang] || PICS.python;
 // A Reference card: the code, then (when the snippet has one) its example program and a picture of what it draws.
 function refItem(i, lang, depth) {
   const plain = (t) => String(t).split('‹').join('').split('›').join('');
-  const id = snippetId(i.label), pic = PICTURES[id];
+  const id = snippetId(i.label), P = picsFor(lang), pic = P.pics[id], div = pic?.div || 5.2;
   const ex = i.example ? `<p class="ref-ex">Example</p>${codeBlock(highlightCode, plain(i.example).replace(/\n+$/, '') + '\n', lang, '')}` : '';
-  const img = pic ? `<figure class="ref-pic"><img src="${'../'.repeat(depth)}_pictures/${esc(id)}.png?v=${esc(pic.hash || '')}" alt="What the example draws" width="${Math.round(pic.w / 5.2)}" height="${Math.round(pic.h / 5.2)}" loading="lazy">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
+  const img = pic ? `<figure class="ref-pic"><img src="${'../'.repeat(depth)}${P.dir}${esc(id)}.png?v=${esc(pic.hash || '')}" alt="What the example draws" width="${Math.round(pic.w / div)}" height="${Math.round(pic.h / div)}" loading="lazy">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
   return `<div class="ref-item" data-text="${esc([i.label, i.hint || '', plain(i.code), i.shows || ''].join(' ').toLowerCase())}"><div>${codeBlock(highlightCode, plain(i.code).replace(/\n$/, '') + '\n', lang, '')}${ex}</div><div><b>${esc(i.label)}</b><p>${esc(i.hint || '')}</p>${img}<p class="ref-id">id: <code>${id}</code></p></div></div>`;
 }
 for (const r of REFS) {
@@ -373,7 +376,7 @@ for (const coursePath of teachCourses) {
   const cheatPage = ({ dir, title, sections, back, backLabel, mdName = '', mdUrl = '', nav = '', here = 'home' }) => {
     mkdirSync(join(OUT, dir), { recursive: true });
     const up = '../'.repeat(dir.split('/').length);
-    const body = cheatSheetBody({ title, course: node.title, sections, pictures: PICTURES, picBase: `${up}_pictures/`, esc, highlightCode, back, backLabel, md: mdName, mdUrl, nav, lang: ls[0]?.language || 'python' });
+    const body = cheatSheetBody({ title, course: node.title, sections, pictures: picsFor(ls[0]?.language || 'python').pics, picBase: `${up}${picsFor(ls[0]?.language || 'python').dir}`, esc, highlightCode, back, backLabel, md: mdName, mdUrl, nav, lang: ls[0]?.language || 'python' });
     writeFileSync(join(OUT, dir, 'index.html'), page(title, `<style>${TEACH_CSS}${CHEAT_CSS}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(dir, here, coursePath)));
   };
   // A row of links between the whole-course sheet and each unit's (base: the folder holding them).

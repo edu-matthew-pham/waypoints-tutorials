@@ -7,5 +7,13 @@
   "copied-code": { "home": "code/python/turtle-modules", "text": "Copying working code is free; in fact every copy must be fixed separately." },
   "return-vs-print": { "home": "code/python/turtle-returns", "text": "print gives a value back; only return does, and a function without return gives None." },
   "handler-call-vs-pass": { "home": "code/python/turtle-events", "text": "Handing over a handler with brackets calls it at once instead of passing the function." },
-  "and-vs-or": { "home": "code/python/turtle-buttons", "text": "Conditions that must all hold are joined with or instead of and." }
+  "and-vs-or": { "home": "code/python/turtle-buttons", "text": "Conditions that must all hold are joined with or instead of and." },
+  "html-error-message": { "home": "code/html/first-page", "text": "A mistake in HTML stops the page with an error message, as in Python; the browser actually shows its best guess and says nothing." },
+  "tag-overlap": { "home": "code/html/first-page", "text": "Tags can close in any order, so they overlap (<b><i>…</b></i>) instead of nesting." },
+  "list-item-outside": { "home": "code/html/lists-links", "text": "An <li> works anywhere, not only inside a <ul> or <ol>." },
+  "table-row-cells": { "home": "code/html/tables", "text": "A row can have fewer cells than the others, and the browser lines the table up anyway." },
+  "selector-mismatch": { "home": "code/html/selectors", "text": "A rule styles an element even when its selector does not exactly match the tag or class (a typo, or a class without its dot)." },
+  "css-missing-unit": { "home": "code/html/boxes", "text": "A size works without a unit, as in padding: 10." },
+  "flex-on-items": { "home": "code/html/flexbox", "text": "display: flex goes on the items to line them up, instead of on the box that holds them." },
+  "label-not-linked": { "home": "code/html/forms", "text": "A label belongs to the input next to it, whatever its for says." }
 }

@@ -65,7 +65,7 @@ The navbar now plans for more subjects: **Learning Waypoints ↗** (the main sit
 
 The core stays JavaScript-free; JavaScript proper (variables, decisions, functions, events) is the DOM extension.
 
-**Settled 9 Oct:** semantic tags are a real step (lesson 8); images and tables are separate lessons; hero and cards stay their own lesson (Flexbox already has two tasks); `first-page` is reworked into lesson 1. Nine core lessons plus the challenge, about the Python course's size. Still to build before lessons: CSS `/* region */` markers, HTML cheat-sheet pictures from the preview.
+**Settled 9 Oct:** semantic tags are a real step (lesson 8); images and tables are separate lessons; hero and cards stay their own lesson (Flexbox already has two tasks); `first-page` is reworked into lesson 1. Nine core lessons plus the challenge, about the Python course's size. Groundwork built 9 Oct: HTML code checks, CSS `/* region */` markers, HTML pictures for the Reference and cheat sheets (23 snippet examples), units in `code/html/index.md` (no `challenge:` until the challenge lesson exists, so no empty badge) and eight web misconceptions. Next: lesson 1, reworked from `first-page` (keeps its slug), with teacher notes and the Structure primer.
 
 ## Proposed: turtle companion (discussed, not decided)
 

@@ -9,17 +9,23 @@
     {
      "label": "<h1> heading",
      "code": "<h1>‹Heading›</h1>\n",
-     "hint": "The biggest heading. Use it once for the page title."
+     "hint": "The biggest heading. Use it once for the page title.",
+     "example": "<h1>Robotics Club</h1>\n",
+     "shows": "The biggest heading"
     },
     {
      "label": "<h2> subheading",
      "code": "<h2>‹Subheading›</h2>\n",
-     "hint": "A smaller heading for a section."
+     "hint": "A smaller heading for a section.",
+     "example": "<h1>Robotics Club</h1>\n<h2>This term</h2>\n",
+     "shows": "A smaller heading under the title"
     },
     {
      "label": "<p> paragraph",
      "code": "<p>‹Some text›</p>\n",
-     "hint": "A paragraph of text."
+     "hint": "A paragraph of text.",
+     "example": "<p>We meet on Tuesdays.</p>\n<p>Everyone is welcome.</p>\n",
+     "shows": "Two paragraphs, with a gap between"
     },
     {
      "label": "<div> box",
@@ -29,17 +35,23 @@
     {
      "label": "<ul> list",
      "code": "<ul>\n  <li>‹First›</li>\n  <li>‹Second›</li>\n</ul>\n",
-     "hint": "A bulleted list. Each item is an <li>."
+     "hint": "A bulleted list. Each item is an <li>.",
+     "example": "<ul>\n  <li>Apples</li>\n  <li>Pears</li>\n  <li>Plums</li>\n</ul>\n",
+     "shows": "A bullet for each <li>"
     },
     {
      "label": "<ol> numbered list",
      "code": "<ol>\n  <li>‹First›</li>\n  <li>‹Second›</li>\n</ol>\n",
-     "hint": "A numbered list."
+     "hint": "A numbered list.",
+     "example": "<ol>\n  <li>Plug in</li>\n  <li>Switch on</li>\n  <li>Press start</li>\n</ol>\n",
+     "shows": "The browser numbers the items"
     },
     {
      "label": "comment",
      "code": "<!-- ‹A note to yourself› -->\n",
-     "hint": "A note that the browser ignores."
+     "hint": "A note that the browser ignores.",
+     "example": "<p>You can see this.</p>\n<!-- You cannot see this. -->\n",
+     "shows": "The comment does not show"
     }
    ]
   },
@@ -49,7 +61,9 @@
     {
      "label": "<a> link",
      "code": "<a href=\"‹https://example.com›\">‹Link text›</a>",
-     "hint": "A link. The address goes in href; the words between the tags are what people click."
+     "hint": "A link. The address goes in href; the words between the tags are what people click.",
+     "example": "<p>Read the <a href=\"https://example.com\">club rules</a>.</p>\n",
+     "shows": "The link text is blue and underlined"
     },
     {
      "label": "<img> image",
@@ -59,27 +73,37 @@
     {
      "label": "<strong> bold",
      "code": "<strong>‹important›</strong>",
-     "hint": "Make text stand out as important (usually bold)."
+     "hint": "Make text stand out as important (usually bold).",
+     "example": "<p>Bring a <strong>hat</strong> tomorrow.</p>\n",
+     "shows": "Only the word inside is bold"
     },
     {
      "label": "<em> emphasis",
      "code": "<em>‹emphasis›</em>",
-     "hint": "Emphasise text (usually italic)."
+     "hint": "Emphasise text (usually italic).",
+     "example": "<p>Do <em>not</em> run inside.</p>\n",
+     "shows": "Only the word inside is italic"
     },
     {
      "label": "<button>",
      "code": "<button>‹Click me›</button>\n",
-     "hint": "A button."
+     "hint": "A button.",
+     "example": "<button>Start</button>\n",
+     "shows": "A button (clicking does nothing yet)"
     },
     {
      "label": "<br> line break",
      "code": "<br>\n",
-     "hint": "Start a new line."
+     "hint": "Start a new line.",
+     "example": "<p>Line one<br>Line two</p>\n",
+     "shows": "A new line inside one paragraph"
     },
     {
      "label": "<hr> line",
      "code": "<hr>\n",
-     "hint": "Draw a line across the page."
+     "hint": "Draw a line across the page.",
+     "example": "<p>Above</p>\n<hr>\n<p>Below</p>\n",
+     "shows": "A line across the page"
     }
    ]
   },
@@ -89,7 +113,9 @@
     {
      "label": "<table>",
      "code": "<table>\n  <tr>\n    <th>‹Name›</th>\n    <th>‹Score›</th>\n  </tr>\n  <tr>\n    <td>‹Sam›</td>\n    <td>‹10›</td>\n  </tr>\n</table>\n",
-     "hint": "A table: <tr> is a row, <th> a heading cell, <td> a normal cell."
+     "hint": "A table: <tr> is a row, <th> a heading cell, <td> a normal cell.",
+     "example": "<table>\n  <tr>\n    <th>Team</th>\n    <th>Points</th>\n  </tr>\n  <tr>\n    <td>Owls</td>\n    <td>12</td>\n  </tr>\n  <tr>\n    <td>Hawks</td>\n    <td>9</td>\n  </tr>\n</table>\n",
+     "shows": "Headings in bold, one row per <tr>"
     }
    ]
   },
@@ -99,52 +125,72 @@
     {
      "label": "<style> block",
      "code": "<style>\n  ‹h1› {\n    color: red;\n  }\n</style>\n",
-     "hint": "Where CSS lives. Each rule is: selector { property: value; }"
+     "hint": "Where CSS lives. Each rule is: selector { property: value; }",
+     "example": "<style>\n  h2 {\n    color: purple;\n  }\n</style>\n<h2>Purple heading</h2>\n<p>Normal text</p>\n",
+     "shows": "The rule styles every <h2>"
     },
     {
      "label": "rule",
      "code": "‹p› {\n  ‹color›: ‹blue›;\n}\n",
-     "hint": "Style every element matching the selector."
+     "hint": "Style every element matching the selector.",
+     "example": "<style>\n  li {\n    color: teal;\n  }\n</style>\n<ul>\n  <li>One</li>\n  <li>Two</li>\n</ul>\n",
+     "shows": "Every <li> is teal"
     },
     {
      "label": "color",
      "code": "color: ‹red›;\n",
-     "hint": "The text colour."
+     "hint": "The text colour.",
+     "example": "<style>\n  em {\n    color: crimson;\n  }\n</style>\n<p>A <em>red</em> word</p>\n",
+     "shows": "Text colour"
     },
     {
      "label": "background-color",
      "code": "background-color: ‹lightyellow›;\n",
-     "hint": "The background colour."
+     "hint": "The background colour.",
+     "example": "<style>\n  h2 {\n    background-color: lightyellow;\n  }\n</style>\n<h2>Notice</h2>\n",
+     "shows": "The colour behind the text"
     },
     {
      "label": "font-size",
      "code": "font-size: ‹20px›;\n",
-     "hint": "How big the text is."
+     "hint": "How big the text is.",
+     "example": "<style>\n  h2 {\n    font-size: 40px;\n  }\n</style>\n<h2>Big</h2>\n<p>Normal</p>\n",
+     "shows": "A bigger heading"
     },
     {
      "label": "font-family",
      "code": "font-family: ‹sans-serif›;\n",
-     "hint": "Which font to use."
+     "hint": "Which font to use.",
+     "example": "<style>\n  p {\n    font-family: monospace;\n  }\n</style>\n<p>Code font</p>\n",
+     "shows": "A different font"
     },
     {
      "label": "text-align",
      "code": "text-align: ‹center›;\n",
-     "hint": "Align text: left, center or right."
+     "hint": "Align text: left, center or right.",
+     "example": "<style>\n  h2 {\n    text-align: center;\n  }\n</style>\n<h2>Centred</h2>\n<p>Left</p>\n",
+     "shows": "The heading moves to the middle"
     },
     {
      "label": "padding",
      "code": "padding: ‹10px›;\n",
-     "hint": "Space inside an element, between its edge and its content."
+     "hint": "Space inside an element, between its edge and its content.",
+     "example": "<style>\n  p {\n    background-color: lightblue;\n    padding: 20px;\n  }\n</style>\n<p>Room inside</p>\n",
+     "shows": "Space between the edge and the text"
     },
     {
      "label": "margin",
      "code": "margin: ‹10px›;\n",
-     "hint": "Space outside an element, between it and its neighbours."
+     "hint": "Space outside an element, between it and its neighbours.",
+     "example": "<style>\n  p {\n    border: 1px solid gray;\n    margin: 20px;\n  }\n</style>\n<p>One</p>\n<p>Two</p>\n",
+     "shows": "Space around each box"
     },
     {
      "label": "border",
      "code": "border: ‹2px solid black›;\n",
-     "hint": "A line around an element: thickness, style, colour."
+     "hint": "A line around an element: thickness, style, colour.",
+     "example": "<style>\n  p {\n    border: 2px solid black;\n  }\n</style>\n<p>Boxed</p>\n",
+     "shows": "A line around the paragraph"
     }
    ]
   }

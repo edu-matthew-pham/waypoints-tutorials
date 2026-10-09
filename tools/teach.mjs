@@ -249,11 +249,13 @@ export function unitSnippets(lessons, snippets, seen = new Set(), codeOf = () =>
 
 // ---------------------------------------------------------------- printable cheat sheet (HTML)
 // sections: [{ title, items: [{ id, label, hint, code, shows }] }]; pictures: { id: { w, h } } from
-// render-pictures (device pixels at 2x, about 2.6 px per turtle step), drawn at one shared scale.
+// render-pictures (device pixels at 2x, about 2.6 px per turtle step), drawn at one shared scale per kind
+// (div: device pixels per printed pixel; 5.2 for turtle, set per picture for HTML).
 export function cheatSheetBody({ title, course, sections, pictures = {}, picBase, esc, highlightCode, back, backLabel = 'Teacher guide', md, mdUrl, nav = '', lang = 'python' }) {
   const card = (i) => {
     const pic = pictures[i.id];
-    const img = pic ? `<figure><img src="${esc(picBase + i.id)}.png${pic.hash ? `?v=${esc(pic.hash)}` : ''}" alt="What it draws" width="${Math.round(pic.w / 5.2)}" height="${Math.round(pic.h / 5.2)}">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
+    const div = pic?.div || 5.2;
+    const img = pic ? `<figure><img src="${esc(picBase + i.id)}.png${pic.hash ? `?v=${esc(pic.hash)}` : ''}" alt="What it draws" width="${Math.round(pic.w / div)}" height="${Math.round(pic.h / div)}">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
     const code = strip(i.code).replace(/\n+$/, '');
     // A picture shows the example program, which can differ from the bare snippet: show that code.
     const ex = pic && i.example && strip(i.example).trim() !== code.trim() ? `<div class="cs-ex">Example</div><pre><code>${highlightCode(strip(i.example).replace(/\n+$/, ''), lang)}</code></pre>` : '';
@@ -264,7 +266,7 @@ export function cheatSheetBody({ title, course, sections, pictures = {}, picBase
   const height = (i) => {
     const pic = pictures[i.id];
     const code = lines(i.code) + (pic && i.example && strip(i.example).trim() !== strip(i.code).trim() ? lines(i.example) + 1.5 : 0);
-    return 3 + Math.max(code * 1.1, pic ? pic.h / 5.2 / 15 + (i.shows ? 1.5 : 0) : 0) + Math.ceil((i.hint || '').length / 55);
+    return 3 + Math.max(code * 1.1, pic ? pic.h / (pic.div || 5.2) / 15 + (i.shows ? 1.5 : 0) : 0) + Math.ceil((i.hint || '').length / 55);
   };
   const cols = (items) => {
     const c = [[], []], h = [0, 0];

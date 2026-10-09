@@ -106,7 +106,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
   /** A card: name, hint, then one or more code parts (each with its own Copy), then any extra actions. */
   // Pictures of what each snippet's example draws (built by tools/render-pictures.mjs), loaded on first use.
   let pics = null;
-  const picsBase = new URL('../_pictures/', location.href);
+  const picsBase = new URL(kind === 'html' ? '../_pictures/html/' : '../_pictures/', location.href); // HTML ids can repeat turtle ones
   const loadPics = () => (pics ||= fetch(new URL('pictures.json', picsBase), { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
 
   function card({ id, label, hint, parts, dyn = false, actions = [], ours = false, pattern = null, example = '', shows = '' }) {
@@ -136,7 +136,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
     if (example) { // "Example": a short program that uses it, and a picture of what that draws (one card at a time)
       const box = document.createElement('div'); box.className = 'ref-example'; box.hidden = true;
       const fig = document.createElement('figure'); fig.hidden = true;
-      const img = document.createElement('img'); img.alt = `What the ${label} example draws`;
+      const img = document.createElement('img'); img.alt = `What the ${label} example ${kind === 'html' ? 'shows' : 'draws'}`;
       fig.append(img);
       if (shows) { const cap = document.createElement('figcaption'); cap.textContent = shows; fig.append(cap); }
       codeRow({ code: example, note: 'Example' }, box);
@@ -146,7 +146,7 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
         tb.textContent = box.hidden ? 'Example' : 'Hide example'; tb.setAttribute('aria-expanded', String(!box.hidden));
         if (!box.hidden && !img.src) {
           const p = (await loadPics())[id];
-          if (p) { img.src = new URL(`${id}.png?v=${p.hash || ''}`, picsBase).href; img.width = Math.round(p.w / 4); img.height = Math.round(p.h / 4); fig.hidden = false; }
+          if (p) { img.src = new URL(`${id}.png?v=${p.hash || ''}`, picsBase).href; const d = (p.div || 5.2) * 4 / 5.2; img.width = Math.round(p.w / d); img.height = Math.round(p.h / d); fig.hidden = false; }
         }
       });
       tb.classList.add('ref-ex-btn'); tb.setAttribute('aria-expanded', 'false');

@@ -95,7 +95,7 @@ export function snippetFrom(read, ref) {
   const text = read(file);
   if (text === undefined || text === null) throw new Error(`code reference "${ref}": file not found`);
   const lines = String(text).replace(/\r\n/g, '\n').split('\n');
-  const marker = /^\s*(?:#|\/\/|<!--)\s*(end)?region\b\s*:?\s*([\w-]*)/;
+  const marker = /^\s*(?:#|\/\/|<!--|\/\*)\s*(end)?region\b\s*:?\s*([\w-]*)/;
   let out = lines;
   if (region) {
     let on = false;
