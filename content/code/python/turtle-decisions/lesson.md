@@ -1,5 +1,6 @@
 ---
 order: 3
+unit: choices
 title: Decisions
 summary: Make a program choose between two things with if and else.
 language: python

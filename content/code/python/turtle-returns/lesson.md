@@ -1,5 +1,6 @@
 ---
 order: 7
+unit: functions
 title: Functions that give answers
 summary: Return a value, combine functions, and use them inside loops.
 language: python

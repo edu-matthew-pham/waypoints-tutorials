@@ -282,6 +282,18 @@ unlocks: [pencolor]                  # fires when every task is done
 
 A step or a task can have `insight: "..."`: one sentence on what students should come to see. It is shown to teachers only, in **For teachers › What each step is for**.
 
+### Units, optional lessons and pathways
+
+A course folder's `index.md` can group its lessons into units:
+
+```yaml
+units:
+  - { id: functions, title: Functions, summary: "Name steps, give them inputs and outputs." }
+challenge: challenge   # optional: the unit whose required lessons mark "Challenge complete"
+```
+
+Each lesson then names its unit (`unit: functions`) and can be `optional: true` (shown with an Optional tag and not needed to finish the course). `npm run validate` checks the unit ids. `code/index.md` lists the pathways shown on `/code/`: each has `courses`, either `{ path: code/python, stage: foundations }` for a built course or `{ title, summary, stage: extensions }` for one coming later.
+
 ### Check types
 
 All except `code` are static and need no running code. Write the check under `check:` (a step with no tasks) or under a task.
@@ -296,7 +308,7 @@ All except `code` are static and need no running code. Write the check under `ch
 | `bug` | `code: file#region`, `answer: 7` (or `[7, 19]`; `"main.py:7"` when the code has several files), `fault`, `misconception`, `text`, `explain` | clicks the wrong line (every listed line, when there are several) |
 | `parsons` | `code: file#region` (the correct program), optional `extra: [spare lines]`, `text`, `explain` | orders scrambled lines |
 | `predict` | `q`, optional `options: [...]` (else typed; `kind: number` for a number), optional `actual` | locks in a prediction before running (cannot change it) |
-| `code` | `text`, `rules` | runs a program that meets the rules |
+| `code` | `text`, `rules` (`defs`, `calls`, `loops`, `returns`, `params`, `imports`, `uses`, `contains: ["inside(x, y"]`) | runs a program that meets the rules |
 
 A **trace table** is a pipe table; the first row is the header and cells in `[brackets]` are the blanks, with the answer inside:
 

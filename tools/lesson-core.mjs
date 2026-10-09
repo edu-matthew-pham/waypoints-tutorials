@@ -26,7 +26,7 @@ export function parseTrace(text) {
   if (!body.some((r) => r.some((c) => c.blank))) throw new Error('needs at least one blank, written in [brackets] with its answer inside');
   return { head, rows: body };
 }
-export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports', 'uses'];
+export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'imports', 'uses', 'contains'];
 
 /**
  * Evaluates a code check's rules against the student's code (all their files joined). Pure and
@@ -50,6 +50,9 @@ export function evalRules(rules, text) {
   if (rules.returns) out.push({ label: 'Use return to give a value back', ok: count(/^\s*return\b/) >= rules.returns });
   (rules.uses || []).forEach((n) => out.push({ label: `Use ${n}`, ok: code.some((l) => new RegExp('\\b' + n + '\\b').test(l)) }));
   (rules.imports || []).forEach((m) => out.push({ label: `Import from ${m}`, ok: code.some((l) => new RegExp('^\\s*(from|import)\\s+' + m + '\\b').test(l)) }));
+  // contains: code fragments that must appear somewhere (spaces ignored, comments skipped), shown as written.
+  const flat = code.join('\n').replace(/\s+/g, '');
+  (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flat.includes(String(frag).replace(/\s+/g, '')) }));
   return out;
 }
 
@@ -162,6 +165,8 @@ export function parseLessonText(raw, slug = 'lesson') {
     author: meta.author ? String(meta.author) : '',
     order: Number.isFinite(Number(meta.order)) && meta.order !== null && meta.order !== '' ? Number(meta.order) : null,
     hook: meta.hook ? String(meta.hook).trim() : '',
+    unit: meta.unit ? String(meta.unit) : '',          // the unit (group of lessons) in the course's index.md
+    optional: meta.optional === true,                // an optional lesson: not needed to finish the course
     teachers: meta.teachers ? String(meta.teachers).trim() : '',
     modules: Array.isArray(meta.modules) ? meta.modules.map(String) : [],
     language: meta.language || 'python',
@@ -215,6 +220,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         for (const key of ['defs', 'calls', 'loops', 'returns', 'params']) if (r[key] !== undefined && !(Number.isInteger(r[key]) && r[key] > 0)) err(where, `code rule ${key} must be a whole number above 0`);
         if (r.uses !== undefined && !(Array.isArray(r.uses) && r.uses.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule uses must be a list of names, such as [pencolor]');
         if (r.imports !== undefined && !(Array.isArray(r.imports) && r.imports.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule imports must be a list of module names');
+        if (r.contains !== undefined && !(Array.isArray(r.contains) && r.contains.every((f) => typeof f === 'string' && f.trim()))) err(where, 'code rule contains must be a list of code fragments, such as ["inside(x, y"]');
         if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
       }
       if (!c.try || (c.try.playground && c.try.playground !== 'turtle')) err(where, 'a code check needs a Python turtle playground (try: { starter: ... }) to run');

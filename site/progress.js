@@ -33,7 +33,7 @@
     return m.paths.map(function (path) {
       var lessons = path.lessons.map(function (l) {
         var got = l.checks.filter(function (k) { return done[k]; }).length;
-        return { title: l.title, order: l.order, href: l.href, checks: l.checks.length, done: got, complete: l.checks.length > 0 && got === l.checks.length };
+        return { title: l.title, order: l.order, href: l.href, checks: l.checks.length, done: got, complete: l.checks.length > 0 && got === l.checks.length, optional: !!l.optional };
       });
       var snips = (path.snippets || []).map(function (s) { return { id: s.id, label: s.label, lesson: s.lesson, step: s.step, got: !!(p.all || unlocked[path.kind + ':' + s.id]) }; });
       return { title: path.title, href: path.href, kind: path.kind, lessons: lessons, snippets: snips };
@@ -43,7 +43,7 @@
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
-  // Course page: fill each lesson row from this browser's progress, pick what to continue, add the footer.
+  // Course page: fill each lesson row from this browser's progress, pick what to continue, mark units and the challenge.
   function course() {
     var list = document.getElementById('course');
     if (!list) return;
@@ -52,26 +52,42 @@
       var keys = r.dataset.keys ? r.dataset.keys.split('|') : [], hrefs = r.dataset.hrefs ? r.dataset.hrefs.split('|') : [], labels = r.dataset.labels ? r.dataset.labels.split('|') : [];
       var n = 0, first = -1;
       keys.forEach(function (k, i) { if (done[k]) n++; else if (first < 0) first = i; });
-      [].forEach.call(r.querySelectorAll('.seg'), function (sg) { sg.classList.toggle('on', !!done[sg.dataset.key]); });
+      [].forEach.call(r.querySelectorAll('[data-key]'), function (d) { d.classList.toggle('on', !!done[d.dataset.key]); });
       var all = keys.length > 0 && n === keys.length;
       if (n) any = true;
       r.classList.toggle('started', n > 0 && !all); r.classList.toggle('done', all);
       var st = r.querySelector('.cstat');
       if (st && keys.length) st.textContent = all ? 'Done' : n ? n + '/' + keys.length : 'Not started';
+      var go = r.querySelector('.cgo');
+      if (go && keys.length) { go.textContent = all ? 'Review lesson' : n ? 'Continue: ' + labels[first] : 'Start lesson'; go.href = all || !n ? r.dataset.href : hrefs[first]; }
       var a = document.createElement('a'); a.href = r.dataset.href;
-      return { row: r, keys: keys, all: all, path: a.pathname, next: first >= 0 ? { href: hrefs[first], label: labels[first] } : null };
+      return { row: r, keys: keys, all: all, optional: r.dataset.optional === '1', path: a.pathname, started: n > 0, next: first >= 0 ? { href: hrefs[first], label: labels[first] } : null };
     });
-    // Continue: the lesson last opened, if it is unfinished; otherwise the first unfinished lesson.
+    // Units: how many of their required lessons are done.
+    [].forEach.call(list.querySelectorAll('.unit'), function (u) {
+      var mine = info.filter(function (x) { return u.contains(x.row) && x.keys.length && !x.optional; });
+      var st = u.querySelector('.ustat');
+      if (st && mine.length) st.textContent = mine.filter(function (x) { return x.all; }).length + ' of ' + mine.length + ' done';
+    });
+    var badge = document.getElementById('badge');
+    if (badge) {
+      var cu = list.querySelector('.unit[data-unit="' + badge.dataset.unit + '"]');
+      var need = info.filter(function (x) { return cu && cu.contains(x.row) && x.keys.length && !x.optional; });
+      badge.hidden = !(need.length && need.every(function (x) { return x.all; }));
+    }
+    // Continue: the lesson last opened, if it is unfinished; otherwise the first unfinished required lesson,
+    // then the first unfinished optional one.
     var last = null; try { last = JSON.parse(localStorage.getItem('wp-last-lesson')); } catch (e) { /* ignore */ }
-    var pick = info.filter(function (x) { return last && x.path === last.href && x.keys.length && !x.all; })[0] || info.filter(function (x) { return x.keys.length && !x.all; })[0];
+    var open = function (x) { return x.keys.length && !x.all; };
+    var pick = info.filter(function (x) { return last && x.path === last.href && open(x); })[0] ||
+      info.filter(function (x) { return open(x) && !x.optional; })[0] || info.filter(open)[0];
     var c = document.getElementById('continue');
+    if (pick) { pick.row.classList.add('next'); pick.row.open = true; }
     if (c) {
       if (pick) {
-        pick.row.classList.add('next');
-        var started = any && pick.next;
-        c.href = started && pick.keys.some(function (k) { return done[k]; }) ? pick.next.href : pick.row.dataset.href;
+        c.href = pick.started && pick.next ? pick.next.href : pick.row.dataset.href;
         c.querySelector('.ck').textContent = any ? 'Continue' : 'Start';
-        c.querySelector('b').textContent = pick.row.dataset.title;
+        c.querySelector('b').textContent = pick.row.dataset.title.replace(/Optional:\s*/, '') + (pick.optional ? ' (optional)' : '');
         c.querySelector('.cstep').textContent = any && pick.next ? 'Next: ' + pick.next.label : '';
       } else if (info.some(function (x) { return x.keys.length; })) {
         c.querySelector('.ck').textContent = 'All done';
@@ -100,17 +116,17 @@
 
   // A page that lists courses (such as /code/): one progress line under each course card.
   function courseCards() {
-    var cards = [].slice.call(document.querySelectorAll('ul.lessons a'));
+    var cards = [].slice.call(document.querySelectorAll('ul.lessons a, a.pcard'));
     if (!cards.length) return;
     manifest().then(function (m) {
       summary(m).forEach(function (path) {
-        var total = path.lessons.filter(function (l) { return l.checks; }).length;
+        var req = path.lessons.filter(function (l) { return l.checks && !l.optional; }), total = req.length;
         if (!total) return;
         var want = new URL(root + path.href, location.href).pathname;
         cards.forEach(function (a) {
           if (a.pathname !== want || a.querySelector('.cprog')) return;
-          var done = path.lessons.filter(function (l) { return l.complete; }).length;
-          var going = path.lessons.filter(function (l) { return l.done && !l.complete; }).length;
+          var done = req.filter(function (l) { return l.complete; }).length;
+          var going = req.filter(function (l) { return l.done && !l.complete; }).length;
           var line = el('em', 'cprog', done + ' of ' + total + ' lessons done' + (going ? ' · ' + going + ' in progress' : ''));
           var bar = el('i', 'cbar'), fill = el('i'); fill.style.width = Math.round(100 * done / total) + '%'; bar.append(fill);
           a.append(line, bar);

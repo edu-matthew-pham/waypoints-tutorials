@@ -1,5 +1,6 @@
 ---
 order: 2
+unit: drawing
 title: Variables and operations
 summary: Give a number a name, then calculate with it.
 language: python

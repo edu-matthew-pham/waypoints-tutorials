@@ -109,7 +109,7 @@ const dirNode = (path) => {
   if (!dirs.has(path)) {
     const meta = loadDirMeta(join(CONTENT_ROOT, path));
     const name = path.split('/').pop() || 'Lessons';
-    dirs.set(path, { path, title: meta.title || titleCase(name), summary: meta.summary || '', order: Number.isFinite(Number(meta.order)) && meta.order != null ? Number(meta.order) : null, kids: new Map() });
+    dirs.set(path, { path, title: meta.title || titleCase(name), summary: meta.summary || '', order: Number.isFinite(Number(meta.order)) && meta.order != null ? Number(meta.order) : null, kids: new Map(), meta });
   }
   return dirs.get(path);
 };
@@ -159,7 +159,8 @@ for (const r of REFS) {
 // Playground pages live beside Reference on the paths that have a playground (PLAY is defined above).
 // One segment per check, in lesson order: its progress key, the step anchor and a label (for the course page).
 const segmentsOf = (l) => l.steps.flatMap((s) => {
-  const step = s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '');
+  const bare = s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '');
+  const step = bare.charAt(0).toUpperCase() + bare.slice(1);
   const stage = s.config.stage || 'info';
   return s.tasks.length
     ? s.tasks.filter((t) => t.config.check).map((t) => ({ key: `${l.slug}/${t.id}`, href: `#${s.id}`, label: s.tasks.length > 1 ? `${step} › ${t.title}` : step, stage }))
@@ -188,7 +189,7 @@ for (const path of [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1)
   const claims = kind ? claimsByKind[kind] : {};
   manifest.paths.push({
     title: dirNode(path).title, href: `${path}/`, kind,
-    lessons: ls.map((l) => ({ title: l.title, order: l.order, href: `${l.slug}/`, checks: checkKeys(l) })),
+    lessons: ls.map((l) => ({ title: l.title, order: l.order, href: `${l.slug}/`, checks: checkKeys(l), optional: l.optional })),
     snippets: Object.entries(claims).map(([id, c]) => ({ id, label: snippetNames[kind]?.[id] || id, lesson: c.lesson, step: c.step })),
   });
 }
@@ -233,20 +234,52 @@ for (const node of dirs.values()) {
     // A course page: progress first. Continue card, one compact row per lesson with a segment per check
     // (filled from this browser's progress by progress.js), and the playground and reference as small links.
     const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref ? `<a class="chip" href="reference/">Reference</a>` : '');
-    const rows = courseLessons.map((l) => {
+    // One collapsed row per lesson: the whole sequence is visible; opening a row shows its steps.
+    const row = (l) => {
       const segs = segmentsOf(l), name = l.slug.split('/').pop();
-      const bar = segs.length ? `<span class="segs" aria-hidden="true">${segs.map((g) => `<a class="seg" href="${esc(name)}/${g.href}" data-key="${esc(g.key)}" style="--c:var(--${esc(g.stage)})" title="${esc(g.label)}" tabindex="-1"></a>`).join('')}</span>` : '';
-      return `<li class="crow" data-keys="${esc(segs.map((g) => g.key).join('|'))}" data-hrefs="${esc(segs.map((g) => `${name}/${g.href}`).join('|'))}" data-labels="${esc(segs.map((g) => g.label).join('|'))}" data-href="${esc(name)}/" data-title="${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}">` +
-        `<span class="cnum">${l.order ?? ''}</span><div class="cmain"><a class="ctitle" href="${esc(name)}/">${esc(l.title)}</a>${l.summary ? `<span class="csum">${esc(l.summary)}</span>` : ''}${bar}</div>` +
-        `<span class="cstat">${segs.length ? `0/${segs.length}` : ''}</span></li>`;
-    }).join('');
+      const mini = segs.length ? `<span class="segs" aria-hidden="true">${segs.map((g) => `<i class="seg" data-key="${esc(g.key)}" style="--c:var(--${esc(g.stage)})"></i>`).join('')}</span>` : '';
+      const steps = segs.length ? `<ol class="csteps">${segs.map((g) => `<li><a href="${esc(name)}/${g.href}"><i class="sdot" data-key="${esc(g.key)}" style="--c:var(--${esc(g.stage)})"></i>${esc(g.label)}</a></li>`).join('')}</ol>` : '';
+      return `<details class="crow" data-keys="${esc(segs.map((g) => g.key).join('|'))}" data-hrefs="${esc(segs.map((g) => `${name}/${g.href}`).join('|'))}" data-labels="${esc(segs.map((g) => g.label).join('|'))}" data-href="${esc(name)}/" data-title="${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}"${l.optional ? ' data-optional="1"' : ''}>` +
+        `<summary><span class="cnum">${l.order ?? ''}</span><span class="ctitle">${esc(l.title.replace(/^Optional:\s*/, ''))}${l.optional ? ' <em class="opt">Optional</em>' : ''}</span>${mini}<span class="cstat">${segs.length ? 'Not started' : ''}</span></summary>` +
+        `<div class="cbody">${l.summary ? `<p class="csum">${esc(l.summary)}</p>` : ''}${steps}<a class="cgo" href="${esc(name)}/">Start lesson</a></div></details>`;
+    };
+    // Units (from the course's index.md) group the lessons; lessons without a unit go last.
+    const units = Array.isArray(node.meta?.units) ? node.meta.units : [];
+    const groups = units.map((u) => ({ ...u, lessons: courseLessons.filter((l) => l.unit === u.id) })).filter((g) => g.lessons.length);
+    const loose = courseLessons.filter((l) => !units.some((u) => u.id === l.unit));
+    if (loose.length) groups.push({ id: '', title: units.length ? 'More lessons' : '', lessons: loose });
+    const rows = groups.map((g) => `<section class="unit"${g.id ? ` data-unit="${esc(g.id)}"` : ''}>` +
+      (g.title ? `<div class="uhead"><h2>${esc(g.title)}</h2><span class="ustat"></span>${g.summary ? `<p>${esc(g.summary)}</p>` : ''}</div>` : '') +
+      `<div class="urows">${g.lessons.map(row).join('')}</div></section>`).join('');
+    const challenge = node.meta?.challenge ? `<span class="badge" id="badge" data-unit="${esc(node.meta.challenge)}" hidden>★ Challenge complete</span>` : '';
     const hasChecks = courseLessons.some((l) => segmentsOf(l).length);
     writeFileSync(join(outDir, 'index.html'), page(node.title,
-      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>` +
+      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}${challenge}</header>` +
       (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') +
-      `<ol class="course" id="course" data-kind="${play?.kind || ''}">${rows}</ol>` +
+      `<div class="course" id="course" data-kind="${play?.kind || ''}">${rows}</div>` +
       (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : ''),
       `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'course', node.path)));
+    continue;
+  }
+  // A folder with pathways (code/index.md): each pathway lists its courses in order, foundations then
+  // extensions; planned courses show as "Coming later" so the whole pathway is visible.
+  const pathways = Array.isArray(node.meta?.pathways) ? node.meta.pathways : [];
+  if (pathways.length) {
+    const card = (c) => {
+      if (c.path) {
+        const d = dirs.get(c.path);
+        if (!d) throw new Error(`code/index.md: pathway course "${c.path}" is not a folder of lessons`);
+        return `<a class="pcard" href="${esc(c.path.split('/').pop())}/"><b>${esc(d.title)}</b>${d.summary ? `<span>${esc(d.summary)}</span>` : ''}</a>`;
+      }
+      return `<div class="pcard soon"><b>${esc(c.title)}</b>${c.summary ? `<span>${esc(c.summary)}</span>` : ''}<em>Coming later</em></div>`;
+    };
+    const stage = (courses, name, label) => { const cs = courses.filter((c) => (c.stage || 'foundations') === name); return cs.length ? `<div class="pstage"><h3>${label}</h3><div class="pcards">${cs.map(card).join('')}</div></div>` : ''; };
+    const body = pathways.map((pw) => `<section class="pathway" id="${esc(pw.id || '')}"><h2>${esc(pw.title)}</h2>${pw.summary ? `<p class="psum">${esc(pw.summary)}</p>` : ''}` +
+      stage(pw.courses || [], 'foundations', 'Foundations') + stage(pw.courses || [], 'extensions', 'Extensions') + `</section>`).join('');
+    const create = node.path === 'code' ? `<p class="ptools">For teachers: <a href="create/">Create a lesson</a></p>` : '';
+    writeFileSync(join(outDir, 'index.html'), page(node.title,
+      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${body}${create}`,
+      `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
     continue;
   }
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,

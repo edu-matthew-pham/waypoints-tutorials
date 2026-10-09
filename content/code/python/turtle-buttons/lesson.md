@@ -1,5 +1,6 @@
 ---
 order: 10
+unit: interaction
 title: Build a button
 summary: Turtle has no buttons, so build one from a rectangle and a click check.
 language: python

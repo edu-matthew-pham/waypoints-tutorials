@@ -1,5 +1,6 @@
 ---
 order: 9
+unit: interaction
 title: Events
 summary: Make a program wait, then react when something happens.
 language: python
@@ -133,4 +134,8 @@ stage: modify
 try: { starter: "events.py#counter", height: 440 }
 ```
 
-Games and apps keep a **score** that changes when events happen. This program keeps `score` in a variable and shows it each time you click. Make it count by 5 instead of 1, then make a key (`r`) that resets it to zero. Then add a timer: use `ontimer` to add a point every second.
+Games and apps keep a **score** that changes when events happen. This program keeps `score` in a variable and shows it each time you click.
+
+**Behind the code:** `score` is made outside the function. The line `global score` lets `add_point` change that same `score`. Without it, Python treats `score` inside the function as a new, empty name and stops with an error. Any handler that changes a variable from outside needs `global`.
+
+Make it count by 5 instead of 1, then make a key (`r`) that resets it to zero. Then add a timer: use `ontimer` to add a point every second.

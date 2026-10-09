@@ -1,5 +1,6 @@
 ---
 order: 4
+unit: choices
 title: Lists
 summary: Store many values under one name, then work through them one by one.
 language: python

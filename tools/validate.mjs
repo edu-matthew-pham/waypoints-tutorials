@@ -26,6 +26,16 @@ for (const f of readdirSync('snippets').filter((n) => n.endsWith('.json'))) {
   } catch (e) { bad++; console.error(`✗ snippets/${f}: ${e.message}`); }
 }
 
+// Units: a lesson's unit must be one its course lists (index.md units:); in a course with units, every lesson needs one.
+import { loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
+import { join as pjoin } from 'node:path';
+for (const l of lessons) {
+  const course = l.slug.split('/').slice(0, -1).join('/');
+  const units = loadDirMeta(pjoin(CONTENT_ROOT, course)).units;
+  const ids = Array.isArray(units) ? units.map((u) => u.id) : [];
+  if (l.unit && !ids.includes(l.unit)) { bad++; console.error(`✗ ${l.slug} › frontmatter: unit "${l.unit}" is not in ${course}/index.md units (${ids.join(', ') || 'none'})`); }
+  else if (!l.unit && ids.length) console.warn(`⚠ ${l.slug} › frontmatter: no unit; it will show under "More lessons"`);
+}
 // Error-task lint (warnings, never a failure): each planted error names its fault and misconception,
 // stays on the lesson's path (no misconception from a later lesson), and a design fault is not a one-line hunt.
 import { bugKeys, FAULTS } from './lesson-core.mjs';
