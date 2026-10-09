@@ -6,7 +6,7 @@ How a course is designed and built here, learned from Python Foundations with Tu
 
 ## 1. Shape: pathway › course › unit › lesson › step › task
 
-- **Pathway** (Python, Web, MakeCode): listed in `content/code/index.md`, courses in order, each `stage: foundations | extensions`. Planned courses go in early as "Coming later", so the whole path is visible.
+- **Pathway** (Python, Web, MakeCode): listed in `content/code/index.md`, courses in order, each `stage: foundations | extensions`, plus a one-line `summary` and an optional `about` (Markdown for its pathway page). Planned courses go in early as "Coming later", so the whole path is visible. Each pathway gets a page at `/code/paths/<id>/` and an item in the navbar's Code menu; a new course is listed under its pathway, never in the navbar itself. Keep course folders where they are once students use them: progress is keyed by the lesson's path.
 - **Course**: a folder with `index.md` (title, summary, `order`, `units`, optional `challenge`).
 - **Unit**: 2 to 4 lessons that share one idea. Never call it a module (Python meaning).
 - **Lesson**: one concept, PRIMM steps. **Step**: one stage. **Task**: a sub-pill inside a step, only when there are several.
@@ -58,7 +58,7 @@ The student tutorial stays light on words; the teacher layer carries the explana
 
 1. `npm run validate`: errors fail; warnings (error-task lint, units) are read, not ignored.
 2. **Run every code region** headlessly in its playground, starters included: no errors, and the starter does what the step text says. For interactive programs, **play them**: the harness clicks the target, presses Start, waits for game over and restarts (see `.render-tmp` scripts from the challenge batch; they are scratch, so rewrite as needed).
-3. **Course and pathway pages** with a fresh browser, part progress and full progress, at desktop and phone width: Continue card, unit counts, open row, badge, `/code/` counts (required lessons only).
+3. **Course and pathway pages** with a fresh browser, part progress and full progress, at desktop and phone width: Continue card, unit counts, open row, badge, `/code/` and pathway-page counts (required lessons only); every navbar link resolves from every kind of page.
 4. **Screenshots** of anything visual, read before pushing.
 5. **Teacher layer:** every solution runs in its playground; `npm run check-decks` reports no overflowing slides; open one guide page, one deck (marp-cli render) and the unit cheat sheets as A4 PDFs (Playwright `page.pdf`) and read them; the student lesson's For teachers panel shows no solutions.
 6. Re-render clips for lessons whose clip steps or playgrounds changed; CI re-renders on deploy anyway.

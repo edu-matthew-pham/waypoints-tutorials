@@ -117,7 +117,7 @@ ul.lessons{list-style:none;padding:0;display:grid;gap:14px}ul.lessons a{display:
 .continue .ck{grid-row:span 2;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.2)}
 .continue b{font-size:1.15rem}.continue .cstep{font-size:14px;opacity:.9}.continue .cstep:empty{display:none}.continue:hover{filter:brightness(1.06)}
 @media(prefers-color-scheme:dark){.continue{color:#1a1006}.continue .ck{background:rgba(0,0,0,.15)}}
-.pathway{margin:30px 0 8px}.pathway h2{margin:0;font-size:1.4rem}.psum{margin:2px 0 10px;color:var(--muted)}
+.pathway{margin:30px 0 8px}.pathway h2{margin:0;font-size:1.4rem}.pathway h2 a{color:inherit;text-decoration:none}.pathway h2 a:hover{color:var(--accent)}.pathway h2 a::after{content:' ›';color:var(--muted)}.pabout{max-width:680px}.pnote{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 16px;color:var(--muted)}.psum{margin:2px 0 10px;color:var(--muted)}
 .pstage h3{margin:14px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
 .pcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}.pcard:hover{border-color:var(--accent)}
@@ -166,39 +166,52 @@ footer{margin-top:50px;color:var(--muted);font-size:14px}
 
 
 /**
- * The site navbar, the same on every page: home, the courses (the current one marked), and for the current
- * course its Playground, Reference and My progress (the course page). It is not sticky: on lesson pages the
- * course bar below it is. NAV_JS adds the phone menu and "Back to <lesson> › <step>": lesson pages remember
- * the open step per tab (sessionStorage), other pages offer the way back.
- * nav: { root, courses: [{ title, href }], current: { href, playground, reference } | null, here }
+ * The site navbar, the same on every page: Learning Waypoints (the main site), Tutorials (this site's home),
+ * then one menu per subject (Code ▾: its pathways), and for the current course its Playground, Reference and
+ * My progress (the course page). It is not sticky: on lesson pages the course bar below it is. NAV_JS adds the
+ * menus and "Back to <lesson> › <step>": lesson pages remember the open step per tab (sessionStorage), other
+ * pages offer the way back.
+ * nav: { root, home, subjects: [{ title, href, on, items: [{ title, href, on }] }], current: { href, playground, reference } | null, here }
  * here: 'lesson' | 'course' | 'playground' | 'reference' | 'home'
  */
-export function siteNav({ root = '', courses = [], current = null, here = 'home' }) {
-  const link = (href, text, on) => `<a href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
-  const courseLinks = courses.map((c) => link(c.href, c.title, current && current.href === c.href)).join('');
+export const MAIN_SITE = 'https://learningwaypoints.com/';
+export function siteNav({ root = '', subjects = [], current = null, here = 'home', homeOn = false }) {
+  const link = (href, text, on, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
+  const menus = subjects.map((sub, i) => `<div class="sn-dd${sub.on ? ' on' : ''}">${link(sub.href, sub.title, sub.on && !sub.items.some((x) => x.on), 'sn-top')}` +
+    (sub.items.length ? `<button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-sub-${i}" aria-label="${esc(sub.title)} pathways">▾</button><div class="sn-sub" id="sn-sub-${i}">${sub.items.map((x) => link(x.href, x.title, x.on)).join('')}</div>` : '') + `</div>`).join('');
   const tools = !current ? '' :
     (current.playground ? link(`${current.href}playground/`, 'Playground', here === 'playground') : '') +
     (current.reference ? link(`${current.href}reference/`, 'Reference', here === 'reference') : '') +
     link(current.href, 'My progress', here === 'course');
   return `<nav class="sitenav" data-here="${esc(here)}" aria-label="Site"><div class="sn-in">` +
-    `<a class="sn-brand" href="${esc(root || './')}">Waypoints</a>` +
-    (courses.length ? `<button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-courses">Courses ▾</button><div class="sn-courses" id="sn-courses">${courseLinks}</div>` : '') +
+    `<a class="sn-brand" href="${MAIN_SITE}" title="Learning Waypoints: the main site">Learning Waypoints <span aria-hidden="true">↗</span></a>` +
+    `<button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-main">Menu ▾</button>` +
+    `<div class="sn-main" id="sn-main">${link('', 'Tutorials', homeOn)}${menus}</div>` +
     `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
 }
-export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px}
+export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:relative;z-index:20}
 .sn-in{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:48px;flex-wrap:wrap}
 .sitenav a{color:var(--ink);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap}
 .sitenav a:hover{background:var(--bg)}.sitenav a[aria-current]{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent);border-radius:0}
-.sn-brand{font-weight:800!important;letter-spacing:-.01em;margin-right:6px}
-.sn-courses,.sn-tools{display:flex;gap:2px}.sn-grow{flex:1}
+.sitenav .sn-brand{font-weight:800;letter-spacing:-.01em;margin-right:4px;color:var(--muted)}.sn-brand span{font-weight:400}
+.sn-main,.sn-tools{display:flex;gap:2px;align-items:center}.sn-grow{flex:1}
+.sn-dd{position:relative;display:flex;align-items:center}.sn-dd.on>.sn-top{color:var(--accent)}
+.sn-caret{font:inherit;background:none;border:0;color:var(--muted);cursor:pointer;padding:6px 4px;margin-left:-8px;border-radius:6px}.sn-caret:hover{color:var(--ink)}
+.sn-sub{display:none;position:absolute;top:100%;left:0;min-width:180px;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:6px;flex-direction:column}
+.sn-sub a{display:block}.sn-sub a[aria-current]{box-shadow:inset 3px 0 0 var(--accent);border-radius:4px}
+.sn-dd:hover .sn-sub,.sn-dd:focus-within .sn-sub,.sn-dd.open .sn-sub{display:flex}
 .sn-menu{display:none;font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
 .sitenav .sn-back{color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;margin-right:6px;max-width:42vw;overflow:hidden;text-overflow:ellipsis}
 .sitenav .sn-back[hidden]{display:none}
-@media(max-width:700px){.sn-menu{display:inline-block}.sn-courses{display:none;order:9;flex-basis:100%;flex-direction:column;padding:4px 0 8px}.sitenav.open .sn-courses{display:flex}
+@media(max-width:700px){.sn-menu{display:inline-block;margin-left:auto}.sn-main{display:none;order:9;flex-basis:100%;flex-direction:column;align-items:stretch;padding:4px 0 8px}.sitenav.open .sn-main{display:flex}
+.sn-dd{flex-direction:column;align-items:stretch}.sn-caret{display:none}.sn-sub{display:flex;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}
 .sitenav a[aria-current]{box-shadow:none}.sn-tools{order:8;flex-basis:100%;justify-content:flex-start;padding-bottom:6px;overflow-x:auto}.sitenav .sn-back{order:7;flex-basis:100%;max-width:none;margin:2px 0 6px;text-align:center}}
 @media print{.sitenav{display:none}}`;
 export const NAV_JS = `(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
 var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
+[].forEach.call(n.querySelectorAll('.sn-caret'),function(c){var d=c.parentNode;c.addEventListener('click',function(){var o=d.classList.toggle('open');c.setAttribute('aria-expanded',String(o))})});
+document.addEventListener('click',function(e){[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){if(!d.contains(e.target)){d.classList.remove('open');d.querySelector('.sn-caret').setAttribute('aria-expanded','false')}})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){d.classList.remove('open')})});
 if(here==='lesson'){var h=document.querySelector('h1'),worked=null;
 // The step to come back to is the last one the student worked in (clicked, typed, used its playground), not the
 // one in view: reaching the navbar scrolls the lesson back to the top. Before any work, the step in view.

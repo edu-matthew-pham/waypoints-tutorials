@@ -131,16 +131,26 @@ for (const l of lessons) {
 const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' } };
 const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }];
 
-// The site navbar: every folder that holds lessons is a course. navFor(pagePath, here, coursePath) builds it
-// for a page at pagePath ('' is the site root); here says which kind of page it is (see siteNav).
+// The site navbar: Learning Waypoints, Tutorials, then one menu per subject (a top-level folder, such as Code)
+// listing its pathways (from its index.md); a pathway page is <subject>/paths/<id>/. navFor(pagePath, here,
+// coursePath) builds it for a page at pagePath ('' is the site root); here says which kind of page it is (see siteNav).
 const COURSES = [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).join('/')))]
   .map((path) => ({ path, title: dirNode(path).title, order: dirNode(path).order }))
   .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
+const SUBJECTS = [...dirNode('').kids.entries()].filter(([, k]) => k.kind === 'dir')
+  .map(([name, k]) => ({ path: name, title: k.title, order: k.order, pathways: Array.isArray(dirNode(name).meta?.pathways) ? dirNode(name).meta.pathways : [] }))
+  .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
+const pathwayOf = (coursePath) => { for (const sub of SUBJECTS) for (const pw of sub.pathways) if ((pw.courses || []).some((c) => c.path === coursePath)) return { sub, pw }; return null; };
 const navFor = (pagePath, here, coursePath = null) => {
   const c = coursePath && COURSES.find((x) => x.path === coursePath);
+  const at = (p) => pagePath === p || pagePath.startsWith(p + '/');
+  const inPw = coursePath ? pathwayOf(coursePath) : null;
   return siteNav({
-    root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here,
-    courses: COURSES.map((x) => ({ title: x.title, href: `${x.path}/` })),
+    root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '',
+    subjects: SUBJECTS.map((sub) => ({
+      title: sub.title, href: `${sub.path}/`, on: at(sub.path) || inPw?.sub === sub,
+      items: sub.pathways.map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw })),
+    })),
     current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
   });
 };
@@ -281,21 +291,38 @@ for (const node of dirs.values()) {
   // extensions; planned courses show as "Coming later" so the whole pathway is visible.
   const pathways = Array.isArray(node.meta?.pathways) ? node.meta.pathways : [];
   if (pathways.length) {
-    const card = (c) => {
+    // up: from the page being written back to the site root, so course links work from any depth.
+    const card = (c, up) => {
       if (c.path) {
         const d = dirs.get(c.path);
-        if (!d) throw new Error(`code/index.md: pathway course "${c.path}" is not a folder of lessons`);
-        return `<a class="pcard" href="${esc(c.path.split('/').pop())}/"><b>${esc(d.title)}</b>${d.summary ? `<span>${esc(d.summary)}</span>` : ''}</a>`;
+        if (!d) throw new Error(`${node.path}/index.md: pathway course "${c.path}" is not a folder of lessons`);
+        return `<a class="pcard" href="${esc(up + c.path)}/"><b>${esc(d.title)}</b>${d.summary ? `<span>${esc(d.summary)}</span>` : ''}</a>`;
       }
       return `<div class="pcard soon"><b>${esc(c.title)}</b>${c.summary ? `<span>${esc(c.summary)}</span>` : ''}<em>Coming later</em></div>`;
     };
-    const stage = (courses, name, label) => { const cs = courses.filter((c) => (c.stage || 'foundations') === name); return cs.length ? `<div class="pstage"><h3>${label}</h3><div class="pcards">${cs.map(card).join('')}</div></div>` : ''; };
-    const body = pathways.map((pw) => `<section class="pathway" id="${esc(pw.id || '')}"><h2>${esc(pw.title)}</h2>${pw.summary ? `<p class="psum">${esc(pw.summary)}</p>` : ''}` +
-      stage(pw.courses || [], 'foundations', 'Foundations') + stage(pw.courses || [], 'extensions', 'Extensions') + `</section>`).join('');
+    const stage = (courses, name, label, up) => { const cs = courses.filter((c) => (c.stage || 'foundations') === name); return cs.length ? `<div class="pstage"><h3>${label}</h3><div class="pcards">${cs.map((c) => card(c, up)).join('')}</div></div>` : ''; };
+    const stages = (pw, up) => stage(pw.courses || [], 'foundations', 'Foundations', up) + stage(pw.courses || [], 'extensions', 'Extensions', up);
+    const upHere = '../'.repeat(node.path.split('/').length);
+    const body = pathways.map((pw) => `<section class="pathway" id="${esc(pw.id || '')}"><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)}</a></h2>${pw.summary ? `<p class="psum">${esc(pw.summary)}</p>` : ''}` +
+      stages(pw, upHere) + `</section>`).join('');
     const create = node.path === 'code' ? `<p class="ptools">For teachers: <a href="create/">Create a lesson</a></p>` : '';
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${body}${create}`,
       `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
+    // One page per pathway: <subject>/paths/<id>/, with its courses in order and the planned ones as placeholders.
+    for (const pw of pathways) {
+      const pp = `${node.path}/paths/${pw.id}`, pup = '../'.repeat(pp.split('/').length);
+      const built = (pw.courses || []).some((c) => c.path);
+      const others = pathways.filter((x) => x !== pw).map((x) => `<a href="../${esc(x.id)}/">${esc(x.title)}</a>`).join(' · ');
+      mkdirSync(join(OUT, pp), { recursive: true });
+      writeFileSync(join(OUT, pp, 'index.html'), page(`${pw.title}: ${node.title}`,
+        `<header class="top"><a class="crumb" href="../../">← ${esc(node.title)}</a><h1>${esc(pw.title)}</h1>${pw.summary ? `<p class="lede">${esc(pw.summary)}</p>` : ''}</header>` +
+        (pw.about ? `<div class="pabout">${new Marked().parse(String(pw.about))}</div>` : '') +
+        (built ? '' : `<p class="pnote">Nothing to open here yet: these courses are being written. The other pathways teach the same big ideas, so you can start there.</p>`) +
+        `<section class="pathway">${stages(pw, pup)}</section>` +
+        (others ? `<p class="ptools">Other pathways: ${others}</p>` : ''),
+        `<script src="${pup}progress.js" data-root="${pup}" defer></script>`, navFor(pp, 'home')));
+    }
     continue;
   }
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
