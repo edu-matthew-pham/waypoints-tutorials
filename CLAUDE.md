@@ -13,7 +13,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 - Real-world content is a small complete example students Modify (the heading names the task). Make is an explicit task. Large projects belong to the teacher (For teachers panel).
 - Foundations first, spiral curriculum, mastery shown by repeated use. Order: 1 intro, 2 variables, 3 decisions, 4 lists, 5 functions, 6 parameters, 7 returns, 8 modules, 9 events, 10 build a button.
 - Progress is per-browser localStorage only; no class tracking.
-- Series plan (see ROADMAP): turtle core, events and hand-built widgets, checkpoint, console bridge, then a fork: deepen Python, or Gradio (data/ML) or microStudio (games). Pygame parked.
+- Pathways (see ROADMAP "Pathways"): options, not year gates. Foundations now: MakeCode (micro:bit/MOVE Motor or Arcade, blocks to Python), Python Foundations with Turtle (then checkpoint), HTML & CSS basics. Extensions later: console bridge, Gradio → ML, microStudio, p5.js → DOM. Typical fit (Years 6–8 vs 9+) is a teacher note only. Pygame parked.
 
 ## Playground runtime
 - The turtle playground is our own Skulpt bridge (`playground/skulpt-bridge.js`) plus a canvas renderer (`playground/canvas-turtle.js`), not Skulpt's turtle.
