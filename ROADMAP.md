@@ -132,6 +132,67 @@ Same standard as Units 1 and 2. Facts checked in the preview.
 
 **Groundwork:** a note in the preview when a form is sent; snippets (`display: flex`, `gap`, `flex-wrap`, `justify-content`, section tags, form fields); two more drawn pictures for galleries; misconception `semantic-tags-look`; the Components unit primer.
 
+## MakeCode: embedding check (done 9 Oct 2026; sample lesson works, not built into the site)
+
+**Answer: embed, with code checks.** MakeCode offers three levels of embedding, and the deepest one gives us the student's code on every edit. Verified in Chrome for micro:bit and Arcade (probe page and a working five-step sample lesson, opened as local files).
+
+1. **Share-dialog embeds**: a project as a code picture, a read-only editor, or the simulator only. No feedback to our page.
+2. **Blocks renderer**: a hidden iframe (`/--docs?render=1`). We post `renderblocks` with JavaScript and get back a picture of the blocks (`uri` plus `width`). Show it at that width (capped at 100%); unsized, it fills the pane and looks huge. This gives blocks pictures for Predict steps, decks, worksheets and cheat sheets without screenshots, and CI can run it at build time.
+3. **Full editor in controller mode**: `?controller=1` inside an iframe. Our page owns storage: the editor asks for projects (`workspacesync`) and saves every edit to us (`workspacesave`, the whole project: `main.blocks` XML, `main.ts`, `main.py` once used, `pxt.json`, plus `assets.json` and `.simstate.json` in Arcade). We can send `importproject`, `newproject`, `switchblocks`/`switchjavascript`/`switchpython`, `startsimulator`, `hidesimulator` and `saveproject`.
+
+Checked in the `pxt-core` 13.2.5 source: controller mode is switched on by the URL alone, with no host allowlist. Sign-in is turned off inside the embed, and projects live in memory and go only to our page: nothing lands in the student's MakeCode account or the browser's MakeCode project list. The micro:bit Educational Foundation's `@microbit/makecode-embed` (MIT, 0.7.x, API "not yet stable") wraps the same protocol.
+
+**Protocol rules learned building the sample** (each one broke the checks until fixed):
+- **Be a real project store.** Answer every `workspacesync` with all projects held (from saves and imports). MakeCode re-syncs on import, and an empty reply loses the project.
+- **Imported projects get a new id.** After `importproject`, adopt the id of the first save that carries the step's name, then follow that id.
+- **The name comes from `pxt.json`.** Set it there as well as in the header, or MakeCode renames the project "Untitled" after one save.
+- **Build imports from a real header.** Let MakeCode create its default project first, then reuse that header and `pxt.json` as the template for each step's project.
+- **Starters can be JavaScript only.** Send an empty `main.blocks`, then `switchblocks` after the import, and MakeCode builds the blocks.
+- **Route messages by frame** (`event.source`): the editor and the renderer share an origin.
+- **Saves arrive in pairs**, and rapidly while LEDs are clicked: wait about 500 ms after the last one before checking.
+- **No compile errors in this mode** (`workspacediagnostics` does not fire in controller mode, per the embed library), so checks read `main.ts`.
+- A leftover default project keeps saving in the background; ignore any id that is not the current step's.
+
+**What this means for lessons**
+- **Code checks work.** Blocks always compile to `main.ts`, so one rule checks blocks, JavaScript and Python. Useful rules: code inside `basic.forever` (brace-matched), counting frames (`basic.show…` calls), and LED patterns as text (`. # . . .`), so a check can test a micro:bit picture. Arcade sprite art is inline 16×16 text, or ``assets.image`name` `` once named, so Arcade checks test structure (`sprites.create`, `SpriteKind.Player`, overlap handlers), never pixels.
+- **New playground kind** `makecode` (`try: { playground: microbit | arcade }`): reports code on every save like the HTML playground (no Run; the simulator is in the frame). Per-step project in localStorage plus "Start this step again"; nothing goes to MakeCode's cloud and there are no accounts. `.hex` download works from inside the frame (`allow="usb"`). Work stays on our site unless we add an "Open in MakeCode" export.
+- **PRIMM fits.** Predict shows a rendered blocks picture. Run loads the program with `importproject`. Investigate, Modify and Make start from step starters, and their checks tick by themselves as students build. Solutions are `sol-*` projects that must pass their check.
+- **Reference.** Blocks live in MakeCode's toolbox, so the drawer turns into a cheat sheet: a blocks picture plus the JavaScript and Python lines.
+- **Clips.** Playwright can load projects and run the simulator, but dragging blocks is unreliable: clips show results, not building.
+
+**Sample lesson.** "Pictures on the LEDs" (micro:bit lesson 1, one standalone HTML file): Predict (heart, then small heart, from rendered blocks), Run (compare with the prediction), Investigate (move both hearts into forever; question on why it beats), Modify (a show leds frame plus pause), Make (three or more frames, one hand-drawn), with a For teachers panel and `?debug` message log. All five steps work against the live editor. It is the reference for building the playground.
+
+**MOVE Motor in the simulator (tested 9 Oct):** the Kitronik extension's blocks run without errors, but nothing shows a robot moving. The gap is a visual robot, not broken code. Decide the route (add MOVE Motor to `microbit-robot`, our own simulator extension, or the Godot bridge) before the Robotics course, once micro:bit Foundations is underway.
+
+**Risks.** We depend on Microsoft's hosted editor and an unversioned message API (pin a versioned path if offered; smoke-test in CI). The editor is heavy: one frame per lesson page, projects swapped with `importproject`. Still to check: whether the Kitronik MOVE Motor extension does anything in the simulator (the simulation options above are unchanged), and the embed served from a github.io address rather than a local file.
+
+**Fallback:** link out to MakeCode's own Markdown tutorials (hosted on GitHub): no build, but students leave our site with no code checks or progress.
+
+**Next:** build the `makecode` playground into the site from the sample lesson, then map the micro:bit course onto the shared spine (`BUILDING.md` › 2), with "Pictures on the LEDs" as lesson 1.
+
+## MakeCode: micro:bit Foundations sequence (decided 9 Oct 2026; Units 1–3 written, not built)
+
+**Shape.** Two parallel foundations courses, start with either: **micro:bit Foundations** and **MakeCode Arcade**. Neither depends on the other. Foundations is fully simulator-based (no hardware needed; real micro:bits are a For teachers bonus via Download). Robots come in **Robotics challenges** (extensions, after micro:bit Foundations): each idea learnt in the simulator, then run on a real Kitronik MOVE Motor. That course's sim-first design waits on MOVE Motor simulation (see embedding check); foundations does not.
+
+**Spine, with one deliberate change: events at lesson 2.** In blocks an event is just a holder you fill (no callback syntax, no `global`, no `mainloop`), the buttons are the device's whole interface, and lessons 3 to 6 need input to count and react to. Radio's `on received` (Unit 5) spirals events back.
+
+**Python peek from lesson 8, not lesson 1.** MakeCode's Python shows even `forever` as `def on_forever(): …` plus `basic.forever(on_forever)`: callback structure before students have met functions. At Functions it becomes the insight ("every event block is a function you hand to the micro:bit"); after that, short read-only "same program in Python" Predict or match steps. Earlier, the For teachers panel can mention the Python button.
+
+**Units and lessons** (folder `content/code/microbit/`)
+
+1. **Show and react** (written): 1 Pictures on the LEDs (sequence, `forever`; error `run-once-vs-forever`). 2 Buttons and gestures (events; error `button-check-once`).
+2. **Remember and sense** (written): 3 Counting (variables, set versus change; error `reset-in-loop`; Make a step counter). 4 Sensors are numbers (light, temperature, tilt; Sam's thermometer spirals `run-once-vs-forever`; Make a thermometer).
+3. **Decide** (written): 5 If (night light whose lights stay on, because an if does nothing when false; error `comparison-direction`; Make a weather warning). 6 Else and ranges (tilt arrows; the first true question wins; error `else-if-order`; Make a comfort meter from two questions).
+4. **Collections and tools**: 7 Lists (rock paper scissors, magic 8-ball; error: counting from 1). 8 Functions (`draw frame`, then a parameter; the Python peek starts here).
+5. **Talk**: 9 Send and receive (radio groups; error: different groups). 10 Messages with meaning (a number stands for a choice, revisiting lists).
+6. **Challenge: Reaction timer**: 11 Reaction timer (core, milestones: random wait, signal, time the press, best score). 12 Radio duel (shared). 13 Optional: Fake-outs and levels. 14 Optional: Tournament (several players, scoreboard list, a function per round). Optional lessons are the high ceiling within the course, not previews of other courses.
+
+**Format additions the playground needs** (used by the written lessons): `try.playground: microbit` (and `arcade`), `language: makecode` (display code shown as a rendered blocks picture), and two code rules: `inside: { "basic.forever": [fragments] }` (fragments inside the first `{ … }` block after the key, so it also works for `"input.onButtonPressed(Button.B"`; comments and spaces ignored) and `count: { "basic.show": 3 }` (occurrences; note that `if(` also counts `else if(`). Check labels show the check's `text`, never a code fragment, since students work in blocks. Validate rejects these until the playground exists, so the content waits on a branch.
+
+**Arcade** gets the same treatment next, on the same spine: sprites, movement, overlaps as events, score and lives, projectiles as lists, functions, levels, then a challenge game.
+
+Units 1–3 (lessons 1–6, three primers) are written to the full standard, with teacher notes, solutions and planted misconceptions. Every solution passes its code check and every starter fails it (tested with the proposed rules).
+
 ## Proposed: turtle companion (discussed, not decided)
 
 A small turtle in the corner of course and lesson pages with a CSS idle animation (blink, bob; none with reduced motion; can be hidden). It earns one item per unit finished: a colourful pen (Drawing and repeating), a signpost and a backpack (Choices and collections), a jigsaw piece (Functions), a remote (Interaction), a crown (Final challenge). Clicking it shows its items and where each was earned; finishing a unit plays a short celebration. Per browser, built from existing progress data.
@@ -141,7 +202,7 @@ A small turtle in the corner of course and lesson pages with a CSS idle animatio
 Three pathways offered as options, not gates. Each shares one concept spine (sequence, loops, variables, decisions, lists, functions, events, building a widget) and the "build it yourself, then meet the real tool" approach. Typical fit is a teacher note only (For teachers panel and here), never a label students see.
 
 **Foundations (build now; typically Years 6–8)**
-- **MakeCode** (typically 6–8): micro:bit (sensors, LEDs, radio, then Kitronik MOVE Motor in simulation, then the real robot) or Arcade (games: sprites, collisions, game loop). Blocks first, then the same programs in MakeCode Python or JavaScript. First step: check whether the MakeCode editor embeds in our lesson pages or is linked out.
+- **MakeCode** (typically 6–8): micro:bit (sensors, LEDs, radio, then Kitronik MOVE Motor in simulation, then the real robot) or Arcade (games: sprites, collisions, game loop). Blocks first, then the same programs in MakeCode Python or JavaScript. Embedding is checked and works (see "MakeCode: embedding check"); sequence in "micro:bit Foundations sequence".
 - **Python Foundations with Turtle** (typically 7–8): the 10 built lessons, then the checkpoint task, which ends foundations.
 - **HTML & CSS basics** (typically 7–8): grow the one lesson into a short sequence (about 4–5 lessons).
 
@@ -156,7 +217,7 @@ Three pathways offered as options, not gates. Each shares one concept spine (seq
 
 **Overlap settled:** Arcade is games with blocks (MakeCode pathway); microStudio is games in text code (Python extension).
 
-**Next builds, in order:** the lists/`if` revisit (the final challenge is built); HTML & CSS is built (lessons 1 to 12); MakeCode (starting with the embedding check).
+**Next builds, in order:** the lists/`if` revisit (the final challenge is built); HTML & CSS is built (lessons 1 to 12); MakeCode (embedding checked, Units 1–3 written; next is the `makecode` playground).
 
 **Decided (9 Oct):** the console bridge (one or two lessons: `input()`, `print()`, a text menu) is the last Python foundations course and comes before every extension. Deeper console Python (strings, dictionaries, files, errors) is its own extension. Machine learning with Gradio comes after both Deeper console Python and the Gradio course. Pathway cards show this as "After: …" (`after:` in `code/index.md`, by course path or planned `id`).
 
