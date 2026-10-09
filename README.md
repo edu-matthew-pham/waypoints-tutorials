@@ -48,7 +48,7 @@ from the code it teaches.
 
 ## Add a lesson
 
-Copy `content/code/gradio/intro/` (a web app) or `content/code/python/turtle-intro/` (the playground), then follow [AUTHORING.md](AUTHORING.md). It documents the
+Copy `content/code/gradio/intro/` (a web app) or `content/code/python/turtle-intro/` (the playground), then follow [AUTHORING.md](AUTHORING.md). For a whole new course, read [BUILDING.md](BUILDING.md) first. It documents the
 whole format and doubles as a brief you can hand to an LLM ("write a lesson on X following
 AUTHORING.md").
 

@@ -23,13 +23,13 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## Open design decisions (details in ROADMAP.md)
 - Hidden-assumptions audit: `assumes`/`introduces` lint plus better in-lesson scaffolds; no "Before you start" card. Error-task part is built (fault/misconception lint); the `assumes`/`introduces` construct scan is still to do.
-- Next: checkpoint task, return visit to lists and `if` in functions, console bridge, nicer input UI than `window.prompt`, then the Gradio and microStudio paths.
+- Next: the web pathway's HTML & CSS foundations (prerequisites in `BUILDING.md` › Before the web units), the lists/`if` revisit, a nicer input UI than `window.prompt`, then MakeCode. The final challenge replaced the planned checkpoint.
 
 ## Layout
 - `content/<path>/<lesson>/lesson.md` plus code files with `# region: name` blocks. Frontmatter: title, summary, order, hook, teachers, author, language, modules, app, pacing.
 - `tools/lesson-core.mjs` (pure parse/validate, `evalRules`, `parseTrace`) and `tools/lesson-view.mjs` (page HTML/CSS/JS) are shared with the create page. `tools/build-site.mjs`, `tools/render.mjs` (Playwright + ffmpeg clips), `tools/validate.mjs`.
 - `playground/` (turtle), `playground-html/`, `playground-shared/snippets.js`, `snippets/*.json`, `modules/` (shared Python modules), `site/progress.js`, `create/`.
-- Docs: `AUTHORING.md` (lesson format and check types), `README.md`, `ROADMAP.md` (done and proposed).
+- Docs: `BUILDING.md` (how to design, build and test a course: read before starting a new course or unit), `AUTHORING.md` (lesson format and check types), `README.md`, `ROADMAP.md` (done and proposed).
 - Check types: reflect, question, code, number, bug, match, trace, parsons, predict. Code rules: defs, calls, loops, returns, params, imports, uses, and `contains` (code fragments that must appear, spaces ignored). Error items also take `fault:` and `misconception:` (ids in `misconceptions.json`); validate warns on off-path errors (AUTHORING.md, Error tasks).
 - Snippet ids are slugs of labels (for example `if-else`); lessons unlock them with `unlocks:`. Students see snippets as the **Reference** drawer over the canvas/preview: cards with Copy buttons (no click-to-insert), search, and a This lesson / All filter (This lesson = the lesson's unlocks via `slug` in `unlocks.json`, snippets the starter code uses via first-line patterns or a snippet's `matches`, lesson modules, My tools). Run closes it; in the HTML playground a paste closes it. Each "Try it yourself" has a Full screen / inline toggle (a CSS class, so the iframe keeps its state; Esc returns).
 - Caching: `build-playground` stamps playground JS/CSS URLs and the lesson iframes with `?v=<hash>` (`version.txt`); data JSON is fetched with `cache: 'no-cache'`. GitHub Pages caches for about 10 minutes, so unstamped files would show old behaviour after a deploy. My tools can be copied, edited and removed; student modules are global per browser (`wp-mymodules:turtle`); lesson modules offer "Open a copy to edit" once `my-module` is unlocked.
