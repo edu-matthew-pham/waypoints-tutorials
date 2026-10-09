@@ -3,6 +3,8 @@
 //   x: -1, 10              x range (default -10, 10)
 //   y: -1, 20              y range (default -10, 10)
 //   grid: 1                grid spacing (default 1; "off" for none)
+//   axes: d (km), T ($)    names for a context: the axes are labelled with them, and the legend, table and solution
+//                          use the letters (T = 2d + 4). Plots, points and checks still use x and y.
 //   snap: 1                dragged points land on multiples of this (default the grid spacing, or 1)
 //   slider m: 0, 5, 2      a named value: min, max, start, step (default step 1); names are single letters
 //   plot: y = mx + c       a relation y = (an expression in x and the sliders); up to 4
@@ -30,6 +32,8 @@
   var nice = function (span) { var r = span / 8, p = Math.pow(10, Math.floor(Math.log10(r))), m = r / p; return (m < 1.5 ? 1 : m < 3.5 ? 2 : m < 7.5 ? 5 : 10) * p; };
 
   // y = 2x + -3  ->  y = 2x − 3; 1x -> x; 0x terms dropped. For showing a relation with the slider values in it.
+  // In a context (axes: d, T), x and y are shown as its letters: y = 2x + 4 -> T = 2d + 4.
+  function named(t) { return spec.names.x === 'x' && spec.names.y === 'y' ? t : t.replace(/[xy]/g, function (ch) { return ch === 'x' ? spec.names.x : spec.names.y; }); }
   function withValues(expr) {
     var s = expr.replace(/\s+/g, ' ').trim();
     // Every letter is a name (2mx is 2 × m × x), so each slider's letter is replaced wherever it appears.
@@ -49,13 +53,19 @@
     s.xr = nums(s.x || '-10, 10', 2, 'x').map(function (t) { return num(t, 'x'); });
     s.yr = nums(s.y || '-10, 10', 2, 'y').map(function (t) { return num(t, 'y'); });
     if (!(s.xr[0] < s.xr[1]) || !(s.yr[0] < s.yr[1])) throw new Error('x: and y: need the smaller number first.');
+    s.names = { x: 'x', y: 'y' }; s.axisLabels = ['x', 'y'];
+    if (s.axes) {
+      var an = s.axes.split(',').map(function (t) { return t.trim(); });
+      if (an.length !== 2 || an.some(function (t) { return !/^[A-Za-z](\s|$)/.test(t); })) throw new Error('axes: needs two names that each start with one letter, such as "axes: d (km), T ($)".');
+      s.names = { x: an[0][0], y: an[1][0] }; s.axisLabels = an;
+    }
     s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null; s.cross = null;
     var known = {};
     s.items.forEach(function (it) {
       var where = 'Line ' + it.line + ' (' + it.kind + (it.name ? ' ' + it.name : '') + ')';
       if (it.kind === 'slider') {
         if (!/^[a-z]$/.test(it.name || '')) throw new Error(where + ': a slider needs a one-letter lower-case name, such as "slider m: 0, 5, 2".');
-        if (it.name === 'x' || it.name === 'y') throw new Error(where + ': x and y are the axes; name the slider something else.');
+        if (it.name === 'x' || it.name === 'y' || it.name === s.names.x || it.name === s.names.y) throw new Error(where + ': ' + it.name + ' names an axis; name the slider something else.');
         var a = nums(it.value, 3, where).map(function (t) { return num(t, where); });
         if (!(a[0] < a[1]) || a[2] < a[0] || a[2] > a[1]) throw new Error(where + ': needs min, max, start with min < max and start between them.');
         s.sliders.push({ name: it.name, min: a[0], max: a[1], start: a[2], step: a[3] || 1 });
@@ -112,10 +122,11 @@
     var xr = spec.xr, yr = spec.yr;
     var board = B.jsx({ boundingbox: [xr[0], yr[1], xr[1], yr[0]] });
     if (spec.gridStep) board.create('grid', [], { majorStep: [spec.gridStep, spec.gridStep], minorElements: 0, strokeColor: line, strokeOpacity: 1, highlight: false });
-    var axis = function (p1, p2, span, name) {
+    var axis = function (p1, p2, span, which) {
+      var name = spec.axisLabels[which === 'x' ? 0 : 1];
       return board.create('axis', [p1, p2], {
         name: name, withLabel: true, strokeColor: muted, highlight: false, lastArrow: { size: 6 }, fixed: true,
-        label: { position: name === 'x' ? 'rt' : 'urt', offset: name === 'x' ? [-14, 14] : [10, -8], cssClass: 'axisname', highlightCssClass: 'axisname', strokeColor: ink },
+        label: { position: which === 'x' ? 'rt' : 'urt', offset: which === 'x' ? [-14 - (name.length - 1) * 6, 14] : [10, -8], cssClass: 'axisname', highlightCssClass: 'axisname', strokeColor: ink },
         ticks: { ticksDistance: spec.gridStep ? Math.max(nice(span), spec.gridStep) : nice(span), insertTicks: false, minorTicks: 0, majorHeight: 8, strokeColor: muted, drawZero: false, label: { cssClass: 'ticklabel', highlightCssClass: 'ticklabel', strokeColor: muted } },
       });
     };
@@ -198,7 +209,7 @@
       board.create('text', [function () { return cache ? cache[0] + dx : NaN; }, function () { return cache ? cache[1] + dy : NaN; }, function () { return cache ? '(' + show(cache[0]) + ', ' + show(cache[1]) + ')' : ''; }],
         Object.assign({ anchorX: 'left', anchorY: 'bottom' }, cl));
       // Below the axis's own number labels (or above the axis when the crossing is below it).
-      board.create('text', [function () { return cache ? cache[0] : NaN; }, function () { return cache && cache[1] < 0 ? dy * 1.5 : -dy * 2.2; }, function () { return cache ? 'x = ' + show(cache[0]) : ''; }],
+      board.create('text', [function () { return cache ? cache[0] : NaN; }, function () { return cache && cache[1] < 0 ? dy * 1.5 : -dy * 2.2; }, function () { return cache ? spec.names.x + ' = ' + show(cache[0]) : ''; }],
         Object.assign({ anchorX: 'middle', anchorY: 'top' }, cl));
     }
     board.update();
@@ -248,9 +259,9 @@
       lg.replaceChildren();
       spec.plots.forEach(function (p) {
         var li = document.createElement('li'); li.style.setProperty('--c', p.colour); if (p.dashed) li.className = 'dashed';
-        li.textContent = 'y = ' + withValues(p.rhs);
+        li.textContent = named(spec.names.y + ' = ' + withValues(p.rhs));
         if (WPM.vars(p.rhs).some(function (v) { return v in vars; })) {   // the general form, for a rule with sliders in it
-          var gen = document.createElement('span'); gen.textContent = p.text; li.appendChild(gen); }
+          var gen = document.createElement('span'); gen.textContent = named(p.text); li.appendChild(gen); }
         lg.appendChild(li);
       });
     }
@@ -260,9 +271,9 @@
         var tr = document.createElement('tr'), h = document.createElement('th'); h.textContent = head; tr.appendChild(h);
         cells.forEach(function (c) { var d = document.createElement(th ? 'th' : 'td'); d.textContent = c; tr.appendChild(d); }); return tr;
       };
-      tb.replaceChildren(row('x', spec.table.map(show), true));
+      tb.replaceChildren(row(spec.names.x, spec.table.map(show), true));
       spec.plots.forEach(function (p, i) {
-        tb.appendChild(row(spec.plots.length > 1 ? 'y (' + (i + 1) + ')' : 'y', spec.table.map(function (x) { try { return show(p.tree(Object.assign({}, vars, { x: x }))); } catch (e) { return '—'; } })));
+        tb.appendChild(row(spec.plots.length > 1 ? spec.names.y + ' (' + (i + 1) + ')' : spec.names.y, spec.table.map(function (x) { try { return show(p.tree(Object.assign({}, vars, { x: x }))); } catch (e) { return '—'; } })));
       });
     }
     var sc = scope(), parts = [];
