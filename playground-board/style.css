@@ -41,6 +41,7 @@ main { display: flex; flex-direction: column; height: 100%; padding: 8px 12px 10
 /* Graph */
 .jxgbox .axisname { font: italic 600 17px/1 "Times New Roman", serif; color: var(--ink); }
 .jxgbox .ticklabel { font: 12px/1 system-ui, sans-serif; color: var(--muted); }
+.jxgbox .steplabel { font: 700 15px/1 system-ui, sans-serif; padding: 2px 6px; white-space: nowrap; }
 .jxgbox .ptlabel { font: italic 600 16px/1 "Times New Roman", serif; color: var(--ink); }
 #gpanel { display: flex; flex-direction: column; gap: 4px; }
 .srow { display: flex; align-items: center; gap: 8px; }

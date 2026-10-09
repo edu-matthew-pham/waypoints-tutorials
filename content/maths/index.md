@@ -5,10 +5,10 @@ pathways:
   - id: algebra
     title: Algebra
     summary: From patterns and expressions to solving equations, then graphs of linear relations.
-    about: "Start with **Algebra Foundations**: patterns, expressions and equations, solved three ways (try and check, backtracking, the balance method) and always checked. **Linear relations** then graphs equations as straight lines, and needs negative numbers from Number Foundations."
+    about: "Start with **Algebra Foundations**: patterns, expressions and equations, solved three ways (try and check, backtracking, the balance method) and always checked. **Linear relations** then graphs equations as straight lines (its first lessons are being built), and needs negative numbers from Number Foundations."
     courses:
       - { path: maths/algebra, stage: foundations }
-      - { id: linear-relations, title: Linear relations, stage: foundations, summary: "Tables of values, graphs of straight lines, solving equations graphically, and modelling with linear functions.", after: [maths/algebra, number-foundations] }
+      - { path: maths/linear-relations, id: linear-relations, stage: foundations, after: [maths/algebra, number-foundations] }
       - { title: Non-linear relations, stage: extensions, summary: "Quadratics, exponentials and their graphs.", after: [linear-relations] }
   - id: number
     title: Number

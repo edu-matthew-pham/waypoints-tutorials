@@ -10,10 +10,11 @@
 //   point P: 1, 3, drag    a point students drag (it snaps)
 //   segment: A, B          a segment between two points;   line: A, B   the whole line through them
 //   table: 0, 1, 2, 3      a table of values of each plot at these x values
+//   step: 1                the "1 right, m up" triangle on the first plot, from this x (shows how steep it is)
 // state: { scope: { vars: { m, c }, points: { A: [x, y] } } }   (checks are conditions on the scope)
 (function (B) {
   'use strict';
-  var spec = null, vars = {}, startAt = {}, objs = {}, sliders = [], plots = [];
+  var spec = null, vars = {}, startAt = {}, objs = {}, dragged = {}, sliders = [], plots = [];
   var fmt = B.fmt;
   var show = function (n) { return fmt(n).replace(/^-/, '−'); };   // for display: a real minus sign
   var COLOURS = ['--left', '--right', '--accent', '--ok'];
@@ -46,7 +47,7 @@
     s.xr = nums(s.x || '-10, 10', 2, 'x').map(function (t) { return num(t, 'x'); });
     s.yr = nums(s.y || '-10, 10', 2, 'y').map(function (t) { return num(t, 'y'); });
     if (!(s.xr[0] < s.xr[1]) || !(s.yr[0] < s.yr[1])) throw new Error('x: and y: need the smaller number first.');
-    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null;
+    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null;
     var known = {};
     s.items.forEach(function (it) {
       var where = 'Line ' + it.line + ' (' + it.kind + (it.name ? ' ' + it.name : '') + ')';
@@ -70,6 +71,8 @@
         var e = it.value.split(',').map(function (t) { return t.trim(); });
         if (e.length !== 2) throw new Error(where + ': name two points, such as "' + it.kind + ': A, B".');
         s.lines.push({ kind: it.kind, ends: e, where: where });
+      } else if (it.kind === 'step') {
+        s.step = num(it.value, where);
       } else if (it.kind === 'table') {
         s.table = it.value.split(',').map(function (t) { return num(t.trim(), where); });
       }
@@ -86,11 +89,12 @@
       if (p.drag) { num(p.x, 'point ' + p.name); num(p.y, 'point ' + p.name); } else { check(p.x, [], 'point ' + p.name); check(p.y, [], 'point ' + p.name); }
     });
     if (s.table && !s.plots.length) throw new Error('A table needs a plot to take its values from.');
+    if (s.step !== null && !s.plots.length) throw new Error('A step needs a plot to draw on.');
   }
 
   function scope() {
     var p = {};
-    Object.keys(objs).forEach(function (n) { p[n] = [round(objs[n].X()), round(objs[n].Y())]; });
+    Object.keys(objs).forEach(function (n) { p[n] = dragged[n] ? landing(objs[n]) : [round(objs[n].X()), round(objs[n].Y())]; });
     return { vars: Object.assign({}, vars), points: p };
   }
   var round = function (v) { return Math.round(v * 1e6) / 1e6; };
@@ -115,28 +119,57 @@
       p.colour = colour;
       return board.create('functiongraph', [function (x) { try { return p.tree(scopeVars(x)); } catch (e) { return NaN; } }, xr[0], xr[1]], { strokeColor: colour, strokeWidth: 3, highlight: false, fixed: true });
     });
-    objs = {};
+    objs = {}; dragged = {};
     spec.points.forEach(function (p) {
       var coords = p.drag ? (startAt[p.name] || [num(p.x), num(p.y)]) : [function () { return p.fx(scopeVars()); }, function () { return p.fy(scopeVars()); }];
       var colour = p.drag ? (B.css('--accent') || '#c2570a') : ink;
       objs[p.name] = board.create('point', coords, {
         name: p.name, size: p.drag ? 6 : 4, fillColor: colour, strokeColor: colour, highlightFillColor: colour, highlightStrokeColor: colour,
-        fixed: !p.drag, snapToGrid: p.drag, snapSizeX: spec.snapStep, snapSizeY: spec.snapStep, showInfobox: false,
+        fixed: !p.drag, showInfobox: false,
         label: { cssClass: 'ptlabel', highlightCssClass: 'ptlabel', strokeColor: ink, offset: [8, 10] },
       });
       if (p.drag) {
-        objs[p.name].on('drag', function () { keepInside(objs[p.name]); B.moved = true; report(); });
+        dragged[p.name] = true;
+        objs[p.name].on('drag', function () { B.moved = true; report(); });
+        // Land where the pointer was let go (plus where on the point it was grabbed), so a quick flick does not
+        // leave the point at its last drawn position, a square short.
+        var grab = null, P = objs[p.name];
+        P.on('down', function (e) { try { var u = board.getUsrCoordsOfMouse(e); grab = [P.X() - u[0], P.Y() - u[1]]; } catch (er) { grab = null; } });
+        P.on('up', function (e) {
+          try { if (grab) { var u = board.getUsrCoordsOfMouse(e); P.moveTo([u[0] + grab[0], u[1] + grab[1]]); } } catch (er) { /* keep the drawn position */ }
+          grab = null; settle(P); report();
+        });
       }
     });
     spec.lines.forEach(function (l) {
       board.create(l.kind, [objs[l.ends[0]], objs[l.ends[1]]], { strokeColor: muted, strokeWidth: 2, highlight: false, fixed: true, dash: l.kind === 'line' ? 0 : 0 });
     });
+    // The step triangle: 1 to the right along the bottom, then up (or down) by however much y changes.
+    if (spec.step !== null) {
+      var f = function (x) { try { return spec.plots[0].tree(scopeVars(x)); } catch (e) { return NaN; } };
+      var x0 = spec.step, acc = B.css('--accent') || '#c2570a';
+      var hid = { visible: false, withLabel: false, fixed: true };
+      var A = board.create('point', [x0, function () { return f(x0); }], hid);
+      var Bp = board.create('point', [x0 + 1, function () { return f(x0); }], hid);
+      var C = board.create('point', [x0 + 1, function () { return f(x0 + 1); }], hid);
+      var seg = { strokeColor: acc, strokeWidth: 2.5, dash: 2, highlight: false, fixed: true };
+      board.create('segment', [A, Bp], seg);
+      board.create('segment', [Bp, C], seg);
+      var lab = { cssClass: 'steplabel', highlightCssClass: 'steplabel', strokeColor: acc, highlightStrokeColor: acc, fixed: true, anchorX: 'middle' };
+      board.create('text', [x0 + 0.5, function () { return f(x0); }, '1'], Object.assign({}, lab, { anchorY: 'top' }));
+      board.create('text', [x0 + 1 + (spec.xr[1] - spec.xr[0]) * 0.015, function () { return (f(x0) + f(x0 + 1)) / 2; }, function () { var d = f(x0 + 1) - f(x0); return Math.abs(d) < 1e-9 ? '' : (d > 0 ? 'up ' : 'down ') + show(Math.abs(d)); }],
+        Object.assign({}, lab, { anchorX: 'left', anchorY: 'middle' }));
+    }
     board.update();
   }
-  function keepInside(P) {
-    var x = Math.max(spec.xr[0], Math.min(spec.xr[1], P.X())), y = Math.max(spec.yr[0], Math.min(spec.yr[1], P.Y()));
-    if (x !== P.X() || y !== P.Y()) P.moveTo([x, y]);
+  // A dragged point lands on the nearest multiple of snap, inside the axes. (Done here, not with JSXGraph's
+  // snapToGrid, which can land a square away from the pointer when dragging upwards.)
+  // While dragging, the point follows the pointer and reports where it will land; on release it moves there.
+  function landing(P) {
+    var st = spec.snapStep, near = function (v) { return round(Math.round(v / st) * st); };
+    return [Math.max(spec.xr[0], Math.min(spec.xr[1], near(P.X()))), Math.max(spec.yr[0], Math.min(spec.yr[1], near(P.Y())))];
   }
+  function settle(P) { var at = landing(P); if (at[0] !== P.X() || at[1] !== P.Y()) P.moveTo(at); }
 
   function paintPanel() {
     var panel = B.el('gpanel'); panel.replaceChildren();

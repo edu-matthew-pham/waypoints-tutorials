@@ -3,6 +3,8 @@
   "algebra-juxtaposition": {"home": "maths/algebra/equation-balance", "text": "2x with x = 4 is read as 24 (the digits side by side) instead of 2 × 4 = 8."},
   "backtrack-order": {"home": "maths/algebra/backtracking", "text": "Steps are undone in the order they were done (divide first in 2x + 3 = 11) instead of last step first."},
   "one-side-only": {"home": "maths/algebra/balance-method", "text": "An operation is done to one side of an equation only, which breaks the balance."},
+  "m-c-swap": {"home": "maths/linear-relations/gradient", "text": "The number on its own (c) is read as the steepness, or a bigger m is expected to lift the line instead of making it steeper."},
+  "minus-means-down": {"home": "maths/linear-relations/gradient", "text": "Any minus sign in the rule (such as y = 3x − 2) is taken to mean the line goes down; only a negative m does."},
   "angle-from-sides": {"home": "code/python/turtle-variables", "text": "The turn is guessed or multiplied instead of worked out as 360 / sides."},
   "assign-vs-compare": {"home": "code/python/turtle-decisions", "text": "A single = is used to ask whether two things are equal."},
   "list-index-range": {"home": "code/python/turtle-lists", "text": "A list of n items has a place n; places run from 0 to n - 1."},

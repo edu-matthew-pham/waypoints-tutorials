@@ -439,6 +439,7 @@ Vary, Practise, Make).
     - `point A: 2, 5` (fixed; coordinates may use sliders, as in `point B: 0, c`) and `point P: 1, 3, drag`
       (students drag it; it snaps); one capital letter each;
     - `segment: A, B` or `line: A, B`; `table: 0, 1, 2, 3` (a table of values of each plot at these x values).
+    - `step: 1`: the "1 right, m up" triangle on the first plot from that x, labelled with how far it goes up or down.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working
