@@ -12,17 +12,21 @@ app:
 pacing:
   keyDelayMs: 45
 explainPicture: { ref: page.html#explain, boxes: true }
+voice: true                 # voiceover pilot (AUTHORING › Voiceover)
 explainClip:
   query: { code: "", boxes: 1, zoom: 1.7 }
   caption: "A list is a box of items, and a link carries its address inside the tag"
+  say: "A list is a box of items, and a link carries its address."
   clip:
     - caption: "<ul> opens a box for a list."
     - type: { into: HTML code, text: "<ul>\n", append: true }
     - caption: "Each <li> is one item, inside the list."
     - type: { into: HTML code, text: "  <li>Hat</li>\n  <li>Water</li>\n", append: true }
-    - caption: "</ul> closes the list."
+    - caption: { text: "</ul> closes the list.", say: "The closing U L tag ends the list." }
     - type: { into: HTML code, text: "</ul>\n", append: true }
-    - caption: "A link: href says where it goes. It is an attribute, inside the opening tag."
+    - caption:
+        text: "A link: href says where it goes. It is an attribute, inside the opening tag."
+        say: "A link uses href to say where it goes. It goes inside the opening tag."
     - type: { into: HTML code, text: "<a href=\"https://example.com\">\n", append: true }
     - caption: "The words between the tags are what people click."
     - type: { into: HTML code, text: "  Club rules\n</a>", append: true }

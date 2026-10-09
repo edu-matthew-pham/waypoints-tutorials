@@ -102,4 +102,17 @@ else console.log('✓ error tasks: every planted error names its fault and an on
   }
   if (!n) console.log('✓ markdown: no bare tags outside backticks');
 }
+// Voiceover: in a voiced lesson every caption is spoken (or its say: line). Long lines make long clips.
+{
+  const { captionSay, SAY_MAX_WORDS } = await import('./lesson-core.mjs');
+  const words = (t) => String(t).trim().split(/\s+/).filter(Boolean).length;
+  let n = 0;
+  for (const l of lessons.filter((x) => x.voice)) {
+    for (const s of [...l.steps, ...(l.explainStep ? [l.explainStep] : [])].filter((x) => x.config.clip)) {
+      const lines = [s.config.say ?? s.config.caption, ...s.config.clip.filter((a) => a && a.caption !== undefined).map((a) => captionSay(a.caption))].filter(Boolean);
+      for (const t of lines) if (words(t) > SAY_MAX_WORDS) { n++; console.warn(`⚠ ${l.slug} › ${s.id}: spoken line has ${words(t)} words (keep to ${SAY_MAX_WORDS}, one sentence): "${t}"`); }
+    }
+  }
+  if (!n) console.log('✓ voiceover: spoken lines are short');
+}
 process.exit(bad ? 1 : 0);

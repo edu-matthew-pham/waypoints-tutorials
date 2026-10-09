@@ -112,6 +112,7 @@ section.step h2{font-size:1.4rem;line-height:1.3;margin:.15em 0 .5em}
 p code,li code{background:color-mix(in srgb,var(--ink) 9%,transparent);padding:1px 6px;border-radius:5px;font-size:.9em}
 figure.clip{margin:18px 0}figure.clip video{width:100%;border-radius:10px;border:1px solid var(--line);display:block;background:#0b0f14}
 figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+figure.clip .voiced-note{white-space:nowrap}
 .placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;aspect-ratio:16/9;border:2px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center;font-size:15px;padding:12px}
 .placeholder b{color:var(--ink)}
 .try{margin:20px 0 6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}

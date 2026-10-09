@@ -7,10 +7,11 @@
 import { chromium } from 'playwright-core';
 import { spawn, execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, writeFileSync, existsSync, rmSync, readdirSync, statSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync, existsSync, rmSync, readdirSync, statSync, renameSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadLessons, validateLesson, getSnippet } from './lesson.mjs';
+import { loadLessons, validateLesson, getSnippet, voiceSpec, captionText, captionSay } from './lesson.mjs';
+import { synth, voiceHashInput, ENGINE as VOICE_ENGINE } from './voice.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const argv = process.argv.slice(2);
@@ -18,6 +19,7 @@ const flag = (n) => argv.includes(n);
 const opt = (n, d) => (argv.includes(n) ? argv[argv.indexOf(n) + 1] : d);
 const OUT = opt('--out', 'dist');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const CLIP_MAX_S = 30; // BUILDING › 4: clips that explain why stay under about 30 s
 
 const highlightSrc = readFileSync(join(here, 'highlight.cjs'), 'utf8');
 const stageHtml = readFileSync(join(here, 'stage.html'), 'utf8').replace('/*HIGHLIGHT*/', () => highlightSrc);
@@ -48,6 +50,8 @@ function stepHash(lesson, step) {
     if (f !== 'lesson.md' && statSync(p).isFile()) h.update(f).update(readFileSync(p));
   }
   h.update(stageHtml).update(rendererSrc).update(sharedFilesHash(lesson));
+  const vs = voiceSpec(lesson.voice);
+  if (vs) h.update(voiceHashInput(vs));
   return h.digest('hex').slice(0, 16);
 }
 
@@ -57,7 +61,7 @@ async function seedClip(base, lesson, step, outDir) {
   try {
     const meta = await fetch(`${url}.json`, { cache: 'no-store' });
     if (!meta.ok || (await meta.json()).hash !== stepHash(lesson, step)) return false;
-    for (const ext of ['mp4', 'jpg']) {
+    for (const ext of voiceSpec(lesson.voice) ? ['mp4', 'jpg', 'vtt'] : ['mp4', 'jpg']) {
       const r = await fetch(`${url}.${ext}`);
       if (!r.ok) return false;
       writeFileSync(join(outDir, `${step.id}.${ext}`), Buffer.from(await r.arrayBuffer()));
@@ -123,6 +127,24 @@ const target = (frame, v, kinds) => {
   return typeof v === 'object' && v.selector ? fr.locator(v.selector).first() : find(fr, typeof v === 'object' ? v.into || v.field : v, kinds);
 };
 
+// ---------- voiceover ----------
+// Place each spoken line at the moment its caption appeared, mix them into the clip, and write a transcript (.vtt)
+// of what is said: the player's CC button shows it, while the burned-in caption stays the short version.
+let clipReport = null;
+const vttTime = (s) => { const ms = Math.max(0, Math.round(s * 1000)); const h = Math.floor(ms / 3600000), m = Math.floor(ms / 60000) % 60, sec = Math.floor(ms / 1000) % 60; return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}.${String(ms % 1000).padStart(3, '0')}`; };
+function muxVoice(mp4, spoken, trim, vttFile) {
+  const lines = spoken.map((l) => ({ ...l, start: Math.max(0, l.at / 1000 - trim) }));
+  const inputs = lines.flatMap((l) => ['-i', l.file]);
+  const parts = lines.map((l, i) => `[${i + 1}:a]aresample=48000,aformat=channel_layouts=mono,adelay=${Math.round(l.start * 1000)}:all=1[a${i}]`);
+  const mix = lines.length > 1 ? `${lines.map((_, i) => `[a${i}]`).join('')}amix=inputs=${lines.length}:normalize=0:duration=longest[a]` : '[a0]anull[a]';
+  const out = mp4.replace(/\.mp4$/, '.voiced.mp4');
+  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', mp4, ...inputs, '-filter_complex', [...parts, mix].join(';'),
+    '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', out]);
+  renameSync(out, mp4);
+  const cues = lines.map((l, i) => `${i + 1}\n${vttTime(l.start)} --> ${vttTime(Math.min(l.start + l.seconds, lines[i + 1]?.start ?? Infinity))}\n${l.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}\n`);
+  writeFileSync(vttFile, `WEBVTT\n\n${cues.join('\n')}`);
+}
+
 // ---------- one clip ----------
 async function recordClip(browser, lesson, step, outDir) {
   const { config: c } = step;
@@ -130,6 +152,29 @@ async function recordClip(browser, lesson, step, outDir) {
   const tmp = join('.render-tmp', `${lesson.slug.replace(/\//g, '_')}-${step.id}`);
   rmSync(tmp, { recursive: true, force: true });
   mkdirSync(tmp, { recursive: true });
+
+  // Voiceover: every line is generated before recording starts, so the video never waits on the speech engine.
+  // The opening line is the step's say: (or its caption, if it has one); then each caption action's say: or text.
+  const vs = voiceSpec(lesson.voice);
+  const voiceDir = join('.voice-cache');
+  const opening = vs ? (c.say ?? c.caption ?? '') : '';
+  const lineFor = new Map();
+  if (vs) {
+    for (const t of [opening, ...c.clip.filter((a) => a && a.caption !== undefined).map((a) => captionSay(a.caption))]) {
+      if (t && !lineFor.has(t)) lineFor.set(t, await synth(t, vs, voiceDir));
+    }
+  }
+  const spoken = [];         // { file, at (ms since t0), seconds, text }
+  let speakingUntil = 0;     // a new line waits for the last one to finish, so lines never overlap
+  let narrationWait = 0;     // how much the voice lengthened the clip
+  const speak = async (text) => {
+    const line = text && lineFor.get(text);
+    if (!line) return;
+    const gap = speakingUntil ? speakingUntil + 250 - Date.now() : 0;
+    if (gap > 0) { narrationWait += gap; await sleep(gap); }
+    spoken.push({ ...line, at: Date.now() - t0 });
+    speakingUntil = Date.now() + line.seconds * 1000;
+  };
 
   const ctx = await browser.newContext({
     viewport: { width: 1280, height: 720 },
@@ -143,7 +188,7 @@ async function recordClip(browser, lesson, step, outDir) {
   const fileLabel = c.code ? c.code.split('#')[0] : '';
   await page.evaluate((o) => window.stage.init(o), {
     title: lesson.title, stage: c.stage, language: lesson.language, cursorMs: p.cursorMs,
-    command: lesson.app?.command, caption: c.caption || step.title, code, file: fileLabel, layout: lesson.app?.layout,
+    command: lesson.app?.command, caption: c.caption ? captionText(c.caption) : step.title, code, file: fileLabel, layout: lesson.app?.layout,
   });
 
   // step.query adds URL parameters to the app; values like "@file.py#region" are replaced by that code.
@@ -161,6 +206,7 @@ async function recordClip(browser, lesson, step, outDir) {
   };
   if (c.app) await openApp();
   const readyAt = Date.now();
+  await speak(opening);
   await sleep(p.preRollMs);
 
   const go = async (loc, { click = true } = {}) => {
@@ -180,7 +226,11 @@ async function recordClip(browser, lesson, step, outDir) {
     const v = action[verb];
     const ctxMsg = `${lesson.slug} ${step.id} "${verb}"`;
     try {
-      if (verb === 'caption') { await page.evaluate((t) => window.stage.caption(t), v); await sleep(350); }
+      if (verb === 'caption') {
+        if (vs) await speak(captionSay(v) && lineFor.has(captionSay(v)) ? captionSay(v) : '');
+        await page.evaluate((t) => window.stage.caption(t), captionText(v));
+        await sleep(350);
+      }
       else if (verb === 'clear') { await page.evaluate(([f]) => window.stage.setCode('', f), [typeof v === 'string' ? v : '']); }
       else if (verb === 'show') {
         await page.evaluate(([t, f]) => window.stage.setCode(t, f), [''  , String(v).split('#')[0]]);
@@ -224,6 +274,7 @@ async function recordClip(browser, lesson, step, outDir) {
       throw new Error(`${ctxMsg} failed: ${e.message}`);
     }
   }
+  if (speakingUntil > Date.now()) { narrationWait += speakingUntil - Date.now(); await sleep(speakingUntil - Date.now()); }
   await sleep(p.postRollMs);
 
   const video = page.video();
@@ -235,6 +286,10 @@ async function recordClip(browser, lesson, step, outDir) {
   const trim = Math.max(0, (readyAt - t0) / 1000 - 0.1).toFixed(2);
   execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-ss', trim, '-i', webm, '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24',
     '-pix_fmt', 'yuv420p', '-movflags', '+faststart', mp4]);
+  if (spoken.length) muxVoice(mp4, spoken, Number(trim), join(outDir, `${step.id}.vtt`));
+  else rmSync(join(outDir, `${step.id}.vtt`), { force: true });
+  const length = Number(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', mp4]).toString().trim());
+  clipReport = { length, narration: narrationWait / 1000, lines: spoken.length };
   execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-sseof', '-1.2', '-i', mp4, '-frames:v', '1', '-q:v', '3', join(outDir, `${step.id}.jpg`)]);
   rmSync(tmp, { recursive: true, force: true });
   return mp4;
@@ -273,15 +328,20 @@ for (const lesson of lessons) {
       // A fresh browser per clip: some sandboxed Chromium builds die when a recording context closes.
       const browser = await launchBrowser();
       try {
+        clipReport = null;
         await recordClip(browser, lesson, s, outDir);
         writeFileSync(join(outDir, `${s.id}.json`), JSON.stringify({ hash: stepHash(lesson, s) }));
-        console.log(`✓ ${lesson.slug}/${s.id} "${s.title}" (${((Date.now() - t) / 1000).toFixed(1)}s)`);
+        const r = clipReport;
+        const voiced = r?.lines ? `, ${r.lines} spoken lines, voice added ${r.narration.toFixed(1)}s` : '';
+        console.log(`✓ ${lesson.slug}/${s.id} "${s.title}" (${r ? r.length.toFixed(1) + 's clip' + voiced + ', ' : ''}${((Date.now() - t) / 1000).toFixed(1)}s to record)`);
+        if (r && r.length > CLIP_MAX_S) console.warn(`⚠ ${lesson.slug}/${s.id}: clip is ${r.length.toFixed(1)}s (over ${CLIP_MAX_S}s): shorten the spoken lines or split the idea`);
       } catch (e) { failures++; console.error(`✗ ${e.message.split('\n')[0]}`); }
       finally { await browser.close().catch(() => {}); }
     }
   } finally { stopApp(app); }
 }
 rmSync('.render-tmp', { recursive: true, force: true });
+if (VOICE_ENGINE !== 'kokoro') console.warn(`⚠ voiceover used the ${VOICE_ENGINE} test voice: do not publish these clips`);
 console.log(`Clips: ${seeded} downloaded, ${stale} ${flag('--check') ? 'to record' : 'recorded or failed'}.`);
 if (process.env.GITHUB_OUTPUT) writeFileSync(process.env.GITHUB_OUTPUT, `stale=${stale}\n`, { flag: 'a' });
 process.exit(failures ? 1 : 0);

@@ -7,6 +7,22 @@ import { MATH } from './math-expr.mjs';
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
+/** Voiceover (frontmatter `voice:`): Kokoro voices graded A to C on its model card; US and UK English only. */
+export const VOICES = ['af_heart', 'af_bella', 'bf_emma', 'am_fenrir', 'am_michael', 'bm_george', 'bm_fable'];
+export const DEFAULT_VOICE = 'af_heart';
+/** A spoken line longer than this many words gets a validate warning: one sentence keeps clips short. */
+export const SAY_MAX_WORDS = 15;
+/** Frontmatter `voice:` -> { name, speed } or null. Accepts true, a voice name, or { name, speed }. */
+export function voiceSpec(v) {
+  if (!v) return null;
+  if (v === true) return { name: DEFAULT_VOICE, speed: 1 };
+  if (typeof v === 'string') return { name: v, speed: 1 };
+  if (typeof v === 'object' && !Array.isArray(v)) return { name: v.name || DEFAULT_VOICE, speed: Number(v.speed) || 1 };
+  return null;
+}
+/** A caption action is a string, or { text, say } when the voice should say a fuller line than the caption shows. */
+export const captionText = (v) => (v && typeof v === 'object' ? String(v.text ?? '') : String(v ?? ''));
+export const captionSay = (v) => (v && typeof v === 'object' && v.say !== undefined ? String(v.say) : captionText(v));
 // board: interactive diagrams (balance, machine, graph…); maths is its old name and still works.
 export const PLAYGROUND_KINDS = ['turtle', 'html', 'board', 'maths', 'microbit', 'arcade', 'science'];
 const isBoard = (pg) => ['board', 'maths', 'science'].includes(pg);
@@ -242,6 +258,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     extensions: meta.extensions,                     // MakeCode extensions by key (MAKECODE_EXTENSIONS), e.g. [robot]
     app: meta.app || null,
     pacing: { ...DEFAULT_PACING, ...(meta.pacing || {}) },
+    voice: meta.voice ?? null,                       // voiceover for this lesson's clips (see voiceSpec, AUTHORING.md)
     intro,
     steps,
     // explainClip (frontmatter): a captioned clip shown in the "Explain it to me" panel. It is recorded and validated
@@ -303,6 +320,14 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
   if (hasClips) {
     if (!lesson.app?.command) err('frontmatter', 'app.command is required when any step has a clip');
     if (!lesson.app?.url) err('frontmatter', 'app.url is required when any step has a clip');
+  }
+  if (lesson.voice !== null && lesson.voice !== undefined && lesson.voice !== false) {
+    const vs = voiceSpec(lesson.voice);
+    if (!vs) err('frontmatter', 'voice must be true, a voice name, or { name, speed }');
+    else {
+      if (!VOICES.includes(vs.name)) err('frontmatter', `voice: "${vs.name}" is not one of ${VOICES.join(', ')}`);
+      if (!(vs.speed >= 0.7 && vs.speed <= 1.4)) err('frontmatter', 'voice.speed must be between 0.7 and 1.4');
+    }
   }
   if (lesson.app?.layout && !LAYOUTS.includes(lesson.app.layout)) err('frontmatter', `app.layout must be one of ${LAYOUTS.join(', ')}`);
   if (lesson.extensions !== undefined) {
@@ -465,6 +490,8 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         const v = a[verb];
         if (!VERBS.includes(verb)) return err(w, `unknown verb "${verb}" (use ${VERBS.join(', ')})`);
         if (verb === 'show') { try { snip(v); } catch (e) { err(w, e.message); } }
+        if (verb === 'caption' && !(typeof v === 'string' || (v && typeof v === 'object' && !Array.isArray(v) && typeof v.text === 'string' && (v.say === undefined || typeof v.say === 'string'))))
+          err(w, 'caption needs a text, or { text, say } (say: the fuller line the voice speaks)');
         if (verb === 'type' && !(v && v.text !== undefined && (v.into || v.selector))) err(w, 'type needs {into|selector, text}');
         if (verb === 'expect' && !(v && (v.field || v.selector) && (v.value !== undefined || v.contains !== undefined))) err(w, 'expect needs {field|selector, value|contains}');
         if (verb === 'click' && !(typeof v === 'string' || (v && v.selector))) err(w, 'click needs a label string or {selector}');
@@ -522,6 +549,10 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     }
     if (c.reveal !== undefined && typeof c.reveal !== 'boolean' && !(typeof c.reveal === 'string' && c.reveal.trim())) err(where, 'reveal must be true, or the text of the button, e.g. "Show the expected result"');
     if (c.reveal && !c.clip) err(where, '"reveal" only makes sense on a step with a clip');
+    if (c.say !== undefined) {
+      if (typeof c.say !== 'string') err(where, 'say must be a text: the line spoken over the opening caption');
+      else if (!c.clip) err(where, '"say" only makes sense on a step with a clip');
+    }
   }
   if (lesson.teacher) validateTeacher(lesson, snip, err);
   return errs;

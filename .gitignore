@@ -2,3 +2,4 @@ node_modules/
 dist/
 .render-tmp/
 __pycache__/
+.voice-cache/

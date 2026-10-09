@@ -13,7 +13,7 @@ import { createRequire } from 'node:module';
 import { Marked } from 'marked';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV_CSS, NAV_JS, makecodeBlock } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
-import { snippetId, unlockKind, pictureSpec, makecodePackage, makecodeExtensions } from './lesson-core.mjs';
+import { snippetId, unlockKind, pictureSpec, makecodePackage, makecodeExtensions, captionText } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildMakecodePlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
@@ -29,11 +29,14 @@ function clipHtml(lesson, step) {
   const c = step.config;
   if (!c.clip) return '';
   const file = join(OUT, lesson.slug, 'clips', `${step.id}.mp4`);
-  const cap = c.caption || step.title;
+  const cap = c.caption ? captionText(c.caption) : step.title;
   let inner;
   if (existsSync(file)) {
     const poster = existsSync(join(OUT, lesson.slug, 'clips', `${step.id}.jpg`)) ? ` poster="clips/${step.id}.jpg"` : '';
-    inner = `<figure class="clip"><video controls loop muted playsinline preload="metadata"${poster}><source src="clips/${step.id}.mp4" type="video/mp4"></video><figcaption>${esc(cap)}</figcaption></figure>`;
+    // A voiced clip has a transcript of what is said (clips/<id>.vtt): the CC button shows it. Clips start muted
+    // either way (captions first: headphones are not guaranteed), so students unmute when they can listen.
+    const vtt = existsSync(join(OUT, lesson.slug, 'clips', `${step.id}.vtt`)) ? `<track kind="captions" srclang="en" label="Transcript" src="clips/${step.id}.vtt">` : '';
+    inner = `<figure class="clip${vtt ? ' voiced' : ''}"><video controls loop muted playsinline preload="metadata"${poster}><source src="clips/${step.id}.mp4" type="video/mp4">${vtt}</video><figcaption>${esc(cap)}${vtt ? ' <span class="voiced-note">· Sound on for the voiceover</span>' : ''}</figcaption></figure>`;
   } else {
     inner = `<div class="placeholder"><b>Clip placeholder · ${esc(step.id)}</b><span>${esc(cap)}</span><span>Rendered automatically by the build.</span></div>`;
   }

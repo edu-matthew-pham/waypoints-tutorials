@@ -93,6 +93,17 @@ use `{ selector: "#css" }` instead (works for `click`, `type`, `expect`).
 Always end a clip with an `expect`. It turns every clip into a test: if the app changes so
 the lesson is no longer true, CI fails instead of publishing a stale video.
 
+### Voiceover (`voice:`)
+
+Captions come first: clips start muted, because headphones are not guaranteed. A lesson can add a voiceover that students hear when they unmute.
+
+- **Turn it on** in the frontmatter: `voice: true` (voice `af_heart`), a voice name (`bf_emma`), or `{ name: bf_emma, speed: 1.1 }`. Voices: `af_heart`, `af_bella`, `bf_emma`, `am_fenrir`, `am_michael`, `bm_george`, `bm_fable` (Kokoro, US and UK English; there is no Australian voice). Speed 0.7–1.4.
+- **What is said:** each `caption` is spoken as written. When a caption is too terse to say aloud, give the fuller line with `say`, and keep the caption short: `- caption: { text: "</ul> closes the list.", say: "The closing U L tag ends the list." }`. The voice may add words but never contradicts or reorders the caption. A step's opening `caption:` is spoken too, or its `say:` instead; a step with no `caption:` opens silently. `say: ""` keeps a caption silent.
+- **Timing:** a line starts when its caption appears; the clip keeps typing and clicking while it is spoken, and the next caption waits until the line ends. Keep each line to one sentence of at most 15 words (validate warns), and clips under about 30 s (render warns).
+- **Code read aloud:** tags and calls are said the way a teacher would (`</ul>` → "closing U L", `forward(100)` → "forward 100"). Add words or tags to `tools/voice-lexicon.json` when the voice says one wrongly.
+- **Transcript:** a voiced clip also gets `clips/<id>.vtt`, the spoken lines, shown by the player's CC button.
+- **Hearing it before it goes live:** push to a `voiceover` or `voiceover-*` branch (or run the Voiceover preview workflow by hand): it records every voiced lesson with the real voice and puts the clips on the `voice-preview` branch. Locally, `WP_VOICE_ENGINE=flite node tools/render.mjs --lesson <slug>` uses ffmpeg's robotic test voice to check timing; never publish those clips. Kokoro itself needs `npm install --no-save kokoro-js` and downloads its model (about 90 MB) from Hugging Face on first use.
+
 ## 5. Commands
 
 ```bash
