@@ -41,27 +41,31 @@ The navbar now plans for more subjects: **Learning Waypoints ↗** (the main sit
 **PRIMM as in Python.** Predict shows display code only (predict check); the Run step has the playground, whose live preview is the reveal and fills the compare box. HTML code checks use `tags` and `contains` (built on the local branch `html-playground-checks`).
 
 **Unit 1: Structure (a page is a tree)**
-1. Tags and nesting: `h1`, `p`, `strong`/`em`; tags label meaning, close in reverse order. Error: overlapping tags. `<!DOCTYPE>` and `<head>` as a recipe.
-2. Lists and links: `ul`, `ol`, `li`, `a href`; introduces attributes. Error: an `li` outside a list. Make: a top-5 list with links.
-3. Images and tables: `img src alt` (no closing tag), `table` › `tr` › `td`/`th`, tables for data only. Error: a row with a missing cell. Make: a results table or timetable.
+1. Tags and nesting: `h1`, `p`, `strong`/`em`; tags label meaning, close in reverse order. Error: overlapping tags. `<!DOCTYPE>` and `<head>` as a recipe. Reworked from `first-page` (its list moves to lesson 2, its CSS step to lesson 5).
+2. Lists and links: `ul`, `ol`, `li`, `a href`; introduces attributes. Error: an `li` outside a list. Real world: the club notice page from `first-page`. Make: a top-5 list with links.
+3. Images: `img src alt` (no closing tag), why `alt` matters. Make: a picture with a caption.
+4. Tables: `table` › `tr` › `td`/`th`, for data only. Error: a row with a missing cell. Make: a results table or timetable.
 
 **Unit 2: Style (CSS is rules)**
 
-4. Rules and selectors: `<style>`, element selectors, `class`, `color`, `font-size`. Error: a class typo, so the rule matches nothing.
-5. Boxes: padding, border, margin, width; block versus inline. Error: `padding: 10` with no unit.
+5. Rules and selectors: `<style>`, element selectors, `class`, `color`, `font-size`. Error: a class typo, so the rule matches nothing.
+6. Boxes: padding, border, margin, width; block versus inline. Error: `padding: 10` with no unit.
 
 **Unit 3: Components and layout**
 
-6. Flexbox: a navbar from a `ul`, then a gallery with `flex-wrap` (Grid named as the tool when rows must line up). Error: `display: flex` on the items instead of the container.
-7. Hero and cards: patterns built from tags, classes, boxes and Flexbox. Each component built once becomes a Reference card (like My tools); real-world steps are finished components to Modify.
-8. Forms: `label`, `input`, `select`, `button`, styled as a card. Insight: submitting does nothing; the form is the front and code behind it does the work (leads to the DOM and to Gradio, where an app is a form plus a function). Error: a `label` whose `for` does not match its input's `id`.
-9. Challenge: a club page assembled from components (navbar, hero, cards, results table, sign-up form) in milestones with fading support; no new knowledge.
-10. Optional, Make it react (towards the DOM course): about 5 lines of JavaScript as a recipe: a button that changes text, then the form shows "Hi, Ada!" on the page. Students still Predict, match each line to what it does, Modify (message, target, colour) and Make; a collapsed "Behind the code" note names the parts, and the DOM course explains them properly. Bridges from turtle events (`onscreenclick` → `addEventListener`). Output goes on the page (no console). Check with `contains: ["addEventListener"]`.
-11. Optional, Page layout with Grid (visual direction).
+7. Flexbox: a navbar from a `ul`, then a gallery with `flex-wrap` (Grid named as the tool when rows must line up). Error: `display: flex` on the items instead of the container.
+8. Page sections and components: semantic tags (`header`, `nav`, `main`, `footer`) name the parts of a page; a hero and cards fill them, built from tags, classes, boxes and Flexbox. Each component built once becomes a Reference card (like My tools); real-world steps are finished components to Modify.
+9. Forms: `label`, `input`, `select`, `button`, styled as a card. Insight: submitting does nothing; the form is the front and code behind it does the work (leads to the DOM and to Gradio, where an app is a form plus a function). Error: a `label` whose `for` does not match its input's `id`.
+
+**Challenge unit**
+
+10. Club page: assembled from components (sections, navbar, hero, cards, results table, sign-up form) in milestones with fading support; no new knowledge.
+11. Optional, Make it react (towards the DOM course): about 5 lines of JavaScript as a recipe: a button that changes text, then the form shows "Hi, Ada!" on the page. Students still Predict, match each line to what it does, Modify (message, target, colour) and Make; a collapsed "Behind the code" note names the parts, and the DOM course explains them properly. Bridges from turtle events (`onscreenclick` → `addEventListener`). Output goes on the page (no console). Check with `contains: ["addEventListener"]`.
+12. Optional, Page layout with Grid (visual direction).
 
 The core stays JavaScript-free; JavaScript proper (variables, decisions, functions, events) is the DOM extension.
 
-**Still open:** semantic tags (`header`, `nav`, `main`) as a one-line recipe in the challenge or a real step; whether to split images and tables; whether hero and cards fold into Flexbox (course 8 lessons instead of 9); whether `first-page` becomes lesson 1 or is retired. Still to build before lessons: CSS `/* region */` markers, HTML cheat-sheet pictures from the preview.
+**Settled 9 Oct:** semantic tags are a real step (lesson 8); images and tables are separate lessons; hero and cards stay their own lesson (Flexbox already has two tasks); `first-page` is reworked into lesson 1. Nine core lessons plus the challenge, about the Python course's size. Still to build before lessons: CSS `/* region */` markers, HTML cheat-sheet pictures from the preview.
 
 ## Proposed: turtle companion (discussed, not decided)
 
