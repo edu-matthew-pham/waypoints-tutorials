@@ -337,6 +337,12 @@ await pictures({
         const editor = await (await page.waitForSelector('#editor', { timeout: 10000 })).contentFrame();
         await editor.waitForSelector(SIM, { timeout: 90000 });
         await page.waitForFunction(() => window.__playground?.simStarted, null, { timeout: 30000 });
+        // Arcade's simulator can wait behind a play button (no user gesture yet): click the middle of the game
+        // screen to start it, or the picture is the button. (A click on the micro:bit board does nothing.)
+        if (j.target === 'arcade') {
+          const box = await (await editor.waitForSelector(SIM, { timeout: 30000 })).boundingBox();
+          if (box) await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+        }
         await page.waitForTimeout(WAIT[j.target] || 2500);
         const simEl = await editor.waitForSelector(SIM, { timeout: 30000 });
         const sim = await simEl.contentFrame();
