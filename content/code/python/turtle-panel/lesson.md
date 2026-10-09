@@ -7,16 +7,6 @@ summary: Turn the game into an app with a panel of buttons made from lists.
 language: python
 modules: [ui]
 hook: "Every app is a panel of controls over some state. Build the panel from data, and adding a control is one more item in a list."
-teachers: |
-  **Optional, UI direction:** for students who finished the challenge and like making tools and apps. It leads to Gradio (where `gr.Button` and `gr.Radio` replace hand-drawn buttons) and to web pages (the DOM).
-
-  **The big idea:** buttons are data. Three lists (names, positions, values) and two loops (one draws, one checks clicks) replace a pile of copied `if` statements. This is the same move as Lists, now inside a user interface.
-
-  **Why New game waits 1.1 seconds:** setting `playing` to False lets any timer that is still waiting finish and stop, so two hop loops never run at once.
-
-  **Creative option:** students design their own control row (a colour theme with `bgcolor`, a path chooser that swaps the lists).
-
-  **Watch for:** lists of different lengths (an index error when the loop runs off the shorter list); two rows at the same y; a click that matches a game button and the turtle at once.
 ---
 Your game has one button. Real apps have panels: rows of controls that change what the program does. Here the buttons come from **lists**, so a loop draws them and a loop finds which one was clicked.
 

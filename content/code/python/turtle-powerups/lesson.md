@@ -6,16 +6,6 @@ summary: Add lives, a status bar, a gold turtle and an upgrade you buy with poin
 language: python
 modules: [ui]
 hook: "Games and apps are built from the same parts: buttons that change state, and rules about what each change means."
-teachers: |
-  **What this is:** the second half of the final challenge. Together with Catch the turtle it marks the course "Challenge complete".
-
-  **Both pathways in one lesson:** the status bar and the upgrade button are user interface (show the state, let the player act on it); lives, the gold turtle and the cost of an upgrade are game rules. The Investigate match makes the split explicit. The optional Control panel lesson goes deeper on UI (towards Gradio and web pages); Game levels goes deeper on games (towards MakeCode Arcade and microStudio).
-
-  **Reuse to look for:** `label(x, y, name, value)` is a function with four parameters used three times; the gold turtle is `%` from Decisions again; the upgrade is a second hit test on the same button.
-
-  **Creative option:** students invent their own power-up in Make (more time, a bigger catch box, double points for 10 seconds) and explain its cost in a sentence.
-
-  **Watch for:** the upgrade bought when it is not affordable (`score >= 5` missing); the gold halo left on screen (draw it only when `showing and gold`, and redraw after a catch); `delay` changed but `hop` still using 1000.
 ---
 Your game works. Now make it richer: lives instead of misses, a proper status bar, a gold turtle worth more, and an upgrade that costs points. Each one is a small change to the program you already have.
 

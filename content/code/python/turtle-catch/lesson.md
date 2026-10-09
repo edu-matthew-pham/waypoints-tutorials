@@ -6,16 +6,6 @@ summary: Build a game that uses everything so far. The turtle hops along a path;
 language: python
 modules: [ui]
 hook: "Every game is a few rules, some data and a loop. You already know all three."
-teachers: |
-  **What this is:** the final challenge of the course, built in three milestones with fading support. Milestone 1 gives most of the code, milestone 2 gives the outline, milestone 3 gives only the goals. Finishing it (with the Power-ups lesson) marks the course "Challenge complete" on the course page.
-
-  **What it uses:** variables (score, place), decisions (the hit test, `playing`), lists (the path), functions with parameters (`inside`, `draw_button` from `ui.py`), events and timers (`onscreenclick`, `ontimer`). Nothing new except `showturtle()` and the words `True` and `False`, which are named in the text.
-
-  **Low floor, high ceiling:** everyone finishes the core game. Stronger students go on to Power-ups (lives, a gold turtle, an upgrade button), then the optional Control panel (UI) and Game levels (games) lessons.
-
-  **Creative option:** the path is just two lists, so students can design it: a path that traces their initial, or a shape that is revealed when the game ends (draw the path with the pen down at game over).
-
-  **Watch for:** a missing name in a `global` line (the score stops changing, or an error says a name has no value); clicks that never count because the box is not centred on the turtle (it starts at `tx - 20`); two hop loops running at once after Start is pressed twice quickly.
 ---
 The turtle hops around a path. You will turn it into a game: catch the turtle before it hides, score as many as you can in 30 seconds. You will build it in three milestones, with less help each time.
 

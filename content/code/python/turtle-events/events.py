@@ -112,3 +112,107 @@ def stamp(x, y):
 onscreenclick(stamp())
 mainloop()
 # endregion
+
+# region: sol-restyle
+from turtle import *
+
+speed(0)
+penup()
+
+
+def stamp(x, y):
+    goto(x, y)
+    dot(50, "purple")
+
+
+onscreenclick(stamp)
+listen()
+mainloop()
+# endregion
+
+# region: sol-square
+from turtle import *
+
+speed(0)
+penup()
+
+
+def stamp(x, y):
+    goto(x, y)
+    pendown()
+    for i in range(4):
+        forward(30)
+        right(90)
+    penup()
+
+
+onscreenclick(stamp)
+listen()
+mainloop()
+# endregion
+
+# region: sol-steer
+from turtle import *
+
+speed(0)
+
+
+def go_up():
+    forward(20)
+
+
+def turn_left():
+    left(30)
+
+
+def turn_right():
+    right(30)
+
+
+onkey(go_up, "Up")
+onkey(turn_left, "Left")
+onkey(turn_right, "Right")
+listen()
+mainloop()
+# endregion
+
+# region: sol-counter
+from turtle import *
+
+hideturtle()
+score = 0
+penup()
+goto(-20, 0)
+
+
+def show():
+    clear()
+    write(score, False, "left", ("Arial", 40, "normal"))
+
+
+def add_point(x, y):
+    global score
+    score = score + 5
+    show()
+
+
+def reset():
+    global score
+    score = 0
+    show()
+
+
+def tick():
+    global score
+    score = score + 1
+    show()
+    ontimer(tick, 1000)
+
+
+show()
+onscreenclick(add_point)
+onkey(reset, "r")
+ontimer(tick, 1000)
+listen()
+mainloop()
+# endregion

@@ -5,16 +5,6 @@ title: Functions
 summary: Give a group of commands a name, then use that name again and again.
 language: python
 hook: "Every app is built from small named functions that other code calls. You are about to write your first."
-teachers: |
-  **Where it leads:** parameters (the next lesson), then your own toolbox of functions and modules. Later lessons return to functions with harder uses, which is where mastery comes from. This lesson only builds the idea.
-
-  **Class ideas:** each student writes one shape function and the class combines them into a picture; compare how long it takes to change three copies versus one function.
-
-  **Watch for:** `def` seen as the thing that draws (it only describes the steps); forgetting to call the function; the indented body; pasting a second `def` with a name already used, which silently replaces the first.
-
-  **Checkpoint:** a student who can define and call a function understands the concept. Fluent, repeated use is checked in the next lesson, not here.
-
-  **Unlocks:** the `def (function)` snippet after Investigate.
 ---
 You already know how to repeat steps with a loop. Now you will give a whole shape a **name**.
 

@@ -5,16 +5,6 @@ title: Functions with parameters
 summary: Make one function draw many different shapes, and keep your best ones as tools.
 language: python
 hook: "One well-made function can do the work of a hundred copied lines: sending a message, drawing a tile, converting a unit."
-teachers: |
-  **Where it leads:** return values, functions calling functions, and your own modules. This lesson is where fluency starts: students write several functions and call them many times.
-
-  **Class ideas:** a pattern gallery where each student chooses `sides` and `copies`; a floor plan built from room calls; compare function designs and talk about what makes one easy to reuse.
-
-  **Watch for:** parameters confused with variables (a parameter is filled in by each call); arguments passed in the wrong order; functions that only work for one value.
-
-  **Abstraction:** saving to My tools is the first layer: use an idea without rewriting it. A tool is copied and pasted, so each paste is a copy; the Modules lesson uses that as its reason for modules. It unlocks late in this lesson so students have written a few functions first.
-
-  **Unlocks:** `save-as-button` after the pattern challenge.
 ---
 Last lesson `square()` always drew the same size. A **parameter** lets each call say what it needs.
 

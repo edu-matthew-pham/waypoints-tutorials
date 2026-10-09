@@ -42,7 +42,11 @@ export function getSnippet(dir, ref) { return snippetFrom(readIn(dir), ref); }
 
 export function loadLesson(dir) {
   const slug = relative(CONTENT_ROOT, dir).split(sep).join('/');
-  return { ...parseLessonText(readFileSync(join(dir, 'lesson.md'), 'utf8'), slug), dir };
+  const lesson = { ...parseLessonText(readFileSync(join(dir, 'lesson.md'), 'utf8'), slug), dir };
+  // teacher.yml beside lesson.md: notes, goals, exit ticket, student explanation and solutions (see AUTHORING.md).
+  const t = join(dir, 'teacher.yml');
+  if (existsSync(t)) lesson.teacher = YAML.parse(readFileSync(t, 'utf8')) || {};
+  return lesson;
 }
 
 export function loadLessons(only) {

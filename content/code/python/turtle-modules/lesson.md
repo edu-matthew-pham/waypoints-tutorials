@@ -6,18 +6,6 @@ summary: Keep related functions together in a file you can import, like a toolbo
 language: python
 modules: [shapes]
 hook: "Every Python program you will ever use imports other people's modules. Now you will build your own."
-teachers: |
-  **Where it leads:** libraries, packages and sharing code between programs and people. Not every function needs a module; a module is for a group of functions that belong together.
-
-  **Class ideas:** each student builds a module for a theme (houses, trees, stars) and a classmate imports it; a class "town" made of everyone's modules.
-
-  **Watch for:** the module file not being named the same as the import; forgetting the import line; putting the drawing calls inside the module so they run on import; a local `def` with the same name as an imported function, which silently replaces it.
-
-  **Abstraction:** a button is the first layer (reuse an idea). A module is the second: related functions collected in a file other programs can import.
-
-  **Prerequisite:** students should already be comfortable writing functions with parameters.
-
-  **Unlocks:** the ready-made shapes buttons after Investigate; the `+ module` tab after Run.
 ---
 You have written several functions. A **module** is a file that holds related functions, so any program can import them.
 

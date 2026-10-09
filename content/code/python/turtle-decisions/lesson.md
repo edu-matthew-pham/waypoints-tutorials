@@ -5,14 +5,6 @@ title: Decisions
 summary: Make a program choose between two things with if and else.
 language: python
 hook: "Traffic lights, game scores, login screens and thermostats all do the same thing: check a condition and pick what happens next."
-teachers: |
-  **Where it leads:** lists (the next lesson, where `if` runs on every item), then functions that decide. Later lessons return to `if` in new places, which is where mastery comes from.
-
-  **Class ideas:** a traffic light that runs through its states; a pattern that changes on every third tile; a quick "what would happen if" game where the class predicts the colour of tile 7.
-
-  **Watch for:** `=` written where `==` is needed; a missing colon; the indented body of `if` and `else`; `%` read as "percent" instead of "remainder".
-
-  **Unlocks:** the `if / else` snippet after Run.
 ---
 So far every line of your program has run, in order, every time. Now the program will **choose**: run these lines if something is true, and those lines if it is not.
 

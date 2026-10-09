@@ -6,18 +6,6 @@ summary: Turtle has no buttons, so build one from a rectangle and a click check.
 language: python
 modules: [ui]
 hook: "Frameworks give you a button in one line. Underneath, it is a rectangle, a label and a check that a click landed inside. You are about to build all three."
-teachers: |
-  **Where it leads:** the checkpoint (a small control panel), then the pathways. Gradio's `Button` and microStudio's input handling do the same work that students write by hand here, so they can say what a framework is doing for them.
-
-  **Iceberg idea:** the visible button is 10% of the work. The other 90% is drawing, hit-testing, handling the event and updating state.
-
-  **Class ideas:** a class control panel with different buttons; design a calculator keypad; compare how many lines the hand-built version takes with the `ui` module.
-
-  **Watch for:** the click check written with `or` instead of `and`; `by` and `bh` mixed up; forgetting `global` when a handler changes a variable; redrawing without `clear()`.
-
-  **Prerequisites:** functions with parameters, lists, decisions and events.
-
-  **Unlocks:** the `ui` module buttons after the last step.
 ---
 A button is not magic. It is a **rectangle**, a **label**, and a check that asks: *did the click land inside the rectangle?*
 

@@ -5,14 +5,6 @@ title: Variables and operations
 summary: Give a number a name, then calculate with it.
 language: python
 hook: "Games keep score, maps keep scale and apps keep your settings. All of them store a value under a name and calculate with it."
-teachers: |
-  **Where it leads:** decisions (the next lesson), parameters later, scores and counters, scale in design and mapping.
-
-  **Class ideas:** a shape generator where the class compares `sides` values; a spiral gallery; scale drawings of the classroom.
-
-  **Watch for:** `=` read as "equals" instead of "store"; `size = size + 5` looking wrong to students used to algebra; `/` giving a decimal (72.0).
-
-  **Unlocks:** the `variable` and `print` snippets after Run.
 ---
 In the last lesson the numbers were typed straight into each command. Here you give a number a **name**, so you can change it in one place and calculate with it.
 

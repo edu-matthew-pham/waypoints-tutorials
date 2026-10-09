@@ -36,6 +36,13 @@ for (const l of lessons) {
   if (l.unit && !ids.includes(l.unit)) { bad++; console.error(`✗ ${l.slug} › frontmatter: unit "${l.unit}" is not in ${course}/index.md units (${ids.join(', ') || 'none'})`); }
   else if (!l.unit && ids.length) console.warn(`⚠ ${l.slug} › frontmatter: no unit; it will show under "More lessons"`);
 }
+// Teacher notes: a lesson in a course with units should have teacher.yml, and every code-checked task a solution.
+import { workItems } from './lesson-core.mjs';
+for (const l of lessons) {
+  if (!l.teacher) { if (l.unit) console.warn(`⚠ ${l.slug}: no teacher.yml (teacher notes and solutions)`); continue; }
+  const sol = l.teacher.solutions || {};
+  for (const w of workItems(l)) if (w.check?.type === 'code' && !sol[w.id]) console.warn(`⚠ ${l.slug} › teacher.yml: no solution for ${w.id}, which has a code check`);
+}
 // Error-task lint (warnings, never a failure): each planted error names its fault and misconception,
 // stays on the lesson's path (no misconception from a later lesson), and a design fault is not a one-line hunt.
 import { bugKeys, FAULTS } from './lesson-core.mjs';

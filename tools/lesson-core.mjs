@@ -362,5 +362,43 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (c.reveal !== undefined && typeof c.reveal !== 'boolean' && !(typeof c.reveal === 'string' && c.reveal.trim())) err(where, 'reveal must be true, or the text of the button, e.g. "Show the expected result"');
     if (c.reveal && !c.clip) err(where, '"reveal" only makes sense on a step with a clip');
   }
+  if (lesson.teacher) validateTeacher(lesson, snip, err);
   return errs;
+}
+
+/** The fields of teacher.yml. Text fields are Markdown; see AUTHORING.md › Teacher notes. */
+export const TEACHER_TEXT = ['summary', 'before', 'stretch', 'support', 'leads', 'explain', 'timing'];
+
+/** Steps and tasks a solution can be keyed by: "step-4" or "step-4#t2". */
+export function workItems(lesson) {
+  return lesson.steps.flatMap((s) => (s.tasks.length ? s.tasks.map((t) => ({ id: t.id, step: s, task: t, check: t.config.check })) : [{ id: s.id, step: s, task: null, check: s.config.check }]))
+    .filter((w) => ['modify', 'make'].includes(w.step.config.stage) && w.step.config.try);
+}
+
+function validateTeacher(lesson, snip, err) {
+  const t = lesson.teacher, w = 'teacher.yml';
+  if (typeof t !== 'object' || Array.isArray(t)) return err(w, 'must be a mapping of fields');
+  const allowed = [...TEACHER_TEXT, 'time', 'goals', 'running', 'stuck', 'exit', 'solutions'];
+  for (const k of Object.keys(t)) if (!allowed.includes(k)) err(w, `unknown field "${k}" (use ${allowed.join(', ')})`);
+  for (const k of TEACHER_TEXT) if (t[k] !== undefined && typeof t[k] !== 'string') err(w, `${k} must be text`);
+  if (t.time !== undefined && !(Number.isInteger(t.time) && t.time > 0)) err(w, 'time must be the lesson length in minutes, such as 50');
+  for (const k of ['goals', 'running']) if (t[k] !== undefined && !(Array.isArray(t[k]) && t[k].every((x) => typeof x === 'string' && x.trim()))) err(w, `${k} must be a list of sentences`);
+  if (t.goals && !t.goals.every((g) => /^I can\b/.test(g))) err(w, 'each goal starts "I can"');
+  if (t.stuck !== undefined && !(Array.isArray(t.stuck) && t.stuck.every((x) => x && ['see', 'ask', 'fix'].every((f) => typeof x[f] === 'string' && x[f].trim())))) err(w, 'stuck must be a list of { see, ask, fix }');
+  if (t.exit !== undefined && !(t.exit && typeof t.exit.q === 'string' && typeof t.exit.a === 'string')) err(w, 'exit must be { q, a }: one question and its answer');
+  if (t.solutions !== undefined) {
+    if (typeof t.solutions !== 'object' || Array.isArray(t.solutions)) return err(w, 'solutions must map a step or task id ("step-4" or "step-4#t2") to file#region');
+    const items = workItems(lesson);
+    for (const [id, ref] of Object.entries(t.solutions)) {
+      const item = items.find((i) => i.id === id);
+      if (!item) { err(w, `solutions: "${id}" is not a Modify or Make step or task with a playground (${items.map((i) => i.id).join(', ')})`); continue; }
+      let code;
+      try { code = snip(ref); } catch (e) { err(w, `solutions.${id}: ${e.message}`); continue; }
+      // A solution must pass the check it answers.
+      if (item.check?.type === 'code' && item.check.rules) {
+        const failed = evalRules(item.check.rules, code).filter((r) => !r.ok).map((r) => r.label);
+        if (failed.length) err(w, `solutions.${id} fails its own check: ${failed.join('; ')}`);
+      }
+    }
+  }
 }

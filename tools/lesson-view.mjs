@@ -103,6 +103,8 @@ nav.steps a .cnt{font-weight:500;color:var(--muted);margin-left:5px}
 details.insights{margin:10px 0}
 details.teachers{margin:28px 0 0;border:1px solid var(--line);border-radius:8px;padding:0 16px}
 details.teachers summary{cursor:pointer;font-weight:600;padding:12px 0}
+details.teachers h3{font-size:1rem;margin:16px 0 4px}.tguide{background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:8px;padding:8px 12px}
+details.explain{margin:12px 0 4px;border:1px solid var(--line);border-left:4px solid var(--investigate);border-radius:8px;padding:0 16px;background:var(--card)}details.explain summary{cursor:pointer;font-weight:600;padding:10px 0;color:var(--investigate)}
 .hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
 details.reveal summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--c)}
 details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
@@ -302,6 +304,8 @@ document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.tr
 t._full=function(on){t.classList.toggle('full',on);document.body.classList.toggle('try-open',!!document.querySelector('.try.full'));b.setAttribute('aria-pressed',String(on));b.textContent=on?'Exit full screen':'Full screen';if(!on)b.focus()};
 b.addEventListener('click',function(){t._full(!t.classList.contains('full'))})});
 document.addEventListener('keydown',function(e){var f=document.querySelector('.try.full');if(e.key==='Escape'&&f)f._full(false)});
+(function(){var id=new URLSearchParams(location.search).get('full');if(!id)return;var sec=document.getElementById(id);var t=sec&&sec.querySelector('.try');if(!t||!t._full)return;
+var ifr=t.querySelector('iframe');if(ifr)ifr.loading='eager';setTimeout(function(){t._full(true)},50)})();
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='esc')return;
 document.querySelectorAll('.try.full').forEach(function(f){var i=f.querySelector('iframe');if(i&&i.contentWindow===e.source)f._full(false)})});
 function parsons(box,win,bad){var lines=JSON.parse(box.dataset.lines),extra=JSON.parse(box.dataset.extra||'[]');
@@ -402,7 +406,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '' } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '' } = deps;
   const md = new Marked({
     renderer: { code({ text, lang }) { const fs = splitFiles(text); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
@@ -483,13 +487,30 @@ export function lessonPageHtml(lesson, deps) {
     st.config.insight ? { where: st.title.replace(STAGE_PREFIX, ''), text: st.config.insight } : null,
     ...st.tasks.filter((t) => t.config.insight).map((t) => ({ where: `${st.title.replace(STAGE_PREFIX, '')} › ${t.title}`, text: t.config.insight })),
   ]).filter(Boolean);
-  const teachersHtml = (lesson.teachers || insights.length)
-    ? `<details class="teachers"><summary>For teachers</summary>${lesson.teachers ? md.parse(lesson.teachers) : ''}${insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : ''}</details>` : '';
+  // For teachers: teacher.yml in plain language (no answers or solutions: those live in the teacher guide).
+  const T = lesson.teacher;
+  const li = (xs) => `<ul>${xs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
+  const teachersHtml = T
+    ? `<details class="teachers"><summary>For teachers</summary>` +
+      `<p>${esc(T.summary || '')}${T.time ? ` <b>About ${T.time} minutes.</b>` : ''}</p>` +
+      (teacherGuide ? `<p class="tguide"><a href="${esc(teacherGuide)}">Open the teacher guide</a>: answers, solutions, slides and a worksheet.</p>` : '') +
+      (T.goals ? `<h3>Students will be able to</h3>${li(T.goals)}` : '') +
+      (T.before ? `<h3>Before class</h3>${md.parse(T.before)}` : '') +
+      (T.running ? `<h3>Running the lesson</h3><ol>${T.running.map((r) => `<li>${esc(r)}</li>`).join('')}</ol>` : '') +
+      (T.stuck ? `<h3>When students get stuck</h3><ul>${T.stuck.map((x) => `<li><b>${esc(x.see)}</b> Ask: ${esc(x.ask)} Fix: ${esc(x.fix)}</li>`).join('')}</ul>` : '') +
+      (T.stretch || T.support ? `<h3>Stretch and support</h3>${T.stretch ? `<p><b>Stretch:</b> ${esc(T.stretch)}</p>` : ''}${T.support ? `<p><b>Support:</b> ${esc(T.support)}</p>` : ''}` : '') +
+      (T.leads ? `<h3>Where it leads</h3>${md.parse(T.leads)}` : '') +
+      (insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : '') + `</details>`
+    : (lesson.teachers || insights.length)
+      ? `<details class="teachers"><summary>For teachers</summary>${lesson.teachers ? md.parse(lesson.teachers) : ''}${insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : ''}</details>` : '';
+  // Explain it to me: the idea in more words, collapsed, for students who want it.
+  const explainHtml = T?.explain ? `<details class="explain"><summary>Explain it to me</summary>${md.parse(T.explain)}</details>` : '';
 
   return page(lesson.title, `
 ${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
 ${md.parse(lesson.intro)}
+${explainHtml}
 <ul class="legend">${legend}</ul>
 <nav class="steps">${nav}</nav>
 ${steps}

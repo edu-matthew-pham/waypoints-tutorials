@@ -5,14 +5,6 @@ title: Lists
 summary: Store many values under one name, then work through them one by one.
 language: python
 hook: "A playlist, a shopping cart, a class roll and a leaderboard are all lists: many values kept in order under one name."
-teachers: |
-  **Where it leads:** functions (the next lesson), where a list is something to pass in or hand back, then your own toolbox of functions. Later lessons return to lists with harder uses, which is where mastery comes from.
-
-  **Class ideas:** a colour palette the class votes on; a bar chart of the class's own numbers (siblings, minutes of homework) drawn with the turtle.
-
-  **Watch for:** counting from 1 instead of 0; an index one past the end (`IndexError`); `colours` and `colour` mixed up; forgetting the quotes round text.
-
-  **Unlocks:** the `list` snippet after Run, and `for each item` after Investigate.
 ---
 Variables hold one value. A **list** holds many, in order, under a single name.
 

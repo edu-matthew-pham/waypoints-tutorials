@@ -5,16 +5,6 @@ title: Functions that give answers
 summary: Return a value, combine functions, and use them inside loops.
 language: python
 hook: "Calculators, maps and games are full of functions that take something in and give an answer back."
-teachers: |
-  **Where it leads:** reusable calculations, building programs out of small tested pieces, and later modules. This is the second visit to functions: students already know how to write a function with parameters, so the focus is on `return` and on functions working together.
-
-  **Class ideas:** a class "toolbox" of unit conversions; a street where each student's house function has a different design; compare `print` and `return`.
-
-  **Watch for:** `print` used where `return` is needed (the value shows up but cannot be reused); code written after a `return` that never runs; forgetting to use the returned value.
-
-  **Scaffolding fades:** the Make step gives a blank file and a hint, with no starter functions. This is where you see whether the idea of a function has stuck.
-
-  **Checkpoint:** the Make step has a code check that looks for a function defined, called, and used in a loop.
 ---
 You can write functions that draw. Now you will write functions that **give an answer back**, and combine several functions to build something bigger.
 

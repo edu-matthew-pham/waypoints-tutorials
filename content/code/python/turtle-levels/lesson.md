@@ -7,16 +7,6 @@ summary: Turn the game into a real game with screens, levels and a turtle that m
 language: python
 modules: [ui]
 hook: "Every game is a loop that updates its data and redraws, and a few screens it moves between."
-teachers: |
-  **Optional, games direction:** for students who finished the challenge and want to make games. It leads to MakeCode Arcade (game states, levels and sprites with velocity) and microStudio (an update and draw loop).
-
-  **The big ideas:** a `state` variable with three values (title, play, over) instead of True or False, because a game has more than two screens; levels as a rule about the data (every 5 points); movement as many small steps on a timer, which is how game loops move sprites.
-
-  **Why the turtle moves in steps, not with speed():** an animated move runs to the end before the program can handle a click, so clicks would be missed. Small steps every 50 milliseconds keep the game responsive.
-
-  **Creative option:** a boss turtle that needs three clicks, a path that changes each level, or a high score kept between games.
-
-  **Watch for:** a state name spelt differently in two places ("Play" vs "play"), so a screen never draws; delay going too low (keep a minimum); forgetting to reset level and delay when a new game starts.
 ---
 Your game starts as soon as you press Start and just stops at the end. Real games have **screens** (a title, the game, game over), get harder as you play, and have things that **move**. Each is a small change to the game you already built.
 

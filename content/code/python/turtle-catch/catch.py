@@ -292,3 +292,109 @@ import random
 tx = random.randint(-150, 150)
 ty = random.randint(-120, 120)
 # endregion
+
+# region: sol-catch
+from turtle import *
+from ui import inside
+
+speed(0)
+penup()
+
+xs = [-120, 0, 120, 120, 0, -120]
+ys = [60, 110, 60, -50, -100, -50]
+place = 0
+tx = 0
+ty = 0
+score = 0
+
+
+def hop():
+    global place, tx, ty
+    tx = xs[place]
+    ty = ys[place]
+    place = (place + 1) % len(xs)
+    goto(tx, ty)
+    ontimer(hop, 1000)
+
+
+def show_score():
+    clear()
+    goto(-190, 160)
+    write(score, False, "left", ("Arial", 20, "normal"))
+    goto(tx, ty)
+
+
+def clicked(x, y):
+    global score
+    if inside(x, y, tx - 20, ty - 20, 40, 40):
+        score = score + 1
+        show_score()
+
+
+hop()
+show_score()
+onscreenclick(clicked)
+listen()
+mainloop()
+# endregion
+
+# region: sol-blink
+from turtle import *
+from ui import inside, draw_button
+
+speed(0)
+penup()
+hideturtle()
+
+xs = [-120, 0, 120, 120, 0, -120]
+ys = [60, 110, 60, -50, -100, -50]
+place = 0
+tx = 0
+ty = 0
+score = 0
+misses = 0
+showing = False
+
+
+def hop():
+    global place, tx, ty, showing
+    tx = xs[place]
+    ty = ys[place]
+    place = (place + 1) % len(xs)
+    goto(tx, ty)
+    showturtle()
+    showing = True
+    ontimer(hide, 700)
+    ontimer(hop, 1000)
+
+
+def hide():
+    global showing, misses
+    if showing:
+        misses = misses + 1
+        showing = False
+        hideturtle()
+
+
+def show_score():
+    clear()
+    goto(-190, 160)
+    write(score, False, "left", ("Arial", 20, "normal"))
+    goto(tx, ty)
+
+
+def clicked(x, y):
+    global score, showing
+    if showing and inside(x, y, tx - 20, ty - 20, 40, 40):
+        score = score + 1
+        showing = False
+        hideturtle()
+        show_score()
+
+
+hop()
+show_score()
+onscreenclick(clicked)
+listen()
+mainloop()
+# endregion

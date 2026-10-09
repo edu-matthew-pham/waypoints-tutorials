@@ -8,7 +8,8 @@
     "build:playground": "node tools/build-playground.mjs",
     "render": "node tools/build-playground.mjs && node tools/render.mjs",
     "build": "node tools/build-site.mjs",
-    "all": "npm run validate && npm run render && npm run build"
+    "all": "npm run validate && npm run render && npm run build",
+    "check-decks": "node tools/check-decks.mjs"
   },
   "engines": {
     "node": ">=20"

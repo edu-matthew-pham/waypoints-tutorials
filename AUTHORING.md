@@ -191,17 +191,43 @@ Suggested order: sequence, loop, variable, function (students write `def`), **sa
 
 ## 9. Hook, "Use it" step and teacher notes
 
-Optional frontmatter, all plain text:
+Optional frontmatter, plain text:
 
 ```yaml
 hook: "Loops are how a program draws 100 tiles without 100 lines of code."
-teachers: |
-  **Class ideas:** ...
-  **Watch for:** ...
 ```
 
 - `hook`: one or two sentences shown at the top of the lesson: where the skill appears in real life. No project, just the "why".
-- `teachers`: Markdown shown in a collapsed **For teachers** panel at the end: bigger project ideas, misconceptions, curriculum links. Larger real-world projects belong to the teacher and the class, not the tool.
+
+### teacher.yml (teacher notes, solutions, "Explain it to me")
+
+Teacher notes live in `teacher.yml` beside `lesson.md`. Write for any teacher, not a specialist: plain words, jargon explained on first use. `npm run validate` warns when a lesson in a course with units has none, or a code-checked task has no solution.
+
+```yaml
+summary: One sentence on what students do and see.
+time: 50                       # minutes
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 15 min · Make 10 min"
+goals: ["I can write a function with def and call it by name."]   # each starts "I can"
+before: Try the Make task yourself; the surprise for students is ...
+running: ["Predict and Run: ...", "Investigate: ...", "Make: ..."]  # what to do and say, in order
+stuck:                         # what you will see → a question to ask → the fix
+  - { see: "Nothing is drawn, and no error.", ask: "Where do you call the function?", fix: "Add square() below the def." }
+stretch: ...
+support: ...
+leads: Where it leads next, and class ideas (Markdown).
+exit: { q: "One question on the main idea", a: "Its answer" }
+explain: |                     # optional: the student "Explain it to me" panel (Markdown)
+  ...
+solutions:                     # work item → code region
+  step-4#t2: functions.py#sol-triangle
+  step-5: functions.py#sol-make
+```
+
+- **Where it shows:** the lesson's collapsed **For teachers** panel (no solutions), the teacher guide page `/teach/<course>/<lesson>/`, and the generated slides and worksheet. `explain` is a collapsed panel after the lesson intro.
+- **Solutions** are code regions (`sol-*`) in the lesson's `.py` files, keyed by work item: each Modify or Make step with a playground (`step-N`), or each of its tasks (`step-N#tM`). A solution must pass its task's code check (validate runs the rules). Multi-file solutions use `# file:` lines. Use only what students have met by then. An open Make task with no solution shows "any program that does what the step asks".
+- **Unit primers:** `content/<course>/primers/<unit id>.md` (front matter `title`, for example "Functions in 5 minutes"), shown on the course guide. Sections: the idea in plain words; why programmers use it; an everyday picture and where it breaks; try it yourself (5 minutes); questions students ask; how it connects.
+- **Generated at build time** (`tools/teach.mjs`, no AI) into `dist/teach/<course>/<lesson>/`: `deck.md` (Waypoints Prepare Marp: goal and "I can" slide, Predict and Investigate as Discussion and Check slides with click-to-reveal answers, Modify and Make as Activity slides with an "Open this step" link that opens the playground full screen via `?full=step-N`, an exit ticket; speaker notes from the notes above) and `worksheet.md` (Prepare Print: answers and solutions in `:::teacher-note`; Modify before Make is `:::typical`, later real-world steps `:::wider`). Each unit gets `cheatsheet-<unit>.md` from the snippets its lessons unlock. Code too long for a slide shrinks; programs over 27 lines link to the tutorial instead. After changing deck layout, `npm run check-decks` renders every deck and reports slides that overflow.
+
 - **Make vs a real-world Modify:** Make is an explicit task ("draw a house: a square with two lines on top"). A real-world step is a small, complete, pre-made example the student modifies (`stage: modify`, no check). Give it a heading that names the task ("Resize a room plan", "Extend a street"), not "In the real world": the real-world framing is implied by the example, the hook and the teacher notes. Larger projects belong to the teacher.
 - Clips are optional. Use one for a first-run demo or to explain why; skip it where students are about to do the thing in the playground.
 

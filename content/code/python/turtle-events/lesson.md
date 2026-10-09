@@ -5,18 +5,6 @@ title: Events
 summary: Make a program wait, then react when something happens.
 language: python
 hook: "Every app you use is waiting: for a tap, a key or a timer. Code runs when an event happens, not from top to bottom."
-teachers: |
-  **Where it leads:** the next lesson, where students build buttons from scratch. Turtle has no buttons, so they find out what a button really is.
-
-  **Class ideas:** a stamp painting the class designs together; steering a turtle through a maze drawn on paper; a timer-based animation.
-
-  **Watch for:** `onscreenclick(stamp())` with brackets (that calls the function now, instead of handing it over); the picture needing a click before the keys work; forgetting `mainloop()`, so the program ends before anything can happen.
-
-  **Callbacks:** a function passed in by name and run later is a callback. This is the idea under every user interface, so it is worth naming.
-
-  **Stop button:** a program waiting for events never finishes by itself. Students end it with Stop.
-
-  **Unlocks:** nothing new; the events commands are in the playground reference.
 ---
 Until now your program ran from the top to the bottom and stopped. Programs with a user interface do not work like that. They **wait**, and run a function when something happens. That function is called a **callback**.
 

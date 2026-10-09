@@ -21,7 +21,7 @@ Do these in order, and write each down before building the next.
 4. **Hidden assumptions.** For every construct on screen: the goal of this lesson, already taught (cite where), a recipe ("copy this line for now"), or a prerequisite to check. Fix gaps in the lesson that should have taught it, not in the one that trips over it (example: `global` was used in Events and Build a button but explained nowhere; the challenge exposed it).
 5. **Error tasks.** Plant this lesson's misconception, authentic, one named fault, symptom not answer, faithful to the real language (`AUTHORING.md` › Error tasks; ids in `misconceptions.json` with a home lesson).
 6. **Final challenge** (section 4).
-7. **For teachers** in every lesson: where it leads, class ideas, watch for, and the creative option.
+7. **Teacher notes** (`teacher.yml`, AUTHORING.md section 9) in every lesson, written for a non-specialist: the same sections every time, a see → ask → fix list for when students get stuck, and a tested solution for every task. Write the unit primer (`primers/<unit>.md`) with the unit. Slides, worksheets and cheat sheets are generated from these, so check them in Prepare once.
 
 ## 3. Lesson recipe
 

@@ -17,6 +17,7 @@ import { snippetId, unlockKind } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildHtmlPlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
+import { deckFor, worksheetFor, cheatSheetFor, lessonGuideBody, teachPath, stepUrl, SITE_URL, TEACH_CSS, TEACH_JS } from './teach.mjs';
 
 const require = createRequire(import.meta.url);
 const { highlightCode } = require('./highlight.cjs');
@@ -61,6 +62,7 @@ function buildLesson(lesson, parentTitle, course) {
     course,
     siteRoot: '../'.repeat(lesson.depth),
     source: `content/${lesson.slug}/lesson.md`,
+    teacherGuide: lesson.teacher ? `${'../'.repeat(lesson.depth)}${teachPath(lesson)}` : '',
     siteNavHtml: navFor(lesson.slug, 'lesson', lesson.slug.split('/').slice(0, -1).join('/')),
   }));
 }
@@ -257,7 +259,8 @@ for (const node of dirs.values()) {
       `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}${challenge}</header>` +
       (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') +
       `<div class="course" id="course" data-kind="${play?.kind || ''}">${rows}</div>` +
-      (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : ''),
+      (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : '') +
+      (courseLessons.some((l) => l.teacher) ? `<p class="ptools">For teachers: <a href="${up}teach/${node.path}/">Teacher guide</a> (notes, answers, solutions, slides and worksheets)</p>` : ''),
       `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'course', node.path)));
     continue;
   }
@@ -285,6 +288,64 @@ for (const node of dirs.values()) {
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
     `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header><ul class="lessons">${items}</ul>`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
 }
+
+// ---------- teacher guide: /teach/<course>/ and /teach/<lesson>/ with decks, worksheets and cheat sheets ----------
+const tmd = new Marked();
+const md = (t) => tmd.parse(String(t || ''));
+const snippetById = new Map(Object.values(snippetFiles).flatMap((d) => d.groups.flatMap((g) => g.items.map((i) => [snippetId(i.label), i]))));
+const teachCourses = [...new Set(lessons.filter((l) => l.teacher).map((l) => l.slug.split('/').slice(0, -1).join('/')))];
+const teachPage = (title, body, pagePath, coursePath) => page(title, `<style>${TEACH_CSS}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(pagePath, 'home', coursePath));
+for (const coursePath of teachCourses) {
+  const node = dirNode(coursePath);
+  const ls = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === coursePath);
+  const units = Array.isArray(node.meta?.units) ? node.meta.units : [];
+  const unitOf = (l) => units.find((u) => u.id === l.unit);
+  const courseDir = join(OUT, 'teach', coursePath);
+  mkdirSync(courseDir, { recursive: true });
+  for (const l of ls.filter((x) => x.teacher)) {
+    const dir = join(OUT, teachPath(l));
+    mkdirSync(dir, { recursive: true });
+    const snip = (ref) => getSnippet(l.dir, ref);
+    const ctx = { course: node.title, unit: unitOf(l)?.title || '', snip };
+    writeFileSync(join(dir, 'deck.md'), deckFor(l, ctx));
+    writeFileSync(join(dir, 'worksheet.md'), worksheetFor(l, ctx));
+    const files = [
+      { label: 'Slides', href: 'deck.md', url: `${SITE_URL}/${teachPath(l)}deck.md`, note: 'Present from the browser, or export to PowerPoint or PDF.' },
+      { label: 'Worksheet', href: 'worksheet.md', url: `${SITE_URL}/${teachPath(l)}worksheet.md`, note: 'Print the student copy; the Teacher edition has the answers.' },
+    ];
+    const body = lessonGuideBody(l, { esc, md, snip, highlightCode, codeBlock, studentHref: `${'../'.repeat(l.depth + 1)}${l.slug}/`, course: node.title, unit: ctx.unit, files });
+    writeFileSync(join(dir, 'index.html'), teachPage(`Teacher guide: ${l.title}`, body, `teach/${l.slug}`, coursePath));
+  }
+  // Course guide: how to use it, then each unit with its primer, cheat sheet and lessons.
+  const unitBlocks = (units.length ? units : [{ id: '', title: 'Lessons' }]).map((u) => {
+    const mine = ls.filter((l) => (u.id ? l.unit === u.id : true));
+    if (!mine.length) return '';
+    let primer = '';
+    const pf = join(CONTENT_ROOT, coursePath, 'primers', `${u.id}.md`);
+    if (u.id && existsSync(pf)) {
+      const raw = readFileSync(pf, 'utf8').replace(/\r\n/g, '\n');
+      const m = raw.match(/^---\n([\s\S]*?)\n---\n?/);
+      const title = m ? (m[1].match(/^title:\s*(.*)$/m) || [])[1] : '';
+      primer = `<details class="primer"><summary><b>${esc(title || `${u.title}: primer`)}</b> (read before teaching this unit)</summary>${md(m ? raw.slice(m[0].length) : raw)}</details>`;
+    }
+    let cheat = '';
+    if (u.id) {
+      const sheet = cheatSheetFor({ course: node.title, unit: u, lessons: mine, snippets: snippetById });
+      writeFileSync(join(courseDir, `cheatsheet-${u.id}.md`), sheet);
+      const url = `${SITE_URL}/teach/${coursePath}/cheatsheet-${u.id}.md`;
+      cheat = `<p>Cheat sheet: <a href="cheatsheet-${esc(u.id)}.md" download>Download</a> <button type="button" class="copyurl" data-url="${esc(url)}">Copy address for Prepare</button></p>`;
+    }
+    const rows = mine.map((l) => l.teacher
+      ? `<li><a href="${esc(l.slug.split('/').pop())}/">${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}</a>${l.optional ? ' <span class="muted">(optional)</span>' : ''} <span class="muted">· <a href="${esc(l.slug.split('/').pop())}/deck.md" download>slides</a> · <a href="${esc(l.slug.split('/').pop())}/worksheet.md" download>worksheet</a></span></li>`
+      : `<li>${esc(l.title)} <span class="muted">(teacher notes coming)</span></li>`).join('');
+    return `<section class="tunit"><h2>${esc(u.title)}</h2>${u.summary ? `<p class="muted">${esc(u.summary)}</p>` : ''}${primer}${cheat}<ul>${rows}</ul></section>`;
+  }).join('');
+  const intro = `<p>Each lesson works two ways. Students can work through the online tutorial at their own pace (it checks their answers and saves their progress in their browser), or you can teach it to the whole class from the slides, then send students into the tutorial for the Modify and Make steps.</p><p>Every lesson guide has plain-language notes, the answers to every check, a solution for every task, and slides and a worksheet for <a href="https://prepare.learningwaypoints.com/" target="_blank" rel="noopener">Waypoints Prepare</a>. These guide pages are not linked from student pages, but they are not secret either: keep printed Teacher editions for answers you do not want students to find.</p>`;
+  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${unitBlocks}`, `teach/${coursePath}`, coursePath));
+}
+mkdirSync(join(OUT, 'teach'), { recursive: true });
+writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>`, 'teach', null));
+
 writeFileSync(join(OUT, '.nojekyll'), '');
 
 const missing = lessons.flatMap((l) => l.steps.filter((s) => s.config.clip && !existsSync(join(OUT, l.slug, 'clips', `${s.id}.mp4`))).map((s) => `${l.slug}/${s.id}`));
