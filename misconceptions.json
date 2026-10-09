@@ -23,5 +23,8 @@
   "semantic-tags-look": {"home": "code/html/sections", "text": "Section tags such as header and footer change how a page looks or where things go; they only name the parts, and CSS decides the look."},
   "grid-on-items": {"home": "code/html/grid", "text": "display: grid and its columns go on each item, instead of on the box that holds them."},
   "run-once-vs-forever": {"home": "code/microbit/microbit-leds", "text": "Blocks in on start keep running; in fact they run once and the last picture stays."},
-  "button-check-once": {"home": "code/microbit/microbit-buttons", "text": "Checking a button in on start watches for presses; in fact it checks once, at the start, before anyone presses."}
+  "button-check-once": {"home": "code/microbit/microbit-buttons", "text": "Checking a button in on start watches for presses; in fact it checks once, at the start, before anyone presses."},
+  "reset-in-loop": {"home": "code/microbit/microbit-counting", "text": "Setting a variable's start value inside forever is harmless; in fact it resets the variable again and again, wiping every change."},
+  "comparison-direction": {"home": "code/microbit/microbit-if", "text": "< and > can be read either way round, so the condition is true in the opposite case to the one intended."},
+  "else-if-order": {"home": "code/microbit/microbit-else", "text": "Every else if is checked; in fact the first true question wins, so a wider question asked first hides the narrower ones after it."}
 }
