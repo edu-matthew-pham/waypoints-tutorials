@@ -220,3 +220,14 @@ button.clcard { cursor: pointer; }
 .clcard { position: relative; }
 .clx { position: absolute; top: 4px; right: 4px; width: 26px; height: 26px; border-radius: 50%; border: 0; background: rgba(0,0,0,.6); color: #fff; font: 700 16px/1 system-ui, sans-serif; cursor: pointer; }
 .clx:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+
+/* Carbon cycle */
+.cgraph svg { display: block; width: 100%; max-width: 640px; height: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.cgraph .ctick text { font: 11px system-ui, sans-serif; fill: var(--muted); }
+.cgraph .cgrid { stroke: var(--line); stroke-width: 1; }
+.cgraph .cline { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+.cgraph .hpt { fill: var(--accent); }
+.uspec svg { display: block; width: 100%; max-width: 560px; height: auto; margin-top: 6px; }
+.uspec text { font: 11px system-ui, sans-serif; fill: var(--muted); }
+.sphinfo { min-height: 4.6em; }
