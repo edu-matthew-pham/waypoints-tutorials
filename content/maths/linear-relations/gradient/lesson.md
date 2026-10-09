@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 unit: lines
 title: What m does to a line
 summary: In y = mx + c, the number in front of x sets how steep the line is and which way it goes.

@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 unit: using
 title: Solving equations with graphs
 summary: Draw each side of an equation as a line. Where the lines meet, both sides are equal, so the x there is the solution.

@@ -456,6 +456,12 @@ Vary, Practise, Make).
     - `axes: d (km), T ($)`: names for a context. The axes are labelled with them, and the legend, table and `cross:`
       use the letters (`T = 2d + 4`). Plots, points and `when:` conditions still use x and y.
     - `cross: 1, 2`: where plots 1 and 2 meet (by number, in order): a point with its coordinates and a dashed line down to the x-axis labelled `x = …`. Nothing is drawn when they do not meet (parallel lines). Leave it off where students should find the point themselves.
+  - `widget: pattern`: figure n of a growing pattern, with what each figure adds in orange. `shape: squares` (sticks,
+    3n + 1), `triangles` (2n + 1), `cross` (dots, 4n + 1) or `columns` (`add: 3`, `start: 2`: an + b dots; `adjust: on`
+    gives sliders a and b). `n: 1, 8, 1` (first, last, start), `count: on` shows the count. Scope: n, s (the count), a, b.
+  - `widget: rule`: a rule machine. `rule: y = 2x + 3`, `x: -5, 10` (allowed inputs), `start: 0`. Students put inputs in,
+    see the substitution and collect ordered pairs in a table. Scope: k (pairs), l and h (lowest and highest input), x, y.
+    Condition names are single letters (`lo` would read as l × o).
   - `widget: forces` (any subject; first used by the physics lessons): a force diagram and, with `motion: on`, the
     motion it causes.
     - `object: Box` (its name), `mass: 2` (kg; `mass: 1, 10, 2` is a slider), `g: 9.8` (N/kg) or
