@@ -93,6 +93,21 @@ export async function buildMathsPlayground(out = 'dist') {
   return dest;
 }
 
+/** The science board: our files (the particle engine and widgets) and vendored JSXGraph, like the maths board. */
+export function buildSciencePlayground(out = 'dist') {
+  const dest = join(out, '_playground-science');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-science'), dest, { recursive: true });
+  mkdirSync(join(dest, 'vendor'), { recursive: true });
+  for (const f of ['jsxgraphcore.js', 'jsxgraph.css']) {
+    const src = join(root, 'node_modules', 'jsxgraph', 'distrib', f);
+    if (!existsSync(src)) throw new Error(`Missing ${src}. Run "npm ci" first.`);
+    copyFileSync(src, join(dest, 'vendor', f));
+  }
+  stampPlayground(dest);
+  return dest;
+}
+
 /** The MakeCode playground hosts the MakeCode editor (micro:bit or Arcade) from makecode.com: our page only, copied as is. */
 export function buildMakecodePlayground(out = 'dist') {
   const dest = join(out, '_playground-makecode');
@@ -119,4 +134,5 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   console.log('HTML playground built into ' + buildHtmlPlayground(out));
   console.log('Maths board built into ' + await buildMathsPlayground(out));
   console.log('MakeCode playground built into ' + buildMakecodePlayground(out));
+  console.log('Science board built into ' + buildSciencePlayground(out));
 }

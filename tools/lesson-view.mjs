@@ -24,6 +24,18 @@ export const STAGE_INFO_MATHS = {
   make: ['Make', 'Make your own problem using what you have learned.'],
   info: ['Info', ''],
 };
+/** Science lessons use the 5E words (Engage, Explore, Explain, Elaborate, Evaluate) on the same stages, so predict-and-compare,
+ * decks and worksheets work unchanged: predict = Engage, run = Explore, investigate = Explain, modify = Elaborate, info = Evaluate. */
+export const STAGE_INFO_SCIENCE = {
+  predict: ['Engage', 'Commit to a prediction before you test anything.'],
+  run: ['Explore', 'Try it on the board and compare what happens with your prediction.'],
+  investigate: ['Explain', 'Use the particle model to explain what you saw.'],
+  modify: ['Elaborate', 'Use the same idea in a new context.'],
+  practise: ['Practise', 'A few on your own, to check you have it.'],
+  make: ['Elaborate', 'Use the same idea in a new context.'],
+  info: ['Evaluate', 'Look back at your first ideas and what changed.'],
+};
+const TIER_LABEL = { typical: 'Typical', wider: 'Wider' };
 export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 
 
@@ -72,7 +84,7 @@ section.step{scroll-margin-top:calc(var(--cb,0px) + 64px)}
 .coursebar a,.cb-toggle{font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:6px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
 .coursebar a:hover,.cb-toggle:hover{background:var(--card)}
 .cb-prev,.cb-next{flex:0 1 auto;min-width:34px}.cb-next{text-align:right}
-.cb-mid{position:relative;flex:1;text-align:center}.cb-toggle{max-width:100%}
+.cb-mid{position:relative;flex:1;min-width:0;text-align:center}.cb-toggle{max-width:100%}
 .cb-menu{position:absolute;left:50%;transform:translateX(-50%);top:42px;width:min(92vw,440px);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);text-align:left}
 .cb-menu[hidden]{display:none}.cb-menu ul{list-style:none;margin:0;padding:0}
 .cb-menu li a{display:flex;gap:8px;align-items:center;max-width:none;white-space:normal;font-weight:500}.cb-menu li a[aria-current]{font-weight:700;background:var(--bg)}
@@ -146,6 +158,12 @@ details.reveal summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(-
 details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
 .legend{display:grid;gap:6px;margin:10px 0 0;padding:0;list-style:none;font-size:15px;color:var(--muted)}
 .legend b{color:var(--c)}
+.widthbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 14px;margin:14px 0 0}
+.widthbar .wnote{display:block;font-size:14px;color:var(--muted)}.wseg{display:inline-flex;gap:2px;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--bg)}
+.wseg button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:var(--ink);border-radius:99px;padding:5px 12px;cursor:pointer}.wseg button[aria-pressed=true]{background:var(--accent);color:#fff}
+@media(prefers-color-scheme:dark){.wseg button[aria-pressed=true]{color:#0f141a}}.wseg button:disabled{opacity:.4;cursor:not-allowed}
+.tierchip{font-size:11px;letter-spacing:.06em;padding:1px 7px;border-radius:99px;border:1px solid currentColor;margin-left:6px}
+[data-tier][hidden]{display:none!important}footer code{overflow-wrap:anywhere}.srow{flex-wrap:wrap}.srow span{font-family:inherit;font-size:15px}.srow .swhy{flex-basis:100%;color:var(--muted)}
 ul.lessons{list-style:none;padding:0;display:grid;gap:14px}ul.lessons a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;text-decoration:none;color:inherit}
 .ctop{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.ctop h1{margin-bottom:0}
 .chips{display:flex;gap:8px}.chip{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:99px;text-transform:none;letter-spacing:normal}.chip:hover{border-color:var(--accent)}
@@ -320,7 +338,7 @@ if(go){go.addEventListener('click',function(){
 var pick=box.querySelector('input[type=radio]:checked');
 if(!pick){msg.className='msg no';msg.textContent='Choose an answer first.';return}
 if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
-else{msg.className='msg no';msg.textContent=kind==='maths'?'Not quite. Read it again and try another answer.':'Not quite. Look at the code again and try another answer.'}})}
+else{msg.className='msg no';var fbk=box.dataset.feedback?JSON.parse(box.dataset.feedback)[Number(pick.value)]:'';msg.textContent=fbk?'Not quite. '+fbk:(kind==='maths'||kind==='science')?'Not quite. Read it again and try another answer.':'Not quite. Look at the code again and try another answer.'}})}
 function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
 function bad(t){msg.className='msg no';msg.textContent=t}
 var btn=box.querySelector('button');
@@ -328,6 +346,9 @@ if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(
 if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad(kind==='maths'?'Not quite. Check your working and try another number.':'Not quite. Look at the code again and try another number.')})}
 if(ty==='bug'){var good=JSON.parse(box.dataset.answers).map(String),found={};[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
 var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad(kind==='maths'?'Not that line. Read the working again, one line at a time.':'Not that line. Read the code again, one line at a time.')}})})}
+if(ty==='sort'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
+[].forEach.call(box.querySelectorAll('.srow'),function(r,i){var sel=r.querySelector('select'),ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false;var w=r.querySelector('.swhy');if(w)w.hidden=!ok});
+if(all)win();else bad('Some are not in the right group yet. Check the ones outlined in red.')})}
 if(ty==='match'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
 [].forEach.call(box.querySelectorAll('select'),function(sel,i){var ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false});
 if(all)win();else bad('Some do not match yet. Check the ones outlined in red.')})}
@@ -337,7 +358,7 @@ if(all)win();else bad(kind==='maths'?'Some cells are not right yet. Work through
 if(ty==='predict'&&btn){var PK='wp-predict';
 function pload(){try{return JSON.parse(localStorage.getItem(PK))||{}}catch(e){return {}}}
 function plock(v){var p=pload();p[key]=v;try{localStorage.setItem(PK,JSON.stringify(p))}catch(e){}}
-function freeze(v){[].forEach.call(box.querySelectorAll('input'),function(i){i.disabled=true;if(i.type==='radio')i.checked=(i.value===v);else i.value=v});btn.hidden=true;msg.className='msg ok';msg.textContent='Locked in. Now run it and compare.'}
+function freeze(v){[].forEach.call(box.querySelectorAll('input'),function(i){i.disabled=true;if(i.type==='radio')i.checked=(i.value===v);else i.value=v});btn.hidden=true;msg.className='msg ok';msg.textContent=kind==='science'?'Locked in. Now try it on the board and compare.':'Locked in. Now run it and compare.'}
 var saved=pload()[key];if(saved!==undefined&&saved!==null)freeze(saved);
 btn.addEventListener('click',function(){var r=box.querySelector('input[type=radio]:checked'),i=box.querySelector('input.pin'),v=r?r.value:(i?i.value.trim():'');
 if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v);try{document.dispatchEvent(new CustomEvent('wp-predict',{detail:key}))}catch(e){}})}
@@ -352,7 +373,7 @@ for(var i=0;i<fb.length;i++){try{if(WPM.equivalent(a,String(fb[i][0])))return ba
 bad('Not quite. Check your working and try again.')}catch(e){bad(e.message)}}
 btn.addEventListener('click',tryIt);inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryIt()})}
 if(ty==='board'){var want=JSON.parse(box.dataset.expect);
-window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.kind!=='maths'||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.kind!==box.dataset.kind||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
 var ok=Object.keys(want).every(function(k){var a=m.state&&m.state[k],b=want[k];return typeof b==='number'?Math.abs(Number(a)-b)<1e-9:a===b});
 if(ok){if(!box.classList.contains('done'))win()}else if(!box.classList.contains('done')){msg.className='msg';msg.textContent='Keep going.'}})}
 });
@@ -403,7 +424,7 @@ box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw(
 [].forEach.call(document.querySelectorAll('.tasks'),function(w){
 [].forEach.call(w.querySelectorAll('.tp'),function(p){p.addEventListener('click',function(){var i=p.dataset.i;
 [].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))});
-if(w.dataset.kind==='maths'){var rs=w.querySelector('.tpanel.active .resetstart'),f=w.querySelector('iframe');if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
+if(w.dataset.kind==='maths'||w.dataset.kind==='science'){var rs=w.querySelector('.tpanel.active .resetstart'),f=w.querySelector('iframe');if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
 [].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=w.querySelector('iframe');if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
 sync(w)});
 })();`;
@@ -482,8 +503,13 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
       `<div class="parsons"><div class="pcol"><b>Pieces (click to add)</b><ul class="ppool"></ul></div><div class="pcol"><b>Your program</b><ol class="pprog"></ol></div></div>` +
       `<button type="button" class="pcheck">Check order</button> <button type="button" class="preset">Start again</button>${msg}</div>`;
   }
+  if (k.type === 'sort') {
+    const opts = `<option value="">Choose…</option>` + k.options.map((o) => `<option value="${esc(o)}">${esc(o)}</option>`).join('');
+    return `<div class="check" ${base} data-answers="${esc(JSON.stringify(k.items.map((it) => it[1])))}"><p class="check-q">${tx(k.q || 'Sort each one into its group.')}</p>` +
+      k.items.map((it) => `<div class="mrow srow"><span>${tx(it[0])}</span><select aria-label="${esc(String(it[0]).replace(/\$/g, ''))}">${opts}</select>${it[2] ? `<small class="swhy" hidden>${esc(plain(it[2]))}</small>` : ''}</div>`).join('') + `<button type="button">Check answers</button>${msg}</div>`;
+  }
   const name = `q-${lesson.slug}-${step.id}${task ? `-t${task.index}` : ''}`.replace(/[^a-z0-9-]/gi, '-');
-  return `<div class="check" ${base} data-answer="${k.answer}"><fieldset><legend>${tx(k.q)}</legend>` +
+  return `<div class="check" ${base} data-answer="${k.answer}"${k.feedback ? ` data-feedback="${esc(JSON.stringify(k.feedback.map((f) => (f ? plain(f) : ''))))}"` : ''}><fieldset><legend>${tx(k.q)}</legend>` +
     k.options.map((o, i) => `<label><input type="radio" name="${name}" value="${i}"><span>${tx(o)}</span></label>`).join('') +
     `</fieldset><button type="button">Check answer</button>${msg}</div>`;
 }
@@ -509,9 +535,15 @@ export function lessonPageHtml(lesson, deps) {
     const s = t.replace(STAGE_PREFIX, '');
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
-  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info'))];
-  const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
-  const SI = lesson.language === 'maths' ? STAGE_INFO_MATHS : STAGE_INFO;
+  const isSci = lesson.language === 'science';
+  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci))];
+  const tierAttr = (c) => (c.tier ? ` data-tier="${esc(c.tier)}"` : '');
+  const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"${tierAttr(s.config)}><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
+  const SI = lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
+  // Width tiers: steps marked typical or wider are extra contexts. A teacher sets the starting width with ?width=;
+  // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
+  const tiered = lesson.steps.some((s) => s.config.tier);
+  const widthBar = !tiered ? '' : `<div class="widthbar" aria-label="Lesson width"><div><b>Width</b><span class="wnote">More contexts, same idea.</span></div><div class="wseg" role="group" aria-label="Choose width">${TIERS_UI.map((t) => `<button type="button" data-w="${t}" aria-pressed="false">${t[0].toUpperCase() + t.slice(1)}</button>`).join('')}</div></div>`;
   const legend = stagesUsed.filter((k) => SI[k]).map((k) => `<li style="--c:var(--${k})"><b>${SI[k][0]}</b>: ${esc(SI[k][1])}</li>`).join('');
 
   const steps = lesson.steps.map((s) => {
@@ -563,7 +595,7 @@ export function lessonPageHtml(lesson, deps) {
         : c.reveal ? `${body}${showCode}${shown}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${clip}${checks}`
         : `${body}${showCode}${shown}${clip}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${checks}`;
     }
-    return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"><div class="chip">${esc(label)}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
+    return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"${tierAttr(c)}><div class="chip">${esc(label)}${c.tier ? ` <span class="tierchip">${TIER_LABEL[c.tier]}</span>` : ''}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
 
   // Course bar (prev / where am I / next) and the card at the end. course: { index, total, prev, next, list, pathHref, pathTitle, playground }
@@ -611,8 +643,9 @@ ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
 ${md.parse(lesson.intro)}
 ${explainHtml}
 <ul class="legend">${legend}</ul>
+${widthBar}
 <nav class="steps">${nav}</nav>
-${steps}
+${steps}${tiered ? `<script>${WIDTH_JS}</script>` : ''}
 ${teachersHtml}
 ${nextCard}
 ${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : ''), siteNavHtml);
@@ -624,7 +657,17 @@ export const PLAYGROUNDS = {
   maths: { dir: '_playground-maths', title: 'Maths board' },
   microbit: { dir: '_playground-makecode', title: 'micro:bit MakeCode editor', height: 640 },
   arcade: { dir: '_playground-makecode', title: 'MakeCode Arcade editor', height: 640 },
+  science: { dir: '_playground-science', title: 'Science board' },
 };
+
+const TIERS_UI = ['minimum', 'typical', 'wider'];
+/** Width control: hides steps above the chosen width. ?width= sets the floor (a teacher's link); the choice is kept per lesson in this tab. */
+const WIDTH_JS = `(function(){var R={minimum:0,typical:1,wider:2};var q=new URLSearchParams(location.search).get('width');var floor=q in R?q:'minimum';
+var key='wp-width:'+location.pathname,cur;try{cur=sessionStorage.getItem(key)}catch(e){}if(!(cur in R)||R[cur]<R[floor])cur=q in R?q:'typical';
+var bar=document.querySelector('.widthbar');function apply(){document.querySelectorAll('[data-tier]').forEach(function(el){el.hidden=R[el.dataset.tier]>R[cur]});
+bar.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.w===cur));b.disabled=R[b.dataset.w]<R[floor]});
+bar.querySelector('.wnote').textContent=(q in R?'Your teacher set '+floor+'. You can add more contexts. ':'More contexts, same idea. ')+'Showing '+cur+'.';try{sessionStorage.setItem(key,cur)}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;cur=b.dataset.w;apply()});apply()})();`;
 
 /** Extra styles for maths lessons: display maths, worked examples, typed answers. */
 export const MATHS_CSS = `.mathblock{overflow-x:auto;overflow-y:hidden;margin:.6em 0}.katex{font-size:1.12em}
@@ -652,6 +695,6 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
   if (versions?.[pg.dir]) q.set('v', versions[pg.dir]); // a new deploy gets a new URL, never a cached old playground
-  return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>Your edits are saved in this browser.</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
+  return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>${pg === PLAYGROUNDS.science ? 'Nothing is saved: start again as often as you like.' : 'Your edits are saved in this browser.'}</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
     `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || pg.height || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;
 }

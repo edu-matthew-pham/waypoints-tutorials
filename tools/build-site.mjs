@@ -15,7 +15,7 @@ import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV
 import { readFileSync } from 'node:fs';
 import { snippetId, unlockKind, pictureSpec } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
-import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildKatex, buildMakecodePlayground } from './build-playground.mjs';
+import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildMakecodePlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { loadMathsCards, mathsRefItem, mathsCheatBody, mathsCheatMd, MATHS_CARD_CSS } from './maths-cards.mjs';
@@ -117,10 +117,11 @@ mkdirSync(OUT, { recursive: true });
 buildPlayground(OUT);
 buildHtmlPlayground(OUT);
 await buildMathsPlayground(OUT);
+buildSciencePlayground(OUT);
 buildKatex(OUT);
 buildMakecodePlayground(OUT);
 // Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
-const VERSIONS = Object.fromEntries(['_playground', '_playground-html', '_playground-maths', '_playground-makecode'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
+const VERSIONS = Object.fromEntries(['_playground', '_playground-html', '_playground-maths', '_playground-makecode', '_playground-science'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
 buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
@@ -222,7 +223,7 @@ for (const r of REFS) {
 
 // Playground pages live beside Reference on the paths that have a playground (PLAY is defined above).
 // One segment per check, in lesson order: its progress key, the step anchor and a label (for the course page).
-const segmentsOf = (l) => l.steps.flatMap((s) => {
+const segmentsOf = (l) => l.steps.filter((s) => !s.config.tier).flatMap((s) => {
   const bare = s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '');
   const step = bare.charAt(0).toUpperCase() + bare.slice(1);
   const stage = s.config.stage || 'info';
@@ -230,7 +231,8 @@ const segmentsOf = (l) => l.steps.flatMap((s) => {
     ? s.tasks.filter((t) => t.config.check).map((t) => ({ key: `${l.slug}/${t.id}`, href: `#${s.id}`, label: s.tasks.length > 1 ? `${step} › ${t.title}` : step, stage }))
     : s.config.check ? [{ key: `${l.slug}/${s.id}`, href: `#${s.id}`, label: step, stage }] : [];
 });
-const checkKeys = (l) => l.steps.flatMap((s) => s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => `${l.slug}/${t.id}`) : s.config.check ? [`${l.slug}/${s.id}`] : []);
+// Steps with a width tier (typical, wider) are extra contexts: their checks are not needed to finish a lesson.
+const checkKeys = (l) => l.steps.filter((s) => !s.config.tier).flatMap((s) => s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => `${l.slug}/${t.id}`) : s.config.check ? [`${l.slug}/${s.id}`] : []);
 for (const l of lessons) {
   const parentPath = l.slug.split('/').slice(0, -1).join('/');
   const sibs = lessons.filter((x) => x.slug.split('/').slice(0, -1).join('/') === parentPath);
