@@ -45,5 +45,7 @@
   "arcade-define-not-call": {"home": "code/arcade/arcade-functions", "text": "Making a function runs it; in fact its blocks only run when something calls it."},
   "jump-midair": {"home": "code/arcade/arcade-gravity", "text": "A jump only needs a speed upwards; without a check that the sprite is on the ground, every press jumps again, even in the air."},
   "update-fires-every-frame": {"home": "code/arcade/arcade-levels", "text": "An if in on game update fires once when it becomes true; in fact it fires every frame while it stays true."},
-  "overlap-not-collision": {"home": "code/arcade/arcade-fit", "text": "Touching sprites push each other, like objects; in fact an overlap is only an event, so sprites pass through each other unless your blocks move them."}
+  "overlap-not-collision": {"home": "code/arcade/arcade-fit", "text": "Touching sprites push each other, like objects; in fact an overlap is only an event, so sprites pass through each other unless your blocks move them."},
+  "timed-move-stops": {"home": "code/robotics/robot-drive", "text": "A move with a time (for 1000 ms) stops when the time is up; in fact the motors keep going until another motor block changes them."},
+  "line-steer-wrong-way": {"home": "code/robotics/robot-line", "text": "When a line sensor sees the line, steer away from it; in fact a sensor on the line means the line is on that side, so steer towards it."}
 }
