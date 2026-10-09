@@ -8,14 +8,19 @@
 // pictures.json: { id: { w, h, hash, div? } }; div is device pixels per printed pixel (default 5.2, turtle).
 // Part of `npm run render` (after build-playground). Cached: a picture is redrawn only when its
 // example or the playground changed (pictures.json keeps the hashes). --force redraws all.
+// --seed <url>: first download pictures whose hash matches the live site's pictures.json.
+// --check: draw nothing; report how many pictures need drawing (pictures_stale=N to $GITHUB_OUTPUT).
 import { chromium } from 'playwright-core';
 import { createServer } from 'node:http';
 import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
-import { join, extname, resolve, dirname } from 'node:path';
+import { join, extname, resolve, dirname, relative } from 'node:path';
 
 const OUT = resolve(process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist');
 const FORCE = process.argv.includes('--force');
+const CHECK = process.argv.includes('--check');
+const SEED = process.argv.includes('--seed') ? process.argv[process.argv.indexOf('--seed') + 1].replace(/\/$/, '') : null;
+let stale = 0, seeded = 0;
 const DIR = join(OUT, '_pictures');
 mkdirSync(DIR, { recursive: true });
 
@@ -44,9 +49,32 @@ async function pictures({ name, dir, base, jobs, viewport, draw }) {
   const manifestPath = join(dir, 'pictures.json');
   const old = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : {};
   const hashOf = (j) => createHash('sha1').update(base).update(j.code).digest('hex').slice(0, 16);
-  const todo = jobs.filter((j) => FORCE || old[j.id]?.hash !== hashOf(j) || !existsSync(join(dir, `${j.id}.png`)));
+  let todo = jobs.filter((j) => FORCE || old[j.id]?.hash !== hashOf(j) || !existsSync(join(dir, `${j.id}.png`)));
   const manifest = {};
   for (const j of jobs) if (!todo.includes(j) && old[j.id]) manifest[j.id] = old[j.id];
+  // Same hash = same picture: take it from the live site instead of drawing it.
+  if (SEED && todo.length && !FORCE) {
+    const url = `${SEED}/${relative(OUT, dir).split('\\').join('/')}`;
+    const live = await fetch(`${url}/pictures.json`, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    const left = [];
+    for (const j of todo) {
+      const ok = live[j.id]?.hash === hashOf(j) && await fetch(`${url}/${j.id}.png`).then(async (r) => {
+        if (!r.ok) return false;
+        mkdirSync(dirname(join(dir, `${j.id}.png`)), { recursive: true });
+        writeFileSync(join(dir, `${j.id}.png`), Buffer.from(await r.arrayBuffer()));
+        return true;
+      }).catch(() => false);
+      if (ok) { manifest[j.id] = live[j.id]; seeded++; } else left.push(j);
+    }
+    todo = left;
+  }
+  stale += todo.length;
+  if (CHECK) {
+    for (const j of todo) if (old[j.id]) manifest[j.id] = old[j.id]; // keep entries; the real run decides
+    writeFileSync(manifestPath, JSON.stringify(manifest, null, 1) + '\n');
+    console.log(`Pictures (${name}): ${jobs.length} examples, ${todo.length} to draw.`);
+    return;
+  }
   if (todo.length) {
     await open();
     const page = await browser.newPage({ viewport, deviceScaleFactor: 2 });
@@ -257,3 +285,5 @@ if (existsSync('snippets/maths.json')) await pictures({
 }
 
 if (browser) { await browser.close(); server.close(); }
+if (SEED) console.log(`Pictures: ${seeded} downloaded from the live site.`);
+if (process.env.GITHUB_OUTPUT) writeFileSync(process.env.GITHUB_OUTPUT, `pictures_stale=${stale}\n`, { flag: 'a' });

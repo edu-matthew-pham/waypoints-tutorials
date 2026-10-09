@@ -31,30 +31,29 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install tooling
-        run: |
-          npm ci --omit=optional   # skip the sandbox-only bundled Chromium
-          npx playwright-core install --with-deps chromium
-          sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install site tools
+        run: npm ci --omit=optional   # skip the sandbox-only bundled Chromium
 
       - name: Validate lessons
         run: npm run validate
 
-      # Pictures for the cheat sheets are cached between runs (render-pictures compares hashes).
-      - uses: actions/cache@v4
-        with:
-          path: dist/_pictures
-          key: pictures-${{ hashFiles('snippets/**', 'playground*/**', 'media/**', 'tools/render-pictures.mjs') }}
-          restore-keys: pictures-
+      # Clips and pictures whose hash matches the published one are downloaded from the live site
+      # (same inputs, same output). Only the rest need a browser, ffmpeg and the lesson apps.
+      - name: Fetch unchanged clips and pictures
+        id: reuse
+        run: |
+          node tools/build-playground.mjs
+          node tools/render-pictures.mjs --seed https://tutorials.learningwaypoints.com --check
+          node tools/render.mjs --seed https://tutorials.learningwaypoints.com --check
 
-      # Clips whose hash matches the published one are downloaded from the live site instead of re-recorded
-      # (same inputs, same clip). Only the rest need the lesson apps and a recording.
-      - name: Fetch unchanged clips
-        id: clips
-        run: node tools/build-playground.mjs && node tools/render.mjs --seed https://tutorials.learningwaypoints.com --check
+      - name: Install browser and ffmpeg
+        if: steps.reuse.outputs.stale != '0' || steps.reuse.outputs.pictures_stale != '0'
+        run: |
+          npx playwright-core install --with-deps chromium
+          sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Install lesson dependencies
-        if: steps.clips.outputs.stale != '0'
+        if: steps.reuse.outputs.stale != '0'
         run: |
           for f in $(find content -name requirements.txt); do
             [ -f "$f" ] && pip install -r "$f"
@@ -63,7 +62,7 @@ jobs:
             (cd "$(dirname "$f")" && npm ci)
           done
 
-      - name: Render clips
+      - name: Render new clips and pictures
         run: npm run render
 
       - name: Build site
