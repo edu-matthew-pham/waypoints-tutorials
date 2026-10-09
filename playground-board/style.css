@@ -197,3 +197,13 @@ button.clcard { cursor: pointer; }
 .srnote { font: 15px system-ui, sans-serif; fill: var(--muted); }
 .srvals { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; }
 .srkey { display: block; height: 4px; border-radius: 2px; }
+
+
+/* Earth, sun and moon */
+.skyinfo span { margin-left: .2em; }
+.skyplace { display: inline-flex; align-items: center; gap: 6px; font: 600 14px/1 system-ui, sans-serif; }
+.skyplace select { font: 14px system-ui, sans-serif; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.skytally { font-size: 14px; color: var(--muted); margin-left: 6px; }
+.skylog { margin: 4px 0 0; padding-left: 1.4em; font-size: 13px; color: var(--muted); max-height: 9em; overflow-y: auto; }
+.skylog li:first-child { color: var(--ink); }
+.fbar button:disabled { opacity: .5; cursor: default; }

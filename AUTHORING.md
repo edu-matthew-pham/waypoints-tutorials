@@ -532,6 +532,25 @@ Vary, Practise, Make).
     `gene: P | purple flowers | p | white flowers` and `parents: Pp x Pp` (or `choose`): students click-cycle the
     gametes and grid cells, then Breed 100 offspring (`f` 1 when right, `n` bred, `p` percent dominant). Use traits
     that really are one gene with full dominance (pea flowers, guinea pig fur), not eye colour.
+  - `widget: sky` (Earth, sun and moon, AC9S7U03): one geometric model, two views side by side (one at a time, with
+    a swap button, on narrow screens). Not to scale; angles, day lengths, timings and eclipse limits are real.
+    - `mode: earth`: from above (the Earth's orbit, its axis always pointing the same way) and from the side (the sun
+      to the left: the lean towards the sun, day and night, and a place's latitude). Date slider, Play a day, Play a
+      year, a Place menu (`place: Canberra`; Darwin, Hobart, Singapore, London, Tromsø, Davis station), `tilt: choose`
+      for a tilt slider. Values: `d` day of year, `r` days played, `o` years played, `h` daylight hours, `a` noon sun
+      height, `k` distance (million km), `t` tilt, `m` months looked at and `g` longest minus shortest daylight seen
+      (both reset when the place or tilt changes), `p` places, `q` hemispheres (1 or 2).
+    - `mode: moon`: drag the moon round the Earth (Next phase, Play a month) beside "what you see from Earth"
+      (`view: south` (default, waxing lit on the left) or `north`). `shadow: on` adds a button showing Earth's shadow.
+      `quiz: on` places the moon and hides the view; students name the phase (`need`, default 5). Values: `n` phases
+      visited (of 8), `f` percent lit, `e` days since new moon, `c` named right, `w` wrong.
+    - `mode: eclipse`: from above (the moon's orbit, bright where it is above Earth's orbit plane, and the crossing
+      line) and from the side (tilt and shadows exaggerated). Next full moon / Next new moon steps half a month, with
+      a log; the first eclipses come in month 4. `tilt: choose` adds "Flatten the moon's orbit". Values: `m` steps,
+      `s` solar, `u` lunar (partial or total), `b` penumbral, `f` 1 while flat, `l` steps while flat.
+    - `mode: tides`: the oceans' two bulges (moon, and smaller ones from the sun), a beach turning with the Earth
+      (Play a day at the beach), Moon: next quarter or drag, and a month of tides with today marked. Values: `d` days
+      since new moon, `r` range (m), `s` spring tides found (of 2), `q` neap tides found (of 2), `b` beach days.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working

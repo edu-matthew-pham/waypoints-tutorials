@@ -30,6 +30,6 @@ pathways:
     title: Earth and space
     summary: The Earth, sun and moon, then rocks and moving plates.
     courses:
-      - { id: earth-space-7, title: Year 7 Earth and space, stage: foundations, summary: "Day and night, moon phases, eclipses, seasons and tides, modelled as cycles." }
+      - { path: science/earth-7, stage: foundations }
       - { path: science/earth-8, stage: foundations }
 ---
