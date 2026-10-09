@@ -2,6 +2,8 @@
 
 How a course is designed and built here, learned from Python Foundations with Turtle. `AUTHORING.md` is the file format reference; this is the method. Use it for every new course (web and MakeCode next).
 
+**Starting a new course in a fresh chat:** read `CLAUDE.md`, then this file, then `AUTHORING.md` sections 9 (teacher notes) and Error tasks. Look at one finished lesson end to end before writing: `content/code/python/turtle-functions/` (`lesson.md`, `functions.py` with its `sol-*` regions, `teacher.yml`) and what it generates (`dist/teach/code/python/turtle-functions/`: guide page, `deck.md`, `worksheet.md`). Section 8 lists what the web pathway still needs before its first lesson.
+
 ## 1. Shape: pathway › course › unit › lesson › step › task
 
 - **Pathway** (Python, Web, MakeCode): listed in `content/code/index.md`, courses in order, each `stage: foundations | extensions`. Planned courses go in early as "Coming later", so the whole path is visible.
@@ -20,10 +22,22 @@ Do these in order, and write each down before building the next.
 3. **One insight per step.** Write the `insight:` first (what the student should realise), then choose the check that produces it (see `AUTHORING.md` › Check types: count and predict → number, how something changes → trace, what each part does → match, why it is wrong → bug, structure → parsons).
 4. **Hidden assumptions.** For every construct on screen: the goal of this lesson, already taught (cite where), a recipe ("copy this line for now"), or a prerequisite to check. Fix gaps in the lesson that should have taught it, not in the one that trips over it (example: `global` was used in Events and Build a button but explained nowhere; the challenge exposed it).
 5. **Error tasks.** Plant this lesson's misconception, authentic, one named fault, symptom not answer, faithful to the real language (`AUTHORING.md` › Error tasks; ids in `misconceptions.json` with a home lesson).
-6. **Final challenge** (section 4).
-7. **Teacher notes** (`teacher.yml`, AUTHORING.md section 9) in every lesson, written for a non-specialist: the same sections every time, a see → ask → fix list for when students get stuck, and a tested solution for every task. Write the unit primer (`primers/<unit>.md`) with the unit. Slides, worksheets and cheat sheets are generated from these, so check them in Prepare once.
+6. **Final challenge** (section 5).
+7. **Teacher layer** (section 3) for every lesson and unit, written with the lesson.
 
-## 3. Lesson recipe
+## 3. Teacher layer (every lesson, written with the lesson)
+
+The student tutorial stays light on words; the teacher layer carries the explanation for a non-specialist teacher. Write it as part of the lesson, not afterwards.
+
+- **`teacher.yml`** (fields in `AUTHORING.md` section 9): plain language, jargon explained on first use. Same sections every lesson. `stuck` comes from real failure points (what you will see → a question to ask → the fix), usually the planted misconception plus two common slips. `goals` start "I can" and match the step insights. `exit` is one question on the main idea.
+- **Solutions:** one `sol-*` region per Modify and Make task (or `step-N#tM` per task), using only what students have met. Validate checks each passes its task's code check; also run each one in the playground (section 6, step 2).
+- **Unit primer** (`primers/<unit>.md`): the concept for a teacher who has never programmed, with an everyday picture and where it breaks.
+- **Generated, nothing to write by hand:** per lesson a Prepare deck (`deck.md`) and Print worksheet (`worksheet.md`); per unit a cheat sheet as a printable A4 page and as Markdown for Prepare; one whole-course cheat sheet. All under `/teach/`, linked only from the course page footer.
+- **Cheat sheet pictures:** a snippet's `example` (a short complete program) and `shows` (caption) in `snippets/<kind>.json` give its card a picture. `npm run render` draws them (`tools/render-pictures.mjs`, cached; CI does the same). A unit's sheet lists what its lessons unlock and what the code students see uses, each command once, in the first unit that uses it. If a needed command is missing from a sheet, it has no snippet: add one.
+- **Slides fit by estimate** (`fitCode` in `tools/teach.mjs`): code shrinks, then the whole slide; programs over 27 lines link to the tutorial. After changing deck layout or adding long checks, run `npm run check-decks`.
+- **Prepare:** pages offer "Copy address for Prepare" (Load URL). Prepare's own load-by-URL parameter is unconfirmed, so there is no one-click open yet.
+
+## 4. Lesson recipe
 
 - **Predict** on code that runs (lock in a prediction; Run shows it beside the result). **Run** with a reflect tick. **Investigate** with tools that follow the insight. **Modify** a small complete example whose heading names the task. **Make** is an explicit task with fading support (starter, then outline, then goals only).
 - **Real world** is a small complete thing students change; big projects are the teacher's.
@@ -32,7 +46,7 @@ Do these in order, and write each down before building the next.
 - **Code checks** (`type: code`) use `contains` for the exact idea ("the hit test is in the click handler"), not just names: `uses` passes on an import line alone, and `calls` passes on any function called often.
 - **Unlocks**: each lesson unlocks the snippets it teaches; the Reference drawer's "This lesson" also picks up snippets its starter code uses. Add a snippet `matches` regex when its first line is too generic.
 
-## 4. Final challenge pattern
+## 5. Final challenge pattern
 
 - **Low floor, high ceiling.** A core everyone finishes, built in milestones (most code → outline → goals only), then a shared enrichment lesson, then optional lessons that go deeper.
 - **Blend both directions in the core and the shared lesson**: state, events, a hit test, a timer loop, lists (shared); a status bar and buttons (user interface); lives, rewards, costs (game rules). The Investigate match "UI or game rule?" names the split.
@@ -40,23 +54,32 @@ Do these in order, and write each down before building the next.
 - **Prediction as a mechanic** where possible (the turtle on a path), so PRIMM carries into play.
 - **No new knowledge in the core.** Anything new is one line, named in the text ("Behind the code"), or moved to an option (random spots).
 
-## 5. Testing (every batch)
+## 6. Testing (every batch)
 
 1. `npm run validate`: errors fail; warnings (error-task lint, units) are read, not ignored.
 2. **Run every code region** headlessly in its playground, starters included: no errors, and the starter does what the step text says. For interactive programs, **play them**: the harness clicks the target, presses Start, waits for game over and restarts (see `.render-tmp` scripts from the challenge batch; they are scratch, so rewrite as needed).
 3. **Course and pathway pages** with a fresh browser, part progress and full progress, at desktop and phone width: Continue card, unit counts, open row, badge, `/code/` counts (required lessons only).
 4. **Screenshots** of anything visual, read before pushing.
-5. Re-render clips for lessons whose clip steps or playgrounds changed; CI re-renders on deploy anyway.
+5. **Teacher layer:** every solution runs in its playground; `npm run check-decks` reports no overflowing slides; open one guide page, one deck (marp-cli render) and the unit cheat sheets as A4 PDFs (Playwright `page.pdf`) and read them; the student lesson's For teachers panel shows no solutions.
+6. Re-render clips for lessons whose clip steps or playgrounds changed; CI re-renders on deploy anyway.
 
-## 6. Runtime facts that shape lessons
+## 7. Runtime facts that shape lessons
 
-**Turtle playground:** one turtle only; the turtle sprite's colour is fixed (mark it with a `dot`); `speed(0)` for instant drawing; clicks wait until an animated move ends, so moving targets step on a 50 ms timer; `write` needs positional arguments (`write(v, False, "left", ("Arial", 20, "normal"))`); `str()` and string joining are not taught yet, so write labels and values separately.
+**Turtle playground:** one turtle only; `?shape=classic` (or `shape("classic")`) draws Python's arrow instead of the sprite (cheat-sheet pictures use it); the turtle sprite's colour is fixed (mark it with a `dot`); `speed(0)` for instant drawing; clicks wait until an animated move ends, so moving targets step on a 50 ms timer; `write` needs positional arguments (`write(v, False, "left", ("Arial", 20, "normal"))`); `str()` and string joining are not taught yet, so write labels and values separately.
 
 **HTML playground:** live preview, no Run button (a paste closes the Reference drawer); edits autosave per step.
 
-## 7. Before the web units
+## 8. Before the web units
 
-- **HTML code checks.** `type: code` only works in the turtle playground today. The HTML playground needs to report its code to the lesson page (the same message the turtle playground sends after Run, but on each change), so `contains` checks work for HTML and CSS (for example `contains: ["<ul>", "<li>"]`).
+Settle these first; the HTML & CSS course should be written to the full standard (lessons and teacher layer) from its first lesson.
+
+- **Spine mapping for HTML & CSS foundations** (to agree first): structure and text, lists and links, images and boxes, CSS rules and selectors, layout, then a small challenge page that blends both directions (a page with a working menu or a quiz card, shared core, optional "make it interactive" leading to p5.js and the DOM). Units in `content/code/html/index.md`; the existing `first-page` lesson predates units and the teacher layer.
+- **HTML code checks.** `type: code` only works in the turtle playground today. The HTML playground needs to report its code to the lesson page (the same message the turtle playground sends after Run, but on each change), so `contains` checks work for HTML and CSS (for example `contains: ["<ul>", "<li>"]`). Solutions are checked statically by validate already (rules run on the text), so they work as soon as checks do.
 - **Web misconceptions** in `misconceptions.json` with HTML lessons as homes (unclosed tag, nesting order, a CSS selector that does not match, a property without a unit).
-- **Spine mapping for HTML & CSS foundations** (to agree first): structure and text, lists and links, images and boxes, CSS rules and selectors, layout, then a small challenge page that blends both directions (a page with a working menu or a quiz card, shared core, optional "make it interactive" leading to p5.js and the DOM).
-- **Reference**: HTML snippets already exist (`snippets/html.json`); each lesson's `unlocks` should match what it teaches.
+- **Reference**: HTML snippets exist (`snippets/html.json`); each lesson's `unlocks` should match what it teaches, and snippets with `matches` keep "This lesson" and the cheat sheets accurate.
+- **Teacher layer for HTML** (generators are language-aware: fences and highlighting follow `language: html`):
+  - **Cheat-sheet pictures** are turtle-only today. For HTML, `render-pictures` needs a second path: open each snippet's `example` in `_playground-html` (output view) and screenshot the preview, cropped. Until then, HTML sheets print code only.
+  - **Decks:** Predict slides show code; a rendered preview beside it would help (a screenshot of the expected page, like clips). HTML files with CSS are often two files: use `# file:` panels, which show side by side on slides.
+  - **Primers:** "what a browser does with a file", "tags are labels, CSS is rules": written for a teacher who has never made a web page.
+  - **Solutions** as regions in the lesson's files: `<!-- region: sol-x -->` … `<!-- endregion -->` works in HTML today (`snippetFrom` in `lesson-core.mjs` accepts `#`, `//` and `<!--` markers). CSS comments (`/* region: x */`) are not recognised yet: add `/*` to that marker, or keep CSS inside a `<style>` in the HTML region.
+- **Testing HTML lessons:** load every region in the HTML playground and screenshot the preview; there is no Run status to wait for, so wait for the preview frame's load.

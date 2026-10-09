@@ -9,37 +9,47 @@
     {
      "label": "forward",
      "code": "forward(‹100›)\n",
-     "hint": "Move the turtle forward. The number is how many steps."
+     "hint": "Move the turtle forward. The number is how many steps.",
+     "example": "forward(100)\n"
     },
     {
      "label": "backward",
      "code": "backward(‹100›)\n",
-     "hint": "Move the turtle backward without turning."
+     "hint": "Move the turtle backward without turning.",
+     "example": "backward(100)\n"
     },
     {
      "label": "right",
      "code": "right(‹90›)\n",
-     "hint": "Turn clockwise by this many degrees."
+     "hint": "Turn clockwise by this many degrees.",
+     "example": "forward(60)\nright(90)\nforward(60)\n"
     },
     {
      "label": "left",
      "code": "left(‹90›)\n",
-     "hint": "Turn anticlockwise by this many degrees."
+     "hint": "Turn anticlockwise by this many degrees.",
+     "example": "forward(60)\nleft(90)\nforward(60)\n"
     },
     {
      "label": "goto",
      "code": "goto(‹0›, ‹0›)\n",
-     "hint": "Jump to a position. (0, 0) is the centre; x goes right, y goes up."
+     "hint": "Jump to a position. (0, 0) is the centre; x goes right, y goes up.",
+     "example": "goto(80, 60)\n",
+     "shows": "From the centre to (80, 60)"
     },
     {
      "label": "setheading",
      "code": "setheading(‹0›)\n",
-     "hint": "Face a direction. 0 is right, 90 is up, 180 is left."
+     "hint": "Face a direction. 0 is right, 90 is up, 180 is left.",
+     "example": "setheading(90)\nforward(60)\n",
+     "shows": "setheading(90): facing up"
     },
     {
      "label": "home",
      "code": "home()\n",
-     "hint": "Go back to the centre, facing right."
+     "hint": "Go back to the centre, facing right.",
+     "example": "forward(80)\nleft(90)\nforward(40)\nhome()\n",
+     "shows": "Back to the centre, facing right"
     }
    ]
   },
@@ -49,32 +59,41 @@
     {
      "label": "penup",
      "code": "penup()\n",
-     "hint": "Lift the pen so moving does not draw."
+     "hint": "Lift the pen so moving does not draw.",
+     "example": "forward(40)\npenup()\nforward(40)\npendown()\nforward(40)\n",
+     "shows": "Pen up for the middle part"
     },
     {
      "label": "pendown",
      "code": "pendown()\n",
-     "hint": "Put the pen down so moving draws again."
+     "hint": "Put the pen down so moving draws again.",
+     "example": "forward(40)\npenup()\nforward(40)\npendown()\nforward(40)\n",
+     "shows": "Pen down again for the last part"
     },
     {
      "label": "pensize",
      "code": "pensize(‹5›)\n",
-     "hint": "Set how thick the line is."
+     "hint": "Set how thick the line is.",
+     "example": "pensize(1)\nforward(50)\npensize(8)\nforward(50)\n",
+     "shows": "pensize(1), then pensize(8)"
     },
     {
      "label": "pencolor",
      "code": "pencolor(\"‹red›\")\n",
-     "hint": "Set the line colour, using a colour name."
+     "hint": "Set the line colour, using a colour name.",
+     "example": "pencolor(\"red\")\nforward(100)\n"
     },
     {
      "label": "dot",
      "code": "dot(‹20›)\n",
-     "hint": "Draw a filled dot of this size."
+     "hint": "Draw a filled dot of this size.",
+     "example": "dot(30)\nhideturtle()\n"
     },
     {
      "label": "write",
      "code": "write(\"‹Hello›\")\n",
-     "hint": "Write text at the turtle's position."
+     "hint": "Write text at the turtle's position.",
+     "example": "write(\"Hello\", False, \"left\", (\"Arial\", 20, \"normal\"))\nhideturtle()\n"
     }
    ]
   },
@@ -84,23 +103,28 @@
     {
      "label": "fillcolor",
      "code": "fillcolor(\"‹blue›\")\n",
-     "hint": "Choose the colour to fill shapes with."
+     "hint": "Choose the colour to fill shapes with.",
+     "example": "fillcolor(\"blue\")\nbegin_fill()\ncircle(40)\nend_fill()\n"
     },
     {
      "label": "begin_fill / end_fill",
      "matches": "\\b(begin|end)_fill\\(",
      "code": "begin_fill()\n‹›\nend_fill()\n",
-     "hint": "Everything drawn between these two lines is filled in."
+     "hint": "Everything drawn between these two lines is filled in.",
+     "example": "fillcolor(\"orange\")\nbegin_fill()\nfor i in range(4):\n    forward(60)\n    right(90)\nend_fill()\n"
     },
     {
      "label": "bgcolor",
      "code": "bgcolor(\"‹lightblue›\")\n",
-     "hint": "Set the background colour."
+     "hint": "Set the background colour.",
+     "example": "bgcolor(\"lightblue\")\nforward(80)\n"
     },
     {
      "label": "hideturtle",
      "code": "hideturtle()\n",
-     "hint": "Hide the turtle so only the drawing shows."
+     "hint": "Hide the turtle so only the drawing shows.",
+     "example": "forward(80)\nhideturtle()\n",
+     "shows": "The line stays; the turtle is hidden"
     },
     {
      "label": "speed",
@@ -120,12 +144,15 @@
     {
      "label": "circle",
      "code": "circle(‹50›)\n",
-     "hint": "Draw a circle with this radius."
+     "hint": "Draw a circle with this radius.",
+     "example": "circle(50)\n",
+     "shows": "circle(50) starts at the turtle and curves left"
     },
     {
      "label": "square (loop)",
      "code": "for i in range(‹4›):\n    forward(100)\n    right(90)\n",
-     "hint": "Draw a square by repeating forward and right four times."
+     "hint": "Draw a square by repeating forward and right four times.",
+     "example": "for i in range(4):\n    forward(100)\n    right(90)\n"
     }
    ]
   },
@@ -135,22 +162,30 @@
     {
      "label": "for loop",
      "code": "for i in range(‹4›):\n    ‹pass›\n",
-     "hint": "Repeat the indented lines this many times."
+     "hint": "Repeat the indented lines this many times.",
+     "example": "for i in range(5):\n    forward(80)\n    right(144)\n",
+     "shows": "range(5): five lines, a star"
     },
     {
      "label": "while loop",
      "code": "while ‹True›:\n    ‹pass›\n",
-     "hint": "Repeat the indented lines for as long as the condition is true."
+     "hint": "Repeat the indented lines for as long as the condition is true.",
+     "example": "size = 10\nwhile size < 100:\n    forward(size)\n    right(90)\n    size = size + 10\n",
+     "shows": "Keeps going while size < 100"
     },
     {
      "label": "if / else",
      "code": "if ‹x > 0›:\n    ‹pass›\nelse:\n    ‹pass›\n",
-     "hint": "Do one thing or the other, depending on a condition."
+     "hint": "Do one thing or the other, depending on a condition.",
+     "example": "for x in [-90, -30, 30, 90]:\n    penup()\n    goto(x, 0)\n    if x > 0:\n        dot(30, \"red\")\n    else:\n        dot(30, \"blue\")\nhideturtle()\n",
+     "shows": "Red when x > 0, else blue"
     },
     {
      "label": "variable",
      "code": "‹size› = ‹50›\n",
-     "hint": "Give a value a name, so you can reuse and change it."
+     "hint": "Give a value a name, so you can reuse and change it.",
+     "example": "size = 50\nfor i in range(4):\n    forward(size)\n    right(90)\n",
+     "shows": "size = 50"
     },
     {
      "label": "list",
@@ -161,13 +196,17 @@
     {
      "label": "for each item",
      "code": "for ‹c› in ‹colours›:\n    ‹pass›\n",
-     "hint": "Work through a list, one item at a time."
+     "hint": "Work through a list, one item at a time.",
+     "example": "pensize(6)\nfor c in [\"red\", \"blue\", \"green\"]:\n    pencolor(c)\n    forward(40)\n",
+     "shows": "One line per colour in the list"
     },
     {
      "label": "def (function)",
      "matches": "^\\s*def\\s",
      "code": "def ‹shape›():\n    ‹pass›\n\n‹shape›()\n",
-     "hint": "Name a group of steps, then run it by calling its name."
+     "hint": "Name a group of steps, then run it by calling its name.",
+     "example": "def square():\n    for i in range(4):\n        forward(40)\n        right(90)\n\nsquare()\npenup()\nforward(70)\npendown()\nsquare()\n",
+     "shows": "Defined once, called twice"
     },
     {
      "label": "print",
@@ -189,13 +228,17 @@
      "label": "onscreenclick",
      "matches": "\\bonscreenclick\\(",
      "code": "def ‹stamp›(x, y):\n    goto(x, y)\n    dot(‹20›)\n\nonscreenclick(‹stamp›)\nlisten()\nmainloop()\n",
-     "hint": "Run a function every time the picture is clicked. It receives the click position."
+     "hint": "Run a function every time the picture is clicked. It receives the click position.",
+     "example": "def stamp(x, y):\n    goto(x, y)\n    dot(20)\n\npenup()\nstamp(-60, 30)\nstamp(50, -20)\nhideturtle()\n",
+     "shows": "After two clicks"
     },
     {
      "label": "onkey",
      "matches": "\\bonkey(press)?\\(",
      "code": "def ‹go_up›():\n    forward(‹20›)\n\nonkey(‹go_up›, \"‹Up›\")\nlisten()\nmainloop()\n",
-     "hint": "Run a function every time a key is pressed. Click the picture first so it receives keys."
+     "hint": "Run a function every time a key is pressed. Click the picture first so it receives keys.",
+     "example": "def go_up():\n    forward(20)\n\ngo_up()\ngo_up()\ngo_up()\n",
+     "shows": "After pressing Up three times"
     },
     {
      "label": "ontimer",

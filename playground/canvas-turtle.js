@@ -17,8 +17,9 @@ export class StopError extends Error {
 }
 
 export class CanvasTurtle {
-  constructor(canvas, { onUpdate, extent = DEFAULT_EXTENT } = {}) {
-    this.extent = extent;      // visible logical size; 500 shows about +-250 around the origin
+  constructor(canvas, { onUpdate, extent = DEFAULT_EXTENT, shape = 'turtle' } = {}) {
+    this.extent = extent;
+    this.defaultShape = shape; // 'turtle' (the sprite) or 'classic' (Python's arrow); shape() changes it      // visible logical size; 500 shows about +-250 around the origin
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.onUpdate = onUpdate || (() => {});
@@ -44,7 +45,7 @@ export class CanvasTurtle {
   // ---------- state ----------
   resetAll() {
     this.x = 0; this.y = 0; this.angle = 0;
-    this.penDown = true; this.visible = true;
+    this.penDown = true; this.visible = true; this.shapeName = this.defaultShape || 'turtle';
     this.penColor = '#000000'; this.fillColor = '#000000'; this.penWidth = 2;
     this.bg = '#F9F9F9';
     this.segments = []; this.fills = []; this.dots = []; this.texts = [];
@@ -139,6 +140,10 @@ export class CanvasTurtle {
     ctx.translate(this.cx(this.x), this.cy(this.y));
     ctx.rotate(-this.angle * Math.PI / 180);
     ctx.scale(k, k);
+    if (this.shapeName !== 'turtle') { // Python's "classic" arrow, tip at the turtle's position
+      ctx.fillStyle = this.penColor; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-9, 5); ctx.lineTo(-7, 0); ctx.lineTo(-9, -5); ctx.closePath(); ctx.fill();
+      ctx.restore(); return;
+    }
     ctx.fillStyle = '#3aa655'; ctx.strokeStyle = '#14532d'; ctx.lineWidth = 1.5;
     for (const [lx, ly] of [[6, 9], [6, -9], [-6, 9], [-6, -9]]) { // legs
       ctx.beginPath(); ctx.arc(lx, ly, 3.6, 0, Math.PI * 2); ctx.fill(); ctx.stroke();

@@ -3,6 +3,7 @@
 //   worksheet.md  a Waypoints Prepare/Print resource with :::teacher-note answers (format-print.md)
 //   cheatsheet    one Print reference sheet per unit, from the snippets the unit unlocks
 // plus the teacher guide pages under /teach/. Students never see solutions on lesson pages.
+import { snippetPattern } from './snippet-pattern.mjs';
 import { snippetFrom, splitFiles, parseTrace, workItems } from './lesson-core.mjs';
 
 export const SITE_URL = (process.env.SITE_URL || 'https://tutorials.learningwaypoints.com').replace(/\/$/, '');
@@ -64,7 +65,9 @@ function checkParts(k, snip, key) {
 }
 
 const numbered = (code) => code.replace(/\n$/, '').split('\n').map((l, i) => `${String(i + 1).padStart(2)}  ${l}`).join('\n');
-const fence = (code, lang = 'python') => '```' + lang + '\n' + String(code).replace(/\n$/, '') + '\n```';
+// Code language for fences and highlighting: set from the lesson by each generator (python or html).
+let LANG = 'python';
+const fence = (code, lang = LANG) => '```' + lang + '\n' + String(code).replace(/\n$/, '') + '\n```';
 
 /** Every check in a lesson, with where it sits: [{ step, task, check, key }]. */
 const checksOf = (lesson) => lesson.steps.flatMap((s) => [
@@ -74,6 +77,7 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 
 // ---------------------------------------------------------------- deck (Prepare Marp)
 export function deckFor(lesson, { course, unit, snip }) {
+  LANG = lesson.language || 'python';
   const T = lesson.teacher || {};
   const slides = [];
   const note = (t) => (t ? `\n\n<!-- Speaker note: ${oneLine(t).replace(/-->/g, '- ->')} -->` : '');
@@ -167,6 +171,7 @@ function traceTable(t, blanks) {
 
 // ---------------------------------------------------------------- worksheet (Prepare Print)
 export function worksheetFor(lesson, { course, unit, snip }) {
+  LANG = lesson.language || 'python';
   const T = lesson.teacher || {};
   const out = [];
   const tnote = (t) => (t && t.trim() ? `\n\n:::teacher-note\n\n${t.trim()}\n\n:::\n` : '');
@@ -222,33 +227,88 @@ export function worksheetFor(lesson, { course, unit, snip }) {
 const yamlStr = (s) => JSON.stringify(String(s));
 
 // ---------------------------------------------------------------- cheat sheet (Prepare Print reference sheet)
-export function cheatSheetFor({ course, unit, lessons, snippets }) {
-  const items = [];
-  const seen = new Set();
-  for (const l of lessons) for (const s of l.steps) for (const id of [...(s.config.unlocks || []), ...s.tasks.flatMap((t) => t.config.unlocks || [])]) {
-    const item = snippets.get(id);
-    if (item && !seen.has(id)) { seen.add(id); items.push(item); }
-  }
-  const body = items.map((i) => `:::keep-together\n\n**${i.label}**: ${i.hint || ''}\n\n${fence(strip(i.code))}\n\n:::`).join('\n\n');
+export function cheatSheetFor({ course, unit, items, lang = 'python' }) {
+  const body = items.map((i) => `:::keep-together\n\n**${i.label}**: ${i.hint || ''}\n\n${fence(strip(i.code), lang)}\n\n:::`).join('\n\n');
   return `---\ntitle: ${yamlStr(`${unit.title}: cheat sheet`)}\nsubtitle: ${yamlStr(course)}\n---\n\n# ${unit.title}\n\n> The commands and patterns from this unit. In the tutorial, open **Reference** in any playground to copy them.\n\n${body || '_This unit has no new commands; it combines ones from earlier units._'}\n`;
 }
 
+// The snippets a unit introduces: what its lessons unlock, plus what the code students see uses
+// (step code and starters, found with the Reference drawer's own patterns). Each snippet is listed once,
+// in the first unit that has it (pass one `seen` set across units), in reference order.
+export function unitSnippets(lessons, snippets, seen = new Set(), codeOf = () => []) {
+  const ids = [...snippets.keys()], found = new Set();
+  for (const l of lessons) {
+    for (const s of l.steps) for (const id of [...(s.config.unlocks || []), ...s.tasks.flatMap((t) => t.config.unlocks || [])]) if (snippets.has(id)) found.add(id);
+    const code = codeOf(l).join('\n');
+    for (const [id, item] of snippets) { const re = snippetPattern(item); if (re && re.test(code)) found.add(id); }
+  }
+  const out = ids.filter((id) => found.has(id) && !seen.has(id)).map((id) => ({ id, ...snippets.get(id) }));
+  out.forEach((i) => seen.add(i.id));
+  return out;
+}
+
+// ---------------------------------------------------------------- printable cheat sheet (HTML)
+// sections: [{ title, items: [{ id, label, hint, code, shows }] }]; pictures: { id: { w, h } } from
+// render-pictures (device pixels at 2x, about 2.6 px per turtle step), drawn at one shared scale.
+export function cheatSheetBody({ title, course, sections, pictures = {}, picBase, esc, highlightCode, back, md, mdUrl, lang = 'python' }) {
+  const card = (i) => {
+    const pic = pictures[i.id];
+    const img = pic ? `<figure><img src="${esc(picBase + i.id)}.png" alt="What it draws" width="${Math.round(pic.w / 5.2)}" height="${Math.round(pic.h / 5.2)}">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
+    const code = strip(i.code).replace(/\n+$/, '');
+    // A picture shows the example program, which can differ from the bare snippet: show that code.
+    const ex = pic && i.example && strip(i.example).trim() !== code.trim() ? `<div class="cs-ex">Example</div><pre><code>${highlightCode(strip(i.example).replace(/\n+$/, ''), lang)}</code></pre>` : '';
+    return `<article class="cs-card${pic ? ' has-pic' : ''}"><h3>${esc(i.label)}</h3><p>${esc(i.hint || '')}</p><div class="cs-body"><div class="cs-code"><pre><code>${highlightCode(code, lang)}</code></pre>${ex}</div>${img}</div></article>`;
+  };
+  // Two columns filled by estimated height (CSS columns split badly across printed pages).
+  const lines = (t) => (t ? strip(t).trim().split('\n').length : 0);
+  const height = (i) => {
+    const pic = pictures[i.id];
+    const code = lines(i.code) + (pic && i.example && strip(i.example).trim() !== strip(i.code).trim() ? lines(i.example) + 1.5 : 0);
+    return 3 + Math.max(code * 1.1, pic ? pic.h / 5.2 / 15 + (i.shows ? 1.5 : 0) : 0) + Math.ceil((i.hint || '').length / 55);
+  };
+  const cols = (items) => {
+    const c = [[], []], h = [0, 0];
+    for (const i of items) { const k = h[0] <= h[1] ? 0 : 1; c[k].push(card(i)); h[k] += height(i); }
+    return `<div class="cs-grid"><div class="cs-col">${c[0].join('')}</div><div class="cs-col">${c[1].join('')}</div></div>`;
+  };
+  const secs = sections.filter((s) => s.items.length).map((s) => `${sections.length > 1 ? `<h2 class="cs-unit">${esc(s.title)}</h2>` : ''}${cols(s.items)}`).join('');
+  return `<div class="cs-bar noprint"><a class="crumb" href="${esc(back)}">← Teacher guide</a><span class="sn-grow"></span><button type="button" onclick="print()">Print</button>${mdUrl ? ` <a href="${esc(md)}" download>Markdown for Prepare</a> <button type="button" class="copyurl" data-url="${esc(mdUrl)}">Copy address for Prepare</button>` : ''}</div>
+<div class="cs"><header class="cs-head"><h1>${esc(title)}</h1><p>${esc(course)} · In any playground, open <b>Reference</b> to copy these.</p></header>${secs || '<p>This unit has no new commands; it combines ones from earlier units.</p>'}</div>`;
+}
+export const CHEAT_CSS = `.wrap{max-width:1000px}
+.cs-bar{display:flex;gap:10px;align-items:center;margin:18px 0}.cs-bar button{font:inherit;font-size:14px;padding:5px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}.cs-bar a{font-size:14px}.sn-grow{flex:1}
+.cs{--code:#f4f3ef;--codeink:#1d2430;--kw:#b42318;--str:#0a6b3d;--fn:#6a3fb5;--num:#0b5cad;--com:#6b7280;background:#fff;color:#1d2430;border:1px solid var(--line);border-radius:6px;padding:12mm 12mm 8mm}
+.cs-head{border-bottom:2px solid #1d2430;margin-bottom:10px}.cs-head h1{font-size:22px;margin:0 0 2px}.cs-head p{margin:0 0 8px;font-size:12px;color:#5d6978}
+.cs-unit{font-size:15px;margin:14px 0 6px;padding:3px 8px;background:#1d2430;color:#fff;border-radius:4px;break-after:avoid}
+.cs-grid{display:flex;gap:10px;align-items:flex-start}.cs-col{flex:1;min-width:0}
+.cs-card{break-inside:avoid;border:1px solid #d9d6cf;border-radius:6px;padding:6px 8px;margin:0 0 8px}
+.cs-card h3{font:600 13px/1.3 ui-monospace,Menlo,Consolas,monospace;margin:0}.cs-card p{font-size:11.5px;line-height:1.35;margin:2px 0 5px;color:#3d4653}
+.cs-body{display:flex;gap:8px;align-items:flex-start}.cs-code{flex:1;min-width:0}
+.cs pre{background:var(--code);color:var(--codeink);border-radius:4px;padding:5px 7px;font:11px/1.4 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;overflow:visible}
+.cs-ex{font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#5d6978;margin:5px 0 2px}
+.cs figure{margin:0;flex:0 0 auto;max-width:46%;text-align:center}.cs figure img{max-width:100%;height:auto;border:1px solid #eceae4;border-radius:4px;display:block;margin:0 auto}
+.cs figcaption{font-size:10px;line-height:1.3;color:#5d6978;margin-top:2px}
+@page{size:A4;margin:10mm}
+@media print{.sitenav,.noprint{display:none!important}body{background:#fff}.wrap{max-width:none;padding:0}.cs{border:0;padding:0}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media (max-width:640px){.cs{padding:14px}.cs-grid{display:block}}`;
+
 // ---------------------------------------------------------------- teacher guide pages (HTML bodies)
 export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files }) {
+  LANG = lesson.language || 'python';
   const T = lesson.teacher || {};
   const sec = (title, html) => (html ? `<section class="tg"><h2>${esc(title)}</h2>${html}</section>` : '');
   const insights = lesson.steps.flatMap((s) => [s.config.insight ? [bare(s.title), s.config.insight] : null, ...s.tasks.filter((t) => t.config.insight).map((t) => [`${bare(s.title)} › ${t.title}`, t.config.insight])]).filter(Boolean);
   const answers = checksOf(lesson).map(({ step, task, check, key }) => {
     const p = checkParts(check, snip, key);
     if (p.reflect || check.type === 'code') return '';
-    return `<li><b>${esc(task ? task.title : bare(step.title))}:</b> ${esc(p.q)}<br><span class="ans">${esc(p.answer)}</span>${p.explain ? `<br><span class="muted">${esc(p.explain)}</span>` : ''}${p.parsons ? codeBlock(highlightCode, p.solution + '\n', 'python', '') : ''}</li>`;
+    return `<li><b>${esc(task ? task.title : bare(step.title))}:</b> ${esc(p.q)}<br><span class="ans">${esc(p.answer)}</span>${p.explain ? `<br><span class="muted">${esc(p.explain)}</span>` : ''}${p.parsons ? codeBlock(highlightCode, p.solution + '\n', LANG, '') : ''}</li>`;
   }).filter(Boolean).join('');
   const sols = T.solutions || {};
   const solHtml = workItems(lesson).map((w) => {
     const ref = sols[w.id];
     const name = w.task ? `${bare(w.step.title)} › ${w.task.title}` : bare(w.step.title);
     if (!ref) return `<h3>${esc(name)}</h3><p class="muted">Open task: any program that does what the step asks.</p>`;
-    return `<h3>${esc(name)}</h3>${splitFiles(snip(ref)).map((f) => codeBlock(highlightCode, f.code, 'python', f.name || '')).join('')}`;
+    return `<h3>${esc(name)}</h3>${splitFiles(snip(ref)).map((f) => codeBlock(highlightCode, f.code, LANG, f.name || '')).join('')}`;
   }).join('');
   const stuck = (T.stuck || []).length ? `<table class="stuck"><thead><tr><th>What you will see</th><th>A question to ask</th><th>The fix</th></tr></thead><tbody>${T.stuck.map((x) => `<tr><td>${esc(x.see)}</td><td>${esc(x.ask)}</td><td>${esc(x.fix)}</td></tr>`).join('')}</tbody></table>` : '';
   const dl = files.map((f) => `<li><b>${esc(f.label)}</b> <a href="${esc(f.href)}" download>Download</a> <button type="button" class="copyurl" data-url="${esc(f.url)}">Copy address for Prepare</button><span class="muted"> ${esc(f.note || '')}</span></li>`).join('');

@@ -44,6 +44,7 @@ window.__playground = { status: 'idle', output: '', error: null, turtle: null };
 
 const turtle = new CanvasTurtle($('canvas'), {
   extent: Number(params.get('extent')) || undefined,
+  shape: params.get('shape') || undefined, // ?shape=classic: draw Python's arrow instead of the turtle (cheat-sheet pictures)
   onUpdate: (s) => { stateEl.textContent = `x ${s.x} · y ${s.y} · heading ${s.heading}°`; window.__playground.turtle = s; },
 });
 // Lesson modules: ?use=shapes,house names the ones offered; ?mods={"name": "source"} supplies ones written

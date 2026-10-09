@@ -11,7 +11,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 function addSnippets(dest, name) {
   for (const f of ['snippets.js', 'snippets.css']) copyFileSync(join(root, 'playground-shared', f), join(dest, f));
   copyFileSync(join(root, 'snippets', `${name}.json`), join(dest, 'snippets.json'));
-  copyFileSync(join(root, 'tools', 'modules-scan.mjs'), join(dest, 'modules-scan.mjs'));
+  for (const f of ['modules-scan.mjs', 'snippet-pattern.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
   // Shared Python modules (modules/*.py) that lessons can offer: { name: source }
   const mods = {};
   const mdir = join(root, 'modules');

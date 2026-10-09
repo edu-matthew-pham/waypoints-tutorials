@@ -47,7 +47,7 @@ var $builtinmodule = function (name) {
     reset: function () { T.reset(); },
     dot: function (s, c) { T.dot(s === undefined || s === null ? 10 : s, c); },
     write: function (t, move, align, font) { T.write(t, Array.isArray(font) && font[1] ? font[1] : 14); },
-    shape: function () {},
+    shape: function (n) { if (typeof n === 'string') { T.shapeName = n === 'turtle' ? 'turtle' : 'classic'; T.draw(); } },
     title: function () {},
     tracer: function () {},
     update: function () {}

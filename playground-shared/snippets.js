@@ -4,36 +4,15 @@
 // what the lesson unlocks, the lesson's modules and the student's own tools), or "All"; search covers names,
 // hints and code. In a snippet's code, ‹text› marks a value to change: highlighted on the card, removed on copy.
 import { scanModule, callText, defAtCursor } from './modules-scan.mjs';
+import { snippetPattern } from './snippet-pattern.mjs';
+export { snippetPattern };
 
 const OPEN = '‹', CLOSE = '›';
 const strip = (t) => String(t).split(OPEN).join('').split(CLOSE).join('');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /** Card code as HTML: placeholders become <mark> so students can see what to change. */
 export const markPlaceholders = (code) => esc(code).replace(/‹([^›]*)›/g, '<mark class="ph" title="Change this">$1</mark>');
 
-/**
- * Pure: a pattern that finds a snippet in a program. An item's own `matches` (a regex) wins; otherwise the
- * snippet's first line, with each placeholder as a wildcard (a name for name-like placeholders).
- */
-export function snippetPattern(item) {
-  if (item.matches) { try { return new RegExp(item.matches, 'm'); } catch { return null; } }
-  const first = String(item.code).split('\n').find((l) => l.trim()) || '';
-  // A quoted placeholder ("‹red›") matches any argument, quoted or not: pencolor(c) uses pencolor too.
-  let src = '', rest = first.trim().replace(/(["'])‹([^›]*)›\1/g, '‹ $2›');
-  while (rest) {
-    const o = rest.indexOf(OPEN), c = o >= 0 ? rest.indexOf(CLOSE, o) : -1;
-    const fixed = o >= 0 && c > o ? rest.slice(0, o) : rest;
-    src += fixed.split(/\s+/).map(reEsc).join('\\s*');
-    if (!(o >= 0 && c > o)) break;
-    const ph = rest.slice(o + 1, c);
-    src += /^[A-Za-z_]\w*$/.test(ph) ? '[A-Za-z_]\\w*' : ph ? '.+?' : '.*?';
-    rest = rest.slice(c + 1);
-  }
-  if (!src) return null;
-  const head = first.trim().startsWith(OPEN) ? '^\\s*' : /^\w/.test(first.trim()) ? '(?<![\\w.])' : '';
-  try { return new RegExp(head + src, 'm'); } catch { return null; }
-}
 /** Pure: does this card text match every word of the search? */
 export const matchesQuery = (text, q) => String(q).toLowerCase().split(/\s+/).filter(Boolean).every((w) => text.includes(w));
 
