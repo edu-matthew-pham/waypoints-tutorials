@@ -184,3 +184,7 @@ button.clcard { cursor: pointer; }
 .xbars { display: flex; flex-direction: column; gap: 4px; max-width: 420px; font-size: 14px; }
 .xbar { display: grid; grid-template-columns: 11em 1fr; align-items: center; gap: 8px; }
 .xbar i { display: block; height: 14px; border-radius: 4px; background: var(--accent); }
+/* Growing pattern */
+.patfig { border: 1px solid var(--line); border-radius: 10px; background: var(--card); padding: 10px 12px 6px; }
+.patsvg { display: block; width: 100%; height: 190px; }
+.patlabel { margin: 4px 0 0; text-align: center; font: 600 17px/1.2 system-ui, sans-serif; color: var(--ink); }

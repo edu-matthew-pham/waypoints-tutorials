@@ -8,6 +8,7 @@
   "parallel-same-numbers": {"home": "maths/linear-relations/intercept", "text": "Lines whose rules use the same numbers (y = 2x + 5 and y = 5x + 2) are taken to be parallel; only the same m makes lines parallel."},
   "cross-read-y": {"home": "maths/linear-relations/solve-graphs", "text": "The y of the point where two lines meet is given as the solution; the solution is its x (the y is the value of both sides there)."},
   "fee-decides": {"home": "maths/linear-relations/comparing-plans", "text": "The plan with the lower starting fee is taken to be cheaper for every amount; which plan is cheaper changes where the lines cross."},
+  "pattern-scaling": {"home": "maths/linear-relations/growing-patterns", "text": "Figure 10 of a growing pattern is taken to be 10 copies of Figure 1 (4 × 10 = 40); shared parts mean each figure adds less than Figure 1 has."},
   "angle-from-sides": {"home": "code/python/turtle-variables", "text": "The turn is guessed or multiplied instead of worked out as 360 / sides."},
   "assign-vs-compare": {"home": "code/python/turtle-decisions", "text": "A single = is used to ask whether two things are equal."},
   "list-index-range": {"home": "code/python/turtle-lists", "text": "A list of n items has a place n; places run from 0 to n - 1."},

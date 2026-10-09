@@ -223,8 +223,9 @@ await pictures({
 // axes and lines), cropped to what is drawn (anything unlike the board's background), ignoring the board's border.
 async function drawBoard(page, j) {
   await page.goto(`http://localhost:${port}/_playground-board/index.html?id=picture&fresh=1&code=${encodeURIComponent(j.code)}`);
-  const sel = /widget:\s*machine/.test(j.code) ? '#mrow' : '#board';
-  await page.waitForSelector(sel === '#mrow' ? '#mrow .mbox' : '#board svg', { timeout: 20000 });
+  // What to photograph: the machine's row, a growing pattern's figure, or the board.
+  const sel = /widget:\s*machine/.test(j.code) ? '#mrow' : /widget:\s*pattern/.test(j.code) ? '.patfig' : '#board';
+  await page.waitForSelector({ '#mrow': '#mrow .mbox', '.patfig': '.patsvg line, .patsvg circle', '#board': '#board svg' }[sel], { timeout: 20000, state: 'attached' });
   await page.waitForTimeout(400);
   if (await page.locator('#error').isVisible()) throw new Error(`${j.id}: the board did not start: ${await page.locator('#error').innerText()}`);
   const shot = (await page.locator(sel).screenshot()).toString('base64');

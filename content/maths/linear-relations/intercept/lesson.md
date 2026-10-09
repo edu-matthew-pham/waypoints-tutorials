@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 unit: lines
 title: What c does to a line
 summary: In y = mx + c, the number on its own moves the line up or down without changing its steepness, so lines with the same m are parallel.
