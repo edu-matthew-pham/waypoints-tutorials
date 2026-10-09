@@ -21,7 +21,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 - `predict` check: a locked prediction is stored in `wp-predict`; the next Run step shows it beside the real result.
 
 ## Open design decisions (details in ROADMAP.md)
-- Hidden-assumptions audit: `assumes`/`introduces` lint plus better in-lesson scaffolds; no "Before you start" card.
+- Hidden-assumptions audit: `assumes`/`introduces` lint plus better in-lesson scaffolds; no "Before you start" card. Error-task part is built (fault/misconception lint); the `assumes`/`introduces` construct scan is still to do.
 - Next: checkpoint task, return visit to lists and `if` in functions, console bridge, nicer input UI than `window.prompt`, then the Gradio and microStudio paths.
 
 ## Layout
@@ -29,8 +29,9 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 - `tools/lesson-core.mjs` (pure parse/validate, `evalRules`, `parseTrace`) and `tools/lesson-view.mjs` (page HTML/CSS/JS) are shared with the create page. `tools/build-site.mjs`, `tools/render.mjs` (Playwright + ffmpeg clips), `tools/validate.mjs`.
 - `playground/` (turtle), `playground-html/`, `playground-shared/snippets.js`, `snippets/*.json`, `modules/` (shared Python modules), `site/progress.js`, `create/`.
 - Docs: `AUTHORING.md` (lesson format and check types), `README.md`, `ROADMAP.md` (done and proposed).
-- Check types: reflect, question, code, number, bug, match, trace, parsons, predict.
-- Snippet ids are slugs of labels (for example `if-else`); lessons unlock them with `unlocks:`.
+- Check types: reflect, question, code, number, bug, match, trace, parsons, predict. Error items also take `fault:` and `misconception:` (ids in `misconceptions.json`); validate warns on off-path errors (AUTHORING.md, Error tasks).
+- Snippet ids are slugs of labels (for example `if-else`); lessons unlock them with `unlocks:`. Students see snippets as the **Reference** panel: cards with Copy buttons (no click-to-insert). My tools can be copied, edited and removed; student modules are global per browser (`wp-mymodules:turtle`); lesson modules offer "Open a copy to edit" once `my-module` is unlocked.
+- Multi-file examples: `# file: name.py` lines split code into panels; bug answers then use `"name.py:7"`.
 
 ## Commands
 - `npm run validate`, `npm run render` (clips), `npm run build` (site), `npm run all`. A full `all` takes about 2 minutes.
@@ -40,5 +41,5 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 ## Gotchas
 - Quote YAML captions that contain colons.
 - Display-only code regions (bug, compare, parsons) are not meant to run.
-- Commit trailers: `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` and the `Claude-Session:` line from the session reminder.
+- Commit trailers: the `Co-Authored-By:` and `Claude-Session:` lines from the session reminder (they name the current model and session).
 - Custom domain tutorials.learningwaypoints.com: DNS and the Pages setting are on Matthew's side.

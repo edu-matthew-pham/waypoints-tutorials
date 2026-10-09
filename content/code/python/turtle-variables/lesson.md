@@ -69,6 +69,8 @@ tasks:
       code: variables.py#bug
       text: "This program should draw a 5-sided shape, but it does not close. Click the wrong line."
       answer: 5
+      fault: logic
+      misconception: angle-from-sides
       explain: "angle = 360 * sides is too big. To split one full turn between the corners it should be 360 / sides."
 ```
 

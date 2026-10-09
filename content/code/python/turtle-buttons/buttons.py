@@ -156,6 +156,6 @@ bw = 120
 bh = 50
 
 def clicked(x, y):
-    if x > bx and x < bx + bw and y > by and y > by + bh:
+    if x > bx or x < bx + bw or y > by or y < by + bh:
         print("button pressed")
 # endregion

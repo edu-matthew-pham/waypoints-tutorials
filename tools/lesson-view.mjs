@@ -1,6 +1,6 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
-import { unlockKind, evalRules, parseTrace } from './lesson-core.mjs';
+import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys } from './lesson-core.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -87,6 +87,7 @@ nav.steps a .cnt{font-weight:500;color:var(--muted);margin-left:5px}
 .buglines li{padding-right:6px}.check .buglines button{display:block;width:100%;margin:0;padding:0 8px;border:0;border-radius:6px;background:none;text-align:left;color:var(--codeink);cursor:pointer}
 .check .buglines button:hover{background:rgba(255,255,255,.1)}.check .buglines button.no{background:rgba(255,100,100,.25)}.check .buglines button.yes{background:rgba(74,222,128,.28)}
 .buglines code{white-space:pre;font:inherit}
+.bugfile{margin:8px 0}.bugfile-name,.files .code-head span{font:600 13px ui-monospace,Menlo,Consolas,monospace}.bugfile-name{margin:0 0 2px;color:var(--ink)}.files{display:grid;gap:8px}
 .mrow{display:flex;gap:10px;align-items:center;margin:6px 0;flex-wrap:wrap}.mrow span{flex:1 1 180px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}.mrow select{font:inherit;font-size:14px;padding:4px 6px;border-radius:6px;max-width:100%}
 .mrow select.ok{outline:2px solid var(--run)}.mrow select.no{outline:2px solid var(--make)}
 .tscroll{overflow-x:auto}.trace{border-collapse:collapse;margin:8px 0;font:14px ui-monospace,Menlo,Consolas,monospace}.trace th,.trace td{border:1px solid var(--line);padding:4px 10px;text-align:center}.trace th{background:var(--card)}
@@ -157,7 +158,7 @@ var s=load();s.done=s.done||{};s.unlocked=s.unlocked||{};s.done[key]=true;
 ids.forEach(function(id){s.unlocked[kind+':'+id]=true});save(s);show(true);if(wrap)sync(wrap)}
 function show(fresh){
 box.classList.add('done');
-if(ids.length){msg.className='msg ok';msg.textContent=(fresh?'Unlocked: ':'Unlocked: ')+names.join(', ')+'. Find '+(names.length>1?'them':'it')+' under Snippets in the playground.'}
+if(ids.length){msg.className='msg ok';msg.textContent=(fresh?'Unlocked: ':'Unlocked: ')+names.join(', ')+'. Find '+(names.length>1?'them':'it')+' under Reference in the playground.'}
 else{msg.className='msg ok';msg.textContent='Got it.'}}
 if((load().done||{})[key])show(false);
 if(box.dataset.type==='code'){var rules=JSON.parse(box.dataset.rules),ul=box.querySelector('.rules');
@@ -180,8 +181,8 @@ function bad(t){msg.className='msg no';msg.textContent=t}
 var btn=box.querySelector('button');
 if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(box.querySelector('input').value);if(isNaN(v))return bad('Type a number first.');
 if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad('Not quite. Look at the code again and try another number.')})}
-if(ty==='bug'){var good=JSON.parse(box.dataset.answers);[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
-var n=Number(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';win()}else{b.className='no';bad('Not that line. Read the code again, one line at a time.')}})})}
+if(ty==='bug'){var good=JSON.parse(box.dataset.answers).map(String),found={};[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
+var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad('Not that line. Read the code again, one line at a time.')}})})}
 if(ty==='match'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
 [].forEach.call(box.querySelectorAll('select'),function(sel,i){var ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false});
 if(all)win();else bad('Some do not match yet. Check the ones outlined in red.')})}
@@ -263,9 +264,11 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
     return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"><p class="check-q">${esc(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
   }
   if (k.type === 'bug') {
-    const lines = (snippet ? snippet(k.code) : '').replace(/\n$/, '').split('\n');
-    const ans = Array.isArray(k.answer) ? k.answer : [k.answer];
-    return `<div class="check" ${base} data-answers="${esc(JSON.stringify(ans))}"><p class="check-q">${esc(k.text || 'Click the line that has the bug.')}</p><ol class="buglines">${lines.map((l, i) => `<li><button type="button" data-line="${i + 1}"><code>${esc(l) || ' '}</code></button></li>`).join('')}</ol>${msg}</div>`;
+    const files = splitFiles(snippet ? snippet(k.code) : '');
+    const multi = files.length > 1 || !!files[0]?.name;
+    const list = (f) => `<ol class="buglines">${f.code.replace(/\n$/, '').split('\n').map((l, i) => `<li><button type="button" data-line="${esc(multi ? `${f.name}:${i + 1}` : String(i + 1))}"><code>${esc(l) || ' '}</code></button></li>`).join('')}</ol>`;
+    const body = multi ? files.map((f) => `<div class="bugfile"><div class="bugfile-name">${esc(f.name)}</div>${list(f)}</div>`).join('') : list(files[0] || { code: '' });
+    return `<div class="check" ${base} data-answers="${esc(JSON.stringify(bugKeys(k.answer)))}" data-need="${bugKeys(k.answer).length}"><p class="check-q">${esc(k.text || 'Click the line that has the bug.')}</p>${body}${msg}</div>`;
   }
   if (k.type === 'match') {
     const rights = shuffled(k.pairs.map((p) => p[1]), key);
@@ -304,7 +307,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null)
 export function lessonPageHtml(lesson, deps) {
   const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '' } = deps;
   const md = new Marked({
-    renderer: { code({ text, lang }) { return codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
+    renderer: { code({ text, lang }) { const fs = splitFiles(text); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
   // "Predict: what will `greet` return?" -> "What will <code>greet</code> return?"
   const heading = (t) => {
@@ -320,7 +323,12 @@ export function lessonPageHtml(lesson, deps) {
     const [label, hint] = STAGE_INFO[c.stage] || STAGE_INFO.info;
     let showCode = '';
     if (c.code) {
-      try { showCode = codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]); }
+      try {
+        const files = splitFiles(snippet(c.code));
+        showCode = files.length > 1 || files[0]?.name
+          ? `<div class="files">${files.map((f) => codeBlock(highlightCode, f.code, lesson.language, f.name)).join('')}</div>`
+          : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
+      }
       catch (e) { showCode = `<div class="placeholder"><b>${esc(e.message)}</b></div>`; }
     }
     const clip = clipHtml(s);

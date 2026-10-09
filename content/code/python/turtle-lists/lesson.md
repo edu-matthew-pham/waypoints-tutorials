@@ -70,6 +70,8 @@ tasks:
       code: lists.py#bug
       text: "This program should draw three circles, but it stops with an error. Click the line that causes it."
       answer: 6
+      fault: runtime
+      misconception: list-index-range
       explain: "The loop runs four times, so on the last time it asks for colours[3]. The list has only places 0, 1 and 2."
 ```
 

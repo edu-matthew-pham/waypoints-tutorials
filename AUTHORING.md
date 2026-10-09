@@ -129,7 +129,9 @@ npm run all        # validate, render, build
 
 ## 7. Checks and unlockable snippets
 
-Each playground has a collapsible **Snippets** palette (`snippets/turtle.json`, `snippets/html.json`). A snippet
+Each playground has a collapsible **Reference** panel built from snippets (`snippets/turtle.json`, `snippets/html.json`).
+Each snippet is a card with its code and a Copy button: students copy and paste it themselves, so deciding where
+code goes stays their job. `‹text›` marks a value to change (highlighted on the card, removed when copied). A snippet
 is locked only if some step claims it with `unlocks`; unclaimed snippets are always available. A step earns its
 unlocks with a `check`, shown under the step:
 
@@ -166,7 +168,7 @@ modules: [shapes]
 
 - **Where the file lives:** `shapes.py` next to `lesson.md` (lesson-local, wins) or in the repo's `modules/` folder (shared by all lessons).
 - **What becomes a button:** each top-level `def name(args):` that starts with a docstring. The first docstring line is the hint; default values become the placeholders: `square(‹100›)`.
-- **What a click does:** inserts the call and adds `from shapes import square` to the code, if it is not there yet. "Show how it works" opens the module's source read-only.
+- **What the card shows:** two lines to copy, `from shapes import square` (at the top of `main.py`) and the call (where it should run). "Show how it works" opens the module's source; once `my-module` is unlocked it also offers **Open a copy to edit**, which makes an editable module of the student's own with the same name (theirs wins the import until they delete it).
 - **Locking:** module functions are snippets with ids like `shapes.square`, so `unlocks: [shapes.square]` works as in section 7. `npm run validate` checks that the module and function exist.
 - **Limits:** modules can use only what the playground's turtle supports. Detection is a simple pattern, so decorators and nested functions do not become buttons. Only the Python turtle playground supports modules.
 - **On the create page:** "+ Add module" adds a file tab and the `modules:` line.
@@ -175,12 +177,12 @@ modules: [shapes]
 
 Two features let students build their own tools, which is how abstraction is taught:
 
-- **Save selection as button** (feature id `save-as-button`): students select code (or put the cursor in a `def`) and save it under **My tools**. The button inserts that code. Buttons are kept per browser and follow the student across lessons.
-- **+ module** (feature id `my-module`): a tab for a file of their own functions. Functions with a docstring become buttons under "My module: name", and a click adds `from name import fn` to `main.py`. Modules are saved with the step's edits.
+- **Save selection to My tools** (feature id `save-as-button`): students select code (or put the cursor in a `def`) and save it under **My tools**, where it can be copied, edited or removed. Tools are kept per browser and follow the student across lessons. Editing a tool changes future copies only; code already pasted stays as it was (the copied-code fault, used in Modules).
+- **+ module** (feature id `my-module`): a tab for a file of their own functions. Functions with a docstring appear as cards under "My module: name" (the import line and the call to copy), with **Edit name.py** to open the tab. Modules are kept per browser and follow the student across lessons and steps.
 
 Both are unlockable like snippets: put `save-as-button` or `my-module` in a step's `unlocks:` (the create page lists them under "Playground features"). Until a lesson unlocks them they stay locked, if some lesson claims them.
 
-Suggested order: sequence, loop, variable, function (students write `def`), **save as button** (function as a tool), then **module** (several related functions in one file).
+Suggested order: sequence, loop, variable, function (students write `def`), **save to My tools** (function as a tool), then **module** (several related functions in one file, shared rather than copied).
 
 ## 9. Hook, "Use it" step and teacher notes
 
@@ -286,7 +288,7 @@ All except `code` are static and need no running code. Write the check under `ch
 | `number` | `q`, `answer`, optional `tolerance`, `explain` | types a number |
 | `match` | `q`, `pairs: [[left, right], ...]`, `explain` | picks each right-hand item from a list (shuffled for them) |
 | `trace` | `text`, `table`, `explain` | fills the blanks of a table |
-| `bug` | `code: file#region`, `answer: 7` (or `[7, 19]`), `text`, `explain` | clicks the wrong line |
+| `bug` | `code: file#region`, `answer: 7` (or `[7, 19]`; `"main.py:7"` when the code has several files), `fault`, `misconception`, `text`, `explain` | clicks the wrong line (every listed line, when there are several) |
 | `parsons` | `code: file#region` (the correct program), optional `extra: [spare lines]`, `text`, `explain` | orders scrambled lines |
 | `predict` | `q`, optional `options: [...]` (else typed; `kind: number` for a number), optional `actual` | locks in a prediction before running (cannot change it) |
 | `code` | `text`, `rules` | runs a program that meets the rules |
@@ -304,3 +306,26 @@ table: |
 Choose the tool from the insight the step should produce: repetition cost, count and predict (`number`); how a loop or variable changes, `trace`; what each part controls, `match`; why code is wrong, `bug`; how code is structured, `parsons`. `predict` goes on a Predict step with no right or wrong. The locked answer is kept in the browser; the next Run step shows "You predicted X. It actually: Y." (Y is `actual`, or what the program printed). Good prompts: what is printed, how many repeats or sides, which colour. Code rules now also include `uses: [pencolor]` (a name that must appear in the code).
 
 On the create page, the helper row adds a starter for each check type and for tasks.
+
+### Several files in one example
+
+A line `# file: name.py` (`<!-- file: name.html -->` in HTML) starts a new file. Display code, fenced code in a
+step or task body, and `bug` checks then show one panel per file with its name, so two programs never read as one
+file. A `bug` answer names the file: `answer: ["program_a.py:7", "program_b.py:7"]` (line numbers count within
+each file).
+
+### Error tasks (planted bugs and misconceptions)
+
+A planted error is a teaching choice, so it is chosen on purpose. Before writing one, check:
+
+- **On the path:** it is this lesson's misconception (or a spiral of an earlier one), never one from a later lesson and never an incidental slip.
+- **Authentic:** an error students really make, not an invented typo.
+- **One fault, named:** `fault: syntax | runtime | logic | design`. A `design` fault (the code runs, but is badly built, such as copied code) is not a one-line hunt: ask for every place it costs, or make it a refactor in Modify.
+- **Symptom, not answer:** the stem says what happens ("stops with a TypeError", "every click counts"); it never states the corrected value.
+- **Faithful:** the symptom matches real Python. If the playground differs, fix the playground.
+
+Name the misconception with an id from `misconceptions.json` (`misconception: return-vs-print`); each id has a
+`home` lesson. Questions and predictions that plant an error take the same two fields. `npm run validate` warns
+(it never fails) when an item has no fault or misconception, uses an unknown id, targets a misconception whose home
+is a later lesson, or sets a `design` fault as a one-line hunt. Add a new id to `misconceptions.json` with its home
+and a one-line description.

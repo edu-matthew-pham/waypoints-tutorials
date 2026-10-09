@@ -10,7 +10,7 @@ teachers: |
 
   **Class ideas:** each student builds a module for a theme (houses, trees, stars) and a classmate imports it; a class "town" made of everyone's modules.
 
-  **Watch for:** the module file not being named the same as the import; forgetting the import line; putting the drawing calls inside the module so they run on import.
+  **Watch for:** the module file not being named the same as the import; forgetting the import line; putting the drawing calls inside the module so they run on import; a local `def` with the same name as an imported function, which silently replaces it.
 
   **Abstraction:** a button is the first layer (reuse an idea). A module is the second: related functions collected in a file other programs can import.
 
@@ -50,9 +50,11 @@ tasks:
   - check:
       type: bug
       code: modules.py#copies
-      text: "A square should turn 90 degrees. Click a line with the bug."
-      answer: [8, 20]
-      explain: "right(80) is wrong in both programs, because each has its own copy."
+      text: "The walls do not close: the turn inside wall is wrong. Click every line you would have to change."
+      answer: ["program_a.py:7", "program_b.py:7"]
+      fault: design
+      misconception: copied-code
+      explain: "Both programs run, but each has its own copy of wall, so the same fix is needed in two places. Miss one and that program stays wrong."
   - check:
       type: question
       q: "You fix the bug in program_a.py. What happens to program_b.py?"
@@ -61,11 +63,11 @@ tasks:
       explain: "Each file has its own copy of wall, so each copy needs fixing. If both programs imported wall from one module, you would fix it once."
 ```
 
-Two programs both need `wall`, so each has its own copy. This is the problem a module solves.
+Two separate programs both need `wall`, so each has its own copy. Nothing here crashes; the problem is the copying. Pasting from **My tools** works the same way: each paste is a copy, and editing the tool does not change copies already pasted. This is the problem a module solves.
 
-### Find the bug
+### Every line to change
 
-A square should turn 90 degrees.
+The walls should close into squares. Find every place the fix has to go.
 
 ### Count the fixes
 
@@ -77,16 +79,54 @@ You fix one copy. What about the other?
 stage: investigate
 code: modules.py#use
 try: { starter: "modules.py#use", height: 420 }
-check:
-  type: question
-  q: "Where is square defined?"
-  options: ["In this program", "In shapes.py, which this program imports", "Inside the turtle module", "Nowhere"]
-  answer: 1
-  explain: "The def lives in shapes.py. The import line makes it available here."
-unlocks: [shapes.square, shapes.triangle, shapes.polygon]
+insight: "An import gives a program names; a def with the same name replaces the imported one without warning."
+tasks:
+  - check:
+      type: question
+      q: "Where is square defined?"
+      options: ["In this program", "In shapes.py, which this program imports", "Inside the turtle module", "Nowhere"]
+      answer: 1
+      explain: "The def lives in shapes.py. The import line makes it available here."
+    unlocks: [shapes.square, shapes.triangle, shapes.polygon]
+  - check:
+      type: question
+      q: "main.py imports square, then defines its own square. What does square(80) draw?"
+      options: ["A square, from shapes.py", "A circle, from main.py", "A square and a circle", "Nothing: Python stops with an error"]
+      answer: 1
+      fault: logic
+      misconception: name-rebinding
+      explain: "The def in main.py comes after the import, so the name square now means the new function. Python gives no warning. Use a different name, or keep one definition."
 ```
 
-Open **Snippets**, find **Module: shapes** and click **Show how it works**. Compare it with the functions you have written.
+Open **Reference**, find **Module: shapes** and click **Show how it works**. Compare it with the functions you have written.
+
+### Find the def
+
+Where does `square` come from?
+
+### Same name twice
+
+```python
+# file: shapes.py
+from turtle import *
+
+
+def square(size):
+    for i in range(4):
+        forward(size)
+        right(90)
+
+# file: main.py
+from turtle import *
+from shapes import square
+
+
+def square(size):
+    circle(size / 2)
+
+
+square(80)
+```
 
 ## Modify
 
@@ -96,10 +136,11 @@ try: { starter: "modules.py#move", height: 460 }
 hint:
   - "Click + module, give it a name, then cut the three functions and paste them there."
   - "Your program needs a line at the top: from yourname import house"
-check: { type: reflect, text: "I moved my functions into a module and imported them." }
+  - "The walls turn 80 degrees. Work the turn out from the shape instead: right(360 / 4)."
+check: { type: reflect, text: "I moved my functions into a module, imported them, and fixed the wall in one place." }
 ```
 
-These three functions are all in one file. Click **+ module**, move them into it, and import `house` back into `main.py`. The program should draw the same house.
+These three functions are all in one file, and the wall does not close. Click **+ module**, move them into it, and import `house` back into `main.py`. Then fix the turn in `wall`, once, in the module. Work it out from the shape, as you did with variables: `360 / 4`, not a guessed number.
 
 ## Make
 

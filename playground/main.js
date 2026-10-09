@@ -18,11 +18,23 @@ const speedEl = $('speed');
 const read = () => { try { return storeKey ? localStorage.getItem(storeKey) : null; } catch { return null; } };
 const write = (v) => { try { if (storeKey) (v === null ? localStorage.removeItem(storeKey) : localStorage.setItem(storeKey, v)); } catch { /* storage unavailable */ } };
 
-// Files: the main program, plus modules the student writes themselves (saved with this step's edits).
-const modsKey = storeKey ? `${storeKey}:mods` : null;
+// Files: the main program, plus modules the student writes themselves. Modules follow the student across
+// lessons (per browser), like My tools, so a module built in one lesson can be imported in the next.
+// Modules saved per step by earlier versions are merged in once; the newer copy of a name wins.
+const MODS_KEY = 'wp-mymodules:turtle';
+const oldModsKey = storeKey ? `${storeKey}:mods` : null;
 let studentMods = {};
-try { studentMods = JSON.parse((modsKey && localStorage.getItem(modsKey)) || '{}') || {}; } catch { studentMods = {}; }
-const saveMods = () => { try { if (modsKey) localStorage.setItem(modsKey, JSON.stringify(studentMods)); } catch { /* storage unavailable */ } };
+try { studentMods = JSON.parse(localStorage.getItem(MODS_KEY) || '{}') || {}; } catch { studentMods = {}; }
+try {
+  const old = oldModsKey && JSON.parse(localStorage.getItem(oldModsKey) || 'null');
+  if (old && typeof old === 'object') { studentMods = { ...old, ...studentMods }; localStorage.setItem(MODS_KEY, JSON.stringify(studentMods)); localStorage.removeItem(oldModsKey); }
+} catch { /* storage unavailable */ }
+const saveMods = () => { try { localStorage.setItem(MODS_KEY, JSON.stringify(studentMods)); } catch { /* storage unavailable */ } };
+// Another tab (another lesson step) changed a module: pick it up unless this tab is editing that file.
+window.addEventListener('storage', (e) => {
+  if (e.key !== MODS_KEY) return;
+  try { const next = JSON.parse(e.newValue || '{}') || {}; if (active !== 'main' && next[active] === undefined) active = 'main'; studentMods = next; ctl?.setStudentModules(studentMods); switchTab(active); } catch { /* ignore */ }
+});
 let mainText = read() ?? starter;
 let active = 'main'; // 'main' or the name of a student module
 codeEl.value = mainText;
@@ -121,7 +133,7 @@ resetBtn.addEventListener('click', () => {
 // ---------- file tabs: main.py plus the student's own modules ----------
 const tabsEl = $('tabs');
 const RESERVED = new Set(['turtle', 'random', 'math', 'time', 'string', 're', 'json', 'sys', 'os']);
-const MODULE_TEMPLATE = 'from turtle import *\n\n\n# Put your functions here. Start each one with a """docstring""" and it becomes a button.\n';
+const MODULE_TEMPLATE = 'from turtle import *\n\n\n# Put your functions here. Start each one with a """docstring""" and it shows up in Reference.\n';
 
 function switchTab(name) {
   active = name === 'main' || studentMods[name] !== undefined ? name : 'main';
@@ -170,7 +182,12 @@ function renderTabs() {
 }
 
 modulesReady.then(async (modules) => {
-  ctl = await mountSnippets({ kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed'), modules, beforeModuleInsert: () => switchTab('main') });
+  ctl = await mountSnippets({
+    kind: 'turtle', toolbar: document.querySelector('.bar'), textarea: codeEl, before: document.querySelector('.speed'), modules,
+    // A lesson module copied to edit: it becomes the student's own module of the same name, which wins the import.
+    openCopy: (name, source) => { if (studentMods[name] === undefined) { studentMods[name] = source; saveMods(); ctl?.setStudentModules(studentMods); } switchTab(name); },
+    openModule: (name) => switchTab(name),
+  });
   if (ctl) { ctl.setStudentModules(studentMods); ctl.onChange(renderTabs); }
   renderTabs();
 });

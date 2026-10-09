@@ -8,6 +8,8 @@ export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press
 export const LAYOUTS = ['split', 'full'];
 export const PLAYGROUND_KINDS = ['turtle', 'html'];
 export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict'];
+// What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
+export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
 
 /**
  * A trace table written as a small pipe table: first row is the header, cells in [brackets] are the blanks
@@ -95,6 +97,31 @@ export function snippetFrom(read, ref) {
   return out.filter((l) => !marker.test(l)).join('\n').replace(/^\n+|\s+$/g, '') + '\n';
 }
 
+/**
+ * Split display code into files. A line "# file: name.py" (or "<!-- file: name -->", "// file: name")
+ * starts a new file, so several programs show as separate panels and never as one file.
+ * Returns [{ name, code }]; code with no marker is one file with name ''.
+ */
+export function splitFiles(code) {
+  const mark = /^\s*(?:#|\/\/|<!--)\s*file:\s*([\w.\-/]+)\s*(?:-->)?\s*$/;
+  const files = [];
+  let cur = null;
+  for (const line of String(code).replace(/\n$/, '').split('\n')) {
+    const m = line.match(mark);
+    if (m) { cur = { name: m[1], lines: [] }; files.push(cur); continue; }
+    if (!cur) { cur = { name: '', lines: [] }; files.push(cur); }
+    cur.lines.push(line);
+  }
+  return files
+    .map((f) => ({ name: f.name, code: f.lines.join('\n').replace(/^\n+|\s+$/g, '') + '\n' }))
+    .filter((f) => f.name || f.code.trim());
+}
+
+/** Bug answers as "line" (one file) or "file:line" (several files) keys, the same keys the page uses. */
+export function bugKeys(answer) {
+  return (Array.isArray(answer) ? answer : [answer]).map((a) => String(a).trim());
+}
+
 /** Parse lesson.md text into a lesson object (no files touched). */
 export function parseLessonText(raw, slug = 'lesson') {
   raw = raw.replace(/\r\n/g, '\n');
@@ -176,6 +203,8 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
   const validateCheck = (k, where, c) => {
     if (!k || typeof k !== 'object' || Array.isArray(k) || !CHECK_TYPES.includes(k.type)) return err(where, `check.type must be one of ${CHECK_TYPES.join(', ')}`);
     const str = (v) => typeof v === 'string' && v.trim();
+    if (k.fault !== undefined && !FAULTS.includes(k.fault)) err(where, `check fault must be one of ${FAULTS.join(', ')}`);
+    if (k.misconception !== undefined && !/^[a-z][a-z0-9-]*$/.test(String(k.misconception))) err(where, 'check misconception must be a concept id such as return-vs-print (lowercase, hyphens)');
     if (k.type === 'reflect') { if (!str(k.text)) err(where, 'check (reflect) needs text, e.g. "I can explain why the turtle turns"'); }
     else if (k.type === 'code') {
       if (!str(k.text)) err(where, 'check (code) needs text, e.g. "Write a function and call it"');
@@ -206,9 +235,20 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       else { try { code = snip(k.code); } catch (e) { err(where, `check.code: ${e.message}`); } }
       const lines = code.replace(/\n$/, '').split('\n');
       if (k.type === 'bug') {
-        const ans = Array.isArray(k.answer) ? k.answer : [k.answer];
-        if (!ans.length || !ans.every((n) => Number.isInteger(n) && n >= 1)) err(where, 'check (bug) needs answer: a line number, or a list of line numbers (counting from 1)');
-        else if (code && ans.some((n) => n > lines.length)) err(where, `check (bug) answer is past the end of the code (${lines.length} lines)`);
+        const files = code ? splitFiles(code) : [];
+        const multi = files.length > 1 || (files[0] && files[0].name);
+        const keys = k.answer === undefined || k.answer === null ? [] : bugKeys(k.answer);
+        if (!keys.length) err(where, 'check (bug) needs answer: a line number, or a list of line numbers (counting from 1)');
+        else if (code) {
+          for (const key of keys) {
+            const m = key.match(/^(?:(.+):)?(\d+)$/);
+            const f = m && (m[1] ? files.find((x) => x.name === m[1]) : (!multi ? files[0] : null));
+            if (!m || Number(m[2]) < 1) err(where, `check (bug) answer "${key}" must be a line number${multi ? ' written as file:line, such as program_b.py:6' : ''}`);
+            else if (!f) err(where, multi ? `check (bug) answer "${key}" must name one of the files: ${files.map((x) => x.name).join(', ')} (as file:line)` : `check (bug) answer "${key}" names a file, but the code has no "# file:" lines`);
+            else if (Number(m[2]) > f.code.replace(/\n$/, '').split('\n').length) err(where, `check (bug) answer "${key}" is past the end of ${f.name || 'the code'}`);
+          }
+        }
+        
       } else {
         if (code && lines.filter((l) => l.trim()).length < 3) err(where, 'check (parsons) needs at least 3 lines of code');
         if (k.extra !== undefined && !(Array.isArray(k.extra) && k.extra.every((l) => typeof l === 'string' && l.trim()))) err(where, 'check (parsons) extra must be a list of spare lines');

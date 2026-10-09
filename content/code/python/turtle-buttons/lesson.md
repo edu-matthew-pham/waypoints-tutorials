@@ -72,9 +72,11 @@ tasks:
   - check:
       type: bug
       code: buttons.py#bug
-      text: "This click check never works, even for a click in the middle. Click the wrong line."
+      text: "Every click counts as a press, even one far from the button. Click the wrong line."
       answer: 7
-      explain: "The last comparison points the wrong way. y > by + bh asks for a click above the top, which is never inside. It should be y < by + bh."
+      fault: logic
+      misconception: and-vs-or
+      explain: "With or, one true comparison is enough, and x > bx alone is true for most clicks. A click is inside only when all four are true, so they are joined with and."
 ```
 
 The program above counts presses. `draw_scene` redraws everything, and `clicked` checks the click.

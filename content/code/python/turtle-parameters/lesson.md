@@ -1,7 +1,7 @@
 ---
 order: 6
 title: Functions with parameters
-summary: Make one function draw many different shapes, and keep your best ones as buttons.
+summary: Make one function draw many different shapes, and keep your best ones as tools.
 language: python
 hook: "One well-made function can do the work of a hundred copied lines: sending a message, drawing a tile, converting a unit."
 teachers: |
@@ -11,7 +11,7 @@ teachers: |
 
   **Watch for:** parameters confused with variables (a parameter is filled in by each call); arguments passed in the wrong order; functions that only work for one value.
 
-  **Abstraction:** Save as button is the first layer: use an idea without rewriting it. It unlocks late in this lesson so students have written a few functions first.
+  **Abstraction:** saving to My tools is the first layer: use an idea without rewriting it. A tool is copied and pasted, so each paste is a copy; the Modules lesson uses that as its reason for modules. It unlocks late in this lesson so students have written a few functions first.
 
   **Unlocks:** `save-as-button` after the pattern challenge.
 ---
@@ -119,10 +119,10 @@ Write `def pattern(sides, copies):` that draws `copies` polygons, turning a litt
 ```step
 stage: make
 try: { starter: "params.py#make", height: 440 }
-check: { type: reflect, text: "I saved a function as a button and used it again." }
+check: { type: reflect, text: "I saved a function to My tools and used it again." }
 ```
 
-You have unlocked **Save selection as button**. Open **Snippets**, put the cursor inside one of your functions, and click it. It appears under **My tools**. A button is the first layer of abstraction: you can use the idea again without rewriting it.
+You have unlocked **Save selection to My tools**. Open **Reference**, put the cursor inside one of your functions, and click it. It appears under **My tools**, ready to copy into any program. A saved tool is the first layer of abstraction: you can use the idea again without rewriting it.
 
 ## Rearrange a floor plan
 

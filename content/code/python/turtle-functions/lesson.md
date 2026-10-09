@@ -9,7 +9,7 @@ teachers: |
 
   **Class ideas:** each student writes one shape function and the class combines them into a picture; compare how long it takes to change three copies versus one function.
 
-  **Watch for:** `def` seen as the thing that draws (it only describes the steps); forgetting to call the function; the indented body.
+  **Watch for:** `def` seen as the thing that draws (it only describes the steps); forgetting to call the function; the indented body; pasting a second `def` with a name already used, which silently replaces the first.
 
   **Checkpoint:** a student who can define and call a function understands the concept. Fluent, repeated use is checked in the next lesson, not here.
 
@@ -64,6 +64,14 @@ tasks:
       code: functions.py#parsons
       text: "Put the lines in order so the program draws one square."
       explain: "The def comes first, indented lines belong inside it, and the call comes after."
+  - check:
+      type: question
+      q: "Someone pasted a second def square below the first. What does square() draw?"
+      options: ["A square", "A triangle", "A square, then a triangle", "Nothing: Python stops because square is defined twice"]
+      answer: 1
+      fault: logic
+      misconception: name-rebinding
+      explain: "A def gives a name to some steps. The second def gives the same name to new steps, so by the time square() is called it means the triangle. Python gives no warning: the first def is simply lost."
 ```
 
 `def square():` gives the loop a name. The steps only run when the name is **called**: `square()`.
@@ -79,6 +87,29 @@ What does each part of this program do?
 ### Put it in order
 
 Build the function from scrambled lines.
+
+### Same name twice
+
+This is one file.
+
+```python
+from turtle import *
+
+
+def square():
+    for i in range(4):
+        forward(100)
+        right(90)
+
+
+def square():
+    for i in range(3):
+        forward(100)
+        right(120)
+
+
+square()
+```
 
 ## Modify
 

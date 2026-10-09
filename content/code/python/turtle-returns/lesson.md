@@ -52,8 +52,10 @@ tasks:
   - check:
       type: bug
       code: returns.py#bug
-      text: "This version prints the answer but the turtle does not move. Click the wrong line."
+      text: "This version prints 100, then stops with a TypeError on the last line. Click the line that causes it."
       answer: 7
+      fault: runtime
+      misconception: return-vs-print
       explain: "print(m * scale) shows the value but does not give it back. It should be return m * scale."
   - check:
       type: question

@@ -13,7 +13,7 @@ from turtle import *
 def wall(size):
     for i in range(4):
         forward(size)
-        right(90)
+        right(80)
 
 
 def roof(size):
@@ -53,7 +53,7 @@ for i in range(4):
 # endregion
 
 # region: copies
-# ---- program_a.py ----
+# file: program_a.py
 from turtle import *
 
 
@@ -65,7 +65,7 @@ def wall(size):
 
 wall(60)
 
-# ---- program_b.py ----
+# file: program_b.py
 from turtle import *
 
 

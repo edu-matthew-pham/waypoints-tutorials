@@ -71,6 +71,8 @@ tasks:
       code: events.py#bug
       text: "This program should stamp a dot where you click, but it stops with an error. Click the wrong line."
       answer: 7
+      fault: runtime
+      misconception: handler-call-vs-pass
       explain: "stamp() with brackets runs the function straight away, before any click. Handing it over needs the name only: onscreenclick(stamp)."
 ```
 

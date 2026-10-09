@@ -68,6 +68,8 @@ tasks:
       code: decisions.py#bug
       text: "This program should draw a row of circles that alternate colour, but it will not even start. Click the wrong line."
       answer: 4
+      fault: syntax
+      misconception: assign-vs-compare
       explain: "A single = stores a value. To ask whether two things are equal, the condition needs two: i % 2 == 0."
 ```
 

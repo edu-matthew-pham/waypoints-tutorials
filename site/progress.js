@@ -22,7 +22,7 @@
     try {
       for (var i = 0; i < localStorage.length; i++) {
         var k = localStorage.key(i);
-        if (k.indexOf('wp-playground:') === 0 && k.slice(-5) === ':mods') n += Object.keys(JSON.parse(localStorage.getItem(k)) || {}).length;
+        if (k === 'wp-mymodules:turtle' || (k.indexOf('wp-playground:') === 0 && k.slice(-5) === ':mods')) n += Object.keys(JSON.parse(localStorage.getItem(k)) || {}).length;
       }
     } catch (e) { /* ignore */ }
     return n;

@@ -59,14 +59,29 @@ var $builtinmodule = function (name) {
   };
 
   // Python-callable wrappers. Functions that animate return a suspension.
-  var wrap = function (fn, animates) {
+  // Arguments that must be numbers, as in real Python: forward(None) raises TypeError rather than doing nothing.
+  var NUMS = { forward: [0], backward: [0], right: [0], left: [0], setheading: [0], circle: [0], goto: [0, 1] };
+  var typeName = function (v) { return v === NONE || v === undefined ? 'NoneType' : (v.tp$name || typeof v); };
+  var needNumbers = function (name, raw) {
+    var want = NUMS[name];
+    if (!want) return;
+    if (name === 'goto' && raw.length === 1 && raw[0] && raw[0].tp$name === 'tuple') return;
+    want.forEach(function (i) {
+      var v = raw[i];
+      if (!(v instanceof Sk.builtin.int_ || v instanceof Sk.builtin.float_ || (Sk.builtin.lng && v instanceof Sk.builtin.lng) || v instanceof Sk.builtin.bool)) {
+        throw new Sk.builtin.TypeError(name + '() needs a number, but got ' + typeName(v) + (v === NONE || v === undefined ? ' (a function that prints instead of returning gives None)' : ''));
+      }
+    });
+  };
+  var wrap = function (fn, animates, name) {
     return new Sk.builtin.func(function () {
+      needNumbers(name, Array.prototype.slice.call(arguments));
       var args = Array.prototype.slice.call(arguments).map(js);
       var out = fn.apply(null, args);
       return animates || (out && typeof out.then === 'function') ? run(out) : NONE;
     });
   };
-  Object.keys(defs).forEach(function (k) { mod[k] = wrap(defs[k]); });
+  Object.keys(defs).forEach(function (k) { mod[k] = wrap(defs[k], false, k); });
   Object.keys(aliases).forEach(function (a) { mod[a] = mod[aliases[a]]; });
   // Skulpt mangles Python names that are reserved JS words ("goto" is one) with a suffix.
   var pyName = function (k) { return k === 'goto' ? 'goto_$rw$' : k; };
