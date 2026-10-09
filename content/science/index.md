@@ -14,7 +14,7 @@ pathways:
     title: Biology
     summary: Classification and food webs.
     courses:
-      - { id: biology-7, title: Year 7 Biology, stage: foundations, summary: "Classifying living things with dichotomous keys, and food webs that model energy flow and predict population changes." }
+      - { path: science/biology-7, stage: foundations }
   - id: physics
     title: Physics
     summary: Forces and motion, how energy moves, and Newton's laws.

@@ -457,6 +457,20 @@ Vary, Practise, Make).
       force, `a` acceleration, `v` speed, `t` time, `d` distance, `m`, `g`, `w` weight; `expect: { balanced: true }`
       means both directions balance. Values are rounded to 2 decimal places. Examples: `"f = 0"`,
       `"t >= 3 and f = 0 and v > 0"` (steady speed), `"m = 4 and a = 2"`. The acceleration shows before Play.
+  - `widget: key` (a dichotomous key): `step A: Does it have a backbone? | B | D` (a question, then where yes and no
+    lead: a step letter or an answer; the first step is the start) and `specimen: Kookaburra | Has feathers and a beak.`
+    (the key's answer, what students see, and optionally a third part naming it when the answer is a group:
+    `Plant | Green leaves… | Gum tree`). Specimens are anonymous until the key names them; a wrong answer points to
+    the first step where the path went wrong. `need: 5`. Values: `n` identified, `k` specimens, `e` wrong.
+    Validate-time errors catch loops, missing steps and specimens no path reaches.
+  - `widget: foodweb`: `organism G: Grass` (add `, decomposer`), `eats K: L, G` (arrows L → K and G → K). Laid out by
+    feeding level automatically. `mode: build` (default): students click a food, then its eater; wrong arrows turn
+    red (`c` correct, `x` wrong, `k` links). `mode: trace` with `energy: 10000`: students follow a chain from a
+    producer to the top, with the energy at each level (10% rule) (`l` longest chain completed, `n` chains).
+    `mode: remove` (optionally `remove: D`): one species is removed, students predict each other population
+    (↑, ↓ or –) and check against the model's cascade with a reason for each (`r`, `p` predictions, `k`, `h` 1 once
+    checked, `c` matching). The cascade follows feeding links outward, nearest effects first; disagreeing effects
+    at the same distance are "could go either way".
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working

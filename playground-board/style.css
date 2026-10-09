@@ -69,3 +69,41 @@ main { display: flex; flex-direction: column; height: 100%; padding: 8px 12px 10
 .fbar button.quiet { margin-left: auto; font-size: 13px; padding: 6px 10px; }
 .fbar button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .fsum { margin: 2px 0 0; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* Dichotomous key */
+.kwrap { display: grid; grid-template-columns: minmax(180px, 1fr) 2fr; gap: 10px; align-items: start; }
+@media (max-width: 560px) { .kwrap { grid-template-columns: 1fr; } }
+.kcards { display: flex; flex-direction: column; gap: 6px; max-height: 420px; overflow-y: auto; }
+.kcard { text-align: left; font: 14px/1.35 system-ui, sans-serif; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.kcard b { display: block; font-size: 14px; }
+.kcard span { color: var(--muted); }
+.kcard.on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+.kcard.done b::after { content: " ✓"; color: var(--ok); }
+.kcard:focus-visible, .kbox button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.kbox { border: 1px solid var(--line); border-radius: 10px; background: var(--card); padding: 12px 14px; min-height: 180px; }
+.ksp { margin: 0 0 8px; font-size: 15px; }
+.ktrail { margin: 0 0 8px; font: 13px/1.3 ui-monospace, Menlo, Consolas, monospace; color: var(--muted); }
+.kq { margin: 0 0 10px; font-size: 18px; font-weight: 600; }
+.kbtns { display: flex; gap: 8px; flex-wrap: wrap; }
+.kbox button { font: 600 15px/1 system-ui, sans-serif; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.kbox button.go { background: var(--accent); border-color: transparent; color: #fff; }
+@media (prefers-color-scheme: dark) { .kbox button.go { color: #14181f; } }
+.kres { margin: 0 0 10px; font-size: 15px; color: #b42318; font-weight: 600; }
+.kres.ok { color: var(--ok); }
+.kfull { margin-top: 8px; font-size: 14px; }
+.kfull summary { cursor: pointer; color: var(--muted); }
+.kfull ol { list-style: none; padding-left: 0; margin: 6px 0 0; }
+.kfull li { padding: 3px 6px; border-radius: 6px; }
+.kfull li.here { background: var(--line); font-weight: 600; }
+/* Food web */
+.jxgbox .fwnode { font: 600 14px/1.1 system-ui, sans-serif; padding: 6px 10px; border-radius: 9px; border: 2px solid var(--muted); background: var(--card); color: var(--ink); cursor: pointer; white-space: nowrap; position: relative; user-select: none; }
+.jxgbox .fwnode.dec { border-style: dashed; }
+.jxgbox .fwnode.sel { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent); }
+.jxgbox .fwnode.gone { opacity: .35; text-decoration: line-through; }
+.jxgbox .fwnode.right { border-color: var(--ok); }
+.jxgbox .fwnode.wrong { border-color: #b42318; }
+.jxgbox .fwnode[data-pred]:not([data-pred=""])::after { content: attr(data-pred); position: absolute; top: -12px; right: -10px; font-size: 14px; background: var(--accent); color: #fff; border-radius: 10px; padding: 1px 6px; }
+.jxgbox .fwnode:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 480px) { .jxgbox .fwnode { font-size: 12px; padding: 4px 6px; } }
+.fwres { margin: 4px 0; padding-left: 1.2em; font-size: 14px; }
+.fwres li.ok::marker { content: "✓ "; color: var(--ok); }
+.fwres li.no::marker { content: "✗ "; color: #b42318; }
