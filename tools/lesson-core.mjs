@@ -38,11 +38,16 @@ export const MAKECODE_KINDS = ['microbit', 'arcade'];
  * (pxt.json dependencies) and to the blocks renderer, so the lesson's blocks and the extension's simulator both work.
  * Pin a released tag: a new version must not change lessons under students' feet.
  *   robot: Microsoft's microbit-robot (two-wheeled robots such as the Elecfreaks Cutebot), with its robot simulator.
+ *   ml: micro:bit CreateAI's Machine Learning blocks, with practice actions (see below).
  * wide: the editor opens full screen (MakeCode hides extension simulators in a narrow window).
  * noSimPicture: skip "What it makes" pictures (render-pictures screenshots the micro:bit, not the extension's simulator).
  */
 export const MAKECODE_EXTENSIONS = {
   robot: { name: 'microbit-robot', version: 'github:microsoft/microbit-robot#v2.7.4', target: 'microbit', wide: true, noSimPicture: true },
+  // ml: micro:bit CreateAI's Machine Learning blocks with practice actions (still, walking, running, jumping, waving,
+  // clapping) from this repo's makecode-ext/ml-events (a nested GitHub extension, pinned by tag), so lessons can use the
+  // blocks and the ML simulator panel without a trained model. It brings machine-learning in as its dependency.
+  ml: { name: 'waypoints-ml-events', version: 'github:edu-matthew-pham/waypoints-tutorials/makecode-ext/ml-events#ml-events-v1', target: 'microbit', wide: true, noSimPicture: true },
 };
 /** The extension settings a lesson uses (known keys only). */
 export const makecodeExtensions = (lesson) => (Array.isArray(lesson?.extensions) ? lesson.extensions : []).map((k) => MAKECODE_EXTENSIONS[k]).filter(Boolean);

@@ -31,7 +31,7 @@ stuck:
     fix: "Match the class names exactly, capital letters included."
 stretch: "Count how many items go in each bin and show the totals when button A is pressed."
 support: "Give the reply branch complete; students add the Neither branch only."
-leads: "Next (AI robots): a robot driven by a model, where a wrong or unsure label becomes a wrong move."
+leads: "Next: AI on the micro:bit, a model trained on movements that runs on the micro:bit itself. Later, AI robots: a robot driven by a model, where a wrong or unsure label becomes a wrong move."
 exit:
   q: "The model sends \"Glass\", a class the micro:bit's program doesn't check for. What should the program do?"
   a: "Something safe: an else branch that leaves the flap in the middle (or stops), so an unexpected label never causes a wrong action."

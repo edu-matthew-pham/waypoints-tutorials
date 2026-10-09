@@ -2,7 +2,9 @@
 // its predictions to a micro:bit over USB (Web Serial).
 //   widget: classifier
 //   testset: recycling          the test set in media/classifier/<name>/test.json (images with a label and a group);
-//                               leave it out for a webcam-only board (driving a micro:bit or robot)
+//                               leave it out for a webcam-only board (driving a micro:bit or robot); "own" for the
+//                               students' own test photos (added on the board by class and group, kept in this browser
+//                               and shared by every board on the site that uses testset: own)
 //   model: ask                  students paste their shareable link (default); or a link or a path to a model folder
 //                               (relative to the board, e.g. media/classifier/recycling/demo/) for a demo or fallback
 //   classes: Paper, Plastic     the labels the test set expects (default: the test set's classes)
@@ -18,13 +20,15 @@
 // state: { scope: { vars }, model, loaded, labels }. vars (every name has an underscore, so checks can use them):
 //   acc_all, acc_<group> (0-1), n_correct, n_total, n_classes, has_<label> (1 or 0; lower case, spaces as _),
 //   with serial: n_sent, n_replies, sent_<label> (times each label was sent, including sent_unsure), and in_<key>
-//   for each "key:number" line the micro:bit sent (dist:23 -> in_dist). Without a test set, only n_classes, has_<label>
+//   for each "key:number" line the micro:bit sent (dist:23 -> in_dist). With testset: own, also n_photos, n_groups,
+//   photos_<label> (photos of each class), and acc_min (the lowest group's accuracy) once a model has run. Without a test set, only n_classes, has_<label>
 //   and the serial values.
 // The Teachable Machine library and TensorFlow.js (the versions its export uses) load only when this widget is used.
 (function (B) {
   'use strict';
   var spec = null, set = null, model = null, modelUrl = '', results = null, st = null;
   var cache = {}, libs = null;
+  var OWN = 'wp-classifier-own';      // students' own test photos: [{ label, group, src (a small JPEG data URL) }]
   var LAST = 'wp-classifier-link';   // the last model a student loaded: later steps start with it (they paste a new one after retraining)
   var TM = /^https:\/\/teachablemachine\.withgoogle\.com\/models\/[\w-]+\/?$/;
 
@@ -68,7 +72,58 @@
     return { error: 'That does not look like a model link.' };
   }
 
+  function ownPhotos() { try { return JSON.parse(localStorage.getItem(OWN)) || []; } catch (e) { return []; } }
+  function ownSet() {
+    var photos = ownPhotos(), groups = [], names = {};
+    photos.forEach(function (p) { if (groups.indexOf(p.group) < 0) { groups.push(p.group); names[p.group] = p.group; } });
+    var classes = spec.classes ? list(spec.classes) : photos.map(function (p) { return p.label; }).filter(function (l, i, a) { return a.indexOf(l) === i; });
+    return { title: 'Your test photos', classes: classes, groups: groups, names: names, base: '', own: true,
+      images: photos.map(function (p, i) { return { label: p.label, group: p.group, src: p.src, i: i }; }) };
+  }
+  /** Shrink a photo to a 224 px square (the size the model sees), as a JPEG data URL. */
+  function shrink(file) {
+    return new Promise(function (ok, no) {
+      var r = new FileReader();
+      r.onload = function () {
+        var im = new Image();
+        im.onload = function () {
+          var c = document.createElement('canvas'), n = 224, s0 = Math.min(im.width, im.height);
+          c.width = n; c.height = n;
+          c.getContext('2d').drawImage(im, (im.width - s0) / 2, (im.height - s0) / 2, s0, s0, 0, 0, n, n);
+          ok(c.toDataURL('image/jpeg', 0.8));
+        };
+        im.onerror = function () { no(new Error(file.name + ' is not a photo this browser can open.')); };
+        im.src = r.result;
+      };
+      r.readAsDataURL(file);
+    });
+  }
+  function addPhotos(files, label, group) {
+    label = String(label || '').trim(); group = String(group || '').trim().toLowerCase().replace(/[^\w ]/g, '').replace(/\s+/g, '_');
+    if (!label) { st.ownMsg = 'Choose which class these photos are.'; paint(); return; }
+    if (!group) { st.ownMsg = 'Name the group: where or how these photos were taken (desk, window, dim…).'; paint(); return; }
+    var list0 = [].slice.call(files || []);
+    if (!list0.length) return;
+    st.ownMsg = 'Adding ' + list0.length + ' photos…'; paint();
+    Promise.all(list0.map(shrink)).then(function (srcs) {
+      var photos = ownPhotos().concat(srcs.map(function (src) { return { label: label, group: group, src: src }; }));
+      try { localStorage.setItem(OWN, JSON.stringify(photos)); } catch (e) { throw new Error('This browser has no room for more photos. Remove some first.'); }
+      st.ownMsg = 'Added ' + srcs.length + ' ' + label + ' photos (' + group.replace(/_/g, ' ') + ').';
+      ownChanged();
+    }).catch(function (e) { st.ownMsg = e.message; paint(); });
+  }
+  function removePhotos(which) {
+    var photos = ownPhotos().filter(function (p, i) { return !which(p, i); });
+    try { localStorage.setItem(OWN, JSON.stringify(photos)); } catch (e) { /* private mode */ }
+    ownChanged();
+  }
+  function ownChanged() {
+    set = ownSet(); st.ownVer = (st.ownVer || 0) + 1; results = null; B.moved = true;
+    if (model) run(); else { paint(); report(); }
+  }
+
   function testSet() {
+    if (spec.testset === 'own') return Promise.resolve(ownSet());
     if (!spec.testset) return Promise.resolve({ classes: list(spec.classes), groups: [], names: {}, images: [], base: '' });
     return fetch('media/classifier/' + spec.testset + '/test.json', { cache: 'no-cache' }).then(function (r) {
       if (!r.ok) throw new Error('There is no test set called "' + spec.testset + '".');
@@ -112,7 +167,8 @@
   function run() {
     var labels = model.getClassLabels();
     if (!set.images.length) { results = []; B.moved = true; checkClasses(labels); paint(); report(); return Promise.resolve(); }
-    if (cache[modelUrl]) { results = cache[modelUrl]; st.msg = ''; paint(); report(); return Promise.resolve(); }
+    var ck = modelUrl + '|' + (st.ownVer || 0);
+    if (cache[ck]) { results = cache[ck]; st.msg = ''; paint(); report(); return Promise.resolve(); }
     st.msg = 'Testing ' + set.images.length + ' images…'; paint();
     var out = [];
     return set.images.reduce(function (p, im) {
@@ -121,7 +177,7 @@
         out.push({ im: im, label: pred[0].className, p: pred[0].probability, ok: key(pred[0].className) === key(im.label) });
       });
     }, Promise.resolve()).then(function () {
-      cache[modelUrl] = results = out; B.moved = true;
+      cache[ck] = results = out; B.moved = true;
       checkClasses(labels);
       paint(); report();
     });
@@ -154,6 +210,14 @@
       set.classes.concat(['Neither']).forEach(function (c) { v['has_' + key(c)] = 0; });
       labels.forEach(function (l) { v['has_' + key(l)] = 1; });
       out = labels.join('/') + ' model: ' + s.all.c + '/' + s.all.n + ' (' + pct(v.acc_all) + '). ' + set.groups.map(function (g) { var x = s.by[g]; return g + ' ' + (x.n ? pct(x.c / x.n) : '–'); }).join(', ');
+    }
+    if (set && set.own) {
+      v.n_photos = set.images.length; v.n_groups = set.groups.length;
+      set.classes.forEach(function (c) { v['photos_' + key(c)] = set.images.filter(function (im) { return key(im.label) === key(c); }).length; });
+      if (model && results && results.length) {
+        var sc2 = scores(), mins = set.groups.map(function (g) { var x = sc2.by[g]; return x.n ? x.c / x.n : 1; });
+        v.acc_min = mins.length ? Math.min.apply(null, mins) : 0;
+      }
     }
     if (spec.serialOn) {
       v.n_sent = st.sent; v.n_replies = st.replies;
@@ -252,6 +316,7 @@
         if (st.log.length) { var lg = el('ol', 'cllog'); lg.setAttribute('aria-label', 'Messages to and from the micro:bit'); st.log.forEach(function (l) { lg.appendChild(el('li', '', l)); }); wrap.appendChild(lg); }
       }
     }
+    if (set.own) wrap.appendChild(ownPanel());
     // The test images.
     var grid = el('div', 'clgrid');
     set.images.forEach(function (im, i) {
@@ -262,12 +327,61 @@
       var cap = el('span', 'clcap');
       if (r) { cap.append(el('b', '', (r.ok ? '✓ ' : '✗ ') + r.label)); var bar = el('i'); bar.style.setProperty('--f', r.p); cap.append(bar); }
       else cap.append(el('b', '', im.label));
+      if (set.own && !spec.serialOn) {
+        var x = el('button', 'clx', '×'); x.type = 'button'; x.setAttribute('aria-label', 'Remove this photo');
+        x.addEventListener('click', function () { removePhotos(function (p, j) { return j === im.i; }); });
+        card.appendChild(x);
+      }
       card.appendChild(cap); grid.appendChild(card);
     });
     wrap.appendChild(grid);
     if (set.credit) wrap.appendChild(el('p', 'clcredit', set.credit));
     panel.appendChild(wrap);
   }
+
+  /** Add your own test photos: a class, a group (where or how they were taken), then the photos. */
+  function ownPanel() {
+    var box = el('div', 'clown');
+    box.appendChild(el('b', '', 'Your test photos'));
+    box.appendChild(el('p', 'clnote', 'Photos your model has never seen (not your training photos), taken where the model will be used. Give each group a name for where or how you took it: desk, window, dim, far away.'));
+    var row = el('div', 'clrow'), lab;
+    var cl = null;
+    if (spec.classes) {
+      lab = el('select', 'clsel'); set.classes.forEach(function (c) { var o = el('option', '', c); o.value = c; lab.appendChild(o); });
+    } else {
+      // Students' own classes: type one (exactly as named in the model); classes already used are offered.
+      lab = el('input', 'cllink'); lab.type = 'text'; lab.placeholder = 'Class (as in your model)';
+      cl = el('datalist'); cl.id = 'clclasses'; set.classes.concat(['Neither']).filter(function (c, i, a) { return a.indexOf(c) === i; }).forEach(function (c) { var o = el('option'); o.value = c; cl.appendChild(o); });
+      lab.setAttribute('list', 'clclasses');
+      if (st.lastLabel) lab.value = st.lastLabel;
+    }
+    lab.id = 'clownlabel'; lab.setAttribute('aria-label', 'Which class these photos are');
+    var grp = el('input', 'cllink'); grp.type = 'text'; grp.id = 'clowngroup'; grp.placeholder = 'Group, such as desk'; grp.setAttribute('aria-label', 'Group: where or how the photos were taken');
+    if (st.lastGroup) grp.value = st.lastGroup;
+    var dl = el('datalist'); dl.id = 'clgroups'; set.groups.forEach(function (g) { var o = el('option'); o.value = g; dl.appendChild(o); }); grp.setAttribute('list', 'clgroups');
+    var file = el('input'); file.type = 'file'; file.accept = 'image/*'; file.multiple = true; file.hidden = true; file.id = 'clownfile';
+    var add = el('button', 'go', 'Add photos'); add.type = 'button';
+    add.addEventListener('click', function () { st.lastGroup = grp.value; st.lastLabel = lab.value; file.click(); });
+    file.addEventListener('change', function () { addPhotos(file.files, lab.value, grp.value); });
+    row.append(lab, grp, dl, add, file);
+    if (cl) row.appendChild(cl);
+    box.appendChild(row);
+    if (set.images.length) {
+      var counts = set.classes.map(function (c) {
+        var mine = set.images.filter(function (im) { return key(im.label) === key(c); });
+        return c + ': ' + mine.length + (mine.length ? ' (' + set.groups.map(function (g) { var n = mine.filter(function (im) { return im.group === g; }).length; return n ? g.replace(/_/g, ' ') + ' ' + n : ''; }).filter(Boolean).join(', ') + ')' : '');
+      });
+      box.appendChild(el('p', 'clnote', counts.join(' · ')));
+      var clear = el('button', 'quiet', 'Remove all photos'); clear.type = 'button';
+      clear.addEventListener('click', function () { if (confirm('Remove all your test photos from this browser?')) removePhotos(function () { return true; }); });
+      var r2 = el('div', 'clrow'); r2.appendChild(clear); box.appendChild(r2);
+    }
+    if (st.ownMsg) box.appendChild(el('p', 'clmsg', st.ownMsg));
+    return box;
+  }
+
+  // Another step's board (another frame on the lesson page) added or removed own photos: show the same set here.
+  window.addEventListener('storage', function (e) { if (e.key === OWN && spec && spec.testset === 'own' && set) ownChanged(); });
 
   B.widget('classifier', {
     sections: ['gpanel'],
