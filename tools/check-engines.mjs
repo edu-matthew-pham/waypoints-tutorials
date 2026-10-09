@@ -19,10 +19,12 @@ const cases = [
 for (const [rule, start, ea, release, t] of cases) {
   const sim = new A.Sim(box()); sim.t = t; sim.hold = false; sim.rules = [A.parseRule(rule, ea, release)];
   start.forEach(([f, n]) => sim.add(f, n)); sim.setTemp(t);
-  const ke = () => sim.ms.reduce((s, m) => s + sim.ke(m), 0), atoms0 = JSON.stringify(sim.atomTally()), k0 = ke();
+  // Tallies compared in a fixed order: key order follows whichever particle comes first, which reactions change.
+  const tally = () => JSON.stringify(Object.entries(sim.atomTally()).sort());
+  const ke = () => sim.ms.reduce((s, m) => s + sim.ke(m), 0), atoms0 = tally(), k0 = ke();
   for (let f = 0; f < 900; f++) sim.step();
   if (!sim.wins) fail(`${rule}: no reactions`);
-  if (JSON.stringify(sim.atomTally()) !== atoms0) fail(`${rule}: atoms changed`);
+  if (tally() !== atoms0) fail(`${rule}: atoms changed`);
   if (Math.abs(ke() - (k0 + release * sim.wins)) > 1e-6) fail(`${rule}: energy ${ke().toFixed(3)}, expected ${(k0 + release * sim.wins).toFixed(3)}`);
   else console.log(`✓ ${rule}: ${sim.wins} reactions, atoms and energy conserved`);
 }
