@@ -8,7 +8,7 @@ import { snippetFrom, splitFiles, parseTrace, workItems } from './lesson-core.mj
 
 export const SITE_URL = (process.env.SITE_URL || 'https://tutorials.learningwaypoints.com').replace(/\/$/, '');
 export const PREPARE_URL = 'https://prepare.learningwaypoints.com/';
-const STAGES = /^(Predict|Run|Investigate|Modify|Make|Info):\s*/i;
+const STAGES = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 const bare = (t) => String(t).replace(STAGES, '');
 // A maths task's text carries its worked example (a numbered list of $maths$ lines), so slides and worksheets keep it.
 const hasWorked = (md) => LANG === 'maths' && /^1\. \$/m.test(String(md || ''));
@@ -78,6 +78,8 @@ function checkParts(k, snip, key) {
     const lines = checkCode(k, snip).replace(/\n$/, '').split('\n').filter((l) => l.trim());
     return { q: k.text || 'Put the lines in order.', parsons: shuffled(lines.concat(k.extra || []), key), solution: lines.join('\n'), answer: 'see the program below', explain: k.explain || '' };
   }
+  if (k.type === 'answer') return { q, field: true, answer: k.equation ? `any equation that is true when ${Object.entries(k.equation).map(([n, v]) => `$${n} = ${v}$`).join(', ')}` : String(k.answer), explain: k.explain || '' };
+  if (k.type === 'board') return { q: k.text, board: true, answer: '', explain: k.explain || '' };
   if (k.type === 'code') return { q: k.text, rules: k.rules, answer: '', explain: '' };
   if (k.type === 'reflect') return { q: k.text, reflect: true, answer: '', explain: '' };
   return { q, answer: '', explain: '' };
@@ -119,12 +121,12 @@ export function deckFor(lesson, { course, unit, snip }) {
       if (k?.answer) slides.push(`${BADGE.check}\n\n## What happened?\n\n* ${oneLine(k.answer)}` + note('Reveal after running. Ask who predicted it, and what made them think so.'));
     } else if (stage === 'run') {
       slides.push(runIt(s) + note(`${prose(s.body)} ${c.check?.type === 'reflect' ? `Students should be able to say: ${c.check.text}` : ''}`));
-    } else if (stage === 'investigate') {
+    } else if (stage === 'investigate' || stage === 'practise') {
       if (code) slides.push(`${BADGE.discussion}\n\n## ${title === 'Investigate' ? 'Investigate' : `Investigate: ${title.replace(/^Investigate:\s*/, '')}`}\n\n${showCode(code, s)}` + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
-        if (p.reflect || k.type === 'code') continue;
+        if (p.reflect || p.board || k.type === 'code') continue;
         let body = `**${p.q}**`;
         if (p.options) body += '\n\n' + p.options.map((o) => `- ${o}`).join('\n');
         if (p.trace) body += '\n\n' + traceTable(p.trace, true);
@@ -211,12 +213,12 @@ export function worksheetFor(lesson, { course, unit, snip }) {
       part = `## Predict\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
     } else if (stage === 'run') {
       part = `## Run\n\n${LANG === 'maths' ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
-    } else if (stage === 'investigate') {
+    } else if (stage === 'investigate' || stage === 'practise') {
       part = `## ${title}\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}`;
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
-        if (p.reflect || k.type === 'code') continue;
+        if (p.reflect || p.board || k.type === 'code') continue;
         let q = `${t ? `### ${t.title}\n\n` : ''}**${p.q}**`;
         if (t && (/```/.test(t.body) || hasWorked(t.body))) q = `${t ? `### ${t.title}\n\n` : ''}${t.body.trim()}\n\n**${p.q}**`;
         if (p.options) q += '\n\n' + p.options.map((o) => `☐ ${o}`).join('\n\n');

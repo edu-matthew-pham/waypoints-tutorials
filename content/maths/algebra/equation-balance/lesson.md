@@ -6,7 +6,7 @@ summary: An equation says two things are equal. Find the value that makes it tru
 language: maths
 hook: "Shops, recipes and sports tables all hide an equation: a total that has to match. Finding the missing number, and checking it, is what solving means."
 ---
-An **equation** says that two things are equal, like a balance scale with the same weight on each side. The **solution** is the value of the letter that makes it true.
+An **expression** is a calculation with a letter in it, such as $2x + 3$. An **equation** puts an = sign between two expressions: it says they are equal, like a balance scale with the same weight on each side. The **solution** is the value of the letter that makes it true.
 
 ## Predict: which value balances?
 
@@ -16,7 +16,7 @@ insight: "Committing to a value before trying it makes the balance a test of the
 check:
   type: predict
   q: "Which value of $x$ makes $2x + 3 = 11$ true?"
-  options: ["$x = 3$", "$x = 4$", "$x = 7$", "$x = 8$"]
+  options: ["$x = 4$", "$x = 5.5$", "$x = 7$", "$x = 8$"]
   actual: "x = 4. Two lots of 4 is 8, and 8 + 3 = 11, the same as the right side."
 ```
 
@@ -51,17 +51,13 @@ tasks:
         - ["15", "That is 3 × 5. Now take away 2."]
       explain: "3 × 5 − 2 = 15 − 2 = 13. The right side is 13 too, so x = 5 is a solution."
   - check:
-      type: question
-      q: "Sam checks whether $x = 4$ solves $2x + 3 = 11$ and writes $2x + 3 = 24 + 3 = 27$, so his answer is no. What went wrong?"
-      options:
-        - "Sam wrote 2 and 4 side by side. $2x$ means $2 \\times x$, which is 8."
-        - "Sam should have added 3 before multiplying."
-        - "Nothing went wrong: $x = 4$ is not a solution."
-        - "Sam should have put 11 in place of $x$."
-      answer: 0
+      type: bug
+      code: "working.txt#sam"
+      text: "Sam decides that $x = 4$ is not a solution of $2x + 3 = 11$, but it balanced the scale. Click the line where his working goes wrong."
+      answer: 2
       fault: logic
       misconception: algebra-juxtaposition
-      explain: "2x means 2 × x. With x = 4 that is 8, and 8 + 3 = 11, so x = 4 is a solution after all."
+      explain: "Line 2: Sam wrote 2 and 4 side by side to get 24. 2x means 2 × x, so it is 8, and 8 + 3 = 11. x = 4 is a solution after all."
   - check:
       type: question
       q: "Which one is an equation?"
@@ -84,11 +80,11 @@ To check a value, put it in place of the letter and work out each side.
 
 ### Find the mistake
 
-Check Sam's working one line at a time.
+Read Sam's working one line at a time. Where does a number come from that should not?
 
 ### Expression or equation?
 
-An **expression** is a calculation, such as $2x + 3$. An **equation** puts an = sign between two expressions.
+Look for the = sign.
 
 ## Modify: new scales
 
@@ -123,6 +119,45 @@ Now both sides change when $x$ changes. The solution still makes the two sides e
 ### A scale that will not balance
 
 Try every value. What happens between $x = 3$ and $x = 4$?
+
+## Practise: check a value
+
+```step
+stage: practise
+insight: "Substitution is a habit: every value gets checked by working out both sides."
+tasks:
+  - check:
+      type: answer
+      q: "Work out $5x - 4$ when $x = 3$."
+      answer: "11"
+      feedback:
+        - ["49", "It looks like 5x became 53. 5x means 5 × x, so it is 5 × 3 = 15."]
+        - ["15", "That is 5 × 3. Now take away 4."]
+      explain: "5 × 3 − 4 = 15 − 4 = 11."
+  - check:
+      type: answer
+      q: "Which value of $x$ solves $3x + 2 = 20$? Try 5, 6 and 7."
+      answer: "6"
+      feedback:
+        - ["5", "Check it: 3 × 5 + 2 = 17, not 20."]
+        - ["7", "Check it: 3 × 7 + 2 = 23, not 20."]
+      explain: "3 × 6 + 2 = 18 + 2 = 20, the same as the right side."
+  - check:
+      type: question
+      q: "Is $x = 2$ a solution of $4x + 1 = 3x + 4$?"
+      options:
+        - "Yes: both sides are 9"
+        - "No: the left side is 9 and the right side is 10"
+        - "No: the left side is 42 and the right side is 34"
+      answer: 1
+      explain: "4 × 2 + 1 = 9 and 3 × 2 + 4 = 10. The sides are different, so x = 2 is not a solution. (x = 3 is: both sides are 13.)"
+```
+
+### Work it out
+
+### Which value?
+
+### Both sides
 
 ## Make: your own equation
 

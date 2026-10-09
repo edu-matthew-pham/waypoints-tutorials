@@ -4,12 +4,12 @@ import YAML from 'yaml';
 import { scanModule } from './modules-scan.mjs';
 import { MATH } from './math-expr.mjs';
 
-export const STAGES = ['predict', 'run', 'investigate', 'modify', 'make', 'info'];
+export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
 export const PLAYGROUND_KINDS = ['turtle', 'html', 'maths'];
 /** What a board check can expect from the maths board's report. */
-export const BOARD_KEYS = ['balanced', 'x'];
+export const BOARD_KEYS = ['balanced', 'solved', 'x'];
 export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];

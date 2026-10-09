@@ -421,7 +421,8 @@ for (const coursePath of teachCourses) {
       for (const u of units) cheatPage({ dir: `${base}/${u.id}`, title: `${u.title}: cheat sheet`, sections: [{ title: u.title, items: unitItems[u.id] }], back: '../../', backLabel: 'Reference', nav: sheetNav('../', u.id), here: 'reference' });
     }
   }
-  // Course guide: how to use it, then each unit with its primer, cheat sheet and lessons.
+  // Course guide: how to use it, then each unit with its primer, cheat sheet and lessons. A maths course renders $...$ in primers.
+  const mathsCourse = ls.some((l) => l.language === 'maths');
   const unitBlocks = (units.length ? units : [{ id: '', title: 'Lessons' }]).map((u) => {
     const mine = ls.filter((l) => (u.id ? l.unit === u.id : true));
     if (!mine.length) return '';
@@ -431,7 +432,7 @@ for (const coursePath of teachCourses) {
       const raw = readFileSync(pf, 'utf8').replace(/\r\n/g, '\n');
       const m = raw.match(/^---\n([\s\S]*?)\n---\n?/);
       const title = m ? (m[1].match(/^title:\s*(.*)$/m) || [])[1] : '';
-      primer = `<details class="primer"><summary><b>${esc(title || `${u.title}: primer`)}</b> (read before teaching this unit)</summary>${md(m ? raw.slice(m[0].length) : raw)}</details>`;
+      primer = `<details class="primer"><summary><b>${esc(title || `${u.title}: primer`)}</b> (read before teaching this unit)</summary>${(mathsCourse ? mathsGuide.md : md)(m ? raw.slice(m[0].length) : raw)}</details>`;
     }
     let cheat = '';
     if (u.id) {
@@ -447,7 +448,7 @@ for (const coursePath of teachCourses) {
     return `<section class="tunit"><h2>${esc(u.title)}</h2>${u.summary ? `<p class="muted">${esc(u.summary)}</p>` : ''}${primer}${cheat}<ul>${rows}</ul></section>`;
   }).join('');
   const intro = `<p>Each lesson works two ways. Students can work through the online tutorial at their own pace (it checks their answers and saves their progress in their browser), or you can teach it to the whole class from the slides, then send students into the tutorial for the Modify and Make steps.</p><p>Every lesson guide has plain-language notes, the answers to every check, a solution for every task, and slides and a worksheet for <a href="https://prepare.learningwaypoints.com/" target="_blank" rel="noopener">Waypoints Prepare</a>. These guide pages are not linked from student pages, but they are not secret either: keep printed Teacher editions for answers you do not want students to find.</p>`;
-  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${units.length ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}`, `teach/${coursePath}`, coursePath));
+  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${units.length ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}`, `teach/${coursePath}`, coursePath));
 }
 mkdirSync(join(OUT, 'teach'), { recursive: true });
 writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>`, 'teach', null));

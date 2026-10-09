@@ -18,3 +18,22 @@ main { display: flex; flex-direction: column; height: 100%; padding: 8px 12px 10
 .jxgbox .eqlabel { font: 17px/1.2 ui-monospace, Menlo, Consolas, monospace; white-space: nowrap; color: var(--ink); }
 .jxgbox .eqvalue { font: 600 16px/1.2 ui-monospace, Menlo, Consolas, monospace; white-space: nowrap; color: var(--muted); }
 .jxgbox .tile { font: italic 600 15px/1 "Times New Roman", serif; color: #fff; }
+[hidden] { display: none !important; }
+.oprow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 4px 0; font-size: 15px; }
+.oprow input[type=number] { width: 4.2em; font: inherit; padding: 5px 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.oprow select { font: inherit; padding: 5px 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.oprow button { font: 600 14px/1 system-ui, sans-serif; padding: 8px 12px; border-radius: 8px; border: 1px solid transparent; background: var(--accent); color: #fff; cursor: pointer; }
+@media (prefers-color-scheme: dark) { .oprow button { color: #14181f; } }
+.oprow button.quiet { background: var(--card); color: var(--ink); border-color: var(--line); }
+.oprow button:focus-visible, .oprow input:focus-visible, .oprow select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#history, #mhistory { margin: 4px 0 0; padding-left: 2.4em; font: 16px/1.5 ui-monospace, Menlo, Consolas, monospace; max-height: 9.5em; overflow-y: auto; }
+#history li span, #mhistory li span { color: var(--muted); font: 14px system-ui, sans-serif; margin-left: .6em; }
+#machine { flex: 1; display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+#mrow { flex: 1; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; padding: 14px 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); min-height: 150px; }
+.mbox { min-width: 3.4em; padding: 10px 8px; text-align: center; font: 600 22px/1.1 ui-monospace, Menlo, Consolas, monospace; border: 2px solid var(--line); border-radius: 10px; background: var(--bg); }
+.mbox.in { border-color: var(--left); } .mbox.out { border-color: var(--right); } .mbox.found { border-color: var(--ok); color: var(--ok); }
+.mbox.unknown { color: var(--muted); }
+.mop { display: flex; flex-direction: column; align-items: center; font: 600 16px/1.2 ui-monospace, Menlo, Consolas, monospace; color: var(--ink); padding: 0 2px; }
+.mop i { font-style: normal; font-size: 22px; color: var(--muted); }
+.mop.done > span:first-child, .mop.done > i { opacity: .4; }
+.mop .back { font-size: 15px; font-weight: 700; color: var(--ok); min-height: 1.2em; }

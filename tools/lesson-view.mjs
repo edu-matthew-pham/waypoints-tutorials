@@ -10,6 +10,7 @@ export const STAGE_INFO = {
   run: ['Run', 'Run it and compare the result with your prediction.'],
   investigate: ['Investigate', 'Trace how each line of code connects to what you see.'],
   modify: ['Modify', 'Change the code on purpose and check the result.'],
+  practise: ['Practise', 'A few on your own, to check you have it.'],
   make: ['Make', 'Build something new using what you have learned.'],
   info: ['Info', ''],
 };
@@ -19,10 +20,11 @@ export const STAGE_INFO_MATHS = {
   run: ['Try', 'Try it on the board and compare the result with your prediction.'],
   investigate: ['Investigate', 'Work out why it happens, one step at a time.'],
   modify: ['Modify', 'Change the problem on purpose and see what happens.'],
+  practise: ['Practise', 'A few on your own, to check you have it.'],
   make: ['Make', 'Make your own problem using what you have learned.'],
   info: ['Info', ''],
 };
-export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Make|Info):\s*/i;
+export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 
 
 export function codeBlock(highlightCode, src, lang, label) {
@@ -32,9 +34,9 @@ export function codeBlock(highlightCode, src, lang, label) {
 export const CSS = `
 :root{--bg:#fbfaf8;--ink:#1d2430;--muted:#5d6978;--card:#fff;--line:#e4e1da;--accent:#c2570a;--code:#141a22;--codeink:#e6edf3;
 --kw:#ff7b72;--str:#a5d6ff;--fn:#d2a8ff;--com:#7f8fa1;--num:#79c0ff;
---predict:#8a5cf6;--run:#16a05d;--investigate:#2b7de9;--modify:#c2570a;--make:#d63384;--info:#5d6978}
+--predict:#8a5cf6;--run:#16a05d;--investigate:#2b7de9;--modify:#c2570a;--practise:#0e7f86;--make:#d63384;--info:#5d6978}
 @media(prefers-color-scheme:dark){:root{--bg:#0f141a;--ink:#e6edf3;--muted:#9aa7b6;--card:#161d26;--line:#26303c;--accent:#ff9d3d;--code:#0b0f14;
---predict:#b794ff;--run:#4ade80;--investigate:#6cb6ff;--modify:#ff9d3d;--make:#ff8fc0}}
+--predict:#b794ff;--run:#4ade80;--investigate:#6cb6ff;--modify:#ff9d3d;--practise:#4fd1c5;--make:#ff8fc0}}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px}
@@ -295,20 +297,20 @@ if(go){go.addEventListener('click',function(){
 var pick=box.querySelector('input[type=radio]:checked');
 if(!pick){msg.className='msg no';msg.textContent='Choose an answer first.';return}
 if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
-else{msg.className='msg no';msg.textContent='Not quite. Look at the code again and try another answer.'}})}
+else{msg.className='msg no';msg.textContent=kind==='maths'?'Not quite. Read it again and try another answer.':'Not quite. Look at the code again and try another answer.'}})}
 function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
 function bad(t){msg.className='msg no';msg.textContent=t}
 var btn=box.querySelector('button');
 if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(box.querySelector('input').value);if(isNaN(v))return bad('Type a number first.');
-if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad('Not quite. Look at the code again and try another number.')})}
+if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad(kind==='maths'?'Not quite. Check your working and try another number.':'Not quite. Look at the code again and try another number.')})}
 if(ty==='bug'){var good=JSON.parse(box.dataset.answers).map(String),found={};[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
-var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad('Not that line. Read the code again, one line at a time.')}})})}
+var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad(kind==='maths'?'Not that line. Read the working again, one line at a time.':'Not that line. Read the code again, one line at a time.')}})})}
 if(ty==='match'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
 [].forEach.call(box.querySelectorAll('select'),function(sel,i){var ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false});
 if(all)win();else bad('Some do not match yet. Check the ones outlined in red.')})}
 if(ty==='trace'&&btn){btn.addEventListener('click',function(){var all=true;
-[].forEach.call(box.querySelectorAll('input.tcell'),function(inp){var a=inp.dataset.answer,v=inp.value.trim(),ok=v!==''&&(v===a||(!isNaN(Number(v))&&!isNaN(Number(a))&&Number(v)===Number(a)));inp.className='tcell '+(ok?'ok':'no');if(!ok)all=false});
-if(all)win();else bad('Some cells are not right yet. Trace the code again, one step at a time.')})}
+[].forEach.call(box.querySelectorAll('input.tcell'),function(inp){var nz=function(t){return t.trim().replace(/÷/g,'/').replace(/×/g,'*').replace(/[−–]/g,'-').replace(/\\s*([+*\\/-])\\s*/g,'$1')};var a=inp.dataset.answer,v=inp.value.trim(),ok=v!==''&&(v===a||nz(v)===nz(a)||(!isNaN(Number(v))&&!isNaN(Number(a))&&Number(v)===Number(a)));inp.className='tcell '+(ok?'ok':'no');if(!ok)all=false});
+if(all)win();else bad(kind==='maths'?'Some cells are not right yet. Work through it again, one step at a time.':'Some cells are not right yet. Trace the code again, one step at a time.')})}
 if(ty==='predict'&&btn){var PK='wp-predict';
 function pload(){try{return JSON.parse(localStorage.getItem(PK))||{}}catch(e){return {}}}
 function plock(v){var p=pload();p[key]=v;try{localStorage.setItem(PK,JSON.stringify(p))}catch(e){}}
@@ -373,7 +375,7 @@ li.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain',
 li.addEventListener('drop',function(e){e.preventDefault();var f=Number(e.dataTransfer.getData('text/plain'));if(isNaN(f)||f===n)return;var t=inProg.splice(f,1)[0];inProg.splice(n,0,t);draw()});
 prog.appendChild(li)})}
 draw();
-box.querySelector('.pcheck').addEventListener('click',function(){if(JSON.stringify(inProg.map(function(o){return o.t}))===JSON.stringify(lines))win();else bad(inProg.length<lines.length?'Keep going: some lines are still in the pieces list, or not needed.':'Not in the right order yet. Read your program top to bottom and picture what it does.')});
+box.querySelector('.pcheck').addEventListener('click',function(){if(JSON.stringify(inProg.map(function(o){return o.t}))===JSON.stringify(lines))win();else bad(inProg.length<lines.length?'Keep going: some lines are still in the pieces list, or not needed.':(box.dataset.kind==='maths'?'Not in the right order yet. Read your steps top to bottom: does each line follow from the one above?':'Not in the right order yet. Read your program top to bottom and picture what it does.'))});
 box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw()})}
 [].forEach.call(document.querySelectorAll('.tasks'),function(w){
 [].forEach.call(w.querySelectorAll('.tp'),function(p){p.addEventListener('click',function(){var i=p.dataset.i;
@@ -429,7 +431,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
     const multi = files.length > 1 || !!files[0]?.name;
     const list = (f) => `<ol class="buglines">${f.code.replace(/\n$/, '').split('\n').map((l, i) => `<li><button type="button" data-line="${esc(multi ? `${f.name}:${i + 1}` : String(i + 1))}"><code>${esc(l) || ' '}</code></button></li>`).join('')}</ol>`;
     const body = multi ? files.map((f) => `<div class="bugfile"><div class="bugfile-name">${esc(f.name)}</div>${list(f)}</div>`).join('') : list(files[0] || { code: '' });
-    return `<div class="check" ${base} data-answers="${esc(JSON.stringify(bugKeys(k.answer)))}" data-need="${bugKeys(k.answer).length}"><p class="check-q">${esc(k.text || 'Click the line that has the bug.')}</p>${body}${msg}</div>`;
+    return `<div class="check" ${base} data-answers="${esc(JSON.stringify(bugKeys(k.answer)))}" data-need="${bugKeys(k.answer).length}"><p class="check-q">${tx(k.text || 'Click the line that has the bug.')}</p>${body}${msg}</div>`;
   }
   if (k.type === 'match') {
     const rights = shuffled(k.pairs.map((p) => p[1]), key);

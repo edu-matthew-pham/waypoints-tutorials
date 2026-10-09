@@ -390,3 +390,37 @@ Name the misconception with an id from `misconceptions.json` (`misconception: re
 (it never fails) when an item has no fault or misconception, uses an unknown id, targets a misconception whose home
 is a later lesson, or sets a `design` fault as a one-line hunt. Add a new id to `misconceptions.json` with its home
 and a one-line description.
+
+## 11. Maths lessons
+
+A lesson with `language: maths` (see `content/maths/algebra/`) gets maths notation, maths checks and the maths board.
+How maths lessons are sequenced, and why, is in the Project note `maths-structure.md` (Predict, Try, Worked example,
+Vary, Practise, Make).
+
+- **Notation:** `$2x + 3 = 11$` inline and `$$...$$` on its own line, rendered with KaTeX at build time (no maths
+  library on student pages). Works in lesson text, headings, check questions and options, and the teacher guide.
+  Money stays text: the opening `$` must be followed by a non-space, the closing `$` preceded by one and not followed
+  by a digit, so "$5 and $10" is not maths. Explanations (`explain:`) show maths as plain text.
+- **Worked example:** a fenced block with the language `worked`, one step per line, maths then the reason after `::`.
+  Students reveal it one step at a time; decks and worksheets get a numbered list.
+  ````
+  ```worked
+  2x + 3 = 11 :: Start with the equation.
+  2(4) + 3 :: Put 4 in place of $x$.
+  ```
+  ````
+- **`answer` check** (typed maths): `answer: "13"` passes any equivalent form (`26/2`, `3(5) - 2`, `x = 13`);
+  `equation: { x: 6 }` instead passes any equation that value makes true (for Make tasks). `feedback:` is a list of
+  `[wrong answer, what to say]` pairs for planted misconceptions; validate rejects feedback that is the right answer.
+  Equivalence is tested by evaluating at several values (`tools/math-expr.mjs`), so it handles algebra like `2(x + 1)`.
+- **`board` check:** ticks when the maths board reports `expect` (`balanced`, `solved` or `x`). It needs
+  `try: { playground: maths, starter: file#region }` on the step, and never ticks on the starting position.
+- **Practise stage:** `stage: practise`, between Modify and Make: a few `answer` checks with feedback.
+- **The maths board** (`playground-maths/`, JSXGraph): the starter is a `key: value` region in a `.yml` file.
+  - `widget: balance` with `left:` and `right:` (one variable). `mode: try` (default): a slider for x; the scale tips
+    and shows each side worked out. `mode: solve`: take blocks or bags of x from both sides, or share both sides into
+    equal groups; the scale stays level, the steps are written as algebra, and the answer is checked in the first
+    equation. Both sides must be whole-number bags and blocks (such as `2x + 3`).
+  - `widget: machine` with `ops: × 2, + 3` and `output: 11`: students undo the steps from the output, last step
+    first; a wrong undo gets a nudge, not the answer.
+  - Each task's `starter` loads its own board when the task is opened.
