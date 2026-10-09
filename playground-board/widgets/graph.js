@@ -12,6 +12,7 @@
 //   segment: A, B          a segment between two points;   line: A, B   the whole line through them
 //   table: 0, 1, 2, 3      a table of values of each plot at these x values
 //   step: 1                the "1 right, m up" triangle on the first plot, from this x (shows how steep it is)
+//   cross: 1, 2            where plots 1 and 2 meet: a point, its coordinates, and a dashed line down to x (the solution)
 // state: { scope: { vars: { m, c }, points: { A: [x, y] } } }   (checks are conditions on the scope)
 (function (B) {
   'use strict';
@@ -48,7 +49,7 @@
     s.xr = nums(s.x || '-10, 10', 2, 'x').map(function (t) { return num(t, 'x'); });
     s.yr = nums(s.y || '-10, 10', 2, 'y').map(function (t) { return num(t, 'y'); });
     if (!(s.xr[0] < s.xr[1]) || !(s.yr[0] < s.yr[1])) throw new Error('x: and y: need the smaller number first.');
-    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null;
+    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null; s.cross = null;
     var known = {};
     s.items.forEach(function (it) {
       var where = 'Line ' + it.line + ' (' + it.kind + (it.name ? ' ' + it.name : '') + ')';
@@ -73,6 +74,10 @@
         var e = it.value.split(',').map(function (t) { return t.trim(); });
         if (e.length !== 2) throw new Error(where + ': name two points, such as "' + it.kind + ': A, B".');
         s.lines.push({ kind: it.kind, ends: e, where: where });
+      } else if (it.kind === 'cross') {
+        var ab = it.value.split(',').map(function (t) { return Number(t.trim()); });
+        if (ab.length !== 2 || ab.some(function (n) { return !(n >= 1) || n % 1; })) throw new Error(where + ': name two plots by number, such as "cross: 1, 2".');
+        s.cross = ab;
       } else if (it.kind === 'step') {
         s.step = num(it.value, where);
       } else if (it.kind === 'table') {
@@ -92,6 +97,7 @@
     });
     if (s.table && !s.plots.length) throw new Error('A table needs a plot to take its values from.');
     if (s.step !== null && !s.plots.length) throw new Error('A step needs a plot to draw on.');
+    if (s.cross && Math.max(s.cross[0], s.cross[1]) > s.plots.length) throw new Error('cross: names plot ' + Math.max(s.cross[0], s.cross[1]) + ', but there are ' + s.plots.length + ' plots.');
   }
 
   function scope() {
@@ -161,6 +167,39 @@
       board.create('text', [x0 + 0.5, function () { return f(x0); }, '1'], Object.assign({}, lab, { anchorY: 'top' }));
       board.create('text', [x0 + 1 + (spec.xr[1] - spec.xr[0]) * 0.015, function () { return (f(x0) + f(x0 + 1)) / 2; }, function () { var d = f(x0 + 1) - f(x0); return Math.abs(d) < 1e-9 ? '' : (d > 0 ? 'up ' : 'down ') + show(Math.abs(d)); }],
         Object.assign({}, lab, { anchorX: 'left', anchorY: 'middle' }));
+    }
+    // Where two plots meet (found numerically, so any two relations work): a point, its coordinates, and a dashed
+    // line down to the x-axis, where the solution is read. Nothing is drawn when they do not meet in view (parallel lines).
+    if (spec.cross) {
+      var g1 = spec.plots[spec.cross[0] - 1], g2 = spec.plots[spec.cross[1] - 1];
+      var meet = function () {
+        var d = function (x) { try { return g1.tree(scopeVars(x)) - g2.tree(scopeVars(x)); } catch (e) { return NaN; } };
+        var a = spec.xr[0], n = 400, h = (spec.xr[1] - a) / n, pa = d(a);   // scan for a change of sign, then halve
+        for (var i = 1; i <= n; i++) {
+          if (Math.abs(pa) < 1e-12) return [round(a), round(g1.tree(scopeVars(a)))];
+          var bx = a + h, pb = d(bx);
+          if (isFinite(pa) && isFinite(pb) && pa * pb < 0) {
+            var lo = a, hi = bx;
+            for (var k = 0; k < 60; k++) { var mid = (lo + hi) / 2; if (d(lo) * d(mid) <= 0) hi = mid; else lo = mid; }
+            var x = round((lo + hi) / 2); return [x, round(g1.tree(scopeVars(x)))];
+          }
+          a = bx; pa = pb;
+        }
+        return Math.abs(pa) < 1e-12 ? [round(a), round(g1.tree(scopeVars(a)))] : null;
+      };
+      var cache = null;
+      var acc2 = B.css('--ok') || '#1a7f37';
+      var X = board.create('point', [function () { cache = meet(); return cache ? cache[0] : NaN; }, function () { cache = meet(); return cache ? cache[1] : NaN; }],
+        { name: '', size: 5, fillColor: acc2, strokeColor: acc2, fixed: true, highlight: false, showInfobox: false });
+      var foot = board.create('point', [function () { return cache ? cache[0] : NaN; }, 0], { visible: false, fixed: true, withLabel: false });
+      board.create('segment', [X, foot], { strokeColor: acc2, strokeWidth: 2, dash: 2, highlight: false, fixed: true });
+      var cl = { cssClass: 'crosslabel', highlightCssClass: 'crosslabel', strokeColor: acc2, highlightStrokeColor: acc2, fixed: true };
+      var dx = (spec.xr[1] - spec.xr[0]) * 0.02, dy = (spec.yr[1] - spec.yr[0]) * 0.03;
+      board.create('text', [function () { return cache ? cache[0] + dx : NaN; }, function () { return cache ? cache[1] + dy : NaN; }, function () { return cache ? '(' + show(cache[0]) + ', ' + show(cache[1]) + ')' : ''; }],
+        Object.assign({ anchorX: 'left', anchorY: 'bottom' }, cl));
+      // Below the axis's own number labels (or above the axis when the crossing is below it).
+      board.create('text', [function () { return cache ? cache[0] : NaN; }, function () { return cache && cache[1] < 0 ? dy * 1.5 : -dy * 2.2; }, function () { return cache ? 'x = ' + show(cache[0]) : ''; }],
+        Object.assign({ anchorX: 'middle', anchorY: 'top' }, cl));
     }
     board.update();
   }

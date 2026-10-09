@@ -441,6 +441,7 @@ Vary, Practise, Make).
       (students drag it; it lands on the nearest grid point, and checks see it only once it is let go); one capital letter each;
     - `segment: A, B` or `line: A, B`; `table: 0, 1, 2, 3` (a table of values of each plot at these x values).
     - `step: 1`: the "1 right, m up" triangle on the first plot from that x, labelled with how far it goes up or down.
+    - `cross: 1, 2`: where plots 1 and 2 meet (by number, in order): a point with its coordinates and a dashed line down to the x-axis labelled `x = …`. Nothing is drawn when they do not meet (parallel lines). Leave it off where students should find the point themselves.
   - `widget: forces` (any subject; first used by the physics lessons): a force diagram and, with `motion: on`, the
     motion it causes.
     - `object: Box` (its name), `mass: 2` (kg; `mass: 1, 10, 2` is a slider), `g: 9.8` (N/kg) or
