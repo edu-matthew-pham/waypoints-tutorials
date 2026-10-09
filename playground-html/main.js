@@ -36,11 +36,13 @@ const BOXES = `
 [data-wp-tag]::before{content:attr(data-wp-tag);display:inline-block;font:600 11px/1.4 ui-monospace,Menlo,Consolas,monospace;
 color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin-right:6px;vertical-align:.15em;text-decoration:none;font-style:normal}
 .wp-lbl{display:inline-block;font:600 11px/1.4 ui-monospace,Menlo,Consolas,monospace;color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin:0 4px 0 0;vertical-align:top;outline:none!important;text-decoration:none}
+[data-wp-flex]{padding-top:20px!important}[data-wp-flex]::before{position:absolute;left:4px;top:3px;margin:0}
 [data-wp-tag=tr]::before{content:none}[data-wp-tag=tr]{outline-width:3px}</style>
 <script>(function(){var C=['#2563eb','#c2570a','#15803d','#9333ea','#be185d'];
 function walk(el,d){[].slice.call(el.children).forEach(function(c){if(/^(SCRIPT|STYLE|BR|TEMPLATE)$/.test(c.tagName))return;
 if(/^(TBODY|THEAD|TFOOT)$/.test(c.tagName)){c.style.outline='none';c.style.padding='0';walk(c,d);return;} // the browser adds <tbody> by itself: not a box students wrote
 c.setAttribute('data-wp-tag',c.tagName.toLowerCase());c.style.setProperty('--wpc',C[d%C.length]);
+var dsp=getComputedStyle(c).display;if(/flex|grid/.test(dsp)){c.setAttribute('data-wp-flex','');if(getComputedStyle(c).position==='static')c.style.position='relative';} // in a flex or grid box, the label would become an item: float it at the corner
 if(/^(IMG|INPUT|SELECT|TEXTAREA)$/.test(c.tagName)){var lb=document.createElement('span');lb.className='wp-lbl';lb.textContent=c.tagName.toLowerCase();lb.style.setProperty('--wpc',C[d%C.length]);c.parentNode.insertBefore(lb,c);} // no ::before on pictures and form fields
 walk(c,d+1)})}
 document.addEventListener('DOMContentLoaded',function(){walk(document.body,0)})})()<\/script>`;
@@ -49,7 +51,13 @@ document.addEventListener('DOMContentLoaded',function(){walk(document.body,0)})}
 const PAGE = `<base href="${new URL('media/', location.href).href}"><script>document.addEventListener('click',function(e){
 var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');e.preventDefault();
 if(h.charAt(0)==='#'){var t=document.getElementById(h.slice(1))||document.getElementsByName(h.slice(1))[0];if(t)t.scrollIntoView();}
-else if(/^https?:/i.test(h))window.open(h,'_blank','noopener');});<\/script>`;
+else if(/^https?:/i.test(h))window.open(h,'_blank','noopener');});
+function sent(){var n=document.getElementById('wp-sent');if(!n){n=document.createElement('div');n.id='wp-sent';n.setAttribute('role','status');
+n.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;padding:8px 12px;border-radius:8px;background:#1d2430;color:#fff;font:14px/1.4 system-ui,sans-serif;z-index:2147483647';document.documentElement.appendChild(n)}
+n.textContent='Nothing was sent: this form is not connected to anything yet. Code behind a form does that job.';clearTimeout(sent.t);sent.t=setTimeout(function(){n.remove()},4000)}
+document.addEventListener('submit',function(e){e.preventDefault();sent()},true);
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button,input[type=submit]');if(b&&b.form&&(b.type==='submit')){e.preventDefault();sent()}},true);
+document.addEventListener('keydown',function(e){var t=e.target;if(e.key==='Enter'&&t&&t.form&&t.tagName==='INPUT'){e.preventDefault();sent()}},true);<\/script>`;
 // Box model view (?boxmodel=1, or ?inspect=<selector> to pin one element; or the Box model button): like the browser's
 // developer tools, it draws margin (orange), border (gold), padding (green) and content (blue) over the element under
 // the pointer, with its sizes. Drawn on top of the page, so the layout does not change (unlike Boxes).

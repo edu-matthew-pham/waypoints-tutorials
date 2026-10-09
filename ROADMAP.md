@@ -101,6 +101,31 @@ Same standard as Unit 1: PRIMM used selectively, a combinations task with a pict
 
 **Groundwork for this batch:** Box model view (`?inspect=selector` pins one element for clips and pictures; hover otherwise); snippets and examples; the Style unit primer ("CSS in 5 minutes"); picture rendering always in standards mode (fixed); `npm run check-html` covers the new lessons automatically.
 
+## Unit 3 (Components and layout): built 9 Oct
+
+Lessons 7 (Flexbox), 8 (Page sections and components) and 9 (Forms) are built as designed below. Added on the way: `list-style: none` as part of the menu pattern (bullets sit oddly in a flex row); a note in the preview when a form is sent ("Nothing was sent..."); two more drawn pictures (`star.svg`, `music.svg`); Boxes floats a flex or grid container's label at its corner (it had become a flex item). Next: the final challenge unit (a club page from every component; optional Make it react and Page layout with Grid), after review.
+
+### Design
+
+Same standard as Units 1 and 2. Facts checked in the preview.
+
+**Lesson 7: Flexbox** (`code/html/flexbox`)
+- Predict: a menu list with `ul { display: flex; gap: 16px; }`. "How will the three menu items be placed?" Side by side in a row.
+- Investigate: match `display: flex` (on the container), `gap`, `flex-wrap: wrap`, `justify-content: center`; which box gets `display: flex` (the parent); bug `flex-on-items` (`li { display: flex; }` changes nothing); combinations with a picture: a menu of links, a wrapping gallery, cards side by side.
+- Modify: menu in a row, a gap, centred; gallery that wraps. Make: a gallery of at least four pictures. Real world: "Put the club menu in a row".
+
+**Lesson 8: Page sections and components** (`code/html/sections`)
+- Predict: `<div>` swapped for `<header>` and `<footer>`. "What changes on the page?" Nothing you can see: section tags name the parts (screen readers, search engines); CSS decides the look.
+- Investigate: match `header`, `nav`, `main`, `footer`, `section`; why name parts; combinations with a Boxes picture: a hero and a row of cards inside `main`; bug spiralling `flex-on-items` (`.card` gets `display: flex` instead of `.cards`).
+- Modify: wrap the top in `<header>`, add a `<nav>`, add a `<footer>`, put the cards in a row. Make: a hero section. Real world: "Rebuild the club homepage" from plain divs.
+
+**Lesson 9: Forms** (`code/html/forms`)
+- Predict: a sign-up form. "What happens when you press Send?" Nothing: the form is not connected to anything yet (the preview shows a note saying so). Insight: the form is the front; code behind it does the work (leads to Make it react, the DOM and Gradio).
+- Investigate: match `form`, `label`, `input`, `type="email"`, `select`, `button`; label linking (`for` matches `id`); bug `label-not-linked`; combinations with a picture: a form styled as a card.
+- Modify: add an email field, a house drop-down, link the labels, style the form as a card. Make: a club sign-up form. Real world: "Fix the sign-up form".
+
+**Groundwork:** a note in the preview when a form is sent; snippets (`display: flex`, `gap`, `flex-wrap`, `justify-content`, section tags, form fields); two more drawn pictures for galleries; misconception `semantic-tags-look`; the Components unit primer.
+
 ## Proposed: turtle companion (discussed, not decided)
 
 A small turtle in the corner of course and lesson pages with a CSS idle animation (blink, bob; none with reduced motion; can be hidden). It earns one item per unit finished: a colourful pen (Drawing and repeating), a signpost and a backpack (Choices and collections), a jigsaw piece (Functions), a remote (Interaction), a crown (Final challenge). Clicking it shows its items and where each was earned; finishing a unit plays a short celebration. Per browser, built from existing progress data.

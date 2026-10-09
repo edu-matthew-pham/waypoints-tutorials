@@ -122,6 +122,73 @@
    ]
   },
   {
+   "name": "Page sections",
+   "items": [
+    {
+     "label": "<header>",
+     "code": "<header>\n  ‹<h1>Site name</h1>›\n</header>\n",
+     "hint": "The top part of a page: usually the title and the menu. Looks like a div; the name tells browsers and screen readers what it is.",
+     "example": "<header>\n  <h1>Chess club</h1>\n</header>\n<p>Page content</p>\n",
+     "shows": "It looks like any block: the name is the difference"
+    },
+    {
+     "label": "<nav>",
+     "code": "<nav>\n  ‹<a href=\"#\">Home</a>›\n</nav>\n",
+     "hint": "The main menu of links.",
+     "example": "<nav>\n  <a href=\"#\">Home</a>\n  <a href=\"#\">Games</a>\n</nav>\n",
+     "shows": "A group of menu links"
+    },
+    {
+     "label": "<main>",
+     "code": "<main>\n  ‹The page's main content›\n</main>\n",
+     "hint": "The main content of the page. One per page.",
+     "example": "<main>\n  <h2>This week</h2>\n  <p>Practice on Wednesday.</p>\n</main>\n",
+     "shows": "The main content"
+    },
+    {
+     "label": "<section>",
+     "code": "<section>\n  ‹<h2>Part</h2>›\n</section>\n",
+     "hint": "One part of the page, usually with its own heading.",
+     "example": "<section>\n  <h2>Results</h2>\n  <p>We won 3 games.</p>\n</section>\n",
+     "shows": "One part of a page with its heading"
+    },
+    {
+     "label": "<footer>",
+     "code": "<footer>\n  ‹Contact and small print›\n</footer>\n",
+     "hint": "The bottom part of a page: contact details, small print.",
+     "example": "<p>Page content</p>\n<footer>\n  <p>Contact: chess@example.com</p>\n</footer>\n",
+     "shows": "The bottom of the page"
+    }
+   ]
+  },
+  {
+   "name": "Forms",
+   "items": [
+    {
+     "label": "<form>",
+     "code": "<form>\n  ‹fields›\n  <button>‹Send›</button>\n</form>\n",
+     "hint": "Holds the fields and the button that sends them. On its own, a form sends nowhere: code behind it does the work.",
+     "example": "<form>\n  <label for=\"town\">Town</label>\n  <input id=\"town\" type=\"text\">\n  <button>Go</button>\n</form>\n",
+     "shows": "A field and a button"
+    },
+    {
+     "label": "label and input",
+     "code": "<label for=\"‹name›\">‹Name›</label>\n<input id=\"‹name›\" type=\"‹text›\">\n",
+     "hint": "An input is a box to type in. Its label says what to type; for and id must match, so clicking the label puts the cursor in the box.",
+     "matches": "^\\s*<label\\b",
+     "example": "<label for=\"age\">Age</label>\n<input id=\"age\" type=\"number\">\n",
+     "shows": "A labelled box for a number"
+    },
+    {
+     "label": "<select> drop-down",
+     "code": "<select id=\"‹house›\">\n  <option>‹Owls›</option>\n  <option>‹Hawks›</option>\n</select>\n",
+     "hint": "A drop-down list: one option to choose.",
+     "example": "<label for=\"size\">Size</label>\n<select id=\"size\">\n  <option>Small</option>\n  <option>Large</option>\n</select>\n",
+     "shows": "A drop-down showing its first option"
+    }
+   ]
+  },
+  {
    "name": "CSS",
    "items": [
     {
@@ -188,6 +255,41 @@
      "hint": "Align text: left, center or right.",
      "example": "<style>\n  h2 {\n    text-align: center;\n  }\n</style>\n<h2>Centred</h2>\n<p>Left</p>\n",
      "shows": "The heading moves to the middle"
+    },
+    {
+     "label": "display: flex",
+     "code": "display: flex;\n",
+     "hint": "Put it on the box that holds the items (the parent): its children line up in a row.",
+     "example": "<style>\n  .row {\n    display: flex;\n  }\n</style>\n<div class=\"row\">\n  <p>One</p>\n  <p>Two</p>\n  <p>Three</p>\n</div>\n",
+     "shows": "The three paragraphs sit side by side"
+    },
+    {
+     "label": "gap",
+     "code": "gap: ‹16px›;\n",
+     "hint": "Space between the items in a flex row (on the parent, with display: flex).",
+     "example": "<style>\n  .row {\n    display: flex;\n    gap: 40px;\n  }\n</style>\n<div class=\"row\">\n  <p>One</p>\n  <p>Two</p>\n  <p>Three</p>\n</div>\n",
+     "shows": "40 pixels between the items"
+    },
+    {
+     "label": "flex-wrap",
+     "code": "flex-wrap: wrap;\n",
+     "hint": "Let items move to the next line when the row is full.",
+     "example": "<style>\n  .row {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 8px;\n    width: 180px;\n  }\n</style>\n<div class=\"row\">\n  <img src=\"star.svg\" alt=\"Star\" width=\"50\">\n  <img src=\"star.svg\" alt=\"Star\" width=\"50\">\n  <img src=\"star.svg\" alt=\"Star\" width=\"50\">\n  <img src=\"star.svg\" alt=\"Star\" width=\"50\">\n</div>\n",
+     "shows": "The fourth star wraps to the next line"
+    },
+    {
+     "label": "justify-content",
+     "code": "justify-content: ‹center›;\n",
+     "hint": "Where the items sit along the row: flex-start, center, flex-end or space-between.",
+     "example": "<style>\n  .row {\n    display: flex;\n    justify-content: space-between;\n    width: 220px;\n    border: 1px solid gray;\n  }\n</style>\n<div class=\"row\">\n  <p>Left</p>\n  <p>Right</p>\n</div>\n",
+     "shows": "space-between pushes the items to the ends"
+    },
+    {
+     "label": "list-style",
+     "code": "list-style: none;\n",
+     "hint": "Remove the bullets or numbers from a list: menus are lists without bullets.",
+     "example": "<style>\n  ol {\n    list-style: none;\n  }\n</style>\n<ol>\n  <li>First</li>\n  <li>Second</li>\n</ol>\n",
+     "shows": "A list with no numbers"
     },
     {
      "label": "width",
