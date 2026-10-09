@@ -26,5 +26,10 @@
   "button-check-once": {"home": "code/microbit/microbit-buttons", "text": "Checking a button in on start watches for presses; in fact it checks once, at the start, before anyone presses."},
   "reset-in-loop": {"home": "code/microbit/microbit-counting", "text": "Setting a variable's start value inside forever is harmless; in fact it resets the variable again and again, wiping every change."},
   "comparison-direction": {"home": "code/microbit/microbit-if", "text": "< and > can be read either way round, so the condition is true in the opposite case to the one intended."},
-  "else-if-order": {"home": "code/microbit/microbit-else", "text": "Every else if is checked; in fact the first true question wins, so a wider question asked first hides the narrower ones after it."}
+  "else-if-order": {"home": "code/microbit/microbit-else", "text": "Every else if is checked; in fact the first true question wins, so a wider question asked first hides the narrower ones after it."},
+  "list-first-is-one": {"home": "code/microbit/microbit-lists", "text": "The first item of a list is at place 1; in fact places start at 0, so the last is the length minus 1."},
+  "define-not-call": {"home": "code/microbit/microbit-functions", "text": "Making a function runs it; in fact its blocks only run when something calls it."},
+  "radio-group-mismatch": {"home": "code/microbit/microbit-radio", "text": "Any micro:bit nearby hears a radio message; in fact only micro:bits in the same group receive it."},
+  "shared-code-mismatch": {"home": "code/microbit/microbit-messages", "text": "Each micro:bit can order its list of words its own way; in fact both must share the same list in the same order, because only the place number is sent."},
+  "copied-blocks": {"home": "code/microbit/microbit-duel", "text": "Copying blocks to a second place is free; in fact every copy must be kept the same by hand, which a function avoids."}
 }

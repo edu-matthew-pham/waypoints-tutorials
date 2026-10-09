@@ -170,7 +170,7 @@ Checked in the `pxt-core` 13.2.5 source: controller mode is switched on by the U
 
 **Next:** build the `makecode` playground into the site from the sample lesson, then map the micro:bit course onto the shared spine (`BUILDING.md` › 2), with "Pictures on the LEDs" as lesson 1.
 
-## MakeCode: micro:bit Foundations sequence (decided 9 Oct 2026; Units 1–3 written, not built)
+## MakeCode: micro:bit Foundations sequence (decided 9 Oct 2026; all 14 lessons written, not built)
 
 **Shape.** Two parallel foundations courses, start with either: **micro:bit Foundations** and **MakeCode Arcade**. Neither depends on the other. Foundations is fully simulator-based (no hardware needed; real micro:bits are a For teachers bonus via Download). Robots come in **Robotics challenges** (extensions, after micro:bit Foundations): each idea learnt in the simulator, then run on a real Kitronik MOVE Motor. That course's sim-first design waits on MOVE Motor simulation (see embedding check); foundations does not.
 
@@ -183,15 +183,15 @@ Checked in the `pxt-core` 13.2.5 source: controller mode is switched on by the U
 1. **Show and react** (written): 1 Pictures on the LEDs (sequence, `forever`; error `run-once-vs-forever`). 2 Buttons and gestures (events; error `button-check-once`).
 2. **Remember and sense** (written): 3 Counting (variables, set versus change; error `reset-in-loop`; Make a step counter). 4 Sensors are numbers (light, temperature, tilt; Sam's thermometer spirals `run-once-vs-forever`; Make a thermometer).
 3. **Decide** (written): 5 If (night light whose lights stay on, because an if does nothing when false; error `comparison-direction`; Make a weather warning). 6 Else and ranges (tilt arrows; the first true question wins; error `else-if-order`; Make a comfort meter from two questions).
-4. **Collections and tools**: 7 Lists (rock paper scissors, magic 8-ball; error: counting from 1). 8 Functions (`draw frame`, then a parameter; the Python peek starts here).
-5. **Talk**: 9 Send and receive (radio groups; error: different groups). 10 Messages with meaning (a number stands for a choice, revisiting lists).
-6. **Challenge: Reaction timer**: 11 Reaction timer (core, milestones: random wait, signal, time the press, best score). 12 Radio duel (shared). 13 Optional: Fake-outs and levels. 14 Optional: Tournament (several players, scoreboard list, a function per round). Optional lessons are the high ceiling within the course, not previews of other courses.
+4. **Collections and tools** (written): 7 Lists (magic 8-ball, places from 0, length − 1; error `list-first-is-one`; Make rock paper scissors). 8 Functions (flashHeart, a parameter; error `define-not-call`; the Python peek starts here: every event block is a function; Make a stick-figure dance).
+5. **Talk** (written): 9 Send and receive (groups, a micro:bit never hears itself; error `radio-group-mismatch`; Make bike signals by radio). 10 Messages with meaning (a shared list as a code, a reply message; error `shared-code-mismatch`; Make a mood check-in).
+6. **Challenge** (written): 11 Reaction timer (milestones: time the press, no cheating with a true/false variable, beat your best). 12 Radio duel (milestones: refactor copied blocks into `go`, error `copied-blocks`; first press wins; first to three). 13 Optional: Fake-outs and levels (decoys, a list of target times per level, lives). 14 Optional: Tournament (a two-place scoreboard list, a `startRound` function so rounds carry on, a champion and reset). Optional lessons are the high ceiling within the course, not previews of other courses. Only two new blocks in the whole unit: running time and true/false.
 
-**Format additions the playground needs** (used by the written lessons): `try.playground: microbit` (and `arcade`), `language: makecode` (display code shown as a rendered blocks picture), and two code rules: `inside: { "basic.forever": [fragments] }` (fragments inside the first `{ … }` block after the key, so it also works for `"input.onButtonPressed(Button.B"`; comments and spaces ignored) and `count: { "basic.show": 3 }` (occurrences; note that `if(` also counts `else if(`). Check labels show the check's `text`, never a code fragment, since students work in blocks. Validate rejects these until the playground exists, so the content waits on a branch.
+**Format additions the playground needs** (used by the written lessons): `try.playground: microbit` (and `arcade`), `language: makecode` (display code shown as a rendered blocks picture), and two code rules: `inside: { "basic.forever": [fragments] }` (fragments inside the first `{ … }` block after the key, so it also works for `"input.onButtonPressed(Button.B"`; comments and spaces ignored) and `count: { "basic.show": 3 }` (occurrences; note that `if(` also counts `else if(`). The existing `defs`, `calls` and `params` rules read named MakeCode functions (`function name (points: number)`); event blocks are anonymous `function ()`, so they never count. Check labels show the check's `text`, never a code fragment, since students work in blocks. Validate rejects these until the playground exists, so the content waits on a branch.
 
 **Arcade** gets the same treatment next, on the same spine: sprites, movement, overlaps as events, score and lives, projectiles as lists, functions, levels, then a challenge game.
 
-Units 1–3 (lessons 1–6, three primers) are written to the full standard, with teacher notes, solutions and planted misconceptions. Every solution passes its code check and every starter fails it (tested with the proposed rules).
+All 14 lessons and six unit primers are written to the full standard, with teacher notes, solutions, nine planted misconceptions and Python peeks from lesson 8. All 42 code checks are tested with the proposed rules: every solution passes, every starter fails, and no earlier task's solution ticks a later task. Simulator details in the text (light and temperature sliders, tilting with the mouse, the second micro:bit for radio, SHAKE and A+B buttons) were written from knowledge of MakeCode and need a spot-check in the live editor.
 
 ## Proposed: turtle companion (discussed, not decided)
 
@@ -217,7 +217,7 @@ Three pathways offered as options, not gates. Each shares one concept spine (seq
 
 **Overlap settled:** Arcade is games with blocks (MakeCode pathway); microStudio is games in text code (Python extension).
 
-**Next builds, in order:** the lists/`if` revisit (the final challenge is built); HTML & CSS is built (lessons 1 to 12); MakeCode (embedding checked, Units 1–3 written; next is the `makecode` playground).
+**Next builds, in order:** the lists/`if` revisit (the final challenge is built); HTML & CSS is built (lessons 1 to 12); MakeCode (embedding checked, micro:bit Foundations written; next is the `makecode` playground).
 
 **Decided (9 Oct):** the console bridge (one or two lessons: `input()`, `print()`, a text menu) is the last Python foundations course and comes before every extension. Deeper console Python (strings, dictionaries, files, errors) is its own extension. Machine learning with Gradio comes after both Deeper console Python and the Gradio course. Pathway cards show this as "After: …" (`after:` in `code/index.md`, by course path or planned `id`).
 
