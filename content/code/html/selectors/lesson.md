@@ -12,7 +12,7 @@ app:
 pacing:
   keyDelayMs: 45
 explainPicture: page.html#explain
-voice: true
+voice: { name: af_heart, speed: 1.1 }
 explainClip:
   query: { code: "@page.html#explain-start", zoom: 1.6 }
   caption: "A rule picks elements with a selector, then sets how they look"

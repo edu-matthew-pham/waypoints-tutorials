@@ -12,7 +12,7 @@ app:
 pacing:
   keyDelayMs: 40
 explainPicture: { ref: page.html#explain, inspect: ".card" }
-voice: true
+voice: { name: af_heart, speed: 1.1 }
 explainClip:
   query: { code: "@page.html#explain-start", inspect: ".card", zoom: 1.4 }
   caption: "Every element is a box: content, padding, border, margin"
