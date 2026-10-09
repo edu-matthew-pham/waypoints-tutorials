@@ -142,6 +142,14 @@ for (const r of REFS) {
 
 // Playground pages live beside Reference on the paths that have a playground.
 const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' } };
+// One segment per check, in lesson order: its progress key, the step anchor and a label (for the course page).
+const segmentsOf = (l) => l.steps.flatMap((s) => {
+  const step = s.title.replace(/^(Predict|Run|Investigate|Modify|Make|Info):\s*/i, '');
+  const stage = s.config.stage || 'info';
+  return s.tasks.length
+    ? s.tasks.filter((t) => t.config.check).map((t) => ({ key: `${l.slug}/${t.id}`, href: `#${s.id}`, label: s.tasks.length > 1 ? `${step} › ${t.title}` : step, stage }))
+    : s.config.check ? [{ key: `${l.slug}/${s.id}`, href: `#${s.id}`, label: step, stage }] : [];
+});
 const checkKeys = (l) => l.steps.flatMap((s) => s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => `${l.slug}/${t.id}`) : s.config.check ? [`${l.slug}/${s.id}`] : []);
 for (const l of lessons) {
   const parentPath = l.slug.split('/').slice(0, -1).join('/');
@@ -204,8 +212,30 @@ for (const node of dirs.values()) {
   const items = (play ? `<li><a href="playground/"><b>Playground</b><span>Free play: write and run your own ${esc(play.label)} code.</span></a></li>` : '') + (ref ? `<li><a href="reference/"><b>Reference</b><span>Every command and tag in the playground, with what it does.</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
   const outDir = join(OUT, node.path);
   mkdirSync(outDir, { recursive: true });
+  const up = '../'.repeat(node.path.split('/').length);
+  const courseLessons = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === node.path);
+  if (courseLessons.length && !isRoot) {
+    // A course page: progress first. Continue card, one compact row per lesson with a segment per check
+    // (filled from this browser's progress by progress.js), and the playground and reference as small links.
+    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref ? `<a class="chip" href="reference/">Reference</a>` : '');
+    const rows = courseLessons.map((l) => {
+      const segs = segmentsOf(l), name = l.slug.split('/').pop();
+      const bar = segs.length ? `<span class="segs" aria-hidden="true">${segs.map((g) => `<a class="seg" href="${esc(name)}/${g.href}" data-key="${esc(g.key)}" style="--c:var(--${esc(g.stage)})" title="${esc(g.label)}" tabindex="-1"></a>`).join('')}</span>` : '';
+      return `<li class="crow" data-keys="${esc(segs.map((g) => g.key).join('|'))}" data-hrefs="${esc(segs.map((g) => `${name}/${g.href}`).join('|'))}" data-labels="${esc(segs.map((g) => g.label).join('|'))}" data-href="${esc(name)}/" data-title="${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}">` +
+        `<span class="cnum">${l.order ?? ''}</span><div class="cmain"><a class="ctitle" href="${esc(name)}/">${esc(l.title)}</a>${l.summary ? `<span class="csum">${esc(l.summary)}</span>` : ''}${bar}</div>` +
+        `<span class="cstat">${segs.length ? `0/${segs.length}` : ''}</span></li>`;
+    }).join('');
+    const hasChecks = courseLessons.some((l) => segmentsOf(l).length);
+    writeFileSync(join(outDir, 'index.html'), page(node.title,
+      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>` +
+      (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') +
+      `<ol class="course" id="course" data-kind="${play?.kind || ''}">${rows}</ol>` +
+      (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : ''),
+      `<script src="${up}progress.js" data-root="${up}" defer></script>`));
+    continue;
+  }
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
-    `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${play ? '<p><a href="#" data-progress-open>My progress</a></p>' : ''}<ul class="lessons">${items}</ul>`, play ? `<script src="${'../'.repeat(node.path.split('/').length)}progress.js" data-root="${'../'.repeat(node.path.split('/').length)}" defer></script>` : ''));
+    `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header><ul class="lessons">${items}</ul>`, play ? `<script src="${up}progress.js" data-root="${up}" defer></script>` : ''));
 }
 writeFileSync(join(OUT, '.nojekyll'), '');
 
