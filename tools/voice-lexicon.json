@@ -30,6 +30,11 @@
     "def": "def",
     "px": "pixels",
     "rgb": "R G B",
-    "micro:bit": "micro bit"
+    "micro:bit": "micro bit",
+    "ul": "U L",
+    "li": "L I",
+    "fr": "fraction",
+    "id": "I D",
+    "DOM": "dom"
   }
 }

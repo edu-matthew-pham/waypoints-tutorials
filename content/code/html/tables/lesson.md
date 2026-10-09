@@ -12,6 +12,7 @@ app:
 pacing:
   keyDelayMs: 40
 explainPicture: { ref: page.html#explain, boxes: true }
+voice: true
 explainClip:
   query: { code: "", boxes: 1, zoom: 1.5 }
   caption: "A table is rows, and each row is cells"

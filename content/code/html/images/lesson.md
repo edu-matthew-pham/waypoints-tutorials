@@ -12,6 +12,7 @@ app:
 pacing:
   keyDelayMs: 45
 explainPicture: page.html#explain
+voice: true
 explainClip:
   query: { code: "", zoom: 1.7 }
   caption: "src names the picture file, and alt describes it"

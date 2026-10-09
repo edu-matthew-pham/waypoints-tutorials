@@ -12,6 +12,7 @@ app:
 pacing:
   keyDelayMs: 45
 explainPicture: page.html#explain
+voice: true
 explainClip:
   query: { code: "@page.html#explain-start", zoom: 1.6 }
   caption: "display: flex on the parent lines its children up in a row"

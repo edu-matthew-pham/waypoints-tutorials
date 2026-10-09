@@ -12,11 +12,14 @@ app:
 pacing:
   keyDelayMs: 40
 explainPicture: { ref: page.html#explain, inspect: ".card" }
+voice: true
 explainClip:
   query: { code: "@page.html#explain-start", inspect: ".card", zoom: 1.4 }
   caption: "Every element is a box: content, padding, border, margin"
   clip:
-    - caption: "Every element is a box. Box model view shows its parts. The words are the content (blue)."
+    - caption:
+        text: "Every element is a box. Box model view shows its parts. The words are the content (blue)."
+        say: "Every element is a box. The words in the middle, in blue, are its content."
     - wait: 1800
     - caption: "padding (green) adds space inside, around the content."
     - type: { into: HTML code, text: "    padding: 20px;\n", after: ".card {\n" }
@@ -24,7 +27,9 @@ explainClip:
     - type: { into: HTML code, text: "    border: 5px solid navy;\n", after: "padding: 20px;\n" }
     - caption: "margin (orange) is space outside the border, between boxes."
     - type: { into: HTML code, text: "    margin: 20px;\n", after: "solid navy;\n" }
-    - caption: "width sets the content only: 200 + 20 + 20 + 5 + 5 = 250 wide."
+    - caption:
+        text: "width sets the content only: 200 + 20 + 20 + 5 + 5 = 250 wide."
+        say: "Width sets the content only, so with padding and border the box is 250 wide."
     - type: { into: HTML code, text: "    width: 200px;\n", after: "margin: 20px;\n" }
     - expect: { selector: "#preview-text", contains: "Owls: 12 points" }
     - wait: 2500

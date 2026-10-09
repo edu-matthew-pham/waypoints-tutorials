@@ -12,6 +12,7 @@ app:
 pacing:
   keyDelayMs: 45
 explainPicture: { ref: page.html#explain, boxes: true }
+voice: true
 explainClip:
   query: { code: "", zoom: 1.7 }
   caption: "Tags label text, and the browser shows its best guess"

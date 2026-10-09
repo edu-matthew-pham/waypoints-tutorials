@@ -12,6 +12,7 @@ app:
 pacing:
   keyDelayMs: 40
 explainPicture: { ref: page.html#explain, boxes: true }
+voice: true
 explainClip:
   query: { code: "", boxes: 1, zoom: 1.6 }
   caption: "Section tags name the parts of a page"
@@ -23,7 +24,9 @@ explainClip:
     - caption: "<footer> is the bottom: contact details and small print."
     - type: { into: HTML code, text: "<footer>\n  <p>Contact us</p>\n</footer>", append: true }
     - expect: { selector: "#preview-text", contains: "Contact us" }
-    - caption: "They look like plain boxes. Their names tell browsers and screen readers what each part is."
+    - caption:
+        text: "They look like plain boxes. Their names tell browsers and screen readers what each part is."
+        say: "They look like plain boxes, but their names tell screen readers what each part is."
     - wait: 2500
 hook: "Every website has the same parts: a top bar, a menu, the content, a footer. Screen readers let people jump straight to each one."
 ---

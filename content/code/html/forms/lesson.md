@@ -12,20 +12,25 @@ app:
 pacing:
   keyDelayMs: 40
 explainPicture: page.html#explain
+voice: true
 explainClip:
   query: { code: "", zoom: 1.6 }
   caption: "A form is labels, boxes and a button, with nothing behind it yet"
   clip:
     - caption: "<form> holds the fields and the button."
     - type: { into: HTML code, text: "<form>\n", append: true }
-    - caption: "A label says what to type. for=\"name\" links it to the box with id=\"name\"."
+    - caption:
+        text: "A label says what to type. for=\"name\" links it to the box with id=\"name\"."
+        say: "A label says what to type and links to its box by I D."
     - type: { into: HTML code, text: "  <label for=\"name\">Name</label>\n", append: true }
     - caption: "<input> is the box to type in. It has no closing tag."
     - type: { into: HTML code, text: "  <input id=\"name\" type=\"text\">\n", append: true }
     - caption: "A button sends the form..."
     - type: { into: HTML code, text: "  <button>Send</button>\n</form>", append: true }
     - expect: { selector: "#preview-text", contains: "Send" }
-    - caption: "...but nothing is connected to it yet. Code behind a form does the work."
+    - caption:
+        text: "...but nothing is connected to it yet. Code behind a form does the work."
+        say: "But nothing is connected to it yet. Code behind the form does the work."
     - wait: 2500
 hook: "Every sign-up, search box, quiz and online order starts as a form like this."
 ---

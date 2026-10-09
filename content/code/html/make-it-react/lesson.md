@@ -12,20 +12,25 @@ app:
   layout: full
 pacing:
   keyDelayMs: 35
+voice: true
 explainClip:
   query: { code: "@page.html#explain-start", zoom: 1.0 }
   caption: "Find an element, wait for a click, change the page"
   clip:
     - caption: "JavaScript goes in a <script> block, after the HTML."
     - type: { into: HTML code, text: "\n<script>\n", append: true }
-    - caption: "Find the button with id=\"go\" (# means id), and wait for a click..."
+    - caption:
+        text: "Find the button with id=\"go\" (# means id), and wait for a click..."
+        say: "Find the button whose I D is go, and wait for a click."
     - type: { into: HTML code, text: "  document.querySelector('#go').addEventListener('click', function () {\n", append: true }
     - caption: "...then find the message and change its words."
     - type: { into: HTML code, text: "    document.querySelector('#message').textContent = 'Go!';\n  });\n</script>", append: true }
     - caption: "Click Start."
     - click: { selector: "#go", preview: true }
     - expect: { selector: "#message", contains: "Go!", preview: true }
-    - caption: "The page changed. The DOM course explains every part of this recipe."
+    - caption:
+        text: "The page changed. The DOM course explains every part of this recipe."
+        say: "The page changed. A later course explains every part of this recipe."
     - wait: 2500
 hook: "Every like button, quiz and game on a website is a page that reacts: code waits for a click, then changes something."
 ---

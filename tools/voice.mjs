@@ -36,6 +36,10 @@ export function forSpeech(text) {
   s = s.replace(/<\/\s*([a-z][a-z0-9]*)\s*>/gi, (_, t) => ` closing ${spellTag(t)} `);
   s = s.replace(/<\s*([a-z][a-z0-9]*)[^>]*>/gi, (_, t) => ` ${spellTag(t)} `);
   s = s.replace(/\b([a-z_]\w*)\(([^()]*)\)/gi, (_, f, a) => ` ${f} ${a.replace(/,/g, ' ')} `);
+  s = s.replace(/(\d)(px|fr|em|rem|%)\b/g, (_, n, u) => `${n} ${{ px: 'pixels', fr: 'fraction', em: 'em', rem: 'rem', '%': 'percent' }[u]}`);
+  // CSS "property: value" is said without the pause a colon would add: "display: flex" -> "display flex".
+  s = s.replace(/\b(display|gap|width|height|color|background|padding|margin|border|font-size|text-align|grid-template-columns)\s*:\s*(?=[a-z0-9#])/g, '$1 ');
+  s = s.replace(/\b([a-z]+)-(?=[a-z])/g, '$1 '); // grid-template-columns -> grid template columns
   for (const [w, say] of Object.entries(lexicon.words)) s = s.replace(new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'), say);
   return s
     .replace(/\s*(—|–|--)\s*/g, ', ')

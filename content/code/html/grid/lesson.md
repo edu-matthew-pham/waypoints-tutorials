@@ -13,6 +13,7 @@ app:
 pacing:
   keyDelayMs: 40
 explainPicture: page.html#explain
+voice: true
 explainClip:
   query: { code: "@page.html#explain-start", zoom: 1.6 }
   caption: "display: grid on the parent, then list the columns"
@@ -21,7 +22,9 @@ explainClip:
     - wait: 1500
     - caption: "display: grid goes on the box that holds them, like Flexbox."
     - type: { into: HTML code, text: "    display: grid;\n", after: ".page {\n" }
-    - caption: "grid-template-columns lists the columns: 150px, then 1fr, the rest of the width."
+    - caption:
+        text: "grid-template-columns lists the columns: 150px, then 1fr, the rest of the width."
+        say: "Grid template columns lists them: 150 pixels, then one fraction, the rest."
     - type: { into: HTML code, text: "    grid-template-columns: 150px 1fr;\n", after: "display: grid;\n" }
     - caption: "gap puts space between the columns."
     - type: { into: HTML code, text: "    gap: 16px;\n", after: "150px 1fr;\n" }

@@ -12,6 +12,7 @@ app:
 pacing:
   keyDelayMs: 45
 explainPicture: page.html#explain
+voice: true
 explainClip:
   query: { code: "@page.html#explain-start", zoom: 1.6 }
   caption: "A rule picks elements with a selector, then sets how they look"
@@ -20,9 +21,13 @@ explainClip:
     - type: { into: HTML code, text: "  p {\n", after: "<style>\n" }
     - caption: "Inside the braces: a property, a colon, a value, a semicolon."
     - type: { into: HTML code, text: "    color: teal;\n  }\n", after: "  p {\n" }
-    - caption: "Both paragraphs turn teal. The heading is not a p, so it stays as it was."
+    - caption:
+        text: "Both paragraphs turn teal. The heading is not a p, so it stays as it was."
+        say: "Both paragraphs turn teal. The heading isn't a P, so it stays."
     - wait: 1800
-    - caption: "A dot means a class: .note picks only class=\"note\"."
+    - caption:
+        text: "A dot means a class: .note picks only class=\"note\"."
+        say: "A dot means a class. Dot note picks only the elements with class note."
     - type: { into: HTML code, text: "  .note {\n    font-size: 28px;\n  }\n", after: "    color: teal;\n  }\n" }
     - expect: { selector: "#preview-text", contains: "Races start at 9 am." }
     - caption: "Rules pick elements by tag or by class. Everything else stays as it was."
