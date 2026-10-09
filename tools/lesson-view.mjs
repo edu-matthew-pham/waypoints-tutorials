@@ -120,6 +120,8 @@ figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}.try.full iframe{flex:1;height:auto!important}
 body.try-open{overflow:hidden}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
+.try iframe[hidden]{display:none}.mkload{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--card);color:var(--muted);font-size:14px;text-align:center;padding:16px}.try.full .mkload{height:calc(100% - 40px)!important}
+.mkopen{font:inherit;font-size:16px;font-weight:600;padding:10px 18px;border-radius:10px;border:0;background:var(--c,var(--accent));color:#fff;cursor:pointer}@media(prefers-color-scheme:dark){.mkopen{color:#0f141a}}
 figure.shown{margin:10px 0 16px}figure.shown img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}figure.shown figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.expected figure{margin:8px 0 14px}details.expected img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}details.expected figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
@@ -392,12 +394,14 @@ if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now c
 c.hidden=false}});
 // Full screen / inline for each playground: a class, not the Fullscreen API, so it works on iPads and the
 // playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
+function mkOpen(t){var f=t.querySelector('iframe[data-src]'),l=t.querySelector('.mkload');if(!f||f.src)return;f.src=f.dataset.src;f.hidden=false;if(l)l.remove()}
+document.querySelectorAll('.mkopen').forEach(function(b){b.addEventListener('click',function(){mkOpen(b.closest('.try'))})});
 document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.try-full');if(!b)return;
 t._full=function(on){t.classList.toggle('full',on);document.body.classList.toggle('try-open',!!document.querySelector('.try.full'));b.setAttribute('aria-pressed',String(on));b.textContent=on?'Exit full screen':'Full screen';if(!on)b.focus()};
-b.addEventListener('click',function(){t._full(!t.classList.contains('full'))})});
+b.addEventListener('click',function(){mkOpen(t);t._full(!t.classList.contains('full'))})});
 document.addEventListener('keydown',function(e){var f=document.querySelector('.try.full');if(e.key==='Escape'&&f)f._full(false)});
 (function(){var id=new URLSearchParams(location.search).get('full');if(!id)return;var sec=document.getElementById(id);var t=sec&&sec.querySelector('.try');if(!t||!t._full)return;
-var ifr=t.querySelector('iframe');if(ifr)ifr.loading='eager';setTimeout(function(){t._full(true)},50)})();
+var ifr=t.querySelector('iframe');if(ifr)ifr.loading='eager';mkOpen(t);setTimeout(function(){t._full(true)},50)})();
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='esc')return;
 document.querySelectorAll('.try.full').forEach(function(f){var i=f.querySelector('iframe');if(i&&i.contentWindow===e.source)f._full(false)})});
 document.querySelectorAll('.worked').forEach(function(w){var lis=w.querySelectorAll('li'),nx=w.querySelector('.wnext'),al=w.querySelector('.wall');if(!nx)return;
@@ -698,5 +702,10 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
   if (versions?.[pg.dir]) q.set('v', versions[pg.dir]); // a new deploy gets a new URL, never a cached old playground
   return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>${pg === PLAYGROUNDS.science ? 'Nothing is saved: start again as often as you like.' : 'Your edits are saved in this browser.'}</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
-    `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || pg.height || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;
+    (pg.dir === '_playground-makecode'
+      // MakeCode editors load on click: each one is heavy, and MakeCode focuses itself when it loads, which
+      // scrolled the page to any editor that lazy-loaded nearby. data-src holds the address until then.
+      ? `<div class="mkload" style="height:${Number(t.height) || pg.height || 480}px"><button type="button" class="mkopen">Open the MakeCode editor</button><span>It takes a few seconds to load. Your work in this step is kept.</span></div>` +
+        `<iframe title="${esc(pg.title)}" hidden style="height:${Number(t.height) || pg.height || 480}px" data-src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`
+      : `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || pg.height || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`);
 }
