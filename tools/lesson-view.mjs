@@ -52,7 +52,8 @@ export function makecodeBlock(highlightCode, src, label, target, pic = null) {
   return `<div class="mkblocks${pic ? ' ok' : ''}" data-target="${esc(target || 'microbit')}" data-src="${esc(src)}"><div class="mkpic" aria-live="polite">${img}</div>` +
     `<details class="mkjs"><summary>Show as code</summary>${codeBlock(highlightCode, src, 'makecode', label)}</details></div>`;
 }
-export const MAKECODE_CSS = `.mkblocks{margin:14px 0}.mkpic img{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}
+export const MAKECODE_CSS = `.mkpair.has-out{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start}.mkout{margin:14px 0}.mkout img{display:block;max-width:min(100%,360px);height:auto;image-rendering:pixelated;border-radius:8px;border:1px solid var(--line)}.mkout figcaption{color:var(--muted);font-size:14px;margin-top:4px}@media(max-width:640px){.mkpair.has-out{grid-template-columns:1fr}}
+.mkblocks{margin:14px 0}.mkpic img{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}
 .mkwait{color:var(--muted);font-size:14px}.mkjs summary{cursor:pointer;color:var(--muted);font-size:14px;margin-top:6px}`;
 export const MAKECODE_JS = `(function(){var els=[].slice.call(document.querySelectorAll('.mkblocks:not(.ok)'));if(!els.length)return;
 var q=new URLSearchParams(location.search),t=q.get('mkrender')||(els[0].dataset.target==='arcade'?'https://arcade.makecode.com':'https://makecode.microbit.org');

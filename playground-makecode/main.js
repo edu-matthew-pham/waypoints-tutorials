@@ -5,6 +5,8 @@
 // page on the same channel as the HTML playground, so code checks tick as students build.
 //   ?target=microbit|arcade   ?code=<starter JavaScript>   ?id=<key for autosaving this step>
 //   ?editor=<editor URL>  (tests only: a mock editor)   ?debug  (message log over the editor)
+//   ?sim=1  (build only: render-pictures loads a program, starts MakeCode's own simulator and screenshots it;
+//           nothing is saved and nothing is reported)
 // Rules learnt the hard way (ROADMAP › MakeCode: embedding check):
 //   - answer every workspacesync with all projects held: MakeCode re-syncs on import, and an empty reply loses the project
 //   - an imported project gets a new id: follow the id of the first save that carries our name
@@ -21,7 +23,8 @@ const target = TARGETS[params.get('target')] ? params.get('target') : 'microbit'
 const editorUrl = params.get('editor') || TARGETS[target].url;
 const EDITOR = new URL(editorUrl).origin;
 const starter = params.get('code') ?? '';
-const id = params.get('id');
+const SIM = params.has('sim');
+const id = SIM ? null : params.get('id');
 const storeKey = id ? `wp-makecode-playground:${id}` : null;
 const NAME = 'Waypoints ' + (id ? id.split('/').slice(-2).join(' ') : 'playground');
 
@@ -37,7 +40,7 @@ const read = () => { try { return storeKey ? JSON.parse(localStorage.getItem(sto
 const write = (v) => { try { if (storeKey) (v === null ? localStorage.removeItem(storeKey) : localStorage.setItem(storeKey, JSON.stringify(v))); } catch { /* storage unavailable */ } };
 
 // A small, stable surface for tests and tooling.
-window.__playground = { code: '', saves: 0, reports: 0, ready: false };
+window.__playground = { code: '', saves: 0, reports: 0, ready: false, simStarted: false };
 
 let template = null;           // { header, pxt } from MakeCode's own first project
 let ids = new Set();           // ids MakeCode has used for the project we loaded
@@ -73,6 +76,8 @@ function load(code, blocks = '') {
   window.__playground.code = code;
   request('importproject', { project: { header, text } });
   if (!blocks) setTimeout(() => request('switchblocks'), 600);
+  // Picture mode: run the program in MakeCode's simulator once the blocks are built (the editor also runs it by itself).
+  if (SIM) setTimeout(() => { request('startsimulator'); window.__playground.simStarted = true; }, 1500);
   dbg('import', JSON.stringify(NAME), blocks ? '(blocks)' : '(javascript)');
   report(code);
 }

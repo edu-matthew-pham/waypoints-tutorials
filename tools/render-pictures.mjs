@@ -291,6 +291,57 @@ if (existsSync('snippets/maths.json')) await pictures({
   });
 }
 
+// ---- MakeCode output: what a program makes, drawn by MakeCode's own simulator. For `picture:` on steps and tasks and
+// for explainPicture in MakeCode lessons, the program is loaded into the embedded editor (_playground-makecode in
+// picture mode, ?sim=1), MakeCode runs it, and the simulator's screen is screenshotted: the Arcade game screen or the
+// micro:bit board, after WAIT ms. Saved as _pictures/makecode-out/<lesson slug>/<key>.png. Needs makecode.com
+// (offline, nothing is drawn and pages show the blocks only). MAKECODE_EDITOR points the editor at a mock (tests only).
+{
+  const { pictureItems } = await import('./lesson.mjs');
+  const targetOf = (l) => l.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
+  const WAIT = { arcade: 2500, microbit: 3000 };
+  const down = new Set(), drew = new Set();
+  await pictures({
+    name: 'makecode-out', dir: join(DIR, 'makecode-out'), viewport: { width: 1280, height: 900 },
+    base: hashDir('playground-makecode', readFileSync(new URL(import.meta.url)), 'makecode-out-v1'),
+    jobs: loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => pictureItems(l).map((e) => {
+      const target = targetOf(l);
+      return { id: `${l.slug}/${e.key}`, target, src: getSnippet(l.dir, e.ref), code: `// ${target}\n${getSnippet(l.dir, e.ref)}` };
+    })),
+    async draw(page, j) {
+      if (down.has(j.target)) return null;
+      const q = new URLSearchParams({ target: j.target, sim: '1', code: j.src });
+      const mock = process.env.MAKECODE_EDITOR;
+      if (mock) q.set('editor', mock.startsWith('/') ? `http://localhost:${port}${mock}` : mock);
+      try {
+        await page.goto(`http://localhost:${port}/_playground-makecode/index.html?${q}`);
+        // The simulator is a frame inside the editor's frame. MakeCode wraps it in .simframe; fall back to any
+        // frame whose address looks like a simulator.
+        const editor = await (await page.waitForSelector('#editor', { timeout: 10000 })).contentFrame();
+        const simEl = await editor.waitForSelector('.simframe iframe, iframe[id^="sim-frame"], iframe[src*="simulator"]', { timeout: 90000 });
+        await page.waitForFunction(() => window.__playground?.simStarted, null, { timeout: 30000 });
+        const sim = await simEl.contentFrame();
+        await sim.waitForSelector('canvas, svg', { timeout: 30000 });
+        await page.waitForTimeout(WAIT[j.target] || 2500);
+        // The screen is the biggest canvas (Arcade) or svg (the micro:bit board) in the simulator.
+        const shots = [];
+        for (const h of await sim.$$('canvas, svg')) { const b = await h.boundingBox(); if (b && b.width > 40 && b.height > 40) shots.push({ h, a: b.width * b.height, b }); }
+        shots.sort((x, y) => y.a - x.a);
+        const el = shots[0]?.h || simEl, box = shots[0]?.b || await simEl.boundingBox();
+        const buf = await el.screenshot();
+        drew.add(j.target);
+        return { data: `data:image/png;base64,${buf.toString('base64')}`, w: Math.round(box.width * 2), h: Math.round(box.height * 2), div: 2 };
+      } catch (e) {
+        // Say what the editor held, so a changed MakeCode page can be fixed from the deploy log.
+        const what = page.frames().map((f) => f.url().slice(0, 90)).join(' | ');
+        console.log(`- makecode-out ${j.id}: ${e.message.split('\n')[0]} (frames: ${what})`);
+        if (/Timeout/.test(e.message) && !drew.has(j.target)) { down.add(j.target); console.log(`- makecode-out: no ${j.target} simulator, so no more output pictures for it this run`); }
+        return null;
+      }
+    },
+  });
+}
+
 if (browser) { await browser.close(); server.close(); }
 if (SEED) console.log(`Pictures: ${seeded} downloaded from the live site.`);
 if (process.env.GITHUB_OUTPUT) writeFileSync(process.env.GITHUB_OUTPUT, `pictures_stale=${stale}\n`, { flag: 'a' });

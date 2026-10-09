@@ -60,13 +60,16 @@ function expectedHtml(lesson, cfg, key) {
 }
 
 // "What this code makes": picture: on steps and tasks, and explainPicture (render-pictures, _pictures/shown/<slug>/<key>.png).
-let SHOWN = null;
+let SHOWN = null, MKOUT = null;
 function pictureHtml(lesson, v, key) {
   const sp = pictureSpec(v);
   if (lesson.language === 'makecode' && sp) {
     let code = ''; try { code = getSnippet(lesson.dir, sp.ref); } catch { return ''; }
     const target = lesson.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
-    return `<figure class="shown mkshown">${makecodeBlock(highlightCode, code, '', target, blocksPic(code, '../'.repeat(lesson.depth)))}<figcaption>The example, as blocks</figcaption></figure>`;
+    // What the program makes, drawn by MakeCode's simulator at build time (render-pictures, makecode-out), beside the blocks.
+    const out = (MKOUT ||= readPics(['makecode-out']))[`${lesson.slug}/${key}`];
+    const outFig = out ? `<figure class="mkout"><img src="${'../'.repeat(lesson.depth)}_pictures/makecode-out/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(out.hash || '')}" alt="What this program shows in the ${target === 'arcade' ? 'game' : 'micro:bit'} simulator" width="${Math.round(out.w / (out.div || 2))}" height="${Math.round(out.h / (out.div || 2))}" loading="lazy"><figcaption>What it makes${target === 'arcade' ? ' (a moment from the game)' : ''}</figcaption></figure>` : '';
+    return `<div class="mkpair${out ? ' has-out' : ''}"><figure class="shown mkshown">${makecodeBlock(highlightCode, code, '', target, blocksPic(code, '../'.repeat(lesson.depth)))}<figcaption>The example, as blocks</figcaption></figure>${outFig}</div>`;
   }
   const pic = sp && (SHOWN ||= readPics(['shown']))[`${lesson.slug}/${key}`];
   if (!pic) return '';

@@ -201,6 +201,12 @@ Checked in the `pxt-core` 13.2.5 source: controller mode is switched on by the U
 
 All 14 lessons and six unit primers are written to the full standard, with teacher notes, solutions, nine planted misconceptions and Python peeks from lesson 8. All 42 code checks are tested with the proposed rules: every solution passes, every starter fails, and no earlier task's solution ticks a later task. Simulator details in the text (light and temperature sliders, tilting with the mouse, the second micro:bit for radio, SHAKE and A+B buttons) were written from knowledge of MakeCode and need a spot-check in the live editor.
 
+## MakeCode: output pictures from the real simulator (built 9 Oct 2026; tested against a mock only)
+
+Explain it to me (and any `picture:`) in micro:bit and Arcade lessons now shows **what the program makes** beside its blocks. Nothing is drawn by hand: at build time `render-pictures` loads each program into the embedded editor in picture mode (`?sim=1`: no saving, no reports, `startsimulator` after the blocks are built), waits 2.5 s (Arcade) or 3 s (micro:bit), and screenshots the simulator's biggest canvas (the Arcade screen) or svg (the micro:bit board). Cached by hash and seeded from the live site like every other picture. If the simulator cannot be found, the deploy log lists the frames it saw, the rest of that target is skipped, and pages show blocks only.
+
+**To check after the first deploy:** that the selectors find MakeCode's simulator (`.simframe iframe`), the picture is the screen rather than the whole console, and the wait is long enough. **Next, once the stills look right:** output-only clips for programs that move (the clip recorder would need a MakeCode path), the same pictures in decks, worksheets and teacher guides, and `picture:` on Modify and Make tasks as their expected result.
+
 ## MakeCode: Arcade Foundations sequence (decided 9 Oct 2026; 14 lessons written, not tried against the live editor)
 
 **Shape.** The second MakeCode foundations course, parallel to micro:bit Foundations (start with either). Folder `content/code/arcade/`, lessons `arcade-*`, playground `try: { playground: arcade }`, Reference from `snippets/arcade.json`. Same spine, same lesson recipe, same teacher layer. One extra thread runs through the course: **what the engine does for you**. Each lesson names the building block it adds, and the challenge unit ends with students judging which games suit Arcade before they plan their own.
