@@ -5,6 +5,7 @@ optional: true
 title: Fake-outs and levels
 summary: Make the reaction game harder. Decoys you must not press, a list of target times that get tighter each level, and three lives.
 language: makecode
+explainPicture: levels.ts#targets
 hook: "Arcade games keep you playing by getting harder as you improve, and by trying to trick you. Both are a few rules on top of the game you already built."
 ---
 This lesson goes further than the Reaction timer, for one player. You will add three rules, one milestone each:

@@ -5,6 +5,7 @@ optional: true
 title: Tournament
 summary: Take the Radio duel further. A scoreboard kept in a list, rounds that start themselves, and a champion at three wins.
 language: makecode
+explainPicture: tournament.ts#board
 hook: "A tennis scoreboard, a chess clock and an esports bracket all do the same jobs: keep both scores, start the next round, and declare a winner."
 ---
 This lesson goes further than the Radio duel, for two players. You will add three things, one milestone each:

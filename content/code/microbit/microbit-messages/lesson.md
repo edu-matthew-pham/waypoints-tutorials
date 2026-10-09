@@ -4,6 +4,7 @@ unit: talk
 title: Messages with meaning
 summary: Send a small number that stands for a word in a list both micro:bits share.
 language: makecode
+explainPicture: messages.ts#chooser
 hook: "Morse code, flag signals and the numbers a fast-food counter calls out all work because both sides agree what each code means."
 ---
 Last lesson, 1 meant "left" and 2 meant "right" because you decided so. A **list** makes that agreement clear: if both micro:bits have the same list of words, sending a **place number** is enough. The receiver looks up the word at that place.

@@ -4,6 +4,7 @@ unit: remember-sense
 title: Sensors are numbers
 summary: Read light, temperature and tilt as numbers, and show them.
 language: makecode
+explainPicture: sensors.ts#investigate
 hook: "A phone dims its screen in the dark and turns the picture when you tilt it. Inside, a sensor is just handing the phone a number."
 ---
 The micro:bit has **sensors**: parts that measure the world around it, such as how bright it is or how warm. Each sensor gives the program a **number**. You find them in **Input**.

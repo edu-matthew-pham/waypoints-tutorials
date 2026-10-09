@@ -4,6 +4,7 @@ unit: talk
 title: Send and receive
 summary: Send a number by radio from one micro:bit to another, and react when it arrives.
 language: makecode
+explainPicture: radio.ts#predict
 hook: "Wireless doorbells, car keys and walkie-talkies all send small radio messages to a receiver tuned to the same channel."
 ---
 Micro:bits can talk to each other by **radio**. One sends a message; every micro:bit nearby in the same **group** (like a walkie-talkie channel) receives it. You find radio blocks in **Radio**.

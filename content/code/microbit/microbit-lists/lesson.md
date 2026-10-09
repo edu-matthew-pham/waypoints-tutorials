@@ -4,6 +4,7 @@ unit: tools
 title: Lists
 summary: Keep many values in one list, pick one by its place, and pick one at random.
 language: makecode
+explainPicture: lists.ts#ball
 hook: "A playlist, a lunch menu, a class roll: each is a list of things in order, and you pick one by its place or at random."
 ---
 A variable holds one value. A **list** holds many, in order, under one name, such as `answers`. Each item has a **place number** (an **index**), and the micro:bit counts places from **0**. You find list blocks in **Advanced › Arrays** (an array is another name for a list).

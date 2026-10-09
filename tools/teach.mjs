@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 // Teacher resources, generated from each lesson.md and its teacher.yml at build time (no AI):
 //   deck.md       a Waypoints Prepare slide deck (Marp; see waypoints-kit format-prepare.md)
 //   worksheet.md  a Waypoints Prepare/Print resource with :::teacher-note answers (format-print.md)
@@ -104,6 +105,38 @@ function checkParts(k, snip, key) {
 }
 
 const numbered = (code) => code.replace(/\n$/, '').split('\n').map((l, i) => `${String(i + 1).padStart(2)}  ${l}`).join('\n');
+// ---------------------------------------------------------------- MakeCode blocks pictures
+// MakeCode lessons (language: makecode) show programs as blocks. render-pictures draws each program a teacher sees
+// (display code, code in task text, solutions, explainPicture) as _pictures/makecode/<blocksId>.png, keyed by a hash
+// of the code; snippets/microbit.json blocks are drawn as _pictures/makecode/<snippet id>.png for the cheat sheets.
+// Builds without those pictures (offline) fall back to the code as text.
+export const blocksId = (code) => 'code/' + createHash('sha1').update(String(code).trim()).digest('hex').slice(0, 12);
+const FENCES = /```(\w*)\n([\s\S]*?)```/g;
+/** Every MakeCode program shown in a lesson's pages and teacher material, as code text. */
+export function makecodePrograms(lesson, snip) {
+  if (lesson.language !== 'makecode') return [];
+  const out = [], add = (ref) => { try { out.push(snip(ref)); } catch { /* reported by validate */ } };
+  const fenced = (body) => { for (const m of String(body || '').matchAll(FENCES)) if (!m[1] || m[1] === 'makecode') out.push(m[2]); };
+  fenced(lesson.intro);
+  for (const s of lesson.steps) {
+    if (s.config.code) add(s.config.code);
+    fenced(s.body);
+    for (const t of s.tasks) { fenced(t.body); if (t.config.check?.code) add(t.config.check.code); }
+  }
+  for (const ref of Object.values(lesson.teacher?.solutions || {})) add(ref);
+  if (lesson.explainPicture) add(typeof lesson.explainPicture === 'string' ? lesson.explainPicture : lesson.explainPicture.ref);
+  return [...new Set(out.map((c) => c.replace(/\n+$/, '') + '\n'))];
+}
+// Set by each generator from its options: code -> { url, w, h } of the blocks picture, or null.
+let BLOCKS = null;
+const blocksMd = (code, alt = 'The program as blocks') => {
+  const p = LANG === 'makecode' && BLOCKS ? BLOCKS(code) : null;
+  return p ? `![${alt}](${p.url})` : null;
+};
+// Code as Markdown: blocks pictures for MakeCode (when drawn), a fence otherwise. Fences in task text too.
+const codeMd = (code, lang = LANG) => (lang === LANG && blocksMd(code)) || fence(code, lang);
+const fencesToBlocks = (md) => (LANG === 'makecode' ? String(md).replace(FENCES, (m, lang, src) => ((!lang || lang === 'makecode') && blocksMd(src)) || m) : md);
+
 // Code language for fences and highlighting: set from the lesson by each generator (python or html).
 let LANG = 'python';
 const fence = (code, lang = LANG) => '```' + lang + '\n' + String(code).replace(/\n$/, '') + '\n```';
@@ -115,9 +148,10 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 ]);
 
 // ---------------------------------------------------------------- deck (Prepare Marp)
-export function deckFor(lesson, { course, unit, snip }) {
+export function deckFor(lesson, { course, unit, snip, blocks = null }) {
   lesson = forOutput(lesson);
   LANG = lesson.language || 'python';
+  BLOCKS = blocks;
   const T = lesson.teacher || {};
   const slides = [];
   const note = (t) => (t ? `\n\n<!-- Speaker note: ${oneLine(t).replace(/-->/g, '- ->')} -->` : '');
@@ -125,7 +159,7 @@ export function deckFor(lesson, { course, unit, snip }) {
   slides.push(`## Today\n\n**We are learning to** ${lowerFirst(lesson.summary.replace(/\.$/, ''))}.\n\n${(T.goals || []).map((g) => `- ${pt(g)}`).join('\n')}` + note(T.before ? `Before class: ${T.before}` : ''));
   if (lesson.hook) slides.push(`${BADGE.discussion}\n\n## Why it matters\n\n> ${lesson.hook}` + note(lesson.intro));
   // Programs too long for a slide are read in the tutorial instead.
-  const showCode = (code, step) => (code.split('\n').length > 27
+  const showCode = (code, step) => blocksDeck(code) || (code.split('\n').length > 27
     ? `*The program is ${code.split('\n').length} lines long: open it in the tutorial and read it together.*\n\n[Open this step](${stepUrl(lesson, step)})`.replace(/^\*|\*(?=\n)/g, '_')
     : fence(code));
   const runIt = (step, label = LANG === 'maths' ? 'Try it' : 'Run it') => `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
@@ -156,7 +190,7 @@ export function deckFor(lesson, { course, unit, snip }) {
         }
         if (p.parsons) body += '\n\n' + fence(p.parsons.join('\n'));
         if (t && hasWorked(t.body)) { const w = workedSlide(t.body); slides.push(`${BADGE.discussion}\n\n## ${t.title}\n\n${w.slide}` + note(w.notes)); }
-        else if (t && /```/.test(t.body)) body = prose(t.body.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, src) => '\u0000' + src + '\u0000')).replace(/\u0000([\s\S]*?)\u0000/g, (m, src) => fence(src)) + '\n\n' + body;
+        else if (t && /```/.test(t.body)) body = prose(t.body.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, src) => '\u0000' + (lang || '') + '\u0001' + src + '\u0000')).replace(/\u0000(\w*)\u0001([\s\S]*?)\u0000/g, (m, lang, src) => ((!lang || lang === LANG) && blocksDeck(src)) || fence(src, lang || LANG)) + '\n\n' + body;
         const reveal = p.parsons ? '' : `\n\n* Answer: ${oneLine(p.answer)}`;
         slides.push(`${BADGE.check}\n\n## ${t ? t.title : title}\n\n${body}${reveal}` + note(`${p.explain} ${p.parsons ? `Correct order: ${oneLine(p.solution)}` : ''} ${!t && c.insight ? `What this step is for: ${c.insight}` : ''}`));
       }
@@ -175,6 +209,11 @@ export function deckFor(lesson, { course, unit, snip }) {
   return `---\nmarp: true\ntheme: default\nhtml: true\n---\n\n${slides.map(fitCode).join('\n\n---\n\n')}\n`;
 }
 const lowerFirst = (t) => t.charAt(0).toLowerCase() + t.slice(1);
+// A blocks picture on a slide, scaled (Marp h:) so it stays on the slide.
+const blocksDeck = (code) => {
+  const p = LANG === 'makecode' && BLOCKS ? BLOCKS(code) : null;
+  return p ? `![h:${Math.min(360, Math.max(60, Math.round(p.h / 2)))}](${p.url})` : null;
+};
 // Keep each slide on the slide (Marp scoped styles). A 1280x720 slide at 29px type has about
 // 560px for content. Estimate the height of everything but code, then shrink code first
 // (down to 0.5em), then the whole slide. `.render-tmp` overflow checks confirm the estimate.
@@ -211,9 +250,10 @@ function traceTable(t, blanks) {
 }
 
 // ---------------------------------------------------------------- worksheet (Prepare Print)
-export function worksheetFor(lesson, { course, unit, snip }) {
+export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
   lesson = forOutput(lesson);
   LANG = lesson.language || 'python';
+  BLOCKS = blocks;
   const T = lesson.teacher || {};
   const out = [];
   const tnote = (t) => (t && t.trim() ? `\n\n:::teacher-note\n\n${t.trim()}\n\n:::\n` : '');
@@ -228,17 +268,17 @@ export function worksheetFor(lesson, { course, unit, snip }) {
     let part = '';
     if (stage === 'predict') {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
-      part = `## Predict\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
+      part = `## Predict\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
     } else if (stage === 'run') {
       part = `## Run\n\n${LANG === 'maths' ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
     } else if (stage === 'investigate' || stage === 'practise') {
-      part = `## ${title}\n\n${prose(s.body)}${code ? '\n\n' + fence(code) : ''}`;
+      part = `## ${title}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}`;
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
         if (p.reflect || p.board || k.type === 'code') continue;
         let q = `${t ? `### ${t.title}\n\n` : ''}**${p.q}**`;
-        if (t && (/```/.test(t.body) || hasWorked(t.body))) q = `${t ? `### ${t.title}\n\n` : ''}${t.body.trim()}\n\n**${p.q}**`;
+        if (t && (/```/.test(t.body) || hasWorked(t.body))) q = `${t ? `### ${t.title}\n\n` : ''}${fencesToBlocks(t.body.trim())}\n\n**${p.q}**`;
         if (p.options) q += '\n\n' + p.options.map((o) => `☐ ${o}`).join('\n\n');
         if (p.field) q += '\n\nAnswer: {{field-15}}';
         if (p.trace) q += '\n\n{{rows 1}}\n\n' + traceTable(p.trace, false);
@@ -254,7 +294,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
       const ids = s.tasks.length ? s.tasks.map((t) => t.id) : [s.id];
       const solText = ids.filter((id) => sols[id]).map((id) => {
         const t = s.tasks.find((x) => x.id === id);
-        return `${t ? `**${t.title}:**\n\n` : ''}${splitFiles(snip(sols[id])).map((f) => (f.name ? `*${f.name}*\n\n` : '') + fence(f.code)).join('\n\n')}`;
+        return `${t ? `**${t.title}:**\n\n` : ''}${splitFiles(snip(sols[id])).map((f) => (f.name ? `*${f.name}*\n\n` : '') + codeMd(f.code)).join('\n\n')}`;
       }).join('\n\n');
       part = `## ${stage === 'make' && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
     } else if (s.body.trim()) {
@@ -269,9 +309,9 @@ export function worksheetFor(lesson, { course, unit, snip }) {
 const yamlStr = (s) => JSON.stringify(String(s));
 
 // ---------------------------------------------------------------- cheat sheet (Prepare Print reference sheet)
-export function cheatSheetFor({ course, unit, items, lang = 'python' }) {
-  const body = items.map((i) => `:::keep-together\n\n**${pt(i.label)}**: ${pt(i.hint || '')}\n\n${fence(strip(i.code), lang)}\n\n:::`).join('\n\n');
-  return `---\ntitle: ${yamlStr(`${unit.title}: cheat sheet`)}\nsubtitle: ${yamlStr(course)}\n---\n\n# ${unit.title}\n\n> The commands and patterns from this unit. In the tutorial, open **Reference** in any playground to copy them.\n\n${body || '_This unit has no new commands; it combines ones from earlier units._'}\n`;
+export function cheatSheetFor({ course, unit, items, lang = 'python', picture = () => null }) {
+  const body = items.map((i) => { const p = picture(i.id); return `:::keep-together\n\n**${pt(i.label)}**: ${pt(i.hint || '')}\n\n${p ? `![${pt(i.label)}](${p})\n\n` : ''}${fence(strip(i.code), lang)}\n\n:::`; }).join('\n\n');
+  return `---\ntitle: ${yamlStr(`${unit.title}: cheat sheet`)}\nsubtitle: ${yamlStr(course)}\n---\n\n# ${unit.title}\n\n> ${lang === 'makecode' ? 'The blocks from this unit. Find each one in the MakeCode toolbox (the category is at the end of each line).' : 'The commands and patterns from this unit. In the tutorial, open **Reference** in any playground to copy them.'}\n\n${body || (lang === 'makecode' ? '_This unit has no new blocks; it combines ones from earlier units._' : '_This unit has no new commands; it combines ones from earlier units._')}\n`;
 }
 
 // The snippets a unit introduces: what its lessons unlock, plus what the code students see uses
@@ -297,7 +337,7 @@ export function cheatSheetBody({ title, course, sections, pictures = {}, picBase
   const card = (i) => {
     const pic = pictures[i.id];
     const div = pic?.div || 5.2;
-    const img = pic ? `<figure><img src="${esc(picBase + i.id)}.png${pic.hash ? `?v=${esc(pic.hash)}` : ''}" alt="What it draws" width="${Math.round(pic.w / div)}" height="${Math.round(pic.h / div)}">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
+    const img = pic ? `<figure><img src="${esc(picBase + i.id)}.png${pic.hash ? `?v=${esc(pic.hash)}` : ''}" alt="${lang === 'makecode' ? 'The block' : 'What it draws'}" width="${Math.round(pic.w / div)}" height="${Math.round(pic.h / div)}">${i.shows ? `<figcaption>${esc(i.shows)}</figcaption>` : ''}</figure>` : '';
     const code = strip(i.code).replace(/\n+$/, '');
     // A picture shows the example program, which can differ from the bare snippet: show that code.
     const ex = pic && i.example && strip(i.example).trim() !== code.trim() ? `<div class="cs-ex">Example</div><pre><code>${highlightCode(strip(i.example).replace(/\n+$/, ''), lang)}</code></pre>` : '';
@@ -317,7 +357,7 @@ export function cheatSheetBody({ title, course, sections, pictures = {}, picBase
   };
   const secs = sections.filter((s) => s.items.length).map((s) => `${sections.length > 1 ? `<h2 class="cs-unit">${esc(s.title)}</h2>` : ''}${cols(s.items)}`).join('');
   return `<div class="cs-bar noprint"><a class="crumb" href="${esc(back)}">← ${esc(backLabel)}</a><span class="sn-grow"></span><button type="button" onclick="print()">Print</button>${mdUrl ? ` <a href="${esc(md)}" download>Markdown for Prepare</a> <button type="button" class="copyurl" data-url="${esc(mdUrl)}">Copy address for Prepare</button>` : ''}</div>${nav ? `<div class="noprint">${nav}</div>` : ''}
-<div class="cs"><header class="cs-head"><h1>${esc(title)}</h1><p>${esc(course)} · In any playground, open <b>Reference</b> to copy these.</p></header>${secs || '<p>This unit has no new commands; it combines ones from earlier units.</p>'}</div>`;
+<div class="cs"><header class="cs-head"><h1>${esc(title)}</h1><p>${esc(course)} · ${lang === 'makecode' ? 'Find each block in the MakeCode toolbox (the category is at the end of each line).' : 'In any playground, open <b>Reference</b> to copy these.'}</p></header>${secs || '<p>This unit has no new commands; it combines ones from earlier units.</p>'}</div>`;
 }
 export const CHEAT_CSS = `.wrap{max-width:1000px}
 .cs-nav{font-size:14px;margin:-6px 0 14px;line-height:1.8}.cs-nav b{color:var(--ink)}
@@ -338,8 +378,14 @@ export const CHEAT_CSS = `.wrap{max-width:1000px}
 @media (max-width:640px){.cs{padding:14px}.cs-grid{display:block}}`;
 
 // ---------------------------------------------------------------- teacher guide pages (HTML bodies)
-export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files }) {
+export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files, blocks = null }) {
   LANG = lesson.language || 'python';
+  BLOCKS = blocks;
+  // MakeCode: the blocks picture, with the code one click away; code as text when there is no picture.
+  const showProgram = (code, name = '') => {
+    const p = LANG === 'makecode' && BLOCKS ? BLOCKS(code) : null;
+    return p ? `<figure class="blocks"><img src="${esc(p.url)}" alt="The program as blocks" width="${Math.round(p.w / 2)}" loading="lazy"></figure><details class="mkjs"><summary>Show as code</summary>${codeBlock(highlightCode, code, LANG, name)}</details>` : codeBlock(highlightCode, code, LANG, name);
+  };
   const T = lesson.teacher || {};
   const sec = (title, html) => (html ? `<section class="tg"><h2>${esc(title)}</h2>${html}</section>` : '');
   const insights = lesson.steps.flatMap((s) => [s.config.insight ? [bare(s.title), s.config.insight] : null, ...s.tasks.filter((t) => t.config.insight).map((t) => [`${bare(s.title)} › ${t.title}`, t.config.insight])]).filter(Boolean);
@@ -353,7 +399,7 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
     const ref = sols[w.id];
     const name = w.task ? `${bare(w.step.title)} › ${w.task.title}` : bare(w.step.title);
     if (!ref) return `<h3>${esc(name)}</h3><p class="muted">Open task: any program that does what the step asks.</p>`;
-    return `<h3>${esc(name)}</h3>${splitFiles(snip(ref)).map((f) => codeBlock(highlightCode, f.code, LANG, f.name || '')).join('')}`;
+    return `<h3>${esc(name)}</h3>${splitFiles(snip(ref)).map((f) => showProgram(f.code, f.name || '')).join('')}`;
   }).join('');
   const stuck = (T.stuck || []).length ? `<table class="stuck"><thead><tr><th>What you will see</th><th>A question to ask</th><th>The fix</th></tr></thead><tbody>${T.stuck.map((x) => `<tr><td>${esc(x.see)}</td><td>${esc(x.ask)}</td><td>${esc(x.fix)}</td></tr>`).join('')}</tbody></table>` : '';
   const dl = files.map((f) => `<li><b>${esc(f.label)}</b> <a href="${esc(f.href)}" download>Download</a> <button type="button" class="copyurl" data-url="${esc(f.url)}">Copy address for Prepare</button><span class="muted"> ${esc(f.note || '')}</span></li>`).join('');
@@ -377,6 +423,7 @@ export const TEACH_CSS = `.tg{margin:26px 0}.tg h2{font-size:1.15rem;margin:0 0 
 .answers li{margin:0 0 10px}.stuck{width:100%;border-collapse:collapse;font-size:14px}.stuck th,.stuck td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}.stuck th{background:var(--card)}
 .dl{list-style:none;padding:0;display:grid;gap:8px}.dl li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
 .copyurl{font:inherit;font-size:13px;margin-left:6px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);cursor:pointer}
+.blocks{margin:8px 0}.blocks img{max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px}.mkjs summary{cursor:pointer;color:var(--muted);font-size:14px}
 .tunit{margin:26px 0}.tunit h2{margin:0 0 4px;font-size:1.15rem}.tunit ul{margin:6px 0}.primer{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px}`;
 export const TEACH_JS = `document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.copyurl');if(!b)return;var u=b.dataset.url,done=function(){var t=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=t},1500)};
 if(navigator.clipboard)navigator.clipboard.writeText(u).then(done,function(){prompt('Copy this address:',u)});else prompt('Copy this address:',u)});`;

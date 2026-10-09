@@ -34,13 +34,15 @@ export function codeBlock(highlightCode, src, lang, label) {
 // MakeCode lessons (language: makecode): display code is MakeCode JavaScript, but students know it as blocks. The page
 // asks MakeCode's renderer (a hidden iframe) for a picture of the blocks, and keeps the code as text one click away
 // (and open, if the renderer cannot be reached). ?mkrender=<origin> points at another renderer (tests only).
-export function makecodeBlock(highlightCode, src, label, target) {
-  return `<div class="mkblocks" data-target="${esc(target || 'microbit')}" data-src="${esc(src)}"><div class="mkpic" aria-live="polite"><span class="mkwait">Drawing the blocks…</span></div>` +
+export function makecodeBlock(highlightCode, src, label, target, pic = null) {
+  // pic: a picture drawn at build time ({ url, w, h }); without one, the page asks MakeCode's renderer.
+  const img = pic ? `<img src="${esc(pic.url)}" alt="The program as blocks" width="${Math.round(pic.w / 2)}" loading="lazy">` : '<span class="mkwait">Drawing the blocks…</span>';
+  return `<div class="mkblocks${pic ? ' ok' : ''}" data-target="${esc(target || 'microbit')}" data-src="${esc(src)}"><div class="mkpic" aria-live="polite">${img}</div>` +
     `<details class="mkjs"><summary>Show as code</summary>${codeBlock(highlightCode, src, 'makecode', label)}</details></div>`;
 }
 export const MAKECODE_CSS = `.mkblocks{margin:14px 0}.mkpic img{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}
 .mkwait{color:var(--muted);font-size:14px}.mkjs summary{cursor:pointer;color:var(--muted);font-size:14px;margin-top:6px}`;
-export const MAKECODE_JS = `(function(){var els=[].slice.call(document.querySelectorAll('.mkblocks'));if(!els.length)return;
+export const MAKECODE_JS = `(function(){var els=[].slice.call(document.querySelectorAll('.mkblocks:not(.ok)'));if(!els.length)return;
 var q=new URLSearchParams(location.search),t=q.get('mkrender')||(els[0].dataset.target==='arcade'?'https://arcade.makecode.com':'https://makecode.microbit.org');
 var f=document.createElement('iframe');f.setAttribute('aria-hidden','true');f.tabIndex=-1;f.style.cssText='position:absolute;width:1px;height:1px;left:-9999px;border:0';
 f.src=t+'/--docs?render=1';document.body.appendChild(f);
@@ -491,7 +493,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', expectedHtml = () => '', pictureHtml = () => '', maths = null } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', expectedHtml = () => '', pictureHtml = () => '', maths = null, blocksPicture = () => null } = deps;
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
   const isMaths = lesson.language === 'maths' && !!maths;
   const tx = isMaths ? (t) => maths.textWithMath(t, esc) : esc;
@@ -499,7 +501,7 @@ export function lessonPageHtml(lesson, deps) {
   const mk = lesson.language === 'makecode';
   const mkTarget = lesson.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
   const md = new Marked({
-    renderer: { code({ text, lang }) { if (lang === 'worked' && isMaths) return maths.workedHtml(text, md); const fs = splitFiles(text); if (mk && (lang || 'makecode') === 'makecode' && !(fs.length > 1 || fs[0]?.name)) return makecodeBlock(highlightCode, text.replace(/\n$/, '') + '\n', '', mkTarget); return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
+    renderer: { code({ text, lang }) { if (lang === 'worked' && isMaths) return maths.workedHtml(text, md); const fs = splitFiles(text); if (mk && (lang || 'makecode') === 'makecode' && !(fs.length > 1 || fs[0]?.name)) { const src = text.replace(/\n$/, '') + '\n'; return makecodeBlock(highlightCode, src, '', mkTarget, blocksPicture(src)); } return fs.length > 1 || fs[0]?.name ? `<div class="files">${fs.map((f) => codeBlock(highlightCode, f.code, lang || lesson.language, f.name)).join('')}</div>` : codeBlock(highlightCode, text.replace(/\n$/, '') + '\n', lang || lesson.language, ''); } },
   });
   // "Predict: what will `greet` return?" -> "What will <code>greet</code> return?"
   if (isMaths) md.use(maths.markedMath);
@@ -521,7 +523,7 @@ export function lessonPageHtml(lesson, deps) {
         const files = splitFiles(snippet(c.code));
         showCode = files.length > 1 || files[0]?.name
           ? `<div class="files">${files.map((f) => codeBlock(highlightCode, f.code, lesson.language, f.name)).join('')}</div>`
-          : mk ? makecodeBlock(highlightCode, snippet(c.code), c.code.split('#')[0], mkTarget) : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
+          : mk ? makecodeBlock(highlightCode, snippet(c.code), c.code.split('#')[0], mkTarget, blocksPicture(snippet(c.code))) : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
       }
       catch (e) { showCode = `<div class="placeholder"><b>${esc(e.message)}</b></div>`; }
     }

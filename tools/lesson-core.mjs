@@ -255,7 +255,8 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (v === undefined) return;
     const sp = pictureSpec(v);
     if (!sp) return err(where, 'picture must be a code reference, such as page.html#combos, or { ref: page.html#combos, boxes: true }');
-    if (lesson.language !== 'html') return err(where, 'picture works in HTML lessons only');
+    if (lesson.language === 'makecode' && where === 'explainPicture') { try { snip(sp.ref); } catch (e) { err(where, `explainPicture: ${e.message}`); } return; } // shown as blocks
+    if (lesson.language !== 'html') return err(where, lesson.language === 'makecode' ? 'picture works in HTML lessons only (MakeCode lessons can use explainPicture, shown as blocks)' : 'picture works in HTML lessons only');
     if (stage === 'predict' || stage === 'run') return err(where, 'picture would give the prediction away: use it on Investigate, Modify, Make or info steps');
     try { snip(sp.ref); } catch (e) { err(where, `picture: ${e.message}`); }
   };

@@ -4,6 +4,7 @@ unit: show-react
 title: Buttons and gestures
 summary: Make the micro:bit wait for a button press or a shake, then react.
 language: makecode
+explainPicture: buttons.ts#events
 hook: "A doorbell, a game controller, a TV remote: each one waits for a press, then does one job."
 ---
 Last lesson the micro:bit ran its blocks and carried on by itself. Most devices **wait** instead: nothing happens until you press something. A block that waits like this is called an **event** block.

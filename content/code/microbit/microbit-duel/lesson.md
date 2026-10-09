@@ -4,6 +4,7 @@ unit: challenge
 title: Radio duel
 summary: Turn the reaction timer into a two-player race over radio. First to press after the heart wins.
 language: makecode
+explainPicture: duel.ts#start
 hook: "Quiz shows use buzzers that lock out everyone else the moment one player presses. That is a few radio messages and a true/false variable."
 ---
 Two players, two micro:bits. Either player presses **B** to start a round. After a random wait, the heart appears on both; the first to press **A** wins the round. Both micro:bits run the **same** program, and they agree on a code: **0** means get ready, **1** means go, **2** means I pressed first.

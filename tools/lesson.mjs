@@ -58,7 +58,7 @@ export function loadLessons(only) {
 /** Snippet files: { turtle: {...}, html: {...} } (parsed JSON), read from snippets/ in the repo root. */
 export function loadSnippetFiles() {
   const out = {};
-  for (const kind of ['turtle', 'html']) {
+  for (const kind of ['turtle', 'html', 'microbit']) {
     const p = resolve('snippets', `${kind}.json`);
     if (existsSync(p)) out[kind] = JSON.parse(readFileSync(p, 'utf8'));
   }

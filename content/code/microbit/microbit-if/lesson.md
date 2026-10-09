@@ -4,6 +4,7 @@ unit: decide
 title: If
 summary: Make the micro:bit decide what to do, using a sensor and an if block.
 language: makecode
+explainPicture: if.ts#predict
 hook: "Street lights switch on when it gets dark, and a fridge beeps when its door is left open. Each one asks a yes-or-no question about a number, again and again."
 ---
 Last lesson the micro:bit read sensors and showed numbers. Now it will **decide**. An **if** block (in **Logic**) asks a yes-or-no question, such as *is the light level less than 50?* If the answer is yes (**true**), it runs the blocks inside. If no (**false**), it skips them.

@@ -4,6 +4,7 @@ unit: show-react
 title: Pictures on the LEDs
 summary: Show pictures on the micro:bit, then make them move with a loop.
 language: makecode
+explainPicture: leds.ts#sign
 hook: "Scrolling signs at train stations and the lights on a pedestrian crossing run the same simple loop: show a picture, wait, show the next one."
 ---
 The micro:bit has 25 small lights (LEDs) in a 5 by 5 grid. You program it with **blocks**, and the **simulator** (the picture of a micro:bit next to the blocks) runs your program straight away. No real micro:bit needed.

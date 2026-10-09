@@ -4,6 +4,7 @@ unit: tools
 title: Functions
 summary: Name a job once as a function, then use it from anywhere. Then see that every event block is a function too.
 language: makecode
+explainPicture: functions.ts#predict
 hook: "A recipe card says 'make the sauce (see page 12)' instead of writing the sauce out every time. A function is that named job, written once and used everywhere."
 ---
 When the same blocks are needed in several places, you can **name** them once as a **function**, then **call** it by name wherever you need it. Make one in **Advanced › Functions › Make a Function**. The **call** block then appears in the same place.

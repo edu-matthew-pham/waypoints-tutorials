@@ -173,7 +173,7 @@ await pictures({
   name: 'shown', dir: join(DIR, 'shown'), viewport: { width: 1100, height: 1400 },
   base: hashDir('media', 'playground-html', readFileSync(new URL(import.meta.url)), 'shown-v1'),
   // The view settings are part of the cached code, so changing boxes or inspect redraws the picture.
-  jobs: loadLessons().flatMap((l) => pictureItems(l).map((e) => ({ id: `${l.slug}/${e.key}`, view: e.inspect ? `inspect=${encodeURIComponent(e.inspect)}&` : e.boxes ? 'boxes=1&' : '', src: getSnippet(l.dir, e.ref) }))).map((j) => ({ ...j, code: `<!-- view: ${j.view} -->\n${j.src}` })),
+  jobs: loadLessons().filter((l) => l.language === 'html').flatMap((l) => pictureItems(l).map((e) => ({ id: `${l.slug}/${e.key}`, view: e.inspect ? `inspect=${encodeURIComponent(e.inspect)}&` : e.boxes ? 'boxes=1&' : '', src: getSnippet(l.dir, e.ref) }))).map((j) => ({ ...j, code: `<!-- view: ${j.view} -->\n${j.src}` })),
   async draw(page, j) {
     await page.goto(`http://localhost:${port}/_playground-html/index.html?${j.view}code=${encodeURIComponent(j.src)}`);
     await page.waitForFunction(() => window.__playground?.updates > 0);
@@ -226,5 +226,34 @@ if (existsSync('snippets/maths.json')) await pictures({
     return { ...png, div: 4 };
   },
 });
+
+// ---- MakeCode blocks: each snippets/microbit.json block (for the cheat sheets and Reference) and every program a
+// MakeCode lesson shows (decks, worksheets, guides, explainPicture), drawn by MakeCode's own renderer through
+// _playground-makecode/render.html. Needs makecode.microbit.org: offline, nothing is drawn and the pages keep the
+// code as text. ?render= in MAKECODE_RENDER points at another renderer (tests only).
+{
+  const { blocksId, makecodePrograms } = await import('./teach.mjs');
+  const mkSnips = existsSync('snippets/microbit.json') ? JSON.parse(readFileSync('snippets/microbit.json', 'utf8')).groups.flatMap((g) => g.items.map((i) => ({ id: snippetId(i.label), code: strip(i.code) }))) : [];
+  const mkCode = loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => makecodePrograms(l, (ref) => getSnippet(l.dir, ref)).map((code) => ({ id: blocksId(code), code })));
+  const seen = new Set();
+  let down = false;
+  await pictures({
+    name: 'makecode', dir: join(DIR, 'makecode'), viewport: { width: 1200, height: 1600 },
+    base: hashDir(readFileSync(new URL(import.meta.url)), 'makecode-v1'),
+    jobs: [...mkSnips, ...mkCode].filter((j) => !seen.has(j.id) && seen.add(j.id)),
+    async draw(page, j) {
+      if (down) return null;
+      if (!page.url().includes('render.html')) {
+        await page.goto(`http://localhost:${port}/_playground-makecode/render.html${process.env.MAKECODE_RENDER ? `?render=${encodeURIComponent(process.env.MAKECODE_RENDER)}` : ''}`);
+        const ok = await page.evaluate(() => Promise.race([window.wpReady, new Promise((r) => setTimeout(() => r(false), 30000))]));
+        if (!ok) { down = true; console.log('- makecode: the MakeCode renderer cannot be reached, so no blocks pictures (pages show code as text)'); return null; }
+      }
+      const size = await page.evaluate((code) => window.wpRender(code), j.code);
+      if (!size) return null;
+      const buf = await (await page.$('#out')).screenshot();
+      return { data: `data:image/png;base64,${buf.toString('base64')}`, w: size.w * 2, h: size.h * 2, div: 2 };
+    },
+  });
+}
 
 if (browser) { await browser.close(); server.close(); }
