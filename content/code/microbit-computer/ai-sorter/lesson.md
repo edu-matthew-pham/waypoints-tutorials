@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 4
 unit: ai
 title: Train a recycling sorter
 summary: Train an image model in Teachable Machine, then test it on photos it has never seen. It works on photos like its training photos and fails on others, so to fix a model you change its data.

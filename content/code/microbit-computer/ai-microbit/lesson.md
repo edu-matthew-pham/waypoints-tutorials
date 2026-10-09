@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 5
 unit: ai
 title: A model drives a micro:bit
 summary: The board sends your model's label down the USB cable as a line of text. The micro:bit's program decides what each label does, and must also handle labels it doesn't expect.
@@ -7,7 +7,7 @@ language: makecode
 explainPicture: sorter.ts#predict
 hook: "A sorting machine's camera and its motors are separate parts. The camera's model only says 'Plastic'; a small controller decides which flap to move. The two have to agree on every word."
 ---
-Last lesson you trained a model that labels photos. Now its labels drive a micro:bit. The board sends the label as a **line of text** over the USB cable (**serial**); the micro:bit reads the line and decides what to do.
+Last lesson you trained a model that labels photos. Now its labels drive a micro:bit, the same way the board's buttons did in **Commands from the computer**: the board sends the label as a **line of text** over the USB cable, and the micro:bit's program decides what to do.
 
 **You need:** a micro:bit, a USB cable, and **Chrome or Edge** on a laptop or Chromebook (other browsers can't talk to a micro:bit). The MakeCode simulator can't receive these messages, so the board steps run on a real micro:bit.
 
@@ -122,7 +122,7 @@ try: { playground: microbit, starter: "sorter.ts#bridge" }
 check: { type: code, text: "On radio received string, show the first letter and send the value got 1 back.", rules: { inside: { "radio.onReceivedString": ["basic.showString(receivedString.charAt(0))", "radio.sendValue(\"got\",1)"] } } }
 ```
 
-A sorter on a conveyor belt is not plugged into a laptop. This program is a **bridge**: the micro:bit on the cable passes each line on by **radio**, and passes radio values back to the board. Add **on radio received string** so a second micro:bit shows the first letter of each label and replies **got 1**. Download the same program to both micro:bits; plug one into the computer.
+A sorter on a conveyor belt is not plugged into a laptop. This is the **bridge** from **A radio bridge**: the micro:bit on the cable passes each line on by **radio**, and passes radio values back to the board. Add **on radio received string** so a second micro:bit shows the first letter of each label and replies **got 1**. Download the same program to both micro:bits; plug one into the computer.
 
 ## Make a sorting flap
 

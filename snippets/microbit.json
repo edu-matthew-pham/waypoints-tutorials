@@ -204,6 +204,46 @@
      "matches": "\\w\\s*=\\s*(true|false)\\b"
     }
    ]
+  },
+  {
+   "name": "Talk to the computer",
+   "items": [
+    {
+     "label": "serial write value",
+     "code": "serial.writeValue(\"‹light›\", ‹input.lightLevel()›)",
+     "hint": "Sends a line such as light:128 down the USB cable. The board graphs it; MakeCode's simulator shows it under Show data. Serial."
+    },
+    {
+     "label": "serial write line",
+     "code": "serial.writeLine(\"‹ok›\")",
+     "hint": "Sends a line of text down the USB cable. Serial."
+    },
+    {
+     "label": "on serial data received",
+     "code": "serial.onDataReceived(serial.delimiters(Delimiters.NewLine), function () {\n    ‹blocks›\n})",
+     "hint": "Runs each time a whole line arrives over USB (it ends with a new line). Serial."
+    },
+    {
+     "label": "serial read line",
+     "code": "serial.readLine()",
+     "hint": "The line that arrived, as text, without its new line. Use it inside on serial data received. Serial."
+    },
+    {
+     "label": "radio send value",
+     "code": "radio.sendValue(\"‹bin›\", ‹1›)",
+     "hint": "Sends a name and a number by radio, such as bin and 1. Radio."
+    },
+    {
+     "label": "on radio received value",
+     "code": "radio.onReceivedValue(function (name, value) {\n    ‹blocks›\n})",
+     "hint": "Runs each time a name and number arrive by radio. Radio."
+    },
+    {
+     "label": "servo write pin",
+     "code": "pins.servoWritePin(AnalogPin.‹P0›, ‹90›)",
+     "hint": "Turns a servo on that pin to an angle from 0 to 180 (90 is the middle). Pins."
+    }
+   ]
   }
  ]
 }

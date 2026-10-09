@@ -24,11 +24,11 @@ pathways:
   - id: makecode
     title: MakeCode
     summary: Blocks first, then Python, with real devices and games.
-    about: "MakeCode starts with blocks and shows the same program in Python, so it suits younger students and students new to code. Two foundations courses run side by side, so start with either: **micro:bit Foundations** (pictures, buttons, sensors, decisions, lists, functions and radio, all in the simulator) and **MakeCode Arcade** (games with sprites, overlaps, scores and levels, ending with working out which games Arcade does well). **Robotics challenges** follows micro:bit Foundations: learn each idea in the robot simulator, then run it on a real two-wheeled robot (the lessons use the Elecfreaks Cutebot; other supported robots change one block). **micro:bit and the computer** also follows Foundations: train an image model in Teachable Machine, test it fairly, and send its labels to a micro:bit over USB and radio."
+    about: "MakeCode starts with blocks and shows the same program in Python, so it suits younger students and students new to code. Two foundations courses run side by side, so start with either: **micro:bit Foundations** (pictures, buttons, sensors, decisions, lists, functions and radio, all in the simulator) and **MakeCode Arcade** (games with sprites, overlaps, scores and levels, ending with working out which games Arcade does well). **Robotics challenges** follows micro:bit Foundations: learn each idea in the robot simulator, then run it on a real two-wheeled robot (the lessons use the Elecfreaks Cutebot; other supported robots change one block). **micro:bit and the computer** also follows Foundations: graph a micro:bit's sensors on the computer, send it commands, build a radio bridge, then train an image model in Teachable Machine and send its labels to a micro:bit. **AI robots** brings the two together: a robot driven by your model, kept safe when the model is unsure, silent or wrong."
     courses:
       - { path: code/microbit, stage: foundations }
       - { path: code/arcade, stage: foundations }
       - { path: code/robotics, stage: extensions, after: [code/microbit] }
       - { path: code/microbit-computer, stage: extensions, after: [code/microbit] }
-      - { id: ai-robots, title: AI robots, stage: extensions, summary: "A robot driven by a model you trained: what it should do when the model is wrong or unsure.", after: [code/robotics, code/microbit-computer] }
+      - { path: code/ai-robots, stage: extensions, after: [code/robotics, code/microbit-computer] }
 ---

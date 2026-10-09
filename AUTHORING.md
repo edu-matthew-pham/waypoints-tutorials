@@ -501,6 +501,16 @@ Vary, Practise, Make).
       `n_total`, `n_classes`, `has_<label>` (1 or 0), and with serial `n_sent`, `n_replies`, `in_<name>`. Examples:
       `"acc_messy >= 0.75"`, `"has_neither = 1 and acc_neither >= 0.75"`, `"n_sent >= 3"`. Training is not checked;
       the model it makes is. The Teachable Machine library and TensorFlow.js load only when this widget is used.
+    - Leave out `testset:` for a webcam-only board (driving a robot): then `classes:` names the expected labels.
+      `threshold Go: 0.95` gives one label its own threshold; `unsure: on` sends **Unsure** when no label holds its
+      threshold; `repeat: 1` resends the current label every second (a heartbeat for a robot's watchdog). Extra values:
+      `sent_<label>` (times sent, including `sent_unsure`). The webcam is mirrored, as in Teachable Machine.
+  - `widget: serial` (a micro:bit on USB, any lesson): **Connect a micro:bit**, then a live graph of every `name:value`
+    line it sends (`serial write value`), its latest, lowest and highest values, and a message list.
+    `plot: light, temp` (which to graph; default all), `window: 20` (seconds shown), `button Happy: happy` (a button
+    that sends the line happy; any number), `text: on` (a box to send any line). Values: `n_lines`, `n_sent`,
+    `n_names`, and per value `in_`, `min_`, `max_`, `n_<name>`; per word sent `sent_<word>`. The connection is shared
+    by all of a board's widgets (`B.serial` in `core.js`) and survives a task's new setup.
   - `widget: cell`: `show: animal, plant` (cell types side by side: animal, plant, bacterium, yeast, redblood, nerve,
     muscle, roothair, sperm, egg, pollen), or one tissue (`leaf`, `heart`), or `zoom`. Students click a part to see
     its name, what it does and where it is found; `find: nucleus, membrane, cytoplasm` limits which parts count (ids:

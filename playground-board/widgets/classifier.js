@@ -1,7 +1,8 @@
 // Classifier: test an image model that students trained in Teachable Machine on a fixed test set, and optionally send
 // its predictions to a micro:bit over USB (Web Serial).
 //   widget: classifier
-//   testset: recycling          the test set in media/classifier/<name>/test.json (images with a label and a group)
+//   testset: recycling          the test set in media/classifier/<name>/test.json (images with a label and a group);
+//                               leave it out for a webcam-only board (driving a micro:bit or robot)
 //   model: ask                  students paste their shareable link (default); or a link or a path to a model folder
 //                               (relative to the board, e.g. media/classifier/recycling/demo/) for a demo or fallback
 //   classes: Paper, Plastic     the labels the test set expects (default: the test set's classes)
@@ -10,9 +11,15 @@
 //   serial: on                  "Connect a micro:bit": sends the top webcam label (or a clicked test image's label)
 //                               as a line of text, and reads lines back
 //   threshold: 0.8              confidence needed before the webcam sends a label (default 0.8)
+//   threshold Go: 0.95          a different threshold for one label (a costly mistake needs more confidence)
+//   unsure: on                  with serial, send "Unsure" when no label holds its threshold (so a robot can stop)
+//   repeat: 1                   with serial, send the current label again every so many seconds, so a robot's watchdog
+//                               can tell the board is still there (default: send only when the label changes)
 // state: { scope: { vars }, model, loaded, labels }. vars (every name has an underscore, so checks can use them):
 //   acc_all, acc_<group> (0-1), n_correct, n_total, n_classes, has_<label> (1 or 0; lower case, spaces as _),
-//   with serial: n_sent, n_replies, and in_<key> for each "key:number" line the micro:bit sent (dist:23 -> in_dist).
+//   with serial: n_sent, n_replies, sent_<label> (times each label was sent, including sent_unsure), and in_<key>
+//   for each "key:number" line the micro:bit sent (dist:23 -> in_dist). Without a test set, only n_classes, has_<label>
+//   and the serial values.
 // The Teachable Machine library and TensorFlow.js (the versions its export uses) load only when this widget is used.
 (function (B) {
   'use strict';
@@ -27,12 +34,23 @@
   function pct(x) { return Math.round(x * 100) + '%'; }
 
   function parse(s) {
-    if (!s.testset || !/^[\w-]+$/.test(s.testset)) throw new Error('Name a test set, such as "testset: recycling".');
+    if (s.testset === 'none') s.testset = '';
+    if (s.testset && !/^[\w-]+$/.test(s.testset)) throw new Error('Name a test set, such as "testset: recycling".');
+    if (!s.testset && s.webcam !== 'on') throw new Error('A board with no test set needs "webcam: on".');
     s.model = s.model || 'ask';
     if (s.model !== 'ask' && !TM.test(s.model) && /^[a-z]+:/i.test(s.model)) throw new Error('model: use "ask", a Teachable Machine link, or a folder on this site.');
     s.threshold = s.threshold === undefined ? 0.8 : Number(s.threshold);
     if (!(s.threshold > 0 && s.threshold <= 1)) throw new Error('threshold: a number from 0 to 1, such as 0.8.');
-    s.webcamOn = s.webcam === 'on'; s.serialOn = s.serial === 'on';
+    s.repeatMs = s.repeat === undefined ? 0 : Number(s.repeat) * 1000;
+    if (!(s.repeatMs >= 0 && s.repeatMs <= 60000)) throw new Error('repeat: seconds between sends, such as 1.');
+    s.webcamOn = s.webcam === 'on'; s.serialOn = s.serial === 'on'; s.unsureOn = s.unsure === 'on';
+    s.thresholds = {};
+    s.items.forEach(function (it) {
+      if (it.kind !== 'threshold' || !it.name) return;
+      var v = Number(it.value);
+      if (!(v > 0 && v <= 1)) throw new Error('Line ' + it.line + ': threshold for ' + it.name + ' must be a number from 0 to 1.');
+      s.thresholds[key(it.name)] = v;
+    });
   }
 
   function script(src) {
@@ -51,6 +69,7 @@
   }
 
   function testSet() {
+    if (!spec.testset) return Promise.resolve({ classes: list(spec.classes), groups: [], names: {}, images: [], base: '' });
     return fetch('media/classifier/' + spec.testset + '/test.json', { cache: 'no-cache' }).then(function (r) {
       if (!r.ok) throw new Error('There is no test set called "' + spec.testset + '".');
       return r.json();
@@ -92,6 +111,7 @@
   /** Every test image once per model; results are kept per model link. */
   function run() {
     var labels = model.getClassLabels();
+    if (!set.images.length) { results = []; B.moved = true; checkClasses(labels); paint(); report(); return Promise.resolve(); }
     if (cache[modelUrl]) { results = cache[modelUrl]; st.msg = ''; paint(); report(); return Promise.resolve(); }
     st.msg = 'Testing ' + set.images.length + ' images…'; paint();
     var out = [];
@@ -102,11 +122,14 @@
       });
     }, Promise.resolve()).then(function () {
       cache[modelUrl] = results = out; B.moved = true;
-      var missing = set.classes.filter(function (c) { return !labels.some(function (l) { return key(l) === key(c); }); });
-      st.msg = missing.length ? 'Your model has no class called "' + missing[0] + '". Rename the class in Teachable Machine, export again and paste the new link.' : '';
-      st.bad = !!missing.length;
+      checkClasses(labels);
       paint(); report();
     });
+  }
+  function checkClasses(labels) {
+    var missing = set.classes.filter(function (c) { return !labels.some(function (l) { return key(l) === key(c); }); });
+    st.msg = missing.length ? 'Your model has no class called "' + missing[0] + '". Rename the class in Teachable Machine, export again and paste the new link.' : '';
+    st.bad = !!missing.length;
   }
 
   function scores() {
@@ -118,7 +141,13 @@
 
   function report() {
     var v = {}, out = 'No model yet';
-    if (model && results) {
+    if (model && results && !set.images.length) {
+      var labs = model.getClassLabels();
+      v.n_classes = labs.length;
+      set.classes.concat(['Neither']).forEach(function (c) { v['has_' + key(c)] = 0; });
+      labs.forEach(function (l) { v['has_' + key(l)] = 1; });
+      out = labs.join('/') + ' model loaded' + (spec.serialOn ? '; ' + st.sent + ' sent' : '');
+    } else if (model && results) {
       var s = scores(), labels = model.getClassLabels();
       v.acc_all = s.all.n ? s.all.c / s.all.n : 0; v.n_correct = s.all.c; v.n_total = s.all.n; v.n_classes = labels.length;
       set.groups.forEach(function (g) { var x = s.by[g]; v['acc_' + key(g)] = x.n ? x.c / x.n : 0; });
@@ -126,44 +155,28 @@
       labels.forEach(function (l) { v['has_' + key(l)] = 1; });
       out = labels.join('/') + ' model: ' + s.all.c + '/' + s.all.n + ' (' + pct(v.acc_all) + '). ' + set.groups.map(function (g) { var x = s.by[g]; return g + ' ' + (x.n ? pct(x.c / x.n) : '–'); }).join(', ');
     }
-    if (spec.serialOn) { v.n_sent = st.sent; v.n_replies = st.replies; Object.keys(st.inVals).forEach(function (k) { v['in_' + k] = st.inVals[k]; }); }
+    if (spec.serialOn) {
+      v.n_sent = st.sent; v.n_replies = st.replies;
+      Object.keys(st.inVals).forEach(function (k) { v['in_' + k] = st.inVals[k]; });
+      if (model) model.getClassLabels().concat(spec.unsureOn ? ['Unsure'] : []).forEach(function (l) { v['sent_' + key(l)] = st.sentBy[key(l)] || 0; });
+    }
     Object.keys(v).forEach(function (k) { v[k] = Math.round(v[k] * 1000) / 1000; });
     B.say(model && results ? out : (spec.model === 'ask' && !st.busy ? 'Paste your model link, then Load.' : ''), false);
     B.post({ scope: { vars: v, points: {} }, model: modelUrl, loaded: !!model, labels: model ? model.getClassLabels() : [] }, out);
   }
 
-  // ---- Web Serial: one line per message, 115200 baud (MakeCode's default over USB). ----
-  function connect() {
-    if (!('serial' in navigator)) { st.serialMsg = 'This browser cannot talk to a micro:bit. Use Chrome or Edge on a laptop or Chromebook.'; paint(); return; }
-    navigator.serial.requestPort({ filters: [{ usbVendorId: 0x0d28 }] }).then(function (port) {
-      return port.open({ baudRate: 115200 }).then(function () { return port; });
-    }).then(function (port) {
-      st.port = port; st.serialMsg = 'Connected.'; paint();
-      var enc = new TextEncoderStream(); enc.readable.pipeTo(port.writable); st.writer = enc.writable.getWriter();
-      var dec = new TextDecoderStream(); port.readable.pipeTo(dec.writable); var reader = dec.readable.getReader(), buf = '';
-      (function pump() {
-        reader.read().then(function (r) {
-          if (r.done) return;
-          buf += r.value; var lines = buf.split(/\r?\n/); buf = lines.pop();
-          lines.forEach(function (l) { if (l.trim()) heard(l.trim()); });
-          pump();
-        }).catch(function () { st.port = null; st.writer = null; st.serialMsg = 'The micro:bit was disconnected.'; paint(); });
-      })();
-    }).catch(function (e) {
-      if (e && e.name === 'NotFoundError') return;   // the student closed the chooser
-      st.serialMsg = e && /open|busy|InvalidState|NetworkError/i.test(e.name + e.message) ? 'The micro:bit is busy. If MakeCode is connected to it in another tab, disconnect it there (or close that tab) and try again.' : 'Could not connect: ' + (e && e.message);
-      paint();
-    });
-  }
+  // ---- Serial: the board's shared micro:bit connection (core.js). ----
+  function connect() { B.serial.connect(function (m) { st.serialMsg = m; paint(); }); }
   function send(text) {
-    if (!st.writer) return;
-    st.writer.write(text + '\n'); st.sent++; st.log.unshift('→ ' + text); st.log.length = Math.min(st.log.length, 6); B.moved = true;
+    if (!B.serial.send(text)) return;
+    st.sent++; st.sentBy[key(text)] = (st.sentBy[key(text)] || 0) + 1;
+    st.log.unshift('→ ' + text); st.log.length = Math.min(st.log.length, 6); B.moved = true;
     paint(); report();
   }
   function heard(line) {
     st.replies++; st.log.unshift('← ' + line); st.log.length = Math.min(st.log.length, 6);
-    var m = /^([a-zA-Z]\w*)\s*[:=]\s*(-?\d+(?:\.\d+)?)$/.exec(line);
-    if (m) st.inVals[key(m[1])] = Number(m[2]);
+    var nv = B.nameValue(line);
+    if (nv) st.inVals[key(nv[0])] = nv[1];
     B.moved = true; paint(); report();
   }
 
@@ -177,15 +190,21 @@
       paint();
       st.cam.timer = setInterval(function () {
         if (!st.cam || v.readyState < 2) return;
-        model.predict(v).then(function (pred) {
+        // Flipped, like Teachable Machine's own webcam: its webcam samples are mirrored, so Left and Right stay Left and Right.
+        model.predict(v, true).then(function (pred) {
           if (!st.cam) return;
           pred.sort(function (a, b) { return b.probability - a.probability; });
           var c = st.cam, top = pred[0].className, now = Date.now();
-          if (top !== c.top) { c.top = top; c.since = now; }
+          var th = spec.thresholds[key(top)] !== undefined ? spec.thresholds[key(top)] : spec.threshold;
+          var sure = pred[0].probability >= th;
+          // A label counts once it has held, above its threshold, for 300 ms; "unsure" holds the same way.
+          var now1 = sure ? top : 'Unsure';
+          if (now1 !== c.top) { c.top = now1; c.since = now; }
           c.p = pred[0].probability;
-          var lab = B.el('cltop'); if (lab) lab.textContent = top + ' ' + pct(c.p);
-          // Send only a label that has held for 300 ms above the threshold, and only when it changes.
-          if (spec.serialOn && c.p >= spec.threshold && now - c.since >= 300 && top !== st.lastSent) { st.lastSent = top; send(top); }
+          var lab = B.el('cltop'); if (lab) lab.textContent = sure ? top + ' ' + pct(c.p) : 'Unsure (' + top + ' ' + pct(c.p) + ', needs ' + pct(th) + ')';
+          var held = now - c.since >= 300 && (sure || spec.unsureOn);
+          var again = spec.repeatMs && c.top === st.lastSent && now - st.lastAt >= spec.repeatMs;
+          if (spec.serialOn && held && (c.top !== st.lastSent || again)) { st.lastSent = c.top; st.lastAt = now; send(c.top); }
         });
       }, 150);
     }).catch(function () { st.serialMsg = ''; st.msg = 'The webcam is blocked or missing. You can still test with the photos below.'; paint(); report(); });
@@ -207,7 +226,7 @@
     }
     if (st.msg) wrap.appendChild(el('p', 'clmsg' + (st.bad ? ' bad' : ''), st.msg));
     // Scores by group.
-    if (model && results) {
+    if (model && results && set.images.length) {
       var s = scores(), sc = el('div', 'clscores');
       var tot = el('div', 'clscore all'); tot.append(el('b', '', 'Overall'), el('span', '', s.all.c + ' / ' + s.all.n + ' (' + pct(s.all.n ? s.all.c / s.all.n : 0) + ')')); sc.appendChild(tot);
       set.groups.forEach(function (g) {
@@ -223,7 +242,7 @@
       var tools = el('div', 'clrow');
       if (spec.webcamOn && model) { var cb = el('button', st.cam ? 'go' : 'quiet', st.cam ? 'Stop the webcam' : 'Try it on the webcam'); cb.type = 'button'; cb.addEventListener('click', webcam); tools.appendChild(cb); }
       if (spec.serialOn) {
-        var sb = el('button', st.port ? 'quiet' : 'go', st.port ? 'micro:bit connected' : 'Connect a micro:bit'); sb.type = 'button'; sb.disabled = !!st.port;
+        var on = B.serial.connected(), sb = el('button', on ? 'quiet' : 'go', on ? 'micro:bit connected' : 'Connect a micro:bit'); sb.type = 'button'; sb.disabled = on;
         sb.addEventListener('click', connect); tools.appendChild(sb);
       }
       wrap.appendChild(tools);
@@ -258,7 +277,8 @@
       spec = B.spec; stopCam(); model = null; results = null; modelUrl = '';
       var saved = fresh ? null : B.saved(), last = '';
       try { last = B.q.get('fresh') === '1' ? '' : localStorage.getItem(LAST) || ''; } catch (e) { /* private mode */ }
-      st = { link: saved && saved.link || last, msg: 'Loading the test photos…', bad: false, busy: false, cam: null, port: st && st.port, writer: st && st.writer, serialMsg: '', sent: 0, replies: 0, inVals: {}, log: [], lastSent: '' };
+      st = { link: saved && saved.link || last, msg: spec.testset ? 'Loading the test photos…' : '', bad: false, busy: false, cam: null, serialMsg: '', sent: 0, sentBy: {}, replies: 0, inVals: {}, log: [], lastSent: '', lastAt: 0 };
+      B.serial.listen(heard);
       var p = B.el('gpanel'); p.replaceChildren();
       testSet().then(function (s) {
         set = s; st.msg = ''; paint(); report();

@@ -188,3 +188,12 @@ button.clcard { cursor: pointer; }
 .patfig { border: 1px solid var(--line); border-radius: 10px; background: var(--card); padding: 10px 12px 6px; }
 .patsvg { display: block; width: 100%; height: 190px; }
 .patlabel { margin: 4px 0 0; text-align: center; font: 600 17px/1.2 system-ui, sans-serif; color: var(--ink); }
+/* Serial: a live graph of a micro:bit's values */
+.srwrap { border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.srchart { display: block; width: 100%; height: auto; }
+.srframe { fill: none; stroke: var(--line); }
+.srline { fill: none; stroke-width: 2.5; stroke-linejoin: round; }
+.srtick { font: 12px system-ui, sans-serif; fill: var(--muted); }
+.srnote { font: 15px system-ui, sans-serif; fill: var(--muted); }
+.srvals { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; }
+.srkey { display: block; height: 4px; border-radius: 2px; }

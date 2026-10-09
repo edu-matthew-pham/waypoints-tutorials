@@ -67,6 +67,45 @@ var WPB = (function () {
   };
 
   /**
+   * A micro:bit over USB (Web Serial, 115200 baud: MakeCode's default), one connection per board page, kept when a
+   * task loads a new setup. B.serial.listen(fn) gets each line the micro:bit sends (trimmed; one listener, the
+   * current widget's); connect(say) asks for the port and calls say(message) with a plain message; send(text) writes
+   * a line. Lines are text: MakeCode's "serial write value" sends name:value.
+   */
+  B.serial = (function () {
+    var writer = null, listener = null;
+    return {
+      ok: function () { return 'serial' in navigator; },
+      connected: function () { return !!writer; },
+      listen: function (fn) { listener = fn; },
+      send: function (text) { if (!writer) return false; writer.write(String(text) + '\n'); return true; },
+      connect: function (say) {
+        if (!('serial' in navigator)) { say('This browser cannot talk to a micro:bit. Use Chrome or Edge on a laptop or Chromebook.'); return; }
+        navigator.serial.requestPort({ filters: [{ usbVendorId: 0x0d28 }] }).then(function (port) {
+          return port.open({ baudRate: 115200 }).then(function () { return port; });
+        }).then(function (port) {
+          var enc = new TextEncoderStream(); enc.readable.pipeTo(port.writable); writer = enc.writable.getWriter();
+          var dec = new TextDecoderStream(); port.readable.pipeTo(dec.writable); var reader = dec.readable.getReader(), buf = '';
+          say('Connected.');
+          (function pump() {
+            reader.read().then(function (r) {
+              if (r.done) return;
+              buf += r.value; var lines = buf.split(/\r?\n/); buf = lines.pop();
+              lines.forEach(function (l) { if (l.trim() && listener) listener(l.trim()); });
+              pump();
+            }).catch(function () { writer = null; say('The micro:bit was disconnected. Plug it in and connect again.'); });
+          })();
+        }).catch(function (e) {
+          if (e && e.name === 'NotFoundError') return;   // the student closed the chooser
+          say(e && /open|busy|InvalidState|NetworkError/i.test(e.name + e.message) ? 'The micro:bit is busy. If MakeCode is connected to it in another tab, disconnect it there (or close that tab) and try again.' : 'Could not connect: ' + (e && e.message));
+        });
+      },
+    };
+  })();
+  /** "name:number" (or name=number) from a line, as [name, number], else null. */
+  B.nameValue = function (line) { var m = /^([a-zA-Z][\w ]*?)\s*[:=]\s*(-?\d+(?:\.\d+)?)$/.exec(line); return m ? [m[1].trim().toLowerCase().replace(/\s+/g, '_'), Number(m[2])] : null; };
+
+  /**
    * Register a widget: { sections: ids to show, parse(spec) (defaults and checks; throws a message),
    * start(fresh) (draw it; fresh ignores saved work), redraw() (colour scheme changed), resize() }.
    */
