@@ -52,7 +52,7 @@ const useModules = (params.get('use') || '').split(',').map((s) => s.trim()).fil
 const modulesReady = (async () => {
   if (!useModules.length) return {};
   let shared = {}, local = {};
-  try { shared = await (await fetch('modules.json')).json(); } catch { /* none shared */ }
+  try { shared = await (await fetch('modules.json', { cache: 'no-cache' })).json(); } catch { /* none shared */ }
   try { local = JSON.parse(params.get('mods') || '{}'); } catch { /* ignore a bad value */ }
   const out = {};
   for (const n of useModules) if (local[n] ?? shared[n]) out[n] = local[n] ?? shared[n];

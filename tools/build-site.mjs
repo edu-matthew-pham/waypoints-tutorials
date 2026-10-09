@@ -45,7 +45,7 @@ function tryHtml(lesson, step) {
   // Modules a lesson offers: a file next to lesson.md overrides a shared one; shared ones the playground loads itself.
   const local = {};
   for (const name of lesson.modules) { const f = join(lesson.dir, `${name}.py`); if (existsSync(f)) local[name] = readFileSync(f, 'utf8'); }
-  return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), '../'.repeat(lesson.depth), '', { use: lesson.modules, local });
+  return tryEmbed(lesson, step, getSnippet(lesson.dir, t.starter || step.config.code), '../'.repeat(lesson.depth), '', { use: lesson.modules, local }, VERSIONS);
 }
 
 function buildLesson(lesson, parentTitle, course) {
@@ -85,6 +85,8 @@ if (bad) process.exit(1);
 mkdirSync(OUT, { recursive: true });
 buildPlayground(OUT);
 buildHtmlPlayground(OUT);
+// Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
+const VERSIONS = Object.fromEntries(['_playground', '_playground-html'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
 buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
@@ -174,7 +176,7 @@ const sharedModuleNames = Object.keys(loadSharedModules());
 for (const [path, pg] of Object.entries(PLAY)) {
   const depth = path.split('/').length + 1; // .../playground/ -> site root
   const up = '../'.repeat(depth);
-  const src = `${up}${pg.dir}/index.html?id=free&free=1${pg.kind === 'turtle' && sharedModuleNames.length ? `&use=${sharedModuleNames.join(',')}` : ''}`;
+  const src = `${up}${pg.dir}/index.html?id=free&free=1&v=${VERSIONS[pg.dir]}${pg.kind === 'turtle' && sharedModuleNames.length ? `&use=${sharedModuleNames.join(',')}` : ''}`;
   mkdirSync(join(OUT, path, 'playground'), { recursive: true });
   writeFileSync(join(OUT, path, 'playground', 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(pg.label)} playground</title><style>${PLAYGROUND_PAGE_CSS}</style></head><body>

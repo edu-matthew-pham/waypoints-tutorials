@@ -73,13 +73,14 @@ async function copyText(text) {
  *   modules    the lesson's {name: source}
  *   openCopy(name, source)  make an editable copy of a lesson module (offered once "my-module" is unlocked)
  *   openModule(name)        show a student module's tab
+ *   closeOnPaste            close the drawer when the student pastes into the editor (a live preview should show at once)
  */
-export async function mountSnippets({ toolbar, textarea, kind, before = null, host = null, lesson = null, url = 'snippets.json', modules = {}, openCopy = null, openModule = null }) {
+export async function mountSnippets({ toolbar, textarea, kind, before = null, host = null, lesson = null, url = 'snippets.json', modules = {}, openCopy = null, openModule = null, closeOnPaste = false }) {
   let data;
-  try { data = await (await fetch(url)).json(); } catch { return null; }
+  try { data = await (await fetch(url, { cache: 'no-cache' })).json(); } catch { return null; }
   // Snippets that some lesson step unlocks start locked; the rest are always available.
   let claims = {};
-  try { claims = await (await fetch('unlocks.json')).json(); } catch { /* no lessons claim any */ }
+  try { claims = await (await fetch('unlocks.json', { cache: 'no-cache' })).json(); } catch { /* no lessons claim any */ }
   // The create page's preview passes this lesson's own locks: ?locks=id~Step title|id~Step title
   const lp = new URLSearchParams(location.search).get('locks');
   if (lp) for (const pair of lp.split('|')) { const [id, step] = pair.split('~'); if (id) claims[id] = { lesson: 'this lesson', here: true, step: step || 'a step' }; }
@@ -348,7 +349,14 @@ export async function mountSnippets({ toolbar, textarea, kind, before = null, ho
   }
   btn.addEventListener('click', () => (panel.hidden ? open() : close()));
   panel.querySelector('.ref-close').addEventListener('click', close);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden && !dlg?.open) close(); });
+  // A live preview (HTML) shows the result of a paste straight away, so the drawer gets out of the way.
+  if (closeOnPaste) textarea.addEventListener('paste', () => { if (!panel.hidden) setTimeout(close, 0); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || dlg?.open) return;
+    if (!panel.hidden) close();
+    // Drawer already closed: tell the lesson page, which leaves full screen if this playground is in it.
+    else if (window.parent !== window) { try { window.parent.postMessage({ wp: 'esc' }, location.origin); } catch { /* not embedded */ } }
+  });
 
   return {
     setStudentModules(m) { studentModules = m || {}; renderDynamic(); },

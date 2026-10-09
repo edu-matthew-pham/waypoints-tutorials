@@ -54,6 +54,6 @@ render();
 
 mountSnippets({
   kind: 'html', toolbar: document.querySelector('.bar'), textarea: codeEl,
-  host: document.querySelector('.preview-pane'),
+  host: document.querySelector('.preview-pane'), closeOnPaste: true,
   lesson: params.get('id') && params.get('free') !== '1' ? { slug: params.get('id').replace(/\/[^/]*$/, ''), code: starter } : null,
 });

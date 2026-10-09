@@ -68,7 +68,10 @@ figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .placeholder b{color:var(--ink)}
 .try{margin:20px 0 6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .try-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:9px 14px;font-size:14px;background:color-mix(in srgb,var(--c) 10%,transparent);border-bottom:1px solid var(--line)}
-.try-head span{color:var(--muted)}
+.try-head span{color:var(--muted);flex:1}
+.try-full{font:inherit;font-size:13px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer}.try-full:hover{border-color:var(--c,var(--accent))}
+.try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}.try.full iframe{flex:1;height:auto!important}
+body.try-open{overflow:hidden}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
@@ -209,6 +212,14 @@ if(v===undefined||v===null){line('No prediction locked in.','Go back to the Pred
 else{line('You predicted:',v);var out=(m.output||'').trim(),a=c.dataset.actual||'';
 if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now compare:','look at the drawing. Was your prediction right? What did you notice?')}
 c.hidden=false})});
+// Full screen / inline for each playground: a class, not the Fullscreen API, so it works on iPads and the
+// playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
+document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.try-full');if(!b)return;
+t._full=function(on){t.classList.toggle('full',on);document.body.classList.toggle('try-open',!!document.querySelector('.try.full'));b.setAttribute('aria-pressed',String(on));b.textContent=on?'Exit full screen':'Full screen';if(!on)b.focus()};
+b.addEventListener('click',function(){t._full(!t.classList.contains('full'))})});
+document.addEventListener('keydown',function(e){var f=document.querySelector('.try.full');if(e.key==='Escape'&&f)f._full(false)});
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='esc')return;
+document.querySelectorAll('.try.full').forEach(function(f){var i=f.querySelector('iframe');if(i&&i.contentWindow===e.source)f._full(false)})});
 function parsons(box,win,bad){var lines=JSON.parse(box.dataset.lines),extra=JSON.parse(box.dataset.extra||'[]');
 var pool=box.querySelector('.ppool'),prog=box.querySelector('.pprog'),inProg=[];
 var all=lines.concat(extra).map(function(t,i){return {t:t,i:i}});
@@ -409,7 +420,7 @@ export const PLAYGROUNDS = {
 };
 
 /** "Try it yourself" iframe. siteRoot is the URL of the site root (with trailing slash), e.g. "../../../". */
-export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = null) {
+export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = null, versions = null) {
   const t = step.config.try;
   const pg = PLAYGROUNDS[t.playground || 'turtle'] || PLAYGROUNDS.turtle;
   const q = new URLSearchParams({ id: `${lesson.slug}/${step.id}`, code: starter });
@@ -418,6 +429,7 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   // Modules the playground offers: ?use=shapes,house, plus ?mods={name: source} for ones that live in the lesson
   if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
-  return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>Your edits are saved in this browser.</span></div>` +
+  if (versions?.[pg.dir]) q.set('v', versions[pg.dir]); // a new deploy gets a new URL, never a cached old playground
+  return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>Your edits are saved in this browser.</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
     `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`;
 }
