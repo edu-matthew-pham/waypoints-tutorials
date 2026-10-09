@@ -1,6 +1,6 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
-import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys, makecodePackage } from './lesson-core.mjs';
+import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys, makecodePackage, makecodeExtensions } from './lesson-core.mjs';
 import { MATH_JS } from './math-expr.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
@@ -118,7 +118,8 @@ figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .try-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:9px 14px;font-size:14px;background:color-mix(in srgb,var(--c) 10%,transparent);border-bottom:1px solid var(--line)}
 .try-head span{color:var(--muted);flex:1}
 .try-full{font:inherit;font-size:13px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer}.try-full:hover{border-color:var(--c,var(--accent))}
-.try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}.try.full iframe{flex:1;height:auto!important}
+.try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}
+.try-checks{display:none}.try.full .try-checks{display:flex;flex-wrap:wrap;gap:4px 16px;padding:6px 12px;font-size:14px;border-bottom:1px solid var(--line);background:var(--card);color:var(--muted)}.try-checks .ok{color:var(--run);font-weight:600}.try.full iframe{flex:1;height:auto!important}
 body.try-open{overflow:hidden}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
 .try iframe[hidden]{display:none}.mkload{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--card);color:var(--muted);font-size:14px;text-align:center;padding:16px}.try.full .mkload{height:calc(100% - 40px)!important}
@@ -400,7 +401,13 @@ c.hidden=false}});
 // Full screen / inline for each playground: a class, not the Fullscreen API, so it works on iPads and the
 // playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
 function mkOpen(t){var f=t.querySelector('iframe[data-src]'),l=t.querySelector('.mkload');if(!f||f.src)return;f.src=f.dataset.src;f.hidden=false;if(l)l.remove()}
-document.querySelectorAll('.mkopen').forEach(function(b){b.addEventListener('click',function(){mkOpen(b.closest('.try'))})});
+document.querySelectorAll('.mkopen').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.try');mkOpen(t);if(t.dataset.wide&&t._full)t._full(true)})});
+// In full screen the step's code checks are hidden behind the playground, so a slim bar repeats them with their ticks.
+document.querySelectorAll('.try').forEach(function(t){var s=t.closest('.step'),h=t.querySelector('.try-head');if(!s||!h)return;
+var cs=[].slice.call(s.querySelectorAll('.check[data-type="code"]'));if(!cs.length)return;
+var bar=document.createElement('div');bar.className='try-checks';bar.setAttribute('aria-live','polite');
+function upd(){bar.replaceChildren.apply(bar,cs.map(function(c){var d=c.classList.contains('done'),e=document.createElement('span'),q=c.querySelector('.check-q');e.className=d?'ok':'';e.textContent=(d?'\u2713 ':'\u25CB ')+(q?q.textContent:'');return e}))}
+upd();cs.forEach(function(c){new MutationObserver(upd).observe(c,{attributes:true,attributeFilter:['class']})});h.after(bar)});
 document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.try-full');if(!b)return;
 t._full=function(on){t.classList.toggle('full',on);document.body.classList.toggle('try-open',!!document.querySelector('.try.full'));b.setAttribute('aria-pressed',String(on));b.textContent=on?'Exit full screen':'Full screen';if(!on)b.focus()};
 b.addEventListener('click',function(){mkOpen(t);t._full(!t.classList.contains('full'))})});
@@ -710,11 +717,12 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
   if (versions?.[pg.dir]) q.set('v', versions[pg.dir]); // a new deploy gets a new URL, never a cached old playground
-  return `<div class="try"><div class="try-head"><b>Try it yourself</b><span>${pg === PLAYGROUNDS.science ? 'Nothing is saved: start again as often as you like.' : 'Your edits are saved in this browser.'}</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
+  const wide = pg.dir === '_playground-makecode' && makecodeExtensions(lesson).some((e) => e.wide);
+  return `<div class="try"${wide ? ' data-wide="1"' : ''}><div class="try-head"><b>Try it yourself</b><span>${pg === PLAYGROUNDS.science ? 'Nothing is saved: start again as often as you like.' : 'Your edits are saved in this browser.'}</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
     (pg.dir === '_playground-makecode'
       // MakeCode editors load on click: each one is heavy, and MakeCode focuses itself when it loads, which
       // scrolled the page to any editor that lazy-loaded nearby. data-src holds the address until then.
-      ? `<div class="mkload" style="height:${Number(t.height) || pg.height || 480}px"><button type="button" class="mkopen">Open the MakeCode editor</button><span>It takes a few seconds to load. Your work in this step is kept.</span></div>` +
+      ? `<div class="mkload" style="height:${Number(t.height) || pg.height || 480}px"><button type="button" class="mkopen">Open the MakeCode editor</button><span>${wide ? 'It opens full screen, so the robot simulator has room, and takes a few seconds to load. Esc comes back. Your work in this step is kept.' : 'It takes a few seconds to load. Your work in this step is kept.'}</span></div>` +
         `<iframe title="${esc(pg.title)}" hidden style="height:${Number(t.height) || pg.height || 480}px" data-src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`
       : `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || pg.height || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`);
 }

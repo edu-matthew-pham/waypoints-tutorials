@@ -25,7 +25,7 @@ const DIR = join(OUT, '_pictures');
 mkdirSync(DIR, { recursive: true });
 
 // Same slug rule as snippet ids everywhere else (lesson-core snippetId).
-const { snippetId, makecodePackage } = await import('./lesson-core.mjs');
+const { snippetId, makecodePackage, makecodeExtensions } = await import('./lesson-core.mjs');
 const strip = (c) => c.replace(/[‹›]/g, '');
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg' };
@@ -304,7 +304,7 @@ if (existsSync('snippets/maths.json')) await pictures({
   await pictures({
     name: 'makecode-out', dir: join(DIR, 'makecode-out'), viewport: { width: 1280, height: 900 },
     base: hashDir('playground-makecode', readFileSync(new URL(import.meta.url)), 'makecode-out-v1'),
-    jobs: loadLessons().filter((l) => l.language === 'makecode').flatMap((l) => pictureItems(l).map((e) => {
+    jobs: loadLessons().filter((l) => l.language === 'makecode' && !makecodeExtensions(l).some((x) => x.noSimPicture)).flatMap((l) => pictureItems(l).map((e) => {
       const target = targetOf(l);
       const pkg = makecodePackage(l);
       return { id: `${l.slug}/${e.key}`, target, pkg, src: getSnippet(l.dir, e.ref), code: `// ${target}${pkg ? ` ${pkg}` : ''}\n${getSnippet(l.dir, e.ref)}` };

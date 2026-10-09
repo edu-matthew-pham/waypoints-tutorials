@@ -13,7 +13,7 @@ import { createRequire } from 'node:module';
 import { Marked } from 'marked';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV_CSS, NAV_JS, makecodeBlock } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
-import { snippetId, unlockKind, pictureSpec, makecodePackage } from './lesson-core.mjs';
+import { snippetId, unlockKind, pictureSpec, makecodePackage, makecodeExtensions } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildMakecodePlayground } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
@@ -67,7 +67,7 @@ function pictureHtml(lesson, v, key) {
     let code = ''; try { code = getSnippet(lesson.dir, sp.ref); } catch { return ''; }
     const target = lesson.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
     // What the program makes, drawn by MakeCode's simulator at build time (render-pictures, makecode-out), beside the blocks.
-    const out = (MKOUT ||= readPics(['makecode-out']))[`${lesson.slug}/${key}`];
+    const out = makecodeExtensions(lesson).some((x) => x.noSimPicture) ? null : (MKOUT ||= readPics(['makecode-out']))[`${lesson.slug}/${key}`];
     const outFig = out ? `<figure class="mkout"><img src="${'../'.repeat(lesson.depth)}_pictures/makecode-out/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(out.hash || '')}" alt="What this program shows in the ${target === 'arcade' ? 'game' : 'micro:bit'} simulator" width="${Math.round(out.w / (out.div || 2))}" height="${Math.round(out.h / (out.div || 2))}" loading="lazy"><figcaption>What it makes${target === 'arcade' ? ' (a moment from the game)' : ''}</figcaption></figure>` : '';
     return `<div class="mkpair${out ? ' has-out' : ''}"><figure class="shown mkshown">${makecodeBlock(highlightCode, code, '', target, blocksPic(code, '../'.repeat(lesson.depth)), makecodePackage(lesson))}<figcaption>The example, as blocks</figcaption></figure>${outFig}</div>`;
   }
