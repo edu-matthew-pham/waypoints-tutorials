@@ -265,3 +265,9 @@ This supersedes the earlier "Series shape", "Console bridge and fork" and "Games
 - Custom domain setup (DNS and the Pages setting are on Matthew's side).
 - Gradio clips need re-checking; HTML and Gradio paths need more lessons.
 - Progress export and import (a short copy-and-paste code to move progress between browsers) and a printable certificate of current progress. A fun long-term idea; keep it account-free.
+
+## Done: Science, Year 7 Chemistry (local branch `science`, not pushed)
+
+New subject **Science** with pathways Chemistry (built), Biology, Physics and Earth and space (coming later). Year 7 Chemistry: seven concept tutorials for introducing or revising (AC9S7U05 nodes 1–3; AC9S7U06 nodes 1–4), each a mini 5E cycle on the existing stages, with width tiers (`tier: typical | wider`, `?width=` floor) and a science board (`playground-science/`, particle engine and 15 widgets). New `sort` check and per-option `question` feedback; tiered checks are not needed to finish a lesson. Teacher layer: `teacher.yml` per lesson, primers for both units; decks and worksheets use 5E labels.
+
+Next: Biology (U01 key and classification sorter; U02 food web builder), Physics (U04 force arrows), Earth and space (U03 orbit board): about four more engines for the remaining nine Year 7 hinge nodes. Then classroom testing of the chemistry set: does the locked prediction hold, do students use the width control, do they take the 2D particle simplifications literally?

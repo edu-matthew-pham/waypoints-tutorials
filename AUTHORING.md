@@ -430,3 +430,31 @@ Vary, Practise, Make).
   caption). They make the course's Reference page (`<course>/reference/`, with search), the student print sheets, and
   the teacher cheat sheets (A4 and Markdown for Prepare). Validate checks the maths parses and the unit exists.
 - **Maths pathways:** `content/maths/index.md` lists pathways like `code/index.md`, with planned courses as "Coming later".
+
+## 12. Science lessons
+
+A lesson with `language: science` (see `content/science/chemistry/`) is a short concept tutorial for introducing or
+revising one idea, beside practical work, never instead of it. One tutorial per hinge node of the XY Model node files
+(waypoints-kit `data/science/`); nodes whose response mode is `integration` are left to class tasks.
+
+- **5E on the existing stages.** Science pages label the stages in 5E words, so predict-and-compare, decks and
+  worksheets work unchanged: `predict` = **Engage** (one `predict` check, with `actual:`), `run` = **Explore** (a board;
+  the compare box shows the prediction), `investigate` = **Explain**, `practise` = **Practise** (when the node's response
+  mode is consolidation), `modify` = **Elaborate**, `info` = **Evaluate** (a `reflect` check and a revision summary).
+- **Width tiers** (any lesson, not only science): `tier: typical` or `tier: wider` on a step marks extra contexts beyond
+  the minimum path. The page shows a Minimum / Typical / Wider control; `?width=` in the link sets the floor (a
+  teacher's choice), students can widen but not narrow, and the default is typical. Tiered steps' checks are not
+  needed to finish the lesson and are left out of course progress. Worksheets wrap them in `:::typical` / `:::wider`.
+  Wider means more contexts, never harder content.
+- **`sort` check** (any lesson): `options:` are groups, `items:` are `[text, group]` or `[text, group, why]`; a group can
+  be used many times (unlike `match`), and extra groups act as distractors. The why shows once an item is right.
+- **`question` feedback** (any lesson): `feedback:` is one entry per option (text, or `null`), shown when that wrong
+  option is chosen. Aim each at the misconception behind the option.
+- **`board` check:** `expect: { done: true }` ticks when the science board's widget finishes its task.
+- **The science board** (`playground-science/`: `engine.js` is the particle engine, `main.js` the widgets; JSXGraph).
+  The starter is a `key: value` region in `boards.yml`. Widgets: `zoom` (`samples:` from ice, water, steam,
+  distilled, salt, sand, air, copper), `identify` (`need:`), `build`, `syringe`, `diffusion`, `jar`, `heat`, `dissolve`,
+  `bench`, `filter`, `evaporate`, `distil`, `chroma`, `box` (a model to look at), `windows` (`set: floatsink | six |
+  ice | abc`, static diagrams) and `quiz` (`need:`, `options: Label=value; …`, repeated `item: text | value | why`).
+  Each task's `starter` loads its own board. Nothing on the board is saved.
+- **Science pathways:** `content/science/index.md` lists Chemistry (built), Biology, Physics and Earth and space.

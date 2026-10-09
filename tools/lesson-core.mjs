@@ -7,12 +7,15 @@ import { MATH } from './math-expr.mjs';
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
-export const PLAYGROUND_KINDS = ['turtle', 'html', 'maths', 'microbit', 'arcade'];
-/** What a board check can expect from the maths board's report. */
+export const PLAYGROUND_KINDS = ['turtle', 'html', 'maths', 'microbit', 'arcade', 'science'];
+/** What a board check can expect from a board's report: the maths board, and the science board (done: the widget's task is finished). */
 export const BOARD_KEYS = ['balanced', 'solved', 'x'];
+export const SCIENCE_BOARD_KEYS = ['done'];
+/** Width tiers (the XY Model): a step marked typical or wider adds contexts beyond the minimum path; students can widen, not narrow. */
+export const TIERS = ['minimum', 'typical', 'wider'];
 /** Playgrounds that host the MakeCode editor: students build with blocks, which always compile to MakeCode JavaScript (main.ts). */
 export const MAKECODE_KINDS = ['microbit', 'arcade'];
-export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board'];
+export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board', 'sort'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
 
@@ -115,7 +118,7 @@ export const FEATURES = [
 export const snippetId = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 /** Which playground (and so which snippet list) a step's unlocks refer to. */
-export const unlockKind = (lesson, step) => step.config.try?.playground || (lesson.language === 'html' ? 'html' : 'turtle');
+export const unlockKind = (lesson, step) => step.config.try?.playground || (lesson.language === 'html' ? 'html' : lesson.language === 'science' ? 'science' : 'turtle');
 
 export const DEFAULT_PACING = {
   typeCps: 55,        // characters per second when code is "typed" into the stage's code panel
@@ -313,6 +316,13 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       if (!str(k.q)) err(where, 'check (question) needs q');
       if (!Array.isArray(k.options) || k.options.length < 2 || !k.options.every((o) => typeof o === 'string')) err(where, 'check (question) needs options: a list of at least two strings');
       else if (!Number.isInteger(k.answer) || k.answer < 0 || k.answer >= k.options.length) err(where, `check.answer must be the number (from 0) of the correct option, 0 to ${k.options.length - 1}`);
+      // feedback: what to say for each wrong option (same order as options; null or "" for none), aimed at the misconception behind it.
+      if (k.feedback !== undefined && !(Array.isArray(k.feedback) && Array.isArray(k.options) && k.feedback.length === k.options.length && k.feedback.every((f) => f === null || typeof f === 'string'))) err(where, 'check (question) feedback must be a list with one entry per option (text, or null for none)');
+    }
+    else if (k.type === 'sort') {
+      // Sort items into groups: options are the groups, items are [text, group] pairs (a group can be used many times).
+      if (!Array.isArray(k.options) || k.options.length < 2 || !k.options.every(str)) err(where, 'check (sort) needs options: the groups, a list of at least two strings');
+      else if (!Array.isArray(k.items) || k.items.length < 2 || !k.items.every((it) => Array.isArray(it) && it.length >= 2 && it.length <= 3 && str(it[0]) && k.options.includes(it[1]) && (it[2] === undefined || str(it[2])))) err(where, 'check (sort) needs items: a list of at least two [text, group] or [text, group, why] entries, each group one of the options');
     }
     else if (k.type === 'number') {
       if (!str(k.q)) err(where, 'check (number) needs q');
@@ -368,9 +378,10 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     }
     else if (k.type === 'board') {
       if (!str(k.text)) err(where, 'check (board) needs text, e.g. "Find the value of x that balances the scale."');
-      if (!k.expect || typeof k.expect !== 'object' || Array.isArray(k.expect) || !Object.keys(k.expect).length) err(where, `check (board) needs expect: a mapping using ${BOARD_KEYS.join(', ')}`);
-      else for (const key of Object.keys(k.expect)) if (!BOARD_KEYS.includes(key)) err(where, `check (board) cannot expect "${key}" (use ${BOARD_KEYS.join(', ')})`);
-      if (!c.try || c.try.playground !== 'maths') err(where, 'a board check needs the maths board on the step (try: { playground: maths, starter: ... })');
+      const keys = c.try?.playground === 'science' ? SCIENCE_BOARD_KEYS : BOARD_KEYS;
+      if (!k.expect || typeof k.expect !== 'object' || Array.isArray(k.expect) || !Object.keys(k.expect).length) err(where, `check (board) needs expect: a mapping using ${keys.join(', ')}`);
+      else for (const key of Object.keys(k.expect)) if (!keys.includes(key)) err(where, `check (board) cannot expect "${key}" (use ${keys.join(', ')})`);
+      if (!c.try || !['maths', 'science'].includes(c.try.playground)) err(where, 'a board check needs a board on the step (try: { playground: maths or science, starter: ... })');
     }
     else if (k.type === 'trace') {
       if (!str(k.table)) err(where, 'check (trace) needs table: a pipe table with blanks in [brackets]');
@@ -382,6 +393,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     const where = `${s.id} "${s.title}"`;
     const c = s.config;
     if (!STAGES.includes(c.stage)) err(where, `stage must be one of ${STAGES.join(', ')} (got "${c.stage}")`);
+    if (c.tier !== undefined && !TIERS.slice(1).includes(c.tier)) err(where, 'tier must be typical or wider (leave it out for the minimum path)');
     validateExpected(c.expected, where, c);
     validatePicture(c.picture, where, c.stage);
     if (c.code) {
