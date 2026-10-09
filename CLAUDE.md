@@ -4,8 +4,9 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## How we work
 - "Let's track and discuss" means: record proposals in `ROADMAP.md`, commit locally, do not push, do not build.
-- "go" (or "defaults") means: build the whole batch, test in a headless browser, re-render clips, commit with the attribution trailers, `git push origin HEAD:main`.
-- Pushing triggers a Pages deploy (a newer push cancels a running one), so do not push while a run should finish.
+- "go" (or "defaults") means: build the whole batch, test in a headless browser, commit with the attribution trailers, `git push origin HEAD:main`. Do not re-render clips locally (CI records them); render one lesson (`node tools/render.mjs --lesson <slug>`) only to look at a new or changed clip. Batch the work into one push where possible.
+- Pushing triggers a Pages deploy (a newer push cancels a running one), so do not push while a run should finish. Commits that only change root `*.md` docs do not deploy.
+- Clip reuse: a clip's hash covers its lesson folder (not `lesson.md`), `tools/render.mjs`, `tools/stage.html` and the one playground its app serves plus `playground-shared` and that playground's snippets file. CI downloads every clip whose hash matches the live site (`render.mjs --seed <site>`) and records only the rest, so a deploy with no clip changes takes about 2 minutes. Editing `render.mjs` or `stage.html` re-records every clip (about 8 minutes).
 - Do not add rigid pedagogy rules. Clips only where useful (hook, expected result without code, explaining why).
 
 ## Teaching decisions

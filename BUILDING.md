@@ -67,7 +67,7 @@ The student tutorial stays light on words; the teacher layer carries the explana
 3. **Course and pathway pages** with a fresh browser, part progress and full progress, at desktop and phone width: Continue card, unit counts, open row, badge, `/code/` and pathway-page counts (required lessons only); every navbar link resolves from every kind of page.
 4. **Screenshots** of anything visual, read before pushing.
 5. **Teacher layer:** every solution runs in its playground; `npm run check-decks` reports no overflowing slides; open one guide page, one deck (marp-cli render) and the unit cheat sheets as A4 PDFs (Playwright `page.pdf`) and read them; the student lesson's For teachers panel shows no solutions.
-6. Re-render clips for lessons whose clip steps or playgrounds changed; CI re-renders on deploy anyway.
+6. Clips: CI records new or changed clips on deploy and reuses the rest from the live site. Render a lesson locally only to watch a new or changed clip.
 
 ## 7. Runtime facts that shape lessons
 

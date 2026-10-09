@@ -2,6 +2,8 @@
 // Deterministic: reads lesson.md, starts the app, drives it with Playwright, encodes with ffmpeg.
 //   --lesson <slug>   only this lesson        --force      ignore the clip cache
 //   --no-serve        app is already running  --out <dir>  output root (default: dist)
+//   --seed <url>      first download unchanged clips from the live site (same hash = same clip)
+//   --check           only report which clips need recording (writes stale=N to $GITHUB_OUTPUT)
 import { chromium } from 'playwright-core';
 import { spawn, execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -22,15 +24,21 @@ const stageHtml = readFileSync(join(here, 'stage.html'), 'utf8').replace('/*HIGH
 const rendererSrc = readFileSync(fileURLToPath(import.meta.url), 'utf8');
 
 // ---------- cache ----------
-// Clips show the playgrounds, so a change to any playground file must re-record them.
-const SHARED_DIRS = ['playground', 'playground-html', 'playground-shared', 'snippets'];
-function sharedFilesHash() {
+// Clips show a playground, so a change to the playground a lesson uses (or its snippets) must re-record
+// that lesson's clips. Only that playground counts: editing the micro:bit snippets leaves turtle clips alone.
+const SNIPPETS = { playground: 'turtle', 'playground-html': 'html', 'playground-makecode': 'microbit', 'playground-maths': 'maths' };
+const sharedCache = new Map();
+function sharedFilesHash(lesson) {
+  const pg = String(lesson.app?.command ?? '').match(/_(playground[\w-]*)/)?.[1];
+  const key = pg || '';
+  if (sharedCache.has(key)) return sharedCache.get(key);
   const h = createHash('sha1');
-  const walk = (d) => { if (!existsSync(d)) return; for (const f of readdirSync(d).sort()) { const p = join(d, f); if (statSync(p).isDirectory()) walk(p); else h.update(p).update(readFileSync(p)); } };
-  SHARED_DIRS.forEach(walk);
-  return h.digest('hex');
+  const walk = (p) => { if (!existsSync(p)) return; if (statSync(p).isDirectory()) { for (const f of readdirSync(p).sort()) walk(join(p, f)); } else h.update(p).update(readFileSync(p)); };
+  if (pg) [pg, 'playground-shared', join('snippets', `${SNIPPETS[pg] ?? pg}.json`)].forEach(walk);
+  const d = h.digest('hex');
+  sharedCache.set(key, d);
+  return d;
 }
-const SHARED_HASH = sharedFilesHash();
 
 function stepHash(lesson, step) {
   const h = createHash('sha1');
@@ -39,8 +47,24 @@ function stepHash(lesson, step) {
     const p = join(lesson.dir, f);
     if (f !== 'lesson.md' && statSync(p).isFile()) h.update(f).update(readFileSync(p));
   }
-  h.update(stageHtml).update(rendererSrc).update(SHARED_HASH);
+  h.update(stageHtml).update(rendererSrc).update(sharedFilesHash(lesson));
   return h.digest('hex').slice(0, 16);
+}
+
+// Download a clip from the live site when its published hash matches: the same inputs give the same clip.
+async function seedClip(base, lesson, step, outDir) {
+  const url = `${base.replace(/\/$/, '')}/${lesson.slug}/clips/${step.id}`;
+  try {
+    const meta = await fetch(`${url}.json`, { cache: 'no-store' });
+    if (!meta.ok || (await meta.json()).hash !== stepHash(lesson, step)) return false;
+    for (const ext of ['mp4', 'jpg']) {
+      const r = await fetch(`${url}.${ext}`);
+      if (!r.ok) return false;
+      writeFileSync(join(outDir, `${step.id}.${ext}`), Buffer.from(await r.arrayBuffer()));
+    }
+    writeFileSync(join(outDir, `${step.id}.json`), JSON.stringify({ hash: stepHash(lesson, step) }));
+    return true;
+  } catch { return false; }
 }
 
 // ---------- app process ----------
@@ -220,7 +244,7 @@ async function recordClip(browser, lesson, step, outDir) {
 const lessons = loadLessons(opt('--lesson'));
 if (!lessons.length) { console.error('No lessons found.'); process.exit(1); }
 
-let failures = 0;
+let failures = 0, stale = 0, seeded = 0;
 for (const lesson of lessons) {
   const errs = validateLesson(lesson);
   if (errs.length) { errs.forEach((e) => console.error('✗ ' + e)); failures += errs.length; continue; }
@@ -228,13 +252,19 @@ for (const lesson of lessons) {
   const outDir = join(OUT, lesson.slug, 'clips');
   mkdirSync(outDir, { recursive: true });
 
-  const todo = clipSteps.filter((s) => {
+  const isSame = (s) => {
     const meta = join(outDir, `${s.id}.json`);
-    const same = existsSync(meta) && existsSync(join(outDir, `${s.id}.mp4`)) && JSON.parse(readFileSync(meta, 'utf8')).hash === stepHash(lesson, s);
-    if (same && !flag('--force')) console.log(`• ${lesson.slug}/${s.id}: unchanged, skipped`);
-    return flag('--force') || !same;
-  });
-  if (!todo.length) continue;
+    return existsSync(meta) && existsSync(join(outDir, `${s.id}.mp4`)) && JSON.parse(readFileSync(meta, 'utf8')).hash === stepHash(lesson, s);
+  };
+  const todo = [];
+  for (const s of clipSteps) {
+    if (flag('--force')) { todo.push(s); continue; }
+    if (isSame(s)) { console.log(`• ${lesson.slug}/${s.id}: unchanged, skipped`); continue; }
+    if (opt('--seed') && await seedClip(opt('--seed'), lesson, s, outDir)) { seeded++; console.log(`↓ ${lesson.slug}/${s.id}: unchanged, downloaded from the live site`); continue; }
+    todo.push(s);
+  }
+  stale += todo.length;
+  if (!todo.length || flag('--check')) { todo.forEach((s) => console.log(`○ ${lesson.slug}/${s.id}: needs recording`)); continue; }
 
   const app = await startApp(lesson);
   try {
@@ -252,4 +282,6 @@ for (const lesson of lessons) {
   } finally { stopApp(app); }
 }
 rmSync('.render-tmp', { recursive: true, force: true });
+console.log(`Clips: ${seeded} downloaded, ${stale} ${flag('--check') ? 'to record' : 'recorded or failed'}.`);
+if (process.env.GITHUB_OUTPUT) writeFileSync(process.env.GITHUB_OUTPUT, `stale=${stale}\n`, { flag: 'a' });
 process.exit(failures ? 1 : 0);
