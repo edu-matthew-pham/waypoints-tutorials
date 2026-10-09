@@ -476,4 +476,22 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
   `bench`, `filter`, `evaporate`, `distil`, `chroma`, `box` (a model to look at), `windows` (`set: floatsink | six |
   ice | abc`, static diagrams) and `quiz` (`need:`, `options: Label=value; …`, repeated `item: text | value | why`).
   Each task's `starter` loads its own board. Nothing on the board is saved.
+- **Atoms and reactions** (`atoms.js`, for Years 8–10 chemistry): molecules built from element atoms (model-kit
+  colours, symbols on by default, `labels: off` hides them), moving as a gas in a box shaped to the screen with the same
+  area everywhere. Particles are written `H2 x4` or `4 H2`; formulas use real element symbols (a typo is an error).
+  - `widget: atoms`, `show: H2 x4, O2 x3, H2O x5`, optional `need:` (kinds to inspect; default all) and `temp:` (K).
+    Students click particles (or press Inspect next particle) to see each kind's atoms, element or compound; with
+    more than one kind the board names the box a mixture. Done once `need` kinds are inspected.
+  - `widget: reaction`, `show:` and one or more `react: H2 + Cl2 -> 2 HCl` lines (atoms must balance, or the board
+    refuses). Options: `ea:` energy a collision needs, in multiples of the average energy (default 3); `release:`
+    energy given out per reaction (negative absorbs; try 0.5–1); `temp:` (default 300 K) and `temps: 150-600` for the
+    slider (`slider: off` hides it); `catalyst: on` (a toggle that halves `ea`); `hold: on | off` (keep the temperature
+    fixed; default on unless `release` is set, so exothermic and endothermic reactions warm or cool the gas);
+    `target: HCl 10` (default: three quarters of what the first reaction can make). `goal:` is `target` (done when the
+    target is reached), `react` (done at the first reaction), `compare` (done after reaching the target under two
+    different conditions; a run whose temperature or catalyst changed part-way does not count) or `none`.
+    The panel shows counts, the atom tally before and now, collisions and reactions, temperature and time; a yellow
+    ring marks each collision that reacts. Simplifications to name for students: 2D, rigid molecules, and reactions with
+    more than two reactants (CH4 + 2 O2) take the extra particles from nearby rather than in several steps.
+    With about ten of each reactant, run times vary by a factor of two or so: use 15 or more for rate comparisons.
 - **Science pathways:** `content/science/index.md` lists Chemistry (built), Biology, Physics and Earth and space.

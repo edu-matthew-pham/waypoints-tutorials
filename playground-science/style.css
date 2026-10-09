@@ -32,4 +32,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .streak span { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--line); }
 .streak span.on { background: var(--ok); border-color: var(--ok); }
 .quizq { font-size: 17px; font-weight: 600; margin: 4px 0; }
+.atomkey { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0 0 6px; color: var(--muted); font-size: 13px; }
+.atomkey i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--muted); margin-right: 5px; vertical-align: -1px; }
+.atomline { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
 [hidden] { display: none !important; }

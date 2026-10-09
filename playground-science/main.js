@@ -14,6 +14,9 @@
 //   widget: box         preset: mystery                a particle model to look at (no task)
 //   widget: windows     set: floatsink | six | ice | abc    static particle diagrams of equal volumes
 //   widget: quiz        need: 6, options: Label=value; ..., item: text | value | why (repeat item:)
+//   widget: atoms       show: H2 x4, O2 x3, H2O x5     click particles to see their atoms: element, compound, mixture
+//   widget: reaction    show: H2 x10, Cl2 x10, react: H2 + Cl2 -> 2 HCl    a reacting gas: temperature, catalyst,
+//                       ea, release, target, goal: target | react | compare | none (atoms.js; see AUTHORING › 12)
 //
 // Message to the lesson page after every change: { wp: 'run', id, kind: 'science', status: 'done', moved, output, state: { done } }.
 // `moved` stays false until the student does something; `done` is true once the widget's task is finished.
@@ -473,6 +476,142 @@
       touch(count + ' correct so far.'); setTimeout(next, 1800);
     }
     next();
+  };
+
+  // ---------- atoms and molecules (atoms.js) ----------
+  var A = S.atoms;
+  // "H2 x4, 3 O2, H2O" -> [['H2', 4], ['O2', 3], ['H2O', 1]]
+  function species(text) {
+    return String(text || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean).map(function (s) {
+      var m = /^(\d+)\s*([A-Za-z0-9]+)$/.exec(s) || /^([A-Za-z0-9]+)\s*(?:[x×]\s*(\d+))?$/.exec(s);
+      if (!m) throw new Error('Cannot read "' + s + '" (write it like H2 x4).');
+      var f = /^\d/.test(s) ? m[2] : m[1], n = Number(/^\d/.test(s) ? m[1] : m[2]) || 1;
+      A.atomsOf(f); return [f, n];
+    });
+  }
+  var cap = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+  var sub = function (f) { return f.replace(/(\d+)/g, '<sub>$1</sub>'); };
+  function kindOf(f) {
+    var els = A.elementsIn(f), n = A.atomsOf(f).length;
+    if (els.length > 1) return ['compound', cap(A.nameOf(f)) + ' (' + f + ') is a compound: ' + A.describe(f) + ' joined together. Different kinds of atom, chemically joined.'];
+    if (n === 1) return ['element', cap(A.nameOf(f)) + ' (' + f + ') is an element: single ' + A.EL[els[0]][4] + ' atoms, not joined to anything.'];
+    return ['element', cap(A.nameOf(f)) + ' (' + f + ') is an element: ' + A.describe(f) + ' joined together. Every atom is the same kind.'];
+  }
+  // A gas box shaped like the screen (wide on a laptop, squarer on a phone) with the same area everywhere, so the
+  // same setup has the same concentration, and reacts at the same rate, on every device.
+  function gasBox() {
+    var e = el('board'), asp = Math.min(1.9, Math.max(0.75, (e.clientWidth || 600) / (e.clientHeight || 360))), w = Math.sqrt(264 * asp);
+    return { x0: 0, x1: w, y0: 0, y1: 264 / w };
+  }
+  // A framed gas box with a Sim and its drawing. Steps while `run` is true.
+  function simBoard(spec, b) {
+    S.newBoard([b.x0 - 0.6, b.y1 + 0.6, b.x1 + 0.6, b.y0 - 0.6]);
+    var frame = S.curve([b.x0 - 0.1, b.x1 + 0.1, b.x1 + 0.1, b.x0 - 0.1, b.x0 - 0.1], [b.y0 - 0.1, b.y0 - 0.1, b.y1 + 0.1, b.y1 + 0.1, b.y0 - 0.1], { c: 'muted' });
+    var sim = new A.Sim(b), view = { run: true, sim: sim, frame: frame, tick: null };
+    view.draw = A.drawSim(sim, { labels: spec.labels !== 'off' });
+    S.loop(function () { if (view.run) { sim.step(); if (view.tick) view.tick(); } S.board().update(); });
+    return view;
+  }
+  // Element key: a swatch and name for each element on the board.
+  function key(forms) {
+    var els = []; forms.forEach(function (f) { A.elementsIn(f).forEach(function (e) { if (els.indexOf(e) < 0) els.push(e); }); });
+    return '<p class="atomkey">' + els.map(function (e) { return '<span><i style="background:' + A.colour(e) + '"></i>' + e + ' ' + A.EL[e][4] + '</span>'; }).join('') + '</p>';
+  }
+
+  W.atoms = function (spec) {
+    var list = species(spec.show || 'H2 x4, O2 x3, H2O x5'), forms = list.map(function (x) { return x[0]; });
+    var need = spec.need === 'all' || !spec.need ? forms.length : Math.min(forms.length, Number(spec.need));
+    var v, sim, seen = {}, cur = null, next = 0;
+    // Controls first, so the box is shaped to the room the board has left.
+    var pause = button('controls', 'Pause', function () { v.run = !v.run; pause.textContent = v.run ? 'Pause' : 'Play'; touch(); });
+    button('controls', 'Inspect next particle', function () { if (sim.ms.length) inspect(sim.ms[next++ % sim.ms.length]); });
+    area('extra'); say(' ');
+    v = simBoard(spec, gasBox()); sim = v.sim;
+    sim.t = Number(spec.temp) / 300 || 0.35;
+    list.forEach(function (x) { sim.add(x[0], x[1]); });
+    function render() {
+      area('extra').innerHTML = key(forms) + '<table><thead><tr><th>Particle</th><th>Formula</th><th>Atoms</th><th>Element or compound?</th></tr></thead><tbody>' + forms.map(function (f) {
+        var k = seen[f] ? kindOf(f)[0] : '';
+        return '<tr><td>' + (seen[f] ? cap(A.nameOf(f)) : '?') + '</td><td>' + (seen[f] ? sub(f) : '') + '</td><td>' + (seen[f] ? A.atomsOf(f).length : '') + '</td><td>' + k + '</td></tr>';
+      }).join('') + '</tbody></table>';
+    }
+    function inspect(m) {
+      cur = m; v.draw.select(m);
+      var first = !seen[m.f]; seen[m.f] = true; render();
+      var left = forms.filter(function (f) { return !seen[f]; }).length, got = forms.length - left;
+      var msg = kindOf(m.f)[1];
+      if (got >= need && !done) {
+        var whole = forms.length > 1 ? ' This box holds ' + forms.length + ' kinds of particle mixed together, not joined: it is a mixture.' : ' Only one kind of particle: a pure substance.';
+        say(msg + whole, true); finish(forms.map(function (f) { return f + ' ' + kindOf(f)[0]; }).join(', '));
+      } else { say(msg + (left ? ' ' + left + ' more kind' + (left > 1 ? 's' : '') + ' to find.' : ''), done); if (first) touch(m.f + ' ' + kindOf(m.f)[0]); }
+    }
+    S.board().on('down', function (e) { var c = S.board().getUsrCoordsOfMouse(e), m = sim.at(c[0], c[1]); if (m) inspect(m); });
+    render();
+    say('Click a particle (or press Inspect next particle) to see what it is made of.');
+  };
+
+  W.reaction = function (spec) {
+    var list = species(spec.show || 'H2 x10, Cl2 x10');
+    var ea = spec.ea !== undefined ? Number(spec.ea) : 3, release = Number(spec.release) || 0;
+    var rules = (spec._all.react || ['H2 + Cl2 -> 2 HCl']).map(function (r) { return A.parseRule(r, ea, release); });
+    var range = String(spec.temps || '150-600').split('-').map(Number), K0 = Number(spec.temp) || 300;
+    var goal = spec.goal || 'target', tgt = null;
+    if (spec.target) { var tm = /^([A-Za-z0-9]+)\s+(\d+)$/.exec(spec.target.trim()); if (!tm) throw new Error('Write the target like HCl 10.'); A.atomsOf(tm[1]); tgt = [tm[1], Number(tm[2])]; }
+    var forms = []; list.forEach(function (x) { forms.push(x[0]); }); rules.forEach(function (r) { r.lhs.concat(r.rhs).forEach(function (f) { if (forms.indexOf(f) < 0) forms.push(f); }); });
+    var v = null, sim = null, start = null, runs = [], cond = null, changed = false, finished = false, K = K0, cat = false;
+    // Default target: three quarters of the most the first reaction can make (the last few particles take a
+    // long time to find each other, so "all used up" would make every run end slowly).
+    if (!tgt) {
+      var r0 = rules[0], have = {}, need = {}; list.forEach(function (x) { have[x[0]] = (have[x[0]] || 0) + x[1]; }); r0.lhs.forEach(function (f) { need[f] = (need[f] || 0) + 1; });
+      var times = Math.min.apply(null, Object.keys(need).map(function (f) { return Math.floor((have[f] || 0) / need[f]); }));
+      var made = r0.rhs.filter(function (f) { return f === r0.rhs[0]; }).length;
+      tgt = [r0.rhs[0], Math.max(1, Math.floor(0.75 * times) * made)];
+    }
+    var reached = function () { return sim.count(tgt[0]) >= tgt[1]; };
+    var box = null;
+    function reset() {
+      if (!box) { area('extra'); box = gasBox(); }
+      v = simBoard(spec, box); sim = v.sim;
+      sim.rules = rules; sim.t = K / 300; sim.catalyst = cat ? 0.5 : 1;
+      sim.hold = spec.hold ? spec.hold !== 'off' : release === 0;
+      list.forEach(function (x) { sim.add(x[0], x[1]); });
+      sim.setTemp(K / 300);
+      start = sim.atomTally(); cond = { K: K, cat: cat }; changed = false; finished = false;
+      sim.onReact = function (x, y) { v.draw.flash(x, y); if (goal === 'react' && !done) { say('A reaction: the atoms rearranged into new particles. Count the atoms before and after.', true); finish('reacted'); } };
+      var n = 0; v.tick = function () { if (++n % 8 === 0) render(); check(); };
+      play.textContent = 'Pause'; render();
+    }
+    function check() {
+      if (finished || !reached()) return;
+      finished = true; var secs = sim.frames / 60;
+      var where = cond.K + ' K' + (cond.cat ? ' with the catalyst' : '');
+      if (goal === 'compare') {
+        if (!changed) runs.push({ secs: secs, key: cond.K + (cond.cat ? 'c' : ''), where: where });
+        var keys = runs.map(function (r) { return r.key; }).filter(function (k, i, a) { return a.indexOf(k) === i; });
+        render();
+        if (changed) { say('Finished in ' + secs.toFixed(1) + ' s, but the conditions changed during the run, so it does not count. Reset and keep them the same.'); return; }
+        if (keys.length >= 2) { say('Compare your runs: ' + runs.map(function (r) { return r.where + ': ' + r.secs.toFixed(1) + ' s'; }).join(' · ') + '.', true); finish(runs.map(function (r) { return r.where + ' ' + r.secs.toFixed(1) + ' s'; }).join('; ')); }
+        else say('Finished in ' + secs.toFixed(1) + ' s at ' + where + '. Reset, change the temperature' + (spec.catalyst === 'on' ? ' or the catalyst' : '') + ', and run it again.', false);
+        touch(where + ' ' + secs.toFixed(1) + ' s');
+      } else if (goal === 'target') { render(); say('Done in ' + secs.toFixed(1) + ' s. ' + atomLine() + '.', true); finish(summary()); }
+    }
+    function atomLine() { var now = sim.atomTally(); return 'Atoms at the start: ' + Object.keys(start).map(function (e) { return start[e] + ' ' + e; }).join(', ') + '; now: ' + Object.keys(start).map(function (e) { return (now[e] || 0) + ' ' + e; }).join(', '); }
+    function summary() { return forms.map(function (f) { return f + ' ' + sim.count(f); }).join(', ') + '; ' + Math.round(sim.temp() * 300) + ' K'; }
+    function render() {
+      var Kn = Math.round(sim.temp() * 300), pct = sim.hits ? Math.round(100 * sim.wins / sim.hits * 10) / 10 : 0;
+      area('extra').innerHTML = key(forms) +
+        '<div class="bins">' + forms.map(function (f) { return '<span class="bin"><b>' + cap(A.nameOf(f)) + '</b>' + sub(f) + ': ' + sim.count(f) + '</span>'; }).join('') + '</div>' +
+        '<p class="atomline">Target: ' + tgt[1] + ' ' + tgt[0] + '. ' + atomLine() + '.</p>' +
+        '<p class="atomline">Collisions: ' + sim.hits + ' · reactions: ' + sim.wins + ' (' + pct + '% of collisions) · temperature ' + Kn + ' K (' + (Kn - 273) + ' °C) · time ' + (sim.frames / 60).toFixed(1) + ' s</p>' +
+        (runs.length ? '<p class="atomline">Runs: ' + runs.map(function (r) { return r.where + ': ' + r.secs.toFixed(1) + ' s'; }).join(' · ') + '</p>' : '');
+    }
+    var play = button('controls', 'Pause', function () { v.run = !v.run; play.textContent = v.run ? 'Pause' : 'Play'; touch(summary()); });
+    button('controls', 'Reset', function () { reset(); touch(summary()); });
+    if (spec.slider !== 'off') slider('controls', 'Temperature', range[0], range[1], 10, K0, function (k) { K = k; sim.setTemp(k / 300); changed = true; touch(summary()); }, function (k) { return k + ' K'; });
+    if (spec.catalyst === 'on') { var cb = button('controls', 'Catalyst: off', function () { cat = !cat; sim.catalyst = cat ? 0.5 : 1; cb.textContent = 'Catalyst: ' + (cat ? 'on' : 'off'); cb.setAttribute('aria-pressed', String(cat)); changed = true; touch(summary()); }); cb.setAttribute('aria-pressed', 'false'); }
+    reset();
+    // Reset clears `changed`, so a run started after changing the slider counts.
+    say(spec.caption || (rules.length === 1 ? 'The reaction: ' + rules[0].text + '. A yellow ring marks each collision that reacts.' : 'A yellow ring marks each collision that reacts.'));
   };
 
   // ---------- setup ----------

@@ -50,6 +50,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 - `content/science/chemistry/`: seven Year 7 concept tutorials (AC9S7U05 nodes 1–3, AC9S7U06 nodes 1–4), one per hinge node plus U06 nodes 3–4; integration nodes are class tasks. A side tool for introducing or revising, not the whole of science.
 - 5E words on the existing stages (Engage = predict, Explore = run, Explain = investigate, Practise, Elaborate = modify, Evaluate = info). `tier: typical | wider` steps add contexts (width control, `?width=` floor, not needed for completion).
 - Science board: `playground-science/` (particle engine plus widgets, `boards.yml` starters, `board` checks with `expect: { done: true }`). Built by `buildSciencePlayground`.
+- Atoms engine (`playground-science/atoms.js`): rigid molecules, elastic collisions, reaction rules with an energy threshold; mass and energy are conserved exactly (mass for motion is each atom's mass + 5). Widgets `atoms` and `reaction` (AUTHORING › 12). No lessons use them yet (Years 8–10 chemistry). After changing `atoms.js` run `node tools/check-atoms.mjs` (atoms and energy conserved for every reaction shape, temperature and catalyst speed reactions up).
 - Node content comes from waypoints-kit `data/science/y7_science_*.json`; the First Nations steam-distilling line in U06 node 4 is deliberately not claimed (see that lesson's teacher notes).
 
 ## Commands

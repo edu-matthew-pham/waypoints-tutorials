@@ -350,4 +350,6 @@ Engines are organised by what they model, not by subject or year. Every Years 7�
 
 Widgets on the shared board (no engine): free body diagram and vectors (7U04 n1, n2 · 10U05 n1, n6; its arrows feed the motion engine), classification key walker (7U01 n2, n3), atom and shell builder (9U06 n1 · 10U06 n1, n2), Punnett square (10U01 n4), equation balancer (9U07 n4), food web (7U02 n1, n2), labelled or zoomable diagrams (cells, organs, receptor pathways, meiosis, Earth's layers and spheres, sound waves, decay types, gametes, Big Bang timeline).
 
+Built (branch `atoms`, 9 Oct): the atoms engine (`atoms.js`) with the `atoms` widget (elements, compounds, mixtures: 8U06 n1, n3, n4) and the `reaction` widget (chemical change and the atom tally: 8U07 n2, 9U07 n2; exothermic and endothermic: 8U07 n4, n5; collision theory and rate: 10U07 n5, n6; combustion: 9U03 n4). Still to do on this engine: crystal size and cooling rate (8U04 n2), convection (8U03 n2, 9U04 n1), then the Years 8–10 chemistry lessons that use them.
+
 Order: particles + atoms, then (after the shared board) forces and motion with the free body diagram widget, stocks and flows, populations, sky model. Classroom testing of the Year 7 chemistry set still to do: does the locked prediction hold, do students use the width control, do they take the 2D particle simplifications literally?
