@@ -81,7 +81,7 @@ Each list item has exactly one verb.
 | `run` | `- run: true` | Reveals the app (when `app: false` at start) |
 | `show` | `- show: app.py#launch` | Types that code into the code panel |
 | `clear` | `- clear: app.py` | Empties the code panel |
-| `type` | `- type: { into: Name, text: Ada }` | Moves pointer, clicks field, types (clears it first; `append: true` types at the end instead, so captions can explain each part as it appears) |
+| `type` | `- type: { into: Name, text: Ada }` | Moves pointer, clicks field, types (clears it first; `append: true` types at the end instead, and `after: "text"` types just after the first place that text appears, such as inside a `<style>` block, so captions can explain each part as it appears) |
 | `click` | `- click: Submit` | Button, then label, link or text with that name |
 | `press` | `- press: Enter` | Key press |
 | `expect` | `- expect: { field: Greeting, value: "Hello" }` | **Fails the build** if the value is wrong (`contains:` also works) |
@@ -124,8 +124,8 @@ npm run all        # validate, render, build
   `expect: { selector: "#status", contains: Finished }` / `{ selector: "#turtle-state", contains: "heading 0" }`.
 - **`try.playground`**: `turtle` (default) or `html`. For HTML, record with `ready: HTML code`, `type: {into: "HTML code", text: "@page.html#region"}` and `expect: {selector: "#preview-text", contains: "..."}`; use `query: { code: "" }` to start from an empty editor. Region markers in HTML are `<!-- region: name -->` / `<!-- endregion -->`.
 - **`query`** (clip step): extra URL parameters for the app, e.g. `query: { speed: 8, code: "@file.py#region" }`.
-- **Box model view** (HTML playground): `boxmodel: 1`, or `inspect: ".card"` to pin one element (students use the **Box model** button and point at a box). Like the browser's developer tools, it shades margin (orange), border (yellow), padding (green) and content (blue) and shows the sizes, without changing the layout. Use it, not Boxes, whenever sizes or spacing matter: Boxes adds its own padding to show nesting. In a `picture:`, write `{ ref: page.html#x, inspect: ".card" }`.
-- **HTML playground options:** `boxes: 1` turns on the **Boxes** view (a labelled outline around every element, coloured by depth, so nesting shows; students can toggle it with the Boxes button), and `zoom: 1.7` enlarges the code and preview for clips. A step's `try: { boxes: true }` opens its playground with Boxes on. In clips, type nested code over several indented lines: long lines scroll out of the narrow editor.
+- **Box model view** (HTML playground): `boxmodel: 1`, or `inspect: ".card"` to pin one element (students use the **Box model** button and point at a box). Like the browser's developer tools, it shades margin (orange), border (gold), padding (green) and content (blue) and shows the sizes, without changing the layout. Use it, not Boxes, whenever sizes or spacing matter: Boxes adds its own padding to show nesting. In a `picture:`, write `{ ref: page.html#x, inspect: ".card" }`.
+- **HTML playground options:** `boxes: 1` turns on the **Boxes** view (a labelled outline around every element, coloured by depth, so nesting shows; students can toggle it with the Boxes button), and `zoom: 1.7` enlarges the code and preview for clips. A step's `try: { boxes: true }` opens its playground with Boxes on, and `try: { boxmodel: true }` with the Box model view on. In clips, type nested code over several indented lines: long lines scroll out of the narrow editor.
 - **`pacing`** (frontmatter or a clip step): override `typeCps`, `keyDelayMs`, `preRollMs`, `postRollMs`, `cursorMs`, `afterActionMs`.
 - `$REPO_ROOT` and `$OUT_DIR` are available to `app.command`.
 
@@ -366,7 +366,7 @@ Pictures students use live in `media/html/` (drawn for the course: `trophy.svg`,
 
 ### HTML lessons: tags in text
 
-Write every tag in running text inside backticks: `` `<h1>` ``. A bare `<h1>` in Markdown (lesson text, task bodies, and the Markdown fields of `teacher.yml`: `before`, `running`, `leads`, `explain`) becomes a real tag on the page, the teacher guide and the slides, and swallows the text after it. `npm run validate` warns about any it finds. Plain-text fields (check questions, options, match pairs, explanations, `goals`, `stuck`, `stretch`, `support`, `exit`) can use bare tags: every page and generator escapes them. Code is highlighted as HTML (tags, attributes, values, comments) when the lesson's `language` or a fence is `html`.
+Write every tag in running text inside backticks: `` `<h1>` ``. A bare `<h1>` in Markdown (lesson text, task bodies, **hints**, and the Markdown fields of `teacher.yml`: `before`, `running`, `leads`, `explain`) becomes a real tag on the page, the teacher guide and the slides, and swallows the text after it (a bare `<style>` swallows the rest of the page, its script included, so no check works). `npm run validate` warns about any it finds. Plain-text fields (check questions, options, match pairs, explanations, `goals`, `stuck`, `stretch`, `support`, `exit`) can use bare tags: every page and generator escapes them. Code is highlighted as HTML (tags, attributes, values, comments) when the lesson's `language` or a fence is `html`.
 
 ### Several files in one example
 

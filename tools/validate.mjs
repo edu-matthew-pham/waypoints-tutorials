@@ -85,7 +85,8 @@ else console.log('✓ error tasks: every planted error names its fault and an on
   const bare = (md) => String(md || '').replace(/```[\s\S]*?```/g, '').replace(/`[^`\n]*`/g, '').replace(/<!--[\s\S]*?-->/g, '').match(TAG);
   let n = 0;
   for (const l of lessons) {
-    const where = [['intro', l.intro], ...l.steps.flatMap((s) => [[`${s.id} "${s.title}"`, s.body], ...s.tasks.map((t) => [`${t.id} "${t.title}"`, t.body])])];
+    const hints = (c, w) => [].concat(c.hint ?? []).map((h, i) => [`${w} hint ${i + 1}`, h]);
+    const where = [['intro', l.intro], ...l.steps.flatMap((s) => [[`${s.id} "${s.title}"`, s.body], ...hints(s.config, s.id), ...s.tasks.flatMap((t) => [[`${t.id} "${t.title}"`, t.body], ...hints(t.config, t.id)])])];
     for (const k of ['before', 'leads', 'explain']) where.push([`teacher.yml ${k}`, l.teacher?.[k]]);
     (l.teacher?.running || []).forEach((r, i) => where.push([`teacher.yml running ${i + 1}`, r]));
     for (const [w, md] of where) { const m = bare(md); if (m) { n++; console.warn(`⚠ ${l.slug} › ${w}: ${m[0]} outside backticks becomes a real tag; write it as \`${m[0]}\``); } }

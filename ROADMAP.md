@@ -73,7 +73,11 @@ Voiceover (later): clips stay silent by default; add optional narration students
 
 Explanations as clips (decided 9 Oct): captions first, no voiceover for now (headphones are not guaranteed in class); short clips (under about 30 s) that show the idea, with key phrases as captions rather than a full transcript (multimedia principles: segmenting, signalling, redundancy). Pilot: lesson 1's Investigate clip types nested tags with the playground's new Boxes view on. Voiceover options for later: text-to-speech in the pipeline, or Matthew recording over a generated clip. Next: lesson 2 (Lists and links), after review.
 
-## Unit 2 (Style) design (planned 9 Oct, next batch)
+## Unit 2 (Style): built 9 Oct
+
+Lessons 5 (Rules and selectors) and 6 (Boxes) are built as designed below, with the Box model view (rings for margin, border and padding around the content; correct under clip zoom), clips that type rules inside the `<style>` block (`after:`), and Box model pictures (`inspect:`). Found on the way: hints are Markdown, and bare tags in them had been rendering as real tags in Unit 1 (a bare `<style>` in a hint swallowed a whole lesson's script); all hints now use backticks, validate checks hints, and `check-html` fails if a lesson script did not run. Next: Unit 3 (Components and layout), after review.
+
+### Design
 
 Same standard as Unit 1: PRIMM used selectively, a combinations task with a picture, a new Modify task per idea, expected-result pictures, an Explain it to me clip with text and a picture that follow it, teacher notes, and the Style primer. CSS stays in a `<style>` block in the page (one file in the playground); regions inside it use `/* region: x */`. All facts below checked in Chromium in standards mode, as in the preview.
 

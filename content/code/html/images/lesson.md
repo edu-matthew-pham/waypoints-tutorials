@@ -144,7 +144,7 @@ tasks:
     check: { type: code, text: "Add the medal picture with its own alt.", rules: { contains: ["src=\"medal.svg\"", "alt=\""] } }
     expected: page.html#sol-medal
   - hint:
-      - "Put <a href=\"...\"> just before the trophy's img tag, and </a> just after it."
+      - "Put `<a href=\"...\">` just before the trophy's img tag, and `</a>` just after it."
     check: { type: code, text: "Make the trophy picture a link to the results.", rules: { contains: ["<a href=\"https://example.com/results\"><img"] } }
     expected: page.html#sol-link
 ```

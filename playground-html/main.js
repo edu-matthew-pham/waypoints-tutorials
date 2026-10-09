@@ -51,16 +51,18 @@ var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttr
 if(h.charAt(0)==='#'){var t=document.getElementById(h.slice(1))||document.getElementsByName(h.slice(1))[0];if(t)t.scrollIntoView();}
 else if(/^https?:/i.test(h))window.open(h,'_blank','noopener');});<\/script>`;
 // Box model view (?boxmodel=1, or ?inspect=<selector> to pin one element; or the Box model button): like the browser's
-// developer tools, it draws margin (orange), border (yellow), padding (green) and content (blue) over the element under
+// developer tools, it draws margin (orange), border (gold), padding (green) and content (blue) over the element under
 // the pointer, with its sizes. Drawn on top of the page, so the layout does not change (unlike Boxes).
 const INSPECT = (pin) => `<script>(function(){var pin=${JSON.stringify(pin || '')};var L;
 function px(v){return parseFloat(v)||0}
-function draw(el){if(L)L.remove();if(!el||el===document.body||el===document.documentElement)return;var r=el.getBoundingClientRect(),cs=getComputedStyle(el);
-var x=r.left+scrollX,y=r.top+scrollY,m=[px(cs.marginTop),px(cs.marginRight),px(cs.marginBottom),px(cs.marginLeft)],b=[px(cs.borderTopWidth),px(cs.borderRightWidth),px(cs.borderBottomWidth),px(cs.borderLeftWidth)],p=[px(cs.paddingTop),px(cs.paddingRight),px(cs.paddingBottom),px(cs.paddingLeft)];
+function draw(el){if(L)L.remove();if(!el||el===document.body||el===document.documentElement)return;var r0=el.getBoundingClientRect(),cs=getComputedStyle(el),z=parseFloat(getComputedStyle(document.documentElement).zoom)||1;
+var r={left:r0.left/z,top:r0.top/z,width:r0.width/z,height:r0.height/z}; // a zoomed page (clips) reports zoomed sizes; the overlay is zoomed too
+var x=r.left+scrollX/z,y=r.top+scrollY/z,m=[px(cs.marginTop),px(cs.marginRight),px(cs.marginBottom),px(cs.marginLeft)],b=[px(cs.borderTopWidth),px(cs.borderRightWidth),px(cs.borderBottomWidth),px(cs.borderLeftWidth)],p=[px(cs.paddingTop),px(cs.paddingRight),px(cs.paddingBottom),px(cs.paddingLeft)];
 L=document.createElement('div');L.setAttribute('data-wp-inspect','');L.style.cssText='position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;z-index:2147483647';
-function box(l,t,w,h,c){var d=document.createElement('div');d.style.cssText='position:absolute;left:'+l+'px;top:'+t+'px;width:'+Math.max(0,w)+'px;height:'+Math.max(0,h)+'px;background:'+c;L.appendChild(d)}
-box(x-m[3],y-m[0],r.width+m[1]+m[3],r.height+m[0]+m[2],'rgba(246,178,107,.38)');box(x,y,r.width,r.height,'rgba(255,214,102,.5)');
-box(x+b[3],y+b[0],r.width-b[1]-b[3],r.height-b[0]-b[2],'rgba(147,196,125,.38)');box(x+b[3]+p[3],y+b[0]+p[0],r.width-b[1]-b[3]-p[1]-p[3],r.height-b[0]-b[2]-p[0]-p[2],'rgba(111,168,220,.32)');
+// Rings that do not overlap: margin, border and padding each keep their own colour, around the content.
+function ring(l,t,w,h,e,c,fill){var d=document.createElement('div');d.style.cssText='position:absolute;box-sizing:border-box;left:'+l+'px;top:'+t+'px;width:'+Math.max(0,w)+'px;height:'+Math.max(0,h)+'px;border-style:solid;border-color:'+c+';border-width:'+e.map(function(v){return Math.max(0,v)+'px'}).join(' ')+';background:'+(fill||'transparent');L.appendChild(d)}
+ring(x-m[3],y-m[0],r.width+m[1]+m[3],r.height+m[0]+m[2],m,'rgba(246,178,107,.55)');ring(x,y,r.width,r.height,b,'rgba(255,200,60,.75)');
+ring(x+b[3],y+b[0],r.width-b[1]-b[3],r.height-b[0]-b[2],p,'rgba(147,196,125,.55)','rgba(111,168,220,.3)');
 var t=document.createElement('div'),n=function(a){return a[0]===a[1]&&a[1]===a[2]&&a[2]===a[3]?String(Math.round(a[0])):a.map(Math.round).join(' ')};
 t.textContent=el.tagName.toLowerCase()+(el.className&&typeof el.className==='string'?'.'+el.className.trim().split(/\s+/).join('.'):'')+'  '+Math.round(r.width)+' × '+Math.round(r.height)+'   margin '+n(m)+' · border '+n(b)+' · padding '+n(p);
 t.style.cssText='position:absolute;left:'+Math.max(0,x-m[3])+'px;top:'+Math.max(0,y-m[0]-24)+'px;font:600 12px/1.6 ui-monospace,Menlo,Consolas,monospace;background:#1d2430;color:#fff;padding:1px 7px;border-radius:4px;white-space:nowrap';

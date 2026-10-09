@@ -150,22 +150,22 @@ stage: modify
 insight: "Adding to a list and a link one change at a time, checking the page after each."
 try: { playground: html, starter: "page.html#modify", height: 420 }
 tasks:
-  - hint: "Copy a whole <li> line, then change its words."
+  - hint: "Copy a whole `<li>` line, then change its words."
     check: { type: reflect, text: "I added Long jump as number 3, inside the list." }
     expected: page.html#sol-event
   - hint:
-      - "A bulleted list starts with <ul> and ends with </ul>."
-      - "Put a <h2> heading above the list, then one <li> for each thing to bring."
+      - "A bulleted list starts with `<ul>` and ends with `</ul>`."
+      - "Put a `<h2>` heading above the list, then one `<li>` for each thing to bring."
     check: { type: code, text: "Add a bulleted list.", rules: { tags: [ul] } }
     expected: page.html#sol-bring
   - hint:
-      - "Put <a href=\"...\"> before the word and </a> after it."
+      - "Put `<a href=\"...\">` before the word and `</a>` after it."
       - "The address goes inside the quotes after href=."
     check: { type: code, text: "Link timetable to the address.", rules: { contains: ["href=\"https://example.com/timetable\""] } }
     expected: page.html#sol-link
   - hint:
-      - "The link goes inside the item: <li>, then <a href=\"...\">, then the words."
-      - "Close them in reverse: </a> first, then </li>."
+      - "The link goes inside the item: `<li>`, then `<a href=\"...\">`, then the words."
+      - "Close them in reverse: `</a>` first, then `</li>`."
     check: { type: code, text: "Make Sprint a link inside its list item.", rules: { contains: ["<li><a href=\"https://example.com/sprint\">Sprint</a></li>"] } }
     expected: page.html#sol-item-link
 ```
@@ -192,8 +192,8 @@ Make `Sprint` a link to `https://example.com/sprint`, inside its list item.
 stage: make
 try: { playground: html, starter: "page.html#make", height: 420 }
 hint:
-  - "Start with an <h1> title, then <ol> and five <li> lines."
-  - "To make an item a link, put the <a href=\"...\"> inside the <li>: <li><a href=\"...\">Name</a></li>."
+  - "Start with an `<h1>` title, then `<ol>` and five `<li>` lines."
+  - "To make an item a link, put the `<a href=\"...\">` inside the `<li>`: `<li><a href=\"...\">Name</a></li>`."
 check:
   type: code
   text: "Write a top 5 list with a title and at least one link."

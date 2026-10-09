@@ -63,7 +63,7 @@ function pictureHtml(lesson, v, key) {
   const sp = pictureSpec(v);
   const pic = sp && (SHOWN ||= readPics(['shown']))[`${lesson.slug}/${key}`];
   if (!pic) return '';
-  return `<figure class="shown"><img src="${'../'.repeat(lesson.depth)}_pictures/shown/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(pic.hash || '')}" alt="The page this code makes${sp.boxes ? ', with Boxes on' : sp.inspect ? ', with the Box model view on' : ''}" width="${Math.round(pic.w / (pic.div || 2))}" height="${Math.round(pic.h / (pic.div || 2))}" loading="lazy"><figcaption>What this code makes${sp.boxes ? ' (with Boxes on: each box is a tag)' : sp.inspect ? ' (Box model view: margin orange, border yellow, padding green, content blue)' : ''}</figcaption></figure>`;
+  return `<figure class="shown"><img src="${'../'.repeat(lesson.depth)}_pictures/shown/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(pic.hash || '')}" alt="The page this code makes${sp.boxes ? ', with Boxes on' : sp.inspect ? ', with the Box model view on' : ''}" width="${Math.round(pic.w / (pic.div || 2))}" height="${Math.round(pic.h / (pic.div || 2))}" loading="lazy"><figcaption>What this code makes${sp.boxes ? ' (with Boxes on: each box is a tag)' : sp.inspect ? ' (Box model view: margin orange, border gold, padding green, content blue)' : ''}</figcaption></figure>`;
 }
 
 function buildLesson(lesson, parentTitle, course) {

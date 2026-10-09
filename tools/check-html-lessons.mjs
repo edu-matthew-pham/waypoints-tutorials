@@ -30,6 +30,7 @@ for (const l of lessons) {
   }
   // 2. lesson checks
   await p.goto(U + l.slug + '/'); await p.waitForTimeout(800);
+  ok(await p.evaluate(() => typeof window.evalRules === 'function'), 'the lesson script did not run (a bare tag in Markdown, such as <style>, can swallow it)');
   const put = async (step, code) => { const f = await (await p.locator(`#${step} iframe`).elementHandle()).contentFrame(); await f.waitForFunction(() => window.__playground?.updates > 0); await f.locator('#code').fill(code); await f.locator('#code').dispatchEvent('input'); await p.waitForTimeout(450); };
   for (const s of l.steps) {
     const sec = p.locator('#' + s.id); await sec.scrollIntoViewIfNeeded();
@@ -45,6 +46,7 @@ for (const l of lessons) {
       else if (k.type === 'question') { await scope.locator('input[type=radio]').nth(k.answer).check(); await scope.locator('button').click(); }
       else if (k.type === 'number') { await scope.locator('input').fill(String(k.answer)); await scope.locator('button').click(); }
       else if (k.type === 'match') { const want = JSON.parse(await scope.getAttribute('data-answers')); const sels = scope.locator('select'); for (let j = 0; j < want.length; j++) await sels.nth(j).selectOption(want[j]); await scope.locator('button').click(); }
+      else if (k.type === 'trace') { const cells = scope.locator('input.tcell'); for (let j = 0; j < await cells.count(); j++) await cells.nth(j).fill(await cells.nth(j).getAttribute('data-answer')); await scope.locator('button').click(); }
       else if (k.type === 'bug') { for (const a of [].concat(k.answer)) await scope.locator('.buglines button').nth(Number(a) - 1).click(); }
       else if (k.type === 'parsons') {
         // solve by clicking pieces in the correct order

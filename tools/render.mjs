@@ -166,7 +166,13 @@ async function recordClip(browser, lesson, step, outDir) {
         const loc = await target(frame, v, ['label', 'placeholder']);
         await go(loc);
         // append: true types at the end of what is there (so captions can explain each part as it appears).
-        if (v.append) { await loc.evaluate((el) => { el.focus(); if ('selectionStart' in el) el.selectionStart = el.selectionEnd = el.value.length; }); }
+        // append: true types at the end; after: "text" types just after the first place that text appears
+        // (for example inside a <style> block), so captions can explain each part as it appears.
+        if (v.after !== undefined) {
+          const at = await loc.evaluate((el, t) => { el.focus(); const i = el.value.indexOf(t); if (i >= 0) el.selectionStart = el.selectionEnd = i + t.length; return i; }, String(v.after));
+          if (at < 0) throw new Error(`type.after: ${JSON.stringify(v.after)} is not in the editor`);
+        }
+        else if (v.append) { await loc.evaluate((el) => { el.focus(); if ('selectionStart' in el) el.selectionStart = el.selectionEnd = el.value.length; }); }
         else await loc.fill('');
         const text = typeof v.text === 'string' && v.text.startsWith('@') ? getSnippet(lesson.dir, v.text.slice(1)) : String(v.text);
         await loc.pressSequentially(text, { delay: p.keyDelayMs });

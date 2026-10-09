@@ -172,11 +172,11 @@ tasks:
   - hint: "Change only the words between the tags. Leave the tags as they are."
     check: { type: reflect, text: "I changed the event and the day, and the page still looks right." }
   - hint:
-      - "A section heading uses <h2>, just like <h1> but smaller."
-      - "Put each <h2> on its own line, just above the paragraph it describes."
+      - "A section heading uses `<h2>`, just like `<h1>` but smaller."
+      - "Put each `<h2>` on its own line, just above the paragraph it describes."
     check: { type: code, text: "Add an <h2> heading for each section.", rules: { tags: [h2] } }
     expected: page.html#sol-sections
-  - hint: "Put <em> before the word and </em> after it, inside the paragraph's <p> and </p>."
+  - hint: "Put `<em>` before the word and `</em>` after it, inside the paragraph's `<p>` and `</p>`."
     check: { type: code, text: "Mark one word with <em>.", rules: { tags: [em] } }
     expected: page.html#sol-em
 ```
@@ -199,8 +199,8 @@ Give one word in the last paragraph emphasis with `<em>`.
 stage: make
 try: { playground: html, starter: "page.html#make", height: 400 }
 hint:
-  - "Start with the <h1> title, then add one section at a time: an <h2>, then its <p>."
-  - "Check the page after each tag you add. If everything turns bold, look for a missing </strong>."
+  - "Start with the `<h1>` title, then add one section at a time: an `<h2>`, then its `<p>`."
+  - "Check the page after each tag you add. If everything turns bold, look for a missing `</strong>`."
 check:
   type: code
   text: "Write a notice with a title, sections, paragraphs and one important word."

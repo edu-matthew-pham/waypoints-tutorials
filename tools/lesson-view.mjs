@@ -556,6 +556,7 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (t.extent) q.set('extent', t.extent);
   if (t.speed) q.set('speed', t.speed);
   if (t.boxes) q.set('boxes', '1'); // HTML playground: start with the Boxes view on
+  if (t.boxmodel) q.set('boxmodel', '1'); // ... or with the Box model view on
   // Modules the playground offers: ?use=shapes,house, plus ?mods={name: source} for ones that live in the lesson
   if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"

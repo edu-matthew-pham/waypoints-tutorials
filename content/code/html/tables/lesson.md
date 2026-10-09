@@ -142,17 +142,17 @@ stage: modify
 insight: "Adding a row, then a column (a heading cell plus one cell in every row)."
 try: { playground: html, starter: "page.html#results", height: 440 }
 tasks:
-  - hint: "Copy a whole row, from <tr> to </tr>, then change the words."
+  - hint: "Copy a whole row, from `<tr>` to `</tr>`, then change the words."
     check: { type: code, text: "Add a row for the Kestrels.", rules: { contains: ["<td>Kestrels</td>"] } }
     expected: page.html#sol-row
   - hint:
       - "A new column needs a heading cell in the first row."
-      - "Then every other row needs one more <td>."
+      - "Then every other row needs one more `<td>`."
     check: { type: code, text: "Add a Wins column.", rules: { contains: ["<th>Wins</th>"] } }
     expected: page.html#sol-col
   - hint:
-      - "The link goes inside the cell: <td>, then <a href=\"...\">, then the name."
-      - "Close </a> before </td>."
+      - "The link goes inside the cell: `<td>`, then `<a href=\"...\">`, then the name."
+      - "Close `</a>` before `</td>`."
     check: { type: code, text: "Link the Owls cell to the Owls page.", rules: { contains: ["<td><a href=\"https://example.com/owls\">Owls</a></td>"] } }
     expected: page.html#sol-cell-link
 ```
@@ -176,7 +176,7 @@ stage: make
 try: { playground: html, starter: "page.html#make", height: 440 }
 hint:
   - "Plan it first: what are the column headings? How many rows?"
-  - "Build the heading row with <th>, then one row at a time with <td>."
+  - "Build the heading row with `<th>`, then one row at a time with `<td>`."
 check:
   type: code
   text: "Make a table with a heading row and at least two rows of data."
