@@ -163,7 +163,15 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
   const showCode = (code, step) => blocksDeck(code) || (code.split('\n').length > 27
     ? `*The program is ${code.split('\n').length} lines long: open it in the tutorial and read it together.*\n\n[Open this step](${stepUrl(lesson, step)})`.replace(/^\*|\*(?=\n)/g, '_')
     : fence(code));
-  const runIt = (step, label = LANG === 'maths' ? 'Try it' : LANG === 'science' ? 'Explore it' : 'Run it') => `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
+  // Board steps (maths and science) put the live board on the slide: {{embed: URL}}, which Waypoints Prepare
+  // loads only while the slide is on screen (a link in PowerPoint and print). Other playgrounds open the step.
+  const boardUrl = (step) => {
+    const t = step.config.try, dir = { maths: '_playground-maths', science: '_playground-science' }[t?.playground];
+    if (!dir || !t.starter) return null;
+    return `${SITE_URL}/${dir}/index.html?${new URLSearchParams({ id: `deck/${lesson.slug}/${step.id}`, code: snip(t.starter) })}`;
+  };
+  const boardSlide = (step, heading) => `${BADGE.activity}\n\n## ${heading}\n\n{{embed: ${boardUrl(step)}}}\n\n[Open this step in the tutorial](${stepUrl(lesson, step)})`;
+  const runIt = (step, label = LANG === 'maths' ? 'Try it' : LANG === 'science' ? 'Explore it' : 'Run it') => boardUrl(step) ? boardSlide(step, label) : `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
   let stuckDone = false;
   for (const s of lesson.steps) {
     const c = s.config, stage = c.stage, title = capMaths(bare(s.title));
@@ -176,6 +184,7 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
       slides.push(runIt(s) + note(`${prose(s.body)} ${c.check?.type === 'reflect' ? `Students should be able to say: ${c.check.text}` : ''}`));
     } else if (stage === 'investigate' || stage === 'practise' || (LANG === 'science' && stage === 'modify')) {
       if (code) slides.push(`${BADGE.discussion}\n\n## ${title === 'Investigate' ? 'Investigate' : `Investigate: ${title.replace(/^Investigate:\s*/, '')}`}\n\n${showCode(code, s)}` + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
+      if (boardUrl(s)) slides.push(boardSlide(s, title) + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
