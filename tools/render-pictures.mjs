@@ -300,7 +300,7 @@ if (existsSync('snippets/maths.json')) await pictures({
   const { pictureItems } = await import('./lesson.mjs');
   const targetOf = (l) => l.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
   const WAIT = { arcade: 2500, microbit: 3000 };
-  const down = new Set(), drew = new Set();
+  const down = new Set(), drew = new Set(), failures = [];
   await pictures({
     name: 'makecode-out', dir: join(DIR, 'makecode-out'), viewport: { width: 1280, height: 900 },
     base: hashDir('playground-makecode', readFileSync(new URL(import.meta.url)), 'makecode-out-v1'),
@@ -313,33 +313,41 @@ if (existsSync('snippets/maths.json')) await pictures({
       const q = new URLSearchParams({ target: j.target, sim: '1', code: j.src });
       const mock = process.env.MAKECODE_EDITOR;
       if (mock) q.set('editor', mock.startsWith('/') ? `http://localhost:${port}${mock}` : mock);
-      try {
+      const SIM = '.simframe iframe, iframe[id^="sim-frame"], iframe[src*="simulator"]';
+      // MakeCode can replace the simulator's frame when it restarts the program, so the frame is found again
+      // just before the screenshot, and a failed attempt is tried once more from a fresh page.
+      const attempt = async () => {
         await page.goto(`http://localhost:${port}/_playground-makecode/index.html?${q}`);
-        // The simulator is a frame inside the editor's frame. MakeCode wraps it in .simframe; fall back to any
-        // frame whose address looks like a simulator.
         const editor = await (await page.waitForSelector('#editor', { timeout: 10000 })).contentFrame();
-        const simEl = await editor.waitForSelector('.simframe iframe, iframe[id^="sim-frame"], iframe[src*="simulator"]', { timeout: 90000 });
+        await editor.waitForSelector(SIM, { timeout: 90000 });
         await page.waitForFunction(() => window.__playground?.simStarted, null, { timeout: 30000 });
+        await page.waitForTimeout(WAIT[j.target] || 2500);
+        const simEl = await editor.waitForSelector(SIM, { timeout: 30000 });
         const sim = await simEl.contentFrame();
         await sim.waitForSelector('canvas, svg', { timeout: 30000 });
-        await page.waitForTimeout(WAIT[j.target] || 2500);
         // The screen is the biggest canvas (Arcade) or svg (the micro:bit board) in the simulator.
         const shots = [];
-        for (const h of await sim.$$('canvas, svg')) { const b = await h.boundingBox(); if (b && b.width > 40 && b.height > 40) shots.push({ h, a: b.width * b.height, b }); }
+        for (const h of await sim.$$('canvas, svg')) { const bx = await h.boundingBox(); if (bx && bx.width > 40 && bx.height > 40) shots.push({ h, a: bx.width * bx.height, b: bx }); }
         shots.sort((x, y) => y.a - x.a);
         const el = shots[0]?.h || simEl, box = shots[0]?.b || await simEl.boundingBox();
         const buf = await el.screenshot();
-        drew.add(j.target);
         return { data: `data:image/png;base64,${buf.toString('base64')}`, w: Math.round(box.width * 2), h: Math.round(box.height * 2), div: 2 };
-      } catch (e) {
-        // Say what the editor held, so a changed MakeCode page can be fixed from the deploy log.
-        const what = page.frames().map((f) => f.url().slice(0, 90)).join(' | ');
-        console.log(`- makecode-out ${j.id}: ${e.message.split('\n')[0]} (frames: ${what})`);
-        if (/Timeout/.test(e.message) && !drew.has(j.target)) { down.add(j.target); console.log(`- makecode-out: no ${j.target} simulator, so no more output pictures for it this run`); }
-        return null;
+      };
+      let err = null;
+      for (let n = 0; n < 2; n++) {
+        try { const png = await attempt(); drew.add(j.target); return png; } catch (e) { err = e; }
       }
+      // Say what went wrong and which frames the page held, in the log and in failures.txt beside the pictures
+      // (published with the site, so it can be read without the deploy log).
+      const what = page.frames().map((f) => f.url().slice(0, 90)).join(' | ');
+      const line = `${j.id}: ${err.message.split('\n')[0]} (frames: ${what})`;
+      failures.push(line);
+      console.log(`- makecode-out ${line}`);
+      if (/Timeout/.test(err.message) && !drew.has(j.target)) { down.add(j.target); console.log(`- makecode-out: no ${j.target} simulator, so no more output pictures for it this run`); }
+      return null;
     },
   });
+  if (!CHECK) writeFileSync(join(DIR, 'makecode-out', 'failures.txt'), failures.length ? failures.join('\n') + '\n' : 'none\n');
 }
 
 if (browser) { await browser.close(); server.close(); }
