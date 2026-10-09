@@ -18,6 +18,7 @@ import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles,
 import { buildPlayground, buildHtmlPlayground, buildMathsPlayground, buildKatex } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
+import { loadMathsCards, mathsRefItem, mathsCheatBody, mathsCheatMd, MATHS_CARD_CSS } from './maths-cards.mjs';
 import { deckFor, worksheetFor, cheatSheetFor, cheatSheetBody, unitSnippets, CHEAT_CSS, lessonGuideBody, teachPath, stepUrl, SITE_URL, TEACH_CSS, TEACH_JS } from './teach.mjs';
 
 const require = createRequire(import.meta.url);
@@ -152,7 +153,9 @@ for (const l of lessons) {
 
 // Paths with a playground, and reference (cheat sheet) pages generated from the snippet files the playgrounds use.
 const PLAY = { 'code/python': { kind: 'turtle', dir: '_playground', label: 'Python' }, 'code/html': { kind: 'html', dir: '_playground-html', label: 'HTML and CSS' } };
-const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }];
+// Maths cards (snippets/maths.json): a Reference page and cheat sheets for the maths course they name.
+const MATHS_CARDS = loadMathsCards();
+const REFS = [{ file: 'turtle', path: 'code/python/reference' }, { file: 'html', path: 'code/html/reference' }, ...(MATHS_CARDS ? [{ file: 'maths', path: `${MATHS_CARDS.course}/reference` }] : [])];
 
 // The site navbar: Learning Waypoints, Tutorials, then one menu per subject (a top-level folder, such as Code)
 // listing its pathways (from its index.md); a pathway page is <subject>/paths/<id>/. navFor(pagePath, here,
@@ -178,9 +181,9 @@ const navFor = (pagePath, here, coursePath = null) => {
   });
 };
 // Pictures of what snippet examples draw (tools/render-pictures.mjs, run by `npm run render`): { id: { w, h, hash } }.
-// Turtle pictures sit in _pictures/, HTML ones in _pictures/html/ (ids can repeat across kinds). div: device px per printed px.
+// Turtle pictures sit in _pictures/, HTML ones in _pictures/html/, maths boards in _pictures/maths/ (ids can repeat across kinds). div: device px per printed px.
 const readPics = (sub) => { const f = join(OUT, '_pictures', ...sub, 'pictures.json'); return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : {}; };
-const PICS = { python: { pics: readPics([]), dir: '_pictures/' }, html: { pics: readPics(['html']), dir: '_pictures/html/' } };
+const PICS = { python: { pics: readPics([]), dir: '_pictures/' }, html: { pics: readPics(['html']), dir: '_pictures/html/' }, maths: { pics: readPics(['maths']), dir: '_pictures/maths/' } };
 const picsFor = (lang) => PICS[lang] || PICS.python;
 // A Reference card: the code, then (when the snippet has one) its example program and a picture of what it draws.
 function refItem(i, lang, depth) {
@@ -199,9 +202,10 @@ for (const r of REFS) {
   const script = `<script>(function(){var q=document.getElementById('ref-search'),none=document.getElementById('ref-none');q.addEventListener('input',function(){var w=q.value.toLowerCase().split(/\\s+/).filter(Boolean),n=0;document.querySelectorAll('.ref-section').forEach(function(sec){var any=false;sec.querySelectorAll('.ref-item').forEach(function(it){var t=it.dataset.text,hit=w.every(function(x){return t.indexOf(x)>=0});it.hidden=!hit;if(hit){any=true;n++}});sec.hidden=!any});none.hidden=n>0;none.textContent=n?'':'Nothing matches "'+q.value.trim()+'".'})})();</script>`;
   const depth = r.path.split('/').length;
   const units = Array.isArray(dirs.get(parent)?.meta?.units) && dirs.get(parent).meta.units.length;
-  const printLink = units ? `<p class="ref-print"><a href="print/">Print a cheat sheet</a> <span class="muted">(the whole course or one unit, with a picture of what each command draws)</span></p>` : '';
-  const body = printLink + search + data.groups.map((g) => `<section class="ref-section"><h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map((i) =>
-    refItem(i, data.language, depth)).join('') + '</section>').join('') + script;
+  const isM = data.language === 'maths';
+  const printLink = units ? `<p class="ref-print"><a href="print/">Print a cheat sheet</a> <span class="muted">(the whole course or one unit, ${isM ? 'with board pictures' : 'with a picture of what each command draws'})</span></p>` : '';
+  const item = isM ? (i) => mathsRefItem({ ...i, id: `maths-${snippetId(i.label)}` }, { pictures: PICS.maths.pics, depth, esc }) : (i) => refItem(i, data.language, depth);
+  const body = (isM ? `<link rel="stylesheet" href="${'../'.repeat(depth)}_katex/katex.min.css"><style>${MATHS_CARD_CSS}</style>` : '') + printLink + search + data.groups.map((g) => `<section class="ref-section"><h2 class="ref-group">${esc(g.name)}</h2>` + g.items.map(item).join('') + '</section>').join('') + script;
   mkdirSync(join(OUT, r.path), { recursive: true });
   writeFileSync(join(OUT, r.path, 'index.html'), page(data.title,
     `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(data.title)}</h1><p class="lede">${esc(data.summary)}</p></header>${body}`, '', navFor(r.path, 'reference', parent)));
@@ -393,19 +397,24 @@ for (const coursePath of teachCourses) {
   }
   // Printable cheat sheets: one per unit, and one for the whole course.
   // Snippets for this course's language only, and the code students see in each lesson.
+  const mathsCourse = ls.some((l) => l.language === 'maths');
   const kind = ls[0] ? unlockKind(ls[0], ls[0].steps[0] || { config: {} }) : 'turtle';
   const courseSnips = new Map((snippetFiles[kind]?.groups || []).flatMap((g) => g.items.map((i) => [snippetId(i.label), i])));
   const codeOf = (l) => l.steps.flatMap((s) => [s.config.code, s.config.try?.starter, ...s.tasks.flatMap((t) => [t.config.code, t.config.starter, t.config.try?.starter])])
     .filter((r) => typeof r === 'string').map((r) => { try { return getSnippet(l.dir, r); } catch { return ''; } });
   const unitSeen = new Set();
-  const unitItems = Object.fromEntries(units.map((u) => [u.id, unitSnippets(ls.filter((l) => l.unit === u.id), courseSnips, unitSeen, codeOf)]));
+  const unitItems = Object.fromEntries(units.map((u) => [u.id, mathsCourse
+    ? (MATHS_CARDS?.course === coursePath ? MATHS_CARDS.cards.filter((c) => c.unit === u.id) : [])
+    : unitSnippets(ls.filter((l) => l.unit === u.id), courseSnips, unitSeen, codeOf)]));
   // dir is relative to OUT. Teacher copies sit in /teach/ with Prepare links; student copies sit under the
   // course's Reference (reference/print/) and link only back to it, so students are never one click from answers.
   const cheatPage = ({ dir, title, sections, back, backLabel, mdName = '', mdUrl = '', nav = '', here = 'home' }) => {
     mkdirSync(join(OUT, dir), { recursive: true });
     const up = '../'.repeat(dir.split('/').length);
-    const body = cheatSheetBody({ title, course: node.title, sections, pictures: picsFor(ls[0]?.language || 'python').pics, picBase: `${up}${picsFor(ls[0]?.language || 'python').dir}`, esc, highlightCode, back, backLabel, md: mdName, mdUrl, nav, lang: ls[0]?.language || 'python' });
-    writeFileSync(join(OUT, dir, 'index.html'), page(title, `<style>${TEACH_CSS}${CHEAT_CSS}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(dir, here, coursePath)));
+    const body = mathsCourse
+      ? `<link rel="stylesheet" href="${up}_katex/katex.min.css">` + mathsCheatBody({ title, course: node.title, sections, pictures: PICS.maths.pics, picBase: `${up}${PICS.maths.dir}`, esc, back, backLabel, md: mdName, mdUrl, nav })
+      : cheatSheetBody({ title, course: node.title, sections, pictures: picsFor(ls[0]?.language || 'python').pics, picBase: `${up}${picsFor(ls[0]?.language || 'python').dir}`, esc, highlightCode, back, backLabel, md: mdName, mdUrl, nav, lang: ls[0]?.language || 'python' });
+    writeFileSync(join(OUT, dir, 'index.html'), page(title, `<style>${TEACH_CSS}${CHEAT_CSS}${mathsCourse ? MATHS_CARD_CSS : ''}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(dir, here, coursePath)));
   };
   // A row of links between the whole-course sheet and each unit's (base: the folder holding them).
   const sheetNav = (base, current) => units.length ? `<nav class="cs-nav" aria-label="Cheat sheets">${[['', 'Whole course'], ...units.map((u) => [u.id, u.title])].map(([id, t]) => {
@@ -422,7 +431,6 @@ for (const coursePath of teachCourses) {
     }
   }
   // Course guide: how to use it, then each unit with its primer, cheat sheet and lessons. A maths course renders $...$ in primers.
-  const mathsCourse = ls.some((l) => l.language === 'maths');
   const unitBlocks = (units.length ? units : [{ id: '', title: 'Lessons' }]).map((u) => {
     const mine = ls.filter((l) => (u.id ? l.unit === u.id : true));
     if (!mine.length) return '';
@@ -436,11 +444,11 @@ for (const coursePath of teachCourses) {
     }
     let cheat = '';
     if (u.id) {
-      const sheet = cheatSheetFor({ course: node.title, unit: u, items: unitItems[u.id], lang: ls[0]?.language || 'python' });
+      const sheet = mathsCourse ? mathsCheatMd({ course: node.title, unit: u, items: unitItems[u.id] }) : cheatSheetFor({ course: node.title, unit: u, items: unitItems[u.id], lang: ls[0]?.language || 'python' });
       writeFileSync(join(courseDir, `cheatsheet-${u.id}.md`), sheet);
       const url = `${SITE_URL}/teach/${coursePath}/cheatsheet-${u.id}.md`;
       cheatPage({ dir: `teach/${coursePath}/cheatsheet-${u.id}`, title: `${u.title}: cheat sheet`, sections: [{ title: u.title, items: unitItems[u.id] }], back: '../', backLabel: 'Teacher guide', mdName: `../cheatsheet-${u.id}.md`, mdUrl: url });
-      cheat = `<p>Cheat sheet: <a href="cheatsheet-${esc(u.id)}/">Open to print</a> <span class="muted">(A4, with a picture of what each command draws)</span> · <a href="cheatsheet-${esc(u.id)}.md" download>Markdown</a> <button type="button" class="copyurl" data-url="${esc(url)}">Copy address for Prepare</button></p>`;
+      cheat = `<p>Cheat sheet: <a href="cheatsheet-${esc(u.id)}/">Open to print</a> <span class="muted">(A4, ${mathsCourse ? 'with board pictures' : 'with a picture of what each command draws'})</span> · <a href="cheatsheet-${esc(u.id)}.md" download>Markdown</a> <button type="button" class="copyurl" data-url="${esc(url)}">Copy address for Prepare</button></p>`;
     }
     const rows = mine.map((l) => l.teacher
       ? `<li><a href="${esc(l.slug.split('/').pop())}/">${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}</a>${l.optional ? ' <span class="muted">(optional)</span>' : ''} <span class="muted">· <a href="${esc(l.slug.split('/').pop())}/deck.md" download>slides</a> · <a href="${esc(l.slug.split('/').pop())}/worksheet.md" download>worksheet</a></span></li>`

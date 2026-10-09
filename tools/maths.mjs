@@ -10,28 +10,29 @@ const tex = (src, displayMode) => katex.renderToString(src, { displayMode, throw
 export const texInline = (src) => tex(src, false);
 export const texDisplay = (src) => tex(src, true);
 
-/** A marked extension: $$...$$ (block or inline) and $...$ (inline). Money stays text (Pandoc's rule, as in Waypoints Prepare):
- * the opening $ is followed by a non-space, the closing $ preceded by one and not followed by a digit. */
+/** A marked extension: $$...$$ on its own lines (block) and $...$ (inline), choosing the same maths as Marp and Waypoints Prepare.
+ * Money stays text (Pandoc's rule): the opening $ is followed by a non-space, the closing $ preceded by one and not followed
+ * by a digit. As in Marp, $$ inside a line is never maths, so a run of dollars there is kept as text. */
 export const markedMath = {
   extensions: [
     {
       name: 'mathBlock', level: 'block',
-      start(src) { return src.indexOf('$$'); },
-      tokenizer(src) { const m = /^\$\$([\s\S]+?)\$\$(?:\n|$)/.exec(src); if (m) return { type: 'mathBlock', raw: m[0], text: m[1].trim() }; },
+      start(src) { const i = src.search(/(?:^|\n)\$\$/); return i < 0 ? undefined : src[i] === '\n' ? i + 1 : i; },
+      tokenizer(src) { const m = /^\$\$([\s\S]+?)\$\$[ \t]*(?:\n|$)/.exec(src); if (m) return { type: 'mathBlock', raw: m[0], text: m[1].trim() }; },
       renderer(t) { return `<div class="mathblock">${texDisplay(t.text)}</div>`; },
     },
     {
       name: 'mathInline', level: 'inline',
       start(src) { return src.indexOf('$'); },
-      tokenizer(src) { const m = /^\$\$([^$]+?)\$\$|^\$(?=\S)([^$\n]*?\S)\$(?!\d)/.exec(src); if (m) return { type: 'mathInline', raw: m[0], text: (m[1] || m[2]).trim(), display: !!m[1] }; },
-      renderer(t) { return tex(t.text, t.display); },
+      tokenizer(src) { const m = /^(\${2,})|^\$(?=\S)([^$\n]*?\S)\$(?!\d)/.exec(src); if (m) return { type: 'mathInline', raw: m[0], text: m[1] || m[2].trim(), literal: !!m[1] }; },
+      renderer(t) { return t.literal ? t.text : texInline(t.text); },
     },
   ],
 };
 
 /** Plain text that may contain $...$ (check questions and options): escape the text, render the maths. */
 export function textWithMath(s, esc) {
-  return String(s).split(/(\$(?=\S)[^$\n]*?\S\$(?!\d))/).map((part) => /^\$\S(?:[^$\n]*\S)?\$$/.test(part) ? texInline(part.slice(1, -1)) : esc(part)).join('');
+  return String(s).split(/((?<!\$)\$(?=[^\s$])[^$\n]*?\S\$(?![\d$]))/).map((part) => /^\$\S(?:[^$\n]*\S)?\$$/.test(part) ? texInline(part.slice(1, -1)) : esc(part)).join('');
 }
 
 /**

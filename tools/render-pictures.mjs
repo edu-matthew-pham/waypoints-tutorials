@@ -2,6 +2,8 @@
 // and save what it draws, cropped, as dist/_pictures/<snippet id>.png; render each HTML snippet's
 // `example` as a page (as the HTML playground's preview shows it: browser defaults, 320px wide) and
 // save it as dist/_pictures/html/<snippet id>.png (HTML ids can repeat turtle ones, such as `comment`).
+// Maths cards (snippets/maths.json) with a `board` get a picture of the maths board in that setup,
+// saved as dist/_pictures/maths/maths-<card id>.png.
 // Shared by the Reference page, the playground's Reference drawer and the cheat sheets.
 // pictures.json: { id: { w, h, hash, div? } }; div is device pixels per printed pixel (default 5.2, turtle).
 // Part of `npm run render` (after build-playground). Cached: a picture is redrawn only when its
@@ -186,6 +188,42 @@ await pictures({
     const width = Math.min(box.width - 2, ext.r + 14), height = Math.min(box.height - 2, ext.b + 14);
     const buf = await page.screenshot({ clip: { x: box.x + 1, y: box.y + 1, width, height } });
     return { data: `data:image/png;base64,${buf.toString('base64')}`, w: Math.round(width * 2), h: Math.round(height * 2), div: 2 };
+  },
+});
+
+// ---- Maths: a card's `board` setup in the maths playground, without its controls (the scale, or the machine),
+// cropped to what is drawn (anything unlike the board's background), ignoring the board's own border.
+if (existsSync('snippets/maths.json')) await pictures({
+  name: 'maths', dir: join(DIR, 'maths'), viewport: { width: 760, height: 430 },
+  base: hashDir('playground-maths', readFileSync(new URL(import.meta.url)), 'maths-v1'),
+  jobs: JSON.parse(readFileSync('snippets/maths.json', 'utf8')).groups.flatMap((g) => g.items.filter((i) => i.board).map((i) => ({ id: `maths-${snippetId(i.label)}`, code: i.board }))),
+  async draw(page, j) {
+    await page.goto(`http://localhost:${port}/_playground-maths/index.html?id=picture&code=${encodeURIComponent(j.code)}`);
+    const sel = /widget:\s*machine/.test(j.code) ? '#mrow' : '#board';
+    await page.waitForSelector(sel === '#mrow' ? '#mrow .mbox' : '#board svg', { timeout: 20000 });
+    await page.waitForTimeout(400);
+    if (await page.locator('#error').isVisible()) throw new Error(`${j.id}: the board did not start: ${await page.locator('#error').innerText()}`);
+    const shot = (await page.locator(sel).screenshot()).toString('base64');
+    const png = await page.evaluate(async (b64) => {
+      const img = new Image(); img.src = 'data:image/png;base64,' + b64; await img.decode();
+      const c = document.createElement('canvas'); c.width = img.width; c.height = img.height;
+      const x = c.getContext('2d'); x.drawImage(img, 0, 0);
+      const { width: w, height: hh } = c, px = x.getImageData(0, 0, w, hh).data, edge = 8;
+      const k0 = (edge * w + edge) * 4, bg = [px[k0], px[k0 + 1], px[k0 + 2]];
+      let x0 = w, y0 = hh, x1 = 0, y1 = 0;
+      for (let y = edge; y < hh - edge; y++) for (let i = edge; i < w - edge; i++) {
+        const k = (y * w + i) * 4;
+        if (Math.abs(px[k] - bg[0]) + Math.abs(px[k + 1] - bg[1]) + Math.abs(px[k + 2] - bg[2]) <= 30) continue;
+        if (i < x0) x0 = i; if (i > x1) x1 = i; if (y < y0) y0 = y; if (y > y1) y1 = y;
+      }
+      if (x1 < x0) return null;
+      const m = 12; x0 = Math.max(0, x0 - m); y0 = Math.max(0, y0 - m); x1 = Math.min(w - 1, x1 + m); y1 = Math.min(hh - 1, y1 + m);
+      const o = document.createElement('canvas'); o.width = x1 - x0 + 1; o.height = y1 - y0 + 1;
+      o.getContext('2d').drawImage(c, x0, y0, o.width, o.height, 0, 0, o.width, o.height);
+      return { data: o.toDataURL('image/png'), w: o.width, h: o.height };
+    }, shot);
+    if (!png) throw new Error(`${j.id}: the board drew nothing`);
+    return { ...png, div: 4 };
   },
 });
 

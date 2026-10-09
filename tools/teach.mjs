@@ -11,6 +11,24 @@ export const PREPARE_URL = 'https://prepare.learningwaypoints.com/';
 const STAGES = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 const bare = (t) => String(t).replace(STAGES, '');
 // A maths task's text carries its worked example (a numbered list of $maths$ lines), so slides and worksheets keep it.
+// Maths headings start with a capital ("Modify: harder scales" → "Harder scales"); code decks keep their titles as written.
+const capMaths = (t) => (LANG === 'maths' ? t.charAt(0).toUpperCase() + t.slice(1) : t);
+// A worked example on a slide, for live modelling: the slide shows the problem, and the steps stay hidden as Marp
+// fragments ("1)") until the teacher has modelled them and reveals them to compare. The speaker notes carry a
+// line-by-line script (what to write, what to say) for a teacher who is unsure how to model it.
+function workedSlide(md) {
+  const lines = String(md).split('\n');
+  const steps = lines.map((l) => /^(\d+)\. \$(.+?)\$(?: — (.*))?$/.exec(l)).filter(Boolean).map((m) => ({ m: m[2], why: m[3] || '' }));
+  const intro = lines.filter((l) => !/^\d+\. \$/.test(l)).join('\n').trim();
+  // Speaker notes are plain text: TeX becomes readable maths (3x/3 → 3x ÷ 3, \\checkmark → ✓).
+  const tex = (t) => String(t).replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, '$1 ÷ $2').replace(/\\text\{([^{}]*)\}/g, '$1')
+    .replace(/\\times/g, '×').replace(/\\div/g, '÷').replace(/\\checkmark/g, '✓').replace(/\\[,;:! ]/g, '').replace(/\\[a-zA-Z]+/g, '').replace(/[{}]/g, '').replace(/\s+/g, ' ').trim();
+  const plain = (t) => tex(String(t).replace(/\$([^$]+)\$/g, '$1').replace(/\*\*/g, ''));
+  const slide = `${intro ? prose(intro) + '\n\n' : ''}$$${steps[0]?.m || ''}$$\n\n` + steps.slice(1).map((st, i) => `${i + 1}) $${st.m}$${st.why ? ` — ${st.why}` : ''}`).join('\n');
+  const said = (w) => { const t = plain(w); return /[.?!]$/.test(t) ? t : `${t}.`; };
+  const script = steps.map((st, i) => `${i ? `Line ${i}` : 'Start'}: write ${tex(st.m)}${st.why ? ` and say "${said(st.why)}"` : '.'}`).join(' ');
+  return { slide, notes: `Model this live on the board before revealing anything: write each line and say why, pausing to ask the class what comes next. Then click to reveal the lines and compare. Script. ${script}` };
+}
 const hasWorked = (md) => LANG === 'maths' && /^1\. \$/m.test(String(md || ''));
 
 // Maths lessons: a ```worked block (one step per line, "maths :: reason") becomes a numbered list with the maths
@@ -113,7 +131,7 @@ export function deckFor(lesson, { course, unit, snip }) {
   const runIt = (step, label = LANG === 'maths' ? 'Try it' : 'Run it') => `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
   let stuckDone = false;
   for (const s of lesson.steps) {
-    const c = s.config, stage = c.stage, title = bare(s.title);
+    const c = s.config, stage = c.stage, title = capMaths(bare(s.title));
     const code = c.code ? snip(c.code) : '';
     if (stage === 'predict') {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
@@ -137,7 +155,7 @@ export function deckFor(lesson, { course, unit, snip }) {
           body += '\n\n' + (parts.length === 2 ? `<div class="cols" style="display:grid;grid-template-columns:1fr 1fr;gap:1em">\n<div>\n\n${parts[0]}\n\n</div>\n<div>\n\n${parts[1]}\n\n</div>\n</div>` : parts.join('\n\n'));
         }
         if (p.parsons) body += '\n\n' + fence(p.parsons.join('\n'));
-        if (t && hasWorked(t.body)) body = prose(t.body) + '\n\n' + body;
+        if (t && hasWorked(t.body)) { const w = workedSlide(t.body); slides.push(`${BADGE.discussion}\n\n## ${t.title}\n\n${w.slide}` + note(w.notes)); }
         else if (t && /```/.test(t.body)) body = prose(t.body.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, src) => '\u0000' + src + '\u0000')).replace(/\u0000([\s\S]*?)\u0000/g, (m, src) => fence(src)) + '\n\n' + body;
         const reveal = p.parsons ? '' : `\n\n* Answer: ${oneLine(p.answer)}`;
         slides.push(`${BADGE.check}\n\n## ${t ? t.title : title}\n\n${body}${reveal}` + note(`${p.explain} ${p.parsons ? `Correct order: ${oneLine(p.solution)}` : ''} ${!t && c.insight ? `What this step is for: ${c.insight}` : ''}`));
@@ -148,7 +166,7 @@ export function deckFor(lesson, { course, unit, snip }) {
       const hints = [...(Array.isArray(c.hint) ? c.hint : c.hint ? [c.hint] : []), ...s.tasks.flatMap((t) => (Array.isArray(t.config.hint) ? t.config.hint : t.config.hint ? [t.config.hint] : []))];
       let n = `${c.insight ? `What this step is for: ${c.insight} ` : ''}${hints.length ? `Hints, in order: ${hints.join(' / ')} ` : ''}`;
       if (!stuckDone && T.stuck?.length) { n += 'When students get stuck: ' + T.stuck.map((x) => `${x.see} Ask: ${x.ask} Fix: ${x.fix}`).join(' / '); stuckDone = true; }
-      slides.push(`${BADGE.activity}\n\n## ${stage === 'make' && !/make/i.test(title) ? `Make: ${title}` : title}\n\n${text}${tasks ? '\n\n' + tasks : ''}${c.try ? `\n\n[Open this step](${stepUrl(lesson, s)})` : ''}` + note(n));
+      slides.push(`${BADGE.activity}\n\n## ${stage === 'make' && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${text}${tasks ? '\n\n' + tasks : ''}${c.try ? `\n\n[Open this step](${stepUrl(lesson, s)})` : ''}` + note(n));
     } else if (s.body.trim()) {
       slides.push(`## ${title}\n\n${prose(s.body)}`);
     }
@@ -204,7 +222,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
   out.push(tnote(`**In one sentence:** ${T.summary || lesson.summary}\n\n${T.goals?.length ? `**Students should be able to say:** ${T.goals.map(pt).join(' ')}\n\n` : ''}**Width:** the unmarked parts are the floor every student does (predict, run, investigate and make). Typical adds the modify practice; wider adds the real-world contexts. They add contexts, not difficulty. Students work in the online tutorial alongside this sheet.`));
   const makeIndex = lesson.steps.findIndex((s) => s.config.stage === 'make');
   for (const [i, s] of lesson.steps.entries()) {
-    const c = s.config, stage = c.stage, title = bare(s.title);
+    const c = s.config, stage = c.stage, title = capMaths(bare(s.title));
     const code = c.code ? snip(c.code) : '';
     const tier = stage === 'modify' ? (makeIndex >= 0 && i > makeIndex ? 'wider' : 'typical') : stage === 'info' && makeIndex >= 0 && i > makeIndex ? 'wider' : '';
     let part = '';
@@ -238,7 +256,7 @@ export function worksheetFor(lesson, { course, unit, snip }) {
         const t = s.tasks.find((x) => x.id === id);
         return `${t ? `**${t.title}:**\n\n` : ''}${splitFiles(snip(sols[id])).map((f) => (f.name ? `*${f.name}*\n\n` : '') + fence(f.code)).join('\n\n')}`;
       }).join('\n\n');
-      part = `## ${stage === 'make' && !/make/i.test(title) ? `Make: ${title}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
+      part = `## ${stage === 'make' && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
     } else if (s.body.trim()) {
       part = `## ${title}\n\n${prose(s.body)}`;
     }

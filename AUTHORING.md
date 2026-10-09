@@ -424,3 +424,9 @@ Vary, Practise, Make).
   - `widget: machine` with `ops: × 2, + 3` and `output: 11`: students undo the steps from the output, last step
     first; a wrong undo gets a nudge, not the answer.
   - Each task's `starter` loads its own board when the task is opened.
+- **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
+  one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
+  lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its
+  caption). They make the course's Reference page (`<course>/reference/`, with search), the student print sheets, and
+  the teacher cheat sheets (A4 and Markdown for Prepare). Validate checks the maths parses and the unit exists.
+- **Maths pathways:** `content/maths/index.md` lists pathways like `code/index.md`, with planned courses as "Coming later".
