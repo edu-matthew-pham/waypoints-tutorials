@@ -12,9 +12,13 @@ pathways:
       - { path: science/chemistry-9-10, stage: extensions }
   - id: biology
     title: Biology
-    summary: Classification and food webs.
+    summary: Classification and food webs, cells and organs, coordination and reproduction, then genetics and evolution.
+    about: "**Year 7 Biology** follows AC9S7U01 (classification) and AC9S7U02 (food webs). **Year 8 Biology** follows AC9S8U01 (cells) and AC9S8U02 (specialised cells, tissues and organs). **Year 9 Biology** follows AC9S9U01 (coordination and homeostasis) and AC9S9U02 (reproduction). **Year 10 Biology** follows AC9S10U01 (genetics and inheritance) and AC9S10U02 (variation and natural selection). One tutorial per hinge idea; nodes whose response is a class task are left to class work."
     courses:
       - { path: science/biology-7, stage: foundations }
+      - { path: science/biology-8, stage: foundations }
+      - { path: science/biology-9, stage: extensions }
+      - { path: science/biology-10, stage: extensions }
   - id: physics
     title: Physics
     summary: Forces and motion, how energy moves, and Newton's laws.

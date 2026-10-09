@@ -19,6 +19,7 @@
 //                       ea, release, target, goal: target | react | compare | none (atoms.js; see AUTHORING › 12)
 //   widget: cooling     cool magma at different rates: crystal size (crystals.js)
 //   widget: convection  mode: fluid | solid, preset: beaker | mantle: heat moving by convection or conduction (convection.js)
+//   widget: selection   ground: light | dark, change: on, hunter: student | birds, goal: generations | measure (selection.js)
 //
 // Message to the lesson page after every change: { wp: 'run', id, kind: 'science', status: 'done', moved, output, state: { done } }.
 // `moved` stays false until the student does something; `done` is true once the widget's task is finished.
@@ -741,6 +742,71 @@
     });
     say(spec.caption || (solid ? 'A metal bar, heated at one end. Watch the colours: blue is cool, red is hot.' : mantle ? 'A model of the mantle: hot rock rises above the core, cools under the plates and sinks. Follow the ringed particle (or click another).' : 'Water heated from below. Follow the ringed particle (or click another): blue is cool, red is hot.'));
     report();
+  };
+
+  // ---------- natural selection (selection.js) ----------
+  // ground: light | dark (the ground the beetles live on); change: on adds "The ground darkens"; hunter: student (click
+  // beetles to eat them) or birds (automatic); goal: generations (done after `need` generations, default 4) or
+  // measure (no hunting: click beetles to measure their colour; done after `need`, default 20).
+  W.selection = function (spec) {
+    var SEL = S.selection, b = { x0: 0, x1: 22, y0: 0, y1: 10 }, measure = spec.goal === 'measure';
+    var need = Number(spec.need) || (measure ? 20 : 4), dark = spec.ground === 'dark', student = (spec.hunter || 'student') === 'student';
+    var pop = new SEL.Population(Number(spec.n) || 40, { ground: dark ? 0.85 : 0.15, mean: spec.mean !== undefined ? Number(spec.mean) : 0.5 });
+    var phase = 'hunt', eatenNow = 0, measured = [], target = Math.floor(pop.n / 2), flashes = [];
+    var bar = area('controls');
+    var hunt = button('controls', student ? 'Done hunting' : 'Let the birds hunt', function () { if (!student) { flashes = pop.hunt(target - eatenNow).map(function (x) { return { x: x.x, y: x.y, t: 30 }; }); eatenNow = target; } next(); }, 'go');
+    var breed = button('controls', 'Survivors breed', function () { pop.breed(); eatenNow = 0; phase = 'hunt'; draw(); paintHist(); touch(summary()); if (pop.gen >= need && !done && !measure) { say('After ' + pop.gen + ' generations the average colour has moved ' + (Math.abs(pop.mean() - pop.history[0].mean) < 0.05 ? 'very little' : 'towards the ground colour') + '. Compare the first and last bars.', true); finish(summary()); } else say(phase === 'hunt' ? (student ? 'Generation ' + (pop.gen + 1) + ': you are the bird. Click beetles to eat them (' + target + ').' : 'Generation ' + (pop.gen + 1) + ': let the birds hunt.') : ''); }, '');
+    if (measure) { hunt.hidden = true; breed.hidden = true; }
+    var flip = null;
+    if (spec.change === 'on') flip = button('controls', dark ? 'The ground gets paler' : 'The ground darkens (after a bushfire)', function () { dark = !dark; pop.ground = dark ? 0.85 : 0.15; flip.textContent = dark ? 'The ground gets paler' : 'The ground darkens (after a bushfire)'; draw(); touch(summary()); });
+    function next() { if (phase !== 'hunt') return; phase = 'breed'; breed.disabled = false; hunt.disabled = true; say('Survivors: ' + pop.bs.length + '. Now they breed: offspring get the average of their parents’ colours, plus a small random change.'); touch(summary()); }
+    function summary() { return 'generation ' + pop.gen + ', average colour ' + pop.mean().toFixed(2) + ' (0 pale, 1 dark), ground ' + (dark ? 'dark' : 'pale'); }
+    S.newBoard([b.x0 - 0.3, b.y1 + 0.3, b.x1 + 0.3, b.y0 - 0.3]);
+    var bd = S.board(), speck = [];
+    for (var i = 0; i < 260; i++) speck.push([Math.random(), Math.random(), Math.random()]);
+    S.dots(function (ctx, X, Y, u) {
+      var gx0 = X(b.x0), gy0 = Y(b.y1), gw = X(b.x1) - gx0, gh = Y(b.y0) - gy0;
+      ctx.fillStyle = dark ? '#3c3022' : '#e6d6a6'; ctx.fillRect(gx0, gy0, gw, gh);
+      speck.forEach(function (p) { ctx.fillStyle = dark ? (p[2] > 0.5 ? '#2c2318' : '#4c3e2c') : (p[2] > 0.5 ? '#d7c38d' : '#f2e6c4'); ctx.fillRect(gx0 + p[0] * gw, gy0 + p[1] * gh, 3, 3); });
+      pop.bs.forEach(function (be) {
+        var x = gx0 + be.x * gw, y = gy0 + be.y * gh, r = 0.32 * u * be.size, col = SEL.colour(be.c);
+        ctx.save(); ctx.translate(x, y); ctx.rotate(be.a);
+        ctx.strokeStyle = col; ctx.lineWidth = Math.max(1, r * 0.18);
+        for (var k = -1; k <= 1; k++) { ctx.beginPath(); ctx.moveTo(k * r * 0.5, -r * 0.55); ctx.lineTo(k * r * 0.9, -r * 1.05); ctx.moveTo(k * r * 0.5, r * 0.55); ctx.lineTo(k * r * 0.9, r * 1.05); ctx.stroke(); }
+        ctx.fillStyle = col; ctx.beginPath(); ctx.ellipse(0, 0, r, r * 0.68, 0, 0, 6.2832); ctx.fill();
+        ctx.beginPath(); ctx.arc(r * 1.05, 0, r * 0.38, 0, 6.2832); ctx.fill();
+        if (measured.indexOf(be) >= 0) { ctx.strokeStyle = '#1a7f37'; ctx.lineWidth = 2; ctx.beginPath(); ctx.ellipse(0, 0, r * 1.5, r * 1.2, 0, 0, 6.2832); ctx.stroke(); }
+        ctx.restore();
+      });
+      flashes.forEach(function (f) { ctx.strokeStyle = 'rgba(194,87,10,' + (f.t / 30) + ')'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(gx0 + f.x * gw, gy0 + f.y * gh, 0.6 * u, 0, 6.2832); ctx.stroke(); f.t--; });
+      flashes = flashes.filter(function (f) { return f.t > 0; });
+    });
+    S.loop(function () { bd.update(); });
+    function draw() { hunt.disabled = phase !== 'hunt' || measure; breed.disabled = phase !== 'breed'; }
+    bd.on('down', function (e) {
+      var c = bd.getUsrCoordsOfMouse(e), fx = (c[0] - b.x0) / (b.x1 - b.x0), fy = (b.y1 - c[1]) / (b.y1 - b.y0), best = null, bdist = 0.045;
+      pop.bs.forEach(function (be) { var d = Math.hypot((be.x - fx) * 2.2, be.y - fy); if (d < bdist) { bdist = d; best = be; } });
+      if (!best) return;
+      if (measure) {
+        if (measured.indexOf(best) < 0) { measured.push(best); paintHist(); }
+        var m = measured.length; say('Beetle ' + m + ': colour ' + best.c.toFixed(2) + ' (0 pale, 1 dark).' + (m >= need ? ' Look at the shape of the bar chart.' : ''), m >= need);
+        if (m >= need && !done) finish('measured ' + m); else touch('measured ' + m);
+        return;
+      }
+      if (phase !== 'hunt' || !student) return;
+      pop.bs.splice(pop.bs.indexOf(best), 1); eatenNow++; flashes.push({ x: best.x, y: best.y, t: 30 });
+      if (eatenNow >= target) next(); else say('Eaten ' + eatenNow + ' of ' + target + '.'); touch(summary());
+    });
+    function paintHist() {
+      var rows = measure ? [{ label: 'Measured', bins: (function () { var h = []; for (var i = 0; i < 10; i++) h.push(0); measured.forEach(function (be) { h[Math.min(9, Math.floor(be.c * 10))]++; }); return h; })() }]
+        : [pop.history[0]].concat(pop.history.length > 1 ? [pop.history[pop.history.length - 1]] : []).map(function (h, i) { return { label: i ? 'Generation ' + h.gen : 'Start', bins: h.bins, mean: h.mean }; });
+      area('extra').innerHTML = '<div class="hists">' + rows.map(function (r) {
+        var mx = Math.max.apply(null, r.bins.concat([1]));
+        return '<div class="hist"><b>' + r.label + (r.mean !== undefined ? ' · average ' + r.mean.toFixed(2) : '') + '</b><div class="hbars">' + r.bins.map(function (v, i) { return '<i style="height:' + Math.round(4 + 56 * v / mx) + 'px;background:' + SEL.colour((i + 0.5) / 10) + '" title="' + v + '"></i>'; }).join('') + '</div><span>pale → dark</span></div>';
+      }).join('') + '</div>';
+    }
+    draw(); paintHist();
+    say(measure ? 'Click beetles to measure their colour (0 is palest, 1 darkest). Measure ' + need + '.' : student ? 'Generation 1: you are a bird. Click beetles to eat them (' + target + '). Which are easiest to find?' : 'Generation 1: let the birds hunt.');
   };
 
   // ---------- setup ----------

@@ -3,9 +3,10 @@
 //                  per reaction; a higher temperature or a catalyst makes a reaction faster
 //   crystals.js    slower cooling gives fewer, bigger crystals; instant cooling gives mostly glass
 //   convection.js  a heated fluid circulates (particles complete loops); a heated solid bar warms along its length
+//   selection.js   bird predation shifts a beetle population's average colour towards the ground's; no hunting, no drift
 import { readFileSync } from 'node:fs';
 const window = { SCI: {} }; globalThis.matchMedia = () => ({ matches: false });
-for (const f of ['atoms', 'crystals', 'convection']) new Function('window', readFileSync(new URL(`../playground-science/${f}.js`, import.meta.url), 'utf8'))(window);
+for (const f of ['atoms', 'crystals', 'convection', 'selection']) new Function('window', readFileSync(new URL(`../playground-science/${f}.js`, import.meta.url), 'utf8'))(window);
 const A = window.SCI.atoms;
 let bad = 0;
 const fail = (m) => { bad++; console.log('✗ ' + m); };
@@ -54,5 +55,12 @@ const bar = new Flow({ x0: 0, x1: 22, y0: 0, y1: 4 }, { solid: true }); for (let
 const q = [0, 1, 2, 3].map((i) => bar.heatAt(i * 5.5, i * 5.5 + 5.5));
 if (!(q[0] > q[1] && q[1] > q[2] && q[3] > 0.01) || bar.ps.some((p) => Math.hypot(p.x - p.sx, p.y - p.sy) > 0.2)) fail('conduction: heat should spread along the bar with no particle leaving its place');
 else console.log(`✓ conduction: bar quarters ${q.map((h) => h.toFixed(2)).join(' > ')}, no particle moved along`);
+
+// Natural selection: hunting moves the average colour towards the ground's; breeding alone barely moves it.
+const { Population } = window.SCI.selection;
+const run = (ground, hunt, gens = 6) => { let t = 0; for (let r = 0; r < 10; r++) { const p = new Population(40, { ground, mean: 0.5 }); for (let g = 0; g < gens; g++) { if (hunt) p.hunt(20); else p.hunt(0); p.breed(); } t += p.mean(); } return t / 10; };
+const dark = run(0.85, true), pale = run(0.15, true), none = run(0.15, false);
+if (!(dark > 0.6 && pale < 0.4 && Math.abs(none - 0.5) < 0.08)) fail(`selection: average after 6 generations dark ground ${dark.toFixed(2)}, pale ${pale.toFixed(2)}, no hunting ${none.toFixed(2)}`);
+else console.log(`✓ selection: average colour after 6 generations, dark ground ${dark.toFixed(2)} · pale ground ${pale.toFixed(2)} · no hunting ${none.toFixed(2)}`);
 console.log(bad ? `${bad} problem(s)` : 'Science engines OK.');
 process.exit(bad ? 1 : 0);

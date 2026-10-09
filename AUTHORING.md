@@ -498,6 +498,27 @@ Vary, Practise, Make).
       `n_total`, `n_classes`, `has_<label>` (1 or 0), and with serial `n_sent`, `n_replies`, `in_<name>`. Examples:
       `"acc_messy >= 0.75"`, `"has_neither = 1 and acc_neither >= 0.75"`, `"n_sent >= 3"`. Training is not checked;
       the model it makes is. The Teachable Machine library and TensorFlow.js load only when this widget is used.
+  - `widget: cell`: `show: animal, plant` (cell types side by side: animal, plant, bacterium, yeast, redblood, nerve,
+    muscle, roothair, sperm, egg, pollen), or one tissue (`leaf`, `heart`), or `zoom`. Students click a part to see
+    its name, what it does and where it is found; `find: nucleus, membrane, cytoplasm` limits which parts count (ids:
+    nucleus, membrane, cytoplasm, wall, chloroplasts, vacuole, mitochondria and each cell's own, shown on click).
+    Rings and lines are hit by nearness, shapes by the smallest containing one. `show: zoom` steps body → cell →
+    nucleus → chromosome → DNA → gene with Zoom in and Zoom out. Values: `n` found, `k` to find (each cell counts its
+    own), `l` deepest zoom level (0 to 5).
+  - `widget: coordination` (AC9S9U01): `stimulus: Touching a hot pan | external | Heat receptors | Spinal cord | Arm
+    muscles | You pull your hand away` lines. `mode: pathway`: click a stimulus to send it through the five boxes
+    (`n` tried). `mode: build`: students choose the receptor, command centre and effector from menus; a wrong one names
+    the first wrong step (`c` built, `need` default 3). `mode: race`: a nerve and a hormone response to one fright on
+    a graph (`r` races). `mode: feedback`: body temperature with an Air slider; sweating or shivering switch on away
+    from 37 °C; `break: on` adds Break and Repair for the receptor, control centre and effectors. Values `t`, `v`
+    (temperature), `s` 37, `d` distance from it, `r` recoveries (back within 0.3 °C after more than 0.6 °C away), `b` 1
+    while broken. A toy model: name that real core temperature moves far less.
+  - `widget: cross`: `mode: offspring` (two creatures with three genes; Sexual reproduction and Asexual (a clone of
+    parent 1); `o` sexual offspring, `u` different-looking, `a` clones). `mode: meiosis` (3 chromosome pairs, red from
+    the mother, blue from the father; Make a gamete; `g` made, `u` different, `h` 3). `mode: punnett` with
+    `gene: P | purple flowers | p | white flowers` and `parents: Pp x Pp` (or `choose`): students click-cycle the
+    gametes and grid cells, then Breed 100 offspring (`f` 1 when right, `n` bred, `p` percent dominant). Use traits
+    that really are one gene with full dominance (pea flowers, guinea pig fur), not eye colour.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working
@@ -570,6 +591,12 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
     panel shows the temperature of each quarter. `goal: spread` (default): done when the far end warms.
   Name for students: in the model hot particles are pushed up directly; in a real fluid the warm part rises because
   it has spread out (less dense).
+- **Natural selection** (`selection.js`, 10U02 n1, n2): `widget: selection`. Beetles on pale (`ground: light`) or
+  dark ground, colour from 0 (pale) to 1 (dark). `hunter: student` (click beetles to eat half) or `birds` (they find
+  beetles that contrast with the ground more often, with some luck); then Survivors breed (offspring get the parents'
+  average plus a small random change). Bar charts compare the start with the latest generation. `change: on` adds a
+  button that darkens the ground (after a bushfire). `goal: generations` (default; done after `need`, default 4) or
+  `measure` (no hunting: click beetles to measure; done after `need`, default 20). `n` (40), `mean` (0.5).
 - Boards with hundreds of particles (cooling, convection) draw on a canvas layer over the board (`SCI.dots`), because
   SVG points cannot move that many each frame. After changing any engine, run `node tools/check-engines.mjs`.
 - **Science pathways:** `content/science/index.md` lists Chemistry (built), Biology, Physics and Earth and space.
