@@ -75,7 +75,59 @@ export function makeMath() {
   function sides(s) { var parts = String(s).split('='); return parts.length === 2 && parts[0].trim() && parts[1].trim() ? parts : null; }
   // Does this value make the equation true?
   function satisfies(eq, vars) { var sd = sides(eq); if (!sd) throw new Error('An equation needs one = sign with something on each side.'); return close(evaluate(sd[0], vars), evaluate(sd[1], vars)); }
-  return { parse: parse, evaluate: evaluate, equivalent: equivalent, splitAnswer: splitAnswer, sides: sides, satisfies: satisfies, vars: function (s) { return Object.keys(names(parse(s))); } };
+  // A parsed expression as a function of its variables: compile("mx + c")({ m: 2, c: 1, x: 3 }) = 7.
+  function compile(s) { var t = parse(s); return function (vars) { return ev(t, vars || {}); }; }
+  // Conditions on a board's scope ({ vars: { m: 2 }, points: { A: [1, 3] } }), for board checks:
+  //   "m = 2", "c > 0", "2m + c <= 7"          compare two expressions (= is equal, within rounding)
+  //   "A on y = 2x + 1"                        the point's coordinates make the equation true
+  //   "x(A) = 3", "y(B) > y(A)"                a point's coordinates in an expression
+  //   clause and clause                        all must hold
+  var CMP = /<=|>=|≤|≥|<|>|=/;
+  function clauses(cond) {
+    var cs = String(cond).split(/\band\b/i).map(function (c) { return c.trim(); });
+    if (!cs.every(Boolean)) throw new Error('Something is missing next to "and".');
+    return cs.map(function (c) {
+      var on = /^([A-Z])\s+on\s+(.+)$/.exec(c);
+      if (on) { if (!sides(on[2])) throw new Error('"' + c + '": after "on", write an equation, such as y = 2x + 1.'); return { on: on[1], eq: on[2] }; }
+      var m = CMP.exec(c);
+      if (!m) throw new Error('"' + c + '" needs a comparison (=, <, >, <= or >=), or "A on y = ...".');
+      var a = c.slice(0, m.index), b = c.slice(m.index + m[0].length);
+      if (CMP.test(b)) throw new Error('"' + c + '": use one comparison per part (join parts with "and").');
+      return { a: a, op: { '≤': '<=', '≥': '>=' }[m[0]] || m[0], b: b };
+    });
+  }
+  // x(A), y(A) -> numbers from the scope (or a placeholder when only checking that it parses)
+  function coords(s, points) {
+    return String(s).replace(/\b([xy])\(([A-Z])\)/g, function (m, k, n) {
+      if (!points) return '1';
+      if (!points[n]) throw new Error('There is no point ' + n + '.');
+      var v = points[n][k === 'x' ? 0 : 1]; return '(' + v + ')';
+    });
+  }
+  // Throws a message when the condition cannot be read; returns the point and variable names it uses.
+  function checkCondition(cond) {
+    var used = { vars: {}, points: {} };
+    clauses(cond).forEach(function (c) {
+      String(c.on ? c.eq : c.a + ' ' + c.b).replace(/\b[xy]\(([A-Z])\)/g, function (m, n) { used.points[n] = 1; return m; });
+      if (c.on) { used.points[c.on] = 1; var sd = sides(c.eq); parse(sd[0]); parse(sd[1]); Object.assign(used.vars, names(parse(sd[0])), names(parse(sd[1]))); delete used.vars.x; delete used.vars.y; }
+      else { var ta = parse(coords(c.a)), tb = parse(coords(c.b)); Object.assign(used.vars, names(ta), names(tb)); }
+    });
+    return { vars: Object.keys(used.vars), points: Object.keys(used.points) };
+  }
+  function holds(cond, scope) {
+    scope = scope || {};
+    var vars = scope.vars || {}, points = scope.points || {};
+    return clauses(cond).every(function (c) {
+      if (c.on) {
+        var P = points[c.on];
+        if (!P) throw new Error('There is no point ' + c.on + '.');
+        return satisfies(c.eq, Object.assign({}, vars, { x: P[0], y: P[1] }));
+      }
+      var a = evaluate(coords(c.a, points), vars), b = evaluate(coords(c.b, points), vars), eq = close(a, b);
+      return c.op === '=' ? eq : c.op === '<' ? a < b && !eq : c.op === '>' ? a > b && !eq : c.op === '<=' ? a < b || eq : a > b || eq;
+    });
+  }
+  return { parse: parse, evaluate: evaluate, compile: compile, equivalent: equivalent, splitAnswer: splitAnswer, sides: sides, satisfies: satisfies, holds: holds, checkCondition: checkCondition, vars: function (s) { return Object.keys(names(parse(s))); } };
 }
 
 export const MATH = makeMath();

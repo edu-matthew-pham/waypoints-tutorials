@@ -29,7 +29,7 @@ Each bag on the left holds $x$ blocks, and there are two bags and 3 loose blocks
 ```step
 stage: run
 insight: "The solution is the one value that balances the scale: every other value tips it one way or the other."
-try: { playground: maths, starter: "balance.yml#run", height: 470 }
+try: { playground: board, starter: "balance.yml#run", height: 470 }
 check: { type: board, text: "Find the value of $x$ that balances the scale.", expect: { balanced: true } }
 ```
 
@@ -91,7 +91,7 @@ Look for the = sign.
 ```step
 stage: modify
 insight: "The idea holds for any equation, even with the letter on both sides, and some equations have no whole-number solution at all."
-try: { playground: maths, starter: "balance.yml#four-x", height: 470 }
+try: { playground: board, starter: "balance.yml#four-x", height: 470 }
 tasks:
   - starter: "balance.yml#four-x"
     hint: "Each bag holds the same number of blocks. How many blocks are on the right, shared between four bags?"

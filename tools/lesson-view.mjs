@@ -338,14 +338,14 @@ if(go){go.addEventListener('click',function(){
 var pick=box.querySelector('input[type=radio]:checked');
 if(!pick){msg.className='msg no';msg.textContent='Choose an answer first.';return}
 if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
-else{msg.className='msg no';var fbk=box.dataset.feedback?JSON.parse(box.dataset.feedback)[Number(pick.value)]:'';msg.textContent=fbk?'Not quite. '+fbk:(kind==='maths'||kind==='science')?'Not quite. Read it again and try another answer.':'Not quite. Look at the code again and try another answer.'}})}
+else{msg.className='msg no';var fbk=box.dataset.feedback?JSON.parse(box.dataset.feedback)[Number(pick.value)]:'';msg.textContent=fbk?'Not quite. '+fbk:(box.dataset.subj==='maths'||box.dataset.subj==='science'||kind==='science')?'Not quite. Read it again and try another answer.':'Not quite. Look at the code again and try another answer.'}})}
 function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
 function bad(t){msg.className='msg no';msg.textContent=t}
 var btn=box.querySelector('button');
 if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(box.querySelector('input').value);if(isNaN(v))return bad('Type a number first.');
-if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad(kind==='maths'?'Not quite. Check your working and try another number.':'Not quite. Look at the code again and try another number.')})}
+if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad(box.dataset.subj==='maths'?'Not quite. Check your working and try another number.':'Not quite. Look at the code again and try another number.')})}
 if(ty==='bug'){var good=JSON.parse(box.dataset.answers).map(String),found={};[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
-var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad(kind==='maths'?'Not that line. Read the working again, one line at a time.':'Not that line. Read the code again, one line at a time.')}})})}
+var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad(box.dataset.subj==='maths'?'Not that line. Read the working again, one line at a time.':'Not that line. Read the code again, one line at a time.')}})})}
 if(ty==='sort'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
 [].forEach.call(box.querySelectorAll('.srow'),function(r,i){var sel=r.querySelector('select'),ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false;var w=r.querySelector('.swhy');if(w)w.hidden=!ok});
 if(all)win();else bad('Some are not in the right group yet. Check the ones outlined in red.')})}
@@ -354,7 +354,7 @@ if(ty==='match'&&btn){btn.addEventListener('click',function(){var want=JSON.pars
 if(all)win();else bad('Some do not match yet. Check the ones outlined in red.')})}
 if(ty==='trace'&&btn){btn.addEventListener('click',function(){var all=true;
 [].forEach.call(box.querySelectorAll('input.tcell'),function(inp){var nz=function(t){return t.trim().replace(/÷/g,'/').replace(/×/g,'*').replace(/[−–]/g,'-').replace(/\\s*([+*\\/-])\\s*/g,'$1')};var a=inp.dataset.answer,v=inp.value.trim(),ok=v!==''&&(v===a||nz(v)===nz(a)||(!isNaN(Number(v))&&!isNaN(Number(a))&&Number(v)===Number(a)));inp.className='tcell '+(ok?'ok':'no');if(!ok)all=false});
-if(all)win();else bad(kind==='maths'?'Some cells are not right yet. Work through it again, one step at a time.':'Some cells are not right yet. Trace the code again, one step at a time.')})}
+if(all)win();else bad(box.dataset.subj==='maths'?'Some cells are not right yet. Work through it again, one step at a time.':'Some cells are not right yet. Trace the code again, one step at a time.')})}
 if(ty==='predict'&&btn){var PK='wp-predict';
 function pload(){try{return JSON.parse(localStorage.getItem(PK))||{}}catch(e){return {}}}
 function plock(v){var p=pload();p[key]=v;try{localStorage.setItem(PK,JSON.stringify(p))}catch(e){}}
@@ -372,9 +372,9 @@ var a=WPM.splitAnswer(v).value;if(WPM.equivalent(a,box.dataset.answer))return wi
 for(var i=0;i<fb.length;i++){try{if(WPM.equivalent(a,String(fb[i][0])))return bad(fb[i][1])}catch(e){}}
 bad('Not quite. Check your working and try again.')}catch(e){bad(e.message)}}
 btn.addEventListener('click',tryIt);inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryIt()})}
-if(ty==='board'){var want=JSON.parse(box.dataset.expect);
-window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.kind!==box.dataset.kind||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
-var ok=Object.keys(want).every(function(k){var a=m.state&&m.state[k],b=want[k];return typeof b==='number'?Math.abs(Number(a)-b)<1e-9:a===b});
+if(ty==='board'){var want=JSON.parse(box.dataset.expect||'{}');
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||(m.kind==='maths'?'board':m.kind)!==(box.dataset.kind==='maths'?'board':box.dataset.kind)||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
+var ok=Object.keys(want).every(function(k){var a=m.state&&m.state[k],b=want[k];return typeof b==='number'?Math.abs(Number(a)-b)<1e-9:a===b});if(ok&&box.dataset.when){try{ok=WPM.holds(box.dataset.when,m.state&&m.state.scope)}catch(er){ok=false}}
 if(ok){if(!box.classList.contains('done'))win()}else if(!box.classList.contains('done')){msg.className='msg';msg.textContent='Keep going.'}})}
 });
 document.querySelectorAll('.compare').forEach(function(c){var pk=c.dataset.predict;
@@ -419,12 +419,12 @@ li.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain',
 li.addEventListener('drop',function(e){e.preventDefault();var f=Number(e.dataTransfer.getData('text/plain'));if(isNaN(f)||f===n)return;var t=inProg.splice(f,1)[0];inProg.splice(n,0,t);draw()});
 prog.appendChild(li)})}
 draw();
-box.querySelector('.pcheck').addEventListener('click',function(){if(JSON.stringify(inProg.map(function(o){return o.t}))===JSON.stringify(lines))win();else bad(inProg.length<lines.length?'Keep going: some lines are still in the pieces list, or not needed.':(box.dataset.kind==='maths'?'Not in the right order yet. Read your steps top to bottom: does each line follow from the one above?':'Not in the right order yet. Read your program top to bottom and picture what it does.'))});
+box.querySelector('.pcheck').addEventListener('click',function(){if(JSON.stringify(inProg.map(function(o){return o.t}))===JSON.stringify(lines))win();else bad(inProg.length<lines.length?'Keep going: some lines are still in the pieces list, or not needed.':(box.dataset.subj==='maths'?'Not in the right order yet. Read your steps top to bottom: does each line follow from the one above?':'Not in the right order yet. Read your program top to bottom and picture what it does.'))});
 box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw()})}
 [].forEach.call(document.querySelectorAll('.tasks'),function(w){
 [].forEach.call(w.querySelectorAll('.tp'),function(p){p.addEventListener('click',function(){var i=p.dataset.i;
 [].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))});
-if(w.dataset.kind==='maths'||w.dataset.kind==='science'){var rs=w.querySelector('.tpanel.active .resetstart'),f=w.querySelector('iframe');if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
+if(w.dataset.kind==='board'||w.dataset.kind==='maths'||w.dataset.kind==='science'){var rs=w.querySelector('.tpanel.active .resetstart'),f=w.querySelector('iframe');if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
 [].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=w.querySelector('iframe');if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
 sync(w)});
 })();`;
@@ -452,7 +452,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
   // Explanations are shown with textContent, so maths in them is shown as plain text: "$2x$" becomes "2x".
   const plain = (t) => (lesson.language === 'maths' ? String(t).replace(/\$([^$]+)\$/g, '$1') : t);
   const explain = plain(k.explain || '');
-  const base = `data-key="${esc(key)}" data-play="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(explain)}"`;
+  const base = `data-key="${esc(key)}" data-play="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-subj="${esc(lesson.language || '')}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(explain)}"`;
   const msg = '<p class="msg" aria-live="polite"></p>';
   if (k.type === 'reflect') {
     return `<div class="check" ${base}><label><input type="checkbox"><span>${tx(k.text)}</span></label>${msg}</div>`;
@@ -467,7 +467,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
     return `<div class="check" ${base} ${data} data-feedback="${esc(JSON.stringify(k.feedback || []))}"><p class="check-q">${tx(k.q)}</p><label class="numrow ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your answer" placeholder="${k.equation ? 'for example 2x = 10' : 'Your answer'}"></label><button type="button">Check answer</button>${msg}</div>`;
   }
   if (k.type === 'board') {
-    return `<div class="check" ${base} data-expect="${esc(JSON.stringify(k.expect))}"><p class="check-q">${tx(k.text)}</p><p class="msg" aria-live="polite">Use the board. This ticks when you get there.</p></div>`;
+    return `<div class="check" ${base} data-expect="${esc(JSON.stringify(k.expect || {}))}"${k.when !== undefined ? ` data-when="${esc(String(k.when))}"` : ''}><p class="check-q">${tx(k.text)}</p><p class="msg" aria-live="polite">Use the board. This ticks when you get there.</p></div>`;
   }
   if (k.type === 'number') {
     return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"><p class="check-q">${tx(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
@@ -654,7 +654,8 @@ ${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<
 export const PLAYGROUNDS = {
   turtle: { dir: '_playground', title: 'Python turtle playground' },
   html: { dir: '_playground-html', title: 'HTML and CSS playground' },
-  maths: { dir: '_playground-maths', title: 'Maths board' },
+  board: { dir: '_playground-board', title: 'Board' },
+  maths: { dir: '_playground-board', title: 'Board' },
   microbit: { dir: '_playground-makecode', title: 'micro:bit MakeCode editor', height: 640 },
   arcade: { dir: '_playground-makecode', title: 'MakeCode Arcade editor', height: 640 },
   science: { dir: '_playground-science', title: 'Science board' },

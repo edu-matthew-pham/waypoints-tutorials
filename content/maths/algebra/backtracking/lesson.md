@@ -27,7 +27,7 @@ How did you work it out? Which step did you undo first?
 ```step
 stage: run
 insight: "Undoing has an order: the last thing the machine did is the first thing to undo."
-try: { playground: maths, starter: "machine.yml#run", height: 400 }
+try: { playground: board, starter: "machine.yml#run", height: 400 }
 check: { type: board, text: "Undo every step to find $x$.", expect: { solved: true } }
 ```
 
@@ -92,7 +92,7 @@ Mia's answer fails the check. Which step did she undo first?
 ```step
 stage: modify
 insight: "The order of the machine decides the order of undoing, including when the machine adds before it multiplies (brackets)."
-try: { playground: maths, starter: "machine.yml#one-step", height: 400 }
+try: { playground: board, starter: "machine.yml#one-step", height: 400 }
 tasks:
   - starter: "machine.yml#one-step"
     check: { type: board, text: "Solve $x + 9 = 15$.", expect: { solved: true } }

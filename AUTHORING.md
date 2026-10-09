@@ -393,7 +393,7 @@ and a one-line description.
 
 ## 11. Maths lessons
 
-A lesson with `language: maths` (see `content/maths/algebra/`) gets maths notation, maths checks and the maths board.
+A lesson with `language: maths` (see `content/maths/algebra/`) gets maths notation, maths checks and the board.
 How maths lessons are sequenced, and why, is in the Project note `maths-structure.md` (Predict, Try, Worked example,
 Vary, Practise, Make).
 
@@ -413,17 +413,35 @@ Vary, Practise, Make).
   `equation: { x: 6 }` instead passes any equation that value makes true (for Make tasks). `feedback:` is a list of
   `[wrong answer, what to say]` pairs for planted misconceptions; validate rejects feedback that is the right answer.
   Equivalence is tested by evaluating at several values (`tools/math-expr.mjs`), so it handles algebra like `2(x + 1)`.
-- **`board` check:** ticks when the maths board reports `expect` (`balanced`, `solved` or `x`). It needs
-  `try: { playground: maths, starter: file#region }` on the step, and never ticks on the starting position.
+- **`board` check:** ticks when the board reports what the check asks for, and never on the starting position. It
+  needs `try: { playground: board, starter: file#region }` on the step (`maths` is the old name and still works).
+  - `when:` a condition on the board's named values (any board with sliders or points): `"m = -1 and c = 2"`,
+    `"c > 0"`, `"P on y = mx + c"` (the point's coordinates make the equation true), `"x(A) = 3"`, `"y(B) > y(A)"`.
+    Comparisons are `=`, `<`, `>`, `<=`, `>=`; join parts with `and`. Validate checks that it can be read.
+  - `expect:` fields of the balance or machine report: `balanced`, `solved` or `x`. With both, both must hold.
 - **Practise stage:** `stage: practise`, between Modify and Make: a few `answer` checks with feedback.
-- **The maths board** (`playground-maths/`, JSXGraph): the starter is a `key: value` region in a `.yml` file.
+- **The board** (`playground-board/`, JSXGraph): interactive diagrams for any subject. `core.js` reads the setup and
+  reports to the lesson; each widget is a file in `widgets/`. The starter is a region in a `.yml` file, one line each:
+  `key: value` (a setting) or `kind name: value` (a named object). `# ...` starts a comment.
   - `widget: balance` with `left:` and `right:` (one variable). `mode: try` (default): a slider for x; the scale tips
     and shows each side worked out. `mode: solve`: take blocks or bags of x from both sides, or share both sides into
     equal groups; the scale stays level, the steps are written as algebra, and the answer is checked in the first
     equation. Both sides must be whole-number bags and blocks (such as `2x + 3`).
   - `widget: machine` with `ops: × 2, + 3` and `output: 11`: students undo the steps from the output, last step
     first; a wrong undo gets a nudge, not the answer.
-  - Each task's `starter` loads its own board when the task is opened.
+  - `widget: graph`: axes, with
+    - `x: -1, 10` and `y: -1, 20` (ranges; default -10 to 10), `grid: 1` (spacing, or `off`), `snap: 0.5` (where
+      dragged points land; default the grid spacing);
+    - `slider m: 0, 5, 2` (min, max, start, optional step; one lower-case letter, not x or y): shown with − and +
+      buttons, and usable in plots and points;
+    - `plot: y = mx + c` (up to 4): drawn, and listed under the graph with the slider values put in (`y = 2x + 1`);
+    - `point A: 2, 5` (fixed; coordinates may use sliders, as in `point B: 0, c`) and `point P: 1, 3, drag`
+      (students drag it; it snaps); one capital letter each;
+    - `segment: A, B` or `line: A, B`; `table: 0, 1, 2, 3` (a table of values of each plot at these x values).
+  - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
+    `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
+  - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working
+    (the embedding contract is in the project notes).
 - **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

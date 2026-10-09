@@ -7,8 +7,10 @@ import { MATH } from './math-expr.mjs';
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
 export const LAYOUTS = ['split', 'full'];
-export const PLAYGROUND_KINDS = ['turtle', 'html', 'maths', 'microbit', 'arcade', 'science'];
-/** What a board check can expect from a board's report: the maths board, and the science board (done: the widget's task is finished). */
+// board: interactive diagrams (balance, machine, graph…); maths is its old name and still works.
+export const PLAYGROUND_KINDS = ['turtle', 'html', 'board', 'maths', 'microbit', 'arcade', 'science'];
+const isBoard = (pg) => ['board', 'maths', 'science'].includes(pg);
+/** What a board check can expect from a board's report: the board (balance, machine), and the science board (done: the widget's task is finished). Newer boards use when: conditions. */
 export const BOARD_KEYS = ['balanced', 'solved', 'x'];
 export const SCIENCE_BOARD_KEYS = ['done'];
 /** Width tiers (the XY Model): a step marked typical or wider adds contexts beyond the minimum path; students can widen, not narrow. */
@@ -378,10 +380,19 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     }
     else if (k.type === 'board') {
       if (!str(k.text)) err(where, 'check (board) needs text, e.g. "Find the value of x that balances the scale."');
-      const keys = c.try?.playground === 'science' ? SCIENCE_BOARD_KEYS : BOARD_KEYS;
-      if (!k.expect || typeof k.expect !== 'object' || Array.isArray(k.expect) || !Object.keys(k.expect).length) err(where, `check (board) needs expect: a mapping using ${keys.join(', ')}`);
-      else for (const key of Object.keys(k.expect)) if (!keys.includes(key)) err(where, `check (board) cannot expect "${key}" (use ${keys.join(', ')})`);
-      if (!c.try || !['maths', 'science'].includes(c.try.playground)) err(where, 'a board check needs a board on the step (try: { playground: maths or science, starter: ... })');
+      // expect: fields of the board's report; when: a condition on its scope (the board, not the science board),
+      // such as "A on y = 2x + 1" or "m = 3 and c > 0". With both, both must hold.
+      const sci = c.try?.playground === 'science', keys = sci ? SCIENCE_BOARD_KEYS : BOARD_KEYS;
+      if (k.expect === undefined && (k.when === undefined || sci)) err(where, sci ? `check (board) needs expect: a mapping using ${keys.join(', ')}` : `check (board) needs when: (a condition, such as "A on y = 2x + 1") or expect: (using ${keys.join(', ')})`);
+      if (k.expect !== undefined) {
+        if (!k.expect || typeof k.expect !== 'object' || Array.isArray(k.expect) || !Object.keys(k.expect).length) err(where, `check (board) expect must be a mapping using ${keys.join(', ')}`);
+        else for (const key of Object.keys(k.expect)) if (!keys.includes(key)) err(where, `check (board) cannot expect "${key}" (use ${keys.join(', ')})`);
+      }
+      if (k.when !== undefined) {
+        if (sci) err(where, 'check (board) when: works on the board, not the science board (use expect: { done: true })');
+        else { try { MATH.checkCondition(String(k.when)); } catch (e) { err(where, `check (board) when "${k.when}": ${e.message}`); } }
+      }
+      if (!c.try || !isBoard(c.try.playground)) err(where, 'a board check needs a board on the step (try: { playground: board or science, starter: ... })');
     }
     else if (k.type === 'trace') {
       if (!str(k.table)) err(where, 'check (trace) needs table: a pipe table with blanks in [brackets]');

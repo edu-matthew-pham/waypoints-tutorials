@@ -26,7 +26,7 @@ const rendererSrc = readFileSync(fileURLToPath(import.meta.url), 'utf8');
 // ---------- cache ----------
 // Clips show a playground, so a change to the playground a lesson uses (or its snippets) must re-record
 // that lesson's clips. Only that playground counts: editing the micro:bit snippets leaves turtle clips alone.
-const SNIPPETS = { playground: 'turtle', 'playground-html': 'html', 'playground-makecode': 'microbit', 'playground-maths': 'maths' };
+const SNIPPETS = { playground: 'turtle', 'playground-html': 'html', 'playground-makecode': 'microbit', 'playground-maths': 'maths', 'playground-board': 'maths' };
 const sharedCache = new Map();
 function sharedFilesHash(lesson) {
   const pg = String(lesson.app?.command ?? '').match(/_(playground[\w-]*)/)?.[1];

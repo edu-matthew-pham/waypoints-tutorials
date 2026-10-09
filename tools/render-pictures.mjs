@@ -223,10 +223,10 @@ await pictures({
 // cropped to what is drawn (anything unlike the board's background), ignoring the board's own border.
 if (existsSync('snippets/maths.json')) await pictures({
   name: 'maths', dir: join(DIR, 'maths'), viewport: { width: 760, height: 430 },
-  base: hashDir('playground-maths', readFileSync(new URL(import.meta.url)), 'maths-v1'),
+  base: hashDir('playground-board', readFileSync(new URL(import.meta.url)), 'maths-v1'),
   jobs: JSON.parse(readFileSync('snippets/maths.json', 'utf8')).groups.flatMap((g) => g.items.filter((i) => i.board).map((i) => ({ id: `maths-${snippetId(i.label)}`, code: i.board }))),
   async draw(page, j) {
-    await page.goto(`http://localhost:${port}/_playground-maths/index.html?id=picture&code=${encodeURIComponent(j.code)}`);
+    await page.goto(`http://localhost:${port}/_playground-board/index.html?id=picture&code=${encodeURIComponent(j.code)}`);
     const sel = /widget:\s*machine/.test(j.code) ? '#mrow' : '#board';
     await page.waitForSelector(sel === '#mrow' ? '#mrow .mbox' : '#board svg', { timeout: 20000 });
     await page.waitForTimeout(400);

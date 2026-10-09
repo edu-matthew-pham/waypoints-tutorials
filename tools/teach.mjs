@@ -166,9 +166,11 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
   // Board steps (maths and science) put the live board on the slide: {{embed: URL}}, which Waypoints Prepare
   // loads only while the slide is on screen (a link in PowerPoint and print). Other playgrounds open the step.
   const boardUrl = (step) => {
-    const t = step.config.try, dir = { maths: '_playground-maths', science: '_playground-science' }[t?.playground];
+    const t = step.config.try, dir = { board: '_playground-board', maths: '_playground-board', science: '_playground-science' }[t?.playground];
     if (!dir || !t.starter) return null;
-    return `${SITE_URL}/${dir}/index.html?${new URLSearchParams({ id: `deck/${lesson.slug}/${step.id}`, code: snip(t.starter) })}`;
+    // fresh=1: a projector shows the starting board every time, not the last class's work (the science board saves nothing anyway).
+    const q = { id: `deck/${lesson.slug}/${step.id}`, code: snip(t.starter), ...(dir === '_playground-board' ? { fresh: '1' } : {}) };
+    return `${SITE_URL}/${dir}/index.html?${new URLSearchParams(q)}`;
   };
   const boardSlide = (step, heading) => `${BADGE.activity}\n\n## ${heading}\n\n{{embed: ${boardUrl(step)}}}\n\n[Open this step in the tutorial](${stepUrl(lesson, step)})`;
   const runIt = (step, label = LANG === 'maths' ? 'Try it' : LANG === 'science' ? 'Explore it' : 'Run it') => boardUrl(step) ? boardSlide(step, label) : `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;

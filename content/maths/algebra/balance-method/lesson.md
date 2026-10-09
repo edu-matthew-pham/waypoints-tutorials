@@ -27,7 +27,7 @@ The left side has two bags of $x$ and 3 blocks. The right side has 11 blocks. Pi
 ```step
 stage: run
 insight: "Taking the same from both sides, then sharing both sides equally, keeps the equation true at every step and leaves x alone."
-try: { playground: maths, starter: "solve.yml#run", height: 520 }
+try: { playground: board, starter: "solve.yml#run", height: 520 }
 check: { type: board, text: "Get $x$ on its own on one side.", expect: { solved: true } }
 ```
 
@@ -87,7 +87,7 @@ Either step keeps the balance. One keeps the numbers simpler.
 ```step
 stage: modify
 insight: "Taking away bags of x from both sides is the same move as taking away blocks, and it handles x on both sides."
-try: { playground: maths, starter: "solve.yml#four-x", height: 520 }
+try: { playground: board, starter: "solve.yml#four-x", height: 520 }
 tasks:
   - starter: "solve.yml#four-x"
     check: { type: board, text: "Solve $4x + 7 = 31$ on the scale.", expect: { solved: true } }

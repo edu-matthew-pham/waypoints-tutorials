@@ -77,10 +77,15 @@ export function buildHtmlPlayground(out = 'dist') {
 }
 
 /** The maths board: our files, vendored JSXGraph, and the shared maths evaluator (tools/maths.mjs) as maths.js. */
+/**
+ * The board (interactive diagrams: balance, machine, graph…): JSXGraph plus the shared maths evaluator.
+ * _playground-maths/ is its old address: a page there forwards to the board, so existing embeds keep working
+ * (see the board's embedding contract).
+ */
 export async function buildMathsPlayground(out = 'dist') {
-  const dest = join(out, '_playground-maths');
+  const dest = join(out, '_playground-board');
   rmSync(dest, { recursive: true, force: true });
-  cpSync(join(root, 'playground-maths'), dest, { recursive: true });
+  cpSync(join(root, 'playground-board'), dest, { recursive: true });
   mkdirSync(join(dest, 'vendor'), { recursive: true });
   for (const f of ['jsxgraphcore.js', 'jsxgraph.css']) {
     const src = join(root, 'node_modules', 'jsxgraph', 'distrib', f);
@@ -90,6 +95,11 @@ export async function buildMathsPlayground(out = 'dist') {
   const { MATH_JS } = await import('./math-expr.mjs');
   writeFileSync(join(dest, 'maths.js'), MATH_JS + '\n');
   stampPlayground(dest);
+  const old = join(out, '_playground-maths');
+  rmSync(old, { recursive: true, force: true });
+  mkdirSync(old, { recursive: true });
+  writeFileSync(join(old, 'index.html'), `<!doctype html><meta charset="utf-8"><title>Board</title><script>var q=new URLSearchParams(location.search);if(!q.has('kind'))q.set('kind','maths');location.replace('../_playground-board/index.html?'+q.toString()+location.hash)</script>\n`);
+  writeFileSync(join(old, 'version.txt'), readFileSync(join(dest, 'version.txt')));
   return dest;
 }
 
@@ -132,7 +142,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const out = process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist';
   console.log('Playground built into ' + buildPlayground(out));
   console.log('HTML playground built into ' + buildHtmlPlayground(out));
-  console.log('Maths board built into ' + await buildMathsPlayground(out));
+  console.log('Board built into ' + await buildMathsPlayground(out));
   console.log('MakeCode playground built into ' + buildMakecodePlayground(out));
   console.log('Science board built into ' + buildSciencePlayground(out));
 }

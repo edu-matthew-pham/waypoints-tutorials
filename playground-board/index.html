@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Maths board</title>
+<title>Board</title>
 <link rel="stylesheet" href="vendor/jsxgraph.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-  <div id="board" class="jxgbox" role="img" aria-label="A balance scale"></div>
+  <div id="board" class="jxgbox" role="img" aria-label=""></div>
   <!-- Balance, try mode: change x and watch the scale -->
   <div id="controls" hidden>
     <label for="xval" id="xlabel">x</label>
@@ -46,11 +46,17 @@
     </div>
     <ol id="mhistory" aria-label="Your steps"></ol>
   </div>
+  <!-- Graph: sliders, the relations with their values, a table of values -->
+  <div id="gpanel" hidden></div>
   <p id="status" aria-live="polite"></p>
   <p id="error" hidden></p>
 </main>
 <script src="vendor/jsxgraphcore.js"></script>
 <script src="maths.js"></script>
-<script src="main.js"></script>
+<script src="core.js"></script>
+<script src="widgets/balance.js"></script>
+<script src="widgets/machine.js"></script>
+<script src="widgets/graph.js"></script>
+<script>WPB.boot();</script>
 </body>
 </html>
