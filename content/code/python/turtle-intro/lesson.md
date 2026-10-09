@@ -12,6 +12,29 @@ app:
 pacing:
   keyDelayMs: 30
 hook: "Loops are how a program draws 100 tiles, sends 100 emails or reads 100 sensors without 100 lines of code."
+voice: true
+explainClip:
+  query: { code: "", speed: 6 }
+  caption: "A loop repeats lines, so you write them once"
+  say: "A program runs from the top down, and a loop repeats lines for you."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - type: { into: "Python code", text: "from turtle import *\n\n", append: true }
+    - caption:
+        text: "for i in range(4): does the indented lines 4 times."
+        say: "A for loop does the lines indented under it, here four times."
+    - type: { into: "Python code", text: "for i in range(4):\n", append: true }
+    - caption:
+        text: "forward(100) draws a line. right(90) turns a quarter turn."
+        say: "forward 100 draws a line, and right 90 turns a quarter of a full turn."
+    - type: { into: "Python code", text: "    forward(100)\n    right(90)\n", append: true }
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Finished" }
+    - caption:
+        text: "4 turns of 90 make one full turn: 360 degrees."
+        say: "Four turns of 90 degrees add up to one full turn, 360 degrees."
+    - wait: 1200
+    - expect: { selector: "#turtle-state", contains: "heading 0" }
 ---
 A turtle walks across the screen, leaving a line behind. Your program tells it where to go.
 

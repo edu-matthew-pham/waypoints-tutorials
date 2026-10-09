@@ -5,6 +5,34 @@ title: Decisions
 summary: Make a program choose between two things with if and else.
 language: python
 hook: "Traffic lights, game scores, login screens and thermostats all do the same thing: check a condition and pick what happens next."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "", speed: 8 }
+  caption: "if lets the program choose which lines run"
+  say: "An if lets your program choose which lines to run."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - type: { into: "Python code", text: "from turtle import *\n\npensize(5)\nfor i in range(6):\n", append: true }
+    - caption:
+        text: "if i % 2 == 0: asks a question. % is the remainder."
+        say: "The if asks a question: does i divide by two with nothing left over?"
+    - type: { into: "Python code", text: "    if i % 2 == 0:\n        pencolor(\"red\")\n", append: true }
+    - caption:
+        text: "Yes: the lines under if run. No: the lines under else run."
+        say: "If yes, the lines under if run. If not, the lines under else run."
+    - type: { into: "Python code", text: "    else:\n        pencolor(\"blue\")\n    forward(80)\n    left(60)\n", append: true }
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Finished" }
+    - caption:
+        text: "Even sides red, odd sides blue. == asks, = stores."
+        say: "Even sides are red, odd sides blue. Two equals signs ask; one stores."
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Finished" }
 ---
 So far every line of your program has run, in order, every time. Now the program will **choose**: run these lines if something is true, and those lines if it is not.
 

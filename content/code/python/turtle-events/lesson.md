@@ -5,6 +5,34 @@ title: Events
 summary: Make a program wait, then react when something happens.
 language: python
 hook: "Every app you use is waiting: for a tap, a key or a timer. Code runs when an event happens, not from top to bottom."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "", speed: 10 }
+  caption: "The program waits for a click, then runs a function"
+  say: "Most apps wait for something to happen, then run a function."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - type: { into: "Python code", text: "from turtle import *\n\nhideturtle()\npenup()\n\ndef stamp(x, y):\n    goto(x, y)\n    dot(30, \"orange\")\n\n", append: true }
+    - caption:
+        text: "onscreenclick(stamp) hands over the name, with no brackets."
+        say: "On screen click hands over the function name, with no brackets."
+    - type: { into: "Python code", text: "onscreenclick(stamp)\nmainloop()\n", append: true }
+    - caption:
+        text: "mainloop() waits for events until you press Stop."
+        say: "mainloop keeps the program waiting for events, until you press Stop."
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Running" }
+    - caption:
+        text: "A click runs stamp, with the x and y of the click."
+        say: "Each click runs stamp, and tells it where you clicked."
+    - click: { selector: "#canvas" }
+    - wait: 1500
+    - expect: { selector: "#status", contains: "Running" }
 ---
 Until now your program ran from the top to the bottom and stopped. Programs with a user interface do not work like that. They **wait**, and run a function when something happens. That function is called a **callback**.
 

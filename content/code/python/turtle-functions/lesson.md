@@ -5,6 +5,36 @@ title: Functions
 summary: Give a group of commands a name, then use that name again and again.
 language: python
 hook: "Every app is built from small named functions that other code calls. You are about to write your first."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "", speed: 8 }
+  caption: "def teaches Python a new word; calling it runs the steps"
+  say: "A function is a named set of steps. def teaches Python a new word."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - type: { into: "Python code", text: "from turtle import *\n\ndef square():\n    for i in range(4):\n        forward(40)\n        right(90)\n\n", append: true }
+    - caption:
+        text: "Run it: nothing is drawn. The def only says what square means."
+        say: "Run it, and nothing is drawn. The def only says what square means."
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Finished" }
+    - caption:
+        text: "The steps run when you call it: square()"
+        say: "The steps run when you call it, by its name with brackets."
+    - type: { into: "Python code", text: "square()\nforward(60)\nsquare()\nforward(60)\nsquare()\n", append: true }
+    - click: "Run"
+    - wait: 400
+    - expect: { selector: "#status", contains: "Finished" }
+    - caption:
+        text: "Three calls, three squares. Change the def once and all three change."
+        say: "Three calls, three squares. Change the def once, and every square changes."
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Finished" }
 ---
 You already know how to repeat steps with a loop. Now you will give a whole shape a **name**.
 

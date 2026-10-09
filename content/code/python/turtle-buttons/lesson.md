@@ -6,6 +6,57 @@ summary: Turtle has no buttons, so build one from a rectangle and a click check.
 language: python
 modules: [ui]
 hook: "Frameworks give you a button in one line. Underneath, it is a rectangle, a label and a check that a click landed inside. You are about to build all three."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query:
+    code: |
+      from turtle import *
+
+      hideturtle()
+      bx = -60
+      by = -25
+      bw = 120
+      bh = 50
+
+      penup()
+      goto(bx, by)
+      pendown()
+      for i in range(2):
+          forward(bw)
+          left(90)
+          forward(bh)
+          left(90)
+      penup()
+      goto(bx + 10, by + 15)
+      write("Press me")
+    speed: 10
+  caption: "A button is a rectangle, a label and a check"
+  say: "A button is three things: a rectangle, a label, and a check."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - caption:
+        text: "The rectangle and label are drawn. Now the check."
+        say: "The rectangle and the label are drawn already. Now for the check."
+    - caption:
+        text: "Inside: x between the left and right edges, y between bottom and top."
+        say: "Inside means x is between the side edges, and y between bottom and top."
+    - type: { into: "Python code", text: "\ndef clicked(x, y):\n    if x > bx and x < bx + bw and y > by and y < by + bh:\n        print(\"button pressed\")\n", append: true }
+    - caption: "All four must be true, so they are joined with and."
+    - type: { into: "Python code", text: "\nonscreenclick(clicked)\nmainloop()\n", append: true }
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Running" }
+    - click: { selector: "#canvas" }
+    - expect: { selector: "#output", contains: "button pressed" }
+    - caption:
+        text: "A real app then changes something and redraws the screen."
+        say: "A real app would then change something, and redraw the screen."
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Running" }
 ---
 A button is not magic. It is a **rectangle**, a **label**, and a check that asks: *did the click land inside the rectangle?*
 

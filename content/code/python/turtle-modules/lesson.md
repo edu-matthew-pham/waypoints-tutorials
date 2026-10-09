@@ -6,6 +6,33 @@ summary: Keep related functions together in a file you can import, like a toolbo
 language: python
 modules: [shapes]
 hook: "Every Python program you will ever use imports other people's modules. Now you will build your own."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "", speed: 8, use: "shapes" }
+  caption: "A module is a file of functions any program can use"
+  say: "A module is a file of related functions that any program can use."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - caption:
+        text: "from shapes import square brings square in from shapes.py."
+        say: "This line brings the square function in, from the file shapes dot py."
+    - type: { into: "Python code", text: "from turtle import *\nfrom shapes import square\n\n", append: true }
+    - caption:
+        text: "Now call it like any function."
+        say: "Now call it, like any other function."
+    - type: { into: "Python code", text: "square(60)\nright(45)\nsquare(60)\n", append: true }
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Finished" }
+    - caption:
+        text: "One copy, in the module: fix it once, and every program gets the fix."
+        say: "There is one copy, in the module, so one fix fixes every program."
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Finished" }
 ---
 You have written several functions. A **module** is a file that holds related functions, so any program can import them.
 

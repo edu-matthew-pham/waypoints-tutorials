@@ -5,6 +5,37 @@ title: Variables and operations
 summary: Give a number a name, then calculate with it.
 language: python
 hook: "Games keep score, maps keep scale and apps keep your settings. All of them store a value under a name and calculate with it."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "", speed: 8 }
+  caption: "A variable is a name for a value"
+  say: "A variable is a name for a value, like a labelled box."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - caption:
+        text: "sides = 5 stores 5 in a box called sides."
+        say: "sides equals 5 stores five in a box called sides."
+    - type: { into: "Python code", text: "from turtle import *\n\nsides = 5\n", append: true }
+    - caption:
+        text: "angle = 360 / sides works out the turn for you."
+        say: "angle equals 360 divided by sides works out the turn for you."
+    - type: { into: "Python code", text: "angle = 360 / sides\n\nfor i in range(sides):\n    forward(80)\n    left(angle)\n", append: true }
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Finished" }
+    - caption: "Change sides and the turn updates by itself."
+    - type: { into: "Python code", text: "", after: "sides = 5" }
+    - press: "Backspace"
+    - type: { into: "Python code", text: "8", after: "sides = " }
+    - click: "Run"
+    - wait: 400
+    - expect: { selector: "#status", contains: "Finished" }
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Finished" }
 ---
 In the last lesson the numbers were typed straight into each command. Here you give a number a **name**, so you can change it in one place and calculate with it.
 

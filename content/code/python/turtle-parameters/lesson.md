@@ -5,6 +5,33 @@ title: Functions with parameters
 summary: Make one function draw many different shapes, and keep your best ones as tools.
 language: python
 hook: "One well-made function can do the work of a hundred copied lines: sending a message, drawing a tile, converting a unit."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "", speed: 8 }
+  caption: "A parameter lets a function take an input"
+  say: "A parameter lets a function take an input."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - type: { into: "Python code", text: "from turtle import *\n\ndef square(size):\n    for i in range(4):\n        forward(size)\n        right(90)\n\n", append: true }
+    - caption:
+        text: "size is a placeholder for the input."
+        say: "size is a placeholder. The function uses whatever value it is given."
+    - caption:
+        text: "square(30) puts 30 into size; square(90) puts in 90."
+        say: "Calling square with 30 puts thirty into size. Ninety puts in ninety."
+    - type: { into: "Python code", text: "square(30)\nsquare(60)\nsquare(90)\n", append: true }
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Finished" }
+    - caption:
+        text: "One function, three sizes."
+        say: "One function, three different sizes, from the values you pass in."
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Finished" }
 ---
 Last lesson `square()` always drew the same size. A **parameter** lets each call say what it needs.
 

@@ -5,6 +5,34 @@ title: Functions that give answers
 summary: Return a value, combine functions, and use them inside loops.
 language: python
 hook: "Calculators, maps and games are full of functions that take something in and give an answer back."
+app:
+  command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
+  url: "http://127.0.0.1:8123/index.html"
+  ready: Python code
+  layout: full
+voice: true
+explainClip:
+  query: { code: "", speed: 8 }
+  caption: "return hands an answer back to the caller"
+  say: "Some functions do something. Others give an answer back, with return."
+  pacing: { keyDelayMs: 22 }
+  clip:
+    - type: { into: "Python code", text: "from turtle import *\n\ndef metres(m):\n    return m * 20\n\n", append: true }
+    - caption:
+        text: "metres(5) works out 5 * 20 and gives back 100."
+        say: "metres of 5 works out five times twenty, and gives back one hundred."
+    - type: { into: "Python code", text: "forward(metres(5))\n", append: true }
+    - caption:
+        text: "So forward(metres(5)) becomes forward(100)."
+        say: "The inner call runs first, so forward gets one hundred."
+    - click: "Run"
+    - expect: { selector: "#status", contains: "Finished" }
+    - expect: { selector: "#turtle-state", contains: "x 100" }
+    - caption:
+        text: "print only shows a value. It does not give it back."
+        say: "print only shows a value on screen. The program cannot use it."
+    - wait: 1200
+    - expect: { selector: "#status", contains: "Finished" }
 ---
 You can write functions that draw. Now you will write functions that **give an answer back**, and combine several functions to build something bigger.
 
