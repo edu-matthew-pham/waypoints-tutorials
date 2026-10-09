@@ -67,8 +67,10 @@
     },
     {
      "label": "<img> image",
-     "code": "<img src=\"‹https://picsum.photos/200›\" alt=\"‹A description›\">\n",
-     "hint": "An image. alt describes it for people who cannot see it."
+     "code": "<img src=\"‹trophy.svg›\" alt=\"‹A gold trophy›\">\n",
+     "hint": "A picture. src is the picture file; alt describes it for people who cannot see it. There is no closing tag.",
+     "example": "<img src=\"medal.svg\" alt=\"A silver medal\" width=\"100\">\n<p>Second place</p>\n",
+     "shows": "The picture, 100 pixels wide"
     },
     {
      "label": "<strong> bold",

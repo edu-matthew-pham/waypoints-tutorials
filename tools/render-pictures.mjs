@@ -21,7 +21,7 @@ mkdirSync(DIR, { recursive: true });
 const { snippetId } = await import('./lesson-core.mjs');
 const strip = (c) => c.replace(/[‹›]/g, '');
 
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg' };
 let browser = null, server = null, port = 0;
 async function open() {
   if (browser) return;
@@ -62,6 +62,12 @@ async function pictures({ name, dir, base, jobs, viewport, draw }) {
   console.log(`Pictures (${name}): ${jobs.length} examples, ${todo.length} drawn, ${jobs.length - todo.length} cached.`);
 }
 
+// HTML pages are drawn as the playground's preview shows them: pictures (src="trophy.svg") come from its media folder.
+const withMedia = (code) => {
+  const base = `<base href="http://localhost:${port}/_playground-html/media/">`;
+  const dt = code.match(/^\s*<!doctype[^>]*>/i);
+  return dt ? dt[0] + base + code.slice(dt[0].length) : base + code;
+};
 const examples = (file, wrap) => JSON.parse(readFileSync(file, 'utf8')).groups.flatMap((g) => g.items.filter((i) => i.example).map((i) => ({ id: snippetId(i.label), code: wrap(strip(i.example)) })));
 const hashDir = (...parts) => {
   const h = createHash('sha1');
@@ -110,10 +116,10 @@ await pictures({
 // 320px wide; cropped to what is on it (text, boxes with a background or border, controls), with a margin.
 await pictures({
   name: 'html', dir: join(DIR, 'html'), viewport: { width: 320, height: 600 },
-  base: hashDir(readFileSync(new URL(import.meta.url)), 'html-v1'),
+  base: hashDir('media', readFileSync(new URL(import.meta.url)), 'html-v1'),
   jobs: examples('snippets/html.json', (c) => c),
   async draw(page, j) {
-    await page.setContent(j.code, { waitUntil: 'load' });
+    await page.setContent(withMedia(j.code), { waitUntil: 'load' });
     const box = await page.evaluate(() => {
       let r = 0, b = 0;
       const add = (q) => { if (q.width > 0 && q.height > 0) { r = Math.max(r, q.right); b = Math.max(b, q.bottom); } };
@@ -141,10 +147,10 @@ await pictures({
 const { loadLessons, getSnippet, expectedItems } = await import('./lesson.mjs');
 await pictures({
   name: 'expected', dir: join(DIR, 'expected'), viewport: { width: 520, height: 900 },
-  base: hashDir(readFileSync(new URL(import.meta.url)), 'expected-v1'),
+  base: hashDir('media', readFileSync(new URL(import.meta.url)), 'expected-v1'),
   jobs: loadLessons().flatMap((l) => expectedItems(l).map((e) => ({ id: `${l.slug}/${e.key}`, code: getSnippet(l.dir, e.ref) }))),
   async draw(page, j) {
-    await page.setContent(j.code, { waitUntil: 'load' });
+    await page.setContent(withMedia(j.code), { waitUntil: 'load' });
     const bottom = await page.evaluate(() => {
       let b = 0;
       for (const el of document.body.querySelectorAll('*')) { const q = el.getBoundingClientRect(); if (q.height > 0) b = Math.max(b, q.bottom + parseFloat(getComputedStyle(el).marginBottom || 0)); }

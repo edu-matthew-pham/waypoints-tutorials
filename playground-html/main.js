@@ -34,11 +34,19 @@ function report(html) {
 const BOXES = `
 <style>body *{outline:2px solid var(--wpc);outline-offset:1px}body *:not(br){padding:4px 6px;margin:6px 4px}body ul,body ol{padding-left:32px}
 [data-wp-tag]::before{content:attr(data-wp-tag);display:inline-block;font:600 11px/1.4 ui-monospace,Menlo,Consolas,monospace;
-color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin-right:6px;vertical-align:.15em;text-decoration:none;font-style:normal}</style>
+color:#fff;background:var(--wpc);padding:0 5px;border-radius:3px;margin-right:6px;vertical-align:.15em;text-decoration:none;font-style:normal}
+[data-wp-tag=tr]::before{content:none}[data-wp-tag=tr]{outline-width:3px}</style>
 <script>(function(){var C=['#2563eb','#c2570a','#15803d','#9333ea','#be185d'];
 function walk(el,d){[].forEach.call(el.children,function(c){if(/^(SCRIPT|STYLE|BR|TEMPLATE)$/.test(c.tagName))return;
+if(/^(TBODY|THEAD|TFOOT)$/.test(c.tagName)){c.style.outline='none';c.style.padding='0';walk(c,d);return;} // the browser adds <tbody> by itself: not a box students wrote
 c.setAttribute('data-wp-tag',c.tagName.toLowerCase());c.style.setProperty('--wpc',C[d%C.length]);walk(c,d+1)})}
 document.addEventListener('DOMContentLoaded',function(){walk(document.body,0)})})()<\/script>`;
+// Every preview: pictures are found in the course's media folder (src="trophy.svg"), and links behave like a
+// real page's without replacing the student's page: web addresses open in a new tab, #name scrolls to that part.
+const PAGE = `<base href="${new URL('media/', location.href).href}"><script>document.addEventListener('click',function(e){
+var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');e.preventDefault();
+if(h.charAt(0)==='#'){var t=document.getElementById(h.slice(1))||document.getElementsByName(h.slice(1))[0];if(t)t.scrollIntoView();}
+else if(/^https?:/i.test(h))window.open(h,'_blank','noopener');});<\/script>`;
 let boxes = params.get('boxes') === '1';
 // ?zoom=1.6 enlarges the code and the preview, for recorded clips (text stays readable at video size).
 const zoom = Math.min(3, Math.max(1, Number(params.get('zoom')) || 1));
@@ -53,9 +61,9 @@ function render() {
   const html = codeEl.value;
   // Injected before the student's code (after a <!DOCTYPE> if there is one): appended at the end, a half-typed tag
 // such as "<stro" would swallow it. The Boxes script waits for the page to load.
-  const extra = ZOOM + (boxes ? BOXES : '');
-  const dt = extra && html.match(/^\s*<!doctype[^>]*>/i);
-  previewEl.srcdoc = !extra ? html : dt ? dt[0] + extra + html.slice(dt[0].length) : extra + html;
+  const extra = PAGE + ZOOM + (boxes ? BOXES : '');
+  const dt = html.match(/^\s*<!doctype[^>]*>/i);
+  previewEl.srcdoc = dt ? dt[0] + extra + html.slice(dt[0].length) : extra + html;
   // Parse (without running anything) so tests can check what the page says.
   const doc = new DOMParser().parseFromString(html, 'text/html');
   const text = (doc.body.innerText ?? doc.body.textContent ?? '').replace(/\s+/g, ' ').trim();

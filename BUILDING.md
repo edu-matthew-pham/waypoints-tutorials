@@ -87,4 +87,5 @@ Settle these first; the HTML & CSS course should be written to the full standard
   - **Decks:** Predict slides show code; a rendered preview beside it would help (a screenshot of the expected page, like clips). HTML files with CSS are often two files: use `# file:` panels, which show side by side on slides.
   - **Primers:** "what a browser does with a file", "tags are labels, CSS is rules": written for a teacher who has never made a web page.
   - **Solutions** as regions in the lesson's files: `<!-- region: sol-x -->` … `<!-- endregion -->` in HTML, and `/* region: sol-x */` … `/* endregion */` in CSS files or inside a `<style>` block (`snippetFrom` in `lesson-core.mjs` accepts `#`, `//`, `<!--` and `/*` markers).
-- **Testing HTML lessons:** load every region in the HTML playground and screenshot the preview; there is no Run status to wait for, so wait for the preview frame's load.
+- **Testing HTML lessons:** `npm run check-html` (after `render` and `build`) walks every region, check and solution. Then look at the clips (a frame from the middle and the end) and the expected-result pictures.
+- **Older note on testing HTML lessons:** load every region in the HTML playground and screenshot the preview; there is no Run status to wait for, so wait for the preview frame's load.

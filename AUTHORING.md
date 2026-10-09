@@ -358,6 +358,10 @@ Choose the tool from the insight the step should produce: repetition cost, count
 
 On the create page, the helper row adds a starter for each check type and for tasks.
 
+### HTML lessons: pictures and links
+
+Pictures students use live in `media/html/` (drawn for the course: `trophy.svg`, `medal.svg`, `book.svg`, `ball.svg`); lesson code names them directly, `<img src="trophy.svg" alt="...">`, as files next to a real page. Add new ones there (your own drawings, or images you may share). Links in the preview open in a new tab, so the student's page stays; use `https://example.com/...` addresses in lessons.
+
 ### HTML lessons: tags in text
 
 Write every tag in running text inside backticks: `` `<h1>` ``. A bare `<h1>` in Markdown (lesson text, task bodies, and the Markdown fields of `teacher.yml`: `before`, `running`, `leads`, `explain`) becomes a real tag on the page, the teacher guide and the slides, and swallows the text after it. `npm run validate` warns about any it finds. Plain-text fields (check questions, options, match pairs, explanations, `goals`, `stuck`, `stretch`, `support`, `exit`) can use bare tags: every page and generator escapes them. Code is highlighted as HTML (tags, attributes, values, comments) when the lesson's `language` or a fence is `html`.

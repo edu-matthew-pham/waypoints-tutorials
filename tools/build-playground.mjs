@@ -70,6 +70,8 @@ export function buildHtmlPlayground(out = 'dist') {
   rmSync(dest, { recursive: true, force: true });
   cpSync(join(root, 'playground-html'), dest, { recursive: true });
   addSnippets(dest, 'html');
+  // Course pictures (media/html/*.svg): the preview resolves src="trophy.svg" against this folder, like files next to a real page.
+  if (existsSync(join(root, 'media', 'html'))) cpSync(join(root, 'media', 'html'), join(dest, 'media'), { recursive: true });
   stampPlayground(dest);
   return dest;
 }

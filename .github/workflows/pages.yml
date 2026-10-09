@@ -54,7 +54,7 @@ jobs:
           path: |
             dist/**/clips
             dist/_pictures
-          key: clips-${{ hashFiles('content/**', 'tools/**', 'playground*/**', 'snippets/**') }}
+          key: clips-${{ hashFiles('content/**', 'tools/**', 'playground*/**', 'snippets/**', 'media/**') }}
           restore-keys: clips-
 
       - name: Render clips
