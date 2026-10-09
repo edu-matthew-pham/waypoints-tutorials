@@ -415,8 +415,8 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
 export const TEACHER_TEXT = ['summary', 'before', 'stretch', 'support', 'leads', 'explain', 'timing'];
 
 /** Steps and tasks a solution can be keyed by: "step-4" or "step-4#t2". */
-/** picture: "page.html#x" or { ref: "page.html#x", boxes: true } -> { ref, boxes } (or null). */
-export const pictureSpec = (v) => (typeof v === 'string' ? { ref: v, boxes: false } : v && typeof v === 'object' && typeof v.ref === 'string' ? { ref: v.ref, boxes: !!v.boxes } : null);
+/** picture: "page.html#x", { ref, boxes: true } (Boxes view) or { ref, inspect: ".card" } (Box model view pinned on that element) -> { ref, boxes, inspect } (or null). */
+export const pictureSpec = (v) => (typeof v === 'string' ? { ref: v, boxes: false, inspect: '' } : v && typeof v === 'object' && typeof v.ref === 'string' ? { ref: v.ref, boxes: !!v.boxes && !v.inspect, inspect: typeof v.inspect === 'string' ? v.inspect : '' } : null);
 
 /** Every "what this code makes" picture in an HTML lesson: steps' and tasks' picture:, and explainPicture (key "explain"). */
 export function pictureItems(lesson) {

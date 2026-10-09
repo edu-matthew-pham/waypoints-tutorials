@@ -50,21 +50,45 @@ const PAGE = `<base href="${new URL('media/', location.href).href}"><script>docu
 var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');e.preventDefault();
 if(h.charAt(0)==='#'){var t=document.getElementById(h.slice(1))||document.getElementsByName(h.slice(1))[0];if(t)t.scrollIntoView();}
 else if(/^https?:/i.test(h))window.open(h,'_blank','noopener');});<\/script>`;
-let boxes = params.get('boxes') === '1';
+// Box model view (?boxmodel=1, or ?inspect=<selector> to pin one element; or the Box model button): like the browser's
+// developer tools, it draws margin (orange), border (yellow), padding (green) and content (blue) over the element under
+// the pointer, with its sizes. Drawn on top of the page, so the layout does not change (unlike Boxes).
+const INSPECT = (pin) => `<script>(function(){var pin=${JSON.stringify(pin || '')};var L;
+function px(v){return parseFloat(v)||0}
+function draw(el){if(L)L.remove();if(!el||el===document.body||el===document.documentElement)return;var r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+var x=r.left+scrollX,y=r.top+scrollY,m=[px(cs.marginTop),px(cs.marginRight),px(cs.marginBottom),px(cs.marginLeft)],b=[px(cs.borderTopWidth),px(cs.borderRightWidth),px(cs.borderBottomWidth),px(cs.borderLeftWidth)],p=[px(cs.paddingTop),px(cs.paddingRight),px(cs.paddingBottom),px(cs.paddingLeft)];
+L=document.createElement('div');L.setAttribute('data-wp-inspect','');L.style.cssText='position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;z-index:2147483647';
+function box(l,t,w,h,c){var d=document.createElement('div');d.style.cssText='position:absolute;left:'+l+'px;top:'+t+'px;width:'+Math.max(0,w)+'px;height:'+Math.max(0,h)+'px;background:'+c;L.appendChild(d)}
+box(x-m[3],y-m[0],r.width+m[1]+m[3],r.height+m[0]+m[2],'rgba(246,178,107,.38)');box(x,y,r.width,r.height,'rgba(255,214,102,.5)');
+box(x+b[3],y+b[0],r.width-b[1]-b[3],r.height-b[0]-b[2],'rgba(147,196,125,.38)');box(x+b[3]+p[3],y+b[0]+p[0],r.width-b[1]-b[3]-p[1]-p[3],r.height-b[0]-b[2]-p[0]-p[2],'rgba(111,168,220,.32)');
+var t=document.createElement('div'),n=function(a){return a[0]===a[1]&&a[1]===a[2]&&a[2]===a[3]?String(Math.round(a[0])):a.map(Math.round).join(' ')};
+t.textContent=el.tagName.toLowerCase()+(el.className&&typeof el.className==='string'?'.'+el.className.trim().split(/\s+/).join('.'):'')+'  '+Math.round(r.width)+' × '+Math.round(r.height)+'   margin '+n(m)+' · border '+n(b)+' · padding '+n(p);
+t.style.cssText='position:absolute;left:'+Math.max(0,x-m[3])+'px;top:'+Math.max(0,y-m[0]-24)+'px;font:600 12px/1.6 ui-monospace,Menlo,Consolas,monospace;background:#1d2430;color:#fff;padding:1px 7px;border-radius:4px;white-space:nowrap';
+L.appendChild(t);document.documentElement.appendChild(L)}
+var last=null;function show(el){last=el;requestAnimationFrame(function(){draw(el)})}
+document.addEventListener('mousemove',function(e){if(pin)return;var t=document.elementFromPoint(e.clientX,e.clientY);if(t&&t!==last&&!t.closest('[data-wp-inspect]'))show(t)});
+window.addEventListener('load',function(){var el=pin&&document.querySelector(pin);if(el)show(el)});window.addEventListener('resize',function(){if(last)show(last)})})()<\/script>`;
+let boxmodel = params.get('boxmodel') === '1' || !!params.get('inspect');
+const pin = params.get('inspect') || '';
+let boxes = params.get('boxes') === '1' && !boxmodel;
 // ?zoom=1.6 enlarges the code and the preview, for recorded clips (text stays readable at video size).
 const zoom = Math.min(3, Math.max(1, Number(params.get('zoom')) || 1));
 const ZOOM = zoom > 1 ? `<style>html{zoom:${zoom}}</style>` : '';
 if (zoom > 1) codeEl.style.fontSize = `${Math.round(14 * zoom)}px`;
 const boxesBtn = $('boxes');
 const showBoxes = () => { boxesBtn.setAttribute('aria-pressed', String(boxes)); boxesBtn.textContent = boxes ? 'Boxes on' : 'Boxes'; };
-boxesBtn.addEventListener('click', () => { boxes = !boxes; showBoxes(); render(); });
-showBoxes();
+const boxmodelBtn = $('boxmodel');
+const showBoxmodel = () => { boxmodelBtn.setAttribute('aria-pressed', String(boxmodel)); boxmodelBtn.textContent = boxmodel ? 'Box model on' : 'Box model'; };
+// The two views are never on together: Boxes changes the layout, Box model measures it.
+boxesBtn.addEventListener('click', () => { boxes = !boxes; if (boxes) boxmodel = false; showBoxes(); showBoxmodel(); render(); });
+boxmodelBtn.addEventListener('click', () => { boxmodel = !boxmodel; if (boxmodel) boxes = false; showBoxes(); showBoxmodel(); render(); });
+showBoxes(); showBoxmodel();
 
 function render() {
   const html = codeEl.value;
   // Injected before the student's code (after a <!DOCTYPE> if there is one): appended at the end, a half-typed tag
 // such as "<stro" would swallow it. The Boxes script waits for the page to load.
-  const extra = PAGE + ZOOM + (boxes ? BOXES : '');
+  const extra = PAGE + ZOOM + (boxes ? BOXES : '') + (boxmodel ? INSPECT(pin) : '');
   const dt = html.match(/^\s*<!doctype[^>]*>/i);
   previewEl.srcdoc = dt ? dt[0] + extra + html.slice(dt[0].length) : extra + html;
   // Parse (without running anything) so tests can check what the page says.

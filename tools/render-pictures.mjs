@@ -65,8 +65,9 @@ async function pictures({ name, dir, base, jobs, viewport, draw }) {
 // HTML pages are drawn as the playground's preview shows them: pictures (src="trophy.svg") come from its media folder.
 const withMedia = (code) => {
   const base = `<base href="http://localhost:${port}/_playground-html/media/">`;
+  // Always standards mode, as in the playground preview (a page with no <!DOCTYPE> would otherwise render in quirks mode).
   const dt = code.match(/^\s*<!doctype[^>]*>/i);
-  return dt ? dt[0] + base + code.slice(dt[0].length) : base + code;
+  return dt ? dt[0] + base + code.slice(dt[0].length) : '<!DOCTYPE html>' + base + code;
 };
 const examples = (file, wrap) => JSON.parse(readFileSync(file, 'utf8')).groups.flatMap((g) => g.items.filter((i) => i.example).map((i) => ({ id: snippetId(i.label), code: wrap(strip(i.example)) })));
 const hashDir = (...parts) => {
@@ -169,16 +170,16 @@ const { pictureItems } = await import('./lesson.mjs');
 await pictures({
   name: 'shown', dir: join(DIR, 'shown'), viewport: { width: 1100, height: 1400 },
   base: hashDir('media', 'playground-html', readFileSync(new URL(import.meta.url)), 'shown-v1'),
-  jobs: loadLessons().flatMap((l) => pictureItems(l).map((e) => ({ id: `${l.slug}/${e.key}`, code: getSnippet(l.dir, e.ref), boxes: e.boxes }))).map((j) => ({ ...j, code: j.code + (j.boxes ? '\n<!-- boxes -->' : '') })),
+  // The view settings are part of the cached code, so changing boxes or inspect redraws the picture.
+  jobs: loadLessons().flatMap((l) => pictureItems(l).map((e) => ({ id: `${l.slug}/${e.key}`, view: e.inspect ? `inspect=${encodeURIComponent(e.inspect)}&` : e.boxes ? 'boxes=1&' : '', src: getSnippet(l.dir, e.ref) }))).map((j) => ({ ...j, code: `<!-- view: ${j.view} -->\n${j.src}` })),
   async draw(page, j) {
-    const boxes = j.code.endsWith('<!-- boxes -->');
-    await page.goto(`http://localhost:${port}/_playground-html/index.html?${boxes ? 'boxes=1&' : ''}code=${encodeURIComponent(j.code)}`);
+    await page.goto(`http://localhost:${port}/_playground-html/index.html?${j.view}code=${encodeURIComponent(j.src)}`);
     await page.waitForFunction(() => window.__playground?.updates > 0);
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(j.view.startsWith('inspect') ? 800 : 500);
     const el = await page.$('#preview'), frame = await el.contentFrame(), box = await el.boundingBox();
     const ext = await frame.evaluate(() => {
       let r = 0, b = 0;
-      for (const e of document.body.querySelectorAll('*')) { const q = e.getBoundingClientRect(); if (q.width && q.height) { r = Math.max(r, q.right); b = Math.max(b, q.bottom); } }
+      for (const e of document.querySelectorAll('body *, [data-wp-inspect] *')) { const q = e.getBoundingClientRect(); if (q.width && q.height) { r = Math.max(r, q.right); b = Math.max(b, q.bottom); } }
       return { r: Math.ceil(r), b: Math.ceil(b) };
     });
     if (!ext.b) return null;

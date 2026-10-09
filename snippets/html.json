@@ -139,6 +139,22 @@
      "shows": "Every <li> is teal"
     },
     {
+     "label": "class selector",
+     "code": ".‹note› {\n  ‹color›: ‹red›;\n}\n",
+     "hint": "Style only the elements you mark with class=\"note\" in the HTML. The dot is only in the CSS.",
+     "matches": "^\\s*\\.[A-Za-z][\\w-]*\\s*[{,]",
+     "example": "<style>\n  .tip {\n    font-style: italic;\n  }\n</style>\n<p>A normal paragraph.</p>\n<p class=\"tip\">A paragraph with class=\"tip\".</p>\n",
+     "shows": "Only the paragraph with the class changes"
+    },
+    {
+     "label": "several selectors",
+     "code": "‹h1›, ‹h2› {\n  ‹color›: ‹navy›;\n}\n",
+     "hint": "One rule for several kinds of element: list the selectors with commas.",
+     "matches": "^\\s*[A-Za-z.][\\w.-]*\\s*,\\s*[A-Za-z.]",
+     "example": "<style>\n  h1, li {\n    color: purple;\n  }\n</style>\n<h1>Title</h1>\n<ul>\n  <li>An item</li>\n</ul>\n<p>A paragraph</p>\n",
+     "shows": "The heading and the list item change; the paragraph does not"
+    },
+    {
      "label": "color",
      "code": "color: ‹red›;\n",
      "hint": "The text colour.",
@@ -172,6 +188,13 @@
      "hint": "Align text: left, center or right.",
      "example": "<style>\n  h2 {\n    text-align: center;\n  }\n</style>\n<h2>Centred</h2>\n<p>Left</p>\n",
      "shows": "The heading moves to the middle"
+    },
+    {
+     "label": "width",
+     "code": "width: ‹200px›;\n",
+     "hint": "How wide the content is. Padding and border are added on top of it.",
+     "example": "<style>\n  div {\n    width: 120px;\n    background-color: lightblue;\n  }\n</style>\n<div>A box 120 pixels wide</div>\n",
+     "shows": "The box is 120 pixels wide"
     },
     {
      "label": "padding",

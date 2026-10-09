@@ -73,6 +73,30 @@ Voiceover (later): clips stay silent by default; add optional narration students
 
 Explanations as clips (decided 9 Oct): captions first, no voiceover for now (headphones are not guaranteed in class); short clips (under about 30 s) that show the idea, with key phrases as captions rather than a full transcript (multimedia principles: segmenting, signalling, redundancy). Pilot: lesson 1's Investigate clip types nested tags with the playground's new Boxes view on. Voiceover options for later: text-to-speech in the pipeline, or Matthew recording over a generated clip. Next: lesson 2 (Lists and links), after review.
 
+## Unit 2 (Style) design (planned 9 Oct, next batch)
+
+Same standard as Unit 1: PRIMM used selectively, a combinations task with a picture, a new Modify task per idea, expected-result pictures, an Explain it to me clip with text and a picture that follow it, teacher notes, and the Style primer. CSS stays in a `<style>` block in the page (one file in the playground); regions inside it use `/* region: x */`. All facts below checked in Chromium in standards mode, as in the preview.
+
+**Lesson 5: Rules and selectors** (`code/html/selectors`)
+- Predict: a page with an `<h1>`, two paragraphs and a list, and `p { color: teal; }`. "How many lines turn teal?" Many say all of the page; it is the two paragraphs. Insight: a selector picks every element that matches, and only those.
+- Run: unlocks `style-block`, `rule`, `color`, `font-size`. Change the selector to `li` and watch the colour move.
+- Investigate: match the parts of a rule (selector, property, value, braces, semicolon); a class (`.note` matches `class="note"`, the dot only in CSS); bug `selector-mismatch` (a class typo, `.Notice` for `class="notice"`: class names must match exactly, capitals included; the paragraph stays black, no error); combinations with a picture: one rule for several selectors (`h1, h2`), a class on an `<li>` and on a table cell, several rules on one element.
+- Modify: change a colour; add a `font-size` rule; give one paragraph a class and style it; style two kinds of tag with one rule.
+- Make: style the school notice from lesson 1 with at least three rules and one class.
+- Real world: "Restyle the club notice" (colours and sizes for a real page).
+- Snippets to add: class selector (`.name { }` with `class="name"`), grouped selector (`h1, h2`).
+
+**Lesson 6: Boxes** (`code/html/boxes`)
+- Predict: `.card { width: 200px; padding: 20px; border: 5px solid; }`. "How wide is the card on the page, in pixels?" Most say 200; it is 250 (padding and border add to the width on both sides). Insight: every element is a box of content, padding, border and margin.
+- Run: the new **Box model** view (hover a box to see its margin, border, padding and content, with sizes; it does not change the layout, unlike Boxes). Unlocks `padding`, `margin`, `border`, `width`, `background-color`.
+- Investigate: match padding, border, margin and width to what they change; a trace or number task on widths (200 + 2 × 20 + 2 × 5); block versus inline (paragraphs stack, `<strong>` and `<a>` sit in a line); bug `css-missing-unit` (`padding: 20` does nothing: no error, the rule is ignored); combinations with a picture: a card holding a heading, a picture and a paragraph, with padding inside and margin between cards.
+- Modify: add padding; add a border; space two cards apart with margin; set a width.
+- Make: a house card (border, padding, background, width) with a heading, a picture and a line of text.
+- Real world: "Turn the newsletter into cards" (two articles as boxes).
+- Snippets to add: `width`.
+
+**Groundwork for this batch:** Box model view (`?inspect=selector` pins one element for clips and pictures; hover otherwise); snippets and examples; the Style unit primer ("CSS in 5 minutes"); picture rendering always in standards mode (fixed); `npm run check-html` covers the new lessons automatically.
+
 ## Proposed: turtle companion (discussed, not decided)
 
 A small turtle in the corner of course and lesson pages with a CSS idle animation (blink, bob; none with reduced motion; can be hidden). It earns one item per unit finished: a colourful pen (Drawing and repeating), a signpost and a backpack (Choices and collections), a jigsaw piece (Functions), a remote (Interaction), a crown (Final challenge). Clicking it shows its items and where each was earned; finishing a unit plays a short celebration. Per browser, built from existing progress data.
