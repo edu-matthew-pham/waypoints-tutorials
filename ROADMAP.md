@@ -330,8 +330,24 @@ This supersedes the earlier "Series shape", "Console bridge and fork" and "Games
 - Gradio clips need re-checking; HTML and Gradio paths need more lessons.
 - Progress export and import (a short copy-and-paste code to move progress between browsers) and a printable certificate of current progress. A fun long-term idea; keep it account-free.
 
-## Done: Science, Year 7 Chemistry (local branch `science`, not pushed)
+## Done: Science, Year 7 Chemistry (pushed 9 Oct 2026)
 
 New subject **Science** with pathways Chemistry (built), Biology, Physics and Earth and space (coming later). Year 7 Chemistry: seven concept tutorials for introducing or revising (AC9S7U05 nodes 1–3; AC9S7U06 nodes 1–4), each a mini 5E cycle on the existing stages, with width tiers (`tier: typical | wider`, `?width=` floor) and a science board (`playground-science/`, particle engine and 15 widgets). New `sort` check and per-option `question` feedback; tiered checks are not needed to finish a lesson. Teacher layer: `teacher.yml` per lesson, primers for both units; decks and worksheets use 5E labels.
 
-Next: Biology (U01 key and classification sorter; U02 food web builder), Physics (U04 force arrows), Earth and space (U03 orbit board): about four more engines for the remaining nine Year 7 hinge nodes. Then classroom testing of the chemistry set: does the locked prediction hold, do students use the width control, do they take the 2D particle simplifications literally?
+Slides embed the live board (`{{embed: URL}}`, Prepare loads it on the active slide only). Science courses have no cheat sheets (no commands to list; the primers carry the key ideas).
+
+## Science engines: Years 7–10 plan (decided 9 Oct 2026, not built)
+
+Engines are organised by what they model, not by subject or year. Every Years 7–10 Understanding hinge node in waypoints-kit `data/science/` sorts into one of five engines or a widget on the shared board (see the maths boards plan; diagram and data work waits for it).
+
+| Engine | Hinge nodes | Notes |
+|---|---|---|
+| Particles + atoms (extend `playground-science/engine.js`) | 8U06 n1, n3 · 8U07 n2 · 9U07 n2 · 10U07 n5 · 8U04 n2 | Atom types, bonds, a reaction rule (collide with enough energy, rebond). Also convection for 8U03 n2 and 9U04 n1. Independent of the shared board: build first. |
+| Forces and motion (new) | 7U04 n3, n5 · 10U05 n2–4 | Runs a free body diagram: trace, v–t graph from the shared board, friction toggle (Newton's first law misconception). |
+| Stocks and flows (new, small) | 9U01 n5 · 9U05 n1, n2 · 10U04 n1–3 · 8U05 n4 · 9U03 n3 | Stores, flows and a set point: feedback, energy balance, greenhouse, conservation, carbon. Graphs from the shared board. |
+| Populations, agents (new) | 7U02 n4 · 10U02 n1, n2 · 9U02 n3 | Heritable trait, selection pressure, predator and prey. Half-life (9U06 n4) is the same engine with random decay. |
+| Sky model (new, geometric) | 7U03 n1, n2, n4 | Lit globe in two views; one standard only, last. |
+
+Widgets on the shared board (no engine): free body diagram and vectors (7U04 n1, n2 · 10U05 n1, n6; its arrows feed the motion engine), classification key walker (7U01 n2, n3), atom and shell builder (9U06 n1 · 10U06 n1, n2), Punnett square (10U01 n4), equation balancer (9U07 n4), food web (7U02 n1, n2), labelled or zoomable diagrams (cells, organs, receptor pathways, meiosis, Earth's layers and spheres, sound waves, decay types, gametes, Big Bang timeline).
+
+Order: particles + atoms, then (after the shared board) forces and motion with the free body diagram widget, stocks and flows, populations, sky model. Classroom testing of the Year 7 chemistry set still to do: does the locked prediction hold, do students use the width control, do they take the 2D particle simplifications literally?

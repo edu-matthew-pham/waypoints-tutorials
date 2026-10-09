@@ -416,6 +416,8 @@ for (const coursePath of teachCourses) {
   // Printable cheat sheets: one per unit, and one for the whole course.
   // Snippets for this course's language only, and the code students see in each lesson.
   const mathsCourse = ls.some((l) => l.language === 'maths');
+  // Science courses have no commands to list, so no cheat sheets (the primers carry the key ideas).
+  const sheets = units.length && !ls.some((l) => l.language === 'science');
   // MakeCode courses: the kind is the playground the lessons use (a Predict step has none).
   const kind = !ls[0] ? 'turtle' : ls[0].language === 'makecode'
     ? (ls.flatMap((l) => l.steps).map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit')
@@ -447,7 +449,7 @@ for (const coursePath of teachCourses) {
     const href = `${base}${id ? `${id}/` : ''}`;
     return id === current ? `<b>${esc(t)}</b>` : `<a href="${esc(href)}">${esc(t)}</a>`;
   }).join(' · ')}</nav>` : '';
-  if (units.length) {
+  if (sheets) {
     const all = units.map((u) => ({ title: u.title, items: unitItems[u.id] }));
     cheatPage({ dir: `teach/${coursePath}/cheatsheet`, title: `${node.title}: cheat sheet`, sections: all, back: '../', backLabel: 'Teacher guide' });
     if (REFS.some((r) => r.path === `${coursePath}/reference`)) {
@@ -469,7 +471,7 @@ for (const coursePath of teachCourses) {
       primer = `<details class="primer"><summary><b>${esc(title || `${u.title}: primer`)}</b> (read before teaching this unit)</summary>${(mathsCourse ? mathsGuide.md : md)(m ? raw.slice(m[0].length) : raw)}</details>`;
     }
     let cheat = '';
-    if (u.id) {
+    if (u.id && sheets) {
       const sheet = mathsCourse ? mathsCheatMd({ course: node.title, unit: u, items: unitItems[u.id] }) : cheatSheetFor({ course: node.title, unit: u, items: unitItems[u.id], lang: ls[0]?.language || 'python', picture: (id) => (ls[0]?.language === 'makecode' && picsFor(picKey).pics[id] ? `${SITE_URL}/${picsFor(picKey).dir}${id}.png?v=${picsFor(picKey).pics[id].hash || ''}` : null) });
       writeFileSync(join(courseDir, `cheatsheet-${u.id}.md`), sheet);
       const url = `${SITE_URL}/teach/${coursePath}/cheatsheet-${u.id}.md`;
@@ -482,7 +484,7 @@ for (const coursePath of teachCourses) {
     return `<section class="tunit"><h2>${esc(u.title)}</h2>${u.summary ? `<p class="muted">${esc(u.summary)}</p>` : ''}${primer}${cheat}<ul>${rows}</ul></section>`;
   }).join('');
   const intro = `<p>Each lesson works two ways. Students can work through the online tutorial at their own pace (it checks their answers and saves their progress in their browser), or you can teach it to the whole class from the slides, then send students into the tutorial for the Modify and Make steps.</p><p>Every lesson guide has plain-language notes, the answers to every check, a solution for every task, and slides and a worksheet for <a href="https://prepare.learningwaypoints.com/" target="_blank" rel="noopener">Waypoints Prepare</a>. These guide pages are not linked from student pages, but they are not secret either: keep printed Teacher editions for answers you do not want students to find.</p>`;
-  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${units.length ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}`, `teach/${coursePath}`, coursePath));
+  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}`, `teach/${coursePath}`, coursePath));
 }
 mkdirSync(join(OUT, 'teach'), { recursive: true });
 writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>`, 'teach', null));
