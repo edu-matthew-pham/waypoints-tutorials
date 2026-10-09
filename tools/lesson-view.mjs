@@ -77,11 +77,11 @@ body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-ap
 .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px}
 header.top{padding:44px 0 18px}header.top .crumb{font-size:14px;color:var(--muted);text-decoration:none}
 h1{font-size:2.1rem;line-height:1.2;margin:.3em 0 .2em}.by{margin:-.6em 0 1em;color:var(--muted);font-size:14px}.lede{color:var(--muted);font-size:1.1rem;margin:0 0 1em}
-nav.steps{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:18px 0 8px;position:sticky;top:var(--cb,0px);z-index:9;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:thin}
+nav.steps{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:18px 0 8px;position:sticky;top:calc(var(--nav,0px) + var(--cb,0px));z-index:9;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:thin}
 nav.steps a{flex:none;white-space:nowrap}
 nav.steps a.here{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
-section.step{scroll-margin-top:calc(var(--cb,0px) + 64px)}
-.coursebar{position:sticky;top:0;z-index:11;display:flex;align-items:center;justify-content:space-between;gap:8px;height:46px;background:var(--bg);border-bottom:1px solid var(--line)}
+section.step{scroll-margin-top:calc(var(--nav,0px) + var(--cb,0px) + 64px)}
+.coursebar{position:sticky;top:var(--nav,0px);z-index:11;display:flex;align-items:center;justify-content:space-between;gap:8px;height:46px;background:var(--bg);border-bottom:1px solid var(--line)}
 .coursebar a,.cb-toggle{font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:6px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
 .coursebar a:hover,.cb-toggle:hover{background:var(--card)}
 .cb-prev,.cb-next{flex:0 1 auto;min-width:34px}.cb-next{text-align:right}
@@ -225,7 +225,8 @@ footer{margin-top:50px;color:var(--muted);font-size:14px}
 /**
  * The site navbar, the same on every page: Learning Waypoints (the main site), Tutorials (this site's home),
  * then one menu per subject (Code ▾: its pathways), and for the current course its Playground, Reference and
- * My progress (the course page). It is not sticky: on lesson pages the course bar below it is. NAV_JS adds the
+ * My progress (the course page). It is sticky; NAV_JS keeps --nav at its height so the lesson course bar and step
+ * pills stick below it and anchors land under it (it wraps to more rows on narrow screens). NAV_JS also adds the
  * menus and "Back to <lesson> › <step>": lesson pages remember the open step per tab (sessionStorage), other
  * pages offer the way back.
  * nav: { root, home, subjects: [{ title, href, on, items: [{ title, href, on }] }], current: { href, playground, reference } | null, here }
@@ -246,7 +247,8 @@ export function siteNav({ root = '', subjects = [], current = null, here = 'home
     `<div class="sn-main" id="sn-main">${link('', 'Tutorials', homeOn)}${menus}</div>` +
     `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
 }
-export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:relative;z-index:20}
+export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}
+html{scroll-padding-top:var(--nav,0px)}
 .sn-in{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:48px;flex-wrap:wrap}
 .sitenav a{color:var(--ink);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap}
 .sitenav a:hover{background:var(--bg)}.sitenav a[aria-current]{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent);border-radius:0}
@@ -260,18 +262,20 @@ export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid 
 .sn-menu{display:none;font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
 .sitenav .sn-back{color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;margin-right:6px;max-width:42vw;overflow:hidden;text-overflow:ellipsis}
 .sitenav .sn-back[hidden]{display:none}
-@media(max-width:700px){.sn-menu{display:inline-block;margin-left:auto}.sn-main{display:none;order:9;flex-basis:100%;flex-direction:column;align-items:stretch;padding:4px 0 8px}.sitenav.open .sn-main{display:flex}
+@media(max-width:700px){.sn-menu{display:inline-block;margin-left:auto}.sn-main{display:none;order:9;flex-basis:100%;flex-direction:column;align-items:stretch;padding:4px 0 8px}.sitenav.open .sn-main{display:flex;max-height:calc(100vh - 120px);overflow-y:auto}
 .sn-dd{flex-direction:column;align-items:stretch}.sn-caret{display:none}.sn-sub{display:flex;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}
 .sitenav a[aria-current]{box-shadow:none}.sn-tools{order:8;flex-basis:100%;justify-content:flex-start;padding-bottom:6px;overflow-x:auto}.sitenav .sn-back{order:7;flex-basis:100%;max-width:none;margin:2px 0 6px;text-align:center}}
 @media print{.sitenav{display:none}}`;
 export const NAV_JS = `(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
+// Sticky navbar: publish its height as --nav (course bar, step pills and anchors sit below it).
+var nh=function(){document.documentElement.style.setProperty('--nav',n.offsetHeight+'px')};nh();if(window.ResizeObserver)new ResizeObserver(nh).observe(n);else window.addEventListener('resize',nh);
 var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
 [].forEach.call(n.querySelectorAll('.sn-caret'),function(c){var d=c.parentNode;c.addEventListener('click',function(){var o=d.classList.toggle('open');c.setAttribute('aria-expanded',String(o))})});
 document.addEventListener('click',function(e){[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){if(!d.contains(e.target)){d.classList.remove('open');d.querySelector('.sn-caret').setAttribute('aria-expanded','false')}})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){d.classList.remove('open')})});
 if(here==='lesson'){var h=document.querySelector('h1'),worked=null;
 // The step to come back to is the last one the student worked in (clicked, typed, used its playground), not the
-// one in view: reaching the navbar scrolls the lesson back to the top. Before any work, the step in view.
+// one in view (the student may scroll elsewhere before using the navbar). Before any work, the step in view.
 function pill(id){var a=id?document.querySelector('nav.steps a[href="#'+id+'"]'):(document.querySelector('nav.steps a.here')||document.querySelector('nav.steps a')),t='';if(a)[].forEach.call(a.childNodes,function(c){if(c.nodeType===3)t+=c.textContent});return {a:a,t:t.trim()}}
 var save=function(){var s=pill(worked);try{sessionStorage.setItem(K,JSON.stringify({href:location.pathname+(s.a?s.a.getAttribute('href'):''),title:h?h.textContent:document.title,step:s.t}))}catch(e){}};
 function mark(el){var sec=el&&el.closest&&el.closest('section.step');if(sec&&sec.id){worked=sec.id;save()}}
