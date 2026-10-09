@@ -200,7 +200,14 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
         }
         if (p.parsons) body += '\n\n' + fence(p.parsons.join('\n'));
         if (t && hasWorked(t.body)) { const w = workedSlide(t.body); slides.push(`${BADGE.discussion}\n\n## ${t.title}\n\n${w.slide}` + note(w.notes)); }
-        else if (t && /```/.test(t.body)) body = prose(t.body.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, src) => '\u0000' + (lang || '') + '\u0001' + src + '\u0000')).replace(/\u0000(\w*)\u0001([\s\S]*?)\u0000/g, (m, lang, src) => ((!lang || lang === LANG) && blocksDeck(src)) || fence(src, lang || LANG)) + '\n\n' + body;
+        else if (t && /```/.test(t.body)) {
+          const shown = prose(t.body.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, src) => '\u0000' + (lang || '') + '\u0001' + src + '\u0000')).replace(/\u0000(\w*)\u0001([\s\S]*?)\u0000/g, (m, lang, src) => ((!lang || lang === LANG) && blocksDeck(src)) || fence(src, lang || LANG));
+          // The task's own text (a program to read) and its check share a slide when they fit; when even the
+          // smallest type would not fit them, the program gets a Discussion slide and the check follows it.
+          const together = `${BADGE.check}\n\n## ${t.title}\n\n${shown}\n\n${body}${p.parsons ? '' : `\n\n* Answer: ${oneLine(p.answer)}`}`;
+          if (tooTall(together)) slides.push(`${BADGE.discussion}\n\n## ${t.title}\n\n${shown}`);
+          else body = shown + '\n\n' + body;
+        }
         const reveal = p.parsons ? '' : `\n\n* Answer: ${oneLine(p.answer)}`;
         slides.push(`${BADGE.check}\n\n## ${t ? t.title : title}\n\n${body}${reveal}` + note(`${p.explain} ${p.parsons ? `Correct order: ${oneLine(p.solution)}` : ''} ${!t && c.insight ? `What this step is for: ${c.insight}` : ''}`));
       }
@@ -227,7 +234,8 @@ const blocksDeck = (code) => {
 // Keep each slide on the slide (Marp scoped styles). A 1280x720 slide at 29px type has about
 // 560px for content. Estimate the height of everything but code, then shrink code first
 // (down to 0.5em), then the whole slide. `.render-tmp` overflow checks confirm the estimate.
-function fitCode(slide) {
+// Height estimate for a slide, as fitCode uses it: the text's height and the code's height at full size.
+function slideSize(slide) {
   const blocks = slide.match(/```[\s\S]*?```/g) || [];
   const cols = /<div class="cols"/.test(slide) ? 2 : 1; // two columns: count half the code
   const lines = blocks.reduce((n, b) => n + b.split('\n').length - 2, 0) / cols;
@@ -244,7 +252,17 @@ function fitCode(slide) {
     if (/^[-*] /.test(l)) return n + 12 + 44 * wraps(l, 62);
     return n + 18 + 44 * wraps(l, 66);
   }, 0) + (35 * blocks.length) / cols;
-  const code = (s) => lines * 29 * 1.25 * s;
+  return { text, codeFull: lines * 29 * 1.25 };
+}
+// True when a slide cannot fit even at fitCode's smallest sizes (code at half size, text at 16px).
+function tooTall(slide) {
+  const { text, codeFull } = slideSize(slide);
+  if (text + codeFull <= 560) return false;
+  return 560 / (text + codeFull * 0.5) < 16 / 29;
+}
+function fitCode(slide) {
+  const { text, codeFull } = slideSize(slide);
+  const code = (s) => codeFull * s;
   if (text + code(1) <= 560) return slide;
   let c = Math.min(0.85, (560 - text) / code(1)), s = 1;
   if (c < 0.5) { c = 0.5; s = 560 / (text + code(0.5)); }
