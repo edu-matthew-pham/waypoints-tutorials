@@ -836,6 +836,8 @@ mkdirSync(join(OUT, 'teach'), { recursive: true });
 writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>`, 'teach', null));
 
 writeFileSync(join(OUT, '.nojekyll'), '');
+// Pages keeps its custom domain only while the published branch has this file, and a rebuild publish replaces the branch.
+writeFileSync(join(OUT, 'CNAME'), 'tutorials.learningwaypoints.com\n');
 
 const missing = lessons.flatMap((l) => l.steps.filter((s) => s.config.clip && !existsSync(join(OUT, l.slug, 'clips', `${s.id}.mp4`))).map((s) => `${l.slug}/${s.id}`));
 console.log(`Built ${lessons.length} lesson(s) into ${OUT}/` + (missing.length ? `; ${missing.length} clip placeholder(s): ${missing.join(', ')}` : '; all clips present'));
