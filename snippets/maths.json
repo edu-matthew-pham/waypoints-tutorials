@@ -9,6 +9,44 @@
       "name": "Words",
       "items": [
         {
+          "label": "formula",
+          "unit": "expressions",
+          "code": "P = 2l + 2w",
+          "hint": "A rule that gives one quantity from others, written with letters. This one gives the perimeter of a rectangle.",
+          "board": "widget: formula\nformula: P = 2l + 2w\nslider l: 1, 10, 5\nslider w: 1, 6, 3\nshape: rectangle\nunits: cm",
+          "shows": "l = 5 and w = 3 give P = 16"
+        },
+        {
+          "label": "variable",
+          "unit": "expressions",
+          "code": "P, \\; l, \\; w",
+          "hint": "A letter for a quantity that can change. Each rectangle has its own $l$, $w$ and $P$."
+        },
+        {
+          "label": "constant",
+          "unit": "expressions",
+          "code": "C = 5h + \\mathbf{20}",
+          "hint": "A number that stays the same, such as a 20 dollar call-out fee. $\\pi$ is a constant too."
+        },
+        {
+          "label": "unknown",
+          "unit": "expressions",
+          "code": "3x + 2 = 14",
+          "hint": "In an equation, a letter can stand for one particular number: here only $x = 4$ works."
+        },
+        {
+          "label": "more than, less than",
+          "unit": "expressions",
+          "code": "n + 5 \\qquad n - 5",
+          "hint": "\"5 more than n\" is $n + 5$. \"5 less than n\" is $n - 5$: you start from $n$ and take 5 away, so $n$ comes first."
+        },
+        {
+          "label": "brackets",
+          "unit": "expressions",
+          "code": "2(n + 3) \\ne 2n + 3",
+          "hint": "Brackets keep a part together so it is worked out first. \"Add 3, then double the result\" is $2(n + 3)$; \"double, then add 3\" is $2n + 3$."
+        },
+        {
           "label": "expression",
           "unit": "equations",
           "code": "2x + 3",
@@ -30,7 +68,7 @@
         },
         {
           "label": "2x means 2 times x",
-          "unit": "equations",
+          "unit": "expressions",
           "code": "2x = 2 \\times x",
           "hint": "With $x = 4$, $2x$ is 8, not 24."
         },
@@ -45,6 +83,24 @@
     {
       "name": "Methods",
       "items": [
+        {
+          "label": "write an expression for a situation",
+          "unit": "expressions",
+          "code": "\\begin{aligned} &\\text{Let } g = \\text{number of guests} \\\\ &C = 5g + 60 \\end{aligned}",
+          "hint": "Say what the letter stands for (a number that changes), multiply it by the amount for each one, then add anything paid once."
+        },
+        {
+          "label": "substitute",
+          "unit": "expressions",
+          "code": "\\begin{aligned} P &= 2l + 2w \\\\ &= 2 \\times 5 + 2 \\times 3 \\\\ &= 16 \\end{aligned}",
+          "hint": "Replace each letter with its value, write in the × signs, then work it out: brackets, then × and ÷, then + and −."
+        },
+        {
+          "label": "find an unknown in a formula",
+          "unit": "expressions",
+          "code": "\\begin{aligned} 20 &= 2 \\times 6 + 2w \\\\ 8 &= 2w \\\\ w &= 4 \\end{aligned}",
+          "hint": "Substitute what you know, then solve the equation that is left by undoing. Check by substituting back."
+        },
         {
           "label": "check by substitution",
           "unit": "equations",
@@ -72,6 +128,78 @@
           "unit": "equations",
           "code": "\\begin{aligned} 5x &= 2x + 12 \\\\ 3x &= 12 \\\\ x &= 4 \\end{aligned}",
           "hint": "Take the same number of $x$ from both sides first, so the bags are on one side only."
+        }
+      ]
+    },
+    {
+      "name": "Brackets",
+      "items": [
+        {
+          "label": "expand",
+          "unit": "brackets",
+          "code": "3(2x + 4) = 6x + 12",
+          "hint": "Multiply every term inside the bracket by the number outside. Signs come too: $4(3x - 2) = 12x - 8$.",
+          "board": "widget: tiles\nk: 3\na: 2\nb: 4",
+          "shows": "3 rows of 2x + 4: 6 x-tiles and 12 ones"
+        },
+        {
+          "label": "like terms",
+          "unit": "brackets",
+          "code": "6x + 12 - x = 5x + 12",
+          "hint": "Terms with the same letters and powers can be added: $6x - x = 5x$. Collect them after expanding."
+        },
+        {
+          "label": "negative outside",
+          "unit": "brackets",
+          "code": "-2(x - 5) = -2x + 10",
+          "hint": "A negative outside flips the sign of every term inside: $-2 \\times (-5) = +10$."
+        },
+        {
+          "label": "factorise",
+          "unit": "brackets",
+          "code": "6x + 9 = 3(2x + 3)",
+          "hint": "Divide every term by the highest common factor and put it outside: $12x - 8 = 4(3x - 2)$, and $2x^2 + 4x = 2x(x + 2)$. Check by expanding.",
+          "board": "widget: tiles\ns: 6\nt: 9\nk: 3",
+          "shows": "6 x-tiles and 9 ones shared into 3 rows of 2x + 3"
+        },
+        {
+          "label": "change the subject",
+          "unit": "brackets",
+          "code": "y = 3x + 5  so  x = (y - 5)/3",
+          "hint": "Undo what was done to the letter, last step first, doing the same to both sides. Check by putting in numbers: $x = 2$ gives $y = 11$, and $(11 - 5) \\div 3 = 2$."
+        }
+      ]
+    },
+    {
+      "name": "Equations and inequalities",
+      "items": [
+        {
+          "label": "x on both sides",
+          "unit": "solving",
+          "code": "3x + 7 = 5x - 9 \\;\\Rightarrow\\; 16 = 2x \\;\\Rightarrow\\; x = 8",
+          "hint": "Expand any brackets. Take the smaller $x$ term from both sides, undo the numbers with the inverse (add to undo $-$), then divide.",
+          "board": "widget: graph\nx: -1, 10\ny: -10, 45\ngrid: 1, 5\nplot: y = 3x + 7\nplot: y = 5x - 9\ncross: 1, 2",
+          "shows": "The two sides as lines meet at x = 8"
+        },
+        {
+          "label": "check by substituting",
+          "unit": "solving",
+          "code": "3(8) + 7 = 31 = 5(8) - 9",
+          "hint": "Put the answer into both sides of the first equation. Equal sides: right. Unequal: look for the first step that went wrong."
+        },
+        {
+          "label": "solving an inequality",
+          "unit": "solving",
+          "code": "-2x > 6 \\;\\Rightarrow\\; x < -3",
+          "hint": "Do the same to both sides, as for an equation. Multiplying or dividing by a negative **reverses** the sign ($2 < 5$ but $-2 > -5$). Check a value from your answer."
+        },
+        {
+          "label": "inequality on a number line",
+          "unit": "solving",
+          "code": "x < 5:\\ \\circ \\text{ at } 5,\\ \\text{shaded left}",
+          "hint": "Open circle for $<$ and $>$ (the end is not included), closed for $\\le$ and $\\ge$; shade towards the solutions.",
+          "board": "widget: numberline\nrange: -2, 10\nray: x < 5",
+          "shows": "x < 5: an open circle at 5, shaded left"
         }
       ]
     }

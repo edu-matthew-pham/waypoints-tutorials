@@ -1,0 +1,11 @@
+# Boards for "What are Earth's spheres?".
+
+# region: scene
+widget: carbon
+mode: spheres
+# endregion
+
+# region: explain
+widget: carbon
+mode: spheres
+# endregion

@@ -1,0 +1,180 @@
+{
+  "title": "Maths reference: Area, volume and circles",
+  "summary": "The words and formulas from Area, volume and circles, each with an example and, where it helps, a picture of the board.",
+  "language": "maths",
+  "course": "maths/measurement",
+  "_about": "Maths cards for maths/measurement (see snippets/maths.json for the format).",
+  "groups": [
+    {
+      "name": "Area",
+      "items": [
+        {
+          "label": "perpendicular height",
+          "unit": "area",
+          "code": "h \\text{ at } 90^\\circ \\text{ to } b",
+          "hint": "The distance from the base to the opposite side or corner, at a right angle (∟) to the base. A slanted side is longer, and is not the height."
+        },
+        {
+          "label": "area of a parallelogram",
+          "unit": "area",
+          "code": "A = b \\times h",
+          "hint": "Cut the triangle off one end and move it: a rectangle with the same base and height.",
+          "board": "widget: area\nshape: parallelogram\nb: 6\nh: 4\ns: 2\ncut: shown\nunits: cm",
+          "shows": "A parallelogram cut and rearranged into a 6 by 4 rectangle"
+        },
+        {
+          "label": "area of a triangle",
+          "unit": "area",
+          "code": "A = \\tfrac{1}{2} \\times b \\times h",
+          "hint": "Two copies make a parallelogram with the same base and height; the triangle is half.",
+          "board": "widget: area\nshape: triangle\nb: 6\nh: 4\ns: 2\ncut: shown\nunits: cm",
+          "shows": "A triangle and its turned copy make a parallelogram"
+        },
+        {
+          "label": "composite area",
+          "unit": "area",
+          "code": "24 + 9 = 33 \\text{ m}^2",
+          "hint": "Split the shape into rectangles and triangles and add the parts, or subtract a missing part from a bigger shape. Put every length in the same unit first."
+        },
+        {
+          "label": "square units",
+          "unit": "area",
+          "code": "1 \\text{ m}^2 = 10\\,000 \\text{ cm}^2",
+          "hint": "Area counts squares: cm², m². A 1 m square is 100 cm by 100 cm."
+        },
+        {
+          "label": "composite area",
+          "unit": "area",
+          "code": "A = 8 \\times 6 - 5 \\times 3 = 33\\ \\text{m}^2",
+          "hint": "Cut the shape into pieces you know and add their areas, or take the missing pieces away from a big rectangle. Each piece uses its own lengths.",
+          "board": "widget: composite\ncorners: 0,0; 8,0; 8,3; 3,3; 3,6; 0,6\nsplit: on\nunits: m",
+          "shows": "An L-shape with its side lengths"
+        },
+        {
+          "label": "estimating an irregular area",
+          "unit": "area",
+          "code": "A \\approx (\\text{full} + \\tfrac{1}{2} \\times \\text{part}) \\times \\text{one square}",
+          "hint": "Count the full squares, add half the part squares, multiply by the area of one square. A finer grid gives a closer estimate."
+        }
+      ]
+    },
+    {
+      "name": "Volume",
+      "items": [
+        {
+          "label": "volume of a prism",
+          "unit": "volume",
+          "code": "V = A \\times h",
+          "hint": "Each layer is the base (the cross-section); the height counts the layers. For a box, $V = l \\times w \\times h$.",
+          "board": "widget: prism\nl: 4\nw: 3\nh: 5\nunits: cm",
+          "shows": "A 4 by 3 by 5 box in layers of 12 cubes"
+        },
+        {
+          "label": "cross-section",
+          "unit": "volume",
+          "code": "V = \\tfrac{1}{2} \\times 6 \\times 4 \\times 10 = 120 \\text{ cm}^3",
+          "hint": "The shape that is the same all the way along a prism, like a slice of bread. A triangular prism's cross-section is a triangle: halve first.",
+          "board": "widget: prism\nbase: triangle\nl: 4\nw: 3\nh: 5\nunits: cm",
+          "shows": "A triangular prism, half of a 4 by 3 box, 5 layers high"
+        },
+        {
+          "label": "capacity",
+          "unit": "volume",
+          "code": "1 \\text{ cm}^3 = 1 \\text{ mL} \\qquad 1000 \\text{ cm}^3 = 1 \\text{ L}",
+          "hint": "How much a container holds. A 10 cm cube holds 1 litre."
+        },
+        {
+          "label": "volume and capacity",
+          "unit": "volume",
+          "code": "1\\ \\text{cm}^3 = 1\\ \\text{mL}, \\quad 1000\\ \\text{cm}^3 = 1\\ \\text{L}, \\quad 1\\ \\text{m}^3 = 1000\\ \\text{L}",
+          "hint": "A cubic metre is 100 × 100 × 100 = 1 000 000 cm³: convert each of the three lengths."
+        },
+        {
+          "label": "volume of a prism",
+          "unit": "volume",
+          "code": "V = A h \\qquad h = V \\div A",
+          "hint": "The area of the end times the length, for any right prism. Divide to find a missing length."
+        }
+      ]
+    },
+    {
+      "name": "Circles",
+      "items": [
+        {
+          "label": "radius and diameter",
+          "unit": "circles",
+          "code": "d = 2r \\qquad r = d \\div 2",
+          "hint": "The radius goes from the centre to the edge; the diameter right across through the centre. A chord joins any two points; the diameter is the longest.",
+          "board": "widget: circle\nr: 3\nunits: cm",
+          "shows": "A circle with its centre, radius, diameter, a chord and the circumference"
+        },
+        {
+          "label": "pi",
+          "unit": "circles",
+          "code": "\\pi = \\frac{C}{d} = 3.14159\\ldots",
+          "hint": "The circumference divided by the diameter: the same for every circle. 3.14 and 22/7 are approximations.",
+          "board": "widget: circle\nr: 1.5\nroll: shown\nshow: none\nunits: cm",
+          "shows": "A circle rolled out flat: just over 3 diameters"
+        },
+        {
+          "label": "circumference",
+          "unit": "circles",
+          "code": "C = \\pi d = 2\\pi r",
+          "hint": "Use the diameter, or double the radius. Backwards: $d = C \\div \\pi$. Exact answers keep π: $10\\pi$ cm."
+        },
+        {
+          "label": "area of a circle",
+          "unit": "circles",
+          "code": "A = \\pi r^2",
+          "hint": "Slices of a circle make a near-rectangle πr long and r high. The area is between 2r² and 4r². Do not mix it up with C = 2πr.",
+          "board": "widget: circlearea\nr: 3\nn: 24\ncut: shown\nunits: cm",
+          "shows": "24 slices laid top to tail: nearly a rectangle πr by r"
+        },
+        {
+          "label": "radius from area",
+          "unit": "circles",
+          "code": "r = \\sqrt{A \\div \\pi}",
+          "hint": "Divide by π, then take the square root. A semicircle is half the area; its perimeter is half the circumference plus the diameter."
+        }
+      ]
+    },
+    {
+      "name": "Pythagoras",
+      "items": [
+        {
+          "label": "Pythagoras' theorem",
+          "unit": "pythagoras",
+          "code": "a^2 + b^2 = c^2",
+          "hint": "In a right-angled triangle, the squares on the two shorter sides add to the square on the hypotenuse c, the side opposite the right angle.",
+          "board": "widget: pythag\na: 3\nb: 4\nunits: cm",
+          "shows": "Squares of 9, 16 and 25 on a 3-4-5 triangle"
+        },
+        {
+          "label": "finding a side",
+          "unit": "pythagoras",
+          "code": "c = \\sqrt{a^2 + b^2} \\qquad b = \\sqrt{c^2 - a^2}",
+          "hint": "Add the squares for the hypotenuse; subtract for a shorter side. Check: the hypotenuse is the longest."
+        },
+        {
+          "label": "right, acute or obtuse",
+          "unit": "pythagoras",
+          "code": "a^2 + b^2 \\;\\text{vs}\\; c^2",
+          "hint": "With c the longest side: equal, right-angled; a² + b² smaller, obtuse; bigger, acute. Pythagorean triples: 3-4-5, 5-12-13, 8-15-17 and multiples."
+        }
+      ]
+    },
+    {
+      "name": "Time zones",
+      "items": [
+        {
+          "label": "time zones",
+          "unit": "time",
+          "code": "\\text{bigger offset: ahead} \\qquad \\text{smaller offset: behind}",
+          "hint": "Find the difference between the UTC offsets, add or take it away, and change the day if you cross midnight. For a flight, add the flight time in the departure zone, then change zones.",
+          "board": "widget: timezone\ncities: Sydney +11; Perth +8; London +1; Tokyo +9\nt: 9\nday: Monday",
+          "shows": "9:00 am Monday in Sydney, and the same moment in Perth, London and Tokyo"
+        }
+      ]
+    }
+  ]
+}

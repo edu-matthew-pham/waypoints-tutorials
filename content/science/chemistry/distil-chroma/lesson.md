@@ -1,9 +1,31 @@
 ---
-order: 7
+order: 9
+node: AC9S7U06 n4
+woven: [AC9S7H02, AC9S7I04, AC9S7I06]
 unit: mixtures
 title: Distillation and chromatography
 summary: Distillation collects a liquid by boiling and condensing it; chromatography separates dissolved substances such as dyes. Explain each principle and when distillation beats evaporation.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8247
+  url: http://127.0.0.1:8247/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "Distillation: heat the seawater, cool the vapour in the condenser, collect pure water." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Distillation"
+  say: "Distillation separates by boiling point: the vapour is cooled and collected."
+  clip:
+    - caption: { text: "Seawater: water with dissolved salt.", say: "Seawater is water with dissolved salt." }
+    - wait: 1630
+    - click: "Heat the seawater"
+    - wait: 2500
+    - caption: { text: "The water boils off. The condenser cools the vapour back to liquid.", say: "The water boils off, and the condenser cools the vapour back to liquid." }
+    - wait: 3000
+    - caption: { text: "Pure water collects in the flask; the salt stays behind.", say: "Pure water collects in the flask, and the salt stays behind." }
+    - wait: 800
 hook: "Ships at sea make fresh water by boiling seawater and catching the steam. Forensic scientists find out which pen wrote a note by letting water creep up a strip of paper."
 ---
 Two more techniques. Distillation uses the same property as evaporation (boiling point) but keeps the vapour. Chromatography separates substances that are **all** dissolved.
@@ -36,6 +58,7 @@ tasks:
       q: "Which pen wrote the note?"
       options: ["Pen A", "Pen B", "Neither"]
       answer: 1
+      feedback: ["Compare the spots: Pen A has a red dye that the note doesn't.", null, "Line up the spots: one pen's dyes match the note's at every height."]
       explain: "Pen B's dyes match the note's exactly. Pen A has an extra red dye."
 ```
 
@@ -75,6 +98,15 @@ tasks:
       answer: 1
       feedback: ["It isn't weight: every dye is pulled up by the water, against gravity.", null, "The colours were in the ink all along. The water only separates them.", "Nothing evaporates here. The water carries the dyes up the paper."]
       explain: "Dyes that dissolve well and stick weakly travel furthest."
+  - check:
+      type: match
+      q: "Match each job to the technique that suits it."
+      pairs:
+        - ["Get drinking water from seawater", "Distillation"]
+        - ["Get salt from seawater, letting the water go", "Evaporation"]
+        - ["Find out which dyes are in a black ink", "Chromatography"]
+        - ["Get sand out of sandy water", "Filtration"]
+      explain: "Need the liquid back? Distil. Need only the dissolved solid? Evaporate. Several dissolved substances, such as dyes? Chromatography."
   - check: { type: reflect, text: "I wrote the principle of each technique, a mixture each one suits, and what makes distillation different from evaporation." }
 ```
 
@@ -82,9 +114,25 @@ tasks:
 
 ### The dyes
 
+### Which technique suits?
+
 ### In your own words
 
 In your book: explain the principle of each technique and name a mixture each one suits.
+
+## Mix it up
+
+```step
+stage: practise
+insight: "The flat part of a heating curve explains why boiling water holds a steady temperature, which is what the flask in a distillation is doing."
+check:
+  type: question
+  q: "Looking back at heating curves: water in a flask is boiling and the heat stays on full. What does a thermometer in the water show over the next few minutes?"
+  options: ["It stays at about 100 °C", "It keeps rising", "It drops, because the water is turning to steam", "It goes up and down"]
+  answer: 0
+  feedback: [null, "While the water boils, the energy goes into separating the particles, not speeding them up.", "The heat is still on. The water stays at its boiling point until it has all boiled away.", "The reading is steady while the water boils."]
+  explain: "During a change of state the temperature stays the same: the energy goes into pulling the particles apart into steam."
+```
 
 ## Elaborate: distillation or evaporation?
 
@@ -154,12 +202,14 @@ tasks:
       q: "An unknown dye has Rf = 0.50 in the same setup. Which dye could it be?"
       options: ["The red dye", "The blue dye", "None of them"]
       answer: 0
+      feedback: [null, "The blue dye's Rf is 0.80. Which dye had 0.50?", "Compare the numbers: one dye in the same setup had an Rf of 0.50."]
       explain: "Same Rf value, same conditions: probably the same substance."
   - check:
       type: question
       q: "A green ink gives just one spot. What can you conclude?"
       options: ["It is probably one dye, but two dyes with the same Rf value would also give one spot", "It is definitely a pure substance", "The test failed"]
       answer: 0
+      feedback: [null, "One spot is evidence, not proof: two dyes that travel the same distance would sit on top of each other.", "A single spot is a real result: the ink moved up the paper and stayed together."]
       explain: "Testing again with a different solvent would check."
 ```
 

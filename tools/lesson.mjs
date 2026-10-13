@@ -1,19 +1,30 @@
 // Node/fs side of lesson loading and validation. Pure logic lives in lesson-core.mjs.
 //
 // Content tree:  content/<subject>/<collection>/<lesson>/lesson.md
-// A lesson's slug is its path under content/ (e.g. "code/python/turtle-intro") and is also
+// A lesson's slug is its path under content/ (e.g. "code/python-foundations/turtle-intro") and is also
 // its URL path on the site. Optional content/<dir>/index.md (frontmatter: title, summary)
 // names the subject and collection pages.
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
 import YAML from 'yaml';
-import { snippetFrom, parseLessonText, validateLessonCore, snippetId, FEATURES } from './lesson-core.mjs';
+import { snippetFrom, extractInlineCode, parseLessonText, validateLessonCore, snippetId, FEATURES } from './lesson-core.mjs';
 
 export * from './lesson-core.mjs';
 
 export const CONTENT_ROOT = resolve('content');
 
-const readIn = (dir) => (file) => { const p = join(dir, file); return existsSync(p) ? readFileSync(p, 'utf8') : undefined; };
+// Code in a lesson's folder, else code written inside its lesson.md (```code file#region blocks; see extractInlineCode).
+const inlineCache = new Map();
+function inlineCode(dir) {
+  const p = join(dir, 'lesson.md');
+  if (!existsSync(p)) return {};
+  const m = statSync(p).mtimeMs, hit = inlineCache.get(dir);
+  if (hit && hit.m === m) return hit.inline;
+  const inline = extractInlineCode(readFileSync(p, 'utf8').replace(/\r\n/g, '\n')).inline;
+  inlineCache.set(dir, { m, inline });
+  return inline;
+}
+const readIn = (dir) => (file) => { const p = join(dir, file); return existsSync(p) ? readFileSync(p, 'utf8') : inlineCode(dir)[file]; };
 
 export function listLessonDirs(root = CONTENT_ROOT) {
   const out = [];
@@ -45,7 +56,12 @@ export function loadLesson(dir) {
   const lesson = { ...parseLessonText(readFileSync(join(dir, 'lesson.md'), 'utf8'), slug), dir };
   // teacher.yml beside lesson.md: notes, goals, exit ticket, student explanation and solutions (see AUTHORING.md).
   const t = join(dir, 'teacher.yml');
-  if (existsSync(t)) lesson.teacher = YAML.parse(readFileSync(t, 'utf8')) || {};
+  // A ```teacher block inside lesson.md (parseLessonText) wins; teacher.yml is the fallback.
+  if (!lesson.teacher && existsSync(t)) lesson.teacher = YAML.parse(readFileSync(t, 'utf8')) || {};
+  // Class activities (content/<course>/class/<lesson>.yml): kept outside the lesson folder so editing them never
+  // re-records the lesson's clips. They become slides in the deck and a section of the teacher guide (AUTHORING › Class plan).
+  const c = join(dir, '..', 'class', `${dir.split(sep).pop()}.yml`);
+  if (!lesson.classPlan && existsSync(c)) lesson.classPlan = YAML.parse(readFileSync(c, 'utf8')) || {};
   return lesson;
 }
 
@@ -58,7 +74,7 @@ export function loadLessons(only) {
 /** Snippet files: { turtle: {...}, html: {...} } (parsed JSON), read from snippets/ in the repo root. */
 export function loadSnippetFiles() {
   const out = {};
-  for (const kind of ['turtle', 'html', 'microbit', 'arcade', 'robot']) {
+  for (const kind of ['turtle', 'html', 'microbit', 'arcade', 'robot', 'p5']) {
     const p = resolve('snippets', `${kind}.json`);
     if (existsSync(p)) out[kind] = JSON.parse(readFileSync(p, 'utf8'));
   }

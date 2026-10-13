@@ -1,9 +1,31 @@
 ---
-order: 4
+order: 6
+node: AC9S7U06 n1
+woven: [AC9S7I06]
 unit: mixtures
 title: Pure substance or mixture?
 summary: A pure substance contains only one kind of particle; a mixture contains two or more. Classify familiar materials by their particles, not by how they look.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8250
+  url: http://127.0.0.1:8250/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "Distilled water: only one kind of particle, so it is a pure substance." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Pure substances and mixtures"
+  say: "A pure substance has one kind of particle; a mixture has two or more."
+  clip:
+    - caption: { text: "Distilled water: only one kind of particle. A pure substance.", say: "Distilled water has only one kind of particle: a pure substance." }
+    - wait: 3280
+    - click: "Salt water"
+    - caption: { text: "Salt water: two kinds of particle. A mixture.", say: "Salt water has two kinds of particle: a mixture." }
+    - wait: 2620
+    - click: "Air"
+    - caption: { text: "Air is a mixture too: several kinds of particle.", say: "Air is a mixture too, of several kinds of particle." }
+    - wait: 800
 hook: "In the supermarket, \"100% pure\" orange juice means nothing has been added. In science, pure means something much stricter, and you can only check it by looking at the particles."
 ---
 Before you can separate a mixture, you need to know whether you have one. That is a question about **particles**, not appearance.
@@ -75,11 +97,24 @@ tasks:
 
 In your book: explain the difference between a pure substance and a mixture using particles. Use salt water as one example.
 
+## Mix it up
+
+```step
+stage: practise
+insight: "A pure substance is defined by its particles, so the particle picture of one substance comes back before the idea of mixtures."
+check:
+  type: question
+  q: "Looking back at the particle model: if you could zoom into a drop of pure water, what would you see?"
+  options: ["Only water particles, with empty space between them, always moving", "Water particles with a little air between them", "Smooth water, all the way down", "Water particles and salt particles evenly mixed"]
+  answer: 0
+  feedback: [null, "There is nothing between particles, not even air.", "Water is made of particles, far too small to see.", "Pure water has only one kind of particle."]
+  explain: "Pure means one kind of particle. Those particles still have empty space between them and never stop moving."
+```
+
 ## Elaborate: even and uneven mixtures
 
 ```step
 stage: modify
-tier: typical
 insight: "Homogeneous mixtures are where students most often mistake a mixture for a pure substance."
 try: { playground: science, starter: "boards.yml#abc", height: 420 }
 check:
@@ -129,12 +164,14 @@ tasks:
       q: "In salt water, what is the solvent?"
       options: ["Water", "Salt"]
       answer: 0
+      feedback: [null, "The salt is what dissolves: the solute. The solvent is what does the dissolving."]
       explain: "The solvent does the dissolving: water."
   - check:
       type: question
       q: "In a soft drink, what are the solutes?"
       options: ["Water", "Sugar and carbon dioxide gas"]
       answer: 1
+      feedback: ["Water does the dissolving, so it is the solvent. The solutes are what dissolve in it.", null]
       explain: "A gas can be a solute too: that's the fizz."
 ```
 
@@ -158,18 +195,21 @@ tasks:
       q: "Stainless steel looks like a single shiny metal. It is mostly iron, with chromium and nickel particles spread evenly through it. Pure substance or mixture?"
       options: ["Pure substance", "Mixture"]
       answer: 1
+      feedback: ["Looking like one metal isn't the test. Count the kinds of particle: iron, chromium and nickel.", null]
       explain: "Alloys are mixtures, even though they look like one metal."
   - check:
       type: question
       q: "Seawater can contain more or less salt depending on where it is collected. Is seawater with extra salt still the same mixture?"
       options: ["Yes: the same mixture with different amounts", "No: it becomes a new pure substance"]
       answer: 0
+      feedback: [null, "It still has two or more kinds of particle, so it is still a mixture."]
       explain: "Mixtures can vary in how much of each part they contain."
   - check:
       type: question
       q: "Which statement is true of every pure substance?"
       options: ["It always has the same make-up, with one kind of particle", "It looks shiny and even", "It occurs naturally"]
       answer: 0
+      feedback: [null, "Salt water looks even all the way through and is a mixture. Looks can't tell you.", "Distilled water is made by people and is pure; seawater is natural and is a mixture."]
       explain: "That is what makes the definition useful: a pure substance's make-up can't vary."
 ```
 

@@ -1,9 +1,30 @@
 ---
-order: 2
+order: 3
+node: AC9S7U01 n3
+woven: [AC9S7I06]
 unit: classification
 title: Who is it? Using a key
 summary: A dichotomous key identifies an organism by a series of yes-or-no questions about features you can observe. Following each choice carefully leads to the right name; one wrong choice leads to the wrong one.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8208
+  url: http://127.0.0.1:8208/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Using a dichotomous key"
+  say: "A key asks two-way questions about features you can see, one at a time."
+  clip:
+    - caption: { text: "Read the specimen, then answer each question about it.", say: "Answer each question about the specimen in front of you, one at a time." }
+    - caption: { text: "Does it have a backbone? Yes.", say: "Does it have a backbone? Yes." }
+    - click: "Yes"
+    - caption: { text: "Does it have feathers? No: it has fur.", say: "Does it have feathers? No, it has fur." }
+    - click: "No"
+    - expect: { selector: "body", contains: "Wombat" }
+    - caption: { text: "Each answer leads to the next question, until you reach a name.", say: "Each answer leads on to a name; one wrong answer gives the wrong name." }
+    - wait: 800
 hook: "A field guide doesn't show you every animal in Australia and ask you to find the match. It asks you a question about the one in front of you, then another, then another."
 ---
 Last lesson: kingdoms. This lesson: a tool for naming organisms one careful choice at a time.
@@ -70,6 +91,20 @@ tasks:
 ### In your own words
 
 In your book: write the path you took to identify the platypus, naming the feature you checked at each step.
+
+## Mix it up
+
+```step
+stage: practise
+insight: "A key is a classification tool for a purpose, and the purpose it serves is identification."
+check:
+  type: question
+  q: "Looking back at why we classify: what job is a dichotomous key for?"
+  options: ["Identifying an organism you do not know", "Deciding which organism is better", "Showing exactly how organisms are related", "Giving a new organism its name"]
+  answer: 0
+  feedback: [null, "Groups describe features and relationships, not worth.", "A key sorts by features that are easy to check, one step at a time. It does not show ancestry.", "The name is chosen by scientists. A key leads you to a name that already exists."]
+  explain: "A key identifies an organism by asking about features you can observe. Different classifications suit different purposes."
+```
 
 ## Elaborate: a different key
 

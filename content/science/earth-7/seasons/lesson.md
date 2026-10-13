@@ -1,9 +1,31 @@
 ---
 order: 2
+node: AC9S7U03 n4
+woven: [AC9S7H02, AC9S7I06]
+assumes: [AC9S7U03 n3]   # seasons needs only spin, orbit and tilt (n1); it comes straight after them, before phases and eclipses, on purpose
 unit: earth
 title: Why is summer hot?
 summary: "Seasons are caused by the Earth's tilted axis, not its distance from the sun. Leaning towards the sun gives a higher noon sun (concentrated light) and longer days: summer. The two hemispheres have opposite seasons."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8227
+  url: http://127.0.0.1:8227/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "Earth's orbit from above, its axis always leaning the same way; from the side, Canberra tilted towards the sun in December." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Why summer is hot"
+  say: "Seasons come from the Earth's tilt, not its distance from the sun."
+  clip:
+    - caption: { text: "December: Canberra leans towards the sun. Long days, high noon sun.", say: "In December, Canberra leans towards the sun: long days and a high noon sun." }
+    - wait: 800
+    - click: { selector: "#skyd" }
+    - caption: { text: "July: Canberra leans away. Short days, low sun: winter.", say: "In July, Canberra leans away: short days, a low sun, winter." }
+    - wait: 1200
+    - caption: { text: "Earth is closest to the sun in January, so distance isn't the cause.", say: "Earth is closest to the sun in January, so distance isn't the cause." }
+    - wait: 600
 hook: "On 4 January the Earth is at its closest to the sun all year, five million kilometres closer than in July. That day it's summer in Canberra and winter in London."
 ---
 The Earth's axis is tilted and always points the same way. This lesson: what that does across a year.
@@ -72,11 +94,24 @@ tasks:
 
 In your book: draw a torch shining straight down and at a slant onto paper. Use it to explain why a high sun heats the ground more.
 
+## Mix it up
+
+```step
+stage: practise
+insight: "The tilt that causes the seasons only works because the axis keeps pointing the same way as the Earth goes round the sun."
+check:
+  type: question
+  q: "Looking back at the Earth's spin and orbit: as the Earth goes round the sun, what does its tilted axis do?"
+  options: ["It keeps pointing the same way in space", "It always leans towards the sun", "It flips over halfway through the year", "It stands straight up"]
+  answer: 0
+  feedback: [null, "Because it keeps pointing the same way, the north end leans towards the sun for half the year and away for the other half.", "It never flips over.", "It is tilted about 23.4°."]
+  explain: "The axis keeps pointing the same way in space. That is why each hemisphere leans towards the sun for half the year."
+```
+
 ## Practise: the other hemisphere
 
 ```step
 stage: practise
-tier: typical
 insight: "Seeing opposite seasons on the same date in London and Canberra is the strongest evidence for the tilt explanation."
 try: { playground: board, starter: "boards.yml#hemispheres", height: 640 }
 tasks:

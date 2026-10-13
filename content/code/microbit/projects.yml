@@ -1,0 +1,37 @@
+playground: microbit
+projects:
+  - id: plant-monitor
+    title: Plant monitor
+    after: microbit-ranges
+    goal: |
+      Make a **plant monitor** for a windowsill: it reads the light and the temperature, and its face tells you whether the plant is happy, too dark or too hot. What counts as too dark or too hot is up to you (look up what your plant likes).
+    example: plant-monitor.ts
+    uses: [if, else, variable-update]
+    milestones:
+      - "The face changes with the light level, decided by if and else."
+      - "A third face for too hot, in one if … else if … else, with the questions in an order that works."
+      - "A button shows how many times it has checked, counted in a variable."
+    stretch:
+      - "A bar graph of the light on B."
+      - "A warning that flashes, not just a face."
+      - "Different limits for day and night."
+    teacher: |
+      The common gap is question order: a wide question asked first ("light level < 200") hides the narrower ones after it. Ask "which face shows when it is dark and hot at the same time, and is that the one you want?".
+
+  - id: answer-machine
+    title: The answer machine
+    after: microbit-pick
+    goal: |
+      Make a micro:bit that **answers questions**: shake it and it picks an answer from a list (a Magic 8-ball, a dinner chooser, a "who goes first" picker, a dice for a board game). The answers are yours.
+    example: answer-machine.ts
+    uses: [list, list-index, random]
+    milestones:
+      - "Shaking it shows an answer picked at random from my list."
+      - "My list has at least five answers, and every one can come up."
+      - "Someone else used it for a real question."
+    stretch:
+      - "A second list on button A for a different kind of question."
+      - "Never the same answer twice in a row."
+      - "An animation before the answer appears."
+    teacher: |
+      "Every one can come up" is the list-length check in disguise: a random place from 0 to the length minus 1. Students who type a fixed number there miss the last answer when the list grows.

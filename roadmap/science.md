@@ -1,0 +1,251 @@
+# Roadmap: Science
+
+The science chat's file. Lessons live in `content/science/` (see CLAUDE.md › Science).
+
+## Done: coach prompts on science recap pages (12 Oct 2026, science chat)
+
+`coach: true` on all 15 science courses: each recap card has a "Still stuck? Copy a coach prompt" box, hidden unless the teacher shares the recap link with `?coach=1`; the teacher guide shows each lesson's full prompt. Prompts are one move each (node, criteria, misconceptions from `stuck:`, one step back), with the coaching rules adapted from the Waypoints Kit's `coach.md` (modes, no giveaways, a reflective question after help, the AI may be wrong), made self-contained because the Kit's read-this-URL prompt needs a browsing AI and still points at the suspended account (roadmap/shared.md › coach prompt; UTS cognitive offloading paper). Tested: hidden without the flag, shown and copied with it, guide section present. School context: CGGS is trialling Microsoft 365 Copilot with Study and Learn; test a prompt there before sharing the link with students.
+
+## Done: Human endeavour and Inquiry woven and tagged (12 Oct 2026, science chat)
+
+Matthew's choice: like code's "In the real world", these strands stay woven into lessons rather than getting tutorials, but are now tagged (`woven:`, AUTHORING › 12) and shown on the curriculum map. 105 tags across 70 lessons; all 8 Human endeavour and 14 of 16 Inquiry descriptors are practised somewhere (I08, writing texts, stays with class work; I03, equipment, is tagged only where sample size or choosing a tool is the point). Five short typical-tier steps fill the gaps: the Dingo Fence (7H03, cascades), a boil water alert (7H04, separating), Slip, Slop, Slap (9H03, light), Panama disease TR4 and the QUT banana (9H04, reproduction), and an investigable question and hypothesis (9I01, heat transfer).
+
+Still thin on screen, and left to class work by choice (Matthew, 12 Oct: the site is the simulation, real investigations happen in class). To support that class work, every science unit primer (29) now ends with **Investigate in class**: 2 or 3 investigable questions each, with what to change, measure and keep the same (models or named Australian secondary data where a unit can't be tested directly: BoM, Geoscience Australia, CSIRO Cape Grim), and a safety and ethics line (Traditional Owners for anything collected on Country). Primers are outside lesson folders, so no clips re-record. On screen, these remain thin: 7I01 and 9I01 investigable questions in Years 7–8 (only predict-from-model steps); I02 risk, ethics and heritage on Country (both bands); I07 ethics and cultural protocols for secondary data; 9H01 publication and peer review (model revision is covered, peer review isn't).
+
+## Done: recap pages for every science course (12 Oct 2026, science chat)
+
+`recap: true` on all 15 science courses (Year 7 Chemistry had it already): a Try first exit question per lesson, then the answer, explanation, picture and clip, at `<course>/recap/`, linked from the course page. Optional Quick checks are left out (they are self-tests already). Two exit questions that restated their lesson's title now apply the idea instead (fossil fuels: why CO₂ still rises when half is taken up; why classify: a new rainforest beetle); both clips re-record. Science decks pass `npm run check-decks` after the audit's new checks.
+
+## Done: Matthew's decisions on the audit notes (12 Oct 2026, science chat)
+
+- **Struggle notes:** branch `science-struggle-live` merged; every science lesson now has `struggle:` (17 more clips re-record).
+- **Punnett:** the explain board and clip use pea flower colour (Pp × Pp), as the rest of the lesson does; eye colour is gone.
+- **Plates:** convection is driven by Earth's inner heat, from the core below and from radioactive decay in the mantle rock (lesson, sort, teacher notes, primer; the primer's fingernail comparison too). The board's "Heat from the core" label stays: the core does heat the bottom.
+- **g = 9.8 everywhere:** every board that set g = 10 (Years 7 and 10) now uses 9.8, with masses chosen for whole-number weights and reachable slider steps: a 5 kg pile of books (49 N), a 50 kg skydiver (490 N), a 100 kg skydiver with gear (980 N), the 500 kg lift (4900 N, steps of 100). Text and teacher notes updated.
+- **Heating curve to scale:** water's curve now follows the energy each part needs at steady heating (1 kg: 42, 334, 418, 2260 and 30 kJ), so boiling is about seven times as long as melting, with a new question on why. The cooling curve uses stearic acid (freezes at 69 °C); teacher notes say candle wax is a mixture and freezes over a range. The heating-curve explain clip re-records.
+- **Core path:** the steps holding a criterion only at typical width are now core (half-life uses, plant gametes, a hard-to-classify organism, the other hemisphere, even and uneven mixtures, meiosis and mitosis), with timings updated; collision theory gains a core match on all four rate factors instead of untiering its 8-minute concentration step.
+- Antibiotics framing: noted by Matthew, unchanged.
+
+## Done: every science tutorial checked against its criteria (11 Oct 2026, science chat)
+
+The same audit as the Quick checks, over the other 97 science lessons (7 parallel read-only reviews, every proposal checked before applying): 172 edits in 73 lessons, plus a few follow-ups.
+- **Criteria now tested** (82 edits, mostly one new question or match in the Explain step): for example the four parts of a feedback loop (9U01 n5), contact and non-contact forces (10U05 n1), single and double displacement and neutralisation products (10U07 n3), a fair test for rate (10U07 n6), solutions, suspensions and colloids (8U06 n4), the limits of each representation (8U06 n5), fast and slow carbon stores (9U03 n2), genotype and phenotype (10U01 n1), a pedigree (10U01 n4), the big bang's age and cooling (10U03 n2). The ocean-store step in energy balance is no longer tiered (timing updated).
+- **Distractors** (43): second joke options replaced with real misconceptions; feedback added where options had none, or rewritten where it only restated the answer.
+- **Accuracy** (42), for example: alpha decay shrinks the nucleus and beta fixes the neutron to proton balance (the "stable ratio" wording was wrong for alpha); americium does give out gamma, and smoke reduces the alarm's current; ice takes up 9% more space (8% less dense); atoms first imaged in the 1950s; earlobes aren't single-gene (now ABO blood group); a heart beat starts in muscle, not nerves (also the `cell` widget label); Hooke's microscope wasn't home-made; the kangaroo's order is Diprotodontia; Canberra's latest sunset is early January; Australia moves nearly twice as fast as fingernails grow; an hour of sunlight, not a second, matches a year of human energy use; the hydrogen *nuclei* were made in the first minutes; 60 km/h is 50% faster than 40 km/h; energy is not stored "in bonds".
+- Clips: only lesson.md changed, except kingdoms `hierarchy.txt`, cell-scale and energy-balance `teacher.yml` (all three clips re-record anyway) and `cell.js` (board clips re-record anyway).
+
+Left for Matthew: Punnett's board and clip use eye colour, which the lesson's own notes say isn't single-gene; plates says the core heats the mantle (much of the heat is radioactive decay in the mantle); the heating curve's segment lengths aren't to scale and candle wax melts over a range; arrows and balanced use g = 10 while weight uses 9.8; collision theory ignores orientation; some criteria are tested only in typical-tier steps (collision-theory factors, half-life uses, ovules, a hard-to-classify kingdom, opposite seasons); the antibiotics question now says overuse, not stopping early, which may differ from Health messaging.
+
+## Done: Quick checks test understanding and cover every criterion (11 Oct 2026, science chat)
+
+Matthew's follow-up to the review: at most one joke option per question (the rest real misconceptions), every success criterion covered, and simplifications made accurate.
+- Joke options replaced with real slips in all 12 Quick checks (for example "Floating sea ice melts" for sea-level rise, "Continental crust is denser than the mantle" for collisions, "Each group changes because its members try" for speciation).
+- Criteria now covered, with new questions or match tasks: 7U01 n4 (a key question that doesn't split), 7U02 n3 (defining abiotic), 8U03 n6 (what each line of evidence shows), 8U04 n4 (a second rock-cycle pathway), 8U04 n5 (Wurundjeri greenstone axes from Wil-im-ee Moor-ring, Mount William), 9U01 n6 (the four parts of the loop: set point, change, corrective response, return detected), 9U02 n2 (stamen and carpel), 9U02 n5 (cost), 9U03 n5 (four flows between named spheres), 10U01 n5 (parent to gametes), 10U01 n6 (daughters), 10U02 n3 (what each line shows), 10U02 n5 (present biodiversity), 10U04 n5 and n6 (sea ice and albedo, why the Arctic warms faster).
+- Accuracy: granite is hard because of its minerals (quartz, feldspar), with slow cooling giving the interlocking crystals; insulators have almost no free electrons (electric current lesson and teacher notes, and the `charge` widget's plastic note).
+- Found on the way: the 9U01 n5 tutorial (feedback) names only "set point" and "corrective response" of the node's four components; the check uses plain words for the other two.
+
+## Done: struggle notes (11 Oct 2026, science chat)
+
+`struggle:` added to teacher.yml for the 60 older science lessons that lacked one (AUTHORING › Effort and struggle): the hard part, then the question to ask instead of rescuing, drawn from each lesson's stuck list.
+
+Clips: teacher.yml is inside the clip hash (`stepHash` reads every file in the lesson folder except lesson.md), so these edits do re-record. Checked against the live build (gh-pages, built from 20a9f94): 43 of the 60 explain clips already need recording because `playground-board/` changed since then, so their notes went to `main` at no extra cost. The other 17 (Year 7 chemistry, chemistry-8 atoms, compounds and chemical change, collision theory, rearranging atoms, igneous, plates, heat transfer, variation, natural selection) are live and unchanged; their notes are on branch `science-struggle-live` for Matthew to merge when a re-record of those 17 is acceptable.
+
+Noticed, not changed (shared tool): `teach.mjs` sends science modify steps down the question-slide branch, so `struggle:` never reaches science slide notes. It does show in For teachers and the teacher guide.
+
+No science lesson has a first hint that gives the answer (`npm run effort`; the 17 flagged are code and maths).
+
+## Done: review pass, Quick checks and Physics 9 waves and charge (11 Oct 2026, science chat)
+
+Read the 12 Quick check lessons and Physics 9 sound, static charge, electric current, light, bending light and wave or particle against their nodes' success criteria. Fixed (lesson.md only, so no clip re-records):
+- Universe check: hydrogen and helium proportions are by mass (three-quarters by mass, about 92% by number of atoms); the matter-proportions sort item said "three atoms in four". Now matches the `universe` widget.
+- Light: X-rays are millions of times (or more) higher in frequency than microwaves, not tens of thousands; the "brighter" feedback said brightness applies to visible light only; the Explain insight named the wrong success criteria.
+- Bending light: Explain insight said the third success criterion (it is the second, reflection and refraction).
+- Sound: "stationary" feedback said it isn't a kind of wave; revision summary now says closer together and more tightly bonded (closeness alone is a misconception).
+- Wave or particle: "sound needing a medium" was sorted as wave model, but the particle model explains that (the lesson says so later); replaced with an echo.
+- Genetics check: the X-linked question's fourth option ("One quarter of daughters") didn't answer the question and had mismatched feedback; now "One quarter" with feedback.
+- Boundaries check: matching fossils are plants and animals (Glossopteris, Mesosaurus), not "land animals". Reproduction check: a garbled explanation rewritten.
+
+Left for Matthew (judgement calls, unchanged): joke distractors in Year 7 to 9 checks; success criteria only partly checked (9U02 n2 stamen and carpel, n5 resource cost, 9U01 n6 the stimulus as a fourth component, 8U04 n5 First Nations stone selection named only as "people"); "insulators have no free electrons" (simplification); granite's hardness put down to interlocking crystals rather than its minerals.
+
+## Done: Quick checks for class-taught nodes, Years 7 and 8 (11 Oct 2026, science chat)
+
+Matthew asked for very brief basic checks of what students should know where a node stays class-taught. Format (no shared tool change): one optional, check-only lesson per progression descriptor, a few `question`, `sort` and `reflect` checks per node, no board, clip or picture, `optional: true` so completion is unaffected, `node:` as a list so the curriculum map shows the node as covered. Teacher notes say the node is taught in class and the lesson is a self-test. Built: `biology-7/classification-check` (7U01 n4, n5), `biology-7/foodweb-check` (7U02 n3, n5), `chemistry/choose-technique-check` (7U06 n5), `earth-8/boundaries-check` (8U03 n3 to n6), `earth-8/rocks-check` (8U04 n1, n3 to n5). Validate clean, pages load, marking checked headless.
+
+Years 9 and 10 (same day): `biology-9/feedback-check` (9U01 n6, n7), `biology-9/reproduction-check` (9U02 n2, n4, n5), `earth-9/carbon-cycle-check` (9U03 n5), `biology-10/genetics-check` (10U01 n2, n5, n6), `biology-10/evolution-check` (10U02 n3 to n5), `earth-10/universe-check` (10U03 n1, n4, n5) and `earth-10/climate-check` (10U04 n4 to n6). Every science node in Years 7 to 10 now has a tutorial or a Quick check; only the integration and Human endeavour/Inquiry strands stay with class work.
+
+## Done: waves, charge and the class-task nodes (11 Oct 2026, science chat)
+
+Two new shared-board widgets (Matthew approved): `wave` (`mode: sound | refract | spectrum`) and `charge` (`mode: static | pair | current`), both in AUTHORING › 12; the sound and charge boards draw on a canvas. Year 9 Physics gains a unit, Wave and particle models (AC9S9U04): How does sound travel? (n2, hinge), Where does static charge come from? and How does current flow? (n3), What is the electromagnetic spectrum? and How does light bend? (n4), Wave or particle? (n5, questions only). Lessons now run heat transfer, sound, static charge, current, spectrum, bending light, wave or particle, then conservation, efficiency, Sankey. Clips on ports 8289 to 8293 (next free 8297); pictures for all five; every board check passes headless; decks fit.
+
+Matthew also said yes to short questions-led lessons for the class-task nodes, so eight more exist: Same push, different mass (`physics-7/force-mass`, 7U04 n5, forces board), Physical or chemical? Use all the clues (`chemistry-8/classify-changes`, 8U07 n6), Organ systems (`biology-8/organ-systems`, 8U02 n4), From uranium to lead (`chemistry-9-10/decay-chains`, 9U06 n5, decay board: uranium-238 takes 8 alpha and 6 beta decays), Where does the mass go? (`chemistry-9-10/conservation-of-mass`, 9U07 n5), Use the table to predict (`chemistry-9-10/predict-from-table`, 10U06 n4, table board), Solving force and motion problems and Newton's laws in the real world (`physics-10/problems`, `real-world`, 10U05 n7 and n8). No clips or pictures for these (they are practice and discussion); ports 8294 to 8296 are used by the three with boards. The woomera question treats it as a lever that lengthens the push, and its teacher note asks for community guidance on anything about its making or use. Chemistry 9 and 10 lessons were renumbered (now 15).
+
+Shared tools touched (see roadmap/shared.md): one line in `core.js` `B.jsx`, a selector in `render-pictures.mjs`, the new widgets, and a few CSS rules. Board clips and pictures re-record and redraw on the next publish.
+
+Still class-taught: 7U02 n3 (abiotic factors), 8U04 n1 (sedimentary rocks), 9U02 n2 (reproductive organs), 10U01 n2 (mitosis), 10U03 n1 (scale of the universe), and the other uncovered nodes (7U01 n4–n5, 7U02 n5, 8U03 n3–n6, 8U04 n3–n5, 9U01 n6–n7, 9U02 n4–n5, 9U03 n5, 10U01 n5–n6, 10U02 n3–n5, 10U03 n4–n5, 10U04 n4–n6, 7U06 n5).
+
+## Done: energy, Years 8 and 9 (11 Oct 2026, science chat)
+
+A new shared-board widget, `energy` (coaster, chain, sankey), and six lessons. New course Year 8 Physics (`physics-8/`): Moving or stored? (8U05 n1–n2), Transfer or transformation? (n3–n4, the hinge: by-product heat), Follow the energy (n5–n6, with a fire-drill chain). Year 9 Physics gains a unit, Conservation of energy and efficiency: Where does the energy go? (9U05 n1, hinge), How much is useful? (n2, hinge), What does a Sankey diagram show? (n3–n4). Kinetic and potential families follow the progression (kinetic: movement, heat, sound, light, electrical; potential: chemical, gravitational, elastic). Clips on ports 8283–8288 (next free 8289); pictures except the flow-diagram lessons (no board to draw); every check passes headless; decks fit.
+
+Left in physics: nothing from the progressions' integration nodes; see the waves entry above.
+
+## Done: signs, energy in reactions, third law, free body diagrams (11 Oct 2026, science chat)
+
+How can you tell a reaction happened? (`chemistry-8/signs`, 8U07 n3), Hotter or colder? (`chemistry-8/energy-change`, 8U07 n4 and n5: hydrogen burning warms, nitrogen + oxygen at 600 K cools), Push the wall, and it pushes you? (`physics-10/third-law`, 10U05 n5) and What forces act on it? (`physics-10/free-body`, 10U05 n6). Collision theory already teaches temperature, concentration, surface area and catalysts, so it now also names 10U07 n6. Existing boards only; clips on ports 8279–8282 (next free 8283); every check passes headless; decks fit.
+
+Next (approved 11 Oct): energy (8U05, 9U05) with a new shared-board `energy` widget.
+
+## Done: eight more from the class-taught list (11 Oct 2026, science chat)
+
+What makes a plant cell different? (`biology-8/plant-cells`, 8U01 n4 and n5), Mixed, not joined? (`chemistry-8/mixtures`, 8U06 n4), Symbols, formulas or models? (`chemistry-8/models`, 8U06 n5), Nerves or hormones? (`biology-9/signals`, 9U01 n3), Where is all the carbon? (`earth-9/carbon-stores`, 9U03 n2), Where does the heat go? (`chemistry/heating-curve`, 7U05 n4, with a heating curve on the graph board), What can't the particle model explain? (`chemistry/model-limits`, 7U05 n5, short) and What kind of reaction is it? (`chemistry-9-10/reaction-types`, 10U07 n1 to n4: synthesis, decomposition, displacement with reactivity). Orders moved to fit; each removes `assumes:` lines. Voiced clips (ports 8271–8278, next free 8279); pictures except signals and carbon stores (overlapping labels, as for the carbon cycle); every check passes headless or by hand (spheres placement, fine clicks on cell lines and liquid diffusion are slow for the script); decks fit. New lessons and the 11 from earlier today have `struggle:` notes.
+- Fix in the science board (`playground-science/main.js`): values in quotes (`caption: "…: …"`, needed for colons) showed their quotes on reaction boards (chemical change, compounds, collision theory, heat transfer, igneous). The quotes are now dropped.
+- Still class-taught: 7U02 n3 (abiotic factors), 8U04 n1 (sedimentary rocks), 9U02 n2 (reproductive organs), 10U01 n2 (mitosis), 10U03 n1 (scale of the universe). Each needs a board that doesn't exist yet or is mostly questions.
+
+## Done: six tutorials from the class-taught list (11 Oct 2026, science chat)
+
+Each removes an `assumes:` line: What is an element? (`chemistry-8/elements`, 8U06 n2), Same particles, new look? (`chemistry-8/physical-change`, 8U07 n1), What is the net force? (`physics-10/net-force`, 10U05 n1), How small is a cell? (`biology-8/cell-scale`, 8U01 n1), What is a tissue? (`biology-8/tissues`, 8U02 n2) and a short one, Why sort living things? (`biology-7/why-classify`, 7U01 n1, Matthew asked for it as a brief lesson). Existing boards only; orders in Year 8 Chemistry, Year 8 Biology, Year 7 Biology and Year 10 Physics moved to fit. Voiced clips (ports 8265–8270, next free 8271) and pictures (none for the key board); every check passes headless; decks fit; primers updated.
+- Fix in the atoms widget (`playground-science/main.js`, science-owned): a kind listed twice in `show:` (the explain boards' "inspect next" order trick) was counted twice ("6 kinds of particle", duplicate table rows). Now counted once.
+- Noted, not changed (shared `forces` widget): arrows for large forces (a car's newtons) are short and labels of two forces on one side crowd the object. Readable; worth a look if the Year 10 force lessons grow.
+- Still class-taught (in `assumes:`): 7U02 n3, 8U01 n4–n5, 8U04 n1, 8U06 n4–n5, 9U01 n3, 9U02 n2, 9U03 n2, 10U01 n2, 10U03 n1, 10U07 n4, 7U05 n4–n5.
+
+## Done: science lessons tagged, map on (11 Oct 2026, science chat)
+
+Every science lesson names its node; the node check runs for science; `/science/map/` is on. Decided (Matthew): Human endeavour and Inquiry are woven through lessons and class work, with no tutorials of their own; the map says so. The `assumes:` lines are the class-taught nodes the tutorials rely on, a ready list for the non-hinge queue (such as 7U01 n1 purpose of classification, 8U01 n1 cellular scale, 8U06 n2 elements, 8U07 n1 physical change, 10U05 n1 force as a vector).
+
+## Done: isotopes, half-life, trends and word equations (11 Oct 2026, science chat)
+
+Four tutorials in `chemistry-9-10/`, from the non-hinge queue: Same element, different atoms? (isotopes, 9U06 n2, order 2), How long does radioactivity last? (half-life, 9U06 n4, order 4), What goes in, what comes out? (reactants, products and word equations, 9U07 n1 and n3 in one lesson with a Practise step, order 5) and Why does the periodic table repeat? (trends, 10U06 n3, order 10). Later lessons moved down. The atom board gains `mode: halflife` (a random sample with a graph, Wait one half-life), table `colour: shells | outer | metal`, and a stable or radioactive line in build mode. The half-life Wider step covers dating First Peoples' presence carefully: radiocarbon for younger layers, luminescence for older ones, agreement between methods (teacher note: local resources and community guidance). Voiced explain clips and pictures (ports 8261–8264, next free 8265); every check passes headless (the solver's science-board run step needs a longer wait; checked by hand); decks fit. Primers updated.
+
+Left in the queue: non-hinge nodes in the Year 7 and 8 units already built. Class tasks: 9U06 n5 decay chains, 9U07 n5, 10U06 n4.
+
+## Done: alpha, beta and gamma (11 Oct 2026, science chat)
+
+What comes out of a decaying nucleus? (`chemistry-9-10/decay`, 9U06 n3, the last hinge in the pasted pages; unit Inside the atom, order 2, later lessons moved down one). The atom board gains `mode: decay` (any isotope up to americium; Alpha, Beta and Gamma buttons; knows how about 25 common isotopes really decay and when a stable one is reached) and `mode: shield` (paper, aluminium, lead). Explore: radon-222 to polonium-218, then the shield board; Explain: a sort of what leaves, what changes and what stops it, two number checks (U-238 alpha, C-14 beta), gamma, a detector question and why alpha stops soonest; Typical: iodine-131 treatment and gamma imaging; Wider: the americium smoke alarm and radon in homes. Voiced explain clip (uranium-238: alpha, beta, gamma; port 8260, next free 8261) and a shield picture. 17 checks pass headless; decks fit.
+
+Decided (Matthew, 11 Oct): non-hinge nodes can have tutorials too; the hinge-only rule above no longer limits what we build. Integration nodes stay class tasks unless he says otherwise. Queue: built 11 Oct (see above), except non-hinge nodes in the Year 7 and 8 units.
+
+## Done: atoms, the periodic table and balancing equations (11 Oct 2026, science chat)
+
+From the progression pages Matthew pasted (now in `data/progressions/science/`). Two new shared-board widgets, `atom` (Bohr model; build mode and a first-20 table) and `equation` (coefficients only, molecules drawn, atom tally, smallest whole numbers). Four lessons in `chemistry-9-10/`, one per hinge node: What's inside an atom? (9U06 n1, new unit Inside the atom), How do you balance an equation? (9U07 n4, with a Practise step: methane, ammonia, magnesium), How are the electrons arranged? (10U06 n1) and Why do elements in a group behave alike? (10U06 n2), the last two in a new unit, Atoms and the periodic table. Rearranging atoms moves to order 2 and Collision theory to 6. Primers for the two new units. Each lesson has a voiced explain clip and picture (ports 8256–8259; next free 8260). Every check passes in a headless run; decks fit.
+
+Not tutorials (by the progression's response modes): 9U06 n2 isotopes and n4 half-life (not hinges; the atom board's build mode already makes isotopes), n5 decay chains and 9U07 n5 conservation in open and closed systems, 10U06 n4 (integration, class tasks). Still worth building: 9U06 n3 (alpha, beta and gamma decay, a hinge), which needs a decay mode on the atom board (Z and A changes, penetration); 10U06 n3 periodic trends.
+
+## Done: Explain it to me on the science board (11 Oct 2026, science chat)
+
+The recorder needed no change: the science board takes `?code=` like the shared board. Voiced clips for all 17 science-board lessons (Year 7 Chemistry, Chemistry 8 and 9–10, Year 10 Variation and Natural selection, Igneous, Plates, Heat transfer); ports 8239–8255 (next free: 8256). Timed with flite: 20–35 s (Igneous 35 s: the cooling itself takes time). Tips: "Inspect next particle" walks particles in setup order, so explain setups list one of each kind first; slow reactions need `temp:` raised to show change within a clip; canvas-drawn boards (beetles) can't be clicked by element.
+
+Every one of the 56 science lessons now has an Explain it to me clip. Pictures on 16 of the 17 science-board lessons too (after the shared change in `shared.md`); not Igneous, whose first moment is all liquid. 42 science lessons have pictures in all.
+
+## Done: Explain it to me, batch 2 (11 Oct 2026, science chat)
+
+Voiced explain clips for the other 27 shared-board lessons: Biology 8 (4), 9 (6), 10 (DNA and genes, meiosis, Punnett), Earth and space 7 (5), 8 (layers), 9 (3) and 10 (5). Ports 8212–8238 (next free: 8239). Explain pictures on 17 of them; none where the widget isn't drawn on the board (cross, the pathway and race modes, feedback) or where the picture tool's smaller size makes the labels collide (the carbon cycle). Sunlight's picture uses a four-tile `explain-pic`.
+
+How the clips drive the boards (worth reusing): cell parts and spheres things by fill colour (`click: { selector: '#board [fill="#8e6bbf"]' }`), sliders by clicking then `press: End` or `Home` (a click lands in the middle), Punnett boxes by aria-label. A caption followed by a click gets a pause of about 0.33 s per spoken word so the board doesn't run ahead of the voice. Timed with flite: 21–31 s, Punnett 38 s (14 clicks).
+
+All 39 shared-board science lessons now have clips. Next: the science-board pilot (17 lessons on `playground-science/`).
+
+## Done: kingdoms are not family trees (11 Oct 2026, Matthew's request)
+
+A colleague's objection: teaching kingdoms as the endpoint implies same kingdom = close relatives and hides that classification is a model revised under evidence. Year 7 Kingdoms now has two Explain questions on the main path (a mushroom's closer relative is a sea star, not a fern; why classification went from two kingdoms to five to three domains), plus the revision summary, explain text, clip, goals, teacher notes and primer. Year 10 lessons don't lean on kingdoms. Loop closed (11 Oct): Year 10 Natural selection (AC9S10U02 n2) has three Explain questions on the main path: a branching tree, not a ladder; DNA similarity tracks how recently species shared an ancestor; back to the Year 7 kingdoms (features can mislead about relatedness). The descriptor asks students to explain past and present diversity and analyse the evidence for evolution, so this sits inside it. Still open: a fuller evidence-for-evolution lesson (fossils, comparative anatomy, DNA) when the kit's later U02 nodes are available.
+
+## Done: Explain it to me, batch 1 (11 Oct 2026, science chat)
+
+Voiced explain clips (Emma, as maths) for 12 shared-board lessons: Year 7 Physics (arrows, balanced, unbalanced, weight), Year 10 Physics (first law, acceleration, F = ma) and Year 7 Biology (kingdoms, keys, food webs, energy flow, cascades). Each lesson has an `explain` region in `boards.yml` (its own small example, not the lesson's tasks) and `app:` on ports 8200–8211 (next free: 8212). Recorded locally with the flite test voice: 18–30 s each, frames checked; the publish run records the real voice.
+
+`explainPicture` (a still of the idea, `explain-pic` region in `boards.yml`) on 9 of them, after the shared-tool change in `shared.md`. Not on Kingdoms and Keys (the key widget has no drawing for the picture tool) or First law (sliding friction cannot show in a still).
+
+Next: batch 2 (Biology 8–10, Earth and space 7–10, 27 lessons), then a science-board pilot.
+
+## Done: model checks and Year 7 forces node 3 (11 Oct 2026, science chat)
+
+Plan approved 11 Oct; each item pushed to `main` (source only). Year 7 node text came from the AC9S7U04 progression page Matthew pasted (the kit is unreachable).
+
+1. **Plates** (`earth-8/plates`): Explore opens with a one-question convection recap (warm fluid rises because it is less dense; feedback for "heat rises" and "hot is heavier"); teacher notes name the dependency on Year 9 Heat transfer and Year 7 density.
+2. **Model-check review of the leads.** Heat transfer (`physics-9`): new Explain question, why the heated water rises, with feedback that names the board's push-up shortcut. Redshift (`earth-10`): Explore opens with a "Reading a spectrum" recap (wavelength, dark lines, stretched light); teacher note: assumes Year 9 waves. Photosynthesis needs no lesson change: the Year 8 Cell parts board introduces chloroplasts (photosynthesis), Year 7 Energy flow has producers capturing sunlight, and Carbon and living things teaches it itself; Cell parts' revision summary now names it.
+3. **New lesson `physics-7/unbalanced`** (AC9S7U04 n3, order 3; Weight moves to 4): a steady push slows, stops and reverses a puck on ice (`forces`, `when: t >= 1 and v < 0`); Explain widens "change in motion" to starting, stopping, reversing and turning, with a force-diagram question; Typical starts a box from rest against friction; Wider: a fair test and the spearthrower. Every check passes in a headless run; decks fit.
+4. **Node 5 as a class task**, not a tutorial (the kit marks it an integration point): `physics-7/primers/forces.md` › Class task (rubber-band trolleys, predict, an example data table, success criteria from the progression).
+
+**Still open from this pass**
+- **Redshift spectrum (fixed 11 Oct, approved):** the `universe` widget drew the shift 20 times bigger, so far galaxies showed no dark lines at all; it now draws it 5 times bigger (an 876 million light-year galaxy keeps three lines; the farthest keeps two). Text updated in the widget, Redshift teacher notes, the universe primer and AUTHORING.
+- **Science node tags (waiting for the kit, Matthew 11 Oct):** the maths chat built the node check (`shared.md`). Science opts in by adding `data/progressions/science/` pages, `node:` on its lessons and itself to `CHECKED`; AC9S7U04 is ready to save from the pasted page. Needs the other science progression pages.
+- Explain clips for science (gap noted above), populations engine, the remaining Years 8–10 nodes: unchanged.
+
+## Planned: prerequisite checks and model checks (decided 11 Oct 2026, not built)
+
+The code-style scan does not carry over: maths and science have no code to scan, and their tutorials sit beside class teaching. Checked against the repo: no lesson has a `node:` field (the node is named only in `teacher.yml` summaries, such as Plates "AC9S8U03, node 2"), and the repo holds no progression data (`prior_knowledge` lives in waypoints-kit and no build step reads it). 55 science and 19 maths lessons.
+
+- **Science:** the risk is less a missing lesson than a model students hold in a different form (distance causes seasons; convection without density). So the main check is in the lesson: the Engage prediction must test the model this lesson relies on, with wrong options tied to its misconceptions, and the teacher notes name the model's simplifications. The node graph (as for maths) only flags big gaps between lessons. Gaps inside a lesson still need a manual review.
+- **Science:** both kinds of gap matter. Between lessons, dependencies inside a strand are strong (the node graph catches them). Inside a lesson, the bigger risk is a model held in a different form (distance causes seasons; convection without density), so the Engage prediction should test the model the lesson relies on, with wrong options tied to its misconceptions, and the teacher notes name the model's simplifications (a review question, not a hard rule).
+- **Found already (fixed 11 Oct, see Done above):** Year 8 Plates (`earth-8/plates`, AC9S8U03 n2) relies on convection, which the tutorials teach in Year 9 (`physics-9/heat-transfer`). Fix in Plates (a short convection recap with density) or mark `assumes:` with a teacher note.
+
+Leads for the first science review (checked and resolved 11 Oct, see Done above): Year 8 *Plates* relies on convection, taught in Year 9 *Heat transfer*; "warm fluid rises because it is less dense" relies on density from Year 7 *Properties*; Year 10 *Redshift* uses wavelength and spectra, which no science lesson introduces; Year 8 *Organs* and *Specialised* and Year 9 *Carbon and living things* assume photosynthesis.
+
+Related gap (11 Oct), since closed: every science lesson now has a voiced `explainClip` (see Done above); pictures on 26 shared-board lessons.
+
+The shared part (progression data in the repo, the `node:` field and the node check in validate) is in `shared.md` › Shared: progression data and node check.
+
+## Done: Science, Year 7 Chemistry (pushed 9 Oct 2026)
+
+New subject **Science** with pathways Chemistry (built), Biology, Physics and Earth and space (coming later). Year 7 Chemistry: seven concept tutorials for introducing or revising (AC9S7U05 nodes 1–3; AC9S7U06 nodes 1–4), each a mini 5E cycle on the existing stages, with width tiers (`tier: typical | wider`, `?width=` floor) and a science board (`playground-science/`, particle engine and 15 widgets). New `sort` check and per-option `question` feedback; tiered checks are not needed to finish a lesson. Teacher layer: `teacher.yml` per lesson, primers for both units; decks and worksheets use 5E labels.
+
+Slides embed the live board (`{{embed: URL}}`, Prepare loads it on the active slide only). Science courses have no cheat sheets (no commands to list; the primers carry the key ideas). Decided 9 Oct: no science revision sheets or glossaries either. Those belong to the planning side of the suite (Prepare, the node glossaries in waypoints-kit); here each lesson ends with a revision summary, and the deck and worksheet go into Prepare.
+
+## Science engines: Years 7–10 plan (decided 9 Oct 2026, not built)
+
+Engines are organised by what they model, not by subject or year. Every Years 7–10 Understanding hinge node in waypoints-kit `data/science/` sorts into one of five engines or a widget on the shared board (see the maths boards plan; diagram and data work waits for it).
+
+| Engine | Hinge nodes | Notes |
+|---|---|---|
+| Particles + atoms (extend `playground-science/engine.js`) | 8U06 n1, n3 · 8U07 n2 · 9U07 n2 · 10U07 n5 · 8U04 n2 | Atom types, bonds, a reaction rule (collide with enough energy, rebond). Also convection for 8U03 n2 and 9U04 n1. Independent of the shared board: build first. |
+| Forces and motion (new) | 7U04 n3, n5 · 10U05 n2–4 | Runs a free body diagram: trace, v–t graph from the shared board, friction toggle (Newton's first law misconception). |
+| Stocks and flows (new, small) | 9U01 n5 · 9U05 n1, n2 · 10U04 n1–3 · 8U05 n4 · 9U03 n3 | Stores, flows and a set point: feedback, energy balance, greenhouse, conservation, carbon. Graphs from the shared board. |
+| Populations, agents (new) | 7U02 n4 · 10U02 n1, n2 · 9U02 n3 | Heritable trait, selection pressure, predator and prey. Half-life (9U06 n4) is the same engine with random decay. |
+| Sky model (new, geometric) | 7U03 n1, n2, n4 | Lit globe in two views; one standard only, last. |
+
+Widgets on the shared board (no engine): free body diagram and vectors (7U04 n1, n2 · 10U05 n1, n6; its arrows feed the motion engine), classification key walker (7U01 n2, n3), atom and shell builder (9U06 n1 · 10U06 n1, n2), Punnett square (10U01 n4), equation balancer (9U07 n4), food web (7U02 n1, n2), labelled or zoomable diagrams (cells, organs, receptor pathways, meiosis, Earth's layers and spheres, sound waves, decay types, gametes, Big Bang timeline).
+
+Built (branch `atoms`, 9 Oct): the atoms engine (`atoms.js`) with the `atoms` widget (elements, compounds, mixtures: 8U06 n1, n3, n4) and the `reaction` widget (chemical change and the atom tally: 8U07 n2, 9U07 n2; exothermic and endothermic: 8U07 n4, n5; collision theory and rate: 10U07 n5, n6; combustion: 9U03 n4). Also built: `cooling` (crystal size and cooling rate, glass: 8U04 n2) and `convection` (a heated liquid with a followed particle: 9U04 n1; `preset: mantle` with plates moving apart: 8U03 n2, n3; `mode: solid` for conduction). Lessons drafted (9 Oct): Year 8 Chemistry (atoms, compounds, chemical change), Years 9 and 10 Chemistry (rearranging atoms, collision theory), Year 8 Earth and space (igneous rocks, plates), Year 9 Physics (heat transfer). Every board reaches done in a headless run; decks fit. Still to do: try them with classes; the remaining Years 8–10 hinge nodes need the shared board (graphs, free body diagrams, keys) or new engines (forces, populations, stocks and flows).
+
+Forces and motion built (9 Oct): the shared board's `forces` widget (force diagram plus motion) with Year 7 Physics (7U04 n1, n2, n4) and Year 10 Physics (10U05 n2, n3, n4). Year 7 Biology built (10 Oct): the shared board's `key` and `foodweb` widgets with five lessons (7U01 n2, n3; 7U02 n1, n2, n4). Year 7 now lacks only Earth and space (7U03, the sky model). The food web cascade is qualitative; a populations engine (numbers over time) remains for 10U02 and 9U02.
+
+Years 8–10 Biology built (10 Oct): the shared board's `cell` (cells, tissues and the zoom to a gene), `coordination` (pathways, nerves against hormones, temperature feedback) and `cross` (offspring, meiosis, Punnett squares) widgets, and the science board's `selection` engine (`selection.js`, beetles and birds). Fifteen lessons: Year 8 (8U01 n2, n3; 8U02 n1, n3), Year 9 (9U01 n1, n2, n4, n5; 9U02 n1, n3), Year 10 (10U01 n1, n3, n4; 10U02 n1, n2). Every board reaches its check in a headless run; `check-engines` covers the selection model. Not yet tried with classes. Still open: a populations engine with numbers over time (predator and prey) and half-life; Year 7 Earth and space (the sky model, since built).
+
+Year 7 Earth and space built (10 Oct): the shared board's `sky` widget (a geometric sky model: the Earth's orbit and tilt with real day lengths and distances, moon phases with a quiz, eclipses with the 5° tilted orbit and real eclipse limits, tides with spring and neap) and five lessons, `earth-7/`: rotation and revolution (7U03 n1), seasons (n4), moon phases (n2), eclipses (n3), tides (n5). Every board reaches its check in a headless run. Not yet tried with classes. Year 7 science now has every standard.
+
+Years 8–10 Earth and space built (10 Oct): four shared-board widgets, `layers` (Earth's interior), `carbon` (spheres sorting and a carbon-cycle stocks-and-flows model), `universe` (big bang timeline, expanding galaxies with redshift and a Hubble graph) and `climate` (albedo, a one-layer energy-balance model with greenhouse gases). Nine lessons: Year 8 Earth's layers (8U03 n1, added to `earth-8`); Year 9 `earth-9` (9U03 n1, n3, n4); Year 10 `earth-10` (10U03 n2, n3; 10U04 n1, n2, n3). Every board reaches its check in a headless run. Not yet tried with classes. Still open: plate boundaries (8U03 n3–n6), the rest of the rock cycle (8U04), the carbon cycle diagram (9U03 n5), the cosmic microwave background (10U03 n4–n5), and human activity, indicators and responses (10U04 n4–n6).
+
+Order: particles + atoms, then (after the shared board) forces and motion with the free body diagram widget, stocks and flows, populations, sky model. Classroom testing of the Year 7 chemistry set still to do: does the locked prediction hold, do students use the width control, do they take the 2D particle simplifications literally?
+
+## Practice pages and Mix it up: Year 7 done (13 Oct 2026), Years 8–10 next
+
+Plan: `claude/science-review-plan.md` in the project. Year 7 first (23 lessons), stopped for Matthew's review before Years 8–10.
+
+- **Practice pages (23):** `chemistry/practice/` (particle-model, states, properties, heating-curve, pure-mixtures, separating, filter-evaporate, distil-chroma), `biology-7/practice/` (kingdoms, keys, food-webs, energy-flow, cascades), `physics-7/practice/` (arrows, balanced, unbalanced, weight, force-mass), `earth-7/practice/` (spin-orbit, seasons, phases, eclipses, tides). Boards used: `key` (keys), `forces` (arrows, balanced, unbalanced), `sky` moon quiz (phases). Everything else is numeric or choices questions. No practice page by plan: chemistry `model-limits`, biology `why-classify`, the quick checks.
+- **Mix it up (21 lessons):** a `## Mix it up` step (`stage: practise`, one question) after Explain, looking back at an earlier lesson. Not added to the four first lessons or the two quick checks. Static charge looks back at heat transfer (Y9 physics lesson 1), not the atom lesson. lesson.md only, so no clip hashes change and no clips re-record.
+- **Beyond the plan:** a few extra numeric templates (force-mass patterns, phases days into the cycle, tides hours, spin-orbit spins).
+- **Not done:** teacher timings not updated; progress ticks may shift by one step in lessons that gained a Mix it up step.
+- **Checked:** validate, build, `check-practice` (198 board setups), headless browser: key board, sky quiz (right and wrong), forces tug board, numeric and choices questions, lesson page shows Mix it up and the "Practise this skill" card.
+
+### Combining questions ("Putting two ideas together"), 13 Oct 2026
+
+Matthew's point: science lessons are a sequence (each idea builds on the last), so review should combine ideas the way maths and code do, not only look back at one. Mix it up stays one look-back question per lesson. Combining questions are a template in the later lesson's practice file, starting "Putting two ideas together:", that needs this lesson's idea and the earlier one the plan already names. They also show in the mixed course practice, with no lesson or clip change.
+
+**Year 7 (done):** tides ← phases (what the tides will be a week after a given phase), eclipses ← phases and tides (phase for each eclipse, can there be one at a quarter moon), seasons ← spin and orbit (which way each hemisphere leans in June and December), heating-curve ← states (steam burns, puddles drying, ice in a drink, boiling with the heat up), weight ← balanced forces (a box on the Moon pulled up by a rope: overall force), cascades ← energy flow (why fewer dingoes, why short food chains, a removal that reaches a second predator). Others in Year 7 have no combining template yet: separating and distillation ← heating curve, keys ← kingdoms, force-mass ← unbalanced.
+
+**Years 8–10 plan** (build with the practice pages, one chain per lesson, 3 to 4 situations each; the earlier idea is the lesson the Mix it up table names):
+
+| Course | Combining question joins |
+|---|---|
+| Chemistry 8 | atoms in a formula with brackets ← element or compound; mixture or compound ← separation methods; physical or chemical ← same particles, new look (does the heating curve's flat part count as a new substance?) |
+| Chemistry 9–10 | alpha and beta decay ← inside the atom (new proton and neutron counts); half-life ← isotopes; balancing ← atoms in a formula; mass lost as gas ← atoms before and after; outer electrons ← group behaviour; heat speeds reactions ← particle motion in gases |
+| Biology 8 | tissue, organ, system ← cell shape and job (which cell makes which tissue); plant cell ← energy flow (chloroplast as the start of a food chain) |
+| Biology 9 | pathway parts ← organ systems; nerve or hormone ← stimulus and response; sex cell ← cell shape and job |
+| Biology 10 | DNA, chromosome, gene ← what every cell has; cross ← sex cell chromosome counts; natural selection ← variation and the cross |
+| Physics 8 | transfer or transformation ← moving or stored; useful and wasted ← the energy chain |
+| Physics 9 | heat transfer ← moving particles; sound speed ← squash air or water; efficiency ← energy chain; Sankey ← where the energy goes |
+| Physics 10 | net force ← balanced and unbalanced (Y7); acceleration ← net force; F = ma ← same push, different mass; weight on the Moon ← forces on it; two-step force problems ← acceleration |
+| Earth 8 | crystal size ← heat transfer and the heating curve; layers ← states of matter; plates ← layers |
+| Earth 9 | carbon stores ← compounds; tree carbon ← energy flow; fossil fuels ← carbon stores |
+| Earth 10 | sunlight ← seasons and tilt; temperature balance ← energy conservation; greenhouse ← sunlight and the spectrum; universe ← inside the atom |
+
+Order: Year 8, then 9, then 10, each a push and a review stop.

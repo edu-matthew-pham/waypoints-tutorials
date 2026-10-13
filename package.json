@@ -5,12 +5,22 @@
   "description": "Markdown lessons (PRIMM-structured) -> recorded clips -> GitHub Pages site. No LLM needed at build time.",
   "scripts": {
     "validate": "node tools/validate.mjs",
+    "concepts": "node tools/concepts.mjs --report",
+    "effort": "node tools/effort.mjs",
+    "nodes": "node tools/progressions.mjs --report",
+    "check-nodes": "node tools/check-progressions.mjs",
+    "check-forms": "node tools/check-forms.mjs",
+    "check-concepts": "node tools/check-concepts.mjs",
+    "check-python-errors": "node tools/check-python-errors.mjs",
+    "check-p5-errors": "node tools/check-p5-errors.mjs",
     "build:playground": "node tools/build-playground.mjs",
     "render": "node tools/build-playground.mjs && node tools/render-pictures.mjs && node tools/render.mjs",
     "build": "node tools/build-site.mjs",
     "all": "npm run validate && npm run render && npm run build",
     "check-decks": "node tools/check-decks.mjs",
-    "check-html": "node tools/check-html-lessons.mjs"
+    "check-html": "node tools/check-html-lessons.mjs",
+    "check-makecode": "node tools/check-makecode.mjs",
+    "check-practice": "node tools/check-practice.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,20 @@
+# Boards for "What does burning fossil fuels do to the carbon cycle?".
+
+# region: burn
+widget: carbon
+mode: cycle
+combustion: on
+# endregion
+
+# region: today
+widget: carbon
+mode: cycle
+combustion: on
+start: today
+# endregion
+
+# region: explain
+widget: carbon
+mode: cycle
+combustion: on
+# endregion

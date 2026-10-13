@@ -5,9 +5,9 @@ import { createHash } from 'node:crypto';
 //   cheatsheet    one Print reference sheet per unit, from the snippets the unit unlocks
 // plus the teacher guide pages under /teach/. Students never see solutions on lesson pages.
 import { snippetPattern } from './snippet-pattern.mjs';
-import { snippetFrom, splitFiles, parseTrace, workItems } from './lesson-core.mjs';
+import { CLASS_AT, snippetFrom, splitFiles, parseTrace, workItems, sourceList } from './lesson-core.mjs';
 
-export const SITE_URL = (process.env.SITE_URL || 'https://tutorials.learningwaypoints.com').replace(/\/$/, '');
+export const SITE_URL = (process.env.SITE_URL || 'https://studio.learningwaypoints.com/tutorials').replace(/\/$/, '');
 export const PREPARE_URL = 'https://prepare.learningwaypoints.com/';
 const STAGES = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 const bare = (t) => String(t).replace(STAGES, '');
@@ -55,7 +55,7 @@ const pt = (t) => String(t ?? '').split(/(`[^`]*`)/).map((part, i) => (i % 2 ? p
 /** checkParts, with its plain-text parts made safe for Markdown (decks and worksheets). */
 const checkPartsMd = (k, snip, key) => {
   const p = checkParts(k, snip, key);
-  return { ...p, q: pt(p.q), answer: pt(p.answer), options: p.options && p.options.map(pt), match: p.match && { lefts: p.match.lefts, rights: p.match.rights.map(pt) } };
+  return { ...p, q: pt(p.q), answer: pt(p.answer), options: p.options && p.options.map(pt), items: p.items && p.items.map(pt), match: p.match && { lefts: p.match.lefts, rights: p.match.rights.map(pt) } };
 };
 
 const BADGE = {
@@ -79,6 +79,7 @@ function checkParts(k, snip, key) {
     return { q, options: k.options, answer: ans, explain: k.explain || (k.type === 'predict' ? '' : '') };
   }
   if (k.type === 'predict') return { q, answer: k.actual || '', explain: '' };
+  if (k.type === 'flag') return { q, field: true, answer: 'A flag (the exact answer is in the teacher notes)', explain: k.explain || '' };
   if (k.type === 'number') return { q, field: true, answer: String(k.answer), explain: k.explain || '' };
   if (k.type === 'trace') {
     const t = parseTrace(k.table);
@@ -98,8 +99,10 @@ function checkParts(k, snip, key) {
     return { q: k.text || 'Put the lines in order.', parsons: shuffled(lines.concat(k.extra || []), key), solution: lines.join('\n'), answer: 'see the program below', explain: k.explain || '' };
   }
   if (k.type === 'answer') return { q, field: true, answer: k.equation ? `any equation that is true when ${Object.entries(k.equation).map(([n, v]) => `$${n} = ${v}$`).join(', ')}` : String(k.answer), explain: k.explain || '' };
+  if (k.type === 'reasoning') return { q, field: true, answer: (k.steps || []).map(([a, r]) => `${a} (${r})`).join('; '), explain: k.explain || '' };
+  if (k.type === 'working') return { q, field: true, answer: [k.start, ...(k.example || [])].join(' → '), explain: k.explain || '' };
   if (k.type === 'board') return { q: k.text, board: true, answer: '', explain: k.explain || '' };
-  if (k.type === 'sort') return { q: k.q || 'Sort each one into its group.', options: k.options, answer: k.items.map((it) => `${it[0]} → ${it[1]}`).join('; '), explain: k.explain || '' };
+  if (k.type === 'sort') return { q: k.q || 'Sort each one into its group.', options: k.options, items: k.items.map((it) => it[0]), answer: k.items.map((it) => `${it[0]} → ${it[1]}`).join('; '), explain: k.explain || '' };
   if (k.type === 'code') return { q: k.text, rules: k.rules, answer: '', explain: '' };
   if (k.type === 'reflect') return { q: k.text, reflect: true, answer: '', explain: '' };
   return { q, answer: '', explain: '' };
@@ -140,6 +143,10 @@ const fencesToBlocks = (md) => (LANG === 'makecode' ? String(md).replace(FENCES,
 
 // Code language for fences and highlighting: set from the lesson by each generator (python or html).
 let LANG = 'python';
+let E5 = false;   // 5E words: science, or shape: 5e
+// Design projects (shape: design) title their steps with design-cycle words (Inquire, Develop, Create, Test, Evaluate):
+// slides and worksheets use the step's own title, and the Inquire step is a brief to read, not a prediction.
+let DESIGN = false;
 const fence = (code, lang = LANG) => '```' + lang + '\n' + String(code).replace(/\n$/, '') + '\n```';
 
 /** Every check in a lesson, with where it sits: [{ step, task, check, key }]. */
@@ -151,14 +158,66 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 // ---------------------------------------------------------------- deck (Prepare Marp)
 export function deckFor(lesson, { course, unit, snip, blocks = null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python';
+  LANG = lesson.language || 'python'; E5 = LANG === 'science' || lesson.shape === '5e';
+  DESIGN = lesson.shape === 'design';
   BLOCKS = blocks;
   const T = lesson.teacher || {};
   const slides = [];
+  // "Running the lesson" items (teacher.yml running:) start with the stage they belong to ("Predict: ...", "Modify: ...").
+  // Each goes into the speaker note of that stage's first slide; any that match no stage go on the Today slide.
+  const RUN_STAGE = { watch: 'info', predict: 'predict', run: 'run', investigate: 'investigate', modify: 'modify', make: 'make', engage: 'predict', explore: 'run', explain: 'investigate', elaborate: 'modify', practise: 'practise' };
+  const runBy = {}, runOther = [], runUsed = new Set();
+  for (const r of T.running || []) {
+    const m = /^\s*([A-Za-z]+)\b[^:]{0,24}:\s*([\s\S]*)$/.exec(String(r)), st = m && RUN_STAGE[m[1].toLowerCase()];
+    if (st && !runBy[st]) runBy[st] = m[2]; else runOther.push(String(r));
+  }
+  let extrasDone = false;
+  const liveRun = new Set();
   const note = (t) => (t ? `\n\n<!-- Speaker note: ${oneLine(t).replace(/-->/g, '- ->')} -->` : '');
-  slides.push(`# ${pt(lesson.title)}\n\n${course}${unit ? ` · ${unit}` : ''}` + note(`${T.summary || lesson.summary}${T.time ? ` About ${T.time} minutes${T.timing ? ` (${T.timing})` : ''}.` : ''}`));
-  slides.push(`## Today\n\n**We are learning to** ${lowerFirst(lesson.summary.replace(/\.$/, ''))}.\n\n${(T.goals || []).map((g) => `- ${pt(g)}`).join('\n')}` + note(T.before ? `Before class: ${T.before}` : ''));
-  if (lesson.hook) slides.push(`${BADGE.discussion}\n\n## Why it matters\n\n> ${lesson.hook}` + note(lesson.intro));
+  const srcNote = sourceList(T).length ? ` Sources: ${sourceList(T).map((x) => `${x.title}, ${x.url}${x.checked ? ` (checked ${x.checked})` : ''}`).join('; ')}.` : '';
+  slides.push(`# ${pt(lesson.title)}\n\n${course}${unit ? ` · ${unit}` : ''}` + note(`${T.summary || lesson.summary}${T.time ? ` About ${T.time} minutes${T.timing ? ` (${T.timing})` : ''}.` : ''}${LANG === 'python' || LANG === 'html' ? ' The Run, Modify and Make slides have the live playground in them; the tutorial link under it is the backup.' : ''}${srcNote}`));
+  slides.push(`## Today\n\n**We are learning to** ${lowerFirst(lesson.summary.replace(/\.$/, ''))}.\n\n${(T.goals || []).map((g) => `- ${pt(g)}`).join('\n')}` + note([T.before ? `Before class: ${T.before}` : '', ...runOther.map((r) => `Teacher: ${r}`)].filter(Boolean).join(' ')));
+  if (lesson.hook) slides.push(`## Why it matters\n\n> ${lesson.hook}` + note(lesson.intro));
+  // A question about a program keeps the program on the slide: code in the left column, the question on the right.
+  // Only short programs (a column holds about 16 lines); a short runnable program becomes the live playground instead; a check can opt out with `slideCode: false` or name another region with `slideCode: file.py#region`.
+  const sideOk = (src) => src && src.split('\n').length <= 16 && !blocksDeck(src);
+  // Short runnable programs get the live playground in the right half (75% of the slide, so it keeps its editor and picture
+  // side by side, and it is 420px tall like every embed); display-only or longer code stays a static column.
+  const liveSrc = (src) => src && src.split('\n').length <= 14 && (LANG === 'html' || (LANG === 'python' && /from turtle import/.test(src)));
+  const colsStyle = (right) => `display:grid;grid-template-columns:1fr ${right};gap:1em`;
+  const sideBySide = (body, tail, src) => {
+    if (!src || (!sideOk(src) && !liveSrc(src))) return null;
+    const url = liveSrc(src) && measure(body + tail, 0.25).text <= 330 ? playUrlFor(LANG === 'html' ? 'html' : 'turtle', src) : null;
+    if (url) return `<div class="side" style="${colsStyle('3fr')}">\n<div>\n\n${body}${tail}\n\n</div>\n<div>\n\n{{embed: ${url}}}\n\n</div>\n</div>`;
+    return sideOk(src) ? `<div class="side" style="${colsStyle('1fr')}">\n<div>\n\n${fence(src)}\n\n</div>\n<div>\n\n${body}${tail}\n\n</div>\n</div>` : null;
+  };
+  const stepCode = (stage) => { const st = lesson.steps.find((x) => x.config.stage === stage && x.config.code); return st ? snip(st.config.code) : ''; };
+  // Class plan (content/<course>/class/<lesson>.yml): activities and questions for the room, placed after the first
+  // step of their stage (or at the start or end). The site stays self-paced; the deck carries the talk.
+  const CP = lesson.classPlan || {}, placed = new Set();
+  const classSlides = (at) => {
+    if (placed.has(at)) return;
+    placed.add(at);
+    for (const a of CP.activities || []) if (a.at === at) {
+      slides.push(`${a.kind === 'info' ? '' : BADGE[a.kind || 'activity'] + '\n\n'}## ${pt(a.title)}${a.minutes ? ` <span style="font-size:.6em;color:#64748b">(${a.minutes} min)</span>` : ''}\n\n${prose(a.do)}` + note(a.notes || ''));
+    }
+    (CP.questions || []).filter((q) => q.at === at).forEach((q, i) => {
+      const p = checkPartsMd(q, snip, `${lesson.slug}/class-${at}-${i}`);
+      let body = p.q ? `**${p.q}**` : '';
+      if (p.options) body += '\n\n' + p.options.map((o) => `- ${o}`).join('\n');
+      if (p.trace) body += '\n\n' + traceTable(p.trace, true);
+      if (p.match) body += '\n\n' + `| | |\n|---|---|\n` + p.match.lefts.map((l, j) => `| \`${l}\` | ${letters[j]}. ${p.match.rights[j]} |`).join('\n');
+      const qsrc = typeof q.slideCode === 'string' ? snip(q.slideCode) : q.code ? snip(q.code) : stepCode(at);
+      const tail = `\n\n* Answer: ${oneLine(p.answer)}`;
+      const sided = q.slideCode !== false ? sideBySide(body, tail, qsrc) : null;
+      slides.push(`${BADGE.check}\n\n## ${pt(q.title || 'Class question')}\n\n${sided || body + tail}` + note(`${p.explain || ''} Ask on mini whiteboards or by show of hands before the reveal.`));
+    });
+  };
+  if (CP.inquiry) {
+    const iq = CP.inquiry;
+    slides.push(`${BADGE.discussion}\n\n## Think, pair, share\n\n**${pt(iq.q)}**${(iq.prompts || []).length ? '\n\n' + iq.prompts.map((x) => `- ${pt(x)}`).join('\n') : ''}` + note(`${iq.notes || ''} Give 30 seconds alone, 2 minutes in pairs, then take answers from both sides. There is no single right answer: ask for a reason, and let students change their minds.`));
+  }
+  classSlides('start');
   // Programs too long for a slide are read in the tutorial instead.
   const showCode = (code, step) => blocksDeck(code) || (code.split('\n').length > 27
     ? `*The program is ${code.split('\n').length} lines long: open it in the tutorial and read it together.*\n\n[Open this step](${stepUrl(lesson, step)})`.replace(/^\*|\*(?=\n)/g, '_')
@@ -173,26 +232,53 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
     return `${SITE_URL}/${dir}/index.html?${new URLSearchParams(q)}`;
   };
   const boardSlide = (step, heading) => `${BADGE.activity}\n\n## ${heading}\n\n{{embed: ${boardUrl(step)}}}\n\n[Open this step in the tutorial](${stepUrl(lesson, step)})`;
-  const runIt = (step, label = LANG === 'maths' ? 'Try it' : LANG === 'science' ? 'Explore it' : 'Run it') => boardUrl(step) ? boardSlide(step, label) : `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
+  // Turtle and HTML steps embed the live playground on the Run slide, loaded with the step's starter and no `id`, so
+  // it opens fresh every time and keeps nothing. Very long starters fall back to the link (the address would be huge).
+  const playUrlFor = (kind, src) => {
+    const dir = { turtle: '_playground', html: '_playground-html' }[kind];
+    if (!dir || !src || (LANG !== 'python' && LANG !== 'html')) return null;
+    const url = `${SITE_URL}/${dir}/index.html?${new URLSearchParams({ code: src })}`;
+    return url.length <= 6000 ? url : null;
+  };
+  const playUrl = (step) => {
+    const t = step.config.try;
+    return t?.starter ? playUrlFor(t.playground || (LANG === 'html' ? 'html' : 'turtle'), snip(t.starter)) : null;
+  };
+  const playSlide = (step, heading) => `${BADGE.activity}\n\n## ${heading}\n\n{{embed: ${playUrl(step)}}}\n\n_If it does not load:_ [open this step in the tutorial](${stepUrl(lesson, step)})`;
+  const runIt = (step, label = LANG === 'maths' ? 'Try it' : E5 ? 'Explore it' : 'Run it') => boardUrl(step) ? boardSlide(step, label) : playUrl(step) ? playSlide(step, label) : `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
   let stuckDone = false;
   for (const s of lesson.steps) {
+    const before = slides.length;
     const c = s.config, stage = c.stage, title = capMaths(bare(s.title));
     const code = c.code ? snip(c.code) : '';
-    if (stage === 'predict') {
+    if (stage === 'predict' && !DESIGN) {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
-      slides.push(`${BADGE.discussion}\n\n## ${LANG === 'science' ? 'Engage: predict' : 'Predict'}\n\n${code ? showCode(code, s) + '\n\n' : ''}${k ? `**${k.q}**${k.options ? '\n\n' + k.options.map((o) => `- ${o}`).join('\n') : ''}` : prose(s.body)}` + note(`${k?.answer ? `What happens: ${k.answer}` : ''} Take two or three predictions before anyone runs it.`));
+      slides.push(`${BADGE.discussion}\n\n## ${E5 ? 'Engage: predict' : 'Predict'}\n\n${code ? showCode(code, s) + '\n\n' : ''}${k ? `**${k.q}**${k.options ? '\n\n' + k.options.map((o) => `- ${o}`).join('\n') : ''}` : prose(s.body)}` + note(`${k?.answer ? `What happens: ${k.answer}` : ''} Take two or three predictions before anyone runs it.`));
+      classSlides('predict');
+      // Run it live right after the vote, before the answer is shown: the next Run step's playground or board goes in
+      // here, and that step then adds no slide of its own (its note comes along).
+      const runStep = lesson.steps.slice(lesson.steps.indexOf(s) + 1).find((x) => x.config.stage === 'run');
+      if (runStep && (boardUrl(runStep) || playUrl(runStep))) {
+        const rc = runStep.config;
+        slides.push(runIt(runStep) + note(`${prose(runStep.body)} ${rc.check?.type === 'reflect' ? `Students should be able to say: ${rc.check.text}` : ''}`) + (runBy.run ? note(`Teacher: ${runBy.run}`) : ''));
+        runUsed.add('run');
+        liveRun.add(runStep.id);
+      }
       if (k?.answer) slides.push(`${BADGE.check}\n\n## What happened?\n\n* ${oneLine(k.answer)}` + note('Reveal after running. Ask who predicted it, and what made them think so.'));
     } else if (stage === 'run') {
-      slides.push(runIt(s) + note(`${prose(s.body)} ${c.check?.type === 'reflect' ? `Students should be able to say: ${c.check.text}` : ''}`));
-    } else if (stage === 'investigate' || stage === 'practise' || (LANG === 'science' && stage === 'modify')) {
-      if (code) slides.push(`${BADGE.discussion}\n\n## ${title === 'Investigate' ? 'Investigate' : `Investigate: ${title.replace(/^Investigate:\s*/, '')}`}\n\n${showCode(code, s)}` + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
+      if (!liveRun.has(s.id)) slides.push(runIt(s) + note(`${prose(s.body)} ${c.check?.type === 'reflect' ? `Students should be able to say: ${c.check.text}` : ''}`));
+    } else if (stage === 'investigate' || stage === 'practise' || (E5 && stage === 'modify') || (DESIGN && stage === 'predict')) {
+      if (DESIGN && stage === 'predict' && s.body.trim()) slides.push(`${BADGE.discussion}\n\n## ${title}\n\n${prose(s.body)}` + note('Read the brief together: who it is for, what it must do (criteria) and the limits (constraints).'));
+      if (code) slides.push(`${BADGE.discussion}\n\n## ${DESIGN || title === 'Investigate' ? title : `Investigate: ${title.replace(/^Investigate:\s*/, '')}`}\n\n${showCode(code, s)}` + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
       if (boardUrl(s)) slides.push(boardSlide(s, title) + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
         if (p.reflect || p.board || k.type === 'code') continue;
         let body = `**${p.q}**`;
-        if (p.options) body += '\n\n' + p.options.map((o) => `- ${o}`).join('\n');
+        // A sort lists its groups and items on two lines, so the items fit beside the question.
+        if (p.items) body += `\n\nGroups: ${p.options.join(' · ')}\n\n${p.items.join(' · ')}`;
+        else if (p.options) body += '\n\n' + p.options.map((o) => `- ${o}`).join('\n');
         if (p.trace) body += '\n\n' + traceTable(p.trace, true);
         if (p.match) body += '\n\n' + `| | |\n|---|---|\n` + p.match.lefts.map((l, i) => `| \`${l}\` | ${letters[i]}. ${p.match.rights[i]} |`).join('\n');
         if (p.files) {
@@ -210,7 +296,12 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
           if (tooTall(together)) slides.push(`${BADGE.discussion}\n\n## ${t.title}\n\n${shown}`);
           else body = shown + '\n\n' + body;
         }
-        const reveal = p.parsons ? '' : `\n\n* Answer: ${oneLine(p.answer)}`;
+        const csrc = typeof k.slideCode === 'string' ? snip(k.slideCode) : code;
+        let reveal = p.parsons ? '' : `\n\n* Answer: ${oneLine(p.answer)}`;
+        if (k.slideCode !== false && !p.files && !p.parsons && !(t && /```/.test(t.body))) {
+          const sided = sideBySide(body, reveal, csrc);
+          if (sided) { body = sided; reveal = ''; }
+        }
         slides.push(`${BADGE.check}\n\n## ${t ? t.title : title}\n\n${body}${reveal}` + note(`${p.explain} ${p.parsons ? `Correct order: ${oneLine(p.solution)}` : ''} ${!t && c.insight ? `What this step is for: ${c.insight}` : ''}`));
       }
     } else if (stage === 'modify' || stage === 'make') {
@@ -218,13 +309,21 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
       const text = prose(s.body);
       const hints = [...(Array.isArray(c.hint) ? c.hint : c.hint ? [c.hint] : []), ...s.tasks.flatMap((t) => (Array.isArray(t.config.hint) ? t.config.hint : t.config.hint ? [t.config.hint] : []))];
       let n = `${c.insight ? `What this step is for: ${c.insight} ` : ''}${hints.length ? `Hints, in order: ${hints.join(' / ')} ` : ''}`;
+      if (!extrasDone && (T.support || T.stretch)) { n += `${T.support ? `For students who need more support: ${T.support} ` : ''}${T.stretch ? `For early finishers: ${T.stretch} ` : ''}`; extrasDone = true; }
+      if (!stuckDone && T.struggle) n += `The hard part, on purpose: ${T.struggle} `;
       if (!stuckDone && T.stuck?.length) { n += 'When students get stuck: ' + T.stuck.map((x) => `${x.see} Ask: ${x.ask} Fix: ${x.fix}`).join(' / '); stuckDone = true; }
-      slides.push(`${BADGE.activity}\n\n## ${stage === 'make' && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${text}${tasks ? '\n\n' + tasks : ''}${c.try ? `\n\n[Open this step](${stepUrl(lesson, s)})` : ''}` + note(n));
+      else if (T.struggle) stuckDone = true;
+      slides.push(`${BADGE.activity}\n\n## ${stage === 'make' && !DESIGN && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${text}${tasks ? '\n\n' + tasks : ''}${c.try && !playUrl(s) ? `\n\n[Open this step](${stepUrl(lesson, s)})` : ''}` + note(n));
+      // The playground gets its own slide (task text plus a 420px frame would not fit), so a teacher can work a task live.
+      if (playUrl(s)) slides.push(playSlide(s, `Live: ${stage === 'make' && !DESIGN && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}`) + note('Work the first task live, or let students start on their own screens and walk round.'));
     } else if (s.body.trim()) {
       slides.push(`## ${title}\n\n${prose(s.body)}`);
     }
+    if (stage) classSlides(stage);
+    if (runBy[stage] && !runUsed.has(stage) && slides.length > before) { slides[before] += note(`Teacher: ${runBy[stage]}`); runUsed.add(stage); }
   }
-  if (T.exit) slides.push(`${BADGE.check}\n\n## Exit ticket\n\n**${pt(T.exit.q)}**\n\n* ${pt(oneLine(T.exit.a))}` + note('Students answer on paper or a mini whiteboard before the reveal. Anyone who cannot answer needs the main idea again next lesson.'));
+  for (const at of CLASS_AT) classSlides(at);
+  if (T.exit) slides.push(`${BADGE.check}\n\n## Exit ticket\n\n**${pt(T.exit.q)}**\n\n* ${pt(oneLine(T.exit.a))}` + note(`Students answer on paper or a mini whiteboard before the reveal. Anyone who cannot answer needs the main idea again next lesson.${T.leads ? ` Where this leads: ${T.leads}` : ''}`));
   return `---\nmarp: true\ntheme: default\nhtml: true\n---\n\n${slides.map(fitCode).join('\n\n---\n\n')}\n`;
 }
 const lowerFirst = (t) => t.charAt(0).toLowerCase() + t.slice(1);
@@ -240,24 +339,35 @@ const blocksDeck = (code) => {
 // (Reaction timer's Predict ran 5px over), and check-decks flags anything past 690px.
 const ROOM = 545;
 // Height estimate for a slide, as fitCode uses it: the text's height and the code's height at full size.
-function slideSize(slide) {
+function measure(slide, narrow = false) {
   const blocks = slide.match(/```[\s\S]*?```/g) || [];
-  const cols = /<div class="cols"/.test(slide) ? 2 : 1; // two columns: count half the code
+  const cols = /<div class="cols"/.test(slide) ? 2 : 1; // two code columns: count half the code
   const lines = blocks.reduce((n, b) => n + b.split('\n').length - 2, 0) / cols;
   const plain = (l) => l.replace(/<[^>]+>|\*\*|`|\[([^\]]*)\]\([^)]*\)/g, '$1').trim();
-  const wraps = (l, w) => Math.max(1, Math.ceil(plain(l).length / w));
+  const wraps = (l, w) => Math.max(1, Math.ceil(plain(l).length / (narrow === true ? w * 0.55 : narrow ? w * narrow : w)));
   const rest = slide.replace(/```[\s\S]*?```/g, '').replace(/<!--[\s\S]*?-->|<style[\s\S]*?<\/style>/g, '').split('\n').filter((l) => l.trim());
   const text = rest.reduce((n, l) => {
     if (/^<span/.test(l)) return n + 60;
     if (/^#/.test(l)) return n + 75;
     if (/^\|[-| ]*\|$/.test(l)) return n + (/-/.test(l) ? 0 : 18);
     if (/^\|/.test(l)) return n + 25 + 44 * Math.max(...l.split('|').slice(1, -1).map((c) => wraps(c, 34)));
+    if (/^\{\{embed:/.test(l)) return n + 420; // a live frame is 420px tall
     if (/^<\/?div/.test(l)) return n;
     if (/^\*\*[^*]+\*\*$/.test(l) && /\.\w+\*\*$/.test(l)) return n + 60 / cols; // file name label
     if (/^[-*] /.test(l)) return n + 12 + 44 * wraps(l, 62);
     return n + 18 + 44 * wraps(l, 66);
   }, 0) + (35 * blocks.length) / cols;
   return { text, codeFull: lines * 29 * 1.25 };
+}
+// Height estimate for a slide, as fitCode uses it: the text's height and the code's height at full size. A side-by-side
+// slide (class "side": code or a live frame beside text) is the header plus the taller of its two columns.
+function slideSize(slide) {
+  const at = slide.indexOf('<div class="side"');
+  if (at < 0) return measure(slide);
+  const head = measure(slide.slice(0, at)), body = slide.slice(at).split(/<\/div>\s*<div>/);
+  const left = measure(body[0], /1fr 3fr/.test(slide) ? 0.25 : true), right = measure(body.slice(1).join(''), true);
+  const col = (m) => m.text + m.codeFull;
+  return { text: head.text, codeFull: Math.max(col(left), col(right)) };
 }
 // True when a slide cannot fit even at fitCode's smallest sizes (code at half size, text at 16px).
 function tooTall(slide) {
@@ -269,6 +379,11 @@ function fitCode(slide) {
   const { text, codeFull } = slideSize(slide);
   const code = (s) => codeFull * s;
   if (text + code(1) <= ROOM) return slide;
+  // Side by side: one column is the code or a live frame, the other text; scale the whole slide to fit, not just the code.
+  if (/<div class="side"/.test(slide)) {
+    const k = ROOM / (text + codeFull);
+    return `${slide}\n\n<style scoped>section { font-size: ${Math.max(16, Math.floor(29 * k))}px; }</style>`;
+  }
   let c = Math.min(0.85, (ROOM - text) / code(1)), s = 1;
   if (c < 0.5) { c = 0.5; s = ROOM / (text + code(0.5)); }
   const css = [`pre, marp-pre { font-size: ${Math.floor(c * 100) / 100}em; line-height: 1.25; }`];
@@ -285,26 +400,27 @@ function traceTable(t, blanks) {
 // ---------------------------------------------------------------- worksheet (Prepare Print)
 export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python';
+  LANG = lesson.language || 'python'; E5 = LANG === 'science' || lesson.shape === '5e';
+  DESIGN = lesson.shape === 'design';
   BLOCKS = blocks;
   const T = lesson.teacher || {};
   const out = [];
   const tnote = (t) => (t && t.trim() ? `\n\n:::teacher-note\n\n${t.trim()}\n\n:::\n` : '');
   const keep = (t) => `\n\n:::keep-together\n\n${t.trim()}\n\n:::\n`;
   out.push(`---\ntitle: ${yamlStr(lesson.title)}\nsubtitle: ${yamlStr(`${course}${unit ? ` · ${unit}` : ''}${lesson.order != null ? ` · Lesson ${lesson.order}` : ''}`)}\n---\n\n# ${lesson.title}\n\n**Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}\n\n> **Key question:** ${lesson.hook || lesson.summary}`);
-  out.push(tnote(`**In one sentence:** ${T.summary || lesson.summary}\n\n${T.goals?.length ? `**Students should be able to say:** ${T.goals.map(pt).join(' ')}\n\n` : ''}${LANG === 'science' ? '**Width:** the unmarked parts are the floor every student does (Engage, Explore, Explain, Evaluate). Typical and Wider sections add contexts, not difficulty.' : '**Width:** the unmarked parts are the floor every student does (predict, run, investigate and make). Typical adds the modify practice; wider adds the real-world contexts. They add contexts, not difficulty.'} Students work in the online tutorial alongside this sheet.`));
+  out.push(tnote(`**In one sentence:** ${T.summary || lesson.summary}\n\n${T.goals?.length ? `**Students should be able to say:** ${T.goals.map(pt).join(' ')}\n\n` : ''}${E5 ? '**Width:** the unmarked parts are the floor every student does (Engage, Explore, Explain, Evaluate). Typical and Wider sections add contexts, not difficulty.' : '**Width:** the unmarked parts are the floor every student does (predict, run, investigate and make). Typical adds the modify practice; wider adds the real-world contexts. They add contexts, not difficulty.'} Students work in the online tutorial alongside this sheet.`));
   const makeIndex = lesson.steps.findIndex((s) => s.config.stage === 'make');
   for (const [i, s] of lesson.steps.entries()) {
     const c = s.config, stage = c.stage, title = capMaths(bare(s.title));
     const code = c.code ? snip(c.code) : '';
     const tier = c.tier ? c.tier : stage === 'modify' ? (makeIndex >= 0 && i > makeIndex ? 'wider' : 'typical') : stage === 'info' && makeIndex >= 0 && i > makeIndex ? 'wider' : '';
     let part = '';
-    if (stage === 'predict') {
+    if (stage === 'predict' && !DESIGN) {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
-      part = `## ${LANG === 'science' ? 'Engage' : 'Predict'}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
+      part = `## ${E5 ? 'Engage' : 'Predict'}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
     } else if (stage === 'run') {
-      part = `## ${LANG === 'science' ? 'Explore' : 'Run'}\n\n${LANG === 'maths' || LANG === 'science' ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
-    } else if (stage === 'investigate' || stage === 'practise' || (LANG === 'science' && stage === 'modify')) {
+      part = `## ${E5 ? 'Explore' : 'Run'}\n\n${LANG === 'maths' || E5 ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
+    } else if (stage === 'investigate' || stage === 'practise' || (E5 && stage === 'modify') || (DESIGN && stage === 'predict')) {
       part = `## ${title}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}`;
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
       for (const { t, k } of items) {
@@ -312,7 +428,8 @@ export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
         if (p.reflect || p.board || k.type === 'code') continue;
         let q = `${t ? `### ${t.title}\n\n` : ''}**${p.q}**`;
         if (t && (/```/.test(t.body) || hasWorked(t.body))) q = `${t ? `### ${t.title}\n\n` : ''}${fencesToBlocks(t.body.trim())}\n\n**${p.q}**`;
-        if (p.options) q += '\n\n' + p.options.map((o) => `☐ ${o}`).join('\n\n');
+        if (p.items) q += '\n\nGroups: ' + p.options.join(', ') + '\n\n' + p.items.map((it) => `- ${it}: {{field-15}}`).join('\n');
+        else if (p.options) q += '\n\n' + p.options.map((o) => `☐ ${o}`).join('\n\n');
         if (p.field) q += '\n\nAnswer: {{field-15}}';
         if (p.trace) q += '\n\n{{rows 1}}\n\n' + traceTable(p.trace, false);
         if (p.match) q += '\n\n' + p.match.rights.map((r, i) => `${letters[i]}. ${r}`).join('\n\n') + '\n\n{{columns 60% 40%}}\n\n{{rows 1}}\n\n| Part | Letter |\n|---|---|\n' + p.match.lefts.map((l) => `| \`${l}\` | |`).join('\n');
@@ -329,7 +446,7 @@ export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
         const t = s.tasks.find((x) => x.id === id);
         return `${t ? `**${t.title}:**\n\n` : ''}${splitFiles(snip(sols[id])).map((f) => (f.name ? `*${f.name}*\n\n` : '') + codeMd(f.code)).join('\n\n')}`;
       }).join('\n\n');
-      part = `## ${stage === 'make' && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
+      part = `## ${stage === 'make' && !DESIGN && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
     } else if (s.body.trim()) {
       part = `## ${title}\n\n${prose(s.body)}`;
     }
@@ -412,7 +529,8 @@ export const CHEAT_CSS = `.wrap{max-width:1000px}
 
 // ---------------------------------------------------------------- teacher guide pages (HTML bodies)
 export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files, blocks = null }) {
-  LANG = lesson.language || 'python';
+  LANG = lesson.language || 'python'; E5 = LANG === 'science' || lesson.shape === '5e';
+  DESIGN = lesson.shape === 'design';
   BLOCKS = blocks;
   // MakeCode: the blocks picture, with the code one click away; code as text when there is no picture.
   const showProgram = (code, name = '') => {
@@ -442,13 +560,17 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
     sec('Timing', T.timing ? `<p>${esc(T.timing)}</p>` : '') +
     sec('Before class', T.before ? md(T.before) : '') +
     sec('Running the lesson', T.running ? `<ol>${T.running.map((r) => `<li>${md(r).replace(/^<p>|<\/p>\s*$/g, '')}</li>`).join('')}</ol>` : '') +
+    sec('In class', (lesson.classPlan?.inquiry || (lesson.classPlan?.activities || []).length || (lesson.classPlan?.questions || []).length) ? `<p class="muted">On the slides at these points. Students can do the whole lesson on their own; these are for the room. In the deck, the Run, Modify and Make slides have the live playground in them (the tutorial link is the backup), and the notes above are in each slide's speaker notes.</p><ul>${lesson.classPlan.inquiry ? `<li><b>Think, pair, share</b> <span class="muted">(start)</span><br>${esc(lesson.classPlan.inquiry.q)}${(lesson.classPlan.inquiry.prompts || []).length ? `<ul>${lesson.classPlan.inquiry.prompts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${lesson.classPlan.inquiry.notes ? `<p class="muted">${esc(lesson.classPlan.inquiry.notes)}</p>` : ''}</li>` : ''}${(lesson.classPlan.activities || []).map((a) => `<li><b>${esc(a.title)}</b> <span class="muted">(${esc(a.at)}${a.minutes ? `, ${a.minutes} min` : ''})</span>${md(a.do)}${a.notes ? `<p class="muted">${esc(a.notes)}</p>` : ''}</li>`).join('')}${(lesson.classPlan.questions || []).map((q, i) => { const p = checkParts(q, snip, `${lesson.slug}/class-${i}`); return `<li><b>${esc(q.title || 'Class question')}</b> <span class="muted">(${esc(q.at)})</span><br>${esc(p.q)}<br><span class="ans">${esc(p.answer)}</span>${p.explain ? `<br><span class="muted">${esc(p.explain)}</span>` : ''}</li>`; }).join('')}</ul>` : '') +
+    sec('The hard part (on purpose)', T.struggle ? `<p>${esc(T.struggle)}</p>` : '') +
     sec('When students get stuck', stuck) +
     sec('Answers to the checks', answers ? `<ol class="answers">${answers}</ol>` : '') +
     sec('Solutions', solHtml ? `<p class="muted">One possible solution for each task. Other correct programs are fine.</p>${solHtml}` : '') +
     sec('Stretch and support', `${T.stretch ? `<p><b>Stretch:</b> ${esc(T.stretch)}</p>` : ''}${T.support ? `<p><b>Support:</b> ${esc(T.support)}</p>` : ''}`) +
+    sec('Coach prompt (optional)', lesson.coach ? `<p>For a student who has done the lesson and is still stuck. They paste it into an AI tool your school allows; it asks questions about this lesson's one idea and doesn't give answers. Students see it on the course recap page only through a link ending in <code>?coach=1</code>: <a href="${esc(studentHref)}../recap/?coach=1">recap with coach prompts</a>.</p><pre class="coachp">${esc(lesson.coach)}</pre>` : '') +
     sec('Exit ticket', T.exit ? `<p><b>${esc(T.exit.q)}</b></p><p class="ans">${esc(T.exit.a)}</p>` : '') +
     sec('What each step is for', insights.length ? `<ul>${insights.map(([w, t]) => `<li><b>${esc(w)}:</b> ${esc(t)}</li>`).join('')}</ul>` : '') +
-    sec('Where it leads', T.leads ? md(T.leads) : '');
+    sec('Where it leads', T.leads ? md(T.leads) : '') +
+    sec('Sources', sourceList(T).length ? `<ul>${sourceList(T).map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>${x.checked ? ` <span class="muted">(checked ${esc(x.checked)})</span>` : ''}</li>`).join('')}</ul>` : '');
 }
 
 export const TEACH_CSS = `.tg{margin:26px 0}.tg h2{font-size:1.15rem;margin:0 0 8px}.tg h3{font-size:1rem;margin:16px 0 6px}
@@ -457,6 +579,6 @@ export const TEACH_CSS = `.tg{margin:26px 0}.tg h2{font-size:1.15rem;margin:0 0 
 .dl{list-style:none;padding:0;display:grid;gap:8px}.dl li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
 .copyurl{font:inherit;font-size:13px;margin-left:6px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);cursor:pointer}
 .blocks{margin:8px 0}.blocks img{max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px}.mkjs summary{cursor:pointer;color:var(--muted);font-size:14px}
-.tunit{margin:26px 0}.tunit h2{margin:0 0 4px;font-size:1.15rem}.tunit ul{margin:6px 0}.primer{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px}`;
+.coachp{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px}.tunit{margin:26px 0}.tunit h2{margin:0 0 4px;font-size:1.15rem}.tunit ul{margin:6px 0}.primer{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px}`;
 export const TEACH_JS = `document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.copyurl');if(!b)return;var u=b.dataset.url,done=function(){var t=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=t},1500)};
 if(navigator.clipboard)navigator.clipboard.writeText(u).then(done,function(){prompt('Copy this address:',u)});else prompt('Copy this address:',u)});`;

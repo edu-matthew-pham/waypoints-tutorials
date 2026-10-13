@@ -1,9 +1,37 @@
 ---
-order: 5
+order: 7
+node: AC9S7U06 n2
+woven: [AC9S7H04, AC9S7I06]
 unit: mixtures
 title: How do you separate a mixture?
 summary: Every separation technique uses a difference in a physical property between the parts of a mixture. Match property differences to techniques, and choose the order.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8251
+  url: http://127.0.0.1:8251/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "A mixture of water, dissolved salt, sand and iron filings: each part is separated by a different property." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Separating mixtures"
+  say: "Each separation technique uses a difference in a property."
+  clip:
+    - caption: { text: "Water, salt, sand and iron filings. Each tool uses a different property.", say: "Water, salt, sand and iron: each tool uses a different property." }
+    - wait: 3280
+    - click: "Magnet"
+    - wait: 1500
+    - caption: { text: "A magnet pulls out the iron: it's magnetic.", say: "A magnet pulls out the iron, because it's magnetic." }
+    - wait: 2620
+    - click: "Filter paper"
+    - wait: 2000
+    - caption: { text: "Filter paper keeps the sand: its grains are too big.", say: "Filter paper keeps the sand: its grains are too big to pass." }
+    - wait: 3610
+    - click: "Evaporate"
+    - wait: 2500
+    - caption: { text: "Evaporating leaves the dissolved salt.", say: "Evaporating the water leaves the dissolved salt behind." }
+    - wait: 800
 hook: "A recycling plant lifts steel cans out of the rubbish with a giant magnet and leaves everything else behind. Every way of separating a mixture works like that: it uses a difference between the parts."
 ---
 Separating doesn't change the particles: you get back the same substances you mixed. The trick is to find a **property** where the parts differ.
@@ -62,6 +90,13 @@ tasks:
       answer: 0
       feedback: [null, "Magnets work fine through water.", "There is no fixed rule. The order depends on the mixture and the properties."]
       explain: "The magnet picks out just the iron first; then the filter only catches sand."
+  - check:
+      type: question
+      q: "What do all separation techniques have in common?"
+      options: ["Each one uses a difference in a physical property between the parts of the mixture", "Each one turns the mixture into new substances", "Each one separates the heavier part from the lighter part", "Each one needs heat"]
+      answer: 0
+      feedback: [null, "You get back the same substances you mixed: the particles don't change.", "Weight is only one possibility. The magnet used magnetism and the filter used particle size.", "The magnet and the filter paper needed no heat. Only evaporation did."]
+      explain: "Find a property where the parts differ, then choose the technique that uses it."
   - check: { type: reflect, text: "I explained how I separated the iron, sand and salt, naming the property difference for each step." }
 ```
 
@@ -71,9 +106,25 @@ tasks:
 
 ### The order
 
+### What they share
+
 ### In your own words
 
 In your book: explain how you separated the iron, sand and salt. For each step, name the property difference you used.
+
+## Mix it up
+
+```step
+stage: practise
+insight: "Density is one of the property differences that separation uses, and the particle explanation of density comes from the squashing lesson."
+check:
+  type: question
+  q: "Looking back at density: air is much less dense than water. Why?"
+  options: ["Air particles are far apart, so there are far fewer in each cm³", "Each air particle is lighter than a water particle", "Air particles are smaller", "Air has no mass"]
+  answer: 0
+  feedback: [null, "Surprisingly, an average air particle is heavier than a water particle. The difference is spacing.", "Particles do not change size between states.", "Air does have mass, about 1.2 g in every litre."]
+  explain: "Fewer particles in each cm³ means less mass in each cm³: lower density. Density is one of the property differences a separation can use."
+```
 
 ## Elaborate: choose, and rule out
 
@@ -140,6 +191,38 @@ check:
   text: "On a camping trip, the only water is from a muddy creek, and it may contain germs. Order these plans from most effective to least effective at making it safe to drink."
   explain: "Filtering removes the mud (particle size) and boiling kills germs, so combining them is best. Boiling alone makes it safer but leaves mud. A cloth alone removes some mud but not germs."
 ```
+
+## Elaborate: a boil water alert
+
+```step
+stage: modify
+tier: typical
+insight: "A boil water alert turns test results into one clear action for a whole town: science communication shaping what people do."
+tasks:
+  - check:
+      type: question
+      q: "An alert says: \"Boil water, then let it cool, before drinking. A jug filter is not enough.\" Why include the jug filter line?"
+      options: ["Many homes own jug filters and might trust them, but most aren't designed to remove germs", "Jug filters make the water less safe", "Filtering removes germs better than boiling, so the alert has it wrong"]
+      answer: 0
+      feedback: [null, "The filter doesn't make the water worse; it just doesn't do the job needed here.", "Most jug filters are made to improve taste and remove some chemicals, not to remove germs. Boiling kills germs."]
+      explain: "Good science communication answers the question its audience will actually have, and heads off the mistake they are likely to make."
+  - check:
+      type: sort
+      q: "Does each choice help the alert reach and protect everyone?"
+      options: ["Helps", "Gets in the way"]
+      items:
+        - ["Short, plain instructions: boil, cool, then drink", "Helps"]
+        - ["Naming the suburbs affected and when it started", "Helps"]
+        - ["Versions in the main languages spoken in the town", "Helps"]
+        - ["Only a long table of lab results, with no instructions", "Gets in the way", "The results matter to the health department, but households need to know what to do."]
+        - ["Posting it only in a technical report on the water company's website", "Gets in the way", "People need it where they already look: text messages, radio, social media, the local news."]
+```
+
+After a flood, or a fault at a treatment plant, tests sometimes find germs in a town's water. The health department and the water company then issue a **boil water alert**. The tests are science; the alert is **science communication**. It turns the results into something every household can act on, and it is lifted only when new tests show the water is safe again.
+
+### The jug filter
+
+### Reaching everyone
 
 ## Evaluate: look back
 

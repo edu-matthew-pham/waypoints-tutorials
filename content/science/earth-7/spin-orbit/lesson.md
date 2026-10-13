@@ -1,9 +1,31 @@
 ---
 order: 1
+node: AC9S7U03 n1
+woven: [AC9S7I05]
 unit: earth
 title: Spinning and orbiting
 summary: "The Earth rotates (spins on its axis) once a day, causing day and night, and revolves (goes round the sun) once a year. Its axis is tilted and always points the same way in space."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8228
+  url: http://127.0.0.1:8228/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "Earth's orbit round the sun, with its tilted axis, and the side view showing day and night." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Spinning and orbiting"
+  say: "The Earth spins once a day and orbits the sun once a year."
+  clip:
+    - caption: { text: "The Earth spins on its axis once a day: day and night.", say: "The Earth spins on its axis once a day: day and night." }
+    - wait: 3610
+    - click: "Play a day"
+    - wait: 3500
+    - caption: { text: "It orbits the sun once a year, its axis always tilted the same way.", say: "It orbits the sun once a year, its axis always tilted the same way." }
+    - wait: 4270
+    - click: "Play a year"
+    - wait: 4500
 hook: "Right now you are spinning at about 1400 km/h (in Canberra) and flying round the sun at about 107 000 km/h. You don't feel either."
 ---
 In Year 6 you modelled day and night. This lesson puts both of the Earth's movements together.
@@ -82,9 +104,9 @@ insight: "Describing what an observer experiences links the two cycles to everyd
 check:
   type: question
   q: "A student in Canberra records sunset time every week for a year. What pattern will they find?"
-  options: ["Sunset gets later until late December, then earlier until late June, then later again: a yearly cycle", "Sunset is at the same time every day", "Sunset gets later every day forever", "Sunset changes randomly"]
+  options: ["Sunset gets later until early January, then earlier until mid-June, then later again: a yearly cycle", "Sunset is at the same time every day", "Sunset is latest in June and earliest in December", "Sunset changes randomly"]
   answer: 0
-  feedback: [null, "Use the date slider: daylight hours change with the date.", "It keeps cycling with the year.", "The pattern repeats every year."]
+  feedback: [null, "Use the date slider: daylight hours change with the date.", "That's the Northern Hemisphere pattern. In Canberra the long summer evenings come in December and January.", "The pattern repeats every year."]
 ```
 
 ## Elaborate: different places

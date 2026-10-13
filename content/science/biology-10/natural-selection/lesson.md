@@ -1,9 +1,37 @@
 ---
 order: 5
+node: AC9S10U02 n2
+woven: [AC9S9H01]
 unit: evolution
 title: Why did the beetles change?
 summary: "Natural selection: individuals vary; more are born than survive; those best suited to the environment are more likely to survive and reproduce, passing on their alleles. Over generations the population changes. Individuals don't change to suit the environment."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8240
+  url: http://127.0.0.1:8240/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "A population of beetles: each one a slightly different colour, on pale ground." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Natural selection"
+  say: "The population changes because survivors pass on their colours; no beetle changes."
+  clip:
+    - caption: { text: "Beetles vary in colour. Birds eat the ones that stand out most.", say: "Beetles vary in colour. Birds eat the ones that stand out most." }
+    - wait: 3610
+    - click: "Let the birds hunt"
+    - wait: 2500
+    - caption: { text: "Survivors breed, and their young are like them.", say: "The survivors breed, and their young are like them." }
+    - wait: 2620
+    - click: "Survivors breed"
+    - wait: 1500
+    - click: "Let the birds hunt"
+    - wait: 2500
+    - click: "Survivors breed"
+    - wait: 1500
+    - caption: { text: "Over generations the population blends in. No single beetle changed.", say: "Over generations the population blends in, but no single beetle changed." }
+    - wait: 800
 hook: "After a bushfire, the ground is black. A few years later, a beetle population on it is darker than before. No beetle changed colour."
 ---
 Individuals vary. This lesson: what happens to that variation when some individuals are more likely to survive.
@@ -59,7 +87,28 @@ tasks:
       options: ["Selection couldn't change the population: there would be no variation to select from", "They would still evolve the same way", "They would all be eaten", "They would turn the ground's colour"]
       answer: 0
       feedback: [null, "Selection needs variation to act on.", "If they're identical, any beetle is equally likely to be eaten.", "Individuals don't change colour."]
-  - check: { type: reflect, text: "I can explain natural selection in steps without saying individuals change because they need to." }
+  - check:
+      type: question
+      q: "Over millions of years, populations split apart and natural selection changes each part differently. What does that mean for living things today?"
+      options: ["They are all related, in a branching family tree: close relatives share a recent common ancestor", "Each species began separately, so they aren't related", "They form a ladder, with humans at the top as the most evolved"]
+      answer: 0
+      feedback: [null, "Shared DNA and anatomy say otherwise: they point to common ancestors.", "Evolution branches; it doesn't climb. Every species alive today has been evolving for the same length of time."]
+      explain: "Splitting and selection, repeated over millions of years, give a branching tree of life. Every living thing is related; the question is how closely."
+  - check:
+      type: question
+      q: "If relatives share ancestors, which pair would you expect to have the most similar DNA?"
+      options: ["A human and a chimpanzee", "A human and a mouse", "A human and a mushroom"]
+      answer: 0
+      feedback: [null, "Mice are mammals like us, but our line split from theirs much longer ago than from the chimpanzee's.", "We are related to fungi too, but very distantly: our last common ancestor lived over a billion years ago."]
+      explain: "The more recently two species shared an ancestor, the more similar their DNA. Comparing DNA is how biologists now draw the tree of life."
+  - check:
+      type: question
+      q: "In Year 7, kingdoms put mushrooms in their own group, and many people think of them as plant-like. DNA shows fungi share a more recent ancestor with animals than with plants. Why don't features alone show this?"
+      options: ["Similar features can evolve in unrelated groups, and close relatives can come to look very different", "DNA tests are unreliable", "Fungi evolved from plants"]
+      answer: 0
+      feedback: [null, "DNA evidence from many genes and many labs agrees.", "Fungi and plants are separate branches; neither came from the other."]
+      explain: "Natural selection shapes features to suit each environment, so features can mislead about family. That is why classification moved from kingdoms by features to groups by shared ancestry, and changes as evidence improves."
+  - check: { type: reflect, text: "I can explain natural selection in steps without saying individuals change because they need to, and explain why all living things are related." }
 ```
 
 ### The steps
@@ -67,6 +116,12 @@ tasks:
 ### Who changed
 
 ### No variation
+
+### A branching tree
+
+### Closest DNA
+
+### Back to the kingdoms
 
 ### In your own words
 
@@ -101,10 +156,10 @@ tier: wider
 insight: "Applying natural selection to bacteria and antibiotics transfers the steps to a medical context."
 check:
   type: question
-  q: "Why does stopping a course of antibiotics early help resistant bacteria spread?"
-  options: ["The most resistant bacteria are the last to die; stopping early leaves them to survive and multiply", "Antibiotics make bacteria resistant", "Bacteria learn to resist", "It doesn't make a difference"]
+  q: "Why does using antibiotics more often make resistant bacteria more common?"
+  options: ["Each use kills the bacteria that aren't resistant; any that happen to be resistant survive and multiply", "Antibiotics make bacteria resistant", "Bacteria learn to resist", "It doesn't make a difference"]
   answer: 0
-  feedback: [null, "Antibiotics select for resistance that already exists; they don't create it.", "Bacteria don't learn; resistant ones survive.", "It matters: survivors are the most resistant."]
+  feedback: [null, "Antibiotics select for resistance that already exists; they don't create it.", "Bacteria don't learn; resistant ones survive.", "It matters: each use leaves the resistant survivors with less competition."]
 ```
 
 ## Evaluate: look back
@@ -121,3 +176,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Natural selection:** individuals **vary**; more are born than survive; those **best suited** to the environment are more likely to **survive and reproduce**; they pass on their **alleles**; over **generations**, the population changes.
 - **Individuals don't change** to suit the environment; the population does.
 - "Fittest" means best suited to the **current** environment. Selection needs **variation**.
+- Over millions of years, populations split and diverge: all living things are related in a **branching tree of life**, not a ladder. The more recent the **common ancestor**, the more similar the DNA.
+- Features can mislead about relatedness (fungi are closer to animals than to plants), so modern classification uses shared ancestry, and changes as evidence improves.

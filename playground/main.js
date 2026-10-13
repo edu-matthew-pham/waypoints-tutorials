@@ -1,6 +1,7 @@
 import { CanvasTurtle, StopError } from './canvas-turtle.js';
 import { mountSnippets } from './snippets.js';
-import { createRunner, friendlyError } from './skulpt-bridge.js';
+import { createRunner } from './skulpt-bridge.js';
+import { explainError } from './python-errors.mjs';
 
 // URL parameters (set by the lesson page):
 //   ?code=<starter code>   ?id=<key for autosaving this student's edits>
@@ -60,7 +61,58 @@ const modulesReady = (async () => {
   return out;
 })();
 
-const run = createRunner({ turtle, onOutput: (t) => { outEl.append(document.createTextNode(t)); window.__playground.output += t; } });
+// Console mode (the console bridge course): a program that does not use the turtle gets a console in place of the
+// drawing. It is decided once, from the step's starter (or ?console=1), so turtle lessons never change; if a
+// console program starts using the turtle, the drawing comes back when it runs. input() then asks on an inline
+// line in the console instead of the browser's prompt box.
+const canvasPane = document.querySelector('.canvas-pane');
+const usesTurtle = (code) => /\bturtle\b/.test(code);
+let consoleOn = false;
+const forcedConsole = params.get('console') === '1';
+function setConsole(on) {
+  consoleOn = on;
+  document.body.classList.toggle('console', on);
+  if (on) canvasPane.prepend(outEl); else statusEl.after(outEl);
+  canvasPane.setAttribute('aria-label', on ? 'Console' : 'Drawing');
+  outEl.setAttribute('aria-label', on ? 'Console' : 'Output');
+}
+if (forcedConsole || (starter.trim() && !usesTurtle(starter))) setConsole(true);
+
+const OUT_CAP = 40000; // a loop that prints for ever should not freeze the page
+let outLen = 0;
+function show(t) {
+  outEl.append(document.createTextNode(t)); window.__playground.output += t;
+  outLen += t.length;
+  while (consoleOn && outLen > OUT_CAP && outEl.firstChild) { outLen -= (outEl.firstChild.textContent || '').length; outEl.firstChild.remove(); }
+  if (consoleOn) outEl.scrollTop = outEl.scrollHeight;
+}
+let pendingInput = null;
+function askInline(prompt) {
+  if (!consoleOn) return null;
+  if (prompt) show(String(prompt));
+  return new Promise((resolve, reject) => {
+    const field = document.createElement('input');
+    Object.assign(field, { type: 'text', className: 'con-in', autocomplete: 'off', spellcheck: false });
+    field.setAttribute('aria-label', 'Answer');
+    field.setAttribute('autocapitalize', 'off');
+    outEl.append(field);
+    outEl.scrollTop = outEl.scrollHeight;
+    field.focus({ preventScroll: true });
+    setStatus('running', 'Type your answer and press Enter');
+    pendingInput = (err) => { field.remove(); pendingInput = null; reject(err); };
+    field.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      e.preventDefault();
+      const v = field.value;
+      const typed = document.createElement('span'); typed.className = 'typed'; typed.textContent = v;
+      field.replaceWith(typed); pendingInput = null;
+      outEl.append(document.createTextNode('\n')); window.__playground.output += v + '\n'; outLen += v.length + 1;
+      setStatus('running', 'Running…');
+      resolve(v);
+    });
+  });
+}
+const run = createRunner({ turtle, onOutput: show, onInput: askInline });
 
 function setStatus(state, text) {
   statusEl.dataset.state = state;
@@ -95,7 +147,8 @@ codeEl.addEventListener('keydown', (e) => {
 
 runBtn.addEventListener('click', async () => {
   ctl?.close(); // the picture matters now, not the reference
-  outEl.textContent = '';
+  if (consoleOn && !forcedConsole && [mainText, ...Object.values(studentMods)].some(usesTurtle)) setConsole(false);
+  outEl.textContent = ''; outLen = 0;
   turtle.resetAll();
   turtle.speed = Number(speedEl.value);
   turtle.beginRun();
@@ -109,11 +162,8 @@ runBtn.addEventListener('click', async () => {
     if (err instanceof StopError || /Stopped/.test(String(err))) {
       setStatus('stopped', 'Stopped');
     } else {
-      const msg = friendlyError(err);
-      window.__playground.error = msg;
-      const span = document.createElement('span'); span.className = 'err'; span.textContent = msg;
-      outEl.append(span);
-      setStatus('error', 'Error: ' + String(err).split('\n')[0]);
+      const r = showError(err);
+      setStatus('error', r?.line ? `Error on line ${r.line}` : 'Error: ' + String(err).split('\n')[0]);
     }
   } finally {
     turtle.draw(); turtle.emit();
@@ -123,14 +173,47 @@ runBtn.addEventListener('click', async () => {
   }
 });
 
-stopBtn.addEventListener('click', () => turtle.stop());
+stopBtn.addEventListener('click', () => { turtle.stop(); pendingInput?.(new Error('Stopped')); });
 finishBtn.addEventListener('click', () => turtle.finish());
 resetBtn.addEventListener('click', () => {
   mainText = starter; write(null); switchTab('main');
-  outEl.textContent = ''; turtle.resetAll();
+  outEl.textContent = ''; outLen = 0; turtle.resetAll();
+  if (forcedConsole || (starter.trim() && !usesTurtle(starter))) setConsole(true);
   setStatus('idle', 'Ready');
   window.__playground.output = ''; window.__playground.error = null;
 });
+
+// ---------- errors: a plain-language line first (tools/python-errors.mjs), then Python's own message ----------
+function showError(err) {
+  const raw = String(err);
+  const tb = err?.traceback?.[0], mod = String(tb?.filename || '').match(/(\w+)\.py$/)?.[1];
+  const file = mod && studentMods[mod] !== undefined ? mod : (!tb || /stdin/.test(tb.filename || '') ? 'main' : null);
+  const r = explainError(raw, file === 'main' ? mainText : file ? studentMods[file] : '');
+  if (r && file && file !== 'main') r.hint = r.hint.replace(/^Line (\d+):/, `Line $1 of ${file}.py:`);
+  window.__playground.error = raw + (r ? '\n' + r.hint : '');
+  const box = document.createElement('span'); box.className = 'err';
+  if (outEl.textContent && !outEl.textContent.endsWith('\n')) box.append('\n');
+  if (r) {
+    const hint = document.createElement('span'); hint.className = 'err-hint'; hint.textContent = r.hint; box.append(hint);
+    if (r.line && file) {
+      const go = document.createElement('button'); go.type = 'button'; go.className = 'err-go'; go.textContent = `Show line ${r.line}`;
+      go.addEventListener('click', () => showLine(file, r.line)); box.append(' ', go);
+    }
+    box.append('\n');
+  }
+  const said = document.createElement('span'); said.className = r ? 'err-raw' : ''; said.textContent = (r ? 'Python says: ' : '') + raw; box.append(said);
+  outEl.append(box);
+  return r;
+}
+/** Select a line in the editor (switching to its file), so the student looks at the right place. */
+function showLine(file, n) {
+  if (active !== file) switchTab(file);
+  const lines = codeEl.value.split('\n'); if (n > lines.length) return;
+  const start = lines.slice(0, n - 1).reduce((a, l) => a + l.length + 1, 0);
+  codeEl.focus(); codeEl.setSelectionRange(start, start + lines[n - 1].length);
+  const lh = parseFloat(getComputedStyle(codeEl).lineHeight) || 20;
+  codeEl.scrollTop = Math.max(0, (n - 3) * lh);
+}
 
 // ---------- file tabs: main.py plus the student's own modules ----------
 const tabsEl = $('tabs');

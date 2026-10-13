@@ -1,6 +1,6 @@
 summary: Students explain conduction (energy passed by particle collisions, particles staying in place) and convection (the heated fluid itself moving, driven by density differences), and apply them to conductors and insulators (AC9S9U04, node 1).
-time: 25
-timing: "Engage and Explore 8 min · Explain 10 min · Evaluate 3 min · Typical adds 3 min, Wider about 4 min"
+time: 26
+timing: "Engage and Explore 8 min · Explain 11 min · Evaluate 3 min · Typical adds 3 min, Wider about 4 min"
 goals:
   - I can explain conduction as energy passed between particles by collisions.
   - I can explain convection as the movement of heated fluid, driven by density differences.
@@ -10,12 +10,15 @@ before: |
 
   The key contrast: in conduction, energy moves and particles don't; in convection, the particles carry the energy. Keep asking "what did one particle do?".
 
+  Assumed: density from Year 7 (Properties: fewer particles in each cm³, less dense). The "Why it rises" question links it to convection and names the model's shortcut.
+
   Model note: in the simulation hot particles are pushed up directly; real hot fluid rises because its particles spread out (less dense). The wider step mentions possum-skin cloaks of south-eastern Australia; for richer context, use local resources and community guidance about First Nations clothing and bedding in your region.
 running:
   - "Engage: ask who chose 'hot particles travel up the handle'. The bar answers it."
   - "Explore: on the bar, point to one particle for a few seconds. On the beaker, follow the ring the whole way round."
   - "Explain: the first two questions are the core; the sort applies them; 'why not in a solid' links back to Year 7 particle theory."
   - "In your own words: the comparison paragraph is the evidence for the node."
+struggle: "Seeing energy move while the particles stay put. When a student says particles travel along the bar, ask them to watch one particle in the middle for ten seconds."
 stuck:
   - see: "A student says heat rises."
     ask: "On the board, what moved up?"

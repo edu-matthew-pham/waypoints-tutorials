@@ -1,9 +1,31 @@
 ---
-order: 2
+order: 15
+node: [AC9S10U07 n5, AC9S10U07 n6]
+woven: [AC9S9I02, AC9S9I03]
 unit: rates
 title: Why does heat speed up reactions?
 summary: Particles react only when they collide with enough energy (the activation energy). Collision theory explains why temperature, concentration, surface area and catalysts change the rate of a reaction.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8245
+  url: http://127.0.0.1:8245/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "Hydrogen and chlorine molecules colliding: only collisions with enough energy react." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Collision theory"
+  say: "Particles react only when they collide with at least the activation energy."
+  clip:
+    - caption: { text: "Particles react only when they collide hard enough: the activation energy.", say: "Particles react only when they collide with enough energy, the activation energy." }
+    - wait: 3000
+    - click: { selector: "input[type=range]" }
+    - press: "End"
+    - caption: { text: "Hotter: faster particles, more collisions with enough energy.", say: "Hotter means faster particles, and more collisions with enough energy." }
+    - wait: 3500
+    - caption: { text: "So the reaction goes faster. Concentration and catalysts change the rate too.", say: "So the reaction goes faster; concentration and catalysts change the rate too." }
+    - wait: 800
 hook: "Milk goes off in days on the bench but lasts a week in the fridge. A glow stick in hot water glows brighter but fades sooner. Same idea: how often, and how hard, particles collide."
 ---
 Reactions go at different speeds. This lesson gives one model that explains every way to change the speed.
@@ -61,6 +83,22 @@ tasks:
       answer: 0
       feedback: [null, "Particles bounce or react on contact; they don't linger.", "The container stays the same size."]
       explain: "Temperature changes how hard particles hit far more than how often. That is why heat has such a big effect."
+  - check:
+      type: question
+      q: "You want to test how temperature changes the rate of marble chips reacting with acid. Which plan is a fair test?"
+      options: ["Change only the temperature, keep the acid and the chips the same, time the fizzing, and repeat each temperature", "Heat the acid and use stronger acid too, so the difference is bigger", "Do one run at each temperature: one result is enough"]
+      answer: 0
+      feedback: [null, "Then you can't tell which change made it faster: change only one thing.", "Runs vary, as they did on the board: repeat each temperature and compare averages."]
+      explain: "Change one factor, measure the rate (time until the fizzing stops, or gas made each minute) and keep everything else the same. Repeats show how much the results vary."
+  - check:
+      type: match
+      q: "Each change speeds up a reaction. Match it to the reason, in collision terms."
+      pairs:
+        - ["Higher temperature", "Particles move faster: they collide more often and more of the collisions have enough energy"]
+        - ["Higher concentration", "More reacting particles in the same space, so they collide more often"]
+        - ["Larger surface area (smaller pieces)", "More particles of the solid are exposed, so more collisions can happen at once"]
+        - ["A catalyst", "It lowers the activation energy, so a larger share of collisions succeed"]
+      explain: "Every factor works through collisions: either more of them each second, or a bigger share with enough energy."
   - check: { type: reflect, text: "I explained, using collisions and activation energy, why heating makes a reaction faster." }
 ```
 
@@ -69,6 +107,10 @@ tasks:
 ### What heating does
 
 ### The bigger effect
+
+### A fair test
+
+### Four factors
 
 ### In your own words
 
@@ -124,7 +166,7 @@ tasks:
       q: "With the catalyst, the reaction sped up but the temperature didn't change. How?"
       options: ["The catalyst lowered the activation energy, so more collisions had enough energy", "The catalyst gave the particles extra energy", "The catalyst reacted and was used up"]
       answer: 0
-      feedback: [null, "The temperature in the panel didn't change, so the particles' energies didn't either.", "A catalyst is not used up: the same amount is there at the end."]
+      feedback: [null, "The temperature in the panel didn't change, so the particles' energies didn't either.", "A catalyst is not a reactant: it may join in along the way, but it is given back unchanged, so the same amount is there at the end."]
       explain: "A catalyst provides a route with a lower activation energy. (In the model it simply halves the threshold; real catalysts often work on their surface.)"
 ```
 
@@ -144,6 +186,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 **Revision summary**
 
 - Particles react only when they **collide** with at least the **activation energy**. Most collisions just bounce.
-- **Temperature:** faster particles collide more often and, much more importantly, harder. Biggest effect.
+- **Temperature:** faster particles collide more often and, much more importantly, harder.
 - **Concentration** and **surface area:** more collisions each second.
 - **Catalyst:** a lower activation energy, so more collisions succeed. It is not used up.

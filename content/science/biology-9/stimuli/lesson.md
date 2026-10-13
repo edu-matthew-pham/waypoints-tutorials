@@ -1,9 +1,30 @@
 ---
 order: 1
+node: AC9S9U01 n1
 unit: control
 title: What counts as a stimulus?
 summary: "A stimulus is any change the body detects, outside it or inside it. Every response follows the same pathway: stimulus, receptor, command centre, effector, response."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8221
+  url: http://127.0.0.1:8221/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Stimulus to response"
+  say: "A stimulus is any change the body detects, inside or outside it."
+  clip:
+    - caption: { text: "A stimulus is any change the body detects.", say: "A stimulus is any change the body detects." }
+    - wait: 2290
+    - click: "Touching a hot pan"
+    - expect: { selector: "body", contains: "Arm muscles" }
+    - caption: { text: "A change outside: receptors detect it, and muscles respond.", say: "A change outside: receptors detect it, and muscles respond." }
+    - wait: 2620
+    - click: "Body getting too hot"
+    - expect: { selector: "body", contains: "Sweat glands" }
+    - caption: { text: "A change inside counts too: the brain detects it, and you sweat.", say: "A change inside counts too: the brain detects it, and you sweat." }
 hook: "You pull your hand off a hot pan before you feel the pain. After lunch, your blood sugar is brought back down without you noticing at all. Both are responses to a stimulus."
 ---
 Earlier you met body systems. This lesson: how the body detects change and responds.
@@ -63,6 +84,12 @@ tasks:
       options: ["The arm muscles", "The skin", "The spinal cord", "The heat"]
       answer: 0
       feedback: [null, "The skin holds the receptors: it detects.", "The spinal cord is the command centre in this reflex.", "The heat is the stimulus."]
+  - check:
+      type: question
+      q: "The smell of toast is the stimulus. Which is the receptor, and what does it do?"
+      options: ["Smell receptors in the nose: they detect chemicals from the toast and send impulses to the brain", "The brain: it smells the toast", "The toast: it gives off the smell", "The salivary glands: they make your mouth water"]
+      answer: 0
+      feedback: [null, "The brain is the command centre: it makes sense of the impulses but can't detect chemicals in the air itself.", "The toast is where the stimulus comes from; receptors are part of your body.", "Glands that respond are effectors: they carry out the response."]
   - check: { type: reflect, text: "I can trace a stimulus through receptor, command centre and effector to a response, for one external and one internal change." }
 ```
 
@@ -71,6 +98,8 @@ tasks:
 ### The parts
 
 ### Hot pan
+
+### Smell receptors
 
 ### In your own words
 

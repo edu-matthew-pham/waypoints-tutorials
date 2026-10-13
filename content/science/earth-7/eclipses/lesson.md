@@ -1,9 +1,36 @@
 ---
 order: 4
+node: AC9S7U03 n3
 unit: moon
 title: Why isn't there an eclipse every month?
 summary: "A solar eclipse happens at new moon when the moon's shadow falls on Earth; a lunar eclipse at full moon when the moon passes through Earth's shadow. The moon's orbit is tilted about 5°, so most months the shadows miss: eclipses come in seasons about six months apart."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8225
+  url: http://127.0.0.1:8225/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "From above and from the side: the moon's orbit tilted about 5°, so most new and full moons miss the shadow." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Eclipses are rare"
+  say: "The moon's orbit is tilted about five degrees, so eclipses are rare."
+  clip:
+    - caption: { text: "At every new moon, the moon passes between the Earth and the sun.", say: "At every new moon, the moon passes between the Earth and the sun." }
+    - wait: 3940
+    - click: "Next full moon"
+    - wait: 1500
+    - click: "Next new moon"
+    - wait: 1500
+    - caption: { text: "But its orbit is tilted about 5°, so its shadow usually misses Earth.", say: "But its orbit is tilted about five degrees, so its shadow usually misses." }
+    - wait: 3940
+    - click: "Next full moon"
+    - wait: 1500
+    - click: "Next new moon"
+    - wait: 1500
+    - caption: { text: "An eclipse needs a new or full moon right where the orbits cross.", say: "An eclipse needs a new or full moon right where the orbits cross." }
+    - wait: 600
 hook: "There's a new moon every month, with the moon between us and the sun. Yet the next total solar eclipse seen from Sydney, on 22 July 2028, will be the first there in over 150 years."
 ---
 You know where the moon is at each phase. This lesson: when the sun, Earth and moon line up exactly.
@@ -73,6 +100,20 @@ tasks:
 
 In your book: draw a side view of the sun, Earth and moon for a lunar eclipse, and for a full moon without one. Shade the umbra and penumbra.
 
+## Mix it up
+
+```step
+stage: practise
+insight: "An eclipse needs a particular line-up of the sun, Earth and moon, so the phase positions come back first."
+check:
+  type: question
+  q: "Looking back at the moon's phases: at which phase is the moon between the Earth and the sun?"
+  options: ["New moon", "Full moon", "First quarter", "Last quarter"]
+  answer: 0
+  feedback: [null, "At full moon the Earth is between the sun and the moon.", "At a quarter moon the moon is at a right angle to the sun.", "At a quarter moon the moon is at a right angle to the sun."]
+  explain: "At new moon the moon is between the Earth and the sun, so we see its dark half. A solar eclipse can only happen at new moon."
+```
+
 ## Elaborate: a flat orbit
 
 ```step
@@ -103,9 +144,9 @@ insight: "Seeing why eclipses seemed unpredictable without a 3D model connects t
 check:
   type: question
   q: "Many ancient peoples recorded eclipses carefully but found them hard to predict. Babylonian astronomers eventually noticed eclipses repeat in a cycle of about 18 years. Which missing idea makes eclipses predictable from first principles?"
-  options: ["The moon's tilted orbit, and where it crosses Earth's orbit plane: eclipses happen only when that crossing line points at the sun", "The size of the moon", "The speed of light", "The number of stars"]
+  options: ["The moon's tilted orbit, and where it crosses Earth's orbit plane: eclipses happen only when that crossing line points at the sun", "The size of the moon", "The speed of light", "The exact date of every new and full moon"]
   answer: 0
-  feedback: [null, "Size matters for total or annular, not for when.", "Not needed to predict them.", "Stars don't affect eclipses."]
+  feedback: [null, "Size matters for total or annular, not for when.", "Not needed to predict them.", "Those dates tell you when a line-up is possible, but not whether the moon passes above, below or through the line."]
   explain: "Long records let people find patterns (like the 18-year saros cycle) even without the model; the 3D model explains why the pattern exists."
 ```
 

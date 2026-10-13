@@ -1,0 +1,25 @@
+<style>
+  form { font-family: sans-serif; }
+  label { display: inline-block; width: 110px; margin: 6px 0; }
+  button { margin-left: 110px; padding: 6px 14px; }
+</style>
+
+<h1>Bake sale order</h1>
+<form>
+  <p><label for="item">What</label>
+  <select id="item">
+    <option>Cupcake</option>
+    <option>Brownie</option>
+    <option>Lemon slice</option>
+  </select></p>
+  <p><label for="count">How many</label>
+  <input id="count" type="number" min="1" value="1"></p>
+  <p><label for="who">Your name</label>
+  <input id="who"></p>
+  <p><label for="when">Pick up</label>
+  <select id="when">
+    <option>Recess</option>
+    <option>Lunch</option>
+  </select></p>
+  <button>Order</button>
+</form>

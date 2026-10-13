@@ -1,9 +1,37 @@
 ---
-order: 2
+order: 3
+node: AC9S10U05 n3
+woven: [AC9S9I04, AC9S9I05]
 unit: newton
 title: What is acceleration, exactly?
 summary: Acceleration is the rate of change of velocity, a = Δv ÷ Δt, in m/s². It has a direction, the same as the net force. Slowing down is acceleration too (opposite to the motion), and on a speed–time graph acceleration is the gradient.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8205
+  url: http://127.0.0.1:8205/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain-pic, caption: "Net force 8 N on 2 kg: acceleration 4 m/s², in the direction of the net force." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Acceleration"
+  say: "Acceleration is how fast velocity changes: the gradient of a speed–time graph."
+  clip:
+    - caption: { text: "A 4 N push on a 2 kg trolley.", say: "A four newton push on a two kilogram trolley." }
+    - click: "Play"
+    - expect: { selector: "body", contains: "acceleration 2 m/s²" }
+    - caption: { text: "Its speed rises 2 m/s every second: acceleration 2 m/s².", say: "Its speed rises two metres per second every second: two metres per second squared." }
+    - caption: { text: "Now double the push to 8 N.", say: "Now double the push to eight newtons." }
+    - click: "Reset"
+    - click: "Push: more"
+    - click: "Push: more"
+    - click: "Push: more"
+    - click: "Push: more"
+    - click: "Play"
+    - expect: { selector: "body", contains: "acceleration 4 m/s²" }
+    - caption: { text: "Double the net force: double the acceleration, 4 m/s².", say: "Double the net force, and the speed rises twice as fast." }
+    - wait: 600
 hook: "A Formula 1 car reaches 100 km/h in under 3 seconds. A train takes about 40. Both end up fast; one accelerates far more. Fast and accelerating are not the same thing."
 ---
 In everyday talk "accelerate" means speed up. In physics it means something more exact.
@@ -60,6 +88,23 @@ tasks:
       q: "A cyclist goes from 2 m/s to 10 m/s in 4 s. Acceleration, in m/s²?"
       answer: 2
       explain: "(10 − 2) ÷ 4 = 2 m/s²."
+  - check:
+      type: sort
+      q: "Is it accelerating?"
+      options: ["Accelerating", "Not accelerating"]
+      items:
+        - ["A car cruising at a steady 100 km/h on a straight road", "Not accelerating", "Fast, but its velocity isn't changing."]
+        - ["A bike slowing down for traffic lights", "Accelerating", "Slowing down is acceleration, opposite to the motion."]
+        - ["A runner rounding a bend at a steady speed", "Accelerating", "Its direction changes, so its velocity changes."]
+        - ["A trolley speeding up from rest", "Accelerating"]
+        - ["A parked car", "Not accelerating"]
+  - check:
+      type: question
+      q: "A trolley is moving to the right, and the net force on it points to the left. Which way does its acceleration point?"
+      options: ["Left, the same way as the net force", "Right, the way it is moving", "Nowhere: it has no acceleration while it still moves right"]
+      answer: 0
+      feedback: [null, "Acceleration follows the net force, not the motion. Moving right while accelerating left means slowing down.", "Its velocity is changing (it is slowing down), so it is accelerating."]
+      explain: "Acceleration always points the same way as the net force. Here that is backwards, so the trolley slows down."
   - check: { type: reflect, text: "I explained the difference between speed and acceleration, and how to calculate acceleration." }
 ```
 
@@ -70,6 +115,10 @@ tasks:
 ### Units
 
 ### Another one
+
+### Accelerating or not
+
+### Which way
 
 ### In your own words
 

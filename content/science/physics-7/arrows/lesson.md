@@ -1,9 +1,31 @@
 ---
 order: 1
+node: AC9S7U04 n1
+woven: [AC9S7H02, AC9S7I04]
 unit: forces
 title: How big, which way?
+introduces: [force-arrows]
 summary: A force has a size and a direction, so we draw it as an arrow. In a force diagram every force on an object gets an arrow of the right length, pointing the right way, with its name.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8200
+  url: http://127.0.0.1:8200/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain-pic, caption: "A force diagram: each force on the box as a named arrow, its length showing the size." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Forces as arrows"
+  say: "A force has a size and a direction, so we draw it as an arrow."
+  clip:
+    - caption: { text: "Each force is an arrow: its length is the size, it points the way the force acts.", say: "Each arrow's length shows the size, and it points the way the force acts." }
+    - click: "Push: more"
+    - click: "Push: more"
+    - caption: { text: "A bigger push: a longer arrow.", say: "A bigger push gets a longer arrow." }
+    - expect: { selector: "body", contains: "Push 30 N" }
+    - caption: { text: "Every force on the box is drawn and named: weight, support, push.", say: "A force diagram shows every force on the object, each one named." }
+    - wait: 1200
 hook: "Push a shopping trolley gently, then hard. Same direction, different force. Push it from the other side: same size, different force. Two things to get right every time."
 ---
 Forces are invisible, so scientists draw them. This lesson is about drawing them precisely.
@@ -55,7 +77,7 @@ tasks:
         - ["Push or pull", "Something in contact pushing or pulling"]
   - check:
       type: question
-      q: "The trolley's weight is 50 N and the support is 50 N. How should their arrows look?"
+      q: "The trolley's weight is 49 N and the support is 49 N. How should their arrows look?"
       options: ["The same length, pointing in opposite directions", "Weight longer, because it is heavier", "Both pointing down"]
       answer: 0
       feedback: [null, "Equal forces get equal arrows.", "The ground pushes up: support always points away from the surface."]
@@ -81,11 +103,11 @@ insight: "Repeated diagrams with immediate feedback build precision: correct dir
 try: { playground: board, starter: "boards.yml#book", height: 560 }
 tasks:
   - starter: "boards.yml#book"
-    check: { type: board, text: "A 2 kg book rests on a table (its weight is 20 N). Set the table's push so the diagram is right.", when: "N = 20" }
+    check: { type: board, text: "A 5 kg pile of books rests on a table (its weight is 5 × 9.8 = 49 N). Set the table's push so the diagram is right.", when: "N = 49" }
   - starter: "boards.yml#tug"
     check: { type: board, text: "In a tug of war, Team A pulls with 300 N and Team B with 300 N. Set both pulls.", when: "L = 300 and R = 300" }
   - starter: "boards.yml#skydiver"
-    check: { type: board, text: "A skydiver (weight 800 N) has reached a steady speed: air resistance now equals her weight. Set it.", when: "A = 800" }
+    check: { type: board, text: "A 50 kg skydiver (weight 490 N) has reached a steady speed: air resistance now equals her weight. Set it.", when: "A = 490" }
 ```
 
 ### A book on a table
@@ -123,9 +145,9 @@ insight: "A shaped object in flight shows forces that aren't pushes in contact, 
 check:
   type: question
   q: "First Peoples of Australia shaped boomerangs with a curved upper surface, like an aircraft wing. In flight, as air moves over it, which force does that shape mainly create?"
-  options: ["Lift: air pushing the boomerang up (and sideways, which curves its path)", "Friction with the ground", "More weight"]
+  options: ["Lift: air pushing the boomerang up (and sideways, which curves its path)", "Thrust: the shape keeps pushing it forward, like an engine", "More weight"]
   answer: 0
-  feedback: [null, "In flight it isn't touching the ground.", "Weight depends only on mass and gravity, not on shape."]
+  feedback: [null, "Nothing pushes it forward once it leaves the hand: it keeps moving because it was thrown. The shape makes the air push on it.", "Weight depends only on mass and gravity, not on shape."]
   explain: "The aerofoil shape makes the air push on it: lift. Spinning, the lift tilts the boomerang so it curves back. Its force diagram: weight down, lift, and air resistance against its motion."
 ```
 

@@ -1,0 +1,241 @@
+{
+  "title": "Maths reference: Angles and shapes",
+  "summary": "The words and methods from Angles and shapes, each with an example and, where it helps, a picture of the board.",
+  "language": "maths",
+  "course": "maths/angles",
+  "_about": "Maths cards for maths/angles (see snippets/maths.json for the format).",
+  "groups": [
+    {
+      "name": "Parallel lines",
+      "items": [
+        {
+          "label": "transversal",
+          "unit": "parallel",
+          "code": "\\text{parallel lines} \\gg \\text{ crossed by a transversal}",
+          "hint": "Parallel lines go the same way and never meet; arrows (>>) mark them. A transversal crosses both, making eight angles."
+        },
+        {
+          "label": "corresponding angles",
+          "unit": "parallel",
+          "code": "a = e",
+          "hint": "The same place at each crossing (an F shape). With parallel lines they are equal.",
+          "board": "widget: parallel\nt: 60\npair: a, e",
+          "shows": "a and e: the same place at each crossing, both 120°"
+        },
+        {
+          "label": "alternate angles",
+          "unit": "parallel",
+          "code": "c = f",
+          "hint": "Between the parallel lines, on opposite sides of the transversal (a Z shape). With parallel lines they are equal.",
+          "board": "widget: parallel\nt: 60\npair: c, f",
+          "shows": "c and f: between the lines, opposite sides, both 60°"
+        },
+        {
+          "label": "co-interior angles",
+          "unit": "parallel",
+          "code": "c + e = 180^\\circ",
+          "hint": "Between the parallel lines, on the same side (a C shape). With parallel lines they add to $180^\\circ$: they are not equal unless both are $90^\\circ$.",
+          "board": "widget: parallel\nt: 60\npair: c, e",
+          "shows": "c and e: between the lines, same side, 60° + 120° = 180°"
+        },
+        {
+          "label": "vertically opposite angles",
+          "unit": "parallel",
+          "code": "b = c",
+          "hint": "Opposite each other at one crossing: always equal, parallel lines or not. Not one of the parallel-line pairs."
+        },
+        {
+          "label": "give a reason",
+          "unit": "parallel",
+          "code": "f = 70^\\circ \\;\\text{(corresponding to } b\\text{)}",
+          "hint": "For each angle you find, name the rule: corresponding or alternate angles are equal; co-interior angles add to $180^\\circ$; angles on a straight line add to $180^\\circ$."
+        }
+      ]
+    },
+    {
+      "name": "Words",
+      "items": [
+        {
+          "label": "interior angle",
+          "unit": "angle-sums",
+          "code": "\\angle A",
+          "hint": "An angle inside a shape, at one of its corners."
+        },
+        {
+          "label": "polygon",
+          "unit": "angle-sums",
+          "code": "n \\text{ sides}, \\; n \\text{ corners}",
+          "hint": "A closed shape with straight sides: triangle (3), quadrilateral (4), pentagon (5), hexagon (6), octagon (8)."
+        },
+        {
+          "label": "regular polygon",
+          "unit": "angle-sums",
+          "code": "\\text{each angle} = \\dfrac{(n - 2) \\times 180^\\circ}{n}",
+          "hint": "All sides and all angles are equal, so each angle is the angle sum shared equally: a regular hexagon has angles of $120^\\circ$."
+        }
+      ]
+    },
+    {
+      "name": "Rules",
+      "items": [
+        {
+          "label": "angle sum of a triangle",
+          "unit": "angle-sums",
+          "code": "a + b + c = 180^\\circ",
+          "hint": "True for every triangle, whatever its shape or size: tear off the corners and they fill a straight line.",
+          "board": "widget: geometry\nshape: triangle\ncorners: 1,1; 7,1; 10,5",
+          "shows": "An obtuse triangle: 24° + 127° + 29° = 180°"
+        },
+        {
+          "label": "angle sum of a polygon",
+          "unit": "angle-sums",
+          "code": "(n - 2) \\times 180^\\circ",
+          "hint": "Split it into triangles from one corner: a shape with $n$ sides makes $n - 2$ triangles. A pentagon: $3 \\times 180^\\circ = 540^\\circ$.",
+          "board": "widget: geometry\nshape: polygon\nsides: 5\ncorners: 2,1; 9,1; 10,5; 6,7; 1,5\nsplit: shown",
+          "shows": "A pentagon splits into 3 triangles from A: 540°"
+        }
+      ]
+    },
+    {
+      "name": "Shapes",
+      "items": [
+        {
+          "label": "triangles by sides and angles",
+          "unit": "shapes",
+          "code": "\\text{scalene, isosceles, equilateral} \\;\\; \\text{acute, right-angled, obtuse}",
+          "hint": "Give two names: one for the sides (how many are equal) and one for the biggest angle. Equal sides sit opposite equal angles.",
+          "board": "widget: geometry\nshape: triangle\ncorners: 2,1; 8,1; 5,5\nclassify: on\nsum: off",
+          "shows": "An isosceles acute triangle, its equal sides ticked"
+        },
+        {
+          "label": "quadrilateral family",
+          "unit": "shapes",
+          "code": "\\text{every square is a rectangle; every rectangle is a parallelogram}",
+          "hint": "Trapezium: at least one pair of parallel sides. Parallelogram: two. Rhombus: four equal sides. Rectangle: four right angles. Square: both. Kite: two pairs of equal neighbouring sides. A square is also a rectangle and a rhombus.",
+          "board": "widget: geometry\nshape: polygon\nsides: 4\ncorners: 3,1; 7,1; 7,5; 3,5\nclassify: on\nsum: off",
+          "shows": "A square with equal sides, parallel sides and right angles marked"
+        },
+        {
+          "label": "regular polygon",
+          "unit": "shapes",
+          "code": "\\text{equal sides} \\;\\text{and}\\; \\text{equal angles}",
+          "hint": "Both are needed: a rhombus has equal sides but is not regular. Names: pentagon 5, hexagon 6, heptagon 7, octagon 8, nonagon 9, decagon 10."
+        },
+        {
+          "label": "convex and concave",
+          "unit": "shapes",
+          "code": "\\text{concave: an angle} > 180^\\circ",
+          "hint": "Convex: every corner points out. Concave: at least one corner points in.",
+          "board": "widget: geometry\nshape: polygon\nsides: 6\ncorners: 2,1; 7,1; 9,4; 6,3; 4,6; 1,4\nclassify: on\nsum: off",
+          "shows": "A concave hexagon with one corner pointing in"
+        }
+      ]
+    },
+    {
+      "name": "Solids, transformations and algorithms",
+      "items": [
+        {
+          "label": "net",
+          "unit": "solids",
+          "code": "\\text{cube: 6 squares on 6 different faces}",
+          "hint": "A net is a solid unfolded flat. Fold it, or roll a cube over it, to check that every face is covered once. Six squares is not enough.",
+          "board": "widget: net\nmode: cube\ncells: 1,0; 0,1; 1,1; 2,1; 3,1; 1,2",
+          "shows": "A cross of six squares that folds into a cube"
+        },
+        {
+          "label": "prism net area",
+          "unit": "solids",
+          "code": "A = 2 \\times \\text{triangle} + \\text{length} \\times (a + b + c)",
+          "hint": "A triangular prism has two triangles and three rectangles. The net's area is the surface area."
+        },
+        {
+          "label": "top, front and side views",
+          "unit": "solids",
+          "code": "\\text{front} = \\text{tallest pile in each column}",
+          "hint": "A view shows what you can see from one side; hidden cubes do not show. The top view with heights shows every cube.",
+          "board": "widget: views\nsize: 3\nmax: 4\nstart: 0,0,0; 0,1,0; 3,1,0",
+          "shows": "Three drawings of the same cubes"
+        },
+        {
+          "label": "translation",
+          "unit": "transform",
+          "code": "(x, y) \\to (x + a, \\, y + b)",
+          "hint": "Every point slides the same way. Right and up add; left and down take away.",
+          "board": "widget: transform\nmode: translate\nshape: 1,1; 3,1; 3,2\nrange: 8\ndx: 3\ndy: -2",
+          "shows": "A triangle moved 3 right and 2 down"
+        },
+        {
+          "label": "reflection",
+          "unit": "transform",
+          "code": "x\\text{-axis: } (x, y) \\to (x, -y) \\qquad y\\text{-axis: } (x, y) \\to (-x, y)",
+          "hint": "Each point and its image are the same distance from the mirror, on opposite sides.",
+          "board": "widget: transform\nmode: reflect\nshape: 2,1; 4,1; 4,3\nrange: 6\naxis: y",
+          "shows": "A triangle reflected in the y-axis"
+        },
+        {
+          "label": "rotation",
+          "unit": "transform",
+          "code": "90^\\circ \\text{ anticlockwise: } (x, y) \\to (-y, x)",
+          "hint": "Give the centre, the angle and the direction. A half turn: (x, y) to (−x, −y). 90° clockwise is 270° anticlockwise.",
+          "board": "widget: transform\nmode: rotate\nshape: 2,1; 4,1; 4,2\nrange: 6\nt: 90",
+          "shows": "A triangle turned a quarter turn about the origin"
+        },
+        {
+          "label": "algorithm",
+          "unit": "algorithms",
+          "code": "\\text{ask the most specific question first}",
+          "hint": "A set of steps and decisions that gives the right result every time. Test it on one shape of every class."
+        }
+      ]
+    },
+    {
+      "name": "Congruence, similarity and 3D",
+      "items": [
+        {
+          "label": "congruence tests",
+          "unit": "congruence",
+          "code": "\\text{SSS},\\ \\text{SAS},\\ \\text{ASA or AAS},\\ \\text{RHS}",
+          "hint": "Each set of equal parts fixes a triangle. In SAS the angle is between the two sides; SSA is not a test, because it can give two triangles.",
+          "board": "widget: congruence\ntest: SSA\np: 8\nq: 6\ns: 40",
+          "shows": "Two different triangles with the same SSA parts"
+        },
+        {
+          "label": "scale factor",
+          "unit": "congruence",
+          "code": "k = \\dfrac{\\text{copy length}}{\\text{matching original length}}",
+          "hint": "Similar shapes: every length times k, every angle the same. Triangles are similar by AA, SSS (sides in one ratio) or SAS.",
+          "board": "widget: similar\nshape: triangle\nsides: 3, 4, 5\nk: 2",
+          "shows": "A 3, 4, 5 triangle and a copy twice as big"
+        },
+        {
+          "label": "diagonals of quadrilaterals",
+          "unit": "congruence",
+          "code": "\\text{rectangle: equal, bisect} \\quad \\text{rhombus: bisect at } 90^\\circ",
+          "hint": "A parallelogram's diagonals cut each other in half; a kite's cross at 90°. Prove a property with two congruent triangles.",
+          "board": "widget: geometry\nshape: polygon\nsides: 4\ncorners: 3,1; 9,1; 9,5; 3,5\nclassify: on\ndiagonals: on\nsum: off",
+          "shows": "A rectangle with its two equal diagonals"
+        },
+        {
+          "label": "parallelogram angles",
+          "unit": "congruence",
+          "code": "\\text{opposite angles equal; neighbours add to } 180^\\circ",
+          "hint": "Neighbouring angles are co-interior between parallel sides. All four add to 360°."
+        },
+        {
+          "label": "3D coordinates",
+          "unit": "solids",
+          "code": "(x, y, z)",
+          "hint": "Along x, along y, then up z. The order is always x, y, z; points on the floor have z = 0.",
+          "board": "widget: space3d\nx: 3\ny: 2\nz: 4",
+          "shows": "The point (3, 2, 4) on three axes"
+        },
+        {
+          "label": "congruence algorithm",
+          "unit": "algorithms",
+          "code": "\\text{congruent?} \\to \\text{similar?} \\to \\text{not enough to tell}",
+          "hint": "Ask the congruence tests first, then the similarity conditions, and end with a catch-all. Test on one pair of each kind, including SSA."
+        }
+      ]
+    }
+  ]
+}

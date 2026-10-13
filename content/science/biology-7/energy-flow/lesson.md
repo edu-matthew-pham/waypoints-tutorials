@@ -1,9 +1,31 @@
 ---
-order: 4
+order: 5
+node: AC9S7U02 n2
 unit: foodwebs
 title: Where does the energy go?
 summary: "Energy enters a food web as sunlight captured by producers and flows one way along the arrows. At each step only about 10% is passed on; the rest is used for living or lost as heat. Matter is different: decomposers return it to be used again."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8210
+  url: http://127.0.0.1:8210/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain-pic, caption: "About 10% of the energy passes to each level: 20,000 kJ in the phytoplankton, 20 kJ in the penguin." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Energy along a food chain"
+  say: "Only about a tenth of the energy passes to each level."
+  clip:
+    - caption: { text: "Phytoplankton capture 20,000 kJ from sunlight.", say: "Phytoplankton capture twenty thousand kilojoules from sunlight." }
+    - click: "Phytoplankton"
+    - click: "Krill"
+    - caption: { text: "Krill get about 10%: 2,000 kJ. The rest is used for living or lost as heat.", say: "Krill get about ten percent; the rest is used for living or lost as heat." }
+    - click: "Fish"
+    - click: "Penguin"
+    - expect: { selector: "body", contains: "20 kJ" }
+    - caption: { text: "Each step keeps about 10%: the penguin gets only 20 kJ.", say: "Each step keeps about ten percent, so the penguin gets only twenty kilojoules." }
+    - wait: 800
 hook: "A field of grass can feed many grasshoppers, which feed fewer lizards, which feed a couple of kookaburras, which feed perhaps one eagle. Why the shrinking numbers?"
 ---
 Last lesson: the arrows. This lesson: what travels along them, and how much arrives.
@@ -45,18 +67,18 @@ tasks:
   - check:
       type: sort
       q: "Where does the other 90% go at each step?"
-      options: ["Lost from the food web", "Passed to the next level"]
+      options: ["Not passed to the next level", "Passed to the next level"]
       items:
-        - ["Heat given off by the animal's body", "Lost from the food web"]
-        - ["Energy used for moving, breathing and keeping warm", "Lost from the food web"]
-        - ["Parts not eaten (bones, fur, roots)", "Lost from the food web", "These go to decomposers, not up the chain."]
+        - ["Heat given off by the animal's body", "Not passed to the next level"]
+        - ["Energy used for moving, breathing and keeping warm", "Not passed to the next level"]
+        - ["Parts not eaten (bones, fur, roots)", "Not passed to the next level", "These go to decomposers, not up the chain."]
         - ["Energy stored in the eaten animal's body", "Passed to the next level"]
   - check:
       type: question
       q: "Which statement is true?"
       options: ["Energy flows one way through a web and is lost as heat; matter (the atoms) is recycled by decomposers", "Energy and matter are both recycled", "Energy is recycled by decomposers; matter is lost"]
       answer: 0
-      feedback: [null, "Decomposers recycle the atoms (matter). Energy leaves as heat and must keep coming in as sunlight.", "It's the other way round."]
+      feedback: [null, "Decomposers recycle the atoms (matter). Energy leaves as heat and must keep coming in as sunlight.", "That's swapped. What do decomposers give back to the soil: nutrients (atoms), or energy from sunlight?"]
       explain: "That's why every food web needs a constant supply of sunlight, but no new atoms."
   - check: { type: reflect, text: "I explained why only a small part of the energy reaches the top of a food chain, and how energy differs from matter." }
 ```
@@ -70,6 +92,20 @@ tasks:
 ### In your own words
 
 In your book: explain why energy flows but matter cycles in an ecosystem.
+
+## Mix it up
+
+```step
+stage: practise
+insight: "Energy flows along the arrows between producers and consumers, so the roles in a web come back before counting the energy at each step."
+check:
+  type: question
+  q: "Looking back at food webs: in the chain grass → grasshopper → lizard → kookaburra, which is the secondary consumer?"
+  options: ["The lizard", "The grasshopper", "The kookaburra", "The grass"]
+  answer: 0
+  feedback: [null, "The grasshopper eats a producer, so it is a primary consumer.", "The kookaburra eats a secondary consumer, so it is a tertiary consumer.", "Grass makes its own food: it is the producer."]
+  explain: "A secondary consumer eats a primary consumer. The lizard eats the grasshopper, which eats the grass."
+```
 
 ## Elaborate: why so few eagles?
 

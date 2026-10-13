@@ -1,9 +1,37 @@
 ---
-order: 3
+order: 4
+node: AC9S10U05 n4
+woven: [AC9S9I01, AC9S9I04]
 unit: newton
 title: How hard do you need to push?
 summary: "Newton's second law: the net force on an object equals its mass times its acceleration, F = ma. Double the net force and the acceleration doubles; double the mass and the acceleration halves."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8206
+  url: http://127.0.0.1:8206/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain-pic, caption: "F = ma: the same 8 N on twice the mass (4 kg) gives half the acceleration, 2 m/s²." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "F = ma"
+  say: "Newton's second law: net force equals mass times acceleration."
+  clip:
+    - caption: { text: "8 N on 2 kg: a = F ÷ m = 4 m/s².", say: "Eight newtons on two kilograms gives four metres per second squared." }
+    - click: "Play"
+    - wait: 2000
+    - expect: { selector: "body", contains: "acceleration 4 m/s²" }
+    - wait: 1200
+    - caption: { text: "Same force, double the mass: 4 kg.", say: "Same force, but double the mass: four kilograms." }
+    - click: "Reset"
+    - click: "Mass: more"
+    - click: "Mass: more"
+    - click: "Play"
+    - wait: 2000
+    - expect: { selector: "body", contains: "acceleration 2 m/s²" }
+    - caption: { text: "Half the acceleration: 2 m/s². F = ma.", say: "Double the mass, half the acceleration: F equals m a." }
+    - wait: 600
 hook: "Push an empty shopping trolley and it shoots off. Push a full one just as hard and it barely gets going. Same push, different result: by exactly how much?"
 ---
 You know a net force makes things accelerate. This lesson finds the exact rule.
@@ -74,6 +102,15 @@ tasks:
       answer: 0
       feedback: [null, "F = ma uses the net force: the push minus the friction.", "Friction alone isn't the net force.", "Opposite forces subtract."]
       explain: "Net force 10 − 4 = 6 N, so a = 6 ÷ 2 = 3 m/s²."
+  - check:
+      type: match
+      q: "Match each quantity to its unit."
+      pairs:
+        - ["Force (F)", "newtons (N)"]
+        - ["Mass (m)", "kilograms (kg)"]
+        - ["Acceleration (a)", "metres per second squared (m/s²)"]
+        - ["Velocity (v)", "metres per second (m/s)"]
+      explain: "F = ma only works with these units: mass in kg (not g), acceleration in m/s² (not m/s)."
   - check: { type: reflect, text: "I can use F = ma to find any of force, mass or acceleration, with units, using the net force." }
 ```
 
@@ -86,6 +123,8 @@ tasks:
 ### Find the mass
 
 ### Net force
+
+### Units
 
 ### In your own words
 
@@ -140,7 +179,7 @@ tasks:
       options: ["bigger", "the same", "smaller"]
       answer: 0
       feedback: [null, "Same deceleration with more mass needs more force: F = ma.", "More mass needs more force, not less."]
-      explain: "This is one reason heavier vehicles take longer to stop, and why speed limits near schools are low."
+      explain: "F = ma: the same deceleration with more mass needs more force. With the same braking force, the loaded car would decelerate less and take longer to stop."
 ```
 
 ### Deceleration
@@ -160,7 +199,7 @@ check:
   q: "You measure a trolley's acceleration for several pulling forces, keeping the mass the same. What graph of acceleration against force does F = ma predict?"
   options: ["A straight line through the origin (gradient 1 ÷ mass)", "A curve that levels off", "A horizontal line"]
   answer: 0
-  feedback: [null, "In a real practical friction can bend it a little near zero, but F = ma predicts a straight line.", "That would mean force has no effect."]
+  feedback: [null, "In a real practical friction can shift the line so it misses the origin, but F = ma still predicts a straight line.", "That would mean force has no effect."]
   explain: "a = F ÷ m, so a is proportional to F: a straight line through the origin with gradient 1/m. Real data that misses the origin usually points to friction."
 ```
 

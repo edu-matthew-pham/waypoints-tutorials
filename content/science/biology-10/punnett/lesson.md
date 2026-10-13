@@ -1,9 +1,41 @@
 ---
 order: 3
+node: AC9S10U01 n4
+woven: [AC9S9I03]
 unit: genetics
 title: Can you predict the offspring?
 summary: "A Punnett square shows every way two parents' gametes can combine for one gene. It gives the probability of each genotype and phenotype (such as 3 in 4 showing the dominant trait for Pp × Pp), not a guaranteed count."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8224
+  url: http://127.0.0.1:8224/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "A Punnett square"
+  say: "A Punnett square shows every combination of the parents' gametes."
+  clip:
+    - caption: { text: "Each Pp pea plant makes two kinds of gamete: P or p.", say: "Each P p pea plant makes two kinds of gamete: P or p." }
+    - wait: 3280
+    - click: { selector: "[aria-label=\"Parent 1 gamete 1\"]" }
+    - click: { selector: "[aria-label=\"Parent 1 gamete 2\"]" }
+    - click: { selector: "[aria-label=\"Parent 1 gamete 2\"]" }
+    - click: { selector: "[aria-label=\"Parent 2 gamete 1\"]" }
+    - click: { selector: "[aria-label=\"Parent 2 gamete 2\"]" }
+    - click: { selector: "[aria-label=\"Parent 2 gamete 2\"]" }
+    - caption: { text: "Every combination of gametes fills the grid.", say: "Every combination of gametes fills the grid." }
+    - wait: 1960
+    - click: { selector: "[aria-label=\"Offspring 1, 1\"]" }
+    - click: { selector: "[aria-label=\"Offspring 1, 2\"]" }
+    - click: { selector: "[aria-label=\"Offspring 1, 2\"]" }
+    - click: { selector: "[aria-label=\"Offspring 2, 1\"]" }
+    - click: { selector: "[aria-label=\"Offspring 2, 1\"]" }
+    - click: { selector: "[aria-label=\"Offspring 2, 2\"]" }
+    - click: { selector: "[aria-label=\"Offspring 2, 2\"]" }
+    - click: { selector: "[aria-label=\"Offspring 2, 2\"]" }
+    - caption: { text: "1 PP : 2 Pp : 1 pp. Each offspring has a 3 in 4 chance of purple flowers.", say: "One P P, two P p, one p p: three in four will be purple." }
 hook: "Two purple-flowered pea plants can have white-flowered offspring. Gregor Mendel counted thousands of them in the 1860s and found the same ratio every time."
 ---
 Gametes get one of each pair at random. This lesson: following one gene from parents to offspring.
@@ -58,6 +90,12 @@ tasks:
       options: ["Both carry a hidden recessive p allele, and the offspring got p from each", "White came from a mutation every time", "The environment made it white", "One parent was really white"]
       answer: 0
       feedback: [null, "No mutation is needed: both parents carry p.", "The square explains it with the alleles alone.", "Both parents were Pp: purple."]
+  - check:
+      type: question
+      q: "In a family tree (pedigree), shaded shapes show people with a recessive condition. Two unshaded parents have a shaded child. What are the parents' genotypes?"
+      options: ["Both Ff: each carries one hidden f allele", "One is FF and the other ff", "Both FF", "Both ff"]
+      answer: 0
+      feedback: [null, "An ff parent would have the condition, so would be shaded.", "FF × FF can only give FF children: none could be ff.", "ff parents would both be shaded."]
   - check: { type: reflect, text: "I can draw a Punnett square for one gene and give the probability of each phenotype." }
 ```
 
@@ -66,6 +104,8 @@ tasks:
 ### Probability
 
 ### Hidden alleles
+
+### Family tree
 
 ### In your own words
 

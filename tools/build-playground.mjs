@@ -31,7 +31,7 @@ export function stampPlayground(dest) {
   walk(dest);
   files.sort();
   const h = createHash('sha1');
-  for (const f of files) if (['.js', '.mjs', '.css', '.html', '.json'].includes(extname(f))) h.update(f.slice(dest.length)).update(readFileSync(f));
+  for (const f of files) if (['.js', '.mjs', '.css', '.html', '.json', '.py'].includes(extname(f))) h.update(f.slice(dest.length)).update(readFileSync(f));
   const v = h.digest('hex').slice(0, 10);
   const local = (u) => !/^[a-z]+:|^\/\//i.test(u);
   for (const f of files) {
@@ -54,6 +54,7 @@ export function buildPlayground(out = 'dist') {
   rmSync(dest, { recursive: true, force: true });
   cpSync(join(root, 'playground'), dest, { recursive: true });
   addSnippets(dest, 'turtle');
+  copyFileSync(join(root, 'tools', 'python-errors.mjs'), join(dest, 'python-errors.mjs')); // friendly errors, shared with _playground-py
   mkdirSync(join(dest, 'vendor'), { recursive: true });
   for (const f of ['skulpt.min.js', 'skulpt-stdlib.js']) {
     const src = join(root, 'node_modules', 'skulpt', 'dist', f);
@@ -61,6 +62,75 @@ export function buildPlayground(out = 'dist') {
     copyFileSync(src, join(dest, 'vendor', f));
   }
   stampPlayground(dest);
+  return dest;
+}
+
+/**
+ * The Python playground (CPython through Pyodide in a worker) and Pyodide itself: vendor/pyodide/ (made by
+ * tools/pyodide-vendor.mjs) is served from this site as _pyodide/, so a school that allows the site allows Python.
+ * Pyodide is not stamped: its files are named by version, and the playground loads it by a fixed address.
+ */
+export function buildPyPlayground(out = 'dist') {
+  const dest = join(out, '_playground-py');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-py'), dest, { recursive: true });
+  addSnippets(dest, 'turtle');
+  copyFileSync(join(root, 'tools', 'python-errors.mjs'), join(dest, 'python-errors.mjs'));
+  stampPlayground(dest);
+  const py = join(out, '_pyodide');
+  rmSync(py, { recursive: true, force: true });
+  cpSync(join(root, 'vendor', 'pyodide'), py, { recursive: true });
+  return dest;
+}
+
+/** Example games on lesson pages, play only: the microStudio engine (vendor/microstudio, MIT, with Brython) and a page that runs ?code=;
+ * plus edit.html, the free game playground and clip stage (code beside the player, friendly errors, a console). */
+export function buildMicrostudioPlayground(out = 'dist') {
+  const dest = join(out, '_playground-microstudio');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-microstudio'), dest, { recursive: true });
+  cpSync(join(root, 'vendor', 'microstudio'), join(dest, 'vendor'), { recursive: true });
+  copyFileSync(join(root, 'tools', 'python-errors.mjs'), join(dest, 'python-errors.mjs')); // friendly errors in edit.html, the free game playground
+  stampPlayground(dest);
+  return dest;
+}
+
+/** The p5.js playground: our editor and sandbox page plus vendored p5.js (vendor/p5, LGPL-2.1, unmodified), so sketches load nothing from a CDN. */
+export function buildP5Playground(out = 'dist') {
+  const dest = join(out, '_playground-p5');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-p5'), dest, { recursive: true });
+  mkdirSync(join(dest, 'vendor'), { recursive: true });
+  for (const f of ['p5.min.js', 'LICENSE-p5.txt']) copyFileSync(join(root, 'vendor', 'p5', f), join(dest, 'vendor', f));
+  stampPlayground(dest);
+  return dest;
+}
+
+/**
+ * Files a page in the HTML or DOM playground can load as if they sat beside it (the preview's <base> is media/):
+ * the course pictures (media/html/) and the web libraries (vendor/web/: Bootstrap, Vue, Preact, Svelte). Copied after
+ * stamping, so the libraries keep their own names; vendor/web/make.mjs and README.md stay behind.
+ */
+function addPageFiles(dest, { pictures = true } = {}) {
+  const media = join(dest, 'media');
+  mkdirSync(media, { recursive: true });
+  if (pictures && existsSync(join(root, 'media', 'html'))) cpSync(join(root, 'media', 'html'), media, { recursive: true });
+  const web = join(root, 'vendor', 'web');
+  if (existsSync(web)) for (const f of readdirSync(web)) if (!['make.mjs', 'README.md', 'svelte-glue.js'].includes(f)) copyFileSync(join(web, f), join(media, f));
+  // Our own helpers for pages (web-helpers/: microbit.js, Web Serial with a pretend micro:bit), beside the libraries.
+  const ours = join(root, 'web-helpers');
+  if (existsSync(ours)) for (const f of readdirSync(ours)) copyFileSync(join(ours, f), join(media, f));
+}
+
+/** The web page and JavaScript playground (DOM course): our editor, console and sandbox page; the JavaScript hints are shared with p5 (p5-errors.js). */
+export function buildDomPlayground(out = 'dist') {
+  const dest = join(out, '_playground-dom');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-dom'), dest, { recursive: true });
+  copyFileSync(join(root, 'playground-p5', 'p5-errors.js'), join(dest, 'p5-errors.js'));
+  copyFileSync(join(root, 'playground-html', 'download.js'), join(dest, 'download.js')); // the Download button, shared with the HTML playground
+  stampPlayground(dest);
+  addPageFiles(dest);
   return dest;
 }
 
@@ -73,6 +143,7 @@ export function buildHtmlPlayground(out = 'dist') {
   // Course pictures (media/html/*.svg): the preview resolves src="trophy.svg" against this folder, like files next to a real page.
   if (existsSync(join(root, 'media', 'html'))) cpSync(join(root, 'media', 'html'), join(dest, 'media'), { recursive: true });
   stampPlayground(dest);
+  addPageFiles(dest, { pictures: false });   // the libraries; the pictures were copied before stamping, as always
   return dest;
 }
 
@@ -153,12 +224,25 @@ export function buildKatex(out = 'dist') {
   return dest;
 }
 
+/** Numbas's JME runtime (vendor/numbas, Apache-2.0) for maths answer checks with form:, loaded only by lessons that use them. */
+export function buildNumbas(out = 'dist') {
+  const dest = join(out, '_numbas');
+  rmSync(dest, { recursive: true, force: true });
+  mkdirSync(dest, { recursive: true });
+  for (const f of ['numbas-jme.min.js', 'LICENSE', 'VERSION']) copyFileSync(join(root, 'vendor', 'numbas', f), join(dest, f));
+  return dest;
+}
+
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const out = process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist';
   console.log('Playground built into ' + buildPlayground(out));
   console.log('HTML playground built into ' + buildHtmlPlayground(out));
+  console.log('p5.js playground built into ' + buildP5Playground(out));
+  console.log('Web page and JavaScript playground built into ' + buildDomPlayground(out));
   console.log('Board built into ' + await buildMathsPlayground(out));
   console.log('MakeCode playground built into ' + buildMakecodePlayground(out));
   console.log('Explain stage built into ' + buildExplainStage(out));
   console.log('Science board built into ' + buildSciencePlayground(out));
+  console.log('Python playground built into ' + buildPyPlayground(out));
+  console.log('Game player built into ' + buildMicrostudioPlayground(out));
 }

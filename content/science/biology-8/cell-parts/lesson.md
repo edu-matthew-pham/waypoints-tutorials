@@ -1,9 +1,33 @@
 ---
-order: 2
+order: 3
+node: AC9S8U01 n3
+woven: [AC9S7I07]
 unit: cells
 title: What does every cell have?
 summary: "Plant and animal cells share three parts: the nucleus (the control centre, holding DNA), the cell membrane (controls what gets in and out) and the cytoplasm (where reactions happen)."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8212
+  url: http://127.0.0.1:8212/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "An animal cell and a plant cell: both have a nucleus, membrane and cytoplasm; the plant cell adds a wall, chloroplasts and a vacuole." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Parts of a cell"
+  say: "Plant and animal cells share three parts; plant cells add more."
+  clip:
+    - caption: { text: "Every cell has a nucleus, a cell membrane and cytoplasm.", say: "Every cell has a nucleus, a cell membrane and cytoplasm." }
+    - wait: 2950
+    - click: { selector: "#board [fill=\"#8e6bbf\"]" }
+    - expect: { selector: "body", contains: "Nucleus." }
+    - caption: { text: "The nucleus holds the DNA, the cell's instructions.", say: "The nucleus holds the DNA, the cell's instructions." }
+    - wait: 2290
+    - click: { selector: "#board [fill=\"#4f9a3c\"]" }
+    - expect: { selector: "body", contains: "Chloroplasts." }
+    - caption: { text: "Plant cells add chloroplasts, which capture light to make food.", say: "Plant cells add chloroplasts, which capture light to make food." }
+    - caption: { text: "They also have a cell wall and a large vacuole.", say: "Plant cells also have a cell wall and a large vacuole." }
 hook: "A cheek cell and a leaf cell look completely different. Look closer and they share three parts. Every job in a cell depends on them."
 ---
 Every cell, from your skin to a gum leaf, is built on the same three parts.
@@ -123,4 +147,4 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 - Plant and animal cells share the **nucleus** (holds DNA, controls the cell), **cell membrane** (controls what gets in and out) and **cytoplasm** (where reactions happen).
 - Both also have **mitochondria** (release energy).
-- Plant cells also have a **cell wall**, **chloroplasts** and a large **vacuole**.
+- Plant cells also have a **cell wall**, **chloroplasts** (where photosynthesis captures light energy to make food) and a large **vacuole**.

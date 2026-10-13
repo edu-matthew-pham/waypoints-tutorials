@@ -1,9 +1,33 @@
 ---
-order: 3
+order: 4
+node: AC9S7U04 n4
 unit: forces
 title: Would you weigh less on the Moon?
+introduces: [weight]
 summary: "Mass is how much matter an object has, in kilograms, and it is the same everywhere. Weight is the force of gravity on that mass, in newtons, and depends on where you are: weight = mass × g."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8203
+  url: http://127.0.0.1:8203/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain-pic, caption: "On the Moon: mass 60 kg, weight 96 N (on Earth the same astronaut weighs 588 N)." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Mass and weight"
+  say: "Mass stays the same everywhere. Weight is the pull of gravity on it."
+  clip:
+    - caption: { text: "A 60 kg astronaut on Earth: weight = 60 × 9.8 = 588 N.", say: "On Earth, a sixty kilogram astronaut weighs five hundred and eighty eight newtons." }
+    - wait: 600
+    - click: "Moon"
+    - expect: { selector: "body", contains: "weight 96 N" }
+    - caption: { text: "On the Moon, g is 1.6 N/kg: weight 96 N. The mass is still 60 kg.", say: "On the Moon she weighs ninety six newtons, but her mass is still sixty kilograms." }
+    - wait: 2500
+    - click: "Mars"
+    - expect: { selector: "body", contains: "weight 222 N" }
+    - caption: { text: "Mass is the matter in you (kg). Weight is a force (N).", say: "Mass is the matter in her; weight is the force of gravity on it." }
+    - wait: 600
 hook: "Astronauts on the Moon bounce around like they're on a trampoline. Did they lose something on the way there?"
 ---
 "Weight" in everyday talk and "weight" in science are different. This lesson sorts that out.
@@ -82,6 +106,20 @@ tasks:
 
 In your book: explain to a friend who says "I weigh 50 kilograms" what is wrong with that, and what they should say.
 
+## Mix it up
+
+```step
+stage: practise
+insight: "Weight is a force, so it follows the same rule as any other force: if nothing is changing, something else balances it."
+check:
+  type: question
+  q: "Looking back at balanced forces: a 2 kg bag hangs still from a spring balance. Its weight is about 20 N. What force does the spring pull up with?"
+  options: ["About 20 N: the forces are balanced", "0 N, because the bag is not moving", "About 40 N, so that it can lift the bag", "About 2 N"]
+  answer: 0
+  feedback: [null, "The bag is not moving because the spring pulls up as hard as gravity pulls down.", "If the pull were bigger than the weight, the bag would speed up upwards.", "2 kg is the mass. The spring has to balance the weight, which is about 20 N."]
+  explain: "The bag is still, so the forces are balanced: the spring pulls up with a force equal to the weight, about 20 N."
+```
+
 ## Elaborate: a rover on Jupiter
 
 ```step
@@ -133,5 +171,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Mass** (kg): how much matter. The same everywhere.
 - **Weight** (N): the force of gravity on an object. **Weight = mass × g.**
 - **g** is the gravitational field strength: 9.8 N/kg on Earth (about 10), 1.6 on the Moon, 3.7 on Mars, 24.8 on Jupiter.
-- A bigger planet (more mass) pulls harder: bigger g, bigger weight.
+- Gravity depends on mass: the Moon has far less mass than Earth, so it pulls less (smaller g, smaller weight).
 - Without air, all objects fall together, whatever their mass.

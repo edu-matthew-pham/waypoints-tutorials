@@ -24,3 +24,19 @@ Similar cells working together form a **tissue** (muscle tissue, epithelial lini
 - Different cells have different DNA.
 - An organ is made of one kind of tissue.
 - Specialised cells are simply "bigger" or "smaller" versions of a general cell.
+
+## Tissues (between specialised cells and organs)
+
+A **tissue** is a group of similar specialised cells doing one job: muscle, epithelial, nervous, blood; xylem, phloem, palisade. Several tissues make an organ. Misconception: a tissue is any cells in one place, or the organ itself.
+
+**On screen:** the short tutorial *Organ systems* covers node 4 with matching tasks and a plant and animal comparison; a physical model is still the best way in.
+
+## Investigate in class
+
+Optional ideas if you run a practical for this unit: pick one, adapt it to your equipment, or use your own.
+
+- **Does a leaf have more stomata on its underside than on top?** Change: leaf surface. Measure: stomata per field of view in a clear nail-polish peel. Keep the same: leaf, magnification, number of fields counted.
+- **Does a fan change how fast water rises up a celery stalk?** Change: fan on or off. Measure: height the food dye reaches in 30 minutes (cut across to see the coloured xylem). Keep the same: stalk length, leaves, dye strength, temperature.
+- **Does exercise change heart rate?** Change: rest, walking, 1 minute of star jumps. Measure: pulse per minute. Keep the same: person, how the pulse is taken, rest between trials.
+
+**Safety and ethics:** nail polish is flammable: ventilate and keep away from flames. Heart rates are personal data: students may opt out, sit out for health reasons, or share only class averages; never rank individuals.

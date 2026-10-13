@@ -1,0 +1,13 @@
+activities:
+  - at: start
+    kind: info
+    title: "By the end of this lesson"
+    do: |
+      Here is the finished program running. By the end of the lesson you will write one like it.
+    notes: "Run the finished example on the projector before anything else."
+  - at: investigate
+    title: "Be the condition"
+    minutes: 5
+    do: |
+      Students stand when the condition is true for their pass number. i < 3: who stands? Then change the number.
+    notes: "Make the idea physical before it goes back to the screen."

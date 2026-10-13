@@ -1,9 +1,29 @@
 ---
 order: 1
+node: AC9S9U04 n1
+woven: [AC9S9I01]
 unit: energy
 title: How does heat get through?
 summary: Conduction passes energy from particle to particle by collisions, with the particles staying in place. Convection carries energy as the heated fluid itself moves. The particle model explains both, and why metals conduct and trapped air insulates.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8255
+  url: http://127.0.0.1:8255/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "A metal bar heated at one end: the particles stay in place and pass energy along by collisions." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Conduction"
+  say: "In conduction the particles stay in place and pass energy on by collisions."
+  clip:
+    - caption: { text: "A metal bar heated at one end. Blue is cool, red is hot.", say: "A metal bar heated at one end: blue is cool, red is hot." }
+    - wait: 3000
+    - caption: { text: "Particles vibrate harder and bump their neighbours. None of them move along.", say: "Particles vibrate harder and bump their neighbours; none of them move along." }
+    - wait: 4000
+    - caption: { text: "That's conduction. In liquids and gases, the warm fluid itself moves: convection.", say: "That is conduction; in liquids and gases the warm fluid itself moves." }
+    - wait: 1500
 hook: "Leave a metal spoon in hot soup and the handle soon burns your fingers. Heat a pot of water from the bottom and the top gets hot too. Two different journeys for the energy."
 ---
 In Year 7 you used the particle model to explain solids, liquids and gases. This lesson uses it to explain how energy moves.
@@ -62,6 +82,13 @@ tasks:
       feedback: [null, "That happens a little (conduction), but your particle travelled the whole way round.", "Cool water does sink, but the energy is carried up by the warm water rising."]
       explain: "Convection: the heated fluid rises, carrying its energy, and cooler fluid sinks to replace it."
   - check:
+      type: question
+      q: "Why does the heated water rise?"
+      options: ["Its particles spread out, so it is less dense than the cooler water around it", "Heat always rises", "Hot particles are lighter than cold ones", "The heater pushes it up"]
+      answer: 0
+      feedback: [null, "Heat on its own does not go anywhere; something carries it. What moved up on the board?", "Each particle has the same mass hot or cold. What changes is how far apart they are.", "That is what the model does, to keep it simple. In real water nothing pushes: the warm water floats up, like a cork."]
+      explain: "Heated water expands: the same particles take up more space, so it is less dense (density, from Year 7) and floats up through the cooler, denser water. The board pushes hot particles up directly; that part is a simplification."
+  - check:
       type: sort
       q: "Conduction or convection?"
       options: ["Conduction", "Convection"]
@@ -75,10 +102,17 @@ tasks:
   - check:
       type: question
       q: "Why can't convection happen in a solid?"
-      options: ["The particles are held in place, so the material can't flow", "Solids can't be heated", "Solids have no particles"]
+      options: ["The particles are held in place, so the material can't flow", "Solids can't be heated", "Particles in a solid don't move at all, so they can't carry energy"]
       answer: 0
-      feedback: [null, "The bar heated up, by conduction.", "Solids are made of particles, tightly held."]
+      feedback: [null, "The bar heated up, by conduction.", "They do vibrate: that's how conduction passes energy on. They just can't change places."]
       explain: "Convection needs the material to flow. Only liquids and gases can."
+  - check:
+      type: question
+      q: "Why does a foam (polystyrene) cup keep a drink hot so well?"
+      options: ["It is mostly trapped air: gas particles are far apart, so they rarely collide to pass energy on, and air in the tiny bubbles can't flow to convect", "Its particles are packed very tightly, so energy can't squeeze through", "The foam reflects the heat back into the drink"]
+      answer: 0
+      feedback: [null, "It's the other way round: tightly packed particles pass energy on well by collisions. Foam is mostly widely spaced gas particles.", "Reflecting is what shiny surfaces do to radiation. Foam works by trapping air."]
+      explain: "Insulators pass energy on poorly. In a gas the particles are far apart, so collisions that pass energy along are rare; trapping the gas in small bubbles stops convection too."
   - check: { type: reflect, text: "I explained the difference between conduction and convection, describing what the particles do in each." }
 ```
 
@@ -86,9 +120,13 @@ tasks:
 
 ### In the water
 
+### Why it rises
+
 ### Which is which
 
 ### Solids
+
+### A foam cup
 
 ### In your own words
 
@@ -136,6 +174,35 @@ tasks:
 ### Saucepans
 
 ### Trapped air
+
+## Elaborate: a question to test
+
+```step
+stage: modify
+tier: typical
+insight: "Turning the trapped-air idea into an investigable question and a reasoned hypothesis uses the model to plan a test, not just explain one."
+tasks:
+  - check:
+      type: question
+      q: "You want to find out how wrapping a cup changes how fast hot water in it cools. Which is an investigable question?"
+      options: ["Does a thicker wool wrap make hot water in a cup cool more slowly?", "Why is wool the best insulator?", "Is a wool wrap nicer to hold than a foam cup?", "What is heat?"]
+      answer: 0
+      feedback: [null, "That assumes the answer, and 'best' compared with what?", "'Nicer' can't be measured.", "That's a question for a textbook, not an experiment."]
+      explain: "An investigable question names one thing you change (the thickness of the wrap) and one thing you measure (how fast the temperature falls)."
+  - check:
+      type: question
+      q: "Which is the best hypothesis for that question?"
+      options: ["If the wrap is thicker, the water will cool more slowly, because more trapped air slows conduction and blocks convection", "The wrap will make a difference", "Thicker wraps are better", "The water will cool down"]
+      answer: 0
+      feedback: [null, "Too vague: what difference, and why?", "Better at what? A hypothesis names the relationship and gives a reason.", "That's true of every cup: it doesn't link the wrap to the cooling."]
+      explain: "A good hypothesis states a relationship (thicker wrap, slower cooling), could be shown wrong by your data, and gives a reason from the model."
+```
+
+### The question
+
+Scientists turn an idea from a model into something they can test. Here the idea is the trapped air from the last step: how would you test it with a cup of hot water, a thermometer and some wool?
+
+### The hypothesis
 
 ## Evaluate: look back
 

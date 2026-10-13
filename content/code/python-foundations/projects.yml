@@ -1,0 +1,19 @@
+playground: turtle
+projects:
+  - id: pattern-maker
+    title: Pattern maker
+    after: turtle-every-other
+    goal: |
+      Make a **pattern** that changes as it goes: stripes, a checkerboard, a row of tiles that swap colour, or a spiral that switches every third turn. The rule for what changes is yours.
+    example: pattern-maker.py
+    uses: [loop-index, if, remainder, variable-update]
+    milestones:
+      - "It runs and draws a pattern with at least 8 parts."
+      - "Something changes as the loop goes on (colour, size or shape), decided by an if."
+      - "I changed one number and the pattern changed the way I expected."
+    stretch:
+      - "Use elif for a third colour."
+      - "Make each part a little bigger than the last."
+      - "Draw two rows, with the second row the opposite of the first."
+    teacher: |
+      A first open brief: everything it needs is in lessons 1 to 3. Students who stall usually have no rule yet: ask them to say the rule aloud ("every second square is red") before they code it.

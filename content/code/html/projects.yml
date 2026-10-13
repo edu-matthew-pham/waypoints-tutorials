@@ -1,0 +1,37 @@
+playground: html
+projects:
+  - id: about-me
+    title: A page about something you love
+    after: images
+    goal: |
+      Make a one-page **guide to something you love**: a hobby, a game, a band, a place. Give it a title, a few short sections, a list, a picture and links where people can find out more.
+    example: about-me.html
+    uses: [heading, list, link, image]
+    milestones:
+      - "My page has a main heading and at least two smaller headings."
+      - "It has a list and a picture (with alt words that say what it shows)."
+      - "At least one link goes to a real page, and it opens."
+    stretch:
+      - "A list inside a list (for example, favourites by category)."
+      - "A picture that is also a link."
+      - "A link to a place lower down the same page."
+    teacher: |
+      The pictures students can use without uploading are the course ones (`star.svg`, `trophy.svg`, `music.svg`, `ball.svg`, `book.svg`, `medal.svg`). A picture from the web needs its full address in `src`.
+
+  - id: order-form
+    title: An order form
+    after: forms
+    goal: |
+      Make an **order form** for a bake sale, a school shop or a fundraiser: what to order, how many, a name, a choice of pick-up time, and a button. Every box has a label that a screen reader can read.
+    example: order-form.html
+    uses: [form, button, id, css-rule]
+    milestones:
+      - "Each box has a label linked to it (clicking the label puts the cursor in the box)."
+      - "There is a number box, a choice (select or radio buttons) and a button."
+      - "CSS lays it out neatly, so the labels and boxes line up."
+    stretch:
+      - "A box for a note, with a textarea."
+      - "Required boxes, with the word required."
+      - "Show a picture of each item beside its choice."
+    teacher: |
+      Sending is switched off in the preview (it shows a note instead), so the button doing nothing is expected. The labels milestone is the accessibility habit from lesson 9; the Your site course comes back to it.

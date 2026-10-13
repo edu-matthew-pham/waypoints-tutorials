@@ -1,9 +1,36 @@
 ---
 order: 2
+node: AC9S7U05 n2
+woven: [AC9S7H01, AC9S7I05]
 unit: particles
 title: Why does a gas fill its container?
 summary: Describe the arrangement, motion and attraction of particles in a solid, a liquid and a gas, and use them to explain why solids keep their shape and gases fill their containers.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8252
+  url: http://127.0.0.1:8252/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "A gas in a jar: particles far apart and moving fast. Remove the jar and it spreads to fill the whole box." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "States of matter"
+  say: "Each state is described by arrangement, motion and attraction of particles."
+  clip:
+    - click: "Solid"
+    - wait: 600
+    - caption: { text: "A solid: particles close, fixed, vibrating in place.", say: "In a solid, particles are close and fixed, vibrating in place." }
+    - wait: 3280
+    - click: "Liquid"
+    - caption: { text: "A liquid: still close, but free to slide past each other.", say: "In a liquid, they are still close but slide past each other." }
+    - wait: 3610
+    - click: "Gas"
+    - wait: 1000
+    - click: "Remove the jar"
+    - wait: 1500
+    - caption: { text: "A gas: far apart and fast, spreading to fill any space.", say: "In a gas, they are far apart and fast, spreading to fill any space." }
+    - wait: 1500
 hook: "Tip a sugar cube out of its box and it stays a cube. Tip out juice and it spreads across the table. Open perfume and soon the whole room smells. Same particles idea, three behaviours."
 ---
 The particle model is not just a picture to label. In this lesson you use it to **explain** what solids, liquids and gases do.
@@ -85,6 +112,20 @@ Watch the board while you sort. Every description fits exactly one state.
 
 In your book: explain why juice spreads across a table when a sugar cube keeps its shape. Use arrangement, motion and attraction, not just "because it's a liquid".
 
+## Mix it up
+
+```step
+stage: practise
+insight: "Bringing back the four key ideas of the particle model, which this lesson uses to explain solids, liquids and gases."
+check:
+  type: question
+  q: "Looking back at the particle model: which statement about particles is true?"
+  options: ["Particles are always moving, even in a solid", "The particles in a solid have stopped moving", "There is air between the particles of water", "Particles get bigger when they are heated"]
+  answer: 0
+  feedback: [null, "Solid particles vibrate in place. They never stop moving.", "Air is made of particles too. Between particles there is nothing at all.", "Particles never change size. Heated particles move faster and spread out."]
+  explain: "Key idea 3: particles are always moving. In a solid they vibrate in place, held there by strong attraction."
+```
+
 ## Elaborate: six substances
 
 ```step
@@ -132,6 +173,7 @@ tasks:
       q: "When liquid water becomes steam, the space between the particles…"
       options: ["stays the same", "increases a lot", "decreases"]
       answer: 1
+      feedback: ["Look at the steam on the board: its particles are far apart.", null, "Heating makes particles move faster and spread out, not pack closer."]
       explain: "Steam takes up roughly 1,700 times the volume of the same mass of liquid water."
   - check:
       type: question
@@ -181,7 +223,7 @@ check:
     - "Solid particles are always further apart than liquid particles"
   answer: 1
   feedback: ["A model that explains most cases is still useful. Scientists refine models when they meet an exception.", null, "Clear ice with no bubbles still floats.", "For almost every substance the solid is packed slightly more closely. Water is the exception."]
-  explain: "The model keeps its core ideas and gains a detail. (The diagram exaggerates the gap: ice is about 9% less dense than water.)"
+  explain: "The model keeps its core ideas and gains a detail. (The diagram exaggerates the gap: ice takes up about 9% more space than the same mass of water.)"
 ```
 
 ## Evaluate: look back

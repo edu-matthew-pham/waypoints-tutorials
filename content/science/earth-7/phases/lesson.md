@@ -1,9 +1,31 @@
 ---
 order: 3
+node: AC9S7U03 n2
 unit: moon
 title: Why does the moon change shape?
 summary: "The sun always lights half of the moon. As the moon goes round the Earth (29.5 days from new moon to new moon), we see more or less of that lit half: the phases. They are not caused by Earth's shadow."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8226
+  url: http://127.0.0.1:8226/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "The moon orbiting the Earth, lit on one side by the sun, and how it looks from Earth." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "The moon's phases"
+  say: "The sun always lights half the moon; we see different amounts of that half."
+  clip:
+    - caption: { text: "The sun always lights half the moon.", say: "The sun always lights half the moon." }
+    - wait: 1960
+    - click: "Next phase"
+    - click: "Next phase"
+    - caption: { text: "As it orbits, we see more or less of that lit half.", say: "As it orbits, we see more or less of that lit half." }
+    - wait: 3610
+    - click: "Next phase"
+    - caption: { text: "Full moon: we see the whole lit half. A cycle takes 29.5 days.", say: "At full moon we see the whole lit half; a cycle takes a month." }
+    - wait: 600
 hook: "The moon looks like a thin smile one week and a bright full disc two weeks later. Nothing about the moon itself has changed."
 ---
 You have watched the moon's phases. This lesson explains them.
@@ -53,6 +75,12 @@ tasks:
       options: ["On the far side of the Earth from the sun, so we see its whole lit half", "Between the Earth and the sun", "At a right angle to the sun", "Closest to the sun"]
       answer: 0
       feedback: [null, "That's new moon: we see only the dark half.", "That's a quarter moon.", "It's the farthest from the sun of any phase."]
+  - check:
+      type: question
+      q: "In a lunar eclipse, a full moon goes dark and reddish for an hour or two. How is that different from the moon's phases?"
+      options: ["An eclipse is Earth's shadow falling on the moon, only at some full moons; the phases come from how much of the lit half we see, every month", "There is no difference: a lunar eclipse is just a very dark phase", "A lunar eclipse happens at new moon, when the moon is dark", "An eclipse is the moon going through all its phases in an hour"]
+      answer: 0
+      feedback: [null, "Phases happen every month with no shadow involved; an eclipse needs Earth's shadow to fall on the moon, which is rare.", "New moon is a phase: we see the unlit half. A lunar eclipse needs a full moon, with the Earth between the sun and the moon.", "The phases take about 29.5 days; in an eclipse, Earth's shadow moves across a full moon."]
   - check: { type: reflect, text: "I can sequence the eight phases and explain them by the moon's position, not Earth's shadow." }
 ```
 
@@ -62,9 +90,25 @@ tasks:
 
 ### Full moon
 
+### Phase or eclipse
+
 ### In your own words
 
 In your book: draw the Earth, the sun's direction and the moon at four positions. Shade the lit half of each moon and draw what we see from Earth.
+
+## Mix it up
+
+```step
+stage: practise
+insight: "The moon's month is easier to picture next to the Earth's own spin and year, which this question brings back."
+check:
+  type: question
+  q: "Looking back at spinning and orbiting: about how many times does the Earth spin during one trip round the sun?"
+  options: ["About 365", "Once", "About 12", "About 24"]
+  answer: 0
+  feedback: [null, "The Earth spins once a day, and a trip round the sun takes a year.", "12 is about the number of months, not the number of spins.", "24 is the number of hours in one spin."]
+  explain: "One spin is a day and a trip round the sun is about 365¼ days, so the Earth spins about 365 times each year."
+```
 
 ## Practise: name the phase
 

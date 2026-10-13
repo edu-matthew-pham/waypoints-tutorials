@@ -5,7 +5,9 @@
 // animated command finishes. Supports both styles students meet:
 //   from turtle import *   ->  forward(100)
 //   import turtle          ->  turtle.forward(100)   /   t = turtle.Turtle(); t.forward(100)
-// Only one turtle exists: Turtle() returns handles to the same one.
+// Several turtles: every Turtle() is a new turtle on the same screen. The module-level commands drive the default
+// turtle, which is only drawn once one of them is used (or when no other turtle exists), as in Python.
+// Screen() is a handle to the screen (and the default turtle).
 
 const MODULE_SOURCE = String.raw`
 var $builtinmodule = function (name) {
@@ -47,7 +49,7 @@ var $builtinmodule = function (name) {
     reset: function () { T.reset(); },
     dot: function (s, c) { T.dot(s === undefined || s === null ? 10 : s, c); },
     write: function (t, move, align, font) { T.write(t, Array.isArray(font) && font[1] ? font[1] : 14); },
-    shape: function (n) { if (typeof n === 'string') { T.shapeName = n === 'turtle' ? 'turtle' : 'classic'; T.draw(); } },
+    shape: function (n) { if (typeof n === 'string') { T.shapeName = ['turtle', 'classic', 'arrow', 'circle', 'square', 'triangle'].indexOf(n) >= 0 ? n : 'classic'; T.draw(); } },
     title: function () {},
     tracer: function () {},
     update: function () {}
@@ -75,6 +77,7 @@ var $builtinmodule = function (name) {
   };
   var wrap = function (fn, animates, name) {
     return new Sk.builtin.func(function () {
+      if (T === T.screen) T.used = true;
       needNumbers(name, Array.prototype.slice.call(arguments));
       var args = Array.prototype.slice.call(arguments).map(js);
       var out = fn.apply(null, args);
@@ -135,11 +138,12 @@ var $builtinmodule = function (name) {
       return NONE;
     });
   };
-  mod.pencolor = colorFn(function (c) { T.setPenColor(c); });
-  mod.fillcolor = colorFn(function (c) { T.setFillColor(c); });
+  mod.pencolor = colorFn(function (c) { if (T === T.screen) T.used = true; T.setPenColor(c); });
+  mod.fillcolor = colorFn(function (c) { if (T === T.screen) T.used = true; T.setFillColor(c); });
   mod.bgcolor = colorFn(function (c) { T.setBackground(c); });
   mod.color = new Sk.builtin.func(function () {
     var args = Array.prototype.slice.call(arguments);
+    if (T === T.screen) T.used = true;
     if (args.length === 1 || args.length === 3) { var c = colorOf(args); T.setPenColor(c); T.setFillColor(c); }
     else if (args.length === 2) { T.setPenColor(colorOf([args[0]])); T.setFillColor(colorOf([args[1]])); }
     return NONE;
@@ -162,17 +166,25 @@ var $builtinmodule = function (name) {
     return num(Math.hypot(T.state.x - x, T.state.y - y));
   });
 
-  // Screen() and Turtle() both hand back an object exposing the same functions.
-  var handleClass = function (clsName) {
+  // Screen() and Turtle() hand back objects exposing the same functions; each method runs with T set to that
+  // object's turtle (every command reads T synchronously, so restoring it straight away is safe).
+  var handleClass = function (clsName, isScreen) {
     return Sk.misceval.buildClass(mod, function ($gbl, $loc) {
-      $loc.__init__ = new Sk.builtin.func(function (self) { return NONE; });
+      $loc.__init__ = new Sk.builtin.func(function (self) {
+        var S = window.__wpTurtle;
+        self.$t = isScreen ? S : S.spawn();
+        return NONE;
+      });
+      var on = function (self, f, rest) {
+        var saved = T; T = self.$t || window.__wpTurtle;
+        try { return Sk.misceval.callsimOrSuspendArray(f, rest); } finally { T = saved; }
+      };
       var methods = {};
       Object.keys(defs).concat(Object.keys(aliases)).concat(['pencolor', 'fillcolor', 'bgcolor', 'color', 'speed', 'xcor', 'ycor', 'heading', 'position', 'pos', 'isdown', 'distance']).forEach(function (k) { methods[k] = mod[k]; });
       Object.keys(methods).forEach(function (k) {
         var f = methods[k];
         $loc[pyName(k)] = new Sk.builtin.func(function (self) {
-          var rest = Array.prototype.slice.call(arguments, 1);
-          return Sk.misceval.callsimOrSuspendArray(f, rest);
+          return on(self, f, Array.prototype.slice.call(arguments, 1));
         });
       });
       ['onscreenclick', 'onclick', 'onkey', 'onkeypress', 'onkeyrelease', 'listen', 'ontimer', 'mainloop', 'done', 'exitonclick', 'textinput', 'numinput'].forEach(function (k) {
@@ -180,26 +192,18 @@ var $builtinmodule = function (name) {
       });
     }, clsName, []);
   };
-  mod.Turtle = handleClass('Turtle');
-  mod.Screen = new Sk.builtin.func(function () { return Sk.misceval.callsimArray(mod.Turtle, []); });
+  mod.Turtle = handleClass('Turtle', false);
+  var ScreenClass = handleClass('_Screen', true);
+  mod.Screen = new Sk.builtin.func(function () { return Sk.misceval.callsimArray(ScreenClass, []); });
   mod.Pen = mod.Turtle;
   return mod;
 };
 `;
 
-const FRIENDLY = [
-  [/name '(\w+)' is not defined/, (m) => `${m[0]}. Check the spelling, and that you created it before using it.`],
-  [/unexpected indent|expected an indented block/i, () => 'Indentation problem: lines inside a loop or function must be indented by the same amount.'],
-  [/SyntaxError: bad input/, () => 'Python could not read this line. Check for a missing colon (:), bracket or quote on this line or the one above.'],
-];
-
-export function friendlyError(err) {
-  const text = err.toString();
-  for (const [re, fn] of FRIENDLY) { const m = text.match(re); if (m) return `${text}\n${fn(m)}`; }
-  return text;
-}
-
-export function createRunner({ turtle, onOutput }) {
+// onInput(prompt): optional; returns a promise of the typed answer (the console's inline input line), or null to
+// fall back to the browser's prompt box (turtle programs). Time spent waiting for an answer does not count
+// towards the run's time limit.
+export function createRunner({ turtle, onOutput, onInput }) {
   window.__wpTurtle = turtle;
   Sk.builtinFiles.files['src/lib/turtle.js'] = MODULE_SOURCE;
 
@@ -227,7 +231,11 @@ export function createRunner({ turtle, onOutput }) {
       __future__: Sk.python3,
       execLimit: 60000,
       yieldLimit: 200,
-      inputfun: (prompt) => Promise.resolve(window.prompt(prompt) ?? ''),
+      inputfun: (prompt) => {
+        const asked = onInput && onInput(prompt);
+        if (!asked) return Promise.resolve(window.prompt(prompt) ?? '');
+        return asked.then((v) => { Sk.execStart = new Date(); return v; });
+      },
       inputfunTakesPrompt: true,
     });
     return Sk.misceval.asyncToPromise(() => Sk.importMainWithBody('<stdin>', false, code, true), {

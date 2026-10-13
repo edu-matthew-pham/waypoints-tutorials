@@ -1,39 +1,58 @@
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
-import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys, makecodePackage, makecodeExtensions } from './lesson-core.mjs';
+import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys, makecodePackage, makecodeExtensions, sourceList } from './lesson-core.mjs';
 import { MATH_JS } from './math-expr.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
 export const STAGE_INFO = {
-  predict: ['Predict', 'Read the code and say what it will do before you run anything.'],
+  predict: ['Predict', 'Read the code and say what it will do before you run anything. A wrong guess is fine: it shows you what to look for.'],
   run: ['Run', 'Run it and compare the result with your prediction.'],
   investigate: ['Investigate', 'Trace how each line of code connects to what you see.'],
   modify: ['Modify', 'Change the code on purpose and check the result.'],
   practise: ['Practise', 'A few on your own, to check you have it.'],
-  make: ['Make', 'Build something new using what you have learned.'],
+  make: ['Make', 'Build something new using what you have learned. Expect a few tries; that is normal.'],
   info: ['Info', ''],
 };
 /** The same stages in maths words: there is no code, so students try things on a board and change the problem. */
 export const STAGE_INFO_MATHS = {
-  predict: ['Predict', 'Read the problem and decide what you think before you try anything.'],
+  predict: ['Predict', 'Read the problem and decide what you think before you try anything. A wrong guess is fine: it shows you what to look for.'],
   run: ['Try', 'Try it on the board and compare the result with your prediction.'],
   investigate: ['Investigate', 'Work out why it happens, one step at a time.'],
   modify: ['Modify', 'Change the problem on purpose and see what happens.'],
   practise: ['Practise', 'A few on your own, to check you have it.'],
-  make: ['Make', 'Make your own problem using what you have learned.'],
+  make: ['Make', 'Make your own problem using what you have learned. Expect a few tries; that is normal.'],
   info: ['Info', ''],
 };
 /** Science lessons use the 5E words (Engage, Explore, Explain, Elaborate, Evaluate) on the same stages, so predict-and-compare,
  * decks and worksheets work unchanged: predict = Engage, run = Explore, investigate = Explain, modify = Elaborate, info = Evaluate. */
 export const STAGE_INFO_SCIENCE = {
-  predict: ['Engage', 'Commit to a prediction before you test anything.'],
+  predict: ['Engage', 'Commit to a prediction before you test anything. A wrong guess is fine: it shows you what to look for.'],
   run: ['Explore', 'Try it on the board and compare what happens with your prediction.'],
   investigate: ['Explain', 'Use the particle model to explain what you saw.'],
   modify: ['Elaborate', 'Use the same idea in a new context.'],
   practise: ['Practise', 'A few on your own, to check you have it.'],
   make: ['Elaborate', 'Use the same idea in a new context.'],
   info: ['Evaluate', 'Look back at your first ideas and what changed.'],
+};
+/** The 5E words outside science (shape: 5e, first used by Digital systems theory lessons): the same stages as science,
+ * with Explain about the idea, not the particle model. The last Elaborate task is the Make. */
+export const STAGE_INFO_5E = {
+  ...STAGE_INFO_SCIENCE,
+  investigate: ['Explain', 'Put a name to what you saw, and why it works.'],
+  modify: ['Elaborate', 'Use the idea in a new situation.'],
+  make: ['Elaborate', 'Use the idea in a new situation.'],
+};
+/** Design projects (shape: design) use design-cycle words on the same stages: predict = Inquire, investigate = Develop,
+ * make = Create, modify = Test, practise = Evaluate. Steps go in that order. */
+export const STAGE_INFO_DESIGN = {
+  predict: ['Inquire', 'Read the brief: who it is for, what it must do (criteria) and the limits (constraints).'],
+  run: ['Explore', 'Try the idea on the board before you plan.'],
+  investigate: ['Develop', 'Plan before you build: parts, circuit, code and the tests you will run.'],
+  make: ['Create', 'Build it, first in the simulator, then for real if you have the kit. Expect a few tries; that is normal.'],
+  modify: ['Test', 'Run your tests and record what happened, including what failed.'],
+  practise: ['Evaluate', 'Judge it against each criterion, and say what you would change.'],
+  info: ['Info', ''],
 };
 const TIER_LABEL = { typical: 'Typical', wider: 'Wider' };
 export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
@@ -96,6 +115,7 @@ section.step{scroll-margin-top:calc(var(--nav,0px) + var(--cb,0px) + 64px)}
 .nextcard{display:block;margin:34px 0 0;padding:18px 22px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);text-decoration:none}
 .nextcard small{display:block;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}.nextcard b{display:block;font-size:1.15rem}.nextcard span{color:var(--muted);font-size:15px}
 .nextcard:hover{border-color:var(--accent)}
+.nowcan{margin:34px 0 0;padding:16px 22px;border-left:4px solid var(--accent);background:var(--card);border-radius:0 14px 14px 0}.nowcan small{display:block;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}.nowcan ul{margin:6px 0 0;padding-left:20px}.nowcan+.nextcard{margin-top:14px}.practicecard+.nextcard{margin-top:14px}.practicecard{border-left:4px solid var(--accent)}
 .rules{list-style:none;margin:6px 0 0;padding:0}.rules li{display:flex;gap:8px;align-items:center;margin:3px 0}.rules li::before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid var(--line);flex:none}.rules li.ok::before{background:var(--run);border-color:var(--run)}
 
 nav.steps a{font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:5px 11px;border-radius:99px}
@@ -113,6 +133,7 @@ p code,li code{background:color-mix(in srgb,var(--ink) 9%,transparent);padding:1
 figure.clip{margin:18px 0}figure.clip video{width:100%;border-radius:10px;border:1px solid var(--line);display:block;background:#0b0f14}
 figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 figure.clip .voiced-note{white-space:nowrap}
+figure.clip .vpick{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;margin-left:6px;white-space:nowrap}figure.clip .vpick button{font:inherit;font-size:13px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}figure.clip .vpick button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;aspect-ratio:16/9;border:2px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center;font-size:15px;padding:12px}
 .placeholder b{color:var(--ink)}
 .try{margin:20px 0 6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
@@ -161,7 +182,8 @@ details.insights{margin:10px 0}
 details.teachers{margin:28px 0 0;border:1px solid var(--line);border-radius:8px;padding:0 16px}
 details.teachers summary{cursor:pointer;font-weight:600;padding:12px 0}
 details.teachers h3{font-size:1rem;margin:16px 0 4px}.tguide{background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:8px;padding:8px 12px}
-details.explain{margin:12px 0 4px;border:1px solid var(--line);border-left:4px solid var(--investigate);border-radius:8px;padding:0 16px;background:var(--card)}details.explain summary{cursor:pointer;font-weight:600;padding:10px 0;color:var(--investigate)}
+.xbtn{flex:none;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:600;color:var(--investigate);border:1px solid var(--investigate);background:var(--card);padding:4px 11px 4px 5px;border-radius:99px;cursor:pointer}.xbtn b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--investigate);color:#fff;font-size:12px}.xbtn[aria-expanded=true]{box-shadow:inset 0 0 0 1px var(--investigate)}.xdrawer{position:fixed;z-index:40;right:0;top:var(--nav,0px);bottom:0;width:min(520px,100vw);overflow:auto;background:var(--card);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.12);padding:0 20px 24px}.xd-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);padding:14px 0 10px;border-bottom:1px solid var(--line);margin-bottom:12px}.xd-head h2{margin:0;font-size:1.1rem;color:var(--investigate)}.xd-close{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:4px 10px;cursor:pointer}.xpop{position:fixed;z-index:41;max-width:min(300px,calc(100vw - 32px));margin:0;padding:9px 13px;font-size:14px;line-height:1.4;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--predict,#7c3aed);border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.14)}.xd-body video{max-width:100%}details.explain{margin:12px 0 4px;border:1px solid var(--line);border-left:4px solid var(--investigate);border-radius:8px;padding:0 16px;background:var(--card)}details.explain summary{cursor:pointer;font-weight:600;padding:10px 0;color:var(--investigate)}
+.clinks{margin:-6px 0 14px;font-size:14px;color:var(--muted,#5d6675)}.clinks p{margin:2px 0}.clinks .clw{opacity:.8}
 .hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
 details.reveal summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--c)}
 details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
@@ -180,11 +202,11 @@ ul.lessons{list-style:none;padding:0;display:grid;gap:14px}ul.lessons a{display:
 .continue .ck{grid-row:span 2;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.2)}
 .continue b{font-size:1.15rem}.continue .cstep{font-size:14px;opacity:.9}.continue .cstep:empty{display:none}.continue:hover{filter:brightness(1.06)}
 @media(prefers-color-scheme:dark){.continue{color:#1a1006}.continue .ck{background:rgba(0,0,0,.15)}}
-.pathway{margin:30px 0 8px}.pathway h2{margin:0;font-size:1.4rem}.pathway h2 a{color:inherit;text-decoration:none}.pathway h2 a:hover{color:var(--accent)}.pathway h2 a::after{content:' ›';color:var(--muted)}.pabout{max-width:680px}.pnote{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 16px;color:var(--muted)}.psum{margin:2px 0 10px;color:var(--muted)}
+.pathway{margin:30px 0 8px}.pathway h2{margin:0;font-size:1.4rem}.pathway h2 a{color:inherit;text-decoration:none}.pathway h2 a:hover{color:var(--accent)}.pathway h2 a::after{content:' ›';color:var(--muted)}.pabout{max-width:680px}.home-about h2,.approach h2{font-size:1.2rem;margin:28px 0 8px}.home-about p,.approach p,.approach li{line-height:1.6}.home-subjects{font-size:1.2rem;margin:34px 0 12px}.home-about a,.approach a{color:var(--accent)}.pnote{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 16px;color:var(--muted)}.psum{margin:2px 0 10px;color:var(--muted)}
 .pstage h3{margin:14px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
 .pcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}.pcard:hover{border-color:var(--accent)}
-.pcard b{display:block;font-size:1.05rem}.pafter{display:block;font-size:12.5px;color:var(--muted);margin-top:6px}.pcard span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.pcard b{display:block;font-size:1.05rem}.pcard .ptag{color:var(--ink);font-size:15px;margin-top:4px}.pcard.pmap{margin:6px 0 4px;border-color:var(--accent)}.pcard.pmap b::after{content:' →';color:var(--accent)}.pafter{display:block;font-size:12.5px;color:var(--muted);margin-top:6px}.pcard span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
 .pcard.soon{background:transparent;border-style:dashed}.pcard.soon b{color:var(--muted)}.pcard em{display:inline-block;margin-top:8px;font-style:normal;font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 9px}
 .pcard .cprog{display:block;font-style:normal;font-weight:400;font-size:13px;color:var(--muted);margin-top:8px;border:0;padding:0;border-radius:0}.pcard .cbar{display:block;height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:4px}.pcard .cbar i{display:block;height:100%;background:var(--run)}
 .ptools{margin:34px 0 0;color:var(--muted);font-size:14px}
@@ -239,6 +261,7 @@ footer{margin-top:50px;color:var(--muted);font-size:14px}
  * here: 'lesson' | 'course' | 'playground' | 'reference' | 'home'
  */
 export const MAIN_SITE = 'https://learningwaypoints.com/';
+export const STUDIO_SITE = 'https://studio.learningwaypoints.com/';
 export function siteNav({ root = '', subjects = [], current = null, here = 'home', homeOn = false }) {
   const link = (href, text, on, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
   const menus = subjects.map((sub, i) => `<div class="sn-dd${sub.on ? ' on' : ''}">${link(sub.href, sub.title, sub.on && !sub.items.some((x) => x.on), 'sn-top')}` +
@@ -250,7 +273,7 @@ export function siteNav({ root = '', subjects = [], current = null, here = 'home
   return `<nav class="sitenav" data-here="${esc(here)}" aria-label="Site"><div class="sn-in">` +
     `<a class="sn-brand" href="${MAIN_SITE}" title="Learning Waypoints: the main site">Learning Waypoints <span aria-hidden="true">↗</span></a>` +
     `<button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-main">Menu ▾</button>` +
-    `<div class="sn-main" id="sn-main">${link('', 'Tutorials', homeOn)}${menus}</div>` +
+    `<div class="sn-main" id="sn-main">${link('', 'Tutorials', homeOn)}${menus}<a href="${STUDIO_SITE}" title="Waypoints Studio: slide decks and print resources for teachers">Studio <span aria-hidden="true">↗</span></a></div>` +
     `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
 }
 export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}
@@ -360,7 +383,10 @@ function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain
 function bad(t){msg.className='msg no';msg.textContent=t}
 var btn=box.querySelector('button');
 if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(box.querySelector('input').value);if(isNaN(v))return bad('Type a number first.');
-if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))win();else bad(box.dataset.subj==='maths'?'Not quite. Check your working and try another number.':'Not quite. Look at the code again and try another number.')})}
+if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))return win();var nf=JSON.parse(box.dataset.feedback||'[]');for(var q=0;q<nf.length;q++){if(Math.abs(v-nf[q][0])<=Math.max(Number(box.dataset.tol||0),1e-9))return bad('Not quite. '+nf[q][1])}bad(box.dataset.subj==='maths'?'Not quite. Check your working and try another number.':'Not quite. Look at the code again and try another number.')})}
+if(ty==='flag'&&btn){btn.addEventListener('click',function(){var t=box.querySelector('input').value.trim().toLowerCase();if(!t)return bad('Type the flag first.');
+if(!(window.crypto&&crypto.subtle))return bad('This needs a secure page (https).');
+crypto.subtle.digest('SHA-256',new TextEncoder().encode('wp-flag:'+t)).then(function(b){var h=[].map.call(new Uint8Array(b),function(x){return ('0'+x.toString(16)).slice(-2)}).join('');if(h===box.dataset.hash)win();else bad('Not the flag. Check it is exactly what the puzzle gives, including the WP{ } part.')})})}
 if(ty==='bug'){var good=JSON.parse(box.dataset.answers).map(String),found={};[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
 var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad(box.dataset.subj==='maths'?'Not that line. Read the working again, one line at a time.':'Not that line. Read the code again, one line at a time.')}})})}
 if(ty==='sort'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
@@ -380,15 +406,33 @@ var saved=pload()[key];if(saved!==undefined&&saved!==null)freeze(saved);
 btn.addEventListener('click',function(){var r=box.querySelector('input[type=radio]:checked'),i=box.querySelector('input.pin'),v=r?r.value:(i?i.value.trim():'');
 if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v);try{document.dispatchEvent(new CustomEvent('wp-predict',{detail:key}))}catch(e){}})}
 if(ty==='parsons'){parsons(box,win,bad)}
+if(ty==='working'&&btn){var ta=box.querySelector('textarea'),ol=box.querySelector('.wk-lines');btn.addEventListener('click',function(){var lines=ta.value.split('\\n');if(!lines.join('').trim())return bad('Write your working, one step per line.');if(!window.WPF_READY)return bad('The checker did not load. Reload the page and try again.');msg.className='msg';msg.textContent='Checking...';window.WPF_READY.then(function(F){var r=F.working(lines,box.dataset.start,box.dataset.form),shown=lines.map(function(l){return l.trim()}).filter(Boolean);ol.replaceChildren();r.lines.forEach(function(x,i){var li=document.createElement('li');li.className=x.ok?'ok':'no';li.textContent=(x.ok?'\\u2713 ':'\\u2717 ')+shown[i];ol.appendChild(li)});if(r.ok)win();else bad(r.why)})})}
 if(ty==='answer'&&btn){var inp=box.querySelector('input'),fb=JSON.parse(box.dataset.feedback||'[]');
 function tryIt(){var v=inp.value.trim();if(!v)return bad('Type your answer first.');
 try{if(box.dataset.equation){var vals=JSON.parse(box.dataset.equation),sd=WPM.sides(v);if(!sd)return bad('An equation needs one = sign, with something on each side.');
 var need=Object.keys(vals),used=WPM.vars(sd[0]).concat(WPM.vars(sd[1]));if(!need.some(function(n){return used.indexOf(n)>=0}))return bad('Use '+need.join(' and ')+' in your equation.');
 if(WPM.satisfies(v,vals))return win();var shown=need.map(function(n){return n+' = '+vals[n]}).join(', ');return bad('Not quite: when '+shown+', the two sides are not equal. Check each side.')}
-var a=WPM.splitAnswer(v).value;if(WPM.equivalent(a,box.dataset.answer))return win();
+if(box.dataset.form){if(!window.WPF_READY)return bad('The checker did not load. Reload the page and try again.');msg.className='msg';msg.textContent='Checking...';return window.WPF_READY.then(function(F){var r=F.check(v,box.dataset.answer,box.dataset.form);if(r.ok){win();if(r.unsure){msg.textContent=r.why}return}
+if(!r.equivalent)for(var i=0;i<fb.length;i++){try{if(!F.check(String(fb[i][0]),v,'').equivalent)continue;return bad(fb[i][1])}catch(e){}}
+else{var nm=function(t){return String(t).replace(/[\\u2212\\u2013]/g,'-').replace(/[\\u00d7\\u00b7]/g,'*').replace(/\\s+/g,'')};for(var j=0;j<fb.length;j++){if(nm(fb[j][0])===nm(v))return bad(fb[j][1])}}
+bad(r.why)})}
+var a=WPM.splitAnswer(v).value.replace(/\s*(%|\u00b0)\s*$/,'');if(WPM.equivalent(a,box.dataset.answer))return win();
 for(var i=0;i<fb.length;i++){try{if(WPM.equivalent(a,String(fb[i][0])))return bad(fb[i][1])}catch(e){}}
 bad('Not quite. Check your working and try again.')}catch(e){bad(e.message)}}
 btn.addEventListener('click',tryIt);inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryIt()})}
+if(ty==='reasoning'){var mk=JSON.parse(box.dataset.marks),ta=box.querySelector('.rs-in'),ai=box.querySelector('.rs-ans input'),go2=box.querySelector('.rs-go'),sh=box.querySelector('.rs-show'),md=box.querySelector('.rs-model'),tries=0;
+var RK='wp-reasoning',rl=function(){try{return JSON.parse(localStorage.getItem(RK)||'{}')}catch(e){return {}}},rs=function(o){try{localStorage.setItem(RK,JSON.stringify(o))}catch(e){}};
+var keep=rl()[key];if(keep){ta.value=keep.text||'';if(ai&&keep.answer)ai.value=keep.answer;(keep.crit||[]).forEach(function(c,i){var cb=box.querySelectorAll('.rs-crit input')[i];if(cb)cb.checked=!!c})}
+function store(){var o=rl();o[key]={text:ta.value,answer:ai?ai.value:'',crit:[].map.call(box.querySelectorAll('.rs-crit input'),function(c){return c.checked})};rs(o)}
+ta.addEventListener('input',store);if(ai)ai.addEventListener('input',store);box.querySelectorAll('.rs-crit input').forEach(function(c){c.addEventListener('change',store)});
+function reveal(){box.querySelector('.rs-mine').textContent=ta.value.trim()||'(nothing written)';md.hidden=false}
+if((load().done||{})[key])reveal();
+function wrong(t){tries++;bad(t);if(tries>=3)sh.hidden=false}
+sh.addEventListener('click',function(){reveal();msg.className='msg';msg.textContent='Compare, then fix your answer and choices above.'});
+go2.addEventListener('click',function(){if(!ta.value.trim())return bad('Write your working first: your own notes and reasons. This part is not marked.');
+if(ai&&mk.answer!==null){var v=ai.value.replace(/\u00b0|degrees?/g,'').trim();if(!v)return bad('Type your answer.');try{var a=WPM.splitAnswer(v).value;if(!WPM.equivalent(a,mk.answer)){for(var i=0;i<mk.feedback.length;i++){try{if(WPM.equivalent(a,String(mk.feedback[i][0])))return wrong(mk.feedback[i][1])}catch(e){}}return wrong('Not quite: check your answer against your working.')}}catch(e){return wrong(e.message)}}
+var fs=box.querySelectorAll('.rs-pick');for(var j=0;j<fs.length;j++){var pk=mk.picks[j],ch=fs[j].querySelector('input:checked');if(!ch)return bad('Choose a reason for each question.');var n=Number(ch.value);if(n!==pk.answer)return wrong('Not that reason. '+(pk.feedback[n]||'Look at where the two angles are.'))}
+reveal();sh.hidden=true;win();store()})}
 if(ty==='board'){var want=JSON.parse(box.dataset.expect||'{}');
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||(m.kind==='maths'?'board':m.kind)!==(box.dataset.kind==='maths'?'board':box.dataset.kind)||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
 var ok=Object.keys(want).every(function(k){var a=m.state&&m.state[k],b=want[k];return typeof b==='number'?Math.abs(Number(a)-b)<1e-9:a===b});if(ok&&box.dataset.when){try{ok=WPM.holds(box.dataset.when,m.state&&m.state.scope)}catch(er){ok=false}}
@@ -468,7 +512,7 @@ sync(w)});
 })();`;
 
 export const page = (title, body, scripts = '', nav = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)}</title><style>${CSS}${nav ? NAV_CSS : ''}</style></head><body>${nav}<div class="wrap">${body}</div><script>${JS}${nav ? NAV_JS : ''}</script>${scripts}</body></html>`;
+<title>${esc(title)}</title><style>${CSS}${nav ? NAV_CSS : ''}</style></head><body>${nav}<div class="wrap">${body}</div><script>${JS}${nav ? NAV_JS : ''}${body.includes('data-voices=') ? VOICE_JS : ''}</script>${scripts}</body></html>`;
 
 
 // A repeatable shuffle (so the page is the same on every build): used for match options.
@@ -501,14 +545,35 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
     return `<div class="check" ${base} data-rules="${esc(JSON.stringify(k.rules))}"><p class="check-q">${esc(k.text)}</p><ul class="rules" aria-label="What your code needs"${mk ? ' hidden' : ''}></ul><p class="msg" aria-live="polite">${kind === 'html' ? 'This ticks when your page has all of the above.' : mk ? 'This ticks by itself when your blocks do what is asked.' : 'Run your program. This ticks when your code does all of the above.'}</p></div>`;
   }
   if (k.type === 'answer') {
-    const data = k.equation ? `data-equation="${esc(JSON.stringify(k.equation))}"` : `data-answer="${esc(String(k.answer))}"`;
+    const data = (k.equation ? `data-equation="${esc(JSON.stringify(k.equation))}"` : `data-answer="${esc(String(k.answer))}"`) + (k.form !== undefined ? ` data-form="${esc(String(k.form))}"` : '');
     return `<div class="check" ${base} ${data} data-feedback="${esc(JSON.stringify(k.feedback || []))}"><p class="check-q">${tx(k.q)}</p><label class="numrow ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your answer" placeholder="${k.equation ? 'for example 2x = 10' : 'Your answer'}"></label><button type="button">Check answer</button>${msg}</div>`;
+  }
+  if (k.type === 'working') {
+    return `<div class="check" ${base} data-start="${esc(String(k.start))}" data-form="${esc(String(k.form || ''))}"><p class="check-q">${tx(k.q)}</p><p class="wk-start">Start from ${tx('$' + String(k.start) + '$')}</p><textarea class="wk-in" rows="5" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Your working, one step per line" placeholder="One step per line"></textarea><ol class="wk-lines" aria-live="polite"></ol><button type="button">Check working</button>${msg}</div>`;
+  }
+  if (k.type === 'reasoning') {
+    // Free working (not marked), the marked parts, then a model solution and a self-check (handler: ty==='reasoning').
+    const steps = k.steps || [], picks = k.picks || [];
+    const crit = k.criteria || ['Each step says which angle or value it finds.', 'Each step has a reason.', 'My answer matches the model.'];
+    const pickHtml = picks.map((pk, i) => `<fieldset class="rs-pick" data-i="${i}"><legend>${pk.q ? tx(String(pk.q)) : `Why is ${tx(String(steps[pk.step - 1]?.[0] ?? ''))}?`}</legend>${pk.options.map((o, j) => `<label><input type="radio" name="${esc(key)}-rs${i}" value="${j}"><span>${tx(String(o))}</span></label>`).join('')}</fieldset>`).join('');
+    const marks = { answer: k.answer !== undefined ? String(k.answer) : null, feedback: (k.feedback || []).map(([a, m]) => [a, plain(m)]), picks: picks.map((pk) => ({ answer: pk.answer, feedback: (pk.feedback || []).map((f) => (f ? plain(f) : null)) })) };
+    return `<div class="check rs" ${base} data-marks="${esc(JSON.stringify(marks))}"><p class="check-q">${tx(k.q)}</p>`
+      + `<label class="rs-lab">Your working <span>(your own notes and reasons; this part is not marked)</span><textarea class="wk-in rs-in" rows="5" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="${esc(k.placeholder || 'For example: b = 70, vert. opp.')}"></textarea></label>`
+      + (k.answer !== undefined ? `<label class="numrow ansrow rs-ans"><span>${esc(k.answerLabel || 'Answer')}</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="${esc(k.answerLabel || 'Your answer')}" placeholder="Your answer"></label>` : '')
+      + pickHtml
+      + `<button type="button" class="rs-go">Check</button> <button type="button" class="rs-show" hidden>Show a model solution</button>${msg}`
+      + `<div class="rs-model" hidden><div class="rs-cols"><div><p class="rs-h">Your working</p><pre class="rs-mine"></pre></div><div><p class="rs-h">A model solution</p><ol class="rs-steps">${steps.map(([a, r]) => `<li>${tx(String(a))} <span class="rs-why">${tx(String(r))}</span></li>`).join('')}</ol></div></div>`
+      + `<p class="rs-h">Check your own working</p><ul class="rs-crit">${crit.map((c) => `<li><label><input type="checkbox"><span>${tx(String(c))}</span></label></li>`).join('')}</ul></div></div>`;
   }
   if (k.type === 'board') {
     return `<div class="check" ${base} data-expect="${esc(JSON.stringify(k.expect || {}))}"${k.when !== undefined ? ` data-when="${esc(String(k.when))}"` : ''}><p class="check-q">${tx(k.text)}</p><p class="msg" aria-live="polite">Use the board. This ticks when you get there.</p></div>`;
   }
   if (k.type === 'number') {
-    return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"><p class="check-q">${tx(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
+    const nfb = (k.feedback || []).filter((f) => Array.isArray(f) && Number.isFinite(Number(f[0]))).map(([a, m]) => [Number(a), plain(m)]);
+    return `<div class="check" ${base} data-answer="${k.answer}" data-tol="${k.tolerance || 0}"${nfb.length ? ` data-feedback="${esc(JSON.stringify(nfb))}"` : ''}><p class="check-q">${tx(k.q)}</p><label class="numrow"><input type="number" step="any" aria-label="Your answer"></label><button type="button">Check answer</button>${msg}</div>`;
+  }
+  if (k.type === 'flag') {
+    return `<div class="check" ${base} data-hash="${esc(k.hash)}" data-explain="${esc(k.explain || '')}"><p class="check-q">${tx(k.q)}</p><label class="numrow ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="The flag" placeholder="WP{...}"></label><button type="button">Submit flag</button>${msg}</div>`;
   }
   if (k.type === 'bug') {
     const files = splitFiles(snippet ? snippet(k.code) : '');
@@ -556,10 +621,20 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
  * The complete lesson page.
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
+/** Lessons linked by a theory concept (deps.conceptLinks from build-site): "Builds on" and "Put to work in". */
+function linksHtml(cl) {
+  if (!cl) return '';
+  const a = (x) => `<a href="${esc(x.href)}" title="${esc(x.label)}">${esc(x.title)}</a> <span class="clw">(${esc(x.where)})</span>`;
+  const row = (name, xs) => (xs.length ? `<p><b>${name}:</b> ${xs.map(a).join(' · ')}</p>` : '');
+  return `<div class="clinks">${row('Builds on', cl.on)}${row('Put to work in', cl.in)}</div>`;
+}
+
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', expectedHtml = () => '', pictureHtml = () => '', maths = null, blocksPicture = () => null } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', maths = null, blocksPicture = () => null } = deps;
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
   const isMaths = lesson.language === 'maths' && !!maths;
+  // Answer checks with form: are marked by Numbas, loaded only on lessons that have one (tools/maths-forms.mjs).
+  const hasForms = isMaths && lesson.steps.some((s) => [s.config.check, ...s.tasks.map((t) => t.config.check)].some((k) => (k?.type === 'answer' && k.form !== undefined) || k?.type === 'working'));
   const tx = isMaths ? (t) => maths.textWithMath(t, esc) : esc;
   // MakeCode lessons show display code as a picture of the blocks (see makecodeBlock).
   const mk = lesson.language === 'makecode';
@@ -574,16 +649,16 @@ export function lessonPageHtml(lesson, deps) {
     const s = t.replace(STAGE_PREFIX, '');
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
-  const isSci = lesson.language === 'science';
+  const isSci = lesson.language === 'science' || lesson.shape === '5e';
   const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci))];
   const tierAttr = (c) => (c.tier ? ` data-tier="${esc(c.tier)}"` : '');
   const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"${tierAttr(s.config)}><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
-  const SI = lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
+  const SI = lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
   // Width tiers: steps marked typical or wider are extra contexts. A teacher sets the starting width with ?width=;
   // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
   const tiered = lesson.steps.some((s) => s.config.tier);
   const widthBar = !tiered ? '' : `<div class="widthbar" aria-label="Lesson width"><div><b>Width</b><span class="wnote">More contexts, same idea.</span></div><div class="wseg" role="group" aria-label="Choose width">${TIERS_UI.map((t) => `<button type="button" data-w="${t}" aria-pressed="false">${t[0].toUpperCase() + t.slice(1)}</button>`).join('')}</div></div>`;
-  const legend = stagesUsed.filter((k) => SI[k]).map((k) => `<li style="--c:var(--${k})"><b>${SI[k][0]}</b>: ${esc(SI[k][1])}</li>`).join('');
+  const legend = stagesUsed.filter((k, i) => SI[k] && stagesUsed.findIndex((j) => SI[j]?.[0] === SI[k][0]) === i).map((k) => `<li style="--c:var(--${k})"><b>${SI[k][0]}</b>: ${esc(SI[k][1])}</li>`).join('');
 
   const steps = lesson.steps.map((s) => {
     const c = s.config;
@@ -645,6 +720,10 @@ export function lessonPageHtml(lesson, deps) {
     `<div class="cb-menu" id="cb-menu" hidden><ul>${course.list.map((l) => `<li><a href="${esc(l.href)}" data-checks="${esc(l.checks.join('|'))}"${l.current ? ' aria-current="page"' : ''}><i class="tick"></i><span>${esc(lab(l))}</span></a></li>`).join('')}</ul>` +
     `<div class="cb-tools"><a href="${esc(course.pathHref)}">All ${esc(course.pathTitle)} lessons and my progress</a>${course.playground ? `<a href="${esc(course.playground)}">Playground</a>` : ''}</div></div></div>` +
     (course.next ? `<a class="cb-next" href="${esc(course.next.href)}" title="${esc(lab(course.next))}"><span>${esc(lab(course.next))}</span> ›</a>` : '<span class="cb-next"></span>') + `</div>`;
+  // Now you can: the lesson's goals, said to the student, so the effort ends in something they can name.
+  const nowCan = (lesson.teacher?.goals || []).map((g) => g.replace(/^I can\s+/, '')).map((g) => g[0].toUpperCase() + g.slice(1));
+  const recapHtml = nowCan.length ? `<section class="nowcan" aria-label="Now you can"><small>Now you can</small><ul>${nowCan.map((g) => `<li>${esc(g)}</li>`).join('')}</ul></section>` : '';
+  const practiceCard = course?.practice ? `<a class="nextcard practicecard" href="${esc(course.practice)}"><small>Practise this skill</small><b>New questions, new numbers each time</b><span>Get 3 right in a row to mark it practised.</span></a>` : '';
   const nextCard = !course ? '' : course.next
     ? `<a class="nextcard" href="${esc(course.next.href)}"><small>Next lesson</small><b>${esc(lab(course.next))}</b>${course.next.summary ? `<span>${esc(course.next.summary)}</span>` : ''}</a>`
     : `<a class="nextcard" href="${esc(course.pathHref)}"><small>You reached the end</small><b>Back to ${esc(course.pathTitle)}</b></a>`;
@@ -664,34 +743,102 @@ export function lessonPageHtml(lesson, deps) {
       (T.goals ? `<h3>Students will be able to</h3>${li(T.goals)}` : '') +
       (T.before ? `<h3>Before class</h3>${md.parse(T.before)}` : '') +
       (T.running ? `<h3>Running the lesson</h3><ol>${T.running.map((r) => `<li>${esc(r)}</li>`).join('')}</ol>` : '') +
+      (T.struggle ? `<h3>The hard part (on purpose)</h3><p>${esc(T.struggle)}</p>` : '') +
       (T.stuck ? `<h3>When students get stuck</h3><ul>${T.stuck.map((x) => `<li><b>${esc(x.see)}</b> Ask: ${esc(x.ask)} Fix: ${esc(x.fix)}</li>`).join('')}</ul>` : '') +
       (T.stretch || T.support ? `<h3>Stretch and support</h3>${T.stretch ? `<p><b>Stretch:</b> ${esc(T.stretch)}</p>` : ''}${T.support ? `<p><b>Support:</b> ${esc(T.support)}</p>` : ''}` : '') +
       (T.leads ? `<h3>Where it leads</h3>${md.parse(T.leads)}` : '') +
+      (sourceList(T).length ? `<h3>Sources</h3><ul class="tsources">${sourceList(T).map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>${x.checked ? ` <small>(checked ${esc(x.checked)})</small>` : ''}</li>`).join('')}</ul>` : '') +
       (insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : '') + `</details>`
     : (lesson.teachers || insights.length)
       ? `<details class="teachers"><summary>For teachers</summary>${lesson.teachers ? md.parse(lesson.teachers) : ''}${insights.length ? `<h3>What each step is for</h3><ul>${insights.map((i) => `<li><b>${esc(i.where)}:</b> ${esc(i.text)}</li>`).join('')}</ul>` : ''}</details>` : '';
   // Explain it to me: the idea in more words, collapsed, for students who want it.
   const explainClip = lesson.explainStep ? clipHtml(lesson.explainStep) : '';
   const explainPic = lesson.explainPicture ? pictureHtml(lesson.explainPicture, 'explain') : '';
-  const explainHtml = T?.explain || explainClip ? `<details class="explain"><summary>Explain it to me</summary>${explainClip}${T?.explain ? md.parse(T.explain) : ''}${explainPic}</details>` : '';
+  // It opens from a "?" button in the sticky step bar, as a drawer. Until the lesson's first Predict is locked in, the
+  // button only says to predict first, so the explanation (often the same program) never gives the answer away.
+  const hasExplain = !!(T?.explain || explainClip);
+  const explainBtn = hasExplain ? `<button type="button" class="xbtn" aria-controls="xdrawer" aria-expanded="false" title="Explain it to me"><b aria-hidden="true">?</b><span>Explain</span></button>` : '';
+  const explainHtml = hasExplain ? `<aside id="xdrawer" class="xdrawer" hidden aria-labelledby="xd-title"><div class="xd-head"><h2 id="xd-title">Explain it to me</h2><button type="button" class="xd-close">Close</button></div>` +
+    `<div class="xd-body">${explainClip}${T?.explain ? md.parse(T.explain) : ''}${explainPic}</div></aside><p class="xpop" role="status" hidden>Make your prediction first. Help opens once you've locked it in.</p><script>${EXPLAIN_JS}</script>` : '';
 
   const mathsHead = isMaths ? `<link rel="stylesheet" href="${esc(siteRoot)}_katex/katex.min.css"><style>${MATHS_CSS}</style>` : '';
   return page(lesson.title, `
 ${mathsHead}${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
-${md.parse(lesson.intro)}
-${explainHtml}
+${linksHtml(conceptLinks)}${md.parse(lesson.intro)}
 <ul class="legend">${legend}</ul>
 ${widthBar}
-<nav class="steps">${nav}</nav>
+<nav class="steps">${explainBtn}${nav}</nav>
+${explainHtml}
 ${steps}${tiered ? `<script>${WIDTH_JS}</script>` : ''}
 ${teachersHtml}
-${nextCard}
-${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : ''), siteNavHtml);
+${recapHtml}${practiceCard}${nextCard}
+${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : '') + (hasForms && maths.forms ? `<script src="${esc(siteRoot)}${esc(maths.forms.src)}" defer></script><script>${maths.forms.js}</script>` : ''), siteNavHtml);
 }
+
+// A choice of voices on voiced clips (roadmap/shared.md): the lesson's own voice is mixed into the .mp4; another
+// voice is clips/<id>.<voice>.m4a, played in step with the video while the video's own sound is silenced. The choice
+// is saved per browser (wp-voice) and applies to every clip. The video's sound button stays the on/off switch:
+// - where the page can process the video's sound (Web Audio; desktop and Android), the video's own voice goes
+//   through a gain set to 0, so its sound button and volume work as usual and the chosen voice follows them;
+// - where it can't (iPhone and iPad: a video's volume can't be set there), the video stays muted and each press of its
+//   sound button turns the chosen voice on or off; the note beside the picker says which.
+// A voice file that fails to load falls back to the clip's own voice.
+export const VOICE_JS = `(function(){var figs=[].slice.call(document.querySelectorAll('figure.clip[data-voices]'));if(!figs.length)return;
+var K='wp-voice',all=[],AC=window.AudioContext||window.webkitAudioContext,ctx=null;
+var canVol=(function(){var v=document.createElement('video');try{v.volume=0.5}catch(e){}return v.volume===0.5})(),web=!!AC&&canVol;
+function saved(){try{return localStorage.getItem(K)||''}catch(e){return ''}}
+function save(v){try{localStorage.setItem(K,v)}catch(e){}}
+function audioCtx(){if(!ctx){try{ctx=new AC()}catch(e){web=false;return null}}if(ctx.state==='suspended')ctx.resume();return ctx}
+function alt(s){return s.cur!==s.own&&!!s.audio}
+function route(s){if(!web||s.gain||!alt(s))return;var c=audioCtx();if(!c)return;try{var n=c.createMediaElementSource(s.vid);s.gain=c.createGain();n.connect(s.gain);s.gain.connect(c.destination)}catch(e){web=false}}
+function hush(s){var on=alt(s);if(web&&s.gain){s.gain.gain.value=on?0:1;s.sound=!s.vid.muted}else if(on&&!s.vid.muted){s.self++;s.vid.muted=true;s.sound=true}if(s.audio){s.audio.muted=web?s.vid.muted:false;s.audio.volume=canVol?s.vid.volume:1}note(s)}
+function note(s){var n=s.fig.querySelector('.voiced-note');if(!n)return;if(!n.dataset.t)n.dataset.t=n.textContent;n.textContent=alt(s)&&!web?' · '+s.label+(s.sound?' on: press sound to stop':': press sound to hear'):n.dataset.t}
+function sync(s,hard){var a=s.audio,t=s.vid.currentTime;if(!a)return;if(hard||Math.abs(a.currentTime-t)>0.3){try{a.currentTime=t}catch(e){}}if(a.playbackRate!==s.vid.playbackRate)a.playbackRate=s.vid.playbackRate}
+function go(s){var a=s.audio;if(!a)return;if(s.vid.paused||s.wait||!s.sound||(web&&s.vid.muted)){a.pause();return}sync(s,true);var p=a.play();if(p&&p.catch)p.catch(function(){})}
+function unlock(s){var a=s.audio;if(!a||!a.paused||s.unlocked)return;s.unlocked=true;var m=a.muted;a.muted=true;var p=a.play();if(p&&p.then)p.then(function(){if(s.vid.paused||!s.sound)a.pause();a.muted=m;go(s)},function(){a.muted=m});else{a.pause();a.muted=m}}
+function use(s,v,gesture){if(v!==s.own&&s.others.indexOf(v)<0)v=s.own;
+[].forEach.call(s.fig.querySelectorAll('.vpick button'),function(b){b.setAttribute('aria-pressed',String(b.dataset.v===v));if(b.dataset.v===v)s.label=b.textContent});
+if(s.audio){s.audio.pause();s.audio=null}s.cur=v;s.unlocked=false;
+if(v!==s.own){var a=new Audio(),src=(s.vid.currentSrc||s.vid.querySelector('source').src).replace(/\\.mp4(?=$|[?#])/,'.'+v+'.m4a');a.preload='auto';a.src=src;
+a.addEventListener('error',function(){if(s.audio!==a)return;s.audio=null;s.cur=s.own;var w=s.sound&&!web;hush(s);if(w&&s.vid.muted){s.self++;s.vid.muted=false}[].forEach.call(s.fig.querySelectorAll('.vpick button'),function(b){b.setAttribute('aria-pressed',String(b.dataset.v===s.own))})});
+s.audio=a;if(gesture)route(s)}
+else if(!web&&s.sound&&s.vid.muted&&gesture){s.self++;s.vid.muted=false}
+hush(s);if(gesture)unlock(s);go(s)}
+figs.forEach(function(fig){var vid=fig.querySelector('video');if(!vid)return;
+var s={fig:fig,vid:vid,own:fig.dataset.voice,others:fig.dataset.voices.split(' '),cur:fig.dataset.voice,audio:null,gain:null,sound:!vid.muted,self:0,last:0,wait:false,label:''};all.push(s);
+var pick=fig.querySelector('.vpick');if(pick){pick.hidden=false;pick.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button[data-v]');if(!b)return;save(b.dataset.v);all.forEach(function(o){use(o,b.dataset.v,true)})})}
+vid.addEventListener('volumechange',function(){if(s.self){s.self--;return}if(!alt(s)){s.sound=!vid.muted;return}
+if(web&&s.gain){hush(s);go(s);return}
+if(!vid.muted){s.sound=!s.sound;s.self++;vid.muted=true;note(s);unlock(s);go(s)}});
+['play','playing'].forEach(function(ev){vid.addEventListener(ev,function(){s.wait=false;go(s)})});
+['pause','waiting'].forEach(function(ev){vid.addEventListener(ev,function(){if(ev!=='pause')s.wait=true;if(s.audio)s.audio.pause()})});
+['seeked','ratechange'].forEach(function(ev){vid.addEventListener(ev,function(){sync(s,ev==='seeked');go(s)})});
+vid.addEventListener('timeupdate',function(){var t=vid.currentTime;if(t+0.5<s.last){sync(s,true);go(s)}else if(s.audio&&!s.audio.paused)sync(s,false);s.last=t});
+use(s,saved()||s.own,false)});
+function gest(){if(ctx&&ctx.state==='suspended')ctx.resume();all.forEach(function(s){if(alt(s)){route(s);hush(s);unlock(s)}})}
+['pointerdown','click','keydown'].forEach(function(ev){document.addEventListener(ev,gest,true)});
+})();`;
+
+// The Explain it to me drawer: opened by the "?" in the step bar; held back until the first Predict is locked in.
+const EXPLAIN_JS = `(function(){var d=document.getElementById('xdrawer'),b=document.querySelector('.xbtn'),pop=document.querySelector('.xpop');if(!d||!b)return;var tm,y0=0;
+function locked(){var pc=document.querySelector('.check[data-type="predict"]'),pk=pc&&pc.dataset.key;if(!pk)return true;try{var p=JSON.parse(localStorage.getItem('wp-predict'))||{};return p[pk]!==undefined&&p[pk]!==null}catch(e){return true}}
+function hidePop(){if(pop)pop.hidden=true;clearTimeout(tm)}
+function showPop(){if(!pop)return;var r=b.getBoundingClientRect();y0=window.scrollY;pop.hidden=false;pop.style.top=(r.bottom+8)+'px';pop.style.left=Math.max(16,Math.min(r.left,window.innerWidth-pop.offsetWidth-16))+'px';clearTimeout(tm);tm=setTimeout(hidePop,4000)}
+function open(){hidePop();d.hidden=false;b.setAttribute('aria-expanded','true');d.querySelector('.xd-close').focus()}
+function shut(){d.hidden=true;b.setAttribute('aria-expanded','false');[].forEach.call(d.querySelectorAll('video'),function(v){v.pause()})}
+b.addEventListener('click',function(e){e.stopPropagation();if(!d.hidden)return shut();if(!locked())return pop&&!pop.hidden?hidePop():showPop();open()});
+d.querySelector('.xd-close').addEventListener('click',function(){shut();b.focus()});
+document.addEventListener('click',function(e){if(pop&&!pop.hidden&&e.target!==pop)hidePop()});
+window.addEventListener('scroll',function(){if(pop&&!pop.hidden&&Math.abs(window.scrollY-y0)>60)hidePop()},{passive:true});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){hidePop();if(!d.hidden){shut();b.focus()}}});})();`;
 
 export const PLAYGROUNDS = {
   turtle: { dir: '_playground', title: 'Python turtle playground' },
+  python: { dir: '_playground-py', title: 'Python playground' },
+  microstudio: { dir: '_playground-microstudio', title: 'Example game (play only)', height: 400 },
+  p5: { dir: '_playground-p5', title: 'p5.js playground' },
+  dom: { dir: '_playground-dom', title: 'Web page and JavaScript playground' },
   html: { dir: '_playground-html', title: 'HTML and CSS playground' },
   board: { dir: '_playground-board', title: 'Board' },
   maths: { dir: '_playground-board', title: 'Board' },
@@ -710,7 +857,8 @@ bar.querySelector('.wnote').textContent=(q in R?'Your teacher set '+floor+'. You
 bar.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;cur=b.dataset.w;apply()});apply()})();`;
 
 /** Extra styles for maths lessons: display maths, worked examples, typed answers. */
-export const MATHS_CSS = `.mathblock{overflow-x:auto;overflow-y:hidden;margin:.6em 0}.katex{font-size:1.12em}
+export const MATHS_CSS = `.check label.rs-lab{display:block;margin:.4em 0;font-weight:600;cursor:auto}.rs-lab span{font-weight:400;color:var(--muted)}.rs-pick{border:1px solid var(--line);border-radius:8px;margin:.5em 0;padding:.4em .8em}.rs-pick legend{padding:0 .3em}.rs-pick label{display:block;margin:.2em 0}.rs-model{margin-top:.8em;border-top:1px solid var(--line);padding-top:.6em}.rs-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1em}.rs-h{font-weight:600;margin:.3em 0}.rs-mine{white-space:pre-wrap;font:15px/1.5 ui-monospace,Menlo,Consolas,monospace;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:0}.rs-steps{margin:0;padding-left:1.4em}.rs-steps li{margin:.25em 0}.rs-why{color:var(--muted)}.rs-why::before{content:'(';}.rs-why::after{content:')'}.rs-crit{list-style:none;padding:0;margin:.2em 0}.wk-start{margin:.3em 0}.wk-in{display:block;width:100%;box-sizing:border-box;font:16px/1.5 ui-monospace,Menlo,Consolas,monospace;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);margin:.4em 0}.wk-lines{margin:.3em 0;padding-left:1.6em;font:15px/1.5 ui-monospace,Menlo,Consolas,monospace}.wk-lines .ok{color:var(--ok,#1a7f37)}.wk-lines .no{color:#b42318}
+.mathblock{overflow-x:auto;overflow-y:hidden;margin:.6em 0}.katex{font-size:1.12em}
 .worked{border:1px solid var(--line);border-left:4px solid var(--c,var(--accent));border-radius:10px;background:var(--card);padding:12px 16px;margin:14px 0}
 .worked-head{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-bottom:6px}.worked-head span{color:var(--muted);font-size:14px}
 .worked ol{margin:0;padding-left:1.4em}.worked li{padding:6px 0;border-top:1px dashed var(--line)}.worked li:first-child{border-top:0}
@@ -736,10 +884,12 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   }
   // Modules the playground offers: ?use=shapes,house, plus ?mods={name: source} for ones that live in the lesson
   if (mods && pg === PLAYGROUNDS.turtle && mods.use.length) { q.set('use', mods.use.join(',')); if (Object.keys(mods.local).length) q.set('mods', JSON.stringify(mods.local)); }
+  // Python playground data files: copied by the build to <lesson>/files/; the playground adds any the student lacks.
+  if (Array.isArray(t.files) && t.files.length) { q.set('files', t.files.map((f) => f.split('/').pop()).join(',')); q.set('from', `${lesson.slug}/files/`); }
   if (locks) q.set('locks', locks); // the create page's preview: "id~Step title|id~Step title"
   if (versions?.[pg.dir]) q.set('v', versions[pg.dir]); // a new deploy gets a new URL, never a cached old playground
   const wide = pg.dir === '_playground-makecode' && makecodeExtensions(lesson).some((e) => e.wide);
-  return `<div class="try"${wide ? ' data-wide="1"' : ''}><div class="try-head"><b>Try it yourself</b><span>${pg === PLAYGROUNDS.science ? 'Nothing is saved: start again as often as you like.' : 'Your edits are saved in this browser.'}</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
+  return `<div class="try"${wide ? ' data-wide="1"' : ''}><div class="try-head"><b>${pg === PLAYGROUNDS.microstudio ? 'Play it' : 'Try it yourself'}</b><span>${pg === PLAYGROUNDS.science ? 'Nothing is saved: start again as often as you like.' : pg === PLAYGROUNDS.microstudio ? 'Click the game to play. Make your own on microstudio.dev.' : 'Your edits are saved in this browser.'}</span><button type="button" class="try-full" aria-pressed="false" title="Give the playground the whole screen (Esc to come back)">Full screen</button></div>` +
     (pg.dir === '_playground-makecode'
       // MakeCode editors load on click: each one is heavy, and MakeCode focuses itself when it loads, which
       // scrolled the page to any editor that lazy-loaded nearby. data-src holds the address until then.

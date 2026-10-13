@@ -1,9 +1,33 @@
 ---
 order: 1
+node: AC9S10U01 n1
 unit: genetics
 title: Where are the instructions?
 summary: "DNA carries the instructions for an organism. It is coiled into chromosomes in the nucleus; a gene is a section of DNA that codes for a protein. Alleles are different versions of the same gene."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8222
+  url: http://127.0.0.1:8222/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "From body to gene"
+  say: "DNA carries the instructions; a gene is a section of DNA."
+  clip:
+    - caption: { text: "Zoom in from a person to a single gene.", say: "Zoom in from a person to a single gene." }
+    - wait: 2620
+    - click: "Zoom in"
+    - caption: { text: "Nearly every cell has the same DNA, in its nucleus.", say: "Nearly every cell has the same DNA, in its nucleus." }
+    - wait: 2950
+    - click: "Zoom in"
+    - click: "Zoom in"
+    - caption: { text: "A chromosome is one long, coiled DNA molecule.", say: "A chromosome is one long, coiled DNA molecule." }
+    - wait: 2290
+    - click: "Zoom in"
+    - click: "Zoom in"
+    - caption: { text: "A gene is a section of DNA: the code for one protein.", say: "A gene is a section of DNA: the code for one protein." }
 hook: "Unwound, the DNA in one of your cells would be about two metres long. It fits in a nucleus a hundredth of a millimetre across."
 ---
 In Year 9 you learnt gametes carry half the chromosomes. This lesson: what a chromosome is made of, and what a gene is.
@@ -47,16 +71,22 @@ tasks:
         - ["Allele", "One version of a gene"]
   - check:
       type: question
-      q: "There is one gene affecting earlobe shape, but people have attached or free earlobes. How?"
-      options: ["People have different alleles (versions) of the same gene", "There is one gene for attached and another for free", "The environment decides", "Only some people have the gene"]
+      q: "One gene decides your blood group, yet people have blood group A, B, AB or O. How?"
+      options: ["People have different alleles (versions) of the same gene", "There is a separate gene for each blood group", "The environment decides", "Only some people have the gene"]
       answer: 0
-      feedback: [null, "It's one gene in the same place on the chromosome; its versions differ.", "Earlobe shape is mostly inherited.", "Everyone has the gene; the version differs."]
+      feedback: [null, "It's one gene in the same place on the chromosome; its versions differ.", "Blood group is set by your genes, not by what happens to you.", "Everyone has the gene; the version differs."]
   - check:
       type: question
       q: "Your body cells have 46 chromosomes. Why are they described as 23 pairs?"
       options: ["One of each pair came from each parent, and the two carry the same genes (perhaps different alleles)", "Each chromosome copies itself", "Boys and girls have different chromosomes", "Pairs are easier to count"]
       answer: 0
       feedback: [null, "Copying happens before division, but the pairs come from the two parents.", "Only one pair (the sex chromosomes) differs.", "There's a biological reason."]
+  - check:
+      type: question
+      q: "Someone has the blood group alleles A and O, and their blood group is A. Which is their genotype and which their phenotype?"
+      options: ["Genotype: the alleles A and O. Phenotype: blood group A, the characteristic that shows", "Genotype: blood group A. Phenotype: the alleles A and O", "Both are 'blood group A': the words mean the same thing", "Genotype: the chromosome the gene is on. Phenotype: the gene"]
+      answer: 0
+      feedback: [null, "Swapped: the genotype is the genetic information (the alleles); the phenotype is what shows.", "They differ: someone with alleles A and A is also blood group A, with a different genotype.", "Genotype means which alleles you have, not where they are; the phenotype is the characteristic."]
   - check: { type: reflect, text: "I can explain how DNA, genes, chromosomes and alleles are related." }
 ```
 
@@ -65,6 +95,8 @@ tasks:
 ### Alleles
 
 ### Pairs
+
+### Genotype and phenotype
 
 ### In your own words
 
@@ -115,3 +147,4 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **DNA** carries coded instructions as a sequence of bases (A, T, C, G).
 - A **chromosome** is one long DNA molecule, coiled; humans have 46, in 23 pairs (one of each pair from each parent).
 - A **gene** is a section of DNA coding for a protein; **alleles** are different versions of one gene.
+- **Genotype:** the alleles you have (such as A and O). **Phenotype:** the characteristic that shows (blood group A).

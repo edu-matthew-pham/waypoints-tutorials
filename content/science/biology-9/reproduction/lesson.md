@@ -1,9 +1,33 @@
 ---
-order: 6
+order: 7
+node: AC9S9U02 n3
+woven: [AC9S9H04]
+assumes: [AC9S9U02 n2]   # reproductive organs: taught in class (no tutorial yet)
 unit: reproduction
 title: Why don't brothers and sisters look the same?
 summary: "In sexual reproduction each offspring gets a random half of each parent's genes, so offspring vary. In asexual reproduction one parent makes genetically identical clones. Variation helps a population survive change; asexual reproduction is fast and needs no partner."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8220
+  url: http://127.0.0.1:8220/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Sexual and asexual reproduction"
+  say: "Sexual reproduction gives varied offspring; asexual reproduction gives clones."
+  clip:
+    - caption: { text: "Two parents, each with two alleles for three genes.", say: "Two parents, each with two alleles for three genes." }
+    - wait: 2620
+    - click: "Sexual reproduction: one offspring"
+    - click: "Sexual reproduction: one offspring"
+    - click: "Sexual reproduction: one offspring"
+    - caption: { text: "Each offspring gets a random half from each parent, so they vary.", say: "Each offspring gets a random half from each parent, so they vary." }
+    - wait: 3610
+    - click: "Asexual reproduction: a clone of parent 1"
+    - caption: { text: "One parent: a clone, exactly the same.", say: "With one parent, the offspring is a clone, exactly the same." }
+    - wait: 600
 hook: "Two kittens from the same litter can be black and ginger. A strawberry plant's runners grow into plants identical to it. Same question, two answers."
 ---
 Gametes carry half a parent's chromosomes. This lesson: what that means for the offspring.
@@ -60,6 +84,12 @@ tasks:
       options: ["A population from sexual reproduction: some individuals are likely to have genes that resist it", "A population of clones: they are all strong", "Both the same"]
       answer: 0
       feedback: [null, "If the clone's genes are vulnerable, every clone is.", "Variation is what makes the difference."]
+  - check:
+      type: question
+      q: "A cod releases millions of eggs into the sea and leaves them. A kangaroo raises one joey at a time in her pouch for months. Why do both strategies work?"
+      options: ["A parent has limited energy: the cod spreads it over millions of eggs that mostly die, the kangaroo puts it into one joey likely to survive", "More offspring is always better, so the cod's way is best", "The kangaroo has one joey because there isn't enough food in Australia", "The cod's eggs are clones, so they don't need care"]
+      answer: 0
+      feedback: [null, "Almost every cod egg dies; the joey's care makes up for having just one.", "Food matters, but the trade-off is energy: what a parent spends on care it can't spend on more offspring.", "Cod reproduce sexually: each egg is fertilised and different."]
   - check: { type: reflect, text: "I can explain why sexual reproduction makes varied offspring and asexual reproduction makes clones, with an advantage of each." }
 ```
 
@@ -68,6 +98,8 @@ tasks:
 ### Why they vary
 
 ### Survival
+
+### Many or few
 
 ### In your own words
 
@@ -98,9 +130,38 @@ check:
   q: "Nearly all supermarket bananas (Cavendish) are clones grown from cuttings. Panama disease is spreading through banana farms. Why are growers worried?"
   options: ["The clones all have the same genes, so if one is vulnerable, every plant is", "Clones grow too slowly", "Clones can't make bananas", "Disease only affects clones"]
   answer: 0
-  feedback: [null, "Clones grow fine.", "They fruit normally.", "Disease affects all bananas; clones just share one weakness."]
+  feedback: [null, "Clones grow fine.", "They fruit normally.", "Varied bananas catch it too, but some resist it; a field of clones shares one weakness."]
   explain: "This happened before: the Gros Michel banana was wiped out of commercial farming in the 1950s by an earlier strain of Panama disease."
 ```
+
+## Elaborate: who decides what gets researched?
+
+```step
+stage: modify
+tier: typical
+insight: "A resistant banana developed in Australia shows society's needs and values steering what scientists research and which methods they use."
+tasks:
+  - check:
+      type: question
+      q: "Why did a Cavendish banana that resists Tropical Race 4 become a research focus in Australia?"
+      options: ["Society needed it: a fruit most Australians eat, and many growers' farms and jobs, were at risk from a disease with no cure", "Scientists research only what interests them, whatever anyone needs", "It was the quickest, easiest banana research to do", "A law says every crop must be gene-modified"]
+      answer: 0
+      feedback: [null, "Curiosity matters, but funders, industry and governments steer research towards urgent needs.", "It took many years of lab work and field trials.", "There is no such law: most crops are not gene-modified."]
+      explain: "Research costs money and time. Needs that matter to many people, such as food and jobs, attract the funding and the effort."
+  - check:
+      type: question
+      q: "Some people don't want to eat gene-modified food. How can a value like that influence the research?"
+      options: ["It can steer researchers towards other methods as well, such as breeding resistant bananas, and affect whether a GM banana is ever grown", "It can't: people's values never affect research", "It changes how fast the fungus spreads", "It makes the resistant banana unsafe to eat"]
+      answer: 0
+      feedback: [null, "Researchers and funders watch what people will accept: a banana nobody buys solves nothing.", "Values change people's choices, not the fungus.", "Safety is judged by regulators from evidence, not by opinion."]
+      explain: "Society's values shape which questions get asked, which methods are used and whether a result is taken up."
+```
+
+### The need
+
+In 2015 Tropical Race 4, a strain of Panama disease, was found on a banana farm near Tully in far north Queensland, where most of Australia's bananas are grown. Researchers at the Queensland University of Technology developed a Cavendish banana carrying a resistance gene from a wild banana, and Australian regulators approved it in 2024.
+
+### Values
 
 ## Evaluate: look back
 

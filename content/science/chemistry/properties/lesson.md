@@ -1,9 +1,37 @@
 ---
 order: 3
+node: AC9S7U05 n3
+woven: [AC9S7I01]
 unit: particles
 title: Why can you squash air but not water?
 summary: Use particle theory to explain physical properties (how easily a substance squashes, its density, how it flows) by naming the arrangement, motion or attraction behind each one.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8249
+  url: http://127.0.0.1:8249/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "Wax in a syringe: its particles are already touching, so pushing the plunger can't squash it. Air, with space between its particles, squashes easily." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Properties from particles"
+  say: "Every property comes from a particle feature."
+  clip:
+    - caption: { text: "A syringe of air. Push the plunger.", say: "Here is a syringe of air. Push the plunger." }
+    - wait: 2620
+    - click: "Air"
+    - click: { selector: "input[type=range]" }
+    - press: "End"
+    - wait: 1500
+    - caption: { text: "Air squashes: its particles have lots of empty space between them.", say: "Air squashes, because there is lots of empty space between its particles." }
+    - wait: 3610
+    - click: "Water"
+    - click: { selector: "input[type=range]" }
+    - press: "End"
+    - wait: 1500
+    - caption: { text: "Water barely squashes: its particles are already close together.", say: "Water barely squashes: its particles are already close together." }
+    - wait: 800
 hook: "Seal the end of a syringe full of air and you can push the plunger a long way in. Do the same with water and it barely moves. Particle theory explains why, and the same explanation works for density, runny honey and smells crossing a room."
 ---
 This lesson moves from describing particles to **explaining properties** with them. Every explanation names a particle feature: arrangement, motion or attraction.
@@ -62,6 +90,20 @@ tasks:
 
 In your book: explain **two** properties, why air can be squashed and why air is less dense than water. Check: did you name the arrangement, motion or attraction behind each one?
 
+## Mix it up
+
+```step
+stage: practise
+insight: "Particles never change size: the same particles in a different arrangement explain the three states, and this lesson depends on it."
+check:
+  type: question
+  q: "Looking back at the particle model: a drop of water is heated until it becomes steam. What happens to the water particles?"
+  options: ["They stay the same size, but move faster and spread far apart", "They get bigger", "They break into smaller pieces", "They disappear"]
+  answer: 0
+  feedback: [null, "Particles never change size. The spaces between them grow.", "Steam is still water: the same particles, now far apart.", "Nothing is lost. The same particles are still there, just spread out."]
+  explain: "Ice, water and steam are the same particles. Only their arrangement and motion change, so any squashing comes from the space between them."
+```
+
 ## Elaborate: three substances
 
 ```step
@@ -76,7 +118,7 @@ check:
     - ["Honey pours much more slowly than water.", "Attraction: how strongly particles pull on each other", "Honey particles attract each other more strongly, so they don't slide past each other easily."]
     - ["Air can be squashed but water can't.", "Arrangement: how close and ordered the particles are", "Air particles are far apart; water particles are already close."]
     - ["Water is about 800 times denser than air.", "Arrangement: how close and ordered the particles are", "Water packs far more particles into each cm³."]
-    - ["The smell of honey spreads through a whole room.", "Motion: how fast the particles move", "Air particles move fast and smell particles are carried along quickly."]
+    - ["The smell of honey spreads through a whole room.", "Motion: how fast the particles move", "Smell particles keep moving and spread out between the moving air particles."]
     - ["Warm honey pours faster than cold honey.", "Motion: how fast the particles move", "Faster particles overcome the attraction more easily."]
   explain: "Honey and water have the same arrangement but behave differently: attraction makes the difference."
 ```
@@ -148,18 +190,21 @@ tasks:
       q: "Can X be squashed easily?"
       options: ["Yes, easily", "No, hardly at all"]
       answer: 1
+      feedback: ["Look at the diagram: the particles are already close together, with no space to push them into.", null]
       explain: "Its particles are already close together."
   - check:
       type: question
       q: "Does X flow?"
       options: ["No, it holds its shape", "Yes, easily like water", "Yes, but slowly"]
       answer: 2
+      feedback: ["There is no fixed pattern, so the particles can slide past each other.", "The particles attract strongly, which holds them back as they slide.", null]
       explain: "No fixed pattern, so it flows; strong attraction makes it slow."
   - check:
       type: question
       q: "If you warm X, how does its flow change?"
       options: ["It flows faster", "It flows slower", "No change"]
       answer: 0
+      feedback: [null, "Warming makes the particles move faster, which helps them overcome the attraction.", "Warming changes how fast the particles move, and that changes how easily they slide."]
       explain: "X is glycerol, a syrupy liquid used in soap and cough syrup. It barely compresses, pours roughly a thousand times more slowly than water at room temperature, and runs much more freely when warm."
 ```
 
@@ -182,5 +227,5 @@ Which syringe did you predict would move furthest, and why? Write one sentence: 
 
 - Gases can be squashed because their particles are far apart, with lots of empty space between them.
 - Solids and liquids hardly squash at all: their particles are already close together.
-- Gases are much less dense because there are far fewer particles in each cm³. Solids and liquids have similar densities.
+- Gases are much less dense because there are far fewer particles in each cm³. The same substance as a solid or a liquid has a similar density: its particles are close together in both.
 - The particles themselves never shrink or squash. Only the spaces between them change.

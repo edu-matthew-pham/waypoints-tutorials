@@ -1,0 +1,18 @@
+activities:
+  - at: start
+    kind: info
+    title: "By the end of this lesson"
+    do: |
+      Here is the finished program running. By the end of the lesson you will write one like it.
+    notes: "Run the finished example on the projector before anything else."
+  - at: investigate
+    title: "Be the computer"
+    minutes: 5
+    do: |
+      Students hold cards for sides, size and colour. Change one card; the class says which drawing changes.
+    notes: "Make the idea physical before it goes back to the screen."
+  - at: end
+    title: Change one number
+    minutes: 3
+    do: |
+      Swap screens with the next pair. Change one number in their generator and say what shape it will draw before you run it.

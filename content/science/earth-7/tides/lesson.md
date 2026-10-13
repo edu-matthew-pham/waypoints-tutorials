@@ -1,9 +1,32 @@
 ---
 order: 5
+node: AC9S7U03 n5
+woven: [AC9S7I05]
 unit: moon
 title: Why are there two high tides a day?
 summary: "The moon's gravity pulls the oceans into two bulges, one facing the moon and one on the far side; the Earth spins through both, so most coasts get two high tides a day. Spring tides (biggest range) come at new and full moon, when the sun and moon pull in line; neap tides at the quarters."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8229
+  url: http://127.0.0.1:8229/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "The oceans pulled into two bulges by the moon (and two smaller ones by the sun)." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Tides"
+  say: "The moon pulls the oceans into two bulges; the Earth spins through both."
+  clip:
+    - caption: { text: "The moon's gravity pulls the oceans into two bulges.", say: "The moon's gravity pulls the oceans into two bulges." }
+    - wait: 2620
+    - click: "Play a day at the beach"
+    - wait: 1500
+    - caption: { text: "The Earth spins through both bulges: two high tides a day.", say: "The Earth spins through both bulges: two high tides a day." }
+    - wait: 2500
+    - click: "Moon: next quarter"
+    - caption: { text: "At the quarters, sun and moon pull at right angles: small neap tides.", say: "At the quarters, sun and moon pull at right angles: small neap tides." }
+    - wait: 800
 hook: "At a beach the water creeps up the sand and back down about every 12 and a half hours, and the biggest tides of the month always arrive near a new or full moon."
 ---
 You know the moon's phases and positions. This lesson connects them to the oceans.
@@ -74,6 +97,20 @@ tasks:
 
 In your book: draw the Earth with its two bulges and the moon, then the sun in line (spring) and at right angles (neap).
 
+## Mix it up
+
+```step
+stage: practise
+insight: "Spring and neap tides depend on where the moon is in its orbit, which the phases lesson laid out."
+check:
+  type: question
+  q: "Looking back at the moon's phases: at new moon, where is the moon?"
+  options: ["Between the Earth and the sun, so the sun, moon and Earth are in a line", "On the far side of the Earth from the sun", "At a right angle to the sun", "Behind the sun"]
+  answer: 0
+  feedback: [null, "That is full moon.", "That is a quarter moon.", "The moon always goes round the Earth, never round the sun."]
+  explain: "At new moon the moon is between the Earth and the sun. The sun and moon pull in line, which gives a spring tide."
+```
+
 ## Elaborate: reading a tide chart
 
 ```step
@@ -97,9 +134,9 @@ insight: "Using the moon's phase to predict extreme low tides applies the model,
 check:
   type: question
   q: "Reef walking and gathering shellfish is best at the lowest low tides. When should you plan to go?"
-  options: ["Near a new or full moon, at low tide: spring tides give the lowest lows", "At a quarter moon", "Any day: low tides are always the same", "At noon every day"]
+  options: ["Near a new or full moon, at low tide: spring tides give the lowest lows", "At a quarter moon", "Any day: low tides are always the same", "When the moon is high overhead"]
   answer: 0
-  feedback: [null, "Quarter moons give neap tides: the smallest range, so the lows are not very low.", "The chart shows the range changes through the month.", "Low tide moves about 50 minutes later each day."]
+  feedback: [null, "Quarter moons give neap tides: the smallest range, so the lows are not very low.", "The chart shows the range changes through the month.", "In the bulge model, the moon overhead puts your coast under a bulge: high tide, not low."]
   explain: "Many coastal First Nations communities have long timed fishing and gathering by the moon and tides; ask local knowledge holders about your own coast."
 ```
 

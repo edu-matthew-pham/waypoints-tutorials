@@ -1,9 +1,31 @@
 ---
-order: 3
+order: 4
+node: AC9S7U02 n1
+woven: [AC9S7I04]
 unit: foodwebs
 title: Who eats whom?
 summary: A food web joins all the food chains in an ecosystem. Arrows point the way energy flows, from the food to the eater. Every organism is a producer, a consumer or a decomposer, and decomposers include microorganisms.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8209
+  url: http://127.0.0.1:8209/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain-pic, caption: "Arrows point from the food to the eater: the way energy flows." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Arrows in a food web"
+  say: "Arrows in a food web point the way energy flows, from food to eater."
+  clip:
+    - caption: { text: "A kangaroo eats grass. Click the food, then the eater.", say: "A kangaroo eats grass. Click the food first, then the eater." }
+    - click: "Grass"
+    - click: "Kangaroo"
+    - caption: { text: "The arrow points from grass to kangaroo: the energy goes into the kangaroo.", say: "The arrow points from the grass to the kangaroo, the way the energy goes." }
+    - click: "Kangaroo"
+    - click: "Dingo"
+    - caption: { text: "A dingo eats kangaroos: kangaroo → dingo.", say: "A dingo eats kangaroos, so the next arrow points from kangaroo to dingo." }
+    - wait: 1000
 hook: "A kookaburra eats lizards, grasshoppers, even small snakes. A food chain can only show one of those meals. How do you show all of them?"
 ---
 Food chains are a start. This lesson builds the whole web.
@@ -73,6 +95,20 @@ tasks:
 ### In your own words
 
 In your book: copy the bush web, with every arrow, and label each organism's role.
+
+## Mix it up
+
+```step
+stage: practise
+insight: "Where organisms get their food decides their role in a web. Fungi absorb food from dead material, which makes them decomposers."
+check:
+  type: question
+  q: "Looking back at the kingdoms: a mushroom grows on a dead log. How does it get its food?"
+  options: ["It absorbs food from the dead log: it is a fungus, so it is a decomposer", "It makes food from sunlight, like a plant", "It hunts and eats small animals", "It makes food from the soil, like a plant"]
+  answer: 0
+  feedback: [null, "A mushroom is not green and cannot make food from sunlight.", "Mushrooms do not catch food. Fungi absorb it from dead material.", "Plants make food from sunlight. Fungi absorb food from other material."]
+  explain: "Fungi absorb food from dead material. In a food web that makes them decomposers."
+```
 
 ## Elaborate: chain or web?
 

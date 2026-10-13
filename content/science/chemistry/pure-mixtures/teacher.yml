@@ -1,6 +1,6 @@
 summary: Students distinguish pure substances from mixtures at the particle level and classify familiar materials with a particle reason (AC9S7U06, node 1, a hinge node).
 time: 25
-timing: "Engage and Explore 8 min · Explain 10 min · Evaluate 3 min · Typical adds 5 min, Wider about 15 min"
+timing: "Engage and Explore 8 min · Explain 10 min · Even and uneven mixtures 5 min · Evaluate 3 min · Wider adds about 15 min"
 goals:
   - I can tell a pure substance from a mixture using a particle diagram.
   - I can classify familiar materials and give a particle reason.
@@ -13,6 +13,7 @@ running:
   - "Engage: ask who chose the juice. The shopping meaning of 'pure' is the main competitor."
   - "Explore: ask students to count kinds of particles aloud for each sample."
   - "Explain: salt water is the key case. If they get it, they have the definition."
+struggle: "Judging by kinds of particle, not by how clear or 'natural' it looks. When a student says salt water is pure, ask how many kinds of particle are in the sample."
 stuck:
   - see: "A student says salt water is pure because it is clear."
     ask: "How many kinds of particles did you count in the salt water sample?"

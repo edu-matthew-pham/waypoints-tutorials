@@ -1,9 +1,31 @@
 ---
 order: 2
+node: AC9S7U04 n2
 unit: forces
 title: Does balanced mean no forces?
+introduces: [balanced-forces]
 summary: Balanced forces cancel out (the net force is zero), so the motion doesn't change. The object stays still or keeps moving at a steady speed. Unbalanced forces change the motion.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8201
+  url: http://127.0.0.1:8201/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain-pic, caption: "Push 4 N, friction 4 N: balanced, so the net force is 0 N and the motion doesn't change." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Balanced forces"
+  say: "Balanced forces cancel out, but they are still there."
+  clip:
+    - caption: { text: "The box is already moving. Push 4 N forward, friction 4 N back.", say: "The moving box has four newtons of push forward and four of friction back." }
+    - click: "Play"
+    - wait: 1500
+    - caption: { text: "Balanced: net force 0 N. The dots stay evenly spaced.", say: "The forces are balanced, so the dots stay evenly spaced." }
+    - wait: 2500
+    - expect: { selector: "body", contains: "speed 2 m/s" }
+    - caption: { text: "Balanced doesn't mean no forces: it means no change in motion.", say: "Balanced doesn't mean no forces: it means the motion doesn't change." }
+    - wait: 800
 hook: "A car cruises down the highway at a steady 100 km/h, engine running. Is its engine pushing harder than the air and the road are holding it back?"
 ---
 Last lesson: drawing forces. This lesson: what the diagram tells you about the motion.
@@ -77,6 +99,20 @@ tasks:
 
 In your book: explain why "balanced forces" doesn't mean "no forces", using the box on the board as your example.
 
+## Mix it up
+
+```step
+stage: practise
+insight: "Balanced forces are equal and opposite, which only makes sense once arrow length is read as the size of the force."
+check:
+  type: question
+  q: "Looking back at force arrows: a diagram shows a 30 N push to the right and 10 N of friction to the left. How do the arrows look?"
+  options: ["The push arrow is three times as long as the friction arrow, and they point opposite ways", "The two arrows are the same length", "Both arrows point to the right", "The friction arrow is longer, because friction is stronger"]
+  answer: 0
+  feedback: [null, "The forces are different sizes, so the arrows are different lengths.", "Friction acts against the push, so its arrow points the other way.", "The push is the bigger force (30 N against 10 N), so its arrow is longer."]
+  explain: "The length of an arrow shows the size of the force, and it points the way the force acts. 30 N is three times 10 N."
+```
+
 ## Elaborate: the falling skydiver
 
 ```step
@@ -85,7 +121,7 @@ tier: typical
 insight: "A vertical case with motion (falling at a steady speed) tests whether students apply 'balanced means no change in motion' beyond the board's horizontal case."
 try: { playground: board, starter: "boards.yml#skydiver", height: 560 }
 tasks:
-  - check: { type: board, text: "A 70 kg skydiver (weight 700 N) falls at a steady speed. Set the air resistance.", when: "A = 700" }
+  - check: { type: board, text: "A skydiver and her gear, 100 kg (weight 980 N), fall at a steady speed. Set the air resistance.", when: "A = 980" }
   - check:
       type: question
       q: "Her forces are balanced. Is she still falling?"

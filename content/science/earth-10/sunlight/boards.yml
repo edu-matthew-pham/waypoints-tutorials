@@ -1,0 +1,17 @@
+# Boards for "Where does the sunlight go?".
+
+# region: surfaces
+widget: climate
+mode: albedo
+# endregion
+
+# region: explain
+widget: climate
+mode: albedo
+# endregion
+
+# region: explain-pic
+widget: climate
+mode: albedo
+tiles: ocean, forest, ice, desert
+# endregion

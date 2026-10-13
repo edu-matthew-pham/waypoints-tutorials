@@ -1,9 +1,31 @@
 ---
 order: 2
+node: AC9S10U01 n3
+assumes: [AC9S10U01 n2]   # mitosis: taught in class (no tutorial yet)
 unit: genetics
 title: Why is every sperm and egg different?
 summary: "Meiosis makes gametes. The chromosome pairs separate and each gamete gets one chromosome from each pair, chosen at random, so it has half the number and a different combination. With 23 pairs there are over 8 million combinations."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8223
+  url: http://127.0.0.1:8223/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Meiosis"
+  say: "Meiosis gives each gamete one chromosome from each pair, chosen at random."
+  clip:
+    - caption: { text: "Three pairs: one of each pair came from each parent.", say: "Three pairs of chromosomes: one of each pair came from each parent." }
+    - wait: 3610
+    - click: "Make a gamete"
+    - caption: { text: "A gamete gets one from each pair, chosen at random.", say: "A gamete gets one from each pair, chosen at random." }
+    - wait: 2950
+    - click: "Make a gamete"
+    - click: "Make a gamete"
+    - caption: { text: "Each gamete is a different mix: over 8 million in humans.", say: "Each gamete is a different mix: over eight million possible in humans." }
+    - wait: 600
 hook: "You and your brother or sister came from the same two parents. The chance that two of their sperm or eggs carry exactly the same chromosomes is tiny."
 ---
 Chromosomes come in pairs, one from each parent. This lesson: how gametes get half, and why each is different.
@@ -51,9 +73,9 @@ tasks:
   - check:
       type: question
       q: "Humans have 23 pairs. About how many different combinations are possible?"
-      options: ["2 to the power 23: over 8 million", "23", "46", "23 × 2 = 46"]
+      options: ["2 to the power 23: over 8 million", "23: one new combination for each pair", "2 × 23 = 46: two choices for each of 23 pairs", "23 × 23 = 529"]
       answer: 0
-      feedback: [null, "Each pair doubles the number.", "Each pair doubles the number, it doesn't add one.", "It's multiplied, 2 × 2 × 2 … 23 times."]
+      feedback: [null, "Each pair doesn't add one combination: it doubles the number there already.", "That adds the choices. Choices for different pairs multiply: 2 × 2 × 2 … 23 times.", "Each pair has 2 choices, so multiply 2 by itself 23 times, not 23 by itself."]
   - check: { type: reflect, text: "I can explain how meiosis halves the chromosome number and makes every gamete a different combination." }
 ```
 
@@ -71,7 +93,6 @@ In your book: draw a cell with two pairs of chromosomes and all four gametes it 
 
 ```step
 stage: modify
-tier: typical
 insight: "Contrasting meiosis with ordinary cell division stops students mixing them up."
 check:
   type: sort

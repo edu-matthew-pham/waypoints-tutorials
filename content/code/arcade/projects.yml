@@ -1,0 +1,37 @@
+playground: arcade
+projects:
+  - id: treasure-hunt
+    title: Treasure hunt
+    after: arcade-if
+    goal: |
+      Make a **collecting game**: the player moves around, treasure appears in random places, collecting it scores, and something changes when the score gets high enough (the background, the speed, a message). Your own player, treasure and setting.
+    example: treasure-hunt.ts
+    uses: [variable, random, if]
+    milestones:
+      - "My player moves with the controller and the treasure appears somewhere new each time."
+      - "Touching the treasure scores a point."
+      - "Something changes when the score passes a number I chose, decided by an if."
+    stretch:
+      - "A countdown: score as much as you can in 30 seconds."
+      - "Two kinds of treasure, worth different points."
+      - "A hazard that costs a life."
+    teacher: |
+      All blocks from Arcade Foundations lessons 1 to 7. Students who want art can draw their own sprites in the image editor; set a time limit on drawing.
+
+  - id: escape
+    title: Escape
+    after: arcade-chase
+    goal: |
+      Make a **chase game**: enemies follow the player around the screen, and the player has to survive, reach a goal or collect things to escape. How the enemies move, and how you win, are your choice.
+    example: escape.ts
+    uses: [if, else, random]
+    milestones:
+      - "At least one enemy follows the player (it turns towards them, using if and else)."
+      - "Getting caught costs a life, once per catch."
+      - "There is a way to win, and the game says so."
+    stretch:
+      - "Enemies that speed up over time."
+      - "A safe zone where enemies cannot go."
+      - "An enemy that runs away instead."
+    teacher: |
+      The usual bug is losing all lives at once: the enemy must be destroyed or moved away in the overlap, as in Score and lives. Ask students to say how the enemy decides which way to go before they build it.

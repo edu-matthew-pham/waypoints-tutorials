@@ -1,9 +1,29 @@
 ---
-order: 1
+order: 7
+node: AC9S9U07 n2
+woven: [AC9S9I06]
 unit: equations
 title: Where do the atoms go?
 summary: In a chemical reaction atoms are rearranged into new particles, never made or destroyed. Counting atoms before and after shows why mass is conserved and why equations must balance.
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8246
+  url: http://127.0.0.1:8246/index.html
+  readySelector: "#board svg"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "Hydrogen and oxygen before they react: the same atoms will be rearranged into water." }
+explainClip:
+  query: { code: "@boards.yml#explain", id: explain }
+  caption: "Rearranging atoms"
+  say: "In a reaction atoms are rearranged; none are made or destroyed."
+  clip:
+    - caption: { text: "Hydrogen and oxygen react to make water.", say: "Hydrogen and oxygen react to make water." }
+    - wait: 4500
+    - caption: { text: "Check the atom tally: the same atoms before and now.", say: "Check the atom tally: the same atoms before and now." }
+    - wait: 2500
+    - caption: { text: "Atoms are rearranged, not made or destroyed, so mass is conserved.", say: "Atoms are rearranged, not made or destroyed, so mass is conserved." }
+    - wait: 800
 hook: "A log burns down to a handful of ash. Where did the rest of the log go?"
 ---
 You know a chemical change makes a new substance. This lesson follows the atoms.
@@ -74,7 +94,7 @@ tasks:
 
 ### In your own words
 
-In your book: explain, using atoms, why the total mass is the same before and after a reaction.
+In your book: draw CH₄ + 2O₂ → CO₂ + 2H₂O as particles before and after, with each atom as a labelled circle. Then explain, using atoms, why the total mass is the same before and after a reaction.
 
 ## Practise: balanced or not?
 

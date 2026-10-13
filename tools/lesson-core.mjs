@@ -10,6 +10,12 @@ export const LAYOUTS = ['split', 'full'];
 /** Voiceover (frontmatter `voice:`): Kokoro voices graded A to C on its model card; US and UK English only. */
 export const VOICES = ['af_heart', 'af_bella', 'bf_emma', 'am_fenrir', 'am_michael', 'bm_george', 'bm_fable'];
 export const DEFAULT_VOICE = 'af_heart';
+/** Voices students can choose between on voiced clips (picker under the clip, saved per browser as `wp-voice`).
+ * The lesson's own voice is mixed into clips/<id>.mp4; each other voice here gets clips/<id>.<voice>.m4a. */
+export const CLIP_VOICES = ['bf_emma', 'bm_george', 'af_heart'];
+export const VOICE_LABELS = { af_heart: 'Heart', af_bella: 'Bella', bf_emma: 'Emma', am_fenrir: 'Fenrir', am_michael: 'Michael', bm_george: 'George', bm_fable: 'Fable' };
+/** The voices recorded beside a lesson's own voice (same speed), as voice specs. */
+export const otherVoices = (spec) => (spec ? CLIP_VOICES.filter((n) => n !== spec.name).map((name) => ({ name, speed: spec.speed })) : []);
 /** A spoken line longer than this many words gets a validate warning: one sentence keeps clips short. */
 export const SAY_MAX_WORDS = 15;
 /** Frontmatter `voice:` -> { name, speed } or null. Accepts true, a voice name, or { name, speed }. */
@@ -24,7 +30,7 @@ export function voiceSpec(v) {
 export const captionText = (v) => (v && typeof v === 'object' ? String(v.text ?? '') : String(v ?? ''));
 export const captionSay = (v) => (v && typeof v === 'object' && v.say !== undefined ? String(v.say) : captionText(v));
 // board: interactive diagrams (balance, machine, graph…); maths is its old name and still works.
-export const PLAYGROUND_KINDS = ['turtle', 'html', 'board', 'maths', 'microbit', 'arcade', 'science'];
+export const PLAYGROUND_KINDS = ['turtle', 'python', 'microstudio', 'p5', 'dom', 'html', 'board', 'maths', 'microbit', 'arcade', 'science'];
 const isBoard = (pg) => ['board', 'maths', 'science'].includes(pg);
 /** What a board check can expect from a board's report: the board (balance, machine), and the science board (done: the widget's task is finished). Newer boards use when: conditions. */
 export const BOARD_KEYS = ['balanced', 'solved', 'x'];
@@ -47,13 +53,13 @@ export const MAKECODE_EXTENSIONS = {
   // ml: micro:bit CreateAI's Machine Learning blocks with practice actions (still, walking, running, jumping, waving,
   // clapping) from this repo's makecode-ext/ml-events (a nested GitHub extension, pinned by the commit that last changed it: this sandbox can't push tags), so lessons can use the
   // blocks and the ML simulator panel without a trained model. It brings machine-learning in as its dependency.
-  ml: { name: 'waypoints-ml-events', version: 'github:edu-matthew-pham/waypoints-tutorials/makecode-ext/ml-events#138b5b2de8df62ae000535e6b29628dcfefde685', target: 'microbit', wide: true, noSimPicture: true },
+  ml: { name: 'waypoints-ml-events', version: 'github:cggs-matthew-pham/tutorials/makecode-ext/ml-events#9d016cb3d6bbef4e344f9066d477a9f4fbcc4382', target: 'microbit', wide: true, noSimPicture: true },
 };
 /** The extension settings a lesson uses (known keys only). */
 export const makecodeExtensions = (lesson) => (Array.isArray(lesson?.extensions) ? lesson.extensions : []).map((k) => MAKECODE_EXTENSIONS[k]).filter(Boolean);
 /** A lesson's extensions as MakeCode's package string ("name=version,name=version"), or '' for none. */
 export const makecodePackage = (lesson) => makecodeExtensions(lesson).map((e) => `${e.name}=${e.version}`).join(',');
-export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board', 'sort'];
+export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board', 'sort', 'flag', 'working', 'reasoning'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
 
@@ -76,6 +82,8 @@ export const CODE_RULES = ['defs', 'calls', 'loops', 'returns', 'params', 'impor
 /** Code rules the HTML playground can check (HTML has no functions or loops). */
 export const HTML_RULES = ['contains', 'tags'];
 /** Code rules the MakeCode playgrounds can check (read from main.ts, the JavaScript the blocks compile to). */
+/** Code rules the p5.js playground can check (JavaScript read from the student's text). */
+export const P5_RULES = ['contains', 'defs', 'params', 'calls', 'loops', 'returns', 'uses'];
 export const MAKECODE_RULES = ['contains', 'inside', 'count', 'defs', 'calls', 'params'];
 
 /**
@@ -93,6 +101,28 @@ export function evalRules(rules, text, kind) {
     (rules.tags || []).forEach((t) => out.push({ label: `Use <${t}>`, ok: new RegExp('<' + String(t).toLowerCase() + '[\\s>/]').test(src) }));
     const flatH = src.replace(/\s+/g, '');
     (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flatH.includes(String(frag).toLowerCase().replace(/\s+/g, '')) }));
+    return out;
+  }
+  // kind 'p5': JavaScript for p5.js. Comments are // and /* */ (quotes respected). defs/params/calls read the student's own
+  // functions (`function name(a, b)`); p5's own hooks (setup, draw, mousePressed...) are not counted as theirs.
+  if (kind === 'p5') {
+    const HOOKS = ['setup', 'draw', 'preload', 'mousePressed', 'mouseReleased', 'mouseClicked', 'mouseMoved', 'mouseDragged', 'doubleClicked', 'mouseWheel', 'keyPressed', 'keyReleased', 'keyTyped', 'windowResized', 'touchStarted', 'touchEnded', 'touchMoved'];
+    const noJs = (l) => { let q = null; for (let i = 0; i < l.length; i++) { const c = l[i]; if (q) { if (c === '\\') i++; else if (c === q) q = null; } else if (c === '"' || c === "'" || c === '`') q = c; else if (c === '/' && l[i + 1] === '/') return l.slice(0, i); } return l; };
+    const lines = String(text).replace(/\/\*[\s\S]*?\*\//g, '').split('\n').map(noJs);
+    const src = lines.join('\n');
+    const fdefs = []; src.replace(/\bfunction\s+([A-Za-z_$][\w$]*)\s*\(([^)]*)\)/g, (m, n, ps) => { if (!HOOKS.includes(n)) fdefs.push({ name: n, params: ps.split(',').filter((x) => x.trim()).length }); return m; });
+    const esc$ = (n) => String(n).replace(/\$/g, '\\$');
+    const fcalls = (n) => (src.match(new RegExp('(^|[^\\w$.])' + esc$(n) + '\\s*\\(', 'g')) || []).length - (src.match(new RegExp('function\\s+' + esc$(n) + '\\s*\\(', 'g')) || []).length;
+    const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+    const out = [];
+    if (rules.defs) out.push({ label: `Write at least ${plural(rules.defs, 'function')} of your own`, ok: fdefs.length >= rules.defs });
+    if (rules.params) out.push({ label: `Write a function with at least ${plural(rules.params, 'parameter')}`, ok: fdefs.some((d) => d.params >= rules.params) });
+    if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...fdefs.map((d) => fcalls(d.name))) >= rules.calls });
+    if (rules.loops) out.push({ label: rules.loops === 1 ? 'Use a loop' : `Use at least ${rules.loops} loops`, ok: lines.filter((l) => /\b(for|while)\s*\(/.test(l)).length >= rules.loops });
+    if (rules.returns) out.push({ label: 'Use return to give a value back', ok: lines.filter((l) => /\breturn\b/.test(l)).length >= rules.returns });
+    (rules.uses || []).forEach((n) => out.push({ label: `Use ${n}`, ok: new RegExp('(^|[^\\w$])' + esc$(n) + '([^\\w$]|$)').test(src) }));
+    const flatP = src.replace(/\s+/g, '');
+    (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flatP.includes(String(frag).replace(/\s+/g, '')) }));
     return out;
   }
   // kind 'microbit' / 'arcade': MakeCode JavaScript (main.ts). Comments are // and /* */; everything is compared with
@@ -126,7 +156,9 @@ export function evalRules(rules, text, kind) {
     if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...fdefs.map((d) => fcalls(d.name))) >= rules.calls });
     return out;
   }
-  const code = String(text).split('\n').map((l) => l.replace(/#.*$/, ''));
+  // Comments end at the line's end; a # inside quotes ("#" * 5, "#ff0000") is text, not a comment.
+  const noComment = (l) => { let q = null; for (let i = 0; i < l.length; i++) { const c = l[i]; if (q) { if (c === '\\') i++; else if (c === q) q = null; } else if (c === '"' || c === "'") q = c; else if (c === '#') return l.slice(0, i); } return l; };
+  const code = String(text).split('\n').map(noComment);
   const defs = [];
   code.forEach((l) => { const m = l.match(/^\s*def\s+([A-Za-z_]\w*)\s*\(([^)]*)\)/); if (m) defs.push({ name: m[1], params: m[2].split(',').filter((x) => x.trim()).length }); });
   const count = (re) => code.filter((l) => re.test(l)).length;
@@ -156,7 +188,8 @@ export const FEATURES = [
 export const snippetId = (label) => String(label).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 /** Which playground (and so which snippet list) a step's unlocks refer to. */
-export const unlockKind = (lesson, step) => step.config.try?.playground || (lesson.language === 'html' ? 'html' : lesson.language === 'science' ? 'science' : 'turtle');
+// The Python playground (Pyodide) shares the turtle playground's Python snippets, unlocks and code rules.
+export const unlockKind = (lesson, step) => (['python', 'microstudio'].includes(step.config.try?.playground) ? 'turtle' : step.config.try?.playground === 'dom' ? 'html' : step.config.try?.playground) || (lesson.language === 'html' ? 'html' : lesson.language === 'javascript' ? 'p5' : lesson.language === 'science' ? 'science' : 'turtle');
 
 export const DEFAULT_PACING = {
   typeCps: 55,        // characters per second when code is "typed" into the stage's code panel
@@ -216,12 +249,79 @@ export function bugKeys(answer) {
 }
 
 /** Parse lesson.md text into a lesson object (no files touched). */
+// Option order (12 Oct 2026). Authors write the right option first; the page, guide, deck and worksheet show a fixed
+// shuffle of it, so the answer is not always first. The order is seeded by the lesson and the question, so it is the
+// same on every build. Options that are numbers are sorted instead. Catch-all options ("None of them", "Neither",
+// "You cannot tell", ...) stay last. `shuffle: false` on a check keeps the authored order. `answer` and per-option
+// `feedback` are remapped; `authoredAnswer` keeps the original index for messages that quote it.
+const CATCH_ALL = /^(none|all|both|neither)( of (these|them|those|the above))?[.!]?$|^(you )?(can('|no)?t|cannot) tell|^not enough (information|to tell)|^it depends/i;
+function seeded(text) {
+  let h = 2166136261; for (let i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return function () { h |= 0; h = h + 0x6D2B79F5 | 0; let x = Math.imul(h ^ h >>> 15, 1 | h); x = x + Math.imul(x ^ x >>> 7, 61 | x) ^ x; return ((x ^ x >>> 14) >>> 0) / 4294967296; };
+}
+function optionValue(o) {
+  const t = String(o).trim().replace(/[−–]/g, '-').replace(/,(?=\d{3}\b)/g, '').replace(/\s*(%|°|cm|m|km|kg|g|L|mL|s)$/, '');
+  if (/^-?\d+(\.\d+)?$/.test(t)) return Number(t);
+  const f = /^(-?\d+)\/(\d+)$/.exec(t); if (f && Number(f[2])) return Number(f[1]) / Number(f[2]);
+  return null;
+}
+export function arrangeOptions(k, seed) {
+  if (!k || typeof k !== 'object' || !['question', 'predict'].includes(k.type) || k.shuffle === false) return k;
+  const opts = k.options;
+  if (!Array.isArray(opts) || opts.length < 2 || !opts.every((o) => typeof o === 'string')) return k;
+  if (k.type === 'question' && !(Number.isInteger(k.answer) && k.answer >= 0 && k.answer < opts.length)) return k;
+  if (k.feedback !== undefined && !(Array.isArray(k.feedback) && k.feedback.length === opts.length)) return k;
+  const idx = opts.map((_, i) => i);
+  let order;
+  const vals = opts.map(optionValue);
+  if (vals.every((v) => v !== null)) order = idx.slice().sort((a, b) => vals[a] - vals[b]);
+  else {
+    const last = idx.filter((i) => CATCH_ALL.test(opts[i].trim())), rest = idx.filter((i) => !last.includes(i));
+    const rnd = seeded(seed + '|' + String(k.q || '') + '|' + opts.join('|'));
+    for (let i = rest.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [rest[i], rest[j]] = [rest[j], rest[i]]; }
+    order = rest.concat(last);
+  }
+  const out = { ...k, options: order.map((i) => opts[i]) };
+  if (k.type === 'question') { out.answer = order.indexOf(k.answer); out.authoredAnswer = k.answer; }
+  if (k.feedback !== undefined) out.feedback = order.map((i) => k.feedback[i]);
+  return out;
+}
+
+/**
+ * Code can live in lesson.md itself: a fenced block whose first line is "```code file#region" holds that region of
+ * "file", which then needs no file of its own (the references `file#region` in steps, clips and checks are unchanged).
+ * Returns { rest, inline }: the text with those blocks cut out, and { 'file': 'text with region markers' } for read().
+ */
+export function extractInlineCode(text) {
+  const inline = {};
+  const marks = (file, name) => /\.(html?|xml|svg|md)$/i.test(file) ? [`<!-- region: ${name} -->`, '<!-- endregion -->']
+    : /\.css$/i.test(file) ? [`/* region: ${name} */`, '/* endregion */']
+    : /\.(py|rb|sh|yml|yaml)$/i.test(file) ? [`# region: ${name}`, '# endregion'] : [`// region: ${name}`, '// endregion'];
+  const rest = text.replace(/^```code[ \t]+([\w.\-/]+)#([\w-]+)[ \t]*\n([\s\S]*?)\n```[ \t]*$\n?/gm, (_, file, name, body) => {
+    const [open, close] = marks(file, name);
+    inline[file] = (inline[file] ? inline[file] + '\n' : '') + `${open}\n${body}\n${close}\n`;
+    return '';
+  });
+  return { rest, inline };
+}
+
 export function parseLessonText(raw, slug = 'lesson') {
   raw = raw.replace(/\r\n/g, '\n');
   const fm = raw.match(/^---\n([\s\S]*?)\n---\n?/);
   if (!fm) throw new Error(`${slug}: lesson.md must start with --- frontmatter ---`);
   const meta = YAML.parse(fm[1]) || {};
-  const rest = raw.slice(fm[0].length);
+  const ic = extractInlineCode(raw.slice(fm[0].length));
+  let rest = ic.rest;
+  // Teacher notes can live in the lesson: a ```teacher block (the fields of teacher.yml) is cut out here, so it never
+  // reaches the student page. The last such block wins; a teacher.yml beside the lesson is read only when there is none.
+  let teacher, classPlan;
+  const tb = [...rest.matchAll(/^```teacher[ \t]*\n([\s\S]*?)\n```[ \t]*$/gm)].pop();
+  if (tb) {
+    try { teacher = YAML.parse(tb[1]) || {}; } catch (e) { throw new Error(`${slug}: the teacher block is not valid YAML (${String(e.message).split('\n')[0]})`); }
+    rest = rest.replace(/^```teacher[ \t]*\n[\s\S]*?\n```[ \t]*$\n?/gm, '');
+    // `class:` inside the block holds the class plan (the fields of content/<course>/class/<lesson>.yml).
+    if (teacher && typeof teacher === 'object' && teacher.class !== undefined) { classPlan = teacher.class || {}; delete teacher.class; }
+  }
   const parts = rest.split(/^## /m);
   const intro = parts.shift().trim();
   const steps = parts.map((chunk, i) => {
@@ -233,6 +333,8 @@ export function parseLessonText(raw, slug = 'lesson') {
     if (m) {
       config = YAML.parse(m[1]) || {};
       body = body.replace(m[0], '');
+      if (config.check) config.check = arrangeOptions(config.check, slug);
+      if (Array.isArray(config.tasks)) config.tasks = config.tasks.map((t) => t && typeof t === 'object' && t.check ? { ...t, check: arrangeOptions(t.check, slug) } : t);
     }
     // "### Heading" lines inside a step are its tasks (sub-pills). One or no heading: the step has a single task.
     const secs = body.split(/^### /m);
@@ -248,6 +350,9 @@ export function parseLessonText(raw, slug = 'lesson') {
     return { index: i + 1, id: `step-${i + 1}`, title, body: body.trim(), config, tasks };
   });
   return {
+    ...(Object.keys(ic.inline).length ? { inline: ic.inline } : {}),
+    ...(teacher ? { teacher } : {}),
+    ...(classPlan ? { classPlan } : {}),
     slug,
     depth: slug.split('/').length,
     title: meta.title || slug,
@@ -257,9 +362,16 @@ export function parseLessonText(raw, slug = 'lesson') {
     hook: meta.hook ? String(meta.hook).trim() : '',
     unit: meta.unit ? String(meta.unit) : '',          // the unit (group of lessons) in the course's index.md
     optional: meta.optional === true,                // an optional lesson: not needed to finish the course
+    introduces: Array.isArray(meta.introduces) ? meta.introduces.map(String) : [],   // concept ids taught here (tools/concepts.mjs)
+    assumes: Array.isArray(meta.assumes) ? meta.assumes.map(String) : [],         // concept ids taught in an earlier lesson
+    recipes: Array.isArray(meta.recipes) ? meta.recipes.map(String) : [],         // on screen, labelled "copy this for now"
+    node: meta.node == null ? [] : [].concat(meta.node).map(String),               // progression node(s) taught here (tools/progressions.mjs)
+    uses: Array.isArray(meta.uses) ? meta.uses.map(String) : [],                  // descriptors or nodes relied on that the data does not record
+    woven: meta.woven == null ? [] : [].concat(meta.woven).map(String),           // woven-strand descriptors practised here (science Human endeavour, Inquiry)
     teachers: meta.teachers ? String(meta.teachers).trim() : '',
     modules: Array.isArray(meta.modules) ? meta.modules.map(String) : [],
     language: meta.language || 'python',
+    shape: ['design', '5e'].includes(meta.shape) ? meta.shape : '',  // design: a design-cycle project (Inquire, Develop, Create, Test, Evaluate); 5e: 5E words outside science (Digital systems)
     extensions: meta.extensions,                     // MakeCode extensions by key (MAKECODE_EXTENSIONS), e.g. [robot]
     app: meta.app || null,
     pacing: { ...DEFAULT_PACING, ...(meta.pacing || {}) },
@@ -299,14 +411,14 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     const sp = pictureSpec(v);
     if (!sp) return err(where, 'picture must be a code reference, such as page.html#combos, or { ref: page.html#combos, boxes: true }');
     if (lesson.language === 'makecode' && where === 'explainPicture') { try { snip(sp.ref); } catch (e) { err(where, `explainPicture: ${e.message}`); } return; } // shown as blocks
-    if (lesson.language === 'maths') {
+    if (usesBoardPictures(lesson)) {
       // A board setup, drawn as a picture by render-pictures (the board as students see it, without its controls).
       if (stage === 'predict' || stage === 'run') return err(where, 'picture would give the prediction away: use it on Investigate, Modify, Make or info steps');
       let setup = ''; try { setup = snip(sp.ref); } catch (e) { return err(where, `picture: ${e.message}`); }
       if (!/^\s*widget\s*:/m.test(setup)) err(where, `picture: ${sp.ref} is not a board setup (it needs a "widget:" line)`);
       return;
     }
-    if (lesson.language !== 'html') return err(where, lesson.language === 'makecode' ? 'picture works in HTML lessons only (MakeCode lessons can use explainPicture, shown as blocks)' : 'picture works in HTML and maths lessons only');
+    if (lesson.language !== 'html' && lesson.language !== 'javascript') return err(where, lesson.language === 'makecode' ? 'picture works in HTML lessons only (MakeCode lessons can use explainPicture, shown as blocks)' : 'picture works in HTML, p5.js, maths and science lessons only');
     if (stage === 'predict' || stage === 'run') return err(where, 'picture would give the prediction away: use it on Investigate, Modify, Make or info steps');
     try { snip(sp.ref); } catch (e) { err(where, `picture: ${e.message}`); }
   };
@@ -315,7 +427,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (v === undefined) return;
     if (typeof v !== 'string' || !v.trim()) return err(where, 'expected must be a code reference, such as page.html#sol-make');
     if (!c.try) return err(where, 'expected needs the step to have a try playground');
-    if ((c.try.playground || (lesson.language === 'html' ? 'html' : 'turtle')) !== 'html') return err(where, 'expected works in the HTML playground only (for turtle, use an output-only clip: see AUTHORING.md)');
+    if (((c.try.playground === 'dom' ? 'html' : c.try.playground) || (lesson.language === 'html' ? 'html' : 'turtle')) !== (lesson.language === 'javascript' ? 'p5' : 'html')) return err(where, 'expected works in the HTML playground only (for turtle, use an output-only clip: see AUTHORING.md)');
     try { snip(v); } catch (e) { err(where, `expected: ${e.message}`); }
   };
   const err = (where, msg) => errs.push(`${lesson.slug} › ${where}: ${msg}`);
@@ -367,11 +479,11 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         if (r.count !== undefined && !(r.count && typeof r.count === 'object' && !Array.isArray(r.count) && Object.keys(r.count).length && Object.values(r.count).every((n) => Number.isInteger(n) && n > 0))) err(where, 'code rule count must map a code fragment to a whole number, such as { "basic.show": 3 }');
         if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
       }
-      const pk = c.try ? (c.try.playground || (lesson.language === 'html' ? 'html' : 'turtle')) : null;
-      if (!pk || !['turtle', 'html', ...MAKECODE_KINDS].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
+      const pk = c.try ? ({ python: 'turtle', dom: 'html' }[c.try.playground] || c.try.playground || (lesson.language === 'html' ? 'html' : lesson.language === 'javascript' ? 'p5' : 'turtle')) : null;
+      if (!pk || !['turtle', 'html', 'p5', ...MAKECODE_KINDS].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
       else if (r && typeof r === 'object') {
-        const allowedR = pk === 'html' ? HTML_RULES : MAKECODE_KINDS.includes(pk) ? MAKECODE_RULES : CODE_RULES.filter((x) => !['tags', 'inside', 'count'].includes(x));
-        const pname = pk === 'html' ? 'HTML' : MAKECODE_KINDS.includes(pk) ? 'MakeCode' : 'turtle';
+        const allowedR = pk === 'html' ? HTML_RULES : pk === 'p5' ? P5_RULES : MAKECODE_KINDS.includes(pk) ? MAKECODE_RULES : CODE_RULES.filter((x) => !['tags', 'inside', 'count'].includes(x));
+        const pname = pk === 'html' ? 'HTML' : pk === 'p5' ? 'p5.js' : MAKECODE_KINDS.includes(pk) ? 'MakeCode' : 'turtle';
         for (const key of Object.keys(r)) if (CODE_RULES.includes(key) && !allowedR.includes(key)) err(where, `code rule ${key} does not work in the ${pname} playground (use ${allowedR.join(', ')})`);
         if (r.tags !== undefined && !(Array.isArray(r.tags) && r.tags.every((t) => /^[a-z][a-z0-9]*$/i.test(String(t))))) err(where, 'code rule tags must be a list of tag names without brackets, such as [ul, li]');
       }
@@ -392,6 +504,12 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       if (!str(k.q)) err(where, 'check (number) needs q');
       if (typeof k.answer !== 'number' || !Number.isFinite(k.answer)) err(where, 'check (number) needs answer: a number');
       if (k.tolerance !== undefined && !(typeof k.tolerance === 'number' && k.tolerance >= 0)) err(where, 'check (number) tolerance must be 0 or more');
+      if (k.feedback !== undefined && !(Array.isArray(k.feedback) && k.feedback.every((f) => Array.isArray(f) && f.length === 2 && Number.isFinite(Number(f[0])) && String(f[0]).trim() !== '' && str(f[1])))) err(where, 'check (number) feedback must be a list of ["a wrong number", "what to say"]');
+    }
+    else if (k.type === 'flag') {
+      // A typed secret (capture-the-flag): only the SHA-256 of "wp-flag:" + the lowercased, trimmed answer is stored. tools/flag-hash.mjs makes it.
+      if (!str(k.q)) err(where, 'check (flag) needs q');
+      if (typeof k.hash !== 'string' || !/^[0-9a-f]{64}$/.test(k.hash)) err(where, 'check (flag) needs hash: 64 hex digits from tools/flag-hash.mjs');
     }
     else if (k.type === 'bug' || k.type === 'parsons') {
       let code = '';
@@ -433,12 +551,53 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       if (!str(k.q)) err(where, 'check (answer) needs q');
       const hasA = k.answer !== undefined && k.answer !== null && String(k.answer).trim() !== '';
       if (hasA === (k.equation !== undefined)) err(where, 'check (answer) needs exactly one of answer: (an expression or number) or equation: (values, such as { x: 6 })');
-      if (hasA) { try { MATH.parse(String(k.answer)); } catch (e) { err(where, `check (answer) answer "${k.answer}": ${e.message}`); } }
+      // form: (expanded, simplified, factorised, subject x) is marked by Numbas (tools/maths-forms.mjs); validate.mjs
+      // checks its answer and feedback in Node, since a wrong-form feedback answer is equivalent on purpose.
+      const formed = k.form !== undefined;
+      if (formed && !(['expanded', 'simplified', 'factorised', 'simplest', 'decimal'].includes(String(k.form)) || /^subject [a-zA-Z]$/.test(String(k.form)))) err(where, 'check (answer) form must be expanded, simplified, factorised, simplest, decimal or subject x (a letter)');
+      if (formed && !hasA) err(where, 'check (answer) with form needs answer: (the expected answer in that form)');
+      if (hasA && !formed) { try { MATH.parse(String(k.answer)); } catch (e) { err(where, `check (answer) answer "${k.answer}": ${e.message}`); } }
       if (k.equation !== undefined && !(k.equation && typeof k.equation === 'object' && !Array.isArray(k.equation) && Object.entries(k.equation).length && Object.entries(k.equation).every(([n, v]) => /^[a-zA-Z]$/.test(n) && typeof v === 'number'))) err(where, 'check (answer) equation must map one-letter variables to numbers, such as { x: 6 }');
       if (k.feedback !== undefined) {
         if (!Array.isArray(k.feedback) || !k.feedback.every((f) => Array.isArray(f) && f.length === 2 && str(String(f[0])) && str(f[1]))) err(where, 'check (answer) feedback must be a list of [wrong answer, what to say] pairs');
-        else for (const [w] of k.feedback) { try { MATH.parse(String(w)); if (hasA && MATH.equivalent(String(w), String(k.answer))) err(where, `check (answer) feedback "${w}" is the right answer`); } catch (e) { err(where, `check (answer) feedback "${w}": ${e.message}`); } }
+        else if (!formed) for (const [w] of k.feedback) { try { MATH.parse(String(w)); if (hasA && MATH.equivalent(String(w), String(k.answer))) err(where, `check (answer) feedback "${w}" is the right answer`); } catch (e) { err(where, `check (answer) feedback "${w}": ${e.message}`); } }
       }
+    }
+    else if (k.type === 'working') {
+      // Maths working, one step per line: each line equal to the one before (or, for equations, with the same
+      // solutions), the last in form:. Marked by Numbas (tools/maths-forms.mjs); validate runs example: through it.
+      if (!str(k.q)) err(where, 'check (working) needs q');
+      if (!str(String(k.start ?? ''))) err(where, 'check (working) needs start (the expression or equation to work from)');
+      if (!Array.isArray(k.example) || !k.example.length || !k.example.every((l) => str(String(l)))) err(where, 'check (working) needs example: a model solution, one line per step');
+      if (k.form !== undefined && !(['expanded', 'simplified', 'factorised', 'simplest', 'decimal'].includes(String(k.form)) || /^subject [a-zA-Z]$/.test(String(k.form)))) err(where, 'check (working) form must be expanded, simplified, factorised or subject x (a letter)');
+      if (k.wrong !== undefined && !(Array.isArray(k.wrong) && k.wrong.every((w) => Array.isArray(w) && w.every((l) => str(String(l)))))) err(where, 'check (working) wrong must be a list of planted wrong solutions, each a list of lines');
+    }
+    else if (k.type === 'reasoning') {
+      // Reasoning students own: free working (never marked), then the marked parts (an optional final answer and a
+      // reason picked at one or two key steps), then a model solution to compare with and a self-check.
+      if (!str(k.q)) err(where, 'check (reasoning) needs q');
+      const steps = k.steps;
+      if (!Array.isArray(steps) || !steps.length || !steps.every((st) => Array.isArray(st) && st.length === 2 && str(String(st[0])) && str(String(st[1])))) err(where, 'check (reasoning) needs steps: the model solution, each ["statement", "reason"]');
+      const hasA = k.answer !== undefined && k.answer !== null && String(k.answer).trim() !== '';
+      if (hasA) { try { MATH.parse(String(k.answer)); } catch (e) { err(where, `check (reasoning) answer "${k.answer}": ${e.message}`); } }
+      if (k.feedback !== undefined) {
+        if (!hasA) err(where, 'check (reasoning) feedback needs answer: (it is about the final answer)');
+        else if (!Array.isArray(k.feedback) || !k.feedback.every((f) => Array.isArray(f) && f.length === 2 && str(String(f[0])) && str(f[1]))) err(where, 'check (reasoning) feedback must be a list of [wrong answer, what to say] pairs');
+        else for (const [w] of k.feedback) { try { MATH.parse(String(w)); if (MATH.equivalent(String(w), String(k.answer))) err(where, `check (reasoning) feedback "${w}" is the right answer`); } catch (e) { err(where, `check (reasoning) feedback "${w}": ${e.message}`); } }
+      }
+      if (k.picks !== undefined) {
+        if (!Array.isArray(k.picks) || !k.picks.length) err(where, 'check (reasoning) picks must be a list of { step, options, answer }');
+        else k.picks.forEach((pk, i) => {
+          const at = `check (reasoning) picks[${i + 1}]`;
+          if (!pk || typeof pk !== 'object') return err(where, `${at} must be { step, options, answer }`);
+          if (!Number.isInteger(pk.step) || !Array.isArray(steps) || pk.step < 1 || pk.step > steps.length) err(where, `${at} step must be a step number (1 to ${Array.isArray(steps) ? steps.length : '?'})`);
+          if (!Array.isArray(pk.options) || pk.options.length < 2 || !pk.options.every((o) => str(String(o)))) err(where, `${at} needs at least two options (reasons to choose from)`);
+          else if (!Number.isInteger(pk.answer) || pk.answer < 0 || pk.answer >= pk.options.length) err(where, `${at} answer must be the index of the right option (from 0)`);
+          if (pk.feedback !== undefined && !(Array.isArray(pk.feedback) && Array.isArray(pk.options) && pk.feedback.length === pk.options.length)) err(where, `${at} feedback must have one entry per option (null for the right one)`);
+        });
+      }
+      if (!hasA && !k.picks) err(where, 'check (reasoning) needs answer:, picks:, or both: something to mark besides the free working');
+      if (k.criteria !== undefined && !(Array.isArray(k.criteria) && k.criteria.length && k.criteria.every((c) => str(String(c))))) err(where, 'check (reasoning) criteria must be a list of self-check sentences');
     }
     else if (k.type === 'board') {
       if (!str(k.text)) err(where, 'check (board) needs text, e.g. "Find the value of x that balances the scale."');
@@ -482,8 +641,15 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (c.try !== undefined) {
       if (typeof c.try !== 'object' || Array.isArray(c.try)) err(where, 'try must be a mapping: { starter: file#region, height: 460 }');
       else if (c.try.playground && !PLAYGROUND_KINDS.includes(c.try.playground)) err(where, `try.playground must be one of ${PLAYGROUND_KINDS.join(', ')}`);
-      else if (c.try.starter) { try { snip(c.try.starter); } catch (e) { err(where, `try.starter: ${e.message}`); } }
-      else if (!c.code) err(where, 'try needs a starter (file#region) or a step-level code reference to start from');
+      else {
+        // files: data files a Python playground step puts in the student's files (paths from the lesson folder).
+        if (c.try.files !== undefined) {
+          if (c.try.playground !== 'python' || !Array.isArray(c.try.files) || !c.try.files.length || !c.try.files.every((f) => typeof f === 'string' && f.trim())) err(where, 'try.files is a list of data files for the Python playground (paths from the lesson folder, such as ../sets/music.csv), with playground: python');
+          else for (const f of c.try.files.filter((x) => read(x) === undefined)) err(where, `try.files: ${f} not found (paths are from the lesson folder)`);
+        }
+        if (c.try.starter) { try { snip(c.try.starter); } catch (e) { err(where, `try.starter: ${e.message}`); } }
+        else if (!c.code) err(where, 'try needs a starter (file#region) or a step-level code reference to start from');
+      }
     }
     if (c.clip !== undefined) {
       if (!Array.isArray(c.clip) || !c.clip.length) { err(where, 'clip must be a non-empty list of actions'); continue; }
@@ -561,15 +727,36 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     }
   }
   if (lesson.teacher) validateTeacher(lesson, snip, err);
+  if (lesson.classPlan) validateClassPlan(lesson, err);
   return errs;
 }
 
 /** The fields of teacher.yml. Text fields are Markdown; see AUTHORING.md › Teacher notes. */
-export const TEACHER_TEXT = ['summary', 'before', 'stretch', 'support', 'leads', 'explain', 'timing'];
+export const TEACHER_TEXT = ['summary', 'before', 'struggle', 'stretch', 'support', 'leads', 'explain', 'timing'];
+
+/** teacher.yml sources: [{ title, url, checked: 2026-10-12 }] -> [{ title, url, checked: '12 October 2026' or '' }]. */
+export function sourceList(T) {
+  const M = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  return (Array.isArray(T?.sources) ? T.sources : []).filter((s) => s && s.title && s.url).map((s) => {
+    const d = s.checked instanceof Date ? s.checked.toISOString().slice(0, 10) : String(s.checked || '');
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d);
+    return { title: String(s.title), url: String(s.url), checked: m ? `${+m[3]} ${M[+m[2] - 1]} ${m[1]}` : '' };
+  });
+}
 
 /** Steps and tasks a solution can be keyed by: "step-4" or "step-4#t2". */
 /** picture: "page.html#x", { ref, boxes: true } (Boxes view) or { ref, inspect: ".card" } (Box model view pinned on that element) -> { ref, boxes, inspect, caption } (or null). caption: shown under a board picture (maths). */
 export const pictureSpec = (v) => (typeof v === 'string' ? { ref: v, boxes: false, inspect: '' } : v && typeof v === 'object' && typeof v.ref === 'string' ? { ref: v.ref, boxes: !!v.boxes && !v.inspect, inspect: typeof v.inspect === 'string' ? v.inspect : '', caption: typeof v.caption === 'string' ? v.caption : '' } : null);
+
+/** Lessons whose pictures are board setups: maths and science. pictureBoard says which board draws them: 'science'
+ *  for a science lesson with any step on the science board (playground: science), otherwise 'board' (the shared board). */
+export function usesBoardPictures(lesson) {
+  return lesson.language === 'maths' || lesson.language === 'science';
+}
+export function pictureBoard(lesson) {
+  const sci = lesson.language === 'science' && (lesson.steps || []).some((s) => s.config?.try?.playground === 'science' || (s.tasks || []).some((t) => t.config?.try?.playground === 'science'));
+  return sci ? 'science' : 'board';
+}
 
 /** Every "what this code makes" picture in an HTML lesson: steps' and tasks' picture:, and explainPicture (key "explain"). */
 export function pictureItems(lesson) {
@@ -595,13 +782,65 @@ export function workItems(lesson) {
     .filter((w) => ['modify', 'make'].includes(w.step.config.stage) && w.step.config.try);
 }
 
+/** Where a class activity or question goes in the deck: after the first step of that stage, or at the start or end. */
+export const CLASS_AT = ['start', 'predict', 'run', 'investigate', 'modify', 'make', 'end'];
+export const CLASS_KINDS = ['activity', 'discussion', 'check', 'info'];
+export const CLASS_CHECKS = ['question', 'number', 'trace', 'match'];
+
+/** content/<course>/class/<lesson>.yml: { inquiry: { q, prompts?, notes? }, activities: [{ at, title, do, notes?, kind?, minutes? }], questions: [{ at, title?, type, ...check }] } */
+function validateClassPlan(lesson, err) {
+  const c = lesson.classPlan, w = "class plan";
+  if (typeof c !== 'object' || Array.isArray(c)) return err(w, 'must be a mapping with activities and/or questions');
+  for (const k of Object.keys(c)) if (!['inquiry', 'activities', 'questions'].includes(k)) err(w, `unknown field "${k}" (use inquiry, activities, questions)`);
+  if (c.inquiry !== undefined) {
+    const q = c.inquiry;
+    if (!q || typeof q !== 'object' || typeof q.q !== 'string' || !q.q.trim()) err(w, 'inquiry needs q: a question the class can disagree about');
+    else {
+      if (q.prompts !== undefined && !(Array.isArray(q.prompts) && q.prompts.every((x) => typeof x === 'string'))) err(w, 'inquiry.prompts must be a list of text');
+      if (q.notes !== undefined && typeof q.notes !== 'string') err(w, 'inquiry.notes must be text');
+    }
+  }
+  const stages = new Set(lesson.steps.map((s) => s.config.stage));
+  const where = (x, i, list) => {
+    if (!CLASS_AT.includes(x.at)) err(w, `${list}[${i}].at must be one of ${CLASS_AT.join(', ')}`);
+    else if (!['start', 'end'].includes(x.at) && !stages.has(x.at)) err(w, `${list}[${i}].at is ${x.at}, but the lesson has no ${x.at} step`);
+  };
+  (c.activities || []).forEach((a, i) => {
+    if (!a || typeof a !== 'object') return err(w, `activities[${i}] must be a mapping`);
+    where(a, i, 'activities');
+    if (typeof a.title !== 'string' || !a.title.trim()) err(w, `activities[${i}] needs a title`);
+    if (typeof a.do !== 'string' || !a.do.trim()) err(w, `activities[${i}] needs do: what students do (shown on the slide)`);
+    if (a.notes !== undefined && typeof a.notes !== 'string') err(w, `activities[${i}].notes must be text`);
+    if (a.kind !== undefined && !CLASS_KINDS.includes(a.kind)) err(w, `activities[${i}].kind must be one of ${CLASS_KINDS.join(', ')}`);
+    if (a.minutes !== undefined && !(Number.isInteger(a.minutes) && a.minutes > 0)) err(w, `activities[${i}].minutes must be a whole number`);
+  });
+  (c.questions || []).forEach((q, i) => {
+    if (!q || typeof q !== 'object') return err(w, `questions[${i}] must be a mapping`);
+    where(q, i, 'questions');
+    if (!CLASS_CHECKS.includes(q.type)) err(w, `questions[${i}].type must be one of ${CLASS_CHECKS.join(', ')}`);
+    if (q.type !== 'trace' && typeof q.q !== 'string') err(w, `questions[${i}] needs q`);
+  });
+}
+
 function validateTeacher(lesson, snip, err) {
-  const t = lesson.teacher, w = 'teacher.yml';
+  const t = lesson.teacher, w = 'teacher notes';
   if (typeof t !== 'object' || Array.isArray(t)) return err(w, 'must be a mapping of fields');
-  const allowed = [...TEACHER_TEXT, 'time', 'goals', 'running', 'stuck', 'exit', 'solutions'];
+  const allowed = [...TEACHER_TEXT, 'time', 'goals', 'running', 'stuck', 'exit', 'solutions', 'sources'];
   for (const k of Object.keys(t)) if (!allowed.includes(k)) err(w, `unknown field "${k}" (use ${allowed.join(', ')})`);
   for (const k of TEACHER_TEXT) if (t[k] !== undefined && typeof t[k] !== 'string') err(w, `${k} must be text`);
   if (t.time !== undefined && !(Number.isInteger(t.time) && t.time > 0)) err(w, 'time must be the lesson length in minutes, such as 50');
+  if (t.sources !== undefined) {
+    if (!Array.isArray(t.sources) || !t.sources.length) err(w, 'sources must be a list of { title, url, checked }');
+    else t.sources.forEach((s, i) => {
+      const at = `${w} sources ${i + 1}`;
+      if (!s || typeof s !== 'object' || Array.isArray(s)) return err(at, 'must be { title, url, checked }');
+      for (const k of Object.keys(s)) if (!['title', 'url', 'checked'].includes(k)) err(at, `unknown field "${k}" (use title, url, checked)`);
+      if (typeof s.title !== 'string' || !s.title.trim()) err(at, 'needs a title');
+      if (typeof s.url !== 'string' || !/^https:\/\/[^\s]+\.[^\s]+$/.test(s.url)) err(at, 'url must be a full https:// address');
+      const ck = s.checked instanceof Date ? s.checked.toISOString().slice(0, 10) : s.checked;
+      if (ck !== undefined && !(typeof ck === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(ck))) err(at, 'checked must be a date written YYYY-MM-DD');
+    });
+  }
   for (const k of ['goals', 'running']) if (t[k] !== undefined && !(Array.isArray(t[k]) && t[k].every((x) => typeof x === 'string' && x.trim()))) err(w, `${k} must be a list of sentences`);
   if (t.goals && !t.goals.every((g) => /^I can\b/.test(g))) err(w, 'each goal starts "I can"');
   if (t.stuck !== undefined && !(Array.isArray(t.stuck) && t.stuck.every((x) => x && ['see', 'ask', 'fix'].every((f) => typeof x[f] === 'string' && x[f].trim())))) err(w, 'stuck must be a list of { see, ask, fix }');

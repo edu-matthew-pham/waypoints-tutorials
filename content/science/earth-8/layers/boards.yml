@@ -1,0 +1,9 @@
+# Boards for "What's inside the Earth?".
+
+# region: wedge
+widget: layers
+# endregion
+
+# region: explain
+widget: layers
+# endregion

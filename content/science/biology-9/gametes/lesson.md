@@ -1,9 +1,29 @@
 ---
-order: 5
+order: 6
+node: AC9S9U02 n1
 unit: reproduction
 title: What makes a sex cell special?
 summary: "Gametes (sperm and egg, or the nuclei in pollen and ovules) carry half the usual number of chromosomes, so fertilisation restores the full set. Each is specialised: sperm to swim and get in, the egg to feed the embryo and let only one sperm in."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8217
+  url: http://127.0.0.1:8217/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: boards.yml#explain, caption: "A sperm (head, midpiece, tail) and an egg (much larger, with a food store): each carries 23 chromosomes." }
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Sperm and egg"
+  say: "Gametes carry half the chromosomes, so fertilisation restores the full number."
+  clip:
+    - caption: { text: "A sperm and an egg: each carries half the chromosomes.", say: "A sperm and an egg: each carries half the chromosomes." }
+    - wait: 2950
+    - click: { selector: "#board [fill=\"#e39b4c\"]" }
+    - expect: { selector: "body", contains: "Midpiece" }
+    - caption: { text: "The midpiece is packed with mitochondria to power the tail.", say: "The midpiece is packed with mitochondria to power the tail." }
+    - caption: { text: "23 chromosomes from each gamete make 46 in the fertilised egg.", say: "Twenty three from each gamete make forty six in the fertilised egg." }
+    - wait: 600
 hook: "A human egg is just big enough to see without a microscope. A sperm is one of the smallest cells in the body. Together they make one cell that grows into a person."
 ---
 In Year 8 you met specialised cells. This lesson: the cells made for reproduction.
@@ -55,9 +75,9 @@ tasks:
   - check:
       type: question
       q: "Why are millions of sperm released, but only one egg?"
-      options: ["Most sperm never reach the egg; the egg is large and costly to make because it holds food", "Only one sperm can swim", "Eggs are smaller", "Sperm have no nucleus"]
+      options: ["Most sperm never reach the egg; the egg is large and costly to make because it holds food", "Many sperm join the egg, each adding some chromosomes", "Eggs are smaller", "Sperm have no nucleus"]
       answer: 0
-      feedback: [null, "Many swim; few arrive.", "The egg is far larger.", "Each sperm carries a nucleus with 23 chromosomes."]
+      feedback: [null, "Only one sperm's nucleus joins the egg: its 23 chromosomes and the egg's 23 make 46.", "The egg is far larger.", "Each sperm carries a nucleus with 23 chromosomes."]
   - check: { type: reflect, text: "I can explain why gametes have half the chromosomes and how a sperm and an egg are specialised." }
 ```
 
@@ -75,7 +95,6 @@ In your book: draw a sperm and an egg, label three features, and write what each
 
 ```step
 stage: modify
-tier: typical
 insight: "Seeing pollen's tough wall (no tail) shows plant gametes solve the same problem, getting the male nucleus to the egg, another way."
 try: { playground: board, starter: "boards.yml#pollen", height: 520 }
 tasks:
@@ -86,11 +105,19 @@ tasks:
       options: ["Wind or animals carry the pollen to a flower; a pollen tube then grows down to the ovule", "It swims through the air", "The egg moves to the pollen", "It doesn't: plants don't use gametes"]
       answer: 0
       feedback: [null, "No tail: it is carried.", "The egg stays inside the ovule.", "Flowering plants reproduce sexually with gametes."]
+  - check:
+      type: question
+      q: "A flowering plant's egg sits inside an ovule, deep in the flower's ovary. How does that suit its job?"
+      options: ["It keeps the egg protected, and after fertilisation the ovule grows into a seed with a food store", "It lets the egg swim out to meet the pollen", "It stops pollen ever reaching it", "It is where the pollen is made"]
+      answer: 0
+      feedback: [null, "Plant eggs don't move: a pollen tube grows down to the ovule.", "A pollen tube grows through the flower to reach it.", "Pollen is made in the anthers; ovules hold the eggs."]
 ```
 
 ### Pollen
 
 ### Getting there
+
+### The ovule
 
 ## Elaborate: counting chromosomes
 

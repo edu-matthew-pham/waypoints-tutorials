@@ -10,12 +10,13 @@ before: |
 
   The hinge risk is imprecise diagrams: wrong direction, missing forces (especially support), sizes that don't match. Every later node uses diagrams to reason, so the Practise step matters.
 
-  Board notes: arrows start at the object's centre, the usual convention for a force diagram. The boards use g = 10 N/kg so the numbers stay simple; the weight lesson uses 9.8.
+  Board notes: arrows start at the object's centre, the usual convention for a force diagram. The boards use g = 9.8 N/kg, as the weight lesson does; masses are chosen so the weights are whole numbers (5 kg weighs 49 N).
 running:
   - "Engage: ask what else an arrow could show; 'which way it moves' is the misconception the trolley exposes (friction points backwards)."
   - "Explore: ask students to make the push smaller than 10 N and notice friction shrinking with it."
   - "Practise: the book task is the commonest omission (the table's push). Stop and discuss it."
   - "In your own words: collect the trolley diagram."
+struggle: "Drawing every force with the right length and direction. When a force is missing, ask what stops the object falling or sliding."
 stuck:
   - see: "A student leaves out the support force."
     ask: "The book isn't falling through the table. What stops it?"

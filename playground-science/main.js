@@ -522,7 +522,7 @@
   }
 
   W.atoms = function (spec) {
-    var list = species(spec.show || 'H2 x4, O2 x3, H2O x5'), forms = list.map(function (x) { return x[0]; });
+    var list = species(spec.show || 'H2 x4, O2 x3, H2O x5'), forms = list.map(function (x) { return x[0]; }).filter(function (f, i, all) { return all.indexOf(f) === i; });
     var need = spec.need === 'all' || !spec.need ? forms.length : Math.min(forms.length, Number(spec.need));
     var v, sim, seen = {}, cur = null, next = 0;
     // Controls first, so the box is shaped to the room the board has left.
@@ -620,7 +620,8 @@
   // ---------- cooling magma (crystals.js) ----------
   W.cooling = function (spec) {
     var C = S.crystals, picks = spec.rates ? String(spec.rates).split(',').map(function (x) { return Number(x.trim()) - 1; }).filter(function (i) { return C.RATES[i]; }) : [0, 1, 2, 3, 4];
-    var goal = spec.goal || 'compare', rate = picks[0], running = false, runs = [];
+    // steps: cooling steps per frame (1 to 10, default 1). Same result, shorter wait: for clips, which play at about 7 frames a second.
+    var goal = spec.goal || 'compare', rate = picks[0], running = false, runs = [], per = Math.max(1, Math.min(10, Math.round(Number(spec.steps)) || 1));
     var g = group('top', picks.map(function (i) { return [i, C.RATES[i][1]]; }), rate, function (i) { rate = i; if (!running) { melt.reset(); view.paint(true); } describe(); touch(); });
     var cool = button('controls', 'Cool the magma', function () { if (melt.solid()) melt.reset(); running = true; cool.disabled = true; touch(); }, 'go');
     button('controls', 'Reset', function () { running = false; cool.disabled = false; melt.reset(); view.paint(true); describe(); touch(); });
@@ -645,7 +646,7 @@
     var tick = 0;
     S.loop(function () {
       if (running) {
-        melt.step(C.RATES[rate][0]);
+        for (var k = 0; k < per && !melt.solid(); k++) melt.step(C.RATES[rate][0]);
         if (melt.solid()) {
           running = false; cool.disabled = false;
           var st = melt.stats(); st.name = C.RATES[rate][1]; st.rate = rate;
@@ -815,7 +816,8 @@
     String(text || '').split('\n').forEach(function (line) {
       var m = /^\s*([a-z]+)\s*:\s*(.*?)\s*$/i.exec(line);
       if (!m || m[2] === '') return;
-      s[m[1]] = m[2]; (s._all[m[1]] = s._all[m[1]] || []).push(m[2]);
+      var v = m[2].replace(/^"(.*)"$/, '$1');   // YAML-style quotes (needed in lesson files for colons) are not part of the value
+      s[m[1]] = v; (s._all[m[1]] = s._all[m[1]] || []).push(v);
     });
     if (!W[s.widget]) throw new Error('Unknown widget "' + s.widget + '".');
     return s;

@@ -6,7 +6,9 @@ import { spawn } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 const { loadLessons, getSnippet } = await import('./lesson.mjs');
-const lessons = loadLessons().filter((l) => l.slug.startsWith('code/html/'));
+const { extractInlineCode } = await import('./lesson-core.mjs');
+// Courses on the HTML and DOM playgrounds: HTML & CSS, Bootstrap, the DOM course, Vue and Your site.
+const lessons = loadLessons().filter((l) => ['code/html/', 'code/css/', 'code/bootstrap/', 'code/dom/', 'code/vue/', 'code/site/'].some((p) => l.slug.startsWith(p)));
 const srv = spawn('node', ['tools/serve.mjs', 'dist', '8261'], { stdio: 'ignore' });
 await new Promise((r) => setTimeout(r, 800));
 const U = 'http://127.0.0.1:8261/';
@@ -22,7 +24,9 @@ for (const l of lessons) {
   let region = null;
   p.on('pageerror', (e) => { if (!bugRegions.has(region)) errs.push(l.slug + (region ? ' ' + region : '') + ': ' + e.message); }); p.on('response', (r) => { if (r.status() >= 400 && !/trophey|medal\.png/.test(r.url())) bad.push(r.status() + ' ' + r.url()); });
   // 1. regions render
-  const src = readFileSync(join(l.dir, 'page.html'), 'utf8');
+  // Code lives in page.html, or inline in lesson.md as ```code page.html#region blocks (single-file lessons).
+  const src = existsSync(join(l.dir, 'page.html')) ? readFileSync(join(l.dir, 'page.html'), 'utf8')
+    : extractInlineCode(readFileSync(join(l.dir, 'lesson.md'), 'utf8').replace(/\r\n/g, '\n')).inline['page.html'] || '';
   const regions = [...src.matchAll(/<!-- region: ([\w-]+) -->\n([\s\S]*?)<!-- endregion -->/g)];
   for (const [, name, code] of regions) {
     region = name;
@@ -30,13 +34,14 @@ for (const l of lessons) {
     await p.waitForFunction(() => window.__playground?.updates > 0); await p.waitForTimeout(250);
     const f = await (await p.$('#preview')).contentFrame();
     const imgs = await f.$$eval('img', (a) => a.map((i) => [i.getAttribute('src'), i.complete && i.naturalWidth > 0]));
-    for (const [s, loaded] of imgs) ok(loaded || /trophey|medal\.png/.test(s), `${name}: picture ${s} did not load`);
+    for (const [s, loaded] of imgs) ok(loaded || /trophey|medal\.png/.test(s) || /^(file:|[A-Za-z]:[\\/]|\/)/.test(s), `${name}: picture ${s} did not load`); // planted: a typo, or a path from one computer (Put it online)
   }
   // 2. lesson checks
   region = null;
   await p.goto(U + l.slug + '/'); await p.waitForTimeout(800);
   ok(await p.evaluate(() => typeof window.evalRules === 'function'), 'the lesson script did not run (a bare tag in Markdown, such as <style>, can swallow it)');
-  const put = async (step, code) => { const f = await (await p.locator(`#${step} iframe`).elementHandle()).contentFrame(); await f.waitForFunction(() => window.__playground?.updates > 0); await f.locator('#code').fill(code); await f.locator('#code').dispatchEvent('input'); await p.waitForTimeout(450); };
+  // The DOM playground (Vue, DOM) has a Run button and reports when it runs; the HTML playground reports as you type.
+  const put = async (step, code) => { const f = await (await p.locator(`#${step} iframe`).elementHandle()).contentFrame(); const run = f.locator('#run'); const dom = await run.count(); await f.waitForFunction((d) => d ? !!window.__playground : window.__playground?.updates > 0, dom); await f.locator('#code').fill(code); await f.locator('#code').dispatchEvent('input'); if (dom) { await run.click(); await f.waitForFunction(() => ['done', 'error'].includes(window.__playground.status), null, { timeout: 30000 }).catch(async () => { await run.click(); await f.waitForFunction(() => ['done', 'error'].includes(window.__playground.status), null, { timeout: 30000 }); }); } await p.waitForTimeout(450); };
   for (const s of l.steps) {
     const sec = p.locator('#' + s.id); await sec.scrollIntoViewIfNeeded();
     const items = s.tasks.length ? s.tasks.map((t, i) => ({ t, i, k: t.config.check, id: t.id })) : [{ t: null, i: 0, k: s.config.check, id: s.id }];
@@ -50,7 +55,7 @@ for (const l of lessons) {
       else if (k.type === 'predict') { if (k.options) await scope.locator('input[type=radio]').first().check(); else await scope.locator('input').first().fill('1'); await scope.locator('button').first().click(); }
       else if (k.type === 'question') { await scope.locator('input[type=radio]').nth(k.answer).check(); await scope.locator('button').click(); }
       else if (k.type === 'number') { await scope.locator('input').fill(String(k.answer)); await scope.locator('button').click(); }
-      else if (k.type === 'match') { const want = JSON.parse(await scope.getAttribute('data-answers')); const sels = scope.locator('select'); for (let j = 0; j < want.length; j++) await sels.nth(j).selectOption(want[j]); await scope.locator('button').click(); }
+      else if (k.type === 'match' || k.type === 'sort') { const want = JSON.parse(await scope.getAttribute('data-answers')); const sels = scope.locator('select'); for (let j = 0; j < want.length; j++) await sels.nth(j).selectOption(want[j]); await scope.locator('button').click(); }
       else if (k.type === 'trace') { const cells = scope.locator('input.tcell'); for (let j = 0; j < await cells.count(); j++) await cells.nth(j).fill(await cells.nth(j).getAttribute('data-answer')); await scope.locator('button').click(); }
       else if (k.type === 'bug') { for (const a of [].concat(k.answer)) await scope.locator('.buglines button').nth(Number(a) - 1).click(); }
       else if (k.type === 'parsons') {
@@ -60,7 +65,7 @@ for (const l of lessons) {
         const chk = scope.locator('.pcheck'); if (await chk.count()) await chk.click();
       }
       else if (k.type === 'code') {
-        const ref = l.teacher?.solutions?.[id];
+        const ref = l.teacher?.solutions?.[id] || (t ? t.config.expected : s.config.expected); // a review (investigate) step carries expected: on itself, since solutions: takes only modify and make steps
         ok(ref, `${id}: no solution`); if (!ref) continue;
         await put(s.id, getSnippet(l.dir, ref));
       }
@@ -70,7 +75,7 @@ for (const l of lessons) {
       if (passed) console.log(`  ✓ ${id} ${k.type}`);
     }
   }
-  console.log('  expected reveals:', await p.locator('details.expected').count(), '| explain clip:', await p.locator('details.explain video').count());
+  console.log('  expected reveals:', await p.locator('details.expected').count(), '| explain clip:', await p.locator('#xdrawer video').count());
   await p.close();
 }
 console.log(fails ? `${fails} failure(s)` : 'all checks pass', '| page errors:', errs, '| http:', bad);

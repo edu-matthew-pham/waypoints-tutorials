@@ -1,9 +1,29 @@
 ---
-order: 3
+order: 4
+node: AC9S9U01 n4
 unit: control
 title: Nerve or hormone?
 summary: "The nervous system sends fast, short-lived electrical impulses along nerves to one place. The endocrine system releases hormones into the blood: slower, longer-lasting, and they reach every cell but act only on target cells."
 language: science
+voice: { name: bf_emma, speed: 1.05 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8218
+  url: http://127.0.0.1:8218/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Nerves and hormones"
+  say: "Nerves are fast and targeted; hormones are slower, travel in the blood and last longer."
+  clip:
+    - caption: { text: "A nerve signal and a hormone, released at the same moment.", say: "A nerve signal and a hormone, released at the same moment." }
+    - wait: 3280
+    - click: "Send both signals"
+    - wait: 1500
+    - caption: { text: "The nerve impulse arrives first, at one muscle.", say: "The nerve impulse arrives first, at one muscle." }
+    - wait: 2500
+    - caption: { text: "The hormone travels in the blood: slower, but reaches many organs.", say: "The hormone travels in the blood: slower, but it reaches many organs." }
+    - wait: 2000
 hook: "A fright makes you jump in a fraction of a second. Your heart is still pounding a few minutes later. Two different systems are at work."
 ---
 The nervous system is one way the body sends messages. This lesson: the other way, and how they compare.
@@ -60,6 +80,12 @@ tasks:
       options: ["The effect needs to last a long time and reach cells all over the body", "Hormones are faster", "Nerves can't reach bones", "Growth is a reflex"]
       answer: 0
       feedback: [null, "Hormones are slower.", "Nerves reach bones; the point is duration and reach.", "A reflex is a quick nervous response."]
+  - check:
+      type: question
+      q: "A sprinter reacts to the starting gun. Which system carries the message to the leg muscles, and why?"
+      options: ["Nervous: the response must be very fast and go to particular muscles", "Endocrine: a hormone in the blood reaches every leg muscle at once", "Endocrine: the race lasts a long time, so the effect must last", "Both equally: every response uses both systems"]
+      answer: 0
+      feedback: [null, "Hormones would reach the legs, but far too slowly for a start.", "The start itself takes a split second, so it needs nerves.", "Many responses use both, but the instant start is nervous."]
   - check: { type: reflect, text: "I can compare nerves and hormones by speed, how long the effect lasts, how the message travels and where it acts." }
 ```
 
@@ -68,6 +94,8 @@ tasks:
 ### Target cells
 
 ### The right tool
+
+### Which one?
 
 ### In your own words
 
