@@ -94,4 +94,26 @@ check:
 
 Write one sentence distinguishing **probability** from **what actually happened** in your rolls.
 
+## Learning with AI: plausible is not the same as correct
+
+A writing assistant produces “The cat sat on the roof.” The sentence is plausible, but that does **not** tell us whether a real cat sat there. Compare two prepared AI responses to a learner asking, “Is this sentence true?”
+
+- **Response A:** “Yes. The sentence sounds natural, so it is true.”
+- **Response B:** “I can judge whether the sentence sounds plausible, but I would need evidence to know whether it happened.”
+
+Which response better distinguishes **generation** from **verification**? What evidence would you need to establish whether the event happened?
+
+```step
+stage: investigate
+check:
+  type: question
+  q: "A generated sentence sounds convincing. What does that show?"
+  options: ["It must describe a real event", "It may be plausible without being verified", "The generator checked its sources"]
+  answer: 1
+```
+
+**Optional authentic comparison:** With a school-approved AI assistant, ask for two different plausible endings to the same sentence, then ask what evidence would establish whether either describes a real event. Compare the assistant's *actual* behaviour with Response B. If AI access is unavailable or inappropriate, use the prepared responses above. Do not assume that a live assistant will respond as expected.
+
+**For teachers:** Model the difference between *what a text generator produces* and *what evidence supports*. The dice model illustrates sampling, not how a modern assistant verifies facts. Students need not calculate formal probabilities to make this distinction.
+
 **Next:** let a computer repeat this same sampling procedure, and decide what understanding you must keep.
