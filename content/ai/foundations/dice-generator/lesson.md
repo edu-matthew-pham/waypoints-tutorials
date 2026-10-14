@@ -5,6 +5,17 @@ sources:
 title: Build a text generator with dice
 summary: Turn word frequencies into dice outcomes, then sample words without always picking the most common one.
 language: science
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "One roll, one possible word"
+  say: "Sampling with a die."
+  clip:
+    - caption: { text: "Three faces mean mat, two mean chair and one means roof.", say: "Three faces mean mat, two mean chair and one means roof." }
+    - wait: 1200
+    - caption: { text: "Each roll chooses one face, so even roof can appear.", say: "Each roll chooses one face, so even roof can appear." }
+    - wait: 1200
+    - caption: { text: "Ten rolls may not match the expected counts exactly.", say: "Ten rolls may not match the expected counts exactly." }
+    - wait: 1200
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
   url: http://127.0.0.1:8241/index.html
