@@ -7,6 +7,14 @@ title: Can you predict the next word?
 summary: See how examples influence which words seem likely to come next, without assuming that the most likely word is certain.
 language: science
 unit: text-generation
+hook: "A phone suggests the next word as you type. Is it predicting what you mean, or using patterns from examples?"
+time: 20
+misconceptions:
+  - "Most likely means certain."
+  - "The generator understands what the writer intends."
+  - "Changing the examples cannot change the model's prediction."
+leads: "Follow with the dice sampling lesson. Ask students to bring a physical die; no online AI account is needed."
+exit: { q: "If the most common ending appears 3 times in 6 examples, must it be selected?", a: "No. It has probability 3/6 under our sampling rule; other endings remain possible." }
 order: 1
 ---
 A sentence can have more than one sensible next word. A text generator needs a way to choose between possibilities.
@@ -22,7 +30,7 @@ check:
   actual: "There is no single word that must come next. Several endings are possible, even if some are more familiar."
 ```
 
-Write down one ending of your own. Why did you choose it?
+Write down one ending of your own **before looking at any examples**. Why did you choose it? Keep your answer to revisit later.
 
 ## Explore: count the examples
 
@@ -38,7 +46,7 @@ check:
 
 Count the endings yourself: **mat = 3**, **chair = 2**, **roof = 1**. These are examples from a tiny, invented collection, not a claim about how people normally write.
 
-What would change if we added five more examples ending in *roof*?
+**Try it on paper:** draw three columns headed *mat*, *chair* and *roof*. Mark one tally for each of the six endings. Now add five more examples ending in *roof*. Recount. What changed: the sentence starter, the examples or the pattern inferred from them?
 
 ## Explain: patterns are not rules
 
@@ -62,7 +70,7 @@ A simple model can count which words followed a phrase in its examples. It can u
 
 A probability is not a promise. The most likely choice is not the only possible choice.
 
-Modern language models use much more complex learned representations and consider a wider context. Our small counting model is a way to investigate one idea: **possible next words can have different probabilities**.
+Modern language models use tokens, neural networks and much more complex learned representations of context. Our small counting model is a way to investigate one idea: **possible next words can have different probabilities**.
 
 ## Elaborate: change the evidence
 
@@ -89,6 +97,8 @@ check:
   answer: 1
 ```
 
-In your own words: explain why a text generator might produce different endings for the same beginning.
+**Without looking at the table**, explain why a text generator might produce different endings for the same beginning. Then return to your first prediction: would you change it? Why?
+
+**For teachers:** This is an intentionally transparent, fixed-context frequency model. Ask learners to justify answers using *counts* rather than guesses about the writer's intentions. The next lesson introduces sampling; the later interactive board should allow students to edit examples and immediately inspect the resulting counts. Do not describe this toy model as the mechanism used by a modern LLM.
 
 **Next:** use dice to make a choice according to these probabilities.
