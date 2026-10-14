@@ -13,6 +13,17 @@ Planning roadmap for a proposed new subject/pathway in Waypoints Tutorials. **No
 - Offloading is not new or inherently harmful. Distinguish delegating **execution** (repetitive operations), **cognitive processing** (summarising, calculating, generating explanations) and **judgement** (deciding what is credible, appropriate or complete). These overlap; the value of offloading depends on the learning objective, learner expertise and retained responsibility.
 - Distinguish **learning mode** (developing capability) from **performance mode** (getting a task done). The gym/spotter analogy may help, provided it does not imply all effort is productive.
 
+## Two recurring learning strands
+
+Use two lightweight labels within lessons and teacher guidance, while keeping engaging question-based lesson titles:
+
+- **How AI works:** investigate mechanisms, patterns, capabilities, uncertainty and limitations.
+- **Learning with AI:** practise deciding when and why to use AI, evaluating suggestions, verifying claims and retaining the thinking needed for learning.
+
+Introduce **both strands from Lesson 1** rather than teaching them as separate sequential courses. Lessons may emphasise one strand; equal coverage is not required. Use short prompts or headings when useful, not mandatory badges or a rigid template.
+
+Understanding AI mechanisms does not automatically produce good learning decisions. Equally, students can develop verification habits before learning advanced model architecture. Pair transparent simulations with authentic AI-use decisions where appropriate, while making their differences clear.
+
 ## Proposed course architecture
 
 ### AI Foundations — first course to design
