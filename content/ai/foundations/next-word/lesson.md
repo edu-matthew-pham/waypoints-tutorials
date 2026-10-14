@@ -1,4 +1,8 @@
 ---
+sources:
+  - { title: "Swift (2026), LLMs Unplugged (peer-reviewed conference paper)", url: "https://doi.org/10.1145/3786228.3786237", checked: 2026-10-15 }
+  - { title: "AI4K12, Grade Band Progression Charts", url: "https://ai4k12.org/gradeband-progression-charts/", checked: 2026-10-15 }
+  - { title: "UNESCO, AI Competency Framework for Students (2024)", url: "https://www.unesco.org/en/articles/ai-competency-framework-students", checked: 2026-10-15 }
 title: Can you predict the next word?
 summary: See how examples influence which words seem likely to come next, without assuming that the most likely word is certain.
 language: science
