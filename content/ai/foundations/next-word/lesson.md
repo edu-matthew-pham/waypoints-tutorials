@@ -99,6 +99,24 @@ check:
 
 **Without looking at the table**, explain why a text generator might produce different endings for the same beginning. Then return to your first prediction: would you change it? Why?
 
+## Learning with AI: question a suggestion
+
+An AI writing assistant suggests **mat** to finish “The cat sat on the”. Compare these two reactions:
+
+- **A:** “The AI suggested mat, so it must be right.”
+- **B:** “Mat is plausible, but chair or roof might fit too. I should check the sentence and what I mean.”
+
+Which reaction shows better judgement? Explain what you would check before accepting a suggested word. **You do not need an AI account**: the suggestion above is a prepared example, not a live AI response.
+
+```step
+stage: investigate
+check:
+  type: question
+  q: "An AI suggests a likely next word. What should you do?"
+  options: ["Accept it because AI knows the writer's intention", "Check whether it fits the meaning and purpose of your sentence", "Reject every AI suggestion"]
+  answer: 1
+```
+
 **For teachers:** Formal fractions and percentages are an optional extension, not a prerequisite. Start with counts and bars. This is an intentionally transparent, fixed-context frequency model. Ask learners to justify answers using *counts* rather than guesses about the writer's intentions. The next lesson introduces sampling; the interactive board lets students edit examples and immediately inspect the resulting counts. Do not describe this toy model as the mechanism used by a modern LLM.
 
 **Next:** use dice to make a choice according to these probabilities.
