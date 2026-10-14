@@ -90,4 +90,33 @@ In your own words, answer both questions:
 - What did the computer do for you?
 - What would you still need to understand to check whether it did the right thing?
 
+## Learning with AI: direct the help you receive
+
+Imagine you are learning to use the dice lookup table. You ask an AI assistant to **act as your tutor**. It replies:
+
+- **Response A:** “The answer is 2/6. Copy that into your worksheet.”
+- **Response B:** “How many die faces lead to the word? How many faces are there altogether?”
+- **Response C:** “Divide the number of matching faces by six. There are two matching faces, so the answer is 2/6.”
+
+Which response best preserves the thinking you are practising? Could Response C be helpful at a different stage of learning? Explain your choice before asking an AI.
+
+Try directing the assistance with this instruction, or inspect it as a prepared example if AI access is unavailable:
+
+> I am learning to interpret a six-sided-die lookup table. Do not give me the answer immediately. Ask one question at a time, let me try, and give a small hint only if I am stuck.
+
+If you have access to a **school-approved AI assistant**, test the instruction on a *new* lookup table (for example, four faces for yes and two for no). Observe what the AI actually does. If it reveals the answer too soon, **redirect it**: “Please let me work out the next step before explaining.” The instruction is a request, not a guarantee of good tutoring.
+
+```step
+stage: investigate
+check:
+  type: question
+  q: "You ask AI for hints, but it immediately gives the complete answer. What is the most useful next step if your goal is to learn?"
+  options: ["Assume the answer means you have learned it", "Ask it to give one hint at a time, then try independently", "Always stop using tools"]
+  answer: 1
+```
+
+**Independent check:** Without AI, explain how to find the chance of an outcome from a new lookup table. Then reflect: what did you delegate, what thinking did you retain, and did the assistant follow your instructions?
+
+**For teachers:** Use the three prepared responses to model how *apparently helpful* AI can still over-assist. Response B is generally preferable for an initial independent attempt, but scaffolding should adapt to student needs. School-approved Copilot, MagicSchool, Thinking Mode or other assistants can be used where available; no particular provider, study mode or student account is required. Avoid entering personal student information. This authentic AI interaction is distinct from automating the toy sampling model above.
+
 **Important limitation:** this is a fixed, transparent sampling model. Modern LLMs do not generate text by simply rolling a die over a six-entry table; they use much more complex learned patterns and context.
