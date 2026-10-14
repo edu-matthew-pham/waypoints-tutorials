@@ -1,4 +1,8 @@
 ---
+sources:
+  - { title: "Lodge and Loble (2026), Artificial intelligence, cognitive offloading and implications for education", url: "https://doi.org/10.71741/4pyxmbnjaq.31302475", checked: 2026-10-15 }
+  - { title: "Furze (2026), Resistance as a Framework for Combating Cognitive Offload", url: "https://leonfurze.com/2026/03/22/resistance-as-a-framework-for-combating-cognitive-offload/", checked: 2026-10-15 }
+  - { title: "Nakamura (2026), Augmentation or Erosion?", url: "https://doi.org/10.1007/s10648-026-10224-6", checked: 2026-10-15 }
 title: Let the computer take over
 summary: Compare manual and automated sampling, and decide which work can be delegated without losing understanding.
 language: science
