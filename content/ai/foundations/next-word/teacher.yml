@@ -1,0 +1,23 @@
+summary: "Count example endings and distinguish a frequent next word from a certain one."
+time: 25
+goals:
+  - "I can explain the lesson's main idea using the model."
+  - "I can check an AI suggestion rather than accepting it automatically."
+before: |
+  Use the board as a transparent fixed-context model, not a miniature modern LLM. No AI account is required. The Explain it to me clip is an optional scaffold after prediction.
+running:
+  - "Ask students to count mat, chair and roof before revealing fractions."
+  - "Offer the optional explanation as a clip or the matching text; do not require watching before exploring."
+struggle: "Counts and examples are evidence of a pattern, not a guarantee."
+stuck:
+  - see: "Counts and examples are evidence of a pattern, not a guarantee."
+    ask: "If a learner says mat must follow, ask which other endings appear in the examples."
+    fix: "Return to the board and describe the counts or actions before using abstract language."
+support: "Use the prepared examples, read the explanation aloud and repeat a small trial."
+stretch: "Explain where the toy model differs from a modern AI assistant."
+leads: "Continue to the next AI Foundations lesson and revisit the learning-with-AI judgement question."
+exit:
+  q: "What happens to the most frequent ending when five roof examples are added?"
+  a: "Roof becomes most frequent: six roof, three mat and two chair."
+explain: |
+  A simple fixed-context model counts possible endings. Mat appears three times, chair twice and roof once. Mat is the most frequent, but not the only possible word. Changing the examples changes these counts. A modern language model is far more complex, and a plausible suggestion still needs checking against what you mean.
