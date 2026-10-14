@@ -40,11 +40,23 @@
     panel.appendChild(apply);
     var rows = counts(), n = endings.length, best = top(rows);
     var table = el('table'); table.style.marginTop = '1rem';
-    var head = el('tr'); ['Possible next word', 'Count', 'Probability'].forEach(function (v) { head.appendChild(el('th', v)); }); table.appendChild(head);
+    var head = el('tr'); ['Possible next word', 'Examples', 'How often?'].forEach(function (v) { head.appendChild(el('th', v)); }); table.appendChild(head);
     rows.forEach(function (row) {
-      var tr = el('tr'); [row.word, String(row.count), row.count + '/' + n + ' (' + Math.round(row.count / n * 100) + '%)'].forEach(function (v) { tr.appendChild(el('td', v)); }); table.appendChild(tr);
+      var tr = el('tr'); [row.word, String(row.count), '█'.repeat(row.count)].forEach(function (v) { tr.appendChild(el('td', v)); }); table.appendChild(tr);
     });
     panel.appendChild(table);
+    var toggle = el('button', 'Show fractions and percentages'); toggle.type = 'button';
+    toggle.setAttribute('aria-expanded', 'false');
+    var detail = el('div'); detail.hidden = true;
+    rows.forEach(function (row) {
+      detail.appendChild(el('p', row.word + ': ' + row.count + ' out of ' + n + ' = ' + Math.round(row.count / n * 100) + '%'));
+    });
+    toggle.addEventListener('click', function () {
+      detail.hidden = !detail.hidden;
+      toggle.textContent = detail.hidden ? 'Show fractions and percentages' : 'Hide fractions and percentages';
+      toggle.setAttribute('aria-expanded', String(!detail.hidden));
+    });
+    panel.appendChild(toggle); panel.appendChild(detail);
     panel.appendChild(el('p', 'Most frequent: ' + best + '. That does not make it certain.'));
     panel.appendChild(el('p', 'Try adding five more “roof” examples. Which word becomes most frequent?'));
     var vars = { n: n, k: rows.length, m: rows[0].count, p: Math.round(rows[0].count / n * 1000) / 1000, c: edits, r: Number(best !== originalTop) };
@@ -54,7 +66,7 @@
   }
   B.widget('text-prediction', {
     sections: ['gpanel'],
-    label: function () { return 'Next-word examples and probabilities'; },
+    label: function () { return 'Next-word examples and counts'; },
     parse: function (s) {
       s.phrase = s.phrase || 'The cat sat on the';
       s.initial = s.items.filter(function (i) { return i.kind === 'ending'; }).map(function (i) { return i.value.trim().toLowerCase(); });
