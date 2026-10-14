@@ -6,6 +6,11 @@ sources:
 title: Let the computer take over
 summary: Compare manual and automated sampling, and decide which work can be delegated without losing understanding.
 language: science
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
+  url: http://127.0.0.1:8241/index.html
+  readySelector: "#gpanel"
+  layout: full
 unit: text-generation
 order: 3
 ---
@@ -33,9 +38,15 @@ check:
   answer: 1
 ```
 
+```step
+stage: run
+try: { playground: board, starter: "boards.yml", height: 590 }
+check: { type: board, text: "Run at least 100 automated samples.", when: "a >= 100" }
+```
+
 Work with a partner:
 1. Make five selections manually using the dice table from the previous lesson.
-2. Use a spreadsheet, calculator or a short teacher-provided program to generate 100 integers from 1 to 6 and apply the **same** lookup table.
+2. On the interactive board, choose **Run 100** to automate the **same** lookup table. Optionally repeat with 1,000 draws. A spreadsheet or short program is an alternative.
 3. Tally mat, chair and roof. Compare the proportions with the intended 3/6, 2/6 and 1/6. Explain why the proportions may differ.
 
 If no digital tool is available, combine the results of several groups to approximate a larger sample.
