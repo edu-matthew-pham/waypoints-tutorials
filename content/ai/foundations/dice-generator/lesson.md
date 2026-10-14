@@ -5,6 +5,11 @@ sources:
 title: Build a text generator with dice
 summary: Turn word frequencies into dice outcomes, then sample words without always picking the most common one.
 language: science
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
+  url: http://127.0.0.1:8241/index.html
+  readySelector: "#gpanel"
+  layout: full
 unit: text-generation
 order: 2
 ---
@@ -34,6 +39,14 @@ check:
   answer: 0
 ```
 
+Use the interactive board to roll a virtual die and record your outcomes. You can also use a physical die and compare the results.
+
+```step
+stage: run
+try: { playground: board, starter: "boards.yml", height: 590 }
+check: { type: board, text: "Roll the virtual die at least ten times.", when: "c >= 10" }
+```
+
 Copy this table into your book:
 
 | Die result | Next word |
@@ -42,7 +55,7 @@ Copy this table into your book:
 | 4, 5 | chair |
 | 6 | roof |
 
-Roll a die **ten times**, recording each result and the chosen word. If you have no physical die, use a teacher-provided virtual die. Keep the lookup table unchanged.
+Roll a die **ten times**, recording each result and the chosen word. Use the board's virtual die if you do not have a physical die. Keep the lookup table unchanged.
 
 Compare with a partner. Did you get identical results? Does a short run always match the expected 3:2:1 ratio?
 
