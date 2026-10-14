@@ -1,0 +1,23 @@
+summary: "Map six equally likely die faces to endings and distinguish probabilities from observed rolls."
+time: 25
+goals:
+  - "I can explain the lesson's main idea using the model."
+  - "I can check an AI suggestion rather than accepting it automatically."
+before: |
+  Use the board as a transparent fixed-context model, not a miniature modern LLM. No AI account is required. The Explain it to me clip is an optional scaffold after prediction.
+running:
+  - "Have students predict ten rolls before sampling, then compare with a partner."
+  - "Offer the optional explanation as a clip or the matching text; do not require watching before exploring."
+struggle: "A likely word is not a guaranteed word."
+stuck:
+  - see: "A likely word is not a guaranteed word."
+    ask: "If a learner thinks ten rolls must produce exactly five mats, ask whether each roll knows the previous results."
+    fix: "Return to the board and describe the counts or actions before using abstract language."
+support: "Use the prepared examples, read the explanation aloud and repeat a small trial."
+stretch: "Explain where the toy model differs from a modern AI assistant."
+leads: "Continue to the next AI Foundations lesson and revisit the learning-with-AI judgement question."
+exit:
+  q: "Can roof appear twice in a row without the model changing?"
+  a: "Yes. Each roll can select the roof face; two such rolls do not alter the mapping."
+explain: |
+  Give mat three faces, chair two and roof one. Each roll chooses one face. Mat is more likely, but chair and roof remain possible. Ten rolls can produce different counts from the expected three-to-two-to-one proportions. Sampling is choosing an outcome using assigned probabilities, not verifying whether a sentence is true.
