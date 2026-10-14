@@ -6,6 +6,17 @@ sources:
 title: Can you predict the next word?
 summary: See how examples influence which words seem likely to come next, without assuming that the most likely word is certain.
 language: science
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "How examples shape a prediction"
+  say: "Patterns are not rules."
+  clip:
+    - caption: { text: "Three examples end in mat, two in chair and one in roof.", say: "Three examples end in mat, two in chair and one in roof." }
+    - wait: 1200
+    - caption: { text: "Mat is most frequent, but other endings remain possible.", say: "Mat is most frequent, but other endings remain possible." }
+    - wait: 1200
+    - caption: { text: "A next-word suggestion is a possibility, not a statement of your intention.", say: "A next-word suggestion is a possibility, not a statement of your intention." }
+    - wait: 1200
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
   url: http://127.0.0.1:8241/index.html
