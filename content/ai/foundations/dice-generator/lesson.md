@@ -88,6 +88,18 @@ tasks:
   - check: { type: reflect, text: "I can map a frequency to dice faces and explain why sampled results vary." }
 ```
 
+### Read the dice table
+
+Count how many faces select chair out of six.
+
+### Explain an unexpected sample
+
+Consider why ten rolls might contain no roof outcomes.
+
+### Explain sampling
+
+Connect probabilities with the different results of repeated rolls.
+
 Choosing an outcome according to its assigned probability is called **sampling**. A model can use sampling instead of always selecting the single most frequent word.
 
 Our model only chooses **one word after one fixed phrase**. A larger word-transition model would use the newly chosen word to look up another set of possible next words. That is still far simpler than a modern LLM.
