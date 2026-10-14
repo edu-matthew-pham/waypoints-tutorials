@@ -55,8 +55,8 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "If mat follows the phrase in 3 of 6 examples, what fraction of the examples end in mat?"
-      options: ["1/2", "1/3", "1/6", "3/2"]
+      q: "Which ending appears most often in the original six examples?"
+      options: ["mat", "chair", "roof", "All appear equally often"]
       answer: 0
   - check:
       type: question
@@ -66,7 +66,7 @@ tasks:
   - check: { type: reflect, text: "I can explain the difference between a frequent ending and a certain ending." }
 ```
 
-A simple model can count which words followed a phrase in its examples. It can use those counts to assign **probabilities** to possible next words. Here, mat has a probability of 3/6, chair 2/6 and roof 1/6 *if we choose an ending in proportion to its frequency in these examples*.
+A simple model can count which words followed a phrase in its examples. More examples of one ending make that ending **more frequent**, but not certain. Select **Show fractions and percentages** on the board if you want to describe these frequencies numerically: mat is 3 out of 6, chair 2 out of 6 and roof 1 out of 6. If a generator samples endings in proportion to these counts, those fractions become its probabilities.
 
 A probability is not a promise. The most likely choice is not the only possible choice.
 
@@ -99,6 +99,6 @@ check:
 
 **Without looking at the table**, explain why a text generator might produce different endings for the same beginning. Then return to your first prediction: would you change it? Why?
 
-**For teachers:** This is an intentionally transparent, fixed-context frequency model. Ask learners to justify answers using *counts* rather than guesses about the writer's intentions. The next lesson introduces sampling; the later interactive board should allow students to edit examples and immediately inspect the resulting counts. Do not describe this toy model as the mechanism used by a modern LLM.
+**For teachers:** Formal fractions and percentages are an optional extension, not a prerequisite. Start with counts and bars. This is an intentionally transparent, fixed-context frequency model. Ask learners to justify answers using *counts* rather than guesses about the writer's intentions. The next lesson introduces sampling; the interactive board lets students edit examples and immediately inspect the resulting counts. Do not describe this toy model as the mechanism used by a modern LLM.
 
 **Next:** use dice to make a choice according to these probabilities.
