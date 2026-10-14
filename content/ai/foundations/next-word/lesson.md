@@ -77,6 +77,18 @@ tasks:
   - check: { type: reflect, text: "I can explain the difference between a frequent ending and a certain ending." }
 ```
 
+### Find the most frequent ending
+
+Look at the original six examples and identify the ending that occurs most often.
+
+### Frequent does not mean certain
+
+Explain why the most frequent ending is not guaranteed to be chosen.
+
+### Put the distinction into words
+
+Complete the reflection using the evidence from the examples.
+
 A simple model can count which words followed a phrase in its examples. More examples of one ending make that ending **more frequent**, but not certain. Select **Show fractions and percentages** on the board if you want to describe these frequencies numerically: mat is 3 out of 6, chair 2 out of 6 and roof 1 out of 6. If a generator samples endings in proportion to these counts, those fractions become its probabilities.
 
 A probability is not a promise. The most likely choice is not the only possible choice.
