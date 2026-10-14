@@ -1,0 +1,23 @@
+summary: "Compare manual and automated sampling and identify what judgement remains with the learner."
+time: 25
+goals:
+  - "I can explain the lesson's main idea using the model."
+  - "I can check an AI suggestion rather than accepting it automatically."
+before: |
+  Use the board as a transparent fixed-context model, not a miniature modern LLM. No AI account is required. The Explain it to me clip is an optional scaffold after prediction.
+running:
+  - "Have students perform five manual rolls before pressing Run 100."
+  - "Offer the optional explanation as a clip or the matching text; do not require watching before exploring."
+struggle: "Faster output does not establish understanding or truth."
+stuck:
+  - see: "Faster output does not establish understanding or truth."
+    ask: "If a learner says the computer understands the sentence, ask exactly which operations it performed."
+    fix: "Return to the board and describe the counts or actions before using abstract language."
+support: "Use the prepared examples, read the explanation aloud and repeat a small trial."
+stretch: "Explain where the toy model differs from a modern AI assistant."
+leads: "Continue to the next AI Foundations lesson and revisit the learning-with-AI judgement question."
+exit:
+  q: "What must you still understand after automating the rolls?"
+  a: "How the six faces map to words, what the results mean, and how to judge whether the model suits the task."
+explain: |
+  The computer can repeat the same die-and-table procedure quickly. Running a hundred or a thousand trials gives more data to compare, but it does not make the words true or the model suitable. We can delegate repetitive execution while retaining judgement about the model and checking our own understanding. When an AI tutor over-helps, ask it for one hint at a time.
