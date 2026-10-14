@@ -6,6 +6,17 @@ sources:
 title: Let the computer take over
 summary: Compare manual and automated sampling, and decide which work can be delegated without losing understanding.
 language: science
+explainClip:
+  query: { code: "@boards.yml#explain", fresh: 1, id: explain }
+  caption: "Repetition is not understanding"
+  say: "Automating the same sampling."
+  clip:
+    - caption: { text: "The computer repeats the same six-face selection many times.", say: "The computer repeats the same six-face selection many times." }
+    - wait: 1200
+    - caption: { text: "A large sample lets us compare observed and expected proportions.", say: "A large sample lets us compare observed and expected proportions." }
+    - wait: 1200
+    - caption: { text: "We still judge the model, its outputs and what we need to learn.", say: "We still judge the model, its outputs and what we need to learn." }
+    - wait: 1200
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
   url: http://127.0.0.1:8241/index.html
