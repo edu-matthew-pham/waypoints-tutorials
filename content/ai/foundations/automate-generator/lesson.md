@@ -80,6 +80,18 @@ tasks:
   - check: { type: reflect, text: "I can name what was automated and what judgement remains with me." }
 ```
 
+### Identify the automated work
+
+Name the repeated task the computer now performs.
+
+### Identify the human judgement
+
+Who still decides whether the model and examples suit the question?
+
+### Reflect on what remains yours
+
+Explain what has been delegated and what still requires understanding.
+
 **Cognitive offloading** means using a tool to take over some mental work. Here the computer takes over repeated execution and counting. In other tasks, AI might also generate explanations or recommendations, shifting some processing and potentially judgement.
 
 Offloading is not automatically helpful or harmful. If the goal is to **learn how sampling works**, doing it manually first can reveal the mechanism. If the goal is to **compare thousands of samples**, automation makes a different investigation possible.
