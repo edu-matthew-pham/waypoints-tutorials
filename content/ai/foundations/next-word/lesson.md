@@ -6,6 +6,11 @@ sources:
 title: Can you predict the next word?
 summary: See how examples influence which words seem likely to come next, without assuming that the most likely word is certain.
 language: science
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
+  url: http://127.0.0.1:8241/index.html
+  readySelector: "#gpanel"
+  layout: full
 unit: text-generation
 hook: "A phone suggests the next word as you type. Is it predicting what you mean, or using patterns from examples?"
 time: 20
@@ -32,21 +37,16 @@ check:
 
 Write down one ending of your own **before looking at any examples**. Why did you choose it? Keep your answer to revisit later.
 
-## Explore: count the examples
+## Explore: change the examples
 
 ```step
 stage: run
-check:
-  type: question
-  q: "In these six examples, what word follows 'the cat sat on the' most often? mat, mat, chair, mat, roof, chair"
-  options: ["mat", "chair", "roof", "All equally often"]
-  answer: 0
-  feedback: [null, "Chair occurs twice; count mat again.", "Roof occurs once.", "The counts are different."]
+insight: "Students change example endings and inspect how word frequencies change the prediction."
+try: { playground: board, starter: "boards.yml", height: 590 }
+check: { type: board, text: "Add five roof examples and update the model.", when: "c >= 1 and r = 1 and n >= 11" }
 ```
 
-Count the endings yourself: **mat = 3**, **chair = 2**, **roof = 1**. These are examples from a tiny, invented collection, not a claim about how people normally write.
-
-**Try it on paper:** draw three columns headed *mat*, *chair* and *roof*. Mark one tally for each of the six endings. Now add five more examples ending in *roof*. Recount. What changed: the sentence starter, the examples or the pattern inferred from them?
+Start with **mat = 3**, **chair = 2**, **roof = 1**. Predict the most frequent ending, then add five more lines containing **roof**. Press **Update examples** and explain why the prediction changes.
 
 ## Explain: patterns are not rules
 
