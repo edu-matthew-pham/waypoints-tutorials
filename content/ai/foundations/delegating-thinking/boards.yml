@@ -1,0 +1,9 @@
+# region: explore
+widget: ai-learning-choices
+mode: delegate
+# endregion
+
+# region: explain
+widget: ai-learning-choices
+mode: delegate
+# endregion
