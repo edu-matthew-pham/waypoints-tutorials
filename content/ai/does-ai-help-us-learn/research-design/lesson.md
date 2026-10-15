@@ -72,7 +72,7 @@ tasks:
       q: "What does assessment validity ask?"
       options: ["Whether the assessment provides sound evidence for the claim it is used to make", "Whether all students score the same mark", "Whether the results support the researchers' preferred conclusion"]
       answer: 0
-  - check: { type: reflect, text: "I can justify a comparison condition and identify an outcome that matters for the stated learning goal." }
+  - check: { type: reflect, text: "I can distinguish a theoretical prediction from an experimentally supported result." }
 ```
 
 ### Isolating a cause
@@ -86,6 +86,16 @@ When groups differ in multiple ways—such as feedback, time, pace and AI availa
 ### Limits of every design
 
 Even a strong experiment takes place in a particular context, with particular students, tasks and tools. Improved productivity might matter even if an unaided test shows no improvement. This is a question about educational values as well as measurement.
+
+### Theory proposes explanations; experiments test them
+
+In October 2026, Nakamura published *Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning*, a **theoretical review** proposing seven testable propositions. It does **not** report an experiment validating the full framework.
+
+One proposed distinction is between offloading thinking **peripheral to the learning goal** and offloading thinking **central to it**. Formatting an already-checked table might free time to interpret scientific findings. Having AI perform the interpretation instead could bypass the skill being practised. The same step may be central or peripheral for different learners and goals.
+
+The theory also points to learners' prior expertise, monitoring and how help is designed. These are proposed explanations and predictions, not guaranteed outcomes.
+
+**Inquiry:** What evidence would support or challenge the prediction that offloading peripheral tasks is less harmful to learning than offloading central ones? Could a good non-AI interactive tutorial provide the same benefit?
 
 ## Elaborate: redesign the claim
 
@@ -104,6 +114,8 @@ Design a study answering **one precise question**:
 - What would you measure during assistance, immediately afterwards and later?
 - What other outcomes—such as productivity, motivation or agency—might matter?
 - What would you still be unable to conclude?
+
+**Theory-testing extension:** Compare complete AI solutions with hints that preserve the learner's own attempt. Predict a delayed unaided outcome, and identify a result that would challenge your prediction. What changes if you add an equally well-designed non-AI tutor?
 
 Discuss your design with someone who values a different outcome. Let them challenge it. Revise the *reasoning* if the objection is persuasive; no particular design must win.
 
@@ -133,4 +145,4 @@ You have not solved the debate about AI and learning. You have developed stronge
 
 **End of Unit 2:** What research finding would most change your current position—and what would its experiment need to compare?
 
-**Next unit:** When might AI be the most appropriate tool, and when might another tool be better?
+**Next unit:** When might offloading thinking support or undermine a particular learning goal? Unit 3 will return to Nakamura's proposals and compare AI with other tools.
