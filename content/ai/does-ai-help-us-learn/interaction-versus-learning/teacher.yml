@@ -1,0 +1,25 @@
+summary: "Separate visible activity, thinking, responsiveness and learning using scripted, accessible illustrations."
+time: 40
+goals:
+  - "I can distinguish behavioural interaction from cognitive engagement."
+  - "I can describe instructional responsiveness without treating AI as unique."
+  - "I can identify what evidence would be needed to judge learning outcomes."
+before: |
+  All four illustrated responses are authored, not captured from commercial products or a real AI conversation.
+  Mathspace, Education Perfect, Khan Academy, Brilliant, Quill and Blooket are optional real-world references, not mandated platforms. Their features and AI integration vary.
+running:
+  - "Elicit assumptions about quiz-like engagement and learning."
+  - "Compare the four depictions of a single familiar mathematics misconception."
+  - "Explain behavioural interaction, cognitive engagement, responsiveness and evidence separately."
+  - "Change the learning goal to challenge any simple ranking of tools."
+struggle: "Students may infer that a conversational tool must offer the deepest learning because it has the most possible responses."
+stuck:
+  - see: "The learner ranks each tool without stating a learning goal."
+    ask: "Does this student need fluency, conceptual explanation or exploration?"
+    fix: "Compare the same tool against two different learner needs."
+support: "Provide a four-column comparison with one sentence about what each illustration actually demonstrates."
+stretch: "Transfer the categories to a writing activity, comparing sentence practice, peer feedback and open-ended dialogue."
+leads: "Lesson 9 investigates how help could be sequenced and adapted for learner expertise."
+exit:
+  q: "Can a static worked example sometimes be better than an interactive quiz?"
+  a: "Yes; their relative value depends on the goal, the learner and how learning is later checked."
