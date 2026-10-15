@@ -1,8 +1,8 @@
 summary: "Train and test a genuine tiny neural network without teaching the mathematics."
 time: 30
 goals:
-  - "Distinguish training from testing."
-  - "Explain why changing examples can change learned predictions."
+  - "I can distinguish training from testing."
+  - "I can explain why changing examples can change learned predictions."
 before: |
   The board uses a small genuine 2-2-1 sigmoid neural network with backpropagation.
   It sees only colour and shape, not photographs. No account or online model is needed.
