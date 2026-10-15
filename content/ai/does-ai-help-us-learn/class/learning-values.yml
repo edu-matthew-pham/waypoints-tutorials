@@ -1,0 +1,14 @@
+inquiry:
+  q: "Can AI assistance help someone learn while making their achievement harder to judge?"
+  prompts:
+    - "What is the intended capability?"
+    - "Who benefits from and who is challenged by the decision?"
+  notes: "Students need not agree. Distinguish facts, predictions and educational values."
+activities:
+  - at: end
+    kind: discussion
+    title: "Return to the course question"
+    minutes: 6
+    do: |
+      Does AI help us learn? Offer a conditional claim, one research finding, one strong objection, and what might change your mind.
+    notes: "A spoken discussion is sufficient; a formal final submission is an optional teacher decision."
