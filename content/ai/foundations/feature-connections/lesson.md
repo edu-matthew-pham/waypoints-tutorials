@@ -105,4 +105,9 @@ Without the board, explain how changing the importance of a clue can affect a pr
 
 ## Learning with AI: keep your judgement
 
+```step
+stage: info
+check: { type: reflect, text: "I considered what evidence to check and what thinking to retain when using AI." }
+```
+
 AI systems can use richer patterns than this model, but still have blind spots. When using AI to learn, what should you check before accepting its output? What understanding should remain yours?
