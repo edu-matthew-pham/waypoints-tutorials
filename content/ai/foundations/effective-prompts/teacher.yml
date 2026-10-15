@@ -1,0 +1,25 @@
+summary: "Communicate a clear AI request using purpose, relevant context and the type of help needed."
+time: 30
+goals:
+  - "I can write a purposeful prompt without including unnecessary information."
+  - "I can compare responses for usefulness and recognise that clarity does not guarantee accuracy."
+before: |
+  The board contains scripted comparisons, not a live AI model.
+  Students can complete the lesson without external accounts. A school-approved assistant is optional.
+running:
+  - "Start with the vague request, then change one feature at a time."
+  - "Discuss whether a hint supports learning better than a complete answer."
+struggle: "Students may assume that a longer prompt is necessarily better."
+stuck:
+  - see: "Students include irrelevant context."
+    ask: "Would this information change how someone helps with your goal?"
+    fix: "Remove it and compare what remains."
+support: "Provide the three prompt components: goal, relevant context and form of help."
+stretch: "Compare prompts across different subjects and describe when concise prompts work."
+leads: "The next lesson develops follow-up and redirection after an initial AI response."
+exit:
+  q: "Does a detailed prompt guarantee a correct response?"
+  a: "No. Context can help, but responses still require evaluation."
+explain: |
+  An AI assistant may respond differently when the goal, context or kind of help changes.
+  Prepared board responses illustrate this principle without simulating an LLM.
