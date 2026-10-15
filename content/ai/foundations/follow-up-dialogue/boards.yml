@@ -1,0 +1,9 @@
+# region: explore
+widget: ai-dialogue
+mode: refine
+# endregion
+
+# region: explain
+widget: ai-dialogue
+mode: refine
+# endregion
