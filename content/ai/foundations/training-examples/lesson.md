@@ -108,6 +108,11 @@ Without using the model, write: **One thing I understand about how this model wo
 
 ## Learning with AI: retain your judgement
 
+```step
+stage: info
+check: { type: reflect, text: "I considered what evidence to check and what thinking to retain when using AI." }
+```
+
 An AI assistant gives a confident answer about a fruit photograph. You cannot see all its training data. What would you need to check before accepting the label? If the aim is to **learn classification**, which decisions should you practise yourself before asking for help?
 
 **Remember:** Better data often improves a model, but cannot guarantee a good result. Poor data can contribute to mistakes, but it is not the only possible cause.
