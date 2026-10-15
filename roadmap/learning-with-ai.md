@@ -44,6 +44,13 @@ Do not present the routes as technically interchangeable: a simplified classifie
 
 **Design principle:** use simplified models to reveal mechanisms, authentic models to encounter complexity, and reflection to develop independent judgement.
 
+## Unit 3: Communicating with AI (authored)
+
+- Lesson 8, **How do you communicate with AI?** Practise specifying goals, relevant context, response form and the type of assistance. Avoid treating prompt length as quality or promising guaranteed outputs.
+- Lesson 9, **How do you work with an AI response?** Diagnose a response, select a purposeful follow-up and compare possible outcomes. Distinguish self-checks from independent verification.
+- Both lessons use an explicit **scripted response laboratory**, not a fake live AI, with optional school-approved assistant comparisons. They preserve Year 7 accessibility and independent learner judgement.
+- Planned next: **Learning effectively with AI** (select helpful assistance, verify claims, decide what to delegate), without conflating curriculum outcomes with interaction techniques.
+
 ## Proposed course architecture
 
 ### AI Foundations — first course to design
@@ -107,5 +114,5 @@ Possible 5E arc: Engage with a text-prediction question; Explore with dice; Expl
 ## Status
 
 - Agreed pedagogical direction: **documented**.
-- Course structure, lesson sequence, simulation and subject integration: **proposed, not implemented**.
-- **AI Foundations pilot implemented:** three lessons (next-word prediction, dice sampling and automation) and a Learning with AI course entry have been added under `content/ai/foundations/`; publishing and video playback remain subject to successful build verification.
+- Course structure and first three units: **implemented as lesson drafts**; classroom validation and subject-specific integration remain in progress.
+- **AI Foundations authored:** seven lessons across text generation and how AI learns, plus two lessons in **Communicating with AI** (purposeful prompts and follow-up interaction). Unit 3 uses scripted response comparisons, explicitly not a live LLM. Publishing, browser checks and video playback remain subject to build verification.
