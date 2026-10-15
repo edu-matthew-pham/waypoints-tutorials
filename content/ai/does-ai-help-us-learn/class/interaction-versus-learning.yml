@@ -1,0 +1,15 @@
+inquiry:
+  q: "Which helps learning more: twenty energetic quiz responses or one carefully explained worked example?"
+  prompts:
+    - "Which learner and learning goal?"
+    - "What thinking happens during each?"
+    - "What would you check later?"
+  notes: "Do not rank the tools in advance. Retrieval practice can be appropriate; visible participation is not proof of learning."
+activities:
+  - at: end
+    kind: discussion
+    title: "Change the learning goal"
+    minutes: 3
+    do: |
+      A learner knows the rule but needs fluency. Another is confused about why it works. Reconsider your original choice.
+    notes: "Point back to cognitive engagement, responsiveness and evidence of learning."
