@@ -1,44 +1,103 @@
-# Does AI Help Us Learn? — opening and closing discussion
+---
+marp: true
+theme: default
+html: true
+---
 
-This is a **short optional course-level facilitation guide**, not a replacement for the twelve generated lesson decks. Teachers can present the headings directly, turn them into slides, or use them as spoken prompts.
+# Does AI Help Us Learn?
 
-## Opening: questions to bring into the course
+**An inquiry into learning, evidence and judgement**
 
-**Slide 1 — Does AI help us learn?**
+<!-- Speaker note: Invite a first view without demanding agreement. This deck opens and closes the course; the twelve lesson decks carry the detailed teaching. -->
 
-Two students use AI to complete a difficult activity. Both report success. What more do we need to know before claiming they learned?
+---
 
-**Slide 2 — What might count as learning?**
+## Opening · What would count as learning?
 
-Independent capability, meaningful creative work and participation with others are not necessarily identical. Which matter in different situations?
+Two students use AI to complete a difficult activity. Both succeed.
 
-**Slide 3 — How will we inquire?**
+**What else would we need to know before saying they learned?**
 
-We will examine claims, evidence, counterexamples and learning goals. We may revise a position, qualify it or defend it with stronger reasons. We do not need a predetermined yes-or-no verdict.
+- Their learning goal?
+- The thinking they contributed?
+- What they could do next?
 
-**Slide 4 — Four questions**
+---
+
+## Opening · More than one purpose
+
+Learning might involve:
+
+- Understanding or developing independent capability
+- Creating something valuable
+- Participating with other people and tools
+- Learning to make informed choices
+
+**Can the same evidence establish all of these?**
+
+---
+
+## Opening · How we'll inquire
+
+**Make a claim → examine evidence → consider a serious objection → refine the question.**
+
+You may defend, change or qualify your position.
+
+A disagreement is useful when it leads to better reasons.
+
+---
+
+## Opening · Four connected questions
 
 1. What does it mean to learn?
 2. What does the evidence show?
 3. When should we use AI?
 4. Who decides what learning looks like?
 
-## Closing: return to the inquiry
+<!-- Speaker note: Move to the regular Lesson 1 deck and online tutorial. The remaining slides are for the end of the course. -->
 
-**Slide 5 — What changed?**
+---
 
-Revisit an initial belief. Is it more specific now? What distinguishes good performance, confidence and lasting learning?
+# Closing · What changed?
 
-**Slide 6 — Consider the alternatives**
+Recall your first answer: **Does AI help us learn?**
 
-Compared with which non-AI tools or forms of human help might AI add value? Does that answer change for a beginner?
+How would you distinguish:
 
-**Slide 7 — Bring the tensions together**
+- A successful outcome
+- Feeling confident
+- Understanding or capability that persists?
 
-Can assistance support formative learning while complicating summative assessment? Who should decide which abilities students practise independently?
+---
 
-**Slide 8 — Defend a qualified answer**
+## Closing · Compared with what?
 
-Does AI help us learn? Specify the learning goal, learner, available assistance, evidence and uncertainty. Invite the strongest reasonable objection.
+If a learner uses AI assistance:
 
-**Teacher note:** Treat these as discussion prompts rather than a required presentation or final assessed artefact.
+- What thinking stays with them?
+- Could a worked example, structured tutorial or person provide comparable help?
+- Would the judgement change for a beginner?
+
+**What evidence would justify your answer?**
+
+---
+
+## Closing · Learning and assessment
+
+Can AI assistance help someone develop understanding while making their achievement harder to assess?
+
+Whose goals and incentives shape the decision?
+
+There may be more than one reasonable educational purpose.
+
+---
+
+## Closing · Your qualified conclusion
+
+**Does AI help us learn?**
+
+State which learning, for whom, under what conditions, and compared with what.
+
+Use a research finding carefully. Include an objection and evidence that could change your view.
+
+<!-- Speaker note: Do not require a formal submission. Students may respond through conversation, a short reflection or an optional teacher-selected artefact. -->
