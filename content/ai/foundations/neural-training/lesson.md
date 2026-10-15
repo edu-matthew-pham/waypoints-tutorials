@@ -121,6 +121,11 @@ Without using the board, complete these statements:
 
 ## Learning with AI: outputs do not reveal everything
 
+```step
+stage: info
+check: { type: reflect, text: "I can explain how to check AI outputs without assuming they are always correct." }
+```
+
 Modern AI systems can be useful even when we cannot easily explain their learned internal patterns. We might inspect individual numbers without understanding what they collectively represent.
 
 Imagine an AI assistant makes a confident claim in a subject you are learning. What would you **verify independently**? What work should you practise yourself before asking AI for help?
