@@ -36,5 +36,7 @@ jobs:
           cache: npm
       - name: Install validators
         run: npm ci --omit=optional
+      - name: Check site generator syntax
+        run: node --check tools/build-site.mjs
       - name: Validate lessons and course content
         run: npm run validate
