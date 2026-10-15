@@ -105,6 +105,11 @@ Without the board, write: **The model predicted … because … . I would check 
 
 ## Learning with AI: calibrated trust
 
+```step
+stage: info
+check: { type: reflect, text: "I considered what evidence to check and what thinking to retain when using AI." }
+```
+
 A real AI assistant may produce a convincing answer without showing the data and mechanisms behind it. What evidence would help you decide whether its answer is useful for your task? What thinking should remain yours if your goal is to learn?
 
 **Important:** Better data improves the chances of useful results, but does not guarantee them. Poor data can explain some failures, but other limitations also matter.
