@@ -13,7 +13,7 @@ app:
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "Help now, capability later?"
-  say: "Assistance can improve performance. To investigate learning, look for what changes in what the learner understands and can do."
+  say: "Assistance can improve performance, but learning needs other evidence."
   clip:
     - caption: { text: "A correct answer with help shows assisted performance." }
     - wait: 1050
