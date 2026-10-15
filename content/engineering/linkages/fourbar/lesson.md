@@ -4,7 +4,7 @@ unit: motion
 title: Four-bar linkages
 summary: "Four bars joined at pivots turn a crank into a rocking arm, if their lengths allow it. Students find a crank that jams, learn the rule that predicts whether it can turn all the way (shortest + longest ≤ the other two), and design a windscreen wiper with a big enough swing."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A windscreen wiper swings back and forth, but its motor turns round and round. Four bars do it. Why can't they be any lengths you like?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8532

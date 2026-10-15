@@ -5,7 +5,7 @@ node: AC9M7M01 n1
 title: Area of parallelograms
 summary: "Cut a triangle off one end of a parallelogram and move it to the other end: it becomes a rectangle with the same base and height. So the area of a parallelogram is base × perpendicular height."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Tiles, bricks in a wall, and the stripes of a pedestrian crossing seen from an angle are parallelograms. How much area does a slanted tile cover?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8273

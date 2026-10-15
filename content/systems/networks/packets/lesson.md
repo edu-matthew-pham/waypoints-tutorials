@@ -7,7 +7,7 @@ shape: 5e
 title: Packets
 summary: "Data is sent as small numbered packets, not one long stream. You watch a message go to pieces, invent your own fix, then put names to it: routers pass packets on by different routes, numbers put them back in order, and TCP has the receiver confirm each one so a lost packet is sent again."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The internet never sends your message in one piece. So how does it ever arrive whole?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8471

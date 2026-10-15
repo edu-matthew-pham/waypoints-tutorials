@@ -5,7 +5,7 @@ node: [AC9M7SP04 n1, AC9M7SP04 n2]
 title: Algorithms for classifying shapes
 summary: "An algorithm is a clear set of steps and decisions. A classification algorithm asks yes/no questions about a shape's sides and angles, in an order that gives each shape its own name, and you test it on one shape of every class."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A sorting machine at a factory has to name every shape that rolls past, with no one to help. What questions would you build into it, and in what order?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8300

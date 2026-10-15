@@ -6,7 +6,7 @@ introduces: [logic-gates]
 title: "Why binary: logic gates"
 summary: "A switch has two states that are easy to tell apart: off (0) and on (1). Wire two switches in a line and the lamp lights only when both are on: an AND gate. Side by side, either one will do: an OR gate. Gates like these, made of tiny electronic switches, combine bits to do every calculation, which is why computers are built on binary."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A computer chip holds billions of tiny switches and nothing else. How can switches add up numbers?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8467

@@ -5,7 +5,7 @@ unit: cells
 title: What makes a plant cell different?
 summary: "Plant cells have three parts animal cells don't: a cell wall for support, chloroplasts for photosynthesis and a large vacuole that keeps the cell firm. Both kinds have mitochondria (for energy) and ribosomes (for making proteins), and how many of each a cell has depends on its job."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8271
   url: http://127.0.0.1:8271/index.html

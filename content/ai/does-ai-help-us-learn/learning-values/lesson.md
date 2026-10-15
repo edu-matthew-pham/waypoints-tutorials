@@ -4,7 +4,7 @@ summary: Examine the goals and incentives shaping AI use, then revisit the cours
 language: science
 unit: learning-and-society
 order: 3
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 Across this course, we've asked what learning means, what studies show, and when AI assistance might help. Yet learning decisions are rarely made by a student alone. **Schools, assessment systems, families, communities and future opportunities also shape what counts as valuable.**
 

@@ -6,7 +6,7 @@ unit: atoms
 title: What's inside an atom?
 summary: An atom has a tiny, dense nucleus of protons and neutrons, with electrons in shells around it. The number of protons (the atomic number) decides the element; protons plus neutrons give the mass number.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8256
   url: http://127.0.0.1:8256/index.html

@@ -6,7 +6,7 @@ uses: [AC9M8SP01 n1, AC9M8SP01 n2, AC9M7SP04 n1]
 title: Algorithms for congruence
 summary: "An algorithm can decide whether two triangles are congruent, similar or neither by asking about their equal parts in a careful order: the congruence tests first, then the similarity conditions, and 'not enough to tell' when nothing fits. You test it on one pair of every kind, find what it misses, and fix it."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A design program has to decide whether two parts it is given will fit each other exactly, fit after scaling, or not fit at all. What questions should it ask, and in what order?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8326

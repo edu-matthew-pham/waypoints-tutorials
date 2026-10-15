@@ -5,7 +5,7 @@ node: AC9M7ST01 n1
 title: Counting and measuring
 summary: "Numerical data is discrete when it is counted (siblings: 0, 1, 2, …) and continuous when it is measured (a 100 m time can be any value, such as 14.37 s). Measured values are always rounded to some precision."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "How many siblings do you have? How long does it take you to run 100 m? One answer is always a whole number; the other could be anything in between."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8179

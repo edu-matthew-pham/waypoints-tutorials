@@ -4,7 +4,7 @@ unit: gears
 title: Gear trains
 summary: "More than two gears. A gear between two others (an idler) changes the direction but not the ratio; two gears on one axle make a compound train, whose stage ratios multiply. Students test an idler, work out compound trains, find one for a heavy brief, and see why big ratios come in stages."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The bucket is now 1500 g: more than any pair in the box can lift. You can use as many gears as you like. How?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8509

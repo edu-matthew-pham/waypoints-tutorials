@@ -4,7 +4,7 @@ summary: Use feedback as evidence for a next learning decision, not simply a cor
 language: science
 unit: learning-and-society
 order: 1
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 In Unit 3 we asked how learning assistance should work. But a learner must also decide **what to do after receiving help**. Feedback can be useful without producing learning automatically.
 

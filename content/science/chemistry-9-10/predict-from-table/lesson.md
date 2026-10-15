@@ -6,7 +6,7 @@ unit: periodic
 title: Use the table to predict
 summary: "The periodic table is not a list to look up but a tool for prediction. An element's group gives its number of outer electrons, and so how reactive it is and what it bonds with; its period gives its number of shells. From the position alone you can predict whether an element is a metal, how it reacts and what its atom looks like."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8296
   url: http://127.0.0.1:8296/index.html

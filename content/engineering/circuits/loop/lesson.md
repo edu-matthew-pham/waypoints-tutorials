@@ -5,7 +5,7 @@ title: A complete loop
 assumes: [electric-current]
 summary: "Current only flows around a complete loop: out of pin 0, through the resistor and the LED, and back to GND. Break the loop anywhere, or turn the LED round, and the current stops everywhere at once."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You switch pin 0 on, but the LED stays dark. The code is right. What else has to be true for current to flow?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8501

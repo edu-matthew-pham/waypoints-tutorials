@@ -5,7 +5,7 @@ node: AC9TDI8K03 n1
 title: Everything is numbers
 summary: "A computer stores text, pictures and sound all as numbers. The same numbers mean different things depending on how a program reads them: 72 is the letter H to a text program, a dark grey to a paint program and a sound level to a music program."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A message, a photo and a song all end up in the same computer memory. What is actually stored there?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8466

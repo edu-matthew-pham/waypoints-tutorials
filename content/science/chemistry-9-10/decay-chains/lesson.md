@@ -5,7 +5,7 @@ unit: atoms
 title: From uranium to lead
 summary: "An unstable nucleus often decays into another unstable one, and a decay chain ends only when a stable nucleus is reached. Each alpha decay lowers the atomic number by 2 and the mass number by 4; each beta decay raises the atomic number by 1 and leaves the mass number alone. Uranium-238 reaches stable lead-206 after eight alpha and six beta decays."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8295
   url: http://127.0.0.1:8295/index.html

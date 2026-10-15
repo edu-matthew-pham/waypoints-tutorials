@@ -6,7 +6,7 @@ uses: [AC9M7N04 n1]   # equivalent fractions: parts of a whole (Equivalent fract
 title: What is a ratio?
 summary: "2 red counters and 3 blue: the ratio of red to blue is 2 : 3 (part to part); red to all the counters is 2 : 5 (part to whole). Order matters."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A fruit punch is 2 cups of juice for every 3 cups of lemonade. Swap them and it tastes completely different. How do we write a recipe like that down?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8290

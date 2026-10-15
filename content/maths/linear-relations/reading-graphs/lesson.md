@@ -6,7 +6,7 @@ uses: [AC9M7N07 n1]   # reads −6 °C off a temperature axis
 title: Reading a graph
 summary: A point on a graph of real data pairs two measurements. Find one value on its axis, go to the line, and read across to the other axis.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Weather maps, phone battery meters and sports stats all use graphs. Before you can use one, you need to read it: which number is on which axis?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8148

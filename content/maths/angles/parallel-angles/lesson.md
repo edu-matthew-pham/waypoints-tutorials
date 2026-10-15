@@ -5,7 +5,7 @@ node: AC9M7M04 n2
 title: Finding angles with parallel lines
 summary: "When the lines are parallel, corresponding angles are equal, alternate angles are equal, and co-interior angles add to 180°. From one angle you can find all eight, giving a reason for each."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A carpenter measures one angle where a brace crosses two parallel shelves. Without measuring again, she knows every other angle. How?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8170

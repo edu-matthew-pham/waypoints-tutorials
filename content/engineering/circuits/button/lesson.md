@@ -4,7 +4,7 @@ unit: inputs
 title: A button is an input
 summary: "A pin set as an input reads the voltage on it: joined to 3V it reads 1, joined to GND it reads 0. A button joins pin 0 to 3V only while it is held, so a pull-down resistor holds the pin at 0 when it is up. Without one the pin floats and reads 0 or 1 at random."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The micro:bit has buttons A and B built in. Wire your own button to a pin, and it can be a doorbell, a game controller or a sensor on a door. How does a pin know it has been pressed?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8503

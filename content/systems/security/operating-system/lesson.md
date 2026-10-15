@@ -5,7 +5,7 @@ node: AC9TDI10K01 n1
 title: What the operating system does
 summary: "Apps never talk to hardware directly. They ask the operating system, and the OS uses a driver for each device, so one app works with any webcam or storage. Because every request goes through it, the OS can also decide which apps may use what."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "There are thousands of different webcams, and your video call app works with all of them. How?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8474

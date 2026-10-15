@@ -6,7 +6,7 @@ introduces: [binary]
 title: Bits and binary numbers
 summary: "A computer stores numbers with switches that are only off (0) or on (1). Put bits side by side, make each place worth double the one on its right (1, 2, 4, 8, 16), and add the places that hold a 1: 10110 = 16 + 4 + 2 = 22."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A computer has no digits from 2 to 9, only switches that are off or on. So how does it store the number 22?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8462

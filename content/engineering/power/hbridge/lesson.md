@@ -5,7 +5,7 @@ title: Motor drivers
 assumes: [electric-current]
 summary: "A motor driver (an H-bridge) lets two pins choose the direction: IN1 HIGH and IN2 LOW is forwards, swapped is backwards, the same is stop. A third, PWM pin on ENA sets the speed with analogWrite. Two jobs, two kinds of signal."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A transistor switches a motor on and off. But a robot has to reverse, and go slowly round corners. How does a pin make a motor go backwards?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8514

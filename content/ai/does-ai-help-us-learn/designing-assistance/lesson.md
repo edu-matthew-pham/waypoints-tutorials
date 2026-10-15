@@ -4,7 +4,7 @@ summary: Compare direct instruction, guided hints and fading support for differe
 language: science
 unit: choosing-assistance
 order: 3
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 Lesson 8 showed that interaction does not automatically produce learning. If we can control when a tutor explains, questions or hints, **how should we arrange that help?**
 

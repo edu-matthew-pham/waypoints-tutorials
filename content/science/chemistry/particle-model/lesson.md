@@ -6,7 +6,7 @@ unit: particles
 title: What is everything made of?
 summary: All matter is made of tiny particles with empty space between them, always moving and attracting each other. Match particle diagrams to solids, liquids and gases.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8239
   url: http://127.0.0.1:8239/index.html

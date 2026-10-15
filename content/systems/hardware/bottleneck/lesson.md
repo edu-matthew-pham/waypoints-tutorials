@@ -5,7 +5,7 @@ node: AC9TDI8K01 n2
 title: Find the bottleneck
 summary: "A job is only as fast as its slowest part, the bottleneck. Run jobs on an old laptop, see how long each part takes, and upgrade the part that matters: more RAM for many tabs, an SSD for loading, a faster network for downloads, a graphics card for AI."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "An old laptop takes a minute and a half to load a game level. You can upgrade one part. Which?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8480

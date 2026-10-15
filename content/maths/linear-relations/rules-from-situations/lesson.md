@@ -7,7 +7,7 @@ assumes: [AC9M8A02 n1, AC9M8A02 n3]   # its Prior Knowledge; lines from rules ar
 title: Rules from real situations
 summary: Many real costs and amounts are a starting amount plus a rate. The starting amount is c and the rate is m, so the rule is y = mx + c.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Taxi fares, phone plans, gym memberships and a phone battery running down all follow the same pattern: where you start, and how much changes each time."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8138

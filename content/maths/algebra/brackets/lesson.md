@@ -5,7 +5,7 @@ node: AC9M7A02 n2
 title: When brackets are needed
 summary: Brackets keep a part together so it is worked out first. If a sentence says to do something to a whole result, such as "add 3, then double it", the expression needs brackets.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "\"Add 4, then double it\" and \"double it, then add 4\" sound alike. They give different answers, and different expressions."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8146

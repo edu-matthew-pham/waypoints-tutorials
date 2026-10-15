@@ -5,7 +5,7 @@ unit: atoms
 title: Why isn't salt poisonous?
 summary: A compound is two or more types of atom chemically joined in a fixed ratio. It is a new substance with new properties, and a formula like H₂O tells you which atoms and how many.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8244
   url: http://127.0.0.1:8244/index.html

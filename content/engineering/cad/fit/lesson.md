@@ -4,7 +4,7 @@ unit: size
 title: Parts that fit
 summary: "Drawn the same size, a printed peg won't go in its hole: printers make holes smaller and pegs bigger. Plan a clearance: about 0.2–0.4 mm for a sliding fit, less for a tight press fit. Every printer differs, so calibrate with a test card."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The lid you designed is exactly the size of the box's opening. You print both, and the lid won't go on. Nothing was measured wrongly. What happened?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8523

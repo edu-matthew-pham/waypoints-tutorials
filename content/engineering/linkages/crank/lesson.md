@@ -5,7 +5,7 @@ title: Cranks and sliders
 assumes: [energy-transfer]
 summary: "A crank and slider turns rotation into back-and-forth motion: one turn is one stroke out and back, and the stroke is twice the crank's radius, whatever the rod's length. Students find the stroke by turning, work out a pump's flow, and size a crank to a brief."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A motor turns round and round. A pump needs a piston that goes in and out. How do you get one from the other?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8530

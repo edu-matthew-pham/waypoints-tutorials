@@ -5,7 +5,7 @@ node: AC9TDI10K01 n1
 title: Reading and finding
 summary: "cat prints a whole file and grep prints only the lines that contain a word. Names that start with a dot are hidden: ls skips them, ls -a shows them. With these you can find anything on a computer you can't see."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "ls shows four things in Sam's home folder. There are five. Where's the other one?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8489

@@ -6,7 +6,7 @@ uses: [AC9M8M07 n1]
 title: Checking a model
 summary: "Every model makes assumptions: a steady speed with no stops, a fare with no starting charge, an exchange rate with no fees. When a model's answer and real life differ, look for the assumption that does not hold, then refine the model, for example by adding a fixed starting amount."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A map app says the drive takes 3 hours. It takes 3 and a half. The maths was right; the model was too simple. Finding out why is the last step of modelling."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8321

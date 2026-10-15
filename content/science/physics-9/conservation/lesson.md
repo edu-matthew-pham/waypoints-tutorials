@@ -7,7 +7,7 @@ title: Where does the energy go?
 introduces: [energy-conservation]
 summary: "Energy is never made or destroyed: it only moves and changes type. This is the law of conservation of energy. When energy seems to disappear (a ball bounces lower, a car slows down), it has gone into heat and sound in the surroundings. The total is always the same."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8286
   url: http://127.0.0.1:8286/index.html

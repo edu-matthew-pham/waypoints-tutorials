@@ -6,7 +6,7 @@ uses: [AC9M8P02 n1, AC9M7P02 n2]
 title: Simulating compound events
 summary: "A computer can repeat a chance experiment thousands of times in a second. Run a simulation of two events, record the results in a frequency table, and compare the relative frequency with the probability from the sample space."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "In a board game you roll two dice every turn. Which total should you hope for, and how sure can you be? Rolling by hand would take all lesson; a simulation takes a second."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8332

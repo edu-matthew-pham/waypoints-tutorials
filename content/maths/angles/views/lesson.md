@@ -5,7 +5,7 @@ node: [AC9M7SP01 n2, AC9M7SP01 n3]
 title: Views of a solid
 summary: "A pile of cubes can be drawn in 3D or as top, front and side views. A front or side view shows only the tallest pile in each column; a top view with numbers shows every pile."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "An architect shows a building from above, from the front and from the side. Why not just one drawing?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8296

@@ -6,7 +6,7 @@ unit: plates
 title: What moves the plates?
 summary: "The lithosphere is broken into rigid plates that move a few centimetres a year. Slow convection currents in the hot mantle carry them, driven by Earth's inner heat: from the core below and from radioactive elements in the mantle rock itself."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8254
   url: http://127.0.0.1:8254/index.html

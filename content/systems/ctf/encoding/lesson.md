@@ -8,7 +8,7 @@ shape: 5e
 title: Encoding is not encryption
 summary: "Binary, hex and base64 are encodings: the same data written another way by a public rule. They look scrambled, but anyone can turn them back, so they hide nothing. Encryption needs a secret key as well: without it, the data can't be read. Use encryption to keep something secret, and hashing (Security and privacy) to store passwords."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The club app stored its admin password as cm9ib3RzMjAyNg==. It looks like nonsense. Is it safe?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8542

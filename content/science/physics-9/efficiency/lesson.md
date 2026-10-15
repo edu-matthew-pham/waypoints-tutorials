@@ -7,7 +7,7 @@ title: How much is useful?
 introduces: [efficiency]
 summary: "Efficiency is the share of the energy put in that comes out as useful energy: efficiency = useful energy out ÷ total energy in × 100%. No real device is 100% efficient, because some energy always becomes by-products, usually heat. A device can give out more useful energy and still be less efficient."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8287
   url: http://127.0.0.1:8287/index.html

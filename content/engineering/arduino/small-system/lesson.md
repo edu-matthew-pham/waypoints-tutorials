@@ -4,7 +4,7 @@ unit: hardware
 title: A small system
 summary: "A system reads a sensor, decides, and drives an output, and a brief says what it must do. Test it against a table of cases: each side of every threshold, the threshold itself, and the extremes. Tests that pass far from the threshold can hide a mistake right at it."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Your plant-water alarm works on your desk: it blinks when you twist the knob down. Does it meet the brief? How would you know, without watching it for a week?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8512

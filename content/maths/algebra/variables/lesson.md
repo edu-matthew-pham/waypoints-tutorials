@@ -5,7 +5,7 @@ node: AC9M7A01 n1
 title: Letters that vary
 summary: In a formula, letters stand for quantities that can change (variables) and numbers stay the same (constants). In an equation, a letter can stand for one unknown number.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Recipes, phone bills and the perimeter of a garden bed all follow a formula. The letters are what changes; the numbers are what stays."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8142

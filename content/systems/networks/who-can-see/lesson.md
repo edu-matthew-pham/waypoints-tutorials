@@ -6,7 +6,7 @@ introduces: [encryption-purpose]
 title: Who can see your data?
 summary: "Packets pass through Wi-Fi and routers you don't control, and anyone along the way can copy them. So anything private must be encrypted on your device before it leaves: scrambled with a key, so only someone with the key can turn it back. Encryption only works because it can be reversed."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You type your PIN on the café's free Wi-Fi. Between you and the bank, who else gets a copy?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8472

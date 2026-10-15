@@ -6,7 +6,7 @@ uses: [AC9M7N04 n1]   # equivalent fractions: multiplying or dividing top and bo
 title: Equivalent and simplest ratios
 summary: "2 : 3 = 4 : 6 = 6 : 9: multiply or divide both numbers by the same number. 12 : 18 simplifies to 2 : 3 by dividing both by 6."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A recipe for 4 uses 2 cups of flour and 3 of milk. How much milk do you need for 10 cups of flour?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8291

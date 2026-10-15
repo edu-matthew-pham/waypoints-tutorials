@@ -6,7 +6,7 @@ uses: [AC9M8M05 n2, AC9M7M06 n1]
 title: Ratio and rate models
 summary: "Model a practical problem: say what you need, decide whether it is a ratio (parts of the same kind, like cordial to water) or a rate (two different units, like m² per litre), set it up, solve, then interpret the answer in the situation, such as rounding up to whole tins."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Painting a room, mixing cordial for a party, filling a pool, sharing the cost of a gift: the maths is easy once you choose the right model and remember what the answer means."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8320

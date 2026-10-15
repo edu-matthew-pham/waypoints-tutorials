@@ -6,7 +6,7 @@ unit: atoms
 title: Same element, different atoms?
 summary: "Isotopes are atoms of the same element (same number of protons) with different numbers of neutrons. They react in the same way but have different masses, and some are unstable: they are radioactive."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8261
   url: http://127.0.0.1:8261/index.html

@@ -6,7 +6,7 @@ uses: [AC9M7N04 n1]   # simplifying fractions (Equivalent fractions)
 title: Multiplying and dividing fractions
 summary: "a/b × c/d is c/d of a/b: multiply the tops and multiply the bottoms. Multiplying by a fraction less than 1 makes a number smaller. Dividing asks how many fit: 3 ÷ 1/4 = 12."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Half of a pizza is left, and you eat a third of what is left. How much of the whole pizza did you eat? Fractions of fractions are multiplications."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8270

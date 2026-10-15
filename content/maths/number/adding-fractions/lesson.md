@@ -6,7 +6,7 @@ uses: [AC9M7N04 n1, AC9M7N02 n3]   # equivalent fractions; the LCM (HCF and LCM)
 title: Adding and subtracting fractions
 summary: "Parts can be counted together only when they are the same size. Cut both fractions into the same parts first: 1/3 + 1/4 = 4/12 + 3/12 = 7/12. The lowest common multiple of the bottoms is the smallest choice."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A recipe needs 1/3 of a cup of milk and 1/4 of a cup of cream. Will it all fit in a half-cup measure? You cannot tell until the parts are the same size."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8269

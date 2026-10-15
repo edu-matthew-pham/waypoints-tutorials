@@ -6,7 +6,7 @@ uses: [AC9M7N04 n2, AC9M7N06 n2]   # percentages as decimals; multiplying by a f
 title: Percentages of amounts
 summary: "15% of $80 is 0.15 × 80 = $12. Take it off for a discount ($68, or 80 × 0.85 in one step), add it on for an increase ($92, or 80 × 1.15). And 18 out of 24 is 18 ÷ 24 = 75%."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A jacket is $80, and the sign says 15% off. Before you reach the counter, can you work out what you will pay?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8271

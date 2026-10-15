@@ -7,7 +7,7 @@ shape: 5e
 title: Security review
 summary: "Before the club app launches, review it like a security team: inspect its accounts, its data and its system, choose the fix that really closes each weakness, and collect a flag for each section you make safe. Everything from the course comes together: unique passphrases and MFA, collecting only what is needed, hashed passwords, a real privacy notice, HTTPS and updates."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The club app launches tomorrow. Seven weaknesses are hiding in it. Find and fix them all."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8540

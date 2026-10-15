@@ -6,7 +6,7 @@ unit: mixtures
 title: Filtration and evaporation
 summary: Filtration separates a solid that hasn't dissolved; evaporation recovers a solid that has. Describe both, name the residue and filtrate, and choose the right one.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8248
   url: http://127.0.0.1:8248/index.html

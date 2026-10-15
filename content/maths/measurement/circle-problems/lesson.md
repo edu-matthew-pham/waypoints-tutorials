@@ -6,7 +6,7 @@ uses: [AC9M8M03 n1]
 title: Circle problems
 summary: "Choose the formula by what you need: C = 2πr for a length round the edge, A = πr² for the space inside. Work backwards from an area with r = √(A ÷ π). Half and quarter circles, rings and tracks are parts of circles added to or taken from other shapes."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A running track, a round garden bed, a pizza deal: is a 30 cm pizza more than twice a 20 cm one? Circle problems need the right formula, sometimes run backwards."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8308

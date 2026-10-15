@@ -5,7 +5,7 @@ unit: cells
 title: Is everything alive made of cells?
 summary: "Cell theory: all living things, including plants, fungi and bacteria, are made of cells. Some organisms are a single cell; others are made of many."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8213
   url: http://127.0.0.1:8213/index.html

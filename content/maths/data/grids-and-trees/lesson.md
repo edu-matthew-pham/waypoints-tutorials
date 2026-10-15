@@ -6,7 +6,7 @@ uses: [AC9M8P01 n1, AC9M7P01 n1]
 title: Grids and tree diagrams
 summary: "Two events, one after the other, make a sample space of pairs. A grid or a tree diagram lists every pair once, so you can count the outcomes in an event and find its probability."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A game asks you to toss a coin and roll a dice: you win with heads and an even number. Is that a good chance or a poor one? First you need every way the two can land."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8330

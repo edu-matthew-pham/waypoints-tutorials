@@ -6,7 +6,7 @@ uses: [AC9M7N08 n3, AC9M7N09 n3]   # sharing a total in a ratio; modelling with 
 title: Modelling with ratios
 summary: "Mixes, scale drawings and models: say what is known and unknown, choose the ratio, solve, and answer in the units of the situation."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A builder mixes mortar as 1 part cement to 3 parts sand. She needs 20 litres of mix. How much of each does she need to buy?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8293

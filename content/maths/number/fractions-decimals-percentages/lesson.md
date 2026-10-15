@@ -5,7 +5,7 @@ node: AC9M7N04 n2
 title: Fractions, decimals and percentages
 summary: "One amount, three ways to write it. A percentage is out of 100, so 3/4 = 75/100 = 75% = 0.75. Divide the top by the bottom for a decimal; put a percentage over 100 and simplify for a fraction."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A 25% discount, a quarter off, 0.25 of the price: the same saving, written three ways. Which is easiest depends on the job."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8174

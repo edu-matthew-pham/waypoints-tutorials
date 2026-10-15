@@ -5,7 +5,7 @@ node: AC9M8M01 n1
 title: Composite shapes
 summary: "A composite shape is made of shapes you know. Cut it into pieces and add their areas, or see it as a big rectangle with pieces taken away; the area is the same either way. The perimeter is the distance round the outside."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "An L-shaped bedroom, a house front with a pointed roof, a photo frame: none is a single rectangle, but each is easy once you cut it up."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8303

@@ -7,7 +7,7 @@ shape: 5e
 title: Threat models
 summary: "A threat model follows the data through a system on a data-flow diagram: where it travels, where it is stored, and who can change it. Each point has its own risk (read on the way, copied from storage, used by the wrong person) and its own defence (HTTPS, hashing and encryption, access control and MFA). One defence doesn't cover them all."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The club app has HTTPS: the padlock is showing. Is it secure?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8497

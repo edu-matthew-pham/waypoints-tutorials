@@ -6,7 +6,7 @@ introduces: [fetch-execute]
 title: A tiny processor
 summary: "A processor repeats one cycle: fetch the instruction the program counter points at, decode it, execute it, one step per clock tick. The program is numbers in the same memory as the data. Step a tiny processor, change its program, and write your own."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Your games, apps and websites all end up as simple instructions like ADD and JUMP. What does a processor actually do with them?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8485

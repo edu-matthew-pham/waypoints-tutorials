@@ -5,7 +5,7 @@ node: AC9TDI10K01 n1
 title: Where files live
 summary: "Files live in a tree of folders, and a path names a place in it. pwd says where you are, ls lists what is here and cd moves you, with full paths from the top (/), short paths from where you are, .. for the folder above and ~ for home."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Most of the world's servers have no mouse and no windows. People run them by typing. Where do you even start?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8488

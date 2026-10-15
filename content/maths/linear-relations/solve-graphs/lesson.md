@@ -7,7 +7,7 @@ assumes: [AC9M8A02 n1]   # graphing y = mx + c is taught in Plotting a rule and 
 title: Solving equations with graphs
 summary: Draw each side of an equation as a line. Where the lines meet, both sides are equal, so the x there is the solution.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A graph can solve an equation you have no method for yet: draw both sides and look where they meet. Calculators, spreadsheets and engineers do exactly this."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8137

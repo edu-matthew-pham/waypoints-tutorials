@@ -6,7 +6,7 @@ uses: [AC9M7N06 n3, AC9M7N08 n3]   # percentages of amounts (Percentages); shari
 title: Modelling with money
 summary: "Discounts, markups and profit: formulate the problem, choose fractions, percentages or ratios, solve, and say what the answer means in dollars."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A $200 bike is 20% off, and then a coupon takes a further 10% off the new price. Is that the same as 30% off?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8294

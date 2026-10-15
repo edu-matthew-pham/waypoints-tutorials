@@ -6,7 +6,7 @@ unit: models
 title: Wave or particle?
 summary: "A model is a tool, not a photograph. The particle model explains conduction, convection and static charge; the wave model explains sound, reflection, refraction and the electromagnetic spectrum. Light shows both wave-like and particle-like behaviour, so neither model alone explains it all: each is useful for some phenomena and weak for others."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Is light a wave or a stream of particles? Scientists argued for 300 years. The answer turned out to be: the question is a bit too simple."
 ---
 A short lesson with no simulation. You have used two models this unit. Now you decide where each one works.

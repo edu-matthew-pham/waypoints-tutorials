@@ -6,7 +6,7 @@ uses: [AC9M7M03 n3]
 title: Area of a circle
 summary: "Cut a circle into thin slices and lay them top to tail: they make a shape close to a rectangle, πr long and r high. So the area of a circle is A = πr². It is between 2r² and 4r², about 3.14 times r²."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "How much pizza is in a pizza? Cut it into slices, lay them out top to tail, and a rectangle appears."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8307

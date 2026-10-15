@@ -5,7 +5,7 @@ node: AC9M7M01 n2
 title: Area problems
 summary: "Pick the base and the height at a right angle to it, put both lengths in the same unit, and split a shape into rectangles and triangles. Area is in square units: m², cm²."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "How much paint for the end wall of a house, with its triangle of roof? Real shapes mix rectangles and triangles, and real measurements mix metres and centimetres."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8275

@@ -4,7 +4,7 @@ unit: board
 title: Route the traces
 summary: "Routing turns every ratsnest line into copper. Two traces of different nets can never touch, so where they must cross, one goes round or drops to the other side of the board. Students route the shield on one layer, then on two, and compare the copper."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two wires on a breadboard can cross in the air. Two copper traces that touch are a short circuit. How does GND get past OUT?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8534

@@ -6,7 +6,7 @@ shape: 5e
 title: When passwords fail
 summary: "Passwords fail in three predictable ways: a site leaks its list, one password reused everywhere lets that leak open every account, and common or personal passwords are on the lists people try first. Long random passphrases, a different one for every site, fix it."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A game site Ava used once has just been hacked. Is her school email safe?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8493

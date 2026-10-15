@@ -6,7 +6,7 @@ uses: [AC9M8M05 n1]
 title: Using rates
 summary: "Use a rate to find a total (rate × amount), or the amount (total ÷ rate). For speed: distance = speed × time and time = distance ÷ speed. Show the units at every step, and check the answer makes sense."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "How much will it cost to fill the car? How long is the drive to the coast? How many dollars for your holiday money? Each answer comes from one rate, used the right way round."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8319

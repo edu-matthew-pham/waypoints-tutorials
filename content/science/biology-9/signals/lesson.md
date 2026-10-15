@@ -6,7 +6,7 @@ unit: control
 title: Nerves or hormones?
 summary: "The body runs the same stimulus–receptor–command centre–effector pathway in two ways. The nervous system sends electrical signals along nerves: fast, short and to one place. The endocrine system sends hormones from glands in the blood: slower, longer-lasting and to target organs anywhere."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8274
   url: http://127.0.0.1:8274/index.html

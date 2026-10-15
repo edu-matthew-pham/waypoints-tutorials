@@ -6,7 +6,7 @@ unit: changes
 title: Physical or chemical? Use all the clues
 summary: "To classify an unfamiliar change, ask the main question first: is a new substance made? Then check the clues: colour, gas, solid forming, light, and temperature or energy change. One clue can mislead (boiling makes bubbles and ice melting takes in heat, yet both are physical), so several clues pointing the same way give more confidence."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A pot of water boils: bubbles, steam, heat. A pot of milk 'boils' and then turns to a skin. Both look dramatic. Only one is a chemical change. How do you tell?"
 ---
 A short lesson with no simulation. You have the new-substance test, the clues and energy change. Now use them together.

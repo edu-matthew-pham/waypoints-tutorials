@@ -6,7 +6,7 @@ uses: [AC9M7N08 n1]
 title: Rates
 summary: "A rate compares two quantities with different units: 60 km per hour, $4 per kg, 80 beats per minute. The unit rate is how much for 1 of the second quantity: divide the first by the second. A ratio compares quantities in the same units. Speeds convert with 1 km/h = 1000 m ÷ 3600 s."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Speed limits, the price of petrol, your heart rate and how fast your phone downloads: all rates. Each one says 'this much per one of that'."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8318

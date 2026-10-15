@@ -5,7 +5,7 @@ node: AC9M8A01 n2
 title: Factorising
 summary: "Factorising is expanding backwards. Share the terms into equal rows: 6x + 9 is 3 rows of 2x + 3, so 3(2x + 3). Take out the highest common factor, then check by expanding."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "6 x-tiles and 9 ones. Can you share them into equal rows, with nothing left over? The number of rows goes outside the bracket."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8167

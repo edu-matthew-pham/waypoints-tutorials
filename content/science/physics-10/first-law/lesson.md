@@ -5,7 +5,7 @@ unit: newton
 title: Does a moving thing need a push?
 summary: "Newton's first law: an object at rest stays at rest, and a moving object keeps moving at a constant velocity, unless a net force acts. Moving things slow down because of friction, not because their push runs out."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8204
   url: http://127.0.0.1:8204/index.html

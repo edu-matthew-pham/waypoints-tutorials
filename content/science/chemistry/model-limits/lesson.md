@@ -6,7 +6,7 @@ unit: particles
 title: What can't the particle model explain?
 summary: "The particle model treats matter as tiny particles that move and attract each other. It explains states, diffusion, compressing gases and expansion very well. It can't explain colour, why substances react, or electricity, because it treats particles as plain balls with no parts. Scientists keep a model for what it does well and use other models for the rest."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8277
   url: http://127.0.0.1:8277/index.html

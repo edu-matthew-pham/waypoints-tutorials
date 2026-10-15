@@ -4,7 +4,7 @@ unit: cpp
 title: Talking to the computer
 summary: "Serial.begin(9600) in setup() opens a line to the computer; Serial.println(level) sends a value and starts a new line, and Serial.print stays on the same line. The serial monitor shows what the board sees, which is how you test and debug a sketch. In C++, \"words\" + a number does not join them."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Your sketch decides from a number you can't see. When the LED does something odd, how do you find out what the board actually read?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8508

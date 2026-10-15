@@ -6,7 +6,7 @@ uses: [AC9M8ST02 n1, AC9M7ST02 n2]
 title: Describing a sample
 summary: "Display a sample's data, then report its shape, centre and spread, and what it suggests about the population: an estimate, with the sampling method and size stated."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A news story says 'Teens sleep 8 hours a night.' Is that every teen, most teens, or a sample's average? A good report says which, and how the sample was chosen."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8336

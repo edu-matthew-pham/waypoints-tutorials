@@ -4,7 +4,7 @@ unit: inputs
 title: Sensors that vary
 summary: "Analog read turns the voltage on a pin, 0 to 3.3 V, into a number from 0 to 1023. A knob or a light sensor in a divider changes that voltage, so the number changes. A program compares the number with a threshold to decide, as a night light does."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A button is on or off. But a room isn't just light or dark, and a volume knob isn't just loud or silent. How does a micro:bit measure something in between?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8504

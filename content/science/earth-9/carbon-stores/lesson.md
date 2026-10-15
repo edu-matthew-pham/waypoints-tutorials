@@ -5,7 +5,7 @@ unit: carbon
 title: Where is all the carbon?
 summary: "Carbon is stored in every one of Earth's spheres: as carbon dioxide in the air, dissolved in the oceans, in living things and soil, and in fossil fuels and rocks. Carbon is never made or destroyed; it moves between these stores, and the carbon cycle is the map of those moves."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8275
   url: http://127.0.0.1:8275/index.html

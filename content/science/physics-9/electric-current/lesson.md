@@ -6,7 +6,7 @@ title: How does current flow?
 introduces: [electric-current]
 summary: "In a conductor such as copper each atom lets go of an electron, so there are free electrons that can move. A battery pushes them round the circuit: this flow of charge is the current, and more volts push harder. In an insulator the electrons stay tied to their atoms, so there is no current. The electrons are not used up; the bulb transfers the battery's energy."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8291
   url: http://127.0.0.1:8291/index.html

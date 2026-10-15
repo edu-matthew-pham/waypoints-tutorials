@@ -6,7 +6,7 @@ assumes: [force-arrows, balanced-forces]
 introduces: [turning-effect]
 summary: "A lever trades force for distance: a small push far from the pivot lifts a big load near it, and your hand moves farther than the load. Students find where to put a pivot by testing, work out the push from turning effects, meet the three classes of lever (including the one in their arm), and design a lever to a brief."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A 600 N rock, a 2 m bar, and a block to rest it on. You can push 200 N at most. Where does the block go?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8528

@@ -5,7 +5,7 @@ node: AC9M7ST01 n3
 title: Which measure?
 summary: "Choose the measure that tells the truth about the data. An outlier drags the mean, so the median is better for data with extreme values; the mean uses every value when there are none; the mode suits the most common choice."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "One student gets 40 dollars a week; the rest get 5 to 8. 'The average is 12 dollars,' says the newspaper. Is that fair?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8181

@@ -4,7 +4,7 @@ unit: motion
 title: Cams and followers
 summary: "A cam is a shaped wheel; a follower rests on it and rises and falls as it turns. The cam's shape decides the follower's path, which a displacement graph shows. Students read graphs from four cams, match cams to jobs, and choose a cam for a toy."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A toy bird must pop up, wait, and drop. A motor just turns. What shape of wheel turns one into the other?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8531

@@ -7,7 +7,7 @@ assumes: [AC9M8A02 n1]   # graphing lines: Linear relations (Lines and their rul
 title: Solving harder equations
 summary: "Get the x terms on one side and the numbers on the other, doing the same to both sides; expand any brackets first. Then check by substituting into the first equation."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two phone plans: 7 dollars plus 3 a gigabyte, or 5 a gigabyte minus a 9 dollar credit. When do they cost the same? 3x + 7 = 5x − 9."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8175

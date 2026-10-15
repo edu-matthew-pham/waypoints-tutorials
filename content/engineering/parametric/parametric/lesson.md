@@ -4,7 +4,7 @@ unit: param
 title: Parametric design
 summary: "In a parametric model, dimensions are linked by rules: outside = part + 2 × (clearance + wall). Change the part, and everything that depends on it updates. Name the numbers that drive the design, and work the rest out from them."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The board your case was designed for has been replaced by a bigger one. Do you start again, or change one number?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8526

@@ -5,7 +5,7 @@ unit: atoms
 title: Mixed, not joined?
 summary: "A mixture is two or more substances mingled together but not chemically joined. Each keeps its own properties, the amounts can vary, and the parts can be separated by physical means. A compound is the opposite: atoms joined in a fixed ratio, with new properties."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8272
   url: http://127.0.0.1:8272/index.html

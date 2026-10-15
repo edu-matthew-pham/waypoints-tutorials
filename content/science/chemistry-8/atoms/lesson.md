@@ -6,7 +6,7 @@ unit: atoms
 title: What are particles made of?
 summary: The particles of the particle model are atoms. Atoms come in different types, one type for each element, and atom type decides what element a substance is.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8242
   url: http://127.0.0.1:8242/index.html

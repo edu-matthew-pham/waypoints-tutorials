@@ -5,7 +5,7 @@ node: AC9M7N04 n1
 title: Equivalent fractions
 summary: "Fractions are equal when they shade the same amount. Multiply or divide the top and the bottom by the same number: 2/3 = 4/6 = 8/12. Dividing by the highest common factor gives the simplest form."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Half a pizza cut into 2 slices or into 8: the same amount to eat. The numbers change; the amount does not."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8173

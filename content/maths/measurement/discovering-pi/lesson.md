@@ -6,7 +6,7 @@ uses: [AC9M7N06 n2]   # dividing decimals
 title: Discovering π
 summary: "Roll any circle out flat and its circumference is just over 3 of its diameters. C ÷ d is the same number for every circle: π (pi), about 3.14. π's digits never end: 3.14 and 22/7 are close, not exact."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across. People have known this for four thousand years."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8279

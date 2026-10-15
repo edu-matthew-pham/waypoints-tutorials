@@ -6,7 +6,7 @@ uses: [AC9M7N07 n2]   # the "opposite way" idea from subtracting a negative
 title: Multiplying and dividing integers
 summary: a × b is a jumps of b from zero. A negative number of jumps goes the opposite way, so a negative times a negative is positive. Division undoes it with the same signs.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A tank loses 3 litres an hour. Three hours ago, did it hold more or less than now? A negative rate times a negative time: the answer is a positive change."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8166

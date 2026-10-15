@@ -6,7 +6,7 @@ uses: [AC9M8P01 n1, AC9M7P01 n2]
 title: Venn diagrams and two-way tables
 summary: "When everyone in a group is sorted by two yes/no questions, a Venn diagram and a two-way table show the same four groups: one, the other, both and neither. Each person is in exactly one of them."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "In a class of 30, 20 play sport and 13 play music. That adds to 33, more than the class. Nobody miscounted. What is going on?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8329

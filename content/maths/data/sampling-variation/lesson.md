@@ -6,7 +6,7 @@ uses: [AC9M8ST02 n2, AC9M7P02 n2]
 title: How samples vary
 summary: "Random samples from the same population give different results. That is sampling variation, not a mistake. Bigger samples vary less, so their results are more reliable."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two polls of the same election, taken the same week, give 52% and 48% for the same party. Is one of them wrong?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8337

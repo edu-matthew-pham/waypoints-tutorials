@@ -6,7 +6,7 @@ uses: [AC9M8N02 n1]
 title: Using the index laws
 summary: "Simplify one step at a time: powers of powers first, then multiply and divide from left to right, keeping each base. The laws only join powers of the same base: 2³ × 3² cannot become one power. They also make scientific notation quick."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Scientists write the distance to the Sun as 1.5 × 10⁸ km. Multiplying numbers like that takes seconds with the index laws, as long as you only join powers of the same base."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8315

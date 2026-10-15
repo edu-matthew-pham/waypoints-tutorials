@@ -5,7 +5,7 @@ node: AC9M7M05 n1
 title: Angles in a triangle
 summary: However you change a triangle, its three angles add to 180°. Tear off the corners and they make a straight line.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A roof truss, a bike frame, a folded paper plane: triangles of every shape. One thing about their angles never changes."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8162

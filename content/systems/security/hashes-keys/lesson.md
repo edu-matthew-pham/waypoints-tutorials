@@ -6,7 +6,7 @@ introduces: [hashing, public-key]
 title: Hashes and keys
 summary: "Good sites never store your password. They store a hash: a one-way scramble that is always the same for the same password, so a login can be checked, but can't be turned back. A salt makes the same password hash differently for each person. Public key encryption works like an open padlock: anyone can lock a message with it, but only the owner's private key opens it."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Websites get hacked and their password lists stolen. If the site did its job, the attackers still don't get your password. How?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8477

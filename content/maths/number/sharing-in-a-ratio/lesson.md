@@ -6,7 +6,7 @@ uses: [AC9M7N08 n2]   # equivalent ratios and scaling (Equivalent and simplest r
 title: Sharing in a ratio
 summary: "Share $60 in the ratio 2 : 3. Add the parts (5), find one part ($60 ÷ 5 = $12), then multiply: $24 and $36."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Ana and Ben earn $60 washing cars. Ana did 2 cars, Ben did 3. They agree to share the money in that ratio. How much does each get?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8292

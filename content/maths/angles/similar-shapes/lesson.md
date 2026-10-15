@@ -6,7 +6,7 @@ uses: [AC9M8SP01 n1, AC9M7SP03 n1]
 title: Similar shapes
 summary: "Similar shapes are the same shape but can be different sizes, like a photo and its enlargement. Find the scale factor, use it to work out missing sides, and learn the conditions that make two triangles similar."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "How can you find the height of a tree without climbing it? Its shadow and your own shadow make two triangles of the same shape."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8323

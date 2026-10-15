@@ -5,7 +5,7 @@ node: AC9TDI8K02 n1
 title: Wired or wireless
 summary: "Links between computers differ in three ways: bandwidth (how much data each second), latency (the delay for each packet) and reliability (how many packets get lost). Cables usually win on all three; Wi-Fi gets slower and less reliable with distance and walls. Which matters most depends on the job."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Gamers plug in a cable; everyone else uses Wi-Fi. Is the cable really better, and better at what?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8473

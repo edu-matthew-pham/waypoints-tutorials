@@ -4,7 +4,7 @@ summary: Examine competing accounts of valuable learning, including independent 
 language: science
 unit: what-is-learning
 order: 3
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 Lesson 2 explored whether good performance shows learning. It raised another question: **What kinds of learning should we value in the first place?**
 

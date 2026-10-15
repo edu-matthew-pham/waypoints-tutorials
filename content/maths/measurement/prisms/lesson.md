@@ -6,7 +6,7 @@ uses: [AC9M7M01 n1]   # area of triangles
 title: Prisms and capacity
 summary: "Any right prism has the same shape all the way along: its cross-section. Volume = area of the cross-section × length, for triangles too (halve first). Capacity: 1 cm³ holds 1 mL, and 1000 cm³ is a litre."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A tent, a chocolate bar in a triangular box, a drink carton: how much do they hold? If the shape is the same all the way through, one rule finds them all."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8277

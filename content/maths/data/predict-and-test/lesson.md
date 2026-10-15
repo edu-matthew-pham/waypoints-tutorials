@@ -5,7 +5,7 @@ node: [AC9M7P01 n3, AC9M7P02 n1]
 title: Predict and test
 summary: "The expected number of times an outcome happens is its probability × the number of trials: 60 rolls should give about 10 sixes. Run the experiment and record the counts: the results come close, but rarely exactly."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Roll a dice 60 times. Exactly ten sixes? Probably not. But how far off is normal, and when should you suspect the dice?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8185

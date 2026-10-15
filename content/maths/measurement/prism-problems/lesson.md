@@ -6,7 +6,7 @@ uses: [AC9M8M02 n1]
 title: Prism problems
 summary: "The volume of any right prism is the area of its end (the cross-section) times its length: V = Ah. Work backwards to find a missing length: divide the volume by the area of the end. Give the answer in the units the problem needs."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A farmer needs a water trough that holds 500 L, a builder orders concrete in cubic metres, a pool needs filling. Each is a prism problem, often run backwards."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8306

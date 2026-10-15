@@ -6,7 +6,7 @@ shape: 5e
 title: A second lock
 summary: "Multi-factor authentication asks for something you have (a phone, a security key) or are (a fingerprint) as well as something you know. A leaked password alone is no longer enough. Codes can still be tricked out of you by a fake sign-in page; a security key only answers the real site."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Ava's passwords have all leaked. Can she still keep her accounts?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8494

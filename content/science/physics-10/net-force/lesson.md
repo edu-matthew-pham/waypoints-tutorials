@@ -5,7 +5,7 @@ unit: newton
 title: What is the net force?
 summary: "A force is a vector: it has a size and a direction. Forces along one line add if they point the same way and subtract if they point opposite ways. What is left is the net (resultant) force, and that is what changes motion."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8267
   url: http://127.0.0.1:8267/index.html

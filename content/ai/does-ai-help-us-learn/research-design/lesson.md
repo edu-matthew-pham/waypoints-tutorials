@@ -4,7 +4,7 @@ summary: Redesign an AI-learning experiment by choosing informative comparison c
 language: science
 unit: evaluating-evidence
 order: 3
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 Lessons 4 and 5 gave us evidence about assisted performance, measured learning and confidence. But every experiment starts by deciding **what to compare and what to count as success**.
 

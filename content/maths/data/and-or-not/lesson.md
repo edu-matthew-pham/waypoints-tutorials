@@ -6,7 +6,7 @@ uses: [AC9M8P02 n1, AC9M8P01 n2]
 title: And, or and not
 summary: "'A and B' means both happen; 'A or B' means at least one happens (both included); 'not A' is everything else. Read them from a Venn diagram, a two-way table or a grid, counting each outcome once."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A raffle prize goes to someone who plays sport or music. In a class of 30, 20 play sport and 13 play music. How many are in the draw?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8331

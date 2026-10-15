@@ -5,7 +5,7 @@ title: Pulleys
 assumes: [weight, balanced-forces, energy-conservation]
 summary: "One pulley changes the direction of a pull, not its size. Ropes that hold up a moving block share the load, so the pull shrinks, but you pull more rope by the same factor. Students test pulleys, work out pulls and rope lengths, see that work in equals work out, and choose a pulley system for a brief."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A 400 N sack has to go up onto a stage. You can pull 150 N. How many pulleys do you need, and how much rope will you pull?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8529

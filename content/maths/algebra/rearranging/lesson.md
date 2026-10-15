@@ -5,7 +5,7 @@ node: AC9M8A01 n3
 title: Changing the subject
 summary: "A formula gives one letter from the others. To get a different letter, undo the steps in reverse order, doing the same to both sides: y = 3x + 5 becomes x = (y − 5)/3. Check by substituting."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "P = 2l + 2w gives the fence around a garden. But you have 20 m of fence and a 6 m side. How wide can it be? Turn the formula around."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8168

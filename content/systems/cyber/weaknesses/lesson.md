@@ -6,7 +6,7 @@ shape: 5e
 title: Kinds of weakness
 summary: "Systems have three kinds of weakness. Software: a flaw in the app's own code (fix: update and test). User: what people do, like weak or shared passwords or being tricked (fix: training, strong passwords, MFA). Supply chain: something the app relies on, like an add-on or library, goes bad (fix: check and update what you rely on). Perfect code alone doesn't make a system safe."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Three clubs' apps went wrong this year. One had a bug, one had a password on a sticky note, and one trusted a free add-on. Which was the club's fault?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8498

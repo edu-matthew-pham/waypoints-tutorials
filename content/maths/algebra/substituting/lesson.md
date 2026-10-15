@@ -5,7 +5,7 @@ node: AC9M7A01 n2
 title: Substituting into formulas
 summary: To use a formula, replace each letter with its value, write in the × signs, then work it out in the right order.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A formula is a recipe for a number. Put in the values you know, and it gives you the one you want: a perimeter, a cost, a speed."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8143

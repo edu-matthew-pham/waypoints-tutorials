@@ -4,7 +4,7 @@ summary: Decide when to work independently, seek assistance or delegate a task b
 language: science
 unit: learning-effectively-with-ai
 order: 3
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
   url: http://127.0.0.1:8241/index.html

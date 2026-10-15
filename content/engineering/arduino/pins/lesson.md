@@ -4,7 +4,7 @@ unit: uno
 title: Same circuit, new board
 summary: "An Arduino Uno names its pins by number, and the code must use the number of the pin the wire goes to. pinMode sets a pin as an output; digitalWrite switches it HIGH or LOW. The circuit ideas from the micro:bit carry straight over."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Most electronics kits, sensors and project guides assume an Arduino. The circuits are the ones you already know. What changes is the board, and then the language."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8505

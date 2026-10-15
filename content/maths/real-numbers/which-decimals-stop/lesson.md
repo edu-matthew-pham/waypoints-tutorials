@@ -6,7 +6,7 @@ uses: [AC9M8N03 n1, AC9M7N02 n2]
 title: Which decimals stop?
 summary: "Write the fraction in simplest form and break the denominator into primes. If its only prime factors are 2 and 5, the decimal terminates; any other prime factor makes it recur. It works because 10 = 2 × 5."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Without dividing anything, you can tell that 7/40 stops and 7/30 goes on forever. The secret is in the denominator's prime factors."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8311

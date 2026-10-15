@@ -5,7 +5,7 @@ optional: true
 title: Laser cutting and kerf
 summary: "A laser beam burns away a thin strip as it cuts: the kerf. So a cut slot comes out wider than drawn (by the kerf) and a cut-out part a little smaller. Draw slots narrower than the board for a snug press fit."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A laser cutter is accurate to a tenth of a millimetre, yet your flat-pack box falls apart without glue. Where did the fit go?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8527

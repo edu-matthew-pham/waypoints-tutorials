@@ -5,7 +5,7 @@ unit: periodic
 title: Why do elements in a group behave alike?
 summary: Elements in the same group have the same number of outer-shell electrons, so they react in similar ways. Group 1 metals lose their one outer electron easily; group 17 non-metals gain one easily; group 18 has full shells and hardly reacts.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8259
   url: http://127.0.0.1:8259/index.html

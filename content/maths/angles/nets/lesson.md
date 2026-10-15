@@ -5,7 +5,7 @@ node: AC9M7SP01 n1
 title: Nets
 summary: "A net is a flat pattern that folds into a solid. Six squares make a cube only if they land on six different faces; a triangular prism has two triangles and three rectangles."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A cereal box starts as one flat piece of card. Which flat shapes fold up into a box, and which ones jam?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8295

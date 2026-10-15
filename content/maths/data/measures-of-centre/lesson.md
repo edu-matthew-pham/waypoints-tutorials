@@ -5,7 +5,7 @@ node: AC9M7ST01 n2
 title: Mean, median, mode and range
 summary: "Four numbers that sum up a data set: the mean (add, then share equally), the median (the middle value once sorted), the mode (the most common) and the range (highest minus lowest)."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A team scored 3, 5, 5, 6 and 11 goals. What is a typical game? There are at least three good answers, and they are all useful."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8180

@@ -5,7 +5,7 @@ node: AC9TDI10K01 n1
 title: Pipes
 summary: "A pipe (|) sends one command's output into the next command instead of the screen, so small commands combine: grep finds lines, wc -l counts them, sort puts them in order, uniq drops repeats, head keeps the first few, and > saves the result."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "No command counts how many different pets are in a list. Three tiny commands joined together do."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8491

@@ -5,7 +5,7 @@ unit: moon
 title: Why isn't there an eclipse every month?
 summary: "A solar eclipse happens at new moon when the moon's shadow falls on Earth; a lunar eclipse at full moon when the moon passes through Earth's shadow. The moon's orbit is tilted about 5°, so most months the shadows miss: eclipses come in seasons about six months apart."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8225
   url: http://127.0.0.1:8225/index.html

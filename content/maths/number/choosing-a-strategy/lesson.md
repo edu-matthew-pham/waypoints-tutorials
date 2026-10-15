@@ -6,7 +6,7 @@ uses: [AC9M7N06 n2, AC9M7N06 n3, AC9M7N04 n2]   # multiplying fractions; percent
 title: Choosing a strategy
 summary: "The same calculation can be quick or slow. Change the order (4 × 2.7 × 25 = 100 × 2.7), change the form (0.75 × 36 = 3/4 of 36), or split a number (12 × 2.5 = 24 + 6). Then check the answer is about right."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two students work out 25% of 48. One writes a long multiplication; the other halves twice in their head. Both get 12. Which would you rather do in a shop?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8272

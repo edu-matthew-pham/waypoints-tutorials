@@ -6,7 +6,7 @@ unit: newton
 title: Newton's laws in the real world
 summary: "Newton's laws explain why safety features and techniques work. Seat belts and head restraints deal with inertia (first law); airbags and crumple zones lengthen the stopping time to cut the force (F = ma); rockets push gases back and are pushed forward (third law); and a spearthrower (woomera) extends the thrower's arm so the force acts for longer and over a greater distance, so the spear leaves faster."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A crash test dummy hits an airbag and the force on it is far smaller than hitting the dashboard. Same crash, same dummy. What does a bag of air change?"
 ---
 A short lesson with no simulation. You have all three laws. Here you use them to explain things people have designed.

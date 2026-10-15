@@ -5,7 +5,7 @@ unit: systems
 title: What is a tissue?
 summary: "A tissue is a group of similar specialised cells working together to do one job. Muscle tissue contracts, epithelial tissue lines and protects, xylem carries water, phloem carries sugar. A tissue can do what a single cell can't do on its own."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8269
   url: http://127.0.0.1:8269/index.html

@@ -6,7 +6,7 @@ introduces: [permissions]
 title: Who are you, and what may you do?
 summary: "Access control has two parts. Authentication proves who you are (a password, and with multi-factor sign-in a code from your phone too). Authorisation (permissions) then decides what you may do. Give each role only what its job needs: least privilege."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You and your teacher both sign in to the same school system. Why can your teacher change marks and you can't?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8476

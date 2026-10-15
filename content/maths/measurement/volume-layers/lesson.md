@@ -6,7 +6,7 @@ uses: [AC9M7M01 n2]   # areas of rectangles and triangles, with units
 title: Volume in layers
 summary: "Fill a box with unit cubes layer by layer. Each layer has as many cubes as the base has squares, so the volume is the area of the base times the height: V = A × h. Volume is in cubic units, cm³."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "How many sugar cubes fit in a box, how much water fills a fish tank, how much concrete for a path? All are volumes: how much space a solid takes up."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8276

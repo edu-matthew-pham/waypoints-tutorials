@@ -6,7 +6,7 @@ uses: [AC9M7ST03 n1]
 title: Census, sample, experiment or observation
 summary: "Data can come from everyone (a census), from some (a sample), from an experiment where you change something on purpose, or from watching (an observation). Each has a cost, a time and an accuracy; choose the one that fits the question."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Every five years Australia asks every household the census questions. A TV ratings company measures viewing in only a few thousand homes. Why doesn't it just measure everyone?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8333

@@ -6,7 +6,7 @@ unit: particles
 title: Where does the heat go?
 summary: "Melting and boiling need energy put in: the particles move faster and pull free of each other. Freezing and condensing give energy out. While a substance is changing state, its temperature stays the same, because the energy goes into separating the particles, not speeding them up."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8276
   url: http://127.0.0.1:8276/index.html

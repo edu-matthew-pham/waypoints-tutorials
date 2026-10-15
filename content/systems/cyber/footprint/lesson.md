@@ -6,7 +6,7 @@ shape: 5e
 title: Your digital footprint
 summary: "Your digital footprint is everything apps record about you: what you give them, and what they collect as you use them (where you are, what you open, when). A good app collects only what its purpose needs. You manage your own footprint by checking settings, which often start open."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Ava typed three things into the club app. It knows eight things about her. Where did the other five come from?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8496

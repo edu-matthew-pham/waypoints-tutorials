@@ -5,7 +5,7 @@ unit: systems
 title: Organ systems
 summary: "An organ system is a group of organs that work together to do a job the whole organism needs. In an animal, the circulatory system (heart, blood vessels, blood) delivers oxygen and nutrients; in a plant, the vascular system (xylem and phloem in roots, stems and leaves) carries water and sugars. If one organ fails, the system fails."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Your heart can't keep you alive on its own, and neither can your lungs. Why do organs only make sense as a team?"
 ---
 A short lesson with no simulation. You have met cells, tissues and organs. Now organs join up.

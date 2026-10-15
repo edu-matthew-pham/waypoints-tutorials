@@ -6,7 +6,7 @@ uses: [AC9M8N05 n1]
 title: Money models
 summary: "Model a money problem by choosing what to calculate, then check the answer makes sense. Pay is the rate times the hours. Income tax is worked out in brackets: each part of the income is taxed at its own rate, so for incomes above $18 200 the rate on the last dollar (the marginal rate) is higher than the tax as a share of all the income (the effective rate)."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "People sometimes turn down a pay rise because it 'puts them in a higher tax bracket'. Do they lose money? A tax model answers it."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8317

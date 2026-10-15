@@ -5,7 +5,7 @@ node: AC9M7N07 n2
 title: Adding and subtracting integers
 summary: Start at the first number and move along the line. Adding a negative moves left; subtracting moves the opposite way to adding, so subtracting a negative moves right.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A temperature that rises 9 degrees from −4 °C, a lift that goes down 5 floors from level 2, a bank balance below zero: all of them are moves along a number line."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8161

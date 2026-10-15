@@ -5,7 +5,7 @@ node: AC9TDI10K01 n5
 title: "Capture the flag: secure the portal"
 summary: "A security team tests a system before attackers do. Use everything from this course to find four weaknesses in a school portal (a lookalike link, a weak password, a wrong permission and an unlocked message), capture a flag for each, then fix the portal and match each weakness to its fix."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Security teams are paid to find the holes in their own systems first. Today the portal is yours to test."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8478

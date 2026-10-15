@@ -7,7 +7,7 @@ title: What forces act on it?
 introduces: [free-body]
 summary: "A free body diagram shows one object and every force acting on it, as arrows from the object: size by length, direction by the way it points. Add the forces along each direction to find the net force, then use Newton's laws to say what the object's motion will do."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8282
   url: http://127.0.0.1:8282/index.html

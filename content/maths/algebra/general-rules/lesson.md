@@ -5,7 +5,7 @@ node: AC9M7A02 n3
 title: An expression for any case
 summary: Say what the letter stands for, write an expression for the situation, then test it with a number you can check. One expression then gives the answer for every case.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A party for 5 people, 50 people or 500: one expression gives the cost for all of them, if you say clearly what the letter stands for."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8147

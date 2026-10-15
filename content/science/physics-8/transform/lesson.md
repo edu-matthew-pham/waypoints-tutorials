@@ -7,7 +7,7 @@ title: Transfer or transformation?
 introduces: [energy-transfer]
 summary: "In a transfer, the same type of energy moves from one place to another (heat from a hot drink into your hands). In a transformation, energy changes type (chemical energy in a battery becomes electrical, then light). Almost every transformation also makes some heat that isn't wanted: a by-product."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8284
   url: http://127.0.0.1:8284/index.html

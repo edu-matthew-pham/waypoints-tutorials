@@ -5,7 +5,7 @@ title: Triangles hold their shape
 assumes: [balanced-forces]
 summary: "A square frame on pins folds flat when pushed sideways; a triangle can't change shape without a member stretching. Students brace frames with diagonals, use the counting rule (members = 2 × joints − 3) to find how many they need, and brace a tower with the fewest members."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Why are bridges, cranes and towers full of triangles, and not squares?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8537

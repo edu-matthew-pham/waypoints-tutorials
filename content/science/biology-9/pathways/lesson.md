@@ -5,7 +5,7 @@ unit: control
 title: Who decides?
 summary: "The central nervous system (brain and spinal cord) is the command centre: sensory neurons carry impulses in from receptors, motor neurons carry them out to effectors. Reflexes go through the spinal cord without waiting for the brain."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8219
   url: http://127.0.0.1:8219/index.html

@@ -5,7 +5,7 @@ node: AC9M7M04 n3
 title: Reasoning with angles
 summary: "Find unknown angles in steps, giving a reason for each: what you know, the rule that links it to the next angle, and the reason in words. Parallel-line rules join straight-line and vertically opposite angles."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A detective does not guess: every step has evidence. Finding an angle is the same. Each angle you find needs a reason, and the reasons are what make the answer trustworthy."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8171

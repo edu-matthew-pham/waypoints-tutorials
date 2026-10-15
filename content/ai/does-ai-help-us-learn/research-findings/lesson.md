@@ -4,7 +4,7 @@ summary: Confront two credible studies with different results, investigate their
 language: science
 unit: evaluating-evidence
 order: 1
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 Researchers have tested whether AI helps students. Some studies report substantial improvements; others find that completing practice with AI can leave students less prepared to work unaided. **Can apparently conflicting studies both be credible?**
 

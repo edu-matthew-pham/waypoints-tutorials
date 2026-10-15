@@ -6,7 +6,7 @@ uses: [AC9M8ST01 n1]
 title: Bias in collecting data
 summary: "Bias is anything in the way data is collected that pushes the result one way. It can come from who is asked, how they are asked, or how things are measured, and a bigger sample does not fix it."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A survey at a footy match finds that 90% of people love football. Is that what the whole town thinks?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8334

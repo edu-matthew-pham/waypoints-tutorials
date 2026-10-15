@@ -5,7 +5,7 @@ unit: atoms
 title: What is an element?
 summary: "An element is a pure substance made of only one type of atom. Its particles can be single atoms (helium) or atoms joined together (O₂), but every atom is the same type. Each element has a symbol of one or two letters, and the periodic table lists them all."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8265
   url: http://127.0.0.1:8265/index.html

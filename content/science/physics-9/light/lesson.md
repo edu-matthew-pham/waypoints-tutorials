@@ -6,7 +6,7 @@ unit: models
 title: What is the electromagnetic spectrum?
 summary: "Light is a transverse wave, and it is one small part of a family of electromagnetic waves: radio, microwave, infrared, visible light, ultraviolet, X-rays and gamma rays. They all travel at the same speed in a vacuum (300 000 km/s) and differ in frequency and wavelength. Higher frequency means a shorter wavelength and more energy, which decides what each is used for and how careful we must be with it."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8292
   url: http://127.0.0.1:8292/index.html

@@ -6,7 +6,7 @@ uses: [AC9M7SP03 n1, AC9M7SP01 n2]
 title: Coordinates in 3D
 summary: "A third axis, z, gives a point in space three coordinates (x, y, z). Real systems do the same with other names: a drone, a building, a plane's latitude, longitude and altitude, and a 3D printer."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two drones are both above the same spot in a park. How can a controller tell where each one is, so they don't crash? Two numbers are not enough."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8327

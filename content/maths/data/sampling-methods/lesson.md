@@ -6,7 +6,7 @@ uses: [AC9M8ST01 n2]
 title: Ways to choose a sample
 summary: "A sample can be chosen at random, every so many people on a list, a fair share from each group, or whoever is easiest to reach. Random ways give every member a chance; the easy way is often biased."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You need 20 students from a school of 200 for a sleep survey, and Year 7s sleep more than Year 10s. How do you pick 20 so the answer is fair?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8335

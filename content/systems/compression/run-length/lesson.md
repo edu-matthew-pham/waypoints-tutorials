@@ -6,7 +6,7 @@ introduces: [run-length]
 title: Run-length encoding
 summary: "Compression stores data in fewer numbers, so it takes less space and less time to send. Run-length encoding stores how many of each colour there are in turn (3, 4, 1) instead of every pixel. It gives back exactly the same picture (lossless), and works best on data with long runs."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A fax machine sent whole pages down a phone line in the 1980s, as numbers. How do you send a page with far fewer numbers than it has dots?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8461

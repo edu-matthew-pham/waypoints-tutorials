@@ -5,7 +5,7 @@ node: AC9M7M05 n2
 title: Angles in a polygon
 summary: Split a polygon into triangles from one corner. A shape with n sides makes n − 2 triangles, so its angles add to (n − 2) × 180°.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Stop signs are octagons, honeycomb cells are hexagons, a soccer ball is pentagons and hexagons. The triangle rule tells you the angles of all of them."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8163

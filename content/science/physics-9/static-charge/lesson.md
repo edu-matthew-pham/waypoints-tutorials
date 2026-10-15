@@ -5,7 +5,7 @@ unit: models
 title: Where does static charge come from?
 summary: "Everything is made of atoms with positive protons that stay put and negative electrons that can move. Rubbing two materials moves electrons from one to the other, leaving one positive and one negative. Opposite charges attract, like charges repel, and a spark is the extra electrons rushing back to even things out."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8290
   url: http://127.0.0.1:8290/index.html

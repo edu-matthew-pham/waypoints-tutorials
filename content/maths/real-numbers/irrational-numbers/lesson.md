@@ -6,7 +6,7 @@ uses: [AC9M8N03 n1, AC9M7N01 n1]
 title: Irrational numbers
 summary: "A rational number is a fraction: its decimal stops or repeats. An irrational number cannot be written as a fraction: its decimal never stops and never repeats. √2, √3 and π are irrational; √16 = 4 is not."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The diagonal of a 1 m square tile is exactly √2 metres long. You can measure it, but you can never write it down as a fraction or a decimal that ends."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8312

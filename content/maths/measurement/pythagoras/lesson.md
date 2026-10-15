@@ -6,7 +6,7 @@ uses: [AC9M7N01 n2, AC9M7SP02 n1]   # squares and square roots; right-angled tri
 title: Pythagoras' theorem
 summary: "Draw a square on each side of a right-angled triangle. The two smaller squares together have exactly the same area as the biggest: a² + b² = c², where c is the hypotenuse, the side opposite the right angle."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Builders check a corner is square with a 3-4-5 triangle: 3 m along one wall, 4 m along the other, and if the diagonal is exactly 5 m, the corner is a right angle. People have used this for over three thousand years."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8284

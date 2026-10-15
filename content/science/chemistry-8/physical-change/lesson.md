@@ -5,7 +5,7 @@ unit: changes
 title: Same particles, new look?
 summary: "In a physical change (melting, boiling, dissolving) the particles move, spread out or pack together, but every particle stays the same: no new substance is made. Steam is still made of water particles."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8266
   url: http://127.0.0.1:8266/index.html

@@ -6,7 +6,7 @@ unit: forces
 title: Same push, different mass
 summary: "For the same unbalanced force, a heavier object accelerates less than a lighter one. For the same mass, a bigger unbalanced force gives a bigger acceleration. Data from a force investigation show the pattern: acceleration goes up with force and down with mass."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8294
   url: http://127.0.0.1:8294/index.html

@@ -6,7 +6,7 @@ uses: [AC9M7SP02 n1]   # acute, right and obtuse triangles
 title: Right, acute or obtuse?
 summary: "Pythagoras works backwards: square the two shorter sides and add, then compare with the longest side squared. Equal: right-angled. The longest square is bigger: obtuse. Smaller: acute."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Given only three lengths, can you tell whether a triangle has a right angle, without drawing it? Builders do exactly this when they mark out a square corner with a tape measure."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8286

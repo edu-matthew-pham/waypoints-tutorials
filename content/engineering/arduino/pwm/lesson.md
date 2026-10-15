@@ -4,7 +4,7 @@ unit: cpp
 title: Outputs that vary
 summary: "analogWrite(9, value) sets a brightness from 0 to 255 on a PWM pin (marked ~ on the Uno: 3, 5, 6, 9, 10, 11). The pin doesn't get a lower voltage: it switches fully on and off very fast, and the value sets how much of the time it is on. analogRead gives 0 to 1023, so divide by 4 to drive it from a knob."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A digital pin is only ever 0 V or 5 V. So how does a dimmer switch, a fading LED or a motor speed control work from one?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8510

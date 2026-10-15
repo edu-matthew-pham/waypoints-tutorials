@@ -5,7 +5,7 @@ node: AC9M8M02 n1
 title: Volume and capacity
 summary: "Volume measures space in cubic units; capacity measures how much a container holds. 1 cm³ holds 1 mL, 1000 cm³ holds 1 L, and 1 m³ holds 1000 L. A cubic metre is 100 × 100 × 100 = 1 000 000 cm³, not 100."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A 1 L milk carton and a 10 cm cube hold exactly the same amount. A cubic metre of water is a tonne. Why do the units fit together so neatly?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8305

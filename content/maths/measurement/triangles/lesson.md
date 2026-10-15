@@ -5,7 +5,7 @@ node: AC9M7M01 n1
 title: Area of triangles
 summary: "Two copies of any triangle, one turned round, make a parallelogram with the same base and height. So a triangle's area is half of base × height: A = ½bh."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Sails, roof gables and the slices of a pizza cut into wedges are triangles. How much fabric does a triangular sail need?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8274

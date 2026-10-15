@@ -4,7 +4,7 @@ unit: hardware
 title: From simulator to breadboard
 summary: "A breadboard joins the five holes in each numbered column (a–e, and separately f–j) with a metal strip; the rails along the edges join along their length. Each leg of a part must be in a different strip, and the loop goes from strip to strip through the parts."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Real parts don't snap together like Tinkercad's. A breadboard holds them with hidden metal strips underneath. Put a leg in the wrong hole and the circuit quietly doesn't work. Which holes are joined?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8511

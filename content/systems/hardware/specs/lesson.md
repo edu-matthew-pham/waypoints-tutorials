@@ -6,7 +6,7 @@ introduces: [hardware-specs]
 title: What the specs mean
 summary: "A spec sheet lists a computer's parts and how much of each it has: processor cores and speed, RAM, storage size and type, network bandwidth and graphics. Each one measures something different, on a phone, a laptop or a server."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Your phone has \"256 GB\" and \"8 GB\" on its box. Which one decides how many apps stay open?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8479

@@ -6,7 +6,7 @@ uses: [AC9M7N06 n2, AC9M7A03 n2]   # dividing decimals; undoing an operation (ba
 title: Circumference
 summary: "Because C ÷ d = π, the circumference is π × diameter: C = πd, or C = 2πr from the radius. Going backwards, d = C ÷ π."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A bike wheel 70 cm across rolls forward one circumference with every turn. How many turns to school? A trundle wheel measures a sports field the same way."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8280

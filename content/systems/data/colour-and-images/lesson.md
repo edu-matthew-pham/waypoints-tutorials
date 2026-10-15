@@ -6,7 +6,7 @@ introduces: [rgb-colour, pixel-grid]
 title: Colour and images
 summary: "A picture on a screen is a grid of tiny squares called pixels, and each pixel is stored as three numbers: how much red, green and blue light, from 0 to 255. Light mixes differently from paint: red and green light make yellow. A vector picture is stored differently, as shapes to draw."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Look very closely at a screen and you'll see tiny dots of only three colours. How do three colours make every colour, and how are they stored?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8465

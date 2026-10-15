@@ -7,7 +7,7 @@ assumes: [AC9M8A02]   # its Prior Knowledge; only graphing a line from a rule is
 title: What m does to a line
 summary: In y = mx + c, the number in front of x sets how steep the line is and which way it goes.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Ramps, roofs, ski runs and phone bills all have a steepness: how much more for each step along. In a rule like y = 3x + 1, one number decides it."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8135

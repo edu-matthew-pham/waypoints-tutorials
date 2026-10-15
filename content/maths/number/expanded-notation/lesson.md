@@ -6,7 +6,7 @@ uses: [AC9M7N02 n1]   # exponent notation and powers of 10 (Powers)
 title: Place value and powers of 10
 summary: "Each place value column is a power of 10: the thousands column is 10³, the ones column is 10⁰ = 1. So 4052 = 4 × 10³ + 5 × 10¹ + 2 × 10⁰."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The 4 in 4052 is worth 4000, but the 5 is worth only 50. What does the column a digit sits in do to its value?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8287

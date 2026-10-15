@@ -5,7 +5,7 @@ node: AC9M7A01 n3
 title: Finding an unknown
 summary: When a formula's answer is known but one letter is not, substitute what you know. That leaves an equation; solve it by undoing, then check.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You know how much fence you have and how long the garden bed must be. How wide can it be? A formula answers that too, worked backwards."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8144

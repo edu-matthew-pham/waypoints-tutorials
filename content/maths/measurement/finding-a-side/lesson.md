@@ -6,7 +6,7 @@ uses: [AC9M7N01 n3]   # square roots between whole numbers
 title: Finding a side
 summary: "Pythagoras finds any side. For the hypotenuse, add the squares: c² = a² + b². For a shorter side, subtract from the hypotenuse's square: b² = c² − a². Then take the square root, and check the hypotenuse is still the longest."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A 5 m ladder leans against a wall with its foot 3 m out. How high up the wall does it reach? Screens, ramps, roofs and ladders all hide a right-angled triangle."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8285

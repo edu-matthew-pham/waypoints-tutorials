@@ -5,7 +5,7 @@ unit: climate
 title: What keeps Earth's temperature steady?
 summary: "Earth is in energy balance when the energy it absorbs from the sun equals the energy it gives off to space as infrared. Energy moves between the spheres by radiation, conduction and convection, and the oceans store heat. Upset the balance and Earth warms or cools until it is restored."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8235
   url: http://127.0.0.1:8235/index.html

@@ -6,7 +6,7 @@ uses: [AC9M7N04 n1]   # simplifying fractions (Equivalent fractions)
 title: Calculating with negative fractions and decimals
 summary: "The sign rules for integers work for every fraction and decimal: work out the sign, then the size. Choose an efficient order: multiplying can be done in any order (25 × 4 first), and a hard product can be split (6 × 2.5 = 6 × 2 + 6 × 0.5)."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A temperature falls half a degree an hour for three hours. A share loses 2.4 dollars over 6 days. Negative fractions and decimals are everywhere money and weather are measured."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8178

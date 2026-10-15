@@ -6,7 +6,7 @@ uses: [AC9M7M05 n2]   # the angle sum of a polygon
 title: Polygons
 summary: "A polygon is named by its number of sides (pentagon 5, hexagon 6, octagon 8, decagon 10). It is regular when all its sides and all its angles are equal, and concave when a corner points in."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Stop signs are octagons, honeycomb cells are hexagons, and a star is a polygon with corners that point in. What makes some of them regular?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8283

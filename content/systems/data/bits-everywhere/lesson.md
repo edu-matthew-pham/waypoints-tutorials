@@ -5,7 +5,7 @@ node: AC9TDI8K04 n4
 title: Bits all the way down
 summary: "Every kind of data ends up as bits: a character becomes its code, and the code becomes 8 bits (A is 65, which is 01000001). A pixel is three codes, so 24 bits. The chain is always the same: data, then numbers, then binary."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You now know how text, pictures and sound become numbers, and how numbers become bits. What does the letter A actually look like inside the computer?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8464

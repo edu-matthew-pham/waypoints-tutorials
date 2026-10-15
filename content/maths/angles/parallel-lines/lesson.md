@@ -5,7 +5,7 @@ node: AC9M7M04 n1
 title: Angles at parallel lines
 summary: "A line crossing two parallel lines makes eight angles. Pairs in the same place at each crossing are corresponding; between the lines on opposite sides, alternate; between the lines on the same side, co-interior."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Railway tracks, the lines on a car park, the rungs of a ladder: parallel lines crossed by another line. The angles they make come in pairs."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8169

@@ -5,7 +5,7 @@ unit: build
 title: Adding with gates
 summary: "Adding two bits is a truth table: the sum is XOR and the carry is AND, a half adder. A full adder also takes a carry in. One full adder per place, carries passed to the left, adds whole binary numbers."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A processor adds billions of numbers a second, and it is only gates. How do switches add?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8483

@@ -6,7 +6,7 @@ unit: classification
 title: Why sort living things?
 summary: "Scientists classify living things to identify them, to talk about them clearly (one name the whole world understands), and to see how they are related. A classification is built for a purpose, and different systems can suit different purposes."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8270
   url: http://127.0.0.1:8270/index.html

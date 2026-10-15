@@ -5,7 +5,7 @@ title: Design a bridge
 assumes: [balanced-forces, force-pairs]
 summary: "Long members buckle under a push long before they snap under a pull, so good bridges keep pushed members short. Students find a deck on pins collapses, a big triangle buckles, then design a bridge that holds 1000 N within a budget and test it to failure."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "An 8 m gap, a 1000 N load in the middle, and $10 a metre for members. What is the cheapest bridge that won't fail?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8539

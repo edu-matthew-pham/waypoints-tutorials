@@ -6,7 +6,7 @@ unit: models
 title: How does light bend?
 summary: "The wave model explains two things you can see. In reflection, wave fronts bounce off a surface and the angle of reflection equals the angle of incidence. In refraction, light slows down in a denser material such as glass or water, so the wave fronts bunch up and the direction bends towards the normal; light going straight in at 90° does not bend."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8293
   url: http://127.0.0.1:8293/index.html

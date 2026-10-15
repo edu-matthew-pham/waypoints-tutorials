@@ -5,7 +5,7 @@ title: Gear up the winch
 assumes: [weight, energy-transfer]
 summary: "A gear ratio trades speed for turning force: a small gear driving a big gear turns the output slower but stronger, by the same factor. Students test gears on a winch, work out the ratio, speed, strength and lift time, then choose a pair that meets a brief, and find a brief where the constraints conflict."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A small motor can lift 200 g. The bucket is 450 g. You can't change the motor, but you have a box of gears. How do you lift it, and what do you give up?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8500

@@ -6,7 +6,7 @@ unit: plates
 title: What's inside the Earth?
 summary: "Earth has layers: a thin solid crust, a thick solid mantle that flows very slowly, a liquid outer core and a solid inner core. Temperature and pressure rise with depth. The lithosphere (crust plus the rigid top of the mantle) is the rigid outer shell that breaks into plates."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8230
   url: http://127.0.0.1:8230/index.html

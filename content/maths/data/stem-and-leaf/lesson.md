@@ -6,7 +6,7 @@ uses: [AC9M7ST01 n2]   # reading the median, mode and range from the plot
 title: Stem-and-leaf plots
 summary: "A stem-and-leaf plot keeps every value and shows the shape: the tens are the stems, the units are the leaves, written in order. Include every stem, even with no leaves, and add a key."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Thirty homework times in a list tell you very little. Sort them into a stem-and-leaf plot and the shape jumps out, and you can still read every value."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8182

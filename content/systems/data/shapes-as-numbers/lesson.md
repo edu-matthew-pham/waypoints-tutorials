@@ -7,7 +7,7 @@ shape: 5e
 title: Shapes as numbers
 summary: "A vector picture stores shapes, not pixels: a circle is where its centre is, how big it is and its colour, a few numbers in all. The computer draws it again at any size, so it stays sharp, and it stays small. Photos suit bitmaps; logos, icons and fonts suit vectors. 3D models are numbers too: a list of corners (x, y, z) and the faces that join them."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The club's logo has to go on a sticker and on a banner two metres wide. How can one file be sharp at both sizes?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8541

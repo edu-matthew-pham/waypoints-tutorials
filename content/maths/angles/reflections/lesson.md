@@ -5,7 +5,7 @@ node: AC9M7SP03 n2
 title: Reflections
 summary: "A reflection flips a shape over a mirror line. In the x-axis, (x, y) becomes (x, −y); in the y-axis, (x, y) becomes (−x, y). Each point lands as far on the other side as it started."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A face in a mirror, a butterfly's wings, a lake showing a mountain. The mirror line sits exactly halfway between each point and its reflection."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8298

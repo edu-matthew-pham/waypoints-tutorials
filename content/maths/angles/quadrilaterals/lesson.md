@@ -6,7 +6,7 @@ uses: [AC9M7M04 n2]   # co-interior angles at parallel lines
 title: The quadrilateral family
 summary: "Quadrilaterals are named by their properties: parallel sides, equal sides and right angles. A shape that has all of another's properties belongs to it too: every square is a rectangle and a rhombus, and every rectangle is a parallelogram."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Is a square a rectangle? People argue about it, but mathematicians agree: yes. A name is a list of properties, and a square has every property on the rectangle's list."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8282

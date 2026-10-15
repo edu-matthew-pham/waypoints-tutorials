@@ -5,7 +5,7 @@ unit: models
 title: How does sound travel?
 summary: "Sound is a longitudinal wave: a vibrating source makes compressions (particles squashed together) and rarefactions (particles spread out) that travel through a medium, with each particle only vibrating to and fro in place. Frequency sets the pitch and amplitude sets the loudness. Without particles, as in a vacuum, there is nothing to carry the wave."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8289
   url: http://127.0.0.1:8289/index.html

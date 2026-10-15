@@ -6,7 +6,7 @@ uses: [AC9M8N01 n1]
 title: Irrational numbers on the line
 summary: "Every point on the number line is a real number, rational or irrational. To place √30, find the perfect squares either side: 25 < 30 < 36, so √30 is between 5 and 6, nearer 5. A rounded value like 5.48 is close, not exact."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A carpenter needs a brace across a 1 m by 2 m gate: √5 metres. Where is √5 on a tape measure, and how close is close enough?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8313

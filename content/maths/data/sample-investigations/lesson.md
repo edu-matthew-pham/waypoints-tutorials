@@ -6,7 +6,7 @@ uses: [AC9M8ST03 n2, AC9M8ST02 n2, AC9M7ST03 n2]
 title: Investigating with samples
 summary: "A sample investigation asks a question about a population, plans a fair and ethical sample, collects and describes the data, then makes an inference about the population and says how sure it can be."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You can't see the whole school's answer, only your sample's. How close is your estimate, and how would you say so honestly?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8338

@@ -7,7 +7,7 @@ shape: 5e
 title: What your page gives away
 summary: "A web page is sent whole to every visitor's browser, so its source is theirs to read: comments, hidden fields and scripts, even when the page doesn't show them. Photos can carry where they were taken. And a check that runs in the browser can be skipped. Keep secrets and real checks on the server, and strip photo details before you upload."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The club page looks harmless. View its source and it gives away a password, three emails and a join code."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8543

@@ -4,7 +4,7 @@ unit: print
 title: Design for the printer
 summary: "A printer builds in layers: an overhang more than about 45° from vertical needs supports, and a part is weakest across its layer lines. Choose the way up that needs no supports and runs the layers along the load."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two brackets, same file, same printer, same plastic. One holds a shelf of books; the other snaps the first day. The only difference is which way up they were printed."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8524

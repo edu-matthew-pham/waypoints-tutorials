@@ -5,7 +5,7 @@ node: [AC9M7N01 n3, AC9M7N01 n4]
 title: Between the squares
 summary: "43 is not a perfect square, but it sits between 36 and 49, so √43 is between 6 and 7. Closer to 49 or to 36? Square a decimal to find out: 6.6² ≈ 43.6."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A square vegetable patch needs 43 m² of soil. No whole number squares to 43, but a builder still needs to know the side, to the nearest 10 cm."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8265

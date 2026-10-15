@@ -7,7 +7,7 @@ assumes: [AC9M8M06 n2]
 title: Problems with quadrilaterals
 summary: "Use the properties of parallelograms, rhombuses, rectangles, kites and trapeziums to find unknown angles and lengths, with a reason for each step, and check with the angle sum of 360°."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A gate is braced with a diagonal so it stays a rectangle. A carpenter checks it by measuring both diagonals. Why does that work, and what does it tell her?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8325

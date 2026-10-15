@@ -5,7 +5,7 @@ unit: periodic
 title: How are the electrons arranged?
 summary: "Electrons fill shells around the nucleus in order: 2 in the first, 8 in the second, 8 in the third (for the first 20 elements). The electrons in the outer shell decide how an element behaves."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8258
   url: http://127.0.0.1:8258/index.html

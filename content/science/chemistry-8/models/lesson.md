@@ -6,7 +6,7 @@ unit: atoms
 title: Symbols, formulas or models?
 summary: "Chemists show the same substance in different ways. A symbol names an element; a formula (H₂O) gives the types and numbers of atoms; a structural formula shows which atoms are joined; a 3D model shows the shape. Each shows something the others don't, so you pick the one that suits the job."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8273
   url: http://127.0.0.1:8273/index.html

@@ -5,7 +5,7 @@ unit: machine
 title: Remembering a bit
 summary: "Feed two gates' outputs back into each other and they hold a bit: a latch. Set makes it 1, Reset makes it 0, and with both off it keeps what it had. Latches side by side make a register that stores a number."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A gate's output changes the moment its inputs change. So how does a computer remember anything?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8484

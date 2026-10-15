@@ -4,7 +4,7 @@ unit: board
 title: Place the parts
 summary: "A printed circuit board starts as parts on a grid and a list of nets: pads that must end up joined. Thin ratsnest lines show the joins still to make. Students find nets, then move and turn parts so the joins are short and the connector sits at the edge."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Your breadboard circuit works. To make it a real board, every wire becomes copper, and the first decision is where each part goes."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8533

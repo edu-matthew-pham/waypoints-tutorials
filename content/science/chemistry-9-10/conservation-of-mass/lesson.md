@@ -6,7 +6,7 @@ unit: equations
 title: Where does the mass go?
 summary: "In a chemical reaction atoms are rearranged, not made or destroyed, so the total mass of the reactants equals the total mass of the products. In a closed system the mass reading stays the same. In an open system it can seem to change because a gas escapes (mass falls) or a gas from the air joins in (mass rises); counting the gas shows the mass is still conserved."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Burn a pile of steel wool and it gets heavier. Burn a log and it gets lighter. Is mass appearing and vanishing?"
 ---
 A short lesson with no simulation. You can balance equations. Now check what a balanced equation says about mass.

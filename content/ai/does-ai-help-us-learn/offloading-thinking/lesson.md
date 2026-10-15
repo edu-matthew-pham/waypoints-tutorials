@@ -4,7 +4,7 @@ summary: Examine cognitive offloading by changing learning goals, learner expert
 language: science
 unit: choosing-assistance
 order: 1
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 Unit 2 distinguished good performance from evidence of learning. Now consider a different decision: **if AI can do some thinking for us, which thinking should we keep?**
 

@@ -4,7 +4,7 @@ summary: Compare behavioural interaction, cognitive engagement, instructional re
 language: science
 unit: choosing-assistance
 order: 2
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 ---
 We can click many times, receive lots of feedback or have an extended conversation without necessarily learning more. But these experiences can also be useful. **What does an interaction contribute to learning?**
 

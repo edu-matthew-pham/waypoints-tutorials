@@ -5,7 +5,7 @@ node: AC9TDI8K02 n5
 title: Across the internet
 summary: "Buying something online uses everything at once: your browser encrypts the data (HTTPS), it is split into packets, the packets cross Wi-Fi and then cables, routers pass them on by different routes, TCP gets any lost packet sent again, and the shop puts them in order and decrypts them."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You press Buy. Less than a second later, a shop on the other side of the world has your order, and nobody on the way could read your card number. What happened in between?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8470

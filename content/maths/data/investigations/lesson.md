@@ -5,7 +5,7 @@ node: [AC9M7ST03 n1, AC9M7ST03 n2]
 title: Statistical investigations
 summary: "An investigation asks a question that data can answer, plans who to measure and how, collects and displays the data, describes its shape, centre and spread, and reports an answer with its limits."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Do students your age sleep less on school nights? You could argue about it, or you could measure it. What would you need to decide first?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8302

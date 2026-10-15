@@ -5,7 +5,7 @@ node: AC9M8N03 n1
 title: Recurring decimals
 summary: "Dividing a fraction out gives a decimal that either stops (terminates) or repeats a block of digits forever (recurs). In long division, a remainder of 0 means it stops; a remainder that comes back means it repeats. A bar or dots mark the repeating digits."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Type 1 ÷ 7 into a calculator and the screen fills up. Does it ever stop? Long division can tell you, and it does not need a bigger screen."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8310

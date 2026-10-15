@@ -6,7 +6,7 @@ uses: [AC9M7N04 n2]   # writing a probability as a fraction, decimal or percenta
 title: Sample spaces and probability
 summary: "The sample space lists every possible outcome. When the outcomes are equally likely, the probability of an event is favourable outcomes ÷ total outcomes; when they are not (a spinner with a bigger sector), use the sizes. The probabilities add to 1."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A spinner is half red. Red, blue or green: three colours, so is each one a third? Spin it a thousand times and see."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8184

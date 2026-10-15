@@ -6,7 +6,7 @@ assumes: [AC9M8A02 n1]   # graphing inequalities: Linear relations, Lines and re
 title: Inequalities
 summary: "Solve an inequality like an equation, doing the same to both sides, but when you multiply or divide by a negative, reverse the inequality sign. Show the answer on a number line: open circle for < and >, closed for ≤ and ≥. Check with a value."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You need more than 50 points to pass, and a ride needs riders at least 120 cm tall. Not one answer: a whole range of them."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8177

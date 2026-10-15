@@ -6,7 +6,7 @@ introduces: [ip-dns]
 title: Names and addresses
 summary: "Every device on the internet has an IP address, and every packet carries the address it is going to. DNS turns a name like school.edu.au into that address, and routers use their tables to send each packet the right way. A name that only looks right gets a different address, and a different computer."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You type a website's name, but computers find each other by numbers. Who turns the name into the number, and what happens if one letter is wrong?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8475

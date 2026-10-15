@@ -6,7 +6,7 @@ shape: 5e
 title: The Australian Privacy Principles
 summary: "The Australian Privacy Principles (APPs) say what organisations must do with personal information: collect only what they need (APP 3), tell people what and why (APP 5), use and share it only for that purpose unless people agree (APP 6), keep it secure (APP 11), and let people see and correct it (APP 12). A privacy policy doesn't override them."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The club gave members' emails to a sports shop. It's in the privacy policy, page 40. Is that allowed?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8499

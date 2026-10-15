@@ -6,7 +6,7 @@ uses: [AC9M7M04 n3]   # chains of reasons with parallel-line angles (Reasoning w
 title: Unknown angles in shapes
 summary: "Find unknown angles in triangles and polygons in steps, with a reason for each: the angle sum of the shape, angles on a straight line, equal angles in an isosceles triangle. An exterior angle of a triangle equals the sum of the two interior opposite angles."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A roof truss, a kite, a bridge brace: builders work out the angle they cannot measure from the ones they can. Every step needs a reason."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8172

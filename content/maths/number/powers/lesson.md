@@ -6,7 +6,7 @@ uses: [AC9M7N01 n1]   # squares as a first power (Squares and square roots)
 title: Powers
 summary: "2 × 2 × 2 × 2 is written 2⁴: the base 2 is multiplied by itself, and the exponent 4 counts how many times. 2⁴ = 16, not 8."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Fold a sheet of paper in half, then again, and again. After 7 folds it is 2⁷ = 128 layers thick. Powers grow fast, and the short way to write them is exponent notation."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8266

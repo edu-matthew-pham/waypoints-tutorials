@@ -6,7 +6,7 @@ shape: 5e
 title: Spot the phish
 summary: "Phishing messages pretend to be someone you trust to get a password, money or a click. The signs: a sender address that isn't quite right, pressure or a deadline, a request for a password or payment, and a link that goes somewhere other than its text. When unsure, go to the site or person yourself."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The email says it's from school IT, and the link says school.example/login. Would you click?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8495

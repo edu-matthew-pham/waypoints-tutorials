@@ -5,7 +5,7 @@ unit: climate
 title: Where does the sunlight go?
 summary: "The sun is Earth's main energy source. Some sunlight is reflected straight back to space and the rest is absorbed and warms the planet. How much is reflected (the albedo) depends on the surface: ice reflects most, oceans and forests absorb most."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8238
   url: http://127.0.0.1:8238/index.html

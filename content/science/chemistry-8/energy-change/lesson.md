@@ -5,7 +5,7 @@ unit: changes
 title: Hotter or colder?
 summary: "Some reactions give out energy to their surroundings, so the surroundings get hotter: they are exothermic (burning, respiration, hand warmers). Others take in energy, so the surroundings get colder: they are endothermic (instant ice packs, photosynthesis, cooking)."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8280
   url: http://127.0.0.1:8280/index.html

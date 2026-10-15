@@ -4,7 +4,7 @@ unit: print
 title: Slicer trade-offs
 summary: "The slicer's settings trade time and plastic for finish and strength. Halving the layer height doubles the time. Infill past about 20–30% costs a lot for little strength; extra walls add more strength for less."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The printer queue is a week long and your part takes four hours. Which settings can you change without making it worse, and which actually matter?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8525

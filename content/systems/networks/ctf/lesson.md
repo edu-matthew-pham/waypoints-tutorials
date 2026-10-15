@@ -6,7 +6,7 @@ shape: 5e
 title: Network capture the flag
 summary: "Four flags hidden in the club's own network traffic, each found with an idea from this course: which packets anyone on the Wi-Fi could read, putting packets back in number order, which packet TCP must ask for again, and the quickest route round an overloaded router. Then fix every device that still sends readable data."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The club's network is sending its secrets where anyone can pick them up. Find four of them before someone else does."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8545

@@ -5,7 +5,7 @@ node: AC9M7N02 n3
 title: HCF and LCM
 summary: "Put two prime factorisations side by side. The primes they share multiply to the highest common factor; all the primes (shared ones once) multiply to the lowest common multiple."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "One bus leaves every 12 minutes, another every 18. Both leave at 8:00. When do they next leave together? Primes answer it without listing every time."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8268

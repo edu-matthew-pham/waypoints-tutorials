@@ -6,7 +6,7 @@ uses: [AC9M7N02 n1]
 title: Index laws
 summary: "Write powers out as factors and the laws appear: multiplying powers of the same base adds the indices, dividing subtracts them, and a power of a power multiplies them. Anything (except 0) to the power 0 is 1."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "2¹⁰ × 2¹⁰ has over a million as its answer, but you can write it down in a second: 2²⁰. Write the powers out once, and you will see why."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8314

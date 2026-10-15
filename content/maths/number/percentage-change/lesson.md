@@ -6,7 +6,7 @@ uses: [AC9M7N06 n3, AC9M7N09 n1]
 title: Percentage change
 summary: "An increase of p% multiplies by (1 + p/100); a decrease multiplies by (1 − p/100). One change after another means multiplying the multipliers, so up 20% then down 20% is × 1.2 × 0.8 = × 0.96: a 4% fall overall, not back to the start."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A shop puts a price up 20% in March and has a 20% sale in April. The sign says 'back to the old price'. Is it?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8316

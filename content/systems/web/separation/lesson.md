@@ -6,7 +6,7 @@ assumes: [web-layers]
 title: Why keep them apart
 summary: "Keeping content, structure and presentation apart lets each change on its own: one style sheet restyles a whole site, the same page fits a phone or a laptop, and a screen reader can tell a blind reader what each part is. A page that fakes its structure with looks works for nobody but sighted readers."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two pages look almost the same. To a blind student using a screen reader, one of them has no headings at all. How?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8487

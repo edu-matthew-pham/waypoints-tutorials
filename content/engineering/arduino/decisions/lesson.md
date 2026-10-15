@@ -4,7 +4,7 @@ unit: cpp
 title: Values and decisions
 summary: "A variable is declared with its type, int level = 0;. analogRead(A0) gives 0 to 1023, and if (level > 500) { … } else { … } decides. == compares; a single = sets the variable, even inside an if. Every statement ends with ;, or the sketch won't upload."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The night light on the micro:bit decided with a threshold. Same idea, new words: what does it look like in C++, and which two tiny slips stop it working?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8507

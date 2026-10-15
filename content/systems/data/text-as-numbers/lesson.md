@@ -6,7 +6,7 @@ introduces: [text-as-numbers]
 title: Text as numbers
 summary: "Text is stored as a list of numbers, one for each character. Every character has its own code: A is 65, a is 97, a space is 32 and even the digit 7 has a code (55). Unicode gives codes to over a hundred thousand characters, including emoji."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Every message you send is stored as a list of numbers. What list is your name?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8469

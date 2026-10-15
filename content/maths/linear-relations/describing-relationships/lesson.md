@@ -5,7 +5,7 @@ node: AC9M7A04 n2
 title: Describing a relationship
 summary: "Describe how one measurement changes as the other increases, one section of the graph at a time: it increases, decreases or stays constant."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A graph tells a story about how two things change together. Telling that story in words, section by section, is how scientists and journalists use graphs."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8149

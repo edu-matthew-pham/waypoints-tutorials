@@ -6,7 +6,7 @@ unit: newton
 title: What is acceleration, exactly?
 summary: Acceleration is the rate of change of velocity, a = Δv ÷ Δt, in m/s². It has a direction, the same as the net force. Slowing down is acceleration too (opposite to the motion), and on a speed–time graph acceleration is the gradient.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8205
   url: http://127.0.0.1:8205/index.html

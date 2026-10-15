@@ -6,7 +6,7 @@ assumes: [AC9TDI10K01 n2]
 title: Who can read what
 summary: "Every file has an owner and permissions: read, write and run, for the owner and for everyone else. ls -l shows them as letters like rw-r--r-- (644). The owner changes them with chmod; nobody else can. Hiding a file protects nothing; permissions do."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Everyone at school logs into the same server. Why can't you read your teacher's marks file?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8492

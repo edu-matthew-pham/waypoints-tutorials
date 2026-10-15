@@ -5,7 +5,7 @@ node: AC9M7M03 n1
 title: Parts of a circle
 summary: "Every point of a circle is the same distance from its centre: the radius. The diameter goes right across through the centre, two radii long (d = 2r). A chord joins any two points; the circumference is the distance all the way round."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Wheels, plates, clocks and pizza: why does a wheel roll smoothly? Because every point on its edge is the same distance from the axle."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8278

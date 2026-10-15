@@ -7,7 +7,7 @@ shape: 5e
 title: "Capture the flag: the old archive"
 summary: "The club's old archive server is being wiped on Friday. Before it goes, find out what it still gives away: five flags, each found with a skill from Digital systems (decoding, page source, the command line, a tiny processor and a key word). Then close the archive's leaks so the secrets can be changed."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Five club secrets are still sitting in the old archive. Find them before Friday, so they can be changed."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8544

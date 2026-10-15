@@ -6,7 +6,7 @@ unit: changes
 title: Is it a new substance?
 summary: A chemical change makes a new substance, because atoms rearrange into new particles. A physical change only rearranges or spreads out the same particles. "Can it be reversed?" is not the test.
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8243
   url: http://127.0.0.1:8243/index.html

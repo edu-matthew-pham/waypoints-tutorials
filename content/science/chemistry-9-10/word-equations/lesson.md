@@ -6,7 +6,7 @@ unit: equations
 title: What goes in, what comes out?
 summary: "In a chemical reaction the reactants are used up and new substances, the products, are made. A word equation names them: reactants → products. It must include every product (burning a fuel makes water as well as carbon dioxide), but it shows no amounts or atoms."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8264
   url: http://127.0.0.1:8264/index.html

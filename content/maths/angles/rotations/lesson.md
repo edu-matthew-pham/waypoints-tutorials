@@ -5,7 +5,7 @@ node: AC9M7SP03 n3
 title: Rotations
 summary: "A rotation turns a shape about a centre by an angle in a direction. About the origin, a quarter turn anticlockwise changes (x, y) to (−y, x) and a half turn changes it to (−x, −y)."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The hands of a clock, a Ferris wheel, a spinning fan. Each turns about a centre by a certain angle, in a certain direction."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8299

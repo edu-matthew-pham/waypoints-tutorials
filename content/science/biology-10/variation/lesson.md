@@ -6,7 +6,7 @@ unit: evolution
 title: How different are individuals?
 summary: "Individuals in a population vary. Measuring one characteristic across a population gives a spread of values, often most near the middle. Some variation is inherited (genes) and some comes from the environment; inherited variation is what natural selection acts on."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-science" 8241
   url: http://127.0.0.1:8241/index.html

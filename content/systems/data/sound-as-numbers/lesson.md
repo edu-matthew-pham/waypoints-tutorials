@@ -6,7 +6,7 @@ introduces: [sound-samples]
 title: Sound as numbers
 summary: "A computer can't store a sound wave itself. It measures the wave's height many times a second (sampling) and rounds each measurement to a level, so a recording is a long list of numbers. More samples and more levels sound closer to the real thing, but need more numbers."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A song is a wobbling wave of air. How does a computer turn that into numbers, and why are music files so big?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8468

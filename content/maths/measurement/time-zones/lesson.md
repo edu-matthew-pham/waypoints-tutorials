@@ -5,7 +5,7 @@ node: [AC9M8M04 n1, AC9M8M04 n2]
 title: Time zones
 summary: "A city with a bigger UTC offset is ahead; a smaller offset is behind. Find the difference between the two offsets, then add or take it away; the day changes when you cross midnight. A flight's arrival time is the departure time plus the flight, changed to the local time where it lands."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You call your cousin in London after school and wake her up at 5 am. A flight from Sydney lands in Los Angeles before it took off. Time zones explain both."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8309

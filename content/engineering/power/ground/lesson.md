@@ -4,7 +4,7 @@ unit: drive
 title: Two supplies, one ground
 summary: "The motor gets its own battery, but the grounds must be joined: a signal is a voltage compared with ground, so the driver can't read the Uno's pins without a shared 0 V. Powering the motor from the Uno's own 5V pulls it down when the motor starts, and the Uno resets."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "The motor has its own battery, the Uno has USB, every wire is checked, and the motor does nothing. Or the motor runs, and the Arduino keeps restarting. What's missing?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8515

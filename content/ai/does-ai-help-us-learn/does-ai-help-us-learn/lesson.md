@@ -4,7 +4,7 @@ summary: Explore contrasting examples, question what counts as learning, and beg
 language: science
 unit: what-is-learning
 order: 1
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241
   url: http://127.0.0.1:8241/index.html

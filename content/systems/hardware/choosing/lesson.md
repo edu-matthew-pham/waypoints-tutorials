@@ -5,7 +5,7 @@ node: AC9TDI8K01 n3
 title: Choose the hardware
 summary: "Choosing hardware starts from the job, not the biggest numbers: work out what the job needs most, compare the options on that, weigh the trade-offs, and spend the budget where the bottleneck is."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two computers cost about the same. One has twice the cores, the other four times the RAM. Which is better?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8481

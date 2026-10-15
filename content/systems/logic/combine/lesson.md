@@ -6,7 +6,7 @@ assumes: [logic-gates]
 title: Combining gates
 summary: "Wire one gate's output into another gate's input and you get a circuit. Work a circuit out row by row, each gate using only what arrives on its wires, then build circuits to match truth tables, even from NAND gates alone."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "AND, OR and NOT are tiny. How do you get from three tiny gates to a whole processor?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8482

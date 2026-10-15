@@ -6,7 +6,7 @@ uses: [AC9M7N07 n1]      # ordering negatives (Comparing integers)
 title: Fractions and decimals on the line
 summary: Split each unit into equal parts and count from zero. A negative fraction or decimal counts to the left, so −1.5 sits halfway between −2 and −1.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A tide of −0.6 m, a share price down 1¼ dollars, a recipe with ¾ of a cup: numbers between the whole numbers, above and below zero."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8164

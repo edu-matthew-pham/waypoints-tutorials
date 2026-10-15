@@ -6,7 +6,7 @@ introduces: [bit-patterns]
 title: How many patterns?
 summary: "Each extra bit doubles the number of patterns: n bits make 2ⁿ patterns. One pattern is 0, so the largest number is 2ⁿ − 1: four bits hold 0 to 15, eight bits (a byte) hold 0 to 255. Count one past the largest and the bits overflow back to 0."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Colour values in a program stop at 255, and old game scores wrapped round to 0. Both come from the same rule about bits."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8463

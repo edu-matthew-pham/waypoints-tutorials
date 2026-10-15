@@ -6,7 +6,7 @@ uses: [AC9M8M01 n1]
 title: Irregular shapes
 summary: "A lake or a leaf has no formula. Lay a grid over it: count the full squares, add half the part squares, and multiply by the area of one square. A finer grid gives a better estimate; straight pieces round the edge estimate the perimeter."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "How big is a lake? Councils, farmers and park rangers estimate areas like this from maps all the time, with a grid and some careful counting."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8304

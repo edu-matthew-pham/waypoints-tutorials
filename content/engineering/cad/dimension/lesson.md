@@ -4,7 +4,7 @@ unit: size
 title: Design to a dimension
 summary: "A box has a wall on every side, so its inside is the outside minus two walls. To fit something inside, start from the thing: its size, plus a gap each side, plus a wall each side, gives the outside."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Your Arduino needs a case. You print a box 'about the right size', and it's 2 mm too small. Plastic is cheap; your time and the printer's aren't. How do you get it right first time?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8522

@@ -5,7 +5,7 @@ node: [AC9M7ST02 n2, AC9M7ST02 n3]
 title: Comparing data sets
 summary: "Describe a data set by its shape (symmetrical or skewed, with clusters, gaps or outliers), its centre and its spread. Compare two sets on centre and spread, with numbers and in context, not by one value."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Two classes sit the same quiz. One has the top score; the other has nobody below 12. Which class did better? It depends on what you compare."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8183

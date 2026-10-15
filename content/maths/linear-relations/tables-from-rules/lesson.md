@@ -6,7 +6,7 @@ uses: [AC9M7N07 n2]   # negative inputs and outputs (3(0) − 1 = −1); a quick
 title: Tables from rules
 summary: A rule turns each input x into an output y. Choose inputs, work out each output, and write them as a table of ordered pairs (x, y), input first.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A spreadsheet column, a recipe scaled for more people, a taxi meter: each one takes a number in and gives a number out by the same rule, every time."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8141

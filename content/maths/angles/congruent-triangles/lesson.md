@@ -6,7 +6,7 @@ uses: [AC9M7SP02 n1]
 title: Congruent triangles
 summary: "Congruent triangles are the same shape and size. You don't need all six parts to check: some sets of three parts fix the triangle (the congruence tests: SSS, SAS, ASA or AAS, RHS), and one set of three can fit two different triangles."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A builder cuts a hundred identical roof trusses. To check two are the same, does she need to measure every side and every angle, or are three measurements enough?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8322

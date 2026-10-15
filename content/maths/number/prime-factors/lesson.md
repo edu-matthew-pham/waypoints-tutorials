@@ -5,7 +5,7 @@ node: AC9M7N02 n2
 title: Prime factors
 summary: "Split a number into factor pairs until every branch is a prime: 36 = 2 × 2 × 3 × 3 = 2² × 3². Every tree for 36 ends with the same primes."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Every whole number above 1 is built from primes in exactly one way, like a code. 60 is 2² × 3 × 5, and no other number has that code."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8267

@@ -6,7 +6,7 @@ uses: [AC9M7A01 n2]   # substituting into a formula
 title: Changing one thing at a time
 summary: "To see what one variable does to a formula, change only that one and hold the rest still. Doubling h in V = lwh doubles V; doubling the side of a square makes its area four times as big."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A scientist testing a plant changes the light, but not the water. In a formula, that is how you find what each letter does."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8301

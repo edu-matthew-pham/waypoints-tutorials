@@ -6,7 +6,7 @@ uses: [AC9M7N07 n2, AC9M8N04 n1]   # models give negative values (−10 × 12 + 
 title: Comparing two plans
 summary: Put two rules on one graph. Where the lines cross they cost the same; on either side, the lower line is the cheaper plan. Then check where the model makes sense.
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Phone plans, gyms and streaming services all ask you to choose between a bigger fee and a lower rate. Two lines on one graph answer it for any amount."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8139

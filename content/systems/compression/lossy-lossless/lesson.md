@@ -6,7 +6,7 @@ introduces: [lossy-lossless]
 title: Lossy or lossless
 summary: "Lossless compression gives back exactly the original data. Lossy compression throws away detail people are unlikely to notice, such as tiny differences in shade, so files get much smaller, but that detail is gone for good. Music and photos online are usually lossy; text, medical scans and evidence must be lossless."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A song streamed on your phone is about a tenth of the size of the same song on a CD. What did they throw away, and why can't you hear it?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8460

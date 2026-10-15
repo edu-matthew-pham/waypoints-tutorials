@@ -4,7 +4,7 @@ unit: uno
 title: Reading the C++
 summary: "Every sketch has two parts: setup() runs once when the board starts, then loop() runs again and again for ever. delay(ms) waits that many milliseconds, so the delays set the timing of a blink."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "MakeCode had 'on start' and 'forever'. An Arduino sketch has the same two parts, written as C++. Which part runs when, and how many times?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8506

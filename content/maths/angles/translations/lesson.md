@@ -5,7 +5,7 @@ node: AC9M7SP03 n1
 title: Translations
 summary: "A translation slides every point of a shape the same distance in the same direction. Right adds to x, left takes away; up adds to y, down takes away. The shape does not change size or turn."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A chess piece slides across the board, a lift goes up, a character steps left on a screen. Each is a translation: every point moves the same way."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8297

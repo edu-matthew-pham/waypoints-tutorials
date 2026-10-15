@@ -6,7 +6,7 @@ uses: [AC9M8SP01 n1, AC9M7SP02 n2, AC9M7M04 n2]
 title: Proving quadrilateral properties
 summary: "A diagonal cuts a quadrilateral into two triangles. When those triangles are congruent, their matching sides and angles are equal, and that proves a property for every shape of the kind: a rectangle's diagonals are equal, a parallelogram's cut each other in half, a kite's cross at 90°."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You measure the diagonals of one rectangle: both 10 cm. Is that true for every rectangle in the world? Measuring can't check them all, but a proof can."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8324

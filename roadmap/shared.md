@@ -272,7 +272,7 @@ Built as a course page rather than in lessons (lessons keep their chosen numbers
   - A small "Voice: Emma · George · Heart" picker sits under voiced clips. The choice is saved per browser (`wp-voice`) and applies to every clip on the site.
   - Unmuting the video's own button turns the voice on, as now.
 - **Why not one file with several audio tracks:** most browsers can't switch audio tracks inside a video, Chrome included. Separate files work everywhere.
-- **Voices:** Emma (`bf_emma`, UK woman), George (`bm_george`, UK man) and Heart (`af_heart`, US woman); the default is Emma. Kokoro has no Australian voice.
+- **Voices:** Emma (`bf_emma`, UK woman), George (`bm_george`, UK man) and Heart (`af_heart`, US woman); the default is Heart (every lesson since 16 Oct; Emma before). Kokoro has no Australian voice.
   - A lesson's `voice:` keeps its speed, and its name sets the voice students hear until they choose one.
   - `say:` lines are shared by all three voices.
 - **Cost:**

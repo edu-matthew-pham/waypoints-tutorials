@@ -5,7 +5,7 @@ unit: systems
 title: What is an organ made of?
 summary: "An organ is made of several different tissues working together. A leaf has epidermis, palisade and spongy mesophyll and vascular tissue; the heart has cardiac muscle, a lining, connective tissue and nervous tissue."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8214
   url: http://127.0.0.1:8214/index.html

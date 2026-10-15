@@ -6,7 +6,7 @@ uses: [AC9M7M05 n1]   # the angle sum of a triangle
 title: Classifying triangles
 summary: "Name a triangle twice: by its sides (scalene, isosceles, equilateral) and by its biggest angle (acute, right, obtuse). Equal sides sit opposite equal angles, so some pairs are impossible: no right-angled equilateral triangle."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "Roof trusses, bridges and set squares are all triangles, but not the same kind. Builders name them by their sides and their angles, because that tells you how they fit together."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8281

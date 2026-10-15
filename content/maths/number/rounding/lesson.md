@@ -6,7 +6,7 @@ uses: [AC9M7N03 n1]   # the place value columns (Place value and powers of 10)
 title: Rounding decimals
 summary: "3.746 to 2 decimal places is 3.75: look at the next digit, 6, and round up. How much to round depends on what the number is for."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A stopwatch says 12.846 seconds. Do you report 12.846, 12.85, 12.8 or 13? It depends who is asking, and what the timer can really measure."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8288

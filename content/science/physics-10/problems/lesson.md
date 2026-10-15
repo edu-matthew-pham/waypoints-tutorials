@@ -6,7 +6,7 @@ unit: newton
 title: Solving force and motion problems
 summary: "A multi-step problem becomes manageable with a routine: list what you know, work out the net force, find the acceleration with F = ma, use a = Δv ÷ t to link it to speed and time, then check the answer makes sense. Keep units (N, kg, m/s², m/s, s) with every number."
 language: science
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "A car travelling at 25 m/s brakes. How long does it take to stop, and how big is the force? The answer takes three steps, and the hardest part is knowing which one comes first."
 ---
 A short practice lesson with no simulation. You know F = ma, a = Δv ÷ t and the three laws. Now use them together.

@@ -6,7 +6,7 @@ uses: [AC9M7N05 n1]   # rounding (Rounding decimals)
 title: Estimating to check
 summary: "Round each number to its first digit, then calculate: 38 × 52 ≈ 40 × 50 = 2000. If the calculator says 197.6 or 19 760, something slipped."
 language: maths
-voice: { name: bf_emma, speed: 1.05 }
+voice: { name: af_heart, speed: 1.1 }
 hook: "You type 3.2 × 48 and the calculator shows 15.36. Looks plausible. But before you trust it, how big should the answer be?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8289
