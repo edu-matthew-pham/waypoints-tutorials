@@ -1,0 +1,10 @@
+# Reuse the prepared, account-free learning decisions widget from AI Foundations.
+# region: explore
+widget: ai-learning-choices
+mode: delegate
+# endregion
+
+# region: explain
+widget: ai-learning-choices
+mode: delegate
+# endregion
