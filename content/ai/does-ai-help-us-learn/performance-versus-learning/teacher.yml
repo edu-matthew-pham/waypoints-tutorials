@@ -1,0 +1,34 @@
+summary: "Use an assisted-versus-fresh-attempt contrast to question what performance shows about learning, retention and transfer."
+time: 35
+goals:
+  - "I can distinguish assisted performance, transfer and retention."
+  - "I can explain what an assessment reveals and what it cannot establish."
+  - "I can challenge a conclusion about learning by proposing better evidence."
+before: |
+  Teaching move: experiential contrast, then critique the measurement itself.
+  Use the existing offline-friendly AI Foundations practice widget. It is prepared feedback, NOT a live model or an experimentally validated AI tutor.
+  The garden problems are intentionally modest; the goal is to analyse evidence, not rank students by arithmetic speed.
+  Have paper or a shared board available for the two-round comparison. A separate journal or forum is optional.
+running:
+  - "Collect a prediction before students receive the scaffolded example."
+  - "Allow students to explain partial understanding, not only correct answers."
+  - "Ask how the two rounds differ in difficulty as well as assistance."
+  - "Invite challenges to the claim that an unaided test fully defines meaningful learning."
+struggle: "Students may overinterpret their single correct or incorrect answer as proof of long-term learning or lack of learning."
+stuck:
+  - see: "A learner treats one unaided problem as definitive."
+    ask: "What else could explain this result? What might change if we asked tomorrow?"
+    fix: "Separate task difficulty, prior knowledge, immediate performance and later retention."
+  - see: "Students argue that help always prevents learning."
+    ask: "Have you ever understood a worked example and then applied the idea elsewhere?"
+    fix: "Distinguish a possible learning mechanism from evidence that it occurred in this case."
+support: "Use a simpler fraction example if the arithmetic itself obscures the intended comparison."
+stretch: "Ask students to design a fairer comparison and decide whether creativity or collaborative capability should also be measured."
+leads: "Lesson 3 questions whether the outcomes prioritised by independent assessments are the only meaningful purposes of learning."
+exit:
+  q: "Why can a correct AI-assisted answer be insufficient evidence of learning?"
+  a: "It shows success with assistance, while understanding, transfer and retention require other evidence; any one assessment remains incomplete."
+explain: |
+  Do not portray a classroom worked example as empirical proof about AI.
+  Discussion should distinguish a descriptive claim (what was observed) from a normative claim (what education should value).
+  Do not require students to reject AI; explore possible benefits and limits of assistance with due caution.
