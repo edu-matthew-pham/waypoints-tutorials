@@ -53,7 +53,7 @@ function dataRow(d,i,table){
  var tr=elt('tr',undefined,table),td=elt('td',undefined,tr),box=elt('input',undefined,td);box.type='checkbox';box.checked=state.selected[i];box.setAttribute('aria-label','Include '+d.name);
  box.addEventListener('change',function(){state.selected[i]=box.checked;state.data=defaultData.filter(function(_,j){return state.selected[j];}).map(function(v,j){return {x:v.x.slice(),label:state.badLabel&&defaultData.indexOf(v)===3?0:v.label,name:v.name};});state.next=0;state.latest='Training set changed. Reset and retrain to compare fairly.';B.moved=true;draw();});
  elt('td',d.name,tr);
- elt('td',i===3&&state.badLabel?'Apple (incorrect)':'Apple'===null?'':d.label?'Banana':'Apple',tr);
+ elt('td',i===3&&state.badLabel?'Apple (incorrect)':d.label?'Banana':'Apple',tr);
 }
 function draw(){
  panel.replaceChildren();
@@ -74,6 +74,7 @@ function draw(){
  btn('Train one example',function(){train(1);},actions);
  btn('Train 20 examples',function(){train(20);},actions);
  btn('Train 100 examples',function(){train(100);},actions);
+ btn('Train 300 examples',function(){train(300);},actions);
  btn('Reset network',function(){state.w=initWeights();state.updates=0;state.rounds=0;state.next=0;state.latest='Network reset to its starting weights. The selected examples remain.';B.moved=true;draw();},actions);
  elt('p','Training steps: '+state.rounds+'. '+state.latest);
  elt('h3','3. Test a fruit');
