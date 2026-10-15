@@ -1,8 +1,9 @@
 ---
 title: AI Foundations
-summary: Explore how text can be generated from patterns, why probability matters, and what changes when a computer does the work for you. These first lessons use a deliberately simple model, not a modern LLM.
+summary: Investigate prediction and generation, then explore how examples, labels and clues influence a model's decisions. Learn to evaluate AI outputs rather than automatically accept them.
 order: 1
 recap: true
 units:
   - { id: text-generation, title: How AI generates text, summary: "Predict the next word, sample using dice, then automate a simple probabilistic text generator." }
+  - { id: how-ai-learns, title: How AI learns, summary: "Investigate labelled examples, model mistakes and combining features using inspectable classifiers." }
 ---
