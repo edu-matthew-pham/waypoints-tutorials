@@ -246,6 +246,20 @@ hook: "Loops are how a program draws 100 tiles without 100 lines of code."
 
 - `hook`: one or two sentences shown at the top of the lesson: where the skill appears in real life. No project, just the "why".
 
+### Lesson authoring preflight (before publishing)
+
+The site has a dedicated GitHub Actions **Validate tutorial content** workflow, separate from the expensive manual build-and-publish workflow. It runs on pull requests and on content changes pushed to `main`. For reliable authoring, work on a branch, open a pull request, and **check that validation passes before merging**. A direct GitHub file edit is not a substitute for running validation; a failed main-branch check still needs a fix.
+
+Run `npm run validate` locally whenever possible. Before submitting new lessons, check that:
+
+- Every `##` stage contains its required `step` block and valid `stage` value.
+- Every `stage: investigate` with `tasks:` has **exactly one `###` heading per task, in the same order**. If four cases have four headings, add four task checks rather than only three.
+- Every teacher `goals:` entry starts with `I can`.
+- Every spoken `explainClip.say` or spoken clip line stays short (15 words or fewer).
+- Course `unit:` identifiers match the course `index.md`.
+
+The validator checks these rules; the checklist helps catch them earlier. Successful validation is not a browser or pedagogical quality review.
+
 ### teacher.yml (teacher notes, solutions, "Explain it to me")
 
 Teacher notes live in `teacher.yml` beside `lesson.md`, or inside `lesson.md` as a fenced ```` ```teacher ```` block at the end holding the same fields, plus an optional `class:` key holding the class plan (`inquiry`, `activities`, `questions`: the fields of `class/<lesson>.yml`) (13 Oct; the build and the Create page cut it out of the student page, validate checks it, and a block wins over a `teacher.yml`). Write for any teacher, not a specialist: plain words, jargon explained on first use. `npm run validate` warns when a lesson in a course with units has none, or a code-checked task has no solution.
