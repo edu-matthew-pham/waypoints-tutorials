@@ -583,7 +583,7 @@ for (const node of dirs.values()) {
     const practice = practiceSkills(node, courseLessons);
     const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '');
     if (recap) writeRecap(node, courseLessons);
-    if (conceptualRef) {
+    if (conceptualRef && !ref) {
       const refDir = `${node.path}/reference`;
       mkdirSync(join(OUT, refDir), { recursive: true });
       writeFileSync(join(OUT, refDir, 'index.html'), page(`Reference: ${node.title}`,
@@ -842,7 +842,13 @@ for (const coursePath of teachCourses) {
   const courseNotesFile = join(CONTENT_ROOT, coursePath, 'teacher.md');
   const coursePresentationFile = join(CONTENT_ROOT, coursePath, 'presentation.md');
   if (existsSync(coursePresentationFile)) writeFileSync(join(courseDir, 'course-deck.md'), readFileSync(coursePresentationFile, 'utf8'));
-  const courseResources = `<p><b>Course resources:</b> <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/reference/">Concept reference</a> · <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/recap/">Recap</a>${existsSync(coursePresentationFile) ? ' · <a href="course-deck.md" download>Opening and closing prompts (Markdown)</a>' : ''}</p>`;
+  const studentCourseUrl = `${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/`;
+  const resources = [
+    ...(existsSync(join(CONTENT_ROOT, coursePath, 'reference.md')) ? [`<a href="${studentCourseUrl}reference/">Concept reference</a>`] : []),
+    ...(node.meta?.recap === true ? [`<a href="${studentCourseUrl}recap/">Recap</a>`] : []),
+    ...(existsSync(coursePresentationFile) ? ['<a href="course-deck.md" download>Opening and closing slides (Markdown)</a>'] : []),
+  ];
+  const courseResources = resources.length ? `<p><b>Course resources:</b> ${resources.join(' · ')}</p>` : '';
   const courseNotes = existsSync(courseNotesFile)
     ? `<section class="tunit"><h2>Course teaching guidance</h2>${(mathsCourse ? mathsGuide.md : md)(readFileSync(courseNotesFile, 'utf8'))}</section>`
     : '';
