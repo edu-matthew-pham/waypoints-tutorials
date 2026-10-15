@@ -1,0 +1,25 @@
+summary: "Develop and challenge a conditional cognitive-offloading principle through changing purposes and expertise."
+time: 40
+goals:
+  - "I can explain cognitive offloading in relation to a learning goal."
+  - "I can distinguish central and peripheral thinking without treating them as fixed."
+  - "I can evaluate how expertise changes appropriate assistance."
+before: |
+  The scenarios describe learning activities, not assessed work. Keep the learning purpose visible.
+  Nakamura's 2026 augmentation–erosion framework is theoretical, not a validated experimental decision rule.
+running:
+  - "Reveal the trade-off between effort saved and thinking retained."
+  - "Change the learning goal while retaining the same initial writing scenario."
+  - "Compare a novice benefiting from a worked example with an expert overlooking an error."
+  - "Transfer the conditional principle to another domain without assuming programming knowledge."
+struggle: "Learners may treat all effort saved as bad or all completion as learning."
+stuck:
+  - see: "The learner demands an absolute rule."
+    ask: "What changes if the intended learning goal changes?"
+    fix: "Compare learning to argue with communicating an already-reasoned position."
+support: "Offer sentence frames: If the goal is..., assistance may... because..."
+stretch: "Explore what happens when the learner is an expert in one subject but novice in another."
+leads: "Lesson 8 asks whether interaction and responsiveness translate into learning and what AI adds."
+exit:
+  q: "Why does useful offloading depend on the learner and goal?"
+  a: "The target thinking and capacity to interpret or check help vary."
