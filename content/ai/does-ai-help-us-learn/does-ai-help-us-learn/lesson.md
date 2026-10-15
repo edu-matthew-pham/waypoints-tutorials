@@ -13,7 +13,7 @@ app:
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "One tool, different purposes"
-  say: "Before deciding whether AI helps learning, ask what the learner is trying to achieve and what the activity can actually show."
+  say: "Before judging AI, ask what the learner wants to achieve and what the result shows."
   clip:
     - caption: { text: "A finished product can be valuable without proving that a new skill was learned." }
     - wait: 1100
