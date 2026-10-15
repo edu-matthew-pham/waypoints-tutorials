@@ -5,5 +5,5 @@ order: 1
 recap: true
 units:
   - { id: text-generation, title: How AI generates text, summary: "Predict the next word, sample using dice, then automate a simple probabilistic text generator." }
-  - { id: how-ai-learns, title: How AI learns, summary: "Investigate labelled examples, model mistakes and combining features using inspectable classifiers." }
+  - { id: how-ai-learns, title: How AI learns, summary: "Investigate examples and labels, model mistakes, combining clues and training a tiny neural network." }
 ---
