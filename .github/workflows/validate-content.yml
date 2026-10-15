@@ -1,0 +1,40 @@
+name: Validate tutorial content
+
+# Catch authoring and structural errors before a manual publishing run.
+# Pull requests provide a validation gate before merging; direct commits to main
+# are checked promptly, but cannot be prevented by this workflow alone.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'tools/**'
+      - 'snippets/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/validate-content.yml'
+      - 'AUTHORING.md'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-content-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install validators
+        run: npm ci --omit=optional
+      - name: Validate lessons and course content
+        run: npm run validate
