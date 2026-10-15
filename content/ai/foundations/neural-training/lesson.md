@@ -46,7 +46,7 @@ check: { type: board, text: "Train the network, then record at least one predict
 ```
 
 1. **Before training**, choose a fruit's colour and shape, and note the network's prediction.
-2. Press **Train one example** a few times. Watch the connections. Then use **Train 100 examples** to allow more practice.
+2. Press **Train one example** a few times. Watch the connections. Then use **Train 300 examples** to allow enough repeated practice to see clearer changes.
 3. **Test the same fruit again.** Did its output change? Try all four combinations: green/round, green/long, yellow/round and yellow/long.
 
 The network really adjusts its internal numbers during training. The connecting lines give you a glimpse of those changes, but you do not need to decode every line.
