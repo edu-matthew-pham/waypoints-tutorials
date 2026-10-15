@@ -43,6 +43,11 @@ tasks:
       q: "A team develops a community garden plan using local advice, maps and shared tools. Which is an important question about the learning?"
       options: ["How did participation and shared tools shape what each member understood and could contribute?", "Can we assume every team member learned exactly the same thing?", "Does collaboration prove that nobody learned independently?"]
       answer: 0
+  - check:
+      type: question
+      q: "Sam submits a polished AI-generated report without much checking. What does the report alone establish?"
+      options: ["Sam now understands all the research", "Sam definitely learned nothing", "Sam obtained a polished report, but more evidence is needed about what Sam understood or contributed"]
+      answer: 2
 ```
 
 ### Maya: independent capability
