@@ -140,6 +140,8 @@ check:
   answer: 1
 ```
 
+**Looking ahead:** Our model uses one fixed phrase and a small set of examples, so we can see both why it favours an ending and where it struggles. Modern language models predict tokens using much richer context and learned patterns. Their responses can be far more useful and convincing, but they still have blind spots — often harder to identify or explain. **Treat an AI suggestion as something to evaluate, not automatically accept:** does it fit your purpose, and what would you need to check?
+
 **For teachers:** Formal fractions and percentages are an optional extension, not a prerequisite. Start with counts and bars. This is an intentionally transparent, fixed-context frequency model. Ask learners to justify answers using *counts* rather than guesses about the writer's intentions. The next lesson introduces sampling; the interactive board lets students edit examples and immediately inspect the resulting counts. Do not describe this toy model as the mechanism used by a modern LLM.
 
 **Next:** use dice to make a choice according to these probabilities.
