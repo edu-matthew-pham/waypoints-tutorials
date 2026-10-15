@@ -1,0 +1,21 @@
+summary: "How do models combine clues? Students predict, test and explain a transparent fruit classifier."
+time: 30
+goals:
+  - "I can explain what influences a model prediction."
+  - "I can test a prediction rather than automatically accepting it."
+before: "Use the Waypoints board without accounts. Teachable Machine is optional with school approval. The board is not a neural network."
+running:
+  - "Ask for a prediction before each test."
+  - "Have students change one factor and explain the result."
+struggle: "Students may treat a model label as proof."
+stuck:
+  - see: "Student accepts an output without checking."
+    ask: "What evidence or test could help you decide?"
+    fix: "Compare two cases and change one factor."
+support: "Model one prediction and one test."
+stretch: "Compare the simplified model with a real trained image classifier."
+leads: "Continue through the How AI learns unit."
+exit:
+  q: "Why is a model prediction not automatically correct?"
+  a: "It depends on examples, features and limitations and must be checked."
+explain: "The transparent model illustrates one part of classification. Real machine learning can use richer features and still make mistakes."
