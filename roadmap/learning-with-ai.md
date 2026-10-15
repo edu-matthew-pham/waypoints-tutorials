@@ -1,6 +1,6 @@
 # Roadmap: Learning with AI
 
-Planning roadmap for a proposed new subject/pathway in Waypoints Tutorials. **Not yet built.** This file records direction, candidate courses, and decisions needed before writing lessons. Keep implementation status current here, rather than adding dated updates.
+Planning roadmap for the Learning with AI pathway in Waypoints Tutorials. The first AI Foundations pilot lessons are now authored; broader course coverage and classroom validation remain in progress. This file records direction, candidate courses and decisions while keeping implementation status current.
 
 ## Direction agreed
 
@@ -8,6 +8,8 @@ Planning roadmap for a proposed new subject/pathway in Waypoints Tutorials. **No
 - Start with **AI Foundations**, then contextual applications (potentially Maths, Science, Writing, Coding). Subject-specific courses are **proposed**, not a committed launch set; they should be usable independently with concise foundations recaps.
 - Be **platform-agnostic**: no lesson should require one vendor's AI interface. Separate learning objectives from changing product behaviour.
 - AI literacy (understanding AI and evaluating its outputs) and **self-regulation** (deciding whether, when and how to use AI) are complementary. Both run through the pathway.
+- Build **calibrated trust**, not reflexive trust or blanket distrust: students should treat AI outputs as suggestions or claims to evaluate against their purpose, reasoning and evidence. Practise three recurring moves: **understand** what the system is doing, **question** what it may have missed, and **verify** what matters before relying on it.
+- Progress from **transparent limitations to less visible blind spots**: a small frequency model makes assumptions and errors inspectable; modern LLMs use richer context and learned representations, but persuasive output does not guarantee correctness, completeness or suitability. Do not imply modern LLMs literally use the toy frequency table.
 - **Develop learner agency:** the course aims to develop learners who can increasingly regulate their own AI assistance, rather than relying solely on safeguards and pedagogical decisions embedded in AI tools. External scaffolding and learner self-regulation are complementary; responsibility should progressively transfer as learners develop expertise.
 - **5E** is the proposed default lesson structure for AI Foundations: Engage, Explore, Explain, Elaborate, Evaluate. Explicit teaching, modelling, guided practice and feedback belong within this structure, especially for novices. Evaluate should check independent understanding and judgement about AI use, not just the produced answer.
 - Teach AI as **both an object of study and a tool for learning**. Pair simplified, inspectable simulations with authentic AI interactions. Explain where simulations differ from current LLMs.
@@ -89,4 +91,4 @@ Possible 5E arc: Engage with a text-prediction question; Explore with dice; Expl
 
 - Agreed pedagogical direction: **documented**.
 - Course structure, lesson sequence, simulation and subject integration: **proposed, not implemented**.
-- No changes to published navigation or existing lesson architecture yet.
+- **AI Foundations pilot implemented:** three lessons (next-word prediction, dice sampling and automation) and a Learning with AI course entry have been added under `content/ai/foundations/`; publishing and video playback remain subject to successful build verification.
