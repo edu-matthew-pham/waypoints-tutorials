@@ -37,7 +37,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  SITE: https://cggs-matthew-pham.github.io/tutorials
+  SITE: https://tutorials.learningwaypoints.com
   # A push has no inputs: publish everything changed, to gh-pages (or gh-pages-test from publish-lessons-test).
   TARGET: ${{ inputs.branch || (github.ref_name == 'publish-lessons-test' && 'gh-pages-test') || 'gh-pages' }}
 

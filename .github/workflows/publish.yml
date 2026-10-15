@@ -32,7 +32,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  SITE: https://cggs-matthew-pham.github.io/tutorials
+  SITE: https://tutorials.learningwaypoints.com
 
 jobs:
   plan:
