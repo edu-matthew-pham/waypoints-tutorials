@@ -1,0 +1,29 @@
+summary: "Redesign comparisons and outcome measures to expose what studies of AI and learning do and do not establish."
+time: 40
+goals:
+  - "I can choose a fair comparison when testing an AI feature."
+  - "I can distinguish validity from observed performance."
+  - "I can state what a proposed experimental result would and would not establish."
+before: |
+  Teaching move: research design critique and reconstruction.
+  All A/B/C comparison conditions are hypothetical. Do not imply a three-arm study has already tested them.
+  Students can work through the lesson without AI, using existing checkpoints and discussion.
+running:
+  - "Begin with a result that sounds persuasive and identify what was actually compared."
+  - "Explain why an established non-AI interactive tutorial is a serious alternative, not an absence of assistance."
+  - "Separate immediate scores, delayed performance, productivity and other educational aims."
+  - "Require students to identify at least one unresolved limitation in their own design."
+struggle: "Students may suppose that adding a control group automatically isolates the effect of AI, even when the groups differ in other instructional features."
+stuck:
+  - see: "A learner compares AI only against no support."
+    ask: "What is the best existing way a student could learn this today?"
+    fix: "Compare the same structured lesson with and without the added AI feature."
+support: "Provide a fill-in comparison table: goal, groups, what stays constant, outcome, remaining uncertainty."
+stretch: "Ask how prior knowledge, school resources, or different educational values would affect generalisation."
+leads: "Unit 3 examines cognitive offloading, tool choice and the design of AI assistance."
+exit:
+  q: "Why might a genuine improvement in test scores still fail to settle whether AI helps learning?"
+  a: "Its meaning depends on comparison conditions, which learning outcomes are tested, the time horizon and what education values."
+explain: |
+  Do not turn a fair methodological critique into a claim that existing research tells us nothing.
+  This unit is about interpreting narrow findings accurately and designing stronger questions.
