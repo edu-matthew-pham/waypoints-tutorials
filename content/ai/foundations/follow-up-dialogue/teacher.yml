@@ -1,0 +1,25 @@
+summary: "Manage an ongoing AI interaction through clarification, questioning and redirection."
+time: 30
+goals:
+  - "I can identify why an AI response does not meet my goal."
+  - "I can write an appropriate follow-up and explain what I still need to verify."
+before: |
+  The board shows prepared fictional replies, not a functioning chatbot.
+  Keep the core lesson offline-friendly. Live assistants are optional and school-approved.
+running:
+  - "Have learners identify the problem before selecting a follow-up."
+  - "Compare strategies that serve different learning purposes."
+struggle: "Students may assume asking AI to verify itself establishes correctness."
+stuck:
+  - see: "A student simply asks for more detail without identifying the problem."
+    ask: "Was the response wrong, unclear, based on a mistaken assumption or too much help?"
+    fix: "Name the problem and choose a follow-up that addresses it."
+support: "Use prepared sentence starters: I already know; I need; Please ask me."
+stretch: "Compare how the same follow-up suits learning mode and performance mode."
+leads: "Move on to Learning effectively with AI: practice, verification and delegation."
+exit:
+  q: "Why might you need to redirect an AI response?"
+  a: "Because the first answer can miss the goal; follow-ups help clarify or change assistance, but still require evaluation."
+explain: |
+  A follow-up is a purposeful change to the conversation based on the preceding answer.
+  Different interactions can serve different learning needs; independent checks still matter.
