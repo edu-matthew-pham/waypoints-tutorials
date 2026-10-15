@@ -27,23 +27,68 @@ const CLIP_MAX_S = 30; // BUILDING › 4: clips that explain why stay under abou
 
 const highlightSrc = readFileSync(join(here, 'highlight.cjs'), 'utf8');
 const stageHtml = readFileSync(join(here, 'stage.html'), 'utf8').replace('/*HIGHLIGHT*/', () => highlightSrc);
-const rendererSrc = readFileSync(fileURLToPath(import.meta.url), 'utf8');
+// Only the parts of this file that make the clip count towards its hash: the cache section (hashing, reuse from the
+// live site) and the main section (planning, deadlines, reports) are left out, so editing them re-records nothing.
+// Everything else (app, browser, voiceover, video, one clip) counts. If the section markers go, the whole file counts.
+const rendererSrc = (() => {
+  const src = readFileSync(fileURLToPath(import.meta.url), 'utf8');
+  const at = (s, name, from = 0) => s.indexOf(`\n// ---------- ${name} ----------\n`, from); // a marker on a line of its own
+  const cut = (s, from, to) => { const a = at(s, from), b = to ? at(s, to, a + 1) : s.length; return a < 0 || b < 0 ? null : s.slice(0, a) + s.slice(b); };
+  return cut(cut(src, 'main') ?? src, 'cache', 'app process') ?? src;
+})();
 
 // ---------- cache ----------
 // Clips show a playground, so a change to the playground a lesson uses (or its snippets) must re-record
 // that lesson's clips. Only that playground counts: editing the micro:bit snippets leaves turtle clips alone.
 const SNIPPETS = { playground: 'turtle', 'playground-html': 'html', 'playground-makecode': 'microbit', 'playground-maths': 'maths', 'playground-board': 'maths', 'playground-explain': 'none' };
 const sharedCache = new Map();
+const hashWalk = (h, p, skip = () => false) => { if (!existsSync(p) || skip(p)) return; if (statSync(p).isDirectory()) { for (const f of readdirSync(p).sort()) hashWalk(h, join(p, f), skip); } else h.update(p).update(readFileSync(p)); };
 function sharedFilesHash(lesson) {
   const pg = String(lesson.app?.command ?? '').match(/_(playground[\w-]*)/)?.[1];
   const key = pg || '';
   if (sharedCache.has(key)) return sharedCache.get(key);
   const h = createHash('sha1');
-  const walk = (p) => { if (!existsSync(p)) return; if (statSync(p).isDirectory()) { for (const f of readdirSync(p).sort()) walk(join(p, f)); } else h.update(p).update(readFileSync(p)); };
-  if (pg) [pg, 'playground-shared', join('snippets', `${SNIPPETS[pg] ?? pg}.json`)].forEach(walk);
+  if (pg === 'playground-board') boardCoreHash(h);
+  else if (pg) hashWalk(h, pg);
+  if (pg) ['playground-shared', join('snippets', `${SNIPPETS[pg] ?? pg}.json`)].forEach((p) => hashWalk(h, p));
   const d = h.digest('hex');
   sharedCache.set(key, d);
   return d;
+}
+
+// The shared board holds every widget (balance, tiles, forces, the AI widgets…) but a clip shows one: its setup's
+// `widget:` line. So a board clip counts the board's core and its own widget only, and adding or editing a widget
+// leaves clips on other widgets alone. index.html counts without its widget <script> lines. The build also copies in
+// maths.js (from tools/math-expr.mjs) and JSXGraph (its version in package.json), so those count too.
+function boardCoreHash(h) {
+  hashWalk(h, 'playground-board', (p) => p === join('playground-board', 'widgets') || p === join('playground-board', 'index.html'));
+  h.update(readFileSync(join('playground-board', 'index.html'), 'utf8').replace(/^.*<script src="widgets\/[^"]*"><\/script>.*\n?/gm, ''));
+  h.update(readFileSync(join(here, 'math-expr.mjs')));
+  const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+  h.update(JSON.stringify({ ...pkg.dependencies, ...pkg.devDependencies }.jsxgraph ?? ''));
+}
+let widgetFiles = null; // registered widget name -> file (geartrain.js registers "train")
+function boardWidgetHash(lesson, step) {
+  if (!widgetFiles) {
+    widgetFiles = new Map();
+    const dir = join('playground-board', 'widgets');
+    for (const f of readdirSync(dir).filter((f) => f.endsWith('.js')).sort())
+      for (const m of readFileSync(join(dir, f), 'utf8').matchAll(/\bB\.widget\(\s*['"]([\w-]+)['"]/g)) widgetFiles.set(m[1], join(dir, f));
+  }
+  const h = createHash('sha1');
+  const q = step.config.query || {};
+  let file = null;
+  if (typeof q.code === 'string') {
+    try {
+      const code = q.code.startsWith('@') ? getSnippet(lesson.dir, q.code.slice(1)) : q.code;
+      let name = 'balance'; // the board's default, as in core.js parseSpec (the last widget: line wins)
+      for (const line of String(code).split('\n')) { const m = /^\s*widget\s*:\s*([\w-]+)/i.exec(line.replace(/(^|\s+)#.*$/, '')); if (m) name = m[1]; }
+      file = widgetFiles.get(name) ?? null;
+    } catch { file = null; }
+  }
+  if (file) h.update(file).update(readFileSync(file));
+  else hashWalk(h, join('playground-board', 'widgets')); // cannot tell which widget: count them all (slower, never stale)
+  return h.digest('hex');
 }
 
 function stepHash(lesson, step) {
@@ -55,6 +100,7 @@ function stepHash(lesson, step) {
   }
   if (lesson.inline) h.update(JSON.stringify(lesson.inline));   // code written inside lesson.md counts like a code file
   h.update(stageHtml).update(rendererSrc).update(sharedFilesHash(lesson));
+  if (/_playground-board\b/.test(String(lesson.app?.command ?? ''))) h.update(boardWidgetHash(lesson, step));
   const vs = voiceSpec(lesson.voice);
   if (vs) h.update(voiceHashInput(vs)).update(JSON.stringify(otherVoices(vs)));
   // The explain stage shows pictures drawn by render-pictures: they are part of the clip, so a missing or redrawn
