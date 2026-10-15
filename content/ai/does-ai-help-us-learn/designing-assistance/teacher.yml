@@ -1,0 +1,25 @@
+summary: "Compare direct modelling, guided hints and fading support, then challenge who controls assistance."
+time: 40
+goals:
+  - "I can distinguish instructional scaffolding from merely making an activity interactive."
+  - "I can describe how prior knowledge changes the appropriate support."
+  - "I can design and challenge a sequence of tutoring assistance."
+before: |
+  All tutoring sequences are illustrative, not evidence of effectiveness or live AI dialogues.
+  Do not imply hints always outperform worked examples, or that fading guarantees retention.
+running:
+  - "Compare the model-first, hint-first and fading sequences."
+  - "Challenge each sequence by changing the learner's expertise."
+  - "Ask what a later independent attempt could establish."
+  - "Discuss learner, teacher and adaptive-system control without forcing consensus."
+struggle: "Learners may equate more struggle or more questions with deeper learning."
+stuck:
+  - see: "The learner always prefers hints."
+    ask: "What if this is the learner's first encounter with the technique?"
+    fix: "Compare the benefits of initial modelling and later practice."
+support: "Offer a sequence template: goal, model, guided attempt, feedback, fresh attempt."
+stretch: "Consider a tutor that mistakenly estimates a learner's expertise."
+leads: "Unit 4 investigates formative and summative assessment and responsibility for educational decisions."
+exit:
+  q: "Why is there no universally best tutoring sequence?"
+  a: "Prior knowledge, learning purpose, quality of feedback and evidence of progress all matter."
