@@ -496,6 +496,7 @@ function writeRecap(node, courseLessons) {
   writeFileSync(join(OUT, rp, 'index.html'), page(`Recap: ${node.title}`,
     `<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: recap</h1>` +
     `<p class="lede">Answer each question in your head or on paper first, then check it.</p></header>` +
+    (existsSync(join(CONTENT_ROOT, node.path, 'recap.md')) ? `<section class="rcunit rc-synthesis">${mdp.parse(readFileSync(join(CONTENT_ROOT, node.path, 'recap.md'), 'utf8'))}</section>` : '') +
     groups.map((g) => `<section class="rcunit">${g.u.title ? `<h2>${esc(g.u.title)}</h2>` : ''}${g.ls.map(card).join('')}</section>`).join('') +
     (courseLessons.some((l) => l.coach) ? `<script>${RECAP_COACH_JS}</script>` : ''),
     '', navFor(rp, 'course', node.path)));
@@ -567,8 +568,9 @@ for (const node of dirs.values()) {
   const parentPath = node.path.split('/').slice(0, -1).join('/');
   const crumb = isRoot ? '' : `<a class="crumb" href="../">← ${esc(dirNode(parentPath).title)}</a>`;
   const ref = REFS.find((r) => r.path === `${node.path}/reference`);
+  const conceptualRef = existsSync(join(CONTENT_ROOT, node.path, 'reference.md'));
   const play = PLAY[node.path];
-  const items = (play ? `<li><a href="playground/"><b>Playground</b><span>Free play: write and run your own ${esc(play.label)} code.</span></a></li>` : '') + (ref ? `<li><a href="reference/"><b>Reference</b><span>Every command and tag in the playground, with what it does.</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
+  const items = (play ? `<li><a href="playground/"><b>Playground</b><span>Free play: write and run your own ${esc(play.label)} code.</span></a></li>` : '') + (ref || conceptualRef ? `<li><a href="reference/"><b>Reference</b><span>${conceptualRef ? 'Key concepts, evidence and questions for this course.' : 'Every command and tag in the playground, with what it does.'}</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
   const outDir = join(OUT, node.path);
   mkdirSync(outDir, { recursive: true });
   const up = '../'.repeat(node.path ? node.path.split('/').length : 0);
@@ -579,8 +581,14 @@ for (const node of dirs.values()) {
     // recap: true in a course's index.md: a short recap page at <course>/recap/ (recapHtml, below), linked as a chip.
     const recap = node.meta?.recap === true;
     const practice = practiceSkills(node, courseLessons);
-    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '');
+    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '');
     if (recap) writeRecap(node, courseLessons);
+    if (conceptualRef) {
+      const refDir = `${node.path}/reference`;
+      mkdirSync(join(OUT, refDir), { recursive: true });
+      writeFileSync(join(OUT, refDir, 'index.html'), page(`Reference: ${node.title}`,
+        `<header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: reference</h1></header><div class="content">${new Marked().parse(readFileSync(join(CONTENT_ROOT, node.path, 'reference.md'), 'utf8'))}</div>`, '', navFor(refDir, 'course', node.path)));
+    }
     if (PROJECTS.has(node.path)) writeProjects(node, PROJECTS.get(node.path));
     if (practice.length) writePractice(node, practice);
     // One collapsed row per lesson: the whole sequence is visible; opening a row shows its steps.
@@ -832,11 +840,14 @@ for (const coursePath of teachCourses) {
   // Optional course-wide teacher guidance is authored as Markdown alongside index.md.
   // Unit-specific guidance already lives in primers/<unit-id>.md, shown above.
   const courseNotesFile = join(CONTENT_ROOT, coursePath, 'teacher.md');
+  const coursePresentationFile = join(CONTENT_ROOT, coursePath, 'presentation.md');
+  if (existsSync(coursePresentationFile)) writeFileSync(join(courseDir, 'course-deck.md'), readFileSync(coursePresentationFile, 'utf8'));
+  const courseResources = `<p><b>Course resources:</b> <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/reference/">Concept reference</a> · <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/recap/">Recap</a>${existsSync(coursePresentationFile) ? ' · <a href="course-deck.md" download>Opening and closing prompts (Markdown)</a>' : ''}</p>`;
   const courseNotes = existsSync(courseNotesFile)
     ? `<section class="tunit"><h2>Course teaching guidance</h2>${(mathsCourse ? mathsGuide.md : md)(readFileSync(courseNotesFile, 'utf8'))}</section>`
     : '';
   const intro = `<p>Each lesson works two ways. Students can work through the online tutorial at their own pace (it checks their answers and saves their progress in their browser), or you can teach it to the whole class from the slides, then send students into the tutorial for the Modify and Make steps.</p><p>Every lesson guide has plain-language notes, the answers to every check, a solution for every task, and slides and a worksheet for <a href="https://prepare.learningwaypoints.com/" target="_blank" rel="noopener">Waypoints Prepare</a>. These guide pages are not linked from student pages, but they are not secret either: keep printed Teacher editions for answers you do not want students to find.</p>`;
-  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${courseNotes}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}${projectsGuide}`, `teach/${coursePath}`, coursePath));
+  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${courseResources}${courseNotes}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}${projectsGuide}`, `teach/${coursePath}`, coursePath));
 }
 mkdirSync(join(OUT, 'teach'), { recursive: true });
 writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>`, 'teach', null));
