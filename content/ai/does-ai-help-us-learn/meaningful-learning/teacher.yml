@@ -1,0 +1,34 @@
+summary: "Use perspective-taking and dialectical dialogue to explore independent competence, sociocultural participation, creativity, productivity and agency as educational aims."
+time: 40
+goals:
+  - "I can describe more than one account of meaningful learning."
+  - "I can identify what a scenario demonstrates and what remains unknown."
+  - "I can develop and challenge an argument about what education should value."
+before: |
+  Teaching move: perspective-taking and charitable argumentation rather than a debate scored for a winner.
+  All four student cases are invented discussion prompts, not empirical findings.
+  No live AI, new widget or external discussion platform is required.
+  Optional artefacts can include an inquiry journal, discussion forum or shared argument map.
+running:
+  - "Establish that different educational goals require different evidence."
+  - "Ask students to represent a view they initially disagree with fairly."
+  - "Distinguish descriptive claims about what was learned from value judgements about what matters."
+  - "Invite students to critique the possibility that unaided tests or polished products reveal all learning."
+struggle: "Students may assume that valuing sociocultural learning means abandoning individual knowledge, or that valuing independent capability means rejecting collaboration."
+stuck:
+  - see: "A student treats the perspectives as mutually exclusive."
+    ask: "Could someone become more independently capable through collaboration?"
+    fix: "Revisit Aria and Maya; separate the way learning happens from the capabilities later demonstrated."
+  - see: "A student claims Sam learned nothing because AI wrote the report."
+    ask: "What evidence is missing, and what might Sam conceivably have learned?"
+    fix: "Distinguish absence of evidence from evidence of absence."
+support: "Allow students to select only two learners and give argument sentence starters: 'This suggests...', 'However...', 'We cannot yet tell...'."
+stretch: "Introduce an equity or institutional question: whose achievements do our assessment systems make visible, and whose might they miss?"
+leads: "Unit 2 examines how research measures learning and whether its comparisons justify its conclusions."
+exit:
+  q: "Why might reasonable people disagree about what constitutes meaningful learning?"
+  a: "They may value different aims such as individual capability, creative agency, productive achievement or participation; different evidence is needed for each."
+explain: |
+  Purposefully introduce sociocultural perspectives without implying they refute cognitive accounts.
+  Dialectical dialogue is assessed through intellectual care and reasoning, not arrival at a predetermined conclusion.
+  Concept checkpoints have defensible answers; the broader normative question remains open.
