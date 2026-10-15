@@ -87,7 +87,7 @@ When groups differ in multiple ways—such as feedback, time, pace and AI availa
 
 Even a strong experiment takes place in a particular context, with particular students, tasks and tools. Improved productivity might matter even if an unaided test shows no improvement. This is a question about educational values as well as measurement.
 
-### Theory proposes explanations; experiments test them
+**Theory proposes explanations; experiments test them**
 
 In October 2026, Nakamura published *Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning*, a **theoretical review** proposing seven testable propositions. It does **not** report an experiment validating the full framework.
 
