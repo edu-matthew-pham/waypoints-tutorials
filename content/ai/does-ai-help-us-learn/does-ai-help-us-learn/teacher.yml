@@ -1,0 +1,35 @@
+summary: "Launch a sustained dialectical inquiry by separating successful performance, learning, productivity and what evidence can establish."
+time: 35
+goals:
+  - "I can distinguish a successful product from evidence of learning."
+  - "I can explain how the learner's goal changes what AI assistance might mean."
+  - "I can support and challenge a position while recognising uncertainty."
+before: |
+  This is an inquiry launch, not a lesson whose endpoint is 'AI is good' or 'AI is bad'.
+  Set up a paper or digital inquiry record that students can retain across all 12 lessons.
+  The board is a scripted, account-free activity carried over from AI Foundations; it contains suggested choices for particular goals, not definitive educational judgements.
+  Offer students permission to disagree with a board's recommendation, provided they supply reasons.
+running:
+  - "Ask for an initial position before introducing conceptual distinctions; preserve it for later comparison."
+  - "After each scenario, ask what the product shows and what it cannot establish about learning."
+  - "Model dialectical dialogue by restating the strongest version of an opposing argument before critiquing it."
+  - "Avoid rewarding students for changing their opinions; reward specificity, evidence and responsiveness to objections."
+struggle: "Students may equate a polished product with learning, or assume AI involvement proves that learning did not happen."
+stuck:
+  - see: "The learner says 'AI always helps' or 'AI always harms' without distinguishing goals."
+    ask: "What does 'help' mean here? What would we need to observe to tell?"
+    fix: "Compare learning a programming skill with using a game engine to test a design idea."
+  - see: "Students treat the scripted scenario feedback as an answer key for a philosophical question."
+    ask: "What assumption is this recommendation making about the learner's goal?"
+    fix: "Separate a clear factual distinction from a contestable educational value judgement."
+support: "Use a familiar school task and sentence starters: 'The product shows...', 'It does not yet show...', 'I would check...'."
+stretch: "Introduce a sociocultural objection: must learning always be judged through unaided individual performance? What role do shared tools and collaborators play?"
+leads: "Lesson 2 investigates the distinction between assisted performance and learning more directly."
+exit:
+  q: "What can a polished AI-assisted product tell us about someone's learning?"
+  a: "It establishes an outcome but not by itself the learner's understanding, decisions or independent capability; the learning goal and further evidence matter."
+explain: |
+  Pedagogical move: provocation followed by contrasting cases and dialectical dialogue.
+  Explicitly teach the distinctions among performance, learning and purpose; keep the larger value judgement open.
+  A good inquiry record contains an initial claim, a reason, a plausible counterargument and a live question.
+  Prepared board feedback may favour certain offloading choices for the goals specified; students should be invited to test those assumptions, not simply accept the feedback.
