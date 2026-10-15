@@ -1,0 +1,14 @@
+inquiry:
+  q: "Two students produce equally convincing games with different help. What would you need to know before saying they learned the same thing?"
+  prompts:
+    - "What were they trying to learn?"
+    - "What else could the product show?"
+  notes: "Welcome uncertainty; the course develops this question rather than settling it now."
+activities:
+  - at: end
+    kind: discussion
+    title: "Keep the question open"
+    minutes: 3
+    do: |
+      Complete: "I think AI helps learning when..., but I would need to know..."
+    notes: "Invite one well-supported objection. A separate journal is optional."
