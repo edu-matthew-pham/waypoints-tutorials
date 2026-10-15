@@ -27,6 +27,23 @@ Introduce **both strands from Lesson 1** rather than teaching them as separate s
 
 Understanding AI mechanisms does not automatically produce good learning decisions. Equally, students can develop verification habits before learning advanced model architecture. Pair transparent simulations with authentic AI-use decisions where appropriate, while making their differences clear.
 
+## Interchangeable model activities and external tools
+
+Keep the **learning objective stable while adapting the tool**. AI Foundations should not depend on access to a particular vendor, account or school-approved service.
+
+For topics such as training data, classification, generalisation and bias, offer two routes when practical:
+
+- **Waypoints route:** a self-contained, inspectable simulation with prepared or editable examples. Students can change inputs, observe predictions and explain why a result changes.
+- **Authentic-tool route:** use an external learning tool such as Google's Teachable Machine to collect examples, train a real classifier, test unfamiliar inputs and investigate errors. Quick, Draw! may support discussion of pretrained recognition and mistakes, though it is not an equivalent train-your-own-model activity.
+
+**Equivalent pathways:** teachers may select the Waypoints activity *or* the external tool to meet shared essential objectives and checks. Keep the prediction, investigation, explanation and evaluation prompts aligned where feasible. Provide an accessible fallback when devices, permissions, connectivity or third-party services are unavailable.
+
+**Extension pathway:** students may use the transparent Waypoints model first, then compare it with a real trained model to encounter greater complexity and limitations.
+
+Do not present the routes as technically interchangeable: a simplified classifier does not reproduce a neural network. State what each represents and cannot show. Prefer pedagogical interchangeability over a claim of identical mechanisms or outcomes.
+
+**Design principle:** use simplified models to reveal mechanisms, authentic models to encounter complexity, and reflection to develop independent judgement.
+
 ## Proposed course architecture
 
 ### AI Foundations — first course to design
