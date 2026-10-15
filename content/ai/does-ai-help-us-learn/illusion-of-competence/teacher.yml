@@ -1,0 +1,28 @@
+summary: "Use a calibration exercise and real metacognition research to examine the difference between feeling competent and demonstrating understanding."
+time: 40
+goals:
+  - "I can explain metacognitive calibration and illusions of competence."
+  - "I can compare a confidence judgement with evidence from a new attempt."
+  - "I can distinguish a classroom demonstration from an experimental research finding."
+before: |
+  Teaching move: metacognitive calibration and counterexample. The reused activity is scripted, not a generative AI system.
+  Source: Fernandes et al., Computers in Human Behavior (2026): https://doi.org/10.1016/j.chb.2025.108779
+  Research involved AI-assisted logical-reasoning tasks; do not portray findings as direct evidence of long-term student learning.
+running:
+  - "Elicit a confidence prediction before feedback."
+  - "Invite students to explain what an actual attempt demonstrates and what it misses."
+  - "Compare the classroom illustration with the research design and avoid causal overclaims."
+  - "Connect calibration to forethought, monitoring and reflection in self-regulated learning."
+struggle: "Students may mistake one inaccurate confidence estimate for evidence that they generally misunderstand the topic."
+stuck:
+  - see: "A learner treats the board as experimental proof that generative AI causes overconfidence."
+    ask: "Where was live AI used? What comparison would the investigation need?"
+    fix: "Label the board as a prepared illustration and return to the published study."
+support: "Offer low, medium and high confidence instead of numerical estimates."
+stretch: "Propose a more reliable measure of calibration using multiple new tasks and both underconfidence and overconfidence."
+leads: "Lesson 6 challenges outcome validity, comparison choices and the limits of experimental evidence."
+exit:
+  q: "Why might AI-assisted success make self-regulation harder?"
+  a: "It can be harder to estimate one's own competence when feedback and reasoning come partly from the tool."
+explain: |
+  Some evidence supports overestimation during AI-supported reasoning tasks. Avoid universal claims about all students or all AI use.
