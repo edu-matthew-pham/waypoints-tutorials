@@ -1,0 +1,25 @@
+summary: "Use feedback and a new attempt to make an informed next learning decision."
+time: 40
+goals:
+  - "I can interpret feedback as evidence about my current understanding."
+  - "I can select a next learning action and explain why it may help."
+  - "I can distinguish feedback from proof of learning."
+before: |
+  This lesson focuses on learner self-regulation, not comparing tutoring interfaces again.
+  The seasons misconception is illustrative; prepare a basic axial-tilt diagram if helpful.
+running:
+  - "Invite learners to question what a convincing correction establishes."
+  - "Compare misconception, feedback and the learner's subsequent explanation."
+  - "Teach the formative cycle: attempt, feedback, action, new attempt."
+  - "Ask learners to justify a next action and identify what would change the plan."
+struggle: "Students may treat receiving a correct explanation as sufficient evidence that they have learned."
+stuck:
+  - see: "A learner chooses the longest explanation by default."
+    ask: "What does the student already know, and what would reveal the remaining difficulty?"
+    fix: "Link the response to an observable next attempt."
+support: "Provide frames: I think I understand..., I will try..., If that fails, I will..."
+stretch: "Ask how misleading AI feedback might disrupt the student's next decision."
+leads: "Lesson 11 distinguishes formative learning evidence from summative claims about achievement."
+exit:
+  q: "How can feedback help you regulate your learning?"
+  a: "Interpret it, choose an action, and gather fresh evidence to decide whether the action helped."
