@@ -1,7 +1,7 @@
 summary: "Investigate a simple fruit classification model."
 time: 30
 goals:
-  - "Explain how examples influence predictions."
+  - "I can explain how examples influence predictions."
 before: "Use the built-in board. External tools are optional."
 running:
   - "Predict, test, change and explain."
