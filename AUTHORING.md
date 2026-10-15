@@ -482,6 +482,15 @@ Name the misconception with an id from `misconceptions.json` (`misconception: re
 is a later lesson, or sets a `design` fault as a one-line hunt. Add a new id to `misconceptions.json` with its home
 and a one-line description.
 
+**Course completion resources (16 Oct 2026).** A course can opt into the following additional Markdown resources alongside `index.md`:
+
+- `reference.md`: student-facing conceptual reference at `<course>/reference/`, with a Reference chip on the course page. Use this for concepts, frameworks and evidence, including science or inquiry courses without command snippets. This is separate from programming-command references.
+- `recap.md`: an optional inquiry-synthesis section added **before** the existing per-lesson retrieval cards at `<course>/recap/` (requires `recap: true` in the course index). Keep this concise and avoid supplying a prescribed position.
+- `presentation.md`: optional Marp Markdown for a short course opening/closing deck; copied during the build to `/teach/<course>/course-deck.md` and linked from the course teacher guide. Lesson-level `deck.md` files are still generated from the lessons.
+- `class/<lesson>.yml`: targeted discussion slides or teaching activities when the generated lesson deck needs a clearer intellectual progression. Avoid duplicating the self-paced tutorial.
+
+Keep optional artefacts such as journals and argument maps in teacher guidance, not as structural prerequisites for completing a course. Resources should clarify learning without prescribing a single pedagogy or demanding extra interactive widgets.
+
 **Class plan (12 Oct 2026).** The site is a complete self-paced lesson; the deck is where PRIMM's talk happens. A lesson can have `content/<course>/class/<lesson>.yml` (kept outside the lesson folder, so editing it never re-records clips). It adds slides to the deck and an "In class" section to the teacher guide:
 
 ```yaml
