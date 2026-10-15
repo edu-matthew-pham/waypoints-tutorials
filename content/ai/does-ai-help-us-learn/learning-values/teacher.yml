@@ -1,0 +1,26 @@
+summary: "Revisit the AI-and-learning inquiry through learner agency, institutional incentives and competing educational values."
+time: 45
+goals:
+  - "I can explain how assessment incentives can affect learning choices."
+  - "I can identify different defensible educational priorities."
+  - "I can defend a qualified position on AI and learning using evidence and counterarguments."
+before: |
+  Keep students' decisions and learning at the centre rather than turning this into an administrative policy-design exercise.
+  Stakeholder voices are simplified fictional perspectives, not authoritative representatives of their groups.
+  Optional extended arguments, journals, maps and discussions remain teacher-selected formats.
+running:
+  - "Surface differences among learner, teacher, qualification and community concerns."
+  - "Connect assessment incentives with how students allocate effort."
+  - "Revisit research, theory, tool alternatives and learning goals from earlier units."
+  - "Require a charitable counterargument and an explanation of what could change a position."
+struggle: "Students may force a pro-AI or anti-AI verdict or regard justified uncertainty as failure."
+stuck:
+  - see: "A learner makes a universal claim."
+    ask: "For which learner, goal, kind of assistance and evidence?"
+    fix: "Qualify the claim using one earlier study and its limits."
+support: "Offer frames: AI may help when..., The evidence suggests..., A limitation is..., I would reconsider if..."
+stretch: "Distinguish what research can establish from a disagreement about what education should value."
+leads: "The final inquiry can continue in other courses or student-selected projects; no universal policy is required."
+exit:
+  q: "What is a defensible response to the question Does AI help us learn?"
+  a: "A context-sensitive position grounded in learning goals, empirical evidence, uncertainty and competing educational values."
