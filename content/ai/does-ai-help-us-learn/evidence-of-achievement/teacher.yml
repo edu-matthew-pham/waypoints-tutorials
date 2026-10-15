@@ -1,0 +1,25 @@
+summary: "Evaluate what final outcomes and different assistance conditions can show about learner capability."
+time: 40
+goals:
+  - "I can distinguish formative purposes from summative purposes."
+  - "I can describe what a completed product does and does not establish."
+  - "I can select evidence appropriate to a stated assessment goal."
+before: |
+  The three environmental investigation scenarios are hypothetical and do not equate independence with quality.
+  Keep both learner self-assessment and formal assessment in view. The purpose is assessment literacy, not surveillance or AI detection.
+running:
+  - "Start with similar products but different learning processes."
+  - "Ask what students and others can infer about capabilities."
+  - "Change the target from independent reasoning to a useful tool-mediated recommendation."
+  - "Investigate why grades or summative requirements can influence earlier learning choices."
+struggle: "Learners may infer that assistance always invalidates achievement or that polished work proves learning."
+stuck:
+  - see: "A learner simply ranks the three students."
+    ask: "What precisely are we trying to assess?"
+    fix: "Change the intended capability, then revisit the judgement."
+support: "Provide a two-column comparison of learning goal and possible evidence."
+stretch: "Discuss how a single task can have formative and summative uses without making them identical."
+leads: "Lesson 12 addresses who defines valued capabilities and how educational incentives shape learning."
+exit:
+  q: "Why can the same product support different conclusions under different assessment goals?"
+  a: "The evidence is interpreted against the intended capability and conditions under which work was done."
