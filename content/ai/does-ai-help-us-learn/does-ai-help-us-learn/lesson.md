@@ -26,7 +26,7 @@ explainClip:
 
 AI can explain a difficult idea, generate a game, correct a draft or finish a task in seconds. Does that mean it helps someone *learn*? **This course investigates the question rather than giving you a predetermined answer.**
 
-Throughout the course, keep an **inquiry record**. You can use a notebook, a shared class document or your teacher's chosen workspace. Record your claims, evidence, challenges and open questions. You do not have to change your mind to show deeper thinking.
+Throughout the course, you can maintain an **optional inquiry record** in a notebook, document or teacher-chosen workspace. This helps you revisit your claims, evidence and open questions. If you do not keep a separate record, use the lesson reflections and discussion prompts. You do not have to change your mind to show deeper thinking.
 
 ## Engage: make a claim worth examining
 
@@ -41,7 +41,7 @@ check:
 
 **Provocation:** Two students submit equally impressive games. One writes code in a beginner-friendly game engine; the other directs an AI assistant to generate the game. Have they learned the same things? Does it matter if their goal was to learn programming, investigate a game mechanic or simply build something fun?
 
-**Inquiry record — Entry 1:** Answer *Does AI help us learn?* in two or three sentences. Add **one reason**, **one uncertainty** and your confidence (low, medium or high). Keep your first answer: you'll revisit it.
+**Optional inquiry record — Entry 1:** Answer *Does AI help us learn?* in two or three sentences. Add **one reason**, **one uncertainty** and your confidence (low, medium or high). Keep your first answer: you'll revisit it.
 
 ## Explore: the goal changes the judgement
 
@@ -100,7 +100,7 @@ Discuss the two claims below. Do not vote for the winner immediately. First offe
 
 Try these questions: Can both claims be true? Are they using *learn* in the same way? Is productivity itself a worthwhile educational outcome? How would your answer change if the task were learning fractions rather than prototyping a game?
 
-**Inquiry record — Entry 2:** Add a counterargument to your first position. You may retain your position, qualify it or revise it; explain why. Identify one unanswered question to carry into the next lesson.
+**Optional inquiry record — Entry 2:** In your reflections, discussion or inquiry record, add a counterargument to your first position. You may retain your position, qualify it or revise it; explain why. Identify one unanswered question to carry into the next lesson.
 
 ## Evaluate: what can we conclude so far?
 
@@ -119,7 +119,7 @@ Imagine a student says: "AI helped me finish my science explanation, so I now un
 
 ```step
 stage: info
-check: { type: reflect, text: "I have recorded what I currently think, why I think it and what might change my mind." }
+check: { type: reflect, text: "I have expressed what I currently think, why I think it and what might change my mind." }
 ```
 
 You do **not** need an AI account for this lesson. If you use a school-approved assistant outside the prepared activity, do not treat a fluent explanation or polished product as proof of your own learning. Equally, do not assume that using AI means no learning occurred.
