@@ -7,14 +7,14 @@ name: Build and publish (manual)
 #
 # Three stages:
 #   plan     reuse what is live, draw new pictures, and share the clips to record out between parallel jobs
-#   record   one job per share (up to "jobs", default 4), each recording its lessons' clips at real speed
+#   record   one job per share (up to "jobs", default 8), each recording its lessons' clips at real speed
 #   publish  lay the recorded clips over the live ones, keep the live version of anything a job missed, build, push
 on:
   workflow_dispatch:
     inputs:
       jobs:
         description: Parallel recording jobs (1 to 8)
-        default: "4"
+        default: "8"
       method:
         description: "rebuild = the old way (download every clip, force-push a rebuilt site). overlay = take the live branch and add only what changed (faster, new, test it on a spare branch first)"
         type: choice
