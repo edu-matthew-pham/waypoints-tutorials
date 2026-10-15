@@ -1,0 +1,14 @@
+inquiry:
+  q: "Could a study showing benefits and a study showing harms both be trustworthy?"
+  prompts:
+    - "Who learned, using what assistance?"
+    - "Which outcomes and comparisons were actually measured?"
+  notes: "Use the actual Bastani and Kestin findings. Avoid treating headlines as conflicting proofs."
+activities:
+  - at: end
+    kind: discussion
+    title: "Rewrite the headline"
+    minutes: 4
+    do: |
+      Draft a headline that accurately reflects one study, including the comparison and outcome.
+    notes: "A careful headline can report a genuine result without claiming AI works or fails universally."
