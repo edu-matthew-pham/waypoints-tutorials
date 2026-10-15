@@ -1,0 +1,21 @@
+# region: explore
+widget: fruit-learning
+mode: examples
+example: green | round | apple
+example: green | round | apple
+example: yellow | round | apple
+example: yellow | long | banana
+example: yellow | long | banana
+example: yellow | long | banana
+# endregion
+
+# region: explain
+widget: fruit-learning
+mode: examples
+example: green | round | apple
+example: green | round | apple
+example: yellow | round | apple
+example: yellow | long | banana
+example: yellow | long | banana
+example: yellow | long | banana
+# endregion
