@@ -1,7 +1,8 @@
 ---
-title: How do you know whether AI is right?
+title: Check what AI tells you
 summary: Compare confident claims with independent evidence and distinguish supported, contradicted and insufficiently evidenced statements.
 language: science
+shape: 5e
 unit: learning-effectively-with-ai
 order: 2
 voice: { name: af_heart, speed: 1.1 }
@@ -22,7 +23,7 @@ explainClip:
     - caption: { text: "Decide what the evidence supports and what remains uncertain." }
     - wait: 1000
 ---
-A useful AI response may still include mistakes, overgeneralisations or unsupported claims. **Fluent language and confidence are not evidence.** In this lesson, you will investigate what a supplied record actually supports. Real verification often requires checking reliable, independent sources.
+Earlier you saw that AI writes by predicting words that are likely to come next, based on its training examples. Likely is not the same as true, so a fluent answer can still be wrong. A useful AI response may still include mistakes, overgeneralisations or unsupported claims. **Fluent language and confidence are not evidence.** In this lesson, you will investigate what a supplied record actually supports. Real verification often requires checking reliable, independent sources.
 
 ## Engage: does it sound right?
 

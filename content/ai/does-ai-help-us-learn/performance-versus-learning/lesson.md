@@ -2,6 +2,7 @@
 title: Is performing well the same as learning?
 summary: Compare assisted and independent attempts, examine what each demonstrates and question whether tests capture every kind of learning.
 language: science
+shape: 5e
 unit: what-is-learning
 order: 2
 voice: { name: af_heart, speed: 1.1 }

@@ -6,6 +6,7 @@ sources:
 title: Let the computer take over
 summary: Compare manual and automated sampling, and decide which work can be delegated without losing understanding.
 language: science
+shape: 5e
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "Repetition is not understanding"

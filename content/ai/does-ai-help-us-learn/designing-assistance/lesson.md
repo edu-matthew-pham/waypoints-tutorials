@@ -2,11 +2,12 @@
 title: Can we design AI to make us think?
 summary: Compare direct instruction, guided hints and fading support for different learners.
 language: science
+shape: 5e
 unit: choosing-assistance
 order: 3
 voice: { name: af_heart, speed: 1.1 }
 ---
-Lesson 8 showed that interaction does not automatically produce learning. If we can control when a tutor explains, questions or hints, **how should we arrange that help?**
+The previous lesson showed that interaction does not automatically produce learning. If we can control when a tutor explains, questions or hints, **how should we arrange that help?**
 
 ## Engage: competing designs
 
@@ -67,8 +68,8 @@ tasks:
       answer: 0
   - check:
       type: question
-      q: "Why could the same teaching sequence work differently for two learners?"
-      options: ["Their prior knowledge and needs may differ", "Experts are always correct", "Every beginner dislikes examples"]
+      q: "When is struggling with a problem most likely to help learning?"
+      options: ["When the learner has enough to work with to make some progress", "When the problem takes longer than the learner expected", "When the learner gets no feedback until the end"]
       answer: 0
   - check:
       type: question
@@ -87,7 +88,7 @@ Effort can support learning when the learner has resources to make progress. Str
 
 ### Fading and reconstruction
 
-Reducing assistance and trying a new task may help reveal developing capability. Lesson 2 reminded us that immediate success alone does not establish retention or transfer.
+Reducing assistance and trying a new task may help reveal developing capability. Unit 1 reminded us that immediate success alone does not establish retention or transfer.
 
 ## Elaborate: design and challenge a tutor
 

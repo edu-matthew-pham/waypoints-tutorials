@@ -2,11 +2,12 @@
 title: What thinking should we keep?
 summary: Examine cognitive offloading by changing learning goals, learner expertise and the nature of assistance.
 language: science
+shape: 5e
 unit: choosing-assistance
 order: 1
 voice: { name: af_heart, speed: 1.1 }
 ---
-Unit 2 distinguished good performance from evidence of learning. Now consider a different decision: **if AI can do some thinking for us, which thinking should we keep?**
+Unit 1 distinguished good performance from evidence of learning. Now consider a different decision: **if AI can do some thinking for us, which thinking should we keep?**
 
 ## Engage: the completed argument
 
@@ -69,13 +70,13 @@ tasks:
       answer: 0
   - check:
       type: question
-      q: "Why might novices and experts use the same assistance differently?"
-      options: ["Experts never make errors", "Prior understanding affects what they can interpret, check and learn", "Novices cannot benefit from worked examples"]
+      q: "Which is a useful proposed distinction?"
+      options: ["Every task is permanently central or peripheral", "Thinking central to a current learning goal may be worth retaining", "All delegation is harmful"]
       answer: 1
   - check:
       type: question
-      q: "Which is a useful proposed distinction?"
-      options: ["Every task is permanently central or peripheral", "Thinking central to a current learning goal may be worth retaining", "All delegation is harmful"]
+      q: "Why might novices and experts use the same assistance differently?"
+      options: ["Experts never make errors", "Prior understanding affects what they can interpret, check and learn", "Novices cannot benefit from worked examples"]
       answer: 1
 ```
 
@@ -91,7 +92,7 @@ What is **central** depends on the goal. For someone learning to interpret data,
 
 A beginner might benefit from a complete worked example, then learn by explaining and reconstructing it. An experienced learner might delegate routine steps but fail to notice an AI error. An expert in writing can still be a novice in statistics.
 
-Nakamura's 2026 theoretical review proposes that offloading outcomes depend on factors including goals, expertise and monitoring. These are **propositions to investigate**, not experimentally established rules.
+That beginners often gain from worked examples while experts gain less is well established, long before AI. Nakamura's 2026 theoretical review goes further: it proposes that goals, expertise and monitoring decide whether **offloading to AI** helps or harms. That part is a **proposal to investigate**, not an established rule.
 
 ## Elaborate: test and revise the principle
 

@@ -1,0 +1,21 @@
+inquiry:
+  q: "When an explanation sounds clear, how do you know you understand it well enough to move on?"
+  prompts:
+    - "What could you do right now to test yourself?"
+    - "When is it time to ask a person instead?"
+  notes: "Feeling that it makes sense is not the same as being able to use it. A quick new attempt is the test."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Feedback into action"
+    minutes: 5
+    do: |
+      Read three pieces of feedback on the same answer: "Incorrect", "Try thinking about the tilt", and a labelled diagram. For each, say what you would do next.
+    notes: "Feedback is only formative if the learner can act on it. Ask which one gives the clearest next step."
+  - at: end
+    kind: discussion
+    title: "Check the checker"
+    minutes: 3
+    do: |
+      An AI tells you your answer is wrong, but you think it's right. What do you do next?
+    notes: "Good answers: check a reliable source, try a similar question, ask a person. AI feedback is evidence, and it can be wrong."

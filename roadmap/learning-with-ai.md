@@ -94,6 +94,63 @@ Design constraints:
 
 Possible 5E arc: Engage with a text-prediction question; Explore with dice; Explain probabilities and transitions; Elaborate with automation and changed data; Evaluate with a new example and offloading reflection.
 
+## Tools for schools (proposed, 16 Oct 2026)
+
+Purpose: help schools choose and trial AI tools, using what the two courses already teach. Matthew's school is trialling Microsoft 365 Copilot (Study and Learn mode) and Thinking Mode (https://thinkingmode.com/). Lessons stay platform-agnostic; this is teacher-facing material beside them.
+
+**Two kinds of tool, one per course:**
+- **Help tools** (tutor or study modes, general assistants, AI in Office): judged by the AI Foundations Unit 4 habits.
+  - Does it give a hint before the answer, and can a teacher set that?
+  - Does it show sources?
+  - Can a teacher control what it will do for a student?
+- **Evidence tools** (Thinking Mode: the student uploads finished work and answers adaptive questions about it; the teacher gets a transcript): judged by Does AI Help Us Learn? Unit 4 (evidence of achievement).
+  - Does the conversation show what the student understands, or how well they talk?
+  - Is it fair for students who are nervous, quieter or learning English?
+  - Can the teacher read and overrule the judgement?
+- **Teacher tools** (planning, rubrics, feedback drafts): the same habits from the teacher's side (keep the parts you need to understand or control).
+
+**Plan:**
+1. **Teacher page "Choosing AI tools for learning"** (implemented on `ai-review-fixes` as `content/choosing-ai-tools.md`, published at `/choosing-ai-tools/`; top-level placement follows the current plain-page builder).
+   - The questions above.
+   - Practical checks: age limits in the terms, student accounts, where data goes and how long it stays, teacher visibility and settings, LMS fit.
+   - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements.
+2. **Small-trial template**, flexible: a fixed core plus optional parts per kind of tool. It is the Does AI Help Us Learn? research-design lesson applied to a real decision.
+   - **Core (every trial):** what you are trialling and why; what you compare it with (existing practice, another tool, or a prompt in a general chatbot); who takes part and for how long; what you measure; a check one or two weeks later; student and teacher views; what would change your decision.
+   - **Can we trust it? (every trial):** judge this alongside "does it work?"; a free prompt can match a tool on the first and still lose on this. Check:
+     - **Privacy:** where work and transcripts go, how long they're kept, and whether they train a model.
+     - **Safety:** guardrails that keep it on task.
+     - **Terms of use:** minimum age, consumer versus education terms, who owns uploaded work, and whether use with minors and in assessment is allowed.
+     - **Oversight and accountability:** what the teacher can see, and a vetted vendor answerable to the school.
+     - **Access and fairness:** every student gets the same tool, with no personal accounts.
+   - **Help-tool part:** a hint-first task, then a new question without the tool a week later, plus students' confidence before and after.
+   - **Evidence-tool part:** for a sample of students, compare the tool's transcript judgement with the teacher's own short conversation about the same work; note disagreements and who they affect.
+   - **Teacher-tool part:** time saved, how much was edited, whether the teacher could defend the result.
+   - Scale it to the school: one class for a fortnight is a valid trial if it says so. First worked examples: Thinking Mode (evidence) and Copilot Study and Learn (help).
+3. **Optional "Try it with your school's tool" steps** (`tier: typical`) in Foundations Unit 4 and in `evidence-of-achievement`, so students compare the board with the real tool. These are worded for any tool.
+4. **Prompt library: use Waypoints Kit** (edu-matthew-pham/waypoints-kit), not a separate library.
+   - How Kit works: a starter prompt has a chatbot read `START-HERE.md`, the standard's node file and one format file.
+   - `coach.md` is already a tool-neutral study mode: Discover, Practise, Teach it back, Spot the flaw and Check. It is hint first, ends each round of help with "how do you know?", and stays inside the waypoint.
+   - The tools page links to Kit's coach and starter prompts rather than repeating them.
+   - Proposed Kit additions (to raise in the Kit repo, not built):
+     - A **"Defend my work" coach mode**: the student pastes their work, the AI asks about their decisions one at a time, then gives a descriptive summary for the teacher. It is the self-check version of an evidence tool.
+     - **`trial.md`**: the trial template above as a Kit format. It gives options and placeholders, and the teacher decides.
+   - Teacher prompts: Kit's planning, assessment and slide prompts, plus the tutorials' teacher-lesson prompt (Project doc teacher-lesson-prompt).
+   - Coach prompts stay off for code (roadmap/code.md).
+   - First trial idea at CGGS: Copilot running Kit's coach compared with Copilot Study and Learn, on the same waypoint. First check whether Copilot can open web links; if not, use `waypoints-kit-all.md`.
+5. **Later**: short guides per tool type, written after the template has been used in at least one real trial.
+
+**A prompt copies behaviour, not controls.**
+- A prompt can get most tools to behave like a mode (hint first, question me about my work).
+- It can't add a mode's controls: a locked session, teacher settings, a transcript the teacher sees.
+- Rule for schools: if you need the behaviour, a prompt may be enough; if you need control or evidence, you need the tool.
+- Vendors' named modes (Thinking Mode's Defence, Draft and Discussion; MagicSchool's teacher and student tools; Copilot Study and Learn) are mapped to help, evidence or teacher in the tools table, with a date, not described in detail, because they change.
+
+**To find out during the trial:**
+- Thinking Mode's Draft and Discussion modes. Its site names them but doesn't describe them.
+- Which AI model it uses, and how long it keeps data.
+- Whether students can see and question their transcript.
+- How it handles a student who wrote the work but explains it poorly.
+
 ## Open before implementation
 
 - What ages/prior knowledge is Foundations designed for? Which objectives are essential versus optional?
@@ -116,3 +173,5 @@ Possible 5E arc: Engage with a text-prediction question; Explore with dice; Expl
 - Agreed pedagogical direction: **documented**.
 - Course structure and first three units: **implemented as lesson drafts**; classroom validation and subject-specific integration remain in progress.
 - **AI Foundations authored:** seven lessons across text generation and how AI learns, plus two lessons in **Communicating with AI** (purposeful prompts and follow-up interaction). Unit 3 uses scripted response comparisons, explicitly not a live LLM. Publishing, browser checks and video playback remain subject to build verification.
+- **Choosing AI tools teacher guide (16 Oct 2026):** implemented as a plain teacher reference with a structured-prompt baseline (Coach, Draft, Defend, Discussion), a fair-trial checklist, trust checks and examples. No student lesson or commercial ranking added.
+- **Review fixes (16 Oct 2026)** on branch `ai-review-fixes`: board and research fixes, Unit 4 renamed "Getting good help from AI", class plans for all Does AI Help Us Learn? lessons. Remaining work: `roadmap/ai-review-fixes.md`; tools work: `roadmap/ai-tools-handoff.md`.

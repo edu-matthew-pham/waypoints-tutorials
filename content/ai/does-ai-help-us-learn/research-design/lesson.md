@@ -2,6 +2,7 @@
 title: Are researchers asking the right questions?
 summary: Redesign an AI-learning experiment by choosing informative comparison conditions, outcome measures and fair interpretations.
 language: science
+shape: 5e
 unit: evaluating-evidence
 order: 3
 voice: { name: af_heart, speed: 1.1 }
@@ -89,9 +90,9 @@ Even a strong experiment takes place in a particular context, with particular st
 
 **Theory proposes explanations; experiments test them**
 
-In October 2026, Nakamura published *Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning*, a **theoretical review** proposing seven testable propositions. It does **not** report an experiment validating the full framework.
+In October 2026, Nakamura published [*Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning*](https://doi.org/10.1007/s10648-026-10224-6), a **theoretical review** proposing seven testable propositions. It does **not** report an experiment validating the full framework.
 
-One proposed distinction is between offloading thinking **peripheral to the learning goal** and offloading thinking **central to it**. Formatting an already-checked table might free time to interpret scientific findings. Having AI perform the interpretation instead could bypass the skill being practised. The same step may be central or peripheral for different learners and goals.
+One proposed distinction is between offloading thinking **peripheral to the learning goal** and offloading thinking **central to it**. Formatting an already-checked table might free time to interpret scientific findings. Having AI perform the interpretation instead could bypass the skill being practised. The same step may be central or peripheral for different learners and goals. (Nakamura's own word for central is **constitutive**: part of the skill being learned. He treats it as a sliding scale, not two boxes.)
 
 The theory also points to learners' prior expertise, monitoring and how help is designed. These are proposed explanations and predictions, not guaranteed outcomes.
 

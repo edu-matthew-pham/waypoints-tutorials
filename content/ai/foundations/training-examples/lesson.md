@@ -2,6 +2,7 @@
 title: How does a machine learn?
 summary: Teach a simple fruit sorter using labelled examples, then test unfamiliar fruit.
 language: science
+shape: 5e
 unit: how-ai-learns
 order: 1
 voice: { name: af_heart, speed: 1.1 }

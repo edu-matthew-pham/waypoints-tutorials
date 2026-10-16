@@ -2,6 +2,7 @@
 title: How do we know when we need help?
 summary: Use feedback as evidence for a next learning decision, not simply a correction to copy.
 language: science
+shape: 5e
 unit: learning-and-society
 order: 1
 voice: { name: af_heart, speed: 1.1 }
@@ -64,18 +65,18 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "What is the formative purpose of feedback?"
-      options: ["To provide information that can guide further learning", "Only to produce a final grade", "To prevent any need for another attempt"]
+      q: "What can one attempt tell you?"
+      options: ["Part of what you understand right now", "How much you will remember next month", "Whether your method was the fastest one"]
       answer: 0
   - check:
       type: question
-      q: "Which sequence best describes self-regulated learning here?"
-      options: ["Receive correction, copy it, stop", "Set a goal, check understanding, respond, review progress", "Ask AI to decide everything"]
-      answer: 1
+      q: "Why check feedback from an AI assistant before acting on it?"
+      options: ["It can be wrong or not suit you, even when it sounds convincing", "It is usually less detailed than a teacher's", "Acting on feedback is only useful after a test"]
+      answer: 0
   - check:
       type: question
-      q: "Why should feedback from an AI assistant sometimes be verified?"
-      options: ["It may be inaccurate or inappropriate even if convincing", "All AI feedback is necessarily wrong", "Feedback cannot support learning"]
+      q: "What makes feedback formative?"
+      options: ["You act on it and make a new attempt", "It comes with a mark", "It lists every error in the work"]
       answer: 0
 ```
 
@@ -85,7 +86,7 @@ A response, explanation or attempt can reveal what the learner currently underst
 
 ### Decision
 
-**Self-regulation** means using evidence to choose an appropriate next action: practise, seek an explanation, check a claim, attempt a transfer task or ask a person for help.
+**Self-regulation** means using evidence to choose an appropriate next action: practise, seek an explanation, check a claim, attempt a transfer task or ask a person for help. Feedback from AI is evidence too, and it can be wrong, so check it before you act on it.
 
 ### New evidence
 

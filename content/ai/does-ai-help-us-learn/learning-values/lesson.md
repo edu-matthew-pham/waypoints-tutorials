@@ -2,6 +2,7 @@
 title: Who decides what learning is worth?
 summary: Examine the goals and incentives shaping AI use, then revisit the course inquiry with an evidence-sensitive position.
 language: science
+shape: 5e
 unit: learning-and-society
 order: 3
 voice: { name: af_heart, speed: 1.1 }
@@ -102,7 +103,6 @@ Whether schools should prioritise independent mastery, creative collaboration, a
 
 ```step
 stage: make
-tier: typical
 check: { type: reflect, text: "I gave a qualified position, examined a strong objection and explained what evidence could change my view." }
 ```
 

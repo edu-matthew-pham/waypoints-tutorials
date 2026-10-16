@@ -17,7 +17,7 @@ Students now have several competing understandings of learning. They investigate
 - Kestin et al. (2025), *AI tutoring outperforms in-class active learning*: https://doi.org/10.1038/s41598-025-97652-6
 - Fernandes et al. (2026), *AI makes you smarter but none the wiser*: https://doi.org/10.1016/j.chb.2025.108779
 
-- Nakamura (2026), *Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning*: a theoretical review offering seven testable propositions, **not** a directly validating experiment.
+- Nakamura (2026), *Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning*: https://doi.org/10.1007/s10648-026-10224-6. A theoretical review offering seven testable propositions, **not** a directly validating experiment.
 
 These sources have different populations, interventions, outcomes and limitations. Avoid flattening them into a single consensus.
 

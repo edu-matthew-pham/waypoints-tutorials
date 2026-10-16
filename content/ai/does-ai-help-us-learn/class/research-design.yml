@@ -1,0 +1,21 @@
+inquiry:
+  q: "Can a careful experiment still answer the wrong question?"
+  prompts:
+    - "If AI beats 'no help', does that mean it beats a good worksheet or tutor?"
+    - "What would you compare AI against?"
+  notes: "The key move is the comparison: AI against what? Many studies compare AI with no help, which answers a narrower question than people think."
+activities:
+  - at: make
+    kind: activity
+    title: "Design the fair test"
+    minutes: 8
+    do: |
+      In groups, design a study of whether AI helps students learn one topic. Name: who takes part, what each group gets, what you measure, and when (straight away and weeks later).
+    notes: "Groups swap designs and find one thing that could make the result misleading (different time on task, different teachers, only an immediate test)."
+  - at: end
+    kind: discussion
+    title: "One question we can't yet answer"
+    minutes: 3
+    do: |
+      Name one question about AI and learning that the studies so far can't answer, and what study would answer it.
+    notes: "Good answers name a comparison or a timescale, not just 'more research'."

@@ -2,6 +2,7 @@
 title: How do models combine clues?
 summary: Explore how colour and shape influence an inspectable weighted decision.
 language: science
+shape: 5e
 unit: how-ai-learns
 order: 3
 voice: { name: af_heart, speed: 1.1 }

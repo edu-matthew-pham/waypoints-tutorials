@@ -1,0 +1,21 @@
+inquiry:
+  q: "Does saving effort always cost learning, or can it free you to think about what matters?"
+  prompts:
+    - "Is using a calculator in a statistics lesson the same as using AI to write your conclusion?"
+    - "Does the answer change if you're a beginner or an expert?"
+  notes: "It depends on the goal: thinking that is part of the skill being learned is worth keeping; routine work around it may not be."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Keep it or hand it over?"
+    minutes: 6
+    do: |
+      For one task (writing a persuasive paragraph), sort the jobs into "keep" and "hand over": choosing the argument, checking spelling, finding evidence, formatting, deciding which reasons convince. Then change the goal to "practise spelling" and sort again.
+    notes: "The same job moves when the goal changes. Ask which jobs moved and why."
+  - at: end
+    kind: discussion
+    title: "My rule, with a condition"
+    minutes: 3
+    do: |
+      Finish: "I would hand ... to AI when ..., but keep it when ..."
+    notes: "Push for a condition (goal, how much you already know), not a blanket rule."

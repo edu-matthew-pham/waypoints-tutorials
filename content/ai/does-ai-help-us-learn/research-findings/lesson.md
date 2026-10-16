@@ -2,6 +2,7 @@
 title: Does research show that AI improves learning?
 summary: Confront two credible studies with different results, investigate their comparisons and decide what claims they really support.
 language: science
+shape: 5e
 unit: evaluating-evidence
 order: 1
 voice: { name: af_heart, speed: 1.1 }
@@ -51,7 +52,7 @@ Both AI groups performed better **during supported practice**. Later, without AI
 
 ### Study B — university physics
 
-In [Kestin and colleagues' 2025 study](https://doi.org/10.1038/s41598-025-97652-6), university physics students learned through either a self-paced AI-tutoring experience or instructor-led active-learning classes. Immediate test outcomes favoured the AI-tutoring condition.
+In [Kestin and colleagues' 2025 study](https://doi.org/10.1038/s41598-025-97652-6), 194 university physics students each learned one topic with a self-paced AI tutor and another topic in an instructor-led active-learning class, in random order. This is called a **crossover** design: every student experienced both, so the two groups started out the same. Test scores straight after each topic favoured the AI tutor.
 
 But more than one feature differed: pace, format, feedback opportunities and who or what supported learning. The study compared **instructional packages**, not AI with an otherwise identical non-AI tutorial. It also did not establish durable learning over months.
 

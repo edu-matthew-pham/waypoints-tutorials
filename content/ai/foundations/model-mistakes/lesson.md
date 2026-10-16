@@ -2,6 +2,7 @@
 title: Why does AI make mistakes?
 summary: Missing examples and incorrect labels can make a classifier unreliable.
 language: science
+shape: 5e
 unit: how-ai-learns
 order: 2
 voice: { name: af_heart, speed: 1.1 }

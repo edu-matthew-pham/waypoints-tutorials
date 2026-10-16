@@ -6,6 +6,7 @@ sources:
 title: Can you predict the next word?
 summary: See how examples influence which words seem likely to come next, without assuming that the most likely word is certain.
 language: science
+shape: 5e
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "How examples shape a prediction"

@@ -1,7 +1,8 @@
 ---
-title: How can AI help you learn?
+title: Ask for the right kind of help
 summary: Compare hints, worked examples and independent attempts to select assistance that develops understanding.
 language: science
+shape: 5e
 unit: learning-effectively-with-ai
 order: 1
 voice: { name: af_heart, speed: 1.1 }
@@ -22,7 +23,7 @@ explainClip:
     - caption: { text: "Then try a new question to test your own understanding." }
     - wait: 1000
 ---
-In the previous unit, you learned how to ask and follow up. Now consider **what kind of help actually develops your understanding**. AI might explain, question, offer hints, provide feedback or complete the task. The best choice depends on what you need to learn.
+Earlier you saw that AI writes by predicting likely next words, one at a time. That makes it fast at producing finished answers, but a finished answer can skip the thinking you came to practise. In the previous unit, you learned how to ask and follow up. Now consider **what kind of help actually develops your understanding**. AI might explain, question, offer hints, provide feedback or complete the task. The best choice depends on what you need to learn.
 
 ## Engage: what kind of help?
 
@@ -43,7 +44,7 @@ try: { playground: board, starter: "boards.yml#explore", height: 690 }
 check: { type: board, text: "Complete an independent transfer attempt after inspecting the available assistance.", when: "t >= 1" }
 ```
 
-The board contains **prepared hints and worked examples**, not a live AI tutor. Begin with a maths or science challenge, **write an attempt**, then request a hint or a worked example. After viewing the example, try a different question independently. Compare what each type of help lets you practise. A worked example is not inherently bad; it may be useful when you are new to the method or genuinely stuck.
+The board contains **prepared hints and worked examples**, not a live AI tutor. Begin with a maths or science challenge, **write an attempt**, then ask for a hint if you need one. When you are ready, press **Try a new question** and attempt it without looking back. Say how sure you are, record it, then compare with the model answer. Try it once with a hint and once with the worked example: which left more of the thinking to you? A worked example is not inherently bad; it may be useful when you are new to the method or genuinely stuck.
 
 ## Explain: help or replacement?
 

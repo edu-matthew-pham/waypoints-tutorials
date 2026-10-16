@@ -16,8 +16,8 @@ var evidence=[
  {claim:'All seedlings in the eight-hour group grew by at least 3 cm.',source:'Measured height increase after seven days (cm): four hours = 2, 3, 5; eight hours = 3, 4, 6.',answer:'supported',why:'The recorded eight-hour values are 3, 4 and 6 cm. This says nothing about unmeasured seedlings.'}
 ];
 var practice={
- maths:{title:'Fractions',challenge:'Try 1/2 + 1/4. Explain why you changed a denominator.',hints:['Look for a denominator shared by halves and quarters.','One half is equivalent to two quarters.'],worked:'1/2 = 2/4, so 2/4 + 1/4 = 3/4. The fractions must name equally sized parts before adding.',transfer:'Try 1/3 + 1/6 independently. Explain your method.'},
- science:{title:'Fair testing',challenge:'You want to investigate whether light affects plant growth. What must stay the same?',hints:['Change one main factor at a time.','Keep water, soil and type of plant comparable when changing light.'],worked:'Change the light exposure and compare plant growth. Keep other relevant conditions as similar as possible. Replicate measurements to reduce uncertainty.',transfer:'Now design a fair test of how water affects plant growth. What changes and what stays the same?'}
+ maths:{title:'Fractions',challenge:'Try 1/2 + 1/4. Explain why you changed a denominator.',hints:['Look for a denominator shared by halves and quarters.','One half is equivalent to two quarters.'],worked:'1/2 = 2/4, so 2/4 + 1/4 = 3/4. The fractions must name equally sized parts before adding.',transfer:'Try 1/3 + 1/6. Explain your method.',transferModel:'1/3 = 2/6, so 2/6 + 1/6 = 3/6, which is 1/2. Thirds are changed into sixths so both fractions name equal-sized parts.'},
+ science:{title:'Fair testing',challenge:'You want to investigate whether light affects plant growth. What must stay the same?',hints:['Change one main factor at a time.','Keep water, soil and type of plant comparable when changing light.'],worked:'Change the light exposure and compare plant growth. Keep other relevant conditions as similar as possible. Replicate measurements to reduce uncertainty.',transfer:'Now design a fair test of how water affects plant growth. What changes and what stays the same?',transferModel:'Change only the amount of water (for example 50, 100 and 150 mL a day). Keep light, soil, pot size and type of plant the same. Measure growth the same way, and use several plants for each amount.'}
 };
 function el(tag,txt,parent){var e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;(parent||root).appendChild(e);return e;}
 function btn(txt,fn,parent){var b=el('button',txt,parent);b.type='button';b.addEventListener('click',fn);return b;}
@@ -27,22 +27,33 @@ function report(){B.say('Activities completed: '+S.tests+'; choices made: '+S.ch
 function practise(){
  el('h2','Choose help that helps you learn');
  el('p','This is a prepared practice activity, not a chatbot. It shows how different amounts of help can change what you do.');
- select('Choose a learning challenge',Object.keys(practice).map(function(k){return {key:k,name:practice[k].title};}),S.topic,function(k){S.topic=k;S.level=0;S.attempt='';S.transfer='';S.choices++;render();});
- var q=practice[S.topic];box('First, try independently',q.challenge);
- var input=el('textarea');input.rows=3;input.style.width='100%';input.setAttribute('aria-label','Your own attempt');input.placeholder='Write or explain your attempt here before requesting help.';input.value=S.attempt;input.addEventListener('input',function(){S.attempt=input.value;report();});
+ select('Choose a learning challenge',Object.keys(practice).map(function(k){return {key:k,name:practice[k].title};}),S.topic,function(k){S.topic=k;reset();S.choices++;render();});
+ var q=practice[S.topic];box('First, try it yourself',q.challenge);
+ var input=el('textarea');input.rows=3;input.style.width='100%';input.setAttribute('aria-label','Your own attempt');input.placeholder='Write or explain your attempt here before asking for help.';input.value=S.attempt;input.addEventListener('input',function(){S.attempt=input.value;report();});
  var buttons=el('div');
- btn('One hint',function(){S.level=Math.min(2,Math.max(1,S.level+1));S.hints++;S.choices++;render();},buttons);
- btn('Show worked example',function(){S.level=3;S.choices++;render();},buttons);
- if(S.level>0){box('Help requested',S.level===1?q.hints[0]:S.level===2?q.hints[1]:q.worked);}
- if(S.level===3){
- box('Try a different question',q.transfer);
- var tr=el('textarea');tr.rows=3;tr.style.width='100%';tr.setAttribute('aria-label','Your independent transfer attempt');tr.value=S.transfer;tr.placeholder='Explain the new task without copying the earlier answer.';
- tr.addEventListener('input',function(){S.transfer=tr.value;report();});
- btn('Record my independent attempt',function(){if(!S.transfer.trim()){B.say('Write an attempt before recording it.');return;}S.tests++;S.choices++;render();});
+ // Help only goes up: hint 1, hint 2, then the worked example.
+ if(S.level<2)btn(S.level===0?'One hint':'Another hint',function(){S.level++;S.hints++;S.choices++;render();},buttons);
+ if(S.level<3)btn('Show worked example',function(){S.level=3;S.choices++;render();},buttons);
+ if(!S.ready)btn('Try a new question',function(){if(!S.attempt.trim()&&S.level===0){B.say('Write an attempt first, or ask for a hint.');return;}S.ready=true;S.choices++;render();},buttons);
+ if(S.level>0){box('Help you asked for',S.level===1?q.hints[0]:S.level===2?q.hints[0]+' '+q.hints[1]:q.worked);}
+ if(S.ready){
+  box('New question: try it without looking back',q.transfer);
+  var tr=el('textarea');tr.rows=3;tr.style.width='100%';tr.setAttribute('aria-label','Your attempt at the new question');tr.value=S.transfer;tr.placeholder='Explain the new task in your own words.';
+  tr.disabled=S.recorded;
+  tr.addEventListener('input',function(){S.transfer=tr.value;report();});
+  if(!S.recorded){
+   select('How sure are you that this is right?',[{key:'',name:'Choose one'},{key:'low',name:'Low'},{key:'medium',name:'Medium'},{key:'high',name:'High'}],S.conf,function(v){S.conf=v;S.choices++;report();});
+   btn('Record my attempt',function(){if(!S.transfer.trim()){B.say('Write an attempt before recording it.');return;}if(!S.conf){B.say('Choose how sure you are first.');return;}S.recorded=true;S.tests++;S.choices++;render();});
+  } else {
+   box('A model answer',q.transferModel);
+   var used=['no help','one hint','two hints','the worked example'][S.level];
+   el('p','You used '+used+' and said your confidence was '+S.conf+'. Compare your answer with the model. Did your confidence match what you could actually do?');
+  }
  }
- btn('Start the challenge again',function(){S.level=0;S.attempt='';S.transfer='';S.choices++;render();});
- el('p','Compare: What were you able to do yourself? Did a hint preserve more of the practice than revealing the finished answer?');
+ btn('Start the challenge again',function(){reset();S.choices++;render();});
+ el('p','Compare: What were you able to do yourself? Did a hint leave more of the thinking to you than the worked example?');
 }
+function reset(){S.level=0;S.attempt='';S.transfer='';S.ready=false;S.conf='';S.recorded=false;}
 function verify(){
  el('h2','Check a claim against evidence');
  el('p','These are invented classroom measurements and example AI-style claims. The measurements are available independently of the claim. Read the actual numbers before deciding.');
@@ -68,7 +79,7 @@ function delegate(){
 function render(){root.replaceChildren();if(mode==='practise')practise();else if(mode==='verify')verify();else delegate();report();}
 B.widget('ai-learning-choices',{sections:['gpanel'],label:function(){return 'Learning with AI decision activities';},
 parse:function(s){s.mode=s.mode||'practise';if(!['practise','verify','delegate'].includes(s.mode))throw Error('Mode must be practise, verify or delegate');},
-start:function(fresh){root=B.el('gpanel');mode=B.spec.mode;var saved=fresh?null:B.saved(),v=saved&&saved.state;S={topic:v&&practice[v.topic]?v.topic:'maths',item:v&&Number.isInteger(v.item)?Math.max(0,Math.min(mode==='verify'?evidence.length-1:cases.length-1,v.item)):0,choice:v&&typeof v.choice==='string'?v.choice:'',result:v&&v.result||'',level:v&&Number.isInteger(v.level)?v.level:0,attempt:v&&v.attempt||'',transfer:v&&v.transfer||'',tests:v&&Number.isInteger(v.tests)?v.tests:0,choices:v&&Number.isInteger(v.choices)?v.choices:0,hints:v&&Number.isInteger(v.hints)?v.hints:0};render();},
+start:function(fresh){root=B.el('gpanel');mode=B.spec.mode;var saved=fresh?null:B.saved(),v=saved&&saved.state;S={topic:v&&practice[v.topic]?v.topic:'maths',item:v&&Number.isInteger(v.item)?Math.max(0,Math.min(mode==='verify'?evidence.length-1:cases.length-1,v.item)):0,choice:v&&typeof v.choice==='string'?v.choice:'',result:v&&v.result||'',level:v&&Number.isInteger(v.level)?v.level:0,attempt:v&&v.attempt||'',transfer:v&&v.transfer||'',tests:v&&Number.isInteger(v.tests)?v.tests:0,choices:v&&Number.isInteger(v.choices)?v.choices:0,hints:v&&Number.isInteger(v.hints)?v.hints:0,ready:!!(v&&v.ready),conf:v&&['low','medium','high'].includes(v.conf)?v.conf:'',recorded:!!(v&&v.recorded)};S.level=Math.max(0,Math.min(3,S.level));render();},
 redraw:function(){if(root)render();}
 });
 })(WPB);

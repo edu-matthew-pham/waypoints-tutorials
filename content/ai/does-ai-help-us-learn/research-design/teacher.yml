@@ -8,7 +8,7 @@ before: |
   Teaching move: research design critique and reconstruction.
   All A/B/C comparison conditions are hypothetical. Do not imply a three-arm study has already tested them.
   Students can work through the lesson without AI, using existing checkpoints and discussion.
-  Nakamura's October 2026 paper, "Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning", is a theoretical review. Its seven propositions are testable predictions, not experimental findings. Keep it distinct from the empirical studies in Lessons 4 and 5.
+  Nakamura's October 2026 paper, "Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning", is a theoretical review (https://doi.org/10.1007/s10648-026-10224-6). The paper's terms are "peripheral" and "constitutive", on a graded continuum; the course says "central" for constitutive. Its seven propositions are testable predictions, not experimental findings. Keep it distinct from the empirical studies in Lessons 4 and 5.
 running:
   - "Begin with a result that sounds persuasive and identify what was actually compared."
   - "Explain why an established non-AI interactive tutorial is a serious alternative, not an absence of assistance."

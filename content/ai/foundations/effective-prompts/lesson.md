@@ -2,6 +2,7 @@
 title: How do you communicate with AI?
 summary: Compare vague and purposeful prompts, then decide what information helps an AI assistant respond usefully.
 language: science
+shape: 5e
 unit: communicating-with-ai
 order: 1
 voice: { name: af_heart, speed: 1.1 }
