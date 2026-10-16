@@ -114,12 +114,29 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
    - The questions above.
    - Practical checks: age limits in the terms, student accounts, where data goes and how long it stays, teacher visibility and settings, LMS fit.
    - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements.
-2. **Small-trial template**: the Does AI Help Us Learn? research-design lesson applied to a real decision.
-   - What you're trialling, what you compare it with, what you measure, a check a week or two later, and student confidence.
-   - First worked example: Thinking Mode. For a sample of students, compare its transcript judgement with the teacher's own short conversation about the same work. Note where they disagree and why.
-   - Second worked example: Copilot Study and Learn, using a hint-first task with a new question a week later.
+2. **Small-trial template**, flexible: a fixed core plus optional parts per kind of tool. It is the Does AI Help Us Learn? research-design lesson applied to a real decision.
+   - **Core (every trial):** what you are trialling and why; what you compare it with (existing practice, another tool, or a prompt in a general chatbot); who takes part and for how long; what you measure; a check one or two weeks later; student and teacher views; what would change your decision.
+   - **Help-tool part:** a hint-first task, then a new question without the tool a week later, plus students' confidence before and after.
+   - **Evidence-tool part:** for a sample of students, compare the tool's transcript judgement with the teacher's own short conversation about the same work; note disagreements and who they affect.
+   - **Teacher-tool part:** time saved, how much was edited, whether the teacher could defend the result.
+   - Scale it to the school: one class for a fortnight is a valid trial if it says so. First worked examples: Thinking Mode (evidence) and Copilot Study and Learn (help).
 3. **Optional "Try it with your school's tool" steps** (`tier: typical`) in Foundations Unit 4 and in `evidence-of-achievement`, so students compare the board with the real tool. These are worded for any tool.
-4. **Later**: short guides per tool type, written after the template has been used in at least one real trial.
+4. **Prompt library**, organised by purpose rather than by tool:
+   - **Help:** hint first, check my reasoning, explain it another way.
+   - **Evidence-style practice:** question me about my work, the self-check version of a defence.
+   - **Teacher:** plan a lesson (the existing teacher-lesson prompt), draft feedback, write a rubric.
+   - Each card gives its purpose, when to use it, the prompt, what a good reply looks like, and how it fails (e.g. the AI gives the answer anyway).
+   - Each card is tested and dated ("tried in Copilot and ChatGPT, Oct 2026").
+   - It builds on what exists: the maths and science coach prompts (one move each) and the teacher lesson prompt.
+   - Coach prompts stay off for code (roadmap/code.md).
+   - Possibly share Waypoints Kit's prompt format (to check).
+5. **Later**: short guides per tool type, written after the template has been used in at least one real trial.
+
+**A prompt copies behaviour, not controls.**
+- A prompt can get most tools to behave like a mode (hint first, question me about my work).
+- It can't add a mode's controls: a locked session, teacher settings, a transcript the teacher sees.
+- Rule for schools: if you need the behaviour, a prompt may be enough; if you need control or evidence, you need the tool.
+- Vendors' named modes (Thinking Mode's Defence, Draft and Discussion; MagicSchool's teacher and student tools; Copilot Study and Learn) are mapped to help, evidence or teacher in the tools table, with a date, not described in detail, because they change.
 
 **To find out during the trial:**
 - Thinking Mode's Draft and Discussion modes. Its site names them but doesn't describe them.
