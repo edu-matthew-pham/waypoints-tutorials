@@ -42,5 +42,5 @@ try{
  if(!preview.includes('Preview complete'))throw Error('Turtle preview: '+preview);
  results.push({kind:'editor',export:'pass',import:'pass',preview});
  writeFileSync(dir+'/results.json',JSON.stringify(results,null,2));
- if(results.some(r=>r.error||r.text.includes('404 Not Found')||(r.kind==='turtle'&&!r.canvas)||(r.kind==='physics'&&!r.svg)))process.exitCode=1;
+ if(results.some(r=>r.error||(r.text||'').includes('404 Not Found')||(r.kind==='turtle'&&!r.canvas)||(r.kind==='physics'&&!r.svg)))process.exitCode=1;
 }finally{await browser?.close();server.kill();}
