@@ -465,3 +465,30 @@ Full plan in the Project doc `boards-catalogue-plan`. Nothing built; no date set
 - **Shared core (gradual):** add to `core.js` only controls (`B.slider`, `B.button`, `B.row`), element makers, a standard declaration of named values (`scope.vars`) and of settings. Keep it thin: widgets keep their own drawing (SVG, JSXGraph or canvas). Widgets move onto it one at a time when next touched, after `check-boards` exists, because changing a widget's markup re-records clips and redraws pictures for the lessons that show it.
 - **Open:** cards as YAML in `data/boards/` or header-only; one catalogue for all subjects with a filter; whether `playground-science` joins the shared core later.
 - Parallel chats: this touches shared tools (`core.js`, `build-site.mjs`, `validate`); check `git log` and this file first when taken up.
+
+## Proposed (17 Oct 2026, Matthew agreed the direction; not built): clips for teacher-made lessons
+
+**Problem:**
+- In the Create page a clip is only a placeholder ("Recorded when this lesson is added to the repository").
+- Clips are recorded only by the publish workflow, so a teacher's shared lesson has no clips unless Matthew publishes it ("Request publishing").
+
+**Plan: play the clip script live in the browser.** A clip is already a script (captions, waits, clicks on the lesson's live app), so it can play as it would be recorded.
+1. **Captions-only live clips.**
+   - The lesson page and the Create preview play a step's `clip:` on its playground: captions, waits and clicks, with no video file.
+   - It works in share links with nothing to host. Captions-first matches the published clips.
+   - It reuses the step logic `render.mjs` drives, moved into a browser player. That is a shared change to `lesson-view.mjs` and the Create page.
+2. **Heart voice, generated in the browser.**
+   - Reuse waypoints-audio's `src/lib/components/tts-worker.ts`: `kokoro-js` with `onnx-community/Kokoro-82M-v1.0-ONNX`, run in a background worker, CPU by default (`wasm`, 8-bit `q8`), with `webgpu` as an option. It makes one WAV clip per line.
+   - Apply its speech fixes for dashes and colons, plus `tools/voice-lexicon.json`.
+   - The model loads only when someone presses play; captions never wait for it.
+   - Time the captions by the audio, as published clips do.
+3. **Later: audio generated once on the teacher's device.** The teacher's browser renders the audio in Create, and it is stored with the lesson, so student devices don't run the model. This needs storage that a share link alone doesn't give.
+
+**To check first:**
+- **Download size per device:** about 90 MB for the 8-bit model. The worker's comment says about 300 MB, which is the full-quality version.
+- **Speed on school laptops.**
+- **Whether school filters block Hugging Face,** where the model comes from. If they do, host the model files on the site.
+
+**Also:** an optional `video:` step field, so teachers can embed their own screen recordings (Stream, Clipchamp, YouTube) from a short list of allowed hosts. Hosting and privacy stay with the school's platform.
+
+**Unchanged:** lessons on the main site keep recorded clips from the publish workflow (Request publishing).
