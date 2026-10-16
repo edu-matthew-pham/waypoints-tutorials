@@ -116,6 +116,12 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
    - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements.
 2. **Small-trial template**, flexible: a fixed core plus optional parts per kind of tool. It is the Does AI Help Us Learn? research-design lesson applied to a real decision.
    - **Core (every trial):** what you are trialling and why; what you compare it with (existing practice, another tool, or a prompt in a general chatbot); who takes part and for how long; what you measure; a check one or two weeks later; student and teacher views; what would change your decision.
+   - **Can we trust it? (every trial):** judge this alongside "does it work?"; a free prompt can match a tool on the first and still lose on this. Check:
+     - **Privacy:** where work and transcripts go, how long they're kept, and whether they train a model.
+     - **Safety:** guardrails that keep it on task.
+     - **Terms of use:** minimum age, consumer versus education terms, who owns uploaded work, and whether use with minors and in assessment is allowed.
+     - **Oversight and accountability:** what the teacher can see, and a vetted vendor answerable to the school.
+     - **Access and fairness:** every student gets the same tool, with no personal accounts.
    - **Help-tool part:** a hint-first task, then a new question without the tool a week later, plus students' confidence before and after.
    - **Evidence-tool part:** for a sample of students, compare the tool's transcript judgement with the teacher's own short conversation about the same work; note disagreements and who they affect.
    - **Teacher-tool part:** time saved, how much was edited, whether the teacher could defend the result.
