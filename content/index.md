@@ -27,5 +27,7 @@ about: |
 
   **Science** lessons follow the **5E** model: they *engage* students by drawing out what they already think, let them *explore* it in a simulation, *explain* the idea, *elaborate* it in new contexts, then *evaluate* what they've learned. They sit beside practical work, never instead of it.
 
+  **Learning with AI:** [Explore the student courses](ai/) · [Choosing AI tools for learning — teacher guide](choosing-ai-tools/)
+
   [Why we teach this way →](approach/) · [Behind the scenes →](behind-the-scenes/)
 ---
