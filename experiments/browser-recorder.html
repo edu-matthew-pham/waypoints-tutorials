@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experimental browser WebM recorder · Waypoints</title>
+<style>
+body{font:16px system-ui;background:#101820;color:#e8edf2;margin:0;padding:20px}button,select,input{font:inherit;padding:8px}button{cursor:pointer}button:disabled{opacity:.45}a{color:#9cddff}header{display:flex;gap:15px;align-items:center;flex-wrap:wrap}p{max-width:1000px;line-height:1.5}.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}iframe{width:100%;height:690px;border:1px solid #62717d;background:white}#status{font-weight:600}video{max-width:100%;width:680px;display:block;margin:15px 0}.note{color:#b6c7d4}
+</style>
+<header><h1>Browser WebM recording experiment</h1><a href="../create/">Back to Create</a></header>
+<p>This is an isolated technical experiment, not a teacher editor. It loads the <strong>real</strong> Turtle playground or JSXGraph forces simulator. Record this browser tab using the browser's screen-sharing picker. The recording includes the full tab (including SVG, Canvas, DOM and interactions), not a reconstructed drawing.</p>
+<div class="controls">
+<label>Application <select id="app"><option value="turtle">Python Turtle</option><option value="physics">Physics · forces</option></select></label>
+<button id="load">Load application</button>
+<button id="record">Record tab</button>
+<button id="stop" disabled>Stop and export</button>
+<label><input id="mic" type="checkbox"> Include microphone narration (permission required)</label>
+<span id="status" role="status">Ready</span>
+</div>
+<p class="note">In Chrome/Edge, choose <strong>This Tab</strong> in the share picker. Interact with the playground while recording. Turtle: enter and run Python. Physics: adjust the push force and play the motion. Audio comes from the microphone if selected; browser Kokoro integration is a separate test. No video is uploaded.</p>
+<iframe id="demo" title="Actual Waypoints application" allow="autoplay"></iframe>
+<video id="playback" controls hidden></video>
+<p><a id="download" hidden>Download recording</a> <a id="json" hidden>Download session JSON</a></p>
+<script>
+const $=id=>document.getElementById(id);
+const physicsSpec=['widget: forces','object: Trolley','mass: 1, 10, 2','force P: right, 8, Push, adjust 0-40','motion: on','track: 80','time: 3'].join('\n');
+const turtleCode='from turtle import *\n\nforward(100)\nright(90)\nforward(100)\n';
+const urls={
+ turtle:'../_playground/index.html?code='+encodeURIComponent(turtleCode),
+ physics:'../_playground-board/index.html?fresh=1&code='+encodeURIComponent(physicsSpec)
+};
+let recorder, screen, mic, mixed, chunks=[], started=0, selected='';
+function setStatus(s){$('status').textContent=s;}
+function load(){
+ selected=$('app').value;
+ $('demo').src=urls[selected];
+ setStatus('Loaded '+selected+' · ready to record');
+}
+$('load').onclick=load;
+$('record').onclick=async()=>{
+ try{
+   screen=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:30},audio:true,preferCurrentTab:true,selfBrowserSurface:'include'});
+   if(!$('mic').checked && screen.getAudioTracks().length===0) setStatus('Recording silent tab; enable microphone for narration next time');
+   const tracks=[...screen.getVideoTracks()];
+   if($('mic').checked){
+     mic=await navigator.mediaDevices.getUserMedia({audio:true});
+     // Mix tab audio and microphone when both are present.
+     const ctx=new AudioContext(),dest=ctx.createMediaStreamDestination();
+     if(screen.getAudioTracks().length) ctx.createMediaStreamSource(new MediaStream(screen.getAudioTracks())).connect(dest);
+     ctx.createMediaStreamSource(mic).connect(dest);
+     tracks.push(...dest.stream.getAudioTracks());
+     mixed={ctx,dest};
+   }else tracks.push(...screen.getAudioTracks());
+   const stream=new MediaStream(tracks);
+   const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(t=>MediaRecorder.isTypeSupported(t));
+   if(!mime)throw Error('This browser does not support WebM recording');
+   chunks=[];
+   recorder=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:2500000});
+   recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+   recorder.onstop=()=>{
+     const blob=new Blob(chunks,{type:mime}),url=URL.createObjectURL(blob);
+     $('playback').src=url;$('playback').hidden=false;
+     $('download').href=url;$('download').download='waypoints-'+selected+'.webm';$('download').hidden=false;
+     const manifest={format:'waypoints-browser-recorder-test-v1',application:selected,source:urls[selected],startedAt:new Date(started).toISOString(),durationMs:Date.now()-started,mime,bytes:blob.size,microphone:$('mic').checked};
+     $('json').href=URL.createObjectURL(new Blob([JSON.stringify(manifest,null,2)],{type:'application/json'}));
+     $('json').download='waypoints-'+selected+'.json';$('json').hidden=false;
+     setStatus('Finished: '+(blob.size/1024/1024).toFixed(2)+' MB WebM · '+Math.round(manifest.durationMs/1000)+' seconds');
+     screen?.getTracks().forEach(t=>t.stop());mic?.getTracks().forEach(t=>t.stop());mixed?.ctx.close();
+     $('record').disabled=false;$('stop').disabled=true;
+   };
+   screen.getVideoTracks()[0].addEventListener('ended',()=>{if(recorder?.state==='recording')recorder.stop()},{once:true});
+   started=Date.now();recorder.start(1000);$('record').disabled=true;$('stop').disabled=false;
+   setStatus('Recording · interact with the application below');
+ }catch(e){screen?.getTracks().forEach(t=>t.stop());mic?.getTracks().forEach(t=>t.stop());setStatus('Recording failed: '+e.message);}
+};
+$('stop').onclick=()=>{if(recorder?.state==='recording')recorder.stop()};
+load();
+</script>
