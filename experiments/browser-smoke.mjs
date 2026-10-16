@@ -14,7 +14,7 @@ try{
  for(const kind of ['turtle','physics']){
    await page.selectOption('#app',kind);await page.click('#load');
    const frame=page.frameLocator('#demo');
-   await page.waitForFunction(kind => { const f=document.querySelector('#demo'); return f && f.contentWindow && f.contentWindow.location.href.includes(kind==='turtle'?'_playground/index.html':'_playground-board/index.html') && f.contentDocument?.readyState==='complete'; },kind,{timeout:20000});
+   await page.waitForFunction(kind => { const f=document.querySelector('#demo'); return f && f.contentWindow && f.contentWindow.location.href.includes(kind==='turtle'?'_playground/index.html':'_playground-board/index.html'); },kind,{timeout:10000}).catch(async e=>{console.log('Navigation diagnostic:',await page.locator('#demo').getAttribute('src'));throw e});
    await delay(1500);
    const details=await frame.locator('body').evaluate(el=>({text:el.innerText.slice(0,300),canvas:el.querySelectorAll('canvas').length,svg:el.querySelectorAll('svg').length,error:el.querySelector('#error')?.textContent||''}));
    await page.screenshot({path:dir+'/'+kind+'.png'});
