@@ -23,8 +23,8 @@ const $=id=>document.getElementById(id);
 const physicsSpec=['widget: forces','object: Trolley','mass: 1, 10, 2','force P: right, 8, Push, adjust 0-40','motion: on','track: 80','time: 3'].join('\n');
 const turtleCode='from turtle import *\n\nforward(100)\nright(90)\nforward(100)\n';
 const urls={
- turtle:'../playground/index.html?code='+encodeURIComponent(turtleCode),
- physics:'../playground-board/index.html?fresh=1&code='+encodeURIComponent(physicsSpec)
+ turtle:'../_playground/index.html?code='+encodeURIComponent(turtleCode),
+ physics:'../_playground-board/index.html?fresh=1&code='+encodeURIComponent(physicsSpec)
 };
 let recorder, screen, mic, mixed, chunks=[], started=0, selected='';
 function setStatus(s){$('status').textContent=s;}
