@@ -2,6 +2,7 @@
 title: How do you work with an AI response?
 summary: Practise asking follow-up questions, correcting assumptions and redirecting unhelpful AI assistance.
 language: science
+shape: 5e
 unit: communicating-with-ai
 order: 2
 voice: { name: af_heart, speed: 1.1 }

@@ -17,7 +17,7 @@ Use this reference to clarify ideas and question claims. It does **not** supply 
 | Term | Meaning | Caution |
 |---|---|---|
 | **Cognitive offloading** | Using a tool or resource to handle part of a mental task | Saving effort can free capacity or bypass intended learning |
-| **Central and peripheral thinking** | Thinking more or less directly related to the *current* learning goal | The distinction changes with the goal and learner |
+| **Central and peripheral thinking** | Thinking more or less directly related to the *current* learning goal (Nakamura's word for central is *constitutive*) | A sliding scale, not two boxes; it changes with the goal and learner |
 | **Metacognition** | Monitoring and reflecting on one's understanding | Confidence can differ from demonstrated ability |
 | **Calibration** | How well a confidence judgement matches available evidence of performance | One attempt is an imperfect indicator |
 | **Self-regulated learning** | Setting goals, monitoring progress, choosing strategies and adjusting actions | Learners may need help judging what they do not yet understand |
@@ -46,9 +46,9 @@ More interaction, more responsiveness or harder struggle does **not automaticall
 | Source | What the course uses it to examine | Important limit |
 |---|---|---|
 | [Bastani et al. (2025)](https://doi.org/10.1073/pnas.2422633122) | Mathematics practice gains with AI and differing later unaided test results depending on assistance design | Does not settle performance against the strongest non-AI interactive tutors |
-| [Kestin et al. (2025)](https://doi.org/10.1038/s41598-025-97652-6) | Positive short-term results for an AI tutoring package relative to instructor-led active learning | Different instructional features changed together; longer-term learning was not established |
+| [Kestin et al. (2025)](https://doi.org/10.1038/s41598-025-97652-6) | Positive short-term results for an AI tutoring package relative to instructor-led active learning | Each student tried both, in random order (a crossover design); different instructional features changed together; longer-term learning was not established |
 | [Fernandes et al. (2026)](https://doi.org/10.1016/j.chb.2025.108779) | AI-assisted reasoning performance can coexist with overestimated competence | Not a direct study of long-term school-course learning |
-| **Nakamura (2026), *Augmentation or Erosion?*** | A theoretical explanation for why outcomes might depend on goals, expertise and offloading choices | **A theoretical framework with testable propositions, not a validating experiment** |
+| [Nakamura (2026), *Augmentation or Erosion?*](https://doi.org/10.1007/s10648-026-10224-6) | A theoretical explanation for why outcomes might depend on goals, expertise and offloading choices | **A theoretical framework with testable propositions, not a validating experiment** |
 
 The research landscape changes. This is a reference to the studies examined in the course **as of October 2026**, not an exhaustive or permanent verdict.
 

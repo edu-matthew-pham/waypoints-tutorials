@@ -13,13 +13,13 @@ var defaultData=[
 function elt(tag,txt,parent){var e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;(parent||panel).appendChild(e);return e;}
 function btn(txt,fn,parent){var e=elt('button',txt,parent);e.type='button';e.addEventListener('click',fn);return e;}
 function sigmoid(x){return 1/(1+Math.exp(-Math.max(-40,Math.min(40,x))));}
-function initWeights(){return {ih:[[0.35,-0.45],[-0.25,0.30]],hb:[0.10,-0.10],ho:[0.40,-0.35],ob:0.05};}
+function initWeights(){return {ih:[[0.35,-0.45],[-0.25,0.30]],hb:[0.10,-0.10],ho:[0.40,-0.35],ob:-0.80};}  // starts by calling every fruit Apple (about 32% banana)
 function forward(x) {
  var w=state.w;
  var h=[0,1].map(function(j){return sigmoid(w.hb[j]+x[0]*w.ih[0][j]+x[1]*w.ih[1][j]);});
  return {h:h,p:sigmoid(w.ob+h[0]*w.ho[0]+h[1]*w.ho[1])};
 }
-function trainingRow(i) {var d=state.data[i],f=forward(d.x),w=state.w,rate=0.7;
+function trainingRow(i) {var d=state.data[i],f=forward(d.x),w=state.w,rate=2;
  // Binary cross-entropy gradient: output delta is predicted probability minus label.
  var delta=f.p-d.label,old=w.ho.slice(),hidden=[0,1].map(function(j){return delta*old[j]*f.h[j]*(1-f.h[j]);});
  for(var j=0;j<2;j++){w.ho[j]-=rate*delta*f.h[j];w.hb[j]-=rate*hidden[j];for(var k=0;k<2;k++)w.ih[k][j]-=rate*hidden[j]*d.x[k];}

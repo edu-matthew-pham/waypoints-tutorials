@@ -2,6 +2,7 @@
 title: Can a neural network learn?
 summary: Train a tiny neural network, see its connections change, and test whether it has learned from examples.
 language: science
+shape: 5e
 unit: how-ai-learns
 order: 4
 voice: { name: af_heart, speed: 1.1 }
@@ -45,9 +46,9 @@ try: { playground: board, starter: "boards.yml#explore", height: 670 }
 check: { type: board, text: "Train the network, then record at least one prediction.", when: "r >= 1 and t >= 1" }
 ```
 
-1. **Before training**, choose a fruit's colour and shape, and note the network's prediction.
+1. **Before training**, choose a fruit's colour and shape, and press **Record this prediction**. (The untrained network calls every fruit Apple.)
 2. Press **Train one example** a few times. Watch the connections. Then use **Train 300 examples** to allow enough repeated practice to see clearer changes.
-3. **Test the same fruit again.** Did its output change? Try all four combinations: green/round, green/long, yellow/round and yellow/long.
+3. **Test the same fruit again** and press **Record this prediction**. Did its output change? Try all four combinations: green/round, green/long, yellow/round and yellow/long.
 
 The network really adjusts its internal numbers during training. The connecting lines give you a glimpse of those changes, but you do not need to decode every line.
 

@@ -6,7 +6,7 @@ goals:
   - "I can evaluate how expertise changes appropriate assistance."
 before: |
   The scenarios describe learning activities, not assessed work. Keep the learning purpose visible.
-  Nakamura's 2026 augmentation–erosion framework is theoretical, not a validated experimental decision rule.
+  Nakamura's 2026 augmentation–erosion framework (https://doi.org/10.1007/s10648-026-10224-6) is theoretical, not a validated experimental decision rule. The paper says "peripheral" and "constitutive" (the lesson says central), on a graded continuum, and it is about STEM learning; the persuasive-writing example extends it. The expertise reversal effect itself is well established (Kalyuga, Ayres, Chandler & Sweller, 2003, https://doi.org/10.1207/S15326985EP3801_4); only its role in AI offloading is untested.
 running:
   - "Reveal the trade-off between effort saved and thinking retained."
   - "Change the learning goal while retaining the same initial writing scenario."

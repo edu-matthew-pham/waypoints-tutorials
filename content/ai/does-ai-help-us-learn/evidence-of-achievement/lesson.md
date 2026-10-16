@@ -2,6 +2,7 @@
 title: How can we tell what we have learned?
 summary: Examine how learning evidence differs when work is done independently, collaboratively or with AI.
 language: science
+shape: 5e
 unit: learning-and-society
 order: 2
 voice: { name: af_heart, speed: 1.1 }

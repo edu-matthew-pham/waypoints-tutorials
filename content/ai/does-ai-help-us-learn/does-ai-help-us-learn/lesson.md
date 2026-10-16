@@ -2,6 +2,7 @@
 title: Does AI help us learn?
 summary: Explore contrasting examples, question what counts as learning, and begin an inquiry that may not have one final answer.
 language: science
+shape: 5e
 unit: what-is-learning
 order: 1
 voice: { name: af_heart, speed: 1.1 }
@@ -23,6 +24,8 @@ explainClip:
     - wait: 1100
 ---
 # Does AI help us learn?
+
+In AI Foundations you practised three habits: ask for the right kind of help, check what AI tells you, and decide what to hand over. But do those habits actually help you learn? That is harder to answer.
 
 AI can explain a difficult idea, generate a game, correct a draft or finish a task in seconds. Does that mean it helps someone *learn*? **This course investigates the question rather than giving you a predetermined answer.**
 

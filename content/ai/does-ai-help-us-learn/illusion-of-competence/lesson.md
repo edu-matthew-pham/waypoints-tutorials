@@ -2,6 +2,7 @@
 title: Can AI create an illusion of competence?
 summary: Investigate confidence, actual performance and the difficulty of knowing what we have learned with assistance.
 language: science
+shape: 5e
 unit: evaluating-evidence
 order: 2
 voice: { name: af_heart, speed: 1.1 }
@@ -34,9 +35,9 @@ try: { playground: board, starter: "boards.yml#explore", height: 690 }
 check: { type: board, text: "Complete one practice challenge and record a new attempt.", when: "t >= 1" }
 ```
 
-This is a **prepared practice activity**, not a live AI system. Choose a challenge, write your own attempt and inspect a hint or worked example. Where the board offers a new question, attempt it without looking back.
+This is a **prepared practice activity**, not a live AI system. Choose a challenge, write your own attempt and ask for a hint or the worked example if you need it. Then press **Try a new question** and attempt it without looking back.
 
-Before checking the new attempt, record how confident you are that your explanation is correct: **low, medium or high**. After inspecting the response and discussing the answer, compare the confidence judgement with what you actually demonstrated.
+Before you record the new attempt, choose how sure you are that it is right: **low, medium or high**. The board then shows a model answer. Compare it with your attempt: did your confidence match what you could actually do?
 
 One short activity cannot measure your enduring ability or establish that AI caused anything. But it makes **monitoring your own understanding** something you can investigate.
 
@@ -82,7 +83,7 @@ tier: typical
 check: { type: reflect, text: "I considered the confidence research and a limitation of applying it to students." }
 ```
 
-In [Fernandes and colleagues' study, published in *Computers in Human Behavior* in 2026](https://doi.org/10.1016/j.chb.2025.108779), participants using AI for logical reasoning performed better than a comparison norm but **overestimated how well they had performed**. The paper includes studies with 246 and 452 participants. The task involved reasoning problems, not a long school course, and the paper does not establish how much knowledge participants retained weeks later.
+In [Fernandes and colleagues' study, published in *Computers in Human Behavior* in 2026](https://doi.org/10.1016/j.chb.2025.108779), participants using AI for logical reasoning performed better than a comparison norm but **overestimated how well they had performed**. The paper includes studies with 246 and 452 adult participants. The task involved reasoning problems, not a long school course, and the paper does not establish how much knowledge participants retained weeks later.
 
 Discuss two claims:
 

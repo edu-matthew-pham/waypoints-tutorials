@@ -13,7 +13,7 @@ Unit 3 turns the inquiry from evidence into learning decisions: what thinking to
 
 ## Intellectual cautions
 
-The cognitive offloading framework discussed by Nakamura in 2026 is a theoretical proposal, not a fully validated experimental rule. Neither more interaction nor more cognitive activity automatically establishes durable learning. Do not replace simplistic faith in AI with simplistic rules such as always using hints or never providing answers.
+The cognitive offloading framework discussed by Nakamura in 2026 (https://doi.org/10.1007/s10648-026-10224-6) is a theoretical proposal, not a fully validated experimental rule. The paper's terms are *peripheral* and *constitutive* (the course says central), on a graded continuum rather than two fixed categories. Expertise effects themselves are well established without AI (the expertise reversal effect: Kalyuga, Ayres, Chandler & Sweller, 2003, https://doi.org/10.1207/S15326985EP3801_4); what is untested is Nakamura's proposal that they govern generative-AI offloading. Neither more interaction nor more cognitive activity automatically establishes durable learning. Do not replace simplistic faith in AI with simplistic rules such as always using hints or never providing answers.
 
 ## Accessible delivery
 

@@ -16,7 +16,7 @@ stuck:
     fix: "Name the problem and choose a follow-up that addresses it."
 support: "Use prepared sentence starters: I already know; I need; Please ask me."
 stretch: "Compare how the same follow-up suits learning mode and performance mode."
-leads: "Move on to Learning effectively with AI: practice, verification and delegation."
+leads: "Move on to Getting good help from AI: asking for the right help, checking it and deciding what to hand over."
 exit:
   q: "Why might you need to redirect an AI response?"
   a: "Because the first answer can miss the goal; follow-ups help clarify or change assistance, but still require evaluation."

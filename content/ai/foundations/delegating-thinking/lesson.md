@@ -1,7 +1,8 @@
 ---
-title: What should you let AI do?
+title: Decide what to hand over
 summary: Decide when to work independently, seek assistance or delegate a task based on the purpose and what must be checked.
 language: science
+shape: 5e
 unit: learning-effectively-with-ai
 order: 3
 voice: { name: af_heart, speed: 1.1 }

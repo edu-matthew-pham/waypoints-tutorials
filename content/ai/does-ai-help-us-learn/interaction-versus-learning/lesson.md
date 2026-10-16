@@ -2,6 +2,7 @@
 title: Does more interaction mean better learning?
 summary: Compare behavioural interaction, cognitive engagement, instructional responsiveness and evidence of learning.
 language: science
+shape: 5e
 unit: choosing-assistance
 order: 2
 voice: { name: af_heart, speed: 1.1 }

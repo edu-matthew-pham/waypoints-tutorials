@@ -2,6 +2,7 @@
 title: What makes learning meaningful?
 summary: Examine competing accounts of valuable learning, including independent competence, productivity, creativity, agency and learning with other people and tools.
 language: science
+shape: 5e
 unit: what-is-learning
 order: 3
 voice: { name: af_heart, speed: 1.1 }
@@ -35,7 +36,7 @@ tasks:
       answer: 0
   - check:
       type: question
-      q: "Jules uses an accessible game engine to test three original game designs and learns which players prefer. What evidence would best help distinguish design learning from product completion?"
+      q: "Jules uses an accessible game engine to test three original game designs and learns which designs players prefer. What evidence would best help distinguish design learning from product completion?"
       options: ["Only the number of lines of code Jules typed", "Jules's design decisions, tests and reasons for revisions", "Whether the game was made entirely without tools"]
       answer: 1
   - check:

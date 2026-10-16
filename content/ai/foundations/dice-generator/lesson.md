@@ -5,6 +5,7 @@ sources:
 title: Build a text generator with dice
 summary: Turn word frequencies into dice outcomes, then sample words without always picking the most common one.
 language: science
+shape: 5e
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "One roll, one possible word"

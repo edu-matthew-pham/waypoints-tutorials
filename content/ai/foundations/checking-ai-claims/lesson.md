@@ -1,7 +1,8 @@
 ---
-title: How do you know whether AI is right?
+title: Check what AI tells you
 summary: Compare confident claims with independent evidence and distinguish supported, contradicted and insufficiently evidenced statements.
 language: science
+shape: 5e
 unit: learning-effectively-with-ai
 order: 2
 voice: { name: af_heart, speed: 1.1 }
