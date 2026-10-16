@@ -18,13 +18,7 @@ try{
    await delay(1500);
    const details=await frame.locator('body').evaluate(el=>({text:el.innerText.slice(0,300),canvas:el.querySelectorAll('canvas').length,svg:el.querySelectorAll('svg').length,error:el.querySelector('#error')?.textContent||''}));
    await page.screenshot({path:dir+'/'+kind+'.png'});
-   let recordStatus='';
-   try{
-     await page.click('#record',{timeout:8000});
-     await delay(3000);
-     recordStatus=await page.locator('#status').innerText();
-     if(await page.locator('#stop').isEnabled()){await page.click('#stop');await delay(1000)}
-   }catch(e){recordStatus='Capture not available in automated headless Chromium: '+e.message.slice(0,160)}
+   const recordStatus='Not attempted during navigation test';
    results.push({kind,...details,recordStatus});
    console.log(JSON.stringify(results.at(-1)));
  }
