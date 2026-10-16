@@ -28,6 +28,25 @@ try{
    results.push({kind,...details,recordStatus});
    console.log(JSON.stringify(results.at(-1)));
  }
+ // Test the teacher-facing clip editor, not just the standalone recorder.
+ await page.goto('http://127.0.0.1:8765/code/create/clip.html');
+ await page.locator('#steps button').first().waitFor();
+ await page.fill('#title','Automated clip test');
+ await page.fill('#caption','An edited caption');
+ await page.click('#saveStep');
+ if(!await page.locator('#steps').innerText().then(t=>t.includes('An edited caption')))throw Error('Step editing failed');
+ const dlPromise=page.waitForEvent('download');
+ await page.click('#export');
+ const dl=await dlPromise;
+ const json=JSON.parse(await (await import('node:fs/promises')).readFile(await dl.path(),'utf8'));
+ if(json.title!=='Automated clip test'||json.steps[0].caption!=='An edited caption')throw Error('JSON export mismatch');
+ await page.locator('#import').setInputFiles({name:'draft.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(json))});
+ await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('Draft imported'));
+ await page.click('#preview');
+ await page.waitForFunction(()=>/Preview complete|Preview failed/.test(document.querySelector('#status').textContent),{timeout:20000});
+ const preview=await page.locator('#status').innerText();
+ if(!preview.includes('Preview complete'))throw Error('Turtle preview: '+preview);
+ results.push({kind:'editor',export:'pass',import:'pass',preview});
  writeFileSync(dir+'/results.json',JSON.stringify(results,null,2));
  if(results.some(r=>r.error||r.text.includes('404 Not Found')||(r.kind==='turtle'&&!r.canvas)||(r.kind==='physics'&&!r.svg)))process.exitCode=1;
 }finally{await browser?.close();server.kill();}
