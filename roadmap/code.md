@@ -245,6 +245,30 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - **2.5 A street of houses** (new, `turtle-street`): a build-along clip (captions name each part: name the numbers, move to the start, one house, step along, work out the length), then PRIMM on the 30-line program. Predict a change (5 houses: 380); Investigate matches parts to jobs, traces where houses start, follows a change to `width`, asks why a line is needed, and a bug that hides while `houses` is 4 (`count-wrong-variable`); Modify six houses, growing houses, is the length still right; Make adds a part with its own loop and variable. Introduces nothing new.
 - Watch-then-PRIMM: a worked example (the build clip, segmented with subgoal captions), then reading and changing the result. Not yet tried with a class. If it works, repeat per unit (Catch already plays this role for the challenge unit).
 
+## Proposed (17 Oct 2026, Matthew agreed the direction; not built): guided projects as Create lessons
+
+**Aim:** a student who has finished a course wants to build something of their own (Wordle, hangman). They get a step-by-step project tutorial that never contains the full answer.
+
+**Decisions:**
+- **Static, not live AI.**
+  - AI drafts the project when it is written; the teacher reviews it; the student follows a fixed tutorial.
+  - There is no AI inside the tutorial, so it cannot over-help (beneficial vs detrimental offloading).
+  - A live coach stays an optional Kit-style extra behind teacher permission. Coach prompts stay off for code.
+- **Low floor, high ceiling.**
+  - Core milestones carry the most scaffolding: a starter, building blocks and hints in three steps (nudge, the skill to use, the lesson to look at). They never show the new line of code.
+  - Support fades through the core. The last core step is an open Make with success criteria only.
+  - Extensions are optional `tier: typical` / `wider` steps with a goal and criteria. They combine skills already taught and add no new content.
+- **Hints, not scaffolding toggles.** Students pull help per milestone when stuck. There is no high / moderate / light setting, which would make students (or teachers) pick a label up front.
+- **A project is just a lesson.** It is made and checked in the Create page with the existing fields: steps as milestones, `try:` starters, code checks (`uses`, `loops`, `contains`) instead of a solution, `hint:` lists, `tier:` steps, `picture:` for the result and `assumes:` for what it needs. It is placed as `optional: true` in a challenge unit, or shared as a teacher's own lesson. Open projects (`projects.yml`) stay for loose, goal-only briefs.
+- **Check it is doable first.** The prompt and the concept lint check the idea against what the course has taught. Example: hangman needs strings, input and `while`, so it fits after the Console course, or as a simpler version after Python functions and events, which has `textinput` and events.
+
+**Build order:**
+1. **A project variant of the teacher-lesson prompt** (Project doc teacher-lesson-prompt). Input: the idea and the course. Output: one lesson with milestones instead of PRIMM, no solution code, a line on what it needs, fading hints and optional extension steps.
+2. **One example:** hangman after the Console course, made through Create to test the prompt.
+3. **Skill chips in lessons.** An optional lesson setting (e.g. frontmatter `uses:`) shows the course skills as chips beside the playground, lit as the student's code uses them. It reuses `concepts-core.mjs` and `project.js` from the projects page. This is a shared `lesson-view.mjs` change, so log it in `roadmap/shared.md`.
+4. **Maybe:** a "Show your teacher" card at the end of a project lesson, from the projects page.
+5. **Later, if wanted:** a teacher hint cap for assessment use; Projects in the navbar's course group (`navFor`).
+
 ## Parked
 
 - Pygame: only after a prototype proves the in-browser runtime. microStudio covers games for now.
