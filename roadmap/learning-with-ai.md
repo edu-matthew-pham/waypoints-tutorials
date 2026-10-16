@@ -121,15 +121,16 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
    - **Teacher-tool part:** time saved, how much was edited, whether the teacher could defend the result.
    - Scale it to the school: one class for a fortnight is a valid trial if it says so. First worked examples: Thinking Mode (evidence) and Copilot Study and Learn (help).
 3. **Optional "Try it with your school's tool" steps** (`tier: typical`) in Foundations Unit 4 and in `evidence-of-achievement`, so students compare the board with the real tool. These are worded for any tool.
-4. **Prompt library**, organised by purpose rather than by tool:
-   - **Help:** hint first, check my reasoning, explain it another way.
-   - **Evidence-style practice:** question me about my work, the self-check version of a defence.
-   - **Teacher:** plan a lesson (the existing teacher-lesson prompt), draft feedback, write a rubric.
-   - Each card gives its purpose, when to use it, the prompt, what a good reply looks like, and how it fails (e.g. the AI gives the answer anyway).
-   - Each card is tested and dated ("tried in Copilot and ChatGPT, Oct 2026").
-   - It builds on what exists: the maths and science coach prompts (one move each) and the teacher lesson prompt.
+4. **Prompt library: use Waypoints Kit** (edu-matthew-pham/waypoints-kit), not a separate library.
+   - How Kit works: a starter prompt has a chatbot read `START-HERE.md`, the standard's node file and one format file.
+   - `coach.md` is already a tool-neutral study mode: Discover, Practise, Teach it back, Spot the flaw and Check. It is hint first, ends each round of help with "how do you know?", and stays inside the waypoint.
+   - The tools page links to Kit's coach and starter prompts rather than repeating them.
+   - Proposed Kit additions (to raise in the Kit repo, not built):
+     - A **"Defend my work" coach mode**: the student pastes their work, the AI asks about their decisions one at a time, then gives a descriptive summary for the teacher. It is the self-check version of an evidence tool.
+     - **`trial.md`**: the trial template above as a Kit format. It gives options and placeholders, and the teacher decides.
+   - Teacher prompts: Kit's planning, assessment and slide prompts, plus the tutorials' teacher-lesson prompt (Project doc teacher-lesson-prompt).
    - Coach prompts stay off for code (roadmap/code.md).
-   - Possibly share Waypoints Kit's prompt format (to check).
+   - First trial idea at CGGS: Copilot running Kit's coach compared with Copilot Study and Learn, on the same waypoint. First check whether Copilot can open web links; if not, use `waypoints-kit-all.md`.
 5. **Later**: short guides per tool type, written after the template has been used in at least one real trial.
 
 **A prompt copies behaviour, not controls.**
