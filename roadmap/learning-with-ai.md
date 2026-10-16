@@ -110,7 +110,7 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 - **Teacher tools** (planning, rubrics, feedback drafts): the same habits from the teacher's side (keep the parts you need to understand or control).
 
 **Plan:**
-1. **Teacher page "Choosing AI tools for learning"** (a plain page, e.g. `content/ai/tools.md`).
+1. **Teacher page "Choosing AI tools for learning"** (implemented on `ai-review-fixes` as `content/choosing-ai-tools.md`, published at `/choosing-ai-tools/`; top-level placement follows the current plain-page builder).
    - The questions above.
    - Practical checks: age limits in the terms, student accounts, where data goes and how long it stays, teacher visibility and settings, LMS fit.
    - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements.
@@ -173,4 +173,5 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 - Agreed pedagogical direction: **documented**.
 - Course structure and first three units: **implemented as lesson drafts**; classroom validation and subject-specific integration remain in progress.
 - **AI Foundations authored:** seven lessons across text generation and how AI learns, plus two lessons in **Communicating with AI** (purposeful prompts and follow-up interaction). Unit 3 uses scripted response comparisons, explicitly not a live LLM. Publishing, browser checks and video playback remain subject to build verification.
+- **Choosing AI tools teacher guide (16 Oct 2026):** implemented as a plain teacher reference with a structured-prompt baseline (Coach, Draft, Defend, Discussion), a fair-trial checklist, trust checks and examples. No student lesson or commercial ranking added.
 - **Review fixes (16 Oct 2026)** on branch `ai-review-fixes`: board and research fixes, Unit 4 renamed "Getting good help from AI", class plans for all Does AI Help Us Learn? lessons. Remaining work: `roadmap/ai-review-fixes.md`; tools work: `roadmap/ai-tools-handoff.md`.
