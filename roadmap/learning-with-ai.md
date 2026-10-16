@@ -173,4 +173,4 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 - Agreed pedagogical direction: **documented**.
 - Course structure and first three units: **implemented as lesson drafts**; classroom validation and subject-specific integration remain in progress.
 - **AI Foundations authored:** seven lessons across text generation and how AI learns, plus two lessons in **Communicating with AI** (purposeful prompts and follow-up interaction). Unit 3 uses scripted response comparisons, explicitly not a live LLM. Publishing, browser checks and video playback remain subject to build verification.
-- **Review fixes (16 Oct 2026)** on branch `ai-review-fixes`: board and research fixes, Unit 4 renamed "Getting good help from AI", class plans for all Does AI Help Us Learn? lessons. Remaining work: Project doc claude/handoff-ai-unit2-review.md.
+- **Review fixes (16 Oct 2026)** on branch `ai-review-fixes`: board and research fixes, Unit 4 renamed "Getting good help from AI", class plans for all Does AI Help Us Learn? lessons. Remaining work: `roadmap/ai-review-fixes.md`; tools work: `roadmap/ai-tools-handoff.md`.
