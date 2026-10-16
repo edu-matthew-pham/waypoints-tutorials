@@ -1,0 +1,21 @@
+inquiry:
+  q: "If you get the right answer with AI's help, have you learned it?"
+  prompts:
+    - "What would you need to see tomorrow, without help, to be sure?"
+    - "Can you learn from help even if you can't repeat the task yet?"
+  notes: "Both sides have a case. Push for evidence words: the answer shows what you did with help; a new question or a later try shows more."
+activities:
+  - at: run
+    kind: activity
+    title: "Hint or worked example?"
+    minutes: 6
+    do: |
+      Half the class uses only hints on the board, half uses the worked example. Everyone then tries the new question and says how sure they are.
+    notes: "Compare the two halves by a show of hands: who got the new question, and who felt sure? One class is not an experiment; ask what would make it a fairer test."
+  - at: end
+    kind: discussion
+    title: "What counts as evidence?"
+    minutes: 4
+    do: |
+      Finish: "The right answer with help shows... A new question tomorrow would show..."
+    notes: "Listen for the difference between doing it with help, applying it to something new, and remembering it later."

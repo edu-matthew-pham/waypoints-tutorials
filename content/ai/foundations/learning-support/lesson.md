@@ -23,7 +23,7 @@ explainClip:
     - caption: { text: "Then try a new question to test your own understanding." }
     - wait: 1000
 ---
-In the previous unit, you learned how to ask and follow up. Now consider **what kind of help actually develops your understanding**. AI might explain, question, offer hints, provide feedback or complete the task. The best choice depends on what you need to learn.
+Earlier you saw that AI writes by predicting likely next words, one at a time. That makes it fast at producing finished answers, but a finished answer can skip the thinking you came to practise. In the previous unit, you learned how to ask and follow up. Now consider **what kind of help actually develops your understanding**. AI might explain, question, offer hints, provide feedback or complete the task. The best choice depends on what you need to learn.
 
 ## Engage: what kind of help?
 

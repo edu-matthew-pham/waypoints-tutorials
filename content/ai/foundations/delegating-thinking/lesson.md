@@ -23,7 +23,7 @@ explainClip:
     - caption: { text: "Delegate only what is appropriate, then check the result." }
     - wait: 1000
 ---
-AI can save time by carrying out repetitive work, generating options and explaining ideas. But completing a task is different from developing the ability to do it. **Deciding what to delegate is itself a skill.** It depends on your goal, current understanding, task expectations and the consequences of errors.
+AI learns patterns from examples, so it is often good at routine, well-practised jobs, and it can still be wrong on something new or unusual. AI can save time by carrying out repetitive work, generating options and explaining ideas. But completing a task is different from developing the ability to do it. **Deciding what to delegate is itself a skill.** It depends on your goal, current understanding, task expectations and the consequences of errors.
 
 ## Engage: would you delegate it?
 

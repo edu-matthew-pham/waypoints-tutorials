@@ -1,0 +1,21 @@
+inquiry:
+  q: "Can AI make you better at a task and worse at knowing how good you are?"
+  prompts:
+    - "When have you felt sure and been wrong? Unsure and been right?"
+    - "Why would that matter for deciding when to practise?"
+  notes: "Confidence is a guess about your own ability. The lesson is about checking that guess, not about lowering confidence."
+activities:
+  - at: run
+    kind: activity
+    title: "How sure, how right?"
+    minutes: 6
+    do: |
+      Do the board's new question and choose low, medium or high before you see the model answer. Then mark yourself: right, partly right or wrong.
+    notes: "Tally on the board: confidence against result. Ask who was too sure, who was not sure enough, and what each would do differently."
+  - at: end
+    kind: discussion
+    title: "Benefit or risk?"
+    minutes: 4
+    do: |
+      Pick one: "Better results with AI are a real gain even if people misjudge themselves", or "Misjudging yourself makes AI-assisted success risky". Give a reason and one way to check your own judgement.
+    notes: "The Fernandes studies used adults on reasoning puzzles; ask whether the result would hold for students in a school subject."

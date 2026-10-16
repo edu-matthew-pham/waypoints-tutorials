@@ -1,0 +1,21 @@
+inquiry:
+  q: "Should a good tutor show you how first, or make you try first?"
+  prompts:
+    - "Which helped you more the last time you learned something new?"
+    - "Would your answer change if you already knew a little about it?"
+  notes: "Both work in different situations. Beginners often gain from a worked example first; people who know more often gain from trying first."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Model first or try first?"
+    minutes: 5
+    do: |
+      Stand on a line: model first at one end, try first at the other. Explain your spot, then say where you would stand for a topic you already know well.
+    notes: "Many will move along the line for a familiar topic. That is the point about prior knowledge."
+  - at: make
+    kind: activity
+    title: "Design the help"
+    minutes: 7
+    do: |
+      Plan a three-step support sequence for a classmate learning something you know well. Say when the help gets less, and how you'd check they can now do it alone.
+    notes: "Check that each plan ends with a new attempt without help."
