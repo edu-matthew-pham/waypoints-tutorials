@@ -94,6 +94,39 @@ Design constraints:
 
 Possible 5E arc: Engage with a text-prediction question; Explore with dice; Explain probabilities and transitions; Elaborate with automation and changed data; Evaluate with a new example and offloading reflection.
 
+## Tools for schools (proposed, 16 Oct 2026)
+
+Purpose: help schools choose and trial AI tools, using what the two courses already teach. Matthew's school is trialling Microsoft 365 Copilot (Study and Learn mode) and Thinking Mode (https://thinkingmode.com/). Lessons stay platform-agnostic; this is teacher-facing material beside them.
+
+**Two kinds of tool, one per course:**
+- **Help tools** (tutor or study modes, general assistants, AI in Office): judged by the AI Foundations Unit 4 habits.
+  - Does it give a hint before the answer, and can a teacher set that?
+  - Does it show sources?
+  - Can a teacher control what it will do for a student?
+- **Evidence tools** (Thinking Mode: the student uploads finished work and answers adaptive questions about it; the teacher gets a transcript): judged by Does AI Help Us Learn? Unit 4 (evidence of achievement).
+  - Does the conversation show what the student understands, or how well they talk?
+  - Is it fair for students who are nervous, quieter or learning English?
+  - Can the teacher read and overrule the judgement?
+- **Teacher tools** (planning, rubrics, feedback drafts): the same habits from the teacher's side (keep the parts you need to understand or control).
+
+**Plan:**
+1. **Teacher page "Choosing AI tools for learning"** (a plain page, e.g. `content/ai/tools.md`).
+   - The questions above.
+   - Practical checks: age limits in the terms, student accounts, where data goes and how long it stays, teacher visibility and settings, LMS fit.
+   - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements.
+2. **Small-trial template**: the Does AI Help Us Learn? research-design lesson applied to a real decision.
+   - What you're trialling, what you compare it with, what you measure, a check a week or two later, and student confidence.
+   - First worked example: Thinking Mode. For a sample of students, compare its transcript judgement with the teacher's own short conversation about the same work. Note where they disagree and why.
+   - Second worked example: Copilot Study and Learn, using a hint-first task with a new question a week later.
+3. **Optional "Try it with your school's tool" steps** (`tier: typical`) in Foundations Unit 4 and in `evidence-of-achievement`, so students compare the board with the real tool. These are worded for any tool.
+4. **Later**: short guides per tool type, written after the template has been used in at least one real trial.
+
+**To find out during the trial:**
+- Thinking Mode's Draft and Discussion modes. Its site names them but doesn't describe them.
+- Which AI model it uses, and how long it keeps data.
+- Whether students can see and question their transcript.
+- How it handles a student who wrote the work but explains it poorly.
+
 ## Open before implementation
 
 - What ages/prior knowledge is Foundations designed for? Which objectives are essential versus optional?
@@ -116,3 +149,4 @@ Possible 5E arc: Engage with a text-prediction question; Explore with dice; Expl
 - Agreed pedagogical direction: **documented**.
 - Course structure and first three units: **implemented as lesson drafts**; classroom validation and subject-specific integration remain in progress.
 - **AI Foundations authored:** seven lessons across text generation and how AI learns, plus two lessons in **Communicating with AI** (purposeful prompts and follow-up interaction). Unit 3 uses scripted response comparisons, explicitly not a live LLM. Publishing, browser checks and video playback remain subject to build verification.
+- **Review fixes (16 Oct 2026)** on branch `ai-review-fixes`: board and research fixes, Unit 4 renamed "Getting good help from AI", class plans for all Does AI Help Us Learn? lessons. Remaining work: Project doc claude/handoff-ai-unit2-review.md.
