@@ -14,8 +14,8 @@ try{
  for(const kind of ['turtle','physics']){
    await page.selectOption('#app',kind);await page.click('#load');
    const frame=page.frameLocator('#demo');
-   await frame.locator('body').waitFor({timeout:20000});
-   await delay(2500);
+   await page.waitForFunction(kind => { const f=document.querySelector('#demo'); return f && f.contentWindow && f.contentWindow.location.href.includes(kind==='turtle'?'_playground/index.html':'_playground-board/index.html') && f.contentDocument?.readyState==='complete'; },kind,{timeout:20000});
+   await delay(1500);
    const details=await frame.locator('body').evaluate(el=>({text:el.innerText.slice(0,300),canvas:el.querySelectorAll('canvas').length,svg:el.querySelectorAll('svg').length,error:el.querySelector('#error')?.textContent||''}));
    await page.screenshot({path:dir+'/'+kind+'.png'});
    let recordStatus='';
@@ -29,5 +29,5 @@ try{
    console.log(JSON.stringify(results.at(-1)));
  }
  writeFileSync(dir+'/results.json',JSON.stringify(results,null,2));
- if(results.some(r=>r.error||r.text.includes('404 Not Found')))process.exitCode=1;
+ if(results.some(r=>r.error||r.text.includes('404 Not Found')||(r.kind==='turtle'&&!r.canvas)||(r.kind==='physics'&&!r.svg)))process.exitCode=1;
 }finally{await browser?.close();server.kill();}
