@@ -28,3 +28,21 @@ const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/web
 let recorderAudioContext;
 $('stop').onclick=()=>{if(recorder?.state==='recording')recorder.stop()};
 draw();reset();
+// Load build-generated clips from existing lesson.md frontmatter; no JSON import required.
+let lessonClips=[];
+fetch('./lesson-clips.json').then(r=>{if(!r.ok)throw Error('Lesson clip catalogue unavailable');return r.json()}).then(clips=>{
+  lessonClips=clips;
+  for(let i=0;i<clips.length;i++){
+    const opt=document.createElement('option');opt.value=String(i);
+    opt.textContent=clips[i].source.lesson+' / '+clips[i].source.step;
+    $('lessonClip').append(opt);
+  }
+}).catch(e=>status(e.message));
+$('loadLessonClip').onclick=()=>{
+  const i=$('lessonClip').value;
+  if(i===''){status('Choose an existing lesson clip');return}
+  const clip=lessonClips[Number(i)];
+  if(!clip){status('Lesson clip not found');return}
+  model=structuredClone(clip);selected=0;draw();reset();
+  status('Loaded '+clip.source.lesson+' / '+clip.source.step+' from lesson frontmatter');
+};
