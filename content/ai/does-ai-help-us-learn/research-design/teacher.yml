@@ -5,6 +5,7 @@ goals:
   - "I can choose a test that fits a claim (during, straight after, or weeks later)."
   - "I can design a fair comparison for an AI feature and say what it still couldn't show."
 before: |
+  **Core idea:** A fair comparison changes one thing, and its test must fit the claim. The minimum path is the made-up school comparison; designing a study is typical and Nakamura's theory is wider.
   Teaching move: take a study apart, then rebuild it.
   The AI-class and worksheet-class table, and the "same tutorial with and without an AI helper" design, are made up. Do not imply a study like this has been done.
   Words used for students: a confounding difference ("a difference that could explain the result instead") and validity ("does the test give good evidence for this claim?").

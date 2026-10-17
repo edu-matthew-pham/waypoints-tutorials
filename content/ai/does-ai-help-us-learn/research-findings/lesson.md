@@ -22,10 +22,44 @@ check:
 
 Which would convince you more: a big jump in marks, or knowing *why* the marks changed?
 
+## Explore: a claim close to home
+
+```step
+stage: run
+tasks:
+  - check:
+      type: question
+      q: "Mia says: 'I used an AI helper for my spelling homework and got 10/10 every night. It works!' What would tell you most about whether she learned the spellings?"
+      options: ["A spelling test next week, without the helper", "Her 10/10 scores with the helper", "How much she enjoyed using it"]
+      answer: 0
+      feedback: [null, "Those scores show what she did with help. They don't show what she can do alone.", "Enjoying it matters, but it isn't the same as learning the spellings."]
+  - check:
+      type: question
+      q: "Mia's friend Ben practised from a paper list and got 7/10 on the test. Mia got 9/10. Before you say the AI helper made the difference, what should you ask?"
+      options: ["Was anything else different, like how long each of them practised?", "Which app Mia used", "Nothing: 9 is more than 7"]
+      answer: 0
+      feedback: [null, "Knowing the app doesn't tell you whether it caused the difference.", "Other differences, like time spent or which words they had, could explain it."]
+```
+
+When anyone says help **works**, ask three questions:
+
+1. **Measured when?** With the help, straight after, or a week later without it?
+2. **Compared with what?** No help? A paper list? A good teacher?
+3. **Does the claim fit?** "It works" can say more than the scores show.
+
+### Measured when?
+
+Mia's 10/10 scores happened while she used the helper.
+
+### Compared with what?
+
+Ben used a paper list. What else might have been different?
+
 ## Explore: what did each study do?
 
 ```step
 stage: run
+tier: typical
 tasks:
   - check:
       type: sort
@@ -70,6 +104,7 @@ Look again at Study A's three groups.
 
 ```step
 stage: investigate
+tier: typical
 tasks:
   - check:
       type: question
@@ -108,7 +143,7 @@ Study A and Study B asked different questions. Neither one, alone, tells us whet
 
 ```step
 stage: make
-tier: typical
+tier: wider
 check: { type: reflect, text: "I defended a careful claim about one study and named something it leaves open." }
 ```
 
@@ -127,6 +162,23 @@ Could both be fair? Which bigger claims would **not** follow? Neither study comp
 stage: info
 check:
   type: question
+  q: "An advert says: 'Students who use our AI homework helper get higher marks!' Which question matters most before you believe it?"
+  options: ["Higher than whom, and on what test: with the helper, or later without it?", "How many people have downloaded it?", "Does the advert look professional?"]
+  answer: 0
+  feedback: [null, "Lots of downloads shows it is popular, not that it helps anyone learn.", "A good-looking advert is not evidence."]
+```
+
+Write the question you would ask Mia, or the advert, before you believe "it works".
+
+**Next lesson:** even when we know a student's score, do they know how well they are really doing?
+
+## Evaluate: what can the two studies claim?
+
+```step
+stage: info
+tier: typical
+check:
+  type: question
   q: "Which claim do these two studies support?"
   options: ["Practising with a plain AI chatbot can help in the moment but leave students worse off later, at least in some conditions", "AI has been proved to improve learning in every subject", "Study B proves that AI, and not the other changes, caused the better scores"]
   answer: 0
@@ -134,5 +186,3 @@ check:
 ```
 
 A principal says: "Research proves we should replace our computer practice tasks with AI tutors." What comparison would you need to test that fairly?
-
-**Next lesson:** even when we know a student's score, do they know how well they are really doing?

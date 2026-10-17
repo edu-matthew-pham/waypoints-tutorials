@@ -5,6 +5,7 @@ goals:
   - "I can explain why a beginner and a more experienced learner might need different help."
   - "I can design a support plan that gets less over time and ends with a try without help."
 before: |
+  **Core idea:** Good help fits what the learner already knows, and gets less over time. The minimum path is the three tutor designs; designing a tutor is typical and who should decide is wider.
   All three tutor designs are made-up examples, not evidence that they work, and not live AI.
   Do not imply hints always beat worked examples, or that fading guarantees remembering.
   The first Explain question checks goal 1 (scaffolding versus interactivity); the Evaluate question checks goal 2; the Elaborate plan shows goal 3.

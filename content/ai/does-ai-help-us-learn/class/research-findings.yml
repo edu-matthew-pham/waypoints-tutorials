@@ -7,11 +7,11 @@ inquiry:
 activities:
   - at: run
     kind: activity
-    title: "Which study?"
+    title: "Measured when? Compared with what?"
     minutes: 5
     do: |
-      In pairs, sort the fact cards into Study A (high school maths) and Study B (university physics). Then say one thing each study compared.
-    notes: "Check the comparisons: A compared AI with books and notes; B compared an AI tutor with a teacher-led active class."
+      In pairs, ask Mia's three questions about her spelling helper: measured when, compared with what, does the claim fit? Then sort the fact cards into Study A (high school maths) and Study B (university physics), and say one thing each study compared.
+    notes: "Mia's case is the minimum path; the studies are typical width. Check the comparisons: A compared AI with books and notes; B compared an AI tutor with a teacher-led active class."
   - at: end
     kind: discussion
     title: "Rewrite the headline"

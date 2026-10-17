@@ -9,13 +9,13 @@ voice: { name: af_heart, speed: 1.1 }
 ---
 Unit 2 looked at what studies can and can't show. Now a practical question: **if AI can do some of the thinking for you, which thinking should you keep?**
 
-## Engage: remember the maths study
+## Engage: a puzzling result
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "In the high school maths study, students who practised with a plain AI chatbot did worse later without it. Why might that be?"
+  q: "In one study, high school students who practised maths with a plain AI chatbot did worse later, on a test without it. Why might that be?"
   options: ["The chatbot did thinking they needed to practise", "The chatbot gave them wrong answers", "The later test was harder for that group"]
   actual: "The study didn't test why. One likely reason is that the chatbot did thinking the students needed to practise. That is today's question: which thinking should you keep?"
 ```

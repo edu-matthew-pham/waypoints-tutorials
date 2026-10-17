@@ -14,9 +14,9 @@ pathways:
   - id: inquiry
     title: Does AI Help Us Learn?
     summary: Investigate the meaning of learning, the evidence about AI and the changing role of tools and education.
-    fit: "A sustained inquiry that introduces contrasting perspectives and tests ideas without prescribing a final position."
+    fit: "Years 7–10: core ideas at Year 7, wider steps for older students."
     about: |
-      Comes after AI Foundations: it tests whether the Foundations habits actually help students learn. Written for Year 7.
+      Comes after AI Foundations: it tests whether the Foundations habits actually help students learn. A sustained inquiry that tests ideas without prescribing a final position. Each lesson's core idea runs through a personal case at Year 7 level; typical and wider steps add real studies, assessment and policy for older students (add `?width=wider` to a lesson link to start a class there).
 
       For teachers: [Choosing AI tools for learning](../../../choosing-ai-tools/) applies this course's questions about evidence to choosing and trialling tools.
     courses:

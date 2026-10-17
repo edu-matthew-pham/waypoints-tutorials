@@ -5,6 +5,7 @@ goals:
   - "I can say what a finished product shows, and what it does not show, about learning."
   - "I can give the best reason for a view I disagree with."
 before: |
+  **Core idea:** Whether help is good depends on the goal. The minimum path is the maze game under two goals; the two-claims discussion is typical.
   This lesson opens the inquiry. Its endpoint is not "AI is good" or "AI is bad".
   Offer a paper or digital inquiry record that students can revisit across lessons, but do not require one. The built-in reflections and class talk are enough.
   The board is a prepared, account-free activity carried over from AI Foundations (`set: goals` adds the same maze-game and seasons tasks with two goals each). Its feedback is a suggestion for a stated goal, not a final judgement. Let students disagree with it if they give reasons.

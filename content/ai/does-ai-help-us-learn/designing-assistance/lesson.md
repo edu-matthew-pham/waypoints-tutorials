@@ -118,6 +118,14 @@ Plan the help:
 
 Now test your plan. What if the learner knows less than you thought? What if they ask for the answer and can't explain it?
 
+## Elaborate: who decides how much help?
+
+```step
+stage: make
+tier: wider
+check: { type: reflect, text: "I gave a reason for two of the three choices, and said who I think should decide." }
+```
+
 Who should decide how much help to give: the **student**, the **teacher**, or **the app itself**? Give one reason for two of these.
 
 ## Evaluate: no single best design

@@ -108,7 +108,7 @@ Use Learner B's report as your example.
 
 ```step
 stage: make
-tier: typical
+tier: wider
 check: { type: reflect, text: "I designed a task that allows AI and still shows what the student learned, and named its weak spot." }
 ```
 

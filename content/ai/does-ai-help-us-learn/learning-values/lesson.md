@@ -54,6 +54,7 @@ Rank these four from most to least important to you: **doing it yourself**, **ma
 
 ```step
 stage: investigate
+tier: wider
 tasks:
   - check:
       type: question
@@ -105,7 +106,7 @@ Go back to the question: **Does AI help us learn?**
 Build your answer. Include:
 
 - What *learning* means in the cases you're talking about.
-- One study from Unit 2, and what it actually measured.
+- One piece of evidence: a learner from this course, or a study from Unit 2 and what it actually measured.
 - How the goal, the learner's experience, other tools and the design of the help change the answer.
 - An objection a sensible person might raise.
 - A situation that would change your mind.
@@ -122,12 +123,27 @@ You can do this as a class discussion or a short written reflection. Your teache
 stage: info
 check:
   type: question
+  q: "Three students answer 'Does AI help us learn?' Which answer is strongest?"
+  options: ["'It depends on the goal. When I'm learning a skill, help that gives hints first can work, but I should check I can do it alone later.'", "'AI helps, because it is a helpful tool.'", "'AI is cheating, so it never helps anyone learn.'"]
+  answer: 0
+  feedback: [null, "This gives no reason, and doesn't say for which goal.", "'Never' goes too far. In this course you met help that can support learning."]
+```
+
+The question may stay open. But your reasons can be more precise: what matters, what evidence supports a claim, and what is still unknown.
+
+**End of course:** what do you now think AI helps us learn, when, and what would change your mind?
+
+## Evaluate: a stronger answer, with the studies
+
+```step
+stage: info
+tier: typical
+check:
+  type: question
   q: "Which answer to 'Does AI help us learn?' is strongest?"
   options: ["'In the maths study, a plain chatbot during practice hurt later results. A tutor that gives hints may be different, but we need more evidence.'", "'AI helps when students use it carefully, because it is a helpful tool.'", "'The physics study proved AI tutors beat teachers, so schools should switch to them.'"]
   answer: 0
   feedback: [null, "This sounds careful, but it gives no evidence and doesn't say who, or for what goal.", "The physics study compared one kind of class, tested straight after. 'Proved' and 'switch' go too far."]
 ```
 
-The question may stay open. But your reasons can be more precise: what matters, what evidence supports a claim, and what is still unknown.
-
-**End of course:** what do you now think AI helps us learn, when, and what would change your mind?
+If you read the two studies in Unit 2: which answer uses them best, and which goes further than they show?
