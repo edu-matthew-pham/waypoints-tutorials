@@ -1456,8 +1456,8 @@ without npm installation, internet access after download, or the full site check
 all supplied lessons passed; 1 reports format errors; 2 reports input/setup errors. Inside the repository the equivalent
 command is `npm run validate:lesson -- /path/to/lesson.md --json`.
 Ask the assistant to fix errors, rerun against its final files, and report the actual command and exit code. If it
-cannot execute the command, it should say **validation not run**. Import the files into Create and use **Copy validation
-report** to return the current errors to the conversation instead. The report is refreshed from the current editor text.
+cannot execute the command, it should say **validation not run**. Paste or upload the files in the standalone
+[browser validator](https://tutorials.learningwaypoints.com/code/create/validate.html) and use **Copy validation report** to return the current errors to the conversation instead. The report is refreshed from the current editor text.
 This checks lesson structure and references; it does not execute code, assess teaching quality or replace preview.
 Full repository publication checks remain separate. See [validator instructions](tools/validator-readme.md).
 

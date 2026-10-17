@@ -45,6 +45,8 @@ jobs:
         run: node experiments/browser-smoke.mjs
       - name: Create entry routes
         run: node experiments/entry-smoke.mjs
+      - name: Standalone browser validator
+        run: node experiments/validator-browser-smoke.mjs
       - name: Lesson and course package workflow
         run: node experiments/course-smoke.mjs
       - name: Authoring and subject playground workflows
