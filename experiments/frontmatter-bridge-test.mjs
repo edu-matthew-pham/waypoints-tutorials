@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { loadLessons } from '../tools/lesson.mjs';
+import { browserClip } from '../tools/export-browser-clip.mjs';
+const lesson = loadLessons('ai/foundations/dice-generator')[0];
+assert.ok(lesson, 'Existing lesson loads');
+const step = [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])].find(s => s.config.clip);
+assert.ok(step, 'Existing frontmatter clip exists');
+const result = browserClip(lesson, step);
+assert.equal(result.format, 'waypoints-clip-draft-v1');
+assert.equal(result.source.lesson, lesson.slug);
+assert.ok(result.steps.length > 0);
+assert.ok(result.steps.some(s => s.type === 'caption'));
+assert.ok(result.steps.some(s => s.type === 'wait'));
+assert.equal(result.app, 'physics');
+console.log('Frontmatter bridge passed:', result.source, result.steps.length, 'actions');
