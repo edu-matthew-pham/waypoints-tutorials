@@ -16,10 +16,15 @@ function parsed(files, id='my-lesson') { return parseLessonText(files['lesson.md
 export async function setupWorkspace(controller) {
   let workspace;
   try { workspace = JSON.parse(localStorage.getItem(KEY)); } catch {}
-  if(!workspace || !Array.isArray(workspace.lessons) || !workspace.lessons.length || location.hash.startsWith('#l=')) {
+  const sharedLink=location.hash.startsWith('#l=');
+  if(!workspace || !Array.isArray(workspace.lessons) || !workspace.lessons.length) {
     const id = uuid();workspace = {title:'My course',summary:'',active:id,lessons:[{id,title:'My lesson'}]};
   }
-  const requested=new URLSearchParams(location.search).get('lesson');if(workspace.lessons.some(l=>l.id===requested))workspace.active=requested;
+  else if(sharedLink) {
+    if(workspace.lessons.length>=100)throw Error('The course is full. Export it before importing another shared lesson.');
+    const id=uuid();workspace.lessons.push({id,title:parsed(controller.getFiles()).title});workspace.active=id;
+  }
+  const requested=!sharedLink&&new URLSearchParams(location.search).get('lesson');if(workspace.lessons.some(l=>l.id===requested))workspace.active=requested;
   if(!workspace.lessons.some(l => l.id === workspace.active))workspace.active = workspace.lessons[0].id;
   let recordings = {}, currentHash = '', queue = Promise.resolve(), revision = 0;
   const urls = new Map();
@@ -164,6 +169,8 @@ export async function setupWorkspace(controller) {
   const existing=await readDraft(workspace.active);
   if(existing && !location.hash.startsWith('#l='))controller.setFiles(existing.files);
   else await updateDraft(workspace.active,()=>({id:workspace.active,files:controller.getFiles(),clips:{}}));
-  persist();workspaceUI();await changed(controller.getFiles());await refresh();
+  persist();
+  if(sharedLink){const address=new URL(location.href);address.hash='';address.searchParams.set('lesson',workspace.active);history.replaceState(null,'',address)}
+  workspaceUI();await changed(controller.getFiles());await refresh();
   return {changed,clipHtml,lessonId:()=>workspace.active};
 }

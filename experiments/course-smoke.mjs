@@ -79,10 +79,21 @@ try{
  await importedPage.locator('#importPackage').setInputFiles({name:'lesson.zip',mimeType:'application/zip',buffer:Buffer.from(await lessonZip.arrayBuffer())});
  await importedPage.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Lesson package imported'));
  assert.equal(await importedPage.locator('#courseLesson option').count(),3);
+ const shareURL=await importedPage.evaluate(async()=>{
+   const {readDraft}=await import('./draft-store.mjs'),record=await readDraft(document.querySelector('#courseLesson').value);
+   const stream=new Blob([new TextEncoder().encode(JSON.stringify(record.files))]).stream().pipeThrough(new CompressionStream('deflate-raw'));
+   let binary='';for(const b of new Uint8Array(await new Response(stream).arrayBuffer()))binary+=String.fromCharCode(b);
+   return location.origin+location.pathname+'#l='+btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+ });
+ await importedPage.goto(shareURL);await importedPage.waitForFunction(()=>document.querySelector('#courseLesson').options.length===4);
+ assert.equal(await importedPage.locator('#courseTitle').inputValue(),'Turtle course');
+ await importedPage.reload();await importedPage.waitForFunction(()=>document.querySelector('#courseLesson').options.length===4);
+ assert.equal(await importedPage.locator('#courseLesson option').count(),4,'Reloading an imported share link does not add duplicates');
+
  await importedPage.screenshot({path:join(dir,'course-workspace.png'),fullPage:true});
  await importedPage.setViewportSize({width:390,height:844});assert.ok(await importedPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Course editor fits mobile viewport');
  await importedPage.screenshot({path:join(dir,'course-mobile.png'),fullPage:true});
- results.push({courseImport:'pass',lessonImport:'pass',staleRecording:'excluded',localPersistence:'pass'});
+ results.push({courseImport:'pass',lessonImport:'pass',sharedLinkPreservesCourse:'pass',staleRecording:'excluded',localPersistence:'pass'});
  assert.deepEqual(errors,[]);console.log(JSON.stringify(results));
 }catch(error){if(page)await page.screenshot({path:join(dir,'course-failure.png'),fullPage:true}).catch(()=>{});results.push({error:error.stack});throw error}
 finally{await writeFile(join(dir,'course-results.json'),JSON.stringify({results,errors},null,2));await browser?.close();server.kill()}

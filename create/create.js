@@ -392,3 +392,10 @@ try {
   workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},render});
   render();
 } catch(error) { $('packageStatus').textContent='Local draft/video storage unavailable: '+error.message; }
+
+// Opening another text-only share link in the same tab is a hash navigation, not a page load.
+window.addEventListener('hashchange', async () => {
+  if(!location.hash.startsWith('#l='))return;
+  try { await workspace?.changed(files);location.reload(); }
+  catch(error) { $('packageStatus').textContent='Could not save the current lesson before opening the shared lesson: '+error.message; }
+});
