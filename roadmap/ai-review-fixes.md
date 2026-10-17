@@ -131,3 +131,8 @@
 - Optional link for Does AI Help Us Learn?: memorising answers is like the table (perfect on practised questions, stuck on new ones); understanding generalises.
 - Not built yet.
 
+
+## Agreed 18 Oct 2026 (Matthew): checks that test judgement
+- Multiple choice stays for how AI works (concept checks with one right answer).
+- Judgement about when and how to use AI moves to: **sort into groups** for hand-over decisions (same task, different goals); **match** for which kind of help suits a moment; a **reasoning** check (subject-neutral labels, often unmarked with model answers; `roadmap/shared.md`) for one realistic dilemma per unit, usually in Evaluate.
+- About 8–10 checks: Foundations Unit 4 Evaluate steps and the main decisions in Does AI Help Us Learn? Not built yet.
