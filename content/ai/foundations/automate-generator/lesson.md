@@ -50,9 +50,11 @@ check:
   answer: 1
 ```
 
+## Explore: run it many times
+
 ```step
 stage: run
-try: { playground: board, starter: "boards.yml", height: 590 }
+try: { playground: board, starter: "boards.yml#explore", height: 590 }
 check: { type: board, text: "Run at least 100 automated samples.", when: "a >= 100" }
 ```
 

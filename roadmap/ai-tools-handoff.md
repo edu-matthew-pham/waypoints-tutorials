@@ -1,7 +1,7 @@
 # Handoff: AI tools work (16 Oct 2026)
 
 For any AI chat continuing this work (Claude, ChatGPT or another).
-- Everything needed is in this repo, on branch `ai-review-fixes` of edu-matthew-pham/waypoints-tutorials.
+- Everything needed is in this repo (edu-matthew-pham/waypoints-tutorials), on `main`.
 - Read these first:
   - this file
   - `roadmap/learning-with-ai.md` › "Tools for schools"
@@ -9,11 +9,10 @@ For any AI chat continuing this work (Claude, ChatGPT or another).
   - `CLAUDE.md` (how the repo works; the rules apply to any assistant)
 
 ## Where things stand
-- **Branch `ai-review-fixes`, not yet merged into main.** It has:
-  - the Group 1 review fixes for AI Foundations and Does AI Help Us Learn?
-  - Foundations Unit 4 renamed "Getting good help from AI"
-  - class plans for every Does AI Help Us Learn? lesson
-  - the tools roadmap
+- **Update 18 Oct 2026:**
+  - `ai-review-fixes` is merged into main (PR #1): Group 1 fixes, the Unit 4 rename, DAHUL class plans and the tools roadmap.
+  - Task 1: the Defend mode is live in Kit (`defend.md`, with `draft.md` and `discussion.md`); `trial.md` is still to write.
+  - Tasks 2 and 3 are **parked**: coach prompts stay on recap pages only for now (`roadmap/learning-with-ai.md` › Decisions).
 - **Three kinds of tool**, each judged by one course:
   - **Help tools** (e.g. Copilot Study and Learn): Foundations Unit 4.
   - **Evidence tools** (e.g. Thinking Mode, https://thinkingmode.com/: the student defends uploaded work in a locked session, and the teacher gets a transcript): Does AI Help Us Learn? Unit 4.
@@ -48,8 +47,8 @@ Write the proposals as a new file in the Kit repo, `proposals/2026-10-ai-tools.m
      - Copilot Study and Learn, compared with Copilot running Kit's coach on the same waypoint.
      - Check first whether Copilot can open URLs; if not, use `waypoints-kit-all.md`.
 
-## Task 2: tutorials, a lesson `prompt` block
-Do this after `ai-review-fixes` is merged, or on that branch if Matthew says so.
+## Task 2: tutorials, a lesson `prompt` block (parked 18 Oct 2026)
+Parked: no prompt cards inside lessons for now. Kept for when Matthew revisits it.
 - **A step can include a prompt card:** a title, the prompt text, a **Copy** button, and the line "Use an AI tool your school allows, if your teacher says you can."
 - **Reuse the existing recap coach box:**
   - styles: `.rccoach` CSS in `tools/build-site.mjs`
@@ -61,7 +60,7 @@ Do this after `ai-review-fixes` is merged, or on that branch if Matthew says so.
   - Keep the change small, and log it in `roadmap/shared.md`.
 - **Document it** in `AUTHORING.md` next to the other step fields. Validate should check the fields.
 
-## Task 3: optional "Try it with your school's tool" steps
+## Task 3: optional "Try it with your school's tool" steps (parked 18 Oct 2026)
 - **Each step is `tier: typical`** (optional, never needed to finish), with one prompt card:
   - Foundations `learning-support` (Ask for the right kind of help): a hint-first coach for something the student is learning.
   - Foundations `checking-ai-claims` (Check what AI tells you): "help me check this claim", with the student supplying the claim and a source.

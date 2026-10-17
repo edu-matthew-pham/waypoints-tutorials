@@ -465,3 +465,9 @@ Full plan in the Project doc `boards-catalogue-plan`. Nothing built; no date set
 - **Shared core (gradual):** add to `core.js` only controls (`B.slider`, `B.button`, `B.row`), element makers, a standard declaration of named values (`scope.vars`) and of settings. Keep it thin: widgets keep their own drawing (SVG, JSXGraph or canvas). Widgets move onto it one at a time when next touched, after `check-boards` exists, because changing a widget's markup re-records clips and redraws pictures for the lessons that show it.
 - **Open:** cards as YAML in `data/boards/` or header-only; one catalogue for all subjects with a filter; whether `playground-science` joins the shared core later.
 - Parallel chats: this touches shared tools (`core.js`, `build-site.mjs`, `validate`); check `git log` and this file first when taken up.
+
+## Changed by the AI audit chat (18 Oct 2026)
+- `tools/lesson-core.mjs`: validate now errors on (1) more than one ```` ```step ```` block under one `##` heading (only the first was read; the rest showed as text) and (2) a board starter with no `#region` when the file has regions (it loaded every setup at once). Only the three AI Unit 1 lessons tripped them, now fixed. Parsed steps carry `extraSteps` only when there are extra blocks. No clip hashes change.
+- `create/`: new `safe-markdown.mjs` (`SafeMarked`), used for Create's preview and package pages instead of plain Marked, so a shared draft link or imported package can no longer run script on this site's origin. Sandboxing the preview iframe was tried and rejected: it removes storage, which breaks step links and the playgrounds.
+- `.github/workflows/frontmatter-bridge-test.yml` (Create's real-Chrome tests) now also runs on pushes to main that touch Create, not only on pull requests.
+- CLAUDE.md documents the `publish-navigation` / `publish-create` route.

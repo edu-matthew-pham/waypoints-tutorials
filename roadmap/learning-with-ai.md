@@ -1,6 +1,8 @@
 # Roadmap: Learning with AI
 
-Planning roadmap for the Learning with AI pathway in Waypoints Tutorials. The first AI Foundations pilot lessons are now authored; broader course coverage and classroom validation remain in progress. This file records direction, candidate courses and decisions while keeping implementation status current.
+Roadmap for the Learning with AI subject (`content/ai/`): two built courses, AI Foundations and Does AI Help Us Learn?, plus a teacher guide to choosing AI tools. Neither course has been tried with classes yet. The planning notes from before the courses were built (course architecture, the dice simulation plan, the original build order) are in `roadmap/archive/learning-with-ai-planning-to-2026-10-17.md`.
+
+Related files: `roadmap/ai-review-fixes.md` (course fixes still to do), `roadmap/ai-tools-handoff.md` (tools work), `roadmap/ai-foundations-evidence-audit.md` (evidence check of Foundations).
 
 ## Direction agreed
 
@@ -44,57 +46,24 @@ Do not present the routes as technically interchangeable: a simplified classifie
 
 **Design principle:** use simplified models to reveal mechanisms, authentic models to encounter complexity, and reflection to develop independent judgement.
 
-## Unit 3: Communicating with AI (authored)
+## Courses as built (18 Oct 2026)
 
-- Lesson 8, **How do you communicate with AI?** Practise specifying goals, relevant context, response form and the type of assistance. Avoid treating prompt length as quality or promising guaranteed outputs.
-- Lesson 9, **How do you work with an AI response?** Diagnose a response, select a purposeful follow-up and compare possible outcomes. Distinguish self-checks from independent verification.
-- Both lessons use an explicit **scripted response laboratory**, not a fake live AI, with optional school-approved assistant comparisons. They preserve Year 7 accessibility and independent learner judgement.
-- Planned next: **Learning effectively with AI** (select helpful assistance, verify claims, decide what to delegate), without conflating curriculum outcomes with interaction techniques.
+**AI Foundations** (`content/ai/foundations/`, 12 lessons, `shape: 5e`):
+- How AI generates text: Can you predict the next word? · Build a text generator with dice · Let the computer take over (a toy n-gram model, labelled as such; `text-prediction` and `word-sampler` boards).
+- How AI learns: How does a machine learn? · Why does AI make mistakes? · How do models combine clues? · Can a neural network learn?
+- Communicating with AI: How do you communicate with AI? · How do you work with an AI response? (scripted response laboratory, not a live AI).
+- Getting good help from AI (unit id `learning-effectively-with-ai`): Ask for the right kind of help · Check what AI tells you · Decide what to hand over.
 
-## Proposed course architecture
+**Does AI Help Us Learn?** (`content/ai/does-ai-help-us-learn/`, 12 lessons, class plans for all 12):
+- What does it mean to learn? · What does the evidence show? · When should we use AI? · Who decides what learning looks like? (three lessons each).
 
-### AI Foundations — first course to design
+Both courses have recap pages. Neither has `coach: true`, so no coach prompts are shown anywhere in the AI courses yet (see Decisions).
 
-Concepts to sequence and test:
-1. What an AI system does and does not do; predictions versus understanding.
-2. Data, patterns, probability and generation.
-3. Training examples, representation, limitations and bias.
-4. Prompts and context: why outputs change.
-5. Plausibility, accuracy, uncertainty and verification.
-6. Cognitive offloading: what is delegated, what remains with the learner.
-7. Using AI deliberately: choosing help, checking it and demonstrating independent transfer.
+### Contextual courses: candidates (not started)
 
-**These are themes, not a settled lesson list.** Map learning objectives and prerequisites before naming units and lessons. Use UNESCO's AI Competency Framework for Students, AI4K12 and AI-literacy research as potential coverage checks, not as a substitute for the lesson design.
+- Learning with AI in Maths, Science, Writing, Coding. Focus on the thinking that must remain with the student in each domain; short recap links rather than re-teaching Foundations.
 
-### Contextual courses — candidates
-
-- Learning with AI in Maths
-- Learning with AI in Science
-- Learning with AI in Writing
-- Learning with AI in Coding
-
-Focus on the thinking that must remain with the student in each domain. Avoid re-teaching all of Foundations; provide short recap links or self-contained refreshers.
-
-## First simulation candidate: from dice to a language model
-
-Inspired by ANU School of Cybernetics' **LLMs Unplugged** paper-and-dice activities (https://www.llmsunplugged.org/). Study the original activity and attribution/licensing before adapting its mechanics or materials.
-
-Proposed learning progression:
-1. **Manual:** inspect a tiny text corpus, count word transitions, construct a probability table, and roll physical or virtual dice to choose the next word.
-2. **Assisted:** let the browser count transitions and show the table, while the learner controls sampling and can inspect each choice.
-3. **Automated:** generate many samples using the *same visible rules* to compare patterns, corpora and variability.
-4. **Reflect:** identify what work was delegated at each step, what understanding was gained or lost, and what remains the learner's responsibility.
-
-Design constraints:
-- Keep the corpus, counts, probability distribution and chosen outcome inspectable.
-- Preserve a manual/automatic toggle so the offloading itself is visible.
-- Automate repetition *after* learners understand what is being repeated.
-- Identify the model accurately as a **small probabilistic text generator** (for example, an n-gram model), **not a miniature transformer or faithful LLM implementation**.
-- Use a real AI assistant later to investigate what the simplified model can and cannot explain.
-
-Possible 5E arc: Engage with a text-prediction question; Explore with dice; Explain probabilities and transitions; Elaborate with automation and changed data; Evaluate with a new example and offloading reflection.
-
-## Tools for schools (proposed, 16 Oct 2026)
+## Tools for schools (16 Oct 2026)
 
 Purpose: help schools choose and trial AI tools, using what the two courses already teach. Matthew's school is trialling Microsoft 365 Copilot (Study and Learn mode) and Thinking Mode (https://thinkingmode.com/). Lessons stay platform-agnostic; this is teacher-facing material beside them.
 
@@ -110,7 +79,7 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 - **Teacher tools** (planning, rubrics, feedback drafts): the same habits from the teacher's side (keep the parts you need to understand or control).
 
 **Plan:**
-1. **Teacher page "Choosing AI tools for learning"** (implemented on `ai-review-fixes` as `content/choosing-ai-tools.md`, published at `/choosing-ai-tools/`; top-level placement follows the current plain-page builder).
+1. **Teacher page "Choosing AI tools for learning"** (built: `content/choosing-ai-tools.md`, published at `/choosing-ai-tools/`, linked from the home page).
    - The questions above.
    - Practical checks: age limits in the terms, student accounts, where data goes and how long it stays, teacher visibility and settings, LMS fit.
    - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements.
@@ -126,12 +95,12 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
    - **Evidence-tool part:** for a sample of students, compare the tool's transcript judgement with the teacher's own short conversation about the same work; note disagreements and who they affect.
    - **Teacher-tool part:** time saved, how much was edited, whether the teacher could defend the result.
    - Scale it to the school: one class for a fortnight is a valid trial if it says so. First worked examples: Thinking Mode (evidence) and Copilot Study and Learn (help).
-3. **Optional "Try it with your school's tool" steps** (`tier: typical`) in Foundations Unit 4 and in `evidence-of-achievement`, so students compare the board with the real tool. These are worded for any tool.
+3. **Optional "Try it with your school's tool" steps** in Foundations Unit 4 and `evidence-of-achievement`: **parked** (decision 18 Oct 2026, below). No prompt cards inside lessons for now.
 4. **Prompt library: use Waypoints Kit** (edu-matthew-pham/waypoints-kit), not a separate library.
    - How Kit works: a starter prompt has a chatbot read `START-HERE.md`, the standard's node file and one format file.
    - `coach.md` is already a tool-neutral study mode: Discover, Practise, Teach it back, Spot the flaw and Check. It is hint first, ends each round of help with "how do you know?", and stays inside the waypoint.
    - The tools page links to Kit's coach and starter prompts rather than repeating them.
-   - Proposed Kit additions (to raise in the Kit repo, not built):
+   - Kit additions (checked 18 Oct 2026): `defend.md`, `draft.md` and `discussion.md` are live in Kit; `trial.md` is not yet written. Original proposals:
      - A **"Defend my work" coach mode**: the student pastes their work, the AI asks about their decisions one at a time, then gives a descriptive summary for the teacher. It is the self-check version of an evidence tool.
      - **`trial.md`**: the trial template above as a Kit format. It gives options and placeholders, and the teacher decides.
    - Teacher prompts: Kit's planning, assessment and slide prompts, plus the tutorials' teacher-lesson prompt (Project doc teacher-lesson-prompt).
@@ -151,27 +120,21 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 - Whether students can see and question their transcript.
 - How it handles a student who wrote the work but explains it poorly.
 
-## Open before implementation
+## Decisions (18 Oct 2026)
 
-- What ages/prior knowledge is Foundations designed for? Which objectives are essential versus optional?
-- What are the minimum viable units and lessons, and their prerequisite sequence?
-- Should simulations use existing board widgets, a new shared simulator, or both? Review AUTHORING and the current playground architecture first.
-- What can be assessed independently without relying on AI output quality or a particular model?
-- Which subject-specific course should be piloted first?
-- Which ANU resources can be referenced or adapted under their licences?
+- **Coach prompts stay on recap pages only, for now.** No prompt cards inside lessons and no "Try it with your school's tool" steps yet: AI use in class has not been tested enough, and the site should not lean on AI encouragement. Possible later step: offer coach prompts after a student has completed AI Foundations. This supersedes Tasks 2 and 3 in `roadmap/ai-tools-handoff.md`. Turning on `coach: true` for an AI course is Matthew's call.
+- **Both courses are for Year 7.** AI Foundations was already written for Year 7; Does AI Help Us Learn? must be made Year 7 accessible too (plainer words, shorter sentences, hands-on Explore steps rather than read-then-quiz, fewer definition checks). Added to `roadmap/ai-review-fixes.md`.
 
-## Build order (proposed)
+## Open
 
-1. Audit current authoring conventions and board widgets; inspect a Science 5E lesson.
-2. Write a short **AI Foundations** course index, learning objectives, prerequisites and a pilot unit outline.
-3. Prototype the **manual → assisted → automated** dice simulation with one inspectable probability model.
-4. Author one complete 5E lesson, including teacher notes, checks, accessibility and explicit limitations.
-5. Test with learners; revise before expanding the course or adding contextual pathways.
+- Which contextual course (Maths, Science, Writing, Coding) to pilot first.
+- Which LLMs Unplugged materials can be adapted under CC BY-SA 4.0, and how to attribute them.
+- What can be assessed independently, without relying on AI output quality or a particular model.
 
-## Status
+## Status (18 Oct 2026)
 
-- Agreed pedagogical direction: **documented**.
-- Course structure and first three units: **implemented as lesson drafts**; classroom validation and subject-specific integration remain in progress.
-- **AI Foundations authored:** seven lessons across text generation and how AI learns, plus two lessons in **Communicating with AI** (purposeful prompts and follow-up interaction). Unit 3 uses scripted response comparisons, explicitly not a live LLM. Publishing, browser checks and video playback remain subject to build verification.
-- **Choosing AI tools teacher guide (16 Oct 2026):** implemented as a plain teacher reference with a structured-prompt baseline (Coach, Draft, Defend, Discussion), a fair-trial checklist, trust checks and examples. No student lesson or commercial ranking added.
-- **Review fixes (16 Oct 2026)** on branch `ai-review-fixes`: board and research fixes, Unit 4 renamed "Getting good help from AI", class plans for all Does AI Help Us Learn? lessons. Remaining work: `roadmap/ai-review-fixes.md`; tools work: `roadmap/ai-tools-handoff.md`.
+- **Built:** AI Foundations (12 lessons, 4 units) and Does AI Help Us Learn? (12 lessons, 4 units, class plans for all), with recap pages; the Choosing AI tools teacher guide. Validate passes for all 24 lessons.
+- **Merged:** the review-fixes branch `ai-review-fixes` (PR #1, 16 Oct): Group 1 fixes, the Unit 4 rename, DAHUL class plans, the tools roadmap.
+- **Fixed 18 Oct:** the three Unit 1 boards (`dice-generator` and `automate-generator` had two step blocks under one heading, so their boards never showed; `next-word` loaded both board setups, starting at 12 endings instead of 3/2/1). Validate now flags both mistakes. The Nakamura (2026) DOI was confirmed by Matthew.
+- **Next:** Groups 2 and 3 in `roadmap/ai-review-fixes.md`, and Year 7 accessibility for Does AI Help Us Learn?
+- **Not yet tried with classes.**

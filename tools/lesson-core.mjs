@@ -330,6 +330,8 @@ export function parseLessonText(raw, slug = 'lesson') {
     let body = nl === -1 ? '' : chunk.slice(nl + 1);
     let config = {};
     const m = body.match(/```step\n([\s\S]*?)\n```\n?/);
+    // Only the first step block in a section is read; validate flags the rest (they would show as text).
+    const extraSteps = Math.max(0, (body.match(/^```step[ \t]*$/gm) || []).length - 1);
     if (m) {
       config = YAML.parse(m[1]) || {};
       body = body.replace(m[0], '');
@@ -347,7 +349,7 @@ export function parseLessonText(raw, slug = 'lesson') {
       });
       body = lead;
     }
-    return { index: i + 1, id: `step-${i + 1}`, title, body: body.trim(), config, tasks };
+    return { index: i + 1, id: `step-${i + 1}`, title, body: body.trim(), config, tasks, ...(extraSteps ? { extraSteps } : {}) };
   });
   return {
     ...(Object.keys(ic.inline).length ? { inline: ic.inline } : {}),
@@ -623,6 +625,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
 
   for (const s of [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])]) {
     const where = `${s.id} "${s.title}"`;
+    if (s.extraSteps) err(where, `${s.extraSteps + 1} step blocks under one ## heading: only the first is used and the others show as text. Give each its own ## heading, or make them tasks`);
     const c = s.config;
     if (!STAGES.includes(c.stage)) err(where, `stage must be one of ${STAGES.join(', ')} (got "${c.stage}")`);
     if (c.tier !== undefined && !TIERS.slice(1).includes(c.tier)) err(where, 'tier must be typical or wider (leave it out for the minimum path)');
@@ -648,7 +651,9 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
           else for (const f of c.try.files.filter((x) => read(x) === undefined)) err(where, `try.files: ${f} not found (paths are from the lesson folder)`);
         }
         if (c.try.starter) { try { snip(c.try.starter); } catch (e) { err(where, `try.starter: ${e.message}`); } }
-        else if (!c.code) err(where, 'try needs a starter (file#region) or a step-level code reference to start from');
+        // A board starter without #region loads the whole file, so every setup in it (the explain region too) is added together.
+        if (c.try.starter && isBoard(c.try.playground) && !String(c.try.starter).includes('#') && /^\s*(#|\/\/)\s*region:/m.test(read(c.try.starter) || '')) err(where, `try.starter: ${c.try.starter} has regions, so loading the whole file adds them all together; name one (${c.try.starter}#name)`);
+        else if (!c.try.starter && !c.code) err(where, 'try needs a starter (file#region) or a step-level code reference to start from');
       }
     }
     if (c.clip !== undefined) {

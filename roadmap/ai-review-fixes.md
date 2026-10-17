@@ -1,16 +1,22 @@
 # Review fixes: AI Foundations and Does AI Help Us Learn? (16 Oct 2026)
 
-**Done on branch `ai-review-fixes`, not yet merged into main:**
+**Done and merged into main (PR #1, 16 Oct 2026):**
 - Group 1
 - the Unit 4 rename
 - class plans for every Does AI Help Us Learn? lesson
 - the Foundations links back to how AI works
 
-The branch touches only `content/ai`, two board widgets and `roadmap/`.
-
 **Courses:** `content/ai/foundations/` and `content/ai/does-ai-help-us-learn/` (DAHUL below).
 
-**Next:** Group 2, then Group 3, only when Matthew asks. Work on top of `ai-review-fixes` until it is merged. For the AI tools work, see `roadmap/ai-tools-handoff.md`.
+**Also fixed (18 Oct 2026):** the three Unit 1 boards (`dice-generator`, `automate-generator`, `next-word`); validate now flags a second step block under one heading and a board starter that loads every region of `boards.yml`.
+
+**Next:** Group 2, then Group 3, only when Matthew asks. For the AI tools work, see `roadmap/ai-tools-handoff.md`.
+
+**Year 7 accessibility for DAHUL (decided 18 Oct 2026).** Both courses are for Year 7. DAHUL currently reads at about Year 10–12 and needs, beyond Group 3's plainer words:
+- shorter sentences and paragraphs in student text;
+- real Explore activities (explore before anything is named): 9 of 12 lessons use `stage: investigate` for "## Explore", so the page labels it Explain, and the Explore is read-then-quiz;
+- fewer definition checks ("What is X?"; about 16 across the course), replaced by checks that apply the idea;
+- no course-wide lesson numbers in student text (`meaningful-learning`, `performance-versus-learning`, `research-design`), and product names kept out of student text (`interaction-versus-learning` names six).
 
 ## Before starting
 - Pull first. Other chats may be editing main, so pull again before pushing.

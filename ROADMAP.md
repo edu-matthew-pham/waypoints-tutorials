@@ -7,6 +7,7 @@ Split by workstream on 11 Oct 2026 so separate chats can work at the same time (
 - [`roadmap/science.md`](roadmap/science.md): science lessons and engines.
 - [`roadmap/systems.md`](roadmap/systems.md): Digital systems (the Digital Technologies Knowledge and understanding strand: data representation, networks, security, hardware), added 12 Oct 2026.
 - [`roadmap/engineering.md`](roadmap/engineering.md): Engineering (an elective STEM layer: mechanisms, physical computing with Arduino, CAD and fabrication, board design; 3D and animation parked for a later Digital Media / Design subject), added 12 Oct 2026.
+- [`roadmap/learning-with-ai.md`](roadmap/learning-with-ai.md): Learning with AI (`content/ai/`: AI Foundations, Does AI Help Us Learn?, the Choosing AI tools guide), with `ai-review-fixes.md` (fixes still to do), `ai-tools-handoff.md` (tools work) and `ai-foundations-evidence-audit.md`. Added to this index 18 Oct 2026.
 - [`roadmap/shared.md`](roadmap/shared.md): shared and general: the build, publishing, home and plain pages, and shared tools.
 
 "ROADMAP › <section>" in CLAUDE.md, AUTHORING.md and BUILDING.md means that section in the subject's file. Older sections moved to `roadmap/archive/` when a file was tidied (the code file on 12 Oct 2026: `roadmap/archive/code-to-2026-10-12.md`), so look there if a section is not in the current file.

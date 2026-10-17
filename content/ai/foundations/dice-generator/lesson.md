@@ -51,11 +51,13 @@ check:
   answer: 0
 ```
 
+## Explore: roll the die
+
 Use the interactive board to roll a virtual die and record your outcomes. You can also use a physical die and compare the results.
 
 ```step
 stage: run
-try: { playground: board, starter: "boards.yml", height: 590 }
+try: { playground: board, starter: "boards.yml#explore", height: 590 }
 check: { type: board, text: "Roll the virtual die at least ten times.", when: "c >= 10" }
 ```
 

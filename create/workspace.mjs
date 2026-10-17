@@ -1,5 +1,5 @@
 import {maths} from './maths-browser.mjs';
-import { Marked } from 'marked';
+import { SafeMarked as Marked } from './safe-markdown.mjs';
 import { parseLessonText, snippetFrom } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed, esc } from './lesson-view.mjs';
 import { highlightCode } from './highlight.js';

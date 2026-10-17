@@ -54,7 +54,7 @@ Write down one ending of your own **before looking at any examples**. Why did yo
 ```step
 stage: run
 insight: "Students change example endings and inspect how word frequencies change the prediction."
-try: { playground: board, starter: "boards.yml", height: 590 }
+try: { playground: board, starter: "boards.yml#explore", height: 590 }
 check: { type: board, text: "Add five roof examples and update the model.", when: "c >= 1 and r = 1 and n >= 11" }
 ```
 

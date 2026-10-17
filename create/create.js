@@ -1,6 +1,6 @@
 import {maths} from './maths-browser.mjs';
 import {inferPlayground,playground,appSettings} from './playground-registry.mjs';
-import { Marked } from 'marked';
+import { SafeMarked as Marked } from './safe-markdown.mjs';
 import YAML from 'yaml';
 import { parseLessonText, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
 import {validateLessonSource,validationReport} from './lesson-validation.mjs';

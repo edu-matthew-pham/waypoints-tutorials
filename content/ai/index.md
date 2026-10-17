@@ -14,5 +14,5 @@ pathways:
     summary: Investigate the meaning of learning, the evidence about AI and the changing role of tools and education.
     fit: "A sustained inquiry that introduces contrasting perspectives and tests ideas without prescribing a final position."
     courses:
-      - { path: ai/does-ai-help-us-learn, stage: foundations, tagline: "Question what counts as learning; Unit 1 is available for review." }
+      - { path: ai/does-ai-help-us-learn, stage: foundations, tagline: "Question what counts as learning, test what the evidence shows and decide when AI helps." }
 ---

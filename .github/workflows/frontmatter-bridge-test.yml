@@ -1,7 +1,7 @@
 name: Frontmatter browser clip bridge
 on:
   push:
-    branches: [experiment/frontmatter-browser-bridge, feature/shareable-lesson-videos, feature/authoring-prompts-playground-adapters]
+    branches: [main, experiment/frontmatter-browser-bridge, feature/shareable-lesson-videos, feature/authoring-prompts-playground-adapters]
     paths:
       - 'tools/export-browser-clip.mjs'
       - 'tools/lesson-validation.mjs'

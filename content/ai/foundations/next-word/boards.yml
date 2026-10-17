@@ -1,3 +1,4 @@
+# region: explore
 widget: text-prediction
 phrase: The cat sat on the
 ending: mat
@@ -6,6 +7,7 @@ ending: mat
 ending: chair
 ending: chair
 ending: roof
+# endregion
 
 # region: explain
 widget: text-prediction
