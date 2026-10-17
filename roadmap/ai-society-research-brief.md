@@ -352,5 +352,5 @@ Second pass:
 9. **Structure:** two parallel courses (*AI in your life*, *Who Does AI Affect?*) or one course of about 16 lessons in five units? If two, which keeps the title *Who Does AI Affect?*
 10. **Attacks on AI to Cyber safety:** add the malicious-model, voice-clone and prompt-injection examples there (a separate change to a built course)?
 11. **Companions and deepfake bullying:** agree the Year 7 wording with the school's wellbeing lead first? Both touch topics where some students may be personally affected.
-12. **Kinds of AI:** recap in each course's first lesson (proposed), or add a short "kinds of AI" lesson to AI Foundations instead?
+12. **Kinds of AI:** decided 18 Oct 2026 (Matthew): refine AI Foundations to name the kinds side by side (rules, predictive ML, generative, agents); the new course(s) then only recap and link back.
 13. **"Be the algorithm" card activity:** no openly licensed Year 7 version exists; write our own (borrowing the idea from Actua and Day of AI, not their materials)?
