@@ -79,7 +79,7 @@ tasks:
 There are three different things you can check.
 
 - **With help:** how well you do with hints, worked examples, friends, teachers or AI. Help changes what you can do in the moment.
-- **On something new:** a new question that is a bit different shows whether you can **use** the idea. This is called **transfer**.
+- **On something new:** a new question that is a bit different shows whether you can **use** the idea. This is called **transfer**. Memorising answers is like a lookup table: perfect on questions you have practised, stuck on new ones. Understanding lets you handle new ones.
 - **Later:** trying again a week or two later shows whether you **remember** it. This is called **retention**.
 
 ### Mia's two tries

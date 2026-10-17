@@ -126,6 +126,34 @@ In your own words, answer both questions:
 - What did the computer do for you?
 - What would you still need to understand to check whether it did the right thing?
 
+## Evaluate: where the table breaks
+
+```step
+stage: info
+tasks:
+  - check:
+      type: question
+      q: "Our table only has a row for 'The cat sat on the…'. What does it say comes after 'The dog sat on the…'?"
+      options: ["Nothing: there is no row for that phrase, so it is stuck", "mat, because mat is the most common ending", "A random word from the cat row"]
+      answer: 0
+      feedback: [null, "Mat is common after 'The cat sat on the…'. The table has nothing at all for 'dog'.", "The table never mixes rows. It only looks up the exact phrase, and 'dog' is not there."]
+      explain: "A lookup table only works for phrases it has a row for. One new word and it is stuck."
+  - check:
+      type: question
+      q: "A real chatbot can finish 'The dog sat on the…' even if it never saw that exact sentence. Which idea best explains how?"
+      options: ["It has learned that words like 'dog' and 'cat' are used in similar ways", "It has a row for every sentence anyone could ever write", "It picks words completely at random"]
+      answer: 0
+      feedback: [null, "There are far too many possible sentences to store them all.", "Its replies usually make sense, so it is not picking at random."]
+```
+
+### Find the missing row
+
+Our model is a **lookup table**. It has one row: the endings for "The cat sat on the…". Now look up "The dog sat on the…". What can the table do?
+
+### How does a chatbot still answer?
+
+Real models learn which things **behave alike** (dogs and cats both sit on mats), so they can handle inputs they have never seen. This is called **generalising**. The table only memorises. You will see how a model generalises in the next unit, with a fruit sorter.
+
 ## Learning with AI: direct the help you receive
 
 Imagine you are learning to use the dice lookup table. You ask an AI assistant to **act as your tutor**. It replies:

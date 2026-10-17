@@ -79,6 +79,8 @@ Explain why a prediction can be wrong even when the model follows its procedure.
 
 Describe one way you could test or improve the model without automatically trusting its output.
 
+When the sorter answers for a green, long fruit it was never shown, it is **generalising**: using what similar examples have in common to handle something new. Remember the dice lookup table from Unit 1? It had no row for a new phrase, so it was stuck. A model that generalises is not stuck, but it can still be wrong.
+
 Examples and labels shape predictions; a test case is not automatically proof. The toy sorter compares simple clues with nearby examples, rather than training a neural network.
 
 ## Elaborate: change and test
