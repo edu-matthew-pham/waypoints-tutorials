@@ -40,7 +40,7 @@ try{
  // Local headless-shell verification only; CI uses full Chrome's real tab capture.
  if(process.env.WP_TEST_CANVAS_CAPTURE==='1')await context.addInitScript(()=>{navigator.mediaDevices.getDisplayMedia=async()=>{const canvas=document.createElement('canvas');canvas.width=640;canvas.height=360;const ctx=canvas.getContext('2d');let x=0;const timer=setInterval(()=>{ctx.fillStyle='white';ctx.fillRect(0,0,640,360);ctx.fillStyle='blue';ctx.fillRect(x++%600,20,40,40)},50);const stream=canvas.captureStream(20);stream.getVideoTracks()[0].addEventListener('ended',()=>clearInterval(timer));return stream}});
  page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
- await page.goto(base);await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===1);
+ await page.goto(base+'?workspace=1');await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===1);
  await page.fill('#courseTitle','Turtle course');await page.fill('#courseSummary','Two lessons with recorded explanations.');await page.locator('#courseSummary').blur();
  await recordCurrent(page,true);
  const lessonZip=await download(page,'#downloadPackage','lesson-package.zip'),lesson=await readPackage(lessonZip);
@@ -67,7 +67,7 @@ try{
  assert.match(await offline.locator('h1').innerText(),/Second turtle lesson/);await offline.close();
  results.push({courseExport:'pass',lessons:2,offlineVideoPlayback:'pass',bytes:courseZip.size,capture:process.env.WP_TEST_CANVAS_CAPTURE==='1'?'local canvas test stream':'real Chrome tab'});
  const importedContext=await browser.newContext({viewport:{width:1280,height:1000}}),importedPage=await importedContext.newPage();importedPage.on('dialog',d=>d.accept());importedPage.on('pageerror',e=>errors.push(e.message));
- await importedPage.goto(base);await importedPage.waitForFunction(()=>document.querySelector('#courseLesson').options.length===1);
+ await importedPage.goto(base+'?workspace=1');await importedPage.waitForFunction(()=>document.querySelector('#courseLesson').options.length===1);
  await importedPage.locator('#importPackage').setInputFiles({name:'course.zip',mimeType:'application/zip',buffer:Buffer.from(await courseZip.arrayBuffer())});
  await importedPage.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Course package imported'));
  assert.equal(await importedPage.locator('#courseLesson option').count(),2);assert.equal(await importedPage.locator('#courseTitle').inputValue(),'Turtle course');

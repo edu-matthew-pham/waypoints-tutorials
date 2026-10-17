@@ -1,8 +1,14 @@
-name: Publish navigation only
+name: Publish navigation or Create only
 on:
   workflow_dispatch:
+    inputs:
+      component:
+        type: choice
+        options: [navigation, create]
+        default: navigation
+        description: Interface to publish without recording videos
   push:
-    branches: [publish-navigation]
+    branches: [publish-navigation, publish-create]
 permissions:
   contents: write
 concurrency:
@@ -25,11 +31,14 @@ jobs:
           cache: npm
       - run: npm ci --omit=optional
       - run: npm run build
-      - name: Update navigation in published pages
+      - name: Take the existing published site
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git clone --depth 1 --branch gh-pages "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live
+      - name: Update navigation in published pages
+        if: github.ref_name != 'publish-create' && inputs.component != 'create'
+        run: |
           node --input-type=module <<'JS'
           import {readdirSync, readFileSync, writeFileSync, existsSync} from 'node:fs';
           import {join} from 'node:path';
@@ -53,10 +62,15 @@ jobs:
           }
           walk('live'); console.log('Updated navigation on', count, 'pages');
           JS
+      - name: Update Create editor only
+        if: github.ref_name == 'publish-create' || inputs.component == 'create'
+        run: rsync -a --delete dist/code/create/ live/code/create/
+      - name: Publish interface changes
+        run: |
           cd live
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -u
+          git add -A
           git diff --cached --quiet && exit 0
-          git commit -m "Publish navigation from ${GITHUB_SHA::7}"
+          git commit -m "Publish interface from ${GITHUB_SHA::7}"
           git push origin HEAD:gh-pages

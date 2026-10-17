@@ -8,6 +8,7 @@ import { scanModule } from './modules-scan.mjs';
 import { highlightCode } from './highlight.js';
 import { setupAuthoring } from './authoring.mjs';
 import { setupWorkspace } from './workspace.mjs';
+import { setupEntry } from './entry.mjs';
 import { REQUEST_FORM_URL } from './config.js';
 
 const EXAMPLE = {
@@ -76,6 +77,8 @@ for i in range(4):
 
 const $ = (id) => document.getElementById(id);
 const KEY = 'wp-create-v1';
+let hasSaved = false;
+try { hasSaved = !!(localStorage.getItem(KEY) || localStorage.getItem('wp-create-course-v1')); } catch {}
 let files = {};      // name -> text, in insertion order
 let current = 'lesson.md';
 let workspace,authoring;
@@ -395,7 +398,8 @@ sync(); render();
 try {
   workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},render});
   authoring=setupAuthoring({getFiles:()=>files,setStarterFactory:fn=>workspace.setStarterFactory(fn)});render();
-} catch(error) { $('packageStatus').textContent='Local draft/video storage unavailable: '+error.message; }
+  setupEntry({hasSaved,addFiles:(next,options)=>workspace.addFiles(next,options),example:EXAMPLE});
+} catch(error) { $('packageStatus').textContent=$('startStatus').textContent='Local draft/video storage unavailable: '+error.message+'. Allow browser storage and reload to open the workspace.'; }
 
 // Opening another text-only share link in the same tab is a hash navigation, not a page load.
 window.addEventListener('hashchange', async () => {

@@ -1431,7 +1431,13 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
 ## 13. Browser authoring, prompts and downloads
 
 Open [Create lessons and courses](https://tutorials.learningwaypoints.com/code/create/) from **Tutorials → Create lessons and courses** in the site navigation.
-Choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;
+The opening screen offers **Start with a prompt**, **Open existing work**, and **Explore an example**.
+The starter prompt asks about your idea and learners without requiring configuration; its maintained text lives in
+`create/start-prompt.md`. Open generated `lesson.md` and supporting files as a new lesson, import a Create package,
+or resume saved work. Exploring the Turtle example adds an editable copy without replacing existing lessons.
+Use **← Start** to return to these choices. Shared lessons and recorder returns open directly in the workspace.
+
+Inside the workspace, choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;
 it does not rewrite an existing lesson. The ordinary **Add lesson** button uses the selected settings once you change them.
 Maths, science, coding, design, inquiry and reading structures use the existing `language`, `shape` and step schema.
 A subject is an authoring preference, not a new lesson metadata field.

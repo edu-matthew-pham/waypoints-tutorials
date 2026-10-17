@@ -38,6 +38,8 @@ jobs:
           sudo apt-get install -y google-chrome-stable
       - name: Browser editor smoke test
         run: node experiments/browser-smoke.mjs
+      - name: Create entry routes
+        run: node experiments/entry-smoke.mjs
       - name: Lesson and course package workflow
         run: node experiments/course-smoke.mjs
       - name: Authoring and subject playground workflows
