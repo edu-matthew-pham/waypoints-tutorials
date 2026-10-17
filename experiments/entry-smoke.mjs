@@ -22,6 +22,20 @@ try {
   await page.locator('#createWorkspace:visible').waitFor();
   assert.match(await page.locator('#text').inputValue(),/Community garden/);
   assert.equal(await page.locator('#courseLesson option').count(),1,'First source import replaces the unused starter');
+  await page.click('#copyValidation');
+  await page.waitForFunction(()=>document.querySelector('#validationStatus').textContent.startsWith('Validation report copied'));
+  let report=JSON.parse(await page.evaluate(()=>navigator.clipboard.readText()));
+  assert.equal(report.valid,false);assert.match(report.results[0].errors.join('\n'),/stage must be/);
+  await page.fill('#text',source.buffer.toString().replace('## Think\n','## Think\n\n```step\nstage: info\n```\n'));
+  await page.click('#copyValidation'); // Must validate the latest edit, before the debounce fires.
+  report=JSON.parse(await page.evaluate(()=>navigator.clipboard.readText()));
+  assert.equal(report.valid,true);assert.equal(report.scope,'lesson-format');
+  await page.evaluate(()=>{window.savedClipboardWriter=navigator.clipboard.writeText;navigator.clipboard.writeText=()=>Promise.reject(Error('Clipboard blocked'))});
+  await page.click('#copyValidation');await page.locator('#validationText:visible').waitFor();
+  assert.equal(JSON.parse(await page.locator('#validationText').inputValue()).valid,true);
+  await page.evaluate(()=>{navigator.clipboard.writeText=window.savedClipboardWriter;delete window.savedClipboardWriter});
+  const validatorDownload=page.waitForEvent('download');await page.getByRole('link',{name:'Download validator',exact:true}).click();
+  assert.equal((await validatorDownload).suggestedFilename(),'validator.zip');
   const original=await page.locator('#courseLesson').inputValue();
   await page.click('#backToStart');await page.click('#startExample');
   await page.locator('#createWorkspace:visible').waitFor();
@@ -51,5 +65,5 @@ try {
   await page.locator('#createWorkspace:visible').waitFor();
   assert.equal(await page.locator('#createStart').isVisible(),false,'Recorder returns bypass Start');
   assert.deepEqual(errors,[]);
-  console.log('Entry routes, prompt copy, source/package imports, safe examples, resume, mobile and recorder returns passed');
+  console.log('Entry routes, prompt/report copy and clipboard fallback, validator download, source/package imports, safe examples, resume, mobile and recorder returns passed');
 } finally {await browser?.close();server.kill()}

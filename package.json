@@ -5,6 +5,7 @@
   "description": "Markdown lessons (PRIMM-structured) -> recorded clips -> GitHub Pages site. No LLM needed at build time.",
   "scripts": {
     "validate": "node tools/validate.mjs",
+    "validate:lesson": "node tools/validate-lesson.mjs",
     "concepts": "node tools/concepts.mjs --report",
     "effort": "node tools/effort.mjs",
     "nodes": "node tools/progressions.mjs --report",

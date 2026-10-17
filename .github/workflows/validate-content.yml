@@ -38,5 +38,7 @@ jobs:
         run: npm ci --omit=optional
       - name: Check site generator syntax
         run: node --check tools/build-site.mjs
+      - name: Verify portable lesson validator
+        run: node experiments/validator-test.mjs
       - name: Validate lessons and course content
         run: npm run validate

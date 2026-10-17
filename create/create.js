@@ -2,7 +2,8 @@ import {maths} from './maths-browser.mjs';
 import {inferPlayground,playground,appSettings} from './playground-registry.mjs';
 import { Marked } from 'marked';
 import YAML from 'yaml';
-import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
+import { parseLessonText, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
+import {validateLessonSource,validationReport} from './lesson-validation.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
 import { scanModule } from './modules-scan.mjs';
 import { highlightCode } from './highlight.js';
@@ -82,6 +83,7 @@ try { hasSaved = !!(localStorage.getItem(KEY) || localStorage.getItem('wp-create
 let files = {};      // name -> text, in insertion order
 let current = 'lesson.md';
 let workspace,authoring;
+let latestValidation;
 
 // ---------- state ----------
 const load = () => {
@@ -185,15 +187,19 @@ const knownIds = () => {
   return o;
 };
 
+function checkCurrentLesson() {
+  const checked=validateLessonSource(files['lesson.md']||'',{source:'lesson.md',slug:workspace?'draft/'+workspace.lessonId():'my-lesson',read:name=>files[name],known:knownIds(),shared:sharedModules});
+  const {result}=checked;
+  latestValidation=validationReport([result]);
+  problemsList(result.errors, 'Lesson format passed. Preview the lesson to check its behaviour.');
+  return checked;
+}
 function render() {
-  let lesson;
-  try { lesson = parseLessonText(files['lesson.md'] || '', workspace ? 'draft/'+workspace.lessonId() : 'my-lesson'); }
-  catch (e) { problemsList(['lesson.md: ' + e.message.split('\n')[0]]); return; }
+  const {lesson,result}=checkCurrentLesson();
+  if (!result.valid && !lesson) return;
   authoring?.sync(lesson,workspace?.lessonId());
   const read = (f) => files[f] ?? lesson.inline?.[f];   // a file tab, else code written inside lesson.md
-  const errs = validateLessonCore(lesson, read, knownIds(), sharedModules).map((m) => m.replace(/^my-lesson › /, ''));
   // Production validation stays authoritative; supported draft clips can be recorded below.
-  problemsList(errs, 'Looks good.');
   const clipHtml = (s) => workspace ? workspace.clipHtml(s) : s.config.clip
     ? `<div class="placeholder"><b>Clip placeholder · ${s.id}</b><span>Recorded when this lesson is added to the repository.</span></div>` : '';
   const locksFor = (kind) => lesson.steps.filter((x) => (x.config.unlocks || []).length && unlockKind(lesson, x) === kind)
@@ -208,6 +214,13 @@ function render() {
   $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, maths, siteRoot, crumb: null, source: '' });
   $('preview').onload = () => { try { $('preview').contentWindow.scrollTo(0, keep); } catch { /* ignore */ } };
 }
+$('copyValidation').onclick = async () => {
+  // Check current source directly, independently of the debounced preview.
+  checkCurrentLesson();
+  const text=JSON.stringify(latestValidation,null,2);
+  try { await navigator.clipboard.writeText(text);$('validationText').hidden=true;$('validationStatus').textContent='Validation report copied. Paste it into your chat.'; }
+  catch { $('validationText').value=text;$('validationText').hidden=false;$('validationText').focus();$('validationText').select();$('validationStatus').textContent='Select and copy the report below.'; }
+};
 
 // ---------- step helpers: add a check or choose snippets to unlock ----------
 /** The step the cursor is in: its section's line range and the line index of its closing ``` fence. */
