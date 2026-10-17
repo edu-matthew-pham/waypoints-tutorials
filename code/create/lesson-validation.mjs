@@ -1,5 +1,5 @@
 // The same format check for Create and the portable sandbox command. Never runs lesson code.
-import {parseLessonText, validateLessonCore} from './lesson-core.mjs?v=1d791c7e0f';
+import {parseLessonText, validateLessonCore} from './lesson-core.mjs?v=3b8bfd6780';
 export function validateLessonSource(raw, {source='lesson.md', slug=source, read=()=>undefined, known, shared={}}={}) {
   let lesson=null, errors=[];
   try {

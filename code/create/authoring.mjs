@@ -1,8 +1,8 @@
-import {PLAYGROUND_REGISTRY,LESSON_PROFILES,playground,inferPlayground} from './playground-registry.mjs?v=1d791c7e0f';
-import {starterFiles} from './lesson-starters.mjs?v=1d791c7e0f';
-import {setupBoardPicker} from './board-picker.mjs?v=1d791c7e0f';
-import {snippetFrom} from './lesson-core.mjs?v=1d791c7e0f';
-import {authoringPrompt} from './authoring-prompt.mjs?v=1d791c7e0f';
+import {PLAYGROUND_REGISTRY,LESSON_PROFILES,playground,inferPlayground} from './playground-registry.mjs?v=3b8bfd6780';
+import {starterFiles} from './lesson-starters.mjs?v=3b8bfd6780';
+import {setupBoardPicker} from './board-picker.mjs?v=3b8bfd6780';
+import {snippetFrom} from './lesson-core.mjs?v=3b8bfd6780';
+import {authoringPrompt} from './authoring-prompt.mjs?v=3b8bfd6780';
 const $=id=>document.getElementById(id);
 export function setupAuthoring(controller){
  for(const [id,profile]of Object.entries(LESSON_PROFILES)){const opt=document.createElement('option');opt.value=id;opt.textContent=profile.label;$('authorProfile').append(opt)}

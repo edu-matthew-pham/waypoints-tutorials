@@ -1,4 +1,4 @@
-import {playground,appSettings,LESSON_PROFILES} from './playground-registry.mjs?v=1d791c7e0f';
+import {playground,appSettings,LESSON_PROFILES} from './playground-registry.mjs?v=3b8bfd6780';
 export function starterFiles({title='My lesson',profile='coding',playgroundId='turtle',board=null}={}){
  const p=playground(playgroundId),shape=LESSON_PROFILES[profile]||LESSON_PROFILES.coding;
  const language=['maths','science','inquiry'].includes(profile)?shape.language:p?.language||shape.language;

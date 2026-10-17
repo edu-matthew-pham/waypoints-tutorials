@@ -1,5 +1,5 @@
-import { snippetFrom } from './lesson-core.mjs?v=1d791c7e0f';
-import { browserClip } from './browser-clip.mjs?v=1d791c7e0f';
+import { snippetFrom } from './lesson-core.mjs?v=3b8bfd6780';
+import { browserClip } from './browser-clip.mjs?v=3b8bfd6780';
 export function draftBrowserClip(files, lesson, step) {
   const read = name => files[name] ?? lesson.inline?.[name];
   const draft = browserClip(lesson, step, ref => snippetFrom(read, ref));

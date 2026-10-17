@@ -1,9 +1,9 @@
-import {PLAYGROUND_REGISTRY,playground} from './playground-registry.mjs?v=1d791c7e0f';
-import {createAdapter,manualReason} from './playground-adapters.mjs?v=1d791c7e0f';
-import { parseLessonText } from './lesson-core.mjs?v=1d791c7e0f';
-import { draftBrowserClip } from './draft-clip.mjs?v=1d791c7e0f';
-import { readDraft, updateDraft, clipFingerprint, keepStorage } from './draft-store.mjs?v=1d791c7e0f';
-import { vttFromCues, fixWebmDuration } from './lesson-package.mjs?v=1d791c7e0f';
+import {PLAYGROUND_REGISTRY,playground} from './playground-registry.mjs?v=3b8bfd6780';
+import {createAdapter,manualReason} from './playground-adapters.mjs?v=3b8bfd6780';
+import { parseLessonText } from './lesson-core.mjs?v=3b8bfd6780';
+import { draftBrowserClip } from './draft-clip.mjs?v=3b8bfd6780';
+import { readDraft, updateDraft, clipFingerprint, keepStorage } from './draft-store.mjs?v=3b8bfd6780';
+import { vttFromCues, fixWebmDuration } from './lesson-package.mjs?v=3b8bfd6780';
 const $=id=>document.getElementById(id);
 const defaults={format:'waypoints-clip-draft-v1',title:'My explanation',app:'turtle',steps:[{type:'caption',caption:'The turtle follows each instruction.',say:'The turtle follows each instruction.',value:''},{type:'code',caption:'Draw two lines.',say:'',value:'from turtle import *\nforward(100)\nright(90)\nforward(100)'},{type:'run',caption:'Run the code.',say:'',value:''}]};
 let binding=null,lastRecording=null,recordingURL=null,lastCaptions='',attached=false;

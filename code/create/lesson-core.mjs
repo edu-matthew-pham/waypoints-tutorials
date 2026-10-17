@@ -1,8 +1,8 @@
 // Pure lesson logic shared by the Node build and the in-browser /create/ page: no fs, no DOM.
 // `read(file)` returns the text of a lesson-relative file (or undefined if missing).
 import YAML from 'yaml';
-import { scanModule } from './modules-scan.mjs?v=1d791c7e0f';
-import { MATH } from './math-expr.mjs?v=1d791c7e0f';
+import { scanModule } from './modules-scan.mjs?v=3b8bfd6780';
+import { MATH } from './math-expr.mjs?v=3b8bfd6780';
 
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
@@ -579,7 +579,9 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       // reason picked at one or two key steps), then a model solution to compare with and a self-check.
       if (!str(k.q)) err(where, 'check (reasoning) needs q');
       const steps = k.steps;
-      if (!Array.isArray(steps) || !steps.length || !steps.every((st) => Array.isArray(st) && st.length === 2 && str(String(st[0])) && str(String(st[1])))) err(where, 'check (reasoning) needs steps: the model solution, each ["statement", "reason"]');
+      const models = k.models;
+      if (models !== undefined && !(Array.isArray(models) && models.length && models.every((m) => str(typeof m === 'string' ? m : m?.text) && (typeof m === 'string' || m.title === undefined || str(String(m.title)))))) err(where, 'check (reasoning) models must be a list of model answers: text, or { title, text }');
+      if (steps !== undefined || models === undefined) { if (!Array.isArray(steps) || !steps.length || !steps.every((st) => Array.isArray(st) && st.length === 2 && str(String(st[0])) && str(String(st[1])))) err(where, 'check (reasoning) needs steps: the model solution, each ["statement", "reason"] (or models: model answers to compare with)'); }
       const hasA = k.answer !== undefined && k.answer !== null && String(k.answer).trim() !== '';
       if (hasA) { try { MATH.parse(String(k.answer)); } catch (e) { err(where, `check (reasoning) answer "${k.answer}": ${e.message}`); } }
       if (k.feedback !== undefined) {
@@ -598,7 +600,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
           if (pk.feedback !== undefined && !(Array.isArray(pk.feedback) && Array.isArray(pk.options) && pk.feedback.length === pk.options.length)) err(where, `${at} feedback must have one entry per option (null for the right one)`);
         });
       }
-      if (!hasA && !k.picks) err(where, 'check (reasoning) needs answer:, picks:, or both: something to mark besides the free working');
+      // Neither answer nor picks: an unmarked reasoning check (write, then compare with the model answers and self-check).
       if (k.criteria !== undefined && !(Array.isArray(k.criteria) && k.criteria.length && k.criteria.every((c) => str(String(c))))) err(where, 'check (reasoning) criteria must be a list of self-check sentences');
     }
     else if (k.type === 'board') {
@@ -640,6 +642,18 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       else for (const [k, v] of Object.entries(c.query)) {
         if (typeof v === 'string' && v.startsWith('@')) { try { snip(v.slice(1)); } catch (e) { err(where, `query.${k}: ${e.message}`); } }
       }
+    }
+    const str = (v) => typeof v === 'string' && v.trim();
+    // prompt: a copyable AI prompt card (AI courses; students use it only if their teacher says they can).
+    if (c.prompt !== undefined) {
+      const pr = typeof c.prompt === 'string' ? { text: c.prompt } : c.prompt;
+      if (!pr || typeof pr !== 'object' || !str(pr.text)) err(where, 'prompt must be text, or { title, text }');
+      else if (pr.title !== undefined && !str(String(pr.title))) err(where, 'prompt title must be text');
+    }
+    // video: a video hosted elsewhere (a file URL, or a YouTube or Vimeo link), shown in the step.
+    if (c.video !== undefined) {
+      const v = typeof c.video === 'string' ? { url: c.video } : c.video;
+      if (!v || typeof v !== 'object' || !/^https:\/\/\S+$/.test(String(v.url || ''))) err(where, 'video must be an https:// address, or { url, caption }');
     }
     if (c.try !== undefined) {
       if (typeof c.try !== 'object' || Array.isArray(c.try)) err(where, 'try must be a mapping: { starter: file#region, height: 460 }');
@@ -830,7 +844,14 @@ function validateClassPlan(lesson, err) {
 function validateTeacher(lesson, snip, err) {
   const t = lesson.teacher, w = 'teacher notes';
   if (typeof t !== 'object' || Array.isArray(t)) return err(w, 'must be a mapping of fields');
-  const allowed = [...TEACHER_TEXT, 'time', 'goals', 'running', 'stuck', 'exit', 'solutions', 'sources'];
+  const allowed = [...TEACHER_TEXT, 'time', 'goals', 'running', 'stuck', 'exit', 'solutions', 'sources', 'design'];
+  // design: the teacher's own design decisions (Create asks for them): the one idea, the misconception, the opening move,
+  // what the checks should catch, and what any video is for. Shown in Create's review beside the lesson.
+  if (t.design !== undefined) {
+    const D = ['idea', 'misconception', 'opening', 'checks', 'video'];
+    if (!t.design || typeof t.design !== 'object' || Array.isArray(t.design)) err(w, `design must be a mapping of ${D.join(', ')}`);
+    else for (const [k, v] of Object.entries(t.design)) { if (!D.includes(k)) err(w, `design: unknown field "${k}" (use ${D.join(', ')})`); else if (typeof v !== 'string') err(w, `design: ${k} must be text`); }
+  }
   for (const k of Object.keys(t)) if (!allowed.includes(k)) err(w, `unknown field "${k}" (use ${allowed.join(', ')})`);
   for (const k of TEACHER_TEXT) if (t[k] !== undefined && typeof t[k] !== 'string') err(w, `${k} must be text`);
   if (t.time !== undefined && !(Number.isInteger(t.time) && t.time > 0)) err(w, 'time must be the lesson length in minutes, such as 50');

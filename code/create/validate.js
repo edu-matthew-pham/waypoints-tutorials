@@ -1,5 +1,5 @@
-import {validateLessonSource,validationReport} from './lesson-validation.mjs?v=1d791c7e0f';
-import {snippetId,FEATURES} from './lesson-core.mjs?v=1d791c7e0f';
+import {validateLessonSource,validationReport} from './lesson-validation.mjs?v=3b8bfd6780';
+import {snippetId,FEATURES} from './lesson-core.mjs?v=3b8bfd6780';
 const $=id=>document.getElementById(id);
 let files=Object.create(null),source='lesson.md',known,shared,ready=false,loading=false,revision=0;
 function invalidate(message='Source changed. Validate again for an updated report.') {

@@ -1,4 +1,4 @@
-import {playgroundURL} from './playground-registry.mjs?v=1d791c7e0f';
+import {playgroundURL} from './playground-registry.mjs?v=3b8bfd6780';
 const $=id=>document.getElementById(id);
 const labels={maths:'Maths',science:'Science',engineering:'Engineering / design',code:'Computing',ai:'AI'};
 export function setupBoardPicker(onChoose){

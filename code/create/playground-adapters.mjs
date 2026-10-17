@@ -1,5 +1,5 @@
 // Parent-side adapters leave the production playgrounds and their clip cache inputs unchanged.
-import {playground,playgroundURL} from './playground-registry.mjs?v=1d791c7e0f';
+import {playground,playgroundURL} from './playground-registry.mjs?v=3b8bfd6780';
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 export function manualReason(verb,value,p){
  if(p.recording==='manual')return p.note;

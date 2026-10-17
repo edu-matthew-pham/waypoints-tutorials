@@ -1,11 +1,11 @@
-import { maths } from './maths-browser.mjs?v=1d791c7e0f';
-import { SafeMarked as Marked } from './safe-markdown.mjs?v=1d791c7e0f';
-import { parseLessonText, snippetFrom } from './lesson-core.mjs?v=1d791c7e0f';
-import { lessonPageHtml, tryEmbed, esc } from './lesson-view.mjs?v=1d791c7e0f';
-import { highlightCode } from './highlight.js?v=1d791c7e0f';
-import { draftBrowserClip as converter } from './draft-clip.mjs?v=1d791c7e0f';
-import { readDraft, updateDraft, deleteDraft, listDraftIds, clipFingerprint, clipIsCurrent, keepStorage } from './draft-store.mjs?v=1d791c7e0f';
-import { zip, readZipEntries, readFolderEntries, readPackageEntries, safePath, slug, uniqueSlugs, setFrontmatter, frontmatter, courseIndexMd, GENERATED } from './lesson-package.mjs?v=1d791c7e0f';
+import { maths } from './maths-browser.mjs?v=3b8bfd6780';
+import { SafeMarked as Marked } from './safe-markdown.mjs?v=3b8bfd6780';
+import { parseLessonText, snippetFrom } from './lesson-core.mjs?v=3b8bfd6780';
+import { lessonPageHtml, tryEmbed, esc } from './lesson-view.mjs?v=3b8bfd6780';
+import { highlightCode } from './highlight.js?v=3b8bfd6780';
+import { draftBrowserClip as converter } from './draft-clip.mjs?v=3b8bfd6780';
+import { readDraft, updateDraft, deleteDraft, listDraftIds, clipFingerprint, clipIsCurrent, keepStorage } from './draft-store.mjs?v=3b8bfd6780';
+import { zip, readZipEntries, readFolderEntries, readPackageEntries, safePath, slug, uniqueSlugs, setFrontmatter, frontmatter, courseIndexMd, GENERATED } from './lesson-package.mjs?v=3b8bfd6780';
 
 const $ = (id) => document.getElementById(id);
 const KEY = 'wp-create-course-v1', PENDING = 'wp-create-pending-v1'; // edits typed but not yet saved to IndexedDB
@@ -251,6 +251,21 @@ export async function setupWorkspace(controller) {
     const result = await lessonEntries(record, dir);
     result.entries.push([dir + '/README.txt', README('lesson')]);
     download(await zip(result.entries), `${dir}-lesson.zip`); notice('Lesson downloaded.' + missingNote(result.missing));
+  });
+  // The lesson's current videos and captions as plain files (to post on a learning platform), like waypoints-audio's MP3s.
+  $('downloadVideos').onclick = report(async () => {
+    await flush(); const record = await readDraft(workspace.active), lesson = parsed(record.files), base = slug(lesson.title), entries = [];
+    allSteps(lesson).forEach((s, i) => { s.n = i + 1; });
+    for (const step of allSteps(lesson).filter((s) => s.config.clip)) {
+      const clip = record.clips?.[step.id];
+      if (!(await clipIsCurrent(record.files, step.id, clip))) continue;
+      const name = `${base}-${step.id === 'explain' ? 'explain' : String(step.n).padStart(2, '0') + '-' + slug(step.title)}`;
+      entries.push([`${base}-videos/${name}.webm`, clip.blob]);
+      if (clip.vtt) entries.push([`${base}-videos/${name}.vtt`, clip.vtt]);
+    }
+    if (!entries.length) throw Error('This lesson has no recorded videos yet. Record them under “Videos for this lesson”.');
+    entries.push([`${base}-videos/README.txt`, `Videos from the lesson "${lesson.title}", recorded in Create.\nEach .webm plays in current browsers (Chrome, Edge, Firefox, Safari 17.4 or later). The .vtt file beside it holds its captions: add it as subtitles where your platform allows.\n`]);
+    download(await zip(entries), `${base}-videos.zip`); notice(`Videos downloaded: ${entries.filter(([n]) => n.endsWith('.webm')).length} video(s) with their captions.`);
   });
   $('downloadCourse').onclick = report(async () => {
     await flush();

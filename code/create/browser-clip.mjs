@@ -1,5 +1,5 @@
-import {inferPlayground,playground} from './playground-registry.mjs?v=1d791c7e0f';
-import {manualReason} from './playground-adapters.mjs?v=1d791c7e0f';
+import {inferPlayground,playground} from './playground-registry.mjs?v=3b8bfd6780';
+import {manualReason} from './playground-adapters.mjs?v=3b8bfd6780';
 // One converter for repository lessons and unpublished browser drafts.
 const captionText = v => v && typeof v === 'object' ? String(v.text ?? '') : String(v ?? '');
 const captionSay = v => v && typeof v === 'object' && v.say !== undefined ? String(v.say) : captionText(v);

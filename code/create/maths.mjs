@@ -2,7 +2,7 @@
 // KaTeX (no maths library on student pages), plus the worked-example block. Build-only (imports katex), so the
 // site build passes these into lesson-view; the create page, which runs in the browser, shows the raw $...$.
 import katex from 'katex';
-export { MATH, MATH_JS } from './math-expr.mjs?v=1d791c7e0f';
+export { MATH, MATH_JS } from './math-expr.mjs?v=3b8bfd6780';
 
 // ---- Notation: $inline$ and $$display$$, rendered once at build time (no maths library on student pages) ----
 
