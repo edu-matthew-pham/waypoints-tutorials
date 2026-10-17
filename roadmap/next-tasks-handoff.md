@@ -2,6 +2,11 @@
 
 For any assistant continuing the small items left after the AI-pathway and Create audits. Matthew approved these as next steps; propose a short plan first, then work through them (CLAUDE.md › How we work). Not in scope: *Who Does AI Affect?* (its own handoff, `roadmap/ai-society-research-handoff.md`) and the deferred items at the end.
 
+## Status (18 Oct, done)
+- Task 1: `content/ai/foundations/class/` has all 12 plans; validate passes and the decks build.
+- Tasks 2 and 3: `create/lesson-starters.mjs` holds `EXAMPLES` (coding, maths, science, each with `design:`) and `newLessonFiles`; "Explore an example" shows a Coding / Maths / Science choice. `experiments/create-examples-test.mjs` (in CI) validates each; `entry-smoke` opens each and checks its validation report.
+- Task 4: the dated table is in `content/choosing-ai-tools.md` (three tools; see roadmap/learning-with-ai.md › Tools for schools).
+
 ## Read first
 - `CLAUDE.md` (rules for any assistant), `ROADMAP.md` › Working in parallel.
 - `roadmap/shared.md`: the 18 Oct sections on Create (packages, design decisions and sharing) and reasoning checks, prompt cards and video links.

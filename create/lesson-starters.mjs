@@ -16,3 +16,282 @@ export function starterFiles({title='My lesson',profile='coding',playgroundId='t
  if(p){const marker=p.file.endsWith('.html')?['<!-- region: start -->','<!-- endregion -->']:p.file.endsWith('.py')||p.file.endsWith('.yml')?['# region: start','# endregion']:['// region: start','// endregion'];files[p.file]=`${marker[0]}\n${board?.playground===p.id?board.example:p.sample}${marker[1]}\n`}
  return files;
 }
+
+// The one source for Create's ready-made lessons (roadmap/next-tasks-handoff.md, task 3): the start page's
+// examples (EXAMPLES) and the plain "+ Add lesson" fallback (newLessonFiles) live here beside starterFiles.
+const TURTLE_EXAMPLE = {
+  'lesson.md': `---
+title: My first turtle lesson
+summary: Predict, run and change a short drawing program.
+language: python
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground" 8123
+  url: http://127.0.0.1:8123/index.html
+---
+A turtle walks across the screen, leaving a line behind.
+
+## Predict
+
+\`\`\`step
+stage: predict
+code: shape.py#square
+\`\`\`
+
+What shape will the turtle draw? Where will it finish?
+
+## Run
+
+\`\`\`step
+stage: run
+try: { starter: "shape.py#square", height: 420 }
+app: true
+query: { code: "@shape.py#square", speed: 8 }
+clip:
+  - caption: "The turtle repeats these commands four times."
+  - click: Run
+  - expect: { selector: "#status", contains: "Finished" }
+\`\`\`
+
+Run the program and compare it with your prediction.
+
+## Modify
+
+\`\`\`step
+stage: modify
+try: { starter: "shape.py#modify", height: 420 }
+\`\`\`
+
+Change the loop so the turtle draws a triangle.
+
+\`\`\`teacher
+design:
+  idea: "A loop repeats the same commands, so four sides need four repeats and a quarter turn each time."
+  misconception: "Students change the number of repeats but not the angle, then expect a triangle."
+  opening: "Predict the shape from the code before running it."
+  checks: "Could a student say why a triangle needs a 120 degree turn, not 90?"
+  video: "The Run clip shows the expected drawing, for a student who missed the demo."
+\`\`\`
+`,
+  'shape.py': `# region: square
+from turtle import *
+
+for i in range(4):
+    forward(100)
+    right(90)
+# endregion
+
+# region: modify
+from turtle import *
+
+for i in range(4):
+    forward(100)
+    right(90)
+
+# Change the code so it draws a triangle.
+# endregion
+`,
+};
+
+// Maths: the balance setups are from Equations as a balance (content/maths/algebra/equation-balance).
+const MATHS_EXAMPLE = {
+  'lesson.md': `---
+title: Equations as a balance
+summary: Find the value that balances an equation, then check it by substitution.
+language: maths
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8123
+  url: http://127.0.0.1:8123/index.html
+  layout: full
+---
+An **equation** says two sides are equal, like a balance scale. The **solution** is the value of the letter that makes it true.
+
+## Predict: which value balances?
+
+\`\`\`step
+stage: predict
+check:
+  type: predict
+  q: "Which value of $x$ makes $2x + 3 = 11$ true?"
+  options: ["$x = 4$", "$x = 5.5$", "$x = 7$", "$x = 8$"]
+  actual: "x = 4. Two lots of 4 is 8, and 8 + 3 = 11, the same as the right side."
+\`\`\`
+
+Two bags on the left each hold $x$ blocks, with 3 loose blocks beside them. The right side has 11 blocks.
+
+## Try: find the balance
+
+\`\`\`step
+stage: run
+try: { playground: board, starter: "board.yml#run", height: 470 }
+check: { type: board, text: "Find the value of $x$ that balances the scale.", expect: { balanced: true } }
+\`\`\`
+
+Move $x$ and watch both sides. Stop when the scale balances.
+
+## Worked example: check by substitution
+
+\`\`\`step
+stage: investigate
+check:
+  type: answer
+  q: "Is $x = 5$ a solution of $3x - 2 = 13$? Work out the left side, $3x - 2$, when $x = 5$."
+  answer: "13"
+  feedback:
+    - ["33", "It looks like 3x became 35. 3x means 3 × x, so it is 3 × 5 = 15."]
+    - ["15", "That is 3 × 5. Now take away 2."]
+  explain: "3 × 5 − 2 = 13, the same as the right side, so x = 5 is a solution."
+\`\`\`
+
+To check a value, put it in place of the letter and work out each side. Both sides equal means it is a solution.
+
+## Vary: $x$ on both sides
+
+\`\`\`step
+stage: modify
+try: { playground: board, starter: "board.yml#both-sides", height: 470 }
+check: { type: board, text: "Balance $x + 7 = 3x + 1$.", expect: { balanced: true } }
+\`\`\`
+
+Now both sides change when $x$ changes. The solution still makes them equal.
+
+\`\`\`teacher
+design:
+  idea: "A solution is the value that makes both sides of an equation equal, and you check it by substitution."
+  misconception: "Reading 2x as 'two and x' (so x = 4 gives 24), not 2 × x."
+  opening: "Students commit to a value before touching the balance."
+  checks: "The substitution answer catches the 35 and 15 slips with feedback; the board only ticks a true balance."
+  video: "none"
+\`\`\`
+`,
+  'board.yml': `# region: run
+widget: balance
+left: 2x + 3
+right: 11
+min: 0
+max: 10
+start: 1
+# endregion
+
+# region: both-sides
+widget: balance
+left: x + 7
+right: 3x + 1
+min: 0
+max: 10
+start: 0
+# endregion
+`,
+};
+
+// Science: the forces setups are from Does balanced mean no forces? (content/science/physics-7/balanced).
+const SCIENCE_EXAMPLE = {
+  'lesson.md': `---
+title: Does balanced mean no forces?
+summary: Balanced forces cancel out, so the motion doesn't change. Unbalanced forces change it.
+language: science
+shape: 5e
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8123
+  url: http://127.0.0.1:8123/index.html
+  layout: full
+---
+A car cruises at a steady 100 km/h with its engine running. What do its forces look like?
+
+## Engage: the cruising car
+
+\`\`\`step
+stage: predict
+check:
+  type: predict
+  q: "A car drives at a steady 100 km/h. Compare the forward force from the engine with the backward forces (air and road friction)."
+  options: ["Forward force is bigger, or the car would stop", "They are equal: the forces are balanced", "There are no forces on it while it cruises", "Backward forces are bigger"]
+  actual: "They are equal. At a steady speed the forces are balanced: the net force is zero, so the motion doesn't change."
+\`\`\`
+
+## Explore: keep it moving
+
+\`\`\`step
+stage: run
+try: { playground: board, starter: "board.yml#steady", height: 640 }
+check: { type: board, text: "Find a push that keeps the box moving at a steady speed for at least 3 seconds.", when: "t >= 3 and f = 0 and v > 0" }
+\`\`\`
+
+The box starts moving at 3 m/s. Press **Play**, then try different pushes (**Reset** to start again). Evenly spaced dots mean a steady speed.
+
+## Explain: balanced is not "no forces"
+
+\`\`\`step
+stage: investigate
+check:
+  type: question
+  q: "When the box moved at a steady speed, what was true?"
+  options: ["The push equalled friction: balanced, net force 0", "There were no forces on it", "The push was bigger than friction"]
+  answer: 0
+  feedback: [null, "Both arrows were there: push forward, friction back.", "If the push were bigger, the box would speed up: check the graph."]
+  explain: "Balanced forces are equal and opposite. They both still act; they cancel out."
+\`\`\`
+
+## Elaborate: slow it down
+
+\`\`\`step
+stage: modify
+try: { playground: board, starter: "board.yml#stop", height: 640 }
+check: { type: board, text: "Make the box slow down and stop.", when: "t >= 1 and v = 0" }
+\`\`\`
+
+Change the push so the forces are unbalanced the other way. What does the graph do?
+
+## Evaluate: in your own words
+
+\`\`\`step
+stage: info
+\`\`\`
+
+In your book: explain why "balanced forces" doesn't mean "no forces", using the box as your example.
+
+\`\`\`teacher
+design:
+  idea: "Balanced forces cancel out, so motion stays the same: still, or a steady speed."
+  misconception: "A moving object needs an unbalanced forward force to keep moving."
+  opening: "Predict the cruising car's forces before trying the board."
+  checks: "The board ticks only a steady speed held for 3 seconds; the question separates 'balanced' from 'no forces'."
+  video: "none"
+\`\`\`
+`,
+  'board.yml': `# region: steady
+widget: forces
+object: Box
+mass: 2
+force P: right, 2, Push, adjust 0-12
+friction: 6
+motion: on
+speed: 3
+track: 40
+time: 10
+# endregion
+
+# region: stop
+widget: forces
+object: Box
+mass: 2
+force P: right, 6, Push, adjust 0-12
+friction: 6
+motion: on
+speed: 3
+track: 40
+time: 10
+# endregion
+`,
+};
+
+export const EXAMPLES = {
+  coding: { label: 'Coding', blurb: 'A short Turtle drawing lesson.', files: TURTLE_EXAMPLE },
+  maths: { label: 'Maths', blurb: 'Equations on a balance scale.', files: MATHS_EXAMPLE },
+  science: { label: 'Science', blurb: 'Balanced forces on a moving box.', files: SCIENCE_EXAMPLE },
+};
+export const EXAMPLE = TURTLE_EXAMPLE;
+
+// "+ Add lesson" when no starter settings are chosen yet.
+export function newLessonFiles(title) {
+  return { 'lesson.md': `---\ntitle: ${title}\nsummary: Write a short summary.\nlanguage: python\n---\n## Run\n\n\`\`\`step\nstage: run\ntry: { starter: "shape.py#start", height: 420 }\n\`\`\`\n\nRun the code, then change it.\n`, 'shape.py': '# region: start\nfrom turtle import *\nforward(100)\n# endregion\n' };
+}

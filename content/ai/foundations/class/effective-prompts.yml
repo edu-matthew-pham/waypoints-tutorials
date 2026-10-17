@@ -1,0 +1,28 @@
+inquiry:
+  q: "Is a longer prompt always a better prompt?"
+  prompts:
+    - "What did the extra words add?"
+    - "What would you leave out?"
+  notes: "Length is not the point; purpose, relevant context and the kind of help wanted are. A short prompt with those can beat a long vague one."
+activities:
+  - at: predict
+    kind: activity
+    title: "Help me with fractions"
+    minutes: 4
+    do: |
+      Write 'Help me with fractions.' on the board. Pairs list on paper the three questions a good tutor would ask before helping.
+    notes: "Collect answers: which fractions, what you already know, what kind of help. These become the parts of a useful prompt."
+  - at: run
+    kind: discussion
+    title: "Human assistant"
+    minutes: 5
+    do: |
+      Read out a vague request, then the same request with purpose and context added. A volunteer 'assistant' answers each aloud. Which answer would help you learn more?
+    notes: "Students hear how the reply changes with the request, without a device."
+  - at: make
+    kind: activity
+    title: "Swap and improve"
+    minutes: 5
+    do: |
+      Write a request for help with something you are learning in another subject. Swap with a partner, who adds one missing detail and says why it helps.
+    notes: "Check the added detail is purpose or context, not just more words."

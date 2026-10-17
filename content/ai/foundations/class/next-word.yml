@@ -1,0 +1,28 @@
+inquiry:
+  q: "If a word comes next most often in the examples, is it the right word to use?"
+  prompts:
+    - "Right for whom: the writer, the reader, or the examples?"
+    - "What would change your answer: more examples, or knowing what the writer means?"
+  notes: "Let both sides stand. Frequent is evidence about the examples, not about what this writer means; that is the lesson's whole point."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Finish the sentence"
+    minutes: 4
+    do: |
+      Everyone writes one word to finish "The cat sat on the…" on paper, without talking. Collect the words on the board and tally them.
+    notes: "The class tally is a set of examples. Ask: does the most common word tell us what this particular cat did?"
+  - at: run
+    kind: activity
+    title: "Human predictor"
+    minutes: 5
+    do: |
+      One student is the predictor and sees only the tally. Read out the start of the sentence; they must say the next word. Then add five 'roof' slips to the tally and ask again.
+    notes: "The predictor's answer follows the counts, not the meaning. Changing the evidence changes the prediction."
+  - at: investigate
+    kind: discussion
+    title: "Common or certain?"
+    minutes: 3
+    do: |
+      Hands up: "mat is the most common ending" (true or false?), then "mat must come next" (true or false?). Explain the difference to a partner.
+    notes: "Listen for 'most likely' versus 'must'. That distinction carries through the next two lessons."

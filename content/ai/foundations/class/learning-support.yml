@@ -1,0 +1,28 @@
+inquiry:
+  q: "Is a worked example a shortcut or a good way to learn?"
+  prompts:
+    - "What did you do after seeing the example?"
+    - "When would a hint be better?"
+  notes: "It depends on when and how it is used. A worked example studied then followed by your own attempt can help a beginner; copying it is a shortcut."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Hint, example or try alone?"
+    minutes: 4
+    do: |
+      Stand at one of three corners: hint, worked example, try alone, for 'learning to add 1/2 + 1/3'. Explain your corner, then move if you would choose differently for a topic you already know.
+    notes: "Movement shows that the right help depends on what you already know."
+  - at: run
+    kind: activity
+    title: "Three amounts of help"
+    minutes: 6
+    do: |
+      Pairs solve 1/2 + 1/4: one with a single written hint, one with a worked example to study then cover, one alone. Each then tries 1/3 + 1/6 with nothing.
+    notes: "The second question is the evidence. Compare who could do it without help."
+  - at: make
+    kind: activity
+    title: "Ask for the right help"
+    minutes: 4
+    do: |
+      Write a request for help that asks for one hint, not the answer, on something you are learning. Read it to a partner, who checks it keeps you doing the thinking.
+    notes: "Check each request names the help type and leaves the work to the student."

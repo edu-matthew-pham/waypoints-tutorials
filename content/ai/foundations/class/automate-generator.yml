@@ -1,0 +1,28 @@
+inquiry:
+  q: "If the computer can do the rolling, is there any point in learning to do it by hand?"
+  prompts:
+    - "What did rolling by hand teach you that a percentage on the screen doesn't?"
+    - "When would you just let the computer do it?"
+  notes: "Both views are reasonable. Doing it by hand builds the understanding you need to check the computer's output; once you have that, handing over the repetition is sensible."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Who does which job?"
+    minutes: 4
+    do: |
+      Write three cards: build the table, roll the die, judge the result. Put each card on the 'me' or 'computer' side of your desk for 1,000 rolls, then explain one choice to a partner.
+    notes: "Most will hand over rolling. Ask whether anyone handed over judging, and why that would be risky."
+  - at: run
+    kind: activity
+    title: "Race the computer"
+    minutes: 4
+    do: |
+      One half of the room rolls a die for 60 seconds and tallies; the other half watches the board run 1,000 times. Compare the two tallies.
+    notes: "The computer is faster and closer to 3 : 2 : 1. Neither tally says whether 'The cat sat on the roof' is true."
+  - at: modify
+    kind: discussion
+    title: "Learning mode or performance mode?"
+    minutes: 4
+    do: |
+      Read out two situations: learning how probability works, and needing 1,000 samples for a chart. Stand left for 'do it myself', right for 'hand it over', for each.
+    notes: "The answer changes with the goal. Name this as the idea students will meet again in 'Decide what to hand over'."

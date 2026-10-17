@@ -1,0 +1,28 @@
+inquiry:
+  q: "If a network gets every test right, has it learned what a banana is?"
+  prompts:
+    - "What were the test fruits like?"
+    - "What would you test next to be more sure?"
+  notes: "Passing tests is evidence, not proof. Its 'knowledge' is connection strengths shaped by the examples; it can be right for the wrong reason."
+activities:
+  - at: predict
+    kind: discussion
+    title: "What changes in training?"
+    minutes: 3
+    do: |
+      Choose one: the program's code, the examples, or the connection strengths. Which changes when the network trains? Defend your choice to a partner.
+    notes: "Connection strengths. The code and examples stay the same during training."
+  - at: run
+    kind: activity
+    title: "Strengthen the path"
+    minutes: 6
+    do: |
+      Draw two input dots (colour, shape) joined to two output dots (banana, apple). For each training example read out, thicken the lines that led to the right answer by one stroke.
+    notes: "A rough paper picture of weights growing. Don't teach the maths; keep it to 'used more, counts more'."
+  - at: modify
+    kind: discussion
+    title: "Teach it the wrong lesson"
+    minutes: 4
+    do: |
+      If every training banana were yellow, which line would get thickest? What would the network say about a green banana?
+    notes: "Links back to Training examples and Model mistakes: the examples shape what it learns."

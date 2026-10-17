@@ -514,3 +514,8 @@ A short course for teachers, in the site's own lesson format with Create as its 
 - Student link: `create/view.html` + `view.js` render a `#l=` lesson as a plain student page with SafeMarked; the lesson is kept in sessionStorage so step links (which change `#`) survive a refresh. Progress key `shared/<hash of the files>`.
 - Request publishing now downloads the lesson or course ZIP and opens the form. **Matthew:** add a file-upload question to the Google Form (forms.gle/CoRAXJWHnVQ8mXpPA) so the ZIP can be attached.
 - Not done: MP4 recording. Videos stay WebM, which plays in current Chrome, Edge, Firefox and Safari 17.4+; MP4 would need changes to the recorder, the duration fix and the package checks.
+
+## Changed after the handoff (18 Oct 2026): Create examples and starters
+- `create/lesson-starters.mjs` is the one source for Create's ready-made lessons: `EXAMPLES` (coding Turtle, maths balance board, science forces board; each with a filled `design:` teacher block) and `newLessonFiles` (the "+ Add lesson" fallback), beside `starterFiles`. `create.js` and `workspace.mjs` import them; the inline copies are gone.
+- Start page: **Explore an example** opens a Coding / Maths / Science chooser (`#exampleRoute`, buttons built by `entry.mjs`). The Turtle example now also carries a `design:` block.
+- Tests: new `experiments/create-examples-test.mjs` (in the Create workflow) validates each example and the add-lesson starter and checks all five design keys; `entry-smoke` opens each example and checks its validation report.

@@ -85,6 +85,16 @@ A useful comparison is a teacher's short discussion of the same work, the specia
 
 For planning, resource generation, feedback drafts and rubrics, examine time saved **after correction**, factual and curriculum accuracy, how much editing is required, and whether the teacher can explain and own the final decisions. A carefully specified general prompt is again a useful baseline.
 
+## Example tools (checked 18 Oct 2026)
+
+One example of each kind, as the vendor describes it. This is not an endorsement or a ranking: each quote is the vendor's own claim, not something we have tested. Products change, so check the linked page again before a trial.
+
+| Tool | Kind | The vendor says | Not stated on that page (ask before a trial) |
+| --- | --- | --- | --- |
+| [Study and Learn agent in Microsoft 365 Copilot](https://support.microsoft.com/en-us/education/copilot/study-learn-agent) | Help | "the learner does the thinking, and the agent coaches them through the process." Available to "Education users aged 13+ with a Microsoft 365 Education license". | Whether teachers can see students' conversations. |
+| [Thinking Mode](https://thinkingmode.com/) | Evidence | "Each student uploads their finished assignment to Thinking Mode." Teachers get "Instant transcript evidence of what each student genuinely understands." | A minimum age, and how long student work and transcripts are kept. |
+| [Teach in the Microsoft 365 Copilot app](https://support.microsoft.com/en-US/education/teach-in-the-microsoft-365-copilot-app) | Teacher | Lesson plans, rubrics, quizzes and flashcards; "only available to Faculty/Staff with a Microsoft 365 for Education license." | Advice on checking what it drafts before use. |
+
 ## Example trial questions
 
 - **A study mode versus Coach:** Are students more capable on a new, unaided task a week later, or do they simply finish the supported task faster?

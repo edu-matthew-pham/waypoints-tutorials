@@ -6,6 +6,7 @@ import { highlightCode } from './highlight.js';
 import { draftBrowserClip as converter } from './draft-clip.mjs';
 import { readDraft, updateDraft, deleteDraft, listDraftIds, clipFingerprint, clipIsCurrent, keepStorage } from './draft-store.mjs';
 import { zip, readZipEntries, readFolderEntries, readPackageEntries, safePath, slug, uniqueSlugs, setFrontmatter, frontmatter, courseIndexMd, GENERATED } from './lesson-package.mjs';
+import { newLessonFiles } from './lesson-starters.mjs';
 
 const $ = (id) => document.getElementById(id);
 const KEY = 'wp-create-course-v1', PENDING = 'wp-create-pending-v1'; // edits typed but not yet saved to IndexedDB
@@ -166,8 +167,7 @@ export async function setupWorkspace(controller) {
   $('addLesson').onclick = report(async () => {
     await flush(); if (workspace.lessons.length >= 100) throw Error('A course can contain up to 100 lessons');
     const id = uuid(), title = `Lesson ${workspace.lessons.length + 1}`, unit = workspace.lessons.find((l) => l.id === workspace.active)?.unit || '';
-    const files = { 'lesson.md': `---\ntitle: ${title}\nsummary: Write a short summary.\nlanguage: python\n---\n## Run\n\n\`\`\`step\nstage: run\ntry: { starter: "shape.py#start", height: 420 }\n\`\`\`\n\nRun the code, then change it.\n`, 'shape.py': '# region: start\nfrom turtle import *\nforward(100)\n# endregion\n' };
-    let starter = starterFactory ? starterFactory(title) : files;
+    let starter = starterFactory ? starterFactory(title) : newLessonFiles(title);
     if (unit) starter = { ...starter, 'lesson.md': setFrontmatter(starter['lesson.md'], { unit }) };
     await updateDraft(id, () => ({ id, files: starter, clips: {} })); workspace.lessons.push({ id, title: parsed(starter).title || title, unit }); await switchLesson(id);
   });

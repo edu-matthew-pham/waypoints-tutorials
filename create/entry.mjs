@@ -1,5 +1,5 @@
 // Entry routes only; lesson/course state continues to belong to the workspace.
-export function setupEntry({hasSaved, addFiles, example}) {
+export function setupEntry({hasSaved, addFiles, examples}) {
   const $ = id => document.getElementById(id);
   const start = $('createStart'), workspace = $('createWorkspace');
   let unusedStarter = !hasSaved;
@@ -13,12 +13,12 @@ export function setupEntry({hasSaved, addFiles, example}) {
     $('startTitle').focus(); window.scrollTo(0, 0);
   };
   function panel(id) {
-    for (const [button, section] of [['startPrompt','promptRoute'],['startOpen','openRoute']]) {
+    for (const [button, section] of [['startPrompt','promptRoute'],['startOpen','openRoute'],['startExample','exampleRoute']]) {
       const open = section === id;
       $(section).hidden = !open;
       $(button).setAttribute('aria-expanded', String(open));
     }
-    $(id === 'promptRoute' ? 'promptRouteTitle' : 'openRouteTitle').focus();
+    $(id.replace('Route', 'RouteTitle')).focus();
   }
   async function openFiles(list) {
     if (!list.length) return;
@@ -66,12 +66,20 @@ export function setupEntry({hasSaved, addFiles, example}) {
   for (const id of ['importPackage', 'importFolder']) $(id).addEventListener('change', event => {
     if (event.target.files.length) showWorkspace();
   });
-  $('startExample').onclick = async () => {
-    $('startExample').disabled = true;
-    try { await addFiles({...example},{replaceInitial:unusedStarter}); showWorkspace(); }
-    catch (error) { $('startStatus').textContent = error.message; }
-    finally { $('startExample').disabled = false; }
-  };
+  // One button per example (create/lesson-starters.mjs EXAMPLES): coding, maths and science.
+  $('exampleChoices').replaceChildren(...Object.entries(examples).map(([id, {label, blurb, files}]) => {
+    const button = document.createElement('button');
+    button.type = 'button'; button.dataset.example = id;
+    button.textContent = label; button.title = blurb; button.setAttribute('aria-label', `${label}: ${blurb}`);
+    button.onclick = async () => {
+      button.disabled = true;
+      try { await addFiles({...files},{replaceInitial:unusedStarter}); showWorkspace(); }
+      catch (error) { $('startStatus').textContent = error.message; }
+      finally { button.disabled = false; }
+    };
+    return button;
+  }));
+  $('startExample').onclick = () => panel('exampleRoute');
   $('startResume').hidden = !hasSaved;
   $('startResume').onclick = $('promptWorkspace').onclick = showWorkspace;
   $('backToStart').onclick = () => {

@@ -1436,7 +1436,9 @@ Open [Create lessons and courses](https://tutorials.learningwaypoints.com/code/c
 The opening screen offers **Start with a prompt**, **Open existing work**, and **Explore an example**.
 The starter prompt asks about your idea and learners without requiring configuration; its maintained text lives in
 `create/start-prompt.md`. Open generated `lesson.md` and supporting files as a new lesson, import a Create download or a lesson or course folder,
-or resume saved work. Exploring the Turtle example adds an editable copy without replacing existing lessons.
+or resume saved work. **Explore an example** offers a Coding (Turtle), Maths (balance board) or Science (forces board) lesson, each with
+its `design:` block filled in; it adds an editable copy without replacing existing lessons. All of Create's ready-made lessons
+(the examples, the "+ Add lesson" fallback and the settings-based starters) come from `create/lesson-starters.mjs`.
 Use **← Start** to return to these choices. Shared lessons and recorder returns open directly in the workspace.
 
 Inside the workspace, choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;

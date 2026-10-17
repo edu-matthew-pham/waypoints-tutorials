@@ -1,0 +1,28 @@
+inquiry:
+  q: "If an AI's program has no bugs, whose fault is a wrong answer?"
+  prompts:
+    - "The people who chose the examples, the people who labelled them, or the people who use the answer?"
+    - "Does it matter if no one meant it to go wrong?"
+  notes: "Responsibility can be shared. Avoid settling on one answer; the lesson shows two different causes (a wrong label, missing examples) with no bug in either."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Can perfect code be wrong?"
+    minutes: 3
+    do: |
+      Vote with a hand: can a program with no bugs still give a wrong answer? Two students explain opposite votes.
+    notes: "Don't resolve it yet; the Explore step does."
+  - at: run
+    kind: activity
+    title: "Break it on purpose"
+    minutes: 6
+    do: |
+      Use paper example cards. Group A swaps one banana's label to 'apple'. Group B removes every yellow, round card. Each group then sorts the same mystery fruit and reports its answer.
+    notes: "Two groups, two different mistakes, same 'program' (the rule they followed). Name them: wrong label, missing examples."
+  - at: modify
+    kind: discussion
+    title: "When the missing group is people"
+    minutes: 5
+    do: |
+      A voice app misheard Year 7 students more than adults. In threes: what examples were probably missing, and what would you ask the makers to check?
+    notes: "Keep the focus on who was missing from the examples, not on blaming individuals. Link to the inquiry question."

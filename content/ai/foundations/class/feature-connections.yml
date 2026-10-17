@@ -1,0 +1,28 @@
+inquiry:
+  q: "Should a fruit sorter care more about colour or about shape?"
+  prompts:
+    - "Which clue fools you more often?"
+    - "Who decides how much each clue counts?"
+  notes: "It depends on the fruit it will meet. In a trained model the weights come from examples, not a person's choice; here students set them by hand to see what weights do."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Yellow and round"
+    minutes: 3
+    do: |
+      Hold up (or draw) a yellow, round fruit. Banana or apple? Ask students who disagree to name the clue they trusted.
+    notes: "Collect 'colour' and 'shape' answers on the board; these become the two weights."
+  - at: run
+    kind: activity
+    title: "Weigh the clues"
+    minutes: 6
+    do: |
+      Pairs get a score card: colour weight and shape weight, each 0 to 3. For four fruit cards, add up the points for 'banana' and 'apple' and circle the winner. Then change one weight and score again.
+    notes: "This is the board's sum done on paper. Students should see one weight change flip a decision."
+  - at: investigate
+    kind: discussion
+    title: "Hidden weights"
+    minutes: 3
+    do: |
+      If you couldn't see the score card, only the answer, how could you work out which clue it trusted more?
+    notes: "By testing cases where the clues disagree. Leads into the Learning with AI section."

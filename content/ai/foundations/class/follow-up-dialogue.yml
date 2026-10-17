@@ -1,0 +1,28 @@
+inquiry:
+  q: "When an AI answer isn't what you wanted, is it better to ask again or to stop using it?"
+  prompts:
+    - "What would you lose by stopping?"
+    - "When is it worth asking a person instead?"
+  notes: "Both can be right. Follow-ups often fix misunderstandings; for some tasks a teacher, a book or your own attempt is the better route."
+activities:
+  - at: predict
+    kind: discussion
+    title: "What would you say next?"
+    minutes: 3
+    do: |
+      Read out an explanation full of words the class won't know. In pairs, write the next thing you would say to the assistant.
+    notes: "Collect a few: ask for simpler words, an example, one step at a time. All are follow-ups."
+  - at: run
+    kind: activity
+    title: "Redirect the conversation"
+    minutes: 6
+    do: |
+      In threes: one plays the assistant (reads from a card that assumes you own a microscope), one plays the learner, one notes each follow-up. Swap roles for a second card.
+    notes: "The observer's list is the evidence. Ask which follow-up changed the assistant's answer most."
+  - at: make
+    kind: check
+    title: "Too much help"
+    minutes: 2
+    do: |
+      The assistant gave the full solution when you wanted to practise. Write your next message on a mini whiteboard.
+    notes: "Look for a redirection such as 'Hide the answer and give me one hint'."

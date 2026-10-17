@@ -12,70 +12,8 @@ import { setupWorkspace } from './workspace.mjs';
 import { setupEntry } from './entry.mjs';
 import { REQUEST_FORM_URL } from './config.js';
 import { DESIGN } from './design-decisions.mjs';
+import { EXAMPLE, EXAMPLES } from './lesson-starters.mjs';
 
-const EXAMPLE = {
-  'lesson.md': `---
-title: My first turtle lesson
-summary: Predict, run and change a short drawing program.
-language: python
-app:
-  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground" 8123
-  url: http://127.0.0.1:8123/index.html
----
-A turtle walks across the screen, leaving a line behind.
-
-## Predict
-
-\`\`\`step
-stage: predict
-code: shape.py#square
-\`\`\`
-
-What shape will the turtle draw? Where will it finish?
-
-## Run
-
-\`\`\`step
-stage: run
-try: { starter: "shape.py#square", height: 420 }
-app: true
-query: { code: "@shape.py#square", speed: 8 }
-clip:
-  - caption: "The turtle repeats these commands four times."
-  - click: Run
-  - expect: { selector: "#status", contains: "Finished" }
-\`\`\`
-
-Run the program and compare it with your prediction.
-
-## Modify
-
-\`\`\`step
-stage: modify
-try: { starter: "shape.py#modify", height: 420 }
-\`\`\`
-
-Change the loop so the turtle draws a triangle.
-`,
-  'shape.py': `# region: square
-from turtle import *
-
-for i in range(4):
-    forward(100)
-    right(90)
-# endregion
-
-# region: modify
-from turtle import *
-
-for i in range(4):
-    forward(100)
-    right(90)
-
-# Change the code so it draws a triangle.
-# endregion
-`,
-};
 
 const $ = (id) => document.getElementById(id);
 const KEY = 'wp-create-v1';
@@ -442,7 +380,7 @@ sync(); render();
 try {
   workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},editLesson:text=>{files['lesson.md']=text;save();sync();schedule()},render});
   authoring=setupAuthoring({getFiles:()=>files,setStarterFactory:fn=>workspace.setStarterFactory(fn)});render();
-  setupEntry({hasSaved,addFiles:(next,options)=>workspace.addFiles(next,options),example:EXAMPLE});
+  setupEntry({hasSaved,addFiles:(next,options)=>workspace.addFiles(next,options),examples:EXAMPLES});
 } catch(error) { $('packageStatus').textContent=$('startStatus').textContent='Local draft/video storage unavailable: '+error.message+'. Allow browser storage and reload to open the workspace.'; }
 
 // Opening another text-only share link in the same tab is a hash navigation, not a page load.

@@ -82,7 +82,7 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 1. **Teacher page "Choosing AI tools for learning"** (built: `content/choosing-ai-tools.md`, published at `/choosing-ai-tools/`, linked from the home page).
    - The questions above.
    - Practical checks: age limits in the terms, student accounts, where data goes and how long it stays, teacher visibility and settings, LMS fit.
-   - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements.
+   - One dated table of example tools, each claim linked to the vendor's own pages. No endorsements. Built 18 Oct: Study and Learn (help), Thinking Mode (evidence), Teach in Microsoft 365 Copilot (teacher), quotes checked on the vendor pages that day, with what each page doesn't state. Khanmigo for Teachers left out (free for US teachers only, per its May 2024 post).
 2. **Small-trial template**, flexible: a fixed core plus optional parts per kind of tool. It is the Does AI Help Us Learn? research-design lesson applied to a real decision.
    - **Core (every trial):** what you are trialling and why; what you compare it with (existing practice, another tool, or a prompt in a general chatbot); who takes part and for how long; what you measure; a check one or two weeks later; student and teacher views; what would change your decision.
    - **Can we trust it? (every trial):** judge this alongside "does it work?"; a free prompt can match a tool on the first and still lose on this. Check:

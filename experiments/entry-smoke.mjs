@@ -37,9 +37,22 @@ try {
   const validatorDownload=page.waitForEvent('download');await page.getByRole('link',{name:'Download validator',exact:true}).click();
   assert.equal((await validatorDownload).suggestedFilename(),'validator.zip');
   const original=await page.locator('#courseLesson').inputValue();
-  await page.click('#backToStart');await page.click('#startExample');
-  await page.locator('#createWorkspace:visible').waitFor();
-  assert.equal(await page.locator('#courseLesson option').count(),2,'Example adds a lesson rather than replacing the course');
+  // Explore an example: a choice of coding, maths and science; each opens as a new lesson that validates.
+  const titles={coding:'My first turtle lesson',maths:'Equations as a balance',science:'Does balanced mean no forces?'};
+  let lessons=1;
+  for(const [id,title] of Object.entries(titles)){
+    await page.click('#backToStart');await page.click('#startExample');
+    assert.equal(await page.locator('#exampleChoices button').count(),3);
+    await page.click(`#exampleChoices [data-example="${id}"]`);
+    await page.locator('#createWorkspace:visible').waitFor();lessons++;
+    assert.equal(await page.locator('#courseLesson option').count(),lessons,'Example adds a lesson rather than replacing the course');
+    assert.ok((await page.locator('#text').inputValue()).includes('title: '+title),id);
+    await page.waitForFunction(()=>[...document.querySelectorAll('#designList textarea')].every(t=>t.value.trim()));
+    await page.click('#copyValidation');
+    await page.waitForFunction(()=>document.querySelector('#validationStatus').textContent.startsWith('Validation report copied'));
+    const result=JSON.parse(await page.evaluate(()=>navigator.clipboard.readText()));
+    assert.equal(result.valid,true,id+': '+JSON.stringify(result.results));
+  }
   await page.selectOption('#courseLesson',original);
   await page.waitForFunction(()=>document.querySelector('#text').value.includes('Community garden'));
   await page.click('#backToStart');await page.reload();await page.locator('#startOpen:enabled').waitFor();
@@ -50,7 +63,7 @@ try {
   await page.click('#backToStart');await page.click('#startOpen');
   page.once('dialog',dialog=>dialog.accept());await page.setInputFiles('#importPackage',packagePath);
   await page.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Course imported'));
-  assert.equal(await page.locator('#courseLesson option').count(),2);
+  assert.equal(await page.locator('#courseLesson option').count(),4);
   await page.click('#backToStart');await page.click('#startOpen');await page.setInputFiles('#startSourceFiles',{name:'notes.txt',mimeType:'text/plain',buffer:Buffer.from('Not a lesson')});
   await page.waitForFunction(()=>document.querySelector('#startStatus').textContent.includes('Select a lesson.md'));
   assert.equal(await page.locator('#createWorkspace').isVisible(),false,'Invalid imports remain on Start');
@@ -65,5 +78,5 @@ try {
   await page.locator('#createWorkspace:visible').waitFor();
   assert.equal(await page.locator('#createStart').isVisible(),false,'Recorder returns bypass Start');
   assert.deepEqual(errors,[]);
-  console.log('Entry routes, prompt/report copy and clipboard fallback, validator download, source/package imports, safe examples, resume, mobile and recorder returns passed');
+  console.log('Entry routes, prompt/report copy and clipboard fallback, validator download, source/package imports, coding, maths and science examples, resume, mobile and recorder returns passed');
 } finally {await browser?.close();server.kill()}

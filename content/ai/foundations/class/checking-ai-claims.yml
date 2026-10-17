@@ -1,0 +1,28 @@
+inquiry:
+  q: "If an AI answer sounds certain and you're in a hurry, is it fair to just trust it?"
+  prompts:
+    - "What would it cost if it were wrong?"
+    - "What's the quickest check that would still count?"
+  notes: "Students will differ on how much checking is worth it. Steer towards 'match the checking to the stakes' rather than 'always' or 'never'."
+activities:
+  - at: predict
+    kind: discussion
+    title: "What evidence would you need?"
+    minutes: 3
+    do: |
+      'Every seedling given more light grew taller.' In pairs, write what you would need to see to believe it.
+    notes: "Listen for 'every' and for measurements of each seedling, not an average."
+  - at: run
+    kind: activity
+    title: "Claims against the record"
+    minutes: 8
+    do: |
+      Show the board's seedling records on the screen and read out three claims. Groups write each claim on paper as supported, contradicted or not enough evidence, and note the row that decided it.
+    notes: "The noted row is the reasoning. A claim about plant health can't be checked from heights: 'not enough evidence', not 'false'."
+  - at: make
+    kind: discussion
+    title: "The poster fact"
+    minutes: 3
+    do: |
+      An AI gives a sure-sounding fact with a date and a name for tomorrow's poster, and no source. Thumbs up to use it, sideways to check first, down to leave it out. Two students explain.
+    notes: "Accept 'check first' and 'leave it out' with a reason. Ask what a quick check would look like."

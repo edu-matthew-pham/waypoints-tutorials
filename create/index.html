@@ -15,7 +15,7 @@
   <div class="start-routes">
     <button id="startPrompt" class="start-card" type="button" aria-controls="promptRoute" aria-expanded="false" disabled><strong>Start with a prompt</strong><span>Describe your idea and let an AI conversation help you plan and write.</span></button>
     <button id="startOpen" class="start-card" type="button" aria-controls="openRoute" aria-expanded="false" disabled><strong>Open existing work</strong><span>Import a lesson or course ZIP or folder, open source files, or resume your workspace.</span></button>
-    <button id="startExample" class="start-card" type="button" disabled><strong>Explore an example</strong><span>Try a short Turtle drawing lesson. It opens as a new lesson you can change.</span></button>
+    <button id="startExample" class="start-card" type="button" aria-controls="exampleRoute" aria-expanded="false" disabled><strong>Explore an example</strong><span>Open a short coding, maths or science lesson, with its design decisions filled in. It opens as a new lesson you can change.</span></button>
   </div>
   <p class="validator-help"><a href="validate.html">Validate a lesson</a> — paste or upload Markdown and copy its check results.</p>
   <section id="promptRoute" class="start-panel" aria-labelledby="promptRouteTitle" hidden>
@@ -31,6 +31,11 @@
     <h2 id="openRouteTitle" tabindex="-1">Open your work</h2>
     <div class="start-actions"><button id="startImportPackage" type="button">Import lesson / course ZIP</button><button id="startImportFolder" type="button">Open unzipped folder</button><button id="startImportSource" type="button">Open Markdown and code files</button><button id="startResume" type="button" hidden>Resume saved workspace</button></div>
     <p>Use a lesson or course downloaded from Create (as a ZIP, or the folder if your computer has already unzipped it), a lesson or course folder laid out like the site’s <code>content/</code> folders, or a lesson.md and its supporting files. Your saved workspace stays in this browser.</p>
+  </section>
+  <section id="exampleRoute" class="start-panel" aria-labelledby="exampleRouteTitle" hidden>
+    <h2 id="exampleRouteTitle" tabindex="-1">Choose an example</h2>
+    <div id="exampleChoices" class="start-actions"></div>
+    <p>Each is a short working lesson. <strong>Your design decisions</strong> beside the editor shows the choices behind it: the one idea, the misconception, the opening move, what the checks catch and what any video is for.</p>
   </section>
   <input id="startSourceFiles" type="file" multiple hidden>
   <p id="startStatus" role="status">Opening Create…</p>

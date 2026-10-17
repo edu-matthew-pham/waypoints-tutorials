@@ -1,0 +1,28 @@
+inquiry:
+  q: "Would a sorter trained on a hundred yellow bananas be better than one trained on ten bananas of different colours?"
+  prompts:
+    - "Better at which fruit?"
+    - "What would you test it on to find out?"
+  notes: "More examples help only if they cover what the sorter will meet. Variety can matter more than quantity; let students argue it before the board settles it."
+activities:
+  - at: predict
+    kind: activity
+    title: "Be the sorter"
+    minutes: 5
+    do: |
+      Show four labelled picture cards (yellow long banana, red round apple, and two more). Then show a green, long fruit. Students who are the 'sorter' may only use the cards to decide: what do they say?
+    notes: "Students use colour and shape just as the model will. Ask what they would need to see to be more sure."
+  - at: run
+    kind: discussion
+    title: "Which part is the label?"
+    minutes: 3
+    do: |
+      Write 'yellow | round | apple' on the board. Point to the features and the label. What would happen if the label were wrong?
+    notes: "Sets up the next lesson on mistakes. Keep it brief."
+  - at: investigate
+    kind: check
+    title: "Never seen it"
+    minutes: 2
+    do: |
+      Thumbs up or down: "The sorter called a green, long fruit a banana, so it knows what green bananas are."
+    notes: "Thumbs down. It matched the shape it had seen; it has no example of green and long. Ask one student to say why."

@@ -1,0 +1,28 @@
+inquiry:
+  q: "Is it cheating to let AI do part of your work?"
+  prompts:
+    - "Does it depend on which part?"
+    - "Does it depend on what the task is for?"
+  notes: "Let students disagree. The lesson's answer is that it depends on the goal: handing over the part you are meant to learn loses the learning; handing over checked busywork may not."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Would you hand it over?"
+    minutes: 3
+    do: |
+      'Format your already-checked dates into a table.' Thumbs up to hand it over, down to do it yourself. Then: 'Write the conclusion of your science report.'
+    notes: "Most will flip between the two. Ask what changed."
+  - at: run
+    kind: activity
+    title: "Sort the jobs"
+    minutes: 7
+    do: |
+      Groups get cards for the parts of a seedling report (plan, measure, table, graph, explanation, spelling). For the goal 'learn to write science explanations', sort each into do it myself, get help, hand it over.
+    notes: "Keep the sorted cards. They are reused in the next activity."
+  - at: make
+    kind: activity
+    title: "Same report, new goal"
+    minutes: 4
+    do: |
+      Change the goal to 'learn to make tables from data'. Move any cards that should change pile, and explain one move to another group.
+    notes: "The table card should move to 'do it myself'. Responsibility for the final report stays with the student either way."
