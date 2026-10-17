@@ -1430,7 +1430,7 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
 
 ## 13. Browser authoring, prompts and downloads
 
-Open [Create lessons and courses](https://tutorials.learningwaypoints.com/code/create/) from the tutorials page’s Create menu.
+Open [Create lessons and courses](https://tutorials.learningwaypoints.com/code/create/) from **Tutorials → Create lessons and courses** in the site navigation.
 Choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;
 it does not rewrite an existing lesson. The ordinary **Add lesson** button uses the selected settings once you change them.
 Maths, science, coding, design, inquiry and reading structures use the existing `language`, `shape` and step schema.

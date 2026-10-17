@@ -267,7 +267,7 @@ export function siteNav({ root = '', subjects = [], current = null, here = 'home
   const link = (href, text, on, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
   const menus = subjects.map((sub, i) => `<div class="sn-dd${sub.on ? ' on' : ''}">${link(sub.href, sub.title, sub.on && !sub.items.some((x) => x.on), 'sn-top')}` +
     (sub.items.length ? `<button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-sub-${i}" aria-label="${esc(sub.title)} pathways">▾</button><div class="sn-sub" id="sn-sub-${i}">${sub.items.map((x) => link(x.href, x.title, x.on)).join('')}</div>` : '') + `</div>`).join('');
-  const create = homeOn ? `<div class="sn-dd">${link('code/create/', 'Create', false, 'sn-top')}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-create" aria-label="Create tools">▾</button><div class="sn-sub" id="sn-create">${link('code/create/', 'Create a lesson', false)}${link('code/create/clip.html', 'Create a clip (experimental)', false)}</div></div>` : '';
+  const tutorials = `<div class="sn-dd${homeOn ? ' on' : ''}">${link('', 'Tutorials', homeOn, 'sn-top')}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-tutorials" aria-label="Tutorials menu">▾</button><div class="sn-sub" id="sn-tutorials">${link('', 'Browse tutorials', homeOn)}${link('code/create/', 'Create lessons and courses', false)}</div></div>`;
   const tools = !current ? '' :
     (current.playground ? link(`${current.href}playground/`, 'Playground', here === 'playground') : '') +
     (current.reference ? link(`${current.href}reference/`, 'Reference', here === 'reference') : '') +
@@ -275,7 +275,7 @@ export function siteNav({ root = '', subjects = [], current = null, here = 'home
   return `<nav class="sitenav" data-here="${esc(here)}" aria-label="Site"><div class="sn-in">` +
     `<a class="sn-brand" href="${MAIN_SITE}" title="Learning Waypoints: the main site">Learning Waypoints <span aria-hidden="true">↗</span></a>` +
     `<button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-main">Menu ▾</button>` +
-    `<div class="sn-main" id="sn-main">${link('', 'Tutorials', homeOn)}${menus}${create}<a href="${PREPARE_SITE}" title="Waypoints Prepare: slide decks and print resources for teachers">Prepare <span aria-hidden="true">↗</span></a></div>` +
+    `<div class="sn-main" id="sn-main">${tutorials}${menus}<a href="${PREPARE_SITE}" title="Waypoints Prepare: slide decks and print resources for teachers">Prepare <span aria-hidden="true">↗</span></a></div>` +
     `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
 }
 export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}
