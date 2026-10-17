@@ -44,6 +44,7 @@ try{
      const state=await frame.locator('body').evaluate(()=>window.__playground);
      assert.equal(state.error,null);assert.ok(await frame.locator('canvas').count());
    }else {assert.match(await frame.locator('#gpanel').innerText(),/Roll a word/);await frame.getByRole('button',{name:'Roll once',exact:true}).click();assert.match(await frame.locator('#gpanel').innerText(),/Total: 1/);}
+   const bounds=await page.locator('#demo').boundingBox();assert.ok(bounds.y>=0&&bounds.y+bounds.height<=900,'Playground stays in the recorded viewport');
    await page.screenshot({path:dir+'/'+kind+'.png'});
    await page.click('#stop');await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('WebM ready'));
    const recording=await page.evaluate(async()=>{const b=await (await fetch(document.querySelector('#download').href)).blob();return {bytes:b.size,type:b.type,header:Array.from(new Uint8Array(await b.slice(0,4).arrayBuffer()))}});
