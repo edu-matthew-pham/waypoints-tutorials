@@ -20,7 +20,7 @@ Does AI Help Us Learn? · Who decides what learning looks like?
 - I can explain the difference between feedback for learning (formative) and judging achievement (summative).
 - I can design a task that allows AI and still shows what a student learned.
 
-<!-- Speaker note: Before class: Unit 1 asked whether a product shows learning in general. This lesson is narrower: given a stated goal, which evidence fits it? The required Explore sort checks exactly that. The three waste-investigation learners are made up and do not equate working alone with quality. Keep both self-assessment and formal assessment in view. The aim is understanding assessment, not surveillance or AI detection. Assessment incentives (how grading changes how people study) are taught in Unit 4, lesson 3 only. -->
+<!-- Speaker note: Before class: **Core idea:** To show what you learned, give evidence that fits the goal, not just finished work. The minimum path is the three learners and the student's own project; designing a fair task for a class is wider. Unit 1 asked whether a product shows learning in general. This lesson is narrower: given a stated goal, which evidence fits it? The required Explore sort checks exactly that. The three waste-investigation learners are made up and do not equate working alone with quality. Keep both self-assessment and formal assessment in view. The aim is understanding assessment, not surveillance or AI detection. Assessment incentives (how grading changes how people study) are taught in Unit 4, lesson 3 only. The optional AI-tool step (typical width) is never needed to finish, and every check can be done without AI. Students use an AI tool only if the school allows it and you say so; check the tool's terms first, since many require users to be 13 or older. The step gives a no-AI version (a partner or a table). -->
 
 ---
 
@@ -132,12 +132,6 @@ Design one task for this unit that **allows AI** and still shows what the studen
 - What would your task still miss?
 
 <!-- Speaker note: For students who need more support: Give a two-column table: goal, and evidence that would fit it. For early finishers: Discuss how one task can be used for feedback and for a judgement without the two becoming the same. The hard part, on purpose: Students may think any help cancels out achievement, or that polished work proves learning. When students get stuck: A student just ranks the three learners. Ask: What exactly are we trying to check? Fix: Name the goal first, then look at the evidence again. -->
-
----
-
-## Evaluate: match evidence to a goal
-
-**Next lesson:** if different goals need different evidence, who decides which goals matter most?
 
 ---
 

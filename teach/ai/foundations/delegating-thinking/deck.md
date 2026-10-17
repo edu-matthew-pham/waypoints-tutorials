@@ -19,7 +19,7 @@ AI Foundations · Getting good help from AI
 - I can distinguish task completion from developing my own capability.
 - I can decide what to delegate and describe how I will check its output.
 
-<!-- Speaker note: Before class: Avoid treating delegation as inherently bad. The same task may be appropriate to delegate during performance but important to practise during learning. Follow school expectations for independent work and assessment. The core board is offline and requires no AI account. These habits apply to your own AI use too. Keep the parts you need to understand or control. -->
+<!-- Speaker note: Before class: Avoid treating delegation as inherently bad. The same task may be appropriate to delegate during performance but important to practise during learning. Follow school expectations for independent work and assessment. The core board is offline and requires no AI account. These habits apply to your own AI use too. Keep the parts you need to understand or control. The optional AI-tool step (typical width) is never needed to finish, and every check can be done without AI. Students use an AI tool only if the school allows it and you say so; check the tool's terms first, since many require users to be 13 or older. The step gives a no-AI version (a partner or a table). -->
 
 ---
 
@@ -120,6 +120,14 @@ Without the board, describe one situation where delegation helps and another whe
 ## Learning with AI: take responsibility for the outcome
 
 Self-regulation is not simply doing everything alone. It is deciding when to attempt, when to ask for help and when to delegate. Even if AI performs some work, **you remain responsible for deciding whether the result is appropriate and sufficiently checked**.
+
+---
+
+## Optional: try it with an AI tool
+
+Use the prompt below on a real task. Compare the reply with what you sorted: did it start from your goal? Did it suggest handing over the part you are trying to learn? You decide in the end, and you check anything you hand over.
+
+**No AI tool?** Make the three-column table yourself: keep, get help with, hand over and check.
 
 ---
 

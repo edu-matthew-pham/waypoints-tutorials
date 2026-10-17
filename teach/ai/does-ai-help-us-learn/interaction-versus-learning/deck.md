@@ -20,7 +20,7 @@ Does AI Help Us Learn? · When should we use AI?
 - I can explain how different kinds of help respond to a learner, with or without AI.
 - I can say what evidence would show that someone learned.
 
-<!-- Speaker note: Before class: All four kinds of help are made up, not captured from real apps or a real AI conversation. The student text names no products. If you want real examples, choose ones your students know (quiz games, maths practice sites, tutorial platforms); their features and AI use change often, so treat them as examples, not categories or endorsements. No account or platform is needed. Research words behind the four dimensions: behavioural interaction (what you do), cognitive engagement (what you think about), instructional responsiveness (how the help responds), and evidence of learning. -->
+<!-- Speaker note: Before class: **Core idea:** Being busy is not the same as learning: what counts is the thinking the help makes you do. The minimum path is one maths question and four kinds of help; changing the learner is typical. All four kinds of help are made up, not captured from real apps or a real AI conversation. The student text names no products. If you want real examples, choose ones your students know (quiz games, maths practice sites, tutorial platforms); their features and AI use change often, so treat them as examples, not categories or endorsements. No account or platform is needed. Research words behind the four dimensions: behavioural interaction (what you do), cognitive engagement (what you think about), instructional responsiveness (how the help responds), and evidence of learning. -->
 
 ---
 
@@ -154,12 +154,6 @@ Think of a learning app or game you have used. What does it make you do: click, 
 <!-- Speaker note: For students who need more support: Give a four-column table: what each kind of help makes the learner do, in one sentence. For early finishers: Use the same four dimensions on a writing task: sentence practice, peer feedback and open chat. The hard part, on purpose: Students may think a chat tool must teach best because it can say the most things. When students get stuck: A student ranks the kinds of help without naming a learner or goal. Ask: Does this learner need speed, an explanation of why, or to explore? Fix: Compare the same help for Learner 1 and Learner 2. -->
 
 <style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 24px; }</style>
-
----
-
-## Evaluate: what does interaction prove?
-
-**Next lesson:** if *how* help is given matters, how should we design it?
 
 ---
 

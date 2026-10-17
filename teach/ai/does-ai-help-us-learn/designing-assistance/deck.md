@@ -20,7 +20,7 @@ Does AI Help Us Learn? · When should we use AI?
 - I can explain why a beginner and a more experienced learner might need different help.
 - I can design a support plan that gets less over time and ends with a try without help.
 
-<!-- Speaker note: Before class: All three tutor designs are made-up examples, not evidence that they work, and not live AI. Do not imply hints always beat worked examples, or that fading guarantees remembering. The first Explain question checks goal 1 (scaffolding versus interactivity); the Evaluate question checks goal 2; the Elaborate plan shows goal 3. Background for teachers on how much tutoring helps: VanLehn (2011), "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems" (https://doi.org/10.1080/00461520.2011.611369), found step-based computer tutors close to human tutors in many studies. On trying first: Sinha and Kapur (2021), "When problem solving followed by instruction works" (https://doi.org/10.3102/00346543211019105), a meta-analysis finding that problem solving before instruction can help, depending on how it is designed. Both support "it depends on the design and the learner", not a single rule. -->
+<!-- Speaker note: Before class: **Core idea:** Good help fits what the learner already knows, and gets less over time. The minimum path is the three tutor designs; designing a tutor is typical and who should decide is wider. All three tutor designs are made-up examples, not evidence that they work, and not live AI. Do not imply hints always beat worked examples, or that fading guarantees remembering. The first Explain question checks goal 1 (scaffolding versus interactivity); the Evaluate question checks goal 2; the Elaborate plan shows goal 3. Background for teachers on how much tutoring helps: VanLehn (2011), "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems" (https://doi.org/10.1080/00461520.2011.611369), found step-based computer tutors close to human tutors in many studies. On trying first: Sinha and Kapur (2021), "When problem solving followed by instruction works" (https://doi.org/10.3102/00346543211019105), a meta-analysis finding that problem solving before instruction can help, depending on how it is designed. Both support "it depends on the design and the learner", not a single rule. -->
 
 ---
 
@@ -154,11 +154,9 @@ Plan the help:
 
 Now test your plan. What if the learner knows less than you thought? What if they ask for the answer and can't explain it?
 
-Who should decide how much help to give: the **student**, the **teacher**, or **the app itself**? Give one reason for two of these.
-
 <!-- Speaker note: For students who need more support: Offer a plan template: goal, model, guided try, feedback, new try without help. For early finishers: Think about a tutor that wrongly guesses how much the learner already knows. The hard part, on purpose: Students may think more struggle or more questions always means deeper learning. When students get stuck: A student always prefers hints. Ask: What if this is the first time they have ever seen this kind of task? Fix: Compare Dev (a beginner) with Mei (experienced). -->
 
-<style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 20px; }</style>
+<style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 24px; }</style>
 
 ---
 
@@ -169,6 +167,14 @@ Who should decide how much help to give: the **student**, the **teacher**, or **
 Plan a three-step support sequence for a classmate learning something you know well. Say when the help gets less, and how you'd check they can now do it alone.
 
 <!-- Speaker note: Check that each plan ends with a new attempt without help. -->
+
+---
+
+<span style="background:#fef3c7; color:#1a1a1a; border:1.5px solid #f59e0b; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">✍️ Activity</span>
+
+## Make: Elaborate: who decides how much help?
+
+Who should decide how much help to give: the **student**, the **teacher**, or **the app itself**? Give one reason for two of these.
 
 ---
 

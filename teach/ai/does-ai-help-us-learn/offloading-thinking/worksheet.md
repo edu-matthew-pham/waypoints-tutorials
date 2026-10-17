@@ -27,13 +27,13 @@ Does saving effort always cost you learning? Or can it free up time for somethin
 
 :::keep-together
 
-**In the high school maths study, students who practised with a plain AI chatbot did worse later without it. Why might that be?**
-
-☐ The chatbot did thinking they needed to practise
+**In one study, high school students who practised maths with a plain AI chatbot did worse later, on a test without it. Why might that be?**
 
 ☐ The chatbot gave them wrong answers
 
 ☐ The later test was harder for that group
+
+☐ The chatbot did thinking they needed to practise
 
 My prediction, and why:
 
@@ -149,15 +149,6 @@ Write a better rule that starts "Hand it over when…, but keep it when…". The
 Work in the tutorial. Plan first: what will you change, and how will you test it?
 
 {{box-4}}
-
-:::
-
-
-:::wider
-
-## Evaluate: what would show it helped?
-
-**Next lesson:** if some help is a good idea, why assume AI is the best way to give it?
 
 :::
 

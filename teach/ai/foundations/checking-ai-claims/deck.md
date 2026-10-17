@@ -19,7 +19,7 @@ AI Foundations · Getting good help from AI
 - I can compare a claim with independent evidence rather than relying on confidence.
 - I can explain the limits of a small dataset and identify missing evidence.
 
-<!-- Speaker note: Before class: The activity deliberately uses invented data with known values, not a claim of conducting authentic science. Students need to understand that supported means supported *by these observations*, not universally proved. The core board is offline and requires no AI account. -->
+<!-- Speaker note: Before class: The activity deliberately uses invented data with known values, not a claim of conducting authentic science. Students need to understand that supported means supported *by these observations*, not universally proved. The core board is offline and requires no AI account. The optional AI-tool step (typical width) is never needed to finish, and every check can be done without AI. Students use an AI tool only if the school allows it and you say so; check the tool's terms first, since many require users to be 13 or older. The step gives a no-AI version (a partner or a table). -->
 
 ---
 
@@ -120,6 +120,14 @@ Without using the board, explain why *supported by these observations* is differ
 ## Learning with AI: independent checking matters
 
 An AI can help you identify questions to investigate, but **asking the same model to confirm itself is not independent verification**. For claims that matter, look at the original evidence or a source you trust. Even apparently credible citations may be missing, irrelevant or misrepresented.
+
+---
+
+## Optional: try it with an AI tool
+
+Pick a claim you have read or heard, from an AI, a website or a friend, and use the prompt below. Compare the reply with the board: did it help you find a check of your own, or just tell you what to believe? Asking the same AI whether it was right is not checking.
+
+**No AI tool?** Do the same with a partner: one asks the questions, the other answers.
 
 ---
 

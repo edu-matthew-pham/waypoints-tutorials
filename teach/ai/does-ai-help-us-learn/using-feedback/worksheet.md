@@ -153,6 +153,17 @@ Work in the tutorial. Plan first: what will you change, and how will you test it
 :::
 
 
+:::typical
+
+## Optional: get feedback from an AI tool
+
+Use the prompt below on a question you are learning. Compare with the feedback you sorted: did the reply give you a next step, or only say right or wrong? Use it, try again, and check it: AI feedback can be wrong.
+
+**No AI tool?** Swap answers with a partner and write next-step feedback for each other.
+
+:::
+
+
 :::wider
 
 ## Evaluate: when is feedback doing its job?

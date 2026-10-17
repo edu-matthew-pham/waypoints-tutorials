@@ -20,7 +20,7 @@ Does AI Help Us Learn? · What does the evidence show?
 - I can explain why feeling sure after reading an explanation is not the same as being able to do it.
 - I can say what the Fernandes study shows and what it doesn't.
 
-<!-- Speaker note: Before class: Teaching move: check your own confidence against a fresh attempt, then meet a counterexample from research. The board is scripted, not a generative AI system. Source: Fernandes et al., Computers in Human Behavior (2026): https://doi.org/10.1016/j.chb.2025.108779. Adults (246 and 452 participants) on AI-assisted logical reasoning tasks. Do not present it as direct evidence about long-term school learning. Words used for students: metacognition ("thinking about your own thinking"), confidence that is too high or too low (the research word is calibration), and illusion of competence. Teacher: Link to choosing what to do next: practise, ask for help, or move on. -->
+<!-- Speaker note: Before class: **Core idea:** Feeling sure is a guess about yourself; check it with a new try, without help. The minimum path is the student's own confidence check on the board; the Fernandes study is typical. Teaching move: check your own confidence against a fresh attempt, then meet a counterexample from research. The board is scripted, not a generative AI system. Source: Fernandes et al., Computers in Human Behavior (2026): https://doi.org/10.1016/j.chb.2025.108779. Adults (246 and 452 participants) on AI-assisted logical reasoning tasks. Do not present it as direct evidence about long-term school learning. Words used for students: metacognition ("thinking about your own thinking"), confidence that is too high or too low (the research word is calibration), and illusion of competence. The optional AI-tool step (typical width) is never needed to finish, and every check can be done without AI. Students use an AI tool only if the school allows it and you say so; check the tool's terms first, since many require users to be 13 or older. The step gives a no-AI version (a partner or a table). Teacher: Link to choosing what to do next: practise, ask for help, or move on. -->
 
 ---
 
@@ -158,15 +158,16 @@ Could both be right? Would it help if the tool made you test yourself? Would the
 
 **Inquiry record (optional):** note one time feeling sure helped you, one time it misled you, and one way to check.
 
+- **What the study found:** Read the study description, then check what it supports.
+- **Two claims:** Discuss the two claims above with a partner.
+
 <!-- Speaker note: For students who need more support: Use low, medium and high rather than numbers or percentages. For early finishers: Design a better measure: several new questions, and look for both too-high and too-low confidence. The hard part, on purpose: Students may treat one wrong confidence guess as proof they misunderstand the whole topic. When students get stuck: A student treats the board as proof that AI causes overconfidence. Ask: Was a live AI used here? What comparison would you need? Fix: Call the board a prepared example and go back to the published study. -->
 
-<style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 17px; }</style>
+<style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 16px; }</style>
 
 ---
 
-## Evaluate: what does the study support?
-
-A student says: "I checked the AI explanation and it made sense, so I don't need to practise." What would you suggest they do to check? What would that still not prove?
+## Evaluate: is feeling sure enough?
 
 **Next lesson:** if confidence and test scores can both mislead, how would you design a better study of AI and learning?
 

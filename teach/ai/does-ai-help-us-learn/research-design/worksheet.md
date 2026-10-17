@@ -121,7 +121,18 @@ Your school is deciding whether to add an AI helper to a computer maths tutorial
 
 Swap designs with someone who cares about a different outcome. Let them find a weakness. Improve your design if their point is good.
 
-**Extension: a theory to test.** In 2026, Nakamura published a review called [*Augmentation or Erosion?*](https://doi.org/10.1007/s10648-026-10224-6). It is a **theory**, not an experiment. It suggests that handing thinking to AI hurts learning most when that thinking **is the skill you are learning**, and less when it is something **on the edge** of the skill.
+Work in the tutorial. Plan first: what will you change, and how will you test it?
+
+{{box-4}}
+
+:::
+
+
+:::wider
+
+## Make: Elaborate: a theory to test
+
+In 2026, Nakamura published a review called [*Augmentation or Erosion?*](https://doi.org/10.1007/s10648-026-10224-6). It is a **theory**, not an experiment. It suggests that handing thinking to AI hurts learning most when that thinking **is the skill you are learning**, and less when it is something **on the edge** of the skill.
 
 - Formatting a table you have already checked is on the edge of learning to read results. Handing it over might free time to think.
 - Asking AI to explain what the results mean could skip the very skill you are practising.

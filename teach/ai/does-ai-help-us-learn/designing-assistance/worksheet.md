@@ -144,6 +144,17 @@ Plan the help:
 
 Now test your plan. What if the learner knows less than you thought? What if they ask for the answer and can't explain it?
 
+Work in the tutorial. Plan first: what will you change, and how will you test it?
+
+{{box-4}}
+
+:::
+
+
+:::wider
+
+## Make: Elaborate: who decides how much help?
+
 Who should decide how much help to give: the **student**, the **teacher**, or **the app itself**? Give one reason for two of these.
 
 Work in the tutorial. Plan first: what will you change, and how will you test it?

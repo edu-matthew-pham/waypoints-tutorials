@@ -20,7 +20,7 @@ Does AI Help Us Learn? · What does the evidence show?
 - I can spot which part of a headline goes further than a study shows.
 - I can explain why 'not clearly different' is not the same as 'exactly equal'.
 
-<!-- Speaker note: Before class: Teaching move: evidence confrontation. The lesson uses the published results as of October 2026; have the papers or summaries ready. Bastani et al. (2025), PNAS: https://doi.org/10.1073/pnas.2422633122. Three arms: control (books and notes), GPT Base, GPT Tutor (teacher-designed prompts with hints and safeguards). Both AI arms did better during practice; on the later unassisted exam GPT Base was about 17% below control and GPT Tutor was not statistically distinguishable from control. Do not say GPT Tutor failed or succeeded outright, and explain why "not distinguishable" is not proof of equivalence. Kestin et al. (2025), Scientific Reports: https://doi.org/10.1038/s41598-025-97652-6. 194 undergraduate physics students, a crossover design (each student had one topic with the AI tutor and one in an instructor-led active-learning class, order randomised). Immediate post-tests favoured the AI tutor; pace, format and feedback changed together, and long-term learning was not tested. Student text says "plain AI chatbot" for GPT Base and "AI tutor with teacher-written hints" for GPT Tutor. Teacher: Ask which other tools neither study compared AI with (a well-designed non-AI computer tutor). -->
+<!-- Speaker note: Before class: **Core idea:** Before you believe that help works, ask: measured when, compared with what, and does the claim fit? The minimum path is Mia's spelling helper and an advert. The two real studies (sort, careful reading, what they can claim) are typical; the two careful claims are wider. Teaching move: evidence confrontation. The lesson uses the published results as of October 2026; have the papers or summaries ready. Bastani et al. (2025), PNAS: https://doi.org/10.1073/pnas.2422633122. Three arms: control (books and notes), GPT Base, GPT Tutor (teacher-designed prompts with hints and safeguards). Both AI arms did better during practice; on the later unassisted exam GPT Base was about 17% below control and GPT Tutor was not statistically distinguishable from control. Do not say GPT Tutor failed or succeeded outright, and explain why "not distinguishable" is not proof of equivalence. Kestin et al. (2025), Scientific Reports: https://doi.org/10.1038/s41598-025-97652-6. 194 undergraduate physics students, a crossover design (each student had one topic with the AI tutor and one in an instructor-led active-learning class, order randomised). Immediate post-tests favoured the AI tutor; pace, format and feedback changed together, and long-term learning was not tested. The authors themselves say structured AI tutoring may not beat active learning for "complex synthesis of multiple concepts and higher-order critical thinking": the lessons were first encounters with new material. Student text says "plain AI chatbot" for GPT Base and "AI tutor with teacher-written hints" for GPT Tutor. Teacher: Ask which other tools neither study compared AI with (a well-designed non-AI computer tutor). -->
 
 ---
 
@@ -71,7 +71,7 @@ Open the lesson at this step and try it together.
 
 [tutorials.learningwaypoints.com/ai/does-ai-help-us-learn/research-findings/?full=step-2#step-2](https://tutorials.learningwaypoints.com/ai/does-ai-help-us-learn/research-findings/?full=step-2#step-2)
 
-<!-- Speaker note: **Study A: high school maths.** In [Bastani and colleagues' 2025 study](https://doi.org/10.1073/pnas.2422633122), students practised maths in three groups: - books and notes, with no AI; - a plain AI chatbot that answered whatever they asked; - an AI tutor that teachers had set up with hints and limits. Both AI groups did better **while practising**. Later, everyone sat a test **without AI**. The plain chatbot group scored about **17% lower** than the books-and-notes group. The AI tutor group's score was **not clearly different** from the books-and-notes group. **Study B: university physics.** In [Kestin and colleagues' 2025 study](https://doi.org/10.1038/s41598-025-97652-6), 194 university students each learned one topic with an AI tutor and another in a lively class run by a teacher. The order was random, and every student tried both. Tests **straight after** each topic favoured the AI tutor. But many things were different between the two: the pace, the format, the feedback, and who was helping. The study did not test what students remembered months later. -->
+<!-- Speaker note: When anyone says help **works**, ask three questions: 1. **Measured when?** With the help, straight after, or a week later without it? 2. **Compared with what?** No help? A paper list? A good teacher? 3. **Does the claim fit?** "It works" can say more than the scores show. -->
 
 <!-- Speaker note: Teacher: the sort is the first look at the methods; go through any fact students placed in the wrong study. -->
 
@@ -79,11 +79,23 @@ Open the lesson at this step and try it together.
 
 <span style="background:#fef3c7; color:#1a1a1a; border:1.5px solid #f59e0b; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">✍️ Activity</span>
 
-## Which study? <span style="font-size:.6em;color:#64748b">(5 min)</span>
+## Measured when? Compared with what? <span style="font-size:.6em;color:#64748b">(5 min)</span>
 
-In pairs, sort the fact cards into Study A (high school maths) and Study B (university physics). Then say one thing each study compared.
+In pairs, ask Mia's three questions about her spelling helper: measured when, compared with what, does the claim fit? Then sort the fact cards into Study A (high school maths) and Study B (university physics), and say one thing each study compared.
 
-<!-- Speaker note: Check the comparisons: A compared AI with books and notes; B compared an AI tutor with a teacher-led active class. -->
+<!-- Speaker note: Mia's case is the minimum path; the studies are typical width. Check the comparisons: A compared AI with books and notes; B compared an AI tutor with a teacher-led active class. -->
+
+---
+
+<span style="background:#fef3c7; color:#1a1a1a; border:1.5px solid #f59e0b; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">✍️ Activity</span>
+
+## Explore it
+
+Open the lesson at this step and try it together.
+
+[tutorials.learningwaypoints.com/ai/does-ai-help-us-learn/research-findings/?full=step-3#step-3](https://tutorials.learningwaypoints.com/ai/does-ai-help-us-learn/research-findings/?full=step-3#step-3)
+
+<!-- Speaker note: **Study A: high school maths.** In [Bastani and colleagues' 2025 study](https://doi.org/10.1073/pnas.2422633122), students practised maths in three groups: - books and notes, with no AI; - a plain AI chatbot that answered whatever they asked; - an AI tutor that teachers had set up with hints and limits. Both AI groups did better **while practising**. Later, everyone sat a test **without AI**. The plain chatbot group scored about **17% lower** than the books-and-notes group. The AI tutor group's score was **not clearly different** from the books-and-notes group. **Study B: university physics.** In [Kestin and colleagues' 2025 study](https://doi.org/10.1038/s41598-025-97652-6), 194 university students each learned one topic with an AI tutor and another in a lively class run by a teacher. The order was random, and every student tried both. Tests **straight after** each topic favoured the AI tutor. But many things were different between the two: the pace, the format, the feedback, and who was helping. The study did not test what students remembered months later. -->
 
 ---
 
@@ -146,9 +158,15 @@ Could both be fair? Which bigger claims would **not** follow? Neither study comp
 
 ## Evaluate: what can we claim?
 
-A principal says: "Research proves we should replace our computer practice tasks with AI tutors." What comparison would you need to test that fairly?
+Write the question you would ask Mia, or the advert, before you believe "it works".
 
 **Next lesson:** even when we know a student's score, do they know how well they are really doing?
+
+---
+
+## Evaluate: what can the two studies claim?
+
+A principal says: "Research proves we should replace our computer practice tasks with AI tutors." What comparison would you need to test that fairly?
 
 ---
 

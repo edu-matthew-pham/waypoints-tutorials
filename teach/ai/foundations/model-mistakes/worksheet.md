@@ -59,7 +59,7 @@ Try it on the board in the tutorial. Was your prediction right? What was differe
 A model can go wrong in at least two ways.
 
 - **Wrong labels.** If examples are labelled wrongly, the model learns the wrong answer. Real AI is often trained on labels made quickly by people, and some are wrong.
-- **Missing examples.** If no examples are like the new case, the model guesses from ones that are not really similar. Real AI can struggle with things that were rare or missing in its training data.
+- **Missing examples.** If no examples are like the new case, the model guesses from ones that are not really similar. Real AI can struggle with things that were rare or missing in its training data. Generalising to new cases only works as well as the examples it learned from.
 
 In both cases, the program worked. The **examples** were the problem.
 

@@ -20,7 +20,7 @@ Does AI Help Us Learn? · When should we use AI?
 - I can explain how changing the goal changes what I should keep.
 - I can explain why a beginner and an expert might need different help.
 
-<!-- Speaker note: Before class: The lesson opens by recalling the Bastani result from Unit 2, lesson 1, rather than re-teaching research design. The scenarios are learning activities, not assessed work. Keep the learning goal visible. Nakamura's 2026 augmentation–erosion framework (https://doi.org/10.1007/s10648-026-10224-6) is theoretical, not a tested decision rule. The paper says "peripheral" and "constitutive" (the lesson says "on the edge" and "is the skill"), on a graded continuum, and it is about STEM learning; the persuasive-writing example extends it. The expertise reversal effect itself is well established (Kalyuga, Ayres, Chandler & Sweller, 2003, https://doi.org/10.1207/S15326985EP3801_4); only its role in AI offloading is untested. Background on cognitive offloading and what it means for schools: Lodge and Loble (2026), "Artificial intelligence, cognitive offloading and implications for education" (University of Technology Sydney), https://doi.org/10.71741/4pyxmbnjaq.31302475. -->
+<!-- Speaker note: Before class: **Core idea:** Keep the thinking that is the skill you are learning; what that is depends on your goal, and on you. The minimum path is the persuasive-paragraph sort under two goals and the three learners; testing a rule is typical. The lesson opens with the Bastani result from Unit 2, lesson 1 (a typical step there), stated so it stands alone, rather than re-teaching research design. The scenarios are learning activities, not assessed work. Keep the learning goal visible. Nakamura's 2026 augmentation–erosion framework (https://doi.org/10.1007/s10648-026-10224-6) is theoretical, not a tested decision rule. The paper says "peripheral" and "constitutive" (the lesson says "on the edge" and "is the skill"), on a graded continuum, and it is about STEM learning; the persuasive-writing example extends it. The expertise reversal effect itself is well established (Kalyuga, Ayres, Chandler & Sweller, 2003, https://doi.org/10.1207/S15326985EP3801_4); only its role in AI offloading is untested. Background on cognitive offloading and what it means for schools: Lodge and Loble (2026), "Artificial intelligence, cognitive offloading and implications for education" (University of Technology Sydney), https://doi.org/10.71741/4pyxmbnjaq.31302475. -->
 
 ---
 
@@ -41,11 +41,11 @@ Does AI Help Us Learn? · When should we use AI?
 
 ## Engage: predict
 
-**In the high school maths study, students who practised with a plain AI chatbot did worse later without it. Why might that be?**
+**In one study, high school students who practised maths with a plain AI chatbot did worse later, on a test without it. Why might that be?**
 
-- The chatbot did thinking they needed to practise
 - The chatbot gave them wrong answers
 - The later test was harder for that group
+- The chatbot did thinking they needed to practise
 
 <!-- Speaker note: What happens: The study didn't test why. One likely reason is that the chatbot did thinking the students needed to practise. That is today's question: which thinking should you keep? Take two or three predictions before anyone runs it. -->
 
@@ -159,12 +159,6 @@ Write a better rule that starts "Hand it over when…, but keep it when…". The
 <!-- Speaker note: For students who need more support: Offer a sentence frame: If the goal is..., handing over... may... because... For early finishers: What happens when a learner is an expert in one subject and a beginner in another? The hard part, on purpose: Students may treat all saved effort as bad, or all finished work as learning. When students get stuck: A student wants a rule that works every time. Ask: What changes if the goal changes? Fix: Go back to the sort: spelling moved when the goal changed. -->
 
 <style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 18px; }</style>
-
----
-
-## Evaluate: what would show it helped?
-
-**Next lesson:** if some help is a good idea, why assume AI is the best way to give it?
 
 ---
 

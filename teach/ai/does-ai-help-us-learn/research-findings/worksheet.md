@@ -55,6 +55,20 @@ Try it on the board in the tutorial. Was your prediction right? What was differe
 
 {{lines-2}}
 
+
+:::typical
+
+## Explore
+
+Try it on the board in the tutorial. Was your prediction right? What was different?
+
+{{lines-2}}
+
+:::
+
+
+:::typical
+
 ## Explain: read a claim carefully
 
 When you read a claim about a study, ask three questions.
@@ -106,8 +120,10 @@ When you read a claim about a study, ask three questions.
 
 :::
 
+:::
 
-:::typical
+
+:::wider
 
 ## Make: Elaborate: two careful claims
 
@@ -131,9 +147,18 @@ Work in the tutorial. Plan first: what will you change, and how will you test it
 
 ## Evaluate: what can we claim?
 
-A principal says: "Research proves we should replace our computer practice tasks with AI tutors." What comparison would you need to test that fairly?
+Write the question you would ask Mia, or the advert, before you believe "it works".
 
 **Next lesson:** even when we know a student's score, do they know how well they are really doing?
+
+:::
+
+
+:::typical
+
+## Evaluate: what can the two studies claim?
+
+A principal says: "Research proves we should replace our computer practice tasks with AI tutors." What comparison would you need to test that fairly?
 
 :::
 

@@ -20,7 +20,7 @@ Does AI Help Us Learn? · What does the evidence show?
 - I can choose a test that fits a claim (during, straight after, or weeks later).
 - I can design a fair comparison for an AI feature and say what it still couldn't show.
 
-<!-- Speaker note: Before class: Teaching move: take a study apart, then rebuild it. The AI-class and worksheet-class table, and the "same tutorial with and without an AI helper" design, are made up. Do not imply a study like this has been done. Words used for students: a confounding difference ("a difference that could explain the result instead") and validity ("does the test give good evidence for this claim?"). Nakamura's October 2026 paper, "Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning", is a theoretical review (https://doi.org/10.1007/s10648-026-10224-6), now in the Elaborate extension. Its terms are "peripheral" and "constitutive", on a graded continuum; the student text says "on the edge" and "is the skill". Its seven propositions are testable predictions, not experimental findings. Keep it separate from the studies in Unit 2, lessons 1 and 2. Teacher: Extension: ask what result would prove the 'is the skill / on the edge' prediction wrong. -->
+<!-- Speaker note: Before class: **Core idea:** A fair comparison changes one thing, and its test must fit the claim. The minimum path is the made-up school comparison; designing a study is typical and Nakamura's theory is wider. Teaching move: take a study apart, then rebuild it. The AI-class and worksheet-class table, and the "same tutorial with and without an AI helper" design, are made up. Do not imply a study like this has been done. Words used for students: a confounding difference ("a difference that could explain the result instead") and validity ("does the test give good evidence for this claim?"). Nakamura's October 2026 paper, "Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning", is a theoretical review (https://doi.org/10.1007/s10648-026-10224-6), now in the Elaborate extension. Its terms are "peripheral" and "constitutive", on a graded continuum; the student text says "on the edge" and "is the skill". Its seven propositions are testable predictions, not experimental findings. Keep it separate from the studies in Unit 2, lessons 1 and 2. Teacher: Extension: ask what result would prove the 'is the skill / on the edge' prediction wrong. -->
 
 ---
 
@@ -137,18 +137,9 @@ Your school is deciding whether to add an AI helper to a computer maths tutorial
 
 Swap designs with someone who cares about a different outcome. Let them find a weakness. Improve your design if their point is good.
 
-**Extension: a theory to test.** In 2026, Nakamura published a review called [*Augmentation or Erosion?*](https://doi.org/10.1007/s10648-026-10224-6). It is a **theory**, not an experiment. It suggests that handing thinking to AI hurts learning most when that thinking **is the skill you are learning**, and less when it is something **on the edge** of the skill.
-
-- Formatting a table you have already checked is on the edge of learning to read results. Handing it over might free time to think.
-- Asking AI to explain what the results mean could skip the very skill you are practising.
-
-It isn't two boxes. The same job can be closer to the centre for one learner or goal, and closer to the edge for another. Nakamura's words are *constitutive* (part of the skill) and *peripheral* (on the edge).
-
-How would you test this idea? Compare students who get full AI answers with students who get only hints. Predict what a test a month later would show. What result would prove your prediction wrong? Would a good non-AI computer tutor give the same benefit?
-
 <!-- Speaker note: For students who need more support: Give a fill-in table: goal, groups, what stays the same, what we measure and when, what we still can't tell. For early finishers: How would students' prior knowledge, school resources or different values change who the result applies to? The hard part, on purpose: Students may think adding a comparison group automatically isolates the AI, even when the groups differ in other ways. When students get stuck: A student compares AI only with no help. Ask: What is the best way a student could learn this today, without AI? Fix: Compare the same lesson with and without the AI feature, with the same time. -->
 
-<style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 16px; }</style>
+<style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 19px; }</style>
 
 ---
 
@@ -159,6 +150,23 @@ How would you test this idea? Compare students who get full AI answers with stud
 In groups, design a study of whether AI helps students learn one topic. Name: who takes part, what each group gets, what you measure, and when (straight away and weeks later).
 
 <!-- Speaker note: Groups swap designs and find one thing that could make the result misleading (different time on task, different teachers, only an immediate test). -->
+
+---
+
+<span style="background:#fef3c7; color:#1a1a1a; border:1.5px solid #f59e0b; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">✍️ Activity</span>
+
+## Make: Elaborate: a theory to test
+
+In 2026, Nakamura published a review called [*Augmentation or Erosion?*](https://doi.org/10.1007/s10648-026-10224-6). It is a **theory**, not an experiment. It suggests that handing thinking to AI hurts learning most when that thinking **is the skill you are learning**, and less when it is something **on the edge** of the skill.
+
+- Formatting a table you have already checked is on the edge of learning to read results. Handing it over might free time to think.
+- Asking AI to explain what the results mean could skip the very skill you are practising.
+
+It isn't two boxes. The same job can be closer to the centre for one learner or goal, and closer to the edge for another. Nakamura's words are *constitutive* (part of the skill) and *peripheral* (on the edge).
+
+How would you test this idea? Compare students who get full AI answers with students who get only hints. Predict what a test a month later would show. What result would prove your prediction wrong? Would a good non-AI computer tutor give the same benefit?
+
+<style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 16px; }</style>
 
 ---
 

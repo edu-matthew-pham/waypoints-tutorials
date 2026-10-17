@@ -20,7 +20,7 @@ Does AI Help Us Learn? · Who decides what learning looks like?
 - I can describe different, reasonable things people want from school.
 - I can give a careful answer to 'Does AI help us learn?' using evidence and an objection.
 
-<!-- Speaker note: Before class: Keep students' own decisions at the centre; this is not a school policy exercise. The voices in the sort are simplified and made up, not representatives of their groups. Assessment incentives are taught here only (the previous lesson leaves them out). Words used for students: incentives (pushes that come from what is marked or rewarded) and agency (having a say over your own learning). Longer arguments, journals, maps and discussions remain optional, teacher-chosen formats. -->
+<!-- Speaker note: Before class: **Core idea:** Different people want different things from learning, and your answer to the course question depends on the goal and on what you value. The minimum path is the voices sort, the student's own ranking and their answer to the course question. Marks, agency and predictions (who decides, in society) are wider; the study-based answer is typical. Keep students' own decisions at the centre; this is not a school policy exercise. The voices in the sort are simplified and made up, not representatives of their groups. Assessment incentives are taught here only (the previous lesson leaves them out). Words used for students: incentives (pushes that come from what is marked or rewarded) and agency (having a say over your own learning). Longer arguments, journals, maps and discussions remain optional, teacher-chosen formats. -->
 
 ---
 
@@ -146,7 +146,7 @@ Go back to the question: **Does AI help us learn?**
 Build your answer. Include:
 
 - What *learning* means in the cases you're talking about.
-- One study from Unit 2, and what it actually measured.
+- One piece of evidence: a learner from this course, or a study from Unit 2 and what it actually measured.
 - How the goal, the learner's experience, other tools and the design of the help change the answer.
 - An objection a sensible person might raise.
 - A situation that would change your mind.
@@ -171,11 +171,17 @@ The question may stay open. But your reasons can be more precise: what matters, 
 
 ---
 
+## Evaluate: a stronger answer, with the studies
+
+If you read the two studies in Unit 2: which answer uses them best, and which goes further than they show?
+
+---
+
 <span style="background:#dbeafe; color:#1a1a1a; border:1.5px solid #3b82f6; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">💬 Discussion</span>
 
 ## Return to the course question <span style="font-size:.6em;color:#64748b">(6 min)</span>
 
-Does AI help us learn? Offer a conditional claim, one research finding, one strong objection, and what might change your mind.
+Does AI help us learn? Offer a conditional claim, one piece of evidence (a learner from the course, or a research finding), one strong objection, and what might change your mind.
 
 <!-- Speaker note: A spoken discussion is sufficient; a formal final submission is an optional teacher decision. -->
 

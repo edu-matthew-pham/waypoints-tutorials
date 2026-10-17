@@ -132,6 +132,17 @@ Self-regulation is not simply doing everything alone. It is deciding when to att
 :::
 
 
+:::typical
+
+## Optional: try it with an AI tool
+
+Use the prompt below on a real task. Compare the reply with what you sorted: did it start from your goal? Did it suggest handing over the part you are trying to learn? You decide in the end, and you check anything you hand over.
+
+**No AI tool?** Make the three-column table yourself: keep, get help with, hand over and check.
+
+:::
+
+
 ## Exit ticket
 
 :::keep-together

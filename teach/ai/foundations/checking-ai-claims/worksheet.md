@@ -132,6 +132,17 @@ An AI can help you identify questions to investigate, but **asking the same mode
 :::
 
 
+:::typical
+
+## Optional: try it with an AI tool
+
+Pick a claim you have read or heard, from an AI, a website or a friend, and use the prompt below. Compare the reply with the board: did it help you find a check of your own, or just tell you what to believe? Asking the same AI whether it was right is not checking.
+
+**No AI tool?** Do the same with a partner: one asks the questions, the other answers.
+
+:::
+
+
 ## Exit ticket
 
 :::keep-together

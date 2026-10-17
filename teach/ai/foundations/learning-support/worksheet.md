@@ -132,6 +132,17 @@ Before asking AI for help, consider what you already know and what you need to p
 :::
 
 
+:::typical
+
+## Optional: try it with an AI tool
+
+Use the prompt below on something you are learning. Then compare the reply with the board: did it give one hint and leave the next step to you, or hand you the answer? If it gave the answer, say so and ask again.
+
+**No AI tool?** Ask a partner to be the tutor and follow the same prompt.
+
+:::
+
+
 ## Exit ticket
 
 :::keep-together

@@ -631,9 +631,9 @@ function reveal(){box.querySelector('.rs-mine').textContent=ta.value.trim()||'(n
 if((load().done||{})[key])reveal();
 function wrong(t){tries++;bad(t);if(tries>=3)sh.hidden=false}
 sh.addEventListener('click',function(){reveal();msg.className='msg';msg.textContent='Compare, then fix your answer and choices above.'});
-go2.addEventListener('click',function(){if(!ta.value.trim())return bad('Write your working first: your own notes and reasons. This part is not marked.');
+go2.addEventListener('click',function(){if(!ta.value.trim())return bad(mk.maths===false?'Write your thinking first: your own notes and reasons. This part is not marked.':'Write your working first: your own notes and reasons. This part is not marked.');
 if(ai&&mk.answer!==null){var v=ai.value.replace(/°|degrees?/g,'').trim();if(!v)return bad('Type your answer.');try{var a=WPM.splitAnswer(v).value;if(!WPM.equivalent(a,mk.answer)){for(var i=0;i<mk.feedback.length;i++){try{if(WPM.equivalent(a,String(mk.feedback[i][0])))return wrong(mk.feedback[i][1])}catch(e){}}return wrong('Not quite: check your answer against your working.')}}catch(e){return wrong(e.message)}}
-var fs=box.querySelectorAll('.rs-pick');for(var j=0;j<fs.length;j++){var pk=mk.picks[j],ch=fs[j].querySelector('input:checked');if(!ch)return bad('Choose a reason for each question.');var n=Number(ch.value);if(n!==pk.answer)return wrong('Not that reason. '+(pk.feedback[n]||'Look at where the two angles are.'))}
+var fs=box.querySelectorAll('.rs-pick');for(var j=0;j<fs.length;j++){var pk=mk.picks[j],ch=fs[j].querySelector('input:checked');if(!ch)return bad('Choose a reason for each question.');var n=Number(ch.value);if(n!==pk.answer)return wrong('Not that reason. '+(pk.feedback[n]||(mk.maths===false?'Look at the case again.':'Look at where the two angles are.')))}
 reveal();sh.hidden=true;win();store()})}
 if(ty==='board'){var want=JSON.parse(box.dataset.expect||'{}');
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||(m.kind==='maths'?'board':m.kind)!==(box.dataset.kind==='maths'?'board':box.dataset.kind)||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;

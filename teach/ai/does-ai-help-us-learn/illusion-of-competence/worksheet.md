@@ -144,6 +144,10 @@ Could both be right? Would it help if the tool made you test yourself? Would the
 
 **Inquiry record (optional):** note one time feeling sure helped you, one time it misled you, and one way to check.
 
+**What the study found.** Read the study description, then check what it supports.
+
+**Two claims.** Discuss the two claims above with a partner.
+
 Work in the tutorial. Plan first: what will you change, and how will you test it?
 
 {{box-4}}
@@ -151,11 +155,20 @@ Work in the tutorial. Plan first: what will you change, and how will you test it
 :::
 
 
+:::typical
+
+## Optional: check your confidence with an AI tool
+
+Use the prompt below on something you think you understand. Compare with the board: did how sure you felt match how you did? An AI can mark you wrong when you are right, or the other way round, so check anything that surprises you.
+
+**No AI tool?** A partner can ask you questions from your notes.
+
+:::
+
+
 :::wider
 
-## Evaluate: what does the study support?
-
-A student says: "I checked the AI explanation and it made sense, so I don't need to practise." What would you suggest they do to check? What would that still not prove?
+## Evaluate: is feeling sure enough?
 
 **Next lesson:** if confidence and test scores can both mislead, how would you design a better study of AI and learning?
 

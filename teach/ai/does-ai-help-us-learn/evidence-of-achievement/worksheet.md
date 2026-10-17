@@ -107,7 +107,7 @@ Try it on the board in the tutorial. Was your prediction right? What was differe
 :::
 
 
-:::typical
+:::wider
 
 ## Make: Elaborate: design a fair task
 
@@ -124,11 +124,13 @@ Work in the tutorial. Plan first: what will you change, and how will you test it
 :::
 
 
-:::wider
+:::typical
 
-## Evaluate: match evidence to a goal
+## Optional: answer questions about your work
 
-**Next lesson:** if different goals need different evidence, who decides which goals matter most?
+Use the prompt below on a piece of your own work. Compare with the evidence you sorted: which of your answers showed your own decisions? Did the AI keep to asking, or start rewriting your work? Its summary is a guess, not a mark.
+
+**No AI tool?** A partner can ask you three questions about your work.
 
 :::
 

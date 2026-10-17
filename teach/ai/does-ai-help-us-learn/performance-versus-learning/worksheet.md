@@ -60,7 +60,7 @@ Try it on the board in the tutorial. Was your prediction right? What was differe
 There are three different things you can check.
 
 - **With help:** how well you do with hints, worked examples, friends, teachers or AI. Help changes what you can do in the moment.
-- **On something new:** a new question that is a bit different shows whether you can **use** the idea. This is called **transfer**.
+- **On something new:** a new question that is a bit different shows whether you can **use** the idea. This is called **transfer**. Memorising answers is like a lookup table: perfect on questions you have practised, stuck on new ones. Understanding lets you handle new ones.
 - **Later:** trying again a week or two later shows whether you **remember** it. This is called **retention**.
 
 :::keep-together
@@ -124,17 +124,6 @@ Then plan a better check for one student. What would you look at today, next wee
 Work in the tutorial. Plan first: what will you change, and how will you test it?
 
 {{box-4}}
-
-:::
-
-
-:::wider
-
-## Evaluate: what kinds of evidence?
-
-Someone says: "My AI tutor helped me finish five hard problems, so I definitely understand the topic." Write one thing that is true, one thing that goes too far, and one way to check.
-
-**Next lesson:** if we can measure what someone can do alone, is that the only kind of learning that matters?
 
 :::
 

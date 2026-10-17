@@ -150,15 +150,6 @@ Work in the tutorial. Plan first: what will you change, and how will you test it
 :::
 
 
-:::wider
-
-## Evaluate: what does interaction prove?
-
-**Next lesson:** if *how* help is given matters, how should we design it?
-
-:::
-
-
 ## Exit ticket
 
 :::keep-together

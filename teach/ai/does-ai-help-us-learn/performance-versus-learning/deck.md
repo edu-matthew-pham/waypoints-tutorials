@@ -20,7 +20,7 @@ Does AI Help Us Learn? · What does it mean to learn?
 - I can say what a right answer with help does and does not show.
 - I can suggest a better way to check learning and say what it would still miss.
 
-<!-- Speaker note: Before class: Teaching move: experience the contrast first, then question the measurement itself. The board is the offline AI Foundations practice board: prepared hints and model answers, not a live model or a tested AI tutor. The one-board activity is a classroom illustration, not a controlled study. The new question is a little different from the first, so difficulty changes as well as help. A student who struggles may still have learned something; a correct answer does not prove lasting understanding. If the arithmetic gets in the way, a paper version works: a worked example for one third of 12, then a fresh question such as two fifths of 15, written with "how I know". Terms used for students: transfer ("use it on something new") and retention ("still know it later"). -->
+<!-- Speaker note: Before class: **Core idea:** Doing well with help is not the same as being able to do it alone, on something new, or later. The minimum path is the student's own try with help, then without; the fair-test discussion is typical. Teaching move: experience the contrast first, then question the measurement itself. The board is the offline AI Foundations practice board: prepared hints and model answers, not a live model or a tested AI tutor. The one-board activity is a classroom illustration, not a controlled study. The new question is a little different from the first, so difficulty changes as well as help. A student who struggles may still have learned something; a correct answer does not prove lasting understanding. If the arithmetic gets in the way, a paper version works: a worked example for one third of 12, then a fresh question such as two fifths of 15, written with "how I know". Terms used for students: transfer ("use it on something new") and retention ("still know it later"). -->
 
 ---
 
@@ -142,14 +142,6 @@ Then plan a better check for one student. What would you look at today, next wee
 <!-- Speaker note: For students who need more support: Use a simpler fraction example if the arithmetic hides the comparison. For early finishers: Design a fairer comparison. Should creativity or working with others also be measured? The hard part, on purpose: Students may treat one right or wrong answer as proof of long-term learning, or of no learning. When students get stuck: A student treats one question without help as the final word. Ask: What else could explain this result? What might change if we asked tomorrow? Fix: Separate how hard the task was, what they knew before, how they did today, and what they remember later. / Students argue that help always stops learning. Ask: Have you ever understood a worked example and then used the idea somewhere else? Fix: Separate a way learning can happen from evidence that it happened this time. -->
 
 <style scoped>pre, marp-pre { font-size: 0.5em; line-height: 1.25; } section { font-size: 20px; }</style>
-
----
-
-## Evaluate: what kinds of evidence?
-
-Someone says: "My AI tutor helped me finish five hard problems, so I definitely understand the topic." Write one thing that is true, one thing that goes too far, and one way to check.
-
-**Next lesson:** if we can measure what someone can do alone, is that the only kind of learning that matters?
 
 ---
 

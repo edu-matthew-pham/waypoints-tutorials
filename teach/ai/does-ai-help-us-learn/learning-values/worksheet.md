@@ -55,6 +55,9 @@ Try it on the board in the tutorial. Was your prediction right? What was differe
 
 {{lines-2}}
 
+
+:::wider
+
 ## Explain: marks, choices and values
 
 **Marks shape learning.** What gets tested and rewarded changes what students practise. Tests of remembering alone, with no notes, reward some skills and hide others. Rewarding polished products changes where students put their effort too. These pushes are sometimes called **incentives**.
@@ -128,6 +131,8 @@ Try it on the board in the tutorial. Was your prediction right? What was differe
 
 :::
 
+:::
+
 
 ## Make: Elaborate: answer the course question
 
@@ -136,7 +141,7 @@ Go back to the question: **Does AI help us learn?**
 Build your answer. Include:
 
 - What *learning* means in the cases you're talking about.
-- One study from Unit 2, and what it actually measured.
+- One piece of evidence: a learner from this course, or a study from Unit 2 and what it actually measured.
 - How the goal, the learner's experience, other tools and the design of the help change the answer.
 - An objection a sensible person might raise.
 - A situation that would change your mind.
@@ -159,6 +164,15 @@ Work in the tutorial. Plan first: what will you change, and how will you test it
 The question may stay open. But your reasons can be more precise: what matters, what evidence supports a claim, and what is still unknown.
 
 **End of course:** what do you now think AI helps us learn, when, and what would change your mind?
+
+:::
+
+
+:::typical
+
+## Evaluate: a stronger answer, with the studies
+
+If you read the two studies in Unit 2: which answer uses them best, and which goes further than they show?
 
 :::
 

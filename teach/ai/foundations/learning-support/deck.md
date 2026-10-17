@@ -19,7 +19,7 @@ AI Foundations · Getting good help from AI
 - I can select assistance that leaves appropriate thinking for me to practise.
 - I can check learning by completing a related task independently.
 
-<!-- Speaker note: Before class: The board uses scripted hints and worked examples rather than live AI. Do not imply that hints are always preferable: worked examples can reduce unproductive confusion for novices. The core board is offline and requires no AI account. If your school allows it, you can demonstrate a hint-first request in a school-approved assistant yourself. -->
+<!-- Speaker note: Before class: The board uses scripted hints and worked examples rather than live AI. Do not imply that hints are always preferable: worked examples can reduce unproductive confusion for novices. The core board is offline and requires no AI account. If your school allows it, you can demonstrate a hint-first request in a school-approved assistant yourself. The optional AI-tool step (typical width) is never needed to finish, and every check can be done without AI. Students use an AI tool only if the school allows it and you say so; check the tool's terms first, since many require users to be 13 or older. The step gives a no-AI version (a partner or a table). -->
 
 ---
 
@@ -120,6 +120,14 @@ Without the board, explain the difference between *completing a task* and *learn
 ## Learning with AI: keep the learner active
 
 Before asking AI for help, consider what you already know and what you need to practise. A useful assistant may give a question or feedback rather than the answer. But requiring struggle without support is not the goal either. Adjust the assistance as your understanding changes.
+
+---
+
+## Optional: try it with an AI tool
+
+Use the prompt below on something you are learning. Then compare the reply with the board: did it give one hint and leave the next step to you, or hand you the answer? If it gave the answer, say so and ask again.
+
+**No AI tool?** Ask a partner to be the tutor and follow the same prompt.
 
 ---
 
