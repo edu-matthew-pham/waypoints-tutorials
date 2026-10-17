@@ -394,7 +394,7 @@ sync(); render();
 
 try {
   workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},render});
-  authoring=setupAuthoring({setStarterFactory:fn=>workspace.setStarterFactory(fn)});render();
+  authoring=setupAuthoring({getFiles:()=>files,setStarterFactory:fn=>workspace.setStarterFactory(fn)});render();
 } catch(error) { $('packageStatus').textContent='Local draft/video storage unavailable: '+error.message; }
 
 // Opening another text-only share link in the same tab is a hash navigation, not a page load.

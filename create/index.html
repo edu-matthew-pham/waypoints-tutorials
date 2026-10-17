@@ -27,6 +27,14 @@
 <div class="row"><label>Topic <input id="authorTopic" placeholder="e.g. particle movement"></label><label>Audience / prior knowledge <input id="authorAudience" placeholder="e.g. Year 7, first encounter"></label></div>
 <label>Learning goal <input id="authorGoal" placeholder="What should learners be able to explain or do?"></label>
 <div class="row"><label>Prompt for <select id="authorScope"><option value="lesson">One complete lesson</option><option value="course">Course plan, then lessons</option></select></label><button id="newFromSettings" type="button">Add a lesson starter</button><button id="copyLessonPrompt" type="button" class="primary">Copy lesson prompt</button><button id="showLessonPrompt" type="button">Review prompt</button></div>
+<section id="boardPicker" aria-labelledby="boardPickerTitle" hidden>
+<h3 id="boardPickerTitle">Choose a board activity</h3>
+<p>Browse both board families. Your choice supplies the new starter and copied prompt; it does not edit the current lesson.</p>
+<div class="row"><label>Search activities <input id="boardSearch" type="search" placeholder="e.g. fractions, particles, forces"></label><label>Family <select id="boardFamily"><option value="all">Both board families</option><option value="board">Shared boards</option><option value="science">Particle simulations</option></select></label><label>Subject <select id="boardSubject"><option value="all">All subjects</option></select></label></div>
+<p id="boardCatalogueStatus" role="status">Loading board activities…</p>
+<div id="boardCards" aria-label="Available board activities"></div>
+<div id="boardDetails" hidden><h4 id="boardTitle"></h4><p id="boardDescription"></p><div class="row"><button id="previewBoard" type="button">Preview activity</button><a id="boardExampleLink" target="_blank" rel="noopener">View example lesson source</a></div><p id="boardPreviewStatus" role="status"></p><iframe id="boardPreview" title="Selected board activity preview" loading="lazy" hidden></iframe><details><summary>Board setup and supported settings</summary><pre id="boardExample"></pre><pre id="boardReference"></pre></details></div>
+</section>
 <p id="authorCapabilities"></p><p id="authorStatus" role="status">Choose settings for a new starter or a prompt. Existing lessons are preserved.</p>
 <details id="promptDetails"><summary>Prompt text</summary><textarea id="lessonPrompt" readonly aria-label="Generated lesson prompt"></textarea></details>
 </section>

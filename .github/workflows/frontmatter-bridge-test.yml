@@ -8,11 +8,12 @@ on:
       - 'create/**'
       - 'tools/build-create.mjs'
       - 'tools/playground-registry.mjs'
+      - 'tools/board-catalogue.mjs'
       - 'AUTHORING.md'
       - 'BUILDING.md'
       - '.github/workflows/frontmatter-bridge-test.yml'
   pull_request:
-    paths: ['create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', 'tools/playground-registry.mjs', 'AUTHORING.md', 'BUILDING.md', '.github/workflows/frontmatter-bridge-test.yml']
+    paths: ['create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', 'tools/playground-registry.mjs', 'tools/board-catalogue.mjs', 'AUTHORING.md', 'BUILDING.md', '.github/workflows/frontmatter-bridge-test.yml']
   workflow_dispatch:
 jobs:
   test:
@@ -28,6 +29,7 @@ jobs:
       - run: node experiments/frontmatter-bridge-test.mjs
       - run: node experiments/lesson-package-test.mjs
       - run: node experiments/authoring-test.mjs
+      - run: node experiments/board-catalogue-test.mjs
       - run: npm run build
       - run: node -e "const fs=require('fs'); const a=JSON.parse(fs.readFileSync('dist/code/create/lesson-clips.json')); if(!a.length)process.exit(1); console.log(a.length,'frontmatter clips exported')"
       - name: Install Chrome for browser smoke test
@@ -40,6 +42,8 @@ jobs:
         run: node experiments/course-smoke.mjs
       - name: Authoring and subject playground workflows
         run: node experiments/authoring-smoke.mjs
+      - name: Board catalogue and picker workflows
+        run: node experiments/board-picker-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

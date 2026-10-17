@@ -5,6 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadLessons } from './lesson.mjs';
 import { browserClip } from './export-browser-clip.mjs';
+import { buildBoardCatalogue } from './board-catalogue.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
 import { stampPlayground } from './build-playground.mjs';
 
@@ -15,6 +16,8 @@ export function buildCreate(out = 'dist') {
   rmSync(join(out, 'create'), { recursive: true, force: true });
   rmSync(dest, { recursive: true, force: true });
   cpSync(join(root, 'create'), dest, { recursive: true });
+  const lessons=loadLessons();
+  writeFileSync(join(dest,'board-catalogue.json'),JSON.stringify(buildBoardCatalogue(lessons)));
   const sections = text => Object.fromEntries([...text.matchAll(/^## (\d+)\.[^\n]*\n([\s\S]*?)(?=^## \d+\.|$(?![\s\S]))/gm)].map(m => [m[1], m[0]]));
   const authoring = sections(readFileSync(join(root, 'AUTHORING.md'), 'utf8'));
   const building = sections(readFileSync(join(root, 'BUILDING.md'), 'utf8'));
@@ -25,7 +28,7 @@ export function buildCreate(out = 'dist') {
   }));
   // Export supported existing frontmatter clips for direct browser selection; unsupported actions are omitted.
   const clips = [];
-  for (const lesson of loadLessons()) {
+  for (const lesson of lessons) {
     for (const step of [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])]) {
       if (!step.config?.clip) continue;
       try { clips.push(browserClip(lesson, step)); } catch { /* Unsupported browser action; production renderer remains authoritative. */ }
