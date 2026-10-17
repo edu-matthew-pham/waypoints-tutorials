@@ -89,11 +89,14 @@ function becomes a palette button, and students can open the source with "Show h
 
 ## Create a lesson in the browser
 
-`/code/create/` is a MakeCode-style lesson maker: paste or upload `lesson.md` and code files, see a live preview
-(with the working playground), get validation messages, copy a share link, and download the lesson folder as a
-.zip to commit under `content/`. It runs entirely in the browser, reusing the same parser, validator and page
-renderer as the build (`tools/lesson-core.mjs`, `tools/lesson-view.mjs`). Clips are placeholders there; they
-are recorded by CI once the lesson is in the repository.
+`/code/create/` is a lesson and course maker that runs entirely in the browser, reusing the same parser,
+validator and page renderer as the build (`tools/lesson-core.mjs`, `tools/lesson-view.mjs`). Paste, upload or
+import a lesson (or a whole course), see a live preview with the working playgrounds, fix the validation
+messages, and record videos from a lesson's clip instructions in Chrome or Edge. **Download lesson** and
+**Download course** make ZIPs laid out like `content/` (course `index.md` with units, a folder per lesson) with
+offline pages, the recorded videos and their captions; colleagues open `index.html` to view, or import the ZIP
+or unzipped folder into Create to keep editing. The site still records its own videos once a lesson is in the
+repository (AUTHORING.md section 13; `experiments/FRONTMATTER-BROWSER.md`).
 
 While editing `lesson.md`, the helper row adds a **tick box** or **question** check to the step under the cursor and
 opens a picker for the **snippets it unlocks**. The preview locks those snippets in its playgrounds so teachers can

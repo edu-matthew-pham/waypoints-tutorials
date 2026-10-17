@@ -95,7 +95,7 @@ const load = () => {
   } catch { /* ignore */ }
   return Promise.resolve(null);
 };
-const save = () => { workspace?.changed(files).catch(e => { $('packageStatus').textContent = e.message; }); try { localStorage.setItem(KEY, JSON.stringify(files)); } catch { /* storage unavailable */ } };
+const save = () => { workspace?.changed(files, { later: true }).catch(e => { $('packageStatus').textContent = e.message; }); try { localStorage.setItem(KEY, JSON.stringify(files)); } catch { /* storage unavailable */ } };
 
 async function encode(obj) {
   const bytes = new TextEncoder().encode(JSON.stringify(obj));
@@ -379,37 +379,13 @@ if (REQUEST_FORM_URL) {
   };
 }
 
-const crcTable = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
-const crc32 = (b) => { let c = 0xffffffff; for (const x of b) c = crcTable[(c ^ x) & 255] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; };
-function zip(entries) { // store-only zip
-  const enc = new TextEncoder(); const parts = []; const central = []; let off = 0;
-  const u16 = (n) => [n & 255, (n >> 8) & 255], u32 = (n) => [n & 255, (n >> 8) & 255, (n >> 16) & 255, (n >>> 24) & 255];
-  for (const [name, text] of entries) {
-    const nb = enc.encode(name), data = enc.encode(text), crc = crc32(data);
-    const local = new Uint8Array([0x50, 0x4b, 3, 4, 20, 0, 0, 8, 0, 0, 0, 0, 0x21, 0, ...u32(crc), ...u32(data.length), ...u32(data.length), ...u16(nb.length), 0, 0, ...nb]);
-    parts.push(local, data);
-    central.push(new Uint8Array([0x50, 0x4b, 1, 2, 20, 0, 20, 0, 0, 8, 0, 0, 0, 0, 0x21, 0, ...u32(crc), ...u32(data.length), ...u32(data.length), ...u16(nb.length), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...u32(off), ...nb]));
-    off += local.length + data.length;
-  }
-  const cdSize = central.reduce((n, c) => n + c.length, 0);
-  return new Blob([...parts, ...central, new Uint8Array([0x50, 0x4b, 5, 6, 0, 0, 0, 0, ...u16(entries.length), ...u16(entries.length), ...u32(cdSize), ...u32(off), 0, 0])], { type: 'application/zip' });
-}
-$('download').onclick = () => {
-  let title = 'my-lesson';
-  try { title = parseLessonText(files['lesson.md'], 'x').title; } catch { /* use default */ }
-  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'my-lesson';
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(zip(Object.entries(files).map(([n, t]) => [`${slug}/${n}`, t])));
-  a.download = `${slug}.zip`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
-};
-
 // ---------- start ----------
 files = (await load()) || { ...EXAMPLE };
 if (!files['lesson.md'] && files['lesson.md'] !== '') files = { 'lesson.md': '', ...files };
 sync(); render();
 
 try {
-  workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},render});
+  workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},editLesson:text=>{files['lesson.md']=text;save();sync();schedule()},render});
   authoring=setupAuthoring({getFiles:()=>files,setStarterFactory:fn=>workspace.setStarterFactory(fn)});render();
   setupEntry({hasSaved,addFiles:(next,options)=>workspace.addFiles(next,options),example:EXAMPLE});
 } catch(error) { $('packageStatus').textContent=$('startStatus').textContent='Local draft/video storage unavailable: '+error.message+'. Allow browser storage and reload to open the workspace.'; }

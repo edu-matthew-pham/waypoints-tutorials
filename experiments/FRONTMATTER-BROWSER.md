@@ -47,43 +47,57 @@ remain in the existing lesson frontmatter. Each lesson's preview runs its own
 playground and keeps its own progress identifiers.
 
 The example includes a recordable clip. For another step, place the cursor in it
-and choose **Clip instructions**; a supported Turtle or shared-board `code:` /
-`try.starter` becomes the source for the existing `query` and `clip` fields.
-Choose **Record selected clip**, then **Record WebM** and share **This Tab**.
-Run **Preview steps**, stop recording, and choose **Use recording in lesson**.
-The recorder returns to Create lesson, where the clip plays in its step. Draft
+and choose **Clip instructions**; the step's `code:` / `try.starter` becomes the source for the
+`query` and `clip` fields (every playground in `tools/playground-registry.mjs`; some record by hand).
+Choose **Record video**, then **Record video** in the recorder and share **This Tab**.
+Run **Preview steps**, stop recording, and choose **Use this video in the lesson**.
+The recorder returns to Create, where the video plays in its step. Draft
 recording actions use the same converter as built lessons. Bound recordings
 cannot edit their sequence separately from Markdown.
 
+Recorder (18 Oct 2026): it checks for tab capture and WebM first and explains when the browser
+cannot record (Safari, iPad). Recording shows a timer and stops at 5 minutes; leaving the page
+mid-recording, or with an unused video, asks first. Chrome and Edge crop the capture to the caption
+and playground (Region Capture). The captions shown while recording are saved as WebVTT with the
+video, and the WebM gets its duration written in (`fixWebmDuration`), so players can show its
+length and seek.
+
 Draft sources and binary recordings are stored locally in IndexedDB. Reloading or
-switching lessons retains them. Any source-file edit marks the lesson's recordings
-as outdated; old clips are omitted from exports, and their steps show placeholders.
-Returning the files to their recorded state makes the clips valid again. This is
-separate from the production renderer's cache. Browser storage can be cleared or
-run out of space; download packages to keep a durable copy.
+switching lessons retains them. Each video has its own fingerprint (`clipFingerprint` in
+`create/draft-store.mjs`): the lesson's settings, its own `## ` section, code written in
+lesson.md and the other files. Editing another step, or the lesson's title, summary, unit or
+order, keeps the video; changing its own step or the code marks it as needing re-recording.
+Out-of-date videos are left out of downloads, and their steps show placeholders. Videos recorded
+before 18 Oct 2026 are tied to the whole lesson and still count until something changes.
+Create asks the browser to keep saved work (`navigator.storage.persist()`, after an import or a
+recording), shows how much it uses, and removes drafts no lesson points to. Typing is saved after a
+pause (with a synchronous backup in localStorage until then).
 
-- **Download lesson + videos** creates a ZIP containing `index.html`, original
-  source files, `clips/<step>.webm`, and `waypoints-lesson.json`.
-- **Download course + videos** creates a ZIP with a contents `index.html`, an
-  `index.md` using existing course metadata, `waypoints-course.json`, and numbered
-  lesson folders. Lesson pages have previous/next and course links.
-- Unzip and open the top-level `index.html` to run a lesson or the whole course.
-  Lesson text and recorded videos work offline. Embedded playgrounds still use the
-  Tutorials site and require internet. This is not a fully offline playground bundle.
-- **Import lesson / course package** reopens the source and recordings for editing.
-  A lesson is added to the current course; a course replaces the workspace after
-  confirmation. Source-only uploads and source ZIP downloads remain available.
-- **Copy share link** continues to share text/code only. It does not upload or
-  include video. ZIP packages can be sent through normal file-sharing channels or
-  extracted onto static hosting, but Create does not upload them automatically.
+- **Download lesson (.zip)** makes `<lesson>-lesson.zip`: one `<lesson>/` folder with `lesson.md`
+  and its files, `index.html`, `README.txt`, `clips/<step>.webm` and `.vtt`, and `clips.json`.
+- **Download course (.zip)** makes `<course>-course.zip`, laid out like `content/<course>/`:
+  `index.md` (title, summary, `units:`), `index.html` (lessons grouped by unit), `README.txt`, and a
+  folder per lesson (named from its title) whose `lesson.md` carries `unit:` and `order:`.
+  Lesson pages have previous/next and course links.
+- Unzip and open `index.html` to run a lesson or the whole course. Lesson text, recorded videos
+  and their captions work offline (the captions are also inside the page, since browsers will
+  not load a caption file next to a page opened from disk). Embedded playgrounds still use the
+  Tutorials site and require internet.
+- **Import ZIP** and **Import folder** reopen a lesson or course: Create's downloads (this and
+  the older numbered-folder layout), a lesson or course folder from the repository's `content/`,
+  or a folder that Safari or Finder already unzipped. ZIPs from other tools (deflate, data
+  descriptors, `__MACOSX`) are read too. A lesson is added to the course (replacing the untouched
+  first-visit starter); a course replaces the workspace after confirmation.
+- **Units:** "Unit of this lesson" sets the lesson's `unit:`; **+ Add unit** and **Rename unit**
+  edit the course's units, which go into the course's `index.md`.
+- **Copy draft link** continues to share text/code only. It does not upload or
+  include video.
 
-Packages use store-only ZIP entries, since WebM is compressed already. Imports
-support packages exported here, not arbitrary third-party ZIP formats. Limit:
-512 MB per package, 100 lessons and 2,000 files. Unsupported clip actions are
+Limit: 512 MB per package, 100 lessons and 2,000 files. Unsupported clip actions are
 reported; recording is interactive and needs screen-sharing permission. Speech
 synthesis, background recording and automatic production publishing are unchanged.
 
-`node experiments/lesson-package-test.mjs` checks binary ZIP round-trips and invalid
-packages. `node experiments/course-smoke.mjs` uses full Chrome for recording two
+`node experiments/lesson-package-test.mjs` checks the package layout, units, repository folders,
+older packages, deflated ZIPs, captions, per-video fingerprints and invalid packages. `node experiments/course-smoke.mjs` uses full Chrome for recording two
 lessons, returning the recordings to Create, export, offline video playback,
 course/lesson import, reordering, persistence and stale-recording exclusion.

@@ -55,6 +55,7 @@ export function setupEntry({hasSaved, addFiles, example}) {
   $('startOpen').onclick = () => panel('openRoute');
   $('promptOpenFiles').onclick = () => panel('openRoute');
   $('startImportPackage').onclick = () => $('importPackage').click();
+  $('startImportFolder').onclick = () => $('importFolder').click();
   $('startImportSource').onclick = () => $('startSourceFiles').click();
   $('startSourceFiles').onchange = async event => {
     try { await openFiles([...event.target.files]); }
@@ -62,7 +63,7 @@ export function setupEntry({hasSaved, addFiles, example}) {
     finally { event.target.value = ''; }
   };
   // Reveal import progress/errors in the workspace; cancelling the chooser stays on Start.
-  $('importPackage').addEventListener('change', event => {
+  for (const id of ['importPackage', 'importFolder']) $(id).addEventListener('change', event => {
     if (event.target.files.length) showWorkspace();
   });
   $('startExample').onclick = async () => {

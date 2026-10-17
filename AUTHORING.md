@@ -1433,7 +1433,7 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
 Open [Create lessons and courses](https://tutorials.learningwaypoints.com/code/create/) from **Tutorials → Create lessons and courses** in the site navigation.
 The opening screen offers **Start with a prompt**, **Open existing work**, and **Explore an example**.
 The starter prompt asks about your idea and learners without requiring configuration; its maintained text lives in
-`create/start-prompt.md`. Open generated `lesson.md` and supporting files as a new lesson, import a Create package,
+`create/start-prompt.md`. Open generated `lesson.md` and supporting files as a new lesson, import a Create download or a lesson or course folder,
 or resume saved work. Exploring the Turtle example adds an editable copy without replacing existing lessons.
 Use **← Start** to return to these choices. Shared lessons and recorder returns open directly in the workspace.
 
@@ -1475,17 +1475,28 @@ its caption. External editors require their service to load. Arbitrary lesson se
 repository’s generated MakeCode explain stage still need the production recorder. Browser preview does not provide
 the production pointer animation, typing animation or voice synthesis; use a microphone for narration.
 
-Record WebM in a browser supporting tab capture and MediaRecorder (CI tests full Chrome). Choose **This Tab**, preview
-or interact manually, stop, then **Use recording in lesson**. Changed source invalidates its recordings. **Download
-lesson + videos** and **Download course + videos** create ZIP packages with HTML pages, editable source and current
-recordings; missing clips remain labelled placeholders. Import a package to continue editing, reorder lessons and use
-Previous/Next to run the course. This is a flat ordered course workspace, not a repository course/unit/teacher-resource
-builder. Draft links carry one lesson’s source only, without videos. Packages are shareable files, not hosted links.
+Record videos in Chrome or Edge on a computer (tab capture and MediaRecorder; CI tests full Chrome). Other
+browsers, including Safari and iPads, are told plainly that they cannot record. Choose **This Tab**, preview or
+interact by hand, stop, then **Use this video in the lesson**. Videos stop at 5 minutes; Chrome and Edge record
+just the caption and playground. The captions shown while recording are saved with the video as WebVTT
+(captions first; narration by microphone is optional). Each video is tied to its own step: editing another
+step, or the lesson's title, summary, unit or order, keeps it; changing its step, the lesson's settings or the
+code means re-recording it.
 
-Text, recorded videos, maths notation and worked examples work offline after extracting the package. Maths packages
-include their fonts and, when used, the form/working check engine. Interactive playgrounds still need the tutorials
-site; MakeCode also needs its external service. Publishing to the public catalogue remains the repository’s review,
-build and publish workflow. Browser drafts/recordings stay in that browser until exported; download packages to keep them.
+**Download lesson** and **Download course** make ZIPs laid out like the repository's `content/` folders: the
+course's `index.md` (title, summary, `units:`) and one folder per lesson whose `lesson.md` carries `unit:` and
+`order:`, plus generated `index.html` pages, a `README.txt`, `clips/<step>.webm` and `.vtt`, and `clips.json`.
+Missing videos remain labelled placeholders. **Import ZIP** or **Import folder** reopens a download, an
+unzipped folder, or a lesson or course folder from `content/`, so a course can be planned with an assistant as
+folders and opened in one go. **Unit of this lesson**, **+ Add unit** and **Rename unit** manage units; lessons
+are downloaded grouped by unit. Draft links carry one lesson's source only, without videos. Packages are
+shareable files, not hosted links.
+
+Text, recorded videos, captions, maths notation and worked examples work offline after extracting the package.
+Maths packages include their fonts and, when used, the form/working check engine. Interactive playgrounds still
+need the tutorials site; MakeCode also needs its external service. Publishing to the public catalogue remains
+the repository's review, build and publish workflow. Browser drafts and videos stay in that browser until
+downloaded; Create asks the browser to keep them and shows how much space they use.
 
 **Board activity picker.** When a board playground is selected, Create lists activities from both the shared board
 and particle simulation families. Search by name/topic and filter by family or subject; science includes shared

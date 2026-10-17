@@ -49,7 +49,7 @@ try {
   const packagePath=await download.path();
   await page.click('#backToStart');await page.click('#startOpen');
   page.once('dialog',dialog=>dialog.accept());await page.setInputFiles('#importPackage',packagePath);
-  await page.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Course package imported'));
+  await page.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Course imported'));
   assert.equal(await page.locator('#courseLesson option').count(),2);
   await page.click('#backToStart');await page.click('#startOpen');await page.setInputFiles('#startSourceFiles',{name:'notes.txt',mimeType:'text/plain',buffer:Buffer.from('Not a lesson')});
   await page.waitForFunction(()=>document.querySelector('#startStatus').textContent.includes('Select a lesson.md'));

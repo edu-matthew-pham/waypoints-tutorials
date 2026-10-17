@@ -43,7 +43,7 @@ try{
  await page.goto(base+'?workspace=1');await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===1);
  await page.fill('#courseTitle','Turtle course');await page.fill('#courseSummary','Two lessons with recorded explanations.');await page.locator('#courseSummary').blur();
  await recordCurrent(page,true);
- const lessonZip=await download(page,'#downloadPackage','lesson-package.zip'),lesson=await readPackage(lessonZip);
+ const lessonZip=await download(page,'#downloadPackage','lesson-package.zip'),lesson=(await readPackage(lessonZip)).lessons[0];
  assert.equal(Object.keys(lesson.clips).length,1);assert.match(lesson.files['lesson.md'],/clip:/);
  results.push({lessonExport:'pass',bytes:lessonZip.size,recordedClips:1});
  await page.click('#addLesson');await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===2);
@@ -69,15 +69,18 @@ try{
  const importedContext=await browser.newContext({viewport:{width:1280,height:1000}}),importedPage=await importedContext.newPage();importedPage.on('dialog',d=>d.accept());importedPage.on('pageerror',e=>errors.push(e.message));
  await importedPage.goto(base+'?workspace=1');await importedPage.waitForFunction(()=>document.querySelector('#courseLesson').options.length===1);
  await importedPage.locator('#importPackage').setInputFiles({name:'course.zip',mimeType:'application/zip',buffer:Buffer.from(await courseZip.arrayBuffer())});
- await importedPage.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Course package imported'));
+ await importedPage.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Course imported'));
  assert.equal(await importedPage.locator('#courseLesson option').count(),2);assert.equal(await importedPage.locator('#courseTitle').inputValue(),'Turtle course');
  await importedPage.waitForFunction(()=>document.querySelector('#draftClip').selectedOptions[0]?.textContent.endsWith('— recorded'));
- const original=await importedPage.locator('#text').inputValue();await importedPage.fill('#text',original+'\nA new instruction.\n');
- await importedPage.waitForFunction(()=>document.querySelector('#draftClip').selectedOptions[0]?.textContent.endsWith('— needs updating'));
- const stale=await download(importedPage,'#downloadPackage','stale-package.zip');assert.equal(Object.keys((await readPackage(stale)).clips).length,0);
+ const original=await importedPage.locator('#text').inputValue();
+ await importedPage.fill('#text',original+'\nA new instruction for the last step.\n');await importedPage.waitForTimeout(1500);
+ assert.ok((await importedPage.locator('#draftClip').evaluate(s=>s.selectedOptions[0].textContent)).endsWith('— recorded'),'Editing another step keeps the video');
+ await importedPage.fill('#text',original.replace('Run the program and compare','Run the program, then compare'));
+ await importedPage.waitForFunction(()=>document.querySelector('#draftClip').selectedOptions[0]?.textContent.endsWith('— needs re-recording'));
+ const stale=await download(importedPage,'#downloadPackage','stale-package.zip');assert.equal(Object.keys((await readPackage(stale)).lessons[0].clips).length,0);
  await importedPage.fill('#text',original);await importedPage.waitForFunction(()=>document.querySelector('#draftClip').selectedOptions[0]?.textContent.endsWith('— recorded'));
  await importedPage.locator('#importPackage').setInputFiles({name:'lesson.zip',mimeType:'application/zip',buffer:Buffer.from(await lessonZip.arrayBuffer())});
- await importedPage.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Lesson package imported'));
+ await importedPage.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Lesson imported'));
  assert.equal(await importedPage.locator('#courseLesson option').count(),3);
  const shareURL=await importedPage.evaluate(async()=>{
    const {readDraft}=await import('./draft-store.mjs'),record=await readDraft(document.querySelector('#courseLesson').value);

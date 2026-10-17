@@ -14,7 +14,7 @@
   <p class="start-intro">Start with an idea, bring your own material, or explore a working example.</p>
   <div class="start-routes">
     <button id="startPrompt" class="start-card" type="button" aria-controls="promptRoute" aria-expanded="false" disabled><strong>Start with a prompt</strong><span>Describe your idea and let an AI conversation help you plan and write.</span></button>
-    <button id="startOpen" class="start-card" type="button" aria-controls="openRoute" aria-expanded="false" disabled><strong>Open existing work</strong><span>Import a lesson or course package, open source files, or resume your workspace.</span></button>
+    <button id="startOpen" class="start-card" type="button" aria-controls="openRoute" aria-expanded="false" disabled><strong>Open existing work</strong><span>Import a lesson or course ZIP or folder, open source files, or resume your workspace.</span></button>
     <button id="startExample" class="start-card" type="button" disabled><strong>Explore an example</strong><span>Try a short Turtle drawing lesson. It opens as a new lesson you can change.</span></button>
   </div>
   <p class="validator-help"><a href="validate.html">Validate a lesson</a> — paste or upload Markdown and copy its check results.</p>
@@ -29,8 +29,8 @@
   </section>
   <section id="openRoute" class="start-panel" aria-labelledby="openRouteTitle" hidden>
     <h2 id="openRouteTitle" tabindex="-1">Open your work</h2>
-    <div class="start-actions"><button id="startImportPackage" type="button">Import lesson / course ZIP</button><button id="startImportSource" type="button">Open Markdown and code files</button><button id="startResume" type="button" hidden>Resume saved workspace</button></div>
-    <p>Use a package exported by Create, or select a lesson.md and its supporting files. Your saved workspace stays on this browser.</p>
+    <div class="start-actions"><button id="startImportPackage" type="button">Import lesson / course ZIP</button><button id="startImportFolder" type="button">Open unzipped folder</button><button id="startImportSource" type="button">Open Markdown and code files</button><button id="startResume" type="button" hidden>Resume saved workspace</button></div>
+    <p>Use a lesson or course downloaded from Create (as a ZIP, or the folder if your computer has already unzipped it), a lesson or course folder laid out like the site’s <code>content/</code> folders, or a lesson.md and its supporting files. Your saved workspace stays in this browser.</p>
   </section>
   <input id="startSourceFiles" type="file" multiple hidden>
   <p id="startStatus" role="status">Opening Create…</p>
@@ -39,14 +39,14 @@
 <header class="bar">
   <div><button id="backToStart" class="crumb" type="button">← Start</button><h1 id="workspaceTitle" tabindex="-1">Create workspace</h1></div>
   <div class="actions">
-    <a class="btn" href="clip.html">Create clip (experimental)</a>
+    <a class="btn" href="clip.html">Video recorder (experimental)</a>
     <button id="example" type="button">Load example</button>
     <button id="resetprog" type="button" title="Forget which checks you passed in the preview">Reset progress</button>
     <label class="btn">Upload files<input id="upload" type="file" multiple hidden></label>
-    <label class="btn">Import lesson / course package<input type="file" id="importPackage" accept=".zip,application/zip" hidden></label>
+    <label class="btn">Import ZIP<input type="file" id="importPackage" accept=".zip,application/zip" hidden></label>
+    <label class="btn">Import folder<input type="file" id="importFolder" webkitdirectory multiple hidden></label>
     <button id="share" type="button">Copy draft link (no videos)</button>
     <button id="request" type="button" hidden>Request publishing</button>
-    <button id="download" type="button">Download source only (.zip)</button>
   </div>
 </header>
 <section class="workspace authoring" aria-label="Lesson setup and AI prompt">
@@ -68,13 +68,14 @@
 </section>
 <section class="workspace" aria-label="Course workspace">
   <div class="row"><label>Course title <input id="courseTitle" value="My course"></label><label>Summary <input id="courseSummary" placeholder="What will learners do?"></label></div>
+  <div class="row"><label>Unit of this lesson <select id="lessonUnit"></select></label><button id="addUnit" type="button">+ Add unit</button><button id="renameUnit" type="button">Rename unit</button></div>
   <div class="row"><label>Lesson <select id="courseLesson"></select></label><button id="addLesson" type="button">+ Add lesson</button><button id="moveLessonUp" type="button">Move up</button><button id="moveLessonDown" type="button">Move down</button><button id="removeLesson" type="button">Remove lesson</button><button id="previousLesson" type="button">Previous lesson</button><button id="nextLesson" type="button">Next lesson</button></div>
-  <div class="package-actions"><button id="downloadPackage" type="button" class="primary">Download lesson + videos (.zip)</button><button id="downloadCourse" type="button">Download course + videos (.zip)</button></div>
-  <p id="packageStatus" role="status">Download a package to share lesson pages, source files and recorded videos. Playground activities need internet.</p>
+  <div class="package-actions"><button id="downloadPackage" type="button" class="primary">Download lesson (.zip)</button><button id="downloadCourse" type="button">Download course (.zip)</button></div>
+  <p id="packageStatus" role="status">Downloads include the lesson pages, their source files and recorded videos, in the same folder layout as the site. Open index.html to view; import the ZIP or folder to keep editing. Playgrounds need internet.</p>
 </section>
-<section class="lesson-videos" aria-label="Lesson recordings"><h2>Videos from this lesson’s clip instructions</h2><div class="row"><select id="draftClip" aria-label="Lesson clip"></select><button id="recordClip" type="button">Record selected clip</button><button id="refreshClips" type="button">Refresh recordings</button></div><p id="videoStatus" role="status"></p></section>
+<section class="lesson-videos" aria-label="Lesson recordings"><h2>Videos for this lesson</h2><div class="row"><select id="draftClip" aria-label="Lesson clip"></select><button id="recordClip" type="button">Record video</button><button id="refreshClips" type="button">Check videos again</button></div><p id="videoStatus" role="status"></p></section>
 <p class="hint">Write or paste a <code>lesson.md</code> and its code files. The preview updates as you type, and the playground is live.
-Record clips from the lesson instructions below, then download a lesson or course package with the videos included. Copy share link shares only this lesson’s text and code, without videos.
+Record videos from the lesson’s clip instructions below, then download the lesson or course with its videos included. “Copy draft link” shares only this lesson’s text and code, without videos.
 Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/blob/main/AUTHORING.md">AUTHORING.md</a>.</p>
 <main>
   <section class="editor">
