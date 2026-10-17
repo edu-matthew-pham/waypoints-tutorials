@@ -27,6 +27,12 @@ For any assistant starting the course design after the research brief. **This ta
 - "Be the algorithm" card activity: write our own (question 13).
 - Which course keeps the title *Who Does AI Affect?* (proposed: the society course).
 
+## Notes from a first look (18 Oct 2026)
+- The AI courses' lessons use `language: science`, `shape: 5e` (Engage, Explore, Explain, Elaborate, Evaluate) and `tier: typical | wider` steps, with question, sort and reflect checks and per-option feedback (for example `does-ai-help-us-learn/research-findings`). Class plans live in `class/<lesson>.yml` with an `inquiry` and `kind: discussion` activities.
+- Cyber safety lessons are 5E missions on a made-up club app, using the board's `cyber` widget (`language: maths`, `node:` codes); a made-up app is a model for the consent screen and the feed.
+- Existing AI board widgets: `ai-dialogue`, `ai-learning-choices`, `fruit-learning`, `neural-fruit`, `text-prediction`, `word-sampler`, `classifier`. A feed ("be the algorithm") or a consent screen would likely need a new widget.
+- This research chat may add to the brief; re-read it before planning.
+
 ## Matthew's preferences
 Plain words for Year 7; core ideas at Year 7 with `tier: typical | wider` steps for older students; cases, not lectures; platform-agnostic; no phones in class; students own their working, light checks; not too much AI encouragement; every activity works offline with paper and talk; a solo, self-paced version of every lesson.
 
