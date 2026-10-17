@@ -5,22 +5,23 @@ goals:
   - "I can decide what to delegate and describe how I will check its output."
 before: |
   Avoid treating delegation as inherently bad. The same task may be appropriate to delegate during performance but important to practise during learning. Follow school expectations for independent work and assessment.
-  The core board is offline-friendly and requires no AI account.
+  The core board is offline and requires no AI account.
   These habits apply to your own AI use too. Keep the parts you need to understand or control.
 running:
-  - "Ask learners to make a prediction or initial decision before seeing prepared feedback."
-  - "Compare the output with the learning goal rather than merely its polish."
+  - "Engage: ask what the learner still has to do after handing over formatting."
+  - "Explore: for each situation, name the goal before choosing an approach."
+  - "Explain: compare the same kind of help under a learning goal and a getting-it-done goal."
 struggle: "Students may apply fixed rules such as 'AI always does the boring work' without identifying the actual learning objective."
 stuck:
-  - see: "The learner focuses only on obtaining a finished output."
-    ask: "What is the purpose of the task? What thinking should stay with you?"
-    fix: "Return to the goal and compare different forms of assistance."
-support: "Give a concrete classroom example and model a before-and-after decision."
-stretch: "Apply the decision to a different subject or to performance rather than learning mode."
+  - see: "A student hands over everything that is boring."
+    ask: "Is this boring part the skill you are learning?"
+    fix: "Name the goal first, then decide."
+support: "Give a three-column table: keep, get help with, hand over and check."
+stretch: "Take one task and show how the split changes for a timed test versus practice at home."
 leads: "Does AI Help Us Learn? asks whether these habits actually help students learn, and when."
 exit:
-  q: "How do you know whether an AI interaction served your purpose?"
-  a: "Judge it against the goal, the evidence and what you can do or verify independently."
+  q: "Your goal is to understand controlled variables. What would you keep, and what could you hand over?"
+  a: "Keep writing the explanation (that is the skill); you could hand over formatting or spelling checks, then check the result."
 explain: |
   These are prepared cases and feedback, not outputs of an AI language model.
   The learning objective is transferable judgement, not a vendor-specific technique.

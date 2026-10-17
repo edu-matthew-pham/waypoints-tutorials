@@ -1,9 +1,13 @@
 summary: "How do models combine clues? Students predict, test and explain a transparent fruit classifier."
 time: 30
 goals:
-  - "I can explain what influences a model prediction."
-  - "I can test a prediction rather than automatically accepting it."
-before: "Use the Waypoints board without accounts. Teachable Machine is optional with school approval. The board is not a neural network."
+  - "I can explain how changing a weight changes which clue decides the prediction."
+  - "I can work out the unit's prediction from its weights before testing it."
+  - "I can explain why a decision made from weights can still be wrong about real fruit."
+before: |
+  Use the board without accounts. It is one hand-adjusted decision unit, not a trained neural network.
+  The score is colour weight × (+0.5 for yellow, −0.5 for green) + shape weight × (+0.5 for long, −0.5 for round). Above zero is banana, below zero is apple, and exactly zero is "unsure" (a tie: the clues cancel out).
+  Optional extension, with school approval: train an image classifier in Teachable Machine (https://teachablemachine.withgoogle.com/) and test unfamiliar photos. Unlike the hand-adjusted unit, the image model learns its weights from examples.
 running:
   - "Ask for a prediction before each test."
   - "Have students change one factor and explain the result."
@@ -13,9 +17,9 @@ stuck:
     ask: "What evidence or test could help you decide?"
     fix: "Compare two cases and change one factor."
 support: "Model one prediction and one test."
-stretch: "Compare the simplified model with a real trained image classifier."
-leads: "Continue through the How AI learns unit."
+stretch: "Find every weight setting that makes a yellow, round fruit a tie. What do they have in common?"
+leads: "Unit 2, lesson 4 lets a tiny neural network learn its own weights from examples."
 exit:
-  q: "Why is a model prediction not automatically correct?"
-  a: "It depends on examples, features and limitations and must be checked."
+  q: "Colour weight 2, shape weight 0. What does the unit predict for a green, long fruit, and why?"
+  a: "Apple: only colour counts, and green pushes the score below zero, even though a long fruit is probably a banana."
 explain: "The transparent model illustrates one part of classification. Real machine learning can use richer features and still make mistakes."

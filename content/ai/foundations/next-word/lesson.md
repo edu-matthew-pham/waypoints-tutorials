@@ -24,14 +24,7 @@ app:
   readySelector: "#gpanel"
   layout: full
 unit: text-generation
-hook: "A phone suggests the next word as you type. Is it predicting what you mean, or using patterns from examples?"
-time: 20
-misconceptions:
-  - "Most likely means certain."
-  - "The generator understands what the writer intends."
-  - "Changing the examples cannot change the model's prediction."
-leads: "Follow with the dice sampling lesson. Ask students to bring a physical die; no online AI account is needed."
-exit: { q: "If the most common ending appears 3 times in 6 examples, must it be selected?", a: "No. It has probability 3/6 under our sampling rule; other endings remain possible." }
+hook: "When you type a message or a search, the computer often suggests the next word. Is it guessing what you mean, or using patterns from examples?"
 order: 1
 ---
 A sentence can have more than one sensible next word. A text generator needs a way to choose between possibilities.
@@ -72,9 +65,10 @@ tasks:
       answer: 0
   - check:
       type: question
-      q: "Does 'mat' being most common mean the next word must be 'mat'?"
-      options: ["Yes, the most common word is always correct", "No, other endings are possible"]
-      answer: 1
+      q: "On the board, roof is 1 of the 6 examples. If a generator picks endings in proportion to the counts, how often would you expect roof?"
+      options: ["About 1 time in 6", "Never: mat is more common", "About half the time"]
+      answer: 0
+      feedback: [null, "Less likely is not impossible. Roof is still 1 of the 6.", "That would be mat: 3 of the 6."]
   - check: { type: reflect, text: "I can explain the difference between a frequent ending and a certain ending." }
 ```
 
@@ -136,13 +130,12 @@ Which reaction shows better judgement? Explain what you would check before accep
 stage: investigate
 check:
   type: question
-  q: "An AI suggests a likely next word. What should you do?"
-  options: ["Accept it because AI knows the writer's intention", "Check whether it fits the meaning and purpose of your sentence", "Reject every AI suggestion"]
-  answer: 1
+  q: "You are writing about your cat, who sleeps on the roof. You type 'The cat sat on the' and the AI suggests 'mat'. What should you write?"
+  options: ["roof: it's what actually happened", "mat: the AI picked the most likely word", "Ask the AI again until it suggests roof"]
+  answer: 0
+  feedback: [null, "Mat is the most common ending in its examples, not what happened to your cat.", "You already know the answer. The suggestion is only a guess from patterns."]
 ```
 
 **Looking ahead:** Our model uses one fixed phrase and a small set of examples, so we can see both why it favours an ending and where it struggles. Modern language models predict tokens using much richer context and learned patterns. Their responses can be far more useful and convincing, but they still have blind spots — often harder to identify or explain. **Treat an AI suggestion as something to evaluate, not automatically accept:** does it fit your purpose, and what would you need to check?
-
-**For teachers:** Formal fractions and percentages are an optional extension, not a prerequisite. Start with counts and bars. This is an intentionally transparent, fixed-context frequency model. Ask learners to justify answers using *counts* rather than guesses about the writer's intentions. The next lesson introduces sampling; the interactive board lets students edit examples and immediately inspect the resulting counts. Do not describe this toy model as the mechanism used by a modern LLM.
 
 **Next:** use dice to make a choice according to these probabilities.

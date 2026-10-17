@@ -2,6 +2,8 @@
 // Modes: practise (scaffolded hints), verify (inspect independent evidence), delegate (situational judgement).
 (function(B){
 'use strict';
+// A student's click, choice or typing counts as a move (B.moved), so board checks can tick.
+function touch(el){if(el.dataset.wpTouch)return;el.dataset.wpTouch='1';['click','change','input'].forEach(function(t){el.addEventListener(t,function(){B.moved=true;},true);});}
 var root,mode,S;
 var baseCases=[
  {title:'Studying for a maths test',goal:'Learn to add fractions independently',options:['Ask for a hint and attempt the problem','Ask AI to finish every question','Avoid any help, even after getting stuck'],feedback:['Useful: the learner still practises the thinking and can check errors.','A complete answer may finish work without developing this skill.','Independent work is valuable, but a well-chosen hint can help overcome an obstacle.'],strong:0},
@@ -88,7 +90,7 @@ function delegate(){
 function render(){root.replaceChildren();if(mode==='practise')practise();else if(mode==='verify')verify();else delegate();report();}
 B.widget('ai-learning-choices',{sections:['gpanel'],label:function(){return 'Learning with AI decision activities';},
 parse:function(s){s.mode=s.mode||'practise';if(!['practise','verify','delegate'].includes(s.mode))throw Error('Mode must be practise, verify or delegate');if(s.set&&!(s.mode==='delegate'&&s.set==='goals'))throw Error('set: goals works only with mode: delegate');},
-start:function(fresh){root=B.el('gpanel');mode=B.spec.mode;var saved=fresh?null:B.saved(),v=saved&&saved.state;S={topic:v&&practice[v.topic]?v.topic:'maths',item:v&&Number.isInteger(v.item)?Math.max(0,Math.min(mode==='verify'?evidence.length-1:(B.spec.set==='goals'?goalCases:baseCases).length-1,v.item)):0,seen:v&&Array.isArray(v.seen)?v.seen.filter(function(i){return Number.isInteger(i)&&i>=0&&i<goalCases.length;}):[],choice:v&&typeof v.choice==='string'?v.choice:'',result:v&&v.result||'',level:v&&Number.isInteger(v.level)?v.level:0,attempt:v&&v.attempt||'',transfer:v&&v.transfer||'',tests:v&&Number.isInteger(v.tests)?v.tests:0,choices:v&&Number.isInteger(v.choices)?v.choices:0,hints:v&&Number.isInteger(v.hints)?v.hints:0,ready:!!(v&&v.ready),conf:v&&['low','medium','high'].includes(v.conf)?v.conf:'',recorded:!!(v&&v.recorded)};S.level=Math.max(0,Math.min(3,S.level));render();},
+start:function(fresh){root=B.el('gpanel');touch(root);mode=B.spec.mode;var saved=fresh?null:B.saved(),v=saved&&saved.state;S={topic:v&&practice[v.topic]?v.topic:'maths',item:v&&Number.isInteger(v.item)?Math.max(0,Math.min(mode==='verify'?evidence.length-1:(B.spec.set==='goals'?goalCases:baseCases).length-1,v.item)):0,seen:v&&Array.isArray(v.seen)?v.seen.filter(function(i){return Number.isInteger(i)&&i>=0&&i<goalCases.length;}):[],choice:v&&typeof v.choice==='string'?v.choice:'',result:v&&v.result||'',level:v&&Number.isInteger(v.level)?v.level:0,attempt:v&&v.attempt||'',transfer:v&&v.transfer||'',tests:v&&Number.isInteger(v.tests)?v.tests:0,choices:v&&Number.isInteger(v.choices)?v.choices:0,hints:v&&Number.isInteger(v.hints)?v.hints:0,ready:!!(v&&v.ready),conf:v&&['low','medium','high'].includes(v.conf)?v.conf:'',recorded:!!(v&&v.recorded)};S.level=Math.max(0,Math.min(3,S.level));render();},
 redraw:function(){if(root)render();}
 });
 })(WPB);

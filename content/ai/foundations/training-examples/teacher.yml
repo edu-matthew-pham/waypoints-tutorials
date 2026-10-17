@@ -1,12 +1,27 @@
-summary: "Investigate a simple fruit classification model."
+summary: "Students teach a fruit sorter with labelled examples, test fruit it has never seen, and add an example to change what it predicts."
 time: 30
 goals:
-  - "I can explain how examples influence predictions."
-before: "Use the built-in board. External tools are optional."
+  - "I can explain what a label is and how labelled examples shape a model's predictions."
+  - "I can test a model on a case it was not shown, and say what one test does and doesn't prove."
+  - "I can change a model's examples and explain why its prediction changed."
+before: |
+  The board is a transparent teaching model: it copies the label of the nearest examples. It is not a neural network.
+  The two clues (colour and shape) are deliberately too few for real fruit; let students find this.
+  Optional extension, with school approval: train an image classifier in Teachable Machine (https://teachablemachine.withgoogle.com/) with two fruit classes and test photos not used in training. Ask the same questions: what examples were used, what did it predict, what surprised you? A real image classifier learns much richer features than the board. The board alone is the complete core route.
 running:
-  - "Predict, test, change and explain."
-struggle: "Predictions may be mistaken for facts."
-support: "Compare two fruit examples."
-stretch: "Test unfamiliar examples."
-leads: "Continue to the next lesson."
-explain: "Examples and labels influence model predictions. A prediction needs checking."
+  - "Engage: ask what a sorter taught only long yellow bananas would do with other bananas."
+  - "Explore: insist on a prediction before each test."
+  - "Explain: name the parts of an example: the clues and the label."
+  - "Elaborate: test the same fruit before and after adding an example."
+struggle: "Students may treat a prediction as a fact, or think the sorter 'knows' fruit."
+stuck:
+  - see: "A student says the sorter knows what a banana is."
+    ask: "What does it actually look at? What does it do with a new fruit?"
+    fix: "Point to the nearest examples in the table and show it copies their label."
+support: "Do one test together: predict, test, and find the examples it copied."
+stretch: "Find a fruit description where the sorter is unsure. What example would settle it?"
+leads: "Unit 2, lesson 2 breaks the sorter on purpose with wrong labels and missing examples."
+exit:
+  q: "Why can adding one example change a sorter's prediction?"
+  a: "The sorter copies its nearest examples, so a new nearby example can change which label wins."
+explain: "A label is the answer an example is taught. The sorter copies the labels of the examples closest to a new fruit, so changing the examples can change its answer. A prediction is something to check."

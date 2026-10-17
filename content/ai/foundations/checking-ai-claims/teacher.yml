@@ -5,21 +5,22 @@ goals:
   - "I can explain the limits of a small dataset and identify missing evidence."
 before: |
   The activity deliberately uses invented data with known values, not a claim of conducting authentic science. Students need to understand that supported means supported *by these observations*, not universally proved.
-  The core board is offline-friendly and requires no AI account.
+  The core board is offline and requires no AI account.
 running:
-  - "Ask learners to make a prediction or initial decision before seeing prepared feedback."
-  - "Compare the output with the learning goal rather than merely its polish."
+  - "Engage: ask what evidence would settle the 'every seedling' claim."
+  - "Explore: students judge each claim against the measurements, and say which word (every, always, average) needs checking."
+  - "Explain: separate 'supported by these measurements' from 'always true'."
 struggle: "Students may treat a narrow match between a claim and one data record as universal proof."
 stuck:
-  - see: "The learner focuses only on obtaining a finished output."
-    ask: "What is the purpose of the task? What thinking should stay with you?"
-    fix: "Return to the goal and compare different forms of assistance."
-support: "Give a concrete classroom example and model a before-and-after decision."
-stretch: "Apply the decision to a different subject or to performance rather than learning mode."
+  - see: "A student marks a claim supported because it sounds reasonable."
+    ask: "Which numbers in the record back it up?"
+    fix: "Point to the measurements and test the claim's key word (every, always, average) against them."
+support: "Do the first claim together, underlining the word that needs checking."
+stretch: "Rewrite each unsupported claim so the measurements would support it."
 leads: "Next, decide what AI work can be delegated without surrendering important thinking."
 exit:
-  q: "How do you know whether an AI interaction served your purpose?"
-  a: "Judge it against the goal, the evidence and what you can do or verify independently."
+  q: "A dataset records plant height but not plant health. Can it support 'the eight-hour plants were healthier'?"
+  a: "No. Height is not health; you would need measurements of health to support that claim."
 explain: |
   These are prepared cases and feedback, not outputs of an AI language model.
   The learning objective is transferable judgement, not a vendor-specific technique.

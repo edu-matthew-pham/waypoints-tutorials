@@ -66,9 +66,10 @@ tasks:
       answer: 1
   - check:
       type: question
-      q: "A network gets its training examples right. Does that guarantee it will classify unfamiliar fruit correctly?"
-      options: ["Yes, training accuracy guarantees every future answer", "No, the examples may not cover unfamiliar cases", "Yes, because neural networks do not make mistakes"]
-      answer: 1
+      q: "Suppose you train the network only on yellow bananas, then test a green, round fruit. Why might it get it wrong?"
+      options: ["It never trained on a green or round fruit, so it had nothing to learn them from", "Testing a new fruit changes its weights", "Neural networks can't learn colours"]
+      answer: 0
+      feedback: [null, "Testing never changes the weights. Only training does.", "With all the examples, it learns colour and shape fine."]
   - check: { type: reflect, text: "I can explain the difference between training and testing without using the mathematics." }
 ```
 
@@ -101,8 +102,6 @@ Then select **Use all examples**, **Reset network**, train again and compare. Yo
 
 **Wider investigation:** Choose **Show internal numbers**. These values are connection weights (multipliers), **not percentages** or separate rules. Some may be negative, and none has to correspond to a human-readable feature. Can the same output change when several connections change together?
 
-**Optional authentic comparison:** If permitted by your school, train an image model in [Teachable Machine](https://teachablemachine.withgoogle.com/), then test photos not used for training. The Waypoints network uses two hand-chosen clues; an image model processes much richer information. Neither guarantees correct predictions.
-
 ## Evaluate: explain the difference
 
 ```step
@@ -124,11 +123,13 @@ Without using the board, complete these statements:
 
 ```step
 stage: info
-check: { type: reflect, text: "I can explain how to check AI outputs without assuming they are always correct." }
+check: { type: reflect, text: "I can explain why nobody can read a chatbot's reasons straight from its numbers." }
 ```
 
 Modern AI systems can be useful even when we cannot easily explain their learned internal patterns. We might inspect individual numbers without understanding what they collectively represent.
 
 Imagine an AI assistant makes a confident claim in a subject you are learning. What would you **verify independently**? What work should you practise yourself before asking AI for help?
 
-**Takeaway:** A neural network is an algorithmic system whose behaviour changes as training adjusts its parameters. Its predictions come from those learned parameters rather than from a complete list of programmer-written classification rules.
+**Takeaway:** a neural network's behaviour changes as training adjusts its connections. Its predictions come from those learned numbers, not from a list of rules someone wrote.
+
+**Chatbots are neural networks too:** very large ones, trained on huge amounts of text to predict the next word. That is the same next-word idea from Unit 1, with far more examples and connections.

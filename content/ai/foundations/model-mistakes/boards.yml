@@ -1,6 +1,7 @@
+# A transparent teaching model, not a neural network. mode: mistakes adds Swap label and three challenges.
 # region: explore
 widget: fruit-learning
-mode: examples
+mode: mistakes
 example: green | round | apple
 example: green | round | apple
 example: yellow | round | apple
@@ -11,7 +12,7 @@ example: yellow | long | banana
 
 # region: explain
 widget: fruit-learning
-mode: examples
+mode: mistakes
 example: green | round | apple
 example: green | round | apple
 example: yellow | round | apple

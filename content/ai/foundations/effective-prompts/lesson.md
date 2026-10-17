@@ -54,7 +54,7 @@ Choose a situation in **maths, science or school planning**. Begin with the vagu
 - **Response form:** Would steps, a question or a different presentation help?
 - **Type of assistance:** Do you need an explanation, or would a hint be more useful?
 
-Compare the replies. Which change made the response better *for the learner's goal*? A longer prompt is not automatically a better one.
+Every setting changes the prepared reply, even without context. Compare the replies. Which change made the response better *for the learner's goal*? A longer prompt is not automatically a better one.
 
 ## Explain: why context matters
 
@@ -63,14 +63,16 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "Which detail is most useful in a prompt asking for help planning a class activity?"
-      options: ["The actual goal and available time", "An unrelated personal detail", "As many words as possible"]
+      q: "On the board, choose Investigating plant growth and tick the context box. Which detail changed the plan most?"
+      options: ["Having only two seedlings and seven days", "Asking for short steps", "Saying 'please'"]
       answer: 0
+      feedback: [null, "Steps change how the plan looks, not what is in it.", "Being polite is fine, but it doesn't tell the assistant anything about your task."]
   - check:
       type: question
-      q: "Does a clearly written prompt guarantee that AI's answer will be correct?"
-      options: ["Yes, if the prompt is long enough", "No, the output still needs to be evaluated", "Yes, if it asks for numbered steps"]
-      answer: 1
+      q: "Your prompt is clear and has all the context. The reply says 1/2 + 1/4 = 2/6. What went wrong?"
+      options: ["Nothing in the prompt: AI can still be wrong, so check the answer", "The prompt needed to be longer", "The prompt should have asked for numbered steps"]
+      answer: 0
+      feedback: [null, "A longer prompt can't stop every mistake. 2/6 is wrong: the answer is 3/4.", "Steps change the layout, not whether the maths is right."]
   - check: { type: reflect, text: "I can explain why a goal, relevant context and type of help can improve a request." }
 ```
 
@@ -96,7 +98,7 @@ check: { type: reflect, text: "I wrote a prompt with a clear goal, appropriate c
 
 Choose a new everyday learning goal. Write **two versions** in your book: an initial vague request and a more purposeful one. Annotate what you changed and **why**. The goal is clarity, not maximum length.
 
-**Optional authentic comparison:** With a school-approved AI assistant, try both requests without including personal data. Compare what *actually* changes and whether either response deserves checking. If an assistant is unavailable, swap your prompts with a partner and explain how you would interpret them.
+Swap your two prompts with a partner. Could they tell what you wanted from each one?
 
 **Wider investigation:** Sometimes a short request is enough. Identify a task where extra details make little difference, and a task where missing context would change the answer considerably.
 
@@ -117,7 +119,7 @@ Independently revise this request: **“Help me study.”** Include the subject 
 
 ```step
 stage: info
-check: { type: reflect, text: "I considered whether asking for a hint or an answer better supports my learning goal." }
+check: { type: reflect, text: "Before asking for help, I can decide whether I want a hint or an answer, and say why." }
 ```
 
 When you are practising something new, the most immediately complete answer might not be the most helpful response. Before prompting, decide what you want to **learn**, not just what you want AI to produce.

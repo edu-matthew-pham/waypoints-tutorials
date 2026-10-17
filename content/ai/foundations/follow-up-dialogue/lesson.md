@@ -41,17 +41,17 @@ check:
 ```step
 stage: run
 try: { playground: board, starter: "boards.yml#explore", height: 600 }
-check: { type: board, text: "Compare at least two different follow-up strategies.", when: "t >= 2" }
+check: { type: board, text: "Try at least two follow-ups, and find the one that fixes a first reply.", when: "t >= 2 and b >= 1" }
 ```
 
-Choose one of the situations in the board. Read the **initial request and prepared response**. Choose a follow-up:
+Choose a situation on the board. Read **your goal**, the first prompt and the first reply. Each first reply has **one clear problem**. Find it, then choose the follow-up that fixes it:
 
-- Provide important context that was missing.
+- Give more context.
 - Ask for a hint instead of the answer.
 - Ask for a simpler explanation.
-- Question an assumption the assistant seems to have made.
+- Question an assumption.
 
-Each option shows a **scripted example reply**, not a real AI response. Try at least two strategies and decide which is most helpful for the specific purpose. The first response is not always useless, and a follow-up is not automatically an improvement.
+Each option shows a **scripted example reply**, not a real AI. The board tells you whether your follow-up fixed the problem. Try more than one: a follow-up is not automatically an improvement.
 
 ## Explain: why follow up?
 
@@ -65,9 +65,10 @@ tasks:
       answer: 0
   - check:
       type: question
-      q: "Can asking AI to check its own answer replace independent verification?"
-      options: ["Yes, AI can always validate itself", "No, important claims still need external evidence", "Yes, when the answer sounds confident"]
-      answer: 1
+      q: "On the board, the study tips said 'find your learning style'. Which follow-up showed that claim was shaky?"
+      options: ["Question an assumption", "Give more context", "Ask for a simpler explanation"]
+      answer: 0
+      feedback: [null, "More context kept the shaky claim.", "Simpler words kept the shaky claim."]
   - check: { type: reflect, text: "I can select a follow-up that addresses a specific problem with an AI response." }
 ```
 
@@ -99,8 +100,6 @@ In your book, write a three-part example:
 
 Ask a partner whether your follow-up addresses the actual problem. Revise it once.
 
-**Optional authentic comparison:** With a school-approved assistant, try your request and a follow-up. Record what it actually does, rather than assuming it will follow your instruction. Do not share sensitive data.
-
 **Wider investigation:** Compare asking for an explanation, a hint and a challenge question. Which helps someone who wants to finish a task, and which helps someone who wants to learn to do it independently?
 
 ## Evaluate: transfer
@@ -120,7 +119,7 @@ Without the board, write a follow-up to an AI response that made an unsupported 
 
 ```step
 stage: info
-check: { type: reflect, text: "I can explain how a follow-up can preserve my role as the learner." }
+check: { type: reflect, text: "I can name the problem with a reply before I choose my follow-up." }
 ```
 
 You do not have to accept the first form of assistance. Ask for a question, an example, a hint or a different approach when it suits your goal. **But prompting an AI to be more confident, or to check itself, does not prove it is correct.**

@@ -1,21 +1,25 @@
 summary: "Map six equally likely die faces to endings and distinguish probabilities from observed rolls."
 time: 25
 goals:
-  - "I can explain the lesson's main idea using the model."
-  - "I can check an AI suggestion rather than accepting it automatically."
+  - "I can turn word counts into a dice table (mat = 3 faces, chair = 2, roof = 1)."
+  - "I can explain why ten rolls don't have to match 3 : 2 : 1."
+  - "I can explain why a generator that rolls can give different answers to the same start, and why a likely sentence isn't a true one."
 before: |
   Use the board as a transparent fixed-context model, not a miniature modern LLM. No AI account is required. The Explain it to me clip is an optional scaffold after prediction.
+  The board shows each roll ("Rolled 4 → chair") and the last ten, so students can match its die to their own table.
+  Model the difference between what a text generator produces and what evidence supports. The dice model illustrates sampling, not how a modern assistant checks facts. Students need not calculate formal probabilities to make this distinction.
 running:
-  - "Have students predict ten rolls before sampling, then compare with a partner."
-  - "Offer the optional explanation as a clip or the matching text; do not require watching before exploring."
-struggle: "A likely word is not a guaranteed word."
+  - "Engage: have students predict ten rolls before sampling."
+  - "Explore: compare results with a partner; short runs differ."
+  - "Explain: the optional line on always picking the top word links sampling to chatbots giving different answers."
+struggle: "Students may think a streak changes the odds, or that ten rolls must give five mats."
 stuck:
-  - see: "A likely word is not a guaranteed word."
-    ask: "If a learner thinks ten rolls must produce exactly five mats, ask whether each roll knows the previous results."
-    fix: "Return to the board and describe the counts or actions before using abstract language."
+  - see: "A student thinks ten rolls must produce exactly five mats."
+    ask: "Does each roll know what the previous rolls were?"
+    fix: "Roll ten more on the board and compare the two sets of ten."
 support: "Use the prepared examples, read the explanation aloud and repeat a small trial."
 stretch: "Explain where the toy model differs from a modern AI assistant."
-leads: "Continue to the next AI Foundations lesson and revisit the learning-with-AI judgement question."
+leads: "Unit 1, lesson 3 lets the computer repeat the same rolls thousands of times."
 exit:
   q: "Can roof appear twice in a row without the model changing?"
   a: "Yes. Each roll can select the roof face; two such rolls do not alter the mapping."

@@ -1,21 +1,25 @@
 summary: "Count example endings and distinguish a frequent next word from a certain one."
 time: 25
 goals:
-  - "I can explain the lesson's main idea using the model."
-  - "I can check an AI suggestion rather than accepting it automatically."
+  - "I can count which endings follow a phrase in a set of examples and say which is most common."
+  - "I can explain why the most common ending is likely but not certain."
+  - "I can check a suggested next word against what I actually mean."
 before: |
   Use the board as a transparent fixed-context model, not a miniature modern LLM. No AI account is required. The Explain it to me clip is an optional scaffold after prediction.
+  Formal fractions and percentages are an optional extension, not a prerequisite: start with counts and bars. Ask learners to justify answers using counts rather than guesses about the writer's intentions.
+  Common misconceptions: most likely means certain; the generator understands what the writer intends; changing the examples cannot change the prediction.
 running:
-  - "Ask students to count mat, chair and roof before revealing fractions."
-  - "Offer the optional explanation as a clip or the matching text; do not require watching before exploring."
-struggle: "Counts and examples are evidence of a pattern, not a guarantee."
+  - "Engage: ask students to write their own ending before seeing any examples."
+  - "Explore: count mat, chair and roof before revealing fractions; then add five roof examples."
+  - "Explain: the Explain it to me clip or its text is optional; do not require watching before exploring."
+struggle: "Students may read 'most common' as 'must come next'."
 stuck:
-  - see: "Counts and examples are evidence of a pattern, not a guarantee."
-    ask: "If a learner says mat must follow, ask which other endings appear in the examples."
-    fix: "Return to the board and describe the counts or actions before using abstract language."
+  - see: "A student says mat must follow because it is most common."
+    ask: "Which other endings appear in the examples? Could one of them come next?"
+    fix: "Point to the counts on the board: roof is 1 of 6, so it still happens sometimes."
 support: "Use the prepared examples, read the explanation aloud and repeat a small trial."
-stretch: "Explain where the toy model differs from a modern AI assistant."
-leads: "Continue to the next AI Foundations lesson and revisit the learning-with-AI judgement question."
+stretch: "Explain where the toy model differs from a modern AI assistant (tokens, much longer context, learned patterns)."
+leads: "Unit 1, lesson 2 uses a die to choose an ending by its chance. A physical die helps; no online AI account is needed."
 exit:
   q: "What happens to the most frequent ending when five roof examples are added?"
   a: "Roof becomes most frequent: six roof, three mat and two chair."

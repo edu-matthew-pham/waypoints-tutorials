@@ -47,8 +47,6 @@ The model sees only two clues: **colour** (green or yellow) and **shape** (round
 
 Look at the labelled examples. Test a yellow, long fruit and a green, round fruit. What does the model do when the clues do not clearly match one kind?
 
-**Alternative or extension:** With teacher approval, use [Teachable Machine](https://teachablemachine.withgoogle.com/) to train an image classifier with two fruit classes, then test photos that were **not** used in training. Use the same questions: What examples were used? What did the model predict? What surprised you? If access, images or permissions are unavailable, the Waypoints board is the complete core route. A real image classifier learns much richer features than this board.
-
 ## Explain: what did the model use?
 
 ```step
@@ -56,14 +54,16 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "What is a label?"
-      options: ["The category attached to a training example","A guarantee that a prediction is correct","The colour of every fruit"]
+      q: "On the board, one training example reads: yellow | round | apple. Which part is the label?"
+      options: ["apple","yellow","round"]
       answer: 0
+      feedback: [null, "Yellow is a clue the sorter looks at. The label is the answer it is taught.", "Round is a clue the sorter looks at. The label is the answer it is taught."]
   - check:
       type: question
-      q: "Why test a new example?"
-      options: ["To see whether the model works beyond its training examples","To prove it never makes mistakes","To replace all training examples"]
+      q: "No training example is green and long. You test a green, long fruit and the sorter says banana. What does that show?"
+      options: ["It can sort at least one fruit it was never shown","It will be right about every fruit","Green, long fruits are always bananas"]
       answer: 0
+      feedback: [null, "One right answer doesn't show it will always be right.", "In real life a green, long fruit could be many things. The sorter just copied its nearest examples."]
   - check: { type: reflect, text: "I can explain a prediction and name one limitation of the model." }
 ```
 
@@ -100,20 +100,19 @@ Add a correctly labelled example of a yellow, round banana. Test the same clues 
 stage: info
 check:
   type: question
-  q: "A model labels a yellow, round fruit as an apple. What should you do?"
-  options: ["Accept it because a model said so","Check the example and consider what the model was trained on","Assume all classifiers are useless"]
-  answer: 1
+  q: "Your friend's sorter was taught only yellow fruit. It calls a green, round fruit a banana. What is the most likely reason?"
+  options: ["It had no green examples, so it copied the nearest yellow ones","Sorters can't handle green fruit","Your friend tested it the wrong way"]
+  answer: 0
+  feedback: [null, "Give it green examples and it can sort green fruit.", "The test was fine. Look at what the sorter was taught."]
 ```
 
 Without using the model, write: **One thing I understand about how this model works is … One thing I would check before trusting its output is …**
 
-## Learning with AI: retain your judgement
+## Learning with AI: you can't see its examples
 
 ```step
 stage: info
-check: { type: reflect, text: "I considered what evidence to check and what thinking to retain when using AI." }
+check: { type: reflect, text: "I can explain why an AI's answer depends on examples I usually can't see." }
 ```
 
-An AI assistant gives a confident answer about a fruit photograph. You cannot see all its training data. What would you need to check before accepting the label? If the aim is to **learn classification**, which decisions should you practise yourself before asking for help?
-
-**Remember:** Better data often improves a model, but cannot guarantee a good result. Poor data can contribute to mistakes, but it is not the only possible cause.
+On the board you could see every example. A real AI assistant learned from far more examples than you could ever read, and you can't see them. So when it gives you a confident answer, ask: *what might it have learned from?* Better examples often help a model, but they can't guarantee a good answer.

@@ -13,6 +13,9 @@ function button(label,n){var b=add('button',label);b.type='button';b.onclick=fun
 button('Roll once',1);
 if(s.mode==='automatic'){button('Run 10',10);button('Run 100',100);button('Run 1000',1000);}
 var reset=add('button','Clear');reset.onclick=function(){rolls=[];manual=0;auto=0;B.moved=true;draw();};
+if(rolls.length){var lastI=rolls[rolls.length-1],lr=add('p');lr.className='last-roll';lr.setAttribute('role','status');var b=node('strong','Rolled '+(lastI+1)+' → '+s.words[lastI]);lr.appendChild(b);
+ var recent=rolls.slice(-10).map(function(i){return (i+1)+' '+s.words[i];});add('p','Last '+recent.length+' roll'+(recent.length>1?'s':'')+' (newest last): '+recent.join(', '));}
+else add('p','No rolls yet. Press Roll once.');
 add('p','Total: '+rolls.length+'; manual: '+manual+'; automated: '+auto);
 var counts={};s.words.forEach(function(w){counts[w]=0;});rolls.forEach(function(i){counts[s.words[i]]++;});
 var result=add('table');Object.keys(counts).forEach(function(w){var tr=add('tr',undefined,result);add('td',w,tr);add('td',String(counts[w]),tr);add('td',rolls.length?(100*counts[w]/rolls.length).toFixed(1)+'%':'—',tr);});

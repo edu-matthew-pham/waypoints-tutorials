@@ -1,12 +1,32 @@
-summary: "Investigate a simple fruit classification model."
+summary: "Students break a working fruit sorter on purpose, once with a wrong label and once by removing examples, then fix it and explain what went wrong."
 time: 30
 goals:
-  - "I can explain how examples influence predictions."
-before: "Use the built-in board. External tools are optional."
+  - "I can make a model give a wrong answer by changing its examples or labels."
+  - "I can explain the difference between a mistake caused by a wrong label and one caused by missing examples."
+  - "I can say what I would check when an AI gets something wrong."
+before: |
+  Last lesson students taught the sorter. This lesson they break it. The board's mistakes mode adds a Swap label button and three challenges (wrong label, missing examples, fix it); each ticks when a test shows it.
+  In the board's pretend world every long fruit is a banana and every round fruit is an apple, so the board can say "right" or "wrong". Real fruit is messier: say so.
+  The sorter copies the label of its nearest examples. It is a transparent teaching model, not a neural network.
+  No account or online tool is needed.
 running:
-  - "Predict, test, change and explain."
-struggle: "Predictions may be mistaken for facts."
-support: "Compare two fruit examples."
-stretch: "Test unfamiliar examples."
-leads: "Continue to the next lesson."
-explain: "Examples and labels influence model predictions. A prediction needs checking."
+  - "Engage: ask what could make a sorter wrong before anyone touches the board."
+  - "Explore: let students find their own way to fool it; collect the different ways on the board."
+  - "Explain: sort the ways into 'wrong labels' and 'missing examples'; ask which one a bigger dataset would not fix."
+  - "Elaborate: connect to real systems: labels are often made by people, quickly, and some kinds of case are missing."
+struggle: "Students may think a model that is wrong must be broken or badly programmed. Here the program is fine: the examples are the problem."
+stuck:
+  - see: "A student cannot make the sorter wrong."
+    ask: "Which examples does a yellow, long fruit sit closest to?"
+    fix: "Swap the label on one or two yellow, long examples, then test a yellow, long fruit again."
+  - see: "A student fixes the sorter by changing the test fruit instead of the examples."
+    ask: "Did the sorter change, or just the question you asked it?"
+    fix: "Keep the same test fruit and change only the examples."
+support: "Do the wrong-label challenge together first, then let students try the missing-examples one."
+stretch: "Find the fewest changes that fool the sorter. Why does removing one example sometimes make no difference?"
+leads: "Unit 2, lesson 3 shows how a model can weigh several clues at once."
+exit:
+  q: "A sorter with all correct labels still calls a fruit wrongly. What is the most likely reason?"
+  a: "Its examples do not cover that kind of fruit well, so its nearest examples point the wrong way."
+explain: |
+  A model learns from its examples. A wrong label teaches it the wrong answer. Missing examples leave it guessing from cases that are not like the new one. The program can be working perfectly and the answer can still be wrong.

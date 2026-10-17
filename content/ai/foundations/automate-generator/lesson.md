@@ -1,8 +1,6 @@
 ---
 sources:
   - { title: "Lodge and Loble (2026), Artificial intelligence, cognitive offloading and implications for education", url: "https://doi.org/10.71741/4pyxmbnjaq.31302475", checked: 2026-10-15 }
-  - { title: "Furze (2026), Resistance as a Framework for Combating Cognitive Offload", url: "https://leonfurze.com/2026/03/22/resistance-as-a-framework-for-combating-cognitive-offload/", checked: 2026-10-15 }
-  - { title: "Nakamura (2026), Augmentation or Erosion?", url: "https://doi.org/10.1007/s10648-026-10224-6", checked: 2026-10-15 }
 title: Let the computer take over
 summary: Compare manual and automated sampling, and decide which work can be delegated without losing understanding.
 language: science
@@ -77,9 +75,10 @@ tasks:
       answer: 0
   - check:
       type: question
-      q: "Who should still decide whether the examples and model suit the question?"
-      options: ["The learner or researcher", "The random number generator"]
+      q: "You press Run 1000 and see mat 51%, chair 33%, roof 16%. Which job did the computer NOT do?"
+      options: ["Decide whether six made-up endings are a good model of real sentences", "Roll the die 1000 times", "Count each word"]
       answer: 0
+      feedback: [null, "It did roll 1000 times: that is the job you handed over.", "It did count: that is part of the job you handed over."]
   - check: { type: reflect, text: "I can name what was automated and what judgement remains with me." }
 ```
 
@@ -135,25 +134,20 @@ Imagine you are learning to use the dice lookup table. You ask an AI assistant t
 - **Response B:** “How many die faces lead to the word? How many faces are there altogether?”
 - **Response C:** “Divide the number of matching faces by six. There are two matching faces, so the answer is 2/6.”
 
-Which response best preserves the thinking you are practising? Could Response C be helpful at a different stage of learning? Explain your choice before asking an AI.
+Which response leaves the thinking you are practising to you? Could Response C be helpful at a different stage of learning? These are prepared examples, not a live AI.
 
-Try directing the assistance with this instruction, or inspect it as a prepared example if AI access is unavailable:
-
-> I am learning to interpret a six-sided-die lookup table. Do not give me the answer immediately. Ask one question at a time, let me try, and give a small hint only if I am stuck.
-
-If you have access to a **school-approved AI assistant**, test the instruction on a *new* lookup table (for example, four faces for yes and two for no). Observe what the AI actually does. If it reveals the answer too soon, **redirect it**: “Please let me work out the next step before explaining.” The instruction is a request, not a guarantee of good tutoring.
+If a tutor gives you the whole answer when you wanted to practise, you can say so: *“Please let me work out the next step before you explain.”* Asking doesn't guarantee it will listen, so notice what it actually does.
 
 ```step
 stage: investigate
 check:
   type: question
-  q: "You ask AI for hints, but it immediately gives the complete answer. What is the most useful next step if your goal is to learn?"
-  options: ["Assume the answer means you have learned it", "Ask it to give one hint at a time, then try independently", "Always stop using tools"]
-  answer: 1
+  q: "You asked an AI tutor for hints, but it gave you the complete answer straight away. Your goal is to learn the method. What is the best next step?"
+  options: ["Ask it for one hint at a time, then try the next step yourself", "Copy the answer: you can learn it from reading later", "Ask it a harder question instead"]
+  answer: 0
+  feedback: [null, "Reading an answer can feel like learning, but you haven't practised the method.", "A harder question doesn't help you learn this method."]
 ```
 
-**Independent check:** Without AI, explain how to find the chance of an outcome from a new lookup table. Then reflect: what did you delegate, what thinking did you retain, and did the assistant follow your instructions?
-
-**For teachers:** Use the three prepared responses to model how *apparently helpful* AI can still over-assist. Response B is generally preferable for an initial independent attempt, but scaffolding should adapt to student needs. School-approved Copilot, MagicSchool, Thinking Mode or other assistants can be used where available; no particular provider, study mode or student account is required. Avoid entering personal student information. This authentic AI interaction is distinct from automating the toy sampling model above.
+**Independent check:** without AI, use this new table: **1 = sun, 2–3 = rain, 4–6 = cloud**. What is the chance of rain? Explain how you worked it out. Then reflect: what did you hand over today, and what thinking did you keep?
 
 **Important limitation:** this is a fixed, transparent sampling model. Modern LLMs do not generate text by simply rolling a die over a six-entry table; they use much more complex learned patterns and context.

@@ -53,9 +53,10 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "Why is a fluent answer not enough to establish truth?"
-      options: ["It may contain claims that are untested or unsupported", "Long sentences are always wrong", "An AI cannot ever be useful"]
+      q: "Claim 1 says every eight-hour seedling grew more than every four-hour seedling. Which measurement shows it is wrong?"
+      options: ["A four-hour seedling grew 5 cm, more than two of the eight-hour seedlings", "The eight-hour average was higher", "One eight-hour seedling grew 6 cm"]
       answer: 0
+      feedback: [null, "A higher average fits the claim. Look for a seedling that breaks the word 'every'.", "That seedling fits the claim. Look for one that breaks it."]
   - check:
       type: question
       q: "A dataset records plant height but not plant health. Can it confirm that one group is healthier?"
@@ -86,8 +87,6 @@ check: { type: reflect, text: "I completed and explained an independent applicat
 
 Create a short table of fictional observations (for example, time spent practising and quiz results). Write one claim that the table supports and one that it does **not** justify. Swap with a partner, who must explain what the evidence can and cannot establish. For claims about the real world, use appropriate trustworthy sources rather than invented data.
 
-**Optional authentic comparison:** With a school-approved AI assistant, compare what happens in an actual interaction with what the prepared board suggests. Do not share sensitive information. Judge the result against your own learning purpose.
-
 ## Evaluate: decide independently
 
 ```step
@@ -105,7 +104,7 @@ Without using the board, explain why *supported by these observations* is differ
 
 ```step
 stage: info
-check: { type: reflect, text: "I can explain what judgement and understanding should remain mine when using AI." }
+check: { type: reflect, text: "I can explain why asking the same AI to confirm itself isn't checking." }
 ```
 
-An AI can help you identify questions to investigate, but **asking the same model to confirm itself is not independent verification**. For consequential claims, inspect the original evidence or trustworthy sources. Even apparently credible citations may be missing, irrelevant or misrepresented.
+An AI can help you identify questions to investigate, but **asking the same model to confirm itself is not independent verification**. For claims that matter, look at the original evidence or a source you trust. Even apparently credible citations may be missing, irrelevant or misrepresented.

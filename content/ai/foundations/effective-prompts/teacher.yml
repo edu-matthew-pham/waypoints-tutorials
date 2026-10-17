@@ -4,8 +4,8 @@ goals:
   - "I can write a purposeful prompt without including unnecessary information."
   - "I can compare responses for usefulness and recognise that clarity does not guarantee accuracy."
 before: |
-  The board contains scripted comparisons, not a live AI model.
-  Students can complete the lesson without external accounts. A school-approved assistant is optional.
+  The board contains scripted comparisons, not a live AI model. Every setting (context, format, kind of help) changes the prepared reply, so students can see the effect of one change at a time.
+  Students complete the lesson without external accounts. If your school allows it, you can demonstrate the same two prompts in a school-approved assistant; keep personal data out.
 running:
   - "Start with the vague request, then change one feature at a time."
   - "Discuss whether a hint supports learning better than a complete answer."
@@ -18,8 +18,8 @@ support: "Provide the three prompt components: goal, relevant context and form o
 stretch: "Compare prompts across different subjects and describe when concise prompts work."
 leads: "The next lesson develops follow-up and redirection after an initial AI response."
 exit:
-  q: "Does a detailed prompt guarantee a correct response?"
-  a: "No. Context can help, but responses still require evaluation."
+  q: "Rewrite 'Help me study' so an assistant could give useful help. What did you add, and why?"
+  a: "The subject or skill, what I already know, and the kind of help I want (for example a hint or practice questions). Each one changes what useful help looks like."
 explain: |
   An AI assistant may respond differently when the goal, context or kind of help changes.
   Prepared board responses illustrate this principle without simulating an LLM.

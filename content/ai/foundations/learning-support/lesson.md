@@ -53,14 +53,16 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "What best distinguishes a hint from a finished solution?"
-      options: ["A hint leaves some thinking and decision-making to the learner", "A hint is always more accurate", "A finished solution is always harmful"]
+      q: "On the board, you asked for one hint and then wrote the rest yourself. Your friend pressed Show worked example straight away. Who did more of the thinking?"
+      options: ["You: the hint left the next steps to you", "Your friend: the worked example has more steps in it", "The same: you both saw the method"]
       answer: 0
+      feedback: [null, "More steps on the screen isn't more thinking by your friend.", "Seeing a method isn't the same as working it out."]
   - check:
       type: question
-      q: "Which is good evidence that assistance supported learning?"
-      options: ["The AI response was long", "You can now tackle a related problem independently", "The AI gave the answer immediately"]
-      answer: 1
+      q: "After using the worked example for 1/2 + 1/4, which result is the best evidence you learned the method?"
+      options: ["You get the new question, 1/3 + 1/6, right without looking back", "You understood the worked example while reading it", "You chose high confidence"]
+      answer: 0
+      feedback: [null, "Understanding while reading can feel like learning. A new question tests it.", "Confidence is a guess. The model answer checks it."]
   - check: { type: reflect, text: "I can explain when hints, feedback or worked examples support my learning." }
 ```
 
@@ -86,8 +88,6 @@ check: { type: reflect, text: "I completed and explained an independent applicat
 
 Choose something you are currently learning. Write three possible AI requests: **a hint**, **feedback on your attempt** and **a worked example**. Decide when each might be useful. Then write a fourth request that asks for a new question so you can test whether you learned the skill.
 
-**Optional authentic comparison:** With a school-approved AI assistant, compare what happens in an actual interaction with what the prepared board suggests. Do not share sensitive information. Judge the result against your own learning purpose.
-
 ## Evaluate: decide independently
 
 ```step
@@ -105,7 +105,7 @@ Without the board, explain the difference between *completing a task* and *learn
 
 ```step
 stage: info
-check: { type: reflect, text: "I can explain what judgement and understanding should remain mine when using AI." }
+check: { type: reflect, text: "I can say which kind of help I need right now, and why." }
 ```
 
 Before asking AI for help, consider what you already know and what you need to practise. A useful assistant may give a question or feedback rather than the answer. But requiring struggle without support is not the goal either. Adjust the assistance as your understanding changes.

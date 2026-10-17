@@ -42,7 +42,7 @@ try: { playground: board, starter: "boards.yml#explore", height: 600 }
 check: { type: board, text: "Test at least two fruit descriptions.", when: "t >= 2" }
 ```
 
-Predict the result before testing a green, round fruit and a yellow, long fruit. Then try a yellow, round fruit. Change the **colour** and **shape** weights using **More** and **Less**. These are weights you set by hand, not weights learned from examples.
+Predict the result before testing a green, round fruit and a yellow, long fruit. Then try a yellow, round fruit. Change the **colour** and **shape** weights using **More** and **Less**. These are weights you set by hand, not weights learned from examples. If the score is exactly 0, the two clues cancel out and the unit says **unsure**.
 
 ## Explain: which clues matter?
 
@@ -56,9 +56,10 @@ tasks:
       answer: 0
   - check:
       type: question
-      q: "Is this decision unit a complete neural network?"
-      options: ["Yes", "No: real neural networks can learn many interacting parameters", "Yes, because it has two clues"]
-      answer: 1
+      q: "Set the colour weight to 0 and the shape weight to 2. What does the unit predict for a yellow, round fruit?"
+      options: ["apple", "banana", "unsure"]
+      answer: 0
+      feedback: [null, "With colour weight 0, yellow adds nothing. Round pushes the score below zero.", "Try it on the board: the score is below zero."]
   - check: { type: reflect, text: "I can explain how two clues contribute to a decision." }
 ```
 
@@ -89,26 +90,25 @@ Find two settings that produce different predictions for the same yellow, round 
 
 **Wider investigation:** Could two different fruits share both clues? Suggest a third clue. Why would that still not guarantee a correct answer?
 
-**Optional authentic comparison:** With school approval, train an image classifier using [Teachable Machine](https://teachablemachine.withgoogle.com/) and test unfamiliar photos. Unlike our hand-adjusted unit, the image model learns from examples.
-
 ## Evaluate: check the output
 
 ```step
 stage: info
 check:
   type: question
-  q: "A model produces a convincing fruit label. What does that establish?"
-  options: ["It must be correct", "It is a prediction to evaluate against evidence", "The model understands fruit"]
-  answer: 1
+  q: "With colour weight 3 and shape weight 1, the unit calls a yellow, round fruit a banana. What does this show?"
+  options: ["The weights trust colour much more than shape, so colour decides", "Yellow, round fruits are bananas", "The unit learned this from examples"]
+  answer: 0
+  feedback: [null, "The label comes from the weights you set, not from what the fruit really is.", "You set these weights by hand. Nothing was learned from examples."]
 ```
 
 Without the board, explain how changing the importance of a clue can affect a prediction.
 
-## Learning with AI: keep your judgement
+## Learning with AI: hidden weights
 
 ```step
 stage: info
-check: { type: reflect, text: "I considered what evidence to check and what thinking to retain when using AI." }
+check: { type: reflect, text: "I can explain how weights I can't see could tilt an AI's answer." }
 ```
 
-AI systems can use richer patterns than this model, but still have blind spots. When using AI to learn, what should you check before accepting its output? What understanding should remain yours?
+Here you could see both weights and change them. A real AI weighs millions of clues, and nobody can read all its weights. A clue that is weighted too heavily can tilt its answer the wrong way, just as colour did here. So treat its answer as a prediction to check, not a fact.

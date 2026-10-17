@@ -69,7 +69,7 @@ Copy this table into your book:
 | 4, 5 | chair |
 | 6 | roof |
 
-Roll a die **ten times**, recording each result and the chosen word. Use the board's virtual die if you do not have a physical die. Keep the lookup table unchanged.
+Roll a die **ten times**, recording each result and the chosen word. Use the board's virtual die if you do not have a physical die: it shows each roll, such as **Rolled 4 → chair**, and your last ten rolls. Keep the lookup table unchanged.
 
 Compare with a partner. Did you get identical results? Does a short run always match the expected 3:2:1 ratio?
 
@@ -85,9 +85,10 @@ tasks:
       answer: 1
   - check:
       type: question
-      q: "Why might ten rolls produce no 'roof' outcomes?"
-      options: ["Roof is impossible", "Random samples need not match the expected proportions exactly", "The lookup table changes after each roll"]
-      answer: 1
+      q: "You and a friend each roll the board's die 10 times. Your friend gets roof 3 times. You get roof 0 times. What is true?"
+      options: ["Both results can happen with the same die and table", "Your friend's die must be unfair", "Roof's chance went down for you"]
+      answer: 0
+      feedback: [null, "Ten rolls is a small sample. Short runs vary a lot.", "The table didn't change: roof is still 1 face out of 6."]
   - check: { type: reflect, text: "I can map a frequency to dice faces and explain why sampled results vary." }
 ```
 
@@ -104,6 +105,8 @@ Consider why ten rolls might contain no roof outcomes.
 Connect probabilities with the different results of repeated rolls.
 
 Choosing an outcome according to its assigned probability is called **sampling**. A model can use sampling instead of always selecting the single most frequent word.
+
+A generator that **always picks the top word** would write "mat" every single time. Rolling lets it write "chair" or "roof" sometimes. This is one reason a chatbot can give different answers to the same question.
 
 Our model only chooses **one word after one fixed phrase**. A larger word-transition model would use the newly chosen word to look up another set of possible next words. That is still far simpler than a modern LLM.
 
@@ -126,9 +129,10 @@ Make a new lookup table and roll five times. Explain what changed: the die, the 
 stage: info
 check:
   type: question
-  q: "Your model produces 'roof' twice in a row. What can you conclude?"
-  options: ["The model is broken", "Roof has become the most likely ending", "An unlikely result can happen without changing the probabilities"]
-  answer: 2
+  q: "Your model produces 'roof' twice in a row. What is the chance of roof on the next roll?"
+  options: ["Still 1 in 6", "Higher, because roof is on a streak", "Lower, because roof is due a rest"]
+  answer: 0
+  feedback: [null, "The die doesn't remember earlier rolls.", "The die doesn't remember earlier rolls."]
 ```
 
 Write one sentence distinguishing **probability** from **what actually happened** in your rolls.
@@ -146,13 +150,10 @@ Which response better distinguishes **generation** from **verification**? What e
 stage: investigate
 check:
   type: question
-  q: "A generated sentence sounds convincing. What does that show?"
-  options: ["It must describe a real event", "It may be plausible without being verified", "The generator checked its sources"]
-  answer: 1
+  q: "The generator writes 'The cat sat on the roof.' What would tell you whether a real cat sat on a roof?"
+  options: ["Someone who saw it, or a photo", "Rolling again and getting roof", "The sentence sounding natural"]
+  answer: 0
+  feedback: [null, "Another roll only shows the die again, not the cat.", "Sounding natural is what the generator is built to do. It isn't evidence."]
 ```
-
-**Optional authentic comparison:** With a school-approved AI assistant, ask for two different plausible endings to the same sentence, then ask what evidence would establish whether either describes a real event. Compare the assistant's *actual* behaviour with Response B. If AI access is unavailable or inappropriate, use the prepared responses above. Do not assume that a live assistant will respond as expected.
-
-**For teachers:** Model the difference between *what a text generator produces* and *what evidence supports*. The dice model illustrates sampling, not how a modern assistant verifies facts. Students need not calculate formal probabilities to make this distinction.
 
 **Next:** let a computer repeat this same sampling procedure, and decide what understanding you must keep.

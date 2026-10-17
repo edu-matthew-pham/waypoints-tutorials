@@ -53,14 +53,16 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "What matters most when deciding whether AI should complete a task for you?"
-      options: ["Whether the task is long", "What you are trying to learn or achieve and what must be checked", "Whether AI can produce something quickly"]
-      answer: 1
+      q: "On the board, the timetable dates were already checked. Why is formatting them a reasonable job to hand over?"
+      options: ["Formatting isn't the skill you're learning, and you can check the dates didn't change", "Formatting is too boring to do yourself", "AI never makes mistakes with dates"]
+      answer: 0
+      feedback: [null, "Boring isn't the reason. What matters is whether it is the skill you're learning.", "AI can change or invent dates. That's why you check."]
   - check:
       type: question
-      q: "Which is an example of reasonable delegation?"
-      options: ["Ask AI to format checked information, then verify the result", "Copy AI explanations as proof of your own understanding", "Treat generated facts as automatically reliable"]
+      q: "On the board, your goal is to understand controlled variables. Which choice keeps the thinking you need?"
+      options: ["Write your own explanation, then ask for feedback", "Ask AI to write the explanation to hand in", "Ask AI for a summary of a different experiment"]
       answer: 0
+      feedback: [null, "Then the explanation, and the understanding, are the AI's.", "That doesn't help with your goal."]
   - check: { type: reflect, text: "I can justify which parts of a task I would do, get help with or delegate." }
 ```
 
@@ -86,8 +88,6 @@ check: { type: reflect, text: "I completed and explained an independent applicat
 
 Choose an authentic school task. Divide it into **thinking you need to learn**, **assistance you could request** and **execution that may be safely delegated**. Explain how you will check anything produced by AI. Then consider how your choices would change if this were a timed performance task rather than a practice activity.
 
-**Optional authentic comparison:** With a school-approved AI assistant, compare what happens in an actual interaction with what the prepared board suggests. Do not share sensitive information. Judge the result against your own learning purpose.
-
 ## Evaluate: decide independently
 
 ```step
@@ -105,7 +105,7 @@ Without the board, describe one situation where delegation helps and another whe
 
 ```step
 stage: info
-check: { type: reflect, text: "I can explain what judgement and understanding should remain mine when using AI." }
+check: { type: reflect, text: "I can say what I would hand over, what I would keep, and how I would check the result." }
 ```
 
 Self-regulation is not simply doing everything alone. It is deciding when to attempt, when to ask for help and when to delegate. Even if AI performs some work, **you remain responsible for deciding whether the result is appropriate and sufficiently checked**.
