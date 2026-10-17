@@ -1,28 +1,30 @@
-summary: "Use a calibration exercise and real metacognition research to examine the difference between feeling competent and demonstrating understanding."
+summary: "Students say how sure they are before checking a new question, compare that with how they did, and look at research on AI and overconfidence."
 time: 40
 goals:
-  - "I can explain metacognitive calibration and illusions of competence."
-  - "I can compare a confidence judgement with evidence from a new attempt."
-  - "I can distinguish a classroom demonstration from an experimental research finding."
+  - "I can say whether my confidence matched how well I did."
+  - "I can explain why feeling sure after reading an explanation is not the same as being able to do it."
+  - "I can say what the Fernandes study shows and what it doesn't."
 before: |
-  Teaching move: metacognitive calibration and counterexample. The reused activity is scripted, not a generative AI system.
-  Source: Fernandes et al., Computers in Human Behavior (2026): https://doi.org/10.1016/j.chb.2025.108779
-  Research involved AI-assisted logical-reasoning tasks; do not portray findings as direct evidence of long-term student learning.
+  Teaching move: check your own confidence against a fresh attempt, then meet a counterexample from research. The board is scripted, not a generative AI system.
+  Source: Fernandes et al., Computers in Human Behavior (2026): https://doi.org/10.1016/j.chb.2025.108779. Adults (246 and 452 participants) on AI-assisted logical reasoning tasks. Do not present it as direct evidence about long-term school learning.
+  Words used for students: metacognition ("thinking about your own thinking"), confidence that is too high or too low (the research word is calibration), and illusion of competence.
 running:
-  - "Elicit a confidence prediction before feedback."
-  - "Invite students to explain what an actual attempt demonstrates and what it misses."
-  - "Compare the classroom illustration with the research design and avoid causal overclaims."
-  - "Connect calibration to forethought, monitoring and reflection in self-regulated learning."
-struggle: "Students may mistake one inaccurate confidence estimate for evidence that they generally misunderstand the topic."
+  - "Engage: collect a confidence prediction before any feedback."
+  - "Explore: ask students to explain what their new attempt shows and what it misses."
+  - "Explain: Tom and Kai are both mismatched, in opposite directions; make sure students see both."
+  - "Elaborate: compare the classroom board with the research design and avoid claiming the board proves anything."
+  - "Link to choosing what to do next: practise, ask for help, or move on."
+struggle: "Students may treat one wrong confidence guess as proof they misunderstand the whole topic."
 stuck:
-  - see: "A learner treats the board as experimental proof that generative AI causes overconfidence."
-    ask: "Where was live AI used? What comparison would the investigation need?"
-    fix: "Label the board as a prepared illustration and return to the published study."
-support: "Offer low, medium and high confidence instead of numerical estimates."
-stretch: "Propose a more reliable measure of calibration using multiple new tasks and both underconfidence and overconfidence."
-leads: "Lesson 6 challenges outcome validity, comparison choices and the limits of experimental evidence."
+  - see: "A student treats the board as proof that AI causes overconfidence."
+    ask: "Was a live AI used here? What comparison would you need?"
+    fix: "Call the board a prepared example and go back to the published study."
+support: "Use low, medium and high rather than numbers or percentages."
+stretch: "Design a better measure: several new questions, and look for both too-high and too-low confidence."
+leads: "Unit 2, lesson 3 asks how to design a fairer study of AI and learning."
 exit:
-  q: "Why might AI-assisted success make self-regulation harder?"
-  a: "It can be harder to estimate one's own competence when feedback and reasoning come partly from the tool."
+  q: "Why might doing well with AI make it harder to know what you can do alone?"
+  a: "Some of the thinking came from the tool, so it can feel like you know it. A new try without help shows what you can actually do."
 explain: |
-  Some evidence supports overestimation during AI-supported reasoning tasks. Avoid universal claims about all students or all AI use.
+  Feeling sure is a guess about yourself. Check it with a new try without help. Your confidence can be too high or too low. When it matches what you can do, you can choose well when to practise and when to move on.
+  Some evidence shows overestimation in AI-supported reasoning tasks. Avoid claims about all students or all AI use.

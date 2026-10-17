@@ -5,6 +5,13 @@ inquiry:
     - "Who benefits from and who is challenged by the decision?"
   notes: "Students need not agree. Distinguish facts, predictions and educational values."
 activities:
+  - at: run
+    kind: discussion
+    title: "Rank what school is for"
+    minutes: 5
+    do: |
+      Rank four things school could value: doing it yourself, making useful things with tools, working well with others, making good choices. Compare with a partner and find your biggest difference.
+    notes: "Disagreement here is about values; ask each pair to state the other's top choice fairly."
   - at: end
     kind: discussion
     title: "Return to the course question"

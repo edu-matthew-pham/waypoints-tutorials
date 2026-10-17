@@ -1,29 +1,30 @@
-summary: "Confront two genuine studies and teach students to distinguish results, comparisons, outcomes and overclaims."
+summary: "Students sort facts from two real studies, then learn to ask what was compared, what was measured, and whether a claim fits."
 time: 40
 goals:
-  - "I can identify comparison conditions and outcome measures in a study."
-  - "I can describe accurately what two contrasting AI education studies found."
-  - "I can challenge a research claim that goes beyond the observed results."
+  - "I can say what two real studies of AI and learning compared and measured."
+  - "I can spot which part of a headline goes further than a study shows."
+  - "I can explain why 'not clearly different' is not the same as 'exactly equal'."
 before: |
-  Teaching move: evidence confrontation. Prepare the two original papers or accessible summaries. This lesson uses the published results as of October 2026.
-  Bastani et al. (2025), PNAS: https://doi.org/10.1073/pnas.2422633122
-  Kestin et al. (2025), Scientific Reports: https://doi.org/10.1038/s41598-025-97652-6
-  Avoid suggesting GPT Tutor failed or succeeded outright: its unassisted outcome was statistically indistinguishable from control. Explain why this is not proof of equivalence.
+  Teaching move: evidence confrontation. The lesson uses the published results as of October 2026; have the papers or summaries ready.
+  Bastani et al. (2025), PNAS: https://doi.org/10.1073/pnas.2422633122. Three arms: control (books and notes), GPT Base, GPT Tutor (teacher-designed prompts with hints and safeguards). Both AI arms did better during practice; on the later unassisted exam GPT Base was about 17% below control and GPT Tutor was not statistically distinguishable from control. Do not say GPT Tutor failed or succeeded outright, and explain why "not distinguishable" is not proof of equivalence.
+  Kestin et al. (2025), Scientific Reports: https://doi.org/10.1038/s41598-025-97652-6. 194 undergraduate physics students, a crossover design (each student had one topic with the AI tutor and one in an instructor-led active-learning class, order randomised). Immediate post-tests favoured the AI tutor; pace, format and feedback changed together, and long-term learning was not tested.
+  Student text says "plain AI chatbot" for GPT Base and "AI tutor with teacher-written hints" for GPT Tutor.
 running:
-  - "Start from apparently conflicting headlines and ask for the comparison conditions before any verdict."
-  - "Have students distinguish assisted practice, immediate post-test, and durable transfer."
-  - "Ask which alternative educational tools were not represented by the experiments."
-  - "Invite participants to argue for the strongest defensible interpretation of each study."
-struggle: "Students often treat a reported gain as an AI-specific effect without recognising that several parts of the instructional package changed."
+  - "Engage: start from the two headlines and ask for the comparisons before any verdict."
+  - "Explore: the sort is the first look at the methods; go through any fact students placed in the wrong study."
+  - "Explain: separate practice scores, a test straight after, and a test weeks later without help."
+  - "Ask which other tools neither study compared AI with (a well-designed non-AI computer tutor)."
+struggle: "Students often treat a gain as caused by AI when several parts of the teaching changed at once."
 stuck:
-  - see: "A learner says the positive and negative results cancel."
-    ask: "Were the students, tasks, comparison conditions and outcomes identical?"
-    fix: "Return to the actual methods and isolate each study's measured question."
-support: "Provide a two-column comparison for participants, treatment, comparison, measure and conclusion."
-stretch: "Ask how the conclusions would change with a high-quality conventional digital tutor or a delayed assessment."
-leads: "Lesson 5 investigates metacognitive confidence and how learners judge AI-assisted competence."
+  - see: "A student says the positive and negative results cancel out."
+    ask: "Were the students, the tasks, the comparisons and the tests the same?"
+    fix: "Go back to the sort: each study answered a different question."
+support: "Give a two-column table: who took part, what each group got, compared with what, what was tested, what we can claim."
+stretch: "How would the conclusions change with a strong non-AI computer tutor as a comparison, or a test months later?"
+leads: "Unit 2, lesson 2 looks at confidence: do students know how well they are really doing?"
 exit:
-  q: "Can both contrasting studies be credible?"
-  a: "Yes. They compared different instructional conditions and outcomes; their findings need not be direct contradictions."
+  q: "Can a study showing AI helps and a study showing AI harms both be trustworthy?"
+  a: "Yes. They compared different kinds of help with different groups and tested different things, so their results need not contradict each other."
 explain: |
-  Empirical findings should be accurately represented; open inquiry concerns interpretation and educational value, not invented ambiguity.
+  Ask three questions about any study: compared with what, measured how, and does the claim fit? Study A compared AI with books and notes and tested later without AI. Study B compared an AI tutor with a teacher-led class and tested straight after. They answer different questions.
+  Report the real findings accurately; the open part is what they mean and what we value.

@@ -1,31 +1,31 @@
-summary: "Redesign comparisons and outcome measures to expose what studies of AI and learning do and do not establish."
+summary: "Students find the other differences that could explain a study's result, match tests to claims, and design a fairer study of an AI feature."
 time: 40
 goals:
-  - "I can choose a fair comparison when testing an AI feature."
-  - "I can distinguish validity from observed performance."
-  - "I can state what a proposed experimental result would and would not establish."
+  - "I can spot a difference between groups, other than the AI, that could explain a result."
+  - "I can choose a test that fits a claim (during, straight after, or weeks later)."
+  - "I can design a fair comparison for an AI feature and say what it still couldn't show."
 before: |
-  Teaching move: research design critique and reconstruction.
-  All A/B/C comparison conditions are hypothetical. Do not imply a three-arm study has already tested them.
-  Students can work through the lesson without AI, using existing checkpoints and discussion.
-  Nakamura's October 2026 paper, "Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning", is a theoretical review (https://doi.org/10.1007/s10648-026-10224-6). The paper's terms are "peripheral" and "constitutive", on a graded continuum; the course says "central" for constitutive. Its seven propositions are testable predictions, not experimental findings. Keep it distinct from the empirical studies in Lessons 4 and 5.
+  Teaching move: take a study apart, then rebuild it.
+  The AI-class and worksheet-class table, and the "same tutorial with and without an AI helper" design, are made up. Do not imply a study like this has been done.
+  Words used for students: a confounding difference ("a difference that could explain the result instead") and validity ("does the test give good evidence for this claim?").
+  Nakamura's October 2026 paper, "Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning", is a theoretical review (https://doi.org/10.1007/s10648-026-10224-6), now in the Elaborate extension. Its terms are "peripheral" and "constitutive", on a graded continuum; the student text says "on the edge" and "is the skill". Its seven propositions are testable predictions, not experimental findings. Keep it separate from the studies in Unit 2, lessons 1 and 2.
 running:
-  - "Begin with a result that sounds persuasive and identify what was actually compared."
-  - "Explain why an established non-AI interactive tutorial is a serious alternative, not an absence of assistance."
-  - "Separate immediate scores, delayed performance, productivity and other educational aims."
-  - "Require students to identify at least one unresolved limitation in their own design."
-  - "Ask what study could falsify a theoretically plausible proposition about core and peripheral offloading."
-struggle: "Students may suppose that adding a control group automatically isolates the effect of AI, even when the groups differ in other instructional features."
+  - "Engage: begin with a result that sounds convincing and ask what was actually compared."
+  - "Explore: after the sort, ask which differences a non-AI computer tutor could also provide (instant feedback, more time)."
+  - "Explain: separate scores during the lesson, straight after, and weeks later, and other aims such as getting more done."
+  - "Elaborate: every design must name at least one thing it still can't show."
+  - "Extension: ask what result would prove the 'is the skill / on the edge' prediction wrong."
+struggle: "Students may think adding a comparison group automatically isolates the AI, even when the groups differ in other ways."
 stuck:
-  - see: "A learner compares AI only against no support."
-    ask: "What is the best existing way a student could learn this today?"
-    fix: "Compare the same structured lesson with and without the added AI feature."
-support: "Provide a fill-in comparison table: goal, groups, what stays constant, outcome, remaining uncertainty."
-stretch: "Ask how prior knowledge, school resources, or different educational values would affect generalisation."
-leads: "Unit 3 examines cognitive offloading, tool choice and the design of AI assistance."
+  - see: "A student compares AI only with no help."
+    ask: "What is the best way a student could learn this today, without AI?"
+    fix: "Compare the same lesson with and without the AI feature, with the same time."
+support: "Give a fill-in table: goal, groups, what stays the same, what we measure and when, what we still can't tell."
+stretch: "How would students' prior knowledge, school resources or different values change who the result applies to?"
+leads: "Unit 3 looks at handing thinking to tools, other tools besides AI, and how help is designed."
 exit:
-  q: "Why might a genuine improvement in test scores still fail to settle whether AI helps learning?"
-  a: "Its meaning depends on comparison conditions, which learning outcomes are tested, the time horizon and what education values."
+  q: "Why might a real rise in test scores still not settle whether AI helps learning?"
+  a: "It depends on what the AI was compared with, what else changed, which test was used and when, and what we value."
 explain: |
-  Do not turn a fair methodological critique into a claim that existing research tells us nothing.
-  This unit is about interpreting narrow findings accurately and designing stronger questions.
+  A fair study changes one thing and keeps the rest the same. Its test must fit its claim: a quiz during the lesson shows help, a test weeks later shows remembering. Even a good study has limits.
+  Don't turn a fair criticism into "research tells us nothing". The aim is to read narrow findings accurately.

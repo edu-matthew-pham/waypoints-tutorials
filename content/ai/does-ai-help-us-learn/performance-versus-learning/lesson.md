@@ -1,6 +1,6 @@
 ---
-title: Is performing well the same as learning?
-summary: Compare assisted and independent attempts, examine what each demonstrates and question whether tests capture every kind of learning.
+title: Is doing well the same as learning?
+summary: Try a question with help, then a new one without, and compare what each attempt shows about learning.
 language: science
 shape: 5e
 unit: what-is-learning
@@ -23,113 +23,111 @@ explainClip:
     - caption: { text: "Neither observation alone tells the whole story of learning." }
     - wait: 1050
 ---
-In Lesson 1, we questioned whether an impressive product shows learning. But perhaps a student *can* produce a better result because of help and learn something in the process.
+Last lesson we asked whether a finished product shows learning. But sometimes help does more than finish the job. You might do better *because* of help, and learn something along the way.
 
-**Provocation:** "If I get the correct answer with AI, that means I've learned it." What evidence would support or challenge that claim?
+"If I get the right answer with AI, I've learned it." What would show this is true? What would show it is not?
 
-## Engage: what does success tell us?
+## Engage: what does a right answer show?
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "A student solves a maths problem using step-by-step help, then submits the correct answer. What does this establish?"
-  options: ["They can definitely solve future problems independently", "They succeeded with the available help; we need more evidence about their learning", "The help prevented all learning"]
-  actual: "The answer shows assisted success. We have not yet tested what the student now understands or can do in another situation."
+  q: "A student follows step-by-step help and gets a maths question right. What does this show?"
+  options: ["They can now do questions like it on their own", "They got it right with help; we don't know yet what they can do alone", "The help stopped them learning anything"]
+  actual: "It shows they got it right with help. We have not tested yet what they can do on a new question, or next week."
 ```
 
-Think back to your own experiences. Have you ever followed a worked example and felt confident, but found a new problem more difficult? Have you ever learned something *from* a worked example? Both experiences are possible.
+Have you ever followed a worked example, felt sure, then found a new question hard? Have you ever learned something *from* a worked example? Both happen.
 
-## Explore: compare help and a fresh attempt
+## Explore: with help, then without
 
 ```step
 stage: run
 try: { playground: board, starter: "boards.yml#explore", height: 690 }
-check: { type: board, text: "Explore the prepared practice activity and inspect its feedback.", when: "t >= 1" }
+check: { type: board, text: "Do one question with any help you want, then record an attempt at the new question.", when: "t >= 1" }
 ```
 
-Use the prepared practice board as an **example of scaffolded assistance**, not as an experiment proving AI improves learning. Notice when it provides hints, when you still do the thinking and what you can check for yourself.
+This is a prepared practice board, not a live AI.
 
-Then try this short two-round investigation on paper or in discussion. An AI account is not required.
+1. Pick a challenge. Write your attempt. Ask for a hint or the worked example if you want one.
+2. Press **Try a new question**. Answer it **without looking back**.
+3. Say how sure you are, then record your attempt and read the model answer.
 
-**Round A — supported:** A school garden has planted 12 seedlings. One third are herbs. A worked example shows that one third of 12 is 12 ÷ 3 = 4. Explain why dividing by 3 makes sense.
+Now compare. Which part did you do with help? Which part did you do alone? What does each one tell you?
 
-**Round B — new task:** Without looking back, 15 seedlings are planted and two fifths are herbs. How many herbs are there? Write *how you know*, not just the number.
-
-Compare the two rounds: Which required you to follow an example? Which required you to apply an idea? What would one correct or incorrect answer allow you to conclude?
-
-**Teacher note for the activity:** It is a classroom illustration, not a controlled study. Varying the numbers and adding a new step also varies task difficulty. A student who struggles may still have learned something; a correct response does not prove durable understanding.
-
-## Explain: performance, transfer and limitations
+## Explain: three kinds of evidence
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "What does an accurate supported answer most directly show?"
-      options: ["Successful performance under those conditions", "Guaranteed long-term understanding", "The absence of learning"]
+      q: "Mia gets 1/2 + 1/4 right while looking at the worked example. The next day she gets 1/3 + 1/6 wrong without it. What does this show most clearly?"
+      options: ["She could follow the example, but can't yet do a new one alone", "She learned nothing from the example", "The second question was unfair, so ignore it"]
       answer: 0
+      feedback: [null, "She may have learned part of it. The second try shows what is still missing.", "It was a little different, but that is what makes it a useful test."]
   - check:
       type: question
-      q: "Why is a related new problem useful after a worked example?"
-      options: ["It offers additional evidence about whether the learner can apply the idea", "It proves that all learning is independent", "It removes every difference between the two tasks"]
+      q: "Leo got the new question right today. Which extra check would tell you most about whether he will still remember the method?"
+      options: ["A similar question in two weeks, without help", "Asking him how sure he feels today", "Giving him the same question again straight away"]
       answer: 0
-  - check: { type: reflect, text: "I can explain why an assisted answer, a fresh attempt and a delayed attempt offer different evidence about learning." }
+      feedback: [null, "How sure he feels is a guess. It is not a test.", "He might just remember that answer. A later question tests the method."]
+  - check: { type: reflect, text: "I can explain what a right answer with help, a new question and a later question each show." }
 ```
 
-### Assisted performance
+There are three different things you can check.
 
-**Performance** describes what a learner achieves under particular conditions. Tools, hints, peers and teachers can all change those conditions.
+- **With help:** how well you do with hints, worked examples, friends, teachers or AI. Help changes what you can do in the moment.
+- **On something new:** a new question that is a bit different shows whether you can **use** the idea. This is called **transfer**.
+- **Later:** trying again a week or two later shows whether you **remember** it. This is called **retention**.
 
-### Transfer
+### Mia's two tries
 
-**Transfer** means applying something learned to another situation. Trying a related but unfamiliar problem can provide evidence of transfer, although one response is never a complete measurement.
+Mia's first try had help. Her second try was new, and alone.
 
-### Retention
+### Leo's check
 
-**Retention** concerns what remains available over time. A delayed attempt adds information that an immediate practice result cannot provide.
+Leo did well today. What would tell you about next week?
 
-A new problem, a delayed check and a student's explanation can be useful evidence, but they do not settle every question about meaningful learning. Learning can also involve curiosity, collaboration, creativity, productive tool use and judgement.
+### In your own words
 
-## Elaborate: challenge the proposed measurement
+These checks help, but they don't cover everything. Learning can also mean getting curious, working well with others, being creative, or choosing tools well.
+
+## Elaborate: is this test fair?
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I proposed evidence of learning and identified at least one limitation of my own proposal." }
+check: { type: reflect, text: "I suggested a way to check learning and found one thing it would miss." }
 ```
 
-Discuss the proposition:
+Discuss this claim:
 
-**"If a student cannot repeat a task unaided, the assistance did not help them learn."**
+**"If you can't do it again without help, the help didn't teach you anything."**
 
-First, make the strongest reasonable case **for** it. Then make the strongest case **against** it. Consider a student learning to calculate fractions and a student using a game engine to prototype an idea.
+Give the best reason **for** it. Then give the best reason **against** it. Think about two students: one learning to add fractions, and one using a game maker to try out an idea.
 
-Design a better way to investigate one student's learning. What would you observe immediately, later, and in a different context? Which important outcomes might still escape your measurement?
+Then plan a better check for one student. What would you look at today, next week, and in a new situation? What would your check still miss?
 
-**Optional inquiry record:** Revisit your Lesson 1 position. Add an example of assisted success that might conceal limited learning, *and* an example where assistance could support understanding. You need not choose a final verdict.
+**Inquiry record (optional):** look at your first answer from lesson 1. Add one example where help hid a gap, and one where help led to real understanding.
 
-## Evaluate: what would count as evidence?
+## Evaluate: what kinds of evidence?
 
 ```step
 stage: info
 check:
-  type: question
-  q: "Which is the most defensible conclusion?"
-  options: ["Only delayed unaided tests can ever show learning", "Finished work and independent transfer provide different, incomplete kinds of evidence", "If a student uses help, all evidence of learning becomes invalid"]
-  answer: 1
+  type: sort
+  q: "What does each piece of evidence mainly show?"
+  options: ["What you can do with help", "Whether you can use it on something new", "Whether you still know it later"]
+  items:
+    - ["You get the answer right while looking at the worked example", "What you can do with help"]
+    - ["You solve a different fractions question without help", "Whether you can use it on something new"]
+    - ["You answer a fractions question in a quiz three weeks later", "Whether you still know it later"]
+    - ["An AI tutor walks you through five hard problems and you get them all right", "What you can do with help"]
+    - ["You explain the method to a friend using your own example", "Whether you can use it on something new", "Making up your own example means using the idea in a new way."]
 ```
 
-Respond to this claim: "My AI tutor helped me complete five hard problems, so I definitely understand the topic now." Identify **one warranted conclusion**, **one unwarranted leap** and **one additional way to investigate**.
+Someone says: "My AI tutor helped me finish five hard problems, so I definitely understand the topic." Write one thing that is true, one thing that goes too far, and one way to check.
 
-## Learning with AI: notice what the evidence cannot say
-
-```step
-stage: info
-check: { type: reflect, text: "I can distinguish help that improves my current result from evidence that I have developed a capability." }
-```
-
-You can learn from assistance without doing every step alone. You can also complete work without developing the capability that the work appears to demonstrate. The question is what evidence supports your conclusion—not whether asking for help is inherently good or bad.
-
-**Next inquiry:** Even if we measure independent capability carefully, is that the only kind of learning worth valuing?
+**Next lesson:** if we can measure what someone can do alone, is that the only kind of learning that matters?

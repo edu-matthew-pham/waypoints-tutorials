@@ -7,9 +7,9 @@ Students now have several competing understandings of learning. They investigate
 
 ## Distinctive teaching moves
 
-1. **Evidence confrontation (Lesson 4):** Compare Bastani's high-school mathematics trial with Kestin's university physics tutoring trial. Emphasise genuinely different treatments, comparisons and assessment outcomes rather than a simple good-versus-bad framing.
-2. **Metacognitive calibration (Lesson 5):** Experience the difference between help, confidence and a new attempt. The activity is **not** an AI experiment; Fernandes and colleagues' reasoning research supplies separate empirical evidence.
-3. **Methodological redesign (Lesson 6):** Design a better comparison between existing instruction, effective interactive tools and an added AI feature. Evaluate Nakamura's theoretically proposed explanations and design studies that could test or refute them.
+1. **Evidence confrontation (lesson 1):** Compare Bastani's high-school mathematics trial with Kestin's university physics tutoring trial. Emphasise genuinely different treatments, comparisons and assessment outcomes rather than a simple good-versus-bad framing.
+2. **Metacognitive calibration (lesson 2):** Experience the difference between help, confidence and a new attempt. The activity is **not** an AI experiment; Fernandes and colleagues' reasoning research supplies separate empirical evidence.
+3. **Methodological redesign (lesson 3):** Design a better comparison between existing instruction, effective interactive tools and an added AI feature. Nakamura's theoretical proposal is an optional Elaborate extension: design a study that could test or refute it.
 
 ## Sources for teachers
 

@@ -1,151 +1,142 @@
 ---
 title: What makes learning meaningful?
-summary: Examine competing accounts of valuable learning, including independent competence, productivity, creativity, agency and learning with other people and tools.
+summary: Meet four learners, sort what we can and can't tell about their learning, and compare different views of what learning is worth.
 language: science
 shape: 5e
 unit: what-is-learning
 order: 3
 voice: { name: af_heart, speed: 1.1 }
 ---
-Lesson 2 explored whether good performance shows learning. It raised another question: **What kinds of learning should we value in the first place?**
+Last lesson asked whether doing well shows learning. That raises another question: **what kinds of learning should we care about?**
 
-A student might become better at solving mathematics problems independently. Another might use tools to design something that matters to their community. A third might learn through collaboration. These achievements are different. Are some more meaningful than others?
+One student gets better at solving maths problems alone. Another uses tools to make something useful for their community. A third learns by working with a group. These are different. Are some worth more than others?
 
-## Engage: a difficult comparison
+## Engage: a hard comparison
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "Two students both achieve something valuable. One can now solve a problem unaided; the other used tools to create a solution that their group can use. Which conclusion is justified?"
-  options: ["Only unaided capability is meaningful learning", "Only the successful group product matters", "They may have developed different capabilities; deciding what matters needs more information and values"]
-  actual: "Both examples may involve meaningful learning, but the evidence and educational aims differ. We need to examine what each person actually understood, contributed or developed."
+  q: "One student can now solve a problem alone. Another used tools to make something their group can use. Which learned more?"
+  options: ["The one who can solve it alone", "The one who made something useful", "They learned different things, so it depends what we value"]
+  actual: "Both may have learned something worthwhile, but different things. Deciding which matters more depends on the goal and on what we value."
 ```
 
-**Provocation:** Imagine you had to choose between learning a skill yourself and making something useful by collaborating with people and tools. Would your choice change if you were learning for an exam, building a community project or pursuing a personal interest?
+Imagine you had to choose: learn a skill yourself, or make something useful with people and tools. Would you choose differently for an exam, a community project, or a hobby?
 
-## Explore: four different learners
+## Explore: four learners
+
+```step
+stage: run
+tasks:
+  - check:
+      type: sort
+      q: "Does this evidence show what the learner can do or understand?"
+      options: ["Yes, it shows something they learned", "Not yet: we need more evidence"]
+      items:
+        - ["Maya solves a new kind of equation with no help", "Yes, it shows something they learned"]
+        - ["Sam hands in a polished report that an AI wrote", "Not yet: we need more evidence", "The report is polished, but we can't tell what Sam understands."]
+        - ["Jules changes a game three times after watching players get stuck", "Yes, it shows something they learned", "Jules's changes show what Jules learned about players."]
+        - ["Aria's group hands in a strong garden plan", "Not yet: we need more evidence", "A good group plan doesn't show what each person did."]
+        - ["Aria answers a neighbour's tricky question about her part of the plan", "Yes, it shows something they learned"]
+        - ["Sam explains, without notes, why one source in the report can't be trusted", "Yes, it shows something they learned", "Now we have evidence of Sam's own thinking."]
+  - check: { type: reflect, text: "I thought of something I learned this year, and whether I learned it alone, with tools, or with other people." }
+```
+
+**Maya** can now solve new equations on her own.
+
+**Jules** uses a game maker, so he doesn't code every part. He makes three versions of a game and watches players try each one.
+
+**Aria** works with classmates, neighbours and online maps on a plan for a community garden. She changes her ideas when others ask hard questions.
+
+**Sam** asks an AI to write a whole research report. Sam hands it in after a quick read.
+
+These are made-up learners for discussion, not research findings.
+
+### Sort the evidence
+
+Some evidence shows what a learner can do. Some only shows that work exists.
+
+### Your own learning
+
+Think of something you learned this year that you are proud of. Did you learn it alone, with tools, or with other people? How could someone else tell you learned it?
+
+## Explain: different views of learning
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "Maya learns to solve unfamiliar equations without assistance. Which outcome is most directly illustrated?"
-      options: ["Independent capability", "Public impact", "Collaborative participation"]
+      q: "A teacher checks learning with one test, done alone, with no notes. Whose learning is it most likely to miss?"
+      options: ["Aria's: much of it happened by working with other people", "Maya's: she learned to solve problems alone", "Nobody's: a test alone shows all learning"]
       answer: 0
+      feedback: [null, "A test alone suits what Maya learned.", "Think about Aria. What did she learn that a test alone wouldn't show?"]
   - check:
       type: question
-      q: "Jules uses an accessible game engine to test three original game designs and learns which designs players prefer. What evidence would best help distinguish design learning from product completion?"
-      options: ["Only the number of lines of code Jules typed", "Jules's design decisions, tests and reasons for revisions", "Whether the game was made entirely without tools"]
-      answer: 1
-  - check:
-      type: question
-      q: "A team develops a community garden plan using local advice, maps and shared tools. Which is an important question about the learning?"
-      options: ["How did participation and shared tools shape what each member understood and could contribute?", "Can we assume every team member learned exactly the same thing?", "Does collaboration prove that nobody learned independently?"]
+      q: "What can Jules's three game versions show best?"
+      options: ["What Jules learned about designing a game players enjoy", "That Jules can write game code from nothing", "Nothing, because a game maker did the hard part"]
       answer: 0
-  - check:
-      type: question
-      q: "Sam submits a polished AI-generated report without much checking. What does the report alone establish?"
-      options: ["Sam now understands all the research", "Sam definitely learned nothing", "Sam obtained a polished report, but more evidence is needed about what Sam understood or contributed"]
-      answer: 2
+      feedback: [null, "The game maker did much of the code, so this isn't strong evidence of coding.", "The game maker did the code. Jules did the designing and testing."]
+  - check: { type: reflect, text: "I can explain two views of what learning is worth, and one weakness of each." }
 ```
 
-### Maya: independent capability
+There is more than one view of what learning is worth.
 
-Maya can now solve unfamiliar equations on her own. This is valuable evidence of a developing skill. Does it tell us whether she can use mathematics to investigate a meaningful problem?
+- **Doing it yourself.** One aim of school is to build knowledge and skills you can use on your own. Without them, it is harder to spot mistakes or decide whether to trust help.
+- **Learning with people and tools.** Another view is that people learn by taking part: talking, working in groups and using shared tools. Learning isn't only what you can do alone. But a good group result doesn't show what each person learned.
+- **Making choices.** People also value setting your own goals, coming up with ideas and choosing well. Feeling in control is not the same as choosing well, though.
 
-### Jules: design and productivity
+These are ways of looking, not a checklist. Each one shows some learning and misses some.
 
-Jules uses a game engine rather than coding every operation. The engine makes experimentation practical. Jules may have learned about player experience and iterative design. Would AI contribute anything additional if the engine already serves the purpose?
+### Aria and the test
 
-### Aria: shared inquiry
+Think about how Aria learned.
 
-Aria researches a local environmental issue with classmates, community members and digital tools. She develops questions and improves an argument in response to others. How would you notice learning that happens through participation rather than solitary testing?
+### Jules's three versions
 
-### Sam: apparent success
+Think about which part Jules did himself.
 
-Sam asks an AI agent to write an entire research report and accepts it with little checking. The report is polished. Does this demonstrate the same kind of understanding or agency as Aria's work? What further evidence would you seek before concluding either way?
+### Your view
 
-These are **invented scenarios for discussion**, not findings from research.
+Which view do you lean towards? What does it miss?
 
-## Explain: perspectives on meaningful learning
-
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "Which statement best captures a sociocultural perspective on learning?"
-      options: ["Only knowledge recalled alone counts", "Participation with people, language and cultural tools can shape how people learn", "Any group product proves that each individual mastered everything"]
-      answer: 1
-  - check:
-      type: question
-      q: "Why can productivity and learning be related without being identical?"
-      options: ["Useful outcomes can be achieved without developing every underlying skill", "Productivity is always meaningless in school", "Any completed task proves durable understanding"]
-      answer: 0
-  - check: { type: reflect, text: "I can explain at least two perspectives on meaningful learning and a limitation of each." }
-```
-
-### Individual capability
-
-One important educational aim is to develop knowledge and skills a person can use with growing independence. Without these, it may be harder to recognise errors or decide whether to trust help.
-
-### Learning with others and tools
-
-**Sociocultural perspectives** examine how knowledge and capability develop through participation, language, communities and cultural tools. Learning need not be understood only as solitary performance. Yet a successful group result does not reveal what each individual contributed or understood.
-
-### Purpose, agency and creativity
-
-People also value becoming capable of pursuing worthwhile goals, generating ideas and making informed decisions. **Agency** includes the ability to exercise judgement over one's actions, though apparent control and well-informed control can differ.
-
-These perspectives can illuminate different outcomes. They are **lenses for inquiry**, not a checklist that delivers the single correct definition of meaningful learning.
-
-## Elaborate: a dialectical conversation
+## Elaborate: argue both sides
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I examined contrasting perspectives and developed a reasoned claim with a meaningful objection." }
+check: { type: reflect, text: "I argued for a view I don't hold, and I named one question I still can't answer." }
 ```
 
-In pairs or groups, examine this claim:
+In pairs, look at this claim:
 
-**"Schools should prioritise what students can do independently, even when tools could help them achieve more."**
+**"Schools should care most about what students can do alone, even when tools could help them do more."**
 
-One speaker develops the strongest case for this claim; another raises the strongest challenge. Switch positions. Then bring in the experiences of Maya, Jules, Aria and Sam. Each speaker should ask a sincere question of the other before responding.
+One person argues for it. The other argues against it. Then swap. Use Maya, Jules, Aria and Sam as examples. Ask your partner one honest question before you answer them.
 
-Move beyond a simple *for or against* debate:
+Then talk about:
 
-- What capabilities would we risk losing if we valued only tool-assisted productivity?
-- What opportunities would we lose if we valued only unaided performance?
-- Who gets to decide which knowledge counts as valuable?
-- Could assessment systems reward one kind of learning while overlooking another?
+- What could we lose if school only valued what you can make with tools?
+- What could we lose if school only valued what you can do alone?
+- Who decides which learning counts?
 
-**Optional inquiry record, forum or argument map:** Capture one argument that became stronger through the exchange, one tension you cannot yet resolve and one question worth investigating next. You do not need an external platform to participate.
+**Inquiry record (optional):** write one argument that got stronger as you talked, and one question you still can't answer.
 
-## Evaluate: build a defensible comparison
+## Evaluate: compare two learners
 
 ```step
 stage: info
 check:
   type: question
-  q: "Which is the strongest way to assess the learning of the four students?"
-  options: ["Use one identical unaided test and ignore their goals", "Accept their finished products as complete evidence", "Look at the intended learning, the student's decisions, and different sources of evidence while recognising their limits"]
-  answer: 2
+  q: "Which is the fairest way to judge what the four learners learned?"
+  options: ["Look at what each was trying to learn, what they did, and more than one kind of evidence", "Give all four the same test, done alone, with no notes", "Judge their finished work, because that's what they made"]
+  answer: 0
+  feedback: [null, "One test alone would suit Maya, but miss much of what Jules and Aria learned.", "Finished work can hide who did the thinking, as Sam's report does."]
 ```
 
-Choose **two** of the four learners. Explain what you think each may have learned, what evidence supports your interpretation, and what remains unknown. If you value one outcome more, explain the educational value behind that judgement.
+Choose **two** of the four learners. Write what each one may have learned, what evidence shows it, and what you still don't know. If you think one learned something more valuable, say why.
 
-## Learning with AI: does the tool change the purpose?
+**End of Unit 1:** go back to the question *Does AI help us learn?* What do you now need to say about the word *learn* before you can answer it?
 
-```step
-stage: info
-check: { type: reflect, text: "I can question what learning means without assuming that AI use or independent work alone settles the issue." }
-```
-
-AI adds urgency to an old educational question: *Is the aim to become independently capable, to achieve valuable things with others and tools, or some combination?* Your answer may depend on the goal, context and values involved.
-
-**End of Unit 1:** Return to the question **Does AI help us learn?** What does the word *learn* now require you to clarify before you could investigate an answer?
-
-**Next unit:** Research makes claims about learning. How do we decide whether the evidence supports those claims?
+**Next unit:** researchers make claims about AI and learning. How do we know if the evidence backs them up?

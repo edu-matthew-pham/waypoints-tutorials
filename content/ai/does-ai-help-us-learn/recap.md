@@ -1,16 +1,16 @@
-## Reconstruct the inquiry
+## Look back at the inquiry
 
-Each question below revisits one lesson. Before checking an answer, consider how the *question itself* changed across the course.
+Each question below goes back to one lesson. Before you check an answer, notice how the *question itself* changed across the course.
 
-| Unit | Question that develops |
+| Unit | The question that grew |
 |---|---|
-| **1. What does it mean to learn?** | Can a successful product or performance establish meaningful learning? |
-| **2. What does the evidence show?** | How do comparisons, outcomes and confidence affect what research can establish? |
-| **3. When should we use AI?** | Which thinking should we retain, which alternatives should we consider, and how should help be structured? |
-| **4. Who decides what learning looks like?** | How do feedback, assessment incentives and educational values shape our learning choices? |
+| **1. What does it mean to learn?** | Does a good product or a right answer show that someone learned? |
+| **2. What does the evidence show?** | What did studies compare and test, and how sure should people be about themselves? |
+| **3. When should we use AI?** | Which thinking should we keep, which other tools could help, and how should help be arranged? |
+| **4. Who decides what learning looks like?** | How do feedback, marks and values shape the choices we make? |
 
-**A useful tension:** AI can improve a result while leaving independent capability uncertain; a tool that demands more interaction is not necessarily a better teacher; and a valuable way of learning may still be difficult to assess fairly.
+**Something to keep in mind:** AI can make a result better while leaving unclear what you can do alone. A tool that keeps you busy isn't always a better teacher. And a good way of learning can still be hard to judge fairly.
 
-After revisiting the lessons, respond to the course question: **Does AI help us learn?** Make your claim conditional where needed, identify an empirical finding and its limit, consider a strong objection, and explain what evidence could change your view.
+After looking back, answer the course question: **Does AI help us learn?** Say when and for whom, name one study and its limit, deal with a strong objection, and say what would change your mind.
 
-You may answer through discussion or brief reflection. A separate journal, forum, argument map or final submission is **not required**.
+You can answer in a discussion or a short reflection. A journal or a final piece of work is **not required**.

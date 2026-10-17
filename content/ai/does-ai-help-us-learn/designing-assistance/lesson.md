@@ -1,122 +1,137 @@
 ---
 title: Can we design AI to make us think?
-summary: Compare direct instruction, guided hints and fading support for different learners.
+summary: Sort tutor messages into three designs, then decide which design suits which learner, and design your own.
 language: science
 shape: 5e
 unit: choosing-assistance
 order: 3
 voice: { name: af_heart, speed: 1.1 }
 ---
-The previous lesson showed that interaction does not automatically produce learning. If we can control when a tutor explains, questions or hints, **how should we arrange that help?**
+Last lesson showed that more interaction doesn't always mean more learning. If we could decide when a tutor explains, asks or hints, **how should we arrange that help?**
 
-## Engage: competing designs
+## Engage: two tutors
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "A beginner encounters a new writing technique. Which tutor must be better?"
-  options: ["One that always gives the complete answer", "One that always asks questions first", "Neither is universally better; consider the learner and goal"]
-  actual: "Worked examples and guided questioning can both support learning. Their value depends on how they are used."
+  q: "A beginner is learning a new kind of writing. Which tutor is better?"
+  options: ["One that always gives the complete answer", "One that always asks questions first", "Neither every time: it depends on the learner and the goal"]
+  actual: "Showing a model and asking questions can both help. Which works better depends on what the learner already knows and what they are trying to learn."
 ```
 
-Why might an explicit explanation help someone who has never seen a method? When might a sequence of hints be more productive?
+Why might showing someone how first help when they've never seen a method? When might letting them try first, with hints, work better?
 
-## Explore: compare sequences
+## Explore: three tutor designs
+
+```step
+stage: run
+tasks:
+  - check:
+      type: sort
+      q: "Which tutor design does each message come from?"
+      options: ["A: show a model first", "B: try first, with hints", "C: less help each time"]
+      items:
+        - ["Here is a model paragraph. Find the claim, the reason and the evidence.", "A: show a model first"]
+        - ["Write your paragraph first. Which sentence is your claim?", "B: try first, with hints"]
+        - ["Your evidence doesn't back up your claim yet. What could you add?", "B: try first, with hints"]
+        - ["Here's a half-finished paragraph. Fill in the evidence.", "C: less help each time"]
+        - ["Now write one on a new topic, without the model.", "C: less help each time"]
+  - check: { type: reflect, text: "I thought of a skill I learned outside school, and whether someone showed me first or let me try first." }
+```
+
+Three tutors help a student learn to write a persuasive paragraph.
+
+**Tutor A shows a model first.** It shows a short paragraph and points out the claim, the reason, the evidence and the explanation. The student finds each part, then writes one on a new topic.
+
+**Tutor B lets the student try first, with hints.** The student writes a paragraph. The tutor asks which sentence is the claim, and gives a hint about evidence. This can show exactly where the student is stuck. But lots of questions can be frustrating if you don't know yet what a good paragraph looks like.
+
+**Tutor C gives less help each time.** It shows a full model, then a half-finished one, then asks for a new paragraph with no model.
+
+### Sort the messages
+
+Which tutor would say each one?
+
+### Your own experience
+
+Think of a sport move, a recipe, a game or an instrument. Did someone show you first, or did you try first? Did the help get less over time?
+
+## Explain: support that shrinks
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "What can a worked example provide to a novice?"
-      options: ["A visible model of a new technique", "Proof of independent competence", "Guaranteed long-term retention"]
+      q: "Two apps teach paragraph writing. App 1 adds badges, sounds and a timer. App 2 shows a model, then a half-finished paragraph, then asks for your own. Which one gives step-by-step support that shrinks?"
+      options: ["App 2", "App 1", "Both, because both are interactive"]
       answer: 0
+      feedback: [null, "Badges and timers make it lively, but they don't support the writing itself.", "Being interactive isn't the same as supporting the skill."]
   - check:
       type: question
-      q: "What can an attempt followed by a hint reveal?"
-      options: ["Where the learner is currently stuck", "What the learner will remember next year", "That instruction is unnecessary"]
+      q: "Dev has never written a persuasive paragraph. His tutor only asks questions, and he gets frustrated. What would help most?"
+      options: ["Show him a short model first, then let him try", "Ask him more questions", "Give him a finished paragraph to hand in"]
       answer: 0
+      feedback: [null, "He doesn't know yet what a good paragraph looks like, so more questions may not help.", "That finishes the task but skips the learning."]
   - check:
       type: question
-      q: "What is fading support?"
-      options: ["Reducing help as capability develops", "Withholding all explanations from beginners", "Using AI to write every answer"]
+      q: "Which kind of struggle is most likely to help learning?"
+      options: ["Stuck on one step, but with notes and a hint to try", "Stuck for 30 minutes with no idea where to start", "No struggle: a question that's too easy"]
       answer: 0
+      feedback: [null, "Being completely stuck for that long usually isn't productive.", "Too easy means there is nothing new to learn."]
 ```
 
-### A — model first
+Support that helps you do something you can't yet do alone is called **scaffolding**, like the scaffolding around a building. It is meant to come down.
 
-A student is learning to build a persuasive paragraph. The tutor shows a short model, pointing out claim, reason, evidence and explanation. The student identifies each part, then tries a new topic. A complete explanation may supply essential background.
+- **It isn't just making things lively.** Badges and sounds make an app interactive. Scaffolding supports the skill itself: a model, a question, a hint about your mistake.
+- **Some struggle helps.** Effort helps when you have enough to make progress. Being completely stuck, for a long time, usually doesn't.
+- **Take the support away.** Giving less help, then trying a new task alone, shows whether the skill is growing. Remember Unit 1: doing well straight away doesn't show you'll remember it.
 
-### B — questions and hints
+### Two apps
 
-The student attempts a paragraph first. The tutor asks which sentence gives the claim and offers a targeted hint about evidence. This may surface a misconception. But repeated questions can become frustrating if the learner does not yet know what a good paragraph looks like.
+Which app supports the writing itself?
 
-### C — gradually less help
+### Dev
 
-The tutor models one paragraph, gives a partly completed second example, then invites a fresh paragraph without the model. This *aims* to support growing capability. It does not by itself prove durable learning.
+Dev is a beginner.
 
-## Explain: instructional scaffolding
+### Good struggle
 
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "What is scaffolding in learning?"
-      options: ["Support that makes a developing skill manageable", "Keeping the student permanently dependent", "Avoiding all difficulty"]
-      answer: 0
-  - check:
-      type: question
-      q: "When is struggling with a problem most likely to help learning?"
-      options: ["When the learner has enough to work with to make some progress", "When the problem takes longer than the learner expected", "When the learner gets no feedback until the end"]
-      answer: 0
-  - check:
-      type: question
-      q: "What could a fresh unaided attempt add?"
-      options: ["Evidence about capability beyond supported participation", "Proof of every kind of learning", "Proof the tutor caused every improvement"]
-      answer: 0
-```
+Which struggle has a way forward?
 
-### Scaffolding and modelling
-
-**Scaffolding** provides support as a learner develops a capability. Modelling a procedure, asking a question and offering targeted feedback are different kinds of support. An appropriate choice depends partly on what the learner knows.
-
-### Productive difficulty
-
-Effort can support learning when the learner has resources to make progress. Struggle can also become unproductive. More effort is not automatically more learning.
-
-### Fading and reconstruction
-
-Reducing assistance and trying a new task may help reveal developing capability. Unit 1 reminded us that immediate success alone does not establish retention or transfer.
-
-## Elaborate: design and challenge a tutor
+## Elaborate: design a tutor
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I designed a support sequence, considered a learner with different expertise and identified limitations." }
+check: { type: reflect, text: "I designed a support plan, tested it against a different learner, and found a weakness." }
 ```
 
-Choose a familiar learning goal: learning to write a reasoned paragraph, explain a science idea or solve a maths problem.
+Choose something to learn: writing a paragraph, explaining a science idea, or solving a maths problem.
 
-Decide what your learner already knows, which initial support to offer, when to provide feedback, when to reduce help, and what later attempt would help evaluate learning.
+Plan the help:
 
-Now challenge your design. What if the learner has less prior knowledge than you assumed? What if they confidently request an answer they cannot explain?
+1. What does your learner already know?
+2. What help comes first: a model, a question, or a try?
+3. When will the help get less?
+4. What new task, without help, will show they can do it?
 
-Should **students, teachers or an adaptive system** control the help? Defend two different possibilities before deciding whether any general rule is justified.
+Now test your plan. What if the learner knows less than you thought? What if they ask for the answer and can't explain it?
 
-## Evaluate: avoid replacing one rigid rule with another
+Who should decide how much help to give: the **student**, the **teacher**, or **the app itself**? Give one reason for two of these.
+
+## Evaluate: no single best design
 
 ```step
 stage: info
 check:
   type: question
-  q: "Which conclusion is best supported?"
-  options: ["Tutors must always ask instead of explain", "The learner, goal and quality of evidence matter when choosing support", "Reducing hints guarantees retention"]
-  answer: 1
+  q: "Mei already writes good paragraphs. Which tutor design probably suits her best?"
+  options: ["B: try first, with hints", "A: show a model first", "C, starting again from a full model"]
+  answer: 0
+  feedback: [null, "A full model helps beginners most. Mei already knows what a good paragraph looks like.", "She doesn't need the full model again."]
 ```
 
-**Unit inquiry:** When should learners retain thinking, choose a particular tool, and request or receive structured help?
+**Unit question:** when should you keep the thinking, choose a tool, or ask for help?
 
-**Next unit:** Assistance may be valuable during learning but raise different questions when schools evaluate achievement. Who decides what counts?
+**Next unit:** help can be useful while you learn. What changes when schools use your work to judge what you've achieved?

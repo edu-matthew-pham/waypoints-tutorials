@@ -1,120 +1,134 @@
 ---
 title: How do we know when we need help?
-summary: Use feedback as evidence for a next learning decision, not simply a correction to copy.
+summary: Answer a seasons question, sort feedback by what it lets you do next, and use feedback to choose your next step.
 language: science
 shape: 5e
 unit: learning-and-society
 order: 1
 voice: { name: af_heart, speed: 1.1 }
 ---
-In Unit 3 we asked how learning assistance should work. But a learner must also decide **what to do after receiving help**. Feedback can be useful without producing learning automatically.
+Unit 3 asked how help should work. But after you get help, you still have to decide **what to do with it**. Feedback can be useful without making you learn anything by itself.
 
-## Engage: a corrected answer
+## Engage: "that makes sense now"
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "A student reads an AI correction and says, 'That makes sense now.' What would best help them decide what to do next?"
-  options: ["Assume the misconception has disappeared", "Try explaining or applying the idea without looking at the feedback", "Ask for a longer answer without attempting anything"]
-  actual: "A fresh explanation or attempt provides additional evidence. Confidence alone cannot establish learning."
+  q: "A student reads an AI correction and says, 'That makes sense now.' What should they do next?"
+  options: ["Move on: it makes sense", "Explain the idea again without looking at the correction", "Ask for a longer correction"]
+  actual: "Trying to explain or use the idea without looking gives new evidence. Feeling that it makes sense doesn't show you can do it."
 ```
 
-**Provocation:** When an explanation sounds clear, how can we tell whether we understand it well enough to move on?
+When an explanation sounds clear, how can you tell if you understand it well enough to move on?
 
-## Explore: feedback is a cycle
+## Explore: try it, then sort the feedback
+
+```step
+stage: run
+tasks:
+  - check:
+      type: question
+      q: "Why is it winter in Australia when it is summer in Europe?"
+      options: ["Earth is tilted, so each half leans towards the Sun at different times of the year", "Australia is further from the Sun at that time of year", "Europe is nearer the equator, so it gets more sun"]
+      answer: 0
+      feedback: [null, "Australia and Europe are about the same distance from the Sun at any time. If distance caused seasons, they would have summer together.", "Australia is nearer the equator than Europe is."]
+  - check:
+      type: sort
+      q: "A student wrote: 'Summer happens because Earth is closer to the Sun.' Does this feedback give them a next step?"
+      options: ["Gives a next step", "Only says right or wrong"]
+      items:
+        - ["Incorrect.", "Only says right or wrong"]
+        - ["7/10", "Only says right or wrong"]
+        - ["Good try!", "Only says right or wrong"]
+        - ["If distance caused summer, why would Australia and Europe have opposite seasons?", "Gives a next step", "It gives the student a question to think about."]
+        - ["Here is a diagram of Earth's tilt. Use it to explain the seasons in your own words.", "Gives a next step"]
+```
+
+Lots of people think summer happens because Earth is closer to the Sun. It's a common idea, and it's wrong.
+
+### Your answer
+
+Answer before you read any feedback. Say how sure you are.
+
+### Sort the feedback
+
+A student wrote the common wrong idea. Which feedback tells them what to do next?
+
+## Explain: use feedback, then try again
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "The student says summer happens because Earth is closer to the Sun. What does this reveal?"
-      options: ["A possible misconception to investigate", "That the student cannot learn science", "That the student should stop asking questions"]
+      q: "Nina gets the feedback 'Try thinking about Earth's tilt.' What makes this feedback useful to her?"
+      options: ["She writes a new explanation using the tilt, without copying", "She reads it and moves on", "She asks for the full answer instead"]
       answer: 0
+      feedback: [null, "Reading it isn't enough. Using it is what helps.", "That skips the thinking the hint was leaving for her."]
   - check:
       type: question
-      q: "A tutor asks why Australia and Europe experience opposite seasons. What might this accomplish?"
-      options: ["It can challenge the distance explanation", "It proves the learner now understands axial tilt", "It guarantees the learner needs no explanation"]
+      q: "An AI tells Nina her new explanation is wrong, but she thinks it's right. What should she do?"
+      options: ["Check with a diagram, a textbook or her teacher before changing it", "Change it: the AI knows best", "Ignore it: feedback isn't useful"]
       answer: 0
+      feedback: [null, "AI feedback can be wrong, even when it sounds sure.", "Feedback is worth checking, not ignoring."]
   - check:
       type: question
-      q: "After receiving a correct explanation, what adds useful evidence?"
-      options: ["Repeating the tutor's exact words while reading them", "Explaining the seasons in a fresh example without copying", "Giving a high confidence rating"]
-      answer: 1
+      q: "Nina's new explanation is right. What can she say now?"
+      options: ["She can explain it today; a check in a week would show if it sticks", "She'll never get seasons wrong again", "She didn't need the feedback after all"]
+      answer: 0
+      feedback: [null, "One good try is a good sign, not a guarantee.", "The feedback helped her get there."]
 ```
 
-### Initial explanation
+Feedback is most useful in a loop:
 
-A student says: **"Summer happens because Earth is closer to the Sun."** Their teacher or learning tool now has evidence of a particular misconception. That is more useful than merely knowing that an answer was wrong.
+**try → get feedback → do something with it → try again**
 
-### Feedback and interpretation
+- **A try is evidence.** What you write shows what you understand now. One try doesn't show everything.
+- **Choose a next step.** Practise more, look at a diagram, check a source, try a harder question, or ask a person. Picking a good next step for yourself is called **self-regulation**.
+- **Check the feedback.** Feedback from AI is evidence too, and it can be wrong. Check it before you act on it.
 
-A response says: **"If distance caused summer, why is it winter in Australia when it's summer in Europe?"** This may expose a problem with the student's explanation, but a novice could need a clear model of Earth's axial tilt and changes in sunlight as well.
+Feedback that helps you improve, not just tells you a mark, is called **formative** feedback.
 
-### Acting on the feedback
+### Using a hint
 
-After examining a diagram and explanation, the learner tries to describe why the two hemispheres experience opposite seasons. The new explanation helps them decide whether to practise again, seek a different representation or move forward.
+Nina has a hint. What makes it useful?
 
-These are **invented learning interactions**, not a research study or live AI responses.
+### When AI disagrees
 
-## Explain: regulate the next move
+Nina thinks the AI is wrong.
 
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "What can one attempt tell you?"
-      options: ["Part of what you understand right now", "How much you will remember next month", "Whether your method was the fastest one"]
-      answer: 0
-  - check:
-      type: question
-      q: "Why check feedback from an AI assistant before acting on it?"
-      options: ["It can be wrong or not suit you, even when it sounds convincing", "It is usually less detailed than a teacher's", "Acting on feedback is only useful after a test"]
-      answer: 0
-  - check:
-      type: question
-      q: "What makes feedback formative?"
-      options: ["You act on it and make a new attempt", "It comes with a mark", "It lists every error in the work"]
-      answer: 0
-```
+### After the new try
 
-### Evidence
+Nina's new try is right.
 
-A response, explanation or attempt can reveal what the learner currently understands. No single attempt provides a complete picture.
-
-### Decision
-
-**Self-regulation** means using evidence to choose an appropriate next action: practise, seek an explanation, check a claim, attempt a transfer task or ask a person for help. Feedback from AI is evidence too, and it can be wrong, so check it before you act on it.
-
-### New evidence
-
-Formative assessment involves using information to *improve* learning. The important cycle is **attempt → feedback → action → new attempt**, not simply collecting corrections.
-
-## Elaborate: choose the next action
+## Elaborate: choose the next step
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I selected a next learning action based on evidence and explained what would change my decision." }
+check: { type: reflect, text: "I chose a next step from my feedback and said what would make me change my plan." }
 ```
 
-A learner receives three messages: **"Incorrect"**, **"Try considering the Earth's tilt"**, and **"Here is a diagram with an explanation."** Which is most helpful *now*? Change your answer if the learner already knows about axial tilt but confuses it with distance.
+A learner gets three messages: **"Incorrect"**, **"Try thinking about Earth's tilt"**, and **"Here is a diagram with an explanation."** Which is most helpful right now? Would you change your answer if the learner already knows about the tilt, but mixes it up with distance?
 
-Design a short response to feedback on something you are learning. State what you think you understand, what evidence you have, and what you will try next. What result would make you change your plan?
+Now think about feedback you got recently on something you are learning. Write:
 
-**Important distinction:** A tutor might design feedback; the learner still needs opportunities to interpret and use it.
+- what you think you understand,
+- what evidence you have,
+- what you will try next,
+- what result would make you change your plan.
 
-## Evaluate: the purpose of feedback
+## Evaluate: when is feedback doing its job?
 
 ```step
 stage: info
 check:
   type: question
-  q: "When is feedback most clearly serving a formative purpose?"
-  options: ["When it simply replaces the student's answer", "When it informs a learner's next action and that action can be checked", "When it guarantees a high final grade"]
-  answer: 1
+  q: "When is feedback most clearly helping someone learn?"
+  options: ["When the learner uses it for a next step, and can check whether that step worked", "When it gives the right answer to copy", "When it comes with a high mark"]
+  answer: 0
+  feedback: [null, "Copying the answer doesn't show what the learner can do.", "A mark alone doesn't say what to do next."]
 ```
 
-**Next inquiry:** Learning activities can reveal gaps and help us improve. What changes when an activity is used to judge what we've achieved?
+**Next lesson:** feedback helps you improve. What changes when work is used to judge what you've achieved?

@@ -1,14 +1,21 @@
 inquiry:
-  q: "Two students produce equally convincing games with different help. What would you need to know before saying they learned the same thing?"
+  q: "Two students make equally good games with different help. What would you need to know before saying they learned the same thing?"
   prompts:
-    - "What were they trying to learn?"
-    - "What else could the product show?"
+    - "What were they each trying to learn?"
+    - "What else could the game show?"
   notes: "Welcome uncertainty; the course develops this question rather than settling it now."
 activities:
+  - at: run
+    kind: activity
+    title: "Same task, two goals"
+    minutes: 5
+    do: |
+      Pick the maze game. Choose one approach for "learn to code", then the same approach for "test an idea with players". Did the board's verdict change? Do you agree?
+    notes: "Collect one disagreement with the board and the reason for it."
   - at: end
     kind: discussion
     title: "Keep the question open"
     minutes: 3
     do: |
-      Complete: "I think AI helps learning when..., but I would need to know..."
+      Finish: "I think AI helps learning when..., but I would need to know..."
     notes: "Invite one well-supported objection. A separate journal is optional."

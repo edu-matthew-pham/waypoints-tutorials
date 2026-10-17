@@ -5,6 +5,13 @@ inquiry:
     - "What would you compare AI against?"
   notes: "The key move is the comparison: AI against what? Many studies compare AI with no help, which answers a narrower question than people think."
 activities:
+  - at: run
+    kind: activity
+    title: "What else changed?"
+    minutes: 4
+    do: |
+      Look at the AI class and the worksheet class. List every difference. Circle the ones that are not the AI.
+    notes: "Time, instant feedback and a keen teacher could each explain the result. A non-AI computer tutor can also give instant feedback."
   - at: make
     kind: activity
     title: "Design the fair test"

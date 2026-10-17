@@ -1,13 +1,13 @@
 ---
 title: Does more interaction mean better learning?
-summary: Compare behavioural interaction, cognitive engagement, instructional responsiveness and evidence of learning.
+summary: Try one maths question, compare four kinds of help with it, and tell clicking from thinking and from learning.
 language: science
 shape: 5e
 unit: choosing-assistance
 order: 2
 voice: { name: af_heart, speed: 1.1 }
 ---
-We can click many times, receive lots of feedback or have an extended conversation without necessarily learning more. But these experiences can also be useful. **What does an interaction contribute to learning?**
+You can click a lot, get lots of feedback or chat for a long time without learning much. But these things can also help. **What does each kind of interaction add to learning?**
 
 ## Engage: a busy activity
 
@@ -15,133 +15,123 @@ We can click many times, receive lots of feedback or have an extended conversati
 stage: predict
 check:
   type: predict
-  q: "One learner completes twenty rapid quiz questions. Another explains one worked example. What follows?"
-  options: ["The quiz always teaches more", "The explanation always teaches more", "We need the learning goal and evidence of understanding; the activities demand different thinking"]
-  actual: "Interaction counts do not show which intended capabilities developed."
+  q: "One learner answers twenty quick quiz questions. Another explains one worked example. Who learns more?"
+  options: ["The quiz learner: more practice", "The explaining learner: deeper thinking", "It depends on what each needs to learn and what we check afterwards"]
+  actual: "Counting answers or clicks doesn't show what someone learned. The two activities ask for different thinking, and suit different needs."
 ```
 
-**Provocation:** Blooket-style quizzes may encourage energetic participation and retrieval. When is this a strength—and when is it insufficient?
+Fast quiz games can be lively and good for remembering. When is that enough, and when is it not?
 
-## Explore: inspect four kinds of assistance
+## Explore: four kinds of help
+
+```step
+stage: run
+tasks:
+  - check:
+      type: question
+      q: "Work it out: what is (-3) × (-4)?"
+      options: ["12", "-12", "-7", "7"]
+      answer: 0
+      feedback: [null, "A common slip: two negatives multiplied make a positive.", "That's adding, not multiplying.", "Check: is this adding or multiplying?"]
+  - check:
+      type: match
+      q: "Match each kind of help to what it makes the learner do."
+      pairs:
+        - ["A: the quiz game", "Shows the right answer, then moves on"]
+        - ["B: the number pattern", "Spot a pattern and explain it"]
+        - ["C: the computer tutorial", "Look at your exact mistake, then try again"]
+        - ["D: the chat", "Ask your own question and choose how to learn"]
+```
+
+Imagine a learner answers **-12** to (-3) × (-4). Here are four kinds of help they might get. They are made-up examples, not real apps or a real AI.
+
+**A: a quiz game.** "Incorrect! The answer is 12." Next question.
+
+**B: a number pattern.** (-3) × 2 = -6, (-3) × 1 = -3, (-3) × 0 = 0. What comes next for (-3) × (-1)? Explain what changes each time.
+
+**C: a computer tutorial, no AI.** "You might be using the rule for one negative number. Predict the next value in this pattern, then try again." This is a prepared message for this exact mistake.
+
+**D: a chat with an AI-style tutor.** *Learner:* "I know the rule, but why does it work?" *Tutor:* "Would a pattern, a picture or some algebra help you see why?"
+
+### Try it yourself
+
+Answer the question before you look at the help.
+
+### Compare the help
+
+What does each kind of help make the learner do?
+
+## Explain: clicking, thinking, responding, learning
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "What does the rapid quiz illustration most clearly provide?"
-      options: ["Retrieval opportunities and correctness feedback", "A guaranteed correction of every misconception", "Evidence of long-term retention"]
+      q: "Jo answered 40 quiz questions in ten minutes, mostly by guessing. Ana answered 5 and explained each one. Which tells you more about what they understand?"
+      options: ["Ana's explanations", "Jo's 40 answers", "Neither: you can only tell from a test"]
       answer: 0
+      feedback: [null, "Lots of clicks, mostly guesses, show very little.", "A test is one way, but explanations are evidence too."]
   - check:
       type: question
-      q: "What does the worked example invite the student to do?"
-      options: ["Receive points", "Study a pattern and explain its meaning", "Ask unlimited follow-up questions"]
-      answer: 1
-  - check:
-      type: question
-      q: "What can predetermined feedback do without generative AI?"
-      options: ["Identify a selected error and suggest a targeted next step", "Understand every possible question", "Guarantee transfer"]
+      q: "Which kind of help responded to the learner's exact mistake without any AI?"
+      options: ["C: the computer tutorial", "A: the quiz game", "D: the chat"]
       answer: 0
+      feedback: [null, "The quiz only said the answer was wrong.", "The chat used AI-style replies. Look for one that didn't."]
   - check:
       type: question
-      q: "What might conversational AI add?"
-      options: ["Infallibility", "Flexible responses to unfamiliar follow-up questions", "Proof that learning persists"]
-      answer: 1
+      q: "What can AI chat add that the others can't?"
+      options: ["An answer to a question nobody prepared for, though that answer can be wrong", "Explanations that are always correct", "Proof that you'll remember it later"]
+      answer: 0
+      feedback: [null, "AI explanations can be wrong or confusing.", "No kind of help proves that on its own."]
 ```
 
-These are **authored illustrations** of assistance, not actual outputs from commercial products and not a comparison experiment.
+Four different things are going on.
 
-### A — game-like retrieval
+- **What you do:** clicking, tapping, answering. Easy to count, but it doesn't show what you understand.
+- **What you think about:** remembering, explaining, predicting, fixing. This is where learning can happen. Even lots of thinking during an activity doesn't prove you'll remember it.
+- **How the help responds to you:** the same message for everyone, a prepared message for a common mistake, or a reply to your own question. More responsive isn't always better.
+- **Evidence you learned:** a good explanation, a new question you can do, a check a week later.
 
-A learner chooses the answer to (-3) × (-4). They select -12, receive **Incorrect; the answer is 12**, and move to another question. It provides retrieval and immediate correctness feedback, but this particular response does not explain the misconception.
+### Jo and Ana
 
-### B — worked explanation
+Who showed their thinking?
 
-A student reads a number pattern: (-3) × 2 = -6, (-3) × 1 = -3, (-3) × 0 = 0. Continuing the pattern suggests (-3) × (-1) = 3. The learner explains what changes at each step. A pattern illustrates the rule; more reasoning may be needed to justify it fully.
+### No AI needed
 
-### C — structured interactive tutorial
+Look back at A to D.
 
-A student selects -12. The tutorial responds with a prepared message: **"You might be applying the sign rule for one negative number. Predict the next value in this pattern, then try again."** Targeted feedback is possible without generating free-form language.
+### What AI adds
 
-### D — AI-style conversation
+What can chat do that a prepared message can't, and what is the catch?
 
-**Student:** "I remember the rule, but why does it make sense?"
-
-**Illustrative tutor:** "Would a pattern, a visual example or an algebraic explanation help you explore that question?"
-
-This depicts a *possible conversational affordance*, not a live AI interaction. Generated explanations may still be misleading, incomplete or unsuitable.
-
-## Explain: distinguish four dimensions
-
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "Which is behavioural interaction?"
-      options: ["Clicking an answer choice", "Guaranteed learning", "Delayed transfer"]
-      answer: 0
-  - check:
-      type: question
-      q: "Which question concerns cognitive engagement?"
-      options: ["How many animations play?", "What must the student retrieve, explain, compare or revise?", "How colourful is the interface?"]
-      answer: 1
-  - check:
-      type: question
-      q: "What is instructional responsiveness?"
-      options: ["Adapting feedback or next steps to the learner's response", "Loading a page rapidly", "Having many buttons"]
-      answer: 0
-  - check:
-      type: question
-      q: "Which is better evidence of learning than interaction count alone?"
-      options: ["The number of clicks", "A sound explanation followed by an appropriately chosen later attempt", "The length of an AI conversation"]
-      answer: 1
-```
-
-### Behavioural interaction
-
-Visible participation such as answering, tapping or selecting. Useful participation does not alone tell us what the learner understands.
-
-### Cognitive engagement
-
-The thinking encouraged or required: recalling, interpreting, predicting, questioning, explaining or revising. Even substantial thinking during an activity is not proof of durable learning.
-
-### Instructional responsiveness
-
-How the learning experience responds to the learner: a fixed example, prepared misconception-specific feedback, adaptive sequencing or open-ended dialogue. More responsiveness is not invariably better.
-
-### Evidence of learning
-
-Appropriate new attempts, explanations and delayed checks can provide evidence that an intended capability is developing. No single measure captures everything.
-
-## Elaborate: connect to real tools, challenge the ranking
+## Elaborate: change the learner
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I compared instructional affordances and challenged a simplistic ranking of interaction types." }
+check: { type: reflect, text: "I chose different help for two learners and explained why." }
 ```
 
-Real platforms include **Blooket, Mathspace, Education Perfect, Khan Academy, Brilliant and Quill**. They combine different kinds of instruction and some include AI features. Their capabilities change; these names are examples to explore, **not fixed categories or product endorsements**.
+Two learners need help with negative numbers:
 
-Consider two different learning goals:
+- **Learner 1** already understands why, but needs to get quicker.
+- **Learner 2** keeps using the wrong sign rule with confidence, and needs to see why it works.
 
-- A student already understands negative multiplication but needs quick retrieval practice.
-- Another confidently repeats the wrong sign rule and needs to reconstruct why it works.
+Which kind of help (A, B, C or D) would you choose for each? What if the AI's explanation is wrong? What if a non-AI tutorial already fixes the mistake?
 
-Would you choose the same assistance? What if the AI explanation is inaccurate? What if a conventional interactive tutorial already addresses the misconception?
+Think of a learning app or game you have used. What does it make you do: click, think, or both? How does it respond to your mistakes?
 
-**Optional authentic exploration:** If your teacher approves and you already have access to a learning platform, inspect one feature and compare it with our simplified illustrations. No account, payment or external platform is required to complete this lesson.
-
-## Evaluate: what does an interaction prove?
+## Evaluate: what does interaction prove?
 
 ```step
 stage: info
 check:
   type: question
-  q: "Which statement best distinguishes interaction and learning?"
-  options: ["Highly interactive always means highly effective", "Interaction may support learning, but learning requires evidence appropriate to the goal", "Static explanations can never help"]
-  answer: 1
+  q: "An app says: 'Students using our app answer 500 questions a week!' What does that show?"
+  options: ["That students are busy in the app, not what they learned", "That the app teaches better than a worked example", "That students will remember it next month"]
+  answer: 0
+  feedback: [null, "Busy isn't the same as learning. You'd need evidence like a new question or a later check.", "Number of answers doesn't tell us that."]
 ```
 
-**Next question:** If *how* assistance is structured matters, how might we deliberately design it?
+**Next lesson:** if *how* help is given matters, how should we design it?

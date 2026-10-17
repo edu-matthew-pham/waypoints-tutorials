@@ -1,123 +1,133 @@
 ---
 title: How can we tell what we have learned?
-summary: Examine how learning evidence differs when work is done independently, collaboratively or with AI.
+summary: Match pieces of evidence to the goal they fit, and see how the same work can mean different things under different goals.
 language: science
 shape: 5e
 unit: learning-and-society
 order: 2
 voice: { name: af_heart, speed: 1.1 }
 ---
-Feedback helps us decide what to learn next. But students also receive grades, reports and qualifications. **What can these judgements reasonably tell us about what someone has learned?**
+Feedback helps you decide what to learn next. But schools also give marks and reports. **What can these judgements tell us about what someone has learned?**
 
-## Engage: impressive outcomes
+## Engage: three good reports
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "Three learners produce equally convincing recommendations about reducing waste at school, using different kinds of help. What follows?"
-  options: ["They necessarily developed identical capabilities", "The products may be similar even if the evidence about individual learning differs", "Using any help proves nothing was learned"]
-  actual: "A product is evidence of an outcome, but its meaning depends on the intended capability and how the work was produced."
+  q: "Three students hand in equally good reports on cutting waste at school. Each had different help. What do we know?"
+  options: ["They learned the same things", "The reports look alike, but what each student learned could be different", "Anyone who used help learned nothing"]
+  actual: "A report shows what was made. What it tells us about the student depends on the goal and on how the work was done."
 ```
 
-**Provocation:** Should an assessment judge what you can do alone, what you can do with tools, or both?
+Should a test check what you can do alone, what you can do with tools, or both?
 
-## Explore: change the intended capability
+## Explore: match the evidence to the goal
+
+```step
+stage: run
+tasks:
+  - check:
+      type: sort
+      q: "Which goal does each piece of evidence fit best?"
+      options: ["Goal 1: can judge evidence without help", "Goal 2: can run a good investigation using tools", "Not enough on its own for either"]
+      items:
+        - ["Judging a new source in class, without notes or AI", "Goal 1: can judge evidence without help"]
+        - ["Explaining out loud why one source is weak, without notes", "Goal 1: can judge evidence without help"]
+        - ["A log of which tools were used, what each one suggested, and what was kept", "Goal 2: can run a good investigation using tools"]
+        - ["Notes showing how AI's suggestions were checked against the school's bin data", "Goal 2: can run a good investigation using tools"]
+        - ["A polished final report", "Not enough on its own for either", "A polished report doesn't show who did the judging, or how."]
+  - check:
+      type: question
+      q: "Learner C let AI write most of the report and didn't check it. Under Goal 2, what is missing?"
+      options: ["Evidence that C checked the AI's work and made the decisions", "Nothing: Goal 2 allows tools", "A longer report"]
+      answer: 0
+      feedback: [null, "Goal 2 allows tools, but it's about using them well. That includes checking.", "Length isn't the problem."]
+```
+
+Three students investigate how to cut waste at school.
+
+- **Learner A** researches, judges the information and writes the report with no AI.
+- **Learner B** researches and judges the evidence, then uses AI to organise notes and tidy the writing.
+- **Learner C** asks AI to do the investigation and write the report, and hands in most of it unchanged.
+
+The teacher could be checking one of two goals:
+
+- **Goal 1:** You can judge evidence about the environment *without help*.
+- **Goal 2:** You can run a good investigation *using the right tools well*.
+
+These learners are made up. How much AI they used doesn't, by itself, tell us what they learned.
+
+### Match the evidence
+
+Sort each piece of evidence by the goal it fits.
+
+### Learner C
+
+Check Learner C against Goal 2.
+
+## Explain: purposes and fitting evidence
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "A learner researches, reasons and writes independently. What might their process provide evidence of?"
-      options: ["Independent research and reasoning", "Guaranteed accuracy of every claim", "The absence of all prior help"]
+      q: "At the end of term, a teacher uses a test to write your report card. What is this test mainly for?"
+      options: ["Judging what you have achieved by then", "Giving you hints while you practise", "Showing you what to try next tomorrow"]
       answer: 0
+      feedback: [null, "Hints during practice are for learning, not for a report card.", "It may help with that too, but a report card judges what was achieved."]
   - check:
       type: question
-      q: "A learner checks evidence and chooses recommendations while AI helps organise notes. What might this demonstrate?"
-      options: ["Research judgement alongside tool use", "That AI independently made every decision", "That learning was impossible"]
+      q: "The goal is Goal 1: judge evidence without help. Learner B used AI to organise and tidy. What extra evidence would fit this goal?"
+      options: ["Ask B to judge a new source in class, without AI", "Ask B for a neater copy of the report", "Nothing: B's report is good enough"]
       answer: 0
-  - check:
-      type: question
-      q: "A learner accepts a full AI-generated recommendation with little checking. What remains uncertain?"
-      options: ["Whether a report exists", "What they personally understand or could explain", "Whether the report looks polished"]
-      answer: 1
+      feedback: [null, "Neatness isn't judging evidence.", "The report shows teamwork with a tool. Goal 1 is about B alone."]
+  - check: { type: reflect, text: "I can explain why the same report can count as good evidence for one goal and weak evidence for another." }
 ```
 
-### Learner A — independent investigation
+**Two purposes.** Feedback that helps you improve during learning is **formative**. A judgement about what you've achieved at a point in time, like a report card, is **summative**. One task can do both, but what we can conclude from it is different.
 
-A student researches the school's waste problem, evaluates information and writes a recommendation without AI during the task. Their process may offer evidence of independent reasoning, although independence does not guarantee sound conclusions.
+**Evidence that fits.** A test or task is good evidence when it fits the claim being made. A polished report can show you communicate well. It may not show much about researching on your own.
 
-### Learner B — supported investigation
+**Both goals matter.** Often, using tools well is the skill. Sometimes, doing it yourself is the skill. Neither goal should quietly replace the other.
 
-A student researches and evaluates the evidence, while using AI to organise material and polish the explanation. They might demonstrate strong judgement and tool-mediated capability. We need to inspect what decisions they made.
+### Report cards
 
-### Learner C — delegated investigation
+What is an end-of-term test mostly for?
 
-A student asks AI to generate the investigation and recommendation, then accepts most of it. The product might be useful, but it reveals little about their own evidence evaluation without additional information.
+### Learner B and Goal 1
 
-The cases are hypothetical. None establishes a person's learning simply from the amount of AI they used.
+What would show B's own judging?
 
-## Explain: purposes change what counts as evidence
+### One report, two goals
 
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "What is a central purpose of summative assessment?"
-      options: ["To make a judgement about achievement at a particular point", "Only to offer hints during practice", "To remove all uncertainty about a person"]
-      answer: 0
-  - check:
-      type: question
-      q: "What does assessment validity require?"
-      options: ["Evidence appropriate to the capability being claimed", "Every assessment must ban all tools", "Only a polished final product"]
-      answer: 0
-  - check:
-      type: question
-      q: "How might the evidence needed change if the goal changes?"
-      options: ["An independent reasoning goal and a tool-mediated project goal may require different demonstrations", "Goals never affect assessment", "Using tools automatically proves independent skill"]
-      answer: 0
-```
+Use Learner B's report as your example.
 
-### Formative and summative purposes
-
-**Formative assessment** uses evidence to guide further learning. **Summative assessment** evaluates achievement at a particular point. A task can serve both purposes, but the conclusions drawn from it may differ.
-
-### Validity
-
-An assessment is **valid for a particular interpretation** when the evidence adequately supports the claim. A polished report may demonstrate successful communication while providing limited evidence of independent research skills.
-
-### Authentic capability
-
-In many situations, using tools well is itself valuable. In other situations, understanding a process independently matters. Neither educational goal should be silently substituted for the other.
-
-## Elaborate: the goal changes the judgement
+## Elaborate: design a fair task
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I identified evidence appropriate to two different assessment purposes and acknowledged a limitation." }
+check: { type: reflect, text: "I designed a task that allows AI and still shows what the student learned, and named its weak spot." }
 ```
 
-Imagine the same three learners are judged under two different goals:
+Design one task for this unit that **allows AI** and still shows what the student learned.
 
-- **Goal 1:** Demonstrate that you can independently evaluate scientific or environmental evidence.
-- **Goal 2:** Develop an effective, evidence-based recommendation using appropriate resources and tools.
+- What is the goal?
+- What would students hand in with the work: a log, drafts, a short talk, an unseen question?
+- What would your task still miss?
 
-Which evidence would help establish each goal? Might an explanation, unfamiliar question, decision log or practical demonstration be useful? What would each still fail to show?
-
-Now consider your own learning. How might the knowledge that work will be graded change when you ask for AI help—even before the assessment starts?
-
-## Evaluate: resist the single rule
+## Evaluate: match evidence to a goal
 
 ```step
 stage: info
 check:
   type: question
-  q: "Which conclusion is most defensible?"
-  options: ["All AI-assisted work has the same evidentiary value", "The intended capability and conditions determine what an assessment can credibly show", "Independent work always demonstrates perfect understanding"]
-  answer: 1
+  q: "A teacher wants to know if students can explain the water cycle without help. Which evidence fits best?"
+  options: ["Each student explains it out loud, without notes", "A poster made with AI images and text", "A class vote on whether they understand it"]
+  answer: 0
+  feedback: [null, "A poster could show design skills, but not who did the explaining.", "A vote shows how sure people feel, not what they can explain."]
 ```
 
-**Next inquiry:** If different learning and assessment goals call for different evidence, who decides which capabilities education should value?
+**Next lesson:** if different goals need different evidence, who decides which goals matter most?

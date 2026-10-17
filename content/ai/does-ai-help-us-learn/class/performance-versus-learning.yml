@@ -18,4 +18,4 @@ activities:
     minutes: 4
     do: |
       Finish: "The right answer with help shows... A new question tomorrow would show..."
-    notes: "Listen for the difference between doing it with help, applying it to something new, and remembering it later."
+    notes: "Listen for the difference between doing it with help, using it on something new, and remembering it later."

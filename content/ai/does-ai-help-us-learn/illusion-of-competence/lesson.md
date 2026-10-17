@@ -1,6 +1,6 @@
 ---
-title: Can AI create an illusion of competence?
-summary: Investigate confidence, actual performance and the difficulty of knowing what we have learned with assistance.
+title: Can AI make you think you know more than you do?
+summary: Say how sure you are before you check, compare it with what you could actually do, and look at research on AI and confidence.
 language: science
 shape: 5e
 unit: evaluating-evidence
@@ -12,108 +12,112 @@ app:
   readySelector: "#gpanel"
   layout: full
 ---
-Have you ever understood an explanation while reading it, then struggled to produce the explanation yourself? AI can make answers feel clear and successful. **Could this distort how well we think we understand a subject?**
+Have you ever understood an explanation while reading it, then got stuck explaining it yourself? AI can make answers feel clear and easy. **Could that change how well you think you understand something?**
 
-## Engage: confidence is a prediction
+## Engage: being sure is a guess
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "You follow a convincing AI explanation and feel confident. Which conclusion is safest?"
-  options: ["Confidence proves the skill was learned", "Confidence may be informative, but it needs checking against other evidence", "Feeling confident means no learning occurred"]
-  actual: "Confidence is a judgement about your ability, not the ability itself. Checking it against outcomes helps calibrate that judgement."
+  q: "You read a clear AI explanation and feel sure you understand. What does feeling sure tell you?"
+  options: ["That you understand it", "It's a guess about yourself that you can check", "Nothing at all"]
+  actual: "Feeling sure is a guess about what you can do. It can be right or wrong, so it is worth checking against a new try."
 ```
 
-**Provocation:** If a tool increases your success and your confidence at the same time, how would you notice that one had increased faster than the other?
+If a tool makes you do better and feel surer at the same time, how would you notice if your confidence grew faster than your skill?
 
-## Explore: monitor a fresh attempt
+## Explore: how sure, how right?
 
 ```step
 stage: run
 try: { playground: board, starter: "boards.yml#explore", height: 690 }
-check: { type: board, text: "Complete one practice challenge and record a new attempt.", when: "t >= 1" }
+check: { type: board, text: "Do one challenge, then record how sure you are about the new question.", when: "t >= 1" }
 ```
 
-This is a **prepared practice activity**, not a live AI system. Choose a challenge, write your own attempt and ask for a hint or the worked example if you need it. Then press **Try a new question** and attempt it without looking back.
+This is a prepared practice board, not a live AI.
 
-Before you record the new attempt, choose how sure you are that it is right: **low, medium or high**. The board then shows a model answer. Compare it with your attempt: did your confidence match what you could actually do?
+1. Choose a challenge. Write your own attempt. Ask for a hint or the worked example if you need it.
+2. Press **Try a new question**. Answer it without looking back.
+3. **Before** you see the model answer, choose how sure you are: low, medium or high.
+4. Record your attempt. Compare it with the model answer. Did how sure you felt match how well you did?
 
-One short activity cannot measure your enduring ability or establish that AI caused anything. But it makes **monitoring your own understanding** something you can investigate.
+One short try can't measure what you can really do. But it lets you **check your own guess** about yourself.
 
-## Explain: distinguish confidence from calibration
+## Explain: how sure and how right
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "What does metacognitive calibration mean?"
-      options: ["How accurately your confidence matches your actual performance", "Always being very confident", "Letting AI decide whether you understand"]
+      q: "Tom felt very sure about the new question but got it wrong. Kai felt unsure but got it right. Whose confidence matched how they did?"
+      options: ["Neither: Tom was too sure and Kai wasn't sure enough", "Tom's, because feeling sure is good", "Kai's, because he got it right"]
       answer: 0
+      feedback: [null, "Tom felt sure and was wrong, so his confidence was too high.", "Kai was right, but he felt unsure, so his confidence was too low."]
   - check:
       type: question
-      q: "What is an illusion of competence?"
-      options: ["A mismatch where you feel more capable than available evidence justifies", "An incorrect answer that proves no learning occurred", "A necessary result of every technology"]
+      q: "Zoe read an AI explanation twice and felt sure. She decided not to practise. Why might that be a mistake?"
+      options: ["Reading it can feel like knowing it; only a try without help shows if she can do it", "Reading an explanation twice never helps", "AI explanations are always wrong"]
       answer: 0
+      feedback: [null, "Reading twice can help. The problem is skipping the check.", "Some AI explanations are right. The problem is the feeling, not the explanation."]
   - check:
       type: question
-      q: "What is a limitation of one practice task when assessing confidence?"
-      options: ["The task may be unrepresentative and the result may not generalise", "It measures all long-term learning perfectly", "It tells us nothing whatsoever"]
+      q: "Ravi felt sure on one board question and was right. What can he safely say?"
+      options: ["His confidence matched this time; more questions would tell him more", "He will always know when he is right", "He has learned the whole topic"]
       answer: 0
+      feedback: [null, "One question is a small sample.", "One question can't show the whole topic."]
 ```
 
-### Metacognition
+Knowing what you know, and what you don't, is a skill. Teachers sometimes call it **metacognition**: thinking about your own thinking.
 
-**Metacognition** includes thinking about and monitoring your own understanding: what you know, what you do not know, and which strategies are working.
+- Your confidence can be **too high** (you feel sure but are wrong) or **too low** (you feel unsure but are right).
+- When it matches what you can do, you can make good choices: when to practise, when to ask for help, and when to move on.
+- Feeling more able than you are is sometimes called an **illusion of competence**.
 
-### Calibration
+### Tom and Kai
 
-**Calibration** concerns whether your confidence fits the available evidence of your performance. You can be too confident or not confident enough. Reflection and checking can help, but are not automatically accurate.
+Compare how sure each one felt with how they did.
 
-### Self-regulated learning
+### Zoe
 
-When learners set goals, monitor progress and adjust strategies, they practise **self-regulated learning**. If confidence is poorly calibrated, choosing when to request help or attempt work independently may become harder.
+Zoe felt sure after reading. What didn't she check?
 
-## Elaborate: investigate evidence about AI and confidence
+### Ravi
+
+Ravi checked once. What can one check tell him?
+
+## Elaborate: what does the research say?
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I considered the confidence research and a limitation of applying it to students." }
+check: { type: reflect, text: "I used the study to argue a point, and named one limit of the study for students like me." }
 ```
 
-In [Fernandes and colleagues' study, published in *Computers in Human Behavior* in 2026](https://doi.org/10.1016/j.chb.2025.108779), participants using AI for logical reasoning performed better than a comparison norm but **overestimated how well they had performed**. The paper includes studies with 246 and 452 adult participants. The task involved reasoning problems, not a long school course, and the paper does not establish how much knowledge participants retained weeks later.
+In a [2026 study by Fernandes and colleagues](https://doi.org/10.1016/j.chb.2025.108779), adults used AI to solve logic puzzles. They did better than people usually do without AI. But they **thought they had done even better than they had**. The studies had 246 and 452 adults. They solved puzzles, not a school course, and the study didn't test what they remembered weeks later.
 
 Discuss two claims:
 
-- "Better AI-assisted performance is a real benefit even if people misjudge their abilities."
-- "Overconfidence makes AI-assisted success dangerous because people may stop practising what they have not mastered."
+- "Doing better with AI is a real gain, even if people misjudge themselves."
+- "Misjudging yourself is risky, because you might stop practising things you haven't learned."
 
-Could both be justified? Would a tool that helps users test their understanding change the concern? What if conventional tutoring software already did so?
+Could both be right? Would it help if the tool made you test yourself? Would the result be the same for Year 7 students in a school subject?
 
-**Optional discussion or inquiry record:** Note one situation where confidence is useful, one in which it misleads, and one practical way to seek better evidence.
+**Inquiry record (optional):** note one time feeling sure helped you, one time it misled you, and one way to check.
 
-## Evaluate: what have we learned about judging learning?
+## Evaluate: what does the study support?
 
 ```step
 stage: info
 check:
   type: question
-  q: "What can the cited AI-and-metacognition study most directly support?"
-  options: ["Everyone using AI loses the ability to learn", "In the studied reasoning tasks, participants could perform better with AI while overestimating performance", "All students should avoid every digital tutor"]
-  answer: 1
+  q: "What does the Fernandes study support most directly?"
+  options: ["Adults solving logic puzzles with AI did better, but thought they had done even better than they had", "Using AI makes everyone worse at learning", "Students should never use AI tutors"]
+  answer: 0
+  feedback: [null, "The study was about adults solving puzzles. It didn't test learning over time.", "The study didn't test students or AI tutors."]
 ```
 
-A student says, "I checked the AI explanation and it made sense, so I no longer need to practise." What evidence would you suggest gathering, and what would it still not prove?
+A student says: "I checked the AI explanation and it made sense, so I don't need to practise." What would you suggest they do to check? What would that still not prove?
 
-## Learning with AI: a challenging paradox
-
-```step
-stage: info
-check: { type: reflect, text: "I can explain why deciding when to use help requires judging my understanding, and why that judgement may be imperfect." }
-```
-
-A student may need self-regulation to use AI well, yet AI might make their self-assessment less reliable. This is a **tension to investigate**, not proof that students cannot regulate their learning.
-
-**Next inquiry:** If confidence and test scores are imperfect measures, how should we design a better study of AI and learning?
+**Next lesson:** if confidence and test scores can both mislead, how would you design a better study of AI and learning?

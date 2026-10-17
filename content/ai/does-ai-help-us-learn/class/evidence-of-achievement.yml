@@ -5,12 +5,12 @@ inquiry:
     - "Is it fair to ban a tool people use every day?"
   notes: "It depends on what the assessment is meant to show. Different goals need different evidence."
 activities:
-  - at: investigate
+  - at: run
     kind: activity
     title: "Match the evidence to the goal"
     minutes: 6
     do: |
-      Goal 1: can explain the science without help. Goal 2: can run a good investigation using tools. Sort these: a decision log, an unseen question in class, a polished report, a spoken explanation.
+      Goal 1: can judge evidence without help. Goal 2: can run a good investigation using tools. Sort these: a decision log, an unseen question in class, a polished report, a spoken explanation.
     notes: "Some evidence fits both goals. The polished report alone fits neither well; ask what would need to go with it."
   - at: end
     kind: discussion

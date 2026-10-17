@@ -5,7 +5,7 @@ inquiry:
     - "Would your answer change if you already knew a little about it?"
   notes: "Both work in different situations. Beginners often gain from a worked example first; people who know more often gain from trying first."
 activities:
-  - at: investigate
+  - at: run
     kind: discussion
     title: "Model first or try first?"
     minutes: 5

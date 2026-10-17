@@ -1,25 +1,33 @@
-summary: "Develop and challenge a conditional cognitive-offloading principle through changing purposes and expertise."
+summary: "Students sort the jobs in a writing task into keep and hand over, change the goal, then see how the learner's experience changes the answer."
 time: 40
 goals:
-  - "I can explain cognitive offloading in relation to a learning goal."
-  - "I can distinguish central and peripheral thinking without treating them as fixed."
-  - "I can evaluate how expertise changes appropriate assistance."
+  - "I can sort the jobs in a task into the skill I'm learning and the jobs I could hand over and check."
+  - "I can explain how changing the goal changes what I should keep."
+  - "I can explain why a beginner and an expert might need different help."
 before: |
-  The scenarios describe learning activities, not assessed work. Keep the learning purpose visible.
-  Nakamura's 2026 augmentation–erosion framework (https://doi.org/10.1007/s10648-026-10224-6) is theoretical, not a validated experimental decision rule. The paper says "peripheral" and "constitutive" (the lesson says central), on a graded continuum, and it is about STEM learning; the persuasive-writing example extends it. The expertise reversal effect itself is well established (Kalyuga, Ayres, Chandler & Sweller, 2003, https://doi.org/10.1207/S15326985EP3801_4); only its role in AI offloading is untested.
+  The lesson opens by recalling the Bastani result from Unit 2, lesson 1, rather than re-teaching research design.
+  The scenarios are learning activities, not assessed work. Keep the learning goal visible.
+  Nakamura's 2026 augmentation–erosion framework (https://doi.org/10.1007/s10648-026-10224-6) is theoretical, not a tested decision rule. The paper says "peripheral" and "constitutive" (the lesson says "on the edge" and "is the skill"), on a graded continuum, and it is about STEM learning; the persuasive-writing example extends it. The expertise reversal effect itself is well established (Kalyuga, Ayres, Chandler & Sweller, 2003, https://doi.org/10.1207/S15326985EP3801_4); only its role in AI offloading is untested.
+  Background on cognitive offloading and what it means for schools: Lodge and Loble (2026), "Artificial intelligence, cognitive offloading and implications for education" (University of Technology Sydney), https://doi.org/10.71741/4pyxmbnjaq.31302475.
 running:
-  - "Reveal the trade-off between effort saved and thinking retained."
-  - "Change the learning goal while retaining the same initial writing scenario."
-  - "Compare a novice benefiting from a worked example with an expert overlooking an error."
-  - "Transfer the conditional principle to another domain without assuming programming knowledge."
-struggle: "Learners may treat all effort saved as bad or all completion as learning."
+  - "Engage: the 'why' was not tested in the study; accept any reason students can defend, then name the lesson's question."
+  - "Explore: after the sort, change the goal and ask which jobs moved."
+  - "Explain: compare a beginner helped by a worked example with an expert who missed an error."
+  - "Elaborate: the game example tests the rule in a new subject without needing coding knowledge."
+struggle: "Students may treat all saved effort as bad, or all finished work as learning."
 stuck:
-  - see: "The learner demands an absolute rule."
-    ask: "What changes if the intended learning goal changes?"
-    fix: "Compare learning to argue with communicating an already-reasoned position."
-support: "Offer sentence frames: If the goal is..., assistance may... because..."
-stretch: "Explore what happens when the learner is an expert in one subject but novice in another."
-leads: "Lesson 8 asks whether interaction and responsiveness translate into learning and what AI adds."
+  - see: "A student wants a rule that works every time."
+    ask: "What changes if the goal changes?"
+    fix: "Go back to the sort: spelling moved when the goal changed."
+support: "Offer a sentence frame: If the goal is..., handing over... may... because..."
+stretch: "What happens when a learner is an expert in one subject and a beginner in another?"
+leads: "Unit 3, lesson 2 asks whether more interaction means more learning, and what AI adds over other tools."
 exit:
-  q: "Why does useful offloading depend on the learner and goal?"
-  a: "The target thinking and capacity to interpret or check help vary."
+  q: "Why does what you should hand over depend on the learner and the goal?"
+  a: "Thinking that is the skill being learned is worth keeping, and what that is changes with the goal. Beginners and experts can also check and learn from help differently."
+explain: |
+  Handing part of your thinking to a tool is called cognitive offloading. Keep the thinking that is the skill you are learning. Jobs on the edge can be handed over and checked. What counts as the skill changes with the goal, and beginners and experts may need different help.
+sources:
+  - { title: "Lodge and Loble (2026), Artificial intelligence, cognitive offloading and implications for education (UTS)", url: "https://doi.org/10.71741/4pyxmbnjaq.31302475", checked: 2026-10-18 }
+  - { title: "Nakamura (2026), Augmentation or Erosion? Regulating Cognitive Offloading in Generative AI-Supported STEM Learning", url: "https://doi.org/10.1007/s10648-026-10224-6", checked: 2026-10-18 }
+  - { title: "Kalyuga, Ayres, Chandler and Sweller (2003), The expertise reversal effect", url: "https://doi.org/10.1207/S15326985EP3801_4", checked: 2026-10-18 }

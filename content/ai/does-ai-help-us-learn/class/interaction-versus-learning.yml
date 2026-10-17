@@ -4,12 +4,19 @@ inquiry:
     - "Which learner and learning goal?"
     - "What thinking happens during each?"
     - "What would you check later?"
-  notes: "Do not rank the tools in advance. Retrieval practice can be appropriate; visible participation is not proof of learning."
+  notes: "Do not rank the tools in advance. Quiz practice can be right for remembering; being busy is not proof of learning."
 activities:
+  - at: run
+    kind: activity
+    title: "Four kinds of help"
+    minutes: 5
+    do: |
+      Answer (-3) × (-4) on a mini whiteboard. Then, for each kind of help A to D, say what it would make you do next.
+    notes: "Anyone who wrote -12 is the learner in the examples; ask which help they would want."
   - at: end
     kind: discussion
     title: "Change the learning goal"
     minutes: 3
     do: |
-      A learner knows the rule but needs fluency. Another is confused about why it works. Reconsider your original choice.
-    notes: "Point back to cognitive engagement, responsiveness and evidence of learning."
+      A learner knows the rule but needs speed. Another is confused about why it works. Would you give them the same help?
+    notes: "Point back to what each help makes you think about, how it responds, and what would show learning."

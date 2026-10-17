@@ -5,12 +5,12 @@ inquiry:
     - "Does the answer change if you're a beginner or an expert?"
   notes: "It depends on the goal: thinking that is part of the skill being learned is worth keeping; routine work around it may not be."
 activities:
-  - at: investigate
+  - at: run
     kind: activity
     title: "Keep it or hand it over?"
     minutes: 6
     do: |
-      For one task (writing a persuasive paragraph), sort the jobs into "keep" and "hand over": choosing the argument, checking spelling, finding evidence, formatting, deciding which reasons convince. Then change the goal to "practise spelling" and sort again.
+      For one task (writing a persuasive paragraph), sort the jobs into "keep" and "hand over": choosing the argument, checking spelling, finding objections, formatting, deciding which reasons convince. Then change the goal to "practise spelling" and sort again.
     notes: "The same job moves when the goal changes. Ask which jobs moved and why."
   - at: end
     kind: discussion

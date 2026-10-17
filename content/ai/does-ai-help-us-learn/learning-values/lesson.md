@@ -1,136 +1,133 @@
 ---
 title: Who decides what learning is worth?
-summary: Examine the goals and incentives shaping AI use, then revisit the course inquiry with an evidence-sensitive position.
+summary: Sort what students, teachers, employers and families want from school, see how marks shape study, and give your own careful answer to the course question.
 language: science
 shape: 5e
 unit: learning-and-society
 order: 3
 voice: { name: af_heart, speed: 1.1 }
 ---
-Across this course, we've asked what learning means, what studies show, and when AI assistance might help. Yet learning decisions are rarely made by a student alone. **Schools, assessment systems, families, communities and future opportunities also shape what counts as valuable.**
+In this course you've asked what learning means, what studies show, and when AI help might be useful. But learning choices are rarely made by a student alone. **Schools, tests, families, communities and future jobs all shape what counts.**
 
-## Engage: whose purpose?
+## Engage: whose goal?
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "A student wants to learn efficiently, while a school wants credible evidence of independent understanding. What is the best interpretation?"
-  options: ["Only the student's purpose can matter", "Only the school's purpose can matter", "The purposes can both matter and may create a genuine tension"]
-  actual: "Educational purposes can overlap or conflict. Understanding the tension comes before deciding how to respond."
+  q: "A student wants to learn fast with good tools. The school wants clear evidence of what the student can do alone. Who is right?"
+  options: ["The student: it's their learning", "The school: it has to judge fairly", "Both goals matter, and they can pull against each other"]
+  actual: "Both goals can be reasonable, and they can clash. It helps to see the clash clearly before deciding what to do."
 ```
 
-**Provocation:** Can an activity help someone learn while making it harder for a school to evaluate what they know?
+Can something help you learn and also make it harder for the school to see what you know?
 
-## Explore: competing but reasonable priorities
+## Explore: what does each group want?
+
+```step
+stage: run
+tasks:
+  - check:
+      type: sort
+      q: "Who is most likely to say this?"
+      options: ["A student", "A teacher", "A university or employer", "A family"]
+      items:
+        - ["I want help that lets me learn quickly and use good tools.", "A student"]
+        - ["I need to see what each student really understands, so I can help them.", "A teacher"]
+        - ["I need to trust that a grade means the person can do the work.", "A university or employer"]
+        - ["I want my child to be able to question things that aren't true.", "A family"]
+        - ["I want to make things I care about, not just pass tests.", "A student"]
+  - check: { type: reflect, text: "I ranked four things school could value, and compared my ranking with someone else's." }
+```
+
+Different people want different things from school. These are made-up voices, and people within each group disagree too.
+
+### Who says it?
+
+Sort each statement.
+
+### Your ranking
+
+Rank these four from most to least important to you: **doing it yourself**, **making useful things with tools**, **working well with others**, **making good choices about your learning**. Compare with a partner. Where do you differ, and why?
+
+## Explain: marks, choices and values
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "A student values flexibility and access to useful tools. What question might they raise?"
-      options: ["Can I use support that helps me learn and work effectively?", "Must every grade be high?", "Should I never verify AI?"]
+      q: "A school's tests only check facts you remember, with no notes allowed. What are students most likely to spend more time on?"
+      options: ["Memorising facts", "Projects using tools", "Nothing changes: tests don't affect how people study"]
       answer: 0
+      feedback: [null, "Projects with tools wouldn't earn marks on those tests.", "What gets marked usually changes how people study."]
   - check:
       type: question
-      q: "A teacher needs to identify learners' misconceptions. What question matters?"
-      options: ["How can I gather trustworthy information about understanding?", "How can I remove all learner choices?", "How can I make every task harder?"]
+      q: "Which student has the most say over their own learning?"
+      options: ["Leo tries a problem alone first, picks a hint when stuck, and can say why", "Max does whatever the app tells him next", "Ella lets AI choose all her topics and answers"]
       answer: 0
+      feedback: [null, "Max follows the app, but isn't making his own choices.", "Ella has handed over the choosing as well as the work."]
   - check:
       type: question
-      q: "A qualification is used to judge readiness for further study. What concern arises?"
-      options: ["Whether it supports a credible claim about relevant capabilities", "Whether students enjoyed every activity", "Whether all learning was performed without books"]
+      q: "Which of these is a prediction about the future, not a fact?"
+      options: ["'AI will make learning to write pointless.'", "'The physics study tested 194 students.'", "'Our class has 26 students.'"]
       answer: 0
-  - check:
-      type: question
-      q: "A family or community values independence and responsible participation. What might matter?"
-      options: ["Judgement, capability and agency over time", "Only the speed of assignment completion", "Avoiding every new tool"]
-      answer: 0
+      feedback: [null, "That's a fact from the study.", "That's a fact you could check."]
 ```
 
-### Student priorities
+**Marks shape learning.** What gets tested and rewarded changes what students practise. Tests of remembering alone, with no notes, reward some skills and hide others. Rewarding polished products changes where students put their effort too. These pushes are sometimes called **incentives**.
 
-Learners may value understanding, independence, creativity, efficiency, belonging and useful skills. These aims need not always point to the same assistance.
+**Having a say.** Making good choices about your own learning, and owning them, is called **agency**. Tools, rules, chances and what you already know can all help or limit it.
 
-### Teacher priorities
+**Values.** Should school put doing it yourself first? Working with others? Using tools well? That is partly a question about values. Research can inform it, but it can't decide it alone. And claims about the future need reasons, not just confidence.
 
-Teachers need opportunities to identify misconceptions and support growth. A learner may benefit from a tutor while the teacher needs more evidence of what that learner can do.
+### What gets marked
 
-### Further study and work
+Think about what the test rewards.
 
-Qualifications often communicate claims about readiness. As technologies change, people may disagree about which abilities should be demonstrated independently and which can be supported by tools.
+### Having a say
 
-### Family and community
+Who is choosing, and who is just following?
 
-Communities may value responsibility, opportunity and the ability to question unreliable information. Not every stakeholder agrees internally; these are illustrative perspectives.
+### Fact or prediction?
 
-## Explain: incentives and agency
+Which one can't be checked yet?
 
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "What is an assessment incentive?"
-      options: ["A reason assessment conditions can influence how people study", "A guarantee that people only care about grades", "A rule that all assessment is harmful"]
-      answer: 0
-  - check:
-      type: question
-      q: "What is learner agency?"
-      options: ["The capacity to make and act on informed choices about one's learning", "The absence of teachers", "The ability to obtain any finished product"]
-      answer: 0
-  - check:
-      type: question
-      q: "Which statement about future skills is most reasonable?"
-      options: ["AI guarantees independent skills will become irrelevant", "What people need may change, but claims about the future need reasons and evidence", "Every existing school subject must stay unchanged"]
-      answer: 1
-```
-
-### Incentives
-
-Assessment and recognition can influence what students practise. A focus on unaided recall may support some capabilities while leaving others less visible. A focus on polished products can also change how students allocate effort.
-
-### Agency
-
-**Learner agency** involves making informed choices and taking responsibility for them. It can be supported or constrained by available tools, opportunities, expectations and prior knowledge.
-
-### Educational values
-
-Whether schools should prioritise independent mastery, creative collaboration, adaptable judgement or other capacities is partly a question of values. Empirical research can inform the discussion but cannot decide those values by itself.
-
-## Elaborate: revisit the driving inquiry
+## Elaborate: answer the course question
 
 ```step
 stage: make
-check: { type: reflect, text: "I gave a qualified position, examined a strong objection and explained what evidence could change my view." }
+check: { type: reflect, text: "I gave a careful answer, dealt with a strong objection, and said what could change my mind." }
 ```
 
-Return to the question: **Does AI help us learn?**
+Go back to the question: **Does AI help us learn?**
 
-Develop a position that addresses:
+Build your answer. Include:
 
-- What *learning* means in the contexts you are discussing.
-- One relevant empirical finding from Unit 2, including what it actually measured.
-- How goals, expertise, tool alternatives and instructional design affect the judgement.
-- An objection that a reasonable person might raise.
-- A situation in which your current position might change.
+- What *learning* means in the cases you're talking about.
+- One study from Unit 2, and what it actually measured.
+- How the goal, the learner's experience, other tools and the design of the help change the answer.
+- An objection a sensible person might raise.
+- A situation that would change your mind.
 
-You may conclude that AI often helps, often interferes, depends on conditions, or that the available evidence is insufficient for the claim you want to make. **A well-supported argument matters more than selecting a preferred answer.**
+You might decide AI often helps, often gets in the way, depends on the situation, or that we don't have enough evidence yet. **A well-supported answer matters more than which answer you pick.**
 
-You can express this through classroom dialogue or a brief reflection. A longer journal, forum discussion, argument map or final position statement is an **optional teacher-selected format**, not a required course artefact.
+You can do this as a class discussion or a short written reflection. Your teacher may choose another format.
 
-## Evaluate: a more precise answer
+**Inquiry record (optional):** compare this answer with your first one from Unit 1, lesson 1. What changed, and what stayed?
+
+## Evaluate: a stronger answer
 
 ```step
 stage: info
 check:
   type: question
-  q: "What makes a conclusion about AI and learning intellectually stronger?"
-  options: ["Treating all AI use as equivalent", "Connecting a clear learning goal with relevant evidence, limits and counterarguments", "Avoiding every uncertainty"]
-  answer: 1
+  q: "Which answer to 'Does AI help us learn?' is strongest?"
+  options: ["'In the maths study, a plain chatbot during practice hurt later results. A tutor that gives hints may be different, but we need more evidence.'", "'AI helps when students use it carefully, because it is a helpful tool.'", "'The physics study proved AI tutors beat teachers, so schools should switch to them.'"]
+  answer: 0
+  feedback: [null, "This sounds careful, but it gives no evidence and doesn't say who, or for what goal.", "The physics study compared one kind of class, tested straight after. 'Proved' and 'switch' go too far."]
 ```
 
-The question may remain open. Your reasoning can nevertheless become more precise: you can identify what matters, what evidence supports a claim and what remains to be investigated.
+The question may stay open. But your reasons can be more precise: what matters, what evidence supports a claim, and what is still unknown.
 
-**End of course:** What do you now think AI helps us learn, under which conditions, and what would persuade you otherwise?
+**End of course:** what do you now think AI helps us learn, when, and what would change your mind?

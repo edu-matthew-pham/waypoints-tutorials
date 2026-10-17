@@ -1,125 +1,135 @@
 ---
 title: What thinking should we keep?
-summary: Examine cognitive offloading by changing learning goals, learner expertise and the nature of assistance.
+summary: Sort the jobs in a task into "keep" and "hand over", change the goal, and see how the answer changes for beginners and experts.
 language: science
 shape: 5e
 unit: choosing-assistance
 order: 1
 voice: { name: af_heart, speed: 1.1 }
 ---
-Unit 1 distinguished good performance from evidence of learning. Now consider a different decision: **if AI can do some thinking for us, which thinking should we keep?**
+Unit 2 looked at what studies can and can't show. Now a practical question: **if AI can do some of the thinking for you, which thinking should you keep?**
 
-## Engage: the completed argument
+## Engage: remember the maths study
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "A learner asks AI to write a persuasive argument they are learning to construct. What can we infer?"
-  options: ["The learner certainly learned nothing", "The finished argument alone does not show what reasoning the learner developed", "The learner must have mastered argument writing"]
-  actual: "A finished product does not establish which reasoning the student practised or understood."
+  q: "In the high school maths study, students who practised with a plain AI chatbot did worse later without it. Why might that be?"
+  options: ["The chatbot did thinking they needed to practise", "The chatbot gave them wrong answers", "The later test was harder for that group"]
+  actual: "The study didn't test why. One likely reason is that the chatbot did thinking the students needed to practise. That is today's question: which thinking should you keep?"
 ```
 
-**Provocation:** Does saving effort always save us from learning, or might it free attention for something more valuable?
+Does saving effort always cost you learning? Or can it free up time for something that matters more?
 
-## Explore: the same help, different goals
+## Explore: keep it or hand it over?
+
+```step
+stage: run
+tasks:
+  - check:
+      type: sort
+      q: "Your goal: learn to write a persuasive argument. Keep each job, or hand it over and check it?"
+      options: ["Keep it: it's the skill I'm learning", "Could hand it over, then check"]
+      items:
+        - ["Choosing what you will argue", "Keep it: it's the skill I'm learning"]
+        - ["Deciding which reasons are most convincing", "Keep it: it's the skill I'm learning"]
+        - ["Answering an objection to your argument", "Keep it: it's the skill I'm learning"]
+        - ["Checking the spelling", "Could hand it over, then check", "Spelling matters, but it isn't the skill of arguing."]
+        - ["Making the handout look neat", "Could hand it over, then check"]
+        - ["Getting a list of objections people might raise", "Could hand it over, then check", "You still have to judge which ones are good, and answer them yourself."]
+  - check:
+      type: question
+      q: "Now your goal changes to: practise your spelling. Which job moves into 'keep it'?"
+      options: ["Checking the spelling", "Making the handout look neat", "Getting a list of objections"]
+      answer: 0
+      feedback: [null, "Neatness still isn't spelling practice.", "Objections aren't spelling practice either."]
+```
+
+You are writing a short persuasive paragraph: *Our school should have more outdoor lessons.* There are many jobs in this task. Some of them are the skill you are learning. Some are not.
+
+### Sort the jobs
+
+Sort each job for the goal "learn to write a persuasive argument".
+
+### Change the goal
+
+Same task, new goal. Which job is now the skill?
+
+## Explain: it depends on the goal and the learner
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "If the goal is constructing a reasoned argument, which action most directly practises that goal?"
-      options: ["Changing the font", "Constructing reasons and answering objections", "Copying an entire generated argument"]
-      answer: 1
-  - check:
-      type: question
-      q: "If the goal is exploring unfamiliar perspectives, what might AI usefully provide?"
-      options: ["Perspectives to investigate and verify", "Proof every suggested claim is true", "A guarantee of understanding"]
+      q: "Lina is new to adding fractions. She studies a full worked example, then explains each step and tries a new one. Was getting the full solution bad for her?"
+      options: ["Not necessarily: beginners often learn well from a worked example if they then explain it and try one", "Yes: a full solution always skips the learning", "No: worked examples are the best help for everyone"]
       answer: 0
+      feedback: [null, "Lina still explained it and tried a new one herself.", "Experts often gain less from worked examples than beginners do."]
   - check:
       type: question
-      q: "If a student has already developed the reasoning and wants to communicate it clearly, which task might be relatively peripheral?"
-      options: ["Checking claims", "Deciding which reasons are convincing", "Formatting the finished handout"]
-      answer: 2
+      q: "Omar is a strong writer. He asks AI for objections to his argument and pastes one in. It mentions a study that doesn't exist. What went wrong?"
+      options: ["He handed over the checking, which still mattered", "Strong writers should never use AI", "Nothing: experts don't need to check"]
+      answer: 0
+      feedback: [null, "Getting ideas from AI can be fine. Skipping the check was the problem.", "Even experts need to check sources."]
+  - check:
+      type: question
+      q: "In a lesson on reading graphs, Priya uses a calculator for the averages. Has she handed over the skill?"
+      options: ["No: reading what the graph means is the skill; the sums are on the edge", "Yes: any tool use skips the skill", "Yes, unless she checks every sum by hand"]
+      answer: 0
+      feedback: [null, "The lesson's skill is reading graphs, not arithmetic.", "Checking the answers make sense is good, but redoing every sum isn't the skill here."]
 ```
 
-### Goal A — learning to construct arguments
+Using a tool to do part of your thinking is called **cognitive offloading**. Notes, calculators, friends and AI can all take some thinking off you.
 
-A student learning persuasive reasoning asks AI to write an argument about providing more outdoor learning at school. They receive a polished paragraph. What thinking did they bypass? Could studying the paragraph, explaining its structure and writing a new one still be educational?
+- **It depends on the goal.** Thinking that *is* the skill you're learning is worth keeping. Jobs on the edge of the skill can often be handed over and checked. The same job can be the skill for one goal and on the edge for another, as spelling was.
+- **It depends on the learner.** Beginners often learn well from a full worked example, as long as they then explain it and try one. People who already know a lot gain less from worked examples. This was known long before AI.
+- **Experts slip too.** Knowing a lot doesn't stop you missing an AI mistake. Someone can be an expert writer and a beginner at statistics.
 
-### Goal B — exploring alternatives
+Some researchers suggest that goal, experience and checking decide whether handing thinking to AI helps or harms. That is an idea to test, not a proven rule.
 
-The student already knows how to form an argument but wants unfamiliar counterarguments. AI offers possible perspectives. This may expand what they consider, but the student still needs to evaluate those perspectives.
+### Lina
 
-### Goal C — presenting developed thinking
+Lina is a beginner.
 
-The student has already researched and defended a position. AI helps format notes into a handout. The writing and presentation still need checking, but some formatting effort might be less relevant to the stated learning goal.
+### Omar
 
-**Notice:** The same AI contribution can have different implications depending on the purpose.
+Omar is an expert writer.
 
-## Explain: expertise changes the judgement
+### Priya
 
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "What is cognitive offloading?"
-      options: ["Delegating part of a mental task to an external resource", "Always refusing assistance", "A guarantee that thinking disappears"]
-      answer: 0
-  - check:
-      type: question
-      q: "Which is a useful proposed distinction?"
-      options: ["Every task is permanently central or peripheral", "Thinking central to a current learning goal may be worth retaining", "All delegation is harmful"]
-      answer: 1
-  - check:
-      type: question
-      q: "Why might novices and experts use the same assistance differently?"
-      options: ["Experts never make errors", "Prior understanding affects what they can interpret, check and learn", "Novices cannot benefit from worked examples"]
-      answer: 1
-```
+What is the skill in Priya's lesson?
 
-### Cognitive offloading
-
-Using notes, calculators, peers or AI to handle part of a mental task is **cognitive offloading**. Offloading may free attention, but it may also bypass thinking a learner needs to practise.
-
-### Central versus peripheral thinking
-
-What is **central** depends on the goal. For someone learning to interpret data, checking the meaning of a graph may be central while formatting labels is peripheral. These categories are not permanent properties of a task.
-
-### Prior expertise
-
-A beginner might benefit from a complete worked example, then learn by explaining and reconstructing it. An experienced learner might delegate routine steps but fail to notice an AI error. An expert in writing can still be a novice in statistics.
-
-That beginners often gain from worked examples while experts gain less is well established, long before AI. Nakamura's 2026 theoretical review goes further: it proposes that goals, expertise and monitoring decide whether **offloading to AI** helps or harms. That part is a **proposal to investigate**, not an established rule.
-
-## Elaborate: test and revise the principle
+## Elaborate: test a rule
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I defended or refined a conditional principle about offloading after considering goals and prior expertise." }
+check: { type: reflect, text: "I tested a rule about handing over thinking, and improved it with an 'it depends on…' condition." }
 ```
 
-Test the rule **"Keep the important thinking and delegate the rest"** against two counterexamples:
+Test this rule: **"Keep the important thinking and hand over the rest."**
 
-- A novice learns from a complete worked example. Was receiving the full solution necessarily harmful?
-- An expert uncritically accepts an AI-generated counterargument that cites a nonexistent source. Did expertise guarantee good judgement?
+Try it on two cases:
 
-Try transferring the principle: a student developing a game uses generated collision code. Is that thinking central when learning to program? What if their goal is testing which game mechanics players enjoy? You need no programming knowledge to discuss these different purposes.
+- A beginner learns from a complete worked example. Was getting the full solution harmful?
+- An expert pastes an AI objection that cites a source that doesn't exist. Did being an expert protect them?
 
-Propose a more conditional rule, and identify a situation in which it might fail.
+Now try a new task: a student making a game asks AI for the code that stops the player walking through walls. Is that the skill if their goal is learning to program? What if their goal is finding out which game rules players enjoy? (You don't need to know any coding.)
 
-## Evaluate: what would count as evidence?
+Write a better rule that starts "Hand it over when…, but keep it when…". Then find a case where your rule still fails.
+
+## Evaluate: what would show it helped?
 
 ```step
 stage: info
 check:
   type: question
-  q: "What most directly helps establish whether offloading supported the intended learning?"
-  options: ["Only the speed of completion", "What thinking the learner undertook and evidence of the intended capability", "The number of AI messages"]
-  answer: 1
+  q: "A student handed some jobs to AI while learning to write arguments. What best shows whether that helped them learn?"
+  options: ["Whether they can now write a strong argument on a new topic themselves", "How fast they finished", "How many messages they sent to the AI"]
+  answer: 0
+  feedback: [null, "Fast work can mean the AI did the thinking.", "Lots of messages could mean anything."]
 ```
 
-**Next question:** If assistance is appropriate, why assume generative AI is the best way to provide it?
+**Next lesson:** if some help is a good idea, why assume AI is the best way to give it?

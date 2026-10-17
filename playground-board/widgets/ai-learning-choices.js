@@ -3,11 +3,18 @@
 (function(B){
 'use strict';
 var root,mode,S;
-var cases=[
+var baseCases=[
  {title:'Studying for a maths test',goal:'Learn to add fractions independently',options:['Ask for a hint and attempt the problem','Ask AI to finish every question','Avoid any help, even after getting stuck'],feedback:['Useful: the learner still practises the thinking and can check errors.','A complete answer may finish work without developing this skill.','Independent work is valuable, but a well-chosen hint can help overcome an obstacle.'],strong:0},
  {title:'Preparing a timetable',goal:'Format an already checked list of dates into a table',options:['Re-enter everything manually','Ask AI to format the supplied dates, then check them','Let AI invent the dates from memory'],feedback:['Possible, but repeated formatting is not usually the main learning goal.','Useful delegation: automate presentation while checking that the dates remain accurate.','Unverified, invented dates are not reliable evidence.'],strong:1},
  {title:'Writing an explanation',goal:'Understand why a science experiment needs controlled variables',options:['Ask AI to write the explanation to submit unchanged','Write your own explanation and request feedback','Ask AI for an unrelated summary'],feedback:['This may complete the product without showing or developing understanding.','Useful: your explanation provides evidence of your thinking; feedback can guide revision.','That does not address your learning goal.'],strong:1},
  {title:'Comparing sources',goal:'Decide whether an important claim is supported by evidence',options:['Ask AI whether it is confident','Find relevant evidence and compare it with the claim','Assume a fluent paragraph must be correct'],feedback:['Confidence alone is not an independent check.','Useful: evaluate the claim against evidence that can be inspected.','Fluency cannot establish whether a claim is true.'],strong:1}
+];
+// set: goals (Does AI Help Us Learn? lesson 1): the same task with two different goals. strong may list several good choices.
+var goalCases=[
+ {pair:'maze',title:'Make a maze game (goal: learn to code)',goal:'Learn to write the code that moves a player with the arrow keys',options:['Ask AI to write the whole game','Write the movement code yourself and ask for a hint when stuck','Start from a ready-made game template that already moves the player'],feedback:['You get a game, but the AI wrote the part you wanted to learn.','You do the coding you came to learn; a hint only gets you unstuck.','Quick, but the template already moves the player, so you skip the part you wanted to practise.'],strong:[1]},
+ {pair:'maze',title:'Make a maze game (goal: test an idea with players)',goal:'Find out whether players enjoy a maze with a 60-second time limit',options:['Ask AI to write the whole game','Write the movement code yourself and ask for a hint when stuck','Start from a ready-made game template that already moves the player'],feedback:['Can work: a quick version leaves time for testing with players. Check it really has the time limit, and that it works.','Fine, but slow: the coding was not your goal, and it takes time away from testing with players.','Useful: the template gets you a working maze fast, so your time goes on watching players.'],strong:[0,2]},
+ {pair:'seasons',title:'Explain the seasons (goal: understand them)',goal:'Understand why we have seasons well enough to explain it in a test',options:['Ask AI to write the explanation, and use it as it is','Write your own explanation, then ask for feedback on it','Ask AI to tidy the wording of your notes'],feedback:['You get a good explanation, but the test will ask you to explain it yourself.','You practise the explaining the test will ask for, and the feedback shows what to fix.','Tidy wording helps a reader, but it does not help you understand the seasons.'],strong:[1]},
+ {pair:'seasons',title:'Explain the seasons (goal: a display sign)',goal:'Make a clear sign for the class display. You already understand the seasons well.',options:['Ask AI to write the explanation, and use it as it is','Write your own explanation, then ask for feedback on it','Ask AI to tidy the wording of your notes'],feedback:['Risky: nobody has checked it, and AI explanations can be wrong. Check it before it goes on the wall.','Fine, but you already understand this; the sign mainly needs to be clear.','Useful: the thinking is already yours, and you can check the tidied wording against your notes.'],strong:[2]}
 ];
 var evidence=[
  {claim:'Every seedling with eight hours of light grew taller than every seedling with four hours.',source:'Measured height increase after seven days (cm): four hours = 2, 3, 5; eight hours = 3, 4, 6.',answer:'contradicted',why:'A four-hour seedling grew 5 cm, more than two eight-hour seedlings. The word every is not supported.'},
@@ -23,7 +30,8 @@ function el(tag,txt,parent){var e=document.createElement(tag);if(txt!==undefined
 function btn(txt,fn,parent){var b=el('button',txt,parent);b.type='button';b.addEventListener('click',fn);return b;}
 function box(label,txt){var sec=el('section');sec.style.cssText='padding:12px;border:1px solid #a2acb8;border-radius:8px;margin:10px 0';el('strong',label,sec);el('p',txt,sec);}
 function select(label,values,selected,callback){var w=el('div');el('label',label,w);var s=el('select',undefined,w);s.setAttribute('aria-label',label);values.forEach(function(v){var o=el('option',v.name,s);o.value=v.key;});s.value=selected;s.addEventListener('change',function(){callback(s.value);});return s;}
-function report(){B.say('Activities completed: '+S.tests+'; choices made: '+S.choices);B.save({state:S});B.post({scope:{vars:{t:S.tests,c:S.choices,h:S.hints},points:{}}},'Completed '+S.tests+' checks.');}
+function pairs(){var seen=S.seen||[],n=0,by={};seen.forEach(function(i){var c=goalCases[i];if(c)by[c.pair]=(by[c.pair]||0)+1;});Object.keys(by).forEach(function(k){if(by[k]>=2)n++;});return n;}
+function report(){B.say('Activities completed: '+S.tests+'; choices made: '+S.choices);B.save({state:S});B.post({scope:{vars:{t:S.tests,c:S.choices,h:S.hints,p:pairs()},points:{}}},'Completed '+S.tests+' checks.');}
 function practise(){
  el('h2','Choose help that helps you learn');
  el('p','This is a prepared practice activity, not a chatbot. It shows how different amounts of help can change what you do.');
@@ -66,20 +74,21 @@ function verify(){
  el('p','Important: One dataset may support a narrow claim without justifying a broad claim about every possible situation.');
 }
 function delegate(){
- el('h2','What should you let AI do?');
- el('p','Consider both the task and the purpose. There is no rule that AI must always be used, or always avoided.');
+ var cases=B.spec.set==='goals'?goalCases:baseCases;
+ el('h2',B.spec.set==='goals'?'Same task, different goal':'What should you let AI do?');
+ el('p',B.spec.set==='goals'?'Each task appears twice, with a different goal. Try the same approach for both goals and compare the feedback. These are prepared situations, not a live AI.':'Consider both the task and the purpose. There is no rule that AI must always be used, or always avoided.');
  select('Choose a situation',cases.map(function(e,i){return {key:String(i),name:e.title};}),String(S.item),function(v){S.item=Number(v);S.choice='';S.result='';S.choices++;render();});
  var a=cases[S.item];box('Your goal',a.goal);
  var opts=a.options.map(function(t,i){return {key:String(i),name:t};});
  select('Your decision', [{key:'',name:'Choose an approach'}].concat(opts),S.choice,function(v){S.choice=v;S.choices++;render();});
- btn('Explore consequences',function(){if(S.choice===''){B.say('Select an approach first.');return;}var i=Number(S.choice);S.result=a.feedback[i]+(i===a.strong?' This is a strong choice for the stated goal.':' A different choice may serve this goal better.');S.tests++;S.choices++;render();});
+ btn('Explore consequences',function(){if(S.choice===''){B.say('Select an approach first.');return;}var i=Number(S.choice),good=[].concat(a.strong).indexOf(i)>=0;S.result=a.feedback[i]+(good?' This is a strong choice for the stated goal.':' A different choice may serve this goal better.');S.tests++;S.choices++;if(a.pair){S.seen=S.seen||[];if(S.seen.indexOf(S.item)<0)S.seen.push(S.item);}render();});
  if(S.result)box('Consider this',S.result);
  el('p','Ask yourself: What is the goal? Which thinking develops my skill? What can be delegated without losing that learning? How will I check the result?');
 }
 function render(){root.replaceChildren();if(mode==='practise')practise();else if(mode==='verify')verify();else delegate();report();}
 B.widget('ai-learning-choices',{sections:['gpanel'],label:function(){return 'Learning with AI decision activities';},
-parse:function(s){s.mode=s.mode||'practise';if(!['practise','verify','delegate'].includes(s.mode))throw Error('Mode must be practise, verify or delegate');},
-start:function(fresh){root=B.el('gpanel');mode=B.spec.mode;var saved=fresh?null:B.saved(),v=saved&&saved.state;S={topic:v&&practice[v.topic]?v.topic:'maths',item:v&&Number.isInteger(v.item)?Math.max(0,Math.min(mode==='verify'?evidence.length-1:cases.length-1,v.item)):0,choice:v&&typeof v.choice==='string'?v.choice:'',result:v&&v.result||'',level:v&&Number.isInteger(v.level)?v.level:0,attempt:v&&v.attempt||'',transfer:v&&v.transfer||'',tests:v&&Number.isInteger(v.tests)?v.tests:0,choices:v&&Number.isInteger(v.choices)?v.choices:0,hints:v&&Number.isInteger(v.hints)?v.hints:0,ready:!!(v&&v.ready),conf:v&&['low','medium','high'].includes(v.conf)?v.conf:'',recorded:!!(v&&v.recorded)};S.level=Math.max(0,Math.min(3,S.level));render();},
+parse:function(s){s.mode=s.mode||'practise';if(!['practise','verify','delegate'].includes(s.mode))throw Error('Mode must be practise, verify or delegate');if(s.set&&!(s.mode==='delegate'&&s.set==='goals'))throw Error('set: goals works only with mode: delegate');},
+start:function(fresh){root=B.el('gpanel');mode=B.spec.mode;var saved=fresh?null:B.saved(),v=saved&&saved.state;S={topic:v&&practice[v.topic]?v.topic:'maths',item:v&&Number.isInteger(v.item)?Math.max(0,Math.min(mode==='verify'?evidence.length-1:(B.spec.set==='goals'?goalCases:baseCases).length-1,v.item)):0,seen:v&&Array.isArray(v.seen)?v.seen.filter(function(i){return Number.isInteger(i)&&i>=0&&i<goalCases.length;}):[],choice:v&&typeof v.choice==='string'?v.choice:'',result:v&&v.result||'',level:v&&Number.isInteger(v.level)?v.level:0,attempt:v&&v.attempt||'',transfer:v&&v.transfer||'',tests:v&&Number.isInteger(v.tests)?v.tests:0,choices:v&&Number.isInteger(v.choices)?v.choices:0,hints:v&&Number.isInteger(v.hints)?v.hints:0,ready:!!(v&&v.ready),conf:v&&['low','medium','high'].includes(v.conf)?v.conf:'',recorded:!!(v&&v.recorded)};S.level=Math.max(0,Math.min(3,S.level));render();},
 redraw:function(){if(root)render();}
 });
 })(WPB);

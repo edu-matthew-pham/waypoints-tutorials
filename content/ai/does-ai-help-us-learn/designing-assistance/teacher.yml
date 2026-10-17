@@ -1,25 +1,32 @@
-summary: "Compare direct modelling, guided hints and fading support, then challenge who controls assistance."
+summary: "Students sort tutor messages into model-first, try-first and fading designs, match designs to learners, and design their own support plan."
 time: 40
 goals:
-  - "I can distinguish instructional scaffolding from merely making an activity interactive."
-  - "I can describe how prior knowledge changes the appropriate support."
-  - "I can design and challenge a sequence of tutoring assistance."
+  - "I can tell support for a skill (scaffolding) apart from just making an activity lively."
+  - "I can explain why a beginner and a more experienced learner might need different help."
+  - "I can design a support plan that gets less over time and ends with a try without help."
 before: |
-  All tutoring sequences are illustrative, not evidence of effectiveness or live AI dialogues.
-  Do not imply hints always outperform worked examples, or that fading guarantees retention.
+  All three tutor designs are made-up examples, not evidence that they work, and not live AI.
+  Do not imply hints always beat worked examples, or that fading guarantees remembering.
+  The first Explain question checks goal 1 (scaffolding versus interactivity); the Evaluate question checks goal 2; the Elaborate plan shows goal 3.
+  Background for teachers on how much tutoring helps: VanLehn (2011), "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems" (https://doi.org/10.1080/00461520.2011.611369), found step-based computer tutors close to human tutors in many studies. On trying first: Sinha and Kapur (2021), "When problem solving followed by instruction works" (https://doi.org/10.3102/00346543211019105), a meta-analysis finding that problem solving before instruction can help, depending on how it is designed. Both support "it depends on the design and the learner", not a single rule.
 running:
-  - "Compare the model-first, hint-first and fading sequences."
-  - "Challenge each sequence by changing the learner's expertise."
-  - "Ask what a later independent attempt could establish."
-  - "Discuss learner, teacher and adaptive-system control without forcing consensus."
-struggle: "Learners may equate more struggle or more questions with deeper learning."
+  - "Engage: compare model-first and try-first before naming either."
+  - "Explore: after the sort, ask students where their own out-of-school example sits."
+  - "Explain: challenge each design by changing the learner's experience (Dev, then Mei)."
+  - "Elaborate: discuss student, teacher and app control without forcing agreement."
+struggle: "Students may think more struggle or more questions always means deeper learning."
 stuck:
-  - see: "The learner always prefers hints."
-    ask: "What if this is the learner's first encounter with the technique?"
-    fix: "Compare the benefits of initial modelling and later practice."
-support: "Offer a sequence template: goal, model, guided attempt, feedback, fresh attempt."
-stretch: "Consider a tutor that mistakenly estimates a learner's expertise."
-leads: "Unit 4 investigates formative and summative assessment and responsibility for educational decisions."
+  - see: "A student always prefers hints."
+    ask: "What if this is the first time they have ever seen this kind of task?"
+    fix: "Compare Dev (a beginner) with Mei (experienced)."
+support: "Offer a plan template: goal, model, guided try, feedback, new try without help."
+stretch: "Think about a tutor that wrongly guesses how much the learner already knows."
+leads: "Unit 4 looks at feedback, judging achievement, and who decides what learning is worth."
 exit:
-  q: "Why is there no universally best tutoring sequence?"
-  a: "Prior knowledge, learning purpose, quality of feedback and evidence of progress all matter."
+  q: "Why is there no single best tutor design?"
+  a: "What the learner already knows, the goal, how good the feedback is, and how progress is checked all matter."
+explain: |
+  Scaffolding is support for a skill that is meant to come down. Beginners often need to see a model first. People with more experience often do well trying first, with hints. Good support gets less over time, and ends with a try without help.
+sources:
+  - { title: "VanLehn (2011), The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems", url: "https://doi.org/10.1080/00461520.2011.611369", checked: 2026-10-18 }
+  - { title: "Sinha and Kapur (2021), When problem solving followed by instruction works: evidence for productive failure", url: "https://doi.org/10.3102/00346543211019105", checked: 2026-10-18 }

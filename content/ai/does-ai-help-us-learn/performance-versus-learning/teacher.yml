@@ -1,34 +1,34 @@
-summary: "Use an assisted-versus-fresh-attempt contrast to question what performance shows about learning, retention and transfer."
+summary: "Students try a question with help and a new one without, then sort evidence into doing with help, using it on something new, and remembering it later."
 time: 35
 goals:
-  - "I can distinguish assisted performance, transfer and retention."
-  - "I can explain what an assessment reveals and what it cannot establish."
-  - "I can challenge a conclusion about learning by proposing better evidence."
+  - "I can explain the difference between doing a task with help, using an idea on something new, and remembering it later."
+  - "I can say what a right answer with help does and does not show."
+  - "I can suggest a better way to check learning and say what it would still miss."
 before: |
-  Teaching move: experiential contrast, then critique the measurement itself.
-  Use the existing offline-friendly AI Foundations practice widget. It is prepared feedback, NOT a live model or an experimentally validated AI tutor.
-  The garden problems are intentionally modest; the goal is to analyse evidence, not rank students by arithmetic speed.
-  Have paper or a shared board available for the two-round comparison. A separate journal or forum is optional.
+  Teaching move: experience the contrast first, then question the measurement itself.
+  The board is the offline AI Foundations practice board: prepared hints and model answers, not a live model or a tested AI tutor.
+  The one-board activity is a classroom illustration, not a controlled study. The new question is a little different from the first, so difficulty changes as well as help. A student who struggles may still have learned something; a correct answer does not prove lasting understanding.
+  If the arithmetic gets in the way, a paper version works: a worked example for one third of 12, then a fresh question such as two fifths of 15, written with "how I know".
+  Terms used for students: transfer ("use it on something new") and retention ("still know it later").
 running:
-  - "Collect a prediction before students receive the scaffolded example."
-  - "Allow students to explain partial understanding, not only correct answers."
-  - "Ask how the two rounds differ in difficulty as well as assistance."
-  - "Invite challenges to the claim that an unaided test fully defines meaningful learning."
-struggle: "Students may overinterpret their single correct or incorrect answer as proof of long-term learning or lack of learning."
+  - "Engage: collect a prediction before students see any help."
+  - "Explore: let students explain partial understanding, not only right answers."
+  - "Explain: ask how the two questions differ in difficulty as well as in help."
+  - "Elaborate: invite challenges to the idea that a test without help is the whole of learning."
+struggle: "Students may treat one right or wrong answer as proof of long-term learning, or of no learning."
 stuck:
-  - see: "A learner treats one unaided problem as definitive."
+  - see: "A student treats one question without help as the final word."
     ask: "What else could explain this result? What might change if we asked tomorrow?"
-    fix: "Separate task difficulty, prior knowledge, immediate performance and later retention."
-  - see: "Students argue that help always prevents learning."
-    ask: "Have you ever understood a worked example and then applied the idea elsewhere?"
-    fix: "Distinguish a possible learning mechanism from evidence that it occurred in this case."
-support: "Use a simpler fraction example if the arithmetic itself obscures the intended comparison."
-stretch: "Ask students to design a fairer comparison and decide whether creativity or collaborative capability should also be measured."
-leads: "Lesson 3 questions whether the outcomes prioritised by independent assessments are the only meaningful purposes of learning."
+    fix: "Separate how hard the task was, what they knew before, how they did today, and what they remember later."
+  - see: "Students argue that help always stops learning."
+    ask: "Have you ever understood a worked example and then used the idea somewhere else?"
+    fix: "Separate a way learning can happen from evidence that it happened this time."
+support: "Use a simpler fraction example if the arithmetic hides the comparison."
+stretch: "Design a fairer comparison. Should creativity or working with others also be measured?"
+leads: "Unit 1, lesson 3 asks whether what you can do alone is the only learning worth valuing."
 exit:
-  q: "Why can a correct AI-assisted answer be insufficient evidence of learning?"
-  a: "It shows success with assistance, while understanding, transfer and retention require other evidence; any one assessment remains incomplete."
+  q: "Why might a right answer with AI's help not be enough evidence that you learned it?"
+  a: "It shows what you could do with help. A new question shows whether you can use it, and a later question shows whether you remember it."
 explain: |
-  Do not portray a classroom worked example as empirical proof about AI.
-  Discussion should distinguish a descriptive claim (what was observed) from a normative claim (what education should value).
-  Do not require students to reject AI; explore possible benefits and limits of assistance with due caution.
+  Getting it right with help is one kind of evidence. A new question without help shows whether you can use the idea. A question a week later shows whether you remember it. No single check shows everything.
+  Do not treat a classroom example as proof about AI. Separate what was seen from what we think should matter.

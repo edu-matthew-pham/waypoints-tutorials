@@ -1,35 +1,33 @@
-summary: "Launch a sustained dialectical inquiry by separating successful performance, learning, productivity and what evidence can establish."
+summary: "Students start the course inquiry by comparing one task done for two different goals, and separate getting a task done from learning to do it."
 time: 35
 goals:
-  - "I can distinguish a successful product from evidence of learning."
-  - "I can explain how the learner's goal changes what AI assistance might mean."
-  - "I can support and challenge a position while recognising uncertainty."
+  - "I can explain why the same help can suit one goal and not another."
+  - "I can say what a finished product shows, and what it does not show, about learning."
+  - "I can give the best reason for a view I disagree with."
 before: |
-  This is an inquiry launch, not a lesson whose endpoint is 'AI is good' or 'AI is bad'.
-  Offer a paper or digital inquiry record that students can revisit across lessons, but do not require a particular journal or discussion platform. Built-in reflection and classroom dialogue remain sufficient.
-  The board is a scripted, account-free activity carried over from AI Foundations; it contains suggested choices for particular goals, not definitive educational judgements.
-  Offer students permission to disagree with a board's recommendation, provided they supply reasons.
+  This lesson opens the inquiry. Its endpoint is not "AI is good" or "AI is bad".
+  Offer a paper or digital inquiry record that students can revisit across lessons, but do not require one. The built-in reflections and class talk are enough.
+  The board is a prepared, account-free activity carried over from AI Foundations (`set: goals` adds the same maze-game and seasons tasks with two goals each). Its feedback is a suggestion for a stated goal, not a final judgement. Let students disagree with it if they give reasons.
+  Lesson 1 owns the question "what was the goal?"; lesson 2 of this unit owns "what kinds of evidence?".
 running:
-  - "Ask for an initial position before introducing conceptual distinctions; preserve it for later comparison."
-  - "After each scenario, ask what the product shows and what it cannot establish about learning."
-  - "Model dialectical dialogue by restating the strongest version of an opposing argument before critiquing it."
-  - "Avoid rewarding students for changing their opinions; reward specificity, evidence and responsiveness to objections."
-struggle: "Students may equate a polished product with learning, or assume AI involvement proves that learning did not happen."
+  - "Engage: collect a first position before any distinctions are taught; students keep it for later."
+  - "Explore: insist that students try the same approach under both goals of one task, and say what changed."
+  - "Explain: Ari and Bea did the same task. Ask which part each one needed to do themselves."
+  - "Elaborate: model stating the other side fairly before criticising it."
+  - "Do not reward changing opinions; reward clear reasons and responding to objections."
+struggle: "Students may think a polished product proves learning, or that any AI use proves no learning happened."
 stuck:
-  - see: "The learner says 'AI always helps' or 'AI always harms' without distinguishing goals."
-    ask: "What does 'help' mean here? What would we need to observe to tell?"
-    fix: "Compare learning a programming skill with using a game engine to test a design idea."
-  - see: "Students treat the scripted scenario feedback as an answer key for a philosophical question."
-    ask: "What assumption is this recommendation making about the learner's goal?"
-    fix: "Separate a clear factual distinction from a contestable educational value judgement."
+  - see: "A student says 'AI always helps' or 'AI always harms' without naming a goal."
+    ask: "Helps with what? What would we need to see to tell?"
+    fix: "Go back to the board: the same approach, two goals, two different verdicts."
+  - see: "Students treat the board's feedback as an answer key."
+    ask: "What is the board assuming about the learner's goal?"
+    fix: "Separate a clear fact (the game works) from a judgement about value (was it the right help?)."
 support: "Use a familiar school task and sentence starters: 'The product shows...', 'It does not yet show...', 'I would check...'."
-stretch: "Introduce a sociocultural objection: must learning always be judged through unaided individual performance? What role do shared tools and collaborators play?"
-leads: "Lesson 2 investigates the distinction between assisted performance and learning more directly."
+stretch: "Must learning always be judged by what someone can do alone? What part do shared tools and other people play?"
+leads: "Unit 1, lesson 2 asks what kinds of evidence show learning after someone does well with help."
 exit:
-  q: "What can a polished AI-assisted product tell us about someone's learning?"
-  a: "It establishes an outcome but not by itself the learner's understanding, decisions or independent capability; the learning goal and further evidence matter."
+  q: "Ari and Bea both used a game template. Why might it suit Bea's goal but not Ari's?"
+  a: "Bea wanted to find out what players like, so building fast left time to test. Ari wanted to learn to code movement, and the template did that part for him."
 explain: |
-  Pedagogical move: provocation followed by contrasting cases and dialectical dialogue.
-  Explicitly teach the distinctions among performance, learning and purpose; keep the larger value judgement open.
-  An optional inquiry record can contain an initial claim, a reason, a plausible counterargument and a live question. Forum discussions or argument maps are optional extensions; avoid duplicating the same written work across platforms.
-  Prepared board feedback may favour certain offloading choices for the goals specified; students should be invited to test those assumptions, not simply accept the feedback.
+  The same help can be right for one goal and wrong for another. A finished game shows that a game exists. It does not show, on its own, what its maker can now do. So start by asking what the goal was.

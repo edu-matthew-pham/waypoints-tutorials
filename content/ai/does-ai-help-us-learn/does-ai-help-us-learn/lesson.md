@@ -1,6 +1,6 @@
 ---
 title: Does AI help us learn?
-summary: Explore contrasting examples, question what counts as learning, and begin an inquiry that may not have one final answer.
+summary: Compare the same task done for different goals, and start an inquiry that may not have one final answer.
 language: science
 shape: 5e
 unit: what-is-learning
@@ -25,106 +25,112 @@ explainClip:
 ---
 # Does AI help us learn?
 
-In AI Foundations you practised three habits: ask for the right kind of help, check what AI tells you, and decide what to hand over. But do those habits actually help you learn? That is harder to answer.
+In AI Foundations you practised three habits: ask for the right kind of help, check what AI tells you, and decide what to hand over. But do those habits help you **learn**? That is a harder question.
 
-AI can explain a difficult idea, generate a game, correct a draft or finish a task in seconds. Does that mean it helps someone *learn*? **This course investigates the question rather than giving you a predetermined answer.**
+AI can explain an idea, make a game or fix a draft in seconds. Does that mean it helps someone learn? This course looks at the question. It does not hand you an answer.
 
-Throughout the course, you can maintain an **optional inquiry record** in a notebook, document or teacher-chosen workspace. This helps you revisit your claims, evidence and open questions. If you do not keep a separate record, use the lesson reflections and discussion prompts. You do not have to change your mind to show deeper thinking.
+**Inquiry record (optional):** keep your answers in a notebook or a document your teacher chooses. You will come back to them. If you don't keep one, the reflections in each lesson are enough.
 
-## Engage: make a claim worth examining
+## Engage: make a first claim
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "A student uses AI to produce a playable game in ten minutes. What can we reasonably conclude?"
-  options: ["They learned how to program a game", "They produced a playable game; what they learned is not yet clear", "They definitely learned nothing"]
-  actual: "We know they obtained a playable game. That alone does not establish what they learned, but it does not prove they learned nothing either."
+  q: "A student uses AI to make a playable game in ten minutes. What do we know?"
+  options: ["They learned how to program a game", "They have a game, but we don't know yet what they learned", "They learned nothing, because AI did the work"]
+  actual: "We know they have a playable game. That does not tell us what they learned. It does not prove they learned nothing, either."
 ```
 
-**Provocation:** Two students submit equally impressive games. One writes code in a beginner-friendly game engine; the other directs an AI assistant to generate the game. Have they learned the same things? Does it matter if their goal was to learn programming, investigate a game mechanic or simply build something fun?
+Two students hand in equally good games. One wrote the code in a beginner game maker. The other told an AI what to build. Did they learn the same things? Does it matter what each one was trying to do?
 
-**Optional inquiry record — Entry 1:** Answer *Does AI help us learn?* in two or three sentences. Add **one reason**, **one uncertainty** and your confidence (low, medium or high). Keep your first answer: you'll revisit it.
+**Inquiry record:** answer *Does AI help us learn?* in two or three sentences. Add one reason, one thing you are unsure about, and how sure you are (low, medium or high). Keep this first answer.
 
-## Explore: the goal changes the judgement
+## Explore: same task, two goals
 
 ```step
 stage: run
 try: { playground: board, starter: "boards.yml#explore", height: 690 }
-check: { type: board, text: "Compare at least two situations and inspect the prepared feedback.", when: "t >= 2" }
+check: { type: board, text: "Try both goals for the same task, and one other situation.", when: "t >= 3 and p >= 1" }
 ```
 
-The activity presents prepared scenarios, **not live AI responses**. Compare at least two. For each, ask: What is the person's goal? What does successful work demonstrate? What would we still need to know about what they learned?
+The board shows the **same task with two different goals**. These are prepared situations, not a live AI.
 
-As you discuss the feedback, you may challenge it. A scenario's suggested choice is a starting point for reasoning, not an answer you must accept.
+1. Pick **Make a maze game (goal: learn to code)**. Choose an approach and press **Explore consequences**.
+2. Now pick **Make a maze game (goal: test an idea with players)**. Choose the same approach. Does the feedback change?
+3. Try one more situation.
 
-## Explain: useful distinctions, not a verdict
+You can disagree with the board. Its feedback is a starting point. Say why you disagree.
+
+## Explain: the goal changes the judgement
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "Which observation most directly shows that a student completed a task?"
-      options: ["They submitted a working game", "They can explain an unfamiliar game mechanic", "They can independently design a different game"]
+      q: "Ari's goal was to learn to code movement. He asked AI to write the whole maze game. What did he skip?"
+      options: ["Writing the movement code, the part he wanted to learn", "Nothing: the game works, so he met his goal", "Testing whether players like the game"]
       answer: 0
+      feedback: [null, "The game works, but his goal was to learn to code it. Did he practise that?", "Players were not part of Ari's goal."]
   - check:
       type: question
-      q: "Why might a successful AI-assisted product be insufficient evidence of independent capability?"
-      options: ["Using a tool always prevents learning", "We cannot tell which decisions or skills the student personally exercised", "Finished products have no value"]
-      answer: 1
-  - check: { type: reflect, text: "I can distinguish a successful product, developing understanding and independent capability without assuming only one matters." }
+      q: "Bea's goal was to find out whether players like a time limit. She used a ready-made template so the maze took five minutes to build. Was that a good choice for her goal?"
+      options: ["Yes: her goal was about players, so building quickly left time to test", "No: she should have written every line herself", "No: using any shortcut means she learned nothing"]
+      answer: 0
+      feedback: [null, "That would teach coding, but coding was not her goal.", "She can still learn a lot from watching players."]
+  - check: { type: reflect, text: "I can explain why the same help can suit one goal and not another." }
 ```
 
-### Performance
+Getting a task done is one thing. Being able to do it yourself is another. Help from a person, a tool or an AI can get the task done, and that can be valuable. But it doesn't tell us everything about what you learned.
 
-**Performance** is what someone achieves on a particular task. Assistance and tools can improve performance. That improvement may be valuable, but it does not tell us everything about learning.
+Ari and Bea both made a maze game with help. Ari wanted to learn to code. Bea wanted to find out what players enjoy.
 
-### Learning
+### Ari's game
 
-**Learning** can involve changes in knowledge, understanding, skills, judgement or participation. People disagree about which changes matter most and how to assess them. A test, explanation, observation or product may offer evidence, but none automatically captures every dimension.
+Which part of the task did Ari need to do himself?
 
-### Purpose
+### Bea's game
 
-Imagine the game creator wanted to test whether a new level was enjoyable rather than learn JavaScript. The same AI assistance might be judged differently. Also ask whether a conventional game engine could already serve the goal. **The relevant question is not simply AI versus no help.**
+Which part of the task did Bea need to do herself?
 
-## Elaborate: a dialogue that develops the question
+### Put it in words
+
+The useful question is not "AI or no help?". It is **"What is the goal, and which help suits it?"** A non-AI tool, like a game template, might already do the job.
+
+## Elaborate: two claims
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I considered another perspective and recorded a stronger reason, challenge or question." }
+check: { type: reflect, text: "I gave the best reason for a claim I don't agree with, and added a question." }
 ```
 
-Discuss the two claims below. Do not vote for the winner immediately. First offer the strongest reasonable interpretation of each, then ask what evidence would help adjudicate the disagreement.
+Discuss these two claims with a partner.
 
-- **Claim A:** "AI helps people learn because it lets them accomplish tasks they could not complete alone."
-- **Claim B:** "Accomplishing a task with AI does not tell us whether someone learned how to do it."
+- **Claim A:** "AI helps people learn, because it lets them do things they couldn't do alone."
+- **Claim B:** "Doing a task with AI doesn't show you learned how to do it."
 
-Try these questions: Can both claims be true? Are they using *learn* in the same way? Is productivity itself a worthwhile educational outcome? How would your answer change if the task were learning fractions rather than prototyping a game?
+First give the best reason for each claim. Then ask:
 
-**Optional inquiry record — Entry 2:** In your reflections, discussion or inquiry record, add a counterargument to your first position. You may retain your position, qualify it or revise it; explain why. Identify one unanswered question to carry into the next lesson.
+- Can both be true?
+- Do they mean the same thing by *learn*?
+- Would your answer change if the task were learning fractions, not making a game?
 
-## Evaluate: what can we conclude so far?
+**Inquiry record:** add a reason against your first answer. You can keep your answer, change it, or add "it depends on…". Write one question to take into the next lesson.
+
+## Evaluate: what was the goal?
 
 ```step
 stage: info
 check:
   type: question
-  q: "Which conclusion is best justified by the examples in this lesson?"
-  options: ["AI always improves learning if the final work is good", "AI never supports meaningful learning", "Different goals require different evidence before we can judge what was learned"]
-  answer: 2
+  q: "Sam says: 'AI helped me finish my science explanation, so now I understand the science.' What should you ask first?"
+  options: ["What was Sam trying to learn, and can Sam explain it without the AI's words?", "Which AI did Sam use?", "How long was the explanation?"]
+  answer: 0
+  feedback: [null, "Knowing the tool doesn't tell us what Sam can do.", "A long explanation can still be someone else's thinking."]
 ```
 
-Imagine a student says: "AI helped me finish my science explanation, so I now understand the science." Suggest **one way to investigate that claim** without assuming it is either true or false. Explain what your approach would reveal—and what it might still miss.
+Before you judge any use of AI, name the goal. Then ask what the result shows about that goal.
 
-## Learning with AI: reflect on the tool, not just the result
-
-```step
-stage: info
-check: { type: reflect, text: "I have expressed what I currently think, why I think it and what might change my mind." }
-```
-
-You do **not** need an AI account for this lesson. If you use a school-approved assistant outside the prepared activity, do not treat a fluent explanation or polished product as proof of your own learning. Equally, do not assume that using AI means no learning occurred.
-
-**Next inquiry:** If a student performs better with help, what would count as evidence that they actually learned?
+**Next lesson:** if someone does better with help, what would show they really learned?

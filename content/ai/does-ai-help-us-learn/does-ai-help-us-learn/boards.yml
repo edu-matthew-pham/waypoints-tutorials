@@ -1,10 +1,13 @@
 # Reuse the prepared, account-free learning decisions widget from AI Foundations.
+# set: goals shows the same task with two different goals.
 # region: explore
 widget: ai-learning-choices
 mode: delegate
+set: goals
 # endregion
 
 # region: explain
 widget: ai-learning-choices
 mode: delegate
+set: goals
 # endregion

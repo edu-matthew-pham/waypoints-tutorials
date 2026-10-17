@@ -1,132 +1,138 @@
 ---
 title: Does research show that AI improves learning?
-summary: Confront two credible studies with different results, investigate their comparisons and decide what claims they really support.
+summary: Compare two real studies with different results, find what each one compared, and spot headlines that go too far.
 language: science
 shape: 5e
 unit: evaluating-evidence
 order: 1
 voice: { name: af_heart, speed: 1.1 }
 ---
-Researchers have tested whether AI helps students. Some studies report substantial improvements; others find that completing practice with AI can leave students less prepared to work unaided. **Can apparently conflicting studies both be credible?**
+Researchers have tested whether AI helps students. Some studies found big gains. Others found that students who practised with AI did worse later without it. **Can both kinds of study be trustworthy?**
 
-## Engage: two headlines, one question
+## Engage: two headlines
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "One study says AI tutoring improved test scores; another says unrestricted AI harmed later test performance. What is the best first response?"
-  options: ["One study must be dishonest", "Check who participated, what each group did, and how learning was measured", "Average the headlines to get the truth"]
-  actual: "Studies can investigate different people, conditions and outcomes. Their claims must be examined against their designs."
+  q: "One study says an AI tutor raised test scores. Another says practising with AI lowered later test scores. What should you do first?"
+  options: ["Decide which study is wrong", "Find out who took part, what each group did, and what was tested", "Trust the newer study"]
+  actual: "Studies can test different people, different kinds of help and different outcomes. You need to know what each one did before comparing them."
 ```
 
-**Provocation:** Which is more convincing: an impressive improvement in marks, or the ability to explain *why* those marks changed?
+Which would convince you more: a big jump in marks, or knowing *why* the marks changed?
 
-## Explore: examine the actual studies
+## Explore: what did each study do?
+
+```step
+stage: run
+tasks:
+  - check:
+      type: sort
+      q: "Which study does each fact describe?"
+      options: ["Study A: high school maths", "Study B: university physics"]
+      items:
+        - ["Some students practised with books and notes, and no AI", "Study A: high school maths"]
+        - ["One group used a plain AI chatbot; another used an AI tutor with teacher-written hints", "Study A: high school maths"]
+        - ["Students were tested later, without any AI", "Study A: high school maths"]
+        - ["Every student learned one topic with an AI tutor and another in a teacher-led class", "Study B: university physics"]
+        - ["Students were tested straight after each topic", "Study B: university physics"]
+        - ["The AI was compared with a lively class run by a teacher, not with no help", "Study B: university physics"]
+  - check:
+      type: question
+      q: "In Study A, which group did worst on the later test without AI?"
+      options: ["The group that practised with the plain AI chatbot", "The group that practised with books and notes", "The group that practised with the AI tutor"]
+      answer: 0
+      feedback: [null, "The books-and-notes group was the comparison. One AI group scored about 17% below it.", "The AI tutor group's later score was close to the books-and-notes group."]
+```
+
+**Study A: high school maths.** In [Bastani and colleagues' 2025 study](https://doi.org/10.1073/pnas.2422633122), students practised maths in three groups:
+
+- books and notes, with no AI;
+- a plain AI chatbot that answered whatever they asked;
+- an AI tutor that teachers had set up with hints and limits.
+
+Both AI groups did better **while practising**. Later, everyone sat a test **without AI**. The plain chatbot group scored about **17% lower** than the books-and-notes group. The AI tutor group's score was **not clearly different** from the books-and-notes group.
+
+**Study B: university physics.** In [Kestin and colleagues' 2025 study](https://doi.org/10.1038/s41598-025-97652-6), 194 university students each learned one topic with an AI tutor and another in a lively class run by a teacher. The order was random, and every student tried both. Tests **straight after** each topic favoured the AI tutor.
+
+But many things were different between the two: the pace, the format, the feedback, and who was helping. The study did not test what students remembered months later.
+
+### Sort the facts
+
+Use the two study descriptions to sort each fact.
+
+### Read the results
+
+Look again at Study A's three groups.
+
+## Explain: read a claim carefully
 
 ```step
 stage: investigate
 tasks:
   - check:
       type: question
-      q: "In the Bastani mathematics study, what could students in the control group use during practice?"
-      options: ["Books and notes, without a provided GPT assistant", "The same guarded GPT tutor", "No learning resources of any kind"]
+      q: "In Study A, the AI tutor group's later score was not clearly different from the books-and-notes group. What can we say?"
+      options: ["We can't tell them apart in this study; a small difference might still exist", "The AI tutor and books and notes work exactly as well as each other", "The AI tutor harmed learning"]
       answer: 0
+      feedback: [null, "'Not clearly different' is not the same as 'exactly equal'. A bigger study might find a small difference.", "Its score was close to the books-and-notes group, not lower."]
   - check:
       type: question
-      q: "In the Kestin physics study, what was the AI-tutoring condition compared with?"
-      options: ["An otherwise identical non-AI digital tutor", "Instructor-led active-learning classes", "Students doing no physics learning"]
-      answer: 1
-  - check:
-      type: question
-      q: "Which statement correctly describes the Bastani GPT Tutor finding?"
-      options: ["Its students did much better on practice, but their unaided test result was not statistically distinguishable from control", "The guarded tutor proved lasting superiority over all other digital tutorials", "Its students never used generative AI"]
+      q: "A newspaper says: 'AI tutors beat teachers for good, study finds.' It is about Study B. Which part goes furthest beyond what the study found?"
+      options: ["'for good': the study only tested straight after each topic", "'AI tutors': the study used an AI tutor", "'study finds': it was a real study"]
       answer: 0
+      feedback: [null, "That part is true. Look for the part the study never tested.", "That part is true. Look for the part the study never tested."]
+  - check: { type: reflect, text: "I can tell apart what a study found, what the researchers think it means, and a claim that goes further." }
 ```
 
-### Study A — high school mathematics
+When you read a claim about a study, ask three questions.
 
-In [Bastani and colleagues' 2025 study](https://doi.org/10.1073/pnas.2422633122), students worked on mathematics problems with either books and notes (control), a broadly responding GPT assistant (GPT Base), or a GPT assistant supplied with teacher-prepared hints, solutions and safeguards (GPT Tutor).
+1. **Compared with what?** Better than no help? Better than books? Better than a good teacher?
+2. **Measured how?** A score while practising, a test straight after, or a test weeks later without help?
+3. **Does the claim fit?** A headline can say more than the study showed.
 
-Both AI groups performed better **during supported practice**. Later, without AI, the GPT Base group scored about **17% worse than the control group** on the study's test. GPT Tutor's unaided test performance was **not statistically distinguishable from control**. The authors did not compare GPT Tutor against an equally sophisticated non-generative digital tutorial.
+### Not clearly different
 
-### Study B — university physics
+What does "not clearly different" mean, and what does it not mean?
 
-In [Kestin and colleagues' 2025 study](https://doi.org/10.1038/s41598-025-97652-6), 194 university physics students each learned one topic with a self-paced AI tutor and another topic in an instructor-led active-learning class, in random order. This is called a **crossover** design: every student experienced both, so the two groups started out the same. Test scores straight after each topic favoured the AI tutor.
+### The headline
 
-But more than one feature differed: pace, format, feedback opportunities and who or what supported learning. The study compared **instructional packages**, not AI with an otherwise identical non-AI tutorial. It also did not establish durable learning over months.
+Check each part of the headline against what Study B did.
 
-### Two different comparisons
+### Your own words
 
-Bastani investigated *different forms of assistance during practice and later unaided performance*. Kestin compared *two approaches to teaching and short-term learning*. Neither result, alone, determines whether AI improves every kind of meaningful learning.
+Study A and Study B asked different questions. Neither one, alone, tells us whether AI helps every kind of learning.
 
-## Explain: read a research claim carefully
-
-```step
-stage: investigate
-tasks:
-  - check:
-      type: question
-      q: "What is the comparison group in an experiment?"
-      options: ["A group used as a reference for interpreting the effect of the tested condition", "The group with the highest scores", "The researchers who write the article"]
-      answer: 0
-  - check:
-      type: question
-      q: "Why is 'no statistically detectable difference' not the same as 'proved exactly equal'?"
-      options: ["A study may not have enough precision to rule out smaller differences", "Statistical comparisons can never be useful", "A finding must always support AI"]
-      answer: 0
-  - check: { type: reflect, text: "I can distinguish an observed finding, the researchers' interpretation and an unsupported extension." }
-```
-
-### Comparison
-
-An experiment's **comparison condition** helps us ask: better than *what*, under *which conditions*? A good study can support a narrow conclusion without answering every other useful question.
-
-### Outcome
-
-Researchers choose an **outcome measure**, such as practice scores, immediate tests or delayed independent transfer. The measure matters, and it may capture only part of meaningful learning.
-
-### Interpretation
-
-**Evidence** describes what was observed. **Interpretation** connects the observations to a claim. A headline may go beyond what the design justifies.
-
-## Elaborate: debate the strongest claims
+## Elaborate: two careful claims
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I defended a limited research claim, considered a challenge and identified an open question." }
+check: { type: reflect, text: "I defended a careful claim about one study and named something it leaves open." }
 ```
 
-Consider two positions:
+Look at these two claims:
 
-- "Bastani gives us a good reason to be cautious about unrestricted AI during practice."
-- "Kestin gives us a good reason to investigate well-designed AI tutoring further."
+- "Study A is a good reason to be careful about plain AI chatbots during practice."
+- "Study B is a good reason to keep testing well-designed AI tutors."
 
-Could both positions be justified? What stronger claims would **not** follow? Discuss whether the absence of an excellent non-AI digital-tutor comparison changes how confidently we should recommend generative AI.
+Could both be fair? Which bigger claims would **not** follow? Neither study compared AI with a really good non-AI computer tutor. Does that change how sure we should be?
 
-**Optional inquiry record or discussion:** Write a headline for one study that you think is accurate without being misleading. Then explain a limitation you deliberately left visible.
+**Inquiry record (optional):** write a headline for one study that is true and not misleading. Then name one limit you kept in view.
 
-## Evaluate: what is warranted?
+## Evaluate: what can we claim?
 
 ```step
 stage: info
 check:
   type: question
-  q: "Which claim is justified by the studies described here?"
-  options: ["AI has been proved to improve meaningful learning in all subjects", "Unrestricted AI can improve assisted results yet undermine later measured performance in some conditions", "A positive immediate test proves AI alone caused the benefit"]
-  answer: 1
+  q: "Which claim do these two studies support?"
+  options: ["Practising with a plain AI chatbot can help in the moment but leave students worse off later, at least in some conditions", "AI has been proved to improve learning in every subject", "Study B proves that AI, and not the other changes, caused the better scores"]
+  answer: 0
+  feedback: [null, "Two studies in two subjects can't prove that.", "Many things changed at once in Study B, so we can't tell which one made the difference."]
 ```
 
-A school leader says, "Research proves we should replace our interactive tutorials with AI tutors." Explain what comparison would be needed to examine that proposal fairly.
+A principal says: "Research proves we should replace our computer practice tasks with AI tutors." What comparison would you need to test that fairly?
 
-## Learning with AI: do not outsource the inference
-
-```step
-stage: info
-check: { type: reflect, text: "I can ask what a research study actually compared and avoid treating a headline as a verdict." }
-```
-
-You do not need an AI account. If you use an approved assistant to summarise research, check its claims against the original source.
-
-**Next inquiry:** Even when we know a student's score, do we know how accurately they understand their own performance?
+**Next lesson:** even when we know a student's score, do they know how well they are really doing?

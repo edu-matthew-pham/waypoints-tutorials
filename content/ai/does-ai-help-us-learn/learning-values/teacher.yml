@@ -1,26 +1,30 @@
-summary: "Revisit the AI-and-learning inquiry through learner agency, institutional incentives and competing educational values."
+summary: "Students sort what different groups want from school, see how marks shape study and how much say learners have, then give their own careful answer to the course question."
 time: 45
 goals:
-  - "I can explain how assessment incentives can affect learning choices."
-  - "I can identify different defensible educational priorities."
-  - "I can defend a qualified position on AI and learning using evidence and counterarguments."
+  - "I can explain how what gets marked changes how people study."
+  - "I can describe different, reasonable things people want from school."
+  - "I can give a careful answer to 'Does AI help us learn?' using evidence and an objection."
 before: |
-  Keep students' decisions and learning at the centre rather than turning this into an administrative policy-design exercise.
-  Stakeholder voices are simplified fictional perspectives, not authoritative representatives of their groups.
-  Optional extended arguments, journals, maps and discussions remain teacher-selected formats.
+  Keep students' own decisions at the centre; this is not a school policy exercise.
+  The voices in the sort are simplified and made up, not representatives of their groups.
+  Assessment incentives are taught here only (the previous lesson leaves them out).
+  Words used for students: incentives (pushes that come from what is marked or rewarded) and agency (having a say over your own learning).
+  Longer arguments, journals, maps and discussions remain optional, teacher-chosen formats.
 running:
-  - "Surface differences among learner, teacher, qualification and community concerns."
-  - "Connect assessment incentives with how students allocate effort."
-  - "Revisit research, theory, tool alternatives and learning goals from earlier units."
-  - "Require a charitable counterargument and an explanation of what could change a position."
-struggle: "Students may force a pro-AI or anti-AI verdict or regard justified uncertainty as failure."
+  - "Engage: bring out the clash between the student's goal and the school's."
+  - "Explore: after the sort, the ranking discussion is where students meet real disagreement."
+  - "Explain: link what gets marked to how students spend their effort."
+  - "Elaborate: require a fair objection and what could change a position; draw on Units 1 to 3."
+struggle: "Students may force a pro-AI or anti-AI verdict, or see an honest 'it depends' as failing."
 stuck:
-  - see: "A learner makes a universal claim."
-    ask: "For which learner, goal, kind of assistance and evidence?"
-    fix: "Qualify the claim using one earlier study and its limits."
+  - see: "A student makes a claim about everyone and everything."
+    ask: "For which learner, goal, kind of help and evidence?"
+    fix: "Narrow the claim using one Unit 2 study and its limits."
 support: "Offer frames: AI may help when..., The evidence suggests..., A limitation is..., I would reconsider if..."
-stretch: "Distinguish what research can establish from a disagreement about what education should value."
-leads: "The final inquiry can continue in other courses or student-selected projects; no universal policy is required."
+stretch: "Separate what research can show from a disagreement about what school should value."
+leads: "The inquiry can continue in other courses or student projects; no single policy is needed."
 exit:
-  q: "What is a defensible response to the question Does AI help us learn?"
-  a: "A context-sensitive position grounded in learning goals, empirical evidence, uncertainty and competing educational values."
+  q: "What makes a strong answer to 'Does AI help us learn?'"
+  a: "A claim that names the learner, goal and kind of help, uses real evidence and its limits, deals with an objection and says what would change it."
+explain: |
+  Different people want different things from school, and what gets marked shapes how students study. A strong answer to the course question names who, what goal, which kind of help, what the evidence shows, and what would change your mind.

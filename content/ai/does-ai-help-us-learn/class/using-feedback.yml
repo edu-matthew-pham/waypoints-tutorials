@@ -5,12 +5,12 @@ inquiry:
     - "When is it time to ask a person instead?"
   notes: "Feeling that it makes sense is not the same as being able to use it. A quick new attempt is the test."
 activities:
-  - at: investigate
+  - at: run
     kind: activity
     title: "Feedback into action"
     minutes: 5
     do: |
-      Read three pieces of feedback on the same answer: "Incorrect", "Try thinking about the tilt", and a labelled diagram. For each, say what you would do next.
+      Read feedback on the same wrong answer: "Incorrect", "7/10", "Try thinking about the tilt", and a labelled diagram. For each, say what you would do next.
     notes: "Feedback is only formative if the learner can act on it. Ask which one gives the clearest next step."
   - at: end
     kind: discussion

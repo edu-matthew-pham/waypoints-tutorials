@@ -1,25 +1,29 @@
-summary: "Evaluate what final outcomes and different assistance conditions can show about learner capability."
+summary: "Students match evidence to two stated goals, and see why the same report can be strong evidence for one goal and weak for another."
 time: 40
 goals:
-  - "I can distinguish formative purposes from summative purposes."
-  - "I can describe what a completed product does and does not establish."
-  - "I can select evidence appropriate to a stated assessment goal."
+  - "I can match a piece of evidence to the goal it fits."
+  - "I can explain the difference between feedback for learning (formative) and judging achievement (summative)."
+  - "I can design a task that allows AI and still shows what a student learned."
 before: |
-  The three environmental investigation scenarios are hypothetical and do not equate independence with quality.
-  Keep both learner self-assessment and formal assessment in view. The purpose is assessment literacy, not surveillance or AI detection.
+  Unit 1 asked whether a product shows learning in general. This lesson is narrower: given a stated goal, which evidence fits it? The required Explore sort checks exactly that.
+  The three waste-investigation learners are made up and do not equate working alone with quality.
+  Keep both self-assessment and formal assessment in view. The aim is understanding assessment, not surveillance or AI detection.
+  Assessment incentives (how grading changes how people study) are taught in Unit 4, lesson 3 only.
 running:
-  - "Start with similar products but different learning processes."
-  - "Ask what students and others can infer about capabilities."
-  - "Change the target from independent reasoning to a useful tool-mediated recommendation."
-  - "Investigate why grades or summative requirements can influence earlier learning choices."
-struggle: "Learners may infer that assistance always invalidates achievement or that polished work proves learning."
+  - "Engage: start with similar products made in different ways."
+  - "Explore: the sort is the main check; ask why the polished report fits neither goal on its own."
+  - "Explain: change the goal from Goal 1 to Goal 2 and revisit the same learner."
+  - "Elaborate: every task design must name what students hand in alongside the work."
+struggle: "Students may think any help cancels out achievement, or that polished work proves learning."
 stuck:
-  - see: "A learner simply ranks the three students."
-    ask: "What precisely are we trying to assess?"
-    fix: "Change the intended capability, then revisit the judgement."
-support: "Provide a two-column comparison of learning goal and possible evidence."
-stretch: "Discuss how a single task can have formative and summative uses without making them identical."
-leads: "Lesson 12 addresses who defines valued capabilities and how educational incentives shape learning."
+  - see: "A student just ranks the three learners."
+    ask: "What exactly are we trying to check?"
+    fix: "Name the goal first, then look at the evidence again."
+support: "Give a two-column table: goal, and evidence that would fit it."
+stretch: "Discuss how one task can be used for feedback and for a judgement without the two becoming the same."
+leads: "Unit 4, lesson 3 asks who decides which capabilities matter, and how marks and incentives shape learning."
 exit:
-  q: "Why can the same product support different conclusions under different assessment goals?"
-  a: "The evidence is interpreted against the intended capability and conditions under which work was done."
+  q: "Why can the same report support different conclusions under different goals?"
+  a: "Evidence is judged against the goal and how the work was done: a polished report can fit a communication goal but not show independent judging of evidence."
+explain: |
+  Name the goal first. Then ask which evidence fits it. A polished report shows what was made, not who did the judging. An unseen question, a spoken explanation or a log of decisions can fill the gap.
