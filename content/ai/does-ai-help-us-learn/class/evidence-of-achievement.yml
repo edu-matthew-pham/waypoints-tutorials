@@ -19,3 +19,10 @@ activities:
     do: |
       Suggest one assessment for this unit that allows AI and still shows what you learned. What would you ask students to hand in alongside the work?
     notes: "Look for process evidence: drafts, decisions, a short spoken check."
+  - at: investigate
+    kind: discussion
+    title: "Where do you stand? Talking to an AI about your work"
+    minutes: 7
+    do: |
+      Stand on a line from "strongly agree" to "strongly disagree": "A locked conversation with an AI about my work is a fair way to show what I learned." Explain your spot to someone nearby, then listen to someone far from you.
+    notes: "Raise if nobody does: nervous students, students still learning English, what happens to the recording, whether a teacher can read and overrule the judgement. Students may move after hearing a reason; ask what moved them. No phones needed; on paper, mark a spot on a printed line."

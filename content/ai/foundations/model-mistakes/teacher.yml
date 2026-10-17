@@ -4,7 +4,9 @@ goals:
   - "I can make a model give a wrong answer by changing its examples or labels."
   - "I can explain the difference between a mistake caused by a wrong label and one caused by missing examples."
   - "I can say what I would check when an AI gets something wrong."
+  - "I can explain bias as a model working worse for a group that was missing or rare in its examples."
 before: |
+  Bias step (18 Oct 2026): the reading app is made up, so the lesson makes no statistical claim. It names bias as a consequence of generalising from missing examples (a technical idea first; the planned Who Does AI Affect? course takes up fairness and who is affected). Keep discussion on examples and testing, not on judging any real group's speech.
   Last lesson students taught the sorter. This lesson they break it. The board's mistakes mode adds a Swap label button and three challenges (wrong label, missing examples, fix it); each ticks when a test shows it.
   In the board's pretend world every long fruit is a banana and every round fruit is an apple, so the board can say "right" or "wrong". Real fruit is messier: say so.
   The sorter copies the label of its nearest examples. It is a transparent teaching model, not a neural network.

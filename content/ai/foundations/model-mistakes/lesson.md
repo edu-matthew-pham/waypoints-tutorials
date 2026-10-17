@@ -118,6 +118,41 @@ Press **Restore original examples**. Remove the yellow, round apple and add thre
 
 **Wider investigation:** a real fruit can be green **and** long: an unripe banana. What extra clue, or what kind of example, would help? Would it guarantee the right answer?
 
+## Elaborate: when the missing group is people
+
+```step
+stage: modify
+tasks:
+  - check:
+      type: question
+      q: "The app's program has no bug. Why does it mishear Year 7 students more than adults?"
+      options: ["Year 7 voices were missing or rare in its examples", "Year 7 students speak less clearly", "Someone gave it wrong labels on purpose"]
+      answer: 0
+      feedback: [null, "The app had few young voices to compare with. That is the same mistake as your sorter with no yellow, round apples.", "Nothing says the labels were wrong. Think about which examples it had."]
+  - check:
+      type: sort
+      q: "Would this help the app work for Year 7 students?"
+      options: ["Helps", "Does not help"]
+      items:
+        - ["Add many recordings of Year 7 voices", "Helps", "This adds the missing group."]
+        - ["Add even more adult voices", "Does not help", "Like your extra bananas: more of the same doesn't fill the gap."]
+        - ["Test how well it works for each age group before using it", "Helps", "Testing each group shows who it fails before anyone relies on it."]
+        - ["Ask Year 7 students to speak like adults", "Does not help", "The problem is the examples, not the students."]
+        - ["Run it on a faster computer", "Does not help", "Speed doesn't change what it learned from."]
+```
+
+A school tries a made-up reading app that listens to students read aloud. It learned from thousands of recordings, but almost all of them were adults. It works well for teachers. It often mishears Year 7 students.
+
+### Why it happens
+
+This is your sorter's **missing examples** mistake. This time the missing group is people.
+
+When a model works worse for a group because that group was missing or rare in its examples, we call it **bias**. The program can be fine. The examples are not.
+
+### What would help?
+
+Sort each idea.
+
 ## Evaluate: what would you check?
 
 ```step

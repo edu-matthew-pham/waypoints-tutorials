@@ -19,3 +19,10 @@ activities:
     do: |
       Does AI help us learn? Offer a conditional claim, one piece of evidence (a learner from the course, or a research finding), one strong objection, and what might change your mind.
     notes: "A spoken discussion is sufficient; a formal final submission is an optional teacher decision."
+  - at: end
+    kind: discussion
+    title: "Our class agreement: AI and homework"
+    minutes: 10
+    do: |
+      When should our class use AI for homework? In groups, draft three rules: one "yes, when…", one "no, when…", and one "always check…". Share and combine them into one class agreement.
+    notes: "Optional, for a longer lesson or the next one. Tie each rule to the course: the goal of the task (Unit 1), evidence (Unit 2), what thinking to keep (Unit 3). The agreement sits inside the school's own AI rules; it can be posted and revisited at the end of term."

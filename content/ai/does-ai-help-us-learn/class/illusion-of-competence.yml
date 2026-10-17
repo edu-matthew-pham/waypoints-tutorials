@@ -19,3 +19,10 @@ activities:
     do: |
       Pick one: "Better results with AI are a real gain even if people misjudge themselves", or "Misjudging yourself makes AI-assisted success risky". Give a reason and one way to check your own judgement.
     notes: "The Fernandes studies used adults on reasoning puzzles; ask whether the result would hold for students in a school subject."
+  - at: investigate
+    kind: discussion
+    title: "What does our class data show?"
+    minutes: 6
+    do: |
+      Look at the class tally of confidence against results. Talk like researchers: What pattern do you see? Is one class enough to be sure? What else could explain it, apart from how sure people felt?
+    notes: "Pool the tally from the run activity. Link back to Unit 2: small samples, what was compared, other things that changed. Accept 'we can't be sure yet' as a strong answer."
