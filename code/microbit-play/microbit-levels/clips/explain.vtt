@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:04.176
+Each level has a target time, kept in a list called targets.
+
+2
+00:00:04.880 --> 00:00:09.005
+decoy is true while the cross is showing, so a press then is caught.
+
+3
+00:00:10.035 --> 00:00:14.510
+The level is the place in the list, so each level's target is harder.
+
+4
+00:00:17.209 --> 00:00:20.759
+When the level reaches the length of the list, you have won.

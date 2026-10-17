@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create lessons and courses</title>
+<link rel="stylesheet" href="style.css?v=1d791c7e0f">
+<script type="importmap">{"imports":{"katex":"./vendor/katex.mjs","yaml":"./vendor/yaml/index.js","marked":"./vendor/marked.esm.js"}}</script>
+</head>
+<body>
+<section id="createStart" class="start-page" aria-labelledby="startTitle">
+  <a class="crumb" href="../../">← Tutorials</a>
+  <h1 id="startTitle" tabindex="-1">Create lessons and courses</h1>
+  <p class="start-intro">Start with an idea, bring your own material, or explore a working example.</p>
+  <div class="start-routes">
+    <button id="startPrompt" class="start-card" type="button" aria-controls="promptRoute" aria-expanded="false" disabled><strong>Start with a prompt</strong><span>Describe your idea and let an AI conversation help you plan and write.</span></button>
+    <button id="startOpen" class="start-card" type="button" aria-controls="openRoute" aria-expanded="false" disabled><strong>Open existing work</strong><span>Import a lesson or course ZIP or folder, open source files, or resume your workspace.</span></button>
+    <button id="startExample" class="start-card" type="button" disabled><strong>Explore an example</strong><span>Try a short Turtle drawing lesson. It opens as a new lesson you can change.</span></button>
+  </div>
+  <p class="validator-help"><a href="validate.html">Validate a lesson</a> — paste or upload Markdown and copy its check results.</p>
+  <section id="promptRoute" class="start-panel" aria-labelledby="promptRouteTitle" hidden>
+    <h2 id="promptRouteTitle" tabindex="-1">Start a conversation</h2>
+    <p>Copy this prompt into your preferred AI assistant. It will ask about your idea, learners and goals, then help you choose a structure.</p>
+    <textarea id="startPromptText" readonly aria-label="Starter prompt"></textarea>
+    <div class="start-actions"><button id="copyStartPrompt" class="primary" type="button">Copy prompt</button><button id="promptOpenFiles" type="button">Open generated files…</button><button id="promptWorkspace" type="button">Go to workspace</button></div>
+    <p>When your files are ready, open them here to preview, revise, record and download.</p>
+    <details><summary>Check generated lesson files</summary><p><a href="validate.html">Open the browser validator</a> to paste or upload a lesson and copy its report. An assistant with Node.js 20+ can also run the <a href="validator.zip?v=2f88f2a82130" download>portable validator</a> in its own sandbox.</p></details>
+    <p id="startCopyStatus" role="status"></p>
+  </section>
+  <section id="openRoute" class="start-panel" aria-labelledby="openRouteTitle" hidden>
+    <h2 id="openRouteTitle" tabindex="-1">Open your work</h2>
+    <div class="start-actions"><button id="startImportPackage" type="button">Import lesson / course ZIP</button><button id="startImportFolder" type="button">Open unzipped folder</button><button id="startImportSource" type="button">Open Markdown and code files</button><button id="startResume" type="button" hidden>Resume saved workspace</button></div>
+    <p>Use a lesson or course downloaded from Create (as a ZIP, or the folder if your computer has already unzipped it), a lesson or course folder laid out like the site’s <code>content/</code> folders, or a lesson.md and its supporting files. Your saved workspace stays in this browser.</p>
+  </section>
+  <input id="startSourceFiles" type="file" multiple hidden>
+  <p id="startStatus" role="status">Opening Create…</p>
+</section>
+<div id="createWorkspace" hidden>
+<header class="bar">
+  <div><button id="backToStart" class="crumb" type="button">← Start</button><h1 id="workspaceTitle" tabindex="-1">Create workspace</h1></div>
+  <div class="actions">
+    <a class="btn" href="clip.html">Video recorder (experimental)</a>
+    <button id="example" type="button">Load example</button>
+    <button id="resetprog" type="button" title="Forget which checks you passed in the preview">Reset progress</button>
+    <label class="btn">Upload files<input id="upload" type="file" multiple hidden></label>
+    <label class="btn">Import ZIP<input type="file" id="importPackage" accept=".zip,application/zip" hidden></label>
+    <label class="btn">Import folder<input type="file" id="importFolder" webkitdirectory multiple hidden></label>
+    <button id="share" type="button">Copy draft link (no videos)</button>
+    <button id="request" type="button" hidden>Request publishing</button>
+  </div>
+</header>
+<section class="workspace authoring" aria-label="Lesson setup and AI prompt">
+<h2>Start with a lesson idea</h2>
+<div class="row"><label>Subject <select id="authorSubject"><option value="code">Digital technologies</option><option value="maths">Maths</option><option value="science">Science</option><option value="engineering">Engineering / design</option><option value="general">Other concepts</option></select></label><label>Lesson structure <select id="authorProfile"></select></label><label>Playground <select id="authorPlayground"></select></label></div>
+<div class="row"><label>Topic <input id="authorTopic" placeholder="e.g. particle movement"></label><label>Audience / prior knowledge <input id="authorAudience" placeholder="e.g. Year 7, first encounter"></label></div>
+<label>Learning goal <input id="authorGoal" placeholder="What should learners be able to explain or do?"></label>
+<div class="row"><label>Prompt for <select id="authorScope"><option value="lesson">One complete lesson</option><option value="course">Course plan, then lessons</option></select></label><button id="newFromSettings" type="button">Add a lesson starter</button><button id="copyLessonPrompt" type="button" class="primary">Copy lesson prompt</button><button id="showLessonPrompt" type="button">Review prompt</button></div>
+<section id="boardPicker" aria-labelledby="boardPickerTitle" hidden>
+<h3 id="boardPickerTitle">Choose a board activity</h3>
+<p>Browse both board families. Your choice supplies the new starter and copied prompt; it does not edit the current lesson.</p>
+<div class="row"><label>Search activities <input id="boardSearch" type="search" placeholder="e.g. fractions, particles, forces"></label><label>Family <select id="boardFamily"><option value="all">Both board families</option><option value="board">Shared boards</option><option value="science">Particle simulations</option></select></label><label>Subject <select id="boardSubject"><option value="all">All subjects</option></select></label></div>
+<p id="boardCatalogueStatus" role="status">Loading board activities…</p>
+<div id="boardCards" aria-label="Available board activities"></div>
+<div id="boardDetails" hidden><h4 id="boardTitle"></h4><p id="boardDescription"></p><div class="row"><button id="previewBoard" type="button">Preview activity</button><a id="boardExampleLink" target="_blank" rel="noopener">View example lesson source</a></div><p id="boardPreviewStatus" role="status"></p><iframe id="boardPreview" title="Selected board activity preview" loading="lazy" hidden></iframe><details><summary>Board setup and supported settings</summary><pre id="boardExample"></pre><pre id="boardReference"></pre></details></div>
+</section>
+<p id="authorCapabilities"></p><p id="authorStatus" role="status">Choose settings for a new starter or a prompt. Existing lessons are preserved.</p>
+<details id="promptDetails"><summary>Prompt text</summary><textarea id="lessonPrompt" readonly aria-label="Generated lesson prompt"></textarea></details>
+</section>
+<section class="workspace" aria-label="Course workspace">
+  <div class="row"><label>Course title <input id="courseTitle" value="My course"></label><label>Summary <input id="courseSummary" placeholder="What will learners do?"></label></div>
+  <div class="row"><label>Unit of this lesson <select id="lessonUnit"></select></label><button id="addUnit" type="button">+ Add unit</button><button id="renameUnit" type="button">Rename unit</button></div>
+  <div class="row"><label>Lesson <select id="courseLesson"></select></label><button id="addLesson" type="button">+ Add lesson</button><button id="moveLessonUp" type="button">Move up</button><button id="moveLessonDown" type="button">Move down</button><button id="removeLesson" type="button">Remove lesson</button><button id="previousLesson" type="button">Previous lesson</button><button id="nextLesson" type="button">Next lesson</button></div>
+  <div class="package-actions"><button id="downloadPackage" type="button" class="primary">Download lesson (.zip)</button><button id="downloadCourse" type="button">Download course (.zip)</button></div>
+  <p id="packageStatus" role="status">Downloads include the lesson pages, their source files and recorded videos, in the same folder layout as the site. Open index.html to view; import the ZIP or folder to keep editing. Playgrounds need internet.</p>
+</section>
+<section class="lesson-videos" aria-label="Lesson recordings"><h2>Videos for this lesson</h2><div class="row"><select id="draftClip" aria-label="Lesson clip"></select><button id="recordClip" type="button">Record video</button><button id="refreshClips" type="button">Check videos again</button></div><p id="videoStatus" role="status"></p></section>
+<p class="hint">Write or paste a <code>lesson.md</code> and its code files. The preview updates as you type, and the playground is live.
+Record videos from the lesson’s clip instructions below, then download the lesson or course with its videos included. “Copy draft link” shares only this lesson’s text and code, without videos.
+Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/blob/main/AUTHORING.md">AUTHORING.md</a>.</p>
+<main>
+  <section class="editor">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="helpers" id="helpers">
+      <span>Add to this step:</span>
+      <button id="addclip" type="button">Clip instructions</button>
+      <button id="addtick" type="button">Tick box</button>
+      <button id="addq" type="button">Question</button>
+      <button id="addnum" type="button" title="A number the student works out">Number</button>
+      <button id="addmatch" type="button" title="Match items to descriptions">Match</button>
+      <button id="addtrace" type="button" title="A table with blanks to fill in">Trace table</button>
+      <button id="addbug" type="button" title="Click the line with the bug">Spot the bug</button>
+      <button id="addpars" type="button" title="Put scrambled lines in order">Order lines</button>
+      <button id="addpred" type="button" title="A prediction students lock in, then compare after Run">Lock-in prediction</button>
+      <button id="addcode" type="button" title="Ticks when the student's code meets rules (Python turtle)">Code rule</button>
+      <button id="addtasks" type="button" title="Split this step into sub-pills, each with its own check">Tasks (sub-pills)</button>
+      <button id="pick" type="button">Snippets to unlock…</button>
+    </div>
+    <label class="namebar">File name <input id="fname" type="text" spellcheck="false"></label>
+    <textarea id="text" spellcheck="false" aria-label="File contents"></textarea>
+    <div class="row"><button id="addfile" type="button">+ Add code file</button><button id="addmod" type="button" title="A Python file whose functions become buttons in the playground">+ Add module</button><button id="delfile" type="button">Delete this file</button></div>
+    <section aria-label="Lesson format checks"><div class="validation-actions"><strong>Lesson format checks</strong><button id="copyValidation" type="button">Copy validation report</button><a href="validator.zip?v=2f88f2a82130" download>Download validator</a></div><ul id="problems" class="problems" aria-live="polite"></ul><p id="validationStatus" role="status"></p><textarea id="validationText" readonly aria-label="Validation report" hidden></textarea></section>
+  </section>
+  <section class="preview"><iframe id="preview" title="Lesson preview"></iframe></section>
+</main>
+<dialog id="pickdlg" aria-labelledby="pickttl">
+  <form method="dialog">
+    <h2 id="pickttl">Snippets this step unlocks</h2>
+    <p class="muted" id="pickinfo"></p>
+    <div id="picklist"></div>
+    <div class="row"><button id="pickok" value="ok" type="submit" class="primary">Use these</button><button value="cancel" type="submit">Cancel</button></div>
+  </form>
+</dialog>
+</div>
+<script type="module" src="create.js?v=1d791c7e0f"></script>
+</body>
+</html>

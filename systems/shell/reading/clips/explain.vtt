@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.050
+Two ways to find things.
+
+2
+00:00:03.447 --> 00:00:06.047
+l s dash a shows hidden files too.
+
+3
+00:00:11.119 --> 00:00:14.069
+grep prints only the lines that contain the word.

@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.475
+Is the data counted, or measured?
+
+2
+00:00:03.353 --> 00:00:07.178
+Times are measured. They can be any value: continuous data.
+
+3
+00:00:08.081 --> 00:00:11.881
+Siblings are counted. Only whole numbers: discrete data.
+
+4
+00:00:12.809 --> 00:00:16.159
+A measurement is always rounded to some precision.

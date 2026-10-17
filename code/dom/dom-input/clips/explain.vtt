@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.150
+Dot value is what the person typed, and it is always text.
+
+2
+00:00:04.704 --> 00:00:08.079
+An input box, a button, and a place for the answer.
+
+3
+00:00:08.905 --> 00:00:13.230
+name Box dot value is whatever is typed in the box right now.
+
+4
+00:00:18.487 --> 00:00:20.662
+Type a name, then click Greet.

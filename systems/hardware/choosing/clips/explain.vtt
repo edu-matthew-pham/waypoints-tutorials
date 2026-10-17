@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.500
+Two options for exporting video.
+
+2
+00:00:03.202 --> 00:00:06.677
+Option A, with 8 cores, takes 61 seconds.
+
+3
+00:00:10.093 --> 00:00:14.943
+Option B has more RAM but half the cores: 103 seconds.
+
+4
+00:00:21.004 --> 00:00:26.704
+Option A with 16 gigabytes: 53 seconds. Spend the money where the job needs it.

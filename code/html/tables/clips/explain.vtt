@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.000
+A table is rows, and each row is cells
+
+2
+00:00:03.779 --> 00:00:06.054
+&lt;table&gt; opens the whole table.
+
+3
+00:00:06.830 --> 00:00:10.780
+&lt;tr&gt; is one row. Each &lt;th&gt; in it is a heading cell.
+
+4
+00:00:11.793 --> 00:00:14.868
+The next row holds ordinary cells: &lt;td&gt;.
+
+5
+00:00:16.365 --> 00:00:18.815
+&lt;/table&gt; closes the table.
+
+6
+00:00:20.129 --> 00:00:24.804
+Columns appear by themselves, so every row needs the same number of cells.

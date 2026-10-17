@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:03.151
+A parameter lets a function take an input.
+
+2
+00:00:04.923 --> 00:00:09.823
+size is a placeholder. The function uses whatever value it is given.
+
+3
+00:00:10.699 --> 00:00:15.624
+Calling square with 30 puts thirty into size. Ninety puts in ninety.
+
+4
+00:00:20.996 --> 00:00:25.521
+One function, three different sizes, from the values you pass in.

@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.975
+Predict the count, then run the experiment.
+
+2
+00:00:03.628 --> 00:00:08.178
+A six has probability one sixth, so expect ten in sixty rolls.
+
+3
+00:00:09.132 --> 00:00:12.132
+Now roll sixty times, ten at a time.
+
+4
+00:00:21.763 --> 00:00:25.288
+Close to ten, but rarely exactly. Chance varies.

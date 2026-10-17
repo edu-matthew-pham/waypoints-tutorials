@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:05.050
+csv dot DictReader turns each row of the file into a dictionary.
+
+2
+00:00:06.025 --> 00:00:09.475
+Open the file, and read every row into a list.
+
+3
+00:00:13.302 --> 00:00:17.777
+Each row is a dictionary. The first line of the file gives the keys.
+
+4
+00:00:18.730 --> 00:00:23.030
+Every value is text, even the year. Use int to compare it.

@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.100
+Send a message past Eve.
+
+2
+00:00:02.926 --> 00:00:06.801
+Base 64 looks scrambled, but anyone can decode it.
+
+3
+00:00:10.194 --> 00:00:12.969
+Encrypted with a key. Eve can't read it.

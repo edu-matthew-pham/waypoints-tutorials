@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.150
+Count the full squares, add half the part squares.
+
+2
+00:00:03.878 --> 00:00:07.603
+Green squares are full. Orange ones are partly inside.
+
+3
+00:00:12.178 --> 00:00:14.878
+A finer grid gives a better estimate.

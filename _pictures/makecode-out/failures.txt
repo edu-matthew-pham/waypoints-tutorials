@@ -1,0 +1,1 @@
+code/arcade/arcade-timers/explain: frame.waitForSelector: Timeout 30000ms exceeded. (frames: http://localhost:39185/_playground-makecode/index.html?target=arcade&sim=1&code=let+rock%3 | https://arcade.makecode.com/?controller=1#editor | https://trg-arcade.userpxt.io/---simulator#sim-frame-109037493559980230.5116817619648673)
