@@ -1,11 +1,11 @@
 ---
 title: Does AI Help Us Learn?
-summary: Investigate what learning means, what AI research does and does not show, and how tools, incentives and human judgement shape learning.
+summary: Find out what learning means, what research on AI and learning does and doesn't show, and who decides what learning is worth.
 order: 2
 recap: true
 units:
-  - { id: what-is-learning, title: What does it mean to learn?, summary: "Question the difference between assistance, performance, understanding and meaningful learning." }
-  - { id: evaluating-evidence, title: What does the evidence show?, summary: "Examine studies, confidence, assessment and the limits of educational evidence." }
-  - { id: choosing-assistance, title: When should we use AI?, summary: "Investigate cognitive offloading, alternatives to AI and the design of educational assistance." }
-  - { id: learning-and-society, title: Who decides what learning looks like?, summary: "Explore incentives, agency, educational values and future capabilities." }
+  - { id: what-is-learning, title: What does it mean to learn?, summary: "Is doing well with help the same as learning? What kinds of learning matter?" }
+  - { id: evaluating-evidence, title: What does the evidence show?, summary: "Read real studies, check your own confidence, and design a fairer test." }
+  - { id: choosing-assistance, title: When should we use AI?, summary: "Decide which thinking to keep, compare AI with other help, and design help that makes you think." }
+  - { id: learning-and-society, title: Who decides what learning looks like?, summary: "Use feedback, match evidence to goals, and ask who decides what learning is worth." }
 ---

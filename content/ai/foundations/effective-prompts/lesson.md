@@ -46,7 +46,7 @@ try: { playground: board, starter: "boards.yml#explore", height: 620 }
 check: { type: board, text: "Compare at least two prepared responses after changing the request.", when: "t >= 2 and c >= 1" }
 ```
 
-The board is a **scripted response laboratory**, not a real AI assistant. Its example replies illustrate how a request *might* influence a response; they do not predict any particular chatbot's behaviour.
+The board uses prepared replies, not a real AI.
 
 Choose a situation in **maths, science or school planning**. Begin with the vague request and inspect the prepared answer. Then try changing one feature at a time:
 

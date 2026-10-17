@@ -124,7 +124,7 @@ An AI writing assistant suggests **mat** to finish “The cat sat on the”. Com
 - **A:** “The AI suggested mat, so it must be right.”
 - **B:** “Mat is plausible, but chair or roof might fit too. I should check the sentence and what I mean.”
 
-Which reaction shows better judgement? Explain what you would check before accepting a suggested word. **You do not need an AI account**: the suggestion above is a prepared example, not a live AI response.
+Which reaction shows better judgement? Explain what you would check before accepting a suggested word. The suggestion above is a prepared example.
 
 ```step
 stage: investigate
