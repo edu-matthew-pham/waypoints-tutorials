@@ -114,3 +114,20 @@ check: { type: reflect, text: "I can explain why asking the same AI to confirm i
 ```
 
 An AI can help you identify questions to investigate, but **asking the same model to confirm itself is not independent verification**. For claims that matter, look at the original evidence or a source you trust. Even apparently credible citations may be missing, irrelevant or misrepresented.
+
+## Optional: try it with an AI tool
+
+```step
+stage: info
+tier: typical
+prompt:
+  title: "Help me check a claim"
+  text: |
+    Help me check this claim: [the claim]. I found it here: [where it came from].
+    Don't tell me whether it is true. Ask me questions, one at a time, that help me work out what evidence would show it, and where I could check it myself.
+check: { type: reflect, text: "I compared the AI's reply with the board, and named an independent check for my claim." }
+```
+
+Pick a claim you have read or heard, from an AI, a website or a friend, and use the prompt below. Compare the reply with the board: did it help you find a check of your own, or just tell you what to believe? Asking the same AI whether it was right is not checking.
+
+**No AI tool?** Do the same with a partner: one asks the questions, the other answers.

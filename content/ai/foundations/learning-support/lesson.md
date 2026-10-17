@@ -113,3 +113,21 @@ check: { type: reflect, text: "I can say which kind of help I need right now, an
 ```
 
 Before asking AI for help, consider what you already know and what you need to practise. A useful assistant may give a question or feedback rather than the answer. But requiring struggle without support is not the goal either. Adjust the assistance as your understanding changes.
+
+## Optional: try it with an AI tool
+
+```step
+stage: info
+tier: typical
+prompt:
+  title: "Hint-first help"
+  text: |
+    I'm learning [what you are learning]. Here is my attempt so far: [paste or describe it].
+    Please don't give me the answer. Give me one hint for my next step, then wait for me to try.
+    If I'm still stuck after two hints, show me a worked example of a similar question, not mine.
+check: { type: reflect, text: "I compared the AI's reply with the board's hints, and said whether it left the next step to me." }
+```
+
+Use the prompt below on something you are learning. Then compare the reply with the board: did it give one hint and leave the next step to you, or hand you the answer? If it gave the answer, say so and ask again.
+
+**No AI tool?** Ask a partner to be the tutor and follow the same prompt.

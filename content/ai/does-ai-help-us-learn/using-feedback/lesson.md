@@ -119,6 +119,23 @@ Now think about feedback you got recently on something you are learning. Write:
 - what you will try next,
 - what result would make you change your plan.
 
+## Optional: get feedback from an AI tool
+
+```step
+stage: modify
+tier: typical
+prompt:
+  title: "Feedback with a next step"
+  text: |
+    Here is a question I'm learning, and my answer: [the question] [my answer].
+    Don't give me the right answer. Give me feedback that tells me one next step I could try, then wait for my new try.
+check: { type: reflect, text: "I used the feedback for a next step, and checked whether the feedback itself was right." }
+```
+
+Use the prompt below on a question you are learning. Compare with the feedback you sorted: did the reply give you a next step, or only say right or wrong? Use it, try again, and check it: AI feedback can be wrong.
+
+**No AI tool?** Swap answers with a partner and write next-step feedback for each other.
+
 ## Evaluate: when is feedback doing its job?
 
 ```step

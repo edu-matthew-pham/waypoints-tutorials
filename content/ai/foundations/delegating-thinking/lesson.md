@@ -131,3 +131,21 @@ check: { type: reflect, text: "I can say what I would hand over, what I would ke
 ```
 
 Self-regulation is not simply doing everything alone. It is deciding when to attempt, when to ask for help and when to delegate. Even if AI performs some work, **you remain responsible for deciding whether the result is appropriate and sufficiently checked**.
+
+## Optional: try it with an AI tool
+
+```step
+stage: info
+tier: typical
+prompt:
+  title: "Help me decide what to hand over"
+  text: |
+    Help me decide what to keep and what to hand over.
+    My task: [the task]. My goal: [what I am trying to learn or get done].
+    List the parts of the task. For each part, ask me whether it is the skill I'm learning before you suggest anything. Don't do any part of the task for me.
+check: { type: reflect, text: "I compared the AI's suggestions with my own goal, and changed at least one that didn't fit." }
+```
+
+Use the prompt below on a real task. Compare the reply with what you sorted: did it start from your goal? Did it suggest handing over the part you are trying to learn? You decide in the end, and you check anything you hand over.
+
+**No AI tool?** Make the three-column table yourself: keep, get help with, hand over and check.

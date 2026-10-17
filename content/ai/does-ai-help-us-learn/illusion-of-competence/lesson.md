@@ -121,6 +121,24 @@ Read the study description, then check what it supports.
 
 Discuss the two claims above with a partner.
 
+## Optional: check your confidence with an AI tool
+
+```step
+stage: modify
+tier: typical
+prompt:
+  title: "Test me, and ask how sure I am"
+  text: |
+    I think I understand [the topic]. Test me with one new question at a time, without hints.
+    Before you tell me if I'm right, ask how sure I am: low, medium or high.
+    After five questions, tell me where my confidence matched how I did, and where it didn't. Don't explain the topic unless I ask.
+check: { type: reflect, text: "I compared how sure I felt with how I did, and checked any marking that surprised me." }
+```
+
+Use the prompt below on something you think you understand. Compare with the board: did how sure you felt match how you did? An AI can mark you wrong when you are right, or the other way round, so check anything that surprises you.
+
+**No AI tool?** A partner can ask you questions from your notes.
+
 ## Evaluate: is feeling sure enough?
 
 ```step

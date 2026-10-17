@@ -118,6 +118,24 @@ Design one task for this unit that **allows AI** and still shows what the studen
 - What would students hand in with the work: a log, drafts, a short talk, an unseen question?
 - What would your task still miss?
 
+## Optional: answer questions about your work
+
+```step
+stage: modify
+tier: typical
+prompt:
+  title: "Ask me about my work"
+  text: |
+    Ask me questions about my work, one at a time, so I can show what I learned. Here is my work: [paste it or describe it].
+    Don't rewrite it, fix it or add to it. After each answer, ask a follow-up question.
+    At the end, tell me which of my answers showed my own thinking most clearly.
+check: { type: reflect, text: "I answered questions about my own work, and noticed which answers showed my own thinking." }
+```
+
+Use the prompt below on a piece of your own work. Compare with the evidence you sorted: which of your answers showed your own decisions? Did the AI keep to asking, or start rewriting your work? Its summary is a guess, not a mark.
+
+**No AI tool?** A partner can ask you three questions about your work.
+
 ## Evaluate: match evidence to a goal
 
 ```step
