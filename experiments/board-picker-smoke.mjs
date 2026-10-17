@@ -1,0 +1,29 @@
+import assert from 'node:assert/strict';
+import{chromium}from'playwright-core';import{spawn}from'node:child_process';import{mkdir,writeFile}from'node:fs/promises';
+const server=spawn(process.execPath,['tools/serve.mjs','dist','8784'],{stdio:'inherit'}),base='http://127.0.0.1:8784/',dir='browser-recorder-results';await mkdir(dir,{recursive:true});let browser,page;const results=[],errors=[];
+try{
+ for(let i=0;i<40;i++){try{if((await fetch(base)).ok)break}catch{}await new Promise(r=>setTimeout(r,200))}
+ browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
+ const context=await browser.newContext({viewport:{width:1280,height:1000},permissions:['clipboard-read','clipboard-write']});page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(base+'code/create/');await page.waitForFunction(()=>document.querySelector('#authorProfile').options.length>0);const original=await page.locator('#text').inputValue();
+ await page.selectOption('#authorSubject','science');await page.waitForFunction(()=>document.querySelector('#boardCards').children.length>100);
+ const catalogue=await page.evaluate(async()=>await(await fetch('./board-catalogue.json')).json());
+ await page.fill('#boardSearch','forces');await page.locator('[data-board="board:forces"]').click();assert.equal(await page.locator('#authorPlayground').inputValue(),'board');assert.equal(await page.locator('#text').inputValue(),original,'Browsing does not rewrite the current lesson');
+ await page.click('#previewBoard');await page.waitForFunction(()=>document.querySelector('#boardPreviewStatus').textContent.startsWith('Preview loaded'));assert.match(await page.frameLocator('#boardPreview').locator('body').innerText(),/force|mass|Push/i);
+ await page.click('#copyLessonPrompt');await page.waitForFunction(()=>document.querySelector('#authorStatus').textContent==='Prompt copied. Paste it into your preferred AI assistant, then import its Markdown here.');let prompt=await page.evaluate(()=>navigator.clipboard.readText());assert.match(prompt,/SELECTED BOARD ACTIVITY:.*Force/i);assert.ok(prompt.includes('widget: forces'));assert.ok(prompt.includes('SUPPORTED SETTINGS REFERENCE'));assert.ok(prompt.includes('science:heat'));
+ await page.click('#newFromSettings');await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===2);await page.locator('#tabs button').filter({hasText:'board.yml'}).click();assert.match(await page.locator('#text').inputValue(),/widget: forces/);
+ await page.locator('#tabs button').filter({hasText:'lesson.md'}).click();await page.fill('#boardSearch','');await page.selectOption('#boardFamily','science');assert.equal(await page.locator('.board-card').count(),catalogue.filter(e=>e.playground==='science').length);
+ await page.locator('[data-board="science:heat"]').click();assert.equal(await page.locator('#authorPlayground').inputValue(),'science');await page.click('#showLessonPrompt');await page.waitForFunction(()=>document.querySelector('#lessonPrompt').value.includes('SELECTED BOARD ACTIVITY: Heat water'));
+ prompt=await page.locator('#lessonPrompt').inputValue();assert.match(prompt,/widget: heat/);await page.click('#previewBoard');await page.waitForFunction(()=>document.querySelector('#boardPreviewStatus').textContent.startsWith('Preview loaded'));assert.match(await page.frameLocator('#boardPreview').locator('body').innerText(),/Temperature/);
+ await page.frameLocator('#boardPreview').locator('#board svg').waitFor();await page.waitForTimeout(250);
+ await page.screenshot({path:dir+'/board-picker-science.png',fullPage:true});
+ await page.fill('#boardSearch','no-such-board-123');assert.equal(await page.locator('.board-card').count(),0);assert.match(await page.locator('#boardCatalogueStatus').innerText(),/Try another/);
+ await page.fill('#boardSearch','');await page.selectOption('#boardFamily','all');await page.selectOption('#boardSubject','science');assert.ok(await page.locator('[data-board="board:forces"]').count());assert.ok(await page.locator('[data-board="science:heat"]').count());
+ await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2));await page.screenshot({path:dir+'/board-picker-mobile.png',fullPage:true});
+ await page.selectOption('#authorPlayground','turtle');assert.ok(await page.locator('#boardPicker').isHidden());
+ assert.deepEqual(errors,[],'Picker has no browser errors');
+ // Every advertised example must start the actual widget, including those outside maths/science.
+ let cursor=0;await Promise.all(Array.from({length:3},async()=>{const p=await context.newPage();try{while(cursor<catalogue.length){const entry=catalogue[cursor++],url=new URL((entry.playground==='science'?'_playground-science':'_playground-board')+'/index.html',base);url.searchParams.set('code',entry.example);url.searchParams.set('fresh','1');await p.goto(url.href);await p.waitForTimeout(120);const result=await p.evaluate(()=>({error:document.querySelector('#error')?.hidden===false?document.querySelector('#error').textContent:'',widget:window.WPB?.spec?.widget,body:document.body.innerText}));assert.equal(result.error,'',entry.id);if(entry.playground==='board')assert.equal(result.widget,entry.widget);assert.ok(result.body.trim(),entry.id);results.push({id:entry.id,initialisation:'pass'})}}finally{await p.close()}}));
+ console.log('Picker, selection/starter/prompt consistency, mobile and',results.length,'real board examples passed');
+}catch(error){results.push({error:error.stack});await page?.screenshot({path:dir+'/board-picker-failure.png',fullPage:true}).catch(()=>{});throw error}
+finally{await writeFile(dir+'/board-picker-results.json',JSON.stringify({results,errors},null,2));await browser?.close();server.kill()}

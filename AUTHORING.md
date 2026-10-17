@@ -1467,3 +1467,14 @@ Text, recorded videos, maths notation and worked examples work offline after ext
 include their fonts and, when used, the form/working check engine. Interactive playgrounds still need the tutorials
 site; MakeCode also needs its external service. Publishing to the public catalogue remains the repository’s review,
 build and publish workflow. Browser drafts/recordings stay in that browser until exported; download packages to keep them.
+
+**Board activity picker.** When a board playground is selected, Create lists activities from both the shared board
+and particle simulation families. Search by name/topic and filter by family or subject; science includes shared
+boards such as forces, food webs and circuits. Select a card, inspect its setup/settings and use **Preview activity**
+to try the real widget. Selection changes the new starter and copied prompt, not the current lesson. The prompt
+includes the selected widget’s documented settings, a working example and an overview of both families.
+
+`tools/board-catalogue.mjs` builds `board-catalogue.json` from registered widgets, source documentation,
+`AUTHORING.md` and existing lesson examples. Builds fail if a widget lacks an example; browser tests initialise
+every advertised example. Preview confirms startup, not completion of tasks requiring hardware, camera access
+or external services. Those activities still require their normal devices/permissions. No new lesson fields are added.
