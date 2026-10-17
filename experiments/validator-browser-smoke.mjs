@@ -1,0 +1,44 @@
+import assert from 'node:assert/strict';
+import {chromium} from 'playwright-core';
+import {spawn} from 'node:child_process';
+import {mkdir} from 'node:fs/promises';
+const server=spawn(process.execPath,['tools/serve.mjs','dist','8796'],{stdio:'inherit'}),base='http://127.0.0.1:8796/code/create/';let browser;
+try {
+ for(let i=0;i<40;i++){try{if((await fetch(base)).ok)break}catch{}await new Promise(r=>setTimeout(r,200))}
+ browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage','--disable-gpu']});
+ const context=await browser.newContext({permissions:['clipboard-read','clipboard-write'],viewport:{width:1280,height:900}}),page=await context.newPage(),errors=[];
+ page.on('pageerror',error=>errors.push(error.message));
+ await page.goto(base+'validate.html');await page.locator('#validateLesson:enabled').waitFor();
+ assert.deepEqual(await page.evaluate(()=>Object.keys(localStorage)),[],'Standalone checks do not create a course workspace');
+ const header='---\ntitle: Connect 4 board\nlanguage: python\n---\n';
+ const bad=header+'## Run\n\n```code lesson.py#board\nboard = [[0 for c in range(7)] for r in range(6)]\nprint(board)\n```\n';
+ const good=bad.replace('## Run\n','## Run\n\n```step\nstage: run\ntry: { playground: python, starter: "lesson.py#board" }\n```\n');
+ await page.fill('#lessonSource',bad);await page.click('#validateLesson');assert.match(await page.locator('#validatorErrors').innerText(),/stage must be/);
+ await page.click('#copyReport');await page.waitForFunction(()=>document.querySelector('#validatorStatus').textContent.startsWith('Validation report copied'));
+ assert.equal(JSON.parse(await page.evaluate(()=>navigator.clipboard.readText())).valid,false);
+ await page.fill('#lessonSource',good);assert.equal(await page.locator('#copyReport').isDisabled(),true,'Changes cannot copy a stale pass');
+ await page.click('#validateLesson');assert.equal(JSON.parse(await page.locator('#reportText').inputValue()).valid,true);
+ const file=(name,text)=>({name,mimeType:'text/plain',buffer:Buffer.from(text)});
+ const external=header+'## Run\n\n```step\nstage: run\ntry: { playground: python, starter: "program.py#start" }\n```\n';
+ await page.setInputFiles('#sourceFiles',[file('lesson.md',external)]);await page.waitForFunction(()=>document.querySelector('#validatorStatus').textContent.startsWith('Files loaded'));
+ await page.click('#validateLesson');assert.equal(JSON.parse(await page.locator('#reportText').inputValue()).valid,false);
+ await page.setInputFiles('#sourceFiles',[file('program.py','# region: start\nprint(42)\n# endregion\n')]);await page.waitForFunction(()=>document.querySelector('#supportCount').textContent==='(1)');
+ await page.click('#validateLesson');assert.equal(JSON.parse(await page.locator('#reportText').inputValue()).valid,true);
+ await page.evaluate(()=>{navigator.clipboard.writeText=()=>Promise.reject(Error('Clipboard blocked'))});
+ await page.click('#copyReport');await page.waitForFunction(()=>document.querySelector('#reportDetails').open);assert.match(await page.locator('#validatorStatus').innerText(),/Select and copy/);
+ await page.getByRole('button',{name:'Remove program.py',exact:true}).click();assert.equal(await page.locator('#copyReport').isDisabled(),true);
+ await page.click('#validateLesson');assert.equal(JSON.parse(await page.locator('#reportText').inputValue()).valid,false);
+ await page.setInputFiles('#sourceFiles',[file('second.md',good)]);await page.waitForFunction(()=>document.querySelector('#supportCount').textContent==='(0)');
+ await page.click('#validateLesson');assert.equal(JSON.parse(await page.locator('#reportText').inputValue()).results[0].source,'second.md');
+ await page.fill('#lessonSource','---\ntitle: [\n---\n');await page.click('#validateLesson');assert.equal(JSON.parse(await page.locator('#reportText').inputValue()).valid,false);
+ await page.setInputFiles('#sourceFiles',[file('lesson.zip','not a package')]);await page.waitForFunction(()=>document.querySelector('#validatorStatus').textContent.startsWith('Upload Markdown'));
+ await page.click('#clearSource');assert.equal(await page.locator('#lessonSource').inputValue(),'');assert.equal(await page.locator('#copyReport').isDisabled(),true);
+ await page.click('#validateLesson');assert.equal(JSON.parse(await page.locator('#reportText').inputValue()).valid,false,'An empty lesson does not pass');
+ await page.fill('#lessonSource',good);await page.click('#validateLesson');await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2));
+ await mkdir('browser-recorder-results',{recursive:true});await page.screenshot({path:'browser-recorder-results/standalone-validator-mobile.png',fullPage:true});
+ await page.route('**/validator-reference.json',route=>route.abort());await page.reload();await page.waitForFunction(()=>document.querySelector('#validatorStatus').textContent.startsWith('Could not load'));
+ assert.equal(await page.locator('#validateLesson').isDisabled(),true,'Missing reference data cannot silently pass');
+ await page.unroute('**/validator-reference.json');await page.goto(base);await page.getByRole('link',{name:'Validate a lesson',exact:true}).click();assert.equal(new URL(page.url()).pathname,'/code/create/validate.html');
+ assert.deepEqual(errors,[]);
+ console.log('Standalone validator: direct route, paste/upload, inline and external references, stale reports, clipboard fallback, clear/remove, mobile, missing-data failure and Create link passed');
+} finally {await browser?.close();server.kill()}

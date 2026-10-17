@@ -17,13 +17,14 @@
     <button id="startOpen" class="start-card" type="button" aria-controls="openRoute" aria-expanded="false" disabled><strong>Open existing work</strong><span>Import a lesson or course package, open source files, or resume your workspace.</span></button>
     <button id="startExample" class="start-card" type="button" disabled><strong>Explore an example</strong><span>Try a short Turtle drawing lesson. It opens as a new lesson you can change.</span></button>
   </div>
+  <p class="validator-help"><a href="validate.html">Validate a lesson</a> — paste or upload Markdown and copy its check results.</p>
   <section id="promptRoute" class="start-panel" aria-labelledby="promptRouteTitle" hidden>
     <h2 id="promptRouteTitle" tabindex="-1">Start a conversation</h2>
     <p>Copy this prompt into your preferred AI assistant. It will ask about your idea, learners and goals, then help you choose a structure.</p>
     <textarea id="startPromptText" readonly aria-label="Starter prompt"></textarea>
     <div class="start-actions"><button id="copyStartPrompt" class="primary" type="button">Copy prompt</button><button id="promptOpenFiles" type="button">Open generated files…</button><button id="promptWorkspace" type="button">Go to workspace</button></div>
     <p>When your files are ready, open them here to preview, revise, record and download.</p>
-    <details><summary>Check generated lesson files</summary><p>An assistant with Node.js 20+ can run our validator in its own sandbox. <a href="validator.zip" download>Download the portable validator</a>, or use the validation instructions in the copied prompt. Create also checks imported lessons and lets you copy its report.</p></details>
+    <details><summary>Check generated lesson files</summary><p><a href="validate.html">Open the browser validator</a> to paste or upload a lesson and copy its report. An assistant with Node.js 20+ can also run the <a href="validator.zip" download>portable validator</a> in its own sandbox.</p></details>
     <p id="startCopyStatus" role="status"></p>
   </section>
   <section id="openRoute" class="start-panel" aria-labelledby="openRouteTitle" hidden>

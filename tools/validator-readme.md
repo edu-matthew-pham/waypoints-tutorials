@@ -21,7 +21,7 @@ Checks include required step stages, referenced code regions and source files, p
 
 This is the same lesson-format validator used by Create. It does not execute lesson code or app commands, load playgrounds, record videos or assess teaching quality. Full repository publication validation includes additional course, curriculum and subject checks.
 
-For an assistant: run this command against the final files you will deliver, fix reported errors, then rerun. Report the exact command and exit code. If Node or the validator is unavailable, say **validation not run** and ask the user to check the files in Create; do not claim a pass based on reading the rules. Preview the resulting lesson in Create before using it with learners.
+For an assistant: run this command against the final files you will deliver, fix reported errors, then rerun. Report the exact command and exit code. If Node or the validator is unavailable, say **validation not run** and ask the user to paste/upload at https://tutorials.learningwaypoints.com/code/create/validate.html and return its copied report; do not claim a pass based on reading the rules. Preview the resulting lesson in Create before using it with learners.
 
 Source: https://github.com/edu-matthew-pham/waypoints-tutorials
 Download: https://tutorials.learningwaypoints.com/code/create/validator.zip

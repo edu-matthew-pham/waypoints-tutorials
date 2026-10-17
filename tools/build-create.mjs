@@ -38,8 +38,10 @@ export async function buildCreate(out = 'dist') {
   writeFileSync(join(dest, 'lesson-clips.json'), JSON.stringify(clips));
   for (const f of ['lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
   const validatorVersion=await buildValidator(dest);
-  const indexFile=join(dest,'index.html');
-  writeFileSync(indexFile,readFileSync(indexFile,'utf8').replaceAll('href="validator.zip"',`href="validator.zip?v=${validatorVersion.slice(0,12)}"`));
+  for(const file of ['index.html','validate.html']) {
+    const page=join(dest,file);
+    writeFileSync(page,readFileSync(page,'utf8').replaceAll('href="validator.zip"',`href="validator.zip?v=${validatorVersion.slice(0,12)}"`));
+  }
   // highlight.cjs is a plain function declaration; expose it as an ES module for the browser.
   writeFileSync(join(dest, 'highlight.js'), readFileSync(join(root, 'tools', 'highlight.cjs'), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '') + '\nexport { highlightCode };\n');
   mkdirSync(join(dest, 'vendor'), { recursive: true });
