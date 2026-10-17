@@ -159,5 +159,6 @@ Source: Project doc `claude/proposal-ai-society-and-discussions.md`. Don't build
 
 **Next for Who Does AI Affect? (18 Oct 2026):** a research brief first, in a new chat, from `roadmap/ai-society-research-handoff.md`; course design in another chat once Matthew approves the brief.
 **Done 18 Oct 2026:** research brief (two passes) in `roadmap/ai-society-research-brief.md`. Decided: two parallel courses (*AI in your life*, *Who Does AI Affect?*), topic 1 narrowed to AI and your data, sensitive lessons published but flagged for wellbeing review, kinds of AI named in AI Foundations, own lessons crediting Day of AI ideas. Next: course design from `roadmap/ai-society-design-handoff.md`.
+**Plan drafted 18 Oct 2026:** `roadmap/ai-society-course-plan.md` (10 + 11 lessons, recommendations on the open questions, Cyber safety additions, re-check dates). Awaiting Matthew's approval; no lesson files yet.
 
 **Suggested order:** (1) the audit: done 18 Oct; (2) bias in `model-mistakes`; (3) discussion activities in Does AI Help Us Learn?; (4) *Who Does AI Affect?*, with a pointer page meanwhile; (5) the committee extension.
