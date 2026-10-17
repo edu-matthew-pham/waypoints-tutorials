@@ -129,13 +129,28 @@
 - Add one small moment at the end of Unit 1: "What does our table say comes after 'The dog sat on the…'?" There is no row, so the model is stuck. Ask how a real chatbot still answers, which Unit 2 answers: models learn which things behave alike, so they can **generalise** to inputs they have never seen. That is the core idea of machine learning (the table only memorises).
 - Name the same idea where it fits in Unit 2 (training-examples, model-mistakes: unseen fruit).
 - Optional link for Does AI Help Us Learn?: memorising answers is like the table (perfect on practised questions, stuck on new ones); understanding generalises.
-- Not built yet.
+- **Built 18 Oct 2026:** `automate-generator` has a step "Evaluate: where the table breaks" (two questions: no row for 'The dog sat on the…', and how a chatbot still answers: words that behave alike). Questions, not the board: `text-prediction` holds one fixed phrase, so showing an unknown one would need a widget change. `training-examples` and `model-mistakes` name generalising at the unseen fruit; `performance-versus-learning` has the memorising-is-a-lookup-table line.
 
 
 ## Agreed 18 Oct 2026 (Matthew): checks that test judgement
 - Multiple choice stays for how AI works (concept checks with one right answer).
 - Judgement about when and how to use AI moves to: **sort into groups** for hand-over decisions (same task, different goals); **match** for which kind of help suits a moment; a **reasoning** check (subject-neutral labels, often unmarked with model answers; `roadmap/shared.md`) for one realistic dilemma per unit, usually in Evaluate.
-- About 8–10 checks: Foundations Unit 4 Evaluate steps and the main decisions in Does AI Help Us Learn? Not built yet.
+- About 8–10 checks: Foundations Unit 4 Evaluate steps and the main decisions in Does AI Help Us Learn?
+- **Built 18 Oct 2026 (11 checks):**
+  - Foundations: `learning-support` Evaluate is a match (which help suits the moment); `checking-ai-claims` Evaluate is an unmarked reasoning (an unchecked fact for a poster); `delegating-thinking` Evaluate is two sorts (the same seedling report under two goals).
+  - Does AI Help Us Learn?, one unmarked reasoning per unit (two models each, custom criteria): `performance-versus-learning` (five hard problems), `illusion-of-competence` ("it made sense"), `offloading-thinking` (the tired-night AI draft), `evidence-of-achievement` (showing what you learned from a project that used AI). Plus a second goal sort in `offloading-thinking` (spelling), and matches in `interaction-versus-learning` (which help for which learner) and `designing-assistance` (which tutor design for which learner).
+  - Replaced judgement multiple choice: three in Foundations Unit 4 and Mei in `designing-assistance`; the Fernandes question moved into its typical research step. Concept questions stay multiple choice.
+
+## Built 18 Oct 2026: optional AI-tool steps with prompt cards
+- One `tier: typical` step with a `prompt:` card in Foundations `learning-support` (hint-first help), `checking-ai-claims` (help me check a claim), `delegating-thinking` (help me decide what to hand over), and Does AI Help Us Learn? `illusion-of-competence` (test me and ask how sure I am), `using-feedback` (feedback with a next step), `evidence-of-achievement` (ask me about my work, one question at a time, without rewriting it).
+- Each asks students to compare the reply with the lesson's lab using its habit, gives a no-AI version (a partner, or a table), and has a reflect check that is never needed to finish. No product names. Teacher notes (`before:`) mention school rules and age limits (many tools 13+).
+
+## Built 18 Oct 2026: Does AI Help Us Learn? regrouped by width
+- Each lesson's teacher notes start with **Core idea:** and say which steps are minimum, typical and wider. Nothing removed.
+- Moved: `research-findings` (new minimum Explore on Mia's spelling helper and a new minimum Evaluate on an advert; the two studies' sort, careful reading and "what can the studies claim" are typical; two careful claims wider), `research-design` (Nakamura's theory is its own wider step), `designing-assistance` ("who decides how much help" is a wider step), `evidence-of-achievement` (design a fair task: wider), `learning-values` (marks, agency and predictions: wider; a new Year 7 Evaluate, the study-based one typical; the course-answer step asks for "a learner from this course, or a study"). `offloading-thinking`'s Predict states the maths result on its own, since the study step is now typical.
+- Unchanged: Unit 1 lessons, `illusion-of-competence`, `interaction-versus-learning` and `using-feedback` already carried their core idea through a personal case (their Elaborate steps were already typical).
+- Every lesson keeps required checks on the minimum path. `fit:` is "Years 7–10: core ideas at Year 7, wider steps for older students"; class plans for `research-findings` and `learning-values` updated to match.
+- Not done: renaming Unit 4 lesson titles to "I" questions (the current titles are already personal enough).
 
 ## Research check, 18 Oct 2026 (claims in the AI courses against the papers or their abstracts; Bastani, Kestin and Nakamura re-checked against full PDFs the same day)
 Rule: a claim is changed only when a source contradicts it; anything not reachable is marked unverified, not wrong.
