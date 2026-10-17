@@ -1,8 +1,10 @@
 import { Marked } from 'marked';
+import YAML from 'yaml';
 import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
 import { scanModule } from './modules-scan.mjs';
 import { highlightCode } from './highlight.js';
+import { setupWorkspace } from './workspace.mjs';
 import { REQUEST_FORM_URL } from './config.js';
 
 const EXAMPLE = {
@@ -10,6 +12,9 @@ const EXAMPLE = {
 title: My first turtle lesson
 summary: Predict, run and change a short drawing program.
 language: python
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground" 8123
+  url: http://127.0.0.1:8123/index.html
 ---
 A turtle walks across the screen, leaving a line behind.
 
@@ -27,6 +32,12 @@ What shape will the turtle draw? Where will it finish?
 \`\`\`step
 stage: run
 try: { starter: "shape.py#square", height: 420 }
+app: true
+query: { code: "@shape.py#square", speed: 8 }
+clip:
+  - caption: "The turtle repeats these commands four times."
+  - click: Run
+  - expect: { selector: "#status", contains: "Finished" }
 \`\`\`
 
 Run the program and compare it with your prediction.
@@ -64,6 +75,7 @@ const $ = (id) => document.getElementById(id);
 const KEY = 'wp-create-v1';
 let files = {};      // name -> text, in insertion order
 let current = 'lesson.md';
+let workspace;
 
 // ---------- state ----------
 const load = () => {
@@ -75,7 +87,7 @@ const load = () => {
   } catch { /* ignore */ }
   return Promise.resolve(null);
 };
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(files)); } catch { /* storage unavailable */ } };
+const save = () => { workspace?.changed(files).catch(e => { $('packageStatus').textContent = e.message; }); try { localStorage.setItem(KEY, JSON.stringify(files)); } catch { /* storage unavailable */ } };
 
 async function encode(obj) {
   const bytes = new TextEncoder().encode(JSON.stringify(obj));
@@ -169,13 +181,13 @@ const knownIds = () => {
 
 function render() {
   let lesson;
-  try { lesson = parseLessonText(files['lesson.md'] || '', 'my-lesson'); }
+  try { lesson = parseLessonText(files['lesson.md'] || '', workspace ? 'draft/'+workspace.lessonId() : 'my-lesson'); }
   catch (e) { problemsList(['lesson.md: ' + e.message.split('\n')[0]]); return; }
   const read = (f) => files[f] ?? lesson.inline?.[f];   // a file tab, else code written inside lesson.md
   const errs = validateLessonCore(lesson, read, knownIds(), sharedModules).map((m) => m.replace(/^my-lesson › /, ''));
-  // clip checks that need an app are skipped here: clips are only recorded by the repository build
+  // Production validation stays authoritative; supported draft clips can be recorded below.
   problemsList(errs, 'Looks good.');
-  const clipHtml = (s) => s.config.clip
+  const clipHtml = (s) => workspace ? workspace.clipHtml(s) : s.config.clip
     ? `<div class="placeholder"><b>Clip placeholder · ${s.id}</b><span>Recorded when this lesson is added to the repository.</span></div>` : '';
   const locksFor = (kind) => lesson.steps.filter((x) => (x.config.unlocks || []).length && unlockKind(lesson, x) === kind)
     .flatMap((x) => x.config.unlocks.map((id) => `${id}~${x.title.replace(/[|~]/g, ' ')}`)).join('|');
@@ -236,6 +248,27 @@ const BUG = ['check:', '  type: bug', '  code: file.py#region', '  text: "Click 
 const PARSONS = ['check:', '  type: parsons', '  code: file.py#region', '  text: "Put the lines in order."'];
 const PREDICT = ['check:', '  type: predict', '  q: "What will the program do?"', '  options: ["first guess", "second guess"]', '  actual: "What it really does, shown after Run."'];
 const CODERULE = ['check:', '  type: code', '  text: "Write a function and call it."', '  rules: { defs: 1, calls: 1 }'];
+$('addclip').onclick = () => withStep(st => {
+  const lesson=parseLessonText(files['lesson.md'], 'my-lesson'),step=lesson.steps[st.index];
+  if(step.config.clip){alert('This step already has clip instructions. Edit its clip: sequence.');return}
+  const ref=step.config.try?.starter||step.config.code;
+  if(!ref){alert('Add code: or a try: starter to this step first.');return}
+  const board=['board','maths'].includes(step.config.try?.playground),turtle=lesson.language==='python'&&!board;
+  if(!board&&!turtle){alert('Browser recording currently supports Turtle and shared boards.');return}
+  const config=YAML.parseDocument(st.lines.slice(st.open+1,st.close).join('\n'));
+  config.set('app',true);
+  if(!step.config.query?.code)config.setIn(['query','code'],'@'+ref);
+  if(board&&step.config.query?.fresh===undefined)config.setIn(['query','fresh'],1);
+  config.set('clip',[{caption:'Watch what happens when this runs.'},...(turtle?[{click:'Run'},{expect:{selector:'#status',contains:'Finished'}}]:[{wait:1500}])]);
+  st.lines.splice(st.open+1,st.close-st.open-1,...String(config).trimEnd().split('\n'));
+  let text=st.lines.join('\n');
+  if(!lesson.app){
+    const match=text.match(/^---\n([\s\S]*?)\n---/),metadata=YAML.parseDocument(match[1]);
+    metadata.set('app',{command:'node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/'+(board?'_playground-board':'_playground')+'" 8123',url:'http://127.0.0.1:8123/index.html'});
+    text=text.replace(match[0],'---\n'+String(metadata)+'---');
+  }
+  setText(text,'Watch what happens');
+});
 $('addtick').onclick = () => addCheck(TICK, '…');
 $('addnum').onclick = () => addCheck(NUMBER, 'Your question?');
 $('addmatch').onclick = () => addCheck(MATCH, 'first item');
@@ -311,7 +344,7 @@ $('pick').onclick = async () => {
 $('share').onclick = async () => {
   const url = `${location.origin}${location.pathname}#l=${await encode(files)}`;
   try { await navigator.clipboard.writeText(url); $('share').textContent = 'Link copied'; } catch { prompt('Copy this link', url); }
-  setTimeout(() => ($('share').textContent = 'Copy share link'), 1500);
+  setTimeout(() => ($('share').textContent = 'Copy draft link (no videos)'), 1500);
 };
 
 // Request publishing: copy the share link (the form asks for it), then open the form.
@@ -354,3 +387,8 @@ $('download').onclick = () => {
 files = (await load()) || { ...EXAMPLE };
 if (!files['lesson.md'] && files['lesson.md'] !== '') files = { 'lesson.md': '', ...files };
 sync(); render();
+
+try {
+  workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},render});
+  render();
+} catch(error) { $('packageStatus').textContent='Local draft/video storage unavailable: '+error.message; }

@@ -38,3 +38,52 @@ decoding, and saves screenshots, recordings and diagnostics in
 `browser-recorder-results/`. A headless-shell-only Chromium build does not support
 tab capture; use full Chrome. The dedicated Actions workflow runs these checks
 without invoking the production renderer or publishing.
+
+## Draft lessons and courses
+
+Create lesson now has a local course workspace. Name the course, add lessons,
+switch between them, reorder them or remove one. Lesson titles and summaries
+remain in the existing lesson frontmatter. Each lesson's preview runs its own
+playground and keeps its own progress identifiers.
+
+The example includes a recordable clip. For another step, place the cursor in it
+and choose **Clip instructions**; a supported Turtle or shared-board `code:` /
+`try.starter` becomes the source for the existing `query` and `clip` fields.
+Choose **Record selected clip**, then **Record WebM** and share **This Tab**.
+Run **Preview steps**, stop recording, and choose **Use recording in lesson**.
+The recorder returns to Create lesson, where the clip plays in its step. Draft
+recording actions use the same converter as built lessons. Bound recordings
+cannot edit their sequence separately from Markdown.
+
+Draft sources and binary recordings are stored locally in IndexedDB. Reloading or
+switching lessons retains them. Any source-file edit marks the lesson's recordings
+as outdated; old clips are omitted from exports, and their steps show placeholders.
+Returning the files to their recorded state makes the clips valid again. This is
+separate from the production renderer's cache. Browser storage can be cleared or
+run out of space; download packages to keep a durable copy.
+
+- **Download lesson + videos** creates a ZIP containing `index.html`, original
+  source files, `clips/<step>.webm`, and `waypoints-lesson.json`.
+- **Download course + videos** creates a ZIP with a contents `index.html`, an
+  `index.md` using existing course metadata, `waypoints-course.json`, and numbered
+  lesson folders. Lesson pages have previous/next and course links.
+- Unzip and open the top-level `index.html` to run a lesson or the whole course.
+  Lesson text and recorded videos work offline. Embedded playgrounds still use the
+  Tutorials site and require internet. This is not a fully offline playground bundle.
+- **Import lesson / course package** reopens the source and recordings for editing.
+  A lesson is added to the current course; a course replaces the workspace after
+  confirmation. Source-only uploads and source ZIP downloads remain available.
+- **Copy share link** continues to share text/code only. It does not upload or
+  include video. ZIP packages can be sent through normal file-sharing channels or
+  extracted onto static hosting, but Create does not upload them automatically.
+
+Packages use store-only ZIP entries, since WebM is compressed already. Imports
+support packages exported here, not arbitrary third-party ZIP formats. Limit:
+512 MB per package, 100 lessons and 2,000 files. Unsupported clip actions are
+reported; recording is interactive and needs screen-sharing permission. Speech
+synthesis, background recording and automatic production publishing are unchanged.
+
+`node experiments/lesson-package-test.mjs` checks binary ZIP round-trips and invalid
+packages. `node experiments/course-smoke.mjs` uses full Chrome for recording two
+lessons, returning the recordings to Create, export, offline video playback,
+course/lesson import, reordering, persistence and stale-recording exclusion.

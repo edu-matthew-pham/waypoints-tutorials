@@ -3,31 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Create a lesson</title>
+<title>Create lessons and courses</title>
 <link rel="stylesheet" href="style.css">
 <script type="importmap">{"imports":{"yaml":"./vendor/yaml/index.js","marked":"./vendor/marked.esm.js"}}</script>
 </head>
 <body>
 <header class="bar">
-  <div><a class="crumb" href="../">← Code</a><h1>Create a lesson</h1></div>
+  <div><a class="crumb" href="../">← Code</a><h1>Create lessons and courses</h1></div>
   <div class="actions">
     <a class="btn" href="clip.html">Create clip (experimental)</a>
     <button id="example" type="button">Load example</button>
     <button id="resetprog" type="button" title="Forget which checks you passed in the preview">Reset progress</button>
     <label class="btn">Upload files<input id="upload" type="file" multiple hidden></label>
-    <button id="share" type="button">Copy share link</button>
+    <label class="btn">Import lesson / course package<input type="file" id="importPackage" accept=".zip,application/zip" hidden></label>
+    <button id="share" type="button">Copy draft link (no videos)</button>
     <button id="request" type="button" hidden>Request publishing</button>
-    <button id="download" type="button" class="primary">Download folder (.zip)</button>
+    <button id="download" type="button">Download source only (.zip)</button>
   </div>
 </header>
+<section class="workspace" aria-label="Course workspace">
+  <div class="row"><label>Course title <input id="courseTitle" value="My course"></label><label>Summary <input id="courseSummary" placeholder="What will learners do?"></label></div>
+  <div class="row"><label>Lesson <select id="courseLesson"></select></label><button id="addLesson" type="button">+ Add lesson</button><button id="moveLessonUp" type="button">Move up</button><button id="moveLessonDown" type="button">Move down</button><button id="removeLesson" type="button">Remove lesson</button><button id="previousLesson" type="button">Previous lesson</button><button id="nextLesson" type="button">Next lesson</button></div>
+  <div class="package-actions"><button id="downloadPackage" type="button" class="primary">Download lesson + videos (.zip)</button><button id="downloadCourse" type="button">Download course + videos (.zip)</button></div>
+  <p id="packageStatus" role="status">Download a package to share lesson pages, source files and recorded videos. Playground activities need internet.</p>
+</section>
+<section class="lesson-videos" aria-label="Lesson recordings"><h2>Videos from this lesson’s clip instructions</h2><div class="row"><select id="draftClip" aria-label="Lesson clip"></select><button id="recordClip" type="button">Record selected clip</button><button id="refreshClips" type="button">Refresh recordings</button></div><p id="videoStatus" role="status"></p></section>
 <p class="hint">Write or paste a <code>lesson.md</code> and its code files. The preview updates as you type, and the playground is live.
-Clips are recorded when the lesson is added to the repository; here they appear as placeholders.
-Format guide: <a href="https://github.com/cggs-matthew-pham/tutorials/blob/main/AUTHORING.md">AUTHORING.md</a>.</p>
+Record clips from the lesson instructions below, then download a lesson or course package with the videos included. Copy share link shares only this lesson’s text and code, without videos.
+Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/blob/main/AUTHORING.md">AUTHORING.md</a>.</p>
 <main>
   <section class="editor">
     <div class="tabs" id="tabs" role="tablist"></div>
     <div class="helpers" id="helpers">
       <span>Add to this step:</span>
+      <button id="addclip" type="button">Clip instructions</button>
       <button id="addtick" type="button">Tick box</button>
       <button id="addq" type="button">Question</button>
       <button id="addnum" type="button" title="A number the student works out">Number</button>

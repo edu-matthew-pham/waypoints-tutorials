@@ -1,7 +1,7 @@
 name: Frontmatter browser clip bridge
 on:
   push:
-    branches: [experiment/frontmatter-browser-bridge]
+    branches: [experiment/frontmatter-browser-bridge, feature/shareable-lesson-videos]
     paths:
       - 'tools/export-browser-clip.mjs'
       - 'experiments/**'
@@ -23,6 +23,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node experiments/frontmatter-bridge-test.mjs
+      - run: node experiments/lesson-package-test.mjs
       - run: npm run build
       - run: node -e "const fs=require('fs'); const a=JSON.parse(fs.readFileSync('dist/code/create/lesson-clips.json')); if(!a.length)process.exit(1); console.log(a.length,'frontmatter clips exported')"
       - name: Install Chrome for browser smoke test
@@ -31,6 +32,8 @@ jobs:
           sudo apt-get install -y google-chrome-stable
       - name: Browser editor smoke test
         run: node experiments/browser-smoke.mjs
+      - name: Lesson and course package workflow
+        run: node experiments/course-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
