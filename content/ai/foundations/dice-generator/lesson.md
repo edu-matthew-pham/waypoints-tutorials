@@ -1,7 +1,7 @@
 ---
 sources:
-  - { title: "Swift (2025), LLMs Unplugged: Understand AI by building it yourself (ANU School of Cybernetics teaching resource)", url: "https://doi.org/10.5281/zenodo.17403824", checked: 2026-10-18 }
-  - { title: "LLMs Unplugged teaching resources (CC BY-SA 4.0)", url: "https://www.llmsunplugged.org/", checked: 2026-10-15 }
+  - { title: "Swift (2026), LLMs Unplugged: Teaching Resources for a ChatGPT World (ACE 2026, ACM; ANU School of Cybernetics)", url: "https://doi.org/10.1145/3786228.3786237", checked: 2026-10-18 }
+  - { title: "LLMs Unplugged teaching resources (CC BY-SA 4.0)", url: "https://www.llmsunplugged.org/", checked: 2026-10-18 }
 title: Build a text generator with dice
 summary: Turn word frequencies into dice outcomes, then sample words without always picking the most common one.
 language: science

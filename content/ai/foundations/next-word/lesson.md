@@ -1,6 +1,6 @@
 ---
 sources:
-  - { title: "Swift (2025), LLMs Unplugged: Understand AI by building it yourself (ANU School of Cybernetics teaching resource)", url: "https://doi.org/10.5281/zenodo.17403824", checked: 2026-10-18 }
+  - { title: "Swift (2026), LLMs Unplugged: Teaching Resources for a ChatGPT World (ACE 2026, ACM; ANU School of Cybernetics)", url: "https://doi.org/10.1145/3786228.3786237", checked: 2026-10-18 }
   - { title: "AI4K12, Grade Band Progression Charts", url: "https://ai4k12.org/gradeband-progression-charts/", checked: 2026-10-15 }
   - { title: "UNESCO, AI Competency Framework for Students (2024)", url: "https://www.unesco.org/en/articles/ai-competency-framework-students", checked: 2026-10-15 }
 title: Can you predict the next word?
