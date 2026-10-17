@@ -136,5 +136,6 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 - **Built:** AI Foundations (12 lessons, 4 units) and Does AI Help Us Learn? (12 lessons, 4 units, class plans for all), with recap pages; the Choosing AI tools teacher guide. Validate passes for all 24 lessons.
 - **Merged:** the review-fixes branch `ai-review-fixes` (PR #1, 16 Oct): Group 1 fixes, the Unit 4 rename, DAHUL class plans, the tools roadmap.
 - **Fixed 18 Oct:** the three Unit 1 boards (`dice-generator` and `automate-generator` had two step blocks under one heading, so their boards never showed; `next-word` loaded both board setups, starting at 12 endings instead of 3/2/1). Validate now flags both mistakes. The Nakamura (2026) DOI was confirmed by Matthew.
-- **Next:** Groups 2 and 3 in `roadmap/ai-review-fixes.md`, and Year 7 accessibility for Does AI Help Us Learn?
+- **Done 18 Oct (later):** Does AI Help Us Learn? rewritten for Year 7 (plain words, hands-on Explore steps, applied checks); review Groups 2 and 3 done for both courses (details and the few skipped items in `roadmap/ai-review-fixes.md`); a bug that stopped three AI widgets' board checks ticking is fixed; the Choosing AI tools guide is dated (last checked 18 October 2026), uses relative links, names DAHUL Unit 4 correctly and is linked from both AI pathway pages.
+- **Next:** try both courses with a Year 7 class; Foundations class plans; the dated vendor table (only with claims checked on vendors' own pages).
 - **Not yet tried with classes.**

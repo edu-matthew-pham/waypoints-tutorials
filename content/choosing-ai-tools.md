@@ -3,7 +3,9 @@ title: Choosing AI tools for learning
 summary: A practical guide for teachers and schools comparing AI tools fairly, checking whether they support learning and deciding whether they are safe to use.
 ---
 
-This guide helps teachers make informed choices about AI tools. It complements [AI Foundations](/ai/foundations/) and [Does AI Help Us Learn?](/ai/does-ai-help-us-learn/), but it is **not** another student course, a vendor ranking or an endorsement.
+*Last checked: 18 October 2026.*
+
+This guide helps teachers make informed choices about AI tools. It complements [AI Foundations](../ai/foundations/) and [Does AI Help Us Learn?](../ai/does-ai-help-us-learn/), but it is **not** another student course, a vendor ranking or an endorsement.
 
 ## Start with the learning purpose
 
@@ -75,7 +77,7 @@ A useful comparison is a specialised study mode against a school-approved chatbo
 
 ### Evidence tools
 
-Tools that question students about completed work should be examined using **Does AI Help Us Learn?, Unit 4: Evidence of achievement**. Ask what the conversation actually reveals, whether judgments are fair to quieter or multilingual students, and what a teacher can inspect or challenge.
+Tools that question students about completed work should be examined using **Does AI Help Us Learn?, Unit 4: Who decides what learning looks like?** (especially its second lesson, *How can we tell what we have learned?*). Ask what the conversation actually reveals, whether judgments are fair to quieter or multilingual students, and what a teacher can inspect or challenge.
 
 A useful comparison is a teacher's short discussion of the same work, the specialised evidence workflow and Kit's **Defend** prompt in a school-approved general chatbot. The prompt is only an *unlocked rehearsal*: do not treat a self-selected chat record as verified assessment evidence. Investigate whether speaking fluently is being mistaken for understanding.
 
