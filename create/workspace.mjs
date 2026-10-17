@@ -190,5 +190,12 @@ export async function setupWorkspace(controller) {
   persist();
   if(sharedLink){const address=new URL(location.href);address.hash='';address.searchParams.set('lesson',workspace.active);history.replaceState(null,'',address)}
   workspaceUI();await changed(controller.getFiles());await refresh();
-  return {changed,clipHtml,lessonId:()=>workspace.active,setStarterFactory:fn=>{starterFactory=fn}};
+  async function addFiles(files) {
+    if(workspace.lessons.length>=100)throw Error('The course is full. Export it before adding another lesson.');
+    await changed(controller.getFiles());
+    const title=parsed(files).title,id=uuid();
+    await updateDraft(id,()=>({id,files,clips:{}}));
+    workspace.lessons.push({id,title});await switchLesson(id);
+  }
+  return {changed,clipHtml,lessonId:()=>workspace.active,setStarterFactory:fn=>{starterFactory=fn},addFiles};
 }

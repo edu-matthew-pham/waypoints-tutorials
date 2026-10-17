@@ -5,7 +5,7 @@ try{
  for(let i=0;i<40;i++){try{if((await fetch(base)).ok)break}catch{}await new Promise(r=>setTimeout(r,200))}
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
  const context=await browser.newContext({viewport:{width:1280,height:1000},permissions:['clipboard-read','clipboard-write']});page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
- await page.goto(base+'code/create/');await page.waitForFunction(()=>document.querySelector('#authorProfile').options.length>0);const original=await page.locator('#text').inputValue();
+ await page.goto(base+'code/create/?workspace=1');await page.waitForFunction(()=>document.querySelector('#authorProfile').options.length>0);const original=await page.locator('#text').inputValue();
  await page.selectOption('#authorSubject','science');await page.waitForFunction(()=>document.querySelector('#boardCards').children.length>100);
  const catalogue=await page.evaluate(async()=>await(await fetch('./board-catalogue.json')).json());
  await page.fill('#boardSearch','forces');await page.locator('[data-board="board:forces"]').click();assert.equal(await page.locator('#authorPlayground').inputValue(),'board');assert.equal(await page.locator('#text').inputValue(),original,'Browsing does not rewrite the current lesson');

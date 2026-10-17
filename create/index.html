@@ -8,8 +8,34 @@
 <script type="importmap">{"imports":{"katex":"./vendor/katex.mjs","yaml":"./vendor/yaml/index.js","marked":"./vendor/marked.esm.js"}}</script>
 </head>
 <body>
+<section id="createStart" class="start-page" aria-labelledby="startTitle">
+  <a class="crumb" href="../../">← Tutorials</a>
+  <h1 id="startTitle" tabindex="-1">Create lessons and courses</h1>
+  <p class="start-intro">Start with an idea, bring your own material, or explore a working example.</p>
+  <div class="start-routes">
+    <button id="startPrompt" class="start-card" type="button" aria-controls="promptRoute" aria-expanded="false" disabled><strong>Start with a prompt</strong><span>Let an AI conversation help you plan and write. No setup form needed.</span></button>
+    <button id="startOpen" class="start-card" type="button" aria-controls="openRoute" aria-expanded="false" disabled><strong>Open existing work</strong><span>Import a lesson or course package, open source files, or resume your workspace.</span></button>
+    <button id="startExample" class="start-card" type="button" disabled><strong>Explore an example</strong><span>Try a short Turtle drawing lesson. It opens as a new lesson you can change.</span></button>
+  </div>
+  <section id="promptRoute" class="start-panel" aria-labelledby="promptRouteTitle" hidden>
+    <h2 id="promptRouteTitle" tabindex="-1">Start a conversation</h2>
+    <p>Copy this prompt into your preferred AI assistant. It will ask about your idea, learners and goals, then help you choose a structure.</p>
+    <textarea id="startPromptText" readonly aria-label="Starter prompt"></textarea>
+    <div class="start-actions"><button id="copyStartPrompt" class="primary" type="button">Copy prompt</button><button id="promptOpenFiles" type="button">Open generated files…</button><button id="promptWorkspace" type="button">Go to workspace</button></div>
+    <p>When your files are ready, open them here to preview, revise, record and download.</p>
+    <p id="startCopyStatus" role="status"></p>
+  </section>
+  <section id="openRoute" class="start-panel" aria-labelledby="openRouteTitle" hidden>
+    <h2 id="openRouteTitle" tabindex="-1">Open your work</h2>
+    <div class="start-actions"><button id="startImportPackage" type="button">Import lesson / course ZIP</button><button id="startImportSource" type="button">Open Markdown and code files</button><button id="startResume" type="button" hidden>Resume saved workspace</button></div>
+    <p>Use a package exported by Create, or select a lesson.md and its supporting files. Your saved workspace stays on this browser.</p>
+  </section>
+  <input id="startSourceFiles" type="file" multiple hidden>
+  <p id="startStatus" role="status">Opening Create…</p>
+</section>
+<div id="createWorkspace" hidden>
 <header class="bar">
-  <div><a class="crumb" href="../">← Code</a><h1>Create lessons and courses</h1></div>
+  <div><button id="backToStart" class="crumb" type="button">← Start</button><h1 id="workspaceTitle" tabindex="-1">Create workspace</h1></div>
   <div class="actions">
     <a class="btn" href="clip.html">Create clip (experimental)</a>
     <button id="example" type="button">Load example</button>
@@ -81,6 +107,7 @@ Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/b
     <div class="row"><button id="pickok" value="ok" type="submit" class="primary">Use these</button><button value="cancel" type="submit">Cancel</button></div>
   </form>
 </dialog>
+</div>
 <script type="module" src="create.js"></script>
 </body>
 </html>
