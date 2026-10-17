@@ -1,3 +1,4 @@
+import {maths} from './maths-browser.mjs';
 import { Marked } from 'marked';
 import { parseLessonText, snippetFrom } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed, esc } from './lesson-view.mjs';
@@ -26,6 +27,7 @@ export async function setupWorkspace(controller) {
   }
   const requested=!sharedLink&&new URLSearchParams(location.search).get('lesson');if(workspace.lessons.some(l=>l.id===requested))workspace.active=requested;
   if(!workspace.lessons.some(l => l.id === workspace.active))workspace.active = workspace.lessons[0].id;
+  let starterFactory=null;
   let recordings = {}, currentHash = '', queue = Promise.resolve(), revision = 0;
   const urls = new Map();
   const persist = () => {localStorage.setItem(KEY, JSON.stringify(workspace));};
@@ -54,9 +56,9 @@ export async function setupWorkspace(controller) {
       for(const step of allSteps(lesson).filter(s=>s.config.clip)){
         total++;const opt=document.createElement('option');opt.value=step.id;
         const clip=recordings[step.id],state=clip?.fingerprint===currentHash?'recorded':clip?'needs updating':'not recorded';
-        try {converter(files,lesson,step)}catch(error){opt.disabled=true;opt.textContent=`${step.title} — unsupported: ${error.message}`;unsupported++;select.append(opt);continue}
+        let mode='';try {if(converter(files,lesson,step).mode==='manual')mode=' (manual recording)'}catch(error){opt.disabled=true;opt.textContent=`${step.title} — unsupported: ${error.message}`;unsupported++;select.append(opt);continue}
         if(state!=='recorded')missing++;
-        opt.textContent=`${step.title} — ${state}`;select.append(opt);
+        opt.textContent=`${step.title}${mode} — ${state}`;select.append(opt);
       }
       if([...select.options].some(o=>o.value===previous&&!o.disabled))select.value=previous;
       else select.value=[...select.options].find(o=>!o.disabled)?.value||'';
@@ -104,7 +106,8 @@ export async function setupWorkspace(controller) {
     await queue;if(workspace.lessons.length>=100)throw Error('A course can contain up to 100 lessons');
     const id=uuid(),title=`Lesson ${workspace.lessons.length+1}`;
     const files={'lesson.md':`---\ntitle: ${title}\nsummary: Write a short summary.\nlanguage: python\n---\n## Run\n\n\`\`\`step\nstage: run\ntry: { starter: "shape.py#start", height: 420 }\n\`\`\`\n\nRun the code, then change it.\n`,'shape.py':'# region: start\nfrom turtle import *\nforward(100)\n# endregion\n'};
-    await updateDraft(id,()=>({id,files,clips:{}}));workspace.lessons.push({id,title});await switchLesson(id);
+    const starter=starterFactory?starterFactory(title):files;
+    await updateDraft(id,()=>({id,files:starter,clips:{}}));workspace.lessons.push({id,title:parsed(starter).title||title});await switchLesson(id);
   });
   $('refreshClips').onclick=report(refresh);
   $('recordClip').onclick=report(async()=>{
@@ -116,7 +119,7 @@ export async function setupWorkspace(controller) {
   window.addEventListener('focus',()=>refresh().catch(error=>notice(error.message)));
   const channel=typeof BroadcastChannel==='function'?new BroadcastChannel('wp-lesson-recordings'):null;
   if(channel)channel.onmessage=event=>{if(event.data===workspace.active)refresh().catch(error=>notice(error.message))};
-  async function lessonEntries(record, path, navigation='') {
+  async function lessonEntries(record, path, navigation='', sharedAssets=null) {
     const files=record.files,lesson=parsed(files,'package/'+record.id),hash=await fingerprint(files),read=name=>files[name]??lesson.inline?.[name],clips={},entries=[];let missing=0;
     for(const name of Object.keys(files)){
       safePath(name);if(name==='index.html'||name==='waypoints-lesson.json'||name.startsWith('clips/'))throw Error('Reserved source filename: '+name);
@@ -129,8 +132,23 @@ export async function setupWorkspace(controller) {
     }
     const clip = step=>!step.config.clip?'':clips[step.id]?`<figure class="clip"><video controls preload="metadata" src="${clips[step.id].path}"></video></figure>`:`<div class="placeholder">Clip not recorded · ${esc(step.id)}</div>`;
     const tryHtml=step=>{if(!step.config.try)return '';return tryEmbed(lesson,step,snippetFrom(read,step.config.try.starter||step.config.code),rootURL,'',{use:lesson.modules,local:Object.fromEntries(lesson.modules.filter(n=>read(n+'.py')!==undefined).map(n=>[n,read(n+'.py')]))})};
-    let html=lessonPageHtml(lesson,{Marked,highlightCode,snippet:ref=>snippetFrom(read,ref),clipHtml:clip,tryHtml,crumb:null,source:''});
+    let html=lessonPageHtml(lesson,{Marked,highlightCode,snippet:ref=>snippetFrom(read,ref),clipHtml:clip,tryHtml,maths,crumb:null,source:''});
     html=html.replace('<div class="wrap">',`<div class="wrap">${navigation}<p class="lede">Downloaded lesson. Text and recorded videos work offline; interactive playgrounds need internet.</p>`);
+    if(lesson.language==='maths'){
+      const assetPath=sharedAssets?.path||path;
+      if(sharedAssets)html=html.replaceAll('href="_katex/','href="../_katex/').replaceAll('src="_numbas/','src="../_numbas/');
+      if(!sharedAssets?.included){
+        const response=await fetch(rootURL+'_katex/katex.min.css');if(!response.ok)throw Error('Maths stylesheet unavailable');const css=await response.text();
+        entries.push([assetPath+'/_katex/katex.min.css',css]);
+        const fonts=[...new Set([...css.matchAll(/url\((fonts\/[^)]+)\)/g)].map(m=>m[1]))];
+        await Promise.all(fonts.map(async file=>{const r=await fetch(rootURL+'_katex/'+file);if(!r.ok)throw Error('Maths font unavailable');entries.push([assetPath+'/_katex/'+file,await r.blob()])}));
+        if(sharedAssets)sharedAssets.included=true;
+      }
+      if(html.includes('_numbas/')&&!sharedAssets?.forms){
+        const r=await fetch(rootURL+maths.forms.src);if(!r.ok)throw Error('Maths check engine unavailable');entries.push([assetPath+'/_numbas/numbas-jme.min.js',await r.blob()]);
+        if(sharedAssets)sharedAssets.forms=true;
+      }
+    }
     entries.push([path+'/index.html',html],[path+'/waypoints-lesson.json',JSON.stringify({format:'waypoints-lesson-package-v1',files:Object.keys(files),clips},null,2)]);
     return {entries,missing,title:lesson.title,summary:lesson.summary};
   }
@@ -141,10 +159,10 @@ export async function setupWorkspace(controller) {
   });
   $('downloadCourse').onclick=report(async()=>{
     await changed(controller.getFiles());const root=slug(workspace.title),records=await Promise.all(workspace.lessons.map(l=>readDraft(l.id)));
-    const paths=records.map((r,i)=>`${i+1}-${slug(parsed(r.files).title)}`),entries=[],cards=[];let missing=0;
+    const paths=records.map((r,i)=>`${i+1}-${slug(parsed(r.files).title)}`),entries=[],cards=[],sharedAssets={path:root,included:false};let missing=0;
     for(let i=0;i<records.length;i++){
       const navigation=`<nav aria-label="Course"><a href="../index.html">← ${esc(workspace.title)}</a>${i?` · <a href="../${paths[i-1]}/index.html">Previous lesson</a>`:''}${i+1<records.length?` · <a href="../${paths[i+1]}/index.html">Next lesson</a>`:''}</nav>`;
-      const result=await lessonEntries(records[i],root+'/'+paths[i],navigation);entries.push(...result.entries);missing+=result.missing;
+      const result=await lessonEntries(records[i],root+'/'+paths[i],navigation,sharedAssets);entries.push(...result.entries);missing+=result.missing;
       cards.push(`<li><a href="${paths[i]}/index.html">${esc(result.title)}</a><p>${esc(result.summary)}</p></li>`);
     }
     entries.push([root+'/waypoints-course.json',JSON.stringify({format:'waypoints-course-package-v1',title:workspace.title,summary:workspace.summary,lessons:paths},null,2)]);
@@ -172,5 +190,5 @@ export async function setupWorkspace(controller) {
   persist();
   if(sharedLink){const address=new URL(location.href);address.hash='';address.searchParams.set('lesson',workspace.active);history.replaceState(null,'',address)}
   workspaceUI();await changed(controller.getFiles());await refresh();
-  return {changed,clipHtml,lessonId:()=>workspace.active};
+  return {changed,clipHtml,lessonId:()=>workspace.active,setStarterFactory:fn=>{starterFactory=fn}};
 }

@@ -1,11 +1,14 @@
+import {inferPlayground,playground} from './playground-registry.mjs';
+import {manualReason} from './playground-adapters.mjs';
 // One converter for repository lessons and unpublished browser drafts.
 const captionText = v => v && typeof v === 'object' ? String(v.text ?? '') : String(v ?? '');
 const captionSay = v => v && typeof v === 'object' && v.say !== undefined ? String(v.say) : captionText(v);
 export function browserClip(lesson, step, snippet) {
   if (!step?.config?.clip) throw Error('Selected step has no clip instructions');
-  const app = /_playground-board(?:[\s"']|$)/.test(String(lesson.app?.command || '')) ? 'physics'
-    : /_playground(?:[\s"']|$)/.test(String(lesson.app?.command || '')) ? 'turtle' : null;
-  if (!app) throw Error('Browser editor currently supports only Turtle and physics board');
+  const id=inferPlayground(lesson,step),p=playground(id);
+  if(!p)throw Error('Browser editor cannot run this custom app. Choose a built-in playground.');
+  const app=p.draftApp||p.id,limitations=new Set();
+  if(p.recording==='manual')limitations.add(p.note);
   const query = Object.fromEntries(Object.entries(step.config.query || {}).map(([key, value]) => [key, typeof value === 'string' && value.startsWith('@') ? snippet(value.slice(1)) : String(value)]));
   let code = query.code || '';
   const steps = [];
@@ -23,9 +26,13 @@ export function browserClip(lesson, step, snippet) {
     else if (verb === 'click' && app === 'turtle' && v === 'Run') add('run');
     else if (verb === 'expect' && app === 'turtle' && v.selector === '#status' && v.contains === 'Finished' && steps.at(-1)?.type === 'run') { /* run waits for successful completion */ }
     else if (verb === 'show' && app === 'turtle') { code = snippet(String(v)); add('code', '', '', code); }
-    else if (verb === 'run' && app === 'turtle') add('run');
+    else if (['click','type','expect','show','clear','run','press'].includes(verb)) {
+      const reason=manualReason(verb,v,p);if(reason)limitations.add(reason);
+      const resolved=verb==='show'?snippet(String(v)):verb==='type'?{...v,text:typeof v.text==='string'&&v.text.startsWith('@')?snippet(v.text.slice(1)):v.text}:v;
+      add('action','','',JSON.stringify({[verb]:resolved}));
+    }
     else throw Error('Browser editor does not yet support ' + app + ' action: ' + verb);
   }
-  return { format: 'waypoints-clip-draft-v1', title: lesson.title + ' — ' + (step.title || step.id), app, query, steps, source: { lesson: lesson.slug, step: step.id } };
+  return { format: 'waypoints-clip-draft-v1', title: lesson.title + ' — ' + (step.title || step.id), app, query, steps, ...(limitations.size?{mode:'manual',limitations:[...limitations]}:{}), source: { lesson: lesson.slug, step: step.id } };
 }
 

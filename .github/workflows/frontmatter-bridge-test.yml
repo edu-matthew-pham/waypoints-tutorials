@@ -1,20 +1,23 @@
 name: Frontmatter browser clip bridge
 on:
   push:
-    branches: [experiment/frontmatter-browser-bridge, feature/shareable-lesson-videos]
+    branches: [experiment/frontmatter-browser-bridge, feature/shareable-lesson-videos, feature/authoring-prompts-playground-adapters]
     paths:
       - 'tools/export-browser-clip.mjs'
       - 'experiments/**'
       - 'create/**'
       - 'tools/build-create.mjs'
+      - 'tools/playground-registry.mjs'
+      - 'AUTHORING.md'
+      - 'BUILDING.md'
       - '.github/workflows/frontmatter-bridge-test.yml'
   pull_request:
-    paths: ['create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', '.github/workflows/frontmatter-bridge-test.yml']
+    paths: ['create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', 'tools/playground-registry.mjs', 'AUTHORING.md', 'BUILDING.md', '.github/workflows/frontmatter-bridge-test.yml']
   workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,6 +27,7 @@ jobs:
       - run: npm ci
       - run: node experiments/frontmatter-bridge-test.mjs
       - run: node experiments/lesson-package-test.mjs
+      - run: node experiments/authoring-test.mjs
       - run: npm run build
       - run: node -e "const fs=require('fs'); const a=JSON.parse(fs.readFileSync('dist/code/create/lesson-clips.json')); if(!a.length)process.exit(1); console.log(a.length,'frontmatter clips exported')"
       - name: Install Chrome for browser smoke test
@@ -34,6 +38,8 @@ jobs:
         run: node experiments/browser-smoke.mjs
       - name: Lesson and course package workflow
         run: node experiments/course-smoke.mjs
+      - name: Authoring and subject playground workflows
+        run: node experiments/authoring-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

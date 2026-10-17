@@ -1,9 +1,12 @@
+import {maths} from './maths-browser.mjs';
+import {inferPlayground,playground,appSettings} from './playground-registry.mjs';
 import { Marked } from 'marked';
 import YAML from 'yaml';
 import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
 import { scanModule } from './modules-scan.mjs';
 import { highlightCode } from './highlight.js';
+import { setupAuthoring } from './authoring.mjs';
 import { setupWorkspace } from './workspace.mjs';
 import { REQUEST_FORM_URL } from './config.js';
 
@@ -75,7 +78,7 @@ const $ = (id) => document.getElementById(id);
 const KEY = 'wp-create-v1';
 let files = {};      // name -> text, in insertion order
 let current = 'lesson.md';
-let workspace;
+let workspace,authoring;
 
 // ---------- state ----------
 const load = () => {
@@ -183,6 +186,7 @@ function render() {
   let lesson;
   try { lesson = parseLessonText(files['lesson.md'] || '', workspace ? 'draft/'+workspace.lessonId() : 'my-lesson'); }
   catch (e) { problemsList(['lesson.md: ' + e.message.split('\n')[0]]); return; }
+  authoring?.sync(lesson,workspace?.lessonId());
   const read = (f) => files[f] ?? lesson.inline?.[f];   // a file tab, else code written inside lesson.md
   const errs = validateLessonCore(lesson, read, knownIds(), sharedModules).map((m) => m.replace(/^my-lesson › /, ''));
   // Production validation stays authoritative; supported draft clips can be recorded below.
@@ -198,7 +202,7 @@ function render() {
     try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot, locksFor(unlockKind(lesson, s)), modsFor(lesson)); } catch { return ''; }
   };
   const keep = $('preview').contentWindow?.scrollY || 0;
-  $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, crumb: null, source: '' });
+  $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, maths, siteRoot, crumb: null, source: '' });
   $('preview').onload = () => { try { $('preview').contentWindow.scrollTo(0, keep); } catch { /* ignore */ } };
 }
 
@@ -253,18 +257,18 @@ $('addclip').onclick = () => withStep(st => {
   if(step.config.clip){alert('This step already has clip instructions. Edit its clip: sequence.');return}
   const ref=step.config.try?.starter||step.config.code;
   if(!ref){alert('Add code: or a try: starter to this step first.');return}
-  const board=['board','maths'].includes(step.config.try?.playground),turtle=lesson.language==='python'&&!board;
-  if(!board&&!turtle){alert('Browser recording currently supports Turtle and shared boards.');return}
+  const id=inferPlayground(lesson,step),p=playground(id),board=id==='board',turtle=id==='turtle';
+  if(!p){alert('Choose a built-in playground for browser recording. Custom app servers cannot run in this editor.');return}
   const config=YAML.parseDocument(st.lines.slice(st.open+1,st.close).join('\n'));
   config.set('app',true);
   if(!step.config.query?.code)config.setIn(['query','code'],'@'+ref);
   if(board&&step.config.query?.fresh===undefined)config.setIn(['query','fresh'],1);
-  config.set('clip',[{caption:'Watch what happens when this runs.'},...(turtle?[{click:'Run'},{expect:{selector:'#status',contains:'Finished'}}]:[{wait:1500}])]);
+  config.set('clip',[{caption:'Watch what happens when this runs.'},...(turtle?[{click:'Run'},{expect:{selector:'#status',contains:'Finished'}}]:p.run?[{click:{selector:p.run}}]:[{wait:1500}])]);
   st.lines.splice(st.open+1,st.close-st.open-1,...String(config).trimEnd().split('\n'));
   let text=st.lines.join('\n');
   if(!lesson.app){
     const match=text.match(/^---\n([\s\S]*?)\n---/),metadata=YAML.parseDocument(match[1]);
-    metadata.set('app',{command:'node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/'+(board?'_playground-board':'_playground')+'" 8123',url:'http://127.0.0.1:8123/index.html'});
+    metadata.set('app',appSettings(id));
     text=text.replace(match[0],'---\n'+String(metadata)+'---');
   }
   setText(text,'Watch what happens');
@@ -390,7 +394,7 @@ sync(); render();
 
 try {
   workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},render});
-  render();
+  authoring=setupAuthoring({setStarterFactory:fn=>workspace.setStarterFactory(fn)});render();
 } catch(error) { $('packageStatus').textContent='Local draft/video storage unavailable: '+error.message; }
 
 // Opening another text-only share link in the same tab is a hash navigation, not a page load.

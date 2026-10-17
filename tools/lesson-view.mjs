@@ -1,3 +1,4 @@
+import { PLAYGROUNDS } from './playground-registry.mjs';
 // Lesson page rendering shared by the Node build and the in-browser /create/ preview.
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
 import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys, makecodePackage, makecodeExtensions, sourceList } from './lesson-core.mjs';
@@ -834,19 +835,7 @@ document.addEventListener('click',function(e){if(pop&&!pop.hidden&&e.target!==po
 window.addEventListener('scroll',function(){if(pop&&!pop.hidden&&Math.abs(window.scrollY-y0)>60)hidePop()},{passive:true});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){hidePop();if(!d.hidden){shut();b.focus()}}});})();`;
 
-export const PLAYGROUNDS = {
-  turtle: { dir: '_playground', title: 'Python turtle playground' },
-  python: { dir: '_playground-py', title: 'Python playground' },
-  microstudio: { dir: '_playground-microstudio', title: 'Example game (play only)', height: 400 },
-  p5: { dir: '_playground-p5', title: 'p5.js playground' },
-  dom: { dir: '_playground-dom', title: 'Web page and JavaScript playground' },
-  html: { dir: '_playground-html', title: 'HTML and CSS playground' },
-  board: { dir: '_playground-board', title: 'Board' },
-  maths: { dir: '_playground-board', title: 'Board' },
-  microbit: { dir: '_playground-makecode', title: 'micro:bit MakeCode editor', height: 640 },
-  arcade: { dir: '_playground-makecode', title: 'MakeCode Arcade editor', height: 640 },
-  science: { dir: '_playground-science', title: 'Science board' },
-};
+export { PLAYGROUNDS };
 
 const TIERS_UI = ['minimum', 'typical', 'wider'];
 /** Width control: hides steps above the chosen width. ?width= sets the floor (a teacher's link); the choice is kept per lesson in this tab. */
