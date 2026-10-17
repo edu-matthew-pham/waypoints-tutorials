@@ -25,6 +25,15 @@ try{
  // Test the teacher-facing clip editor, not just the standalone recorder.
  await page.goto('http://127.0.0.1:8765/code/create/clip.html');
  await page.locator('#steps button').first().waitFor();
+ const catalogue=await page.evaluate(async()=>await (await fetch('./lesson-clips.json')).json());
+ if(!catalogue.length)throw Error('No frontmatter clips in built catalogue');
+ await page.waitForFunction(()=>document.querySelector('#lessonClip').options.length>1);
+ await page.selectOption('#lessonClip','0');
+ await page.click('#loadLessonClip');
+ if(!(await page.locator('#status').innerText()).includes('from lesson frontmatter'))throw Error('Direct lesson loading failed');
+ await page.selectOption('#lessonClip','');
+ await page.reload();
+ await page.locator('#steps button').first().waitFor();
  await page.fill('#title','Automated clip test');
  await page.fill('#caption','An edited caption');
  await page.click('#saveStep');
