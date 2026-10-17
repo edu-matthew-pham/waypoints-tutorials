@@ -95,7 +95,7 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
    - **Evidence-tool part:** for a sample of students, compare the tool's transcript judgement with the teacher's own short conversation about the same work; note disagreements and who they affect.
    - **Teacher-tool part:** time saved, how much was edited, whether the teacher could defend the result.
    - Scale it to the school: one class for a fortnight is a valid trial if it says so. First worked examples: Thinking Mode (evidence) and Copilot Study and Learn (help).
-3. **Optional "Try it with your school's tool" steps** in Foundations Unit 4 and `evidence-of-achievement`: **parked** (decision 18 Oct 2026, below). No prompt cards inside lessons for now.
+3. **Optional "Try it with your school's tool" steps** in Foundations Unit 4 and `evidence-of-achievement`: **back on** (corrected 18 Oct 2026, see Decisions), as optional steps beside the scripted labs. No prompt cards inside lessons for now.
 4. **Prompt library: use Waypoints Kit** (edu-matthew-pham/waypoints-kit), not a separate library.
    - How Kit works: a starter prompt has a chatbot read `START-HERE.md`, the standard's node file and one format file.
    - `coach.md` is already a tool-neutral study mode: Discover, Practise, Teach it back, Spot the flaw and Check. It is hint first, ends each round of help with "how do you know?", and stays inside the waypoint.
@@ -122,7 +122,7 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 
 ## Decisions (18 Oct 2026)
 
-- **Coach prompts stay on recap pages only, for now.** No prompt cards inside lessons and no "Try it with your school's tool" steps yet: AI use in class has not been tested enough, and the site should not lean on AI encouragement. Possible later step: offer coach prompts after a student has completed AI Foundations. This supersedes Tasks 2 and 3 in `roadmap/ai-tools-handoff.md`. Turning on `coach: true` for an AI course is Matthew's call.
+- **Prompts in the AI courses (corrected 18 Oct 2026).** Matthew's "recap pages only" decision applies to coach prompts in general lessons, not to the Learning with AI courses. In a course about using AI, lessons may include optional prompt steps: scripted response labs stay the core (every check doable without AI), plus an optional step with one copyable prompt ("ask your school's AI…, then check its reply with the habit you just practised"), `tier: typical`, never needed to finish. Who sees it (hidden until a teacher's link turns it on, or visible with "only if your teacher says you can") is still to decide. Not too much AI encouragement; age limits of tools (often 13+) apply.
 - **Both courses are for Year 7.** AI Foundations was already written for Year 7; Does AI Help Us Learn? must be made Year 7 accessible too (plainer words, shorter sentences, hands-on Explore steps rather than read-then-quiz, fewer definition checks). Added to `roadmap/ai-review-fixes.md`.
 
 ## Open
