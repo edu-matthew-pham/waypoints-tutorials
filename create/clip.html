@@ -1,10 +1,10 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waypoints · Create clip</title>
 <style>
-:root{font:15px system-ui;color-scheme:light dark}body{margin:0;padding:18px;background:Canvas;color:CanvasText}header,.actions,.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}header{justify-content:space-between}main{display:grid;grid-template-columns:minmax(300px,410px) minmax(0,1fr);gap:16px;margin-top:16px}section{border:1px solid #8887;border-radius:10px;padding:14px}input,textarea,select,button{font:inherit;padding:7px;border-radius:5px}textarea{width:95%;min-height:70px}label{display:block;margin:10px 0 4px}button{cursor:pointer}iframe{width:100%;height:590px;background:white;border:1px solid #8887}video{width:100%;max-height:360px}#status{font-weight:600}.muted{opacity:.7}ol{padding-left:22px}li{padding:6px 0}@media(max-width:850px){main{grid-template-columns:1fr}}
+:root{font:15px system-ui;color-scheme:light dark}body{margin:0;padding:18px;background:Canvas;color:CanvasText}header,.actions,.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}header{justify-content:space-between}main{display:grid;grid-template-columns:minmax(300px,410px) minmax(0,1fr);gap:16px;margin-top:16px}section{border:1px solid #8887;border-radius:10px;padding:14px}input,textarea,select,button{font:inherit;padding:7px;border-radius:5px}textarea{width:95%;min-height:70px}label{display:block;margin:10px 0 4px}button{cursor:pointer}select{max-width:100%}#lessonClip{width:100%;box-sizing:border-box}#previewCaption{min-height:1.5em;white-space:pre-wrap;font-weight:600}iframe{width:100%;height:590px;background:white;border:1px solid #8887}video{width:100%;max-height:360px}#status{font-weight:600}.muted{opacity:.7}ol{padding-left:22px}li{padding:6px 0}@media(max-width:850px){main{grid-template-columns:1fr}}
 </style>
 <header><div><a href="./">← Create lesson</a><h1>Create an explanatory clip <small>(experimental)</small></h1></div><div class="actions"><button id="export">Export JSON</button><label>Import JSON <input type="file" id="import" accept=".json,application/json"></label></div></header>
 <p class="muted">Build a sequence of captions, narration and actions. Preview the real application before recording. WebM uses browser tab capture; choose <strong>This Tab</strong> when prompted. JSON is editable and remains local.</p>
-<main><section><label>Existing lesson clip <select id="lessonClip"><option value="">Manual draft</option></select></label><button id="loadLessonClip">Load lesson clip</button><label>Application <select id="app"><option value="turtle">Python Turtle</option><option value="physics">Physics · Forces</option></select></label>
+<main><section><label>Existing lesson clip <select id="lessonClip"><option value="">Manual draft</option></select></label><button id="loadLessonClip">Load lesson clip</button><label>Application <select id="app"><option value="turtle">Python Turtle</option><option value="physics">Shared board (default: forces)</option></select></label>
 <label>Clip title <input id="title" value="My explanation"></label>
 <label>Steps</label><ol id="steps"></ol>
 <div class="row"><button id="add">+ Add step</button><button id="remove">Remove last</button></div>
@@ -14,7 +14,7 @@
 <label>Action value (code, force number, or wait milliseconds) <textarea id="value"></textarea></label>
 <div class="row"><button id="saveStep">Save step</button><button id="preview">Preview steps</button><button id="reset">Reset application</button></div>
 <p id="status" role="status">Ready</p></section>
-<section><iframe id="demo" title="Real Waypoints playground"></iframe>
+<section><p id="previewCaption" role="status"></p><iframe id="demo" title="Real Waypoints playground"></iframe>
 <div class="row"><button id="record">Record WebM</button><button id="stop" disabled>Stop recording</button><label><input type="checkbox" id="mic"> Microphone</label></div>
 <p class="muted">Preview executes actions in the embedded application. Recording captures the full browser tab, including this editor. Narration is via microphone only for now.</p>
 <video id="video" controls hidden></video><a id="download" hidden>Download WebM</a></section></main>

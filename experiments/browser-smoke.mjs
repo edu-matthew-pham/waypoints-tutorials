@@ -13,6 +13,7 @@ try{
  assert.ok(ready,'Built editor server starts');
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage','--auto-accept-this-tab-capture','--auto-select-tab-capture-source-by-title=Waypoints · Create clip','--allow-http-screen-capture','--enable-usermedia-screen-capturing']});
  page=await browser.newPage({viewport:{width:1280,height:900}});
+ page.setDefaultTimeout(15000);
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto('http://127.0.0.1:8765/code/create/clip.html');
  await page.waitForFunction(()=>document.querySelector('#lessonClip').options.length>1);
@@ -37,6 +38,7 @@ try{
    await page.click('#preview');
    await page.waitForFunction(()=>/Preview complete|Preview failed/.test(document.querySelector('#status').textContent),null,{timeout:120000});
    assert.match(await page.locator('#status').innerText(),/^Preview complete/);
+   assert.equal(await page.locator('#previewCaption').innerText(),clip.steps.filter(s=>s.caption).at(-1).caption);
    if(kind==='turtle'){
      await page.waitForFunction(()=>{const p=document.querySelector('#demo').contentWindow.__playground;return p&&p.status!=='running'},null,{timeout:30000});
      const state=await frame.locator('body').evaluate(()=>window.__playground);

@@ -25,8 +25,6 @@ jobs:
       - run: node experiments/frontmatter-bridge-test.mjs
       - run: npm run build
       - run: node -e "const fs=require('fs'); const a=JSON.parse(fs.readFileSync('dist/code/create/lesson-clips.json')); if(!a.length)process.exit(1); console.log(a.length,'frontmatter clips exported')"
-      - name: Add isolated recorder page
-        run: mkdir -p dist/experiments && cp experiments/browser-recorder.html dist/experiments/
       - name: Install Chrome for browser smoke test
         run: |
           sudo apt-get update

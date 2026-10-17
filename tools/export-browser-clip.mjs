@@ -24,7 +24,7 @@ export function browserClip(lesson, step) {
     }
     else if (verb === 'click' && app === 'turtle' && v === 'Run') add('run');
     else if (verb === 'expect' && app === 'turtle' && v.selector === '#status' && v.contains === 'Finished' && steps.at(-1)?.type === 'run') { /* run waits for successful completion */ }
-    else if (verb === 'show' && app === 'turtle') add('code', '', '', getSnippet(lesson.dir, String(v)));
+    else if (verb === 'show' && app === 'turtle') { code = getSnippet(lesson.dir, String(v)); add('code', '', '', code); }
     else if (verb === 'run' && app === 'turtle') add('run');
     else throw Error('Browser editor does not yet support ' + app + ' action: ' + verb);
   }
