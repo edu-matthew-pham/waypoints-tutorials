@@ -3,6 +3,8 @@
 import { cpSync, mkdirSync, copyFileSync, rmSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadLessons } from './lesson.mjs';
+import { browserClip } from './export-browser-clip.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -11,6 +13,15 @@ export function buildCreate(out = 'dist') {
   rmSync(join(out, 'create'), { recursive: true, force: true });
   rmSync(dest, { recursive: true, force: true });
   cpSync(join(root, 'create'), dest, { recursive: true });
+  // Export supported existing frontmatter clips for direct browser selection; unsupported actions are omitted.
+  const clips = [];
+  for (const lesson of loadLessons()) {
+    for (const step of [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])]) {
+      if (!step.config?.clip) continue;
+      try { clips.push(browserClip(lesson, step)); } catch { /* Unsupported browser action; production renderer remains authoritative. */ }
+    }
+  }
+  writeFileSync(join(dest, 'lesson-clips.json'), JSON.stringify(clips));
   for (const f of ['lesson-core.mjs', 'lesson-view.mjs', 'modules-scan.mjs', 'math-expr.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
   // highlight.cjs is a plain function declaration; expose it as an ES module for the browser.
   writeFileSync(join(dest, 'highlight.js'), readFileSync(join(root, 'tools', 'highlight.cjs'), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '') + '\nexport { highlightCode };\n');
