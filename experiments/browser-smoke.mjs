@@ -12,7 +12,10 @@ try{
  for(let n=0;n<40;n++){try{if((await fetch('http://127.0.0.1:8765/code/create/clip.html')).ok){ready=true;break}}catch{}await delay(250)}
  assert.ok(ready,'Built editor server starts');
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage','--auto-accept-this-tab-capture','--auto-select-tab-capture-source-by-title=Waypoints · Create clip','--allow-http-screen-capture','--enable-usermedia-screen-capturing']});
- page=await browser.newPage({viewport:{width:1280,height:900}});
+ const context=await browser.newContext({viewport:{width:1280,height:900}});
+ // Headless-shell local check only; CI always uses full Chrome's real tab capture.
+ if(process.env.WP_TEST_CANVAS_CAPTURE==='1')await context.addInitScript(()=>{navigator.mediaDevices.getDisplayMedia=async()=>{const c=document.createElement('canvas');c.width=640;c.height=360;const x=c.getContext('2d'),t=setInterval(()=>{x.fillStyle='white';x.fillRect(0,0,640,360);x.fillStyle='blue';x.fillRect(Date.now()%600,20,40,40)},50),s=c.captureStream(20);s.getVideoTracks()[0].addEventListener('ended',()=>clearInterval(t));return s}});
+ page=await context.newPage();
  page.setDefaultTimeout(15000);
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto('http://127.0.0.1:8765/code/create/clip.html');
@@ -52,7 +55,7 @@ try{
    const videoDownload=page.waitForEvent('download');await page.click('#download');await (await videoDownload).saveAs(dir+'/'+kind+'.webm');
    await page.locator('#video').evaluate(v=>v.load());await page.waitForFunction(()=>document.querySelector('#video').readyState>=2);
    const dimensions=await page.locator('#video').evaluate(v=>({width:v.videoWidth,height:v.videoHeight}));assert.ok(dimensions.width>0&&dimensions.height>0);
-   results.push({kind,source:clip.source,preview:'pass',recording,dimensions});console.log(JSON.stringify(results.at(-1)));
+   results.push({kind,source:clip.source,preview:'pass',capture:process.env.WP_TEST_CANVAS_CAPTURE==='1'?'local canvas test stream':'real Chrome tab',recording,dimensions});console.log(JSON.stringify(results.at(-1)));
  }
  assert.deepEqual(errors,[],'No browser runtime errors');
 }catch(e){if(page)await page.screenshot({path:dir+'/failure.png'}).catch(()=>{});results.push({error:e.stack});throw e}

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Create lessons and courses</title>
 <link rel="stylesheet" href="style.css">
-<script type="importmap">{"imports":{"yaml":"./vendor/yaml/index.js","marked":"./vendor/marked.esm.js"}}</script>
+<script type="importmap">{"imports":{"katex":"./vendor/katex.mjs","yaml":"./vendor/yaml/index.js","marked":"./vendor/marked.esm.js"}}</script>
 </head>
 <body>
 <header class="bar">
@@ -21,6 +21,15 @@
     <button id="download" type="button">Download source only (.zip)</button>
   </div>
 </header>
+<section class="workspace authoring" aria-label="Lesson setup and AI prompt">
+<h2>Start with a lesson idea</h2>
+<div class="row"><label>Subject <select id="authorSubject"><option value="code">Digital technologies</option><option value="maths">Maths</option><option value="science">Science</option><option value="engineering">Engineering / design</option><option value="general">Other concepts</option></select></label><label>Lesson structure <select id="authorProfile"></select></label><label>Playground <select id="authorPlayground"></select></label></div>
+<div class="row"><label>Topic <input id="authorTopic" placeholder="e.g. particle movement"></label><label>Audience / prior knowledge <input id="authorAudience" placeholder="e.g. Year 7, first encounter"></label></div>
+<label>Learning goal <input id="authorGoal" placeholder="What should learners be able to explain or do?"></label>
+<div class="row"><label>Prompt for <select id="authorScope"><option value="lesson">One complete lesson</option><option value="course">Course plan, then lessons</option></select></label><button id="newFromSettings" type="button">Add a lesson starter</button><button id="copyLessonPrompt" type="button" class="primary">Copy lesson prompt</button><button id="showLessonPrompt" type="button">Review prompt</button></div>
+<p id="authorCapabilities"></p><p id="authorStatus" role="status">Choose settings for a new starter or a prompt. Existing lessons are preserved.</p>
+<details id="promptDetails"><summary>Prompt text</summary><textarea id="lessonPrompt" readonly aria-label="Generated lesson prompt"></textarea></details>
+</section>
 <section class="workspace" aria-label="Course workspace">
   <div class="row"><label>Course title <input id="courseTitle" value="My course"></label><label>Summary <input id="courseSummary" placeholder="What will learners do?"></label></div>
   <div class="row"><label>Lesson <select id="courseLesson"></select></label><button id="addLesson" type="button">+ Add lesson</button><button id="moveLessonUp" type="button">Move up</button><button id="moveLessonDown" type="button">Move down</button><button id="removeLesson" type="button">Remove lesson</button><button id="previousLesson" type="button">Previous lesson</button><button id="nextLesson" type="button">Next lesson</button></div>

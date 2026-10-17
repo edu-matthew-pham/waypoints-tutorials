@@ -1427,3 +1427,43 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
   SVG points cannot move that many each frame. After changing any engine, run `node tools/check-engines.mjs`.
 - **Explain it to me** (science on the shared board): as for maths, `explainClip` runs a board setup (`query: { code: "@boards.yml#explain" }`) and `explainPicture` draws one (`{ ref: boards.yml#explain-pic, caption: … }`). Pictures need a drawn board (not the key widget); on the science board the picture is a moment 1.8 s after the widget starts, so choose setups that read well early (a jar starts as a gas, a syringe as wax).
 - **Science pathways:** `content/science/index.md` lists Chemistry (built), Biology, Physics and Earth and space.
+
+## 13. Browser authoring, prompts and downloads
+
+Open [Create lessons and courses](https://tutorials.learningwaypoints.com/code/create/) from the tutorials page’s Create menu.
+Choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;
+it does not rewrite an existing lesson. The ordinary **Add lesson** button uses the selected settings once you change them.
+Maths, science, coding, design, inquiry and reading structures use the existing `language`, `shape` and step schema.
+A subject is an authoring preference, not a new lesson metadata field.
+
+**Review prompt** and **Copy lesson prompt** include the topic, audience, goal, a matching starter and the current
+`AUTHORING.md` / `BUILDING.md` guidance. Copying calls no AI service; paste the prompt into your preferred assistant.
+Course mode includes the visible course title, summary and ordered lesson titles, and asks for a plan before writing
+one complete lesson at a time. Review generated content, upload its files (or paste its `lesson.md`), and fix the
+validation messages. A prompt cannot generate videos: preview and record each clip in Create afterwards.
+
+The shared definitions live in `tools/playground-registry.mjs`. Create’s parent-side adapters are in
+`create/playground-adapters.mjs`; they reuse the real playgrounds without moving their source folders or changing
+production clip hashing. Turtle, Python, HTML, DOM, p5.js, shared boards and science boards support local control
+preview. `expect` failures and runtime errors stop preview. `run: true` reveals the app; click its Run control to
+execute code. HTML updates live. DOM/p5 report ready once the page/sketch starts, rather than waiting for an
+interactive program to end.
+
+Cross-origin MakeCode, play-only microStudio, key-driven interactions, canvas coordinates and interactions inside
+sandboxed previews use **manual tab recording**. The recorder labels these clips and does not claim an automated
+preview passed. Follow the listed instructions in the embedded playground while recording; select a step to show
+its caption. External editors require their service to load. Arbitrary lesson servers (such as Gradio apps) and the
+repository’s generated MakeCode explain stage still need the production recorder. Browser preview does not provide
+the production pointer animation, typing animation or voice synthesis; use a microphone for narration.
+
+Record WebM in a browser supporting tab capture and MediaRecorder (CI tests full Chrome). Choose **This Tab**, preview
+or interact manually, stop, then **Use recording in lesson**. Changed source invalidates its recordings. **Download
+lesson + videos** and **Download course + videos** create ZIP packages with HTML pages, editable source and current
+recordings; missing clips remain labelled placeholders. Import a package to continue editing, reorder lessons and use
+Previous/Next to run the course. This is a flat ordered course workspace, not a repository course/unit/teacher-resource
+builder. Draft links carry one lesson’s source only, without videos. Packages are shareable files, not hosted links.
+
+Text, recorded videos, maths notation and worked examples work offline after extracting the package. Maths packages
+include their fonts and, when used, the form/working check engine. Interactive playgrounds still need the tutorials
+site; MakeCode also needs its external service. Publishing to the public catalogue remains the repository’s review,
+build and publish workflow. Browser drafts/recordings stay in that browser until exported; download packages to keep them.
