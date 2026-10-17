@@ -39,11 +39,14 @@ tasks:
         - ["Making the handout look neat", "Could hand it over, then check"]
         - ["Getting a list of objections people might raise", "Could hand it over, then check", "You still have to judge which ones are good, and answer them yourself."]
   - check:
-      type: question
-      q: "Now your goal changes to: practise your spelling. Which job moves into 'keep it'?"
-      options: ["Checking the spelling", "Making the handout look neat", "Getting a list of objections"]
-      answer: 0
-      feedback: [null, "Neatness still isn't spelling practice.", "Objections aren't spelling practice either."]
+      type: sort
+      q: "Same paragraph, new goal: practise your spelling. Keep each job, or hand it over and check it?"
+      options: ["Keep it: it's the skill I'm learning", "Could hand it over, then check"]
+      items:
+        - ["Checking the spelling", "Keep it: it's the skill I'm learning", "Now spelling is the skill, so a tool that fixes it for you skips the practice."]
+        - ["Finding the words you often spell wrong in your draft", "Keep it: it's the skill I'm learning"]
+        - ["Making the handout look neat", "Could hand it over, then check"]
+        - ["Getting a list of objections people might raise", "Could hand it over, then check", "Not today's skill. If you use them, you still judge them yourself."]
 ```
 
 You are writing a short persuasive paragraph: *Our school should have more outdoor lessons.* There are many jobs in this task. Some of them are the skill you are learning. Some are not.
@@ -124,12 +127,32 @@ Write a better rule that starts "Hand it over when…, but keep it when…". The
 
 ```step
 stage: info
-check:
-  type: question
-  q: "A student handed some jobs to AI while learning to write arguments. What best shows whether that helped them learn?"
-  options: ["Whether they can now write a strong argument on a new topic themselves", "How fast they finished", "How many messages they sent to the AI"]
-  answer: 0
-  feedback: [null, "Fast work can mean the AI did the thinking.", "Lots of messages could mean anything."]
+tasks:
+  - check:
+      type: question
+      q: "A student handed some jobs to AI while learning to write arguments. What best shows whether that helped them learn?"
+      options: ["Whether they can now write a strong argument on a new topic themselves", "How fast they finished", "How many messages they sent to the AI"]
+      answer: 0
+      feedback: [null, "Fast work can mean the AI did the thinking.", "Lots of messages could mean anything."]
+  - check:
+      type: reasoning
+      q: "You are learning to write persuasive arguments. Your paragraph is due tomorrow and you are tired. An AI offers to write a first draft for you to 'improve'. What do you do, and why?"
+      placeholder: "I would … because …"
+      models:
+        - title: "A strong answer"
+          text: "I would say no to the full draft, because choosing my argument and my reasons is the skill I'm learning. I could write a quick rough version myself, then ask for one hint or a list of objections, and check them. If I'm really out of time, I'd tell my teacher rather than hand in the AI's thinking."
+        - title: "A different view that also works"
+          text: "I might read an AI draft as an example, the way a beginner uses a worked example. Then I'd close it and write my own, with a different reason. That only helps if I really write my own and can explain it without the draft."
+      criteria: ["I named which thinking is the skill I'm learning.", "I said what I would keep, and what, if anything, I would hand over.", "I said how my work would still show my own thinking."]
+      explain: "Keep the thinking that is the skill. Help on the edges can be fine, as long as the work still shows what you can do."
 ```
+
+### What would show it helped?
+
+Think about what the student can do afterwards.
+
+### Your choice
+
+A real dilemma. More than one answer can be good.
 
 **Next lesson:** if some help is a good idea, why assume AI is the best way to give it?

@@ -116,18 +116,36 @@ Then plan a better check for one student. What would you look at today, next wee
 
 ```step
 stage: info
-check:
-  type: sort
-  q: "What does each piece of evidence mainly show?"
-  options: ["What you can do with help", "Whether you can use it on something new", "Whether you still know it later"]
-  items:
-    - ["You get the answer right while looking at the worked example", "What you can do with help"]
-    - ["You solve a different fractions question without help", "Whether you can use it on something new"]
-    - ["You answer a fractions question in a quiz three weeks later", "Whether you still know it later"]
-    - ["An AI tutor walks you through five hard problems and you get them all right", "What you can do with help"]
-    - ["You explain the method to a friend using your own example", "Whether you can use it on something new", "Making up your own example means using the idea in a new way."]
+tasks:
+  - check:
+      type: sort
+      q: "What does each piece of evidence mainly show?"
+      options: ["What you can do with help", "Whether you can use it on something new", "Whether you still know it later"]
+      items:
+        - ["You get the answer right while looking at the worked example", "What you can do with help"]
+        - ["You solve a different fractions question without help", "Whether you can use it on something new"]
+        - ["You answer a fractions question in a quiz three weeks later", "Whether you still know it later"]
+        - ["An AI tutor walks you through five hard problems and you get them all right", "What you can do with help"]
+        - ["You explain the method to a friend using your own example", "Whether you can use it on something new", "Making up your own example means using the idea in a new way."]
+  - check:
+      type: reasoning
+      q: "Someone says: 'My AI tutor helped me finish five hard problems, so I definitely understand the topic.' Write one thing that is true, one thing that goes too far, and one way to check."
+      placeholder: "True: … Goes too far: … To check: …"
+      models:
+        - title: "A strong answer"
+          text: "True: they finished five hard problems with the tutor, so they can do them with help. Goes too far: 'definitely understand', because we haven't seen them do one alone. To check: try a new problem without the tutor, and another one in a week."
+        - title: "A different view that also works"
+          text: "True: working through five problems with good hints may have taught them a lot. Goes too far: the word 'definitely'. To check: explain one problem to a friend in their own words, then make up a similar one and solve it."
+      criteria: ["I said what the five problems do show.", "I named the part of the claim that goes too far.", "I gave a check without the tutor: a new question, or a later one."]
+      explain: "Doing well with help is real, but it is not the same as doing it alone, or later."
 ```
 
-Someone says: "My AI tutor helped me finish five hard problems, so I definitely understand the topic." Write one thing that is true, one thing that goes too far, and one way to check.
+### Sort the evidence
+
+What does each piece of evidence mainly show?
+
+### Five hard problems
+
+Someone is sure they understand. How much of their claim is fair?
 
 **Next lesson:** if we can measure what someone can do alone, is that the only kind of learning that matters?

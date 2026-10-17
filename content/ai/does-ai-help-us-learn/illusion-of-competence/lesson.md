@@ -92,7 +92,14 @@ Ravi checked once. What can one check tell him?
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I used the study to argue a point, and named one limit of the study for students like me." }
+tasks:
+  - check:
+      type: question
+      q: "What does the Fernandes study support most directly?"
+      options: ["Adults solving logic puzzles with AI did better, but thought they had done even better than they had", "Using AI makes everyone worse at learning", "Students should never use AI tutors"]
+      answer: 0
+      feedback: [null, "The study was about adults solving puzzles. It didn't test learning over time.", "The study didn't test students or AI tutors."]
+  - check: { type: reflect, text: "I used the study to argue a point, and named one limit of the study for students like me." }
 ```
 
 In a [2026 study by Fernandes and colleagues](https://doi.org/10.1016/j.chb.2025.108779), adults used AI to solve logic puzzles. They did better than people usually do without AI. But they **thought they had done even better than they had**. The studies had 246 and 452 adults. They solved puzzles, not a school course, and the study didn't test what they remembered weeks later.
@@ -106,18 +113,29 @@ Could both be right? Would it help if the tool made you test yourself? Would the
 
 **Inquiry record (optional):** note one time feeling sure helped you, one time it misled you, and one way to check.
 
-## Evaluate: what does the study support?
+### What the study found
+
+Read the study description, then check what it supports.
+
+### Two claims
+
+Discuss the two claims above with a partner.
+
+## Evaluate: is feeling sure enough?
 
 ```step
 stage: info
 check:
-  type: question
-  q: "What does the Fernandes study support most directly?"
-  options: ["Adults solving logic puzzles with AI did better, but thought they had done even better than they had", "Using AI makes everyone worse at learning", "Students should never use AI tutors"]
-  answer: 0
-  feedback: [null, "The study was about adults solving puzzles. It didn't test learning over time.", "The study didn't test students or AI tutors."]
+  type: reasoning
+  q: "A student says: 'I checked the AI explanation and it made sense, so I don't need to practise.' What would you suggest they do to check? What would that still not prove?"
+  placeholder: "To check, they could … That still wouldn't prove …"
+  models:
+    - title: "A strong answer"
+      text: "Close the explanation and try a new question on the same idea. Say how sure you are before you check. If you get it right, that's a good sign, but it doesn't prove you will remember it next week, so try another one later."
+    - title: "A different view that also works"
+      text: "Explain it to a friend in your own words, without looking. Where you get stuck shows what to practise. Even a good explanation today doesn't prove you can use the idea on a harder question."
+  criteria: ["I suggested a check without the explanation in front of them.", "I said why 'it made sense' is not enough.", "I said what the check still wouldn't prove."]
+  explain: "Feeling that something makes sense is a guess. A try without help checks the guess, and a later try checks whether it lasts."
 ```
-
-A student says: "I checked the AI explanation and it made sense, so I don't need to practise." What would you suggest they do to check? What would that still not prove?
 
 **Next lesson:** if confidence and test scores can both mislead, how would you design a better study of AI and learning?

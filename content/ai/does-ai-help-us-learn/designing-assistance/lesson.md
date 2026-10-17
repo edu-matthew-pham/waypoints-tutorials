@@ -125,11 +125,13 @@ Who should decide how much help to give: the **student**, the **teacher**, or **
 ```step
 stage: info
 check:
-  type: question
-  q: "Mei already writes good paragraphs. Which tutor design probably suits her best?"
-  options: ["B: try first, with hints", "A: show a model first", "C, starting again from a full model"]
-  answer: 0
-  feedback: [null, "A full model helps beginners most. Mei already knows what a good paragraph looks like.", "She doesn't need the full model again."]
+  type: match
+  q: "Which tutor design probably suits each learner best?"
+  pairs:
+    - ["Dev has never seen a persuasive paragraph", "A: show a model first"]
+    - ["Mei already writes good paragraphs", "B: try first, with hints"]
+    - ["Sam has studied one model, but can't yet write one alone", "C: less help each time"]
+  explain: "A model first helps a beginner see what good looks like. Someone who already writes well gains more from trying first. Help that shrinks moves a learner from the model to working alone."
 ```
 
 **Unit question:** when should you keep the thinking, choose a tool, or ask for help?

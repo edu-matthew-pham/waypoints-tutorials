@@ -93,10 +93,14 @@ Choose something you are currently learning. Write three possible AI requests: *
 ```step
 stage: info
 check:
-  type: question
-  q: "When is a completed worked example useful for learning?"
-  options: ["Never; examples stop all learning", "When it helps you understand a method and you then practise independently", "Only when you can copy it directly"]
-  answer: 1
+  type: match
+  q: "You are learning to add fractions. Match each moment to the help that suits it best."
+  pairs:
+    - ["You have never seen the method and don't know where to start", "A worked example, then a new question to try alone"]
+    - ["You are halfway through and stuck on one step", "One hint, then try the next step yourself"]
+    - ["You have finished and want to know if it is right", "Feedback on your attempt"]
+    - ["You think you have got it", "A new question to try without help"]
+  explain: "The right help depends on where you are. A worked example suits the very start; a hint suits being stuck; feedback suits a finished try; a new question shows whether you can do it alone."
 ```
 
 Without the board, explain the difference between *completing a task* and *learning to complete that kind of task*. Include one example of appropriate assistance.

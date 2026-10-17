@@ -122,12 +122,32 @@ Design one task for this unit that **allows AI** and still shows what the studen
 
 ```step
 stage: info
-check:
-  type: question
-  q: "A teacher wants to know if students can explain the water cycle without help. Which evidence fits best?"
-  options: ["Each student explains it out loud, without notes", "A poster made with AI images and text", "A class vote on whether they understand it"]
-  answer: 0
-  feedback: [null, "A poster could show design skills, but not who did the explaining.", "A vote shows how sure people feel, not what they can explain."]
+tasks:
+  - check:
+      type: question
+      q: "A teacher wants to know if students can explain the water cycle without help. Which evidence fits best?"
+      options: ["Each student explains it out loud, without notes", "A poster made with AI images and text", "A class vote on whether they understand it"]
+      answer: 0
+      feedback: [null, "A poster could show design skills, but not who did the explaining.", "A vote shows how sure people feel, not what they can explain."]
+  - check:
+      type: reasoning
+      q: "Your teacher says you may use AI for your science project, as long as you can show what you learned. Besides the finished project, what would you hand in or do, and why?"
+      placeholder: "I would also … because it shows …"
+      models:
+        - title: "A strong answer"
+          text: "I'd keep a short log: what I asked the AI, what it suggested, and what I kept or changed, and why. I'd also be ready to explain one part out loud without notes. The log shows how I used the tool; explaining shows what I understand."
+        - title: "A different view that also works"
+          text: "I'd hand in my first rough draft, written before I used any AI, next to the final one, with a few lines on what changed and why. The difference between them shows what I did and what I learned."
+      criteria: ["I said what my extra evidence would show.", "It shows my own thinking, not only the finished work.", "It fits what the project is meant to show."]
+      explain: "A finished project shows what was made. Evidence of your own decisions and explanations shows what you learned."
 ```
+
+### The water cycle
+
+Which evidence fits the goal?
+
+### Your own project
+
+How could you show what you learned?
 
 **Next lesson:** if different goals need different evidence, who decides which goals matter most?

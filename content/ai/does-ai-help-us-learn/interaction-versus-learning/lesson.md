@@ -126,12 +126,30 @@ Think of a learning app or game you have used. What does it make you do: click, 
 
 ```step
 stage: info
-check:
-  type: question
-  q: "An app says: 'Students using our app answer 500 questions a week!' What does that show?"
-  options: ["That students are busy in the app, not what they learned", "That the app teaches better than a worked example", "That students will remember it next month"]
-  answer: 0
-  feedback: [null, "Busy isn't the same as learning. You'd need evidence like a new question or a later check.", "Number of answers doesn't tell us that."]
+tasks:
+  - check:
+      type: question
+      q: "An app says: 'Students using our app answer 500 questions a week!' What does that show?"
+      options: ["That students are busy in the app, not what they learned", "That the app teaches better than a worked example", "That students will remember it next month"]
+      answer: 0
+      feedback: [null, "Busy isn't the same as learning. You'd need evidence like a new question or a later check.", "Number of answers doesn't tell us that."]
+  - check:
+      type: match
+      q: "Which kind of help (A to D) suits each learner best?"
+      pairs:
+        - ["Already understands why, but needs to get quicker", "A: the quiz game"]
+        - ["Wants to see why the rule works, not just the rule", "B: the number pattern"]
+        - ["Keeps making the same sign slip", "C: the computer tutorial"]
+        - ["Has a question nobody prepared an answer for", "D: the chat"]
+      explain: "Each kind of help makes the learner do something different. Quick practice builds speed, a pattern shows why, a prepared message fixes a known slip, and a chat can answer a new question (but its answer can be wrong)."
 ```
+
+### 500 questions
+
+What does a big number of answers show?
+
+### Choose the help
+
+Look back at A to D. Which suits each learner?
 
 **Next lesson:** if *how* help is given matters, how should we design it?

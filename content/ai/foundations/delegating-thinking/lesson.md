@@ -92,14 +92,36 @@ Choose an authentic school task. Divide it into **thinking you need to learn**, 
 
 ```step
 stage: info
-check:
-  type: question
-  q: "When should you decide what AI will do for you?"
-  options: ["Only after you copy the final output", "By considering your learning goal, the task conditions and the need to check results", "Always ask AI to do as much as possible"]
-  answer: 1
+tasks:
+  - check:
+      type: sort
+      q: "Your goal: learn to write science explanations. What would you do with each part of your seedling report?"
+      options: ["Do it myself", "Ask for a hint or feedback", "Hand over, then check"]
+      items:
+        - ["Write why the 8-hour seedlings grew taller", "Do it myself", "Writing explanations is the skill you are learning."]
+        - ["Turn your checked measurements into a neat table", "Hand over, then check", "Tables are not today's skill. Check that no number changed."]
+        - ["You are not sure your explanation makes sense", "Ask for a hint or feedback"]
+        - ["Check the spelling", "Hand over, then check"]
+  - check:
+      type: sort
+      q: "Same report, new goal: learn to make tables from data. What would you do with each part now?"
+      options: ["Do it myself", "Ask for a hint or feedback", "Hand over, then check"]
+      items:
+        - ["Write why the 8-hour seedlings grew taller", "Do it myself", "It is still your report, so the thinking about your results stays yours."]
+        - ["Turn your checked measurements into a neat table", "Do it myself", "Now tables are the skill you are learning, so you keep this part."]
+        - ["You are not sure which columns your table needs", "Ask for a hint or feedback"]
+        - ["Check the spelling", "Hand over, then check"]
 ```
 
 Without the board, describe one situation where delegation helps and another where it might undermine a specific learning goal. Explain the difference.
+
+### Goal 1: learning to explain
+
+Sort each part of the report. Which parts are the skill you are practising?
+
+### Goal 2: learning to make tables
+
+The task is the same. What moved, and what stayed yours?
 
 ## Learning with AI: take responsibility for the outcome
 

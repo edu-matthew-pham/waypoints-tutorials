@@ -92,10 +92,16 @@ Create a short table of fictional observations (for example, time spent practisi
 ```step
 stage: info
 check:
-  type: question
-  q: "An AI gives a confident answer and cites no checkable evidence. What should you do for an important claim?"
-  options: ["Accept the confidence as proof", "Compare the claim with an independent reliable source or relevant data", "Ask it to repeat the claim more forcefully"]
-  answer: 1
+  type: reasoning
+  q: "You are making a poster for class. An AI gives you a fact for it, with a date and a name. It sounds very sure, and there is no source. The poster is due tomorrow. What do you do, and why?"
+  placeholder: "For example: I would check it by … because …"
+  models:
+    - title: "A strong answer"
+      text: "I would look for the fact in one source I trust, such as our textbook or a library website. If I can't find it there in time, I would leave it out, or write that I couldn't check it. Sounding sure is not evidence, and asking the same AI again is not checking."
+    - title: "A different view that also works"
+      text: "It's only one fact on a poster, so I would ask my teacher or swap it for a fact from our class notes, which I know I can trust. That is quicker than checking a claim from nowhere, and I still don't use anything I can't check."
+  criteria: ["I said what I would check it against.", "I said why sounding sure is not enough.", "I said what I would do if I couldn't check it in time."]
+  explain: "Confidence is not evidence. For a claim that matters, check it against a source you trust, or don't rely on it."
 ```
 
 Without using the board, explain why *supported by these observations* is different from *always true*. Identify one way to verify a claim independently.
