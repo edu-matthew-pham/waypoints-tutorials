@@ -34,7 +34,7 @@ export function setupEntry({hasSaved, addFiles, example}) {
     if ($('startPromptText').value) return;
     $('copyStartPrompt').disabled = true;
     try {
-      const response = await fetch(new URL('start-prompt.md', import.meta.url));
+      const response = await fetch(new URL('start-prompt.md', import.meta.url), {cache:'no-cache'});
       if (!response.ok) throw Error('The starter prompt could not be loaded. Please try again.');
       $('startPromptText').value = await response.text();
       $('startCopyStatus').textContent = '';
