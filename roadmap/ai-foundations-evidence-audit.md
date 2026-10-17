@@ -6,7 +6,7 @@
 
 | Source | Kind | Appropriate use | Caution |
 |---|---|---|---|
-| Ben Swift (2026), [LLMs Unplugged](https://doi.org/10.1145/3786228.3786237) | Peer-reviewed computing-education conference paper | Supports a hands-on n-gram / weighted-sampling approach and reports workshop experience | Does not establish that our three-lesson sequence improves learning |
+| Ben Swift (2025), [LLMs Unplugged: Understand AI by building it yourself](https://doi.org/10.5281/zenodo.17403824), ANU School of Cybernetics | Teaching resource (ANU research output, website-based; corrected 18 Oct 2026: earlier listed as a peer-reviewed ACM paper, a DOI that could not be found) | Supports a hands-on n-gram / weighted-sampling approach and reports workshop experience | Does not establish that our three-lesson sequence improves learning |
 | [LLMs Unplugged resources](https://www.llmsunplugged.org/) | Open teaching materials, CC BY-SA 4.0 | Inspiration for pen-paper-dice modelling | Cite/attribute; verify reuse obligations before copying or adapting protected material. Our examples are newly authored |
 | [UNESCO AI Competency Framework for Students](https://www.unesco.org/en/articles/ai-competency-framework-students) (2024) | International competency framework | Coverage check: human-centred mindset, ethics, techniques/applications, system design; Understand/Apply/Create | Not evidence that a particular activity is effective |
 | [AI4K12](https://ai4k12.org/gradeband-progression-charts/) and [Touretzky et al. (2023)](https://doi.org/10.1007/s40593-022-00314-1) | K-12 guidance plus peer-reviewed article | Data, learning, representation and natural interaction; age-band planning | US framework; local curriculum mapping still needed |
@@ -25,7 +25,7 @@
 - **Gap:** add an inspectable corpus/word-transition board later. Evaluate whether this introductory activity is too trivial for older learners.
 
 ### 2. Build a text generator with dice
-- **Grounded:** manual weighted sampling is a valid transparent model and is central to Swift's peer-reviewed LLMs Unplugged work.
+- **Grounded:** manual weighted sampling is a valid transparent model and is central to Swift's LLMs Unplugged work (ANU School of Cybernetics).
 - **Pedagogical choice:** six-sided dice, invented phrase and table are our own examples; do not claim they replicate ANU's original activity.
 - **Accuracy check:** ten rolls can deviate considerably from expected frequencies; this is a feature to discuss.
 - **Gap:** investigate an actual *multi-step* n-gram generator, not only one fixed phrase, to bridge toward text generation. Preserve model limitations.
