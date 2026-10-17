@@ -1500,6 +1500,19 @@ need the tutorials site; MakeCode also needs its external service. Publishing to
 the repository's review, build and publish workflow. Browser drafts and videos stay in that browser until
 downloaded; Create asks the browser to keep them and shows how much space they use.
 
+**Design decisions.** The starter and lesson prompts ask the teacher five things before drafting: the one idea, the
+misconception to tackle, the opening move, what the checks should catch, and what any video is for. The AI asks first
+and offers two or three options with reasons only if the teacher is unsure (`create/design-decisions.mjs`). Answers go in
+the teacher block as `design:` (`idea`, `misconception`, `opening`, `checks`, `video`); Create shows them under
+**Your design decisions** beside the editor, each with a "Does the lesson do this?" tick (kept in the browser, not
+marked). Adding clip instructions asks what the video is for (optional). **Video link** adds a step `video:`.
+
+**Share** (one row): **Download lesson** / **Download course** (ZIPs with videos), **Copy edit link** (text and clip
+instructions only, for a colleague to edit and re-record), **Copy student link** (`view.html#l=…`: the lesson page
+without the editor; recorded videos are not in the link, `video:` links are), **Download videos** (the lesson's current
+videos and captions as plain `.webm` and `.vtt` files for a learning platform), and **Request publishing** (downloads
+the lesson, or the course when there is more than one lesson, and opens the request form to attach it).
+
 **Board activity picker.** When a board playground is selected, Create lists activities from both the shared board
 and particle simulation families. Search by name/topic and filter by family or subject; science includes shared
 boards such as forces, food webs and circuits. Select a card, inspect its setup/settings and use **Preview activity**

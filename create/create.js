@@ -11,6 +11,7 @@ import { setupAuthoring } from './authoring.mjs';
 import { setupWorkspace } from './workspace.mjs';
 import { setupEntry } from './entry.mjs';
 import { REQUEST_FORM_URL } from './config.js';
+import { DESIGN } from './design-decisions.mjs';
 
 const EXAMPLE = {
   'lesson.md': `---
@@ -195,6 +196,7 @@ function checkCurrentLesson() {
   return checked;
 }
 function render() {
+  renderDesign();
   const {lesson,result}=checkCurrentLesson();
   if (!result.valid && !lesson) return;
   authoring?.sync(lesson,workspace?.lessonId());
@@ -288,6 +290,8 @@ $('addclip').onclick = () => withStep(st => {
     text=text.replace(match[0],'---\n'+String(metadata)+'---');
   }
   setText(text,'Watch what happens');
+  const purpose = prompt(DESIGN.find((d) => d.key === 'video').ask + ' (optional)', readDesign().video || '');
+  if (purpose !== null && purpose.trim()) writeDesign('video', purpose);
 });
 $('addtick').onclick = () => addCheck(TICK, '…');
 $('addnum').onclick = () => addCheck(NUMBER, 'Your question?');
@@ -364,20 +368,71 @@ $('pick').onclick = async () => {
 $('share').onclick = async () => {
   const url = `${location.origin}${location.pathname}#l=${await encode(files)}`;
   try { await navigator.clipboard.writeText(url); $('share').textContent = 'Link copied'; } catch { prompt('Copy this link', url); }
-  setTimeout(() => ($('share').textContent = 'Copy draft link (no videos)'), 1500);
+  setTimeout(() => ($('share').textContent = 'Copy edit link (text only)'), 1500);
 };
 
 // Request publishing: copy the share link (the form asks for it), then open the form.
+// Student link: the lesson as a plain student page (view.html), carried in the link like the edit link.
+$('studentLink').onclick = async () => {
+  const url = `${location.origin}${location.pathname.replace(/[^/]*$/, '')}view.html#l=${await encode(files)}`;
+  try { await navigator.clipboard.writeText(url); $('studentLink').textContent = 'Student link copied'; } catch { prompt('Copy this student link', url); }
+  setTimeout(() => ($('studentLink').textContent = 'Copy student link'), 1500);
+  $('packageStatus').textContent = 'Student link copied. It opens this lesson without the editor. Videos recorded here are not in the link: post them with "Download videos", or add a video link to the step.';
+};
+
+// Request publishing: send the lesson or course ZIP (with its videos as drafts) through the form.
 if (REQUEST_FORM_URL) {
   $('request').hidden = false;
   $('request').onclick = async () => {
-    const url = `${location.origin}${location.pathname}#l=${await encode(files)}`;
-    let copied = true;
-    try { await navigator.clipboard.writeText(url); } catch { copied = false; prompt('Copy this lesson link, then paste it into the form', url); }
-    if (copied) alert('Your lesson link is copied. Paste it into the form on the next page.');
+    const course = document.querySelectorAll('#courseLesson option').length > 1;
+    if (!confirm(`Request publishing: Create will download ${course ? 'the course' : 'this lesson'} as a ZIP (with its videos as drafts), then open the request form. Attach the ZIP in the form.`)) return;
+    $(course ? 'downloadCourse' : 'downloadPackage').click();
+    try { await navigator.clipboard.writeText(`${location.origin}${location.pathname}#l=${await encode(files)}`); } catch { /* the ZIP is what matters */ }
     window.open(REQUEST_FORM_URL, '_blank', 'noopener');
+    const note = 'The ZIP is downloading and the request form is open in a new tab: attach the ZIP there. (This lesson\'s edit link is also on your clipboard.)';
+    $('packageStatus').textContent = note; setTimeout(() => { $('packageStatus').textContent = note; }, 2500); // after the download's own message
   };
 }
+
+// ---------- design decisions (kept in the teacher block as design:) ----------
+const TEACHER_RE = /^```teacher[ \t]*\n([\s\S]*?)\n```[ \t]*$/m;
+function readDesign() {
+  const md = files['lesson.md'] || '', m = md.match(TEACHER_RE);
+  try { return ((m ? YAML.parse(m[1]) : files['teacher.yml'] !== undefined ? YAML.parse(files['teacher.yml']) : null) || {}).design || {}; } catch { return {}; }
+}
+function writeDesign(key, value) {
+  const md = files['lesson.md'] || '', m = md.match(TEACHER_RE), v = String(value || '').trim();
+  const edit = (text) => { const doc = YAML.parseDocument(text || ''); if (!doc.contents) doc.contents = doc.createNode({}); if (v) doc.setIn(['design', key], v); else doc.deleteIn(['design', key]); if (doc.getIn(['design']) && !doc.getIn(['design']).items.length) doc.delete('design'); return String(doc).trimEnd(); };
+  if (m) files['lesson.md'] = md.replace(m[0], '```teacher\n' + edit(m[1]) + '\n```');
+  else if (files['teacher.yml'] !== undefined) files['teacher.yml'] = edit(files['teacher.yml']) + '\n';
+  else if (v) files['lesson.md'] = md.replace(/\s*$/, '\n\n```teacher\n' + edit('') + '\n```\n');
+  save(); if (current === 'lesson.md' || current === 'teacher.yml') sync(); schedule();
+}
+const REVIEW = 'wp-create-review';
+const ticks = () => { try { return JSON.parse(localStorage.getItem(REVIEW)) || {}; } catch { return {}; } };
+function renderDesign() {
+  if ($('designList').contains(document.activeElement)) return; // do not rebuild under the teacher's cursor
+  const d = readDesign(), id = workspace?.lessonId() || 'draft', t = ticks()[id] || {};
+  $('designList').replaceChildren(...DESIGN.map((x) => {
+    const row = document.createElement('div'); row.className = 'design-row';
+    const label = document.createElement('label'), area = document.createElement('textarea');
+    label.textContent = x.label; area.value = d[x.key] || ''; area.placeholder = x.ask; area.setAttribute('aria-label', x.ask); area.rows = 2;
+    area.onchange = () => writeDesign(x.key, area.value); label.append(area);
+    const tick = document.createElement('label'), box = document.createElement('input'); tick.className = 'dcheck'; box.type = 'checkbox'; box.checked = !!t[x.key];
+    box.onchange = () => { const all = ticks(); all[id] = { ...(all[id] || {}), [x.key]: box.checked }; try { localStorage.setItem(REVIEW, JSON.stringify(all)); } catch { /* per-browser only */ } };
+    tick.append(box, document.createTextNode(x.check)); row.append(label, tick); return row;
+  }));
+}
+
+// Video link: a video hosted elsewhere, shown in the step.
+$('addvideo').onclick = () => withStep((st) => {
+  if (stepKeyLines(st).some((l) => /^video:/.test(l))) { alert('This step already has a video link. Edit its video: line.'); return; }
+  const url = (prompt('Video address (YouTube, Vimeo or a video file, starting https://)') || '').trim(); if (!url) return;
+  if (!/^https:\/\//.test(url)) { alert('Use an address that starts with https://'); return; }
+  const caption = (prompt('A short caption (optional)') || '').trim();
+  st.lines.splice(st.close, 0, `video: { url: ${JSON.stringify(url)}${caption ? `, caption: ${JSON.stringify(caption)}` : ''} }`);
+  setText(st.lines.join('\n'), url);
+});
 
 // ---------- start ----------
 files = (await load()) || { ...EXAMPLE };

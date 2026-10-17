@@ -844,7 +844,14 @@ function validateClassPlan(lesson, err) {
 function validateTeacher(lesson, snip, err) {
   const t = lesson.teacher, w = 'teacher notes';
   if (typeof t !== 'object' || Array.isArray(t)) return err(w, 'must be a mapping of fields');
-  const allowed = [...TEACHER_TEXT, 'time', 'goals', 'running', 'stuck', 'exit', 'solutions', 'sources'];
+  const allowed = [...TEACHER_TEXT, 'time', 'goals', 'running', 'stuck', 'exit', 'solutions', 'sources', 'design'];
+  // design: the teacher's own design decisions (Create asks for them): the one idea, the misconception, the opening move,
+  // what the checks should catch, and what any video is for. Shown in Create's review beside the lesson.
+  if (t.design !== undefined) {
+    const D = ['idea', 'misconception', 'opening', 'checks', 'video'];
+    if (!t.design || typeof t.design !== 'object' || Array.isArray(t.design)) err(w, `design must be a mapping of ${D.join(', ')}`);
+    else for (const [k, v] of Object.entries(t.design)) { if (!D.includes(k)) err(w, `design: unknown field "${k}" (use ${D.join(', ')})`); else if (typeof v !== 'string') err(w, `design: ${k} must be text`); }
+  }
   for (const k of Object.keys(t)) if (!allowed.includes(k)) err(w, `unknown field "${k}" (use ${allowed.join(', ')})`);
   for (const k of TEACHER_TEXT) if (t[k] !== undefined && typeof t[k] !== 'string') err(w, `${k} must be text`);
   if (t.time !== undefined && !(Number.isInteger(t.time) && t.time > 0)) err(w, 'time must be the lesson length in minutes, such as 50');

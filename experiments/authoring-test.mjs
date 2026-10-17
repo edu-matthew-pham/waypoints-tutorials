@@ -16,3 +16,8 @@ for(const p of [...PLAYGROUND_REGISTRY,{id:'none'}])for(const profile of Object.
 }
 assert.deepEqual(PLAYGROUNDS.maths,PLAYGROUNDS.board);
 console.log('All subject profiles, starter schemas, playground inference and prompt examples passed');
+// The starter prompt and the lesson prompt carry the same design decisions (create/design-decisions.mjs).
+{const {DECISIONS_TEXT,DESIGN}=await import('../create/design-decisions.mjs');const {readFileSync}=await import('node:fs');
+assert.ok(readFileSync(new URL('../create/start-prompt.md',import.meta.url),'utf8').includes(DECISIONS_TEXT),'start-prompt.md carries the design decisions');
+assert.ok(authoringPrompt({title:'T',profile:Object.keys(LESSON_PROFILES)[0],playgroundId:'turtle',subject:'code',audience:'',goal:'',scope:'lesson'},{common:'',maths:'',science:'',design:''}).includes(DECISIONS_TEXT),'lesson prompt carries the design decisions');
+assert.equal(DESIGN.length,5);console.log('Design decisions are in both prompts');}

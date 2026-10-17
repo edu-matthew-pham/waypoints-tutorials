@@ -252,6 +252,21 @@ export async function setupWorkspace(controller) {
     result.entries.push([dir + '/README.txt', README('lesson')]);
     download(await zip(result.entries), `${dir}-lesson.zip`); notice('Lesson downloaded.' + missingNote(result.missing));
   });
+  // The lesson's current videos and captions as plain files (to post on a learning platform), like waypoints-audio's MP3s.
+  $('downloadVideos').onclick = report(async () => {
+    await flush(); const record = await readDraft(workspace.active), lesson = parsed(record.files), base = slug(lesson.title), entries = [];
+    allSteps(lesson).forEach((s, i) => { s.n = i + 1; });
+    for (const step of allSteps(lesson).filter((s) => s.config.clip)) {
+      const clip = record.clips?.[step.id];
+      if (!(await clipIsCurrent(record.files, step.id, clip))) continue;
+      const name = `${base}-${step.id === 'explain' ? 'explain' : String(step.n).padStart(2, '0') + '-' + slug(step.title)}`;
+      entries.push([`${base}-videos/${name}.webm`, clip.blob]);
+      if (clip.vtt) entries.push([`${base}-videos/${name}.vtt`, clip.vtt]);
+    }
+    if (!entries.length) throw Error('This lesson has no recorded videos yet. Record them under “Videos for this lesson”.');
+    entries.push([`${base}-videos/README.txt`, `Videos from the lesson "${lesson.title}", recorded in Create.\nEach .webm plays in current browsers (Chrome, Edge, Firefox, Safari 17.4 or later). The .vtt file beside it holds its captions: add it as subtitles where your platform allows.\n`]);
+    download(await zip(entries), `${base}-videos.zip`); notice(`Videos downloaded: ${entries.filter(([n]) => n.endsWith('.webm')).length} video(s) with their captions.`);
+  });
   $('downloadCourse').onclick = report(async () => {
     await flush();
     const root = slug(workspace.title), unitIndex = new Map(workspace.units.map((u, i) => [u.id, i]));

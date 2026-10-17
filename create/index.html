@@ -45,8 +45,6 @@
     <label class="btn">Upload files<input id="upload" type="file" multiple hidden></label>
     <label class="btn">Import ZIP<input type="file" id="importPackage" accept=".zip,application/zip" hidden></label>
     <label class="btn">Import folder<input type="file" id="importFolder" webkitdirectory multiple hidden></label>
-    <button id="share" type="button">Copy draft link (no videos)</button>
-    <button id="request" type="button" hidden>Request publishing</button>
   </div>
 </header>
 <section class="workspace authoring" aria-label="Lesson setup and AI prompt">
@@ -70,12 +68,12 @@
   <div class="row"><label>Course title <input id="courseTitle" value="My course"></label><label>Summary <input id="courseSummary" placeholder="What will learners do?"></label></div>
   <div class="row"><label>Unit of this lesson <select id="lessonUnit"></select></label><button id="addUnit" type="button">+ Add unit</button><button id="renameUnit" type="button">Rename unit</button></div>
   <div class="row"><label>Lesson <select id="courseLesson"></select></label><button id="addLesson" type="button">+ Add lesson</button><button id="moveLessonUp" type="button">Move up</button><button id="moveLessonDown" type="button">Move down</button><button id="removeLesson" type="button">Remove lesson</button><button id="previousLesson" type="button">Previous lesson</button><button id="nextLesson" type="button">Next lesson</button></div>
-  <div class="package-actions"><button id="downloadPackage" type="button" class="primary">Download lesson (.zip)</button><button id="downloadCourse" type="button">Download course (.zip)</button></div>
+  <div class="package-actions" role="group" aria-labelledby="shareLabel"><strong id="shareLabel">Share</strong><button id="downloadPackage" type="button" class="primary" title="This lesson with its pages, source files and videos">Download lesson (.zip)</button><button id="downloadCourse" type="button" title="Every lesson, grouped by unit, with videos">Download course (.zip)</button><button id="share" type="button" title="A link to this lesson’s text and clip instructions, for a colleague to edit; videos are not included">Copy edit link (text only)</button><button id="studentLink" type="button" title="A link that opens this lesson as a student page, without the editor; videos recorded here are not included, but video links in steps are">Copy student link</button><button id="downloadVideos" type="button" title="This lesson’s recorded videos and captions as plain files, to post on your learning platform">Download videos</button><button id="request" type="button" hidden>Request publishing</button></div>
   <p id="packageStatus" role="status">Downloads include the lesson pages, their source files and recorded videos, in the same folder layout as the site. Open index.html to view; import the ZIP or folder to keep editing. Playgrounds need internet.</p>
 </section>
 <section class="lesson-videos" aria-label="Lesson recordings"><h2>Videos for this lesson</h2><div class="row"><select id="draftClip" aria-label="Lesson clip"></select><button id="recordClip" type="button">Record video</button><button id="refreshClips" type="button">Check videos again</button></div><p id="videoStatus" role="status"></p></section>
 <p class="hint">Write or paste a <code>lesson.md</code> and its code files. The preview updates as you type, and the playground is live.
-Record videos from the lesson’s clip instructions below, then download the lesson or course with its videos included. “Copy draft link” shares only this lesson’s text and code, without videos.
+Record videos from the lesson’s clip instructions below. Share has: the lesson or course as a ZIP (with videos), an edit link for a colleague (text only), a student link (the lesson page without the editor), the videos as plain files, and a publishing request.
 Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/blob/main/AUTHORING.md">AUTHORING.md</a>.</p>
 <main>
   <section class="editor">
@@ -94,10 +92,12 @@ Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/b
       <button id="addcode" type="button" title="Ticks when the student's code meets rules (Python turtle)">Code rule</button>
       <button id="addtasks" type="button" title="Split this step into sub-pills, each with its own check">Tasks (sub-pills)</button>
       <button id="pick" type="button">Snippets to unlock…</button>
+      <button id="addvideo" type="button" title="Show a video hosted elsewhere (YouTube, Vimeo or a video file) in this step">Video link</button>
     </div>
     <label class="namebar">File name <input id="fname" type="text" spellcheck="false"></label>
     <textarea id="text" spellcheck="false" aria-label="File contents"></textarea>
     <div class="row"><button id="addfile" type="button">+ Add code file</button><button id="addmod" type="button" title="A Python file whose functions become buttons in the playground">+ Add module</button><button id="delfile" type="button">Delete this file</button></div>
+    <section class="design-review" aria-labelledby="designTitle"><h2 id="designTitle">Your design decisions</h2><p class="muted">Your choices for this lesson (kept in its teacher notes as <code>design:</code>). Tick each one when the lesson does it. Nothing here is marked.</p><div id="designList"></div></section>
     <section aria-label="Lesson format checks"><div class="validation-actions"><strong>Lesson format checks</strong><button id="copyValidation" type="button">Copy validation report</button><a href="validator.zip" download>Download validator</a></div><ul id="problems" class="problems" aria-live="polite"></ul><p id="validationStatus" role="status"></p><textarea id="validationText" readonly aria-label="Validation report" hidden></textarea></section>
   </section>
   <section class="preview"><iframe id="preview" title="Lesson preview"></iframe></section>

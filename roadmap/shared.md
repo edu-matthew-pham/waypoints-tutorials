@@ -507,3 +507,10 @@ Principle: Create should involve teachers in the lesson-design decisions rather 
 
 ## Candidate (18 Oct 2026, Matthew): a course for teachers on making tutorials
 A short course for teachers, in the site's own lesson format with Create as its playground, on making a tutorial: likely the four decisions Create now asks about (the one idea, the misconception, the opening move, checks that test understanding), what a video is for, and sharing. Create's options-with-reasons prompts could link to it. **Wait:** design decisions are to be settled after the current Create and AI-course work has played out. Not started.
+
+## Built 18 Oct 2026: Create design decisions and sharing (from the agreed items above)
+- Prompts: `create/design-decisions.mjs` (`DESIGN`, `DECISIONS_TEXT`) in both `start-prompt.md` and the lesson prompt; `experiments/authoring-test.mjs` checks both carry it. Teacher notes accept `design:` (validated in `lesson-core.mjs`; the teacher block is outside video fingerprints, so editing it keeps videos).
+- Create: "Your design decisions" panel (edits write `design:` into the teacher block or `teacher.yml`; ticks in localStorage `wp-create-review`), the video-purpose question after "Clip instructions", a "Video link" helper, one Share row (download lesson/course, edit link, student link, download videos, request publishing).
+- Student link: `create/view.html` + `view.js` render a `#l=` lesson as a plain student page with SafeMarked; the lesson is kept in sessionStorage so step links (which change `#`) survive a refresh. Progress key `shared/<hash of the files>`.
+- Request publishing now downloads the lesson or course ZIP and opens the form. **Matthew:** add a file-upload question to the Google Form (forms.gle/CoRAXJWHnVQ8mXpPA) so the ZIP can be attached.
+- Not done: MP4 recording. Videos stay WebM, which plays in current Chrome, Edge, Firefox and Safari 17.4+; MP4 would need changes to the recorder, the duration fix and the package checks.
