@@ -558,14 +558,14 @@ Vary, Practise, Make).
   (`"3(2x + 4) - x"` or `"3x + 7 = 19"`), optional `form`, `example` (a model solution, one string per line; validate
   checks it passes) and optional `wrong` (planted wrong solutions validate checks are rejected). Marked by Numbas, like
   `form:` (`npm run check-forms` has working cases too).
-- **`reasoning` check** (maths; reasoning students own): a free working box that is never marked (students write
+- **`reasoning` check** (any subject; reasoning students own; maths keeps "Your working" and "model solution", other subjects say "Your thinking" and "model answer", with a neutral placeholder and self-check): a free working box that is never marked (students write
   it their own way: notes and short reasons are fine), then the marked parts, then a model to compare with. Fields:
   `q`; `steps` (the model solution, each `["statement", "reason"]`, Markdown with `$...$`); optional `answer` (the
   final value, marked like an `answer` check; a ° is ignored) with `feedback` pairs; optional `picks`, the one or two
   steps where the misconception bites: `{ step: 1, options: [reasons], answer: 0, feedback: [null, ...] }` (students
   choose that step's reason; a pick's own `q:` replaces the default "Why is <statement>?"); optional `placeholder`
   (the working box's example; the default is an angle one); optional `criteria` (self-check sentences; default: each step says what it finds, each
-  step has a reason, my answer matches the model); `explain`. It needs `answer`, `picks` or both. Check marks the
+  step has a reason, my answer matches the model); `explain`. With neither `answer` nor `picks` it is **unmarked**: the student writes, presses "Compare with a model answer", and sees the models and the self-check (use this where more than one answer is defensible: English, humanities, AI judgement). `models:` adds model answers to compare with, each text or `{ title, text }` (for example "A strong answer", "A different view that also works"); `steps` may then be left out. Check marks the
   answer and picks; when they are right, the student's working and the model show side by side with the self-check
   (ticked by the student, not needed to complete). After three wrong tries, **Show a model solution** reveals the model
   without completing. Working, answer and ticks are kept in the browser (`wp-reasoning`). Write without for a single
@@ -1366,12 +1366,14 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
   worksheets work unchanged: `predict` = **Engage** (one `predict` check, with `actual:`), `run` = **Explore** (a board;
   the compare box shows the prediction), `investigate` = **Explain**, `practise` = **Practise** (when the node's response
   mode is consolidation), `modify` = **Elaborate**, `info` = **Evaluate** (a `reflect` check and a revision summary).
+- **`prompt:`** (step field; the Learning with AI courses): a copyable AI prompt card, text or `{ title, text }`. The page adds a Copy button and "Use an AI tool your school allows, and only if your teacher says you can". Keep the lesson doable without it (put it on an optional step), one prompt per step, and ask students to check the reply with the habit the lesson practised. General lessons keep coach prompts on recap pages only.
+- **`video:`** (step field): a video hosted elsewhere, an `https://` address or `{ url, caption }`. YouTube and Vimeo links become a privacy-friendly embed, `.mp4`/`.webm` files a player, anything else a link. For teacher-made lessons (Create's student links); site lessons use recorded clips.
 - **Width tiers** (any lesson, not only science): `tier: typical` or `tier: wider` on a step marks extra contexts beyond
   the minimum path. The page shows a Minimum / Typical / Wider control; `?width=` in the link sets the floor (a
   teacher's choice), students can widen but not narrow, and the default is typical. Tiered steps' checks are not
   needed to finish the lesson and are left out of course progress. Worksheets wrap them in `:::typical` / `:::wider`.
   Wider means more contexts, never harder content.
-- **`sort` check** (any lesson): `options:` are groups, `items:` are `[text, group]` or `[text, group, why]`; a group can
+- **`sort` check, sort into groups** (any lesson; not ordering, which is `parsons`): `options:` are groups, `items:` are `[text, group]` or `[text, group, why]`; a group can
   be used many times (unlike `match`), and extra groups act as distractors. The why shows once an item is right.
 - **`question` feedback** (any lesson): `feedback:` is one entry per option (text, or `null`), shown when that wrong
   option is chosen. Aim each at the misconception behind the option.

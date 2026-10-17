@@ -431,9 +431,9 @@ function reveal(){box.querySelector('.rs-mine').textContent=ta.value.trim()||'(n
 if((load().done||{})[key])reveal();
 function wrong(t){tries++;bad(t);if(tries>=3)sh.hidden=false}
 sh.addEventListener('click',function(){reveal();msg.className='msg';msg.textContent='Compare, then fix your answer and choices above.'});
-go2.addEventListener('click',function(){if(!ta.value.trim())return bad('Write your working first: your own notes and reasons. This part is not marked.');
+go2.addEventListener('click',function(){if(!ta.value.trim())return bad(mk.maths===false?'Write your thinking first: your own notes and reasons. This part is not marked.':'Write your working first: your own notes and reasons. This part is not marked.');
 if(ai&&mk.answer!==null){var v=ai.value.replace(/\u00b0|degrees?/g,'').trim();if(!v)return bad('Type your answer.');try{var a=WPM.splitAnswer(v).value;if(!WPM.equivalent(a,mk.answer)){for(var i=0;i<mk.feedback.length;i++){try{if(WPM.equivalent(a,String(mk.feedback[i][0])))return wrong(mk.feedback[i][1])}catch(e){}}return wrong('Not quite: check your answer against your working.')}}catch(e){return wrong(e.message)}}
-var fs=box.querySelectorAll('.rs-pick');for(var j=0;j<fs.length;j++){var pk=mk.picks[j],ch=fs[j].querySelector('input:checked');if(!ch)return bad('Choose a reason for each question.');var n=Number(ch.value);if(n!==pk.answer)return wrong('Not that reason. '+(pk.feedback[n]||'Look at where the two angles are.'))}
+var fs=box.querySelectorAll('.rs-pick');for(var j=0;j<fs.length;j++){var pk=mk.picks[j],ch=fs[j].querySelector('input:checked');if(!ch)return bad('Choose a reason for each question.');var n=Number(ch.value);if(n!==pk.answer)return wrong('Not that reason. '+(pk.feedback[n]||(mk.maths===false?'Look at the case again.':'Look at where the two angles are.')))}
 reveal();sh.hidden=true;win();store()})}
 if(ty==='board'){var want=JSON.parse(box.dataset.expect||'{}');
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||(m.kind==='maths'?'board':m.kind)!==(box.dataset.kind==='maths'?'board':box.dataset.kind)||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
@@ -554,19 +554,26 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
     return `<div class="check" ${base} data-start="${esc(String(k.start))}" data-form="${esc(String(k.form || ''))}"><p class="check-q">${tx(k.q)}</p><p class="wk-start">Start from ${tx('$' + String(k.start) + '$')}</p><textarea class="wk-in" rows="5" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Your working, one step per line" placeholder="One step per line"></textarea><ol class="wk-lines" aria-live="polite"></ol><button type="button">Check working</button>${msg}</div>`;
   }
   if (k.type === 'reasoning') {
-    // Free working (not marked), the marked parts, then a model solution and a self-check (handler: ty==='reasoning').
-    const steps = k.steps || [], picks = k.picks || [];
-    const crit = k.criteria || ['Each step says which angle or value it finds.', 'Each step has a reason.', 'My answer matches the model.'];
+    // Free working (not marked), the marked parts (if any), then model answer(s) and a self-check (handler: ty==='reasoning').
+    // Maths keeps its wording; other subjects say "thinking" and "model answer". With no answer and no picks it is unmarked:
+    // the student writes, then compares with the model answers.
+    const m = lesson.language === 'maths';
+    const steps = k.steps || [], picks = k.picks || [], marked = k.answer !== undefined || picks.length > 0;
+    const crit = k.criteria || (m ? ['Each step says which angle or value it finds.', 'Each step has a reason.', 'My answer matches the model.'] : ['I made a clear decision or claim.', 'I gave at least one reason.', 'I thought about another view, or what could go wrong.']);
+    const W = m ? { mine: 'Your working', model: 'A model solution', show: 'Show a model solution', check: 'Check your own working', ph: 'For example: b = 70, vert. opp.' } : { mine: 'Your thinking', model: 'A model answer', show: 'Show a model answer', check: 'Check your own thinking', ph: 'For example: I think … because …' };
     const pickHtml = picks.map((pk, i) => `<fieldset class="rs-pick" data-i="${i}"><legend>${pk.q ? tx(String(pk.q)) : `Why is ${tx(String(steps[pk.step - 1]?.[0] ?? ''))}?`}</legend>${pk.options.map((o, j) => `<label><input type="radio" name="${esc(key)}-rs${i}" value="${j}"><span>${tx(String(o))}</span></label>`).join('')}</fieldset>`).join('');
-    const marks = { answer: k.answer !== undefined ? String(k.answer) : null, feedback: (k.feedback || []).map(([a, m]) => [a, plain(m)]), picks: picks.map((pk) => ({ answer: pk.answer, feedback: (pk.feedback || []).map((f) => (f ? plain(f) : null)) })) };
+    const marks = { answer: k.answer !== undefined ? String(k.answer) : null, feedback: (k.feedback || []).map(([a, f]) => [a, plain(f)]), picks: picks.map((pk) => ({ answer: pk.answer, feedback: (pk.feedback || []).map((f) => (f ? plain(f) : null)) })), maths: m };
+    const models = [...(steps.length ? [`<p class="rs-h">${W.model}</p><ol class="rs-steps">${steps.map(([a, r]) => `<li>${tx(String(a))} <span class="rs-why">${tx(String(r))}</span></li>`).join('')}</ol>`] : []),
+      ...(k.models || []).map((mo) => { const o = typeof mo === 'string' ? { text: mo } : mo; return `<p class="rs-h">${tx(String(o.title || W.model))}</p><div class="rs-mtext">${tx(String(o.text))}</div>`; })];
     return `<div class="check rs" ${base} data-marks="${esc(JSON.stringify(marks))}"><p class="check-q">${tx(k.q)}</p>`
-      + `<label class="rs-lab">Your working <span>(your own notes and reasons; this part is not marked)</span><textarea class="wk-in rs-in" rows="5" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="${esc(k.placeholder || 'For example: b = 70, vert. opp.')}"></textarea></label>`
+      + `<label class="rs-lab">${W.mine} <span>(your own notes and reasons; this part is not marked)</span><textarea class="wk-in rs-in" rows="5" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="${esc(k.placeholder || W.ph)}"></textarea></label>`
       + (k.answer !== undefined ? `<label class="numrow ansrow rs-ans"><span>${esc(k.answerLabel || 'Answer')}</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="${esc(k.answerLabel || 'Your answer')}" placeholder="Your answer"></label>` : '')
       + pickHtml
-      + `<button type="button" class="rs-go">Check</button> <button type="button" class="rs-show" hidden>Show a model solution</button>${msg}`
-      + `<div class="rs-model" hidden><div class="rs-cols"><div><p class="rs-h">Your working</p><pre class="rs-mine"></pre></div><div><p class="rs-h">A model solution</p><ol class="rs-steps">${steps.map(([a, r]) => `<li>${tx(String(a))} <span class="rs-why">${tx(String(r))}</span></li>`).join('')}</ol></div></div>`
-      + `<p class="rs-h">Check your own working</p><ul class="rs-crit">${crit.map((c) => `<li><label><input type="checkbox"><span>${tx(String(c))}</span></label></li>`).join('')}</ul></div></div>`;
+      + `<button type="button" class="rs-go">${marked ? 'Check' : 'Compare with a model answer'}</button> <button type="button" class="rs-show" hidden>${W.show}</button>${msg}`
+      + `<div class="rs-model" hidden><div class="rs-cols"><div><p class="rs-h">${W.mine}</p><pre class="rs-mine"></pre></div><div>${models.join('')}</div></div>`
+      + `<p class="rs-h">${W.check}</p><ul class="rs-crit">${crit.map((c) => `<li><label><input type="checkbox"><span>${tx(String(c))}</span></label></li>`).join('')}</ul></div></div>`;
   }
+
   if (k.type === 'board') {
     return `<div class="check" ${base} data-expect="${esc(JSON.stringify(k.expect || {}))}"${k.when !== undefined ? ` data-when="${esc(String(k.when))}"` : ''}><p class="check-q">${tx(k.text)}</p><p class="msg" aria-live="polite">Use the board. This ticks when you get there.</p></div>`;
   }
@@ -631,6 +638,28 @@ function linksHtml(cl) {
   return `<div class="clinks">${row('Builds on', cl.on)}${row('Put to work in', cl.in)}</div>`;
 }
 
+// A video hosted elsewhere (step `video:`): YouTube or Vimeo as a privacy-friendly embed, a file as a player, else a link.
+export function videoHtml(v) {
+  if (!v) return '';
+  const o = typeof v === 'string' ? { url: v } : v, url = String(o.url || '');
+  if (!/^https:\/\//.test(url)) return '';
+  const cap = o.caption ? `<figcaption>${esc(String(o.caption))}</figcaption>` : '';
+  const yt = url.match(/^https:\/\/(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/), vm = url.match(/^https:\/\/(?:www\.)?vimeo\.com\/(\d+)/);
+  const frame = (src) => `<figure class="clip extvid"><div class="vframe"><iframe src="${esc(src)}" title="${esc(String(o.caption || 'Video'))}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>${cap}</figure>`;
+  if (yt) return frame(`https://www.youtube-nocookie.com/embed/${yt[1]}`);
+  if (vm) return frame(`https://player.vimeo.com/video/${vm[1]}`);
+  if (/\.(mp4|webm|m4v|mov)(\?|#|$)/i.test(url)) return `<figure class="clip extvid"><video controls preload="metadata" src="${esc(url)}"></video>${cap}</figure>`;
+  return `<p class="extvid"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(String(o.caption || 'Watch the video'))} ↗</a></p>`;
+}
+// A copyable AI prompt (step `prompt:`), for the Learning with AI courses. Students use it only with their teacher's say-so.
+export function promptHtml(p, id = '') {
+  if (!p) return '';
+  const o = typeof p === 'string' ? { text: p } : p;
+  if (!o.text) return '';
+  return `<div class="aiprompt" data-step="${esc(id)}"><p class="aip-h"><b>${esc(String(o.title || 'Try it with an AI tool'))}</b></p>`
+    + `<pre class="aip-text">${esc(String(o.text).trim())}</pre>`
+    + `<p class="aip-row"><button type="button" class="aip-copy">Copy prompt</button> <span class="aip-note">Use an AI tool your school allows, and only if your teacher says you can. Check its reply with what you practised here.</span></p></div>`;
+}
 export function lessonPageHtml(lesson, deps) {
   const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', maths = null, blocksPicture = () => null } = deps;
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
@@ -677,7 +706,7 @@ export function lessonPageHtml(lesson, deps) {
     }
     const clip = clipHtml(s);
     const shown = c.picture ? pictureHtml(c.picture, s.id) : '';
-    const body = md.parse(s.body);
+    const body = md.parse(s.body) + videoHtml(c.video) + promptHtml(c.prompt, s.id);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
     const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(t)}</details>`).join('');
@@ -763,6 +792,11 @@ export function lessonPageHtml(lesson, deps) {
   const explainHtml = hasExplain ? `<aside id="xdrawer" class="xdrawer" hidden aria-labelledby="xd-title"><div class="xd-head"><h2 id="xd-title">Explain it to me</h2><button type="button" class="xd-close">Close</button></div>` +
     `<div class="xd-body">${explainClip}${T?.explain ? md.parse(T.explain) : ''}${explainPic}</div></aside><p class="xpop" role="status" hidden>Make your prediction first. Help opens once you've locked it in.</p><script>${EXPLAIN_JS}</script>` : '';
 
+  // Reasoning checks outside maths need their styles (maths pages carry them in MATHS_CSS); prompt cards and videos need theirs.
+  const allChecks = lesson.steps.flatMap((x) => [x.config.check, ...x.tasks.map((t) => t.config.check), ...(Array.isArray(x.config.tasks) ? x.config.tasks.map((t) => t?.check) : [])]).filter(Boolean);
+  const needRs = !isMaths && allChecks.some((k) => k.type === 'reasoning');
+  const needAip = lesson.steps.some((x) => x.config.prompt || x.config.video);
+  const extraHead = (needRs ? `<style>${RS_CSS}</style>` : '') + (needAip ? `<style>${AIP_CSS}</style><script>${AIP_JS}</script>` : '');
   const mathsHead = isMaths ? `<link rel="stylesheet" href="${esc(siteRoot)}_katex/katex.min.css"><style>${MATHS_CSS}</style>` : '';
   return page(lesson.title, `
 ${mathsHead}${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
@@ -772,7 +806,7 @@ ${linksHtml(conceptLinks)}${md.parse(lesson.intro)}
 ${widthBar}
 <nav class="steps">${explainBtn}${nav}</nav>
 ${explainHtml}
-${steps}${tiered ? `<script>${WIDTH_JS}</script>` : ''}
+${steps}${tiered ? `<script>${WIDTH_JS}</script>` : ''}${extraHead}
 ${teachersHtml}
 ${recapHtml}${practiceCard}${nextCard}
 ${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : '') + (hasForms && maths.forms ? `<script src="${esc(siteRoot)}${esc(maths.forms.src)}" defer></script><script>${maths.forms.js}</script>` : ''), siteNavHtml);
@@ -887,3 +921,9 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
         `<iframe title="${esc(pg.title)}" hidden style="height:${Number(t.height) || pg.height || 480}px" data-src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`
       : `<iframe title="${esc(pg.title)}" loading="lazy" style="height:${Number(t.height) || pg.height || 480}px" src="${esc(`${siteRoot}${pg.dir}/index.html?${q.toString()}`)}"></iframe></div>`);
 }
+
+// Reasoning check styles, also needed outside maths (taken from MATHS_CSS so they stay in one place).
+export const RS_CSS = (MATHS_CSS.match(/(?:\.check label\.rs-lab|\.rs-[\w-]+)[^{]*\{[^}]*\}/g) || []).join('') + '.rs-mtext{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px}';
+// Prompt cards (AI courses) and videos hosted elsewhere.
+export const AIP_CSS = '.aiprompt{margin:12px 0;padding:10px 14px;border:1px dashed var(--line);border-radius:10px}.aip-h{margin:0 0 6px}.aip-text{white-space:pre-wrap;font:14px/1.45 ui-monospace,Menlo,Consolas,monospace;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:0 0 8px}.aip-row{margin:0;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.aip-note{color:var(--muted);font-size:14px}.extvid .vframe{position:relative;padding-top:56.25%}.extvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:8px}.extvid video{width:100%}';
+export const AIP_JS = "document.querySelectorAll('.aip-copy').forEach(function(b){var pre=b.closest('.aiprompt').querySelector('.aip-text');function sel(){var r=document.createRange();r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected: press Ctrl+C'}b.addEventListener('click',function(){var t=pre.textContent;if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy prompt'},1500)},sel);else sel()})})";
