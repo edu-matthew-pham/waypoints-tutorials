@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import { loadLessons, getSnippet } from '../tools/lesson.mjs';
+import { browserClip } from '../tools/export-browser-clip.mjs';
+const lesson = loadLessons('ai/foundations/dice-generator')[0];
+assert.ok(lesson, 'Existing lesson loads');
+const step = [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])].find(s => s.config.clip);
+assert.ok(step, 'Existing frontmatter clip exists');
+const result = browserClip(lesson, step);
+assert.equal(result.format, 'waypoints-clip-draft-v1');
+assert.equal(result.source.lesson, lesson.slug);
+assert.ok(result.steps.length > 0);
+assert.ok(result.steps.some(s => s.type === 'caption'));
+assert.ok(result.steps.some(s => s.type === 'wait'));
+assert.equal(result.app, 'physics');
+console.log('Frontmatter bridge passed:', result.source, result.steps.length, 'actions');
+
+assert.equal(result.query.code, getSnippet(lesson.dir, 'boards.yml#explain'));
+assert.equal(result.query.fresh, '1');
+const turtle = loadLessons('code/python-foundations/turtle-intro')[0];
+const draft = browserClip(turtle, turtle.explainStep);
+assert.equal(draft.app, 'turtle');
+assert.equal(draft.query.speed, '6');
+assert.ok(draft.steps.find(s => s.type === 'code').value.includes('from turtle import *'));
+assert.ok(draft.steps.filter(s => s.type === 'code').at(-1).value.endsWith('forward(100)\n'));
+assert.equal(draft.steps.at(-1).type, 'run');
+assert.throws(() => browserClip({...lesson, app: {command: 'node dist/_playground-science 8000'}}, step), /supports only/);
+assert.throws(() => browserClip(lesson, {config: {clip: [{click: 'Unsupported'}]}}), /does not yet support/);
+console.log('Resolved board query, Turtle typing/run and unsupported apps/actions passed');
