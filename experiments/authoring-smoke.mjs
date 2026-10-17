@@ -24,6 +24,7 @@ try{
  await page.selectOption('#authorScope','course');await page.click('#showLessonPrompt');await page.waitForFunction(()=>document.querySelector('#lessonPrompt').value.includes('course plan'));assert.match(await page.locator('#lessonPrompt').inputValue(),/one complete lesson at a time/);
  await page.click('#newFromSettings');await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===2);
  await page.waitForFunction(()=>document.querySelector('#text').value.includes('language: "maths"'));
+ assert.equal(await page.locator('#courseLesson option').last().innerText(),'Balance equations');
  let md=await page.locator('#text').inputValue();md=md.replace('One idea to investigate.', 'Solve $x + 2 = 5$.\n\n```worked\nx + 2 = 5 :: Start\nx = 3 :: Subtract two\n```\n\nOne idea to investigate.');md=md.replace('stage: run','stage: run\ncheck: { type: answer, q: \"Solve x + 2 = 5\", answer: \"3\", form: simplest }');await page.fill('#text',md);
  await page.frameLocator('#preview').locator('.katex').first().waitFor();
  await page.locator('#text').evaluate(e=>e.setSelectionRange(e.value.indexOf('## Try')+7,e.value.indexOf('## Try')+7));await page.click('#addclip');

@@ -107,7 +107,7 @@ export async function setupWorkspace(controller) {
     const id=uuid(),title=`Lesson ${workspace.lessons.length+1}`;
     const files={'lesson.md':`---\ntitle: ${title}\nsummary: Write a short summary.\nlanguage: python\n---\n## Run\n\n\`\`\`step\nstage: run\ntry: { starter: "shape.py#start", height: 420 }\n\`\`\`\n\nRun the code, then change it.\n`,'shape.py':'# region: start\nfrom turtle import *\nforward(100)\n# endregion\n'};
     const starter=starterFactory?starterFactory(title):files;
-    await updateDraft(id,()=>({id,files:starter,clips:{}}));workspace.lessons.push({id,title});await switchLesson(id);
+    await updateDraft(id,()=>({id,files:starter,clips:{}}));workspace.lessons.push({id,title:parsed(starter).title||title});await switchLesson(id);
   });
   $('refreshClips').onclick=report(refresh);
   $('recordClip').onclick=report(async()=>{
