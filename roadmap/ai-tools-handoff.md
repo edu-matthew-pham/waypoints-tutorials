@@ -12,7 +12,7 @@ For any AI chat continuing this work (Claude, ChatGPT or another).
 - **Update 18 Oct 2026:**
   - `ai-review-fixes` is merged into main (PR #1): Group 1 fixes, the Unit 4 rename, DAHUL class plans and the tools roadmap.
   - Task 1: the Defend mode is live in Kit (`defend.md`, with `draft.md` and `discussion.md`); `trial.md` is still to write.
-  - Tasks 2 and 3 are **back on for the AI courses** (corrected 18 Oct 2026): the recap-only rule is for general lessons. Who sees the prompt step is still to decide (`roadmap/learning-with-ai.md` › Decisions).
+  - Tasks 2 and 3 are **back on for the AI courses** (corrected 18 Oct 2026): the recap-only rule is for general lessons. The prompt step is visible to every student, marked "only if your teacher says you can" (`roadmap/learning-with-ai.md` › Decisions).
 - **Three kinds of tool**, each judged by one course:
   - **Help tools** (e.g. Copilot Study and Learn): Foundations Unit 4.
   - **Evidence tools** (e.g. Thinking Mode, https://thinkingmode.com/: the student defends uploaded work in a locked session, and the teacher gets a transcript): Does AI Help Us Learn? Unit 4.
