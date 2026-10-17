@@ -4,12 +4,17 @@ on:
     branches: [experiment/frontmatter-browser-bridge]
     paths:
       - 'tools/export-browser-clip.mjs'
-      - 'experiments/frontmatter-bridge-test.mjs'
+      - 'experiments/**'
+      - 'create/**'
+      - 'tools/build-create.mjs'
       - '.github/workflows/frontmatter-bridge-test.yml'
+  pull_request:
+    paths: ['create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', '.github/workflows/frontmatter-bridge-test.yml']
   workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,10 +25,12 @@ jobs:
       - run: node experiments/frontmatter-bridge-test.mjs
       - run: npm run build
       - run: node -e "const fs=require('fs'); const a=JSON.parse(fs.readFileSync('dist/code/create/lesson-clips.json')); if(!a.length)process.exit(1); console.log(a.length,'frontmatter clips exported')"
+      - name: Add isolated recorder page
+        run: mkdir -p dist/experiments && cp experiments/browser-recorder.html dist/experiments/
       - name: Install Chrome for browser smoke test
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable || true
+          sudo apt-get install -y google-chrome-stable
       - name: Browser editor smoke test
         run: node experiments/browser-smoke.mjs
       - uses: actions/upload-artifact@v4
