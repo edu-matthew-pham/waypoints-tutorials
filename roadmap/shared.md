@@ -504,3 +504,6 @@ Principle: Create should involve teachers in the lesson-design decisions rather 
 - Step `prompt:` (text or `{ title, text }`): a copyable AI prompt card with "only if your teacher says you can" (`promptHtml`, `AIP_CSS`, `AIP_JS` in `lesson-view.mjs`). For the Learning with AI courses.
 - Step `video:` (`https://` address or `{ url, caption }`): YouTube/Vimeo as a privacy-friendly embed (youtube-nocookie), video files as a player, else a link (`videoHtml`). For teacher-made lessons.
 - AUTHORING.md documents all three and calls `sort` "sort into groups". No clip hashes change (`lesson-view.mjs`, `lesson-core.mjs` and `teach.mjs` are not in clip hashes).
+
+## Candidate (18 Oct 2026, Matthew): a course for teachers on making tutorials
+A short course for teachers, in the site's own lesson format with Create as its playground, on making a tutorial: likely the four decisions Create now asks about (the one idea, the misconception, the opening move, checks that test understanding), what a video is for, and sharing. Create's options-with-reasons prompts could link to it. **Wait:** design decisions are to be settled after the current Create and AI-course work has played out. Not started.
