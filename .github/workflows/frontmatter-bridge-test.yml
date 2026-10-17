@@ -1,0 +1,20 @@
+name: Frontmatter browser clip bridge
+on:
+  push:
+    branches: [experiment/frontmatter-browser-bridge]
+    paths:
+      - 'tools/export-browser-clip.mjs'
+      - 'experiments/frontmatter-bridge-test.mjs'
+      - '.github/workflows/frontmatter-bridge-test.yml'
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node experiments/frontmatter-bridge-test.mjs
