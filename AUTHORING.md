@@ -1448,6 +1448,19 @@ Course mode includes the visible course title, summary and ordered lesson titles
 one complete lesson at a time. Review generated content, upload its files (or paste its `lesson.md`), and fix the
 validation messages. A prompt cannot generate videos: preview and record each clip in Create afterwards.
 
+**Assistant-side format validation:** download [the portable validator](https://tutorials.learningwaypoints.com/code/create/validator.zip)
+and extract it. With Node.js 20+, run `node /path/to/waypoints-validator/validate-lesson.mjs /path/to/lesson.md --json`.
+Its shared parser, validator, YAML dependency, snippet catalogue and shared module definitions are included; it works
+without npm installation, internet access after download, or the full site checkout. A source folder checks all nested
+`lesson.md` files. Use `--root /path/to/common/source` for references outside the lesson's own folder. Exit 0 means
+all supplied lessons passed; 1 reports format errors; 2 reports input/setup errors. Inside the repository the equivalent
+command is `npm run validate:lesson -- /path/to/lesson.md --json`.
+Ask the assistant to fix errors, rerun against its final files, and report the actual command and exit code. If it
+cannot execute the command, it should say **validation not run**. Import the files into Create and use **Copy validation
+report** to return the current errors to the conversation instead. The report is refreshed from the current editor text.
+This checks lesson structure and references; it does not execute code, assess teaching quality or replace preview.
+Full repository publication checks remain separate. See [validator instructions](tools/validator-readme.md).
+
 The shared definitions live in `tools/playground-registry.mjs`. Create’s parent-side adapters are in
 `create/playground-adapters.mjs`; they reuse the real playgrounds without moving their source folders or changing
 production clip hashing. Turtle, Python, HTML, DOM, p5.js, shared boards and science boards support local control

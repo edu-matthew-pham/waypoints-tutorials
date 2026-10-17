@@ -8,10 +8,11 @@ import { browserClip } from './export-browser-clip.mjs';
 import { buildBoardCatalogue } from './board-catalogue.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
 import { stampPlayground } from './build-playground.mjs';
+import { buildValidator } from './build-validator.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-export function buildCreate(out = 'dist') {
+export async function buildCreate(out = 'dist') {
   const dest = join(out, 'code', 'create'); // each subject gets its own maker: /code/create/, later /maths/create/
   rmSync(join(out, 'create'), { recursive: true, force: true });
   rmSync(dest, { recursive: true, force: true });
@@ -35,7 +36,10 @@ export function buildCreate(out = 'dist') {
     }
   }
   writeFileSync(join(dest, 'lesson-clips.json'), JSON.stringify(clips));
-  for (const f of ['lesson-core.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
+  for (const f of ['lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
+  const validatorVersion=await buildValidator(dest);
+  const indexFile=join(dest,'index.html');
+  writeFileSync(indexFile,readFileSync(indexFile,'utf8').replaceAll('href="validator.zip"',`href="validator.zip?v=${validatorVersion.slice(0,12)}"`));
   // highlight.cjs is a plain function declaration; expose it as an ES module for the browser.
   writeFileSync(join(dest, 'highlight.js'), readFileSync(join(root, 'tools', 'highlight.cjs'), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '') + '\nexport { highlightCode };\n');
   mkdirSync(join(dest, 'vendor'), { recursive: true });
@@ -52,5 +56,5 @@ export function buildCreate(out = 'dist') {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
-  console.log('Create page built into ' + buildCreate(process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist'));
+  console.log('Create page built into ' + await buildCreate(process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist'));
 }

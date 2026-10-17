@@ -4,6 +4,10 @@ on:
     branches: [experiment/frontmatter-browser-bridge, feature/shareable-lesson-videos, feature/authoring-prompts-playground-adapters]
     paths:
       - 'tools/export-browser-clip.mjs'
+      - 'tools/lesson-validation.mjs'
+      - 'tools/validate-lesson.mjs'
+      - 'tools/build-validator.mjs'
+      - 'tools/validator-readme.md'
       - 'experiments/**'
       - 'create/**'
       - 'tools/build-create.mjs'
@@ -13,7 +17,7 @@ on:
       - 'BUILDING.md'
       - '.github/workflows/frontmatter-bridge-test.yml'
   pull_request:
-    paths: ['create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', 'tools/playground-registry.mjs', 'tools/board-catalogue.mjs', 'AUTHORING.md', 'BUILDING.md', '.github/workflows/frontmatter-bridge-test.yml']
+    paths: ['tools/lesson-validation.mjs', 'tools/validate-lesson.mjs', 'tools/build-validator.mjs', 'tools/validator-readme.md', 'create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', 'tools/playground-registry.mjs', 'tools/board-catalogue.mjs', 'AUTHORING.md', 'BUILDING.md', '.github/workflows/frontmatter-bridge-test.yml']
   workflow_dispatch:
 jobs:
   test:
@@ -30,6 +34,7 @@ jobs:
       - run: node experiments/lesson-package-test.mjs
       - run: node experiments/authoring-test.mjs
       - run: node experiments/board-catalogue-test.mjs
+      - run: node experiments/validator-test.mjs
       - run: npm run build
       - run: node -e "const fs=require('fs'); const a=JSON.parse(fs.readFileSync('dist/code/create/lesson-clips.json')); if(!a.length)process.exit(1); console.log(a.length,'frontmatter clips exported')"
       - name: Install Chrome for browser smoke test

@@ -206,7 +206,7 @@ buildMakecodePlayground(OUT);
 buildExplainStage(OUT);
 // Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
 const VERSIONS = Object.fromEntries(['_playground', '_playground-py', '_playground-microstudio', '_playground-p5', '_playground-dom', '_playground-html', '_playground-board', '_playground-makecode', '_playground-science'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
-buildCreate(OUT);
+await buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
 const claimsByKind = {};

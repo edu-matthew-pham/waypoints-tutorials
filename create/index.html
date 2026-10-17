@@ -23,6 +23,7 @@
     <textarea id="startPromptText" readonly aria-label="Starter prompt"></textarea>
     <div class="start-actions"><button id="copyStartPrompt" class="primary" type="button">Copy prompt</button><button id="promptOpenFiles" type="button">Open generated files…</button><button id="promptWorkspace" type="button">Go to workspace</button></div>
     <p>When your files are ready, open them here to preview, revise, record and download.</p>
+    <details><summary>Check generated lesson files</summary><p>An assistant with Node.js 20+ can run our validator in its own sandbox. <a href="validator.zip" download>Download the portable validator</a>, or use the validation instructions in the copied prompt. Create also checks imported lessons and lets you copy its report.</p></details>
     <p id="startCopyStatus" role="status"></p>
   </section>
   <section id="openRoute" class="start-panel" aria-labelledby="openRouteTitle" hidden>
@@ -95,7 +96,7 @@ Format guide: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/b
     <label class="namebar">File name <input id="fname" type="text" spellcheck="false"></label>
     <textarea id="text" spellcheck="false" aria-label="File contents"></textarea>
     <div class="row"><button id="addfile" type="button">+ Add code file</button><button id="addmod" type="button" title="A Python file whose functions become buttons in the playground">+ Add module</button><button id="delfile" type="button">Delete this file</button></div>
-    <ul id="problems" class="problems" aria-live="polite"></ul>
+    <section aria-label="Lesson format checks"><div class="validation-actions"><strong>Lesson format checks</strong><button id="copyValidation" type="button">Copy validation report</button><a href="validator.zip" download>Download validator</a></div><ul id="problems" class="problems" aria-live="polite"></ul><p id="validationStatus" role="status"></p><textarea id="validationText" readonly aria-label="Validation report" hidden></textarea></section>
   </section>
   <section class="preview"><iframe id="preview" title="Lesson preview"></iframe></section>
 </main>
