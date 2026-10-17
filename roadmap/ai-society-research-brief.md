@@ -339,7 +339,8 @@ Notes: Services Australia used "AI-assisted and automated" selection without say
 - Any verdict in the US states v Meta trial; any final EU decision on TikTok.
 
 ## Open questions for Matthew
-1. **Topic 1 boundary.** Cyber safety already teaches the digital footprint (8P14) and the APPs (10P14). Is topic 1 narrowed to "AI and your data" (training on chats, consent screens, the Children's Online Privacy Code), linking back for the rest?
+1. **Topic 1 boundary.** Decided 18 Oct 2026 (Matthew): yes, narrow to AI and your data; link to Cyber safety for footprint and the APPs.
+   Original question: Cyber safety already teaches the digital footprint (8P14) and the APPs (10P14). Is topic 1 narrowed to "AI and your data" (training on chats, consent screens, the Children's Online Privacy Code), linking back for the rest?
 2. **Topic 5 curriculum fit is weak** (no framework names data workers). Keep it as a core lesson justified by "possible future impact" and Ethical Understanding, or make it a typical/wider step inside topic 3 or 4?
 3. **Generated media:** design around "you can't reliably spot it, so check where it came from" (the evidence), even though AI4K12's 6–8 objective asks students to find flaws?
 4. **Deepfake image-based abuse** (eSafety): teacher notes only, or a carefully framed student step (harm, law, reporting) at typical or wider width?
@@ -349,8 +350,10 @@ Notes: Services Australia used "AI-assisted and automated" selection without say
 8. **Re-check dates:** Children's Online Privacy Code after 10 Dec 2026; EU Digital Omnibus on EUR-Lex; a 2025 review of the schools AI framework; US states v Meta verdict; EU decision on TikTok.
 
 Second pass:
-9. **Structure:** two parallel courses (*AI in your life*, *Who Does AI Affect?*) or one course of about 16 lessons in five units? If two, which keeps the title *Who Does AI Affect?*
+9. **Structure:** decided 18 Oct 2026 (Matthew): two parallel courses.
+   Original question: two parallel courses (*AI in your life*, *Who Does AI Affect?*) or one course of about 16 lessons in five units? If two, which keeps the title *Who Does AI Affect?*
 10. **Attacks on AI to Cyber safety:** add the malicious-model, voice-clone and prompt-injection examples there (a separate change to a built course)?
-11. **Companions and deepfake bullying:** agree the Year 7 wording with the school's wellbeing lead first? Both touch topics where some students may be personally affected.
+11. **Companions and deepfake bullying:** decided 18 Oct 2026 (Matthew): publish, but flag those lessons for review with the wellbeing lead.
+   Original question: agree the Year 7 wording with the school's wellbeing lead first? Both touch topics where some students may be personally affected.
 12. **Kinds of AI:** decided 18 Oct 2026 (Matthew): refine AI Foundations to name the kinds side by side (rules, predictive ML, generative, agents); the new course(s) then only recap and link back.
 13. **"Be the algorithm" card activity:** no openly licensed Year 7 version exists; write our own (borrowing the idea from Actua and Day of AI, not their materials)?
