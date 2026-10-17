@@ -136,3 +136,15 @@
 - Multiple choice stays for how AI works (concept checks with one right answer).
 - Judgement about when and how to use AI moves to: **sort into groups** for hand-over decisions (same task, different goals); **match** for which kind of help suits a moment; a **reasoning** check (subject-neutral labels, often unmarked with model answers; `roadmap/shared.md`) for one realistic dilemma per unit, usually in Evaluate.
 - About 8–10 checks: Foundations Unit 4 Evaluate steps and the main decisions in Does AI Help Us Learn? Not built yet.
+
+## Research check, 18 Oct 2026 (claims in the AI courses against the papers or their abstracts)
+Rule: a claim is changed only when a source contradicts it; anything not reachable is marked unverified, not wrong.
+
+| Study | Checked against | Result |
+|---|---|---|
+| Bastani et al. (2025), PNAS | Abstract (SSRN 4895486) | Matches: nearly 1,000 high-school maths students; GPT Base and GPT Tutor both raised practice grades (48% and 127%); on the later exam without AI, GPT Base was 17% below students who never had access; GPT Tutor's safeguards "largely mitigated" the harm. (The course's "not statistically distinguishable" for GPT Tutor is from the paper's body, not the abstract: not re-read.) |
+| Kestin et al. (2025), Scientific Reports | Preprint (Research Square, 2024) | Matches: 194 analysed Harvard introductory physics students; randomised crossover (groups swapped AI tutor and in-class active learning in consecutive weeks); immediate post-tests favoured the AI tutor; no delayed test. Checked against the preprint, not the published version. |
+| Fernandes et al. (2026), Computers in Human Behavior | Aalto research record (abstract) and the arXiv/CHI 2025 version | Matches: adults (Prolific, US), LSAT logical-reasoning problems, N = 246 and 452; with AI, scores rose about 3 points against a norm population but participants overestimated by about 4; single sitting, no retention test. |
+| Nakamura (2026), Educational Psychology Review | Coverage of the article (Scienmag) | Matches: a theoretical review; "a graded peripheral–constitutive continuum"; offloading peripheral work can help, offloading the work that is the learning target erodes it; STEM. **Unverified:** "seven testable propositions" and "October 2026" (not in the coverage). Needs the PDF. |
+| Lodge and Loble (2026), UTS | UTS news and report listing (March 2026) | Exists as a UTS report; used only for the definition of cognitive offloading. |
+| Kalyuga 2003, VanLehn 2011, Hattie & Timperley 2007, Black & Wiliam 1998 | Not re-checked | Long-established; teacher notes only. |
