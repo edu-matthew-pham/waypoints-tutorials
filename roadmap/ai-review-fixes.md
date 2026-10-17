@@ -123,3 +123,11 @@
   - "Thinking Mode" in the product list is an assessment tool, not an assistant.
 - **DAHUL inquiry record numbering** is inconsistent.
 - **Teacher-facing lesson numbers.** Primers and some `leads:` use course-wide lesson numbers ("Lesson 7"); the site numbers lessons within each unit.
+
+## Agreed 18 Oct 2026 (discussion with Matthew): show where the lookup table breaks
+- Keep the dice n-gram and the "lookup table" analogy (from ANU's LLMs Unplugged): it is right about the core idea (learn patterns, then sample the next word).
+- Add one small moment at the end of Unit 1: "What does our table say comes after 'The dog sat on the…'?" There is no row, so the model is stuck. Ask how a real chatbot still answers, which Unit 2 answers: models learn which things behave alike, so they can **generalise** to inputs they have never seen. That is the core idea of machine learning (the table only memorises).
+- Name the same idea where it fits in Unit 2 (training-examples, model-mistakes: unseen fruit).
+- Optional link for Does AI Help Us Learn?: memorising answers is like the table (perfect on practised questions, stuck on new ones); understanding generalises.
+- Not built yet.
+
