@@ -15,7 +15,8 @@
 <div class="row"><button id="saveStep">Save step</button><button id="preview">Preview steps</button><button id="reset">Reset application</button></div>
 <p id="status" role="status">Ready</p></section>
 <section><p id="previewCaption" role="status"></p><iframe id="demo" title="Real Waypoints playground"></iframe>
-<div class="row"><button id="record">Record WebM</button><button id="stop" disabled>Stop recording</button><label><input type="checkbox" id="mic"> Microphone</label></div>
+<div class="row"><a id="returnLesson" href="./" hidden>Return to lesson</a><button id="attachRecording" hidden disabled>Use recording in lesson</button><button id="record">Record WebM</button><button id="stop" disabled>Stop recording</button><label><input type="checkbox" id="mic"> Microphone</label></div>
 <p class="muted">Preview executes actions in the embedded application. Recording captures the full browser tab, including this editor. Narration is via microphone only for now.</p>
 <video id="video" controls hidden></video><a id="download" hidden>Download WebM</a></section></main>
+<script type="importmap">{"imports":{"yaml":"./vendor/yaml/index.js"}}</script>
 <script type="module" src="clip.js"></script></html>

@@ -1,5 +1,9 @@
+import { parseLessonText } from './lesson-core.mjs';
+import { draftBrowserClip } from './draft-clip.mjs';
+import { readDraft, updateDraft, fingerprint } from './draft-store.mjs';
 const $=id=>document.getElementById(id);
 const defaults={format:'waypoints-clip-draft-v1',title:'My explanation',app:'turtle',steps:[{type:'caption',caption:'The turtle follows each instruction.',say:'The turtle follows each instruction.',value:''},{type:'code',caption:'Draw two lines.',say:'',value:'from turtle import *\nforward(100)\nright(90)\nforward(100)'},{type:'run',caption:'Run the code.',say:'',value:''}]};
+let binding=null,lastRecording=null,recordingURL=null;
 let model=structuredClone(defaults),selected=0,recorder,screen,mic,chunks=[];
 const physics=['widget: forces','object: Trolley','mass: 1, 10, 2','force P: right, 8, Push, adjust 0-40','motion: on','track: 80','time: 3'].join('\n');
 const sources={turtle:'../../_playground/index.html?code='+encodeURIComponent('from turtle import *\n'),physics:'../../_playground-board/index.html?fresh=1&code='+encodeURIComponent(physics)};
@@ -23,9 +27,10 @@ if(s.type==='run'&&model.app==='turtle'){const b=doc.querySelector('#run');if(!b
 if(s.type==='force'&&model.app==='physics'){const ranges=[...doc.querySelectorAll('input[type=range]')];if(!ranges.length)throw Error('Force slider not found');ranges[0].value=s.value;ranges[0].dispatchEvent(new Event('input',{bubbles:true}));ranges[0].dispatchEvent(new Event('change',{bubbles:true}));}
 }
 $('preview').onclick=async()=>{save();$('previewCaption').scrollIntoView({block:'start'});$('preview').disabled=true;try{await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Playground load timed out')),15000);$('demo').addEventListener('load',()=>{clearTimeout(timer);resolve()},{once:true});reset()});await delay(700);for(let i=0;i<model.steps.length;i++){selected=i;draw();const s=model.steps[i];status('Preview '+(i+1)+'/'+model.steps.length+': '+(s.caption||s.type));await action(s);await delay(1000)}status('Preview complete')}catch(e){status('Preview failed: '+e.message)}finally{$('preview').disabled=false}};
-$('record').onclick=async()=>{try{screen=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:30},audio:true,preferCurrentTab:true,selfBrowserSurface:'include'});let tracks=[...screen.getTracks()];if($('mic').checked){mic=await navigator.mediaDevices.getUserMedia({audio:true});const ctx=new AudioContext(),dest=ctx.createMediaStreamDestination();for(const stream of [screen,mic])if(stream.getAudioTracks().length)ctx.createMediaStreamSource(new MediaStream(stream.getAudioTracks())).connect(dest);tracks=[...screen.getVideoTracks(),...dest.stream.getAudioTracks()];recorderAudioContext=ctx}
-const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('WebM unsupported');chunks=[];recorder=new MediaRecorder(new MediaStream(tracks),{mimeType:mime});recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(chunks,{type:mime}),url=URL.createObjectURL(blob);$('video').src=url;$('video').hidden=false;$('download').href=url;$('download').download='waypoints-clip.webm';$('download').hidden=false;screen.getTracks().forEach(t=>t.stop());mic?.getTracks().forEach(t=>t.stop());recorderAudioContext?.close();$('record').disabled=false;$('stop').disabled=true;status('WebM ready ('+Math.round(blob.size/1024)+' KB)')};screen.getVideoTracks()[0].onended=()=>{if(recorder.state==='recording')recorder.stop()};recorder.start(1000);$('record').disabled=true;$('stop').disabled=false;status('Recording tab; preview steps to capture interactions')}catch(e){screen?.getTracks().forEach(t=>t.stop());status('Recording failed: '+e.message)}};
+$('record').onclick=async()=>{try{$('attachRecording').disabled=true;screen=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:30},audio:true,preferCurrentTab:true,selfBrowserSurface:'include'});let tracks=[...screen.getTracks()];if($('mic').checked){mic=await navigator.mediaDevices.getUserMedia({audio:true});const ctx=new AudioContext(),dest=ctx.createMediaStreamDestination();for(const stream of [screen,mic])if(stream.getAudioTracks().length)ctx.createMediaStreamSource(new MediaStream(stream.getAudioTracks())).connect(dest);tracks=[...screen.getVideoTracks(),...dest.stream.getAudioTracks()];recorderAudioContext=ctx}
+const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('WebM unsupported');chunks=[];recorder=new MediaRecorder(new MediaStream(tracks),{mimeType:mime});recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(chunks,{type:mime}),url=URL.createObjectURL(blob);if(recordingURL)URL.revokeObjectURL(recordingURL);recordingURL=url;lastRecording=blob;if(binding)$('attachRecording').disabled=false;$('video').src=url;$('video').hidden=false;$('download').href=url;$('download').download='waypoints-clip.webm';$('download').hidden=false;releaseCapture();$('record').disabled=false;$('stop').disabled=true;status('WebM ready ('+Math.round(blob.size/1024)+' KB)')};screen.getVideoTracks()[0].onended=()=>{if(recorder.state==='recording')recorder.stop()};recorder.start(1000);$('record').disabled=true;$('stop').disabled=false;status('Recording tab; preview steps to capture interactions')}catch(e){releaseCapture();$('record').disabled=false;$('stop').disabled=true;status('Recording failed: '+e.message)}};
 let recorderAudioContext;
+function releaseCapture(){screen?.getTracks().forEach(t=>t.stop());mic?.getTracks().forEach(t=>t.stop());recorderAudioContext?.close().catch(()=>{});screen=null;mic=null;recorderAudioContext=null;}
 $('stop').onclick=()=>{if(recorder?.state==='recording')recorder.stop()};
 draw();reset();
 // Load build-generated clips from existing lesson.md frontmatter; no JSON import required.
@@ -37,7 +42,7 @@ fetch('./lesson-clips.json').then(r=>{if(!r.ok)throw Error('Lesson clip catalogu
     opt.textContent=clips[i].source.lesson+' / '+clips[i].source.step;
     $('lessonClip').append(opt);
   }
-}).catch(e=>status(e.message));
+}).catch(e=>{if(!draftId)status(e.message)});
 $('loadLessonClip').onclick=()=>{
   const i=$('lessonClip').value;
   if(i===''){status('Choose an existing lesson clip');return}
@@ -45,4 +50,34 @@ $('loadLessonClip').onclick=()=>{
   if(!clip){status('Lesson clip not found');return}
   model=structuredClone(clip);selected=0;draw();reset();
   status('Loaded '+clip.source.lesson+' / '+clip.source.step+' from lesson frontmatter');
+};
+
+// A lesson-bound recorder reads the same frontmatter converter as the repository build.
+const parameters=new URLSearchParams(location.search),draftId=parameters.get('draft'),stepId=parameters.get('step');
+if(draftId){
+  try{
+    const record=await readDraft(draftId);if(!record)throw Error('Lesson draft not found in this browser');
+    const lesson=parseLessonText(record.files['lesson.md'],'my-lesson');
+    const step=[...lesson.steps,...(lesson.explainStep?[lesson.explainStep]:[])].find(s=>s.id===stepId);
+    model=draftBrowserClip(record.files,lesson,step);binding={id:draftId,step:stepId,fingerprint:await fingerprint(record.files),signature:JSON.stringify(model)};
+    selected=0;draw();reset();
+    for(const id of ['app','title','type','caption','say','value','saveStep','add','remove','import','lessonClip','loadLessonClip'])$(id).disabled=true;
+    $('attachRecording').hidden=false;$('returnLesson').hidden=false;$('returnLesson').href='./?lesson='+encodeURIComponent(draftId);
+    status('Loaded draft lesson / '+stepId+'. Record this tab and preview the steps, then use the recording in your lesson. Edit instructions in Create lesson.');
+  }catch(error){status('Cannot load draft clip: '+error.message);$('record').disabled=true;$('preview').disabled=true}
+}
+$('attachRecording').onclick=async()=>{
+  try{
+    if(!binding||!lastRecording)throw Error('Record this lesson clip first');
+    save();if(JSON.stringify(model)!==binding.signature)throw Error('Clip instructions changed. Reopen the recorder from your lesson.');
+    const latest=await readDraft(binding.id);
+    if(!latest||await fingerprint(latest.files)!==binding.fingerprint)throw Error('Lesson changed. Return to the lesson and record its updated instructions.');
+    const snapshot=JSON.stringify(latest.files);
+    await updateDraft(binding.id,record=>{
+      if(JSON.stringify(record.files)!==snapshot)throw Error('Lesson changed while saving the recording');
+      return {...record,clips:{...record.clips,[binding.step]:{blob:lastRecording,fingerprint:binding.fingerprint,recordedAt:new Date().toISOString()}}};
+    });
+    if(typeof BroadcastChannel==='function'){const channel=new BroadcastChannel('wp-lesson-recordings');channel.postMessage(binding.id);channel.close()}
+    location.href='./?lesson='+encodeURIComponent(binding.id);
+  }catch(error){status('Could not attach recording: '+error.message)}
 };
