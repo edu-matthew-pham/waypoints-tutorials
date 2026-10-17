@@ -12,7 +12,7 @@ let browser,page;const errors=[],results=[];
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 async function download(page,selector,name){const event=page.waitForEvent('download');await page.click(selector);const file=await event;const path=join(dir,name);await file.saveAs(path);return new Blob([await readFile(path)],{type:'application/zip'})}
 async function extract(blob){const dest=await mkdtemp(join(tmpdir(),'waypoints-package-'));for(const [name,bytes] of await readZipEntries(blob)){const path=join(dest,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,bytes)}return dest}
-async function recordCurrent(page){
+async function recordCurrent(page, checkChangedLesson=false){
  await page.locator('#draftClip option').first().waitFor({state:'attached'});
  await page.waitForFunction(()=>!document.querySelector('#recordClip').disabled);
  await page.click('#recordClip');await page.waitForURL(/clip\.html\?draft=/);
@@ -23,6 +23,11 @@ async function recordCurrent(page){
  await page.click('#preview');await page.waitForFunction(()=>/Preview complete|Preview failed/.test(document.querySelector('#status').textContent),null,{timeout:90000});
  assert.equal(await page.locator('#status').innerText(),'Preview complete');
  await page.click('#stop');await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('WebM ready'));
+ if(checkChangedLesson){
+   const original=await page.evaluate(async()=>{const {readDraft,updateDraft}=await import('./draft-store.mjs');const id=new URLSearchParams(location.search).get('draft'),record=await readDraft(id);await updateDraft(id,r=>({...r,files:{...r.files,'note.txt':'Changed while recording'}}));return record.files});
+   await page.click('#attachRecording');await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('Lesson changed'));
+   await page.evaluate(async files=>{const {updateDraft}=await import('./draft-store.mjs');await updateDraft(new URLSearchParams(location.search).get('draft'),r=>({...r,files}))},original);
+ }
  await page.click('#attachRecording');await page.waitForURL(/\/code\/create\/\?lesson=/);
  await page.waitForFunction(()=>document.querySelector('#draftClip').selectedOptions[0]?.textContent.endsWith('— recorded'));
  await page.reload();await page.waitForFunction(()=>document.querySelector('#draftClip').selectedOptions[0]?.textContent.endsWith('— recorded'));
@@ -37,15 +42,15 @@ try{
  page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
  await page.goto(base);await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===1);
  await page.fill('#courseTitle','Turtle course');await page.fill('#courseSummary','Two lessons with recorded explanations.');await page.locator('#courseSummary').blur();
- await recordCurrent(page);
+ await recordCurrent(page,true);
  const lessonZip=await download(page,'#downloadPackage','lesson-package.zip'),lesson=await readPackage(lessonZip);
  assert.equal(Object.keys(lesson.clips).length,1);assert.match(lesson.files['lesson.md'],/clip:/);
  results.push({lessonExport:'pass',bytes:lessonZip.size,recordedClips:1});
  await page.click('#addLesson');await page.waitForFunction(()=>document.querySelector('#courseLesson').options.length===2);
  await page.waitForFunction(()=>document.querySelector('#text').value.includes('title: Lesson 2'));
- const second=await page.locator('#text').inputValue();await page.fill('#text',second.replace('title: Lesson 2','title: Second turtle lesson'));
+ const second=await page.locator('#text').inputValue();await page.fill('#text',second.replace('title: Lesson 2','title: Second turtle lesson').replace('try: { starter: \"shape.py#start\", height: 420 }','try: { starter: \"shape.py#start\", height: 420 }\nquery: { speed: 9 }'));
  await page.locator('#text').evaluate(el=>el.setSelectionRange(el.value.indexOf('## Run')+8,el.value.indexOf('## Run')+8));
- await page.click('#addclip');await page.waitForFunction(()=>!document.querySelector('#recordClip').disabled);
+ await page.click('#addclip');assert.match(await page.locator('#text').inputValue(),/speed: 9/);assert.match(await page.locator('#text').inputValue(),/app: true/);assert.equal((await page.locator('#text').inputValue()).match(/^query:/gm).length,1);await page.waitForFunction(()=>!document.querySelector('#recordClip').disabled);
  await recordCurrent(page);
  await page.click('#moveLessonUp');await page.waitForFunction(()=>document.querySelector('#courseLesson').options[0].textContent==='Second turtle lesson');
  await page.click('#moveLessonDown');await page.waitForFunction(()=>document.querySelector('#courseLesson').options[1].textContent==='Second turtle lesson');

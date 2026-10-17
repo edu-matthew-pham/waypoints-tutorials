@@ -1,4 +1,5 @@
 import { Marked } from 'marked';
+import YAML from 'yaml';
 import { parseLessonText, validateLessonCore, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
 import { scanModule } from './modules-scan.mjs';
@@ -31,6 +32,7 @@ What shape will the turtle draw? Where will it finish?
 \`\`\`step
 stage: run
 try: { starter: "shape.py#square", height: 420 }
+app: true
 query: { code: "@shape.py#square", speed: 8 }
 clip:
   - caption: "The turtle repeats these commands four times."
@@ -253,10 +255,18 @@ $('addclip').onclick = () => withStep(st => {
   if(!ref){alert('Add code: or a try: starter to this step first.');return}
   const board=['board','maths'].includes(step.config.try?.playground),turtle=lesson.language==='python'&&!board;
   if(!board&&!turtle){alert('Browser recording currently supports Turtle and shared boards.');return}
-  const config=['query: { code: '+JSON.stringify('@'+ref)+(board?', fresh: 1':'')+' }','clip:','  - caption: "Watch what happens when this runs."',...(turtle?['  - click: Run','  - expect: { selector: "#status", contains: "Finished" }']:['  - wait: 1500'])];
-  st.lines.splice(st.close,0,...config);
+  const config=YAML.parseDocument(st.lines.slice(st.open+1,st.close).join('\n'));
+  config.set('app',true);
+  if(!step.config.query?.code)config.setIn(['query','code'],'@'+ref);
+  if(board&&step.config.query?.fresh===undefined)config.setIn(['query','fresh'],1);
+  config.set('clip',[{caption:'Watch what happens when this runs.'},...(turtle?[{click:'Run'},{expect:{selector:'#status',contains:'Finished'}}]:[{wait:1500}])]);
+  st.lines.splice(st.open+1,st.close-st.open-1,...String(config).trimEnd().split('\n'));
   let text=st.lines.join('\n');
-  if(!lesson.app)text=text.replace(/^(---\n[\s\S]*?)\n---/, '$1\napp:\n  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/'+(board?'_playground-board':'_playground')+'" 8123\n  url: http://127.0.0.1:8123/index.html\n---');
+  if(!lesson.app){
+    const match=text.match(/^---\n([\s\S]*?)\n---/),metadata=YAML.parseDocument(match[1]);
+    metadata.set('app',{command:'node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/'+(board?'_playground-board':'_playground')+'" 8123',url:'http://127.0.0.1:8123/index.html'});
+    text=text.replace(match[0],'---\n'+String(metadata)+'---');
+  }
   setText(text,'Watch what happens');
 });
 $('addtick').onclick = () => addCheck(TICK, '…');
