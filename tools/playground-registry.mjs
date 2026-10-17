@@ -23,6 +23,7 @@ export function inferPlayground(lesson,step=null){
   return null;
  }
  if(step?.config.try?.playground)return playground(step.config.try.playground)?.id||null;
+ if(!step&&!lesson.steps?.some(s=>s.config.try||s.config.code||s.config.clip))return null;
  const first=lesson.steps?.find(s=>s.config.try?.playground);if(first)return playground(first.config.try.playground)?.id||null;
  return ({maths:'board',science:'science',html:'html',javascript:'p5',makecode:'microbit',arcade:'arcade',python:'turtle'}[lesson.language])||null;
 }

@@ -28,8 +28,8 @@ export function setupAuthoring(controller){
  let last='';
  function sync(lesson,id){
   const key=JSON.stringify([id,lesson.language,lesson.shape,lesson.app]);if(key===last)return;last=key;
-  const profile=lesson.shape==='design'?'design':lesson.language==='maths'?'maths':lesson.language==='science'?'science':lesson.shape==='5e'?'inquiry':'coding';
-  $('authorSubject').value={coding:'code',maths:'maths',science:'science',design:'engineering',inquiry:'general'}[profile];$('authorProfile').value=profile;
+  const profile=lesson.shape==='design'?'design':lesson.language==='maths'?'maths':lesson.language==='science'?'science':lesson.shape==='5e'?'inquiry':lesson.steps?.length&&lesson.steps.every(s=>s.config.stage==='info')?'reading':'coding';
+  $('authorSubject').value={coding:'code',maths:'maths',science:'science',design:'engineering',inquiry:'general',reading:'general'}[profile];$('authorProfile').value=profile;
   $('authorPlayground').value=inferPlayground(lesson)||'none';
   if(!$('authorTopic').value)$('authorTopic').value=lesson.title;
   // Synchronising an existing lesson does not change it or the default Add lesson behaviour.
