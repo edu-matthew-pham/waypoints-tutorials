@@ -133,3 +133,5 @@ Imagine an AI assistant makes a confident claim in a subject you are learning. W
 **Takeaway:** a neural network's behaviour changes as training adjusts its connections. Its predictions come from those learned numbers, not from a list of rules someone wrote.
 
 **Chatbots are neural networks too:** very large ones, trained on huge amounts of text to predict the next word. That is the same next-word idea from Unit 1, with far more examples and connections.
+
+**Next:** your sorter, your neural network and your dice generator are different kinds of AI. The next lesson names four kinds and how each goes wrong.

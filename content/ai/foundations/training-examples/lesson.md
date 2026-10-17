@@ -24,6 +24,8 @@ explainClip:
 
 We are moving beyond choosing words with dice. Now we will investigate how a model uses **examples and clues** to classify something new. Our Waypoints model is deliberately simplified: it is **not** a modern neural network.
 
+**Kind of AI:** a model that **learns to predict or sort** from labelled examples. Unit 1's generator was a different kind: one that **makes new content**.
+
 ## Engage: predict before testing
 
 ```step

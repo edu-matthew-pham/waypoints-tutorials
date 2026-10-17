@@ -20,7 +20,7 @@ stuck:
     fix: "Compare predictions before and after training on a reset network."
 support: "Start with all examples and compare one fruit before and after 100 training steps."
 stretch: "Show optional connection numbers; ask why they are not percentages."
-leads: "Unit 3 turns to talking with AI: writing a clear request, then following up."
+leads: "The last lesson of Unit 2 names four kinds of AI (rules, predict or sort, make new content, take actions) and how each goes wrong."
 exit:
   q: "What changes during training, and what happens during testing?"
   a: "Training updates network parameters using labelled examples; testing uses them without updating."

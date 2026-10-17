@@ -1,5 +1,7 @@
 # Course plan: *AI in your life* and *Who Does AI Affect?* (18 Oct 2026)
 
+**Approved by Matthew, 18 Oct 2026.**
+
 From `roadmap/ai-society-design-handoff.md`. **Design only, for Matthew to approve. No lesson files until he does.** Claims are cited by number from `roadmap/ai-society-research-brief.md`; anything marked **to add** is in the brief's text but not its claims tables, so it stays out of student text until checked and added.
 
 ## Decisions asked for (recommendations)
@@ -107,7 +109,7 @@ New to build: one widget (`feed`) and two modes (`cyber` consent, `ai-dialogue` 
 | Consent screen real-world link | Date it on use; re-check each term |
 
 ## Before writing lessons
-- Foundations names the kinds of AI side by side (separate task); both openers link to it.
+- ~~Foundations names the kinds of AI side by side~~ Done 18 Oct 2026: `ai/foundations/kinds-of-ai` (Unit 2, lesson 5). Both openers link to it and use its four plain names.
 - Add the **to add** claims to the brief's tables after checking them: Scamwatch call-back advice; eSafety deepfake law and reporting; eSafety companion codes; California SB 243; NYC Local Law 144 audit figures; agent incidents (Replit, Operator); Getty and NYT cases.
 - Send lessons 4 and 9 (and 3) to the wellbeing lead as soon as they are drafted.
 - Suggested build order: *Who Does AI Affect?* Units 1–2 (no new widgets), then the `feed` widget and *AI in your life* Unit 1, then the rest; Cyber additions with the `cyber` consent mode.

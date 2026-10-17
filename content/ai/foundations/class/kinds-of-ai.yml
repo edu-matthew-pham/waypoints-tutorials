@@ -1,0 +1,28 @@
+inquiry:
+  q: "Should a news story be allowed to call a simple rule 'AI'?"
+  prompts:
+    - "What would a reader think if they heard 'AI decided'?"
+    - "Does it matter who wrote the rule, or who checked it?"
+  notes: "Both sides are fair: 'AI' is used loosely in everyday speech, but the kind changes who is responsible and what to check. Come back to it in the Evaluate step."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Is it all AI?"
+    minutes: 3
+    do: |
+      Hands up: does a bell app use AI? A spam filter? A chatbot? Two students who disagree explain why.
+    notes: "Don't settle it yet; the sort does."
+  - at: run
+    kind: activity
+    title: "Sort the cards"
+    minutes: 7
+    do: |
+      In pairs, sort the system cards into four columns: rules written by people, learns to predict or sort, makes new content, takes actions. For each card, say what makes it that kind.
+    notes: "Print the eight systems from the Explore step as cards. The deciding question: did a person write the rule, did it learn from examples, does it make something new, or does it act?"
+  - at: investigate
+    kind: discussion
+    title: "Where would you look?"
+    minutes: 4
+    do: |
+      Pick one problem card. Which kind of system is it? Who would you ask to fix it, and what would they change?
+    notes: "Rules: the people who wrote the rule. Learned: the examples and labels. Content: check before using it. Actions: a person confirms first."

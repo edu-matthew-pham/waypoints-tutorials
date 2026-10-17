@@ -179,3 +179,5 @@ check:
 **Independent check:** without AI, use this new table: **1 = sun, 2–3 = rain, 4–6 = cloud**. What is the chance of rain? Explain how you worked it out. Then reflect: what did you hand over today, and what thinking did you keep?
 
 **Important limitation:** this is a fixed, transparent sampling model. Modern LLMs do not generate text by simply rolling a die over a six-entry table; they use much more complex learned patterns and context.
+
+**Kind of AI:** your generator is a tiny version of AI that **makes new content** (generative AI). Unit 2 meets a different kind: AI that learns to predict or sort.

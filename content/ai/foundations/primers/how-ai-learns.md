@@ -34,6 +34,10 @@ Open lesson 2's board. Swap two banana labels and test a yellow, long fruit. The
 
 **Can we see what a real AI learned?** Not easily. Its weights are numbers that don't map neatly to human ideas, which is why its answers need checking.
 
+## Four kinds of AI (lesson 5)
+
+The unit ends by naming the kinds side by side, in plain words: **rules written by people** (automation that learns nothing, though news stories often call it AI), **learns to predict or sort** (classifiers, scores, recommenders: the fruit sorter and neural network), **makes new content** (generative AI: the dice generator, chatbots, image makers) and **takes actions** (agents: generative AI with tools that buy, send or delete). Each goes wrong differently: a wrong rule hits everyone at once; wrong or missing examples; convincing content that isn't true; acting before anyone checks. The later courses AI in your life and Who Does AI Affect? recap these four names.
+
 ## How it connects
 
 Unit 1 showed text generation as choosing likely next words. This unit shows where "likely" comes from: examples and learned weights. Unit 3 turns to talking with AI.

@@ -1,0 +1,40 @@
+summary: "Students sort everyday systems into four kinds of AI (rules written by people, predict or sort, make new content, take actions), then match each kind to the way it usually goes wrong."
+time: 25
+goals:
+  - "I can sort a system into one of four kinds: rules written by people, predict or sort, make new content, or take actions."
+  - "I can name one way each kind usually goes wrong."
+  - "I can say where to look first when each kind gets something wrong."
+before: |
+  **Core idea:** "AI" covers different kinds of system that fail for different reasons, so the first question about any system is "which kind is it?". Students have already built two kinds in this course: a generator (Unit 1's dice generator, a tiny content maker) and a learner (Unit 2's fruit sorter and neural network). This lesson adds the two they haven't met: rules written by people (automation without learning) and agents (generative AI with tools that takes actions).
+  Plain-word names used with students, with the usual terms in brackets: rules written by people (rule-based automation); learns to predict or sort (predictive machine learning: classifiers, scores, rankings, recommenders); makes new content (generative AI); takes actions (AI agents).
+  Rules are not machine learning, but news stories often call them "AI" or "an algorithm". Real examples for discussion (teacher background, not needed in class): Robodebt was automation without AI; England's 2020 exam-grade adjustment was a statistical formula. The later courses AI in your life and Who Does AI Affect? open with a short recap of this lesson and use these four names.
+  All the systems in the lesson are generic or made up; it makes no claims about a real product.
+  No account, online tool or board is needed. The sorts work as paper cards.
+running:
+  - "Engage: take a vote on the advert before showing the four kinds. Ask what makes something 'AI'."
+  - "Explore: sort as a class or in pairs with cards. The bell app and the library rule are the ones students most often call AI; ask whether anything was learned."
+  - "Explain: the four ways of going wrong. Link 'learned from wrong or missing examples' back to the fruit sorter lesson."
+  - "Elaborate: real apps mix kinds. Ask which part of the homework app most needs a person to check before it acts."
+struggle: "Students tend to call anything on a computer 'AI', and to think all AI works like a chatbot. The sort separates what was written by people from what was learned or made."
+stuck:
+  - see: "A student puts the bell app or the library rule under 'Learns to predict or sort'."
+    ask: "Did anyone give it examples to learn from, or did a person type in what to do?"
+    fix: "If a person wrote exactly what happens, it is a rule. Learning needs examples."
+  - see: "A student puts the booking assistant under 'Makes new content'."
+    ask: "Does it only write something, or does it do something in the world?"
+    fix: "Paying and emailing are actions. An agent usually also writes content, but acting is what makes it an agent."
+  - see: "A student thinks the video app follows rules because it 'always' picks similar videos."
+    ask: "Did a person write which video comes next, or did it learn from what people watched?"
+    fix: "It learned patterns from what people watched, so it predicts."
+support: "Give the four kinds as column headings on paper, each with one example from the course already in place (dice generator, fruit sorter), so students only place the new cards."
+stretch: "Find a system at home or school that mixes at least two kinds. Which part would you want a person to check?"
+leads: "Unit 3 turns to talking with AI: writing a clear request, then following up. The four kinds come back in the later AI in your life and Who Does AI Affect? courses."
+exit:
+  q: "A chatbot gives you a made-up fact, and a bell app rings at the wrong time. Why do they go wrong in different ways?"
+  a: "The chatbot makes new content, so it can make something likely-sounding that isn't true. The bell app follows a rule a person typed in, so the rule (or the time typed in) was wrong."
+explain: |
+  1. Rules written by people: it follows instructions; it goes wrong when the rule is wrong, for everyone at once.
+  2. Learns to predict or sort: it learned from examples; it goes wrong when examples are wrong or missing.
+  3. Makes new content: it makes text or pictures; it can make something convincing that isn't true.
+  4. Takes actions: it does things for you; it can act on a mistake before anyone checks.
+  Ask which kind it is first, then you know where to look.
