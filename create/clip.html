@@ -4,7 +4,7 @@
 </style>
 <header><div><a href="./">← Create lesson</a><h1>Create an explanatory clip <small>(experimental)</small></h1></div><div class="actions"><button id="export">Export JSON</button><label>Import JSON <input type="file" id="import" accept=".json,application/json"></label></div></header>
 <p class="muted">Build a sequence of captions, narration and actions. Preview the real application before recording. WebM uses browser tab capture; choose <strong>This Tab</strong> when prompted. JSON is editable and remains local.</p>
-<main><section><label>Application <select id="app"><option value="turtle">Python Turtle</option><option value="physics">Physics · Forces</option></select></label>
+<main><section><label>Existing lesson clip <select id="lessonClip"><option value="">Manual draft</option></select></label><button id="loadLessonClip">Load lesson clip</button><label>Application <select id="app"><option value="turtle">Python Turtle</option><option value="physics">Physics · Forces</option></select></label>
 <label>Clip title <input id="title" value="My explanation"></label>
 <label>Steps</label><ol id="steps"></ol>
 <div class="row"><button id="add">+ Add step</button><button id="remove">Remove last</button></div>
