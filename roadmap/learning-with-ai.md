@@ -157,4 +157,6 @@ Source: Project doc `claude/proposal-ai-society-and-discussions.md`. Don't build
 4. **Discussion activities in Does AI Help Us Learn? (class plans only, no student-text change):** pool the class's self-investigation results and argue what the data shows; a closing deliberation "When should our class use AI for homework?" (pairs with the optional prompt steps), possibly a class agreement; a continuum on evidence tools (locked session versus trust and privacy).
 5. **Extension, last: "Should we use this AI tool?"** for student and teacher AI committees, off the student trail. Evaluate a real tool: does it help learning, and who does it affect? Recommended, not required, prerequisites with a short primer; run over several sessions through its class plan with a printable worksheet. Matches Kit's planned `trial.md` (not yet written) and shares a format with the candidate teacher course on making tutorials: decide those together.
 
+**Next for Who Does AI Affect? (18 Oct 2026):** a research brief first, in a new chat, from `roadmap/ai-society-research-handoff.md`; course design in another chat once Matthew approves the brief.
+
 **Suggested order:** (1) the audit: done 18 Oct; (2) bias in `model-mistakes`; (3) discussion activities in Does AI Help Us Learn?; (4) *Who Does AI Affect?*, with a pointer page meanwhile; (5) the committee extension.
