@@ -35,7 +35,7 @@ $('stop').onclick=()=>{if(recorder?.state==='recording')recorder.stop()};
 draw();reset();
 // Load build-generated clips from existing lesson.md frontmatter; no JSON import required.
 let lessonClips=[];
-fetch('./lesson-clips.json').then(r=>{if(!r.ok)throw Error('Lesson clip catalogue unavailable');return r.json()}).then(clips=>{
+fetch('./lesson-clips.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Lesson clip catalogue unavailable');return r.json()}).then(clips=>{
   lessonClips=clips;
   for(let i=0;i<clips.length;i++){
     const opt=document.createElement('option');opt.value=String(i);

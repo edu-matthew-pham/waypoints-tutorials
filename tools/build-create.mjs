@@ -5,6 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadLessons } from './lesson.mjs';
 import { browserClip } from './export-browser-clip.mjs';
+import { stampPlayground } from './build-playground.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -28,6 +29,8 @@ export function buildCreate(out = 'dist') {
   mkdirSync(join(dest, 'vendor'), { recursive: true });
   copyFileSync(join(root, 'node_modules', 'marked', 'lib', 'marked.esm.js'), join(dest, 'vendor', 'marked.esm.js'));
   cpSync(join(root, 'node_modules', 'yaml', 'browser'), join(dest, 'vendor', 'yaml'), { recursive: true });
+  // Version the editor entry points and local imports so a deploy cannot reuse an older recorder script.
+  stampPlayground(dest);
   // Old address: forward to the new one, keeping any #l=... share link.
   mkdirSync(join(out, 'create'), { recursive: true });
   writeFileSync(join(out, 'create', 'index.html'), '<!doctype html><meta charset="utf-8"><title>Moved</title><script>location.replace("../code/create/"+location.hash)</script><a href="../code/create/">Moved to /code/create/</a>');
