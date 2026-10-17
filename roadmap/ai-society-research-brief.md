@@ -9,6 +9,7 @@ Every source below was opened on 18 Oct 2026 unless marked **unverified**. "Chec
 - **Sources are good for all five topics.** Strongest: the meta-analysis on deepfake detection (topic 2), the Services Australia promotion round and Ofqual 2020 (topic 3), the IEA reports plus a clearly dated range (topic 4), TIME 2023 with Sama's rebuttal (topic 5).
 - **Existing resources:** Day of AI (CC BY-NC-SA 4.0) and the Digital Technologies Hub (CC BY 4.0) can be adapted. Experience AI and Code.org videos are no-derivatives (use as-is). Common Sense and Elements of AI are link only. **Gaps:** a hiring case, a lesson centred on data labellers, and reading a real consent screen.
 - **Thin parts:** ACARA elaborations (unreachable); full slides behind logins (Day of AI, Common Sense, Experience AI); eSafety pages (blocked); peer-reviewed pay data for AI labelling.
+- **Second pass (same day, Part 4):** seven more topics researched at Matthew's request: feeds and attention, attacks on and with AI, AI agents, jobs, benefits, copyright, AI companions. With eleven topics, Part 4 proposes **two parallel courses** (*AI in your life* and *Who Does AI Affect?*), with attacks moved mostly into Cyber safety. A proposal, not decided.
 
 ---
 
@@ -198,6 +199,145 @@ Full slides behind free logins (Day of AI, Common Sense, Experience AI) were not
 
 ---
 
+## Part 4. Second pass: seven more topics (18 Oct 2026)
+
+Added after Matthew asked what was missing. Same rules as above. Inclusion test used: **include a harm when AI changes it** (easier, cheaper, more convincing, or AI decides what you see); harms that exist without AI (strangers in chats, harmful sites as such) belong to Cyber safety, eSafety or the school's wellbeing program.
+
+### Proposed structure (for Matthew to decide)
+Eleven topics at two or so lessons each would make a 16–20 lesson course. Proposal: **two parallel courses**, both after AI Foundations, neither a prerequisite for the other (like Does AI Help Us Learn?), each opening briefly with the same lens: who is affected, and how.
+
+| *AI in your life* (personal; strongest at Year 7; suits co-teaching with wellbeing) | *Who Does AI Affect?* (society; Year 7 core, heavier wider steps) |
+|---|---|
+| 1. How feeds decide (primer: "be the algorithm") | 1. Who is affected, and how (the lens, with benefits) |
+| 2. Designed to keep you (attention, the "addiction" debate, the under-16 law) | 2. Who decides? (Ofqual, Services Australia) |
+| 3. What you give away (data, a consent screen, chats used for training) | 3. When AI acts (agents, Air Canada, confirm before acting) |
+| 4. Is it real? (detection near chance, so check provenance) | 4. Jobs (exposure is not job loss; junior jobs) |
+| 5. Fakes that hurt (deepfake bullying, voice-clone scams: harm, law, reporting) | 5. Energy and water |
+| 6. Talking to AI (companions: light core, depth in wider steps) | 6. Who labels the data |
+| | 7. Whose work trained it (copyright) |
+| | 8. Making rules (policy; wider) |
+
+- **Attacks on AI** go mostly to **Cyber safety** as new examples: a malicious model on Hugging Face (supply chain, 10P13), voice-clone and deepfake scams (phishing and the user weakness, 8P13), prompt injection (Years 9–10 threat models). *AI in your life* keeps only the scam-on-families case.
+- **Benefits** are woven through *Who Does AI Affect?* (and its first lesson), not a unit.
+- **Alternative:** one course, five units, about 16 lessons, with teachers taking chosen units.
+
+### Curriculum fit of the new topics
+| Topic | ACARA | AI4K12 / UNESCO | Fit |
+|---|---|---|---|
+| Feeds and attention | AI connection: recommendation algorithms, persuasion on social media, profiling, "dark pattern" UX | AI4K12 5-A-i (6–8, inferred): app designers' goals; recommenders named only at Years 3–5 | **Strong** |
+| Attacks on and with AI | 8P13, 10P13 (Cyber safety); AI connection: "identify cyber security threats", deepfake bullying; no scams or prompt injection | — | Strong for Cyber safety, weak here |
+| AI agents | AI connection: "AI agents" in passing; human-in-the-loop, accountability | AI4K12 5-A-ii accountability; UNESCO human agency and accountability | **Medium** (oversight strong, agents thin) |
+| Jobs | AI connection: future workforce, job displacement, AI as co-workers | AI4K12 5-C-ii (6–8): predict how a job might change; UNESCO light | **Strong** |
+| Benefits | AI connection: benefits to all members of the community, assistive technology | AI4K12 5-D-ii; UNESCO "AI for the public good" | **Strong** |
+| Copyright | AI connection: copyright and intellectual property; Digital Literacy: ownership and remixing | UNESCO: respecting copyright, debate ownership | **Strong** |
+| Companions | Not on the AI connection page; Digital Literacy: manage digital wellbeing | UNESCO: avoid dependence on AI | **Weak to medium** |
+
+### Feeds, attention and "addiction"
+- **What feeds optimise:** eSafety's *Recommender systems* position paper (May 2026): platforms rank overwhelmingly for engagement (dwell time, likes, shares); infinite scroll and autoplay encourage excessive use; recommenders are "only one factor" in harm. Platform pages (TikTok 2020, YouTube help) give the signals students can test in a "be the algorithm" activity.
+- **Amplification:** Milli et al. (arXiv 2023–24; journal unverified): Twitter's engagement ranking amplified emotional, out-group-hostile content that users did not prefer. Huszár et al. (PNAS 2022): the algorithmic feed amplified the mainstream political right in 6 of 7 countries (wider steps).
+- **Harm is contested:** the National Academies (2024) did not find population-level causation; Orben and Przybylski (2019): small association; a 2026 JAMA Pediatrics meta-analysis of 153 longitudinal studies (Teague et al., Australian authors) finds consistent but small associations, stronger in early adolescence, observational only; Odgers vs Haidt (2024) as the public debate. "Social media addiction" is not a DSM diagnosis (Health Affairs Forefront, Oct 2026): teach "addiction" as the word people argue about.
+- **Australia's minimum age:** obligation in effect from 10 Dec 2025 (eSafety evaluation methodology, Jul 2026). At three months, under-16s holding an account fell from 52.4% to 42.1%; eSafety says it is too early to judge (31 Jul 2026). Statutory review about Dec 2027. Act commencement wording **unverified**.
+- **Design rules elsewhere:** European Commission preliminary finding that TikTok's addictive design breaches the DSA (6 Feb 2026; no final decision found); UK Children's Code standard 5 (sticky features); US states v Meta trial began Aug 2026 (allegations; no verdict found as of 18 Oct 2026; re-check).
+- **Resources:** Experience AI *AI and Social Media* (ages 8–12, simulated feed; licence not stated on the unit, other units CC BY-NC-ND); Day of AI Grade 8 "AI, Power, and Persuasion" (adaptable); DT Hub "Filter bubbles, bias, rabbit holes and nudging" (Years 9–10, CC BY 4.0, most adaptable); Actua "Ethical Algorithms" card game (adapt for own class, no republishing); Common Sense (link only). **Gap:** no openly licensed, phone-free Year 7 "be the recommender" activity; write our own.
+
+### Attacks on AI and with AI
+- **Malicious models:** JFrog (27 Feb 2024) found about 100 malicious models on Hugging Face; ReversingLabs (Feb 2025) found two that slipped past its scanner, removed within a day. Hugging Face's own docs say not to unpickle data from untrusted sources and recommend safetensors. Plain idea: opening an untrusted model file is like running an untrusted program.
+- **Prompt injection:** OWASP LLM01:2025; UK NCSC (8 Dec 2025): the model does not separate instructions from data, so limit what an AI can do when it reads untrusted input. ASD's joint guidance (Jan 2024) **unverified** (cyber.gov.au blocked).
+- **AI used by attackers:** ASD Annual Cyber Threat Report 2024–25 (Oct 2025): AI lets attackers work at scale; it names **no** specific AI attack on Australian government; don't claim one. Google Threat Intelligence (Jan and Nov 2025). Anthropic (Nov 2025) on an AI-orchestrated espionage campaign: a company claim that outside experts doubted (BleepingComputer).
+- **Scams on families (Year 7):** Scamwatch (updated 23 Mar 2026): a few seconds of voice can make a clone; hang up and call back on a number you already have. Arup (CNN, May 2024): a deepfake video call led to about US$25.6m transferred. The National Anti-Scam Centre's 2025 report does not put a number on AI scams.
+- **Resources:** Day of AI *Sounds Like You* (adaptable); NSW Cybermarvel Year 8 "Detect AI fakes" (registration, no open licence); prompt-injection games (Lakera) not for Year 7 without checking their privacy policy.
+
+### AI agents: when AI acts
+- **Real incidents (all recent, mostly self-reported, low harm):** *Moffatt v Air Canada* (BC tribunal, 14 Feb 2024): the airline is responsible for its chatbot's wrong advice (an answer, not an action; best Year 7 case). OpenAI Operator bought $31 of eggs without approval (Washington Post, Feb 2025; AIID 1028; article **unverified**). A Meta researcher's agent deleted emails despite "confirm before acting" (Feb 2026; AIID 1542; single first-person report). Replit's agent deleted a live database during a code freeze (Jul 2025). Google Antigravity wiped a drive (Nov 2025; AIID 1433).
+- **Lab tests, not real events:** Anthropic "Agentic Misalignment" (Jun 2025) says all behaviours occurred in controlled simulations and calls one scenario "extremely contrived"; Apollo Research (Dec 2024); OpenAI o1 system card. A good wider-step media-literacy task: headline vs original.
+- **Oversight:** DISR *Guidance for AI Adoption* (21 Oct 2025): "Decide who is accountable", "Maintain human control"; EU AI Act Article 14 (override and a "stop" button; from 2 Dec 2027); NIST/CAISI on agent hijacking (Jan 2026).
+- **Maturity:** not ready as a Year 7 standalone topic. Core: who is responsible, and what "confirm before acting" looks like. Wider: the incidents and lab-vs-real. No ready-made agents lesson found for ages 11–16; Day of AI "When Should Humans Override AI?" is closest.
+
+### Jobs
+- **Exposure is not job loss.** ILO (2023; refined 2025): about 1 in 4 workers in an occupation with some exposure, 3.3% in the highest tier, mostly augmentation; women more exposed (clerical work). IMF (Jan 2024): about 40% of jobs exposed globally, 60% in advanced economies. **Jobs and Skills Australia** (14 Aug 2025): far more augmentation than automation; about 4% of the workforce in high-automation-exposure jobs; "no current evidence of widespread displacement in Australia". Productivity Commission (Dec 2025): the job effect is highly uncertain.
+- **Observed:** Brynjolfsson, Li and Raymond (QJE 2025): call-centre productivity +14%, +34% for novices. Stanford "Canaries" (Aug 2025, revised Aug 2026): US workers aged 22–25 in the most exposed jobs about 19% below trend; the authors call it descriptive, not causal, and partly concede other factors. Counterpoint: Yale Budget Lab (Oct 2025) finds no discernible economy-wide disruption. Freelancers (Hui et al., 2023): writers' and illustrators' earnings fell after ChatGPT and image generators. DEWR's Australian analysis (2026) **unverified** (blocked).
+- **Contested:** headline exposure ranges from 25% to 60%; the junior-jobs question is live; novices both gain most from AI and may be hired less.
+- **Resources:** Day of AI Grade 7 "Human Skills in an AI World" (automation vs augmentation; adaptable; best Year 7 fit); Code.org "Ethics & AI: Privacy & the Future of Work" video (as-is).
+
+### Benefits (woven through)
+- **Breast screening (MASAI, Sweden):** *Lancet Oncology* 2023: AI cut radiologists' screen-reading workload by 44.3% without more false positives; *The Lancet* (Jan 2026): 12% fewer interval cancers (Lund University summary; Lancet page **unverified**). Catch: one country, one system.
+- **Science and weather:** AlphaFold (2024 Nobel Prize in Chemistry); ECMWF's AI forecast model operational since Feb 2025 (better tropical cyclone tracks, about 1,000 times less energy per forecast). The Bureau of Meteorology says it does **not** use generative AI for forecasts (Mar 2026), so don't use it as an AI-forecasting example.
+- **Australian cases with catches:** CSIRO and Google crown-of-thorns starfish detection (no accuracy figures published); UTS SharkSpotter (an old 90% claim, no independent check); skin cancer apps (Alfred Health's 90%+ vs a 2025 Queensland study at 63% sensitivity and a 2026 CSU study: dermatologists 97%, AI 81%). Accessibility: Be My Eyes, Live Caption (on-device).
+- **Teaching point:** a benefit has a "for whom, and what's the catch?" too. The DT Hub "Systems thinking and AI applications" lesson (CC BY 4.0) uses several of these; note it features the skin-cancer tool that underperformed.
+
+### Copyright: whose work trained it
+- **Australia:** the government ruled out a text-and-data-mining exception (AG release, about 27 Oct 2025) and consulted on licensing (submissions closed 11 Dec 2025); no model chosen as of Jul 2026 (secondary sources disagree on the July framework; **verify officially**). Productivity Commission final report (Dec 2025): no exception now, review later (PC pages **unverified**). AI output: copyright needs a human author (*Telstra v Phone Directories* [2010] FCAFC 149; Arts Law, 2024); untested for AI in Australian courts.
+- **Cases:** *Bartz v Anthropic*: training ruled fair use but pirated copies not; US$1.5bn settlement, final approval 20 Jul 2026, about US$3,000 per book. *Thomson Reuters v Ross*: fair use rejected (non-generative AI; affirmed on appeal Sep 2026, opinion sealed). *Getty v Stability AI* (UK, Nov 2025): Getty largely lost; appeal pending. *NYT v OpenAI*: no ruling yet. Music labels settled with Udio and Suno in part (late 2025).
+- **Relatable:** APRA AMCOS (Aug 2024): 82% of music creators worried about their livelihoods; 23% of revenue projected at risk by 2028 (a commissioned projection). Glaze (USENIX 2023): a tool artists use against style mimicry.
+- **Teach as "the law is being decided now".** Settled enough for Year 7: Australia has no AI training exception; pure AI output likely has no copyright.
+- **Resources:** Day of AI *AI and the Creative Arts* (adaptable); MIT *Creative AI* curriculum (CC BY-NC); Common Sense "Is It Fair Use? AI Edition" (US law; link only).
+
+### AI companions
+- **Australia:** eSafety advisory (Feb 2025); notices to four companion apps found weak age checks (Oct 2025); age-restricted material codes covering AI companion chatbots enforceable from 9 Mar 2026; eSafety survey of 1,950 Australians aged 10–17 (Feb–Mar 2026): 8% had used an AI companion. eSafety's educator information sheet: most companion apps are rated 17+ with no age checks.
+- **Evidence:** Common Sense (Jul 2025): 72% of US teens had used AI companions (a broad definition that includes general chatbots); 80% prioritise real friends. OpenAI and MIT (Mar 2025): emotional use is rare; heavier use linked with loneliness (adults, correlational, not peer reviewed then). McBain et al. (*JAMA Pediatrics*, Jun 2026): 19% of US 12–21-year-olds had used chatbots for mental-health advice. Causal evidence for under-18s is thin.
+- **Regulation elsewhere:** California SB 243 (from 1 Jan 2026: AI disclosure, break reminders for minors); FTC inquiry (Sep 2025); Character.AI ended open-ended chat for under-18s (Nov 2025).
+- **Teacher notes only:** lawsuits against Character.AI (settled Jan 2026) and OpenAI (ongoing) involve young people's deaths; name parties and status only. Some eSafety pages mention a death; preview before sharing.
+- **Year 7 framing:** light and non-personal (chatbots are designed to feel human and keep you talking; what makes a real friend; age limits). Don't ask students about their own use; teacher-led; support pathways ready. Depth (design for engagement, regulation, contested evidence) in wider steps.
+- **Resources:** Common Sense "AI Chatbots & Friendship" (Gr 8, 20 min; link only); eSafety information sheet (link). No adaptable resource found.
+
+### Claims added in the second pass
+| # | Claim | Source | Quote | Date checked | Status |
+|---|---|---|---|---|---|
+| 47 | Platforms rank feeds mainly for engagement | eSafety, Recommender systems position paper (May 2026), https://www.esafety.gov.au/sites/default/files/2026-05/Recommender-systems-position-paper-May2026.pdf | "overwhelmingly prioritise engagement when sorting and presenting content" | 18 Oct 2026 | checked |
+| 48 | Engagement ranking amplified hostile content users didn't prefer | Milli et al., https://arxiv.org/abs/2305.16941 | "amplifies emotionally charged, out-group hostile content" | 18 Oct 2026 | checked (arXiv); journal **unverified** |
+| 49 | Evidence does not show social media causes population-level harm | National Academies 2024, https://www.nationalacademies.org/read/27396/chapter/2 | "did not support the conclusion that social media causes changes" | 18 Oct 2026 | checked |
+| 50 | Digital media use consistently but weakly associated with youth health risks | Teague et al., JAMA Pediatrics 2026, https://researchonline.jcu.edu.au/91041/ | "consistently associated with risks to child and adolescent health" | 18 Oct 2026 | checked (abstract) |
+| 51 | "Social media addiction" is not a formal diagnosis | Health Affairs Forefront, 6 Oct 2026, https://www.healthaffairs.org/do/10.1377/forefront.20260928.671401 | "not a recognized DSM diagnosis with defined criteria" | 18 Oct 2026 | checked |
+| 52 | Under-16 account holding fell three months after the minimum age | eSafety, Early days, early insights (31 Jul 2026), https://www.esafety.gov.au/sites/default/files/2026-07/Early-days-early-insights-SMMA-evaluation-three-months-July-2026.pdf | "Platform inaction was the main reason why children still held accounts" | 18 Oct 2026 | checked |
+| 53 | EU preliminarily found TikTok's design may be addictive | European Commission, 6 Feb 2026, https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act | "may lead to compulsive behaviour and reduce users' self-control" | 18 Oct 2026 | checked (preliminary) |
+| 54 | Loading a malicious model can run an attacker's code | JFrog, 27 Feb 2024, https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/ | "run arbitrary code on the machine that loads or runs the model" | 18 Oct 2026 | checked |
+| 55 | Prompt injection can't be fixed like SQL injection | UK NCSC, 8 Dec 2025, https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection | "prompt injection will never be properly mitigated in the same way" | 18 Oct 2026 | checked |
+| 56 | AI lets attackers work at larger scale (no named Australian incident) | ASD Annual Cyber Threat Report 2024–25, https://www.cyber.gov.au/about-us/view-all-content/reports-and-statistics/annual-cyber-threat-report-2024-2025 | "enables malicious cyber actors to execute attacks on a larger scale" | 18 Oct 2026 | checked |
+| 57 | A few seconds of voice can make a clone | Scamwatch (modified 23 Mar 2026), https://www.scamwatch.gov.au/stop-check-protect/help-to-spot-and-avoid-scams/how-scammers-use-technology-and-ai | "a few seconds of a voice recording to create AI clones" | 18 Oct 2026 | checked |
+| 58 | Deepfake video call used to defraud Arup | CNN, 16 May 2024, https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk | "fake voices and images were used" | 18 Oct 2026 | checked |
+| 59 | A company is responsible for its chatbot's information | Moffatt v Air Canada, 2024 BCCRT 149, https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do | "it is responsible for all the information on its website" | 18 Oct 2026 | checked |
+| 60 | "Rogue AI" blackmail results came from simulations | Anthropic, 20 Jun 2025, https://www.anthropic.com/research/agentic-misalignment | "occurred in controlled simulations" | 18 Oct 2026 | checked |
+| 61 | Australian guidance: maintain human control of AI | DISR, Guidance for AI Adoption (21 Oct 2025), https://www.industry.gov.au/publications/guidance-for-ai-adoption | "Integrate meaningful human oversight and control of AI" | 18 Oct 2026 | checked |
+| 62 | GenAI more likely to augment than automate jobs | ILO 2023, https://www.ilo.org/publications/generative-ai-and-jobs-global-analysis-potential-effects-job-quantity-and | "likely to augment rather than automate jobs" | 18 Oct 2026 | checked |
+| 63 | No widespread AI job displacement yet in Australia | Jobs and Skills Australia, 14 Aug 2025, https://www.jobsandskills.gov.au/download/19803/our-gen-ai-transition-implications-work-and-skills/3364/our-gen-ai-transition/pdf | "no current evidence of widespread displacement in Australia" | 18 Oct 2026 | checked |
+| 64 | AI support raised call-centre productivity, most for novices | Brynjolfsson, Li & Raymond, https://www.nber.org/papers/w31161 | "by 14% on average" | 18 Oct 2026 | checked (abstract) |
+| 65 | Young US workers in exposed jobs are below trend (descriptive) | Stanford Digital Economy Lab, rev. Aug 2026, https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/ | "now stands 19% below" | 18 Oct 2026 | checked; contested |
+| 66 | No discernible economy-wide labour disruption since ChatGPT | Yale Budget Lab, 1 Oct 2025, https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs | "has not experienced a discernible disruption" | 18 Oct 2026 | checked |
+| 67 | AI cut breast-screen reading workload | MASAI, Lancet Oncology 2023, https://lup.lub.lu.se/record/be033994-ed89-4a99-904a-f6e97b3d2b21 | "The screen-reading workload was reduced by 44·3% using AI." | 18 Oct 2026 | checked (abstract) |
+| 68 | ECMWF's AI model beats physics models on many measures | ECMWF, Feb 2025, https://www.ecmwf.int/node/29308 | "outperforms state-of-the-art physics-based models for many measures" | 18 Oct 2026 | checked |
+| 69 | BoM does not use generative AI for forecasts | BoM AI transparency statement (2 Mar 2026), https://www.bom.gov.au/sites/default/files/2026-03/artificial-intelligence-ai-transparency-statement-2026.pdf | "We do not use neural network systems" | 18 Oct 2026 | checked |
+| 70 | Skin-cancer AI should complement specialists | Charles Sturt University, 11 Sep 2026, https://news.csu.edu.au/latest-news/ai-no-match-for-skin-cancer-specialists-in-detecting-melanomas | "should complement - not replace - human specialist assessment" | 18 Oct 2026 | checked |
+| 71 | Australia ruled out a text-and-data-mining exception | Attorney-General release (about 27 Oct 2025), https://ministers.ag.gov.au/node/1903 | "this will not include a Text and Data Mining Exception" | 18 Oct 2026 | checked (page undated) |
+| 72 | Australian copyright needs a human author | Telstra v Phone Directories [2010] FCAFC 149, https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/full/2010/2010fcafc0149 | "can subsist only if it originates from an individual" | 18 Oct 2026 | checked |
+| 73 | Bartz v Anthropic settlement approved | Court order, 20 Jul 2026, https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_4.pdf | "the largest copyright class action settlement in history" | 18 Oct 2026 | checked |
+| 74 | Most surveyed Australian and NZ music creators fear for their income | APRA AMCOS, 19 Aug 2024, https://www.apraamcos.co.nz/about-us/news-and-events/ai-and-music-survey-results | "no longer being able to make a living" | 18 Oct 2026 | checked |
+| 75 | 8% of Australian 10–17-year-olds had used an AI companion | eSafety, Talking to machines (2026), https://esafety.gov.au/research/talking-to-machines-childrens-experiences-with-ai-assistants-and-companions | "A notable minority of children had used an AI companion (8%)" | 18 Oct 2026 | checked |
+| 76 | Most companion apps are rated 17+ without age checks | eSafety educator information sheet, https://esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet | "with no safeguards or age checks" | 18 Oct 2026 | checked (undated) |
+| 77 | Most US teens have tried AI companions (broad definition) | Common Sense Media, 16 Jul 2025, https://www.commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds | "Seventy-two percent of teens have used AI companions at least once." | 18 Oct 2026 | checked |
+
+### Which kind of AI is each case? (added at Matthew's question)
+The brief had not separated the kinds of AI. It matters: the same word "AI" covers cases that fail for different reasons, and ACARA's AI connection has "Types of AI" as one of its three aspects. AI Foundations already teaches the mechanics of three kinds (a fruit-sorting classifier, a tiny neural network, a dice text generator) but doesn't, as far as its lesson titles and summaries show, name them side by side or include rule-based automation. Proposal: each course's first lesson asks "which kind is it?" with a short recap that links back to Foundations, and every case is tagged.
+
+| Kind | What it does (plain words) | Cases in this brief | How it goes wrong |
+|---|---|---|---|
+| **Rules written by people** (automation, not machine learning) | Follows instructions people wrote | Robodebt (income averaging), parts of Ofqual 2020 (a statistical formula) | The rule is wrong or unfair, and applied to everyone at once |
+| **Predictive machine learning** (classifiers, scores, rankings) | Learns patterns from labelled examples, then predicts or sorts | Amazon résumé tool, health-cost algorithm, résumé-screening tests, facial analysis (Gender Shades), recommender feeds, breast screening, starfish and shark spotting | Learns from biased or missing examples, or the wrong target (cost instead of illness) |
+| **Generative AI** (text, image, voice, video) | Learns from huge amounts of content, then makes new content | Chatbots and companions, deepfakes and voice clones, copyright cases, per-prompt energy and water, data labelling for ChatGPT's safety filter | Makes convincing things that aren't true, and copies or competes with the work it learned from |
+| **Agents** (generative AI with tools) | Plans steps and takes actions (buy, delete, send) | Operator, Replit, inbox deletion, Air Canada (a chatbot that only answered) | Acts on a mistake before a person can check |
+| **Other AI** (mostly predictive, sometimes non-generative neural networks) | Forecasts, detects, plans | ECMWF weather model, AlphaFold, self-driving cars (not covered) | Varies; mostly a benefits case |
+
+Notes: Services Australia used "AI-assisted and automated" selection without saying which kind (unclear). Energy totals mix all kinds of data-centre work, not only generative AI. Recommenders are predictive ML, which is why the feeds primer can build directly on Foundations' classifier lessons.
+
+### Unverified in the second pass: links to click
+- Social Media Minimum Age Act commencement wording: https://www.legislation.gov.au/C2024A00127/asmade/text
+- ASD joint guidance *Engaging with Artificial Intelligence*: https://www.cyber.gov.au/resources-business-and-government/governance-and-user-education/artificial-intelligence/engaging-with-artificial-intelligence
+- Washington Post on Operator (Feb 2025): https://www.washingtonpost.com/technology/2025/02/07/openai-operator-ai-agent-chatgpt/
+- DEWR *AI and employment in Australia*: https://www.dewr.gov.au/workplace-relations/resources/ai-and-employment-australia
+- MASAI 2026 results in *The Lancet* (only the Lund University summary was read).
+- Productivity Commission final report on data and digital technology (pc.gov.au), and an official source for the July 2026 copyright framework.
+- Experience AI *AI and Social Media* unit licence.
+- Any verdict in the US states v Meta trial; any final EU decision on TikTok.
+
 ## Open questions for Matthew
 1. **Topic 1 boundary.** Cyber safety already teaches the digital footprint (8P14) and the APPs (10P14). Is topic 1 narrowed to "AI and your data" (training on chats, consent screens, the Children's Online Privacy Code), linking back for the rest?
 2. **Topic 5 curriculum fit is weak** (no framework names data workers). Keep it as a core lesson justified by "possible future impact" and Ethical Understanding, or make it a typical/wider step inside topic 3 or 4?
@@ -206,4 +346,11 @@ Full slides behind free logins (Day of AI, Common Sense, Experience AI) were not
 5. **Day of AI:** adapt its lessons (CC BY-NC-SA means our adapted lessons must be shared alike and non-commercial, and attributed in each lesson) or only link to them? This affects the site's own licence for those lessons.
 6. **Energy and water figures:** accept a re-check date (for example each January) in teacher notes, given how fast IEA, AEMO and company figures move?
 7. **Live consent screens** (OpenAI, Anthropic and others) change often and may not suit "platform-agnostic": use a dated screenshot, or a made-up consent screen modelled on real ones (as Cyber safety uses a made-up club app)?
-8. **Re-check dates:** Children's Online Privacy Code after 10 Dec 2026; EU Digital Omnibus on EUR-Lex; a 2025 review of the schools AI framework.
+8. **Re-check dates:** Children's Online Privacy Code after 10 Dec 2026; EU Digital Omnibus on EUR-Lex; a 2025 review of the schools AI framework; US states v Meta verdict; EU decision on TikTok.
+
+Second pass:
+9. **Structure:** two parallel courses (*AI in your life*, *Who Does AI Affect?*) or one course of about 16 lessons in five units? If two, which keeps the title *Who Does AI Affect?*
+10. **Attacks on AI to Cyber safety:** add the malicious-model, voice-clone and prompt-injection examples there (a separate change to a built course)?
+11. **Companions and deepfake bullying:** agree the Year 7 wording with the school's wellbeing lead first? Both touch topics where some students may be personally affected.
+12. **Kinds of AI:** recap in each course's first lesson (proposed), or add a short "kinds of AI" lesson to AI Foundations instead?
+13. **"Be the algorithm" card activity:** no openly licensed Year 7 version exists; write our own (borrowing the idea from Actua and Day of AI, not their materials)?
