@@ -2,7 +2,9 @@
 export function setupEntry({hasSaved, addFiles, example}) {
   const $ = id => document.getElementById(id);
   const start = $('createStart'), workspace = $('createWorkspace');
+  let unusedStarter = !hasSaved;
   const showWorkspace = () => {
+    unusedStarter = false;
     start.hidden = true; workspace.hidden = false;
     $('workspaceTitle').focus(); window.scrollTo(0, 0);
   };
@@ -27,7 +29,7 @@ export function setupEntry({hasSaved, addFiles, example}) {
       files[file.name] = await file.text();
     }
     if (!Object.hasOwn(files, 'lesson.md')) throw Error('Select a lesson.md along with any supporting files.');
-    await addFiles(files); showWorkspace();
+    await addFiles(files,{replaceInitial:unusedStarter}); showWorkspace();
   }
   $('startPrompt').onclick = async () => {
     panel('promptRoute');
@@ -65,7 +67,7 @@ export function setupEntry({hasSaved, addFiles, example}) {
   });
   $('startExample').onclick = async () => {
     $('startExample').disabled = true;
-    try { await addFiles({...example}); showWorkspace(); }
+    try { await addFiles({...example},{replaceInitial:unusedStarter}); showWorkspace(); }
     catch (error) { $('startStatus').textContent = error.message; }
     finally { $('startExample').disabled = false; }
   };

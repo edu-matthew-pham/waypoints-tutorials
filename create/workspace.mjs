@@ -190,12 +190,15 @@ export async function setupWorkspace(controller) {
   persist();
   if(sharedLink){const address=new URL(location.href);address.hash='';address.searchParams.set('lesson',workspace.active);history.replaceState(null,'',address)}
   workspaceUI();await changed(controller.getFiles());await refresh();
-  async function addFiles(files) {
-    if(workspace.lessons.length>=100)throw Error('The course is full. Export it before adding another lesson.');
+  async function addFiles(files,{replaceInitial=false}={}) {
+    const replace=replaceInitial&&workspace.lessons.length===1;
+    if(!replace&&workspace.lessons.length>=100)throw Error('The course is full. Export it before adding another lesson.');
     await changed(controller.getFiles());
-    const title=parsed(files).title,id=uuid();
+    const title=parsed(files).title,id=replace?workspace.active:uuid();
     await updateDraft(id,()=>({id,files,clips:{}}));
-    workspace.lessons.push({id,title});await switchLesson(id);
+    if(replace)workspace.lessons[0].title=title;
+    else workspace.lessons.push({id,title});
+    await switchLesson(id);
   }
   return {changed,clipHtml,lessonId:()=>workspace.active,setStarterFactory:fn=>{starterFactory=fn},addFiles};
 }

@@ -21,10 +21,11 @@ try {
   await page.setInputFiles('#startSourceFiles',[source]);
   await page.locator('#createWorkspace:visible').waitFor();
   assert.match(await page.locator('#text').inputValue(),/Community garden/);
+  assert.equal(await page.locator('#courseLesson option').count(),1,'First source import replaces the unused starter');
   const original=await page.locator('#courseLesson').inputValue();
   await page.click('#backToStart');await page.click('#startExample');
   await page.locator('#createWorkspace:visible').waitFor();
-  assert.equal(await page.locator('#courseLesson option').count(),3,'Example adds a lesson rather than replacing the course');
+  assert.equal(await page.locator('#courseLesson option').count(),2,'Example adds a lesson rather than replacing the course');
   await page.selectOption('#courseLesson',original);
   await page.waitForFunction(()=>document.querySelector('#text').value.includes('Community garden'));
   await page.click('#backToStart');await page.reload();await page.locator('#startOpen:enabled').waitFor();
@@ -35,7 +36,7 @@ try {
   await page.click('#backToStart');await page.click('#startOpen');
   page.once('dialog',dialog=>dialog.accept());await page.setInputFiles('#importPackage',packagePath);
   await page.waitForFunction(()=>document.querySelector('#packageStatus').textContent.startsWith('Course package imported'));
-  assert.equal(await page.locator('#courseLesson option').count(),3);
+  assert.equal(await page.locator('#courseLesson option').count(),2);
   await page.click('#backToStart');await page.click('#startOpen');await page.setInputFiles('#startSourceFiles',{name:'notes.txt',mimeType:'text/plain',buffer:Buffer.from('Not a lesson')});
   await page.waitForFunction(()=>document.querySelector('#startStatus').textContent.includes('Select a lesson.md'));
   assert.equal(await page.locator('#createWorkspace').isVisible(),false,'Invalid imports remain on Start');
