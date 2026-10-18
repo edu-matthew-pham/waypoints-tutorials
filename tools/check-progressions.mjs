@@ -1,21 +1,24 @@
-// `npm run check-nodes`: tests for the progression data and node check (tools/progressions.mjs): the page parser on a
-// real page, the check on small made-up lessons, and the real maths lessons with one tag changed at a time.
-import { parsePage, parseRef, yearOf, auditNodes, loadProgressions } from './progressions.mjs';
+// `npm run check-nodes`: tests for the progression data and node check (tools/progressions.mjs): the loader on real
+// data (data/curriculum/), the check on small made-up lessons, and the real maths lessons with one tag changed at a time.
+import { parseRef, yearOf, auditNodes, loadProgressions } from './progressions.mjs';
 import { prerequisites } from './concepts.mjs';
 import { loadLessons, loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
-import { readFileSync } from 'node:fs';
 let fails = 0;
 const ok = (cond, m) => (cond ? console.log('ok  ', m) : (fails++, console.log('FAIL', m)));
 
-// Parser
-const a01 = parsePage(readFileSync('data/progressions/maths/AC9M7A01.md', 'utf8'));
-ok(a01.code === 'AC9M7A01' && a01.year === 7, 'AC9M7A01 page: code and year');
-ok(a01.nodes.length === 3 && a01.nodes[1].hinge && !a01.nodes[0].hinge && a01.nodes[2].width, 'three nodes; node 2 is a hinge, node 3 a width opportunity');
-ok(a01.nodes[1].title === 'Substituting values into formulas', 'node title without its marks');
+// Loader (data/curriculum/, the same data the pointer pages and Create use)
+const all = loadProgressions();
+const a01 = all.get('AC9M7A01');
+ok(a01.code === 'AC9M7A01' && a01.year === 7 && a01.subject === 'maths', 'AC9M7A01: code, year and subject');
+ok(a01.nodes.length === 3 && a01.nodes[1].hinge && !a01.nodes[0].hinge, 'three nodes; node 2 is a hinge');
+ok(a01.nodes[1].title === 'Substituting values into formulas', 'node title');
 ok(a01.nodes[1].criteria.length === 3 && /order of operations/.test(a01.nodes[1].criteria[1]), 'success criteria read');
+ok(/^Students substitute/.test(a01.nodes[1].checkpoint), 'checkpoint read (the coach prompt uses it)');
 ok(JSON.stringify(a01.prior) === '["AC9M6A01","AC9M6A02"]', 'prior knowledge codes only (not related standards)');
-const a03 = parsePage(readFileSync('data/progressions/maths/AC9M7A03.md', 'utf8'));
+const a03 = all.get('AC9M7A03');
 ok(!a03.prior.includes('AC9M7A01') && a03.prior.includes('AC9M7A02'), 'AC9M7A03: related standards (A01) are not prior knowledge');
+ok(all.has('AC9TDI8P13') && all.has('AC9S7U05') && all.has('AC9MFN01'), 'every subject and year is loaded (Digital Technologies processes, science, Foundation maths)');
+ok(yearOf('AC9MFN01') === 0 && yearOf('AC9AMU8E01') === 8, 'Foundation is year 0; banded codes give their code year');
 ok(yearOf('AC9M10A01') === 10 && yearOf('AC9S7U05') === 7, 'year from code');
 ok(parseRef('AC9M7A01 n2').n === 2 && parseRef('AC9M7N07').n === null && parseRef('7A01 n2') === null, 'refs parse');
 
@@ -42,7 +45,7 @@ ok(w.length === 1 && /AC9M7Y01/.test(w[0]), 'uses: a same-year descriptor no les
 w = run([L('y', 1, 'AC9M7Y01 n1'), L('a', 2, 'AC9M7X01 n1'), L('b', 3, 'AC9M7X01 n2', { uses: ['AC9M7Y01'] })]);
 ok(w.length === 0, 'uses: met by an earlier lesson');
 w = run([L('a', 1, 'AC9M7X01 n1', { uses: ['AC9M7Z01'] })]);
-ok(w.length === 1 && /no progression page/.test(w[0]), 'a descriptor with no page warns');
+ok(w.length === 1 && /not in the curriculum data/.test(w[0]), 'a descriptor not in the data warns');
 w = run([L('a', 1, 'AC9M7X01 n9')]);
 ok(w.length === 1 && /has no node 9/.test(w[0]), 'a node the page lacks warns');
 w = auditNodes([{ slug: 'maths/t/q', title: 'q', order: 1, node: [], uses: [], assumes: [] }], none, data).warnings;

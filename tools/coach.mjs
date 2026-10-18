@@ -1,23 +1,15 @@
 // Coach prompt: a copy-and-paste prompt for an AI tool the school allows, scoped to one lesson's move.
 // Built at build time from data the lesson already has (no AI here): the node's title and statement and its
-// success criteria (data/progressions/), the lesson's stuck list (teacher.yml: the misconceptions teachers see),
+// success criteria (data/curriculum/, through tools/progressions.mjs), the lesson's stuck list (teacher.yml: the misconceptions teachers see),
 // and the node before it (one step back). Shown on recap pages only with ?coach=1, and in the teacher guide,
 // for courses with `coach: true` in their index.md. Aim: beneficial, not detrimental, offloading (Lodge and
 // Loble, UTS, March 2026): the student does the thinking; the coach asks. The coaching rules are adapted from the
 // Waypoints Kit's coach.md (modes, no giveaways, a reflective question after help, fallible AI), made self-contained
 // so the prompt works in tools that can't open a URL, such as school Copilot.
-import { readFileSync } from 'node:fs';
 import { parseRef, yearOf } from './progressions.mjs';
 
-const statementCache = new Map();
-/** The "Students can …" line under a node's heading on its progression page. */
-function statement(file, n) {
-  if (!statementCache.has(file)) statementCache.set(file, readFileSync(file, 'utf8'));
-  const md = statementCache.get(file);
-  const part = md.split(/^#### /m).find((p) => p.startsWith(`${n}.`));
-  const line = part && part.split('\n').slice(1).map((s) => s.trim()).find((s) => s && !s.startsWith('**'));
-  return line ? line.replace(/^Students can /, '').replace(/\.$/, '') : '';
-}
+/** A node's checkpoint ("Students can …") as the rest of an "I can" sentence. */
+const statement = (node) => String(node.checkpoint || '').trim().replace(/^Students can /, '').replace(/\.$/, '');
 
 /** The prompt text for a lesson, or '' when its nodes are not in the progression data. */
 export function coachPrompt(lesson, progressions) {
@@ -29,7 +21,7 @@ export function coachPrompt(lesson, progressions) {
     const node = page && r.n && page.nodes.find((x) => x.n === r.n);
     if (!node) continue;
     year = year || yearOf(r.code);
-    const st = statement(page.file, r.n);
+    const st = statement(node);
     ideas.push(st ? `${node.title}: I can ${st}.` : `${node.title}.`);
     criteria.push(...node.criteria);
     const prev = page.nodes.find((x) => x.n === r.n - 1);

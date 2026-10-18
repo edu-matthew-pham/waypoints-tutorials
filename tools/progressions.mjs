@@ -1,11 +1,13 @@
-// Progression data and the node check (maths now; science once its lessons are tagged).
+// Progression data and the node check (maths, science and Digital systems lessons must name a node).
 //
-// Data: data/progressions/<subject>/<code>.md, one page per descriptor (see data/progressions/README.md).
+// Data: data/curriculum/<subject>.json, imported from Waypoints Kit by tools/import-curriculum.mjs (the same data the
+// teacher pointer pages, Create and the curriculum maps use; one copy, one re-import). Until 19 Oct 2026 it read
+// data/progressions/<subject>/<code>.md pages instead: the same nodes, criteria, hinges and prior knowledge.
 // Lessons: `node: AC9M7A01 n2` (or a list), `uses: [AC9M7N07]` (a descriptor or node the lesson relies on that the
 // data does not record), `assumes: [AC9M8A02 n3]` (taught in class, not on the site).
 //
 // A lesson's prerequisites: the node before it in the same descriptor, or for node 1 every descriptor named in the
-// page's Prior Knowledge; plus its `uses:`. A prerequisite is met when an earlier lesson (lower order in the course,
+// descriptor's prior knowledge; plus its `uses:`. A prerequisite is met when an earlier lesson (lower order in the course,
 // or a course it comes after in the subject's index.md) covers it (a descriptor: every one of its nodes), when the
 // lesson lists it in `assumes:`, or when it is from an earlier year (taught in class). Related standards are ignored:
 // many point forward.
@@ -18,37 +20,19 @@ import { theoryIds } from './concepts-core.mjs';   // theory concepts (assumes: 
 export const CHECKED = ['maths', 'science', 'systems'];   // subjects whose lessons must name a node
 const CODE = /AC9[A-Z]{1,4}\d{1,2}[A-Z]{1,3}\d{2}/g;
 
-/** Parse one progression page. */
-export function parsePage(md) {
-  const head = md.match(/^#\s+(AC9\S+)\s+[—-]\s+(.+)$/m);
-  if (!head) return null;
-  const section = (name) => { const m = md.match(new RegExp(`^## ${name}\\s*\\n([\\s\\S]*?)(?=^## |(?![\\s\\S]))`, 'm')); return m ? m[1] : ''; };
-  const nodes = [];
-  const parts = md.split(/^#### /m).slice(1);
-  for (const p of parts) {
-    const t = p.match(/^(\d+)\.\s+(.+)$/m);
-    if (!t) continue;
-    const title = t[2].replace(/[⚑★]/g, '').trim();
-    const crit = (p.match(/\*\*Success criteria:\*\*\s*\n([\s\S]*?)(?:\n\s*\n|$)/) || [, ''])[1]
-      .split('\n').map((s) => s.replace(/^\s*-\s*/, '').trim()).filter(Boolean);
-    nodes.push({ n: Number(t[1]), title, hinge: /⚑/.test(t[2]), width: /★/.test(t[2]), criteria: crit });
-  }
-  const code = head[1];
-  return { code, title: head[2].trim(), year: yearOf(code), prior: [...new Set((section('Prior Knowledge').match(CODE) || []))].filter((c) => c !== code), nodes };
-}
+/** The year level in a code such as AC9M7A01 (7), AC9M10A01 (10), AC9TDI8K03 (8) or AC9MFN01 (Foundation: 0); null if none. */
+export function yearOf(code) { const m = String(code).match(/^AC9[A-Z]+?(F(?=[A-Z0-9])|\d{1,2}(?=[A-Z]))/); return m ? (m[1] === 'F' ? 0 : Number(m[1])) : null; }
 
-/** The year level in a code such as AC9M7A01 (7), AC9M10A01 (10) or AC9TDI8K03 (8); null if none. */
-export function yearOf(code) { const m = String(code).match(/^AC9[A-Z]+?(\d{1,2})/); return m ? Number(m[1]) : null; }
-
-/** All pages: Map code -> page. */
-export function loadProgressions(root = 'data/progressions') {
+/** Every descriptor in data/curriculum/: Map code -> { code, title, year, prior, subject, nodes: [{ n, title, hinge, criteria, checkpoint }] }. */
+export function loadProgressions(root = 'data/curriculum') {
   const out = new Map();
   if (!existsSync(root)) return out;
-  for (const subj of readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory())) {
-    for (const f of readdirSync(join(root, subj.name)).filter((n) => n.endsWith('.md'))) {
-      const p = parsePage(readFileSync(join(root, subj.name, f), 'utf8'));
-      if (p) out.set(p.code, { ...p, subject: subj.name, file: join(root, subj.name, f) });
-    }
+  for (const f of readdirSync(root).filter((n) => n.endsWith('.json'))) {
+    const cur = JSON.parse(readFileSync(join(root, f), 'utf8'));
+    for (const d of cur.descriptors || []) out.set(d.code, {
+      code: d.code, title: d.title, year: d.year, prior: d.prior || [], subject: cur.subject,
+      nodes: (d.nodes || []).map((n) => ({ n: n.n, title: n.label, hinge: !!n.hinge, criteria: n.criteria || [], checkpoint: n.checkpoint || '' })),
+    });
   }
   return out;
 }
@@ -81,7 +65,7 @@ export function auditNodes(lessons, prereqs, data) {
       const r = parseRef(s);
       if (!r || !r.n) { warnings.push(`${l.slug} › node: "${s}" is not a node (write it as AC9M7A01 n2)`); continue; }
       const page = data.get(r.code);
-      if (!page) { warnings.push(`${l.slug} › node: no progression page for ${r.code} (add data/progressions/${subjectOf(l)}/${r.code}.md)`); mine.push(r); continue; }
+      if (!page) { warnings.push(`${l.slug} › node: ${r.code} is not in the curriculum data (check the code, or re-import from Kit: node tools/import-curriculum.mjs)`); mine.push(r); continue; }
       if (!page.nodes.some((x) => x.n === r.n)) { warnings.push(`${l.slug} › node: ${r.code} has no node ${r.n} (it has ${page.nodes.length})`); continue; }
       mine.push(r);
     }
@@ -93,7 +77,8 @@ export function auditNodes(lessons, prereqs, data) {
       if (mine.some((r) => r.code === code && r.n === n)) return l.slug;
       return earlier.find(hit)?.slug || null;
     };
-    const year = Math.min(...mine.map((r) => yearOf(r.code) ?? 99));
+    const yr = (code) => data.get(code)?.year ?? yearOf(code);
+    const year = Math.min(...mine.map((r) => yr(r.code) ?? 99));
     const deps = [];
     const need = (ref, why) => { if (!deps.some((d) => key(d.ref) === key(ref))) deps.push({ ref, why }); };
     for (const r of mine) {
@@ -108,7 +93,7 @@ export function auditNodes(lessons, prereqs, data) {
     const rows = [];
     for (const { ref, why } of deps) {
       const isAssumed = assumed.some((a) => a.code === ref.code && (a.n == null || a.n === ref.n));
-      const y = yearOf(ref.code);
+      const y = yr(ref.code);
       let status, by = '';
       if (isAssumed) status = 'assumed';
       else if (y != null && year !== 99 && y < year) status = 'earlier year';
@@ -120,7 +105,7 @@ export function auditNodes(lessons, prereqs, data) {
         const page = data.get(ref.code);
         if (!page) {
           status = 'no page';
-          warnings.push(`${l.slug} › needs ${ref.code} (${why}), which has no progression page; add data/progressions/${subjectOf(l)}/${ref.code}.md, or list it in assumes: if it is taught in class`);
+          warnings.push(`${l.slug} › needs ${ref.code} (${why}), which is not in the curriculum data; check the code, or list it in assumes: if it is taught in class`);
         } else {
           const gaps = page.nodes.filter((x) => !coveredBy(ref.code, x.n) && !assumed.some((a) => a.code === ref.code && a.n === x.n)).map((x) => `n${x.n}`);
           status = gaps.length ? 'missing' : 'taught';
