@@ -7,6 +7,7 @@ goals:
   - I can spot each kind in a system before it goes wrong.
 struggle: "Students call every incident software because it happened in an app. Ask: whose action, or whose code, was the weak part?"
 before: |
+  AI step (typical, added 18 Oct 2026): an AI model file as part of the supply chain. Source (checked 18 Oct 2026, AI society research brief claim 54): JFrog, 27 Feb 2024, about 100 malicious models on Hugging Face; loading one can "run arbitrary code on the machine that loads or runs the model". https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/. Plain idea: opening an untrusted model is like running an untrusted program. Defensive and conceptual only.
   Try the board yourself. The clubs and incidents are made up.
 
   The one idea: weaknesses come from the app's own code, from people, and from what the app relies on; each needs its own fix.

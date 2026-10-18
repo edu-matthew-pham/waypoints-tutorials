@@ -98,6 +98,25 @@ hint: ["Read each feature of the newsletter as if it were in Ava's inbox.", "Fix
 check: { type: board, text: "The club's newsletter looks like a phish, so members ignore it. Fix every feature.", when: "a = 1", explain: "The real address, a calm subject, a link that shows where it goes, and no requests: the opposite of every phishing sign." }
 ```
 
+## Elaborate: phishing with a voice
+
+```step
+stage: modify
+tier: typical
+insight: "The same signs, a new channel: a cloned voice on a phone call."
+check:
+  type: question
+  q: "Ava gets a call that sounds exactly like her mum: 'I'm stuck, send money to this new account now, and don't tell Dad.' Which phishing signs are there, and what should she do?"
+  options: ["Pressure, secrecy and a request for money: hang up and call Mum back on the number she already has", "None: it's Mum's voice", "Only the new account: send a little to check", "Ask the caller to prove who they are"]
+  answer: 0
+  feedback: [null, "A voice can be copied. The signs are in the request.", "Any money sent to a scammer is lost.", "A scammer will just say yes. Check another way."]
+  explain: "Scamwatch says a few seconds of a voice recording can be enough to make an AI clone, and to call friends or family back on their real number to check."
+```
+
+AI can copy a voice from **a few seconds of recording**. A call can sound exactly like someone you trust, so the voice proves nothing. The phishing signs still work: **pressure**, **secrecy**, a **request for money or a password**, and a **new number or account**. When unsure, go to the person yourself: hang up and **call back on the number you already have**.
+
+More in Learning with AI › [AI in your life › Is that really Mum?](../../../ai/ai-in-your-life/really-mum/).
+
 ## Evaluate: look back
 
 ```step
