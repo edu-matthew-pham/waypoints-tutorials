@@ -557,3 +557,17 @@ Matthew asked for the rest before the lesson 1 pilot. Built: 2 One idea (topic v
 - Review is indirect (Matthew, 19 Oct): teachers review tutorials, not Kit; a reviewer who says a lesson's goals or misconception are wrong is reviewing its waypoint, and Matthew corrects Kit. Proposed next: pointer pages for every Kit subject as drafts now (not after History's review); Kit has all learning areas, the site imports four.
 - Create: opening a waypoint (`?node=`) now replaces the Topic and Learning goal (they kept the last lesson's title, "My first turtle lesson"); the start page links to Make a lesson.
 
+
+## Proposed (19 Oct 2026, Matthew asked; for later, after Mermaid): visual and quality tools
+
+Mermaid diagrams come first: plan in `roadmap/diagrams-plan.md` (not approved to build yet). Prepare already renders Mermaid in decks (`waypoints-prepare`, `src/lib/utils/mermaid.ts`). Then, in this order:
+
+1. **Step-through code tracer (Python Tutor style).** A Step button showing variables, call frames and return values. Skulpt's `tracer` hook is already stubbed in `playground/skulpt-bridge.js`. It fills the visual gap in Python foundations, functions, console and objects, none of which has an `explainPicture`, and it supports the trace checks. Build it in-house rather than embedding pythontutor.com.
+2. **PhET simulations.** Free, browser-based and embeddable, and borrowing over reinventing is the stated preference. They'd cover science with no engine yet (circuits, waves, states of matter beyond the particle board), as an alternative or extension beside the hinge-node boards, not replacing them.
+3. **Site-wide search (Pagefind).** A static index built at build time, with no server. Search today covers only the Reference pages; teachers and revising students need to find things across about 600 lessons, primers, recaps and cheat sheets.
+4. **Plain-language readability check in `npm run validate`.** A score (Flesch-Kincaid or similar) on student-facing fields, flagging text that's too dense for Year 7, the way `effort` flags hints. Catches drift across parallel chats.
+5. **Accessibility checks (axe-core) in the headless runs.** Contrast, labels and keyboard traps on pages, boards and playgrounds. Do this before Mermaid SVGs and new widgets multiply.
+6. **Observable Plot or Vega-Lite for data lessons.** For real datasets (histograms, grouped bars) where JSXGraph is awkward: the Data course and science "investigate the data" steps.
+7. **`<model-viewer>` for Engineering CAD and 3D printing.** Spin the STL or GLB of the part being designed or printed. Only once those lessons need it.
+
+Considered and skipped: Excalidraw or tldraw (students' own notes cover sketching), Graphviz or D2 (Mermaid is enough). Already in place or planned elsewhere: JSXGraph, KaTeX, Pyodide and Skulpt, p5, microStudio, Numbas, Teachable Machine, Wokwi (Arduino), WebVM (command line).
