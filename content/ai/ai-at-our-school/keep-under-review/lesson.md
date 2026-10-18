@@ -34,6 +34,7 @@ tasks:
         - ["A report that an AI feature showed Year 7s something unsafe", "Review now", "Safety first: act now, and follow the school's wellbeing steps too."]
         - ["A new AI button appears in a school tool", "Bring to the next meeting", "Add it to the map and choose a response."]
         - ["Students say the maths site's AI hints are often wrong", "Bring to the next meeting", "It tests 'learning first': is the response still right?"]
+        - ["An AI tool students use can now check its own maths, or submit work for them", "Review now", "A big jump in what AI can do can break decisions built on what it couldn't do."]
         - ["The search page changes its colours", "No review needed", "Nothing about the AI or the charter changed."]
         - ["The national schools framework publishes its yearly review", "Bring to the next meeting", "Compare it with the charter at the next meeting."]
   - check:
@@ -75,7 +76,7 @@ A review cycle has four parts:
 
 1. **Who notices:** someone watches each tool's updates; teachers pass on what they see.
 2. **How problems are reported:** simple, safe, and without blame, so people actually report.
-3. **Triggers for an early review:** a changed term or setting, a safety report, a new kind of AI, new evidence.
+3. **Triggers for an early review:** a changed term or setting, a safety report, a new kind of AI, a **big jump in what AI can do**, new evidence.
 4. **A date:** when the charter, recommendations and responses are all revisited, ideally alongside the school's own policy review.
 
 Decisions about AI are **dated and reviewed**. That's the charter's "honest about evidence" principle, applied to the committee itself.

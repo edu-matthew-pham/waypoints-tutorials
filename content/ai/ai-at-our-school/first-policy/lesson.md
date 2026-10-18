@@ -82,6 +82,7 @@ tasks:
 - A **charter** is principles: what matters, to test decisions against.
 - A **policy** is what happens: who it covers, what's allowed, who is responsible, how to report, when it's reviewed. Staff are covered too.
 - A **first policy** can be broad ("use AI the way your teacher sets"), because the school is still learning. It must say **how and when it will be refined**.
+- Build it on **what you value**, not on **what AI can't do yet**. AI's limits keep changing: a rule that relies on one will break when the AI gets better.
 - A school **can't police most AI use**. So a policy works mainly through task design, being honest about AI use, and understanding why the thinking matters, not through catching people. "Check" means **checking the policy works**, not checking up on each student.
 
 ### Charter or policy?

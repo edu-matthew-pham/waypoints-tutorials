@@ -10,6 +10,7 @@ before: |
   **For the class plan:** print your school's AI policy or guidance (dated) and, for older classes, the national framework.
   Sources (checked 18 Oct 2026): the Australian Framework for Generative AI in Schools (published 1 December 2023; six principles as listed in the lesson). Its 2024 review kept the framework and set yearly reviews (see Who Does AI Affect? › Making rules). Re-check each January.
   "How we'd check it" means checking the principle is working for the school (settings, terms, a short task without AI, asking the people affected), not checking up on individual students: most AI use can't be policed (lesson 4).
+  Case C (an AI that acts: it submits the quiz) tests 'a person decides' and 'learning first' at once. Who Does AI Affect? › When AI acts covers agents in depth.
   The typical step's flagging tool is made up. If students raise a real wellbeing-monitoring product your school uses, keep the discussion on principles, and check with the wellbeing lead before going further.
 running:
   - "Engage: vote on 'Use AI responsibly'. Ask a student who said yes to decide the grading case with it."

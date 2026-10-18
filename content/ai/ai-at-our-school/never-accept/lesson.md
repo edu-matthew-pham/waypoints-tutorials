@@ -40,7 +40,7 @@ tasks:
         - ["'Embrace the future.'", "Too vague to check", "It doesn't rule anything out."]
   - check:
       type: reasoning
-      q: "Write one principle for Westbrook, built on one of its aims. Then test it on the two cases below: does it say yes, no, or 'yes, if…'?"
+      q: "Write one principle for Westbrook, built on one of its aims. Then test it on at least two of the cases below: does it say yes, no, or 'yes, if…'?"
       placeholder: "Principle: … Case A: … Case B: …"
       models:
         - title: "A strong answer"
@@ -53,6 +53,7 @@ tasks:
 
 **Case A:** an AI app shows Year 7s the full worked answer to every maths homework question.
 **Case B:** an AI feature reads a text aloud for students who find reading hard.
+**Case C:** a browser assistant can open an online homework quiz, answer every question and press Submit, all by itself.
 
 ### Checkable or vague?
 
@@ -60,7 +61,7 @@ Ask: could I check a decision against it?
 
 ### Draft and test
 
-Write one, then try it on Case A and Case B.
+Write one, then try it on two of the cases.
 
 ## Explain: what makes a principle
 

@@ -45,6 +45,7 @@ tasks:
         - ["The document editor's 'Rewrite with AI' button has an admin switch", "Change a setting", "The school can switch it off for younger years, where the writing is the learning."]
         - ["The maths site's AI hint button has no switch at all", "Ask the company for a control", "Ask for a school setting, and say why."]
         - ["A new AI feature appeared last week and nobody knows how students use it yet", "Do nothing yet, review by a date", "Waiting is a choice too, if it has a date."]
+        - ["A browser assistant can now open an online quiz, answer it and press Submit by itself", "Change the task", "A quiz an AI can finish alone isn't evidence of learning. Use it for practice, and gather evidence another way."]
   - check:
       type: reasoning
       q: "Choose a response to the AI search answer for Year 7, and one for Year 10. Name the charter principle each one serves."
@@ -92,6 +93,8 @@ Responses a committee can choose from:
 - **Do nothing yet, and review by a date.**
 
 **Choose the response that best serves the charter for this age and purpose, and say what would change it.** Every response has a cost; name it.
+
+**When AI can act.** Some AI can now send, submit or change things for you. Responses combine: change the task (an online quiz alone isn't evidence), a norm (AI never submits or sends for you), a setting that asks a person to confirm, and asking the company what the AI can reach.
 
 ### The cost of blocking
 

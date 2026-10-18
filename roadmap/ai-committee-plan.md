@@ -104,3 +104,8 @@ Most AI reaches students without a committee choosing it: AI answers in search, 
 - "Check" reworded in lessons 2 and 3 and the Unit 1 primer: checking a principle is working for the school, not checking up on individuals.
 - Detector sources in teacher notes only (checked 18 Oct 2026): OpenAI's classifier withdrawn 20 July 2023 for low accuracy; Liang et al. (2023), detectors flagged over half of 91 TOEFL essays (avg false positive rate 61%). Student text states both without names.
 - Lessons 4–9 renumbered to 5–10 (`order` only; no clips in this course).
+
+## Update (19 Oct 2026): shifting capability and AI that acts
+- Matthew: policy should show that AI capability keeps changing (it made arithmetic slips; now it runs code to check itself), and that tools are increasingly agentic.
+- Folded in, no new lessons: lesson 2 Case C (a browser assistant submits a quiz); lesson 4 "build on what you value, not what AI can't do yet"; lesson 8 "Can it act?" map column; lesson 9 agent sort item and "When AI can act" responses; lesson 10 early-review trigger "a big jump in what AI can do"; lesson 11 new Engage ("AI can't do maths"), a fourth sort group "relies on what AI can't do yet", the "What if AI could do this next year?" test, and the version-2 line "AI may draft, but a person sends, submits or changes anything on a school account".
+- Teacher-note sources (checked 19 Oct 2026): OpenAI Academy (ChatGPT "writes and runs the Python code"); OpenAI Help on Atlas Agent mode; OpenAI's earlier "ChatGPT agent" page now marked no longer available. Student text names no products.

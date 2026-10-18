@@ -7,10 +7,11 @@ goals:
 before: |
   **Core idea:** choose the response that best serves the charter for this age and purpose, name its cost, and say what would change it.
   The search page is made up. Its answer is a reasonable simplification, so the issue is the thinking it skips, not a planted error (Foundations covers checking AI claims).
+  **AI that acts (illustrative and dated; checked 19 Oct 2026):** OpenAI's help centre says Agent mode in its Atlas browser can "take actions in the browser for you" ("navigate, click, complete multi-step flows") and pauses on sensitive sites; its earlier "ChatGPT agent" page now says that feature "is no longer available", replaced by other features. Products like this appear and change within months: map the capability (can it submit or send?), not the brand. Re-check before use.
   **Worked example for teachers (illustrative and dated, not a verdict; checked 18 Oct 2026):** Google's Workspace admin help says AI Overviews and AI Mode are available in Google Search to Workspace for Education users designated as under 18 in most countries and languages, and describes no separate admin control for them (it covers Gemini app and Classroom controls separately). In July 2026 Common Sense Media's AI risk assessment rated Google Search's AI Overviews and AI Mode "Unacceptable Risk": in its testing (Family Link accounts set up for an 11-year-old and a 15-year-old, not school accounts), AI Mode produced complete, submittable answers to homework it was given. Google reviewed a draft and said it changed some behaviours; the Institute hadn't verified those changes. Use it to ask: which principles does an always-on AI answer in Year 7 research test (learning first, age and stage, honest about evidence)? Which responses fit Year 7, and which Year 10? **Re-check before use: these controls change fast.** Keep the case in teacher talk, not student text, unless you've re-checked it that week.
 running:
   - "Engage: show the search page; vote on the response."
-  - "Explore: sort the five situations, then each student writes Year 7 and Year 10 responses."
+  - "Explore: sort the six situations, then each student writes Year 7 and Year 10 responses."
   - "Explain: the menu on the board; ask for the cost of each."
   - "Evaluate: responses added to the plan."
 struggle: "Students default to block or allow. Make them name the cost of their choice and one other response they rejected."
@@ -32,5 +33,7 @@ explain: |
   2. Choose from: habit, norm, task change, setting, alternative, ask the company, restrict, or wait with a date.
   3. Pick what serves the charter for this age and purpose, and name its cost.
 sources:
+  - { title: "Using Ask ChatGPT sidebar and ChatGPT Agent on Atlas (OpenAI Help Center)", url: "https://help.openai.com/en/articles/12628199", checked: 2026-10-19 }
+  - { title: "ChatGPT agent (OpenAI Help Center; now marked no longer available)", url: "https://help.openai.com/articles/11752874", checked: 2026-10-19 }
   - { title: "Control access to Google services by age (Google Workspace Admin Help)", url: "https://knowledge.workspace.google.com/admin/getting-started/editions/control-access-to-google-services-by-age", checked: 2026-10-18 }
   - { title: "Google Search: AI Overview and AI Mode, AI risk assessment (Common Sense Media, 14 July 2026)", url: "https://institute.commonsensemedia.org/risk-assessments/google-search", checked: 2026-10-18 }

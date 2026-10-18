@@ -1,17 +1,19 @@
-summary: "Students refine Westbrook's version 1 policy using evidence from Units 2 and 3: sort draft lines into too vague, about right and too prescribed, move fast-changing detail into guidelines or task instructions, and rewrite lines that rely on catching people. The product is a version 2 policy proposal."
+summary: "Students refine Westbrook's version 1 policy using evidence from Units 2 and 3: sort draft lines into too vague, about right and too prescribed, move fast-changing detail into guidelines or task instructions, and rewrite lines that rely on catching people or on what AI can't do yet (arithmetic, finding sources, acting for you). The product is a version 2 policy proposal."
 time: 50
 goals:
   - "I can tell a policy line that is too vague from one that is too prescribed."
   - "I can put detail in the right layer: policy, guidelines or task instructions."
   - "I can rewrite a policy line that relies on catching people so it works without it."
+  - "I can spot a policy line that will break when AI gets more capable, and rewrite it around what we value."
 before: |
   **Core idea:** version 2 gets specific where the evidence says so, and no more. Fast-changing detail goes in guidelines (termly) or task instructions (per task), so the policy stays stable. A school can't police most AI use, so a workable policy relies on task design, honest acknowledgement and understanding, keeps enforcement for clear cases, and checks that it works.
   This lesson draws on students' version 1 (lesson 4) and the products of Units 2 and 3. Students who skipped those units can use the Westbrook examples in the models.
   **Detection (keep product names out of student text; checked 18 Oct 2026):** OpenAI withdrew its AI text classifier on 20 July 2023 for "its low rate of accuracy". Liang and colleagues (2023) found detectors flagged over half of 91 human-written TOEFL essays as AI-generated (average false positive rate 61%). The student text states both without names. Detectors change; the point is that a detector score isn't evidence a policy should act on alone.
+  **Shifting capability (checked 19 Oct 2026; product names in teacher talk only):** OpenAI's Academy page on data analysis says "ChatGPT writes and runs the Python code for you", which is how chat assistants now check arithmetic. OpenAI's help centre describes Agent mode in its Atlas browser that can "take actions in the browser for you" (navigate, click, complete multi-step flows), and marks its earlier "ChatGPT agent" as "no longer available": features arrive and are replaced within months. The student text states the trend without names. Test: 'What if AI could do this next year?'
   The "task instructions" layer is where many schools use an AI-use scale (levels of AI allowed per task). If your school has one, show it here as an example of that layer; don't name it as the course's recommendation.
   **For the class plan:** the committee's real proposal goes to whoever owns the policy (often leadership or a policy committee), dated, with its evidence. Proposals are advice; the school decides.
 running:
-  - "Engage: 'list every app'. What happens in a month?"
+  - "Engage: 'AI can't do maths'. What happens when it can?"
   - "Explore: sort the draft; each student rewrites one line with its evidence."
   - "Explain: the three layers; then sort catching vs working."
   - "Evaluate: version 2 on paper; collect the four products."
@@ -23,6 +25,9 @@ stuck:
   - see: "A student's fix for cheating is a detector."
     ask: "Who would it wrongly flag? What can it see at home?"
     fix: "Change the task so the thinking is visible, and reward honesty."
+  - see: "A line says a task is safe because AI can't do it."
+    ask: "What if AI could do it next year?"
+    fix: "Rewrite it around what the task is for."
 support: "Give three version 1 lines and the evidence for each; students choose the layer and rewrite."
 stretch: "Write the matching guideline for one version 2 line: what it says this term, and who updates it."
 leads: "The course ends with four products. Send them, dated, to whoever owns the school's AI policy, and set the committee's next review date (lesson 10)."
@@ -33,7 +38,10 @@ explain: |
   1. Too vague can't decide; too prescribed goes out of date.
   2. Policy, guidelines and task instructions change at different speeds.
   3. Most AI use can't be policed, so design tasks, reward honesty, and check the policy works.
+  4. Don't build on what AI can't do yet: ask what if it could next year.
 sources:
+  - { title: "Data analysis with ChatGPT (OpenAI Academy)", url: "https://academy.openai.com/public/resources/data-analysis", checked: 2026-10-19 }
+  - { title: "Using Ask ChatGPT sidebar and ChatGPT Agent on Atlas (OpenAI Help Center)", url: "https://help.openai.com/en/articles/12628199", checked: 2026-10-19 }
   - { title: "OpenAI, New AI classifier for indicating AI-written text (update note, 20 July 2023)", url: "https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text", checked: 2026-10-18 }
   - { title: "Liang, Yuksekgonul, Mao, Wu and Zou (2023), GPT detectors are biased against non-native English writers", url: "https://arxiv.org/abs/2304.02819", checked: 2026-10-18 }
   - { title: "The Australian Framework for Generative AI in Schools (Department of Education)", url: "https://www.education.gov.au/schooling/announcements/australian-framework-generative-artificial-intelligence-ai-schools", checked: 2026-10-18 }

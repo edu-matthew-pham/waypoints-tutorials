@@ -85,7 +85,7 @@ AI reaches students three ways:
 2. **It arrived.** A feature switched on in an update to a tool the school already uses. The school may have a setting, or may have to ask the company for one.
 3. **Students bring it.** Apps from home. The school can't switch them off; it can teach habits and change tasks.
 
-A committee's **map** lists each item, how it arrived, what kind of AI it is, and what it touches (research, writing, maths…). **Map tools and tasks, not people.**
+A committee's **map** lists each item, how it arrived, what kind of AI it is, what it touches (research, writing, maths…), and whether it can **act**: send, submit, change or buy something for you. Features that can act go to the top of the list. **Map tools and tasks, not people.**
 
 ### Why it matters
 
@@ -120,7 +120,7 @@ check: { type: reflect, text: "I added the kind of AI to each item on the map, a
 
 For each item on Westbrook's map, name the kind of AI (from [What kind of AI is it?](../../foundations/kinds-of-ai/)): **rules written by people**, **learns to predict or sort**, **makes new content**, or **takes actions**.
 
-The search answer and "Rewrite with AI" **make new content**: they can be wrong in ways that look right. An AI that **takes actions** (books, sends, buys) needs a person to confirm first. How would the kind change your response?
+The search answer and "Rewrite with AI" **make new content**: they can be wrong in ways that look right. An AI that **takes actions** (books, sends, submits, buys) needs a person to confirm first, and more tools are adding features that act. How would the kind change your response?
 
 ## Evaluate: response plan, part 1
 
@@ -136,10 +136,10 @@ check:
 
 On paper, start the **response plan** with the map.
 
-| AI on the map | How it arrived | Kind of AI | What it touches |
-|---|---|---|---|
-| | we chose / arrived / students bring | | |
-| | | | |
-| | | | |
+| AI on the map | How it arrived | Kind of AI | What it touches | Can it act? |
+|---|---|---|---|---|
+| | we chose / arrived / students bring | | | send / submit / change / no |
+| | | | | |
+| | | | | |
 
 **Next lesson:** choose a response for each item.

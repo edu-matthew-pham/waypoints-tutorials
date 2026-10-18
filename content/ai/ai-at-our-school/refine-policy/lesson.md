@@ -1,6 +1,6 @@
 ---
 title: Refine the policy
-summary: "Turn version 1 into version 2 using what the committee learned. Find the balance between too vague and too prescribed, move detail into the right layer, and rewrite any line that relies on catching people."
+summary: "Turn version 1 into version 2 using what the committee learned. Find the balance between too vague and too prescribed, move detail into the right layer, and rewrite lines that rely on catching people or on what AI can't do yet."
 language: science
 shape: 5e
 unit: policy
@@ -9,20 +9,21 @@ voice: { name: af_heart, speed: 1.1 }
 ---
 A term has passed at Westbrook. The committee now has evidence: a decision about StudyPal, responses to AI that arrived on its own, and reports from students and teachers. **Version 2 gets more specific where the evidence says it should, and no more.**
 
-There are two ways to get it wrong:
+There are three ways to get it wrong:
 
 - **Too vague:** it can't decide a case. ("Use AI responsibly.")
 - **Too prescribed:** it names every tool and every allowed use, goes out of date with each update, can't handle anything new, and leaves teachers no judgement.
+- **Built on today's limits:** it relies on something AI can't do *yet*. AI keeps getting more capable, so those lines break.
 
-## Engage: list everything?
+## Engage: "AI can't do maths"
 
 ```step
 stage: predict
 check:
   type: predict
-  q: "A committee member wants version 2 to list every AI app students may use, and exactly what for, in every subject. What will happen?"
-  options: ["It will be clear and stay up to date", "It will be out of date within weeks, and teachers will stop using it", "Nothing: lists are always good"]
-  actual: "Probably out of date within weeks: tools change in updates, new ones arrive, and every subject's tasks differ. A policy that tries to say everything can't be kept current. The detail belongs somewhere that can change faster."
+  q: "Westbrook's first policy said: 'AI chatbots make mistakes with sums, so maths homework doesn't need AI rules.' A year later, the same app shows its working and runs a calculation to check every answer. What happens to that line?"
+  options: ["Nothing: the rule still works", "It stops protecting anything: it was built on a limit that has gone", "Maths teachers should ban calculators too"]
+  actual: "It stops protecting anything. Early chatbots often made arithmetic slips; many now run code or a calculator to check their answers. A line built on what AI couldn't do breaks when it learns to. Build lines on what you value (students do the thinking a task is for) instead."
 ```
 
 ## Explore: about right?
@@ -32,8 +33,8 @@ stage: run
 tasks:
   - check:
       type: sort
-      q: "Westbrook's draft version 2. Is each line too vague, about right, or too prescribed for a policy?"
-      options: ["Too vague", "About right", "Too prescribed (move it)"]
+      q: "Westbrook's draft version 2. Which problem does each line have, if any?"
+      options: ["Too vague", "About right", "Too prescribed (move it)", "Relies on what AI can't do yet"]
       items:
         - ["'Use AI responsibly.'", "Too vague", "It can't decide any case."]
         - ["'Every task says how much AI is allowed, and students say what they used AI for.'", "About right", "Clear, works for any tool, and leaves the detail to the task."]
@@ -41,6 +42,8 @@ tasks:
         - ["'Teachers make the final judgement on marks and reports.'", "About right", "A principle turned into a rule, and it won't go out of date."]
         - ["'The approved tools are: (a list of 14 apps).'", "Too prescribed (move it)", "Keep an approved list, but outside the policy, so it can change without rewriting the policy."]
         - ["'AI should be used appropriately.'", "Too vague", "Appropriate to what? Say what decides it."]
+        - ["'AI can't find real sources, so research tasks don't need AI rules.'", "Relies on what AI can't do yet", "Many AI tools now search and link sources. Say what the task is for instead."]
+        - ["'Online quizzes are fine: AI can't fill them in for you.'", "Relies on what AI can't do yet", "Some AI can now open a quiz, answer it and press Submit. An online quiz alone isn't evidence."]
   - check:
       type: reasoning
       q: "Rewrite one line from Westbrook's version 1 for version 2, using something the committee learned in Units 2 or 3. Say which layer any detail goes in."
@@ -86,6 +89,8 @@ tasks:
   - check: { type: reflect, text: "I can put detail in the right layer, and rewrite a line that relies on catching people." }
 ```
 
+**Built for what's next.** AI keeps changing: tools that made arithmetic slips now check their work by running code, and some AI can now **act** (open a page, fill it in, press Submit, send a message). Test each line: **"What if AI could do this next year?"** If the line would break, rewrite it around what you value. For AI that acts, one line covers students and staff: **AI may draft, but a person sends, submits or changes anything on a school account, and is responsible for it.**
+
 Three layers, each changing at its own speed:
 
 1. **Policy** (stable, reviewed yearly): principles turned into rules, who is responsible, what must always hold.
@@ -104,7 +109,7 @@ Sort the lines.
 
 ### Explain it
 
-Name the three layers, and why version 2 doesn't rely on catching people.
+Name the three layers, why version 2 doesn't rely on catching people, and how to test a line against what AI might do next.
 
 ## Elaborate: staff use, refined
 
@@ -160,7 +165,8 @@ On paper, write **policy version 2**: the course's fourth product.
 | Who is responsible: | |
 | Being honest about AI use: | |
 | Data and privacy: | |
-| Reporting and review: | |
+| When AI can act (send, submit, change): | |
+| Reporting and review (incl. a big jump in what AI can do): | |
 | Guidelines it points to (updated each term): | |
 | Sent to (who owns the policy): | |
 
