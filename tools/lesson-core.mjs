@@ -3,6 +3,7 @@
 import YAML from 'yaml';
 import { scanModule } from './modules-scan.mjs';
 import { MATH } from './math-expr.mjs';
+import { diagramItems, diagramProblems } from './diagram-core.mjs';
 
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
@@ -207,7 +208,7 @@ export function snippetFrom(read, ref) {
   const text = read(file);
   if (text === undefined || text === null) throw new Error(`code reference "${ref}": file not found`);
   const lines = String(text).replace(/\r\n/g, '\n').split('\n');
-  const marker = /^\s*(?:#|\/\/|<!--|\/\*)\s*(end)?region\b\s*:?\s*([\w-]*)/;
+  const marker = /^\s*(?:#|\/\/|<!--|\/\*|%%)\s*(end)?region\b\s*:?\s*([\w-]*)/; // %%: Mermaid (diagrams.mmd)
   let out = lines;
   if (region) {
     let on = false;
@@ -296,7 +297,8 @@ export function extractInlineCode(text) {
   const inline = {};
   const marks = (file, name) => /\.(html?|xml|svg|md)$/i.test(file) ? [`<!-- region: ${name} -->`, '<!-- endregion -->']
     : /\.css$/i.test(file) ? [`/* region: ${name} */`, '/* endregion */']
-    : /\.(py|rb|sh|yml|yaml)$/i.test(file) ? [`# region: ${name}`, '# endregion'] : [`// region: ${name}`, '// endregion'];
+    : /\.(py|rb|sh|yml|yaml)$/i.test(file) ? [`# region: ${name}`, '# endregion']
+    : /\.mmd$/i.test(file) ? [`%% region: ${name}`, '%% endregion'] : [`// region: ${name}`, '// endregion'];
   const rest = text.replace(/^```code[ \t]+([\w.\-/]+)#([\w-]+)[ \t]*\n([\s\S]*?)\n```[ \t]*$\n?/gm, (_, file, name, body) => {
     const [open, close] = marks(file, name);
     inline[file] = (inline[file] ? inline[file] + '\n' : '') + `${open}\n${body}\n${close}\n`;
@@ -383,6 +385,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     // explainClip (frontmatter): a captioned clip shown in the "Explain it to me" panel. It is recorded and validated
     // like a step's clip, as a pseudo-step with id "explain" (clips/explain.mp4).
     explainPicture: meta.explainPicture || null,   // a picture of a region's page in the Explain it to me panel (see pictureItems)
+    explainDiagram: meta.explainDiagram ?? null,  // a Mermaid diagram in the Explain it to me panel (tools/diagram-core.mjs)
     explainStep: meta.explainClip && typeof meta.explainClip === 'object' && !Array.isArray(meta.explainClip)
       ? { index: 0, id: 'explain', title: 'Explain it to me', body: '', tasks: [], config: { stage: 'info', app: true, ...meta.explainClip } }
       : null,
@@ -433,6 +436,8 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     try { snip(v); } catch (e) { err(where, `expected: ${e.message}`); }
   };
   const err = (where, msg) => errs.push(`${lesson.slug} › ${where}: ${msg}`);
+  // Diagrams (Mermaid; tools/diagram-core.mjs): the field, its source region and where it may go.
+  for (const d of diagramItems(lesson)) for (const m of diagramProblems(d.raw, { stage: d.stage, snip, explain: d.key === 'explain' || d.key.startsWith('class-') })) err(d.where, m);
   const hasClips = lesson.steps.some((s) => s.config.clip) || !!lesson.explainStep?.config.clip;
 
   if (!lesson.steps.length) err('lesson', 'no steps (each step starts with "## Title")');

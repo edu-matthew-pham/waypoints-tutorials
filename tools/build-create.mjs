@@ -51,7 +51,7 @@ export async function buildCreate(out = 'dist') {
     subjects.push({ id, label: c.label, status: c.status, kit: c.kit, years: [...new Set(c.descriptors.map((d) => d.year))].sort((a, b) => a - b) });
   }
   writeFileSync(join(dest, 'curriculum', 'index.json'), JSON.stringify(subjects));
-  for (const f of ['kit-nodes.mjs', 'lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
+  for (const f of ['kit-nodes.mjs', 'lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs', 'diagram-core.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
   const validatorVersion=await buildValidator(dest);
   for(const file of ['index.html','validate.html']) {
     const page=join(dest,file);
@@ -63,6 +63,7 @@ export async function buildCreate(out = 'dist') {
   copyFileSync(join(root, 'node_modules', 'marked', 'lib', 'marked.esm.js'), join(dest, 'vendor', 'marked.esm.js'));
   cpSync(join(root, 'node_modules', 'yaml', 'browser'), join(dest, 'vendor', 'yaml'), { recursive: true });
   copyFileSync(join(root, 'node_modules/katex/dist/katex.mjs'), join(dest, 'vendor/katex.mjs'));
+  copyFileSync(join(root, 'vendor/mermaid/mermaid.min.js'), join(dest, 'vendor/mermaid.min.js'));   // diagrams in the preview (tools/diagram-core.mjs)
   writeFileSync(join(dest,'maths-forms-browser.mjs'),`export const forms=${JSON.stringify({js:FORMS_JS,src:'_numbas/numbas-jme.min.js?v='+NUMBAS_VERSION()})};`);
   // Version the editor entry points and local imports so a deploy cannot reuse an older recorder script.
   stampPlayground(dest);

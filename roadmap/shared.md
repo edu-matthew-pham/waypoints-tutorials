@@ -570,6 +570,12 @@ Mermaid diagrams come first: plan in `roadmap/diagrams-plan.md` (not approved to
 6. **Observable Plot or Vega-Lite for data lessons.** For real datasets (histograms, grouped bars) where JSXGraph is awkward: the Data course and science "investigate the data" steps.
 7. **`<model-viewer>` for Engineering CAD and 3D printing.** Spin the STL or GLB of the part being designed or printed. Only once those lessons need it.
 
+8. **Simple drawn figures and an icon set** (added 19 Oct, after Matthew noted Mermaid overused in Prepare decks where a picture would have done better).
+   - For things that are seen rather than connected (a gear, a cell, a circuit symbol, a labelled object) when no board draws it and no photo fits.
+   - Hand-made SVG files beside the lesson (`figure:`, same shape as `diagram:`, themed the same way).
+   - A small vendored icon set (Lucide, ISC licence) for signposts, never as content.
+   - Prepare gets the matching route (its slide prompt routed every drawn visual to Mermaid). See `roadmap/diagrams-plan.md` › Prepare.
+
 Considered and skipped: Excalidraw or tldraw (students' own notes cover sketching), Graphviz or D2 (Mermaid is enough). Already in place or planned elsewhere: JSXGraph, KaTeX, Pyodide and Skulpt, p5, microStudio, Numbas, Teachable Machine, Wokwi (Arduino), WebVM (command line).
 
 ## Curriculum pointers for every subject (19 Oct 2026)
@@ -582,3 +588,28 @@ Matthew reversed "History first, others after review": review happens through th
 - Tests: `pointer-pages-smoke` checks every subject's index, a banded page, the shared style sheet, Make a primer for this in four more subjects and phone width on three more pages.
 - Foundation to Year 10 (19 Oct, later, Matthew: "go"): the importer takes every year, Foundation as year 0 (`yearOf` reads `F` where the year goes; this also fixes Foundation English codes such as AC9EFLA07 being read as Year 7), adds `hass` (HASS, Foundation to Year 6), and takes maths strands from the code for every year. `parseNodeRef` accepts Foundation codes (AC9MFN01, AC9LCHF01). Pages say "Foundation", "Year 4" or "Years 1–2" (`yearText`); each subject's index and the /teach/ list give its range. The curriculum maps are unchanged: `curriculumMapHtml` shows Years 7–10 plus only the earlier descriptors they name as prior knowledge. 14 subjects, about 5,700 pointer pages (82 MB); Create's curriculum data 7.7 MB, fetched one subject at a time.
 
+## Changed (19 Oct 2026, diagrams chat): Mermaid diagrams, push 1 (plan: `roadmap/diagrams-plan.md`)
+
+Shared files touched, each change small:
+- **New `tools/diagram-core.mjs`.** The field, deck and render sources, the size check, the colour pass and Create's live preview.
+- **`lesson-core.mjs`:**
+  - `%%` region markers and `.mmd` inline code.
+  - `explainDiagram` parsed.
+  - Diagram problems added to `validateLessonCore`.
+- **`lesson-view.mjs`:** a `diagramHtml` dep, used on steps, task panels and Explain it to me, with `figure.diagram` CSS.
+- **`build-site.mjs`:**
+  - `diagramPic` / `diagramHtml`, shown on lesson pages and the recap.
+  - The `diagram` option passed to the teach generators.
+- **`teach.mjs`:**
+  - Decks: one diagram slide per diagram, as a ```mermaid block. `measure` counts a block as a 400px picture.
+  - Worksheets: the SVG, or its blank copy.
+  - Teacher guide: a Diagrams section.
+- **`render-pictures.mjs`:**
+  - `pictures()` takes `ext: 'svg'`. PNG sections are unchanged, so nothing redraws.
+  - New section `diagrams`.
+- **`check-decks.mjs`:** draws Mermaid as Prepare does.
+- **`validate.mjs`:** size warnings.
+- **Create and the validator:** copy `diagram-core.mjs`. Create's previews (`create.js`, `view.js`, `workspace.mjs`) draw diagrams live.
+- **`vendor/mermaid` (11.17.2, MIT).**
+
+Publishing needs the full publish (a renderer section and shared tools changed). Only the new diagram SVGs are drawn; existing pictures and clips are reused.

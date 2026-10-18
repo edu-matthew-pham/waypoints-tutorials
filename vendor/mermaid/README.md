@@ -1,0 +1,3 @@
+Mermaid 11.17.2 (`mermaid.min.js`), unmodified, from the npm package `mermaid@11.17.2` (https://mermaid.js.org, MIT: see LICENSE-mermaid.txt).
+Used at build time by `tools/render-pictures.mjs` (section diagrams) to draw lesson diagrams as SVG, and copied to `dist/_vendor/mermaid.min.js` for the Create preview, so nothing loads from a CDN. Lesson pages never load it: they show the pre-drawn SVGs.
+Waypoints Prepare uses mermaid ^11 too (decks carry the Mermaid source). To update: `npm pack mermaid@<version>`, copy `dist/mermaid.min.js` and `LICENSE`, bump the version in `DIAGRAM_BASE` (render-pictures, which redraws every diagram), and run `npm run render` and `npm run check-decks`.

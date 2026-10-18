@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 // plus the teacher guide pages under /teach/. Students never see solutions on lesson pages.
 import { snippetPattern } from './snippet-pattern.mjs';
 import { CLASS_AT, snippetFrom, splitFiles, parseTrace, workItems, sourceList } from './lesson-core.mjs';
+import { diagramSpec, deckSource, diagramItems } from './diagram-core.mjs';
 
 export const SITE_URL = (process.env.SITE_URL || 'https://tutorials.learningwaypoints.com').replace(/\/$/, '');
 export const PREPARE_URL = 'https://prepare.learningwaypoints.com/';
@@ -151,6 +152,15 @@ let DESIGN = false;
 let PRIMER = false;
 const fence = (code, lang = LANG) => '```' + lang + '\n' + String(code).replace(/\n$/, '') + '\n```';
 
+// Diagrams (tools/diagram-core.mjs). Decks carry the Mermaid source in a ```mermaid block, which Waypoints Prepare draws
+// (one per slide, with a heading: Prepare's own rule) and a teacher can edit; top-down charts turn left to right for the
+// landscape slide. Worksheets and the teacher guide show the SVG render-pictures drew (Prepare Print draws no Mermaid),
+// and a diagram marked blank: true appears on the worksheet with its labels hidden, for students to fill in.
+// Set by each generator from its options: (key, blank) -> { url, w, h } of the drawn SVG, or null.
+let DIAGRAM = null;
+const diagramSource = (v, snip) => { const sp = diagramSpec(v); if (!sp) return null; try { return { sp, src: deckSource(snip(sp.ref), sp) }; } catch { return null; } };
+const mermaidFence = (src) => '```mermaid\n' + String(src).replace(/\n$/, '') + '\n```';
+
 /** Every check in a lesson, with where it sits: [{ step, task, check, key }]. */
 const checksOf = (lesson) => lesson.steps.flatMap((s) => [
   ...(s.config.check ? [{ step: s, task: null, check: s.config.check, key: `${lesson.slug}/${s.id}` }] : []),
@@ -158,11 +168,11 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 ]);
 
 // ---------------------------------------------------------------- deck (Prepare Marp)
-export function deckFor(lesson, { course, unit, snip, blocks = null }) {
+export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = null }) {
   lesson = forOutput(lesson);
   LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
-  BLOCKS = blocks;
+  BLOCKS = blocks; DIAGRAM = diagram;
   const T = lesson.teacher || {};
   const slides = [];
   // "Running the lesson" items (teacher.yml running:) start with the stage they belong to ("Predict: ...", "Modify: ...").
@@ -176,6 +186,19 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
   let extrasDone = false;
   const liveRun = new Set();
   const note = (t) => (t ? `\n\n<!-- Speaker note: ${oneLine(t).replace(/-->/g, '- ->')} -->` : '');
+  // A diagram on its own slide (Prepare's rule): a heading, the Mermaid block, at most a one-line lead; the alt text is
+  // the speaker note, so a teacher can say what it shows.
+  const diagramSlide = (v, heading, { badge = '', lead = '' } = {}) => {
+    const d = diagramSource(v, snip);
+    if (!d) return null;
+    const misc = d.sp.role === 'misconception';
+    return `${badge || misc ? (badge || BADGE.discussion) + '\n\n' : ''}## ${pt(d.sp.caption || heading)}\n\n${mermaidFence(d.src)}${lead ? `\n\n> ${pt(oneLine(lead))}` : ''}` +
+      note(`${d.sp.alt}${misc ? ' This drawing has a mistake in it on purpose: ask what is wrong before anyone says.' : ''}`);
+  };
+  // Explain it to me's diagram goes before the first Explain (investigate) step, after Engage and Explore, unless a step
+  // already shows its own explaining diagram.
+  let explainDiagramDone = !lesson.explainDiagram || lesson.steps.some((s) => diagramSpec(s.config.diagram)?.role === 'explain');
+  const diagramTasks = new Set();
   const srcNote = sourceList(T).length ? ` Sources: ${sourceList(T).map((x) => `${x.title}, ${x.url}${x.checked ? ` (checked ${x.checked})` : ''}`).join('; ')}.` : '';
   slides.push(`# ${pt(lesson.title)}\n\n${course}${unit ? ` · ${unit}` : ''}` + note(`${T.summary || lesson.summary}${T.time ? ` About ${T.time} minutes${T.timing ? ` (${T.timing})` : ''}.` : ''}${LANG === 'python' || LANG === 'html' ? ' The Run, Modify and Make slides have the live playground in them; the tutorial link under it is the backup.' : ''}${srcNote}`));
   slides.push(`## Today\n\n**We are learning to** ${lowerFirst(lesson.summary.replace(/\.$/, ''))}.\n\n${(T.goals || []).map((g) => `- ${pt(g)}`).join('\n')}` + note([T.before ? `Before class: ${T.before}` : '', ...runOther.map((r) => `Teacher: ${r}`)].filter(Boolean).join(' ')));
@@ -202,8 +225,11 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
     placed.add(at);
     for (const a of CP.activities || []) if (a.at === at) {
       slides.push(`${a.kind === 'info' ? '' : BADGE[a.kind || 'activity'] + '\n\n'}## ${pt(a.title)}${a.minutes ? ` <span style="font-size:.6em;color:#64748b">(${a.minutes} min)</span>` : ''}\n\n${prose(a.do)}` + note(a.notes || ''));
+      if (a.diagram) { const ds = diagramSlide(a.diagram, a.title); if (ds) slides.push(ds); }
     }
     (CP.questions || []).filter((q) => q.at === at).forEach((q, i) => {
+      // A question about a drawing: the drawing first, on its own slide, then the question.
+      if (q.diagram) { const ds = diagramSlide(q.diagram, q.title || 'Class question', { lead: String(q.q || '').length <= 90 ? q.q : '' }); if (ds) slides.push(ds); }
       const p = checkPartsMd(q, snip, `${lesson.slug}/class-${at}-${i}`);
       let body = p.q ? `**${p.q}**` : '';
       if (p.options) body += '\n\n' + p.options.map((o) => `- ${o}`).join('\n');
@@ -250,6 +276,7 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
   const runIt = (step, label = LANG === 'maths' || PRIMER ? 'Try it' : E5 ? 'Explore it' : 'Run it') => boardUrl(step) ? boardSlide(step, label) : playUrl(step) ? playSlide(step, label) : `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
   let stuckDone = false;
   for (const s of lesson.steps) {
+    if (!explainDiagramDone && s.config.stage === 'investigate') { const ds = diagramSlide(lesson.explainDiagram, PRIMER ? 'The idea' : E5 ? 'Explain' : 'The idea'); if (ds) slides.push(ds); explainDiagramDone = true; }
     const before = slides.length;
     const c = s.config, stage = c.stage, title = capMaths(bare(s.title));
     const code = c.code ? snip(c.code) : '';
@@ -306,6 +333,7 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
           const sided = sideBySide(body, reveal, csrc);
           if (sided) { body = sided; reveal = ''; }
         }
+        if (t && t.config.diagram) { const ds = diagramSlide(t.config.diagram, t.title); if (ds) slides.push(ds); diagramTasks.add(t.id); }
         slides.push(`${BADGE.check}\n\n## ${t ? t.title : title}\n\n${body}${reveal}` + note(`${p.explain} ${p.parsons ? `Correct order: ${oneLine(p.solution)}` : ''} ${!t && c.insight ? `What this step is for: ${c.insight}` : ''}`));
       }
     } else if (stage === 'modify' || stage === 'make') {
@@ -323,8 +351,12 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
     } else if (s.body.trim()) {
       slides.push(`## ${title}\n\n${prose(s.body)}`);
     }
+    // Task diagrams not shown with a check follow the step. The step's own diagram leads its slides (on a Predict step it
+    // is the thing to predict from): spliced in below, after the teacher's note has gone on the step's first slide.
+    for (const tk of s.tasks) if (tk.config.diagram && !diagramTasks.has(tk.id)) { const ds = diagramSlide(tk.config.diagram, tk.title); if (ds) slides.push(ds); }
     if (stage) classSlides(stage);
     if (runBy[stage] && !runUsed.has(stage) && slides.length > before) { slides[before] += note(`Teacher: ${runBy[stage]}`); runUsed.add(stage); }
+    if (c.diagram) { const ds = diagramSlide(c.diagram, title); if (ds) slides.splice(before, 0, ds); }
   }
   for (const at of CLASS_AT) classSlides(at);
   if (T.exit) slides.push(`${BADGE.check}\n\n## Exit ticket\n\n**${pt(T.exit.q)}**\n\n* ${pt(oneLine(T.exit.a))}` + note(`Students answer on paper or a mini whiteboard before the reveal. Anyone who cannot answer needs the main idea again next lesson.${T.leads ? ` Where this leads: ${T.leads}` : ''}`));
@@ -344,6 +376,8 @@ const blocksDeck = (code) => {
 const ROOM = 545;
 // Height estimate for a slide, as fitCode uses it: the text's height and the code's height at full size.
 function measure(slide, narrow = false) {
+  // A Mermaid block is drawn as a picture at most 400px tall (Prepare), not set as code lines.
+  slide = slide.replace(/```mermaid\n[\s\S]*?```/g, '{{diagram}}');
   const blocks = slide.match(/```[\s\S]*?```/g) || [];
   const cols = /<div class="cols"/.test(slide) ? 2 : 1; // two code columns: count half the code
   const lines = blocks.reduce((n, b) => n + b.split('\n').length - 2, 0) / cols;
@@ -356,6 +390,7 @@ function measure(slide, narrow = false) {
     if (/^\|[-| ]*\|$/.test(l)) return n + (/-/.test(l) ? 0 : 18);
     if (/^\|/.test(l)) return n + 25 + 44 * Math.max(...l.split('|').slice(1, -1).map((c) => wraps(c, 34)));
     if (/^\{\{embed:/.test(l)) return n + 420; // a live frame is 420px tall
+    if (/^\{\{diagram\}\}$/.test(l)) return n + 400; // a Mermaid diagram (see measure)
     if (/^<\/?div/.test(l)) return n;
     if (/^\*\*[^*]+\*\*$/.test(l) && /\.\w+\*\*$/.test(l)) return n + 60 / cols; // file name label
     if (/^[-*] /.test(l)) return n + 12 + 44 * wraps(l, 62);
@@ -402,15 +437,25 @@ function traceTable(t, blanks) {
 }
 
 // ---------------------------------------------------------------- worksheet (Prepare Print)
-export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
+export function worksheetFor(lesson, { course, unit, snip, blocks = null, diagram = null }) {
   lesson = forOutput(lesson);
   LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
-  BLOCKS = blocks;
+  BLOCKS = blocks; DIAGRAM = diagram;
   const T = lesson.teacher || {};
   const out = [];
   const tnote = (t) => (t && t.trim() ? `\n\n:::teacher-note\n\n${t.trim()}\n\n:::\n` : '');
   const keep = (t) => `\n\n:::keep-together\n\n${t.trim()}\n\n:::\n`;
+  // A diagram on the sheet: the drawn SVG, or with blank: true its blank-label copy to fill in, with the labelled one in
+  // the teacher's note.
+  const sheetDiagram = (v, key) => {
+    const sp = diagramSpec(v), full = sp && DIAGRAM ? DIAGRAM(key, false) : null;
+    if (!full) return { show: '', teacher: '' };
+    const blank = sp.blank ? DIAGRAM(key, true) : null;
+    const img = (d, alt) => `![${pt(alt).replace(/[[\]]/g, '')}](${d.url})`;
+    if (!blank) return { show: keep(`${img(full, sp.alt)}${sp.caption ? `\n\n*${pt(sp.caption)}*` : ''}`), teacher: '' };
+    return { show: keep(`**Fill in the labels.**${sp.caption ? ` ${pt(sp.caption)}.` : ''}\n\n${img(blank, `${sp.caption || 'The diagram'}, with its labels left blank to fill in`)}`), teacher: `**The labelled diagram:**\n\n${img(full, sp.alt)}` };
+  };
   out.push(`---\ntitle: ${yamlStr(lesson.title)}\nsubtitle: ${yamlStr(`${course}${unit ? ` · ${unit}` : ''}${lesson.order != null ? ` · Lesson ${lesson.order}` : ''}`)}\n---\n\n# ${lesson.title}\n\n**Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}\n\n> **Key question:** ${lesson.hook || lesson.summary}`);
   out.push(tnote(`**In one sentence:** ${T.summary || lesson.summary}\n\n${T.goals?.length ? `**Students should be able to say:** ${T.goals.map(pt).join(' ')}\n\n` : ''}${E5 ? '**Width:** the unmarked parts are the floor every student does (Engage, Explore, Explain, Evaluate). Typical and Wider sections add contexts, not difficulty.' : '**Width:** the unmarked parts are the floor every student does (predict, run, investigate and make). Typical adds the modify practice; wider adds the real-world contexts. They add contexts, not difficulty.'} Students work in the online tutorial alongside this sheet.`));
   const makeIndex = lesson.steps.findIndex((s) => s.config.stage === 'make');
@@ -431,6 +476,8 @@ export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
         if (p.reflect || p.board || k.type === 'code') continue;
         let q = `${t ? `### ${t.title}\n\n` : ''}**${p.q}**`;
+        const td = t && t.config.diagram ? sheetDiagram(t.config.diagram, t.id.replace('#', '-')) : null;
+        if (td?.show) q = q.replace(/\*\*/, () => `${td.show.trim().replace(/^:::keep-together\n\n|\n\n:::$/g, '')}\n\n**`);
         if (t && (/```/.test(t.body) || hasWorked(t.body))) q = `${t ? `### ${t.title}\n\n` : ''}${fencesToBlocks(t.body.trim())}\n\n**${p.q}**`;
         if (p.items) q += '\n\nGroups: ' + p.options.join(', ') + '\n\n' + p.items.map((it) => `- ${it}: {{field-15}}`).join('\n');
         else if (p.options) q += '\n\n' + p.options.map((o) => `☐ ${o}`).join('\n\n');
@@ -453,6 +500,10 @@ export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
       part = `## ${stage === 'make' && !DESIGN && !PRIMER && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
     } else if (s.body.trim()) {
       part = `## ${title}\n\n${prose(s.body)}`;
+    }
+    if (part && c.diagram) {
+      const d = sheetDiagram(c.diagram, s.id);
+      if (d.show) part = part.replace(/^(## [^\n]*\n)/, (m) => `${m}${d.show}${tnote(d.teacher)}`);
     }
     if (!part) continue;
     out.push(tier ? `\n\n:::${tier}\n\n${part.trim()}\n\n:::\n` : part);
@@ -532,10 +583,10 @@ export const CHEAT_CSS = `.wrap{max-width:1000px}
 @media (max-width:640px){.cs{padding:14px}.cs-grid{display:block}}`;
 
 // ---------------------------------------------------------------- teacher guide pages (HTML bodies)
-export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files, blocks = null }) {
+export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files, blocks = null, diagram = null }) {
   LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
-  BLOCKS = blocks;
+  BLOCKS = blocks; DIAGRAM = diagram;
   // MakeCode: the blocks picture, with the code one click away; code as text when there is no picture.
   const showProgram = (code, name = '') => {
     const p = LANG === 'makecode' && BLOCKS ? BLOCKS(code) : null;
@@ -546,6 +597,14 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
   // the student deck or worksheet.
   const staffPlan = (S) => (S && (S.activities || []).length ? `${S.notes ? md(S.notes) : '<p class="muted">The same session, run with staff. Not on the student slides.</p>'}<ul>${S.activities.map((a) => `<li><b>${esc(a.title)}</b>${a.minutes ? ` <span class="muted">(${a.minutes} min)</span>` : ''}${md(a.do)}</li>`).join('')}</ul>` : '');
   const sec = (title, html) => (html ? `<section class="tg"><h2>${esc(title)}</h2>${html}</section>` : '');
+  // Every diagram in the lesson, as drawn for the site, with where it goes; the deck carries the same ones as Mermaid
+  // source a teacher can edit in Prepare.
+  const diagramsHtml = DIAGRAM ? diagramItems(lesson).filter((d) => d.spec).map((d) => {
+    const pic = DIAGRAM(d.key, false), blank = d.spec.blank ? DIAGRAM(d.key, true) : null;
+    if (!pic) return '';
+    const where = d.key === 'explain' ? 'Explain it to me' : d.key.startsWith('class-') ? 'On the slides (class plan)' : d.where.replace(/^step-\d+(#t\d+)? \((.*)\)$/, '$2');
+    return `<figure class="tgdia"><img src="${esc(pic.url)}" alt="${esc(d.spec.alt)}" width="${pic.w}" height="${pic.h}" loading="lazy" style="max-width:100%;height:auto"><figcaption><b>${esc(where)}${d.spec.role ? ` · ${esc(d.spec.role)}` : ''}.</b> ${esc(d.spec.caption || '')}${blank ? ` <a href="${esc(blank.url)}" target="_blank" rel="noopener">Blank-label copy</a>` : ''}</figcaption></figure>`;
+  }).join('') : '';
   const insights = lesson.steps.flatMap((s) => [s.config.insight ? [bare(s.title), s.config.insight] : null, ...s.tasks.filter((t) => t.config.insight).map((t) => [`${bare(s.title)} › ${t.title}`, t.config.insight])]).filter(Boolean);
   const answers = checksOf(lesson).map(({ step, task, check, key }) => {
     const p = checkParts(check, snip, key);
@@ -568,6 +627,7 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
     sec('Before class', T.before ? md(T.before) : '') +
     sec('Running the lesson', T.running ? `<ol>${T.running.map((r) => `<li>${md(r).replace(/^<p>|<\/p>\s*$/g, '')}</li>`).join('')}</ol>` : '') +
     sec('In class', (lesson.classPlan?.inquiry || (lesson.classPlan?.activities || []).length || (lesson.classPlan?.questions || []).length) ? `<p class="muted">On the slides at these points. Students can do the whole lesson on their own; these are for the room. In the deck, the Run, Modify and Make slides have the live playground in them (the tutorial link is the backup), and the notes above are in each slide's speaker notes.</p><ul>${lesson.classPlan.inquiry ? `<li><b>Think, pair, share</b> <span class="muted">(start)</span><br>${esc(lesson.classPlan.inquiry.q)}${(lesson.classPlan.inquiry.prompts || []).length ? `<ul>${lesson.classPlan.inquiry.prompts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${lesson.classPlan.inquiry.notes ? `<p class="muted">${esc(lesson.classPlan.inquiry.notes)}</p>` : ''}</li>` : ''}${(lesson.classPlan.activities || []).map((a) => `<li><b>${esc(a.title)}</b> <span class="muted">(${esc(a.at)}${a.minutes ? `, ${a.minutes} min` : ''})</span>${md(a.do)}${a.notes ? `<p class="muted">${esc(a.notes)}</p>` : ''}</li>`).join('')}${(lesson.classPlan.questions || []).map((q, i) => { const p = checkParts(q, snip, `${lesson.slug}/class-${i}`); return `<li><b>${esc(q.title || 'Class question')}</b> <span class="muted">(${esc(q.at)})</span><br>${esc(p.q)}<br><span class="ans">${esc(p.answer)}</span>${p.explain ? `<br><span class="muted">${esc(p.explain)}</span>` : ''}</li>`; }).join('')}</ul>` : '') +
+    sec('Diagrams', diagramsHtml) +
     sec('With a staff committee', staffPlan(lesson.classPlan?.staff)) +
     sec('The hard part (on purpose)', T.struggle ? `<p>${esc(T.struggle)}</p>` : '') +
     sec('When students get stuck', stuck) +

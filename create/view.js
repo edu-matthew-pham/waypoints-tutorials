@@ -5,6 +5,7 @@ import { maths } from './maths-browser.mjs';
 import { SafeMarked as Marked } from './safe-markdown.mjs';
 import { parseLessonText, snippetFrom } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
+import { diagramPreviewHtml } from './diagram-core.mjs';
 import { highlightCode } from './highlight.js';
 
 async function decode(str) {
@@ -32,7 +33,7 @@ try {
     const t = s.config.try; if (!t) return '';
     try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot, '', { use: lesson.modules, local: Object.fromEntries(lesson.modules.filter((n) => files[`${n}.py`] !== undefined).map((n) => [n, files[`${n}.py`]])) }); } catch { return ''; }
   };
-  const html = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml: () => '', tryHtml, maths, siteRoot, crumb: null, source: '' });
+  const html = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml: () => '', tryHtml, maths, siteRoot, crumb: null, source: '', diagramHtml: (v) => diagramPreviewHtml(v, (r) => snippetFrom(read, r), new URL('vendor/mermaid.min.js', import.meta.url).href) });
   document.open(); document.write(html); document.close();
 } catch (error) {
   document.getElementById('status').textContent = 'Could not open this lesson: ' + error.message;

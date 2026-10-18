@@ -26,6 +26,10 @@ explainClip:
     - expect: { selector: "body", contains: "Brain" }
     - caption: { text: "Catching a ball: the brain decides.", say: "Catching a ball: the brain decides." }
     - caption: { text: "Brain and spinal cord together are the central nervous system.", say: "Brain and spinal cord together are the central nervous system." }
+explainDiagram:
+  ref: diagrams.mmd#pathway
+  alt: "Every response follows one pathway: a stimulus is detected by a receptor, a sensory neuron carries the impulse to the central nervous system (brain or spinal cord), a motor neuron carries it to an effector (a muscle or gland), and the effector makes the response."
+  caption: "Every response follows the same pathway"
 hook: "Step on a pin and your foot is off the floor before you've said 'ouch'. Your brain wasn't the one who decided."
 ---
 Every response follows the same pathway. This lesson: building the pathway yourself, and which part of the nervous system decides.
@@ -58,6 +62,12 @@ Pick a stimulus, then choose its receptor, command centre and effector, and send
 ```step
 stage: investigate
 insight: "Mapping sensory neuron, CNS and motor neuron onto the pathway connects the boxes to the body."
+diagram:
+  ref: diagrams.mmd#reflex
+  alt: "The reflex arc for a drawing pin. The pin is detected by a pain receptor in the skin. A sensory neuron carries the impulse to the spinal cord, and a motor neuron carries it straight back out to the leg muscle, which lifts the foot. A moment later, an impulse reaches the brain and you feel the pain."
+  caption: "The reflex arc: the spinal cord decides, the brain finds out later"
+  role: explain
+  blank: true
 tasks:
   - check:
       type: match
@@ -140,3 +150,23 @@ Write one sentence: "At first I thought… Now I think… because…"
 - The **central nervous system** (brain and spinal cord) is the command centre.
 - **Sensory neurons** carry impulses from receptors to the CNS; **motor neurons** carry them to effectors (**muscles or glands**).
 - A **reflex** is automatic and fast: the impulse goes through the spinal cord without waiting for the brain.
+
+```code diagrams.mmd#pathway
+flowchart TD
+  S([Stimulus]) --> R[Receptor]
+  R -- sensory neuron --> C{{"CNS: brain or spinal cord"}}
+  C -- motor neuron --> E[Effector: muscle or gland]
+  E --> F([Response])
+  class C new
+```
+
+```code diagrams.mmd#reflex
+flowchart TD
+  S([Drawing pin]) --> R[Pain receptor in the skin]
+  R -- sensory neuron --> C{{Spinal cord}}
+  C -- motor neuron --> E[Leg muscle]
+  E --> F([Foot lifts])
+  C -. a moment later .-> B[Brain: you feel pain]
+  class C new
+  class S keep
+```

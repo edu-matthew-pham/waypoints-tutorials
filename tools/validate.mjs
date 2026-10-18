@@ -1,5 +1,5 @@
 // `npm run validate`: parse every lesson and report problems. Exits 1 on any error.
-import { loadLessons, validateLesson } from './lesson.mjs';
+import { loadLessons, validateLesson, getSnippet } from './lesson.mjs';
 
 const lessons = loadLessons(process.argv[2]);
 if (!lessons.length) { console.error('No lessons found in lessons/*/lesson.md'); process.exit(1); }
@@ -43,6 +43,18 @@ for (const cards of loadAllMathsCards()) {
   const errs = validateMathsCards(cards, Array.isArray(units) ? units.map((u) => u.id) : []);
   errs.forEach((e) => console.error('✗ ' + e)); bad += errs.length;
   if (!errs.length) console.log(`✓ snippets/${cards.file}.json: ${cards.cards.length} cards typeset, units match ${cards.course}`);
+}
+// Diagrams (warnings, never a failure): each stays small enough for a phone and a slide (AUTHORING.md › Diagrams).
+import { diagramItems, diagramWarnings } from './diagram-core.mjs';
+{
+  let n = 0, w = 0;
+  for (const l of lessons) for (const d of diagramItems(l)) {
+    if (!d.spec) continue;
+    let src; try { src = getSnippet(l.dir, d.spec.ref); } catch { continue; } // reported above
+    n++;
+    for (const m of diagramWarnings(src)) { w++; console.warn(`⚠ ${l.slug} › ${d.where} › ${d.spec.ref}: ${m}`); }
+  }
+  if (n && !w) console.log(`✓ diagrams: ${n}, each within the size limits`);
 }
 // Teacher notes: a lesson in a course with units should have teacher.yml, and every code-checked task a solution.
 import { workItems } from './lesson-core.mjs';

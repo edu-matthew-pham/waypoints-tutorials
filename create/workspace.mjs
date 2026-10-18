@@ -2,6 +2,7 @@ import { maths } from './maths-browser.mjs';
 import { SafeMarked as Marked } from './safe-markdown.mjs';
 import { parseLessonText, snippetFrom } from './lesson-core.mjs';
 import { lessonPageHtml, tryEmbed, esc } from './lesson-view.mjs';
+import { diagramPreviewHtml } from './diagram-core.mjs';
 import { highlightCode } from './highlight.js';
 import { draftBrowserClip as converter } from './draft-clip.mjs';
 import { readDraft, updateDraft, deleteDraft, listDraftIds, clipFingerprint, clipIsCurrent, keepStorage } from './draft-store.mjs';
@@ -223,7 +224,7 @@ export async function setupWorkspace(controller) {
     const dataVtt = (id) => record.clips[id]?.vtt ? 'data:text/vtt;charset=utf-8,' + encodeURIComponent(record.clips[id].vtt) : '';
     const clip = (step) => !step.config.clip ? '' : clips[step.id] ? videoTag(clips[step.id].path, clips[step.id].captions && dataVtt(step.id)) : `<div class="placeholder">No video yet · ${esc(step.id)}</div>`;
     const tryHtml = (step) => { if (!step.config.try) return ''; return tryEmbed(lesson, step, snippetFrom(read, step.config.try.starter || step.config.code), rootURL, '', { use: lesson.modules, local: Object.fromEntries(lesson.modules.filter((n) => read(n + '.py') !== undefined).map((n) => [n, read(n + '.py')])) }); };
-    let html = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (ref) => snippetFrom(read, ref), clipHtml: clip, tryHtml, maths, crumb: null, source: '' });
+    let html = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (ref) => snippetFrom(read, ref), clipHtml: clip, tryHtml, maths, crumb: null, source: '', diagramHtml: (v) => diagramPreviewHtml(v, (r) => snippetFrom(read, r), new URL('vendor/mermaid.min.js', import.meta.url).href) });
     html = html.replace('<div class="wrap">', `<div class="wrap">${navigation}<p class="lede">Downloaded lesson. Text and videos work offline; interactive playgrounds need internet.</p>`);
     if (lesson.language === 'maths') {
       const assetPath = sharedAssets?.path || dir;

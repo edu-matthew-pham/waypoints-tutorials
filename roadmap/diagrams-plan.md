@@ -1,6 +1,6 @@
 # Diagrams in lessons: Mermaid guidance and pilot plan
 
-Proposed 19 Oct 2026 (Matthew asked for it; not approved to build yet). Mermaid is the first of the visual and quality tools in `shared.md` › Proposed: visual and quality tools. Also kept as the Project doc `claude/diagrams-plan.md`.
+Proposed 19 Oct 2026; Matthew said go the same day. **Push 1 built (19 Oct):** the fields, rendering, decks, worksheets, guide, Create preview and validation, with pilots 4 (console-while) and 11 (biology-9/pathways). Push 2: the other 13 pilots and the Prepare fixes. Mermaid is the first of the visual and quality tools in `shared.md` › Proposed: visual and quality tools. Also kept as the Project doc `claude/diagrams-plan.md`.
 
 ## Where things stand
 
@@ -27,6 +27,28 @@ Proposed 19 Oct 2026 (Matthew asked for it; not approved to build yet). Mermaid 
   - kingdoms and keys
   - engineering projects
 - `stage: info` steps are mostly closing steps ("Where this leads", "Evaluate: look back"), not explanations. That's why the guidance below covers every lesson part.
+
+## Built in push 1 (19 Oct 2026)
+
+- **Pilot 4, `code/console/console-while`:**
+  - `explainDiagram`: the while loop, with the check marked new.
+  - A class-plan question with a misconception drawing (the check placed after the body, so quit would show).
+- **Pilot 11, `science/biology-9/pathways`:**
+  - `explainDiagram`: the general pathway.
+  - The Explain step's reflex arc, with `blank: true` for the worksheet and the drawing pin kept as the clue.
+- **Changed from the plan:**
+  - Worksheets use the drawn SVG, not a Mermaid block, because Prepare Print draws no Mermaid.
+  - An explain diagram goes on the deck before the first Explain step, unless a step already has its own explaining diagram.
+  - Check options as diagrams are not built yet (pilot 14 needs them).
+- **Format:** AUTHORING.md › Diagrams (Mermaid). It also covers the stricter rule: Mermaid only for boxes and arrows.
+
+## Prepare (Matthew asked 19 Oct to fix it)
+
+- Prepare's slide prompt routes every drawn visual to Mermaid. Its Draw it examples, "a path shape, a frame origin", are spatial ideas Mermaid draws badly.
+- Fixes:
+  - Narrow the Draw it route to boxes and arrows.
+  - Add a route for a simple drawn SVG and for icons.
+  - Use `accTitle`/`accDescr` for the diagram's alt text.
 
 ## When to use which visual
 

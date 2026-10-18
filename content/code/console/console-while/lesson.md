@@ -13,6 +13,10 @@ app:
   url: http://127.0.0.1:8123/index.html
   ready: Python code
   layout: full
+explainDiagram:
+  ref: diagrams.mmd#while
+  alt: "A flowchart. Ask for a word once. Then the check: is the word different from quit? If True, show You typed and the word, ask again, and go back to the check. If False, leave the loop and print Bye."
+  caption: "while checks before every pass, including the first"
 hook: "A PIN pad lets you try again, a game keeps going until you win, and a form keeps asking until the answer is valid. All of them repeat until something changes."
 voice: true
 explainClip:
@@ -203,6 +207,23 @@ class:
       do: |
         One student reads the lines, another is the computer. After every answer the computer asks aloud: is the word different from quit?
       notes: "Hearing the condition asked every time makes the check before each pass concrete."
+  questions:
+    - at: investigate
+      title: What's wrong with this drawing?
+      type: question
+      q: "Someone drew the loop like this. Which part is wrong?"
+      options:
+        - "The check comes after You typed, so quit would be shown too"
+        - "Ask again should come before You typed"
+        - "Print Bye should be inside the loop"
+        - "Nothing: this is how while works"
+      answer: 0
+      explain: "while checks before every pass. In this drawing the word is shown first and checked after, so typing quit would show You typed quit before the loop ends."
+      diagram:
+        ref: diagrams.mmd#late
+        alt: "A flowchart someone drew. Ask for a word. Show You typed and the word. Then check: is the word different from quit? If True, ask again and go back to showing the word. If False, print Bye."
+        caption: "One student's drawing of the loop"
+        role: misconception
 ```
 
 ```code lesson.py#quit
@@ -256,4 +277,23 @@ while attempt != secret:
     print("Wrong, try again.")
     attempt = input("Password: ")
 print("Welcome in!")
+```
+
+```code diagrams.mmd#while
+flowchart TD
+  A[Ask for a word] --> B{"Is word != quit?"}
+  B -- True --> C[Show You typed word]
+  C --> D[Ask again]
+  D --> B
+  B -- False --> E[Print Bye]
+  class B new
+```
+
+```code diagrams.mmd#late
+flowchart TD
+  A[Ask for a word] --> C[Show You typed word]
+  C --> B{"Is word != quit?"}
+  B -- True --> D[Ask again]
+  D --> C
+  B -- False --> E[Print Bye]
 ```

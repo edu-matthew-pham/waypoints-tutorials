@@ -59,7 +59,8 @@ async function open() {
 const SHARED = 'pictures-v1';
 // One kind of picture: jobs [{ id, code }], drawn by draw(page, job) -> { data, w, h, div? } | null.
 // legacy: bases from before per-section hashing (whole-file hashes); --seed accepts live pictures that match one.
-async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [] }) {
+// ext: the file each picture is saved as: png (draw returns a data: URL) or svg (draw returns the SVG text as data).
+async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [], ext = 'png' }) {
   if (ONLY && !ONLY.split(',').some((o) => name.startsWith(o))) return;   // WP_ONLY=p5: only the sections whose name starts so (for testing one kind)
   mkdirSync(dir, { recursive: true });
   const manifestPath = join(dir, 'pictures.json');
@@ -67,7 +68,7 @@ async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [] }) 
   const key = createHash('sha1').update(SHARED).update(base).update(JSON.stringify(viewport)).update(String(draw)).digest('hex');
   const hashOf = (j) => createHash('sha1').update(key).update(j.code).digest('hex').slice(0, 16);
   const legacyOf = (b, j) => createHash('sha1').update(b).update(j.code).digest('hex').slice(0, 16);
-  let todo = jobs.filter((j) => FORCE || old[j.id]?.hash !== hashOf(j) || !existsSync(join(dir, `${j.id}.png`)));
+  let todo = jobs.filter((j) => FORCE || old[j.id]?.hash !== hashOf(j) || !existsSync(join(dir, `${j.id}.${ext}`)));
   const manifest = {};
   for (const j of jobs) if (!todo.includes(j) && old[j.id]) manifest[j.id] = old[j.id];
   // Same hash = same picture: take it from the live site instead of drawing it.
@@ -81,10 +82,10 @@ async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [] }) 
       while (next < todo.length) {
         const n = next++, j = todo[n];
         const h = live[j.id]?.hash;
-        got[n] = !!h && (h === hashOf(j) || legacy.some((b) => h === legacyOf(b, j))) && await fetch(`${url}/${j.id}.png`).then(async (r) => {
+        got[n] = !!h && (h === hashOf(j) || legacy.some((b) => h === legacyOf(b, j))) && await fetch(`${url}/${j.id}.${ext}`).then(async (r) => {
           if (!r.ok) return false;
-          mkdirSync(dirname(join(dir, `${j.id}.png`)), { recursive: true });
-          writeFileSync(join(dir, `${j.id}.png`), Buffer.from(await r.arrayBuffer()));
+          mkdirSync(dirname(join(dir, `${j.id}.${ext}`)), { recursive: true });
+          writeFileSync(join(dir, `${j.id}.${ext}`), Buffer.from(await r.arrayBuffer()));
           return true;
         }).catch(() => false);
       }
@@ -115,14 +116,14 @@ async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [] }) 
       catch (e) {
         failed.push(`${name} ${j.id}`);
         console.error(`✗ ${name} ${j.id}: ${String(e.message || e).split('\n')[0]}`);
-        if (old[j.id] && existsSync(join(dir, `${j.id}.png`))) manifest[j.id] = old[j.id];
+        if (old[j.id] && existsSync(join(dir, `${j.id}.${ext}`))) manifest[j.id] = old[j.id];
         await page.close().catch(() => {});
         page = await browser.newPage({ viewport, deviceScaleFactor: 2 }); // a fresh page: the old one may be stuck
         continue;
       }
       if (!png) { console.log(`- ${name} ${j.id}: draws nothing, no picture`); continue; }
-      mkdirSync(dirname(join(dir, `${j.id}.png`)), { recursive: true }); // expected pictures sit in a folder per lesson
-      writeFileSync(join(dir, `${j.id}.png`), Buffer.from(png.data.split(',')[1], 'base64'));
+      mkdirSync(dirname(join(dir, `${j.id}.${ext}`)), { recursive: true }); // expected pictures sit in a folder per lesson
+      writeFileSync(join(dir, `${j.id}.${ext}`), ext === 'svg' ? png.data : Buffer.from(png.data.split(',')[1], 'base64'));
       manifest[j.id] = { hash: hashOf(j), w: png.w, h: png.h, ...(png.div ? { div: png.div } : {}) };
       console.log(`✓ ${name} ${j.id} (${png.w}×${png.h})`);
     }
@@ -443,6 +444,37 @@ await pictures({
   ]),
   draw: p5Draw,
 });
+
+// ---- Diagrams: each lesson diagram (tools/diagram-core.mjs) drawn by Mermaid (vendor/mermaid) as an SVG whose colours
+// follow the reader's light or dark setting, plus a copy with its labels hidden for the worksheet (blank: true) as
+// <key>-blank.svg. Own folder: _pictures/diagrams/<slug>/. Pages show these; decks carry the source (Prepare draws it).
+{
+  const { diagramItems, renderSource, themeDiagramSvg, MERMAID_CONFIG } = await import('./diagram-core.mjs');
+  const jobs = loadLessons().flatMap((l) => diagramItems(l).filter((d) => d.spec).flatMap((d) => {
+    let src; try { src = renderSource(getSnippet(l.dir, d.spec.ref), d.spec); } catch { return []; } // reported by validate
+    const one = { id: `${l.slug}/${d.key}`, code: src };
+    return d.spec.blank ? [one, { id: `${l.slug}/${d.key}-blank`, code: `%% blank\n${src}`, blank: true }] : [one];
+  }));
+  await pictures({
+    name: 'diagrams', dir: join(DIR, 'diagrams'), ext: 'svg', viewport: { width: 1200, height: 900 },
+    base: hashDir('vendor/mermaid', readFileSync('tools/diagram-core.mjs', 'utf8'), 'diagrams-v1'),
+    jobs,
+    draw: async (page, j) => {
+      if (!(await page.evaluate(() => !!window.mermaid))) {
+        await page.setContent('<!doctype html><meta charset="utf-8"><body></body>');
+        await page.addScriptTag({ path: resolve('vendor/mermaid/mermaid.min.js') });
+      }
+      const src = j.code.replace(/^%% blank\n/, '');
+      const svg = await page.evaluate(async ({ src, cfg, id }) => {
+        window.mermaid.initialize(cfg);
+        const { svg } = await window.mermaid.render(id, src);
+        return svg;
+      }, { src, cfg: MERMAID_CONFIG, id: 'wd-' + j.id.replace(/[^\w-]/g, '-') });
+      const out = themeDiagramSvg(svg, { blank: !!j.blank });
+      return { data: out.svg, w: out.w, h: out.h, div: 1 };
+    },
+  });
+}
 
 // ---- microStudio: what each snippets/microstudio.json example draws (Reference and cheat sheets), from the play-only
 // player in _playground-microstudio, cropped to the game's canvas after a short wait. Own folder: _pictures/microstudio.

@@ -83,6 +83,52 @@ def greet(name): ...
 `code: app.py#greet` shows only that block (marker lines are removed). `code: app.py` shows
 the whole file. Because the page and the video read the real file, they cannot drift from it.
 
+### Diagrams (Mermaid)
+
+A diagram is a small Mermaid chart that shows **named things joined by arrows**: an order of steps, a branch, a loop, messages between two parties, the states something moves between. Plan and pilots: `roadmap/diagrams-plan.md`.
+
+**Use Mermaid only for boxes and arrows.** It draws structure, not things. Pick the visual by what the idea is:
+- Quantity, space, or cause and effect the student should change: a **board** (and `explainPicture` for a still of it).
+- What a program makes: a **picture** (`picture:`, `explainPicture`) or a clip.
+- Something real that is seen (a cell, a rock, a gear, a circuit on a breadboard): a **photo** or a board picture. Mermaid's boxes are the wrong shape for it, and a box labelled "gear" teaches nothing a word does not.
+- A relationship between named things: **Mermaid**.
+- Decoration or atmosphere: nothing.
+
+If a list or a table says it as well, use the list or table.
+
+**Where a diagram goes in a lesson:**
+- **Predict:** only as the thing to predict from (`role: stimulus`: "follow this flowchart with 7"), never the answer.
+- **Run / Explore:** never. Students meet the real thing first, and a diagram names things too early (5E).
+- **Explain it to me** (`explainDiagram` in the frontmatter) and **Investigate / Explain steps**: the main home. One diagram, the lesson's move only.
+- **Tasks and checks:** a drawing to trace, or a drawing with a planted mistake (`role: misconception`, after the explain, like a planted bug).
+- **Modify / Make:** a diagram to build from. Students plan with their own sketches; they do not write Mermaid.
+- **Closing steps:** "Where this leads" (the real-world version), or a "look back" summary (`role: summary`).
+- **Class plan** activities and questions take `diagram:` too (deck only). Use it for "what's wrong with this drawing?".
+
+**The field** (steps, tasks, class plan items; `explainDiagram` in the frontmatter):
+
+```yaml
+diagram:
+  ref: diagrams.mmd#reflex      # a region of a .mmd file
+  alt: "The reflex arc for a drawing pin: ..."   # required: what it shows, in words
+  caption: "The reflex arc"     # optional, under it and as the slide heading
+  role: explain                 # optional: stimulus | explain | misconception | summary
+  blank: true                   # optional: the worksheet shows it with its labels hidden, to fill in
+```
+
+**Source:** write it inside `lesson.md` as a ` ```code diagrams.mmd#reflex ` block (this keeps the lesson's clips unchanged), or in a `diagrams.mmd` file beside it, with `%% region: name` / `%% endregion`. Allowed kinds are `flowchart TD`, `sequenceDiagram`, `stateDiagram-v2` and, in the Objects course only, `classDiagram`.
+
+**House style:**
+- At most about 12 boxes and 7 rows, with no more than 3 boxes side by side. Labels of six words or fewer. `npm run validate` warns past these limits.
+- Write flowcharts top-down (`TD`): that fits a phone, and the deck turns them left to right for the slide.
+- Colour carries meaning only: `class B new` (orange, what this lesson adds) and `class C wrong` (red, the misconception). `class S keep` keeps that box's label on the blank-label worksheet copy (a clue such as the stimulus).
+
+**What it becomes:**
+- The lesson page, Explain it to me, the recap and the teacher guide show an SVG drawn at build time (`render-pictures`, section diagrams). Its colours follow the reader's light or dark setting, and pages load no Mermaid.
+- The deck carries the Mermaid source on its own slide (alt text in the speaker note), which Waypoints Prepare draws and a teacher can edit.
+- The worksheet shows the SVG; with `blank: true` it shows the blank copy, with the labelled one in the teacher's note.
+- Create's preview draws it live.
+
 ## 4. Clip actions
 
 Each list item has exactly one verb.

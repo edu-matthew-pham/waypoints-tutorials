@@ -14,6 +14,7 @@ import { Marked } from 'marked';
 import { parse as YAMLparse } from 'yaml';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV_CSS, NAV_JS, makecodeBlock } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
+import { diagramSpec } from './diagram-core.mjs';
 import { snippetId, unlockKind, pictureSpec, usesBoardPictures, pictureBoard, makecodePackage, makecodeExtensions, captionText, voiceSpec, CLIP_VOICES, VOICE_LABELS } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
 import { buildPlayground, buildPyPlayground, buildMicrostudioPlayground, buildP5Playground, buildDomPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildNumbas, buildMakecodePlayground, buildExplainStage } from './build-playground.mjs';
@@ -137,6 +138,20 @@ function pictureHtml(lesson, v, key) {
   return `<figure class="shown"><img src="${'../'.repeat(lesson.depth)}_pictures/shown/${esc(lesson.slug)}/${esc(key)}.png?v=${esc(pic.hash || '')}" alt="The page this code makes${sp.boxes ? ', with Boxes on' : sp.inspect ? ', with the Box model view on' : ''}" width="${Math.round(pic.w / (pic.div || 2))}" height="${Math.round(pic.h / (pic.div || 2))}" loading="lazy"><figcaption>What this code makes${sp.boxes ? ' (with Boxes on: each box is a tag)' : sp.inspect ? ' (Box model view: margin orange, border gold, padding green, content blue)' : ''}</figcaption></figure>`;
 }
 
+// Diagrams (Mermaid; tools/diagram-core.mjs): the SVG render-pictures drew (section diagrams), sized by its manifest.
+// Its colours follow the reader's light or dark setting. Nothing is shown until it is drawn.
+let DIAGRAMS = null;
+function diagramPic(lesson, key, blank = false, root = '../'.repeat(lesson.depth)) {
+  const id = `${lesson.slug}/${key}${blank ? '-blank' : ''}`;
+  const d = (DIAGRAMS ||= readPics(['diagrams']))[id];
+  return d ? { url: `${root}_pictures/diagrams/${id}.svg?v=${d.hash || ''}`, w: d.w, h: d.h } : null;
+}
+function diagramHtml(lesson, v, key) {
+  const sp = diagramSpec(v), d = sp && diagramPic(lesson, key);
+  if (!d) return '';
+  return `<figure class="diagram${sp.role === 'misconception' ? ' dmis' : ''}"><img src="${esc(d.url)}" alt="${esc(sp.alt)}" width="${d.w}" height="${d.h}" loading="lazy">${sp.caption ? `<figcaption>${esc(sp.caption)}</figcaption>` : ''}</figure>`;
+}
+
 // "Builds on" and "Put to work in": lessons linked by a theory concept (tools/concepts-core.mjs THEORY), across subjects.
 let THEORY_LINKS = null;
 function conceptLinks(lesson) {
@@ -159,6 +174,7 @@ function buildLesson(lesson, parentTitle, course) {
     tryHtml: (s) => tryHtml(lesson, s),
     expectedHtml: (cfg, key) => expectedHtml(lesson, cfg, key),
     pictureHtml: (v, key) => pictureHtml(lesson, v, key),
+    diagramHtml: (v, key) => diagramHtml(lesson, v, key),
     blocksPicture: (code) => blocksPic(code, '../'.repeat(lesson.depth)),
     snippetNames,
     crumb: { href: '../', title: parentTitle },
@@ -489,7 +505,8 @@ function writeRecap(node, courseLessons) {
     // The clip's files sit with the lesson; from the recap page that is ../<lesson>/clips/.
     const clip = hasClip ? clipHtml(l, st).replace(/(src|poster)="clips\//g, `$1="../${name}/clips/`).replace('preload="metadata"', 'preload="none"') : '';
     const pic = l.explainPicture ? pictureHtml(l, l.explainPicture, 'explain') : '';
-    const body = (T.exit?.a ? `<p class="rca">${esc(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + pic + clip +
+    const dia = l.explainDiagram ? diagramHtml(l, l.explainDiagram, 'explain') : '';
+    const body = (T.exit?.a ? `<p class="rca">${esc(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + dia + pic + clip +
       `<a class="rcgo" href="../${esc(name)}/">Open the lesson →</a>` +
       (l.coach ? `<div class="rccoach" hidden><p><b>Still stuck?</b> Try the lesson again first. Then, if your teacher has said you can, copy a coach prompt into the AI tool your school allows. It asks you questions; it won't give you the answers.</p><button type="button">Copy a coach prompt</button><textarea readonly hidden>${esc(l.coach)}</textarea></div>` : '');
     return `<article class="rc" id="${esc(name)}"><h3><a href="../${esc(name)}/">${l.order != null ? `${l.order}. ` : ''}${esc(l.title)}</a></h3>` +
@@ -754,7 +771,7 @@ for (const coursePath of teachCourses) {
     const dir = join(OUT, teachPath(l));
     mkdirSync(dir, { recursive: true });
     const snip = (ref) => getSnippet(l.dir, ref);
-    const ctx = { course: node.title, unit: unitOf(l)?.title || '', snip, blocks: (code) => blocksPic(code, `${SITE_URL}/`) };
+    const ctx = { course: node.title, unit: unitOf(l)?.title || '', snip, blocks: (code) => blocksPic(code, `${SITE_URL}/`), diagram: (key, blank) => diagramPic(l, key, blank, `${SITE_URL}/`) };
     writeFileSync(join(dir, 'deck.md'), deckFor(l, ctx));
     writeFileSync(join(dir, 'worksheet.md'), worksheetFor(l, ctx));
     const files = [
@@ -762,7 +779,7 @@ for (const coursePath of teachCourses) {
       { label: 'Worksheet', href: 'worksheet.md', url: `${SITE_URL}/${teachPath(l)}worksheet.md`, note: 'Print the student copy; the Teacher edition has the answers.' },
     ];
     const isM = l.language === 'maths';
-    const body = lessonGuideBody(l, { esc: isM ? mathsGuide.esc : esc, md: isM ? mathsGuide.md : md, snip, highlightCode, codeBlock, studentHref: `${'../'.repeat(l.depth + 1)}${l.slug}/`, course: node.title, unit: ctx.unit, files, blocks: (code) => blocksPic(code, '../'.repeat(teachPath(l).split('/').filter(Boolean).length)) });
+    const body = lessonGuideBody(l, { esc: isM ? mathsGuide.esc : esc, md: isM ? mathsGuide.md : md, snip, highlightCode, codeBlock, studentHref: `${'../'.repeat(l.depth + 1)}${l.slug}/`, course: node.title, unit: ctx.unit, files, blocks: (code) => blocksPic(code, '../'.repeat(teachPath(l).split('/').filter(Boolean).length)), diagram: (key, blank) => diagramPic(l, key, blank, '../'.repeat(teachPath(l).split('/').filter(Boolean).length)) });
     const katexCss = isM ? `<link rel="stylesheet" href="${'../'.repeat(l.depth + 1)}_katex/katex.min.css">` : '';
     writeFileSync(join(dir, 'index.html'), teachPage(`Teacher guide: ${l.title}`, katexCss + body, `teach/${l.slug}`, coursePath));
   }

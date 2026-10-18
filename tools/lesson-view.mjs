@@ -161,7 +161,7 @@ body.try-open{overflow:hidden}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
 .try iframe[hidden]{display:none}.mkload{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--card);color:var(--muted);font-size:14px;text-align:center;padding:16px}.try.full .mkload{height:calc(100% - 40px)!important}
 .mkopen{font:inherit;font-size:16px;font-weight:600;padding:10px 18px;border-radius:10px;border:0;background:var(--c,var(--accent));color:#fff;cursor:pointer}@media(prefers-color-scheme:dark){.mkopen{color:#0f141a}}
-figure.shown{margin:10px 0 16px}figure.shown img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}figure.shown figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+figure.diagram{margin:12px 0 18px}figure.diagram img{max-width:100%;height:auto;display:block}figure.diagram figcaption{font-size:13px;color:var(--muted);margin-top:4px}figure.dmis figcaption::before{content:'A drawing to question: ';font-weight:600}figure.shown{margin:10px 0 16px}figure.shown img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}figure.shown figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.expected figure{margin:8px 0 14px}details.expected img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}details.expected figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
@@ -674,7 +674,7 @@ export function promptHtml(p, id = '') {
     + `<p class="aip-row"><button type="button" class="aip-copy">Copy prompt</button> <span class="aip-note">Use an AI tool your school allows, and only if your teacher says you can. Check its reply with what you practised here.</span></p></div>`;
 }
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', maths = null, blocksPicture = () => null } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', diagramHtml = () => '', maths = null, blocksPicture = () => null } = deps;
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
   const isMaths = lesson.language === 'maths' && !!maths;
   // Answer checks with form: are marked by Numbas, loaded only on lessons that have one (tools/maths-forms.mjs).
@@ -719,6 +719,8 @@ export function lessonPageHtml(lesson, deps) {
     }
     const clip = clipHtml(s);
     const shown = c.picture ? pictureHtml(c.picture, s.id) : '';
+    // A diagram (Mermaid, drawn at build time): after the step's text; on a Predict step it is the thing to predict from, so it goes with the code.
+    const dia = c.diagram ? diagramHtml(c.diagram, s.id) : '';
     const body = md.parse(s.body) + videoHtml(c.video) + promptHtml(c.prompt, s.id);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
@@ -742,16 +744,16 @@ export function lessonPageHtml(lesson, deps) {
       const bodies = s.tasks.map((t, n) => {
         let reset = '';
         if (t.config.starter) { try { reset = `<button type="button" class="resetstart" data-code="${esc(snippet(t.config.starter))}">Reset to this task's start</button>`; } catch { /* reported by validation */ } }
-        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
+        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.diagram ? diagramHtml(t.config.diagram, t.id.replace('#', '-')) : ''}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
       }).join('');
       const taskChecks = s.tasks.map((t, n) => `<div class="tpanel${n ? '' : ' active'}" data-i="${n}">${checkHtml(lesson, s, snippetNames, snippet, t, tx)}</div>`).join('');
       const wrap = `<div class="tasks" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})" data-step="${s.id}" data-stepkey="${esc(`${lesson.slug}/${s.id}`)}" data-kind="${kind}" data-keys="${esc(keys.join('|'))}" data-unlocks="${esc((c.unlocks || []).join(','))}" data-names="${esc(names.join('|'))}"><div class="taskpills" role="tablist" aria-label="Tasks">${pills}</div>${bodies}${tryHtml(s)}${taskChecks}<p class="tmsg" aria-live="polite"></p></div>`;
-      inner = c.reveal ? `${body}${showCode}${shown}${wrap}${clip}` : `${body}${showCode}${shown}${clip}${wrap}`;
+      inner = c.reveal ? `${body}${dia}${showCode}${shown}${wrap}${clip}` : `${body}${dia}${showCode}${shown}${clip}${wrap}`;
     } else {
       // Predict: code, questions, hidden reveal. A hidden clip on a task comes after the attempt: text, code, try, hints, clip.
-      inner = c.stage === 'predict' ? `${showCode}${body}${clip}${tryHtml(s)}${hints}${checks}`
-        : c.reveal ? `${body}${showCode}${shown}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${clip}${checks}`
-        : `${body}${showCode}${shown}${clip}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${checks}`;
+      inner = c.stage === 'predict' ? `${showCode}${dia}${body}${clip}${tryHtml(s)}${hints}${checks}`
+        : c.reveal ? `${body}${dia}${showCode}${shown}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${clip}${checks}`
+        : `${body}${dia}${showCode}${shown}${clip}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${checks}`;
     }
     return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"${tierAttr(c)}><div class="chip">${esc(label)}${c.tier ? ` <span class="tierchip">${TIER_LABEL[c.tier]}</span>` : ''}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
@@ -798,12 +800,13 @@ export function lessonPageHtml(lesson, deps) {
   // Explain it to me: the idea in more words, collapsed, for students who want it.
   const explainClip = lesson.explainStep ? clipHtml(lesson.explainStep) : '';
   const explainPic = lesson.explainPicture ? pictureHtml(lesson.explainPicture, 'explain') : '';
+  const explainDia = lesson.explainDiagram ? diagramHtml(lesson.explainDiagram, 'explain') : '';
   // It opens from a "?" button in the sticky step bar, as a drawer. Until the lesson's first Predict is locked in, the
   // button only says to predict first, so the explanation (often the same program) never gives the answer away.
-  const hasExplain = !!(T?.explain || explainClip);
+  const hasExplain = !!(T?.explain || explainClip || explainDia);
   const explainBtn = hasExplain ? `<button type="button" class="xbtn" aria-controls="xdrawer" aria-expanded="false" title="Explain it to me"><b aria-hidden="true">?</b><span>Explain</span></button>` : '';
   const explainHtml = hasExplain ? `<aside id="xdrawer" class="xdrawer" hidden aria-labelledby="xd-title"><div class="xd-head"><h2 id="xd-title">Explain it to me</h2><button type="button" class="xd-close">Close</button></div>` +
-    `<div class="xd-body">${explainClip}${T?.explain ? md.parse(T.explain) : ''}${explainPic}</div></aside><p class="xpop" role="status" hidden>Make your prediction first. Help opens once you've locked it in.</p><script>${EXPLAIN_JS}</script>` : '';
+    `<div class="xd-body">${explainClip}${explainDia}${T?.explain ? md.parse(T.explain) : ''}${explainPic}</div></aside><p class="xpop" role="status" hidden>Make your prediction first. Help opens once you've locked it in.</p><script>${EXPLAIN_JS}</script>` : '';
 
   // Reasoning checks outside maths need their styles (maths pages carry them in MATHS_CSS); prompt cards and videos need theirs.
   const allChecks = lesson.steps.flatMap((x) => [x.config.check, ...x.tasks.map((t) => t.config.check), ...(Array.isArray(x.config.tasks) ? x.config.tasks.map((t) => t?.check) : [])]).filter(Boolean);
