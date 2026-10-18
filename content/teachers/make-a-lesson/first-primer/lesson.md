@@ -30,7 +30,7 @@ Lock in a guess. You'll find out in a few minutes.
 ```step
 stage: run
 insight: "Every waypoint on the curriculum pages can start a lesson, with its success criteria already turned into goals."
-check: { type: reflect, text: "Create is open in another tab, with a lesson called Origin and content." }
+check: { type: reflect, text: "Create is open in another tab, with a primer started (Origin and content, if I took the History route)." }
 ```
 
 1. Open [the curriculum page for one waypoint](../../../teach/curriculum/history/AC9HH7S03/n1/) in a new tab: right-click it and choose *Open link in new tab*, so this lesson stays open here. It's Year 7 History: telling a source's **origin** (who made it, when and where) from its **content** (what it shows).
@@ -39,7 +39,10 @@ check: { type: reflect, text: "Create is open in another tab, with a lesson call
 
 In Create, the dark box on the left is the lesson's text (`lesson.md`); the right side is a preview that updates as you type. You only ever change words; the lines with `---`, `stage:` and backticks hold the lesson together, so leave them alone.
 
-Not a History teacher? Follow it anyway: the steps are the same in any subject, and the next lesson starts from a topic you teach.
+**Not a History teacher?** The History waypoint is the quickest way to see the route, and every step after this works the same in any subject. To start from your own subject instead:
+
+- **Maths, Science or Digital Technologies:** open [Create](../../../code/create/) in a new tab, choose **Start with a prompt** › **Go to workspace**, open **Curriculum waypoints (optional)**, choose your curriculum, year, standard and waypoint, press **Add waypoint**, then **Add a lesson starter**.
+- **Any other subject:** in the same panel, skip the waypoints: choose your **Subject**, **Lesson structure: Primer: one idea**, type a **Topic**, then press **Add a lesson starter**. You'll write the goals yourself.
 
 ## Apply: make it yours
 
@@ -55,18 +58,20 @@ tasks:
       q: "Copy your Think first question and its options here."
       placeholder: "My question … Options: …"
       models:
-        - title: "One teacher's question"
+        - title: "History (the waypoint in this lesson)"
           text: "A photograph shows soldiers marching through a city. Who made this source? Options: The soldiers / Whoever took the photograph / You can't tell from the picture alone / The city council."
+        - title: "Science (Year 7 particles)"
+          text: "A balloon is put in the freezer and shrinks. What happened to the air particles inside? Options: They got smaller / They moved more slowly and closer together / Some of them disappeared / They froze solid."
       criteria:
         - "A student could answer it before being taught anything."
-        - "One wrong option is the mix-up this waypoint warns about: who is in a source versus who made it."
+        - "One wrong option is the mix-up students are likely to have (for the History waypoint: who is in a source versus who made it)."
         - "It asks about one idea, not two."
-      explain: "The soldiers option is the point: a student who picks it has mixed up content with origin, and the lesson can deal with that before it teaches anything else."
+      explain: "The tempting wrong option is the point: a student who picks the soldiers has mixed up content with origin, and one who says the particles got smaller thinks particles shrink. Either way, the lesson can deal with it before teaching anything else."
 ```
 
 ### Rewrite the introduction
 
-In Create's `lesson.md`, find *Replace this introduction with one or two sentences students will read first.* Replace that sentence, and the teacher-worded sentence just above it, with one or two sentences for your students: what they'll be able to do by the end, in their words.
+In Create's `lesson.md`, find the sentence that starts *Replace this introduction*, just below the second `---` line. Replace it, and any teacher-worded sentence above it, with one or two sentences for your students: what they'll be able to do by the end, in their words.
 
 Watch the preview on the right change as you type.
 
@@ -77,7 +82,7 @@ Watch the preview on the right change as you type.
 3. Type your question over it. Write two to four options in `options:` and, in `actual:`, what students see once they've locked in (the answer, and why).
 4. Delete the line *Ask a question students can answer…*: it was only a hint for you.
 
-Make it a question students can answer *before* being taught, where a wrong answer shows the mix-up you expect. Then copy it into the box here and compare it with one teacher's version.
+Make it a question students can answer *before* being taught, where a wrong answer shows the mix-up you expect. Then copy it into the box here and compare it with two teachers' versions.
 
 Under the editor, **Lesson format checks** should say *Lesson format passed*. If it shows a message instead, it names the line: check the quotes and commas against the model.
 
@@ -150,7 +155,7 @@ before: |
   **A 50-minute session** (lessons 1 and 2, once lesson 2 is ready): 5 min show one lesson on this site as a student, predicting first; 20 min this lesson, in pairs on one laptop if confidence is low; 5 min pairs swap student links and answer each other's Think first question; 15 min lesson 2; 5 min exit question.
 running:
   - "Think first: everyone locks in a guess. Don't discuss yet; the answer comes after Try."
-  - "Try: check every screen shows Create with 'Origin and content' before moving on. Point at the two halves: text on the left, preview on the right."
+  - "Try: check every screen shows Create with a primer started ('Origin and content' on the History route) before moving on. Teachers who want their own subject take the Not History? route; in a staff meeting, suggest History first and their own subject from lesson 2. Point at the two halves: text on the left, preview on the right."
   - "Apply: the introduction first (quick win, the preview changes), then the question. Walk the room during Lock-in prediction: it's where people need help."
   - "Vary: skip it in a session unless people ask; mention it exists."
   - "Check: pairs swap student links and answer each other's question. Then take the exit question aloud."
@@ -170,7 +175,7 @@ stuck:
     fix: "Allow it, or use the preview on the right of Create, which shows the same page."
 stretch: "Fill in The idea and Worked example steps too, in your own words. Or start a second primer from a waypoint in your own subject (other subjects' curriculum pages are coming; History is first)."
 support: "Pair with a confident colleague who drives while the other writes the question on paper first. The question is the part that matters, not the typing."
-leads: "Lesson 2 (One idea) narrows a topic to one idea students should leave with, starting from the topic each teacher brought. Later lessons improve the same primer: the misconception and opening move, then checks that test understanding."
+leads: "Lesson 2 (One idea) narrows a topic to the one idea students should leave with: teachers keep this History primer or start one on the topic they brought. Lessons 3 and 4 improve the same primer (the misconception and opening move, then checks that test understanding); 5 and 6 cover videos and sharing."
 exit:
   q: "What did Create fill in from the waypoint, and what did you write yourself?"
   a: "Create filled in the title, the goals (the waypoint's success criteria) and a frame for each step. The introduction and the opening question are the teacher's: they decide which mix-up students meet first."

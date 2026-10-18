@@ -53,8 +53,9 @@ export function setupAuthoring(controller){
   const node=await nodes.addParam(param);
   const subject=nodes.createSubject();if(subject)$('authorSubject').value=subject;
   $('authorProfile').value='primer';$('authorPlayground').value='none';
-  if(!$('authorTopic').value)$('authorTopic').value=node.label.replace(/\s+[—–-]\s+.*$/,'');
-  if(!$('authorGoal').value)$('authorGoal').value=node.checkpoint;
+  // Opening a waypoint starts a new lesson, so its topic and goal replace whatever the last lesson left there.
+  $('authorTopic').value=node.label.replace(/\s+[—–-]\s+.*$/,'');
+  $('authorGoal').value=node.checkpoint;
   $('nodePanel').open=true;changed();
   return nodeStarter();
  }

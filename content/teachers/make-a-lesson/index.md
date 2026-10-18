@@ -4,5 +4,7 @@ summary: "A short course for teachers: make a lesson of your own in Create, then
 tagline: "Make a lesson of your own, then make it better."
 units:
   - { id: make, title: Make one, summary: "Make a primer from a curriculum waypoint and see it as a student would." }
+  - { id: improve, title: Make it better, summary: "One design decision a lesson: the one idea, the misconception and opening move, and checks that test understanding." }
+  - { id: share, title: Videos and sharing, summary: "Decide whether a video earns its place, then share your lesson and get it reviewed." }
   - { id: example, title: The lesson to improve, summary: "A deliberately weak lesson, with one fault for each design decision. Later lessons find and fix them." }
 ---
