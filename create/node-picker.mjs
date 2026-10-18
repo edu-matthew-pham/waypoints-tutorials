@@ -3,7 +3,7 @@
 // tools/build-create.mjs). Anchors are optional: with no node, Create works as before. One node pre-fills its success
 // criteria as goals; several give a pick list (never a silent merge). Misconceptions are offered, never pasted:
 // "Use this" writes design.misconception into the open lesson. Width suggestions come from every node's response modes.
-import { KIT_SUBJECTS, findNode, nodeKey, parseNodeRef, subjectOfCode, misconceptionsOf, widthSuggestions } from './kit-nodes.mjs';
+import { KIT_SUBJECTS, yearText, findNode, nodeKey, parseNodeRef, subjectOfCode, misconceptionsOf, widthSuggestions } from './kit-nodes.mjs';
 const $ = (id) => document.getElementById(id);
 const el = (tag, props = {}, ...kids) => { const e = Object.assign(document.createElement(tag), props); e.append(...kids.filter((k) => k != null)); return e; };
 const short = (t, n = 70) => (t.length > n ? `${t.slice(0, n - 1)}…` : t);
@@ -38,7 +38,7 @@ export function setupNodePicker({ onChange = () => {}, useDesign = () => false }
     fill($('nodeYear'), [], 'Year'); fill($('nodeStandard'), [], 'Standard'); fill($('nodePick'), [], 'Waypoint');
     if (!id) return;
     const cur = await load(id);
-    fill($('nodeYear'), [...new Set(cur.descriptors.map((d) => d.year))].map((y) => el('option', { value: y, textContent: `Year ${y}` })), 'Year');
+    fill($('nodeYear'), [...new Set(cur.descriptors.map((d) => d.year))].map((y) => el('option', { value: y, textContent: yearText(cur.descriptors.find((d) => d.year === y)) })), 'Year');
   }
   async function yearChanged() {
     const cur = await load($('nodeSubject').value), y = Number($('nodeYear').value);
@@ -91,7 +91,7 @@ export function setupNodePicker({ onChange = () => {}, useDesign = () => false }
     const cards = chosen.map((n) => el('div', { className: 'node-card' },
       el('p', {}, el('b', { textContent: `${nodeKey(n)} ${n.label}` }), n.hinge ? el('span', { className: 'node-tag', textContent: 'Hinge' }) : null,
         el('button', { type: 'button', className: 'node-remove', textContent: 'Remove', onclick: () => remove(nodeKey(n)), ariaLabel: `Remove ${nodeKey(n)}` })),
-      el('p', { className: 'muted', textContent: `Year ${n.year} · ${n.title} · ${n.checkpoint}` }),
+      el('p', { className: 'muted', textContent: `${yearText(n)} · ${n.title} · ${n.checkpoint}` }),
       el('fieldset', {}, el('legend', { textContent: 'Goals from its success criteria' }),
         ...n.criteria.map((c) => { const cb = el('input', { type: 'checkbox', checked: picked.has(c), onchange: () => { if (cb.checked) picked.add(c); else picked.delete(c); onChange(); } }); return el('label', { className: 'node-opt' }, cb, ` ${c}`); }))));
     const mis = chosen.flatMap((n) => misconceptionsOf(n).map((m) => ({ ...m, node: nodeKey(n) })));

@@ -1,0 +1,9 @@
+# Review status for Geography: the teacher pointer pages (/teach/curriculum/geography/) and Create's node data.
+# Kit holds what the curriculum says (corrections go to Kit, then re-import); this file only records whether a
+# specialist in Geography has reviewed it. While a subject is a draft, its pages say "Draft, from Waypoints Kit <kit>"
+# and are kept out of search (noindex). status: draft | reviewed. Node-level reviews can go under nodes:, keyed
+# as lessons write them ("AC9HH7S03 n1: reviewed") or by standard ("AC9HH7S03: reviewed").
+status: draft
+kit: v0.2
+reviewed_by: ""
+nodes: {}

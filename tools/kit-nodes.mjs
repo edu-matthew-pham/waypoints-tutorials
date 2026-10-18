@@ -7,12 +7,23 @@ export const KIT_REPO = 'https://github.com/edu-matthew-pham/waypoints-kit';
 
 // The curriculum each imported subject comes from, by code prefix (longest first), and Create's subject for it.
 export const KIT_SUBJECTS = [
-  { id: 'systems', prefix: 'AC9TDI', label: 'Digital Technologies (knowledge)', create: 'code' },
-  { id: 'history', prefix: 'AC9HH', label: 'History', create: 'hass' },
+  { id: 'english', prefix: 'AC9E', label: 'English', create: 'english' },
   { id: 'maths', prefix: 'AC9M', label: 'Maths', create: 'maths' },
   { id: 'science', prefix: 'AC9S', label: 'Science', create: 'science' },
+  { id: 'history', prefix: 'AC9HH', label: 'History', create: 'hass' },
+  { id: 'geography', prefix: 'AC9HG', label: 'Geography', create: 'hass' },
+  { id: 'civics', prefix: 'AC9HC', label: 'Civics and Citizenship', create: 'hass' },
+  { id: 'economics', prefix: 'AC9HE', label: 'Economics and Business', create: 'hass' },
+  { id: 'hpe', prefix: 'AC9HP', label: 'Health and Physical Education', create: 'general' },
+  { id: 'arts', prefix: 'AC9A', label: 'The Arts', create: 'general' },
+  { id: 'languages', prefix: 'AC9L', label: 'Languages', create: 'general' },
+  { id: 'design', prefix: 'AC9TDE', label: 'Design and Technologies', create: 'engineering' },
+  { id: 'systems', prefix: 'AC9TDI', match: /^AC9TDI\d+K/, label: 'Digital Technologies (knowledge)', create: 'code' },
+  { id: 'digital-processes', prefix: 'AC9TDI', match: /^AC9TDI\d+P/, label: 'Digital Technologies (processes)', create: 'code' },
 ];
-export const subjectOfCode = (code) => KIT_SUBJECTS.find((s) => String(code).startsWith(s.prefix))?.id || null;
+export const subjectOfCode = (code) => KIT_SUBJECTS.find((s) => (s.match ? s.match.test(String(code)) : String(code).startsWith(s.prefix)))?.id || null;
+// Arts, HPE, Languages and Technologies are written in two-year bands: code year 8 is Years 7–8 (span 2).
+export const yearText = (d) => (d.years ? `Years ${d.years}` : `Year ${d.year}`);   // d.years: '7–8' (import-curriculum)
 
 // Response modes say where extra effort goes at a waypoint (width), not what kind of lesson it is.
 // The proposal's table (Project doc create-generic-proposal › Lesson shape › Width).
@@ -39,7 +50,7 @@ export function findNode(cur, ref) {
   return n ? withContext(cur, d, n) : null;
 }
 export function withContext(cur, d, n) {
-  return { ...n, code: d.code, subject: cur.subject, year: d.year, title: d.title, strand: d.strand, description: d.description, knowledge: d.knowledge || '', kit: d.kit || '' };
+  return { ...n, code: d.code, subject: cur.subject, year: d.year, ...(d.years ? { years: d.years } : {}), title: d.title, strand: d.strand, description: d.description, knowledge: d.knowledge || '', kit: d.kit || '' };
 }
 
 /** Review status (data/review/<subject>.yml, parsed): subject-level now, node-level allowed. */
@@ -85,7 +96,7 @@ export function widthSuggestions(nodes) {
 }
 
 const q = (s) => JSON.stringify(String(s));
-const stdName = (n) => `${n.code} node ${n.n} (Year ${n.year} ${n.subjectLabel || labelOf(n.subject)}: ${n.title})`;
+const stdName = (n) => `${n.code} node ${n.n} (${yearText(n)} ${n.subjectLabel || labelOf(n.subject)}: ${n.title})`;
 const labelOf = (id) => KIT_SUBJECTS.find((s) => s.id === id)?.label || id;
 
 /**
@@ -182,7 +193,7 @@ export function nodesPromptText(nodes, pick = {}, kitVersion = '') {
   const L = [`CURRICULUM NODES (from Waypoints Kit${kitVersion ? ` ${kitVersion}` : ''}, a draft under review; use these and do not fetch Kit for them)`,
     `Write them in frontmatter as node: ${nodes.length === 1 ? nodeKey(nodes[0]) : `[${nodes.map(nodeKey).join(', ')}]`}. Quote codes exactly; never invent one.`];
   for (const n of nodes) {
-    L.push('', `${nodeKey(n)}: Year ${n.year} ${labelOf(n.subject)}, ${n.code} ${n.title} (${n.strand})`, `Descriptor: ${n.description}`, `Waypoint ${n.n}: ${n.label}`, `Checkpoint: ${n.checkpoint}`);
+    L.push('', `${nodeKey(n)}: ${yearText(n)} ${labelOf(n.subject)}, ${n.code} ${n.title} (${n.strand})`, `Descriptor: ${n.description}`, `Waypoint ${n.n}: ${n.label}`, `Checkpoint: ${n.checkpoint}`);
     if (n.knowledge) L.push(`Prior knowledge (the standard's): ${n.knowledge}`);
     if (n.criteria?.length) L.push('Success criteria:', ...n.criteria.map((c) => `- ${c}`));
     if (n.width) {
@@ -204,7 +215,7 @@ export function compactCurriculum(cur, review) {
   return {
     subject: cur.subject, label: labelOf(cur.subject), source: cur.source, kit: review?.kit || '', status: review?.status || 'draft',
     descriptors: cur.descriptors.filter((d) => d.year >= 7).map((d) => ({
-      code: d.code, year: d.year, strand: d.strand, title: d.title, description: d.description, knowledge: d.knowledge || '', kit: d.kit || '',
+      code: d.code, year: d.year, ...(d.years ? { years: d.years } : {}), strand: d.strand, title: d.title, description: d.description, knowledge: d.knowledge || '', kit: d.kit || '',
       nodes: d.nodes.map((n) => ({ n: n.n, label: n.label, checkpoint: n.checkpoint, hinge: n.hinge, ...(n.hinge_reason ? { hinge_reason: n.hinge_reason } : {}), criteria: n.criteria || [], ...(n.width ? { width: n.width } : {}), modes: n.modes || [] })),
     })),
   };

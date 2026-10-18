@@ -554,7 +554,7 @@ Plan: `roadmap/teacher-course-plan.md` (approved). Built, then stopped for Matth
 ## Make a lesson: lessons 2–6 drafted (19 Oct 2026)
 Matthew asked for the rest before the lesson 1 pilot. Built: 2 One idea (topic vs idea, three tests; sort of eight statements across subjects), 3 The misconception and the opening move (London in January; multiplying makes bigger), 4 Checks that test understanding (guessable / recall / understanding sort; Perth in December rewrite; feedback on each option; width), 5 What a video is for (optional; four jobs, captions first, recording in Create), 6 Share it and get it reviewed (Share row, the six-item review checklist run on the example and a colleague's primer, Request publishing, become a reviewer). Units: Make one, Make it better, Videos and sharing, The lesson to improve. Teacher notes give three facilitator sessions (1–2, 3–4, 5–6).
 - Every subject, not only History: lessons teach subject-neutral moves with examples rotated across History, Science, Maths, English and Digital Technologies; from lesson 2 teachers work on their own topic; lesson 1 has a "Not History?" route (Create's waypoint picker for Maths, Science and Digital Technologies; Primer with no waypoint for any other subject). Add a starting waypoint per subject to lesson 1 as each subject gets pointer pages.
-- Review is indirect (Matthew, 19 Oct): teachers review tutorials, not Kit; a reviewer who says a lesson's goals or misconception are wrong is reviewing its waypoint, and Matthew corrects Kit. Proposed next: pointer pages for every Kit subject as drafts now (not after History's review); Kit has all learning areas, the site imports four.
+- Review is indirect (Matthew, 19 Oct): teachers review tutorials, not Kit; a reviewer who says a lesson's goals or misconception are wrong is reviewing its waypoint, and Matthew corrects Kit. Done the same day: see Curriculum pointers for every subject.
 - Create: opening a waypoint (`?node=`) now replaces the Topic and Learning goal (they kept the last lesson's title, "My first turtle lesson"); the start page links to Make a lesson.
 
 
@@ -571,3 +571,13 @@ Mermaid diagrams come first: plan in `roadmap/diagrams-plan.md` (not approved to
 7. **`<model-viewer>` for Engineering CAD and 3D printing.** Spin the STL or GLB of the part being designed or printed. Only once those lessons need it.
 
 Considered and skipped: Excalidraw or tldraw (students' own notes cover sketching), Graphviz or D2 (Mermaid is enough). Already in place or planned elsewhere: JSXGraph, KaTeX, Pyodide and Skulpt, p5, microStudio, Numbas, Teachable Machine, Wokwi (Arduino), WebVM (command line).
+
+## Curriculum pointers for every subject (19 Oct 2026)
+Matthew reversed "History first, others after review": review happens through the tutorials teachers make, so the pages come first, as drafts. Built:
+- `tools/import-curriculum.mjs` takes every Years 7–10 learning area in Kit (`SUBJECTS`): english, maths, science, history, geography, civics, economics, hpe, arts, languages, design (AC9TDE), systems (AC9TDI K, unchanged: the map's subject) and digital-processes (AC9TDI P). Strands come from the code where Kit's labels vary (Arts: art form and strand; Languages: second language or background speakers, F–10 or from Year 7). Banded subjects (Arts, HPE, Languages, Technologies; Science H and I) record `years: "7–8"`; `yearText` in `kit-nodes.mjs` shows it on pages and in Create's picker. A re-import keeps a committed title whose capitals were fixed by hand. Maths, Science and Systems were re-imported from Kit 5f973ec (adds hinge reasons, response modes and width; codes and titles unchanged), History is byte-identical.
+- `KIT_SUBJECTS` lists all 13 (a `match` regex splits AC9TDI into knowledge and processes); `POINTER_SUBJECTS` is all of them; `data/review/<subject>.yml` for each, all `draft`.
+- Size: about 3,000 pointer pages. They now link one shared `teach/curriculum/pointer.css` and `pointer.js` (the site CSS, navbar CSS and JS, stamped with a hash) instead of inlining ~75 KB each: 44 MB, not 259 MB; `dist/` is the same size as before.
+- Create: a primer from a node keeps the node's Create subject (Arts and HPE: Other concepts; Design: Engineering; DT processes: Digital technologies) instead of being reset to HASS.
+- Make a lesson › lesson 1's Not History? route links every subject's curriculum pages.
+- Tests: `pointer-pages-smoke` checks every subject's index, a banded page, the shared style sheet, Make a primer for this in four more subjects and phone width on three more pages.
+

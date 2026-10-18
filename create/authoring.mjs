@@ -40,7 +40,7 @@ export function setupAuthoring(controller){
   let widget=null;try{const activity=lesson.steps.flatMap(s=>[s,...(s.tasks||[])]).find(s=>s.config.try);if(activity){const source=snippetFrom(name=>controller.getFiles()[name]??lesson.inline?.[name],activity.config.try.starter||activity.config.code);widget=/^\s*widget:\s*([\w-]+)/m.exec(source)?.[1]||null}}catch{}
   const key=JSON.stringify([id,lesson.language,lesson.shape,lesson.app,widget]);if(key===last)return;last=key;
   const profile=lesson.shape==='primer'?'primer':lesson.shape==='design'?'design':lesson.language==='maths'?'maths':lesson.language==='science'?'science':lesson.shape==='5e'?'inquiry':lesson.steps?.length&&lesson.steps.every(s=>s.config.stage==='info')?'reading':'coding';
-  $('authorSubject').value={coding:'code',maths:'maths',science:'science',design:'engineering',inquiry:'general',reading:'general',primer:['english','hass'].includes($('authorSubject').value)?$('authorSubject').value:'hass'}[profile];$('authorProfile').value=profile;
+  $('authorSubject').value={coding:'code',maths:'maths',science:'science',design:'engineering',inquiry:'general',reading:'general',primer:nodes.createSubject()||(['english','hass','general'].includes($('authorSubject').value)?$('authorSubject').value:'hass')}[profile];$('authorProfile').value=profile;
   $('authorPlayground').value=inferPlayground(lesson)||'none';
   picker.sync($('authorPlayground').value,widget);
   if(!$('authorTopic').value)$('authorTopic').value=lesson.title;

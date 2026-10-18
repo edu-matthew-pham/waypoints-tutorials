@@ -55,7 +55,22 @@ try {
 
   // Phone width: no horizontal scroll on the index, a standard and a node page.
   const phone = await context.newPage(); await phone.setViewportSize({ width: 390, height: 844 });
-  for (const p of ['', 'AC9HH9K04/', 'AC9HH7S03/n1/']) { await phone.goto(`${root}teach/curriculum/history/${p}`); assert.ok(await overflow(phone) <= 0, `overflow at 390px: ${p}`); }
+  for (const p of ['history/', 'history/AC9HH9K04/', 'history/AC9HH7S03/n1/', 'arts/', 'languages/AC9LS8EC01/n1/', 'english/AC9E7LA03/']) { await phone.goto(`${root}teach/curriculum/${p}`); assert.ok(await overflow(phone) <= 0, `overflow at 390px: ${p}`); }
+
+  // Every Kit subject has draft pointer pages (19 Oct); banded subjects say "Years 7–8"; pages link the shared style sheet.
+  const { KIT_SUBJECTS } = await import('../tools/kit-nodes.mjs');
+  for (const { id } of KIT_SUBJECTS) assert.ok(existsSync(`dist/teach/curriculum/${id}/index.html`), `pointer index for ${id}`);
+  await page.goto(`${root}teach/curriculum/arts/AC9AMU8E01/n1/`);
+  assert.match(await page.locator('.tmeta').innerText(), /Years 7–8 The Arts · Music: exploring and responding/);
+  assert.equal(await page.locator('meta[name=robots]').getAttribute('content'), 'noindex');
+  assert.equal(await page.evaluate(() => getComputedStyle(document.querySelector('.pp .make')).borderRadius), '8px', 'shared pointer.css applies');
+  for (const [p, subj] of [['english/AC9E7LA03/n1', 'english'], ['arts/AC9AMU8E01/n1', 'general'], ['design/AC9TDE8K01/n1', 'engineering'], ['digital-processes/AC9TDI8P04/n1', 'code']]) {
+    await page.goto(`${root}teach/curriculum/${p}/`); await page.click('a.make');
+    await page.waitForFunction((c) => document.querySelector('#text').value.includes(`node: ${c}`), p.split('/').slice(1).join(' '));
+    await page.waitForFunction(() => document.querySelector('#problems li.ok'));
+    assert.equal(await page.locator('#problems li:not(.ok)').count(), 0, `${p}: the starter validates`);
+    assert.equal(await page.locator('#authorSubject').inputValue(), subj, `${p}: Create subject`);
+  }
 
   // "Make a primer for this" → Create with a pre-filled, valid Primer.
   await page.goto(`${root}teach/curriculum/history/AC9HH7S03/n1/`);

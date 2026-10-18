@@ -1,10 +1,11 @@
 {
  "subject": "systems",
- "source": "waypoints-kit debe6f4",
+ "source": "waypoints-kit 5f973ec",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
    "code": "AC9TDI6K01",
+   "kit": "data/technologies/y56_dt_AC9TDI6K01.json",
    "year": 6,
    "span": 1,
    "strand": "Digital systems",
@@ -13,6 +14,8 @@
    "prior": [
     "AC9TDI4K01"
    ],
+   "knowledge": "Students can explore and describe a range of digital systems and their peripherals for a variety of purposes (AC9TDI4K01). They understand that digital systems have input and output components. They have not yet investigated what happens inside a digital system — internal components and their specific functions remain unexplored.",
+   "endpoint": "Students investigate the main internal components of common digital systems (CPU, memory, input/output components, storage) and explain how each component performs a specific function within the system.",
    "nodes": [
     {
      "n": 1,
@@ -22,6 +25,25 @@
      "criteria": [
       "Names at least two internal components of a digital system",
       "States the function of each named component in plain language"
+     ],
+     "hinge_reason": "Students who cannot identify what each component does cannot reason about how components coordinate in N2 — the 'how they work together' task requires knowing each part's role as a prerequisite.",
+     "width": {
+      "minimum": "Name at least two internal components of a digital system and state what each does",
+      "typical": "Identify the main internal components (CPU, RAM, storage, input/output) of a familiar digital system such as a tablet or desktop; describe the function of each component in plain language",
+      "wider": [
+       "Compare internal components across different digital systems — a smartphone versus a gaming console versus a laptop — identifying which components are shared and which differ",
+       "Investigate the internal components of a telehealth system used to access ultrasound imagery in remote communities, identifying which components support sending and receiving large image files"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students at this node commonly confuse 'the device' with 'the component' — treating the whole system as a single thing. Seeing the same component (e.g. a CPU) appear in different devices (tablet, console, laptop) with different physical forms but the same function helps students separate the component from any single device form factor."
+      }
+     ],
+     "related": [
+      "AC9TDI4K01",
+      "AC9TDI6K02"
      ]
     },
     {
@@ -32,12 +54,34 @@
      "criteria": [
       "Correctly assigns at least three roles (input, process, memory, output) to the correct component in a given task",
       "Explains what each component contributes without treating them as interchangeable"
+     ],
+     "width": {
+      "minimum": "Trace through a simple calculation or task (e.g. entering numbers and getting a sum) and identify which component handles each step — input, processing, memory, output",
+      "typical": "Explain how CPU, RAM and input/output components each play a role in completing a simple task; describe what would happen if one component were missing or very slow",
+      "wider": [
+       "Investigate how video conferencing systems combine multiple input/output components (camera, microphone, screen, speaker) and explain how the CPU coordinates them simultaneously",
+       "Explore how a calculator app on a tablet uses each component differently from a web browser — which components are used most and why?"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students need to reason about a process rather than just name components. The input → process → memory → output chain is a reasoning scaffold, not just a label set. Explicitly tracing a task step-by-step helps students build this as a thinking pattern rather than a memorised sequence."
+      },
+      {
+       "mode": "integration",
+       "reason": "This node is where the individual component facts from Node 1 become a system understanding. Coordinating all four components in a single task trace is the learning — not any one component in isolation."
+      }
+     ],
+     "related": [
+      "AC9TDI6K02"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI6K02",
+   "kit": "data/technologies/y56_dt_AC9TDI6K02.json",
    "year": 6,
    "span": 1,
    "strand": "Networks and security",
@@ -46,6 +90,8 @@
    "prior": [
     "AC9TDI4K02"
    ],
+   "knowledge": "Students can explore the transmission of different types of data between digital systems (AC9TDI4K02). They understand that data can move between devices. They have not yet examined how networks are structured, how devices connect to form them, or how data is structured for transmission (packets).",
+   "endpoint": "Students examine how digital systems connect in different ways to form networks, and explain how data is structured and transmitted through a network from source to destination.",
    "nodes": [
     {
      "n": 1,
@@ -55,6 +101,25 @@
      "criteria": [
       "Names at least two ways a device can connect to a network",
       "Explains that connecting devices allows data to be exchanged between them"
+     ],
+     "hinge_reason": "Students who have not grasped that separate devices connect to form networks cannot follow the packet transmission model in N2 — the path a packet travels requires understanding there is a network of connected devices for it to traverse.",
+     "width": {
+      "minimum": "Describe at least two ways a device can connect to a network (e.g. cable, Wi-Fi) and explain that connecting devices allows them to exchange data",
+      "typical": "Explain how a laptop or device can connect to a network via a physical cable or radio waves (Wi-Fi/Bluetooth); compare when each type of connection is more appropriate",
+      "wider": [
+       "Investigate how satellite phones provide network access where mobile phone networks are unavailable, such as in remote Arnhem Land communities — explaining why different network infrastructure is needed in these locations",
+       "Compare how the same device (e.g. a laptop) uses different connection types in different situations — wired at school, Wi-Fi at home, mobile data travelling — and why the network experience differs"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly confuse the connection type (cable vs wireless) with the network itself — thinking the wire is the internet rather than a path to it. Multiple connection contexts (home, school, remote area) help students see that the network is the shared infrastructure, not the physical medium."
+      }
+     ],
+     "related": [
+      "AC9TDI4K02",
+      "AC9TDI6K01"
      ]
     },
     {
@@ -65,12 +130,30 @@
      "criteria": [
       "Explains that data is broken into packets for network transmission",
       "Describes that packets travel through multiple devices to reach the destination"
+     ],
+     "width": {
+      "minimum": "Explain that data is broken into packets for transmission and these packets travel from the source through multiple devices to the destination",
+      "typical": "Describe how data is broken into packets, transmitted through multiple intermediate devices, and reassembled at the destination; explain why breaking data into packets is useful (e.g. packets can take different routes, errors affect only one packet)",
+      "wider": [
+       "Investigate what happens when a packet is lost or delayed — how does the destination device detect missing data and request retransmission?",
+       "Compare how packet size and number of intermediate devices (hops) affects transmission speed and reliability in different network types"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The packet model is counter-intuitive — students expect data to travel as a single stream like water through a pipe. Tracing a message as packets through a diagrammed network (source → router → router → destination) makes the multi-step transmission legible and challenges the 'direct connection' mental model."
+      }
+     ],
+     "related": [
+      "AC9TDI6K01"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI6K03",
+   "kit": "data/technologies/y56_dt_AC9TDI6K03.json",
    "year": 6,
    "span": 1,
    "strand": "Data representation",
@@ -79,6 +162,8 @@
    "prior": [
     "AC9TDI4K03"
    ],
+   "knowledge": "Students can recognise different types of data and explore how the same data can be represented differently depending on context (AC9TDI4K03). They understand that data exists in different forms (text, images, numbers). They have not yet connected the idea that digital systems ultimately represent all these different data types as numbers.",
+   "endpoint": "Students explain how digital systems represent all types of data — text, images, sound — as numbers, and understand that the data type determines what operations can be performed.",
    "nodes": [
     {
      "n": 1,
@@ -88,6 +173,25 @@
      "criteria": [
       "Explains that text characters are stored as numbers in a digital system",
       "Can demonstrate a simple letter-to-number conversion"
+     ],
+     "hinge_reason": "Students who have not grasped that data is represented as numbers cannot engage with N2's data type reasoning — if a student does not accept that 'A' and 65 are the same stored value in different interpretations, the concept that type determines operations has no foundation.",
+     "width": {
+      "minimum": "Convert letters in a short message to numbers using a positional scheme (e.g. A=1, B=2) and explain that digital systems use similar numeric encoding for text",
+      "typical": "Explain that each character in a digital system is assigned a number (like ASCII or Unicode); demonstrate with examples how text characters — letters, numbers, symbols — each map to a unique number that the system stores and processes",
+      "wider": [
+       "Investigate how Unicode allows characters from non-English scripts (e.g. Chinese, Arabic, First Nations language characters) to be encoded numerically — why a single scheme matters for global communication",
+       "Explore how emoji are also assigned numeric codes — explaining that an emoji is stored as a number just like the letter 'A' is"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily accept that the number '5' is stored as a number, but resist the idea that the letter 'A' is also stored as a number — it seems like a category error. Multiple encoding contexts (letters, emoji, non-Latin scripts) help students generalise: all characters, regardless of type, are ultimately numbers."
+      }
+     ],
+     "related": [
+      "AC9TDI4K03",
+      "AC9TDI6K04"
      ]
     },
     {
@@ -98,12 +202,35 @@
      "criteria": [
       "Gives a correct example where the same value behaves differently based on data type",
       "Explains in plain language why data type affects what operations are possible"
+     ],
+     "width": {
+      "minimum": "Give one example showing that the same value behaves differently depending on its data type — e.g. adding '3' + '4' gives 7 when they are numbers but '34' when they are strings",
+      "typical": "Explain that numbers support arithmetic operations (addition, subtraction) while text supports string operations (joining, searching); demonstrate both with examples; explain why digital systems need to know which type they are working with",
+      "wider": [
+       "Investigate how treating a phone number as a number versus a string causes real problems — adding phone numbers is meaningless, but searching within them (e.g. all numbers starting with 04) requires string operations",
+       "Explore how images are also represented as numbers (each pixel has a numeric colour value) and what kinds of operations this enables — adjusting brightness by changing pixel values mathematically"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often treat data types as arbitrary naming conventions rather than a meaningful distinction. Concrete cases where the type matters (phone number as number vs string, pixel values as arithmetic) help students see that the type determines what operations make sense — not just what the value looks like."
+      },
+      {
+       "mode": "structured_reasoning",
+       "reason": "The reasoning pattern here (identify data → identify operation → check if type supports operation → predict outcome) is the key skill. Scaffolding this as an explicit reasoning chain prevents students from guessing rather than reasoning."
+      }
+     ],
+     "related": [
+      "AC9TDI6K04",
+      "AC9TDI6P05"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI6K04",
+   "kit": "data/technologies/y56_dt_AC9TDI6K04.json",
    "year": 6,
    "span": 1,
    "strand": "Data representation",
@@ -112,6 +239,8 @@
    "prior": [
     "AC9TDI6K03"
    ],
+   "knowledge": "Students can explain how digital systems represent all data using numbers (AC9TDI6K03). They understand that text and other data types are stored as numbers. They have not yet explored how numbers themselves are represented in a digital system — the binary (on/off) basis of all digital data.",
+   "endpoint": "Students explore how on/off states in digital circuits can represent zeros and ones, and how binary is the fundamental representation underlying all digital data.",
    "nodes": [
     {
      "n": 1,
@@ -121,6 +250,24 @@
      "criteria": [
       "Explains that an on/off state represents 1 and 0 in a digital system",
       "Gives at least one example of a two-state system representing binary data"
+     ],
+     "hinge_reason": "The on/off state = 0/1 concept is definitionally required for N2 — without it, the integration of numeric representation (K03) with physical storage cannot proceed. N2's chain (data → number → binary → physical state) collapses at the last step.",
+     "width": {
+      "minimum": "Demonstrate or explain that a two-state system (on/off, yes/no, long/short) can represent 1 and 0; connect this to how digital systems store data at the physical level",
+      "typical": "Demonstrate that an on/off state in a circuit represents 1 and 0; recognise that yes/no questions, Morse code dashes and dots, and circuit states all use the same two-state principle; explain that digital systems use billions of these switches to store complex data",
+      "wider": [
+       "Create a binary representation of a word or phrase (e.g. the name of a local Country/Place in a First Nations language) using beads, switches or symbols — demonstrating that any two-state medium can encode binary data",
+       "Investigate how punch cards or early telegraph systems used physical two-state mechanisms to encode information before electronic computers existed"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often struggle to see that binary is an abstract principle, not a specific technology. Seeing the same on/off structure in circuits, Morse code, beads, and yes/no questions helps students abstract the principle: any two distinguishable states can encode 0 and 1."
+      }
+     ],
+     "related": [
+      "AC9TDI6K03"
      ]
     },
     {
@@ -131,12 +278,30 @@
      "criteria": [
       "Connects the idea that data is stored as numbers to the idea that numbers are stored as binary sequences",
       "Can describe the on/off state interpretation of at least one binary digit"
+     ],
+     "width": {
+      "minimum": "Explain that numbers stored in a digital system are ultimately represented as sequences of on/off states — each digit (0 or 1) corresponds to one switch state",
+      "typical": "Trace the connection from data (e.g. the letter 'A') → number (65 in ASCII) → binary sequence (01000001) → physical on/off states; explain each step in the chain",
+      "wider": [
+       "Represent a short word in binary using a provided encoding table; explain that the digital system performs this translation billions of times per second",
+       "Investigate how the number of binary digits (bits) limits how many different values can be stored — 1 bit = 2 values, 2 bits = 4 values, 8 bits = 256 values"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node integrates the data-as-numbers understanding from K03 with the binary/on-off understanding from K04 node 1. Tracing the full chain (data → number → binary → physical state) is the integration act — students who cannot connect these steps have two disconnected facts rather than a system understanding."
+      }
+     ],
+     "related": [
+      "AC9TDI6K03"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI8K01",
+   "kit": "data/technologies/y78_dt_AC9TDI8K01.json",
    "year": 8,
    "span": 1,
    "strand": "Digital systems",
@@ -146,6 +311,8 @@
     "AC9TDI6K01",
     "AC9TDI6K02"
    ],
+   "knowledge": "Students can identify and explain the main internal components of common digital systems and their functions (AC9TDI6K01). They understand that digital systems form networks to transmit data (AC9TDI6K02). They have not yet connected hardware specifications to performance outcomes or made selection decisions based on workload requirements.",
+   "endpoint": "Students explain how specific hardware specifications (RAM, bandwidth, storage, GPU/CPU) affect the speed and capability of digital systems, and select appropriate hardware for particular tasks by matching specifications to workload requirements.",
    "nodes": [
     {
      "n": 1,
@@ -155,6 +322,21 @@
      "criteria": [
       "Names at least three hardware specifications correctly",
       "Explains what each specification measures in plain language"
+     ],
+     "hinge_reason": "Students who cannot identify and name hardware specifications correctly cannot reason about how those specifications affect performance at Node 2. Vague or confused specification vocabulary (e.g. conflating storage with RAM) propagates through every subsequent reasoning task about workloads.",
+     "width": {
+      "minimum": "Name at least three hardware specifications and state what each measures in a digital system",
+      "typical": "Identify specifications across different device types (phone, laptop, server); explain why the same specification (e.g. RAM) matters differently in each context",
+      "wider": [
+       "Research the specifications of devices used in remote First Nations communities and explain how shared access affects which specifications matter most",
+       "Limited width — comparing marketing claims to benchmark performance goes further analytically rather than exploring specifications across more contexts."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who conflate hardware specifications (e.g. treating RAM and storage as equivalent) cannot reason about how different specifications affect performance differently. Seeing the same specification (RAM) behave differently across device contexts (phone vs server) builds the vocabulary precision needed at Node 2."
+      }
      ]
     },
     {
@@ -165,6 +347,24 @@
      "criteria": [
       "Explains the causal link between at least one specification and a specific performance outcome",
       "Does not confuse specifications (e.g. storage capacity with processing speed)"
+     ],
+     "hinge_reason": "Students who cannot explain the causal link between a specification and a performance outcome cannot make principled hardware selection decisions at Node 3. Without this understanding, Node 3 becomes pattern-matching rather than reasoning.",
+     "width": {
+      "minimum": "Explain how one specification (e.g. RAM or bandwidth) affects performance for a given task",
+      "typical": "Explain how different specifications (RAM, bandwidth, storage speed, processor) each affect performance for different tasks; identify which specification is the bottleneck in a given scenario",
+      "wider": [
+       "Explain how GPU specifications affect AI model training speed compared to CPU — why GPUs are more efficient for the mathematical calculations involved",
+       "Investigate how bandwidth limitations affect download speed and lag in online gaming or video conferencing"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who cannot explain the causal link between specifications and performance will guess rather than reason when selecting hardware. Broader contexts (different specs affecting different tasks — gaming, video editing, AI training) help students see the pattern rather than memorise individual spec-task pairs."
+      }
+     ],
+     "related": [
+      "AC9TDI8K02"
      ]
     },
     {
@@ -175,12 +375,31 @@
      "criteria": [
       "Selects hardware that matches the task requirements",
       "Justifies the selection by referencing at least one relevant specification"
+     ],
+     "width": {
+      "minimum": "Given a task and two hardware options, select the more appropriate option and justify using at least one specification",
+      "typical": "Compare multiple hardware options for a given workload; justify selection by weighing trade-offs between specifications (e.g. more RAM vs faster processor for video editing)",
+      "wider": [
+       "Research how cloud computing changes hardware selection decisions — when is local hardware insufficient and cloud resources necessary?",
+       "Evaluate hardware selection for a real scenario such as setting up a school media lab or an AI training environment"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Hardware selection requires students to reason through trade-offs rather than recall a correct answer. Scaffolding the reasoning process (identify task demands → match to specifications → weigh trade-offs → justify) prevents students from pattern-matching rather than reasoning."
+      }
+     ],
+     "related": [
+      "AC9TDI8P07",
+      "AC9TDI8P08"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI8K02",
+   "kit": "data/technologies/y78_dt_AC9TDI8K02.json",
    "year": 8,
    "span": 1,
    "strand": "Networks and security",
@@ -189,6 +408,8 @@
    "prior": [
     "AC9TDI6K02"
    ],
+   "knowledge": "Students can explain how digital systems form networks to transmit data (AC9TDI6K02). They have not yet compared wired and wireless network properties, explored encryption, or investigated how protocols handle transmission errors.",
+   "endpoint": "Students investigate how data is transmitted across wired and wireless networks including the internet, by comparing network properties (bandwidth, latency, reliability), explaining how protocols handle packet transmission and errors, and explaining why and how encryption secures data in transit.",
    "nodes": [
     {
      "n": 1,
@@ -198,6 +419,24 @@
      "criteria": [
       "Correctly names at least two properties that differ between wired and wireless networks",
       "Explains which network type is more suitable for a given use case and why"
+     ],
+     "hinge_reason": "Network properties (bandwidth, latency, reliability) are the vocabulary for Nodes 2–5. Students who cannot name and distinguish these properties cannot reason about why packet loss matters (Node 2), why encryption adds latency (Node 3), or how internet segments work (Node 5).",
+     "width": {
+      "minimum": "Name at least two properties that differ between wired and wireless networks; state which is faster or more reliable in a given scenario",
+      "typical": "Compare bandwidth, latency and reliability across wired and wireless networks; explain why each property matters for different uses (e.g. streaming vs file transfer vs gaming)",
+      "wider": [
+       "Research how network infrastructure decisions affect connectivity equity in different communities — why some areas have fibre and others rely on satellite or mobile",
+       "Investigate how emerging wireless standards (e.g. Wi-Fi 6, 5G) are narrowing the gap with wired networks"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Comparing bandwidth, latency and reliability across use cases (streaming, gaming, file transfer, remote access) builds the conceptual vocabulary needed for Nodes 2 and 5. Students who encounter only one network type cannot generalise the properties when analysing the full internet data journey."
+      }
+     ],
+     "related": [
+      "AC9TDI8K01"
      ]
     },
     {
@@ -208,6 +447,24 @@
      "criteria": [
       "Explains that data is transmitted in packets, not as a continuous stream",
       "Describes what happens when a packet is lost or delayed"
+     ],
+     "hinge_reason": "The packet/protocol model is the prerequisite for understanding why encryption is necessary (Node 3) — students must understand that packets travel through shared infrastructure they don't control before the need for encryption makes sense. Without it, Node 3's reasoning chain fails.",
+     "width": {
+      "minimum": "Explain that data is broken into packets for transmission; identify that packets can be lost or delayed in transit",
+      "typical": "Explain how TCP uses acknowledgements to confirm packets have been received; describe what happens when a router drops a packet and how the protocol recovers",
+      "wider": [
+       "Investigate how network problems propagate through systems — what a user experiences when packet loss occurs at different points in the network",
+       "Limited width — tracing a full request path from device to server extends the concept further rather than applying packet transmission to a broader range of contexts."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Understanding packet-based transmission is the foundation for both why encryption matters and why protocols exist. Broader contexts (different failure scenarios, different network paths) help students see that packet loss is systemic, not a one-off glitch."
+      }
+     ],
+     "related": [
+      "AC9TDI8K04"
      ]
     },
     {
@@ -218,6 +475,24 @@
      "criteria": [
       "Explains why data needs encryption during transmission, not just storage",
       "Names at least one real scenario where encryption protects users"
+     ],
+     "hinge_reason": "Students who accept 'encryption is good' without understanding the shared-infrastructure reasoning cannot explain how simple encryption works (Node 4) or trace the full internet data journey (Node 5). The need for encryption must be understood before the mechanism has meaning.",
+     "width": {
+      "minimum": "Explain why data transmitted over a network needs to be encrypted; give one example of data that must be secured (e.g. credit card details, passwords)",
+      "typical": "Explain why encryption is necessary using the shared-infrastructure model — packets pass through routers and systems the sender does not control, so anyone along the path could read unencrypted data",
+      "wider": [
+       "Research why different levels of encryption are used for different types of data — why HTTPS matters for banking but not for reading a public news article",
+       "Investigate real cases where unencrypted data transmission led to security breaches — what was exposed and how"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The need for encryption is not obvious to students until they reason through the shared-infrastructure model. Scaffolding the chain (packets leave your device → travel through routers you don't control → anyone along the path can read them → therefore encryption is necessary) prevents students from accepting 'encryption is good' as a fact without understanding why."
+      }
+     ],
+     "related": [
+      "AC9TDI8K04"
      ]
     },
     {
@@ -228,6 +503,24 @@
      "criteria": [
       "Describes how a simple algorithm transforms text into an encrypted form",
       "Demonstrates that encryption is reversible — the original message can be recovered"
+     ],
+     "width": {
+      "minimum": "Describe how a simple encryption algorithm (e.g. ROT13) transforms readable text into encrypted text; show that the process is reversible",
+      "typical": "Demonstrate how ROT13 and XOR each encrypt and decrypt a short message; explain why XOR is more useful for digital systems because it operates on binary data",
+      "wider": [
+       "Apply XOR encryption to a short binary message and decrypt it — connect to K04's binary representation",
+       "Limited width — encryption algorithms at this level are mechanical demonstrations. Understanding additional algorithms goes further technically rather than broadening the concept of how encryption protects data."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Encryption algorithms at this level are mechanical demonstrations. The encrypt-decrypt cycle needs to be practised until the reversibility principle is automatic — students must be able to demonstrate it fluently before they can reason about why reversibility matters for secure communication."
+      }
+     ],
+     "related": [
+      "AC9TDI8K03",
+      "AC9TDI8K04"
      ]
     },
     {
@@ -238,12 +531,32 @@
      "criteria": [
       "Describes a data journey across the internet that includes at least packets, a protocol and encryption",
       "Identifies where in the journey wired and wireless networks are used"
+     ],
+     "width": {
+      "minimum": "Describe the journey of a piece of data across the internet — from sender through networks to receiver — identifying where packets, protocols and encryption each play a role",
+      "typical": "Trace a real scenario (e.g. making an online purchase) through the full chain: data is encrypted, broken into packets, transmitted across wired and wireless networks via routers, reassembled using TCP, and decrypted at the destination; identify which network properties affect the experience",
+      "wider": [
+       "Investigate how the internet uses both wired and wireless segments in a single data journey — where does fibre end and wireless begin for a typical request?",
+       "Research how internet infrastructure differs between urban and remote communities and how this affects the transmission and security chain"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node synthesises all four preceding concepts — network properties, packet transmission, protocols, and encryption — into a single coherent account of how the internet works. Students who have understood each component separately often struggle to assemble them into an end-to-end chain. The integration task surfaces whether components were genuinely understood or merely memorised in isolation."
+      }
+     ],
+     "related": [
+      "AC9TDI8K01",
+      "AC9TDI8K03",
+      "AC9TDI8K04"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI8K03",
+   "kit": "data/technologies/y78_dt_AC9TDI8K03.json",
    "year": 8,
    "span": 1,
    "strand": "Data representation",
@@ -253,6 +566,8 @@
     "AC9TDI6K03",
     "AC9TDI6K04"
    ],
+   "knowledge": "Students can explain how digital systems use numbers to represent all types of data (AC9TDI6K03) and how data is represented using binary through off and on states (AC9TDI6K04). They understand the general principle that all data is numbers, but have not yet investigated the specific encoding schemes for text, image, or audio.",
+   "endpoint": "Students investigate how digital systems use integers to represent text (Unicode character values), images (RGB pixel values for bitmaps, geometry for SVG), and audio (amplitude samples at a given sampling rate and bit depth), and explain the encoding scheme for each data type.",
    "nodes": [
     {
      "n": 1,
@@ -262,6 +577,23 @@
      "criteria": [
       "States that all data types are represented as integers in digital systems",
       "Gives at least one example of how a number represents non-numeric information"
+     ],
+     "hinge_reason": "Students who do not understand that the same integer means different things in different encoding contexts will treat Nodes 2, 3 and 4 as three unrelated memorisation tasks rather than three instances of the same principle. Without this anchor, the three encoding schemes cannot be integrated at the standard level.",
+     "width": {
+      "minimum": "State that text, images and audio are all stored as numbers in a digital system; give one example of how a number could represent non-numeric data",
+      "typical": "Explain that different data types use different encoding schemes — the same integer means different things depending on whether the system is interpreting it as a character, a colour value, or a sound amplitude",
+      "wider": [
+       "Limited width — the encoding-scheme principle does not vary meaningfully across contexts. Reasoning about why a universal scheme would not work goes further conceptually rather than broadening the application of the principle."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "If students don't grasp that integers are mapped to meaning through encoding schemes, the three data types (text, images, audio) appear as disconnected facts. Seeing the principle applied across all three types IS the width that resolves the misconception."
+      }
+     ],
+     "related": [
+      "AC9TDI8K04"
      ]
     },
     {
@@ -273,6 +605,23 @@
       "Correctly looks up Unicode values for given characters",
       "Explains that each character has a unique integer in the Unicode set",
       "Encodes at least a short word as a sequence of integers"
+     ],
+     "width": {
+      "minimum": "Use a Unicode table to find the integer value for given characters; explain that each character (letter, punctuation, emoji) has a unique number",
+      "typical": "Encode a short word as a sequence of Unicode integers; explain why uppercase and lowercase letters have different values; identify that emoji are also Unicode characters",
+      "wider": [
+       "Investigate how Unicode handles diverse languages and writing systems — why ASCII was insufficient and what Unicode solved",
+       "Research how Unicode versioning adds new characters (e.g. emoji) and what that means for backward compatibility"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Applying the Unicode encoding scheme across diverse character types (letters, emoji, punctuation, non-Latin scripts) builds robust understanding of the mapping principle rather than a single memorised example. The language diversity direction also connects data representation to cultural and linguistic equity."
+      }
+     ],
+     "related": [
+      "AC9TDI8K04"
      ]
     },
     {
@@ -284,6 +633,19 @@
       "Explains that bitmap images store RGB values (0-255) for each pixel",
       "Identifies the colour represented by a given RGB triplet",
       "Describes at least one difference between bitmap and vector image representation"
+     ],
+     "width": {
+      "minimum": "Explain that a bitmap image is a grid of pixels, each with RGB colour values from 0 to 255; identify the colour for a given RGB value",
+      "typical": "Calculate the number of integers needed to store a small image given its resolution and colour depth; compare bitmap (PNG/JPEG) and vector (SVG) representations for the same image",
+      "wider": [
+       "Explore how SVG's geometry-based representation enables scaling without quality loss — why this matters for responsive design",
+       "Limited width — investigating colour depth trade-offs (8-bit vs 24-bit) goes further technically rather than exploring image representation in a broader range of contexts."
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDI8K04",
+      "AC9TDI8P01"
      ]
     },
     {
@@ -294,12 +656,30 @@
      "criteria": [
       "Explains that audio is represented by sampling amplitude at regular intervals",
       "States that each measurement is stored as an integer"
+     ],
+     "width": {
+      "minimum": "Explain that audio is captured by measuring sound amplitude at regular time intervals; identify that each measurement is stored as an integer",
+      "typical": "Explain how sampling rate (e.g. 44,100 Hz) and bit depth (e.g. 16-bit) determine audio quality; calculate the range of values for a given bit depth",
+      "wider": [
+       "Use a culturally meaningful context such as recording a Welcome to Country to trace how audio data is captured, converted to integers, stored and played back",
+       "Limited width — investigating sampling rate and bit depth trade-offs goes further technically rather than applying audio representation to more contexts."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node connects audio representation to both the principle node (Node 1 — all data as integers) and to K04 (binary representation of those integers). The Welcome to Country context integrates the encoding chain into a culturally meaningful whole."
+      }
+     ],
+     "related": [
+      "AC9TDI8K04"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI8K04",
+   "kit": "data/technologies/y78_dt_AC9TDI8K04.json",
    "year": 8,
    "span": 1,
    "strand": "Data representation",
@@ -309,6 +689,8 @@
     "AC9TDI6K04",
     "AC9TDI8K03"
    ],
+   "knowledge": "Students can explain how data is represented using binary through off and on states (AC9TDI6K04) and how digital systems use integers to represent text, image and audio data (AC9TDI8K03). They understand the concept of binary as on/off, but have not yet explained binary place value, the relationship between bits and representable range, or how circuits perform binary operations.",
+   "endpoint": "Students explain how integers are represented in binary using place value (powers of 2), the relationship between bits, bytes and representable range, and why digital systems use binary — connecting electronic on/off states to logic gates and data encoding.",
    "nodes": [
     {
      "n": 1,
@@ -319,6 +701,20 @@
       "Correctly converts at least three decimal numbers to binary",
       "Correctly converts at least three binary numbers to decimal",
       "Explains that each position in a binary number represents a power of 2"
+     ],
+     "hinge_reason": "Students who cannot fluently convert between binary and decimal cannot reason about representable ranges (Node 2), understand how logic gates combine binary states (Node 3), or trace the K03 encoding chain through to binary (Node 4). Conversion errors propagate through all subsequent nodes.",
+     "width": {
+      "minimum": "Count in binary from 0 to at least 15; convert a given decimal number to binary and back",
+      "typical": "Convert numbers in both directions confidently; explain that each binary digit represents a power of 2; predict what range of values a given number of bits can represent",
+      "wider": [
+       "Limited width — binary conversion is a mechanical skill that does not vary meaningfully across contexts. Extensions such as binary addition go further conceptually rather than broadening the application of place value."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Binary conversion is a mechanical skill that all subsequent understanding depends on. Width is thin — there are no meaningfully different contexts for conversion. What helps is more practice: more conversions, more checking, building fluency until conversion is automatic."
+      }
      ]
     },
     {
@@ -329,6 +725,23 @@
      "criteria": [
       "States that 1 byte = 8 bits and can represent values from 0 to 255",
       "Does not confuse bit count with the values themselves (e.g. 8 bits does not mean the number 8)"
+     ],
+     "width": {
+      "minimum": "State that 1 byte = 8 bits and can represent values from 0 to 255",
+      "typical": "Explain why 8 bits gives 256 possible values (2^8); predict the range for different bit counts; connect byte size to practical examples from K03 (e.g. RGB values 0-255 are one byte per channel, 16-bit audio uses 2 bytes per sample)",
+      "wider": [
+       "Calculate the storage requirements for a small image or short audio clip using bit depth and resolution, connecting bits/bytes to real data representation from K03",
+       "Limited width — overflow errors go further conceptually rather than applying the bits-to-range relationship across more contexts."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node connects binary representation (K04) back to data encoding (K03) — the bits/bytes/range relationship grounds the earlier encoding discussion in concrete number theory. Students who only memorise '1 byte = 8 bits' without connecting it to K03 RGB/audio examples have not integrated the two standards."
+      }
+     ],
+     "related": [
+      "AC9TDI8K03"
      ]
     },
     {
@@ -340,6 +753,19 @@
       "Explains that binary maps to the two reliable states of electronic components",
       "Demonstrates the output of AND and OR gates for given inputs",
       "Connects logic gates to why digital systems are built on binary"
+     ],
+     "width": {
+      "minimum": "Explain that computers use binary because electronic components have two reliable states (on/off); identify that circuits with switches can represent AND or OR operations",
+      "typical": "Demonstrate how a 2-switch circuit represents AND and OR gates; explain the output for each combination of inputs; connect this to why binary is the foundation for all computation",
+      "wider": [
+       "Limited width — logic gates and circuit-level operations do not vary meaningfully across contexts. Extensions such as adder circuits or the history of binary vs analogue computing go further conceptually rather than broadening the application."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The why-binary question requires students to reason through a chain: electronic components have two reliable states → those states can be encoded as 0/1 → circuits can combine those states using Boolean logic → therefore binary is the natural foundation. Students who skip this reasoning and accept 'computers use binary' as a given cannot explain why binary was chosen over other number bases."
+      }
      ]
     },
     {
@@ -351,12 +777,29 @@
       "Traces a character from text to Unicode value to binary representation",
       "Explains that all data types ultimately become sequences of binary digits",
       "Connects the encoding chain from K03 (data as integers) to K04 (integers as binary)"
+     ],
+     "width": {
+      "minimum": "Trace one example from data to binary: convert a character to its Unicode integer, then convert that integer to binary",
+      "typical": "Trace the full encoding chain for two data types (e.g. a character via Unicode to binary, and a pixel colour via RGB to binary); explain why binary is the final representation for all data types",
+      "wider": [
+       "Limited width — the integration of binary with data encoding is the endpoint of this standard. Extensions such as file formats or compression go beyond the standard's scope into Year 9-10 territory."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node is the explicit cross-standard integration point between K03 and K04. Students must assemble the full encoding chain — data type → integer → binary — to demonstrate that both standards are genuinely understood and not held as separate compartments."
+      }
+     ],
+     "related": [
+      "AC9TDI8K03"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI10K01",
+   "kit": "data/technologies/y910_dt_AC9TDI10K01.json",
    "year": 10,
    "span": 1,
    "strand": "Networks and security",
@@ -366,6 +809,8 @@
     "AC9TDI8K02",
     "AC9TDI8K01"
    ],
+   "knowledge": "Students can investigate how data is transmitted and secured in wired and wireless networks, including the use of protocols (AC9TDI8K02). They can explain how hardware specifications affect performance (AC9TDI8K01). They have not yet examined the software layer (OS, access control, cryptography) that manages and secures data in networked systems.",
+   "endpoint": "Students investigate how hardware and software components — including operating systems, access control mechanisms, and cryptographic protocols — work together to manage, control and secure access to data in networked digital systems.",
    "nodes": [
     {
      "n": 1,
@@ -375,7 +820,16 @@
      "criteria": [
       "Correctly describes the OS as sitting between hardware and applications",
       "Uses a specific example to illustrate how abstraction works (e.g. mouse and touchscreen treated the same by an application)"
-     ]
+     ],
+     "width": {
+      "minimum": "Explain, using one example, how the OS allows applications to interact with hardware without knowing the hardware's specifics.",
+      "typical": "Explain how the OS abstracts different input devices, storage types, and network interfaces; describe the role of device drivers in this abstraction.",
+      "wider": [
+       "Compare how the same application behaves across different operating systems and explain what the OS must do to make this possible",
+       "Investigate how OS-level hardware abstraction affects accessibility features — for example, how the OS allows screen readers to work across multiple input types"
+      ]
+     },
+     "modes": []
     },
     {
      "n": 2,
@@ -386,6 +840,21 @@
       "Correctly distinguishes IP addresses from domain names",
       "Explains the role of DNS in translating between the two",
       "Describes how routing tables direct packets toward their destination"
+     ],
+     "hinge_reason": "Confusion between IP addresses and domain names, or misunderstanding of how packets are routed, propagates into N4 and N5 — students cannot reason about where cryptographic protection applies or trace a complete data flow without correctly understanding how addressing and routing work.",
+     "width": {
+      "minimum": "Explain the role of IP addresses in identifying devices on a network and describe how DNS translates domain names to IP addresses.",
+      "typical": "Explain how IP addresses, DNS and routing tables work together to direct data packets to the correct destination across a network; describe the difference between public and private IP addresses.",
+      "wider": [
+       "Trace a DNS lookup and packet routing path for a request to a website, identifying each step from browser to server",
+       "Investigate how the transition from IPv4 to IPv6 addresses the limitation of available addresses and what this means for networked device growth"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students frequently conflate IP addresses with domain names, or assume routing is a single hop. Multiple tracing activities — DNS lookup, packet path, address types — resolve these conflations more effectively than repeating the same explanation."
+      }
      ]
     },
     {
@@ -396,6 +865,21 @@
      "criteria": [
       "Distinguishes authentication from authorisation/permissions correctly",
       "Explains what a specific access control mechanism protects against in a networked context"
+     ],
+     "hinge_reason": "Conflation of authentication and authorisation cascades into N5 — students who cannot distinguish 'proving identity' from 'granting access rights' cannot analyse how a networked system's security components coordinate.",
+     "width": {
+      "minimum": "Describe at least one access control mechanism (e.g. passwords/authentication OR file permissions) and explain what it protects against.",
+      "typical": "Explain the difference between authentication (proving identity) and permissions/authorisation (what an authenticated user may do); describe how each operates in a networked system with multiple users.",
+      "wider": [
+       "Investigate how role-based access control (RBAC) is implemented in enterprise systems and why it is more scalable than individual permission assignment",
+       "Examine how misconfigured permissions have caused real data breaches — what access control failure occurred and what should have been in place"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students often conflate authentication and authorisation. A reasoning scaffold — who are you? (authentication) → what are you allowed to do? (authorisation) → what should the system block? (enforcement) — helps students distinguish these systematically rather than mixing up the terms."
+      }
      ]
     },
     {
@@ -406,6 +890,22 @@
      "criteria": [
       "Correctly explains what public key cryptography protects (data in transit) and how it does so",
       "Correctly explains what hashing protects (stored data / integrity verification) and how it differs from encryption"
+     ],
+     "hinge_reason": "Conflating encryption with hashing, or treating all cryptography as identical, breaks the N5 integration — students cannot correctly identify which mechanism protects data in transit versus at rest.",
+     "width": {
+      "minimum": "Explain, in plain language, how one cryptographic mechanism (e.g. TLS for transmission OR hashing for storage) protects data.",
+      "typical": "Explain how public key cryptography (e.g. TLS) secures data in transit and how hashing (e.g. SHA-1) protects stored data; describe the different threat each addresses.",
+      "wider": [
+       "Investigate how certificate authorities establish trust in public key cryptography — what happens when a certificate is invalid or expired?",
+       "Explore how modern systems combine symmetric and asymmetric encryption to gain the security benefits of asymmetric without the performance cost",
+       "Research how First Nations community health data is protected using encryption standards in remote health systems — why data sovereignty requirements shape cryptographic choices"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Cryptography is conceptually dense — students often conflate encryption with hashing, or assume all encryption is the same. Multiple concrete examples (HTTPS padlock, password storage, certificate chain) each illuminate a different aspect and build the distinction through contrast."
+      }
      ]
     },
     {
@@ -416,12 +916,31 @@
      "criteria": [
       "Identifies the role of at least two distinct components in securing data in a networked system",
       "Explains how the components interact — not just what each does individually"
+     ],
+     "width": {
+      "minimum": "Describe how at least two components (e.g. OS + authentication, OR routing + TLS) work together to secure data in a networked system.",
+      "typical": "Trace data through a networked system — from a user request, through DNS/routing, authenticated access, to encrypted transmission — and identify where each security mechanism operates.",
+      "wider": [
+       "Configure a simple simulated network and observe packets moving between devices — identify what is encrypted, what is routed, and what access controls are applied at each stage",
+       "Analyse a real or simulated network breach to identify which layers of the system failed and what should have prevented it"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Nodes 1–4 address hardware abstraction, addressing, access control, and cryptography as separate components. The integration node is where students must coordinate all four — understanding that securing a networked system requires all mechanisms to work together. Phase failure here is describing each mechanism correctly but unable to explain how they interact."
+      }
+     ],
+     "related": [
+      "AC9TDI10P13",
+      "AC9TDI10P14"
      ]
     }
    ]
   },
   {
    "code": "AC9TDI10K02",
+   "kit": "data/technologies/y910_dt_AC9TDI10K02.json",
    "year": 10,
    "span": 1,
    "strand": "Web documents",
@@ -431,6 +950,8 @@
     "AC9TDI8P11",
     "AC9TDI8P12"
    ],
+   "knowledge": "Students can use a range of digital tools to create and communicate content (AC9TDI8P11, AC9TDI8P12). They have not yet formally encountered the three-layer model of web documents or the rationale for separating content, structure and presentation.",
+   "endpoint": "Students represent online documents by separating content (text), structure (HTML markup) and presentation (CSS styling), and explain why this separation is important for design, maintenance and accessibility.",
    "nodes": [
     {
      "n": 1,
@@ -440,6 +961,21 @@
      "criteria": [
       "Correctly assigns specific examples (e.g. heading text, <h1> tag, font-size rule) to the correct layer",
       "Does not confuse structural tags with visual appearance"
+     ],
+     "hinge_reason": "Misidentifying what belongs to content, structure, or presentation directly prevents N2 — students who conflate layers cannot correctly use HTML for structure and CSS for presentation.",
+     "width": {
+      "minimum": "Given a web page, identify what is content (text), what is structure (markup that organises the document), and what is presentation (how it looks).",
+      "typical": "Describe what each layer contains and what role it plays; identify examples of HTML structural tags and CSS presentation rules in a web page.",
+      "wider": [
+       "Compare how the same HTML document renders with and without CSS — articulate specifically what changed and what did not",
+       "Investigate how a screen reader interprets an HTML document and explain how structure (not presentation) determines what is communicated to the user"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Distinguishing three layers is a precision task — students commonly assign CSS rules to 'structure' or treat HTML tags as presentation. Sufficient practice mapping specific examples (this text, this tag, this rule) to the correct layer builds the reliable discrimination needed before N2."
+      }
      ]
     },
     {
@@ -451,6 +987,21 @@
       "HTML file uses structural tags correctly (headings, paragraphs, at minimum)",
       "CSS rule targets an HTML element or class and changes its presentation",
       "Student can explain what the HTML tag does versus what the CSS rule does"
+     ],
+     "hinge_reason": "Syntactic fluency at N2 is prerequisite for N3 — students who cannot produce working HTML/CSS cannot demonstrate the separation principle in action; they can only describe it abstractly, which does not meet the descriptor's demand.",
+     "width": {
+      "minimum": "Write a simple web page with at least two structural HTML elements and one CSS rule applied to them; explain what the tag does versus what the CSS rule does.",
+      "typical": "Create a web page using HTML structural tags (headings, paragraphs, lists, divs) and CSS rules (colour, font, layout); explain how changing the CSS changes presentation without altering structure.",
+      "wider": [
+       "Apply CSS classes to demonstrate how the same structural element can have different presentations in different contexts on the same page",
+       "Use CSS to implement a responsive layout that changes presentation based on screen width, explaining how presentation changes while structure remains constant"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "HTML/CSS syntax requires precision — misplaced tags, missing closing elements, and selector errors are common. Students need sufficient practice with the syntax to develop fluency before the conceptual significance of separation is legible to them."
+      }
      ]
     },
     {
@@ -461,12 +1012,28 @@
      "criteria": [
       "Explains at least one concrete benefit of separation with a specific example",
       "Connects the benefit to a real consequence (e.g. changing one CSS file updates many pages)"
+     ],
+     "width": {
+      "minimum": "Give at least one reason why separating content, structure and presentation is important — with a concrete example of the benefit.",
+      "typical": "Explain multiple benefits of separation: independent editing, consistent presentation across many pages via a single CSS file, accessibility (structure legible to screen readers), and easier maintenance.",
+      "wider": [
+       "Demonstrate the maintenance benefit by changing one CSS file to restyle an entire multi-page site, explaining why this would be impractical if styling were embedded in content",
+       "Investigate how major content management systems (e.g. WordPress themes) implement content/structure/presentation separation and explain the architectural choices",
+       "Examine how First Nations language preservation websites use structured content to support multiple language versions of the same page — explaining why structure separation makes this feasible"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who have only produced a single small web page often struggle to appreciate why separation matters — the benefit is invisible at small scale. Multiple contexts (site-wide restyling, screen reader accessibility, multi-language content) each illuminate a different reason, making the principle concrete across scales."
+      }
      ]
     }
    ]
   },
   {
    "code": "AC9TDI10K03",
+   "kit": "data/technologies/y910_dt_AC9TDI10K03.json",
    "year": 10,
    "span": 1,
    "strand": "Data representation",
@@ -476,6 +1043,8 @@
     "AC9TDI8K03",
     "AC9TDI8K04"
    ],
+   "knowledge": "Students can explain how digital systems represent text, image and audio data using binary (AC9TDI8K03) and how integers are represented in binary (AC9TDI8K04). They understand that different data types require different amounts of storage. They have not yet investigated how data can be compressed to reduce storage and transmission requirements.",
+   "endpoint": "Students investigate simple data compression techniques, including lossless methods such as run-length encoding and lossy methods, and explain the difference between lossy and lossless compression and the consequences of each.",
    "nodes": [
     {
      "n": 1,
@@ -485,7 +1054,16 @@
      "criteria": [
       "Correctly explains what compression does (reduces file size)",
       "Gives at least one concrete reason why reducing file size matters"
-     ]
+     ],
+     "width": {
+      "minimum": "Explain what data compression is and give at least one reason why it is useful (e.g. file size, transmission speed, storage cost).",
+      "typical": "Explain why compression is important in contexts including storage, transmission speed, energy use, and bandwidth cost; compare file sizes before and after a simple compression example.",
+      "wider": [
+       "Investigate the energy cost of transmitting large uncompressed files compared to compressed equivalents — connect this to environmental impact of digital systems",
+       "Examine why compression is particularly important in low-bandwidth contexts such as remote First Nations communities and what trade-offs arise"
+      ]
+     },
+     "modes": []
     },
     {
      "n": 2,
@@ -495,6 +1073,21 @@
      "criteria": [
       "Correctly applies RLE to encode a simple sequence",
       "Explains how the encoded form represents the original data"
+     ],
+     "hinge_reason": "RLE procedural errors cascade into N3 — students who cannot correctly encode a sequence cannot calculate compression ratios or reason about when RLE is effective versus ineffective, which is the foundation for lossy/lossless comparison.",
+     "width": {
+      "minimum": "Apply run-length encoding to a simple sequence (e.g. a row of pixels) and explain how it reduces storage by representing repeated values as a count-value pair.",
+      "typical": "Apply run-length encoding to image row data; calculate the compression ratio achieved; explain when RLE is effective (many repeated values) and when it is not (random/varied data).",
+      "wider": [
+       "Investigate additional lossless compression techniques (e.g. Huffman coding concepts) and explain how they generalise the principle of representing frequent patterns efficiently",
+       "Apply RLE to different data sequences and identify what properties make data more or less compressible with this technique"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Run-length encoding requires students to apply a precise algorithmic procedure. Errors in counting runs or encoding the count-value pair are common. Sufficient practice with varied sequences — images, text repetitions, binary strings — builds the procedural fluency needed before the conceptual explanation is solid."
+      }
      ]
     },
     {
@@ -506,6 +1099,21 @@
       "Correctly distinguishes lossless (exact recovery) from lossy (permanent data loss) compression",
       "Identifies an appropriate context for each type and justifies the choice",
       "Names at least one consequence of using lossy compression in an inappropriate context"
+     ],
+     "width": {
+      "minimum": "Explain the difference between lossy and lossless compression and give one example of each; identify one consequence of using lossy compression.",
+      "typical": "Explain that lossless compression preserves all original data (decompression recovers the original exactly) while lossy compression permanently discards information; describe appropriate contexts for each (e.g. medical images require lossless; music streaming tolerates lossy); explain why the same file format may not suit both contexts.",
+      "wider": [
+       "Compare audiovisual codecs (MP3 vs WAV, MP4 vs uncompressed video) and explain what information is discarded and why human perception makes this acceptable in most contexts",
+       "Investigate the consequences of lossy compression in high-stakes domains — medical imaging, legal evidence, archival records — and explain why lossless is required",
+       "Explore how image compression artefacts arise (e.g. JPEG block artefacts) and explain the algorithmic reason they appear"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "The lossy/lossless distinction is abstract without concrete cases. Students need examples where the trade-off is consequential — medical imaging, audio quality, image artefacts — to understand why the distinction matters beyond a vocabulary definition."
+      }
      ]
     }
    ]

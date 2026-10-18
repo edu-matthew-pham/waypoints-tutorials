@@ -39,10 +39,11 @@ check: { type: reflect, text: "Create is open in another tab, with a primer star
 
 In Create, the dark box on the left is the lesson's text (`lesson.md`); the right side is a preview that updates as you type. You only ever change words; the lines with `---`, `stage:` and backticks hold the lesson together, so leave them alone.
 
-**Not a History teacher?** The History waypoint is the quickest way to see the route, and every step after this works the same in any subject. To start from your own subject instead:
+**Not a History teacher?** The History waypoint is the quickest way to see the route, and every step after this works the same in any subject. To start from your own subject instead, open its curriculum pages, choose a year, a standard and one of its waypoints, and press **Make a primer for this**:
 
-- **Maths, Science or Digital Technologies:** open [Create](../../../code/create/) in a new tab, choose **Start with a prompt** › **Go to workspace**, open **Curriculum waypoints (optional)**, choose your curriculum, year, standard and waypoint, press **Add waypoint**, then **Add a lesson starter**.
-- **Any other subject:** in the same panel, skip the waypoints: choose your **Subject**, **Lesson structure: Primer: one idea**, type a **Topic**, then press **Add a lesson starter**. You'll write the goals yourself.
+[English](../../../teach/curriculum/english/) · [Maths](../../../teach/curriculum/maths/) · [Science](../../../teach/curriculum/science/) · [History](../../../teach/curriculum/history/) · [Geography](../../../teach/curriculum/geography/) · [Civics and Citizenship](../../../teach/curriculum/civics/) · [Economics and Business](../../../teach/curriculum/economics/) · [Health and Physical Education](../../../teach/curriculum/hpe/) · [The Arts](../../../teach/curriculum/arts/) · [Languages](../../../teach/curriculum/languages/) · [Design and Technologies](../../../teach/curriculum/design/) · [Digital Technologies (knowledge)](../../../teach/curriculum/systems/) · [Digital Technologies (processes)](../../../teach/curriculum/digital-processes/)
+
+Every Years 7–10 learning area is there, as drafts from Waypoints Kit. Teaching something that isn't? In Create, choose **Start with a prompt** › **Go to workspace**, choose your **Subject** and **Lesson structure: Primer: one idea**, type a **Topic**, then press **Add a lesson starter**. You'll write the goals yourself.
 
 ## Apply: make it yours
 
@@ -173,7 +174,7 @@ stuck:
   - see: "Copy student link does nothing."
     ask: "Did the browser ask about the clipboard?"
     fix: "Allow it, or use the preview on the right of Create, which shows the same page."
-stretch: "Fill in The idea and Worked example steps too, in your own words. Or start a second primer from a waypoint in your own subject (other subjects' curriculum pages are coming; History is first)."
+stretch: "Fill in The idea and Worked example steps too, in your own words. Or start a second primer from a waypoint in your own subject: every learning area has curriculum pages."
 support: "Pair with a confident colleague who drives while the other writes the question on paper first. The question is the part that matters, not the typing."
 leads: "Lesson 2 (One idea) narrows a topic to the one idea students should leave with: teachers keep this History primer or start one on the topic they brought. Lessons 3 and 4 improve the same primer (the misconception and opening move, then checks that test understanding); 5 and 6 cover videos and sharing."
 exit:

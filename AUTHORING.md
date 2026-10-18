@@ -1476,7 +1476,7 @@ several give a pick list, never a silent merge. Possible misconceptions (a hinge
 are offered with **Use this**, which writes `design.misconception`; width suggestions come from every node's response modes with
 Kit's reasons. With the Primer structure, **Add a lesson starter** pre-fills a Primer (`node:`, goals, a `before:` note), and the copied
 prompt carries the nodes' data so the AI need not fetch Kit (`tools/kit-nodes.mjs`). `?node=AC9HH7S03.1` opens Create with that
-node's Primer starter: the teacher pointer pages' **Make a primer for this** (`/teach/curriculum/<subject>/`) link there.
+node's Primer starter: the teacher pointer pages' **Make a primer for this** (`/teach/curriculum/<subject>/`) link there. Every Years 7–10 learning area in Kit is imported (English, Maths, Science, History, Geography, Civics and Citizenship, Economics and Business, HPE, the Arts, Languages, Design and Technologies, Digital Technologies knowledge and processes), each a draft until its `data/review/<subject>.yml` says reviewed.
 Lessons without a node work as before.
 
 Inside the workspace, choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;
