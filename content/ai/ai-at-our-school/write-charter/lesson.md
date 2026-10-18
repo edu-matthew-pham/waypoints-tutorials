@@ -144,4 +144,4 @@ On paper, write the final **charter** and keep it: the rest of the course tests 
 | Shared for comment with: | |
 | Next review: | |
 
-**Next lesson:** turn the charter into a first policy for students and staff.
+**Next lesson:** where do AI rules belong in a school's policies?

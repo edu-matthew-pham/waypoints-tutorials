@@ -79,6 +79,8 @@ A review cycle has four parts:
 3. **Triggers for an early review:** a changed term or setting, a safety report, a new kind of AI, a **big jump in what AI can do**, new evidence.
 4. **A date:** when the charter, recommendations and responses are all revisited, ideally alongside the school's own policy review.
 
+The AI rules live in several policies (lesson 4), each reviewed by its own owner. So the cycle names **who holds the map**: the person who notices when a change in AI touches several policies at once, and passes it along.
+
 Decisions about AI are **dated and reviewed**. That's the charter's "honest about evidence" principle, applied to the committee itself.
 
 ### Safe reporting

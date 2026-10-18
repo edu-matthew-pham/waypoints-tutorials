@@ -1,0 +1,30 @@
+inquiry:
+  q: "Should a school have one AI policy, or AI rules inside its other policies?"
+  prompts:
+    - "Where would a teacher look first when a student cheats with AI?"
+    - "Who notices if the rules in different places start to disagree?"
+  notes: "Both have costs. One big policy duplicates and drifts from the others; scattered rules fragment without someone holding the map. The lesson lands on a thin statement plus a map."
+activities:
+  - at: run
+    kind: activity
+    title: "Our school's policies"
+    minutes: 10
+    do: |
+      Look at the list of our school's policies. Which already mention AI? Which should?
+      Who owns each one?
+    notes: "Bring titles, owners and review dates, dated. Frame it as mapping, not criticising."
+  - at: end
+    kind: discussion
+    title: "Who holds the map?"
+    minutes: 5
+    do: |
+      Who at our school should hold the map: the committee, a leader, both? What happens if nobody does?
+staff:
+  notes: "For staff, this is the most practical session: build the real map with the policy owners."
+  activities:
+    - title: "Map the policies"
+      minutes: 20
+      do: "List every policy AI touches (integrity and assessment, wellbeing and behaviour, child safety, privacy, inclusion, ICT use, staff conduct, communications). For each: owner, review date, current AI line (if any), conflicts with another policy."
+    - title: "Rules from outside"
+      minutes: 10
+      do: "Add the external rules that sit above school policy (the IB's academic integrity policy and its AI appendix; the BSSS guide for any ACT senior students). Note where the school's integrity policy must line up."

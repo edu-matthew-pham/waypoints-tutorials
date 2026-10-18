@@ -1,0 +1,41 @@
+summary: "Students see that AI changes how existing rules apply. They sort AI situations into the policy that should own each one (integrity, behaviour, privacy, inclusion, devices, staff conduct) and write a short AI statement (principles, a map of where each rule lives, who holds it, when it's reviewed) instead of one big AI rulebook."
+time: 45
+goals:
+  - "I can say which existing school policy should own an AI situation."
+  - "I can write a short AI statement that points to other policies instead of repeating them."
+  - "I can explain why someone has to hold the map, and why most AI use can't be policed."
+before: |
+  **Core idea:** AI changes how existing rules apply, so its rules mostly belong inside the policies that already own each situation. A short AI statement holds the principles, the map, who holds it and when it's reviewed. Overreach test: if an existing policy owns the situation, the rule goes there and the statement points to it. Risk: without someone holding the map, scattered AI lines drift apart.
+  Westbrook's six policies are made up; real schools name them differently (ICT acceptable use, assessment, child safety, privacy collection notice, learning support). Adjustments for students with disability are a legal duty as well as a fairness principle: an AI rule must not quietly remove them. For deepfakes and other harm, follow your school's wellbeing and child safety procedures; keep class discussion general.
+  **Policing (background; product names out of student text):** OpenAI withdrew its AI text classifier on 20 July 2023 "due to its low rate of accuracy". Liang and colleagues (2023) found detectors flagged over half of 91 human-written TOEFL essays as AI-generated (average false positive rate 61%). Rules built on detection mostly catch the honest and wrongly flag second-language writers.
+  **Rules from outside (checked 19 Oct 2026):** the IB's Academic integrity policy (updated March 2023) has an appendix of guidance on using AI tools, and requires students to credit sources and not receive non-permitted help. Read that appendix before the class plan. The ACT BSSS Teacher Guide on AI and Academic Integrity (2023) says "the unattributed or disallowed use of AI in assessment is a breach of academic integrity", that teachers decide acceptable AI use for each task, that students declare permitted use, and warns "Don't rely solely on AI plagiarism detectors". Check for newer versions before teaching.
+  **For the class plan:** bring a list of the school's policies (titles, owners, review dates), dated. The committee maps and proposes; each policy's owner decides its wording.
+running:
+  - "Engage: the fake image. Which rules already cover it?"
+  - "Explore: sort the seven situations; each student writes a short statement."
+  - "Explain: the twelve-page problem; a statement and a map, and who holds it."
+  - "Evaluate: statement and map on paper; keep them for lesson 11."
+struggle: "Students want the AI statement to cover everything. Ask, for each rule, whether another policy already owns that situation."
+stuck:
+  - see: "Every situation goes into 'a new AI policy'."
+    ask: "If this happened without AI, which rule would cover it?"
+    fix: "That policy owns it; add an AI line there."
+  - see: "A student's statement is all bans and detection."
+    ask: "How would a teacher know? Who would it wrongly catch?"
+    fix: "Point to integrity for assessed work, and rely on task design and honesty."
+support: "Give the six policy names as cards; students place each situation, then explain one."
+stretch: "Find a situation that two policies could both claim (an AI deepfake in an assessed media task). Who should own it, and how does the map show it?"
+leads: "Units 2 and 3 produce evidence; lesson 11 refines the AI lines and the map."
+exit:
+  q: "Why shouldn't a school's AI statement repeat the rules about bullying or cheating?"
+  a: "Those policies already own them; two versions will drift apart, so the statement points to them instead."
+explain: |
+  1. AI changes how existing rules apply.
+  2. Each AI rule lives in the policy that owns that situation.
+  3. A short AI statement holds the principles, the map, who holds it, and the review date.
+  4. Most AI use can't be policed, so check the rules work, not each student.
+sources:
+  - { title: "IB Academic integrity policy (updated March 2023), incl. appendix on AI tools", url: "https://ibo.org/globalassets/new-structure/programmes/shared-resources/pdfs/academic-integrity-policy-en.pdf", checked: 2026-10-19 }
+  - { title: "BSSS Teacher Guide: AI and Academic Integrity (2023)", url: "https://www.bsss.act.edu.au/__data/assets/pdf_file/0003/571719/BSSS_Teacher_Guide_AI_and_Academic_Integrity.pdf", checked: 2026-10-19 }
+  - { title: "OpenAI, New AI classifier for indicating AI-written text (update note, 20 July 2023)", url: "https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text", checked: 2026-10-18 }
+  - { title: "Liang, Yuksekgonul, Mao, Wu and Zou (2023), GPT detectors are biased against non-native English writers", url: "https://arxiv.org/abs/2304.02819", checked: 2026-10-18 }

@@ -24,7 +24,7 @@ stuck:
     fix: "Write that as the principle."
 support: "Give the Westbrook second draft and ask students to change two principles to suit their own school."
 stretch: "Write the charter's review rule: what would make you revisit it before its review date?"
-leads: "Lesson 4 turns the charter into a first policy; Unit 2 (lessons 5 to 7) tests a proposed tool against it; Unit 3 uses it for AI nobody chose; lesson 11 refines the policy."
+leads: "Lesson 4 turns the charter into an AI statement and a map of where AI rules live in the school's policies; Unit 2 (lessons 5 to 7) tests a proposed tool against it; Unit 3 uses it for AI nobody chose; lesson 11 refines the AI rules."
 exit:
   q: "Why does a good charter name principles, not particular tools?"
   a: "So it still works when a new tool arrives; decisions about tools are tested against it."

@@ -7,25 +7,25 @@ inquiry:
 activities:
   - at: run
     kind: activity
-    title: "Three changes"
+    title: "Four changes"
     minutes: 12
     do: |
-      In groups, take our school's real policy. Propose three changes: one too vague, one too prescribed, one that relies on catching people.
-      For each: the evidence, the principle, and the layer.
-    notes: "Printed, dated policy. Collect the strongest proposals into one."
+      In groups, take our school's map and the real policies it points to. Propose changes: one too vague, one too prescribed, one that relies on catching people, one where two policies disagree.
+      For each: the evidence, the principle, the owner, and the layer.
+    notes: "Printed, dated policies. Collect the strongest proposals into one."
   - at: end
     kind: activity
     title: "Four products"
     minutes: 8
     do: |
-      Put the charter, recommendation, response plan and policy proposal together. Who gets them, and by when should they reply?
+      Put the charter, recommendation, response plan and the map together. Which policy owner gets which proposal, and by when should they reply?
     notes: "If you can, arrange for a group to present to leadership or the SRC."
 staff:
-  notes: "For staff, this is the drafting session. Work on the real policy with whoever owns it in the room."
+  notes: "For staff, this is the drafting session. Work on the real policies with their owners in the room."
   activities:
     - title: "Sort into layers"
       minutes: 20
-      do: "Go through the current policy line by line: keep in the policy, move to a termly guideline, or leave to task instructions. Draft the guideline headings."
+      do: "Go through each policy's AI lines: keep, move to a termly guideline, or leave to task instructions. Check the policies against each other and against external rules (IB, BSSS). Agree who holds the map."
     - title: "Detection and integrity"
       minutes: 15
       do: "Find every line that relies on detecting AI use. Rewrite each to work through task design and acknowledgement, and agree what counts as a clear case for academic integrity procedures."
