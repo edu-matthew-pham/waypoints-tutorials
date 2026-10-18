@@ -543,3 +543,11 @@ Steps 3 and 4 of the Project doc `create-generic-proposal`. Built:
 - Kit data slips for Matthew: `yf_maths_AC9MFN04` node 2 lists `width_opportunity` as a response mode; `y9_history_AC9HH9K14.json` gives its code as `AC9HH9K014` (imported as Kit has it).
 - Next: faint pointer dots on the map; the synthesise prompt (step 5); subject-neutral `/create/` and the board picker's task-kind filter (step 6); other subjects' pointer pages once History's are reviewed.
 
+## Make a lesson: Teachers menu, weak example, lesson 1 (18 Oct 2026, evening)
+Plan: `roadmap/teacher-course-plan.md` (approved). Built, then stopped for Matthew's pilot of lesson 1 with one non-specialist teacher:
+- **Teachers menu** (shared change, `build-site.mjs`): a top-level folder's `index.md` may list `links:` (`{ title, href, summary }`, `href` from the site root and ending in `/`), added to its navbar menu and listed on its folder page; `audience: teachers` sorts the menu last and keeps the folder off the home page's subject list. `content/teachers/index.md` lists Make a lesson, For maths teachers and Choosing AI tools; the menu is marked on those pages. No `trail:`, so no trail picks it up.
+- **Navbar** (shared change, `NAV_CSS` in `lesson-view.mjs`): from 701 to 1100px, top-level links take 6px side padding, so an eighth menu still fits in two rows at 1024px (it went to three).
+- **Course** `content/teachers/make-a-lesson/` (units Make one; The lesson to improve). Lesson 1 *Make your first primer* (`shape: primer`; pointer page AC9HH7S03 n1 → Make a primer for this → rewrite the intro, Lock-in prediction with a `reasoning` check against a model → optional AI route → Copy student link; teacher notes for a facilitator, with a 50-minute session plan). *Example to improve: Seasons and the Moon* (optional): one fault per design decision (two ideas; the distance-from-the-Sun misconception never raised; opens by telling; checks passable by guessing or recall), for lessons 2–4.
+- Test: `experiments/teacher-course-smoke.mjs` (in the frontmatter-bridge workflow).
+- Next, after the pilot: lessons 2–6, the rest of the teacher notes, the line on Create's start page.
+

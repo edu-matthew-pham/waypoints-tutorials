@@ -62,6 +62,8 @@ jobs:
         run: node experiments/board-picker-smoke.mjs
       - name: Curriculum pointer pages and Create's node pre-fill
         run: node experiments/pointer-pages-smoke.mjs
+      - name: Teachers menu and the Make a lesson course
+        run: node experiments/teacher-course-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

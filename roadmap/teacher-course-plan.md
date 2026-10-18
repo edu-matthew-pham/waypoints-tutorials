@@ -1,6 +1,6 @@
 # Plan: *Make a lesson* (a course for teachers on making tutorials) (18 Oct 2026)
 
-**Approved 18 Oct 2026 (Matthew accepted every recommendation below). Not built yet; handoff: Project doc `claude/handoff-teacher-course.md`.** The candidate in `roadmap/shared.md` (18 Oct). Its "wait" was for Create to settle; Create's design decisions, Primer shape, pointer pages and node pre-fill are now built (shared.md › Generic Create, parts 1 and 2), so the content is stable enough to plan. The AI courses do not change it (the AI committee plan decided not to depend on it).
+**Approved 18 Oct 2026 (Matthew accepted every recommendation below). Handoff: Project doc `claude/handoff-teacher-course.md`. Built 18 Oct: the Teachers menu, the weak example and lesson 1 (roadmap/shared.md › Make a lesson); waiting on the lesson 1 pilot before lessons 2–6.** The candidate in `roadmap/shared.md` (18 Oct). Its "wait" was for Create to settle; Create's design decisions, Primer shape, pointer pages and node pre-fill are now built (shared.md › Generic Create, parts 1 and 2), so the content is stable enough to plan. The AI courses do not change it (the AI committee plan decided not to depend on it).
 
 ## What it is
 A short, self-paced course for teachers, in the site's own lesson format, on making a tutorial with Create and getting it published. It doubles as the way to **recruit specialist reviewers**, the bottleneck for History and the other Kit subjects (Project doc create-generic-proposal › Open questions).

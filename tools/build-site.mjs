@@ -241,7 +241,7 @@ for (const l of lessons) {
     if (i === segs.length - 1) parent.kids.set(segs[i], { kind: 'lesson', title: l.title, summary: l.summary, order: l.order });
     else if (!parent.kids.has(segs[i])) {
       const child = dirNode(segs.slice(0, i + 1).join('/'));
-      parent.kids.set(segs[i], { kind: 'dir', title: child.title, summary: child.summary, order: child.order });
+      parent.kids.set(segs[i], { kind: 'dir', title: child.title, summary: child.summary, order: child.order, audience: child.meta?.audience });
     }
   }
 }
@@ -292,12 +292,19 @@ const REFS = [{ file: 'turtle', path: 'code/python-foundations/reference' }, { f
 // The site navbar: Learning Waypoints, Tutorials, then one menu per subject (a top-level folder, such as Code)
 // listing its pathways (from its index.md); a pathway page is <subject>/paths/<id>/. navFor(pagePath, here,
 // coursePath) builds it for a page at pagePath ('' is the site root); here says which kind of page it is (see siteNav).
+// links: in a top-level folder's index.md: extra menu items, each { title, href, summary } with href from the site root
+// (a course in the folder, or a plain page such as maths-teachers/). audience: teachers puts the menu last and keeps
+// the folder off the home page's subject list (content/teachers/: Make a lesson and the teacher pages).
+const linksOf = (path) => (Array.isArray(dirNode(path).meta?.links) ? dirNode(path).meta.links : []).map((l, i) => {
+  if (!l || typeof l.title !== 'string' || typeof l.href !== 'string' || !/^[a-z0-9][a-z0-9/-]*\/$/.test(l.href)) throw new Error(`${path}/index.md: links[${i + 1}] needs title and href (a site path ending in /, such as maths-teachers/)`);
+  return l;
+});
 const COURSES = [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).join('/')))]
   .map((path) => ({ path, title: dirNode(path).title, order: dirNode(path).order }))
   .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
 const SUBJECTS = [...dirNode('').kids.entries()].filter(([, k]) => k.kind === 'dir')
-  .map(([name, k]) => ({ path: name, title: k.title, order: k.order, pathways: Array.isArray(dirNode(name).meta?.pathways) ? dirNode(name).meta.pathways : [], map: dirNode(name).meta?.map === true && !!loadCurriculum(name) }))
-  .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
+  .map(([name, k]) => ({ path: name, title: k.title, order: k.order, pathways: Array.isArray(dirNode(name).meta?.pathways) ? dirNode(name).meta.pathways : [], map: dirNode(name).meta?.map === true && !!loadCurriculum(name), links: linksOf(name), teachers: k.audience === 'teachers' }))
+  .sort((a, b) => a.teachers - b.teachers || (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
 const pathwayOf = (coursePath) => { for (const sub of SUBJECTS) for (const pw of sub.pathways) if ((pw.courses || []).some((c) => c.path === coursePath)) return { sub, pw }; return null; };
 const navFor = (pagePath, here, coursePath = null) => {
   const c = coursePath && COURSES.find((x) => x.path === coursePath);
@@ -306,9 +313,10 @@ const navFor = (pagePath, here, coursePath = null) => {
   return siteNav({
     root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '',
     subjects: SUBJECTS.map((sub) => ({
-      title: sub.title, href: `${sub.path}/`, on: at(sub.path) || inPw?.sub === sub,
+      title: sub.title, href: `${sub.path}/`, on: at(sub.path) || inPw?.sub === sub || sub.links.some((l) => at(l.href.slice(0, -1))),
       items: sub.pathways.map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw }))
-        .concat(sub.map ? [{ title: 'Curriculum map', href: `${sub.path}/map/`, on: at(`${sub.path}/map`) }] : []),
+        .concat(sub.map ? [{ title: 'Curriculum map', href: `${sub.path}/map/`, on: at(`${sub.path}/map`) }] : [])
+        .concat(sub.links.map((l) => ({ title: l.title, href: l.href, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) }))),
     })),
     current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
   });
@@ -571,10 +579,11 @@ for (const node of dirs.values()) {
   const ref = REFS.find((r) => r.path === `${node.path}/reference`);
   const conceptualRef = existsSync(join(CONTENT_ROOT, node.path, 'reference.md'));
   const play = PLAY[node.path];
-  const items = (play ? `<li><a href="playground/"><b>Playground</b><span>Free play: write and run your own ${esc(play.label)} code.</span></a></li>` : '') + (ref || conceptualRef ? `<li><a href="reference/"><b>Reference</b><span>${conceptualRef ? 'Key concepts, evidence and questions for this course.' : 'Every command and tag in the playground, with what it does.'}</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + [...node.kids.entries()].sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
+  const up = '../'.repeat(node.path ? node.path.split('/').length : 0);
+  const items = (play ? `<li><a href="playground/"><b>Playground</b><span>Free play: write and run your own ${esc(play.label)} code.</span></a></li>` : '') + (ref || conceptualRef ? `<li><a href="reference/"><b>Reference</b><span>${conceptualRef ? 'Key concepts, evidence and questions for this course.' : 'Every command and tag in the playground, with what it does.'}</span></a></li>` : '') + (node.path === 'code' ? `<li><a href="create/"><b>Create a lesson</b><span>Write or paste a lesson, preview it with a live playground, and download it.</span></a></li>` : '') + (!isRoot && node.path.split('/').length === 1 ? linksOf(node.path) : []).map((l) => { const d = dirs.get(l.href.slice(0, -1)); return `<li><a href="${esc(up + l.href)}"><b>${esc(l.title)}</b>${(l.summary || d?.summary) ? `<span>${esc(l.summary || d.summary)}</span>` : ''}</a></li>`; }).join('')
+    + [...node.kids.entries()].filter(([name, k]) => !(isRoot && k.audience === 'teachers') && !(!isRoot && node.path.split('/').length === 1 && linksOf(node.path).some((l) => l.href === `${node.path}/${name}/`))).sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn)).map(([name, k]) => `<li><a href="${esc(name)}/"><b>${k.kind === 'lesson' && k.order != null ? `${k.order}. ` : ''}${esc(k.title)}</b>${k.summary ? `<span>${esc(k.summary)}</span>` : ''}</a></li>`).join('');
   const outDir = join(OUT, node.path);
   mkdirSync(outDir, { recursive: true });
-  const up = '../'.repeat(node.path ? node.path.split('/').length : 0);
   const courseLessons = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === node.path);
   if (courseLessons.length && !isRoot) {
     // A course page: progress first. Continue card, one compact row per lesson with a segment per check
