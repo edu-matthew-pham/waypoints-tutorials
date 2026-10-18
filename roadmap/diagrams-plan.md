@@ -42,13 +42,16 @@ Proposed 19 Oct 2026; Matthew said go the same day. **Push 1 built (19 Oct):** t
   - Check options as diagrams are not built yet (pilot 14 needs them).
 - **Format:** AUTHORING.md › Diagrams (Mermaid). It also covers the stricter rule: Mermaid only for boxes and arrows.
 
-## Prepare (Matthew asked 19 Oct to fix it)
+## Prepare (done 19 Oct 2026, waypoints-prepare 13a4f54)
 
-- Prepare's slide prompt routes every drawn visual to Mermaid. Its Draw it examples, "a path shape, a frame origin", are spatial ideas Mermaid draws badly.
-- Fixes:
-  - Narrow the Draw it route to boxes and arrows.
-  - Add a route for a simple drawn SVG and for icons.
-  - Use `accTitle`/`accDescr` for the diagram's alt text.
+- **Alt text:** Mermaid images take it from `accTitle`/`accDescr`, which these decks write, instead of "Mermaid diagram".
+- **Simple drawings:** a ```svg block holding one `<svg>` is drawn as an image, with its `<title>` as the alt text. The tutorials' decks don't emit these yet. They are the "simple drawn figures" step in `shared.md`.
+- **Slide prompt (`generate_slides.md`):** Draw it split in two.
+  - Mermaid only for boxes joined by arrows.
+  - Schematic ```svg drawings for simple shapes (a path, a pivot, a force arrow).
+  - Things that are seen are photos.
+  - Emoji are allowed only as signposts. The help page says the same.
+- **Tests:** unit tests added (`mermaid.test.ts`, one in `render.test.ts`). All 724 pass.
 
 ## When to use which visual
 
