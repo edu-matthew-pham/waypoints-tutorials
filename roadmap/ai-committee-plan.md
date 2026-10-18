@@ -1,6 +1,6 @@
 # Plan: *AI at our school* (the AI committee course) (18 Oct 2026, revised)
 
-**Draft for Matthew. Design only; nothing built.** Grew out of item 5 of the AI and society proposal (`roadmap/learning-with-ai.md` › Proposal: "Should we use this AI tool?"). Revised the same day at Matthew's suggestion: evaluating one tool is only part of a committee's job. It also needs a **strategy** (what we want from AI) and a way to **respond to AI that arrives without anyone choosing it**. The emphasis is on the **principles that guide decisions**, not on any one decision.
+**Built 18 Oct 2026** as `content/ai/ai-at-our-school/` (decisions below taken as recommended; see Status at the end). Grew out of item 5 of the AI and society proposal (`roadmap/learning-with-ai.md` › Proposal: "Should we use this AI tool?"). Revised the same day at Matthew's suggestion: evaluating one tool is only part of a committee's job. It also needs a **strategy** (what we want from AI) and a way to **respond to AI that arrives without anyone choosing it**. The emphasis is on the **principles that guide decisions**, not on any one decision.
 
 ## What it is
 A course for a **student AI committee** (or a class acting as one), usable by a **staff committee** too. Three units, each runnable on its own, each ending in one product:
@@ -87,3 +87,12 @@ Most AI reaches students without a committee choosing it: AI answers in search, 
 ## Before building
 - Write the made-up material once: the school (aims, current policy), StudyPal (pitch, study, privacy page, settings, terms), and a search page with an AI answer.
 - Keep real products out of student text; real facts live in dated teacher notes, checked on the vendor's own pages (the Choosing AI tools rule).
+
+## Status (18 Oct 2026)
+- **Built:** *AI at our school*, nine lessons in three units (`school-for`, `never-accept`, `write-charter`; `does-it-help`, `can-we-trust-it`, `recommend`; `map-it`, `respond`, `keep-under-review`), `teacher.yml` and `class/<lesson>.yml` for each, primers, recap. On the society pathway as an extension `after:` both society courses. Not yet tried with classes or a staff committee.
+- **Decisions (Matthew, 18 Oct):** title *AI at our school*; a course on the pathway; order charter, tool, already here; staff-facing class plans in the same course; worked examples in dated teacher notes; the teacher course stays separate.
+- **Staff version:** new optional `staff:` field in class plans (`{ notes, activities: [{ title, do, minutes }] }`), shown as "With a staff committee" on the teacher guide only, never on the student deck or worksheet (`tools/teach.mjs`, validated in `lesson-core.mjs`, AUTHORING › Class plan).
+- **Made-up material:** Westbrook School (three aims, a gappy 2025 AI policy), StudyPal (pitch, one small study, privacy page, starting settings, 13+ terms), Westbrook's six-tool map, a search page with an AI answer. Products are paper tables in each Evaluate step (charter parts 1 to 3, recommendation parts 1 to 3, response plan parts 1 to 3).
+- **Dated cases (teacher notes only, checked 18 Oct 2026):** Study and Learn agent (`does-it-help`, Microsoft Support page); Thinking Mode via the Choosing AI tools guide (`recommend`); Google AI Overviews and AI Mode for under-18 Workspace for Education users plus the Common Sense Media assessment (`respond`). Correction to the plan above: Common Sense tested Family Link accounts set up for an 11- and a 15-year-old, not consumer adult accounts. **Re-check before use.**
+- **Guide:** `content/choosing-ai-tools.md` gained "Start with principles" and "When AI is already here", linking to the course. Plain pages now let wide tables scroll at phone width (`build-site.mjs`).
+- **Next (Matthew's side):** try Units 1 and 3 with a class or the staff committee; re-check the dated cases each term.

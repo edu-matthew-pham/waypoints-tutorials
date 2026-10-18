@@ -1,0 +1,30 @@
+inquiry:
+  q: "Should students be on the committee that decides about AI at school, or just teachers?"
+  prompts:
+    - "Who knows most about how AI turns up in homework?"
+    - "Who is responsible if a decision goes wrong?"
+  notes: "Good reasons both ways. Most schools that try it mix students and staff; come back to it at the end of the unit."
+activities:
+  - at: run
+    kind: activity
+    title: "Our school's aims"
+    minutes: 8
+    do: |
+      Read our school's aims (or mission). Pick the two that matter most for AI.
+      Then sort three tasks from **our** classes the same way you sorted Westbrook's.
+    notes: "Use the school's real aims and printed policy (dated). Choose tasks from your own subject; avoid asking who uses what at home."
+  - at: end
+    kind: discussion
+    title: "Same task, different year"
+    minutes: 5
+    do: |
+      Pick one task. Would you sort it the same way for Year 7 and Year 10? Why?
+staff:
+  notes: "With a staff committee, skip Westbrook and use the school's real aims from the start. The sort works well across faculties: the same task often sorts differently in different subjects."
+  activities:
+    - title: "What is our school for?"
+      minutes: 10
+      do: "Each faculty names two tasks where students must keep the thinking, and two where AI could help. Compare across faculties."
+    - title: "Same task, different year"
+      minutes: 10
+      do: "Pick three tasks that run from Years 7 to 10. Where should AI support change, and who decides when?"

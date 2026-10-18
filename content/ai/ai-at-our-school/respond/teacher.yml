@@ -1,0 +1,36 @@
+summary: "Students meet a made-up search page with an AI answer above the results, match situations to a menu of responses (teach a habit, change the task, change a setting, ask the company, wait and review), choose responses for Year 7 and Year 10, and name the cost of each, including blocking."
+time: 50
+goals:
+  - "I can choose a response to AI nobody chose, from a menu, not just allow or block."
+  - "I can name the charter principle a response serves, and its cost."
+  - "I can explain why Year 7 and Year 10 might need different responses."
+before: |
+  **Core idea:** choose the response that best serves the charter for this age and purpose, name its cost, and say what would change it.
+  The search page is made up. Its answer is a reasonable simplification, so the issue is the thinking it skips, not a planted error (Foundations covers checking AI claims).
+  **Worked example for teachers (illustrative and dated, not a verdict; checked 18 Oct 2026):** Google's Workspace admin help says AI Overviews and AI Mode are available in Google Search to Workspace for Education users designated as under 18 in most countries and languages, and describes no separate admin control for them (it covers Gemini app and Classroom controls separately). In July 2026 Common Sense Media's AI risk assessment rated Google Search's AI Overviews and AI Mode "Unacceptable Risk": in its testing (Family Link accounts set up for an 11-year-old and a 15-year-old, not school accounts), AI Mode produced complete, submittable answers to homework it was given. Google reviewed a draft and said it changed some behaviours; the Institute hadn't verified those changes. Use it to ask: which principles does an always-on AI answer in Year 7 research test (learning first, age and stage, honest about evidence)? Which responses fit Year 7, and which Year 10? **Re-check before use: these controls change fast.** Keep the case in teacher talk, not student text, unless you've re-checked it that week.
+running:
+  - "Engage: show the search page; vote on the response."
+  - "Explore: sort the five situations, then each student writes Year 7 and Year 10 responses."
+  - "Explain: the menu on the board; ask for the cost of each."
+  - "Evaluate: responses added to the plan."
+struggle: "Students default to block or allow. Make them name the cost of their choice and one other response they rejected."
+stuck:
+  - see: "Every response is 'block it'."
+    ask: "What would students lose, and what happens at home?"
+    fix: "Pair a smaller response (habit, task change) with a review date."
+  - see: "A student can't see why Year 7 and 10 differ."
+    ask: "Which year still needs to learn to research from sources?"
+    fix: "Age and stage: support changes as skills are learned."
+support: "Give the menu as cards; students pick two and explain one."
+stretch: "Combine three responses for one item (setting, habit, task change) and say what each covers that the others don't."
+leads: "Lesson 9: who notices, how students report problems, and when it's all reviewed."
+exit:
+  q: "Why is 'do nothing yet' a real response only if it has a date?"
+  a: "A date and what you'll look at make it a decision to wait; without them it's just ignoring the AI."
+explain: |
+  1. Allow or block is too small a question.
+  2. Choose from: habit, norm, task change, setting, alternative, ask the company, restrict, or wait with a date.
+  3. Pick what serves the charter for this age and purpose, and name its cost.
+sources:
+  - { title: "Control access to Google services by age (Google Workspace Admin Help)", url: "https://knowledge.workspace.google.com/admin/getting-started/editions/control-access-to-google-services-by-age", checked: 2026-10-18 }
+  - { title: "Google Search: AI Overview and AI Mode, AI risk assessment (Common Sense Media, 14 July 2026)", url: "https://institute.commonsensemedia.org/risk-assessments/google-search", checked: 2026-10-18 }

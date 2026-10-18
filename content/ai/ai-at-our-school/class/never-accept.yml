@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is 'Not using AI is a real option' a principle worth having?"
+  prompts:
+    - "What would a school lose if it never used AI?"
+    - "What would it lose if it always had to?"
+  notes: "Both sides are reasonable. The point: a committee that can only say yes isn't deciding."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Our policy, through our principles"
+    minutes: 8
+    do: |
+      Read our school's AI policy. Which of our principles does it already say? Which does it leave out?
+    notes: "Use the printed, dated policy. Students may critique it: frame it as improving a draft, not blaming its writers."
+  - at: end
+    kind: discussion
+    title: "Never accept"
+    minutes: 5
+    do: |
+      Finish the sentence: "Our school would never accept an AI tool that…" Collect answers. Which ones are principles?
+staff:
+  notes: "Staff usually reach principles quickly; spend the time on testing them. Bring the national framework and the school's own policy from the start."
+  activities:
+    - title: "Map to the framework"
+      minutes: 15
+      do: "Match the school's current AI policy to the framework's six principles. Which are covered, which are missing, and which are covered only in words nobody could check?"
+    - title: "Test on our cases"
+      minutes: 10
+      do: "Each faculty brings one real decision from this year. Does each draft principle decide it?"

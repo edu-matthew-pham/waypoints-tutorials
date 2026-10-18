@@ -517,6 +517,10 @@ activities:
     do: |                # on the slide, for students (Markdown)
       Decide with your partner, then hold up 1 to 4 fingers.
     notes: "Speaker note for the teacher."
+staff:                   # optional: the same session run with a staff committee (teacher guide only, never on the deck)
+  notes: "How staff use this session."
+  activities:
+    - { title: "Map the tools you already use", minutes: 10, do: "Markdown for the staff facilitator." }
 questions:               # class questions: question, number, trace or match, the same fields as a lesson check
   - at: investigate
     title: Which way now?

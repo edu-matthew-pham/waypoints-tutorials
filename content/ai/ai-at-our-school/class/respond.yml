@@ -1,0 +1,30 @@
+inquiry:
+  q: "Is it the school's job to respond to AI students meet at home?"
+  prompts:
+    - "Homework is done at home. Does that make it the school's business?"
+    - "What can a school actually change about home?"
+  notes: "Schools can't switch off home apps, but they shape tasks, habits and norms that travel home. Keep it about tools and tasks, not anyone's private use."
+activities:
+  - at: run
+    kind: activity
+    title: "One item from our map"
+    minutes: 10
+    do: |
+      Take one item from our map (lesson 7). Choose a response for Year 7 and one for Year 10.
+      Name the principle each serves, its cost, and what would change it.
+    notes: "Before class, check on the vendor's own pages what settings really exist for your school's accounts, and date it."
+  - at: end
+    kind: discussion
+    title: "Block or teach?"
+    minutes: 5
+    do: |
+      Name one item where blocking is the right response, and one where it isn't. What's the difference?
+staff:
+  notes: "Staff can work on the whole map. The worked example in the teacher notes (AI answers in search for under-18 school accounts) is a useful dated case: re-check it first."
+  activities:
+    - title: "Responses for the map"
+      minutes: 20
+      do: "Go through the school's map item by item: a response per year band, the principle, the cost, and who acts (teachers, IT, leadership)."
+    - title: "Assessment check"
+      minutes: 10
+      do: "Which assessment tasks could be finished by an AI answer that arrived on its own? What process evidence would each ask for instead?"

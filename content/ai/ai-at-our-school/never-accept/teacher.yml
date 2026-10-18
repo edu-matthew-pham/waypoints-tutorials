@@ -1,0 +1,38 @@
+summary: "Students tell checkable principles from vague values, draft a principle for Westbrook and test it on two cases, learn what makes a principle (it can say no, it still works for new tools), and (wider) compare their drafts with the national framework's six principles."
+time: 45
+goals:
+  - "I can tell a principle that decides cases from a value that doesn't."
+  - "I can write a principle and test it on a case."
+  - "I can explain why a principle should still work for tools nobody has invented yet."
+before: |
+  **Core idea:** a principle must be clear enough to decide a case (it can say no), come from what school is for, and outlast any one tool.
+  The list of principles in Explain is for testing, not handing out: let students reach their own first, then compare.
+  **For the class plan:** print your school's AI policy or guidance (dated) and, for older classes, the national framework.
+  Sources (checked 18 Oct 2026): the Australian Framework for Generative AI in Schools (published 1 December 2023; six principles as listed in the lesson). Its 2024 review kept the framework and set yearly reviews (see Who Does AI Affect? › Making rules). Re-check each January.
+  The typical step's flagging tool is made up. If students raise a real wellbeing-monitoring product your school uses, keep the discussion on principles, and check with the wellbeing lead before going further.
+running:
+  - "Engage: vote on 'Use AI responsibly'. Ask a student who said yes to decide the grading case with it."
+  - "Explore: sort, then each student drafts and tests one principle."
+  - "Explain: the four parts; then compare the class's principles with the list."
+  - "Evaluate: three principles with checks, on paper."
+struggle: "Students write values ('be safe', 'be fair'). Push every draft through a case: if it can't say no, it isn't finished."
+stuck:
+  - see: "A principle is a rule about one app."
+    ask: "Would it still work next year, with a different app?"
+    fix: "Say what matters about any tool, not which tool."
+  - see: "A student can't think how to check a principle."
+    ask: "What would you look at, or who would you ask, to find out?"
+    fix: "Settings, terms, a quick test without AI, or the people affected."
+support: "Give a sentence frame: 'We will … because … We'll check by …'"
+stretch: "Find two of your principles that could pull in different directions, and write how the committee would weigh them."
+leads: "Lesson 3: the full charter, critiqued and shared."
+exit:
+  q: "What makes 'Use AI responsibly' a weak principle?"
+  a: "It's too vague to decide a case or to check; everyone reads it their own way."
+explain: |
+  1. A principle says what matters clearly enough to decide a case.
+  2. It comes from what school is for.
+  3. It has a way to check it.
+  4. It still works for tools nobody has invented yet.
+sources:
+  - { title: "The Australian Framework for Generative AI in Schools (Department of Education)", url: "https://www.education.gov.au/schooling/announcements/australian-framework-generative-artificial-intelligence-ai-schools", checked: 2026-10-18 }

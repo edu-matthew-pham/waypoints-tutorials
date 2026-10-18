@@ -5,7 +5,13 @@ summary: A practical guide for teachers and schools comparing AI tools fairly, c
 
 *Last checked: 18 October 2026.*
 
-This guide helps teachers make informed choices about AI tools. It complements [AI Foundations](../ai/foundations/) and [Does AI Help Us Learn?](../ai/does-ai-help-us-learn/), but it is **not** another student course, a vendor ranking or an endorsement.
+This guide helps teachers make informed choices about AI tools. It complements [AI Foundations](../ai/foundations/), [Does AI Help Us Learn?](../ai/does-ai-help-us-learn/) and [AI at our school](../ai/ai-at-our-school/), but it is **not** another student course, a vendor ranking or an endorsement.
+
+## Start with principles
+
+Judging tools one at a time, with no agreed principles, means every new product restarts the argument. Before trialling anything, agree a short **charter**: five to seven principles about what the school wants from AI (for example learning first, age and stage, a person decides, our data stays ours, fair for everyone, honest about evidence, and not using AI as a real option), each with a way to check it, dated and reviewed. The [Australian Framework for Generative AI in Schools](https://www.education.gov.au/schooling/announcements/australian-framework-generative-artificial-intelligence-ai-schools) (six principles) is a useful cross-check.
+
+[AI at our school](../ai/ai-at-our-school/) walks a student or staff committee through writing one (Unit 1), then tests a proposed tool against it (Unit 2, which pairs with this guide) and responds to AI that arrived on its own (Unit 3). Each lesson's teacher guide has notes for running it with staff.
 
 ## Start with the learning purpose
 
@@ -102,6 +108,16 @@ One example of each kind, as the vendor describes it. This is not an endorsement
 - **A planning tool versus an ordinary prompted assistant:** How much verified teacher time does each save once corrections and review are counted?
 
 For all three, separate the quality of the interaction from trust, permissions, workload and access. Record the results before deciding whether any dedicated product is worth adopting.
+
+## When AI is already here
+
+Most AI reaches students without anyone proposing it: features switched on in updates to tools the school already uses, AI answers in search, and apps from home. A trial-and-approve process doesn't reach these. Instead:
+
+- **Map it:** what AI is in front of students, and how it arrived (chosen, arrived in an update, brought from home). Map tools and tasks, not people; never survey individual students' private use.
+- **Respond, not just gatekeep:** choose from teaching a habit, a class or year-level norm, changing the task or assessment (ask for evidence of process), changing a setting where one exists, offering a school-chosen alternative, asking the vendor for a control, restricting (with its costs), or waiting with a review date. Choose what best serves your principles for that age and purpose.
+- **Keep it under review:** someone watches each main tool's update notes; students can report problems simply and without blame; changed terms or safety reports trigger an early review.
+
+Admin controls for these features change fast and differ by account type: check them on the vendor's own help pages and date what you find. [AI at our school › Unit 3](../ai/ai-at-our-school/map-it/) works through it with a made-up school, with a dated real case in its teacher notes.
 
 ## Make a decision, not a leaderboard
 

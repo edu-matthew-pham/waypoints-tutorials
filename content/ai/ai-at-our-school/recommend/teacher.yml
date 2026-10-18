@@ -1,0 +1,36 @@
+summary: "Students choose between adopt, trial, change something first and don't use it, match decisions to situations, write Westbrook's recommendation for StudyPal with conditions and what would change their minds, and (typical) present it in two minutes."
+time: 50
+goals:
+  - "I can choose between adopt, trial, change something first and don't use it, and give reasons."
+  - "I can write conditions and say what would change our mind."
+  - "I can check a recommendation against every principle in our charter."
+before: |
+  **Core idea:** a recommendation is a decision with conditions, checked principle by principle, honest about what would change it, with who decides next and when.
+  This is Unit 2's product. Several decisions are defensible for StudyPal; mark the reasons and conditions, not the choice.
+  **For the class plan:** if the committee looked at a real tool, write its real recommendation and send it to whoever decides (with the date the vendor's pages were checked). A recommendation is advice; the school's approval process still applies, and any trial is teacher-run with no student accounts until approved.
+  **Worked example for teachers (illustrative, not a recommendation; checked 18 Oct 2026):** [Choosing AI tools for learning](../../../../choosing-ai-tools/) describes Thinking Mode, an evidence tool where students upload finished work and are questioned on it, with a minimum age and how long work is kept not stated on the page it quotes. Which conditions would a committee write? (Age, retention, whether speaking fluently is mistaken for understanding, a comparison with a teacher's own conversation.) Re-check the vendor's page before use.
+running:
+  - "Engage: secret vote on the four decisions, then hands up for each."
+  - "Explore: sort, then each student writes the recommendation."
+  - "Explain: the five parts on the board."
+  - "Modify: two-minute pitches in pairs, with a one-minute challenge."
+  - "Evaluate: the full recommendation on paper."
+struggle: "Students want a verdict and stop. Push for conditions and 'what would change our mind': that's where the thinking is."
+stuck:
+  - see: "A recommendation says 'yes' with no conditions."
+    ask: "Which of lesson 5's problems does that leave in place?"
+    fix: "Turn each problem into a condition."
+  - see: "A student can't say what would change their mind."
+    ask: "What would you need to see to choose the opposite?"
+    fix: "That's the evidence to watch."
+support: "Give the table with the decision already chosen (trial) and ask for conditions."
+stretch: "Write the recommendation for a different group (Year 10 instead of Year 7). What changes?"
+leads: "Unit 3: AI nobody chose (lessons 7 to 9)."
+exit:
+  q: "Why should a recommendation say what would change the committee's mind?"
+  a: "It's honest about evidence, and tells everyone what to watch so the decision can be reviewed."
+explain: |
+  1. Choose: adopt, trial, change something first, or don't use it.
+  2. Give conditions.
+  3. Check every principle: passes, fails or unknown.
+  4. Say what would change your mind, and who decides next.

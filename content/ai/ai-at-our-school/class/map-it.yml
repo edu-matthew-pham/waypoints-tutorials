@@ -1,0 +1,30 @@
+inquiry:
+  q: "Should a new AI feature in a school tool be switched on until someone decides otherwise, or off until someone decides it's OK?"
+  prompts:
+    - "Who decides now, when an update arrives?"
+    - "What would 'off until decided' cost?"
+  notes: "This is a defaults question (lesson 5) at school scale. Companies decide most defaults; a school can ask for controls."
+activities:
+  - at: run
+    kind: activity
+    title: "Our map"
+    minutes: 12
+    do: |
+      In groups, list the tools we use at school. For each: does it have AI in it now? How did it arrive?
+      Use the three columns. No names: tools, not people.
+    notes: "Bring a list of the school's main tools. Check uncertain items afterwards (settings differ by account), and date the map."
+  - at: end
+    kind: discussion
+    title: "What did we miss?"
+    minutes: 5
+    do: |
+      Which tools on our map surprised you? How could the committee find the ones we've missed?
+staff:
+  notes: "Staff can build a fuller map: faculty reports, IT update notes and admin settings. Still no surveys of individual students' private use."
+  activities:
+    - title: "Faculty round"
+      minutes: 15
+      do: "Each faculty lists the AI its students meet: in tools we chose, in features that arrived this year, and in apps students bring (as tools, not users)."
+    - title: "Ask IT"
+      minutes: 10
+      do: "With the IT lead: for each 'arrived' feature, what can an admin switch on or off, for which year groups? Date the answers."

@@ -1,0 +1,30 @@
+inquiry:
+  q: "If a tool helps learning a lot, is it OK if it also uses students' chats to train its AI?"
+  prompts:
+    - "Who gains from the training? Who decides?"
+    - "Would it change your mind if the school could switch it off?"
+  notes: "A trade-off between principles. Many committees land on 'only if the school controls the setting'; let students reach that or argue against it."
+activities:
+  - at: run
+    kind: activity
+    title: "The real fine print"
+    minutes: 10
+    do: |
+      In groups, take one page of the real tool's terms or privacy page (printed, dated). Find one line that tests each of:
+      our data stays ours, age and stage, fair for everyone. Mark anything you can't find out with a "?".
+    notes: "Short extracts only. Read on the vendor's own site, and date the printout."
+  - at: end
+    kind: discussion
+    title: "Questions for the company"
+    minutes: 5
+    do: |
+      Collect our "?"s. Which three would we ask the company first?
+staff:
+  notes: "Use the real tool's documents and the guide's 'Can we trust it?' table. Involve whoever manages the school's privacy and IT approvals."
+  activities:
+    - title: "Trust table"
+      minutes: 15
+      do: "Fill the guide's table (privacy and data, safety, terms, teacher oversight, fair access, practical fit) from the vendor's own pages, dated. Mark unknowns."
+    - title: "Who it affects"
+      minutes: 10
+      do: "Name the students it may leave out (under-13s, no device at home, students who need another language) and what the school would do for them."

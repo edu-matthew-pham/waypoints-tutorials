@@ -1,0 +1,36 @@
+summary: "Students read StudyPal's (made-up) privacy page, starting settings (chats used for training on; streaks on; hint mode off) and terms (13 and over) against the charter, name who gains and who loses, and learn to write unknowns as questions rather than permission."
+time: 45
+goals:
+  - "I can check a tool's data, defaults and age terms against our charter."
+  - "I can name who a tool helps and who it leaves out."
+  - "I can write what we don't know as a question, not as 'fine'."
+before: |
+  **Core idea:** trust is checked before use (data, defaults, age terms, design, who it affects), and unknowns are questions, not permission.
+  Draws on AI in your life (where a chat goes, designed to keep you) and Cyber safety (the APPs, lesson linked in the wider step). Each is recapped here, so neither is needed first.
+  **For the class plan:** print the real tool's privacy page, settings page and terms from the vendor's own site, with the date. Don't open the tool with student accounts.
+  The "Can we trust it?" table in [Choosing AI tools for learning](../../../../choosing-ai-tools/) is the staff version of this checklist.
+  Under-13 terms: many consumer AI apps set 13 as a minimum; education versions sometimes differ, and schools may have their own consent rules. Check the real tool's terms and your school's policy, dated, before saying who may use it.
+  The consent board from AI in your life (Club Helper) is a possible extra if students haven't met it.
+running:
+  - "Engage: the 13+ question. Ask who in the room is 12."
+  - "Explore: sort the fine print in pairs; each student names who gains and loses."
+  - "Explain: the five checks; 'unknown' is a word the committee is allowed to use."
+  - "Evaluate: recommendation part 2."
+struggle: "Students skim fine print as boring. Keep the extracts short and make the sort the reading task; don't read whole terms aloud."
+stuck:
+  - see: "A student says 'we may share' is fine."
+    ask: "Who are the partners?"
+    fix: "We don't know, so it's an unknown to ask about."
+  - see: "A student can't think who loses."
+    ask: "Who would find this hardest to use at home?"
+    fix: "Students without devices, under-13s, students who need another language."
+support: "Give the five checks as a checklist and have students tick or write '?' for each."
+stretch: "Write the email the committee sends the company: three questions, from the unknowns."
+leads: "Lesson 6: the recommendation, with conditions."
+exit:
+  q: "Why does a committee care what a setting starts as?"
+  a: "Most people never change settings, so the default is what actually happens."
+explain: |
+  1. Check data, defaults, age terms and design before use.
+  2. Ask who gains and who loses.
+  3. Write unknowns as questions, not permission.

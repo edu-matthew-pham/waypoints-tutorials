@@ -1,0 +1,30 @@
+inquiry:
+  q: "Who should be able to call an early review of the school's AI decisions: only the committee, or any student?"
+  prompts:
+    - "What if a student sees a problem nobody on the committee has?"
+    - "What if reviews were called every week?"
+  notes: "Many committees let anyone report and the committee decide whether it triggers a review."
+activities:
+  - at: run
+    kind: activity
+    title: "Our review cycle"
+    minutes: 10
+    do: |
+      Agree our committee's review cycle: who notices, how students report, what triggers an early review, and the date.
+    notes: "Find out the school's policy review date and who leads it before class."
+  - at: end
+    kind: activity
+    title: "Three products"
+    minutes: 8
+    do: |
+      Put the charter, recommendation and response plan together. Who do we send them to, and when?
+    notes: "If you can, arrange for a group to present them to leadership or the SRC."
+staff:
+  notes: "For staff, this is where the committee's work joins the school's own policy cycle."
+  activities:
+    - title: "Join the policy cycle"
+      minutes: 10
+      do: "Find the review date of the school's AI policy (or the policy it sits in). Set the committee's review for just before it."
+    - title: "Roles"
+      minutes: 15
+      do: "Who watches which tool's updates? Who receives student reports, and how are they kept safe and without blame? Who can call an early review?"

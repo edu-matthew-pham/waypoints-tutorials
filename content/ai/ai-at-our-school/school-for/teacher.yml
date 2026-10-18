@@ -1,0 +1,38 @@
+summary: "Students meet a made-up school (Westbrook), sort Year 7 tasks into 'AI can help', 'keep the thinking' and 'depends on the goal', and see why age and stage change the answer. They start the committee's charter."
+time: 45
+goals:
+  - "I can say what a school is for and which thinking students must keep."
+  - "I can sort tasks by what they're for, not by the tool."
+  - "I can explain why the same task can be fine with AI for one year and not another."
+before: |
+  **Core idea:** start from what school is for and what thinking stays with students; then whether AI fits depends on the task's goal, and on age and stage.
+  Westbrook School, its three aims and its short AI policy are made up, and reused across the whole course. The policy has gaps on purpose (no principles, no one who checks, no review date, nothing about AI that arrives on its own); students find them over the course.
+  **For the class plan:** gather your own school's aims or mission statement (and, for an IB school, the MYP approaches to learning) and your current AI policy or guidance, with the date you printed them. Don't survey students' private AI use: talk about tasks and tools.
+  The wider step names the expertise reversal effect (source below; it's also in Does AI Help Us Learn? › offloading thinking).
+  The Explore reasoning check is unmarked: students see model answers and self-check against the criteria.
+running:
+  - "Engage: read Westbrook's aims aloud; vote on the report question."
+  - "Explore: sort in pairs, then argue about the 'depends' items."
+  - "Explain: the two questions on the board: what is school for, what thinking stays with us?"
+  - "Evaluate: each student starts charter part 1 on paper."
+struggle: "Students want a single rule ('AI is cheating' or 'AI is fine'). Let them argue the 'depends' items; don't settle them for the class."
+stuck:
+  - see: "A student puts everything in 'keep the thinking'."
+    ask: "What is the spelling check for, in a science poster?"
+    fix: "Ask what the task is meant to teach; tasks that aren't the learning can take help."
+  - see: "A student says AI is fine because 'you still learn from reading it'."
+    ask: "Could you do the next one without it?"
+    fix: "That's the test: learning shows up later, without the help."
+support: "Give two columns first (help / keep the thinking), then add 'depends' once they've sorted three."
+stretch: "Take one 'depends' task and write two rules for it: one for Year 7, one for Year 10."
+leads: "Lesson 2 turns the aims and the sort into principles a decision can be tested against."
+exit:
+  q: "Why does a committee decide what school is for before choosing AI tools?"
+  a: "So every decision is judged against the same goals; otherwise each new tool starts the argument again."
+explain: |
+  1. Start with what school is for.
+  2. Ask which thinking students must still do themselves.
+  3. Whether AI fits depends on what the task is for.
+  4. Help that suits Year 7 may not suit Year 10, and the other way round.
+sources:
+  - { title: "Kalyuga, Ayres, Chandler and Sweller (2003), The expertise reversal effect", url: "https://doi.org/10.1207/S15326985EP3801_4", checked: 2026-10-18 }

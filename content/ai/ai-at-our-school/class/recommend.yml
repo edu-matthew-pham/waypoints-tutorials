@@ -1,0 +1,30 @@
+inquiry:
+  q: "Is 'trial it' a real decision, or a way of avoiding one?"
+  prompts:
+    - "What does a trial need to be a real decision?"
+    - "When is 'don't use it yet' braver than 'trial'?"
+  notes: "A trial is a decision if it has a comparison, a measure of learning, a date and someone who decides afterwards."
+activities:
+  - at: modify
+    kind: activity
+    title: "Pitch to the principal"
+    minutes: 10
+    do: |
+      Groups present their recommendation in two minutes: decision, main reason, conditions, what would change our minds.
+      Another group argues the opposite decision for one minute.
+    notes: "If a real decision-maker can come (principal, IT lead), invite them."
+  - at: end
+    kind: discussion
+    title: "Send it"
+    minutes: 4
+    do: |
+      Who should get our recommendation, and by when should they answer?
+staff:
+  notes: "For staff, the recommendation goes to whoever approves tools. Keep it to one page and date every vendor claim."
+  activities:
+    - title: "Principle by principle"
+      minutes: 15
+      do: "Fill the recommendation table for the real tool: passes, fails or unknown for each charter principle, with the evidence."
+    - title: "Conditions and review"
+      minutes: 10
+      do: "Write the conditions, what would change the committee's mind, who decides next and the review date. Check it against the guide's 'Make a decision, not a leaderboard'."

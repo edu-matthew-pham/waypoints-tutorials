@@ -1,0 +1,35 @@
+summary: "Students sort events into review now, next meeting or no review needed, write Westbrook's review cycle (who notices, how students report, early-review triggers, a date) and finish the response plan, the course's third product."
+time: 45
+goals:
+  - "I can say who should notice new AI and how students can report problems safely."
+  - "I can tell which changes need an early review and which can wait."
+  - "I can write a review cycle with a date, and link it to the school's own policy review."
+before: |
+  **Core idea:** decisions about AI are dated and reviewed; a review cycle says who notices, how problems are reported (simply, without blame), what triggers an early review, and when everything is revisited.
+  The safety-report item in the sort says to follow the school's wellbeing steps too: if a student raises a real incident in class, follow your school's procedures, not the committee's.
+  **For the class plan:** find out when the school's AI policy (or the policy it sits in) is next reviewed, and who leads it. Send the committee's three products there, dated.
+  The national framework's yearly review is sourced in Who Does AI Affect? › Making rules (checked 18 Oct 2026). Re-check each January.
+running:
+  - "Engage: 'reviewed when needed'. Ask when that will be."
+  - "Explore: sort the events, then each student writes a review cycle."
+  - "Explain: the four parts; why reporting has to be safe."
+  - "Evaluate: finish the response plan; collect all three products."
+struggle: "Review cycles feel like admin. Use the Engage: a policy with no date is how decisions quietly go out of date."
+stuck:
+  - see: "Everything is 'review now'."
+    ask: "If the committee reviewed everything at once, what would it never get to?"
+    fix: "Save 'now' for changed conditions and safety; the rest goes to the next meeting."
+  - see: "The reporting route needs a student's name and the tool they used."
+    ask: "Would you report if you might get in trouble?"
+    fix: "Make naming optional, and focus the report on the tool."
+support: "Give the four parts as sentence starters."
+stretch: "Write the agenda for the committee's next meeting from the sort."
+leads: "The course ends with three products. A class can present them to the school's leadership, or keep them for a student committee."
+exit:
+  q: "Why does a committee's charter need a review date and early-review triggers?"
+  a: "Tools, terms and evidence change; without a date and triggers, decisions go out of date unnoticed."
+explain: |
+  1. Someone notices new AI.
+  2. Problems can be reported simply, without blame.
+  3. Changed terms, safety reports or new kinds of AI trigger an early review.
+  4. Everything is revisited on a date.

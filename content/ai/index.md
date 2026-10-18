@@ -1,7 +1,7 @@
 ---
 title: Learning with AI
 trail: units
-summary: Understand how AI works, investigate whether and when AI helps people learn, and judge who AI affects.
+summary: Understand how AI works, investigate whether and when AI helps people learn, judge who AI affects, and decide how your school uses it.
 pathways:
   - id: foundations
     title: AI Foundations
@@ -29,7 +29,10 @@ pathways:
       Two parallel courses after AI Foundations. Neither needs the other, or Does AI Help Us Learn?. Cases, not lectures; every activity works on paper. Add `?width=wider` to a lesson link to start an older class at the wider steps.
 
       Privacy basics (digital footprint, the Australian Privacy Principles) are taught in Digital systems › Cyber safety and privacy; these courses link there.
+
+      Then an extension, *AI at our school*: students work as a school AI committee, writing a charter of principles, judging a proposed tool against it, and responding to AI that arrived without anyone choosing it. Does AI Help Us Learn? is recommended first; each lesson recaps what it uses. Staff committees can run it too (staff notes in each lesson's teacher guide).
     courses:
       - { path: ai/who-does-ai-affect, stage: foundations, after: [ai/foundations], tagline: "Find out who wins, who loses and who decides when AI is used." }
       - { path: ai/ai-in-your-life, stage: foundations, after: [ai/foundations], tagline: "See how the AI in your apps works, and what it wants from you." }
+      - { path: ai/ai-at-our-school, stage: extensions, after: [ai/who-does-ai-affect, ai/ai-in-your-life], tagline: "Write your school's AI principles, then use them to make real decisions." }
 ---

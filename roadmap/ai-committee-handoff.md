@@ -1,5 +1,7 @@
 # Handoff: build *AI at our school* (the AI committee course) (18 Oct 2026)
 
+**Done 18 Oct 2026: the course is built** (status in `roadmap/ai-committee-plan.md` › Status). The rest of this note is kept for history.
+
 For any assistant continuing the AI committee course. **Start by asking Matthew the open decisions below; build only after he answers.** Then follow `CLAUDE.md` › "go".
 
 ## Read first

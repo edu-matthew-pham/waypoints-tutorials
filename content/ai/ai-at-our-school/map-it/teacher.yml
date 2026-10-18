@@ -1,0 +1,34 @@
+summary: "Students sort the made-up Westbrook's six AI tools by how they arrived (we chose it, it arrived as a feature, students bring it), find out that the school chose only one, and plan how to map their own school without surveying anyone's private use."
+time: 45
+goals:
+  - "I can sort AI by how it reached students: chosen, arrived, or brought from home."
+  - "I can explain why how it arrived changes what a school can do."
+  - "I can plan how to map AI at school without asking about anyone's private use."
+before: |
+  **Core idea:** most AI reaches students without anyone choosing it; a committee maps what's here and how it arrived (tools and tasks, not people) before responding.
+  **For the class plan:** build the school's own map from teachers' reports, the IT team's knowledge of updates, and a class discussion about tools in general. **Never survey individual students' private AI use**, and don't ask who uses what at home.
+  If students name real products, list them as tools, not as users. Check whether a feature is really on at your school (settings differ by account type) before putting it on the map; date the check.
+  The wider step recaps the four kinds of AI from AI Foundations.
+running:
+  - "Engage: guess how many of six Westbrook chose."
+  - "Explore: sort, then plan how to map without prying."
+  - "Explain: the three ways in, and what a school can do for each."
+  - "Evaluate: the map table; for the class plan, start the school's own."
+struggle: "Students drift into 'who uses which chat app at home'. Bring it back to tools and tasks: what's out there, not who."
+stuck:
+  - see: "A student puts the maths site's hint button under 'we chose it'."
+    ask: "Did the school choose the site, or the button?"
+    fix: "The site was chosen; the button arrived in an update."
+  - see: "A mapping plan asks students to list their apps with names."
+    ask: "Does the committee need to know who?"
+    fix: "Ask about tools in general, with no names."
+support: "Give the three columns with one example in each."
+stretch: "For one 'arrived' feature, find what the school could switch off (the teacher can show the admin help page, dated)."
+leads: "Lesson 8: a response for each item, checked against the charter."
+exit:
+  q: "Why can't a committee deal with AI only by approving or rejecting tools?"
+  a: "Most AI arrives in updates to tools the school already uses, or from home, so nobody proposes it."
+explain: |
+  1. AI reaches students three ways: we chose it, it arrived in an update, or students bring it.
+  2. How it arrived changes what the school can do.
+  3. Map tools and tasks, not people.

@@ -1,0 +1,30 @@
+inquiry:
+  q: "If a tool makes homework faster and students like it, is that enough reason to use it?"
+  prompts:
+    - "What is homework for?"
+    - "What if it's faster because the app does the thinking?"
+  notes: "Speed and liking matter (time, motivation). The charter's 'learning first' asks whether they come at the cost of the learning."
+activities:
+  - at: run
+    kind: activity
+    title: "A real proposal"
+    minutes: 8
+    do: |
+      Read the description of the tool our committee is looking at (printed, with the date). Answer the four questions:
+      problem, kind of AI, evidence, fair trial.
+    notes: "Use the vendor's own pages, dated. If there's no real proposal, keep StudyPal. No student accounts."
+  - at: end
+    kind: discussion
+    title: "Compared with what?"
+    minutes: 4
+    do: |
+      What would we compare the tool with in a fair trial? A teacher's hint? A well-prompted general chatbot the school allows? Nothing?
+staff:
+  notes: "Use a real proposal, and pair with the Choosing AI tools guide (its trial checklist and its advice to compare against a well-prompted general assistant)."
+  activities:
+    - title: "The problem first"
+      minutes: 10
+      do: "Write the problem the proposed tool would solve, in the words of the teachers who have it. Does the tool fit that problem, or a different one?"
+    - title: "Design the trial"
+      minutes: 15
+      do: "Using the guide's checklist: compared with what, who and how long, what learning is measured without the tool, and when. Who would run it, and with what approval?"

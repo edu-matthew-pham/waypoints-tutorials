@@ -806,11 +806,22 @@ export const CLASS_AT = ['start', 'predict', 'run', 'investigate', 'modify', 'ma
 export const CLASS_KINDS = ['activity', 'discussion', 'check', 'info'];
 export const CLASS_CHECKS = ['question', 'number', 'trace', 'match'];
 
-/** content/<course>/class/<lesson>.yml: { inquiry: { q, prompts?, notes? }, activities: [{ at, title, do, notes?, kind?, minutes? }], questions: [{ at, title?, type, ...check }] } */
+/** content/<course>/class/<lesson>.yml: { inquiry: { q, prompts?, notes? }, activities: [{ at, title, do, notes?, kind?, minutes? }], questions: [{ at, title?, type, ...check }], staff?: { notes?, activities: [{ title, do, minutes? }] } } */
 function validateClassPlan(lesson, err) {
   const c = lesson.classPlan, w = "class plan";
   if (typeof c !== 'object' || Array.isArray(c)) return err(w, 'must be a mapping with activities and/or questions');
-  for (const k of Object.keys(c)) if (!['inquiry', 'activities', 'questions'].includes(k)) err(w, `unknown field "${k}" (use inquiry, activities, questions)`);
+  for (const k of Object.keys(c)) if (!['inquiry', 'activities', 'questions', 'staff'].includes(k)) err(w, `unknown field "${k}" (use inquiry, activities, questions, staff)`);
+  if (c.staff !== undefined) {
+    const S = c.staff;
+    if (!S || typeof S !== 'object' || !Array.isArray(S.activities) || !S.activities.length) err(w, 'staff needs activities: what a staff committee does in this session');
+    else {
+      if (S.notes !== undefined && typeof S.notes !== 'string') err(w, 'staff.notes must be text');
+      S.activities.forEach((a, i) => {
+        if (!a || typeof a !== 'object' || typeof a.title !== 'string' || !a.title.trim() || typeof a.do !== 'string' || !a.do.trim()) err(w, `staff.activities[${i}] needs a title and do`);
+        else if (a.minutes !== undefined && !(Number.isInteger(a.minutes) && a.minutes > 0)) err(w, `staff.activities[${i}].minutes must be a whole number`);
+      });
+    }
+  }
   if (c.inquiry !== undefined) {
     const q = c.inquiry;
     if (!q || typeof q !== 'object' || typeof q.q !== 'string' || !q.q.trim()) err(w, 'inquiry needs q: a question the class can disagree about');

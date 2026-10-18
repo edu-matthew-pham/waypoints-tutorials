@@ -730,7 +730,7 @@ for (const f of readdirSync(CONTENT_ROOT).filter((n) => n.endsWith('.md') && n !
   const body = new Marked().parse(fm ? raw.slice(fm[0].length) : raw);
   mkdirSync(join(OUT, name), { recursive: true });
   writeFileSync(join(OUT, name, 'index.html'), page(title,
-    `<header class="top"><a class="crumb" href="../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header><div class="pabout approach">${body}</div>`,
+    `<style>.approach table{display:block;max-width:100%;overflow-x:auto}</style><header class="top"><a class="crumb" href="../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header><div class="pabout approach">${body}</div>`,
     '', navFor(name, 'home')));
 }
 

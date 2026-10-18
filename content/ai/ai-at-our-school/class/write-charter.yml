@@ -1,0 +1,30 @@
+inquiry:
+  q: "Should a school's AI charter be the same for every year level, or have different rules for younger students?"
+  prompts:
+    - "What would a Year 7 need that a Year 10 doesn't?"
+    - "What's the cost of having lots of different rules?"
+  notes: "Many committees keep one charter with an 'age and stage' principle, and put year-level detail in decisions, not the charter."
+activities:
+  - at: run
+    kind: activity
+    title: "Merge into one charter"
+    minutes: 12
+    do: |
+      In groups of four, merge your charters into one: five to seven principles, each with a check.
+      Then each group reads theirs out. We'll build the class charter from the strongest.
+    notes: "Keep the class charter (photo it). If you have a student committee, this is its first product."
+  - at: end
+    kind: discussion
+    title: "Who should comment?"
+    minutes: 5
+    do: |
+      Who should see our charter before it's final? What one question would we ask them?
+staff:
+  notes: "A staff committee's charter is the same product. Share the draft with students (an SRC, a class that has done Unit 1) as well as staff and families."
+  activities:
+    - title: "One page"
+      minutes: 20
+      do: "Draft the charter on one page: five to seven principles, how each is checked, who wrote it, the date, the review date."
+    - title: "Plan the comment round"
+      minutes: 10
+      do: "Decide who comments (students, staff, families), the one question each group is asked, and the date comments close."

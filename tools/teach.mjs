@@ -542,6 +542,9 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
     return p ? `<figure class="blocks"><img src="${esc(p.url)}" alt="The program as blocks" width="${Math.round(p.w / 2)}" loading="lazy"></figure><details class="mkjs"><summary>Show as code</summary>${codeBlock(highlightCode, code, LANG, name)}</details>` : codeBlock(highlightCode, code, LANG, name);
   };
   const T = lesson.teacher || {};
+  // Class plan staff: (AUTHORING › Class plan): running the same session with a staff committee. Guide only, never on
+  // the student deck or worksheet.
+  const staffPlan = (S) => (S && (S.activities || []).length ? `${S.notes ? md(S.notes) : '<p class="muted">The same session, run with staff. Not on the student slides.</p>'}<ul>${S.activities.map((a) => `<li><b>${esc(a.title)}</b>${a.minutes ? ` <span class="muted">(${a.minutes} min)</span>` : ''}${md(a.do)}</li>`).join('')}</ul>` : '');
   const sec = (title, html) => (html ? `<section class="tg"><h2>${esc(title)}</h2>${html}</section>` : '');
   const insights = lesson.steps.flatMap((s) => [s.config.insight ? [bare(s.title), s.config.insight] : null, ...s.tasks.filter((t) => t.config.insight).map((t) => [`${bare(s.title)} › ${t.title}`, t.config.insight])]).filter(Boolean);
   const answers = checksOf(lesson).map(({ step, task, check, key }) => {
@@ -565,6 +568,7 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
     sec('Before class', T.before ? md(T.before) : '') +
     sec('Running the lesson', T.running ? `<ol>${T.running.map((r) => `<li>${md(r).replace(/^<p>|<\/p>\s*$/g, '')}</li>`).join('')}</ol>` : '') +
     sec('In class', (lesson.classPlan?.inquiry || (lesson.classPlan?.activities || []).length || (lesson.classPlan?.questions || []).length) ? `<p class="muted">On the slides at these points. Students can do the whole lesson on their own; these are for the room. In the deck, the Run, Modify and Make slides have the live playground in them (the tutorial link is the backup), and the notes above are in each slide's speaker notes.</p><ul>${lesson.classPlan.inquiry ? `<li><b>Think, pair, share</b> <span class="muted">(start)</span><br>${esc(lesson.classPlan.inquiry.q)}${(lesson.classPlan.inquiry.prompts || []).length ? `<ul>${lesson.classPlan.inquiry.prompts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${lesson.classPlan.inquiry.notes ? `<p class="muted">${esc(lesson.classPlan.inquiry.notes)}</p>` : ''}</li>` : ''}${(lesson.classPlan.activities || []).map((a) => `<li><b>${esc(a.title)}</b> <span class="muted">(${esc(a.at)}${a.minutes ? `, ${a.minutes} min` : ''})</span>${md(a.do)}${a.notes ? `<p class="muted">${esc(a.notes)}</p>` : ''}</li>`).join('')}${(lesson.classPlan.questions || []).map((q, i) => { const p = checkParts(q, snip, `${lesson.slug}/class-${i}`); return `<li><b>${esc(q.title || 'Class question')}</b> <span class="muted">(${esc(q.at)})</span><br>${esc(p.q)}<br><span class="ans">${esc(p.answer)}</span>${p.explain ? `<br><span class="muted">${esc(p.explain)}</span>` : ''}</li>`; }).join('')}</ul>` : '') +
+    sec('With a staff committee', staffPlan(lesson.classPlan?.staff)) +
     sec('The hard part (on purpose)', T.struggle ? `<p>${esc(T.struggle)}</p>` : '') +
     sec('When students get stuck', stuck) +
     sec('Answers to the checks', answers ? `<ol class="answers">${answers}</ol>` : '') +

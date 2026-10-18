@@ -1,0 +1,34 @@
+summary: "Students critique Westbrook's flawed first-draft charter (vague values, a rule about one tool, a clash), write their own five to seven checkable principles, and learn what makes a charter usable: short, checkable, principles not decisions, dated, reviewed and shared for comment."
+time: 50
+goals:
+  - "I can spot what's wrong with a draft charter."
+  - "I can write a charter of five to seven principles, each with a way to check it."
+  - "I can explain why a charter is dated, reviewed and shared for comment."
+before: |
+  **Core idea:** a charter is a short, dated tool for deciding: principles (not decisions about particular tools), each with a check, shared with the people it affects and reviewed.
+  This is the unit's product. Keep each class's or committee's charter (photo or printed copy): Units 2 and 3 test decisions against it.
+  The Westbrook draft and second draft are made up. The model's seven principles match the list in lesson 2; students' own charters can and should differ.
+  **For the class plan:** agree one class or committee charter. If the school has a student voice structure (SRC, student council), this is the moment to share it there for comment.
+running:
+  - "Engage: the 22-principle charter. Ask who has read a long policy all the way through."
+  - "Explore: critique Westbrook's draft in pairs, then each writes a charter."
+  - "Explain: the five features on the board."
+  - "Evaluate: groups merge into one class charter (class plan)."
+struggle: "Merging charters is hard: students defend their own wording. Ask which version decides more cases, not whose is better."
+stuck:
+  - see: "A charter has twelve principles."
+    ask: "Which two say the same thing? Which would you drop if you had to?"
+    fix: "Merge and cut to the ones that decide cases."
+  - see: "A principle names a product."
+    ask: "What is it about that product you care about?"
+    fix: "Write that as the principle."
+support: "Give the Westbrook second draft and ask students to change two principles to suit their own school."
+stretch: "Write the charter's review rule: what would make you revisit it before its review date?"
+leads: "Unit 2 (lessons 4 to 6) tests a proposed tool against the charter; Unit 3 uses it for AI nobody chose."
+exit:
+  q: "Why does a good charter name principles, not particular tools?"
+  a: "So it still works when a new tool arrives; decisions about tools are tested against it."
+explain: |
+  1. A charter is five to seven principles, each with a way to check it.
+  2. Principles, not decisions about particular tools.
+  3. Dated, reviewed, and shared with the people it affects.
