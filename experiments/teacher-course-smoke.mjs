@@ -35,7 +35,8 @@ try {
   assert.equal(await p.locator('ul.lessons a[href="teachers/"]').count(), 0, 'not on home subject list');
   await p.goto(root+'teachers/'); console.log('teachers page', await p.$$eval('ul.lessons a', es=>es.map(e=>e.getAttribute('href'))));
   await p.goto(root+'maths-teachers/'); console.log('teachers menu on at maths-teachers:', await p.locator('.sn-dd.on .sn-top').textContent());
-  for (const w of [1280,390]) { await p.setViewportSize({width:w,height:900});
+  // 320px as well as 390px: Chrome on CI sets type a little wider than local Chromium, so tight fits show up here first.
+  for (const w of [1280,390,320]) { await p.setViewportSize({width:w,height:900});
     for (const u of ['teachers/','teachers/make-a-lesson/','teach/teachers/make-a-lesson/', ...LESSONS.flatMap((l) => [`teachers/make-a-lesson/${l}/`, `teach/teachers/make-a-lesson/${l}/`])]) { await p.goto(root+u); const o=await over(p); assert.ok(!o, `overflow at ${w}px on ${u}: ${o}`); if (shots) await p.screenshot({path:`${shots}/${w}-${u.replace(/\W+/g,'_')}.png`, fullPage:true}); } }
   await p.setViewportSize({width:1280,height:1000});
   // Every relative link in the course's lessons resolves.
