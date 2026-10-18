@@ -27,7 +27,10 @@ export function loadCurriculum(subject) {
 export function curriculumMapHtml(subject, cur, lessons, up, esc) {
   const strands = STRANDS[subject] || [...new Set(cur.descriptors.map((d) => d.strand))];
   const woven = (d) => (WOVEN[subject] || []).includes(d.strand);
-  const ds = cur.descriptors;
+  // The data holds Foundation to Year 10 (the teacher pointer pages use all of it); the map shows Years 7–10 and, in
+  // its "Before Year 7" column, only the earlier descriptors those name as prior knowledge.
+  const later = cur.descriptors.filter((d) => d.year >= 7), named = new Set(later.flatMap((d) => d.prior || []));
+  const ds = cur.descriptors.filter((d) => d.year >= 7 || named.has(d.code));
   const byCode = new Map(ds.map((d) => [d.code, d]));
   // Lessons per node ("AC9M7A01 n2") and per whole descriptor ("AC9M7N07").
   const L = [], perNode = new Map(), perCode = new Map();

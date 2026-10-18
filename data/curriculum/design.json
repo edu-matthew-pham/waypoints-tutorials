@@ -4,6 +4,1659 @@
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
+   "code": "AC9TDEFK01",
+   "kit": "data/technologies/yf_design_AC9TDEFK01.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Knowledge and understanding",
+   "title": "Designed products and environments",
+   "description": "explore how familiar products, services and environments are designed by people",
+   "prior": [],
+   "knowledge": "This is the first Design and Technologies descriptor in the curriculum. Students have no prior DT knowledge assumed. They bring general familiarity with everyday products and environments. They have not yet connected objects or places to the idea that people deliberately designed and made them for a purpose.",
+   "endpoint": "Students explore how familiar products, services and environments are designed by people, identifying that design decisions are made for a purpose.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Recognising that products and environments are designed by people",
+     "checkpoint": "Students can identify familiar products and environments and recognise that they were designed and made by people",
+     "hinge": true,
+     "criteria": [
+      "Names at least two designed products or environments",
+      "States that people designed and made them — does not treat them as naturally occurring"
+     ],
+     "hinge_reason": "Without a populated category of 'designed by people', Node 2's purpose reasoning has no grounded examples to work with — students cannot explore why design decisions were made if they have not yet reliably identified that objects are designed at all.",
+     "width": {
+      "minimum": "Identify at least two familiar products or environments (e.g. playground, packaging, school building) and state that people designed and made them",
+      "typical": "Identify multiple familiar products, services and environments across home and school contexts; explain that each was designed by people; recognise that different things are designed for different reasons",
+      "wider": [
+       "Identify how First Nations Australians have long designed and produced domestic items — for example exploring how the Lamalama Peoples weave bags using fibres from two different plants; discuss what the item was designed for and how the design choices reflect purpose",
+       "Explore how a local playground has shade structures designed to protect users and allow access for all — identify specific design decisions and explain why they were made"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Students at Foundation may not distinguish between natural objects and designed objects, or may not yet connect a familiar thing (the school building, their lunch box) to the idea that a person made deliberate decisions about it. Accumulating examples across product, service and environment categories builds the category of 'designed by people' before purpose reasoning is introduced."
+      }
+     ],
+     "related": [
+      "AC9TDE2K01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Exploring design decisions and purpose",
+     "checkpoint": "Students can explore how a product, service or environment is designed for a purpose — identifying at least one design decision and why it was made",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one design decision in a product or environment",
+      "Connects that decision to a purpose — explains why it was designed that way"
+     ],
+     "width": {
+      "minimum": "For one familiar product or environment, identify one design decision and explain what purpose it serves",
+      "typical": "Explore design decisions across multiple products, services and environments; explain how design decisions (materials, shape, features) serve the purpose; ask questions about why things were designed the way they were",
+      "wider": [
+       "Ask questions about the design of products from the local store — why was particular packaging chosen? how do the text and images attract people's attention? connect design decisions to purpose",
+       "Explore how community gardens, public swimming pools and parks are designed to help people stay healthy — identify specific design decisions and the purposes they serve",
+       "Explore how an online or delivery service is designed to meet people's needs — describe how gift packages are sent between locations and how design decisions make this possible"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Connecting a design decision to its purpose requires students to reason from feature to intent — 'the shade structure is there because...' rather than just noticing the shade structure exists. Scaffolding this with a question structure (what is it? who uses it? what does this part do? why?) builds the reasoning habit before the Y1-2 descriptor asks students to connect design to community need and sustainability."
+      }
+     ],
+     "related": [
+      "AC9TDE2K01",
+      "AC9TDEFP01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDEFP01",
+   "kit": "data/technologies/yf_design_AC9TDEFP01.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Processes and production skills",
+   "title": "Design and make solutions",
+   "description": "generate, communicate and evaluate design ideas, and use materials, equipment and steps to safely make a solution for a purpose",
+   "prior": [],
+   "knowledge": "This is the first Design and Technologies process descriptor. Students have no prior design process experience assumed. They bring general play and construction experience. They have not yet framed design as purposeful — generating ideas for a specific purpose, communicating those ideas in a design form, making a solution, or evaluating against a purpose.",
+   "endpoint": "Students generate and communicate at least one design idea for a purpose, use materials and equipment safely to make a solution, and evaluate what they made using personal preferences.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Identifying a purpose and generating ideas",
+     "checkpoint": "Students can identify a purpose for designing and making, and generate at least one idea for a solution",
+     "hinge": true,
+     "criteria": [
+      "States a purpose for their design (what it is for or what problem it solves)",
+      "Generates at least one idea for a solution to that purpose"
+     ],
+     "hinge_reason": "Without a purpose-grounded design idea, Node 2 (communicating a design idea) and Node 3 (making) have no design intent to express or realise — purposeless communication and making is construction play, not design.",
+     "width": {
+      "minimum": "Identify a purpose for a design task (what problem or need is being addressed); generate at least one idea for a solution",
+      "typical": "Identify a purpose for designing and making; generate and explore multiple ideas through drawing, modelling or describing; choose the most suitable idea with a reason",
+      "wider": [
+       "Identify a real purpose from the school environment (e.g. sand blowing out of sandpit, birds getting into waste bins, accessibility needs at school) — generate ideas that directly address the identified purpose",
+       "Draw or model designs for bee hotels to attract native bees to the school garden — generate multiple ideas and choose one, changing perspectives from front view to plan view"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Foundation students readily generate ideas but often skip connecting them to a purpose — the idea exists without a 'what is it for'. Multiple design contexts where the purpose is clearly defined before generating ideas builds the habit of purpose-grounded design thinking rather than open-ended construction play."
+      }
+     ],
+     "related": [
+      "AC9TDEFK01",
+      "AC9TDE2P01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Communicating design ideas",
+     "checkpoint": "Students can communicate a design idea through drawing or modelling",
+     "hinge": true,
+     "criteria": [
+      "Produces a drawing or model that represents their design idea",
+      "Can explain at least one feature of the drawing or model"
+     ],
+     "hinge_reason": "The communicated design idea is the raw material for Node 3 making — without an externalised representation, making is undirected and cannot be checked against a design intent. Node 3 requires something to make toward.",
+     "width": {
+      "minimum": "Represent a design idea through at least one drawing or model",
+      "typical": "Communicate a design idea using drawing or modelling; include basic features or labels; explain the design idea to others",
+      "wider": [
+       "Draw or model a ramp design for rolling a ball or toy car — show key features and explain how the design serves the purpose",
+       "Model a design for a greenhouse or trellis using available materials — describe what each part is for"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Design communication at Foundation requires students to externalise a mental idea into a physical representation. This is a challenging early skill — the gap between what students imagine and what they can draw or model is significant. Repeated practice across different design contexts builds fluency in using drawing/modelling as a thinking and communication tool."
+      }
+     ],
+     "related": [
+      "AC9TDE2P01"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Making a solution safely",
+     "checkpoint": "Students can use materials, equipment and steps to safely make a designed solution",
+     "hinge": false,
+     "criteria": [
+      "Uses at least one material and one tool or piece of equipment",
+      "Follows safety expectations for the tools and materials used"
+     ],
+     "width": {
+      "minimum": "Use at least one material and one piece of equipment to make a solution; follow safety expectations for the tools or equipment used",
+      "typical": "Use materials, components and equipment to make a solution across multiple construction contexts (joining, assembling, constructing); follow safety expectations; check that the solution functions as planned",
+      "wider": [
+       "Use available or re-used materials in construction play — for example blocks, rain gutters or cardboard to make a ramp; explore how different materials affect how the solution works",
+       "Make and test a bowling, stacking or obstacle game with discarded food containers — assemble components and check they function as planned"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Safe use of materials and equipment is a procedural and behavioural skill requiring consistent practice. Joining techniques, safe cutting, careful assembly — these need repetition across different making contexts before students can execute safely without active teacher supervision. Consolidation is the primary response; width adds variety of materials and contexts."
+      }
+     ],
+     "related": [
+      "AC9TDE2P02"
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Evaluating the solution",
+     "checkpoint": "Students can evaluate what they made using personal preferences",
+     "hinge": false,
+     "criteria": [
+      "Shares at least one opinion about their design or solution",
+      "Opinion is connected to the design — not just 'I like it' in general"
+     ],
+     "width": {
+      "minimum": "Share at least one opinion about their design or solution — what they like, what worked or what they would change",
+      "typical": "Evaluate the solution using personal preferences — describe what works well and what could be improved; use a simple evaluation tool (e.g. smiley face Likert scale) to record a judgement; connect evaluation to the original purpose",
+      "wider": [
+       "Record evaluation using audio-recording or video-recording software — describe design strengths and weaknesses and what they would change",
+       "Explain how the equipment in a playground might be unsuitable for some children and suggest areas for design improvement — connecting personal evaluation to broader user needs"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Evaluation at Foundation requires students to step back from making and judge their output against something — a preference, a purpose, a criterion. Without scaffolding, students tend to say 'I like it' without connecting to purpose or identifying anything to improve. A question structure (what did you want it to do? did it? what would you change?) builds evaluative reasoning rather than just approval."
+      }
+     ],
+     "related": [
+      "AC9TDE2P03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2K01",
+   "kit": "data/technologies/y12_design_AC9TDE2K01.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Knowledge and understanding",
+   "title": "Designed solutions for needs",
+   "description": "identify how familiar products, services and environments are designed and produced by people to meet personal or local community needs and sustainability",
+   "prior": [],
+   "knowledge": "Students can explore how familiar products, services and environments are designed by people (AC9TDEFK01). They can identify design decisions and connect them to a purpose. They have not yet connected design to community-level needs or to sustainability considerations.",
+   "endpoint": "Students identify how familiar products, services and environments are designed and produced to meet personal or local community needs, including sustainability.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Identifying community needs that design addresses",
+     "checkpoint": "Students can identify a personal or local community need and explain how a familiar product, service or environment is designed to meet it",
+     "hinge": false,
+     "criteria": [
+      "Names a specific community need (not just a use)",
+      "Explains how a product, service or environment is designed to meet that need"
+     ],
+     "width": {
+      "minimum": "Identify one community need (e.g. medical care, shelter, healthy food access) and explain how a product, service or environment is designed to meet it",
+      "typical": "Identify community needs across multiple contexts (health, shelter, food, communication, community access); explain how specific design and production decisions address each need; compare how the same need is met in different ways",
+      "wider": [
+       "Explore how First Nations Australians have long understood their dependence on living systems — for example how the Ngarrindjeri Peoples sustainably make woven items from a grass-like sedge; identify the community need being met and how the design reflects that need",
+       "Ask questions about the design of shelters in public spaces (school, sportsground) — identify the community need and how the shelter design addresses it including accessibility"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily identify that products exist for a purpose but often describe use rather than need — 'it's for sleeping' rather than 'it meets the community's need for shelter'. Multiple community contexts (medical care, shelter, food production, communication) where the need is explicitly named before the design is examined builds the need-first reasoning habit."
+      }
+     ],
+     "related": [
+      "AC9TDEFK01",
+      "AC9TDE2P03"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Understanding sustainability in design",
+     "checkpoint": "Students can identify sustainability considerations in how products are designed and produced",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one sustainability consideration in a design context",
+      "Explains why that consideration matters — what environmental impact it addresses"
+     ],
+     "width": {
+      "minimum": "Identify at least one example of sustainability in a design or production context — for example using recycled materials, minimising waste, or protecting a living system",
+      "typical": "Identify sustainability considerations across multiple design contexts; explain why sustainability matters in design and production; give examples of design decisions that minimise negative environmental impact",
+      "wider": [
+       "Explore how people come up with new ideas or modify existing designs to prevent water wastage — identify the sustainability problem, the design response and why it matters",
+       "Explore how local products are designed with waste minimisation in mind — for example using recycled clothing or components when making a costume for a community event; explain the sustainability benefit"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Sustainability is an abstract concept at Y1-2 level. Students need multiple concrete examples where a specific environmental impact is visible before they can generalise the idea. Water wastage, recycled materials and protected living systems are distinct entry points — each makes a different aspect of sustainability tangible."
+      }
+     ],
+     "related": [
+      "AC9TDE2P03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2K02",
+   "kit": "data/technologies/y12_design_AC9TDE2K02.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Knowledge and understanding",
+   "title": "Materials affect movement",
+   "description": "explore how technologies including materials affect movement in products",
+   "prior": [],
+   "knowledge": "Students can explore how products are designed by people (AC9TDEFK01). They have made simple solutions using materials (AC9TDEFP01). They have not yet systematically connected material properties to movement outcomes, or explored how changing materials or forces changes how a product moves.",
+   "endpoint": "Students explore how material properties and forces affect movement in products, and explain how changing materials can change how a product moves.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Material properties and movement",
+     "checkpoint": "Students can identify how a material's properties affect how a product moves",
+     "hinge": true,
+     "criteria": [
+      "Names at least one material property",
+      "Explains how that property affects how a product moves"
+     ],
+     "hinge_reason": "Without the material-property concept, Node 2's integration of material properties with forces has no anchor — students who cannot generalise from specific examples to a property cannot reason about how property and force interact.",
+     "width": {
+      "minimum": "Identify at least one material property (e.g. smooth, rough, flexible, rigid) and explain how it affects movement in a product or on a surface",
+      "typical": "Explore multiple material properties (smooth/rough, light/heavy, flexible/rigid) and explain how each affects movement; select materials to show how properties are appropriate for particular movement outcomes (sliding, floating, flying)",
+      "wider": [
+       "Investigate First Nations Australians' instructive toys and how they are designed and made to produce movement — for example propeller toys made from pandanus across northern Australia; identify which materials are used and how their properties create the movement",
+       "Test a wheeled toy on different surfaces (timber, carpet, rubber, plastic) — measure or observe differences in movement and speed; explain how surface material properties affect movement"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students at Y1-2 may connect a specific material to a specific toy without generalising to the property relationship — 'the smooth floor makes it go fast' without understanding that smoothness (low friction) is the relevant property. Multiple material-movement contexts where the same property appears in different products builds the generalised property concept."
+      }
+     ],
+     "related": [
+      "AC9TDE2P02"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Combining materials and forces to create movement",
+     "checkpoint": "Students can explore how combining materials with forces creates movement in a product",
+     "hinge": false,
+     "criteria": [
+      "Identifies both a material and a force involved in a product's movement",
+      "Explains how the material and force combine to produce the movement"
+     ],
+     "width": {
+      "minimum": "Using one product (e.g. a toy boat, kite or puppet), identify the materials used and explain how force and material combine to create movement",
+      "typical": "Manipulate materials using tools and techniques to create different types of movement across multiple products; explore how combining materials with forces (push, pull, gravity, wind) creates and controls movement; explain the relationship between materials, forces and movement",
+      "wider": [
+       "Explore a marionette or Indonesian wayang kulit shadow puppet — identify how combining materials with forces creates movement; explain how the design enables the operator to control the movement",
+       "Construct a toy boat that floats or a kite that flies — select materials deliberately for their movement-enabling properties and explain the material and force choices"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "At this node, material properties (node 1) and forces must be coordinated simultaneously to understand movement in a product. Neither alone explains movement — it is the interaction of material properties with applied forces that produces the outcome. Integration failure looks like: identifying the material or the force separately without explaining how they combine."
+      }
+     ],
+     "related": [
+      "AC9TDE2P02",
+      "AC9TDE2K01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2K03",
+   "kit": "data/technologies/y12_design_AC9TDE2K03.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Knowledge and understanding",
+   "title": "Growing plants and animals",
+   "description": "explore how plants and animals are grown for food, clothing and shelter",
+   "prior": [
+    "AC9TDE2K01"
+   ],
+   "knowledge": "Students have explored how products are designed and produced to meet community needs (AC9TDE2K01). They understand that design decisions connect to purpose. They have not yet examined the origins of the materials used in products — specifically that plants and animals are deliberately grown and managed as sources for food, clothing and shelter.",
+   "endpoint": "Students explore how plants and animals are grown and used as sources for food, clothing and shelter, identifying specific plants and animals and the products derived from them.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Plants and animals as sources for products",
+     "checkpoint": "Students can identify which plants and animals provide food, materials for clothing, or materials for shelter",
+     "hinge": true,
+     "criteria": [
+      "Names at least one plant and one animal used as a source for food, clothing or shelter",
+      "Identifies at least one product derived from each source"
+     ],
+     "hinge_reason": "Without a populated repertoire of plant and animal sources, Node 2 (how and where they are grown) has no examples to explore — students cannot investigate growing methods for sources they have not yet identified.",
+     "width": {
+      "minimum": "Sort at least three familiar items into plant-source or animal-source categories; name one plant and one animal used as a source for food, clothing or shelter",
+      "typical": "Identify a range of plants and animals as sources across food, clothing and shelter categories; give examples of products derived from each source; explain the relationship between the plant or animal and the product",
+      "wider": [
+       "Explore how First Nations Australians grow plants and animals for food — for example the aquaculture industry of the Kombumerri Peoples farming mangrove worms, or land transformation through terraces at Wagadagam; identify specific plants or animals and the products they provide",
+       "Identify products that can be designed and produced from plants and animals — food products, paper and wood products, fabrics and yarns; trace one product from source to finished item"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Students need a range of plant-source and animal-source examples before they can generalise the concept that living things are grown and managed for production purposes. A single example (cows for milk) does not build the category. Accumulating examples across food, clothing and shelter contexts builds the breadth needed for the 'explore' command term."
+      }
+     ],
+     "related": [
+      "AC9TDE2K01",
+      "AC9TDE2K04"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "How and where plants and animals are grown",
+     "checkpoint": "Students can explore how and where plants and animals are grown for food, clothing and shelter in Australia",
+     "hinge": false,
+     "criteria": [
+      "Names at least one location in Australia where a plant or animal is grown",
+      "Describes how it is grown or managed for its purpose"
+     ],
+     "width": {
+      "minimum": "Identify where at least one plant or animal is grown in Australia and describe how it is grown or managed for a purpose",
+      "typical": "Explore how plants and animals are grown in different Australian regions for different purposes — citrus in South Australia, cotton in NSW, timber in Tasmania; describe how tools and equipment are used in growing and harvesting; connect growing methods to the product produced",
+      "wider": [
+       "Compare traditional and contemporary growing methods for the same product — for example hand tools versus GPS-guided tractors for wheat; identify how technology changes what is possible",
+       "Consider a range of tools used to grow plants for a purpose — from home garden tools (spade, rake) to large-scale equipment (seed spreader, drone); explain what each tool enables and why it is used"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often have a home-garden mental model for how plants are grown — small, familiar, manual. Encountering growing at different scales (home garden vs cotton farm vs forestry plantation) in different Australian regions builds a more accurate and varied understanding of food and materials production."
+      }
+     ],
+     "related": [
+      "AC9TDE2K01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2K04",
+   "kit": "data/technologies/y12_design_AC9TDE2K04.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Knowledge and understanding",
+   "title": "Selecting and preparing food",
+   "description": "explore how food can be selected and prepared for healthy eating",
+   "prior": [
+    "AC9TDE2K03"
+   ],
+   "knowledge": "Students have explored how plants and animals are grown for food (AC9TDE2K03). They can identify plant and animal food sources. They have not yet organised foods into health categories or connected preparation methods to healthy eating outcomes.",
+   "endpoint": "Students explore how foods can be selected and prepared for healthy eating, identifying food groups and preparation methods.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Selecting foods for healthy eating",
+     "checkpoint": "Students can identify a range of foods and categorise them into food groups for healthy eating",
+     "hinge": false,
+     "criteria": [
+      "Correctly categorises at least three foods into food groups",
+      "Names at least two different food groups"
+     ],
+     "width": {
+      "minimum": "Identify at least three familiar foods and categorise them into food groups using the Australian Guide to Healthy Eating",
+      "typical": "Identify a wide range of foods and categorise them into the 5 food groups; discuss ways to eat a variety of food groups; begin to design a simple menu that includes multiple food groups",
+      "wider": [
+       "Explore both the Australian Guide to Healthy Eating and the Aboriginal and Torres Strait Islander Guide to Healthy Eating — identify foods in each of the 5 food groups from both guides; compare foods that are familiar to different communities",
+       "Explore how people from countries of Asia select food for healthy eating based on available plants and animals and cultural practices — identify similarities and differences with the Australian guide",
+       "Explore the local supermarket to observe the variety and placement of foods — consider how shelf design may influence food selection for healthy eating"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily categorise foods they personally eat but struggle with the full range of food groups when their exposure is narrow. Multiple food contexts — including foods from First Nations and Asian food traditions — builds a richer, less culturally narrow understanding of 'healthy eating'."
+      }
+     ],
+     "related": [
+      "AC9TDE2K03",
+      "AC9TDE2P02"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Preparing food for healthy eating",
+     "checkpoint": "Students can explore different ways food can be prepared and connect preparation methods to healthy eating",
+     "hinge": false,
+     "criteria": [
+      "Names at least two preparation methods",
+      "Explains how at least one preparation method changes the food"
+     ],
+     "width": {
+      "minimum": "Identify at least two ways food can be prepared (e.g. raw, steamed, roasted, sliced); explain how preparation changes the food",
+      "typical": "Explore different preparation methods (raw, steaming, roasting, slicing, cooking) and how each changes the food's flavour, texture or nutritional value; prepare a simple food product using appropriate tools and equipment; connect preparation choices to healthy eating",
+      "wider": [
+       "Prepare vegetables in different ways (e.g. raw salad versus roasted) — compare the changes in flavour and texture and discuss how preparation affects how we experience food",
+       "Prepare a food product from a school kitchen garden, farmers' market or supermarket — identify the preparation steps, tools needed and connect to healthy eating"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Food preparation involves procedural skills — safe handling, correct use of tools, following steps in order. These require practice across multiple preparation tasks to build the consistent safety habits and procedural fluency needed. Consolidation is the primary response; width adds preparation contexts."
+      }
+     ],
+     "related": [
+      "AC9TDE2P02",
+      "AC9TDE2K03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2P01",
+   "kit": "data/technologies/y12_design_AC9TDE2P01.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Describe, draw and model ideas",
+   "description": "generate and communicate design ideas through describing, drawing or modelling, including using digital tools",
+   "prior": [],
+   "knowledge": "Students can generate and communicate design ideas through drawing or modelling (AC9TDEFP01). They have communicated ideas for a purpose. They have not yet labelled drawings, shown multiple views, used digital tools to communicate design ideas, or compared existing products to generate new ideas.",
+   "endpoint": "Students generate and communicate design ideas through describing, drawing or modelling — including labelled drawings with multiple views and using digital tools.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Generating ideas from existing products",
+     "checkpoint": "Students can compare and contrast features of existing products to generate new design ideas",
+     "hinge": true,
+     "criteria": [
+      "Identifies at least one feature of an existing product",
+      "Generates a design idea that connects to or builds on what was observed"
+     ],
+     "hinge_reason": "Without analytical observation of existing products to generate design ideas, Node 2's labelled drawings have no design rationale — students who copy rather than adapt cannot produce drawings that explain design decisions.",
+     "width": {
+      "minimum": "Examine at least one existing product and identify at least one feature that could inform a new design idea",
+      "typical": "Compare and contrast features of multiple existing products to develop new ideas; identify what works well and what could be different; use observations to generate at least one design idea that builds on or modifies what they have seen",
+      "wider": [
+       "Compare features of several toys with movable parts — identify what makes the movement work; use this to design a new product (e.g. a puppet) with a movable part inspired by observations",
+       "Record the results from exploring design ideas (e.g. from people taste-testing a food product) — use the results to inform a revised design idea"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Generating ideas from existing products requires students to reason analytically before generating — identifying which features matter and why. Without this scaffold, students copy rather than adapt, or generate ideas unconnected to what they observed. A sequence (observe → identify what works → identify what could change → generate new idea) builds design thinking rather than copying."
+      }
+     ],
+     "related": [
+      "AC9TDEFP01",
+      "AC9TDE2K01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Communicating design ideas through labelled drawings and modelling",
+     "checkpoint": "Students can communicate a design idea through a labelled 2D drawing or model, including showing different views and describing materials and features",
+     "hinge": true,
+     "criteria": [
+      "Produces a drawing or model that others can interpret",
+      "Includes at least one label or description of a feature or material"
+     ],
+     "hinge_reason": "Labelled drawings are the communication vehicle for Node 3's digital tool integration — without fluency in producing interpretable labelled drawings, there is no design idea for students to communicate using digital tools.",
+     "width": {
+      "minimum": "Produce a drawing or model of a design idea that includes at least one label or description of a feature",
+      "typical": "Produce labelled 2D drawings of design ideas using different views (top and side); describe materials and features; produce a model or drawing that someone else could understand; include dimensions or scale where appropriate",
+      "wider": [
+       "Design a new environment (e.g. cubbyhouse or animal shelter) — show different views (top and side) with descriptions of materials and features for each view",
+       "Design felt finger puppets — communicate design ideas with labels showing how movable parts work; include notes about changes made to the original idea and why"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Drawing with labels and showing multiple views requires spatial reasoning and drawing skills that develop through repeated practice. Students need to practise producing labelled drawings across different design contexts before the combination of views, labels and descriptions becomes fluent."
+      }
+     ],
+     "related": [
+      "AC9TDE2P04"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Using digital tools to communicate design ideas",
+     "checkpoint": "Students can use a digital tool to communicate or record a design idea",
+     "hinge": false,
+     "criteria": [
+      "Uses at least one digital tool to communicate a design idea",
+      "The digital output represents a design decision or idea, not just a picture of the product"
+     ],
+     "width": {
+      "minimum": "Use at least one digital tool to communicate or represent a design idea (e.g. take a photo, use drawing software, record an opinion about a design)",
+      "typical": "Use digital tools alongside drawn and modelled communications — photograph work in progress, use drawing apps, record audio or video opinions about design ideas; integrate digital communication into the design process",
+      "wider": [
+       "Express opinions about a design idea for felt finger puppets using audio or video — describe what they like and dislike and what changes they have made; play back and reflect",
+       "Use digital tools to record results from design experiments (e.g. taste testing) and use the recorded results to communicate a revised design decision"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Digital tools are a communication medium for design ideas — not a separate activity. At this node, students must integrate digital communication with the design ideas developed in nodes 1 and 2. Integration failure looks like: using digital tools in isolation from the design process, or treating photography as separate from communicating design thinking."
+      }
+     ],
+     "related": [
+      "AC9TDI2P04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2P02",
+   "kit": "data/technologies/y12_design_AC9TDE2P02.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Safely make designed solutions",
+   "description": "use materials, components, tools, equipment and techniques to safely make designed solutions",
+   "prior": [],
+   "knowledge": "Students can use materials and equipment to make solutions safely (AC9TDEFP01). They have practised basic joining and construction techniques. They have not yet deliberately selected materials for a purpose, or demonstrated safe use of a range of tools and techniques across different construction contexts.",
+   "endpoint": "Students use materials, components, tools, equipment and techniques to safely make designed solutions across different construction contexts.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Selecting and using materials for a purpose",
+     "checkpoint": "Students can identify appropriate materials for a designed solution and explain why they are suitable",
+     "hinge": true,
+     "criteria": [
+      "Names at least one material selected for the task",
+      "Gives at least one reason why that material is appropriate for the purpose"
+     ],
+     "hinge_reason": "Material selection reasoning feeds directly into Node 2's safe making — students who select materials by preference rather than suitability are likely to attempt construction with inappropriate materials, creating safety risks and non-functional outcomes.",
+     "width": {
+      "minimum": "Select at least one material for a construction task and state one reason why it is appropriate for the purpose",
+      "typical": "Select materials, components and joining materials appropriate for the design; explain why each material suits the purpose; consider re-use of available materials where appropriate",
+      "wider": [
+       "Explore how available materials can be re-used — for example using wrapping paper and gift cards to make classroom decorations; explain how re-use minimises waste",
+       "Select materials to show how properties are appropriate for particular designed solutions — materials that enable sliding, floating or flying"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Material selection requires students to reason from purpose to property — 'I need it to float, so I need a material that is light and waterproof'. Without this scaffold, students select materials by preference or availability rather than suitability. A reasoning sequence (what does it need to do? what material property is needed? which materials have that property?) builds deliberate selection."
+      }
+     ],
+     "related": [
+      "AC9TDE2K02",
+      "AC9TDE2K01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Using tools and techniques safely",
+     "checkpoint": "Students can practise a range of technical skills using tools and equipment safely",
+     "hinge": false,
+     "criteria": [
+      "Uses at least two tools or techniques correctly and safely",
+      "Follows safety expectations for each tool — no unsafe actions observed"
+     ],
+     "width": {
+      "minimum": "Use at least two tools or techniques safely in a construction context (e.g. cutting, joining, measuring, planting, preparing food with a knife)",
+      "typical": "Practise a range of technical skills across different construction contexts — joining techniques, watering and mulching gardens, preparing a recipe using a knife safely; follow safety expectations consistently",
+      "wider": [
+       "Assemble components for a musical shaker (container, contents, joining materials) — check they function as planned after assembly; explain the joining technique used and why it was chosen",
+       "Use joining techniques when making a product from multiple materials — identify which joining technique is appropriate for each material pair and explain why"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Safe tool use is a procedural skill requiring consistent, repeated practice across different tools and materials. Each tool or technique has its own safety requirements and physical demands. Consolidation here is the primary response — accuracy, consistency and safety develop through practice, not through encountering more contexts."
+      }
+     ],
+     "related": [
+      "AC9TDE2K02",
+      "AC9TDE2K04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2P03",
+   "kit": "data/technologies/y12_design_AC9TDE2P03.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Evaluate success and sustainability",
+   "description": "evaluate the success of design ideas and solutions based on personal preferences and including sustainability",
+   "prior": [],
+   "knowledge": "Students can evaluate what they made using personal preferences (AC9TDEFP01). They have shared opinions about their design. They have not yet evaluated against sustainability considerations, reflected on environmental impacts, or compared design ideas for strengths and weaknesses in a structured way.",
+   "endpoint": "Students evaluate the success of design ideas and solutions based on personal preferences and sustainability considerations.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Evaluating against personal preferences",
+     "checkpoint": "Students can reflect on and record a judgement about a design idea or solution based on personal preferences, identifying strengths and areas for improvement",
+     "hinge": true,
+     "criteria": [
+      "Names at least one strength of the design or solution",
+      "Names at least one area for improvement — not just 'make it better' but a specific change"
+     ],
+     "hinge_reason": "Evaluative reasoning against personal preferences is the prerequisite for Node 2's sustainability evaluation — Node 2 extends the same reasoning structure to environmental criteria. Students who cannot evaluate against any criterion cannot take on a second, less familiar one.",
+     "width": {
+      "minimum": "Describe at least one strength and one weakness of a design or solution using personal preferences as the basis",
+      "typical": "Reflect on design ideas and solutions across the full design process — describe what meets the design need and what could be improved; record judgements using audio, video or written/drawn responses; share with others",
+      "wider": [
+       "Describe how design ideas meet the needs of those who will use the solution — use audio or video recording to capture the evaluation; review the recording and identify changes",
+       "Share design strengths and weaknesses with the class — explain how playground equipment might be unsuitable for some children and suggest specific improvements"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Evaluation requires students to apply a criterion to their work — but at Y1-2, the criterion of personal preference is itself vague without scaffolding. A structure (what did you want it to do? does it do that? what would you change and why?) moves evaluation from 'I like it/I don't like it' to reasoned judgement about design success."
+      }
+     ],
+     "related": [
+      "AC9TDEFP01",
+      "AC9TDE2P01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Evaluating sustainability impacts",
+     "checkpoint": "Students can reflect on the environmental impacts of a solution and consider alternative approaches that minimise negative impacts",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one environmental impact of a production activity",
+      "Suggests at least one concrete alternative that would reduce that impact"
+     ],
+     "width": {
+      "minimum": "Identify at least one environmental impact of making a solution and suggest one way that impact could be reduced",
+      "typical": "Reflect on environmental impacts across multiple production contexts (food packaging, material waste, water use); identify negative impacts and suggest alternative approaches; connect sustainability evaluation to both design ideas and making processes",
+      "wider": [
+       "Identify the negative environmental impacts of different food packaging options — suggest how packaging could be redesigned to minimise impact; explain the trade-offs",
+       "Reflect on the challenges of producing a solution (growing food, making a structure, preparing a snack) and record what would be done differently to reduce environmental impact next time"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Sustainability impacts are not immediately visible at Y1-2 level — students need to encounter them in multiple, concrete production contexts before the evaluative habit generalises. Food packaging, water use and material waste are distinct enough to reveal different aspects of environmental impact, each making the abstract concept tangible."
+      }
+     ],
+     "related": [
+      "AC9TDE2K01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE2P04",
+   "kit": "data/technologies/y12_design_AC9TDE2P04.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Sequence making steps cooperatively",
+   "description": "sequence steps for making designed solutions cooperatively",
+   "prior": [
+    "AC9TDE2P02"
+   ],
+   "knowledge": "Students can use materials and equipment to make solutions (AC9TDEFP01, AC9TDE2P02). They have followed steps to make things. They have not yet formally sequenced steps for making as a planning activity, recorded procedures, or identified roles for cooperative group making.",
+   "endpoint": "Students sequence the steps for making a designed solution and work cooperatively with others, identifying roles within a group.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Sequencing making steps",
+     "checkpoint": "Students can sequence the steps needed to make a designed solution in a logical order",
+     "hinge": true,
+     "criteria": [
+      "Sequences at least four steps in a logical order",
+      "Can explain why at least one step must come before another"
+     ],
+     "hinge_reason": "Step sequencing is the planning input for Node 2's cooperative role assignment — without a sequence to distribute across group members, roles cannot be meaningfully identified and the cooperative making has no structure.",
+     "width": {
+      "minimum": "Sequence at least four steps for making a simple product in the correct order; explain why the order matters",
+      "typical": "Use lists or storyboarding to plan and sequence steps for making across different production contexts; record the procedure; explain why steps must be in a particular order and what happens if they are not",
+      "wider": [
+       "Record the ordered steps for making a salad or other food preparation task — describe each step and explain what would happen if the order changed",
+       "Create a planning list or storyboard for an electronic planting calendar — sequence the steps and explain the order decisions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Step sequencing in design feels obvious for simple tasks but students often conflate steps with materials or confuse what to do with when to do it. Multiple production contexts — food preparation (where order is safety-critical), construction (where joins must be made before assembly), garden tasks — each expose different dimensions of why sequence matters."
+      }
+     ],
+     "related": [
+      "AC9TDI2P02"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Working cooperatively with identified roles",
+     "checkpoint": "Students can identify roles for group members and work cooperatively toward a shared making outcome",
+     "hinge": false,
+     "criteria": [
+      "Carries out an identified role in a cooperative making task",
+      "The group's shared output is produced — the cooperative process functioned"
+     ],
+     "width": {
+      "minimum": "Participate in a cooperative making task where roles are identified; carry out at least one assigned role",
+      "typical": "Identify roles for each group member appropriate to the task; work cooperatively toward a shared goal; adjust roles or steps as needed when problems arise",
+      "wider": [
+       "Make a number of items for a school event with a group — assign roles (cutting, joining, decorating, checking), carry out the assigned role and explain how each role contributes to the shared outcome",
+       "Write instructions for making a container or bag — include who does each step (role) and in what order; test whether another group can follow the instructions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Cooperative making requires students to coordinate sequenced steps (node 1) with distributed roles — two understandings that must work together. Integration failure looks like: students who can sequence steps individually but cannot coordinate with others (duplicating work, waiting, doing steps in the wrong order because communication broke down)."
+      }
+     ],
+     "related": [
+      "AC9TDI2P04",
+      "AC9TDI2P05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4K01",
+   "kit": "data/technologies/y34_design_AC9TDE4K01.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Knowledge and understanding",
+   "title": "Design occupations and sustainability",
+   "description": "examine design and technologies occupations and factors including sustainability that impact on the design of products, services and environments to meet community needs",
+   "prior": [
+    "AC9TDE2K01"
+   ],
+   "knowledge": "Students can identify how familiar products, services and environments are designed and produced by people to meet personal or local community needs and sustainability (AC9TDE2K01). They have not yet examined occupations in design and technologies or analysed how sustainability factors actively shape design decisions.",
+   "endpoint": "Students examine design and technologies occupations and the role sustainability plays in shaping what those occupations produce, explaining how products, services and environments are designed to meet community needs.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Design and technologies occupations",
+     "checkpoint": "Students can name and describe a range of design and technologies occupations and explain what community need each addresses",
+     "hinge": true,
+     "criteria": [
+      "Names at least two distinct design and technologies occupations",
+      "Connects each occupation to a community need it addresses"
+     ],
+     "hinge_reason": "Students who cannot connect occupations to community needs cannot examine in N2 and N3 how factors (including sustainability) shape what occupations produce — the factor analysis requires knowing what the occupation is trying to achieve.",
+     "width": {
+      "minimum": "Name at least two design and technologies occupations and describe what community need each one addresses",
+      "typical": "Describe a range of design and technologies occupations across different sectors (bakers, builders, engineers, farmers, textile designers, mechanics, radiographers); explain what each occupation produces and who benefits in the community",
+      "wider": [
+       "Explore how many First Nations Australians have been and continue to be recognised for specialist skills in designing and producing products from local materials — investigate specific examples and discuss how these occupations serve community needs",
+       "Survey the design and technologies occupations present in the local area (urban, suburban, regional or rural) — discuss how the mix of occupations reflects local community needs and geography"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 2,
+     "label": "Sustainability as a design factor",
+     "checkpoint": "Students can explain what sustainability means in a design context and give an example of a design decision that reflects sustainability considerations",
+     "hinge": true,
+     "criteria": [
+      "Names at least one sustainability factor (e.g. recycled materials, minimal waste, energy use)",
+      "Connects that factor to a specific design decision"
+     ],
+     "hinge_reason": "Students without a working understanding of sustainability as a design factor cannot complete the multi-factor analysis in N3 — sustainability is one of the named factors and must be identified alongside others.",
+     "width": {
+      "minimum": "Describe one example of a design decision that was shaped by sustainability (e.g. using recycled materials, minimal water use) and explain why the designer made that choice",
+      "typical": "Explain how Australian designers consider sustainability when designing products, services and environments; describe examples across different design types (products from recycled materials, services using minimal energy, landscapes requiring minimal water)",
+      "wider": [
+       "Examine how First Nations Australians use sustainable practices when designing and producing products from local materials — explore how sustainability is embedded in traditional design knowledge and how this knowledge continues today",
+       "Investigate a specific sustainability challenge in the local community (e.g. water saving, traffic management, accessibility) and examine what design factors would need to be considered to address it"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often reduce sustainability to recycling. Examining sustainability across different design domains — products, services, environments, energy, water, materials — builds a broader and more accurate understanding of what sustainability means as a design consideration."
+      }
+     ],
+     "related": [
+      "AC9TDE4P04"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Factors that influence design outcomes",
+     "checkpoint": "Students can examine a product, service or environment and identify factors (beyond sustainability) that influenced its design",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one design factor beyond sustainability",
+      "Explains how that factor influenced a specific design decision"
+     ],
+     "width": {
+      "minimum": "Examine one product or environment and identify at least one factor other than sustainability that influenced how it was designed (e.g. who it is for, available materials, cost, culture)",
+      "typical": "Examine a range of products and environments to discover the factors that shaped their design — including community need, material availability, cultural context, energy efficiency and aesthetic considerations; explain how these factors interact",
+      "wider": [
+       "Examine products from an Asian country alongside Australian products — compare the design factors each reflects (materials, cultural context, production methods) and discuss why similar needs are met with different designs",
+       "Examine a system or service proposed for improvement (e.g. a water-saving bathroom system, a school traffic management system) — analyse what factors constrain the design and what factors offer opportunity for change"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students at this level can identify features of a product but need scaffolding to move from observation ('it has wheels') to design factor analysis ('wheels were chosen because the product needs to move over different surfaces'). Structured examination routines help students develop analytical habits."
+      },
+      {
+       "mode": "integration",
+       "reason": "This node integrates occupational knowledge (node 1) with sustainability knowledge (node 2) into a complete factor analysis — students are now examining how multiple factors interact to shape a design outcome. The coordination across factors is the learning."
+      }
+     ],
+     "related": [
+      "AC9TDE4P01",
+      "AC9TDE4P04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4K02",
+   "kit": "data/technologies/y34_design_AC9TDE4K02.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Knowledge and understanding",
+   "title": "Forces and material properties",
+   "description": "describe how forces and the properties of materials affect function in a product or system",
+   "prior": [
+    "AC9TDE2K02"
+   ],
+   "knowledge": "Students can explore how technologies including materials affect movement in products (AC9TDE2K02). They have explored movement through play. They have not yet described the relationship between forces, material properties and function, or connected these to design decisions in a product or system.",
+   "endpoint": "Students describe how forces (push, pull, gravity, buoyancy) and the properties of materials (strength, flexibility, weight) affect the function of products and systems.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Forces that act on products and systems",
+     "checkpoint": "Students can name the forces acting on a product or system and describe what each force does",
+     "hinge": true,
+     "criteria": [
+      "Names at least two forces and describes what each does",
+      "Connects a named force to a product or system context"
+     ],
+     "hinge_reason": "Students who cannot name the forces acting on a product cannot proceed to N2's material-property explanations or N3's combined explanation — describing how materials interact with forces requires knowing which forces are at play.",
+     "width": {
+      "minimum": "Name at least two forces (e.g. push, pull, gravity, buoyancy) and describe what each one does in a product or system context",
+      "typical": "Describe the forces acting in different products and systems — pushing, pulling, gravity acting on a falling or supported object, buoyancy keeping a watercraft afloat; explain how each force affects what the product or system does",
+      "wider": [
+       "Research how First Nations Australians consider buoyant forces when selecting materials for watercraft such as bark or dugout canoes — examine how understanding of buoyancy informs material choice",
+       "Explore how forces interact in a puppet system (e.g. a Japanese bunraku puppet) — identify which forces act on each part and how designers use them to control movement"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 2,
+     "label": "Material properties and their role in function",
+     "checkpoint": "Students can identify material properties (strength, flexibility, weight, buoyancy) and explain how each affects what a product or system can do",
+     "hinge": true,
+     "criteria": [
+      "Names at least two material properties correctly",
+      "Explains how one property affects the function of a specific product"
+     ],
+     "hinge_reason": "Students who cannot connect material properties to function cannot complete the N3 integration — the combined explanation (force + property → function) requires both building blocks.",
+     "width": {
+      "minimum": "Name at least two material properties and explain how one of them affects the function of a product",
+      "typical": "Describe how material properties (strength, flexibility, weight, hardness, buoyancy) affect function across different products; explain why a designer would choose a material with specific properties for a given purpose",
+      "wider": [
+       "Investigate how different surface materials (carpet, grass, concrete) affect a robot's or vehicle's movement — describe how the interaction between material properties and forces determines performance",
+       "Compare how materials from different cultural contexts (e.g. bark, bamboo, plantation timber, synthetic materials) have different properties and how those properties make them suited to different design applications"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily connect material properties to obvious cases (metal is strong) but struggle to apply the concept when the relevant property is less obvious (e.g. flexibility in a parachute, weight in a toy with moving parts). More product contexts surface the range of relevant properties."
+      }
+     ],
+     "related": [
+      "AC9TDE4P01",
+      "AC9TDE4P03"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "How forces and materials together determine function",
+     "checkpoint": "Students can describe how the interaction between forces and material properties determines whether a product or system functions as intended",
+     "hinge": false,
+     "criteria": [
+      "Names at least one force and one material property in the same explanation",
+      "Explains how both contribute to the product or system functioning as intended"
+     ],
+     "width": {
+      "minimum": "Describe one product or system and explain how both a force and a material property work together to make it function (e.g. a rubber band releases stored force because the material is elastic)",
+      "typical": "Describe how forces and material properties interact in a range of products and systems (a model with wheels, a parachute, a container protecting an object, a windmill with moving sails); explain how changing the material or the force would change the function",
+      "wider": [
+       "Deconstruct a product or system (e.g. a model windmill, a pop-up card, a parachute) to identify all forces and material properties at work — explain how the design coordinates them to achieve the intended function",
+       "Design and test a container or parachute that keeps an egg intact when dropped — use observations about forces (gravity, air resistance) and material properties to explain why the design works or fails"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "The coordination of forces and material properties into a functional explanation is the descriptor's core demand. Students who understand each concept separately often struggle to describe them as an interactive system. This node is where the building blocks from nodes 1 and 2 come together."
+      },
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to converge on a single product type when reasoning about forces and materials. Working across different product types — moving toys, watercraft, containers, structures — builds a more generalisable explanatory framework."
+      }
+     ],
+     "related": [
+      "AC9TDE4P01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4K03",
+   "kit": "data/technologies/y34_design_AC9TDE4K03.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Knowledge and understanding",
+   "title": "Producing food and fibre",
+   "description": "describe the ways of producing food and fibre",
+   "prior": [
+    "AC9TDE2K03"
+   ],
+   "knowledge": "Students can explore how plants and animals are grown for food, clothing and shelter (AC9TDE2K03). They have encountered food and fibre production at an exploratory level. They have not yet described production methods, compared different production systems, or examined tools and technologies used in food and fibre production.",
+   "endpoint": "Students describe the ways food and fibre are produced, including tools, equipment and procedures used to support plant and animal production.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Methods of food production",
+     "checkpoint": "Students can describe at least two methods used to produce food and explain what each involves",
+     "hinge": false,
+     "criteria": [
+      "Names at least two food production methods",
+      "Describes what is involved in at least one method (tools, procedures, environment)"
+     ],
+     "width": {
+      "minimum": "Describe at least two food production methods (e.g. growing vegetables, raising livestock, fishing) and explain what each involves",
+      "typical": "Describe a range of food production methods in Australia — plant-based (crops, vegetables, orchards) and animal-based (livestock, dairy, seafood); explain what tools, equipment and procedures are involved in each",
+      "wider": [
+       "Research food and fibre production techniques developed by First Nations Australians — including burning, tilling, planting, transplanting, watering, weeding, thinning, cropping, storing and trading — and describe how these methods support sustainable production",
+       "Compare farming methods for food in Australia and a country in Asia — describe how different plants and animals are used and how diverse technologies support their production"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 2,
+     "label": "Methods of fibre production",
+     "checkpoint": "Students can describe how animal and plant fibres are produced and name examples of each",
+     "hinge": false,
+     "criteria": [
+      "Names at least one animal fibre and one plant fibre correctly",
+      "Describes the production process for at least one fibre type"
+     ],
+     "width": {
+      "minimum": "Name one animal fibre and one plant fibre and describe how each is produced",
+      "typical": "Describe how animal fibres (wool, alpaca) and plant fibres (timber, cotton, bamboo) are produced in Australia; explain what tools, equipment and production environments are involved; compare at least two fibre types",
+      "wider": [
+       "Research how production of plantation timbers differs from bamboo production — compare growth rates, land use, harvesting methods and sustainability implications",
+       "Investigate how First Nations Australians produced and used plant and animal fibres — describe production methods and how they differ from contemporary industrial fibre production"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often know that wool comes from sheep but have thin understanding of the production process — shearing, processing, spinning. Fibre types vary significantly in production method, and examining both animal and plant fibres prevents students from over-generalising from one example."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Tools, environments and production systems",
+     "checkpoint": "Students can describe how tools, equipment and production environments (e.g. school garden, glasshouse, animal housing) are used to improve food or fibre production",
+     "hinge": false,
+     "criteria": [
+      "Names at least one production environment and explains its purpose",
+      "Connects tools or equipment to a specific production improvement"
+     ],
+     "width": {
+      "minimum": "Describe one production environment (e.g. a school garden, a glasshouse, a chicken shelter) and explain how it improves production",
+      "typical": "Describe how different tools, equipment and production environments support plant and animal production; explain how each improves yield, safety or sustainability; include examples from both plant-based and animal-based production",
+      "wider": [
+       "Design and describe a simple production environment (e.g. a school vegetable garden, a seed propagation setup) — identify what tools and procedures would improve production and justify choices",
+       "Investigate how protected cropping (glasshouses) changes what can be produced and where — compare to outdoor farming and discuss what factors influence the choice of production environment"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Describing production systems integrates knowledge of methods (node 1 and 2) with the tools and environments that make those methods effective. Students who understand methods separately often do not connect them to the infrastructure that supports production — this node is where that integration happens."
+      }
+     ],
+     "related": [
+      "AC9TDE4P01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4K04",
+   "kit": "data/technologies/y34_design_AC9TDE4K04.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Knowledge and understanding",
+   "title": "Food selection and healthy eating",
+   "description": "describe the ways food can be selected and prepared for healthy eating",
+   "prior": [
+    "AC9TDE2K04"
+   ],
+   "knowledge": "Students can explore how food can be selected and prepared for healthy eating (AC9TDE2K04). They have explored food selection at a general level. They have not yet described specific selection criteria, examined food technologies for health and safety, or compared fresh and processed foods by nutritional content.",
+   "endpoint": "Students describe the ways food can be selected and prepared for healthy eating, including how food technologies support food safety and nutrient retention and how sensory properties inform selection.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "How food is selected for healthy eating",
+     "checkpoint": "Students can describe factors that influence food selection for healthy eating, including nutrient content and sensory properties",
+     "hinge": true,
+     "criteria": [
+      "Names at least one factor used when selecting food for healthy eating",
+      "Explains how that factor guides a selection decision"
+     ],
+     "hinge_reason": "Students who only think of taste or appearance as selection criteria cannot apply nutritional reasoning when evaluating food technologies (N2) or comparing fresh vs processed foods (N3) — the selection framework must be broader than personal preference before technology comparisons are meaningful.",
+     "width": {
+      "minimum": "Describe at least one factor used to select food for healthy eating (e.g. nutrient content, freshness, sensory appeal) and explain how it guides selection",
+      "typical": "Describe how nutrient content, seasonal availability, sensory properties (colour, aroma, texture, taste) and cultural context influence food selection for healthy eating; apply at least one method of assessing nutritional value (e.g. nutrition label, nutrition app)",
+      "wider": [
+       "Explore how First Nations Australians consider the nutrient content of seasonal foods to maintain a balanced diet — investigate examples of seasonal food knowledge and discuss how this supports healthy eating",
+       "Use a nutrition calculator app to compare the nutrient content of several fresh foods — identify which nutrients are present and discuss how the data informs healthy selection decisions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students typically focus on taste or 'what looks good' as selection criteria. Examining different selection factors — nutrients, seasonal availability, cultural practice — builds a more complete understanding of what healthy selection means and why it varies across contexts."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Food technologies and their role in health and safety",
+     "checkpoint": "Students can describe what food technologies do and explain how they support food safety, nutrient retention or food availability",
+     "hinge": false,
+     "criteria": [
+      "Names at least one food technology and describes what it does",
+      "Connects the technology to food safety, nutrient retention or food availability"
+     ],
+     "width": {
+      "minimum": "Describe one food technology (e.g. pasteurisation, freezing, refrigeration) and explain what it does for food safety or nutrient retention",
+      "typical": "Describe how food technologies (pasteurisation, freezing, refrigeration, packaging) support food safety, retain nutrients and make a wide variety of food available; explain how each technology addresses a specific food challenge",
+      "wider": [
+       "Investigate how freezing vegetables to retain nutrients reduces food waste — compare frozen vegetables with fresh and processed equivalents and discuss what the technology preserves and what it changes",
+       "Explore how food technologies used in Australia and an Asian country differ — compare preservation and preparation technologies and discuss why different technologies are used in different food cultures"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 3,
+     "label": "Fresh vs processed food and preparation choices",
+     "checkpoint": "Students can describe differences between fresh and processed foods in terms of nutritional value and explain how preparation choices affect healthy eating",
+     "hinge": false,
+     "criteria": [
+      "Describes at least one nutritional difference between a fresh and processed food",
+      "Explains one preparation choice that makes food healthier or more appealing"
+     ],
+     "width": {
+      "minimum": "Describe one difference between a fresh food and a processed version of the same food, and explain one preparation choice that supports healthy eating",
+      "typical": "Compare fresh and processed foods using nutrition labels and apps; describe differences in nutritional value; explain how preparation methods (e.g. cooking techniques, presentation choices) affect taste, appeal and healthiness",
+      "wider": [
+       "Explore creative ways food can be prepared for maximum taste and appeal — locate and discuss examples of colourful or inventive food presentation that encourages healthy eating choices",
+       "Compare the nutritional information from a nutrition calculator app for a fresh ingredient versus a processed product using the same ingredient — analyse what the processing has added or removed and discuss what this means for healthy eating"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Comparing fresh and processed foods integrates selection knowledge (node 1) with technology knowledge (node 2) — students must use both nutritional understanding and knowledge of food technologies to make sense of why processed and fresh foods differ. The comparison task is where these concepts come together."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4P01",
+   "kit": "data/technologies/y34_design_AC9TDE4P01.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Explore needs and test materials",
+   "description": "explore needs or opportunities for designing, and test materials, components, tools, equipment and processes needed to create designed solutions",
+   "prior": [
+    "AC9TDE2P01",
+    "AC9TDE2P02"
+   ],
+   "knowledge": "Students can generate and communicate design ideas through describing, drawing or modelling (AC9TDE2P01) and use materials, components, tools and equipment to safely make designed solutions (AC9TDE2P02). They have not yet explored needs systematically or tested materials for suitability before designing.",
+   "endpoint": "Students explore needs or opportunities for designing, and test materials, components, tools, equipment and processes for suitability before creating designed solutions.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Identifying needs and design opportunities",
+     "checkpoint": "Students can describe a need or opportunity that could be addressed through a designed solution",
+     "hinge": true,
+     "criteria": [
+      "Identifies a specific need or opportunity (not just 'I want to make something')",
+      "Describes what a designed solution would need to do to address it"
+     ],
+     "hinge_reason": "Students who cannot identify a specific design need cannot conduct purposeful material testing in N2 — testing without a design purpose produces observations but not selection reasoning.",
+     "width": {
+      "minimum": "Identify one need or opportunity and describe what kind of designed solution could address it",
+      "typical": "Explore a range of needs and opportunities for designing (functional, community, environmental); describe what design opportunities each presents; examine existing products or services that address similar needs to inform design thinking",
+      "wider": [
+       "Explore the designs and performance of models of First Nations Australians' watercraft — investigate the opportunity for their design principles to inform a new floating toy design",
+       "Examine local products and services (e.g. food distribution at a community event, school access features) and identify design opportunities for improvement, innovation or sustainability"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDE4K01",
+      "AC9TDE4P02"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Testing materials for suitability",
+     "checkpoint": "Students can test materials under relevant conditions and describe what the test revealed about suitability for a design purpose",
+     "hinge": true,
+     "criteria": [
+      "Conducts a test on at least one material",
+      "Describes what the test revealed about the material's suitability for the design purpose"
+     ],
+     "hinge_reason": "Material test results are the primary input to N3 decisions about what is needed for the design solution — students who conduct no genuine testing arrive at N3 without evidence for their component and process choices.",
+     "width": {
+      "minimum": "Test at least one material for a specific property relevant to a design purpose (e.g. strength, flexibility, compostability) and describe what the test revealed",
+      "typical": "Test a range of materials under different conditions for suitability — including sustainability considerations (compostability, durability of natural materials); describe what each test reveals and use results to make material selection judgements",
+      "wider": [
+       "Explore materials from a range of cultural contexts (e.g. shelters, boats, handmade tools, baskets from an Asian country) — test or compare equivalent materials and describe how their properties make them suited to different design applications",
+       "Test joining techniques (fabric, paper, cardboard) and evaluate which is strongest, most flexible or most appropriate for the design purpose — explain how the testing process informed the selection decision"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often test only one property (e.g. strength) without considering that the relevant property depends on the design purpose. Testing across different material types and properties — including sustainability properties like compostability — builds a more complete understanding of what 'suitable' means."
+      }
+     ],
+     "related": [
+      "AC9TDE4K02",
+      "AC9TDE4P03"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Testing components, tools and processes",
+     "checkpoint": "Students can test components, tools or processes and describe what testing reveals about which are needed for a designed solution",
+     "hinge": false,
+     "criteria": [
+      "Tests at least one component, tool or process",
+      "Connects the test finding to a specific design decision"
+     ],
+     "width": {
+      "minimum": "Test one tool, component or process and describe how the test informed a design decision",
+      "typical": "Test a range of components, tools, equipment and processes for suitability; use test results alongside material testing to make decisions about what is needed to create the designed solution; document test findings",
+      "wider": [
+       "Test and compare joining techniques (adhesives, stitching, fasteners) for a specific design purpose — evaluate which technique best balances strength, aesthetics and ease of use, and justify the choice",
+       "Explore how virtual reality or simulations can be used to test assembling processes before physical production — discuss what testing digitally reveals and what it does not"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Testing components and processes alongside materials (node 2) into a coherent set of design decisions is the integration challenge. Students often treat material testing and tool/process testing as separate activities — this node asks them to use all test findings together to inform what the solution will need."
+      }
+     ],
+     "related": [
+      "AC9TDE4P02",
+      "AC9TDE4P03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4P02",
+   "kit": "data/technologies/y34_design_AC9TDE4P02.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Generate and communicate design ideas",
+   "description": "generate and communicate design ideas and decisions using appropriate attributions, technical terms and graphical representation techniques, including using digital tools",
+   "prior": [
+    "AC9TDE2P01"
+   ],
+   "knowledge": "Students can generate and communicate design ideas through describing, drawing or modelling, including using digital tools (AC9TDE2P01). They have communicated design ideas informally. They have not yet used technical terms, annotated diagrams, attributions, or more formal graphical representation techniques.",
+   "endpoint": "Students generate and communicate design ideas and decisions using appropriate technical terms, attributions and graphical representation techniques, including annotated diagrams and digital tools.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Generating design ideas through sketching and modelling",
+     "checkpoint": "Students can produce multiple design ideas for a problem using thumbnail sketches or models",
+     "hinge": true,
+     "criteria": [
+      "Produces at least two visibly different design ideas",
+      "Each sketch or model shows enough detail to understand what it proposes"
+     ],
+     "hinge_reason": "Students who produce only one design idea arrive at N2 and N3 with nothing to annotate or communicate distinctively — the communication tasks assume multiple ideas have been generated.",
+     "width": {
+      "minimum": "Produce at least two thumbnail sketches or models for a design problem, with enough detail to distinguish the ideas",
+      "typical": "Produce multiple thumbnail sketches, labelled drawings and/or models for design problems; include features and modifications in each idea; explore ideas for different design problems",
+      "wider": [
+       "Generate design ideas inspired by First Nations Australians' watercraft or other traditional designs — describe how prior design knowledge can inform new ideas",
+       "Generate design ideas for solutions using Safety by Design principles — produce sketches that show how the design ensures accessibility for all users (e.g. all parents and carers can access communication)"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDE4P01",
+      "AC9TDE4P04"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Using technical terms and annotations",
+     "checkpoint": "Students can label a design drawing using appropriate technical terms and explain what each component is and does",
+     "hinge": true,
+     "criteria": [
+      "Uses at least two technical terms correctly in annotations",
+      "Annotations explain function, not just name the part"
+     ],
+     "hinge_reason": "Technical annotation and attributions are required components of the N3 digital communication task — students who have not consolidated annotation practice cannot produce the complete communication the descriptor requires.",
+     "width": {
+      "minimum": "Label at least one design drawing with technical terms for two or more components, with a brief explanation of each",
+      "typical": "Communicate design ideas using annotated diagrams with technical terms for all major components; include labels and descriptions explaining materials used, their properties, and the intended function of components or the whole system",
+      "wider": [
+       "Annotate a design for a more complex system (e.g. a pushcart with chassis, axle, wheels and steering) using technical terms for each component — explain not just what each part is but why it was designed that way",
+       "Research and apply technical terms from a related design field (e.g. engineering, textile design) to annotate a student design — discuss how technical language helps communicate design decisions to different audiences"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Technical vocabulary in design communication needs fluency — students who can label a design correctly and consistently are better positioned for the more complex communication tasks in subsequent years. Precision and accuracy in annotation matters more than breadth of context here."
+      }
+     ],
+     "related": [
+      "AC9TDE4P03"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Communicating and sharing design ideas with attributions",
+     "checkpoint": "Students can share and document design ideas using digital tools, including appropriate attributions and privacy considerations",
+     "hinge": false,
+     "criteria": [
+      "Design communication includes technical terms and at least one attribution",
+      "Digital tool has been used to share or document the design"
+     ],
+     "width": {
+      "minimum": "Share a design idea using a digital tool, with at least one attribution for an idea or reference that informed it",
+      "typical": "Plan, share and document creative design ideas using digital tools; apply appropriate technical terms; include attributions for ideas drawn from other sources; apply privacy considerations when sharing collaboratively (e.g. class blog, shared document)",
+      "wider": [
+       "Document a design process using a class blog or collaborative digital document — include annotations, attributions and reflections on design decisions shared selectively with peers",
+       "Communicate a design idea for a cultural context beyond the student's own experience — discuss what additional research and attribution is needed to communicate the design respectfully and accurately"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Communicating a complete design idea using digital tools, technical terms, annotations and attributions together is the integration point. Each element has been practised separately — this node is where students coordinate them into a coherent design communication."
+      }
+     ],
+     "related": [
+      "AC9TDE4P01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4P03",
+   "kit": "data/technologies/y34_design_AC9TDE4P03.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Select and use materials safely",
+   "description": "select and use materials, components, tools, equipment and techniques to safely make designed solutions",
+   "prior": [
+    "AC9TDE2P02"
+   ],
+   "knowledge": "Students can use materials, components, tools, equipment and techniques to safely make designed solutions (AC9TDE2P02). They have used materials and tools in a supervised context. They have not yet selected materials with justified reasons, considered environmental impact across the production process, or used appropriate technologies terminology to describe procedures.",
+   "endpoint": "Students select and use materials, components, tools, equipment and techniques to safely make designed solutions, with consideration of environmental impact and using appropriate terminology to describe procedures.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Selecting materials with reasons",
+     "checkpoint": "Students can select materials and components for a design purpose and give reasons for their choices that reference material properties or sustainability",
+     "hinge": true,
+     "criteria": [
+      "Names at least two materials chosen for the design",
+      "Gives at least one reason for each choice that references a property or sustainability factor"
+     ],
+     "hinge_reason": "Students who select materials without reasoning about properties make production decisions that can compromise function and safety — arbitrary selection cannot be remedied in N2 and N3 because material choices are already locked in.",
+     "width": {
+      "minimum": "Select at least two materials for a design task and give one reason for each choice (referencing a property or sustainability consideration)",
+      "typical": "Select materials, components and joining techniques for design tasks with reasons; consider environmental impact in selections — for example whether packaging and offcuts can be recycled; explain selections using technologies terms",
+      "wider": [
+       "Select materials with explicit sustainability consideration — compare materials by compostability, recyclability and durability before choosing; document the selection reasoning",
+       "Explore material choices from products made in an Asian country (e.g. bamboo, different timber types, natural fibres) — compare to materials typically available locally and discuss how material availability shapes design decisions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students often select materials based on appearance or familiarity rather than properties relevant to function and sustainability. Scaffolding the selection reasoning (identify the design requirement → identify which property matters → check the material has that property) builds deliberate material selection practice."
+      }
+     ],
+     "related": [
+      "AC9TDE4K02",
+      "AC9TDE4P01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Safe, responsible and cooperative making practices",
+     "checkpoint": "Students can demonstrate safe, responsible and inclusive work practices when using tools and equipment",
+     "hinge": true,
+     "criteria": [
+      "Applies at least two safe work practices without prompting",
+      "Uses at least one tool accurately (measuring, marking or cutting to a specified dimension)"
+     ],
+     "hinge_reason": "Safe work practices are a non-negotiable gate for all physical making — students who have not consolidated safe handling cannot proceed to production contexts in N3. This is a safety prerequisite, not a quality issue.",
+     "width": {
+      "minimum": "Demonstrate at least two safe work practices when using tools or equipment (e.g. correct grip, checking workspace is clear, appropriate handling of sharp equipment)",
+      "typical": "Explain and apply safe, responsible, inclusive and cooperative work practices across different making contexts; use tools and equipment accurately when measuring, marking and cutting; explain why each safety practice matters",
+      "wider": [
+       "Describe the safety practices relevant to making a specific engineered solution (e.g. a robotic device) — explain how safety practices change when tools and materials become more complex",
+       "Explore how digital tools (virtual reality, simulations) can be used to practise assembly before physical making — discuss what safety benefits this approach offers and what it does not replace"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Safe work practices require habitual, precise application. Consolidation — consistent practice across making tasks, with feedback — is what builds reliable safety behaviour. Breadth of context matters less than accuracy and consistency of practice."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Using technologies terminology to describe procedures",
+     "checkpoint": "Students can describe the procedures and techniques used in making, using appropriate technologies terms",
+     "hinge": false,
+     "criteria": [
+      "Uses at least two technologies terms correctly in context",
+      "Procedural description is clear enough for another student to follow"
+     ],
+     "width": {
+      "minimum": "Use at least two technologies terms correctly when describing a making procedure to another student",
+      "typical": "Use appropriate technologies terms to describe and share procedures and techniques for making across different design contexts; include terms for materials, tools, components and processes",
+      "wider": [
+       "Document a making procedure for a complex product (e.g. an engineered robotic device or a textile item) using technologies terms and steps clear enough for another student to follow",
+       "Create a visual or digital guide to a making procedure using appropriate terminology — evaluate whether the guide is clear enough for a peer who has not done the task before"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Technologies terminology needs to be built across different materials, tools and making contexts. Students who only use terms in one context (e.g. woodwork) may not transfer them to textiles or food technology. Repertoire across making domains is the target."
+      }
+     ],
+     "related": [
+      "AC9TDE4P02"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4P04",
+   "kit": "data/technologies/y34_design_AC9TDE4P04.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Evaluate with design criteria",
+   "description": "use given or co-developed design criteria including sustainability to evaluate design ideas and solutions",
+   "prior": [
+    "AC9TDE2P03"
+   ],
+   "knowledge": "Students can evaluate the success of design ideas and solutions based on personal preferences and including sustainability (AC9TDE2P03). They have evaluated based on personal judgement. They have not yet used explicit design criteria as the basis for evaluation or co-developed criteria with others.",
+   "endpoint": "Students use given or co-developed design criteria — including sustainability — to evaluate design ideas and solutions, with reasons grounded in the criteria.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Understanding design criteria as evaluation tools",
+     "checkpoint": "Students can explain what design criteria are and describe what a solution would need to do to meet a given criterion",
+     "hinge": true,
+     "criteria": [
+      "Explains what at least two criteria require of a solution",
+      "Distinguishes between criteria and solution (criteria state what the solution must do; they are not the solution itself)"
+     ],
+     "hinge_reason": "Students who cannot interpret what a criterion requires of a solution cannot co-develop meaningful criteria in N2 or evaluate against them in N3 — the evaluation task requires correctly reading the criteria first.",
+     "width": {
+      "minimum": "Read a set of given design criteria and explain in plain language what a solution must do to satisfy at least two of them",
+      "typical": "Read and interpret design criteria for different design problems; explain what each criterion requires of a solution; distinguish between criteria that are met and criteria that are not met for a given solution",
+      "wider": [
+       "Examine design criteria that include universal design principles (flexible use, low physical effort, intuitive use) — explain what each principle means as a design requirement and how it addresses social sustainability",
+       "Compare two sets of criteria for the same problem — discuss how different criteria lead to different design priorities and potentially different solutions"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDE4K01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Co-developing design criteria",
+     "checkpoint": "Students can contribute to developing design criteria with others, including at least one criterion related to sustainability",
+     "hinge": false,
+     "criteria": [
+      "Contributes at least one criterion with a stated reason",
+      "The contributed criterion addresses something a solution must do, not a preference"
+     ],
+     "width": {
+      "minimum": "Contribute at least one criterion to a co-developed set, explaining why it matters for the design problem",
+      "typical": "Co-develop design criteria with others for a design problem; include criteria addressing function, safety, sustainability and user needs; explain the reasoning behind each criterion",
+      "wider": [
+       "Develop design criteria that include a social sustainability criterion addressing accessibility for different user groups — explain how this criterion reflects universal design thinking",
+       "Develop criteria for a product that will be evaluated by users from different cultural backgrounds — discuss how criteria might need to reflect diverse needs and what this reveals about how criteria are never fully neutral"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who only develop criteria for one type of problem (e.g. a toy) may not see that criteria development is always contextual. Developing criteria across different problem types and user groups builds the habit of thinking from the user's perspective rather than the designer's preferences."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Evaluating ideas and solutions against criteria",
+     "checkpoint": "Students can evaluate a design idea or solution against criteria — including sustainability — and provide reasons grounded in the criteria",
+     "hinge": false,
+     "criteria": [
+      "States whether each criterion is met with a reason",
+      "At least one criterion involves sustainability",
+      "Evaluation references the solution's features, not just personal preference"
+     ],
+     "width": {
+      "minimum": "Evaluate one design idea or solution against at least two criteria and state whether each criterion is met, with a reason for each judgement",
+      "typical": "Evaluate design ideas and solutions against criteria including sustainability across different design contexts; use evaluation to revise and select between design ideas; reflect on how well the final solution meets the criteria",
+      "wider": [
+       "Compare the waste produced by different design ideas and the potential for recycling — use sustainability criteria to evaluate and select between design ideas based on material choices",
+       "Evaluate a designed solution against criteria that include safety, sustainability and community/cultural appropriateness — discuss cases where criteria compete (e.g. a more sustainable material is less durable) and how to reason through trade-offs"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Evaluating against criteria requires criterion-by-criterion reasoning, not an overall impression. Scaffolding the process prevents students from simply stating a preference. The reasoning move (identify criterion → check solution → state match/gap → give reason) needs to become habitual."
+      },
+      {
+       "mode": "integration",
+       "reason": "Evaluation integrates criteria knowledge (node 1), co-developed criteria (node 2), and knowledge of materials and sustainability (AC9TDE4K01, K02) into a practical judgement. The coordination of multiple knowledge sources in an evaluation task is the descriptor's full demand."
+      }
+     ],
+     "related": [
+      "AC9TDE4K01",
+      "AC9TDE4P01",
+      "AC9TDE4P02"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDE4P05",
+   "kit": "data/technologies/y34_design_AC9TDE4P05.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Sequence collaborative production",
+   "description": "sequence steps to individually and collaboratively make designed solutions",
+   "prior": [
+    "AC9TDE2P04"
+   ],
+   "knowledge": "Students can sequence steps for making designed solutions cooperatively (AC9TDE2P04). They have sequenced steps in a cooperative context. They have not yet worked with explicit planning tools (timelines, spreadsheets, flowcharts), managed time and resource allocation, or understood mass production processes.",
+   "endpoint": "Students sequence steps to individually and collaboratively make designed solutions, using planning tools to record steps and manage time and resource allocation.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Planning and recording production steps",
+     "checkpoint": "Students can plan a production sequence and record it using a planning tool such as a timeline, list or flowchart",
+     "hinge": true,
+     "criteria": [
+      "Steps are recorded in a logical sequence using a planning tool",
+      "The sequence includes enough steps to complete the making task without missing key stages"
+     ],
+     "hinge_reason": "Students who cannot record a production sequence cannot contribute to the role and resource allocation in N2 — planning tools are the shared artefact that makes role coordination possible.",
+     "width": {
+      "minimum": "Record the steps for making a designed solution in sequence using at least one planning tool (e.g. a list, a timeline, a simple flowchart)",
+      "typical": "Determine and record production steps using planning tools — timelines, spreadsheets, calendars or lists; include when parts of the project need to be completed; use planning tools for both individual and collaborative tasks",
+      "wider": [
+       "Create a flowchart for a mass production process — for example, packing identical food boxes where each student has a separate task; identify decision points and parallel steps in the sequence",
+       "Draw a flowchart or record a video of a procedure with a fixed sequence (e.g. packing boxes for community members in need) — evaluate whether the recorded steps are clear and complete enough for someone else to follow"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who only plan sequences for simple personal tasks may not understand how planning tools scale to more complex production. Experiencing planning for both individual making and multi-role collaborative production builds a more complete understanding of sequencing as a management tool."
+      }
+     ],
+     "related": [
+      "AC9TDE4P03"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Managing time and resource allocation",
+     "checkpoint": "Students can identify roles and resources needed in a collaborative production task and explain how these are managed to complete the task",
+     "hinge": true,
+     "criteria": [
+      "Names at least two roles in a collaborative task",
+      "Identifies the resources each role needs to complete its tasks"
+     ],
+     "hinge_reason": "Students who cannot reason about role dependencies and resource needs cannot coordinate a collaborative production in N3 — they will block other roles or run out of resources mid-task.",
+     "width": {
+      "minimum": "In a collaborative making task, identify at least two roles and the resources each role needs; contribute to a plan that allocates tasks",
+      "typical": "Discuss the importance of managing time and resources throughout production; identify roles different people might take in a team; map tasks to roles and identify the resources each needs; contribute to a shared plan",
+      "wider": [
+       "Plan a collaborative production event (e.g. food distribution for a community event) — identify all roles, resources and the sequence of tasks; discuss how delays or resource shortages in one role affect others",
+       "Reflect on a completed collaborative task — identify where time or resource management broke down and propose how the plan could be improved for next time"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Resource and role allocation requires students to reason about dependencies — what does each person need, and what happens if a resource is unavailable? Scaffolding this reasoning (identify role → identify resource needed → identify what could block progress) builds production planning thinking rather than just task-listing."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Individual and collaborative production sequences",
+     "checkpoint": "Students can sequence steps for both individual and collaborative production tasks and explain how collaborative sequences differ from individual ones",
+     "hinge": false,
+     "criteria": [
+      "Follows a planned production sequence to completion",
+      "Describes at least one difference between individual and collaborative sequencing"
+     ],
+     "width": {
+      "minimum": "Complete a production task — individually or collaboratively — following a planned sequence, and describe at least one way the collaborative sequence required coordination that an individual sequence did not",
+      "typical": "Sequence and follow production steps for both individual and collaborative tasks; explain how collaborative sequencing requires task allocation, timing coordination and role communication that individual sequencing does not; use a planning tool to manage the process",
+      "wider": [
+       "Identify the steps in a mass production process — each student has a separate task in a production line (e.g. packing food boxes); discuss how the sequence must be coordinated so the whole production runs efficiently",
+       "Compare an individual production sequence with a collaborative one for the same product — identify which steps are divided, which are parallel and which must be sequential regardless of how many people are involved"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node integrates planning tools (node 1) with role and resource management (node 2) into a completed collaborative production experience. The integration challenge is coordinating steps, roles and resources simultaneously in real time — the coordination is the learning."
+      }
+     ],
+     "related": [
+      "AC9TDE4P03"
+     ]
+    }
+   ]
+  },
+  {
    "code": "AC9TDE6K01",
    "kit": "data/technologies/y56_design_AC9TDE6K01.json",
    "year": 6,

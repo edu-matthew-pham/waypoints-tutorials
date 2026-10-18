@@ -56,7 +56,9 @@ export function buildPointerPages(subject, ctx) {
   const cur = JSON.parse(readFileSync(join('data', 'curriculum', `${subject}.json`), 'utf8'));
   const review = loadReview(subject), kitV = review.kit || '';
   const name = LABEL[subject] || subject;
-  const ds = cur.descriptors.filter((d) => d.year >= 7);
+  const ds = cur.descriptors;   // Foundation to Year 10
+  const start = (d) => (d.years ? Number(d.years.split('–')[0]) : d.year), lo = Math.min(...ds.map(start)), hi = Math.max(...ds.map((d) => d.year));
+  const span = lo === 0 ? `Foundation to Year ${hi}` : `Years ${lo}–${hi}`;
   const byCode = new Map(ds.map((d) => [d.code, d]));
   const tagged = (code, n) => lessons.filter((l) => (l.node || []).map(String).some((r) => r === `${code} n${n}`));
   const base = `teach/curriculum/${subject}`;
@@ -86,7 +88,7 @@ export function buildPointerPages(subject, ctx) {
     return `<li><a href="${esc(d.code)}/"><code>${esc(d.code)}</code><b>${esc(d.title)}</b><small>${d.nodes.length} waypoint${d.nodes.length === 1 ? '' : 's'}${nl ? ` · ${nl} lesson${nl === 1 ? '' : 's'}` : ''}</small></a></li>`;
   }).join('')}</ul>`;
   write(base, `${name} curriculum (teacher pointers)`,
-    `<header class="top"><a class="crumb" href="../../">← Teacher guides</a><h1>${esc(name)}: curriculum pointers</h1><p class="lede">One page per waypoint in the Years 7–10 curriculum for ${esc(name)}: what students should be able to do, how to widen it, and a button to make a short primer lesson for it in Create.</p></header>` +
+    `<header class="top"><a class="crumb" href="../../">← Teacher guides</a><h1>${esc(name)}: curriculum pointers</h1><p class="lede">One page per waypoint in the ${esc(span)} curriculum for ${esc(name)}: what students should be able to do, how to widen it, and a button to make a short primer lesson for it in Create.</p></header>` +
     draftNote(review.status === 'reviewed') +
     (['history', 'geography', 'civics', 'economics'].includes(subject) ? `<p class="muted">Knowledge standards cluster by topic and suit teacher-made topic units; skills standards recur across every topic and suit short primers.</p>` : '') +
     years.map((y) => `<h2>${esc(yearText(ds.find((d) => d.year === y)))}</h2>` + strands.map((s) => { const arr = ds.filter((d) => d.year === y && d.strand === s); return arr.length ? `<h3>${esc(s)}</h3>${list(arr)}` : ''; }).join('')).join('') + src,
@@ -125,5 +127,5 @@ export function buildPointerPages(subject, ctx) {
       count++;
     });
   }
-  return { count, label: name, path: `${base}/`, draft: !anyReviewed && review.status !== 'reviewed' };
+  return { count, label: name, span, path: `${base}/`, draft: !anyReviewed && review.status !== 'reviewed' };
 }

@@ -868,7 +868,7 @@ for (const coursePath of teachCourses) {
 mkdirSync(join(OUT, 'teach'), { recursive: true });
 // Curriculum pointer pages (tools/pointer-pages.mjs): teacher-facing, linked only from here, draft and noindex until reviewed.
 const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curriculum', `${sub}.json`))).map((sub) => buildPointerPages(sub, { OUT, page, navFor, esc, lessons }));
-const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, Years 7–10${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
+const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, ${esc(p.span)}${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
 writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${pointerList}`, 'teach', null));
 
 writeFileSync(join(OUT, '.nojekyll'), '');

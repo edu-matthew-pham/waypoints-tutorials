@@ -10,6 +10,7 @@ export const KIT_SUBJECTS = [
   { id: 'english', prefix: 'AC9E', label: 'English', create: 'english' },
   { id: 'maths', prefix: 'AC9M', label: 'Maths', create: 'maths' },
   { id: 'science', prefix: 'AC9S', label: 'Science', create: 'science' },
+  { id: 'hass', prefix: 'AC9HS', label: 'HASS (Foundation to Year 6)', create: 'hass' },
   { id: 'history', prefix: 'AC9HH', label: 'History', create: 'hass' },
   { id: 'geography', prefix: 'AC9HG', label: 'Geography', create: 'hass' },
   { id: 'civics', prefix: 'AC9HC', label: 'Civics and Citizenship', create: 'hass' },
@@ -23,7 +24,7 @@ export const KIT_SUBJECTS = [
 ];
 export const subjectOfCode = (code) => KIT_SUBJECTS.find((s) => (s.match ? s.match.test(String(code)) : String(code).startsWith(s.prefix)))?.id || null;
 // Arts, HPE, Languages and Technologies are written in two-year bands: code year 8 is Years 7–8 (span 2).
-export const yearText = (d) => (d.years ? `Years ${d.years}` : `Year ${d.year}`);   // d.years: '7–8' (import-curriculum)
+export const yearText = (d) => (d.years ? `Years ${d.years}` : d.year === 0 ? 'Foundation' : `Year ${d.year}`);   // d.years: '7–8' (import-curriculum)
 
 // Response modes say where extra effort goes at a waypoint (width), not what kind of lesson it is.
 // The proposal's table (Project doc create-generic-proposal › Lesson shape › Width).
@@ -35,9 +36,10 @@ export const WIDTH = {
   integration: { label: 'Integration', weight: 'a combining task at the wider tier' },
 };
 
-/** "AC9HH7S03.1", "AC9HH7S03 n1", "AC9HH7S03-n1" or "AC9HH7S03:1" -> { code, n }; else null. Kit has one 3-digit code (AC9HH9K014). */
+/** "AC9HH7S03.1", "AC9HH7S03 n1", "AC9HH7S03-n1" or "AC9HH7S03:1" -> { code, n }; else null. Kit has one 3-digit code (AC9HH9K014);
+ * Foundation codes put F where the year goes (AC9MFN04, AC9EFLA01, AC9LCHF01). */
 export function parseNodeRef(s) {
-  const m = String(s || '').trim().match(/^(AC9[A-Z]{1,5}\d{1,2}[A-Z]{1,3}\d{2,3})(?:\s*(?:[.:-]|\s)\s*n?(\d+))$/i);
+  const m = String(s || '').trim().match(/^(AC9(?:[A-Z]{1,5}\d{1,2}[A-Z]{1,3}|[A-Z]{1,4}F[A-Z]{0,3})\d{2,3})(?:\s*(?:[.:-]|\s)\s*n?(\d+))$/i);
   return m ? { code: m[1].toUpperCase(), n: Number(m[2]) } : null;
 }
 export const nodeKey = (r) => `${r.code} n${r.n}`;          // as lessons write it in node:
@@ -214,7 +216,7 @@ export function nodesPromptText(nodes, pick = {}, kitVersion = '') {
 export function compactCurriculum(cur, review) {
   return {
     subject: cur.subject, label: labelOf(cur.subject), source: cur.source, kit: review?.kit || '', status: review?.status || 'draft',
-    descriptors: cur.descriptors.filter((d) => d.year >= 7).map((d) => ({
+    descriptors: cur.descriptors.map((d) => ({
       code: d.code, year: d.year, ...(d.years ? { years: d.years } : {}), strand: d.strand, title: d.title, description: d.description, knowledge: d.knowledge || '', kit: d.kit || '',
       nodes: d.nodes.map((n) => ({ n: n.n, label: n.label, checkpoint: n.checkpoint, hinge: n.hinge, ...(n.hinge_reason ? { hinge_reason: n.hinge_reason } : {}), criteria: n.criteria || [], ...(n.width ? { width: n.width } : {}), modes: n.modes || [] })),
     })),

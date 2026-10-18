@@ -4,6 +4,1527 @@
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
+   "code": "AC9TDI2P01",
+   "kit": "data/technologies/y12_dt_AC9TDI2P01.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Investigate problems for users",
+   "description": "investigate simple problems for known users that can be solved with digital systems",
+   "prior": [],
+   "knowledge": "Students have not yet formally investigated problems. They have encountered digital systems in familiar contexts and can recognise when a digital system helps them do something. They have not yet structured a problem investigation — identifying a user, a problem, and how a digital system could address it.",
+   "endpoint": "Students investigate simple, well-defined problems for a known user and identify how a digital system could solve the problem.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Identifying a user and their problem",
+     "checkpoint": "Students can identify a known user and describe a simple, specific problem that user has",
+     "hinge": true,
+     "criteria": [
+      "Names a specific user (not 'everyone' or 'people')",
+      "Describes the problem from the user's perspective — what they can't do or find difficult, not what solution they want"
+     ],
+     "hinge_reason": "Without a named user and a described problem, Node 2's investigation has no subject — students cannot establish what a problem involves if no user or problem has been identified.",
+     "width": {
+      "minimum": "Name a known user (themselves, a classmate, family member) and describe one specific problem they experience that a digital system might help solve",
+      "typical": "Identify multiple known users across familiar contexts (home, school, community) and describe a specific, observable problem for each; confirm the problem is real by asking the user or observing directly",
+      "wider": [
+       "Investigate how digital translation tools could address communication problems for First Nations Australians — identify a specific user and language communication need",
+       "Explore how a familiar community problem (e.g. knowing if the school library book you want is available) could be described as a problem for a known user"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students at this level often describe problems too broadly ('everyone wants to play games') or describe solutions before problems ('we need an app'). Encountering a range of specific, distinct user contexts — different people with different problems — helps students develop the habit of grounding problems in a real, named user before jumping to solutions."
+      }
+     ],
+     "related": [
+      "AC9TDI2P03"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Establishing what the problem involves",
+     "checkpoint": "Students can investigate a simple problem by finding out what the user needs and what would count as solving it",
+     "hinge": true,
+     "criteria": [
+      "Asks or answers at least one question about the problem from the user's perspective",
+      "Describes what success looks like — what the user would be able to do once the problem is solved"
+     ],
+     "hinge_reason": "Students who cannot describe what solving the problem would look like cannot attempt Node 3 — identifying how a digital system could solve the problem requires a success definition to match against.",
+     "width": {
+      "minimum": "Ask at least one question to find out more about the problem from the user's perspective; describe what solving the problem would look like",
+      "typical": "Ask the user questions to understand the problem; identify what information is needed and what success looks like; describe the problem in terms of what the user needs to be able to do",
+      "wider": [
+       "Compare two versions of the same problem (e.g. 'I want to borrow a library book' — from a student's perspective vs a teacher's perspective) and identify how the problem description changes based on who the user is",
+       "Investigate a robot as a possible solution to a classroom clean-up problem — define what the robot would need to do by describing the problem in specific, step-by-step terms"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Problem investigation at this level requires students to reason from the user's perspective rather than their own. Scaffolding the investigation (who is the user? what can't they do? what would help?) prevents students from jumping to solutions before the problem is understood. The reasoning structure is the investigation."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Identifying how a digital system could solve the problem",
+     "checkpoint": "Students can investigate how a digital system could solve a simple, known problem for a specific user",
+     "hinge": false,
+     "criteria": [
+      "Names a specific digital system",
+      "Explains how the system addresses the user's stated problem — the connection between system and problem is explicit"
+     ],
+     "width": {
+      "minimum": "Identify one digital system that could solve the user's problem and explain how it addresses the need",
+      "typical": "Investigate how an existing or imagined digital system could solve the problem; explain which features of the system address the user's specific need; consider whether the solution actually solves the problem for that user",
+      "wider": [
+       "Investigate multiple possible digital systems for the same problem — for example whether a weather app, a robot, or an alarm could each solve the same 'what to wear' problem in different ways",
+       "Explore how digital tools are used at school to solve known problems (attendance, library loans) — identify the user, the problem and how the system addresses it"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node requires students to coordinate user identification, problem description, and digital system knowledge simultaneously. The investigation is complete when all three elements are connected — the system is matched to the user's specific problem. Integration failure looks like: naming a system that doesn't address the stated problem, or identifying a solution before establishing the problem."
+      }
+     ],
+     "related": [
+      "AC9TDI2K01",
+      "AC9TDI2P03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI2P02",
+   "kit": "data/technologies/y12_dt_AC9TDI2P02.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Follow and describe algorithms",
+   "description": "follow and describe algorithms involving a sequence of steps, branching (decisions) and iteration (repetition)",
+   "prior": [],
+   "knowledge": "This is the first algorithmic thinking descriptor in the DT curriculum (no Foundation predecessor). Students bring general sequencing experience from everyday tasks — they can order familiar actions. They have not yet used computational vocabulary (sequence, branching, iteration) or applied algorithmic structure to a problem.",
+   "endpoint": "Students follow and describe algorithms that include a sequence of steps, at least one decision point (branching), and at least one repetition (iteration).",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Following and describing sequences",
+     "checkpoint": "Students can follow a short ordered sequence of steps and describe the steps in correct order",
+     "hinge": true,
+     "criteria": [
+      "Follows a sequence of steps in the correct order without skipping or repeating",
+      "Describes steps in order using sequencing language (first, then, next, last)"
+     ],
+     "hinge_reason": "Sequence fluency is the foundation for all subsequent structural types — the reason explicitly states that rushing to decisions before sequence is automatic leads to confused algorithms. Students who cannot hold step order reliably cannot add branching or iteration without losing the sequence structure.",
+     "width": {
+      "minimum": "Follow a provided 4–6 step sequence to complete a simple task; describe the steps in order using first/then/next/last",
+      "typical": "Follow and describe sequences for multiple familiar tasks (making a sandwich, getting ready for school, feeding a pet); rearrange mixed-up steps into the correct order; explain why order matters",
+      "wider": [
+       "Rearrange a mixed-up sequence of pictures from a story authored and published by First Nations Australians — describe the correct order and explain how each step leads to the next",
+       "Compare two tasks where step order matters (socks before shoes) and two where it does not (jumper before or after shoes) — explain the difference"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Correct sequencing requires precision — students at this age need repeated practice ordering steps across varied contexts before branching and iteration are introduced. Rushing to decisions before sequence is automatic leads to confused algorithms that mix step types."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Identifying and following branching (decisions)",
+     "checkpoint": "Students can identify decision points in an algorithm and follow the correct path based on the condition",
+     "hinge": true,
+     "criteria": [
+      "Identifies a decision point and states the condition being checked",
+      "Follows the correct path for a given condition and can explain both possible outcomes"
+     ],
+     "hinge_reason": "Branching is the hardest structural element and the reason explicitly describes systematic errors (describing only one path). Students who cannot hold both paths simultaneously cannot attempt Node 4's integration of all three structures.",
+     "width": {
+      "minimum": "Given an algorithm with one decision point (if/otherwise), follow the correct path based on the condition; explain what decision is being made and what each outcome means",
+      "typical": "Follow and describe algorithms with multiple decision points across familiar contexts (weather → what to wear, if raining → raincoat, otherwise → hat); draw or explain the decision structure; identify the condition and both possible outcomes",
+      "wider": [
+       "Create an algorithm for a classroom decision (e.g. if the book is in the library, borrow it, otherwise put it on the wish list) — identify the condition, the two paths, and the outcome of each",
+       "Apply decision-making to a recipe or process — identify where choices are made and what each choice leads to"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Branching is the hardest structural element to grasp at this level — students often describe only one path of a decision (the if, not the otherwise) or confuse the condition with the action. Encountering decisions in multiple, distinct contexts (weather, library, recipe) where both paths are equally plausible helps students see that both outcomes must always be specified."
+      },
+      {
+       "mode": "structured_reasoning",
+       "reason": "Following branching requires students to hold two possible paths in mind simultaneously and apply the condition to select one. Explicitly scaffolding the if/otherwise structure — reading it aloud, drawing both paths — prevents students from treating every decision as always taking the same path."
+      }
+     ],
+     "related": [
+      "AC9TDI4P02"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Identifying and following iteration (repetition)",
+     "checkpoint": "Students can identify when steps are repeated in an algorithm and follow algorithms that include a fixed-count repetition",
+     "hinge": true,
+     "criteria": [
+      "Identifies a step or sequence that repeats in an algorithm",
+      "States how many times the repetition occurs"
+     ],
+     "hinge_reason": "Students who cannot identify the boundary of what is repeated (loop body vs surrounding sequence) cannot integrate iteration with sequence and branching in Node 4 — the structural distinction is the prerequisite for coordination.",
+     "width": {
+      "minimum": "Follow an algorithm that repeats a step a fixed number of times (e.g. practise spelling a word 5 times); identify which step repeats and how many times",
+      "typical": "Follow and describe algorithms that include fixed-count repetition across multiple familiar contexts (throw and catch 10 times, write letters 5 times); explain why repetition is used; distinguish repetition from a one-time step",
+      "wider": [
+       "Create an algorithm that uses repetition for a physical activity or game (e.g. jump 3 times, then clap, then repeat) — write or draw the algorithm showing which part repeats",
+       "Compare an algorithm with repetition to one without — explain how repetition makes the algorithm shorter and more efficient"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily understand that 'do it again' means repetition, but may not identify the boundary of what is repeated — the body of the loop — vs what happens after it ends. Multiple contexts where the repeated element is clearly bounded help students distinguish the repeated part from the surrounding sequence."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Describing algorithms with all three structures",
+     "checkpoint": "Students can follow and describe an algorithm that combines sequence, branching and iteration",
+     "hinge": false,
+     "criteria": [
+      "Follows an algorithm with at least two structural types without error",
+      "Describes or explains the role of at least two structural elements in the algorithm"
+     ],
+     "width": {
+      "minimum": "Follow an algorithm that includes at least two of the three structures (sequence + branching, or sequence + iteration); describe what each structural element does",
+      "typical": "Follow and describe algorithms that include sequence, a decision point, and repetition; explain the role of each structural type; create a simple example combining at least two types",
+      "wider": [
+       "Describe a morning routine algorithm that includes sequence (steps in order), a decision (if it is cold, put on a jacket), and iteration (brush teeth for two minutes) — explain what type of structure each part is",
+       "Write, say, draw or photograph the full algorithm for a process that genuinely needs all three types — explaining each component to a partner or the class"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "At this node students must coordinate sequence, branching and iteration in a single coherent algorithm description. Integration failure looks like: correctly identifying each structure in isolation but losing track of how they combine — describing the steps but omitting the decision, or treating repetition as just 'doing it again' without connecting it to the algorithm's overall structure."
+      }
+     ],
+     "related": [
+      "AC9TDI2P01",
+      "AC9TDI4P02"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI2P03",
+   "kit": "data/technologies/y12_dt_AC9TDI2P03.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Discuss existing digital systems",
+   "description": "discuss how existing digital systems satisfy identified needs for known users",
+   "prior": [
+    "AC9TDI2K01"
+   ],
+   "knowledge": "Students have explored digital systems in familiar contexts (AC9TDI2K01). They can identify systems and name their components. They have not yet evaluated systems against user needs — linking what a system does to whether it satisfies a specific user's requirement.",
+   "endpoint": "Students discuss how existing digital systems satisfy identified needs for known users — explaining what the need is, and how specific features of the system address it.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Identifying needs for known users",
+     "checkpoint": "Students can describe a specific need that a known user has, distinct from a general want or preference",
+     "hinge": true,
+     "criteria": [
+      "Names a specific user",
+      "Describes a need linked to a task or purpose, not just a preference"
+     ],
+     "hinge_reason": "Without an identified need for a known user, Node 2 has nothing to connect system features to — discussing how a system satisfies a need requires a need to have been established first.",
+     "width": {
+      "minimum": "For one known user (themselves, a family member, a classmate), describe a specific need that a digital system could help with",
+      "typical": "Identify needs for multiple different users across home, school and community contexts; distinguish a need (something required to do a task) from a want (a preference)",
+      "wider": [
+       "Discuss how digital systems store and provide access to cultural stories authored and published by First Nations Australians — identify the need these systems satisfy for communities who want to preserve and share these stories",
+       "Compare what a student needs from a digital system (e.g. to watch videos, play games) with what a teacher needs from the same system (e.g. to share work with the class) — identify the different needs for the same device"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students at this level tend to describe all digital system use as want-based ('I want to play games') rather than identifying genuine needs. Multiple users across contrasting contexts — student vs teacher, home vs community — help students see that the same system can address different, specific needs depending on the user."
+      }
+     ],
+     "related": [
+      "AC9TDI2K01",
+      "AC9TDI2P01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Discussing how systems satisfy needs",
+     "checkpoint": "Students can discuss how an existing digital system satisfies an identified need — connecting system features to the user's need",
+     "hinge": false,
+     "criteria": [
+      "Names a feature of the digital system (not just the system type)",
+      "Explains how that feature addresses the user's identified need"
+     ],
+     "width": {
+      "minimum": "For one known user and one identified need, discuss at least one feature of a digital system and explain how it addresses the need",
+      "typical": "Discuss how multiple features of a digital system satisfy different aspects of a user's need; share and compare ideas with the class about how systems are used for learning, communication and access to information",
+      "wider": [
+       "Discuss how an interactive display screen in the classroom satisfies the need for sharing student work — identify what specific features (large screen, visibility, connection to other devices) address different aspects of the need",
+       "Discuss how tablets can be used as phones and communication tools between families in different locations — identify the needs satisfied and which features of the tablet make this possible"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Discussing how a system satisfies a need requires students to reason about the fit between a specific feature and a specific need. Without scaffolding (what is the need? what does the system do? how does that match?), students tend to simply describe the system without connecting it to the user's need — the fit relationship is the challenging cognitive step."
+      }
+     ],
+     "related": [
+      "AC9TDI2K01",
+      "AC9TDI2P01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI2P04",
+   "kit": "data/technologies/y12_dt_AC9TDI2P04.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Create and communicate content",
+   "description": "use the basic features of common digital tools to create, locate and communicate content",
+   "prior": [],
+   "knowledge": "This is the first content creation descriptor (no Foundation predecessor). Students have used digital systems in familiar contexts and can recognise what they are used for. They have not yet deliberately used digital tools to create original content, locate specific content, or communicate content to others.",
+   "endpoint": "Students use basic features of common digital tools to create original content, locate relevant content, and communicate that content to others.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Using basic features to create content",
+     "checkpoint": "Students can use the basic features of a common digital tool to create a piece of content",
+     "hinge": true,
+     "criteria": [
+      "Uses at least one basic feature of a digital tool to produce original content",
+      "The content produced is accessible — saved or stored so it can be found again"
+     ],
+     "hinge_reason": "Procedural fluency with creation features is prerequisite for Node 2 — students who stall on feature access during creation cannot redirect attention to locating and retrieving content.",
+     "width": {
+      "minimum": "Use at least one basic feature of a digital tool (camera, drawing app, text input, presentation software) to create a piece of original content",
+      "typical": "Use basic features across different content types (take a photo, draw a picture, type a message, add text to a presentation) using appropriate tools; save or store the created content",
+      "wider": [
+       "Use presentation software to retell a story — apply features to combine text and pictures to communicate the story sequence",
+       "Create a card for a family member using a camera or drawing app — include a photo and a short typed message, combining two creation features"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Feature use at this level requires motor accuracy and procedural memory — selecting the right icon, saving correctly, locating saved work. Students need repeated practice with the same features across multiple creation tasks before fluency develops. Consolidation here prevents stalling on procedural steps when communicating content."
+      }
+     ],
+     "related": [
+      "AC9TDI2K01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Using basic features to locate content",
+     "checkpoint": "Students can use the basic features of a digital tool to locate specific content — including stored files and online images",
+     "hinge": true,
+     "criteria": [
+      "Locates at least one piece of content (stored file or online image) relevant to the task",
+      "Can show or explain where the content was found"
+     ],
+     "hinge_reason": "Content that cannot be located cannot be communicated — Node 3 requires students to find and organise content before sharing it. Navigational failure at Node 2 collapses the Node 3 communication task.",
+     "width": {
+      "minimum": "Use a basic feature of a digital tool to locate one piece of stored or online content relevant to a task (e.g. find a saved photo, find an image of a plant or animal)",
+      "typical": "Locate stored files (photos of their own work) and find images online for a purpose (local flora and fauna, places); explain how they found the content and what they used it for",
+      "wider": [
+       "Find images of Australian flora and fauna including First Nations Australians' names for the items — use the images in a story or presentation, crediting the source",
+       "Take photos of class work and locate them in a class shared folder — demonstrate that stored content can be found and used again later"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Locating content involves navigating file systems, folders and browser interfaces — procedural skills that require accurate execution. Students commonly lose their saved content or cannot find it again. Repeated practice locating and retrieving content builds the navigational fluency needed for subsequent communication tasks."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Using basic features to communicate content",
+     "checkpoint": "Students can use the basic features of a digital tool to communicate created or located content to others",
+     "hinge": false,
+     "criteria": [
+      "Communicates content to at least one other person using a digital tool",
+      "The content shared is the intended content — not accidentally shared, not the wrong file"
+     ],
+     "width": {
+      "minimum": "Use a digital tool to share or present a piece of content to at least one other person (show a photo, present a slide, share a message)",
+      "typical": "Create individual content contributions that form part of a group task — for example contributing a recipe and photo to a class recipe book; present or share completed content with the class or a family member",
+      "wider": [
+       "Contribute a recipe and photo of a favourite food to a class digital recipe book — explain how individual contributions combine to create a shared piece of content",
+       "Use presentation software to show class work on an interactive display — explain what the content shows and respond to feedback"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Communication requires students to coordinate creation (produce content), location (find or organise it) and presentation (share it with others). At this node, the three activities — create, locate, communicate — must work together. Integration failure looks like: content exists but cannot be found to share, or content is shared but is incomplete or unintended."
+      }
+     ],
+     "related": [
+      "AC9TDI2P05",
+      "AC9TDI2K02"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI2P05",
+   "kit": "data/technologies/y12_dt_AC9TDI2P05.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Share content and collaborate",
+   "description": "use the basic features of common digital tools to share content and collaborate demonstrating agreed behaviours, guided by trusted adults",
+   "prior": [
+    "AC9TDI2P04"
+   ],
+   "knowledge": "Students can use basic features of digital tools to create, locate and communicate content (AC9TDI2P04). They have not yet applied agreed behaviours when sharing digitally, nor considered personal safety and privacy when sharing online with others.",
+   "endpoint": "Students use basic features of common digital tools to share content and collaborate with others, demonstrating agreed behaviours and guided by trusted adults.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Applying agreed behaviours when sharing",
+     "checkpoint": "Students can describe and apply agreed behaviours when sharing content with classmates using digital tools",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one agreed behaviour for digital sharing",
+      "Applies the agreed behaviour when sharing content — content and language are appropriate"
+     ],
+     "width": {
+      "minimum": "Identify at least one agreed behaviour for sharing content digitally (e.g. appropriate language, asking permission before sharing someone's photo); apply the behaviour when sharing content with a classmate",
+      "typical": "Apply agreed standards of behaviour across a sharing context — appropriate language in messages, respectful presentation of class work, checking what is and isn't appropriate to share; explain why the agreed behaviours matter",
+      "wider": [
+       "Take and share photos of class work with parents or carers using classroom messaging software — apply agreed behaviours with teacher guidance and explain what was appropriate to share and why",
+       "Discuss as a class what standards of behaviour everyone agrees on for digital messages — identify examples of appropriate and inappropriate content and explain the reasoning"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students understand 'be kind' in person but often do not transfer this to digital contexts. Encountering agreed behaviours across multiple sharing situations (messaging classmates, sharing photos with parents, presenting work) builds the generalised understanding that digital sharing requires the same social standards as in-person interaction."
+      }
+     ],
+     "related": [
+      "AC9TDI2P06",
+      "AC9TDI2P07"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Recognising personal information and online safety",
+     "checkpoint": "Students can identify examples of personal information and recognise that sharing personal information online requires care",
+     "hinge": false,
+     "criteria": [
+      "Names at least one type of personal information correctly",
+      "Explains at least one reason why that information should be shared carefully"
+     ],
+     "width": {
+      "minimum": "Identify at least one type of personal information (photo, name, address) and state why it should be shared carefully online",
+      "typical": "Give examples of personal information that could be used inappropriately if shared; explain that some information (photos, addresses, phone numbers) needs permission before being shared; identify who trusted adults are and their role in guiding online sharing",
+      "wider": [
+       "Discuss scenarios where personal information was shared without permission — explain what could go wrong and what to do if it happens",
+       "Compare what information it is safe to share with classmates on a classroom platform versus what should only be shared with family — identify who the trusted adult is in each context"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Recognising personal information risk requires students to reason about consequence — not just 'what is personal information' but 'why does sharing it matter and to whom'. Scaffolding the reasoning (who could see it? what could they do with it? who should I ask?) prevents students from treating all sharing as equally safe or equally dangerous."
+      }
+     ],
+     "related": [
+      "AC9TDI2P07"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI2P06",
+   "kit": "data/technologies/y12_dt_AC9TDI2P06.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Access accounts with credentials",
+   "description": "access their school account with a recorded username and password",
+   "prior": [],
+   "knowledge": "Students have used digital systems at home and school but have not previously managed personal login credentials. They may have used shared devices without individual accounts. They have not yet connected the concept of personal credentials to privacy or account ownership.",
+   "endpoint": "Students access their school account using a recorded username and password, and understand that credentials are personal and private.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "What accounts and credentials are",
+     "checkpoint": "Students can explain what a username and password are and why they are used to access a digital system",
+     "hinge": true,
+     "criteria": [
+      "Can explain what a username is and what a password is",
+      "Can state at least one reason why credentials are kept private"
+     ],
+     "hinge_reason": "Students who do not understand why credentials exist (privacy and identity) will execute Node 2 login as a rote procedure without any safety awareness — they cannot reason about credential privacy if the purpose of credentials is opaque.",
+     "width": {
+      "minimum": "Explain what a username and password are; state why they are used to access a system (to identify the user and keep their account private)",
+      "typical": "Explain that a username identifies you and a password keeps your account private; give examples of where accounts are used at school (computer login, school website); explain that credentials are personal — not shared with others",
+      "wider": [
+       "Compare using a library card (physical identification) with a username and password (digital identification) — explain what each one does and why both serve the same purpose of identifying the user",
+       "Discuss what would happen if someone else used your username and password — explain why keeping credentials private protects your account"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students may not have a conceptual model for why credentials exist — they experience login as a procedural requirement, not as a privacy and identity mechanism. Multiple contexts that ground the purpose of credentials (library card analogy, school login, account protection scenarios) help students understand why the procedure exists, not just how to follow it."
+      }
+     ],
+     "related": [
+      "AC9TDI2P07"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Accessing a school account with recorded credentials",
+     "checkpoint": "Students can use a recorded username and password to access their school account",
+     "hinge": false,
+     "criteria": [
+      "Successfully logs into the school system using their recorded credentials",
+      "Enters the username and password in the correct fields"
+     ],
+     "width": {
+      "minimum": "Use a recorded username and password (e.g. from a card given by the teacher) to log into a school digital system",
+      "typical": "Access a school account using recorded credentials; locate the login screen; enter the username and password accurately; access their personal account area",
+      "wider": [
+       "Limited width — this is a narrow procedural skill. The genuine extension is understanding why credentials are private and personal (covered in node 1 and in AC9TDI2P07)."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Accurate credential entry is a procedural skill requiring motor precision — distinguishing username from password fields, entering characters correctly, locating the login screen. Students need practice to build fluency. Consolidation is the appropriate response when errors are procedural (wrong field, typos, forgotten steps) rather than conceptual."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI2P07",
+   "kit": "data/technologies/y12_dt_AC9TDI2P07.json",
+   "year": 2,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Processes and production skills",
+   "title": "Personal data stored online",
+   "description": "discuss that some websites and apps store their personal data online",
+   "prior": [
+    "AC9TDI2P06",
+    "AC9TDI2P05"
+   ],
+   "knowledge": "Students understand that credentials are personal and private (AC9TDI2P06). They can identify some types of personal information (AC9TDI2P05). They have not yet discussed the concept that websites and apps collect and store personal data online — or that entering details online creates a stored record.",
+   "endpoint": "Students discuss that websites and apps store their personal data online, give examples of data that is collected, and explain that a parent or carer should be asked before entering personal details online.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "What data websites and apps collect",
+     "checkpoint": "Students can give examples of the types of personal data that websites and apps commonly collect",
+     "hinge": true,
+     "criteria": [
+      "Names at least two types of data that apps or websites collect",
+      "Gives at least one specific example from an app or website they know"
+     ],
+     "hinge_reason": "Students who cannot name the types of data that apps collect cannot reason in Node 2 about why permission is needed before entering specific details — the permission reasoning requires knowing what is at stake.",
+     "width": {
+      "minimum": "Name at least two types of data that websites or apps collect (e.g. username, email address, date of birth) from examples they commonly encounter",
+      "typical": "Give examples of data collected by apps and websites they commonly use — usernames and email addresses for school websites and games; explain that entering this information creates a record that is stored by the website or app",
+      "wider": [
+       "Compare what data two different platforms collect — for example a school website versus an online game — and explain what each collects and why",
+       "Discuss what information is needed just to use an app versus what might be optional — identify what is necessary and what might be sharing more than needed"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Students need to accumulate a range of examples of data that apps collect — a single example (username) is insufficient to build a reliable understanding of the range of personal data at stake. Repeated examples across different platforms build the recognition that many different types of information are collected across different contexts."
+      }
+     ],
+     "related": [
+      "AC9TDI2P05",
+      "AC9TDI2P06"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "The importance of asking permission before entering personal details",
+     "checkpoint": "Students can discuss why it is important to ask a parent or carer before entering personal details online",
+     "hinge": false,
+     "criteria": [
+      "States at least one reason why asking permission before entering personal details is important",
+      "Identifies a trusted adult as the person to ask"
+     ],
+     "width": {
+      "minimum": "State at least one reason why asking a parent or carer before entering personal details online is important",
+      "typical": "Discuss why personal details like address, phone number and date of birth require permission before being shared online; explain that once stored, data may be used in ways that are not immediately obvious; identify the trusted adult role in guiding these decisions",
+      "wider": [
+       "Discuss a scenario: an online game asks for your home address to send you a prize — explain what to do and why, referencing the trusted adult principle",
+       "Compare asking permission to enter details online with other safety rules at school (e.g. not leaving the school grounds) — identify that both involve a trusted adult because consequences may not be immediately visible to the child"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Reasoning about why permission matters requires students to think about downstream consequence — data stored now can be used later in ways that are not immediately obvious. Scaffolding the reasoning (who stores it? what could they do with it? why does a trusted adult know more about this?) prevents students from treating 'ask a trusted adult' as an arbitrary rule rather than a protective one."
+      }
+     ],
+     "related": [
+      "AC9TDI2P05",
+      "AC9TDI2P06"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P01",
+   "kit": "data/technologies/y34_dt_AC9TDI4P01.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Define problems with user stories",
+   "description": "define problems with given design criteria and by co-creating user stories",
+   "prior": [
+    "AC9TDI2P01"
+   ],
+   "knowledge": "Students can investigate simple problems for known users that can be solved with digital systems (AC9TDI2P01). They have explored what makes a problem solvable. They have not yet worked with explicit design criteria or user story formats as structured tools for problem definition.",
+   "endpoint": "Students define problems using given design criteria and co-created user stories, capturing both what a solution must do and who it is for.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "What design criteria are",
+     "checkpoint": "Students can read a set of given design criteria and explain what a solution must do to meet them",
+     "hinge": true,
+     "criteria": [
+      "Reads given criteria and restates what a solution must do",
+      "Does not confuse criteria (what it must do) with a solution (what it will be)"
+     ],
+     "hinge_reason": "Students who cannot interpret design criteria cannot check in N3 whether their user story and criteria are consistent — the integration task requires reading criteria correctly.",
+     "width": {
+      "minimum": "Given a set of design criteria for a simple problem, list what a solution would need to do to satisfy them",
+      "typical": "Read given design criteria across different problem contexts (a game, a tool, a communication solution); explain in plain language what each criterion means for what the solution must do",
+      "wider": [
+       "Explore design criteria for digital tools used by First Nations rangers — discuss how criteria like reliability in remote areas or low data usage reflect the specific context of users",
+       "Compare two sets of design criteria for the same problem — discuss how different criteria lead to different solutions and why criteria choices matter"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDI4P03",
+      "AC9TDI4P05"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "User story structure",
+     "checkpoint": "Students can write a user story using a template that identifies who the user is, what they need, and why",
+     "hinge": true,
+     "criteria": [
+      "Completes all three parts of a user story template",
+      "User is a specific person or group, not a generic description ('everyone')"
+     ],
+     "hinge_reason": "A malformed user story (missing user, need or purpose) leaves nothing to check criteria against in N3 — the integration collapses if the user story is a stub.",
+     "width": {
+      "minimum": "Complete a user story template ('A [user] wants [need] so that [reason]') for a familiar, simple problem",
+      "typical": "Co-create user stories for a range of simple problem contexts; identify the user, need and purpose for each; refine a user story when the 'so that' reason is missing or unclear",
+      "wider": [
+       "Write user stories from the perspective of users in different circumstances — for example, a First Nations student in a remote community who wants to explore neighbouring countries to compare how people live; discuss how context shapes the user story",
+       "Investigate user stories for problems involving non-human users (e.g. a ranger group monitoring turtle populations) — discuss whether user stories still work and what changes"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who write user stories for only familiar contexts (their own problems) often struggle to write from an unfamiliar user's perspective. Practice across diverse user contexts builds the habit of identifying with users rather than projecting own needs."
+      }
+     ],
+     "related": [
+      "AC9TDI4P03"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Defining a problem using both tools",
+     "checkpoint": "Students can use design criteria and a user story together to define a problem — stating what the solution must do and who it is for",
+     "hinge": false,
+     "criteria": [
+      "Writes a user story with a named user, need and purpose",
+      "States at least two design criteria consistent with the user story"
+     ],
+     "width": {
+      "minimum": "Given a problem context, co-create a user story and identify two design criteria the solution must meet",
+      "typical": "Define problems across different contexts using user stories and design criteria together; check that the criteria are consistent with the needs identified in the user story",
+      "wider": [
+       "Define a problem involving data collection for a community need (e.g. monitoring local wildlife populations) — write user stories from multiple user perspectives and derive design criteria that satisfy all of them",
+       "Explore a problem from a First Nations context (e.g. using digital tools to document cultural knowledge) — discuss how the user story and criteria might differ from a mainstream educational tool"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node asks students to hold design criteria and user stories in relation — checking that criteria actually capture what the user needs. The integration step (do the criteria follow from the user story?) is a reasoning move that needs explicit practice."
+      }
+     ],
+     "related": [
+      "AC9TDI4P03",
+      "AC9TDI4P05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P02",
+   "kit": "data/technologies/y34_dt_AC9TDI4P02.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Algorithms with branching and iteration",
+   "description": "follow and describe algorithms involving sequencing, comparison operators (branching) and iteration",
+   "prior": [
+    "AC9TDI2P02"
+   ],
+   "knowledge": "Students can follow and describe algorithms involving a sequence of steps, branching and iteration (AC9TDI2P02). They have encountered these three structures but at a descriptive, recognition level. They have not yet worked with comparison operators explicitly or described algorithms involving numerical conditions.",
+   "endpoint": "Students follow and describe algorithms that use sequencing, comparison operators (e.g. greater than, equal to) as branching conditions, and iteration (repeating steps a fixed number of times or until a condition is met).",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Sequencing as ordered steps",
+     "checkpoint": "Students can follow a multi-step algorithm and identify where they are in the sequence",
+     "hinge": true,
+     "criteria": [
+      "Follows a multi-step algorithm without skipping steps",
+      "Can identify which step they are at when asked mid-sequence"
+     ],
+     "hinge_reason": "Students who cannot track their position in a sequence cannot attempt N2 or N3 — branching and iteration both require knowing where you are in the algorithm before deciding or repeating.",
+     "width": {
+      "minimum": "Follow a written or diagrammatic algorithm with at least four steps; identify the current step when paused mid-sequence",
+      "typical": "Follow algorithms in different representations (list of steps, simple diagram, recipe format); track progress through the sequence; identify if a step has been skipped and what effect that has",
+      "wider": [
+       "Follow algorithms that describe First Nations Australian practices with strict ordering requirements (e.g. step sequences for preparing traditional foods or caring for specific animals) — discuss why step order matters in these contexts",
+       "Compare two algorithms for the same task with different step orders — identify which is more efficient or which produces better results and explain why"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDI4P04"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Comparison operators as branching conditions",
+     "checkpoint": "Students can describe a branch in an algorithm using a comparison operator (e.g. if UV index > 3, if score = 10) and explain what each path does",
+     "hinge": true,
+     "criteria": [
+      "Correctly traces both branches of an algorithm with a comparison condition",
+      "Names the comparison operator (greater than, equal to, etc.) used in the branch"
+     ],
+     "hinge_reason": "Comparison operators are directly prerequisite for implementing branching in AC9TDI4P04 — students who cannot identify the condition and trace both paths cannot write a working conditional program.",
+     "width": {
+      "minimum": "Given an algorithm with one branch using a comparison (e.g. if temperature is above 25°C), trace both paths and describe what happens in each case",
+      "typical": "Describe algorithms with multiple branches using comparison operators (greater than, less than, equal to) involving numbers and text; trace the correct path for different input values",
+      "wider": [
+       "Describe algorithms that branch on comparisons involving culturally specific conditions — for example, IF a certain animal is found in a ranger survey THEN a specific protocol applies; discuss how the comparison drives the decision",
+       "Explore algorithms involving combined conditions (e.g. IF UV index > 3 AND it is a school day) — describe what the combined comparison checks for"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Comparison operators abstract quickly from the concrete case. Students who only see one type of comparison (e.g. 'greater than' with temperature) may not recognise that text comparisons, equal-to checks, and multi-condition branches follow the same logic. Multiple contexts build the generalised pattern."
+      },
+      {
+       "mode": "structured_reasoning",
+       "reason": "Tracing both branches of a conditional requires holding two cases simultaneously. Students benefit from explicit scaffolding: 'what happens if the condition is true? what happens if it is false?' before attempting to write their own branches."
+      }
+     ],
+     "related": [
+      "AC9TDI4P04"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Iteration as repeating steps",
+     "checkpoint": "Students can describe an algorithm that repeats steps a fixed number of times and explain what changes with each repetition",
+     "hinge": false,
+     "criteria": [
+      "Identifies that steps are repeated in an iterative algorithm",
+      "States what changes between repetitions (e.g. a count increases, a position moves)"
+     ],
+     "width": {
+      "minimum": "Follow an algorithm that repeats a step a set number of times (e.g. add a number 5 times to compute a product); describe what the algorithm does and what changes in each repetition",
+      "typical": "Describe algorithms with iteration for different purposes — fixed-count repetition (multiply using repeated addition), and repetition until a condition is met; identify what is constant and what changes across iterations",
+      "wider": [
+       "Describe iteration in algorithms used for monitoring tasks — for example, an algorithm that counts sightings of a specific animal in a survey by repeating a tally step; discuss how the repetition connects to the data being collected",
+       "Explore an algorithm that combines iteration and branching — describe how repetition and decisions interact (e.g. 'check each item on a list; IF it matches THEN record it')"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often understand iteration from one context (e.g. counting) but do not recognise it in others (processing a list, animating movement, repeating a procedure). Multiple contexts build a functional understanding of 'do this repeatedly' across varied algorithmic uses."
+      }
+     ],
+     "related": [
+      "AC9TDI4P04"
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Describing complete algorithms",
+     "checkpoint": "Students can describe an algorithm that combines sequencing, branching and iteration in their own words or using a diagram",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one example each of sequencing, branching and iteration in a described algorithm",
+      "Description matches what the algorithm actually does"
+     ],
+     "width": {
+      "minimum": "Given an algorithm with all three structures, describe what it does in plain language — identifying where the sequence is, where a decision occurs, and where repetition happens",
+      "typical": "Describe algorithms of different complexity using written descriptions and diagrams; explain the purpose of the algorithm and how each structure contributes to achieving it",
+      "wider": [
+       "Describe an algorithm for a First Nations ranger protocol that involves all three structures — for example, a monitoring procedure with a fixed number of survey loops, conditional recording rules, and sequential reporting steps",
+       "Describe and compare two algorithms that solve the same problem differently (e.g. two routes to the same location with different decision points) — explain why both are valid and how they differ"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Describing a combined algorithm requires recognising that sequencing, branching and iteration are not separate things but work together in a single logical structure. The integration challenge is seeing how the structures interlock — this node is where that coordination is the learning."
+      }
+     ],
+     "related": [
+      "AC9TDI4P04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P03",
+   "kit": "data/technologies/y34_dt_AC9TDI4P03.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Generate, communicate and compare designs",
+   "description": "generate, communicate and compare designs",
+   "prior": [
+    "AC9TDE2P01",
+    "AC9TDI2P01"
+   ],
+   "knowledge": "Students have explored problems for known users and generated simple design ideas through describing, drawing or modelling (AC9TDE2P01 — Design Technologies equivalent; AC9TDI2P01 for DT problem investigation). They have not yet worked with explicit comparison of design ideas against user stories or design criteria.",
+   "endpoint": "Students generate multiple design ideas for a digital solution, communicate those ideas clearly, and compare them against user stories and design criteria to identify the most suitable approach.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Generating multiple design ideas",
+     "checkpoint": "Students can generate more than one design idea for a given problem and describe what each idea proposes",
+     "hinge": true,
+     "criteria": [
+      "Produces at least two visibly different design ideas",
+      "Describes what each idea would do, not just what it would look like"
+     ],
+     "hinge_reason": "Students with only one design idea cannot meaningfully compare in N3 — comparison requires at least two distinct ideas. Convergence on a single idea makes the evaluation step trivial.",
+     "width": {
+      "minimum": "Generate at least two different design ideas for a simple problem and sketch or describe each one",
+      "typical": "Brainstorm multiple design ideas for a problem, accepting all suggestions as possibilities; describe each idea in enough detail to distinguish it from the others",
+      "wider": [
+       "Generate design ideas for a problem with a First Nations Australian community context — explore how different ideas might reflect different cultural considerations or access constraints",
+       "Use a structured brainstorming technique (e.g. SCAMPER or random prompt) to generate ideas beyond obvious solutions — discuss how forced variation produces ideas that wouldn't emerge from direct thinking"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students in early design experience tend to converge on the first idea they think of. Generating ideas for varied problem contexts builds the habit of ideating before selecting — a phase-critical behaviour for the design cycle."
+      }
+     ],
+     "related": [
+      "AC9TDI4P01",
+      "AC9TDI4P05"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Communicating design ideas",
+     "checkpoint": "Students can communicate a design idea to peers clearly enough for others to understand what it proposes",
+     "hinge": false,
+     "criteria": [
+      "Another student can describe back what the design proposes",
+      "Includes at least one feature that addresses the user's need"
+     ],
+     "width": {
+      "minimum": "Sketch or describe one design idea so that a peer can understand what the solution would do",
+      "typical": "Communicate design ideas using sketches, annotations or verbal explanation; include enough detail about what the solution does, who it is for, and how users interact with it",
+      "wider": [
+       "Communicate a design idea that would work for users in an unfamiliar context (e.g. a tool for a ranger group) — discuss what extra information a person unfamiliar with the context would need to understand the design",
+       "Compare different modes of communicating a design (sketch vs verbal description vs labelled diagram) — discuss which modes are clearest for different audiences"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 3,
+     "label": "Comparing designs against user stories and criteria",
+     "checkpoint": "Students can compare at least two design ideas against user stories and design criteria and give reasons for preferring one",
+     "hinge": false,
+     "criteria": [
+      "Names at least one criterion or user story element when comparing designs",
+      "States a preference and connects it to a reason beyond personal taste"
+     ],
+     "width": {
+      "minimum": "Given two design ideas and a user story, state which idea better meets the user's need and give one reason linked to the user story or a criterion",
+      "typical": "Compare multiple design ideas against user stories and criteria for a range of problem contexts; identify which ideas meet the criteria and which miss aspects of the user's need; provide reasons for judgements",
+      "wider": [
+       "Compare designs for a problem where different users have different needs — for example, a recycling encouragement tool used by different age groups — discuss how a design that suits one user story might not suit another",
+       "Explore what happens when no design idea fully meets all criteria — discuss how to decide between imperfect options and whether criteria can be prioritised"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Comparing against criteria requires students to make a judgement move — not just describe the designs but evaluate them against a standard. The reasoning scaffold (does this design meet criterion X? does that one?) prevents students from selecting on preference alone."
+      },
+      {
+       "mode": "integration",
+       "reason": "This node integrates the design ideas generated in node 1 with the user stories and criteria from AC9TDI4P01. The comparison task only works when students bring both design ideas and problem definition together — coordination across the design process is the learning."
+      }
+     ],
+     "related": [
+      "AC9TDI4P01",
+      "AC9TDI4P05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P04",
+   "kit": "data/technologies/y34_dt_AC9TDI4P04.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Implement visual programs",
+   "description": "implement simple algorithms as visual programs involving control structures and input",
+   "prior": [
+    "AC9TDI4P02"
+   ],
+   "knowledge": "Students can follow and describe algorithms involving sequencing, branching and iteration (AC9TDI4P02). They have described these structures but have not yet implemented them in a programming environment. They have not yet written programs that accept user input.",
+   "endpoint": "Students implement simple algorithms as visual programs using a block-based or event-sheet environment, including control structures (sequence, branching, fixed-count iteration) and user input.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Writing and running a sequential program",
+     "checkpoint": "Students can write a program that executes steps in order and run it to check it performs as expected",
+     "hinge": true,
+     "criteria": [
+      "Program runs without errors",
+      "Steps execute in the correct order"
+     ],
+     "hinge_reason": "Students who cannot reliably sequence blocks and run programs cannot add branching or iteration — both require a functioning sequential program as the base. Fluency here is directly prerequisite for N2 and N3.",
+     "width": {
+      "minimum": "Write a program with at least three sequential steps, run it, and confirm it performs each step in the correct order",
+      "typical": "Write and run sequential programs across simple tasks (moving a character, displaying messages, performing calculations); identify what step the program is on when paused",
+      "wider": [
+       "Implement a sequential program that enacts a specific ordered procedure — for example, the strict steps a First Nations ranger follows when handling a specific native animal; discuss why the order must be preserved in the program",
+       "Write the same sequential program in two different visual environments (e.g. Scratch and a flowchart tool) and compare how each represents the same logic"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Writing and running sequential programs is the foundational capability for all subsequent programming work in this descriptor. Students need procedural fluency — the ability to reliably sequence blocks and interpret run output — before branching and input are introduced. Practice and precision here matter more than breadth."
+      }
+     ],
+     "related": [
+      "AC9TDI4P02"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Adding branching to programs",
+     "checkpoint": "Students can write a program that uses a comparison condition to branch and execute different steps depending on the result",
+     "hinge": true,
+     "criteria": [
+      "Program executes different code depending on the condition value",
+      "Both branches produce a correct and distinct output when tested"
+     ],
+     "hinge_reason": "Students who only test one branch path (or don't recognise when a branch fires) produce programs that appear to work but fail on untested inputs — this pattern of partial testing cascades into N4 where combined structures amplify the problem.",
+     "width": {
+      "minimum": "Write a program with one IF/THEN branch using a comparison (e.g. if temperature > 25) that produces different outputs for different input values",
+      "typical": "Write programs with comparison-based branches for different contexts — labelling weather as hot or cold, deciding whether to wear sunscreen, responding to a user's answer in a quiz; test the program with values that trigger each path",
+      "wider": [
+       "Implement a program with IF/THEN statements based on a real protocol — for example, IF a specific animal is found injured THEN the ranger follows a specific procedure; discuss how programs can encode decision-making knowledge",
+       "Write a program with multiple conditions (IF...ELSE IF...ELSE) for a context with more than two outcomes and explain how each condition is evaluated"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often test their branching program with only one input value and assume it works. Wider task contexts that require testing both branches — and later multiple branches — build the habit of checking conditional logic exhaustively."
+      }
+     ],
+     "related": [
+      "AC9TDI4P02"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Adding iteration to programs",
+     "checkpoint": "Students can write a program that repeats steps a fixed number of times and explain what changes with each repetition",
+     "hinge": false,
+     "criteria": [
+      "Loop executes the correct number of times",
+      "Program produces the expected output after the loop completes"
+     ],
+     "width": {
+      "minimum": "Write a program that repeats a step a set number of times (e.g. displaying repeated song lyrics, computing a sum using repeated addition); confirm it repeats the correct number of times",
+      "typical": "Write programs using fixed-count loops for different purposes (repeated display, repeated addition, repeated movement); identify what changes across repetitions and what stays constant",
+      "wider": [
+       "Write a program that uses a loop to process multiple inputs (e.g. asking for a user's name and responding to each) — discuss how loops reduce the need to repeat code manually",
+       "Implement a program that uses both a loop and a branch — for example, a loop that counts and branches when a condition is reached; discuss how the structures combine"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who only see loops in one context (e.g. printing repeated text) may not recognise that the same structure applies to movement, calculation and input processing. Multiple task contexts build generalised understanding of iteration as a structure."
+      }
+     ],
+     "related": [
+      "AC9TDI4P02"
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Writing programs with user input",
+     "checkpoint": "Students can write a program that takes input from the user or environment and uses it in the program's logic",
+     "hinge": false,
+     "criteria": [
+      "Program reads at least one user or environmental input",
+      "The input affects what the program does or displays"
+     ],
+     "width": {
+      "minimum": "Write a program that accepts one piece of user input (e.g. a name or a number) and uses it in the output or a decision",
+      "typical": "Write programs that take user input or sense environmental input (temperature, location) and use it in decisions or displays; test with different inputs to confirm the program responds correctly",
+      "wider": [
+       "Write a program that takes input from both a user and the environment — for example, combining a user-entered location with a temperature sensor reading to produce a context-specific response",
+       "Implement a program where user input modifies iteration — for example, the user enters how many times a step should repeat; discuss how this makes the program more general-purpose"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "User input integrates all three control structures — input values feed into conditions (branching) and can control loops (iteration), all within a sequential program structure. This node is where students coordinate input with previously learned structures, and the coordination is the key learning."
+      }
+     ],
+     "related": [
+      "AC9TDI4P02",
+      "AC9TDI4P05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P05",
+   "kit": "data/technologies/y34_dt_AC9TDI4P05.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Evaluate solutions against design criteria",
+   "description": "discuss how existing and student solutions satisfy the design criteria and user stories",
+   "prior": [
+    "AC9TDI2P03"
+   ],
+   "knowledge": "Students can discuss how existing digital systems satisfy identified needs for known users (AC9TDI2P03). They have discussed fit-for-purpose at a general level. They have not yet evaluated solutions explicitly against design criteria and user stories as structured evaluation tools.",
+   "endpoint": "Students discuss how both existing digital solutions and their own student-created solutions satisfy specific design criteria and user stories, giving reasons grounded in the criteria.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Describing what a solution does for users",
+     "checkpoint": "Students can describe what an existing digital solution does and who it helps",
+     "hinge": true,
+     "criteria": [
+      "Names at least one task the solution helps users complete",
+      "Identifies the user group the solution is designed for"
+     ],
+     "hinge_reason": "Students who cannot describe what a solution does for users cannot perform criteria evaluation in N2 — evaluation requires knowing what the solution actually does before checking it against criteria.",
+     "width": {
+      "minimum": "Describe one existing digital solution and explain what task it helps users complete",
+      "typical": "Describe how familiar digital solutions (maps, online orders, interactive directories) allow users to complete specific tasks; identify who benefits and what need each solution addresses",
+      "wider": [
+       "Investigate how a digital solution used in a First Nations community context (e.g. GPS tools for ranger land management) helps specific users — describe what the tool does and who it helps in that context",
+       "Describe how library management systems help different users (librarians tracking loans, students finding books) — discuss how the same solution serves different user needs simultaneously"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDI4P01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Evaluating against design criteria",
+     "checkpoint": "Students can check a solution against specific design criteria and state whether each criterion is met with a reason",
+     "hinge": true,
+     "criteria": [
+      "States clearly whether a criterion is met",
+      "Gives a reason that references a specific feature of the solution, not just a general impression"
+     ],
+     "hinge_reason": "Students who evaluate by general impression rather than criterion-by-criterion reasoning cannot engage with N3's user story evaluation — both require the same structured judgement move applied to different frameworks.",
+     "width": {
+      "minimum": "Given a solution and one or two criteria, state whether each criterion is met and give one reason",
+      "typical": "Evaluate an existing or student solution against a set of design criteria; for each criterion, state whether it is met and provide a reason; identify criteria the solution meets well and criteria it partially or does not meet",
+      "wider": [
+       "Evaluate a digital solution against criteria that include accessibility or equity considerations — for example, a solution that works well for urban users but fails for users in areas with limited connectivity",
+       "Evaluate a student-created game against criteria from both the designer's and a classmate's perspective — discuss how the same solution can be judged differently depending on who is evaluating"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Evaluation against criteria requires students to make a criterion-by-criterion judgement move rather than a general impression. Scaffolding the process (identify the criterion → check the solution against it → state whether it is met → give a reason) prevents students from evaluating by opinion alone."
+      }
+     ],
+     "related": [
+      "AC9TDI4P01",
+      "AC9TDI4P03"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Evaluating against user stories",
+     "checkpoint": "Students can check a solution against a user story and discuss how well it meets the user's need and purpose",
+     "hinge": false,
+     "criteria": [
+      "References both the user's need and purpose when evaluating",
+      "Identifies at least one thing the solution does well and one gap or limitation"
+     ],
+     "width": {
+      "minimum": "Given a solution and one user story, discuss whether the solution meets the user's need and purpose",
+      "typical": "Evaluate existing and student solutions against user stories for different contexts; discuss how well the solution meets both the need and the purpose (the 'so that' part) of the user story; identify gaps between what was designed and what was needed",
+      "wider": [
+       "Evaluate a solution from the perspective of a user story you did not write — for example, evaluate a classmate's game against their user story and discuss whether the solution meets needs you might not have anticipated",
+       "Discuss a case where a solution meets the stated need but not the underlying purpose — for example, a tool that works technically but is too complex for the actual user to use"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly evaluate whether the need is met but overlook the 'so that' purpose. Evaluating across different user stories — especially others' user stories — builds the habit of checking both what a solution does and whether it achieves the intended outcome."
+      },
+      {
+       "mode": "integration",
+       "reason": "This node integrates the design criteria evaluation from node 2 with user story evaluation — applying both simultaneously to assess a solution from multiple lenses. The integration is the learning: criteria and user stories together give a more complete evaluation than either alone."
+      }
+     ],
+     "related": [
+      "AC9TDI4P01",
+      "AC9TDI4P03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P06",
+   "kit": "data/technologies/y34_dt_AC9TDI4P06.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Create content with conventions",
+   "description": "use the core features of common digital tools to create, locate and communicate content, following agreed conventions",
+   "prior": [
+    "AC9TDI2P04"
+   ],
+   "knowledge": "Students can use basic features of digital tools to create, locate and communicate content (AC9TDI2P04). They have used digital tools for simple content creation. They have not yet worked with agreed conventions, information hierarchies, or search strategies for finding suitable sources.",
+   "endpoint": "Students use core features of common digital tools to create, locate and communicate content, following agreed conventions including safe search steps, file organisation and appropriate use of autocomplete features.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Finding information online safely",
+     "checkpoint": "Students can follow agreed steps to find information online using a search engine",
+     "hinge": true,
+     "criteria": [
+      "Follows agreed steps without being prompted",
+      "Selects a source that is appropriate for the task"
+     ],
+     "hinge_reason": "Students who have not internalised safe search steps will bypass them under time pressure in N3 content creation tasks — the habit must be consolidated before it is needed automatically in a production context.",
+     "width": {
+      "minimum": "Use a search engine to find information for a purpose following at least two agreed steps (e.g. use safe search, check the source is suitable)",
+      "typical": "Follow a class-agreed set of steps for safe online information search; evaluate whether a source is suitable before using it; create a presentation or document drawing on located information",
+      "wider": [
+       "Investigate how search results differ when using different keywords — discuss how word choice affects what is found and why some searches return unsuitable results",
+       "Compare how First Nations Australian community resources are represented in search results — discuss issues of representation and how to locate reliable culturally appropriate sources"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Agreed steps for safe online search need to become habitual, not just known. Fluency and consistent application of safe practices — not breadth — is what matters at this node."
+      }
+     ],
+     "related": [
+      "AC9TDI4P07",
+      "AC9TDI4P09"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Organising content with hierarchies",
+     "checkpoint": "Students can group, name and organise files and folders using a logical hierarchy",
+     "hinge": false,
+     "criteria": [
+      "Files are placed in folders that match their content category",
+      "Folder and file names clearly indicate what is inside"
+     ],
+     "width": {
+      "minimum": "Create at least two folders with appropriate names and place files in the correct folder using a provided logical structure",
+      "typical": "Design and apply a logical folder and file hierarchy for a class project; name folders and files consistently; explain why a given structure makes sense for the type of content",
+      "wider": [
+       "Design a file hierarchy for a virtual library or virtual supermarket with multiple categories and subcategories — explain the organisational logic and how someone unfamiliar with the structure could navigate it",
+       "Compare a flat file structure with a hierarchical one for the same set of files — discuss which is easier to navigate and why hierarchy helps with larger collections"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students often create file names and folder structures without reasoning about navigability. The reasoning scaffold — 'what category does this belong to? what would someone search for to find it?' — builds an organisational logic rather than arbitrary grouping."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Using core tool features to create and communicate",
+     "checkpoint": "Students can use core features of a digital tool (including autocomplete) to create and communicate content following agreed conventions",
+     "hinge": false,
+     "criteria": [
+      "Applies at least two agreed conventions in produced content",
+      "Content communicates the intended information clearly"
+     ],
+     "width": {
+      "minimum": "Use a digital tool to create content for a purpose, applying at least one agreed convention (e.g. appropriate file name, correct folder, use of autocomplete)",
+      "typical": "Create and communicate content using core tool features across different formats (presentations, documents, messages); apply agreed conventions consistently; use autocomplete features in text authoring tools appropriately",
+      "wider": [
+       "Create content in a tool that is unfamiliar — apply the conventions learned in familiar tools and discuss which transferred and which required adjustment",
+       "Create content for a specific audience beyond the classroom (e.g. a presentation for parents or a guide for a younger class) — discuss how conventions change depending on the audience and purpose"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Core tool features (file saving, naming conventions, autocomplete, folder use) need to be built across multiple tools and formats before they become transferable. Students who only practise in one tool often cannot apply conventions in a new one — repertoire across formats is the target."
+      }
+     ],
+     "related": [
+      "AC9TDI4P07"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P07",
+   "kit": "data/technologies/y34_dt_AC9TDI4P07.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Share content and collaborate",
+   "description": "use the core features of common digital tools to share content, plan tasks, and collaborate, following agreed behaviours, supported by trusted adults",
+   "prior": [
+    "AC9TDI2P05"
+   ],
+   "knowledge": "Students can use basic features of digital tools to share content and collaborate, demonstrating agreed behaviours guided by trusted adults (AC9TDI2P05). They have shared content in simple, supervised contexts. They have not yet used digital tools to plan tasks collaboratively or manage shared content across a group project.",
+   "endpoint": "Students use core features of digital tools to share content, plan tasks and collaborate with peers, following agreed behaviours and supported by trusted adults.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Sharing content selectively and safely",
+     "checkpoint": "Students can share content with a specific, appropriate audience while keeping personal information appropriately private",
+     "hinge": true,
+     "criteria": [
+      "Shares content only with the agreed audience",
+      "Does not include specific personal details (exact dates, specific names, location) in shared content"
+     ],
+     "hinge_reason": "Students who have not developed contextual sharing judgement will make inappropriate disclosures in N2 and N3 collaborative tasks — knowing what to share with which audience is prerequisite to participating safely in any collaborative digital activity.",
+     "width": {
+      "minimum": "Share content with an agreed audience (e.g. a class folder, the teacher) without revealing specific personal details",
+      "typical": "Share content in different collaboration contexts (shared folder, class survey, group document); explain which details should be kept private when sharing with different audiences; demonstrate agreed behaviours when sharing",
+      "wider": [
+       "Discuss a scenario where content shared for a legitimate purpose (e.g. sharing a holiday adventure) could inadvertently reveal personal information — identify what should be removed and why",
+       "Compare the audience reach of different sharing methods (shared folder vs link vs public post) — discuss which is appropriate for different collaboration contexts"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often focus on whether they are allowed to share rather than what information sharing reveals. Different sharing contexts (class only, school, public) help students develop a contextual understanding of appropriate sharing rather than a binary 'allowed/not allowed' rule."
+      }
+     ],
+     "related": [
+      "AC9TDI4P08",
+      "AC9TDI4P09"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Using digital tools to plan tasks collaboratively",
+     "checkpoint": "Students can use a digital tool to plan and organise a collaborative task with peers",
+     "hinge": false,
+     "criteria": [
+      "Makes at least one substantive contribution to the shared planning activity",
+      "Follows agreed behaviours when interacting with peers in the digital environment"
+     ],
+     "width": {
+      "minimum": "Contribute to a shared planning document or survey to help organise a group task, following agreed steps",
+      "typical": "Use digital tools to jointly plan an event or task (e.g. a class survey for an end-of-year party, a shared schedule); contribute ideas and respond to others' contributions following agreed behaviours",
+      "wider": [
+       "Plan a multi-step collaborative task using a shared digital tool — assign roles, track progress and update the plan as the task develops; discuss how digital tools make coordination easier for larger groups",
+       "Design and administer a class survey using a digital tool — analyse the results collaboratively and use them to make a group decision; discuss how planning tools support group decision-making"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Collaborative planning using digital tools is a capability that develops across different tool types and task complexities. Students who only plan using one tool type often cannot transfer the practice. Building repertoire across survey tools, shared documents and scheduling tools strengthens the capability."
+      }
+     ],
+     "related": [
+      "AC9TDI4P06"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Collaborating online with agreed behaviours",
+     "checkpoint": "Students can participate in an online collaboration following agreed behaviours — taking turns, respecting others' contributions, and adding to shared content constructively",
+     "hinge": false,
+     "criteria": [
+      "Adds content to a shared digital space following agreed behaviours",
+      "Responds to others' contributions in a way that builds on rather than ignores them"
+     ],
+     "width": {
+      "minimum": "Participate in one collaborative online task (e.g. adding to a shared slide deck or document), following at least two agreed behaviours",
+      "typical": "Participate in collaborative online tasks across different formats; listen to and respond to others' contributions; add content that builds on what others have contributed rather than replacing or ignoring it",
+      "wider": [
+       "Collaborate on a task with students from a different class or year level using digital tools — discuss how agreed behaviours need to be explicitly established when collaborating with people you do not know well",
+       "Reflect on a collaborative experience and identify one thing that went well and one that could be improved — discuss how agreed behaviours help resolve conflicts in online collaboration"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Agreed behaviours in online collaboration need to transfer across tools and audiences. Students who only practise within their own familiar class context may not understand why behaviours need to be re-established with new collaborators or in new tools."
+      }
+     ],
+     "related": [
+      "AC9TDI4P06",
+      "AC9TDI4P08"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P08",
+   "kit": "data/technologies/y34_dt_AC9TDI4P08.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Memorised passwords",
+   "description": "access their school account using a memorised password and explain why it should be easy to remember, but hard for others to guess",
+   "prior": [
+    "AC9TDI2P06"
+   ],
+   "knowledge": "Students can access their school account using a recorded username and password (AC9TDI2P06). They know that accounts require credentials. They have not yet memorised credentials independently or reasoned about what makes a password strong (easy to remember, hard to guess).",
+   "endpoint": "Students access their school account using a memorised password and explain the principles that make a password both memorable and secure.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Why passwords keep accounts private",
+     "checkpoint": "Students can explain why keeping a password private protects their data",
+     "hinge": true,
+     "criteria": [
+      "States that a password keeps others from accessing the account",
+      "Connects password secrecy to data protection, not just 'the rules'"
+     ],
+     "hinge_reason": "Students who do not connect password secrecy to data protection (treating it as just a rule) cannot reason about what makes a password strong in N2 — the 'hard to guess' criterion only makes sense if students understand what guessing enables.",
+     "width": {
+      "minimum": "Explain in one or two sentences why a password should be kept secret and what happens if someone else learns it",
+      "typical": "Explain how passwords protect personal work and data stored in accounts; describe a scenario where someone learns another person's password and explain the consequence",
+      "wider": [
+       "Discuss why shared device passwords (e.g. a school tablet shared between classes) create different security challenges compared to personal account passwords — explore how the school manages this",
+       "Investigate what data is stored in a school account and who can access it with the password — connect this to AC9TDI4P09 (personal data in online accounts)"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDI4P09"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "What makes a password strong",
+     "checkpoint": "Students can explain what makes a password easy to remember but hard for others to guess, and give an example",
+     "hinge": false,
+     "criteria": [
+      "Names at least one feature that makes a password hard to guess",
+      "Names at least one feature that makes a password easy to remember"
+     ],
+     "width": {
+      "minimum": "Explain at least one characteristic of a strong password (e.g. uses unrelated but memorable words, is not an obvious personal detail) and give an example",
+      "typical": "Explain that a strong password balances memorability and security; describe techniques for creating memorable-but-secure passwords (e.g. three unrelated words); distinguish between strong and weak passwords with reasons",
+      "wider": [
+       "Investigate why common password choices (names, birthdays, 'password') are weak — discuss what information about a person could be used to guess a weak password and why this is a risk",
+       "Explore how passphrase-style passwords (multiple unrelated words) are both more memorable and more secure than complex single-word passwords — explain the reasoning"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students initially assess password strength by complexity (symbols and numbers = strong) rather than by unpredictability. Multiple examples of why personally meaningful information makes passwords guessable — and why random but memorable combinations work — reframe the concept from complexity to unpredictability."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4P09",
+   "kit": "data/technologies/y34_dt_AC9TDI4P09.json",
+   "year": 4,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Processes and production skills",
+   "title": "Personal data risks online",
+   "description": "identify what personal data is stored and shared in their online accounts and discuss any associated risks",
+   "prior": [
+    "AC9TDI2P07"
+   ],
+   "knowledge": "Students can discuss how websites and apps store personal data online (AC9TDI2P07). They know data is stored online. They have not yet identified specifically what data is in their own accounts, how that data forms a digital identity, or systematically discussed the risks associated with that data.",
+   "endpoint": "Students identify personal data stored and shared in their online accounts and discuss risks associated with that data being accessible, visible or misused.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "What personal data is stored in accounts",
+     "checkpoint": "Students can identify examples of personal data stored in at least two accounts they use and state who can access each",
+     "hinge": true,
+     "criteria": [
+      "Names at least two types of personal data in at least one account",
+      "Identifies who can access that data"
+     ],
+     "hinge_reason": "Students who cannot identify what personal data exists in their accounts cannot reason about digital identity formation in N2 or associated risks in N3 — risk reasoning requires knowing what data is there first.",
+     "width": {
+      "minimum": "Name at least two types of personal data stored in one account they use (e.g. school documents in cloud storage, gaming nickname) and state who can see it",
+      "typical": "Identify personal data stored across different account types (school cloud storage, gaming accounts, communication apps); state who can access the data in each (teacher only, all players, public); distinguish between data the user chose to share and data stored automatically",
+      "wider": [
+       "Investigate what information is automatically stored in an account without the user actively entering it (e.g. login times, device used, location) — discuss why this data exists and who can access it",
+       "Compare what data is stored in a school account versus a social/gaming account — discuss why the access levels are different and what that means for privacy"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to think of personal data as only information they deliberately entered. Multiple account types — especially those revealing automatically stored data — help students build a more complete picture of their digital footprint."
+      }
+     ],
+     "related": [
+      "AC9TDI4P08"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Digital identity from online accounts",
+     "checkpoint": "Students can explain how personal data stored across accounts can reveal information about who they are and how they live",
+     "hinge": true,
+     "criteria": [
+      "Explains how a piece of stored data reveals something beyond just the data itself",
+      "Does not limit 'personal data' only to name and address"
+     ],
+     "hinge_reason": "Students who do not understand how data accumulates into a digital identity cannot name specific risks in N3 — 'what could go wrong' requires knowing what information is actually revealed, not just that data is stored.",
+     "width": {
+      "minimum": "Give one example of how personal data stored in an account could tell someone something about the account owner beyond just their name",
+      "typical": "Explain how personal data in accounts (photos, location, habits, nickname, posted content) collectively forms a digital identity that reveals details about a person's life, location and interests",
+      "wider": [
+       "Analyse photographs of themselves, friends or fictional characters and identify what details (location, home, routine) could be inferred from the image — discuss how images are personal data with hidden detail",
+       "Discuss how a gaming nickname that seems anonymous can still reveal information about the player through patterns of play, team membership or in-game communication"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily understand that their name and address are personal data but underestimate how combinations of seemingly neutral data (nickname + playing time + region) build a detailed profile. Multiple examples across different data types build awareness of cumulative identity disclosure."
+      },
+      {
+       "mode": "structured_reasoning",
+       "reason": "The move from 'this data is stored' to 'this data reveals something about me' requires explicit inference reasoning. Students benefit from a scaffold: 'if someone only had this information, what could they work out about me?' — applied across several examples."
+      }
+     ],
+     "related": [
+      "AC9TDI4P07"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Risks associated with personal data online",
+     "checkpoint": "Students can discuss at least two risks associated with personal data stored or shared in online accounts",
+     "hinge": false,
+     "criteria": [
+      "Names at least one specific risk associated with personal data online",
+      "Explains who could be affected by the risk"
+     ],
+     "width": {
+      "minimum": "Name one risk associated with personal data being stored or visible online and explain who might be affected",
+      "typical": "Discuss risks associated with personal data in online accounts — including unwanted access, identity information being visible to unknown people, and data revealing location or habits; explain how these risks affect real users",
+      "wider": [
+       "Discuss how location data shared in online accounts could create safety risks — connect to the scenario of photographs revealing home or school location",
+       "Investigate how data shared for one purpose can create unexpected risks in another context — for example, a gaming account with location data being visible to other players"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who understand risk in one context (e.g. a stranger knowing your address) often miss how the same risk emerges from different data types (e.g. a photo timestamp revealing your school). Multiple risk contexts build a more complete and transferable understanding."
+      }
+     ],
+     "related": [
+      "AC9TDI4P07",
+      "AC9TDI4P08"
+     ]
+    }
+   ]
+  },
+  {
    "code": "AC9TDI6P01",
    "kit": "data/technologies/y56_dt_AC9TDI6P01.json",
    "year": 6,

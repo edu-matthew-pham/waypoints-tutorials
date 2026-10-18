@@ -64,7 +64,14 @@ try {
   assert.match(await page.locator('.tmeta').innerText(), /Years 7–8 The Arts · Music: exploring and responding/);
   assert.equal(await page.locator('meta[name=robots]').getAttribute('content'), 'noindex');
   assert.equal(await page.evaluate(() => getComputedStyle(document.querySelector('.pp .make')).borderRadius), '8px', 'shared pointer.css applies');
-  for (const [p, subj] of [['english/AC9E7LA03/n1', 'english'], ['arts/AC9AMU8E01/n1', 'general'], ['design/AC9TDE8K01/n1', 'engineering'], ['digital-processes/AC9TDI8P04/n1', 'code']]) {
+  // Foundation to Year 10 (19 Oct): Foundation pages, the primary bands, and HASS for Foundation to Year 6.
+  await page.goto(`${root}teach/curriculum/maths/AC9MFN01/n1/`);
+  assert.match(await page.locator('.tmeta').innerText(), /Foundation Maths · Number/);
+  await page.goto(`${root}teach/curriculum/arts/AC9AMU2E01/`);
+  assert.match(await page.locator('.tmeta').innerText(), /Years 1–2 The Arts · Music/);
+  await page.goto(`${root}teach/curriculum/hass/`);
+  assert.match(await page.locator('.lede').innerText(), /Foundation to Year 6 curriculum/);
+  for (const [p, subj] of [['maths/AC9MFN01/n1', 'maths'], ['hass/AC9HS4S01/n1', 'hass'], ['english/AC9E7LA03/n1', 'english'], ['arts/AC9AMU8E01/n1', 'general'], ['design/AC9TDE8K01/n1', 'engineering'], ['digital-processes/AC9TDI8P04/n1', 'code']]) {
     await page.goto(`${root}teach/curriculum/${p}/`); await page.click('a.make');
     await page.waitForFunction((c) => document.querySelector('#text').value.includes(`node: ${c}`), p.split('/').slice(1).join(' '));
     await page.waitForFunction(() => document.querySelector('#problems li.ok'));

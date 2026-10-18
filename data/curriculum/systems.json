@@ -4,6 +4,458 @@
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
+   "code": "AC9TDI2K01",
+   "kit": "data/technologies/y12_dt_AC9TDI2K01.json",
+   "year": 2,
+   "span": 1,
+   "strand": "Digital systems",
+   "title": "Digital systems and components",
+   "description": "identify and explore digital systems and their components for a purpose",
+   "prior": [],
+   "knowledge": "Students can recognise and explore digital systems (hardware and software) for a purpose (AC9TDIFK01). They have identified some hardware and software components used for familiar purposes. They have not yet identified components by name or explained how component combinations enable a system's purpose.",
+   "endpoint": "Students identify digital systems in familiar contexts and explain how components (input, output, storage, processing) work together to serve a purpose.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "What digital systems are",
+     "checkpoint": "Students can identify familiar digital systems (devices) in their home and school environment and name what they are used for",
+     "hinge": false,
+     "criteria": [
+      "Names at least two different digital systems correctly",
+      "States a distinct purpose for each system"
+     ],
+     "width": {
+      "minimum": "Name at least two different digital systems encountered at home or school and state a purpose for each",
+      "typical": "Identify multiple digital systems (tablet, computer, TV, interactive display, camera) in familiar settings; explain how each is used at home or school",
+      "wider": [
+       "Investigate how First Nations Australians in remote communities access and use digital systems for essential services — identifying specific systems and the communities they serve",
+       "Compare digital systems used at school with those used at home — identify which system is used for each purpose and why they may differ"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often conflate the term 'computer' with all digital systems, missing that a TV remote, tablet, and interactive whiteboard are all distinct digital systems. Encountering a range of contexts (home, school, community) helps students build a reliable category for 'digital system' rather than a narrow exemplar."
+      }
+     ],
+     "related": [
+      "AC9TDIFK01",
+      "AC9TDI2P03"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Components of digital systems",
+     "checkpoint": "Students can identify and name components of digital systems — including input devices, output devices and storage",
+     "hinge": true,
+     "criteria": [
+      "Correctly names at least one input and one output component on a digital system",
+      "Explains what each named component does in plain language"
+     ],
+     "hinge_reason": "Component categorisation errors (swapping input/output) propagate directly into Node 3 — students who cannot reliably identify and categorise components cannot explain how they coordinate to serve a purpose.",
+     "width": {
+      "minimum": "Identify and name at least one input and one output component on a familiar digital system; explain what each component does",
+      "typical": "Identify input devices (keyboard, touchpad, camera, microphone), output devices (screen, speakers, printer) and storage on common digital systems; explain the function of each component type",
+      "wider": [
+       "Explore how the same component serves different purposes on different devices — for example how a screen is both output on a laptop and also input (touch) on a tablet",
+       "Investigate a camera on a device: identify it as an input component and explain how it enables different purposes (photos, video calls, scanning)"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Component naming requires accurate recall and correct categorisation (input/output/storage). Students commonly swap input and output. Practice across multiple devices — naming and categorising components repeatedly — builds the precision needed before they can reason about how components combine."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Components working together for a purpose",
+     "checkpoint": "Students can identify and explore how components of a digital system work together to serve a specific purpose",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least two components used in a specific digital system",
+      "Explains how those components work together to achieve the system's purpose"
+     ],
+     "width": {
+      "minimum": "For one familiar digital system, identify the components used and explain how they work together to achieve the system's purpose",
+      "typical": "Explain how components (input, output, processing, storage) work together across different digital systems for different purposes — for example how a camera, screen and storage combine to let you take and keep a photo",
+      "wider": [
+       "Compare how a tablet and a desktop computer achieve the same purpose (e.g. writing a message) using different component combinations — explain why the components differ",
+       "Investigate how digital systems provide communities with services — for example how input, processing and output components combine to allow TV to reach remote communities"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Component identification and purpose identification are component understandings. At this node students must coordinate both simultaneously — identifying which components are active and explaining how their coordination produces the purpose. This is the integration of the descriptor's two demands: 'identify components' and 'for a purpose'."
+      }
+     ],
+     "related": [
+      "AC9TDI2P01",
+      "AC9TDI2P03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI2K02",
+   "kit": "data/technologies/y12_dt_AC9TDI2K02.json",
+   "year": 2,
+   "span": 1,
+   "strand": "Digital systems",
+   "title": "Data as pictures, numbers and words",
+   "description": "represent data as pictures, symbols, numbers and words",
+   "prior": [],
+   "knowledge": "Students can represent data using objects, pictures and symbols (AC9TDIFK02). They have matched physical objects and pictures to what they represent. They have not yet worked with multiple simultaneous representation forms (words, numbers, symbols, pictures) or reasoned about equivalence across forms.",
+   "endpoint": "Students represent the same data using different forms — pictures, symbols, numbers and words — and recognise that different forms can convey equivalent information.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Recognising representation forms",
+     "checkpoint": "Students can identify data represented as pictures, symbols, numbers and words and name which form is being used",
+     "hinge": true,
+     "criteria": [
+      "Correctly identifies at least three representation forms from examples",
+      "States what information each example conveys"
+     ],
+     "hinge_reason": "Without a recognition repertoire for all four representation forms, Node 2 (representing the same data in multiple forms) lacks the raw material — students cannot produce forms they cannot yet reliably identify.",
+     "width": {
+      "minimum": "Given examples of data in different forms, correctly identify each as a picture, symbol, number or word",
+      "typical": "Identify data represented in all four forms across a range of familiar examples (class attendance tally, weather icons, temperature numbers, written labels); explain what information each conveys",
+      "wider": [
+       "Examine First Nations Australians' seasonal calendars where pictures represent connected events and resource availability — identify what data each picture represents and compare to word or number forms of the same information",
+       "Explore how the same phoneme can be represented by different letter combinations in written words — connecting data representation to literacy"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Students need to accumulate a range of examples of each representation form — a single example of 'a number represents data' is not sufficient to build a reliable category. Repeated encounters across varied contexts (weather, calendar, classroom data) build the recognition repertoire."
+      }
+     ],
+     "related": [
+      "AC9TDIFK02"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Representing the same data in different forms",
+     "checkpoint": "Students can represent the same data using more than one form — for example representing a count as a tally, a number and a word",
+     "hinge": true,
+     "criteria": [
+      "Represents one piece of data in at least two distinct forms correctly",
+      "Conveys the same information in both forms — the representation is equivalent, not different data"
+     ],
+     "hinge_reason": "Students who still treat different representation forms as containing different information (rather than equivalent information) cannot reason about why forms are chosen in Node 3 — the equivalence understanding must be present before purpose-of-form reasoning can proceed.",
+     "width": {
+      "minimum": "Represent one piece of data in at least two different forms (e.g. draw a picture and write a number for the same quantity)",
+      "typical": "Represent the same data (e.g. class pet vote results, weather observation, attendance count) in three or more forms — picture, tally/number, word, and symbol — and explain that the forms show the same information",
+      "wider": [
+       "Create a class data display using different representation forms for the same dataset — for example representing favourite foods as a picture graph, a tally chart and a written sentence",
+       "Explore how a tally mark and a digit are both ways to represent numbers — count the same collection using both and compare"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often treat different representation forms as containing different information rather than equivalent information. Encountering the same data in multiple forms across several contexts (not just one) helps build the equivalence understanding — the data is the same, only the representation changes."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Recognising equivalence across forms",
+     "checkpoint": "Students can recognise that different representation forms — pictures, symbols, numbers and words — can convey the same data, and explain why different forms may be used",
+     "hinge": false,
+     "criteria": [
+      "Confirms two different representations of the same data are equivalent",
+      "Gives at least one reason why each representation form might be useful"
+     ],
+     "width": {
+      "minimum": "Given two different representations of the same data (e.g. a picture and a word), confirm they represent the same thing and suggest one reason why each form might be used",
+      "typical": "Compare several representations of the same dataset; explain that the forms are equivalent and give examples of when each form is most useful (e.g. pictures for quick understanding, numbers for precise counting, words for explaining)",
+      "wider": [
+       "Investigate why First Nations Australians use pictures in seasonal calendars rather than words or numbers — discuss what a picture form conveys that words or numbers might not",
+       "Compare how numbers are spelled the same way regardless of accent (spoken form varies, written form is fixed) — connecting representation stability to the purpose of standardised forms"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Reasoning about why different forms are used requires students to think about the purpose of representation, not just recognise forms. Scaffolding the reasoning (who is using it? what do they need to know? which form makes that easiest?) prevents students from treating form choice as arbitrary."
+      }
+     ],
+     "related": [
+      "AC9TDI2P04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4K01",
+   "kit": "data/technologies/y34_dt_AC9TDI4K01.json",
+   "year": 4,
+   "span": 1,
+   "strand": "Digital systems",
+   "title": "Digital systems and peripherals",
+   "description": "explore and describe a range of digital systems and their peripherals for a variety of purposes",
+   "prior": [
+    "AC9TDI2K01"
+   ],
+   "knowledge": "Students can identify and explore digital systems and their components for a purpose (AC9TDI2K01). They can name hardware and software as components of digital systems. They have not yet explored the specific categories of peripherals (input, output, storage) or described how peripherals expand system functionality.",
+   "endpoint": "Students explore and describe a range of digital systems and their peripherals, explaining how different peripherals serve input, output and storage purposes and how they expand what a digital system can do.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Peripherals as categories",
+     "checkpoint": "Students can sort peripherals into input, output and storage categories and give an example of each",
+     "hinge": true,
+     "criteria": [
+      "Correctly places at least two peripherals in each of the three categories",
+      "Explains what input, output and storage each mean in plain language"
+     ],
+     "hinge_reason": "Category confusion between input and output (treating the monitor as 'the computer') propagates into N2 and N3 — students who cannot classify peripherals by data-flow direction cannot reason about what adding a peripheral enables or which peripheral suits a purpose.",
+     "width": {
+      "minimum": "Name at least one example of an input peripheral, one output peripheral, and one storage peripheral; explain the job each category performs",
+      "typical": "Classify a range of familiar peripherals (keyboard, mouse, microphone, camera; monitor, printer, speaker; USB drive) into input, output and storage categories and explain the function of each",
+      "wider": [
+       "Investigate how peripherals used in First Nations community contexts (e.g. GPS devices used by rangers, shared devices in remote schools) are classified and what purposes they serve",
+       "Explore how a touchscreen device combines input and output in a single peripheral — discuss why this blurs the category boundaries"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly conflate input and output or treat the monitor as 'the computer'. More examples across varied peripheral types help students see what defines the category (direction of data flow) rather than memorising a fixed list."
+      }
+     ],
+     "related": [
+      "AC9TDI4K02",
+      "AC9TDI4K03"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Peripherals expand functionality",
+     "checkpoint": "Students can explain how adding a peripheral changes what a digital system can do",
+     "hinge": true,
+     "criteria": [
+      "Names a peripheral and correctly identifies the new capability it adds",
+      "Does not confuse the peripheral itself with the system it connects to"
+     ],
+     "hinge_reason": "Students who cannot explain the causal link (peripheral → new capability) cannot make purposeful peripheral selection decisions in N3 — they revert to guessing or listing familiar peripherals.",
+     "width": {
+      "minimum": "Describe one example of a peripheral being added to a digital system and explain what new capability it gives the system",
+      "typical": "Explain how different peripherals (headset, camera, printer, USB drive) each add a specific capability to a digital system; identify which peripheral would be needed for a given task",
+      "wider": [
+       "Research how 3D printers as output peripherals have changed what schools and designers can produce — compare 3D printing to standard printing as output devices",
+       "Investigate how peripherals for accessibility (e.g. screen readers, switch controllers) expand what a digital system can do for different users"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students need to reason from 'what does this peripheral do?' to 'what can the system now do that it couldn't before?' — a causal reasoning step that benefits from explicit scaffolding rather than assuming students make the connection."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Choosing peripherals for purposes",
+     "checkpoint": "Students can describe which digital system and peripherals are appropriate for a given task and explain why",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one peripheral appropriate for a described task",
+      "Gives a reason for the choice that references the peripheral's function"
+     ],
+     "width": {
+      "minimum": "Given a task (e.g. recording a class presentation), identify the digital system and at least one peripheral needed and explain why they suit the task",
+      "typical": "Explain how different tasks require different combinations of digital systems and peripherals; describe how the same digital system (e.g. a tablet) can serve different purposes depending on which peripherals or features are used",
+      "wider": [
+       "Compare how a student in a city school and a student in a remote community might use different digital systems and peripherals to complete the same task — discuss what affects those choices",
+       "Explore how digital systems used in scientific data collection (e.g. sensors, cameras in field research) combine specialist peripherals for specific purposes"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often anchor on a single device type (e.g. 'you need a computer'). Exploring varied task contexts — recording, presenting, communicating, storing — surfaces the idea that purpose drives peripheral selection."
+      },
+      {
+       "mode": "integration",
+       "reason": "This node integrates the category knowledge from node 1 and the functionality reasoning from node 2 into a purposeful selection decision — the components come together in a task-driven context."
+      }
+     ],
+     "related": [
+      "AC9TDI4P01",
+      "AC9TDI4P05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4K02",
+   "kit": "data/technologies/y34_dt_AC9TDI4K02.json",
+   "year": 4,
+   "span": 1,
+   "strand": "Digital systems",
+   "title": "Transmitting data between systems",
+   "description": "explore transmitting different types of data between digital systems",
+   "prior": [
+    "AC9TDI2K01",
+    "AC9TDI2K02"
+   ],
+   "knowledge": "Students can identify digital systems and represent data as pictures, symbols, numbers and words (AC9TDI2K01, AC9TDI2K02). They have not yet explored how data moves between digital systems or considered the types of data that can be transmitted.",
+   "endpoint": "Students explore how different types of data (text, audio, video, images) can be transmitted between digital systems, and describe examples of data transmission in everyday contexts.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Data types that can be transmitted",
+     "checkpoint": "Students can identify the different types of data that digital systems can transmit and give an example of each",
+     "hinge": true,
+     "criteria": [
+      "Names at least two distinct data types correctly",
+      "Matches each type to a concrete real-world transmission example"
+     ],
+     "hinge_reason": "Students who cannot name and categorise data types cannot describe what is being transmitted in N2 — descriptions collapse to 'stuff going between devices' without conceptual grounding.",
+     "width": {
+      "minimum": "Name at least two types of data (e.g. text, audio, video, images) that can be sent between digital systems and give one example of each type being transmitted",
+      "typical": "Identify text, audio, video and image as data types that can be transmitted; provide concrete examples of each (e.g. messaging, streaming music, video calls, photo sharing)",
+      "wider": [
+       "Investigate what types of data are transmitted when a First Nations community ranger sends location data via GPS — discuss what data types are involved and how they combine",
+       "Explore how sensor data (e.g. temperature, movement) is a type of data that can be transmitted — compare to more familiar types like images and text"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDI4K03"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "How data moves between systems",
+     "checkpoint": "Students can describe what happens when data is transmitted between digital systems — that data travels from one system to another across a connection",
+     "hinge": false,
+     "criteria": [
+      "Identifies sender and receiver in a described data transmission",
+      "Names the type of data being transmitted"
+     ],
+     "width": {
+      "minimum": "Describe one example of data being sent from one digital system to another and identify the sender, data type and receiver",
+      "typical": "Describe several examples of data transmission (streaming music on a smartphone, making a video call, sending a file) identifying what data moves from which system to which; recognise that a network or connection is needed",
+      "wider": [
+       "Explore how video call data can be transmitted from a remote First Nations community to a city location — investigate how 3G network limitations affect the quality and reliability of video data transmission",
+       "Investigate how data is transmitted when downloading a game or app — discuss the path data takes between a server and the student's device"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often think of data transmission only in terms of internet browsing. Exploring diverse examples — video calls, music streaming, file sharing — builds a more generalised understanding of data moving between systems rather than memorising one context."
+      }
+     ],
+     "related": [
+      "AC9TDI4K01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9TDI4K03",
+   "kit": "data/technologies/y34_dt_AC9TDI4K03.json",
+   "year": 4,
+   "span": 1,
+   "strand": "Digital systems",
+   "title": "Data types and representations",
+   "description": "recognise different types of data and explore how the same data can be represented differently depending on the purpose",
+   "prior": [
+    "AC9TDI2K02"
+   ],
+   "knowledge": "Students can represent data using pictures, symbols, numbers and words (AC9TDI2K02). They have explored data as objects and symbols at Foundation level. They have not yet explored how the same data can be represented in multiple ways or why one representation might suit a purpose better than another.",
+   "endpoint": "Students recognise different types of data (numbers, text, symbols, images) and explain how the same data can be represented in different ways, giving reasons why particular representations suit particular purposes.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Types of data",
+     "checkpoint": "Students can recognise and name different types of data — numbers, text, symbols and images — and give examples of each",
+     "hinge": false,
+     "criteria": [
+      "Names at least three distinct types of data correctly",
+      "Matches each type to at least one concrete example"
+     ],
+     "width": {
+      "minimum": "Name and give one example each of at least three types of data (e.g. numbers, letters, symbols, pictures)",
+      "typical": "Identify numbers, text, symbols and images as distinct data types; describe how each is used in familiar digital and non-digital contexts (e.g. numerals in a calculator, letters in a message, icons on a phone)",
+      "wider": [
+       "Investigate how First Nations Australian rock paintings use images to encode knowledge about plants and animals — discuss how images are a data type that carries structured information",
+       "Explore emoji as a data type — discuss whether they are symbols, images or a distinct category, and what kinds of meaning they can and cannot convey"
+      ]
+     },
+     "modes": [],
+     "related": [
+      "AC9TDI4K02"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Multiple representations of the same data",
+     "checkpoint": "Students can give examples of the same data shown in different ways and explain that different representations exist for the same underlying information",
+     "hinge": true,
+     "criteria": [
+      "Identifies two different representations of the same data",
+      "States that both representations carry the same underlying information"
+     ],
+     "hinge_reason": "Students who only know that representations exist but treat them as equivalent (no better/worse) cannot engage with N3's purpose-fitness reasoning — the N3 question ('why this representation?') is meaningless if students think all representations are interchangeable.",
+     "width": {
+      "minimum": "Give one example of the same data represented in two different ways (e.g. the number 4 as '4', 'four', and 'IV') and state that both represent the same value",
+      "typical": "Explain several examples of the same data in different representations (numerals vs words vs tally vs Roman numerals; 'stop' vs stop sign vs hand icon); recognise that representations can use different formats to convey the same information",
+      "wider": [
+       "Compare how the same geographic location data can be represented as coordinates, a street address, a place name and a map pin — investigate which representation suits which purpose",
+       "Explore how the Kimberley cave paintings encode ethnobotanical knowledge — compare how the same information about plant use might be represented in a modern classification system vs an image-based system"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students easily understand one representation pair but often think the difference is about correctness rather than purpose-fitness. Multiple examples across different data types (numeric, symbolic, iconic) help students see that representation is a design choice, not a matter of right and wrong."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Why representation depends on purpose",
+     "checkpoint": "Students can explain why some representations suit a purpose better than others, with reference to a specific example",
+     "hinge": false,
+     "criteria": [
+      "States a reason why a particular representation suits a given purpose",
+      "Does not simply state that one representation is 'better' without reference to the context or audience"
+     ],
+     "width": {
+      "minimum": "Given two representations of the same data, state which is better suited to a given purpose and give one reason",
+      "typical": "Explain why different representations suit different purposes across multiple examples (e.g. numerals better for calculation than words; an icon better for a multilingual audience than a text label); apply this reasoning to a new example",
+      "wider": [
+       "Investigate how data about a person's health or location might be represented differently for a doctor, a researcher and the person themselves — discuss how purpose shapes the representation chosen",
+       "Explore how First Nations Australian knowledge systems use image-based representations of plant and animal data — discuss what kinds of knowledge are well-suited to image representation versus text or number"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The jump from 'there are different representations' to 'this representation suits this purpose' requires explicit reasoning about the relationship between format and use. Students need a scaffold for reasoning about purpose-fitness, not just example recall."
+      },
+      {
+       "mode": "context_breadth",
+       "reason": "The 'better for purpose' concept only becomes generalisable when students encounter it across varied data types and audiences. Single-example exposure risks students treating one pair as the rule."
+      }
+     ],
+     "related": [
+      "AC9TDI4P06"
+     ]
+    }
+   ]
+  },
+  {
    "code": "AC9TDI6K01",
    "kit": "data/technologies/y56_dt_AC9TDI6K01.json",
    "year": 6,

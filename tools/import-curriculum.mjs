@@ -1,6 +1,6 @@
-// Import a subject's Years 7–10 descriptors from a waypoints-kit checkout into data/curriculum/<subject>.json,
-// for the curriculum map (tools/curriculum-map.mjs). Earlier-year descriptors named as prior knowledge come too,
-// so the map can show what Year 7 builds on.
+// Import a subject's Foundation to Year 10 descriptors from a waypoints-kit checkout into data/curriculum/<subject>.json,
+// for the teacher pointer pages, Create's node picker and the curriculum map (tools/curriculum-map.mjs; Years 7–10,
+// plus the earlier descriptors they name as prior knowledge). Foundation is year 0.
 //
 //   node tools/import-curriculum.mjs <path to waypoints-kit> <subject>   (maths, science, systems, history, english, geography,
 //   civics, economics, hpe, arts, languages, design, digital-processes: SUBJECTS below)
@@ -23,6 +23,7 @@ const [kit, subject = 'maths'] = process.argv.slice(2);
 const SUBJECTS = {
   maths: { prefix: 'AC9M' }, science: { prefix: 'AC9S' }, history: { prefix: 'AC9HH' }, english: { prefix: 'AC9E' },
   geography: { prefix: 'AC9HG' }, civics: { prefix: 'AC9HC' }, economics: { prefix: 'AC9HE' },
+  hass: { prefix: 'AC9HS' },   // Humanities and Social Sciences, Foundation to Year 6 (Years 7–10 split into History, Geography, Civics, Economics)
   hpe: { prefix: 'AC9HP', span: 2 }, arts: { prefix: 'AC9A', span: 2 }, languages: { prefix: 'AC9L', span: 2 },
   systems: { prefix: 'AC9TDI', kit: 'technologies', only: /^AC9TDI\d+K/ },          // Digital systems: Knowledge and understanding (the map's subject)
   'digital-processes': { prefix: 'AC9TDI', kit: 'technologies', only: /^AC9TDI\d+P/, span: 2 },   // Digital Technologies processes and production skills
@@ -33,7 +34,8 @@ const { prefix: PREFIX, kit: KITDIR, only: ONLY } = SUBJECTS[subject];
 const KIT = KITDIR || subject;   // the kit's folder
 const CODE = /AC9[A-Z]{1,4}\d{1,2}[A-Z]{1,3}\d{2}/g;
 const MODES = ['consolidation', 'context_breadth', 'repertoire_building', 'structured_reasoning', 'integration'];
-const yearOf = (c) => Number(c.match(/^AC9[A-Z]+?(\d{1,2})/)?.[1]);
+// Foundation codes have F where the year goes (AC9MFN04, AC9EFLA01): year 0.
+const yearOf = (c) => { const m = String(c).match(/^AC9[A-Z]+?(F(?=[A-Z0-9])|\d{1,2}(?=[A-Z]))/); return m ? (m[1] === 'F' ? 0 : Number(m[1])) : NaN; };
 const truthy = (v) => v === true || v === 'True' || v === 'true';
 const list = (v) => (Array.isArray(v) ? v : typeof v === 'string' && v.startsWith('[') ? JSON.parse(v.replace(/'/g, '"').replace(/\bNone\b/g, 'null')) : []);
 
@@ -80,25 +82,27 @@ const strandOf = (s, code) => {
   }
   if (subject === 'history') return /^AC9HH\d+S/.test(code) ? 'Historical skills' : 'Knowledge and understanding';
   // The other subjects take their strand from the code: the kit's strand labels vary between files.
-  const tail = code.match(/^AC9([A-Z]+?)\d{1,2}([A-Z]{1,3})\d{2,3}$/) || [];
-  const [, area, letters] = tail;
+  const tail = code.match(/^AC9([A-Z]+?)(?:\d{1,2}|F)([A-Z]{0,3})\d{2,3}$/) || [];
+  const [, area = '', letters = ''] = tail;
+  const kitStrand = String(s || '').split(' — ')[0].trim();
   if (subject === 'english') return { LA: 'Language', LE: 'Literature', LY: 'Literacy' }[letters] || s;
-  if (['geography', 'civics', 'economics'].includes(subject)) return letters === 'S' ? 'Skills' : 'Knowledge and understanding';
+  if (['geography', 'civics', 'economics', 'hass'].includes(subject)) return letters === 'S' ? 'Skills' : 'Knowledge and understanding';
   if (subject === 'hpe') return letters === 'M' ? 'Movement and physical activity' : 'Personal, social and community health';
   if (subject === 'arts') return `${{ ADA: 'Dance', ADR: 'Drama', AMA: 'Media arts', AMU: 'Music', AVA: 'Visual arts' }[area] || area}: ${{ E: 'exploring and responding', D: 'developing practices and skills', C: 'creating and making', P: 'presenting and performing' }[letters] || s}`;
-  if (subject === 'languages') return `${area === 'LCH' ? 'Background speakers' : 'Second language'}${letters.startsWith('E') ? ', from Year 7' : ', F–10'}: ${letters.endsWith('C') ? 'communicating' : 'understanding'}`;
+  if (subject === 'languages') return `${area === 'LCH' ? 'Background speakers' : 'Second language'}${letters.startsWith('E') ? ', from Year 7' : ', F–10'}: ${letters ? (letters.endsWith('C') ? 'communicating' : 'understanding') : kitStrand.toLowerCase() || 'all strands'}`;
   if (subject === 'design') return letters === 'K' ? 'Knowledge and understanding' : 'Processes and production skills';
   if (subject === 'digital-processes') return 'Processes and production skills';
   if (subject === 'systems') return SYS[code.match(/(\d+)K(\d\d)$/)?.slice(1).join('K')] || 'Digital systems';
+  if (subject === 'maths') { const m = { N: 'Number', A: 'Algebra', M: 'Measurement', SP: 'Space', ST: 'Statistics', P: 'Probability' }[letters]; if (m) return m; }
   for (const n of ['Number', 'Algebra', 'Measurement', 'Space', 'Statistics', 'Probability']) if (k.startsWith(n.toLowerCase())) return n;
   return s;
 };
 // Science as a human endeavour and Science inquiry are written for two years at a time (7H01 is Years 7–8).
-const spanOf = (code) => (SUBJECTS[subject].span || (subject === 'science' && /^AC9S\d+[HI]\d/.test(code) ? 2 : 1));
+const spanOf = (code) => (yearOf(code) === 0 ? 1 : SUBJECTS[subject].span || (subject === 'science' && /^AC9S\d+[HI]\d/.test(code) ? 2 : 1));
 // A two-year band as text: science's H and I descriptors start at their code year (7H01 is Years 7–8); the banded
 // subjects end at it (Arts AC9AMU8E01 is Years 7–8).
 const bandOf = (c) => { const y = yearOf(c), sp = spanOf(c); return subject === 'science' ? `${y}–${y + sp - 1}` : `${y - sp + 1}–${y}`; };
-const want = [...all.keys()].filter((c) => yearOf(c) >= 7 && yearOf(c) <= 10);
+const want = [...all.keys()].filter((c) => yearOf(c) >= 0 && yearOf(c) <= 10);
 const prior = (s) => [...new Set(String(s.prior_knowledge || '').match(CODE) || [])].filter((c) => c !== s.code);
 for (const c of [...want]) for (const p of prior(all.get(c))) if (!want.includes(p) && all.has(p)) want.push(p);
 
@@ -130,4 +134,4 @@ writeFileSync(join('data', 'curriculum', `${subject}.json`), JSON.stringify({
   subject, source, note: 'Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.',
   descriptors: out,
 }, null, 1) + '\n');
-console.log(`data/curriculum/${subject}.json: ${out.filter((d) => d.year >= 7).length} Years 7–10 descriptors, ${out.filter((d) => d.year < 7).length} earlier ones they build on (${source})`);
+console.log(`data/curriculum/${subject}.json: ${out.filter((d) => d.year >= 7).length} Years 7–10 descriptors, ${out.filter((d) => d.year < 7).length} Foundation to Year 6 (${source})`);

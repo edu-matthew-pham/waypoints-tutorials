@@ -4,6 +4,779 @@
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
+   "code": "AC9SFH01",
+   "kit": "data/science/yf_science_AC9SFH01.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Human endeavour",
+   "title": "How people observe and question",
+   "description": "explore the ways people make and use observations and questions to learn about the natural world",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed.",
+   "endpoint": "Students explore how people — including scientists, First Nations Australians and themselves — use their senses and tools to make observations, and use questions to guide their learning about the natural world.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "People use observations and questions to learn about the natural world",
+     "checkpoint": "Students can describe at least two ways people make observations and explain that scientists (and others) ask questions about what they observe.",
+     "hinge": false,
+     "criteria": [
+      "Describes at least two ways people make observations (using senses and/or tools)",
+      "Gives one example of a question a scientist or person might ask about nature"
+     ],
+     "width": {
+      "minimum": "Students describe two ways people make observations and give one example of a question a scientist or person might ask.",
+      "typical": "Students use senses to make observations; explore how scientists use both senses and equipment; view examples of observations (rock paintings, photographs, drawings, reports); engage with stories about scientists like Jane Goodall or Joseph Banks; and notice how they make observations and ask questions.",
+      "wider": [
+       "Explore how First Nations Australians gain knowledge about the land and its resources through observation — examining observation as a knowledge-building practice",
+       "Interact with stories or documentaries about scientists and notice the ways they make and record observations",
+       "Watch an age-appropriate documentary and notice how scientists, engineers and citizen scientists ask questions — then pose their own questions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "First Nations land observation knowledge and documentary-style scientist stories provide culturally rich and varied contexts for the concept that observation and questioning are universal knowledge-building practices — not just school science activities."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9SFI01",
+   "kit": "data/science/yf_science_AC9SFI01.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Inquiry",
+   "title": "Questioning and predicting",
+   "description": "pose questions and make predictions based on experiences",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed.",
+   "endpoint": "Students pose simple questions about observed objects and phenomena and make predictions grounded in their personal experiences.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Questions and predictions come from experience",
+     "checkpoint": "Students can pose at least one question about an observed object or phenomenon and make one prediction based on their personal experience.",
+     "hinge": false,
+     "criteria": [
+      "Poses at least one question about an observed object or phenomenon",
+      "Makes a prediction and can say what experience it is based on"
+     ],
+     "width": {
+      "minimum": "Students pose one question about an observed object or phenomenon and make one prediction, explaining what experience it is based on.",
+      "typical": "Students pose questions about everyday objects, materials and living things; make predictions before field work about what they will observe; make predictions about object movement; and explain what experience their prediction is based on.",
+      "wider": [
+       "Pose questions about plant parts: 'What part of a plant is broccoli?'",
+       "Make predictions about how an unusually shaped object (egg, hexagonal block) might move down a slope — connecting shape observation to movement prediction",
+       "Make predictions about which plants and animals they might observe in the school grounds before field work"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9SFI02",
+   "kit": "data/science/yf_science_AC9SFI02.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Inquiry",
+   "title": "Investigating safely and observing",
+   "description": "engage in investigations safely and make observations using their senses",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed.",
+   "endpoint": "Students engage in investigations following basic safety rules, make observations using appropriate senses and simple tools, and record observations in basic formats.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Investigations are conducted safely using the senses",
+     "checkpoint": "Students can follow basic safety rules for investigations, make observations using at least three senses, and explain why we do not use taste to make science observations.",
+     "hinge": false,
+     "criteria": [
+      "Follows at least two named safety rules during an investigation",
+      "Makes observations using at least three senses and explains why taste is not used in science"
+     ],
+     "width": {
+      "minimum": "Students follow at least two safety rules during an investigation and make observations using at least three senses.",
+      "typical": "Students discuss and follow safety rules (sun safe, no running, no tasting, following teacher instructions); explain safety considerations for touch, smell, sight and hearing; use tools (binoculars, magnifying glasses, digital cameras) to enhance observations; and record observations using numbers, dots, drawings, voice recordings or photos.",
+      "wider": [
+       "Explore safety considerations for each sense — why we do not use taste in science investigations",
+       "Use magnifying glasses and digital cameras to observe plant and animal features in greater detail",
+       "Record observations using multiple formats: numbers, dots, drawings, voice recordings, digital photography"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9SFI03",
+   "kit": "data/science/yf_science_AC9SFI03.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Inquiry",
+   "title": "Representing observations and identifying patterns",
+   "description": "represent observations in provided templates and identify patterns with guidance",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed.",
+   "endpoint": "Students represent observations in provided templates (tables, graphic organisers, displays) and identify simple patterns in sorted data with teacher guidance.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Observations are represented in provided formats",
+     "checkpoint": "Students can use a provided table or graphic organiser to record or sort observations, and contribute to a shared display.",
+     "hinge": true,
+     "criteria": [
+      "Uses a provided template or graphic organiser to record or sort at least two observations",
+      "Contributes to a class display of sorted observations"
+     ],
+     "hinge_reason": "Node 2 requires students to identify patterns in sorted data — but if students cannot use a provided template to record or sort observations, they have no organised data in which to notice patterns. The pattern-identification task in Node 2 is only legible if Node 1 produces a usable representation.",
+     "width": {
+      "minimum": "Students record observations in one provided format and contribute one observation to a shared class display.",
+      "typical": "Students use provided tables and graphic organisers to sort images of plants and animals by features; collaborate on floor or wall displays linking material images to object images; and represent observations through sorting, drawing and labelling in provided templates.",
+      "wider": [
+       "Collaborate to create a floor or wall display linking material samples to images of objects made from them",
+       "Sort images of plants and animals into groups using a provided graphic organiser",
+       "Identify common features of familiar animal groups (fish, birds, reptiles) using a provided template"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Students at Foundation need exposure to multiple representation formats — tables, graphic organisers, floor/wall displays — before they can reliably select and use one. Building a repertoire of recording forms prepares them to represent data in the format that surfaces patterns most clearly."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Simple patterns are identified with guidance",
+     "checkpoint": "Students can identify a simple pattern in sorted observations with teacher guidance.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one simple pattern in a set of sorted observations with guidance"
+     ],
+     "width": {
+      "minimum": "Students identify one simple pattern in a set of sorted observations with guidance.",
+      "typical": "Students identify patterns of movement in objects (balls roll in a straight line when pushed); identify patterns in material uses (wood, plastic, metal, glass objects); and name a simple repeating feature in a sorted group.",
+      "wider": [
+       "Identify patterns of movement in objects — balls roll, cars move on wheels — examining what the pattern tells us",
+       "Identify patterns in uses of everyday objects made of similar materials",
+       "Connect identified patterns to predictions — 'if this is the pattern, what might happen next?'"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9SFI04",
+   "kit": "data/science/yf_science_AC9SFI04.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Inquiry",
+   "title": "Comparing observations with predictions",
+   "description": "compare observations with predictions with guidance",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed.",
+   "endpoint": "Students revisit predictions after observing, compare them with what they actually observed, and — with guidance — identify whether they matched or differed.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Predictions are compared with observations",
+     "checkpoint": "Students can revisit their prediction after an observation and say whether it matched, with teacher guidance.",
+     "hinge": false,
+     "criteria": [
+      "States whether their prediction matched their observation",
+      "Describes at least one way the observation was the same as or different from the prediction"
+     ],
+     "width": {
+      "minimum": "Students compare one prediction with one observation and state whether they matched.",
+      "typical": "Students revisit predictions and with guidance identify whether they matched observations; use a provided table to draw or dictate their prediction and observation; compare field work observations with pre-field predictions; and describe what was the same and what was different.",
+      "wider": [
+       "Use a provided table to draw or dictate prediction and observation side by side — comparing explicitly",
+       "Revisit predictions about plant or animal field work observations and compare with what was actually found",
+       "Explore what to do when a prediction does not match — 'what can we do to find out more?'"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9SFI05",
+   "kit": "data/science/yf_science_AC9SFI05.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Inquiry",
+   "title": "Sharing questions, predictions and observations",
+   "description": "share questions, predictions, observations and ideas with others",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed.",
+   "endpoint": "Students share their science questions, predictions, observations and ideas with others using a range of forms — spoken, drawn, modelled, performed or displayed.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Science ideas are shared with others in varied forms",
+     "checkpoint": "Students can share at least one science observation or idea with others using a chosen form (spoken, drawn, modelled, role-played or displayed).",
+     "hinge": false,
+     "criteria": [
+      "Shares at least one science observation or idea with others",
+      "Uses at least one form beyond verbal — drawn, modelled, role-played or displayed"
+     ],
+     "width": {
+      "minimum": "Students share one science observation or idea with others using at least one form.",
+      "typical": "Students share questions, predictions and observations through discussions and circle groups; recount experiences observing nature; show or describe how objects move; role-play how scientists use equipment; represent plant and animal features using materials; and communicate using posters, collages, digital displays, drawings or storyboards.",
+      "wider": [
+       "Acknowledge and explore First Nations Australians' ways of communicating information about anatomical features of plants and animals",
+       "Role-play or show how people use different equipment to make scientific observations",
+       "Represent external features of plants and animals using blocks, modelling clay, craft materials or paper"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Foundation students sharing science ideas benefit from multiple communication forms — spoken, drawn, modelled, role-played, displayed. First Nations communication forms provide a culturally rich direction that expands what counts as valid scientific communication at this level."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9SFU01",
+   "kit": "data/science/yf_science_AC9SFU01.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Biological",
+   "title": "External features of plants and animals",
+   "description": "observe external features of plants and animals and describe ways they can be grouped based on these features",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed. Students bring everyday observations of living things from home and community contexts.",
+   "endpoint": "Students observe and name external features of plants and animals, describe similarities and differences between organisms, and sort living things into groups based on observable external features.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Plants and animals have observable external features",
+     "checkpoint": "Students can observe and name external features of plants (roots, stem, leaves, flowers, fruit, seeds) and animals (eyes, body covering, legs, wings) using their senses and simple tools.",
+     "hinge": true,
+     "criteria": [
+      "Names at least two external features of a plant and two of an animal",
+      "Recognises humans as animals and can describe at least two human external features"
+     ],
+     "hinge_reason": "Node 2 (grouping by external features) requires students to apply feature observation as a sorting criterion. Students who cannot name and identify external features of plants and animals have no vocabulary or observational basis for constructing or explaining a grouping rule.",
+     "width": {
+      "minimum": "Students name at least two external features of a plant and two of an animal using observation.",
+      "typical": "Students use magnifying glasses or digital cameras to observe and name features of plants and animals; identify humans as animals and describe external features of humans; compare features across organisms; and describe how features look and feel.",
+      "wider": [
+       "Observe fruits and vegetables and identify them as parts of plants — roots, flowers, fruits or leaves",
+       "Recognise First Nations Australians' use of observable features to group living things — examining cultural classification knowledge",
+       "Explore how First Nations Australians' observations of external features are replicated in traditional dance"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Naming external features across a range of organisms — including fruits and vegetables as plant parts, and First Nations classification practices — builds the observation vocabulary and range that Node 2 sorting requires. Width investment at this node serves both the cascade risk and the cultural enrichment opportunity."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Living things can be grouped by external features",
+     "checkpoint": "Students can sort plants and animals into groups based on shared external features and explain the grouping rule they used.",
+     "hinge": false,
+     "criteria": [
+      "Sorts a collection of living things into groups and states the feature used",
+      "Identifies at least one shared feature within a named animal group"
+     ],
+     "width": {
+      "minimum": "Students sort a collection of plants or animals into two groups and explain one feature they used to sort them.",
+      "typical": "Students sort collections of model animals using different feature-based grouping strategies; identify common features within familiar animal groups (fish, birds, reptiles); describe their grouping rule; and recognise that the same collection can be sorted in different ways.",
+      "wider": [
+       "Sort collections of model animals and explain different grouping strategies — examining that multiple valid groupings are possible",
+       "Identify common features of familiar animal groups such as fish, birds or reptiles",
+       "Using a digital camera to collect plant and animal feature images on a nature scavenger hunt"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9SFU02",
+   "kit": "data/science/yf_science_AC9SFU02.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Physical",
+   "title": "How objects move",
+   "description": "describe how objects move and how factors including their size, shape or material influence their movement",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed. Students bring everyday experience of moving objects.",
+   "endpoint": "Students describe different ways objects move, observe how size, shape and material affect movement, and make comparisons between objects based on how they move.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Objects move in different ways",
+     "checkpoint": "Students can observe and describe different types of object movement (roll, slide, bounce, spin, swing) and group toys or objects by their movement type.",
+     "hinge": true,
+     "criteria": [
+      "Describes at least three different ways objects can move",
+      "Groups at least two objects by movement type and explains the grouping"
+     ],
+     "hinge_reason": "Node 2 asks students to compare how factors (size, shape, material) affect movement — a comparison that requires movement vocabulary and prior observation of movement types. Students who cannot describe different movement types have no referent for 'how movement changed' when a factor is varied.",
+     "width": {
+      "minimum": "Students describe at least three different ways objects can move and give one example of each.",
+      "typical": "Students observe how toys move; describe movement types (roll, slide, bounce, spin); group toys by movement type; describe unusually shaped objects (eggs, tubes) and predict how they might move; and explain what they observe.",
+      "wider": [
+       "Explore how the size and shape of traditional instructive toys used by First Nations Australians influence their movement",
+       "Observe and describe ways unusually shaped objects (blocks, tubes, eggs) move when rolled down a slope",
+       "Group toys based on their movement and explain the grouping"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Observing and naming multiple movement types (roll, slide, bounce, spin, swing) across varied objects — including First Nations instructive toys — builds the vocabulary and observation range needed to describe how factors alter movement in Node 2."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Size, shape and material affect how objects move",
+     "checkpoint": "Students can compare how different-sized, shaped or material objects move and describe at least one factor that affects movement.",
+     "hinge": false,
+     "criteria": [
+      "Compares two objects and describes how at least one factor (size, shape or material) affects how they move"
+     ],
+     "width": {
+      "minimum": "Students compare two objects and describe how one factor (size, shape or material) affects how they move.",
+      "typical": "Students compare different-sized similar-shaped objects (tennis balls, golf balls, marbles); explore how material affects movement (plastic, foam, cloth, rubber balls); observe how object shape affects rolling or bouncing; and explain the difference they observe.",
+      "wider": [
+       "Compare how different-sized similar-shaped objects (tennis, golf, marble, basketball) roll and bounce",
+       "Explore how the material a ball is made from affects movement on a surface",
+       "Predict how an unusually shaped object such as an egg or hexagonal block might move down a slope then observe"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9SFU03",
+   "kit": "data/science/yf_science_AC9SFU03.json",
+   "year": 0,
+   "span": 1,
+   "strand": "Chemical",
+   "title": "Materials and their properties",
+   "description": "recognise that objects can be composed of different materials and describe the observable properties of those materials",
+   "prior": [],
+   "knowledge": "No formal prior science learning assumed. Students bring everyday experience of handling objects and materials.",
+   "endpoint": "Students recognise that objects are made of materials, identify the material(s) an object is made from, and describe observable properties of materials using appropriate vocabulary.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Objects are made of materials",
+     "checkpoint": "Students can identify the material an object is made of and recognise that some objects are made of more than one material.",
+     "hinge": true,
+     "criteria": [
+      "Identifies the material of at least three objects",
+      "Names at least one object made of more than one material and explains why"
+     ],
+     "hinge_reason": "Node 2 (describing and sorting materials by observable properties) requires students to correctly identify what material an object is made of before they can describe that material's properties. Students who conflate the object with the material (e.g. 'the cup' rather than 'plastic') cannot direct their property observations to the right referent.",
+     "width": {
+      "minimum": "Students identify the material of at least three objects and name at least one object made of more than one material.",
+      "typical": "Students observe and manipulate objects to identify their materials; recognise that some objects are made of more than one material type; use digital cameras on a materials scavenger hunt; and suggest why different parts of everyday objects (saucepan, clothing) are made from different materials.",
+      "wider": [
+       "Investigate how First Nations Australians make utensils for different purposes by combining different materials — examining purposeful multi-material design",
+       "Use a digital camera to collect images of objects on a materials scavenger hunt",
+       "Suggest why different parts of everyday objects (saucepan handle vs base, clothing layers) are made from different materials"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The object-material distinction — that objects are made of materials, not that they are those materials — is the conceptual move this node must make explicit. First Nations multi-material utensil examples provide a culturally grounded context in which the distinction between the object's purpose and the material's properties is visible."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Materials have observable properties",
+     "checkpoint": "Students can describe observable properties of materials using appropriate vocabulary (colour, hardness, texture, flexibility) and sort materials by those properties.",
+     "hinge": false,
+     "criteria": [
+      "Describes at least two observable properties of each of three different materials",
+      "Sorts materials into groups by a named property and explains the rule"
+     ],
+     "width": {
+      "minimum": "Students describe at least two observable properties of each of three materials using appropriate vocabulary.",
+      "typical": "Students sort and group materials by properties (colour, hardness, texture, flexibility); create displays naming materials and exploring property language; describe and compare properties across materials; and recognise that tools like magnifying glasses enable more-detailed observations.",
+      "wider": [
+       "Create a display of different materials, naming each and exploring language to describe properties",
+       "Sort materials by multiple properties — examining that materials can be grouped in different ways",
+       "Recognise that magnifying glasses enable more-detailed observations of material surfaces and textures"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9S1H01",
+   "kit": "data/science/y1_science_AC9S1H01.json",
+   "year": 1,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Human endeavour",
+   "title": "Science in daily life",
+   "description": "describe how people use science in their daily lives, including using patterns to make scientific predictions",
+   "prior": [],
+   "knowledge": "Students have not yet examined science as a human activity used in daily life or connected the idea of patterns to prediction.",
+   "endpoint": "Students describe examples of how people — including themselves, community members and First Nations Australians — use science knowledge and observed patterns to make decisions and predictions in everyday life.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "People use science knowledge in everyday decisions",
+     "checkpoint": "Students can describe at least two examples of how people use science knowledge in their daily lives, explaining what knowledge is being used and why.",
+     "hinge": true,
+     "criteria": [
+      "Describes two examples of people using science knowledge in daily life",
+      "Identifies the science knowledge being used in each example"
+     ],
+     "hinge_reason": "N2's pattern-based prediction concept requires students to have first established that people use science knowledge in daily life — without this foundation, connecting patterns to prediction in N2 lacks meaningful grounding.",
+     "width": {
+      "minimum": "Students describe two examples of people using science knowledge in daily life, identifying the science knowledge used in each.",
+      "typical": "Students identify and describe how farmers, gardeners, ecologists, engineers and families use science knowledge in daily decisions — plant care, weather planning, force use in cooking and tools, habitat design — and connect these examples to specific science concepts.",
+      "wider": [
+       "Learning from farmers, bush care volunteers, gardeners or nursery owners about how they observe plant and animal needs and design habitats — examining professional science use",
+       "Investigating how First Nations Australians use science to meet needs including food, water supply and shelter",
+       "Exploring how engineers use knowledge of forces to create playground equipment or toys — connecting force concepts to design (AC9S1U03)"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 2,
+     "label": "Patterns help people make scientific predictions",
+     "checkpoint": "Students can describe how observing patterns in nature (weather, seasons, animal behaviour) allows people to make predictions that guide decisions.",
+     "hinge": false,
+     "criteria": [
+      "Describes one pattern in nature",
+      "Explains how observing that pattern helps people make a prediction or decision"
+     ],
+     "width": {
+      "minimum": "Students describe one pattern in nature and one prediction that people make based on that pattern.",
+      "typical": "Students describe multiple examples of pattern-based prediction — weather forecasting, seasonal resource gathering, animal behaviour prediction — and explain how the pattern is observed and used to make the prediction.",
+      "wider": [
+       "Recognising how First Nations Australians use changes in the landscape and sky to answer questions about when to gather certain resources — examining long-term observational pattern knowledge",
+       "Sharing examples of how students have used science knowledge at home — weather forecasts, seasonal clothing, observing weather patterns before family events",
+       "Learning from local ecologists or wildlife carers about observing animal behaviour patterns to design habitat supports"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "First Nations pattern-based resource timing and personal home examples provide culturally rich and personally connected directions. Encountering pattern-based prediction across multiple contexts — ecological, cultural, domestic — builds a more complete and generalisable model."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S1I01",
+   "kit": "data/science/y1_science_AC9S1I01.json",
+   "year": 1,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Inquiry",
+   "title": "Questioning and predicting",
+   "description": "pose questions to explore observed simple patterns and relationships and make predictions based on experiences",
+   "prior": [],
+   "knowledge": "Students can ask questions about the world around them (F band). They now begin to pose questions about patterns and relationships specifically, and make predictions grounded in their experiences.",
+   "endpoint": "Students pose simple investigable questions about observed patterns and relationships, and make experience-based predictions before observing or investigating.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Questions explore patterns and relationships",
+     "checkpoint": "Students can pose a question about a simple pattern or relationship in an observed phenomenon, distinguishing it from a question about naming or describing.",
+     "hinge": true,
+     "criteria": [
+      "Poses a question about a pattern or relationship (not just a naming question) for a given observation",
+      "Explains what the question is trying to find out"
+     ],
+     "hinge_reason": "N2's prediction-before-investigation sequence requires students to have a question to predict about. Without posing an investigable question, there is no anchor for making and checking an experience-based prediction.",
+     "width": {
+      "minimum": "Students pose at least one question about a pattern or relationship for a given observation context.",
+      "typical": "Students pose questions about patterns (seasonal plant changes, weather patterns) and relationships (push strength and distance, plant care and growth) across Y1 science contexts, and explain what their question is trying to find out.",
+      "wider": [
+       "Pose questions about how animals meet their needs in particular places — exploring habitat-need relationships",
+       "Pose questions about push and pull relationships: 'Does a toy car go further if it is pushed harder?' — examining force-motion relationships",
+       "Make predictions about types of animals and plants they might observe in a particular place — connecting habitat knowledge to prediction"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 2,
+     "label": "Predictions are based on prior experiences",
+     "checkpoint": "Students can make a prediction before an observation or investigation and explain what experience the prediction is based on.",
+     "hinge": false,
+     "criteria": [
+      "Makes a prediction before an observation or investigation",
+      "Explains what experience the prediction is based on"
+     ],
+     "width": {
+      "minimum": "Students make one prediction and explain what experience it is based on.",
+      "typical": "Students make predictions across Y1 science contexts (plant needs, force effects, seasonal changes) and explain the experience that grounds each prediction — distinguishing a prediction from a guess.",
+      "wider": [
+       "Make predictions about patterns of observable phenomena such as seasonal plant changes or temperature patterns across seasons",
+       "Make predictions about plant needs: 'I think a plant will die if it does not get enough water' — grounding prediction in care experience",
+       "Consult with First Nations Australians to compare observations of animal tracks and evaluate identifications (AC9S1I05)"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9S1I02",
+   "kit": "data/science/y1_science_AC9S1I02.json",
+   "year": 1,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Inquiry",
+   "title": "Planning and conducting",
+   "description": "suggest and follow safe procedures to investigate questions and test predictions",
+   "prior": [],
+   "knowledge": "Students have participated in guided investigations (F band). They now begin to suggest procedures — not just follow them — and contribute to safety planning.",
+   "endpoint": "Students suggest steps for safe investigation procedures and follow guided procedures — including age-appropriate safety measures — to investigate questions and test predictions.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Safe procedures are suggested and followed",
+     "checkpoint": "Students can suggest at least one safety measure for a given investigation and follow teacher-guided steps to conduct an investigation safely.",
+     "hinge": false,
+     "criteria": [
+      "Suggests at least one safety measure for a named investigation and explains why it is needed",
+      "Follows guided investigation steps to completion"
+     ],
+     "width": {
+      "minimum": "Students suggest one safety measure for a given investigation and follow a guided procedure to completion.",
+      "typical": "Students suggest safety measures (sun safety, goggles, aprons, careful equipment handling); follow steps in guided investigations; suggest ways to conduct observations safely; and contribute to setting up and packing away equipment.",
+      "wider": [
+       "Explore different ways of investigating science questions through guided discussion — examining that there is more than one way to investigate",
+       "Suggest steps for setting up and packing away equipment — taking responsibility for the investigation environment",
+       "Discuss safe ways to observe the sun — applying safety reasoning to an important real investigation context"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9S1I03",
+   "kit": "data/science/y1_science_AC9S1I03.json",
+   "year": 1,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Inquiry",
+   "title": "Observing and measuring",
+   "description": "make and record observations, including informal measurements, using digital tools as appropriate",
+   "prior": [],
+   "knowledge": "Students can make observations using their senses (F band). They now extend to making observations more systematically and recording them using informal measurements and digital tools.",
+   "endpoint": "Students make and record observations using text, drawing, counts, informal measurements (cups, handspans, paces, blocks) and digital tools (photography, video) as appropriate.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Observations are made and recorded systematically",
+     "checkpoint": "Students can make observations using their senses and appropriate tools, record observations using at least two formats (drawing, count, informal measurement, digital photo), and explain what an observation is.",
+     "hinge": false,
+     "criteria": [
+      "Makes and records observations in at least two different formats (e.g. drawing and informal measurement)",
+      "Explains what an observation is in their own words"
+     ],
+     "width": {
+      "minimum": "Students make and record observations in two different formats for a given investigation.",
+      "typical": "Students explore what an observation is through guided discussion; make observations using senses and tools; use informal measurements (cups, handspans, paces, blocks, string) to record quantities; photograph or video observations; and organise recorded observations in tables or drawings.",
+      "wider": [
+       "Use informal measurements such as blocks to measure plant growth or paces to measure how far an object has moved — applying informal measurement to quantify observations",
+       "Record observations through text, drawing, counts, informal measurements and digital photography — building a repertoire of recording formats",
+       "Explore how digital photography can capture observations that are hard to record by hand — comparing recording tools"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9S1I04",
+   "kit": "data/science/y1_science_AC9S1I04.json",
+   "year": 1,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Inquiry",
+   "title": "Processing and representing data",
+   "description": "sort and order data and information and represent patterns, including with provided tables and visual or physical models",
+   "prior": [],
+   "knowledge": "Students can sort objects by observable features (F band). They now extend to sorting and ordering scientific data and identifying patterns in provided formats.",
+   "endpoint": "Students sort and order data using provided tables, graphic organisers and visual models, and identify simple patterns in sorted data.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Data is sorted and ordered to show patterns",
+     "checkpoint": "Students can sort and order data into provided categories, use a provided table or graphic organiser to organise their data, and identify one pattern from the organised data.",
+     "hinge": false,
+     "criteria": [
+      "Sorts data into at least two categories using a provided organiser",
+      "Identifies one pattern from the organised or ordered data"
+     ],
+     "width": {
+      "minimum": "Students sort data into two categories using a provided organiser and identify one pattern from the sorted data.",
+      "typical": "Students use pictographs, tables and graphic organisers to sort data (plants vs animals, push vs pull objects, seasonal changes across the year); order data (sequential images of plant growth, seasonal changes); and identify patterns in organised data.",
+      "wider": [
+       "Use pictographs with drawings or digital photographs to document patterns of plant growth",
+       "Order images of seasonal changes across the year — examining time-ordered pattern representation",
+       "Use graphic organisers to sort objects that need a push vs pull force to work"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9S1I05",
+   "kit": "data/science/y1_science_AC9S1I05.json",
+   "year": 1,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Inquiry",
+   "title": "Evaluating",
+   "description": "compare observations with predictions and others' observations, consider if investigations are fair and identify further questions with guidance",
+   "prior": [],
+   "knowledge": "Students have made observations and predictions (F band). They now begin to compare these with others and consider fairness — guided by the teacher.",
+   "endpoint": "Students compare their observations with predictions and with others' observations, consider with guidance whether an investigation was fair, and identify further questions prompted by their observations.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Observations are compared with predictions and others",
+     "checkpoint": "Students can compare their observation with their prediction (did it match?) and compare their observation with another student's observation, identifying at least one similarity or difference.",
+     "hinge": false,
+     "criteria": [
+      "Compares observation with prediction and states whether it matched",
+      "Compares observation with at least one other student's and identifies a similarity or difference"
+     ],
+     "width": {
+      "minimum": "Students compare their observation with their prediction and with one other student's observation.",
+      "typical": "Students compare observations with predictions across investigations; compare observations with others (bird counts, plant growth, object movement); consider whether differences might be due to an unfair investigation; and identify one further question prompted by an unexpected observation.",
+      "wider": [
+       "Consult with First Nations Australians to compare observations and evaluate identifications of animal tracks — examining how knowledge of Country informs observation comparison",
+       "Explore if making weather observations at different times of day makes a difference — considering fairness of comparison",
+       "Compare how far an object travels with different students pushing and discuss how to make the investigation fairer"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9S1I06",
+   "kit": "data/science/y1_science_AC9S1I06.json",
+   "year": 1,
+   "span": 2,
+   "years": "1–2",
+   "strand": "Inquiry",
+   "title": "Communicating",
+   "description": "write and create texts to communicate observations, findings and ideas, using everyday and scientific vocabulary",
+   "prior": [],
+   "knowledge": "Students can share ideas informally (F band). They now begin to create texts — written, drawn, modelled or role-played — that communicate observations and ideas using both everyday and scientific vocabulary.",
+   "endpoint": "Students write and create texts to communicate science observations and ideas, using scientific vocabulary alongside everyday language and selecting from a range of forms (drawing, model, label, role-play, sequential representation).",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Texts communicate science observations using scientific vocabulary",
+     "checkpoint": "Students can create a text (written, drawn, modelled or performed) that communicates a science observation or idea, using at least two science vocabulary terms correctly.",
+     "hinge": false,
+     "criteria": [
+      "Creates a text communicating a science observation in at least one form (drawing, model, labels, role-play)",
+      "Uses at least two science vocabulary terms correctly in the text"
+     ],
+     "width": {
+      "minimum": "Students create a text communicating a science observation and use at least two science vocabulary terms.",
+      "typical": "Students explore the difference between everyday and scientific vocabulary; create models, drawings, labels, arrows or role-plays to represent observations (habitats, seasonal changes, force effects); represent sequential changes using drawings or photographs; and describe their representations using both everyday and scientific vocabulary.",
+      "wider": [
+       "Acknowledge and learn about First Nations Australians' ways of representing and sharing observations — examining diverse communication forms for scientific knowledge",
+       "Represent push and pull forces using role-play, labels, arrows or time-lapse drawings — applying multiple representation forms to the same concept",
+       "Role-play or recount how people use patterns to make predictions at work or in daily life (AC9S1H01)"
+      ]
+     },
+     "modes": []
+    }
+   ]
+  },
+  {
+   "code": "AC9S1U01",
+   "kit": "data/science/y1_science_AC9S1U01.json",
+   "year": 1,
+   "span": 1,
+   "strand": "Biological",
+   "title": "Basic needs of plants and animals",
+   "description": "identify the basic needs of plants and animals, including air, water, food or shelter, and describe how the places they live meet those needs",
+   "prior": [],
+   "knowledge": "Students can observe and describe features of living things and their environments (AC9SFU01, F band). They have not yet systematically identified needs of living things or described how habitat features meet those needs.",
+   "endpoint": "Students identify the basic needs of plants and animals (air, water, food, shelter) and describe how features of the places they live meet those needs — connecting habitat features to specific survival requirements.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Living things have basic needs",
+     "checkpoint": "Students can name the basic needs of plants and animals — air, water, food and shelter — and explain that all living things must have their needs met to survive.",
+     "hinge": true,
+     "criteria": [
+      "Names the four basic needs of living things (air, water, food, shelter)",
+      "Gives at least one example of each need being met for a named plant or animal"
+     ],
+     "hinge_reason": "N2 requires students to understand what basic needs are before they can describe how habitat features meet those needs. Without knowing what air, water, food and shelter mean as needs, students cannot reason about which habitat features are relevant or why.",
+     "width": {
+      "minimum": "Students name the basic needs of plants and animals and give one example of each need being met for a named living thing.",
+      "typical": "Students identify and compare the needs of a variety of plants and animals including humans; explain that different living things have the same basic needs even if they meet them differently; and connect their own experiences (caring for pets, watering plants) to need-meeting.",
+      "wider": [
+       "Recognise how First Nations Australians care for living things — examining how traditional ecological knowledge addresses the needs of plants and animals on Country",
+       "Explore why caring for plants and animals matters beyond the individual — as sources of food, fibre and ecological balance",
+       "Learning from farmers, bush care volunteers or nursery owners about how they observe plant and animal needs and design habitats to meet them"
+      ]
+     },
+     "modes": []
+    },
+    {
+     "n": 2,
+     "label": "The places living things live meet their needs",
+     "checkpoint": "Students can describe how features of a named habitat meet the basic needs of a plant or animal that lives there.",
+     "hinge": false,
+     "criteria": [
+      "Identifies a named habitat and describes how at least two features of it meet the needs of a living thing found there",
+      "Explains why those features matter for the living thing's survival"
+     ],
+     "width": {
+      "minimum": "Students identify one place a named plant or animal lives and describe how at least two features of that place meet its needs.",
+      "typical": "Students identify multiple habitats (pond, garden, forest, home) and describe how each provides for the needs of the living things found there; create dioramas or models showing need-meeting features; and explain why a living thing removed from its habitat may struggle to survive.",
+      "wider": [
+       "Identify ways local gardens or parks could better meet the needs of native animals — connecting habitat features to design decisions",
+       "Learn from local ecologists or wildlife carers about native animals' needs and how they observe behaviour to design supports (frog hotels, nesting boxes)",
+       "Exploring how First Nations Australians use science to meet their needs — food, water supply and shelter — through understanding of local habitats"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly think only of one or two familiar habitats (garden, home). Encountering a range of habitat types — aquatic, terrestrial, domestic, wild — and the different ways each meets living thing needs builds a more complete and generalisable model of habitat-need matching."
+      }
+     ],
+     "related": [
+      "AC9S1H01"
+     ]
+    }
+   ]
+  },
+  {
    "code": "AC9S1U02",
    "kit": "data/science/y1_science_AC9S1U02.json",
    "year": 1,
@@ -63,6 +836,74 @@
       {
        "mode": "context_breadth",
        "reason": "Students readily connect seasonal change to their own clothing choices but miss the broader effects on other living things and on planning decisions. Encountering multiple ways daily and seasonal change affects daily life — human, plant and animal — builds a more complete model of environmental change and response."
+      }
+     ],
+     "related": [
+      "AC9S1H01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S1U03",
+   "kit": "data/science/y1_science_AC9S1U03.json",
+   "year": 1,
+   "span": 1,
+   "strand": "Physical",
+   "title": "Pushes and pulls",
+   "description": "describe pushes and pulls in terms of strength and direction and predict the effect of these forces on objects' motion and shape",
+   "prior": [],
+   "knowledge": "Students have informally experienced pushing and pulling objects. They have not yet described forces in terms of strength and direction or predicted their effects on motion and shape.",
+   "endpoint": "Students describe pushes and pulls in terms of strength (stronger/weaker) and direction, predict how push and pull forces affect the motion and shape of objects, and represent forces using simple labels, arrows or role-play.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Pushes and pulls have strength and direction",
+     "checkpoint": "Students can identify whether a force is a push or a pull, describe its direction, and compare the strength of forces (stronger/weaker).",
+     "hinge": true,
+     "criteria": [
+      "Identifies at least three objects requiring a push or pull and names the direction of each force",
+      "Compares the strength of forces needed for at least two objects"
+     ],
+     "hinge_reason": "N2 requires students to apply strength and direction concepts when predicting force effects. Without being able to characterise a force by its direction and relative strength, students cannot reason about why changing the force changes the outcome for motion or shape.",
+     "width": {
+      "minimum": "Students identify at least three everyday objects that require a push or pull, describe the direction of each force, and compare the strength needed.",
+      "typical": "Students observe and manipulate everyday objects (playground equipment, toys, doors, windows); identify the push or pull required; describe direction and strength; and explain that changing strength or direction changes the outcome for the object.",
+      "wider": [
+       "Investigate the push and pull movements of traditional First Nations Australians' children's instructive toys — examining how force direction and strength produce different play outcomes",
+       "Explore how traditional Asian toys and games (kendama, Daruma Otoshi, shuttlecock) are played using push or pull forces",
+       "Identify how we use pushes and pulls when preparing meals and the tools that help us push or pull objects"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Traditional toys from First Nations and Asian cultural contexts provide culturally rich and hands-on directions that ground force concepts in diverse real-world objects, building a more complete model of strength and direction before students apply these to prediction in N2."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Forces affect motion and shape",
+     "checkpoint": "Students can predict and describe how pushes and pulls affect the motion (start, stop, change direction, speed) and shape (squash, stretch) of objects.",
+     "hinge": false,
+     "criteria": [
+      "Predicts the effect of a push or pull on an object's motion or shape before observing",
+      "Describes how changing force strength or direction changes the outcome for the object"
+     ],
+     "width": {
+      "minimum": "Students describe how a push or pull affects the motion of one object and the shape of one object, and make a prediction before observing.",
+      "typical": "Students investigate how push and pull forces start or stop motion, change direction of travel, or change the shape of materials (playdough, soft objects); make and check predictions about force effects; and represent forces using labels, arrows or role-play.",
+      "wider": [
+       "Investigate how the design of sporting equipment (paddles, plastic bats, racquets) produces stronger pushes and pulls — connecting force concepts to design",
+       "Design playground equipment, toys or games and represent push and pull forces using models, digital drawings or role-play",
+       "Explore how engineers use knowledge of forces to create new playground equipment or toys (AC9S1H01)"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students readily observe that pushing makes things move but need explicit scaffolding to predict effects before observing and to connect force strength/direction to specific motion or shape outcomes. The prediction-then-observe sequence is the primary scaffold at this year level."
       }
      ],
      "related": [
@@ -266,6 +1107,755 @@
      ],
      "related": [
       "AC9S2H01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3H01",
+   "kit": "data/science/y3_science_AC9S3H01.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Human endeavour",
+   "title": "Data and scientific explanations",
+   "description": "examine how people use data to develop scientific explanations",
+   "prior": [
+    "AC9S1H01"
+   ],
+   "knowledge": "Students can describe how people use science in daily life and use patterns to make scientific predictions (AC9S1H01, 1-2 band). They have not yet examined the specific role of data in developing scientific explanations or how the scientific community shares and evaluates explanations.",
+   "endpoint": "Students examine how scientists and other knowledge-holders use data to develop and support scientific explanations, identifying what data is, how it is collected, and how it supports — rather than simply produces — an explanation.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Data is recorded evidence from observations",
+     "checkpoint": "Students can distinguish data from explanation — identifying what counts as data (recorded observations, measurements, survey results) and what counts as an explanation (an account of why or how).",
+     "hinge": true,
+     "criteria": [
+      "Distinguishes data from explanation given a mixed set of statements from a scenario",
+      "Explains that data is collected through observation or measurement, and that the scientist uses the data to construct an explanation"
+     ],
+     "hinge_reason": "The data/explanation distinction is the foundational concept for the entire standard. Students who cannot separate what was recorded from what it means cannot examine the data-to-explanation pathway in Node 3, and will conflate evidence and conclusion in all subsequent inquiry work.",
+     "width": {
+      "minimum": "Students identify examples of data and examples of explanations from a given scenario and describe the difference between the two.",
+      "typical": "Students explain that data is collected through systematic observation or measurement, and that data supports (but does not automatically produce) an explanation — the scientist interprets the data.",
+      "wider": [
+       "Examine a simple scientific journal article or report and identify the data section and explanation/conclusion section — exploring why scientists communicate this way",
+       "Explore how First Nations Australians develop and test predictions through systematic observation — for example, observing landscape features or seasonal indicators — and discuss what makes this a form of data collection",
+       "Investigate the difference between reliable and unreliable data (one observation vs many observations, careful vs careless measurement)"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The data/explanation distinction is non-obvious at Year 4. Students tend to treat observations and explanations as the same kind of thing — 'I saw X therefore X happens'. Making the distinction explicit (data describes what was recorded; explanation accounts for why it happened using the data) is a necessary scaffold before students can examine how scientists move from data to explanation."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Scientists collect data to answer questions",
+     "checkpoint": "Students can describe how scientists or knowledge-holders collect data in response to a question, including the type of data collected and why that data is relevant to the question.",
+     "hinge": false,
+     "criteria": [
+      "Describes a specific example of how a named person or group collected data to answer a question",
+      "Explains how the data collected connects to the question being answered"
+     ],
+     "width": {
+      "minimum": "Students describe how a scientist or knowledge-holder collected data to answer a specific question, naming the type of data and explaining how it connects to the question.",
+      "typical": "Students examine two contrasting contexts for scientific data collection (e.g. ecologist counting species; hydrologist measuring rainfall) and explain how each type of data connects to the explanations those scientists develop.",
+      "wider": [
+       "Examine documentary or news content featuring researchers and identify how they describe their data collection — what they count, measure or observe, and what question they are trying to answer",
+       "Investigate how First Nations Australians test predictions and gather data in the development of technologies and processes — for example, testing plant properties or observing animal behaviour patterns",
+       "Compare data collection for ecological questions (food chains, species populations) with data collection for physical questions (force, material properties) — what kinds of data suit different types of questions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to have a narrow image of 'scientist with a test tube' for data collection. Varied authentic contexts — ecologists, hydrologists, First Nations knowledge-holders — broaden the concept of what counts as scientific data collection and who engages in it, preventing a narrow stereotype from limiting students' understanding."
+      }
+     ],
+     "related": [
+      "AC9S3I01",
+      "AC9S3I03"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Data supports the development of explanations",
+     "checkpoint": "Students can examine a real-world case where data was used to develop a scientific explanation, tracing the connection between the data collected and the explanation produced.",
+     "hinge": false,
+     "criteria": [
+      "Identifies what data was collected and what explanation it supported in a given real-world case",
+      "Explains that data supports an explanation rather than automatically producing one — the scientist interprets the data"
+     ],
+     "width": {
+      "minimum": "Students describe a real-world case where data was used to develop a scientific explanation, identifying what data was collected and what explanation it supported.",
+      "typical": "Students examine how ecologists use food chain data to explain population decline of native species and develop management strategies, connecting data type to explanation quality — more data, better explanation.",
+      "wider": [
+       "Investigate how hydrologists use rainfall and water use data to explain seasonal river flow variation (AC9S4U02 connection) — showing how the same data type supports multiple explanations",
+       "Examine a case where limited data produced an incomplete explanation, and discuss what additional data would be needed to improve it",
+       "Research how First Nations Australians use accumulated observational knowledge — passed across generations — as a form of long-term data that supports explanations about ecological patterns"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to see data as simply 'proving' an explanation rather than as evidence that supports it — missing the interpretive step and the idea that more varied data produces stronger explanations. Examining multiple real-world cases (ecology, hydrology) where the same kind of data work is done in different contexts helps students develop a more general understanding of how data functions in science."
+      }
+     ],
+     "related": [
+      "AC9S4U01",
+      "AC9S4U02",
+      "AC9S3I05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3H02",
+   "kit": "data/science/y3_science_AC9S3H02.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Human endeavour",
+   "title": "Scientific explanations meet needs",
+   "description": "consider how people use scientific explanations to meet a need or solve a problem",
+   "prior": [],
+   "knowledge": "Students can describe how science knowledge has changed peoples' lives (AC9S3H02, 3-4 band). They have not yet examined the specific link between a scientific explanation and the design of a solution — the mechanism by which understanding produces application.",
+   "endpoint": "Students examine how scientific explanations about natural phenomena are applied by people to meet needs or solve problems, and identify the explanation-to-application pathway in real-world examples including First Nations knowledge applications.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Scientific explanations can be applied to solve problems",
+     "checkpoint": "Students can distinguish between a scientific explanation (an account of how or why something happens) and an application (a solution that uses that explanation to meet a need), and identify examples of each.",
+     "hinge": true,
+     "criteria": [
+      "Identifies the scientific explanation and the problem it addresses for a given application example",
+      "Describes how the scientific explanation was used to design or improve the solution"
+     ],
+     "hinge_reason": "The explanation-to-application pathway is the analytical frame for the entire standard. Students who cannot separate the explanation from the application cannot analyse real-world cases in Node 2, and will default to describing applications as isolated inventions without connecting them to underlying scientific knowledge.",
+     "width": {
+      "minimum": "Students identify a scientific explanation and the problem-solving application it enabled for at least one example, describing the connection between them.",
+      "typical": "Students describe the pathway from explanation to application for two contrasting examples, explaining what the scientific knowledge was and how it was used to design or improve a solution.",
+      "wider": [
+       "Compare how the same scientific explanation (e.g. friction) has been applied in multiple different contexts — vehicle safety, sport, manufacturing — and discuss how the application differs while the underlying explanation remains the same",
+       "Examine historical examples where a scientific explanation changed how a problem was approached — e.g. germ theory changing medicine, decomposer knowledge enabling composting at industrial scale",
+       "Research how First Nations Australians apply deep knowledge of plant biology or ecological relationships to develop sustainable solutions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The explanation-to-application pathway is not intuitive — students tend to see applications as separate from science rather than as science knowledge in action. Making the chain explicit (what is the explanation? → what problem does it address? → how is the explanation used in the solution?) scaffolds students' ability to analyse new application examples independently."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Examining real applications of science knowledge",
+     "checkpoint": "Students can examine real-world cases where scientific knowledge was applied to meet a need, identifying the specific knowledge used and the problem or need it addressed.",
+     "hinge": false,
+     "criteria": [
+      "Identifies the specific scientific knowledge (not just 'science') that enabled a named application",
+      "Explains the problem or need the application was designed to address"
+     ],
+     "width": {
+      "minimum": "Students examine at least two real-world application cases from different contexts (e.g. one ecological, one materials-based) and identify the scientific explanation behind each.",
+      "typical": "Students examine applications across the Y4 science concepts — decomposers in composting, magnetic force in recycling sorting, friction in car safety, properties of plastic in consumer choices — and describe the explanation-to-application pathway for each.",
+      "wider": [
+       "Investigate how knowledge of friction is used to improve safety on wet and icy roads — examining tyre design, road surfacing, and braking systems",
+       "Research how knowledge of magnetic force is applied in recycling, mining and food processing — tracing how one scientific explanation supports multiple industries",
+       "Investigate how First Nations Australians of arid regions use scientific knowledge to manage water resources — including evaporation management and water source identification"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to see science applications as isolated inventions rather than as a repeated pattern of explanation-to-application. Examining multiple cases across the Y4 concepts — each following the same pathway structure — helps students recognise the pattern and build a more generalisable understanding of how science knowledge is applied."
+      }
+     ],
+     "related": [
+      "AC9S4U01",
+      "AC9S4U02",
+      "AC9S4U03",
+      "AC9S4U04"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Science knowledge influences decisions and practices",
+     "checkpoint": "Students can explain how scientific knowledge has influenced how people make decisions or change their practices — not only in designed solutions but in everyday choices and policy.",
+     "hinge": false,
+     "criteria": [
+      "Describes an example where scientific knowledge changed how people make decisions or behave, identifying the knowledge and the change",
+      "Distinguishes between an engineered application (a designed product) and a behavioural or practice change as two different ways science knowledge is used"
+     ],
+     "width": {
+      "minimum": "Students describe at least one example where scientific knowledge changed how people behave or make decisions (e.g. plastic disposal, water conservation), explaining what the knowledge was and what changed.",
+      "typical": "Students examine how knowledge of plastic properties has influenced purchasing, use and disposal practices, and how this differs from engineered applications — connecting scientific knowledge to individual and community decision-making.",
+      "wider": [
+       "Research a community or policy response to a scientific finding (e.g. water restrictions based on hydrological data; species protection based on ecological knowledge) and explain the knowledge-to-decision pathway",
+       "Compare two decisions influenced by different scientific knowledge — one where the knowledge led to a designed solution, one where it changed behaviour — and discuss the different ways science knowledge shapes human action",
+       "Examine how knowledges of plant biology enable First Nations Australians to sustainably harvest and use plants — tracing how deep ecological knowledge shapes sustainable practice decisions"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node asks students to integrate the explanation-to-application framework with a new dimension — behavioural and policy change — alongside designed solutions. Students must coordinate the same underlying idea (knowledge informs action) across a broader range of outcomes than engineered solutions alone."
+      }
+     ],
+     "related": [
+      "AC9S3H01",
+      "AC9S4U02",
+      "AC9S4U04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3I01",
+   "kit": "data/science/y3_science_AC9S3I01.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Inquiry",
+   "title": "Questioning and predicting",
+   "description": "pose questions to explore observed patterns and relationships and make predictions based on observations",
+   "prior": [
+    "AC9S1I01"
+   ],
+   "knowledge": "Students can pose simple questions and make predictions based on their experiences (AC9S1I01, 1-2 band). They have not yet posed questions that target patterns or relationships specifically, or made predictions that are explicitly grounded in prior observations rather than intuition.",
+   "endpoint": "Students pose investigable questions that target patterns and relationships in observed phenomena, and make predictions that are explicitly grounded in prior observations, distinguishing between questions that can be tested and those that cannot.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Questions target patterns and relationships",
+     "checkpoint": "Students can pose investigable questions that go beyond naming or describing — targeting a pattern (what changes when X changes?) or relationship (how does X affect Y?) in an observed phenomenon.",
+     "hinge": true,
+     "criteria": [
+      "Poses a question that targets a relationship or pattern (not just a description) for a given observation",
+      "Explains what observable pattern or relationship the question is designed to explore"
+     ],
+     "hinge_reason": "A relationship question is the prerequisite input to investigation planning (AC9S3I02). Students who cannot distinguish relationship questions from descriptive questions will design descriptive observation tasks rather than fair tests, collapsing the planning scaffold in the next standard.",
+     "width": {
+      "minimum": "Students reframe a descriptive question into a relationship question for a given observation context, and explain what distinguishes the two.",
+      "typical": "Students pose their own relationship questions for two different science contexts (biological, physical or materials-based) and explain what observable pattern or relationship each question targets.",
+      "wider": [
+       "Examine how ecologists pose questions about population patterns — e.g. 'What happens to prey populations when predators are removed?' — and compare to descriptive questions about the same topic",
+       "Explore how First Nations Australians pose questions about patterns in Country — observing landscape and seasonal indicators to predict resource availability",
+       "Investigate the difference between a question that can be tested in a classroom and one that requires field observation or a longer time scale"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The shift from descriptive ('what is this?') to relationship ('how does X affect Y?') questioning is non-obvious and requires explicit modelling. Students need to see the structural difference between question types before they can generate relationship questions independently. Without this scaffold, students default to description questions that do not guide investigation design."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Predictions are grounded in prior observations",
+     "checkpoint": "Students can make predictions that are explicitly linked to prior observations or patterns they have noticed, and distinguish between a prediction (grounded in evidence) and a guess.",
+     "hinge": false,
+     "criteria": [
+      "Makes a prediction that is explicitly linked to a prior observation or identified pattern",
+      "Distinguishes their prediction from a guess by explaining the observational basis"
+     ],
+     "width": {
+      "minimum": "Students make a prediction for a given investigation scenario and explain what prior observation or pattern their prediction is based on.",
+      "typical": "Students make predictions for two contrasting investigation contexts, explain the observational basis for each, and revise a prediction when additional information is provided.",
+      "wider": [
+       "Investigate how predictions about food chains (e.g. what happens when a predator is removed) are grounded in observations about feeding relationships",
+       "Consult with, or explore resources about, how First Nations Australians predict the location of water sources from landscape feature observations — examining what constitutes an observation-based prediction",
+       "Make predictions about magnetic force at different distances based on a pattern identified from initial observations, then test them"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly conflate predictions with guesses or wishes ('I predict the magnet will pick it up because I want it to'). Encountering prediction-making across varied science contexts — biological, physical, ecological — helps students build a more general understanding of what makes a prediction observation-based rather than arbitrary."
+      }
+     ],
+     "related": [
+      "AC9S3I02",
+      "AC9S3I05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3I02",
+   "kit": "data/science/y3_science_AC9S3I02.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Inquiry",
+   "title": "Planning and conducting",
+   "description": "use provided scaffolds to plan and conduct investigations to answer questions or test predictions, including identifying the elements of fair tests, and considering the safe use of materials and equipment",
+   "prior": [
+    "AC9S1I02"
+   ],
+   "knowledge": "Students can follow instructions to conduct investigations safely and make observations (AC9S1I02, 1-2 band). They have not yet identified the elements of a fair test or used a provided scaffold to plan an investigation, as opposed to following a given procedure.",
+   "endpoint": "Students use provided scaffolds to plan investigations that test a prediction, identify and control the elements of a fair test (variable to change, variable to measure, variables to keep the same), and conduct investigations safely with appropriate materials and equipment.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Fair tests control variables",
+     "checkpoint": "Students can identify the variable being changed, the variable being measured, and the variables that must be kept the same in a fair test, and explain why controlling variables makes a test fair.",
+     "hinge": true,
+     "criteria": [
+      "Identifies the variable being changed, the variable being measured, and at least two variables kept the same in a given investigation",
+      "Explains why keeping variables the same makes the test fair (not just states the rule)"
+     ],
+     "hinge_reason": "Variable identification is the prerequisite for completing an investigation scaffold (Node 2). Students who cannot identify what to change, measure and keep the same cannot populate the planning scaffold meaningfully — they produce a scaffold with blanks or incorrect entries that make the planned investigation unworkable.",
+     "width": {
+      "minimum": "Students identify the independent, dependent and control variables in a given investigation scenario using the terms 'what I change', 'what I measure' and 'what I keep the same'.",
+      "typical": "Students explain why each variable must be treated as described — connecting the rationale for keeping variables the same to the reliability of the result — and identify what would make a test unfair.",
+      "wider": [
+       "Analyse an investigation scenario with a flaw (an uncontrolled variable) and explain specifically how the flaw affects the reliability of any conclusion drawn",
+       "Examine how simulations (food chain role-play, virtual habitat models) control variables in ways that real investigations cannot — what are the trade-offs",
+       "Compare fair test design for different investigation types from Y4 science contexts (friction, magnetic force, material properties) and discuss how the variables differ across contexts"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The variable control logic is non-obvious. Students understand 'only change one thing' as a rule without understanding why — they do not connect uncontrolled variables to unreliable conclusions. Making the reasoning chain visible (if we change two things at once → we cannot tell which one caused the result → our conclusion is unreliable) is the scaffold that allows students to identify fair test elements purposefully rather than mechanically."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Using a scaffold to plan an investigation",
+     "checkpoint": "Students can use a provided investigation scaffold to plan a fair test that answers a given question, including identifying variables, selecting materials and outlining a procedure.",
+     "hinge": false,
+     "criteria": [
+      "Completes a provided scaffold with all required elements: question, prediction, variable to change, variable to measure, variables to keep the same, and procedure steps",
+      "Procedure steps are described clearly enough that another student could follow them"
+     ],
+     "width": {
+      "minimum": "Students complete a provided investigation scaffold for a given question, correctly identifying variables and describing the steps of the procedure.",
+      "typical": "Students use a provided scaffold to plan a fair test for a question they have generated, evaluate whether their plan addresses all elements of a fair test, and identify any gaps.",
+      "wider": [
+       "Plan and build a prototype to test a prediction (e.g. toy or game design predicting force interactions) using a provided scaffold — connecting design thinking to fair test planning",
+       "Compare two student-generated plans for the same question and evaluate which is the fairer test, identifying specific improvements",
+       "Explore how professional investigation protocols in science (lab procedures, field survey protocols) serve the same function as classroom scaffolds — standardising what is changed, measured and controlled"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to transfer fair test planning mechanically to new investigation contexts — repeating a familiar procedure rather than adapting the scaffold to the new question. Encountering the scaffold across varied investigation types (friction, materials, food chains, magnetic force) builds flexible application of the planning framework."
+      }
+     ],
+     "related": [
+      "AC9S3I01",
+      "AC9S3I03"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Safe and appropriate use of materials and equipment",
+     "checkpoint": "Students can identify safety considerations relevant to a planned investigation and demonstrate safe behaviour when using materials and equipment, including field site considerations.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least two safety considerations relevant to a specific investigation",
+      "Demonstrates correct safety behaviour when conducting an investigation (PPE use, equipment handling)"
+     ],
+     "width": {
+      "minimum": "Students identify at least two safety considerations relevant to a given investigation and explain the safe procedure for each.",
+      "typical": "Students apply safety rules appropriately in practice — wearing PPE correctly, using equipment according to guidelines, and identifying and managing risks in a field site or biological specimen investigation.",
+      "wider": [
+       "Compare safety requirements across different investigation contexts — classroom (chemical or physical), field (biological specimens, outdoor sites) — and explain why contexts require different safety measures",
+       "Research how professional scientists manage safety in their investigation contexts — lab safety protocols, field site risk assessments",
+       "Limited width — safety procedure following is a compliance and precision skill. Extensions exist (risk assessment design, professional safety protocols) but these go beyond the Y4 band. The key demand at this year level is applying given safety rules correctly, not designing safety protocols."
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Safe equipment use and PPE compliance require consistent accurate practice, not broader conceptual understanding. Students need repeated application of safety procedures across different investigations to build reliable safe behaviour. This is a precision-required procedural skill where practice is the primary lever."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3I03",
+   "kit": "data/science/y3_science_AC9S3I03.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Inquiry",
+   "title": "Observing and measuring",
+   "description": "follow procedures to make and record observations, including making formal measurements using familiar scaled instruments and using digital tools as appropriate",
+   "prior": [
+    "AC9S1I03"
+   ],
+   "knowledge": "Students can make and record observations using their senses and simple tools (AC9S1I03/I04, 1-2 band). They have not yet used scaled instruments with formal measurement conventions or discussed the effect of scale size on measurement accuracy.",
+   "endpoint": "Students follow procedures to make and record systematic observations, use familiar scaled instruments accurately (including reading scales and applying rounding conventions), and use digital tools where appropriate to record observations.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Reading scaled instruments accurately",
+     "checkpoint": "Students can read a value from a familiar scaled instrument (ruler, thermometer, measuring cylinder, balance) and apply rounding conventions when the reading falls between scale divisions.",
+     "hinge": true,
+     "criteria": [
+      "Reads a value from a familiar scaled instrument to the nearest marked division",
+      "Applies rounding correctly when a reading falls between two scale divisions",
+      "Identifies a more or less accurate instrument for a given measurement task based on scale size"
+     ],
+     "hinge_reason": "Instrument reading accuracy is a prerequisite for data quality in all subsequent inquiry work. Systematic reading errors (wrong end of ruler, meniscus ignored) propagate into every data set students produce, making conclusions from those data unreliable. Students who cannot read instruments correctly cannot produce usable data for AC9S3I04 or AC9S3I05.",
+     "width": {
+      "minimum": "Students read values from at least two types of scaled instruments and correctly apply rounding (up or down) when a value falls between scale markings.",
+      "typical": "Students explain the effect of scale size on measurement accuracy — a ruler with 1mm divisions is more accurate than one with 1cm divisions for the same measurement — and select an appropriate instrument for a given measurement task.",
+      "wider": [
+       "Investigate how the choice of scale increments affects the conclusions that can be drawn — can a difference between two objects be detected if the scale is too coarse?",
+       "Compare digital and analogue instruments for the same measurement — what are the trade-offs in accuracy, ease of use and recording?",
+       "Explore how ecologists use specific instruments for field identification — pitfall traps, call identification equipment, GPS — and what each measures"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Accurate scale reading requires precision and consistent application of rounding conventions. Errors are common (reading from the wrong end of a ruler, ignoring the meniscus in a measuring cylinder, not aligning the instrument correctly) and affect all subsequent data recording. Repeated accurate practice with feedback is the primary remedy — not broader context variation."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Systematic observation and recording",
+     "checkpoint": "Students can follow a procedure to make observations systematically — recording what is observed in an organised way (table, graphic organiser, labelled diagram) so that it can be used for analysis.",
+     "hinge": false,
+     "criteria": [
+      "Records all required observations in a consistent, organised format (table, graphic organiser or diagram as appropriate)",
+      "Recording is complete and legible enough that another student could use it for analysis"
+     ],
+     "width": {
+      "minimum": "Students follow a provided procedure to make and record observations in a table or graphic organiser, recording all required observations in a consistent format.",
+      "typical": "Students select an appropriate recording format for a given observation task, explain why that format suits the data type, and complete the recording consistently across multiple observations.",
+      "wider": [
+       "Compare different recording formats for the same data set — table vs graphic organiser vs labelled diagram — and evaluate which is clearest for the type of observations being made",
+       "Use digital tools (camera, voice recorder, data logger) to record observations and discuss what digital tools add (timestamping, precision, replayability) compared to written recording",
+       "Examine how scientists use field notebooks and digital tools in combination for ecological observations — exploring professional observation recording practice"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to default to one recording format (usually a list or informal notes) regardless of the observation type. Encountering systematic recording across varied observation types — counts, measurements, field identifications, material properties — helps students build a more flexible understanding of how recording format should match data type."
+      }
+     ],
+     "related": [
+      "AC9S3I04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3I04",
+   "kit": "data/science/y3_science_AC9S3I04.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Inquiry",
+   "title": "Processing and representing data",
+   "description": "construct and use representations, including tables, simple column graphs and visual or physical models, to organise data and information, show simple relationships and identify patterns",
+   "prior": [
+    "AC9S1I04"
+   ],
+   "knowledge": "Students can represent observations in provided templates and identify simple patterns with guidance (AC9SFI03, F band; AC9S1I04, 1-2 band). They have not yet constructed representations independently or used representations specifically to identify patterns and relationships.",
+   "endpoint": "Students construct and use tables, column graphs, visual models and physical models to organise data, show simple relationships between variables, and identify patterns in data.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Tables organise data for comparison",
+     "checkpoint": "Students can construct a table with appropriate headings to organise data from an investigation, and use the table to make comparisons between observations.",
+     "hinge": true,
+     "criteria": [
+      "Constructs a table with appropriate column headings including units where relevant",
+      "All required data is recorded in a consistent, complete format",
+      "Identifies at least one comparison or pattern from the completed table"
+     ],
+     "hinge_reason": "Table construction accuracy is a prerequisite for column graph work in Node 2 — students typically construct their graph from their table. A table with incorrect headings, missing units, or inconsistent rows produces an ungraphable or misleading data set that collapses Node 2 work.",
+     "width": {
+      "minimum": "Students construct a table with correct headings for a given data set and use it to make at least one comparison between rows or columns.",
+      "typical": "Students explain why a table is an appropriate format for their data type, construct the table independently, and identify a pattern or comparison directly from the table.",
+      "wider": [
+       "Compare two different table structures for the same data (e.g. results organised by material type vs by property) and discuss which reveals patterns more clearly",
+       "Examine how data tables in scientific reports or textbooks are structured — column headers, units, consistent formatting — and apply professional conventions",
+       "Construct a table to record food chain data across multiple habitats and use it to compare structural features of chains across habitats"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Table construction requires precision: correct headings, consistent units, all cells filled. Common errors include missing units in column headers, inconsistent recording across rows, and unorganised headings that make comparison difficult. Deliberate practice with feedback on table quality is more productive at this stage than encountering many different data types."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Column graphs display and compare quantities",
+     "checkpoint": "Students can construct a column graph with appropriate axes, title and labels for a given data set, and use the graph to identify and describe a pattern.",
+     "hinge": false,
+     "criteria": [
+      "Constructs a column graph with labelled axes (including units), a title, and correctly scaled bars",
+      "Describes the pattern shown in the graph and connects it to the investigation question"
+     ],
+     "width": {
+      "minimum": "Students construct a column graph with labelled axes and a title for a given data set, and describe what the graph shows.",
+      "typical": "Students select an appropriate scale for the y-axis, construct the graph accurately, and describe the pattern shown — including identifying which condition produced the highest or lowest value and explaining what this means.",
+      "wider": [
+       "Compare the same data displayed as a table vs a column graph — what does the graph make visible that the table does not?",
+       "Construct a column graph for friction investigation data (distances moved under different surface conditions) and use it to draw a conclusion about surface friction",
+       "Explore when column graphs are and are not appropriate — the difference between categorical data (materials) and continuous data (temperature over time), and why bar graphs suit the former"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Column graph construction requires precision across multiple conventions: axis labels with units, appropriate scale, bars at the correct height, title. Errors in any of these undermine the representation's reliability. Consistent accurate practice across multiple data sets is more productive than breadth of data types at this stage."
+      }
+     ],
+     "related": [
+      "AC9S3I05"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Visual and physical models represent relationships",
+     "checkpoint": "Students can construct or use a visual or physical model to represent a scientific relationship, explain what the model shows, and identify its limitations.",
+     "hinge": false,
+     "criteria": [
+      "Constructs or interprets a model and explains what relationship or process it represents",
+      "Identifies at least one element of the model and explains what it stands for in the real phenomenon",
+      "Describes at least one way the model simplifies or differs from the real phenomenon"
+     ],
+     "width": {
+      "minimum": "Students construct or use a given visual or physical model (food chain diagram, force arrow diagram, water cycle model) and explain what relationship or process it represents.",
+      "typical": "Students construct a model for a relationship from Y4 science content, explain what each element of the model represents, and describe at least one thing the model simplifies or leaves out.",
+      "wider": [
+       "Use force arrows to model forces on objects in a range of scenarios — stationary, moving, floating — and discuss how the model shows the relationship between forces",
+       "Use a virtual food chain simulation to explore the effects of changing producer or consumer numbers, comparing model predictions with real-world examples",
+       "Evaluate a physical model of the water cycle (water cycle in a bag, terrarium) — what does it show accurately, and what does it simplify?"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to treat models as pictures rather than as representations of relationships — they describe what the model looks like rather than what it shows about how things interact. Encountering models across varied science contexts (food chains, forces, water cycle) helps students develop a more general understanding of what models are for and how to read them as representations of relationships."
+      }
+     ],
+     "related": [
+      "AC9S4U01",
+      "AC9S4U02",
+      "AC9S4U03"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3I05",
+   "kit": "data/science/y3_science_AC9S3I05.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Inquiry",
+   "title": "Evaluating",
+   "description": "compare findings with those of others, consider if investigations were fair, identify questions for further investigation and draw conclusions",
+   "prior": [
+    "AC9S1I05"
+   ],
+   "knowledge": "Students can compare observations with predictions with guidance, and identify unexpected results (AC9S1I05, 1-2 band). They have not yet systematically evaluated fairness of investigations, drawn evidence-based conclusions, or posed further questions from findings.",
+   "endpoint": "Students compare their findings with others, evaluate whether their investigation was fair, draw conclusions that are grounded in their data, and identify questions for further investigation arising from their findings or unexpected results.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Conclusions are grounded in data",
+     "checkpoint": "Students can draw a conclusion from an investigation that is directly grounded in the data collected, and distinguish between a conclusion supported by data and a claim that goes beyond the data.",
+     "hinge": true,
+     "criteria": [
+      "States a conclusion that accurately reflects the data (does not overclaim)",
+      "Identifies at least one piece of data that supports the conclusion"
+     ],
+     "hinge_reason": "Data-grounded conclusion drawing is the payoff of the entire inquiry sequence and feeds directly into AC9S3H01. Students who cannot distinguish a supported conclusion from an overclaim produce unreliable conclusions that undermines the purpose of investigation — and carry this pattern into all subsequent inquiry work.",
+     "width": {
+      "minimum": "Students draw a conclusion from a given data set and explain how the data supports the conclusion.",
+      "typical": "Students identify the difference between a conclusion that accurately reflects the data and one that overclaims, and revise an overclaiming conclusion to match the data.",
+      "wider": [
+       "Examine a scenario where two data sets lead to different conclusions — what does this suggest about the investigation?",
+       "Evaluate conclusions drawn from food chain simulations (virtual or role-play) against what would actually happen in a real habitat — what does the simulation's simplification mean for the conclusion's validity?",
+       "Compare how conclusions are presented in a scientific article (hedged, data-referenced) versus how they appear in a news report (often more absolute) — and discuss why scientists are cautious"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The data-to-conclusion chain requires explicit scaffolding. Students commonly draw conclusions that go well beyond what the data shows, or that contradict the data, without recognising the mismatch. Making the chain explicit (what did the data show → what can I conclude from that data → what would I need to be able to say something stronger?) supports more disciplined conclusion-drawing."
+      }
+     ],
+     "related": [
+      "AC9S3I04",
+      "AC9S3H01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Comparing findings and evaluating fairness",
+     "checkpoint": "Students can compare their investigation findings with those of other students or groups, identify differences and suggest reasons for them, and evaluate whether differences are attributable to unfair testing.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one difference between their findings and another student's findings",
+      "Suggests a specific reason for the difference — distinguishing between an unfair test element and a legitimate source of variation"
+     ],
+     "width": {
+      "minimum": "Students compare their findings with at least one other student's findings, identify at least one difference, and suggest a reason for the difference.",
+      "typical": "Students identify whether differences between findings are likely due to an unfair test element (uncontrolled variable) or natural variation, and explain their reasoning.",
+      "wider": [
+       "Compare findings of water use surveys across different homes or contexts and discuss what the differences reveal — and what cannot be concluded without knowing more about the context",
+       "Examine findings from the same investigation run multiple times and discuss what repeated results increase confidence in vs what a single result cannot support",
+       "Research how scientists handle inconsistent results between research groups — replication, peer review, reporting methods — as the professional version of the same evaluation activity"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily identify that someone 'did it wrong' as the reason for different findings, without considering legitimate sources of variation (natural variation, measurement precision, context differences). Varied comparison contexts — water surveys, material tests, force investigations — where different findings are legitimate help students develop a more nuanced understanding of what differences between findings mean."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Identifying questions for further investigation",
+     "checkpoint": "Students can identify at least one question for further investigation arising from their findings, unexpected results, or limitations of the investigation.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least one question for further investigation that arises specifically from the findings or an unexpected result",
+      "Explains what in the investigation prompted the further question"
+     ],
+     "width": {
+      "minimum": "Students identify at least one question arising from their investigation findings or an unexpected result, and explain what prompted the question.",
+      "typical": "Students identify questions arising from both expected and unexpected results, and distinguish between questions they could investigate further in the classroom and questions requiring a different approach (longer time, larger scale, different equipment).",
+      "wider": [
+       "Examine a scenario with unexpected findings and generate two further investigation questions — one that tests whether the unexpected finding is reliable, and one that explores a possible explanation for it",
+       "Explore how unexpected findings in real science have led to significant discoveries — connecting the habit of posing further questions to the way science progresses",
+       "Connect to AC9S3H01: scientists use unexpected findings and the questions they generate as part of developing scientific explanations"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students who generate further questions only from expected results miss the richer direction — unexpected findings. Encountering varied scenarios where unexpected results prompted real scientific discoveries broadens students' understanding of how further questions function in science practice."
+      }
+     ],
+     "related": [
+      "AC9S3I01",
+      "AC9S3H01"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S3I06",
+   "kit": "data/science/y3_science_AC9S3I06.json",
+   "year": 3,
+   "span": 2,
+   "years": "3–4",
+   "strand": "Inquiry",
+   "title": "Communicating",
+   "description": "write and create texts to communicate findings and ideas for identified purposes and audiences, using scientific vocabulary and digital tools as appropriate",
+   "prior": [
+    "AC9S1I06"
+   ],
+   "knowledge": "Students can share questions, predictions, observations and ideas with others in simple forms (AC9S1I06, 1-2 band). They have not yet written or created texts that are explicitly structured for a purpose and audience, or used scientific vocabulary deliberately for communicative effect.",
+   "endpoint": "Students write and create texts to communicate science findings and ideas for identified purposes and audiences, selecting appropriate text forms and scientific vocabulary, and using digital tools where appropriate.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Texts have purpose, audience and appropriate vocabulary",
+     "checkpoint": "Students can identify the purpose of a science text, its intended audience, and how purpose and audience influence the vocabulary and structure of the text.",
+     "hinge": true,
+     "criteria": [
+      "Identifies the purpose and audience of a given science text",
+      "Explains at least one way the text's vocabulary or structure is shaped by its purpose or audience"
+     ],
+     "hinge_reason": "Purpose-audience awareness is the prerequisite for deliberate text construction in Node 3. Students who have not internalised how purpose and audience shape vocabulary and structure default to a single writing style regardless of the task, making Node 3's selection-and-creation demand impossible to meet.",
+     "width": {
+      "minimum": "Students identify the purpose and audience of a given science text and explain at least one way the text is shaped by those factors.",
+      "typical": "Students compare two texts communicating similar science content for different purposes or audiences (e.g. an informative report vs a persuasive poster) and identify structural and vocabulary differences.",
+      "wider": [
+       "Examine how First Nations Australians share information about water sources or ecological knowledge using different forms — oral, visual, spatial — and discuss what each form communicates that others don't",
+       "Explore a range of text forms used in science communication (journal abstract, news article, infographic, documentary) and identify what purpose and audience each serves",
+       "Discuss how digital tools change what is possible in science communication — interactivity, multimedia, global reach"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The purpose-audience-vocabulary relationship is non-obvious. Students default to a single writing style regardless of purpose or audience without scaffolding. Making the relationship explicit (who will read this → what do they need to understand → what vocabulary suits them → what structure helps them?) supports more deliberate text construction."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Using scientific vocabulary in writing",
+     "checkpoint": "Students can use appropriate scientific vocabulary in their writing to communicate about science findings, selecting terms that are precise and appropriate for the purpose and audience.",
+     "hinge": false,
+     "criteria": [
+      "Uses at least four science vocabulary terms accurately and in context (not just listed)",
+      "At least one use of scientific vocabulary achieves precision that an everyday word could not"
+     ],
+     "width": {
+      "minimum": "Students use at least four science vocabulary terms accurately in a piece of written science communication.",
+      "typical": "Students use scientific vocabulary purposefully — not just inserted, but used to communicate precise meaning that everyday words would not achieve — and explain the choice of at least one term.",
+      "wider": [
+       "Produce an informative text using scientific vocabulary to explain the impact of introduced predators on food chains — applying U-strand vocabulary in an HE context",
+       "Construct a report using scientific vocabulary to explain which materials are best suited for particular products — connecting vocabulary from U04 to a written analytical task",
+       "Investigate how vocabulary use differs between a formal science report and a community-facing poster about the same topic — which terms stay, which are replaced, and why"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to use scientific vocabulary as decoration rather than for precision — inserting terms without using them to carry meaning. Writing across multiple science contexts (food chains, water cycle, forces, materials) in different text forms helps students build a working sense of when scientific vocabulary adds precision and when simpler language suffices."
+      }
+     ],
+     "related": [
+      "AC9S4U01",
+      "AC9S4U02",
+      "AC9S4U03",
+      "AC9S4U04"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Selecting form and creating a text for purpose and audience",
+     "checkpoint": "Students can select an appropriate text form for a given science communication purpose and audience, and create a text in that form that communicates findings or ideas clearly.",
+     "hinge": false,
+     "criteria": [
+      "Creates a text in the specified or selected form that communicates the required science findings or ideas",
+      "Uses at least two science vocabulary terms accurately in the text",
+      "Text is structured appropriately for the identified purpose and audience"
+     ],
+     "width": {
+      "minimum": "Students create a text in a given form (informative text, poster, report, model) that communicates science findings for a specified purpose and audience.",
+      "typical": "Students select and justify a text form for a given science communication purpose, create the text using appropriate vocabulary and structure, and evaluate whether the text achieves its purpose.",
+      "wider": [
+       "Create a poster, song, slideshow or performance to encourage the school community to save water — choosing and justifying the form for the purpose and audience",
+       "Represent feeding relationships in multiple forms (written explanation, labelled diagram, physical model, oral presentation) and compare what each communicates most effectively",
+       "Use digital tools to create a multi-modal science text and discuss what the digital form allows that a written or drawn form cannot"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "Creating a science text for purpose and audience requires students to simultaneously apply vocabulary knowledge, form knowledge, purpose-audience reasoning, and their science content knowledge. All four dimensions must be coordinated in a single product. Students who have each element separately must now deploy them together — this is the integration challenge of the node."
+      }
      ]
     }
    ]
@@ -568,6 +2158,729 @@
    ]
   },
   {
+   "code": "AC9S3U04",
+   "kit": "data/science/y3_science_AC9S3U04.json",
+   "year": 3,
+   "span": 1,
+   "strand": "Chemical",
+   "title": "Solids, liquids and change of state",
+   "description": "investigate the observable properties of solids and liquids and how adding or removing heat energy leads to a change of state",
+   "prior": [],
+   "knowledge": "Students can observe and describe properties of materials and sort them by observable features (AC9SFU03, F band). They have not yet formally defined solid and liquid using observable properties, investigated change of state, or connected heat energy addition/removal to state transitions.",
+   "endpoint": "Students describe the observable properties that distinguish solids from liquids, explain that adding or removing heat energy causes changes of state (solid ↔ liquid), and give examples of state change in everyday and cultural contexts — including how state change enables recycling of materials.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Solids and liquids have distinct observable properties",
+     "checkpoint": "Students can distinguish solids from liquids using observable properties — solids hold their shape, liquids take the shape of their container and flow — and correctly classify materials including ambiguous cases.",
+     "hinge": true,
+     "criteria": [
+      "Classifies at least five materials as solid or liquid using property evidence",
+      "States at least two observable properties that distinguish solids from liquids"
+     ],
+     "hinge_reason": "The property-based definition of solid and liquid is the prerequisite for understanding change of state in Node 2. Students who classify by appearance rather than by the defining property criteria cannot correctly describe what changes when a solid melts — they see 'ice' becoming 'water' as a substance change rather than a state change.",
+     "width": {
+      "minimum": "Students classify at least five materials as solid or liquid using observable properties and explain the reasoning for each classification.",
+      "typical": "Students describe the observable properties that define solids (hold shape, fixed volume) and liquids (take shape of container, fixed volume, flow), correctly classify materials including ambiguous cases (toothpaste, slime, honey, cornflour mixture), and explain the evidence for each classification.",
+      "wider": [
+       "Investigate substances that are difficult to classify as solid or liquid — toothpaste, slime, hair gel, cornflour in water — and discuss what properties are used to decide and what limitations the binary classification has",
+       "Explore gases as a third state of matter — comparing their properties with solids and liquids and discussing what the three states have in common",
+       "Examine how properties of solids and liquids are used in everyday design decisions — why a container for liquid must be rigid and sealed, why a cutting tool must be solid"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students commonly classify by appearance (sugar is a solid because it looks like sand; honey is a solid because it moves slowly) rather than by the defining property criteria. Making the property definitions explicit — does it hold its shape without a container? does it flow? — and applying them to ambiguous cases is the scaffold that makes classification reliable."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Adding or removing heat causes change of state",
+     "checkpoint": "Students can explain that adding heat energy causes a solid to melt (become liquid) and removing heat energy causes a liquid to freeze (become solid), and describe what is observed during each change.",
+     "hinge": false,
+     "criteria": [
+      "Names the change of state when heat is added to a solid (melting) and when heat is removed from a liquid (freezing)",
+      "Describes at least two observable changes that occur during a state change"
+     ],
+     "width": {
+      "minimum": "Students describe what happens when heat is added to a solid and when heat is removed from a liquid, naming the change of state in each case.",
+      "typical": "Students explain that adding heat energy causes melting and removing heat energy causes freezing; describe observable changes during state change (shape lost, flows, hardens); investigate melting or freezing in a sealed container and explain that the substance itself (mass) does not change even though the state does.",
+      "wider": [
+       "Investigate the melting of different substances (ice, butter, chocolate, wax) and compare how quickly each melts — exploring whether all solids melt at the same temperature",
+       "Investigate how changes of state in materials used by First Nations Australians — such as beeswax or resins — are important for their practical use in tools and artefacts",
+       "Explore how changes from solid to liquid and back enable recycling of materials such as glass and plastics — connecting state change to sustainability"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly think of melting and freezing as applying only to ice and water. Encountering state change in butter, chocolate, wax, beeswax and industrial materials (glass, plastic) builds a more generalisable understanding of state change as a property of all materials, not just water."
+      }
+     ],
+     "related": [
+      "AC9S3U03",
+      "AC9S3I01",
+      "AC9S3I02"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "State change is reversible and conserves the substance",
+     "checkpoint": "Students can explain that state changes are reversible (a melted solid can be refrozen), that the substance itself does not change during a state change (only its form changes), and use evidence from an investigation (mass before and after in a sealed container) to support this.",
+     "hinge": false,
+     "criteria": [
+      "Explains that state change is reversible and that the substance does not change — only its form",
+      "Predicts that the mass of a substance will be the same before and after melting in a sealed container",
+      "Distinguishes between a substance changing state and a substance changing into a different substance"
+     ],
+     "width": {
+      "minimum": "Students explain that melting and freezing are reversible and that the substance does not change — only its state — giving at least one example.",
+      "typical": "Students investigate ice melting or water freezing in a sealed container, explain that the mass does not change even though the state does, describe how the change can be reversed, and distinguish state change (reversible, substance unchanged) from chemical change (new substance formed).",
+      "wider": [
+       "Explore how the reversibility of state change is used to recycle materials — glass, metals, plastics — examining which materials can be returned to a liquid state and reformed",
+       "Investigate whether mass changes when a substance changes state by predicting and then measuring mass before and after melting in a sealed container — applying measurement skills to test a prediction",
+       "Examine a case where state change appears irreversible (burning) and discuss why — introducing the distinction between physical and chemical change informally"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students commonly believe that melting changes what the substance is — ice becomes water, which is different. The reasoning chain — same substance, same particles, just different arrangement → mass unchanged → change is reversible → this is different from a chemical change — is the conceptual foundation for all later chemistry work on physical vs chemical change (AC9S8U07)."
+      }
+     ],
+     "related": [
+      "AC9S3I02",
+      "AC9S3I05"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S4U01",
+   "kit": "data/science/y4_science_AC9S4U01.json",
+   "year": 4,
+   "span": 1,
+   "strand": "Biological",
+   "title": "Food chains and habitats",
+   "description": "explain the roles and interactions of consumers, producers and decomposers within a habitat and how food chains represent feeding relationships",
+   "prior": [
+    "AC9S3U01"
+   ],
+   "knowledge": "Students can compare characteristics of living and non-living things and explain differences between plant and animal life cycles (AC9S3U01). They have not yet examined feeding relationships between organisms or the role of decomposers in a habitat.",
+   "endpoint": "Students explain the roles of producers, consumers and decomposers within a habitat — including how each group obtains energy and contributes to the habitat — and construct food chains to represent feeding relationships between named organisms across different habitats.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Producers make their own food",
+     "checkpoint": "Students can identify producers as living things that make their own food using sunlight and explain why this makes them the starting point of a food chain.",
+     "hinge": true,
+     "criteria": [
+      "Identifies at least two producers from a named habitat and explains that they make their own food using sunlight",
+      "Explains why producers are placed at the start of a food chain"
+     ],
+     "hinge_reason": "Producers are the definitional starting point of a food chain. Students who overgeneralise 'plants' as the only producers, or who cannot explain the sunlight-energy link, will construct incorrect chains in Node 4 and fail to understand why food chains always begin with a producer.",
+     "width": {
+      "minimum": "Students identify plants as producers and explain that they use sunlight to make food, giving one or two habitat examples.",
+      "typical": "Students identify producers across different habitat types (terrestrial, aquatic) and explain the role of sunlight as the energy source for the whole food chain.",
+      "wider": [
+       "Examine producers beyond flowering plants — algae, phytoplankton, and aquatic grasses — and discuss what makes something a producer regardless of its form",
+       "Connect to First Nations Australians' deep knowledge of productive plants in local habitats and how this knowledge guided sustainable use",
+       "Explore edge cases: fungi are not producers — where do they fit? (seeds a question that connects to the decomposer node)"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students frequently overgeneralise 'plants' as the only producers and miss aquatic or microscopic producers. Exposure to producers across varied habitat types (forest floor, reef, wetland) builds a more robust concept of what a producer is and prevents the food-chain construction errors that follow from this misconception."
+      }
+     ],
+     "related": [
+      "AC9S4H02",
+      "AC9S4I01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Consumers eat other organisms",
+     "checkpoint": "Students can classify animals as consumers, distinguish between herbivores, carnivores and omnivores, and explain that consumers obtain energy by eating producers or other consumers.",
+     "hinge": false,
+     "criteria": [
+      "Classifies at least three animals from a named habitat as herbivore, carnivore or omnivore with reasoning",
+      "Explains that consumers get their energy from eating other living things, not from sunlight directly"
+     ],
+     "width": {
+      "minimum": "Students classify animals from a named habitat as consumers and sort examples into herbivore, carnivore or omnivore categories with justification.",
+      "typical": "Students explain how energy moves from producers to consumers and identify multiple levels of consumers (primary, secondary) in a habitat without using that terminology explicitly.",
+      "wider": [
+       "Examine consumers that are difficult to classify — omnivores that shift diet by season, scavengers, parasites — and discuss where they fit",
+       "Explore how First Nations Australians classify animals and their feeding relationships, and compare with the producer/consumer framework",
+       "Investigate how the removal of one consumer from a habitat affects others — connects to food chain disruption in the next node"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly conflate 'consumer' with 'animal that eats meat' and struggle with omnivores and scavengers. Varied examples across habitats and feeding types help students build a working classification that holds up under edge cases and prepares them for accurate food chain construction."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Decomposers break down waste and remains",
+     "checkpoint": "Students can identify decomposers as living things that break down dead organisms and waste, and explain why decomposers are important to a habitat.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least two examples of decomposers and explains that they break down dead matter",
+      "Explains why decomposers are important to the habitat (nutrients returned to soil for producers)"
+     ],
+     "width": {
+      "minimum": "Students identify examples of decomposers (worms, fungi, bacteria) and explain that they break down dead organisms, returning nutrients to the soil.",
+      "typical": "Students explain the role of decomposers in cycling nutrients through a habitat and describe why removing decomposers would affect other organisms.",
+      "wider": [
+       "Research the diversity of decomposers — bacteria, fungi, detritivores — and compare how each contributes to breakdown",
+       "Examine how knowledge of decomposers has been applied in composting systems (connects to AC9S4H02)",
+       "Explore how First Nations Australians understand the role of decomposers in Country management and ecological cycles"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The decomposer role is non-obvious — students do not intuitively connect decomposers to nutrient cycling or see them as part of the food chain. Making the logic explicit (dead matter accumulates → decomposers break it down → nutrients return to soil → producers can grow) supports accurate understanding before students encounter food web models."
+      }
+     ],
+     "related": [
+      "AC9S4H02"
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Food chains show feeding sequences",
+     "checkpoint": "Students can construct a food chain for a named habitat using correct notation (arrows showing energy flow) and label each organism as producer, consumer or decomposer.",
+     "hinge": true,
+     "criteria": [
+      "Constructs a food chain with arrows pointing in the direction of energy flow (not toward predator)",
+      "Correctly labels each organism in the chain as producer, consumer or decomposer",
+      "Explains what the arrows in a food chain represent"
+     ],
+     "hinge_reason": "Arrow direction errors (pointing toward predator rather than in the direction of energy flow) are prerequisite errors that propagate into Node 5 — students who cannot construct accurate chains cannot reason about what happens when an organism is removed, because they lack a correct model of energy flow sequence.",
+     "width": {
+      "minimum": "Students construct a simple food chain (3–4 links) for a given habitat using arrow notation and label each organism correctly.",
+      "typical": "Students construct food chains for two different habitats, explain what the arrows represent (energy flow, not just 'eats'), and compare the chains to identify structural similarities.",
+      "wider": [
+       "Compare food chains across markedly different habitats — arid desert, tropical rainforest, reef — and explain what determines chain length",
+       "Represent the same habitat's feeding relationships as both a food chain and an informal food web, and discuss what a food chain can and cannot show",
+       "Construct food chains from First Nations ecological knowledge of a local habitat and compare to textbook examples"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Arrow direction errors are common and persistent — students draw arrows toward the predator ('what eats what') rather than in the direction of energy flow. Accurate notation requires deliberate practice with feedback, not more examples of different habitats."
+      },
+      {
+       "mode": "integration",
+       "reason": "Food chain construction requires coordinating the three roles (producer, consumer, decomposer) into a single representation. Students who have each role as a separate idea must now apply all three simultaneously while observing notation conventions."
+      }
+     ],
+     "related": [
+      "AC9S4I04",
+      "AC9S7U02"
+     ]
+    },
+    {
+     "n": 5,
+     "label": "Habitat disruption affects food chains",
+     "checkpoint": "Students can explain how removing or adding an organism to a habitat affects the feeding relationships in a food chain, using examples of introduced species or habitat change.",
+     "hinge": false,
+     "criteria": [
+      "Predicts the effect on at least one other organism when a named organism is removed from a food chain and explains the reasoning",
+      "Identifies at least one real-world example where a food chain was disrupted and describes the cause"
+     ],
+     "width": {
+      "minimum": "Students predict and explain what would happen to one organism in a food chain if another organism were removed, using a given habitat example.",
+      "typical": "Students explain how the removal of a producer or key consumer cascades through a food chain, and describe at least one real-world example of food chain disruption in Australia.",
+      "wider": [
+       "Investigate a specific case of introduced predator impact on Australian native species (e.g. foxes and small mammals) and explain the cascading effects through the food chain",
+       "Research how First Nations Australians use food chain knowledge to manage Country, including controlled burning and its effects on food chains",
+       "Explore the ecological role of decomposers in recovery after disruption — what happens to dead matter when predator populations crash"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students struggle to extend their reasoning beyond the immediately removed organism — they see one step of the chain affected rather than cascading effects. Varied disruption scenarios (producer loss, consumer loss, introduced predator) and Australian contexts help students develop a more flexible and accurate model of chain interdependence."
+      }
+     ],
+     "related": [
+      "AC9S4H01",
+      "AC9S4H02",
+      "AC9S4I01",
+      "AC9S7U02"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S4U02",
+   "kit": "data/science/y4_science_AC9S4U02.json",
+   "year": 4,
+   "span": 1,
+   "strand": "Earth and space",
+   "title": "Water cycle",
+   "description": "identify sources of water and describe key processes in the water cycle, including movement of water through the sky, landscape and ocean; precipitation; evaporation; and condensation",
+   "prior": [
+    "AC9S3U04",
+    "AC9S3U02"
+   ],
+   "knowledge": "Students can describe observable properties of solids and liquids and explain how adding or removing heat energy causes changes of state (AC9S3U04). They can compare properties of soils, rocks and minerals as Earth resources (AC9S3U02). They have not yet connected state changes to the movement of water through the environment as a continuous cycle.",
+   "endpoint": "Students describe the key processes of the water cycle — evaporation, condensation and precipitation — trace the movement of water through sky, landscape and ocean, and identify sources of water including how First Nations Australians and others understand and manage water resources.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Water exists in different forms and locations",
+     "checkpoint": "Students can identify sources of water in the environment — sky, landscape, ocean, underground — and recognise that water exists as liquid, vapour and solid depending on conditions.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least three sources of water in the environment across different locations (sky, landscape, underground or ocean)",
+      "Connects each source to a state of water (liquid, solid or vapour)"
+     ],
+     "width": {
+      "minimum": "Students name at least three sources of water in the environment and connect each to a state of water (liquid rain, solid snow/ice, vapour in air).",
+      "typical": "Students describe where water is found across sky, landscape and ocean, and explain that the same water moves between these locations over time.",
+      "wider": [
+       "Map local water sources — creeks, reservoirs, stormwater drains — and trace where water comes from and where it goes",
+       "Explore First Nations Australians' knowledge of water sources and landscape reading (identifying water from topographic and vegetation cues)",
+       "Investigate underground water (groundwater, aquifers) as a less visible but important water source"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to think of water only in visible, surface forms (rain, rivers, taps). Mapping local water sources and exploring First Nations knowledge of water reading broadens this to include underground, atmospheric and landscape-embedded water — supporting the more complete model needed for the full cycle in Node 5."
+      }
+     ],
+     "related": [
+      "AC9S4H02",
+      "AC9S4I01"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Evaporation — liquid water becomes vapour",
+     "checkpoint": "Students can explain evaporation as the process by which liquid water becomes water vapour and identify everyday examples of evaporation occurring.",
+     "hinge": true,
+     "criteria": [
+      "Describes evaporation using an everyday example and explains that liquid water becomes water vapour",
+      "Identifies at least one condition that affects how quickly evaporation occurs"
+     ],
+     "hinge_reason": "Evaporation is the entry point for the water cycle. Students who do not understand that liquid water becomes invisible vapour — and particularly those who restrict evaporation to heating/drying contexts — cannot correctly explain how water enters the atmosphere or why the cycle operates at all, breaking Node 5 integration.",
+     "width": {
+      "minimum": "Students describe evaporation using an everyday example (wet washing drying, puddle disappearing) and explain that liquid water becomes water vapour that enters the air.",
+      "typical": "Students explain that heat energy drives evaporation and identify conditions that speed it up (warmth, wind, exposed surface area), connecting to their prior knowledge of heat energy and state change.",
+      "wider": [
+       "Investigate how evaporation rate changes with temperature and surface area using a simple investigation",
+       "Explore how First Nations Australians' knowledge of evaporation is applied to conserve water — covering surfaces to reduce evaporative loss",
+       "Connect ocean evaporation to the global scale of the water cycle — most water vapour in the atmosphere comes from the ocean"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students often have a narrow concept of evaporation tied to drying or heating — they miss large-scale evaporation from oceans and lakes, and evaporation in cool conditions. Varied everyday examples help students generalise beyond heat-drying to a broader concept of liquid-to-vapour transition."
+      }
+     ],
+     "related": [
+      "AC9S3U04"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Condensation — vapour becomes liquid water",
+     "checkpoint": "Students can explain condensation as the process by which water vapour becomes liquid water and identify everyday examples where condensation is visible.",
+     "hinge": true,
+     "criteria": [
+      "Describes condensation using an everyday example and explains that water vapour becomes liquid water when cooled",
+      "Does not describe condensation as water passing through a container wall (misconception check)",
+      "Connects cloud formation to condensation of water vapour in the atmosphere"
+     ],
+     "hinge_reason": "The condensation misconception (water 'sweats through' a container rather than forming from vapour in the air) directly corrupts students' model of cloud formation and precipitation in Node 4 and Node 5. Students holding this misconception cannot construct a coherent water cycle.",
+     "width": {
+      "minimum": "Students describe condensation using an everyday example (water droplets on a cold drink bottle, bathroom mirror fogging) and explain that water vapour in the air becomes liquid water when cooled.",
+      "typical": "Students explain that cooling drives condensation, connect the formation of clouds to condensation of water vapour in the atmosphere, and describe what conditions are needed for clouds to form.",
+      "wider": [
+       "Observe a 'cloud in a bottle' or fog-formation demonstration and explain the conditions that produced it",
+       "Investigate dew formation — when and where does dew form, and why? Connect to First Nations knowledge of collecting dew as a water source",
+       "Explore how condensation forms rain droplets — water vapour condenses around tiny particles (dust, pollen) in the atmosphere"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students commonly believe condensation is water 'sweating through' a container rather than water vapour from the air cooling on a cold surface. Making the reasoning explicit — air contains invisible water vapour → cold surface cools nearby air → vapour loses energy and becomes liquid → droplets form on the surface — is necessary before students can correctly explain cloud formation or dew."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Precipitation — water falls from clouds",
+     "checkpoint": "Students can explain precipitation as water falling from clouds in different forms (rain, snow, hail) and describe the conditions that determine which form precipitation takes.",
+     "hinge": false,
+     "criteria": [
+      "Explains that precipitation occurs when water falls from clouds and names at least two forms",
+      "Describes at least one condition that determines what form precipitation takes"
+     ],
+     "width": {
+      "minimum": "Students explain that precipitation occurs when water droplets in clouds combine and fall, and name two forms of precipitation.",
+      "typical": "Students describe conditions that determine precipitation form (temperature at different altitudes determines rain vs snow vs hail) and give examples of each from different climates or seasons.",
+      "wider": [
+       "Explore how rainfall data is collected and used — rain gauges, Bureau of Meteorology data — connecting to how hydrologists use this data (AC9S4H01)",
+       "Investigate seasonal rainfall patterns in different Australian regions and connect to First Nations seasonal calendars",
+       "Examine hail formation as an example of precipitation with a more complex mechanism — water droplets carried upward by air currents, freezing in layers"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly think of precipitation only as rain and miss the variety of forms and the conditions that determine them. Exploring rainfall data collection and First Nations seasonal calendars broadens students' understanding of precipitation as a varied, data-rich phenomenon embedded in real knowledge systems."
+      }
+     ],
+     "related": [
+      "AC9S4H01",
+      "AC9S4I03"
+     ]
+    },
+    {
+     "n": 5,
+     "label": "The water cycle — continuous movement through Earth's systems",
+     "checkpoint": "Students can trace the movement of water through the complete cycle — evaporation, condensation, precipitation, runoff and collection — and explain that the water cycle is continuous.",
+     "hinge": false,
+     "criteria": [
+      "Traces the path of water through at least three named stages of the water cycle, correctly labelling the process at each transition",
+      "Explains that the water cycle is continuous and driven by solar energy",
+      "Identifies at least two locations where water is stored (e.g. ocean, atmosphere, groundwater, ice)"
+     ],
+     "width": {
+      "minimum": "Students trace a water molecule through at least three stages of the water cycle, naming the processes at each transition and identifying where the water is at each stage.",
+      "typical": "Students describe the complete water cycle including the movement of water through sky, landscape and ocean, explain that solar energy drives the cycle, and represent it in a labelled diagram or model.",
+      "wider": [
+       "Explore how hydrologists use rainfall and water use data to explain river flow and seasonal variation (AC9S4H01) — connecting the abstract cycle to real data",
+       "Examine how land use changes (deforestation, urbanisation) affect the water cycle at local and regional scales",
+       "Consider how First Nations Australians' water resource management practices are grounded in understanding the water cycle, including seasonal variation"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "The water cycle integrates evaporation, condensation and precipitation — three processes students have encountered separately — into a single continuous system. Students must now coordinate these components and understand that the same water moves repeatedly through the cycle, driven by solar energy."
+      },
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to model the water cycle as a simple loop (rain falls, evaporates, becomes rain again) without accounting for groundwater, ocean reservoirs, or long-term storage in ice. Varied representations — local creek, ocean, underground — help students build a more complete model of the cycle."
+      }
+     ],
+     "related": [
+      "AC9S4H01",
+      "AC9S4H02",
+      "AC9S4I04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S4U03",
+   "kit": "data/science/y4_science_AC9S4U03.json",
+   "year": 4,
+   "span": 1,
+   "strand": "Physical",
+   "title": "Forces and motion",
+   "description": "identify how forces can be exerted by one object on another and investigate the effect of frictional, gravitational and magnetic forces on the motion of objects",
+   "prior": [
+    "AC9S1U03"
+   ],
+   "knowledge": "Students can describe pushes and pulls in terms of strength and direction and predict their effects on motion and shape (AC9S1U03). They have not yet encountered named force types (friction, gravity, magnetism) or the concept that forces are exerted by one object on another, including at a distance.",
+   "endpoint": "Students identify how forces are exerted between objects — including contact and non-contact forces — and describe the effects of friction, gravity and magnetism on the motion of objects, using force arrows to represent direction and magnitude.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Forces are exerted by one object on another",
+     "checkpoint": "Students can explain that a force is an interaction between two objects — one exerting, one receiving — and distinguish between contact forces (objects touching) and non-contact forces (acting at a distance).",
+     "hinge": true,
+     "criteria": [
+      "Identifies the two objects involved in a force interaction for a given example",
+      "Distinguishes between a contact force example and a non-contact force example with justification"
+     ],
+     "hinge_reason": "The two-object interaction framing is the conceptual prerequisite for correctly identifying friction, gravity and magnetism in Nodes 2–4. Students who attribute force to one object ('the magnet pulls') without identifying the receiving object cannot accurately describe force pairs and will misidentify contact vs non-contact situations throughout the sequence.",
+     "width": {
+      "minimum": "Students identify the two objects involved in a force interaction for at least two examples, and distinguish between contact and non-contact examples.",
+      "typical": "Students explain that forces require an interaction between objects and that some forces (gravity, magnetism) act without physical contact, using examples from their experience.",
+      "wider": [
+       "Investigate traditional First Nations Australians' toys and games and identify the forces involved in each — connecting cultural artefacts to the force concept",
+       "Explore the idea that even 'stationary' objects have forces acting on them (a book on a table — gravity pulling down, table pushing up) — introducing force balance informally",
+       "Examine how force arrows are used to show direction and magnitude, and draw force arrow diagrams for simple scenarios"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "The concept that force requires two objects — an exerter and a receiver — is non-obvious to Year 4 students who tend to think of force as a property of one object ('the magnet pulls'). Making the two-object interaction explicit, and distinguishing contact from non-contact, is a necessary conceptual scaffold before students can correctly identify friction, gravity and magnetism as force types."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Friction slows motion between surfaces",
+     "checkpoint": "Students can explain that friction is a force that acts between two surfaces in contact, describe its effect on motion (slowing or stopping), and identify factors that affect friction strength.",
+     "hinge": false,
+     "criteria": [
+      "Explains that friction is a force between surfaces and describes its effect on motion",
+      "Gives one example where friction is helpful and one where it is a problem",
+      "Identifies at least one factor that affects how strong the friction force is"
+     ],
+     "width": {
+      "minimum": "Students explain that friction acts between surfaces and slows or stops moving objects, giving two everyday examples.",
+      "typical": "Students explain positive and negative effects of friction in everyday contexts (friction needed for gripping; friction causes wear and slows machines) and identify how surface texture affects friction strength.",
+      "wider": [
+       "Investigate how shoe sole design uses friction principles — examining patterns and materials for different surface conditions",
+       "Test friction between different surface combinations and represent results in a column graph (connects to AC9S4I04)",
+       "Research how friction reduction is used in engineering contexts (lubricants, ball bearings, aerodynamics) and examine trade-offs"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students readily identify friction as 'slowing things down' but struggle to see it as a force exerted by one surface on another. They also miss contexts where friction is desirable (braking, gripping, writing). Varied contexts — shoe grip, playground slides, bike brakes, wet roads — help students build a more complete model of friction as a surface interaction with both beneficial and detrimental effects."
+      }
+     ],
+     "related": [
+      "AC9S4U04",
+      "AC9S4I02",
+      "AC9S4H02"
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Gravity pulls objects toward Earth",
+     "checkpoint": "Students can explain that gravity is a force that pulls all objects toward the centre of Earth, acts on objects regardless of whether they are moving or stationary, and explain why objects fall when dropped.",
+     "hinge": false,
+     "criteria": [
+      "Explains that gravity pulls all objects toward the centre of Earth",
+      "Confirms that gravity acts on objects whether they are moving or stationary (does not restrict gravity to falling objects)",
+      "Gives a correct example of gravity's effect on a stationary object"
+     ],
+     "width": {
+      "minimum": "Students explain that gravity pulls objects toward Earth and that it acts on all objects, giving examples of gravity's effect on moving and stationary objects.",
+      "typical": "Students explain that gravitational force acts continuously on objects (a held object, a stationary object, a falling object) and describe what would change if gravity were weaker — connecting to astronauts on the moon.",
+      "wider": [
+       "Watch footage of astronauts on the moon or dropping objects in a vacuum and describe the force they are observing — connecting to the idea that gravity varies with planetary mass",
+       "Investigate the pushing force of a liquid (buoyancy) and discuss how it can counteract gravity, allowing objects to float",
+       "Explore how gravity acts on objects in free fall — using slow-motion footage of falling objects to describe the motion"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly believe gravity only acts when objects are falling or moving, not on stationary objects. They also conflate gravity with 'weight' as a fixed property. Varied contexts — a stationary book, a falling apple, an astronaut on the moon, a floating boat — help students see gravity as a continuous force that acts regardless of motion state."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Magnetic forces attract and repel",
+     "checkpoint": "Students can explain that magnets exert forces on other magnets and on some metals, describe attraction and repulsion, and identify that magnetic force acts at a distance.",
+     "hinge": false,
+     "criteria": [
+      "Distinguishes between magnetic and non-magnetic materials with examples (does not claim all metals are magnetic)",
+      "Explains that magnetic force can act at a distance without the objects touching",
+      "Describes both attraction (opposite poles) and repulsion (same poles) between magnets"
+     ],
+     "width": {
+      "minimum": "Students explain that magnets attract some metals and can attract or repel other magnets, give examples of magnetic and non-magnetic materials, and confirm that this force acts without contact.",
+      "typical": "Students explain the conditions under which magnets attract (opposite poles) or repel (same poles), identify which common metals are magnetic, and describe practical uses of magnetic force.",
+      "wider": [
+       "Investigate how magnetic force strength changes with distance and represent findings graphically",
+       "Explore how magnetic forces are used in sorting metals in recycling and food safety (metal detection) — connecting to AC9S4H02",
+       "Examine how compasses work and how the Earth's magnetic field is a large-scale example of magnetism"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students commonly believe all metals are magnetic and struggle with the at-a-distance nature of magnetic force. Varied materials testing (iron, steel, aluminium, copper) and distance investigations resolve both misconceptions more effectively than re-explaining the rule."
+      }
+     ],
+     "related": [
+      "AC9S4H02",
+      "AC9S4I02"
+     ]
+    },
+    {
+     "n": 5,
+     "label": "Force arrows represent forces on objects",
+     "checkpoint": "Students can draw and interpret force arrow diagrams showing the direction and relative magnitude of forces acting on an object, and use these to describe the overall effect on motion.",
+     "hinge": false,
+     "criteria": [
+      "Draws force arrows with the correct direction for at least two forces acting on an object",
+      "Sizes arrows to indicate relative magnitude (larger force = longer arrow) where two forces are compared",
+      "Explains what the force arrows in a given diagram indicate about the object's motion"
+     ],
+     "width": {
+      "minimum": "Students draw force arrows on a simple diagram to show the direction of at least two forces on an object and describe the effect of those forces on motion.",
+      "typical": "Students draw force arrow diagrams for familiar scenarios (a falling object, a car braking, a floating boat) showing multiple forces with arrows sized to show relative magnitude, and explain what the overall forces mean for motion.",
+      "wider": [
+       "Represent forces in traditional First Nations instructive toys and games using force arrow diagrams — applying the representation to culturally grounded scenarios",
+       "Explore how force diagrams are used in engineering and design to analyse structures and moving objects",
+       "Investigate balanced forces (two equal, opposite arrows) and informally describe why the object doesn't move — a preview of Y7 force concepts"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Force arrow direction errors are common — students draw arrows showing the direction of motion rather than the direction of the force, or place arrows incorrectly on objects. Accurate diagramming requires deliberate practice with feedback on placement and direction. This is a precision-required representation skill."
+      },
+      {
+       "mode": "integration",
+       "reason": "Force arrow diagrams require students to simultaneously represent multiple forces (gravity, friction, magnetic, applied) in a single diagram and interpret their combined effect. Coordinating the three named force types with correct arrow conventions is the integration challenge at this node."
+      }
+     ],
+     "related": [
+      "AC9S4I04",
+      "AC9S7U04"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S4U04",
+   "kit": "data/science/y4_science_AC9S4U04.json",
+   "year": 4,
+   "span": 1,
+   "strand": "Chemical",
+   "title": "Properties of materials",
+   "description": "examine the properties of natural and made materials including fibres, metals, glass and plastics and consider how these properties influence their use",
+   "prior": [
+    "AC9S2U03"
+   ],
+   "knowledge": "Students can recognise that objects are made of materials and describe observable properties of those materials (AC9SFU03). They can recognise that physical actions change the shape of materials without changing their composition (AC9S2U03). They have not yet systematically compared material classes (fibres, metals, glass, plastics) or connected material properties to selection for specific uses.",
+   "endpoint": "Students examine properties of natural and made materials across fibres, metals, glass and plastics, use property vocabulary to describe and compare materials, and explain how specific properties determine why materials are selected for particular uses.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Materials have observable and testable properties",
+     "checkpoint": "Students can use property vocabulary to describe and compare materials, making observations and using appropriate terms (hardness, flexibility, transparency, conductivity, texture, absorbency).",
+     "hinge": true,
+     "criteria": [
+      "Uses at least four property terms accurately when describing a given material",
+      "Distinguishes between properties that can be observed without testing (colour, transparency) and properties that require testing (hardness, absorbency)"
+     ],
+     "hinge_reason": "Property vocabulary is the language for all subsequent nodes. Students who lack accurate property terms produce vague selection rationales ('it's good because it's strong') in Nodes 3 and 4, making the property-to-demand reasoning chain impossible to complete correctly.",
+     "width": {
+      "minimum": "Students use at least four property terms to describe and compare two materials, making observations to justify each term.",
+      "typical": "Students systematically describe a range of materials using property vocabulary, distinguishing between properties they can observe directly and properties they need to test.",
+      "wider": [
+       "Explore how First Nations Australians use material properties to select appropriate natural materials for tools, clothing, shelter and musical instruments",
+       "Investigate how property vocabulary is used in materials science and engineering — product datasheets, material specifications",
+       "Compare how the same material can have different properties in different forms (e.g. glass as flat sheet vs glass fibre vs tempered glass)"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "repertoire_building",
+       "reason": "Students need to accumulate a working vocabulary of property terms through applying them to varied materials before they can use these terms reliably in comparative and explanatory tasks. Rushing to selection-for-use before property vocabulary is established produces vague explanations ('it's good because it's strong')."
+      }
+     ],
+     "related": [
+      "AC9S4I03"
+     ]
+    },
+    {
+     "n": 2,
+     "label": "Material classes: fibres, metals, glass, plastics",
+     "checkpoint": "Students can identify examples of fibres, metals, glass and plastics, and describe characteristic properties of each class that distinguish it from others.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least two examples from each of the four material classes (fibres, metals, glass, plastics)",
+      "Names at least two characteristic properties of each class that distinguish it from others"
+     ],
+     "width": {
+      "minimum": "Students identify at least two examples from each of the four material classes and name two characteristic properties of each class.",
+      "typical": "Students compare the four material classes using a property framework, identify natural vs made materials within each class, and give examples of where each class is typically used based on its characteristic properties.",
+      "wider": [
+       "Investigate natural vs synthetic versions within a class (natural fibres: wool, cotton; synthetic: nylon, polyester) and compare properties",
+       "Research how glass is made from natural materials (silica sand) — connecting to the idea that 'made' materials are often processed from natural sources",
+       "Examine how plastics are classified by resin code and how these different types have different properties and recycling outcomes"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "context_breadth",
+       "reason": "Students tend to have narrow prototypes for each class — 'metal' means iron/steel, 'fibre' means string. Exposure to the full range within each class (metals including aluminium, copper, gold; fibres including natural and synthetic; glass including safety glass and optical fibre) builds a more robust class concept and prevents selection-for-use errors based on prototype thinking."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "label": "Properties determine material selection",
+     "checkpoint": "Students can explain why a specific material is used for a particular purpose by connecting one or more of its properties to the demands of that use.",
+     "hinge": false,
+     "criteria": [
+      "Names the relevant property and explains how that property meets the demands of the use for a given material-object pair",
+      "Explains why a different material would be less suitable for the same use (naming the missing property)"
+     ],
+     "width": {
+      "minimum": "Students explain the selection of a material for a given object by naming the relevant property and explaining why it matters for that use.",
+      "typical": "Students explain how the combination of properties of a material determines its suitability for a specific use, and recognise that no material is universally 'best' — selection depends on the demands of the use.",
+      "wider": [
+       "Examine familiar objects made from combinations of materials (shoes: rubber sole, leather/synthetic upper, foam insole) and explain the property rationale for each component",
+       "Investigate how knowledge of material properties has influenced people's decisions about plastic use and disposal (AC9S4H02)",
+       "Research a case where material selection failed — a product that used the wrong material for its purpose — and analyse the property mismatch"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "structured_reasoning",
+       "reason": "Students frequently explain material selection with generic justifications ('glass is used for windows because it's see-through') without articulating the property-to-demand connection ('transparency allows light in while the hardness and weather resistance keep the elements out'). Making the reasoning chain explicit — demand → required property → material that has that property — produces better explanatory quality."
+      }
+     ],
+     "related": [
+      "AC9S4H02",
+      "AC9S4U03"
+     ]
+    },
+    {
+     "n": 4,
+     "label": "Objects often combine materials with different properties",
+     "checkpoint": "Students can examine a multi-material object, identify the different materials present, and explain why each material was selected based on its properties and the specific demands it meets in that object.",
+     "hinge": false,
+     "criteria": [
+      "Identifies at least two different materials in a named object and names at least one property of each",
+      "Explains the specific property-to-function connection for each identified material in the object",
+      "Identifies at least one property that would make a substitute material unsuitable for one component"
+     ],
+     "width": {
+      "minimum": "Students identify two different materials in a familiar object and explain the property rationale for each.",
+      "typical": "Students systematically examine a multi-material object (shoe, lunchbox, tent, backpack), map each material to its location and function, and explain the property rationale for each material choice.",
+      "wider": [
+       "Design and build a test object for a specific purpose (tent, bird feeder, lunchbox) selecting materials based on property analysis — connects to AC9S4I02 (fair testing of designs)",
+       "Investigate which materials in a chosen object can be recycled and research alternatives for materials with poor sustainability properties",
+       "Consider how First Nations Australians combine natural materials in traditional objects — e.g. spears combining wood, sinew, stone — and analyse the property rationale for each component"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "integration",
+       "reason": "This node requires students to coordinate material identification, property vocabulary, and the selection rationale framework — applying all three simultaneously to a complex multi-material object. Students who have each component as a separate skill must now deploy them together in a single analytical task."
+      }
+     ],
+     "related": [
+      "AC9S4I02",
+      "AC9S4H02"
+     ]
+    }
+   ]
+  },
+  {
    "code": "AC9S5H01",
    "kit": "data/science/y5_science_AC9S5H01.json",
    "year": 5,
@@ -816,6 +3129,50 @@
       {
        "mode": "context_breadth",
        "reason": "Students at this band must transfer the fair test planning skill to investigation types beyond the classroom bench test — field observations, simulations, research-based investigations. Encountering planning across these varied investigation types builds the flexible, context-independent planning capability the descriptor requires."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AC9S5I03",
+   "kit": "data/science/y5_science_AC9S5I03.json",
+   "year": 5,
+   "span": 2,
+   "years": "5–6",
+   "strand": "Inquiry",
+   "title": "Observing and measuring",
+   "description": "use equipment to observe, measure and record data with reasonable precision, using digital tools as appropriate",
+   "prior": [
+    "AC9S3I03"
+   ],
+   "knowledge": "Students can read familiar scaled instruments and record observations systematically (AC9S3I03, 3-4 band). They now extend to selecting equipment for precision, using standard units with prefixes, and recording data electronically.",
+   "endpoint": "Students select equipment appropriate to the precision required, measure and record data using standard units and prefixes, discuss why precision matters for investigation findings, and use digital tools where appropriate.",
+   "nodes": [
+    {
+     "n": 1,
+     "label": "Equipment is selected for the precision the investigation requires",
+     "checkpoint": "Students can explain why different equipment gives different levels of precision, select appropriate equipment for a given measurement task, and describe the effect of low precision on investigation findings.",
+     "hinge": true,
+     "criteria": [
+      "Selects appropriate equipment for a given measurement task and explains the reasoning",
+      "Records data using standard units with appropriate metric prefixes",
+      "Explains how low precision could affect the conclusions of an investigation"
+     ],
+     "hinge_reason": "Precision measurement with appropriate equipment is a prerequisite for I04 data representation and I05 error analysis — students who do not measure with adequate precision cannot construct meaningful representations or identify measurement error as a specific error source. Imprecision at I03 propagates as systematically poor data through all downstream inquiry nodes.",
+     "width": {
+      "minimum": "Students compare the precision of two instruments for the same measurement and select the more appropriate one, explaining their reasoning.",
+      "typical": "Students select appropriate equipment across investigation types, explain why precision matters for investigation conclusions, use standard units with metric prefixes (kilo-, milli-) consistently, and record data in tables, diagrams or digital formats.",
+      "wider": [
+       "Explore which equipment gives the most appropriate precision for different investigation contexts — comparing cup vs measuring jug vs digital scale for mass measurement",
+       "Use digital tools (digital photography, spreadsheets) to record and organise observation data — examining what digital recording adds in accuracy and reproducibility",
+       "Investigate how the precision of measurement equipment affects whether a difference between two conditions can be detected"
+      ]
+     },
+     "modes": [
+      {
+       "mode": "consolidation",
+       "reason": "Precise measurement with standard units requires consistent accurate practice across investigation types. Students at this band must apply precision reasoning independently — not just follow instructions — which requires encountering precision decisions across varied measurement contexts."
       }
      ]
     }
