@@ -1,0 +1,40 @@
+summary: "Students write a class rule about AI for homework using the lens, then meet real rules: the national schools framework (reviewed yearly), the government's own AI policy, and (wider) the EU AI Act's high-risk category for hiring."
+time: 40
+goals:
+  - "I can write a rule about AI and name who gains, who loses and who decides."
+  - "I can explain why a rule needs a way to check that it works."
+  - "I can explain why some AI uses get stricter rules than others."
+before: |
+  **Core idea:** a rule is a trade-off between people, and a rule existing isn't the same as it working. Kinds: all four.
+  **Re-check each January** (the schools framework's annual review; the government policy), and the EU dates before 2 Dec 2027.
+  Sources (checked 18 Oct 2026, research brief claims 41–43):
+  - Australian Framework for Generative AI in Schools, 2024 Review (endorsed June 2025; annual reviews). https://www.education.gov.au/download/17416/australian-framework-generative-artificial-intelligence-ai-schools/41436/2024-review-australian-framework-generative-ai-schools/pdf. A 2025 review was not found.
+  - DTA, 12 Jan 2026: "The first, new, mandatory requirement begins on 15 June 2026." https://www.dta.gov.au/articles/ai-policy-update-strengthening-responsible-use-across-government
+  - EU AI Act Annex III point 4 (job-application filtering is high-risk) and the Digital Omnibus delay to 2 Dec 2027, read on an unofficial mirror: https://artificialintelligenceact.eu/annex/3/. **Confirm on EUR-Lex before teaching the wider step.**
+  Not yet checked for this course (keep out of student text): NYC Local Law 144 hiring-audit compliance figures; Australia's National AI Plan (Dec 2025).
+  The Explore reasoning check is unmarked: students see model answers and self-check against the criteria.
+  This connects to Does AI Help Us Learn? (when AI helps learning) and to your school's own AI policy: show it if you can, and ask students to judge it with the lens.
+  Idea credit: Day of AI's "Student Senate: AI Policy in Schools" (dayofai.org) is an optional class extra (US framing).
+running:
+  - "Engage: list everyone a homework rule affects."
+  - "Explore: critique the three rules, then each student writes one."
+  - "Explain: the four parts of a good rule on the board."
+struggle: "Students write rules as bans or free-for-alls. The lens pushes them to name who loses and how to check."
+stuck:
+  - see: "A student's rule is 'ban it'."
+    ask: "How would a teacher check it? Who loses?"
+    fix: "Add a check, and think about students who'd use AI well or need it for access."
+  - see: "A student can't think who loses."
+    ask: "Who would find your rule hardest to follow?"
+    fix: "That's often who loses."
+support: "Give a rule template: Allowed… / Not allowed… / Gains… / Loses… / Decides… / Check…"
+stretch: "Compare your rule with your school's actual AI policy. What would you change, and why?"
+leads: "Lesson 11: students apply the lens to a case of their choice."
+exit:
+  q: "Why isn't a rule about AI finished once it's written?"
+  a: "It may not work as expected, and AI changes fast, so someone has to check it and change it."
+explain: |
+  1. A rule about AI says what's allowed.
+  2. It names who gains, who loses and who decides.
+  3. It includes a way to check that it works.
+  4. A rule existing isn't the same as it working.

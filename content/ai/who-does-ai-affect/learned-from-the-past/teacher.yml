@@ -1,0 +1,37 @@
+summary: "A model trained on past decisions copies their patterns. Amazon's experimental résumé tool marked down 'women's'; a 2024 test of AI résumé ranking favoured White-associated names; a health algorithm predicted cost instead of illness."
+time: 40
+goals:
+  - "I can explain how a model that learns from past decisions can copy unfair patterns."
+  - "I can name checks that help: test each group, a person who can overrule, and the right thing to predict."
+  - "I can explain why hiding one word doesn't remove a bias."
+before: |
+  **Core idea:** past decisions are examples, so a model learns their patterns, fair or not. Kind: learns to predict or sort. Builds on AI Foundations › Why does AI make mistakes? (bias as missing or rare examples).
+  Sources (checked 18 Oct 2026, research brief claims 17–19):
+  - Reuters (Dastin), 10 Oct 2018, read via Euronews's verbatim copy: https://www.euronews.com/2018/10/10/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women. Anonymous sources; recruiters reportedly never relied on it alone. Use it as a hook, not as proof of harm to any individual. The "women's chess club captain" example is from the Reuters report.
+  - Wilson and Caliskan (2024), AIES, abstract only: language-model résumé screening favoured White-associated names in 85.1% of cases (a simulation, not real hiring). https://ojs.aaai.org/index.php/AIES/article/view/31748
+  - Obermeyer et al. (2019), Science, abstract: "At a given risk score, Black patients are considerably sicker". https://www.science.org/doi/10.1126/science.aax2342
+  Race and gender come up. Keep the focus on the examples and the target, not on any group's abilities. The engage case (two schools) is made up and neutral on purpose.
+  Idea credit: Day of AI's Grade 8 "Who Gets Left Out By AI?" (dayofai.org, CC BY-NC-SA 4.0) is an optional class extra.
+running:
+  - "Engage: link to the fruit sorter: same mechanism, now the examples are people's decisions."
+  - "Explore: the 'hide the word' card is the key misconception; ask what other clues point to the same group."
+  - "Explain: name it bias, and the two checks."
+struggle: "Students expect a biased model to have a biased rule written in it. The rule is learned, so it's invisible until you test."
+stuck:
+  - see: "A student says the programmers must have been sexist."
+    ask: "Did anyone write 'mark down women's'? Where did the pattern come from?"
+    fix: "It came from the past examples. People are still responsible for choosing the examples and testing the tool."
+  - see: "A student thinks hiding the word fixes it."
+    ask: "What else on a résumé might show the same thing?"
+    fix: "Other clues (a girls' school, a sport) can stand in for the hidden word; test each group instead."
+support: "Give a two-column table: what the model learned from, what it then did."
+stretch: "Who should test a hiring tool: the company that sells it, the company that uses it, or someone else? Why?"
+leads: "Lesson 5: AI that takes actions, and who is responsible."
+exit:
+  q: "Why can a model trained on past hires be unfair even if its program has no bugs?"
+  a: "It learns the patterns in past hiring decisions, including unfair ones, so it repeats them."
+explain: |
+  1. A model learns patterns from its examples.
+  2. If the examples are past decisions, it learns their patterns, fair or not.
+  3. Hiding one word isn't enough: other clues can point to the same group.
+  4. Test each group, keep a person who can overrule, and check what it predicts.

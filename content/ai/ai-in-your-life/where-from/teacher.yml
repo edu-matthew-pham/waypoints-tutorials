@@ -1,0 +1,34 @@
+summary: "Provenance instead of glitch-hunting: trace a made-up viral photo back to its source, check other sources, and don't share until checked. Typical: Content Credentials (optional, removable). Wider: provenance doesn't prove truth."
+time: 35
+goals:
+  - "I can trace a picture or video back towards where it came from."
+  - "I can explain why checking around a picture works better than looking for glitches."
+  - "I can explain what Content Credentials can and can't show."
+before: |
+  **Core idea:** check the source, not the glitches (lateral reading: leave the item and check what others say about it). Kind: makes new content, but the routine works for any media.
+  The shark photo and FunnyFish are made up. No real fake is shown.
+  Sources (checked 18 Oct 2026, research brief claim 10):
+  - C2PA explainer (spec 2.2): "provenance information alone cannot tell you whether" content is true; credentials are optional and can be stripped. https://spec.c2pa.org/specifications/specifications/2.2/explainer/Explainer.html
+  Optional extras: the Digital Inquiry Group's "Intro to Lateral Reading" and "Evaluating Videos" (check each lesson's licence); Day of AI's "Truth, Tricks, and AI".
+  No phones in class: run the routine on the printed shark scenario, or on a teacher-chosen example on the projector.
+running:
+  - "Engage: lock in what would tell you most."
+  - "Explore: sort the steps, then follow FunnyFish."
+  - "Explain: 'check around it' and 'don't share until checked'."
+struggle: "Students equate popular with true, and an official-looking source with a trustworthy one."
+stuck:
+  - see: "A student says many shares means it's real."
+    ask: "Could a fake be shared a lot? Why?"
+    fix: "Shocking fakes often spread faster; popularity isn't evidence."
+support: "Give the four-step routine as a bookmark."
+stretch: "Find an example (with your teacher) of a real photo shared with a false caption. How was it caught?"
+leads: "Unit 4, lesson 9: fakes about people you know (flagged for wellbeing review)."
+exit:
+  q: "Name two ways to check a picture without looking for glitches."
+  a: "For example: find who first posted it, and check whether other sources or the expected source confirm it."
+explain: |
+  1. Ask who shared it and where they got it.
+  2. Find where and when it was first posted.
+  3. Check whether other sources, and the expected source, confirm it.
+  4. A Content Credential can help, but a missing one proves nothing, and a record isn't proof of truth.
+  5. Don't share until you've checked.

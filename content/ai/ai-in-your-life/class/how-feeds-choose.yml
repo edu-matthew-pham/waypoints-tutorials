@@ -1,0 +1,20 @@
+inquiry:
+  q: "Should an app show you what you ask for, or what you'll actually watch?"
+  prompts:
+    - "What's the difference, and who gains from each?"
+  notes: "Both have a case: what we watch can reveal real interest; what we ask for reflects our goals. The app usually gains from watching time."
+activities:
+  - at: run
+    kind: activity
+    title: "Be the algorithm (paper)"
+    minutes: 10
+    do: |
+      Each group gets eight post cards with five numbers. Choose how much each signal counts (0 to 3), add up each post's score, and lay the cards out top to bottom. Then do it again for Sam's goal.
+    notes: "App's goal: watch 3, shares 3, likes 1. Sam's goal: follows 2, wants 3, likes 1. Compare the top three."
+  - at: investigate
+    kind: discussion
+    title: "Who chose?"
+    minutes: 3
+    do: |
+      Who decided what Sam saw first: Sam, the posts, or the app's makers?
+    notes: "Bring out that choosing the weights is a human decision."

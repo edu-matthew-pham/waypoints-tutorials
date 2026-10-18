@@ -1,0 +1,39 @@
+summary: "Who labels AI data: the TIME report on Sama workers in Nairobi labelling text for ChatGPT's safety filter, with Sama's rebuttal and a 'less than what?' comparison. Typical: Fairwork's platform ratings. Wider: how instructions and insecure work shape labels."
+time: 40
+goals:
+  - "I can explain that people label the data AI learns from."
+  - "I can judge pay by comparing it with something: what the client paid, local wages, the kind of work."
+  - "I can describe both sides of a disputed report."
+before: |
+  **Core idea:** people label AI's data, often far away and for low pay; "low" needs a comparison. Kinds: predict or sort, and generative (chatbots are trained with human labels and ratings). Builds on AI Foundations › How does a machine learn? (students labelled fruit).
+  **Teacher caution:** the material the Sama workers labelled was graphic (violence and abuse). Describe it only as "harmful and upsetting text"; don't read out or show examples, and don't open the TIME article on a class screen without previewing it.
+  Sources (checked 18 Oct 2026, research brief claims 34–37):
+  - TIME, Billy Perrigo, 18 Jan 2023: take-home about $1.32–$2 an hour; OpenAI paid Sama $12.50 an hour per worker; a Nairobi receptionist about $1.52; Sama's statement ($1.46–$3.74 after tax, fewer passages per shift than reported, counselling available). https://time.com/6247678/openai-chatgpt-kenya-workers/. Kenya has no single minimum wage. No peer-reviewed study of the contract exists.
+  - Fairwork Cloudwork Ratings 2025 (Oxford Internet Institute, May 2025): 16 platforms, 4 met both fair-pay thresholds; advocacy research, platforms take part voluntarily. https://fair.work/wp-content/uploads/sites/17/2025/05/Fairwork-Cloudwork-Report-2025-FINAL.pdf
+  - Miceli and Posada (CSCW 2022), abstract: precarity makes data workers "obedient to instructions". https://arxiv.org/abs/2205.11963
+  - ILO (Berg et al.), 2017 data, via a VoxEU column: about 20 minutes of every hour unpaid. https://cepr.org/voxeu/columns/working-conditions-digital-labour-platforms-opportunities-challenges-and-quest-decent. Dated.
+  This is a core lesson by decision (18 Oct 2026): no ready resource centres data labellers, and it connects directly to students' own labelling in AI Foundations. Curriculum hook: possible future impact (AC9TDI8P10) and Ethical Understanding.
+  Idea credit: Day of AI Grade 7 "The People Behind the AI" (dayofai.org) is an optional class extra.
+running:
+  - "Engage: link to the fruit labelling in AI Foundations; ask who did it at scale."
+  - "Explore: present both TIME's figures and Sama's response; the sort is the 'less than what?' discussion."
+  - "Explain: name the work as hidden; ask why users don't see it."
+struggle: "Students jump to 'exploitation' or 'it's fine for there'. The skill is to name the comparison behind each judgement."
+stuck:
+  - see: "A student says the pay was fine because it matched a receptionist's."
+    ask: "What else could you compare it with?"
+    fix: "Compare with what OpenAI paid Sama, and with how hard the work was. Different comparisons, different judgements."
+  - see: "A student asks what the text was."
+    ask: "What would a safety filter need to learn to block?"
+    fix: "Harmful text. Leave it general; the lesson is about the work, not the content."
+support: "Give a three-column table: the figure, compared with, so it looks low / less low."
+stretch: "Write the rules a fair labelling contract should have. Who should check they're kept?"
+leads: "Lesson 8: whose work trained the AI (copyright)."
+exit:
+  q: "Why does 'low pay' need a comparison before you judge it?"
+  a: "Pay can look low or less low depending on what you compare it with: what the client paid, local wages, or how hard the work is."
+explain: |
+  1. AI learns from labelled examples; people make the labels.
+  2. TIME reported workers in Kenya took home about $1.32–$2 an hour; Sama disputes this.
+  3. Judge it with a comparison: what the client paid, local wages, the kind of work.
+  4. Users rarely see this work, so it is called hidden.

@@ -1,0 +1,31 @@
+summary: "A short recap of the four kinds of AI from AI Foundations (rules, predict or sort, make new content, take actions), using the cases this course will study."
+time: 15
+goals:
+  - "I can say which kind of AI a system is: rules, predict or sort, make new content, or take actions."
+  - "I can say where to look first when each kind goes wrong."
+before: |
+  **Core idea:** before asking who a system affects, ask what kind it is. Recap of AI Foundations › What kind of AI is it? (Unit 2, lesson 5). Students who haven't done Foundations can still do this lesson: the four kinds are defined on the page.
+  Every case in the sort comes back later: the exam formula (Ofqual 2020, lesson 3), the hiring tool (Amazon's experimental tool, lesson 4), breast screening (lesson 2), the airline chatbot (Air Canada, lesson 5), the art app (lesson 8), the trip assistant (lesson 5).
+  Ofqual's 2020 model was a statistical formula designed by people, not machine learning; the course treats it as "rules written by people".
+  Robodebt quote (typical step): from the Royal Commission's final report (7 Jul 2023), as quoted in the Minister's release, https://ministers.pmc.gov.au/gallagher/2023/final-report-royal-commission-robodebt-scheme. The full report itself was not opened in the research brief (claim 20). Robodebt used income averaging: automation without AI.
+  This course: who gains, who loses, who decides, and what's the catch. Benefits are part of the lens, not a separate unit.
+running:
+  - "Engage: ask for the first question before revealing that the 'AI' in the exam case was a formula."
+  - "Explore: sort the cards; the exam formula is the one most students call AI."
+  - "Explain: tie each kind to where you'd look to fix it."
+struggle: "Students assume all 'AI' learns. Rules written by people are the surprise."
+stuck:
+  - see: "A student puts the exam formula under 'Learns to predict or sort'."
+    ask: "Did it learn from examples, or did people decide how it would change grades?"
+    fix: "People designed it, so it is rules written by people, even though it used past results as numbers."
+support: "Use the four columns on paper with one Foundations example already placed in each."
+stretch: "Find a news story that says 'AI' or 'algorithm'. Which kind was it really?"
+leads: "Lesson 2 builds the lens (who gains, who loses, who decides, what's the catch) on AI breast screening."
+exit:
+  q: "Why ask which kind of AI a system is before judging it?"
+  a: "Each kind goes wrong in a different way, so the kind tells you where to look and who to ask."
+explain: |
+  1. Rules written by people: the rule can be wrong for everyone.
+  2. Learns to predict or sort: it can learn from wrong or missing examples.
+  3. Makes new content: it can make convincing things that aren't true.
+  4. Takes actions: it can act before anyone checks.

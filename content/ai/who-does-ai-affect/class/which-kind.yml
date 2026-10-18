@@ -1,0 +1,13 @@
+inquiry:
+  q: "If a computer applies a rule that people wrote, who decided?"
+  prompts:
+    - "The computer, the people who wrote the rule, or the people who chose to use it?"
+  notes: "Come back to this in Unit 2 (Who decides?). The course doesn't settle it; it shows responsibility is shared."
+activities:
+  - at: run
+    kind: activity
+    title: "Sort the cases"
+    minutes: 5
+    do: |
+      In pairs, sort the six case cards into four columns: rules written by people, learns to predict or sort, makes new content, takes actions.
+    notes: "Print the six cases from the Explore step. Every card is a case students will meet later in the course."

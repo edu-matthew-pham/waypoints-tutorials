@@ -1,0 +1,20 @@
+inquiry:
+  q: "Should a chatbot be allowed to say 'I missed you'?"
+  prompts:
+    - "Who gains when it says that? Who could be harmed?"
+  notes: "Keep it about the design and the rule, not about anyone's use. Never ask who uses companion apps."
+activities:
+  - at: run
+    kind: activity
+    title: "Pip's lines"
+    minutes: 6
+    do: |
+      In pairs, sort Pip's six line cards: keep you talking, feel like a person, help you.
+    notes: "Teacher reads the lines aloud first. Pip is made up."
+  - at: end
+    kind: info
+    title: "Where to get help"
+    minutes: 1
+    do: |
+      If anything about chatbots or friendships worries you: an adult you trust, the school's wellbeing team, or Kids Helpline (1800 55 1800).
+    notes: "Agree this slide's wording with the wellbeing lead."

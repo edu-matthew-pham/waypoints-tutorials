@@ -1,0 +1,20 @@
+inquiry:
+  q: "If almost nobody reads consent screens, are they still useful?"
+  prompts:
+    - "What would make people read them? What would make reading unnecessary?"
+  notes: "One answer: fair defaults and clear first screens; another: laws (the APPs, the draft Children's Online Privacy Code) that protect people whether or not they read."
+activities:
+  - at: predict
+    kind: discussion
+    title: "How many read?"
+    minutes: 2
+    do: |
+      Hold up fingers: out of 10 Australians, how many always or often read privacy policies?
+    notes: "Answer: about 2 (21%, OAIC 2023)."
+  - at: modify
+    kind: activity
+    title: "Make it fair"
+    minutes: 8
+    do: |
+      Redesign Club Helper's screen on paper: one clear sentence, the choice on the first screen, two buttons the same size.
+    notes: "Gallery of designs; vote for the clearest."

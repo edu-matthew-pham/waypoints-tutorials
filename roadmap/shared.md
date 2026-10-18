@@ -519,3 +519,7 @@ A short course for teachers, in the site's own lesson format with Create as its 
 - `create/lesson-starters.mjs` is the one source for Create's ready-made lessons: `EXAMPLES` (coding Turtle, maths balance board, science forces board; each with a filled `design:` teacher block) and `newLessonFiles` (the "+ Add lesson" fallback), beside `starterFiles`. `create.js` and `workspace.mjs` import them; the inline copies are gone.
 - Start page: **Explore an example** opens a Coding / Maths / Science chooser (`#exampleRoute`, buttons built by `entry.mjs`). The Turtle example now also carries a `design:` block.
 - Tests: new `experiments/create-examples-test.mjs` (in the Create workflow) validates each example and the add-lesson starter and checks all five design keys; `entry-smoke` opens each example and checks its validation report.
+
+## Lesson position label (proposed, 18 Oct 2026, Matthew)
+- The lesson bar shows "N of M" across the whole course, by `order:`. The AI courses had per-unit `order:` numbers, so their counters and previous/next links were wrong; fixed 18 Oct by renumbering them course-wide (the convention everywhere else).
+- Matthew's idea for later: show the unit as well, for example "Unit 2 · lesson 5 of 5" (or "Unit 2, 5 of 5 · 8 of 13 in the course"). A change to `lesson-view.mjs`/`build-site.mjs`; not started. Validate could also warn when two lessons in a course share an `order:`.

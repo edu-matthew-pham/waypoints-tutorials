@@ -1,0 +1,13 @@
+inquiry:
+  q: "Should apps label every AI-made picture?"
+  prompts:
+    - "What would a label miss? Who could remove it?"
+  notes: "Labels help but are optional and strippable; the habit of checking the source still matters."
+activities:
+  - at: run
+    kind: activity
+    title: "Trace the shark"
+    minutes: 6
+    do: |
+      In pairs, sort the six step cards into 'helps check it' and 'doesn't really help'. Then put the helpful ones in the order you'd do them.
+    notes: "No phones; it's a paper scenario."

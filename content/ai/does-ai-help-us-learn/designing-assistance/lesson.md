@@ -4,7 +4,7 @@ summary: Sort tutor messages into three designs, then decide which design suits 
 language: science
 shape: 5e
 unit: choosing-assistance
-order: 3
+order: 9
 voice: { name: af_heart, speed: 1.1 }
 ---
 Last lesson showed that more interaction doesn't always mean more learning. If we could decide when a tutor explains, asks or hints, **how should we arrange that help?**

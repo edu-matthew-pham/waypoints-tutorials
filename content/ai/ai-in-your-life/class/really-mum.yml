@@ -1,0 +1,20 @@
+inquiry:
+  q: "Should families have a code word, or is calling back enough?"
+  prompts:
+    - "When would each one fail?"
+  notes: "Both have a place; calling back on a known number is Scamwatch's advice."
+activities:
+  - at: run
+    kind: activity
+    title: "Spot the signs"
+    minutes: 5
+    do: |
+      Read Ava's call aloud. In pairs, underline every warning sign, then agree what Ava should do.
+    notes: "Urgency, secrecy, money to a new account, unknown number. The voice itself is not a sign either way."
+  - at: end
+    kind: discussion
+    title: "A family rule"
+    minutes: 4
+    do: |
+      Write one rule your family could agree for calls or messages asking for money. Share three.
+    notes: "Keep it practical; no stories about real scams in families."

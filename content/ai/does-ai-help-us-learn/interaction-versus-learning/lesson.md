@@ -4,7 +4,7 @@ summary: Try one maths question, compare four kinds of help with it, and tell cl
 language: science
 shape: 5e
 unit: choosing-assistance
-order: 2
+order: 8
 voice: { name: af_heart, speed: 1.1 }
 ---
 You can click a lot, get lots of feedback or chat for a long time without learning much. But these things can also help. **What does each kind of interaction add to learning?**

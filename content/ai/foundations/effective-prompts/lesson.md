@@ -4,7 +4,7 @@ summary: Compare vague and purposeful prompts, then decide what information help
 language: science
 shape: 5e
 unit: communicating-with-ai
-order: 1
+order: 9
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

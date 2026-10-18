@@ -4,7 +4,7 @@ summary: Answer a seasons question, sort feedback by what it lets you do next, a
 language: science
 shape: 5e
 unit: learning-and-society
-order: 1
+order: 10
 voice: { name: af_heart, speed: 1.1 }
 ---
 Unit 3 asked how help should work. But after you get help, you still have to decide **what to do with it**. Feedback can be useful without making you learn anything by itself.

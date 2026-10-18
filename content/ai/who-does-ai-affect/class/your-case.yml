@@ -1,0 +1,20 @@
+inquiry:
+  q: "Is there any AI system that affects nobody but its user?"
+  prompts:
+    - "Think of the data, the energy, the labellers, the creators."
+  notes: "Almost always no: this is the course's big idea. Use it to open the challenge."
+activities:
+  - at: run
+    kind: activity
+    title: "Lens together"
+    minutes: 6
+    do: |
+      As a class, fill the lens for the Refunds case. Then start your own.
+    notes: "Model a specific catch: 'Does a person check refunds over a set amount?'"
+  - at: end
+    kind: discussion
+    title: "Gallery walk"
+    minutes: 10
+    do: |
+      Put your lens on your desk. Walk round and add one sticky note to two other lenses: a gain, a loss or a catch they missed.
+    notes: "Works offline, no devices needed."

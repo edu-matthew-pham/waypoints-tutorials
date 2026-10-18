@@ -1,0 +1,8 @@
+activities:
+  - at: run
+    kind: activity
+    title: "Sort the cases"
+    minutes: 5
+    do: |
+      In pairs, sort the six case cards into four columns: rules written by people, learns to predict or sort, makes new content, takes actions.
+    notes: "Print the six cases from the Explore step. No phones: the cases are on cards."

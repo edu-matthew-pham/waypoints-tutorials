@@ -1,0 +1,35 @@
+summary: "Voice clones: a few seconds of voice can be enough (Scamwatch). Spot pressure and secrecy, and check outside the call by calling back on a known number. Typical: the Arup deepfake video call. Wider: a voice clone as phishing by voice (links to Cyber safety)."
+time: 35
+goals:
+  - "I can name the warning signs of a voice-clone scam: urgency, secrecy, money to a new account, a new number."
+  - "I can check by hanging up and calling back on a number I already have."
+  - "I can explain why listening harder doesn't help."
+before: |
+  **Core idea:** a clone can sound exactly right, so check outside the call. Kind: makes new content (voice). Same habit as lessons 7 and 8: check where it came from, not how it looks or sounds.
+  Sources (checked 18 Oct 2026):
+  - Scamwatch, How scammers use technology and AI (modified 23 Mar 2026): "Scammers can use a few seconds of a voice recording to create AI clones"; they "can use these clones and call you pretending to be friends or family members in distress"; "Always take the time to call your friend or family member back on their real number to check." https://www.scamwatch.gov.au/stop-check-protect/help-to-spot-and-avoid-scams/how-scammers-use-technology-and-ai (research brief claim 57; the call-back advice checked 18 Oct 2026 and added).
+  - CNN, 16 May 2024: Arup, Hong Kong; "fake voices and images were used"; about US$25.6 million (HK$200 million) transferred. https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk (claim 58).
+  The Explore option "ask a question only Mum would know" (a family code word) is reasonable but not Scamwatch's advice on that page; the lesson ranks calling back higher.
+  Students' families may have been scammed; keep it about Ava and avoid "how could anyone fall for it".
+  This is the one attacks-with-AI case kept in this course; malicious models and prompt injection go to Cyber safety (separate change).
+  Idea credit: Day of AI's "Sounds Like You" (voice cloning) is an optional class extra.
+running:
+  - "Engage: 'a few seconds' usually surprises students."
+  - "Explore: the warning signs, then Ava's move."
+  - "Explain: why calling back works."
+struggle: "Students believe they'd recognise a loved one's voice. The point is that you don't need to: you check another way."
+stuck:
+  - see: "A student says 'ask a secret question'."
+    ask: "What if the scammer guesses, or keeps you talking?"
+    fix: "Calling back on a known number checks for certain."
+support: "Give the warning signs as a checklist card."
+stretch: "Write a short guide for grandparents about voice-clone scams, in plain words."
+leads: "Course complete. Related: Cyber safety and privacy › Spot the phish."
+exit:
+  q: "A call sounds exactly like your dad and asks for money urgently. What do you do?"
+  a: "Hang up and call him back on the number you already have."
+explain: |
+  1. A few seconds of a voice can be enough to clone it.
+  2. Warning signs: urgent, secret, money to a new account, a new number.
+  3. A clone can sound exactly right, so listening harder doesn't help.
+  4. Hang up and call back on a number you already have.

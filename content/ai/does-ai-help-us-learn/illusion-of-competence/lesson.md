@@ -4,7 +4,7 @@ summary: Say how sure you are before you check, compare it with what you could a
 language: science
 shape: 5e
 unit: evaluating-evidence
-order: 2
+order: 5
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

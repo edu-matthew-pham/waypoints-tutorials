@@ -1,0 +1,21 @@
+inquiry:
+  q: "Would you let an AI assistant spend your money without asking? Up to how much?"
+  prompts:
+    - "What changes if it's $2, $35 or $500?"
+    - "Who should set the limit?"
+  notes: "Students often land on a limit. That's a good rule: it keeps a person in control of what can't be undone."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Whose fault?"
+    minutes: 3
+    do: |
+      Airline, chatbot or customer? Hands up, then two students explain.
+    notes: "Reveal the tribunal's decision after."
+  - at: run
+    kind: activity
+    title: "Ask me first"
+    minutes: 5
+    do: |
+      Sort the six step cards into Just do it and Ask me first. Then add one step of your own to each pile.
+    notes: "The test: can it easily be undone?"

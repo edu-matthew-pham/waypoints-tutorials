@@ -4,7 +4,7 @@ summary: Practise asking follow-up questions, correcting assumptions and redirec
 language: science
 shape: 5e
 unit: communicating-with-ai
-order: 2
+order: 10
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

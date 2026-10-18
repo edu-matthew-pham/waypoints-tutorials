@@ -4,7 +4,7 @@ summary: Break a fruit sorter on purpose with a wrong label and with missing exa
 language: science
 shape: 5e
 unit: how-ai-learns
-order: 2
+order: 5
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

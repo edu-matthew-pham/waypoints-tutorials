@@ -1,0 +1,41 @@
+summary: "Copyright and AI training: a made-up student artist, two settled points in Australia (copyright needs a human author; no text-and-data-mining exception), music creators' worries and the Bartz v Anthropic settlement. The law is being decided now."
+time: 40
+goals:
+  - "I can explain why AI that makes content raises questions about the work it learned from."
+  - "I can say two things that are settled in Australia and one that is still open."
+  - "I can argue both sides of whether training AI on people's work is fair."
+before: |
+  **Core idea:** teach it as "the law is being decided now". Kind: makes new content.
+  **Re-check each term** (Australian licensing model, open court cases).
+  Sources (checked 18 Oct 2026, research brief claims 71–74):
+  - Attorney-General's release (page undated, about 27 Oct 2025): "this will not include a Text and Data Mining Exception". https://ministers.ag.gov.au/node/1903. Consultation on licensing closed 11 Dec 2025; no model chosen as of mid-2026 (secondary sources disagree on a July framework; verify before mentioning).
+  - Telstra v Phone Directories [2010] FCAFC 149: copyright "can subsist only if it originates from an individual". https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/full/2010/2010fcafc0149. Untested for AI output in Australian courts.
+  - Bartz v Anthropic, court order 20 Jul 2026 ("the largest copyright class action settlement in history"); training ruled fair use but pirated copies not; about US$3,000 per book. https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_4.pdf. Transparency: Anthropic makes Claude, which helped write this course; the student text says so.
+  - APRA AMCOS survey (19 Aug 2024): 82% of music creators worried about their livelihoods ("no longer being able to make a living"). https://www.apraamcos.co.nz/about-us/news-and-events/ai-and-music-survey-results. Its 23% revenue-at-risk figure is a commissioned projection; keep out of student text.
+  Other cases (Getty v Stability AI in the UK, NYT v OpenAI, music labels' settlements with Udio and Suno) are not yet checked for this course: teacher background only, and check status before mentioning.
+  "Fair use" is US law; Australia has the narrower "fair dealing". If students ask, say Australian law differs and is not settled for AI training.
+  Students may use AI image apps themselves; don't make it about their use.
+  Idea credit: Day of AI's "AI and the Creative Arts" (dayofai.org) and the MIT Creative AI curriculum are optional class extras.
+running:
+  - "Engage: vote on 'is it copying?'; keep the three options visible."
+  - "Explore: Lena's case with the lens, then the two settled points."
+  - "Explain: settled, not settled, who decides."
+struggle: "Students want a yes/no answer. The skill is separating what's settled from what's still being decided."
+stuck:
+  - see: "A student says Lena owns the AI's pictures."
+    ask: "Did Lena make that picture?"
+    fix: "Her work may have trained the app; that's a separate question from who owns a new picture."
+  - see: "A student says training is always stealing (or never is)."
+    ask: "What did the US judge say about training, and about the pirated copies?"
+    fix: "Courts are splitting the question: how work is obtained, how it's used, and whether creators are paid."
+support: "Give a three-column table: settled in Australia / still open / who decides."
+stretch: "Design a fair deal between an AI company and artists. What do artists get, and who checks it?"
+leads: "Unit 4, lesson 9: jobs."
+exit:
+  q: "Name one thing that's settled in Australia about AI and copyright, and one that isn't."
+  a: "Settled: copyright needs a human author; no special exception for AI training. Not settled: whether training is fair everywhere and how creators get paid."
+explain: |
+  1. AI that makes content learned from people's work.
+  2. In Australia, copyright needs a human author, and there is no special exception for AI training.
+  3. Whether training is fair, and how creators are paid, is being decided now.
+  4. Ask: what's settled, what's open, and who decides?

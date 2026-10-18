@@ -1,0 +1,21 @@
+inquiry:
+  q: "If an AI helps most patients but makes one serious mistake, should a hospital use it?"
+  prompts:
+    - "Compared with what: doctors alone also make mistakes."
+    - "Who should get a say?"
+  notes: "No single answer. Push students to name what they'd need to know (compared with what, tested on whom) before deciding."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Everyone it touches"
+    minutes: 3
+    do: |
+      In one minute, list everyone affected when a hospital uses AI to check scans. Then share: who did most people forget?
+    notes: "Families, the hospital, the company, taxpayers, people who were rare in the training data."
+  - at: run
+    kind: activity
+    title: "Four boxes"
+    minutes: 6
+    do: |
+      Draw four boxes: gains, loses, decides, catch. Place each fact card in a box.
+    notes: "Keep the four boxes up for the rest of the course."

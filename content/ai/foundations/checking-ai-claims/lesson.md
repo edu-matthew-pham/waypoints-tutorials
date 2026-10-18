@@ -4,7 +4,7 @@ summary: Compare confident claims with independent evidence and distinguish supp
 language: science
 shape: 5e
 unit: learning-effectively-with-ai
-order: 2
+order: 12
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

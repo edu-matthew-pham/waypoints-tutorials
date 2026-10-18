@@ -1,0 +1,13 @@
+inquiry:
+  q: "If people can't spot fakes, should we trust any photo or video?"
+  prompts:
+    - "What else could you check besides the picture itself?"
+  notes: "Lead into the next lesson: provenance. Avoid 'trust nothing'; the habit is to check where it came from."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Your score"
+    minutes: 3
+    do: |
+      Write your guess: out of 10 faces, how many would you sort right? Show it on your fingers.
+    notes: "Record the class average; compare with 48.2% (about 5)."

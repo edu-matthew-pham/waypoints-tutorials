@@ -1,0 +1,21 @@
+inquiry:
+  q: "Should students help write their school's AI rules?"
+  prompts:
+    - "Who knows most about how students use AI?"
+    - "Who is responsible if the rule goes wrong?"
+  notes: "Good arguments both ways. This leads naturally to a class agreement or to the AI committee extension (planned)."
+activities:
+  - at: run
+    kind: activity
+    title: "Three rules"
+    minutes: 5
+    do: |
+      In pairs, find the problem with each of the three rules. Then write a better one together.
+    notes: "Collect the best rules on the board."
+  - at: end
+    kind: discussion
+    title: "Class agreement"
+    minutes: 6
+    do: |
+      Vote on two or three of the class's rules. Agree one, with who checks it and when.
+    notes: "Optional: keep it and review it at the end of term, as the national framework is reviewed each year."

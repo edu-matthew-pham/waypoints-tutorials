@@ -1,0 +1,37 @@
+summary: "Moffatt v Air Canada (a company is responsible for its chatbot's advice), then a made-up booking agent: which actions need a person to confirm first. Typical: Australian guidance on human control. Wider: lab tests versus real events."
+time: 35
+goals:
+  - "I can explain who is responsible when an AI answers or acts for a company."
+  - "I can sort an agent's actions into 'just do it' and 'ask me first'."
+  - "I can tell a lab test from a real event in a news story about AI."
+before: |
+  **Core idea:** someone is always responsible, and a person confirms anything that can't easily be undone. Kinds: takes actions (agents); the Air Canada chatbot only answered (makes new content).
+  Sources (checked 18 Oct 2026, research brief claims 59–61):
+  - Moffatt v Air Canada, 2024 BCCRT 149 (14 Feb 2024): "it is responsible for all the information on its website". https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do. The customer asked about bereavement fares (travel for a family funeral); the student text says "a discounted fare" to keep it simple.
+  - DISR, Guidance for AI Adoption (21 Oct 2025): "Integrate meaningful human oversight and control of AI"; also "Decide who is accountable". https://www.industry.gov.au/publications/guidance-for-ai-adoption
+  - Anthropic, Agentic Misalignment (20 Jun 2025): behaviours "occurred in controlled simulations"; one scenario called "extremely contrived". https://www.anthropic.com/research/agentic-misalignment. Note for transparency: Anthropic makes Claude, which helped write this course.
+  Real agent incidents (an agent buying eggs without approval, an agent deleting a live database, an inbox deleted despite "confirm before acting") are mostly single self-reports in 2025–26 and are not yet checked for this course; keep them out of student text. Re-check this topic each term: it moves fast.
+  Idea credit: Day of AI's Grade 8 "When Should Humans Override AI?" (dayofai.org) is an optional class extra.
+running:
+  - "Engage: vote on who is responsible before revealing the decision."
+  - "Explore: the sort is the core skill. Ask what makes each step easy or hard to undo."
+  - "Explain: the two ideas: someone is responsible; confirm before you can't undo."
+struggle: "Students treat the AI as the one responsible ('the chatbot lied'). Responsibility stays with people."
+stuck:
+  - see: "A student says the agent should ask about everything."
+    ask: "Would you use an assistant that asked before every search?"
+    fix: "Ask where a mistake can't be undone: money, details, deleting, sending."
+  - see: "A student says the chatbot should be punished."
+    ask: "Can a chatbot pay back money or fix the website?"
+    fix: "The company that chose to use it is responsible."
+support: "Give the six steps as cards with a two-column mat: Just do it / Ask me first."
+stretch: "Write the 'ask me first' rules for an AI agent that manages a club's money."
+leads: "Unit 3, lesson 6: energy and water."
+exit:
+  q: "An AI agent deletes a student's project by mistake. Who is responsible, and what rule would have helped?"
+  a: "The person or organisation using the agent; it should have asked a person before deleting anything."
+explain: |
+  1. A company is responsible for what its chatbot says.
+  2. An AI agent can act: book, pay, send, delete.
+  3. Someone is always responsible: a person or company, not the AI.
+  4. Confirm before you can't undo.

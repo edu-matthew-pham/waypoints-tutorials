@@ -4,7 +4,7 @@ summary: Sort what students, teachers, employers and families want from school, 
 language: science
 shape: 5e
 unit: learning-and-society
-order: 3
+order: 12
 voice: { name: af_heart, speed: 1.1 }
 ---
 In this course you've asked what learning means, what studies show, and when AI help might be useful. But learning choices are rarely made by a student alone. **Schools, tests, families, communities and future jobs all shape what counts.**

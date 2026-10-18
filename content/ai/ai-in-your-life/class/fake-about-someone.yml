@@ -1,0 +1,20 @@
+inquiry:
+  q: "If you didn't make a fake, but you laughed at it, did you do anything wrong?"
+  prompts:
+    - "What does laughing or liking tell the person who made it?"
+  notes: "Keep it hypothetical and about Kai. Never ask students about real events."
+activities:
+  - at: run
+    kind: activity
+    title: "Bystander moves"
+    minutes: 6
+    do: |
+      In pairs, sort the six action cards into 'helps' and 'makes it worse'. Then choose the one you'd find hardest to do, and why.
+    notes: "The hardest is often telling an adult; talk about how to make that easier."
+  - at: end
+    kind: info
+    title: "Where to get help"
+    minutes: 1
+    do: |
+      Talk to an adult you trust or the school's wellbeing team. Kids Helpline: 1800 55 1800. Report serious cases at esafety.gov.au/report.
+    notes: "Agree this slide's wording with the wellbeing lead; add the school's own reporting process."

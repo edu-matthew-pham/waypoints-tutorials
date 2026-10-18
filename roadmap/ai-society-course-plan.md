@@ -1,6 +1,12 @@
 # Course plan: *AI in your life* and *Who Does AI Affect?* (18 Oct 2026)
 
-**Approved by Matthew, 18 Oct 2026.**
+**Approved by Matthew, 18 Oct 2026. Built 18 Oct 2026** (both courses, all lessons, teacher notes, class plans, primers, recap pages; validate passes; not yet tried with classes). Changes from the plan while building:
+- The consent screen is its own `consent` widget (Club Helper, set in the Cyber safety club app), not a mode of `cyber`: editing `cyber.js` would re-record every Cyber safety clip.
+- *When AI acts* uses a sort check for "ask me first"; no `ai-dialogue` agent mode was built (not needed).
+- The optional "Advise a younger student" lesson was not built.
+- Every AI course now numbers `order:` across the whole course (it was per unit, which broke "N of M" and the previous/next links in AI Foundations and Does AI Help Us Learn?).
+- "To add" claims checked and added to the brief (78–81): Scamwatch's call-back advice, eSafety Youth Council on deepfakes, eSafety's age-restricted material codes and chatbots. Still unchecked and kept out of student text: California SB 243, NYC Local Law 144 figures, agent incidents, Getty and NYT cases.
+- **Still to do:** the Cyber safety additions (separate change, below); wellbeing-lead review of *Is a chatbot a friend?* and *When a fake is about someone you know*.
 
 From `roadmap/ai-society-design-handoff.md`. **Design only, for Matthew to approve. No lesson files until he does.** Claims are cited by number from `roadmap/ai-society-research-brief.md`; anything marked **to add** is in the brief's text but not its claims tables, so it stays out of student text until checked and added.
 

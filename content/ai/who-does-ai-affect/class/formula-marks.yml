@@ -1,0 +1,21 @@
+inquiry:
+  q: "Is it fairer to keep grades steady across years, or to trust each teacher's prediction?"
+  prompts:
+    - "Who loses under each choice?"
+    - "What would you need to know to decide?"
+  notes: "Both aims are real: steady grades protect what a grade means; teacher predictions protect individuals. The formula traded one for the other."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Vote: fair or not?"
+    minutes: 3
+    do: |
+      Stand on a line from 'fair' to 'unfair' for the A-to-B example. Two people from each end explain.
+    notes: "Come back to the line after the Explore step."
+  - at: investigate
+    kind: discussion
+    title: "Design the appeal"
+    minutes: 5
+    do: |
+      In threes: a student thinks the formula got their grade wrong. What should happen next, and how fast?
+    notes: "Look for: a person looks at the student's own work, a clear deadline, someone responsible."

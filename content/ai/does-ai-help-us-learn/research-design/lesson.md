@@ -4,7 +4,7 @@ summary: Find the differences that could spoil a comparison, choose tests that f
 language: science
 shape: 5e
 unit: evaluating-evidence
-order: 3
+order: 6
 voice: { name: af_heart, speed: 1.1 }
 ---
 The last two lessons looked at results from studies, and at how sure people feel. But every study starts with two choices: **what to compare**, and **what to count as success**.

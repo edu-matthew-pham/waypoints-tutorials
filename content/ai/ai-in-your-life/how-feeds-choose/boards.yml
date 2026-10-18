@@ -1,0 +1,5 @@
+# A made-up feed: be the algorithm.
+# region: explore
+widget: feed
+mode: rank
+# endregion

@@ -1,0 +1,21 @@
+inquiry:
+  q: "Should 'use my chats to train the AI' start on or off?"
+  prompts:
+    - "Who gains from each default? Who could be harmed?"
+    - "Does the answer change for under-18s?"
+  notes: "Defaults matter because most people never change them. Link to the draft Children's Online Privacy Code (wider)."
+activities:
+  - at: run
+    kind: activity
+    title: "Follow the question"
+    minutes: 6
+    do: |
+      Five stage cards: typed, sent, stored, reviewed, training. Put them in order, then flip the two switch cards and read what changes.
+    notes: "Paper version of the board."
+  - at: end
+    kind: discussion
+    title: "My checklist"
+    minutes: 3
+    do: |
+      Write three checks for before you type into an AI app. Compare with a partner.
+    notes: "Leave out what's not needed; check training; check history."

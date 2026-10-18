@@ -4,7 +4,7 @@ summary: Sort the jobs in a task into "keep" and "hand over", change the goal, a
 language: science
 shape: 5e
 unit: choosing-assistance
-order: 1
+order: 7
 voice: { name: af_heart, speed: 1.1 }
 ---
 Unit 2 looked at what studies can and can't show. Now a practical question: **if AI can do some of the thinking for you, which thinking should you keep?**

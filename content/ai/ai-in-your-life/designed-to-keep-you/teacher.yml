@@ -1,0 +1,42 @@
+summary: "On a made-up app, students switch features (autoplay, infinite scroll, streaks, notifications, 'all caught up', time reminders) and see a session grow or shrink; most sticky features aren't AI. Typical: the 'addiction' evidence. Wider: Australia's minimum age and the EU's design case."
+time: 40
+goals:
+  - "I can name features designed to keep me on an app, and features that help me stop."
+  - "I can say which sticky features are AI and which are design choices."
+  - "I can explain what the evidence about 'addiction' does and doesn't show."
+before: |
+  **Core idea:** design choices serve the app's goal (time), and most aren't AI. Kind: the feed is predict or sort; autoplay, endless scroll, streaks and notifications are design.
+  **The board** (`feed` widget, mode design) is a made-up additive model, labelled on screen: 10 base minutes; autoplay +8, infinite scroll +12, streaks +5, notifications +6, "all caught up" −8, time reminder −6 (minimum 5). It starts at 41 minutes. It illustrates the idea; it is not a measurement.
+  **Wellbeing:** keep it non-personal. Use Sam; don't ask students how long they spend on apps or which ones they use. Some students may be worried about their own use: point to the school's wellbeing team. Not flagged for formal review, but check the wording with your wellbeing lead if unsure.
+  **Re-check each term:** the minimum-age evaluation (next eSafety report; statutory review about Dec 2027), the EU TikTok decision, the US states v Meta trial (no verdict as at 18 Oct 2026; not in student text).
+  Sources (checked 18 Oct 2026, research brief claims 47, 49–53):
+  - eSafety, Recommender systems position paper (May 2026): engagement ranking; infinite scroll and autoplay encourage excessive use. https://www.esafety.gov.au/sites/default/files/2026-05/Recommender-systems-position-paper-May2026.pdf
+  - National Academies (2024): "did not support the conclusion that social media causes changes" at population level. https://www.nationalacademies.org/read/27396/chapter/2
+  - Teague et al., JAMA Pediatrics 2026 (153 longitudinal studies; Australian authors), abstract: consistent but small associations, stronger in early adolescence; observational. https://researchonline.jcu.edu.au/91041/
+  - Health Affairs Forefront (6 Oct 2026): "not a recognized DSM diagnosis with defined criteria". https://www.healthaffairs.org/do/10.1377/forefront.20260928.671401
+  - eSafety, Early days, early insights (31 Jul 2026): under-16s holding an account fell from 52.4% to 42.1% at three months; "Platform inaction was the main reason why children still held accounts". https://www.esafety.gov.au/sites/default/files/2026-07/Early-days-early-insights-SMMA-evaluation-three-months-July-2026.pdf. The Act's commencement wording was not checked; the obligation applied from 10 Dec 2025 per eSafety's evaluation methodology.
+  - European Commission (6 Feb 2026, preliminary): TikTok's design "may lead to compulsive behaviour and reduce users' self-control". https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act
+  Idea credit: the UK Children's Code standard on "sticky" features and Experience AI's "AI and Social Media" unit are optional teacher background.
+running:
+  - "Engage: whose plan won? Keep it about Sam."
+  - "Explore: pairs find the fewest changes that fit the plan."
+  - "Explain: the sort; most sticky features aren't AI."
+struggle: "Students either say 'apps are addictive, full stop' or 'it's my fault'. The lesson separates design, AI and choice, and keeps the evidence honest."
+stuck:
+  - see: "A student turns everything off."
+    ask: "Which features does Sam actually want, like notifications from Jo?"
+    fix: "Keep one or two, and switch on a feature that helps him stop."
+  - see: "A student says streaks are AI."
+    ask: "Does a streak need to predict anything?"
+    fix: "It's a counter and a rule, designed by people."
+support: "Give the six features as cards with two columns: keeps you / helps you stop."
+stretch: "Write a rule for app makers about one sticky feature. Who would argue against it?"
+leads: "Lesson 4: chatbots designed to feel like friends (flagged for wellbeing review)."
+exit:
+  q: "Name one feature designed to keep you on an app, and say whether it is AI."
+  a: "For example autoplay: it keeps you watching, and it isn't AI; it's a design choice. The feed choosing the next video is AI."
+explain: |
+  1. Some features keep you (autoplay, endless scroll, streaks, notifications); others help you stop.
+  2. Most sticky features are design choices, not AI.
+  3. The AI part is the feed predicting what you'll watch next.
+  4. The evidence on harm shows small links, not proof of cause, and people argue about the word "addiction".

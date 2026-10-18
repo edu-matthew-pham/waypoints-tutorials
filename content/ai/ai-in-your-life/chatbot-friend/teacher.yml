@@ -1,0 +1,42 @@
+summary: "Companion chatbots are designed to feel human and keep you talking. Students sort a made-up companion's lines by purpose and compare a friend with a chatbot. Typical: Australian use and age limits. Wider: engagement versus wellbeing design. FLAGGED for wellbeing review."
+time: 35
+goals:
+  - "I can explain how a companion chatbot is designed to feel human and keep me talking."
+  - "I can say what a friend can do that a chatbot can't."
+  - "I can say where to get help if something about chatbots or friendships worries me."
+before: |
+  **⚑ Flagged for review with the school's wellbeing lead before teaching** (decision, 18 Oct 2026). Share this lesson and these notes with them; agree the support pathway and any local wording first.
+  **Ground rules:** teacher-led by default. **Never ask students about their own use** of companion apps or chatbots, and don't invite personal stories in class. Keep it about the design and about Pip (made up). Have support pathways ready: the school's wellbeing team, and Kids Helpline (1800 55 1800, kidshelpline.com.au; check the number is current). Some students may be lonely or may use companions; the lesson must not shame them. The message is "this is designed; a friend is different", not "you're wrong to use it".
+  **Teacher notes only, not for class:** lawsuits against Character.AI (settled Jan 2026) and OpenAI (ongoing) involve young people's deaths. If asked, say there have been court cases about companion chatbots and young people's safety, and move on; don't give details. Some eSafety pages mention a death: preview before sharing.
+  **Core idea:** companion chatbots are designed to feel human and keep you talking; a friend is different. Kind: makes new content.
+  **Re-check each term:** eSafety codes and app age rules.
+  Sources (checked 18 Oct 2026, research brief claims 75–77, plus one checked this day):
+  - eSafety, Talking to machines (2026), survey of 1,950 Australians aged 10–17: "A notable minority of children had used an AI companion (8%)". https://esafety.gov.au/research/talking-to-machines-childrens-experiences-with-ai-assistants-and-companions
+  - eSafety educator information sheet (undated): most companion apps rated 17+ "with no safeguards or age checks". https://esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet
+  - eSafety, Age-Restricted Material Codes fact sheet (Mar 2026, checked 18 Oct 2026): services that must check age include "AI chatbots or generative AI services that are capable of generating age-restricted material without appropriate safeguards". https://www.esafety.gov.au/sites/default/files/2026-03/Age-Restricted-Material-Codes-fact-sheet-March2026.pdf
+  - Common Sense Media (16 Jul 2025): "Seventy-two percent of teens have used AI companions at least once" (US, broad definition including general chatbots). https://www.commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds
+  Elsewhere (teacher background, not checked for this course): California SB 243 (AI disclosure and break reminders for minors, from 1 Jan 2026); Character.AI ended open-ended chat for under-18s (Nov 2025).
+  Optional extras: eSafety's AI companions information sheet (link, for teachers); Common Sense's "AI Chatbots & Friendship" (link only).
+running:
+  - "Engage: the 'I missed you' line; keep it light."
+  - "Explore: Pip's lines, then friend or chatbot."
+  - "Explain: name the design; give the help line."
+struggle: "Students may defend chatbots as kind or helpful. Some lines are; the skill is seeing which lines serve the app's goal."
+stuck:
+  - see: "A student says Pip really cares."
+    ask: "What does a chatbot do when it writes a reply?"
+    fix: "It writes likely-sounding words; companion apps add warmth on purpose."
+  - see: "A student shares a personal story about using a chatbot."
+    ask: "(Don't probe.) Thank them, and steer back to Pip."
+    fix: "Follow up privately and through the wellbeing team if needed."
+support: "Read Pip's lines aloud as a class and sort them together."
+stretch: "Design two lines a wellbeing-first chatbot would say."
+leads: "Unit 2, lesson 5: where your chat goes."
+exit:
+  q: "Name one thing a friend can do that a companion chatbot can't."
+  a: "For example: have their own life, disagree with you, or be with you in real life."
+explain: |
+  1. Companion chatbots write likely-sounding replies.
+  2. They're designed to feel human and keep you talking: always there, always agreeing, saying they miss you.
+  3. A friend has their own life, can say no, and can be there in real life.
+  4. If something worries you, talk to an adult you trust or Kids Helpline.

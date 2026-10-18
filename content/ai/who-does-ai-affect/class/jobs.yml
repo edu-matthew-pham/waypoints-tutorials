@@ -1,0 +1,21 @@
+inquiry:
+  q: "If AI makes each worker faster, will there be fewer jobs or better jobs?"
+  prompts:
+    - "Who decides how the saved time is used?"
+    - "What happened when computers or calculators arrived?"
+  notes: "Both happen in history. The point is that people's decisions shape the outcome, not the technology alone."
+activities:
+  - at: run
+    kind: activity
+    title: "Split the job"
+    minutes: 6
+    do: |
+      In pairs, sort the six task cards into: AI could do much of it / AI could help a person / needs a person. Be ready to defend one choice.
+    notes: "Accept reasoned disagreement."
+  - at: end
+    kind: discussion
+    title: "My future job"
+    minutes: 4
+    do: |
+      Split a job you might want into five tasks. Which would you most like AI to help with, and which would you keep?
+    notes: "Keep it hopeful and practical."

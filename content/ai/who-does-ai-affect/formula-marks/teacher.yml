@@ -1,0 +1,39 @@
+summary: "England's 2020 A-level grades: a formula adjusted teachers' grades, relied more on teachers for small classes, lowered about 39%, and was reversed with an apology. One rule applied to everyone can be unfair to some groups."
+time: 40
+goals:
+  - "I can explain what the 2020 exam formula did, and who gained and lost."
+  - "I can explain why one rule used on everyone can go wrong for a whole group at once."
+  - "I can say what automated decisions about people need: a person who checks, a fair appeal, and someone responsible."
+before: |
+  **Core idea:** one rule applied to everyone goes wrong for everyone at once, and some groups lose out even when nobody meant it. Kind: rules written by people (a statistical formula designed by people, not machine learning).
+  Sources (checked 18 Oct 2026, research brief claims 13–16, 20):
+  - Ofqual guide to AS and A level results, 13 Aug 2020 (relied more on centre assessment grades, CAGs, for small cohorts): https://www.gov.uk/government/news/guide-to-as-and-a-level-results-for-england-2020
+  - Ofqual Chair statement, 17 Aug 2020 ("we are extremely sorry"): https://www.gov.uk/government/news/statement-from-roger-taylor-chair-ofqual
+  - Schools Week, 13 Aug 2020 (about 39% of teacher-assessed grades lowered, from a table): https://schoolsweek.co.uk/a-level-results-2020-top-grades-up-by-2-4-percentage-points/
+  - Merit Protection Commissioner Annual Report 2021–22 (Services Australia promotion round, AI-assisted and automated selection, no panel; 11 promotions overturned): https://www.mpc.gov.au/sites/default/files/2022-10/Annual%20Report%202021-22.pdf. The report criticises the process, not the AI part alone.
+  - Robodebt Royal Commission (7 Jul 2023), quoted in https://ministers.pmc.gov.au/gallagher/2023/final-report-royal-commission-robodebt-scheme (the full report itself was not opened).
+  Detail for questions: very small cohorts used teachers' grades entirely, small ones a blend; the student text simplifies this to "relied more on the teachers' grades for small classes". Contested, keep out of student text: whether private schools gained (smaller classes). FFT Education Datalab called it a working hypothesis; Ofqual later said it found no systematic disadvantage to poorer pupils (not opened).
+  Robodebt: the student text says "many people" (numbers are not in the research brief; check the Royal Commission report before giving one). Some families were badly affected; keep it at the level of the system.
+running:
+  - "Engage: take a vote on fairness; keep both sides on the board."
+  - "Explore: work through the five steps, then sort with the lens."
+  - "Explain: name the three safeguards (a person who checks, a fair appeal, someone responsible)."
+struggle: "Students blame 'the computer'. The formula did what people designed it to do."
+stuck:
+  - see: "A student says the AI learned the wrong thing."
+    ask: "Did it learn from examples, or did people decide how it would work?"
+    fix: "People designed it. It used past results as numbers, but it didn't learn."
+  - see: "A student thinks small-class students were treated better on purpose."
+    ask: "Why might a formula trust teachers more when there are only a few students?"
+    fix: "With few students, the school's past pattern says little, so the designers leant on the teacher. It still meant two groups were treated differently."
+support: "Give the five steps as a strip of cards to put in order before sorting."
+stretch: "Design a fairer way to give grades without exams. Who gains and who loses under your design?"
+leads: "Lesson 4 looks at a model that learns from past decisions: hiring."
+exit:
+  q: "Why can one formula used on everyone be unfair even if it works as designed?"
+  a: "The same rule is applied to everyone at once, so if it is unfair to a group, the whole group loses out; people need someone to check and a way to appeal."
+explain: |
+  1. A formula, designed by people, changed teachers' grades using each school's past results.
+  2. Small classes kept teachers' grades more often; about 39% of grades were lowered.
+  3. A rule used on everyone goes wrong for everyone at once.
+  4. Decisions about people need a person who checks, a fair appeal, and someone responsible.

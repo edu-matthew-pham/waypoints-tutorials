@@ -4,7 +4,7 @@ summary: Decide when to work independently, seek assistance or delegate a task b
 language: science
 shape: 5e
 unit: learning-effectively-with-ai
-order: 3
+order: 13
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

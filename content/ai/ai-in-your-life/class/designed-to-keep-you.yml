@@ -1,0 +1,20 @@
+inquiry:
+  q: "If an app is designed to keep you scrolling, whose job is it to stop: yours or the app's?"
+  prompts:
+    - "What can a person do alone? What can only the app's makers change?"
+  notes: "Both have a share. The lesson's rules (minimum age, design rules) are society's answer; avoid blaming students."
+activities:
+  - at: run
+    kind: activity
+    title: "Fit the plan (paper)"
+    minutes: 6
+    do: |
+      Start at 41 minutes. Each feature card shows its minutes. Turn cards over to switch features off until Sam fits 15 minutes, keeping one feature that helps him stop.
+    notes: "Autoplay +8, infinite scroll +12, streaks +5, notifications +6, all caught up −8, time reminder −6. A made-up model."
+  - at: investigate
+    kind: discussion
+    title: "AI or design?"
+    minutes: 3
+    do: |
+      Which of the six features needs AI? Which just needs a designer?
+    notes: "Only the feed's choice of next video is AI."

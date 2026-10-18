@@ -1,0 +1,21 @@
+inquiry:
+  q: "Is it fair to pay workers in one country much less than workers in another for the same labelling?"
+  prompts:
+    - "Compared with what: local wages, the client's price, the work itself?"
+    - "Who should decide what's fair?"
+  notes: "Expect disagreement. Keep both TIME's and Sama's figures visible and make students name their comparison."
+activities:
+  - at: run
+    kind: activity
+    title: "Less than what?"
+    minutes: 6
+    do: |
+      In pairs, sort the four comparison cards into 'makes it look low' and 'makes it look less low'. Then write your own judgement and the comparison it rests on.
+    notes: "There's no single right verdict; the check is that each judgement names its comparison."
+  - at: end
+    kind: discussion
+    title: "Who should check?"
+    minutes: 3
+    do: |
+      Who should make sure labellers are treated fairly: the AI company, the labelling company, governments, or users?
+    notes: "Many answers work; ask each student for one reason."

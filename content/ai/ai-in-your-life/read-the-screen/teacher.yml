@@ -1,0 +1,38 @@
+summary: "On a made-up consent screen (big Agree, small Manage choices, training on by default), students find the line that matters and the real choice. Most people don't read (OAIC 2023: 21% always or often read policies). Typical: rewrite it fairly. Wider: cookie banners and the APPs."
+time: 35
+goals:
+  - "I can find the line that matters on a consent screen."
+  - "I can find the real choice behind a small link, and what 'Agree' switches on."
+  - "I can explain why defaults matter when most people don't read."
+before: |
+  **Core idea:** the real choice is often hidden; what starts on decides what happens to most people's data. Kind: makes new content.
+  **The board** (`consent` widget, mode screen) is a made-up screen modelled on common patterns, not any real company's (decision, 18 Oct 2026: platform-agnostic and doesn't date). Pressing Agree without opening Manage choices records "agreed straight away" and turns training on; Start again resets.
+  Paper version: print the screen with its five lines; students circle the line that matters and draw where the choice is.
+  Sources (checked 18 Oct 2026, research brief claims 1, 2, 4):
+  - OAIC, Australian Community Attitudes to Privacy Survey 2023: "Only 21% of Australians always or often read privacy policies". https://www.oaic.gov.au/engage-with-us/research-and-training-resources/research/australian-community-attitudes-to-privacy-survey/australian-community-attitudes-to-privacy-survey-2023
+  - Obar and Oeldorf-Hirsch (2018), "The biggest lie on the internet", abstract: "74% skipped PP, selecting the 'quick join' clickwrap" (543 US university students, a made-up network). https://papers.ssrn.com/abstract=2757465. The famous "gotcha" clause (giving up a first-born child) and the 98% who missed it are in the paper's body, not checked for this course: keep out of student text, or check the full paper first.
+  - Nouwens et al. (CHI 2020), abstract: "only 11.8% meet the minimal requirements" (UK websites, 2019 data, EU law). https://arxiv.org/abs/2001.02479
+  Link to Cyber safety and privacy › The Australian Privacy Principles (10P14) rather than re-teaching them.
+running:
+  - "Engage: the 2-in-10 figure usually surprises students."
+  - "Explore: some students will press Agree straight away. That's the lesson: talk about it, then Start again."
+  - "Explain: the three things to find."
+struggle: "Students think reading every word is the answer. The habit is to find three things fast."
+stuck:
+  - see: "A student marks the welcome line."
+    ask: "Which line says what happens to Ava's chats?"
+    fix: "The 'By selecting Agree' line."
+  - see: "A student can't find the choices."
+    ask: "Is there anything on the screen that isn't the big button?"
+    fix: "The small grey link under it."
+support: "Do the first task together on the projector."
+stretch: "Find three 'dark patterns' (designs that steer you) on the screen and name each."
+leads: "Unit 3, lesson 7: can you spot a fake?"
+exit:
+  q: "Why do defaults matter so much on consent screens?"
+  a: "Most people press Agree without reading, so whatever starts switched on is what happens to most people's data."
+explain: |
+  1. Find the line that matters: what happens to your data.
+  2. Find the real choice: often behind a small link.
+  3. Know what Agree covers: it usually switches everything on.
+  4. Most people don't read, so defaults decide what happens.

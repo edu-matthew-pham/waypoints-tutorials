@@ -986,6 +986,19 @@ Vary, Practise, Make).
     `privacy` (APP and meets or breaches, `fix: on` adds a change per breach; values a, b, n, c; `set: notice` writes
     the APP 5 notice, values g, n, a), `review` (Inspect, then three fixes per weakness, the wrong ones say why; a
     fully fixed section shows its flag; values x, n, s, w). Full value lists are in the widget's header comment.
+  - `widget: feed` (first used by `ai/ai-in-your-life/`): a made-up video feed, labelled as a model. `mode: rank`: eight
+    made-up posts for Sam, five sliders (0 to 3) labelled Watch time, Likes, Shares and comments, From people Sam
+    follows, What Sam says he wants; buttons "The app's goal: keep Sam watching" and "Sam's goal"; values t (top post
+    1 to 8), d (posts Sam asked for less of in the top 3), f (followed posts in the top 3), w, s (watch and wants
+    weights), p (1 when the app's goal preset is set). `mode: design`: six features with On/Off buttons (aria-label
+    the feature text) and a made-up session in minutes (starts at 41; plan 15); values m, k (keep-you features on), h
+    (helping features on), u (1 within the plan).
+  - `widget: consent` (first used by `ai/ai-in-your-life/`): Club Helper, a made-up AI feature in the Cyber safety club
+    app (its own widget so Cyber safety clips aren't re-recorded). `mode: trace`: five stages of one chat (buttons
+    `.csstage`) and two switches labelled "Use my chats to improve the AI" and "Keep my chat history" (both start on);
+    values s (stages opened), t, k, r. `mode: screen`: a consent screen (five clickable lines, a big "Agree and
+    continue", a small "Manage choices" link, then "Save and continue"); values g (training line marked), o (choices
+    opened), t, c (continued), q (agreed without opening anything).
   - `widget: shapes` (first used by `systems/data/shapes-as-numbers`): `mode: vector` draws `shape:` lines (circle x y r,
     rect x y width height, triangle x1 y1 x2 y2 x3 y3, then a colour) on a 100 by 100 page twice, as a vector and as a
     bitmap (`grid: 8 | 16 | 32 | 64`, or `grid: 32 fixed`), with Zoom buttons ("Zoom 8×") and grid buttons ("Bitmap grid

@@ -1,0 +1,21 @@
+inquiry:
+  q: "Should schools count AI's energy and water when deciding whether to use it?"
+  prompts:
+    - "Compared with what: a search, a video, printing worksheets?"
+    - "Who pays the cost: the school, the city near the data centre, everyone?"
+  notes: "Push for comparisons and for 'who measured it'. Students can disagree on the answer; they should agree on how to read the numbers."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Guess the cost"
+    minutes: 3
+    do: |
+      Hold up fingers: 1 = less than an LED light for an hour, 2 = about the same, 3 = much more.
+    notes: "Record the votes to revisit at the end."
+  - at: investigate
+    kind: activity
+    title: "Each and total"
+    minutes: 5
+    do: |
+      In pairs, write one sentence that starts "Each prompt…" and one that starts "In total…". Share three.
+    notes: "Both sentences can be true at once; that's the point."

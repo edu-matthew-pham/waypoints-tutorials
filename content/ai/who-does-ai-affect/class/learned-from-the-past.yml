@@ -1,0 +1,21 @@
+inquiry:
+  q: "If a hiring model is less biased than the people it replaces, should a company use it?"
+  prompts:
+    - "Compared with what?"
+    - "Who can check a person's choices, and who can check a model's?"
+  notes: "Fair question: people are biased too. Bring out that a model's bias applies at scale and is invisible until tested, while a model can also be tested in ways people can't."
+activities:
+  - at: run
+    kind: activity
+    title: "Be the hiring model"
+    minutes: 6
+    do: |
+      Your group gets ten past-hire cards. Find a pattern in who was hired. Then score three new applicants using only that pattern.
+    notes: "Make the past-hire cards share an irrelevant feature (same sport, same suburb). Groups will 'learn' it. Ask: is that feature about doing the job?"
+  - at: modify
+    kind: discussion
+    title: "Who should test it?"
+    minutes: 4
+    do: |
+      The company selling a hiring tool, the company using it, or someone else: who should test it, and why?
+    notes: "Lesson 10 comes back to rules that require audits (wider)."

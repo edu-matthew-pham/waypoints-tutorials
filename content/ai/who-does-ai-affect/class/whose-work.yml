@@ -1,0 +1,21 @@
+inquiry:
+  q: "Is an AI learning from artists' work like a student learning from art, or not?"
+  prompts:
+    - "What's the same, and what's different (speed, scale, asking, paying)?"
+    - "What should artists get?"
+  notes: "A real debate with good arguments both ways. The check is that students name a difference, not that they reach one answer."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Copying or learning?"
+    minutes: 3
+    do: |
+      Stand on a line from 'copying' to 'learning'. Two from each end explain.
+    notes: "Return to the line at the end."
+  - at: make
+    kind: discussion
+    title: "Two sides"
+    minutes: 6
+    do: |
+      In pairs, one argues 'fair', one argues 'not fair'. Swap after two minutes.
+    notes: "Wider classes only, or as an optional end activity."

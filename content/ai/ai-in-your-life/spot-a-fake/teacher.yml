@@ -1,0 +1,36 @@
+summary: "People detect AI-made media at about chance (faces 48.2%; a meta-analysis of 56 studies, not significantly above chance; about 65% with training), feel surer than they are, and glitch tips go stale. So check provenance instead."
+time: 30
+goals:
+  - "I can say what research found about how well people spot AI-made media."
+  - "I can explain why glitch tips go out of date."
+  - "I can explain why feeling sure isn't evidence that something is real."
+before: |
+  **Core idea:** you can't reliably spot it, so check where it came from (decision, 18 Oct 2026: design around provenance, not glitches, even though AI4K12's Grades 6–8 objective mentions finding flaws). Kind: makes new content.
+  **No real-versus-fake image quiz** on purpose: we would be hosting fakes, and the result would teach glitch-spotting. The predict step uses students' own estimate instead.
+  Sources (checked 18 Oct 2026, research brief claims 6–9, 11):
+  - Diel et al. (2024), Computers in Human Behavior Reports 16:100538 (meta-analysis of 56 papers): "Overall deepfake detection rates (sensitivity) were not significantly above chance"; pooled 55.5% (CI 48.9–62.1); training, feedback or AI help about 65%. https://doaj.org/article/a2803c8a1b9441458f000fd0fe82ea47
+  - Nightingale and Farid (2022), PNAS: "The average accuracy is 48.2%"; AI faces rated slightly more trustworthy. https://pmc.ncbi.nlm.nih.gov/articles/PMC8872790/
+  - Köbis et al. (2021), iScience, abstract: people overrate their detection; "neither raising awareness nor introducing financial incentives improves" it. https://doi.org/10.1016/j.isci.2021.103364
+  - Miller et al. (2023), Psychological Science, abstract: "AI hyperrealism" in White faces only. https://journals.sagepub.com/doi/10.1177/09567976231207095. Exact sentence not confirmed; the student text paraphrases.
+  - Lyu, The Conversation (2019): "the latest generation of deepfakes has adapted" (one researcher's account, illustrative). https://theconversation.com/detecting-deepfakes-by-looking-closely-reveals-a-way-to-protect-against-them-119218
+  Optional extras: Day of AI's "Truth, Tricks, and AI"; the Digital Inquiry Group's "Intro to Lateral Reading" (check its licence).
+running:
+  - "Engage: collect predictions on the board; most students say 7 or 8."
+  - "Explore: compare with 48.2%."
+  - "Explain: the blinking story; glitch tips go stale."
+struggle: "Students are confident they'd spot fakes. The evidence is the lesson; don't set them up to fail with real fakes."
+stuck:
+  - see: "A student says 'just look at the hands'."
+    ask: "What happened to the blinking tip?"
+    fix: "Each tip gets fixed; check the source instead."
+support: "Put the two findings on a single slide as 'what people guessed' vs 'what they got'."
+stretch: "Why might people be slightly better at spotting fake voices than fake pictures? What would you need to test it?"
+leads: "Lesson 8: where did it come from?"
+exit:
+  q: "Why isn't 'look for glitches' good advice for spotting AI-made media?"
+  a: "People spot fakes at about chance, they feel surer than they are, and the glitches get fixed, so tips go out of date."
+explain: |
+  1. People sort real and AI-made faces at about chance (48.2%).
+  2. Across 56 studies, detection wasn't clearly better than chance; training helped only a little.
+  3. Glitch tips go stale: the makers fix them.
+  4. So check where it came from instead.

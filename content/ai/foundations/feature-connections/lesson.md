@@ -4,7 +4,7 @@ summary: Explore how colour and shape influence an inspectable weighted decision
 language: science
 shape: 5e
 unit: how-ai-learns
-order: 3
+order: 6
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

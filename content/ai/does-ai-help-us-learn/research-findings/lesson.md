@@ -4,7 +4,7 @@ summary: Compare two real studies with different results, find what each one com
 language: science
 shape: 5e
 unit: evaluating-evidence
-order: 1
+order: 4
 voice: { name: af_heart, speed: 1.1 }
 ---
 Researchers have tested whether AI helps students. Some studies found big gains. Others found that students who practised with AI did worse later without it. **Can both kinds of study be trustworthy?**

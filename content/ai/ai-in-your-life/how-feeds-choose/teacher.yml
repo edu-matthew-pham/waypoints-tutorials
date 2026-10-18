@@ -1,0 +1,38 @@
+summary: "Be the algorithm: on a made-up feed, students set how much each signal counts and see posts Sam asked for less of rise when the app ranks for watching. What a feed counts decides what rises."
+time: 40
+goals:
+  - "I can explain how a feed ranks posts from signals like watch time, likes and shares."
+  - "I can explain why posts I didn't ask for can rise to the top."
+  - "I can tell a signal I send from the app's choice about how much it counts."
+before: |
+  **Core idea:** a feed predicts engagement from signals; what it counts decides what rises. Kind: learns to predict or sort (recommender systems), building on AI Foundations › How does a machine learn?.
+  **The board** (`feed` widget, mode rank) is a small made-up model, not a real app: eight made-up posts, five signals each scored 0 to 3, and a weighted sum. "The app's goal" weights watch time and shares 3, likes 1; "Sam's goal" weights follows 2, wants 3, likes 1. With the app's goal, the pranks post leads and both posts Sam asked for less of (the celebrity argument and the game argument) reach the top 3.
+  Paper version: print the eight post cards with their five numbers; groups choose weights, add up scores and order the cards.
+  Sources (checked 18 Oct 2026, research brief claims 47–48):
+  - eSafety, Recommender systems position paper (May 2026): platforms "overwhelmingly prioritise engagement when sorting and presenting content"; recommenders are "only one factor" in harm. https://www.esafety.gov.au/sites/default/files/2026-05/Recommender-systems-position-paper-May2026.pdf
+  - Milli et al. (arXiv 2023–24): engagement ranking "amplifies emotionally charged, out-group hostile content" that users did not prefer. https://arxiv.org/abs/2305.16941. Journal publication not confirmed.
+  No phones in class: the board or the paper cards stand in for a real feed. Don't ask students what's in their own feeds.
+  Idea credit: "be the algorithm" card activities exist in Actua's Ethical Algorithms game and Day of AI's Grade 8 "AI, Power, and Persuasion"; this lesson's cards and board are our own. The Digital Technologies Hub's "Filter bubbles, bias, rabbit holes and nudging" (Years 9–10, CC BY 4.0) is an optional extra for older classes.
+running:
+  - "Engage: lock in a guess about what goes first."
+  - "Explore: groups set the app's goal, then Sam's; compare the top three."
+  - "Explain: who chose what counts."
+struggle: "Students think the feed 'knows' what they like. It predicts engagement from signals, which isn't the same."
+stuck:
+  - see: "A student can't get two followed posts into the top 3."
+    ask: "Which sliders reward posts Sam follows or asked for?"
+    fix: "Turn up 'From people Sam follows' and 'What Sam says he wants', turn watch time and shares down."
+  - see: "A student says the arguments rose because Sam likes them."
+    ask: "What did Sam ask for less of? What did the app count instead?"
+    fix: "The app counted watching and arguing, not Sam's request."
+support: "Do the app's goal together on the projector, then let pairs find Sam's goal."
+stretch: "Design a fair feed for a school's news app. What would it count, and what would that cost the app?"
+leads: "Lesson 3: features designed to keep you."
+exit:
+  q: "Why can posts you didn't ask for end up at the top of your feed?"
+  a: "The feed counts signals like watch time and shares most, so posts people watch and argue about rise, even if you asked for less."
+explain: |
+  1. A feed gives each post a score from signals: watch time, likes, shares, who posted, what you asked for.
+  2. The app chooses how much each signal counts.
+  3. If it counts watching and arguing most, those posts rise.
+  4. What it counts decides what you see.

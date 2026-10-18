@@ -4,7 +4,7 @@ summary: Sort everyday systems into four kinds (rules written by people, models 
 language: science
 shape: 5e
 unit: how-ai-learns
-order: 5
+order: 8
 voice: { name: af_heart, speed: 1.1 }
 ---
 People call many different things "AI". Some follow rules that people wrote. Some learned from examples, like your fruit sorter. Some make new text or pictures, like your dice generator. Some take actions for you. **Knowing which kind you are looking at tells you how it might go wrong.**

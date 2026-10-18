@@ -4,7 +4,7 @@ summary: Teach a simple fruit sorter using labelled examples, then test unfamili
 language: science
 shape: 5e
 unit: how-ai-learns
-order: 1
+order: 4
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

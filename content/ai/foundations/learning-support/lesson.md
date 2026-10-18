@@ -4,7 +4,7 @@ summary: Compare hints, worked examples and independent attempts to select assis
 language: science
 shape: 5e
 unit: learning-effectively-with-ai
-order: 1
+order: 11
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8241

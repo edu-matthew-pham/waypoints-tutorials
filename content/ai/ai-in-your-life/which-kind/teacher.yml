@@ -1,0 +1,28 @@
+summary: "A short recap of the four kinds of AI (rules, predict or sort, make new content, take actions) using this course's cases: feeds, chatbots, fakes, voice clones."
+time: 15
+goals:
+  - "I can say which kind of AI is in an everyday app."
+  - "I can say where to look when each kind goes wrong."
+before: |
+  **Core idea:** recap of AI Foundations › What kind of AI is it? (Unit 2, lesson 5). Students who haven't done Foundations can still do it; the kinds are defined on the page.
+  The sort previews the course: feeds (lessons 2 and 3), companions (4), fakes (7 to 9), voice clones (10). Keep it about apps in general; don't ask students which apps they use.
+running:
+  - "Engage: ask what picks the next video before revealing."
+  - "Explore: sort the cards."
+  - "Explain: tie each kind to where it goes wrong."
+struggle: "Students think all app AI is a chatbot. Feeds are the most common AI they meet, and it predicts rather than chats."
+stuck:
+  - see: "A student says the feed follows rules."
+    ask: "Did a person write which video comes next, or did it learn from what people watched?"
+    fix: "It learned patterns from viewing, so it predicts."
+support: "Give the four columns with one example in each."
+stretch: "Which kind of AI would be hardest to check from the outside? Why?"
+leads: "Lesson 2: be the algorithm on a made-up feed."
+exit:
+  q: "Which kind of AI chooses what's next in a video feed?"
+  a: "Learns to predict or sort: it predicts what will keep you watching."
+explain: |
+  1. Rules written by people.
+  2. Learns to predict or sort: feeds, spam filters, face unlock.
+  3. Makes new content: chatbots, image, video and voice makers.
+  4. Takes actions: agents that send or buy for you.

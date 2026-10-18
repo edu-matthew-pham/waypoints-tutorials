@@ -1,0 +1,37 @@
+summary: "The course challenge: students choose a case (made-up, real with teacher approval, or one from the course) and judge it with the kind of AI, the lens, the course's questions, one rule, and (wider) a verdict with the other side."
+time: 50
+goals:
+  - "I can judge a new AI system with the course's questions: which kind, who gains, who loses, who decides, and what's the catch."
+  - "I can link a worry about a system to the right question from the course."
+  - "I can make one rule for a system and say who checks it."
+before: |
+  **Core idea:** apply everything to a new case. There's no single right verdict; marks (if any) go to reasons, not conclusions.
+  The made-up cases need no sources. If students choose a real case from the news, check it together first: who reported it, when, and whether it's settled; avoid cases about individual tragedies, and cases students are personally involved in.
+  The reasoning checks are unmarked: students compare with model answers and self-check against the criteria.
+  Can run over two lessons: lesson one for choosing and the lens; lesson two for evidence, the other side and sharing (a gallery walk works well).
+  Possible assessment use: the lens and rule make a short written task; MYP Design criterion A (inquiring and analysing) or a Digital Technologies "possible future impact" judgement (AC9TDI8P10, AC9TDI10P10).
+  Later extension (planned, not built): "Should we use this AI tool?", a student committee evaluating a real tool for the school.
+running:
+  - "Engage: let students choose quickly; offer the course cases to anyone stuck."
+  - "Explore: model the lens on the Refunds case together, then students do their own."
+  - "Explain: the sort links each worry to a lesson; ask students to add the matching question to their lens."
+  - "End: pair share or gallery walk."
+struggle: "The catch: students write 'it might break'. Push for something specific we don't know or need to check."
+stuck:
+  - see: "A student can't decide the kind of AI."
+    ask: "Did a person write the rule, did it learn from examples, does it make something new, or does it act?"
+    fix: "Use the four questions from lesson 1."
+  - see: "A student's lens has only gains."
+    ask: "Who would be upset if this went wrong?"
+    fix: "That person goes under loses."
+support: "Give the lens as a printed sheet with prompts in each box, and limit choice to two cases."
+stretch: "Present the case as a one-page brief for the school leadership, with a recommendation."
+leads: "Course complete. Related: Does AI Help Us Learn? (your own learning) and Cyber safety and privacy (your data)."
+exit:
+  q: "What five questions would you ask about a new AI system?"
+  a: "Which kind is it? Who gains? Who loses or could be harmed? Who decides? What's the catch?"
+explain: |
+  1. Which kind of AI is it?
+  2. Who gains, who loses, who decides, and what's the catch?
+  3. Which lesson's question fits each worry?
+  4. Make one rule, and say who checks it.
