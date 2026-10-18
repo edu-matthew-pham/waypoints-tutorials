@@ -1,6 +1,6 @@
 # Plan: *Teaching when AI is everywhere* (a staff course) (19 Oct 2026)
 
-**Draft for Matthew. Design only; nothing built.** Grew out of the staff-training gap in *AI at our school* (`roadmap/ai-committee-plan.md` › Update 19 Oct). The committee course now teaches students and staff to *notice* know-how gaps (lesson 10: rule problem vs know-how problem; lesson 11: "who needs to know, and how"). This course is where staff *close* them.
+**Draft for Matthew. Design only; nothing built. Handoff: `roadmap/staff-ai-course-handoff.md` (Project doc `claude/handoff-staff-ai-course.md`).** Grew out of the staff-training gap in *AI at our school* (`roadmap/ai-committee-plan.md` › Update 19 Oct). The committee course now teaches students and staff to *notice* know-how gaps (lesson 10: rule problem vs know-how problem; lesson 11: "who needs to know, and how"). This course is where staff *close* them.
 
 ## What it is
 A short, self-paced course for teachers under the **Teachers** menu, beside *Make a lesson* and *Choosing AI tools*. Same format as *Make a lesson*: **do first, then the why**. Each teacher brings a task they're setting in the next fortnight, and leaves with it redesigned, plus a task instruction card students can read.
