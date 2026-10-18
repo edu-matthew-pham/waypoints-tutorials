@@ -35,10 +35,19 @@ These are overlapping responsibilities, **not** a rigid taxonomy or automatic go
 
 The gym/spotter analogy can introduce this distinction, but has limits: not all effort is educationally productive, and scaffolding may be necessary to make learning possible.
 
+## Where guidance sits: tutorial and class layer (18 Oct 2026)
+
+Agreed in discussion with Matthew (details in the Project doc `create-generic-proposal`, "Lesson shape"):
+
+- **The tutorial leans explicit.** It is self-paced, so no teacher is there to rescue unproductive struggle: guidance is always within reach (hints, "? Explain", worked examples, feedback). Predict and Run are still small, safe inquiries (commit, try, then be told why).
+- **The class plan and slides carry the mix.** Inquiry: the `inquiry` question, discussion activities, open exploration before the tutorial. Explicit: worked-example slides with steps held back, live modelling, mini-whiteboard checks. The teacher sets the balance for the class; the tutorial underneath does not change.
+- **One template to adapt, not a fixed optimum.** Three settings, each a default with its reason shown: sequence (the shared stages, with subject presets as names on them), guidance (explicit or inquiry per stage; default from Kit's pace profile: Consolidating explicit first, Steady guided exploration then explain, Advancing inquiry first) and width (from the node's Kit response modes, as a list).
+- Possible later: one class-plan line saying which way it leans and why, so the deck orders inquiry slides before or after the worked example.
+
 ## Open questions / speculative
 
 - Should 5E become a common default for investigative subjects, or remain one of several equally supported lesson shapes?
-- Would a shared stage vocabulary improve authoring and teacher adaptation, or obscure subject-specific pedagogy?
+- Would a shared stage vocabulary improve authoring and teacher adaptation, or obscure subject-specific pedagogy? Proposed answer (18 Oct): yes as the core (the stages already are shared), with subject names kept on top as presets.
 - Can optional explicit-teaching and inquiry layers be generated from a strong content base without distorting the original lesson?
 - What evidence from actual classroom trials would justify changing Digital Systems' existing Maths-shaped lessons?
 
