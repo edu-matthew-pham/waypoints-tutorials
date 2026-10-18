@@ -4,21 +4,25 @@ goals:
   - "I can say who should notice new AI and how students can report problems safely."
   - "I can tell which changes need an early review and which can wait."
   - "I can write a review cycle with a date, and link it to the school's own policy review."
+  - "I can tell a rule problem from a know-how problem."
 before: |
-  **Core idea:** decisions about AI are dated and reviewed; a review cycle says who notices, how problems are reported (simply, without blame), what triggers an early review, and when everything is revisited.
+  **Core idea:** decisions about AI are dated and reviewed; a review cycle says who notices, how problems are reported (simply, without blame), what triggers an early review, when everything is revisited, and whether people can apply the rules. Committees tend to answer every problem with a new rule; the rule vs know-how sort is there to stop that. Test: give the case to whoever knows the rule best; if they still can't apply it, fix the rule; if they can and others can't, it's know-how (guidance, worked examples, a briefing, a lesson for students). The committee notices know-how gaps; it doesn't run staff training itself.
   The safety-report item in the sort says to follow the school's wellbeing steps too: if a student raises a real incident in class, follow your school's procedures, not the committee's.
   **For the class plan:** find out when the school's AI policy (or the policy it sits in) is next reviewed, and who leads it. The committee's products go there, dated, after lesson 11 refines the policy.
   The national framework's yearly review is sourced in Who Does AI Affect? › Making rules (checked 18 Oct 2026). Re-check each January.
 running:
   - "Engage: 'reviewed when needed'. Ask when that will be."
   - "Explore: sort the events, then each student writes a review cycle."
-  - "Explain: the four parts; why reporting has to be safe."
+  - "Explain: the five parts; why reporting has to be safe; rule or know-how?"
   - "Evaluate: finish the response plan."
 struggle: "Review cycles feel like admin. Use the Engage: a policy with no date is how decisions quietly go out of date."
 stuck:
   - see: "Everything is 'review now'."
     ask: "If the committee reviewed everything at once, what would it never get to?"
     fix: "Save 'now' for changed conditions and safety; the rest goes to the next meeting."
+  - see: "Every problem gets a new rule."
+    ask: "Could the person who knows the rule best apply it here?"
+    fix: "If yes, it's know-how: plan guidance or an example, not a rule."
   - see: "The reporting route needs a student's name and the tool they used."
     ask: "Would you report if you might get in trouble?"
     fix: "Make naming optional, and focus the report on the tool."
@@ -33,3 +37,4 @@ explain: |
   2. Problems can be reported simply, without blame.
   3. Changed terms, safety reports, new kinds of AI or a big jump in what AI can do trigger an early review.
   4. Everything is revisited on a date, and someone holds the map of AI lines across policies.
+  5. Rule problem: fix the rule. Know-how problem: show people how.

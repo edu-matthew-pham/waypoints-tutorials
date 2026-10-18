@@ -97,7 +97,7 @@ Layers, each changing at its own speed:
 3. **Guidelines** (updated each term): the approved tools list, settings, year-level expectations.
 4. **Task instructions** (set by each teacher): how much AI this task allows, and what to say about it.
 
-**Keep them in step.** Whoever holds the map checks that policies don't contradict each other, and **passes changes along**: one change in AI can touch several policies at once.
+**Keep them in step.** Whoever holds the map checks that policies agree, **passes changes along** (one change in AI can touch several), and notes **who needs to know each change, and how**.
 
 **Built for what's next.** AI keeps changing: tools that made arithmetic slips now check their work by running code, and some AI can now **act** (open a page, fill it in, press Submit, send a message). Test each line: **"What if AI could do this next year?"** If the line would break, rewrite it around what you value. AI that acts is one change to pass along: **a person sends, submits or changes anything on a school account** goes in the devices policy *and* staff conduct.
 
@@ -159,12 +159,7 @@ check:
   feedback: [null, "That detail will already be out of date: it belongs in a guideline.", "The list will change; the policy shouldn't have to."]
 ```
 
-On paper, write **the AI statement and map, version 2**: the course's fourth product.
-
-| AI statement, version 2 | |
-|---|---|
-| Principles, held by, reviewed: | |
-| Guidelines it points to: | |
+On paper, write **the AI statement (principles, who holds the map, review date) and the map, version 2**: the course's fourth product.
 
 | Policy | Its AI line | Owner | What changed, and why |
 |---|---|---|---|
@@ -176,4 +171,6 @@ On paper, write **the AI statement and map, version 2**: the course's fourth pro
 | Staff conduct | | | |
 | Outside rules | can't change | | |
 
-You now have the committee's four products: a **charter**, a **recommendation**, a **response plan**, and an **AI statement with its map**. The charter decides; the rest follow from it, and every one is dated and reviewed.
+For each changed line, add **who needs to know, and how**.
+
+You now have the committee's four products: a **charter**, a **recommendation**, a **response plan**, and an **AI statement with its map**, each dated and reviewed.

@@ -25,6 +25,9 @@ staff:
     - title: "Join the policy cycle"
       minutes: 10
       do: "Find the review date of the school's AI policy (or the policy it sits in). Set the committee's review for just before it."
+    - title: "Rule or know-how?"
+      minutes: 15
+      do: "List the AI problems staff have raised this year. Sort each: rule problem (fix the policy line) or know-how problem (guidance, worked examples, a briefing). For each know-how gap: who needs to know, who provides it, by when."
     - title: "Roles"
       minutes: 15
       do: "Who watches which tool's updates? Who receives student reports, and how are they kept safe and without blame? Who can call an early review?"

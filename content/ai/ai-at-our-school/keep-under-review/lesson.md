@@ -69,7 +69,17 @@ tasks:
       options: ["So they report problems without worrying about getting into trouble, and the committee hears about them", "Because names don't matter", "So the committee can't fix anything"]
       answer: 0
       feedback: [null, "Names can matter for follow-up; the point is that fear stops reports.", "Hearing about problems is how the committee fixes them."]
-  - check: { type: reflect, text: "I can describe a review cycle: who notices, how problems are reported, what triggers an early review, and when it's revisited." }
+  - check:
+      type: sort
+      q: "A rule problem means the rule itself is wrong, missing or contradicts another. A know-how problem means the rule is fine, but people don't yet know how to apply it. Which is each?"
+      options: ["Rule problem: fix the rule", "Know-how problem: give guidance or examples"]
+      items:
+        - ["The integrity policy says 'no AI in assessed work'; the AI statement says 'every task says how much AI is allowed'", "Rule problem: fix the rule", "Even someone who knows both rules perfectly can't tell which applies."]
+        - ["Teachers set AI levels for tasks very differently from each other", "Know-how problem: give guidance or examples", "The rule is fine. Teachers need worked examples of each level."]
+        - ["No policy says whether staff may put student work into an AI tool", "Rule problem: fix the rule", "Nobody is doing it wrong: nothing says what's right."]
+        - ["Students don't say when they used AI, because they don't know what to write", "Know-how problem: give guidance or examples", "Show them an example acknowledgement, and that honesty isn't punished."]
+        - ["A teacher accepts an online quiz as evidence without knowing AI could finish it", "Know-how problem: give guidance or examples", "The rules can stay; the teacher needs to know what AI can now do."]
+  - check: { type: reflect, text: "I can describe a review cycle, and tell a rule problem from a know-how problem." }
 ```
 
 A review cycle has four parts:
@@ -78,6 +88,7 @@ A review cycle has four parts:
 2. **How problems are reported:** simple, safe, and without blame, so people actually report.
 3. **Triggers for an early review:** a changed term or setting, a safety report, a new kind of AI, a **big jump in what AI can do**, new evidence.
 4. **A date:** when the charter, recommendations and responses are all revisited, ideally alongside the school's own policy review.
+5. **Can people apply it?** A rule nobody knows how to follow isn't working. When something goes wrong, ask: is it a **rule problem** (wrong, missing, or contradicting another rule: fix the rule) or a **know-how problem** (the rule is fine, but people need guidance, examples or practice)? A new rule won't fix a know-how problem: it just makes the policy longer.
 
 The AI rules live in several policies (lesson 4), each reviewed by its own owner. So the cycle names **who holds the map**: the person who notices when a change in AI touches several policies at once, and passes it along.
 
@@ -87,9 +98,13 @@ Decisions about AI are **dated and reviewed**. That's the charter's "honest abou
 
 Why no blame?
 
+### Rule or know-how?
+
+Give the person who knows the rule best the same case. If they still can't apply it, it's the rule.
+
 ### Explain it
 
-Name the four parts of a review cycle.
+Name the five parts of a review cycle.
 
 ## Elaborate: what to change at the review
 
@@ -143,6 +158,7 @@ On paper, finish the **response plan**.
 | Who notices new AI: | |
 | How students report problems: | |
 | Early review if… | |
+| Who needs to know what (and how we'll show them): | |
 | Charter, recommendations and responses revisited on: | |
 | Sent to (the school's policy review): | |
 

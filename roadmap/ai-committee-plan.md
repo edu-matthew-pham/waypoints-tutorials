@@ -115,3 +115,8 @@ Most AI reaches students without a committee choosing it: AI answers in search, 
 - Lesson 4 is now `where-ai-belongs` (was `first-policy`): sort AI situations into the policy that owns each (integrity and assessment, wellbeing and behaviour, privacy incl. families, inclusion incl. agreed adjustments, devices and ICT use incl. AI that acts, staff conduct); write a thin AI statement (principles, the map, who holds it, review). Overreach test: if an existing policy owns the situation, the rule goes there. Outside rules (IB academic integrity policy and its AI appendix; BSSS teacher guide on AI and academic integrity, 2023) sit above; teacher notes, checked 19 Oct 2026 (IB appendix text not read: read it before teaching).
 - Lesson 11 is now "Refine the AI rules": fourth way to go wrong, "out of step"; a consistency question (integrity vs statement); layers are statement, AI lines in each policy, guidelines, task instructions; whoever holds the map passes changes along. Product: AI statement and map, version 2.
 - Lesson 10 names who holds the map. This also covers the earlier gaps: external bodies, disability adjustments, harm to others, families, staff use.
+
+## Update (19 Oct 2026): rule problems vs know-how problems
+- Lesson 10 gains a fifth part of the review cycle, "Can people apply it?", and a sort: rule problem (wrong, missing or contradictory: fix the rule) vs know-how problem (the rule is fine; people need guidance or examples). Lesson 11's map asks who needs to know each change, and how. Staff activity in lesson 10's class plan.
+- Fixed stale lesson numbers in the Unit 2 and 3 primers.
+- The staff course that closes know-how gaps is planned separately: `roadmap/staff-ai-course-plan.md` (draft, not built).

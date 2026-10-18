@@ -7,9 +7,9 @@ Most AI reaches students without a committee choosing it: an AI answer at the to
 
 ## The lessons
 
-7. **Map it.** Sort Westbrook's tools: we chose it, it arrived (a feature switched on in a tool we use), or students bring it.
-8. **Respond, not just gatekeep.** Choose a response for each item (teach a habit, a class norm, change the task, change a setting, offer an alternative, ask the vendor, restrict, or wait and review by a date) and check it against the charter. A made-up search page with an AI answer above the results, for Year 7 and for Year 10.
-9. **Keep it under review.** Who notices new AI, how students report problems, and when the charter is revisited.
+8. **Map it.** Sort Westbrook's tools: we chose it, it arrived (a feature switched on in a tool we use), or students bring it.
+9. **Respond, not just gatekeep.** Choose a response for each item (teach a habit, a class norm, change the task, change a setting, offer an alternative, ask the vendor, restrict, or wait and review by a date) and check it against the charter. A made-up search page with an AI answer above the results, for Year 7 and for Year 10.
+10. **Keep it under review.** Who notices new AI, how students report problems, when everything is revisited, who holds the map, and whether a problem is a rule problem (fix the rule) or a know-how problem (show people how).
 
 ## Everyday picture
 

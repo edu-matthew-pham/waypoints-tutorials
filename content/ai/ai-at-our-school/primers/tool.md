@@ -7,9 +7,9 @@ Someone proposes a tool. The committee judges it against its charter and recomme
 
 ## The lessons
 
-4. **Does it help learning?** What problem it solves, what kind of AI it is, and whether the evidence shows learning (compared with what, measured when). StudyPal's pitch and its one small study.
-5. **Can we trust it, and who does it affect?** StudyPal's privacy page, settings (chats used to train the AI, on by default) and terms (13 and over); students it may help or leave out.
-6. **Recommend.** A decision with conditions, checked principle by principle.
+5. **Does it help learning?** What problem it solves, what kind of AI it is, and whether the evidence shows learning (compared with what, measured when). StudyPal's pitch and its one small study.
+6. **Can we trust it, and who does it affect?** StudyPal's privacy page, settings (chats used to train the AI, on by default) and terms (13 and over); students it may help or leave out.
+7. **Recommend.** A decision with conditions, checked principle by principle.
 
 ## The made-up tool
 
