@@ -55,6 +55,17 @@ export const STAGE_INFO_DESIGN = {
   practise: ['Evaluate', 'Judge it against each criterion, and say what you would change.'],
   info: ['Info', ''],
 };
+/** Primers (shape: primer, 18 Oct 2026): one idea for any subject, text-light (English, HASS and other non-coding concepts).
+ * Same stages: predict = Think first, investigate = The idea (and its worked example), practise = Check, make = Apply. */
+export const STAGE_INFO_PRIMER = {
+  predict: ['Think first', 'Say what you think before you read on. A wrong guess is fine: it shows you what to look for.'],
+  run: ['Try', 'Try it and compare with what you thought.'],
+  investigate: ['The idea', 'The idea in plain words, then a worked example, one step at a time.'],
+  modify: ['Vary', 'Use the idea on a different example.'],
+  practise: ['Check', 'A few on your own, to check you have it.'],
+  make: ['Apply', 'Use the idea on your own class text or topic.'],
+  info: ['Info', ''],
+};
 const TIER_LABEL = { typical: 'Typical', wider: 'Wider' };
 export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 
@@ -680,11 +691,11 @@ export function lessonPageHtml(lesson, deps) {
     const s = t.replace(STAGE_PREFIX, '');
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
-  const isSci = lesson.language === 'science' || lesson.shape === '5e';
+  const isSci = (lesson.language === 'science' && lesson.shape !== 'primer') || lesson.shape === '5e';
   const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci))];
   const tierAttr = (c) => (c.tier ? ` data-tier="${esc(c.tier)}"` : '');
   const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"${tierAttr(s.config)}><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
-  const SI = lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
+  const SI = lesson.shape === 'primer' ? STAGE_INFO_PRIMER : lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
   // Width tiers: steps marked typical or wider are extra contexts. A teacher sets the starting width with ?width=;
   // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
   const tiered = lesson.steps.some((s) => s.config.tier);

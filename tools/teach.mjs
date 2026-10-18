@@ -147,6 +147,8 @@ let E5 = false;   // 5E words: science, or shape: 5e
 // Design projects (shape: design) title their steps with design-cycle words (Inquire, Develop, Create, Test, Evaluate):
 // slides and worksheets use the step's own title, and the Inquire step is a brief to read, not a prediction.
 let DESIGN = false;
+// Primers (shape: primer) use their own step titles (Think first, The idea, Check, Apply), not PRIMM or 5E words.
+let PRIMER = false;
 const fence = (code, lang = LANG) => '```' + lang + '\n' + String(code).replace(/\n$/, '') + '\n```';
 
 /** Every check in a lesson, with where it sits: [{ step, task, check, key }]. */
@@ -158,7 +160,7 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 // ---------------------------------------------------------------- deck (Prepare Marp)
 export function deckFor(lesson, { course, unit, snip, blocks = null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python'; E5 = LANG === 'science' || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks;
   const T = lesson.teacher || {};
@@ -245,7 +247,7 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
     return t?.starter ? playUrlFor(t.playground || (LANG === 'html' ? 'html' : 'turtle'), snip(t.starter)) : null;
   };
   const playSlide = (step, heading) => `${BADGE.activity}\n\n## ${heading}\n\n{{embed: ${playUrl(step)}}}\n\n_If it does not load:_ [open this step in the tutorial](${stepUrl(lesson, step)})`;
-  const runIt = (step, label = LANG === 'maths' ? 'Try it' : E5 ? 'Explore it' : 'Run it') => boardUrl(step) ? boardSlide(step, label) : playUrl(step) ? playSlide(step, label) : `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
+  const runIt = (step, label = LANG === 'maths' || PRIMER ? 'Try it' : E5 ? 'Explore it' : 'Run it') => boardUrl(step) ? boardSlide(step, label) : playUrl(step) ? playSlide(step, label) : `${BADGE.activity}\n\n## ${label}\n\nOpen the lesson at this step and try it together.\n\n[${stepUrl(lesson, step).replace(/^https:\/\//, '')}](${stepUrl(lesson, step)})`;
   let stuckDone = false;
   for (const s of lesson.steps) {
     const before = slides.length;
@@ -253,7 +255,7 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
     const code = c.code ? snip(c.code) : '';
     if (stage === 'predict' && !DESIGN) {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
-      slides.push(`${BADGE.discussion}\n\n## ${E5 ? 'Engage: predict' : 'Predict'}\n\n${code ? showCode(code, s) + '\n\n' : ''}${k ? `**${k.q}**${k.options ? '\n\n' + k.options.map((o) => `- ${o}`).join('\n') : ''}` : prose(s.body)}` + note(`${k?.answer ? `What happens: ${k.answer}` : ''} Take two or three predictions before anyone runs it.`));
+      slides.push(`${BADGE.discussion}\n\n## ${PRIMER ? 'Think first' : E5 ? 'Engage: predict' : 'Predict'}\n\n${code ? showCode(code, s) + '\n\n' : ''}${k ? `**${k.q}**${k.options ? '\n\n' + k.options.map((o) => `- ${o}`).join('\n') : ''}` : prose(s.body)}` + note(`${k?.answer ? `What happens: ${k.answer}` : ''} Take two or three predictions before anyone runs it.`));
       classSlides('predict');
       // Run it live right after the vote, before the answer is shown: the next Run step's playground or board goes in
       // here, and that step then adds no slide of its own (its note comes along).
@@ -269,9 +271,11 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
       if (!liveRun.has(s.id)) slides.push(runIt(s) + note(`${prose(s.body)} ${c.check?.type === 'reflect' ? `Students should be able to say: ${c.check.text}` : ''}`));
     } else if (stage === 'investigate' || stage === 'practise' || (E5 && stage === 'modify') || (DESIGN && stage === 'predict')) {
       if (DESIGN && stage === 'predict' && s.body.trim()) slides.push(`${BADGE.discussion}\n\n## ${title}\n\n${prose(s.body)}` + note('Read the brief together: who it is for, what it must do (criteria) and the limits (constraints).'));
-      if (code) slides.push(`${BADGE.discussion}\n\n## ${DESIGN || title === 'Investigate' ? title : `Investigate: ${title.replace(/^Investigate:\s*/, '')}`}\n\n${showCode(code, s)}` + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
+      if (code) slides.push(`${BADGE.discussion}\n\n## ${DESIGN || PRIMER || title === 'Investigate' ? title : `Investigate: ${title.replace(/^Investigate:\s*/, '')}`}\n\n${showCode(code, s)}` + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
       if (boardUrl(s)) slides.push(boardSlide(s, title) + note(`${prose(s.body)} ${c.insight ? `What this step is for: ${c.insight}` : ''}`));
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
+      // A primer's explanation (The idea) is often text only: it gets its own slide, the explicit part of the lesson.
+      if (PRIMER && stage === 'investigate' && !code && !boardUrl(s) && !items.length && s.body.trim()) slides.push(`${BADGE.discussion}\n\n## ${title}\n\n${prose(s.body)}` + note(c.insight ? `What this step is for: ${c.insight}` : 'Explain it, then ask a student to say it back in their own words.'));
       for (const { t, k } of items) {
         const p = checkPartsMd(k, snip, `${s.id}${t ? t.id : ''}`);
         if (p.reflect || p.board || k.type === 'code') continue;
@@ -313,9 +317,9 @@ export function deckFor(lesson, { course, unit, snip, blocks = null }) {
       if (!stuckDone && T.struggle) n += `The hard part, on purpose: ${T.struggle} `;
       if (!stuckDone && T.stuck?.length) { n += 'When students get stuck: ' + T.stuck.map((x) => `${x.see} Ask: ${x.ask} Fix: ${x.fix}`).join(' / '); stuckDone = true; }
       else if (T.struggle) stuckDone = true;
-      slides.push(`${BADGE.activity}\n\n## ${stage === 'make' && !DESIGN && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${text}${tasks ? '\n\n' + tasks : ''}${c.try && !playUrl(s) ? `\n\n[Open this step](${stepUrl(lesson, s)})` : ''}` + note(n));
+      slides.push(`${BADGE.activity}\n\n## ${stage === 'make' && !DESIGN && !PRIMER && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${text}${tasks ? '\n\n' + tasks : ''}${c.try && !playUrl(s) ? `\n\n[Open this step](${stepUrl(lesson, s)})` : ''}` + note(n));
       // The playground gets its own slide (task text plus a 420px frame would not fit), so a teacher can work a task live.
-      if (playUrl(s)) slides.push(playSlide(s, `Live: ${stage === 'make' && !DESIGN && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}`) + note('Work the first task live, or let students start on their own screens and walk round.'));
+      if (playUrl(s)) slides.push(playSlide(s, `Live: ${stage === 'make' && !DESIGN && !PRIMER && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}`) + note('Work the first task live, or let students start on their own screens and walk round.'));
     } else if (s.body.trim()) {
       slides.push(`## ${title}\n\n${prose(s.body)}`);
     }
@@ -400,7 +404,7 @@ function traceTable(t, blanks) {
 // ---------------------------------------------------------------- worksheet (Prepare Print)
 export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python'; E5 = LANG === 'science' || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks;
   const T = lesson.teacher || {};
@@ -417,9 +421,9 @@ export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
     let part = '';
     if (stage === 'predict' && !DESIGN) {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
-      part = `## ${E5 ? 'Engage' : 'Predict'}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
+      part = `## ${PRIMER ? 'Think first' : E5 ? 'Engage' : 'Predict'}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
     } else if (stage === 'run') {
-      part = `## ${E5 ? 'Explore' : 'Run'}\n\n${LANG === 'maths' || E5 ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
+      part = `## ${PRIMER ? 'Try' : E5 ? 'Explore' : 'Run'}\n\n${PRIMER ? 'Try it in the tutorial' : LANG === 'maths' || E5 ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
     } else if (stage === 'investigate' || stage === 'practise' || (E5 && stage === 'modify') || (DESIGN && stage === 'predict')) {
       part = `## ${title}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}`;
       const items = s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => ({ t, k: t.config.check })) : (c.check ? [{ t: null, k: c.check }] : []);
@@ -446,7 +450,7 @@ export function worksheetFor(lesson, { course, unit, snip, blocks = null }) {
         const t = s.tasks.find((x) => x.id === id);
         return `${t ? `**${t.title}:**\n\n` : ''}${splitFiles(snip(sols[id])).map((f) => (f.name ? `*${f.name}*\n\n` : '') + codeMd(f.code)).join('\n\n')}`;
       }).join('\n\n');
-      part = `## ${stage === 'make' && !DESIGN && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
+      part = `## ${stage === 'make' && !DESIGN && !PRIMER && !/make/i.test(title) ? `Make: ${bare(s.title)}` : title}\n\n${prose(s.body)}${tasks ? '\n\n' + tasks : ''}\n\nWork in the tutorial. Plan first: what will you change, and how will you test it?\n\n{{box-4}}` + tnote(solText ? (LANG === 'maths' ? `**One possible answer.** Other correct answers are fine; check that each one does what the task asks.\n\n${solText}` : `**One possible solution.** Other correct programs are fine; check that the program runs and does what the task asks.\n\n${solText}`) : '');
     } else if (s.body.trim()) {
       part = `## ${title}\n\n${prose(s.body)}`;
     }
@@ -529,7 +533,7 @@ export const CHEAT_CSS = `.wrap{max-width:1000px}
 
 // ---------------------------------------------------------------- teacher guide pages (HTML bodies)
 export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files, blocks = null }) {
-  LANG = lesson.language || 'python'; E5 = LANG === 'science' || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks;
   // MakeCode: the blocks picture, with the code one click away; code as text when there is no picture.

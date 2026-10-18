@@ -16,7 +16,7 @@ export function setupAuthoring(controller){
   $('authorCapabilities').textContent=p?`${p.label}: ${p.recording==='automatic'?'automated preview and tab recording':'manual tab recording'}. ${p.note||''}`:'Text and checks only; no interactive preview to record.';
   controller.setStarterFactory(title=>starterFiles({...settings(),title:$('authorTopic').value.trim()||title}));
  }
- $('authorSubject').onchange=()=>{const defaults={code:['coding','turtle'],maths:['maths','board'],science:['science','science'],engineering:['design','board'],general:['inquiry','board']}[$('authorSubject').value];$('authorProfile').value=defaults[0];$('authorPlayground').value=defaults[1];changed()};
+ $('authorSubject').onchange=()=>{const defaults={code:['coding','turtle'],maths:['maths','board'],science:['science','science'],engineering:['design','board'],english:['primer','none'],hass:['primer','none'],general:['inquiry','board']}[$('authorSubject').value];$('authorProfile').value=defaults[0];$('authorPlayground').value=defaults[1];changed()};
  $('authorProfile').onchange=$('authorPlayground').onchange=changed;
  $('newFromSettings').onclick=async()=>{await picker.ready;if(['board','science'].includes($('authorPlayground').value)&&!picker.selected()){$('authorStatus').textContent='Load the board catalogue before adding this starter.';return}changed();$('addLesson').click();$('authorStatus').textContent='Added a new lesson starter. Edit its topic, activities and questions before sharing.'};
  async function prompt(copy){
@@ -34,8 +34,8 @@ export function setupAuthoring(controller){
  function sync(lesson,id){
   let widget=null;try{const activity=lesson.steps.flatMap(s=>[s,...(s.tasks||[])]).find(s=>s.config.try);if(activity){const source=snippetFrom(name=>controller.getFiles()[name]??lesson.inline?.[name],activity.config.try.starter||activity.config.code);widget=/^\s*widget:\s*([\w-]+)/m.exec(source)?.[1]||null}}catch{}
   const key=JSON.stringify([id,lesson.language,lesson.shape,lesson.app,widget]);if(key===last)return;last=key;
-  const profile=lesson.shape==='design'?'design':lesson.language==='maths'?'maths':lesson.language==='science'?'science':lesson.shape==='5e'?'inquiry':lesson.steps?.length&&lesson.steps.every(s=>s.config.stage==='info')?'reading':'coding';
-  $('authorSubject').value={coding:'code',maths:'maths',science:'science',design:'engineering',inquiry:'general',reading:'general'}[profile];$('authorProfile').value=profile;
+  const profile=lesson.shape==='primer'?'primer':lesson.shape==='design'?'design':lesson.language==='maths'?'maths':lesson.language==='science'?'science':lesson.shape==='5e'?'inquiry':lesson.steps?.length&&lesson.steps.every(s=>s.config.stage==='info')?'reading':'coding';
+  $('authorSubject').value={coding:'code',maths:'maths',science:'science',design:'engineering',inquiry:'general',reading:'general',primer:['english','hass'].includes($('authorSubject').value)?$('authorSubject').value:'hass'}[profile];$('authorProfile').value=profile;
   $('authorPlayground').value=inferPlayground(lesson)||'none';
   picker.sync($('authorPlayground').value,widget);
   if(!$('authorTopic').value)$('authorTopic').value=lesson.title;

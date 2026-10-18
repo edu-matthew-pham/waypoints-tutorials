@@ -5,7 +5,7 @@ import {EXAMPLES,EXAMPLE,newLessonFiles,starterFiles} from '../create/lesson-sta
 import {parseLessonText,validateLessonCore} from '../tools/lesson-core.mjs';
 import {validateLessonSource} from '../tools/lesson-validation.mjs';
 import {DESIGN} from '../create/design-decisions.mjs';
-assert.deepEqual(Object.keys(EXAMPLES),['coding','maths','science']);
+assert.deepEqual(Object.keys(EXAMPLES),['coding','maths','science','humanities']);
 assert.equal(EXAMPLES.coding.files,EXAMPLE);
 for(const [id,{files}] of Object.entries(EXAMPLES)){
   const lesson=parseLessonText(files['lesson.md'],'example-'+id);
@@ -16,9 +16,10 @@ for(const [id,{files}] of Object.entries(EXAMPLES)){
   assert.ok(block,id+' has a teacher block');
   const design=YAML.parse(block[1]).design;
   for(const d of DESIGN) assert.ok(design?.[d.key],`${id} design.${d.key}`);
-  if(id!=='coding') assert.ok(lesson.steps.some(s=>s.config.try?.playground==='board'),id+' uses the shared board');
+  if(id==='maths'||id==='science') assert.ok(lesson.steps.some(s=>s.config.try?.playground==='board'),id+' uses the shared board');
+  if(id==='humanities'){assert.equal(lesson.shape,'primer');assert.ok(lesson.steps.some(s=>s.config.check?.type==='reasoning'),'the primer uses the write, compare and self-check check');assert.ok(lesson.classPlan?.inquiry,'and a class plan');}
 }
 const added=newLessonFiles('Lesson 2');
 assert.deepEqual(validateLessonCore(parseLessonText(added['lesson.md'],'added'),n=>added[n]),[]);
 assert.ok(starterFiles());
-console.log('Create examples (coding, maths, science) and the add-lesson starter validate, with design decisions');
+console.log('Create examples (coding, maths, science, humanities) and the add-lesson starter validate, with design decisions');

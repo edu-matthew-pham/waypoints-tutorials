@@ -394,6 +394,17 @@ unlocks: [pencolor]                  # fires when every task is done
 
 `shape: design` in a lesson's frontmatter shows the stages in design-cycle words, for teacher-led projects that follow a brief (first used by `engineering/projects/`): `predict` = **Inquire** (the brief: criteria and constraints), `investigate` = **Develop** (plan, test table, prototype), `make` = **Create**, `modify` = **Test**, `practise` = **Evaluate**, written in that order. Checks work as usual (a board can prototype the logic in Develop); most Create and Test evidence is `reflect`. Teacher notes map the steps to an assessment rubric (MYP Design A–D in the Engineering projects).
 
+### Primers (`shape: primer`)
+
+`shape: primer` (18 Oct 2026) names the stages in plain words, for one idea in English, HASS or any subject: `predict` =
+**Think first**, `investigate` = **The idea** (and its worked example), `practise` = **Check**, `make` = **Apply** (use the
+idea on the class's own text or topic), `modify` = **Vary**, `run` = **Try**. Use it with `language: science` (no board) or
+the board's language. Text-light, so no copyrighted texts. Decks and worksheets use the step titles; a text-only The idea
+step gets its own slide. For written claims, explanations and arguments use the unmarked `reasoning` check (`q`, `models`,
+`criteria`: write, compare with a model answer, tick the criteria). Steps may come in any stage order (true for every shape).
+The lesson shape guide in Create's prompts (`create/shape-guide.mjs`) covers sequence, guidance and width, including reading
+Waypoints Kit node files for success criteria, misconceptions, width and `response_modes`.
+
 ### `insight:` (what the step is for)
 
 A step or a task can have `insight: "..."`: one sentence on what students should come to see. It is shown to teachers only, in **For teachers › What each step is for**.
@@ -1449,14 +1460,16 @@ Open [Create lessons and courses](https://tutorials.learningwaypoints.com/code/c
 The opening screen offers **Start with a prompt**, **Open existing work**, and **Explore an example**.
 The starter prompt asks about your idea and learners without requiring configuration; its maintained text lives in
 `create/start-prompt.md`. Open generated `lesson.md` and supporting files as a new lesson, import a Create download or a lesson or course folder,
-or resume saved work. **Explore an example** offers a Coding (Turtle), Maths (balance board) or Science (forces board) lesson, each with
+or resume saved work. **Explore an example** offers a Coding (Turtle), Maths (balance board), Science (forces board) or Humanities (a History
+primer from a Kit node, untested and not reviewed curriculum) lesson, each with
 its `design:` block filled in; it adds an editable copy without replacing existing lessons. All of Create's ready-made lessons
 (the examples, the "+ Add lesson" fallback and the settings-based starters) come from `create/lesson-starters.mjs`.
 Use **← Start** to return to these choices. Shared lessons and recorder returns open directly in the workspace.
 
 Inside the workspace, choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;
 it does not rewrite an existing lesson. The ordinary **Add lesson** button uses the selected settings once you change them.
-Maths, science, coding, design, inquiry and reading structures use the existing `language`, `shape` and step schema.
+Maths, science, coding, design, inquiry, reading, primer and none (free steps, plain step names) structures use the existing
+`language`, `shape` and step schema. Subjects include English and Humanities (HASS), which default to Primer with no playground.
 A subject is an authoring preference, not a new lesson metadata field.
 
 **Review prompt** and **Copy lesson prompt** include the topic, audience, goal, a matching starter and the current

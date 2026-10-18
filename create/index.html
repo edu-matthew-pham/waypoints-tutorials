@@ -15,7 +15,7 @@
   <div class="start-routes">
     <button id="startPrompt" class="start-card" type="button" aria-controls="promptRoute" aria-expanded="false" disabled><strong>Start with a prompt</strong><span>Describe your idea and let an AI conversation help you plan and write.</span></button>
     <button id="startOpen" class="start-card" type="button" aria-controls="openRoute" aria-expanded="false" disabled><strong>Open existing work</strong><span>Import a lesson or course ZIP or folder, open source files, or resume your workspace.</span></button>
-    <button id="startExample" class="start-card" type="button" aria-controls="exampleRoute" aria-expanded="false" disabled><strong>Explore an example</strong><span>Open a short coding, maths or science lesson, with its design decisions filled in. It opens as a new lesson you can change.</span></button>
+    <button id="startExample" class="start-card" type="button" aria-controls="exampleRoute" aria-expanded="false" disabled><strong>Explore an example</strong><span>Open a short coding, maths, science or humanities lesson, with its design decisions filled in. It opens as a new lesson you can change.</span></button>
   </div>
   <p class="validator-help"><a href="validate.html">Validate a lesson</a> — paste or upload Markdown and copy its check results.</p>
   <section id="promptRoute" class="start-panel" aria-labelledby="promptRouteTitle" hidden>
@@ -54,7 +54,7 @@
 </header>
 <section class="workspace authoring" aria-label="Lesson setup and AI prompt">
 <h2>Start with a lesson idea</h2>
-<div class="row"><label>Subject <select id="authorSubject"><option value="code">Digital technologies</option><option value="maths">Maths</option><option value="science">Science</option><option value="engineering">Engineering / design</option><option value="general">Other concepts</option></select></label><label>Lesson structure <select id="authorProfile"></select></label><label>Playground <select id="authorPlayground"></select></label></div>
+<div class="row"><label>Subject <select id="authorSubject"><option value="code">Digital technologies</option><option value="maths">Maths</option><option value="science">Science</option><option value="engineering">Engineering / design</option><option value="english">English</option><option value="hass">Humanities (HASS)</option><option value="general">Other concepts</option></select></label><label>Lesson structure <select id="authorProfile"></select></label><label>Playground <select id="authorPlayground"></select></label></div>
 <div class="row"><label>Topic <input id="authorTopic" placeholder="e.g. particle movement"></label><label>Audience / prior knowledge <input id="authorAudience" placeholder="e.g. Year 7, first encounter"></label></div>
 <label>Learning goal <input id="authorGoal" placeholder="What should learners be able to explain or do?"></label>
 <div class="row"><label>Prompt for <select id="authorScope"><option value="lesson">One complete lesson</option><option value="course">Course plan, then lessons</option></select></label><button id="newFromSettings" type="button">Add a lesson starter</button><button id="copyLessonPrompt" type="button" class="primary">Copy lesson prompt</button><button id="showLessonPrompt" type="button">Review prompt</button></div>

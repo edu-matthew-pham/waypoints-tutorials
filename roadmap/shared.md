@@ -523,3 +523,11 @@ A short course for teachers, in the site's own lesson format with Create as its 
 ## Lesson position label (proposed, 18 Oct 2026, Matthew)
 - The lesson bar shows "N of M" across the whole course, by `order:`. The AI courses had per-unit `order:` numbers, so their counters and previous/next links were wrong; fixed 18 Oct by renumbering them course-wide (the convention everywhere else).
 - Matthew's idea for later: show the unit as well, for example "Unit 2 · lesson 5 of 5" (or "Unit 2, 5 of 5 · 8 of 13 in the course"). A change to `lesson-view.mjs`/`build-site.mjs`; not started. Validate could also warn when two lessons in a course share an `order:`.
+
+## Generic Create, first batch (18 Oct 2026, afternoon)
+Plan in the Project doc `create-generic-proposal` (Lesson shape). Built:
+- `shape: primer` (lesson-core, `STAGE_INFO_PRIMER` in lesson-view, plain titles and a text-only "The idea" slide in teach.mjs). Profiles **Primer** and **None** (free steps; plain step names) in `LESSON_PROFILES`; Create's subjects add English and Humanities (HASS), defaulting to Primer with no playground.
+- `create/shape-guide.mjs` (`SHAPE_TEXT`): the three settings (sequence, guidance, width) and Kit anchoring (node files from the Kit index; success criteria, misconceptions, width tiers, `response_modes` as a list). In both prompts; `authoring-test` checks both, and that any stage order validates (it already did).
+- The write, compare and self-check check needed no new type: the unmarked `reasoning` check (`q`, `models`, `criteria`) already works in any subject.
+- Fourth Create example, **Humanities**: a History primer drafted from Kit AC9HH7S03 node 1 (origin and content), with made-up sources, a `design:` block and a class plan. An untested example of the generic flow, not reviewed curriculum; nothing new on the public site.
+- Next (proposal order): teacher section with pointer pages; Kit node picker with pre-fill; synthesise prompt; subject-neutral `/create/` address; board picker by task kind.
