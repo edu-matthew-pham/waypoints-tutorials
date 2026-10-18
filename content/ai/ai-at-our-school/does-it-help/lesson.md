@@ -4,7 +4,7 @@ summary: "A company pitches StudyPal, a made-up AI study app, to the school. Wha
 language: science
 shape: 5e
 unit: tool
-order: 4
+order: 5
 voice: { name: af_heart, speed: 1.1 }
 ---
 Someone proposes a tool. Before anyone asks "is it safe?", the committee asks: **what are we deciding, and does it help the learning we care about?** Test it against the charter's first principle.

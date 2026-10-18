@@ -11,7 +11,7 @@ This guide helps teachers make informed choices about AI tools. It complements [
 
 Judging tools one at a time, with no agreed principles, means every new product restarts the argument. Before trialling anything, agree a short **charter**: five to seven principles about what the school wants from AI (for example learning first, age and stage, a person decides, our data stays ours, fair for everyone, honest about evidence, and not using AI as a real option), each with a way to check it, dated and reviewed. The [Australian Framework for Generative AI in Schools](https://www.education.gov.au/schooling/announcements/australian-framework-generative-artificial-intelligence-ai-schools) (six principles) is a useful cross-check.
 
-[AI at our school](../ai/ai-at-our-school/) walks a student or staff committee through writing one (Unit 1), then tests a proposed tool against it (Unit 2, which pairs with this guide) and responds to AI that arrived on its own (Unit 3). Each lesson's teacher guide has notes for running it with staff.
+[AI at our school](../ai/ai-at-our-school/) walks a student or staff committee through writing one and a first policy (Unit 1), then tests a proposed tool against it (Unit 2, which pairs with this guide), responds to AI that arrived on its own (Unit 3), and refines the policy (Unit 4: specific enough to decide, detail in termly guidelines, and working through task design and acknowledgement rather than detection). Each lesson's teacher guide has notes for running it with staff.
 
 ## Start with the learning purpose
 

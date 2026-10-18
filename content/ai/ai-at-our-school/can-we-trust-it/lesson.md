@@ -4,7 +4,7 @@ summary: "Read StudyPal's privacy page, settings and terms with the charter: whe
 language: science
 shape: 5e
 unit: tool
-order: 5
+order: 6
 voice: { name: af_heart, speed: 1.1 }
 ---
 A tool can help learning and still fail the charter. **Before students use it, the committee checks the data, the defaults, the age terms and who it affects.** What it can't find out, it writes down as unknown, not as "fine".

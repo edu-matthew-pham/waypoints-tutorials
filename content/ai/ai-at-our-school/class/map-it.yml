@@ -3,7 +3,7 @@ inquiry:
   prompts:
     - "Who decides now, when an update arrives?"
     - "What would 'off until decided' cost?"
-  notes: "This is a defaults question (lesson 5) at school scale. Companies decide most defaults; a school can ask for controls."
+  notes: "This is a defaults question (lesson 6) at school scale. Companies decide most defaults; a school can ask for controls."
 activities:
   - at: run
     kind: activity

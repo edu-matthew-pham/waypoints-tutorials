@@ -14,11 +14,11 @@ activities:
     notes: "Find out the school's policy review date and who leads it before class."
   - at: end
     kind: activity
-    title: "Three products"
+    title: "What did we learn?"
     minutes: 8
     do: |
-      Put the charter, recommendation and response plan together. Who do we send them to, and when?
-    notes: "If you can, arrange for a group to present them to leadership or the SRC."
+      List three things Units 2 and 3 taught us that our version 1 policy doesn't say yet. We'll use them next lesson.
+    notes: "Keep the list for lesson 11."
 staff:
   notes: "For staff, this is where the committee's work joins the school's own policy cycle."
   activities:

@@ -6,7 +6,7 @@ goals:
   - "I can explain why a charter is dated, reviewed and shared for comment."
 before: |
   **Core idea:** a charter is a short, dated tool for deciding: principles (not decisions about particular tools), each with a check, shared with the people it affects and reviewed.
-  This is the unit's product. Keep each class's or committee's charter (photo or printed copy): Units 2 and 3 test decisions against it.
+  This is the unit's product. Keep each class's or committee's charter (photo or printed copy): the rest of the course tests decisions against it.
   The Westbrook draft and second draft are made up. The model's seven principles match the list in lesson 2; students' own charters can and should differ.
   **For the class plan:** agree one class or committee charter. If the school has a student voice structure (SRC, student council), this is the moment to share it there for comment.
 running:
@@ -24,7 +24,7 @@ stuck:
     fix: "Write that as the principle."
 support: "Give the Westbrook second draft and ask students to change two principles to suit their own school."
 stretch: "Write the charter's review rule: what would make you revisit it before its review date?"
-leads: "Unit 2 (lessons 4 to 6) tests a proposed tool against the charter; Unit 3 uses it for AI nobody chose."
+leads: "Lesson 4 turns the charter into a first policy; Unit 2 (lessons 5 to 7) tests a proposed tool against it; Unit 3 uses it for AI nobody chose; lesson 11 refines the policy."
 exit:
   q: "Why does a good charter name principles, not particular tools?"
   a: "So it still works when a new tool arrives; decisions about tools are tested against it."

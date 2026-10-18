@@ -80,7 +80,7 @@ A good principle:
 
 1. comes from **what school is for** (lesson 1);
 2. is clear enough to **decide a case**, so it can say no;
-3. has a way to **check** it ("how we'd check it");
+3. has a way to **check it's working** ("how we'd check it"): for the school as a whole, not a way to check up on each student;
 4. still works for **tools nobody has invented yet**.
 
 Principles committees often reach (to test, not to copy):

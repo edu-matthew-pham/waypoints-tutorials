@@ -9,6 +9,7 @@ before: |
   The list of principles in Explain is for testing, not handing out: let students reach their own first, then compare.
   **For the class plan:** print your school's AI policy or guidance (dated) and, for older classes, the national framework.
   Sources (checked 18 Oct 2026): the Australian Framework for Generative AI in Schools (published 1 December 2023; six principles as listed in the lesson). Its 2024 review kept the framework and set yearly reviews (see Who Does AI Affect? › Making rules). Re-check each January.
+  "How we'd check it" means checking the principle is working for the school (settings, terms, a short task without AI, asking the people affected), not checking up on individual students: most AI use can't be policed (lesson 4).
   The typical step's flagging tool is made up. If students raise a real wellbeing-monitoring product your school uses, keep the discussion on principles, and check with the wellbeing lead before going further.
 running:
   - "Engage: vote on 'Use AI responsibly'. Ask a student who said yes to decide the grading case with it."
@@ -22,7 +23,7 @@ stuck:
     fix: "Say what matters about any tool, not which tool."
   - see: "A student can't think how to check a principle."
     ask: "What would you look at, or who would you ask, to find out?"
-    fix: "Settings, terms, a quick test without AI, or the people affected."
+    fix: "Settings, terms, a quick test without AI, or the people affected. Not catching individual students."
 support: "Give a sentence frame: 'We will … because … We'll check by …'"
 stretch: "Find two of your principles that could pull in different directions, and write how the committee would weigh them."
 leads: "Lesson 3: the full charter, critiqued and shared."

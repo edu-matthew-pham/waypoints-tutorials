@@ -1,0 +1,31 @@
+inquiry:
+  q: "Should a teacher be able to mark work down for using AI if the student said honestly that they used it?"
+  prompts:
+    - "What would students do if honesty cost marks?"
+    - "What if the AI did the thinking the task was for?"
+  notes: "The distinction: owning up isn't the offence; skipping the thinking the task was for can still affect the mark. Policies that punish honesty push use underground."
+activities:
+  - at: run
+    kind: activity
+    title: "Three changes"
+    minutes: 12
+    do: |
+      In groups, take our school's real policy. Propose three changes: one too vague, one too prescribed, one that relies on catching people.
+      For each: the evidence, the principle, and the layer.
+    notes: "Printed, dated policy. Collect the strongest proposals into one."
+  - at: end
+    kind: activity
+    title: "Four products"
+    minutes: 8
+    do: |
+      Put the charter, recommendation, response plan and policy proposal together. Who gets them, and by when should they reply?
+    notes: "If you can, arrange for a group to present to leadership or the SRC."
+staff:
+  notes: "For staff, this is the drafting session. Work on the real policy with whoever owns it in the room."
+  activities:
+    - title: "Sort into layers"
+      minutes: 20
+      do: "Go through the current policy line by line: keep in the policy, move to a termly guideline, or leave to task instructions. Draft the guideline headings."
+    - title: "Detection and integrity"
+      minutes: 15
+      do: "Find every line that relies on detecting AI use. Rewrite each to work through task design and acknowledgement, and agree what counts as a clear case for academic integrity procedures."

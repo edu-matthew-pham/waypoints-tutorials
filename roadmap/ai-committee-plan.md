@@ -96,3 +96,11 @@ Most AI reaches students without a committee choosing it: AI answers in search, 
 - **Dated cases (teacher notes only, checked 18 Oct 2026):** Study and Learn agent (`does-it-help`, Microsoft Support page); Thinking Mode via the Choosing AI tools guide (`recommend`); Google AI Overviews and AI Mode for under-18 Workspace for Education users plus the Common Sense Media assessment (`respond`). Correction to the plan above: Common Sense tested Family Link accounts set up for an 11- and a 15-year-old, not consumer adult accounts. **Re-check before use.**
 - **Guide:** `content/choosing-ai-tools.md` gained "Start with principles" and "When AI is already here", linking to the course. Plain pages now let wide tables scroll at phone width (`build-site.mjs`).
 - **Next (Matthew's side):** try Units 1 and 3 with a class or the staff committee; re-check the dated cases each term.
+
+## Update (19 Oct 2026): policy added (eleven lessons, four units)
+- Matthew's feedback: the course needs the policy itself, not just principles; schools usually start with a broad policy and refine it; balance checkable against over-prescribed; and acknowledge that most AI use can't be policed.
+- **New lesson 4, `first-policy`** (Unit 1): charter vs policy, the six parts of a policy (who it covers, incl. staff; what's allowed; responsibilities; honest acknowledgement; data; reporting and review), a broad version 1 that says how it will be refined. Engage: "No AI, ever" mostly catches the honest.
+- **New Unit 4 `policy`, lesson 11 `refine-policy`**: version 2 from Units 2–3 evidence; too vague / about right / too prescribed; three layers (policy, termly guidelines, task instructions); sort lines that rely on catching people vs work without it. Product: a policy proposal (fourth product).
+- "Check" reworded in lessons 2 and 3 and the Unit 1 primer: checking a principle is working for the school, not checking up on individuals.
+- Detector sources in teacher notes only (checked 18 Oct 2026): OpenAI's classifier withdrawn 20 July 2023 for low accuracy; Liang et al. (2023), detectors flagged over half of 91 TOEFL essays (avg false positive rate 61%). Student text states both without names.
+- Lessons 4–9 renumbered to 5–10 (`order` only; no clips in this course).

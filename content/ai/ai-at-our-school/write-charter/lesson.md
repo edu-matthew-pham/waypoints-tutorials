@@ -74,7 +74,7 @@ tasks:
 A usable charter:
 
 1. has **five to seven** principles, short enough to remember;
-2. gives each a way to **check** it;
+2. gives each a way to **check it's working** for the school (not a way to check up on each student);
 3. contains **principles, not decisions** about particular tools;
 4. says **who wrote it, the date, and when it will be reviewed**;
 5. is **shared for comment** with the people it affects before it's final.
@@ -128,7 +128,7 @@ check:
   feedback: [null, "A charter of principles works for new tools: that's why it names none.", "Not if it's written as principles; review it on its date, not for every tool."]
 ```
 
-On paper, write the final **charter** and keep it: Units 2 and 3 test decisions against it.
+On paper, write the final **charter** and keep it: the rest of the course tests decisions against it.
 
 | Our AI charter | |
 |---|---|
@@ -144,4 +144,4 @@ On paper, write the final **charter** and keep it: Units 2 and 3 test decisions 
 | Shared for comment with: | |
 | Next review: | |
 
-**Next unit:** someone proposes a tool. Should the school use it?
+**Next lesson:** turn the charter into a first policy for students and staff.

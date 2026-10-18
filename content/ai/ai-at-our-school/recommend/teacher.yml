@@ -18,14 +18,14 @@ running:
 struggle: "Students want a verdict and stop. Push for conditions and 'what would change our mind': that's where the thinking is."
 stuck:
   - see: "A recommendation says 'yes' with no conditions."
-    ask: "Which of lesson 5's problems does that leave in place?"
+    ask: "Which of lesson 6's problems does that leave in place?"
     fix: "Turn each problem into a condition."
   - see: "A student can't say what would change their mind."
     ask: "What would you need to see to choose the opposite?"
     fix: "That's the evidence to watch."
 support: "Give the table with the decision already chosen (trial) and ask for conditions."
 stretch: "Write the recommendation for a different group (Year 10 instead of Year 7). What changes?"
-leads: "Unit 3: AI nobody chose (lessons 7 to 9)."
+leads: "Unit 3: AI nobody chose (lessons 8 to 10). The recommendation is evidence for refining the policy in lesson 11."
 exit:
   q: "Why should a recommendation say what would change the committee's mind?"
   a: "It's honest about evidence, and tells everyone what to watch so the decision can be reviewed."

@@ -4,7 +4,7 @@ summary: "Put the evidence and the fine print together: adopt, trial, change som
 language: science
 shape: 5e
 unit: tool
-order: 6
+order: 7
 voice: { name: af_heart, speed: 1.1 }
 ---
 A committee's answer is rarely just yes or no. **A recommendation names a decision, its conditions, how it was checked against each principle, and what would change the committee's mind.**
@@ -22,7 +22,7 @@ The four decisions:
 stage: predict
 check:
   type: predict
-  q: "From lessons 4 and 5: StudyPal's evidence is thin, its chats train the AI by default, some Year 7s are too young, and the teachers' problem is real. What would you recommend?"
+  q: "From lessons 5 and 6: StudyPal's evidence is thin, its chats train the AI by default, some Year 7s are too young, and the teachers' problem is real. What would you recommend?"
   options: ["Adopt", "Trial", "Change something first", "Don't use it"]
   actual: "Committees could defend several answers. Many would say 'change something first' (the school must control the training setting and hint mode, and the age terms need sorting), then a small trial with older students. What matters is the reasons and the conditions, checked against the charter."
 ```

@@ -136,7 +136,7 @@ check:
   feedback: [null, "Then every decision is a guess, and the next app starts the argument again.", "Students' values matter too: it's their learning."]
 ```
 
-On paper, start your committee's **charter**. You'll finish it in lesson 3.
+On paper, start your committee's **charter**. You'll finish it in lesson 3, and turn it into a first policy in lesson 4.
 
 | Charter, part 1 | |
 |---|---|

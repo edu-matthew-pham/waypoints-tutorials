@@ -4,7 +4,7 @@ summary: "AI changes faster than any policy. Decide who notices new AI, how stud
 language: science
 shape: 5e
 unit: already-here
-order: 9
+order: 10
 voice: { name: af_heart, speed: 1.1 }
 ---
 A charter, a recommendation and a response plan are all **dated**. AI tools change every few months. **A committee's last job is a review cycle: who notices, how problems are reported, what triggers an early look, and when everything is checked again.** A rule existing isn't the same as it working.
@@ -136,11 +136,13 @@ On paper, finish the **response plan**.
 | Response plan | |
 |---|---|
 | Written by: | Date: |
-| The map and responses | (from lessons 7 and 8) |
+| The map and responses | (from lessons 8 and 9) |
 | Who notices new AI: | |
 | How students report problems: | |
 | Early review if… | |
 | Charter, recommendations and responses revisited on: | |
 | Sent to (the school's policy review): | |
 
-You now have the committee's three products: a **charter**, a **recommendation** and a **response plan**. Each is tested against the first, and each is dated.
+You now have three of the committee's products: a **charter**, a **recommendation** and a **response plan**, each dated and tested against the charter.
+
+**Next lesson:** use what you've learned to refine the policy.

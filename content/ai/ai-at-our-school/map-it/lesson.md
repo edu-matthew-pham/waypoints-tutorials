@@ -4,7 +4,7 @@ summary: "Most AI reaches students without a committee choosing it. Map the made
 language: science
 shape: 5e
 unit: already-here
-order: 7
+order: 8
 voice: { name: af_heart, speed: 1.1 }
 ---
 Unit 2 was about a tool someone **proposed**. But most AI reaches students another way: a new button in an app the school already uses, an AI answer at the top of a search page, an app from home. **Before a committee can respond, it needs a map: what AI is already here, and how it arrived.**

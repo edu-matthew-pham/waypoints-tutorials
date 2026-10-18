@@ -4,7 +4,7 @@ summary: "A search page now shows an AI answer above the results. Blocking isn't
 language: science
 shape: 5e
 unit: already-here
-order: 8
+order: 9
 voice: { name: af_heart, speed: 1.1 }
 ---
 For AI nobody chose, "allow or block?" is too small a question. **A committee picks the response that best serves its charter, for this age and this purpose, and says what would change it.**

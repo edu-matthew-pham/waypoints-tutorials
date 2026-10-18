@@ -1,0 +1,167 @@
+---
+title: Refine the policy
+summary: "Turn version 1 into version 2 using what the committee learned. Find the balance between too vague and too prescribed, move detail into the right layer, and rewrite any line that relies on catching people."
+language: science
+shape: 5e
+unit: policy
+order: 11
+voice: { name: af_heart, speed: 1.1 }
+---
+A term has passed at Westbrook. The committee now has evidence: a decision about StudyPal, responses to AI that arrived on its own, and reports from students and teachers. **Version 2 gets more specific where the evidence says it should, and no more.**
+
+There are two ways to get it wrong:
+
+- **Too vague:** it can't decide a case. ("Use AI responsibly.")
+- **Too prescribed:** it names every tool and every allowed use, goes out of date with each update, can't handle anything new, and leaves teachers no judgement.
+
+## Engage: list everything?
+
+```step
+stage: predict
+check:
+  type: predict
+  q: "A committee member wants version 2 to list every AI app students may use, and exactly what for, in every subject. What will happen?"
+  options: ["It will be clear and stay up to date", "It will be out of date within weeks, and teachers will stop using it", "Nothing: lists are always good"]
+  actual: "Probably out of date within weeks: tools change in updates, new ones arrive, and every subject's tasks differ. A policy that tries to say everything can't be kept current. The detail belongs somewhere that can change faster."
+```
+
+## Explore: about right?
+
+```step
+stage: run
+tasks:
+  - check:
+      type: sort
+      q: "Westbrook's draft version 2. Is each line too vague, about right, or too prescribed for a policy?"
+      options: ["Too vague", "About right", "Too prescribed (move it)"]
+      items:
+        - ["'Use AI responsibly.'", "Too vague", "It can't decide any case."]
+        - ["'Every task says how much AI is allowed, and students say what they used AI for.'", "About right", "Clear, works for any tool, and leaves the detail to the task."]
+        - ["'Year 8 may use StudyPal version 4.2 in hint mode on Tuesdays and Thursdays for maths homework.'", "Too prescribed (move it)", "True this term, maybe. It belongs in a guideline that changes each term."]
+        - ["'Teachers make the final judgement on marks and reports.'", "About right", "A principle turned into a rule, and it won't go out of date."]
+        - ["'The approved tools are: (a list of 14 apps).'", "Too prescribed (move it)", "Keep an approved list, but outside the policy, so it can change without rewriting the policy."]
+        - ["'AI should be used appropriately.'", "Too vague", "Appropriate to what? Say what decides it."]
+  - check:
+      type: reasoning
+      q: "Rewrite one line from Westbrook's version 1 for version 2, using something the committee learned in Units 2 or 3. Say which layer any detail goes in."
+      placeholder: "Version 1 said: … We learned: … Version 2 says: … Detail goes in: …"
+      models:
+        - title: "A strong answer"
+          text: "Version 1 said: only use AI tools the school has checked. We learned: StudyPal trained on chats by default (lesson 6). Version 2 says: tools that use student work must have training switched off by the school before use, and the committee keeps the checked list. Detail goes in: the approved tools guideline, updated each term."
+        - title: "A different view that also works"
+          text: "Version 1 said: use AI as your teacher sets. We learned: the AI search answer did Year 7 research for them (lesson 9). Version 2 says: research tasks ask for the sources used and notes in the student's own words. Detail goes in: each task's instructions."
+      criteria: ["I named what changed and why (the evidence).", "The new line is specific enough to decide a case.", "Detail that will change goes in a guideline or the task, not the policy."]
+      explain: "Version 2 is specific where the evidence says so, and pushes fast-changing detail to a layer that can keep up."
+```
+
+### About right?
+
+Sort the draft lines.
+
+### One line, version 2
+
+What changed, and where does the detail go?
+
+## Explain: layers, and what can't be policed
+
+```step
+stage: investigate
+tasks:
+  - check:
+      type: question
+      q: "Westbrook's approved tools change every term. Where should the list go?"
+      options: ["In a guideline the committee updates each term, which the policy points to", "In the policy itself, rewritten every term", "Nowhere: approved lists don't help"]
+      answer: 0
+      feedback: [null, "Rewriting the policy every term is slow, and people stop trusting it.", "A list helps teachers; it just shouldn't be in the policy."]
+  - check:
+      type: sort
+      q: "Does each line rely on catching people, or work without it?"
+      options: ["Relies on catching people", "Works without catching people"]
+      items:
+        - ["'Work will be checked with an AI detector; flagged work gets zero.'", "Relies on catching people", "Detectors are often wrong, and wrongly flag students writing in a second language most."]
+        - ["'Research tasks ask for your sources and notes in your own words.'", "Works without catching people", "Task design makes the thinking visible."]
+        - ["'Say what you used AI for; saying so is never in itself a reason for a lower mark.'", "Works without catching people", "It rewards honesty instead of hiding."]
+        - ["'Any student suspected of using AI will be interviewed.'", "Relies on catching people", "Suspicion falls unevenly, and it can't reach home use."]
+        - ["'Some writing is done in class, on paper, as part of the task.'", "Works without catching people", "Part of the evidence is seen being made."]
+  - check: { type: reflect, text: "I can put detail in the right layer, and rewrite a line that relies on catching people." }
+```
+
+Three layers, each changing at its own speed:
+
+1. **Policy** (stable, reviewed yearly): principles turned into rules, who is responsible, what must always hold.
+2. **Guidelines** (updated each term): the approved tools list, settings, year-level expectations.
+3. **Task instructions** (set by each teacher): how much AI this task allows, and what to say about it.
+
+**Checkable, not policed.** A school mostly can't catch AI use: home use is invisible, and tools that claim to detect AI writing are unreliable. In 2023 one AI company withdrew its own detector because it was too often wrong, and a study found detectors flagged over half of a set of essays by second-language writers as AI. So version 2 works through **task design, honesty about use, and understanding why the thinking matters**, keeps enforcement for clear cases, and **checks that the policy works**.
+
+### Where does the list go?
+
+Which layer?
+
+### Catching or working?
+
+Sort the lines.
+
+### Explain it
+
+Name the three layers, and why version 2 doesn't rely on catching people.
+
+## Elaborate: staff use, refined
+
+```step
+stage: modify
+tier: typical
+check:
+  type: question
+  q: "Teachers at Westbrook now use AI to draft feedback on student work. What should version 2 add?"
+  options: ["Teachers check and own all feedback; student work only goes into school-checked tools with training off; tell students when AI helped draft feedback", "Ban staff from using AI", "Nothing: staff can decide for themselves"]
+  answer: 0
+  feedback: [null, "A ban can't be policed for staff either, and loses real time savings. Use the charter.", "Feedback is a decision about a student, and their work is their data: the charter applies."]
+```
+
+Staff use needs the same balance: specific enough to protect students (a person decides, our data stays ours), broad enough to cover tools that will change. Being honest goes both ways: if students say when they used AI, should teachers too?
+
+## Elaborate: your school's version 2
+
+```step
+stage: make
+tier: wider
+check: { type: reflect, text: "I proposed changes to our school's real policy, each with its evidence, its principle and its layer." }
+```
+
+Take your school's real AI policy (your teacher may give you a dated copy). Propose three changes:
+
+- one line that is **too vague**, made specific enough to decide a case;
+- one detail that is **too prescribed**, moved to a guideline or to tasks;
+- one line that **relies on catching people**, rewritten to work without it.
+
+For each: the evidence, the charter principle, and who it affects. Compare with the national framework's six principles. Who owns the policy, and how would you send the proposal?
+
+## Evaluate: policy, version 2
+
+```step
+stage: info
+check:
+  type: question
+  q: "A year from now, a new kind of AI tool arrives. Which version-2 line will still work?"
+  options: ["'Every task says how much AI is allowed, and students say what they used AI for.'", "'Year 8 may use StudyPal version 4.2 in hint mode.'", "'The approved tools are these 14 apps.'"]
+  answer: 0
+  feedback: [null, "That detail will already be out of date: it belongs in a guideline.", "The list will change; the policy shouldn't have to."]
+```
+
+On paper, write **policy version 2**: the course's fourth product.
+
+| Policy, version 2 | |
+|---|---|
+| Written by: | Date: |
+| Line | What changed, and the evidence |
+| Applies to: | |
+| What's allowed: | |
+| Who is responsible: | |
+| Being honest about AI use: | |
+| Data and privacy: | |
+| Reporting and review: | |
+| Guidelines it points to (updated each term): | |
+| Sent to (who owns the policy): | |
+
+You now have the committee's four products: a **charter**, a **recommendation**, a **response plan**, and a **policy proposal**. The charter decides; the rest follow from it, and every one is dated and reviewed.
