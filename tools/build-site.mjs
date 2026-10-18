@@ -20,6 +20,7 @@ import { buildPlayground, buildPyPlayground, buildMicrostudioPlayground, buildP5
 import { buildCreate } from './build-create.mjs';
 import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } from './trail.mjs';
 import { loadCurriculum, curriculumMapHtml, CMAP_CSS } from './curriculum-map.mjs';
+import { buildPointerPages, POINTER_SUBJECTS } from './pointer-pages.mjs';
 import { coachPrompt } from './coach.mjs';
 import { loadProjects, skillLabel } from './projects.mjs';
 import { PROJECT_CSS, projectListBody, projectPageBody } from './project-view.mjs';
@@ -856,7 +857,10 @@ for (const coursePath of teachCourses) {
   writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a></p></header>${intro}${courseResources}${courseNotes}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}${projectsGuide}`, `teach/${coursePath}`, coursePath));
 }
 mkdirSync(join(OUT, 'teach'), { recursive: true });
-writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>`, 'teach', null));
+// Curriculum pointer pages (tools/pointer-pages.mjs): teacher-facing, linked only from here, draft and noindex until reviewed.
+const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curriculum', `${sub}.json`))).map((sub) => buildPointerPages(sub, { OUT, page, navFor, esc, lessons }));
+const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, Years 7–10${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
+writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${pointerList}`, 'teach', null));
 
 writeFileSync(join(OUT, '.nojekyll'), '');
 // Pages keeps its custom domain only while the published branch has this file, and a rebuild publish replaces the branch.

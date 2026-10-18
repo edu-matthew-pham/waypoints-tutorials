@@ -524,7 +524,8 @@ if(w.dataset.kind==='board'||w.dataset.kind==='maths'||w.dataset.kind==='science
 sync(w)});
 })();`;
 
-export const page = (title, body, scripts = '', nav = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+// head: extra tags for <head>, such as <meta name="robots" content="noindex"> on draft teacher pages (tools/pointer-pages.mjs).
+export const page = (title, body, scripts = '', nav = '', head = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${head}
 <title>${esc(title)}</title><style>${CSS}${nav ? NAV_CSS : ''}</style></head><body>${nav}<div class="wrap">${body}</div><script>${JS}${nav ? NAV_JS : ''}${body.includes('data-voices=') ? VOICE_JS : ''}</script>${scripts}</body></html>`;
 
 

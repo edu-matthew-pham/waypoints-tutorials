@@ -55,6 +55,11 @@
 <section class="workspace authoring" aria-label="Lesson setup and AI prompt">
 <h2>Start with a lesson idea</h2>
 <div class="row"><label>Subject <select id="authorSubject"><option value="code">Digital technologies</option><option value="maths">Maths</option><option value="science">Science</option><option value="engineering">Engineering / design</option><option value="english">English</option><option value="hass">Humanities (HASS)</option><option value="general">Other concepts</option></select></label><label>Lesson structure <select id="authorProfile"></select></label><label>Playground <select id="authorPlayground"></select></label></div>
+<details id="nodePanel"><summary>Curriculum waypoints (optional)</summary>
+<div class="row"><label>Curriculum <select id="nodeSubject" aria-label="Curriculum subject"></select></label><label>Year <select id="nodeYear" disabled><option value="">Year</option></select></label><label>Standard <select id="nodeStandard" disabled><option value="">Standard</option></select></label><label>Waypoint <select id="nodePick" disabled><option value="">Waypoint</option></select></label><button id="nodeAdd" type="button">Add waypoint</button></div>
+<p id="nodeStatus" role="status">Loading curriculum waypoints…</p>
+<div id="nodeChosen" hidden></div>
+</details>
 <div class="row"><label>Topic <input id="authorTopic" placeholder="e.g. particle movement"></label><label>Audience / prior knowledge <input id="authorAudience" placeholder="e.g. Year 7, first encounter"></label></div>
 <label>Learning goal <input id="authorGoal" placeholder="What should learners be able to explain or do?"></label>
 <div class="row"><label>Prompt for <select id="authorScope"><option value="lesson">One complete lesson</option><option value="course">Course plan, then lessons</option></select></label><button id="newFromSettings" type="button">Add a lesson starter</button><button id="copyLessonPrompt" type="button" class="primary">Copy lesson prompt</button><button id="showLessonPrompt" type="button">Review prompt</button></div>

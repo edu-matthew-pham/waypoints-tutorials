@@ -45,3 +45,13 @@ dialog::backdrop{background:rgba(0,0,0,.4)}dialog h2{margin:0 0 4px;font-size:1.
 .package-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.package-actions strong{margin-right:4px}
 .design-review{margin:12px 0;border:1px solid #8885;border-radius:8px;padding:10px 12px}.design-review h2{font-size:1rem;margin:0 0 4px}.design-row{margin:10px 0}.design-row label{display:block;font-weight:600}.design-row textarea{width:100%;box-sizing:border-box;min-height:2.6em;font:inherit}.design-row .dcheck{font-weight:400;display:flex;gap:6px;align-items:baseline;margin-top:4px}
 #exampleChoices{margin-top:14px}#exampleChoices button{min-width:110px}
+
+/* Curriculum waypoints (create/node-picker.mjs) */
+#nodePanel{margin:12px 0;padding:10px 12px;border:1px solid var(--line);border-radius:8px}#nodePanel>summary{cursor:pointer;font-weight:600}
+#nodePanel select{min-width:0;max-width:min(100%,22rem)}#nodeChosen[hidden]{display:none}#nodeChosen h3{font-size:1rem;margin:12px 0 6px}
+.node-card{border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:8px 0}.node-card p{margin:4px 0}.node-card .muted,#nodeChosen .muted{color:var(--muted);font-size:13px}
+.node-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-left:8px;color:var(--accent,#c2570a)}.node-remove{margin-left:8px;font-size:13px}
+#nodeChosen fieldset{border:1px solid var(--line);border-radius:6px;margin:8px 0;padding:6px 10px;min-width:0}#nodeChosen legend{font-size:13px;font-weight:600;padding:0 4px}
+.node-opt{display:block!important;margin:6px 0;font-size:14px;overflow-wrap:anywhere}.node-opt input{margin-right:6px}.node-opt button{font-size:13px}
+/* Long lesson titles (a waypoint's label) must not widen the page on phones. */
+.workspace label{max-width:100%;min-width:0}.workspace label>select{min-width:0;max-width:100%;text-overflow:ellipsis}

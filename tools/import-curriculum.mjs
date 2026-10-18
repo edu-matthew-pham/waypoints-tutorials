@@ -2,7 +2,12 @@
 // for the curriculum map (tools/curriculum-map.mjs). Earlier-year descriptors named as prior knowledge come too,
 // so the map can show what Year 7 builds on.
 //
-//   node tools/import-curriculum.mjs <path to waypoints-kit> [maths | science]
+//   node tools/import-curriculum.mjs <path to waypoints-kit> [maths | science | systems | history]
+//
+// Each node keeps everything a teacher pointer page (tools/pointer-pages.mjs) and Create's node picker need: checkpoint,
+// success criteria, width (minimum, typical, wider), hinge and its reason, response modes with Kit's reasons, related
+// standards. The standard keeps its prior knowledge text and progression endpoint. Kit holds what the curriculum says:
+// corrections go to Kit and are re-imported, never edited here.
 //
 // waypoints-kit holds one JSON file per descriptor in data/<subject>/ (copied from ACARA Progressions). Descriptor
 // text is from the Australian Curriculum v9 (ACARA, CC BY 4.0); waypoints and prior knowledge are Learning Waypoints'.
@@ -12,12 +17,13 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const [kit, subject = 'maths'] = process.argv.slice(2);
-if (!kit) { console.error('usage: node tools/import-curriculum.mjs <path to waypoints-kit> [maths]'); process.exit(1); }
-const PREFIX = { maths: 'AC9M', science: 'AC9S', systems: 'AC9TDI' }[subject];
+if (!kit) { console.error('usage: node tools/import-curriculum.mjs <path to waypoints-kit> [maths | science | systems | history]'); process.exit(1); }
+const PREFIX = { maths: 'AC9M', science: 'AC9S', systems: 'AC9TDI', history: 'AC9HH' }[subject];
 const KIT = { systems: 'technologies' }[subject] || subject;   // the kit's folder
 const ONLY = { systems: /^AC9TDI\d+K/ }[subject];             // Digital systems: Knowledge and understanding only (the P descriptors belong to Code)
 if (!PREFIX) { console.error(`no prefix for subject "${subject}"`); process.exit(1); }
 const CODE = /AC9[A-Z]{1,4}\d{1,2}[A-Z]{1,3}\d{2}/g;
+const MODES = ['consolidation', 'context_breadth', 'repertoire_building', 'structured_reasoning', 'integration'];
 const yearOf = (c) => Number(c.match(/^AC9[A-Z]+?(\d{1,2})/)?.[1]);
 const truthy = (v) => v === true || v === 'True' || v === 'true';
 const list = (v) => (Array.isArray(v) ? v : typeof v === 'string' && v.startsWith('[') ? JSON.parse(v.replace(/'/g, '"').replace(/\bNone\b/g, 'null')) : []);
@@ -29,12 +35,17 @@ for (const f of readdirSync(join(kit, 'data', KIT)).filter((n) => n.endsWith('.j
   try { d = JSON.parse(readFileSync(join(kit, 'data', KIT, f), 'utf8')); } catch { continue; }
   const s = d.standard;
   if (!s?.code?.startsWith(PREFIX) || (ONLY && !ONLY.test(s.code))) continue;
-  all.set(s.code, s);
+  all.set(s.code, { ...s, kitFile: `data/${KIT}/${f}` });
 }
 
 // Kit titles are in Title Case; the site writes sentence case. Keep capitals the curriculum needs.
 const KEEP = new Set(['Cartesian', 'Pythagoras', "Pythagoras'", 'Australian', 'Earth', 'I', 'GST', 'Newton', 'Bohr', 'Big', 'Bang', 'First', 'Nations', 'Aboriginal', 'Torres', 'Strait', 'Islander']);
-const sentence = (t) => String(t).split(' ').map((w, i) => (i === 0 || KEEP.has(w.replace(/'s$/, '')) || /^[A-Z0-9]{2,}$/.test(w) ? w : w.toLowerCase())).join(' ');
+const lower = (t) => String(t).split(' ').map((w, i) => (i === 0 || KEEP.has(w.replace(/'s$/, '')) || /^[A-Z0-9]{2,}$/.test(w) ? w : w.toLowerCase())).join(' ');
+// Proper nouns that are only proper in a phrase (History titles: "the Second World War", but "other nations").
+const PHRASES = [[/\bsecond world war\b/gi, 'Second World War'], [/\buniversal declaration of human rights\b/gi, 'Universal Declaration of Human Rights'],
+  [/\b(europe|european|asia-pacific|asian|australia|australians|anzac)\b/gi, (w) => w.split('-').map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join('-')],
+  [/\bother Nations\b/g, 'other nations']];
+const sentence = (t) => PHRASES.reduce((s, [re, to]) => s.replace(re, to), lower(t));
 // Hand-written titles from the progression pages win where they exist.
 const pageTitles = new Map();
 try {
@@ -58,6 +69,7 @@ const strandOf = (s, code) => {
     if (/^AC9S7U0\d$/.test(code)) return SCI7[code.slice(-3)];
     return /^AC9S\d+H/.test(code) ? 'Human endeavour' : /^AC9S\d+I/.test(code) ? 'Inquiry' : s;
   }
+  if (subject === 'history') return /^AC9HH\d+S/.test(code) ? 'Historical skills' : 'Knowledge and understanding';
   if (subject === 'systems') return SYS[code.match(/(\d+)K(\d\d)$/)?.slice(1).join('K')] || 'Digital systems';
   for (const n of ['Number', 'Algebra', 'Measurement', 'Space', 'Statistics', 'Probability']) if (k.startsWith(n.toLowerCase())) return n;
   return s;
@@ -71,9 +83,18 @@ for (const c of [...want]) for (const p of prior(all.get(c))) if (!want.includes
 const out = want.sort((a, b) => yearOf(a) - yearOf(b) || a.localeCompare(b)).map((c) => {
   const s = all.get(c);
   return {
-    code: c, year: yearOf(c), span: spanOf(c), strand: strandOf(s.strand, c), title: sentence(pageTitles.get(c) || s.title), description: s.description,
+    code: c, kit: s.kitFile, year: yearOf(c), span: spanOf(c), strand: strandOf(s.strand, c), title: sentence(pageTitles.get(c) || s.title), description: s.description,
     prior: prior(s),
-    nodes: (s.nodes || []).map((n) => ({ n: Number(n.id), label: n.label, checkpoint: n.progression_checkpoint, hinge: truthy(n.hinge), criteria: list(n.success_criteria) })),
+    knowledge: s.prior_knowledge || '', endpoint: s.progression_endpoint || '',
+    nodes: (s.nodes || []).map((n) => ({
+      n: Number(n.id), label: n.label, checkpoint: n.progression_checkpoint, hinge: truthy(n.hinge), criteria: list(n.success_criteria),
+      ...(truthy(n.hinge) && n.hinge_reason ? { hinge_reason: n.hinge_reason } : {}),
+      width: { minimum: n.minimum_width || '', typical: n.typical_width || '', wider: list(n.wider) },
+      // A list of { mode, reason }. Only Kit's five response modes: width_opportunity is a flag, not a mode
+      // (yf_maths_AC9MFN04 node 2 lists it as one; reported to Kit).
+      modes: list(n.response_modes).map((r) => (typeof r === 'string' ? { mode: r, reason: '' } : r)).filter((r) => MODES.includes(r?.mode)).map((r) => ({ mode: r.mode, reason: r.reason || '' })),
+      ...(list(n.related_standards).length ? { related: list(n.related_standards) } : {}),
+    })),
   };
 });
 let source = kit;

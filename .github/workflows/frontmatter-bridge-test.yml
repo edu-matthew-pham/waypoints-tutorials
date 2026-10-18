@@ -13,11 +13,16 @@ on:
       - 'tools/build-create.mjs'
       - 'tools/playground-registry.mjs'
       - 'tools/board-catalogue.mjs'
+      - 'tools/kit-nodes.mjs'
+      - 'tools/pointer-pages.mjs'
+      - 'tools/import-curriculum.mjs'
+      - 'data/curriculum/**'
+      - 'data/review/**'
       - 'AUTHORING.md'
       - 'BUILDING.md'
       - '.github/workflows/frontmatter-bridge-test.yml'
   pull_request:
-    paths: ['tools/lesson-validation.mjs', 'tools/validate-lesson.mjs', 'tools/build-validator.mjs', 'tools/validator-readme.md', 'create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', 'tools/playground-registry.mjs', 'tools/board-catalogue.mjs', 'AUTHORING.md', 'BUILDING.md', '.github/workflows/frontmatter-bridge-test.yml']
+    paths: ['tools/lesson-validation.mjs', 'tools/validate-lesson.mjs', 'tools/build-validator.mjs', 'tools/validator-readme.md', 'create/**', 'experiments/**', 'tools/export-browser-clip.mjs', 'tools/build-create.mjs', 'tools/playground-registry.mjs', 'tools/board-catalogue.mjs', 'tools/kit-nodes.mjs', 'tools/pointer-pages.mjs', 'data/curriculum/**', 'data/review/**', 'AUTHORING.md', 'BUILDING.md', '.github/workflows/frontmatter-bridge-test.yml']
   workflow_dispatch:
 jobs:
   test:
@@ -36,6 +41,7 @@ jobs:
       - run: node experiments/board-catalogue-test.mjs
       - run: node experiments/create-examples-test.mjs
       - run: node experiments/validator-test.mjs
+      - run: node experiments/kit-nodes-test.mjs
       - run: npm run build
       - run: node -e "const fs=require('fs'); const a=JSON.parse(fs.readFileSync('dist/code/create/lesson-clips.json')); if(!a.length)process.exit(1); console.log(a.length,'frontmatter clips exported')"
       - name: Install Chrome for browser smoke test
@@ -54,6 +60,8 @@ jobs:
         run: node experiments/authoring-smoke.mjs
       - name: Board catalogue and picker workflows
         run: node experiments/board-picker-smoke.mjs
+      - name: Curriculum pointer pages and Create's node pre-fill
+        run: node experiments/pointer-pages-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

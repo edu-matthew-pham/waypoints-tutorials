@@ -3,18 +3,23 @@ import {starterFiles} from './lesson-starters.mjs';
 import {setupBoardPicker} from './board-picker.mjs';
 import {snippetFrom} from './lesson-core.mjs';
 import {authoringPrompt} from './authoring-prompt.mjs';
+import {setupNodePicker} from './node-picker.mjs';
+import {primerFromNodes,nodesPromptText} from './kit-nodes.mjs';
 const $=id=>document.getElementById(id);
 export function setupAuthoring(controller){
  for(const [id,profile]of Object.entries(LESSON_PROFILES)){const opt=document.createElement('option');opt.value=id;opt.textContent=profile.label;$('authorProfile').append(opt)}
  for(const p of PLAYGROUND_REGISTRY){const opt=document.createElement('option');opt.value=p.id;opt.textContent=p.label;$('authorPlayground').append(opt)}
  const none=document.createElement('option');none.value='none';none.textContent='No playground (text and checks)';$('authorPlayground').append(none);
  const picker=setupBoardPicker(entry=>{$('authorPlayground').value=entry.playground;changed()});
- const settings=()=>({title:$('authorTopic').value.trim()||'My lesson',profile:$('authorProfile').value,playgroundId:$('authorPlayground').value,subject:$('authorSubject').value,audience:$('authorAudience').value.trim(),goal:$('authorGoal').value.trim(),scope:$('authorScope').value,board:picker.selected(),boardCatalogue:picker.catalogue(),courseContext:{title:$('courseTitle').value,summary:$('courseSummary').value,lessons:[...$('courseLesson').options].map(o=>o.textContent)}});
+ const nodes=setupNodePicker({onChange:()=>changed(),useDesign:(key,value)=>controller.writeDesign?.(key,value)});
+ // With waypoints chosen and the Primer structure, the starter is pre-filled from them (tools/kit-nodes.mjs); anchors stay optional.
+ const nodeStarter=()=>nodes.nodes().length&&$('authorProfile').value==='primer'?primerFromNodes(nodes.nodes(),nodes.pick(),nodes.kit()):null;
+ const settings=()=>({nodeText:nodesPromptText(nodes.nodes(),nodes.pick(),nodes.kit()),nodeStarter:nodeStarter(),title:$('authorTopic').value.trim()||'My lesson',profile:$('authorProfile').value,playgroundId:$('authorPlayground').value,subject:$('authorSubject').value,audience:$('authorAudience').value.trim(),goal:$('authorGoal').value.trim(),scope:$('authorScope').value,board:picker.selected(),boardCatalogue:picker.catalogue(),courseContext:{title:$('courseTitle').value,summary:$('courseSummary').value,lessons:[...$('courseLesson').options].map(o=>o.textContent)}});
  function changed(){
   picker.sync($('authorPlayground').value);
   const p=playground($('authorPlayground').value);
   $('authorCapabilities').textContent=p?`${p.label}: ${p.recording==='automatic'?'automated preview and tab recording':'manual tab recording'}. ${p.note||''}`:'Text and checks only; no interactive preview to record.';
-  controller.setStarterFactory(title=>starterFiles({...settings(),title:$('authorTopic').value.trim()||title}));
+  controller.setStarterFactory(title=>nodeStarter()||starterFiles({...settings(),title:$('authorTopic').value.trim()||title}));
  }
  $('authorSubject').onchange=()=>{const defaults={code:['coding','turtle'],maths:['maths','board'],science:['science','science'],engineering:['design','board'],english:['primer','none'],hass:['primer','none'],general:['inquiry','board']}[$('authorSubject').value];$('authorProfile').value=defaults[0];$('authorPlayground').value=defaults[1];changed()};
  $('authorProfile').onchange=$('authorPlayground').onchange=changed;
@@ -42,5 +47,16 @@ export function setupAuthoring(controller){
   // Synchronising an existing lesson does not change it or the default Add lesson behaviour.
   const p=playground($('authorPlayground').value);$('authorCapabilities').textContent=p?`${p.label}: ${p.recording==='automatic'?'automated preview and tab recording':'manual tab recording'}. ${p.note||''}`:'This lesson has no recognised browser playground.';
  }
- return {settings,sync};
+ // "Make a primer for this" (a teacher pointer page links to Create with ?node=AC9HH7S03.1): choose the node, switch to the
+ // Primer structure with no playground, and return the pre-filled starter for the caller to add as a new lesson.
+ async function openNode(param){
+  const node=await nodes.addParam(param);
+  const subject=nodes.createSubject();if(subject)$('authorSubject').value=subject;
+  $('authorProfile').value='primer';$('authorPlayground').value='none';
+  if(!$('authorTopic').value)$('authorTopic').value=node.label.replace(/\s+[—–-]\s+.*$/,'');
+  if(!$('authorGoal').value)$('authorGoal').value=node.checkpoint;
+  $('nodePanel').open=true;changed();
+  return nodeStarter();
+ }
+ return {settings,sync,openNode,nodes};
 }

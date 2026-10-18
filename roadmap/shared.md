@@ -531,3 +531,15 @@ Plan in the Project doc `create-generic-proposal` (Lesson shape). Built:
 - The write, compare and self-check check needed no new type: the unmarked `reasoning` check (`q`, `models`, `criteria`) already works in any subject.
 - Fourth Create example, **Humanities**: a History primer drafted from Kit AC9HH7S03 node 1 (origin and content), with made-up sources, a `design:` block and a class plan. An untested example of the generic flow, not reviewed curriculum; nothing new on the public site.
 - Next (proposal order): teacher section with pointer pages; Kit node picker with pre-fill; synthesise prompt; subject-neutral `/create/` address; board picker by task kind.
+
+## Generic Create, part 2: pointer pages and node picker (18 Oct 2026, evening)
+Steps 3 and 4 of the Project doc `create-generic-proposal`. Built:
+- `tools/import-curriculum.mjs` takes `history` (AC9HH; strands Knowledge and understanding / Historical skills from the code) and keeps every node's width, hinge reason, response modes (Kit's five only; `width_opportunity` is a flag) and related standards, plus the standard's prior knowledge, endpoint and Kit file. `data/curriculum/history.json` committed (105 standards, 332 nodes, Kit 5f973ec). Maths, science and systems were not re-imported: their extra fields arrive when they are.
+- Review status: `data/review/<subject>.yml` (`status: draft | reviewed`, `kit: v0.2`, optional `nodes:` per node or standard). Only History so far.
+- Teacher pointer pages (`tools/pointer-pages.mjs`, `POINTER_SUBJECTS = ['history']`): `/teach/curriculum/history/` (index by year and strand), a page per standard and per node (`…/<code>/n<k>/`): checkpoint, criteria, prior knowledge, width, hinge, response modes, related standards, Kit file link, tagged lessons and **Make a primer for this**. Draft label and `noindex` until reviewed. Linked only from `/teach/`; no History menu or `content/history/`.
+- Shared change: `page()` in `lesson-view.mjs` takes an optional fifth `head` argument (used for `noindex`).
+- Create: `tools/kit-nodes.mjs` (pure; copied into Create) parses refs (`AC9HH7S03.1`, `AC9HH7S03 n1`), turns criteria into "I can" goals, builds the Primer pre-fill and the prompt's node text; `create/node-picker.mjs` is the picker. Long lesson titles no longer widen Create on phones.
+- Tests: `experiments/kit-nodes-test.mjs` and `experiments/pointer-pages-smoke.mjs`, both in the frontmatter-bridge workflow.
+- Kit data slips for Matthew: `yf_maths_AC9MFN04` node 2 lists `width_opportunity` as a response mode; `y9_history_AC9HH9K14.json` gives its code as `AC9HH9K014` (imported as Kit has it).
+- Next: faint pointer dots on the map; the synthesise prompt (step 5); subject-neutral `/create/` and the board picker's task-kind filter (step 6); other subjects' pointer pages once History's are reviewed.
+

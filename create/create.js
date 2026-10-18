@@ -379,7 +379,14 @@ sync(); render();
 
 try {
   workspace = await setupWorkspace({getFiles:()=>files,setFiles:next=>{files=next;current='lesson.md';try{localStorage.setItem(KEY,JSON.stringify(files))}catch{}sync();render()},editLesson:text=>{files['lesson.md']=text;save();sync();schedule()},render});
-  authoring=setupAuthoring({getFiles:()=>files,setStarterFactory:fn=>workspace.setStarterFactory(fn)});render();
+  authoring=setupAuthoring({getFiles:()=>files,setStarterFactory:fn=>workspace.setStarterFactory(fn),writeDesign:(key,value)=>{if(!(files['lesson.md']||'').trim())return false;writeDesign(key,value);renderDesign();return true}});render();
+  // ?node=AC9HH7S03.1 ("Make a primer for this" on a teacher pointer page): a new Primer lesson pre-filled from that node.
+  const nodeParam=new URL(location.href).searchParams.get('node');
+  if(nodeParam){
+   try{const starter=await authoring.openNode(nodeParam);await workspace.addFiles(starter,{replaceInitial:!hasSaved});$('authorStatus').textContent='Opened a Primer starter from '+nodeParam+'. Check the goals, choose a misconception and width, then write the steps.'}
+   catch(error){$('authorStatus').textContent=$('startStatus').textContent='Could not open that waypoint: '+error.message}
+   const address=new URL(location.href);address.searchParams.delete('node');address.searchParams.set('workspace','1');history.replaceState(null,'',address);
+  }
   setupEntry({hasSaved,addFiles:(next,options)=>workspace.addFiles(next,options),examples:EXAMPLES});
 } catch(error) { $('packageStatus').textContent=$('startStatus').textContent='Local draft/video storage unavailable: '+error.message+'. Allow browser storage and reload to open the workspace.'; }
 

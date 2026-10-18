@@ -9,6 +9,9 @@ import { buildBoardCatalogue } from './board-catalogue.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
 import { stampPlayground } from './build-playground.mjs';
 import { buildValidator } from './build-validator.mjs';
+import { compactCurriculum, KIT_SUBJECTS } from './kit-nodes.mjs';
+import { loadReview } from './pointer-pages.mjs';
+import { existsSync } from 'node:fs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -36,7 +39,19 @@ export async function buildCreate(out = 'dist') {
     }
   }
   writeFileSync(join(dest, 'lesson-clips.json'), JSON.stringify(clips));
-  for (const f of ['lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
+  // Kit node data for the node picker and "Make a primer for this" (create/node-picker.mjs): a compact copy of each
+  // imported subject (data/curriculum/), with its review status, so Create never needs Kit.
+  mkdirSync(join(dest, 'curriculum'), { recursive: true });
+  const subjects = [];
+  for (const { id } of KIT_SUBJECTS) {
+    const f = join(root, 'data', 'curriculum', `${id}.json`);
+    if (!existsSync(f)) continue;
+    const c = compactCurriculum(JSON.parse(readFileSync(f, 'utf8')), loadReview(id, root));
+    writeFileSync(join(dest, 'curriculum', `${id}.json`), JSON.stringify(c));
+    subjects.push({ id, label: c.label, status: c.status, kit: c.kit, years: [...new Set(c.descriptors.map((d) => d.year))].sort((a, b) => a - b) });
+  }
+  writeFileSync(join(dest, 'curriculum', 'index.json'), JSON.stringify(subjects));
+  for (const f of ['kit-nodes.mjs', 'lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
   const validatorVersion=await buildValidator(dest);
   for(const file of ['index.html','validate.html']) {
     const page=join(dest,file);

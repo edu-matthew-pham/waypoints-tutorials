@@ -1466,6 +1466,15 @@ its `design:` block filled in; it adds an editable copy without replacing existi
 (the examples, the "+ Add lesson" fallback and the settings-based starters) come from `create/lesson-starters.mjs`.
 Use **← Start** to return to these choices. Shared lessons and recorder returns open directly in the workspace.
 
+**Curriculum waypoints (optional)** in the lesson-idea panel anchors a lesson to Waypoints Kit nodes (subject, year, standard,
+waypoint; data from `data/curriculum/`, shipped as `curriculum/<subject>.json`). One node makes its success criteria the goals;
+several give a pick list, never a silent merge. Possible misconceptions (a hinge reason, or a response-mode reason naming a mix-up)
+are offered with **Use this**, which writes `design.misconception`; width suggestions come from every node's response modes with
+Kit's reasons. With the Primer structure, **Add a lesson starter** pre-fills a Primer (`node:`, goals, a `before:` note), and the copied
+prompt carries the nodes' data so the AI need not fetch Kit (`tools/kit-nodes.mjs`). `?node=AC9HH7S03.1` opens Create with that
+node's Primer starter: the teacher pointer pages' **Make a primer for this** (`/teach/curriculum/<subject>/`) link there.
+Lessons without a node work as before.
+
 Inside the workspace, choose a subject, teaching sequence and playground. **Add a lesson starter** adds a new lesson to the current course;
 it does not rewrite an existing lesson. The ordinary **Add lesson** button uses the selected settings once you change them.
 Maths, science, coding, design, inquiry, reading, primer and none (free steps, plain step names) structures use the existing
