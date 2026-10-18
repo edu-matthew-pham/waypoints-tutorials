@@ -35,7 +35,7 @@ try: { playground: board, starter: "boards.yml#explore", height: 690 }
 check: { type: board, text: "Do one challenge, then record how sure you are about the new question.", when: "t >= 1" }
 ```
 
-This is a prepared practice board, not a live AI.
+This is the same practice board as AI Foundations › [Ask for the right kind of help](../../foundations/learning-support/). This time you're **investigating yourself**: does feeling sure match how well you did? It's a prepared practice board, not a live AI.
 
 1. Choose a challenge. Write your own attempt. Ask for a hint or the worked example if you need it.
 2. Press **Try a new question**. Answer it without looking back.

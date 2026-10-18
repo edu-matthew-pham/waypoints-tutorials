@@ -54,7 +54,7 @@ try: { playground: board, starter: "boards.yml#explore", height: 690 }
 check: { type: board, text: "Try both goals for the same task, and one other situation.", when: "t >= 3 and p >= 1" }
 ```
 
-The board shows the **same task with two different goals**. These are prepared situations, not a live AI.
+This is the board from AI Foundations › [Decide what to hand over](../../foundations/delegating-thinking/). There you used it to choose; here it's the **thing you investigate**: does its advice really depend on the goal? The board shows the **same task with two different goals**. These are prepared situations, not a live AI.
 
 1. Pick **Make a maze game (goal: learn to code)**. Choose an approach and press **Explore consequences**.
 2. Now pick **Make a maze game (goal: test an idea with players)**. Choose the same approach. Does the feedback change?

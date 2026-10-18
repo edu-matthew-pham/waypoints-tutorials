@@ -49,7 +49,7 @@
   - "Check what AI tells you"
   - "Decide what to hand over"
 - DAHUL keeps its title. Its Lesson 1 opens from the Foundations habits.
-- **Still to do:** where DAHUL reuses Foundations boards (Lessons 1, 2 and 5), say so, and treat the board as the thing being investigated.
+- **Done 19 Oct 2026:** DAHUL lessons 1, 2 and 5 now say they reuse the Foundations boards (Decide what to hand over; Ask for the right kind of help, twice) and frame each board as the thing being investigated. Student text only; no clips change.
 
 ## Group 1: broken or wrong (DONE)
 - **Hints board** (`ai-learning-choices`, `practise` mode):

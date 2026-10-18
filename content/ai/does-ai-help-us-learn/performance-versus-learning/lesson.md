@@ -48,7 +48,7 @@ try: { playground: board, starter: "boards.yml#explore", height: 690 }
 check: { type: board, text: "Do one question with any help you want, then record an attempt at the new question.", when: "t >= 1" }
 ```
 
-This is a prepared practice board, not a live AI.
+This is the practice board from AI Foundations › [Ask for the right kind of help](../../foundations/learning-support/). There you practised asking for hints; here you **test it**: does help on one question show up on a new one? It's a prepared practice board, not a live AI.
 
 1. Pick a challenge. Write your attempt. Ask for a hint or the worked example if you want one.
 2. Press **Try a new question**. Answer it **without looking back**.
