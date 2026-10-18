@@ -1,49 +1,89 @@
-# Plan: *Should we use this AI tool?* (AI committee extension) (18 Oct 2026)
+# Plan: *AI at our school* (the AI committee course) (18 Oct 2026, revised)
 
-**Draft for Matthew. Design only; nothing built.** Item 5 of the AI and society proposal (`roadmap/learning-with-ai.md` › Proposal). Draws on all three AI courses plus Cyber safety.
+**Draft for Matthew. Design only; nothing built.** Grew out of item 5 of the AI and society proposal (`roadmap/learning-with-ai.md` › Proposal: "Should we use this AI tool?"). Revised the same day at Matthew's suggestion: evaluating one tool is only part of a committee's job. It also needs a **strategy** (what we want from AI) and a way to **respond to AI that arrives without anyone choosing it**. The emphasis is on the **principles that guide decisions**, not on any one decision.
 
 ## What it is
-A short course for a **student AI committee** (or a class acting as one) that evaluates **one real AI tool** the school is considering and ends with a **recommendation** to school leadership. Each session answers one committee question, reuses one course's habits, and fills one section of a shared recommendation report.
+A course for a **student AI committee** (or a class acting as one), usable by a **staff committee** too. Three units, each runnable on its own, each ending in one product:
 
-- **Practice, then the real tool.** The self-paced lesson in each session uses a **made-up tool** (a fact sheet in the lesson: "StudyPal", with its terms, settings, claims and one small study), so the site makes no claims about real products and works without accounts. The class plan applies the same questions to the real tool, using documents the teacher gathers and dates.
-- **No student accounts or student data.** Students read the tool's terms, settings pages and vendor claims, which the teacher supplies. Any hands-on trial with students follows the school's approval process and is teacher-run.
-- **Kit:** `trial.md` is no longer planned (Kit proposal `proposals/2026-10-ai-tools.md`, 16 Oct 2026: the trial checklist is teacher guidance, not a prompt format). The course uses that checklist: *why trial, compared with what, who and how long, does it work, does learning last, can we trust it, what changes the decision.* Kit's `discussion.md` can serve as an optional practice conversation; it isn't needed.
+| Unit | Question | Product |
+|---|---|---|
+| 1. What do we want from AI? | Strategy and principles | A one-page **charter** |
+| 2. Should we use this tool? | Judging a tool someone proposes, against the charter | A **recommendation** with conditions |
+| 3. When AI is already here | Responding to AI nobody chose | A **response plan** and a review cycle |
 
-## Sessions (one lesson each; about 40–50 minutes)
+It draws on all three AI courses and Cyber safety: AI Foundations (kinds of AI, checking claims, what to hand over), Does AI Help Us Learn? (evidence, what thinking to keep, who decides what learning is worth), *Who Does AI Affect?* (the lens, who decides, making rules) and *AI in your life* (data, defaults, design that keeps you, where something came from).
 
-| # | Lesson (committee question) | Practice case (made up) | Real tool (class plan) | Draws on | Report section |
-|---|---|---|---|---|---|
-| 1 | **What are we deciding?** The problem, the tool, the kind of AI, and who's affected | StudyPal's one-page pitch | The vendor's own description, dated | Foundations › kinds of AI; *Who Does AI Affect?* lens | The brief: problem, tool, kind, people affected |
-| 2 | **Does it help learning?** Compared with what, measured when, does the claim fit | StudyPal's "students score 20% higher!" and the small study behind it | The vendor's evidence claims; plan a small fair trial | *Does AI Help Us Learn?* (evidence, research design) | Evidence check and a trial plan |
-| 3 | **Can we trust it?** Data, defaults, age, design for engagement | StudyPal's privacy page, settings and terms (training on by default, 13+) | The real terms and settings pages, dated | *AI in your life* (your data, consent screens, designed to keep you); Cyber safety (APPs) | Trust check: privacy, safety, terms and age, oversight, access |
-| 4 | **Who does it affect?** Gains, losses, who decides, the catch, and whether a person checks | StudyPal for students who are ESL, quiet, or without home devices; its energy use | The same, for our school | *Who Does AI Affect?* (lens, who decides, when AI acts, energy) | Impact lens and fairness |
-| 5 | **What do we recommend?** Adopt, trial, change or stop; conditions; what would change our minds | Write StudyPal's recommendation and present it in 2 minutes | Write and present the real recommendation | *Who Does AI Affect?* › Making rules | Recommendation, conditions, review date |
+## Ground rules
+- **Practice, then the real thing.** Each self-paced lesson practises on **made-up material** (a made-up school, made-up tools such as "StudyPal", a made-up search page with an AI answer), so the site makes no claims about real products and works without accounts. The class plan applies the same questions to the real school, tools and policies, using documents the teacher gathers and **dates**.
+- **Real examples are illustrative and dated, not decisions.** Teacher notes can give real cases (below) with the date checked, framed as "how would our principles handle this?", never as the course's verdict.
+- **No student accounts or student data.** Any hands-on trial follows the school's approval process and is teacher-run.
+- **Kit:** `trial.md` is no longer planned (Kit `proposals/2026-10-ai-tools.md`, 16 Oct 2026: the trial checklist is teacher guidance, not a prompt format). Unit 2 uses that checklist. Kit's `discussion.md` is an optional extra, not needed.
 
-Optional 6th, teacher-led: **Run the trial and review** (two weeks later): what the trial showed, the later check without the tool, and whether the recommendation holds.
+## Unit 1: What do we want from AI? (strategy) — 3 sessions
+The principles that every later decision is tested against.
+
+| # | Lesson (one move) | Practice (made up) | Real (class plan) | Draws on |
+|---|---|---|---|---|
+| 1 | **What is school for, and what thinking stays with us?** Name the learning and school life AI should serve, and what students must still do themselves | A made-up school's three aims; sort tasks into "AI can help", "keep the thinking", "depends on the goal" | The school's own aims or MYP approaches to learning | Does AI Help Us Learn? (what learning means, what to hand over); Foundations › Decide what to hand over |
+| 2 | **What would we never accept?** Turn values into principles a decision can be checked against | Draft principles for the made-up school; test each on two quick cases | Read the national schools framework and the school's own AI policy with the lens | *Who Does AI Affect?* (lens, making rules); *AI in your life* (data, defaults) |
+| 3 | **Write the charter** Five to seven principles, each with "how we'd check it" | The made-up school's charter, critiqued | The committee's own charter, shared for comment | All |
+
+**Principles students are likely to reach** (examples to test, not to hand out):
+- **Learning first:** a tool must help the learning we care about, not just finish the task (hint before answer; the thinking we keep stays with students).
+- **Age and stage:** what suits Year 10 may not suit Year 7; support should change with expertise.
+- **A person decides:** AI can suggest; people decide anything that matters about a student, and anything that can't be undone.
+- **Our data stays ours:** know where student work goes, whether it's kept or trained on, and what starts switched on.
+- **Fair for everyone:** every student gets the same access; no advantage from home subscriptions.
+- **Honest about evidence:** claims are checked (compared with what, measured when), and decisions are dated and reviewed.
+- **Not using AI is a real option.**
+
+## Unit 2: Should we use this tool? (evaluation) — 3 sessions
+The earlier draft's five sessions, condensed, with the charter as the criteria.
+
+| # | Lesson | Practice (made up) | Real (class plan) | Draws on |
+|---|---|---|---|---|
+| 4 | **What are we deciding, and does it help learning?** The problem, the kind of AI, the evidence, compared with what | StudyPal's pitch and its one small study | The vendor's description and claims, dated; plan a small fair trial | Foundations (kinds of AI); Does AI Help Us Learn? (evidence, research design) |
+| 5 | **Can we trust it, and who does it affect?** Data, defaults, age terms, design for engagement; gains, losses, who decides | StudyPal's privacy page, settings (training on by default) and terms (13+); students who are ESL, quiet, or without devices at home | The real terms and settings pages, dated | *AI in your life* (your data, the screen, designed to keep you); *Who Does AI Affect?* (lens, when AI acts); Cyber safety (APPs) |
+| 6 | **Recommend** Adopt, trial, change or stop; conditions; what would change our minds; checked against each charter principle | StudyPal's recommendation, presented in two minutes | The real recommendation | *Who Does AI Affect?* › Making rules |
+
+Uses the trial checklist from teacher guidance: why trial, compared with what, who and how long, does it work, does learning last, can we trust it, what changes the decision. Optional teacher-led session: run the trial and review two weeks later.
+
+## Unit 3: When AI is already here (response) — 3 sessions
+Most AI reaches students without a committee choosing it: AI answers in search, assistants built into apps the school already uses, and apps students bring from home. A yes-or-no on each tool doesn't fit; the committee needs a way to **respond**.
+
+| # | Lesson | Practice (made up) | Real (class plan) | Draws on |
+|---|---|---|---|---|
+| 7 | **Map it** What AI is already in front of students, and how it arrived | Sort a made-up school's tools: we chose it / it arrived (a feature switched on in a tool we use) / students bring it | The committee's own map, from teachers' and students' reports (no surveys of individual students' private use) | Foundations (kinds of AI); *AI in your life* (which kind is it?) |
+| 8 | **Respond, not just gatekeep** For each item, choose a response and check it against the charter | A made-up search page whose AI answer appears above the results: choose responses for Year 7 and Year 10 | The committee's map, item by item | *AI in your life* (where did it come from?); Foundations (check what AI tells you); Does AI Help Us Learn? (what thinking to keep) |
+| 9 | **Keep it under review** Who notices new tools, how students report problems, when the charter is revisited | Write a review cycle for the made-up school | The committee's own, linked to the school's policy review | *Who Does AI Affect?* › Making rules (a rule existing isn't it working) |
+
+**Responses to choose from** (lesson 8): teach a habit; a class or year-level norm; change task or assessment design (ask for evidence of process); change a setting where one exists; offer a school-chosen alternative; ask the vendor for a control; restrict or block (with its costs); do nothing yet, and review by a date. The principle: **choose the response that best serves the charter for this age and purpose**, and say what would change it.
+
+**Illustrative real case (teacher notes; dated, not a decision):** as checked on 18 Oct 2026, Google's admin help said AI Overviews and AI Mode are available to Workspace for Education users designated under 18 in most countries, and described no separate switch for them ([Google Workspace admin help](https://knowledge.workspace.google.com/admin/getting-started/editions/control-access-to-google-services-by-age)). In July 2026 Common Sense Media rated Google's AI Search an "unacceptable risk" for young users, finding AI Mode readily completed homework for minors; it tested consumer accounts, and Google called the testing narrow ([risk assessment](https://institute.commonsensemedia.org/sites/default/files/risk-assessments/csm-ai-risk-assessment-google-search-07142026_0.pdf); [TNW report](https://thenextweb.com/news/google-ai-search-unsafe-schools-common-sense-media)). Use it to ask: which charter principles does an always-on AI answer in junior research test (learning first, age and stage, honest about evidence)? Which responses fit Year 7, and which Year 10? **Re-check before use: these controls change fast.**
 
 ## Shape and width
-- `language: science`, `shape: 5e` like the other AI courses (Engage on StudyPal's claim, Explore the fact sheet, Explain the committee question, Elaborate on the real tool in typical or wider steps, Evaluate by writing the report section).
-- **Year 7 core** on the made-up tool; **typical** adds a second document or a trial-plan detail; **wider** for Years 9–10 (reading real terms, the APPs, the EU's high-risk categories, enterprise opportunities for 10P10).
-- Checks: question, sort (claims, settings), unmarked reasoning with model answers. No new widgets: the StudyPal fact sheet is Markdown in the lesson; the `consent` board (Club Helper) can be reused for its settings in session 3 if wanted.
-- **The report:** a printable template (one page per session) that also exists as the lessons' worksheets; final version on paper or in a shared doc.
+- `language: science`, `shape: 5e`, like the other AI courses. Each lesson: Engage on a made-up case, Explore the practice material, Explain the move, Elaborate on the real school in typical or wider steps, Evaluate by writing that session's section of the product.
+- **Year 7 core** on made-up material; **typical** adds a second document or case; **wider** for Years 9–10 (real policies and terms, the APPs, the EU's high-risk categories, opportunities for enterprise in 10P10).
+- Checks: question, sort, unmarked reasoning with model answers. No new widgets; the made-up material is Markdown in the lessons (the `consent` board can be reused in lesson 5 if wanted).
+- **Products:** a printable template per unit (charter, recommendation, response plan), which the lessons' worksheets fill in.
 
-## Placement
-- On the **AI and society** pathway as an optional **extension** (`stage: extensions`), `after:` *Who Does AI Affect?* and *AI in your life*, with Does AI Help Us Learn? recommended. Each lesson opens with a short recap so it works without them.
-- Teachers: the [Choosing AI tools](../content/choosing-ai-tools.md) guide links to it ("run this with a student committee"); the same five questions work for a staff committee using the guide alone.
+## Placement and audiences
+- On the **AI and society** pathway as an optional **extension**, `after:` *Who Does AI Affect?* and *AI in your life*, with Does AI Help Us Learn? recommended. Each lesson recaps what it uses, so it works without them.
+- **Staff committee:** Units 1 and 3 work as they are; Unit 2 pairs with the [Choosing AI tools](../content/choosing-ai-tools.md) guide. The guide links to the course, and gains a short "Start with principles" and "When AI is already here" section.
 
 ## Curriculum hooks
-- AC9TDI10P10 (evaluate existing solutions against criteria, possible future impact, opportunities for enterprise); AC9TDI10P04 (interview stakeholders); AC9TDI10P14 (APPs) in session 3.
+- AC9TDI10P10 (evaluate existing solutions against criteria, possible future impact, opportunities for enterprise); AC9TDI10P04 (interview stakeholders); AC9TDI10P14 (APPs) in lesson 5.
 - General capabilities: Ethical Understanding, Digital Literacy, Critical and Creative Thinking.
-- Could support MYP Design criterion A (inquiring) and D (evaluating), or a service-as-action project. Teacher notes only.
+- Teacher notes: could support MYP Design criteria A and D, or a service-as-action project.
 
 ## Decisions for Matthew
-1. **Course or project page?** Recommended: a short five-lesson course on the pathway (progress, decks and worksheets come for free). Alternative: one teacher-run project page with a printable pack.
-2. **Student committee only, or a staff version too?** Recommended: students; staff use the Choosing AI tools guide with the same five questions.
-3. **First real tool for the class plans:** Copilot Study and Learn or Thinking Mode (the two CGGS is trialling). The class plans stay generic; teacher notes give one worked example, dated.
-4. **Include session 6 (run the trial)?** Recommended: yes, optional and teacher-led.
-5. **Title:** *Should we use this AI tool?* (working).
-6. **The candidate teacher course on making tutorials** was to share this format. Recommended: decide it separately; this plan doesn't depend on it.
+1. **Title:** *AI at our school* or *The AI committee* (working: *AI at our school*).
+2. **Course on the pathway** (recommended), or a teacher-run project pack.
+3. **Order:** Unit 1 first (recommended), with Units 2 and 3 in either order after it.
+4. **Staff version:** the same course with staff-facing class plans (recommended), or the Choosing AI tools guide only.
+5. **Worked examples in teacher notes:** the Google search case for Unit 3, and Copilot Study and Learn or Thinking Mode for Unit 2, all dated.
+6. **The candidate teacher course on making tutorials:** decide separately; this plan doesn't depend on it.
 
 ## Before building
-- Write the StudyPal fact sheet once (pitch, one small study, privacy page, settings, terms), so all five sessions use the same made-up tool.
-- No new claims about real products in student text; real-tool facts stay in dated teacher notes, checked on the vendor's own pages (the Choosing AI tools rule).
+- Write the made-up material once: the school (aims, current policy), StudyPal (pitch, study, privacy page, settings, terms), and a search page with an AI answer.
+- Keep real products out of student text; real facts live in dated teacher notes, checked on the vendor's own pages (the Choosing AI tools rule).
