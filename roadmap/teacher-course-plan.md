@@ -1,6 +1,6 @@
 # Plan: *Make a lesson* (a course for teachers on making tutorials) (18 Oct 2026)
 
-**Draft for Matthew. Design only; nothing built.** The candidate in `roadmap/shared.md` (18 Oct). Its "wait" was for Create to settle; Create's design decisions, Primer shape, pointer pages and node pre-fill are now built (shared.md › Generic Create, parts 1 and 2), so the content is stable enough to plan. The AI courses do not change it (the AI committee plan decided not to depend on it).
+**Approved 18 Oct 2026 (Matthew accepted every recommendation below). Not built yet; handoff: Project doc `claude/handoff-teacher-course.md`.** The candidate in `roadmap/shared.md` (18 Oct). Its "wait" was for Create to settle; Create's design decisions, Primer shape, pointer pages and node pre-fill are now built (shared.md › Generic Create, parts 1 and 2), so the content is stable enough to plan. The AI courses do not change it (the AI committee plan decided not to depend on it).
 
 ## What it is
 A short, self-paced course for teachers, in the site's own lesson format, on making a tutorial with Create and getting it published. It doubles as the way to **recruit specialist reviewers**, the bottleneck for History and the other Kit subjects (Project doc create-generic-proposal › Open questions).
@@ -21,7 +21,7 @@ A short, self-paced course for teachers, in the site's own lesson format, on mak
 ## Teacher layer
 `teacher.yml` notes are written for a **PD facilitator** (a head of department running it in a staff meeting): timings for a 50-minute session covering lessons 1–2, pairs critiquing each other's primers, and what to bring (a topic they teach next week).
 
-## Decisions for Matthew
+## Decisions (approved 18 Oct: the recommended option each time)
 1. **Where it lives.** Recommended: a course at `content/teachers/make-a-lesson/` with a **Teachers** menu (this course, *For maths teachers*, *Choosing AI tools*), off every student trail. Alternative: link it only from Create's start page and `/teach/`, with no menu. A menu is visible to students; the existing teacher pages already are.
 2. **Lesson 1's pointer page.** Recommended: History (AC9HH7S03 n1, the existing Humanities example's node) so it shows the Kit route; maths is the alternative for maths teachers.
 3. **Include the optional video lesson (5)?** Recommended: yes, optional.
