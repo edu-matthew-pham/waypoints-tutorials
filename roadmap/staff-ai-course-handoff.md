@@ -1,5 +1,7 @@
 # Handoff: build *Teaching when AI is everywhere* (the staff AI course) (19 Oct 2026)
 
+**Done 19 Oct 2026: decided and built (see `roadmap/staff-ai-course-plan.md` › Status).** Kept for the record.
+
 For any assistant continuing the staff AI course. **Start by asking Matthew the open decisions below; build only after he answers.** (IB Appendix 6 has now been read: see Checked sources.) Then follow `CLAUDE.md` › "go".
 
 ## Read first

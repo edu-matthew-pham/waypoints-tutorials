@@ -119,7 +119,7 @@ Most AI reaches students without a committee choosing it: AI answers in search, 
 ## Update (19 Oct 2026): rule problems vs know-how problems
 - Lesson 10 gains a fifth part of the review cycle, "Can people apply it?", and a sort: rule problem (wrong, missing or contradictory: fix the rule) vs know-how problem (the rule is fine; people need guidance or examples). Lesson 11's map asks who needs to know each change, and how. Staff activity in lesson 10's class plan.
 - Fixed stale lesson numbers in the Unit 2 and 3 primers.
-- The staff course that closes know-how gaps is planned separately: `roadmap/staff-ai-course-plan.md` (draft, not built).
+- The staff course that closes know-how gaps is built (19 Oct): *AI and your tasks*, `content/teachers/ai-and-your-tasks/` (plan and status: `roadmap/staff-ai-course-plan.md`).
 
 ## Update (19 Oct 2026): IB Appendix 6 read
 - Read from Matthew's copy of the IB Academic integrity policy. It supports the course: no ban, no reliance on detectors, process-based authentication, and consequences left to the school's own integrity policy (which is what the map says). Two additions to teacher notes: for IB-assessed work, acknowledgement means an IB citation (quotation marks, prompt and date, in-text and bibliography), and language acquisition bans language and translation tools. Lessons 4 and 11.

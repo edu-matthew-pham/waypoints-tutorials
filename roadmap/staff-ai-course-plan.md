@@ -1,4 +1,14 @@
-# Plan: *Teaching when AI is everywhere* (a staff course) (19 Oct 2026)
+# Plan: *AI and your tasks* (a staff course) (19 Oct 2026)
+
+## Status (19 Oct 2026): built, not yet piloted
+Built at `content/teachers/ai-and-your-tasks/` (Teachers menu, after Make a lesson). Matthew's decisions: title *AI and your tasks*; its own course, separate from *Make a lesson*; generic levels plus "use your school's scale"; lesson 2's try-it step kept (optional, `tier: typical`, with a paper version); generic plus dated IB and BSSS pointers; all six lessons drafted at once.
+- Lessons (`shape: primer`, teacher notes inline): 1 `thinking-for`, 2 `could-ai-do-it`, 3 `make-it-visible`, 4 `say-it-clearly`, 5 `your-own-use`, 6 `judge-a-tool` (optional). Units: Redesign a task (1–4), Your own use (5–6).
+- `reference.md`: the five example tasks (thinking it's for; what AI can do now), the three groups, generic levels, the task instruction card, the four layers, rule vs know-how.
+- **Levels as a design lens (from Matthew's question about Leon Furze):** the AI Assessment Scale's authors call it a design tool for educators, not a script for students; v2.1 says each level is a kind of task, not a permission; Perkins, Roe and Furze (2025) warn that relabelling an unchanged task changes little and say student instructions needn't name the level. So lesson 4 redesigns first and the student card is plain words (level name optional). Sources in lesson 4's notes (checked 19 Oct).
+- IB Appendix 6 (read by the committee chat, 19 Oct): lesson 4's notes summarise it (IB citation with prompt and date, in-text and bibliography; language acquisition bans translation tools).
+- **Still to do:** pilot lessons 1–2 in a staff meeting; re-check lesson 2's capability list before each run.
+
+*Original plan below.*
 
 **Draft for Matthew. Design only; nothing built. Handoff: `roadmap/staff-ai-course-handoff.md` (Project doc `claude/handoff-staff-ai-course.md`).** Grew out of the staff-training gap in *AI at our school* (`roadmap/ai-committee-plan.md` › Update 19 Oct). The committee course now teaches students and staff to *notice* know-how gaps (lesson 10: rule problem vs know-how problem; lesson 11: "who needs to know, and how"). This course is where staff *close* them.
 
