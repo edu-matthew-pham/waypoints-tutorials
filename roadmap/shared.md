@@ -652,3 +652,11 @@ Look at the main site first: the reasoning is in waypoints-framework (private; a
 - **Evidence first.** Watch a few students and teachers arrive at the site before fixing the groupings (the main site's roadmap item E1 covers this; include tutorials in the same conversations).
 
 Quick fixes done today (22 Oct): home page About opener lists all six subjects and drops the "fullest set" line; "Why we made this" gains the browser paragraph (code runs on the page, interactive models for maths and science); the request line says lessons are checked before they're added and refined as they're used, matching the main site; Engineering and Digital systems get a line under How the lessons work.
+
+## Proposed (22 Oct 2026, Matthew agreed; not scheduled): make a tutorial from the Kit
+
+Add a `format-tutorial.md` to waypoints-kit, alongside its `format-prepare.md` (slides) and `format-print.md` (worksheets). A teacher's own AI, having read the Kit and the standard's node file, writes a lesson in the format Create reads; the teacher pastes it into Create to preview, edit and request publishing.
+
+- Build on what exists: the teacher lesson prompt (Project doc `claude/teacher-lesson-prompt.md`) and Create's lesson format (AUTHORING.md). The Kit file should mostly point at these rather than restate them, so there is one lesson format.
+- Anchor the lesson to the node file's waypoints (Create's optional Kit-node anchor, roadmap › Generic Create).
+- Keep it secondary in the Kit: the Kit now leads with planning (README, 22 Oct), then resources; a tutorial format sits with the resource formats, not above them. Add a starter prompt to the Kit README and a tile to the main site's Ask your AI page (Lessons group) when built.
