@@ -7,7 +7,8 @@ title: Finding a side
 summary: "Pythagoras finds any side. For the hypotenuse, add the squares: c² = a² + b². For a shorter side, subtract from the hypotenuse's square: b² = c² − a². Then take the square root, and check the hypotenuse is still the longest."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A 5 m ladder leans against a wall with its foot 3 m out. How high up the wall does it reach? Screens, ramps, roofs and ladders all hide a right-angled triangle."
+hook: "Safety guidance says a ladder's foot goes 1 m out from the wall for every 4 m up. Set up that way, will a 4.1 m ladder reach a gutter 3.9 m high? Ladders, ramps and screens all hide a right-angled triangle."
+connection: ladder-1-in-4   # data/connections/maths.yml (pilot: opening situation and Make; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8285
   url: http://127.0.0.1:8285/index.html
@@ -29,6 +30,12 @@ explainClip:
     - caption: { text: "b = √64 = 8.", say: "So the side is the square root: eight." }
     - wait: 1200
 ---
+**The question.** Ladder safety guidance says to put the foot 1 m out from the wall for every 4 m of height ([WorkSafe ACT](https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety), [SafeWork NSW](https://www.safework.nsw.gov.au/hazards-a-z/ladders)). Your ladder is 4.1 m long, so its foot goes about 1 m out. The gutter is 3.9 m up. Will the ladder reach it?
+
+<figure class="situation" role="img" aria-label="A 4.1 m ladder leans against a house wall with its foot 1 m out. The gutter is 3.9 m above the ground. Will the ladder reach it?"><svg viewBox="0 0 360 250" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="20" y1="215" x2="320" y2="215" stroke-width="1"/><rect x="200" y="50" width="80" height="165" stroke-width="1"/><line x1="188" y1="50" x2="292" y2="50" stroke-width="3"/><line x1="140" y1="214" x2="199" y2="56" stroke="#D85A30" stroke-width="4" stroke-linecap="round"/><line x1="140" y1="228" x2="200" y2="228" stroke-width="0.6"/><line x1="140" y1="223" x2="140" y2="233" stroke-width="0.6"/><line x1="200" y1="223" x2="200" y2="233" stroke-width="0.6"/><text x="170" y="245" text-anchor="middle" fill="currentColor" stroke="none">1 m</text><line x1="304" y1="50" x2="304" y2="215" stroke-width="0.6" stroke-dasharray="4 3"/><text x="312" y="138" fill="currentColor" stroke="none">3.9 m</text><text x="292" y="42" text-anchor="end" fill="currentColor" stroke="none">gutter</text><text x="30" y="110" fill="currentColor" stroke="none">4.1 m ladder</text><text x="30" y="128" fill="currentColor" stroke="none">Will it reach?</text></svg></figure>
+
+To answer it you need the height up the wall. That is a side of a right-angled triangle, but not the hypotenuse, and this lesson shows how to find it. You come back to the ladder at the end. Left out: sloping ground, and how far past the gutter a ladder must reach to step off it safely.
+
 Pythagoras' theorem links all three sides, so it can find any one of them:
 
 - **The hypotenuse:** add the squares. $c^2 = a^2 + b^2$.
@@ -219,29 +226,53 @@ tasks:
 
 ### Review: the hypotenuse
 
-## Make: design a ramp
+## Make: back to the ladder
 
 ```step
 stage: make
-insight: "Designing a ramp from its rise and sloping length is the subtract case in a real setting, with decimals and a sense check."
-hint: ["The sloping length is the hypotenuse.", "1.3² − 0.5² = 1.69 − 0.25."]
-check:
-  type: reasoning
-  q: "A wheelchair ramp must rise 0.5 m and its sloping surface is 1.3 m long. How far out from the step does it reach along the ground, in m? Write your steps."
-  steps:
-    - ["The sloping surface is the hypotenuse: $c = 1.3$, $a = 0.5$", "it is opposite the right angle at the step"]
-    - ["$b^2 = 1.3^2 - 0.5^2 = 1.69 - 0.25 = 1.44$", "for a shorter side, subtract the squares"]
-    - ["$b = \\sqrt{1.44} = 1.2$ m", "take the square root"]
-  picks:
-    - step: 2
-      options: ["For a shorter side, subtract the squares", "Add the squares", "Subtract the lengths: 1.3 − 0.5"]
+insight: "Coming back to the opening question: the height up the wall is a shorter side (subtract the squares), and the answer is judged against the gutter and the 1-in-4 rule."
+tasks:
+  - hint: ["The ladder is the hypotenuse.", "4.1² − 1² = 16.81 − 1."]
+    check:
+      type: reasoning
+      q: "Your 4.1 m ladder has its foot 1 m from the wall. How high up the wall does it reach, in m to two decimal places? Write your steps."
+      placeholder: "The ladder is the hypotenuse, so …"
+      steps:
+        - ["The ladder is the hypotenuse: $c = 4.1$, $a = 1$", "it is opposite the right angle where the wall meets the ground"]
+        - ["$b^2 = 4.1^2 - 1^2 = 16.81 - 1 = 15.81$", "for a shorter side, subtract the squares"]
+        - ["$b = \\sqrt{15.81} \\approx 3.98$ m", "take the square root"]
+      picks:
+        - step: 2
+          options: ["For a shorter side, subtract the squares", "Add the squares", "Subtract the lengths: 4.1 − 1"]
+          answer: 0
+          feedback: [null, "That would make the wall taller than the ladder.", "Subtract the squares, not the lengths."]
+      answer: "3.98"
+      feedback:
+        - ["4.22", "That adds the squares: the wall would be taller than the ladder."]
+        - ["3.1", "That subtracts the lengths, not the squares."]
+        - ["15.81", "That is the square of the height. Take the square root."]
+      explain: "16.81 − 1 = 15.81, √15.81 ≈ 3.98 m."
+  - check:
+      type: question
+      q: "The gutter is 3.9 m up. Set up by the 1-in-4 rule, does the 4.1 m ladder reach it?"
+      options:
+        - "Yes: 3.98 m is above 3.9 m, and 1 m out for about 4 m up fits the rule"
+        - "No: 3.98 m is below 3.9 m"
+        - "Only if the foot is moved closer than 1 m"
+        - "You can't tell without the angle"
       answer: 0
-      feedback: [null, "That would make the ground longer than the slope.", "Subtract the squares, not the lengths."]
-  answer: "1.2"
-  feedback:
-    - ["1.39", "That adds the squares."]
-    - ["0.8", "That subtracts the lengths."]
-  explain: "1.69 − 0.25 = 1.44, √1.44 = 1.2 m."
+      feedback: [null, "Compare 3.98 with 3.90.", "It already reaches. Moving the foot in makes the ladder steeper than the rule allows.", "Pythagoras gives the height from the lengths; no angle is needed."]
+      explain: "It reaches 3.98 m, just above the gutter, and 1 m out for 3.98 m up is close to 1 in 4. In real life you would also want the ladder to reach past the gutter to step off, so a longer ladder is safer."
 ```
 
-Then: real ramps should rise no more than 1 m for every 14 m along. Is this ramp too steep?
+### How high?
+
+Come back to the ladder from the start of the lesson. Sketch the triangle and label the hypotenuse first.
+
+### Does it reach?
+
+**Also used in**
+
+- **Wheelchair ramps.** A ramp up to 9 m long can rise at most 1 m for every 14 m along ([Queensland Health, from AS 1428.1](https://www.health.qld.gov.au/__data/assets/pdf_file/0029/1477208/Ramps-to-the-house-and-slopes-in-the-garden-slides.pdf)). The sloping surface is the hypotenuse.
+- **Screen sizes.** A TV or phone is sold by its diagonal, the hypotenuse of the screen. Will it fit the cabinet?
+- **Square corners.** Builders peg out a 3-4-5 triangle of string to check a corner is a right angle.

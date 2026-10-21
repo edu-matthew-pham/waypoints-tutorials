@@ -6,7 +6,9 @@ title: Changing the subject
 summary: "A formula gives one letter from the others. To get a different letter, undo the steps in reverse order, doing the same to both sides: y = 3x + 5 becomes x = (y − 5)/3. Check by substituting."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "P = 2l + 2w gives the fence around a garden. But you have 20 m of fence and a 6 m side. How wide can it be? Turn the formula around."
+hook: "Your marks so far are 62, 70 and 74. What do you need on the last test to average 70? The average formula answers it, once you turn it around."
+connection: target-average   # data/connections/maths.yml (pilot: opening situation and Make; documentation only)
+uses: [AC9M7ST01 n2]   # the mean, for the opening question and Make
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8168
   url: http://127.0.0.1:8168/index.html
@@ -28,6 +30,12 @@ explainClip:
     - expect: { selector: "#gpanel", contains: "= 20" }
     - wait: 1200
 ---
+**The question.** Your marks so far are 62, 70 and 74. What do you need on the fourth test to average 70?
+
+<figure class="situation" role="img" aria-label="Bar chart of test marks: 62, 70 and 74, then a question mark for test 4. A dashed line marks the target average of 70."><svg viewBox="0 0 360 230" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="40" y1="190" x2="340" y2="190" stroke-width="1"/><line x1="40" y1="30" x2="40" y2="190" stroke-width="0.6"/><text x="34" y="194" text-anchor="end" fill="currentColor" stroke="none">0</text><text x="34" y="34" text-anchor="end" fill="currentColor" stroke="none">100</text><rect x="60" y="90.8" width="50" height="99.2" rx="3" fill="#7F77DD" fill-opacity="0.45" stroke="#534AB7" stroke-width="0.8"/><rect x="130" y="78" width="50" height="112" rx="3" fill="#7F77DD" fill-opacity="0.45" stroke="#534AB7" stroke-width="0.8"/><rect x="200" y="71.6" width="50" height="118.4" rx="3" fill="#7F77DD" fill-opacity="0.45" stroke="#534AB7" stroke-width="0.8"/><rect x="270" y="30" width="50" height="160" rx="3" stroke-width="1" stroke-dasharray="5 4"/><text x="295" y="118" text-anchor="middle" fill="currentColor" stroke="none" font-size="22">?</text><line x1="40" y1="78" x2="340" y2="78" stroke="#1D9E75" stroke-width="1.2" stroke-dasharray="7 4"/><text x="44" y="70" fill="#1D9E75" stroke="none">target average 70</text><text x="85" y="208" text-anchor="middle" fill="currentColor" stroke="none">62</text><text x="155" y="208" text-anchor="middle" fill="currentColor" stroke="none">70</text><text x="225" y="208" text-anchor="middle" fill="currentColor" stroke="none">74</text><text x="295" y="208" text-anchor="middle" fill="currentColor" stroke="none">test 4</text></svg></figure>
+
+The average formula gives the average from the marks. To get the mark you need, you turn the formula around: that is this lesson's move. You learn it first on a formula you know, the perimeter of a rectangle, then come back to your marks at the end. Assumed: every test counts the same and is marked out of 100.
+
 A formula like $P = 2l + 2w$ gives $P$ when you know $l$ and $w$. $P$ is the **subject**: the letter on its own on one side.
 
 Sometimes you know $P$ and want $w$. **Changing the subject** rearranges the formula so $w$ is on its own. You undo the steps, as when you solved equations, but with letters.
@@ -236,16 +244,45 @@ tasks:
 
 ### Review: factorising
 
-## Make: work it backwards
+## Make: back to your marks
 
 ```step
 stage: make
-insight: "Rearranging a cost formula and using it to answer a question, then checking on the board, puts the lesson's two moves together: change the subject, then substitute."
-try: { playground: board, starter: "formula.yml#make", height: 460 }
-hint: ["Undo + 6, then undo × 4: n = (T − 6)/4.", "(30 − 6) ÷ 4."]
-check: { type: board, text: "Hiring a bike costs $T = 4n + 6$ dollars for $n$ hours. Make $n$ the subject, use it to find how many hours 30 dollars buys, then set the board to check.", when: "T = 30", explain: "n = (T − 6)/4 = (30 − 6)/4 = 6 hours. Check: 4 × 6 + 6 = 30." }
+insight: "Coming back to the opening question: rearranging the average formula for the last mark (undo ÷ n, then + S), then using it, puts the lesson's move to work on a question students ask for themselves."
+tasks:
+  - hint: ["x had S added, then the total was divided by n. Undo the last step first.", "Multiply both sides by n: nA = S + x. Then take S from both sides."]
+    check:
+      type: answer
+      q: "With $n$ tests, the average is $A = \\dfrac{S + x}{n}$, where $S$ is the total of your marks so far and $x$ is the last mark. Make $x$ the subject."
+      answer: "x = n*A - S"
+      form: subject x
+      feedback:
+        - ["x = A/n - S", "Undo ÷ n by multiplying both sides by n."]
+        - ["x = n*(A - S)", "Undo the last step first: × n before − S."]
+        - ["x = n*A + S", "Undo + S by taking S away."]
+      explain: "Multiply both sides by n: nA = S + x. Take S from both sides: x = nA − S."
+  - hint: ["S is the total of the three marks so far; n = 4 and A = 70.", "S = 206, so x = 4 × 70 − 206."]
+    check:
+      type: number
+      q: "Your marks so far are 62, 70 and 74. Use your formula: what do you need on the fourth test to average 70?"
+      answer: 74
+      feedback:
+        - [70, "That is the average you want. Use your formula for the mark you need."]
+        - [280, "That is the total you need, nA. Take away what you already have."]
+        - [206, "That is the total so far, S."]
+      explain: "S = 206, n = 4, A = 70: x = 4 × 70 − 206 = 280 − 206 = 74. Check: (206 + 74) ÷ 4 = 70."
 ```
 
-Write your formula for $n$ first. Then use it, and only then move the slider.
+### Turn it around
 
-Stretch: make $l$ the subject of $P = 2l + 2w$, then make $r$ the subject of $C = 2\pi r$.
+Write your formula for $x$ first, then check it with numbers: if your marks were 60 and 80, the average is 70.
+
+### Your last test
+
+Check your answer by putting it back into the average. Stretch: if the last test is out of 100, what is the highest average you could still get?
+
+**Also used in**
+
+- **Running pace.** Time = pace × distance. Turn it around to find the pace you need for a target time.
+- **A US weather forecast.** The conversion formula gives °F from °C. Turned around, it gives °C from °F.
+- **Science.** Speed = distance ÷ time, turned around for how long a trip takes.

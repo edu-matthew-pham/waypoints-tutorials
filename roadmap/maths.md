@@ -2,6 +2,16 @@
 
 The maths chat's file. Lessons live in `content/maths/`. Design notes and status so far are in the project docs (`maths-structure`, `maths-boards-plan`, `maths-expressions-status`, `maths-graphs-7a04-status`, `board-embed-contract`); record new decisions here.
 
+## Pilot: when, where and why (22 Oct 2026, a trial for maths teachers, not a rule)
+
+From the Project doc `maths-when-where-why-strategy`. Two lessons at opposite ends: **Finding a side** (AC9M8M06 n2, a *world* entry: will a ladder set up by the 1-in-4 safety rule reach the gutter?) and **Changing the subject** (AC9M8A01 n3, an *enabler* entry: what do I need on the last test to average 70?). Each opens with the real question (hook, plus a hand-drawn SVG in the intro); Make comes back to it; "Also used in" closes it (text under Make's last task). Predict to Practise are unchanged, so Predict still tests only the new move; whether the situation should run through the middle too is a question for the teachers, not built. Library: `data/connections/maths.yml` (pilot entries only; fields, kinds and application steps in its header; every figure has a source); lessons name their entry with `connection:` (documentation only). Figures sourced: ladder 1:4 (WorkSafe ACT, SafeWork NSW), ramp 1:14 up to 9 m (Queensland Health, from AS 1428.1). Tested headlessly: both figures in light and dark, every Make check with its planted slips and right answers.
+
+**Next (agreed with Matthew):** tidy the library before growing it: move the Measurement and Algebra drafts into `maths.yml` with the same fields (add kind and step tags to Measurement, source every figure, flag weak entries). Other strands, and more lessons, wait for teacher feedback on the pilot.
+
+**Found, for roadmap/shared.md (shared tools, not changed here):**
+- `answer` checks with `form:` match feedback with `F.check(fb, v, '')`, and with no form the checker calls any two equations equivalent (even `x = (y-7)/2` and `x = y/2 - 7`). So every wrong rearrangement gets the *first* feedback message, in this lesson's Investigate and Modify checks as well as the new Make. Right answers are unaffected. Fix in `lesson-view.mjs` (compare with the check's form, or compare the sides as expressions).
+- `teach.mjs` puts the lesson intro into the "Why it matters" slide's speaker note as one line, so an SVG in the intro shows as raw markup in the notes. Fix: strip `<figure>`/`<svg>` in `note()`. The slide itself (the hook) is fine. Lesson images in general need a home: the build copies no lesson-folder images, and Create's safe Markdown drops `<svg>`.
+
 ## Done: prerequisite checks (decided and built 11 Oct 2026)
 
 The code-style scan does not carry over: maths and science have no code to scan, and their tutorials sit beside class teaching. Checked against the repo: no lesson has a `node:` field (the node is named only in `teacher.yml` summaries, such as Plates "AC9S8U03, node 2"), and the repo holds no progression data (`prior_knowledge` lives in waypoints-kit and no build step reads it). 55 science and 19 maths lessons.

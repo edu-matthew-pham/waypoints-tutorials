@@ -1,0 +1,133 @@
+# Real-world connections for maths: the when, where and why of each skill.
+# Source data, written once and used by lessons (opening situation, Make, "Also used in"), and later by decks,
+# a "where is this used?" view and Kit nodes. Plan: Project doc maths-when-where-why-strategy; drafts for
+# Measurement and Algebra Years 7–10 are Project docs maths-real-world-connections(-algebra).
+#
+# Status: PILOT (22 Oct 2026). Only the entries the two pilot lessons use are here:
+#   measurement/finding-a-side (AC9M8M06 n2, a world entry) and algebra/rearranging (AC9M8A01 n3, an enabler entry).
+# Nothing in the build reads this file yet. Lessons name their entry with `connection:` in the frontmatter
+# (documentation only, like moveId); the lesson text and teacher.yml sources are written by hand from it.
+#
+# Fields
+#   id        short slug, unique; what a lesson's `connection:` points at
+#   nodes     the nodes it serves, written as lessons write them (AC9M8M06 n2); one entry can serve several
+#   kind      world | enabler | structural | downstream
+#               world: a real situation needs this maths to answer a real question
+#               enabler: the maths is a step inside a real task
+#               structural: the maths explains why something works
+#               downstream: a specialist use where this skill is one small step (shown, not done)
+#   steps     application steps the entry can carry: 1 see it, 2 use it, 3 spot it, 4 set it up, 5 judge it
+#   domain    building, consumer, sport, environment, science, design, health, transport, school, digital
+#   situation the real question, as a person would ask it
+#   maths     the job the maths does there
+#   given     what the lesson supplies (rules, data)
+#   hidden    real complexity left out, said out loud in the lesson; never the target maths
+#   check     how a student can test the answer against reality
+#   figures   every number a lesson states as fact, with its source (same shape as teacher.yml sources)
+#
+# Quality tests: a real person asks it unprompted; the target maths is needed; the hidden part is stated and is
+# not the target maths; the answer can be checked; most entries come from outside STEM and digital technologies;
+# no body weight, diet or gambling contexts.
+
+entries:
+  - id: ladder-1-in-4
+    nodes: [AC9M8M06 n2]
+    kind: world
+    steps: [2, 4]
+    domain: building
+    situation: "I'm setting up a ladder to clean the gutters. Safety guidance says the foot goes 1 m out for every 4 m up. Set up that way, will my ladder reach?"
+    maths: "The ladder is the hypotenuse; the height it reaches is a shorter side: subtract the squares."
+    given: "The 1-in-4 rule; the ladder's length; the gutter's height."
+    hidden: "Ground slope, the ladder's feet and how far it must overlap the gutter edge."
+    check: "Lean a real ladder (or a metre ruler on a desk) at 1 in 4 and measure how high it reaches."
+    figures:
+      - claim: "Extension ladders: the base 1 m out from the structure for every 4 m of height (1:4)."
+        source: { title: "Ladder safety (WorkSafe ACT)", url: "https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety", checked: 2026-10-22 }
+      - claim: "Same 1:4 rule."
+        source: { title: "Ladders (SafeWork NSW)", url: "https://www.safework.nsw.gov.au/hazards-a-z/ladders", checked: 2026-10-22 }
+
+  - id: ramp-1-in-14
+    nodes: [AC9M8M06 n2, AC9M9M03 n2]
+    kind: world
+    steps: [2, 3, 5]
+    domain: building
+    situation: "A ramp to a front door must be gentle enough for a wheelchair. How long does it need to be?"
+    maths: "Rise and run are the shorter sides, the sloping surface the hypotenuse (Year 8); the angle comes from trig (Year 9)."
+    given: "The 1 in 14 limit for ramps up to 9 m long."
+    hidden: "Landings, handrails and other gradients for longer or shorter ramps."
+    check: "Measure the rise and length of a ramp at school."
+    figures:
+      - claim: "Maximum gradient 1:14 for ramps up to 9 m long (AS 1428.1)."
+        source: { title: "Ramps to the house and slopes in the garden (Queensland Health, MASS)", url: "https://www.health.qld.gov.au/__data/assets/pdf_file/0029/1477208/Ramps-to-the-house-and-slopes-in-the-garden-slides.pdf", checked: 2026-10-22 }
+
+  - id: screen-diagonal
+    nodes: [AC9M8M06 n2]
+    kind: world
+    steps: [1, 2]
+    domain: consumer
+    situation: "Will this TV fit the gap in the cabinet? Its size is measured along the diagonal."
+    maths: "The diagonal is the hypotenuse; width or height is a shorter side."
+    given: "The screen's diagonal and one side."
+    hidden: "The bezel (frame) around the screen."
+    check: "Measure a classroom screen's width, height and diagonal."
+    figures: []
+
+  - id: set-out-3-4-5
+    nodes: [AC9M8M06 n1, AC9M8M06 n3]
+    kind: world
+    steps: [1, 2]
+    domain: building
+    situation: "Is the corner of this garden bed or slab square? Builders check with a 3-4-5 triangle of string."
+    maths: "A triangle whose sides fit a² + b² = c² has a right angle."
+    given: "Tape measure and string."
+    hidden: "Stretch in the string."
+    check: "Peg out a 3-4-5 triangle on the oval and check the corner with a set square."
+    figures: []
+
+  - id: target-average
+    nodes: [AC9M8A01 n3]
+    kind: enabler
+    steps: [2]
+    domain: school
+    situation: "My marks so far are 62, 70 and 74. What do I need on the last test to average 70?"
+    maths: "The mean formula A = (S + x) ÷ n gives the average; rearranged for x, x = nA − S, it gives the mark needed."
+    given: "The marks so far and the target average; every test counts equally."
+    hidden: "Weighted tests and different marks out of."
+    check: "Put the answer back in: (62 + 70 + 74 + 74) ÷ 4 = 70."
+    figures: []
+
+  - id: running-pace
+    nodes: [AC9M8A01 n3]
+    kind: enabler
+    steps: [2]
+    domain: sport
+    situation: "I want to finish a run in a target time. What pace, in minutes per kilometre, do I need?"
+    maths: "time = pace × distance, rearranged for pace."
+    given: "The distance and the target time."
+    hidden: "Hills, and slowing down towards the end."
+    check: "A running watch or a pace calculator."
+    figures: []
+
+  - id: forecast-fahrenheit
+    nodes: [AC9M7A01 n2, AC9M8A01 n3]
+    kind: world
+    steps: [1, 2]
+    domain: transport
+    situation: "A US weather forecast is in °F. What is that in °C?"
+    maths: "The conversion formula gives °F from °C; rearranged, it gives °C from °F."
+    given: "The conversion formula."
+    hidden: "Nothing important: the formula is exact."
+    check: "A weather app showing both scales."
+    figures: []
+
+  - id: science-formula-subject
+    nodes: [AC9M8A01 n3, AC9M10A01 n5]
+    kind: enabler
+    steps: [2]
+    domain: science
+    situation: "Science gives speed = distance ÷ time, but the question asks how long a trip takes."
+    maths: "Rearranging the formula for the quantity you need."
+    given: "The formula from science."
+    hidden: "Changing speed (the formula assumes it is steady)."
+    check: "Put the answer back into the original formula."
+    figures: []

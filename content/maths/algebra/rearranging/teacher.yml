@@ -1,12 +1,15 @@
 summary: Students rearrange formulas to change the subject by undoing the steps in reverse order on both sides, and check each rearrangement by substituting numbers, on a formula board that works the original forwards (AC9M8A01, node 3).
 time: 45
 timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+struggle: "Undoing the steps in reverse order. Ask students to say what was done to the letter first and last, before they write anything."
 goals:
   - I can make a given letter the subject of a formula by undoing the steps in reverse order.
   - I can do the same to the whole of both sides, so I divide every term.
   - I can check a rearranged formula by substituting numbers.
 before: |
   Do the Run board and the working check yourself first. Students need solving equations by backtracking and the balance method (Year 7 equations unit), substituting into formulas, and the two lessons before (expanding and factorising).
+
+  Pilot (Oct 2026): the lesson opens with a real question (what do I need on the last test to average 70?) and Make comes back to it; "Also used in" closes it. Rearranging is a skill people rarely do by hand outside study, so this is an "enabler" use: the step inside a task students do ask about. The middle of the lesson still uses the perimeter formula. Tell us whether the switch between the two contexts gets in the way.
 
   The one idea: changing the subject is solving an equation with letters. Undo what was done to the letter, last step first, doing the same to both sides. The common mistake is dividing only one term (y = 4x − 3 becomes y ÷ 4 = x − 3); it is planted after the method, in Jo's working. Undoing the − 3 first avoids it.
 
@@ -16,7 +19,7 @@ running:
   - "Run: ask students to say why the board needed trial and error and the rearranged formula did not."
   - "Investigate: model the worked example live as a flow: x → × 3 → + 5 → y, then backwards: y → − 5 → ÷ 3 → x."
   - "Modify: before the edge case y = 7 − x, ask: what is x if y = 5? Most find 2 mentally; then ask how they did it."
-  - "Make: ask students to show the formula they wrote before the board answer, and how they checked it."
+  - "Make: back to the opening marks. Ask for guesses first (many say 70, or 78 to make up for the 62); then ask students to show the formula they wrote and how they checked it."
 stuck:
   - see: "A student divides only one term (Jo's mistake)."
     ask: "Put in x = 2. Does your formula give back the y you started with?"

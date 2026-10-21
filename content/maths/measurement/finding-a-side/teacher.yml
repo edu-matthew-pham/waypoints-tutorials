@@ -9,13 +9,15 @@ struggle: "Deciding whether to add or subtract. Ask students to point to the hyp
 before: |
   Do the Run board yourself first. Students need the hypotenuse method (previous lesson) and square roots between whole numbers (Between the squares).
 
+  Pilot (Oct 2026): the lesson opens with a real question (will a ladder set up by the 1-in-4 safety rule reach the gutter?) and Make comes back to it; "Also used in" closes it. The middle of the lesson is unchanged. Tell us whether the opening helps or gets in the way.
+
   The one idea: add the squares to find the hypotenuse, subtract them to find a shorter side. The common mistake is adding for a shorter side (Ken's mistake); the check "the hypotenuse is the longest" catches it.
 running:
   - "Predict: students who chose 5.83 added; ask whether the wall can be taller than the ladder."
   - "Run: ask what the big square has to be."
   - "Investigate: for the screen, share sketches; label the hypotenuse first."
   - "Modify: for the shortcut, ask what is being compared."
-  - "Make: compare 0.5 m in 1.2 m with the 1 in 14 rule."
+  - "Make: back to the opening ladder. Ask who thinks it reaches before anyone calculates; then ask what else a real ladder job needs (it should reach past the gutter to step off)."
 stuck:
   - see: "A student adds the squares for a shorter side (Ken's mistake)."
     ask: "Is your answer shorter than the hypotenuse?"
@@ -42,3 +44,7 @@ explain: |
   - a **shorter side**: subtract, $b^2 = c^2 - a^2$.
 
   Then take the square root (to two decimal places if it is not whole). Check: the hypotenuse must be the longest side.
+sources:
+  - { title: "Ladder safety (WorkSafe ACT): base 1 m out for every 4 m of height", url: "https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety", checked: 2026-10-22 }
+  - { title: "Ladders (SafeWork NSW): the same 1:4 rule", url: "https://www.safework.nsw.gov.au/hazards-a-z/ladders", checked: 2026-10-22 }
+  - { title: "Ramps to the house and slopes in the garden (Queensland Health): 1:14 for ramps up to 9 m, from AS 1428.1", url: "https://www.health.qld.gov.au/__data/assets/pdf_file/0029/1477208/Ramps-to-the-house-and-slopes-in-the-garden-slides.pdf", checked: 2026-10-22 }
