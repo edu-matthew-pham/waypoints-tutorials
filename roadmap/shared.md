@@ -634,3 +634,19 @@ The site kept Kit's nodes twice: `data/progressions/<subject>/*.md` (97 pages fo
 
 ## Teacher guides: the "When students get stuck" table on phones (19 Oct 2026)
 CI's Teachers smoke test had failed since 18 Oct 17:57: in Chrome stable (CI), `/teach/teachers/make-a-lesson/misconception/` scrolled 9px sideways at 390px because the three-column stuck table (`table.stuck`, `tools/teach.mjs`) could not shrink further; local Chromium's narrower fonts hid it. Shared change: under 560px the table stacks, one card per row, each cell labelled (What you will see / A question to ask / The fix, from `data-label`), with `overflow-wrap:anywhere`. Applies to every teacher guide. The smoke test now also checks 320px, waits for conditions instead of fixed pauses (`WP_SLOW=4` throttles the CPU to try it), reads the Teachers menu from `content/teachers/index.md`, and on CI writes a failure as an annotation, which the API can read when the log host can't be reached.
+
+## Proposed (22 Oct 2026, Matthew agreed the direction): make the site easier to enter and less busy
+
+Inspired by the main site's regrouping (waypoints-framework `hypotheses/product-strategy/06-nav-and-getting-started-spec.md`, live 21 Oct): three fronts in the top row, submenus listing only the things under each, a landing page per front, and a Getting Started with two ways in. The tutorials site has the same shape of problem: the navbar is Learning Waypoints, Tutorials, one menu per subject (seven), Teachers, then Playground / Reference / My progress on lesson pages; two audiences (students arrive at trails, teachers at guides and Create) and no front door that sorts them.
+
+Lightly defined, not designed. Decide after the main site has been in use for a week or two, so both sites end up with one pattern.
+
+- **Entry points.** A student way in and a teacher way in, chosen on the home page rather than discovered in menus. Students: the trailheads (already built for Code). Teachers: guides, Create, curriculum maps and pointer pages, the Teachers courses.
+- **Top row.** Fewer items. Candidates: group the seven subjects under one menu or a small set of groups (STEM core / Engineering and Systems / Learning with AI), or make Subjects one menu and give Students and Teachers the other two. No net growth.
+- **Submenus list one kind of thing** (pathways under a subject, courses under Teachers), with no cross-links or notes.
+- **Lesson-page chips** (Playground, Reference, My progress) stay as they are; they are per-course, not site navigation.
+- **Home page.** Lead with the two ways in and the overview line shared with the main site, then the subjects. The About text moves below.
+- **Keep.** Trail maps, curriculum maps, the Teachers menu's contents, course URLs (progress is keyed by lesson slug).
+- **Evidence first.** Watch a few students and teachers arrive at the site before fixing the groupings (the main site's roadmap item E1 covers this; include tutorials in the same conversations).
+
+Quick fixes done today (22 Oct): home page About opener lists all six subjects and drops the "fullest set" line; "Why we made this" gains the browser paragraph (code runs on the page, interactive models for maths and science); the request line says lessons are checked before they're added and refined as they're used, matching the main site; Engineering and Digital systems get a line under How the lessons work.
