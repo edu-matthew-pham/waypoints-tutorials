@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.600
+Instead of every pixel, store how many of each colour.
+
+2
+00:00:04.178 --> 00:00:06.403
+All white is one run of eight.
+
+3
+00:00:13.838 --> 00:00:16.088
+Three white, four black, one white.

@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.950
+The page looks harmless.
+
+2
+00:00:02.701 --> 00:00:05.651
+View source shows what every browser receives.
+
+3
+00:00:08.860 --> 00:00:12.360
+A comment isn't shown, but it's sent. Here, a password.

@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.850
+A network learns from labelled examples.
+
+2
+00:00:03.701 --> 00:00:07.301
+Examples supply clues and the correct training labels.
+
+3
+00:00:08.077 --> 00:00:11.302
+Training changes connections inside the network.
+
+4
+00:00:12.130 --> 00:00:16.005
+Testing uses the learned connections; it does not train them.

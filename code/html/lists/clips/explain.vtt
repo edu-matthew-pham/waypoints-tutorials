@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:04.151
+A list is a box of items, and an item can hold another list
+
+2
+00:00:05.076 --> 00:00:07.526
+&lt;ul&gt; opens a box for a list.
+
+3
+00:00:08.302 --> 00:00:11.402
+Each &lt;li&gt; is one item, inside the list.
+
+4
+00:00:12.262 --> 00:00:14.912
+The closing U L tag ends the list.
+
+5
+00:00:15.737 --> 00:00:19.562
+&lt;ol&gt; makes a numbered list. The browser does the counting.
+
+6
+00:00:21.314 --> 00:00:24.839
+An item is a box, so a whole list can go inside it.

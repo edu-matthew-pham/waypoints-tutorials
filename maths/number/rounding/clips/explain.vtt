@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.175
+Rounding picks the nearer end.
+
+2
+00:00:02.927 --> 00:00:05.602
+To three places, nothing changes.
+
+3
+00:00:08.495 --> 00:00:11.845
+To two places it is past halfway, so it goes up.
+
+4
+00:00:14.822 --> 00:00:18.122
+To one place the next digit is four, so it stays.

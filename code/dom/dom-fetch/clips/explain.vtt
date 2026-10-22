@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.325
+fetch takes time: await it, turn the reply into data, then show it
+
+2
+00:00:05.326 --> 00:00:07.626
+The page says Loading while it waits.
+
+3
+00:00:08.579 --> 00:00:12.029
+fetch asks for the file; await waits for the reply.
+
+4
+00:00:12.655 --> 00:00:16.455
+Jason turns the reply into data; await waits again.
+
+5
+00:00:17.356 --> 00:00:19.656
+Then show part of it on the page.
+
+6
+00:00:24.778 --> 00:00:27.703
+Loading, then the data, once it has arrived.
