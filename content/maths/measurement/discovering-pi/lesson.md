@@ -7,7 +7,7 @@ title: Discovering π
 summary: "Roll any circle out flat and its circumference is just over 3 of its diameters. C ÷ d is the same number for every circle: π (pi), about 3.14. π's digits never end: 3.14 and 22/7 are close, not exact."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across. People have known this for four thousand years."
+hook: "A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8279
   url: http://127.0.0.1:8279/index.html
@@ -31,6 +31,8 @@ The **circumference** of a circle is hard to measure with a ruler, because it is
 Compare that track with the **diameter**, and something remarkable happens: for every circle, big or small, the circumference is the same number of diameters. That number is called **π** (the Greek letter pi, said "pie"):
 
 $$\pi = \frac{C}{d} \approx 3.14$$
+
+People have known this for a long time: an Egyptian text, the Rhind papyrus, written about 1650 BC, already uses a value close to 3.16 ([MacTutor History of Mathematics](https://mathshistory.st-andrews.ac.uk/HistTopics/Pi_through_the_ages/)).
 
 ## Predict: diameter 10
 

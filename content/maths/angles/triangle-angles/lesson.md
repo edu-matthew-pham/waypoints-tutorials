@@ -6,7 +6,7 @@ title: Angles in a triangle
 summary: However you change a triangle, its three angles add to 180°. Tear off the corners and they make a straight line.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A roof truss, a bike frame, a folded paper plane: triangles of every shape. One thing about their angles never changes."
+hook: "A roof truss, a bike frame, a folded paper plane: triangles of every shape. Squash one and its angles change. Does anything about them stay the same?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8162
   url: http://127.0.0.1:8162/index.html

@@ -7,7 +7,7 @@ title: Pythagoras' theorem
 summary: "Draw a square on each side of a right-angled triangle. The two smaller squares together have exactly the same area as the biggest: a² + b² = c², where c is the hypotenuse, the side opposite the right angle."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Builders check a corner is square with a 3-4-5 triangle: 3 m along one wall, 4 m along the other, and if the diagonal is exactly 5 m, the corner is a right angle. People have used this for over three thousand years."
+hook: "People wear a path straight across the corner of a lawn instead of following the footpath round it. How much shorter is the shortcut? The two sides of the corner are enough to work it out."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8284
   url: http://127.0.0.1:8284/index.html

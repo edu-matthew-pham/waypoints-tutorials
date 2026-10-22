@@ -121,7 +121,7 @@ insight: "One change at a time: an increase on the board, an increase by a multi
 try: { playground: board, starter: "bar.yml#gst", height: 540 }
 tasks:
   - starter: "bar.yml#gst"
-    hint: "GST in Australia is 10%."
+    hint: "GST in Australia is 10% ([ATO](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/how-gst-works))."
     check: { type: board, text: "A TV is $250 before GST. Add 10% GST. What is the price?", when: "p = 10", explain: "10% of $250 = $25, so $275: 250 × 1.1." }
   - check:
       type: answer

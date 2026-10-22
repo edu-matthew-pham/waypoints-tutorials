@@ -6,7 +6,7 @@ title: Comparing integers
 summary: On a number line, the number further left is less. So −7 is less than −2, even though 7 is more than 2.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Thredbo at −9 °C, Canberra at −3 °C: which is colder? Below zero, the number that looks bigger is the smaller one."
+hook: "Thredbo at −9 °C, Canberra at −3 °C: which is colder, and which number is bigger?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8160
   url: http://127.0.0.1:8160/index.html

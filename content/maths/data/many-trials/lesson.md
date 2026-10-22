@@ -6,7 +6,7 @@ title: Many trials
 summary: "Over a few trials the relative frequency jumps about; over many it settles close to the probability. That is why more trials give a better estimate, and why a run of tails does not make heads 'due'."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Flip a coin ten times and you might get 7 heads. Flip it ten thousand times and you will be very close to half. Why does more help?"
+hook: "Flip a coin ten times and you might get 7 heads. Is the coin unfair, or are ten flips just not enough to tell?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8186
   url: http://127.0.0.1:8186/index.html
