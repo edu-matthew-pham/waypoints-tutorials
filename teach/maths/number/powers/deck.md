@@ -26,7 +26,7 @@ Number Foundations · Squares, powers and primes
 
 ## Why it matters
 
-> Fold a sheet of paper in half, then again, and again. After 7 folds it is 2⁷ = 128 layers thick. Powers grow fast, and the short way to write them is exponent notation.
+> Fold a sheet of paper in half, then again, and again. How many layers after 7 folds? There is a short way to write the answer.
 
 <!-- Speaker note: When the same number is multiplied again and again, there is a short way to write it: $$2 \times 2 \times 2 \times 2 = 2^4$$ The **base** (2) is the number being multiplied. The **exponent** (4), also called the index or power, counts how many times it appears. You say "2 to the power of 4". You have met two already: $5^2$ is "5 squared", and $2^3$ is "2 cubed". The board grows a **factor tree**: it splits a number into a factor pair (two numbers that multiply to it), and keeps splitting until every branch is a **prime**, a number with exactly two factors, 1 and itself (2, 3, 5, 7, …). -->
 

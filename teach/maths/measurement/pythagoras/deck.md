@@ -26,7 +26,7 @@ Area, volume, circles and Pythagoras · Pythagoras
 
 ## Why it matters
 
-> Builders check a corner is square with a 3-4-5 triangle: 3 m along one wall, 4 m along the other, and if the diagonal is exactly 5 m, the corner is a right angle. People have used this for over three thousand years.
+> People wear a path straight across the corner of a lawn instead of following the footpath round it. How much shorter is the shortcut? The two sides of the corner are enough to work it out.
 
 <!-- Speaker note: In a right-angled triangle, the longest side is opposite the right angle. It is called the **hypotenuse**, $c$. The two sides that meet at the right angle are $a$ and $b$. **Pythagoras' theorem** says that the squares on the two shorter sides add up to the square on the hypotenuse: $$a^2 + b^2 = c^2$$ To find the hypotenuse: square the two shorter sides, add, then take the square root. -->
 

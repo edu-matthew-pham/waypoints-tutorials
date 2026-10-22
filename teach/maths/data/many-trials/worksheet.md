@@ -7,7 +7,7 @@ subtitle: "Data and chance · Chance · Lesson 8"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Flip a coin ten times and you might get 7 heads. Flip it ten thousand times and you will be very close to half. Why does more help?
+> **Key question:** Flip a coin ten times and you might get 7 heads. Is the coin unfair, or are ten flips just not enough to tell?
 
 
 :::teacher-note

@@ -26,7 +26,7 @@ Number Foundations · Squares, powers and primes
 
 ## Why it matters
 
-> Every whole number above 1 is built from primes in exactly one way, like a code. 60 is 2² × 3 × 5, and no other number has that code.
+> Every whole number above 1 can be broken down into primes: 60 = 2 × 2 × 3 × 5. If two people break the same number down starting in different ways, do they end up with the same primes?
 
 <!-- Speaker note: A **prime** has exactly two factors, 1 and itself: 2, 3, 5, 7, 11, 13, … (1 is not prime.) Every whole number above 1 that is not prime can be split into primes. Writing it that way, with exponents, is its **prime factorisation**: $$36 = 2 \times 2 \times 3 \times 3 = 2^2 \times 3^2$$ A **factor tree** finds it: split the number into any factor pair, then split each branch that is not prime, until every branch ends in a prime. -->
 

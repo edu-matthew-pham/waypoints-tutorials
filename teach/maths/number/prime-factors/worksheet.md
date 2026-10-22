@@ -7,7 +7,7 @@ subtitle: "Number Foundations · Squares, powers and primes · Lesson 7"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Every whole number above 1 is built from primes in exactly one way, like a code. 60 is 2² × 3 × 5, and no other number has that code.
+> **Key question:** Every whole number above 1 can be broken down into primes: 60 = 2 × 2 × 3 × 5. If two people break the same number down starting in different ways, do they end up with the same primes?
 
 
 :::teacher-note

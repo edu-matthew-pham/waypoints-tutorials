@@ -26,7 +26,7 @@ Algebra Foundations · Expressions
 
 ## Why it matters
 
-> Recipes, phone bills and the perimeter of a garden bed all follow a formula. The letters are what changes; the numbers are what stays.
+> Recipes, phone bills and the perimeter of a garden bed all follow a formula. Some parts of a formula change from case to case and some never do. Which are which?
 
 <!-- Speaker note: In maths a letter can stand for a number. A **formula** such as $P = 2l + 2w$ uses letters for quantities, here the perimeter $P$, length $l$ and width $w$ of a rectangle. This lesson is about what the letters and numbers in a formula mean. -->
 

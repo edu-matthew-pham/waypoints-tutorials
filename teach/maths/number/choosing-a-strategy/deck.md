@@ -26,7 +26,7 @@ Number Foundations · Fractions and decimals
 
 ## Why it matters
 
-> Two students work out 25% of 48. One writes a long multiplication; the other halves twice in their head. Both get 12. Which would you rather do in a shop?
+> Two students work out 25% of 48. One writes out a long multiplication; the other does it in their head. Which would you rather do at a shop counter?
 
 <!-- Speaker note: Every calculation with fractions, decimals and percentages can be done the long way. A good strategy makes it quick, and it usually comes from one of three moves: - **Change the order.** Multiplying can be done in any order: $4 \times 2.7 \times 25 = (4 \times 25) \times 2.7 = 100 \times 2.7$. - **Change the form.** $0.75 = \tfrac{3}{4} = 75\%$: use whichever suits the numbers. - **Split a number.** $12 \times 2.5 = 12 \times 2 + 12 \times 0.5 = 24 + 6$. Then **check**: is the answer about the right size? -->
 

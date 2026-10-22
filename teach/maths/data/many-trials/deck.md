@@ -26,7 +26,7 @@ Data and chance · Chance
 
 ## Why it matters
 
-> Flip a coin ten times and you might get 7 heads. Flip it ten thousand times and you will be very close to half. Why does more help?
+> Flip a coin ten times and you might get 7 heads. Is the coin unfair, or are ten flips just not enough to tell?
 
 <!-- Speaker note: In Predict and test you saw that a short experiment rarely matches the expected count. This lesson asks what happens as the number of trials grows. The **relative frequency** (count ÷ trials) jumps about over the first few trials, then settles closer and closer to the **probability**. This is called the **law of large numbers**. It is why a large experiment (or a simulation) gives a good estimate of a probability you cannot work out from a sample space. -->
 

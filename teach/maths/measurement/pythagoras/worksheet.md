@@ -7,7 +7,7 @@ subtitle: "Area, volume, circles and Pythagoras · Pythagoras · Lesson 9"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Builders check a corner is square with a 3-4-5 triangle: 3 m along one wall, 4 m along the other, and if the diagonal is exactly 5 m, the corner is a right angle. People have used this for over three thousand years.
+> **Key question:** People wear a path straight across the corner of a lawn instead of following the footpath round it. How much shorter is the shortcut? The two sides of the corner are enough to work it out.
 
 
 :::teacher-note

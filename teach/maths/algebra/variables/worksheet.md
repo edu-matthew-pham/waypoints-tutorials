@@ -7,7 +7,7 @@ subtitle: "Algebra Foundations · Expressions · Lesson 1"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Recipes, phone bills and the perimeter of a garden bed all follow a formula. The letters are what changes; the numbers are what stays.
+> **Key question:** Recipes, phone bills and the perimeter of a garden bed all follow a formula. Some parts of a formula change from case to case and some never do. Which are which?
 
 
 :::teacher-note

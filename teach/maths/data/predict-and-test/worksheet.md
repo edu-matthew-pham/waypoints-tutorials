@@ -7,7 +7,7 @@ subtitle: "Data and chance · Chance · Lesson 7"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Roll a dice 60 times. Exactly ten sixes? Probably not. But how far off is normal, and when should you suspect the dice?
+> **Key question:** Roll a dice 60 times and count the sixes. How many should you expect, how far off is normal, and when should you suspect the dice?
 
 
 :::teacher-note

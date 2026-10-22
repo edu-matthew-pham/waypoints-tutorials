@@ -7,7 +7,7 @@ subtitle: "Area, volume, circles and Pythagoras · Circles · Lesson 7"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across. People have known this for four thousand years.
+> **Key question:** A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across.
 
 
 :::teacher-note

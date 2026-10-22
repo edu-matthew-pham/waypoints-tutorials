@@ -25,7 +25,7 @@ Data and chance · Data
 
 ## Why it matters
 
-> How many siblings do you have? How long does it take you to run 100 m? One answer is always a whole number; the other could be anything in between.
+> How many siblings do you have? How long does it take you to run 100 m? Both answers are numbers, but they behave differently. How?
 
 <!-- Speaker note: Statistics starts with **data**: values collected to answer a question. Numerical data comes in two kinds: - **Discrete** data is **counted**: number of siblings, goals scored, cars in a car park. It takes separate values, usually whole numbers. - **Continuous** data is **measured**: height, time, mass, temperature. It can take any value in a range; we round it when we record it. The kind of data changes how you collect it, and how you display it later in this unit. -->
 

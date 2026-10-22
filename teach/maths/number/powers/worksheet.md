@@ -7,7 +7,7 @@ subtitle: "Number Foundations · Squares, powers and primes · Lesson 6"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Fold a sheet of paper in half, then again, and again. After 7 folds it is 2⁷ = 128 layers thick. Powers grow fast, and the short way to write them is exponent notation.
+> **Key question:** Fold a sheet of paper in half, then again, and again. How many layers after 7 folds? There is a short way to write the answer.
 
 
 :::teacher-note

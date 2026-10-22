@@ -7,7 +7,7 @@ subtitle: "Angles and shapes · Angle sums · Lesson 4"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** A roof truss, a bike frame, a folded paper plane: triangles of every shape. One thing about their angles never changes.
+> **Key question:** A roof truss, a bike frame, a folded paper plane: triangles of every shape. Squash one and its angles change. Does anything about them stay the same?
 
 
 :::teacher-note

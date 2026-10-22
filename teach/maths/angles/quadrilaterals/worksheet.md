@@ -7,7 +7,7 @@ subtitle: "Angles and shapes · Classifying shapes · Lesson 8"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Is a square a rectangle? People argue about it, but mathematicians agree: yes. A name is a list of properties, and a square has every property on the rectangle's list.
+> **Key question:** Is a square a rectangle? People argue about it. Maths settles it by asking what each name promises.
 
 
 :::teacher-note

@@ -7,7 +7,7 @@ subtitle: "Number Foundations · Fractions and decimals · Lesson 15"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Two students work out 25% of 48. One writes a long multiplication; the other halves twice in their head. Both get 12. Which would you rather do in a shop?
+> **Key question:** Two students work out 25% of 48. One writes out a long multiplication; the other does it in their head. Which would you rather do at a shop counter?
 
 
 :::teacher-note

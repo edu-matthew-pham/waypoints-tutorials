@@ -26,9 +26,9 @@ Area, volume, circles and Pythagoras · Circles
 
 ## Why it matters
 
-> A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across. People have known this for four thousand years.
+> A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across.
 
-<!-- Speaker note: The **circumference** of a circle is hard to measure with a ruler, because it is curved. But you can roll the circle along a line for one full turn: the track it leaves is exactly its circumference, laid flat. Compare that track with the **diameter**, and something remarkable happens: for every circle, big or small, the circumference is the same number of diameters. That number is called **π** (the Greek letter pi, said "pie"): $$\pi = \frac{C}{d} \approx 3.14$$ -->
+<!-- Speaker note: The **circumference** of a circle is hard to measure with a ruler, because it is curved. But you can roll the circle along a line for one full turn: the track it leaves is exactly its circumference, laid flat. Compare that track with the **diameter**, and something remarkable happens: for every circle, big or small, the circumference is the same number of diameters. That number is called **π** (the Greek letter pi, said "pie"): $$\pi = \frac{C}{d} \approx 3.14$$ People have known this for a long time: an Egyptian text, the Rhind papyrus, written about 1650 BC, already uses a value close to 3.16 ([MacTutor History of Mathematics](https://mathshistory.st-andrews.ac.uk/HistTopics/Pi_through_the_ages/)). -->
 
 ---
 

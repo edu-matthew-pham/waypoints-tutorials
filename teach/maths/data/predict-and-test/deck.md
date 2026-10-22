@@ -28,7 +28,7 @@ Data and chance · Chance
 
 ## Why it matters
 
-> Roll a dice 60 times. Exactly ten sixes? Probably not. But how far off is normal, and when should you suspect the dice?
+> Roll a dice 60 times and count the sixes. How many should you expect, how far off is normal, and when should you suspect the dice?
 
 <!-- Speaker note: A probability lets you **predict** what should happen over many trials: $$\text{expected count} = \text{probability} \times \text{number of trials}$$ So in 60 rolls of a fair dice you expect about $60 \times \tfrac{1}{6} = 10$ sixes. Then you **test** it: run the experiment, record the counts in a table, and compare. The **relative frequency** (count ÷ trials) is the experiment's estimate of the probability. -->
 

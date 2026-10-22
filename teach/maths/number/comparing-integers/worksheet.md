@@ -7,7 +7,7 @@ subtitle: "Number Foundations · Integers · Lesson 1"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Thredbo at −9 °C, Canberra at −3 °C: which is colder? Below zero, the number that looks bigger is the smaller one.
+> **Key question:** Thredbo at −9 °C, Canberra at −3 °C: which is colder, and which number is bigger?
 
 
 :::teacher-note

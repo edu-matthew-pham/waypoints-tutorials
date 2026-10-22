@@ -26,7 +26,7 @@ Angles and shapes · Classifying shapes
 
 ## Why it matters
 
-> Is a square a rectangle? People argue about it, but mathematicians agree: yes. A name is a list of properties, and a square has every property on the rectangle's list.
+> Is a square a rectangle? People argue about it. Maths settles it by asking what each name promises.
 
 <!-- Speaker note: A **quadrilateral** has four sides. Its name comes from its **properties**: | Name | Properties | |---|---| | **trapezium** | at least one pair of parallel sides | | **parallelogram** | two pairs of parallel sides (opposite sides equal) | | **rhombus** | four equal sides (so two pairs of parallel sides) | | **rectangle** | four right angles (so two pairs of parallel sides) | | **square** | four equal sides and four right angles | | **kite** | two pairs of equal sides next to each other | The board marks **parallel** sides with matching arrows, **equal** sides with matching ticks, and right angles with a small square. When a shape has every property of another, it belongs to that family too: a square is also a rectangle, a rhombus and a parallelogram. -->
 

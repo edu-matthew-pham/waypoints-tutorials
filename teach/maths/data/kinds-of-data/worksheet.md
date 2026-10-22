@@ -7,7 +7,7 @@ subtitle: "Data and chance · Data · Lesson 1"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** How many siblings do you have? How long does it take you to run 100 m? One answer is always a whole number; the other could be anything in between.
+> **Key question:** How many siblings do you have? How long does it take you to run 100 m? Both answers are numbers, but they behave differently. How?
 
 
 :::teacher-note
