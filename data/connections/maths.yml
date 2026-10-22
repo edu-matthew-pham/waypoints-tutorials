@@ -4,7 +4,7 @@
 # Nothing in the build reads this file yet. Lessons name an entry with `connection:` in the frontmatter
 # (documentation only, like moveId); the lesson text and teacher.yml sources are written by hand from it.
 #
-# Status (22 Oct 2026): Year 7 Algebra and Measurement done node by node; Year 8 holds only the pilot entries
+# Status (22 Oct 2026): every Year 7 node done (all six strands); Year 8 holds only the pilot entries
 # (measurement/finding-a-side and algebra/rearranging). Other strands and years: after the maths teachers' feedback.
 #
 # Two layers
@@ -511,6 +511,738 @@ nodes:
         given: "The test mix."
         hidden: "Paint that is already partly used, and batch-to-batch colour drift."
         check: "Compare swatches of the test and the batch."
+        figures: []
+
+  # ---------------------------------------------------------------- Year 7 Number
+
+  AC9M7N01 n1:
+    move: "See a square number as the area of a square with that side."
+    purpose:
+      hood: "Why it is called 'squared': 6² is the area of a 6 by 6 square."
+      world: "Square pavers and tiles: a 6 by 6 patio takes 36."
+      next: "Square roots (n2), Pythagoras (Year 8), area of a circle (Year 8)."
+    entries:
+      - id: square-pavers
+        kind: world
+        steps: [1, 2]
+        domain: building
+        situation: "A square patio is 6 pavers along each side. How many pavers do I buy?"
+        maths: "6² = 36: the square number is the count of the whole square."
+        given: "Square pavers and a square patio."
+        hidden: "Cut pavers at the edges and breakages."
+        check: "Count the pavers in a square patch at school."
+        figures: []
+
+  AC9M7N01 n2:
+    move: "Undo squaring with the square root, for perfect squares to 144."
+    purpose:
+      hood: "Square root is to squaring what dividing is to multiplying: the way back."
+      step: "The last step of every Pythagoras and circle-area-backwards question."
+      next: "Roots between whole numbers (n3), Pythagoras (Year 8)."
+    entries:
+      - see: square-patch
+
+  AC9M7N01 n3:
+    move: "Say which two whole numbers a square root lies between."
+    purpose:
+      step: "The estimate before the calculator: it catches a wrong key press in every Pythagoras answer."
+      next: "Irrational numbers (Year 8)."
+    entries:
+      - see: square-patch
+
+  AC9M7N01 n4:
+    move: "Use square roots to solve a practical problem, such as the side of a square of known area."
+    purpose:
+      world: "A square room, patch or tile of a given area: how long is each side?"
+    entries:
+      - id: square-patch
+        kind: world
+        steps: [2, 3]
+        domain: environment
+        situation: "A square vegetable patch must have an area of 50 m². How long is each side, and how much edging do I buy?"
+        maths: "Side = √50, between 7 and 8 (about 7.07 m); edging is 4 sides."
+        given: "The area wanted."
+        hidden: "Overlap at the corners of the edging."
+        check: "Square the side length: it should give back about 50."
+        figures: []
+
+  AC9M7N02 n1:
+    move: "Write repeated multiplication as a power, and back."
+    purpose:
+      world: "Anything that doubles: folding paper, a story shared to two friends who each share it to two more."
+      hood: "Why doubling gets big so fast: 2¹⁰ is already over a thousand."
+      next: "Index laws (Year 8), scientific notation and exponential growth (Years 9 and 10)."
+    entries:
+      - id: paper-fold
+        kind: world
+        steps: [1, 2]
+        domain: science
+        situation: "Each time you fold a sheet of paper in half, the layers double. How many layers after 7 folds? Why can't you keep going?"
+        maths: "Layers = 2ⁿ after n folds: 2⁷ = 128."
+        given: "A sheet of paper to try."
+        hidden: "Paper thickness and stiffness, which stop you in practice."
+        check: "Fold one and count."
+        figures: []
+
+  AC9M7N02 n2:
+    move: "Break a number into prime factors with a factor tree, and write it with powers."
+    purpose:
+      hood: "Every whole number is built from primes in exactly one way, like a code for that number."
+      next: "HCF and LCM (n3), simplifying fractions, and (much later) why large primes keep internet traffic private."
+    entries: []
+
+  AC9M7N02 n3:
+    move: "Find the LCM and HCF from prime factorisations."
+    purpose:
+      world: "When do two repeating things line up again (buses, packs, schedules), and what is the biggest equal piece you can cut with no waste?"
+      next: "Adding fractions with common denominators."
+    entries:
+      - id: sizzle-packs
+        kind: world
+        steps: [2, 3]
+        domain: school
+        situation: "For the fundraiser sausage sizzle, sausages come in packs of 12 and bread in loaves of 20 slices. What is the fewest of each to buy so nothing is left over?"
+        maths: "LCM of 12 and 20 is 60: 5 packs and 3 loaves."
+        given: "The pack sizes printed on the packets."
+        hidden: "That some people want two sausages, or none."
+        check: "Count it out: 5 × 12 = 60 = 3 × 20."
+        figures: []
+      - id: bus-line-up
+        kind: world
+        steps: [2, 3]
+        domain: transport
+        situation: "Two buses leave the interchange together, one every 12 minutes and one every 18. When do they next leave together?"
+        maths: "LCM of 12 and 18 is 36 minutes."
+        given: "The two frequencies from a timetable."
+        hidden: "Late running."
+        check: "Read the timetable."
+        figures: []
+      - id: board-squares
+        kind: world
+        steps: [2, 3]
+        domain: design
+        situation: "A 120 cm by 80 cm sheet of plywood must be cut into equal squares, as big as possible, with no waste. What size?"
+        maths: "HCF of 120 and 80 is 40: 40 cm squares, 3 by 2."
+        given: "The sheet size."
+        hidden: "The width of the saw cut."
+        check: "Draw it to scale."
+        figures: []
+
+  AC9M7N03 n1:
+    move: "See each place value column as a power of 10."
+    purpose:
+      hood: "Why our number system works: every column is ten times the one to its right, so 10³ is the thousands column."
+      next: "Scientific notation (Year 9), metric prefixes (kilo is 10³)."
+    entries: []
+
+  AC9M7N03 n2:
+    move: "Write a number in expanded notation with powers of 10, and back."
+    purpose:
+      hood: "Expanded notation shows what each digit is worth, which is what written addition and multiplication rely on."
+      next: "Scientific notation and very large and small numbers (Year 9)."
+    entries: []
+
+  AC9M7N04 n1:
+    move: "Find equivalent fractions and simplify a fraction."
+    purpose:
+      step: "The step before comparing or adding fractions."
+      assessed: "Tests usually want answers in simplest form."
+      next: "Adding fractions (N06), ratios (N08)."
+    entries: []
+
+  AC9M7N04 n2:
+    move: "Convert between fractions, decimals and percentages."
+    purpose:
+      world: "Sales, test marks and sports statistics come in all three forms and have to be compared."
+    entries:
+      - id: discount-compare
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        situation: "One shop has a third off; another has 30% off the same jacket. Which is cheaper?"
+        maths: "A third is 33.3…%, so a third off is the bigger discount."
+        given: "The two sale signs."
+        hidden: "Different starting prices at the two shops (here they are the same)."
+        check: "Work out both sale prices for a $90 jacket."
+        figures: []
+
+  AC9M7N04 n3:
+    move: "Place fractions, decimals and negatives on a number line, including scales that are not marked in ones."
+    purpose:
+      world: "Measuring jugs, thermometers, rulers and fuel gauges are number lines, often marked in halves, quarters or tenths."
+      next: "Integers (N07), graphs and axes (A05)."
+    entries:
+      - id: measuring-jug
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        situation: "The recipe needs 2⅓ cups of water, but the jug is marked in quarter cups. Where on the jug is 2⅓?"
+        maths: "Place 2⅓ on a scale marked in quarters: between 2¼ and 2½, a little above 2¼."
+        given: "A measuring jug."
+        hidden: "Reading the water level at eye height."
+        check: "Measure it out with a third-cup measure and compare."
+        figures: []
+
+  AC9M7N05 n1:
+    move: "Round a decimal to a given number of places."
+    purpose:
+      world: "Money to the cent, measurements to the millimetre, times to the tenth of a second."
+      next: "Choosing the right accuracy (n2)."
+    entries:
+      - id: split-bill
+        kind: world
+        steps: [2]
+        domain: consumer
+        situation: "Three friends split a $94 restaurant bill evenly. What does each pay?"
+        maths: "94 ÷ 3 = 31.333…, rounded to $31.33; someone pays a cent more."
+        given: "The bill."
+        hidden: "Who had the dearer meal."
+        check: "3 × 31.33 = 93.99, a cent short."
+        figures: []
+
+  AC9M7N05 n2:
+    move: "Choose how accurate an answer should be for its context, and say why."
+    purpose:
+      world: "A builder works in millimetres, a road trip in kilometres; and some answers must round up whatever the decimal says."
+    entries:
+      - id: paint-tins
+        kind: world
+        steps: [3]
+        domain: building
+        situation: "The calculation says the wall needs 3.4 tins of paint. How many do you buy?"
+        maths: "Round up to 4: the context, not the decimal, decides the direction."
+        given: "The coverage calculation."
+        hidden: "Leftover paint for touch-ups."
+        check: "Would 3 tins finish the wall?"
+        figures: []
+      - see: split-bill
+
+  AC9M7N05 n3:
+    move: "Estimate to check that a calculated answer is reasonable."
+    purpose:
+      world: "Checking a receipt or a calculator answer in your head before you trust it."
+      step: "The habit that catches slips in every later calculation."
+    entries:
+      - id: receipt-check
+        kind: world
+        steps: [2]
+        domain: consumer
+        situation: "The checkout says $83.70 for six items you think cost about $10 each. Is something scanned twice?"
+        maths: "Round each price and add for an estimate; compare with the total."
+        given: "The prices on the shelf."
+        hidden: "Specials that apply at the register."
+        check: "The itemised receipt."
+        figures: []
+
+  AC9M7N06 n1:
+    move: "Add and subtract fractions and decimals, with common denominators or lined-up places."
+    purpose:
+      world: "Lengths cut from timber, recipe amounts, money and times all add and subtract in decimals and fractions."
+    entries:
+      - id: timber-cuts
+        kind: world
+        steps: [2]
+        domain: building
+        situation: "From a 2.4 m board you cut pieces of 0.85 m and 1.25 m. How much is left?"
+        maths: "2.4 − 0.85 − 1.25 = 0.3 m."
+        given: "The board and the lengths wanted."
+        hidden: "The few millimetres each saw cut removes."
+        check: "Measure the offcut."
+        figures: []
+
+  AC9M7N06 n2:
+    move: "Multiply and divide fractions and decimals."
+    purpose:
+      world: "Scaling a recipe by 1½, working out how many 0.75 L bottles a 6 L batch fills."
+    entries:
+      - id: bottle-fill
+        kind: world
+        steps: [2]
+        domain: consumer
+        situation: "A 6 L batch of homemade cordial goes into 0.75 L bottles. How many bottles?"
+        maths: "6 ÷ 0.75 = 8."
+        given: "The batch size and bottle size on the label."
+        hidden: "Spills and the bit left in the pot."
+        check: "Fill them."
+        figures: []
+      - see: recipe-scaling
+
+  AC9M7N06 n3:
+    move: "Find percentages of quantities, percentage increase and decrease, and the whole from a part."
+    purpose:
+      world: "Sales, price rises and 'was' prices: what you pay and whether a deal is what it says."
+    entries:
+      - id: stacked-discount
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        situation: "A sale gives 20% off, then a further 10% off at the register. Is that 30% off?"
+        maths: "0.8 × 0.9 = 0.72: 28% off, not 30%."
+        given: "The two discounts."
+        hidden: "Nothing: it is exactly this."
+        check: "Work it through on a $100 price."
+        figures: []
+      - id: was-price
+        kind: world
+        steps: [2]
+        domain: consumer
+        situation: "A tag says $48 after 20% off. What was the original price?"
+        maths: "$48 is 80% of the original: 48 ÷ 0.8 = $60."
+        given: "The sale price and the discount."
+        hidden: "Whether the 'was' price was ever charged."
+        check: "20% off $60 is $48."
+        figures: []
+
+  AC9M7N06 n4:
+    move: "Choose the quickest calculation strategy for a problem."
+    purpose:
+      step: "25% is a quarter, 0.5 is a half: choosing the form that makes the sum easy is how people calculate in their heads."
+      assessed: "Non-calculator questions reward an efficient strategy."
+    entries:
+      - see: stacked-discount
+
+  AC9M7N07 n1:
+    move: "Compare and order integers, including negatives."
+    purpose:
+      world: "Winter overnight temperatures below zero, floors below ground, a bank balance in the red."
+      next: "Adding and subtracting integers (n2), the Cartesian plane (A05)."
+    entries:
+      - id: winter-minimums
+        kind: world
+        steps: [1, 2]
+        domain: environment
+        situation: "From a week of Canberra winter overnight lows, some below zero, which night was coldest, and which was warmest?"
+        maths: "Order the integers: −5 is colder than −2."
+        given: "A week of overnight lows (Bureau of Meteorology daily observations)."
+        hidden: "Frost, which depends on more than temperature."
+        check: "The Bureau's observations page for that week."
+        figures: []
+
+  AC9M7N07 n2:
+    move: "Add and subtract integers, including subtracting a negative."
+    purpose:
+      world: "Temperature changes across zero, lift floors below ground, money in and out of an account."
+      next: "Multiplying integers (Year 8), coordinates and graphs."
+    entries:
+      - id: lift-floors
+        kind: world
+        steps: [2]
+        domain: building
+        situation: "A car park lift goes from level −2 to level 3. How many floors does it travel?"
+        maths: "3 − (−2) = 5."
+        given: "Lift levels with negatives for floors below ground."
+        hidden: "Buildings that label floors B1, B2 or skip floor 13."
+        check: "Count the floors on the lift buttons."
+        figures: []
+      - see: winter-minimums
+
+  AC9M7N08 n1:
+    move: "See a ratio as a multiplicative relationship between quantities and write it."
+    purpose:
+      world: "Mixes: cordial and water, concrete, paint colours."
+      next: "Equivalent ratios (n2), rates (Year 8)."
+    entries:
+      - see: paint-mix
+
+  AC9M7N08 n2:
+    move: "Find equivalent ratios and simplify a ratio."
+    purpose:
+      world: "Screen shapes: 1920 × 1080 is the same shape as 16 : 9."
+      next: "Scale drawings and similarity (Years 8 and 9)."
+    entries:
+      - id: screen-ratio
+        kind: world
+        steps: [2, 3]
+        domain: digital
+        situation: "A screen is 1920 by 1080 pixels and a phone is 2400 by 1080. Are they the same shape?"
+        maths: "Simplify both: 16 : 9 and 20 : 9, so no."
+        given: "The pixel sizes from the settings menu."
+        hidden: "Rounded corners and notches."
+        check: "Measure the screens with a ruler and compare the ratio."
+        figures: []
+
+  AC9M7N08 n3:
+    move: "Share a quantity in a given ratio."
+    purpose:
+      world: "Splitting costs fairly by size or share: rent by room size, a bill by how much each used."
+    entries:
+      - id: rent-split
+        kind: world
+        steps: [2, 3, 4]
+        domain: consumer
+        situation: "Three flatmates split the rent by the size of their rooms, 12 : 10 : 8 square metres. Who pays what?"
+        maths: "Share the rent in the ratio 6 : 5 : 4."
+        given: "Room sizes and the rent."
+        hidden: "Shared spaces, and whether size is the fair measure (part of the discussion)."
+        check: "The three shares add to the rent."
+        figures: []
+
+  AC9M7N09 n1:
+    move: "Turn a practical problem into a model, choosing fractions, decimals, percentages or ratios."
+    purpose:
+      world: "Is the fundraiser on track? Is this deal worth it? The first move is choosing the form of the numbers."
+      step: "The modelling habit every later modelling standard builds on."
+    entries:
+      - see: fundraiser-track
+
+  AC9M7N09 n2:
+    move: "Solve the model and say what the answer means for the real situation."
+    purpose:
+      world: "A number is not an answer until it says 'yes, on track' or 'no, need $90 a week more'."
+    entries:
+      - id: fundraiser-track
+        kind: world
+        steps: [3, 4, 5]
+        domain: school
+        situation: "The class has raised $380 of a $650 goal, with 3 of 8 weeks to go. Are we on track?"
+        maths: "Compare the fraction raised (380 ÷ 650 ≈ 58%) with the fraction of time gone (5 ÷ 8 ≈ 63%); find the weekly amount still needed."
+        given: "The running total and the dates."
+        hidden: "Money tends to come in late, near the event."
+        check: "The final total."
+        figures: []
+
+  AC9M7N09 n3:
+    move: "Justify the choice of representation and strategy, and communicate it."
+    purpose:
+      world: "The newsletter says '58% of the way there', not '380/650': choosing the form the reader understands."
+      assessed: "Modelling tasks are marked on the reasoning and the explanation, not only the number."
+    entries:
+      - see: fundraiser-track
+
+  # ---------------------------------------------------------------- Year 7 Space
+
+  AC9M7SP01 n1:
+    move: "Draw and build the net of a prism or other 3D object."
+    purpose:
+      world: "Every cardboard box and food packet starts as a flat net."
+    entries:
+      - id: box-net
+        kind: world
+        steps: [2, 4]
+        domain: design
+        situation: "Design the flat cardboard template for a gift box that fits a particular mug."
+        maths: "Draw a net of a rectangular prism from the mug's dimensions, with flaps."
+        given: "The mug's height and width."
+        hidden: "Card thickness and glue tabs."
+        check: "Cut it out, fold it and test it with the mug."
+        figures: []
+
+  AC9M7SP01 n2:
+    move: "Draw and read isometric drawings and plans and elevations."
+    purpose:
+      world: "Real estate floor plans, flat-pack instructions and builders' elevations are all 2D views of 3D things."
+    entries:
+      - id: floor-plan
+        kind: world
+        steps: [2, 3]
+        domain: building
+        situation: "A floor plan of a bedroom is drawn from above, to scale. Will my bed and desk fit, with room to open the door?"
+        maths: "Read lengths from the plan view; sketch furniture on it to the same scale."
+        given: "A real estate floor plan with dimensions."
+        hidden: "Windows, power points and the height of things (the plan cannot show them)."
+        check: "Measure a room at home or school and compare with a drawn plan."
+        figures: []
+
+  AC9M7SP01 n3:
+    move: "Say what each kind of 2D drawing shows and hides, and when to use each."
+    purpose:
+      world: "A builder needs plans and elevations; a buyer understands an isometric sketch. Choosing the drawing is part of the job."
+    entries:
+      - see: floor-plan
+
+  AC9M7SP02 n1:
+    move: "Classify triangles by sides and by angles."
+    purpose:
+      hood: "Names carry properties: 'isosceles' tells you two sides and two angles are equal, without measuring."
+      next: "Angle reasoning, congruence (Year 8), Pythagoras (right-angled triangles)."
+    entries: []
+
+  AC9M7SP02 n2:
+    move: "Classify quadrilaterals by their properties, and see how the families nest (a square is a rectangle)."
+    purpose:
+      world: "Parallelogram linkages keep things level as they move: toolbox trays, desk lamps, car-park barriers."
+      hood: "Definitions that include special cases, the way a rule written for every rectangle also works for squares."
+    entries:
+      - id: parallelogram-linkage
+        kind: world
+        steps: [1, 2]
+        domain: design
+        situation: "Why does a cantilever toolbox tray stay level as it swings open?"
+        maths: "The arms form a parallelogram: opposite sides stay equal, so they stay parallel and the tray stays level."
+        given: "A cantilever toolbox or a picture of one."
+        hidden: "The hinges and the friction in them."
+        check: "Build one from card strips and split pins."
+        figures: []
+
+  AC9M7SP02 n3:
+    move: "Classify polygons by sides and regularity, and reason about symmetry and convexity."
+    purpose:
+      world: "Logos, tiles and wheel rims are designed with exact symmetry; designers name it to get it right."
+      next: "Polygon angle sums (M05), transformations (SP03)."
+    entries: []
+
+  AC9M7SP03 n1:
+    move: "Translate shapes on the Cartesian plane and describe the move with coordinates."
+    purpose:
+      world: "How a game or animation moves a character: add the same amount to every coordinate."
+      hood: "What drawing software does when you drag a shape."
+    entries:
+      - id: sprite-move
+        kind: world
+        steps: [1, 2]
+        domain: digital
+        situation: "In a simple game, pressing the right arrow moves the character 5 to the right. What happens to each corner of its outline?"
+        maths: "Every point (x, y) becomes (x + 5, y)."
+        given: "The character's corner coordinates."
+        hidden: "The animation frames in between."
+        check: "Try it in a block-coding game editor."
+        figures: []
+
+  AC9M7SP03 n2:
+    move: "Reflect shapes in the x- and y-axes and describe the rule."
+    purpose:
+      world: "Mirror writing on the front of ambulances reads correctly in a driver's rear-view mirror."
+    entries:
+      - id: ambulance-mirror
+        kind: world
+        steps: [1, 2]
+        domain: transport
+        situation: "Why is AMBULANCE written backwards on the front of the vehicle?"
+        maths: "A mirror reflects left to right; writing that is already reflected comes back the right way round."
+        given: "A photo of an ambulance front, or the word on paper."
+        hidden: "Nothing: hold it up to a mirror."
+        check: "Write a word in mirror writing and read it in a mirror."
+        figures: []
+
+  AC9M7SP03 n3:
+    move: "Rotate shapes by 90°, 180° and 270° about a point and describe it with coordinates."
+    purpose:
+      world: "Repeat patterns on tiles and fabric are one design turned again and again."
+      hood: "What happens when a phone turns its screen."
+    entries:
+      - id: tile-rotation
+        kind: world
+        steps: [2, 4]
+        domain: design
+        situation: "A tile design is rotated a quarter turn each time to make a four-tile block. Where does each part of the design end up?"
+        maths: "Rotating 90° about the centre: (x, y) becomes (−y, x)."
+        given: "One tile's design on a grid."
+        hidden: "Grout lines."
+        check: "Cut out four copies and lay them."
+        figures: []
+
+  AC9M7SP04 n1:
+    move: "Design a step-by-step algorithm (a flowchart or decision tree) that classifies shapes."
+    purpose:
+      world: "Field guides and identification keys are decision trees: answer yes or no until you know what it is."
+      hood: "The same idea a program uses to sort things."
+    entries:
+      - id: field-guide-key
+        kind: world
+        steps: [2, 4]
+        domain: environment
+        situation: "A field guide to local birds asks yes or no questions to identify a bird. How do you write one that always gets an answer?"
+        maths: "A decision tree where each question splits the cases by one property."
+        given: "A small set of local birds, leaves or shapes."
+        hidden: "Things that do not fit any branch (juveniles, damaged leaves)."
+        check: "Test the key on cases it was not built from."
+        figures: []
+
+  AC9M7SP04 n2:
+    move: "Describe an algorithm in words and test it by tracing cases through it."
+    purpose:
+      world: "Every key, checklist and program is tested by running cases through it, including awkward ones."
+      step: "Testing with edge cases, the habit coding lessons use too."
+    entries:
+      - see: field-guide-key
+
+  # ---------------------------------------------------------------- Year 7 Statistics
+
+  AC9M7ST01 n1:
+    move: "Tell discrete from continuous numerical data, and see how that changes how you collect it."
+    purpose:
+      world: "Counting people in a queue (discrete) and timing how long they wait (continuous) need different tools and graphs."
+      next: "Choosing displays (ST02)."
+    entries:
+      - see: canteen-queue
+
+  AC9M7ST01 n2:
+    move: "Calculate the range, median, mean and mode of a data set."
+    purpose:
+      world: "Summaries on bills, reports and sports pages: average daily use, middle price, most common size."
+      next: "Choosing the best measure (n3)."
+    entries:
+      - id: power-bill
+        kind: world
+        steps: [1, 2]
+        domain: consumer
+        situation: "An electricity bill shows average daily use for this quarter and the same quarter last year. How is that worked out, and what does it hide?"
+        maths: "The mean of the daily readings; the range shows how much days differ."
+        given: "A real bill, or daily data from the retailer's app."
+        hidden: "How many people live in the house, and the weather."
+        check: "The figure printed on the bill."
+        figures: []
+
+  AC9M7ST01 n3:
+    move: "Choose the measure of centre that best describes the data, and justify it."
+    purpose:
+      world: "House prices are reported as medians because a few very expensive sales would drag the mean up."
+    entries:
+      - id: median-house-price
+        kind: world
+        steps: [3, 5]
+        domain: consumer
+        situation: "Why do property reports give the median house price, not the mean?"
+        maths: "A few unusually high sales pull the mean up; the median is the middle sale and is not moved by them."
+        given: "A small set of sale prices with one mansion."
+        hidden: "That the houses sold this month are not all the houses."
+        check: "Work out the mean and median with and without the mansion."
+        figures:
+          - claim: "Medians are used for house prices because a few unusually high or low prices can skew the average."
+            source: { title: "Median house prices explained (Westpac)", url: "https://www.westpac.com.au/personal-banking/home-loans/median-house-prices-explained/", checked: 2026-10-22 }
+
+  AC9M7ST02 n1:
+    move: "Build an ordered stem-and-leaf plot and read values from it."
+    purpose:
+      world: "Some printed bus and train timetables are stem-and-leaf plots: the hour is the stem and the minutes are the leaves."
+      hood: "It keeps every value while showing the shape."
+    entries:
+      - id: timetable-stem-leaf
+        kind: world
+        steps: [1, 2]
+        domain: transport
+        situation: "A stop's timetable lists each hour once, with the minutes of each departure beside it. How many buses leave between 7 and 9 am?"
+        maths: "Read it as a stem-and-leaf plot: hours are stems, minutes are leaves."
+        given: "A timetable laid out this way."
+        hidden: "Weekend and holiday timetables."
+        check: "The stop's printed timetable."
+        figures: []
+
+  AC9M7ST02 n2:
+    move: "Describe a distribution's shape, centre, spread and outliers."
+    purpose:
+      world: "Waiting times are usually skewed: most are short, a few are very long. That shape matters more than the average."
+      next: "Comparing distributions (n3), sampling (Year 8)."
+    entries:
+      - see: canteen-queue
+
+  AC9M7ST02 n3:
+    move: "Compare two distributions using displays and summary statistics."
+    purpose:
+      world: "Which bus route is more reliable, which class did better, which brand lasts longer: comparisons of two sets of data."
+    entries:
+      - id: bus-lateness
+        kind: world
+        steps: [3, 4]
+        domain: transport
+        situation: "Two bus routes get you to school. Which is more reliable?"
+        maths: "Compare how late each bus is over a few weeks: centre and spread, not just the average."
+        given: "Lateness data recorded by the class, or from a transport app."
+        hidden: "Weather and roadworks on particular days."
+        check: "Keep recording for another week and see if the comparison holds."
+        figures: []
+
+  AC9M7ST03 n1:
+    move: "Plan a statistical investigation: a question, what to measure, how, and from whom."
+    purpose:
+      world: "Any real question about the school (is the canteen line longer on Fridays?) starts with a plan for the data."
+      step: "The planning habit behind every survey and experiment, in maths and science."
+    entries:
+      - see: canteen-queue
+
+  AC9M7ST03 n2:
+    move: "Collect, display and analyse the data, and report back on the question."
+    purpose:
+      world: "The answer goes to someone who can act on it: the canteen, the year coordinator, the student council."
+      assessed: "Investigations are marked on whether the conclusion answers the question, with evidence."
+    entries:
+      - id: canteen-queue
+        kind: world
+        steps: [3, 4, 5]
+        domain: school
+        situation: "Is the canteen line longer on Fridays, and would a second window help?"
+        maths: "Count people in the line (discrete) and time the waits (continuous); compare days with displays and summaries; report to the canteen."
+        given: "A stopwatch and a roster of observers."
+        hidden: "Days with events or bad weather that change who buys lunch."
+        check: "Repeat the count the following week."
+        figures: []
+
+  # ---------------------------------------------------------------- Year 7 Probability
+
+  AC9M7P01 n1:
+    move: "List all the outcomes of a single chance event."
+    purpose:
+      world: "Game designers list every outcome of a spinner or card draw before they set the rules."
+      next: "Assigning probabilities (n2)."
+    entries:
+      - see: game-spinner
+
+  AC9M7P01 n2:
+    move: "Assign probabilities with P = favourable ÷ total, as a fraction, decimal or percentage."
+    purpose:
+      world: "Designing a fair game, or one where a rare item turns up about one time in eight."
+    entries:
+      - id: game-spinner
+        kind: world
+        steps: [2, 4]
+        domain: design
+        situation: "You are designing a board game spinner. You want the 'bonus' to come up about one spin in eight. How do you split the spinner?"
+        maths: "List the outcomes; one equal section of eight gives P = 1/8."
+        given: "A circle to divide."
+        hidden: "Spinners that are not quite fair (tested in P02)."
+        check: "Spin it 40 times and count."
+        figures: []
+
+  AC9M7P01 n3:
+    move: "Use a probability to predict how often an outcome will happen in a number of trials."
+    purpose:
+      world: "A 30% chance of rain: on days like this, about 3 in 10 get at least a little rain."
+    entries:
+      - id: chance-of-rain
+        kind: world
+        steps: [1, 2, 3]
+        domain: environment
+        situation: "The forecast says a 30% chance of rain tomorrow. What does that mean, and should the outdoor sport go ahead?"
+        maths: "Out of 10 days with this forecast, expect rain on about 3."
+        given: "The forecast's chance of rain."
+        hidden: "How much rain: the chance is for any rain at all (at least 0.2 mm)."
+        check: "Record the forecast chance and whether it rained, over a term."
+        figures:
+          - claim: "Chance of rain is the likelihood of more than the minimum measurable rainfall (0.2 mm)."
+            source: { title: "Interpreting BOM forecasts (FarmPoint, Tasmanian Government)", url: "https://farmpoint.tas.gov.au/news/interpreting-bom-forecasts", checked: 2026-10-22 }
+
+  AC9M7P02 n1:
+    move: "Run a chance experiment many times and record the results."
+    purpose:
+      world: "Testing whether something is fair: a spinner, a coin flip used to decide who kicks off."
+      step: "The experiment habit science uses too."
+    entries:
+      - id: fair-spinner
+        kind: world
+        steps: [2, 4]
+        domain: design
+        situation: "Is the spinner you made for your game actually fair?"
+        maths: "Spin it many times, record frequencies and compare with the probabilities it should have."
+        given: "The spinner from P01."
+        hidden: "Wobble and wear that change it over time."
+        check: "Pool the whole class's spins."
+        figures: []
+
+  AC9M7P02 n2:
+    move: "See that relative frequencies get closer to the theoretical probability over many trials, and why short runs vary."
+    purpose:
+      world: "Five 5-star reviews are weaker evidence than five hundred at 4.6: small samples swing a lot."
+      next: "Sampling and variation (Year 8)."
+    entries:
+      - id: few-reviews
+        kind: world
+        steps: [3, 5]
+        domain: consumer
+        situation: "One product has 5 reviews, all 5 stars. Another has 500, averaging 4.6. Which is more likely to be good?"
+        maths: "Small samples vary a lot; large ones settle near the true value."
+        given: "Two real product pages."
+        hidden: "Fake reviews (a different problem)."
+        check: "Simulate: take random groups of 5 from a set of 500 ratings and watch the averages swing."
         figures: []
 
   # ---------------------------------------------------------------- Year 8 (pilot entries only)
