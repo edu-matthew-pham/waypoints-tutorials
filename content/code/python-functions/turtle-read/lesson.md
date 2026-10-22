@@ -48,7 +48,12 @@ stage: investigate
 code: garden.py#garden
 insight: "A longer program is made of parts that each do one job. Find the part, see what it depends on, and you can change it without breaking the rest."
 tasks:
-  - check:
+  - diagram:
+      ref: diagrams.mmd#parts
+      alt: "A flowchart of one pass of the loop, once for each colour. First a decision: is i even? Yes gives a green stem, no a dark green stem. Then draw the stem, taller each time. Then fill the flower head and grow the next head by 4. Then go back down and along 70, and start the next flower."
+      caption: "One pass of the garden loop"
+      role: explain
+    check:
       type: match
       q: "Match each part of the program with its job."
       pairs:
@@ -101,3 +106,15 @@ Add two more colours. Everything else should keep working.
 Find the part that makes the stems different, and change only that.
 
 You have found parts by their jobs. In Course B, you will give those parts names, so you can reuse them.
+
+```code diagrams.mmd#parts
+flowchart TD
+  A[For each colour in the list] --> B{"Is i even?"}
+  B -- yes --> C[Green stem]
+  B -- no --> D[Dark green stem]
+  C --> E[Draw stem, taller each time]
+  D --> E
+  E --> F[Fill head, then grow it]
+  F -- back down and along --> A
+  class B new
+```

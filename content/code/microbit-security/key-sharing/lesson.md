@@ -6,6 +6,10 @@ summary: Both ends need the same key, but anything sent by radio is public. Each
 language: makecode
 introduces: [radio-value, value-name-limit, text-compare]
 hook: "Every time you open a secure web page, your computer and a server agree a key with a stranger, in public, in less than a second. This lesson is the idea behind it, with numbers small enough to follow by hand."
+explainDiagram:
+  ref: diagrams.mmd#exchange
+  alt: "A sequence between micro:bit A, whose secret is 6, and micro:bit B, whose secret is 15, with the public numbers 23 and 5. A sends its mix, 8. B sends its mix, 19. A works out 19 to the power 6, mod 23, which is 2. B works out 8 to the power 15, mod 23, which is also 2. Anyone listening hears only 8 and 19, never the key."
+  caption: "Both ends get 2, and 2 is never sent"
 ---
 The last lesson needs both micro:bits to hold the **same key**. How do they get it? If one sends the key by radio, everyone in the group hears it (lesson 1). Meeting in person works for two friends, but not for a phone and a web server.
 
@@ -102,3 +106,15 @@ check: { type: code, text: "A key exchange, then a locked PIN: A sends the mix a
 ```
 
 Put it together: **A** sends your mix and each micro:bit works out the shared key and shows a tick; **B** sends a PIN locked with it; the other micro:bit unlocks and shows the PIN. The key was never sent.
+
+```code diagrams.mmd#exchange
+sequenceDiagram
+  participant A as micro:bit A (secret 6)
+  participant B as micro:bit B (secret 15)
+  Note over A,B: public: 23 and 5
+  A->>B: mix 8
+  B->>A: mix 19
+  Note over A: 19⁶ mod 23 = 2
+  Note over B: 8¹⁵ mod 23 = 2
+  Note over A,B: a listener hears 8 and 19, not 2
+```

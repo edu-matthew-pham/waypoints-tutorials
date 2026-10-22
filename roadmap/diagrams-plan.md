@@ -1,6 +1,6 @@
 # Diagrams in lessons: Mermaid guidance and pilot plan
 
-Proposed 19 Oct 2026; Matthew said go the same day. **Push 1 built (19 Oct):** the fields, rendering, decks, worksheets, guide, Create preview and validation, with pilots 4 (console-while) and 11 (biology-9/pathways). Push 2: the other 13 pilots and the Prepare fixes. Mermaid is the first of the visual and quality tools in `shared.md` › Proposed: visual and quality tools. Also kept as the Project doc `claude/diagrams-plan.md`.
+Proposed 19 Oct 2026; Matthew said go the same day. **Push 1 built (19 Oct):** the fields, rendering, decks, worksheets, guide, Create preview and validation, with pilots 4 (console-while) and 11 (biology-9/pathways). **Push 2 built (22 Oct):** the other 13 pilots (all 15 now have diagrams, 20 in all). Prepare fixes done 19 Oct. Next: Matthew reviews the pilots live, then decide on a wider rollout. Mermaid is the first of the visual and quality tools in `shared.md` › Proposed: visual and quality tools. Also kept as the Project doc `claude/diagrams-plan.md`.
 
 ## Where things stand
 
@@ -41,6 +41,41 @@ Proposed 19 Oct 2026; Matthew said go the same day. **Push 1 built (19 Oct):** t
   - An explain diagram goes on the deck before the first Explain step, unless a step already has its own explaining diagram.
   - Check options as diagrams are not built yet (pilot 14 needs them).
 - **Format:** AUTHORING.md › Diagrams (Mermaid). It also covers the stricter rule: Mermaid only for boxes and arrows.
+
+## Built in push 2 (22 Oct 2026)
+
+All diagrams are inline in `lesson.md` (```code diagrams.mmd#name blocks), so no clip re-records.
+
+- **Code:**
+  - turtle-decisions: Predict stimulus, the if/else loop as a flowchart.
+  - turtle-returns: explain, the call and return as a sequence.
+  - turtle-read: the "Find the parts" task, one pass of the garden loop.
+  - console-menu: the Make spec, the shape of every menu app.
+  - objects-classes: explain, one class making three star objects.
+  - flask-routes: "Where this leads", a visit to /about as a sequence.
+- **Secret messages:**
+  - challenge-response: explain, the challenge and answer.
+  - key-sharing: explain, the key exchange with the real numbers.
+- **Digital systems:** cyber/threats, the club app's data-flow diagram on the Explain step, `blank: true`. Its defences are hidden on the worksheet copy.
+- **Science:**
+  - biology-9/feedback: the negative feedback loop on the Explain step, plus a misconception drawing (no switch-off) on the "Switching off" task.
+  - decay-chains: the U-238 chain on the Explain step, `blank: true`, with U-238 kept as the clue.
+  - earth-9: a "look back" carbon cycle that grows across carbon-stores (the four stores), carbon-life (adds photosynthesis, respiration and decomposition) and fossil-fuels (adds millions of years and burning).
+- **AI:** training-examples, explain, how the fruit sorter predicts and when to check it.
+
+**Changed from the plan:**
+- **key-sharing:** an explain diagram, not a class slide built up one message per slide. It reaches the site and the recap too, and the deck still gets it as a slide.
+- **threats:** the diagram sits on the Explain step, not the primer. Primers don't take diagrams yet.
+- **feedback:** the misconception drawing sits on a task, not the teacher panel. The teacher panel doesn't take diagrams.
+- **decay-chains:** a labelled chain with a blank copy, not diagrams as check options. Option diagrams are not built; build them only if a lesson needs one.
+
+**Tool change:** sequence diagrams no longer repeat their participant boxes at the bottom. This applies on the site (`mirrorActors: false`) and in decks (an init line Prepare reads).
+
+**Checked:**
+- `validate` passes, with 20 diagrams within the size limits.
+- Every affected course's decks fit.
+- Every pilot page loads its diagrams at phone width with no errors.
+- The worksheet blank copies are right.
 
 ## Prepare (done 19 Oct 2026, waypoints-prepare 13a4f54)
 

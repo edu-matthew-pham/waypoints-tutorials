@@ -37,6 +37,10 @@ explainClip:
         say: "print only shows a value on screen. The program cannot use it."
     - wait: 1200
     - expect: { selector: "#status", contains: "Finished" }
+explainDiagram:
+  ref: diagrams.mmd#returns
+  alt: "A sequence of calls. Your program calls metres(5). metres works out 5 times 20 and returns 100 to your program. Then your program calls forward(100), and the turtle moves 100."
+  caption: "forward(metres(5)) runs in two steps"
 ---
 You can write functions that draw. Now you will write functions that **give an answer back**, and combine several functions to build something bigger.
 
@@ -182,3 +186,14 @@ try: { starter: "returns.py#street", height: 460 }
 ```
 
 This is a finished street. Make the houses all the same size, then make them shrink along the street. Add a sixth house, or change the gap between them.
+
+```code diagrams.mmd#returns
+sequenceDiagram
+  participant P as Your program
+  participant M as metres
+  participant F as forward
+  P->>M: metres(5)
+  M-->>P: return 100
+  P->>F: forward(100)
+  Note over F: the turtle moves 100
+```

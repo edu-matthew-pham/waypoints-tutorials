@@ -32,6 +32,10 @@ explainClip:
         text: "Two pets, one pattern: each keeps its own values."
         say: "Two pets from one pattern. Each keeps its own values."
     - wait: 1500
+explainDiagram:
+  ref: diagrams.mmd#stars
+  alt: "class Star is the plan. Calling Star three times makes three star objects. Each one keeps its own values: star 1 has speed 4, star 2 speed 7, star 3 speed 3, and each has 1 point."
+  caption: "One class, many objects"
 ---
 A dictionary needed `star["speed"]`. A **class** lets you make your own kind of object: `class Star` describes what every star stores, and `Star(100)` makes one. Its values read like a turtle's: `star.speed`.
 
@@ -151,3 +155,11 @@ check:
 ```
 
 The stars and rocks still need the game to move them and check them one line at a time. Next lesson gives the class its own **methods**, so a star can move itself: `star.move()`.
+
+```code diagrams.mmd#stars
+flowchart TD
+  C["class Star: the plan"] -- "Star(-150)" --> A["star 1: speed 4, points 1"]
+  C -- "Star(-50)" --> B["star 2: speed 7, points 1"]
+  C -- "Star(50)" --> D["star 3: speed 3, points 1"]
+  class C new
+```

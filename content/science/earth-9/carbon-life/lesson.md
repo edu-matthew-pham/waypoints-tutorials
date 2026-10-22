@@ -132,6 +132,11 @@ check:
 
 ```step
 stage: info
+diagram:
+  ref: diagrams.mmd#cycle
+  alt: "The carbon cycle so far. Four stores: atmosphere, hydrosphere, biosphere and geosphere. New in this lesson: photosynthesis moves carbon from the air into living things, and respiration and decomposition move it back. These two flows nearly balance. Carbon also moves between the air and the oceans, from living things into rock, and very slowly from rock to the air."
+  caption: "The carbon cycle so far: the living flows"
+  role: summary
 check: { type: reflect, text: "I compared my first answer about a tree's mass with what I now know." }
 ```
 
@@ -142,3 +147,17 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Photosynthesis:** carbon moves from the **atmosphere** (CO₂) into the **biosphere** (sugars, then wood, leaves and animals).
 - **Respiration** (plants, animals, decomposers) and **decomposition** move carbon back to the atmosphere.
 - When the flows balance, CO₂ in the air stays steady; change one and the store changes.
+
+```code diagrams.mmd#cycle
+flowchart TD
+  A[Atmosphere: CO₂ in the air]
+  H[Hydrosphere: dissolved in oceans]
+  B[Biosphere: living things, soil]
+  G[Geosphere: rocks, fossil fuels]
+  A -- photosynthesis --> B
+  B -- "respiration, decomposition" --> A
+  A <--> H
+  B --> G
+  G -. very slowly .-> A
+  class B new
+```

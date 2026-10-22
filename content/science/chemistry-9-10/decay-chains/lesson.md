@@ -52,6 +52,12 @@ Each step changes the atomic number and the mass number. Keep an eye on both.
 
 ```step
 stage: investigate
+diagram:
+  ref: diagrams.mmd#chain
+  alt: "The uranium-238 decay chain. Uranium-238, atomic number 92, alpha decays to thorium-234, atomic number 90: alpha lowers the atomic number by 2 and the mass number by 4. Thorium-234 beta decays to protactinium-234, 91: beta raises the atomic number by 1 and leaves the mass number. Protactinium-234 beta decays to uranium-234, 92. Seven more alpha and four more beta decays end at lead-206, atomic number 82, which is stable."
+  caption: "The start and end of the uranium-238 chain"
+  role: explain
+  blank: true
 insight: "Applying the two rules to one step, to a whole chain and then to the question of why it stops covers the three success criteria."
 tasks:
   - check:
@@ -150,3 +156,13 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Alpha** decay: atomic number −2, mass number −4. **Beta** decay: atomic number +1, mass number unchanged.
 - Uranium-238 ends as lead-206 after **8 alpha** and **6 beta** decays.
 - Alpha decays make the nucleus smaller and beta decays fix its balance of neutrons to protons, until it is stable.
+
+```code diagrams.mmd#chain
+flowchart TD
+  A["U-238 (92)"] -- "α: −2, −4" --> B["Th-234 (90)"]
+  B -- "β: +1, mass same" --> C["Pa-234 (91)"]
+  C -- "β: +1, mass same" --> D["U-234 (92)"]
+  D -- "7 more α, 4 more β" --> E(["Pb-206 (82): stable"])
+  class E new
+  class A keep
+```

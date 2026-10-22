@@ -6,6 +6,10 @@ summary: A password sent again and again is the same every time. A challenge tha
 language: makecode
 assumes: [value-name-limit]
 hook: "Car key fobs, tap-to-pay cards and building passes do not send a fixed code. The reader sends a random number, and the card answers in a way only it can. Next time the number is different."
+explainDiagram:
+  ref: diagrams.mmd#challenge
+  alt: "A sequence between the key micro:bit and the lock. The key knocks. The lock sends a fresh challenge, 50. The key works out 50 times 7 plus 3, remainder 100, which is 53, and sends 53. The lock does the same sum, gets 53, and opens. A listener hears 50 and 53, which only fit this one challenge."
+  caption: "The key proves itself without sending the key"
 ---
 In the XOR lesson the keypad sent the **same locked PIN every time**. Anyone who ever heard that number has a number that works today, tomorrow and next week, without ever knowing the key.
 
@@ -102,3 +106,14 @@ check: { type: code, text: "After three wrong answers the lock refuses to give a
 ```
 
 Make the lock safer. After **three wrong answers** it shows a skull and ignores knocks for **five seconds**. Why does this help against someone who just guesses?
+
+```code diagrams.mmd#challenge
+sequenceDiagram
+  participant K as Key micro:bit
+  participant L as Lock micro:bit
+  K->>L: knock
+  L->>K: challenge 50
+  Note over K: (50 × 7 + 3) rem 100 = 53
+  K->>L: answer 53
+  Note over L: same sum gives 53: open
+```

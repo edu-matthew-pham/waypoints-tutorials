@@ -20,6 +20,10 @@ explainClip:
     - wait: 1200
     - caption: { text: "Test unfamiliar cases; a prediction is not a guarantee." }
     - wait: 1200
+explainDiagram:
+  ref: diagrams.mmd#sorter
+  alt: "A flowchart of the fruit sorter. It keeps its labelled examples. A new fruit comes in. The sorter finds the closest examples and copies their label. Then ask: is the new fruit like any example it has seen? If yes, the prediction is probably right. If no, it is a guess: check it."
+  caption: "How the sorter makes a prediction"
 ---
 
 We are moving beyond choosing words with dice. Now we will investigate how a model uses **examples and clues** to classify something new. Our Waypoints model is deliberately simplified: it is **not** a modern neural network.
@@ -120,3 +124,15 @@ check: { type: reflect, text: "I can explain why an AI's answer depends on examp
 ```
 
 On the board you could see every example. A real AI assistant learned from far more examples than you could ever read, and you can't see them. So when it gives you a confident answer, ask: *what might it have learned from?* Better examples often help a model, but they can't guarantee a good answer.
+
+```code diagrams.mmd#sorter
+flowchart TD
+  A[Labelled examples] --> M[Sorter keeps the examples]
+  N([A new fruit]) --> M
+  M --> C[Finds the closest examples]
+  C --> P[Copies their label]
+  P --> K{"Like an example it has seen?"}
+  K -- yes --> G[Probably right]
+  K -- no --> W[A guess: check it]
+  class K new
+```

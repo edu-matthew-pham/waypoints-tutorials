@@ -163,6 +163,11 @@ tasks:
 
 ```step
 stage: info
+diagram:
+  ref: diagrams.mmd#cycle
+  alt: "The carbon cycle so far. Carbon is stored in four spheres: the atmosphere as CO₂ in the air, the hydrosphere dissolved in the oceans, the biosphere in living things and soil, and the geosphere in rocks and fossil fuels. Carbon moves between the air and the oceans, between the air and living things, from living things into rock, and very slowly from rock back to the air."
+  caption: "The carbon cycle so far: four stores"
+  role: summary
 check: { type: reflect, text: "I compared my guess about the biggest carbon store with the board." }
 ```
 
@@ -174,3 +179,15 @@ Write one sentence: "At first I thought… Now I think… because…"
 - The oceans hold far more than the air; rocks hold the most of all.
 - Carbon is never made or destroyed. It **flows** between stores: the **carbon cycle** is the map of those flows.
 - A store stays steady when the flows into it balance the flows out.
+
+```code diagrams.mmd#cycle
+flowchart TD
+  A[Atmosphere: CO₂ in the air]
+  H[Hydrosphere: dissolved in oceans]
+  B[Biosphere: living things, soil]
+  G[Geosphere: rocks, fossil fuels]
+  A <--> H
+  A <--> B
+  B --> G
+  G -. very slowly .-> A
+```

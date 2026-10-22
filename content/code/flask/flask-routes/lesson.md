@@ -144,6 +144,11 @@ Make a small site for a club, a team or a hobby: a home page and at least two mo
 
 ```step
 stage: info
+diagram:
+  ref: diagrams.mmd#visit
+  alt: "A sequence between the browser and the Flask app. The browser asks for /about. Flask runs the route that matches, about(). about() returns the page to Flask, Flask sends it to the browser, and the browser shows it."
+  caption: "What happens when someone visits /about"
+  role: summary
 check:
   type: question
   q: "The visit counter went back to 0 when you pressed Run. Why?"
@@ -153,3 +158,15 @@ check:
 ```
 
 Every web app has this shape: addresses, and code that answers them. Next: build pages from data instead of writing every one by hand.
+
+```code diagrams.mmd#visit
+sequenceDiagram
+  participant B as Browser
+  participant F as Flask app
+  participant R as about()
+  B->>F: asks for /about
+  F->>R: runs the matching route
+  R-->>F: returns the page
+  F-->>B: sends the page
+  Note over B: shows the page
+```

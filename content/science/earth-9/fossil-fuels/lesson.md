@@ -137,6 +137,11 @@ check:
 
 ```step
 stage: info
+diagram:
+  ref: diagrams.mmd#cycle
+  alt: "The carbon cycle. Four stores: atmosphere, hydrosphere, biosphere and geosphere. Photosynthesis moves carbon from the air into living things, and respiration and decomposition move it back. Carbon moves between the air and the oceans. Buried living things become fossil fuels over millions of years. New in this lesson: burning fossil fuels returns that carbon to the air in years."
+  caption: "The carbon cycle: burning short-cuts the slow route"
+  role: summary
 check: { type: reflect, text: "I compared my first prediction about the extra 10 billion tonnes with what I now know." }
 ```
 
@@ -147,3 +152,17 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Fossil fuels** are carbon stored in the **geosphere** over millions of years.
 - **Combustion** moves it to the **atmosphere** in years: a new flow added to a balanced cycle.
 - Oceans and plants take up part of it (in the real world a bit over half); the rest builds up, so **CO₂ in the air rises** (280 ppm before 1800, about 420 ppm today).
+
+```code diagrams.mmd#cycle
+flowchart TD
+  A[Atmosphere: CO₂ in the air]
+  H[Hydrosphere: dissolved in oceans]
+  B[Biosphere: living things, soil]
+  G[Geosphere: rocks, fossil fuels]
+  A -- photosynthesis --> B
+  B -- "respiration, decomposition" --> A
+  A <--> H
+  B -- millions of years --> G
+  G -- "burning: years" --> A
+  class G new
+```

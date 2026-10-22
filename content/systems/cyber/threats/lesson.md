@@ -57,6 +57,12 @@ Was your prediction right?
 
 ```step
 stage: investigate
+diagram:
+  ref: diagrams.mmd#flow
+  alt: "A data-flow diagram of the club app. The member's browser sends data to the club app: travelling, so protect it with HTTPS. The app keeps data in a database: stored, so hash passwords and encrypt the rest. The admin can change things in the app: who may act, so use access control and MFA."
+  caption: "The club app as a data-flow diagram"
+  role: explain
+  blank: true
 insight: "The teacher models the threat-model questions on one point. Sam trusts HTTPS for everything, the misconception planted after the method."
 check:
   type: bug
@@ -136,3 +142,11 @@ tasks:
 ### The canteen app
 
 ### Look back
+
+```code diagrams.mmd#flow
+flowchart TD
+  U([Member's browser]) -- "travelling: HTTPS" --> A[Club app]
+  M([Admin]) -- "who may act: access control, MFA" --> A
+  A -- "stored: hash and encrypt" --> D[(Database)]
+  class U,M,A,D keep
+```

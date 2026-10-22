@@ -154,6 +154,10 @@ This mixes the last lessons: a loop that repeats, and an answer stored again eac
 
 ```step
 stage: make
+diagram:
+  ref: diagrams.mmd#menu
+  alt: "A flowchart of a menu app. Show the menu and ask. Then: which choice? A job choice does that job and goes back to the menu. Quit runs break, which leaves the loop, and the program carries on after it. Anything else says please choose again and goes back to the menu."
+  caption: "The shape of every menu app"
 try: { starter: "lesson.py#make", height: 440 }
 hint:
   - "A menu starts with while True: and an input line inside it."
@@ -273,4 +277,16 @@ while True:
     else:
         print("Please choose 1, 2 or 3.")
 print("Please pay $" + str(total))
+```
+
+```code diagrams.mmd#menu
+flowchart TD
+  A[Show the menu and ask] --> B{Which choice?}
+  B -- a job --> C[Do that job]
+  B -- quit --> D[break: leave the loop]
+  B -- anything else --> E[Please choose again]
+  C --> A
+  E --> A
+  D --> F[Carry on after the loop]
+  class D new
 ```

@@ -44,6 +44,11 @@ So far every line of your program has run, every time. Now the program will **ch
 
 ```step
 stage: predict
+diagram:
+  ref: diagrams.mmd#halves
+  alt: "A flowchart of the loop. i counts 0 to 5. Each time, the check asks: is i less than 3? If True, the pen turns red. If False, the pen turns blue. Either way the turtle goes forward 60 and turns 60, then the next i comes back to the check."
+  caption: "The same program as a flowchart"
+  role: stimulus
 code: decisions.py#halves
 check:
   type: predict
@@ -165,3 +170,14 @@ unlocks: [if-else]
 ```
 
 The spiral grows by 10 every pass. Make it **red while the lines are short and blue once they are long**. Then try a different cut-off, or a third colour of your own once you have seen `elif` next lesson.
+
+```code diagrams.mmd#halves
+flowchart TD
+  A[i counts 0 to 5] --> B{"Is i < 3?"}
+  B -- True --> C[Pen red]
+  B -- False --> D[Pen blue]
+  C --> E[Forward 60, turn 60]
+  D --> E
+  E -- next i --> B
+  class B new
+```

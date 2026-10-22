@@ -93,6 +93,8 @@ const stripRegions = (src) => String(src).split('\n').filter((l) => !/^\s*%%\s*(
 export function deckSource(src, { alt = '', caption = '', landscape = true } = {}) {
   let s = stripRegions(src);
   if (landscape) s = s.replace(/^(\s*(?:flowchart|graph))\s+(TD|TB)\b/m, '$1 LR').replace(/^(\s*direction)\s+(TD|TB)\b/m, '$1 LR');
+  // Sequence diagrams: no second row of participant boxes at the bottom (it doubles the height on a slide).
+  if (diagramKind(s) === 'sequence' && !/%%\{\s*init/.test(s)) s = `%%{init: {"sequence": {"mirrorActors": false}}}%%\n${s.replace(/^\n+/, '')}`;
   return withAccessibility(withMeaning(s, 'deck'), alt, caption);
 }
 
@@ -111,7 +113,7 @@ const MARK = {
 };
 export const MERMAID_CONFIG = {
   startOnLoad: false, securityLevel: 'strict', theme: 'base', htmlLabels: false, fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
-  flowchart: { htmlLabels: false, useMaxWidth: false, padding: 12 }, sequence: { useMaxWidth: false }, state: { useMaxWidth: false }, class: { useMaxWidth: false },
+  flowchart: { htmlLabels: false, useMaxWidth: false, padding: 12 }, sequence: { useMaxWidth: false, mirrorActors: false }, state: { useMaxWidth: false }, class: { useMaxWidth: false },
   themeVariables: {
     fontSize: '16px', background: '#fcfdfe', primaryColor: '#f0f1f2', primaryTextColor: '#0d0e0f', primaryBorderColor: '#1a1b1c', lineColor: '#0a0b0c', textColor: '#0d0e0f',
     secondaryColor: '#f0f1f2', tertiaryColor: '#fcfdfe', mainBkg: '#f0f1f2', nodeBorder: '#1a1b1c', nodeTextColor: '#0d0e0f', edgeLabelBackground: '#fcfdfe', clusterBkg: '#fcfdfe', clusterBorder: '#1a1b1c',

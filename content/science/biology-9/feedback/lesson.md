@@ -58,6 +58,11 @@ Drag the **Air** slider far up or down. Watch the body temperature on the graph,
 
 ```step
 stage: investigate
+diagram:
+  ref: diagrams.mmd#loop
+  alt: "A negative feedback loop for getting too hot. Body temperature rises above 37 °C. Receptors in the skin detect it. The hypothalamus compares it with the set point, 37 °C. Effectors respond: sweat glands sweat and skin blood vessels widen. Temperature falls back. Receptors keep checking, and once it is near 37 °C the response switches off."
+  caption: "Negative feedback: the response reverses the change"
+  role: explain
 insight: "Naming each part of the loop and why it is 'negative' is the hinge."
 tasks:
   - check:
@@ -76,7 +81,12 @@ tasks:
       options: ["The response reverses the change: a rise causes a fall, a fall causes a rise", "It is bad for the body", "It makes the temperature go down only", "The receptors stop working"]
       answer: 0
       feedback: [null, "Negative means 'opposing the change', not harmful.", "It also brings a low temperature up.", "Receptors keep detecting all the time."]
-  - check:
+  - diagram:
+      ref: diagrams.mmd#oneway
+      alt: "A student's drawing. Body temperature rises. Receptors detect it. The hypothalamus starts sweating. Temperature falls, and keeps falling. Nothing checks the temperature again or switches the sweating off."
+      caption: "One student drew the loop like this: what is missing?"
+      role: misconception
+    check:
       type: question
       q: "On the board, what happens to sweating once body temperature is back at 37 °C?"
       options: ["It switches off, because the stimulus (too hot) has gone", "It keeps going all day", "It gets stronger", "It turns into shivering"]
@@ -157,3 +167,23 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Homeostasis:** keeping internal conditions (temperature, blood sugar, water) near a **set point**.
 - **Negative feedback** has four parts around a **set point**: a **deviation** (a change away from it) is detected; a **corrective response** reverses it; **return detection** (receptors sensing it is back near the set point) switches the response off. "Negative" means it opposes the change.
 - Too hot: sweating, skin blood vessels widen. Too cold: shivering, skin blood vessels narrow, goosebumps. The **hypothalamus** is the control centre.
+
+```code diagrams.mmd#loop
+flowchart TD
+  D[Temperature rises above 37 °C] --> R[Skin receptors detect it]
+  R --> H[Hypothalamus compares with 37 °C]
+  H --> E[Sweat, skin vessels widen]
+  E --> C[Temperature falls back]
+  C -- receptors keep checking --> R
+  C -- near 37 °C --> O[Response switches off]
+  class C new
+```
+
+```code diagrams.mmd#oneway
+flowchart TD
+  D[Temperature rises] --> R[Receptors detect it]
+  R --> H[Hypothalamus starts sweating]
+  H --> C[Temperature falls]
+  C --> X[Keeps falling]
+  class X wrong
+```
