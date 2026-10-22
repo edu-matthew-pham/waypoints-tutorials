@@ -1,133 +1,632 @@
-# Real-world connections for maths: the when, where and why of each skill.
-# Source data, written once and used by lessons (opening situation, Make, "Also used in"), and later by decks,
-# a "where is this used?" view and Kit nodes. Plan: Project doc maths-when-where-why-strategy; drafts for
-# Measurement and Algebra Years 7–10 are Project docs maths-real-world-connections(-algebra).
-#
-# Status: PILOT (22 Oct 2026). Only the entries the two pilot lessons use are here:
-#   measurement/finding-a-side (AC9M8M06 n2, a world entry) and algebra/rearranging (AC9M8A01 n3, an enabler entry).
-# Nothing in the build reads this file yet. Lessons name their entry with `connection:` in the frontmatter
+# Why each maths node is there: its purpose, and real situations that need it.
+# Source data, written once and used by lessons (opening situation, Make, "Also used in", the teacher notes' why),
+# and later by decks, a "where is this used?" view and Kit nodes. Plan: Project doc maths-when-where-why-strategy.
+# Nothing in the build reads this file yet. Lessons name an entry with `connection:` in the frontmatter
 # (documentation only, like moveId); the lesson text and teacher.yml sources are written by hand from it.
 #
-# Fields
-#   id        short slug, unique; what a lesson's `connection:` points at
-#   nodes     the nodes it serves, written as lessons write them (AC9M8M06 n2); one entry can serve several
-#   kind      world | enabler | structural | downstream
-#               world: a real situation needs this maths to answer a real question
-#               enabler: the maths is a step inside a real task
-#               structural: the maths explains why something works
-#               downstream: a specialist use where this skill is one small step (shown, not done)
-#   steps     application steps the entry can carry: 1 see it, 2 use it, 3 spot it, 4 set it up, 5 judge it
-#   domain    building, consumer, sport, environment, science, design, health, transport, school, digital
-#   situation the real question, as a person would ask it
-#   maths     the job the maths does there
-#   given     what the lesson supplies (rules, data)
-#   hidden    real complexity left out, said out loud in the lesson; never the target maths
-#   check     how a student can test the answer against reality
-#   figures   every number a lesson states as fact, with its source (same shape as teacher.yml sources)
+# Status (22 Oct 2026): Year 7 Algebra and Measurement done node by node; Year 8 holds only the pilot entries
+# (measurement/finding-a-side and algebra/rearranging). Other strands and years: after the maths teachers' feedback.
 #
-# Quality tests: a real person asks it unprompted; the target maths is needed; the hidden part is stated and is
-# not the target maths; the answer can be checked; most entries come from outside STEM and digital technologies;
-# no body weight, diet or gambling contexts.
+# Two layers
+#   nodes.<code n>   every node gets a purpose block; no node is blank
+#     move           the node's move in one line, in the direction the node teaches (matches the Kit checkpoint)
+#     purpose        the honest reasons the node is there, one sentence each, only the ones that are true:
+#                      world     used in the world: a real question needs exactly this move
+#                      step      a step on the way: the move sits inside a real task (rearranging to get a number)
+#                      hood      under the hood: the move explains why something works, or what a tool does
+#                      next      builds what comes next
+#                      assessed  what tests reward on this move (plain, not exam practice)
+#     entries        real situations, only where an honest one exists (world and step reasons); [] is fine
+#   entry            id (unique slug); kind world | step | hood | downstream; steps 1 see it, 2 use it, 3 spot it,
+#                    4 set it up, 5 judge it; domain; situation (the question as a person asks it); maths (what the
+#                    move does there, in the node's direction); given; hidden (said out loud in the lesson, never
+#                    the target maths); check (against something real); figures (every number a lesson states as
+#                    fact, with a source, same shape as teacher.yml sources). An entry listed under two nodes is
+#                    written once and named again with `see:`.
+#
+# The one rule for fit: an entry belongs to a node when its question needs exactly that node's move, in that
+# node's direction, and nothing more. Pythagoras shows why: the shortcut across the grass needs the hypotenuse
+# (n1), the ladder needs a shorter side (n2), the 3-4-5 corner check runs the theorem backwards (n3).
+# Placement rule for lessons: the opening never says what Predict asks for.
+# Quality tests: a real person asks it unprompted; the hidden part is stated and is not the target maths; the
+# answer can be checked; most entries come from outside STEM and digital technologies; no body weight, diet or
+# gambling contexts.
 
-entries:
-  - id: ladder-1-in-4
-    nodes: [AC9M8M06 n2]
-    kind: world
-    steps: [2, 4]
-    domain: building
-    situation: "I'm setting up a ladder to clean the gutters. Safety guidance says the foot goes 1 m out for every 4 m up. Set up that way, will my ladder reach?"
-    maths: "The ladder is the hypotenuse; the height it reaches is a shorter side: subtract the squares."
-    given: "The 1-in-4 rule; the ladder's length; the gutter's height."
-    hidden: "Ground slope, the ladder's feet and how far it must overlap the gutter edge."
-    check: "Lean a real ladder (or a metre ruler on a desk) at 1 in 4 and measure how high it reaches."
-    figures:
-      - claim: "Extension ladders: the base 1 m out from the structure for every 4 m of height (1:4)."
-        source: { title: "Ladder safety (WorkSafe ACT)", url: "https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety", checked: 2026-10-22 }
-      - claim: "Same 1:4 rule."
-        source: { title: "Ladders (SafeWork NSW)", url: "https://www.safework.nsw.gov.au/hazards-a-z/ladders", checked: 2026-10-22 }
+nodes:
 
-  - id: ramp-1-in-14
-    nodes: [AC9M8M06 n2, AC9M9M03 n2]
-    kind: world
-    steps: [2, 3, 5]
-    domain: building
-    situation: "A ramp to a front door must be gentle enough for a wheelchair. How long does it need to be?"
-    maths: "Rise and run are the shorter sides, the sloping surface the hypotenuse (Year 8); the angle comes from trig (Year 9)."
-    given: "The 1 in 14 limit for ramps up to 9 m long."
-    hidden: "Landings, handrails and other gradients for longer or shorter ramps."
-    check: "Measure the rise and length of a ramp at school."
-    figures:
-      - claim: "Maximum gradient 1:14 for ramps up to 9 m long (AS 1428.1)."
-        source: { title: "Ramps to the house and slopes in the garden (Queensland Health, MASS)", url: "https://www.health.qld.gov.au/__data/assets/pdf_file/0029/1477208/Ramps-to-the-house-and-slopes-in-the-garden-slides.pdf", checked: 2026-10-22 }
+  # ---------------------------------------------------------------- Year 7 Algebra
 
-  - id: screen-diagonal
-    nodes: [AC9M8M06 n2]
-    kind: world
-    steps: [1, 2]
-    domain: consumer
-    situation: "Will this TV fit the gap in the cabinet? Its size is measured along the diagonal."
-    maths: "The diagonal is the hypotenuse; width or height is a shorter side."
-    given: "The screen's diagonal and one side."
-    hidden: "The bezel (frame) around the screen."
-    check: "Measure a classroom screen's width, height and diagonal."
-    figures: []
+  AC9M7A01 n1:
+    move: "See a letter as a quantity that can change, not a single hidden number."
+    purpose:
+      world: "Every spreadsheet, scoreboard and price list is a rule with slots: write it once, it works for any case."
+      hood: "A formula is one rule for every case; the variable is the slot the case goes in."
+      next: "Every formula in science and in later maths."
+    entries:
+      - id: ladder-points
+        kind: world
+        steps: [1, 2]
+        domain: sport
+        situation: "A competition ladder gives 3 points for a win and 1 for a draw. How does the table work out each team's points?"
+        maths: "points = 3W + D: one rule, where W and D change for every team."
+        given: "The points rule and a real table."
+        hidden: "Tie-breakers (goal difference, head to head)."
+        check: "A published ladder."
+        figures: []
 
-  - id: set-out-3-4-5
-    nodes: [AC9M8M06 n1, AC9M8M06 n3]
-    kind: world
-    steps: [1, 2]
-    domain: building
-    situation: "Is the corner of this garden bed or slab square? Builders check with a 3-4-5 triangle of string."
-    maths: "A triangle whose sides fit a² + b² = c² has a right angle."
-    given: "Tape measure and string."
-    hidden: "Stretch in the string."
-    check: "Peg out a 3-4-5 triangle on the oval and check the corner with a set square."
-    figures: []
+  AC9M7A01 n2:
+    move: "Put numbers into a formula and work out the result."
+    purpose:
+      world: "Using any published formula: a temperature conversion, a hire charge, a recipe's cooking-time rule."
+      step: "The checking step in every later algebra lesson: substitute to see whether an answer works."
+      next: "Solving equations, and rearranging formulas (Year 8)."
+    entries:
+      - id: forecast-fahrenheit
+        kind: world
+        steps: [1, 2]
+        domain: transport
+        situation: "A US weather forecast says 86 °F. What is that in °C?"
+        maths: "Substitute into the conversion formula C = (F − 32) × 5 ÷ 9."
+        given: "The conversion formula."
+        hidden: "Nothing important: the formula is exact."
+        check: "A weather app showing both scales."
+        figures: []
+      - see: ladder-points
 
-  - id: target-average
-    nodes: [AC9M8A01 n3]
-    kind: enabler
-    steps: [2]
-    domain: school
-    situation: "My marks so far are 62, 70 and 74. What do I need on the last test to average 70?"
-    maths: "The mean formula A = (S + x) ÷ n gives the average; rearranged for x, x = nA − S, it gives the mark needed."
-    given: "The marks so far and the target average; every test counts equally."
-    hidden: "Weighted tests and different marks out of."
-    check: "Put the answer back in: (62 + 70 + 74 + 74) ÷ 4 = 70."
-    figures: []
+  AC9M7A01 n3:
+    move: "Know the result and some of the inputs; work backwards to the one you do not know."
+    purpose:
+      world: "Working backwards from a budget or a target: how many hours, how many guests, how many weeks."
+      step: "The move inside every 'how many can I afford?' question."
+      next: "Solving equations (A03), and changing the subject (Year 8)."
+    entries:
+      - id: hire-hours
+        kind: world
+        steps: [2]
+        domain: consumer
+        situation: "Bike hire costs a fixed fee plus a rate per hour. I have $30. How many hours is that?"
+        maths: "T = 4n + 6 with T known: find n by backtracking."
+        given: "The hire prices."
+        hidden: "Part hours, and whether the fee is refundable."
+        check: "The hire shop's price board."
+        figures: []
 
-  - id: running-pace
-    nodes: [AC9M8A01 n3]
-    kind: enabler
-    steps: [2]
-    domain: sport
-    situation: "I want to finish a run in a target time. What pace, in minutes per kilometre, do I need?"
-    maths: "time = pace × distance, rearranged for pace."
-    given: "The distance and the target time."
-    hidden: "Hills, and slowing down towards the end."
-    check: "A running watch or a pace calculator."
-    figures: []
+  AC9M7A02 n1:
+    move: "Turn a description in words into an expression."
+    purpose:
+      world: "Price lists are written in words (flag fall plus per km; hire plus per guest) and need an expression before you can compare or budget."
+      next: "Rules from situations and comparing plans (Year 8 linear relations)."
+    entries:
+      - id: venue-pricing
+        kind: world
+        steps: [2, 3, 4]
+        domain: consumer
+        situation: "A party venue charges a hire fee plus an amount per guest. What will my party cost?"
+        maths: "Write cost = fee + rate × guests from the price list."
+        given: "A real price list."
+        hidden: "Minimum numbers, deposits, weekend rates."
+        check: "Ask the venue for a quote for a given number of guests."
+        figures: []
 
-  - id: forecast-fahrenheit
-    nodes: [AC9M7A01 n2, AC9M8A01 n3]
-    kind: world
-    steps: [1, 2]
-    domain: transport
-    situation: "A US weather forecast is in °F. What is that in °C?"
-    maths: "The conversion formula gives °F from °C; rearranged, it gives °C from °F."
-    given: "The conversion formula."
-    hidden: "Nothing important: the formula is exact."
-    check: "A weather app showing both scales."
-    figures: []
+  AC9M7A02 n2:
+    move: "Use brackets so the expression means what the words mean."
+    purpose:
+      world: "Group bookings: three people each pay a ticket plus a fee is 3(t + 5), not 3t + 5."
+      hood: "Brackets are how the order a sentence means survives being written down; calculators and code obey the same rule."
+      assessed: "Tests mark the expression that matches the words, so a missing bracket is a wrong answer even when the numbers are right."
+    entries:
+      - id: group-booking
+        kind: world
+        steps: [1, 2]
+        domain: consumer
+        situation: "Three friends book cinema tickets together. Each ticket costs t dollars, and there is a $5 booking fee per ticket. What do they pay?"
+        maths: "3(t + 5): per-person cost first, then times three."
+        given: "The ticket price and the fee."
+        hidden: "Discounts for groups."
+        check: "A real booking receipt."
+        figures: []
 
-  - id: science-formula-subject
-    nodes: [AC9M8A01 n3, AC9M10A01 n5]
-    kind: enabler
-    steps: [2]
-    domain: science
-    situation: "Science gives speed = distance ÷ time, but the question asks how long a trip takes."
-    maths: "Rearranging the formula for the quantity you need."
-    given: "The formula from science."
-    hidden: "Changing speed (the formula assumes it is steady)."
-    check: "Put the answer back into the original formula."
-    figures: []
+  AC9M7A02 n3:
+    move: "See that one expression stands for every case at once."
+    purpose:
+      hood: "An expression is a rule for every case, the way a loop in code is written once and runs many times."
+      world: "Fence posts and panels, chairs round joined tables: the rule tells you the count for any size without building it."
+      next: "Growing patterns and tables (A05)."
+    entries:
+      - id: fence-posts
+        kind: world
+        steps: [1, 2]
+        domain: building
+        situation: "A fence of p panels needs how many posts? The hardware order depends on it."
+        maths: "posts = p + 1, for any p."
+        given: "A straight fence with a post at each end."
+        hidden: "Corners and gates, which each add a post."
+        check: "Count a real fence."
+        figures: []
+
+  AC9M7A03 n1:
+    move: "Read an equation as a statement that two things are equal, and 'solve' as finding the value that makes it true."
+    purpose:
+      hood: "What solving is for: the equation says when two things match; the solution is when."
+      next: "Every solving method, now and later."
+    entries: []
+
+  AC9M7A03 n2:
+    move: "Undo the steps in reverse order to find the unknown."
+    purpose:
+      world: "Working back from a total you were charged to the number it was for."
+      step: "The move inside 'how many?' questions where a fee and a rate are known."
+      next: "The balance method (n3), and rearranging formulas (Year 8)."
+    entries:
+      - id: excursion-count
+        kind: world
+        steps: [2]
+        domain: school
+        situation: "The bus cost $20 to book plus $3 per student, and the total came to $80. How many students went?"
+        maths: "20 + 3n = 80: undo + 20, then undo × 3."
+        given: "The booking fee, the rate and the total."
+        hidden: "Teachers travelling free."
+        check: "The roll."
+        figures: []
+
+  AC9M7A03 n3:
+    move: "Do the same to both sides until the unknown is alone, then check by substituting."
+    purpose:
+      world: "Saving for a target: how many weeks until I have enough?"
+      step: "The method every later equation uses, including ones backtracking cannot do (x on both sides)."
+      assessed: "Tests reward working shown line by line and a checked answer; the check line is what examiners look for."
+    entries:
+      - id: savings-weeks
+        kind: world
+        steps: [2]
+        domain: consumer
+        situation: "I have $45 saved and put away $15 a week. How many weeks until I have $180 for the concert ticket?"
+        maths: "45 + 15w = 180, solved on both sides and checked."
+        given: "The amounts."
+        hidden: "Weeks where saving does not happen."
+        check: "A savings calculator, or your own bank balance."
+        figures: []
+
+  AC9M7A04 n1:
+    move: "Read values off a graph of real data and say what it shows."
+    purpose:
+      world: "Weather, daylight, electricity use and sports data all arrive as graphs; reading them is how you use them."
+      next: "Describing relationships (n2) and modelling with lines (Year 8)."
+    entries:
+      - id: daylight-hours
+        kind: world
+        steps: [1, 2]
+        domain: environment
+        situation: "When does it get dark in June compared with December? A year of Canberra sunrise and sunset times, as a graph."
+        maths: "Read values and the highest and lowest points off a real graph."
+        given: "Sunrise and sunset data (Bureau of Meteorology or Geoscience Australia)."
+        hidden: "Daylight saving, which shifts the clock but not the daylight."
+        check: "Tonight's sunset time."
+        figures: []
+
+  AC9M7A04 n2:
+    move: "Describe how the two variables are related: direction, how fast it changes, and where it changes."
+    purpose:
+      world: "Heart rate during and after exercise, a cooling cup of tea, a phone battery over a day: the shape of the graph is the story."
+      next: "Gradient and rate (Year 8), modelling change (Year 9)."
+    entries:
+      - id: heart-rate-recovery
+        kind: world
+        steps: [1, 2, 3]
+        domain: sport
+        situation: "A fitness watch records heart rate during a run and the ten minutes after. How quickly does it come back down?"
+        maths: "Describe the rise, the peak and the fall, and compare two people's recovery."
+        given: "A class member's own watch data, or a sample trace."
+        hidden: "Why fitness changes recovery (biology)."
+        check: "Take a pulse by hand before and after a lap."
+        figures: []
+
+  AC9M7A05 n1:
+    move: "Find the rule in a growing pattern and use it to make a table."
+    purpose:
+      world: "Fences, stadium rows that each gain seats, tiles round a pool: the rule says how much to order for any size."
+      hood: "The rule is what you would write in a loop to draw the pattern."
+      next: "Tables from rules (n2) and plotting (n3)."
+    entries:
+      - see: fence-posts
+
+  AC9M7A05 n2:
+    move: "Make a table of inputs and outputs from a rule."
+    purpose:
+      world: "A ready reckoner: a shop's price table, a venue's quote for 20, 30, 40 guests, all from one rule."
+      next: "Plotting the table (n3)."
+    entries:
+      - see: venue-pricing
+
+  AC9M7A05 n3:
+    move: "Plot a table of values and describe the shape."
+    purpose:
+      world: "The price table as a graph shows at a glance how the cost grows, and lets you read off any number of guests."
+      next: "Straight-line graphs and gradient (Year 8)."
+    entries:
+      - see: venue-pricing
+
+  AC9M7A06 n1:
+    move: "Change one variable in a formula, keep the others fixed, and watch the output."
+    purpose:
+      world: "A budget spreadsheet: what if we raise the ticket price by a dollar?"
+      step: "How every 'what if' is tested in a spreadsheet or a simulation."
+    entries:
+      - id: event-budget
+        kind: world
+        steps: [3, 4]
+        domain: school
+        situation: "A school event has fixed costs, a cost per head and a ticket price. Which number should we change to make a profit: price, numbers or costs?"
+        maths: "Vary one variable at a time in profit = price × n − (fixed + cost × n) and compare the effect."
+        given: "The event's real figures in a spreadsheet."
+        hidden: "That raising the price may lower the numbers who come."
+        check: "The event's actual takings."
+        figures: []
+
+  AC9M7A06 n2:
+    move: "Say which variable changes the output most."
+    purpose:
+      world: "Deciding what to change: in the event budget, numbers usually matter more than the price."
+      next: "Gradient as rate of change (Year 8)."
+    entries:
+      - see: event-budget
+
+  # ---------------------------------------------------------------- Year 7 Measurement
+
+  AC9M7M01 n1:
+    move: "See why a triangle is half a rectangle or parallelogram, so A = ½bh."
+    purpose:
+      hood: "Why the formula works: cut and move, halve and double. A student who knows why can rebuild it when they forget it."
+      next: "Areas of composite shapes (Year 8) and of any polygon."
+    entries: []
+
+  AC9M7M01 n2:
+    move: "Work out the area of a triangle or parallelogram with the right base, height and units."
+    purpose:
+      world: "Paint for a gable wall, cloth for a sail, turf for a wedge of lawn: all bought by area."
+      assessed: "Tests reward the perpendicular height (not the slant) and units written as m²."
+    entries:
+      - id: gable-paint
+        kind: world
+        steps: [2, 4]
+        domain: building
+        situation: "A painter quotes for the triangular gable end of a house. How many litres of paint?"
+        maths: "Triangle area, then litres from the tin's coverage figure."
+        given: "The coverage printed on the paint tin, and the number of coats."
+        hidden: "Windows to subtract, and rough surfaces that take more paint."
+        check: "A paint company's online calculator."
+        figures: []
+      - id: sail-area
+        kind: world
+        steps: [1, 2]
+        domain: sport
+        situation: "A sailmaker orders cloth for a triangular sail. Sail area also sets how much power the sail gives."
+        maths: "Triangle area from the sail's dimensions."
+        given: "The luff, foot and leech lengths or the base and height."
+        hidden: "The curved edge and the sail's 3D shape."
+        check: "Sailing classes publish their sail areas."
+        figures: []
+
+  AC9M7M02 n1:
+    move: "See a prism as layers of its cross-section, so V = Ah."
+    purpose:
+      hood: "Why one formula covers every prism: a box, a trough, a Toblerone, a concrete path."
+      next: "Prism problems and capacity (Year 8), cylinders (Year 9)."
+    entries:
+      - see: concrete-path
+
+  AC9M7M02 n2:
+    move: "Work out the volume of a rectangular or triangular prism in the right units."
+    purpose:
+      world: "Soil, concrete and water are all ordered by the cubic metre or the litre."
+      assessed: "Tests reward matching units: cm³ from cm, m³ from m."
+    entries:
+      - id: garden-bed-soil
+        kind: world
+        steps: [2, 4]
+        domain: environment
+        situation: "A raised garden bed needs filling. Soil is sold by the cubic metre. How much do I order?"
+        maths: "Rectangular prism volume: length × width × depth."
+        given: "The bed's measurements; suppliers suggest ordering a little extra for settling."
+        hidden: "Settling and the soil already there."
+        check: "A landscape supplier's price list is in m³."
+        figures: []
+      - id: concrete-path
+        kind: world
+        steps: [1, 2]
+        domain: building
+        situation: "A concrete path is a long, thin slab. Concrete is ordered in cubic metres. How much?"
+        maths: "The path is a prism: cross-section area × length."
+        given: "Length, width and thickness."
+        hidden: "Wastage and reinforcing mesh."
+        check: "A concrete supplier's calculator."
+        figures: []
+
+  AC9M7M03 n1:
+    move: "Name the parts of a circle and know that the diameter is twice the radius."
+    purpose:
+      world: "Bike wheels, pizzas and pipes are all sized by diameter; drawings and plans give the radius."
+      next: "π (n2), circumference (n3), area (Year 8)."
+    entries: []
+
+  AC9M7M03 n2:
+    move: "Measure C ÷ d on several circles and find it is always about 3.14."
+    purpose:
+      hood: "Why one number works for every circle, from a coin to a running track: π is a ratio, not a rule to memorise."
+      next: "Circumference and area formulas."
+    entries:
+      - id: wheel-roll
+        kind: world
+        steps: [1, 2]
+        domain: sport
+        situation: "Roll a bike wheel one full turn along the ground and measure how far it went. How does that compare with the wheel's width?"
+        maths: "C ÷ d for a real wheel, and for other round things in the room."
+        given: "A tape measure and some round objects."
+        hidden: "Tyre squash under load."
+        check: "Every object gives about the same ratio."
+        figures: []
+
+  AC9M7M03 n3:
+    move: "Use C = πd to find a circumference, and C ÷ π to go back to the diameter."
+    purpose:
+      world: "A bike computer needs the wheel circumference to turn wheel turns into distance; a trundle wheel measures a field the same way."
+      step: "The step inside running-track and wheel questions, run forwards or backwards."
+    entries:
+      - id: bike-computer
+        kind: world
+        steps: [2, 3]
+        domain: sport
+        situation: "A bike computer asks for the wheel circumference in mm when you set it up. The wheel is 700 mm across. What do I type in?"
+        maths: "C = πd; going back, d = C ÷ π if the box asks for diameter instead."
+        given: "The wheel's diameter."
+        hidden: "Tyre size changes the true rolling circumference a little."
+        check: "Roll the bike one turn along chalk and measure."
+        figures: []
+      - id: track-stagger
+        kind: world
+        steps: [3, 4]
+        domain: sport
+        situation: "In a 400 m race the outer lanes start further forward. How far, and why?"
+        maths: "Each lane's bends make a bigger circle; the stagger is the difference in circumference."
+        given: "Measure the lane width at the school oval."
+        hidden: "The official measuring line sits a little inside each lane."
+        check: "Measure the stagger marks on the oval."
+        figures: []
+
+  AC9M7M04 n1:
+    move: "Spot parallel lines and a transversal, and name the eight angles."
+    purpose:
+      world: "Stairs, ladders, railway crossings, road markings: parallel lines crossed by a third are everywhere a builder or surveyor looks."
+      next: "Angle properties (n2) and reasoning (n3)."
+    entries: []
+
+  AC9M7M04 n2:
+    move: "Use that corresponding and alternate angles are equal, and co-interior angles add to 180°."
+    purpose:
+      world: "A periscope's two parallel mirrors send the image out level; a carpenter's stair cuts come out level for the same reason."
+      hood: "Why a periscope works: alternate angles."
+    entries:
+      - id: periscope
+        kind: world
+        steps: [1, 2]
+        domain: science
+        situation: "Two parallel mirrors at 45° in a cardboard tube let you see over a fence. Why does the view come out level, not tilted?"
+        maths: "Alternate angles between the parallel mirrors are equal, so light leaves at the angle it entered."
+        given: "Light leaves a mirror at the angle it hit (science)."
+        hidden: "Nothing much: a milk-carton periscope shows it."
+        check: "Build one."
+        figures: []
+      - id: stair-stringer
+        kind: world
+        steps: [1, 2, 3]
+        domain: building
+        situation: "A carpenter marks the cuts on a stair stringer so every step is level. Which angles must match?"
+        maths: "Treads are parallel to each other, so the angle at each cut is a corresponding angle."
+        given: "The stair's pitch angle."
+        hidden: "Timber sizes and building codes."
+        check: "A spirit level on a real staircase."
+        figures: []
+
+  AC9M7M04 n3:
+    move: "Solve a multi-step angle problem, giving a reason for each step."
+    purpose:
+      step: "The habit geometry proofs need: each line justified."
+      assessed: "Tests mark the reasons as well as the numbers; an unexplained angle scores less."
+      next: "Congruence and proof (Year 8)."
+    entries:
+      - see: stair-stringer
+
+  AC9M7M05 n1:
+    move: "Show that a triangle's angles add to 180°."
+    purpose:
+      hood: "Why the rule holds for every triangle: tear the corners off and they make a straight line."
+      next: "Polygon sums (n2) and every angle-chasing problem."
+    entries: []
+
+  AC9M7M05 n2:
+    move: "Cut a polygon into triangles to find its angle sum."
+    purpose:
+      world: "Why tiles are the shapes they are: only shapes whose corners fit round a point with no gap can tile a floor."
+      hood: "Where (n − 2) × 180° comes from."
+    entries:
+      - id: tiling-shapes
+        kind: world
+        steps: [2, 3]
+        domain: design
+        situation: "Why are bathroom tiles squares and hexagons, and never regular pentagons? Bees use hexagons too."
+        maths: "The interior angles meeting at a point must add to 360°; find each regular polygon's angle and test."
+        given: "Paper polygons to try."
+        hidden: "Nothing: it is exactly this."
+        check: "Try to tile a desk with paper pentagons."
+        figures: []
+
+  AC9M7M05 n3:
+    move: "Find an unknown angle from a triangle or polygon angle sum, with reasons."
+    purpose:
+      world: "Roof rafters, trusses and ramps: the third angle of a triangle comes free from the other two."
+      assessed: "Tests reward the reason named next to each step."
+    entries:
+      - id: rafter-cut
+        kind: world
+        steps: [2]
+        domain: building
+        situation: "A roof rises at a given pitch angle. At what angle must the rafter be cut where it meets the ridge?"
+        maths: "The rafter, the ridge post and half the span make a right-angled triangle; the third angle is 180° − 90° − pitch."
+        given: "The pitch angle from the plans."
+        hidden: "The real 3D framing and the thickness of the timber."
+        check: "A roofing square or a carpenter."
+        figures: []
+
+  AC9M7M06 n1:
+    move: "Recognise that a practical problem is a ratio problem and write the ratio."
+    purpose:
+      world: "Scaling a recipe, mixing paint or cordial, mixing concrete: all ratios before any numbers."
+      next: "Rates and proportion (Year 8), similarity (Year 9)."
+    entries:
+      - see: recipe-scaling
+      - see: paint-mix
+
+  AC9M7M06 n2:
+    move: "Set up a ratio model, solve it, and say what the answer means for the real situation, including where the model stops working."
+    purpose:
+      world: "Cooking for 30 from a recipe for 4; remixing a mural colour in a bigger batch."
+      step: "The modelling habit: solve, then ask what the model ignored."
+    entries:
+      - id: recipe-scaling
+        kind: world
+        steps: [3, 4, 5]
+        domain: consumer
+        situation: "The recipe serves 4 and the camp needs 30 serves. How much of everything?"
+        maths: "Scale each ingredient in the ratio 30 : 4."
+        given: "The recipe."
+        hidden: "Cooking time, pan size and seasoning do not scale in the same ratio; that limit is part of the lesson."
+        check: "A caterer or a catering guide."
+        figures: []
+      - id: paint-mix
+        kind: world
+        steps: [3, 4]
+        domain: design
+        situation: "The mural team mixed a test colour from 2 parts blue to 3 parts white. They need 10 litres of it."
+        maths: "Share 10 L in the ratio 2 : 3."
+        given: "The test mix."
+        hidden: "Paint that is already partly used, and batch-to-batch colour drift."
+        check: "Compare swatches of the test and the batch."
+        figures: []
+
+  # ---------------------------------------------------------------- Year 8 (pilot entries only)
+
+  AC9M8M06 n1:
+    move: "State Pythagoras' theorem and find the hypotenuse by adding the squares."
+    purpose:
+      world: "A length you cannot measure directly, when the two sides at the right angle are known: the shortcut across the grass, the diagonal of a screen."
+      next: "Finding any side (n2), testing for a right angle (n3), distance between points (Year 9)."
+    entries:
+      - id: grass-shortcut
+        kind: world
+        steps: [1, 2, 4]
+        domain: environment
+        situation: "People wear a path straight across the corner of a lawn instead of following the footpath round it. How much shorter is it?"
+        maths: "The worn path is the hypotenuse of the two footpath sides: add the squares."
+        given: "The two footpath lengths, paced out."
+        hidden: "The path is not perfectly straight."
+        check: "Pace out both routes on the oval."
+        figures: []
+      - see: screen-diagonal
+
+  AC9M8M06 n2:
+    move: "Find any side: add the squares for the hypotenuse, subtract for a shorter side."
+    purpose:
+      world: "Ladders, ramps and screens all hide a right-angled triangle with one side you need."
+      assessed: "Tests reward choosing add or subtract correctly and a sense check that the hypotenuse is longest."
+    entries:
+      - id: ladder-1-in-4
+        kind: world
+        steps: [2, 4]
+        domain: building
+        situation: "I'm setting up a ladder to clean the gutters. Safety guidance says the foot goes 1 m out for every 4 m up. Set up that way, will my ladder reach?"
+        maths: "The ladder is the hypotenuse; the height it reaches is a shorter side: subtract the squares."
+        given: "The 1-in-4 rule; the ladder's length; the gutter's height."
+        hidden: "Ground slope, the ladder's feet and how far it must overlap the gutter edge."
+        check: "Lean a real ladder (or a metre ruler on a desk) at 1 in 4 and measure how high it reaches."
+        figures:
+          - claim: "Extension ladders: the base 1 m out from the structure for every 4 m of height (1:4)."
+            source: { title: "Ladder safety (WorkSafe ACT)", url: "https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety", checked: 2026-10-22 }
+          - claim: "Same 1:4 rule."
+            source: { title: "Ladders (SafeWork NSW)", url: "https://www.safework.nsw.gov.au/hazards-a-z/ladders", checked: 2026-10-22 }
+      - id: ramp-1-in-14
+        kind: world
+        steps: [2, 3, 5]
+        domain: building
+        situation: "A ramp to a front door must be gentle enough for a wheelchair. How long does it need to be?"
+        maths: "Rise and run are the shorter sides, the sloping surface the hypotenuse (Year 8); the angle comes from trig (Year 9, AC9M9M03 n2)."
+        given: "The 1 in 14 limit for ramps up to 9 m long."
+        hidden: "Landings, handrails and other gradients for longer or shorter ramps."
+        check: "Measure the rise and length of a ramp at school."
+        figures:
+          - claim: "Maximum gradient 1:14 for ramps up to 9 m long (AS 1428.1)."
+            source: { title: "Ramps to the house and slopes in the garden (Queensland Health, MASS)", url: "https://www.health.qld.gov.au/__data/assets/pdf_file/0029/1477208/Ramps-to-the-house-and-slopes-in-the-garden-slides.pdf", checked: 2026-10-22 }
+      - id: screen-diagonal
+        kind: world
+        steps: [1, 2]
+        domain: consumer
+        situation: "Will this TV fit the gap in the cabinet? Its size is measured along the diagonal."
+        maths: "The diagonal is the hypotenuse; width or height is a shorter side."
+        given: "The screen's diagonal and one side."
+        hidden: "The bezel (frame) around the screen."
+        check: "Measure a classroom screen's width, height and diagonal."
+        figures: []
+
+  AC9M8M06 n3:
+    move: "Run the theorem backwards: if a² + b² = c², the triangle is right-angled."
+    purpose:
+      world: "Checking a corner is square with string: builders have done it for thousands of years and still do."
+    entries:
+      - id: set-out-3-4-5
+        kind: world
+        steps: [1, 2]
+        domain: building
+        situation: "Is the corner of this garden bed or slab square? Builders check with a 3-4-5 triangle of string."
+        maths: "A triangle whose sides fit a² + b² = c² has a right angle; 3-4-5 is the easiest one to peg out."
+        given: "Tape measure and string."
+        hidden: "Stretch in the string."
+        check: "Peg out a 3-4-5 triangle on the oval and check the corner with a set square."
+        figures: []
+
+  AC9M8A01 n3:
+    move: "Rearrange a formula to make a different letter the subject."
+    purpose:
+      step: "The step inside any 'what do I need?' question where a formula gives the wrong thing: the mark on the last test, the pace for a target time, the time from a speed."
+      hood: "What a calculator or spreadsheet does when it solves for a cell."
+      next: "Rearranging with the subject in more than one term (Years 9 and 10), formulas in science."
+    entries:
+      - id: target-average
+        kind: step
+        steps: [2]
+        domain: school
+        situation: "My marks so far are 62, 70 and 74. What do I need on the last test to average 70?"
+        maths: "The mean formula A = (S + x) ÷ n gives the average; rearranged for x, x = nA − S, it gives the mark needed."
+        given: "The marks so far and the target average; every test counts equally."
+        hidden: "Weighted tests and different marks out of."
+        check: "Put the answer back in: (62 + 70 + 74 + 74) ÷ 4 = 70."
+        figures: []
+      - id: running-pace
+        kind: step
+        steps: [2]
+        domain: sport
+        situation: "I want to finish a run in a target time. What pace, in minutes per kilometre, do I need?"
+        maths: "time = pace × distance, rearranged for pace."
+        given: "The distance and the target time."
+        hidden: "Hills, and slowing down towards the end."
+        check: "A running watch or a pace calculator."
+        figures: []
+      - id: science-formula-subject
+        kind: step
+        steps: [2]
+        domain: science
+        situation: "Science gives speed = distance ÷ time, but the question asks how long a trip takes."
+        maths: "Rearranging the formula for the quantity you need."
+        given: "The formula from science."
+        hidden: "Changing speed (the formula assumes it is steady)."
+        check: "Put the answer back into the original formula."
+        figures: []
+      - see: forecast-fahrenheit
