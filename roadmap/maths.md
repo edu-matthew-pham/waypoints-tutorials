@@ -16,6 +16,8 @@ Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (als
 
 **Fixes from Matthew's review (23 Oct):** the `pythag` board's labels overlapped in small squares (side 1: "b = 1 m" on top of the area "1"). The widget now measures both labels on screen after drawing; if they overlap, it moves the length label just outside the square when it is too wide for the square, otherwise the area, and widens the view if a moved label would fall off. Squares with room are unchanged. Needs a whole-site publish (quick or full) to go live, and re-records the clips on the `pythag` board (Pythagoras' theorem, Finding a side, Right or not?). Pilot intros rewritten in plain student language (no "this lesson's move", "Left out", "The question."), shorter, with "Make a guess" / "Guess now"; the bird-key step is now "A bird key".
 
+**Voice rule (23 Oct, Matthew):** student-facing text is written the way you'd say it to a student at their desk; the six points are in `roadmap/maths-when-where-why.md` › Decided. Applied to the three pilot intros, their hooks (now one-line teasers that don't repeat the intro) and the Finding a side sketch and Make lines. Older Year 7 intros can be read against it later.
+
 **Next (agreed with Matthew):** tidy the library before growing it: move the Measurement and Algebra drafts into `maths.yml` with the same fields (add kind and step tags to Measurement, source every figure, flag weak entries). Other strands, and more lessons, wait for teacher feedback on the pilot.
 
 **Found, for roadmap/shared.md (shared tools, not changed here):**

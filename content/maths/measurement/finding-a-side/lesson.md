@@ -7,7 +7,7 @@ title: Finding a side
 summary: "Pythagoras finds any side. For the hypotenuse, add the squares: c² = a² + b². For a shorter side, subtract from the hypotenuse's square: b² = c² − a². Then take the square root, and check the hypotenuse is still the longest."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Safety guidance says a ladder's foot goes 1 m out from the wall for every 4 m up. Set up that way, will a 4.1 m ladder reach a gutter 3.9 m high? Ladders, ramps and screens all hide a right-angled triangle."
+hook: "Ladders, ramps and TV screens all hide a right-angled triangle, and sometimes the side you need is not the longest one."
 connection: ladder-1-in-4   # data/connections/maths.yml (pilot: opening situation and Make; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8285
@@ -30,18 +30,13 @@ explainClip:
     - caption: { text: "b = √64 = 8.", say: "So the side is the square root: eight." }
     - wait: 1200
 ---
-Ladder safety rules say: for every 4 m up the wall, put the foot of the ladder 1 m out ([WorkSafe ACT](https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety), [SafeWork NSW](https://www.safework.nsw.gov.au/hazards-a-z/ladders)). Your ladder is 4.1 m long, so its foot goes about 1 m out. The gutter is 3.9 m up. Will it reach?
+You've got a 4.1 m ladder, and the gutter is 3.9 m up. Ladder safety rules say the foot should go 1 m out from the wall for every 4 m of height ([WorkSafe ACT](https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety), [SafeWork NSW](https://www.safework.nsw.gov.au/hazards-a-z/ladders)), so yours sits about 1 m out. Will it reach the gutter? Have a guess before you read on, and we'll come back to it at the end.
 
 <figure class="situation" role="img" aria-label="A 4.1 m ladder leans against a house wall with its foot 1 m out. The gutter is 3.9 m above the ground. Will the ladder reach it?"><svg viewBox="0 0 360 250" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="20" y1="215" x2="320" y2="215" stroke-width="1"/><rect x="200" y="50" width="80" height="165" stroke-width="1"/><line x1="188" y1="50" x2="292" y2="50" stroke-width="3"/><line x1="140" y1="214" x2="199" y2="56" stroke="#D85A30" stroke-width="4" stroke-linecap="round"/><line x1="140" y1="228" x2="200" y2="228" stroke-width="0.6"/><line x1="140" y1="223" x2="140" y2="233" stroke-width="0.6"/><line x1="200" y1="223" x2="200" y2="233" stroke-width="0.6"/><text x="170" y="245" text-anchor="middle" fill="currentColor" stroke="none">1 m</text><line x1="304" y1="50" x2="304" y2="215" stroke-width="0.6" stroke-dasharray="4 3"/><text x="312" y="138" fill="currentColor" stroke="none">3.9 m</text><text x="292" y="42" text-anchor="end" fill="currentColor" stroke="none">gutter</text><text x="30" y="110" fill="currentColor" stroke="none">4.1 m ladder</text><text x="30" y="128" fill="currentColor" stroke="none">Will it reach?</text></svg></figure>
 
-Make a guess. You'll check it at the end of the lesson. (We'll pretend the ground is flat.)
+The ladder, the wall and the ground make a right-angled triangle. You know the long side, which is the ladder, and the bottom, which is 1 m. What you're after is the height up the wall. (We'll treat the ground as flat.)
 
-You know how long the ladder is and how far out its foot is. You need the height. Pythagoras' theorem can find any side of a right-angled triangle:
-
-- **The longest side** (the hypotenuse): add the squares. $c^2 = a^2 + b^2$
-- **A shorter side:** subtract. $b^2 = c^2 - a^2$
-
-Then take the square root.
+Pythagoras' theorem works it out. To find the longest side you add the squares, $c^2 = a^2 + b^2$. To find one of the shorter sides, like this height, you take one square away from the other, $b^2 = c^2 - a^2$, and then take the square root.
 
 ## Predict: the ladder
 
@@ -55,7 +50,7 @@ check:
   actual: "4 m. The ladder is the hypotenuse: 5² − 3² = 25 − 9 = 16, so the height is 4 m. 5.83 m adds the squares, which would make the wall taller than the ladder."
 ```
 
-Sketch it first, as you would on paper: a different ladder from the one at the start.
+This is a different ladder from the one at the start, so here's a quick sketch of it.
 
 <figure class="situation" role="img" aria-label="A 5 m ladder leans against a wall with its foot 3 m out. The height it reaches up the wall is marked with a question mark."><svg viewBox="0 0 300 220" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="20" y1="190" x2="280" y2="190" stroke-width="1"/><line x1="200" y1="30" x2="200" y2="190" stroke-width="1.2"/><line x1="80" y1="189" x2="199" y2="38" stroke="#D85A30" stroke-width="4" stroke-linecap="round"/><path d="M186 190 L186 176 L200 176" stroke-width="0.8"/><line x1="80" y1="204" x2="200" y2="204" stroke-width="0.6"/><line x1="80" y1="199" x2="80" y2="209" stroke-width="0.6"/><line x1="200" y1="199" x2="200" y2="209" stroke-width="0.6"/><text x="140" y="219" text-anchor="middle" fill="currentColor" stroke="none">3 m</text><text x="110" y="100" text-anchor="end" fill="currentColor" stroke="none">5 m</text><text x="212" y="118" fill="currentColor" stroke="none">?</text></svg></figure>
 
@@ -271,7 +266,7 @@ tasks:
 
 ### How high?
 
-Come back to the ladder from the start of the lesson. Sketch the triangle and label the hypotenuse first.
+Now back to your ladder from the start. Sketch the triangle and mark the hypotenuse before you work anything out.
 
 ### Does it reach?
 

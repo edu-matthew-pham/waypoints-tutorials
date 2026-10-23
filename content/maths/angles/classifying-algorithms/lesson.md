@@ -6,7 +6,7 @@ title: Algorithms for classifying shapes
 summary: "An algorithm is a clear set of steps and decisions. A classification algorithm asks yes/no questions about a shape's sides and angles, in an order that gives each shape its own name, and you test it on one shape of every class."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Bird-watchers name a bird they have never seen before by answering yes-or-no questions in a key. How does a key get from a bird in a tree to its name?"
+hook: "How do bird-watchers name a bird they have never seen before? They follow a key of yes-or-no questions."
 connection: field-guide-key   # data/connections/maths.yml (pilot: a Mermaid opening, then Make comes back to it; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8300
@@ -41,9 +41,9 @@ diagram:
   role: stimulus
 ```
 
-Bird-watchers name birds with keys like this one: answer each question, follow the arrow, and you reach a name. Follow it for a galah, which is pink and grey. Which questions do you answer on the way?
+This is the kind of key bird-watchers use. You answer each question, follow the arrow, and end up at a name. Try it for a galah, which is pink and grey: which questions do you answer on the way?
 
-Next you'll build keys like this for shapes, then come back to the birds at the end.
+Later you'll build keys like this for shapes, and at the end you'll come back and put this one to the test.
 
 ```code diagrams.mmd#birds
 flowchart TD

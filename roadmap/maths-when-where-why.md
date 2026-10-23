@@ -26,6 +26,14 @@ Proposed 22 Oct 2026 and piloted the same day; decisions below are from 22–23 
 
 Rules for every picture: it shows the question, not the answer (a "?" where the unknown is), and a Predict question whose numbers differ from the opening's gets its own sketch (Finding a side: the opening's 4.1 m ladder and Predict's 5 m ladder are two drawings). The opening is a quick commit ("guess now"), not a measurement; the real-world check in the entry is a class option in the teacher notes.
 
+**Voice (23 Oct): write student-facing text the way you'd say it to a student at their desk.**
+1. Read it aloud. If you wouldn't say it that way, rewrite it.
+2. Vary sentence length; join ideas with *and*, *so* and *but* instead of stacking short statements ("You know X. You need Y.").
+3. No labels or stage directions in the prose ("The question.", "Left out:", "Guess now:", "this lesson's move"). Just ask.
+4. Talk about the situation in its own words (the ladder, the wall), and name the maths term once.
+5. Contractions are fine. Keep brackets to one at most per paragraph.
+6. The hook and the intro sit together on the page, so the hook is a one-line teaser and the intro tells the story; they never repeat each other.
+
 **Status:** every Year 7 node is done, all six strands (82 nodes, 60 entries). Eleven nodes honestly have no entry: A03 n1, M01 n1, M03 n1, M04 n1, M05 n1, N02 n2, N03 n1–n2, N04 n1, SP02 n1, SP02 n3. Year 8 holds only the pilot nodes. Pilot lessons live: Finding a side (AC9M8M06 n2) and Changing the subject (AC9M8A01 n3). Pythagoras' theorem (n1) opens with the shortcut across the grass (hook only); its Make and close still need the retrofit, and the 3-4-5 corner check belongs to Right or not? (n3).
 
 **Next:** Matthew reviews the pilot; if yes, the Year 7 retrofit. Then the Years 8–10 library, node by node (the Measurement and Algebra drafts fold in there).

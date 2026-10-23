@@ -6,7 +6,7 @@ title: Changing the subject
 summary: "A formula gives one letter from the others. To get a different letter, undo the steps in reverse order, doing the same to both sides: y = 3x + 5 becomes x = (y − 5)/3. Check by substituting."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Your marks so far are 62, 70 and 74. What do you need on the last test to average 70? The average formula answers it, once you turn it around."
+hook: "A formula gives you one thing from the others. Sometimes you need it to work the other way round."
 connection: target-average   # data/connections/maths.yml (pilot: opening situation and Make; documentation only)
 uses: [AC9M7ST01 n2]   # the mean, for the opening question and Make
 app:
@@ -30,11 +30,11 @@ explainClip:
     - expect: { selector: "#gpanel", contains: "= 20" }
     - wait: 1200
 ---
-Your marks so far are 62, 70 and 74. What do you need on the fourth test to average 70?
+Your marks so far are 62, 70 and 74, and you'd like to finish on an average of 70. What do you need on the last test? Have a guess first.
 
 <figure class="situation" role="img" aria-label="Bar chart of test marks: 62, 70 and 74, then a question mark for test 4. A dashed line marks the target average of 70."><svg viewBox="0 0 360 230" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="40" y1="190" x2="340" y2="190" stroke-width="1"/><line x1="40" y1="30" x2="40" y2="190" stroke-width="0.6"/><text x="34" y="194" text-anchor="end" fill="currentColor" stroke="none">0</text><text x="34" y="34" text-anchor="end" fill="currentColor" stroke="none">100</text><rect x="60" y="90.8" width="50" height="99.2" rx="3" fill="#7F77DD" fill-opacity="0.45" stroke="#534AB7" stroke-width="0.8"/><rect x="130" y="78" width="50" height="112" rx="3" fill="#7F77DD" fill-opacity="0.45" stroke="#534AB7" stroke-width="0.8"/><rect x="200" y="71.6" width="50" height="118.4" rx="3" fill="#7F77DD" fill-opacity="0.45" stroke="#534AB7" stroke-width="0.8"/><rect x="270" y="30" width="50" height="160" rx="3" stroke-width="1" stroke-dasharray="5 4"/><text x="295" y="118" text-anchor="middle" fill="currentColor" stroke="none" font-size="22">?</text><line x1="40" y1="78" x2="340" y2="78" stroke="#1D9E75" stroke-width="1.2" stroke-dasharray="7 4"/><text x="44" y="70" fill="#1D9E75" stroke="none">target average 70</text><text x="85" y="208" text-anchor="middle" fill="currentColor" stroke="none">62</text><text x="155" y="208" text-anchor="middle" fill="currentColor" stroke="none">70</text><text x="225" y="208" text-anchor="middle" fill="currentColor" stroke="none">74</text><text x="295" y="208" text-anchor="middle" fill="currentColor" stroke="none">test 4</text></svg></figure>
 
-Guess now. The average formula can answer this, but only if you turn it around. You'll learn how on a formula you already know, then come back to your marks at the end. (Every test counts the same and is out of 100.)
+The average formula works out an average from your marks, but here you know the average you want and need one of the marks. So the formula has to be turned around. You'll practise that on a formula you already know, the perimeter of a rectangle, and then come back to your marks at the end. We'll assume every test counts the same and is out of 100.
 
 A formula like $P = 2l + 2w$ gives $P$ when you know $l$ and $w$. $P$ is the **subject**: the letter on its own on one side.
 
