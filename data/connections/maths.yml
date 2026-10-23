@@ -21,8 +21,11 @@
 #                    4 set it up, 5 judge it; domain; situation (the question as a person asks it); maths (what the
 #                    move does there, in the node's direction); given; hidden (said out loud in the lesson, never
 #                    the target maths); check (against something real); figures (every number a lesson states as
-#                    fact, with a source, same shape as teacher.yml sources). An entry listed under two nodes is
-#                    written once and named again with `see:`.
+#                    fact, with a source, same shape as teacher.yml sources); picture: what kind of visual the
+#                    situation wants: spatial (a hand-drawn SVG: a ladder, a lawn, a room), structure (a Mermaid
+#                    `diagram:` of boxes and arrows: a decision key, a flow, a comparison), data (a chart or a board
+#                    picture: marks, prices, temperatures), none (words are enough). An entry listed under two
+#                    nodes is written once and named again with `see:`.
 #
 # The one rule for fit: an entry belongs to a node when its question needs exactly that node's move, in that
 # node's direction, and nothing more. Pythagoras shows why: the shortcut across the grass needs the hypotenuse
@@ -44,6 +47,7 @@ nodes:
       next: "Every formula in science and in later maths."
     entries:
       - id: ladder-points
+        picture: data
         kind: world
         steps: [1, 2]
         domain: sport
@@ -62,6 +66,7 @@ nodes:
       next: "Solving equations, and rearranging formulas (Year 8)."
     entries:
       - id: forecast-fahrenheit
+        picture: none
         kind: world
         steps: [1, 2]
         domain: transport
@@ -81,6 +86,7 @@ nodes:
       next: "Solving equations (A03), and changing the subject (Year 8)."
     entries:
       - id: hire-hours
+        picture: data
         kind: world
         steps: [2]
         domain: consumer
@@ -98,6 +104,7 @@ nodes:
       next: "Rules from situations and comparing plans (Year 8 linear relations)."
     entries:
       - id: venue-pricing
+        picture: structure
         kind: world
         steps: [2, 3, 4]
         domain: consumer
@@ -116,6 +123,7 @@ nodes:
       assessed: "Tests mark the expression that matches the words, so a missing bracket is a wrong answer even when the numbers are right."
     entries:
       - id: group-booking
+        picture: none
         kind: world
         steps: [1, 2]
         domain: consumer
@@ -134,6 +142,7 @@ nodes:
       next: "Growing patterns and tables (A05)."
     entries:
       - id: fence-posts
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: building
@@ -159,6 +168,7 @@ nodes:
       next: "The balance method (n3), and rearranging formulas (Year 8)."
     entries:
       - id: excursion-count
+        picture: data
         kind: world
         steps: [2]
         domain: school
@@ -177,6 +187,7 @@ nodes:
       assessed: "Tests reward working shown line by line and a checked answer; the check line is what examiners look for."
     entries:
       - id: savings-weeks
+        picture: data
         kind: world
         steps: [2]
         domain: consumer
@@ -194,6 +205,7 @@ nodes:
       next: "Describing relationships (n2) and modelling with lines (Year 8)."
     entries:
       - id: daylight-hours
+        picture: data
         kind: world
         steps: [1, 2]
         domain: environment
@@ -211,6 +223,7 @@ nodes:
       next: "Gradient and rate (Year 8), modelling change (Year 9)."
     entries:
       - id: heart-rate-recovery
+        picture: data
         kind: world
         steps: [1, 2, 3]
         domain: sport
@@ -253,6 +266,7 @@ nodes:
       step: "How every 'what if' is tested in a spreadsheet or a simulation."
     entries:
       - id: event-budget
+        picture: structure
         kind: world
         steps: [3, 4]
         domain: school
@@ -287,6 +301,7 @@ nodes:
       assessed: "Tests reward the perpendicular height (not the slant) and units written as m²."
     entries:
       - id: gable-paint
+        picture: spatial
         kind: world
         steps: [2, 4]
         domain: building
@@ -297,6 +312,7 @@ nodes:
         check: "A paint company's online calculator."
         figures: []
       - id: sail-area
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: sport
@@ -322,6 +338,7 @@ nodes:
       assessed: "Tests reward matching units: cm³ from cm, m³ from m."
     entries:
       - id: garden-bed-soil
+        picture: spatial
         kind: world
         steps: [2, 4]
         domain: environment
@@ -332,6 +349,7 @@ nodes:
         check: "A landscape supplier's price list is in m³."
         figures: []
       - id: concrete-path
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: building
@@ -356,6 +374,7 @@ nodes:
       next: "Circumference and area formulas."
     entries:
       - id: wheel-roll
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: sport
@@ -373,6 +392,7 @@ nodes:
       step: "The step inside running-track and wheel questions, run forwards or backwards."
     entries:
       - id: bike-computer
+        picture: spatial
         kind: world
         steps: [2, 3]
         domain: sport
@@ -383,6 +403,7 @@ nodes:
         check: "Roll the bike one turn along chalk and measure."
         figures: []
       - id: track-stagger
+        picture: spatial
         kind: world
         steps: [3, 4]
         domain: sport
@@ -407,6 +428,7 @@ nodes:
       hood: "Why a periscope works: alternate angles."
     entries:
       - id: periscope
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: science
@@ -417,6 +439,7 @@ nodes:
         check: "Build one."
         figures: []
       - id: stair-stringer
+        picture: spatial
         kind: world
         steps: [1, 2, 3]
         domain: building
@@ -450,6 +473,7 @@ nodes:
       hood: "Where (n − 2) × 180° comes from."
     entries:
       - id: tiling-shapes
+        picture: spatial
         kind: world
         steps: [2, 3]
         domain: design
@@ -467,6 +491,7 @@ nodes:
       assessed: "Tests reward the reason named next to each step."
     entries:
       - id: rafter-cut
+        picture: spatial
         kind: world
         steps: [2]
         domain: building
@@ -493,6 +518,7 @@ nodes:
       step: "The modelling habit: solve, then ask what the model ignored."
     entries:
       - id: recipe-scaling
+        picture: structure
         kind: world
         steps: [3, 4, 5]
         domain: consumer
@@ -503,6 +529,7 @@ nodes:
         check: "A caterer or a catering guide."
         figures: []
       - id: paint-mix
+        picture: spatial
         kind: world
         steps: [3, 4]
         domain: design
@@ -523,6 +550,7 @@ nodes:
       next: "Square roots (n2), Pythagoras (Year 8), area of a circle (Year 8)."
     entries:
       - id: square-pavers
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: building
@@ -556,6 +584,7 @@ nodes:
       world: "A square room, patch or tile of a given area: how long is each side?"
     entries:
       - id: square-patch
+        picture: spatial
         kind: world
         steps: [2, 3]
         domain: environment
@@ -574,6 +603,7 @@ nodes:
       next: "Index laws (Year 8), scientific notation and exponential growth (Years 9 and 10)."
     entries:
       - id: paper-fold
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: science
@@ -598,6 +628,7 @@ nodes:
       next: "Adding fractions with common denominators."
     entries:
       - id: sizzle-packs
+        picture: structure
         kind: world
         steps: [2, 3]
         domain: school
@@ -608,6 +639,7 @@ nodes:
         check: "Count it out: 5 × 12 = 60 = 3 × 20."
         figures: []
       - id: bus-line-up
+        picture: structure
         kind: world
         steps: [2, 3]
         domain: transport
@@ -618,6 +650,7 @@ nodes:
         check: "Read the timetable."
         figures: []
       - id: board-squares
+        picture: spatial
         kind: world
         steps: [2, 3]
         domain: design
@@ -656,6 +689,7 @@ nodes:
       world: "Sales, test marks and sports statistics come in all three forms and have to be compared."
     entries:
       - id: discount-compare
+        picture: data
         kind: world
         steps: [2, 3]
         domain: consumer
@@ -673,6 +707,7 @@ nodes:
       next: "Integers (N07), graphs and axes (A05)."
     entries:
       - id: measuring-jug
+        picture: spatial
         kind: world
         steps: [2, 3]
         domain: consumer
@@ -690,6 +725,7 @@ nodes:
       next: "Choosing the right accuracy (n2)."
     entries:
       - id: split-bill
+        picture: data
         kind: world
         steps: [2]
         domain: consumer
@@ -706,6 +742,7 @@ nodes:
       world: "A builder works in millimetres, a road trip in kilometres; and some answers must round up whatever the decimal says."
     entries:
       - id: paint-tins
+        picture: data
         kind: world
         steps: [3]
         domain: building
@@ -724,6 +761,7 @@ nodes:
       step: "The habit that catches slips in every later calculation."
     entries:
       - id: receipt-check
+        picture: data
         kind: world
         steps: [2]
         domain: consumer
@@ -740,6 +778,7 @@ nodes:
       world: "Lengths cut from timber, recipe amounts, money and times all add and subtract in decimals and fractions."
     entries:
       - id: timber-cuts
+        picture: spatial
         kind: world
         steps: [2]
         domain: building
@@ -756,6 +795,7 @@ nodes:
       world: "Scaling a recipe by 1½, working out how many 0.75 L bottles a 6 L batch fills."
     entries:
       - id: bottle-fill
+        picture: none
         kind: world
         steps: [2]
         domain: consumer
@@ -773,6 +813,7 @@ nodes:
       world: "Sales, price rises and 'was' prices: what you pay and whether a deal is what it says."
     entries:
       - id: stacked-discount
+        picture: structure
         kind: world
         steps: [2, 3]
         domain: consumer
@@ -783,6 +824,7 @@ nodes:
         check: "Work it through on a $100 price."
         figures: []
       - id: was-price
+        picture: data
         kind: world
         steps: [2]
         domain: consumer
@@ -808,6 +850,7 @@ nodes:
       next: "Adding and subtracting integers (n2), the Cartesian plane (A05)."
     entries:
       - id: winter-minimums
+        picture: data
         kind: world
         steps: [1, 2]
         domain: environment
@@ -825,6 +868,7 @@ nodes:
       next: "Multiplying integers (Year 8), coordinates and graphs."
     entries:
       - id: lift-floors
+        picture: spatial
         kind: world
         steps: [2]
         domain: building
@@ -851,6 +895,7 @@ nodes:
       next: "Scale drawings and similarity (Years 8 and 9)."
     entries:
       - id: screen-ratio
+        picture: spatial
         kind: world
         steps: [2, 3]
         domain: digital
@@ -867,6 +912,7 @@ nodes:
       world: "Splitting costs fairly by size or share: rent by room size, a bill by how much each used."
     entries:
       - id: rent-split
+        picture: spatial
         kind: world
         steps: [2, 3, 4]
         domain: consumer
@@ -891,6 +937,7 @@ nodes:
       world: "A number is not an answer until it says 'yes, on track' or 'no, need $90 a week more'."
     entries:
       - id: fundraiser-track
+        picture: structure
         kind: world
         steps: [3, 4, 5]
         domain: school
@@ -917,6 +964,7 @@ nodes:
       world: "Every cardboard box and food packet starts as a flat net."
     entries:
       - id: box-net
+        picture: spatial
         kind: world
         steps: [2, 4]
         domain: design
@@ -933,6 +981,7 @@ nodes:
       world: "Real estate floor plans, flat-pack instructions and builders' elevations are all 2D views of 3D things."
     entries:
       - id: floor-plan
+        picture: spatial
         kind: world
         steps: [2, 3]
         domain: building
@@ -964,6 +1013,7 @@ nodes:
       hood: "Definitions that include special cases, the way a rule written for every rectangle also works for squares."
     entries:
       - id: parallelogram-linkage
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: design
@@ -988,6 +1038,7 @@ nodes:
       hood: "What drawing software does when you drag a shape."
     entries:
       - id: sprite-move
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: digital
@@ -1004,6 +1055,7 @@ nodes:
       world: "Mirror writing on the front of ambulances reads correctly in a driver's rear-view mirror."
     entries:
       - id: ambulance-mirror
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: transport
@@ -1021,6 +1073,7 @@ nodes:
       hood: "What happens when a phone turns its screen."
     entries:
       - id: tile-rotation
+        picture: spatial
         kind: world
         steps: [2, 4]
         domain: design
@@ -1038,6 +1091,7 @@ nodes:
       hood: "The same idea a program uses to sort things."
     entries:
       - id: field-guide-key
+        picture: structure
         kind: world
         steps: [2, 4]
         domain: environment
@@ -1073,6 +1127,7 @@ nodes:
       next: "Choosing the best measure (n3)."
     entries:
       - id: power-bill
+        picture: data
         kind: world
         steps: [1, 2]
         domain: consumer
@@ -1089,6 +1144,7 @@ nodes:
       world: "House prices are reported as medians because a few very expensive sales would drag the mean up."
     entries:
       - id: median-house-price
+        picture: data
         kind: world
         steps: [3, 5]
         domain: consumer
@@ -1108,6 +1164,7 @@ nodes:
       hood: "It keeps every value while showing the shape."
     entries:
       - id: timetable-stem-leaf
+        picture: data
         kind: world
         steps: [1, 2]
         domain: transport
@@ -1132,6 +1189,7 @@ nodes:
       world: "Which bus route is more reliable, which class did better, which brand lasts longer: comparisons of two sets of data."
     entries:
       - id: bus-lateness
+        picture: data
         kind: world
         steps: [3, 4]
         domain: transport
@@ -1157,6 +1215,7 @@ nodes:
       assessed: "Investigations are marked on whether the conclusion answers the question, with evidence."
     entries:
       - id: canteen-queue
+        picture: data
         kind: world
         steps: [3, 4, 5]
         domain: school
@@ -1183,6 +1242,7 @@ nodes:
       world: "Designing a fair game, or one where a rare item turns up about one time in eight."
     entries:
       - id: game-spinner
+        picture: data
         kind: world
         steps: [2, 4]
         domain: design
@@ -1199,6 +1259,7 @@ nodes:
       world: "A 30% chance of rain: on days like this, about 3 in 10 get at least a little rain."
     entries:
       - id: chance-of-rain
+        picture: data
         kind: world
         steps: [1, 2, 3]
         domain: environment
@@ -1218,6 +1279,7 @@ nodes:
       step: "The experiment habit science uses too."
     entries:
       - id: fair-spinner
+        picture: data
         kind: world
         steps: [2, 4]
         domain: design
@@ -1235,6 +1297,7 @@ nodes:
       next: "Sampling and variation (Year 8)."
     entries:
       - id: few-reviews
+        picture: data
         kind: world
         steps: [3, 5]
         domain: consumer
@@ -1254,6 +1317,7 @@ nodes:
       next: "Finding any side (n2), testing for a right angle (n3), distance between points (Year 9)."
     entries:
       - id: grass-shortcut
+        picture: spatial
         kind: world
         steps: [1, 2, 4]
         domain: environment
@@ -1272,6 +1336,7 @@ nodes:
       assessed: "Tests reward choosing add or subtract correctly and a sense check that the hypotenuse is longest."
     entries:
       - id: ladder-1-in-4
+        picture: spatial
         kind: world
         steps: [2, 4]
         domain: building
@@ -1286,6 +1351,7 @@ nodes:
           - claim: "Same 1:4 rule."
             source: { title: "Ladders (SafeWork NSW)", url: "https://www.safework.nsw.gov.au/hazards-a-z/ladders", checked: 2026-10-22 }
       - id: ramp-1-in-14
+        picture: spatial
         kind: world
         steps: [2, 3, 5]
         domain: building
@@ -1298,6 +1364,7 @@ nodes:
           - claim: "Maximum gradient 1:14 for ramps up to 9 m long (AS 1428.1)."
             source: { title: "Ramps to the house and slopes in the garden (Queensland Health, MASS)", url: "https://www.health.qld.gov.au/__data/assets/pdf_file/0029/1477208/Ramps-to-the-house-and-slopes-in-the-garden-slides.pdf", checked: 2026-10-22 }
       - id: screen-diagonal
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: consumer
@@ -1314,6 +1381,7 @@ nodes:
       world: "Checking a corner is square with string: builders have done it for thousands of years and still do."
     entries:
       - id: set-out-3-4-5
+        picture: spatial
         kind: world
         steps: [1, 2]
         domain: building
@@ -1332,6 +1400,7 @@ nodes:
       next: "Rearranging with the subject in more than one term (Years 9 and 10), formulas in science."
     entries:
       - id: target-average
+        picture: data
         kind: step
         steps: [2]
         domain: school
@@ -1342,6 +1411,7 @@ nodes:
         check: "Put the answer back in: (62 + 70 + 74 + 74) ÷ 4 = 70."
         figures: []
       - id: running-pace
+        picture: none
         kind: step
         steps: [2]
         domain: sport
@@ -1352,6 +1422,7 @@ nodes:
         check: "A running watch or a pace calculator."
         figures: []
       - id: science-formula-subject
+        picture: none
         kind: step
         steps: [2]
         domain: science

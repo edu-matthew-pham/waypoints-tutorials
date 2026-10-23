@@ -34,7 +34,7 @@ explainClip:
 
 <figure class="situation" role="img" aria-label="A 4.1 m ladder leans against a house wall with its foot 1 m out. The gutter is 3.9 m above the ground. Will the ladder reach it?"><svg viewBox="0 0 360 250" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="20" y1="215" x2="320" y2="215" stroke-width="1"/><rect x="200" y="50" width="80" height="165" stroke-width="1"/><line x1="188" y1="50" x2="292" y2="50" stroke-width="3"/><line x1="140" y1="214" x2="199" y2="56" stroke="#D85A30" stroke-width="4" stroke-linecap="round"/><line x1="140" y1="228" x2="200" y2="228" stroke-width="0.6"/><line x1="140" y1="223" x2="140" y2="233" stroke-width="0.6"/><line x1="200" y1="223" x2="200" y2="233" stroke-width="0.6"/><text x="170" y="245" text-anchor="middle" fill="currentColor" stroke="none">1 m</text><line x1="304" y1="50" x2="304" y2="215" stroke-width="0.6" stroke-dasharray="4 3"/><text x="312" y="138" fill="currentColor" stroke="none">3.9 m</text><text x="292" y="42" text-anchor="end" fill="currentColor" stroke="none">gutter</text><text x="30" y="110" fill="currentColor" stroke="none">4.1 m ladder</text><text x="30" y="128" fill="currentColor" stroke="none">Will it reach?</text></svg></figure>
 
-To answer it you need the height up the wall. That is a side of a right-angled triangle, but not the hypotenuse, and this lesson shows how to find it. You come back to the ladder at the end. Left out: sloping ground, and how far past the gutter a ladder must reach to step off it safely.
+Make a guess now: reaches, or falls short? To work it out you need the height up the wall. That is a side of a right-angled triangle, but not the hypotenuse, and this lesson shows how to find it. You come back to the ladder at the end. Left out: sloping ground, and how far past the gutter a ladder must reach to step off it safely.
 
 Pythagoras' theorem links all three sides, so it can find any one of them:
 
@@ -54,6 +54,10 @@ check:
   options: ["4 m", "About 5.83 m", "2 m", "8 m"]
   actual: "4 m. The ladder is the hypotenuse: 5² − 3² = 25 − 9 = 16, so the height is 4 m. 5.83 m adds the squares, which would make the wall taller than the ladder."
 ```
+
+Sketch it first, as you would on paper: a different ladder from the one at the start.
+
+<figure class="situation" role="img" aria-label="A 5 m ladder leans against a wall with its foot 3 m out. The height it reaches up the wall is marked with a question mark."><svg viewBox="0 0 300 220" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="20" y1="190" x2="280" y2="190" stroke-width="1"/><line x1="200" y1="30" x2="200" y2="190" stroke-width="1.2"/><line x1="80" y1="189" x2="199" y2="38" stroke="#D85A30" stroke-width="4" stroke-linecap="round"/><path d="M186 190 L186 176 L200 176" stroke-width="0.8"/><line x1="80" y1="204" x2="200" y2="204" stroke-width="0.6"/><line x1="80" y1="199" x2="80" y2="209" stroke-width="0.6"/><line x1="200" y1="199" x2="200" y2="209" stroke-width="0.6"/><text x="140" y="219" text-anchor="middle" fill="currentColor" stroke="none">3 m</text><text x="110" y="100" text-anchor="end" fill="currentColor" stroke="none">5 m</text><text x="212" y="118" fill="currentColor" stroke="none">?</text></svg></figure>
 
 Which side of the triangle is the ladder?
 
