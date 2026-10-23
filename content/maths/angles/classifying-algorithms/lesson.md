@@ -6,7 +6,8 @@ title: Algorithms for classifying shapes
 summary: "An algorithm is a clear set of steps and decisions. A classification algorithm asks yes/no questions about a shape's sides and angles, in an order that gives each shape its own name, and you test it on one shape of every class."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A sorting machine at a factory has to name every shape that rolls past, with no one to help. What questions would you build into it, and in what order?"
+hook: "Bird-watchers name a bird they have never seen before by answering yes-or-no questions in a key. How does a key get from a bird in a tree to its name?"
+connection: field-guide-key   # data/connections/maths.yml (pilot: a Mermaid opening, then Make comes back to it; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8300
   url: http://127.0.0.1:8300/index.html
@@ -27,6 +28,34 @@ explainClip:
 An **algorithm** is a precise set of steps, including decisions, that always gives the right result. A **classification algorithm** sorts shapes into classes by asking yes/no questions about their **attributes** (sides, angles, parallel sides). It can be drawn as a **flowchart** or a **decision tree**, or written as numbered steps (pseudocode).
 
 Two things make one work: every shape reaches exactly one answer, and the questions are in the right order.
+
+## The question: a bird key
+
+```step
+stage: info
+insight: "Following a real key for one bird shows what a classification algorithm is for, before the lesson builds one for shapes; Make comes back to this key and tests it."
+diagram:
+  ref: diagrams.mmd#birds
+  alt: "A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren."
+  caption: "A key for five common Australian birds"
+  role: stimulus
+```
+
+Bird-watchers name birds with keys like this one: answer each question, follow the arrow, and you reach a name. Follow it for a galah, which is pink and grey. Which questions do you answer on the way?
+
+This lesson builds keys like this for shapes. You come back to the birds at the end.
+
+```code diagrams.mmd#birds
+flowchart TD
+  Q1{"Mostly black and white?"} -- yes --> M[Australian magpie]
+  Q1 -- no --> Q2{"White with a yellow crest?"}
+  Q2 -- yes --> C[Sulphur-crested cockatoo]
+  Q2 -- no --> Q3{"Pink and grey?"}
+  Q3 -- yes --> G[Galah]
+  Q3 -- no --> Q4{"Mostly red?"}
+  Q4 -- yes --> R[Crimson rosella]
+  Q4 -- no --> W[Superb fairy-wren]
+```
 
 ## Predict: an algorithm with one question
 
@@ -174,14 +203,46 @@ tasks:
 
 ### Review: triangles
 
-## Make: design a classifier
+## Make: back to the bird key
 
 ```step
 stage: make
-insight: "Writing their own algorithm in steps shows whether they put the specific questions first and cover every class."
-try: { playground: board, starter: "keys.yml#quads", height: 600 }
-hint: ["Answer each question using the shape's description.", "If the key names the wrong shape, find the question you answered wrongly."]
-check: { type: board, text: "Run the quadrilateral algorithm on all five shapes again, and say each answer aloud as you go.", when: "n = 5", explain: "Every shape reaches its own name." }
+insight: "Testing the bird key from the start with a bird it was not built for puts the lesson's two checks on a real key: every case reaches exactly one right answer, and the last 'no' is where untested keys fail."
+diagram:
+  ref: diagrams.mmd#birds
+  alt: "A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren."
+  caption: "The bird key from the start"
+  role: stimulus
+tasks:
+  - hint: ["Follow each bird one question at a time.", "Which bird answers no to every question? Where does the last 'no' send it?"]
+    check:
+      type: question
+      q: "Test the key with six birds: a magpie, a galah, a sulphur-crested cockatoo, a crimson rosella, a blue male superb fairy-wren, and a common myna (brown, with a black head and a yellow bill). Which bird gets the wrong name?"
+      options: ["The common myna", "The galah", "The crimson rosella", "None: every bird gets its own name"]
+      answer: 0
+      feedback: [null, "Pink and grey: the third question names it a galah. That one is right.", "Mostly red: the fourth question names it. That one is right.", "Follow the myna: no, no, no, no. Where does the last 'no' send it?"]
+      explain: "The myna answers no to every question, and the last 'no' names every leftover bird a superb fairy-wren. The key was only tested on the birds it was built for."
+  - check:
+      type: question
+      q: "How should the key be fixed?"
+      options: ["Ask one more question before naming the fairy-wren, and add 'not in this key' as an answer", "Put the questions in a different order", "Leave the myna out: it is not one of the five birds", "Ask about the beak first"]
+      answer: 0
+      feedback: [null, "Whatever the order, some bird still reaches the last 'no' and gets a name it may not deserve.", "Bird-watchers will meet mynas. A key has to say when a bird is not in it.", "The trouble is not the first question; it is the last 'no'."]
+      explain: "Every path must end in a right answer, and 'not in this key' is a right answer. For example, ask 'Bright blue on its head?' before naming a fairy-wren."
 ```
 
-Now write an algorithm that sorts triangles by their **angles** into acute, right-angled and obtuse. Test it on one triangle of each class, and say how it works to a partner.
+### Which bird?
+
+Use the key above. The myna's colours are from the [Australian Museum](https://australian.museum/learn/animals/birds/common-myna/).
+
+### Fix the key
+
+A real key also has to work for plain birds: female superb fairy-wrens are mostly brown, not blue ([Australian Museum](https://australian.museum/learn/animals/birds/superb-fairy-wren/)). How would your fixed key handle one?
+
+Stretch: write an algorithm that sorts triangles by their **angles** into acute, right-angled and obtuse. Test it on one triangle of each class, and say how it works to a partner.
+
+**Also used in**
+
+- **Science.** The same kind of key identifies living things: [Who is it? Using a key](../../../science/biology-7/keys/).
+- **Which bin?** Council recycling guides ask yes-or-no questions about an item until it reaches the right bin.
+- **Spam filters.** An email program asks questions about each message before sorting it into the inbox or junk.

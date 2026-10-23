@@ -7,11 +7,13 @@ goals:
   - I can test an algorithm on one shape of every class.
 struggle: "Ordering the questions. Ask students to say which shape each question separates before they put it in a position."
 before: |
+  Pilot (Oct 2026): the lesson opens with a real key (five common Australian birds, drawn as a Mermaid flowchart in a short first step) and Make comes back to test it with a bird it was not built for; "Also used in" closes it. The middle of the lesson is unchanged. This pilot tests a Mermaid opening, which decks and worksheets carry; the cost is one extra step pill. Tell us whether it helps.
+
   Do the Run board yourself first. Students need the triangle and quadrilateral classes (Classifying shapes lessons).
 
   The one idea: each shape must reach its own name, so the most specific question comes first. A short algorithm can be wrong; testing on one shape of every class finds it (Pia's mistake).
 
-  The board follows the key one question at a time; it is the same tool students use for living things in science. Students design on paper: the Make task asks for an algorithm for triangles by angles, drawn as a flowchart or written as numbered steps.
+  The board follows the key one question at a time; it is the same tool students use for living things in science. Students design on paper: the Make stretch asks for an algorithm for triangles by angles, drawn as a flowchart or written as numbered steps.
 
   Judging two algorithms for efficiency (fewest questions) and for edge cases (the kite) are wider ideas.
 
@@ -21,7 +23,7 @@ running:
   - "Run: ask which triangle the algorithm gets wrong, and why."
   - "Investigate: ask what test shapes Pia should have used."
   - "Modify: ask students to describe the quad algorithm in words."
-  - "Make: ask a partner to run the algorithm on a shape the author hasn't tried."
+  - "Make: back to the bird key. Ask who can find a bird it gets wrong before anyone looks at the options; then ask what every key needs (a way to say 'not in this key')."
 stuck:
   - see: "A student asks the general question first."
     ask: "What would a square be called by this question?"
@@ -45,3 +47,6 @@ explain: |
   An **algorithm** is a precise series of steps and decisions. A **classification algorithm** asks yes/no questions about attributes and ends in one name for each shape.
 
   Put the most specific question first, make sure every branch ends in a name, and **test** it on one shape of every class. A flowchart, a decision tree and numbered steps show the same algorithm.
+sources:
+  - { title: "Common myna (Australian Museum): brown with a black head; yellow bill, legs and eye skin", url: "https://australian.museum/learn/animals/birds/common-myna/", checked: 2026-10-23 }
+  - { title: "Superb fairy-wren (Australian Museum): breeding males blue on the head; females mostly brown", url: "https://australian.museum/learn/animals/birds/superb-fairy-wren/", checked: 2026-10-23 }

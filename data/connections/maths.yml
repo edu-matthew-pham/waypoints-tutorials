@@ -1095,12 +1095,16 @@ nodes:
         kind: world
         steps: [2, 4]
         domain: environment
-        situation: "A field guide to local birds asks yes or no questions to identify a bird. How do you write one that always gets an answer?"
+        situation: "Bird-watchers name a bird with a key of yes-or-no questions. Does this key for five common Australian birds give the right name for every bird you might see?"
         maths: "A decision tree where each question splits the cases by one property."
-        given: "A small set of local birds, leaves or shapes."
-        hidden: "Things that do not fit any branch (juveniles, damaged leaves)."
-        check: "Test the key on cases it was not built from."
-        figures: []
+        given: "A key for magpie, sulphur-crested cockatoo, galah, crimson rosella and superb fairy-wren (lesson: algorithms for classifying shapes)."
+        hidden: "Birds that look different by sex or age (female fairy-wrens are brown), and birds not in the key (a common myna)."
+        check: "Test the key on birds it was not built for."
+        figures:
+          - claim: "Common myna: brown with a black head; yellow bill, legs and eye skin."
+            source: { title: "Common myna (Australian Museum)", url: "https://australian.museum/learn/animals/birds/common-myna/", checked: 2026-10-23 }
+          - claim: "Superb fairy-wren: breeding males blue on the head; females mostly brown."
+            source: { title: "Superb fairy-wren (Australian Museum)", url: "https://australian.museum/learn/animals/birds/superb-fairy-wren/", checked: 2026-10-23 }
 
   AC9M7SP04 n2:
     move: "Describe an algorithm in words and test it by tracing cases through it."
