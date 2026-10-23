@@ -36,8 +36,6 @@ You've got a 4.1 m ladder, and the gutter is 3.9 m up. Ladder safety rules say t
 
 The ladder, the wall and the ground make a right-angled triangle. You know the long side, which is the ladder, and the bottom, which is 1 m. What you're after is the height up the wall. (We'll treat the ground as flat.)
 
-Pythagoras' theorem works it out. To find the longest side you add the squares, $c^2 = a^2 + b^2$. To find one of the shorter sides, like this height, you take one square away from the other, $b^2 = c^2 - a^2$, and then take the square root.
-
 ## Predict: the ladder
 
 ```step

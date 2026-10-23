@@ -199,6 +199,7 @@ details.teachers h3{font-size:1rem;margin:16px 0 4px}.tguide{background:color-mi
 .hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
 details.reveal summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--c)}
 details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
+.legendbox{margin:10px 0 0;font-size:15px;color:var(--muted)}.legendbox>summary{cursor:pointer;width:fit-content}.legendbox[open]>summary{margin-bottom:6px}
 .legend{display:grid;gap:6px;margin:10px 0 0;padding:0;list-style:none;font-size:15px;color:var(--muted)}
 .legend b{color:var(--c)}
 .widthbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 14px;margin:14px 0 0}
@@ -702,7 +703,10 @@ export function lessonPageHtml(lesson, deps) {
   // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
   const tiered = lesson.steps.some((s) => s.config.tier);
   const widthBar = !tiered ? '' : `<div class="widthbar" aria-label="Lesson width"><div><b>Width</b><span class="wnote">More contexts, same idea.</span></div><div class="wseg" role="group" aria-label="Choose width">${TIERS_UI.map((t) => `<button type="button" data-w="${t}" aria-pressed="false">${t[0].toUpperCase() + t.slice(1)}</button>`).join('')}</div></div>`;
-  const legend = stagesUsed.filter((k, i) => SI[k] && stagesUsed.findIndex((j) => SI[j]?.[0] === SI[k][0]) === i).map((k) => `<li style="--c:var(--${k})"><b>${SI[k][0]}</b>: ${esc(SI[k][1])}</li>`).join('');
+  const legendKeys = stagesUsed.filter((k, i) => SI[k] && stagesUsed.findIndex((j) => SI[j]?.[0] === SI[k][0]) === i);
+  const legend = legendKeys.map((k) => `<li style="--c:var(--${k})"><b>${SI[k][0]}</b>: ${esc(SI[k][1])}</li>`).join('');
+  // Folded by default: the same list is on every lesson, and the step pills already name the stages.
+  const legendBox = legend ? `<details class="legendbox"><summary>How this lesson works: ${legendKeys.map((k) => esc(SI[k][0])).join(', ')}</summary><ul class="legend">${legend}</ul></details>` : '';
 
   const steps = lesson.steps.map((s) => {
     const c = s.config;
@@ -818,7 +822,7 @@ export function lessonPageHtml(lesson, deps) {
 ${mathsHead}${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
 ${linksHtml(conceptLinks)}${md.parse(lesson.intro)}
-<ul class="legend">${legend}</ul>
+${legendBox}
 ${widthBar}
 <nav class="steps">${explainBtn}${nav}</nav>
 ${explainHtml}
