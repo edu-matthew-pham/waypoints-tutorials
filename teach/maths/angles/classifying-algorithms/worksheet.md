@@ -7,7 +7,7 @@ subtitle: "Angles and shapes · Algorithms · Lesson 15"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** A sorting machine at a factory has to name every shape that rolls past, with no one to help. What questions would you build into it, and in what order?
+> **Key question:** Bird-watchers name a bird they have never seen before by answering yes-or-no questions in a key. How does a key get from a bird in a tree to its name?
 
 
 :::teacher-note
@@ -20,6 +20,21 @@ subtitle: "Angles and shapes · Algorithms · Lesson 15"
 
 :::
 
+
+## The question: a bird key
+
+
+:::keep-together
+
+![A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren.](https://tutorials.learningwaypoints.com/_pictures/diagrams/maths/angles/classifying-algorithms/step-1.svg?v=187afb2507d5f4ac)
+
+*A key for five common Australian birds*
+
+:::
+
+Bird-watchers name birds with keys like this one: answer each question, follow the arrow, and you reach a name. Follow it for a galah, which is pink and grey. Which questions do you answer on the way?
+
+This lesson builds keys like this for shapes. You come back to the birds at the end.
 
 ## Predict
 
@@ -251,9 +266,29 @@ Two equal angles mean two equal sides: an isosceles right-angled triangle.
 :::
 
 
-## Make: design a classifier
+## Make: back to the bird key
 
-Now write an algorithm that sorts triangles by their **angles** into acute, right-angled and obtuse. Test it on one triangle of each class, and say how it works to a partner.
+
+:::keep-together
+
+![A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren.](https://tutorials.learningwaypoints.com/_pictures/diagrams/maths/angles/classifying-algorithms/step-7.svg?v=187afb2507d5f4ac)
+
+*The bird key from the start*
+
+:::
+
+
+**Which bird?.** Use the key above. The myna's colours are from the [Australian Museum](https://australian.museum/learn/animals/birds/common-myna/).
+
+**Fix the key.** A real key also has to work for plain birds: female superb fairy-wrens are mostly brown, not blue ([Australian Museum](https://australian.museum/learn/animals/birds/superb-fairy-wren/)). How would your fixed key handle one?
+
+Stretch: write an algorithm that sorts triangles by their **angles** into acute, right-angled and obtuse. Test it on one triangle of each class, and say how it works to a partner.
+
+**Also used in**
+
+- **Science.** The same kind of key identifies living things: [Who is it? Using a key](../../../science/biology-7/keys/).
+- **Which bin?** Council recycling guides ask yes-or-no questions about an item until it reaches the right bin.
+- **Spam filters.** An email program asks questions about each message before sorting it into the inbox or junk.
 
 Work in the tutorial. Plan first: what will you change, and how will you test it?
 

@@ -8,7 +8,7 @@ html: true
 
 Angles and shapes · Algorithms
 
-<!-- Speaker note: Students follow, fix and test algorithms that classify triangles and quadrilaterals, and describe how each works (AC9M7SP04, nodes 1 and 2). About 40 minutes (Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min). -->
+<!-- Speaker note: Students follow, fix and test algorithms that classify triangles and quadrilaterals, and describe how each works (AC9M7SP04, nodes 1 and 2). About 40 minutes (Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min). Sources: Common myna (Australian Museum): brown with a black head; yellow bill, legs and eye skin, https://australian.museum/learn/animals/birds/common-myna/ (checked 23 October 2026); Superb fairy-wren (Australian Museum): breeding males blue on the head; females mostly brown, https://australian.museum/learn/animals/birds/superb-fairy-wren/ (checked 23 October 2026). -->
 
 ---
 
@@ -20,15 +20,43 @@ Angles and shapes · Algorithms
 - I can put the questions of a classifier in an order that works.
 - I can test an algorithm on one shape of every class.
 
-<!-- Speaker note: Before class: Do the Run board yourself first. Students need the triangle and quadrilateral classes (Classifying shapes lessons). The one idea: each shape must reach its own name, so the most specific question comes first. A short algorithm can be wrong; testing on one shape of every class finds it (Pia's mistake). The board follows the key one question at a time; it is the same tool students use for living things in science. Students design on paper: the Make task asks for an algorithm for triangles by angles, drawn as a flowchart or written as numbered steps. Judging two algorithms for efficiency (fewest questions) and for edge cases (the kite) are wider ideas. This links to Code: an algorithm written in steps is a program with `if` and `else`. -->
+<!-- Speaker note: Before class: Pilot (Oct 2026): the lesson opens with a real key (five common Australian birds, drawn as a Mermaid flowchart in a short first step) and Make comes back to test it with a bird it was not built for; "Also used in" closes it. The middle of the lesson is unchanged. This pilot tests a Mermaid opening, which decks and worksheets carry; the cost is one extra step pill. Tell us whether it helps. Do the Run board yourself first. Students need the triangle and quadrilateral classes (Classifying shapes lessons). The one idea: each shape must reach its own name, so the most specific question comes first. A short algorithm can be wrong; testing on one shape of every class finds it (Pia's mistake). The board follows the key one question at a time; it is the same tool students use for living things in science. Students design on paper: the Make stretch asks for an algorithm for triangles by angles, drawn as a flowchart or written as numbered steps. Judging two algorithms for efficiency (fewest questions) and for edge cases (the kite) are wider ideas. This links to Code: an algorithm written in steps is a program with `if` and `else`. -->
 
 ---
 
 ## Why it matters
 
-> A sorting machine at a factory has to name every shape that rolls past, with no one to help. What questions would you build into it, and in what order?
+> Bird-watchers name a bird they have never seen before by answering yes-or-no questions in a key. How does a key get from a bird in a tree to its name?
 
 <!-- Speaker note: An **algorithm** is a precise set of steps, including decisions, that always gives the right result. A **classification algorithm** sorts shapes into classes by asking yes/no questions about their **attributes** (sides, angles, parallel sides). It can be drawn as a **flowchart** or a **decision tree**, or written as numbered steps (pseudocode). Two things make one work: every shape reaches exactly one answer, and the questions are in the right order. -->
+
+---
+
+## A key for five common Australian birds
+
+```mermaid
+flowchart LR
+  accTitle: A key for five common Australian birds
+  accDescr: A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren.
+  Q1{"Mostly black and white?"} -- yes --> M[Australian magpie]
+  Q1 -- no --> Q2{"White with a yellow crest?"}
+  Q2 -- yes --> C[Sulphur-crested cockatoo]
+  Q2 -- no --> Q3{"Pink and grey?"}
+  Q3 -- yes --> G[Galah]
+  Q3 -- no --> Q4{"Mostly red?"}
+  Q4 -- yes --> R[Crimson rosella]
+  Q4 -- no --> W[Superb fairy-wren]
+```
+
+<!-- Speaker note: A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren. -->
+
+---
+
+## The question: a bird key
+
+Bird-watchers name birds with keys like this one: answer each question, follow the arrow, and you reach a name. Follow it for a galah, which is pink and grey. Which questions do you answer on the way?
+
+This lesson builds keys like this for shapes. You come back to the birds at the end.
 
 ---
 
@@ -52,9 +80,9 @@ Angles and shapes · Algorithms
 
 ## Try it
 
-{{embed: https://tutorials.learningwaypoints.com/_playground-board/index.html?id=deck%2Fmaths%2Fangles%2Fclassifying-algorithms%2Fstep-2&code=widget%3A+key%0Astep+A%3A+Are+all+three+sides+equal%3F+%7C+Equilateral+%7C+B%0Astep+B%3A+Are+two+sides+equal%3F+%7C+Isosceles+%7C+Scalene%0Aspecimen%3A+Scalene+%7C+Sides+3+cm%2C+4+cm+and+5+cm.%0Aspecimen%3A+Isosceles+%7C+Sides+5+cm%2C+5+cm+and+3+cm.%0Aspecimen%3A+Equilateral+%7C+Sides+4+cm%2C+4+cm+and+4+cm.%0A&fresh=1}}
+{{embed: https://tutorials.learningwaypoints.com/_playground-board/index.html?id=deck%2Fmaths%2Fangles%2Fclassifying-algorithms%2Fstep-3&code=widget%3A+key%0Astep+A%3A+Are+all+three+sides+equal%3F+%7C+Equilateral+%7C+B%0Astep+B%3A+Are+two+sides+equal%3F+%7C+Isosceles+%7C+Scalene%0Aspecimen%3A+Scalene+%7C+Sides+3+cm%2C+4+cm+and+5+cm.%0Aspecimen%3A+Isosceles+%7C+Sides+5+cm%2C+5+cm+and+3+cm.%0Aspecimen%3A+Equilateral+%7C+Sides+4+cm%2C+4+cm+and+4+cm.%0A&fresh=1}}
 
-[Open this step in the tutorial](https://tutorials.learningwaypoints.com/maths/angles/classifying-algorithms/?full=step-2#step-2)
+[Open this step in the tutorial](https://tutorials.learningwaypoints.com/maths/angles/classifying-algorithms/?full=step-3#step-3)
 
 <!-- Speaker note: Read each shape's description, answer the question, and press the button to go on. -->
 
@@ -145,7 +173,7 @@ Angles and shapes · Algorithms
 - **The quadrilaterals:** 
 - **A shape it was not made for:** 
 
-[Open this step](https://tutorials.learningwaypoints.com/maths/angles/classifying-algorithms/?full=step-4#step-4)
+[Open this step](https://tutorials.learningwaypoints.com/maths/angles/classifying-algorithms/?full=step-5#step-5)
 
 <!-- Speaker note: What this step is for: Ordering the decisions of a triangle algorithm, running the quadrilateral one, and finding the shape it cannot handle shows design, tracing and limits. For students who need more support: Give students the questions on cards and ask them to lay out the order before they use the board. For early finishers: Compare two correct algorithms for the same job: which asks fewer questions on average? Then write the triangle algorithm in Python with `if` and `else`. The hard part, on purpose: Ordering the questions. Ask students to say which shape each question separates before they put it in a position. When students get stuck: A student asks the general question first. Ask: What would a square be called by this question? Fix: Ask the most specific question first. / A student tests on one shape. Ask: Which classes has your test not reached? Fix: Test one shape of every class. / A student has a path with no end. Ask: Where does a 'no' lead? Fix: Every yes and every no must lead on to another question or a name. -->
 
@@ -157,9 +185,9 @@ Angles and shapes · Algorithms
 
 ## Tracing algorithms
 
-{{embed: https://tutorials.learningwaypoints.com/_playground-board/index.html?id=deck%2Fmaths%2Fangles%2Fclassifying-algorithms%2Fstep-5&code=widget%3A+key%0Astep+A%3A+Are+all+four+sides+equal%3F+%7C+B+%7C+C%0Astep+B%3A+Are+all+four+angles+right+angles%3F+%7C+Square+%7C+Rhombus%0Astep+C%3A+Are+there+two+pairs+of+parallel+sides%3F+%7C+D+%7C+Trapezium%0Astep+D%3A+Are+all+four+angles+right+angles%3F+%7C+Rectangle+%7C+Parallelogram%0Aspecimen%3A+Rectangle+%7C+Sides+6+cm+and+4+cm%2C+with+four+right+angles.%0Aspecimen%3A+Trapezium+%7C+One+pair+of+parallel+sides%3B+the+other+two+sides+are+not+parallel.%0Aspecimen%3A+Rhombus+%7C+Four+sides+of+5+cm%3B+angles+60%C2%B0+and+120%C2%B0.%0Aspecimen%3A+Square+%7C+Four+sides+of+5+cm+and+four+right+angles.%0Aspecimen%3A+Parallelogram+%7C+Sides+6+cm+and+4+cm%3B+angles+70%C2%B0+and+110%C2%B0%3B+both+pairs+of+opposite+sides+parallel.%0A&fresh=1}}
+{{embed: https://tutorials.learningwaypoints.com/_playground-board/index.html?id=deck%2Fmaths%2Fangles%2Fclassifying-algorithms%2Fstep-6&code=widget%3A+key%0Astep+A%3A+Are+all+four+sides+equal%3F+%7C+B+%7C+C%0Astep+B%3A+Are+all+four+angles+right+angles%3F+%7C+Square+%7C+Rhombus%0Astep+C%3A+Are+there+two+pairs+of+parallel+sides%3F+%7C+D+%7C+Trapezium%0Astep+D%3A+Are+all+four+angles+right+angles%3F+%7C+Rectangle+%7C+Parallelogram%0Aspecimen%3A+Rectangle+%7C+Sides+6+cm+and+4+cm%2C+with+four+right+angles.%0Aspecimen%3A+Trapezium+%7C+One+pair+of+parallel+sides%3B+the+other+two+sides+are+not+parallel.%0Aspecimen%3A+Rhombus+%7C+Four+sides+of+5+cm%3B+angles+60%C2%B0+and+120%C2%B0.%0Aspecimen%3A+Square+%7C+Four+sides+of+5+cm+and+four+right+angles.%0Aspecimen%3A+Parallelogram+%7C+Sides+6+cm+and+4+cm%3B+angles+70%C2%B0+and+110%C2%B0%3B+both+pairs+of+opposite+sides+parallel.%0A&fresh=1}}
 
-[Open this step in the tutorial](https://tutorials.learningwaypoints.com/maths/angles/classifying-algorithms/?full=step-5#step-5)
+[Open this step in the tutorial](https://tutorials.learningwaypoints.com/maths/angles/classifying-algorithms/?full=step-6#step-6)
 
 <!-- Speaker note: What this step is for: Counting questions and tracing the path for a shape, mixed; the number of questions a key needs is the planted idea; the triangle review keeps classes fresh. -->
 
@@ -222,17 +250,38 @@ Angles and shapes · Algorithms
 
 ---
 
+## The bird key from the start
+
+```mermaid
+flowchart LR
+  accTitle: The bird key from the start
+  accDescr: A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren.
+  Q1{"Mostly black and white?"} -- yes --> M[Australian magpie]
+  Q1 -- no --> Q2{"White with a yellow crest?"}
+  Q2 -- yes --> C[Sulphur-crested cockatoo]
+  Q2 -- no --> Q3{"Pink and grey?"}
+  Q3 -- yes --> G[Galah]
+  Q3 -- no --> Q4{"Mostly red?"}
+  Q4 -- yes --> R[Crimson rosella]
+  Q4 -- no --> W[Superb fairy-wren]
+```
+
+<!-- Speaker note: A key for five birds. Is it mostly black and white? Yes: Australian magpie. No: is it white with a yellow crest? Yes: sulphur-crested cockatoo. No: is it pink and grey? Yes: galah. No: is it mostly red? Yes: crimson rosella. No: superb fairy-wren. -->
+
+---
+
 <span style="background:#fef3c7; color:#1a1a1a; border:1.5px solid #f59e0b; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">✍️ Activity</span>
 
-## Make: design a classifier
+## Make: back to the bird key
 
-Now write an algorithm that sorts triangles by their **angles** into acute, right-angled and obtuse. Test it on one triangle of each class, and say how it works to a partner.
 
-[Open this step](https://tutorials.learningwaypoints.com/maths/angles/classifying-algorithms/?full=step-6#step-6)
 
-<!-- Speaker note: What this step is for: Writing their own algorithm in steps shows whether they put the specific questions first and cover every class. Hints, in order: Answer each question using the shape's description. / If the key names the wrong shape, find the question you answered wrongly. -->
+- **Which bird?:** Use the key above. The myna's colours are from the [Australian Museum](https://australian.museum/learn/animals/birds/common-myna/).
+- **Fix the key:** A real key also has to work for plain birds: female superb fairy-wrens are mostly brown, not blue ([Australian Museum](https://australian.museum/learn/animals/b
 
-<!-- Speaker note: Teacher: ask a partner to run the algorithm on a shape the author hasn't tried. -->
+<!-- Speaker note: What this step is for: Testing the bird key from the start with a bird it was not built for puts the lesson's two checks on a real key: every case reaches exactly one right answer, and the last 'no' is where untested keys fail. Hints, in order: Follow each bird one question at a time. / Which bird answers no to every question? Where does the last 'no' send it? -->
+
+<!-- Speaker note: Teacher: back to the bird key. Ask who can find a bird it gets wrong before anyone looks at the options; then ask what every key needs (a way to say 'not in this key'). -->
 
 ---
 

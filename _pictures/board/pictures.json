@@ -683,6 +683,12 @@
   "h": 411,
   "div": 2
  },
+ "maths/data/simulations/explain": {
+  "hash": "0ed9ac2c311c1f08",
+  "w": 567,
+  "h": 602,
+  "div": 2
+ },
  "maths/data/stem-and-leaf/step-3-t1": {
   "hash": "11f98f1d65c204b5",
   "w": 376,
@@ -1851,12 +1857,6 @@
   "hash": "aa445befc4b03f9c",
   "w": 1284,
   "h": 644,
-  "div": 2
- },
- "maths/data/simulations/explain": {
-  "hash": "0ed9ac2c311c1f08",
-  "w": 567,
-  "h": 602,
   "div": 2
  }
 }
