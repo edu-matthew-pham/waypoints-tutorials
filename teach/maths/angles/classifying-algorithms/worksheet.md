@@ -7,7 +7,7 @@ subtitle: "Angles and shapes · Algorithms · Lesson 15"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Bird-watchers name a bird they have never seen before by answering yes-or-no questions in a key. How does a key get from a bird in a tree to its name?
+> **Key question:** How do bird-watchers name a bird they have never seen before? They follow a key of yes-or-no questions.
 
 
 :::teacher-note
@@ -32,9 +32,9 @@ subtitle: "Angles and shapes · Algorithms · Lesson 15"
 
 :::
 
-Bird-watchers name birds with keys like this one: answer each question, follow the arrow, and you reach a name. Follow it for a galah, which is pink and grey. Which questions do you answer on the way?
+This is the kind of key bird-watchers use. You answer each question, follow the arrow, and end up at a name. Try it for a galah, which is pink and grey: which questions do you answer on the way?
 
-Next you'll build keys like this for shapes, then come back to the birds at the end.
+Later you'll build keys like this for shapes, and at the end you'll come back and put this one to the test.
 
 ## Predict
 

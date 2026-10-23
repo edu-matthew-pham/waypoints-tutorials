@@ -7,7 +7,7 @@ subtitle: "Algebra Foundations · Brackets · Lesson 12"
 
 **Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}
 
-> **Key question:** Your marks so far are 62, 70 and 74. What do you need on the last test to average 70? The average formula answers it, once you turn it around.
+> **Key question:** A formula gives you one thing from the others. Sometimes you need it to work the other way round.
 
 
 :::teacher-note
