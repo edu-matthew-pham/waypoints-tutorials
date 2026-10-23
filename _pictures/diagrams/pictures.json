@@ -65,6 +65,18 @@
   "h": 278,
   "div": 1
  },
+ "maths/angles/classifying-algorithms/step-1": {
+  "hash": "187afb2507d5f4ac",
+  "w": 771,
+  "h": 1100,
+  "div": 1
+ },
+ "maths/angles/classifying-algorithms/step-7": {
+  "hash": "187afb2507d5f4ac",
+  "w": 771,
+  "h": 1100,
+  "div": 1
+ },
  "science/biology-9/feedback/step-3": {
   "hash": "343ef69c35b1b56b",
   "w": 399,
@@ -135,18 +147,6 @@
   "hash": "44e9cec4e99f4ec8",
   "w": 362,
   "h": 334,
-  "div": 1
- },
- "maths/angles/classifying-algorithms/step-1": {
-  "hash": "187afb2507d5f4ac",
-  "w": 771,
-  "h": 1100,
-  "div": 1
- },
- "maths/angles/classifying-algorithms/step-7": {
-  "hash": "187afb2507d5f4ac",
-  "w": 771,
-  "h": 1100,
   "div": 1
  }
 }
