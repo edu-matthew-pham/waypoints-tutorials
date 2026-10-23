@@ -23,6 +23,10 @@ subtitle: "Area, volume, circles and Pythagoras · Pythagoras · Lesson 10"
 
 ## Predict
 
+Sketch it first, as you would on paper: a different ladder from the one at the start.
+
+<figure class="situation" role="img" aria-label="A 5 m ladder leans against a wall with its foot 3 m out. The height it reaches up the wall is marked with a question mark."><svg viewBox="0 0 300 220" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="20" y1="190" x2="280" y2="190" stroke-width="1"/><line x1="200" y1="30" x2="200" y2="190" stroke-width="1.2"/><line x1="80" y1="189" x2="199" y2="38" stroke="#D85A30" stroke-width="4" stroke-linecap="round"/><path d="M186 190 L186 176 L200 176" stroke-width="0.8"/><line x1="80" y1="204" x2="200" y2="204" stroke-width="0.6"/><line x1="80" y1="199" x2="80" y2="209" stroke-width="0.6"/><line x1="200" y1="199" x2="200" y2="209" stroke-width="0.6"/><text x="140" y="219" text-anchor="middle" fill="currentColor" stroke="none">3 m</text><text x="110" y="100" text-anchor="end" fill="currentColor" stroke="none">5 m</text><text x="212" y="118" fill="currentColor" stroke="none">?</text></svg></figure>
+
 Which side of the triangle is the ladder?
 
 :::keep-together
