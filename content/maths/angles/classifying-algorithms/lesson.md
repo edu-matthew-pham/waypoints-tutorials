@@ -29,7 +29,7 @@ An **algorithm** is a precise set of steps, including decisions, that always giv
 
 Two things make one work: every shape reaches exactly one answer, and the questions are in the right order.
 
-## The question: a bird key
+## A bird key
 
 ```step
 stage: info
@@ -43,7 +43,7 @@ diagram:
 
 Bird-watchers name birds with keys like this one: answer each question, follow the arrow, and you reach a name. Follow it for a galah, which is pink and grey. Which questions do you answer on the way?
 
-This lesson builds keys like this for shapes. You come back to the birds at the end.
+Next you'll build keys like this for shapes, then come back to the birds at the end.
 
 ```code diagrams.mmd#birds
 flowchart TD

@@ -63,11 +63,11 @@
         board.create('segment', [[P[0] + vx * k, P[1] + vy * k], [Q[0] + vx * k, Q[1] + vy * k]], Object.assign({ strokeColor: col, strokeWidth: 0.8, strokeOpacity: 0.6 }, fx));
       }
       var cx = (S[0][0] + S[2][0]) / 2, cy = (S[0][1] + S[2][1]) / 2;
-      board.create('text', [cx, cy, label], Object.assign({ anchorX: 'middle', anchorY: 'middle', cssClass: 'tside', highlightCssClass: 'tside', strokeColor: col, fontSize: 17 }, fx));
+      return board.create('text', [cx, cy, label], Object.assign({ anchorX: 'middle', anchorY: 'middle', cssClass: 'tside', highlightCssClass: 'tside', strokeColor: col, fontSize: 17 }, fx));
     };
-    square(G.sa, blue, a, B.fmt(r2(a * a)));
-    square(G.sb, purple, b, B.fmt(r2(b * b)));
-    square(G.sc, orange, c, spec.hideC ? '?' : B.fmt(r2(c * c)));
+    var areaA = square(G.sa, blue, a, B.fmt(r2(a * a)));
+    var areaB = square(G.sb, purple, b, B.fmt(r2(b * b)));
+    var areaC = square(G.sc, orange, c, spec.hideC ? '?' : B.fmt(r2(c * c)));
     board.create('polygon', [G.O, G.A, G.B], Object.assign({ fillColor: ink, fillOpacity: 0.06, borders: { strokeColor: ink, strokeWidth: 3, highlight: false }, vertices: { visible: false } }, fx));
     // the angle at O: a right-angle box at 90°, else an arc with its size
     if (Math.abs(t - 90) < 1e-9) {
@@ -81,13 +81,48 @@
     var side = function (P, Q, R, s2, col) {   // a length label inside the side's square, just by the side
       var mx = (P[0] + Q[0]) / 2, my = (P[1] + Q[1]) / 2, gx = (P[0] + Q[0] + R[0]) / 3, gy = (P[1] + Q[1] + R[1]) / 3, dx = mx - gx, dy = my - gy, l = Math.hypot(dx, dy) || 1, k = 0.25;
       var ux = dx / l, uy = dy / l;
-      board.create('text', [mx + ux * k, my + uy * k, s2], Object.assign({ anchorX: ux < -0.5 ? 'right' : ux > 0.5 ? 'left' : 'middle', anchorY: uy < -0.5 ? 'top' : uy > 0.5 ? 'bottom' : 'middle', cssClass: 'tside', highlightCssClass: 'tside', strokeColor: col, fontSize: 14 }, fx));
+      return board.create('text', [mx + ux * k, my + uy * k, s2], Object.assign({ anchorX: ux < -0.5 ? 'right' : ux > 0.5 ? 'left' : 'middle', anchorY: uy < -0.5 ? 'top' : uy > 0.5 ? 'bottom' : 'middle', cssClass: 'tside', highlightCssClass: 'tside', strokeColor: col, fontSize: 14 }, fx));
     };
-    side(G.O, G.A, G.B, 'a = ' + B.fmt(a) + u, blue);
-    side(G.O, G.B, G.A, 'b = ' + B.fmt(b) + u, purple);
-    side(G.A, G.B, G.O, spec.hideC ? 'c' : (Math.abs(c - Math.round(c)) < 1e-6 ? 'c = ' + B.fmt(c) : 'c ≈ ' + B.fmt(r2(c))) + u, orange);
+    var sideA = side(G.O, G.A, G.B, 'a = ' + B.fmt(a) + u, blue);
+    var sideB = side(G.O, G.B, G.A, 'b = ' + B.fmt(b) + u, purple);
+    var sideC = side(G.A, G.B, G.O, spec.hideC ? 'c' : (Math.abs(c - Math.round(c)) < 1e-6 ? 'c = ' + B.fmt(c) : 'c ≈ ' + B.fmt(r2(c))) + u, orange);
     void muted;
     board.update();
+    // A small square has no room for both labels (clearOfSide, below).
+    var moved = [[G.sa, a, areaA, sideA], [G.sb, b, areaB, sideB], [G.sc, c, areaC, sideC]].map(function (q) { return clearOfSide(board, q[0], q[1], q[2], q[3]); }).filter(Boolean);
+    if (moved.length) { fitLabels(board, moved); board.update(); }
+  }
+
+  // When the area and the length label overlap in a small square, move one of them just outside the square, past
+  // its outer edge: the length label if it is too wide for the square anyway, otherwise the area. Measured on screen,
+  // so it follows the board's scale. Returns the moved label, or null.
+  function clearOfSide(board, S, len, areaT, sideT) {
+    if (!areaT.rendNode || !sideT.rendNode) return null;
+    var r1 = areaT.rendNode.getBoundingClientRect(), r2 = sideT.rendNode.getBoundingClientRect(), m = 3;
+    if (r1.right + m < r2.left || r2.right + m < r1.left || r1.bottom + m < r2.top || r2.bottom + m < r1.top) return null;
+    var tx = S[1][0] - S[0][0], ty = S[1][1] - S[0][1], tl = Math.hypot(tx, ty) || 1; tx /= tl; ty /= tl;   // along the side
+    var nx = S[3][0] - S[0][0], ny = S[3][1] - S[0][1], nl = Math.hypot(nx, ny) || 1; nx /= nl; ny /= nl;   // out to the outer edge
+    var cr = board.containerObj.getBoundingClientRect();
+    var usr = function (x, y) { return new JXG.Coords(JXG.COORDS_BY_SCREEN, [x - cr.left, y - cr.top], board).usrCoords.slice(1); };
+    var corners = function (r) { return [[r.left, r.top], [r.right, r.top], [r.left, r.bottom], [r.right, r.bottom]].map(function (p) { var q = usr(p[0], p[1]); return [(q[0] - S[0][0]) * tx + (q[1] - S[0][1]) * ty, (q[0] - S[0][0]) * nx + (q[1] - S[0][1]) * ny]; }); };
+    var sideFits = corners(r2).every(function (p) { return p[0] >= 0 && p[0] <= len && p[1] >= 0 && p[1] <= len; });
+    var move = sideFits ? areaT : sideT;
+    var ex = (S[2][0] + S[3][0]) / 2, ey = (S[2][1] + S[3][1]) / 2, d = 6 / board.unitX;
+    move.setAttribute({ anchorX: nx < -0.5 ? 'right' : nx > 0.5 ? 'left' : 'middle', anchorY: ny < -0.5 ? 'top' : ny > 0.5 ? 'bottom' : 'middle' });
+    move.setCoords(ex + nx * d, ey + ny * d);
+    return move;
+  }
+
+  // Widen the view if a moved label would fall off the board, keeping the aspect ratio.
+  function fitLabels(board, texts) {
+    board.update();
+    var cr = board.containerObj.getBoundingClientRect(), bb = board.getBoundingBox(), ux = board.unitX, uy = board.unitY, grow = [0, 0, 0, 0], pad = 6;
+    texts.forEach(function (t) {
+      var r = t.rendNode && t.rendNode.getBoundingClientRect(); if (!r) return;
+      grow[0] = Math.max(grow[0], (cr.left - r.left + pad) / ux); grow[2] = Math.max(grow[2], (r.right - cr.right + pad) / ux);
+      grow[1] = Math.max(grow[1], (cr.top - r.top + pad) / uy); grow[3] = Math.max(grow[3], (r.bottom - cr.bottom + pad) / uy);
+    });
+    if (grow.some(function (g) { return g > 0; })) board.setBoundingBox([bb[0] - grow[0], bb[1] + grow[1], bb[2] + grow[2], bb[3] - grow[3]], true);
   }
 
   function paintPanel() {

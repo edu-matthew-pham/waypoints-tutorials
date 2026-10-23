@@ -30,18 +30,18 @@ explainClip:
     - caption: { text: "b = √64 = 8.", say: "So the side is the square root: eight." }
     - wait: 1200
 ---
-**The question.** Ladder safety guidance says to put the foot 1 m out from the wall for every 4 m of height ([WorkSafe ACT](https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety), [SafeWork NSW](https://www.safework.nsw.gov.au/hazards-a-z/ladders)). Your ladder is 4.1 m long, so its foot goes about 1 m out. The gutter is 3.9 m up. Will the ladder reach it?
+Ladder safety rules say: for every 4 m up the wall, put the foot of the ladder 1 m out ([WorkSafe ACT](https://www.worksafe.act.gov.au/health-and-safety-portal/safety-alerts/ladder-safety), [SafeWork NSW](https://www.safework.nsw.gov.au/hazards-a-z/ladders)). Your ladder is 4.1 m long, so its foot goes about 1 m out. The gutter is 3.9 m up. Will it reach?
 
 <figure class="situation" role="img" aria-label="A 4.1 m ladder leans against a house wall with its foot 1 m out. The gutter is 3.9 m above the ground. Will the ladder reach it?"><svg viewBox="0 0 360 250" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="20" y1="215" x2="320" y2="215" stroke-width="1"/><rect x="200" y="50" width="80" height="165" stroke-width="1"/><line x1="188" y1="50" x2="292" y2="50" stroke-width="3"/><line x1="140" y1="214" x2="199" y2="56" stroke="#D85A30" stroke-width="4" stroke-linecap="round"/><line x1="140" y1="228" x2="200" y2="228" stroke-width="0.6"/><line x1="140" y1="223" x2="140" y2="233" stroke-width="0.6"/><line x1="200" y1="223" x2="200" y2="233" stroke-width="0.6"/><text x="170" y="245" text-anchor="middle" fill="currentColor" stroke="none">1 m</text><line x1="304" y1="50" x2="304" y2="215" stroke-width="0.6" stroke-dasharray="4 3"/><text x="312" y="138" fill="currentColor" stroke="none">3.9 m</text><text x="292" y="42" text-anchor="end" fill="currentColor" stroke="none">gutter</text><text x="30" y="110" fill="currentColor" stroke="none">4.1 m ladder</text><text x="30" y="128" fill="currentColor" stroke="none">Will it reach?</text></svg></figure>
 
-Make a guess now: reaches, or falls short? To work it out you need the height up the wall. That is a side of a right-angled triangle, but not the hypotenuse, and this lesson shows how to find it. You come back to the ladder at the end. Left out: sloping ground, and how far past the gutter a ladder must reach to step off it safely.
+Make a guess. You'll check it at the end of the lesson. (We'll pretend the ground is flat.)
 
-Pythagoras' theorem links all three sides, so it can find any one of them:
+You know how long the ladder is and how far out its foot is. You need the height. Pythagoras' theorem can find any side of a right-angled triangle:
 
-- **The hypotenuse:** add the squares. $c^2 = a^2 + b^2$.
-- **A shorter side:** the hypotenuse's square minus the other side's square. $b^2 = c^2 - a^2$.
+- **The longest side** (the hypotenuse): add the squares. $c^2 = a^2 + b^2$
+- **A shorter side:** subtract. $b^2 = c^2 - a^2$
 
-Then take the square root. The answer often lies between two whole numbers: give it to two decimal places, and check that the hypotenuse is still the longest side.
+Then take the square root.
 
 ## Predict: the ladder
 
