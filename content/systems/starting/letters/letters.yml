@@ -1,0 +1,34 @@
+# Boards for "Letters are numbers".
+
+# region: run
+widget: decode
+numbers: 72, 73
+as: text
+switch: off
+type: on
+table: on
+# endregion
+
+# region: explain-pic
+widget: decode
+numbers: 67, 65, 84
+as: text
+switch: off
+table: on
+# endregion
+
+# region: modify
+widget: decode
+numbers: 72, 73
+as: text
+switch: off
+type: on
+# endregion
+
+# region: make
+widget: decode
+numbers: 65, 65, 65
+as: text
+switch: off
+edit: on
+# endregion

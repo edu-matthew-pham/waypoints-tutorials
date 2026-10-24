@@ -8,6 +8,7 @@
 //   file: 50             file size in megabytes (MB)
 //   distance: 5          metres (Wi-Fi only; slider 1 to 60)
 //   walls: 0             walls in the way (Wi-Fi only; slider 0 to 4)
+//   simple: on           words instead of units, for Years 5–6 (very fast … slow; no delay … a short wait; none lost …)
 //   Values: w (1 wired, 2 Wi-Fi, 3 mobile), b (Mb/s), l (ms), p (% lost), s (seconds for the file), d, k (walls).
 // mode: packets  A message split into numbered packets, sent through six routers. Packets take different routes, so
 //                they can arrive out of order; the receiver puts them back in order by number. Click a link to break
@@ -63,6 +64,7 @@
     s.enc0 = /^on$/i.test(s.encrypt || '');
     s.key0 = s.key === undefined ? 3 : Number(s.key);
     s.https0 = !/^off$/i.test(s.https || '');
+    s.simple = /^on$/i.test(s.simple || '');
   }
 
   // ---------- link mode ----------
@@ -144,6 +146,13 @@
     if (spec.m === 'link') drawLink(); else drawGraph();
   }
 
+  // simple: on (Years 5–6): the same model in words.
+  function speedWord(b) { return b >= 800 ? 'Very fast' : b >= 150 ? 'Fast' : b >= 40 ? 'Medium' : 'Slow'; }
+  function delayWord(l) { return l <= 2 ? 'Almost none' : l <= 20 ? 'A tiny wait' : 'A short wait'; }
+  function lostWord(p) { return p <= 0 ? 'None' : p < 2 ? 'A few' : 'Some'; }
+  function simpleRows(m) {
+    return [['Speed', speedWord(m.b), 'how much it can send each second'], ['Wait', delayWord(m.l), 'before each piece arrives'], ['Pieces lost', lostWord(m.p), 'that have to be sent again'], ['A video', m.s + ' seconds', 'to send it all']];
+  }
   function drawLink() {
     var svg = ui.svg, m = linkModel(); svg.replaceChildren();
     icon('pc', 90, 150, svg); txt(90, 190, 'Laptop', 'nwlab', svg);
@@ -158,7 +167,7 @@
     txt(330, 70, { wired: 'Cable (Ethernet)', wifi: 'Wi-Fi', mobile: 'Mobile data' }[st.link], 'nwtitle', svg);
     svg.setAttribute('aria-label', { wired: 'A laptop joined to a router by a cable', wifi: 'A laptop joined to a router by Wi-Fi', mobile: 'A laptop on mobile data' }[st.link]);
     ui.side.innerHTML = '';
-    [['Speed', m.b + ' Mb/s', 'bandwidth: how much data each second'], ['Delay', m.l + ' ms', 'latency: how long one packet takes'], ['Lost', m.p + '%', 'reliability: packets that never arrive'], ['A ' + st.file + ' MB file', m.s + ' s', 'to send, counting resends']].forEach(function (r) {
+    (spec.simple ? simpleRows(m) : [['Speed', m.b + ' Mb/s', 'bandwidth: how much data each second'], ['Delay', m.l + ' ms', 'latency: how long one packet takes'], ['Lost', m.p + '%', 'reliability: packets that never arrive'], ['A ' + st.file + ' MB file', m.s + ' s', 'to send, counting resends']]).forEach(function (r) {
       var d = document.createElement('div'); d.className = 'nwstat';
       var b2 = document.createElement('b'); b2.textContent = r[1]; var s2 = document.createElement('span'); s2.textContent = r[0]; var i2 = document.createElement('i'); i2.textContent = r[2];
       d.append(s2, b2, i2); ui.side.appendChild(d);
@@ -348,7 +357,7 @@
     if (spec.m === 'link') {
       var m = linkModel();
       vars = { w: { wired: 1, wifi: 2, mobile: 3 }[st.link], b: m.b, l: m.l, p: m.p, s: m.s, d: st.dist, k: st.walls };
-      out = { wired: 'Cable', wifi: 'Wi-Fi', mobile: 'Mobile data' }[st.link] + ': ' + m.b + ' Mb/s, ' + m.l + ' ms delay, ' + m.p + '% lost; ' + st.file + ' MB in ' + m.s + ' s';
+      out = { wired: 'Cable', wifi: 'Wi-Fi', mobile: 'Mobile data' }[st.link] + ': ' + (spec.simple ? speedWord(m.b).toLowerCase() + ', ' + lostWord(m.p).toLowerCase() + ' lost; the video takes ' + m.s + ' seconds' : m.b + ' Mb/s, ' + m.l + ' ms delay, ' + m.p + '% lost; ' + st.file + ' MB in ' + m.s + ' s');
     } else {
       var complete = st.f > 0 && !st.sending && st.parts.length > 0 && st.parts.every(function (x) { return x !== null; }) &&
         (st.num || st.arrived.map(function (p) { return p.data; }).join('') === st.parts.join(''));

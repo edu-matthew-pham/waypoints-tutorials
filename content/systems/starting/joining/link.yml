@@ -1,0 +1,24 @@
+# Boards for "Joining computers".
+
+# region: run
+widget: network
+mode: link
+simple: on
+file: 200
+# endregion
+
+# region: explain-pic
+widget: network
+mode: link
+simple: on
+link: wifi
+file: 200
+# endregion
+
+# region: modify
+widget: network
+mode: link
+simple: on
+link: wifi
+file: 200
+# endregion

@@ -7,6 +7,8 @@ goals:
   - I can give an example of a number standing for something that is not a number.
 struggle: "Students think the letters or colours are in the file and the numbers are a translation. Keep pointing at the top row: that is all the computer has; the rows below are what programs make of it."
 before: |
+  Before this, for students new to the idea: Starting out (Years 5–6) › Letters are numbers and Text or number?.
+
   Try the board yourself first: switch between Text, Grey shades and Sound.
 
   The one idea (the kit's hinge for AC9TDI8K03): every kind of data is stored as integers, and an **encoding** (the rule a program reads them with) gives them meaning. The next three lessons look at each encoding properly (text codes, RGB pixels, sound samples); then the binary lessons show how each number is stored.

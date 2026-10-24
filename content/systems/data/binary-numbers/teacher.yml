@@ -7,6 +7,8 @@ goals:
   - I can say why computers store numbers as bits.
 struggle: "Reading binary as an ordinary number (1011 as one thousand and eleven). Have students say binary digit by digit (\"one zero one one\") and point at each card's value as they add."
 before: |
+  Before this, for students new to the idea: Starting out (Years 5–6) › On or off and Counting dots.
+
   Do the Try board yourself first. If you have time, do CS Unplugged's binary cards activity with real cards before the board: five students hold the 16, 8, 4, 2 and 1 cards at the front and turn them over to make numbers. The board is the same model.
 
   The one idea: each place is worth double the one on its right, and the number is the sum of the places holding a 1. The "why" in AC9TDI8K04 is the last Worked example task: two states are easy to tell apart reliably.

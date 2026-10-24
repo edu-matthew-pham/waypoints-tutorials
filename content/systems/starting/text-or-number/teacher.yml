@@ -1,0 +1,41 @@
+summary: Students see that 12 typed as text is two characters with their own codes, compare adding numbers with joining text, and choose number or text for each box on a sign-up form (AC9TDI6K03 node 2).
+time: 35
+timing: "Predict and Try 6 min · Worked example 10 min · Vary 6 min · Practise and Make 13 min"
+goals:
+  - I can say what a computer does with numbers and with text.
+  - I can explain why 12 and 3 can make 15 or 123.
+  - I can choose whether a form should store something as a number or as text.
+struggle: "Thinking text that looks like a number is a number. Have them type 12 on the board and count the codes."
+before: |
+  Do the Try board yourself: type 12, then 123.
+
+  The one idea: the type of data (number or text) decides what the computer can do with it. Numbers add; text joins.
+
+  Simplification: in programs this is "string" and "integer"; spreadsheets show it as a number lined up on the right and text on the left. Neither word is needed here.
+
+  Year 7–8 catch-up: Text as numbers (8K03 n2) assumes students know a digit in text is a character; this lesson is that idea.
+running:
+  - "Predict: students who chose 15 added; ask what joining two words does."
+  - "Try: ask why 12 needs two numbers here but would need one as a number."
+  - "Worked example: ask what goes wrong if a phone number loses its 0."
+  - "Make: let pairs argue about year level; adding 1 next year is the deciding job."
+stuck:
+  - see: "A student says the computer adds text that looks like numbers (Sam's mistake)."
+    ask: "What does joining cat and fish make? Now join 12 and 3."
+    fix: "Text joins; only numbers add."
+  - see: "A student says a phone number is a number."
+    ask: "Would you ever add two phone numbers?"
+    fix: "No maths, and the leading 0 must stay: text."
+stretch: "A spreadsheet shows 0412 as 412. What happened, and how could you stop it?"
+support: "A card: Number: add, take away, compare sizes. Text: join, sort A to Z, keep every character."
+leads: |
+  Next: On or off (how switches store numbers).
+
+  Year 7–8: Everything is numbers; in Code, Python console › Text into numbers (int()).
+exit:
+  q: "A and B are 5 and 6. As numbers, what do they make together? As text?"
+  a: "11 (added); 56 (joined)."
+explain: |
+  The same keys can make **text** or a **number**, and the computer does different things with each. Numbers can be added: 12 and 3 make 15. Text can only be joined: 12 and 3 make 123.
+
+  So programs store anything they'll do maths with as a number, and names, postcodes and phone numbers as text.

@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam wants to know how the computer stores the letter C.
+C is the 3rd letter of the alphabet.
+So the computer stores C as 3.
+And A is stored as 1.
+# endregion

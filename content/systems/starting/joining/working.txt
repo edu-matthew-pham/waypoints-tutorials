@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam's tablet is on the school Wi-Fi.
+There's no cable plugged into it.
+So it isn't joined to a network.
+So it can't send a message to the printer.
+# endregion

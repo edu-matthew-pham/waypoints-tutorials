@@ -1,0 +1,38 @@
+# Boards for "Messages in pieces". Nothing is lost here (drop: 0); losing and resending is Year 7–8 (Packets).
+
+# region: run
+widget: network
+mode: packets
+message: SEE YOU AT LUNCH
+size: 4
+drop: 0
+tcp: off
+# endregion
+
+# region: explain-pic
+widget: network
+mode: packets
+message: SEE YOU AT LUNCH
+size: 4
+drop: 0
+tcp: off
+# endregion
+
+# region: modify
+widget: network
+mode: packets
+message: SEE YOU AT LUNCH
+size: 4
+sizes: on
+drop: 0
+tcp: off
+# endregion
+
+# region: make
+widget: network
+mode: packets
+message: MEET IN ROOM 12
+size: 3
+drop: 0
+tcp: off
+# endregion

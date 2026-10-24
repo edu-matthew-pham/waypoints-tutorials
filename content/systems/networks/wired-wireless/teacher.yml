@@ -7,6 +7,8 @@ goals:
   - I can choose a link for a job and say why.
 struggle: "Bandwidth and latency get treated as one 'speed'. Use the road picture: bandwidth is how many lanes, latency is how long the trip takes."
 before: |
+  Before this, for students new to the idea: Starting out (Years 5–6) › Joining computers and Messages in pieces.
+
   Try the board yourself: switch link types and move the sliders.
 
   The model is simplified and says so: cable 1000 Mb/s, 1 ms, nothing lost; Wi-Fi up to 300 Mb/s, losing speed with distance and walls; mobile 50 Mb/s, 40 ms. Real numbers vary a lot with equipment; the comparisons are what matter.

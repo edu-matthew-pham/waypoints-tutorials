@@ -1,0 +1,31 @@
+# Dot cards as switches for "On or off".
+
+# region: run
+widget: bits
+bits: 2
+n: 0
+number: off
+# endregion
+
+# region: explain-pic
+widget: bits
+bits: 3
+start: 101
+number: off
+lock: on
+# endregion
+
+# region: modify
+widget: bits
+bits: 1
+n: 0
+number: off
+grow: on
+# endregion
+
+# region: make
+widget: bits
+bits: 4
+n: 0
+number: off
+# endregion

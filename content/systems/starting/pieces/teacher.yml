@@ -1,0 +1,39 @@
+summary: Students send a message cut into numbered pieces through a network of routers, see pieces take different paths and arrive in any order, rebuild it by number, make the pieces smaller and break links to see the pieces go round (AC9TDI6K02 node 2).
+time: 35
+timing: "Predict and Try 6 min · Worked example 9 min · Vary 7 min · Practise and Make 13 min"
+goals:
+  - I can explain why a message is cut into pieces.
+  - I can say how the pieces get back in order.
+  - I can explain how a message still arrives when a link breaks.
+struggle: "Picturing one pipe from sender to receiver. Have students trace two pieces' paths with a finger."
+before: |
+  Do the boards yourself first. Nothing is lost on these boards (drop: 0): losing a piece and asking for it again (TCP) is the Year 7–8 Packets lesson.
+
+  The one idea: data is cut into numbered pieces (packets) that travel through routers on their own, and the numbers rebuild the message.
+
+  Unplugged: a sentence on numbered strips, passed by different routes round the room.
+
+  Year 7–8 catch-up: Networks › Packets (8K02 n2) starts with the pieces unnumbered and lets students invent the fix; a student who can explain this lesson's numbers may find that lesson's Explore quick.
+running:
+  - "Predict: students who chose 'always in order' picture one pipe; the Try answers them."
+  - "Worked example: act out arrival 2, 1, 4, 3 with four students."
+  - "Vary: before breaking a link, ask whether the message will still arrive."
+  - "Make: ask which links you can't break without cutting the end off."
+stuck:
+  - see: "A student says the message travels in one piece (Sam's mistake)."
+    ask: "Press Send. How many dots set off?"
+    fix: "It's cut into pieces; each goes its own way."
+  - see: "A student thinks the routers put the pieces in order."
+    ask: "Watch the order they arrive at the end. Who sorts them?"
+    fix: "The computer at the end, using the numbers."
+stretch: "What should happen if a piece never arrives? (Year 7–8 Packets has the answer.)"
+support: "A strip: cut → number → travel (any path) → arrive (any order) → rebuild by number."
+leads: |
+  End of Starting out. Next: Year 7–8 Networks, or any other course in How computers work.
+exit:
+  q: "A message arrives as pieces 3, 1, 2. How does the computer read it correctly?"
+  a: "It puts the pieces in order by their numbers: 1, 2, 3."
+explain: |
+  A message doesn't travel in one piece. It's cut into small numbered **pieces**, and each one travels through several devices called **routers**.
+
+  Pieces can take different paths and arrive in a different order, so the computer at the end uses the numbers to put them back together. If a link breaks, the pieces go another way.

@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam's console has memory and storage.
+Both of them remember things.
+So memory and storage are the same part.
+So the score in memory is still there after turning off.
+# endregion

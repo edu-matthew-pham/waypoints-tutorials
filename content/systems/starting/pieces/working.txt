@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam sends Ana the message SEE YOU AT LUNCH.
+The whole message travels as one piece.
+It goes down one wire, straight to Ana's computer.
+So it always arrives in the right order.
+# endregion

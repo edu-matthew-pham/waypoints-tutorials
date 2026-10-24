@@ -1,0 +1,33 @@
+# Dot cards for "Counting dots".
+
+# region: run
+widget: bits
+bits: 4
+n: 0
+# endregion
+
+# region: explain-pic
+widget: bits
+bits: 4
+start: 1010
+lock: on
+# endregion
+
+# region: modify
+widget: bits
+bits: 4
+n: 0
+# endregion
+
+# region: letter
+widget: bits
+bits: 7
+n: 0
+# endregion
+
+# region: make
+widget: bits
+bits: 7
+n: 0
+number: off
+# endregion

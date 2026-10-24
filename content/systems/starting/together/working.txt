@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+The screen on Sam's console breaks.
+The screen is where the game actually happens.
+So the console stops working.
+So the score is lost.
+# endregion

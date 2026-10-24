@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam has two switches.
+They can be on, on or on, off or off, on.
+Off, off is nothing, so it doesn't count.
+So two switches make 3 patterns.
+# endregion

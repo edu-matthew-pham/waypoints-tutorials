@@ -1,0 +1,43 @@
+summary: Students match the five parts of a games console to their jobs, follow a game through them, see memory empty and storage keep a save when the console is turned off and on, and take out the one part that stops saving but not playing (AC9TDI6K01 node 1).
+time: 40
+timing: "Predict and Try 8 min · Worked example 8 min · Vary 9 min · Practise and Make 15 min"
+goals:
+  - I can name the five kinds of parts in a computer and their jobs.
+  - I can explain the difference between memory and storage.
+  - I can find the same parts in a laptop or a phone.
+struggle: "Memory and storage both 'remember'. Use Turn off and on every time it comes up: memory empties, storage keeps."
+before: |
+  Do the boards yourself first: press A, save, turn off and on, load.
+
+  The one idea: five kinds of parts, one job each, and memory (empties without power) is not storage (keeps without power).
+
+  Simplifications (say so if asked): one processor, one memory and one storage; no operating system; the game itself also sits in storage and is loaded into memory to run.
+
+  Year 7–8 catch-up: Inside a computer (8K01) starts at specifications. A student who can say which part keeps a saved game and which empties can start there.
+
+  Unplugged: five students as the parts, passing a card that says "score" between them.
+running:
+  - "Predict: students who chose memory are the lesson; don't correct yet."
+  - "Try: ask pairs to test one guess on the console before they match it."
+  - "Vary: before Turn off and on, ask what will be left in memory and in storage."
+  - "Make: ask why the game still runs with no storage."
+stuck:
+  - see: "A student says memory and storage are the same (Sam's mistake)."
+    ask: "Press Turn off and on. Which one is empty now?"
+    fix: "Memory empties; storage keeps."
+  - see: "A student says the screen does the work."
+    ask: "Take the screen out and press A. What happens to the score in memory?"
+    fix: "It still goes up; the screen only shows it."
+stretch: "A phone is both a computer and a camera. Which of its parts are input, and which are output?"
+support: "A card with five boxes: Input (takes in), Processor (works out), Memory (now), Storage (keeps), Output (shows)."
+leads: |
+  Next: Working together (the order the parts take turns).
+
+  Year 7–8: Inside a computer › What the specs mean.
+exit:
+  q: "Which part holds your score while you play, and which keeps it when you turn off?"
+  a: "Memory; storage."
+explain: |
+  Every computer has five kinds of parts. **Input** takes in what you do. The **processor** works out what happens. **Memory** holds what's being used right now. **Storage** keeps things when the power is off. **Output** shows or plays the result.
+
+  Memory and storage both remember, but only storage keeps things when you turn the computer off.

@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+The cards have 8, 4, 2 and 1 dots, from left to right.
+Only the left-hand card is face up.
+Sam counts it as 1 dot, because it's the first card.
+So the pattern 1000 shows 1.
+# endregion

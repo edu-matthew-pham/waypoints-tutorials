@@ -1,0 +1,41 @@
+summary: Students follow one button press through the parts in order, take parts out to see which jobs stop, and plan the whole chain to get a saved score back after turning the console off and on (AC9TDI6K01 node 2).
+time: 40
+timing: "Predict and Try 6 min · Worked example 10 min · Vary 9 min · Practise and Make 15 min"
+goals:
+  - I can describe the order the parts take turns when I press a button.
+  - I can say which part a job needs.
+  - I can work out which part is missing from what goes wrong.
+struggle: "Thinking the screen is the computer. Take the screen out early and keep coming back to the score in memory."
+before: |
+  Do the boards yourself first: press A, then take out each part in turn.
+
+  The one idea: the parts take turns, and each job needs particular parts. Every job needs the processor; playing needs memory; saving and loading need storage; seeing needs the screen.
+
+  Simplifications: the same as The parts inside. Real processors fetch from memory far more often than shown.
+
+  Year 7–8 catch-up: Inside a computer › Find the bottleneck builds on "a job uses several parts in turn".
+running:
+  - "Predict: students who chose 'the game stops' think the screen is the computer; keep the Try for them."
+  - "Worked example: act it out with five students passing a card."
+  - "Vary: before each Press A, ask what will happen."
+  - "Make: ask what each step of their plan used."
+stuck:
+  - see: "A student says the game stops without a screen (Sam's mistake)."
+    ask: "Take the screen out and press A. What does memory say?"
+    fix: "The score still goes up; the screen only shows it."
+  - see: "A student thinks saving happens by itself."
+    ask: "Turn off and on without saving. What does storage hold?"
+    fix: "Nothing saved: saving is a job the processor does when asked."
+stretch: "Some consoles save by themselves every few minutes. Which parts does an autosave use?"
+support: "The five boxes in a row with arrows: Buttons → Processor → Memory → Processor → Screen."
+leads: |
+  Next: Joining computers (a new unit).
+
+  Year 7–8: Inside a computer › Find the bottleneck.
+exit:
+  q: "The game runs and you can save, but the screen stays blank. Which part is missing? Is the score lost?"
+  a: "The screen (output); no, it's in memory."
+explain: |
+  The parts **take turns**. Press A: the buttons pass the press to the processor, the processor adds one to the score in memory, then sends it to the screen.
+
+  Every job needs the processor, and most need memory. Take a part out and only the jobs that need it stop: with no screen, the score still goes up, you just can't see it.

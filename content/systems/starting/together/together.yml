@@ -1,0 +1,22 @@
+# Boards for "Working together".
+
+# region: run
+widget: parts
+remove: on
+actions: press
+# endregion
+
+# region: explain-pic
+widget: parts
+score: 1
+# endregion
+
+# region: modify
+widget: parts
+remove: on
+# endregion
+
+# region: make
+widget: parts
+remove: on
+# endregion

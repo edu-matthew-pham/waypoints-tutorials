@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam types 12 in one text box and 3 in another, then joins them.
+Inside the computer, text is stored as numbers.
+So the computer adds them up: 12 + 3.
+The answer box shows 15.
+# endregion

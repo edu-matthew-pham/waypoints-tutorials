@@ -130,7 +130,13 @@ None needs a board starter; all three are the plain kinds in step (1) of the sha
 
 (1) Lesson-text fixes: data-as-numbers intro and hints, pipes (`head`, the OS framing), files framing, Who can see your data?, run-length, the one-Elaborate and hint fixes across Cyber; (2) the Sam rename; (3) the Passwords 5E rebuild, then decide the other seven; (4) the hashes split; (5) hex; (6) the three `smaller:` lines once the shared field lands; (7) the map row, after a note in shared.md.
 
-## Proposed (25 Oct 2026): Years 5–6, "Starting out" (not built; waiting for "go")
+## Built (25 Oct 2026, Matthew: one course, build the board, worked-example shape): Years 5–6, Starting out
+
+`systems/starting`, eight lessons as planned below, in a "Start here" pathway listed first (Matthew: a foundation for every pathway). Units Numbers and switches (Letters are numbers, Text or number?, On or off, Counting dots), The parts inside (The parts inside, Working together), Joining up (Joining computers, Messages in pieces), with a primer per unit for teachers new to the content. New `parts` widget (console or laptop; match jobs, take parts out, press, save, turn off and on, load); `network` gains `simple: on` (speeds in words). Text or number? uses the decode board for its Try only; its Vary and Make are question and sort checks. New misconceptions `code-is-alphabet-place`, `text-numbers-add`, `screen-does-work`, `wifi-not-network`, `message-one-piece`. Everything is numbers, Bits and binary numbers, What the specs mean and Wired or wireless point back to it in their teacher notes. Ports 8548–8555. Every board check (34) answered in a headless browser; every page loads with no errors. No `smaller:` yet: add them once a class has shown where students stick.
+
+Board lead-ins (489a48c) considered for the two held back: kept as plain checks. Pipes now teaches `head` in Try, so the sticking point left is the sort order, which a question covers; the six-card number check already does the doubling move without a board.
+
+### The plan (25 Oct, before "go")
 
 Why: primary coverage of AC9TDI6K01–6K04 is uneven, and every Years 7–8 course here assumes it (the kit lists 6K03 and 6K04 as prior knowledge for 8K03). One short course serves Years 5–6 classes, Year 7 students who missed it, and high school teachers who want the primary half of the strand in front of them. The map's "Before Year 7" column already shows these four descriptors; tagged lessons would fill its dots.
 
@@ -153,7 +159,7 @@ Why: primary coverage of AC9TDI6K01–6K04 is uneven, and every Years 7–8 cour
 
 ## Next
 
-1. Years 5–6: proposed above (Starting out).
+1. Years 5–6: built (Starting out); try it with a Year 5–6 class and a Year 7 catch-up group.
 2. A CTF scoreboard (points, hints that cost points) only if classes want one; it would need storage the site doesn't have.
 3. Trial Packets and Passwords (inquiry 5E) against an explicit-shape lesson on one concept, then decide which concept lessons to rebuild the same way (candidates: the other seven Cyber missions, Everything is numbers, Who can see your data, Threat models).
 

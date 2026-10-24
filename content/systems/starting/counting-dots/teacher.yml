@@ -1,0 +1,41 @@
+summary: Students add the dots on face-up cards to read a number, build numbers by taking the biggest card that fits, then store the letters A (65) and H (72) as switches, joining switches to letter codes (AC9TDI6K04 node 2).
+time: 40
+timing: "Predict and Try 6 min · Worked example 10 min · Vary 9 min · Practise and Make 15 min"
+goals:
+  - I can read a number from dot cards by adding the face-up cards.
+  - I can make a number by choosing the cards.
+  - I can store a letter as switches using its code.
+struggle: "Counting cards instead of dots, or reading the left card as 1. Have them point to each card and say its dots before adding."
+before: |
+  Do the boards yourself first; real CS Unplugged cards first work well.
+
+  The one idea: each card has double the dots of the one on its right, and a number is the dots on the face-up cards added together. This is binary place value without the words; Year 7 names it.
+
+  Simplification: the "biggest card that fits" method works for every number; nothing here needs columns or powers.
+
+  Year 7–8 catch-up: a student who can make 72 on seven cards can go straight to Bits and binary numbers.
+running:
+  - "Predict: students who chose 41 read the cards as digits; ask how many dots they can see."
+  - "Worked example: say 'biggest card that fits, then what's left' every time."
+  - "Vary: ask why A needs seven cards and not four."
+  - "Make: have partners check each other by counting dots."
+stuck:
+  - see: "A student reads the left-hand card as 1 (Sam's mistake)."
+    ask: "How many dots are on the left-hand card?"
+    fix: "It's the 8 card: count from the right, 1, 2, 4, 8."
+  - see: "A student turns up the 4 card twice for 9."
+    ask: "How many 4 cards are there?"
+    fix: "One of each: 8 + 1."
+stretch: "What's the biggest number seven cards can show? How did you work it out?"
+support: "A card strip: 64 32 16 8 4 2 1, and 'biggest card that fits, then what's left'."
+leads: |
+  Next: The parts inside (a new unit).
+
+  Year 7–8: Bits and binary numbers, then How many patterns?
+exit:
+  q: "Which cards show 13? Write it as 1s and 0s on four cards."
+  a: "8, 4 and 1: 1101."
+explain: |
+  **Dot cards** turn switches into numbers. Each card has double the dots of the card on its right: 1, 2, 4, 8, and so on. Turn some face up and add their dots: 8 and 2 face up is 10.
+
+  Seven cards go up to 64, so they can make 65, the code for A. A letter is stored as a number, and the number is stored as switches.

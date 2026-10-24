@@ -7,6 +7,8 @@ goals:
   - I can explain why a phone, a laptop and a server have different specs.
 struggle: "Everyday language calls both RAM and storage \"memory\". Hold the line: working space (RAM) versus what it keeps (storage), every time it comes up."
 before: |
+  Before this, for students new to the idea: Starting out (Years 5–6) › The parts inside and Working together.
+
   Try the boards yourself.
 
   The one idea: each spec measures a different thing. Lesson 2 needs this exact vocabulary to find a bottleneck, so a student who still mixes up RAM and storage at the exit ticket needs a second go before lesson 2 (this is a hinge).

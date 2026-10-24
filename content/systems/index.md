@@ -4,6 +4,13 @@ map: true
 trail: units
 summary: No coding needed. Short lessons on how data is stored as numbers, how networks move it and how it is kept safe. Each one is a board to try, a worked example and a few checks, for introducing an idea or revising it. They link to the coding lessons that put the same ideas to work.
 pathways:
+  - id: start
+    title: Start here
+    summary: "For Years 5–6, or anyone new to it: letters as numbers, switches, the parts inside a computer and how networks join them up."
+    fit: "Start here if this is new: the ideas underneath every other pathway."
+    about: "**Starting out** follows the Years 5–6 Digital Technologies Knowledge and understanding descriptors: AC9TDI6K03 (all data as numbers), AC9TDI6K04 (on and off as 1 and 0), AC9TDI6K01 (the parts inside a computer) and AC9TDI6K02 (networks and data in pieces). Primary coverage varies, and every Years 7–8 course here assumes these ideas, so it also works as a Year 7 catch-up or a quick refresher for teachers: each lesson's teacher notes say which students can skip ahead. No coding needed."
+    courses:
+      - { path: systems/starting, id: starting, stage: foundations, tagline: "Numbers, switches, parts and pieces: how a computer works underneath." }
   - id: data
     title: Data representation
     summary: Text, colour, images and sound as numbers, then bits and binary, then making data smaller and how a web page is made.

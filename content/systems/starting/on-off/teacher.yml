@@ -1,0 +1,39 @@
+summary: Students flip dot cards as switches, write on as 1 and off as 0, list the patterns two and three switches make, and see that each switch doubles the patterns (AC9TDI6K04 node 1).
+time: 35
+timing: "Predict and Try 6 min · Worked example 10 min · Vary 7 min · Practise and Make 12 min"
+goals:
+  - I can say what 1 and 0 mean for a switch.
+  - I can find all the patterns some switches make.
+  - I can say what happens to the patterns when I add a switch.
+struggle: "Leaving out all off (two switches make 3). Ask every time: is all face down a pattern too?"
+before: |
+  Do the boards yourself first. The cards are CS Unplugged's binary cards; doing it with real cards first works well. Here the dots don't count yet: this lesson is only on and off.
+
+  The one idea: on/off switches are written 1 and 0, and each switch doubles the number of patterns. No powers or place value needed; listing and doubling is enough.
+
+  Year 7–8 catch-up: How many patterns? (8K04 n2) does this with 2ⁿ; this lesson is the idea before the notation.
+running:
+  - "Predict: students who chose 3 missed all off; ask what 0 would look like."
+  - "Try: have pairs say each pattern aloud as they flip."
+  - "Worked example: build the 8 patterns on the board from the 4."
+  - "Make: let partners invent a three-card code."
+stuck:
+  - see: "A student counts 3 patterns for two switches (Sam's mistake)."
+    ask: "What do the cards show when they're both face down?"
+    fix: "All off is a pattern too: 4."
+  - see: "A student adds instead of doubling (3 switches: 6)."
+    ask: "For each of the 4 patterns, how many ways can the new switch go?"
+    fix: "Two each: 8."
+stretch: "How many switches would you need to give every student in your school their own pattern?"
+support: "A card: up = on = 1, down = off = 0. 1 switch: 2, 2: 4, 3: 8, 4: 16."
+leads: |
+  Next: Counting dots (patterns become numbers).
+
+  Year 7–8: Bits and binary numbers, How many patterns?
+exit:
+  q: "Write face down, face up, face up as 1s and 0s. How many patterns can those three switches make?"
+  a: "011; 8."
+explain: |
+  Inside a computer are tiny switches that can only be **on** or **off**. On is written **1** and off is **0**.
+
+  One switch makes 2 patterns, two make 4, three make 8. Every switch you add doubles the patterns, and all off counts too. Patterns of switches are how a computer stores numbers.

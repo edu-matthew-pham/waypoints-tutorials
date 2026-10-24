@@ -1,0 +1,41 @@
+summary: Students switch a laptop between a cable, Wi-Fi and mobile data, see Wi-Fi slow with distance and walls (speeds in words), and choose how to join each device in the club (AC9TDI6K02 node 1).
+time: 35
+timing: "Predict and Try 6 min · Worked example 9 min · Vary 8 min · Practise and Make 12 min"
+goals:
+  - I can say what a network is.
+  - I can compare joining by cable, Wi-Fi and mobile data.
+  - I can choose how to join a device to a network.
+struggle: "Thinking a network needs wires. Keep asking how the tablet reaches the printer."
+before: |
+  Do the boards yourself first. Speeds are in words here (very fast, fast, medium, slow); the Year 7–8 board shows the same model in Mb/s and ms.
+
+  The one idea: a network joins computers so they can send data, by cable or radio waves; each way has strengths. The internet is networks joined together.
+
+  Simplification: the speeds come from a simple model (in the Year 7–8 lesson's teacher notes): a cable is fastest, Wi-Fi loses speed with distance and walls, mobile data is slower but works anywhere.
+
+  Year 7–8 catch-up: Networks › Wired or wireless (8K02 n1) names bandwidth, latency and reliability for the same three.
+running:
+  - "Predict: students who chose 'no' think wires make a network; the Try answers them."
+  - "Worked example: list the devices on the school network together."
+  - "Vary: before each change, ask what will happen to the speed."
+  - "Make: let pairs argue about the 3D printer."
+stuck:
+  - see: "A student says Wi-Fi isn't a network (Sam's mistake)."
+    ask: "How does the tablet get its message to the printer?"
+    fix: "By radio waves to the router; it's joined."
+  - see: "A student says mobile data is always fastest."
+    ask: "Switch the board to mobile data. What does it say about speed?"
+    fix: "It works anywhere, but a cable is faster."
+stretch: "Why might a school put more than one Wi-Fi router in a big building?"
+support: "A table: Cable (fast, stays put), Wi-Fi (move nearby, slows with distance and walls), Mobile data (anywhere, slower)."
+leads: |
+  Next: Messages in pieces.
+
+  Year 7–8: Networks › Wired or wireless.
+exit:
+  q: "Name two ways a laptop can join a network, and one thing that slows Wi-Fi down."
+  a: "A cable, Wi-Fi (or mobile data); distance from the router, or walls."
+explain: |
+  A **network** is computers joined so they can send each other data. They can be joined by a **cable**, by **Wi-Fi** (radio waves to a router) or by **mobile data** (radio waves to a phone tower).
+
+  Cables are fastest and most reliable. Wi-Fi lets you move, but it slows down with distance and walls. The **internet** is lots of networks joined together.

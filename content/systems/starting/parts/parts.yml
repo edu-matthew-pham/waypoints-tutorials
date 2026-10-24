@@ -1,0 +1,25 @@
+# Boards for "The parts inside".
+
+# region: run
+widget: parts
+match: on
+actions: press, save, restart, load
+# endregion
+
+# region: explain
+widget: parts
+# endregion
+
+# region: explain-pic
+widget: parts
+score: 3
+# endregion
+
+# region: modify
+widget: parts
+# endregion
+
+# region: make
+widget: parts
+remove: on
+# endregion

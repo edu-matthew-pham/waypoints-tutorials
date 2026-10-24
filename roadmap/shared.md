@@ -80,6 +80,7 @@ The concrete form of "below Steady: support on demand" in *Speculative: width fo
 - `tools/concepts-core.mjs`: `THEORY` gains `hex` (introduced by Digital systems › Hex: binary in fours).
 - `misconceptions.json`: `lock-with-own-key`, `hex-digits-joined`.
 - Not touched: `lesson-core`, `lesson-view`, AUTHORING. Systems uses `smaller:` (a4e344d) as built; board lead-ins wait for push (2).
+- Later (25 Oct): `playground-board/index.html` gains one widget line, `widgets/parts.js` (Starting out; widget script lines are outside the core hash, so no other clip re-records); `widgets/network.js` gains `simple: on` (re-records network clips); `misconceptions.json` gains five Starting out ids.
 
 ## Done (23 Oct 2026): stage list folded on every lesson page (maths chat, Matthew asked)
 
