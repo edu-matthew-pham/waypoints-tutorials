@@ -4,7 +4,7 @@
 # Nothing in the build reads this file yet. Lessons name an entry with `connection:` in the frontmatter
 # (documentation only, like moveId); the lesson text and teacher.yml sources are written by hand from it.
 #
-# Status (22 Oct 2026): every Year 7 node done (all six strands); Year 8 holds only the pilot entries
+# Status (25 Oct 2026): every Year 7 and Year 8 node done (all six strands); Years 9–10 next
 # (measurement/finding-a-side and algebra/rearranging). Other strands and years: after the maths teachers' feedback.
 #
 # Two layers
@@ -1312,7 +1312,365 @@ nodes:
         check: "Simulate: take random groups of 5 from a set of 500 ratings and watch the averages swing."
         figures: []
 
-  # ---------------------------------------------------------------- Year 8 (pilot entries only)
+  # ---------------------------------------------------------------- Year 8 Algebra
+
+  AC9M8A01 n1:
+    move: "Expand brackets and collect like terms."
+    purpose:
+      hood: "Why mental shortcuts work: 3 × 42 is 3 × 40 + 3 × 2, which is expanding."
+      step: "The tidy-up step inside solving equations with brackets and inside every later algebra topic."
+      assessed: "Tests reward every term inside the bracket getting multiplied, and like terms collected."
+    entries:
+      - id: group-booking-expand
+        kind: hood
+        steps: [1, 2]
+        domain: consumer
+        picture: spatial
+        situation: "Three friends each pay a ticket plus a $5 fee. Is the total 3(t + 5) or 3t + 15, and why are both right?"
+        maths: "Expanding turns per-person cost into total tickets plus total fees: 3(t + 5) = 3t + 15."
+        given: "The ticket price as t and the fee."
+        hidden: "Discounts."
+        check: "Put in a real ticket price and work it out both ways."
+        figures: []
+
+  AC9M8A01 n2:
+    move: "Factorise a linear expression by taking out the highest common factor."
+    purpose:
+      hood: "Reading an expression the other way: 3t + 15 as three lots of (t + 5) says what each person pays."
+      next: "Factorising quadratics (Year 9), which is how equations with x² get solved."
+      assessed: "Tests reward the biggest factor outside and nothing left to take out inside."
+    entries:
+      - id: equal-rows
+        kind: hood
+        steps: [1, 2]
+        domain: design
+        picture: spatial
+        situation: "You have 6 long tiles and 9 small ones. What is the most equal rows you can lay them in with none left over?"
+        maths: "6x + 9 = 3(2x + 3): three rows, each 2x + 3."
+        given: "The tiles."
+        hidden: "Nothing."
+        check: "Lay the tiles out."
+        figures: []
+
+  AC9M8A01 n3:
+    move: "Rearrange a formula to make a different letter the subject."
+    purpose:
+      step: "The step inside any 'what do I need?' question where a formula gives the wrong thing: the mark on the last test, the pace for a target time, the time from a speed."
+      hood: "What a calculator or spreadsheet does when it solves for a cell."
+      next: "Rearranging with the subject in more than one term (Years 9 and 10), formulas in science."
+    entries:
+      - id: target-average
+        picture: data
+        kind: step
+        steps: [2]
+        domain: school
+        situation: "My marks so far are 62, 70 and 74. What do I need on the last test to average 70?"
+        maths: "The mean formula A = (S + x) ÷ n gives the average; rearranged for x, x = nA − S, it gives the mark needed."
+        given: "The marks so far and the target average; every test counts equally."
+        hidden: "Weighted tests and different marks out of."
+        check: "Put the answer back in: (62 + 70 + 74 + 74) ÷ 4 = 70."
+        figures: []
+      - id: running-pace
+        picture: none
+        kind: step
+        steps: [2]
+        domain: sport
+        situation: "I want to finish a run in a target time. What pace, in minutes per kilometre, do I need?"
+        maths: "time = pace × distance, rearranged for pace."
+        given: "The distance and the target time."
+        hidden: "Hills, and slowing down towards the end."
+        check: "A running watch or a pace calculator."
+        figures: []
+      - id: science-formula-subject
+        picture: none
+        kind: step
+        steps: [2]
+        domain: science
+        situation: "Science gives speed = distance ÷ time, but the question asks how long a trip takes."
+        maths: "Rearranging the formula for the quantity you need."
+        given: "The formula from science."
+        hidden: "Changing speed (the formula assumes it is steady)."
+        check: "Put the answer back into the original formula."
+        figures: []
+      - see: forecast-fahrenheit
+
+  AC9M8A02 n1:
+    move: "Graph y = mx + b and a one-variable inequality, and read the key features."
+    purpose:
+      world: "A load limit is an inequality: how many boxes can go on a trailer rated for 750 kg?"
+      next: "Solving with graphs (n2), modelling with lines (A03)."
+    entries:
+      - id: load-limit
+        kind: world
+        steps: [2, 3]
+        domain: transport
+        picture: spatial
+        situation: "A trailer is rated for 750 kg and already carries a 90 kg mower. Each box of pavers is 40 kg. How many boxes can go on?"
+        maths: "90 + 40n ≤ 750, shown on a number line: n ≤ 16.5, so 16 boxes."
+        given: "The rating plate and the box mass."
+        hidden: "The trailer's own weight (the rating is for the load)."
+        check: "The rating plate on a real trailer."
+        figures: []
+
+  AC9M8A02 n2:
+    move: "Solve ax + b = cx + d, including with brackets, and check by substituting."
+    purpose:
+      world: "When do two deals cost the same? Two phone plans, two hire companies, two routes."
+      assessed: "Tests reward working on both sides shown line by line, and the check at the end."
+    entries:
+      - id: plans-cross
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        picture: data
+        situation: "One phone plan is $7 a month plus $3 a gigabyte; another is $5 a gigabyte with a $9 credit. At how many gigabytes do they cost the same?"
+        maths: "3x + 7 = 5x − 9: x terms to one side, numbers to the other; x = 8."
+        given: "The two price lists."
+        hidden: "Part-gigabytes and plan limits."
+        check: "Put 8 GB into both plans: $31 each."
+        figures: []
+
+  AC9M8A02 n3:
+    move: "Solve an inequality, check it on a graph, and show the answer on a number line."
+    purpose:
+      world: "Budgets and limits are inequalities: how many can we afford, how many fit, how fast is still safe."
+      next: "Regions on the plane (Year 10)."
+    entries:
+      - see: load-limit
+
+  AC9M8A03 n1:
+    move: "Spot a straight-line relationship in a real situation, write it as y = mx + b, and say what m and b mean."
+    purpose:
+      world: "Taxi fares, hire charges, plans: a fixed part (b) plus a rate (m)."
+      next: "Comparing and reviewing the model (n2), modelling change (Year 9)."
+    entries:
+      - id: taxi-fare
+        kind: world
+        steps: [2, 3]
+        domain: transport
+        picture: data
+        situation: "A taxi charges a flag fall plus a rate per kilometre. What will the trip to the airport cost?"
+        maths: "fare = rate × km + flag fall: m is the rate, b the flag fall."
+        given: "The fares from the taxi's price card."
+        hidden: "Waiting time and tolls."
+        check: "A fare estimator or a real receipt."
+        figures: []
+
+  AC9M8A03 n2:
+    move: "Use the model to answer a question, say what the answer means, and judge whether the model fits the situation."
+    purpose:
+      world: "Gym membership or casual visits? Car hire with a daily rate and a km charge? The lines cross somewhere, and real life isn't steady."
+      step: "The judging step: some weeks you don't go to the gym, so the model's steady rate is the assumption to question."
+    entries:
+      - id: gym-or-casual
+        kind: world
+        steps: [3, 4, 5]
+        domain: sport
+        picture: data
+        situation: "A gym charges $15 a visit, or $55 a month for unlimited visits. Which is cheaper for you?"
+        maths: "Two lines on one graph; they cross at about 4 visits a month. Then: do you go that often, every month?"
+        given: "The gym's real prices."
+        hidden: "Months you skip, and holiday closures; judging that is the point."
+        check: "Count your own visits last month."
+        figures: []
+
+  AC9M8A04 n1:
+    move: "Change m in y = mx + b and say what it does to the line."
+    purpose:
+      world: "Road gradient signs (8%) and roof pitches are m: the steeper, the bigger."
+      hood: "Why m is called the gradient: rise over run, the same number a road sign gives."
+    entries:
+      - id: road-gradient
+        kind: world
+        steps: [1, 2]
+        domain: transport
+        picture: spatial
+        situation: "A sign at the top of a hill says 8%. What does the number mean, and is 12% steeper?"
+        maths: "Gradient is rise over run: 8 m up for every 100 m along; a bigger m is a steeper line."
+        given: "Photos of real gradient signs."
+        hidden: "That road gradients change along the hill; the sign gives the steepest part."
+        check: "Find a gradient sign on a local hill."
+        figures: []
+
+  AC9M8A04 n2:
+    move: "Change b and say what it does; see that lines with the same m are parallel."
+    purpose:
+      world: "Two plans with the same rate but different fixed fees are parallel lines: one is always dearer by the same amount."
+      next: "Simultaneous equations (Year 10)."
+    entries:
+      - see: plans-cross
+
+  # ---------------------------------------------------------------- Year 8 Measurement
+
+  AC9M8M01 n1:
+    move: "Split a composite shape into shapes you know and add their areas."
+    purpose:
+      world: "Flooring, paint and turf are quoted by area, and rooms are rarely rectangles."
+    entries:
+      - id: l-shaped-floor
+        kind: world
+        steps: [2, 4]
+        domain: building
+        picture: spatial
+        situation: "An L-shaped living room needs new flooring, sold by the square metre, and skirting board round the edge. How much of each?"
+        maths: "Split the L into two rectangles for the area; add the edges for the perimeter."
+        given: "The room's measurements."
+        hidden: "Doorways (no skirting) and cutting waste."
+        check: "A flooring store's calculator."
+        figures: []
+
+  AC9M8M01 n2:
+    move: "Estimate the area and perimeter of an irregular shape."
+    purpose:
+      world: "How big was the fire, the flood, the oil slick? Nobody can measure a burnt area with a tape; they count grid squares on a map."
+      step: "The estimating habit: a sensible answer from a rough shape."
+    entries:
+      - id: fire-map
+        kind: world
+        steps: [2, 4]
+        domain: environment
+        picture: spatial
+        situation: "A map shows the area burnt by a grassfire. About how many hectares is it?"
+        maths: "Lay a grid over it, count whole squares and halves, multiply by the square's area."
+        given: "A map with a scale."
+        hidden: "The map's distortion, and fires that burn patchily."
+        check: "Compare with the figure the fire service reported."
+        figures: []
+
+  AC9M8M02 n1:
+    move: "Use 1 cm³ = 1 mL, 1000 cm³ = 1 L and 1 m³ = 1000 L to convert between volume and capacity."
+    purpose:
+      world: "A rainwater tank: how many litres does the roof collect? 1 mm of rain on 1 m² is 1 litre."
+      hood: "Why the metric units fit together: the litre was built from the cube."
+    entries:
+      - id: rainwater-tank
+        kind: world
+        steps: [2, 4, 5]
+        domain: environment
+        picture: data
+        situation: "How big a tank does our roof justify? Each millimetre of rain on each square metre of roof gives a litre."
+        maths: "Roof area × rainfall in mm = litres; then litres to cubic metres for tank sizes."
+        given: "The roof area and the Bureau's monthly rainfall for the suburb."
+        hidden: "Runoff losses, first-flush diverters, and roofs with several downpipes (not all the roof feeds the tank)."
+        check: "Tank sizes sold, and the Bureau's own note that the figure is approximate."
+        figures:
+          - claim: "For every square metre of horizontal surface, 1 mm of rainfall produces 1 litre of water (approximate)."
+            source: { title: "Climate data FAQ (Bureau of Meteorology)", url: "https://www.bom.gov.au/climate/how/faq-data.shtml", checked: 2026-10-25 }
+
+  AC9M8M02 n2:
+    move: "Solve practical volume and capacity problems, including working backwards."
+    purpose:
+      world: "Pool chemicals are dosed by the litre; a trough or tank is designed to hold a set amount."
+    entries:
+      - id: pool-dose
+        kind: world
+        steps: [2]
+        domain: consumer
+        picture: spatial
+        situation: "The chlorine label says how much to add per 10 000 L. How many litres does the backyard pool hold?"
+        maths: "Pool volume in m³ from its measurements, then × 1000 for litres, then the dose."
+        given: "The pool's measurements and the label."
+        hidden: "The chemistry, and the pool's sloping floor (use an average depth)."
+        check: "The product's dosing table."
+        figures: []
+      - see: rainwater-tank
+
+  AC9M8M03 n1:
+    move: "See why A = πr², from cutting a circle into sectors."
+    purpose:
+      hood: "Why the formula works: the sectors rearrange into something close to a rectangle, πr by r."
+      next: "Area of a circle in use (n2), cylinders (Year 9)."
+    entries: []
+
+  AC9M8M03 n2:
+    move: "Use A = πr² and C = 2πr, forwards and backwards, and in shapes made of parts of circles."
+    purpose:
+      world: "Is the large pizza better value than two mediums? The green circles on satellite images are irrigated fields."
+    entries:
+      - id: pizza-value
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        picture: data
+        situation: "A large pizza is 30 cm across and a medium 23 cm. Is one large more pizza than two mediums, and which is better value per slice?"
+        maths: "Area grows with the square of the radius, so the large is bigger than it looks; compare area per dollar."
+        given: "Real menu sizes and prices."
+        hidden: "Crust thickness."
+        check: "Measure a real pizza."
+        figures: []
+      - id: centre-pivot
+        kind: world
+        steps: [2, 4]
+        domain: environment
+        picture: spatial
+        situation: "From the air, farms in dry country are green circles. Each is watered by an arm turning about a centre. How much land does one arm water, and how much of the square paddock misses out?"
+        maths: "The arm is the radius: πr² watered; the corners of the square are what's left."
+        given: "The arm length, measured on a satellite map."
+        hidden: "Nothing much: the circles really are this shape."
+        check: "Measure a circle on a satellite map."
+        figures: []
+
+  AC9M8M04 n1:
+    move: "Convert a time between time zones using offsets from UTC, in 12- and 24-hour time."
+    purpose:
+      world: "Watching a match played overseas, calling family abroad, a flight's arrival time."
+    entries:
+      - id: overseas-match
+        kind: world
+        steps: [2]
+        domain: sport
+        picture: data
+        situation: "The final kicks off at 8 pm in London. What time is that here?"
+        maths: "Compare the two offsets from UTC and add the difference."
+        given: "Both cities' offsets."
+        hidden: "Daylight saving, which moves some places' offsets on different dates (the classic trap, named in the lesson)."
+        check: "A world-clock site."
+        figures: []
+
+  AC9M8M04 n2:
+    move: "Plan across several time zones: itineraries and meeting times."
+    purpose:
+      world: "Finding a meeting time that works for three cities; working out when a long flight really lands."
+      step: "The judging step: daylight saving in one city but not another."
+    entries:
+      - see: overseas-match
+
+  AC9M8M05 n1:
+    move: "See a rate as a comparison of two different units and write it per one unit."
+    purpose:
+      world: "Speed, pay, prices per kilo, heart rate: all 'this much per one of that'."
+      next: "Applying rates (n2), gradient as a rate (A04), proportion (Year 9)."
+    entries:
+      - id: unit-pricing
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        picture: data
+        situation: "Two packs of the same cereal: 500 g for $4.80 or 750 g for $6.60. Which is better value?"
+        maths: "Price per 100 g, which supermarket shelf labels show too."
+        given: "The two prices and sizes."
+        hidden: "Whether you'll finish the bigger pack."
+        check: "The unit price printed on the shelf label."
+        figures: []
+
+  AC9M8M05 n2:
+    move: "Use rates to solve practical problems: pay, speed, dilution, conversions."
+    purpose:
+      world: "Pay for the hours worked; how long a drive takes; mixing cordial or weed spray at the right strength."
+      step: "A step inside science (speed, density) and later maths (gradient, proportion)."
+    entries:
+      - id: drip-rate
+        kind: world
+        steps: [2]
+        domain: health
+        picture: data
+        situation: "A nurse must give 500 mL over 4 hours through a drip set that makes 20 drops per mL. How many drops a minute?"
+        maths: "mL per hour, then drops per minute: two rates chained."
+        given: "The volume, time and the set's drop factor."
+        hidden: "That pumps now do this in most hospitals; nurses still check by hand."
+        check: "Published nursing calculation examples."
+        figures: []
+      - see: unit-pricing
 
   AC9M8M06 n1:
     move: "State Pythagoras' theorem and find the hypotenuse by adding the squares."
@@ -1396,44 +1754,435 @@ nodes:
         check: "Peg out a 3-4-5 triangle on the oval and check the corner with a set square."
         figures: []
 
-  AC9M8A01 n3:
-    move: "Rearrange a formula to make a different letter the subject."
+  AC9M8M07 n1:
+    move: "Decide whether a problem needs a ratio or a rate, set it up and solve it."
     purpose:
-      step: "The step inside any 'what do I need?' question where a formula gives the wrong thing: the mark on the last test, the pace for a target time, the time from a speed."
-      hood: "What a calculator or spreadsheet does when it solves for a cell."
-      next: "Rearranging with the subject in more than one term (Years 9 and 10), formulas in science."
+      world: "Choosing an electricity or phone plan: a fixed daily charge plus a rate per unit."
+      step: "The modelling habit: name what is known, unknown and assumed before calculating."
     entries:
-      - id: target-average
+      - id: electricity-plan
+        kind: world
+        steps: [3, 4]
+        domain: consumer
         picture: data
+        situation: "Two electricity plans: one has a higher daily charge and a lower rate per kilowatt-hour. Which is cheaper for our house?"
+        maths: "cost = daily charge × days + rate × kWh, for each plan, with the household's real usage."
+        given: "A real bill (it shows the daily usage)."
+        hidden: "Time-of-use pricing and discounts (an extension)."
+        check: "The bill itself."
+        figures: []
+
+  AC9M8M07 n2:
+    move: "Judge whether the ratio or rate model fits, name its assumptions, and improve it."
+    purpose:
+      world: "The plan comparison assumes usage stays the same; summer and winter say otherwise."
+    entries:
+      - see: electricity-plan
+      - see: recipe-scaling
+
+  # ---------------------------------------------------------------- Year 8 Number
+
+  AC9M8N01 n1:
+    move: "Know that an irrational number cannot be written as a fraction, and its decimal never stops or repeats."
+    purpose:
+      hood: "Why √2 and π can only ever be approximated: there is no fraction to write, so every decimal you write is cut short."
+      next: "Surds (Year 10), and why a calculator's π is not π."
+    entries: []
+
+  AC9M8N01 n2:
+    move: "Place an irrational number roughly on the number line."
+    purpose:
+      world: "A square patch of 50 m²: its side is √50, between 7 and 8 m, and the tape measure needs a number."
+      step: "The estimate that catches a wrong key press whenever a square root turns up."
+    entries:
+      - see: square-patch
+
+  AC9M8N02 n1:
+    move: "Work out the index laws from expanded form, and state them."
+    purpose:
+      hood: "Why 2³ × 2⁴ = 2⁷: three 2s and four more 2s, written out. The law is a shortcut for counting."
+      next: "Scientific notation (Year 9), exponential growth (Year 10)."
+    entries:
+      - id: kilo-mega-giga
         kind: step
-        steps: [2]
+        steps: [1, 2]
+        domain: digital
+        picture: data
+        situation: "A kilobyte is about 10³ bytes and a megabyte about 10⁶. Why is a gigabyte 10⁹ and not 10¹⁸?"
+        maths: "kilo × mega = 10³ × 10⁶ = 10⁹: add the powers, don't multiply them."
+        given: "The prefixes."
+        hidden: "That computers really use 2¹⁰ = 1024, not 1000."
+        check: "A storage label."
+        figures: []
+
+  AC9M8N02 n2:
+    move: "Use the index laws together, checking the bases match first."
+    purpose:
+      step: "The machinery inside scientific notation and growth calculations; rarely a task on its own."
+      assessed: "Tests reward checking the bases are the same before adding powers."
+    entries:
+      - see: kilo-mega-giga
+      - see: paper-fold
+
+  AC9M8N03 n1:
+    move: "Tell terminating from recurring decimals, and write a recurring decimal with the dot notation."
+    purpose:
+      world: "Why a third of $10 on a calculator is $3.33333…, and what you actually pay."
+      hood: "Why some fractions never settle: the remainders in the division start repeating."
+    entries:
+      - see: split-bill
+
+  AC9M8N03 n2:
+    move: "Predict from the denominator's prime factors whether a fraction terminates."
+    purpose:
+      hood: "Why halves, quarters, fifths and tenths give tidy decimals and thirds never do: only 2s and 5s divide 10."
+    entries: []
+
+  AC9M8N04 n1:
+    move: "Multiply and divide integers using the sign rules."
+    purpose:
+      world: "Temperature falling by the same amount for several hours; money going out at a steady rate; reversing a reversal."
+      hood: "Why negative × negative is positive: continue the pattern 3 × −2, 2 × −2, 1 × −2, 0 × −2, and keep going."
+      next: "Algebra with negatives, gradient of a falling line."
+    entries:
+      - id: temperature-drop
+        kind: world
+        steps: [1, 2]
+        domain: environment
+        picture: data
+        situation: "On a clear winter night the temperature drops about 2 °C every hour from 6 pm. Where is it at 10 pm, and where was it at 4 pm?"
+        maths: "4 × (−2) = −8 for four hours ahead; −2 × (−2) = +4 for two hours back."
+        given: "A steady rate, from a Bureau overnight trace."
+        hidden: "That real cooling slows down later in the night."
+        check: "The Bureau's hourly observations for a clear night."
+        figures: []
+
+  AC9M8N04 n2:
+    move: "Use all four operations on negative fractions and decimals, choosing an efficient strategy."
+    purpose:
+      step: "Working with signed decimals is inside every graph, every bank statement and every science result below zero."
+      assessed: "Non-calculator questions reward a sensible strategy over a long method."
+    entries:
+      - see: temperature-drop
+
+  AC9M8N05 n1:
+    move: "Model percentage increase and decrease, including GST and mark-ups, and explain why the result is what it is."
+    purpose:
+      world: "Prices before and after GST, sale prices, and why 10% up then 10% down doesn't get you back where you started."
+    entries:
+      - id: gst-price
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        picture: data
+        situation: "A tradesperson quotes $250 plus GST. What do you pay, and if a sticker says $275 including GST, how much of that is tax?"
+        maths: "× 1.1 to add GST; ÷ 1.1 to take it off (not − 10%)."
+        given: "GST is 10% in Australia."
+        hidden: "GST-free items."
+        check: "A receipt that shows the GST line."
+        figures:
+          - claim: "GST is a broad-based tax of 10% on most goods, services and other items sold in Australia."
+            source: { title: "How GST works (ATO)", url: "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/how-gst-works", checked: 2026-10-23 }
+      - see: stacked-discount
+
+  AC9M8N05 n2:
+    move: "Model a financial situation, such as income tax in brackets, and report the answer with its assumptions."
+    purpose:
+      world: "What a first job really pays after tax, and why moving into a higher bracket doesn't lower your take-home pay."
+      step: "The judging step: the model leaves out the Medicare levy and offsets, and says so."
+    entries:
+      - id: first-job-tax
+        kind: world
+        steps: [2, 3, 5]
+        domain: consumer
+        picture: data
+        situation: "A first full-time job pays an annual salary. How much income tax is taken, and what is left?"
+        maths: "Tax in brackets: each slice of income is taxed at its own rate, so only the part above a threshold pays the higher rate."
+        given: "The ATO's resident tax rates for the year."
+        hidden: "The Medicare levy, offsets and deductions (the lesson's teacher notes say to check the ATO)."
+        check: "The ATO's simple tax calculator."
+        figures:
+          - claim: "Resident individual income tax rates and thresholds (use the current year's table)."
+            source: { title: "Tax rates for Australian residents (ATO)", url: "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents", checked: 2026-10-25 }
+
+  # ---------------------------------------------------------------- Year 8 Probability
+
+  AC9M8P01 n1:
+    move: "See that an event and its complement cover everything, so P(A) + P(not A) = 1."
+    purpose:
+      world: "A 30% chance of rain is a 70% chance of none; a 1-in-8 bonus spin is a 7-in-8 ordinary spin."
+    entries:
+      - see: chance-of-rain
+
+  AC9M8P01 n2:
+    move: "Use P(not A) = 1 − P(A) when the complement is easier to count."
+    purpose:
+      world: "'At least one' questions: the chance of at least one rainy day on a three-day camp is easier from the chance of none."
+      next: "Compound events (P02)."
+    entries:
+      - id: camp-rain
+        kind: world
+        steps: [2, 3]
+        domain: environment
+        picture: structure
+        situation: "A three-day camp, and each day has a 30% chance of rain. What is the chance of at least one wet day?"
+        maths: "1 − P(no rain on all three days) = 1 − 0.7³ ≈ 0.66."
+        given: "The forecast chances."
+        hidden: "That the days aren't independent: rain tends to come in runs."
+        check: "Keep a term's forecasts and outcomes."
+        figures: []
+
+  AC9M8P02 n1:
+    move: "Show all the combinations of two events with a two-way table, tree or Venn diagram."
+    purpose:
+      world: "Two choices on a menu, two coins, two questions in a survey: the table lists every case so none is missed."
+      step: "The picture behind every compound probability."
+    entries:
+      - id: survey-two-way
+        kind: world
+        steps: [2, 3]
         domain: school
-        situation: "My marks so far are 62, 70 and 74. What do I need on the last test to average 70?"
-        maths: "The mean formula A = (S + x) ÷ n gives the average; rearranged for x, x = nA − S, it gives the mark needed."
-        given: "The marks so far and the target average; every test counts equally."
-        hidden: "Weighted tests and different marks out of."
-        check: "Put the answer back in: (62 + 70 + 74 + 74) ÷ 4 = 70."
+        picture: structure
+        situation: "A survey asks every Year 8 student two things: do you walk to school, and do you play a sport? How many do both, either, or neither?"
+        maths: "A two-way table sorts everyone into four cells; 'or' and 'and' read straight off it."
+        given: "The survey counts."
+        hidden: "Students who didn't answer."
+        check: "The four cells add to the number surveyed."
         figures: []
-      - id: running-pace
-        picture: none
-        kind: step
-        steps: [2]
+
+  AC9M8P02 n2:
+    move: "Find probabilities of 'and', 'or' and 'at least' events from the representation."
+    purpose:
+      world: "What are the odds a random student both walks and plays sport? Insurance, medical screening and games all ask 'and' and 'or' questions."
+    entries:
+      - see: survey-two-way
+      - see: camp-rain
+
+  AC9M8P03 n1:
+    move: "Set up and run a simulation of a two-event situation and record the results."
+    purpose:
+      world: "When the real experiment is slow or impossible (a season of matches, a year of weather), you simulate it."
+      step: "The same move a scientist or engineer makes before building the real thing."
+    entries:
+      - id: penalty-shootout
+        kind: world
+        steps: [2, 4]
         domain: sport
-        situation: "I want to finish a run in a target time. What pace, in minutes per kilometre, do I need?"
-        maths: "time = pace × distance, rearranged for pace."
-        given: "The distance and the target time."
-        hidden: "Hills, and slowing down towards the end."
-        check: "A running watch or a pace calculator."
+        picture: data
+        situation: "A striker scores 4 penalties in 5. In a five-kick shootout, how often does she score all five?"
+        maths: "Simulate five kicks at 0.8 many times; compare the run's frequency with 0.8⁵ ≈ 0.33."
+        given: "The scoring rate."
+        hidden: "Pressure, and the goalkeeper learning her habits."
+        check: "The theoretical value, and a season's real shootout records."
         figures: []
-      - id: science-formula-subject
-        picture: none
-        kind: step
-        steps: [2]
-        domain: science
-        situation: "Science gives speed = distance ÷ time, but the question asks how long a trip takes."
-        maths: "Rearranging the formula for the quantity you need."
-        given: "The formula from science."
-        hidden: "Changing speed (the formula assumes it is steady)."
-        check: "Put the answer back into the original formula."
+
+  AC9M8P03 n2:
+    move: "Compare simulated frequencies with theoretical probabilities and say what the results show."
+    purpose:
+      world: "Is the model any good? The simulation shows how much a real season can vary from the 'expected' result."
+    entries:
+      - see: penalty-shootout
+
+  # ---------------------------------------------------------------- Year 8 Space
+
+  AC9M8SP01 n1:
+    move: "Use SSS, SAS, AAS and RHS to decide whether two triangles are congruent, and say why each is enough."
+    purpose:
+      world: "A roof truss or a bike frame is built from identical triangles; the maker needs to know three measurements fix the whole shape."
+      hood: "Why three measurements can fix a triangle but not a quadrilateral: this is why structures are triangulated."
+    entries:
+      - id: truss-triangles
+        kind: world
+        steps: [1, 2]
+        domain: building
+        picture: spatial
+        situation: "Every truss in a roof has to be identical. Which measurements does the factory have to match to be sure?"
+        maths: "Three sides (SSS) fix a triangle completely; the rest follows."
+        given: "A truss drawing."
+        hidden: "Timber tolerances."
+        check: "Cut three sticks to length: only one triangle fits."
         figures: []
-      - see: forecast-fahrenheit
+
+  AC9M8SP01 n2:
+    move: "Use AA, SAS and SSS to decide whether two triangles are similar: the same shape, scaled."
+    purpose:
+      world: "A photo or a shadow is a scaled triangle: measure the small one and scale up to the tree."
+      next: "Trigonometry (Year 9) is similar right-angled triangles with the ratios tabulated."
+    entries:
+      - id: shadow-height
+        kind: world
+        steps: [2, 4]
+        domain: environment
+        picture: spatial
+        situation: "How tall is the gum tree in the playground? Its shadow and your shadow make similar triangles at the same moment."
+        maths: "Two right-angled triangles with the same sun angle are similar (AA); the heights are in the same ratio as the shadows."
+        given: "Your height and the two shadow lengths."
+        hidden: "Sloping ground and a tree that leans."
+        check: "Compare with a known building's height the same way."
+        figures: []
+
+  AC9M8SP01 n3:
+    move: "Explain congruence and similarity for other shapes, and link congruence to transformations."
+    purpose:
+      world: "Scale models and plans: a 1:100 plan is the room, similar; tiles are congruent copies moved and turned."
+    entries:
+      - see: floor-plan
+
+  AC9M8SP02 n1:
+    move: "Prove a quadrilateral's properties by cutting it along a diagonal into congruent triangles."
+    purpose:
+      hood: "Why the properties on the quadrilateral chart are true, not just names: a parallelogram's opposite sides are equal because its two halves are congruent."
+      next: "Geometric proof (Years 9 and 10)."
+    entries: []
+
+  AC9M8SP02 n2:
+    move: "Find unknown angles and lengths from quadrilateral properties, with reasons."
+    purpose:
+      world: "Setting out a parallelogram-shaped garden bed or a kite: knowing which sides and angles must match."
+      assessed: "Tests mark the reason beside each step."
+    entries:
+      - see: parallelogram-linkage
+
+  AC9M8SP03 n1:
+    move: "Add a third axis and read or plot points in 3D."
+    purpose:
+      world: "Every 3D game and 3D printer places things with three numbers."
+      hood: "What a 3D printer's file is: a list of (x, y, z) positions."
+    entries:
+      - id: print-head
+        kind: world
+        steps: [1, 2]
+        domain: design
+        picture: spatial
+        situation: "A 3D printer's head is at (40, 25, 10) in millimetres. Where is that in the box, and where does it go for the next layer up?"
+        maths: "Three coordinates: across, back and up; the next layer adds to z only."
+        given: "The printer's axes."
+        hidden: "The print bed moving instead of the head on some printers."
+        check: "Watch a print and read the coordinates on screen."
+        figures: []
+
+  AC9M8SP03 n2:
+    move: "Describe positions in real 3D systems: latitude, longitude and altitude; floor and room numbers."
+    purpose:
+      world: "A plane's position, a seat in a stadium, a room in a hospital: three numbers each."
+    entries:
+      - id: flight-position
+        kind: world
+        steps: [1, 2]
+        domain: transport
+        picture: spatial
+        situation: "A flight tracker shows a plane at a latitude, a longitude and 11 000 m. Where is it, and what does each number fix?"
+        maths: "Latitude and longitude place it on the map; altitude is the third coordinate."
+        given: "A live flight tracker."
+        hidden: "That the Earth is round, so latitude and longitude are angles, not distances."
+        check: "Look up and compare with the tracker."
+        figures: []
+
+  AC9M8SP04 n1:
+    move: "Design a step-by-step algorithm that sorts two triangles as congruent, similar or neither."
+    purpose:
+      world: "Quality control in a factory: a checklist that decides whether a part matches the drawing."
+      step: "The same decision-tree idea as the Year 7 bird key, with the congruence conditions as the questions."
+    entries:
+      - see: truss-triangles
+
+  AC9M8SP04 n2:
+    move: "Trace an algorithm with test cases, find where it fails, and describe how it works in plain words."
+    purpose:
+      step: "Testing with awkward cases is how every checklist and program is checked."
+    entries:
+      - see: field-guide-key
+
+  # ---------------------------------------------------------------- Year 8 Statistics
+
+  AC9M8ST01 n1:
+    move: "Tell a census from a sample, and choose a collection method."
+    purpose:
+      world: "The national Census counts everyone; a poll asks a thousand people. When is each worth it?"
+    entries:
+      - id: canteen-sample
+        kind: world
+        steps: [3, 4]
+        domain: school
+        picture: structure
+        situation: "The canteen wants to know which new item to stock. Ask everyone, or a sample? And whom?"
+        maths: "A census of 900 students costs time; a fair sample of 60 can answer it if chosen well."
+        given: "The school's roll."
+        hidden: "Students who never use the canteen."
+        check: "Compare a sample's answer with a later whole-school vote."
+        figures: []
+
+  AC9M8ST01 n2:
+    move: "Spot bias in how data is collected and say what it does to the conclusion."
+    purpose:
+      world: "An online poll on a fan site, a survey handed out at the gym: who answers decides the answer."
+    entries:
+      - id: fan-poll
+        kind: world
+        steps: [3, 5]
+        domain: sport
+        picture: structure
+        situation: "A football club's website poll finds 92% want a bigger stadium. Does the city?"
+        maths: "The people who answered chose themselves, and they're fans: the sample is biased before any counting."
+        given: "The poll and who could see it."
+        hidden: "Nothing: the bias is the point."
+        check: "Compare with a random survey of the suburb."
+        figures: []
+
+  AC9M8ST02 n1:
+    move: "Compare random, systematic, stratified and convenience sampling, and say how reliable each is."
+    purpose:
+      world: "Polling, product testing and school surveys all choose a method; convenience is cheapest and worst."
+    entries:
+      - see: canteen-sample
+
+  AC9M8ST02 n2:
+    move: "Take or find a sample, describe its distribution, and report what it shows."
+    purpose:
+      world: "The report that goes to the canteen manager: what was asked, of whom, and what came back."
+      assessed: "Investigations are marked on whether the report answers the question with evidence and says its limits."
+    entries:
+      - see: canteen-sample
+
+  AC9M8ST03 n1:
+    move: "See that different samples from the same population differ, and describe how much."
+    purpose:
+      world: "Two polls a week apart disagree by a few percent and nothing has changed: that's sampling variation."
+      hood: "Why a poll comes with a margin: the next sample would come out a little different."
+    entries:
+      - id: poll-margin
+        kind: world
+        steps: [3, 5]
+        domain: school
+        picture: data
+        situation: "Two class surveys of 30 students each find 40% and 53% walk to school. Has anything changed?"
+        maths: "Take many samples of 30 from the same year group and watch the percentages spread."
+        given: "The year group's real answers, sampled on a board."
+        hidden: "Nothing: the spread is the lesson."
+        check: "Simulate it."
+        figures: []
+
+  AC9M8ST03 n2:
+    move: "Show that bigger samples vary less, and use that when drawing conclusions."
+    purpose:
+      world: "Why 5 reviews are weaker than 500, and why national polls ask about a thousand people and not ten."
+    entries:
+      - see: few-reviews
+      - see: poll-margin
+
+  AC9M8ST04 n1:
+    move: "Plan an investigation with a fair, ethical sample, and foresee where the answer will be uncertain."
+    purpose:
+      world: "Any survey of real people: consent, anonymity, and a sample that isn't just your friends."
+      step: "The planning habit behind every survey, in maths, science and humanities."
+    entries:
+      - see: canteen-sample
+
+  AC9M8ST04 n2:
+    move: "Run it, infer from the sample to the population, and report with the uncertainty stated."
+    purpose:
+      world: "'About 45% of students, give or take': the honest report that a decision can be made on."
+      assessed: "Investigations are marked on the inference and its stated uncertainty, not on a single number."
+    entries:
+      - see: canteen-sample
+      - see: poll-margin
