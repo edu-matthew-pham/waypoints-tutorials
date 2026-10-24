@@ -210,6 +210,40 @@ Angles and shapes gains three units and six lessons (10 to 15): Solids (Nets, 7S
 **Teacher layer:** primers per new unit; curriculum map picks up Year 9 nodes automatically from `node:` tags.
 **Order rationale:** batch 1 extends the piloted Algebra lessons, so the pilot's lessons apply first; trig (batch 3) is the biggest new idea and gets the one new widget; statistics last because its practice is judgement banks, the newest engine part.
 
+## Year 9 plan, updated (25 Oct 2026)
+The 12 Oct plan above stands: same five batches, same courses and units. Three things change.
+
+**1. Board gap check (widget headers read 25 Oct).** No new boards except `trig`; everything else is a mode or setting on a board that exists, built when its lesson needs it.
+
+| Need | Board today | Change |
+|---|---|---|
+| (x + a)(x + b) as an area (9A02 n1–n4) | `tiles`: one bracket k(ax + b), or factorising into rows | mode `binomial`: two brackets, x², x and unit tiles; factorise by arranging into a rectangle |
+| negative and zero powers (9A01 n1) | `indexlaws`: product, quotient, power, zero (positive only) | mode `negative`: the quotient board continued below zero (aᵐ ÷ aⁿ with n > m, the leftover factors under a line) |
+| gradient, distance, midpoint between two points (9A03) | `graph`: points, segments, `step` on a plot only | `rise: A, B` (the run/rise triangle between two points) and readouts of length and midpoint on a `segment` |
+| quadratics, parameters (9A04, A06) | `graph`: any plot, sliders, `cross` | none (turning point and x-intercept markers if a lesson asks) |
+| trig ratios (9SP01, M03) | `pythag` has an angle slider, no ratios | new `trig`: right triangle, angle and scale sliders, opposite/adjacent/hypotenuse named from the chosen angle, the three ratios live |
+| area and volume under enlargement (9SP02 n2) | `similar`: lengths only | area and volume readouts (k² and k³) |
+| cylinder net and volume (9M01) | `net`: cube, triangular prism; `prism`: rectangle or triangle base | `net` mode cylinder (unrolled rectangle); `prism` base circle |
+| without replacement, three stages (9P01) | `events`: two equally likely events | `replace: off` and a third event |
+| and / or, relative frequency (9P02) | `venn`, `events` trials | none |
+| skew, histograms, back-to-back (9ST03) | `data`: dot plot, stem-and-leaf, two sets | `view: histogram` (with bin width) and back-to-back stem |
+| error intervals (9M04), sets of numbers (9N01) | `numberline`: rays for inequalities | `interval: a, b` (closed band); nested-sets picture is a hand SVG, not a board |
+| sampling (9ST02) | `sample` | none |
+| geometric algorithms (9SP03) | `key` | none (plus a turtle link as a Wider step) |
+
+Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data` boxplot; `events` with unequal branch probabilities (conditional trees); a `network` maths board (nodes, edges, degrees; the systems `network` widget is about packets, not graphs); `space3d` box diagonal for 3D right triangles.
+
+**2. Openings come from the library.** Each lesson's opening, Make and "Also used in" are picked from `data/connections/maths.yml` by its node, at the steps the node lists; nodes whose purpose is hood or step get no forced world opening (an Explain it or a "why it works" picture instead). Batch 1 picks:
+- 9A02 n1 expanding binomials: the garden bed extended by x each way (`garden-extend`), and 47 × 53 in your head (`mental-shortcut`) as the hook.
+- 9A02 n2 the pattern: `mental-shortcut` (hood). n3 factorising: step only, its use shown downstream ("when does the ball land", 9A04). n4 both forms: `ball-arc`.
+- 9A01 n1 negative powers: hair and red blood cells (`metric-small`). n2–n3: step only.
+- 9M02 scientific notation: how far away is the Sun (`sunlight-time`, Smithsonian), micrograms on a medicine label (`microgram-dose`).
+- 9N01 real numbers: n2 exact or rounded (`square-patch`); n3 tolerances (`part-tolerance`); n4 circle areas (`pizza-value`); n1 hood only.
+
+**3. What applies from the pilots.** Voice and "Writing the move" rules (maths-when-where-why.md); picture before symbols on every Predict (a hand SVG of the situation, never the answer); the opening never says what Predict asks; `smaller:` on the Practise task where the node's hinge bites, from the start; sources for every figure.
+
+**Still open (Matthew):** the 12 Oct plan said Year 9 waits for a class pilot of Algebra. The pilot lessons are ready for that but no class has used them yet. Build batch 1 now, or after a class has tried the pilots?
+
 ## Done: Practise this skill card (12 Oct 2026)
 - Every lesson with a practice file ends with a "Practise this skill" card (after Now you can, before Next lesson) opening `<course>/practice/?skill=<lesson>`. Show the answer also appears after a second try that only missed the form.
 
