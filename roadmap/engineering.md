@@ -81,6 +81,27 @@ Principles: borrow first and build only where a lesson needs a check (benchmark 
 
 - `engineering/mechanisms/losses` (Mechanisms unit Real machines; `assumes: [efficiency, energy-conservation, energy-transfer]`, so Science › Year 9 Efficiency and Conservation link to it): the winch's compound train lifts 2700 g, not 3000 g, at 95% per mesh; pulleys at 90% per wheel need 5 ropes instead of 3, and 9 and 10 ropes give the same pull; efficiencies multiply; work in = work out ÷ efficiency, the rest is heat and sound; a 900 N brief needs 6 ropes, not 3; the Gear trains brief redone (ratio 8.33 or 9 within 45 s). `efficiency:` option on the `train` and `lever` (pulley) widgets (default 100, so every earlier lesson is unchanged); pulleys now allow up to 10 ropes. Port 8600: Engineering's 8500–8539 are used up, so it continues at 8600–8639.
 
+## Proposed (25 Oct 2026, review chat; not approved): engineering thinking in Arduino and the capstones
+
+From the six-subject review. Mechanisms and Structures already do design thinking well (Winch: criteria to a design, a "no pair passes" Vary ending in the trade-off for the client, a Make that reverses the job; Bridge: test to failure, then trade $300 against 1400 N). Arduino and the capstones are where it thins out. Nothing below is built.
+
+**1. Arduino Makes: a person, a reason and a boundary test, not a spec.** Five of the six Arduino Makes are exercises ("The LED is wired to pin 7. Write the sketch…"; "Change it so the LED is on only while the knob reads between 300 and 700"). Small system (the fridge door alarm: a three-state brief with a test table) is the model. Give each Make one line of who wants it and why, one criterion with a number, and check it the way Small system does (tests at both edges), so the Make asks "does it do the job?" rather than "did you type it?". Same moves, same boards, no new widgets:
+- *Pins:* the bike shed's light on pin 7, on all the time (keep: it's the first sketch).
+- *Setup and loop:* the lighthouse (keep; already a timing worked backwards).
+- *Decisions:* a hallway night light that's off in daylight, on when it's dim, and not flickering at the edge; tests either side of the cut-off, as the middle band already sweeps (`h >= 2`).
+- *Serial:* the PE teacher wants the knob as a percentage on the screen; tests at 0, the middle and 1023.
+- *PWM:* a dimmer that's brightest at the bottom of the knob for a bedside lamp; tests at three positions.
+- **Hints:** the third hint in Pins, Setup and loop, Serial and PWM is the whole solution line (`analogWrite(9, 255 - level / 4);`). AUTHORING allows "at most a partial example". Replace each with a `smaller:` lead-in (a question or number on the one idea: "When level / 4 is 0, what brightness do you want?") and keep two hints. 14 Engineering lessons have no hints at all; the same pass adds them on board tasks.
+
+**2. Capstones: check the judgements, keep self-report only for the physical build.** Each of the eight projects has six reflect ticks and three or four checked items. Create on real kit can only be self-report, and that's fine. Develop and Test can be checked better:
+- *Develop: a range of ideas (MYP B).* The teacher notes map Develop to MYP Design B, which expects more than one design idea, but every Develop goes straight to one plan. Add one checked comparison before the plan: two given concepts for the same brief (sorter: a flap on a servo, or two chutes and a light gate), scored against the brief's criteria (a `sort` or `question` check), then a `reasoning` check (unmarked, with a model answer and self-check, built 18 Oct for any subject) for the student's own two ideas and why they chose one. The plan reflect stays.
+- *Test: read a results table before your own.* Before "I ran my 20-item test set", a checked step on another team's table (sorter: 17 of 20 in the right bin, flap 0.4 s, against 90% and 0.5 s): which criteria are met, and what to test next (`question` or `number`). Then the student's own run stays a reflect, followed by a `reasoning` box for their table and the one failure they fixed, so the evaluation has something written to point back to.
+- *Evaluate* already has a checked question; no change.
+
+**3. Smaller things found:** the Bridge Make comes down to one cheapest cost (a Pratt or Howe truss at $293), so it's optimisation more than design; a second criterion that trades against cost (deck height, or members a student can cut from one sheet) would leave more than one good design to argue for. Arduino's Tinkercad steps are reflect-only by necessity; fine.
+
+**Order if approved:** (1) Arduino Makes and hints, one push (lesson.md and board.yml; their clips re-record only where a board region changes); (2) the capstone Develop and Test steps, starting with sorter as the pattern, then the other seven; (3) the Bridge criterion.
+
 ## Next
 
 1. Practise with code: the sample lesson's Python loop over every gear pair. A maths lesson has no Python playground; either a short linked Python task (console bridge) or leave it to the Code pathway.
