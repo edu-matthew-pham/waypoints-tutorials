@@ -8,6 +8,8 @@ Things more than one subject depends on: the build, publishing, the home and pla
 
 **Next, in the subject chats:** maths: the Changing the subject Predict lead-in (step (2) below); code: the three lead-ins in `roadmap/code.md`; science: hints first, then board lead-ins (push (2), shape in `roadmap/science.md`); systems: the three in its plan. Still not built: board lead-ins, MakeCode `code:` lead-ins, Parsons lead-ins.
 
+**Who does push (2), board lead-ins (25 Oct, Matthew agreed):** the review chat builds the shared mechanism (the lead-in's own board, loaded on click; its check reads only that board; validate requires `starter:` to be a region in the same lesson; never counted; AUTHORING section), as for push (1). The science chat writes the pilot lead-ins (physics-8/transform, earth-10/greenhouse; regions and checks in `roadmap/science.md` › Board lead-ins) and later the `push: hot | cold` option on `coordination` for biology-9/feedback. Science is ready: Year 8 hints are in.
+
 The concrete form of "below Steady: support on demand" in *Speculative: width for faster students, support for stuck ones* (12 Oct). Applies to every subject. (Proposal text kept as written; see Built above.)
 
 **Principle.** Every check carries its support folded: hints that lead toward the answer, and, where the move has a picture, a smaller step that does half the move on the picture first. A student who has the foundations never sees it. A student who doesn't opens it, builds the step they're missing, then does the real check. The lesson itself slows down for no one. (ZPD without knowing the student: the student decides, not the lesson; it fits the self-paced design and needs no accounts.)
