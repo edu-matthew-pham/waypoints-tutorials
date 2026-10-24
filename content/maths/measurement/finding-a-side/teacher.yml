@@ -18,6 +18,7 @@ running:
   - "Investigate: for the screen, share sketches; label the hypotenuse first."
   - "Modify: for the shortcut, ask what is being compared."
   - "Make: back to the opening ladder. Ask who thinks it reaches before anyone calculates; then ask what else a real ladder job needs (it should reach past the gutter to step off)."
+  - "Paper: the first Investigate task, the screen and the ladder are worked on paper; the page marks only the answer and then shows a model to compare. Books out for those, and look at the pages, not the screens."
 stuck:
   - see: "A student adds the squares for a shorter side (Ken's mistake)."
     ask: "Is your answer shorter than the hypotenuse?"

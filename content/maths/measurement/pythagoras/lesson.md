@@ -215,8 +215,17 @@ insight: "Coming back to the opening question: the shortcut is the hypotenuse of
 tasks:
   - hint: ["The two footpaths are the sides at the right angle.", "24² + 10² = 576 + 100."]
     check:
-      type: answer
+      type: reasoning
+      paper: true
       q: "The footpaths round the corner are 24 m and 10 m. How long is the shortcut straight across the grass, in m?"
+      steps:
+        - ["The shortcut is the hypotenuse", "the footpaths meet at a right angle, and the shortcut is opposite it"]
+        - ["$c^2 = 24^2 + 10^2 = 576 + 100 = 676$", "for the hypotenuse, add the squares"]
+        - ["$c = \\sqrt{676} = 26$ m", "take the square root"]
+      criteria:
+        - "I sketched the corner and marked the right angle."
+        - "I squared, added, then took the square root."
+        - "My shortcut is shorter than the 34 m round the corner."
       answer: "26"
       feedback:
         - ["34", "That is the footpath round the corner. The shortcut is shorter: square, add, then take the square root."]
@@ -235,7 +244,7 @@ tasks:
 
 ### The shortcut
 
-Back to the lawn from the start. Sketch the triangle and mark the right angle before you work anything out.
+Back to the lawn from the start. On paper, sketch the triangle and mark the right angle before you work anything out.
 
 ### What it saves
 

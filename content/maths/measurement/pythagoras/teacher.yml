@@ -20,6 +20,7 @@ running:
   - "Investigate: write 'square, add, root' on the board."
   - "Modify: for √2, ask between which whole numbers it lies before computing."
   - "Make: back to the shortcut across the grass. Ask for a guess at the saving before anyone calculates (most guess too much); then ask why the path gets worn even though it saves only 8 m."
+  - "Paper: the shortcut in Make is worked on paper; the page marks only the answer and then shows a model to compare. Books out, and look at the sketches."
 stuck:
   - see: "A student adds the sides (Leah's mistake)."
     ask: "Is walking across shorter or longer than going round the corner?"

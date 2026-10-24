@@ -610,6 +610,8 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
           if (pk.feedback !== undefined && !(Array.isArray(pk.feedback) && Array.isArray(pk.options) && pk.feedback.length === pk.options.length)) err(where, `${at} feedback must have one entry per option (null for the right one)`);
         });
       }
+      if (k.paper !== undefined && k.paper !== true) err(where, 'check (reasoning) paper must be true (working on paper, not typed) or left out');
+      if (k.paper === true && k.placeholder !== undefined) err(where, 'check (reasoning) placeholder is for the typed working box; a paper check has none');
       // Neither answer nor picks: an unmarked reasoning check (write, then compare with the model answers and self-check).
       if (k.criteria !== undefined && !(Array.isArray(k.criteria) && k.criteria.length && k.criteria.every((c) => str(String(c))))) err(where, 'check (reasoning) criteria must be a list of self-check sentences');
     }

@@ -72,12 +72,23 @@ stage: investigate
 insight: "For a shorter side subtract the squares; Ken adds, and gets a side longer than the hypotenuse. A real problem starts by spotting the right angle and the hypotenuse; students own the working and pick the key reason."
 tasks:
   - check:
-      type: answer
+      type: reasoning
+      paper: true
       q: "A right-angled triangle has hypotenuse 13 cm and one shorter side 5 cm. How long is the other side, in cm?"
+      steps:
+        - ["$b^2 = 13^2 - 5^2$", "13 is the hypotenuse, so subtract the squares"]
+        - ["$b^2 = 169 - 25 = 144$", "square first, then subtract"]
+        - ["$b = \\sqrt{144} = 12$ cm", "take the square root"]
+        - ["$12 < 13$", "check: the hypotenuse is still the longest"]
       answer: "12"
       feedback:
         - ["13.93", "That adds the squares. The hypotenuse is the longest side: subtract."]
         - ["8", "That subtracts the sides. Subtract the squares: 169 − 25."]
+        - ["144", "That's the square of the side. Take the square root."]
+      criteria:
+        - "I squared both numbers before taking one from the other."
+        - "I subtracted, because 13 is the hypotenuse."
+        - "My answer is shorter than 13."
       explain: "13² − 5² = 169 − 25 = 144, √144 = 12 cm."
   - check:
       type: bug
@@ -89,6 +100,7 @@ tasks:
       explain: "Line 2: 10 cm is the hypotenuse, so subtract: b² = 100 − 36 = 64, b = 8 cm. His 11.66 cm is longer than the hypotenuse, which is impossible."
   - check:
       type: reasoning
+      paper: true
       q: "A rectangular screen is 48 cm wide and 36 cm high. How long is its diagonal? Write your steps."
       steps:
         - ["The diagonal is the hypotenuse of a right-angled triangle with sides 48 and 36", "the corners of a rectangle are right angles"]
@@ -117,7 +129,7 @@ b^2 = 7^2 - 4^2 = 33,\ b = \sqrt{33} \approx 5.74 :: Not a perfect square: betwe
 5.74 < 7 :: Check: the hypotenuse must still be the longest.
 ```
 
-Now try one: hypotenuse 13 cm, one side 5 cm.
+Now try one on paper, set out like the example: hypotenuse 13 cm, one side 5 cm. Look back at the example if you get stuck.
 
 ### Find the mistake
 
@@ -125,7 +137,7 @@ Read Ken's working. Can a shorter side be longer than the hypotenuse?
 
 ### A screen
 
-Your working can be short notes. Then choose the reason for the key step.
+Sketch the screen on paper and mark the hypotenuse, then work it out.
 
 ## Modify: one change at a time
 
@@ -234,8 +246,8 @@ tasks:
   - hint: ["The ladder is the hypotenuse.", "4.1² − 1² = 16.81 − 1."]
     check:
       type: reasoning
-      q: "Your 4.1 m ladder has its foot 1 m from the wall. How high up the wall does it reach, in m to two decimal places? Write your steps."
-      placeholder: "The ladder is the hypotenuse, so …"
+      paper: true
+      q: "Your 4.1 m ladder has its foot 1 m from the wall. How high up the wall does it reach, in m to two decimal places?"
       steps:
         - ["The ladder is the hypotenuse: $c = 4.1$, $a = 1$", "it is opposite the right angle where the wall meets the ground"]
         - ["$b^2 = 4.1^2 - 1^2 = 16.81 - 1 = 15.81$", "for a shorter side, subtract the squares"]
@@ -266,7 +278,7 @@ tasks:
 
 ### How high?
 
-Now back to your ladder from the start. Sketch the triangle and mark the hypotenuse before you work anything out.
+Now back to your ladder from the start. On paper, sketch the triangle and mark the hypotenuse before you work anything out.
 
 ### Does it reach?
 
