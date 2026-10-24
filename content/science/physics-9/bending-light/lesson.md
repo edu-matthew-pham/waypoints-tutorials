@@ -72,6 +72,7 @@ tasks:
       answer: 0
       feedback: [null, "In glass light is slower, not faster.", "Nothing pushes it: the change of speed turns the wave fronts."]
       explain: "One end of each wave front enters the glass first and slows down while the other end is still travelling faster in the air. The front swings round, like a line of marchers when one end slows."
+    hint: "On the board, are the blue wave fronts closer together or further apart once they're in the glass, and what does that tell you about how fast they're going?"
   - check:
       type: question
       q: "A ray goes straight into glass along the normal (angle of incidence 0°). What happens?"
@@ -79,6 +80,7 @@ tasks:
       answer: 0
       feedback: [null, "There is no angle to reduce: the whole front enters at once.", "It doesn't bend."]
       explain: "The whole wave front reaches the glass at the same moment and slows together, so it doesn't turn."
+    hint: ["Coming straight down the normal, does one end of a wave front reach the glass before the other, like it did at 40°?", "Set the angle to 0° on the board and watch the fronts and the orange ray as they cross into the glass."]
   - check:
       type: question
       q: "A ray hits a mirror at 35° to the normal. At what angle does it reflect?"
@@ -86,6 +88,7 @@ tasks:
       answer: 0
       feedback: [null, "That would be the angle to the surface, not the normal.", "The law holds for every flat mirror."]
       explain: "The angle of reflection equals the angle of incidence, measured from the normal."
+    hint: "Check which line the 35° is measured from, and measure the reflected angle from that same line."
   - check:
       type: question
       q: "Why does a straw in water look bent at the surface?"

@@ -49,8 +49,10 @@ try: { playground: board, starter: "boards.yml#coal", height: 680 }
 tasks:
   - starter: "boards.yml#coal"
     check: { type: board, text: "A coal power station: 1000 J of chemical energy gives 350 J of electricity, 550 J of heat in the cooling water and 100 J of heat up the chimney. Build its Sankey diagram.", when: "u = 350 and b = 1" }
+    hint: ["What does conservation of energy say the outputs have to add up to?", "Set each band to its amount in the task, and the line under the diagram tells you how many joules are still missing, or how many too many you've got."]
   - starter: "boards.yml#hydro"
     check: { type: board, text: "A hydro-electric station: 1000 J from falling water gives 900 J of electricity, 60 J of heat and 40 J of sound. Build it.", when: "u = 900 and b = 1" }
+    hint: "It's the same as the coal station, so set each output to its amount in the task and check that the line under the diagram says nothing is missing."
 ```
 
 ### Coal
@@ -79,6 +81,7 @@ tasks:
       answer: 0
       feedback: [null, "Narrower band: less energy.", "That's the useful output."]
       explain: "The widest wasted band shows where improvements would save the most: here, the heat carried away by cooling water."
+    hint: ["Which band carries the energy the power station was built to make, and is that one waste at all?", "On your coal diagram the wasted bands are the ones that bend down, and the label on each one says how many joules it carries."]
   - check:
       type: number
       q: "A solar panel's Sankey diagram shows 1000 J of light in and 200 J of electricity out. What is its efficiency (%)?"
@@ -124,6 +127,7 @@ insight: "A device whose useful output is heat checks that 'useful' depends on t
 try: { playground: board, starter: "boards.yml#kettle", height: 680 }
 tasks:
   - check: { type: board, text: "A kettle takes in 2000 J: 1800 J heats the water, 180 J heats the kettle and the air, and 20 J becomes sound. Build its diagram.", when: "u = 1800 and b = 1" }
+    hint: "Set each output to its amount in the task, and keep going until the line under the diagram says nothing is missing."
   - check:
       type: question
       q: "In a kettle, heat is the useful output. In a light bulb, heat is waste. Why?"

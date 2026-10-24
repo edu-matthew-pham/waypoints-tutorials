@@ -54,6 +54,7 @@ try: { playground: board, starter: "boards.yml#sound", height: 680 }
 tasks:
   - starter: "boards.yml#sound"
     check: { type: board, text: "Make a high, quiet sound: pitch 4 or more, loudness 2 or less. Wait for it to reach the listener.", when: "f >= 4 and a <= 2 and h = 1" }
+    hint: "The sliders show words, but the line under the board gives the pitch and the loudness as numbers, so read that as you move them."
   - starter: "boards.yml#sound"
     check: { type: board, text: "Now a low, loud sound: pitch 2 or less, loudness 4 or more.", when: "f <= 2 and a >= 4 and h = 1" }
 ```
@@ -91,6 +92,7 @@ tasks:
       answer: 0
       feedback: [null, "Amplitude sets the loudness, not the pitch.", "Pitch is about how often, not how fast."]
       explain: "Higher pitch means higher frequency (more compressions pass each second). Loudness depends on amplitude, the size of the vibration."
+    hint: "Think back to the two sounds you made: which slider changed how many waves fit in the tube, and which changed how tall the pressure graph got?"
   - check:
       type: match
       q: "Match the change to the effect on the sound."
@@ -139,6 +141,7 @@ tasks:
       answer: 0
       feedback: [null, "Weight isn't the reason: tightly bonded neighbours respond faster.", "Temperature isn't what makes the difference between materials."]
       explain: "In a solid the particles are packed close together and joined to their neighbours, so a vibration is passed on very quickly. In a gas they are far apart, so it takes longer."
+    hint: "Think about how the particles in a solid are held compared with the ones in a gas, and how quickly each one can pass a push on to the next."
 ```
 
 ### Vacuum

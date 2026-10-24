@@ -71,11 +71,13 @@ tasks:
       answer: 0
       feedback: [null, "That's 'conserving' energy in everyday speech, a different idea.", "Moving transforms energy; it doesn't use it up."]
       explain: "In any system, total energy in = total energy out."
+    hint: "If you leave a light on all night, is any of the energy destroyed, or has it all gone somewhere?"
   - check:
       type: number
       q: "A coaster car has 150 kJ in total. At one point it has 90 kJ of potential energy and 40 kJ of kinetic energy. How many kJ have become heat and sound?"
       answer: 20
       explain: "150 − 90 − 40 = 20 kJ. Every kJ is accounted for."
+    hint: ["What did the dashed total line on the coaster do while the three bars went up and down?", "The three bars always add up to the total, so once you've counted the potential and the kinetic, think about how much of the 150 kJ is still unaccounted for."]
   - check:
       type: question
       q: "People say a car 'loses' energy when it brakes. What really happens?"
@@ -83,6 +85,7 @@ tasks:
       answer: 0
       feedback: [null, "Energy can't be destroyed.", "It never flows back into fuel. (Hybrid and electric cars turn some of it into electrical energy stored in a battery.)"]
       explain: "'Lost' means 'transferred somewhere we can't use it'. Feel a bike's brakes after a long downhill: they're hot."
+    hint: ["Once the car has stopped, is anything warmer or louder than it was before it started braking?", "Think about touching a bike's brakes straight after a long ride downhill, and where that warmth goes next."]
   - check:
       type: question
       q: "Why can a pendulum never swing higher than where it started?"
@@ -121,6 +124,7 @@ tasks:
       answer: 0
       feedback: [null, "The total line didn't change.", "A stopped car has no kinetic energy."]
       explain: "The bars still add up to the total: heat and sound, plus the potential energy of its resting height."
+    hint: ["What did the red heat and sound bar do while the car was slowing down?", "Now the car has stopped, read the kJ above every bar, not just the red one, and check whether any of them is still above zero."]
 ```
 
 ### Lots of friction

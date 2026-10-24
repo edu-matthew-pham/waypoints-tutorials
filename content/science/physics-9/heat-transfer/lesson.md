@@ -74,6 +74,7 @@ tasks:
       answer: 0
       feedback: [null, "Watch a single particle: it stays in its place, just vibrating.", "Nothing but energy moved along."]
       explain: "Conduction: energy passes from particle to particle through collisions. The particles stay where they are."
+    hint: ["Think about one particle in the middle of the bar: where did it go while the far end warmed up?", "Go back to the bar in Explore and keep your eye on a single dot for ten seconds, then look at the temperatures in the boxes under it."]
   - check:
       type: question
       q: "In the water, how did the energy reach the top?"
@@ -88,6 +89,7 @@ tasks:
       answer: 0
       feedback: [null, "Heat on its own does not go anywhere; something carries it. What moved up on the board?", "Each particle has the same mass hot or cold. What changes is how far apart they are.", "That is what the model does, to keep it simple. In real water nothing pushes: the warm water floats up, like a cork."]
       explain: "Heated water expands: the same particles take up more space, so it is less dense (density, from Year 7) and floats up through the cooler, denser water. The board pushes hot particles up directly; that part is a simplification."
+    hint: ["On the board, what actually moved up: heat on its own, or the warm water?", "Think about what happens to the gaps between the water particles as they warm up, and what that does to how much matter is packed into each cm³."]
   - check:
       type: sort
       q: "Conduction or convection?"

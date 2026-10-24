@@ -86,6 +86,7 @@ tasks:
       answer: 0
       feedback: [null, "Number of protons isn't the difference.", "Plastic has electrons: they just can't move around."]
       explain: "Conductors have many free electrons; in insulators almost all the electrons are held tightly by their atoms."
+    hint: ["Plastic is made of atoms too, so does it have electrons?", "Choose the plastic strip on the board and compare what its blue electrons do with the ones in copper."]
   - check:
       type: question
       q: "What does the battery do?"
@@ -93,6 +94,7 @@ tasks:
       answer: 0
       feedback: [null, "The electrons were already in the wire.", "It runs flat because its stored chemical energy is used up, not its electrons."]
       explain: "The battery's voltage is the push. A bigger voltage pushes harder, so the electrons drift faster and more energy is delivered each second."
+    hint: ["Were there electrons in the copper wire before the battery was joined up?", "Set the battery to 0 V on the board and look at the wire, then turn it up and watch what changes."]
   - check:
       type: question
       q: "Are the electrons used up in the bulb?"
@@ -100,6 +102,7 @@ tasks:
       answer: 0
       feedback: [null, "The light comes from the energy they carry, not from using up electrons.", "They all go round again."]
       explain: "Current is the same at every point in the loop; the energy, not the electrons, is what the bulb gets."
+    hint: ["If fewer electrons came out of the bulb than went in, what would happen to the wire after a while?", "On the board, follow the blue electrons as they pass the bulb and see whether they come out the other side."]
   - check:
       type: question
       q: "On the board, electrons drift round one way. By convention the current is drawn the other way. Why?"

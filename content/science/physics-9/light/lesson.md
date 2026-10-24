@@ -55,8 +55,10 @@ tasks:
     check: { type: board, text: "Click each of the seven bands, from Radio to Gamma, and read the details.", when: "n = 7" }
   - starter: "boards.yml#spectrum"
     check: { type: board, text: "Find the band that causes sunburn.", when: "b = 4" }
+    hint: ["Sunburn is damage to skin cells, so which end of the spectrum has waves carrying enough energy to do that?", "Click through the bands and read the \"Take care\" part of the line under the spectrum for each one."]
   - starter: "boards.yml#spectrum"
     check: { type: board, text: "Find the band used to look at bones.", when: "b = 5" }
+    hint: "Click through the bands and read the \"Used for\" part of the line under the spectrum for each one."
 ```
 
 ### Every band
@@ -80,6 +82,7 @@ tasks:
       answer: 0
       feedback: [null, "That is a longitudinal wave: sound.", "Light needs no medium: it crosses empty space from the Sun."]
       explain: "Transverse: like a rope shaken sideways, the vibration is across the direction of travel. Electromagnetic waves are vibrating electric and magnetic fields, so they need no particles."
+    hint: ["Picture shaking a skipping rope up and down: which way does your hand move, and which way does the wave travel along the rope?", "Then think about how sunlight gets to us, and what's in the space between the Sun and the Earth."]
   - check:
       type: question
       q: "Radio waves and gamma rays travel through a vacuum. How do their speeds compare?"
@@ -87,6 +90,7 @@ tasks:
       answer: 0
       feedback: [null, "Speed in a vacuum is the same for every electromagnetic wave.", "Longer waves aren't faster."]
       explain: "All electromagnetic waves travel at the same speed in a vacuum, the speed of light. They differ in frequency and wavelength, not speed."
+    hint: "Gamma rays carry more energy in each wave, but is having more energy the same thing as going faster?"
   - check:
       type: question
       q: "Going from radio to gamma, what happens to the wavelength and the energy?"
@@ -94,6 +98,7 @@ tasks:
       answer: 0
       feedback: [null, "Longer wavelength goes with lower frequency and less energy.", "Short wavelength goes with high frequency and high energy."]
       explain: "Speed is fixed, so a higher frequency means a shorter wavelength, and a higher frequency means more energy in each wave."
+    hint: ["They all travel at the same speed, so if more waves pass each second, does each one have to be longer or shorter?", "Click Radio, then Gamma, and compare the wave drawn on the board and the wavelength in the line under it."]
   - check:
       type: match
       q: "Match each wave to a use."
@@ -137,6 +142,7 @@ insight: "Choosing a band for a job from wavelength, frequency and risk applies 
 try: { playground: board, starter: "boards.yml#spectrum", height: 680 }
 tasks:
   - check: { type: board, text: "Find the band with a wavelength of about 12 cm.", when: "b = 1" }
+    hint: ["12 cm is a size you could hold in your hand, so is that one of the longer waves or one of the shorter ones?", "Click along from Radio and read the wavelength at the start of the line under the spectrum."]
   - check:
       type: question
       q: "Why does a mobile phone use microwaves and not X-rays?"

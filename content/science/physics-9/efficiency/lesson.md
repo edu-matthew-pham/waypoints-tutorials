@@ -50,8 +50,10 @@ try: { playground: board, starter: "boards.yml#filament", height: 680 }
 tasks:
   - starter: "boards.yml#filament"
     check: { type: board, text: "A filament bulb takes in 100 J and gives out 10 J of light. Set the outputs so every joule is accounted for.", when: "u = 10 and b = 1" }
+    hint: ["How much energy goes into the bulb, and does the light account for all of it?", "Set the light first, then watch the line under the diagram, because it tells you how many joules are still missing until the outputs add up to what went in."]
   - starter: "boards.yml#led"
     check: { type: board, text: "An LED bulb takes in 100 J and gives out 40 J of light. Set its outputs.", when: "u = 40 and b = 1" }
+    hint: "It's the same idea as the filament bulb, so set the light first and let the line under the diagram tell you what's still missing."
 ```
 
 ### Filament bulb
@@ -78,6 +80,7 @@ tasks:
       q: "A kettle takes in 2000 J and 1800 J goes into heating the water. What is its efficiency (%)?"
       answer: 90
       explain: "1800 ÷ 2000 × 100% = 90%."
+    hint: ["Which goes on top of the fraction: the energy that heats the water, or all the energy that goes in?", "The answer is a percentage, so if you end up with a decimal, think about what it would be out of 100."]
   - check:
       type: number
       q: "An electric motor takes in 500 J and does 150 J of useful work lifting a load. What is its efficiency (%)?"
@@ -90,6 +93,7 @@ tasks:
       answer: 0
       feedback: [null, "Energy is never destroyed: it is transferred somewhere not useful.", "Wearing out is a different problem."]
       explain: "Every moving part and every wire turns a little energy into heat. Better design reduces it, but never to zero."
+    hint: ["Think back to the filament bulb you built: where did the joules that didn't become light end up?", "Picture touching a motor or a phone charger after it's been running for a while, and what you'd feel."]
   - check:
       type: question
       q: "Motor A takes in 500 J and does 150 J of useful work (30%). Motor B takes in 200 J and does 100 J (50%). What does the difference mean?"
@@ -123,6 +127,7 @@ insight: "A device with two by-products checks that every output is counted and 
 try: { playground: board, starter: "boards.yml#engine", height: 680 }
 tasks:
   - check: { type: board, text: "A car engine: 100 J of chemical energy in fuel gives 25 J of movement, 65 J of heat and 10 J of sound. Build its diagram.", when: "u = 25 and b = 1" }
+    hint: "The task gives you all three amounts, so set each slider to match and check that the line under the diagram says nothing is missing."
   - check:
       type: number
       q: "What is the engine's efficiency (%)?"

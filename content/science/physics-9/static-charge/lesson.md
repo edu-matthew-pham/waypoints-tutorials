@@ -77,6 +77,7 @@ tasks:
       answer: 0
       feedback: [null, "Protons are fixed in the nuclei and cannot be rubbed off.", "Charge isn't made by rubbing: it is moved."]
       explain: "Losing negative electrons leaves a surplus of positive charge from the protons that stayed behind."
+    hint: "Which charges moved on the board when you pressed Rub, and which ones stayed where they were?"
   - check:
       type: question
       q: "The balloon gained 3 electrons from the wool. What is the wool's charge?"
@@ -84,6 +85,7 @@ tasks:
       answer: 0
       feedback: [null, "It lost electrons, so it is positive.", "The two charges are equal and opposite, but each object is not neutral."]
       explain: "No charge is created or destroyed: the balloon's −3 is balanced by the wool's +3, so the total is still zero."
+    hint: "The balloon's three extra electrons had to come from somewhere, so what is the wool short of now?"
   - check:
       type: sort
       q: "Do the two charged objects attract or repel?"
@@ -123,7 +125,9 @@ insight: "Making the balls repel and attract with charges the student sets turns
 try: { playground: board, starter: "boards.yml#pair", height: 680 }
 tasks:
   - check: { type: board, text: "Set the charges so the balls push each other apart.", when: "f > 0" }
+    hint: ["Right now the balls pull together, so look at the sign on each ball and think about what you'd have to change.", "Move the Ball 1 and Ball 2 sliders and read the line under the balls, which says whether they push apart or pull together."]
   - check: { type: board, text: "Now make them pull together.", when: "f < 0" }
+    hint: "Think about what you changed to make them push apart, and what would make them do the opposite."
   - check:
       type: question
       q: "Ball 1 is +3 and ball 2 is +1. What happens, and which ball feels the bigger force?"

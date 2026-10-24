@@ -40,6 +40,7 @@ tasks:
         - ["Warm water rising in a pot", "Particle model", "Bulk movement of particles, driven by density."]
         - ["A higher note having a shorter wavelength", "Wave model"]
         - ["A balloon charged by rubbing", "Particle model", "Electrons move from one material to the other."]
+    hint: "For each one, think back to how this unit explained it: was it a pattern travelling, bouncing or bending, or was it about what the particles themselves do?"
   - check:
       type: question
       q: "The particle model explains conduction well. Why can't it explain how the Sun's energy reaches Earth?"
@@ -61,6 +62,7 @@ tasks:
       answer: 0
       feedback: [null, "No model covers everything; that is why scientists keep several.", "A model that works well in its domain stays useful, even if it needs another model beside it."]
       explain: "We keep a model for as long as it helps us explain and predict, and we know where it stops working."
+    hint: "Think about the particle model: what is it good at explaining, and what can't it explain at all?"
   - check: { type: reflect, text: "I can say where the wave model and the particle model are each useful, and why models are tools." }
 ```
 
