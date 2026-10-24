@@ -27,7 +27,7 @@ explainClip:
     - wait: 3200
 hook: "A tree can stand 80 metres tall without a single bone. A lettuce leaf goes limp in the fridge, then crisp again in cold water. Both come down to parts that only plant cells have."
 ---
-Every cell has a nucleus, membrane and cytoplasm. This lesson finds the parts that are different, and why.
+Every cell you've met so far has a nucleus, a membrane and cytoplasm, but a leaf cell has a few extra parts that a cheek cell doesn't, and each one is there for a reason.
 
 ## Engage: what's missing?
 

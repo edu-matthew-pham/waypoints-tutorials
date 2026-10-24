@@ -27,7 +27,7 @@ explainClip:
     - wait: 800
 hook: "Sodium is a metal that fizzes and can burst into flame in water. Chlorine is a poisonous gas. Put them together and you can sprinkle the result on your chips."
 ---
-Last lesson: atoms come in types, one for each element. This lesson: what happens when different types join.
+Last time you saw that atoms come in types, one for each element, so what happens when different types join together?
 
 ## Engage: sodium and chlorine
 

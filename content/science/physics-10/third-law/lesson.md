@@ -29,7 +29,7 @@ explainClip:
     - wait: 1200
 hook: "Stand on a skateboard and push a wall. You roll away from it. The wall didn't move, so what pushed you?"
 ---
-You know a net force changes motion. This lesson asks where forces come from: they always come in pairs.
+You know a net force changes how something moves, but where do forces come from in the first place?
 
 ## Engage: the skater and the wall
 

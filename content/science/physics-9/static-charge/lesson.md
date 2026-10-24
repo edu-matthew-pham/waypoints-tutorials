@@ -31,7 +31,7 @@ explainClip:
     - wait: 2800
 hook: "Pull a woolly jumper over your head in the dark and you can see tiny sparks. Where does a spark come from?"
 ---
-You know the balloon-and-hair trick. This lesson says what actually moved.
+You've probably made a balloon stick to a wall after rubbing it on your hair, and now you can find out what actually moved.
 
 ## Engage: the balloon
 

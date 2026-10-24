@@ -31,7 +31,7 @@ explainClip:
     - wait: 800
 hook: "Granite kitchen benches have crystals you can see from across the room. Basalt has crystals too small to see. Both crystallised from molten rock: what was different?"
 ---
-Rocks keep a record of how they formed. This lesson teaches you to read one part of it.
+Rocks keep a record of how they formed, and you're going to learn to read one part of it.
 
 ## Engage: big crystals or small?
 

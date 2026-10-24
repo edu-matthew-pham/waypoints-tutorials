@@ -26,7 +26,7 @@ explainClip:
     - wait: 3000
 hook: "Australia is moving north about 7 centimetres a year, nearly twice as fast as your fingernails grow. A whole continent. What could possibly push it?"
 ---
-Earth's surface is not fixed. This lesson is about the engine underneath.
+Earth's surface is broken into plates that never stop moving, and you're going to find the engine underneath.
 
 ## Engage: what pushes a continent?
 

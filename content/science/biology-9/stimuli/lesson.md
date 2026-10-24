@@ -27,7 +27,7 @@ explainClip:
     - caption: { text: "A change inside counts too: the brain detects it, and you sweat.", say: "A change inside counts too: the brain detects it, and you sweat." }
 hook: "You pull your hand off a hot pan before you feel the pain. After lunch, your blood sugar is brought back down without you noticing at all. Both are responses to a stimulus."
 ---
-Earlier you met body systems. This lesson: how the body detects change and responds.
+Earlier you met the body's systems, and now you'll see how your body notices a change and does something about it.
 
 ## Engage: what is a stimulus?
 

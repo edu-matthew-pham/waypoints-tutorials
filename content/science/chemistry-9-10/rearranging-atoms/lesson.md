@@ -26,7 +26,7 @@ explainClip:
     - wait: 800
 hook: "A log burns down to a handful of ash. Where did the rest of the log go?"
 ---
-You know a chemical change makes a new substance. This lesson follows the atoms.
+You know a chemical change makes a new substance, so this time you'll keep track of every atom along the way.
 
 ## Engage: burning methane
 

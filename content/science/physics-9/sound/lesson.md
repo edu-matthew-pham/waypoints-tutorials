@@ -31,7 +31,7 @@ explainClip:
     - wait: 2800
 hook: "In space, an explosion is completely silent. Yet on Earth you can hear a thunderclap from kilometres away. What is sound actually made of?"
 ---
-You have heard sounds all your life. This lesson looks at what is happening in the air between a sound and your ear.
+You've been hearing sounds your whole life without seeing any of it happen, so you'll use the particle model to look at the air between a speaker and your ear.
 
 ## Engage: one particle of air
 

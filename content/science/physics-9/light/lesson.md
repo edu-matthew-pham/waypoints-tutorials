@@ -30,7 +30,7 @@ explainClip:
     - wait: 3200
 hook: "A sunburn, a microwave oven, a TV remote and a hospital X-ray all use the same kind of wave. What makes them so different?"
 ---
-Sound needed particles to carry it. Light doesn't. This lesson meets the wave model for light and for its whole family.
+Sound needed particles to carry it, but light crosses empty space to reach us from the sun, so it needs a different model, and that model covers a whole family of waves.
 
 ## Engage: more energy
 

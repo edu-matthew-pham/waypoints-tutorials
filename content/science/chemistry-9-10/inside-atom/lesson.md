@@ -31,7 +31,7 @@ explainClip:
     - wait: 800
 hook: "If an atom were the size of a football stadium, its nucleus would be a marble on the centre spot. Yet that marble holds nearly all the mass."
 ---
-In Year 7 the particles in the particle model had no parts. This lesson opens one up.
+In Year 7 the particles in the particle model were plain dots with nothing inside, and now you get to open one up.
 
 ## Engage: counting the parts
 

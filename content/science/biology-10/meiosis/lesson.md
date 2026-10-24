@@ -28,7 +28,7 @@ explainClip:
     - wait: 600
 hook: "You and your brother or sister came from the same two parents. The chance that two of their sperm or eggs carry exactly the same chromosomes is tiny."
 ---
-Chromosomes come in pairs, one from each parent. This lesson: how gametes get half, and why each is different.
+Your chromosomes come in pairs, one from each parent, and here you'll find out what happens to those pairs when your body makes sperm or eggs.
 
 ## Engage: copies or combinations?
 

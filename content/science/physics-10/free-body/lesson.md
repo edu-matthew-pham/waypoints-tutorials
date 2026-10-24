@@ -30,7 +30,7 @@ explainClip:
     - wait: 1600
 hook: "A plane cruising at 900 km/h has four big forces on it, each hundreds of thousands of newtons. Yet the passengers can pour a drink without spilling it. How?"
 ---
-You can find a net force along one line. This lesson draws all the forces on an object at once.
+You can already find the net force along one line, and now you'll draw every force on an object at once.
 
 ## Engage: the cruising plane
 

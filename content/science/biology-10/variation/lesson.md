@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "Look closely at a patch of grass beetles, a school of fish or a class of Year 10s. No two are quite the same. That spread is the raw material of evolution."
 ---
-Meiosis and fertilisation make every offspring different. This lesson: what that variation looks like across a whole population.
+Meiosis and fertilisation make every offspring different, so what does all that difference look like when you measure a whole population?
 
 ## Engage: all the same?
 

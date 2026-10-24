@@ -31,7 +31,7 @@ explainClip:
     - wait: 800
 hook: "Lithium, sodium and potassium look nothing alike in a jar, yet drop any of them in water and they fizz across the surface. Why do they behave the same?"
 ---
-Last lesson: electrons fill shells. This lesson uses the outer shell to read the periodic table.
+Last time you worked out how electrons fill their shells, and now you can use that to read the periodic table.
 
 ## Engage: three fizzing metals
 

@@ -28,7 +28,7 @@ explainClip:
     - wait: 600
 hook: "Coal is a forest from 300 million years ago. Burning it takes seconds."
 ---
-Photosynthesis and respiration balance. This lesson: what happens when a new flow joins in.
+Photosynthesis and respiration keep carbon flowing in and out of the air in balance, so what happens when a brand-new flow joins in?
 
 ## Engage: small next to big?
 

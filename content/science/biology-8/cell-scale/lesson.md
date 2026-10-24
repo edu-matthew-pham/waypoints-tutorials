@@ -27,7 +27,7 @@ explainClip:
     - wait: 3600
 hook: "For thousands of years nobody knew that every living thing is made of cells. Then, in the 1660s, someone looked at a thin slice of cork through an early microscope."
 ---
-You have studied whole living things. This lesson zooms in.
+Up to now you've looked at whole plants and animals, so let's zoom right in and see just how small the pieces they're made of really are.
 
 ## Engage: how many cells?
 

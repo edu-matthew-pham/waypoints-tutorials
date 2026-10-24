@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "Chemists write reactions in a shorthand that has to obey one rule: no atom may appear or vanish."
 ---
-Last lesson: atoms are rearranged, never made or destroyed. This lesson writes that down as an equation.
+Last time you followed atoms through a reaction, and now you'll write what you saw as an equation that comes out even.
 
 ## Engage: water from hydrogen
 

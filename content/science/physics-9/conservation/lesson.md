@@ -29,7 +29,7 @@ explainClip:
     - wait: 3200
 hook: "Drop a ball and it bounces back up, but never quite as high. Each bounce is lower until it stops. Has its energy been used up?"
 ---
-In Year 8 you followed energy through systems and found by-products. This lesson turns that into a law.
+In Year 8 you followed energy through machines and spotted the by-product heat, and here that idea becomes a law.
 
 ## Engage: the bouncing ball
 

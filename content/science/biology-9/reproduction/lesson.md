@@ -30,7 +30,7 @@ explainClip:
     - wait: 600
 hook: "Two kittens from the same litter can be black and ginger. A strawberry plant's runners grow into plants identical to it. Same question, two answers."
 ---
-Gametes carry half a parent's chromosomes. This lesson: what that means for the offspring.
+Sperm and egg cells each carry half a parent's chromosomes, so what does that mean for the offspring they make?
 
 ## Engage: same parents, same look?
 

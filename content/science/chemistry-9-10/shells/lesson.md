@@ -29,7 +29,7 @@ explainClip:
     - wait: 800
 hook: "Neon glows in signs but never reacts with anything. Sodium, one proton heavier, catches fire in water. The difference is one electron."
 ---
-In Year 9 you met the nuclear atom. This lesson arranges its electrons.
+In Year 9 you met the atom with its tiny nucleus, and now you'll work out how its electrons are arranged.
 
 ## Engage: sodium's electrons
 

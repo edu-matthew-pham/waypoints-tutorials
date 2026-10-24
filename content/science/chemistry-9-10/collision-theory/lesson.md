@@ -28,7 +28,7 @@ explainClip:
     - wait: 800
 hook: "Milk goes off in days on the bench but lasts a week in the fridge. A glow stick in hot water glows brighter but fades sooner. Same idea: how often, and how hard, particles collide."
 ---
-Reactions go at different speeds. This lesson gives one model that explains every way to change the speed.
+Some reactions are over in a flash and others take years, and one simple model explains every way you can speed one up or slow it down.
 
 ## Engage: hotter and faster?
 

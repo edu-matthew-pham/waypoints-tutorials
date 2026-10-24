@@ -28,7 +28,7 @@ explainClip:
     - wait: 600
 hook: "On 4 January the Earth is at its closest to the sun all year, five million kilometres closer than in July. That day it's summer in Canberra and winter in London."
 ---
-The Earth's axis is tilted and always points the same way. This lesson: what that does across a year.
+You already know how the Earth spins and how it travels round the sun, and now you can use both to work out why Canberra swings between hot and cold across the year.
 
 ## Engage: why is it hotter?
 

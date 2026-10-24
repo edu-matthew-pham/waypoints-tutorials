@@ -29,7 +29,7 @@ explainClip:
     - wait: 3800
 hook: "Pull your hand off a hot pan and you've done it in a fraction of a second. After lunch, your body brings your blood sugar back down too, but that takes an hour. Same job, different messengers."
 ---
-Last lesson: every response runs stimulus → receptor → command centre → effector → response. This lesson: the two ways the message is sent.
+Last time every response ran from stimulus to receptor to command centre to effector, and now you'll look at the two ways the message actually gets sent.
 
 ## Engage: how does insulin get there?
 

@@ -28,7 +28,7 @@ explainClip:
     - wait: 4500
 hook: "Right now you are spinning at about 1400 km/h (in Canberra) and flying round the sun at about 107 000 km/h. You don't feel either."
 ---
-In Year 6 you modelled day and night. This lesson puts both of the Earth's movements together.
+In Year 6 you modelled day and night, and here you'll put that together with the Earth's other big movement, its trip around the sun.
 
 ## Engage: what makes a day?
 

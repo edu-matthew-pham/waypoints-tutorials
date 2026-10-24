@@ -28,7 +28,7 @@ explainClip:
     - wait: 600
 hook: "The moon looks like a thin smile one week and a bright full disc two weeks later. Nothing about the moon itself has changed."
 ---
-You have watched the moon's phases. This lesson explains them.
+You've probably noticed the moon looks different from one night to the next, and by the end of this you'll be able to say exactly why.
 
 ## Engage: what causes the phases?
 

@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "Mendeleev arranged the elements in 1869 and left gaps for ones nobody had found. Years later they were discovered, just as he had predicted. Electrons explain why his pattern worked, but nobody knew about electrons yet."
 ---
-Elements in a group have the same outer electrons. This lesson asks why the table goes in rows, and why the pattern repeats.
+You've seen why elements in a group behave alike, so now look across the rows and work out why the pattern keeps repeating.
 
 ## Engage: after neon
 

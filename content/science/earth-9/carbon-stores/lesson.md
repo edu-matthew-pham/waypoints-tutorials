@@ -25,7 +25,7 @@ explainClip:
     - wait: 4200
 hook: "The carbon atoms in your body have been in dinosaurs, in ocean water and in the air, many times over. They are billions of years old and still in use."
 ---
-Last lesson: Earth has four spheres. This lesson follows one substance through all of them: carbon.
+Last time you met Earth's four spheres, and now you'll follow one substance, carbon, through all of them.
 
 ## Engage: the biggest store
 

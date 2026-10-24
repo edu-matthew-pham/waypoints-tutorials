@@ -28,7 +28,7 @@ explainClip:
     - wait: 800
 hook: "How do you get clean salt back out of sandy salt water? Two techniques, in the right order: filtration takes out what didn't dissolve, and evaporation takes the water away from what did."
 ---
-Both techniques use a property difference from the last lesson: **particle size** for filtration, **boiling point** for evaporation. This lesson is about doing them correctly.
+Both of these lean on a difference you met last time, **particle size** for filtration and **boiling point** for evaporation, so here it's all about doing them properly.
 
 ## Engage: sandy salt water
 

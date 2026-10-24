@@ -26,7 +26,7 @@ explainClip:
     - wait: 1500
 hook: "A gas stove burns methane with a blue flame. Hold a cold spoon above it and drops of water appear. Where did the water come from?"
 ---
-You know the signs of a chemical change: a new substance is made. This lesson names what goes in and what comes out.
+You know a chemical change makes something new, and here you'll learn to name exactly what goes in and what comes out.
 
 ## Engage: burning methane
 

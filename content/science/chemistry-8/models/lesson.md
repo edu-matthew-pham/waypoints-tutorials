@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "H₂O, a drawing of three balls, and the word 'water' all mean the same thing. Why do chemists need so many ways to say it?"
 ---
-You can tell elements, compounds and mixtures apart by their particles. This lesson asks how to show them.
+You can tell elements, compounds and mixtures apart by their particles, and now you'll work out the best way to show them on paper.
 
 ## Engage: what does H₂O tell you?
 

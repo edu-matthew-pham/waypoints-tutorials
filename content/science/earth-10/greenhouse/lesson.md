@@ -27,7 +27,7 @@ explainClip:
     - wait: 600
 hook: "The moon is the same distance from the sun as Earth, but its average surface temperature is far below freezing. Earth's thin blanket of gases makes the difference."
 ---
-You know Earth balances energy in and out. This lesson: what the air does to the energy going out.
+You've seen that Earth only stays the same temperature while the energy coming in matches the energy going out, so where does the air come into it?
 
 ## Engage: what do greenhouse gases do?
 

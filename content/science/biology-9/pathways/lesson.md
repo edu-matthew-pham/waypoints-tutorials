@@ -32,7 +32,7 @@ explainDiagram:
   caption: "Every response follows the same pathway"
 hook: "Step on a pin and your foot is off the floor before you've said 'ouch'. Your brain wasn't the one who decided."
 ---
-Every response follows the same pathway. This lesson: building the pathway yourself, and which part of the nervous system decides.
+Every response follows the same pathway, and here you'll build it yourself and find out which part of the nervous system makes the call.
 
 ## Engage: who moves your foot?
 

@@ -30,7 +30,7 @@ explainClip:
     - caption: { text: "A gene is a section of DNA: the code for one protein.", say: "A gene is a section of DNA: the code for one protein." }
 hook: "Unwound, the DNA in one of your cells would be about two metres long. It fits in a nucleus a hundredth of a millimetre across."
 ---
-In Year 9 you learnt gametes carry half the chromosomes. This lesson: what a chromosome is made of, and what a gene is.
+Last year you learnt that sperm and egg cells carry half the chromosomes, so now it's time to open a chromosome up and see what it's made of and where the genes are.
 
 ## Engage: bigger or smaller?
 

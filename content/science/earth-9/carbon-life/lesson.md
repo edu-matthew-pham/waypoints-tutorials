@@ -30,7 +30,7 @@ explainClip:
     - wait: 600
 hook: "A big gum tree can weigh many tonnes. Almost all of that mass came out of the air."
 ---
-You know the four spheres. This lesson follows carbon between two of them.
+You know Earth has four spheres, and here you'll follow carbon as it moves between two of them.
 
 ## Engage: where does a tree's mass come from?
 

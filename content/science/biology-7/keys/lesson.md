@@ -27,7 +27,7 @@ explainClip:
     - wait: 800
 hook: "A field guide doesn't show you every animal in Australia and ask you to find the match. It asks you a question about the one in front of you, then another, then another."
 ---
-Last lesson: kingdoms. This lesson: a tool for naming organisms one careful choice at a time.
+Last time you sorted living things into kingdoms, and now you'll learn a tool for naming one, a careful choice at a time.
 
 ## Engage: how does a key work?
 

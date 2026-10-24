@@ -29,7 +29,7 @@ explainClip:
     - caption: { text: "Cells make tissues; tissues make organs; organs make systems.", say: "Cells make tissues; tissues make organs; organs make systems." }
 hook: "A leaf looks like one green sheet. Slice it thinly and look through a microscope, and you find at least five different layers, each doing a different job."
 ---
-Cells specialise; similar cells form tissues. This lesson: tissues build organs.
+You've seen how similar cells team up into a tissue, so now it's time to look at something bigger, like a leaf or your stomach, and work out what it's built from.
 
 ## Engage: one tissue or many?
 

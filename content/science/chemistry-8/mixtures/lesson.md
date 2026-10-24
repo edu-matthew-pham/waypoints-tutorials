@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "You breathe in oxygen and nitrogen with every breath, yet only the oxygen keeps you alive. In air, oxygen still behaves exactly like oxygen."
 ---
-Elements are one type of atom; compounds are different atoms joined. This lesson looks at substances that are only mixed.
+Elements are made of one type of atom and compounds have different atoms joined together, so what about substances that are only mixed?
 
 ## Engage: oxygen in air
 

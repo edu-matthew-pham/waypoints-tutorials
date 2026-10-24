@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "Water looks smooth and continuous. Zoom in about a billion times and the picture changes completely: that picture is the particle model, and the rest of chemistry is built on it."
 ---
-Scientists explain how substances behave with a **model**: a simplified picture that is good at explaining and predicting. This lesson builds the particle model and its four key ideas.
+Scientists explain how things behave using a **model**: a simplified picture that's good at explaining and predicting, and the particle model comes down to four ideas.
 
 ## Engage: zoom into a drop of water
 

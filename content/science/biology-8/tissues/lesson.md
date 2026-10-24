@@ -29,7 +29,7 @@ explainClip:
     - wait: 3400
 hook: "One muscle cell is thinner than a hair and can pull with only a tiny force. Yet your heart beats about 100 000 times a day without a rest."
 ---
-Last lesson: cells specialise. This lesson: what happens when similar specialised cells work together.
+Last time you saw cells take on special shapes for special jobs, so the question now is what happens when thousands of the same kind sit side by side.
 
 ## Engage: one cell or many?
 

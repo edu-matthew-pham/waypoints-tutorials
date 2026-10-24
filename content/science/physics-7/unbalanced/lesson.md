@@ -29,7 +29,7 @@ explainClip:
     - wait: 800
 hook: "A curling stone glides 40 metres across the ice. Sweep in front of it and it slides further; let it hit another stone and it stops dead. Every time its motion changes, something has pushed or pulled it."
 ---
-Last lesson: balanced forces keep the motion the same. This lesson: what an unbalanced force changes.
+You've seen that balanced forces leave an object's motion just as it was, so what happens when one push or pull is bigger than the other?
 
 ## Engage: the sliding puck
 

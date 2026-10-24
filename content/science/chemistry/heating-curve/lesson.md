@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "A pot of water on the stove climbs to 100 °C and then stops, even with the gas still on full. Where is all that heat going?"
 ---
-You know how particles are arranged in solids, liquids and gases. This lesson asks what energy does when one changes into another.
+You know how particles are arranged in solids, liquids and gases, so the next question is what the energy is doing while one turns into another.
 
 ## Engage: the stuck thermometer
 

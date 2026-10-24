@@ -28,7 +28,7 @@ explainClip:
     - wait: 800
 hook: "A field of grass can feed many grasshoppers, which feed fewer lizards, which feed a couple of kookaburras, which feed perhaps one eagle. Why the shrinking numbers?"
 ---
-Last lesson: the arrows. This lesson: what travels along them, and how much arrives.
+Last time you drew the arrows in a food chain, and now you'll find out what travels along them and how much of it gets through.
 
 ## Engage: how much gets through?
 

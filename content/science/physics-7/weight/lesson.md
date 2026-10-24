@@ -30,7 +30,7 @@ explainClip:
     - wait: 600
 hook: "Astronauts on the Moon bounce around like they're on a trampoline. Did they lose something on the way there?"
 ---
-"Weight" in everyday talk and "weight" in science are different. This lesson sorts that out.
+In everyday talk "weight" and "mass" mean much the same thing, but in science they don't, and the difference really shows up on the Moon.
 
 ## Engage: an astronaut's mass
 

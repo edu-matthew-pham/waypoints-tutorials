@@ -34,7 +34,7 @@ explainClip:
     - wait: 600
 hook: "Push an empty shopping trolley and it shoots off. Push a full one just as hard and it barely gets going. Same push, different result: by exactly how much?"
 ---
-You know a net force makes things accelerate. This lesson finds the exact rule.
+You know a net force makes things speed up, and now you'll find the exact rule that links the force, the mass and the acceleration.
 
 ## Engage: double the mass
 

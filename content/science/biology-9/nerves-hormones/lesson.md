@@ -26,7 +26,7 @@ explainClip:
     - wait: 2000
 hook: "A fright makes you jump in a fraction of a second. Your heart is still pounding a few minutes later. Two different systems are at work."
 ---
-The nervous system is one way the body sends messages. This lesson: the other way, and how they compare.
+Nerves are one way your body sends messages, and there's a second way that works quite differently.
 
 ## Engage: how do hormones travel?
 

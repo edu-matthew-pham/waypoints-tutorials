@@ -26,7 +26,7 @@ explainClip:
     - wait: 1200
 hook: "Bake a cake and it rises, browns and smells wonderful. Leave a nail outside and it turns orange. In each case, how do you know something new was made?"
 ---
-Last lesson: a chemical change makes a new substance. This lesson: how to spot one without seeing the atoms.
+You know a chemical change makes a new substance, but you can't see the atoms, so how can you tell it's happened?
 
 ## Engage: fizz or no fizz
 

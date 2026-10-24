@@ -29,7 +29,7 @@ explainClip:
     - wait: 3000
 hook: "On a 45 °C day in Marble Bar or a frosty morning in Canberra, your body stays within about half a degree of 37 °C. Something is constantly correcting it."
 ---
-Responses follow a pathway. This lesson: a pathway whose response feeds back to switch off its own stimulus.
+You've followed a response from the stimulus all the way to the action, so now look at what happens when the response changes the very thing that set it off.
 
 ## Engage: what keeps it steady?
 

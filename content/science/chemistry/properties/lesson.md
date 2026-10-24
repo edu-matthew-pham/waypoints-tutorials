@@ -34,7 +34,7 @@ explainClip:
     - wait: 800
 hook: "Seal the end of a syringe full of air and you can push the plunger a long way in. Do the same with water and it barely moves. Particle theory explains why, and the same explanation works for density, runny honey and smells crossing a room."
 ---
-This lesson moves from describing particles to **explaining properties** with them. Every explanation names a particle feature: arrangement, motion or attraction.
+You can already describe the particles in a solid, a liquid and a gas, and now you'll use them to **explain properties**, naming the arrangement, the motion or the attraction each time.
 
 ## Engage: three syringes
 

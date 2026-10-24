@@ -28,7 +28,7 @@ explainClip:
     - wait: 800
 hook: "A car cruises down the highway at a steady 100 km/h, engine running. Is its engine pushing harder than the air and the road are holding it back?"
 ---
-Last lesson: drawing forces. This lesson: what the diagram tells you about the motion.
+Last time you drew forces as arrows, and now you'll find out what those arrows tell you about how something is moving.
 
 ## Engage: the cruising car
 

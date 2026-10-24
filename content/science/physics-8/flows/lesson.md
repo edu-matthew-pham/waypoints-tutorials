@@ -27,7 +27,7 @@ explainClip:
     - wait: 3600
 hook: "A coaster's second hill is always lower than its first. Designers have no choice. Why?"
 ---
-You can tell transfers from transformations. This lesson follows energy through whole systems.
+You can tell a transfer from a transformation, so now you'll follow the energy all the way through a whole system.
 
 ## Engage: the second hill
 

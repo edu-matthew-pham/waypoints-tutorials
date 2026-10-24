@@ -14,7 +14,7 @@ app:
   layout: full
 hook: "A rugby front-rower and a winger sprint off the same line with the same push from the ground. Who gets going faster, and why?"
 ---
-You know that an unbalanced force changes motion. This lesson puts force, mass and acceleration together.
+You know an unbalanced force changes how something moves, and now you can see what the mass of the thing does to the result.
 
 ## Engage: the trolley
 

@@ -29,7 +29,7 @@ explainClip:
     - wait: 600
 hook: "Kick a ball on grass and it rolls to a stop. Slide a puck on ice and it goes much further. In space, a probe launched decades ago is still coasting out of the solar system with its engines off."
 ---
-For 2000 years people believed, with Aristotle, that motion needs a force to keep it going. This lesson tests that idea.
+For two thousand years people agreed with Aristotle that a moving thing needs a force to keep it going, and you're about to put that idea to the test.
 
 ## Engage: the sliding puck
 

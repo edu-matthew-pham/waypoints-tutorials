@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "Water, oxygen and carbon dioxide are all made of particles. So why is one a drink, one keeps you alive, and one puts out fires?"
 ---
-In Year 7 every particle was just "a particle". This lesson gives them an identity.
+In Year 7 every particle was just "a particle", and now you'll find out what they're actually made of.
 
 ## Engage: are all particles the same?
 

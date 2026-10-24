@@ -26,7 +26,7 @@ explainClip:
     - wait: 600
 hook: "A gum tree, a mushroom, the bacteria in yoghurt and you. One thing they share that a rock, a cloud and a robot don't."
 ---
-In Year 3 you sorted living from non-living. This lesson gives the deeper reason.
+Back in primary school you sorted things into living and non-living, and now you can find out what's going on underneath that makes the difference.
 
 ## Engage: does a tree have cells?
 

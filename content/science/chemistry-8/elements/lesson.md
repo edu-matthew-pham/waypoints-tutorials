@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "Everything around you, from your phone to your fingernails, is built from fewer than a hundred kinds of atom. Each kind is an element."
 ---
-Last lesson: atoms come in types. This lesson: substances made of just one type.
+Last time you saw that atoms come in different types, and now you'll look at substances made of just one type.
 
 ## Engage: pure oxygen, pure water
 

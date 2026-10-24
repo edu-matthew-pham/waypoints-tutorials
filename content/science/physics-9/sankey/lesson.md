@@ -26,7 +26,7 @@ explainClip:
     - wait: 3200
 hook: "About two thirds of the energy in the coal burned at a power station never becomes electricity. You can see exactly where it goes in one picture."
 ---
-You can calculate efficiency. This lesson draws it, and uses the drawings to compare real systems.
+You can already work out efficiency as a number, and a Sankey diagram lets you see it at a glance and compare real machines side by side.
 
 ## Engage: reading the bands
 

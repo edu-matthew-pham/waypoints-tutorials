@@ -27,7 +27,7 @@ explainClip:
     - wait: 600
 hook: "In 1929 Edwin Hubble found that almost every galaxy is moving away from us. Does that put us at the centre of the universe?"
 ---
-The big bang model predicts an expanding universe. This lesson tests that prediction.
+The big bang model says the universe should be getting bigger, and that's a prediction you can check against what astronomers actually see.
 
 ## Engage: the centre?
 

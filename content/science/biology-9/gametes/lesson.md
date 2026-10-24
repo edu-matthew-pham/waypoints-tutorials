@@ -26,7 +26,7 @@ explainClip:
     - wait: 600
 hook: "A human egg is just big enough to see without a microscope. A sperm is one of the smallest cells in the body. Together they make one cell that grows into a person."
 ---
-In Year 8 you met specialised cells. This lesson: the cells made for reproduction.
+In Year 8 you met cells shaped for special jobs, and sperm and egg cells are some of the most specialised of all.
 
 ## Engage: how many chromosomes?
 

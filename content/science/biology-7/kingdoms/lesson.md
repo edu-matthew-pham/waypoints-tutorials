@@ -29,7 +29,7 @@ explainClip:
     - wait: 800
 hook: "A mushroom pops up on the lawn overnight. It grows from the ground and doesn't walk away, so it must be a plant. Right?"
 ---
-There are millions of kinds of living things. This lesson is about the biggest groups scientists sort them into, and the features that decide.
+There are millions of kinds of living things, and scientists sort them into a handful of really big groups using a few features that decide where each one goes.
 
 ## Engage: the mushroom
 

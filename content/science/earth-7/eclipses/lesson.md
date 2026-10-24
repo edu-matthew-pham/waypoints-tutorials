@@ -33,7 +33,7 @@ explainClip:
     - wait: 600
 hook: "There's a new moon every month, with the moon between us and the sun. Yet the next total solar eclipse seen from Sydney, on 22 July 2028, will be the first there in over 150 years."
 ---
-You know where the moon is at each phase. This lesson: when the sun, Earth and moon line up exactly.
+You know where the moon sits at each phase, so you can work out what has to happen for the sun, Earth and moon to line up perfectly.
 
 ## Engage: every month?
 

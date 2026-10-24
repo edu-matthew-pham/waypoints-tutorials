@@ -30,7 +30,7 @@ explainClip:
     - wait: 800
 hook: "Every living thing contains a tiny amount of carbon that is slowly turning into nitrogen. That carbon is how scientists date bones and charcoal tens of thousands of years old."
 ---
-The number of protons decides the element. This lesson asks what happens when only the neutrons change.
+The number of protons decides which element an atom is, so what happens if only the number of neutrons changes?
 
 ## Engage: two kinds of carbon
 

@@ -29,7 +29,7 @@ explainClip:
     - wait: 800
 hook: "At a beach the water creeps up the sand and back down about every 12 and a half hours, and the biggest tides of the month always arrive near a new or full moon."
 ---
-You know the moon's phases and positions. This lesson connects them to the oceans.
+You know where the moon is through its phases, and it turns out that has a lot to do with what the sea does at the beach.
 
 ## Engage: how many high tides?
 

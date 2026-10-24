@@ -28,7 +28,7 @@ explainClip:
     - wait: 1000
 hook: "A kookaburra eats lizards, grasshoppers, even small snakes. A food chain can only show one of those meals. How do you show all of them?"
 ---
-Food chains are a start. This lesson builds the whole web.
+A food chain is a good start, and here you'll join lots of them together into one web.
 
 ## Engage: which way do arrows go?
 

@@ -26,7 +26,7 @@ explainClip:
     - wait: 1500
 hook: "Leave a metal spoon in hot soup and the handle soon burns your fingers. Heat a pot of water from the bottom and the top gets hot too. Two different journeys for the energy."
 ---
-In Year 7 you used the particle model to explain solids, liquids and gases. This lesson uses it to explain how energy moves.
+In Year 7 you used the particle model to explain solids, liquids and gases, and it turns out the same model explains how heat gets from one place to another.
 
 ## Engage: the spoon
 

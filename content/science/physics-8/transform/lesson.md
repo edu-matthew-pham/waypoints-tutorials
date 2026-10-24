@@ -28,7 +28,7 @@ explainClip:
     - wait: 1200
 hook: "Touch an old-style light bulb that has been on for a minute and it burns your finger, even though it was only meant to make light."
 ---
-Energy comes in two families, kinetic and potential. This lesson follows it as it moves and changes.
+You've sorted energy into two families, kinetic and potential, and now you'll follow it as it moves from place to place and changes from one type to another.
 
 ## Engage: the hot bulb
 

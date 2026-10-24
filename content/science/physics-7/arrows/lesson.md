@@ -28,7 +28,7 @@ explainClip:
     - wait: 1200
 hook: "Push a shopping trolley gently, then hard. Same direction, different force. Push it from the other side: same size, different force. Two things to get right every time."
 ---
-Forces are invisible, so scientists draw them. This lesson is about drawing them precisely.
+Forces are invisible, so scientists draw them, and here you'll learn to draw them precisely.
 
 ## Engage: what does an arrow tell you?
 

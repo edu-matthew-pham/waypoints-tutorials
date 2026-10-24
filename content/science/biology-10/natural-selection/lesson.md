@@ -34,7 +34,7 @@ explainClip:
     - wait: 800
 hook: "After a bushfire, the ground is black. A few years later, a beetle population on it is darker than before. No beetle changed colour."
 ---
-Individuals vary. This lesson: what happens to that variation when some individuals are more likely to survive.
+You've seen that no two beetles in a population are quite alike, so what happens to those differences when some beetles are more likely to survive than others?
 
 ## Engage: who changes?
 

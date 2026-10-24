@@ -27,7 +27,7 @@ explainClip:
     - wait: 3600
 hook: "A roller coaster has no engine after the first climb. Yet it races down, swoops up the next hill and keeps going for a minute or more. Where does its energy come from?"
 ---
-In earlier years you met sound, heat, light and electricity one at a time. This lesson sorts them into two families.
+In earlier years you met sound, heat, light and electricity one at a time, and here you'll sort them, and a few others, into two big families.
 
 ## Engage: the book on the shelf
 

@@ -26,7 +26,7 @@ explainClip:
     - wait: 800
 hook: "You can melt ice and freeze it again. You can't unburn toast. Is that how to tell a chemical change? Dissolved salt comes back when the water dries up…"
 ---
-In Year 6 you may have learned that changes you can reverse are physical. This lesson tests that rule, and replaces it with a better one.
+In primary school you might have learnt a rule for telling physical and chemical changes apart, and here you'll put it to the test.
 
 ## Engage: is reversing the test?
 

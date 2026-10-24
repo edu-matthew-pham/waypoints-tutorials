@@ -26,7 +26,7 @@ explainClip:
     - wait: 4000
 hook: "A car's engine pushes it forward with 2000 newtons. So why doesn't it keep speeding up for ever?"
 ---
-In Year 7 you drew forces as arrows. This lesson adds them up.
+In Year 7 you drew forces as arrows, and here you'll learn to add them up into one overall force.
 
 ## Engage: three forces on a car
 

@@ -27,7 +27,7 @@ explainClip:
     - wait: 3200
 hook: "Old filament light bulbs were banned in Australia from 2009. They worked fine. So why ban them?"
 ---
-Energy is never lost. This lesson asks how much of it does what you want.
+Energy is never used up, it just ends up somewhere, so the real question for any device is how much of it goes where you want.
 
 ## Engage: two bulbs
 

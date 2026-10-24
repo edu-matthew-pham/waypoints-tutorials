@@ -34,7 +34,7 @@ explainClip:
     - wait: 2400
 hook: "Radon is a gas that seeps out of some rocks and into houses. It is invisible and has no smell, yet the air in a closed cellar can carry atoms that are turning, one by one, into lead."
 ---
-Isotopes of an element have different numbers of neutrons, and some are unstable. This lesson asks what an unstable nucleus gives out, and what it becomes.
+Isotopes of an element have different numbers of neutrons and some of them are unstable, so what does an unstable nucleus give out, and what's left behind?
 
 ## Engage: what is left?
 

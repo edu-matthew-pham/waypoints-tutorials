@@ -27,7 +27,7 @@ explainClip:
     - wait: 800
 hook: "Drop an iron nail into blue copper sulfate solution and it comes out coated in copper, while the blue slowly fades. Iron has pushed copper out of its compound."
 ---
-You can balance equations and follow atoms through a reaction. This lesson sorts reactions into patterns.
+You can balance an equation and follow the atoms through a reaction, and that makes it possible to sort reactions into a few patterns.
 
 ## Engage: the iron nail
 

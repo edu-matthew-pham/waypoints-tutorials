@@ -29,7 +29,7 @@ explainClip:
     - wait: 600
 hook: "In about an hour, the sun pours as much energy onto Earth as humanity uses in a year. Yet, year to year, Earth's average temperature barely changes. Where does it all go?"
 ---
-Sunlight comes in and some is absorbed. This lesson: where that energy goes.
+You know some sunlight bounces straight back off clouds and ice and the rest warms the ground and the sea, but that can't be the end of the story.
 
 ## Engage: why doesn't Earth keep heating up?
 

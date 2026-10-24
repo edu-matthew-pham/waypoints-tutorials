@@ -31,7 +31,7 @@ explainClip:
     - wait: 3600
 hook: "Doctors give patients a radioactive drug in the morning that is almost gone by the next day. Yet some uranium in the rocks under you was made before the Earth formed, and about half of it is still there."
 ---
-Unstable nuclei decay. This lesson asks how fast.
+Unstable nuclei break down over time, so the obvious next question is how fast that happens.
 
 ## Engage: two half-lives
 

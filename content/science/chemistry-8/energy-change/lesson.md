@@ -25,7 +25,7 @@ explainClip:
     - wait: 1200
 hook: "Snap an instant ice pack and it goes freezing cold. Shake a hand warmer and it gets hot. Neither is plugged in. Where does the heat go, and where does it come from?"
 ---
-A temperature change is one sign of a chemical change. This lesson asks which way, and why.
+A change in temperature is one sign that a reaction has happened, so which way does it go, and why?
 
 ## Engage: the ice pack
 

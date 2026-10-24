@@ -29,7 +29,7 @@ explainClip:
     - wait: 800
 hook: "A puddle disappears on a hot day. A sugar cube vanishes in tea. Has anything actually gone?"
 ---
-You know particles are atoms, alone or joined. This lesson asks what happens to them when something melts, boils or dissolves.
+You know particles are atoms, on their own or joined up, so what happens to them when something melts, boils or dissolves?
 
 ## Engage: the bubbles in boiling water
 

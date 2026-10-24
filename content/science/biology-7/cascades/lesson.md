@@ -31,7 +31,7 @@ explainClip:
     - wait: 1200
 hook: "Where dingoes were removed to protect sheep, kangaroos and foxes boomed, and some small native animals nearly vanished. How could removing one predator harm small animals it rarely ate?"
 ---
-You can build a web and follow its energy. This lesson uses the web to predict.
+You can build a web and follow the energy through it, so now you'll use it to predict what happens when one animal disappears.
 
 ## Engage: remove the dingo
 
