@@ -91,6 +91,7 @@ tasks:
       q: "How many oxygen atoms are in 3CO₂ (three carbon dioxide particles)?"
       answer: 6
       explain: "Each CO₂ has 2 oxygen atoms; 3 × 2 = 6. The big number in front counts particles; the small one counts atoms in each."
+    hint: ["Start with one CO₂ particle and work out how many oxygen atoms it has, then think about how many of those particles you've got.", "The big number at the front counts whole particles, and the small number counts the atoms inside each one."]
   - check:
       type: question
       q: "You want to show a friend that air is a mixture of nitrogen and oxygen. Which is best?"
@@ -162,6 +163,7 @@ tasks:
       answer: 0
       feedback: [null, "It shows the atoms correctly.", "The atom counts are right."]
       explain: "It is flat, the atoms aren't to scale, and real gas particles are much further apart. Every model simplifies; a good scientist knows how."
+    hint: "Picture what real gas particles are like, then ask what a flat picture on a screen can't get right about them."
 ```
 
 ### Look again

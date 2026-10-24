@@ -88,6 +88,7 @@ tasks:
         - ["An oxygen atom in water is a different type from an oxygen atom in air", "False", "An oxygen atom is an oxygen atom, wherever it is."]
         - ["Atoms are coloured like the balls on the board", "False", "Atoms have no colour. The colours are a code."]
         - ["Atoms are the smallest piece of an element that is still that element", "True"]
+    hint: ["For each one, ask whether it's about the real atoms or only about how the board draws them.", "Think about what the colours on the board are actually for, and what decides an atom's type."]
   - check: { type: reflect, text: "I explained, in my own words, how the particles from Year 7 are connected to atoms and elements." }
 ```
 
@@ -126,6 +127,7 @@ tasks:
       answer: 0
       feedback: [null, "A compound needs different atom types joined. Both of these are oxygen."]
       explain: "One type of atom means an element, however many atoms are in each particle."
+    hint: "Click an oxygen particle and look at its two balls. Are they the same type of atom or two different types?"
 ```
 
 ### Inspect the gases

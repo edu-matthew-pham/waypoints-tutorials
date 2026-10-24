@@ -77,6 +77,7 @@ tasks:
       answer: 0
       feedback: [null, "No new kinds of particle appeared on the board.", "Particles don't grow; the gaps between them do."]
       explain: "A physical change rearranges the same particles. Nothing new is made."
+    hint: ["Think back to the dots on the heat board as you dragged the temperature up. Did the dots themselves change, or did something else change?", "The line under the heat board says what the particles are doing at each temperature, so read it as you move the slider."]
   - check:
       type: sort
       q: "Physical change: what changes, and what stays the same?"
@@ -106,6 +107,7 @@ tasks:
       answer: 0
       feedback: [null, "Particles aren't destroyed in a physical change.", "Dissolved particles are far too small to be caught by filter paper."]
       explain: "The salt particles are spread between the water particles. Evaporating the water leaves them behind as crystals."
+    hint: "If the salt is still there, it's spread through the water as tiny particles, so which way of separating would leave those particles behind?"
   - check:
       type: question
       q: "Melting, boiling and dissolving can usually be reversed. Why?"
@@ -146,6 +148,7 @@ tasks:
       answer: 0
       feedback: [null, "Boiling doesn't split the particles; that would be a chemical change.", "The particles came out of the water, so they are water."]
       explain: "Steam is water as a gas: the same H₂O particles, moving fast and far apart."
+    hint: "Click a steam particle and look at its formula in the table under the board. Is that the same as liquid water, or something new?"
 ```
 
 ### Steam

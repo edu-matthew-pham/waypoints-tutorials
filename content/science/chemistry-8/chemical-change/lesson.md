@@ -81,6 +81,7 @@ tasks:
       answer: 0
       feedback: [null, "Steam is still water. No atoms were rearranged.", "Steam is water in the gas state: the same particles, further apart."]
       explain: "A change of state is physical: the same particles, arranged and moving differently."
+    hint: ["Picture a bubble of steam. What are the particles inside it, and are they the same ones that were in the ice?", "Watch the heat board as you drag the slider and ask whether a new kind of particle ever appears."]
   - check:
       type: sort
       q: "Physical or chemical? Use the new substance test."
@@ -94,6 +95,7 @@ tasks:
         - ["Water boiling", "Physical", "The bubbles are steam: still water."]
         - ["Baking soda fizzing in vinegar", "Chemical", "The bubbles are carbon dioxide, a new gas."]
         - ["Chocolate melting", "Physical"]
+    hint: ["For each one, ask whether you end up with a substance that wasn't there before.", "Bubbles or something disappearing aren't enough on their own, so think about what's in the bubbles or whether you could get the starting stuff back."]
   - check:
       type: question
       q: "Dissolving salt can be reversed, and it is physical. Which of these breaks the old \"can it be reversed?\" rule the other way?"
@@ -132,6 +134,7 @@ tasks:
       answer: 0
       feedback: [null, "Taste salty water: the salt is still there.", "Evaporate the water and you get the salt back, the same substance."]
       explain: "No new substance: physical. The salt particles spread out between the water particles."
+    hint: ["If you wanted your salt back, how could you get it?", "Drag the salt slider and read the line under the board to see where the salt particles go."]
 ```
 
 ### Dissolve
@@ -156,6 +159,7 @@ tasks:
         - ["The hydrogen atoms end up in water", "True"]
         - ["The methane is destroyed and turns into energy", "False", "The atoms are all still there, in new particles. The energy came from the rearrangement."]
         - ["The gas gets hotter", "True", "Burning releases energy: watch the temperature in the panel."]
+    hint: ["Once the methane has burned, where have its carbon and hydrogen atoms gone, and are any of them missing?", "Compare the atom counts at the start and now in the line under the board, and keep an eye on the temperature there too."]
 ```
 
 ### Burn it

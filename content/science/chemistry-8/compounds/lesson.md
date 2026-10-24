@@ -75,6 +75,7 @@ tasks:
       answer: 0
       feedback: [null, "The number of atoms does not decide it. How they are arranged does.", "Being a liquid is a state, not what makes a compound. Steam is still water.", "The board's water particles were spread out like a gas. Joining is what matters, not spacing."]
       explain: "In a compound, different types of atom are chemically joined. In a mixture they are just together, not joined."
+    hint: ["Think back to the two boards. In which one did hydrogen and oxygen atoms end up inside the same particle?", "Look back at the table under each board, at the formula of each kind of particle and what the last column says about it."]
   - check:
       type: sort
       q: "Element, compound or mixture?"
@@ -97,12 +98,13 @@ tasks:
         - ["NH₃", "1 nitrogen, 3 hydrogen"]
         - ["CH₄", "1 carbon, 4 hydrogen"]
       explain: "The small number belongs to the atom just before it. No number means one."
+    hint: ["Look at which symbol each small number sits right after, because that's the atom it's counting.", "If a symbol has no small number after it, there's just one of that atom."]
   - check:
       type: question
       q: "Water is always H₂O, never H₃O or HO. What does that tell you about compounds?"
       options: ["The atoms are joined in a fixed ratio", "Hydrogen is rarer than oxygen", "Water can be any mix of hydrogen and oxygen"]
       answer: 0
-      feedback: [null, "There is more hydrogen than oxygen in water, by atom count. That isn't the point here.", "A mixture can be any ratio. A compound can't."]
+      feedback: [null, "Water does have more hydrogen atoms than oxygen atoms, but what matters is that the ratio never changes.", "A mixture can be any ratio. A compound can't."]
       explain: "Every water particle has exactly 2 hydrogen atoms for each oxygen atom. A mixture of hydrogen and oxygen gases can be in any ratio."
   - check:
       type: question
@@ -172,6 +174,7 @@ tasks:
       options: ["A compound has different properties from the elements it is made from", "Water is a mixture of hydrogen and oxygen", "The atoms changed type"]
       answer: 0
       feedback: [null, "If water were a mixture, it would still let things burn, like the gases do.", "Count the atoms in the panel: the same hydrogen and oxygen atoms, joined in a new way."]
+    hint: ["Imagine water really were hydrogen and oxygen just mixed together. What would happen if you held a lit match to it?", "Compare the atom counts in the panel at the start and now, and check whether any new types of atom turned up."]
 ```
 
 ### Watch

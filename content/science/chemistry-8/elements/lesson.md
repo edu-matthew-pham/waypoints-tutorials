@@ -90,6 +90,7 @@ tasks:
         - ["H₂O (water)", "Compound"]
         - ["CO₂ (carbon dioxide)", "Compound"]
         - ["NaCl (salt)", "Compound"]
+    hint: ["For each one, count how many different types of atom are in it, not how many atoms there are.", "Every capital letter in a formula starts a new element, and the small number only tells you how many of that atom."]
   - check:
       type: match
       q: "Match each symbol to its element."
@@ -108,6 +109,7 @@ tasks:
       answer: 0
       feedback: [null, "It matters: CO and Co are different substances.", "There is no such gas; CO is carbon monoxide, a compound."]
       explain: "Each symbol starts with a capital. Co is one element (cobalt); CO is two symbols, C and O: carbon monoxide."
+    hint: "How many capital letters can you see in CO, and what does each capital letter start?"
   - check:
       type: question
       q: "What does the periodic table show?"
@@ -157,6 +159,7 @@ tasks:
       answer: 0
       feedback: [null, "All gas particles move.", "Co has two letters too, and it is an element."]
       explain: "Two types of atom joined: a compound. Two capital letters in a formula mean two elements."
+    hint: "Click one CO particle and look at its two balls and the key under the board. Are they the same type of atom?"
 ```
 
 ### Carbon monoxide

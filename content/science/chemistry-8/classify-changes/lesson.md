@@ -40,6 +40,7 @@ tasks:
         - ["Iron nails going orange-brown and flaky in damp air", "Chemical", "Rust is a new substance."]
         - ["Dry ice (solid carbon dioxide) turning straight into a gas", "Physical", "Still carbon dioxide, now a gas. (The white fog is water from the air, condensed by the cold.)"]
         - ["Milk going sour", "Chemical", "New substances (acids) are made."]
+    hint: ["For each one, ask whether you'd end up with a new substance or the same stuff in a different form.", "Look for clues like a new colour, a new smell or a gas, but each time check whether it could just be the same substance looking different."]
   - check:
       type: question
       q: "Ice melts and the water around it gets colder. Does a temperature change show a chemical change here?"
@@ -47,12 +48,13 @@ tasks:
       answer: 0
       feedback: [null, "Changes of state also take in or give out energy.", "Ice and water are the same substance in two states."]
       explain: "Temperature changes happen in both kinds of change, so you need the new-substance test too."
+    hint: "What happens to a drink when you drop ice in it, and is the ice turning into a new substance as it melts?"
   - check:
       type: question
       q: "A liquid in a test tube changes colour, fizzes, gets hot and leaves a solid at the bottom. Why is this more convincing than a colour change alone?"
       options: ["Several different clues point the same way, so a new substance is very likely", "Fizzing is always a chemical change", "More clues make it physical"]
       answer: 0
-      feedback: [null, "Boiling also fizzes. The point is the clues agree.", "More converging clues point towards a chemical change."]
+      feedback: [null, "Boiling also fizzes. The point is the clues agree.", "The more clues that agree, the surer you can be that it's a chemical change."]
       explain: "No single clue is certain. Several agreeing clues make a classification much more reliable."
   - check:
       type: question

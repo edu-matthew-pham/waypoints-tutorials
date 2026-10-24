@@ -73,17 +73,19 @@ tasks:
       answer: 0
       feedback: [null, "That's endothermic.", "Energy is never destroyed; it moves."]
       explain: "Exo = out. Energy stored in the reactants is released to the surroundings."
+    hint: "If you put a thermometer right next to this reaction, what would it show, and what does that tell you about the energy?"
   - check:
       type: sort
       q: "Exothermic or endothermic?"
-      options: ["Exothermic (gets hotter)", "Endothermic (gets colder)"]
+      options: ["Exothermic (gives energy out)", "Endothermic (takes energy in)"]
       items:
-        - ["Wood burning", "Exothermic (gets hotter)"]
-        - ["Respiration in your cells", "Exothermic (gets hotter)", "That's how you stay at 37 °C."]
-        - ["A hand warmer (iron rusting quickly)", "Exothermic (gets hotter)"]
-        - ["An instant ice pack", "Endothermic (gets colder)"]
-        - ["Photosynthesis (taking in light energy)", "Endothermic (gets colder)", "It takes in energy from sunlight to make glucose."]
-        - ["Bicarb soda reacting with vinegar and fizzing", "Endothermic (gets colder)", "Feel the cup: it cools a little."]
+        - ["Wood burning", "Exothermic (gives energy out)"]
+        - ["Respiration in your cells", "Exothermic (gives energy out)", "That's how you stay at 37 °C."]
+        - ["A hand warmer (iron rusting quickly)", "Exothermic (gives energy out)"]
+        - ["An instant ice pack", "Endothermic (takes energy in)"]
+        - ["Photosynthesis (taking in light energy)", "Endothermic (takes energy in)", "It takes in energy from sunlight to make glucose."]
+        - ["Bicarb soda reacting with vinegar and fizzing", "Endothermic (takes energy in)", "Feel the cup: it cools a little."]
+    hint: ["For each one, ask whether the reaction gives energy out to what's around it or takes energy in from it.", "Getting colder doesn't mean cold is being added but that energy is being taken from the surroundings, and for a plant, think about which way the sunlight's energy goes."]
   - check:
       type: question
       q: "On the board, the nitrogen and oxygen only reacted at 600 K, and the temperature fell. Why might an endothermic reaction stop on its own?"
@@ -129,6 +131,7 @@ tasks:
       answer: 0
       feedback: [null, "Warming would increase swelling.", "Their energy goes opposite ways."]
       explain: "Endothermic for cooling, exothermic for warming: the direction of energy transfer is the design choice."
+    hint: "Does a swollen ankle need energy taken away from it or added to it? Then think about which way each pack's energy goes."
 ```
 
 ### Run it again

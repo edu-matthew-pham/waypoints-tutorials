@@ -100,6 +100,7 @@ tasks:
         - ["Salt water", "Mixture"]
         - ["Carbon dioxide", "Compound"]
         - ["Copper", "Element"]
+    hint: ["For each one, picture its particles. Is there only one kind of particle, and are different atoms joined inside a particle?", "An element has one type of atom, a compound has different atoms joined in each particle, and a mixture has different particles side by side."]
   - check:
       type: question
       q: "How could you get the salt back from salt water?"
@@ -151,6 +152,7 @@ tasks:
       answer: 0
       feedback: [null, "There is no 'right' amount for a mixture.", "Nothing is joined, so neither is a compound."]
       explain: "A mixture's make-up can vary. Water, the compound, is always 2 hydrogen to 1 oxygen."
+    hint: ["Think about cordial. Is it still cordial when you make it weak, or when you make it strong?", "Click particles on both boards and check whether any hydrogen atom is joined to an oxygen atom."]
 ```
 
 ### Lots of hydrogen
@@ -175,6 +177,7 @@ tasks:
       answer: 0
       feedback: [null, "A mixture can contain compounds; the water particles are not joined to the nitrogen or oxygen.", "It has several kinds of particle."]
       explain: "A mixture can hold elements, compounds or both, as long as the different substances aren't joined."
+    hint: ["On the board, is any water particle joined to a nitrogen or oxygen particle, or are they just moving around side by side?", "Read the line under the board once you've found every kind, because it talks about the whole box and not just one particle."]
 ```
 
 ### Humid air

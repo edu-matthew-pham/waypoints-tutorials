@@ -85,6 +85,7 @@ tasks:
         - ["Blue and yellow paint mixing to green", "Misleading sign: physical change", "The paints are mixed, not changed."]
         - ["A nail rusting orange", "Chemical change"]
         - ["A hot drink cooling down", "Misleading sign: physical change"]
+    hint: ["For each one, don't stop at what you can see, and ask whether a new substance has actually been made.", "When there are bubbles, think about what's inside them, and when a colour changes, think about whether the starting stuff is still there."]
   - check:
       type: question
       q: "When magnesium burns there is a bright light, and a white powder is left. Which is the strongest evidence of a chemical change?"
@@ -133,6 +134,7 @@ tasks:
       answer: 0
       feedback: [null, "Reversibility is not the test (dissolving salt can be reversed, and it's physical; so can some reactions).", "Lots of reactions give out no light."]
       explain: "The same particles, more spread out. Bubbles are a clue that misleads here."
+    hint: ["What's actually inside the bubbles when water boils?", "Watch the particles on the heat board as the water boils, and see whether any new kind of particle turns up."]
 ```
 
 ### Boiling
