@@ -44,6 +44,8 @@ check:
   actual: "n − 5. 5 less than 12 is 7, which is 12 − 5. The thing you start from (n) comes first in the subtraction, even though 5 is said first."
 ```
 
+<figure class="situation" role="img" aria-label="A bar labelled n. Under it, a shorter bar labelled with a question mark, 5 shorter than n: 5 less than n."><svg viewBox="0 0 440 112" width="440" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="10" y="14" width="300" height="34" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="160" y="36" text-anchor="middle" fill="currentColor" stroke="none">n</text><rect x="10" y="66" width="220" height="34" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="120" y="88" text-anchor="middle" fill="currentColor" stroke="none">?</text><rect x="232" y="66" width="78" height="34" rx="3" stroke-width="0.8" stroke-dasharray="4 3"/><text x="271" y="88" text-anchor="middle" fill="currentColor" stroke="none">5</text><text x="324" y="88" fill="currentColor" stroke="none">5 less than n</text></svg></figure>
+
 Try it with a real number: what is 5 less than 12? Which expression gives that?
 
 ## Run: what do the words give?

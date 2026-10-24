@@ -34,6 +34,17 @@ Rules for every picture: it shows the question, not the answer (a "?" where the 
 5. Contractions are fine. Keep brackets to one at most per paragraph.
 6. The hook and the intro sit together on the page, so the hook is a one-line teaser and the intro tells the story; they never repeat each other.
 
+**Writing the move (25 Oct, Matthew).** Rules for writing the symbolic part of a lesson so the symbols mean something; the maths end of "support when it's needed, invisible when it isn't" (`roadmap/shared.md` › Proposed 25 Oct). Rules 5–8 are the ones above, collected.
+1. *Picture before symbols.* Every rule is a picture first (bar model, balance, area tiles); the symbols label parts of the picture; the same picture carries through the lesson.
+2. *Numbers before letters.* The student makes the move once with real numbers in a situation; the formula is written afterwards as the record of what they did.
+3. *Every symbol points at something* the student can name in the situation (spatial or abstract-but-real: money, marks).
+4. *Fluency after meaning.* Bare-symbol practice belongs in Practise, once the picture is there. Still a goal; it is about order.
+5. *Show the question, never the answer*, in anything before the student commits.
+6. *Say it as you'd say it* to a student at their desk.
+7. *Read once, then fold.*
+8. *One move, one picture, one situation* the lesson returns to at the end.
+Where the shared `smaller:` field exists, a Predict that is already a move (maths, not PRIMM) may carry one lead-in that does half the move on the picture. First uses: Changing the subject (rebuilt around a bar model), then pictures on the five symbolic Predicts in Algebra (expanding, factorising, brackets, words into expressions, an expression for any case).
+
 **Status:** every Year 7 node is done, all six strands (82 nodes, 60 entries). Eleven nodes honestly have no entry: A03 n1, M01 n1, M03 n1, M04 n1, M05 n1, N02 n2, N03 n1–n2, N04 n1, SP02 n1, SP02 n3. Year 8 holds only the pilot nodes. Pilot lessons live: Finding a side (AC9M8M06 n2) and Changing the subject (AC9M8A01 n3). Pythagoras' theorem (n1) opens with the shortcut across the grass (hook only); its Make and close still need the retrofit, and the 3-4-5 corner check belongs to Right or not? (n3).
 
 **Next:** Matthew reviews the pilot; if yes, the Year 7 retrofit. Then the Years 8–10 library, node by node (the Measurement and Algebra drafts fold in there).

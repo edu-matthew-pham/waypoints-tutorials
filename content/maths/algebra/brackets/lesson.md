@@ -43,6 +43,8 @@ check:
   actual: "2(n + 3). He adds 3 first (n + 3), then doubles all of it. 2n + 3 would double only his own stickers and add 3 afterwards."
 ```
 
+<figure class="situation" role="img" aria-label="A bar of n stickers and 3 more stickers, together labelled the lot. Then he doubles the lot: question mark."><svg viewBox="0 0 520 90" width="520" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="10" y="40" width="150" height="34" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="85" y="62" text-anchor="middle" fill="currentColor" stroke="none">n stickers</text><rect x="166" y="40" width="30" height="34" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="181" y="62" text-anchor="middle" fill="currentColor" stroke="none">1</text><rect x="200" y="40" width="30" height="34" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="215" y="62" text-anchor="middle" fill="currentColor" stroke="none">1</text><rect x="234" y="40" width="30" height="34" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="249" y="62" text-anchor="middle" fill="currentColor" stroke="none">1</text><path d="M10 30 L10 22 L264 22 L264 30" stroke-width="0.8"/><text x="137" y="16" text-anchor="middle" fill="currentColor" stroke="none">the lot</text><text x="290" y="62" fill="currentColor" stroke="none">then he doubles the lot: ?</text></svg></figure>
+
 Try Dan with 4 stickers: 4 and 3 more is 7, doubled is 14. Which expression gives 14?
 
 ## Run: check the words
