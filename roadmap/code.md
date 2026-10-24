@@ -16,7 +16,6 @@ The code chat's file: current status, what is open and the decisions that still 
   - a real Teachable Machine export in the classifier board;
   - whether the robot start block errors on a micro:bit that isn't in a robot.
 - **Class trials:** none of the extension courses has been tried with a class yet.
-- **Python pathway questions still open:** whether turtle lessons 9–10 (events, build a button) suit foundations or extensions.
 
 **Code chat can do next**
 
@@ -26,13 +25,14 @@ Lesson counts include optional lessons. "Pictures" are drawn by `render-pictures
 
 ### Python pathway
 
-- **Python Foundations with Turtle** (`code/python`, 15 lessons): built.
-  - Lessons, in order: intro, variables, decisions, lists, functions, parameters, returns, functions that decide (12 Oct: the lists and `if` revisit, an `if` inside a function called for every item of a list), modules, events, build a button, then the challenge (Catch the turtle and Power-ups, plus optional Control panel and Game levels).
+- **Python Foundations with Turtle** (`code/python-foundations`, 11 lessons) and **Python functions and events** (`code/python-functions`, 12, 2 optional), both foundations: split 13 Oct from the old 15-lesson `code/python`, one move per lesson (plan in the Project doc turtle-sequence).
+  - Foundations: drawing with a turtle, repeat, name a value, the counter, a value that grows, a street of houses (review), if and else, every other (`%`, `elif`), lists, for each, then the tile challenge.
+  - Functions and events: read a program, functions, parameters, returns, functions that decide, modules, events, build a button, then the challenge (Catch the turtle and Power-ups, plus optional Control panel and Game levels). Events and the button are foundations (the open question of 12 Oct is settled by the split); the final challenge replaced the planned checkpoint.
   - Has teacher layer, voice and concept tags.
   - Class plans (13 Oct): as for MakeCode, the generic finger votes and "Show a friend" endings were removed from Python Foundations, Python functions (Read a program) and Console; prompts not already in the Predict line of `running:` moved there. Kept end activities test the lesson's idea on a partner's program and do not repeat the exit ticket: Change one number, Guess the rule, Tile gallery, the street gallery walk, and in Console Read it like a computer, Spot the number, Break my machine, Add it up together, Order from my menu, Break my function and the app showcase. Console's two real predict activities stay (Read it like a computer in Guess, Work it out by hand in the app).
-- **Console bridge** (`code/console`, 4 lessons): built 11 Oct.
-  - Console mode in the turtle playground with inline `input()`; Playground and Reference pages.
-  - The last foundations course: every extension comes after it.
+- **Console bridge** (`code/console`, 11 lessons): built 11 Oct as 4 lessons, redone 13 Oct as one move per lesson (plan in the Project doc console-sequence). Units: Text (print, ask and store, numbers into text), Numbers (text into numbers, check first with `isdigit`), Keep asking (`while`, running total, guess the number), Menus and testing (menu with `break`, test with a table), then the console app challenge.
+  - Single-file lessons (teacher notes and code inside `lesson.md`). Console mode in the turtle playground with inline `input()`; Playground and Reference pages.
+  - `stage: foundations`, after Python functions and events: the last foundations course, and every Python extension comes after it.
 - **Objects with turtles** (`code/objects`, 5): built 11 Oct. Several turtles in the playground (BUILDING › 7).
 - **Deeper Python in the console** (`code/deeper`, 6): built 11 Oct.
   - Text, lists, dictionaries, errors, a text adventure, and Save the game (`json`, on the Python playground).
@@ -55,8 +55,7 @@ Lesson counts include optional lessons. "Pictures" are drawn by `render-pictures
 
 ### Web pathway
 
-- **HTML & CSS** (`code/html`, 12 incl. optional Make it react and Grid): built 9 Oct.
-  - Units: Structure, Style, Components and layout, then the Challenge (the club page).
+- **HTML & CSS**, two foundations courses: **Structure and style a page** (`code/html`, 13: tags to forms, ending with the club page challenge) and **Layout and components** (`code/css`, 12, 2 optional: which rule wins to Flexbox and cards, the club page laid out, optional Grid and Make it react). Built 9 Oct as one 12-lesson course, later split.
   - Has voice, pictures, Boxes and Box model views, and `check-html`.
   - Scope rule (still applies): only core ideas, what the DOM needs, and what the challenge page uses; everything else becomes a Reference card.
   - Later: a wider code panel for clips.
@@ -68,7 +67,7 @@ Lesson counts include optional lessons. "Pictures" are drawn by `render-pictures
 - **Drawing and animation with p5.js** (`code/p5`, 8 incl. optional Moving art): built 11 Oct.
   - Own playground (`playground-p5/`, p5 2.3.4 vendored), Reference (37 cards), pictures and clips.
   - Not done: clips for the moving sketches (animated sketches show a still), a class trial.
-- **The DOM and the browser console** (`code/dom`, 8 incl. optional The real browser console): built 11 Oct.
+- **The DOM and the browser console** (`code/dom`, 10, 3 optional: The real browser console, Data from the web, Saving between visits): built 11 Oct.
   - Its own `playground-dom/` (Run, console panel, DOM hints; reports as `html`), clips and expected pictures.
   - Optional lesson 10, Saving between visits (built 12 Oct): `localStorage`, lists as JSON; the DOM playground keeps each step's saved data (a stand-in, since the sandboxed preview has none).
   - Optional lesson 9, Data from the web: fetch (built 12 Oct): `fetch`, `await`, `.json()`, and `try`/`catch` falling back to the saved `weather.json` (Data detective's file, now also in `media/html/`) when Open-Meteo can't be reached. Reference page added (`code/dom/reference`).
@@ -139,6 +138,27 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 
 ## Proposed (discussed, not decided)
 
+**`smaller:` for Code (25 Oct 2026, code chat's reply to `shared.md` › Proposed 25 Oct, amended).** Not built; the shared push waits for Matthew's go.
+
+*Fit.* Yes for Modify, Make and Investigate tasks, where Code's sticking points are. But the review's three Code forms (a pre-filled trace row, the same code one line fewer, a filled Parsons) are not question, number or answer, so as ordered the first push gives Code nothing to write. Two small additions make it fit, both without boards: `trace` as a lead-in kind (a plain table check, no layout cost), and an optional display-only `code:` on the lead-in (`smaller: { code: file.py#region, check: {…} }`, rendered as the step's `code:` is). Parsons can wait. `answer` (Numbas) is maths only.
+
+*PRIMM Predict: agreed, off.* A smaller step before lock-in hands over the misconception. Enforce it in validate by shape (a step with `stage: predict` or a `type: predict` check in any non-maths lesson), not by authors remembering. Run steps don't need one either (their only check is reflect or the compare box).
+
+*The three Code checks and their lead-ins:*
+1. **turtle-decisions, Make** (code check: colour the spiral with an `if` that reads `size`). Not the trace the review suggested: the Mix it up step just before already traces a growing `size` against a cut-off, boundary included (10, 30, 50 against `< 50`). The Make's other sticking point (`stuck:` "every side is the same colour": is the choice made every pass?) is the gap. Lead-in: question, with `code:` = the Make starter. "The colour has to be chosen again on every pass, before the line is drawn. Where does the `if` / `else` go?" Options: inside the loop, before `forward(size)` (right); before the `for` line; after the loop; after `size = size + 10` (feedback: it runs, but each line gets the colour for the next size, so the cut-off moves by one line).
+2. **turtle-parameters, Make** (code check: `pattern(sides, copies)`). From `stuck:` "Does the turtle turn between the copies?". Lead-in: number, with `code:` = `pattern` with no turn ("this draws 6 hexagons on top of each other"). "To fan 6 copies once round the point, how many degrees between copies?" Answer 60; explain 360 / copies. Distinct from Mix it up (the turn inside `polygon`).
+3. **console-check, Modify** (code check: ask for two numbers, check both, print the total). The bug task already has a trace before it in Investigate; Modify is where `and` joins two checks for the first time. Lead-in: trace. | first | second | `first.isdigit() and second.isdigit()` | prints |: "3", "4", True, "Total: 7" given; "3", "four", [False], [the message]; "three", "4", [False], [the message]. Explain: `and` is True only when both sides are.
+
+*What breaks for Code in the mechanism as written:*
+- **Order with hints.** "Render under the hints" puts it after the answer: Code hints escalate to the code (AUTHORING › Effort; turtle-parameters' second hint already says 360 divided by the copies). Put "Need a smaller step?" above the hints, so the thinking step comes before the code.
+- **Full screen.** Two of the three are Make steps, which students often do in full screen. The task drawer clones every step child that is not itself `.check` (`lesson-view.mjs`, `fill()`), so a wrapper holding the lead-in would be cloned dead (ids stripped, no listeners). Skip `.smaller` in the clone and show one line in the drawer ("A smaller step is on the page: Hide task or Esc").
+- **Never a code check.** The drawer's tick bar takes every `.check[data-type="code"]` in the step, and MakeCode full screen checks every task of the step. Validate: lead-in types are question, number, trace (answer for maths); never code, predict, flag.
+- **The lint's second trigger is every Code step.** All 206 code lessons have `stuck:`, and 76 of them (console, micro:bit, Arcade and the other single-file courses) keep it in `lesson.md`'s teacher block, not `teacher.yml`. A per-step lint would flag nearly every Modify and Make in Code, and would miss the single-file `stuck:` if it reads only `teacher.yml`. Proposal: read the parsed teacher data (both places); for lessons without a hinge node, report per lesson ("has `stuck:`, no `smaller:`") in `npm run effort`, not a validate warning; skip Predict, Run and info steps. Also, many `stuck.ask` lines are about error messages (SyntaxError, TypeError), which the friendly errors already answer; only some are lead-ins.
+- **Counting, beyond the manifest.** Also keep the lead-in out of the course row's per-check segments (`site/progress.js`) and out of task sub-pills. `check-html` and `check-makecode` should still check the lead-in's stored answer.
+- **MakeCode later.** A lead-in `code:` in a MakeCode lesson would need a blocks picture (`render-pictures` keys). Leave MakeCode out of the first push.
+
+*Asked of the shared push, for Code:* trace and `code:` on lead-ins, the fold above the hints, the drawer skip, the type and Predict rules in validate, and the lint reading both teacher sources. With those, the three lead-ins above are a `lesson.md` change only, and no clips re-record (the clip hash leaves out `lesson.md`).
+
 - **Revisit if/else** in a new context: a function that decides and an `if` over a list are built (turtle lesson 8); still open: an `if` inside a Gradio function.
 - **Clips on the create page:** a helper to write `explainClip` steps, and a live preview.
 - A small form on the create page for code-check rules.
@@ -189,7 +209,7 @@ A brief that needs two courses belongs to the later one. Why not a pathway page 
 - `microbit.js` is ours (`web-helpers/`), not a site like MakeAIRobots, so the pages students make keep working from a downloaded file.
 
 **What exists:**
-- Python Foundations: Pattern maker, A street of your own, Chart your data, Click-and-key art, Your own game.
+- Python Foundations: Pattern maker. Python functions and events: A street of your own, Chart your data, Click-and-key art, Your own game.
 - HTML & CSS: A page about something you love, A recipe card, An event page, An order form.
 - micro:bit and the computer: A live dashboard (crossover: MakeCode and a DOM page with `microbit.js`).
 - micro:bit Foundations: Plant monitor, The answer machine. micro:bit: talk and play: Quiz buzzer, Your own micro:bit game. (Pocket pet became Foundations' final challenge.)
@@ -255,6 +275,7 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - An Arcade "Worlds" unit (tilemaps); a picture of the robot arena.
 
 ## Log
+- 25 Oct: reply to the shared `smaller:` proposal (Proposed); Courses block brought up to date (Python split into two courses, console 11 lessons and foundations, HTML & CSS split, DOM 10).
 - 12 Oct: micro:bit and Arcade project briefs (8); MakeCode brief pictures drawn by the simulator.
 - 12 Oct: open projects (10 briefs, self-assessed badges, skills lit by the concept scan), `microbit.js` with a pretend micro:bit, recap on four foundations courses.
 
