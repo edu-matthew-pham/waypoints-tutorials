@@ -168,6 +168,16 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 - Drag-and-drop for match items; keep Parsons answers across reloads.
 - Prepare: confirm its load-by-URL parameter so "Copy address" can become "Open in Prepare".
 
+**Real-world examples: a register, not a library (25 Oct 2026, Matthew asked; findings in `roadmap/code-real-world.md`).** Matthew's question: does Code need something like the maths library of real-world examples, for cohesion? Not the maths shape: maths needs a vetted "why" per node, while in Code what students make is already the point. But the examples that exist (hooks, Make contexts, "Change a …" steps, "Where this leads", projects) were each written on their own, and it shows. Proposed, in order:
+1. **Keep the register** (`roadmap/code-real-world.md`, one row per lesson) and check new examples against it, project briefs first.
+2. **Python's gap.** If and else, Every other, Lists and For each get a small "Change a …" step, borrowing their micro:bit twin's situation on purpose so the pathways meet (a thermostat dial that goes red past a mark, a striped crossing, a weekly lunch menu, a bar per rainfall day). Six of Python's eight current examples are buildings or streets.
+3. **Web's variety.** Keep the club page as the through-line, but move about half the other Make tasks off clubs and events (a shop's product page, a sports results page, a recipe, a local guide), so the through-line stands out instead of being everything.
+4. **One shared thread across pathways.** Name three or four situations every pathway builds (a scoreboard or total, an alarm on a threshold, an order or menu, a timer), and say so where they recur ("the scoreboard you built on the micro:bit"), in the lesson or its teacher notes.
+5. **Hooks.** At least 59 of 206 use the "Every X, Y and Z …" template; rewrite them in the voice pass, a course at a time.
+6. **Small fixes.** Swap one of Arcade's two firework shows; change the Bootstrap brief from an event page (below).
+
+**Effect on the project briefs below:** Bootstrap's first brief becomes **a page for a local business** (a café, a bike shop, a vet) instead of an event, since Web already has an event page project and dozens of event Make tasks. The DOM and Vue briefs fill thin domains already (flashcards, a habit tracker, a reading log, a poll) and stay.
+
 **Project briefs for the DOM course, Vue and Bootstrap (25 Oct 2026, draft for Matthew; not built).** The open "Next" item below. Same format as the other courses (`projects.yml`, an `example` page drawn as the picture, 3–4 `uses` ids from `CONCEPTS.html`, which already has every DOM, Vue and Bootstrap id). DOM and Vue use `playground: dom` (already working in the micro:bit crossover); Bootstrap uses `html`. Each brief is chosen to differ from that lesson's own Make task (tip calculator, shopping list, quiz, to-do app), so a project is never a repeat.
 
 *The DOM and the browser console* (4):
@@ -182,7 +192,7 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 3. **Card gallery** (after vue-components; `vue-component`, `vue-props`, `vue-for`). "One card component, used for every item in a gallery: pets to adopt, players in a team, places to visit." Milestones: the card is written once; each card gets its data through props; adding an item to the list adds a card. Stretch: a Favourite button on each card.
 
 *Pages with Bootstrap* (2):
-1. **A landing page for an event** (after bs-components; `bootstrap`, `bs-component`, `bs-grid`). "A one-page site for a school event: a navbar, a big opening line, three cards and a sign-up form, all from Bootstrap's classes." Milestones: navbar and cards from Bootstrap; the cards sit in a row on a wide screen and stack on a narrow one; every form box has a label. Stretch: an alert for the closing date.
+1. **A page for a local business** (after bs-components; `bootstrap`, `bs-component`, `bs-grid`). "A one-page site for a café, a bike shop or a vet: a navbar, a big opening line, a card for each thing it offers and a contact form, all from Bootstrap's classes." Milestones: navbar and cards from Bootstrap; the cards sit in a row on a wide screen and stack on a narrow one; every form box has a label. Stretch: an alert for this week's special. (Changed from an event page after the real-world register.)
 2. **Bootstrap, your way** (after bs-yours; `bootstrap`, `css-rule`, `class-selector`). "Take your landing page and make it look like yours, not like Bootstrap: your colours, your font, one component styled your own way." Milestones: your rules come after Bootstrap's link; at least three changes you can point to; it still works on a narrow screen. Teacher note: the same comparison as bs-yours, now on the student's own page.
 
 *Order of work if agreed:* write the nine examples first (each must use its listed skills, which validate checks), then the YAML, then a build and a headless look at each projects page and its skill chips (the DOM playground must report its code for the chips to light).
@@ -297,6 +307,7 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - An Arcade "Worlds" unit (tilemaps); a picture of the robot arena.
 
 ## Log
+- 25 Oct: real-world examples register (`roadmap/code-real-world.md`) and six proposals; Bootstrap brief moved from an event page to a local business.
 - 25 Oct: voice pass on Web (every Predict's "Read the code.", Course A/B names in lessons and primers, one Mix it up) and three leftovers (Python functions, CSS, Objects); MakeCode prose read, no changes. CLAUDE.md: pathways and HTML & CSS lines brought up to date.
 - 25 Oct: voice pass over Python Foundations, then the same patterns in Python functions and events and Console (11 lines)' lesson prose (Predict intros, bug-task and Mix it up lead-ins, the Course A/B names); `lesson.md` only, no clips re-record.
 - 25 Oct: reply to the shared `smaller:` proposal (Proposed); Courses block brought up to date (Python split into two courses, console 11 lessons and foundations, HTML & CSS split, DOM 10).
