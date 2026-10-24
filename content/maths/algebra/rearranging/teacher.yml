@@ -15,7 +15,7 @@ before: |
 
   Answers are marked by form and value: the subject must be on its own on the left, and the formula must agree with the original for every value. An equal formula in another shape, such as x = y/2 − 7/2 for (y − 7)/2, is marked right.
 running:
-  - "Predict: take a show of hands, then test each option with l = 6 and w = 4 (P = 20). Only one gives back 4."
+  - "Predict: take a show of hands on the width; ask someone who said 4 m what they did first. That order (take off the lengths, then halve) is the formula they will write in Investigate."
   - "Run: ask students to say why the board needed trial and error and the rearranged formula did not."
   - "Investigate: model the worked example live as a flow: x → × 3 → + 5 → y, then backwards: y → − 5 → ÷ 3 → x."
   - "Modify: before the edge case y = 7 − x, ask: what is x if y = 5? Most find 2 mentally; then ask how they did it."

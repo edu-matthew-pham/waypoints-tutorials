@@ -6,7 +6,7 @@ formula: P = 2l + 2w
 slider l: 1, 10, 2
 slider w: 1, 10, 1
 shape: rectangle
-units: cm
+units: m
 # endregion
 
 # region: explain

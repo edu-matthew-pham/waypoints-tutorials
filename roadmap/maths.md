@@ -20,6 +20,8 @@ Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (als
 
 **Accessibility rules and support on demand (25 Oct, Matthew):** eight rules for making maths lessons accessible (picture before symbols, numbers before letters, every symbol points at something, fluency after meaning, show the question never the answer, say it as you'd say it, read once then fold, one move one picture one situation) and a suite-wide "support when it's needed, invisible when it isn't" principle with a `support:` field on checks. Proposed in `roadmap/shared.md` for the other chats; first use is Changing the subject's Predict, which currently asks students to choose between four symbolic forms before they have done the move.
 
+**Changing the subject rebuilt around a bar model (25 Oct), the first use of the accessibility rules:** Predict asks for the width with numbers (20 m of fence, 6 m long) on the first row of a bar model with "?" widths; Run settles it on the board (units now m); Investigate opens with the full bar model, one row per line of the formula, then the old four-formula question, now "which formula records what you did with the fence?" (feedback per wrong form); Make draws the marks as a bar model (not to scale, so the "?" doesn't give the answer away). The `support:` lead-in waits for the shared mechanism.
+
 **Next (agreed with Matthew):** tidy the library before growing it: move the Measurement and Algebra drafts into `maths.yml` with the same fields (add kind and step tags to Measurement, source every figure, flag weak entries). Other strands, and more lessons, wait for teacher feedback on the pilot.
 
 **Found, for roadmap/shared.md (shared tools, not changed here):**

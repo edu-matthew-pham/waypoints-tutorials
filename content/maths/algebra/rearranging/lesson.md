@@ -40,41 +40,52 @@ A formula like $P = 2l + 2w$ gives $P$ when you know $l$ and $w$. $P$ is the **s
 
 Sometimes you know $P$ and want $w$. **Changing the subject** rearranges the formula so $w$ is on its own. You undo the steps, as when you solved equations, but with letters.
 
-## Predict: which formula gives w?
+## Predict: how wide?
 
 ```step
 stage: predict
-insight: "Committing to a rearrangement of P = 2l + 2w before testing it with numbers tests whether they undo the steps in reverse order and divide the whole side."
+insight: "Working out the width with numbers before seeing any formula shows whether they take off both lengths before halving; the formula comes later, as the record of what they did."
 check:
   type: predict
-  q: "Which formula gives $w$ from $P = 2l + 2w$?"
-  options:
-    - "$w = (P - 2l) \\div 2$"
-    - "$w = P - 2l \\div 2$"
-    - "$w = P \\div 2 - 2l$"
-    - "$w = (P + 2l) \\div 2$"
-  actual: "w = (P − 2l) ÷ 2. To get w on its own, undo + 2l (take 2l from both sides: P − 2l = 2w), then undo × 2 (halve both sides). With P = 20 and l = 6: (20 − 12) ÷ 2 = 4."
+  q: "You've got 20 m of fencing to go all the way round a rectangular garden bed, and it has to be 6 m long. How wide can it be?"
+  options: ["4 m", "7 m", "8 m", "14 m"]
+  actual: "4 m. The two lengths use 6 + 6 = 12 m, which leaves 8 m for the two widths, so each width is 4 m. 7 m takes off only one length before halving; 8 m is both widths together; 14 m takes off one length and stops."
 ```
 
-Test each option with numbers: if $l = 6$ and $w = 4$, then $P = 20$. Which option gives back 4?
+Here's the fence laid out in one straight line: two lengths and two widths.
+
+<figure class="situation" role="img" aria-label="The fence laid out in one straight line, 20 m long: two lengths of 6 m and two widths marked with a question mark."><svg viewBox="0 0 540 110" width="540" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="10" y="20" width="150" height="40" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="162" y="20" width="150" height="40" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="314" y="20" width="106" height="40" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="422" y="20" width="106" height="40" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="85" y="45" text-anchor="middle" fill="currentColor" stroke="none">length 6 m</text><text x="237" y="45" text-anchor="middle" fill="currentColor" stroke="none">length 6 m</text><text x="367" y="45" text-anchor="middle" fill="currentColor" stroke="none">width ?</text><text x="475" y="45" text-anchor="middle" fill="currentColor" stroke="none">width ?</text><path d="M10 72 L10 80 L528 80 L528 72" stroke-width="0.8"/><text x="269" y="100" text-anchor="middle" fill="currentColor" stroke="none">the whole fence: 20 m</text></svg></figure>
+
+What do you take off first, and what's left for the widths?
 
 ## Run: check with numbers
 
 ```step
 stage: run
-insight: "Finding w on the board for P = 20 and l = 6, then working out the predicted formula, shows that a rearranged formula gives the same numbers as the original: substitution is the check."
+insight: "Finding w on the board for P = 20 and l = 6 settles the prediction, and shows that the formula as written makes you search for w."
 try: { playground: board, starter: "formula.yml#run", height: 520 }
-check: { type: board, text: "Set $l = 6$, then find the $w$ that makes $P = 20$. Does your formula from Predict give the same $w$?", when: "P = 20 and l = 6" }
+check: { type: board, text: "Set $l = 6$, then find the $w$ that makes $P = 20$. Was your prediction right?", when: "P = 20 and l = 6" }
 ```
 
-The board works the formula forwards. Your rearranged formula should give the same $w$ without trying.
+The board works the formula forwards, so you have to hunt for $w$. Next you'll write down what you did with the numbers, and then you won't need to hunt.
 
 ## Investigate: undo in reverse order
 
 ```step
 stage: investigate
-insight: "Changing the subject undoes the steps applied to the letter in reverse order, doing the same to the whole of both sides. Jo's mistake divides only one term."
+insight: "The bar model records what students did with the fence, row by row, so the rearranged formula is that record in symbols; then the same move on other formulas. Jo's mistake divides only one term."
 tasks:
+  - check:
+      type: question
+      q: "Which formula records what you did with the fence?"
+      options:
+        - "$w = (P - 2l) \\div 2$"
+        - "$w = P - 2l \\div 2$"
+        - "$w = P \\div 2 - 2l$"
+        - "$w = (P + 2l) \\div 2$"
+      answer: 0
+      feedback: [null, "That halves only the two lengths. In the picture you halved what was left.", "That halves the whole fence first, then takes off two whole lengths.", "That adds the lengths on, but you took them off."]
+      explain: "Take off the two lengths (P − 2l), then halve what is left: w = (P − 2l) ÷ 2. The brackets keep 'what is left' together."
   - check:
       type: answer
       q: "Make $x$ the subject of $y = 2x + 7$."
@@ -102,6 +113,14 @@ tasks:
       wrong: [["y/3 = x + 5", "x = y/3 - 5"], ["y - 5 = 3x"]]
       explain: "Undo + 5: y − 5 = 3x. Undo × 3: x = (y − 5)/3."
 ```
+
+### Write it down
+
+Here's what you did with the fence, one row at a time. Each row is a line of the formula.
+
+<figure class="situation" role="img" aria-label="Three rows. The whole fence, 20 m: two lengths of 6 m and two widths. Take off the two lengths: 8 m is left for the two widths, which is P minus 2l. Halve what is left: each width is 4 m, which is P minus 2l, all divided by 2."><svg viewBox="0 0 680 250" width="680" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><text x="10" y="16" fill="currentColor" stroke="none">The whole fence</text><rect x="10" y="24" width="150" height="36" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="162" y="24" width="150" height="36" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="314" y="24" width="100" height="36" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="416" y="24" width="100" height="36" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="85" y="47" text-anchor="middle" fill="currentColor" stroke="none">l = 6</text><text x="237" y="47" text-anchor="middle" fill="currentColor" stroke="none">l = 6</text><text x="364" y="47" text-anchor="middle" fill="currentColor" stroke="none">w</text><text x="466" y="47" text-anchor="middle" fill="currentColor" stroke="none">w</text><text x="534" y="47" fill="currentColor" stroke="none">P = 20</text><text x="10" y="96" fill="currentColor" stroke="none">Take off the two lengths</text><rect x="10" y="104" width="150" height="36" rx="3" stroke-width="0.8" stroke-dasharray="4 3"/><rect x="162" y="104" width="150" height="36" rx="3" stroke-width="0.8" stroke-dasharray="4 3"/><rect x="314" y="104" width="202" height="36" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="415" y="127" text-anchor="middle" fill="currentColor" stroke="none">2w = 8</text><text x="534" y="127" fill="currentColor" stroke="none">P − 2l</text><text x="10" y="176" fill="currentColor" stroke="none">Halve what is left</text><rect x="314" y="184" width="100" height="36" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="416" y="184" width="100" height="36" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="364" y="207" text-anchor="middle" fill="currentColor" stroke="none">w = 4</text><text x="466" y="207" text-anchor="middle" fill="currentColor" stroke="none">w = 4</text><text x="534" y="207" fill="currentColor" stroke="none">(P − 2l) ÷ 2</text><text x="10" y="244" fill="currentColor" stroke="none">The brackets say: take off the lengths first, then halve what is left.</text></svg></figure>
+
+Which formula says the same thing?
 
 ### Undo the last step first
 
@@ -274,6 +293,10 @@ tasks:
 ```
 
 ### Turn it around
+
+Here are your marks as a bar model. The top bar is the total you need; the bottom bar is what you've got, plus the last test.
+
+<figure class="situation" role="img" aria-label="Two bars of the same length. The top bar is four equal parts of 70: the total you need, 4 times 70. The bottom bar is your marks so far, 62, 70 and 74, and a part marked with a question mark for the last test. Not to scale."><svg viewBox="0 0 640 152" width="640" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><text x="10" y="16" fill="currentColor" stroke="none">The total you need: 4 tests averaging 70</text><rect x="10" y="24" width="138" height="34" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="150" y="24" width="138" height="34" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="290" y="24" width="138" height="34" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="430" y="24" width="138" height="34" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="79" y="46" text-anchor="middle" fill="currentColor" stroke="none">70</text><text x="219" y="46" text-anchor="middle" fill="currentColor" stroke="none">70</text><text x="359" y="46" text-anchor="middle" fill="currentColor" stroke="none">70</text><text x="499" y="46" text-anchor="middle" fill="currentColor" stroke="none">70</text><text x="10" y="84" fill="currentColor" stroke="none">Your marks so far, and the last test</text><rect x="10" y="92" width="118" height="34" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="130" y="92" width="118" height="34" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="250" y="92" width="118" height="34" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="370" y="92" width="198" height="34" rx="3" stroke-width="1" stroke-dasharray="5 4"/><text x="69" y="114" text-anchor="middle" fill="currentColor" stroke="none">62</text><text x="189" y="114" text-anchor="middle" fill="currentColor" stroke="none">70</text><text x="309" y="114" text-anchor="middle" fill="currentColor" stroke="none">74</text><text x="469" y="114" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="10" y="146" fill="currentColor" stroke="none" font-size="12">Not to scale</text></svg></figure>
 
 Write your formula for $x$ first, then check it with numbers: if your marks were 60 and 80, the average is 70.
 
