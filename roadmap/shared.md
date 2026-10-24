@@ -2,6 +2,30 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## Proposed (25 Oct 2026, maths chat; Matthew agreed the principle): support when it's needed, invisible when it isn't
+
+The concrete form of "below Steady: support on demand" in *Speculative: width for faster students, support for stuck ones* (12 Oct). Applies to every subject. Not built; for the code and science chats to weigh in before the shared change.
+
+**Principle.** Every check carries its support folded: hints that lead toward the answer, and, where the move has a picture, a smaller step that does half the move on the picture first. A student who has the foundations never sees it. A student who doesn't opens it, builds the step they're missing, then does the real check. The lesson itself slows down for no one. (ZPD without knowing the student: the student decides, not the lesson; it fits the self-paced design and needs no accounts.)
+
+**Each subject has its own "picture":** maths a bar model, balance or area tiles; coding a trace table or the same code with one line fewer; science the board set to the simpler case.
+
+**Mechanism (small, shared):** a `support:` field on a check, beside `hint:`, holding one lead-in question closed by default ("Need a smaller step?"). The hint folding carries it; the lead-in is a normal check (question, number, answer, board) marked and kept like any other but never needed to complete the lesson. One field in `lesson-core` (parse and validate), one block in `lesson-view` (render under the hints), a paragraph in AUTHORING, and `npm run effort` lists checks on hinge nodes with no support. Authors add support where a move has a known sticking point (the node's "Does not confuse…" criteria and `hinge_reason` say where), and nowhere else.
+
+**Maths rules it sits with** (from the week's review of the pilot lessons; the maths end of the same idea, to go into `maths-structure` as an Accessibility section):
+1. *Picture before symbols.* Every rule is a picture first (bar model, balance, area tiles); the symbols label parts of the picture; the same picture carries through the lesson.
+2. *Numbers before letters.* The student makes the move once with real numbers in a situation; the formula is written afterwards as the record of what they did.
+3. *Every symbol points at something* the student can name in the situation (spatial or abstract-but-real: money, marks).
+4. *Fluency after meaning.* Bare-symbol practice belongs in Practise, once the picture is there. Still a goal; it is about order.
+5. *Show the question, never the answer*, in anything before the student commits (hook, intro, drawing: a "?" where the unknown is). Checkable: validate can warn when a hook contains the Predict answer.
+6. *Say it as you'd say it* to a student at their desk (no labels or stage directions in the prose).
+7. *Read once, then fold.* Anything the student read on an earlier lesson is one line, opened on click (the stage list is done).
+8. *One move, one picture, one situation* the lesson returns to at the end.
+
+**First use:** maths/algebra/rearranging. Its Predict asks students to pick between four symbolic forms of P = 2l + 2w before they have done the move; it becomes the fence with numbers (20 m of fence, 6 m long, how wide?) on the first row of a bar model, Investigate adds the bar model row by row beside the worked example, Make draws the same bar model for the test marks, and the Predict check gets a `support:` lead-in (take off the two lengths first: what is left for the two widths?). Then a pass over the Year 7–8 manipulation lessons to list which have no picture behind their rule.
+
+**Open:** whether `support:` is written per lesson or, for maths, generated from the Practice templates; how it shows on the deck (probably not at all) and the worksheet (probably as the teacher's support line).
+
 ## Done (23 Oct 2026): stage list folded on every lesson page (maths chat, Matthew asked)
 
 The stage list under a lesson's intro (Predict: …, Try: …, and so on) was the same on every lesson and long to read. `lesson-view.mjs` now folds it into a closed `<details class="legendbox">` whose summary names the stages in one line ("How this lesson works: Predict, Try, Investigate, Modify, Practise, Make"); the descriptions open on a click. Every subject and shape, no lesson changes; tested on maths, code, science, systems and engineering pages. Reaches the live site with each lesson's next publish, or all at once with a whole-site publish. The per-step chip (the same description inside each step) is unchanged.

@@ -18,6 +18,8 @@ Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (als
 
 **Voice rule (23 Oct, Matthew):** student-facing text is written the way you'd say it to a student at their desk; the six points are in `roadmap/maths-when-where-why.md` › Decided. Applied to the three pilot intros, their hooks (now one-line teasers that don't repeat the intro) and the Finding a side sketch and Make lines. Older Year 7 intros can be read against it later.
 
+**Accessibility rules and support on demand (25 Oct, Matthew):** eight rules for making maths lessons accessible (picture before symbols, numbers before letters, every symbol points at something, fluency after meaning, show the question never the answer, say it as you'd say it, read once then fold, one move one picture one situation) and a suite-wide "support when it's needed, invisible when it isn't" principle with a `support:` field on checks. Proposed in `roadmap/shared.md` for the other chats; first use is Changing the subject's Predict, which currently asks students to choose between four symbolic forms before they have done the move.
+
 **Next (agreed with Matthew):** tidy the library before growing it: move the Measurement and Algebra drafts into `maths.yml` with the same fields (add kind and step tags to Measurement, source every figure, flag weak entries). Other strands, and more lessons, wait for teacher feedback on the pilot.
 
 **Found, for roadmap/shared.md (shared tools, not changed here):**
