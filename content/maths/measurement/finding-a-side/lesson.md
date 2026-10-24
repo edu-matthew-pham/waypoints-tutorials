@@ -206,6 +206,8 @@ tasks:
         - ["12.81", "The ladder is the hypotenuse: subtract."]
         - ["2", "Subtract the squares, not the lengths."]
       explain: "100 − 64 = 36, √36 = 6 m."
+    smaller:
+      check: { type: "question", q: "Which length is the hypotenuse here?", options: ["The 10 m ladder", "The 8 m up the wall", "The distance from the wall"], answer: 0, explain: "The right angle is where the wall meets the ground, and the ladder is opposite it. So the ladder is the hypotenuse." }
   - check:
       type: answer
       q: "Review: the sides at the right angle are 9 cm and 12 cm. Hypotenuse, in cm?"

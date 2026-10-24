@@ -180,6 +180,8 @@ tasks:
         - ["9/12", "9 and 12 still share 3."]
         - ["6/8", "6 and 8 still share 2."]
       explain: "HCF 6: 18 ÷ 6 = 3 and 24 ÷ 6 = 4."
+    smaller:
+      check: { type: "number", q: "What's the biggest number that goes into both 18 and 24?", answer: 6, explain: "6. Divide the top and the bottom by 6." }
   - check:
       type: answer
       q: "Fill the gap: $\\tfrac{5}{8} = \\tfrac{15}{?}$."

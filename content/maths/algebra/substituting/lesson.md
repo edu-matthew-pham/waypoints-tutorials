@@ -177,6 +177,8 @@ tasks:
         - ["130", "12n with n = 4 is 12 × 4, not 124. Then add 6."]
         - ["120", "That adds first. Multiply 12 × 4, then add 6."]
       explain: "T = 12 × 4 + 6 = 48 + 6 = 54."
+    smaller:
+      check: { type: "number", q: "$12n$ means 12 times $n$. What's $12n$ when $n = 4$?", answer: 48, explain: "12 × 4 = 48. Now add the 6." }
   - check:
       type: answer
       q: "Find $y = 3(x - 2)$ when $x = 7$."

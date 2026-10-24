@@ -281,7 +281,8 @@ Area, volume, circles and Pythagoras gains seven Year 8 lessons (12 to 18): Comp
 
 ## Smaller steps (`smaller:`, 25 Oct 2026)
 - Done: Changing the subject's Predict ("Take off the two 6 m lengths first. How many metres of fence are left for the two widths?", number 8). Its old closing line asked the same thing, so it went.
-- `npm run effort` flags 120 maths lessons (70 on hinge nodes, 50 with only a `stuck:` list). Too many to do blind. Proposed first batch (waits for Matthew): the hinge lessons where the sticking point is half a move with numbers, so a smaller step has an obvious shape.
+- Done (25 Oct, Matthew agreed): the first batch of 17 below, each on one Practise task where the hinge bites (half the move with numbers, or "which side is the hypotenuse?"). Tested in Chromium: closed by default, wrong and right answers, kept out of progress.
+- `npm run effort` flags 120 maths lessons (70 on hinge nodes, 50 with only a `stuck:` list). Too many to do blind. First batch: the hinge lessons where the sticking point is half a move with numbers, so a smaller step has an obvious shape.
   - Algebra: brackets, expanding, factorising, words-to-expressions (the picture Predicts already planned), substituting, backtracking, balance-method, solving-equations.
   - Number: adding-integers, multiplying-integers, equivalent-fractions, adding-fractions, percentage-change.
   - Linear relations and measurement: gradient, pythagoras, finding-a-side, circle-area.

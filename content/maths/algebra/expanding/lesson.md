@@ -204,6 +204,8 @@ tasks:
         - ["-6x - 12", "−3 × (−4) is +12."]
         - ["-6x - 4", "The −3 multiplies the 4 as well."]
       explain: "−3 × 2x = −6x and −3 × (−4) = +12."
+    smaller:
+      check: { type: "number", q: "Just the last bit: what's $-3 \\times (-4)$?", answer: 12, explain: "A negative times a negative is positive: 12. So that term is +12." }
   - check:
       type: working
       q: "Expand and simplify $4(2x - 3) + 5$. Write one step per line."

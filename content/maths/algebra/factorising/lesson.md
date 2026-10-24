@@ -199,6 +199,8 @@ tasks:
         - ["2(4x - 6)", "4x − 6 still shares a 2. Take out the biggest: 4."]
         - ["4(2x + 3)", "The minus comes too: −12 ÷ 4 = −3."]
       explain: "HCF 4: 4(2x − 3)."
+    smaller:
+      check: { type: "number", q: "What's the biggest number that goes into both 8 and 12?", answer: 4, explain: "4: 8 = 4 × 2 and 12 = 4 × 3. That's the number outside the bracket." }
   - check:
       type: working
       q: "Factorise $18x + 12$ fully. You may take out a factor in steps. Write one step per line."

@@ -154,6 +154,8 @@ tasks:
       feedback:
         - ["314.2", "Use the radius, not the diameter: r = 5."]
       explain: "r = 5 m, so A = π × 25 ≈ 78.5 m²."
+    smaller:
+      check: { type: "number", q: "The circle is 10 m across. What's its radius, in m?", answer: 5, explain: "The radius is half the diameter: 5 m. Use 5 in the formula." }
   - check:
       type: question
       q: "Which formula gives the area of a circle?"

@@ -182,6 +182,8 @@ tasks:
       feedback:
         - ["6n + 3", "The 3 children pay 6 dollars each too. Everyone pays 6, so multiply the whole group n + 3."]
       explain: "6(n + 3): the group has n + 3 people and each pays 6 dollars."
+    smaller:
+      check: { type: "answer", q: "How many people are in the group altogether? Write it with $n$.", answer: "n + 3", explain: "$n$ adults and 3 children: $n + 3$ people, and every one of them pays 6." }
   - check:
       type: question
       q: "When $n = 5$, which is bigger, $2(n + 3)$ or $2n + 3$?"

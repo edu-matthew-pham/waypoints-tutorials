@@ -146,6 +146,8 @@ tasks:
         - ["2", "Undo the − 3 by adding 3, not taking it away again: 4 + 3 = 7."]
         - ["7", "That undoes the − 3. Now undo the ÷ 2."]
       explain: "4 + 3 = 7, then 7 × 2 = 14. Check: 14 ÷ 2 − 3 = 4."
+    smaller:
+      check: { type: "number", q: "The last thing the machine did was take 3 away, and 4 came out. What number was there just before?", answer: 7, explain: "Undo taking 3 away by adding 3: 4 + 3 = 7. Now undo the ÷ 2." }
   - check:
       type: answer
       q: "Solve $6x - 8 = 34$."

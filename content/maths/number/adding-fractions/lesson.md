@@ -179,6 +179,8 @@ tasks:
       feedback:
         - ["2", "The wholes give 2, but 1/3 − 1/2 is less than zero. Write both as sixths: 20/6 − 9/6."]
       explain: "3 1/3 = 20/6 and 1 1/2 = 9/6, so 11/6 = 1 5/6."
+    smaller:
+      check: { type: "number", q: "How many sixths are there in $3\\tfrac{1}{3}$?", answer: 20, explain: "3 wholes are 18 sixths and a third is 2 sixths: 20 sixths. Now do the same for $1\\tfrac{1}{2}$." }
   - check:
       type: answer
       q: "A plank is 2.4 m long. 0.65 m is cut off. How long is the rest, in metres?"

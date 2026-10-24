@@ -191,6 +191,8 @@ tasks:
       feedback:
         - ["6", "Different signs give a negative."]
       explain: "Different signs: −6. Check: −3 × (−6) = 18."
+    smaller:
+      check: { type: "number", q: "Leave the signs for a moment. What's 18 ÷ 3?", answer: 6, explain: "6. Now work out the sign: one number is positive and one is negative." }
   - check:
       type: question
       q: "What is $(-1)^3$, which is $(-1) \\times (-1) \\times (-1)$?"

@@ -190,6 +190,8 @@ tasks:
         - ["7", "7 is y at x = 3. The line starts at 1 when x = 0: how far does it go up over the 3 steps?"]
         - ["6", "6 is how far it goes up over 3 steps. How far for each step?"]
       explain: "From (0, 1) to (3, 7) is up 6 over 3 steps right, so up 2 for each step: m = 2."
+    smaller:
+      check: { type: "number", q: "The line starts at $(0, 1)$ and reaches $(3, 7)$. How far does it go up altogether?", answer: 6, explain: "From 1 up to 7 is 6. That's over 3 steps right." }
   - check:
       type: answer
       q: "Review: work out $y$ when $x = 4$ in $y = 3x - 5$."

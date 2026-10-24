@@ -196,6 +196,8 @@ tasks:
         - ["-8", "That moved left. Subtracting a negative moves right."]
         - ["-4", "The answer is positive: from −2, right 6 ends right of zero."]
       explain: "Subtracting −6 moves right 6: from −2 to 4."
+    smaller:
+      check: { type: "question", q: "Subtracting $-6$: which way does that move you on the number line?", options: ["Right, the same as adding 6", "Left, the same as taking 6 away"], answer: 0, explain: "Taking away a negative moves right, like adding 6. So from −2, go right 6." }
   - check:
       type: answer
       q: "At 6 am it is $-4$ °C. By noon it is 9 degrees warmer. What is the temperature at noon?"

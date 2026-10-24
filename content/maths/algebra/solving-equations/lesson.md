@@ -192,6 +192,8 @@ tasks:
         - ["-5", "Check: 6 − (−5) = 11, but 2(−5) − 9 = −19."]
         - ["1", "Add x to both sides first: 6 = 3x − 9."]
       explain: "Add x: 6 = 3x − 9. Add 9: 15 = 3x. x = 5. Check: 1 = 1."
+    smaller:
+      check: { type: "answer", q: "Add $x$ to both sides. What does the right side become?", answer: "3x - 9", explain: "$2x + x = 3x$, so the right side is $3x - 9$ and the left side is just 6." }
   - check:
       type: answer
       q: "Angles on a straight line are $3x$ and $x + 20$ degrees. Find $x$."

@@ -188,6 +188,8 @@ tasks:
       feedback:
         - ["70", "That is walking round two sides."]
       explain: "The diagonal is a hypotenuse: 900 + 1600 = 2500, √2500 = 50 m."
+    smaller:
+      check: { type: "question", q: "Which length is the hypotenuse, the side across from the right angle?", options: ["The path from corner to corner", "The 40 m side", "The 30 m side"], answer: 0, explain: "The right angle is at the corner of the park, and the path across doesn't touch it. So the path is the hypotenuse." }
   - check:
       type: answer
       q: "Review: work out $\\sqrt{144}$."

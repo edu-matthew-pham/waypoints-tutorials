@@ -142,6 +142,8 @@ tasks:
         - ["5/3", "It looks like the 4x on the right was left out. Take 4x from both sides: 2x + 2 = 12."]
         - ["10", "That is 2x. Now divide both sides by 2."]
       explain: "Take 4x from both sides: 2x + 2 = 12. Take 2: 2x = 10. Divide by 2: x = 5. Check: 6 × 5 + 2 = 32 and 4 × 5 + 12 = 32."
+    smaller:
+      check: { type: "answer", q: "Take $4x$ from both sides. What's left on the left side?", answer: "2x + 2", explain: "$6x - 4x = 2x$, so the left side is $2x + 2$ and the right side is 12." }
 ```
 
 ### Two steps

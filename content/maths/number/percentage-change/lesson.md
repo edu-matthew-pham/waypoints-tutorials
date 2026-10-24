@@ -163,6 +163,8 @@ tasks:
       feedback:
         - ["275", "The 10% is of the new price, $300, not of $250."]
       explain: "250 × 1.2 = 300, then 300 × 0.9 = $270."
+    smaller:
+      check: { type: "number", q: "What does the bike cost after the 20% rise, before any discount, in dollars?", answer: 300, explain: "250 × 1.2 = 300 dollars. The 10% discount comes off that new price." }
   - check:
       type: number
       q: "Review: what is 15% of 60?"

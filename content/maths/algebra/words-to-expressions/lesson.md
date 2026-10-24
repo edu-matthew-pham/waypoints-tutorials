@@ -191,6 +191,8 @@ tasks:
       feedback:
         - ["n - 8", "That would be negative if you eat fewer than 8. The slices left are what is taken away from 8."]
       explain: "8 − n: you start with 8 and take n away. Here 8 comes first, unlike \"8 less than n\"."
+    smaller:
+      check: { type: "number", q: "Say 3 slices are eaten. How many are left?", answer: 5, explain: "8 − 3 = 5. You started with 8 and took 3 away, so with $n$ eaten it's 8 take away $n$." }
   - check:
       type: answer
       q: "Review: find $3n + 5$ when $n = 4$."
