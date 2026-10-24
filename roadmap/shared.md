@@ -38,6 +38,14 @@ The concrete form of "below Steady: support on demand" in *Speculative: width fo
 
 **First use:** maths/algebra/rearranging. Its Predict asked students to pick between four symbolic forms of P = 2l + 2w before they had done the move; the lesson side is done (5378451: the fence with numbers, 20 m of fence, 6 m long, how wide, on the first row of a bar model; Investigate adds the bar model row by row beside the worked example; Make draws the same bar model for the test marks). What remains is the shared change and one line in that lesson: the Predict step gets `smaller:` (a number check: take off the two lengths first; what is left for the two widths?). Then a pass over the Year 7–8 manipulation lessons to list which have no picture behind their rule (8b4fd82 lists them).
 
+**Code chat's asks for push (1)** (25 Oct; reasons and the three Code lead-ins in `roadmap/code.md` › Proposed):
+- `trace` as a lead-in type, and an optional display-only `code:` on the lead-in (`smaller: { code: file.py#region, check: {…} }`), or Code has nothing to write: its "picture" is a trace row or the same code one line fewer.
+- The "Need a smaller step?" fold goes *above* the hints, not under them: Code hints escalate to the code, so under them it arrives after the answer.
+- The full-screen task drawer (`lesson-view.mjs`, `fill()`) must skip the `.smaller` block (it would clone a dead check) and keep it out of its code-check tick bar; one line in the drawer can point back to the page.
+- Validate: lead-in types question, number, trace (answer for maths), never code, predict or flag; no `smaller:` on a `stage: predict` step or `type: predict` check in non-maths lessons.
+- The lint reads `stuck:` from the parsed teacher data, since 76 single-file code lessons keep it in `lesson.md`. Every code lesson has `stuck:`, so for lessons without a hinge node, report per lesson in `npm run effort`, not a per-step validate warning.
+- Also leave the lead-in out of the course row's per-check segments and task sub-pills; `check-html` and `check-makecode` still check its answer. MakeCode lead-ins (a `code:` needs a blocks picture) can wait.
+
 **Order:** (1) `smaller:` for question, number and answer, the manifest exclusion, the AUTHORING paragraph and the two-trigger lint, in one shared push; (2) the one line in Changing the subject; (3) science hints in the Year 8 review; (4) board lead-ins, shape decided from the pilot.
 
 **Open:** for maths, whether some lead-ins could come from the Practice templates instead of being written; how it shows on the deck (probably not at all) and the worksheet (probably as the teacher's `support:` line, which already exists).
