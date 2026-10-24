@@ -3,13 +3,13 @@ title: Running the final challenge
 ---
 ## The idea in plain words
 
-The Course B challenge lays out the club page from Course A. There is nothing new in it. Students work in three **milestones**, and the support fades: the first gives the exact code, the second an outline as comments, the third only the goals. Then they make it their own.
+This challenge lays out the club page from Structure and style a page. There is nothing new in it. Students work in three **milestones**, and the support fades: the first gives the exact code, the second an outline as comments, the third only the goals. Then they make it their own.
 
 1. **Header and menu:** the club name on the left and the menu on the right (Flexbox on the header and on `nav ul`), links styled with `nav a`.
 2. **Hero and cards:** a hero section and three cards in a row that wraps, all cards sharing one class.
 3. **Table, form and footer:** padded table cells, the sign-up form as a card, each label on its own line, and a padded footer.
 
-The starter is the finished Course A club page, so a student who skipped Course A can still begin. Finishing the core lesson marks **Challenge complete** on the course page. Two optional lessons go further: **Grid** lays out rows and columns together, and **Make it react** adds JavaScript as a recipe.
+The starter is the finished club page from Structure and style a page, so a student who skipped that course can still begin. Finishing the core lesson marks **Challenge complete** on the course page. Two optional lessons go further: **Grid** lays out rows and columns together, and **Make it react** adds JavaScript as a recipe.
 
 ## Why it matters
 

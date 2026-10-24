@@ -57,7 +57,7 @@ check:
   actual: "Three items, each on its own line with a bullet. The <ul> makes the list, and each <li> is one item. The browser adds the bullets."
 ```
 
-`<ul>` makes a list and `<li>` is one item in it. Read the code. What does the page show under the heading?
+`<ul>` makes a list and `<li>` is one item in it. What do you think the page shows under the heading?
 
 ## Run
 

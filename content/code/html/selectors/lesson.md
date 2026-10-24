@@ -57,7 +57,7 @@ check:
   actual: "2: both paragraphs. The rule names the tag p, not one paragraph, so every p changes. The heading is not a p, so it stays black."
 ```
 
-`p { color: teal; }` is a **rule**. Read the code. How many lines of text will turn teal?
+`p { color: teal; }` is a **rule**. How many lines of text do you think will turn teal?
 
 ## Run
 

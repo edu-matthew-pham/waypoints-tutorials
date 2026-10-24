@@ -54,7 +54,7 @@ check:
   actual: "None. Every card has class=\"card\", so the .card rule already styles a fourth. The wrapping row makes room for it on its own."
 ```
 
-Read the code: a hero (a big opening section) and a row of three cards. How much CSS must you write to add a fourth card?
+Here's a hero (a big opening section) and a row of three cards. How much CSS do you think you'd need to write to add a fourth card?
 
 ## Run
 
@@ -226,7 +226,7 @@ stuck:
     fix: Add flex-wrap wrap to the .cards rule and a min-width to the .card rule.
 stretch: "Add a second component, a footer with a class, and use it on two pages worth of text. Or give the cards a third kind, card featured, that changes only the border colour."
 support: "Give students the Run page and ask them only to add two cards by copying, and change one colour in the rule."
-leads: "Next is the Course B challenge, which lays out the club page using everything so far. Class idea: look at a shop website and point out the parts that are the same component repeated."
+leads: "Next is the challenge, which lays out the club page using everything so far. Class idea: look at a shop website and point out the parts that are the same component repeated."
 exit:
   q: "A page has ten cards, all class card. How many .card rules does it need, and how do you add an eleventh card?"
   a: "One rule. Copy the HTML of a card, change its words, and the rule already styles it."

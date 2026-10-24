@@ -57,7 +57,7 @@ check:
   actual: "The words A gold trophy (with a broken-picture icon). The browser cannot find a file with that exact name, so it shows the alt words instead."
 ```
 
-`<img>` shows a picture. `src` names the picture file, and `alt` describes it. Read the code. What will the page show?
+`<img>` shows a picture. `src` names the picture file, and `alt` describes it. What do you think the page will show?
 
 ## Run
 

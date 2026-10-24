@@ -55,7 +55,7 @@ check:
   actual: "The cards stay in one line and run off the right edge. A flex row keeps its items in one line unless you allow wrapping, and min-width stops the cards shrinking below 140px."
 ```
 
-`flex-wrap`, `flex: 1` and `min-width` are new. Read the code: `min-width: 140px` means a card will not get narrower than 140px. Six cards need much more room than the preview has. What happens?
+`flex-wrap`, `flex: 1` and `min-width` are new. `min-width: 140px` means a card won't get narrower than 140px, and six cards need much more room than the preview has. What do you think happens?
 
 ## Run
 

@@ -55,7 +55,7 @@ check:
   actual: "Robotics Club at the left end, Join at the right end, and Events between them. justify-content places the items along the row. It does not change the text inside an item. align-items: center also puts them halfway down the 100px bar."
 ```
 
-`justify-content`, `align-items` and `gap` are new, and all three go on the box with `display: flex`. Read the code. Where do the three items sit along the bar?
+`justify-content`, `align-items` and `gap` are new, and all three go on the box with `display: flex`. Where do you think the three items will sit along the bar?
 
 ## Run
 

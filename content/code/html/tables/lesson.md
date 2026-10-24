@@ -55,7 +55,7 @@ check:
   actual: "2 rows of 3 words. Each <tr> is one row going across, and its three cells line up under the cells of the other row to make 3 columns."
 ```
 
-Read the code. `<table>` holds the table, and `<tr>` and `<th>` and `<td>` are new. How will the six words be arranged?
+`<table>` holds the table, and `<tr>`, `<th>` and `<td>` are new. How do you think the six words will be arranged?
 
 ## Run
 

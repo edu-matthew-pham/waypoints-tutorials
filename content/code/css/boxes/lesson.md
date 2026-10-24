@@ -56,7 +56,7 @@ check:
   actual: "250: 200 for the content, plus 20 padding on each side, plus 5 border on each side."
 ```
 
-`width` sets how wide a box is, `padding` adds space inside its border, and `border` draws the line. Read the code. How wide is the whole card?
+`width` sets how wide a box is, `padding` adds space inside its border, and `border` draws the line. How wide do you think the whole card is?
 
 ## Run
 

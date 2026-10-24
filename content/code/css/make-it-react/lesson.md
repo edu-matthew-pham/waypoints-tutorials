@@ -56,7 +56,7 @@ check:
   actual: "Ready? changes to Go! The script waits for a click on the button, then changes the message's words."
 ```
 
-Read the code. The `<script>` block is JavaScript. What happens when someone clicks **Start**?
+The `<script>` block is JavaScript. What do you think happens when someone clicks **Start**?
 
 ## Run
 

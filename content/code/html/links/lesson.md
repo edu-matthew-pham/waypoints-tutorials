@@ -51,7 +51,7 @@ check:
   actual: "Read the club rules before you join. Only the words between <a> and </a> show, as a link. The address stays inside the tag and the click takes you there."
 ```
 
-`<a>` makes a **link**. Read the code. What will the page show, and what happens on a click?
+`<a>` makes a **link**. What do you think the page will show, and what happens when you click it?
 
 ## Run
 

@@ -56,7 +56,7 @@ check:
   actual: "To the right of the menu, filling the rest of the width. The first column is 150px; 1fr means one share of the space left over."
 ```
 
-`display: grid` and `grid-template-columns` are new. Read the code. Where does the main content go?
+`display: grid` and `grid-template-columns` are new. Where do you think the main content goes?
 
 ## Run
 

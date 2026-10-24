@@ -50,7 +50,7 @@ check:
   actual: "Only water. The <em> is inside the <strong>, so water gets both looks. a hat and sunscreen are only inside <strong>, so they are bold but not slanted."
 ```
 
-Read the code. The `<em>` sits inside the `<strong>`. Which words will look both bold and slanted?
+The `<em>` sits inside the `<strong>`. Which words do you think will look both bold and slanted?
 
 ## Run
 

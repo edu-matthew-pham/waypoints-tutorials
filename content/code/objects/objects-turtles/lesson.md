@@ -47,7 +47,7 @@ check:
   actual: "2: a and b. Every command has a name in front of it, so the turtle you used in the turtle course (the default turtle) is never used, and Python does not draw it."
 ```
 
-`a = Turtle()` makes a turtle and names it `a`. `a.forward(100)` gives the command to `a` only. Read the program: how many turtles will you see?
+`a = Turtle()` makes a turtle and names it `a`. `a.forward(100)` gives the command to `a` only. How many turtles do you think you'll see?
 
 ## Run
 

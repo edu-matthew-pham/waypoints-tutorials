@@ -224,7 +224,7 @@ goals:
 before: |
   This is a review lesson: nothing new is taught, and each step uses ideas from earlier lessons. Do the cards step yourself first (about 5 minutes).
 
-  The page is a whole document, with the page wrapper from Course A (`<!DOCTYPE html>`, `<head>` with the `<style>` block, `<body>`). Only the `<body>` shows. The stylesheet has a group rule, a tag rule that comes after it, a class rule, and later a descendant rule (`nav a`) and a card class. Students use rules that combine, links in a menu, block and inline boxes, and the box in one page.
+  The page is a whole document, with the page wrapper from Structure and style a page (`<!DOCTYPE html>`, `<head>` with the `<style>` block, `<body>`). Only the `<body>` shows. The stylesheet has a group rule, a tag rule that comes after it, a class rule, and later a descendant rule (`nav a`) and a card class. Students use rules that combine, links in a menu, block and inline boxes, and the box in one page.
 running:
   - "Read the stylesheet: the match is about what each rule changes. For the heading colour, ask which rule comes last and what happens to the property both set."
   - "Change one rule: the check wants a separate `h2` rule changed. A student who changes the group rule to orange sees the headings stay teal, because the later rule still wins."

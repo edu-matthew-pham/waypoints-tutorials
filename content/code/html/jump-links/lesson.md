@@ -51,7 +51,7 @@ check:
   actual: "It scrolls to the Results heading. The link's href names a place on this page, and the heading with that id is the place."
 ```
 
-Read the code. The menu links look like links you know, but their `href` values are new. Someone clicks Results. What does the page do?
+The menu links look like links you know, but their `href` values are new. If someone clicks Results, what do you think the page does?
 
 ## Run
 
@@ -174,7 +174,7 @@ check:
   explain: "The header holds the title and the nav. The nav holds the list, and each link sits in its own item. </main> would close a part this page has not opened."
 ```
 
-This mixes the last lessons: the parts of a page, and a list of links.
+A header, a nav and a list of links, all nested inside each other. Put them back together.
 
 ## Make
 

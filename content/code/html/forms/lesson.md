@@ -59,7 +59,7 @@ check:
   actual: "Nothing. A form collects what was typed, but sending or saving it needs code behind the form, and this page has none."
 ```
 
-`<form>`, `<label>`, `<input>` and `<button>` are new. Read the code. What happens when someone presses Send?
+`<form>`, `<label>`, `<input>` and `<button>` are new. What do you think happens when someone presses Send?
 
 ## Run
 
@@ -215,7 +215,7 @@ before: |
 
   The surprise for students: pressing **Send** does nothing. The playground shows a note saying so. A form is only the front: code behind it (JavaScript in the page, or a program on a server) has to collect what was typed and do something with it. That gap is the doorway to the JavaScript courses later. A **label** is linked to its box when the label's `for` matches the box's `id`: clicking the label then puts the cursor in the box, and screen readers read the label aloud for that box.
 
-  Each label and its box sit in a `<p>` so that every field starts on its own line. Making a form look like a card is Course B.
+  Each label and its box sit in a `<p>` so that every field starts on its own line. Making a form look like a card is in Layout and components.
 running:
   - "Predict: most students expect the form to send or save something. Nothing happens. Ask: what would have to exist for the name to reach the club?"
   - "Run: click the label to see the cursor jump. That is the visible sign of a linked label."
@@ -234,7 +234,7 @@ stuck:
     fix: Put each choice in its own <option> inside <select> and </select>.
 stretch: "Add a type=\"number\" box for age and a textarea for a message. Try type=\"date\" and type=\"color\" and see the boxes the browser builds."
 support: "Give students the Modify starter and do the first task together: copy the name paragraph, then change four things (the words, for, id and type)."
-leads: "Next is the Course A challenge: a club page with a jump-link menu, sections, a results table and a sign-up form. Course B lays the page out and styles the form as a card."
+leads: "Next is the challenge: a club page with a jump-link menu, sections, a results table and a sign-up form. Layout and components lays the page out and styles the form as a card."
 exit:
   q: "A sign-up form has a label Email and a box, but clicking Email does nothing. Give the likely cause and the fix."
   a: "The label's for does not match the box's id (or is missing). Make them the same, for example for=\"email\" and id=\"email\"."

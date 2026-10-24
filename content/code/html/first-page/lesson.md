@@ -54,7 +54,7 @@ check:
   actual: "2 lines. The browser ignores line breaks in the code, so the three lines of the first paragraph join into one. Each <p> starts a new paragraph."
 ```
 
-Read the code. Each `<p>` starts a paragraph and `</p>` ends it. How many lines of normal text will the page show?
+Each `<p>` starts a paragraph and `</p>` ends it. How many lines of normal text do you think the page will show?
 
 ## Run
 

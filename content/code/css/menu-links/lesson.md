@@ -57,7 +57,7 @@ check:
   actual: "Blue. The white reaches the heading, but a link keeps its own colour until a rule names the link. Blue on navy is hard to read."
 ```
 
-Read the code. The `header` rule sets a navy background and white text. The menu is a list of links inside a `<nav>` inside the header. What colour are the menu links?
+The `header` rule sets a navy background and white text, and the menu is a list of links inside a `<nav>` inside the header. What colour do you think the menu links will be?
 
 ## Run
 

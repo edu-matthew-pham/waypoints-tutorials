@@ -56,7 +56,7 @@ check:
   actual: "Bring a hat. and Bring water. The rule .note picks every element marked class=\"note\", however many there are, and leaves the other paragraphs alone."
 ```
 
-`class="note"` marks a paragraph with a name, and `.note { }` is a rule for that name. Read the code. Which lines of text will turn crimson?
+`class="note"` marks a paragraph with a name, and `.note { }` is a rule for that name. Which lines of text do you think will turn crimson?
 
 ## Run
 

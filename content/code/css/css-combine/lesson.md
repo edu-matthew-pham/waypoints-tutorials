@@ -60,7 +60,7 @@ check:
   actual: "Crimson and 24px. The paragraph takes the properties of both rules. Both set the colour, and the class rule wins, even though the p rule is written below it."
 ```
 
-Read the code. `Bring a hat.` is a `p` and it has `class="note"`, so both rules match it. What will it look like?
+`Bring a hat.` is a `p` and it has `class="note"`, so both rules match it. What do you think it will look like?
 
 ## Run
 
@@ -189,7 +189,7 @@ goals:
 before: |
   Read the unit primer "Layout and components" first, then do the Make task yourself in the playground (about 5 minutes).
 
-  Students have written rules and classes in Course A, but always one at a time. The new idea is that an element can match several rules at once. The browser keeps every property from every matching rule. Only where two rules set the same property does it pick: a class beats a tag, and between rules equally exact the later one wins. A **group selector** is a comma list, `h1, p { }`, one rule for several kinds of element.
+  Students have written rules and classes in Structure and style a page, but always one at a time. The new idea is that an element can match several rules at once. The browser keeps every property from every matching rule. Only where two rules set the same property does it pick: a class beats a tag, and between rules equally exact the later one wins. A **group selector** is a comma list, `h1, p { }`, one rule for several kinds of element.
 running:
   - "Predict and Run: the common answers are the last rule or the first rule alone. Let them move `.note` below the `p` rule and see that nothing changes. Then make the comma edit. Ask someone who chose the last rule to say what happens to the size. The idea to land: every matching rule applies."
   - "Investigate: the trace has three matching rules on the last line. Ask them to find each rule that matches before they write a value. The tie question separates a class from an equal tag rule."

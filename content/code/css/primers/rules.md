@@ -36,4 +36,4 @@ School rules: "everyone wears uniform" (a tag rule) and "the netball team wears 
 
 ## How it connects
 
-Rules that combine come first in Course B, and `nav a` styles the menu links. Block and inline boxes come next, then the layout lessons use class rules and `nav a` again. The final challenge needs all of it.
+Rules that combine come first in this course, and `nav a` styles the menu links. Block and inline boxes come next, then the layout lessons use class rules and `nav a` again. The final challenge needs all of it.

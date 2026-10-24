@@ -155,7 +155,7 @@ goals:
 before: |
   Read the challenge primer "Running the final challenge", then build milestone 1 yourself and plan milestones 2 and 3 on paper.
 
-  There is **nothing new** in this lesson, and no layout: Course B lays this same page out. Every milestone recalls earlier lessons: tags and nesting, tag rules and colours, lists, links, pictures and alt text, classes, tables, page sections, jump links, and forms. Support fades on purpose: milestone 1 gives the exact rules, milestone 2 an outline in comments, milestone 3 only the goals. Finishing this lesson marks **Challenge complete** on the course page.
+  There is **nothing new** in this lesson, and no layout: Layout and components lays this same page out. Every milestone recalls earlier lessons: tags and nesting, tag rules and colours, lists, links, pictures and alt text, classes, tables, page sections, jump links, and forms. Support fades on purpose: milestone 1 gives the exact rules, milestone 2 an outline in comments, milestone 3 only the goals. Finishing this lesson marks **Challenge complete** on the course page.
 running:
   - "Plan the page: match each part to how it is built. Write the parts on the board as a checklist."
   - "Milestone 1: everyone should finish this in the first lesson. The menu links do nothing yet, because the sections do not exist."
@@ -175,9 +175,9 @@ stuck:
   - see: Part of the page suddenly looks wrong after an edit.
     ask: Which closing tag did you add or move last?
     fix: Check that every tag closes, in the right order, and that every property ends with a semicolon.
-stretch: "Add a second table, a second list, or a rule that changes the font of the headings with font-family. Then look at the Course B challenge, which lays this page out."
+stretch: "Add a second table, a second list, or a rule that changes the font of the headings with font-family. Then look at the Layout and components challenge, which lays this page out."
 support: "Let students use Reset to this task's start at each milestone, so everyone reaches milestone 3. Pair students for milestone 3: one plans the form, one the footer."
-leads: "Course B (Layout and components) takes this same page and lays it out: menu in a row, cards, a hero, and a form styled as a card. The finished page is a portfolio piece: students can describe each part and the lesson it came from."
+leads: "Layout and components takes this same page and lays it out: menu in a row, cards, a hero, and a form styled as a card. The finished page is a portfolio piece: students can describe each part and the lesson it came from."
 exit:
   q: "Name three parts of your page and the tag, attribute or rule behind each."
   a: "For example: the menu is a nav list of links, and each href matches a section's id; the gold winners are rows with class winner and a .winner rule; the sign-up labels work because each for matches a box's id."

@@ -56,7 +56,7 @@ check:
   actual: "Only the words behind 9 am, and the full width behind the hat line. A span sits inside the line of text. A div is a block: it starts on a new line and takes the full width."
 ```
 
-`<span>` and `<div>` are tags you have not met. Both are plain boxes that the class `mark` colours gold. Read the code. How wide is the gold in each place?
+`<span>` and `<div>` are tags you have not met. Both are plain boxes that the class `mark` colours gold. How wide do you think the gold will be in each place?
 
 ## Run
 

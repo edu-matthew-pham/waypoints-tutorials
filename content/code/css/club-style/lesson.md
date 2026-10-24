@@ -6,7 +6,7 @@ moveId: layout-challenge
 reviews: [tag-pairs, nesting, css-rule, list-items, attribute-link, image-alt, class-pick, read-for-the-job, table-rows, page-sections, id-target, labelled-input, html-challenge, rules-combine, inside-selector, block-inline, box-model, read-the-stylesheet, flex-row, flex-space, fit-any-width, component]
 assumes: [heading, paragraph, style-block, css-rule, text-colour, font, list, attribute, link, image, class, class-selector, table, semantic, id, link-in-page, form, button, group-selector, descendant-selector, div-span, display, box, flex, flex-options]
 title: "Challenge: lay out the club page"
-summary: Lay out the Course A club page in three milestones, from a header with the menu on the right to a hero, a row of cards, a table, a sign-up card and a footer, then make it your own.
+summary: Lay out your club page in three milestones, from a header with the menu on the right to a hero, a row of cards, a table, a sign-up card and a footer, then make it your own.
 language: html
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-html" 8133
@@ -18,7 +18,7 @@ pacing:
 explainPicture: page.html#finished
 hook: "Take a page that only runs down the screen and give it a layout: a menu on the right, cards in a row, a sign-up card."
 ---
-In Course A you built a club page that runs down the screen in order. Now lay it out. Everything you need, you have met before. Check the page after every change.
+You've built a club page that runs down the screen in order, and now it's time to lay it out. You've met everything you need already, so check the page after every change.
 
 ## Plan the layout
 
@@ -153,7 +153,7 @@ expected: page.html#sol-yours
 Turn the page into one for a club or event you care about: a new name, your own words, your own colours. Add a fourth card by copying one. Try `justify-content: center` on the cards, or a different `gap`. Then check the narrow view again.
 
 ```teacher
-summary: Students lay out the Course A club page in three milestones with fading support (header and menu, then a hero and a wrapping row of cards, then the table, a sign-up card and the footer), then make it their own.
+summary: Students lay out the club page from Structure and style a page in three milestones with fading support (header and menu, then a hero and a wrapping row of cards, then the table, a sign-up card and the footer), then make it their own.
 time: 90
 timing: "Plan 10 min · Milestone 1 15 min · Milestone 2 25 min · Milestone 3 25 min · Make it yours 15 min"
 goals:
@@ -164,7 +164,7 @@ goals:
 before: |
   Read the challenge primer "Running the final challenge", then build milestone 1 yourself and plan milestones 2 and 3 on paper.
 
-  There is **nothing new** in this lesson. The starter is the finished Course A club page, so students who skipped Course A can still start here. Every milestone recalls earlier lessons: rules that combine and `nav a`, block and inline, the box, Flexbox rows, `gap`, `justify-content`, wrapping and components. Support fades on purpose: milestone 1 gives the exact code, milestone 2 an outline in comments, milestone 3 only the goals. There is no separate review step, because the whole lesson is review. Finishing this lesson marks **Challenge complete** on the course page.
+  There is **nothing new** in this lesson. The starter is the finished club page from Structure and style a page, so students who skipped that course can still start here. Every milestone recalls earlier lessons: rules that combine and `nav a`, block and inline, the box, Flexbox rows, `gap`, `justify-content`, wrapping and components. Support fades on purpose: milestone 1 gives the exact code, milestone 2 an outline in comments, milestone 3 only the goals. There is no separate review step, because the whole lesson is review. Finishing this lesson marks **Challenge complete** on the course page.
 running:
   - "Plan the layout: match each part to its rule. Write the parts on the board as a checklist."
   - "Milestone 1: everyone should finish this in the first lesson. Ask where display: flex goes, and why there are two flex boxes."

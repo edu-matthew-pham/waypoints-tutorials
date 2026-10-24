@@ -100,7 +100,7 @@ Work out the value before you run anything.
 
 ### Spot the bug
 
-Here is a version that does not work.
+This one prints the first answer, then falls over.
 
 ### Explain return
 

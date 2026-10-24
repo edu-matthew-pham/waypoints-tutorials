@@ -54,7 +54,7 @@ check:
   actual: "Side by side in a row. display: flex on the ul lines up its children, the li items. (list-style: none removes the bullets, as on real menus, and the margin on each li keeps the words apart.)"
 ```
 
-`display: flex` is new. `list-style: none` removes a list's bullets, and the `margin-right` on each `li` keeps the words apart. Read the code. How will the menu items be placed?
+`display: flex` is new. `list-style: none` removes a list's bullets, and the `margin-right` on each `li` keeps the words apart. How do you think the menu items will be placed?
 
 ## Run
 
