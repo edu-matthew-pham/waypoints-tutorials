@@ -4,7 +4,7 @@
 # Nothing in the build reads this file yet. Lessons name an entry with `connection:` in the frontmatter
 # (documentation only, like moveId); the lesson text and teacher.yml sources are written by hand from it.
 #
-# Status (25 Oct 2026): every Year 7, 8 and 9 node done (all six strands); Year 10 next
+# Status (25 Oct 2026): every node from Year 7 to Year 10 done (all six strands)
 # (measurement/finding-a-side and algebra/rearranging). Other strands and years: after the maths teachers' feedback.
 #
 # Two layers
@@ -2965,3 +2965,761 @@ nodes:
       assessed: "Investigations are marked on whether the evidence supports the conclusion."
     entries:
       - see: recycling-audit
+
+  # ---------------------------------------------------------------- Year 10 Algebra
+
+  AC9M10A01 n1:
+    move: "Simplify algebraic terms with the product, quotient and power laws."
+    purpose:
+      step: "The machinery under every exponential and scaling formula."
+      assessed: "Tests reward naming the law used; confusing the product and power laws is the common slip."
+    entries:
+      - see: scale-up-monster
+
+  AC9M10A01 n2:
+    move: "Simplify with negative powers and write the answer with positive powers."
+    purpose:
+      step: "Inside decay formulas and rates written per unit: km h⁻¹ is km per hour."
+      hood: "A negative power is a division you have chosen to write as a multiplication."
+    entries:
+      - see: metric-small
+
+  AC9M10A01 n3:
+    move: "Expand binomials and trinomials, including the special products."
+    purpose:
+      hood: "(a + b)² is a square with two strips and a corner, which is why it isn't a² + b²."
+      step: "Getting a quadratic into the form that can be solved or graphed."
+    entries:
+      - see: garden-extend
+      - see: mental-shortcut
+
+  AC9M10A01 n4:
+    move: "Factorise monic and non-monic quadratics, including by completing the square."
+    purpose:
+      step: "Completing the square finds a parabola's turning point: the highest point of a throw, the cheapest point of a cost curve."
+      next: "Solving quadratics (n5) and Year 11 functions."
+    entries:
+      - see: ball-arc
+
+  AC9M10A01 n5:
+    move: "Solve equations algebraically, using exponent laws and factorising, including quadratics."
+    purpose:
+      world: "Solving for the moment something happens: the ball lands, the area reaches a target."
+      assessed: "Tests reward checking both solutions against the context."
+    entries:
+      - see: ball-arc
+      - id: frame-border
+        kind: world
+        steps: [2, 3]
+        domain: design
+        picture: spatial
+        situation: "A 30 cm by 20 cm photo gets a border of even width, and the framed picture must have an area of 1000 cm². How wide is the border?"
+        maths: "(30 + 2x)(20 + 2x) = 1000 gives a quadratic; one solution is negative and is thrown out."
+        given: "The photo's size and the area wanted."
+        hidden: "Nothing."
+        check: "Draw it to scale."
+        figures: []
+
+  AC9M10A02 n1:
+    move: "Solve a linear inequality and show the solution on a number line."
+    purpose:
+      world: "Budgets and limits are inequalities: how many rides can I afford with $40 after the $12 entry?"
+    entries:
+      - id: ride-budget
+        kind: world
+        steps: [2]
+        domain: consumer
+        picture: data
+        situation: "Show entry is $12 and each ride is $4.50. You have $40. How many rides can you go on?"
+        maths: "12 + 4.5r ≤ 40, so r ≤ 6.2: six rides, because rides come whole."
+        given: "The prices."
+        hidden: "Food (step 4 adds it)."
+        check: "Add it up."
+        figures: []
+
+  AC9M10A02 n2:
+    move: "Graph a two-variable inequality's region and test a point by substitution."
+    purpose:
+      world: "Planning with two limits at once: how many pizzas and drinks fit the budget?"
+    entries:
+      - id: party-region
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        picture: data
+        situation: "A class party has $120 for pizzas at $15 and drink packs at $8. Which combinations fit?"
+        maths: "15p + 8d ≤ 120: every point in the shaded region is a plan that fits."
+        given: "The prices and the budget."
+        hidden: "That you need at least some of each (adding that is step 4)."
+        check: "Price one plan from inside the region and one from outside."
+        figures: []
+
+  AC9M10A02 n3:
+    move: "Solve simultaneous linear equations by substitution or elimination."
+    purpose:
+      world: "Two plans with different fees and rates: when does one become cheaper?"
+      step: "The algebra behind where two graphs cross."
+    entries:
+      - see: plans-cross
+      - see: gym-or-casual
+
+  AC9M10A02 n4:
+    move: "Set up a practical problem as simultaneous equations or inequalities, solve it and explain the answer in plain words."
+    purpose:
+      world: "The answer is a decision: which plan to pick, and from what point."
+    entries:
+      - see: electricity-plan
+      - see: party-region
+
+  AC9M10A03 n1:
+    move: "Recognise an exponential from a table by its constant ratio."
+    purpose:
+      world: "Bacteria in food left out, a viral post, money with compound interest: each step multiplies."
+      hood: "Adding the same each step is linear; multiplying by the same is exponential."
+    entries:
+      - id: food-left-out
+        kind: world
+        steps: [2, 4, 5]
+        domain: health
+        picture: data
+        situation: "Why does the food-safety rule say throw out food left out of the fridge for 4 hours or more, when 2 hours is fine?"
+        maths: "Bacteria that double regularly grow exponentially: the last hours add far more than the first."
+        given: "The food authority's rule; a doubling time to try."
+        hidden: "Real doubling times depend on the bacteria and the temperature (stated)."
+        check: "Compare the model with the rule's cut-offs."
+        figures:
+          - claim: "Food left between 5 °C and 60 °C: under 2 hours, use or refrigerate; 2 to 4 hours, use but don't refrigerate; 4 hours or more, throw out."
+            source: { title: "The 2-hour/4-hour rule (NSW Food Authority)", url: "https://www.foodauthority.nsw.gov.au/sites/default/files/2021-07/2_hour_4_hour_rule.pdf", checked: 2026-10-25 }
+
+  AC9M10A03 n2:
+    move: "Sketch an exponential graph and read its intercept, asymptote and whether it grows or decays."
+    purpose:
+      world: "A cooling cup of tea levels off at room temperature: the asymptote is the room."
+    entries:
+      - id: cooling-tea
+        kind: world
+        steps: [3, 4]
+        domain: science
+        picture: data
+        situation: "A cup of tea cools from 90 °C in a 20 °C room. Will it ever get colder than the room?"
+        maths: "The gap to room temperature decays exponentially; the graph approaches 20 °C and never crosses it."
+        given: "A thermometer and a timer."
+        hidden: "Stirring and the cup's material."
+        check: "Measure it every two minutes."
+        figures: []
+
+  AC9M10A03 n3:
+    move: "Move between an exponential equation and its graph, reading each from the other."
+    purpose:
+      step: "Reading the starting amount and the growth factor straight from y = a × bˣ."
+    entries:
+      - see: cooling-tea
+
+  AC9M10A03 n4:
+    move: "Solve an exponential equation by writing both sides with the same base."
+    purpose:
+      world: "When will a doubling population reach 64 times its size? 2ˣ = 64."
+    entries:
+      - see: food-left-out
+
+  AC9M10A04 n1:
+    move: "Decide whether growth or decay is linear, quadratic or exponential from how it changes."
+    purpose:
+      world: "Is a car losing the same value every year, or the same percentage? The data decides, and so does the price you pay."
+    entries:
+      - id: car-value
+        kind: world
+        steps: [3, 4, 5]
+        domain: consumer
+        picture: data
+        situation: "A used car's price drops every year. Does it lose the same dollars each year or the same share?"
+        maths: "Compare differences and ratios from listed prices of the same model by age."
+        given: "Advertised prices for one model at different ages."
+        hidden: "Kilometres and condition; judging them is step 5."
+        check: "Predict next year's price and compare with listings."
+        figures: []
+
+  AC9M10A04 n2:
+    move: "Write the growth or decay model from the context and use it to answer questions."
+    purpose:
+      world: "Compound interest: what a savings account or a loan grows to."
+    entries:
+      - id: compound-savings
+        kind: world
+        steps: [2, 4]
+        domain: consumer
+        picture: data
+        situation: "You put $1000 in a savings account and leave it. How long until it doubles, and does the interest rate matter much?"
+        maths: "A = P(1 + r)ⁿ; try rates and read the doubling time from a table or graph."
+        given: "A rate to try (look up a bank's current one)."
+        hidden: "Fees, tax and rates that change."
+        check: "A bank's savings calculator."
+        figures: []
+      - see: car-value
+
+  AC9M10A04 n3:
+    move: "Interpret the model's results and evaluate its assumptions and limits."
+    purpose:
+      world: "No growth goes on for ever: a viral video slows down, a population runs out of food."
+      assessed: "Modelling tasks are marked on the evaluation as much as the answer."
+    entries:
+      - see: food-left-out
+      - see: car-value
+
+  AC9M10A05 n1:
+    move: "Make a conjecture about a function family with a graphing tool, and test it by varying parameters."
+    purpose:
+      step: "How scientists and engineers explore a model before they trust it."
+    entries:
+      - see: ball-arc
+
+  AC9M10A05 n2:
+    move: "Find where two functions meet with a digital tool, zooming in for accuracy."
+    purpose:
+      world: "When does the exponential savings line overtake the steady one? The crossing is the decision."
+    entries:
+      - see: plans-cross
+      - see: compound-savings
+
+  AC9M10A05 n3:
+    move: "Work with x² + y² = r² as a relation and transform it."
+    purpose:
+      world: "Everything within a radius: a mobile tower's coverage, a sprinkler's circle, a no-fly zone round an airport."
+    entries:
+      - see: centre-pivot
+
+  AC9M10A05 n4:
+    move: "Generalise a pattern seen across many function experiments into a rule."
+    purpose:
+      hood: "Turning what several graphs show into one statement, and testing it on a new case."
+    entries: []
+
+  # ---------------------------------------------------------------- Year 10 Measurement
+
+  AC9M10M01 n1:
+    move: "Break a composite object into solids and say whether each is added or taken away."
+    purpose:
+      world: "Silos, buildings and trophies are cylinders, cones and prisms joined together."
+    entries:
+      - id: grain-silo
+        kind: world
+        steps: [2, 3]
+        domain: environment
+        picture: spatial
+        situation: "A farm silo is a cylinder with a cone on top. How much grain does it hold?"
+        maths: "Cylinder volume plus cone volume."
+        given: "The silo's measurements from a sales brochure."
+        hidden: "That grain doesn't fill the cone to the tip."
+        check: "The brochure's stated capacity."
+        figures: []
+
+  AC9M10M01 n2:
+    move: "Find the surface area of a composite object, counting only faces you can see."
+    purpose:
+      world: "Painting the silo: the join between the cone and the cylinder isn't painted."
+    entries:
+      - see: grain-silo
+
+  AC9M10M01 n3:
+    move: "Find the volume of a composite object by adding or subtracting."
+    purpose:
+      world: "A pipe is a big cylinder minus a small one; a pool with a deep end is two prisms."
+    entries:
+      - see: grain-silo
+      - see: rainwater-tank
+
+  AC9M10M01 n4:
+    move: "Use composite surface area and volume to solve a practical problem and state the assumptions."
+    purpose:
+      world: "How much concrete for a skate bowl? How much paint for the silo?"
+    entries:
+      - see: grain-silo
+
+  AC9M10M02 n1:
+    move: "Explain that each step on a log scale is a multiplication, not an addition."
+    purpose:
+      world: "Earthquake magnitudes and decibels: one step up is many times more, not one more."
+    entries:
+      - id: quake-magnitude
+        kind: world
+        steps: [1, 3]
+        domain: science
+        picture: data
+        situation: "A magnitude 6 earthquake sounds only a bit bigger than a magnitude 5. How much more energy does it release?"
+        maths: "Each whole step of magnitude multiplies the energy about 32 times, so two steps is about 1000 times."
+        given: "Geoscience Australia's explanation of the scale."
+        hidden: "How the magnitude is measured."
+        check: "Geoscience Australia's earthquake list."
+        figures:
+          - claim: "Each step up the magnitude scale is about a 32-fold increase in the energy released."
+            source: { title: "Australian earthquakes explained (Geoscience Australia)", url: "https://ga.gov.au/news/news-archive/australian-earthquakes-explained", checked: 2026-10-25 }
+
+  AC9M10M02 n2:
+    move: "Read data on a log scale in at least two contexts and say what the scale shows."
+    purpose:
+      world: "Noise exposure, earthquake records, the sizes of things from atoms to galaxies."
+    entries:
+      - see: quake-magnitude
+      - id: noise-dose
+        kind: world
+        steps: [2, 3, 5]
+        domain: health
+        picture: data
+        situation: "A worker can be around 85 dB all shift. How long is safe at 88 dB, or at a 100 dB concert?"
+        maths: "Every 3 dB more doubles the risk, so the safe time halves: 8 h, 4 h, 2 h, and so on."
+        given: "The workplace exposure standard."
+        hidden: "Hearing protection and breaks."
+        check: "A sound-level app at a real event."
+        figures:
+          - claim: "Workplace exposure standard: 85 dB(A) averaged over 8 hours; every 3 dB(A) increase doubles the risk of hearing damage."
+            source: { title: "Workplace exposure standards for noise (SafeWork SA)", url: "https://safework.sa.gov.au/workers/your-health-and-safety-at-work/hazardous-noise/workplace-exposure-standards", checked: 2026-10-25 }
+
+  AC9M10M02 n3:
+    move: "Use a log scale to compare quantities across many orders of magnitude."
+    purpose:
+      world: "Plotting a virus, a cell, a person and a planet on one axis: only a log scale fits them all."
+    entries:
+      - see: noise-dose
+      - see: kilo-mega-giga
+
+  AC9M10M03 n1:
+    move: "Find angles of elevation and depression and set up the right triangle."
+    purpose:
+      world: "A lifeguard in a tower spots a swimmer; a drone pilot sees a landing pad below."
+    entries:
+      - id: lifeguard-tower
+        kind: world
+        steps: [2]
+        domain: sport
+        picture: spatial
+        situation: "A lifeguard's eyes are 6 m above the sand and she looks down at 8° to a swimmer. How far out is the swimmer?"
+        maths: "The angle of depression equals the angle of elevation from the swimmer; distance = 6 ÷ tan 8°."
+        given: "The tower's height and the angle."
+        hidden: "Waves and tide."
+        check: "Pace it out on a sports field with a smaller angle."
+        figures: []
+      - see: tree-height
+
+  AC9M10M03 n2:
+    move: "Use bearings and trigonometry to find direction and distance."
+    purpose:
+      world: "Orienteering, sailing and search-and-rescue all navigate by bearings."
+    entries:
+      - id: orienteering-leg
+        kind: world
+        steps: [2, 4]
+        domain: sport
+        picture: spatial
+        situation: "An orienteering control is 600 m away on a bearing of 040°. How far north and east is that?"
+        maths: "North = 600 cos 40°, east = 600 sin 40°."
+        given: "A map and compass."
+        hidden: "Magnetic declination (the map says how much)."
+        check: "Walk it on the school grounds with a smaller distance."
+        figures: []
+      - see: crow-flies
+
+  AC9M10M03 n3:
+    move: "Find the right-angled triangle inside a 3D situation and solve it."
+    purpose:
+      world: "Will a long pole fit in a box diagonally? How long is a tent's slanted pole?"
+    entries:
+      - id: box-diagonal
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        picture: spatial
+        situation: "Will a 1.2 m umbrella fit in a suitcase that is 80 cm by 50 cm by 30 cm?"
+        maths: "Floor diagonal first, then the space diagonal with the height."
+        given: "The suitcase's measurements."
+        hidden: "The umbrella's thickness."
+        check: "Try a stick in a real box."
+        figures: []
+
+  AC9M10M04 n1:
+    move: "Name a measurement error's source: the instrument, the method or the person."
+    purpose:
+      world: "A science practical's results are only as good as how they were measured."
+    entries:
+      - see: part-tolerance
+
+  AC9M10M04 n2:
+    move: "Say how one measurement's error changes a calculated result, and estimate by how much."
+    purpose:
+      world: "A 1 cm error in a room's length makes a bigger error in its area, and bigger again in a tank's volume."
+    entries:
+      - id: carpet-error
+        kind: world
+        steps: [2, 3]
+        domain: building
+        picture: spatial
+        situation: "A room is measured as 4.0 m by 3.0 m to the nearest 10 cm. How much carpet might you actually need?"
+        maths: "Use the bounds: from 3.95 × 2.95 to 4.05 × 3.05 m²."
+        given: "The measured sizes and their accuracy."
+        hidden: "Offcuts."
+        check: "Re-measure to the nearest centimetre."
+        figures: []
+
+  AC9M10M04 n3:
+    move: "Explain how errors build up over many steps of a calculation."
+    purpose:
+      world: "A long fence measured in short tape lengths: each little error adds up."
+    entries:
+      - see: carpet-error
+
+  AC9M10M05 n1:
+    move: "Find the scale factor between a model and the real object and convert both ways."
+    purpose:
+      world: "Model trains, architects' models and maps all have a scale."
+    entries:
+      - see: floor-plan
+
+  AC9M10M05 n2:
+    move: "Read measurements from a scaled plan and use them to make a decision."
+    purpose:
+      world: "Will the couch fit through the doorway on the plan? Is there room for a desk?"
+    entries:
+      - see: floor-plan
+
+  AC9M10M05 n3:
+    move: "Set up, solve and interpret a scaling problem as a model."
+    purpose:
+      world: "Building a model of the school to scale, or deciding if a giant creature could stand up."
+    entries:
+      - see: scale-up-monster
+
+  # ---------------------------------------------------------------- Year 10 Number
+
+  AC9M10N01 n1:
+    move: "Tell an exact value from an approximation and spot where approximating adds error."
+    purpose:
+      hood: "Why a calculator keeps hidden digits and a careful answer rounds only at the end."
+    entries:
+      - see: square-patch
+
+  AC9M10N01 n2:
+    move: "Compare truncating with rounding and say which is biased."
+    purpose:
+      world: "Prices and pay worked out to the cent: always chopping digits off always favours one side."
+    entries:
+      - id: cents-chop
+        kind: hood
+        steps: [1, 3]
+        domain: consumer
+        picture: data
+        situation: "A shop works out every price to the cent by chopping off the extra digits instead of rounding. Over thousands of sales, who gains?"
+        maths: "Truncation always goes down, so the errors don't cancel; rounding's errors do, on average."
+        given: "A list of prices with many decimals."
+        hidden: "Nothing."
+        check: "Total a list both ways in a spreadsheet."
+        figures: []
+
+  AC9M10N01 n3:
+    move: "Show that using an approximation over and over gives a different answer from the exact value."
+    purpose:
+      world: "Compound interest worked out with a rounded rate drifts from the true balance over years."
+    entries:
+      - see: compound-savings
+      - see: cents-chop
+
+  # ---------------------------------------------------------------- Year 10 Probability
+
+  AC9M10P01 n1:
+    move: "Read 'given', 'if … then' and 'knowing that' as conditional probability and say what is known."
+    purpose:
+      world: "'The chance of rain given clouds this morning' is not 'the chance of rain'."
+    entries:
+      - see: chance-of-rain
+
+  AC9M10P01 n2:
+    move: "Show conditional probability with two-way tables, Venn diagrams and tree diagrams, and read it off."
+    purpose:
+      world: "A medical test that is usually right can still be wrong most of the times it says 'positive', when the illness is rare."
+    entries:
+      - id: rare-test
+        kind: world
+        steps: [3, 5]
+        domain: health
+        picture: structure
+        situation: "A screening test catches 99 in 100 people with a rare condition and wrongly flags 5 in 100 without it. If you test positive, how worried should you be?"
+        maths: "Fill a two-way table for 10 000 people (made-up rates) and read the chance of the condition given a positive result."
+        given: "Made-up rates, stated as made up."
+        hidden: "Real test rates, which a doctor would look up."
+        check: "Simulate it (P02)."
+        figures: []
+
+  AC9M10P01 n3:
+    move: "Decide from probabilities whether two events are independent."
+    purpose:
+      world: "Is being late linked to the bus route, or would it happen anyway? Comparing the conditional with the plain chance says."
+    entries:
+      - see: survey-two-way
+      - see: bus-lateness
+
+  AC9M10P02 n1:
+    move: "Design a simulation that models a conditional probability."
+    purpose:
+      world: "Simulating the screening test for 10 000 imaginary people when real trials can't be repeated."
+    entries:
+      - see: rare-test
+
+  AC9M10P02 n2:
+    move: "Compare simulated and theoretical results and explain why they agree more over many trials."
+    purpose:
+      hood: "Small samples wander; big ones settle. The same idea as Year 7's many trials."
+    entries:
+      - see: rare-test
+      - see: few-reviews
+
+  AC9M10P02 n3:
+    move: "Explain how a simulation supports a real decision, and what it adds that a calculation doesn't."
+    purpose:
+      world: "Insurers, weather forecasters and hospitals simulate before they decide."
+    entries:
+      - see: penalty-shootout
+
+  # ---------------------------------------------------------------- Year 10 Space
+
+  AC9M10SP01 n1:
+    move: "Tell a demonstration (some cases) from a proof (every case)."
+    purpose:
+      hood: "Why checking ten triangles isn't enough: a proof shows it can't fail."
+    entries: []
+
+  AC9M10SP01 n2:
+    move: "Write a deductive proof as statements with a reason for each."
+    purpose:
+      hood: "The habit of a reason for every step, used in law, science and programming."
+      assessed: "Proofs are marked on the reasons as much as the statements."
+    entries: []
+
+  AC9M10SP01 n3:
+    move: "Choose the theorem that fits a spatial problem and use it."
+    purpose:
+      world: "A carpenter checks a frame is square by its equal diagonals; a builder sets out 3-4-5."
+    entries:
+      - see: set-out-3-4-5
+      - see: parallelogram-linkage
+
+  AC9M10SP02 n1:
+    move: "Name the nodes and edges of a network and say what they stand for."
+    purpose:
+      world: "Train maps, social networks and delivery routes are dots and lines."
+    entries:
+      - id: train-map
+        kind: world
+        steps: [1, 2]
+        domain: transport
+        picture: structure
+        situation: "A city train map isn't drawn to scale. What does it show, and what doesn't it?"
+        maths: "Stations are nodes, lines between them are edges: it shows connections, not distances."
+        given: "A real network map."
+        hidden: "Distances and travel times (adding them as weights is n2)."
+        check: "Compare with a street map."
+        figures: []
+
+  AC9M10SP02 n2:
+    move: "Analyse whether a network is connected and traversable, and find paths."
+    purpose:
+      world: "Can a street sweeper or a mail run cover every street once without going back? Is any suburb cut off if one road closes?"
+    entries:
+      - id: street-sweeper
+        kind: world
+        steps: [2, 3]
+        domain: transport
+        picture: structure
+        situation: "A council street sweeper wants to drive every street in a small suburb once, without repeating. Can it?"
+        maths: "Count the junctions with an odd number of streets: 0 or 2 means it can."
+        given: "The suburb's street map."
+        hidden: "One-way streets."
+        check: "Trace a route on the map."
+        figures: []
+      - see: train-map
+
+  AC9M10SP02 n3:
+    move: "Draw a polyhedron as a network and check F + V = E + 2."
+    purpose:
+      hood: "A rule that holds for every solid without holes, from a cube to a soccer ball."
+    entries:
+      - id: soccer-ball
+        kind: hood
+        steps: [1]
+        domain: sport
+        picture: spatial
+        situation: "A classic soccer ball is stitched from pentagons and hexagons. Does Euler's rule hold for it?"
+        maths: "Count faces, corners and edges (12 + 20 faces, 60 corners, 90 edges) and check."
+        given: "A real ball, or a picture."
+        hidden: "Nothing."
+        check: "Count on the ball."
+        figures: []
+
+  AC9M10SP03 n1:
+    move: "Define a spatial problem precisely and break it into smaller problems."
+    purpose:
+      world: "Packing boxes into a van, placing sprinklers to cover a lawn: real design problems start with a clear definition."
+    entries:
+      - id: sprinkler-cover
+        kind: world
+        steps: [4, 5]
+        domain: environment
+        picture: spatial
+        situation: "What is the fewest sprinklers that water the whole school oval, if each covers a circle of radius 8 m?"
+        maths: "Define coverage, try a grid layout, then improve it with an algorithm."
+        given: "The oval's dimensions and the sprinkler's radius."
+        hidden: "Wind and water pressure."
+        check: "Draw circles on a scale plan."
+        figures: []
+
+  AC9M10SP03 n2:
+    move: "Design an algorithm for the spatial problem in pseudocode or a flowchart."
+    purpose:
+      step: "Same move as Year 9's geometric algorithms, now for a real design."
+    entries:
+      - see: sprinkler-cover
+
+  AC9M10SP03 n3:
+    move: "Test, fix and justify the algorithm across several cases."
+    purpose:
+      step: "Testing the awkward cases: a strange-shaped oval, a tree in the middle."
+    entries:
+      - see: sprinkler-cover
+
+  # ---------------------------------------------------------------- Year 10 Statistics
+
+  AC9M10ST01 n1:
+    move: "Spot what makes a graph or claim misleading and explain how it misleads."
+    purpose:
+      world: "Cut axes, cherry-picked years and 3D pies in ads and news."
+    entries:
+      - see: cut-axis
+
+  AC9M10ST01 n2:
+    move: "Judge whether a report's sample represents the population it claims."
+    purpose:
+      world: "An online poll of a club's fans can't speak for the whole country."
+    entries:
+      - see: fan-poll
+      - see: screen-time-claim
+
+  AC9M10ST01 n3:
+    move: "Identify ethical issues in how data is collected and reported."
+    purpose:
+      world: "Who paid for the study, who was left out, whose data was used without asking."
+    entries:
+      - see: screen-time-claim
+
+  AC9M10ST02 n1:
+    move: "Find the five-number summary and say what each value means."
+    purpose:
+      world: "House prices and wait times are reported by median and quartiles, because a few big values would distort the mean."
+    entries:
+      - see: median-house-price
+
+  AC9M10ST02 n2:
+    move: "Draw a boxplot from the five-number summary and read it in context."
+    purpose:
+      world: "A boxplot shows the typical half at a glance: where most buses arrive."
+    entries:
+      - see: bus-lateness
+
+  AC9M10ST02 n3:
+    move: "Compare distributions with boxplots by centre, spread, shape and outliers."
+    purpose:
+      world: "Which of two routes is more reliable, not just faster on average?"
+    entries:
+      - see: bus-lateness
+
+  AC9M10ST03 n1:
+    move: "Draw a scatterplot from paired data and read single points."
+    purpose:
+      world: "Height against arm span, study time against marks: two measurements of each person."
+    entries:
+      - id: arm-span
+        kind: world
+        steps: [2, 4]
+        domain: health
+        picture: data
+        situation: "Is your arm span the same as your height? Measure the class and see."
+        maths: "Plot height against arm span; points near the line y = x say yes."
+        given: "Tape measures."
+        hidden: "Measuring errors (M04)."
+        check: "Compare your own point with the line."
+        figures: []
+
+  AC9M10ST03 n2:
+    move: "Describe an association's strength, direction and form."
+    purpose:
+      world: "Strong, positive, linear: words that say how much one measurement tells you about the other."
+    entries:
+      - see: arm-span
+
+  AC9M10ST03 n3:
+    move: "Explain why an association doesn't prove one thing causes the other."
+    purpose:
+      world: "Ice-cream sales and drownings rise together; neither causes the other. Summer does."
+    entries:
+      - id: ice-cream-drowning
+        kind: world
+        steps: [3, 5]
+        domain: health
+        picture: data
+        situation: "Months with more ice-cream sales also have more drownings. Should we ban ice cream?"
+        maths: "Both follow a third variable, hot weather: association without causation."
+        given: "The pattern, described."
+        hidden: "Nothing: finding the hidden variable is the task."
+        check: "Find another pair that move together for a third reason."
+        figures: []
+
+  AC9M10ST04 n1:
+    move: "Organise two categorical variables into a two-way table."
+    purpose:
+      world: "Survey results by year group, or by how students get to school."
+    entries:
+      - see: survey-two-way
+
+  AC9M10ST04 n2:
+    move: "Use row or column percentages to find patterns in a two-way table."
+    purpose:
+      world: "Raw counts mislead when groups differ in size; percentages make the comparison fair."
+    entries:
+      - see: survey-two-way
+
+  AC9M10ST04 n3:
+    move: "Make a careful claim about a possible relationship from a two-way table."
+    purpose:
+      world: "'Students who ride to school are more likely to play sport': possible, but is riding the reason?"
+    entries:
+      - see: survey-two-way
+      - see: ice-cream-drowning
+
+  AC9M10ST05 n1:
+    move: "Pose an investigation question about how two variables relate."
+    purpose:
+      world: "Does sleep relate to reaction time? A question the class can test."
+    entries:
+      - id: sleep-reaction
+        kind: world
+        steps: [4, 5]
+        domain: health
+        picture: data
+        situation: "Do students who sleep less have slower reaction times?"
+        maths: "Collect hours slept and an online reaction test score, plot a scatterplot, describe and judge."
+        given: "A reaction-time test and a sleep log."
+        hidden: "Caffeine, practice at the test and honest logs; judging them is step 5."
+        check: "Repeat on another day."
+        figures: []
+
+  AC9M10ST05 n2:
+    move: "Collect bivariate data, display it and describe the pattern."
+    purpose:
+      world: "Turning the class's sleep and reaction data into a scatterplot that shows the pattern."
+    entries:
+      - see: sleep-reaction
+      - see: arm-span
+
+  AC9M10ST05 n3:
+    move: "Evaluate the findings and report them with their limits, including association against causation."
+    purpose:
+      world: "The report that's honest: what we found, how strong it is, and what it can't prove."
+      assessed: "Investigations are marked on whether the evidence supports the conclusion."
+    entries:
+      - see: sleep-reaction
