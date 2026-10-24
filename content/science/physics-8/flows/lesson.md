@@ -52,6 +52,7 @@ tasks:
     check: { type: board, text: "Run the coaster with friction to the end. Watch the red bar.", when: "r >= 1" }
   - starter: "boards.yml#fire"
     check: { type: board, text: "Lighting a fire with a fire drill: complete the flow diagram, then Check.", when: "c = 1" }
+    hint: ["Take it one stage at a time: name the energy the stage is mainly there for, then compare it with the stage before.", "Anything you'd feel getting warm or hear along the way is a by-product, not the energy you choose for the stage."]
 ```
 
 ### Coaster with friction
@@ -88,6 +89,7 @@ tasks:
       answer: 0
       feedback: [null, "Car engines get very hot: where did that energy come from?", "Energy doesn't flow backwards to the fuel."]
       explain: "A complete flow diagram accounts for every output. In a car engine most of the energy becomes heat."
+    hint: "Picture standing next to a car with its engine running. What would you feel and hear?"
   - check: { type: reflect, text: "I can trace energy through a system and draw a flow diagram that includes every by-product." }
 ```
 
@@ -110,6 +112,7 @@ insight: "A hydro-electric system links four stages and two by-products, the ful
 try: { playground: board, starter: "boards.yml#hydro", height: 620 }
 tasks:
   - check: { type: board, text: "Complete the flow from a dam to the lights at home, then Check.", when: "c = 1" }
+    hint: ["Name the energy at each stage first: water held up high, water falling, a spinning generator, lights.", "Same kind on both sides of an arrow means it only moved, and a different kind means it changed."]
   - check:
       type: question
       q: "Where in this system does energy end up as by-product heat?"

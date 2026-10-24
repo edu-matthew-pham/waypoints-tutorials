@@ -45,20 +45,31 @@ check:
 
 ```step
 stage: run
-insight: "Removing all greenhouse gases (about −18 °C), then doubling CO₂ (a few degrees warmer), shows both the natural and the enhanced effect in one model."
+insight: "Finding for themselves how cold Earth would be with no greenhouse gases (about −18 °C), then choosing the CO₂ that warms it by about 2 °C, shows the natural and the enhanced effect in one model, and that the warming takes years to settle."
 try: { playground: board, starter: "boards.yml#gh", height: 720 }
 tasks:
-  - check: { type: board, text: "Remove all greenhouse gases and run the years until the temperature settles.", when: "z = 1" }
-  - check: { type: board, text: "Put them back, raise CO₂ to at least 560 ppm (double the pre-industrial level) and run until Earth is in balance again.", when: "g >= 560 and b = 1" }
+  - check: { type: board, text: "Take every greenhouse gas out of the air and run the years until the temperature stops changing.", when: "z = 1" }
+    hint: ["Everything you need is in the buttons under the picture.", "Remove all greenhouse gases, then Run 50 years, and watch the graph until it flattens out."]
+  - check:
+      type: number
+      q: "Where did Earth's average temperature settle, to the nearest degree?"
+      answer: -18
+      tolerance: 2
+      explain: "About −18 °C, more than 30 degrees colder than the 15 °C we actually have. That difference is the natural greenhouse effect."
+    hint: "Read the surface temperature written under the picture, or the end of the line on the graph."
+  - check: { type: board, text: "Put the greenhouse gases back, then find a CO₂ level that leaves Earth about 2 °C warmer than it started, and run until it settles.", when: "t >= 16 and t <= 16.7 and d > -0.3 and d < 0.3" }
+    hint: ["Earth starts at about 14 °C here, so you're aiming for about 16 °C once it stops changing.", "Somewhere between 400 and 500 ppm gets you there. If you overshoot, Start again: a warmer planet doesn't cool back down quickly."]
 ```
 
 ### No greenhouse gases
 
-Press **Remove all greenhouse gases**, then **Run 50 years**. Where does the temperature settle?
+What would happen to Earth's temperature if the air had no greenhouse gases in it at all? Find out on the board, and wait until the temperature stops changing before you decide.
 
-### Double the CO₂
+### How warm?
 
-Press **Put the greenhouse gases back**, drag **CO₂** to 560 ppm or more, then run until energy out equals energy in.
+### Warm it by 2 °C
+
+Now bring the greenhouse gases back and add CO₂ until Earth ends up about 2 °C warmer than where it started. Notice how long it takes to settle.
 
 ## Explain: natural and enhanced
 
@@ -93,6 +104,8 @@ tasks:
 ### Which flow
 
 ### Natural or enhanced
+
+Before about 1800 the air held around 280 parts per million (ppm) of CO₂, and today it's over 420, mostly from burning fossil fuels. Doubling it to 560 ppm is the level scientists often use to compare climate models, and this board's simple model gives about 3 °C of warming for that.
 
 ### Rise and level off
 

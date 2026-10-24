@@ -51,11 +51,15 @@ try: { playground: board, starter: "boards.yml#torch", height: 620 }
 tasks:
   - starter: "boards.yml#torch"
     check: { type: board, text: "Complete the torch: choose the useful energy at each stage and whether each arrow is a transfer or a transformation, then Check.", when: "c = 1" }
+    hint: ["What kind of energy is it before the arrow, and what kind after?", "If they're the same kind, the energy has only moved, and if they're different, it has changed type."]
   - starter: "boards.yml#cocoa"
     check: { type: board, text: "Now a hot chocolate warming your hands.", when: "c = 1" }
+    hint: "Name the kind of energy in the hot chocolate, then the kind in your hands once they've warmed up, and compare the two."
 ```
 
 ### The torch
+
+Look at the energy on each side of an arrow: if it's the same kind, it has only moved, and that's a **transfer**, but if it's changed kind, that's a **transformation**.
 
 ### Hot chocolate
 
@@ -76,6 +80,7 @@ tasks:
         - ["A battery lighting a bulb", "Transformation"]
         - ["A ball falling from a shelf", "Transformation", "Gravitational potential becomes kinetic."]
         - ["Burning wood", "Transformation", "Chemical becomes heat and light."]
+    hint: "For each one, say what kind of energy you start with and what kind you end up with, then compare them."
   - check:
       type: question
       q: "A bulb makes light and heat. Which is the by-product?"
@@ -90,6 +95,7 @@ tasks:
       answer: 0
       feedback: [null, "Energy is never destroyed (Year 9 makes this a law).", "It doesn't flow back by itself."]
       explain: "The heat warms the air a little. It isn't lost, just spread out and not useful."
+    hint: "If you held your hand near the bulb, you'd feel warmth. Where is that warmth going?"
   - check:
       type: sort
       q: "For each device, is it the useful output or a by-product?"
@@ -125,6 +131,7 @@ insight: "A four-stage chain with a by-product in the middle checks the rule on 
 try: { playground: board, starter: "boards.yml#speaker", height: 620 }
 tasks:
   - check: { type: board, text: "Complete the phone speaker, then Check.", when: "c = 1" }
+    hint: ["Go along the chain in order and name the energy at each stage before you choose any arrows.", "A cone that moves back and forth has kinetic energy, and sound is the air vibrating."]
   - check:
       type: question
       q: "The speaker cone gets slightly warm. Where in the flow does that heat come from?"
@@ -147,6 +154,7 @@ insight: "Elastic potential in a bent bow shows a transformation into stored ene
 try: { playground: board, starter: "boards.yml#bow", height: 620 }
 tasks:
   - check: { type: board, text: "Complete the bow and arrow, then Check.", when: "c = 1" }
+    hint: "Before the arrow flies, where is the energy kept? Think about what's different about a bow once it's pulled back."
   - check:
       type: question
       q: "Why does a bow need to be drawn back before the arrow can fly?"

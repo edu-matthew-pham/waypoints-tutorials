@@ -71,6 +71,7 @@ tasks:
         - ["A stretched rubber band", "Potential"]
         - ["A charged battery", "Potential"]
         - ["A diver on a high board", "Potential"]
+    hint: ["For each one, ask whether the energy is doing something right now or just waiting to be let out.", "The line under the coaster board lists which kinds belong to each family."]
   - check:
       type: question
       q: "On the coaster, where is the kinetic energy greatest?"
