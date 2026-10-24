@@ -16,7 +16,7 @@ pacing:
   keyDelayMs: 22
 hook: "Real programs are longer than a few lines. Programmers spend more time reading code than writing it: they find the part that does a job, then change just that part."
 ---
-This program uses only what you already know: loops, names, the counter and updates. It is longer, so the skill now is **reading**: finding which part does which job, and how the parts depend on each other.
+There's nothing new in this program: it's loops, names, the counter and updates. It's just longer, so this time the skill is **reading** it: working out which part does which job, and how the parts lean on each other.
 
 ## Watch it built
 

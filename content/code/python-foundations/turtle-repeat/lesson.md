@@ -63,7 +63,7 @@ clip:
   - expect: { selector: "#turtle-state", contains: "heading 0" }
 ```
 
-The line `for i in range(4):` is new. Read the code. What will the turtle draw?
+The line `for i in range(4):` is new. What do you think the turtle will draw?
 
 ## Run
 

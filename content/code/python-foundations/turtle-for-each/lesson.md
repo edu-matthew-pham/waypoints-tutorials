@@ -51,7 +51,7 @@ check:
   actual: "\"red\", the first colour itself. In for c in colours, c is each item in turn: first \"red\", then \"orange\", and so on. It is not a place number."
 ```
 
-The new line is `for c in colours:`. Read the code. What does `c` hold the first time round?
+The new line is `for c in colours:`. What do you think `c` holds the first time round?
 
 ## Run
 
@@ -99,11 +99,11 @@ tasks:
 
 ### What does c hold?
 
-Follow the name from pass to pass.
+Follow `c` from one pass to the next.
 
 ### Spot the bug
 
-Here is a version where something is wrong.
+Something in here trips the program up partway through.
 
 ## Modify
 
@@ -132,7 +132,7 @@ check:
   explain: "72, 90 and 66 are at least 50, so three bars are green. 45 and 38 are red."
 ```
 
-This program visits each score and decides its colour. Work out the answer before you run it.
+This program goes through the scores and colours each bar. Work it out on paper before you check.
 
 ## Make
 

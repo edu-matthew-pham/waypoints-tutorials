@@ -46,7 +46,7 @@ check:
   actual: "The same spiral. size starts at 0 and grows by 5 on every pass: 0, 5, 10, 15. That is exactly what i * 5 gave last lesson."
 ```
 
-`size = size + 5` is new. Read the code. Will the spiral look different from last lesson's?
+`size = size + 5` is new. Do you think the spiral will look any different from last lesson's?
 
 ## Run
 
@@ -134,7 +134,7 @@ An update has to be inside the loop to happen every pass.
 
 ### Same lengths, two ways
 
-Compare this lesson's way with last lesson's counter.
+The counter did this job last lesson. Can `size` do exactly the same?
 
 ## Modify
 

@@ -63,7 +63,7 @@ check:
   actual: "Three red sides, then three blue. On each pass the program asks one question, i < 3, and runs only one of the two paths. i is 0, 1, 2 for the first three passes (red) and 3, 4, 5 for the last three (blue)."
 ```
 
-`i` is the counter from the spiral. The new line is `if i < 3:`. Read the code. What will the turtle draw?
+`i` is the counter from the spiral, and the new line, `if i < 3:`, asks a question about it on every pass. What do you think the turtle will draw?
 
 ## Run
 
@@ -122,7 +122,7 @@ Work out the condition and the colour for each pass.
 
 ### Spot the bug
 
-Here is a version where something is wrong.
+One small slip here stops the whole program.
 
 ### True or false
 
@@ -155,7 +155,7 @@ check:
   explain: "size is 10, 30, 50, 70, 90, 110. Only 10 and 30 are less than 50, so two lines are red."
 ```
 
-This mixes two lessons: a value that grows, and a decision that reads it. Work it out on paper first.
+Now the decision reads a value that grows, like the spiral's `size`. Work it out on paper before you check.
 
 ## Make
 

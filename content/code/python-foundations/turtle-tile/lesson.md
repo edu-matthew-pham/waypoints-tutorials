@@ -14,7 +14,7 @@ app:
   ready: Python code
   layout: full
 ---
-This is the end of Course A. The program below uses everything you have learned: loops, names, the counter, a list and the remainder. Read it first, then make it your own.
+This is the last lesson of Python Foundations, and the program below uses everything you've learned: loops, names, the counter, a list and the remainder. Read it first, then make it your own.
 
 ## Predict
 
@@ -28,7 +28,7 @@ check:
   actual: "12. The outer loop makes 3 rows and the inner loop makes 4 squares in each row, so 3 × 4 = 12."
 ```
 
-There is a loop inside a loop. Read the code. How many squares will it draw?
+There's a loop inside a loop here. How many squares do you think it will draw?
 
 ## Run
 
@@ -72,7 +72,7 @@ Work out which colour one square gets.
 
 ### Change the list
 
-Predict what a longer list does to the pattern.
+What happens to the pattern when the list gets longer?
 
 ## Modify
 
@@ -108,4 +108,4 @@ Make a tile of your own. Plan it on paper first, then build it:
 
 When it works, change one thing and predict what will happen before you run it.
 
-You have finished Course A. Course B starts from a working program and builds something bigger.
+That's Python Foundations done. Python functions and events starts from a working program and builds it into something bigger.

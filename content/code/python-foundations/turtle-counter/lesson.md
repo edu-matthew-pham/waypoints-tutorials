@@ -46,7 +46,7 @@ check:
   actual: "A spiral. i is 0 on the first pass, 1 on the second, 2 on the third, so i * 5 is 0, 5, 10, and every line is longer than the last."
 ```
 
-`forward(i * 5)` uses the counter to work out how far to go. Read the code. What will the turtle draw?
+This time `forward(i * 5)` uses the counter to work out how far to go. What do you think the turtle will draw?
 
 ## Run
 

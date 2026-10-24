@@ -58,7 +58,7 @@ check:
   actual: "Red and blue take turns. i % 2 is the remainder after dividing i by 2: 0 for 0, 2, 4 and 6, and 1 for 1, 3, 5 and 7. The condition is true on every second pass."
 ```
 
-The new sign is `%`. It does not mean percent: `i % 2` is the **remainder** when `i` is divided by 2. Read the code. What colour are the sides, in order?
+The new sign is `%`, and it doesn't mean percent: `i % 2` is the **remainder** when you divide `i` by 2. What colours do you think the sides will be, in order?
 
 ## Run
 
@@ -117,11 +117,11 @@ Work out the remainder for each pass.
 
 ### What does % give?
 
-Predict the answer to one remainder.
+Try one in your head first.
 
 ### Count the red sides
 
-Use the pattern to answer without drawing.
+You can answer this one without drawing anything.
 
 ## Modify
 
@@ -162,8 +162,8 @@ tasks:
 
 ### Which check wins?
 
-Think about the order Python asks the questions.
+It comes down to the order Python asks its questions in.
 
 ### Work out the length
 
-Combine a name, the counter and the remainder.
+This one needs a name, the counter and the remainder all at once.

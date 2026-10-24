@@ -123,7 +123,7 @@ Work out `angle` yourself before you check.
 
 ### Spot the bug
 
-Here is a version where something is wrong.
+Something small in here stops the shape from closing.
 
 ### A name keeps its value
 

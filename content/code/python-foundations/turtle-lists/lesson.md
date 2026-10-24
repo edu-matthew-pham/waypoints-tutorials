@@ -54,7 +54,7 @@ check:
   actual: "Yellow. The third pass has i = 2, and colours[2] is the item in place 2. Places count from 0, so place 0 is red, place 1 is orange and place 2 is yellow."
 ```
 
-`colours[i]` is the item in place `i`. The counter `i` goes 0, 1, 2 and so on. Read the code. What colour is the third side?
+`colours[i]` is the item in place `i`, and the counter `i` goes 0, 1, 2 and so on. What colour do you think the third side will be?
 
 ## Run
 
@@ -118,7 +118,7 @@ Use the length to find the last item.
 
 ### Spot the bug
 
-Here is a version where something is wrong.
+Count the passes, then count the colours.
 
 ## Modify
 
@@ -157,4 +157,4 @@ check:
 unlocks: [list]
 ```
 
-This mixes three lessons: a name, the counter, and a list. Work it out on paper first.
+This one needs a name, the counter and a list together. Work it out on paper before you check.

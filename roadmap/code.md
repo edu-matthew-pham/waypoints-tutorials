@@ -135,6 +135,7 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 - **Hidden assumptions:** use the `introduces`/`assumes`/`recipes` lint plus scaffolds inside lessons; no "Before you start" card. MakeCode, HTML, p5.js and the turtle lessons are tagged.
 - **No vendor CDN at run time:** p5, Pyodide, microStudio and Teachable Machine are all served from our site.
 - **No student accounts on our site.** Progress is saved per browser.
+- **Voice (25 Oct, Matthew):** student-facing text reads the way you'd say it to a student at their desk, using the maths chat's rules (`maths-when-where-why.md` › Voice). For Code that means no stage directions ("Read the code.", "This mixes two lessons"), no internal names ("Course A"), and asking rather than labelling. Python Foundations has had a pass.
 
 ## Proposed (discussed, not decided)
 
@@ -277,6 +278,7 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - An Arcade "Worlds" unit (tilemaps); a picture of the robot arena.
 
 ## Log
+- 25 Oct: voice pass over Python Foundations' lesson prose (Predict intros, bug-task and Mix it up lead-ins, the Course A/B names); `lesson.md` only, no clips re-record.
 - 25 Oct: reply to the shared `smaller:` proposal (Proposed); Courses block brought up to date (Python split into two courses, console 11 lessons and foundations, HTML & CSS split, DOM 10).
 - 12 Oct: micro:bit and Arcade project briefs (8); MakeCode brief pictures drawn by the simulator.
 - 12 Oct: open projects (10 briefs, self-assessed badges, skills lit by the concept scan), `microbit.js` with a pretend micro:bit, recap on four foundations courses.
