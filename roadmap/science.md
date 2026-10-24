@@ -2,6 +2,77 @@
 
 The science chat's file. Lessons live in `content/science/` (see CLAUDE.md › Science).
 
+## Proposed (25 Oct 2026, science chat; not built): hints, board lead-ins, and two lesson fixes
+
+Response to roadmap/shared.md › *Proposed (25 Oct): support when it's needed, invisible when it isn't* and its Amended block. Science agrees with the principle and the amendments (`smaller:` not `support:`, never counted, not on a Code Predict; science Engage only where the step is already a move). Nothing below is built.
+
+### Hints first (Year 8 review pass)
+
+No shared change is needed: `lesson-view` already renders `hint:` on a step and on each task panel, with or without a playground (checked 25 Oct). Hints live in `lesson.md`, so no clip re-records.
+
+**Where, in order.** Physics 8 (3 lessons: the energy chain is the board-lead-in pilot below, so its hints are the model), then Chemistry 8 (10), Biology 8 (8), Earth 8 (3 tutorials; the two Quick checks get none). In each lesson:
+- every `board` task (about 67 across Year 8): these are where students stall with nothing on screen to help;
+- Explain checks that a `stuck:` entry in `teacher.yml` addresses (usually one or two per lesson);
+- not Engage (a hint before lock-in hands over the misconception the prediction exists to surface), not `reflect`, not the Evaluate look-back.
+
+**What a science hint is.** Two at most, escalating: (1) the deciding question, lifted from `stuck.ask` and turned to the student ("Name the energy type on each side of the arrow. Same or different?"); (2) where to look on the board or in the lesson ("The box under the board says what each word means"). Never an option's wording, never the board's target value. A science hint points at evidence; it doesn't explain.
+
+**How it differs from what's already there.**
+- *Hint:* before answering, a question or a place to look. The student still decides.
+- *Feedback:* after a wrong option, names that slip (already on every question since the 11 Oct audit).
+- *`explain:` on a check and the Explain it to me text:* after answering, or on demand, the idea stated in full. A hint that states the rule is an explain in the wrong place.
+- *`smaller:` (later):* a different, easier check, not more words.
+
+Validate already flags a first hint that gives a number check's answer; nothing new needed. Rough size: about 90 hints, one push per course.
+
+### Board lead-ins: what `smaller: { starter, check }` needs
+
+From the three examples in shared.md, read against the widgets:
+
+| Lesson and task | Lead-in board (`starter`) | `check` | Widget change? |
+|---|---|---|---|
+| physics-8/transform, Explore torch | `energy`, `mode: chain`, two stages (Wires electrical → Bulb light). New `boards.yml#torch-1` region. | board, `when: "c = 1"`; or a question after it ("Did the type change?") | None: stages are already free |
+| earth-10/greenhouse, Explore task 2 | `climate`, `mode: balance` (sun and albedo only, no CO₂): turn the sun up, run | question: "Energy out is less than energy in. What happens to T?" (the board shows d and the note) | None |
+| biology-9/feedback, Explore | `coordination`, `mode: feedback`, one direction only (hot) | question: "Body is back at 37 °C. Is sweating still on?" | Yes, small: `feedback` has no one-direction option (only `break: on`); add `push: hot \| cold` |
+
+So the shape is:
+
+```yaml
+smaller:
+  starter: "boards.yml#torch-1"     # its own region; never the step's starter
+  check: { type: board, text: "...", when: "c = 1" }   # or question / number
+  height: 360                        # optional; lead-in boards are small
+```
+
+What it needs from the shared change, beyond the plain kinds:
+1. **Its own board, not the step's.** A second iframe under the hints (opened on click, like the MakeCode editors, so a lesson with six lead-ins loads none until asked). Reusing the step's board would wipe the student's work on the real task.
+2. **The check reads that iframe's values only.** Board checks today listen to the step's board; the lead-in's `when:` must bind to its own frame.
+3. **`starter` must be a region in the same lesson** (validate checks it, as for `try:`), so the lead-in board shares the lesson's clip hash (no new hash rule) and Create can show it.
+4. **Never counted, never in the clip, deck or worksheet** (Amended block). The teacher guide could list it beside `support:` (it's the board form of the decision card).
+5. **One per task**, as for `hint:`; a step with several tasks puts it on the task.
+
+Two of the three need no widget work, so the pilot can be transform and greenhouse; feedback waits for the `push:` option.
+
+### Check 1: does physics-8/transform ask students to classify before Explain defines the terms?
+
+**Partly, yes.** Explore's first task says "choose ... whether each arrow is a transfer or a transformation", and the only place the two words are defined before Explain is one line of small text at the foot of the `energy` board, under Check ("Transfer: the same type of energy moves to another place. Transformation: the energy changes type."). The lesson text doesn't define them (the intro line and the Engage reveal say "changes type" but never name either word), and the Explore headings (*The torch*, *Hot chocolate*) have no prose. The step's own insight says Explore makes the distinction "a rule students apply", so it is meant to be applied, not discovered; the teacher's running note ("ask what the red arrows had in common") leans the other way.
+
+Proposed fix (lesson.md only, no clip re-records): under *The torch*, one plain line giving the rule as a decision, the same words as the teacher's `support:` card: "For each arrow, name the energy type on each side. Same type? It's a **transfer**: it only moved. Different type? It's a **transformation**." Explain then confirms and sorts unfamiliar cases, as now. Change the running note to "ask which rule the red arrows broke". (The alternative, a discovery Explore with the board's definition line hidden until Check, needs a widget change and asks Year 8s to invent two technical words; not worth it.)
+
+### Check 2: is the greenhouse Explore a recipe?
+
+**Yes.** Both tasks name every button and the target: "Press **Remove all greenhouse gases**, then **Run 50 years**"; "Press **Put the greenhouse gases back**, drag **CO₂** to 560 ppm or more, then run until energy out equals energy in." The student decides nothing, the checks only confirm the buttons were pressed (`z = 1`; `g >= 560 and b = 1`), "Where does the temperature settle?" is asked but never answered, and the Engage reveal has already said what will happen.
+
+Proposed fix (lesson.md and the same board; no widget change, since `t`, `w`, `g` and `b` are already reported):
+- *Task 1, no greenhouse gases:* "Without any greenhouse gases, would Earth be warmer or colder, and by about how much? Find out on the board." Board check `z = 1`, then a number check: the settled temperature (about −18 °C, tolerance a few degrees). Buttons are named once in a hint, not in the text.
+- *Task 2, more CO₂:* "Find a CO₂ level that warms Earth by about 2 °C, and say how long it takes to settle." The student chooses the CO₂; check on the warming (`w` is the highest surface temperature reached, so the `when:` is the start temperature plus the target, plus `b = 1`; the target is set from the model's own sensitivity when built), then a question on what made it level off (moves the third Explain question's idea into Explore as an observation, and Explain keeps the "why").
+- The 560 ppm "double pre-industrial" fact moves to the Explain text, where it is information, not an instruction.
+- Explain clip and picture are untouched (they use `#explain`), so nothing re-records.
+
+### Order, if Matthew says go
+
+(1) The two lesson fixes (transform line, greenhouse Explore), one push. (2) Physics 8 hints, then Chemistry, Biology, Earth 8, a push each. (3) After the shared `smaller:` build and the maths pilot: board lead-ins on transform and greenhouse; the `push:` option on `coordination` and the feedback lead-in after that.
+
 ## Done: coach prompts on science recap pages (12 Oct 2026, science chat)
 
 `coach: true` on all 15 science courses: each recap card has a "Still stuck? Copy a coach prompt" box, hidden unless the teacher shares the recap link with `?coach=1`; the teacher guide shows each lesson's full prompt. Prompts are one move each (node, criteria, misconceptions from `stuck:`, one step back), with the coaching rules adapted from the Waypoints Kit's `coach.md` (modes, no giveaways, a reflective question after help, the AI may be wrong), made self-contained because the Kit's read-this-URL prompt needs a browsing AI and still points at the suspended account (roadmap/shared.md › coach prompt; UTS cognitive offloading paper). Tested: hidden without the flag, shown and copied with it, guide section present. School context: CGGS is trialling Microsoft 365 Copilot with Study and Learn; test a prompt there before sharing the link with students.
