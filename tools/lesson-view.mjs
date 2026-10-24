@@ -469,10 +469,11 @@ c.hidden=false}});
 // Full screen / inline for each playground: a class, not the Fullscreen API, so it works on iPads and the
 // playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
 function mkOpen(t){var f=t.querySelector('iframe[data-src]'),l=t.querySelector('.mkload');if(!f||f.src)return;f.src=f.dataset.src;f.hidden=false;if(l)l.remove()}
+document.querySelectorAll('details.smaller').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)[].forEach.call(d.querySelectorAll('iframe[data-src]'),function(f){if(!f.src&&!f.closest('.mkload'))f.src=f.dataset.src})})});
 document.querySelectorAll('.mkopen').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.try');mkOpen(t);if(t.dataset.wide&&t._full)t._full(true)})});
 // In full screen the step's instructions and checks are hidden behind the playground, so a task drawer repeats them:
 // the step's (or the open task's) text, hints and code pictures, then the code checks with their ticks. Hide task folds the text away.
-document.querySelectorAll('.try').forEach(function(t){var s=t.closest('.step'),h=t.querySelector('.try-head');if(!s||!h)return;
+document.querySelectorAll('.try').forEach(function(t){var s=t.closest('.step'),h=t.querySelector('.try-head');if(!s||!h||t.closest('details.smaller'))return;
 var w=t.closest('.tasks'),cs=[].slice.call(s.querySelectorAll('.check[data-type="code"]'));
 var box=document.createElement('div');box.className='try-task';var body=document.createElement('div');body.className='tt-body';
 var bar=document.createElement('div');bar.className='try-checks';bar.setAttribute('aria-live','polite');box.appendChild(body);if(cs.length)box.appendChild(bar);
@@ -495,7 +496,7 @@ document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.tr
 t._full=function(on){t.classList.toggle('full',on);document.body.classList.toggle('try-open',!!document.querySelector('.try.full'));b.setAttribute('aria-pressed',String(on));b.textContent=on?'Exit full screen':'Full screen';if(!on)b.focus()};
 b.addEventListener('click',function(){mkOpen(t);t._full(!t.classList.contains('full'))})});
 document.addEventListener('keydown',function(e){var f=document.querySelector('.try.full');if(e.key==='Escape'&&f)f._full(false)});
-(function(){var id=new URLSearchParams(location.search).get('full');if(!id)return;var sec=document.getElementById(id);var t=sec&&sec.querySelector('.try');if(!t||!t._full)return;
+(function(){var id=new URLSearchParams(location.search).get('full');if(!id)return;var sec=document.getElementById(id);var t=sec&&[].find.call(sec.querySelectorAll('.try'),function(x){return !x.closest('details.smaller')});if(!t||!t._full)return;
 var ifr=t.querySelector('iframe');if(ifr)ifr.loading='eager';mkOpen(t);setTimeout(function(){t._full(true)},50)})();
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='esc')return;
 document.querySelectorAll('.try.full').forEach(function(f){var i=f.querySelector('iframe');if(i&&i.contentWindow===e.source)f._full(false)})});
@@ -526,8 +527,8 @@ box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw(
 [].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))});
 // MakeCode: the newly opened task checks the work already in the editor (the last report), without waiting for an edit.
 var oc=w.querySelector('.tpanel.active .check[data-type="code"][data-play]');if(oc&&(oc.dataset.kind==='microbit'||oc.dataset.kind==='arcade')&&window.wpLast&&window.wpLast[oc.dataset.play])window.postMessage(window.wpLast[oc.dataset.play],location.origin);
-if(w.dataset.kind==='board'||w.dataset.kind==='maths'||w.dataset.kind==='science'){var rs=w.querySelector('.tpanel.active .resetstart'),f=w.querySelector('iframe');if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
-[].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=w.querySelector('iframe');if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
+if(w.dataset.kind==='board'||w.dataset.kind==='maths'||w.dataset.kind==='science'){var rs=w.querySelector('.tpanel.active .resetstart'),f=[].find.call(w.querySelectorAll('iframe'),function(x){return !x.closest('details.smaller')});if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
+[].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=[].find.call(w.querySelectorAll('iframe'),function(x){return !x.closest('details.smaller')});if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
 sync(w)});
 })();`;
 
@@ -546,7 +547,7 @@ const shuffled = (arr, seed) => { const r = seeded(seed), a = arr.slice(); for (
  * snippet(ref) reads code for bug and parsons checks.
  */
 export function checkHtml(lesson, step, names = {}, snippet = null, task = null, tx = esc, lead = null) {
-  // lead: { k, key } for a smaller: lead-in (its own check and key, never unlocks; never in the progress manifest).
+  // lead: { k, key, play } for a smaller: lead-in (its own check and key, never unlocks; never in the progress manifest).
   const k = lead ? lead.k : task ? task.config.check : step.config.check;
   if (!k) return '';
   const kind = unlockKind(lesson, step);
@@ -556,7 +557,7 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
   // Explanations are shown with textContent, so maths in them is shown as plain text: "$2x$" becomes "2x".
   const plain = (t) => (lesson.language === 'maths' ? String(t).replace(/\$([^$]+)\$/g, '$1') : t);
   const explain = plain(k.explain || '');
-  const base = `data-key="${esc(key)}" data-play="${esc(`${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-subj="${esc(lesson.language || '')}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(explain)}"`;
+  const base = `data-key="${esc(key)}" data-play="${esc(lead?.play || `${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-subj="${esc(lesson.language || '')}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(explain)}"`;
   const msg = '<p class="msg" aria-live="polite"></p>';
   if (k.type === 'reflect') {
     return `<div class="check" ${base}><label><input type="checkbox"><span>${tx(k.text)}</span></label>${msg}</div>`;
@@ -728,8 +729,15 @@ export function lessonPageHtml(lesson, deps) {
   const smallerOf = (s, owner, id) => {
     const v = owner?.smaller;
     if (!v?.check) return '';
-    const lead = checkHtml(lesson, s, snippetNames, snippet, null, tx, { k: v.check, key: `${lesson.slug}/${id}~smaller` });
-    return `<details class="smaller"><summary>Need a smaller step?</summary>${v.code ? codeOf(v.code) : ''}${lead}</details>`;
+    // A board lead-in (starter:) gets its own board: a stand-in step with id <id>~smaller, so the board reports under that
+    // id, only the lead-in's check listens to it, and the step's own board and checks never see it. It loads on opening.
+    let board = '';
+    if (v.starter && s.config.try) {
+      const stand = { ...s, id: `${id}~smaller`, tasks: [], config: { ...s.config, try: { ...s.config.try, starter: v.starter, height: v.height || 360 } } };
+      board = tryHtml(stand).replace(' loading="lazy"', '').replace(/<iframe([^>]*) src="/, '<iframe$1 data-src="');
+    }
+    const lead = checkHtml(lesson, s, snippetNames, snippet, null, tx, { k: v.check, key: `${lesson.slug}/${id}~smaller`, play: `${lesson.slug}/${id}~smaller` });
+    return `<details class="smaller"><summary>Need a smaller step?</summary>${v.code ? codeOf(v.code) : ''}${board}${lead}</details>`;
   };
   const steps = lesson.steps.map((s) => {
     const c = s.config;

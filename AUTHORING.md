@@ -375,7 +375,16 @@ smaller:
   check: { type: number, q: "With no turn, all six hexagons land on top of each other. How far should the turtle turn between them so the six go once round?", answer: 60, explain: "Once round is 360, shared between 6 copies." }
 ```
 
-- **Kinds:** `question`, `number`, `trace`, and `answer` in `language: maths` lessons (Numbas). Never `code`, `predict`, `flag` or `board`: board lead-ins (`smaller: { starter, check }`, the board set to a simpler case in its own frame) are not built yet; the shape is in roadmap/science.md.
+- **Kinds:** `question`, `number`, `trace`, `answer` in `language: maths` lessons (Numbas), and `board` with its own `starter:` (below). Never `code`, `predict` or `flag`.
+- **Board lead-ins** (built 25 Oct, push 2): the board set to a simpler case, in its own frame. `starter:` is a region in this lesson (a `boards.yml` or `formula.yml` region, never the step's own starter), on a step whose playground is `board` or `science`; the lead-in gets a board of the same kind, `height:` optional (default 360). It loads only when the fold opens, and its check (a `board` check with `when:`, or a question or number about what it shows) reads only that board, so the step's own board and the student's work on it are untouched.
+
+```yaml
+- starter: "boards.yml#torch"
+  check: { type: board, text: "...", when: "c = 3" }
+  smaller:
+    starter: "boards.yml#torch-1"     # two stages only: Wires → Bulb
+    check: { type: question, q: "The energy goes from the wires into the bulb. Has it changed kind?", options: ["Yes, electrical into light", "No, it's the same kind"], answer: 0 }
+```
 - **Where:** on the step or task that has the real check (a step with tasks puts it on the task). Not on a Predict outside maths: it would hand over the misconception the prediction is there to surface. Maths Predicts that are already a move with numbers can have one. No `code:` in MakeCode lessons yet (it needs a blocks picture).
 - **Never counted:** its key ends `~smaller`; it is left out of the progress manifest, the course row, the task tally and the full-screen drawer's tick bar (the drawer shows one line pointing back to the page). It never shows on the deck or the worksheet; the teacher's equivalent is `support:` in `teacher.yml`.
 - **Only where students stick.** The lesson's `stuck:` list and, for maths, science and Digital systems, the node's hinge reason and "Does not confuse…" criteria say where. Start from a `stuck.ask` that's a thinking step (not an error message the friendly errors already answer) and rewrite it as you'd say it at the desk.

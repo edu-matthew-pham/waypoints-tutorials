@@ -60,8 +60,8 @@ export const MAKECODE_EXTENSIONS = {
 export const makecodeExtensions = (lesson) => (Array.isArray(lesson?.extensions) ? lesson.extensions : []).map((k) => MAKECODE_EXTENSIONS[k]).filter(Boolean);
 /** A lesson's extensions as MakeCode's package string ("name=version,name=version"), or '' for none. */
 export const makecodePackage = (lesson) => makecodeExtensions(lesson).map((e) => `${e.name}=${e.version}`).join(',');
-/** Check types a smaller: lead-in may use (never code, predict, flag or board in this version). */
-export const SMALLER_TYPES = ['question', 'number', 'trace', 'answer'];
+/** Check types a smaller: lead-in may use (never code, predict or flag; board only with its own starter:). */
+export const SMALLER_TYPES = ['question', 'number', 'trace', 'answer', 'board'];
 export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board', 'sort', 'flag', 'working', 'reasoning'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
@@ -636,12 +636,20 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
   };
 
   // smaller: a folded lead-in check beside hint: (roadmap/shared.md › support on demand; AUTHORING › Smaller step).
-  // { check, code? }: one easier check that does half the move, never counted. Board lead-ins ({ starter }) come later.
+  // { check, code?, starter?, height? }: one easier check that does half the move, never counted; starter: gives it its own board.
   const validateSmaller = (v, where, c, owner) => {
     if (v === undefined) return;
     const w = `${where} smaller`;
-    if (!v || typeof v !== 'object' || Array.isArray(v)) return err(w, 'smaller must be a mapping: { check: { type: question | number | trace, ... }, code?: file#region }');
-    for (const k of Object.keys(v)) if (!['check', 'code'].includes(k)) err(w, k === 'starter' ? 'board lead-ins (starter:) are not built yet; use a question, number or trace check' : `unknown field "${k}" (use check, code)`);
+    if (!v || typeof v !== 'object' || Array.isArray(v)) return err(w, 'smaller must be a mapping: { check: { type: question | number | trace | board, ... }, code?: file#region, starter?: file#region }');
+    for (const k of Object.keys(v)) if (!['check', 'code', 'starter', 'height'].includes(k)) err(w, `unknown field "${k}" (use check, code, starter, height)`);
+    // Board lead-ins: starter: is a region in this lesson, on a step whose playground is the board or the science board.
+    if (v.starter !== undefined) {
+      if (!['board', 'science'].includes(c.try?.playground)) err(w, 'starter: needs the step to have a board playground (try: { playground: board | science }); the lead-in gets its own board of that kind');
+      if (typeof v.starter !== 'string') err(w, 'smaller.starter must be file#region, e.g. boards.yml#torch-1');
+      else { try { snip(v.starter); } catch (e) { err(w, `starter: ${e.message}`); } }
+    }
+    if (v.height !== undefined && !(Number.isFinite(v.height) && v.height >= 200 && v.height <= 900)) err(w, 'smaller.height must be a number of pixels between 200 and 900');
+    if (v.check?.type === 'board' && v.starter === undefined) err(w, 'a board lead-in needs its own starter: (never the step\'s board: it would wipe the student\'s work)');
     if (!owner?.check) err(w, 'a smaller step leads into a check: put it on a step or task that has one');
     const pred = c.stage === 'predict' || owner?.check?.type === 'predict';
     if (pred && !String(lesson.slug || '').startsWith('maths/')) err(w, 'no smaller step on a Predict: it would hand over the misconception the prediction is there to surface');
