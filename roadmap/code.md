@@ -307,6 +307,7 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - An Arcade "Worlds" unit (tilemaps); a picture of the robot arena.
 
 ## Log
+- 25 Oct: first three `smaller:` lead-ins (turtle-decisions Make, turtle-parameters Make, console-check Modify), tested headless: fold above the hints, each answers and ticks, keys end `~smaller`, nothing in the manifest, full screen shows the pointer line only. turtle-parameters gained a `no-turn` region, so its clips re-record once.
 - 25 Oct: real-world examples register (`roadmap/code-real-world.md`) and six proposals; Bootstrap brief moved from an event page to a local business.
 - 25 Oct: voice pass on Web (every Predict's "Read the code.", Course A/B names in lessons and primers, one Mix it up) and three leftovers (Python functions, CSS, Objects); MakeCode prose read, no changes. CLAUDE.md: pathways and HTML & CSS lines brought up to date.
 - 25 Oct: voice pass over Python Foundations, then the same patterns in Python functions and events and Console (11 lines)' lesson prose (Predict intros, bug-task and Mix it up lead-ins, the Course A/B names); `lesson.md` only, no clips re-record.

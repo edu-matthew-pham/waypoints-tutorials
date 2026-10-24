@@ -121,6 +121,17 @@ hint:
   - "Ask for two answers, store them as text, and check both: first.isdigit() and second.isdigit()."
   - "Inside the if, convert each with int and print the total."
 check: { type: code, text: "Ask for two numbers, check both, and print their total.", rules: { contains: [".isdigit() and", "int("] } }
+smaller:
+  check:
+    type: trace
+    text: "Fill in what the check gives for each pair, and whether the if or the else runs."
+    table: |
+      | first | second | first.isdigit() and second.isdigit() | runs |
+      | 3 | 4 | True | if |
+      | 3 | four | [False] | [else] |
+      | three | 4 | [False] | [else] |
+      | 12 | 05 | [True] | [if] |
+    explain: "and only gives True when both answers are digits, so only then does the if add them up. One word in either box and the else runs."
 ```
 
 Change the program so it asks for **two** numbers, checks both, and prints their total. If either answer is not a number, print a message instead.

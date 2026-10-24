@@ -156,3 +156,12 @@ room(4, 2)    # bathroom
 move_to(-8, 0)
 room(9, 3)    # living room
 # endregion
+
+# region: no-turn
+def pattern(sides, copies):
+    for i in range(copies):
+        polygon(sides, 80)
+
+
+pattern(6, 6)
+# endregion

@@ -154,6 +154,13 @@ check:
   text: "Write pattern(sides, copies) and run it."
   rules: { defs: 2, calls: 1 }
 unlocks: [save-as-button]
+smaller:
+  code: params.py#no-turn
+  check:
+    type: number
+    q: "With no turn, all six hexagons land on top of each other. How far should the turtle turn between them so the six go once round?"
+    answer: 60
+    explain: "Once round is 360, shared between 6 copies, so each turn is 60."
 ```
 
 Write `def pattern(sides, copies):` that draws `copies` polygons, turning a little between them so they fan out around a point.

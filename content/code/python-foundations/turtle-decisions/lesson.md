@@ -167,6 +167,23 @@ hint:
   - "The condition reads size: if size < 60, the pen is red; else it is blue."
 check: { type: code, text: "Colour the spiral with an if / else that reads size.", rules: { uses: [pencolor], loops: 1 } }
 unlocks: [if-else]
+smaller:
+  code: decisions.py#make
+  check:
+    type: question
+    q: "Each line needs its own colour, so where should the if and else go?"
+    options:
+      - "Inside the loop, just before forward(size)"
+      - "Above the for line"
+      - "After the loop"
+      - "Inside the loop, after size = size + 10"
+    answer: 0
+    feedback:
+      - null
+      - "Up there it's asked once, before any line is drawn, so every line gets the same colour."
+      - "By then every line is already drawn, so the colour changes nothing."
+      - "That runs, but each line gets the colour meant for the next one, so the cut-off slips along by one."
+    explain: "The loop draws one line each time round, so the choice goes inside it, just before the line it colours."
 ```
 
 The spiral grows by 10 every pass. Make it **red while the lines are short and blue once they are long**. Then try a different cut-off, or a third colour of your own once you have seen `elif` next lesson.
