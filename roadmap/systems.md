@@ -130,12 +130,34 @@ None needs a board starter; all three are the plain kinds in step (1) of the sha
 
 (1) Lesson-text fixes: data-as-numbers intro and hints, pipes (`head`, the OS framing), files framing, Who can see your data?, run-length, the one-Elaborate and hint fixes across Cyber; (2) the Sam rename; (3) the Passwords 5E rebuild, then decide the other seven; (4) the hashes split; (5) hex; (6) the three `smaller:` lines once the shared field lands; (7) the map row, after a note in shared.md.
 
+## Proposed (25 Oct 2026): Years 5–6, "Starting out" (not built; waiting for "go")
+
+Why: primary coverage of AC9TDI6K01–6K04 is uneven, and every Years 7–8 course here assumes it (the kit lists 6K03 and 6K04 as prior knowledge for 8K03). One short course serves Years 5–6 classes, Year 7 students who missed it, and high school teachers who want the primary half of the strand in front of them. The map's "Before Year 7" column already shows these four descriptors; tagged lessons would fill its dots.
+
+**Shape.** One course, `systems/starting` ("Starting out", Years 5–6, also a Year 7 catch-up), eight lessons, one per kit node, explicit shape (Predict, Try, Worked example, Vary, Practise, Make) on the shared board. Years 5–6 reading level: short sentences, no place-value notation, no powers, numbers under 100 where possible, a story thread (the Coding Club's younger members). Each `teacher.yml` adds a line for a Year 7–8 teacher using it as catch-up ("if they've done it, go straight to …"), and a unit primer for teachers new to the content. Its own pathway, "Start here", listed first; no other course is `after:` it (options, not gates), but Everything is numbers, Bits and binary numbers, What the specs mean and Wired or wireless each name it in teacher notes.
+
+| # | Node | Lesson | Board |
+|---|---|---|---|
+| 1 | 6K03 n1 (hinge) | Letters are numbers: type a name, see its numbers; a secret code club where A is 65 | `decode` with `type: on`, `as: text` |
+| 2 | 6K03 n2 | What can you do with it? 12 and 3 as numbers add to 15; as text they join to 123 | question checks; or a small `decode` option (`join:`) if a board earns it |
+| 3 | 6K04 n1 (hinge) | On or off: a light switch is 1 or 0; one switch, two switches, how many patterns (by listing, not 2ⁿ) | `bits` with `number: off`, dot cards only |
+| 4 | 6K04 n2 | Counting dots: turn cards face up to make a number by adding the dots; then the letter A as switches | `bits` (dots, no binary place value named), then `decode` |
+| 5 | 6K01 n1 (hinge) | The parts inside: input, processor, memory, storage, output, each with one job | **new `parts` widget** (below) |
+| 6 | 6K01 n2 | Working together: press a key on a game console and follow it through the parts; take one part away and see what stops | `parts` |
+| 7 | 6K02 n1 (hinge) | Joining computers: cable or Wi-Fi, home, school and the internet | `network` `mode: link` with numbers hidden (a new `simple: on` option) |
+| 8 | 6K02 n2 | Messages in pieces: a message split into numbered pieces travels through several devices and is put back in order | `network` `mode: packets`, TCP off, few routers |
+
+**New board work.** `parts` (a small widget: five labelled parts of a games console or a school laptop, a button press that lights the path input → processor ↔ memory → output, storage for saving, and a switch to take a part away; values for checks). `simple: on` on `network` link mode (words instead of Mb/s and ms). `bits` already has `number: off`. Ports 8548–8555.
+
+**Decisions for Matthew:** (1) one "Start here" course, or a short course at the start of each pathway (Data, Hardware, Networks); (2) the new `parts` widget, or teach 6K01 with pictures and question checks only; (3) explicit shape (recommended at this age) or the inquiry 5E shape Packets uses.
+
 ## Next
 
-1. Years 5–6 versions (AC9TDI6K03, 6K04): counting dots, no place-value notation.
+1. Years 5–6: proposed above (Starting out).
 2. A CTF scoreboard (points, hints that cost points) only if classes want one; it would need storage the site doesn't have.
 3. Trial Packets and Passwords (inquiry 5E) against an explicit-shape lesson on one concept, then decide which concept lessons to rebuild the same way (candidates: the other seven Cyber missions, Everything is numbers, Who can see your data, Threat models).
 
 ## Open questions
 
-- Subject name: "Digital systems" (working name) or "How computers work".
+(Subject name decided 25 Oct: **How computers work**, display name only; the folder stays `systems/`.)
+

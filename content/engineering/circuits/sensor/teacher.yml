@@ -9,7 +9,7 @@ struggle: "Three scales at once (percent, reading, volts) blur together. Keep a 
 before: |
   Model: analog read is 0–1023 for 0–3.3 V (the micro:bit's 10-bit reading); the knob and the light sensor give a voltage in proportion to the position or the light. Real light sensors (photoresistors) are far from linear, which Tinkercad will show.
 
-  Links: Digital systems › binary (10 bits make 1024 patterns, 0 to 1023).
+  Links: How computers work › binary (10 bits make 1024 patterns, 0 to 1023).
 running:
   - "Predict: ask those who chose 1.65 what unit analog read gives."
   - "Worked example: draw the three scales one above the other."
@@ -27,7 +27,7 @@ support: "A printed number line with 0, 512 and 1023 above 0 V, 1.65 V and 3.3 V
 leads: |
   Next: the Arduino unit (the same circuits on an Uno: analogRead gives 0 to 1023 there too).
 
-  Digital systems: How many patterns? (10 bits). Code: micro:bit Foundations sensors (light level 0–255 is a different scale).
+  How computers work: How many patterns? (10 bits). Code: micro:bit Foundations sensors (light level 0–255 is a different scale).
 exit:
   q: "Pin 0 reads 256. Roughly how many volts are on it, and what fraction of the way up is the knob?"
   a: "About a quarter of the way up, so about 0.83 V (256 ÷ 1023 × 3.3)."

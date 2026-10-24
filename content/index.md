@@ -29,7 +29,7 @@ about: |
 
   **Science** lessons follow the **5E** model: they *engage* students by drawing out what they already think, let them *explore* it in a simulation, *explain* the idea, *elaborate* it in new contexts, then *evaluate* what they've learned. They sit beside practical work, never instead of it.
 
-  **Engineering** and **Digital systems** lessons work the same way as maths: predict, try it on a model, see a worked example, vary one thing, practise, then make something. Engineering is an elective layer beside the core subjects.
+  **Engineering** and **How computers work** lessons work the same way as maths: predict, try it on a model, see a worked example, vary one thing, practise, then make something. Engineering is an elective layer beside the core subjects.
 
   **Learning with AI:** [Explore the student courses](ai/) · [Choosing AI tools for learning — teacher guide](choosing-ai-tools/)
 

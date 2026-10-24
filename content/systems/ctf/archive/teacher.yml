@@ -1,4 +1,4 @@
-summary: The course challenge. Students find five flags in the club's fictional old archive, each with a skill from Digital systems (layered decoding, page source, ls -a and grep, a tiny processor's output read as character codes, and a key word kept beside its data), name the weakness behind each, and fix the front page's leaks (AC9TDI8K02 node 4, AC9TDI10P14 node 3). Defensive throughout. A 5E mission lesson.
+summary: The course challenge. Students find five flags in the club's fictional old archive, each with a skill from How computers work (layered decoding, page source, ls -a and grep, a tiny processor's output read as character codes, and a key word kept beside its data), name the weakness behind each, and fix the front page's leaks (AC9TDI8K02 node 4, AC9TDI10P14 node 3). Defensive throughout. A 5E mission lesson.
 time: 50
 timing: "Engage 3 min · Explore (flags) 30 min · Explain 5 min · Elaborate 7 min · Evaluate 5 min"
 goals:
@@ -29,7 +29,7 @@ stuck:
   - see: "A student is stuck on flag 5."
     ask: "Did you find a name in the archive that could be a key word?"
     fix: "The hidden folder from flag 3, without its dot."
-stretch: "Design a sixth flag for the archive using another Digital systems idea (binary, pixels, or packets), with three escalating hints."
+stretch: "Design a sixth flag for the archive using another How computers work idea (binary, pixels, or packets), with three escalating hints."
 support: "A card listing the five skills and where each was taught."
 leads: |
   End of the course. Security and privacy (Years 9–10) has its own capture the flag on a school portal.

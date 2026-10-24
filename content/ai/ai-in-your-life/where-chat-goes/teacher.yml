@@ -6,7 +6,7 @@ goals:
   - "I can leave out personal details a question doesn't need."
 before: |
   **Core idea:** your chat can be kept, read and learned from; check settings and leave out what isn't needed. Kind: makes new content.
-  **The board** (`consent` widget, mode trace) is made up: Club Helper, an AI feature in the Coding Club app from Digital systems › Cyber safety and privacy. Its stages and defaults (training on, history on, 30-day deletion with history off, some chats reviewed for safety) are modelled on common patterns in real AI apps, not copied from any one company. Platform-agnostic by design (decision, 18 Oct 2026).
+  **The board** (`consent` widget, mode trace) is made up: Club Helper, an AI feature in the Coding Club app from How computers work › Cyber safety and privacy. Its stages and defaults (training on, history on, 30-day deletion with history off, some chats reviewed for safety) are modelled on common patterns in real AI apps, not copied from any one company. Platform-agnostic by design (decision, 18 Oct 2026).
   Link to Cyber safety and privacy › Your digital footprint (8P14) for the footprint, and › The Australian Privacy Principles (10P14) for the APPs; this lesson doesn't re-teach them.
   Optional, for teachers: show one real company's data-controls page and **write the date you checked it on the slide**; these pages change often.
   **Re-check after 10 Dec 2026:** whether the Children's Online Privacy Code was registered, and what the final version says.

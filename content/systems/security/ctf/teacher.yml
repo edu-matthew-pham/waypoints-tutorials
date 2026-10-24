@@ -32,7 +32,7 @@ stuck:
 stretch: "Write a one-page security report for the portal: each finding, how serious it is (low, medium, high), and the fix."
 support: "A checklist card: names and addresses, hashes, permissions, keys, with the board for each."
 leads: |
-  This closes Security and privacy, and the Digital systems Years 9–10 work on 10K01.
+  This closes Security and privacy, and the Years 9–10 work on 10K01.
 
   Code links: Secret messages (micro:bit ciphers, key exchange, challenge and response, its own capture the flag).
 exit:

@@ -28,7 +28,7 @@ pathways:
     about: |
       Two parallel courses after AI Foundations. Neither needs the other, or Does AI Help Us Learn?. Cases, not lectures; every activity works on paper. Add `?width=wider` to a lesson link to start an older class at the wider steps.
 
-      Privacy basics (digital footprint, the Australian Privacy Principles) are taught in Digital systems › Cyber safety and privacy; these courses link there.
+      Privacy basics (digital footprint, the Australian Privacy Principles) are taught in How computers work › Cyber safety and privacy; these courses link there.
 
       Then an extension, *AI at our school*: students work as a school AI committee, writing a charter of principles, mapping where AI rules belong in the school's policies, judging a proposed tool, responding to AI that arrived without anyone choosing it, and refining the AI rules. Does AI Help Us Learn? is recommended first; each lesson recaps what it uses. Staff committees can run it too (staff notes in each lesson's teacher guide).
     courses:

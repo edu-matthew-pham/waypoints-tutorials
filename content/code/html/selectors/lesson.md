@@ -211,7 +211,7 @@ before: |
 
   New words: a **rule** is a selector followed by property lines in braces, `p { color: teal; }`. The **selector** (`p`) names a kind of tag; each line is a property, a colon, a value and a semicolon. Colours here are names such as `teal` and `crimson`. The `<style>` block sits at the top of the code for now; where it goes in a whole page comes later.
 
-  Link to the three layers idea from Digital systems: the words are content, the tags are structure, the rules are presentation.
+  Link to the three layers idea from How computers work: the words are content, the tags are structure, the rules are presentation.
 running:
   - "Predict: some students think `p { }` styles only the first paragraph, or that it needs to say which one. A rule names a kind of tag and changes every one. Only the two paragraphs turn teal. Ask a pair that said 1 what in the rule picks the first paragraph, and see if they can find it."
   - "Run: changing the selector from `p` to `h2` moves the colour. That is the whole idea of a selector."

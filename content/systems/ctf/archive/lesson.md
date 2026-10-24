@@ -5,7 +5,7 @@ node: [AC9TDI8K02 n4, AC9TDI10P14 n3]
 assumes: [text-as-numbers]
 shape: 5e
 title: "Capture the flag: the old archive"
-summary: "The club's old archive server is being wiped on Friday. Before it goes, find out what it still gives away: five flags, each found with a skill from Digital systems (decoding, page source, the command line, a tiny processor and a key word). Then close the archive's leaks so the secrets can be changed."
+summary: "The club's old archive server is being wiped on Friday. Before it goes, find out what it still gives away: five flags, each found with a skill from How computers work (decoding, page source, the command line, a tiny processor and a key word). Then close the archive's leaks so the secrets can be changed."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Five club secrets are still sitting in the old archive. Find them before Friday, so they can be changed."
@@ -45,7 +45,7 @@ check:
 
 ```step
 stage: run
-insight: "Each flag needs one skill from Digital systems applied to the archive; the hints escalate and never give the flag."
+insight: "Each flag needs one skill from How computers work applied to the archive; the hints escalate and never give the flag."
 try: { playground: board, starter: "archive.yml#decode", height: 560 }
 tasks:
   - starter: "archive.yml#decode"

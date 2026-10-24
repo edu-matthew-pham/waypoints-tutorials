@@ -32,7 +32,7 @@ stuck:
 stretch: "Change the map: if the link from D to G became 15 ms, which route would you use? Work it out, then design your own map with a busy router and a unique best route."
 support: "A card with the four ideas: encryption, packet numbers, TCP resends, routes."
 leads: |
-  End of the course. Capture the flag (Digital systems) and Security and privacy have more.
+  End of the course. Capture the flag (How computers work) and Security and privacy have more.
 exit:
   q: "Why do packets carry numbers? Give two reasons."
   a: "So the receiver can put them back in order, and so it can tell which one is missing and ask for just that one (TCP)."

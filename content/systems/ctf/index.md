@@ -6,5 +6,5 @@ order: 7
 challenge: archive
 units:
   - { id: skills, title: What gives secrets away, summary: "Encoding is not encryption; what your page gives away." }
-  - { id: archive, title: "Capture the flag: the old archive", summary: "Five flags from across Digital systems, then close the archive safely." }
+  - { id: archive, title: "Capture the flag: the old archive", summary: "Five flags from across How computers work, then close the archive safely." }
 ---
