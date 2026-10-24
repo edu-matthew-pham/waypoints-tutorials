@@ -9,3 +9,8 @@ mode: greenhouse
 widget: climate
 mode: greenhouse
 # endregion
+
+# region: gh-1
+widget: climate
+mode: balance
+# endregion

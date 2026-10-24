@@ -40,3 +40,10 @@ stage: Battery | chemical
 stage: Wires | electrical
 stage: Bulb | light | heat
 # endregion
+
+# region: torch-1
+widget: energy
+mode: chain
+stage: Wires | electrical
+stage: Bulb | light | heat
+# endregion

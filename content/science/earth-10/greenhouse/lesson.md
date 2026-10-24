@@ -58,6 +58,16 @@ tasks:
       explain: "About −18 °C, more than 30 degrees colder than the 15 °C we actually have. That difference is the natural greenhouse effect."
     hint: "Read the surface temperature written under the picture, or the end of the line on the graph."
   - check: { type: board, text: "Put the greenhouse gases back, then find a CO₂ level that leaves Earth about 2 °C warmer than it started, and run until it settles.", when: "t >= 16 and t <= 16.7 and d > -0.3 and d < 0.3" }
+    smaller:
+      starter: "boards.yml#gh-1"
+      height: 620
+      check:
+        type: question
+        q: "This board has no CO₂ slider, just the sunlight. Turn the sunlight up a little and run the years. While more energy is coming in than going out, what does the temperature do?"
+        options: ["It rises, and the warmer surface gives off more infrared, until out matches in and it levels off", "It keeps rising for as long as you run it", "It stays the same, because the sun only changed a little", "It falls, because more of the light is reflected"]
+        answer: 0
+        feedback: [null, "Watch energy out under the picture as the surface warms: it climbs until it catches up.", "Run it and read the temperature under the picture: it does change.", "Reflected light only changes if you move the Reflected slider."]
+        explain: "A warmer surface gives off more infrared, so the gap between in and out closes and the temperature settles at a new, higher level. Adding CO₂ does the same thing from the other side: it holds back some of the energy going out."
     hint: ["Earth starts at about 14 °C here, so you're aiming for about 16 °C once it stops changing.", "Somewhere between 400 and 500 ppm gets you there. If you overshoot, Start again: a warmer planet doesn't cool back down quickly."]
 ```
 

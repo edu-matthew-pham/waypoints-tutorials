@@ -51,6 +51,10 @@ try: { playground: board, starter: "boards.yml#torch", height: 620 }
 tasks:
   - starter: "boards.yml#torch"
     check: { type: board, text: "Complete the torch: choose the useful energy at each stage and whether each arrow is a transfer or a transformation, then Check.", when: "c = 1" }
+    smaller:
+      starter: "boards.yml#torch-1"
+      height: 380
+      check: { type: board, text: "Here's just the end of the torch, the wires and the bulb. Pick the useful energy in the bulb, decide whether the energy changed kind on the way in, then Check.", when: "c = 1" }
     hint: ["What kind of energy is it before the arrow, and what kind after?", "If they're the same kind, the energy has only moved, and if they're different, it has changed type."]
   - starter: "boards.yml#cocoa"
     check: { type: board, text: "Now a hot chocolate warming your hands.", when: "c = 1" }
