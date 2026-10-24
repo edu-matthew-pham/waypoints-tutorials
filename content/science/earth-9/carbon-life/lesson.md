@@ -51,9 +51,10 @@ stage: run
 insight: "Switching photosynthesis or respiration off in turn, and watching CO₂ in the air fall or rise, shows each as a directional flow between spheres."
 try: { playground: board, starter: "boards.yml#cycle", height: 780 }
 check: { type: board, text: "Make the CO₂ in the air fall, then make it rise, by switching processes on and off.", when: "u = 1 and v = 1" }
+hint: ["Each process is an arrow carrying carbon one way, so ask what's left working on the air when you switch one of them off.", "Watch the numbers on the arrows and the graph under the buttons as it runs, and press Start again if you want a fresh go."]
 ```
 
-First press **Run 10 years** with everything on. Then switch **Respiration and decomposition** off and run again. Then switch it back on, switch **Photosynthesis** off, and run again. Press **Start again** whenever you like.
+First press **Run 10 years** with everything on. Then switch **Respiration and decomposition** off and run again. Then switch it back on, switch **Photosynthesis** off, and run again. Press **Start again** whenever you like. The model makes the air change far faster than it really would, so you can see it within a few years.
 
 ## Explain: two flows, opposite directions
 
@@ -71,18 +72,20 @@ tasks:
         - ["Fungi rotting a fallen log", "Biosphere → atmosphere", "Decomposers respire: decomposition returns carbon to the air."]
         - ["A tree respiring at night", "Biosphere → atmosphere", "Plants respire too, day and night."]
         - ["Grass growing", "Atmosphere → biosphere"]
+    hint: ["For each one, ask whether carbon is being built into a living thing or let back out into the air as carbon dioxide.", "A tree's cells still need energy at night when there's no light, and so do the fungi's, so think about how living things get energy out of their food."]
   - check:
       type: question
       q: "With every process on, why did the CO₂ in the air stay steady?"
       options: ["Carbon leaving the air (photosynthesis, oceans) equalled carbon entering it (respiration, decomposition, oceans)", "Nothing was happening", "Plants stopped photosynthesising", "The ocean stopped working"]
       answer: 0
-      feedback: [null, "Look at the arrows: about 120 a year each way.", "They were still working: just balanced.", "It was on, balanced by other flows."]
+      feedback: [null, "Look at the arrows: about 120 a year go each way between the air and living things, and about 80 each way between the air and the oceans.", "They were still photosynthesising, and the other flows balanced it.", "The ocean was still taking in and giving out carbon, just as much each way."]
   - check:
       type: question
       q: "If a large forest is cleared and burned, what happens to the carbon flows?"
       options: ["Less photosynthesis takes carbon out of the air, and burning and rotting put more in: CO₂ in the air rises", "Nothing changes", "CO₂ in the air falls", "The carbon disappears"]
       answer: 0
-      feedback: [null, "Fewer trees, less photosynthesis.", "Which flow got smaller?", "Carbon is never destroyed: it moves."]
+      feedback: [null, "With far fewer trees, much less photosynthesis is taking carbon out of the air.", "Think about which flow got smaller when the trees went, and which got bigger.", "Carbon is never destroyed: it moves to another store."]
+    hint: ["With far fewer trees, what happens to the arrow taking carbon out of the air and into living things?", "The carbon in the wood isn't used up or destroyed, so follow it and ask which store it ends up in after the burning and rotting."]
   - check: { type: reflect, text: "I can explain how photosynthesis and respiration move carbon between the atmosphere and biosphere, and what balance means." }
 ```
 

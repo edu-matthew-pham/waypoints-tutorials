@@ -53,6 +53,7 @@ stage: run
 insight: "Placing ten everyday things into spheres, some in two, builds the framework the carbon cycle hangs on."
 try: { playground: board, starter: "boards.yml#scene", height: 640 }
 check: { type: board, text: "Place all ten things in the picture into their sphere.", when: "n = k" }
+hint: ["For each thing, ask what it's mostly made of: air, something alive, water, or rock and soil.", "Ask whether the thing itself is alive or only has living things in or on it, and if the board says no, read the reason it gives under the question."]
 ```
 
 Click something in the picture, then choose its sphere.
@@ -76,7 +77,8 @@ tasks:
       q: "A tree takes in carbon dioxide and water to grow. Which spheres does this connect?"
       options: ["Atmosphere (CO₂), hydrosphere (water) and biosphere (the tree)", "Only the biosphere", "Only the atmosphere", "Geosphere and atmosphere"]
       answer: 0
-      feedback: [null, "Where do the CO₂ and water come from?", "The tree is part of it too.", "The tree is living: biosphere."]
+      feedback: [null, "Where do the CO₂ and water come from?", "The tree is part of it too.", "The tree itself is alive, so it belongs to the biosphere, not the geosphere."]
+    hint: ["Ask where the carbon dioxide was before the tree took it in, where the water was, and which sphere the tree itself belongs to.", "Check each of those against the line of sphere meanings under the buttons on the board."]
   - check:
       type: match
       q: "Match each sphere to a process that happens in it."

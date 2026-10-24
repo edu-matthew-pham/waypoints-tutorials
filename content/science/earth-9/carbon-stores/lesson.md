@@ -36,7 +36,7 @@ check:
   type: predict
   q: "Which of these holds the most carbon?"
   options: ["The oceans", "The air", "All living things on land", "Coal, oil and gas"]
-  actual: "The oceans, by far: about 38 000 billion tonnes, roughly 50 times what is in the air. (Rocks such as limestone hold even more, but that carbon moves very slowly.)"
+  actual: "The oceans, by far: about 38 000 billion tonnes, more than 40 times the 900 or so billion tonnes in the air. (Rocks such as limestone hold even more, but that carbon moves very slowly.)"
 ```
 
 ## Explore: the stores and the flows
@@ -72,7 +72,7 @@ tasks:
       q: "What is the difference between a carbon store and a carbon flow?"
       options: ["A store is where carbon is kept; a flow is carbon moving from one store to another each year", "They mean the same thing", "Stores are in the air; flows are in the ocean"]
       answer: 0
-      feedback: [null, "One is an amount, the other is a movement.", "Every sphere has stores, and flows join them."]
+      feedback: [null, "A store is an amount of carbon sitting somewhere, and a flow is carbon moving between stores.", "Every sphere has stores, and flows join them."]
       explain: "Stores are measured in tonnes of carbon; flows in tonnes a year. Photosynthesis is a flow from air to living things."
   - check:
       type: question
@@ -81,6 +81,7 @@ tasks:
       answer: 0
       feedback: [null, "Atoms aren't destroyed in reactions.", "Energy is released, but the carbon atoms stay as carbon atoms."]
       explain: "Carbon is never made or destroyed. Burning moves it from the biosphere to the atmosphere."
+    hint: ["When you see smoke coming out of a chimney, what gas is in it, and what's that gas made of?", "Think back to burning in Year 8 and what happened to the atoms, then ask which store the log's carbon is in once the smoke has drifted away."]
   - check:
       type: question
       q: "The air's carbon stayed steady on the board, even though more than a hundred billion tonnes moved in and out each year. Why?"
@@ -88,6 +89,7 @@ tasks:
       answer: 0
       feedback: [null, "The arrows show large yearly flows.", "Switch a process off and it changes (next lesson)."]
       explain: "A store stays the same when what flows in equals what flows out, like a bath with the tap on and the plug out."
+    hint: ["Picture a bath with the tap running and the plug pulled out, and ask whether the water level could stay put and what would have to be true.", "Look at the numbers on the arrows going into the air box on the board and the ones coming out of it."]
   - check:
       type: sort
       q: "Fast or slow? How long does carbon usually stay in each store?"
@@ -124,6 +126,7 @@ insight: "Placing real things into spheres checks that students can find carbon 
 try: { playground: board, starter: "boards.yml#spheres", height: 720 }
 tasks:
   - check: { type: board, text: "Place everything in the landscape into its sphere.", when: "n = k" }
+    hint: ["For each thing, ask whether it's mostly air, something living, water, or rock and soil.", "If the board says no, read the reason it gives, and keep in mind a few things sit where two spheres meet, so more than one answer can count."]
   - check:
       type: question
       q: "Which of these things in a landscape store carbon?"
@@ -143,21 +146,14 @@ tasks:
 stage: modify
 tier: wider
 insight: "Limestone made from shells links the biosphere, hydrosphere and geosphere and shows a store that changes over millions of years."
-try: { playground: board, starter: "boards.yml#cycle", height: 720 }
-tasks:
-  - check: { type: board, text: "Run 50 years with every process on.", when: "y >= 50" }
-  - check:
-      type: question
-      q: "Sea creatures take carbon dissolved in water to build shells of calcium carbonate. When they die, the shells pile up and, over millions of years, become limestone. Which stores has that carbon moved through?"
-      options: ["Hydrosphere → biosphere → geosphere", "Atmosphere → atmosphere", "Geosphere → biosphere → hydrosphere"]
-      answer: 0
-      feedback: [null, "It started dissolved in sea water.", "That's the reverse order."]
-      explain: "Rocks such as limestone are the largest carbon store of all, but their carbon moves out very slowly, mostly over millions of years."
+check:
+  type: question
+  q: "Sea creatures take carbon dissolved in water to build shells of calcium carbonate. When they die, the shells pile up and, over millions of years, become limestone. Which stores has that carbon moved through?"
+  options: ["Hydrosphere → biosphere → geosphere", "Atmosphere → atmosphere", "Geosphere → biosphere → hydrosphere"]
+  answer: 0
+  feedback: [null, "It started dissolved in sea water.", "That's the reverse order."]
+  explain: "Rocks such as limestone are the largest carbon store of all, but their carbon moves out very slowly, mostly over millions of years."
 ```
-
-### Fifty years
-
-### Shells to stone
 
 ## Evaluate: look back
 

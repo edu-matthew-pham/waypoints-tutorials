@@ -49,6 +49,7 @@ stage: run
 insight: "Running decades of combustion against a balanced cycle shows the air's store growing, while oceans and plants take up only part."
 try: { playground: board, starter: "boards.yml#burn", height: 800 }
 check: { type: board, text: "Burn fossil fuels and run the years until CO₂ in the air passes 330 ppm.", when: "c >= 5 and a >= 330" }
+hint: "The Burning slider is the only thing that adds new carbon to the air, so set it near today's rate and keep an eye on the ppm at the top of the board as the years run."
 ```
 
 Set **Burning** to about today's rate (10), then **Run 50 years**. Watch the fossil fuel store, the air, and the oceans and living things.
@@ -70,13 +71,16 @@ tasks:
       q: "Why does burning fossil fuels raise CO₂ in the air, when natural flows are so much bigger?"
       options: ["It releases in years carbon that took millions of years to store, and the natural flows were already balanced", "Fossil fuel carbon is a different kind of carbon", "It stops photosynthesis", "It doesn't: the rise is natural"]
       answer: 0
-      feedback: [null, "Carbon is carbon; the problem is the extra amount.", "Plants keep photosynthesising, even a little more.", "The board's rise started only when burning started."]
+      feedback: [null, "It's the same kind of carbon as any other, and the trouble is how much extra goes into the air.", "Plants keep photosynthesising, even a little more.", "The board's rise started only when burning started."]
+    hint: ["Before you turned burning on, the air stayed steady, so think about where the extra carbon from burning has to go each year.", "Watch the arrows between the air and the plants and oceans while you burn, and compare them with what they showed before you turned Burning up."]
   - check:
-      type: number
-      q: "On the board, about what fraction of the carbon burned ended up staying in the air? (Enter a percentage.)"
-      answer: 60
-      tolerance: 20
-      explain: "In the model, roughly 60%; the rest was taken up by the oceans and by plants. In the real world, about 45% of each year's emissions stays in the air."
+      type: question
+      q: "On the board, how much of the carbon you burned stayed in the air?"
+      options: ["Most of it at first, but the longer you ran it, the more the oceans and living things took up", "All of it", "None of it: the oceans took it all", "Exactly half, every time"]
+      answer: 0
+      feedback: [null, "Check the oceans and living things boxes: they gained carbon while you burned.", "The air's CO₂ went up, so not all of it was taken up.", "On the board the share changes the longer it runs, so it isn't fixed at half."]
+      explain: "In the model, about nine tenths stays in the air in the first ten years and about three quarters after fifty, because the oceans and plants take up more as the CO₂ in the air rises. In the real world, about 45% of each year's emissions stays in the air."
+    hint: ["While you were burning, did the oceans and living things boxes stay the same, or did they gain carbon too?", "Compare how much the fossil fuels box went down with how much the oceans and living things boxes went up, since all three are in GtC."]
   - check:
       type: question
       q: "Why does more CO₂ in the air matter for Earth's temperature?"
@@ -107,6 +111,7 @@ insight: "Trying lower burning rates from today's 420 ppm shows what would stead
 try: { playground: board, starter: "boards.yml#today", height: 800 }
 tasks:
   - check: { type: board, text: "Starting from today, find a burning rate that keeps CO₂ in the air steady (changing by less than 2.5 ppm in 10 years).", when: "s = 1" }
+    hint: ["Each time you run 10 years, look at whether the graph went up or down, and use that to decide which way to move the Burning slider next.", "The line under the graph tells you how much the CO₂ changed in those 10 years, so you're after a run where it barely moves."]
   - check:
       type: question
       q: "What did you have to do to keep the air's CO₂ steady?"
