@@ -110,7 +110,7 @@ Work out how often a handler runs.
 
 ### Spot the bug
 
-Here is a version where something is wrong.
+Click to stamp a dot, and this one falls over instead.
 
 ## Modify
 

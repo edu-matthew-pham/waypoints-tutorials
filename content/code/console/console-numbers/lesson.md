@@ -141,7 +141,7 @@ check:
   explain: "name stays text. int makes age the number 11, age + 1 is 12, and str makes the 12 into text so it joins."
 ```
 
-This mixes the last three lessons: ask and store, text into a number, a number back into text.
+This one asks, stores, turns text into a number and then back into text, all in a few lines.
 
 ## Make
 

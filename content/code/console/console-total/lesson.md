@@ -138,7 +138,7 @@ check:
   explain: "total goes 0, 5, 10, 15. 0 and 5 and 10 are all less than 12, so the loop runs three times. After 15 it stops."
 ```
 
-This mixes the last lesson's loop with a value that grows, as in the spiral.
+The total grows each pass, like the spiral did, and the loop keeps an eye on it.
 
 ## Make
 

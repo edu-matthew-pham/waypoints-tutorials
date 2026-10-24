@@ -105,7 +105,7 @@ Add two more colours. Everything else should keep working.
 
 Find the part that makes the stems different, and change only that.
 
-You have found parts by their jobs. In Course B, you will give those parts names, so you can reuse them.
+You've found the parts by their jobs. Over the next few lessons you'll give those parts names, so you can use them again and again.
 
 ```code diagrams.mmd#parts
 flowchart TD

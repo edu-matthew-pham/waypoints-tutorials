@@ -140,7 +140,7 @@ check:
   explain: "isdigit is True for 0, so the program calculates 0 tickets at $12, which is $0. The check only asks whether the text is all digits."
 ```
 
-This mixes the last lesson and `if`: a typed number, converted, and used.
+A typed number gets turned into a real number here, then used. Work out what happens with 0.
 
 ## Make
 

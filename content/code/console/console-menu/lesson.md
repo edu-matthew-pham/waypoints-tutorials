@@ -148,7 +148,7 @@ check:
   explain: "Each pass asks once. 3 and 3 are wrong choices that go round again, and 2 asks a third time before it breaks."
 ```
 
-This mixes the last lessons: a loop that repeats, and an answer stored again each pass.
+Here the loop goes round again and stores a new answer every time. Follow it pass by pass.
 
 ## Make
 

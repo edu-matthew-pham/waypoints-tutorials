@@ -55,7 +55,7 @@ check:
   actual: "It stops with an error on line 2. + joins text to text. score holds a number, and Python will not guess how to join a number onto text."
 ```
 
-Read the code. You know `+` joins text. What happens when one of the pieces is a number?
+You know `+` joins text. What do you think happens when one of the pieces is a number?
 
 ## Run
 

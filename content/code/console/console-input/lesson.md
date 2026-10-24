@@ -55,7 +55,7 @@ check:
   actual: "Hello, Ada. input gives back what was typed, and name = stores it. The last line joins Hello, onto whatever name holds, which is Ada."
 ```
 
-`input` is new. Read the code. If you type `Ada` when it asks, what will the second line show?
+`input` is new. If you type `Ada` when it asks, what do you think the second line will show?
 
 ## Run
 

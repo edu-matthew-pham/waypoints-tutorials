@@ -138,7 +138,7 @@ check:
   explain: "Each pass prints what reply gives back. 2 shows Pay now, and then break ends the loop."
 ```
 
-This mixes the menu loop and a function that gives back an answer.
+Here the menu loop hands each choice to a function and prints what comes back.
 
 ## Make
 

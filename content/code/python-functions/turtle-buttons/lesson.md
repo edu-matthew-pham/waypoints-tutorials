@@ -135,7 +135,7 @@ Use the numbers to find an edge.
 
 ### Spot the bug
 
-Here is a version where something is wrong.
+This button is far too easy to press.
 
 ## Modify
 

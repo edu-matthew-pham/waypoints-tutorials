@@ -149,7 +149,7 @@ check:
   explain: "two and one both fail the check, so the loop body runs twice. 7 passes, so the loop ends."
 ```
 
-This mixes `while` with the check from last lesson: ask again until the answer is good.
+Here `while` and last lesson's check work together: it keeps asking until the answer is good.
 
 ## Make
 
