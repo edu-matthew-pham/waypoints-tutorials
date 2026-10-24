@@ -578,6 +578,70 @@
           true
         ]
       ]
+    },
+    {
+      "form": "",
+      "expected": "x = (y - 7)/2",
+      "task": "Feedback matching: two equations with no form compare side by side (bug fixed 25 Oct: every pair of equations used to compare as the same)",
+      "answers": [
+        [
+          "x = (y - 7)/2",
+          true
+        ],
+        [
+          "x = (y-7)*(1/2)",
+          true
+        ],
+        [
+          "x = y/2 - 7",
+          false,
+          "equivalent"
+        ],
+        [
+          "x = (y + 7)/2",
+          false,
+          "equivalent"
+        ],
+        [
+          "x = y - 7/2",
+          false,
+          "equivalent"
+        ]
+      ]
+    },
+    {
+      "form": "subject x",
+      "expected": "x = n*A - S",
+      "task": "Make x the subject of A = (S + x)/n (Changing the subject, Make)",
+      "answers": [
+        [
+          "x = n*A - S",
+          true
+        ],
+        [
+          "x = -S + A*n",
+          true
+        ],
+        [
+          "x = nA - S",
+          true
+        ],
+        [
+          "x = A/n - S",
+          false,
+          "equivalent"
+        ],
+        [
+          "x = n*(A - S)",
+          false,
+          "equivalent"
+        ],
+        [
+          "x = n*A + S",
+          false,
+          "equivalent"
+        ]
+      ]
     }
   ],
   "workings": [

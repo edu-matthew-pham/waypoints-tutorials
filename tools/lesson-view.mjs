@@ -428,7 +428,7 @@ try{if(box.dataset.equation){var vals=JSON.parse(box.dataset.equation),sd=WPM.si
 var need=Object.keys(vals),used=WPM.vars(sd[0]).concat(WPM.vars(sd[1]));if(!need.some(function(n){return used.indexOf(n)>=0}))return bad('Use '+need.join(' and ')+' in your equation.');
 if(WPM.satisfies(v,vals))return win();var shown=need.map(function(n){return n+' = '+vals[n]}).join(', ');return bad('Not quite: when '+shown+', the two sides are not equal. Check each side.')}
 if(box.dataset.form){if(!window.WPF_READY)return bad('The checker did not load. Reload the page and try again.');msg.className='msg';msg.textContent='Checking...';return window.WPF_READY.then(function(F){var r=F.check(v,box.dataset.answer,box.dataset.form);if(r.ok){win();if(r.unsure){msg.textContent=r.why}return}
-if(!r.equivalent)for(var i=0;i<fb.length;i++){try{if(!F.check(String(fb[i][0]),v,'').equivalent)continue;return bad(fb[i][1])}catch(e){}}
+if(!r.equivalent)for(var i=0;i<fb.length;i++){try{if(!F.check(v,String(fb[i][0]),box.dataset.form).equivalent)continue;return bad(fb[i][1])}catch(e){}}
 else{var nm=function(t){return String(t).replace(/[\\u2212\\u2013]/g,'-').replace(/[\\u00d7\\u00b7]/g,'*').replace(/\\s+/g,'')};for(var j=0;j<fb.length;j++){if(nm(fb[j][0])===nm(v))return bad(fb[j][1])}}
 bad(r.why)})}
 var a=WPM.splitAnswer(v).value.replace(/\s*(%|\u00b0)\s*$/,'');if(WPM.equivalent(a,box.dataset.answer))return win();

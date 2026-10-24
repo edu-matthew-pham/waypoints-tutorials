@@ -138,6 +138,12 @@ export function makeForms(Numbas) {
       return { ok: eq, equivalent: eq, why: eq ? '' : 'Not quite: check each step of your rearranging.' };
     }
     var ta, te;
+    // Two equations with no form named: compare them side by side (left with left, right with right), not as
+    // true-or-false comparisons, which would call every pair of equations the same.
+    var pa = sides(answer), pe = sides(expected);
+    if (pa.length === 2 && pe.length === 2) {
+      try { var sb = same(tree(pa[0]), tree(pe[0])) && same(tree(pa[1]), tree(pe[1])); return { ok: sb, equivalent: sb, why: sb ? '' : 'Not quite. Check your working and try again.' }; } catch (err) { return { ok: false, equivalent: false, why: 'I could not read that: check the brackets and signs.' }; }
+    }
     try { ta = tree(answer); te = tree(expected); } catch (err) { return { ok: false, equivalent: false, why: 'I could not read that: check the brackets and signs.' }; }
     var eqv = same(ta, te);
     if (!eqv || !f) return { ok: eqv, equivalent: eqv, why: eqv ? '' : 'Not quite. Check your working and try again.' };
