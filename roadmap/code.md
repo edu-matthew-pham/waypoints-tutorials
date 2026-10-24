@@ -168,6 +168,25 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 - Drag-and-drop for match items; keep Parsons answers across reloads.
 - Prepare: confirm its load-by-URL parameter so "Copy address" can become "Open in Prepare".
 
+**Project briefs for the DOM course, Vue and Bootstrap (25 Oct 2026, draft for Matthew; not built).** The open "Next" item below. Same format as the other courses (`projects.yml`, an `example` page drawn as the picture, 3–4 `uses` ids from `CONCEPTS.html`, which already has every DOM, Vue and Bootstrap id). DOM and Vue use `playground: dom` (already working in the micro:bit crossover); Bootstrap uses `html`. Each brief is chosen to differ from that lesson's own Make task (tip calculator, shopping list, quiz, to-do app), so a project is never a repeat.
+
+*The DOM and the browser console* (4):
+1. **Light, dark and big text** (after dom-style; `js-query`, `js-event`, `class-list`). "Give a page you've made three buttons: light, dark and big text. Each one switches a look on or off." Milestones: each button changes something you can see; pressing it again switches it back; the page still reads well in every look. Stretch: a theme of your own; remember the choice (after Saving between visits).
+2. **Flashcards** (after dom-list; `input-value`, `create-element`, `class-list`). "Type a question and its answer, add it as a card, then click a card to flip it." Milestones: adding makes a new card; clicking flips it to the answer and back; an empty box adds nothing. Stretch: a shuffle button; a count of cards.
+3. **Pick your own path** (after dom-state; `js-event`, `text-content`, `js-query`). "A short story where the reader picks what happens next. Two buttons, and the words change with every choice." Milestones: three places in the story; one ending you can reach two ways; a Start again button. Stretch: a score or an item you carry; a picture that changes too.
+4. **A habit tracker that remembers** (after dom-save, optional; `local-storage`, `create-element`, `json-data`). "Tick off a habit each day. Close the page, open it again, and your ticks are still there." Milestones: ticks show on the page; they're still there after Run again; a Clear button starts fresh. Teacher note: the preview's saved data is the per-step stand-in, so "close and reopen" means Run again.
+
+*Apps with Vue* (3):
+1. **Class poll** (after vue-events; `vue-ref`, `vue-text`, `vue-on`, `vue-if`). "Ask a question with three answers. Each click adds a vote, and the leader shows on top." Milestones: every button counts; the totals update by themselves; a message shows once someone has voted. Stretch: a Reset button; a bar for each answer using `:style`.
+2. **Reading log** (after vue-computed; `vue-for`, `vue-model`, `vue-computed`). "Keep a list of books with a rating. A box filters the list as you type, and a line shows how many you've read." Milestones: books show from a list; adding one works; the filter and the count are both computed. Stretch: sort by rating; hide finished books.
+3. **Card gallery** (after vue-components; `vue-component`, `vue-props`, `vue-for`). "One card component, used for every item in a gallery: pets to adopt, players in a team, places to visit." Milestones: the card is written once; each card gets its data through props; adding an item to the list adds a card. Stretch: a Favourite button on each card.
+
+*Pages with Bootstrap* (2):
+1. **A landing page for an event** (after bs-components; `bootstrap`, `bs-component`, `bs-grid`). "A one-page site for a school event: a navbar, a big opening line, three cards and a sign-up form, all from Bootstrap's classes." Milestones: navbar and cards from Bootstrap; the cards sit in a row on a wide screen and stack on a narrow one; every form box has a label. Stretch: an alert for the closing date.
+2. **Bootstrap, your way** (after bs-yours; `bootstrap`, `css-rule`, `class-selector`). "Take your landing page and make it look like yours, not like Bootstrap: your colours, your font, one component styled your own way." Milestones: your rules come after Bootstrap's link; at least three changes you can point to; it still works on a narrow screen. Teacher note: the same comparison as bs-yours, now on the student's own page.
+
+*Order of work if agreed:* write the nine examples first (each must use its listed skills, which validate checks), then the YAML, then a build and a headless look at each projects page and its skill chips (the DOM playground must report its code for the chips to light).
+
 ## Built (12 Oct 2026, Matthew agreed): recap and open projects for code
 
 Maths and science have recap pages (`recap: true`, roadmap/shared.md). For code, recalling an idea is not the same as using it, so the plan has two parts that do different jobs:
