@@ -10,7 +10,7 @@ struggle: "Students treat speed and strength as separate. Keep returning to 'sam
 before: |
   Try every board yourself. LEGO Technic or Meccano gears make a good start before the board: mark a tooth on each gear, turn the small one once and count.
 
-  Simplifications: no friction or losses (real gear meshes lose a few per cent each), the motor lifts exactly 200 g with no gears, and the bucket rises at a steady speed. Years 9–10 can add 80% efficiency per mesh.
+  Simplifications: no friction or losses (real gear meshes lose a few per cent each), the motor lifts exactly 200 g with no gears, and the bucket rises at a steady speed. Real machines lose energy (Mechanisms) adds 95% efficiency per mesh.
 
   Curriculum hooks: Design and Technologies, engineering principles and systems (primary); Science, forces and simple machines; Maths, ratio and rates (applied, not taught). If the class has not met ratio, do that first.
 
@@ -38,7 +38,7 @@ stuck:
 stretch: "Two pairs in a row (a compound train): 8 → 24, then 8 → 40 on the same axle. What is the overall ratio? Could it lift 700 g, and how long would it take?"
 support: "Give a table with columns ratio, winch speed, heaviest lift, time, and fill the 8 → 24 row together."
 leads: |
-  Next: Gear trains (idlers and compound trains), then levers and pulleys (planned).
+  Next: Gear trains (idlers and compound trains), then levers and pulleys, and Real machines lose energy.
 
   Code links: a short Python loop can test every gear pair against the brief; the board's Make does this for them.
   Physical computing: a motor and a servo on a real winch (Power and motors).

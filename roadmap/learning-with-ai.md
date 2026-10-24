@@ -48,7 +48,7 @@ Do not present the routes as technically interchangeable: a simplified classifie
 
 ## Courses as built (18 Oct 2026)
 
-**AI Foundations** (`content/ai/foundations/`, 12 lessons, `shape: 5e`):
+**AI Foundations** (`content/ai/foundations/`, 13 lessons with `kinds-of-ai`, `shape: 5e`, class plans for all 13):
 - How AI generates text: Can you predict the next word? · Build a text generator with dice · Let the computer take over (a toy n-gram model, labelled as such; `text-prediction` and `word-sampler` boards).
 - How AI learns: How does a machine learn? · Why does AI make mistakes? · How do models combine clues? · Can a neural network learn?
 - Communicating with AI: How do you communicate with AI? · How do you work with an AI response? (scripted response laboratory, not a live AI).
@@ -133,11 +133,11 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 
 ## Status (18 Oct 2026)
 
-- **Built:** AI Foundations (12 lessons, 4 units) and Does AI Help Us Learn? (12 lessons, 4 units, class plans for all), with recap pages; the Choosing AI tools teacher guide. Validate passes for all 24 lessons.
+- **Built:** AI Foundations (13 lessons, 4 units) and Does AI Help Us Learn? (12 lessons, 4 units), with recap pages; the Choosing AI tools teacher guide. Since then (by 25 Oct): Who Does AI Affect? (11), AI in your life (10) and AI at our school (11); every course has class plans for every lesson (57 lessons).
 - **Merged:** the review-fixes branch `ai-review-fixes` (PR #1, 16 Oct): Group 1 fixes, the Unit 4 rename, DAHUL class plans, the tools roadmap.
 - **Fixed 18 Oct:** the three Unit 1 boards (`dice-generator` and `automate-generator` had two step blocks under one heading, so their boards never showed; `next-word` loaded both board setups, starting at 12 endings instead of 3/2/1). Validate now flags both mistakes. The Nakamura (2026) DOI was confirmed by Matthew.
 - **Done 18 Oct (later):** Does AI Help Us Learn? rewritten for Year 7 (plain words, hands-on Explore steps, applied checks); review Groups 2 and 3 done for both courses (details and the few skipped items in `roadmap/ai-review-fixes.md`); a bug that stopped three AI widgets' board checks ticking is fixed; the Choosing AI tools guide is dated (last checked 18 October 2026), uses relative links, names DAHUL Unit 4 correctly and is linked from both AI pathway pages.
-- **Next:** try both courses with a Year 7 class; Foundations class plans; the dated vendor table (only with claims checked on vendors' own pages).
+- **Next:** try the courses with a class (none tried yet); the dated vendor table (only with claims checked on vendors' own pages).
 - **Built 18 Oct (refinements):** where the lookup table breaks and generalising in Unit 2; 11 judgement checks (sort, match, unmarked reasoning); six optional AI-tool steps with prompt cards; Does AI Help Us Learn? regrouped by width (core idea per lesson, research and society in typical or wider steps, fit "Years 7–10"). Details in `roadmap/ai-review-fixes.md`.
 - **Not yet tried with classes.**
 
@@ -146,7 +146,9 @@ Purpose: help schools choose and trial AI tools, using what the two courses alre
 - **A later Years 9–10 course (candidate, narrowed 18 Oct 2026):** its society and policy material (AI policy at school and in society) folds into the wider steps of *Who Does AI Affect?* (below). What remains (reading real studies, assessment and incentives) may stay as wider steps in Does AI Help Us Learn? or become a short course; decide later.
 - **AI Foundations stays as it is** (already Year 7-shaped), apart from the agreed refinements: show where the lookup table breaks (generalisation) and the judgement checks (`roadmap/ai-review-fixes.md`). A possible later "how language models really work" course for older students could draw on LLMs Unplugged's extensions (context, word meanings, temperature); idea only.
 
-## Proposal (18 Oct 2026, from a planning chat; reviewed with Matthew, not approved to build): AI and society, discussion lessons
+## Proposal (18 Oct 2026, from a planning chat; reviewed with Matthew): AI and society, discussion lessons
+
+*Status (25 Oct): approved and built after this was written: Who Does AI Affect? (`content/ai/who-does-ai-affect/`), then AI in your life and AI at our school (plans in `roadmap/ai-society-course-plan.md` and `roadmap/ai-committee-plan.md`). Kept below as the reasoning.*
 Source: Project doc `claude/proposal-ai-society-and-discussions.md`. Don't build until Matthew approves each part.
 
 1. **A third AI course, *Who Does AI Affect?*** ACARA v9 Digital Technologies covers ethical, social and privacy considerations; the AI pathway skips them. Parallel to Does AI Help Us Learn? (both branch from AI Foundations; neither is a prerequisite; each links to the other). Year 7 accessible with width tiers. Cases, not lectures, with proper 5E: what you give away (data and privacy, a real consent screen), spotting generated media, automated decisions (who gets the job), running costs (energy, water), hidden labour (who labelled the data). About systems and other people, where Does AI Help Us Learn? is about your own learning. Until built, a pointer page to good existing material (Day of AI, Code.org AI units, Common Sense; check each and its licence first).

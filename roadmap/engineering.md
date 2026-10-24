@@ -84,7 +84,7 @@ Principles: borrow first and build only where a lesson needs a check (benchmark 
 ## Next
 
 1. Practise with code: the sample lesson's Python loop over every gear pair. A maths lesson has no Python playground; either a short linked Python task (console bridge) or leave it to the Code pathway.
-2. Mechanisms: efficiency per mesh on the `train` board and friction on pulleys (Years 9–10; now stretch tasks); Structures (loads, trusses) as a later pathway.
+2. (Done 12 Oct: efficiency per mesh and pulley friction in `mechanisms/losses`; Structures is its own pathway.)
 3. Optional: let `B.serial` accept an Uno's USB ids; surface-mount parts and 45° routing on the `pcb` board if a class wants them. (Done 12 Oct: compound gear trains; `shape: design` decks and worksheets say Inquire, not Predict.)
 4. (Done 12 Oct: `prerequisites()` reads `engineering` too.)
 

@@ -41,7 +41,7 @@
 1. **Do not conflate a toy word-frequency model with modern LLMs.** Explain differences in training, tokenisation, context, neural representations and generation at an age-appropriate level.
 2. **Do not conflate automation with AI.** Lesson 3 is a bridge into cognitive offloading, not itself evidence about AI use.
 3. **Avoid overclaiming.** The exact three-lesson arc and the 5E balance are instructional design decisions to test, not research-established optimal sequences.
-4. **Make the model inspectable.** The current lessons are text-and-check drafts; they lack the proposed live board and do not yet fulfil the interactive design goal.
+4. **Make the model inspectable.** The current lessons are text-and-check drafts; they lack the proposed live board and do not yet fulfil the interactive design goal. *(Done by 25 Oct: Foundations lessons now run on the board: `word-sampler`, `text-prediction`, `fruit-learning`, `neural-fruit`, `ai-dialogue`, `ai-learning-choices`.)*
 5. **Use age-appropriate coverage checks.** Map outcomes to UNESCO and AI4K12 and to Australian curriculum requirements before course-wide expansion.
 6. **Add source provenance consistently.** The three lessons now use existing frontmatter `sources:` (displayed in teacher guides and slide notes). Keep practitioner frameworks separate from peer-reviewed studies.
 7. **Clarify licensing.** Cite Swift/ANU; do not reproduce CC BY-SA teaching resources without checking attribution and share-alike obligations.
