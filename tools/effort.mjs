@@ -4,13 +4,16 @@
 //   no-recap     teacher.yml has no `goals:`, so the lesson ends without a "Now you can" list
 //   hint-gives   a first hint gives the answer away: a code span from the solution that the starter does not have,
 //                or the answer of a number check
+//   no-smaller   (npm run effort only, never in validate's summary) no step or task has a smaller: lead-in, and the
+//                lesson teaches a hinge node (Kit's known sticking point: maths, science, Digital systems) or has a
+//                stuck: list (teacher.yml or the lesson.md teacher block). One line per lesson, never per step.
 import { workItems } from './lesson-core.mjs';
 
 const squash = (s) => String(s).replace(/\s+/g, '');
 const firstHint = (c) => [].concat(c?.hint ?? [])[0];
 
 /** Gaps for every lesson in a course with units (lessons outside units are drafts and free pages). */
-export function auditEffort(lessons, getSnippet) {
+export function auditEffort(lessons, getSnippet, progressions = null) {
   const gaps = [];
   const add = (l, kind, where, why) => gaps.push({ slug: l.slug, kind, where, why });
   for (const l of lessons) {
@@ -39,10 +42,22 @@ export function auditEffort(lessons, getSnippet) {
       if (String(k.answer).length >= 2 && new RegExp(`(^|[^\\d.])${a}([^\\d]|$)`).test(String(hint))) add(l, 'hint-gives', `${id} hint 1`, `states the answer (${k.answer})`);
     }
   }
+  // Hinge lessons with no smaller step (only when progressions are passed: npm run effort).
+  if (progressions) for (const l of lessons) {
+    if (!l.unit) continue;
+    const hinge = [].concat(l.node ?? []).map((r) => String(r).match(/^(\S+)\s+n(\d+)$/)).filter(Boolean)
+      .find(([, code, n]) => progressions.get(code)?.nodes.find((x) => x.n === Number(n))?.hinge);
+    const has = l.steps.some((s) => s.config.smaller || s.tasks.some((t) => t.config.smaller));
+    if (has) continue;
+    // stuck: is read from the parsed teacher data, so single-file lessons (teacher block in lesson.md) count too.
+    const stuck = Array.isArray(l.teacher?.stuck) ? l.teacher.stuck.length : 0;
+    if (hinge) add(l, 'no-smaller', 'lesson.md', `${hinge[0]} is a hinge node: add smaller: (a folded easier check) where students stick; the node's criteria and stuck: say where`);
+    else if (stuck) add(l, 'no-smaller', 'lesson.md', `${stuck} stuck: ${stuck > 1 ? 'entries' : 'entry'} and no smaller:; add one where a stuck: ask is a thinking step (not an error message the friendly errors already answer)`);
+  }
   return gaps;
 }
 
-export const EFFORT_KINDS = { 'no-struggle': 'no struggle note', 'no-recap': 'no goals for the recap', 'hint-gives': 'first hints that give the answer' };
+export const EFFORT_KINDS = { 'no-struggle': 'no struggle note', 'no-recap': 'no goals for the recap', 'hint-gives': 'first hints that give the answer', 'no-smaller': 'lessons with a hinge node or stuck: list and no smaller step' };
 
 export function summary(gaps) {
   const n = (k) => gaps.filter((g) => g.kind === k).length;
@@ -52,7 +67,8 @@ export function summary(gaps) {
 // `npm run effort [path]`: every gap, grouped by course, with a count per course.
 if (import.meta.url === `file://${process.argv[1]}`) {
   const { loadLessons, getSnippet } = await import('./lesson.mjs');
-  const gaps = auditEffort(loadLessons(process.argv[2]), getSnippet);
+  const { loadProgressions } = await import('./progressions.mjs');
+  const gaps = auditEffort(loadLessons(process.argv[2]), getSnippet, loadProgressions());
   if (!gaps.length) { console.log('✓ effort: every lesson names its hard part, ends with a recap, and no first hint gives the answer'); process.exit(0); }
   const byCourse = {};
   for (const g of gaps) (byCourse[g.slug.split('/').slice(0, -1).join('/')] ??= []).push(g);

@@ -48,8 +48,8 @@ for (const l of lessons) {
     for (const { t, i, k, id } of items) {
       if (!k) continue;
       if (t) await sec.locator('.taskpills [role=tab]').nth(i).click();
-      const box = t ? sec.locator('.tpanel.active .check, .tasks .check').nth(0) : sec.locator('.check').first();
-      const scope = t ? sec.locator(`.check[data-key="${l.slug}/${id}"]`) : box;
+      // By key, not position: a smaller: lead-in sits above the real check in the same step.
+      const scope = sec.locator(`.check[data-key="${l.slug}/${id}"]`);
       const msg = async () => (await scope.locator('.msg').textContent()) || '';
       if (k.type === 'reflect') { await scope.locator('input[type=checkbox]').check(); }
       else if (k.type === 'predict') { if (k.options) await scope.locator('input[type=radio]').first().check(); else await scope.locator('input').first().fill('1'); await scope.locator('button').first().click(); }
@@ -73,6 +73,19 @@ for (const l of lessons) {
       const passed = /Got it|Unlocked|Locked in/.test(m) || (await scope.evaluate((e) => e.classList.contains('done')));
       ok(passed, `${id} (${k.type}): ${m.slice(0, 80)}`);
       if (passed) console.log(`  ✓ ${id} ${k.type}`);
+      // smaller: lead-in (question, number or trace): open the fold and answer it with its stored answer.
+      const lk = (t ? t.config : s.config).smaller?.check;
+      if (lk) {
+        const ls = sec.locator(`.check[data-key="${l.slug}/${id}~smaller"]`);
+        await ls.locator('xpath=ancestor::details[1]/summary').click();
+        if (lk.type === 'question') await ls.locator('input[type=radio]').nth(lk.answer).check();
+        else if (lk.type === 'number') await ls.locator('input').fill(String(lk.answer));
+        else if (lk.type === 'trace') { const cells = ls.locator('input.tcell'); for (let j = 0; j < await cells.count(); j++) await cells.nth(j).fill(await cells.nth(j).getAttribute('data-answer')); }
+        await ls.locator('button').click();
+        const lp = await ls.evaluate((e) => e.classList.contains('done'));
+        ok(lp, `${id} smaller (${lk.type}): ${((await ls.locator('.msg').textContent()) || '').slice(0, 80)}`);
+        if (lp) console.log(`  ✓ ${id} smaller ${lk.type}`);
+      }
     }
   }
   console.log('  expected reveals:', await p.locator('details.expected').count(), '| explain clip:', await p.locator('#xdrawer video').count());

@@ -60,6 +60,8 @@ export const MAKECODE_EXTENSIONS = {
 export const makecodeExtensions = (lesson) => (Array.isArray(lesson?.extensions) ? lesson.extensions : []).map((k) => MAKECODE_EXTENSIONS[k]).filter(Boolean);
 /** A lesson's extensions as MakeCode's package string ("name=version,name=version"), or '' for none. */
 export const makecodePackage = (lesson) => makecodeExtensions(lesson).map((e) => `${e.name}=${e.version}`).join(',');
+/** Check types a smaller: lead-in may use (never code, predict, flag or board in this version). */
+export const SMALLER_TYPES = ['question', 'number', 'trace', 'answer'];
 export const CHECK_TYPES = ['reflect', 'question', 'code', 'number', 'bug', 'match', 'trace', 'parsons', 'predict', 'answer', 'board', 'sort', 'flag', 'working', 'reasoning'];
 // What kind of fault an error item plants (bug, and error-based question or predict): see AUTHORING.md "Error tasks".
 export const FAULTS = ['syntax', 'runtime', 'logic', 'design'];
@@ -337,8 +339,11 @@ export function parseLessonText(raw, slug = 'lesson') {
     if (m) {
       config = YAML.parse(m[1]) || {};
       body = body.replace(m[0], '');
+      // A smaller: lead-in's options are arranged like any check's (seeded shuffle, catch-alls last).
+      const lead = (o) => (o?.smaller?.check ? { ...o, smaller: { ...o.smaller, check: arrangeOptions(o.smaller.check, slug + '~smaller') } } : o);
       if (config.check) config.check = arrangeOptions(config.check, slug);
-      if (Array.isArray(config.tasks)) config.tasks = config.tasks.map((t) => t && typeof t === 'object' && t.check ? { ...t, check: arrangeOptions(t.check, slug) } : t);
+      config = lead(config);
+      if (Array.isArray(config.tasks)) config.tasks = config.tasks.map((t) => lead(t && typeof t === 'object' && t.check ? { ...t, check: arrangeOptions(t.check, slug) } : t));
     }
     // "### Heading" lines inside a step are its tasks (sub-pills). One or no heading: the step has a single task.
     const secs = body.split(/^### /m);
@@ -630,6 +635,24 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     }
   };
 
+  // smaller: a folded lead-in check beside hint: (roadmap/shared.md › support on demand; AUTHORING › Smaller step).
+  // { check, code? }: one easier check that does half the move, never counted. Board lead-ins ({ starter }) come later.
+  const validateSmaller = (v, where, c, owner) => {
+    if (v === undefined) return;
+    const w = `${where} smaller`;
+    if (!v || typeof v !== 'object' || Array.isArray(v)) return err(w, 'smaller must be a mapping: { check: { type: question | number | trace, ... }, code?: file#region }');
+    for (const k of Object.keys(v)) if (!['check', 'code'].includes(k)) err(w, k === 'starter' ? 'board lead-ins (starter:) are not built yet; use a question, number or trace check' : `unknown field "${k}" (use check, code)`);
+    if (!owner?.check) err(w, 'a smaller step leads into a check: put it on a step or task that has one');
+    const pred = c.stage === 'predict' || owner?.check?.type === 'predict';
+    if (pred && !String(lesson.slug || '').startsWith('maths/')) err(w, 'no smaller step on a Predict: it would hand over the misconception the prediction is there to surface');
+    const k = v.check;
+    if (!k || !SMALLER_TYPES.includes(k.type)) return err(w, `smaller.check.type must be one of ${SMALLER_TYPES.join(', ')}`);
+    if (k.type === 'answer' && lesson.language !== 'maths') err(w, 'an answer lead-in needs a maths-language lesson (Numbas); use number or question');
+    if (v.code !== undefined && lesson.language === 'makecode') err(w, 'smaller.code in a MakeCode lesson is not built yet (it needs a blocks picture); leave code: out');
+    if (v.code !== undefined) { if (typeof v.code !== 'string') err(w, 'smaller.code must be file#region'); else { try { snip(v.code); } catch (e) { err(w, `code: ${e.message}`); } } }
+    validateCheck(k, w, c);
+  };
+
   for (const s of [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])]) {
     const where = `${s.id} "${s.title}"`;
     if (s.extraSteps) err(where, `${s.extraSteps + 1} step blocks under one ## heading: only the first is used and the others show as text. Give each its own ## heading, or make them tasks`);
@@ -730,6 +753,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       validateExpected(tc.expected, tw, c);
       validatePicture(tc.picture, tw, c.stage);
       if (tc.check !== undefined) validateCheck(tc.check, tw, c);
+      validateSmaller(tc.smaller, tw, c, tc);
       if (tc.unlocks !== undefined) {
         if (!Array.isArray(tc.unlocks) || !tc.unlocks.every((u) => typeof u === 'string')) err(tw, 'unlocks must be a list of snippet ids');
         else {
@@ -742,6 +766,10 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (c.hint !== undefined) {
       const hs = Array.isArray(c.hint) ? c.hint : [c.hint];
       if (hs.length > 3 || !hs.every((h) => typeof h === 'string' && h.trim())) err(where, 'hint must be a short text, or a list of up to 3 texts (nudges, not answers)');
+    }
+    if (c.smaller !== undefined) {
+      if (s.tasks.length) err(where, 'this step has tasks (### headings): put smaller: on the task it leads into, under tasks:');
+      else validateSmaller(c.smaller, where, c, c);
     }
     if (c.reveal !== undefined && typeof c.reveal !== 'boolean' && !(typeof c.reveal === 'string' && c.reveal.trim())) err(where, 'reveal must be true, or the text of the button, e.g. "Show the expected result"');
     if (c.reveal && !c.clip) err(where, '"reveal" only makes sense on a step with a clip');

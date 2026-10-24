@@ -155,7 +155,7 @@ figure.clip .vpick{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px
 .try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}
 .try-task,.tt-toggle{display:none}.try.full .try-task{display:block;max-height:38vh;overflow:auto;padding:6px 14px 8px;border-bottom:1px solid var(--line);background:var(--card);font-size:15px}
 .try.full .tt-toggle{display:inline-block;margin-left:auto;margin-right:8px;font:inherit;font-size:13px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer}
-.tt-title{font-weight:700;margin:.2em 0 .3em}.tt-body p,.tt-body ul,.tt-body ol{margin:.3em 0}.tt-body img{max-height:24vh;width:auto}.tt-body .hints{margin:.3em 0;padding-top:4px;padding-bottom:4px}
+.tt-title{font-weight:700;margin:.2em 0 .3em}.tt-body p,.tt-body ul,.tt-body ol{margin:.3em 0}.tt-body img{max-height:24vh;width:auto}.tt-body .hints{margin:.3em 0;padding-top:4px;padding-bottom:4px}.tt-smaller{font-size:13px;color:var(--muted);margin:.4em 0}
 .try-task.closed .tt-body{display:none}.try-checks{display:flex;flex-wrap:wrap;gap:4px 16px;padding:6px 0 2px;margin-top:4px;position:sticky;bottom:-8px;background:var(--card);border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}.try-task.closed .try-checks{border-top:0;margin-top:0}.try-checks .ok{color:var(--run);font-weight:600}.try.full iframe{flex:1;height:auto!important}
 body.try-open{overflow:hidden}
 .try iframe{display:block;width:100%;border:0;background:var(--card)}
@@ -165,6 +165,7 @@ figure.diagram{margin:12px 0 18px}figure.diagram img{max-width:100%;height:auto;
 details.expected figure{margin:8px 0 14px}details.expected img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}details.expected figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
+details.smaller{margin:12px 0;border:1px dashed var(--line);border-radius:10px;padding:0 16px}details.smaller>summary{cursor:pointer;font-weight:600;padding:10px 0}details.smaller[open]>summary{border-bottom:1px solid var(--line);margin-bottom:6px}details.smaller .check{margin:8px 0 12px}
 details.hints summary{cursor:pointer;font-weight:600;padding:10px 0}
 details.hints[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
 .tasks{margin:14px 0}
@@ -479,7 +480,11 @@ function strip(n){if(n.removeAttribute)n.removeAttribute('id');if(n.querySelecto
 function fill(){var title=document.createElement('p');title.className='tt-title';var src;
 if(w){var tp=w.querySelector('.tp.active');title.textContent=tp?tp.textContent:'';src=[w.querySelector(':scope > .tpanel.active[role="tabpanel"]')]}
 else{var h2=s.querySelector('h2');title.textContent=h2?h2.textContent:'';src=[].filter.call(s.children,function(ch){return !(ch.matches('.chip,h2,.try,.check,.compare,.tasks,video')||ch.querySelector('video,iframe'))})}
-body.replaceChildren.apply(body,[title].concat(src.filter(Boolean).map(function(n){return strip(n.cloneNode(true))})))}
+var cl=src.filter(Boolean).map(function(n){return strip(n.cloneNode(true))}),sm=0;
+// A smaller step (smaller:) is a live check: a clone would be dead, so the drawer points back to the page instead.
+cl=cl.filter(function(n){if(n.matches&&n.matches('details.smaller')){sm++;return false}[].forEach.call(n.querySelectorAll?n.querySelectorAll('details.smaller'):[],function(x){sm++;x.remove()});return true});
+if(sm){var sn=document.createElement('p');sn.className='tt-smaller';sn.textContent='Stuck? There’s a smaller step on the page: press Esc or Exit full screen to find it above the hints.';cl.push(sn)}
+body.replaceChildren.apply(body,[title].concat(cl))}
 function upd(){bar.replaceChildren.apply(bar,cs.map(function(c){var d=c.classList.contains('done'),e=document.createElement('span'),q=c.querySelector('.check-q');e.className=d?'ok':'';e.textContent=(d?'✓ ':'○ ')+(q?q.textContent:'');return e}))}
 fill();upd();cs.forEach(function(c){new MutationObserver(upd).observe(c,{attributes:true,attributeFilter:['class']})});
 if(w)[].forEach.call(w.querySelectorAll(':scope > .tpanel[role="tabpanel"]'),function(p){new MutationObserver(fill).observe(p,{attributes:true,attributeFilter:['class']})});
@@ -540,13 +545,14 @@ const shuffled = (arr, seed) => { const r = seeded(seed), a = arr.slice(); for (
  * a line to click (bug), pairs (match), a trace table or lines to order (parsons). Passing it unlocks snippets.
  * snippet(ref) reads code for bug and parsons checks.
  */
-export function checkHtml(lesson, step, names = {}, snippet = null, task = null, tx = esc) {
-  const k = task ? task.config.check : step.config.check;
+export function checkHtml(lesson, step, names = {}, snippet = null, task = null, tx = esc, lead = null) {
+  // lead: { k, key } for a smaller: lead-in (its own check and key, never unlocks; never in the progress manifest).
+  const k = lead ? lead.k : task ? task.config.check : step.config.check;
   if (!k) return '';
   const kind = unlockKind(lesson, step);
-  const ids = (task ? task.config.unlocks : step.config.unlocks) || [];
+  const ids = lead ? [] : (task ? task.config.unlocks : step.config.unlocks) || [];
   const label = (id) => names[kind]?.[id] || id.replace(/-/g, ' ');
-  const key = `${lesson.slug}/${task ? task.id : step.id}`;
+  const key = lead ? lead.key : `${lesson.slug}/${task ? task.id : step.id}`;
   // Explanations are shown with textContent, so maths in them is shown as plain text: "$2x$" becomes "2x".
   const plain = (t) => (lesson.language === 'maths' ? String(t).replace(/\$([^$]+)\$/g, '$1') : t);
   const explain = plain(k.explain || '');
@@ -679,7 +685,7 @@ export function lessonPageHtml(lesson, deps) {
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
   const isMaths = lesson.language === 'maths' && !!maths;
   // Answer checks with form: are marked by Numbas, loaded only on lessons that have one (tools/maths-forms.mjs).
-  const hasForms = isMaths && lesson.steps.some((s) => [s.config.check, ...s.tasks.map((t) => t.config.check)].some((k) => (k?.type === 'answer' && k.form !== undefined) || k?.type === 'working'));
+  const hasForms = isMaths && lesson.steps.some((s) => [s.config.check, s.config.smaller?.check, ...s.tasks.flatMap((t) => [t.config.check, t.config.smaller?.check])].some((k) => (k?.type === 'answer' && k.form !== undefined) || k?.type === 'working'));
   const tx = isMaths ? (t) => maths.textWithMath(t, esc) : esc;
   // MakeCode lessons show display code as a picture of the blocks (see makecodeBlock).
   const mk = lesson.language === 'makecode';
@@ -708,19 +714,27 @@ export function lessonPageHtml(lesson, deps) {
   // Folded by default: the same list is on every lesson, and the step pills already name the stages.
   const legendBox = legend ? `<details class="legendbox"><summary>How this lesson works: ${legendKeys.map((k) => esc(SI[k][0])).join(', ')}</summary><ul class="legend">${legend}</ul></details>` : '';
 
+  // Display code for a step's (or a lead-in's) code: file#region.
+  const codeOf = (ref) => {
+    try {
+      const files = splitFiles(snippet(ref));
+      return files.length > 1 || files[0]?.name
+        ? `<div class="files">${files.map((f) => codeBlock(highlightCode, f.code, lesson.language, f.name)).join('')}</div>`
+        : mk ? makecodeBlock(highlightCode, snippet(ref), ref.split('#')[0], mkTarget, blocksPicture(snippet(ref)), mkPkg) : codeBlock(highlightCode, snippet(ref), lesson.language, ref.split('#')[0]);
+    } catch (e) { return `<div class="placeholder"><b>${esc(e.message)}</b></div>`; }
+  };
+  // smaller: one easier check folded above the hints, so the thinking step comes before hints that escalate to the code.
+  // Its key ends ~smaller; it is never in the manifest, the course row, the task tally or the drawer's tick bar.
+  const smallerOf = (s, owner, id) => {
+    const v = owner?.smaller;
+    if (!v?.check) return '';
+    const lead = checkHtml(lesson, s, snippetNames, snippet, null, tx, { k: v.check, key: `${lesson.slug}/${id}~smaller` });
+    return `<details class="smaller"><summary>Need a smaller step?</summary>${v.code ? codeOf(v.code) : ''}${lead}</details>`;
+  };
   const steps = lesson.steps.map((s) => {
     const c = s.config;
     const [label, hint] = SI[c.stage] || SI.info;
-    let showCode = '';
-    if (c.code) {
-      try {
-        const files = splitFiles(snippet(c.code));
-        showCode = files.length > 1 || files[0]?.name
-          ? `<div class="files">${files.map((f) => codeBlock(highlightCode, f.code, lesson.language, f.name)).join('')}</div>`
-          : mk ? makecodeBlock(highlightCode, snippet(c.code), c.code.split('#')[0], mkTarget, blocksPicture(snippet(c.code)), mkPkg) : codeBlock(highlightCode, snippet(c.code), lesson.language, c.code.split('#')[0]);
-      }
-      catch (e) { showCode = `<div class="placeholder"><b>${esc(e.message)}</b></div>`; }
-    }
+    const showCode = c.code ? codeOf(c.code) : '';
     const clip = clipHtml(s);
     const shown = c.picture ? pictureHtml(c.picture, s.id) : '';
     // A diagram (Mermaid, drawn at build time): after the step's text; on a Predict step it is the thing to predict from, so it goes with the code.
@@ -729,7 +743,7 @@ export function lessonPageHtml(lesson, deps) {
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
     const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(t)}</details>`).join('');
-    const hints = hintsOf(c.hint);
+    const hints = smallerOf(s, s.tasks.length ? null : c, s.id) + hintsOf(c.hint);
     const checks = checkHtml(lesson, s, snippetNames, snippet, null, tx);
     // A Run step after a Predict step with a predict check shows "You predicted X. It actually did Y." after Run.
     let compare = '';
@@ -748,7 +762,7 @@ export function lessonPageHtml(lesson, deps) {
       const bodies = s.tasks.map((t, n) => {
         let reset = '';
         if (t.config.starter) { try { reset = `<button type="button" class="resetstart" data-code="${esc(snippet(t.config.starter))}">Reset to this task's start</button>`; } catch { /* reported by validation */ } }
-        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.diagram ? diagramHtml(t.config.diagram, t.id.replace('#', '-')) : ''}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
+        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.diagram ? diagramHtml(t.config.diagram, t.id.replace('#', '-')) : ''}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${smallerOf(s, t.config, t.id)}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
       }).join('');
       const taskChecks = s.tasks.map((t, n) => `<div class="tpanel${n ? '' : ' active'}" data-i="${n}">${checkHtml(lesson, s, snippetNames, snippet, t, tx)}</div>`).join('');
       const wrap = `<div class="tasks" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})" data-step="${s.id}" data-stepkey="${esc(`${lesson.slug}/${s.id}`)}" data-kind="${kind}" data-keys="${esc(keys.join('|'))}" data-unlocks="${esc((c.unlocks || []).join(','))}" data-names="${esc(names.join('|'))}"><div class="taskpills" role="tablist" aria-label="Tasks">${pills}</div>${bodies}${tryHtml(s)}${taskChecks}<p class="tmsg" aria-live="polite"></p></div>`;
