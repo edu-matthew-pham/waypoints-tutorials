@@ -1,8 +1,8 @@
 summary: "Manage an ongoing AI interaction through clarification, questioning and redirection."
 time: 30
 goals:
-  - "I can identify why an AI response does not meet my goal."
-  - "I can write an appropriate follow-up and explain what I still need to verify."
+  - "I can spot what's wrong with an AI's reply before I answer it."
+  - "I can write a follow-up that fixes it, and say what I'd still check myself."
 before: |
   The board shows prepared fictional replies, not a functioning chatbot. Each of its four situations has a first reply with one clear problem (it gives the answer away, assumes equipment you don't have, uses jargon, or makes a shaky claim), and one follow-up that fixes it best. The board says whether a follow-up fixed the problem.
   The "learning styles" claim in the study situation is deliberately shaky: reviews have found little good evidence that matching teaching to a preferred style helps (Pashler, McDaniel, Rohrer and Bjork, 2008, https://doi.org/10.1111/j.1539-6053.2009.01038.x), while practice testing and spreading study out have strong support (Dunlosky and colleagues, 2013, https://doi.org/10.1177/1529100612453266).
@@ -22,8 +22,8 @@ exit:
   q: "An AI's first reply uses words you don't understand. Which follow-up fixes that, and why won't 'give more context' fix it?"
   a: "Ask for a simpler explanation with an example. More context changes what the AI knows about you, not the words it uses."
 explain: |
-  A follow-up is a purposeful change to the conversation based on the preceding answer.
-  Different interactions can serve different learning needs; independent checks still matter.
+  A follow-up is what you say after reading the AI's reply, aimed at whatever was wrong with it: tell it what you really have, ask it to say it more simply, ask for a hint instead of the answer, or ask why it claimed something.
+  Work out the problem first, then pick the follow-up. And whatever it says back, you still check it yourself: the AI sounding surer isn't the same as being right.
 sources:
   - { title: "Pashler, McDaniel, Rohrer and Bjork (2008), Learning styles: concepts and evidence", url: "https://doi.org/10.1111/j.1539-6053.2009.01038.x", checked: 2026-10-18 }
   - { title: "Dunlosky, Rawson, Marsh, Nathan and Willingham (2013), Improving students' learning with effective learning techniques", url: "https://doi.org/10.1177/1529100612453266", checked: 2026-10-18 }

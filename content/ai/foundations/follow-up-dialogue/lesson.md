@@ -1,6 +1,6 @@
 ---
 title: How do you work with an AI response?
-summary: Practise asking follow-up questions, correcting assumptions and redirecting unhelpful AI assistance.
+summary: "When an AI's first reply misses, work out what's wrong with it and ask the follow-up that fixes it."
 language: science
 shape: 5e
 unit: communicating-with-ai
@@ -23,7 +23,7 @@ explainClip:
     - caption: { text: "Check whether the response now serves your goal." }
     - wait: 900
 ---
-Last lesson, you practised communicating your goal in an initial request. But **AI interactions can be conversations**: you can clarify, question and redirect a response.
+Your first message to an AI doesn't have to be perfect, and its first reply often isn't either. You can keep talking: tell it what you actually have, ask it to say it more simply, or ask why it said something. The trick is spotting what's wrong with the reply before you decide what to say next.
 
 ## Engage: what would you say next?
 
@@ -44,14 +44,14 @@ try: { playground: board, starter: "boards.yml#explore", height: 600 }
 check: { type: board, text: "Try at least two follow-ups, and find the one that fixes a first reply.", when: "t >= 2 and b >= 1" }
 ```
 
-Choose a situation on the board. Read **your goal**, the first prompt and the first reply. Each first reply has **one clear problem**. Find it, then choose the follow-up that fixes it:
+Pick a situation on the board and read what you wanted, what you asked and what came back. Each first reply has one thing wrong with it. Work out what it is, then choose the follow-up that fixes it:
 
 - Give more context.
 - Ask for a hint instead of the answer.
 - Ask for a simpler explanation.
 - Question an assumption.
 
-Each option shows a **scripted example reply**, not a real AI. The board tells you whether your follow-up fixed the problem. Try more than one: a follow-up is not automatically an improvement.
+The replies are written in advance, not a real AI. The board tells you whether your follow-up fixed the problem, so try more than one: asking again doesn't always make it better.
 
 ## Explain: why follow up?
 
@@ -60,47 +60,53 @@ stage: investigate
 tasks:
   - check:
       type: question
-      q: "What is a useful follow-up when AI assumes you have equipment you do not have?"
-      options: ["Tell it your actual resources and ask for an alternative", "Repeat the same request with no changes", "Pretend you have the equipment"]
+      q: "The AI's plan for your science project needs a microscope, and you haven't got one. What do you say next?"
+      options: ["Tell it what you do have and ask for another way", "Ask the same thing again", "Go along with it and hope you can borrow one"]
       answer: 0
+      feedback: [null, "It'll make the same guess about your equipment. Tell it what you've actually got.", "The plan still won't work at home. Tell it what you've got so it can plan around that."]
   - check:
       type: question
       q: "On the board, the study tips said 'find your learning style'. Which follow-up showed that claim was shaky?"
       options: ["Question an assumption", "Give more context", "Ask for a simpler explanation"]
       answer: 0
       feedback: [null, "More context kept the shaky claim.", "Simpler words kept the shaky claim."]
-  - check: { type: reflect, text: "I can select a follow-up that addresses a specific problem with an AI response." }
+  - check:
+      type: question
+      q: "You asked for a simpler explanation and got one. How do you know it actually helped?"
+      options: ["Explain it back in your own words, or try a question on it", "It's shorter, so it must be better", "The AI says it's clearer now"]
+      answer: 0
+      feedback: [null, "Shorter can still be wrong, or still lose you. Test yourself on it.", "The AI can't tell whether you've understood. Only you can, by trying."]
 ```
 
-### Diagnose the response
+### What's wrong with the reply?
 
-Was the first answer too vague, based on a mistaken assumption, too complex, or simply a different kind of help from what you wanted?
+Before you ask anything, say what the problem is. Was the reply too vague, built on a wrong guess about you, too hard to follow, or just the wrong kind of help?
 
-### Select a follow-up
+### What do you ask next?
 
-What could you ask next? Explain **why** that follow-up addresses the problem.
+Pick the follow-up that fixes that problem, and be ready to say why it fixes it and the others don't.
 
-### Check the result
+### Did it help?
 
-How would you decide whether the revised response is actually more useful or reliable?
+A new reply isn't automatically a better one, so how would you check?
 
 ## Elaborate: design a short conversation
 
 ```step
 stage: make
 tier: typical
-check: { type: reflect, text: "I drafted an initial prompt, a realistic unsatisfactory response and a purposeful follow-up." }
+check: { type: reflect, text: "I wrote a request, a reply that misses, and a follow-up, and my partner agreed it fixes the real problem." }
 ```
 
 In your book, write a three-part example:
 
-1. A short request for assistance with an everyday task.
-2. A possible AI response that misses your goal in a specific way.
-3. Your **follow-up**, designed to address that problem.
+1. A short request for help with something everyday.
+2. A reply an AI might give that misses what you wanted in one particular way.
+3. Your follow-up, aimed at exactly that problem.
 
-Ask a partner whether your follow-up addresses the actual problem. Revise it once.
+Swap with a partner. Do they think your follow-up fixes the real problem? Change it once if not.
 
-**Wider investigation:** Compare asking for an explanation, a hint and a challenge question. Which helps someone who wants to finish a task, and which helps someone who wants to learn to do it independently?
+**Going further:** an explanation, a hint or a question to try yourself: which helps someone who just wants the task done, and which helps someone who wants to be able to do it on their own next time?
 
 ## Evaluate: transfer
 
@@ -108,20 +114,21 @@ Ask a partner whether your follow-up addresses the actual problem. Revise it onc
 stage: info
 check:
   type: question
-  q: "AI gives a complete solution when you wanted to practise independently. What is a useful next step?"
-  options: ["Copy it and move on", "Ask for a new question and one hint at a time", "Assume every complete answer is harmful"]
+  q: "You wanted to practise on your own, but the AI just gave you the whole solution. What's a good next step?"
+  options: ["Copy it and move on", "Ask for a new question and one hint at a time", "Decide AI answers are always bad for you"]
   answer: 1
+  feedback: ["You'd have the answer but not the practice you wanted.", null, "The full answer wasn't wrong, just the wrong kind of help for practising. Ask for the kind you need."]
 ```
 
-Without the board, write a follow-up to an AI response that made an unsupported assumption. Explain what you would check independently.
+Now without the board: think of a reply where an AI guessed something about you that wasn't true. Write the follow-up you'd send, and say what you'd still check for yourself afterwards.
 
 ## Learning with AI: you can redirect assistance
 
 ```step
 stage: info
-check: { type: reflect, text: "I can name the problem with a reply before I choose my follow-up." }
+check: { type: reflect, text: "I said what was wrong with a reply before I chose what to ask next." }
 ```
 
-You do not have to accept the first form of assistance. Ask for a question, an example, a hint or a different approach when it suits your goal. **But prompting an AI to be more confident, or to check itself, does not prove it is correct.**
+You don't have to take the first kind of help you're given. Ask for a question, an example, a hint or a different way in, whatever suits what you're trying to do. **But telling an AI to sound surer, or to check its own work, doesn't make it right.**
 
-Next, we will explore how to learn effectively with AI while keeping responsibility for our own understanding.
+Next you'll look at how to learn with AI while making sure the understanding ends up in your head, not just on the screen.
