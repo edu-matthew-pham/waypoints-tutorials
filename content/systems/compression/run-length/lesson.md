@@ -60,7 +60,7 @@ Was your prediction right? Change a pixel and watch the code change.
 
 ```step
 stage: investigate
-insight: "Encoding four rows, including one that starts black and one with no runs, models the new move and shows when it fails. Sam leaves out the leading 0, the misconception planted after the method; the why question covers what compression is for."
+insight: "Encoding four rows, including one that starts black and one with no runs, models the new move and shows when it fails. Sam leaves out the leading 0, the misconception planted after the method; the photo count makes what compression is for concrete (10K03 n1)."
 tasks:
   - check:
       type: question
@@ -78,12 +78,14 @@ tasks:
       misconception: rle-start-white
       explain: "Line 3: the first number always counts white. The row starts black, so the code starts with 0: 0, 2, 6. Read as 2, 6 it would come back as 2 white, 6 black."
   - check:
-      type: question
-      q: "Why compress data at all?"
-      options: ["Smaller data takes less storage and is quicker and cheaper to send", "It makes pictures sharper", "It makes data more secure", "Computers can't store uncompressed data"]
-      answer: 0
-      feedback: [null, "Compression doesn't add detail; at best it keeps it all.", "That is encryption. Compressed data can still be read by anyone with the rule.", "They can; it just takes more space and time."]
-      explain: "Fewer numbers means less storage, faster downloads and streaming, and less energy and cost to move data around."
+      type: answer
+      q: "A phone photo is 12 MB as it was taken. Compressed, it's 3 MB. Ten uncompressed photos fill a space. How many compressed photos fit in the same space?"
+      answer: "40"
+      feedback:
+        - ["10", "Same space, but each compressed photo takes only a quarter of it."]
+        - ["4", "That's how many times smaller each photo is. Ten photos' worth of space is 120 MB."]
+        - ["30", "120 MB of space, 3 MB each: divide."]
+      explain: "10 × 12 = 120 MB, and 120 ÷ 3 = 40 photos. That's the reason to compress: four times the photos in the same storage, and each one sends four times faster, on any network or phone plan."
 ```
 
 ### Four rows
@@ -100,7 +102,7 @@ Decompressing reads the codes back and gives exactly the same picture, so run-le
 
 ### Find the mistake
 
-### Why compress?
+### Four times the photos
 
 ## Vary: one change at a time
 

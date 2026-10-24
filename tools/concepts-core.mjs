@@ -290,6 +290,7 @@ export const THEORY = [
   { id: 'fetch-execute', label: 'fetch, decode, execute' },
   { id: 'web-layers', label: 'content, structure (HTML) and presentation (CSS) are separate layers' },
   { id: 'vector-graphics', label: 'vector pictures and 3D models are stored as shapes and corners (numbers)' },
+  { id: 'hex', label: 'hex: one digit for four bits' },
   { id: 'encoding', label: 'encoding (binary, hex, base64) is a public rule, not encryption' },
   // Science ideas that Engineering puts to work (introduced by Science lessons, or by an Engineering lesson where
   // Science has none, such as turning effects).

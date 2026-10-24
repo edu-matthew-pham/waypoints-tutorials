@@ -48,16 +48,22 @@ check:
 stage: run
 insight: "Running the pipe settles the prediction."
 try: { playground: board, starter: "shell.yml#run", height: 520 }
-check: { type: board, text: "Run grep cat pets.txt, then the same with | wc -l on the end.", when: "u = 1 and o = 3", explain: "3: wc counted grep's lines, not the file's." }
+tasks:
+  - check: { type: board, text: "Run grep cat pets.txt, then the same with | wc -l on the end.", when: "u = 1 and o = 3", explain: "3: wc counted grep's lines, not the file's." }
+  - check: { type: board, text: "One more small command: head keeps the first few lines. Run head -n 2 pets.txt.", when: "u = 0 and l = 2 and e = 0", explain: "cat and dog: the first two lines of the file, in the order they're stored. head -n 3 would keep three." }
 ```
 
-Was your prediction right?
+Was your prediction right? Then meet head.
+
+### Count with a pipe
+
+### Keep the first lines
 
 ## Worked example: a three-part pipe
 
 ```step
 stage: investigate
-insight: "Following data through sort, uniq and wc models the new move one stage at a time. Sam thinks wc still reads the file, the misconception planted after the method."
+insight: "Following data through sort, uniq and wc models the new move one stage at a time. Sam thinks wc still reads the file, the misconception planted after the method. The last question is the node's idea (10K01 n1): the operating system joins the programs, so neither needs to know where its input comes from."
 tasks:
   - check:
       type: answer
@@ -77,11 +83,11 @@ tasks:
       explain: "Line 3: after the |, wc -l reads grep's output (three lines), not pets.txt. The answer is 3."
   - check:
       type: question
-      q: "Why does uniq need sort before it?"
-      options: ["uniq only drops repeats that are next to each other", "uniq only works on sorted words", "sort makes uniq faster", "It doesn't"]
+      q: "wc -l can count the lines of a file, lines you type, or grep's output. How does wc know which one it's getting?"
+      options: ["It doesn't need to: the operating system hands it lines, and it counts them", "grep sends wc a message saying where the lines came from", "There are three different wc programs", "It reads pets.txt to check"]
       answer: 0
-      feedback: [null, "uniq compares each line with the one just before.", "It works on anything; it just compares neighbours.", "Try it without sort."]
-      explain: "Without sort, cat … cat aren't neighbours, so both stay."
+      feedback: [null, "grep just writes lines out. It doesn't know wc exists.", "It's one small program.", "After a pipe, wc never opens the file."]
+      explain: "Each program reads its input and writes its output. The operating system decides where those go: the screen, a file, or the next program. That's why tiny programs combine."
 ```
 
 ### sort pets.txt | uniq | wc -l
@@ -91,13 +97,14 @@ tasks:
 \text{| uniq} :: Neighbouring repeats go: cat, catfish, dog, hamster, parrot.
 \text{| wc -l} :: Counts the lines it receives: 5.
 \text{one line, three jobs} :: Each command is tiny; the pipe joins them into something new.
+\text{who joins them?} :: The operating system. sort, uniq and wc never know about each other: each reads lines in and writes lines out, and the OS connects them.
 ```
 
 Now count the lines after uniq.
 
 ### Find the mistake
 
-### Why sort first
+### Who joins them?
 
 ## Vary: different pipes
 
@@ -107,7 +114,9 @@ insight: "Each task changes one stage of the pipe: count different pets, keep on
 try: { playground: board, starter: "shell.yml#modify", height: 520 }
 tasks:
   - check: { type: board, text: "How many different pets are there? Use sort, uniq and wc -l in one line.", when: "u = 1 and o = 5", explain: "sort pets.txt | uniq | wc -l prints 5." }
-  - check: { type: board, text: "Print just the first two pets in alphabetical order.", when: "u = 1 and l = 2 and e = 0", explain: "sort pets.txt | head -n 2: cat, cat." }
+  - smaller:
+      check: { type: question, q: "pets.txt is cat, dog, catfish, parrot, cat, hamster. Once it's sorted, which two lines come first?", options: ["cat, cat", "cat, dog", "cat, catfish", "dog, cat"], answer: 0, feedback: [null, "Sort first: dog moves down.", "Both cats come before catfish.", "Sorted, it starts at the letter c."], explain: "Sorted: cat, cat, catfish, dog, hamster, parrot. head -n 2 keeps those first two." }
+    check: { type: board, text: "Print just the first two pets in alphabetical order.", when: "u = 1 and l = 2 and e = 0", explain: "sort pets.txt | head -n 2: cat, cat." }
   - check: { type: board, text: "Save the lines with cat in them into a new file called cats.txt.", when: "x = 1 and p = 1", explain: "grep cat pets.txt > cats.txt: the output goes into the file instead of the screen." }
 ```
 

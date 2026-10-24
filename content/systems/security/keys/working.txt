@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam wants to send Alice a secret.
+Sam has his own padlock and its key.
+Sam locks the box with his own padlock, so it is safe.
+Alice can open it when it arrives.
+# endregion

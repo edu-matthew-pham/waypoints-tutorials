@@ -1,4 +1,4 @@
-summary: Students join commands with pipes (grep, wc, sort, uniq, head), save output with >, and finish the treasure hunt by finding an exact line and counting with a pipe (AC9TDI10K01 node 1).
+summary: Students join commands with pipes (grep, wc, sort, uniq, head), see that the operating system connects one program's output to the next one's input (so neither needs to know about the other), save output with >, and finish the treasure hunt by finding an exact line and counting with a pipe (AC9TDI10K01 node 1).
 time: 45
 timing: "Predict and Try 6 min · Worked example 12 min · Vary 12 min · Practise and Make 15 min"
 goals:

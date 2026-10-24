@@ -7,8 +7,10 @@
 // mode: breach   Ava's four accounts and their passwords; a Leak button: the game site's password list leaks and
 //                the leaked password is tried on every other account and against a common-password list.
 //   set: same (one password everywhere, default) | mixed      manager: on adds "Use a password manager"
+//   clues: off   nothing named (inquiry first): no guessing-speed notes, no "how" in the intro or results, and the
+//                panel line only counts what fell
 //   Values: l (leak run with these settings), f (accounts that fell), r (accounts sharing a password),
-//           c (accounts with a common or guessable password), m (manager on)
+//           c (accounts with a common or guessable password), m (manager on), t (leaks run since the start)
 // mode: mfa      Every password has leaked. Choose each account's second factor (none, SMS code, app code, security
 //                key); Attempt shows what happens when someone else signs in with the password. fake: on adds a
 //                "Ava types her code into a fake page" switch (codes typed into a fake page can be passed on; a
@@ -176,6 +178,7 @@
     if (MODES.indexOf(s.m) < 0) throw new Error('mode: ' + MODES.join(', ') + '.');
     s.set0 = String(s.set || '').toLowerCase();
     s.manager = /^on$/i.test(s.manager || '');
+    s.clues = !/^off$/i.test(s.clues || '');
     s.fake = /^on$/i.test(s.fake || '');
     s.fixOn = /^on$/i.test(s.fix || '');
   }
@@ -208,7 +211,7 @@
   }
   function drawBreach(wrap) {
     var s = breachState();
-    var intro = h('p', 'cyintro', 'Ava\'s accounts. The Game site is about to leak its list of passwords. Anyone who gets the list will try the same password on her other accounts, and try a list of common and guessable passwords.');
+    var intro = h('p', 'cyintro', spec.clues ? 'Ava\'s accounts. The Game site is about to leak its list of passwords. Anyone who gets the list will try the same password on her other accounts, and try a list of common and guessable passwords.' : 'Ava\'s accounts. The Game site is about to leak its list of passwords. Change any password, then press Leak! to see what happens.');
     wrap.appendChild(intro);
     var grid = h('div', 'cygrid');
     ACCTS.forEach(function (a, i) {
@@ -216,17 +219,17 @@
       var p = st.pw[i];
       if (st.manager) c.appendChild(h('div', 'cypw', p + '  (made by the password manager)'));
       else c.appendChild(choices(a, 'Password', PWLIST, PWLIST.indexOf(p), function (k) { st.pw[i] = PWLIST[k]; st.leak = 0; }));
-      c.appendChild(h('div', 'cynote', 'How fast someone could guess it: ' + PW[p].guess + '.'));
-      if (st.leak) c.appendChild(h('div', 'cyres', s.fell[i] ? (i === 1 ? 'Leaked: this site\'s list is out.' : p === st.pw[1] ? 'Broken into: the same password as the leaked site.' : 'Broken into: the password was guessed.') : 'Safe.'));
+      if (spec.clues) c.appendChild(h('div', 'cynote', 'How fast someone could guess it: ' + PW[p].guess + '.'));
+      if (st.leak) c.appendChild(h('div', 'cyres', s.fell[i] ? (i === 1 ? 'Leaked: this site\'s list is out.' : !spec.clues ? 'Broken into.' : p === st.pw[1] ? 'Broken into: the same password as the leaked site.' : 'Broken into: the password was guessed.') : 'Safe.'));
       grid.appendChild(c);
     });
     wrap.appendChild(grid);
     var bar = h('div', 'cybar');
     if (spec.manager) bar.appendChild(button(st.manager ? 'Password manager: on' : 'Use a password manager', function () { st.manager = !st.manager; st.leak = 0; if (st.manager) st.pw = [PWLIST[3], PWLIST[4], PWLIST[5], PWLIST[6]]; }));
-    bar.appendChild(button('Leak!', function () { st.leak = 1; }, 'go', 'Leak the Game site\'s passwords'));
+    bar.appendChild(button('Leak!', function () { st.leak = 1; st.leaks = (st.leaks || 0) + 1; }, 'go', 'Leak the Game site\'s passwords'));
     wrap.appendChild(bar);
-    ui.text = st.leak ? 'After the leak: ' + s.f + ' of 4 accounts fell.' : s.r + ' accounts share a password; ' + s.c + ' could be guessed.';
-    return { l: st.leak ? 1 : 0, f: st.leak ? s.f : 0, r: s.r, c: s.c, m: st.manager ? 1 : 0 };
+    ui.text = st.leak ? 'After the leak: ' + s.f + ' of 4 accounts fell.' : spec.clues ? s.r + ' accounts share a password; ' + s.c + ' could be guessed.' : 'Leaks so far: ' + (st.leaks || 0) + '.';
+    return { l: st.leak ? 1 : 0, f: st.leak ? s.f : 0, r: s.r, c: s.c, m: st.manager ? 1 : 0, t: st.leaks || 0 };
   }
 
   function mfaState() {
@@ -484,7 +487,7 @@
     var same = spec.set0 !== 'mixed';
     return {
       pw: same ? ['sunshine1', 'sunshine1', 'sunshine1', 'sunshine1'] : ['sunshine1', 'kettle-moon-river-pencil', 'Ava2012', 'kettle-moon-river-pencil'],
-      leak: 0, manager: false, fac: [0, 0, 0, 0], tried: 0, fakeOn: false,
+      leak: 0, leaks: 0, manager: false, fac: [0, 0, 0, 0], tried: 0, fakeOn: false,
       marks: {}, checked: {}, news: {}, fields: {}, got: {}, set: {}, setTouched: 0, chg: {}, note: {}, rtry: {}, risk: {}, def: {}, type: {}, fix: {}, app: {}, br: {}, seen: {}, fixed: {},
     };
   }

@@ -3,6 +3,14 @@
 # region: explore
 widget: cyber
 mode: breach
+clues: off
+# endregion
+
+# region: goal
+widget: cyber
+mode: breach
+set: mixed
+clues: off
 # endregion
 
 # region: explain
@@ -17,12 +25,6 @@ set: mixed
 # endregion
 
 # region: elaborate
-widget: cyber
-mode: breach
-set: mixed
-# endregion
-
-# region: make
 widget: cyber
 mode: breach
 set: mixed

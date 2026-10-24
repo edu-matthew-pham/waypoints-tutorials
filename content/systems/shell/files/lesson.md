@@ -94,6 +94,7 @@ tasks:
 \text{projects/game} :: A short path starts from where you are now (here, /home/sam).
 \text{..} :: The folder above. From game, .. is projects, and ../.. is sam.
 \sim :: Your home folder, /home/sam. cd on its own also goes home.
+\text{one tree} :: The files may sit on a hard drive, an SSD or a USB stick. The operating system shows them all as one tree of paths, so ls and cd work the same on any of them.
 ```
 
 Now try two lots of ..

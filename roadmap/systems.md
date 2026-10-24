@@ -80,7 +80,21 @@ The "5E missions" so far are PRIMM or the maths shape with 5E labels: Explore is
 - Elaborate: TCP and spare routes together, every route broken, live video. Evaluate: a download at 99%, reread the Engage guess, self-check against the goals.
 The `reasoning` check gains `placeholder:` and a per-pick `q:` (defaults unchanged). Rule of thumb for others: 5E for concept lessons where students can find the idea on a board; the explicit shape for procedures.
 
-## Proposed (25 Oct 2026): support lead-ins and review fixes (not built; waiting for "go")
+## Built (25 Oct 2026, Matthew: "go"): support lead-ins and review fixes
+
+What went in, against the plan below:
+- Lesson text: Everything is numbers (the opening asks a question; "encoding" first appears in the last worked row; Make hints no longer give the answers); Pipes (`head` taught in Try as its own task; the worked example and an Investigate question say the operating system joins the programs, which is the 10K01 n1 idea; the "why sort first" question gave way to it, and its point stays in the worked rows and feedback); Where files live (one worked row: the OS shows every drive as one tree); Who can see your data? (a `reasoning` check in Try on why the PIN needs protecting on the way, and a stored-or-sent Practise question replacing "which most needs encrypting"); Run-length encoding (a photo count, 40, replaces the four-option "Why compress?").
+- Passwords rebuilt as inquiry 5E: typed Engage; two Explore steps on a board with `clues: off` (new `cyber` option: no guessing notes, no reason on results; new value `t`, leaks run), hints that ask; Explain opens with a `reasoning` check, then a match to breach, reuse, guessable and passphrase, then Sam; one Elaborate (fix by hand, then the manager); Evaluate rereads the guess. Re-records the cyber clips (widget change).
+- Not done for the other seven missions: none of them has Explore hints, and the double Elaborate is not a heading problem: `STAGE_INFO_5E` (shared, also used by the 57 AI lessons) labels both modify and make "Elaborate", so one Elaborate per lesson means one Elaborate step per lesson, which is the retrofit itself. Decide after Passwords is tried (Next 3).
+- Security and privacy: the practice student account is Kai (widget, Access, Hashes, the CTF, teacher notes), with a line that maple is weak on purpose; Sam stays the persona. Re-records the security clips.
+- Hashes and keys split: Hashes and salt (lesson 4, same slug `hashes-keys` so progress stays; new Vary: crack an unsalted stolen list by typing common passwords, then salt it; Practise sort hash / encryption / neither) and Public and private keys (lesson 5, `security/keys`, port 8546, new misconception `lock-with-own-key`; Make is a `reasoning` check explaining how HTTPS starts; Practise ends with the same sort). CTF is lesson 6.
+- Hex: optional Hex: binary in fours (Data representation 6.5, 8K04 n1, port 8547), `bits` gains `hex: on` (styles inline, so only bits clips re-record), theory concept `hex`, misconception `hex-digits-joined`, one line in Colour and images. Encoding is not encryption does not list `assumes: hex`: an optional lesson can't satisfy that check, so its teacher notes point to it instead.
+- The systems map has a Security and privacy (Processes) row (shared.md › Done 25 Oct).
+- The three `smaller:` lead-ins (after a4e344d), all plain checks, so none waits for board lead-ins (push 2): Everything is numbers' Make (number: 97 shows a; what shows e?), How many patterns? fewest bits for 100 (number: six cards make 63; what's a seventh worth?) and Pipes' first-two task (question: once pets.txt is sorted, which two lines come first?). Each answered and marked correct in a headless browser. `npm run effort` still lists the other systems lessons with a hinge node or `stuck:` and no lead-in; add them where students actually stick, not to clear the list.
+
+Tested headless: every new or changed board check reaches its `when:` (35 checks, plus the three lead-ins, including the hex clip's 0A and 10), and every changed page and the map load with no errors.
+
+### The plan (25 Oct, before "go")
 
 Reply to roadmap/shared.md › Proposed (25 Oct): support when it's needed, invisible when it isn't, with its Amended block, and the review's Digital systems findings. Most fixes below touch only `lesson.md`, which is outside the clip hash; the ones that re-record are marked.
 
@@ -120,9 +134,8 @@ None needs a board starter; all three are the plain kinds in step (1) of the sha
 
 1. Years 5–6 versions (AC9TDI6K03, 6K04): counting dots, no place-value notation.
 2. A CTF scoreboard (points, hints that cost points) only if classes want one; it would need storage the site doesn't have.
-3. Trial Packets (inquiry 5E) against an explicit-shape lesson on one concept, then decide which concept lessons to rebuild the same way (candidates: Everything is numbers, Who can see your data, Threat models).
+3. Trial Packets and Passwords (inquiry 5E) against an explicit-shape lesson on one concept, then decide which concept lessons to rebuild the same way (candidates: the other seven Cyber missions, Everything is numbers, Who can see your data, Threat models).
 
 ## Open questions
 
 - Subject name: "Digital systems" (working name) or "How computers work".
-- Hex: in the colour lesson, or Years 9–10?

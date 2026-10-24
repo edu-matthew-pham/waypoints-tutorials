@@ -1,6 +1,6 @@
-summary: Students watch one leaked password open all of Ava's accounts, then stop the spread with a different long passphrase for each account and a password manager (AC9TDI8P13 node 1). A 5E mission lesson.
+summary: Students guess what a leak could do, leak Ava's passwords on a board that names nothing, find for themselves which changes stop the spread, explain it in their own words, then meet the names (breach, reuse, guessable, passphrase) and a password manager (AC9TDI8P13 node 1). An inquiry 5E mission, built on the Packets model.
 time: 40
-timing: "Engage and Explore 12 min · Explain 8 min · Elaborate 14 min · Evaluate 6 min"
+timing: "Engage 4 min · Explore 14 min · Explain 10 min · Elaborate 7 min · Evaluate 5 min"
 goals:
   - I can explain how a password gets out, and why reusing one makes it worse.
   - I can say what makes a password hard to guess.
@@ -11,18 +11,18 @@ before: |
 
   The one idea: one leak spreads through reuse, and guessable passwords fall without any leak. Fixes: a different long passphrase for each site, kept in a password manager.
 
-  This is a 5E mission lesson: Explore has a goal and the first attempt fails on purpose. Model the Explain live: replay the leak on the board and name each part (breach, reuse, guessable). Avoid asking students about their own passwords; talk about Ava's.
+  This is an inquiry 5E lesson (rebuilt 25 Oct on the Packets model): Engage is a typed guess with no right answer; in Explore the board says nothing about why an account fell, so students find both reasons themselves; Explain starts with their own words, and only then the names. Don't name the fixes before Explain. Avoid asking students about their own passwords; talk about Ava's.
 
   Unplugged: hand out a key ring with one key that opens every door, then ask what happens when one copy is lost.
 running:
-  - "Engage: ask who picked \"just the game site\"; let Explore answer it."
-  - "Explore: ask what had to change for the leak to stop at one account."
-  - "Explain: replay the leak; name breach, reuse and guessable as each appears."
-  - "Elaborate: ask which of Ava's new passwords failed for which reason."
+  - "Engage: collect two or three guesses without judging them; Explore will answer them."
+  - "Explore: ask which accounts fell together, and which fell alone. Don't name reuse or guessable yet."
+  - "Explain: compare two students' own explanations before the names; then replay the leak and name each part."
+  - "Elaborate: ask which of Ava's new passwords failed for which reason; then why the manager makes it realistic."
   - "Evaluate: collect answers to the breach question; link to MFA next lesson."
 stuck:
   - see: "A student thinks P@ssw0rd! is strong (Sam's mistake)."
-    ask: "Pick it on the board. What does it say about guessing it?"
+    ask: "Give an account P@ssw0rd! on the Elaborate board. What does it say about guessing it?"
     fix: "Symbol swaps are on the lists; length and randomness count."
   - see: "A student uses one strong passphrase for everything."
     ask: "Press Leak! What happens to the others?"

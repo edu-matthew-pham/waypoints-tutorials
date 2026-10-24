@@ -49,10 +49,32 @@ check:
 stage: run
 insight: "Sending the PIN with encryption off settles the prediction: Eve's panel shows it in full."
 try: { playground: board, starter: "snoop.yml#run", height: 520 }
-check: { type: board, text: "Send the PIN with encryption off. What does Eve see?", when: "f >= 1 and v = 1", explain: "Eve copied the packets as they crossed the café Wi-Fi and read the PIN: nothing stopped her." }
+tasks:
+  - check: { type: board, text: "Send the PIN with encryption off. What does Eve see?", when: "f >= 1 and v = 1", explain: "Eve copied the packets as they crossed the café Wi-Fi and read the PIN: nothing stopped her." }
+  - check:
+      type: reasoning
+      q: "The bank keeps your PIN locked away safely once it arrives. So why did Eve still get it? Say where the PIN was when she copied it, and why she could."
+      placeholder: "For example: on the way to the bank, the PIN went through ..."
+      steps:
+        - ["The PIN went from the phone through the café Wi-Fi and other networks before it reached the bank.", "packets travel through equipment other people run and share"]
+        - ["Anyone on that shared Wi-Fi can copy the packets as they pass.", "a packet goes past everyone on the link, not only the bank"]
+        - ["Sent as it was, the copy shows the PIN.", "nothing changed it before it left the phone"]
+        - ["So it has to be protected on the way, not only once the bank stores it.", "the bank's locks only start working when the PIN arrives"]
+      picks:
+        - step: 4
+          q: "Why isn't the bank keeping the PIN safe enough?"
+          options: ["Its locks only protect the PIN once it arrives; the trip there is shared", "Banks don't keep PINs safe", "Eve broke into the bank", "The PIN was too short"]
+          answer: 0
+          feedback: [null, "The bank's storage is fine. Eve never went near it.", "Eve was in the café, not the bank.", "A long PIN sent as it is would be copied just the same."]
+      criteria: ["I said where the PIN was when Eve copied it.", "I said why someone else could copy it there.", "I said why protecting it at the bank isn't enough."]
+      explain: "Packets cross networks that other people share, so data needs protecting while it travels, not only where it's stored."
 ```
 
 Was your prediction right? Now look at the Encrypt button.
+
+### Send it plain
+
+### Why on the way?
 
 ## Worked example: encrypt, then send
 
@@ -131,15 +153,15 @@ tasks:
 
 ```step
 stage: practise
-insight: "Choosing what needs encryption, decrypting with a key, the padlock on websites, and a review of packets."
+insight: "Stored or travelling (n3's first criterion), decrypting with a key, the padlock on websites, and a review of packets."
 tasks:
   - check:
       type: question
-      q: "Which of these most needs encrypting when you send it?"
-      options: ["Your bank password", "The time of a public bus timetable", "The weather forecast you're reading", "A news headline"]
+      q: "Your class marks are saved on the school's server, and the server's room is locked. A teacher opens them from home. When could someone else read them?"
+      options: ["On the way from the server to the teacher's home, unless they're encrypted", "Never: the room is locked", "Only if someone breaks into the server room", "Only after the teacher prints them"]
       answer: 0
-      feedback: [null, "It's public anyway.", "It's public anyway.", "It's public anyway."]
-      explain: "Passwords, card numbers and private messages must be encrypted; public information is less of a worry (though encrypting everything also hides what you are reading)."
+      feedback: [null, "The lock protects where they're stored, not the trip across the internet.", "Copying packets on the way needs no break-in.", "They could be read long before that, on the network."]
+      explain: "Stored safely is not the same as sent safely: anything crossing shared networks needs encrypting on the way too."
   - check:
       type: question
       q: "A message was encrypted with key 3. You receive **KHOOR**. What did it say?"
@@ -163,7 +185,7 @@ tasks:
       explain: "TCP resends only the packet that was never acknowledged."
 ```
 
-### What needs encrypting
+### Stored or sent?
 
 ### Decrypt
 

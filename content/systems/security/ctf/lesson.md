@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 6
 unit: ctf
 node: AC9TDI10K01 n5
 title: "Capture the flag: secure the portal"
@@ -73,7 +73,7 @@ tasks:
   - starter: "portal.yml#perms"
     check:
       type: flag
-      q: "Flag 3 (permissions). Sign in as Sam (password maple) and test what a student can do. Which file can students change that they should only read? The flag is WP{ then the file name in lower case, then }."
+      q: "Flag 3 (permissions). Sign in as Kai (password maple) and test what a student can do. Which file can students change that they should only read? The flag is WP{ then the file name in lower case, then }."
       hash: 0d678b8d55963d68c8e3eca899237b245a7035ab4057998edee6ecbfcdc8d390
       explain: "Students can change Marks. They should only read them."
   - starter: "portal.yml#keys"

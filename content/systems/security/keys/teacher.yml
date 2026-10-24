@@ -1,0 +1,40 @@
+summary: Students send a message past an eavesdropper locked with Alice's public padlock, see why Bob's own padlock and no padlock both fail, then sort hashes from public key encryption and explain how HTTPS starts (AC9TDI10K01 node 4, second half; Hashes and salt is the first).
+time: 40
+timing: "Predict and Try 6 min · Worked example 10 min · Vary 8 min · Practise 8 min · Make 8 min"
+goals:
+  - I can explain how a public key and a private key work together.
+  - I can say which key to lock a secret with.
+  - I can explain how a browser and a site that have never met share a secret.
+struggle: "The public key only locks, which runs against intuition (a key that doesn't open?). Use the padlock as the anchor all lesson: anyone can snap one shut."
+before: |
+  Try the board yourself. Every name is made up.
+
+  The kit's typical width: public key cryptography (as in TLS/HTTPS) secures data in transit; hashing (last lesson) secures stored passwords; they address different threats. Split from Hashes and keys on 25 Oct. Simplifications: the padlock is an analogy; HTTPS uses public keys to agree a shared key, then faster encryption for the rest; certificates (who vouches that a public key really is the shop's) are a stretch question, not taught.
+
+  Links: Secret messages' key sharing (agreeing a key in public) is the other half of how HTTPS starts.
+running:
+  - "Predict: students who chose \"send Bob the key first\" haven't met the problem: ask what Eve does with the key."
+  - "Try: ask what Eve has. (The box and a padlock.) What is she missing?"
+  - "Worked example: ask why the key that opens must never travel."
+  - "Vary: ask why Bob's own padlock is safe from Eve but useless to Alice."
+  - "Make: compare two students' explanations against the criteria before showing the model."
+stuck:
+  - see: "A student locks with their own padlock (Sam's mistake)."
+    ask: "Who has the key to Bob's padlock?"
+    fix: "Lock with the receiver's public key."
+  - see: "A student thinks the public key opens the box."
+    ask: "Eve has a padlock too. Can she open the box?"
+    fix: "Public keys only lock; the private key opens."
+stretch: "Eve hands you a padlock and says it's the shop's. How would you know? Look up what a certificate is."
+support: "A card: public key = open padlock (anyone locks); private key = the only key (only the owner opens). Lock with theirs."
+leads: |
+  Next: Capture the flag (use everything from this course to find and fix the weaknesses in a school portal).
+
+  Links: Secret messages (key sharing, challenge and response).
+exit:
+  q: "Which key locks a message for Alice, and why can it be public?"
+  a: "Alice's public key. It can only lock; only her private key, which never leaves her, opens it."
+explain: |
+  **Public key** encryption is like an open padlock: anyone can lock a message with someone's public key, but only their **private key** opens it. So two strangers can share a secret in public: the key that opens never travels.
+
+  HTTPS uses this to agree a secret key with a website, then encrypts the rest with that shared key. A hash is different: it can't be undone at all, so it's for what only needs checking, like stored passwords.

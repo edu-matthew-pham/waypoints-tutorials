@@ -17,12 +17,12 @@ explainPicture: { ref: access.yml#explain-pic, caption: "Sign in proves who you 
 explainClip:
   query: { code: "@access.yml#explain", fresh: 1, id: explain }
   caption: "Sign in, then permissions"
-  say: "Sam signs in with the right password."
+  say: "Kai signs in with the right password."
   clip:
     - type: { into: Password, text: "maple" }
     - click: { selector: ".scsign button" }
     - wait: 800
-    - caption: { text: "Signed in: the system knows it is Sam.", say: "Signed in. The system knows who it is." }
+    - caption: { text: "Signed in: the system knows it is Kai.", say: "Signed in. The system knows who it is." }
     - click: Change Marks
     - expect: { selector: ".scres", contains: "Denied" }
     - caption: { text: "But students may only read Marks: denied.", say: "But students may only read marks." }
@@ -40,18 +40,18 @@ stage: predict
 insight: "Committing to whether a signed-in student can change marks tests the new move: authentication and authorisation are separate checks."
 check:
   type: predict
-  q: "Sam the student signs in with the right password, then tries to change the class marks. What happens?"
-  options: ["Denied: signing in proves who Sam is, but students aren't allowed to change marks", "It works: Sam signed in correctly", "Sam is signed out", "It works, but only for Sam's own mark"]
-  actual: "Denied. The password proved it is Sam (authentication); the permissions say students may only read Marks (authorisation)."
+  q: "Kai the student signs in with the right password, then tries to change the class marks. What happens?"
+  options: ["Denied: signing in proves who Kai is, but students aren't allowed to change marks", "It works: Kai signed in correctly", "Kai is signed out", "It works, but only for Kai's own mark"]
+  actual: "Denied. The password proved it is Kai (authentication); the permissions say students may only read Marks (authorisation)."
 ```
 
 ## Try: sign in and try
 
 ```step
 stage: run
-insight: "Signing in as Sam and trying to change Marks settles the prediction: signed in, yet denied."
+insight: "Signing in as Kai and trying to change Marks settles the prediction: signed in, yet denied."
 try: { playground: board, starter: "access.yml#run", height: 580 }
-check: { type: board, text: "Sign in as Sam (password maple) and try to change Marks. Then read Marks.", when: "a = 1 and u = 1 and t >= 3", explain: "Sam is signed in (authenticated) but may only read Marks (authorised to read, not change)." }
+check: { type: board, text: "Sign in as Kai (password maple) and try to change Marks. Then read Marks.", when: "a = 1 and u = 1 and t >= 3", explain: "Kai is signed in (authenticated) but may only read Marks (authorised to read, not change)." }
 ```
 
 Was your prediction right? Now sign in as Ms Lee and try the same.
@@ -76,7 +76,7 @@ tasks:
       answer: 3
       fault: logic
       misconception: signed-in-means-allowed
-      explain: "Line 3: signing in only proves who Sam is. What Sam may do is a separate check, the permissions for students."
+      explain: "Line 3: signing in only proves who Kai is. What Kai may do is a separate check, the permissions for students."
   - check:
       type: question
       q: "Why add a code from a phone (multi-factor sign-in)?"
@@ -89,8 +89,8 @@ tasks:
 ### One request, two checks
 
 ```worked
-\text{Sam types "maple"} :: Authentication: is the password right for Sam?
-\text{signed in as Sam (student)} :: The system now knows who is asking.
+\text{Kai types "maple"} :: Authentication: is the password right for Kai?
+\text{signed in as Kai (student)} :: The system now knows who is asking.
 \text{"change Marks"} :: Authorisation: what may students do with Marks?
 \text{Students: Marks = read} :: The permissions table says read only.
 \text{denied} :: Signed in, but not allowed. Least privilege: each role gets only what its job needs.

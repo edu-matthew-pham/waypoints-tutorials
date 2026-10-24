@@ -1,0 +1,39 @@
+summary: Students group binary cards in fours to read and write hex, see that one hex digit is exactly four bits and a byte is two hex digits, read web colours, and meet hex as a public rule (AC9TDI8K04 node 1, binary representation of integers, written short). Optional; Encoding is not encryption (Capture the flag) decodes hex and is the natural place to point students who skipped it.
+time: 35
+timing: "Predict and Try 6 min · Worked example 10 min · Vary 8 min · Practise and Make 11 min"
+goals:
+  - I can turn four bits into one hex digit, and back.
+  - I can write a byte as two hex digits.
+  - I can read a web colour like #FF8800 as three numbers.
+struggle: "Joining the two digits like decimal (1F as 115). Every time, ask what the left digit counts: sixteens."
+before: |
+  Do the boards yourself first. Students need Bits and binary numbers and How many patterns? (four bits make 16 patterns).
+
+  The one idea: four bits make exactly 16 patterns, so one hex digit stands for four bits, and two hex digits for a byte. Hex is binary written short, not a new kind of number.
+
+  Added 25 Oct 2026 to answer the roadmap's open question (hex in the colour lesson, or Years 9–10?): an optional lesson after How many patterns, with one line in Colour and images. It is optional because the descriptor doesn't name hex. Encoding is not encryption (Capture the flag) uses hex but doesn't list it in `assumes:`, since an optional lesson can't satisfy that check.
+running:
+  - "Predict: students who chose 1515 read each F as 15 and joined them; ask how many cards each F stands for."
+  - "Try: ask how many hex digits a byte needs, and why never three."
+  - "Worked example: ask what the left digit counts."
+  - "Make: let students work out 200 on paper first, then check with the cards."
+stuck:
+  - see: "A student reads 1F as 115 (Sam's mistake)."
+    ask: "What does the left digit count?"
+    fix: "Sixteens: 1 × 16 + 15 = 31."
+  - see: "A student thinks B is 2."
+    ask: "Which hex digit comes after 9?"
+    fix: "A is 10, so B is 11."
+stretch: "Memory addresses are often written in hex, like 0x7FFF. How many bits does each hex digit stand for, so how many bits is that address?"
+support: "A card: 0–9 as usual, A 10, B 11, C 12, D 13, E 14, F 15. One hex digit = four bits; two = a byte."
+leads: |
+  Next: Why binary: logic gates.
+
+  Links: Colour and images (RGB values), Capture the flag › Encoding is not encryption (hex as a public rule).
+exit:
+  q: "Write 1010 1111 in hex, and say what number it is."
+  a: "AF: A is 10, F is 15, so 10 × 16 + 15 = 175."
+explain: |
+  **Hex** (hexadecimal) has sixteen digits: 0 to 9, then A to F for 10 to 15. Four bits make exactly sixteen patterns, so **one hex digit is four bits**, and a byte is always **two hex digits**: 1010 0011 is A3.
+
+  The left digit counts sixteens: A3 is 10 × 16 + 3 = 163. Web colours (#FF8800), memory addresses and error codes use hex because it's short and you can still see the bits. Like binary, it's a public rule, so it hides nothing.

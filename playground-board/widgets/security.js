@@ -30,7 +30,7 @@
   var spec = null, st = {}, ui = {};
   var MODES = ['os', 'dns', 'access', 'hash', 'keys'];
   var DNS = { 'school.edu.au': '203.0.113.10', 'library.school.edu.au': '203.0.113.20', 'weather.example': '192.0.2.44', 'schoo1.edu.au': '198.51.100.66' };
-  var USERS = [{ id: 'sam', name: 'Sam (student)', pw: 'maple', role: 0 }, { id: 'lee', name: 'Ms Lee (teacher)', pw: 'orbit', role: 1 }, { id: 'admin', name: 'Admin', pw: 'quartz-river-71', role: 2 }];
+  var USERS = [{ id: 'kai', name: 'Kai (student)', pw: 'maple', role: 0 }, { id: 'lee', name: 'Ms Lee (teacher)', pw: 'orbit', role: 1 }, { id: 'admin', name: 'Admin', pw: 'quartz-river-71', role: 2 }];
   var FILES = ['Homework', 'Marks', 'Settings'];
   var LEVELS = ['none', 'read', 'read + change'];
   // What each role needs (row = role, column = file): the least privilege table.
@@ -185,7 +185,7 @@
     }));
     sign.appendChild(btn('Sign out', function () { st.who = -1; st.msg = { ok: true, t: 'Signed out.' }; use(); draw(); report(); }, 'quiet'));
     w.appendChild(sign);
-    var hints = h('p', 'schint', 'Practice accounts: Sam’s password is maple, Ms Lee’s is orbit, Admin’s is quartz-river-71.' + (st.mfa ? ' With MFA, the code on the phone is 4096.' : ''));
+    var hints = h('p', 'schint', 'Practice accounts: Kai’s password is maple (a weak one, so it’s quick to type), Ms Lee’s is orbit, Admin’s is quartz-river-71.' + (st.mfa ? ' With MFA, the code on the phone is 4096.' : ''));
     w.appendChild(hints);
     var mf = h('label', 'scperm'); var cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = st.mfa;
     cb.addEventListener('change', function () { st.mfa = cb.checked; st.who = -1; use(); draw(); report(); }); mf.append(cb, document.createTextNode(' Multi-factor sign-in (MFA): password and a code from a phone'));

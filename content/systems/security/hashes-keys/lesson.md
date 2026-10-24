@@ -2,9 +2,9 @@
 order: 4
 unit: layers
 node: AC9TDI10K01 n4
-introduces: [hashing, public-key]
-title: Hashes and keys
-summary: "Good sites never store your password. They store a hash: a one-way scramble that is always the same for the same password, so a login can be checked, but can't be turned back. A salt makes the same password hash differently for each person. Public key encryption works like an open padlock: anyone can lock a message with it, but only the owner's private key opens it."
+introduces: [hashing]
+title: Hashes and salt
+summary: "Good sites never store your password. They store a hash: a one-way scramble that is always the same for the same password, so a login can be checked but the hash can't be turned back. A stolen list can still be cracked by hashing common guesses, unless each person's password gets its own salt."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Websites get hacked and their password lists stolen. If the site did its job, the attackers still don't get your password. How?"
@@ -13,7 +13,7 @@ app:
   url: http://127.0.0.1:8477/index.html
   readySelector: ".scwrap"
   layout: full
-explainPicture: { ref: hk.yml#explain-pic, caption: "Public key: Bob locks the box with Alice's open padlock. Eve has a padlock too, but only Alice's private key opens it." }
+explainPicture: { ref: hk.yml#explain-pic, caption: "A stolen list with no salt: maple gives the same hash for Ana and Ben, so one guess cracks both." }
 explainClip:
   query: { code: "@hk.yml#explain", fresh: 1, id: explain }
   caption: "Stored as a hash"
@@ -29,9 +29,7 @@ explainClip:
     - caption: { text: "One capital letter: a completely different hash.", say: "Change one letter, and the whole hash changes." }
     - wait: 1600
 ---
-This lesson covers two tools that protect data. A **hash** protects passwords where they are **stored**. **Public key** encryption protects secrets while they **travel**, and it is how HTTPS starts.
-
-A **hash** turns any text into a fixed-length scramble. The same input always gives the same hash, but there is no way to work backwards from the hash to the input.
+A **hash** protects passwords where they are **stored**. It turns any text into a fixed-length scramble. The same input always gives the same hash, but there is no way to work backwards from the hash to the input. (Protecting data while it **travels** is the next lesson.)
 
 ## Predict: a stolen list
 
@@ -51,16 +49,16 @@ check:
 stage: run
 insight: "Typing the password and seeing its hash match the stored one settles the prediction: the site checks hashes, never storing the password."
 try: { playground: board, starter: "hk.yml#run", height: 520 }
-check: { type: board, text: "The site stores only Sam's hash. Type Sam's password (maple). Then change one letter to a capital. What happens to the hash?", when: "m = 0 and n = 5 and d >= 6", explain: "maple matches the stored hash; Maple gives a completely different one. The site can check you without ever storing the password." }
+check: { type: board, text: "The site stores only Kai's hash. Type Kai's password (maple). Then change one letter to a capital. What happens to the hash?", when: "m = 0 and n = 5 and d >= 6", explain: "maple matches the stored hash; Maple gives a completely different one. The site can check you without ever storing the password." }
 ```
 
 Was your prediction right? Watch how many digits change for one letter.
 
-## Worked example: hashes and padlocks
+## Worked example: hashes and salt
 
 ```step
 stage: investigate
-insight: "Following a sign-in through hashing, then a message through a public padlock, models both tools. Sam thinks a hash can be turned back, the misconception planted after the method."
+insight: "Following a sign-in through hashing, then two people with the same password, models the new move. Sam thinks a hash can be turned back, the misconception planted after the method."
 tasks:
   - check:
       type: question
@@ -79,11 +77,11 @@ tasks:
       explain: "Line 3: a hash can't be turned back. That is why sites send a reset link instead; a site that emails you your old password is storing it, which is a warning sign."
   - check:
       type: question
-      q: "Bob wants to send Alice a secret. Alice has published her open padlock (public key). Who can open a box Bob locks with it?"
-      options: ["Only Alice, with her private key", "Anyone with Alice's padlock", "Bob", "Eve, if she copies the box"]
+      q: "Ana and Ben both use maple. With no salt, a stolen list shows the same hash twice. What does that tell a thief?"
+      options: ["Ana and Ben have the same password, so cracking one cracks both", "Nothing: hashes can't be read", "The site was hacked twice", "Their hashes must be wrong"]
       answer: 0
-      feedback: [null, "A padlock locks; it doesn't open. Everyone can have one.", "Once locked, Bob can't open it either.", "Copying the box doesn't give her the key."]
-      explain: "Public key: anyone can lock, only the private key opens. HTTPS uses this to agree a secret key with a website."
+      feedback: [null, "They can't be turned back, but two matching hashes still give something away.", "One stolen list, two matching rows.", "Same password in, same hash out: they're exactly right."]
+      explain: "Same password, same hash. A salt (a few random characters per person, added before hashing) gives Ana and Ben different hashes."
 ```
 
 ### Two tools
@@ -92,47 +90,39 @@ tasks:
 \text{maple} \to 49ead2b1066b\ldots :: Hashing: a fixed-length scramble of the password.
 \text{sign in: hash(typed) = stored?} :: The site compares hashes; it never needs the password.
 \text{Maple} \to \text{a completely different hash} :: One small change changes everything, and it can't be reversed.
-\text{salt} + \text{maple} :: Adding each user's salt makes the same password hash differently for each person.
-\text{public key} = \text{open padlock} :: Anyone can lock a message for Alice with it.
-\text{private key} = \text{the only key} :: Only Alice can open it. HTTPS uses this to set up a secret with a website.
+\text{hash(guess) = stored?} :: A thief can't reverse a hash, but can hash common passwords and look for a match.
+\text{salt} + \text{maple} :: Each person's salt makes the same password hash differently, so one guess no longer cracks everyone who picked it.
 ```
 
 Now explain how a site checks a password.
 
 ### Find the mistake
 
-### Padlocks
+### Same password, same hash
 
-## Vary: one change at a time
+## Vary: crack a list, then salt it
 
 ```step
 stage: modify
-insight: "Each task changes one thing: a salt for the same password, then the lock Bob uses (Alice's, his own, none)."
-try: { playground: board, starter: "hk.yml#salt", height: 520 }
+insight: "Students see why a hash alone is not the end of the story: common passwords crack by guessing. Then the salt fixes the giveaway of two matching rows."
+try: { playground: board, starter: "hk.yml#audit", height: 520 }
 tasks:
+  - starter: "hk.yml#audit"
+    hint: ["Think of passwords people pick a lot.", "Try a word you've seen in this lesson.", "maple."]
+    check: { type: board, text: "This list was stolen from a site with no salt. Type passwords people often pick, one at a time, and watch for a row lighting up.", when: "m = 1", explain: "Same password, same hash: Ana and Ben both use maple, and Cara's sunshine1 lights up too. Dev's long passphrase never does: nobody would guess it." }
   - starter: "hk.yml#salt"
     check: { type: board, text: "Type maple, then switch on the salt. Ana and Ben both use maple. Are their hashes the same?", when: "s = 1 and n = 5", explain: "Different salts, different hashes: a list of pre-hashed common passwords no longer matches, and nobody can tell that two people share a password." }
-  - starter: "hk.yml#keys"
-    check: { type: board, text: "Bob locks the message with Alice's padlock and sends it.", when: "l = 1 and k = 1 and v = 0", explain: "Eve has the box and even a padlock, but no key: only Alice's private key opens it." }
-  - starter: "hk.yml#keys"
-    check: { type: board, text: "Now Bob uses his own padlock. Send it.", when: "l = 2 and f >= 1", explain: "Alice can't open it: only Bob has that key. You lock with the receiver's public key." }
-  - starter: "hk.yml#keys"
-    check: { type: board, text: "Send it with no padlock.", when: "l = 0 and v = 1", explain: "No lock: Eve reads it. That is a site without HTTPS." }
 ```
+
+### Crack the list
 
 ### Salt
 
-### Alice's padlock
-
-### Bob's own padlock
-
-### No padlock
-
-## Practise: hashes and keys
+## Practise: hashes
 
 ```step
 stage: practise
-insight: "Spotting good and bad password storage, choosing the right key, and a review of access control."
+insight: "Spotting good and bad password storage, why guessing still works, hash or encryption (the hinge: the two get mixed up), and a review of access control."
 tasks:
   - check:
       type: question
@@ -149,12 +139,16 @@ tasks:
       feedback: [null, "Every hash is the same length.", "Any text can be hashed.", "They are, for that reason."]
       explain: "Guessing still works on common passwords: hash the guess, compare. Length and unusual words defeat the guess lists."
   - check:
-      type: question
-      q: "Which key do you use to send someone a secret?"
-      options: ["Their public key", "Their private key", "Your private key", "No key"]
-      answer: 0
-      feedback: [null, "Only they have that.", "Then they couldn't open it.", "Then anyone could read it."]
-      explain: "Lock with the receiver's public key; only their private key opens it."
+      type: sort
+      q: "Which tool fits? Sort each one."
+      options: ["A hash", "Encryption", "Neither"]
+      items:
+        - ["A site keeps your password so it can check it next time", "A hash", "It only ever needs checking, never reading back."]
+        - ["Your card number on its way to an online shop", "Encryption", "The shop has to read it, and it crosses networks other people share."]
+        - ["Checking a downloaded app is exactly the file its maker published", "A hash", "Same file, same hash; one changed byte changes it."]
+        - ["A private message to a friend across the internet", "Encryption", "Your friend has to read it, so it must be reversible for them."]
+        - ["A news headline anyone can read", "Neither", "It's public: there's nothing to hide or check."]
+      explain: "Hash what only needs checking; encrypt what someone has to read again. A hash is not encryption: it can't be undone, even with a key."
   - check:
       type: question
       q: "Review: which is authorisation?"
@@ -168,7 +162,7 @@ tasks:
 
 ### Passphrases
 
-### Which key?
+### Hash or encryption?
 
 ### Review: access
 

@@ -128,7 +128,9 @@ tasks:
         - ["128", "128 is the leftmost card. Add all eight: 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1."]
         - ["8", "8 is how many bits. Each one doubles the patterns."]
       explain: "2⁸ = 256 patterns, so a byte holds 0 to 255."
-  - check:
+  - smaller:
+      check: { type: number, q: "Six cards all face up make 63. What would a seventh card be worth?", answer: 64, explain: "Each card is double the one before: 32 doubled is 64. Seven cards reach 63 + 64 = 127." }
+    check:
       type: answer
       q: "What is the **fewest** bits that can hold the number 100?"
       answer: "7"

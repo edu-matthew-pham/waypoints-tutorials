@@ -7,7 +7,15 @@ import { readFileSync, existsSync } from 'node:fs';
 export const STRANDS = {
   maths: ['Number', 'Algebra', 'Measurement', 'Space', 'Statistics', 'Probability'],
   science: ['Biological', 'Chemical', 'Earth and space', 'Physical', 'Human endeavour', 'Inquiry'],
-  systems: ['Data representation', 'Digital systems', 'Networks and security', 'Web documents'],
+  systems: ['Data representation', 'Digital systems', 'Networks and security', 'Web documents', 'Security and privacy (Processes)'],
+};
+
+// Descriptors a subject's map borrows from another subject's data (25 Oct, systems chat): Digital systems teaches the
+// Processes strand's security and privacy descriptors (Cyber safety, Capture the flag), which live in
+// digital-processes.json and so were on no map. They join as their own row. DT Processes codes name the band's last
+// year (AC9TDI8P13 is Years 7–8), so a two-year one starts a year earlier, as science's two-year descriptors do.
+export const BORROW = {
+  systems: { from: 'digital-processes', strand: 'Security and privacy (Processes)', codes: ['AC9TDI8P13', 'AC9TDI8P14', 'AC9TDI10P13', 'AC9TDI10P14'] },
 };
 
 // Strands woven through the lessons and class work rather than taught by tutorials of their own (Matthew, 11 Oct):
@@ -17,7 +25,16 @@ export const WOVEN_NOTE = 'Woven through the lessons and class work; no tutorial
 
 export function loadCurriculum(subject) {
   const f = `data/curriculum/${subject}.json`;
-  return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null;
+  if (!existsSync(f)) return null;
+  const cur = JSON.parse(readFileSync(f, 'utf8')), b = BORROW[subject], g = b && `data/curriculum/${b.from}.json`;
+  if (g && existsSync(g)) {
+    const other = JSON.parse(readFileSync(g, 'utf8')).descriptors || [];
+    for (const code of b.codes) {
+      const d = other.find((x) => x.code === code);
+      if (d && !cur.descriptors.some((x) => x.code === code)) cur.descriptors.push({ ...d, strand: b.strand, year: d.span === 2 ? d.year - 1 : d.year, borrowed: b.from });
+    }
+  }
+  return cur;
 }
 
 /**

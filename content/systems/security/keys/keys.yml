@@ -1,0 +1,17 @@
+# Boards for "Public and private keys".
+
+# region: run
+widget: security
+mode: keys
+# endregion
+
+# region: explain-pic
+widget: security
+mode: keys
+lock: 1
+# endregion
+
+# region: modify
+widget: security
+mode: keys
+# endregion

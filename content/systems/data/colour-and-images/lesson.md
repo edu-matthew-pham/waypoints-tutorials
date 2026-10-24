@@ -189,6 +189,8 @@ tasks:
 
 ### Review: text codes
 
+Web pages often write these three numbers in hex: #FF8800 is red 255, green 136, blue 0. *Hex: binary in fours*, after the binary lessons, shows how to read it.
+
 ## Make: copy a picture
 
 ```step

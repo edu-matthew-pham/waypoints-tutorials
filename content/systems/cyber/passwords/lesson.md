@@ -36,82 +36,120 @@ explainClip:
 
 ```step
 stage: predict
-insight: "Committing to how far one leak spreads sets up the new move: reuse turns one breach into many, and guessable passwords fall anyway."
+insight: "Students say what they already think before anything is named. Most expect a leak to stay at the site that leaked; writing it down makes the surprise in Explore theirs, and gives the teacher their ideas to work with."
 check:
   type: predict
-  q: "Ava uses the password sunshine1 for her school email, a game site, the club app and an online shop. The game site leaks its passwords. How many of her accounts are now open to someone else?"
-  options: ["All four", "Just the game site", "None: the passwords were secret", "Two: the game site and the shop"]
-  actual: "All four. Whoever has the leaked list tries the same password everywhere, and sunshine1 is on every list of common passwords anyway."
+  q: "A game site Ava used once has just leaked its list of passwords. She also has a school email, the club app and an online shop. What could someone do with that list? Write your best guess."
+  actual: "Here, every one of Ava's accounts fell. What happened depends on her passwords, which is what Explore is for."
 ```
 
-## Explore: stop the spread
+There's no right answer yet: write what you think.
+
+## Explore: what falls?
 
 ```step
 stage: run
-insight: "Students make the leak stop at one account, discovering both fixes: a different password for each site, and passwords that can't be guessed."
+insight: "Nothing is named on the board: no guessing notes, no reason on the results. Students leak, change passwords and leak again, and notice for themselves which accounts fall together."
 try: { playground: board, starter: "cyber.yml#explore", height: 600 }
 tasks:
-  - check: { type: board, text: "Press Leak! How many of Ava's accounts fall?", when: "l = 1 and f = 4", explain: "All four: the leaked password works everywhere." }
-  - hint: ["What would stop the game site's password working on her other accounts?", "Give each account a different passphrase, then press Leak! again."]
-    check: { type: board, text: "Change Ava's passwords so the next leak only reaches the game site itself. Then leak again.", when: "l = 1 and f = 1", explain: "With a different long passphrase on each account, the leaked one opens nothing else." }
+  - check: { type: board, text: "Press Leak! Which of Ava's accounts fall?", when: "l = 1 and f = 4", explain: "All four, not just the game site." }
+  - check: { type: board, text: "Now try your own changes. Change one or more passwords, then leak again. Do it at least three times. What makes fewer accounts fall?", when: "t >= 4", explain: "Keep what you noticed: you'll use it in a minute." }
 ```
 
-Was your prediction right?
+Was your guess close?
 
 ### Leak
 
-### Stop the spread
+### Try your own changes
 
-## Explain: why passwords fail
+## Explore: stop it at the game site
+
+```step
+stage: run
+insight: "A goal with more than one cause: some accounts fall because they share the leaked password, one falls with a password nobody shares. Hints ask questions and never name the fix."
+try: { playground: board, starter: "cyber.yml#goal", height: 600 }
+tasks:
+  - hint: ["Leak first. Which accounts fell, and what do their passwords have in common with the game site's?", "One account fell with a password no other account uses. Could someone get into it without any leak at all?", "Every account that still falls has a password that's the same as another account's, or one lots of people pick or could work out from Ava's profile."]
+    check: { type: board, text: "Ava has a new set of passwords. Change them so the next leak breaks into nothing but the game site itself.", when: "l = 1 and f = 1", explain: "Only the game site fell: its own list leaked, and that password opens nothing else." }
+  - hint: ["The game site always falls, because its own list leaked. Could someone have got into it before the leak?"]
+    check: { type: board, text: "Could someone get into any of Ava's accounts without a leak at all? Make sure they can't, then leak once more.", when: "l = 1 and f = 1 and c = 0", explain: "Four different passwords, none of them a common one or one built from Ava's name." }
+```
+
+### One account only
+
+### No leak needed
+
+## Explain: what you found has names
 
 ```step
 stage: investigate
-insight: "The teacher models the three ways a password fails, naming what students just saw. Sam's symbol swap comes after the method."
-check:
-  type: bug
-  code: "working.txt#sam"
-  text: "Sam makes a stronger password. Click the line where it first goes wrong."
-  answer: 3
-  fault: logic
-  misconception: symbols-make-strong
-  explain: "Line 3: swaps like @ for a and 0 for o are so common that they are on the guessing lists too. Length and randomness make a password strong, and it still shouldn't be reused."
+insight: "Students explain in their own words first; then the names (breach, reuse, guessable, passphrase) are matched to what they did; then Sam's symbol swap."
+tasks:
+  - check:
+      type: reasoning
+      q: "In your own words: why did one leak break into all four accounts at the start, and what did you change to stop it? Say what the person with the list did with it."
+      placeholder: "For example: the list had Ava's password on it, so ..."
+      steps:
+        - ["The game site's list leaked, with Ava's password on it.", "the site kept it and lost it"]
+        - ["Whoever had the list tried that password on her other accounts.", "people often use one password everywhere, so it's the first thing to try"]
+        - ["Every account with the same password fell.", "the password matched"]
+        - ["Accounts with a popular or personal password fell even with no match.", "those are on the lists people try first, leak or not"]
+        - ["A different long, random password on each account stopped it.", "the leaked one opens nothing else, and the rest aren't on any list"]
+      picks:
+        - step: 4
+          q: "In the second set, why did the school email fall when its password matched no other account?"
+          options: ["sunshine1 is one of the first passwords anyone tries", "The club app was leaked too", "Every account falls in a leak", "It was too long"]
+          answer: 0
+          feedback: [null, "Only the game site's list leaked.", "Once you fixed the set, three accounts were safe.", "Long passwords were the ones that held."]
+      criteria: ["I said what the person with the list did with it.", "I gave both reasons an account fell.", "I said what change stopped each one."]
+      explain: "One leaked password is tried everywhere, so a shared password falls with it; a common or personal one falls with no leak at all."
+  - check:
+      type: match
+      q: "Match each name to what you saw on the board."
+      pairs:
+        - ["Breach", "The game site losing its list of passwords"]
+        - ["Reuse", "The same password on more than one account, so one leak opens them all"]
+        - ["Guessable", "A password on the lists people try first: sunshine1, or Ava's name and birth year"]
+        - ["Passphrase", "Four random words: long, and on nobody's list"]
+      explain: "A breach you can't stop. Reuse and guessable passwords are what turn it into more than one account."
+  - check:
+      type: bug
+      code: "working.txt#sam"
+      text: "Sam makes a stronger password. Click the line where it first goes wrong."
+      answer: 3
+      fault: logic
+      misconception: symbols-make-strong
+      explain: "Line 3: swaps like @ for a and 0 for o are so common that they're on the guessing lists too. Length and randomness make a password strong, and it still shouldn't be reused."
 ```
-
-What you just did has names. A **breach** is when a site's data leaks. **Reuse** turns one breach into many. Some passwords never needed a breach: they are **guessable**.
 
 ```worked
-\text{1. a site leaks} :: You can't stop other sites being breached; you can limit the damage.
+\text{1. a site leaks} :: A **breach**. You can't stop other sites being breached; you can limit the damage.
 \text{2. reuse spreads it} :: The leaked password is tried on every other site. One password everywhere means one leak opens everything.
 \text{3. guessable falls first} :: Common passwords, symbol swaps and personal details (names, birthdays, pets) are on the lists tried first.
-\text{fix: long, random, different} :: Four random words for each site, kept in a password manager so you don't have to remember them.
+\text{fix: long, random, different} :: Four random words for each site.
 ```
+
+### In your own words
+
+### Names
 
 ### Find the mistake
 
-## Elaborate: a new set of problems
+## Elaborate: too many to remember
 
 ```step
 stage: modify
-insight: "The same idea in a new case: Ava's new passwords fail in two different ways (reuse and guessable), one change at a time."
+insight: "The same idea in a new case (two reasons failing at once, this time with the board's notes on), then the habit that makes it realistic: a password manager."
 try: { playground: board, starter: "cyber.yml#elaborate", height: 600 }
 tasks:
-  - check: { type: board, text: "Ava changed her passwords, but a leak still opens all four. Fix them so a leak only reaches the game site.", when: "l = 1 and f = 1", explain: "Two were guessable (sunshine1, her name and year) and two shared a passphrase: every one needed a different long passphrase." }
-  - check: { type: board, text: "Check: is there now any account someone could guess without a leak at all?", when: "c = 0", explain: "None: four different passphrases, none on any list." }
+  - check: { type: board, text: "Ava changed her passwords again, but a leak still opens all four. Fix them by hand so a leak only reaches the game site.", when: "l = 1 and f = 1 and m = 0", explain: "Two were guessable (sunshine1, her name and year) and two shared a passphrase: every one needed its own long passphrase." }
+  - hint: ["Nobody can remember four random passphrases, let alone forty.", "Switch the password manager on, then leak again."]
+    check: { type: board, text: "Ava says she can't remember four passphrases. Switch on the password manager and test it with a leak.", when: "m = 1 and l = 1 and f = 1", explain: "The manager makes and remembers a different strong passphrase for each site; Ava remembers one (the manager's own), and a leak stays at one site." }
 ```
 
 ### Fix the set
 
-### Guessable?
-
-## Elaborate: let a manager do it
-
-```step
-stage: make
-insight: "Students set up the habit that makes good passwords realistic: a password manager makes and remembers a different passphrase for every account."
-try: { playground: board, starter: "cyber.yml#make", height: 600 }
-hint: ["Nobody can remember four random passphrases, and then forty.", "Use the password manager, then leak again."]
-check: { type: board, text: "Ava says she can't remember four passphrases. Switch on the password manager and test it with a leak.", when: "m = 1 and l = 1 and f = 1", explain: "The manager makes and remembers a different strong passphrase for each site; Ava remembers one (the manager's own), and a leak stays at one site." }
-```
+### Let a manager do it
 
 ## Evaluate: look back
 
@@ -125,9 +163,12 @@ tasks:
       answer: 0
       feedback: [null, "Your reused password is now on a list.", "That doesn't stop anyone using the leaked password.", "Any account using the same password is open too."]
       explain: "Then turn on a second factor where you can: next lesson."
+  - check: { type: reflect, text: "Reread your guess from Engage. What would you add or change now?" }
   - check: { type: reflect, text: "I can explain how one leak can open many accounts, and why a different long passphrase for each site stops it." }
 ```
 
 ### After a breach
+
+### Your first guess
 
 ### Look back

@@ -7,7 +7,7 @@ goals:
   - I can set permissions so each role has only what it needs.
 struggle: "Students treat \"signed in\" as \"allowed\". Keep asking two questions in order: who are you? what may you do?"
 before: |
-  Try the board yourself. The practice accounts are on the board (Sam: maple, Ms Lee: orbit, Admin: quartz-river-71; MFA code 4096); they are made up and only work here.
+  Try the board yourself. The practice accounts are on the board (Kai: maple, weak on purpose so it is quick to type; Ms Lee: orbit, Admin: quartz-river-71; MFA code 4096); they are made up and only work here.
 
   The one idea (the kit's typical width): authentication proves identity, authorisation decides actions; both are needed on a shared system. Least privilege limits the damage from a stolen or misused account.
 
@@ -19,7 +19,7 @@ running:
   - "Vary: ask what an attacker would need with MFA on."
   - "Make: ask why admins don't get to change marks."
 stuck:
-  - see: "A student says Sam can do anything once signed in (Sam's mistake)."
+  - see: "A student says Kai can do anything once signed in (Sam's mistake)."
     ask: "What did the password prove? What decides the rest?"
     fix: "Signing in proves who; permissions decide what."
   - see: "A student gives every role everything to make it work."

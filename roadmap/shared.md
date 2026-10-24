@@ -68,6 +68,13 @@ The concrete form of "below Steady: support on demand" in *Speculative: width fo
 
 `playground-science/main.js` (science-owned, noted here because every science-board clip hashes it): the `reaction` widget takes `kscale:` (kelvins shown per model kelvin; default 1, so no other board changes). Used by Chemistry 8 *Hotter or colder?* so nitrogen + oxygen runs at a true 1800 K instead of 600 K. AUTHORING › Atoms and reactions has the line. All 17 science-board clips re-record on the next full publish.
 
+## Done (25 Oct 2026, systems chat): Processes row on the systems map; small shared additions
+
+- `tools/curriculum-map.mjs`: `BORROW` lets a subject's map take named descriptors from another subject's data. Systems borrows AC9TDI8P13, 8P14, 10P13 and 10P14 from `digital-processes.json` as a row "Security and privacy (Processes)", so Cyber safety and the CTF's page-source lesson are on a map at last (before, P-tagged lessons were on none). `loadCurriculum` merges them; a two-year DT Processes code (its digit is the band's last year) starts a year earlier, as science's two-year descriptors do. Maths and science maps are unchanged (no `BORROW` entry).
+- `tools/concepts-core.mjs`: `THEORY` gains `hex` (introduced by Digital systems › Hex: binary in fours).
+- `misconceptions.json`: `lock-with-own-key`, `hex-digits-joined`.
+- Not touched: `lesson-core`, `lesson-view`, AUTHORING. Systems uses `smaller:` (a4e344d) as built; board lead-ins wait for push (2).
+
 ## Done (23 Oct 2026): stage list folded on every lesson page (maths chat, Matthew asked)
 
 The stage list under a lesson's intro (Predict: …, Try: …, and so on) was the same on every lesson and long to read. `lesson-view.mjs` now folds it into a closed `<details class="legendbox">` whose summary names the stages in one line ("How this lesson works: Predict, Try, Investigate, Modify, Practise, Make"); the descriptions open on a click. Every subject and shape, no lesson changes; tested on maths, code, science, systems and engineering pages. Reaches the live site with each lesson's next publish, or all at once with a whole-site publish. The per-step chip (the same description inside each step) is unchanged.

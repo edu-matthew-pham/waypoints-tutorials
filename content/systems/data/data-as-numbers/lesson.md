@@ -31,13 +31,13 @@ explainClip:
     - caption: { text: "The numbers never changed. Only the rule for reading them did.", say: "The numbers never changed. Only the rule did." }
     - wait: 1500
 ---
-Everything a computer stores, whether a message, a photo or a song, is stored as **numbers**. A number on its own does not say what it is. A program has to read it with a rule, called an **encoding**: a text program reads each number as a letter, a paint program as a colour, a music program as a sound level.
+Everything a computer stores, whether a message, a photo or a song, is stored as **numbers**. So what happens when two different programs open the same numbers?
 
 ## Predict: one file, two programs
 
 ```step
 stage: predict
-insight: "Committing to what a paint program shows for numbers a text program shows as Hi! tests the new move: the same numbers take a different meaning under a different encoding."
+insight: "Committing to what a paint program shows for numbers a text program shows as Hi! tests the new move: the same numbers take a different meaning when a different program reads them. The word encoding waits until after the board."
 check:
   type: predict
   q: "A file holds three numbers: 72, 105, 33. A text program opens it and shows **Hi!**. A paint program opens the same file. What does it show?"
@@ -93,7 +93,7 @@ tasks:
 72 \to \text{H} :: As text: the letter whose code is 72.
 72 \to \text{dark grey} :: As a grey shade: 0 is black and 255 is white, so 72 is darkish.
 72 \to \text{below the middle} :: As sound: 128 is the middle (silence), so 72 is a level below it.
-\text{same number, different rule} :: The encoding, not the number, decides what it means.
+\text{same number, different rule} :: The rule a program reads with has a name: an **encoding**. The encoding, not the number, decides what it means.
 ```
 
 Now read 255 as a shade.
@@ -177,7 +177,9 @@ tasks:
 stage: make
 insight: "Building a word from letter codes reverses the process: students start from the meaning and set the numbers that encode it."
 try: { playground: board, starter: "numbers.yml#make", height: 460 }
-hint: ["Capital letters start at A = 65 and go in order. Lower case starts at a = 97.", "Y is the 25th letter, so its code is 65 + 24 = 89.", "e is 97 + 4 = 101 and s is 97 + 18 = 115."]
+smaller:
+  check: { type: number, q: "97 shows a. What number shows e?", answer: 101, explain: "a, b, c, d, e: count on four from 97." }
+hint: ["Capitals start at A = 65 and go in order. Lower case starts at a = 97 and goes in order too.", "Count on from the start: A is 65, so the 25th capital is 24 more than 65.", "Check the text row as you go: it should read Y, then e, then s."]
 check: { type: board, text: "Change the three numbers so the text reads Yes (capital Y, then lower case e and s).", when: "a = 89 and b = 101 and c = 115", explain: "Y is 89, e is 101, s is 115. A paint program would show the same numbers as three greys." }
 ```
 

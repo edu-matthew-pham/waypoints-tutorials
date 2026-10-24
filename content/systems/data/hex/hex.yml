@@ -1,0 +1,39 @@
+# Binary cards in fours for "Hex: binary in fours".
+
+# region: run
+widget: bits
+bits: 8
+n: 0
+hex: on
+# endregion
+
+# region: explain
+widget: bits
+bits: 8
+n: 0
+hex: on
+count: on
+# endregion
+
+# region: explain-pic
+widget: bits
+bits: 8
+start: 10100011
+hex: on
+lock: on
+# endregion
+
+# region: modify
+widget: bits
+bits: 8
+n: 0
+hex: on
+# endregion
+
+# region: make
+widget: bits
+bits: 8
+n: 0
+hex: on
+number: off
+# endregion

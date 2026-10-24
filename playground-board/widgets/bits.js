@@ -7,8 +7,10 @@
 //   count: on          + 1 and − 1 buttons: counting past the largest number wraps round to 0 (overflow)
 //   grow: on           Add a card and Take away a card (1 to 8 cards)
 //   lock: on           the cards cannot be flipped (a pattern to read)
+//   hex: on            cards grouped in fours from the right, each group's hex digit (0 to F) under it, and the
+//                      number in hex on the panel (styles inline here, so other board clips keep their hash)
 // state: { scope: { vars: { n (the number), c (cards face up), b (cards), m (the largest number, 2^b − 1),
-//          o (1 once the count has wrapped round past the largest number, else 0) } } }
+//          o (1 once the count has wrapped round past the largest number, else 0), h (hex digits shown, with hex: on) } } }
 // Checks: "n = 11", "n = 28 and c = 3", "b = 6 and n = 39", "o = 1". (Board variables are single letters.)
 (function (B) {
   'use strict';
@@ -26,7 +28,7 @@
     } else s.n0 = s.n === undefined ? 0 : Number(s.n);
     if (!(s.n0 >= 0 && s.n0 === Math.round(s.n0) && s.n0 < Math.pow(2, s.k))) throw new Error('n: a whole number from 0 to ' + (Math.pow(2, s.k) - 1) + ' (the most ' + s.k + ' cards can show).');
     s.hideNum = /^off$/i.test(s.number || '');
-    s.count = on(s.count); s.grow = on(s.grow); s.lock = on(s.lock);
+    s.count = on(s.count); s.grow = on(s.grow); s.lock = on(s.lock); s.hex = on(s.hex);
   }
 
   // Dots for a card worth v: a grid that keeps the doubling visible (2 = 2×1, 4 = 2×2, 8 = 4×2, 16 = 4×4, 32 = 8×4).
@@ -52,6 +54,16 @@
   function draw() {
     var el = B.el('board'); el.replaceChildren();
     var row = document.createElement('div'); row.className = 'brow'; row.setAttribute('role', 'group'); row.setAttribute('aria-label', b + ' binary cards');
+    var groups = {};
+    if (spec.hex) {
+      row.style.gap = '18px';
+      for (var g = Math.floor((b - 1) / 4); g >= 0; g--) {
+        var box = document.createElement('div'); box.style.cssText = 'flex:' + Math.min(4, b - 4 * g) + ' 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:8px;';
+        var cards = document.createElement('div'); cards.style.cssText = 'display:flex;gap:8px;width:100%;justify-content:center;border-bottom:3px solid var(--accent);padding-bottom:8px;';
+        var hd = document.createElement('div'); hd.id = 'bh-' + g; hd.style.cssText = 'font:700 26px/1 ui-monospace,Menlo,Consolas,monospace;color:var(--accent);';
+        box.append(cards, hd); row.appendChild(box); groups[g] = cards;
+      }
+    }
     for (var i = b - 1; i >= 0; i--) (function (i) {
       var v = Math.pow(2, i);
       var col = document.createElement('div'); col.className = 'bcol';
@@ -60,7 +72,7 @@
       if (!spec.lock) { card.type = 'button'; card.addEventListener('click', function () { n ^= v; B.moved = true; report(); }); }
       card.appendChild(dots(v));
       var dg = document.createElement('div'); dg.className = 'bdig'; dg.id = 'bd-' + i;
-      col.append(lab, card, dg); row.appendChild(col);
+      col.append(lab, card, dg); (spec.hex ? groups[Math.floor(i / 4)] : row).appendChild(col);
     })(i);
     el.appendChild(row);
   }
@@ -107,13 +119,18 @@
       if (dg) dg.textContent = up ? '1' : '0';
       if (up) { c++; ups.push(Math.pow(2, i)); }
     }
-    var pat = bin(n, b), m = Math.pow(2, b) - 1;
+    var pat = bin(n, b), m = Math.pow(2, b) - 1, hx = '', hn = Math.ceil(b / 4);
+    if (spec.hex) {
+      for (var g = 0; g < hn; g++) { var d = Math.floor(n / Math.pow(16, g)) % 16, he = B.el('board').querySelector('#bh-' + g); if (he) he.textContent = d.toString(16).toUpperCase(); }
+      hx = n.toString(16).toUpperCase(); while (hx.length < hn) hx = '0' + hx;
+      pat = pat.replace(/(?=(?:[01]{4})+$)/g, ' ').trim();
+    }
     var sum = spec.hideNum ? '' : (ups.length > 1 ? ups.join(' + ') + ' = ' + n : String(n));
-    ui.work.textContent = 'Binary ' + pat + (spec.hideNum ? '' : '  →  ' + sum);
+    ui.work.textContent = 'Binary ' + pat + (spec.hex ? '  →  hex ' + hx : '') + (spec.hideNum ? '' : '  →  ' + sum);
     ui.note.textContent = note || (spec.count || spec.grow ? b + (b === 1 ? ' card' : ' cards') + ': 0 to ' + m + (spec.hideNum ? '' : ', ' + (m + 1) + ' patterns') + '.' : '');
-    B.say(spec.hideNum ? c + (c === 1 ? ' card' : ' cards') + ' face up: ' + pat : pat + ' in binary is ' + n);
+    B.say((spec.hideNum ? c + (c === 1 ? ' card' : ' cards') + ' face up: ' + pat : pat + ' in binary is ' + n) + (spec.hex ? ', hex ' + hx.split('').join(' ') : ''));
     B.save({ n: n, b: b, o: over });
-    B.post({ scope: { vars: { n: n, c: c, b: b, m: m, o: over }, points: {} } }, 'Binary ' + pat + (spec.hideNum ? '' : ' = ' + n) + (note ? '. ' + note : ''));
+    B.post({ scope: { vars: { n: n, c: c, b: b, m: m, o: over, h: spec.hex ? hn : 0 }, points: {} } }, 'Binary ' + pat + (spec.hex ? ', hex ' + hx : '') + (spec.hideNum ? '' : ' = ' + n) + (note ? '. ' + note : ''));
   }
 
   B.widget('bits', {
