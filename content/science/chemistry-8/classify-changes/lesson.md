@@ -35,7 +35,7 @@ tasks:
       options: ["Physical", "Chemical"]
       items:
         - ["Butter melting in a pan", "Physical", "Same substance, new state."]
-        - ["An egg cooking and turning solid and white", "Chemical", "The proteins change into new substances."]
+        - ["An egg cooking and turning solid and white", "Chemical", "Heat unfolds the long protein molecules and new chemical bonds link them together, so it sets solid and can't go back."]
         - ["Sugar dissolving in tea", "Physical", "The sugar can be recovered by evaporating the water."]
         - ["Iron nails going orange-brown and flaky in damp air", "Chemical", "Rust is a new substance."]
         - ["Dry ice (solid carbon dioxide) turning straight into a gas", "Physical", "Still carbon dioxide, now a gas. (The white fog is water from the air, condensed by the cold.)"]

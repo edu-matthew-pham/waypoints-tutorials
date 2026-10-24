@@ -557,7 +557,9 @@
     var list = species(spec.show || 'H2 x10, Cl2 x10');
     var ea = spec.ea !== undefined ? Number(spec.ea) : 3, release = Number(spec.release) || 0;
     var rules = (spec._all.react || ['H2 + Cl2 -> 2 HCl']).map(function (r) { return A.parseRule(r, ea, release); });
-    var range = String(spec.temps || '150-600').split('-').map(Number), K0 = Number(spec.temp) || 300;
+    // kscale: the kelvins shown per model kelvin, for reactions that really need far higher temperatures than the model
+    // runs at (nitrogen + oxygen: kscale 3 shows the model's 600 K as 1800 K). The particles move exactly as without it.
+    var KS = Number(spec.kscale) || 1, range = String(spec.temps || (150 * KS) + '-' + (600 * KS)).split('-').map(Number), K0 = Number(spec.temp) || 300;
     var goal = spec.goal || 'target', tgt = null;
     if (spec.target) { var tm = /^([A-Za-z0-9]+)\s+(\d+)$/.exec(spec.target.trim()); if (!tm) throw new Error('Write the target like HCl 10.'); A.atomsOf(tm[1]); tgt = [tm[1], Number(tm[2])]; }
     var forms = []; list.forEach(function (x) { forms.push(x[0]); }); rules.forEach(function (r) { r.lhs.concat(r.rhs).forEach(function (f) { if (forms.indexOf(f) < 0) forms.push(f); }); });
@@ -575,10 +577,10 @@
     function reset() {
       if (!box) { area('extra'); box = gasBox(); }
       v = simBoard(spec, box); sim = v.sim;
-      sim.rules = rules; sim.t = K / 300; sim.catalyst = cat ? 0.5 : 1;
+      sim.rules = rules; sim.t = K / (300 * KS); sim.catalyst = cat ? 0.5 : 1;
       sim.hold = spec.hold ? spec.hold !== 'off' : release === 0;
       list.forEach(function (x) { sim.add(x[0], x[1]); });
-      sim.setTemp(K / 300);
+      sim.setTemp(K / (300 * KS));
       start = sim.atomTally(); cond = { K: K, cat: cat }; changed = false; finished = false;
       sim.onReact = function (x, y) { v.draw.flash(x, y); if (goal === 'react' && !done) { say('A reaction: the atoms rearranged into new particles. Count the atoms before and after.', true); finish('reacted'); } };
       var n = 0; v.tick = function () { if (++n % 8 === 0) render(); check(); };
@@ -599,9 +601,9 @@
       } else if (goal === 'target') { render(); say('Done in ' + secs.toFixed(1) + ' s. ' + atomLine() + '.', true); finish(summary()); }
     }
     function atomLine() { var now = sim.atomTally(); return 'Atoms at the start: ' + Object.keys(start).map(function (e) { return start[e] + ' ' + e; }).join(', ') + '; now: ' + Object.keys(start).map(function (e) { return (now[e] || 0) + ' ' + e; }).join(', '); }
-    function summary() { return forms.map(function (f) { return f + ' ' + sim.count(f); }).join(', ') + '; ' + Math.round(sim.temp() * 300) + ' K'; }
+    function summary() { return forms.map(function (f) { return f + ' ' + sim.count(f); }).join(', ') + '; ' + Math.round(sim.temp() * 300 * KS) + ' K'; }
     function render() {
-      var Kn = Math.round(sim.temp() * 300), pct = sim.hits ? Math.round(100 * sim.wins / sim.hits * 10) / 10 : 0;
+      var Kn = Math.round(sim.temp() * 300 * KS), pct = sim.hits ? Math.round(100 * sim.wins / sim.hits * 10) / 10 : 0;
       area('extra').innerHTML = key(forms) +
         '<div class="bins">' + forms.map(function (f) { return '<span class="bin"><b>' + cap(A.nameOf(f)) + '</b>' + sub(f) + ': ' + sim.count(f) + '</span>'; }).join('') + '</div>' +
         '<p class="atomline">Target: ' + tgt[1] + ' ' + tgt[0] + '. ' + atomLine() + '.</p>' +
@@ -610,7 +612,7 @@
     }
     var play = button('controls', 'Pause', function () { v.run = !v.run; play.textContent = v.run ? 'Pause' : 'Play'; touch(summary()); });
     button('controls', 'Reset', function () { reset(); touch(summary()); });
-    if (spec.slider !== 'off') slider('controls', 'Temperature', range[0], range[1], 10, K0, function (k) { K = k; sim.setTemp(k / 300); changed = true; touch(summary()); }, function (k) { return k + ' K'; });
+    if (spec.slider !== 'off') slider('controls', 'Temperature', range[0], range[1], 10, K0, function (k) { K = k; sim.setTemp(k / (300 * KS)); changed = true; touch(summary()); }, function (k) { return k + ' K'; });
     if (spec.catalyst === 'on') { var cb = button('controls', 'Catalyst: off', function () { cat = !cat; sim.catalyst = cat ? 0.5 : 1; cb.textContent = 'Catalyst: ' + (cat ? 'on' : 'off'); cb.setAttribute('aria-pressed', String(cat)); changed = true; touch(summary()); }); cb.setAttribute('aria-pressed', 'false'); }
     reset();
     // Reset clears `changed`, so a run started after changing the slider counts.

@@ -1485,7 +1485,7 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
   - `widget: reaction`, `show:` and one or more `react: H2 + Cl2 -> 2 HCl` lines (atoms must balance, or the board
     refuses). Options: `ea:` energy a collision needs, in multiples of the average energy (default 3); `release:`
     energy given out per reaction (negative absorbs; try 0.5–1); `temp:` (default 300 K) and `temps: 150-600` for the
-    slider (`slider: off` hides it); `catalyst: on` (a toggle that halves `ea`); `hold: on | off` (keep the temperature
+    slider (`slider: off` hides it); `kscale: 3` shows temperatures three times the model's, for reactions that really need far hotter conditions than the particles can run at (set `temp:` in shown kelvins; the default slider range scales too); `catalyst: on` (a toggle that halves `ea`); `hold: on | off` (keep the temperature
     fixed; default on unless `release` is set, so exothermic and endothermic reactions warm or cool the gas);
     `target: HCl 10` (default: three quarters of what the first reaction can make). `goal:` is `target` (done when the
     target is reached), `react` (done at the first reaction), `compare` (done after reaching the target under two

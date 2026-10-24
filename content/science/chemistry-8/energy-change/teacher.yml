@@ -10,7 +10,7 @@ before: |
 
   Neither is a hinge node. The misconception: cold is a thing that flows ("cold energy"). The prediction targets it.
 
-  Board notes: the reaction board warms or cools the gas as reactions give out or take in energy. The endothermic reaction (nitrogen + oxygen → nitrogen monoxide) is real but only happens at engine temperatures; it starts at 600 K and cools. Both reactions stop at their target.
+  Board notes: the reaction board warms or cools the gas as reactions give out or take in energy. The endothermic reaction (nitrogen + oxygen → nitrogen monoxide, about +180 kJ per mole of N₂) is real: it is how engines and lightning make nitrogen oxides, and it only goes at a useful rate above about 1500 to 1800 K, so the board starts at 1800 K and cools as the reaction takes energy in. In a real engine the burning fuel keeps supplying energy, so the temperature doesn't fall; with no fuel on the board, it does. The board runs its particles at a third of the temperature it shows (`kscale: 3`) so they stay countable on screen; the speeds are a model, the temperatures are real. Both reactions stop at their target.
 running:
   - "Engage: tally the predictions. 'Makes cold' is the one to discuss."
   - "Explore: ask which way the temperature moved on each board, and what that says about the energy."

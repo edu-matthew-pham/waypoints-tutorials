@@ -15,9 +15,10 @@ show: N2 x12, O2 x12
 react: N2 + O2 -> 2 NO
 ea: 1.6
 release: -0.6
-temp: 600
+temp: 1800
+kscale: 3
 target: NO 10
-caption: Nitrogen and oxygen in a hot engine. Watch the temperature.
+caption: Nitrogen and oxygen at 1800 K, as hot as an engine's flame. Watch the temperature.
 # endregion
 
 # region: explain

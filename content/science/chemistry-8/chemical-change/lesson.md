@@ -91,7 +91,7 @@ tasks:
         - ["Salt dissolving in water", "Physical", "The salt is still there: evaporate the water and you get it back."]
         - ["Paper burning", "Chemical", "New substances: carbon dioxide, water and ash."]
         - ["An iron nail rusting", "Chemical", "Rust (iron oxide) is a new substance."]
-        - ["Cooking an egg", "Chemical", "The egg's proteins change into new substances: it can't go back to runny."]
+        - ["Cooking an egg", "Chemical", "Heat unfolds the egg's long protein molecules and they join up with each other through new chemical bonds, so the runny egg sets into a solid that can't go back."]
         - ["Water boiling", "Physical", "The bubbles are steam: still water."]
         - ["Baking soda fizzing in vinegar", "Chemical", "The bubbles are carbon dioxide, a new gas."]
         - ["Chocolate melting", "Physical"]

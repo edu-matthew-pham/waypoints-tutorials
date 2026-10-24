@@ -56,6 +56,10 @@ The concrete form of "below Steady: support on demand" in *Speculative: width fo
 
 **Open:** for maths, whether some lead-ins could come from the Practice templates instead of being written; how it shows on the deck (probably not at all) and the worksheet (probably as the teacher's `support:` line, which already exists).
 
+## Changed by the science chat (25 Oct 2026): `kscale:` on the reaction widget
+
+`playground-science/main.js` (science-owned, noted here because every science-board clip hashes it): the `reaction` widget takes `kscale:` (kelvins shown per model kelvin; default 1, so no other board changes). Used by Chemistry 8 *Hotter or colder?* so nitrogen + oxygen runs at a true 1800 K instead of 600 K. AUTHORING › Atoms and reactions has the line. All 17 science-board clips re-record on the next full publish.
+
 ## Done (23 Oct 2026): stage list folded on every lesson page (maths chat, Matthew asked)
 
 The stage list under a lesson's intro (Predict: …, Try: …, and so on) was the same on every lesson and long to read. `lesson-view.mjs` now folds it into a closed `<details class="legendbox">` whose summary names the stages in one line ("How this lesson works: Predict, Try, Investigate, Modify, Practise, Make"); the descriptions open on a click. Every subject and shape, no lesson changes; tested on maths, code, science, systems and engineering pages. Reaches the live site with each lesson's next publish, or all at once with a whole-site publish. The per-step chip (the same description inside each step) is unchanged.

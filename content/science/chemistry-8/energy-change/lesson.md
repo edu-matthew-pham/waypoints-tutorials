@@ -49,7 +49,7 @@ tasks:
   - starter: "boards.yml#exo"
     check: { type: board, text: "Run the hydrogen and oxygen reaction. Note the temperature before and after.", expect: { done: true } }
   - starter: "boards.yml#endo"
-    check: { type: board, text: "Now nitrogen and oxygen at 600 K (inside a hot engine). Note the temperature before and after.", expect: { done: true } }
+    check: { type: board, text: "Now nitrogen and oxygen at 1800 K, about as hot as the flame inside a car engine. Note the temperature before and after.", expect: { done: true } }
 ```
 
 ### Energy out
@@ -88,7 +88,7 @@ tasks:
     hint: ["For each one, ask whether the reaction gives energy out to what's around it or takes energy in from it.", "Getting colder doesn't mean cold is being added but that energy is being taken from the surroundings, and for a plant, think about which way the sunlight's energy goes."]
   - check:
       type: question
-      q: "On the board, the nitrogen and oxygen only reacted at 600 K, and the temperature fell. Why might an endothermic reaction stop on its own?"
+      q: "On the board, the nitrogen and oxygen only reacted at 1800 K, and the temperature fell. Why might an endothermic reaction stop on its own?"
       options: ["It takes in energy and cools its surroundings, so fewer collisions have enough energy to react", "It runs out of atoms", "Endothermic reactions are always slow"]
       answer: 0
       feedback: [null, "The atoms are all still there.", "Some endothermic reactions are fast; it's the cooling that slows them."]
