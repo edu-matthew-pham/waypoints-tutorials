@@ -9,7 +9,7 @@ summary: "A few quick questions on what you should know about building a dichoto
 language: science
 hook: "Can you build a key that a stranger could use? And why do the groups in the textbook keep changing?"
 ---
-Two ideas your teacher covers in class. These questions check the basics: what makes a good key, and why classification changes.
+Your teacher covers these two ideas in class, and these questions check you've got the basics: what makes a good key, and why the way we classify keeps changing.
 
 ## Building a key
 

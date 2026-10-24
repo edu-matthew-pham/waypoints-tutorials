@@ -52,6 +52,7 @@ stage: run
 insight: "Running the same melt at two cooling speeds and reading the results table makes the cause visible: number of crystals started, not time alone."
 try: { playground: science, starter: "boards.yml#cool", height: 620 }
 check: { type: board, text: "Cool the magma at two different speeds and compare the crystals.", expect: { done: true } }
+hint: "If it hasn't ticked yet, check you've cooled it at two different speeds, because the table under the board needs two rows to compare."
 ```
 
 Choose a cooling speed, then press **Cool the magma**. Each colour is one crystal. Do it again at a very different speed.
@@ -69,6 +70,7 @@ tasks:
       answer: 0
       feedback: [null, "The particles were the same size every time. Look at how many crystals there were.", "Every run started with the same amount of melt.", "Nothing melted again: the temperature only went down."]
       explain: "With little time below the melting point, few crystals start. Each one has time to collect particles from the melt and grow large."
+    hint: ["How many crystals started when you cooled it slowly, compared with when you cooled it fast?", "Look at the Crystals column in the table under the board, and remember every run used the same particles."]
   - check:
       type: question
       q: "Why did fast cooling give small crystals?"
@@ -76,6 +78,7 @@ tasks:
       answer: 0
       feedback: [null, "The particles were the same size every time.", "The crystals were never broken: many small ones grew side by side."]
       explain: "Cooling fast, the melt is soon far below its melting point and crystals start everywhere. They share out the particles and the rock sets before any gets big."
+    hint: "Look at the dots in the fast-cooled rock. Are they any smaller than in the slow one, or has something else changed?"
   - check:
       type: sort
       q: "Where did each rock form?"
@@ -109,6 +112,7 @@ insight: "Pushing to instant cooling produces glass, which shows the limit of th
 try: { playground: science, starter: "boards.yml#extremes", height: 620 }
 tasks:
   - check: { type: board, text: "Cool the magma very slowly, then instantly.", expect: { done: true } }
+    hint: "Choose one speed and press Cool the magma, then choose the other and cool it again, and the table under the board fills in a row for each."
   - check:
       type: question
       q: "With instant cooling, most of the rock was glass. What does glass mean at the particle level?"
@@ -116,6 +120,7 @@ tasks:
       answer: 0
       feedback: [null, "A crystal has particles in a repeating pattern. Glass has none.", "Nothing left the melt: all the particles are still there."]
       explain: "Obsidian forms when lava cools so fast that particles can't move into a pattern at all."
+    hint: "Look at the glass on the board. Can you see any pattern in how the particles sit?"
 ```
 
 ### Two extremes

@@ -51,6 +51,7 @@ stage: run
 insight: "Finding the same three parts in both cells makes 'shared structures' a discovery rather than a list."
 try: { playground: board, starter: "boards.yml#shared", height: 520 }
 check: { type: board, text: "Find the nucleus, cell membrane and cytoplasm in both cells.", when: "n = k" }
+hint: ["Which parts can you find in the cheek cell and also in the leaf cell?", "In the leaf cell the membrane is the thin line just inside the thick green wall, so click right on it and check the name that comes up under the board."]
 ```
 
 Click each part to read what it does and where it's found.
@@ -68,6 +69,7 @@ tasks:
         - ["Nucleus", "Holds the DNA: the instructions that control the cell"]
         - ["Cell membrane", "Controls what enters and leaves the cell"]
         - ["Cytoplasm", "Where most of the cell's chemical reactions happen"]
+    hint: ["Start with the nucleus: what does it hold, and what's that for?", "Click each part on the board again and read the line that comes up under it, because it says what the part does in plainer words."]
   - check:
       type: question
       q: "The cell membrane lets oxygen and food in but keeps most proteins in. What is it like?"
@@ -103,6 +105,7 @@ insight: "Finding the extra plant structures against the shared ones previews no
 try: { playground: board, starter: "boards.yml#plantextra", height: 520 }
 tasks:
   - check: { type: board, text: "Find the cell wall, chloroplasts, vacuole and mitochondria (wherever they are).", when: "n = k" }
+    hint: ["Look in the cheek cell as well as the leaf cell, because not every one of these is only in plants.", "The wall is the thick green outline of the leaf cell, so click right on it, and the line under the board tells you how many you've got left."]
   - check:
       type: sort
       q: "Where is each part found?"
@@ -114,6 +117,7 @@ tasks:
         - ["Cell wall", "Plant cells only"]
         - ["Chloroplasts", "Plant cells only"]
         - ["Large vacuole", "Plant cells only"]
+    hint: "Which of these did you just find in the cheek cell as well as the leaf cell?"
 ```
 
 ### Find them

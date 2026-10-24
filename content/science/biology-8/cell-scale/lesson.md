@@ -52,6 +52,7 @@ tasks:
     check: { type: board, text: "Zoom in from the person to one cell.", when: "l >= 1" }
   - starter: "boards.yml#cells"
     check: { type: board, text: "These cells are drawn about 1000 times life size. Find the nucleus in each.", when: "n = k" }
+    hint: ["Which part holds the cell's DNA? You need to find it in both cells.", "In the leaf cell the big vacuole pushes it off to one side, so look near the edges."]
 ```
 
 ### A person to a cell
@@ -85,6 +86,7 @@ tasks:
       q: "A microscope magnifies 400 times. A cell 0.02 mm wide looks how many millimetres wide?"
       answer: 8
       explain: "0.02 × 400 = 8 mm: big enough to see clearly."
+    hint: "The cell doesn't actually grow under the microscope, it only looks bigger, so how many times bigger does it look?"
   - check:
       type: sort
       q: "Can you see it without a microscope?"
@@ -96,6 +98,7 @@ tasks:
         - ["A human cheek cell (about 0.05 mm)", "No: you need a microscope"]
         - ["A red blood cell (about 0.008 mm)", "No: you need a microscope"]
         - ["A bacterium (about 0.002 mm)", "No: you need a microscope"]
+    hint: ["For each one, ask whether it's bigger or smaller than the smallest thing your eye can pick out.", "That smallest thing is about 0.1 mm, roughly the width of a hair, so compare each size in brackets with that."]
   - check:
       type: question
       q: "Why were cells only discovered in the 1600s?"
@@ -129,6 +132,7 @@ insight: "Single-celled organisms are complete living things at microscopic scal
 try: { playground: board, starter: "boards.yml#single", height: 640 }
 tasks:
   - check: { type: board, text: "Find the membrane of the bacterium and the yeast cell.", when: "n = k" }
+    hint: ["Both of these have a wall on the outside, so the first line you hit might be the wall.", "Click the thin line just inside the outer one, and read the name that comes up under the board to check."]
   - check:
       type: question
       q: "A bacterium is about 0.002 mm long and is a whole living thing. How does it compare with one of your cells?"
@@ -151,6 +155,7 @@ insight: "The history of cell discovery shows evidence waiting on technology, an
 try: { playground: board, starter: "boards.yml#cells", height: 640 }
 tasks:
   - check: { type: board, text: "Find the nucleus in each cell again. Hooke's cork cells were dead: just the walls were left.", when: "n = k" }
+    hint: "Which part holds the DNA? In the leaf cell it's pushed off to one side by the vacuole, so look near the edges."
   - check:
       type: question
       q: "Hooke called the boxes in cork 'cells' after small rooms. Leeuwenhoek's better lenses showed living things moving in pond water. What did the two discoveries together suggest?"

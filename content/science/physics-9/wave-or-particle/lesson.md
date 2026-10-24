@@ -9,7 +9,7 @@ language: science
 voice: { name: af_heart, speed: 1.1 }
 hook: "Is light a wave or a stream of particles? Scientists argued for 300 years. The answer turned out to be: the question is a bit too simple."
 ---
-A short lesson with no simulation. You have used two models this unit. Now you decide where each one works.
+You've used two models this unit, one with waves and one with particles, and now you'll decide where each one works. There's no simulation this time, just questions.
 
 ## Engage: who is right?
 

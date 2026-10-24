@@ -8,7 +8,7 @@ summary: "A few quick questions on choosing and justifying a separation techniqu
 language: science
 hook: "You are handed a mixture you have never seen. How do you decide how to separate it?"
 ---
-The skill your teacher covers in class: look at the property differences, pick a technique, and say why it works.
+Your teacher covers this skill in class, looking at how the parts of a mixture differ, picking a technique and saying why it works, and these questions check you can do it.
 
 ## Choose and justify
 

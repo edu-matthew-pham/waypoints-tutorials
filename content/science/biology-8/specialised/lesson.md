@@ -28,7 +28,7 @@ explainClip:
     - caption: { text: "A nerve cell's long axon carries signals a long way.", say: "A nerve cell's long axon carries signals a long way." }
 hook: "A nerve cell in your leg can be a metre long. A red blood cell is a tiny squashed disc with no nucleus. Same DNA, same body. Why so different?"
 ---
-Last unit: what all cells share. This one: why they differ.
+Last unit you found the parts all cells share, so now the question is why cells end up looking so different from each other.
 
 ## Engage: same DNA?
 
@@ -51,8 +51,10 @@ try: { playground: board, starter: "boards.yml#blood", height: 520 }
 tasks:
   - starter: "boards.yml#blood"
     check: { type: board, text: "Find every part of the red blood cell and the nerve cell.", when: "n = k" }
+    hint: ["Every branch, bump and band is a part, so work along the nerve cell from one end to the other.", "The line under the board counts what you've found, so if it isn't full, try the thin lines and the middle of the red blood cell."]
   - starter: "boards.yml#muscle"
     check: { type: board, text: "Find every part of the muscle cell and the root hair cell.", when: "n = k" }
+    hint: ["Some parts are small and there are several of them, so click one of each kind and read its name under the board.", "If the count isn't full, try the thin outlines of both cells and the long part sticking out of the root hair cell."]
 ```
 
 ### Blood and nerves
@@ -73,6 +75,7 @@ tasks:
         - ["Nerve cell: long axon", "Carries signals a long way"]
         - ["Muscle cell: many mitochondria", "Releases lots of energy for contracting"]
         - ["Root hair cell: long extension", "Large surface for absorbing water"]
+    hint: ["Take each feature and finish the sentence 'so that the cell can…'.", "Click each feature on the board again and read what it's for in the line that comes up."]
   - check:
       type: question
       q: "Why do root hair cells have no chloroplasts?"

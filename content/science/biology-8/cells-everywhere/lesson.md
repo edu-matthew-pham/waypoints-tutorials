@@ -49,8 +49,10 @@ try: { playground: board, starter: "boards.yml#single", height: 520 }
 tasks:
   - starter: "boards.yml#single"
     check: { type: board, text: "Find the cell membrane and cytoplasm in the bacterium and the yeast.", when: "n = k" }
+    hint: ["Both of these have a stiff wall on the outside, so the first line you click on might be the wall and not the membrane.", "Click and read the name that comes up under the board, and if it says cell wall, try the thin line just inside it. The cytoplasm is the pale jelly that fills the cell."]
   - starter: "boards.yml#multi"
     check: { type: board, text: "Find the cell membrane and cytoplasm in the animal cell and the plant cell.", when: "n = k" }
+    hint: ["In the plant cell the membrane is pressed right up inside the thick green wall, so click on that thin inner line.", "You need both parts in both cells, and the line under the board tells you how many you've still got to find."]
 ```
 
 ### Single-celled organisms
@@ -73,6 +75,7 @@ tasks:
       options: ["All living things are made of one or more cells, and the cell is the smallest unit of life", "Only animals are made of cells", "Cells are found in living and non-living things", "Big organisms have big cells"]
       answer: 0
       feedback: [null, "Plants, fungi and bacteria are cells too: you found membranes in all of them.", "Rocks and air are not made of cells.", "An elephant's cells are about the same size as a mouse's; it just has more of them."]
+    hint: ["Think back to the board: what did you find inside the bacterium, the yeast and the plant cell?", "Cell theory has to be true for every living thing, so try each statement on a mushroom and on the bacteria in yoghurt."]
   - check:
       type: sort
       q: "Single-celled or multicellular?"

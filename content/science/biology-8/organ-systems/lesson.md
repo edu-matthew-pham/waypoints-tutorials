@@ -8,7 +8,7 @@ language: science
 voice: { name: af_heart, speed: 1.1 }
 hook: "Your heart can't keep you alive on its own, and neither can your lungs. Why do organs only make sense as a team?"
 ---
-A short lesson with no simulation. You have met cells, tissues and organs. Now organs join up.
+You've met cells, tissues and organs, and now you'll see how organs team up into systems. There's no simulation this time, just questions.
 
 ## Engage: one organ goes wrong
 
@@ -37,6 +37,7 @@ tasks:
         - ["Veins", "Carry blood back to the heart"]
         - ["Capillaries", "Thin walls let oxygen and nutrients pass into cells"]
         - ["Blood", "Carries oxygen, nutrients and waste"]
+    hint: ["Start with the heart: what does it do to the blood that's already in it?", "Then for the vessels, think about which way the blood is going in each one, towards the heart or away from it."]
   - check:
       type: match
       q: "Match each part of a plant's vascular system to its job."
@@ -59,6 +60,7 @@ tasks:
       answer: 0
       feedback: [null, "Plants have no heart.", "The phloem carries sugars, so plants move food too. Look at how the water moves, not what is carried."]
       explain: "Animals actively pump a liquid round a loop; plants move water upward in tubes as it evaporates from the leaves. Different bodies, same problem."
+    hint: ["How does water get from a plant's roots all the way up to its leaves?", "Think about what happens to the water when it reaches the leaves on a warm day."]
   - check: { type: reflect, text: "I can name the organs of one animal system and one plant system, and say how they work as a system." }
 ```
 

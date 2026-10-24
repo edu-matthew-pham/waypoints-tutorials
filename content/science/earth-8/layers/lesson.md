@@ -51,6 +51,7 @@ stage: run
 insight: "Clicking each layer and probing temperature and pressure with depth builds the layered model; seeing it to scale shows how thin the crust really is."
 try: { playground: board, starter: "boards.yml#wedge", height: 660 }
 check: { type: board, text: "Find all six layers and probe down to the centre.", when: "n = k and m >= 6000" }
+hint: ["The layers near the surface are thin, so stay on the bigger view and click close to the outer edge of the wedge, one band at a time.", "The line under the board tells you how many layers you've found and how deep you've probed, and the Depth slider takes you all the way down."]
 ```
 
 Click each layer to find out what it is. Drag the **Depth** slider down to the centre: watch the temperature and pressure. Then press **Show it to scale**.
@@ -70,6 +71,7 @@ tasks:
         - ["Mantle", "Solid", "Solid, but it flows very slowly over millions of years."]
         - ["Outer core", "Liquid"]
         - ["Inner core", "Solid", "Hotter than the outer core, but the enormous pressure keeps it solid."]
+    hint: ["The inner core is the hottest layer, so what else keeps going up as you go deeper, and what might that do to the rock?", "Pressure keeps rising as you go deeper too, so think about what being squeezed that hard does to how closely the particles can pack."]
   - check:
       type: question
       q: "What is the lithosphere?"

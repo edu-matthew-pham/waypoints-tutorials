@@ -14,7 +14,7 @@ app:
   layout: full
 hook: "When Mendeleev laid out the elements in 1869 he left gaps and said: an element will be found here, and it will behave like this. He was right. How could a table predict something nobody had seen?"
 ---
-You know shells, groups and trends. Now use the table to predict something you haven't been told.
+You know about shells, groups and trends, so now you'll use the table to predict something nobody has told you.
 
 ## Engage: a stranger in group 1
 

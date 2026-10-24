@@ -13,7 +13,7 @@ app:
   layout: full
 hook: "A grain of uranium doesn't decay once. It sets off a chain of fourteen steps, passing through radon, a gas that seeps into some basements, and ends as lead. How can you follow it?"
 ---
-You know alpha and beta decay and half-life. Now put them in a row.
+You know alpha decay, beta decay and half-life, and here you'll put them one after another in a chain.
 
 ## Engage: where does it end?
 

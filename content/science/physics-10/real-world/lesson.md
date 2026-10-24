@@ -9,7 +9,7 @@ language: science
 voice: { name: af_heart, speed: 1.1 }
 hook: "A crash test dummy hits an airbag and the force on it is far smaller than hitting the dashboard. Same crash, same dummy. What does a bag of air change?"
 ---
-A short lesson with no simulation. You have all three laws. Here you use them to explain things people have designed.
+You've got all three of Newton's laws, and now you'll use them to explain things people have designed. There's no simulation this time.
 
 ## Engage: the airbag
 

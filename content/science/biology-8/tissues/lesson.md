@@ -52,8 +52,10 @@ try: { playground: board, starter: "boards.yml#muscle", height: 600 }
 tasks:
   - starter: "boards.yml#muscle"
     check: { type: board, text: "Find every part of the muscle cell.", when: "n = k" }
+    hint: ["Some parts are small and there are several of them, so click one of each kind and read its name under the board.", "If the count under the board isn't full yet, try the thin outline of the cell and the gaps between the stripes."]
   - starter: "boards.yml#heart"
     check: { type: board, text: "In the heart wall, find the muscle tissue, the lining and the nervous tissue.", when: "n = k" }
+    hint: ["Each layer of the wall is a different tissue, so click one layer at a time and read its name under the board.", "The nervous tissue is a thin pale line running through the muscle, so look closely."]
 ```
 
 ### One muscle cell
@@ -77,6 +79,7 @@ tasks:
       answer: 0
       feedback: [null, "A tissue's cells are similar and share a job; a mix of different cells doing different jobs is an organ.", "Tissues are made of many cells."]
       explain: "Similar cells, one job. Cells → tissues → organs → systems."
+    hint: "Look at one layer of the heart wall on the board. Are its cells all the same kind, and what are they all doing?"
   - check:
       type: match
       q: "Match each tissue to its job."
@@ -98,6 +101,7 @@ tasks:
         - ["Xylem", "Plant"]
         - ["Phloem", "Plant"]
         - ["Palisade mesophyll", "Plant"]
+    hint: "How does water get from a plant's roots up to its leaves, and how does sugar get back down again?"
   - check:
       type: question
       q: "Why does the body use muscle tissue, not just single muscle cells?"
@@ -129,6 +133,7 @@ insight: "Finding plant tissues by their jobs checks that the definition works b
 try: { playground: board, starter: "boards.yml#leaf", height: 600 }
 tasks:
   - check: { type: board, text: "Find the palisade tissue, the xylem and the phloem.", when: "n = k" }
+    hint: ["Think about where in a leaf the light is strongest, and what has to carry water and sugar around.", "The vein is in the middle of the section and it has two parts, one above the other, so click each and read its name."]
   - check:
       type: question
       q: "Xylem is made of long, hollow cells joined end to end. How does that suit its job?"
@@ -151,6 +156,7 @@ insight: "What happens when one tissue changes (scar tissue in the heart) shows 
 try: { playground: board, starter: "boards.yml#heart", height: 600 }
 tasks:
   - check: { type: board, text: "Find the muscle tissue, the lining and the nervous tissue again.", when: "n = k" }
+    hint: "Click one layer at a time and read its name, and look closely for the thin pale line running through the muscle."
   - check:
       type: question
       q: "After a heart attack, part of the cardiac muscle can be replaced by tough scar tissue (connective tissue). Why does the heart pump less well?"

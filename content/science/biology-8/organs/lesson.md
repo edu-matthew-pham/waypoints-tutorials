@@ -50,6 +50,7 @@ stage: run
 insight: "Clicking each tissue in the section shows how many jobs one organ needs."
 try: { playground: board, starter: "boards.yml#leaf", height: 520 }
 check: { type: board, text: "Find every tissue in the leaf section.", when: "n = k" }
+hint: ["The leaf is built in layers from top to bottom, so click each band in turn, and don't miss the thin ones right at the top and bottom.", "The vein in the middle has two parts and there's a tiny pore on the bottom edge, and the line under the board tells you how many you've got left."]
 ```
 
 ## Explain: tissues working together
@@ -77,6 +78,7 @@ tasks:
       type: parsons
       code: "levels.txt#order"
       text: "Put the levels of organisation in order, smallest first."
+    hint: ["Start with the smallest, and at each step ask what it's built from.", "Use the leaf you just clicked through: the whole leaf is one thing, and each band in it was one kind of cell."]
   - check:
       type: question
       q: "A wilt disease blocks the xylem in a leaf. What happens to the leaf?"
@@ -108,12 +110,14 @@ insight: "A second organ, an animal one, shows the same multi-tissue pattern."
 try: { playground: board, starter: "boards.yml#heart", height: 480 }
 tasks:
   - check: { type: board, text: "Find every tissue in the heart wall.", when: "n = k" }
+    hint: ["Click each layer in turn, from the blood in the chamber out to the outer layer, and read its name under the board.", "One tissue is just a thin pale line running through the muscle, so look closely."]
   - check:
       type: question
       q: "If the heart were made only of cardiac muscle, what would go wrong?"
       options: ["No smooth lining (blood would clot), no valves (blood would flow backwards), no nerves to adjust how fast it beats", "Nothing: muscle does it all", "It would beat too slowly"]
       answer: 0
       feedback: [null, "Muscle pumps, but other tissues line it, hold it together and control it.", "Each beat starts in special muscle cells, so it would keep beating; nerves only speed it up or slow it down. Think about clotting and backflow."]
+    hint: ["Think about the other layers you found in the heart wall, and what each one is there for.", "Click the lining and the outer layer on the board again and read what they do."]
 ```
 
 ### Find the tissues

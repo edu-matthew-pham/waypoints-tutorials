@@ -9,7 +9,7 @@ language: science
 voice: { name: af_heart, speed: 1.1 }
 hook: "Burn a pile of steel wool and it gets heavier. Burn a log and it gets lighter. Is mass appearing and vanishing?"
 ---
-A short lesson with no simulation. You can balance equations. Now check what a balanced equation says about mass.
+You can balance an equation, so now you'll work out what a balanced equation tells you about mass. There's no simulation this time, just questions.
 
 ## Engage: the fizzing flask
 

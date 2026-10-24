@@ -50,8 +50,10 @@ try: { playground: board, starter: "boards.yml#compare", height: 600 }
 tasks:
   - starter: "boards.yml#compare"
     check: { type: board, text: "Find the three parts that only the plant cell has.", when: "n = k" }
+    hint: ["What can you see in the leaf cell that the cheek cell doesn't have at all?", "Thin outlines count as parts too, so click right on the lines around the leaf cell and read the name under the board."]
   - starter: "boards.yml#mito"
     check: { type: board, text: "Now find the mitochondria in both cells.", when: "n = k" }
+    hint: ["Mitochondria release energy, and both cells need energy, so look for the same small shapes in each one.", "They're the small orange capsules, and the line under the board tells you how many you've still got to find."]
 ```
 
 ### Plant only
@@ -87,6 +89,7 @@ tasks:
         - ["Mitochondria", "Both", "Plants respire too, day and night."]
         - ["Ribosomes", "Both"]
         - ["Nucleus", "Both"]
+    hint: ["Once a plant has made its glucose, how does it get the energy back out of it to use?", "Think back to the board you just used: which cells did you find the mitochondria in?"]
   - check:
       type: question
       q: "Why don't animal cells need chloroplasts?"
@@ -134,6 +137,7 @@ insight: "A plant cell without chloroplasts shows that parts depend on the cell'
 try: { playground: board, starter: "boards.yml#roothair", height: 600 }
 tasks:
   - check: { type: board, text: "Find every part of the root hair cell and the leaf cell.", when: "n = k" }
+    hint: "Thin parts like the wall and the membrane are easy to miss, so if the count under the board isn't full, click right along the outlines of both cells."
   - check:
       type: question
       q: "Root hair cells have no chloroplasts. Why not?"
@@ -141,6 +145,7 @@ tasks:
       answer: 0
       feedback: [null, "They are plant cells: they have walls and vacuoles.", "Weight is not the reason."]
       explain: "A cell has the parts its job needs. Chloroplasts in the dark would be useless."
+    hint: "Do roots get any light down in the soil? And what do chloroplasts need light for?"
 ```
 
 ### Root hair
@@ -156,6 +161,7 @@ insight: "Linking organelle numbers to a cell's work extends 'specialisation' fr
 try: { playground: board, starter: "boards.yml#muscle", height: 600 }
 tasks:
   - check: { type: board, text: "Find every part of the muscle cell.", when: "n = k" }
+    hint: ["Some parts are small and there are several of them, so click one of each kind and read the name under the board.", "If the count under the board isn't full yet, try the thin outline of the cell and the gaps between the stripes."]
   - check:
       type: question
       q: "Cells in a gland that makes digestive enzymes (proteins) are packed with one organelle. Which?"

@@ -27,7 +27,7 @@ explainClip:
     - wait: 3000
 hook: "A street map is perfect for finding a café and useless for knowing how steep the hill is. Scientific models are like that too."
 ---
-A short lesson: what the particle model is good at, and where it stops.
+The particle model explains a lot, and this short lesson looks at where it stops working.
 
 ## Engage: is the model wrong?
 

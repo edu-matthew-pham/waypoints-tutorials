@@ -8,7 +8,7 @@ summary: "A few quick questions on labelling the carbon cycle, which flows are n
 language: science
 hook: "Carbon has been moving between air, living things, water and rock for billions of years. What have we changed?"
 ---
-Your teacher covers drawing the whole cycle in class. These questions check the basics: the flows, who or what drives them, and the human change.
+Your teacher covers drawing the whole cycle in class, so these questions check the basics: the flows, what drives them, and what people have changed.
 
 ## The whole cycle
 

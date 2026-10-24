@@ -29,7 +29,7 @@ explainClip:
     - wait: 3200
 hook: "A copper wire and a plastic ruler both contain millions of electrons. Only one of them can light a bulb. What is different?"
 ---
-The last lesson was about charge standing still. Now it moves.
+Last time the charge stayed put, and now it's going to move.
 
 ## Engage: what flows?
 

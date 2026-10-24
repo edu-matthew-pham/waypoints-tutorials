@@ -9,7 +9,7 @@ language: science
 voice: { name: af_heart, speed: 1.1 }
 hook: "A car travelling at 25 m/s brakes. How long does it take to stop, and how big is the force? The answer takes three steps, and the hardest part is knowing which one comes first."
 ---
-A short practice lesson with no simulation. You know F = ma, a = Δv ÷ t and the three laws. Now use them together.
+You know F = ma, a = Δv ÷ t and all three laws, and here you'll practise using them together. There's no simulation, just problems to work through.
 
 ## Engage: which step first?
 

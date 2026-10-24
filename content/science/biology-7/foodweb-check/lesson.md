@@ -9,7 +9,7 @@ summary: "A few quick questions on abiotic factors, how a change spreads through
 language: science
 hook: "A dry year changes the grass. What happens next, and how sure can a food web diagram be?"
 ---
-Two ideas your teacher covers in class: non-living factors and what they do to a web, and what a food web diagram leaves out.
+Your teacher covers two ideas in class, the non-living things that shape a food web and what a food web diagram leaves out, and these questions check you've got them.
 
 ## Abiotic factors
 

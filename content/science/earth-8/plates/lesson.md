@@ -82,6 +82,7 @@ tasks:
         - ["Also heated from within, by radioactive elements in its rock", "Mantle"]
         - ["Where the convection currents are", "Mantle"]
         - ["The crust and the top of the mantle", "Lithosphere (the plates)"]
+    hint: "Think back to the layers board: which of these layers were solid, and which part sits on top of which?"
   - check:
       type: question
       q: "Why does hot rock above the core rise?"
@@ -89,6 +90,7 @@ tasks:
       answer: 0
       feedback: [null, "It is the hot rock that rises, because it is less dense, not the heat on its own.", "The core heats it; nothing pushes it.", "Mantle rock stays solid and flows very slowly; it rises because heating makes it a little less dense."]
       explain: "Heated rock expands a little, so it is less dense and rises. Cooled rock is denser and sinks."
+    hint: ["On the board, what's actually moving up: the heat on its own, or the rock?", "Think about what heating does to how spread out the particles are, and what that does to the rock's density."]
   - check:
       type: question
       q: "On the board, where did the two plates move apart?"

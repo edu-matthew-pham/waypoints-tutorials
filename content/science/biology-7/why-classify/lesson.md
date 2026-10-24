@@ -28,7 +28,7 @@ explainClip:
     - wait: 1200
 hook: "There are about 2 million named species of living things, and millions more not yet named. Without a system, how would anyone find their way around them?"
 ---
-A short lesson: why we classify at all, before the kingdoms and keys.
+Before you meet the kingdoms and keys, it's worth asking why scientists bother sorting living things at all.
 
 ## Engage: a new beetle
 

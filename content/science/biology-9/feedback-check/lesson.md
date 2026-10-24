@@ -8,7 +8,7 @@ summary: "A few quick questions on tracing a negative feedback loop in two examp
 language: science
 hook: "Your body keeps glucose and temperature steady all day. What happens when one part of the loop stops working?"
 ---
-Your teacher covers other feedback examples and disorders in class. These questions check the basics: the parts of a loop, two examples, and what a failure does.
+Your teacher covers more feedback examples, and what happens when they go wrong, in class, so these questions check the basics: the parts of a loop, two examples, and what a failure does.
 
 ## Tracing a loop
 

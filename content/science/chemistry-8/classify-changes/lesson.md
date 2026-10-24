@@ -9,7 +9,7 @@ language: science
 voice: { name: af_heart, speed: 1.1 }
 hook: "A pot of water boils: bubbles, steam, heat. A pot of milk 'boils' and then turns to a skin. Both look dramatic. Only one is a chemical change. How do you tell?"
 ---
-A short lesson with no simulation. You have the new-substance test, the clues and energy change. Now use them together.
+You've got the new-substance test, the clues and the energy change, and here you'll use them all together. There's no simulation this time, just questions.
 
 ## Engage: two kinds of bubbles
 

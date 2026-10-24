@@ -8,7 +8,7 @@ summary: "A few quick questions on mitosis, how fertilisation and meiosis give v
 language: science
 hook: "Siblings share both parents but are not copies of each other. And why do some conditions show up more in boys?"
 ---
-Your teacher covers these in class. The questions check the basics: what mitosis does, how offspring get their genes, and why sex-linked traits behave differently.
+Your teacher takes you through these in class, so these questions are a quick check that you've got the basics: what mitosis does, how offspring get their genes, and why sex-linked traits behave differently.
 
 ## Mitosis
 
