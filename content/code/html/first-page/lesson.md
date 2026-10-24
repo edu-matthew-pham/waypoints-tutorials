@@ -31,7 +31,7 @@ explainClip:
     - type: { into: HTML code, text: "<h1>Sports day</h1>\n<p>Bring a hat</p>\n<p>and water.</p>" }
     - expect: { selector: "#preview-text", contains: "and water." }
     - wait: 1500
-hook: "Every website you have visited, from your school page to a shop, starts as text with tags like these."
+hook: "Under its colours and pictures, your school's website is plain text with tags around it."
 ---
 Every web page is text with **tags** in it. A tag is a label: `<h1>` labels the main heading and `<p>` labels a paragraph. Most tags come in pairs, an opening tag `<p>` and a closing tag `</p>` with a slash, wrapped around the text they label.
 
@@ -163,12 +163,12 @@ hint:
   - "Check the page after each tag you add. If the page looks wrong, look for a tag with a missing `<` or `>`, or a closing tag without its slash."
 check:
   type: code
-  text: "Write a notice with a title, two headings and a paragraph under each."
+  text: "Write a page with a title, two headings and a paragraph under each."
   rules: { tags: [h1, h2, p] }
 expected: page.html#sol-make
 ```
 
-Write a notice for an event at your school (a concert, a fair, a match): an `<h1>` title, two sections with `<h2>` headings, and a paragraph in each.
+Write a page about a place you know well (a park, a beach, a town you've visited): an `<h1>` title, two sections with `<h2>` headings, and a paragraph in each.
 
 ```teacher
 summary: Students label text with headings and paragraphs, and find out that the browser ignores line breaks in the code.

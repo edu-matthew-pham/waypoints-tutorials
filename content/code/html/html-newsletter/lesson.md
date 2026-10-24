@@ -16,7 +16,7 @@ app:
 pacing:
   keyDelayMs: 45
 voice: true
-hook: "Almost every job in web design starts with a page someone else wrote, and the skill is finding the right part to change."
+hook: "Web designers spend more time changing pages someone else wrote than starting new ones."
 ---
 Real pages are longer than the ones you have built so far. They start with the same few lines, called the **page wrapper**, which you can copy as it is for now: `<!DOCTYPE html>` says this is a web page, `<head>` holds information about the page (its `<title>` on the browser tab, and the `<style>` block with the rules), and `<body>` holds everything that shows.
 

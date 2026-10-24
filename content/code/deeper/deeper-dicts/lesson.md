@@ -5,7 +5,7 @@ introduces: [dict]
 title: A map of rooms
 summary: Store rooms and exits in dictionaries, look things up by name, put a dictionary inside a dictionary, and count words.
 language: python
-hook: "A phone's contacts, a dictionary app and a game's map all do the same thing: look something up by its name."
+hook: "Your phone finds a friend's number by their name, not by where they sit in a list."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

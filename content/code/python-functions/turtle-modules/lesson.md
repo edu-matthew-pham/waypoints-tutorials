@@ -9,7 +9,7 @@ title: Modules
 summary: Keep related functions together in a file you can import, like a toolbox.
 language: python
 modules: [shapes]
-hook: "Every Python program you will ever use imports other people's modules. Now you will build your own."
+hook: "Nobody writes a whole program from scratch. They import other people's code, and now you'll write some to share."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

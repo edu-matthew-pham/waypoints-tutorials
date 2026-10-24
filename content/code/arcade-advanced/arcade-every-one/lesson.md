@@ -181,7 +181,7 @@ stage: modify
 try: { playground: arcade, starter: "lesson.ts#fireworks" }
 ```
 
-**A** launches a rocket; **B** makes every rocket in the sky burst off in a random direction. Make the rockets launch faster, and make **B** also change the background colour, so the sky flashes when they burst.
+This is the firework show from Arcade Foundations, but now one button reaches every rocket at once. **A** launches a rocket; **B** makes every rocket in the sky burst off in a random direction. Make the rockets launch faster, and make **B** also change the background colour, so the sky flashes when they burst.
 
 ```teacher
 summary: "Students get a list of every sprite of a kind with array of sprites of kind, and use a for element loop to do something to each one."

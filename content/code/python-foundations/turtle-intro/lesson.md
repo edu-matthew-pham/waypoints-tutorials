@@ -14,7 +14,7 @@ app:
   layout: full
 pacing:
   keyDelayMs: 30
-hook: "Every animation, game character and robot is moved by a list of commands that run in order. Today you give the commands."
+hook: "A robot does exactly what it's told, one command at a time. So does a turtle."
 voice: true
 explainClip:
   query: { code: "", speed: 6 }

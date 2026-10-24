@@ -5,7 +5,7 @@ introduces: [object]
 title: Many turtles
 summary: Make more turtles with Turtle(), give each one its own commands, and find out what a game with several stars costs in code.
 language: python
-hook: "Every game has many things moving at once: enemies, coins, bullets, clouds. Each one is an object with its own position and its own commands."
+hook: "A game might have fifty coins on screen, each with its own place and its own moves."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

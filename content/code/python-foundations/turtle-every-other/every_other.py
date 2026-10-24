@@ -64,3 +64,27 @@ for i in range(8):
     forward(30)
     right(45)
 # endregion
+
+# region: crossing
+from turtle import *
+
+speed(0)
+bgcolor("dimgray")
+penup()
+goto(-200, -60)
+pendown()
+for i in range(8):
+    if i % 2 == 0:
+        fillcolor("white")
+    else:
+        fillcolor("dimgray")
+    pencolor("dimgray")
+    begin_fill()
+    for side in range(2):
+        forward(50)
+        left(90)
+        forward(120)
+        left(90)
+    end_fill()
+    forward(50)
+# endregion

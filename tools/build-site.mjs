@@ -773,7 +773,7 @@ const ideasPages = SUBJECTS.filter((sub) => sub.pathways.length > 1 && !sub.teac
     + `<div class="ideas-wrap"><table class="ideas"><thead><tr><th>Idea</th>${sub.pathways.map((pw) => `<th>${esc(pw.title)}</th>`).join('')}</tr></thead><tbody>`
     + rows.map((r) => `<tr><th scope="row">${esc(r.label)}</th>${r.cells.map((c) => `<td>${cell(c)}</td>`).join('')}</tr>`).join('')
     + `</tbody></table></div><p class="muted">Read from each lesson's <code>introduces:</code> tags. Pathways are options, not a sequence, so a gap means that pathway teaches the idea later or leaves it out, not that something is missing.</p>`;
-  const css = '<style>.ideas-wrap{overflow-x:auto}.ideas{border-collapse:collapse;width:100%;font-size:15px}.ideas th,.ideas td{border:1px solid var(--line,#e4e1da);padding:6px 8px;text-align:left;vertical-align:top}.ideas thead th{background:var(--card,#fff)}.ideas tbody th{font-weight:600;white-space:nowrap}</style>';
+  const css = '<style>.ideas-wrap{overflow-x:auto}.ideas{border-collapse:collapse;width:100%;font-size:15px}.ideas th,.ideas td{border:1px solid var(--line,#e4e1da);padding:6px 8px;text-align:left;vertical-align:top}.ideas thead th{background:var(--card,#fff)}.ideas tbody th{font-weight:600;width:24%}</style>';
   writeFileSync(join(dir, 'index.html'), teachPage(`${sub.title}: ideas across pathways`, css + body, `teach/${sub.path}/ideas`, null));
   return { path: `${sub.path}/ideas/`, title: `${sub.title}: ideas across pathways` };
 }).filter(Boolean);

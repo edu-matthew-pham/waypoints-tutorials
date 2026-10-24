@@ -8,7 +8,7 @@ assumes: [if, else, compare, loop-index]
 title: Every other
 summary: Use the remainder, %, to pick every second or third pass, and add a third choice with elif.
 language: python
-hook: "Zebra crossings, chessboards, stripes and blinking lights all repeat a pattern: every second one is different."
+hook: "Can a loop make a pattern that repeats, like the squares on a chessboard?"
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"
@@ -167,3 +167,12 @@ It comes down to the order Python asks its questions in.
 ### Work out the length
 
 This one needs a name, the counter and the remainder all at once.
+
+## Change a zebra crossing
+
+```step
+stage: modify
+try: { starter: "every_other.py#crossing", height: 420 }
+```
+
+A zebra crossing is white and grey taking turns. Make the crossing longer, with 12 stripes. Then use `elif` to make the first stripe yellow, so drivers see where it starts: the first stripe is `i == 0`.

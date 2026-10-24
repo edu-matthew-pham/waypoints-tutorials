@@ -7,7 +7,7 @@ assumes: [print, input, text-join, to-text, variable, variable-update, if, elif,
 title: "Challenge: a console app"
 summary: Read a working café till, change one thing and predict the result, then make a console app of your own with a menu, a checked number, a total and tests.
 language: python
-hook: "Every app you use is a menu, a check and a total, wearing a nicer coat. Today you build one."
+hook: "Strip away the buttons and colours, and most apps are a menu, a check and a total. Today you build one."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground" 8123
   url: http://127.0.0.1:8123/index.html

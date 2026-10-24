@@ -33,7 +33,7 @@ explainClip:
     - expect: {selector: "ul", contains: "Kai", preview: true}
     - caption: "Change the list, and Vue adds the li for you."
     - wait: 1000
-hook: "A chat, a playlist and a search page are all lists that change. v-for keeps the page in step with the list."
+hook: "A chat, a playlist, a search page: lists that change while you watch."
 ---
 In the DOM course, a list on the page took a loop, `createElement` and `append`, and the page changed only when you made or removed elements. In Vue you write the tag **once**:
 

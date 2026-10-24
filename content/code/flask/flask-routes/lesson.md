@@ -6,7 +6,7 @@ recipes: [object]
 title: A page from Python
 summary: "Make a website whose pages come from Python: each address is a route, and a function gives back its page."
 language: python
-hook: "Every website you use has code behind it that decides what page to send back. With Flask, a few lines of Python do it."
+hook: "When you type a web address, some code decides which page to send back. In Flask that code is Python."
 app:
   # The whole site is served: the Python playground loads Pyodide from ../_pyodide/. (_playground-py names the playground for the clip cache.)
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist\" 8123 _playground-py"

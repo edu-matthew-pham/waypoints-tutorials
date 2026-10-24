@@ -32,7 +32,7 @@ explainClip:
     - expect: { selector: "#preview-text", contains: "Owls" }
     - caption: "Columns appear by themselves, so every row needs the same number of cells."
     - wait: 2500
-hook: "Timetables, sports results, price lists and school reports are tables: data in rows and columns."
+hook: "A bus timetable is a grid of rows and columns, and so is the code behind it."
 ---
 Some information is a grid: rows going across, columns going down. HTML has no tag for a column. You write the table **one row at a time** and the columns appear.
 

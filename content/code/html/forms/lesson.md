@@ -36,7 +36,7 @@ explainClip:
     - expect: { selector: "#preview-text", contains: "Send" }
     - caption: "But nothing is connected to it. Code behind a form does the work."
     - wait: 2000
-hook: "Every sign-up, search box, quiz and online order starts as a form like this."
+hook: "Before you can order online, someone built the boxes you type into."
 ---
 A **form** collects what people type. Each field is a **label** that says what to type and a box to type in, and a **button** is for sending the answers.
 
@@ -195,12 +195,12 @@ hint:
   - "Every label needs a `for` that matches its box's `id`, and each label and box goes in a `<p>`. Click each label to test it."
 check:
   type: code
-  text: "Make a sign-up form with linked labels, a drop-down and a button."
+  text: "Make a booking form with linked labels, a drop-down and a button."
   rules: { tags: [form, p, label, input, select, option, button], contains: ["for=\""] }
 expected: page.html#sol-make
 ```
 
-Make a sign-up form for a school club or event: a heading, at least two labelled fields (one a drop-down), and a button. Click every label to check it is linked.
+Make a booking form for a bike repair, a library book or a pet-sitting job: a heading, at least two labelled fields (one a drop-down), and a button. Click every label to check it is linked.
 
 ```teacher
 summary: Students build a form from linked labels, boxes and a button, and find out that a form collects answers but does nothing with them on its own.

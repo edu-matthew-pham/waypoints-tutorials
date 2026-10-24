@@ -34,7 +34,7 @@ explainClip:
     - caption: "Another rule styles the heading. The HTML does not change."
     - type: { into: HTML code, text: "  h1 {\n    color: navy;\n    font-size: 40px;\n  }\n", after: "<style>\n" }
     - wait: 2000
-hook: "Every website you know uses the same HTML tags; CSS is what makes one look nothing like another."
+hook: "Two websites can use exactly the same tags and look nothing alike. That's CSS."
 ---
 HTML says what each part of a page *is*. **CSS** says how it looks. CSS rules go in a `<style>` block, which sits at the top of the code for now; a later lesson shows where it goes in a whole page.
 

@@ -34,7 +34,7 @@ explainClip:
     - type: { into: HTML code, text: "<h2>Winners</h2>\n<img\n  src=\"trophy.svg\"\n  alt=\"A gold trophy\">" }
     - expect: { selector: "#preview-text", contains: "Winners" }
     - wait: 2000
-hook: "Every photo, icon and logo on a website is an img tag, and its alt text is what a screen reader says aloud."
+hook: "A screen reader can't see a photo. It reads out the words the page gives it instead."
 ---
 A picture is a file of its own. The page does not hold the picture: it says which file to show, and what the picture is for people who cannot see it.
 
@@ -191,12 +191,12 @@ hint:
   - "Write `alt` as if describing the picture to someone on the phone."
 check:
   type: code
-  text: "Make a club page with a title, a picture with alt, and a paragraph."
+  text: "Make a page with a title, a picture with alt, and a paragraph."
   rules: { tags: [h1, img, p], contains: ["alt=\""] }
 expected: page.html#sol-make
 ```
 
-Make a page for a school club: a title, a picture, and a paragraph about when it meets. The pictures you can use are `trophy.svg`, `medal.svg`, `book.svg`, `ball.svg`, `star.svg` and `music.svg`.
+Make a page about a sport, a book or a band you like: a title, a picture, and a paragraph about it. The pictures you can use are `trophy.svg`, `medal.svg`, `book.svg`, `ball.svg`, `star.svg` and `music.svg`.
 
 ```teacher
 summary: Students show a picture with img, and learn that src must match the file name exactly and that alt describes the picture for people who cannot see it.

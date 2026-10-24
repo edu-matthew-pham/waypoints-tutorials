@@ -27,7 +27,7 @@ explainClip:
     - wait: 1400
     - caption: "Open index.html from that folder. If it works there, it works online."
     - wait: 1400
-hook: "Every website you visit is a folder of files on a computer that is always switched on. Yours can be one too."
+hook: "A website is a folder of files on a computer that never switches off. Yours can be one."
 ---
 A website is a **folder of files**: the page, called `index.html`, and every picture, stylesheet, script and data file it uses, side by side. A **host** keeps the folder on a computer that is always online and gives it an address.
 

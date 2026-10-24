@@ -8,7 +8,7 @@ title: Tournament
 summary: Take the Radio duel further. A scoreboard kept in a list, rounds that start themselves, and a champion at three wins.
 language: makecode
 explainPicture: tournament.ts#board
-hook: "A tennis scoreboard, a chess clock and an esports bracket all do the same jobs: keep both scores, start the next round, and declare a winner."
+hook: "A tennis scoreboard keeps two scores, starts the next game and calls the winner. Your duel can too."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
   url: "http://127.0.0.1:8131/_playground-explain/index.html"

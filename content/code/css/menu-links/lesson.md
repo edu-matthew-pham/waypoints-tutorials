@@ -34,7 +34,7 @@ explainClip:
     - caption: "Copy this line for now: hover means while the pointer is over it."
     - type: { into: HTML code, text: "  nav a:hover {\n    text-decoration: underline;\n  }\n", after: "color: crimson;\n  }\n" }
     - wait: 2000
-hook: "Every site menu looks different from the links in its articles, and one short selector is how it is done."
+hook: "How does a site make its menu links white and its article links blue? One short selector."
 ---
 A page has links in two places: in the menu at the top, and in the sentences below. A rule on `a` styles both. To change only the menu, the rule has to say where the links are.
 

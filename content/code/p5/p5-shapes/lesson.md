@@ -33,7 +33,7 @@ explainClip:
     - expect: {selector: "#status", contains: "Running"}
     - wait: 1100
     - caption: "The circle is white and the rectangle pink: the fill came between them."
-hook: "Every picture on a screen is shapes at places. In p5.js you say which shape, where, and what colour."
+hook: "A picture on a screen is shapes at places. You say which shape, where, and what colour."
 ---
 **p5.js** draws on a **canvas**: a rectangle of pixels you make with `createCanvas(width, height)`. A shape is a command with numbers: `circle(150, 100, 80)` draws a circle with its middle **150 across** and **100 down**, and a width of 80.
 

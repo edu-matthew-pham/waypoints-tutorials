@@ -8,7 +8,7 @@ title: A shared code
 summary: Send a place number that stands for a word in a list both micro:bits share.
 language: makecode
 explainPicture: lesson.ts#chooser
-hook: "Morse code, flag signals and the numbers a fast-food counter calls out all work because both sides agree what each code means."
+hook: "Morse code works because both ends agree what each pattern means. So does this."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
   url: "http://127.0.0.1:8131/_playground-explain/index.html"

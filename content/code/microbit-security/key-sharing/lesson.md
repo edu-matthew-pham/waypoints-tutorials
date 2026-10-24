@@ -5,7 +5,7 @@ title: Agreeing a key in the open
 summary: Both ends need the same key, but anything sent by radio is public. Each end mixes a private number with public numbers, swaps the mixes, and both arrive at the same key without it ever being sent.
 language: makecode
 introduces: [radio-value, value-name-limit, text-compare]
-hook: "Every time you open a secure web page, your computer and a server agree a key with a stranger, in public, in less than a second. This lesson is the idea behind it, with numbers small enough to follow by hand."
+hook: "Your computer agrees a secret key with a website in public, in under a second. This lesson shows how, with numbers small enough to follow by hand."
 explainDiagram:
   ref: diagrams.mmd#exchange
   alt: "A sequence between micro:bit A, whose secret is 6, and micro:bit B, whose secret is 15, with the public numbers 23 and 5. A sends its mix, 8. B sends its mix, 19. A works out 19 to the power 6, mod 23, which is 2. B works out 8 to the power 15, mod 23, which is also 2. Anyone listening hears only 8 and 19, never the key."

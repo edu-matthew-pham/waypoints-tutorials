@@ -35,7 +35,7 @@ explainClip:
         text: "The page changed. The DOM course explains every part of this recipe."
         say: "The page changed. A later course explains every part of this recipe."
     - wait: 2500
-hook: "Every like button, quiz and game on a website is a page that reacts: code waits for a click, then changes something."
+hook: "A like button that counts when you click it is only a few lines of JavaScript."
 ---
 So far your pages show things. With a few lines of **JavaScript**, a page can **react**. This lesson uses JavaScript as a recipe: copy the pattern, change the parts, and see what happens. The DOM course explains how every part works.
 

@@ -34,7 +34,7 @@ explainClip:
     - type: { into: HTML code, text: "\n    <ul>\n      <li>Owls</li>\n    </ul>\n  ", after: "  <li>Relay" }
     - expect: { selector: "#preview-text", contains: "Owls" }
     - wait: 2000
-hook: "Menus, playlists, search results and recipes are all lists of items."
+hook: "Some of the most useful things on a page are lists: ingredients, a playlist, the top 10."
 ---
 A lot of text is a list: things to bring, events in order, steps to follow. Lists use tags inside tags, just like `<strong>` inside `<p>`.
 

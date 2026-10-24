@@ -8,7 +8,7 @@ title: Catch the turtle
 summary: Build a game that uses everything so far. The turtle hops along a path; catch it before it hides.
 language: python
 modules: [ui]
-hook: "Every game is a few rules, some data and a loop. You already know all three."
+hook: "You already know enough to make a game: a few rules, some data and a loop."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

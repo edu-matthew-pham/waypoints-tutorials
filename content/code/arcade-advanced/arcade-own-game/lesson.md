@@ -7,7 +7,7 @@ title: Your own game
 summary: Turn your pitch card into a real game. Get the core loop working, add a way to win and lose, then polish it with one idea from the course.
 language: makecode
 explainPicture: lesson.ts#prototype
-hook: "Every game studio works this way: a one-page pitch, a rough prototype, then playtest, fix, and add one thing at a time until it is fun."
+hook: "Game studios start with a one-page pitch and a rough prototype, not a finished game. So will you."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
   url: "http://127.0.0.1:8131/_playground-explain/index.html"

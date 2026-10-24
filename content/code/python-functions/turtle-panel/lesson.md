@@ -6,7 +6,7 @@ title: "Optional: Control panel"
 summary: Turn the game into an app with a panel of buttons made from lists.
 language: python
 modules: [ui]
-hook: "Every app is a panel of controls over some state. Build the panel from data, and adding a control is one more item in a list."
+hook: "Add one item to a list and a whole new button appears on the panel."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

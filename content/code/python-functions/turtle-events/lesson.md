@@ -9,7 +9,7 @@ assumes: [variable-update]
 title: Events
 summary: Make a program wait, then react when something happens.
 language: python
-hook: "Every app you use is waiting: for a tap, a key or a timer. Code runs when an event happens, not from top to bottom."
+hook: "Most apps spend their time waiting for you: a tap, a key, a timer going off."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

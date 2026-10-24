@@ -35,7 +35,7 @@ explainClip:
     - wait: 750
     - caption: "Two messages in the Console. The page itself did not change."
     - wait: 750
-hook: "Every web developer keeps the Console open all the time: it is how you find out what your code is really doing."
+hook: "Web developers keep one window open all day to see what their code is really doing."
 ---
 The **Console** is a list of messages from your page. `console.log(...)` writes one, `console.warn(...)` writes a warning, and `console.error(...)` writes an error. When something goes wrong the browser writes its own red error there, with the line it happened on.
 

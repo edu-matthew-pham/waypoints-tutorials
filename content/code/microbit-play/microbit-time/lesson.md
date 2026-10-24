@@ -9,7 +9,7 @@ title: Time between
 summary: Store the running time at one moment and take it away from a later one, to measure how long something took.
 language: makecode
 explainPicture: lesson.ts#stopwatch
-hook: "A stopwatch, a lap timer and a game's reaction score all do one subtraction: the time now, take away the time it started."
+hook: "How does a stopwatch know how long you took?"
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
   url: "http://127.0.0.1:8131/_playground-explain/index.html"

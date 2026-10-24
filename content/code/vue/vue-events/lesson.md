@@ -34,7 +34,7 @@ explainClip:
     - expect: {selector: "p", contains: "Score: 2", preview: true}
     - caption: "Page: score. Script: score.value."
     - wait: 300
-hook: "Every sign-up form, search box and Add button is an event and some data. Vue joins them up for you."
+hook: "Type in a box, press Add, and the list updates. Vue joins the event and the data for you."
 ---
 Two new pieces join the page to the data.
 

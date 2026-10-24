@@ -31,7 +31,7 @@ explainClip:
     - wait: 750
     - caption: "Type a name, then click Greet."
     - wait: 750
-hook: "Search boxes, sign-up forms and calculators all do the same two things: read what you typed, and answer."
+hook: "A calculator on a web page reads what you typed, then answers. You'll build one."
 ---
 An input box has a **value**: whatever is typed in it right now. Read it inside a handler:
 

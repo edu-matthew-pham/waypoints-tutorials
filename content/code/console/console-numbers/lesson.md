@@ -12,7 +12,7 @@ app:
   url: http://127.0.0.1:8123/index.html
   ready: Python code
   layout: full
-hook: "Every app that asks for an age, a quantity or a PIN has to turn what you typed into a number before it can calculate."
+hook: "Ask someone their age and add 1. For a computer, that's trickier than it sounds."
 voice: true
 explainClip:
   query: { code: "a = input(\"First number: \")\nb = input(\"Second number: \")\nprint(a + b)\n", speed: 8, console: 1 }

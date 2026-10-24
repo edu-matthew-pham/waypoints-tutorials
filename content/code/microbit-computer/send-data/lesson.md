@@ -6,7 +6,7 @@ summary: A micro:bit sends each sensor reading down the USB cable as a line of t
 language: makecode
 introduces: [serial-write]
 explainPicture: send.ts#predict
-hook: "Weather stations, heart-rate monitors and the sensors in a science lab all do the same simple thing: send a reading, wait, send the next. A computer collects the readings and draws the graph."
+hook: "A weather station sends a reading, waits, and sends the next. The computer draws the graph."
 ---
 In micro:bit Foundations, everything you made stayed on the micro:bit. Now it talks to the computer it is plugged into. A cable that sends text one line at a time is called **serial**.
 

@@ -8,7 +8,7 @@ assumes: [variable, loop-index]
 title: Lists
 summary: Keep many values under one name, pick one by its place, and count them with len.
 language: python
-hook: "A playlist, a shopping cart, a class roll and a leaderboard are all lists: many values kept in order under one name."
+hook: "A class roll keeps every name in order, under one heading."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"
@@ -158,3 +158,12 @@ unlocks: [list]
 ```
 
 This one needs a name, the counter and a list together. Work it out on paper before you check.
+
+## Change a medal podium
+
+```step
+stage: modify
+try: { starter: "lists.py#podium", height: 420 }
+```
+
+Two lists work together here: `heights[i]` and `colours[i]` are the same place on the podium. Make the winner's block taller, then add a fourth place, with a height and a colour of its own. Does the loop need to change?

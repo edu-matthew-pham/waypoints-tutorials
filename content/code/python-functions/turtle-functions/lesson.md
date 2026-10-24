@@ -8,7 +8,7 @@ introduces: [function]
 title: Functions
 summary: Give a group of commands a name, then use that name again and again.
 language: python
-hook: "Every app is built from small named functions that other code calls. You are about to write your first."
+hook: "Apps are built from small named pieces that call each other. You're about to write your first."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

@@ -78,3 +78,17 @@ for i in range(12):
     right(90)
     size = size + 10
 # endregion
+
+# region: fridge
+from turtle import *
+
+reading = 7      # degrees inside the fridge right now
+
+pensize(40)
+left(90)
+if reading > 5:
+    pencolor("red")
+else:
+    pencolor("blue")
+forward(reading * 20)
+# endregion

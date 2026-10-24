@@ -12,7 +12,7 @@ app:
   url: http://127.0.0.1:8123/index.html
   ready: Python code
   layout: full
-hook: "Chatbots, game menus and error messages all start the same way: a program puts a line of text on the screen."
+hook: "Before a program can chat, quiz or complain, it has to put one line of text on the screen."
 voice: true
 explainClip:
   query: { code: "", speed: 8, console: 1 }

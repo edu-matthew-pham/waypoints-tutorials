@@ -33,7 +33,7 @@ explainClip:
     - expect: {selector: "#count", contains: "3", preview: true}
     - caption: "Three clicks, and the variable remembered each one."
     - wait: 750
-hook: "A score, a basket count and a \"5 likes\" all work the same way: a variable that lives between clicks."
+hook: "How does a like counter remember 5 between one click and the next?"
 ---
 A page can **remember** things in variables, as your p5 sketches did. The rule is where you make them:
 
@@ -155,7 +155,7 @@ try: { playground: dom, starter: "page.html#make", height: 430 }
 check: { type: reflect, text: "I made a game with a score, a goal, and a message at the end." }
 ```
 
-Make a small game: click a moving star, press as fast as you can, guess a number. It needs a **score variable** made above the handler, a **goal or a time limit**, and a **message** when you win or lose. The page on this lesson moves a star and stops after 10 seconds, using `setInterval`.
+Make a small game: click a moving star, press as fast as you can, guess a number. It needs a **score variable** made above the handler, a **goal or a time limit**, and a **message** when you win or lose. It's the same running score as a micro:bit scoreboard or the console points counter, now kept between clicks. The page on this lesson moves a star and stops after 10 seconds, using `setInterval`.
 
 ## Where this leads
 

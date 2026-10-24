@@ -5,7 +5,7 @@ introduces: [file, json]
 title: Save the game
 summary: Write the game to a file with json, read it back next time, and catch the error when there is no file yet.
 language: python
-hook: "Every game that lets you carry on tomorrow writes its world to a file, and reads it back when you return."
+hook: "Close a game, open it tomorrow, and you carry on where you left off. That's a file being written and read."
 app:
   # The whole site is served: the Python playground loads Pyodide from ../_pyodide/. (_playground-py names the playground for the clip cache.)
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist\" 8123 _playground-py"

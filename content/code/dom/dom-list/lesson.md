@@ -31,7 +31,7 @@ explainClip:
     - wait: 750
     - caption: "Three items in the array, three bullet points on the page."
     - wait: 750
-hook: "A feed, a shopping basket and a chat are all lists that grow: the code makes a new element and puts it on the page."
+hook: "A chat grows a new line every time someone sends a message. The page is making new elements."
 ---
 A page changes only when your code changes it. To add a line to a list you do three things:
 

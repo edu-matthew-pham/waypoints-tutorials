@@ -68,3 +68,26 @@ for i in range(len(colours)):
     forward(50)
     right(72)
 # endregion
+
+# region: podium
+from turtle import *
+
+heights = [80, 120, 50]
+colours = ["silver", "gold", "peru"]
+
+speed(0)
+penup()
+goto(-120, -100)
+pendown()
+for i in range(len(heights)):
+    fillcolor(colours[i])
+    begin_fill()
+    left(90)
+    forward(heights[i])
+    right(90)
+    forward(80)
+    right(90)
+    forward(heights[i])
+    left(90)
+    end_fill()
+# endregion

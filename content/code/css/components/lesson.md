@@ -193,7 +193,7 @@ check:
 expected: page.html#sol-make
 ```
 
-Make a hero and three cards for a club or event you know: a big heading with a line and a link, and three cards with a heading and a line each, in a row that wraps. Then add a fourth card by copying one, and write no new CSS.
+Make a hero and three cards for a shop, a sports team or a place to visit: a big heading with a line and a link, and three cards with a heading and a line each, in a row that wraps. Then add a fourth card by copying one, and write no new CSS.
 
 ```teacher
 summary: Students build a hero and a row of cards from classes, copy a card's HTML to add another, and find out that one set of rules styles every copy.

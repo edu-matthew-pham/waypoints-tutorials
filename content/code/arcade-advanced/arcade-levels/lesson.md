@@ -10,7 +10,7 @@ title: Level up
 summary: Keep the level in a variable and change it where the score changes, with a goal that moves up each time.
 language: makecode
 explainPicture: lesson.ts#predict
-hook: "Almost every game gets harder as you play. Behind it is one number, the level, and one place where it changes."
+hook: "Why does a game get harder the longer you survive? Usually it's one number going up."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
   url: "http://127.0.0.1:8131/_playground-explain/index.html"

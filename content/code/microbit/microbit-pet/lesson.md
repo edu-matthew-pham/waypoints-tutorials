@@ -7,7 +7,7 @@ title: Pocket pet
 summary: Build a pet that lives on your micro:bit, using everything in this course. It gets hungry as time passes, you feed it, and its face shows how it feels.
 language: makecode
 explainPicture: lesson.ts#sol-m3
-hook: "Tamagotchis, Neopets and the pets in phone games all run the same loop: time makes a number go up, you bring it down, and a picture shows how things are going."
+hook: "A Tamagotchi is a number that time pushes up and you push back down, with a face to show how it's going."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
   url: "http://127.0.0.1:8131/_playground-explain/index.html"

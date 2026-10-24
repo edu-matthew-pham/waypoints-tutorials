@@ -8,7 +8,7 @@ assumes: [list, list-index, length, repeat, if, else, compare]
 title: For each item
 summary: Visit every item in a list in turn, without counting places.
 language: python
-hook: "A playlist plays each song, a printer prints each page and a game moves each enemy. They all work through a list, one item at a time."
+hook: "A playlist doesn't count its songs. It just plays the next one until there are none left."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"
@@ -147,3 +147,12 @@ unlocks: [for-each-item]
 ```
 
 Draw a **bar chart**: one bar for each number in `heights`, the height of the bar equal to the number.
+
+## Change a rainfall chart
+
+```step
+stage: modify
+try: { starter: "for_each.py#rain", height: 420 }
+```
+
+Each bar is a day's rain, Monday first. Put in a week of your own, or one from the weather news. Then make the heavy days (more than 15 mm) a darker blue with an `if` inside the loop, so you can spot them at a glance.

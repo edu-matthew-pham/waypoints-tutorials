@@ -8,7 +8,7 @@ assumes: [loop-index, variable]
 title: If and else
 summary: Make a program choose which lines to run, using if and else.
 language: python
-hook: "Traffic lights, game scores, login screens and thermostats all do the same thing: check a condition and pick what happens next."
+hook: "A thermostat asks one question, over and over: is it too cold?"
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"
@@ -198,3 +198,12 @@ flowchart TD
   E -- next i --> B
   class B new
 ```
+
+## Change a fridge thermometer
+
+```step
+stage: modify
+try: { starter: "decisions.py#fridge", height: 420 }
+```
+
+A fridge should stay at 5 degrees or less. This thermometer draws the reading as a bar, red when the fridge is too warm. Try readings of 3 and 8. Then make the bar green when the fridge is fine, and change the rule so it turns red above 4 instead. It's the same rule as the micro:bit fridge alarm, drawn instead of flashed.

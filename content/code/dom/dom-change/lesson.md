@@ -33,7 +33,7 @@ explainClip:
     - caption:
         text: "textContent changed the words and style.color the colour, while the page was open."
         say: "text Content changed the words, and style dot color changed the colour."
-hook: "Every button that opens a menu, every counter that goes up and every live search is JavaScript changing a page that is already on screen."
+hook: "The page is already on screen, and your code can still change any part of it."
 ---
 A web page is a tree of **elements**. JavaScript can find one and change it while the page is open. Two steps do most of the work:
 

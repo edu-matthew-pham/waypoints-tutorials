@@ -13,7 +13,7 @@ app:
   url: http://127.0.0.1:8123/index.html
   ready: Python code
   layout: full
-hook: "Ticket machines, ATMs and the settings on a phone are all menus: show the choices, wait for one, do it, and show the menu again."
+hook: "An ATM shows you the choices, waits, does what you picked, then shows you the choices again."
 voice: true
 explainClip:
   query: { code: "", speed: 8, console: 1 }

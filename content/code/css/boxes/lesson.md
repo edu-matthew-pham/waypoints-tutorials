@@ -37,7 +37,7 @@ explainClip:
     - type: { into: HTML code, text: "    width: 200px;\n", after: "margin: 20px;\n" }
     - expect: { selector: "#preview-text", contains: "Owls: 12 points" }
     - wait: 2500
-hook: "Cards, buttons, menus and photos on every website are boxes, sized and spaced with the same few parts."
+hook: "Look closely at a card on any website: it's a box inside a box inside a box. How big is it, really?"
 ---
 Every element on a page is a **box**, and CSS sets how much room each box has inside it and around it.
 
@@ -203,7 +203,7 @@ check:
 expected: page.html#sol-make
 ```
 
-Make a card for a house or a club: a `<div>` with a heading, a picture and a line of text, styled with padding, a border, margin and a width. Point at it with Box model and work out its width before you check.
+Make a card for a product in a shop, a player in a team or a book you'd recommend: a `<div>` with a heading, a picture and a line of text, styled with padding, a border, margin and a width. Point at it with Box model and work out its width before you check.
 
 ```teacher
 summary: Students see every element as a box of content, padding, border and margin, and find out that width sets only the content, so padding and border make the box wider.

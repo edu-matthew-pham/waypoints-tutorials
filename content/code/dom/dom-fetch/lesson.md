@@ -34,7 +34,7 @@ explainClip:
     - expect: {selector: "#out", contains: "19.4", preview: true}
     - caption: "Loading, then the data, once it has arrived."
     - wait: 600
-hook: "Weather apps, maps and live scores all ask a server for data while the page is open, then show it."
+hook: "How does a weather app show today's forecast without you reloading the page?"
 ---
 So far every page had its data written in it. **`fetch`** asks for data from a file or a server while the page is open. The reply takes time to arrive, so the code **waits** for it:
 

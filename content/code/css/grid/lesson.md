@@ -188,7 +188,7 @@ check:
 expected: page.html#sol-make
 ```
 
-Make a page for an event with two columns: the main information, and a side box (tickets, times or a map). Choose the column widths: a fixed width and `1fr`, or two shares such as `2fr 1fr`.
+Make a page for a local walk with two columns: the directions, and a side box (how far, how long, a map). Choose the column widths: a fixed width and `1fr`, or two shares such as `2fr 1fr`.
 
 ## Lay out the photo gallery
 

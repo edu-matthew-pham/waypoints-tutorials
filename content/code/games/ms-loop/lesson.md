@@ -4,7 +4,7 @@ unit: loop
 title: A game loop
 summary: "Every game engine runs your game in a loop: init once, then update and draw about 60 times a second. Make a ball move across the screen in microStudio."
 language: python
-hook: "Every game you have played redraws the whole screen about 60 times a second. Between pictures, the game moves everything a tiny bit."
+hook: "A game redraws the whole screen about 60 times a second, moving everything a tiny bit each time."
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-microstudio" 8132

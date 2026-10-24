@@ -33,7 +33,7 @@ explainClip:
         text: "They look like plain text. Their names tell screen readers what each part is."
         say: "They look like plain text, but their names tell screen readers what each part is."
     - wait: 2500
-hook: "Every website has the same parts: a top bar, a menu, the content, a footer. Screen readers let people jump straight to each one."
+hook: "Screen-reader users can jump straight to a page's menu, as long as the page says where the menu is."
 ---
 Most pages are built from the same parts: a top, a menu, the content and a bottom. Five tags give those parts their names, and the tags you already know go inside them.
 

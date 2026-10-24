@@ -152,7 +152,7 @@ check: { type: code, text: "Keep asking for points until 0 is typed, then print 
 unlocks: [running-total]
 ```
 
-Make a points counter. It asks for a score, adds it to the total, and asks again, until the person types `0`. Then it prints the total and how many scores were added.
+Make a points counter. It asks for a score, adds it to the total, and asks again, until the person types `0`. Then it prints the total and how many scores were added. If you've built a scoreboard on the micro:bit, this is the same job done with text.
 
 ```teacher
 summary: Students keep a running total with += inside a while loop, set once before the loop.

@@ -13,7 +13,7 @@ app:
   url: http://127.0.0.1:8123/index.html
   ready: Python code
   layout: full
-hook: "A login box, a quiz question and a chatbot all ask something and then use the answer. The answer has to be stored somewhere first."
+hook: "A chatbot can't answer until it has kept what you typed somewhere."
 voice: true
 explainClip:
   query: { code: "", speed: 8, console: 1 }

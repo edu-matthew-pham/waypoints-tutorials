@@ -33,7 +33,7 @@ explainClip:
     - type: { into: HTML code, text: "  display: block;\n", after: "gold;\n" }
     - expect: { selector: "#preview-text", contains: "9 am" }
     - wait: 2500
-hook: "Every menu, card and banner on a website is a plain box that someone decided should stack or sit in a line."
+hook: "Some boxes start a new line and some sit inside one. Which is which decides how a page looks."
 ---
 Some parts of a page start on a new line, like a paragraph. Others sit inside a line of text, like a bold word or a link. Which kind an element is decides how it fills the page.
 

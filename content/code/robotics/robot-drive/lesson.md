@@ -6,7 +6,7 @@ summary: Set the speed of each wheel, drive for a time, turn, and stop.
 language: makecode
 extensions: [robot]
 explainPicture: drive.ts#investigate
-hook: "A parade float, a warehouse trolley and a robot lawn mower all start the same way: two wheels, each told how fast to turn, and for how long."
+hook: "A robot lawn mower drives with two wheels, each told how fast to turn and for how long."
 ---
 This robot has **two wheels**, one on each side, each with its own motor. In blocks, **robot motor tank** sets the speed of the **left** and **right** wheel, from −100 (full speed backwards) to 100 (full speed forwards). You find it in **Robot**.
 

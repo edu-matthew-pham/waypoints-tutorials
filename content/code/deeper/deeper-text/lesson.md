@@ -5,7 +5,7 @@ assumes: [dotted-call]
 title: Working with text
 summary: Tidy typed text with strip() and lower(), cut it into words with split(), and pick out a word by its place.
 language: python
-hook: "Every search box, chat window and voice assistant starts the same way: tidy what was typed, then cut it into words."
+hook: "Before a voice assistant can understand you, it tidies what you said and cuts it into words."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

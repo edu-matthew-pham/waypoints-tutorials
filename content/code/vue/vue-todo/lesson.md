@@ -32,7 +32,7 @@ explainClip:
     - expect: {selector: "#app", contains: "1 left to do", preview: true}
     - caption: "You will build it in three milestones."
     - wait: 300
-hook: "Every app you use is data, events and a page that keeps up. A to-do list is the classic first app for every framework."
+hook: "Nearly every framework tutorial starts with a to-do list. Now you'll see why."
 ---
 Build a to-do app, one milestone at a time. Everything you need, you have met in this course: refs, `v-for`, `v-model`, functions on `@click`, `computed` and a component.
 

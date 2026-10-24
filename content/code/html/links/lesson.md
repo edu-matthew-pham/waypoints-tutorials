@@ -28,7 +28,7 @@ explainClip:
     - expect: { selector: "#preview-text", contains: "club rules" }
     - caption: "Only the words show. The address stays hidden inside the tag."
     - wait: 2000
-hook: "Every click you make on the web, from a search result to a shop menu, follows a link written like this."
+hook: "Click a search result and you jump to another page. That jump is one tag."
 ---
 Some words on a page should take you somewhere else. A link does that, and it is the first tag you meet that needs extra information inside it.
 

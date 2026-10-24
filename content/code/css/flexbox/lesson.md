@@ -31,7 +31,7 @@ explainClip:
     - caption: "Put it on each li instead, and the items stack again."
     - type: { into: HTML code, text: "<style>\n  li {\n    display: flex;\n  }\n</style>\n<ul>\n  <li>Home</li>\n  <li>Events</li>\n  <li>Join</li>\n</ul>" }
     - wait: 2000
-hook: "Almost every menu bar, toolbar and row of cards on the web is a Flexbox row."
+hook: "The toolbars and menus on most websites rely on one CSS property. Here it is."
 ---
 So far, boxes stack down the page. **Flexbox** lines them up in a row.
 

@@ -8,7 +8,7 @@ summary: Put pictures called sprites on the game screen, and place each one with
 language: makecode
 introduces: [variable]
 explainPicture: lesson.ts#corners
-hook: "Every 2D game you have played, from Pac-Man to Mario, is pictures placed on a grid of tiny squares, then moved."
+hook: "Pac-Man and Mario are tiny pictures made of squares, moved around a screen. Time to make your own."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$OUT_DIR\" 8131"
   url: "http://127.0.0.1:8131/_playground-explain/index.html"

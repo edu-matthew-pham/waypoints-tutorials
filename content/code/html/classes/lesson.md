@@ -33,7 +33,7 @@ explainClip:
     - type: { into: HTML code, text: " class=\"note\"", after: "<p" }
     - expect: { selector: "#preview-text", contains: "Races start at 9 am." }
     - wait: 2000
-hook: "Every website marks the parts that matter, like sale prices or warnings, with a class so one rule can style them all."
+hook: "How does a shop make every sale price red with one rule?"
 ---
 A rule like `p { }` styles every paragraph. Sometimes you want only some of them: the winners, the warning, the line that matters most. You choose them with a name.
 

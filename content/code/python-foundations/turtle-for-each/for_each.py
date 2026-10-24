@@ -141,3 +141,28 @@ for h in heights:
     penup()
     forward(30)
 # endregion
+
+# region: rain
+from turtle import *
+
+rain = [12, 0, 5, 20, 8, 3, 0]    # millimetres each day, Monday first
+
+speed(0)
+penup()
+goto(-180, -100)
+pendown()
+fillcolor("steelblue")
+for mm in rain:
+    begin_fill()
+    left(90)
+    forward(mm * 8)
+    right(90)
+    forward(40)
+    right(90)
+    forward(mm * 8)
+    left(90)
+    end_fill()
+    penup()
+    forward(10)
+    pendown()
+# endregion

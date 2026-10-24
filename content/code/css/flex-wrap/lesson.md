@@ -206,7 +206,7 @@ check:
 expected: page.html#sol-make
 ```
 
-Make a gallery for a school event: a heading and at least six pictures, each with good alt text. It should fit a phone and a laptop: the pictures wrap onto new lines and share the room on each line. Pictures you can use: `trophy.svg`, `medal.svg`, `book.svg`, `ball.svg`, `star.svg`, `music.svg`.
+Make a trophy cabinet for a sports team, or a shelf of books you've read: a heading and at least six pictures, each with good alt text. It should fit a phone and a laptop: the pictures wrap onto new lines and share the room on each line. Pictures you can use: `trophy.svg`, `medal.svg`, `book.svg`, `ball.svg`, `star.svg`, `music.svg`.
 
 ```teacher
 summary: "Students let a flex row wrap with flex-wrap, share each line with flex: 1 and set a min-width, and find out that a fixed width does not change with the screen."

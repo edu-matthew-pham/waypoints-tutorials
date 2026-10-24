@@ -6,7 +6,7 @@ title: "Optional: Game levels"
 summary: Turn the game into a real game with screens, levels and a turtle that moves.
 language: python
 modules: [ui]
-hook: "Every game is a loop that updates its data and redraws, and a few screens it moves between."
+hook: "A game moves between a few screens: start, play, next level, game over."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"
