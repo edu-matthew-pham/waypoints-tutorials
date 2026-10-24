@@ -96,7 +96,7 @@ tasks:
 
 In your book: draw a simple cell and label the three shared parts with what each does.
 
-## Elaborate: what only plants have
+## Elaborate: what only plants have, and what every cell has
 
 ```step
 stage: modify
@@ -104,7 +104,7 @@ tier: typical
 insight: "Finding the extra plant structures against the shared ones previews node 4 and checks the shared set is secure."
 try: { playground: board, starter: "boards.yml#plantextra", height: 520 }
 tasks:
-  - check: { type: board, text: "Find the cell wall, chloroplasts, vacuole and mitochondria (wherever they are).", when: "n = k" }
+  - check: { type: board, text: "Find the cell wall, chloroplasts, vacuole and mitochondria, in whichever cell they turn up.", when: "n = k" }
     hint: ["Look in the cheek cell as well as the leaf cell, because not every one of these is only in plants.", "The wall is the thick green outline of the leaf cell, so click right on it, and the line under the board tells you how many you've got left."]
   - check:
       type: sort
