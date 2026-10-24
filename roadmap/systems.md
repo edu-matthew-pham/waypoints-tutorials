@@ -44,7 +44,7 @@ Matthew: hook first, plumbing after, which is also the kit's order (all of 8K03 
 
 ## Done (12 Oct 2026): 10K02 tagged, theory concepts across subjects
 
-- 10K02: the HTML & CSS course's Tags and nesting (n1), Rules and selectors (n1, n2), Page sections and components and the club page (n2) carry `node:`; the systems map now lists lessons from other subjects tagged with its descriptors (`tools/build-site.mjs`). n3 (why separation matters) has no lesson yet.
+- 10K02: the HTML & CSS course's Tags and nesting (n1), Rules and selectors (n1, n2), Page sections and components and the club page (n2) carry `node:`; the systems map now lists lessons from other subjects tagged with its descriptors (`tools/build-site.mjs`). n3 (why separation matters) is taught in How a web page is made › Why keep them apart (below).
 - Theory concepts: `THEORY` in `tools/concepts-core.mjs` (17 ids); every Digital systems lesson that teaches one `introduces:` it; the Caesar cipher `assumes: [text-as-numbers]`, p5 Shapes `assumes: [rgb-colour]`, Combining gates `assumes: [logic-gates]`. The lint accepts an introduction in another subject; lesson pages show "Builds on" and "Put to work in" links. Tests in `npm run check-concepts`.
 
 ## Done (12 Oct 2026): How a web page is made
@@ -80,6 +80,42 @@ The "5E missions" so far are PRIMM or the maths shape with 5E labels: Explore is
 - Elaborate: TCP and spare routes together, every route broken, live video. Evaluate: a download at 99%, reread the Engage guess, self-check against the goals.
 The `reasoning` check gains `placeholder:` and a per-pick `q:` (defaults unchanged). Rule of thumb for others: 5E for concept lessons where students can find the idea on a board; the explicit shape for procedures.
 
+## Proposed (25 Oct 2026): support lead-ins and review fixes (not built; waiting for "go")
+
+Reply to roadmap/shared.md › Proposed (25 Oct): support when it's needed, invisible when it isn't, with its Amended block, and the review's Digital systems findings. Most fixes below touch only `lesson.md`, which is outside the clip hash; the ones that re-record are marked.
+
+### 1. The three lead-ins
+
+None needs a board starter; all three are the plain kinds in step (1) of the shared order.
+- **binary-patterns, Vary, "fewest bits for 100"** (`smaller:` on that task). The board already shows six cards from the task before, so the lead-in is a number check: "Six cards all up show 63. Can six cards show 100? The next card is worth how much?" (64, so seven cards reach 127). Wording from `stuck.ask` (the all-face-down question) stays the hint.
+- **data-as-numbers, Make "Yes"** (`smaller:` on the step). A one-cell decode board would need its own starter; a number does the same move: "Lower case starts at a = 97 and goes in order. What is the code for e?" (101). Also trim the hints, which now give all three answers between them (hint 2 gives Y = 89, hint 3 gives e and s): 1 where capitals and lower case start, 2 count on from the start of the alphabet, 3 read the text row to check. A board lead-in only if the pilot says the number is not enough.
+- **shell/pipes, Vary, `head`**. This is a teaching gap, not a support gap: `head` is in the summary and Practise but never shown before Vary asks for it, and `smaller:` must not stand in for teaching. Fix the lesson first (a worked row, or a third command in Try: `head -n 2 pets.txt`); then the lead-in is a question: "`head -n 2 pets.txt` prints cat, dog. What does `sort pets.txt | head -n 2` print?"
+
+### 2. Review findings
+
+- **shell/pipes: confirmed, both parts.** `head` above. Node 10K01 n1 is the OS as an abstraction layer, and the lesson is command practice. Keep the tag and make the lesson earn it with the one idea in pipes that is n1: neither `grep` nor `wc` knows the other exists; each reads its input and writes its output, and the operating system joins them, so `wc -l` counts a file, your typing or another program the same way. One worked row and one Investigate question ("How does `wc -l` know its lines came from `grep`?" It doesn't.) Same one-line framing for Where files live (paths are the OS's single view of every drive). No retagging.
+- **data-as-numbers: confirmed.** The opening paragraph defines **encoding** before the Predict. Cut it to the question; the word first appears as the last worked row ("the rule has a name: an encoding"), after the board. The unit summary on the course page can keep the word.
+- **Cyber missions: confirmed, and it is all eight, not only Passwords.** Every Engage is a multiple-choice predict; every Explain is the teacher modelling, then the names, then Sam, with no student explanation first; six of eight have two or three Elaborate headings (the make stage relabelled); Passwords' last Explore hint states the fix. Packets, by contrast: a typed Engage with no right answer, an Explore with nothing named and then an invented fix, an Explain that opens with a `reasoning` check in the student's words before a match to the names, one Elaborate. Proposal, as Next 3 says (trial before retrofit): rebuild **Passwords only** on the Packets model:
+  - Engage: typed guess ("A game site Ava used once leaks its passwords. What could someone do with that?"), no options.
+  - Explore: leak with nothing named or labelled strong or weak; try changes; then two goals (the leak stops at the game site; no account can be guessed without a leak). Hints ask (which accounts fell together? what did they share?), never name the fix.
+  - Explain: `reasoning` (why did one leak open four?), then match breach, reuse, guessable and passphrase to what they did, then Sam's symbol swap.
+  - Elaborate: one step (the new set, then the password manager as its second task). Evaluate: reread the Engage guess.
+  May need a `cyber` widget option to hide the strength labels (re-records the cyber clips). If the full retrofit waits, two cheap fixes for all eight now: one Elaborate per lesson, and last Explore hints that ask rather than tell.
+- **8K02 n3, why cryptography: partly.** Who can see your data? does the shared-infrastructure reasoning (Predict, Eve on the Try, Sam's bug), but n3 is a hinge and gets only picks, and its first criterion (in transit, not just stored) is never contrasted. Add a `reasoning` check to the worked example (the bank keeps the PIN safe; why must it be encrypted on the way?) and one Practise question: travelling or stored. Stays one lesson.
+- **10K01 n4, hashing, salt and keys in one lesson: confirmed.** Salt is a single Vary task, and nothing asks the hinge question (which protects stored data, which protects data in transit; a hash is not encryption). Recommend splitting into Hashes and salt, and Public and private keys, each ending with the same sort (situation → hash, public key, or neither); the CTF lesson moves to 6. Lighter option: keep one lesson, add the sort and a salt question to Practise.
+- **10K03 n1, no check of its own: partly.** There is one check, a four-option "Why compress?" in the worked example with an easy pick. Replace it with a number that makes the reason real (a photo is 12 MB, 3 MB compressed: how many compressed photos fit in the space of 10?) and keep the question as the follow-up.
+- **Hex only in the CTF: confirmed.** It is taught in ctf/encoding and nowhere before (the hash display and a teacher note aside). Answer to the open question: an optional lesson in Binary numbers after How many patterns, "Hex: binary in fours" (8K04 n4, `introduces: hex`; ctf/encoding `assumes: hex`), and a `tier: wider` line in Colour and images (#FF8800 is 255, 136, 0). Needs a `hex:` option on the `bits` widget (group the cards in fours, show the digit), which re-records the bits clips; the alternative is a plain-check lesson with no board.
+
+### 3. Stale and inconsistent
+
+- Fixed now: the Data representation pathway summary and the course tagline (both started at bits; the `about:` order now matches too); duplicate `order:` values (hardware 6, ctf 7, logic 8, web 9, shell 10: the same listing order as before, without ties); the 10K02 n3 line above; the answered Sound open question. The subject page changed, so this needs the full publish, not publish-lessons.
+- **P-strand nodes: they do not show.** `/systems/map/` reads only `systems.json` (K descriptors). The node check accepts 8P13 and the rest from `digital-processes.json`, but no map reads that file (Code has no map), so seven Cyber lessons and ctf/page-source are on no map, and ctf/encoding and the archive show only 8K02 n4. Proposal: a Processes row on the systems map for 8P13, 8P14, 10P13 and 10P14 only, read from `digital-processes.json` (a shared change in `curriculum-map.mjs` and `build-site.mjs`; note in shared.md first). Otherwise, one line in the pathway `about:` saying the map shows Knowledge and understanding only.
+- **Sam: confirmed in Security and privacy.** Sam is the practice account (password maple, in Access's board and teacher notes and the Hashes Try) and the wrong-reasoning persona in the same lessons; maple is also exactly the guessable password Cyber safety warns against. Rename the account (for example Kai) in the `security` widget, lesson text and teacher notes, keep maple with one line saying it is a weak practice password so it is quick to type (the salt task relies on two people choosing it). Re-records the security clips. The shell's `/home/sam` is the same Sam as its persona (Sam's own files), so it stays.
+
+### Order on "go"
+
+(1) Lesson-text fixes: data-as-numbers intro and hints, pipes (`head`, the OS framing), files framing, Who can see your data?, run-length, the one-Elaborate and hint fixes across Cyber; (2) the Sam rename; (3) the Passwords 5E rebuild, then decide the other seven; (4) the hashes split; (5) hex; (6) the three `smaller:` lines once the shared field lands; (7) the map row, after a note in shared.md.
+
 ## Next
 
 1. Years 5–6 versions (AC9TDI6K03, 6K04): counting dots, no place-value notation.
@@ -90,4 +126,3 @@ The `reasoning` check gains `placeholder:` and a per-pick `q:` (defaults unchang
 
 - Subject name: "Digital systems" (working name) or "How computers work".
 - Hex: in the colour lesson, or Years 9–10?
-- Sound: build a board or link out?

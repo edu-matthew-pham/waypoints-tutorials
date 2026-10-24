@@ -1,7 +1,7 @@
 ---
 title: Data representation
 summary: "Everything a computer stores is numbers: text as character codes, pictures as pixels, sound as samples. Then how those numbers are stored with only 0s and 1s: binary place value, how many numbers a few bits can hold, logic gates, and the chain from any data down to bytes."
-tagline: "Bits, binary numbers, and how many patterns a few bits can make."
+tagline: "Everything is numbers, then how a few bits hold them."
 order: 1
 units:
   - { id: numbers, title: Data as numbers, summary: "Text, pictures and sound are all stored as numbers, and the encoding decides what they mean: character codes, RGB pixels, shapes and sound samples." }
