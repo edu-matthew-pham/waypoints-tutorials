@@ -5,6 +5,7 @@ moveId: move-with-buttons
 reviews: []
 assumes: [variable]
 title: Move with the controller
+introduces: [callback]
 summary: Hand a sprite to the arrow keys with move with buttons, and choose how fast it goes across and down.
 language: makecode
 explainPicture: lesson.ts#fly

@@ -4,6 +4,7 @@ unit: show-react
 moveId: react-to-event
 reviews: [forever-loop]
 recipes: [if]
+introduces: [callback]
 title: Wait for a press
 summary: Make the micro:bit wait for a button press or a shake, then react.
 language: makecode

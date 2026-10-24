@@ -1,0 +1,34 @@
+playground: html
+projects:
+  - id: business
+    title: A page for a local business
+    after: bs-components
+    goal: |
+      Make a one-page site for a **local business**: a café, a bike shop, a vet. A navbar, a big opening line, a card for each thing it offers and a contact form, all from Bootstrap's classes.
+    example: business.html
+    uses: [bootstrap, bs-component, bs-grid]
+    milestones:
+      - "The navbar and the cards come from Bootstrap's classes."
+      - "The cards sit in a row on a wide screen and stack on a narrow one."
+      - "Every box in the form has a label."
+    stretch:
+      - "An alert for this week's special."
+      - "A footer with the opening hours."
+    teacher: |
+      Navbar, cards and a grid covers everything. To see the cards stack, students widen and narrow the preview (or use Full screen). The labels milestone carries the habit from the HTML forms lesson into Bootstrap's `form-label` and `form-control`.
+
+  - id: yours
+    title: Bootstrap, your way
+    after: bs-yours
+    goal: |
+      Take your business page and make it **look like yours, not like Bootstrap**: your colours, your font, and one component styled your own way.
+    example: business-yours.html
+    uses: [bootstrap, css-rule, class-selector]
+    milestones:
+      - "My own rules come after the link to Bootstrap."
+      - "There are at least three changes someone could point to."
+      - "It still works on a narrow screen."
+    stretch:
+      - "Try the same page with Pico or Bulma instead, and say which you'd pick and why."
+    teacher: |
+      The comparison from Make Bootstrap yours, now on the student's own page. Order matters: rules before the link lose to Bootstrap's. Students who need `!important` have usually put their rule in the wrong place or picked a weaker selector; that's worth a conversation.

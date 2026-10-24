@@ -1,0 +1,33 @@
+<div id="app">
+  <h1>Reading log</h1>
+  <p><input v-model="search" placeholder="Filter by title"></p>
+  <ul>
+    <li v-for="b in shown">{{ b.title }}: {{ b.stars }} stars</li>
+  </ul>
+  <p>{{ count }} books read.</p>
+  <p><input v-model="newTitle" placeholder="New book"> <button @click="add">Add</button></p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+  const { createApp, ref, computed } = Vue;
+  createApp({
+    setup() {
+      const books = ref([
+        { title: "Wonder", stars: 5 },
+        { title: "Holes", stars: 4 },
+        { title: "Matilda", stars: 5 }
+      ]);
+      const search = ref("");
+      const newTitle = ref("");
+      const shown = computed(() => books.value.filter((b) => b.title.toLowerCase().includes(search.value.toLowerCase())));
+      const count = computed(() => books.value.length);
+      function add() {
+        if (newTitle.value === "") return;
+        books.value.push({ title: newTitle.value, stars: 3 });
+        newTitle.value = "";
+      }
+      return { search, newTitle, shown, count, add };
+    }
+  }).mount("#app");
+</script>

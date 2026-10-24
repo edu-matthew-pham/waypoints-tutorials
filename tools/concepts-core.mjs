@@ -66,6 +66,7 @@ export const CONCEPTS = {
   makecode: [
     { id: 'variable', label: 'a variable (set)', re: /\blet\s+\w+\s*(:\s*[\w[\]]+\s*)?=/ },
     { id: 'variable-update', label: 'change a variable from itself (x = x + 1, change by)', test: (c) => /\b(\w+)\s*=\s*\1\s*[-+*/]|\+=|-=|\+\+|--/.test(noForHeaders(c)) },
+    { id: 'callback', label: 'event blocks (on button pressed, on shake, on radio received)' },
     { id: 'if', label: 'if', re: /\bif\s*\(/ },
     { id: 'else', label: 'else / else if', re: /\belse\b/ },
     { id: 'and-or', label: 'and / or', re: /&&|\|\|/ },
@@ -305,6 +306,25 @@ export const THEORY = [
   { id: 'efficiency', label: 'efficiency: useful energy out ÷ energy in' },
   { id: 'electric-current', label: 'electric current is a flow of charge' },
   { id: 'turning-effect', label: 'turning effect (moment) = force × distance from the pivot' },
+];
+/** The same coding idea under one name across languages (roadmap/code.md › Ideas across pathways). Lesson tags
+ *  keep their own language's id; `sameIdea` maps it to the shared one for views that compare pathways. `object`
+ *  is not aliased: a Python object is an instance of a class, a JavaScript `{ x: 5 }` is closer to a dict. */
+export const SAME_IDEA = {
+  javascript: { array: 'list', 'array-index': 'list-index', 'for-count': 'repeat', return: 'return-value', property: 'attribute', math: 'math-fn', event: 'callback' },
+  html: { list: 'html-list', 'js-event': 'callback' },
+};
+export const sameIdea = (language, id) => SAME_IDEA[language]?.[id] || id;
+/** Core ideas every pathway teaches, in teaching order, with the name a teacher would use. */
+export const CORE_IDEAS = [
+  { id: 'variable', label: 'Variables' }, { id: 'variable-update', label: 'Changing a variable (x = x + 1)' },
+  { id: 'repeat', label: 'Repeat a number of times' }, { id: 'loop-index', label: 'The loop counter' },
+  { id: 'if', label: 'If' }, { id: 'else', label: 'Else' }, { id: 'and-or', label: 'And, or' },
+  { id: 'remainder', label: 'Remainder (%)' }, { id: 'random', label: 'Random numbers' },
+  { id: 'list', label: 'Lists' }, { id: 'list-index', label: 'A place in a list' }, { id: 'for-of', label: 'For each item' },
+  { id: 'while', label: 'While loops' }, { id: 'bool-value', label: 'True or false in a variable' },
+  { id: 'function', label: 'Functions' }, { id: 'param', label: 'Parameters' }, { id: 'return-value', label: 'Returning a value' },
+  { id: 'callback', label: 'Events (code that runs when something happens)' }, { id: 'text-join', label: 'Joining text' },
 ];
 export const theoryIds = new Set(THEORY.map((c) => c.id));
 export const conceptIds = (language) => new Set((CONCEPTS[language] || []).map((c) => c.id));

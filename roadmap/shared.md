@@ -2,11 +2,13 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
-## Proposed (25 Oct 2026, code chat; Matthew asked, not approved to build): one name per idea across pathways, and a teacher view
+## Built (25 Oct 2026, code chat; Matthew said go): one name per idea across pathways, and a teacher view
 
 Details and reasons in `roadmap/code.md` › Proposed (Ideas across pathways). Two shared changes:
 1. `tools/concepts-core.mjs`: an alias map so the JavaScript ids that name the same idea as MakeCode and Python resolve to one (`array` → `list`, `array-index` → `list-index`, `for-count` → `repeat`, `return` → `return-value`, `property` → `attribute`, `math` → `math-fn`, `event` → `callback`). No lesson tags change; `object` stays separate (it means different things in Python and JavaScript).
 2. `tools/teach.mjs`: a generated teacher page, core ideas against MakeCode, Python and Web, each cell the lesson that introduces it, linked from the Code course guides.
+
+**As built:** `SAME_IDEA`, `sameIdea()` and `CORE_IDEAS` in `tools/concepts-core.mjs` (also `html: { list: 'html-list' }`, so HTML's bulleted lists don't count as data lists, and a MakeCode `callback` fact concept with no code test, so the hidden-assumptions lint is unchanged; micro:bit Wait for a press and Arcade Move with the controller now introduce it). The table is worked out by a new pure `tools/ideas-page.mjs`; `tools/build-site.mjs` writes `/teach/<subject>/ideas/` for any subject with more than one pathway (today only Code), lists it on the teacher guide index under "Across pathways" and links it from that subject's course guides ("Ideas across pathways"); built before the course guides so the link only appears where the page exists. `teach.mjs` is unchanged. Reaches the site with a whole-site publish.
 
 ## Built (25 Oct 2026, review chat; Matthew said build it): `smaller:` push (1). Proposed by the maths chat: support when it's needed, invisible when it isn't
 

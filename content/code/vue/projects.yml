@@ -1,0 +1,52 @@
+playground: dom
+projects:
+  - id: poll
+    title: Class poll
+    after: vue-events
+    goal: |
+      Make a **class poll**: ask a question with three answers. Each click adds a vote, the totals update by themselves, and a message changes once someone has voted.
+    example: poll.html
+    uses: [vue-ref, vue-text, vue-on, vue-if]
+    milestones:
+      - "Every answer has a button, and each click counts."
+      - "The totals on the page update by themselves."
+      - "A message shows before anyone votes, and a different one after."
+    stretch:
+      - "A Reset button."
+      - "A bar for each answer that grows with its votes (`:style` with a width)."
+    teacher: |
+      Data on the page and Events and inputs cover all of it. The point to draw out: nothing in the code updates the page; changing the data is enough.
+
+  - id: reading-log
+    title: Reading log
+    after: vue-computed
+    goal: |
+      Keep a **reading log**: a list of books with a rating, a box that filters the list as you type, and a line that says how many you've read.
+    example: reading-log.html
+    uses: [vue-for, vue-model, vue-computed]
+    milestones:
+      - "My books show from a list."
+      - "Adding a book puts it on the list."
+      - "The filter and the count are both worked out from the list, so they keep up on their own."
+    stretch:
+      - "Sort by rating."
+      - "Pick the rating when you add a book."
+    teacher: |
+      The filter is the computed idea from Values worked out from data: the list itself never changes when the student types, only the computed view of it. Students who filter by changing the list itself lose books; that's a good moment to compare.
+
+  - id: gallery
+    title: Card gallery
+    after: vue-components
+    goal: |
+      Make **one card component** and use it for every item in a gallery: pets to adopt, players in a team, places to visit.
+    example: gallery.html
+    uses: [vue-component, vue-props, vue-for]
+    milestones:
+      - "The card is written once."
+      - "Each card gets its own data through props."
+      - "Adding an item to the list adds a card, with no new HTML."
+    stretch:
+      - "A Favourite button on each card."
+      - "Two kinds of card that share one component, told apart by a prop."
+    teacher: |
+      The same shape as the chess ladder in Components and props. A good check of understanding: ask the student where they'd change the look of every card at once, and where they'd add one more item.

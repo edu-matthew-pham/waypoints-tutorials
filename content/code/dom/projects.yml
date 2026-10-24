@@ -1,0 +1,70 @@
+playground: dom
+projects:
+  - id: looks
+    title: Light, dark and big text
+    after: dom-style
+    goal: |
+      Give a page you've made **buttons that change how it looks**: a dark mode and big text, and one look of your own. Each button switches its look on, and pressing it again switches it back.
+    example: looks.html
+    uses: [js-query, js-event, class-list]
+    milestones:
+      - "Each button changes something you can see."
+      - "Pressing a button again switches its look back off."
+      - "The page still reads well in every look, and with two looks on at once."
+    stretch:
+      - "A third look of your own (a colour theme, wider spacing, a hidden part)."
+      - "After Saving between visits: remember which looks were on."
+    teacher: |
+      A student can paste in a page from the HTML & CSS courses or start from a heading and a paragraph. The idea is the one from Classes and themes: CSS holds the looks as classes, and JavaScript only adds and removes them. Watch for students setting `style.` properties one by one; point them back to `classList.toggle`.
+
+  - id: flashcards
+    title: Flashcards
+    after: dom-list
+    goal: |
+      Make **flashcards** for something you're learning: type a question and its answer, add it as a card, then click a card to flip it over.
+    example: flashcards.html
+    uses: [input-value, create-element, class-list]
+    milestones:
+      - "Adding makes a new card on the page."
+      - "Clicking a card shows its answer, and clicking again shows the question."
+      - "An empty box adds nothing."
+    stretch:
+      - "A count of how many cards there are."
+      - "A Shuffle button."
+      - "A different colour for cards you've flipped."
+    teacher: |
+      Builds on Building a list (making an element and adding it to the page) and Classes and themes (toggling a class for the flip). The flip is all CSS: two paragraphs in a card, and the `flipped` class hides one and shows the other.
+
+  - id: story
+    title: Pick your own path
+    after: dom-state
+    goal: |
+      Write a **short story where the reader picks what happens next**. Two buttons, and the words change with every choice.
+    example: story.html
+    uses: [js-query, js-event, text-content]
+    milestones:
+      - "My story has at least three places to be."
+      - "One ending can be reached two different ways."
+      - "A Start again button takes the reader back to the beginning."
+    stretch:
+      - "Something the reader carries (a key, a coin) that changes a later choice."
+      - "A picture that changes with each place."
+    teacher: |
+      The variable that remembers where the reader is (`place`) is the score variable from A page that keeps score, now holding a word. Students who plan on paper first (boxes for places, arrows for choices) finish faster; the planning is the computational thinking here.
+
+  - id: habits
+    title: A habit tracker that remembers
+    after: dom-save
+    goal: |
+      Make a **habit tracker**: tick off a habit when you've done it, and your ticks are still there next time the page opens.
+    example: habits.html
+    uses: [local-storage, create-element, json-data]
+    milestones:
+      - "Clicking a habit ticks it, and clicking again unticks it."
+      - "The ticks are still there after I run the page again."
+      - "A Clear button starts fresh."
+    stretch:
+      - "Add your own habits from a box."
+      - "Show how many habits are done out of how many."
+    teacher: |
+      In the playground, "next time the page opens" means pressing Run again: the preview keeps each page's saved data as a stand-in for the browser's own storage. A downloaded copy opened in a real browser keeps its ticks for real. The list is saved as JSON, as in Saving between visits.

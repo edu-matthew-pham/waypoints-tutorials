@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: sans-serif; padding: 16px; }
+  li { margin: 6px 0; }
+  .done { text-decoration: line-through; color: gray; }
+</style>
+</head>
+<body>
+  <h1>My habits</h1>
+  <ul id="list"></ul>
+  <button id="clear">Clear</button>
+
+  <script>
+    const habits = ["Drink water", "Read for 20 minutes", "Walk the dog"];
+    let ticks = [];
+    try { ticks = JSON.parse(localStorage.getItem("ticks")) || []; } catch (e) { ticks = []; }
+
+    function show() {
+      const list = document.querySelector("#list");
+      list.innerHTML = "";
+      for (const h of habits) {
+        const item = document.createElement("li");
+        item.textContent = h;
+        if (ticks.includes(h)) item.className = "done";
+        item.addEventListener("click", () => {
+          if (ticks.includes(h)) ticks = ticks.filter((t) => t !== h);
+          else ticks.push(h);
+          localStorage.setItem("ticks", JSON.stringify(ticks));
+          show();
+        });
+        list.append(item);
+      }
+    }
+
+    document.querySelector("#clear").addEventListener("click", () => {
+      ticks = [];
+      localStorage.setItem("ticks", JSON.stringify(ticks));
+      show();
+    });
+    show();
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: sans-serif; padding: 16px; background: white; color: #222; }
+  .dark { background: #1d2430; color: #f3f1ec; }
+  .big { font-size: 22px; }
+  button { margin-right: 6px; padding: 6px 12px; }
+</style>
+</head>
+<body>
+  <h1>My bike club</h1>
+  <p>We ride every Saturday morning, rain or shine.</p>
+  <button id="dark">Dark</button>
+  <button id="big">Big text</button>
+
+  <script>
+    const page = document.querySelector("body");
+    document.querySelector("#dark").addEventListener("click", () => {
+      page.classList.toggle("dark");
+    });
+    document.querySelector("#big").addEventListener("click", () => {
+      page.classList.toggle("big");
+    });
+  </script>
+</body>
+</html>

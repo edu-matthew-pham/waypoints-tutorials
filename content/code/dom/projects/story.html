@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: sans-serif; padding: 16px; max-width: 520px; }
+  button { margin: 4px 6px 0 0; padding: 6px 12px; }
+</style>
+</head>
+<body>
+  <h1>The lost dog</h1>
+  <p id="words">A dog runs past the gate with no collar. Do you follow it, or tell someone?</p>
+  <button id="one">Follow it</button>
+  <button id="two">Tell someone</button>
+
+  <script>
+    let place = "start";
+    const words = document.querySelector("#words");
+    const one = document.querySelector("#one");
+    const two = document.querySelector("#two");
+
+    function show() {
+      if (place === "start") { words.textContent = "A dog runs past the gate with no collar. Do you follow it, or tell someone?"; one.textContent = "Follow it"; two.textContent = "Tell someone"; }
+      if (place === "park") { words.textContent = "It stops at the park and sniffs a bench. A girl is calling a name."; one.textContent = "Call the same name"; two.textContent = "Go home"; }
+      if (place === "neighbour") { words.textContent = "Your neighbour says the girl from the park lost her dog this morning."; one.textContent = "Go to the park"; two.textContent = "Go home"; }
+      if (place === "found") { words.textContent = "The dog runs to the girl. She hugs it and thanks you. The end."; one.textContent = "Start again"; two.textContent = "Start again"; }
+      if (place === "home") { words.textContent = "You go home and wonder about the dog all night. The end."; one.textContent = "Start again"; two.textContent = "Start again"; }
+    }
+
+    one.addEventListener("click", () => {
+      if (place === "start") place = "park";
+      else if (place === "park" || place === "neighbour") place = "found";
+      else place = "start";
+      show();
+    });
+    two.addEventListener("click", () => {
+      if (place === "start") place = "neighbour";
+      else if (place === "park" || place === "neighbour") place = "home";
+      else place = "start";
+      show();
+    });
+  </script>
+</body>
+</html>

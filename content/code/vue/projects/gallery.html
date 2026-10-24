@@ -1,0 +1,28 @@
+<div id="app">
+  <h1>Pets to adopt</h1>
+  <pet-card v-for="p in pets" :name="p.name" :kind="p.kind" :age="p.age"></pet-card>
+</div>
+
+<script src="vue.js"></script>
+<script>
+  const { createApp, ref } = Vue;
+  const app = createApp({
+    setup() {
+      const pets = ref([
+        { name: "Biscuit", kind: "dog", age: 3 },
+        { name: "Mango", kind: "cat", age: 1 },
+        { name: "Pip", kind: "rabbit", age: 2 }
+      ]);
+      return { pets };
+    }
+  });
+  app.component("pet-card", {
+    props: ["name", "kind", "age"],
+    template: `
+      <div style="border: 2px solid teal; border-radius: 8px; padding: 8px 12px; margin: 8px 0;">
+        <h2>{{ name }}</h2>
+        <p>A {{ kind }}, {{ age }} years old.</p>
+      </div>`
+  });
+  app.mount("#app");
+</script>

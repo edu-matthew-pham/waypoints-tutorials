@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: sans-serif; padding: 16px; }
+  .card { border: 2px solid teal; border-radius: 8px; padding: 14px; margin: 8px 0; cursor: pointer; }
+  .card .answer { display: none; color: teal; }
+  .card.flipped .question { display: none; }
+  .card.flipped .answer { display: block; }
+</style>
+</head>
+<body>
+  <h1>Flashcards</h1>
+  <p><input id="q" placeholder="Question"> <input id="a" placeholder="Answer"> <button id="add">Add card</button></p>
+  <div id="cards"></div>
+
+  <script>
+    document.querySelector("#add").addEventListener("click", () => {
+      const q = document.querySelector("#q").value;
+      const a = document.querySelector("#a").value;
+      if (q === "" || a === "") return;
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<p class="question">${q}</p><p class="answer">${a}</p>`;
+      card.addEventListener("click", () => card.classList.toggle("flipped"));
+      document.querySelector("#cards").append(card);
+    });
+  </script>
+</body>
+</html>

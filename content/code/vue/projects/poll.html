@@ -1,0 +1,22 @@
+<div id="app">
+  <h1>{{ question }}</h1>
+  <p>
+    <button @click="votes.pizza++">Pizza ({{ votes.pizza }})</button>
+    <button @click="votes.tacos++">Tacos ({{ votes.tacos }})</button>
+    <button @click="votes.sushi++">Sushi ({{ votes.sushi }})</button>
+  </p>
+  <p v-if="votes.pizza + votes.tacos + votes.sushi > 0">Thanks for voting! {{ votes.pizza + votes.tacos + votes.sushi }} votes so far.</p>
+  <p v-else>No votes yet. Be the first!</p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+  const { createApp, ref } = Vue;
+  createApp({
+    setup() {
+      const question = ref("What should we have for the class lunch?");
+      const votes = ref({ pizza: 0, tacos: 0, sushi: 0 });
+      return { question, votes };
+    }
+  }).mount("#app");
+</script>
