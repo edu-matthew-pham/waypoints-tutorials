@@ -278,3 +278,11 @@ Area, volume, circles and Pythagoras gains seven Year 8 lessons (12 to 18): Comp
 - **Next (agreed order, checked against the curriculum map's builds-on links):** The agreed order is done (Number gaps; Area, volume and circles; Classifying shapes; Pythagoras). Next: Matthew chooses. The Year 7 gaps listed before are filled. Year 8 is mostly untaught beyond algebra, 8N04 and Pythagoras; Year 8 is done in the agreed order (Measurement, Number, Rates, Space, Chance, Statistics). Next: Matthew chooses (Year 9 is the natural next step). The Make step of the algorithms lesson repeats the quadrilateral run; a better Make would be a drawn flowchart (no board for that yet). Pages come from the kit with `tools/kit-page.mjs`. 
 - **Form-check coverage:** simplest and decimal are built; ratio and inequalities are not; add them when a lesson needs one.
 - 25 Oct: connections library covers every node from Year 7 to Year 10 (280 nodes, 145 entries; `data/connections/maths.yml`). Year 9–10 lessons can now be planned from it.
+
+## Smaller steps (`smaller:`, 25 Oct 2026)
+- Done: Changing the subject's Predict ("Take off the two 6 m lengths first. How many metres of fence are left for the two widths?", number 8). Its old closing line asked the same thing, so it went.
+- `npm run effort` flags 120 maths lessons (70 on hinge nodes, 50 with only a `stuck:` list). Too many to do blind. Proposed first batch (waits for Matthew): the hinge lessons where the sticking point is half a move with numbers, so a smaller step has an obvious shape.
+  - Algebra: brackets, expanding, factorising, words-to-expressions (the picture Predicts already planned), substituting, backtracking, balance-method, solving-equations.
+  - Number: adding-integers, multiplying-integers, equivalent-fractions, adding-fractions, percentage-change.
+  - Linear relations and measurement: gradient, pythagoras, finding-a-side, circle-area.
+  - Left for now: judgement and reasoning hinges (bias, sampling, algorithms, proofs, congruence): a smaller step there risks giving the judgement away; wait for what teachers see students stick on. The 50 stuck-list-only lessons: only where a `stuck.ask` is a thinking step.

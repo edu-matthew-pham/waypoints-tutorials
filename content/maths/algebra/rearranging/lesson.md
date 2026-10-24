@@ -50,13 +50,13 @@ check:
   q: "You've got 20 m of fencing to go all the way round a rectangular garden bed, and it has to be 6 m long. How wide can it be?"
   options: ["4 m", "7 m", "8 m", "14 m"]
   actual: "4 m. The two lengths use 6 + 6 = 12 m, which leaves 8 m for the two widths, so each width is 4 m. 7 m takes off only one length before halving; 8 m is both widths together; 14 m takes off one length and stops."
+smaller:
+  check: { type: number, q: "Take off the two 6 m lengths first. How many metres of fence are left for the two widths?", answer: 8, explain: "6 + 6 = 12 m goes on the lengths, so 20 − 12 = 8 m is left for both widths together." }
 ```
 
 Here's the fence laid out in one straight line: two lengths and two widths.
 
 <figure class="situation" role="img" aria-label="The fence laid out in one straight line, 20 m long: two lengths of 6 m and two widths marked with a question mark."><svg viewBox="0 0 540 110" width="540" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="10" y="20" width="150" height="40" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="162" y="20" width="150" height="40" rx="3" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><rect x="314" y="20" width="106" height="40" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="422" y="20" width="106" height="40" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="85" y="45" text-anchor="middle" fill="currentColor" stroke="none">length 6 m</text><text x="237" y="45" text-anchor="middle" fill="currentColor" stroke="none">length 6 m</text><text x="367" y="45" text-anchor="middle" fill="currentColor" stroke="none">width ?</text><text x="475" y="45" text-anchor="middle" fill="currentColor" stroke="none">width ?</text><path d="M10 72 L10 80 L528 80 L528 72" stroke-width="0.8"/><text x="269" y="100" text-anchor="middle" fill="currentColor" stroke="none">the whole fence: 20 m</text></svg></figure>
-
-What do you take off first, and what's left for the widths?
 
 ## Run: check with numbers
 
