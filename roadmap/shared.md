@@ -64,6 +64,10 @@ The concrete form of "below Steady: support on demand" in *Speculative: width fo
 
 **Open:** for maths, whether some lead-ins could come from the Practice templates instead of being written; how it shows on the deck (probably not at all) and the worksheet (probably as the teacher's `support:` line, which already exists).
 
+## Changed by the science chat (25 Oct 2026): `push:` and `e` on the coordination widget
+
+`playground-board/widgets/coordination.js`, feedback mode: `push: hot | cold` lets the Air slider go only one way from 22 °C (for the biology-9/feedback board lead-in in push (2)), and the board reports `e` (1 sweating, −1 shivering, 0 neither). No other board changes; only clips on the `coordination` widget re-record. AUTHORING › coordination updated, including what the model really does: in steady heat a smaller response stays on to hold 37 °C.
+
 ## Changed by the science chat (25 Oct 2026): `kscale:` on the reaction widget
 
 `playground-science/main.js` (science-owned, noted here because every science-board clip hashes it): the `reaction` widget takes `kscale:` (kelvins shown per model kelvin; default 1, so no other board changes). Used by Chemistry 8 *Hotter or colder?* so nitrogen + oxygen runs at a true 1800 K instead of 600 K. AUTHORING › Atoms and reactions has the line. All 17 science-board clips re-record on the next full publish.

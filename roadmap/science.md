@@ -86,6 +86,10 @@ Found while checking: 27 science lessons open with the "Last lesson: … This le
 
 **With `smaller:` (the shared build is in progress in another chat).** A hint and a lead-in must not ask the same thing: both start from `stuck.ask`, so when a task gets a `smaller:`, its lead-in is a different, easier check (half the move on a simpler board or numbers) and the hint stays a nudge on the real task. When the shared field lands, science adds plain question lead-ins first where a hint alone has proved thin; board lead-ins (transform, greenhouse, then feedback with `push:`) wait for the board shape.
 
+### Done (25 Oct): `push:` on `coordination`, and feedback made rigorous
+
+`push: hot | cold` and the `e` value on the coordination board (shared.md has the note), so all three pilot lead-ins have their boards. Tested headless: hot gives a 22–45 °C slider, cold −5–22 °C, a bad value is refused. The test also showed the feedback lesson's Explain question was wrong on its own board: it said sweating "switches off" back at 37 °C, but with the air still hot the board (like a real body) keeps a smaller response going to hold 37 °C. Now: it eases off as the temperature comes back and stops once the heat has gone, with an explain that says why; the same change in the loop diagram, its alt text, the match pair, the revision summary and the teacher notes. The feedback lead-in for push (2): `push: hot`, then "Your temperature is back near 37 °C but the air is still hot. Is the sweating on, off, or somewhere in between?"
+
 ### Order, if Matthew says go
 
 (1) The two lesson fixes (transform line, greenhouse Explore), one push. (2) Physics 8 hints, then Chemistry, Biology, Earth 8, a push each. (3) After the shared `smaller:` build and the maths pilot: board lead-ins on transform and greenhouse; the `push:` option on `coordination` and the feedback lead-in after that.

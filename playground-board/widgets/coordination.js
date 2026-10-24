@@ -5,10 +5,12 @@
 //                       (pathway and build: a stimulus, internal or external, receptor, command centre, effector, response)
 //   need: 3             (pathway: stimuli to try; build: pathways to build correctly)
 //   break: on           (feedback: buttons that break the receptor, the control centre or the effectors)
+//   push: hot | cold    (feedback: the air slider goes only one way from 22 °C, for a lead-in that needs one direction)
 // state: { scope: { vars } }
 //   pathway: n stimuli tried          build: c pathways built correctly
 //   race:    r races run              feedback: t minutes, v body temperature, s set point, d distance from the set
-//            point, r recoveries (back within 0.3 °C after being more than 0.6 °C away), b 1 while something is broken
+//            point, r recoveries (back within 0.3 °C after being more than 0.6 °C away), b 1 while something is broken,
+//            e 1 while sweating, -1 while shivering, 0 otherwise
 (function (B) {
   'use strict';
   var spec = null, st = null, raf = 0;
@@ -25,6 +27,7 @@
       s.stimuli.push({ name: p[0], kind: p[1].toLowerCase(), parts: [p[0], p[2], p[3], p[4], p[5]] });
     });
     if ((s.mode === 'pathway' || s.mode === 'build') && !s.stimuli.length) throw new Error('Add at least one stimulus line.');
+    if (s.push && !/^(hot|cold)$/.test(s.push)) throw new Error('push: hot or cold.');
     s.need = Number(s.need) || (s.mode === 'build' ? Math.min(3, s.stimuli.length) : s.stimuli.length);
   }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
@@ -143,7 +146,7 @@
   function paintFeedback() {
     var panel = B.el('gpanel'); panel.replaceChildren();
     var row = el('div', 'srow'), lab = el('label', 'fname', 'Air'); lab.htmlFor = 'air';
-    var r = el('input'); r.type = 'range'; r.id = 'air'; r.min = -5; r.max = 45; r.step = 1; r.value = st.air;
+    var r = el('input'); r.type = 'range'; r.id = 'air'; r.min = spec.push === 'hot' ? 22 : -5; r.max = spec.push === 'cold' ? 22 : 45; r.step = 1; r.value = st.air;
     var out = el('output'); out.textContent = st.air + ' °C';
     r.addEventListener('input', function () { st.air = Number(r.value); out.textContent = st.air + ' °C'; B.moved = true; });
     row.append(lab, r, out); panel.appendChild(row);
@@ -182,7 +185,7 @@
     } else if (spec.mode === 'race') { vars = { r: st.races }; okk = st.races > 0; msg = okk ? 'Compare the two curves: when each starts, how high it goes and how long it lasts.' : ''; }
     else {
       var b = Object.keys(st.broken).some(function (k) { return st.broken[k]; }) ? 1 : 0;
-      vars = { t: Math.round(st.min * 10) / 10, v: Math.round(st.T * 100) / 100, s: 37, d: Math.round(Math.abs(st.T - 37) * 100) / 100, r: st.rec, b: b };
+      vars = { t: Math.round(st.min * 10) / 10, v: Math.round(st.T * 100) / 100, s: 37, d: Math.round(Math.abs(st.T - 37) * 100) / 100, r: st.rec, b: b, e: st.sweat ? 1 : st.shiver ? -1 : 0 };
       msg = st.rec ? 'Returned to the set point ' + st.rec + ' time' + (st.rec > 1 ? 's' : '') + ' after being pushed away from it.' : 'Move the air temperature a long way (very hot or very cold) and watch what the body does.';
     }
     B.say(msg, okk);

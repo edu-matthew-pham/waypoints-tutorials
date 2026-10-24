@@ -1310,10 +1310,12 @@ Vary, Practise, Make).
     muscles | You pull your hand away` lines. `mode: pathway`: click a stimulus to send it through the five boxes
     (`n` tried). `mode: build`: students choose the receptor, command centre and effector from menus; a wrong one names
     the first wrong step (`c` built, `need` default 3). `mode: race`: a nerve and a hormone response to one fright on
-    a graph (`r` races). `mode: feedback`: body temperature with an Air slider; sweating or shivering switch on away
-    from 37 °C; `break: on` adds Break and Repair for the receptor, control centre and effectors. Values `t`, `v`
-    (temperature), `s` 37, `d` distance from it, `r` recoveries (back within 0.3 °C after more than 0.6 °C away), `b` 1
-    while broken. A toy model: name that real core temperature moves far less.
+    a graph (`r` races). `mode: feedback`: body temperature with an Air slider; sweating or shivering build up away
+    from 37 °C and ease off as it comes back (while the air stays very hot or cold, a smaller response stays on to hold
+    it near 37 °C); `break: on` adds Break and Repair for the receptor, control centre and effectors; `push: hot | cold`
+    lets the Air slider go only one way from 22 °C. Values `t`, `v` (temperature), `s` 37, `d` distance from it, `r`
+    recoveries (back within 0.3 °C after more than 0.6 °C away), `b` 1 while broken, `e` 1 while sweating, −1 while
+    shivering, 0 otherwise. A toy model: name that real core temperature moves far less.
   - `widget: cross`: `mode: offspring` (two creatures with three genes; Sexual reproduction and Asexual (a clone of
     parent 1); `o` sexual offspring, `u` different-looking, `a` clones). `mode: meiosis` (3 chromosome pairs, red from
     the mother, blue from the father; Make a gamete; `g` made, `u` different, `h` 3). `mode: punnett` with

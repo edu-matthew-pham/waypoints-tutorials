@@ -60,7 +60,7 @@ Drag the **Air** slider far up or down. Watch the body temperature on the graph,
 stage: investigate
 diagram:
   ref: diagrams.mmd#loop
-  alt: "A negative feedback loop for getting too hot. Body temperature rises above 37 °C. Receptors in the skin detect it. The hypothalamus compares it with the set point, 37 °C. Effectors respond: sweat glands sweat and skin blood vessels widen. Temperature falls back. Receptors keep checking, and once it is near 37 °C the response switches off."
+  alt: "A negative feedback loop for getting too hot. Body temperature rises above 37 °C. Receptors in the skin detect it. The hypothalamus compares it with the set point, 37 °C. Effectors respond: sweat glands sweat and skin blood vessels widen. Temperature falls back. Receptors keep checking, and as it gets back near 37 °C the response eases off."
   caption: "Negative feedback: the response reverses the change"
   role: explain
 insight: "Naming each part of the loop and why it is 'negative' is the hinge."
@@ -89,9 +89,10 @@ tasks:
     check:
       type: question
       q: "On the board, what happens to sweating once body temperature is back at 37 °C?"
-      options: ["It switches off, because the stimulus (too hot) has gone", "It keeps going all day", "It gets stronger", "It turns into shivering"]
+      options: ["It eases off as the temperature comes back, and stops once the heat has gone", "It keeps going at full strength all day", "It gets stronger", "It turns into shivering"]
       answer: 0
-      feedback: [null, "Then you'd cool below 37 °C.", "Stronger sweating would overshoot.", "Shivering only starts if you get too cold."]
+      feedback: [null, "Full-strength sweating would cool you below 37 °C.", "Stronger sweating would overshoot.", "Shivering only starts if you get too cold."]
+      explain: "The response matches how far you are from 37 °C. While the air stays hot, a little sweating keeps going to hold you near 37 °C (watch the board with the air still high), and it stops once you're out of the heat."
   - check:
       type: match
       q: "Match each part of a negative feedback loop to what it is in body temperature control."
@@ -99,7 +100,7 @@ tasks:
         - ["Set point", "The value the body keeps conditions near: about 37 °C"]
         - ["Deviation", "A change away from the set point, such as body temperature rising on a hot day"]
         - ["Corrective response", "What the effectors do to reverse the change, such as sweating"]
-        - ["Return detection", "Receptors sense the temperature is back near 37 °C, so the response switches off"]
+        - ["Return detection", "Receptors sense the temperature is back near 37 °C, so the response eases off"]
   - check: { type: reflect, text: "I can explain how negative feedback brings body temperature back towards the set point from either direction." }
 ```
 
@@ -165,7 +166,7 @@ Write one sentence: "At first I thought… Now I think… because…"
 **Revision summary**
 
 - **Homeostasis:** keeping internal conditions (temperature, blood sugar, water) near a **set point**.
-- **Negative feedback** has four parts around a **set point**: a **deviation** (a change away from it) is detected; a **corrective response** reverses it; **return detection** (receptors sensing it is back near the set point) switches the response off. "Negative" means it opposes the change.
+- **Negative feedback** has four parts around a **set point**: a **deviation** (a change away from it) is detected; a **corrective response** reverses it; **return detection** (receptors sensing it is back near the set point) eases the response off, and it stops once the stimulus has gone. "Negative" means it opposes the change.
 - Too hot: sweating, skin blood vessels widen. Too cold: shivering, skin blood vessels narrow, goosebumps. The **hypothalamus** is the control centre.
 
 ```code diagrams.mmd#loop
@@ -175,7 +176,7 @@ flowchart TD
   H --> E[Sweat, skin vessels widen]
   E --> C[Temperature falls back]
   C -- receptors keep checking --> R
-  C -- near 37 °C --> O[Response switches off]
+  C -- near 37 °C --> O[Response eases off]
   class C new
 ```
 

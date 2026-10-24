@@ -31,6 +31,6 @@ leads: |
   In class: measure skin temperature before and after exercise; a thermostat as a model (and where it breaks: the body has many effectors working together).
 exit:
   q: "Describe what happens when your body temperature rises above 37 °C."
-  a: "Temperature receptors detect it; the hypothalamus sends impulses to the sweat glands and skin blood vessels; sweating and widened vessels cool the body; once it is back near 37 °C, they switch off."
+  a: "Temperature receptors detect it; the hypothalamus sends impulses to the sweat glands and skin blood vessels; sweating and widened vessels cool the body; as it comes back near 37 °C they ease off, and they stop once the heat has gone."
 explain: |
-  **Homeostasis:** keeping internal conditions near a set point. **Negative feedback:** a change is detected and the response reverses it, then switches off once conditions return to the set point. Body temperature: sweating and flushed skin when too hot, shivering and pale skin when too cold.
+  **Homeostasis:** keeping internal conditions near a set point. **Negative feedback:** a change is detected and the response reverses it, then eases off as conditions return to the set point (in steady heat a smaller response keeps going to hold it there; it stops once the stimulus has gone). Body temperature: sweating and flushed skin when too hot, shivering and pale skin when too cold.
