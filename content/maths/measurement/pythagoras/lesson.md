@@ -7,7 +7,8 @@ title: Pythagoras' theorem
 summary: "Draw a square on each side of a right-angled triangle. The two smaller squares together have exactly the same area as the biggest: a² + b² = c², where c is the hypotenuse, the side opposite the right angle."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "People wear a path straight across the corner of a lawn instead of following the footpath round it. How much shorter is the shortcut? The two sides of the corner are enough to work it out."
+hook: "Every lawn has one: the worn path straight across the corner, where people skip the footpath. How much does it save?"
+connection: grass-shortcut   # data/connections/maths.yml (opening situation and Make; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8284
   url: http://127.0.0.1:8284/index.html
@@ -28,6 +29,12 @@ explainClip:
     - caption: { text: "a² + b² = c², so c = √25 = 5.", say: "So the long side is the square root: five." }
     - wait: 1200
 ---
+The footpath round this corner of the lawn is 24 m one way and 10 m the other, so 34 m in all. People cut straight across the grass instead. How long is the shortcut, and how much does it save? Have a guess, and we'll come back to it at the end.
+
+<figure class="situation" role="img" aria-label="A rectangular lawn seen from above. A footpath runs along two edges, 24 m and 10 m, and a worn dashed path cuts straight across the corner between the same two points, marked with a question mark."><svg viewBox="0 0 520 230" width="520" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="60" y="30" width="360" height="150" fill="#97C459" fill-opacity="0.25" stroke="none"/><path d="M60 30 L60 180 L420 180" stroke-width="6" stroke-opacity="0.35"/><line x1="60" y1="30" x2="420" y2="180" stroke="#BA7517" stroke-width="2" stroke-dasharray="7 5"/><circle cx="60" cy="30" r="5" fill="#D85A30" stroke="none"/><circle cx="420" cy="180" r="5" fill="#D85A30" stroke="none"/><text x="48" y="110" text-anchor="end" fill="currentColor" stroke="none">10 m</text><text x="240" y="202" text-anchor="middle" fill="currentColor" stroke="none">24 m</text><text x="250" y="96" text-anchor="middle" fill="currentColor" stroke="none" font-size="18">?</text><text x="436" y="110" fill="currentColor" stroke="none">the shortcut</text><text x="60" y="224" fill="currentColor" stroke="none">Footpath round the corner: 24 + 10 = 34 m. Across the grass: ?</text></svg></figure>
+
+The two footpaths and the shortcut make a right-angled triangle, and the shortcut is its longest side. This lesson is about how that side is linked to the other two.
+
 In a right-angled triangle, the longest side is opposite the right angle. It is called the **hypotenuse**, $c$. The two sides that meet at the right angle are $a$ and $b$.
 
 **Pythagoras' theorem** says that the squares on the two shorter sides add up to the square on the hypotenuse:
@@ -198,14 +205,42 @@ tasks:
 
 ### Review: roots
 
-## Make: a hypotenuse of 10
+## Make: back to the shortcut
 
 ```step
 stage: make
-insight: "Working backwards from c = 10 means finding two squares that add to 100: a search, not a formula."
-try: { playground: board, starter: "tri.yml#make", height: 620 }
-hint: ["c² = 100. Which two square numbers add to 100?", "36 + 64."]
-check: { type: board, text: "Make a right-angled triangle with whole-number sides whose hypotenuse is exactly 10.", when: "C = 100", explain: "6 and 8: 36 + 64 = 100." }
+insight: "Coming back to the opening question: the shortcut is the hypotenuse of the two footpaths, and the saving is what makes the answer mean something."
+tasks:
+  - hint: ["The two footpaths are the sides at the right angle.", "24² + 10² = 576 + 100."]
+    check:
+      type: answer
+      q: "The footpaths round the corner are 24 m and 10 m. How long is the shortcut straight across the grass, in m?"
+      answer: "26"
+      feedback:
+        - ["34", "That is the footpath round the corner. The shortcut is shorter: square, add, then take the square root."]
+        - ["676", "That is the square on the shortcut. Take the square root."]
+        - ["14", "That subtracts the sides. The squares add: 576 + 100."]
+      explain: "24² + 10² = 576 + 100 = 676, and √676 = 26 m."
+  - check:
+      type: answer
+      q: "How much shorter is the shortcut than the footpath, in m?"
+      answer: "8"
+      feedback:
+        - ["26", "That is the shortcut itself. Compare it with the 34 m round the corner."]
+        - ["10", "That is one footpath. Take the shortcut from the whole way round, 34 m."]
+      explain: "34 − 26 = 8 m. On a 34 m walk that is about a quarter saved, which is why the path gets worn."
 ```
 
-Then: is 6-8-10 a new triangle, or 3-4-5 made bigger?
+### The shortcut
+
+Back to the lawn from the start. Sketch the triangle and mark the right angle before you work anything out.
+
+### What it saves
+
+Stretch: on a board, make a right-angled triangle with whole-number sides whose longest side is exactly 10. Is it a new triangle, or 3-4-5 made bigger?
+
+**Also used in**
+
+- **Screen sizes.** A TV or phone is sold by its diagonal, the longest side of the screen. Will it fit the cabinet?
+- **Ladders.** How high up a wall a ladder reaches, when you know its length and how far out its foot is (next lesson).
+- **Square corners.** Builders check a corner with a 3-4-5 triangle of string: the theorem run backwards (two lessons on).

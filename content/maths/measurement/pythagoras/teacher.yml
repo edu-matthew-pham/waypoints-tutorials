@@ -7,6 +7,8 @@ goals:
   - I can check that an answer is sensible (longer than each short side, shorter than both together).
 struggle: "Keeping the order square, add, root. Ask students to say the three steps before they touch a calculator, and to check the answer against the two shorter sides."
 before: |
+  Pilot (Oct 2026): the lesson opens with a real question (how much does the worn shortcut across a lawn save?) and Make comes back to it; "Also used in" closes it. The middle of the lesson is unchanged. Tell us whether the opening helps or gets in the way.
+
   Do the Run board yourself first. Students need squares and square roots (Number Foundations) and right-angled triangles (Classifying triangles).
 
   The one idea: the areas of the squares on the two shorter sides add to the area of the square on the hypotenuse. The common mistake is adding the sides (Leah's mistake). The sense check (between the longer short side and the sum) catches most slips.
@@ -17,7 +19,7 @@ running:
   - "Run: count the small squares in the 9 and 16 and see the 25 together."
   - "Investigate: write 'square, add, root' on the board."
   - "Modify: for √2, ask between which whole numbers it lies before computing."
-  - "Make: ask whether 6-8-10 is new or a scaled 3-4-5."
+  - "Make: back to the shortcut across the grass. Ask for a guess at the saving before anyone calculates (most guess too much); then ask why the path gets worn even though it saves only 8 m."
 stuck:
   - see: "A student adds the sides (Leah's mistake)."
     ask: "Is walking across shorter or longer than going round the corner?"

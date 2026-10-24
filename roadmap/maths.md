@@ -29,6 +29,8 @@ Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (als
 
 **Pictures on the five symbolic Predicts (25 Oct):** expanding (three rows of x + 2 as tiles), factorising (6 x-tiles and 9 ones, loose, with the prompt "can you share all the tiles into equal rows?"), when brackets are needed (n stickers and 3 more under a brace "the lot", then "doubles the lot: ?"), words into expressions (a bar n and a bar 5 shorter marked ?), an expression for any case (the $50 bus block then a $12 block per student). Each shows the question with a "?" and comes before the symbolic options, so the options now name a picture. Lesson.md only; no clips re-record. The `smaller:` lead-ins for these wait for the shared push (`roadmap/shared.md` › Proposed 25 Oct, amended).
 
+**Pythagoras' theorem finished (25 Oct):** opens with the worn shortcut across a lawn (footpaths 24 m and 10 m, a drawing with "?"), Make comes back to it (shortcut 26 m, saves 8 m; the old "hypotenuse of 10" board task is the stretch), "Also used in" points forward to the ladder (next lesson) and the 3-4-5 corner (two on). The Pythagoras unit now runs shortcut → ladder → corner check, one entry per node. Fourth lesson with the full pattern.
+
 **Next (agreed with Matthew):** tidy the library before growing it: move the Measurement and Algebra drafts into `maths.yml` with the same fields (add kind and step tags to Measurement, source every figure, flag weak entries). Other strands, and more lessons, wait for teacher feedback on the pilot.
 
 **Found, for roadmap/shared.md (shared tools, not changed here):**
