@@ -47,9 +47,20 @@ check:
 
 ```step
 stage: run
-insight: "Driving the temperature off the set point twice and watching the effectors switch on and off makes negative feedback a loop students have operated."
+insight: "Driving the temperature off the set point twice and watching the effectors switch on and ease off makes negative feedback a loop students have operated."
 try: { playground: board, starter: "boards.yml#temp", height: 600 }
 check: { type: board, text: "Push the body temperature away from 37 °C and let it recover, twice (once hot, once cold).", when: "r >= 2" }
+smaller:
+  starter: "boards.yml#hot-only"
+  height: 560
+  check:
+    type: question
+    q: "This board only gets hotter. Turn the air right up and wait until your temperature is back near 37 °C. With the air still hot, is the sweating on, off, or somewhere in between?"
+    options: ["Still on, but not as hard as at first, just enough to hold you near 37 °C", "Off, because you're back at 37 °C", "On full, as strong as at the start", "It has turned into shivering"]
+    answer: 0
+    feedback: [null, "Read the line under the loop while the air is still high: the sweating hasn't stopped.", "If it were still full strength, you'd keep cooling below 37 °C, but the graph levels off instead.", "Shivering only starts when you get too cold."]
+    explain: "The response matches how far you are from 37 °C, so it eases off as you come back, and it only stops once the heat has gone. That's what lets the body recover from either direction on the main board."
+hint: ["Have you dragged the slider a long way and then left it there for a bit, so the body has time to respond?", "A small nudge doesn't count, so push the Air right to one end, keep your eye on the graph and the line under the loop, and wait for the temperature to come back towards the set point before you try the other way."]
 ```
 
 Drag the **Air** slider far up or down. Watch the body temperature on the graph, and the message under the loop saying which corrective response is on. When the body has recovered, push it the other way.
@@ -81,6 +92,7 @@ tasks:
       options: ["The response reverses the change: a rise causes a fall, a fall causes a rise", "It is bad for the body", "It makes the temperature go down only", "The receptors stop working"]
       answer: 0
       feedback: [null, "Negative means 'opposing the change', not harmful.", "It also brings a low temperature up.", "Receptors keep detecting all the time."]
+    hint: ["Think about what happened on the board when you made the air very cold, and compare it with what happened when you made it very hot.", "In each case, look at which way the temperature was pushed and which way the body's response took it."]
   - diagram:
       ref: diagrams.mmd#oneway
       alt: "A student's drawing. Body temperature rises. Receptors detect it. The hypothalamus starts sweating. Temperature falls, and keeps falling. Nothing checks the temperature again or switches the sweating off."
@@ -88,11 +100,12 @@ tasks:
       role: misconception
     check:
       type: question
-      q: "On the board, what happens to sweating once body temperature is back at 37 °C?"
+      q: "On the board, what happens to sweating as body temperature comes back towards 37 °C?"
       options: ["It eases off as the temperature comes back, and stops once the heat has gone", "It keeps going at full strength all day", "It gets stronger", "It turns into shivering"]
       answer: 0
       feedback: [null, "Full-strength sweating would cool you below 37 °C.", "Stronger sweating would overshoot.", "Shivering only starts if you get too cold."]
       explain: "The response matches how far you are from 37 °C. While the air stays hot, a little sweating keeps going to hold you near 37 °C (watch the board with the air still high), and it stops once you're out of the heat."
+    hint: ["The student's drawing has nothing that checks the temperature again, so think about what full-strength sweating would do to you if nothing ever turned it down.", "Push the Air high on the board, wait for the temperature to come back, then read the line under the loop while the air is still hot, and again after you bring the slider back down."]
   - check:
       type: match
       q: "Match each part of a negative feedback loop to what it is in body temperature control."
@@ -142,6 +155,7 @@ insight: "Breaking one part of the loop and watching control fail shows every pa
 try: { playground: board, starter: "boards.yml#broken", height: 640 }
 tasks:
   - check: { type: board, text: "Break one part of the loop, then push the temperature off 37 °C.", when: "b = 1 and d > 1" }
+    hint: ["Once a part is broken, ask what's left to notice the change or do anything about it.", "Press one Break button, then drag the Air a long way and watch the graph, because with the air left at 22 °C nothing much moves even when the loop is broken."]
   - check:
       type: question
       q: "If the sweat glands couldn't work (as in some burns patients), what would happen on a hot day?"

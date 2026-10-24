@@ -69,6 +69,7 @@ tasks:
         - ["Body temperature falling", "Internal"]
         - ["Too little water in the blood", "Internal"]
         - ["Cold wind on your skin", "External", "The wind is outside; your body temperature falling because of it is an internal change."]
+    hint: ["For each one, ask where the change is actually happening, out in the world or inside your body, and it still counts as a stimulus even if you'd never feel it.", "Go back to the board and click a few stimuli again, because the line under the pathway tells you whether each one is internal or external."]
   - check:
       type: match
       q: "Match each part of the pathway to what it does."
@@ -83,7 +84,8 @@ tasks:
       q: "In the hot pan pathway, which is the effector?"
       options: ["The arm muscles", "The skin", "The spinal cord", "The heat"]
       answer: 0
-      feedback: [null, "The skin holds the receptors: it detects.", "The spinal cord is the command centre in this reflex.", "The heat is the stimulus."]
+      feedback: [null, "The skin is where the receptors are, so its job is noticing the heat, not moving your hand.", "The spinal cord is the command centre in this reflex.", "The heat is the stimulus."]
+    hint: ["Think about what the skin is doing when you touch the pan, because noticing the heat and moving your hand are two different jobs.", "Click Touching a hot pan on the board again and read which box each of these options sits in."]
   - check:
       type: question
       q: "The smell of toast is the stimulus. Which is the receptor, and what does it do?"
@@ -121,6 +123,7 @@ check:
     - ["Brain stem", "Command centre"]
     - ["Diaphragm and rib muscles", "Effector"]
     - ["Faster, deeper breathing", "Response"]
+hint: ["Go along the chain in the order it happens: what changed first, what notices it, what makes the call, and what actually does the breathing.", "Line it up with the hot pan, where the skin noticed, the spinal cord decided and the arm muscles acted, and find the item that plays each of those parts for breathing."]
 ```
 
 ## Elaborate: plants respond too
@@ -135,7 +138,7 @@ check:
   options: ["There are no nerves: the command is a plant hormone (auxin) carried in the plant, not an impulse", "There is no stimulus", "There is no response", "Nothing is different"]
   answer: 0
   feedback: [null, "Light from one side is the stimulus.", "Bending is the response.", "Plants have no nervous system."]
-  explain: "Plants still detect a stimulus and respond, but they coordinate with hormones only."
+  explain: "Plants still detect a stimulus and respond. They have no nerves, so bending towards light is coordinated by a hormone, auxin. (A few plants, like the Venus flytrap, also send fast electrical signals.)"
 ```
 
 ## Evaluate: look back

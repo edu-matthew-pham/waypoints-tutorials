@@ -54,6 +54,7 @@ tasks:
     check: { type: board, text: "Send both stimuli through the pathway. What is different about the command centre?", when: "n >= 2" }
   - starter: "boards.yml#build"
     check: { type: board, text: "Build all four pathways: two nervous, two hormonal.", when: "c >= 4" }
+    hint: ["For the hormone pathways, ask what releases the hormone and which of the five boxes that part belongs in.", "When the signal stops, the message under the boxes names the part that doesn't fit, so change just that one, and remember the effector is the organ that ends up doing something different."]
 ```
 
 ### Two stimuli
@@ -83,6 +84,7 @@ tasks:
         - ["Lasts longer: until the hormone is broken down", "Endocrine"]
         - ["Goes to one precise place", "Nervous"]
         - ["Reaches the whole body; only target organs respond", "Endocrine", "Every cell gets the insulin; only cells with the right receptors respond."]
+    hint: ["For each one, picture the two pathways you sent through the board, pulling your hand off the hot pan and bringing blood glucose down after a meal, and ask which one it sounds like.", "Think about how the message gets from the command centre to the effector in each, because that decides how fast it is, how long it lasts and where it can go."]
   - check:
       type: question
       q: "In a hormonal pathway, what is the command centre?"
@@ -90,6 +92,7 @@ tasks:
       answer: 0
       feedback: [null, "The blood carries the message; it doesn't decide anything.", "The target organ is the effector."]
       explain: "Glands (pancreas, adrenal glands, pituitary) act as command centres: they detect or are told of a change and release a hormone."
+    hint: ["Ask which of these actually decides to send a message, and which ones just carry it or act on it.", "In the hot pan the spinal cord sent the message along nerves, so ask what does that same job when the message is a hormone."]
   - check:
       type: question
       q: "Why do electrical signals reach their effector faster than hormones?"
@@ -150,6 +153,7 @@ insight: "A second hormone pathway (ADH and the kidneys) checks that students ca
 try: { playground: board, starter: "boards.yml#build", height: 640 }
 tasks:
   - check: { type: board, text: "Build all four pathways again, quickly this time.", when: "c >= 4" }
+    hint: ["For each stimulus, ask what notices the change, what decides or releases the message, and which muscle or organ then does the work.", "If the signal stops, read the message under the boxes, because it names the part that doesn't fit and asks the question to fix it."]
   - check:
       type: question
       q: "On a hot day with little to drink, the pituitary gland releases ADH, and the kidneys keep more water. Which is the effector?"

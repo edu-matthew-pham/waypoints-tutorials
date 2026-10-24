@@ -15,3 +15,9 @@ break: on
 widget: coordination
 mode: feedback
 # endregion
+
+# region: hot-only
+widget: coordination
+mode: feedback
+push: hot
+# endregion

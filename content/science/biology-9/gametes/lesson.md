@@ -47,6 +47,7 @@ stage: run
 insight: "Clicking each feature and reading what it does links structure to the gamete's job."
 try: { playground: board, starter: "boards.yml#gametes", height: 520 }
 check: { type: board, text: "Find the nucleus and the special features of the sperm and the egg.", when: "n = k" }
+hint: ["Work along the sperm from its tip to the end of its tail, then go round the egg from its outer layer to its middle, clicking each part as you go.", "The egg has a pale coat just outside its edge and small yellow blobs inside, and the line under the board tells you how many parts you've still got to find."]
 ```
 
 Click each part to see what it is and what it does.
@@ -65,13 +66,14 @@ tasks:
         - ["Midpiece full of mitochondria", "Releases energy for swimming"]
         - ["Acrosome", "Enzymes digest a way into the egg"]
         - ["Egg's food store", "Feeds the embryo in its first days"]
-        - ["Jelly coat", "Changes after one sperm enters, so no others can"]
+        - ["Protective coat (zona pellucida)", "Hardens after one sperm gets in, so no others can"]
   - check:
       type: question
       q: "Why must a gamete have half the number of chromosomes?"
       options: ["So that when two gametes join, the new cell has the full number again", "Because gametes are small", "So the offspring has half as many genes", "To save energy"]
       answer: 0
       feedback: [null, "An egg is huge but still has 23.", "The offspring has the full number: half from each parent.", "It's about keeping the number the same each generation."]
+    hint: ["Work out how many chromosomes the fertilised egg would have if the sperm and the egg each carried 46.", "Then think about what would happen to that number in the next generation, and the one after that."]
   - check:
       type: question
       q: "Why are millions of sperm released, but only one egg?"
@@ -99,12 +101,14 @@ insight: "Seeing pollen's tough wall (no tail) shows plant gametes solve the sam
 try: { playground: board, starter: "boards.yml#pollen", height: 520 }
 tasks:
   - check: { type: board, text: "Find the nucleus in the pollen grain and the egg, and the pollen's wall.", when: "n = k" }
+    hint: ["There's a nucleus in each cell, so find one in the pollen grain and one in the egg, and then find what protects the pollen on the outside.", "The pollen's wall is the thick spiky ring round its edge, and the line under the board says how many parts are left."]
   - check:
       type: question
       q: "A pollen grain can't swim. How does its male nucleus reach the egg?"
       options: ["Wind or animals carry the pollen to a flower; a pollen tube then grows down to the ovule", "It swims through the air", "The egg moves to the pollen", "It doesn't: plants don't use gametes"]
       answer: 0
-      feedback: [null, "No tail: it is carried.", "The egg stays inside the ovule.", "Flowering plants reproduce sexually with gametes."]
+      feedback: [null, "Pollen has no tail to swim with, so something has to carry it.", "The egg stays inside the ovule.", "Flowering plants reproduce sexually with gametes."]
+    hint: ["The pollen grain can't move itself, so think about what could carry it from one flower to another.", "Click the pollen wall on the board and read what its spikes are for."]
   - check:
       type: question
       q: "A flowering plant's egg sits inside an ovule, deep in the flower's ovary. How does that suit its job?"

@@ -33,4 +33,4 @@ exit:
   q: "Name the command centre in a reflex and say why reflexes are fast."
   a: "The spinal cord; the impulse doesn't have to travel to the brain and wait for a decision."
 explain: |
-  **The CNS** (brain and spinal cord) is the command centre. Sensory neurons carry impulses in from receptors; motor neurons carry them out to effectors (muscles or glands). A **reflex** goes through the spinal cord, so it is automatic and fast.
+  **The CNS** (brain and spinal cord) is the command centre. Sensory neurons carry impulses in from receptors; motor neurons carry them out to effectors (muscles or glands). A **reflex** is automatic and fast because no decision is made: most go through the spinal cord, and reflexes in the head (blinking, pupils narrowing) go through the brain stem.

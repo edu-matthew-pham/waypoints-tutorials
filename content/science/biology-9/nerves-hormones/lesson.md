@@ -49,7 +49,7 @@ try: { playground: board, starter: "boards.yml#race", height: 520 }
 check: { type: board, text: "Run the race and compare the nerve with the hormone.", when: "r >= 1" }
 ```
 
-Press **Race** and watch both responses to the same fright. Which starts sooner? Which lasts longer?
+Press **Send both signals** and watch both responses to the same fright. Which starts sooner? Which lasts longer?
 
 ## Explain: comparing the two
 
@@ -68,18 +68,20 @@ tasks:
         - ["Effects last minutes to years", "Endocrine system"]
         - ["Goes to one exact place", "Nervous system"]
         - ["Reaches the whole body; target cells respond", "Endocrine system"]
+    hint: ["For each one, ask whether it sounds like the jump you make the instant you get a fright or the pounding heart that hangs around for minutes afterwards.", "Run the race on the board again and compare the two curves, and the line under the button says how each message travels and where it goes."]
   - check:
       type: question
       q: "Every cell in the body gets the same adrenaline in the blood. Why do only some cells respond?"
       options: ["Only target cells have receptors that fit adrenaline", "Adrenaline only flows to the heart", "Other cells destroy it", "The brain tells the other cells to ignore it"]
       answer: 0
       feedback: [null, "Blood carries it everywhere.", "Cells without the receptor just don't respond.", "No nerve is involved in which cells respond."]
+    hint: ["The adrenaline goes wherever the blood goes, so the difference can't be in what reaches each cell and has to be something about the cells themselves.", "Both kinds of cell get exactly the same adrenaline, so think about what a cell that responds must be able to do with it that a cell that ignores it can't."]
   - check:
       type: question
       q: "Growth over years is controlled by growth hormone, not nerves. Why is a hormone better for this job?"
       options: ["The effect needs to last a long time and reach cells all over the body", "Hormones are faster", "Nerves can't reach bones", "Growth is a reflex"]
       answer: 0
-      feedback: [null, "Hormones are slower.", "Nerves reach bones; the point is duration and reach.", "A reflex is a quick nervous response."]
+      feedback: [null, "Hormones are actually slower than nerves, and that's fine for growth.", "Nerves do reach bones, but what growth needs is an effect that lasts for years and reaches cells everywhere.", "A reflex is a quick nervous response."]
   - check:
       type: question
       q: "A sprinter reacts to the starting gun. Which system carries the message to the leg muscles, and why?"
@@ -116,6 +118,7 @@ check:
     - ["Your heart is still racing five minutes later", "Hormonal"]
     - ["Your hands are shaky as you ride home", "Hormonal"]
     - ["You flinch", "Nervous"]
+hint: ["For each one, ask how quickly it happens and how long it lasts after the car has gone.", "On the race board the nerve curve is over in a moment and the hormone curve keeps going for minutes, so match each part of the bike ride to one of those shapes."]
 ```
 
 ## Elaborate: insulin

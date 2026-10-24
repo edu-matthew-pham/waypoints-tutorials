@@ -3,7 +3,7 @@ order: 2
 node: AC9S9U01 n2
 unit: control
 title: Who decides?
-summary: "The central nervous system (brain and spinal cord) is the command centre: sensory neurons carry impulses in from receptors, motor neurons carry them out to effectors. Reflexes go through the spinal cord without waiting for the brain."
+summary: "The central nervous system (brain and spinal cord) is the command centre: sensory neurons carry impulses in from receptors, motor neurons carry them out to effectors. Reflexes are automatic: most go through the spinal cord, and reflexes in the head, like blinking, go through the brain stem, without you deciding."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -53,6 +53,7 @@ stage: run
 insight: "Choosing each part, with feedback on the first wrong one, forces students to decide what detects, what decides and what acts."
 try: { playground: board, starter: "boards.yml#build", height: 560 }
 check: { type: board, text: "Build three pathways correctly, including the drawing pin.", when: "c >= 3" }
+hint: ["For the drawing pin, think about whether you feel the pain before or after your foot has already moved, because that tells you who made the call.", "When the signal stops, the message under the boxes tells you which part doesn't fit, so change just that one and send it again."]
 ```
 
 Pick a stimulus, then choose its receptor, command centre and effector, and send the signal.
@@ -88,7 +89,8 @@ tasks:
       q: "In the chips pathway, the effector is a gland, not a muscle. What does an effector have to be?"
       options: ["A muscle or a gland: something that carries out the response", "Always a muscle", "A receptor", "A nerve"]
       answer: 0
-      feedback: [null, "Glands are effectors too: they release saliva, sweat or hormones.", "Receptors detect; effectors act.", "Nerves carry the message; effectors act on it."]
+      feedback: [null, "Glands are effectors too: they release saliva, sweat or hormones.", "Receptors notice the change, and effectors are the ones that do something about it.", "Nerves carry the message; effectors act on it."]
+    hint: ["Think about what an effector's job is in the pathway, and then ask whether the salivary glands are doing that job when your mouth waters.", "On the board, compare what the leg muscles do for the drawing pin with what the salivary glands do for the chips."]
   - check: { type: reflect, text: "I can describe a reflex arc and explain why it's faster than a response that needs the brain." }
 ```
 
@@ -107,7 +109,7 @@ In your book: draw the reflex arc for the drawing pin, labelling the receptor, s
 ```step
 stage: modify
 tier: typical
-insight: "Sorting reflexes from decided responses uses the 'does it need the brain to decide?' test."
+insight: "Sorting reflexes from decided responses uses the 'do you have to decide?' test: blinking and pupils narrowing are reflexes through the brain stem, the knee jerk through the spinal cord."
 check:
   type: sort
   q: "Reflex (automatic, no decision) or a decided response?"
@@ -119,6 +121,7 @@ check:
     - ["Choosing a snack", "Decided response"]
     - ["Knee jerking when tapped below the kneecap", "Reflex"]
     - ["Catching a ball", "Decided response", "Practice makes it fast, but the brain still judges where the ball will go."]
+hint: ["For each one, ask whether you'd have to think about it or choose, or whether it would happen the same way every time without you deciding.", "Something being quick doesn't make it a reflex, so think about the drawing pin and the ball you built on the board and what made them different."]
 ```
 
 ## Elaborate: damage to the pathway
