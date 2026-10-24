@@ -15,7 +15,7 @@ No shared change is needed: `lesson-view` already renders `hint:` on a step and 
 - Explain checks that a `stuck:` entry in `teacher.yml` addresses (usually one or two per lesson);
 - not Engage (a hint before lock-in hands over the misconception the prediction exists to surface), not `reflect`, not the Evaluate look-back.
 
-**What a science hint is.** Two at most, escalating: (1) the deciding question, lifted from `stuck.ask` and turned to the student ("Name the energy type on each side of the arrow. Same or different?"); (2) where to look on the board or in the lesson ("The box under the board says what each word means"). Never an option's wording, never the board's target value. A science hint points at evidence; it doesn't explain.
+**What a science hint is.** Two at most, escalating: (1) the deciding question, starting from `stuck.ask` but rewritten as you'd ask it at the desk, not pasted ("What kind of energy is it before the arrow, and what kind after?"); (2) where to look ("There's a line under the board that says what the two words mean"). Never an option's wording, never the board's target value. A science hint points at evidence; it doesn't explain.
 
 **How it differs from what's already there.**
 - *Hint:* before answering, a question or a place to look. The student still decides.
@@ -57,7 +57,7 @@ Two of the three need no widget work, so the pilot can be transform and greenhou
 
 **Partly, yes.** Explore's first task says "choose ... whether each arrow is a transfer or a transformation", and the only place the two words are defined before Explain is one line of small text at the foot of the `energy` board, under Check ("Transfer: the same type of energy moves to another place. Transformation: the energy changes type."). The lesson text doesn't define them (the intro line and the Engage reveal say "changes type" but never name either word), and the Explore headings (*The torch*, *Hot chocolate*) have no prose. The step's own insight says Explore makes the distinction "a rule students apply", so it is meant to be applied, not discovered; the teacher's running note ("ask what the red arrows had in common") leans the other way.
 
-Proposed fix (lesson.md only, no clip re-records): under *The torch*, one plain line giving the rule as a decision, the same words as the teacher's `support:` card: "For each arrow, name the energy type on each side. Same type? It's a **transfer**: it only moved. Different type? It's a **transformation**." Explain then confirms and sorts unfamiliar cases, as now. Change the running note to "ask which rule the red arrows broke". (The alternative, a discovery Explore with the board's definition line hidden until Check, needs a widget change and asks Year 8s to invent two technical words; not worth it.)
+Proposed fix (lesson.md only, no clip re-records): under *The torch*, one sentence giving the rule, in the idea of the teacher's `support:` card but not its clipped wording: "Look at the energy on each side of an arrow: if it's the same kind, it has only moved, and that's a **transfer**, but if it's changed kind, that's a **transformation**." Explain then confirms and sorts unfamiliar cases, as now. Change the running note to "ask which rule the red arrows broke". (The alternative, a discovery Explore with the board's definition line hidden until Check, needs a widget change and asks Year 8s to invent two technical words; not worth it.)
 
 ### Check 2: is the greenhouse Explore a recipe?
 
@@ -68,6 +68,12 @@ Proposed fix (lesson.md and the same board; no widget change, since `t`, `w`, `g
 - *Task 2, more CO₂:* "Find a CO₂ level that warms Earth by about 2 °C, and say how long it takes to settle." The student chooses the CO₂; check on the warming (`w` is the highest surface temperature reached, so the `when:` is the start temperature plus the target, plus `b = 1`; the target is set from the model's own sensitivity when built), then a question on what made it level off (moves the third Explain question's idea into Explore as an observation, and Explain keeps the "why").
 - The 560 ppm "double pre-industrial" fact moves to the Explain text, where it is information, not an instruction.
 - Explain clip and picture are untouched (they use `#explain`), so nothing re-records.
+
+### Voice (added 25 Oct, Matthew asked)
+
+Everything above that a student reads (hints, lead-in questions, the transform line, the greenhouse tasks) follows the maths chat's voice rules (`roadmap/maths-when-where-why.md` › Voice, 23 Oct) and the Project preference: read it aloud and rewrite anything you wouldn't say at the desk; join ideas with *and*, *so*, *but* rather than stacking short statements; no labels or stage directions; talk about the torch or the planet, and name the science term once; contractions fine. Science-specific traps: pasting `stuck.ask` or `support:` wording (written for teachers, so clipped); question-and-answer fragments ("Same type? Transfer."); button-by-button instructions (the greenhouse problem is a voice problem too).
+
+Found while checking: 27 science lessons open with the "Last lesson: … This lesson: …" pattern the maths rules ban (greenhouse: "You know Earth balances energy in and out. This lesson: what the air does to the energy going out."). Proposed: rewrite each Year 8 one as part of its course's hints push (lesson.md only, no clips), and the Years 7, 9 and 10 ones in a single later pass. For example: "You've seen that Earth only stays the same temperature while the energy coming in matches the energy going out, so where does the air come into it?" (it must not give away the Predict, which asks whether the gases act on sunlight coming in or infrared going out).
 
 ### Order, if Matthew says go
 
