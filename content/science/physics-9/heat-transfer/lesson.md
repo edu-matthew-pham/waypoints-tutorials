@@ -111,10 +111,10 @@ tasks:
   - check:
       type: question
       q: "Why does a foam (polystyrene) cup keep a drink hot so well?"
-      options: ["It is mostly trapped air: gas particles are far apart, so they rarely collide to pass energy on, and air in the tiny bubbles can't flow to convect", "Its particles are packed very tightly, so energy can't squeeze through", "The foam reflects the heat back into the drink"]
+      options: ["It is mostly trapped air: gas particles are far apart, so there are far fewer of them to pass energy along, and air in the tiny bubbles can't flow to convect", "Its particles are packed very tightly, so energy can't squeeze through", "The foam reflects the heat back into the drink"]
       answer: 0
       feedback: [null, "It's the other way round: tightly packed particles pass energy on well by collisions. Foam is mostly widely spaced gas particles.", "Reflecting is what shiny surfaces do to radiation. Foam works by trapping air."]
-      explain: "Insulators pass energy on poorly. In a gas the particles are far apart, so collisions that pass energy along are rare; trapping the gas in small bubbles stops convection too."
+      explain: "Insulators pass energy on poorly. In a gas the particles are far apart, so there are far fewer of them to pass energy along (they still collide billions of times a second), and trapping the gas in small bubbles stops convection too."
   - check: { type: reflect, text: "I explained the difference between conduction and convection, describing what the particles do in each." }
 ```
 

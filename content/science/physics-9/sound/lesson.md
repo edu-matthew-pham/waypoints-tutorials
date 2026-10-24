@@ -129,7 +129,7 @@ In your book: draw a row of dots for air before a sound arrives, then again with
 ```step
 stage: modify
 tier: typical
-insight: "Comparing air, steel and a vacuum links the wave model to the particle model: closer, more tightly bonded particles pass the vibration on faster, and no particles means no sound."
+insight: "Comparing air, steel and a vacuum links the wave model to the particle model: particles held stiffly by strong bonds pass the vibration on faster, and no particles means no sound."
 try: { playground: board, starter: "boards.yml#choose", height: 680 }
 tasks:
   - check: { type: board, text: "Choose Vacuum from the menu. Watch the listener.", when: "m = 0" }
@@ -137,10 +137,10 @@ tasks:
   - check:
       type: question
       q: "Sound travels at about 340 m/s in air, 1500 m/s in water and 5000 m/s in steel. Why is it fastest in steel?"
-      options: ["The particles are closer together and tightly bonded, so each passes the vibration on sooner", "Steel particles are heavier", "Steel is warmer"]
+      options: ["Its particles are held very stiffly by strong bonds, so each one pushes on the next almost at once", "Steel particles are heavier", "Steel is warmer"]
       answer: 0
-      feedback: [null, "Weight isn't the reason: tightly bonded neighbours respond faster.", "Temperature isn't what makes the difference between materials."]
-      explain: "In a solid the particles are packed close together and joined to their neighbours, so a vibration is passed on very quickly. In a gas they are far apart, so it takes longer."
+      feedback: [null, "Heavier particles actually slow sound down, and steel is fast in spite of that because its bonds are so stiff.", "Temperature isn't what makes the difference between materials."]
+      explain: "In a solid each particle is held stiffly by its neighbours, so a push is passed on almost at once. In a gas the particles aren't held together at all and only pass the push on when they bump into each other, which is slower. Stiffness matters more than closeness: water is about 800 times denser than air, but sound is only about four times faster in it."
     hint: "Think about how the particles in a solid are held compared with the ones in a gas, and how quickly each one can pass a push on to the next."
 ```
 
@@ -179,4 +179,4 @@ Write one sentence: "At first I thought… Now I think… because…"
 - Sound is a **longitudinal wave**: particles vibrate to and fro along the direction the wave travels.
 - A wave is a line of **compressions** (squashed) and **rarefactions** (spread out). The pattern travels; the particles stay in place.
 - **Frequency** (vibrations per second) sets the **pitch**; **amplitude** (size of the vibration) sets the **loudness**.
-- Sound needs a **medium**: it cannot travel through a vacuum. It is faster in solids than in gases because the particles are closer together and more tightly bonded.
+- Sound needs a **medium**: it cannot travel through a vacuum. It is faster in solids than in gases because the particles are held together by stiff bonds, so each push passes on almost at once.

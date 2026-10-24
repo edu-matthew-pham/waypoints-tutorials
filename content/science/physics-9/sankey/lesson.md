@@ -72,14 +72,14 @@ tasks:
       q: "What do the widths of the bands in a Sankey diagram show?"
       options: ["The amount of energy in each flow, to scale", "How fast the energy moves", "How important each output is"]
       answer: 0
-      feedback: [null, "Speed isn't shown.", "Width is amount, not importance."]
+      feedback: [null, "A Sankey diagram doesn't show speed at all.", "A wide band just means a lot of energy, whether it's useful or wasted."]
       explain: "Band widths are proportional to energy, and the output bands always add up to the input band (conservation of energy)."
   - check:
       type: question
       q: "In the coal station's diagram, which output is the biggest waste?"
       options: ["Heat in the cooling water (550 J)", "Heat up the chimney (100 J)", "Electricity (350 J)"]
       answer: 0
-      feedback: [null, "Narrower band: less energy.", "That's the useful output."]
+      feedback: [null, "That band is narrower, so it carries less energy.", "That's the useful output, the one the station is built for."]
       explain: "The widest wasted band shows where improvements would save the most: here, the heat carried away by cooling water."
     hint: ["Which band carries the energy the power station was built to make, and is that one waste at all?", "On your coal diagram the wasted bands are the ones that bend down, and the label on each one says how many joules it carries."]
   - check:

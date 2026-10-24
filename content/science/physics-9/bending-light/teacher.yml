@@ -1,4 +1,4 @@
-summary: "Students use the wave model to explain reflection and refraction: wave fronts bounce at equal angles, and slow down and bend towards the normal in a denser material (AC9S9U04, node 4; builds on AC9S5U03)."
+summary: "Students use the wave model to explain reflection and refraction: wave fronts bounce at equal angles, and slow down and bend towards the normal in an optically denser material (AC9S9U04, node 4; builds on AC9S5U03)."
 time: 25
 timing: "Engage and Explore 8 min · Explain 10 min · Evaluate 3 min · Typical adds 4 min, Wider about 2 min"
 goals:
@@ -39,4 +39,4 @@ exit:
 explain: |
   **Reflection**: the angle of reflection equals the angle of incidence.
 
-  **Refraction**: light slows down in a denser material, so the wave fronts bunch up and the direction bends **towards the normal**. Going straight in, it slows without bending.
+  **Refraction**: light slows down in an optically denser material (one where it travels more slowly), so the wave fronts bunch up and the direction bends **towards the normal**. Going straight in, it slows without bending.

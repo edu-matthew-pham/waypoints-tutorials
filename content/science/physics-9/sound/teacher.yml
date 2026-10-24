@@ -26,7 +26,7 @@ stuck:
     fix: "Pitch is how often (frequency); loudness is how big (amplitude)."
   - see: "A student thinks sound is slower in solids."
     ask: "Which particles are closest together?"
-    fix: "In a solid they are closest and tightly bonded, so the vibration passes on fastest."
+    fix: "In a solid each particle is held stiffly by its neighbours, so the vibration passes on fastest. (It's the stiffness, not the closeness or the mass: heavier particles slow sound down.)"
 stretch: "A sound has a frequency of 200 vibrations a second. How many compressions pass you in a second? (200.) If the speed is 340 m/s, how long is each wave? (340 ÷ 200 = 1.7 m.)"
 support: "Give a drawn row of dots with a pencil mark on one dot. Ask students to draw the row at three moments as the wave passes, keeping the marked dot in place."
 leads: |

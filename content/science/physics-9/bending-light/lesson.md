@@ -4,7 +4,7 @@ node: AC9S9U04 n4
 woven: [AC9S9H02]
 unit: models
 title: How does light bend?
-summary: "The wave model explains two things you can see. In reflection, wave fronts bounce off a surface and the angle of reflection equals the angle of incidence. In refraction, light slows down in a denser material such as glass or water, so the wave fronts bunch up and the direction bends towards the normal; light going straight in at 90° does not bend."
+summary: "The wave model explains two things you can see. In reflection, wave fronts bounce off a surface and the angle of reflection equals the angle of incidence. In refraction, light slows down in a material such as glass or water (an optically denser one, where light travels more slowly), so the wave fronts bunch up and the direction bends towards the normal; light going straight in along the normal (at 0°) does not bend."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -26,13 +26,13 @@ explainClip:
     - wait: 3200
 hook: "A straw in a glass of water looks snapped at the surface. The straw is fine. What is the light doing?"
 ---
-The last lesson said light is a wave. Here the wave model explains two things you can see every day.
+You've seen that light behaves as a wave, and now you'll use that to explain two things you see every day.
 
 ## Engage: into the glass
 
 ```step
 stage: predict
-insight: "Students guess the ray bends away, or by a rule they can't justify. Slowing down in the denser material, and the wave fronts changing direction as a result, is the explanation the wave model gives."
+insight: "Students guess the ray bends away, or by a rule they can't justify. Slowing down in the optically denser material, and the wave fronts changing direction as a result, is the explanation the wave model gives."
 check:
   type: predict
   q: "A ray of light goes from air into glass at an angle. Which way does it bend?"
@@ -164,6 +164,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 **Revision summary**
 
 - **Reflection**: the angle of reflection equals the angle of incidence, both measured from the normal.
-- **Refraction**: light slows down in a denser material, so the wave fronts bunch up and the direction bends **towards the normal**. Going out, it bends away.
+- **Refraction**: light slows down in an optically denser material (one where it travels more slowly), so the wave fronts bunch up and the direction bends **towards the normal**. Going out, it bends away.
 - Light going straight in (along the normal) slows down but doesn't bend.
 - The more the light slows, the more it bends.

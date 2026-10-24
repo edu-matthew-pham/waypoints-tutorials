@@ -68,6 +68,13 @@ The concrete form of "below Steady: support on demand" in *Speculative: width fo
 
 **Open:** for maths, whether some lead-ins could come from the Practice templates instead of being written; how it shows on the deck (probably not at all) and the worksheet (probably as the teacher's `support:` line, which already exists).
 
+## Changed by the science chat (25 Oct 2026): rigour fixes in three shared-board widgets
+
+- `energy.js` coaster: at a turning point on a slope the car froze (the energy sum gives zero speed, so it never moved again); it now rolls back when gravity along the track beats friction, so on the high-friction track it settles in the valley. The end message says how much became heat and sound and how much is still potential energy (it used to say all of it became heat and sound).
+- `charge.js`: static mode's Touch metal is now **Join with metal** (a conductor between the two, so the electrons go back to the wool; touching earth would send them to the ground). Current mode's conventional-current label moved to the top wire, where it points the right way.
+- `cell.js`: the egg's "Jelly coat" is the "Protective coat (zona pellucida)".
+Clips on these widgets re-record on the next full publish. AUTHORING updated for the charge buttons.
+
 ## Changed by the science chat (25 Oct 2026): `push:` and `e` on the coordination widget
 
 `playground-board/widgets/coordination.js`, feedback mode: `push: hot | cold` lets the Air slider go only one way from 22 °C (for the biology-9/feedback board lead-in in push (2)), and the board reports `e` (1 sweating, −1 shivering, 0 neither). No other board changes; only clips on the `coordination` widget re-record. AUTHORING › coordination updated, including what the model really does: in steady heat a smaller response stays on to hold 37 °C.

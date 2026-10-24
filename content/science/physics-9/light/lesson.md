@@ -4,7 +4,7 @@ node: AC9S9U04 n4
 woven: [AC9S9H02, AC9S9H03]
 unit: models
 title: What is the electromagnetic spectrum?
-summary: "Light is a transverse wave, and it is one small part of a family of electromagnetic waves: radio, microwave, infrared, visible light, ultraviolet, X-rays and gamma rays. They all travel at the same speed in a vacuum (300 000 km/s) and differ in frequency and wavelength. Higher frequency means a shorter wavelength and more energy, which decides what each is used for and how careful we must be with it."
+summary: "Light is a transverse wave, and it is one small part of a family of electromagnetic waves: radio, microwave, infrared, visible light, ultraviolet, X-rays and gamma rays. They all travel at the same speed in a vacuum (300 000 km/s) and differ in frequency and wavelength. Higher frequency means a shorter wavelength and more energy in each packet of light (photon), which decides what each is used for and how careful we must be with it."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -36,12 +36,12 @@ Sound needed particles to carry it, but light crosses empty space to reach us fr
 
 ```step
 stage: predict
-insight: "Students rank by familiarity or by 'power' (microwaves heat food). Frequency, not the device, sets the energy of each wave."
+insight: "Students rank by familiarity or by 'power' (microwaves heat food). Frequency, not the device, sets the energy in each packet of light."
 check:
   type: predict
-  q: "Microwaves and X-rays are both electromagnetic waves. Which has more energy in each wave?"
+  q: "Microwaves and X-rays are both electromagnetic waves, and both hand over their energy in tiny packets. Which has more energy in each packet?"
   options: ["X-rays: a higher frequency means more energy", "Microwaves: they can cook food", "They are the same, because they travel at the same speed", "You can't compare them"]
-  actual: "X-rays. Energy goes up with frequency, and X-rays have a frequency millions of times higher than microwaves, or more. A microwave oven cooks food because it is powerful, not because each wave has a lot of energy."
+  actual: "X-rays. The energy in each packet goes up with frequency, and X-rays have a frequency millions of times higher than microwaves, or more. A microwave oven cooks food because it sends out a huge number of packets, not because each one has a lot of energy."
 ```
 
 ## Explore: the seven bands
@@ -90,14 +90,14 @@ tasks:
       answer: 0
       feedback: [null, "Speed in a vacuum is the same for every electromagnetic wave.", "Longer waves aren't faster."]
       explain: "All electromagnetic waves travel at the same speed in a vacuum, the speed of light. They differ in frequency and wavelength, not speed."
-    hint: "Gamma rays carry more energy in each wave, but is having more energy the same thing as going faster?"
+    hint: "Gamma rays carry more energy in each packet, but is having more energy the same thing as going faster?"
   - check:
       type: question
       q: "Going from radio to gamma, what happens to the wavelength and the energy?"
       options: ["The wavelength gets shorter and the energy greater", "The wavelength gets longer and the energy greater", "The wavelength gets shorter and the energy smaller"]
       answer: 0
       feedback: [null, "Longer wavelength goes with lower frequency and less energy.", "Short wavelength goes with high frequency and high energy."]
-      explain: "Speed is fixed, so a higher frequency means a shorter wavelength, and a higher frequency means more energy in each wave."
+      explain: "Speed is fixed, so a higher frequency means a shorter wavelength, and a higher frequency means more energy in each packet the wave hands over."
     hint: ["They all travel at the same speed, so if more waves pass each second, does each one have to be longer or shorter?", "Click Radio, then Gamma, and compare the wave drawn on the board and the wavelength in the line under it."]
   - check:
       type: match
@@ -112,10 +112,10 @@ tasks:
   - check:
       type: question
       q: "Why are UV, X-rays and gamma rays more dangerous to living cells than radio waves?"
-      options: ["Each wave carries a lot more energy, enough to damage cells", "They are brighter", "They travel faster"]
+      options: ["Each packet carries a lot more energy, enough to damage cells", "They are brighter", "They travel faster"]
       answer: 0
-      feedback: [null, "Brightness is how much energy arrives in total; the danger comes from the energy in each wave.", "They all travel at the same speed."]
-      explain: "High-frequency waves carry much more energy in each wave, enough to damage the molecules in cells. Low-frequency waves such as radio don't."
+      feedback: [null, "Brightness is how much energy arrives in total; the danger comes from the energy in each packet.", "They all travel at the same speed."]
+      explain: "High-frequency waves hand over much more energy in each packet, enough to damage the molecules in cells. Low-frequency waves such as radio don't."
   - check: { type: reflect, text: "I can describe light as a transverse wave, and say how wavelength, frequency and energy change across the spectrum." }
 ```
 
@@ -124,6 +124,8 @@ tasks:
 ### Same speed
 
 ### Wavelength and energy
+
+Light and the rest of the family hand over their energy in tiny packets called photons, and the higher the frequency, the more energy each packet carries. Ordinary waves don't work like that (a bigger water wave carries more energy whatever its frequency), and Wave or particle? looks at why this needs a particle idea as well.
 
 ### Uses
 
@@ -165,10 +167,10 @@ insight: "Linking the wave model to UV damage explains protective behaviour thro
 check:
   type: question
   q: "Why does Australian sun safety advice focus on UV, even on cool, cloudy days?"
-  options: ["UV has enough energy per wave to damage skin cells, and you can't feel it as heat", "UV is the hottest part of sunlight", "Clouds make UV stronger"]
+  options: ["UV has enough energy per packet to damage skin cells, and you can't feel it as heat", "UV is the hottest part of sunlight", "Clouds make UV stronger"]
   answer: 0
   feedback: [null, "Infrared carries most of the heat you feel.", "Clouds don't block all UV."]
-  explain: "UV is invisible and not felt as heat, but each wave carries enough energy to damage skin cells. That's why shade, clothing, a hat and sunscreen matter on any bright day."
+  explain: "UV is invisible and not felt as heat, but each packet carries enough energy to damage skin cells. That's why shade, clothing, a hat and sunscreen matter on any bright day."
 ```
 
 ## Elaborate: Slip, Slop, Slap
@@ -216,5 +218,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 - Light is a **transverse wave** and one part of the **electromagnetic spectrum**: radio, microwave, infrared, visible, ultraviolet, X-ray, gamma.
 - All travel at the **same speed** in a vacuum (300 000 km/s), with no medium needed.
-- Radio to gamma: **shorter wavelength, higher frequency, more energy per wave**.
+- Radio to gamma: **shorter wavelength, higher frequency, more energy per packet**.
 - Frequency decides use and risk: low-energy waves carry signals; high-energy waves can damage cells.

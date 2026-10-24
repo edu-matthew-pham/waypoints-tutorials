@@ -10,7 +10,7 @@ before: |
 
   Students arrive from Year 6 circuits with a working model (current goes round, the bulb uses it up). The prediction targets 'electrons used up'. Don't introduce current as a number of amperes here; the Year 9 descriptor is about the particle model.
 
-  Board notes: the loop shows far fewer electrons than a real wire has, and drift is exaggerated. Real drift speed is a small fraction of a millimetre a second; the push travels round the loop almost at once, which is why the bulb lights immediately. The nearest neighbour atoms are drawn as fixed positive charges; real conductors have a 'sea' of free electrons around positive ions.
+  Board notes: the red + are positive ions, copper atoms that have each let go of one electron. The loop shows far fewer electrons than a real wire has, and drift is exaggerated. Real drift speed is a small fraction of a millimetre a second; the push travels round the loop almost at once, which is why the bulb lights immediately. The nearest neighbour atoms are drawn as fixed positive charges; real conductors have a 'sea' of free electrons around positive ions.
 running:
   - "Engage: tally the predictions. Ask the 'used up' group where the electrons go when they leave the bulb."
   - "Explore: ask what is different about plastic that matters."

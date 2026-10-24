@@ -12,13 +12,13 @@ app:
   url: http://127.0.0.1:8291/index.html
   readySelector: "#gpanel"
   layout: full
-explainPicture: { ref: boards.yml#explain, caption: "A copper loop: the free electrons (blue −) are pushed round by the battery, and the bulb lights. The red + are the atoms, fixed in place." }
+explainPicture: { ref: boards.yml#explain, caption: "A copper loop: the free electrons (blue −) are pushed round by the battery, and the bulb lights. The red + are atoms that have each let go of an electron (positive ions), fixed in place." }
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "Current in a wire"
   say: "Current is the flow of free electrons, pushed round by the battery."
   clip:
-    - caption: { text: "A copper wire loop. The red + are atoms, fixed in place. The blue − are free electrons.", say: "The red plusses are fixed atoms. The blue minuses are free electrons." }
+    - caption: { text: "A copper wire loop. The red + are atoms that have lost an electron, fixed in place. The blue − are free electrons.", say: "Red plusses are atoms that lost an electron. Blue minuses are free electrons." }
     - wait: 3400
     - caption: { text: "The battery pushes the electrons round. They are not used up: the bulb lights as they pass through.", say: "The battery pushes the electrons round. They are not used up." }
     - wait: 3600

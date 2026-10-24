@@ -2,7 +2,8 @@
 //   widget: charge
 //   mode: static | pair | current
 //   static   Rub one material on another. Electrons (blue −) move from one to the other; the atoms' positive charges
-//            (red +) stay put. Touch metal lets the extra electrons go back (a spark).
+//            (red +) stay put. Join with metal connects the two through a conductor, so the extra electrons flow
+//            back (a spark).
 //              rub: Wool > Balloon     (the material that gives up electrons, then the one that gains them)
 //              max: 6                  (most electrons that can move, 1 to 8; default 6)
 //              run: 4                  (rubs already done at the start, for a picture)
@@ -132,7 +133,7 @@
   }
   function paintStatic(panel) {
     var bar = el('div', 'fbar'), r = el('button', 'go', 'Rub'); r.type = 'button'; r.addEventListener('click', function () { B.moved = true; rub(); });
-    var t = el('button', '', 'Touch metal'); t.type = 'button'; t.addEventListener('click', function () { B.moved = true; touchMetal(); });
+    var t = el('button', '', 'Join with metal'); t.type = 'button'; t.addEventListener('click', function () { B.moved = true; touchMetal(); });
     var z = el('button', 'quiet', 'Start again'); z.type = 'button'; z.addEventListener('click', B.restart);
     bar.append(r, t, z); panel.appendChild(bar); info(panel, 'chinfo'); staticInfo();
   }
@@ -214,8 +215,10 @@
     ctx.fillStyle = c.ink; ctx.textAlign = 'right'; ctx.fillText('Bulb', g.x1 - 34, mid); ctx.textAlign = 'left'; ctx.fillText('Battery', g.x0 + 36, mid); ctx.textAlign = 'center';
     // Directions.
     ctx.fillStyle = c.muted; ctx.textAlign = 'center';
+    // Both labels sit on the top wire, where the electrons go →; on the bottom wire they go ←, so a conventional
+    // current label there would point the wrong way.
     ctx.fillText(conductor() && st.v > 0 ? 'Electrons are pushed this way →' : 'Electrons: no flow', W / 2, g.y0 - g.w / 2 - 12);
-    ctx.fillText('← Conventional current is drawn the other way', W / 2, g.y1 + g.w / 2 + 16);
+    ctx.fillText('← Conventional current is drawn the other way', W / 2, g.y0 - g.w / 2 - 30);
   }
   function paintCurrent(panel) {
     if (spec.sl) slider(panel, 'Battery', 0, 6, 1, st.v, function (v) { return v + ' V'; }, function (v) { st.v = v; currentInfo(); report(); });

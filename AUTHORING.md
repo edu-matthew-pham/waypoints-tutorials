@@ -1411,8 +1411,8 @@ Vary, Practise, Make).
     `band: visible`. Values: `b` band (0 radio to 6 gamma), `n` bands looked at, `f` and `l` log10 of frequency and
     wavelength.
   - `widget: charge` (AC9S9U04 n3). `mode: static`: two materials of eight atoms each, `rub: Wool > Balloon`
-    (gives up electrons > gains them); buttons Rub (one electron each, at most `max: 6`), Touch metal (the extra
-    electrons rush back, with a spark) and Start again; `run: 4` rubs already done, for a picture. Values: `a` net
+    (gives up electrons > gains them); buttons Rub (one electron each, at most `max: 6`), Join with metal (a
+    conductor between the two, so the extra electrons flow back, with a spark) and Start again; `run: 4` rubs already done, for a picture. Values: `a` net
     charge of the first, `b` of the second, `n` electrons moved, `d` times touched while charged, `s` 1 after a touch.
     `mode: pair`: two balls with `first: 2` and `second: -1` (-3 to 3, sliders Ball 1 and Ball 2): like charges
     push apart, unlike pull together. Values: `p`, `q`, `f` (-1 pull, 0 none, 1 push). `mode: current`: a battery, a

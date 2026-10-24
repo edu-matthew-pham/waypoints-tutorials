@@ -3,7 +3,7 @@ order: 3
 node: AC9S9U04 n3
 unit: models
 title: Where does static charge come from?
-summary: "Everything is made of atoms with positive protons that stay put and negative electrons that can move. Rubbing two materials moves electrons from one to the other, leaving one positive and one negative. Opposite charges attract, like charges repel, and a spark is the extra electrons rushing back to even things out."
+summary: "Everything is made of atoms with positive protons that stay put and negative electrons that can move. Rubbing two materials moves electrons from one to the other, leaving one positive and one negative. Opposite charges attract, like charges repel, and a spark is extra electrons jumping across to even things out, back to the wool through a metal link, or into the ground if you touch something earthed."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -26,8 +26,8 @@ explainClip:
     - wait: 3200
     - caption: { text: "Wool: +3. Balloon: −3. Unlike charges attract.", say: "Wool is plus three, balloon is minus three. They attract." }
     - wait: 2400
-    - click: "Touch metal"
-    - caption: { text: "Touch metal and the extra electrons rush back: a spark.", say: "Touch metal and the extra electrons rush back: a spark." }
+    - click: "Join with metal"
+    - caption: { text: "Join them with metal and the extra electrons rush back: a spark.", say: "Join them with metal and the extra electrons rush back: a spark." }
     - wait: 2800
 hook: "Pull a woolly jumper over your head in the dark and you can see tiny sparks. Where does a spark come from?"
 ---
@@ -55,7 +55,7 @@ tasks:
   - starter: "boards.yml#rub"
     check: { type: board, text: "Press Rub until the wool has charge +3. What does the balloon have?", when: "a = 3" }
   - starter: "boards.yml#rub"
-    check: { type: board, text: "Rub a few times, then press Touch metal. Watch what happens to the charges.", when: "d >= 1 and a = 0" }
+    check: { type: board, text: "Rub a few times, then press Join with metal. Watch what happens to the charges.", when: "d >= 1 and a = 0" }
 ```
 
 ### Charge it up

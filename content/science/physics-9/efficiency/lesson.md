@@ -73,7 +73,7 @@ tasks:
       q: "Which is the formula for efficiency?"
       options: ["Useful energy out ÷ total energy in × 100%", "Total energy in ÷ useful energy out", "Useful energy out − wasted energy"]
       answer: 0
-      feedback: [null, "That would give more than 100%.", "That's not a proportion."]
+      feedback: [null, "That would give more than 100%.", "Taking the waste away gives an amount of energy, not a share of what went in."]
       explain: "Efficiency is the useful share of what goes in."
   - check:
       type: number
@@ -132,7 +132,7 @@ tasks:
       type: number
       q: "What is the engine's efficiency (%)?"
       answer: 25
-      explain: "25 ÷ 100 × 100% = 25%. Three quarters of the fuel's energy heats the engine, the exhaust and the air."
+      explain: "25 ÷ 100 × 100% = 25%. Three quarters of the fuel's energy ends up as heat in the engine, the exhaust and the air, and as sound."
 ```
 
 ### The engine

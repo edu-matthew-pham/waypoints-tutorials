@@ -104,6 +104,13 @@
         st.q = Math.min(st.q, st.E0 - m * g * hAt(st.x)); ke = 0; st.dir = -st.dir;
       }
       st.v = Math.sqrt(2 * Math.max(0, ke) / m);
+      // At a turning point on a slope the car has no speed, so the energy sum alone would leave it frozen there.
+      // Start it rolling back down if gravity along the track beats friction (a real car rolls back; on a gentle
+      // enough slope friction holds it).
+      if (st.v < 1e-6) {
+        var sl = (hAt(st.x + 0.05) - hAt(st.x - 0.05)) / 0.1, along = g * Math.abs(sl) / Math.sqrt(1 + sl * sl) - fric / m;
+        if (along > 0) { if (sl * st.dir > 0) st.dir = -st.dir; st.v = along * d; }
+      }
       if (st.x <= 0 && st.dir < 0) st.dir = 1;
     }
     if (st.x > 30) st.z = 1;
@@ -291,7 +298,7 @@
     if (spec.mode === 'coaster') {
       var m = spec.m, g = spec.gv, p = m * g * hAt(st.x), k = 0.5 * m * st.v * st.v;
       vars = { h: r1(hAt(st.x)), v: r1(st.v), p: r1(p / 1000), k: r1(k / 1000), q: r1(st.q / 1000), t: r1(st.E0 / 1000), r: st.runs, f: st.fric ? 1 : 0, z: st.z };
-      ok = st.runs > 0; msg = st.ended ? (st.v === 0 ? 'The car stopped. Its kinetic energy has all become heat and sound; the total is still ' + r1(st.E0 / 1000) + ' kJ.' : 'The car reached the end. ' + (st.fric ? r1(st.q / 1000) + ' kJ became heat and sound; the' : 'The') + ' total is still ' + r1(st.E0 / 1000) + ' kJ.') : 'Total ' + r1(st.E0 / 1000) + ' kJ.';
+      ok = st.runs > 0; msg = st.ended ? (st.v === 0 ? 'The car stopped, so it has no kinetic energy left: ' + r1(st.q / 1000) + ' kJ became heat and sound' + (st.E0 - st.q > 50 ? ' and ' + r1((st.E0 - st.q) / 1000) + ' kJ is still stored as potential energy at this height' : '') + '. The total is still ' + r1(st.E0 / 1000) + ' kJ.' : 'The car reached the end. ' + (st.fric ? r1(st.q / 1000) + ' kJ became heat and sound; the' : 'The') + ' total is still ' + r1(st.E0 / 1000) + ' kJ.') : 'Total ' + r1(st.E0 / 1000) + ' kJ.';
     } else if (spec.mode === 'chain') {
       vars = { c: st.c, w: st.w, n: st.n }; ok = st.c === 1;
       msg = !st.n ? 'Fill in the energy at each stage and each arrow, then Check.' : st.w ? st.w + ' to fix: the red ones.' : 'Every stage and arrow is right.';
