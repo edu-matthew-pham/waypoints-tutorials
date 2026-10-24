@@ -39,7 +39,7 @@ explainClip:
 ---
 You can add and subtract integers by moving along a number line. Now: multiplying and dividing. $3 \times 2$ is 3 jumps of 2 from zero, and $3 \times (-2)$ is 3 jumps of $-2$.
 
-But what is $-3 \times (-2)$? A negative number of jumps? In this lesson you find out, first from a pattern, then on the line.
+But what is $-3 \times (-2)$? A negative number of jumps? A pattern answers it first, and then the line shows why.
 
 ## Predict: −3 × (−2)
 

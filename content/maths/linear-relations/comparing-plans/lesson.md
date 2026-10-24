@@ -29,7 +29,7 @@ explainClip:
     - wait: 1200
     - expect: { selector: "#board", contains: "g = 4" }
 ---
-In the last lesson you wrote one rule for one situation. Choosing between two plans needs two rules on the same graph, and a question answered in the situation's own words: which plan, for how much data, and does the answer make sense?
+You've written one rule for one situation. Choosing between two plans needs two rules on the same graph, and a question answered in the situation's own words: which plan, for how much data, and does the answer make sense?
 
 ## Predict: which plan?
 

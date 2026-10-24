@@ -34,7 +34,7 @@ explainClip:
 ---
 Two lines are **parallel** when they go the same way and never meet, like railway tracks. Arrows (>>) on the lines mark them as parallel. A third line that crosses them is a **transversal**.
 
-The crossings make eight angles, named $a$ to $h$ here. In this lesson you learn the names of the pairs and how to spot them in any diagram.
+The crossings make eight angles, named $a$ to $h$ here. The angles come in pairs with names, and once you know them you can spot the pairs in any diagram.
 
 ## Predict: turning the crossing line
 

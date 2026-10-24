@@ -31,6 +31,8 @@ Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (als
 
 **Pythagoras' theorem finished (25 Oct):** opens with the worn shortcut across a lawn (footpaths 24 m and 10 m, a drawing with "?"), Make comes back to it (shortcut 26 m, saves 8 m; the old "hypotenuse of 10" board task is the stretch), "Also used in" points forward to the ladder (next lesson) and the 3-4-5 corner (two on). The Pythagoras unit now runs shortcut → ladder → corner check, one entry per node. Fourth lesson with the full pattern.
 
+**Voice pass over the Year 7 intros (25 Oct):** read all 69 against the voice rule, in step with the science chat's pass (`roadmap/science.md`). Definitions-first intros are fine. The one pattern that failed was the stage direction "In this lesson you… / In the last lesson you…" (21 lessons, 22 sentences, including one written this morning); each is now the question the sentence was announcing ("Change the triangle's shape and the angles change, but what happens to their total?"). Lesson.md only.
+
 **Next (agreed with Matthew):** tidy the library before growing it: move the Measurement and Algebra drafts into `maths.yml` with the same fields (add kind and step tags to Measurement, source every figure, flag weak entries). Other strands, and more lessons, wait for teacher feedback on the pilot.
 
 **Found, for roadmap/shared.md (shared tools, not changed here):**

@@ -28,7 +28,7 @@ explainClip:
     - expect: { selector: ".rulework", contains: "P = 2 × 6 + 2 × 3" }
     - wait: 1200
 ---
-In maths a letter can stand for a number. A **formula** such as $P = 2l + 2w$ uses letters for quantities, here the perimeter $P$, length $l$ and width $w$ of a rectangle. This lesson is about what the letters and numbers in a formula mean.
+In maths a letter can stand for a number. A **formula** such as $P = 2l + 2w$ uses letters for quantities, here the perimeter $P$, length $l$ and width $w$ of a rectangle. So what do the letters and numbers in a formula each stand for, and which of them can change?
 
 ## Predict: what changes?
 

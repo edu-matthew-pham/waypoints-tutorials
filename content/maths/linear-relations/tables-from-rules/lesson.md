@@ -34,7 +34,7 @@ explainClip:
     - expect: { selector: ".rulepairs", contains: "(3, 8)" }
     - wait: 1200
 ---
-In the last lesson, a pattern gave a rule. Now we start from the rule. A **rule** such as $y = 2x + 3$ takes an **input** $x$ and gives an **output** $y$. A **table of values** lists inputs and their outputs. Each column is an **ordered pair** $(x, y)$: input first, output second.
+A pattern gave you a rule; now start from the rule. A **rule** such as $y = 2x + 3$ takes an **input** $x$ and gives an **output** $y$. A **table of values** lists inputs and their outputs. Each column is an **ordered pair** $(x, y)$: input first, output second.
 
 ## Predict: which pair?
 

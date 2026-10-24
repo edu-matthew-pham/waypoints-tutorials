@@ -31,9 +31,9 @@ explainClip:
     - expect: { selector: "#gsum", contains: "4 × 180° = 720°" }
     - wait: 1500
 ---
-In the last lesson you found that the angles of any triangle add to $180°$. A **polygon** is any closed shape with straight sides: a quadrilateral (4 sides), pentagon (5), hexagon (6), octagon (8) and so on.
+You know that the angles of any triangle add to $180°$. A **polygon** is any closed shape with straight sides: a quadrilateral (4 sides), pentagon (5), hexagon (6), octagon (8) and so on.
 
-In this lesson you use the triangle rule to find the total of a polygon's angles, without measuring them.
+Can the triangle rule tell you the total of a polygon's angles, without measuring a single one?
 
 ## Predict: four corners
 

@@ -34,7 +34,7 @@ explainClip:
 ---
 In Algebra Foundations you wrote expressions with brackets: $3(x + 2)$ means "add 2 to $x$, then multiply by 3". **Expanding** writes the same expression without the bracket.
 
-In this lesson you find out what the number outside the bracket does to the terms inside, using algebra tiles: a long tile for each $x$ and a small square for each 1.
+What does the number outside the bracket do to the terms inside? Algebra tiles show it: a long tile for each $x$ and a small square for each 1.
 
 ## Predict: 3(x + 2)
 

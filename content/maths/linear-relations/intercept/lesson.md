@@ -33,7 +33,7 @@ explainClip:
     - expect: { selector: "#legend", contains: "y = 2x − 2" }
     - wait: 1200
 ---
-In the last lesson $c$ stayed at 1 and you changed $m$, the steepness. Now $m$ stays at 2 and you change $c$, the number on its own.
+With $c$ kept at 1, you changed $m$, the steepness. Now $m$ stays at 2 and you change $c$, the number on its own.
 
 ## Predict: a bigger c
 

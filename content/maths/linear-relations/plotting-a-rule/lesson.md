@@ -9,7 +9,7 @@ language: maths
 hook: "A table of numbers hides its pattern; a graph shows it at a glance. Plotting the pairs turns a rule into a picture you can read."
 explainPicture: { ref: graph.yml#pic, caption: "The pairs of $y = 2x + 1$: $(0, 1)$, $(1, 3)$, $(2, 5)$, $(3, 7)$. They lie on a straight line, going up 2 for each step right." }
 ---
-In the last lesson you made tables of ordered pairs from rules. Now you **plot** them. To plot the point $(x, y)$, start at $(0, 0)$, go **across** $x$, then **up** $y$. Then look at the shape the points make.
+You've made tables of ordered pairs from rules; now you **plot** them. To plot the point $(x, y)$, start at $(0, 0)$, go **across** $x$, then **up** $y$. Then look at the shape the points make.
 
 ## Predict: what shape?
 

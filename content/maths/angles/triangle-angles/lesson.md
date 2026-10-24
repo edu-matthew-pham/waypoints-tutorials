@@ -33,7 +33,7 @@ explainClip:
 ---
 An **angle** measures a turn, in degrees ($°$). A full turn is $360°$, and the angles on a straight line add to $180°$.
 
-A triangle has three corners, so three angles inside it. In this lesson you find out what happens to their total when you change the triangle's shape.
+A triangle has three corners, so three angles inside it. Change the triangle's shape and the angles change, but what happens to their total?
 
 ## Predict: a stretched triangle
 

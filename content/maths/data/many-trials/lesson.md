@@ -25,7 +25,7 @@ explainClip:
     - click: Run 1000
     - wait: 1400
 ---
-In Predict and test you saw that a short experiment rarely matches the expected count. This lesson asks what happens as the number of trials grows.
+A short experiment rarely matches the expected count, as you saw with the dice. So what happens as the number of trials grows?
 
 The **relative frequency** (count ÷ trials) jumps about over the first few trials, then settles closer and closer to the **probability**. This is called the **law of large numbers**. It is why a large experiment (or a simulation) gives a good estimate of a probability you cannot work out from a sample space.
 

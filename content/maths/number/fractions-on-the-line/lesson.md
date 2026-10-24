@@ -37,7 +37,7 @@ explainClip:
 ---
 Between any two whole numbers on a number line there are fractions and decimals: $\tfrac{1}{2}$, $0.3$, $1\tfrac{3}{4}$. Below zero there are negative ones too: $-\tfrac{1}{2}$, $-0.3$, $-1\tfrac{3}{4}$.
 
-In this lesson you find out how to place them: positive and negative, as fractions, decimals and mixed numerals.
+So where exactly does each one go, positive or negative, fraction, decimal or mixed numeral?
 
 ## Predict: where is −1.5?
 

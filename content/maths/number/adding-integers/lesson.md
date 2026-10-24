@@ -36,9 +36,9 @@ explainClip:
     - expect: { selector: "#nlsum", contains: "−3 − (−2) = −1" }
     - wait: 1200
 ---
-In the last lesson, further left on the number line meant less. Now the line is for working out: **start at the first number, then move**.
+Further left on the number line means less, and now the line is for working out: **start at the first number, then move**.
 
-Adding a positive number moves right. In this lesson you find out what adding a negative does, and what subtracting does, including subtracting a negative.
+Adding a positive number moves right. But what does adding a negative do, and what about subtracting, including subtracting a negative?
 
 ## Predict: subtracting a negative
 

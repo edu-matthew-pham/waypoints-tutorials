@@ -32,7 +32,7 @@ explainClip:
     - expect: { selector: ".patlabel", contains: "13 sticks" }
     - wait: 1200
 ---
-A **growing pattern** is a set of figures where each one adds the same amount to the one before. Number the figures 1, 2, 3, … and call the figure number $n$. In this lesson you find a **rule** that gives the number of sticks (or dots) in figure $n$, so you can work out a figure you have not drawn.
+A **growing pattern** is a set of figures where each one adds the same amount to the one before. Number the figures 1, 2, 3, … and call the figure number $n$. A **rule** that gives the number of sticks (or dots) in figure $n$ lets you work out a figure you haven't drawn, and that's what you're after here.
 
 ## Predict: Figure 10
 

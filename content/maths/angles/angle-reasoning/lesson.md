@@ -30,7 +30,7 @@ explainClip:
 ---
 You know the rules: corresponding and alternate angles are equal, co-interior angles add to $180^\circ$, and from Year 6, vertically opposite angles are equal and angles on a straight line add to $180^\circ$.
 
-Most problems need more than one rule. In this lesson you find angles **in steps**, and for each step you say which rule you used. Write your working your own way: short notes are fine. The checker marks your answer and the reason at the step that matters; you compare the rest with a model.
+Most problems need more than one rule. So you'll find angles **in steps**, and say which rule you used at each one. Write your working your own way: short notes are fine. The checker marks your answer and the reason at the step that matters; you compare the rest with a model.
 
 ## Predict: two steps
 

@@ -39,7 +39,7 @@ explainClip:
     - expect: { selector: "#legend", contains: "y = −2x + 1" }
     - wait: 1200
 ---
-A rule such as $y = 3x + 1$ gives a **straight line**: work out $y$ for each value of $x$, plot the points, and join them. Every rule of the form $y = mx + c$ gives a straight line. $m$ is the number in front of $x$, and $c$ is the number on its own. In this lesson $c$ stays at 1, and you find out what $m$ does.
+A rule such as $y = 3x + 1$ gives a **straight line**: work out $y$ for each value of $x$, plot the points, and join them. Every rule of the form $y = mx + c$ gives a straight line. $m$ is the number in front of $x$, and $c$ is the number on its own. Keep $c$ at 1 for now, and watch what $m$ does.
 
 ## Predict: a bigger m
 

@@ -29,9 +29,9 @@ explainClip:
     - expect: { selector: "#gsum", contains: "3/4 = 75/100" }
     - wait: 1200
 ---
-In Equivalent fractions you wrote one amount as different fractions. **Percent** means "out of 100", so a percentage is a fraction with 100 parts: $75\% = \tfrac{75}{100}$. A **decimal** shows tenths, hundredths and thousandths: $0.75$ is 75 hundredths.
+You've written one amount as different fractions. **Percent** means "out of 100", so a percentage is a fraction with 100 parts: $75\% = \tfrac{75}{100}$. A **decimal** shows tenths, hundredths and thousandths: $0.75$ is 75 hundredths.
 
-In this lesson you move between all three, using a hundred grid to see why they match.
+A hundred grid shows why all three match, so you can move between them.
 
 ## Predict: three quarters
 

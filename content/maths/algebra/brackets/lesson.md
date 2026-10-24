@@ -29,7 +29,7 @@ explainClip:
     - expect: { selector: ".rulework", contains: "T = 2(5 + 3) = 16" }
     - wait: 1200
 ---
-In the last lesson each sentence was written from left to right. Some sentences need more care: "add 3 to $n$, then double *the result*" doubles the whole of $n + 3$. **Brackets** group that part so it is worked out first.
+So far each sentence has been written from left to right. Some sentences need more care: "add 3 to $n$, then double *the result*" doubles the whole of $n + 3$. **Brackets** group that part so it is worked out first.
 
 ## Predict: stickers
 

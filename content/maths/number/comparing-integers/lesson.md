@@ -35,7 +35,7 @@ explainClip:
 ---
 Numbers below zero are **negative**: $-1, -2, -3$ and so on. Together with zero and the positive whole numbers they are the **integers**. On a number line, negatives sit to the left of zero, with $-1$ next to zero.
 
-In this lesson you find out how to tell which of two integers is less, and write it with $<$ ("is less than") or $>$ ("is greater than").
+So which of two integers is less, and how do you write that down? The signs are $<$ ("is less than") and $>$ ("is greater than").
 
 ## Predict: which is greater?
 

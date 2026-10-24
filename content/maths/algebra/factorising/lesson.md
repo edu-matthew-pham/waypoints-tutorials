@@ -30,7 +30,7 @@ explainClip:
 ---
 In Expanding brackets you turned $3(2x + 4)$ into $6x + 12$. **Factorising** goes the other way: from $6x + 12$ back to a bracket.
 
-In this lesson you share algebra tiles into equal rows. The number of rows goes outside the bracket, and one row goes inside.
+Factorising is sharing the tiles into equal rows: the number of rows goes outside the bracket, and one row goes inside.
 
 ## Predict: fully factorised
 
