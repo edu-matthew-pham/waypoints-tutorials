@@ -27,6 +27,12 @@
 #                    picture: marks, prices, temperatures), none (words are enough). An entry listed under two
 #                    nodes is written once and named again with `see:`.
 #
+# Deriving an entry (full rules in roadmap/maths-when-where-why.md › Deriving the library): write the move first;
+# name a person and their question; check it needs this node's move and not a neighbour's; make it checkable; with
+# no person, take step, then hood, then next, and leave entries empty rather than invent; expect "see why" nodes to
+# be empty; prefer numbers the student owns; source every stated fact, or need none; say what is hidden, never the
+# target maths; choose the picture by how you'd sketch it; reuse with see: before inventing; watch the spread.
+#
 # The one rule for fit: an entry belongs to a node when its question needs exactly that node's move, in that
 # node's direction, and nothing more. Pythagoras shows why: the shortcut across the grass needs the hypotenuse
 # (n1), the ladder needs a shorter side (n2), the 3-4-5 corner check runs the theorem backwards (n3).

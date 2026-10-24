@@ -45,7 +45,21 @@ Rules for every picture: it shows the question, not the answer (a "?" where the 
 8. *One move, one picture, one situation* the lesson returns to at the end.
 Where the shared `smaller:` field exists, a Predict that is already a move (maths, not PRIMM) may carry one lead-in that does half the move on the picture. First uses: Changing the subject (rebuilt around a bar model), then pictures on the five symbolic Predicts in Algebra (expanding, factorising, brackets, words into expressions, an expression for any case).
 
-**Status:** every Year 7 node is done, all six strands (82 nodes, 60 entries). Eleven nodes honestly have no entry: A03 n1, M01 n1, M03 n1, M04 n1, M05 n1, N02 n2, N03 n1–n2, N04 n1, SP02 n1, SP02 n3. Year 8 holds only the pilot nodes. Pilot lessons live: Finding a side (AC9M8M06 n2) and Changing the subject (AC9M8A01 n3). Pythagoras' theorem (n1) opens with the shortcut across the grass (hook only); its Make and close still need the retrofit, and the 3-4-5 corner check belongs to Right or not? (n3).
+**Deriving the library (25 Oct, from the Years 7–8 pass of 140 nodes).** Per node, in this order:
+1. *Write the move first,* one line in the node's direction from its checkpoint ("find a shorter side", not "Pythagoras"). Everything below is tested against it.
+2. *Name a person and their question,* outside a classroom, in their words ("will my ladder reach the gutter?"). No person, probably no world entry: go to 5.
+3. *Test the fit against the neighbours:* the question needs this node's move, not the one before (review) or after (not yet taught). Contexts fitted to topics instead of moves is how the 3-4-5 corner landed on the wrong Pythagoras lesson.
+4. *Make it checkable* against something real (a shelf label, a receipt, the oval, a weather app). No check usually means pseudocontext.
+5. *No person? Take the next honest reason, in order:* step (a real task contains the move), hood (it explains a tool or a shortcut), next (it builds what comes later). Leave `entries: []` rather than invent one.
+6. *Expect "see why" nodes to be empty.* All 15 empty nodes in Years 7–8 derive, define or name (the triangle formula, what irrational means, the angle sum). Their purpose is hood and next. That is a pattern, not a gap.
+7. *Prefer numbers the student already owns:* their marks, their bill, the canteen queue, their own shadow. No source needed, the check is real, and it is their question. Adult-professional contexts (a nurse's drip rate) are fine as glimpses, weaker as openings.
+8. *Every stated fact gets a source; better still, need none.*
+9. *Say what is hidden, and never hide the target maths.*
+10. *Choose the picture by how you'd sketch it:* spatial, structure, data or none.
+11. *Reuse before inventing.* A `see:` beats a new context, and one context can carry several years at rising application steps (rainwater tank: Year 8 compute, Year 9 decide what to measure, Year 10 judge the model). Years 9–10 modelling nodes should mostly revisit Years 7–8 contexts at steps 4–5.
+12. *Watch the spread.* Money and building pull hardest (consumer is the largest domain in both years); no body weight, diet or gambling; digital and robotics stay rare.
+
+**Status:** every Year 7 and Year 8 node is done, all six strands (140 nodes, 99 entries). Eleven nodes honestly have no entry: A03 n1, M01 n1, M03 n1, M04 n1, M05 n1, N02 n2, N03 n1–n2, N04 n1, SP02 n1, SP02 n3. Year 8 holds only the pilot nodes. Pilot lessons live: Finding a side (AC9M8M06 n2) and Changing the subject (AC9M8A01 n3). Pythagoras' theorem (n1) opens with the shortcut across the grass (hook only); its Make and close still need the retrofit, and the 3-4-5 corner check belongs to Right or not? (n3).
 
 **Next:** Matthew reviews the pilot; if yes, the Year 7 retrofit. Then the Years 8–10 library, node by node (the Measurement and Algebra drafts fold in there).
 
