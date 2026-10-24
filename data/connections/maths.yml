@@ -4,7 +4,7 @@
 # Nothing in the build reads this file yet. Lessons name an entry with `connection:` in the frontmatter
 # (documentation only, like moveId); the lesson text and teacher.yml sources are written by hand from it.
 #
-# Status (25 Oct 2026): every Year 7 and Year 8 node done (all six strands); Years 9–10 next
+# Status (25 Oct 2026): every Year 7, 8 and 9 node done (all six strands); Year 10 next
 # (measurement/finding-a-side and algebra/rearranging). Other strands and years: after the maths teachers' feedback.
 #
 # Two layers
@@ -2192,3 +2192,776 @@ nodes:
     entries:
       - see: canteen-sample
       - see: poll-margin
+
+  # ---------------------------------------------------------------- Year 9 Algebra
+
+  AC9M9A01 n1:
+    move: "Evaluate a negative power and explain why it is a reciprocal."
+    purpose:
+      hood: "Why 10⁻³ is a thousandth: keep dividing by 10 down the pattern 10², 10¹, 10⁰, and the powers go negative."
+      step: "Every very small measurement in science is written this way: a millimetre is 10⁻³ m, a micrometre 10⁻⁶ m."
+      next: "Scientific notation (M02), exponential decay (Year 10)."
+    entries:
+      - id: metric-small
+        kind: step
+        steps: [1, 2]
+        domain: science
+        picture: data
+        situation: "A human hair is about 0.07 mm wide and a red blood cell about 0.008 mm. How many cells fit across one hair?"
+        maths: "Write both with powers of 10 (7 × 10⁻⁵ m and 8 × 10⁻⁶ m), then divide."
+        given: "Rough sizes from a microscope or a textbook."
+        hidden: "That hair widths vary a lot between people."
+        check: "Look at both under the school microscope with a scale."
+        figures: []
+
+  AC9M9A01 n2:
+    move: "Use all the index laws, including zero and negative powers, on numbers."
+    purpose:
+      step: "The machinery inside scientific notation and growth calculations; rarely a task on its own."
+      assessed: "Tests reward one law at a time, with the bases checked first."
+    entries:
+      - see: kilo-mega-giga
+      - see: metric-small
+
+  AC9M9A01 n3:
+    move: "Use the index laws on letters."
+    purpose:
+      step: "Inside every formula with powers: area scales with length², volume with length³."
+      next: "Exponential functions (Year 10)."
+    entries:
+      - see: scale-up-monster
+
+  AC9M9A02 n1:
+    move: "Expand a product of two binomials."
+    purpose:
+      hood: "Mental shortcuts explained: 47 × 53 = (50 − 3)(50 + 3) = 2500 − 9."
+      world: "Extending a square garden bed by x metres each way: the new area is the old bed, two strips and a corner."
+    entries:
+      - id: garden-extend
+        kind: world
+        steps: [1, 2]
+        domain: environment
+        picture: spatial
+        situation: "A 4 m by 3 m garden bed is extended by x metres on both sides. What is the new area?"
+        maths: "(4 + x)(3 + x): the four pieces of the area model are the four terms."
+        given: "The bed's size."
+        hidden: "Nothing."
+        check: "Draw it to scale and count squares for x = 1."
+        figures: []
+      - id: mental-shortcut
+        kind: hood
+        steps: [1]
+        domain: school
+        picture: spatial
+        situation: "How can someone work out 47 × 53 in their head in two seconds?"
+        maths: "(50 − 3)(50 + 3) = 2500 − 9 = 2491."
+        given: "Nothing but the numbers."
+        hidden: "Nothing."
+        check: "A calculator."
+        figures: []
+
+  AC9M9A02 n2:
+    move: "See the pattern (x + a)(x + b) = x² + (a + b)x + ab and use it."
+    purpose:
+      hood: "Reading the expanded form: the middle number is a sum and the last a product, which is what factorising will run backwards."
+      next: "Factorising monic quadratics (n3)."
+    entries:
+      - see: mental-shortcut
+
+  AC9M9A02 n3:
+    move: "Factorise x² + bx + c by finding two integers with product c and sum b."
+    purpose:
+      step: "The step that solves the quadratic in 'when does the ball land?' (A04)."
+      next: "Solving quadratic equations, and graphs that cross the x-axis."
+      assessed: "Tests reward checking a factorisation by expanding it back."
+    entries: []
+
+  AC9M9A02 n4:
+    move: "Move between expanded and factorised forms, and say what each form shows."
+    purpose:
+      step: "Choosing the form that answers the question: factorised shows where a curve meets zero; expanded shows its starting value."
+      hood: "Expanding and factorising undo each other, like multiplying and dividing."
+    entries:
+      - see: ball-arc
+
+  AC9M9A03 n1:
+    move: "Find the gradient between two points as rise over run."
+    purpose:
+      world: "Roof pitch, ramp gradients and road signs are all rise over run."
+      next: "Parallel and perpendicular lines (n2)."
+    entries:
+      - see: road-gradient
+      - see: ramp-1-in-14
+
+  AC9M9A03 n2:
+    move: "Use gradients to tell whether two lines are parallel or perpendicular."
+    purpose:
+      world: "Car-park lines and floor tiles have to be parallel or at right angles, checked by gradient on the plan."
+      next: "Coordinate geometry proofs (Year 10)."
+    entries: []
+
+  AC9M9A03 n3:
+    move: "Find the distance between two points with Pythagoras."
+    purpose:
+      world: "Straight-line distance on a map grid: how far an emergency helicopter flies, as the crow flies."
+    entries:
+      - id: crow-flies
+        kind: world
+        steps: [2]
+        domain: transport
+        picture: spatial
+        situation: "A rescue helicopter flies straight from base to a farm. On the map grid the farm is 12 km east and 5 km north. How far is the flight?"
+        maths: "Distance = √(12² + 5²) = 13 km."
+        given: "A map grid with kilometre squares."
+        hidden: "Wind and the curve of the Earth (tiny at this distance)."
+        check: "A mapping app's straight-line measuring tool."
+        figures: []
+
+  AC9M9A03 n4:
+    move: "Find the midpoint of an interval."
+    purpose:
+      world: "Meeting halfway between two towns; where to put a bus stop between two schools."
+    entries:
+      - id: meet-halfway
+        kind: world
+        steps: [2]
+        domain: transport
+        picture: spatial
+        situation: "Two friends live at opposite ends of town and want to meet halfway. On the map grid, where?"
+        maths: "Average the x-coordinates and the y-coordinates."
+        given: "Both homes on a grid map."
+        hidden: "Roads: halfway by road isn't halfway in a straight line."
+        check: "Measure both distances from the midpoint."
+        figures: []
+
+  AC9M9A03 n5:
+    move: "Use gradient, midpoint and distance together in a real problem."
+    purpose:
+      world: "Planning a walking route or a sprinkler position on a scaled plan."
+      step: "The judging step: straight-line answers against real paths."
+    entries:
+      - see: crow-flies
+      - see: meet-halfway
+
+  AC9M9A04 n1:
+    move: "Recognise a quadratic from a table (constant second differences) or its equation."
+    purpose:
+      world: "Stopping distance grows faster than speed: the differences in the table aren't constant, but their differences are."
+      next: "Graphing (n2), modelling change (A05)."
+    entries:
+      - see: stopping-distance
+
+  AC9M9A04 n2:
+    move: "Graph a quadratic and read its turning point, axis of symmetry and intercepts."
+    purpose:
+      world: "A thrown ball, a water fountain's arc, a suspension cable: the turning point is the highest point."
+    entries:
+      - id: ball-arc
+        kind: world
+        steps: [2, 3, 5]
+        domain: sport
+        picture: data
+        situation: "A ball is thrown in the air. How high does it go, and when does it land?"
+        maths: "The turning point gives the highest point; the x-intercepts give when it is on the ground."
+        given: "A height formula, or points from a filmed throw."
+        hidden: "Air resistance, which the parabola leaves out (stated)."
+        check: "Film a throw and mark the ball's height frame by frame."
+        figures: []
+
+  AC9M9A04 n3:
+    move: "Solve a monic quadratic equation by factorising and the null factor law."
+    purpose:
+      step: "The step that answers 'when does it land?': set the height to zero and factorise."
+      assessed: "Tests reward both solutions, and saying which makes sense in context."
+    entries:
+      - see: ball-arc
+
+  AC9M9A04 n4:
+    move: "Solve a quadratic three ways (algebra, graph, table) and connect them."
+    purpose:
+      hood: "The x-intercepts, the factors and the zeros in the table are the same two numbers seen three ways."
+    entries:
+      - see: ball-arc
+
+  AC9M9A05 n1:
+    move: "Decide whether a change is better modelled as linear or quadratic, and justify it."
+    purpose:
+      world: "Is stopping distance linear in speed? The data says no, and that matters for speed limits."
+    entries:
+      - id: stopping-distance
+        kind: world
+        steps: [3, 4, 5]
+        domain: transport
+        picture: data
+        situation: "Why does 60 km/h take so much longer to stop than 50 km/h, when it is only 10 km/h faster?"
+        maths: "Reaction distance grows in step with speed (linear); braking distance with speed squared (quadratic). Test both against the published distances."
+        given: "Published stopping distances at several speeds."
+        hidden: "Road surface, tyres and the driver; judging those is step 5."
+        check: "The published table."
+        figures:
+          - claim: "Typical stopping distances on a reasonable road surface: about 37 m at 50 km/h and 56 m at 60 km/h."
+            source: { title: "Speeding (Transport for NSW)", url: "https://www.transport.nsw.gov.au/roadsafety/topics-tips/speeding", checked: 2026-10-25 }
+
+  AC9M9A05 n2:
+    move: "Solve the model and say what the answer means for the situation."
+    purpose:
+      world: "From the stopping-distance model: how far does a car travel before stopping at 70 km/h?"
+    entries:
+      - see: stopping-distance
+      - id: tank-drain
+        kind: world
+        steps: [4, 5]
+        domain: science
+        picture: data
+        situation: "Water drains from a bucket with a hole in it. Is the height dropping steadily, or slowing down?"
+        maths: "Collect height against time, then compare a linear and a quadratic model."
+        given: "A bucket, a hole and a timer."
+        hidden: "The physics of why it slows."
+        check: "Time how long it really takes to empty."
+        figures: []
+
+  AC9M9A05 n3:
+    move: "Evaluate the model's limits and report how you got the answer."
+    purpose:
+      world: "Every model leaves something out; the report says what, and where the model stops working."
+      assessed: "Modelling tasks are marked on the evaluation as much as the answer."
+    entries:
+      - see: stopping-distance
+      - see: tank-drain
+
+  AC9M9A06 n1:
+    move: "Vary a and b in y = ax + b and say what each does to the line."
+    purpose:
+      world: "Change the fixed fee or the rate of a phone plan and watch the line move."
+    entries:
+      - see: plans-cross
+
+  AC9M9A06 n2:
+    move: "Vary a, h and k in y = a(x − h)² + k and say what each does to the parabola."
+    purpose:
+      world: "Suspension bridge cables under an even load hang close to a parabola; engineers choose its shape with these parameters."
+      hood: "Turning-point form says where the highest or lowest point is without any working."
+    entries:
+      - see: ball-arc
+
+  AC9M9A06 n3:
+    move: "Apply parameter variation to another function family."
+    purpose:
+      next: "Exponential and other function families (Year 10)."
+    entries: []
+
+  # ---------------------------------------------------------------- Year 9 Measurement
+
+  AC9M9M01 n1:
+    move: "Find the surface area of a prism or cylinder from its net."
+    purpose:
+      world: "How much cardboard, paint or label: surface area is the material, not the space inside."
+    entries:
+      - id: can-label
+        kind: world
+        steps: [2]
+        domain: design
+        picture: spatial
+        situation: "How big is the paper label on a can of tomatoes?"
+        maths: "Unroll the curved surface: a rectangle, the circumference by the height."
+        given: "A real can."
+        hidden: "The overlap where the label is glued."
+        check: "Peel off a label and measure it."
+        figures: []
+
+  AC9M9M01 n2:
+    move: "Find the volume of a prism or cylinder with V = Ah."
+    purpose:
+      world: "Water tanks, drink cans and pipes are cylinders; how much they hold is V = Ah."
+    entries:
+      - see: rainwater-tank
+
+  AC9M9M01 n3:
+    move: "Choose surface area or volume to solve a practical problem."
+    purpose:
+      world: "Which can shape holds the most for the least metal? Why don't real cans use it?"
+      step: "The judging step: stacking, labels and hands beat the optimal shape."
+    entries:
+      - id: can-design
+        kind: world
+        steps: [3, 4, 5]
+        domain: design
+        picture: data
+        situation: "A drinks company wants a can that holds 375 mL with as little metal as possible. What shape is best, and why don't real cans look like that?"
+        maths: "Fix the volume, vary the radius, and compare surface areas in a table."
+        given: "The volume."
+        hidden: "Stacking, labels and how a can fits in a hand: discussing them is the point."
+        check: "Measure real cans."
+        figures: []
+
+  AC9M9M02 n1:
+    move: "Convert between ordinary numbers and scientific notation."
+    purpose:
+      world: "Distances to stars, the size of a virus, a country's budget: numbers too big or small to read with zeros."
+    entries:
+      - id: sunlight-time
+        kind: world
+        steps: [1, 2]
+        domain: science
+        picture: none
+        situation: "Sunlight takes about 8 minutes and 20 seconds to reach Earth. How far away is the Sun?"
+        maths: "Distance = speed of light × time, both in scientific notation."
+        given: "The speed of light (3 × 10⁸ m/s) and the time."
+        hidden: "That Earth's distance from the Sun changes slightly over the year."
+        check: "The known distance, about 1.5 × 10¹¹ m."
+        figures:
+          - claim: "Light takes about 8 minutes and 20 seconds to travel from the Sun to Earth."
+            source: { title: "How long does it take light from the Sun to get to Earth? (Smithsonian National Air and Space Museum)", url: "https://howthingsfly.si.edu/ask-an-explainer/how-long-does-it-take-light-sun-get-earth", checked: 2026-10-25 }
+
+  AC9M9M02 n2:
+    move: "Calculate with numbers in scientific notation using the index laws."
+    purpose:
+      step: "The index laws at work: multiply the front numbers, add the powers."
+    entries:
+      - see: sunlight-time
+      - see: metric-small
+
+  AC9M9M02 n3:
+    move: "Use scientific notation to solve problems with very large or small measurements."
+    purpose:
+      world: "Medicine doses in micrograms, where a slip of 1000 is dangerous; data storage; distances in space."
+    entries:
+      - id: microgram-dose
+        kind: world
+        steps: [2, 3]
+        domain: health
+        picture: none
+        situation: "A medicine label gives the dose in micrograms, and the doctor's note in milligrams. Are they the same dose?"
+        maths: "1 mg = 1000 µg = 10³ µg: convert with powers of 10."
+        given: "A label and a note."
+        hidden: "The medicine itself."
+        check: "The label's own conversion line."
+        figures: []
+
+  AC9M9M03 n1:
+    move: "Use sine, cosine or tangent to find an unknown side."
+    purpose:
+      world: "Measuring a tree's or building's height from the ground: an angle and a distance give the height."
+    entries:
+      - id: tree-height
+        kind: world
+        steps: [2, 4]
+        domain: environment
+        picture: spatial
+        situation: "How tall is the tallest tree on the school grounds? Walk back a measured distance and measure the angle up to the top."
+        maths: "height = distance × tan(angle), plus your eye height."
+        given: "A clinometer (or a phone app) and a tape measure."
+        hidden: "Ground that slopes."
+        check: "Compare with the shadow method from Year 8."
+        figures: []
+
+  AC9M9M03 n2:
+    move: "Use the inverse ratios to find an unknown angle."
+    purpose:
+      world: "What angle is a 1 in 14 ramp? A roof pitch from its rise and run? The angle a ladder makes?"
+    entries:
+      - see: ramp-1-in-14
+      - see: ladder-1-in-4
+
+  AC9M9M03 n3:
+    move: "Use similarity and scale factors in triangles, including for areas."
+    purpose:
+      world: "Plans and shadows: a scale drawing's triangles are similar to the real ones."
+    entries:
+      - see: shadow-height
+
+  AC9M9M03 n4:
+    move: "Combine Pythagoras, trigonometry and similarity in one problem."
+    purpose:
+      world: "Designing a ramp to a door: the rise, the length and the angle together."
+      step: "Choosing which tool fits each part of the problem."
+    entries:
+      - see: ramp-1-in-14
+
+  AC9M9M04 n1:
+    move: "Explain why every measurement is an estimate, and give its lower and upper bounds."
+    purpose:
+      world: "A part specified as 20 mm ± 0.05 mm: does the measured part pass?"
+    entries:
+      - id: part-tolerance
+        kind: world
+        steps: [2, 3]
+        domain: design
+        picture: data
+        situation: "A bolt hole must be 20 mm, give or take 0.05 mm. A measured hole is 20.04 mm. Does it pass?"
+        maths: "Bounds 19.95 to 20.05 mm; 20.04 is inside."
+        given: "The drawing's tolerance."
+        hidden: "The ruler's own error (n2)."
+        check: "Measure a real bolt with vernier calipers."
+        figures: []
+
+  AC9M9M04 n2:
+    move: "Calculate absolute and relative error and say which matters."
+    purpose:
+      world: "A 1 cm error on a 10 cm cut is a disaster; on a 10 m wall it doesn't matter."
+    entries:
+      - see: part-tolerance
+
+  AC9M9M04 n3:
+    move: "Calculate percentage error and interpret it."
+    purpose:
+      world: "Sports timing: when two runners finish within the timer's error, is either the winner?"
+    entries:
+      - id: photo-finish
+        kind: world
+        steps: [3, 5]
+        domain: sport
+        picture: data
+        situation: "Two swimmers' times differ by a hundredth of a second. The timer is accurate to a thousandth. Is the result real?"
+        maths: "Compare the difference with the measurement error, as a percentage of the time."
+        given: "The two times and the timer's accuracy."
+        hidden: "Touch-pad response time."
+        check: "Photo-finish examples from real races."
+        figures: []
+
+  AC9M9M05 n1:
+    move: "Recognise direct proportion or a rate in a situation and set up the model."
+    purpose:
+      world: "Planning a walk: map scale for the distance, a rate for the time."
+    entries:
+      - id: bushwalk-time
+        kind: world
+        steps: [3, 4, 5]
+        domain: sport
+        picture: data
+        situation: "How long will the walk to the lookout take? The map gives the distance and the climb."
+        maths: "Naismith's rule: about 5 km/h on the flat plus an hour for every 600 m of climb."
+        given: "A topographic map and the rule."
+        hidden: "Fitness, packs, heat and rough track; judging them is the point."
+        check: "The park's own guide time, and the real walk."
+        figures:
+          - claim: "Naismith's rule: about 5 km/h on level ground, plus 1 hour for every 600 m of ascent."
+            source: { title: "FAQ: Navigation (bushwalk.com)", url: "https://faq.bushwalk.com/FAQ_Navigation.htm", checked: 2026-10-25 }
+
+  AC9M9M05 n2:
+    move: "Solve the proportion or rate model and say what it means."
+    purpose:
+      world: "The walk takes about 3 hours by the rule: when do we need to leave to be back before dark?"
+    entries:
+      - see: bushwalk-time
+      - id: currency-fees
+        kind: world
+        steps: [2, 3]
+        domain: consumer
+        picture: data
+        situation: "Paying for a holiday overseas: cash exchanged at the airport, or the card with a fee? Which costs less?"
+        maths: "The exchange rate as a rate, the fee as a percentage; compare the two totals."
+        given: "A bank's published rates and fees."
+        hidden: "Rates that change daily."
+        check: "A real receipt."
+        figures: []
+
+  AC9M9M05 n3:
+    move: "Evaluate the proportion or rate model's limits and report."
+    purpose:
+      world: "Naismith's rule is for fit walkers on good tracks; a Year 9 group with packs needs a different rate."
+    entries:
+      - see: bushwalk-time
+
+  # ---------------------------------------------------------------- Year 9 Number
+
+  AC9M9N01 n1:
+    move: "Sort numbers into natural, integer, rational and irrational, and explain the nesting."
+    purpose:
+      hood: "Why there is always a bigger family: each one is invented to answer a question the last couldn't (subtract, divide, square root)."
+    entries: []
+
+  AC9M9N01 n2:
+    move: "Tell an exact value (√2, π) from a decimal approximation, and know when each is needed."
+    purpose:
+      world: "A carpenter cuts to 1.41 m; a calculator keeps √2; a design drawing writes √2 to stay exact."
+      hood: "Why rounding early in a calculation leaves you slightly wrong at the end."
+    entries:
+      - see: square-patch
+
+  AC9M9N01 n3:
+    move: "Place real numbers on the number line and show an inequality's solution as an interval."
+    purpose:
+      world: "A tolerance (19.95 to 20.05 mm) and a safe range are intervals on the number line."
+    entries:
+      - see: part-tolerance
+
+  AC9M9N01 n4:
+    move: "Substitute real numbers, including irrationals, into formulas, and give exact or rounded answers."
+    purpose:
+      world: "Circle areas and diagonals come out irrational; the job decides whether you keep π or round."
+    entries:
+      - see: pizza-value
+
+  # ---------------------------------------------------------------- Year 9 Probability
+
+  AC9M9P01 n1:
+    move: "List every outcome of a two-step event systematically."
+    purpose:
+      world: "Meal deals, outfits, a two-question survey: listing every combination so none is missed."
+    entries:
+      - id: meal-deal
+        kind: world
+        steps: [2]
+        domain: consumer
+        picture: structure
+        situation: "A canteen meal deal is a main and a drink: 4 mains, 3 drinks. How many different deals are there?"
+        maths: "A table or tree lists all 4 × 3 = 12."
+        given: "The menu."
+        hidden: "Items that run out."
+        check: "List them on the canteen board."
+        figures: []
+
+  AC9M9P01 n2:
+    move: "Explain how replacing or not replacing changes the outcomes and their probabilities."
+    purpose:
+      world: "Drawing names for a class job: once your name's out, it can't come out again."
+    entries:
+      - id: name-draw
+        kind: world
+        steps: [2, 3]
+        domain: school
+        picture: structure
+        situation: "Two names are drawn from a hat of 25 for the class jobs. What's the chance both come from your table of 5?"
+        maths: "5/25 then 4/24, because the first name stays out."
+        given: "The class list."
+        hidden: "Nothing."
+        check: "Simulate it with paper slips."
+        figures: []
+
+  AC9M9P01 n3:
+    move: "Assign probabilities to every outcome of a compound event and check they add to 1."
+    purpose:
+      step: "The habit that catches an outcome left out."
+    entries:
+      - see: name-draw
+
+  AC9M9P02 n1:
+    move: "Use relative frequencies from data to estimate probabilities, including compound ones."
+    purpose:
+      world: "How often is the 8:05 bus late? Last term's record is the estimate."
+    entries:
+      - see: bus-lateness
+
+  AC9M9P02 n2:
+    move: "Tell 'and', inclusive 'or' and exclusive 'or' apart, with Venn diagrams."
+    purpose:
+      world: "'Plays sport or music': does that include students who do both? Surveys and forms depend on it."
+    entries:
+      - see: survey-two-way
+
+  AC9M9P02 n3:
+    move: "Estimate compound probabilities from data and use them to predict."
+    purpose:
+      world: "From a term of records: the chance the bus is late and it rains on the same day."
+    entries:
+      - see: bus-lateness
+
+  AC9M9P03 n1:
+    move: "Design a chance experiment or simulation for a simple and a compound event."
+    purpose:
+      world: "When the real thing is slow or impossible to repeat (a season, a tournament), you simulate it."
+    entries:
+      - see: penalty-shootout
+
+  AC9M9P03 n2:
+    move: "Run it with digital tools and compare simple and compound results."
+    purpose:
+      step: "The simulation habit used in science, engineering and finance."
+    entries:
+      - see: penalty-shootout
+
+  AC9M9P03 n3:
+    move: "Describe the results, compare with theory and explain the differences."
+    purpose:
+      world: "Why a season's real results differ from the simulation: small samples, and a model that leaves things out."
+    entries:
+      - see: few-reviews
+
+  # ---------------------------------------------------------------- Year 9 Space
+
+  AC9M9SP01 n1:
+    move: "Name the hypotenuse, opposite and adjacent sides for a given angle."
+    purpose:
+      hood: "The names depend on which angle you stand at; the same side can be opposite or adjacent."
+      next: "The trig ratios (n3) and every trig problem."
+    entries: []
+
+  AC9M9SP01 n2:
+    move: "Explain, from similarity, why the ratio of two sides is fixed for a given angle."
+    purpose:
+      hood: "Why trig works at all: every right-angled triangle with the same angle is a scaled copy."
+    entries:
+      - see: shadow-height
+
+  AC9M9SP01 n3:
+    move: "Name sine, cosine and tangent and match each to its pair of sides."
+    purpose:
+      step: "The naming that lets a calculator do the similar-triangle work."
+      next: "Trigonometry in problems (M03)."
+    entries:
+      - see: tree-height
+
+  AC9M9SP02 n1:
+    move: "Say what an enlargement keeps (angles, shape) and what it changes (lengths, area)."
+    purpose:
+      world: "Enlarging a photo or a poster: the shape stays, the size changes."
+    entries:
+      - see: screen-ratio
+
+  AC9M9SP02 n2:
+    move: "Use scale factor k for length, k² for area and k³ for volume."
+    purpose:
+      world: "Why a giant movie monster couldn't stand up: scale it by 10 and its weight grows 1000 times but its legs' strength only 100."
+      hood: "Why small animals lose heat fast and elephants have big ears: surface area against volume."
+    entries:
+      - id: scale-up-monster
+        kind: world
+        steps: [3, 5]
+        domain: science
+        picture: spatial
+        situation: "A movie monster is a lizard made 10 times bigger. Could its legs hold it up?"
+        maths: "Length × 10, cross-section (strength) × 100, volume (weight) × 1000."
+        given: "The scale factor."
+        hidden: "Real anatomy (use cubes as a model)."
+        check: "Compare the leg thickness of a deer and an elephant."
+        figures: []
+
+  AC9M9SP03 n1:
+    move: "Write a geometric process as an algorithm in pseudocode or a flowchart."
+    purpose:
+      world: "Instructions for a laser cutter, a robot or a drawing program: geometry as steps."
+      step: "The same move as the Year 7 and 8 classifying algorithms, now for a construction."
+    entries:
+      - see: field-guide-key
+
+  AC9M9SP03 n2:
+    move: "Test the algorithm with inputs and find where it fails."
+    purpose:
+      step: "Testing with awkward cases, as every program is tested."
+    entries:
+      - see: field-guide-key
+
+  AC9M9SP03 n3:
+    move: "Refine the algorithm from the tests and explain what changed."
+    purpose:
+      step: "Fix, retest, explain: how software and designs improve."
+    entries: []
+
+  # ---------------------------------------------------------------- Year 9 Statistics
+
+  AC9M9ST01 n1:
+    move: "Find in a survey report how the data was obtained, and say how that could affect the result."
+    purpose:
+      world: "Every news poll: who was asked, how, and who wasn't."
+    entries:
+      - see: fan-poll
+
+  AC9M9ST01 n2:
+    move: "Evaluate a claim about a mean or median by going back to how the data was collected."
+    purpose:
+      world: "'The average student spends 4 hours a day on screens': averaged how, from whom?"
+    entries:
+      - see: median-house-price
+      - id: screen-time-claim
+        kind: world
+        steps: [3, 5]
+        domain: school
+        picture: data
+        situation: "A headline says teenagers spend an average of 6 hours a day on screens. Should you believe it?"
+        maths: "Ask how it was measured (self-report or app data), who was asked, and whether mean or median was used."
+        given: "The report behind the headline."
+        hidden: "Nothing: finding what was hidden is the task."
+        check: "Your class's own screen-time data, collected the same way."
+        figures: []
+
+  AC9M9ST02 n1:
+    move: "Show how two sampling methods give different results from the same population."
+    purpose:
+      world: "Asking at the library and asking at the sports field give different answers about the same school."
+    entries:
+      - see: canteen-sample
+
+  AC9M9ST02 n2:
+    move: "Spot how a display's choices support a point of view."
+    purpose:
+      world: "A graph whose axis starts at 90 makes a small change look huge; advertising and politics use it."
+    entries:
+      - id: cut-axis
+        kind: world
+        steps: [3, 5]
+        domain: consumer
+        picture: data
+        situation: "An ad's bar chart shows its brand's battery lasting twice as long as the rival's. Does it?"
+        maths: "Check where the vertical axis starts; redraw from zero."
+        given: "The ad's chart."
+        hidden: "Nothing: the trick is the point."
+        check: "Redraw it with the axis at zero."
+        figures: []
+
+  AC9M9ST03 n1:
+    move: "Describe a distribution's shape: symmetric or skewed, and which way."
+    purpose:
+      world: "Incomes, house prices and waiting times are skewed: a few large values pull the tail."
+    entries:
+      - see: median-house-price
+
+  AC9M9ST03 n2:
+    move: "Show two or more data sets on the same kind of comparative display."
+    purpose:
+      world: "Back-to-back stem plots or side-by-side boxplots: the same scale, so the comparison is fair."
+    entries:
+      - see: bus-lateness
+
+  AC9M9ST03 n3:
+    move: "Compare distributions by centre, spread, shape and outliers."
+    purpose:
+      world: "Which battery brand lasts longer and more reliably? Average and spread both matter."
+    entries:
+      - see: bus-lateness
+
+  AC9M9ST04 n1:
+    move: "Match the display to the type of data."
+    purpose:
+      world: "A pie for parts of a whole, a line for change over time, a histogram for continuous measurements."
+    entries: []
+
+  AC9M9ST04 n2:
+    move: "Justify the display for its purpose and audience, and read it in context."
+    purpose:
+      world: "The canteen report for the principal and the poster for students need different graphs."
+    entries:
+      - see: canteen-queue
+
+  AC9M9ST05 n1:
+    move: "Pose a statistical question and plan how to collect the data."
+    purpose:
+      world: "Is the school's recycling working? A question the school can act on."
+      step: "The planning habit behind every investigation."
+    entries:
+      - id: recycling-audit
+        kind: world
+        steps: [4, 5]
+        domain: environment
+        picture: data
+        situation: "How much of what goes in the school's recycling bins is actually recyclable?"
+        maths: "Plan a sample of bins and days, sort and weigh, compare categories."
+        given: "Gloves, scales and the council's list of what is recyclable."
+        hidden: "Days with events that skew the bins."
+        check: "Repeat a week later."
+        figures: []
+
+  AC9M9ST05 n2:
+    move: "Collect or access the data and analyse it with suitable displays and statistics."
+    purpose:
+      world: "Turning a week of bin audits into a clear picture for the school."
+    entries:
+      - see: recycling-audit
+
+  AC9M9ST05 n3:
+    move: "Report the findings and say how strong the evidence is."
+    purpose:
+      world: "The report that changes something: what we found, how sure we are, what to do."
+      assessed: "Investigations are marked on whether the evidence supports the conclusion."
+    entries:
+      - see: recycling-audit
