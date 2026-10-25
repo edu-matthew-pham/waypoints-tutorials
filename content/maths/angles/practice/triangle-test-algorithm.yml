@@ -1,0 +1,20 @@
+# Practice for "Writing a geometry rule as an algorithm".
+templates:
+  - q: "Strips of length {a}, {b} and {c} (made up). What is the sum of the two shorter strips?"
+    vars: { a: "3..9", b: "3..9", c: "10..14" }
+    answer: "{a + b}"
+    feedback:
+      - ["{a + b + c}", "Leave out the longest strip, {c}."]
+    explain: "The longest is {c}, so S = {a} + {b} = {a + b}."
+  - q: "Strips {a}, {b} and {c}. By how much does the sum of the two shorter strips exceed the longest? (Negative if it falls short.)"
+    vars: { a: "3..9", b: "3..9", c: "10..16" }
+    answer: "{a + b - c}"
+    explain: "S − L = {a} + {b} − {c} = {a + b - c}."
+  - q: "{s} Is this a computation or a decision?"
+    cases:
+      - { s: "Find the longest of the three lengths.", k: "A computation", w: "A decision", e: "It produces a value; there is no branch." }
+      - { s: "If S is greater than L, say triangle; otherwise say no triangle.", k: "A decision", w: "A computation", e: "It chooses between two outputs." }
+      - { s: "Add the two shorter lengths.", k: "A computation", w: "A decision", e: "It produces a value." }
+      - { s: "Is the angle a right angle? If yes go to step 5, if no go to step 7.", k: "A decision", w: "A computation", e: "It branches." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"

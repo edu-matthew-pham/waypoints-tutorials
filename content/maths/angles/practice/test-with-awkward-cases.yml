@@ -1,0 +1,15 @@
+# Practice for "Testing an algorithm".
+templates:
+  - q: "A checker says triangle if S >= L. Strips {a}, {b} and {c}. What is S minus L? (S is the sum of the two shorter strips.)"
+    vars: { a: "3..9", b: "3..9", c: "7..16" }
+    answer: "{a + b - c}"
+    explain: "{a} + {b} − {c} = {a + b - c}."
+  - q: "{s} What kind of test case is it?"
+    cases:
+      - { s: "Strips 3, 4 and 5.", k: "Typical", w: "Boundary", e: "Far from the edge of the rule." }
+      - { s: "Strips 3, 4 and 7.", k: "Boundary", w: "Typical", e: "S equals L: exactly on the edge." }
+      - { s: "Strips 0, 4 and 4.", k: "Odd input", w: "Typical", e: "A zero length is not an ordinary strip." }
+      - { s: "Strips 5, 5 and 5.", k: "Typical", w: "Boundary", e: "An ordinary equilateral set." }
+      - { s: "Strips 2, 3 and 5.", k: "Boundary", w: "Typical", e: "S equals L." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"

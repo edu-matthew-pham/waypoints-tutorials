@@ -1,0 +1,30 @@
+summary: "An algorithm is a list of steps with decisions. Write the rule for whether three strips can make a triangle as steps, and mark which are computations and which are decisions."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can write a geometry rule as numbered steps."
+  - "I can say which steps compute and which decide."
+  - "I can follow an algorithm on a set of inputs."
+struggle: "Writing vague steps like \"check the strips\". Ask: what exactly does a machine compute, and what does it compare?"
+before: |
+  Students need triangles and the Year 7 and 8 classifying algorithms.
+
+  The one idea: an algorithm is exact steps, some computing, some deciding. Pseudocode is used here; a flowchart is a drawing of the same steps (a diamond for each decision). Lengths are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student writes \"check the lengths\"."
+    ask: "Which two numbers does the machine compare?"
+    fix: "Name the numbers and the comparison."
+stretch: "Write the same algorithm as a flowchart, then as pseudocode with a loop that tests a list of strip sets."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9SP03 node 1.
+
+  Where it leads: testing with awkward cases (next).
+exit:
+  q: "Is \"find the longest\" a computation or a decision?"
+  a: "A computation."
+explain: |
+  An algorithm is exact steps. Computation steps find a value and decision steps choose a path.

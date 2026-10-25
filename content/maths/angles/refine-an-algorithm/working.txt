@@ -1,0 +1,7 @@
+# Mia's working for the "find the mistake" task. Plain text.
+
+# region: mia
+The triangle check passes for 4, 5 and 6, so I compare the squares.
+I take L as the shortest side, 4, so L squared is 16 and the others add to 25 + 36 = 61.
+16 is less than 61, so the triangle is acute.
+# endregion

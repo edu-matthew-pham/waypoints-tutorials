@@ -1,0 +1,7 @@
+# Lena's working for the "find the mistake" task. Plain text.
+
+# region: lena
+Read the three lengths a, b and c.
+Add a and b. If a + b is greater than c, say triangle.
+Otherwise say no triangle.
+# endregion

@@ -13,6 +13,7 @@ units:
   - { id: congruence, title: Congruence and similarity, summary: "Year 8: the tests that make triangles congruent, similar shapes and scale factors, and proving and using properties of quadrilaterals." }
   - { id: enlarge9, title: Enlargement, summary: "What an enlargement keeps (angles and shape) and what it changes (lengths, area and volume), and the scale factors k, k² and k³ (Year 9)." }
   - { id: algorithms, title: Algorithms, summary: "Writing a clear set of steps to sort shapes into classes, and (Year 8) to decide whether two triangles are congruent, similar or neither." }
+  - { id: algorithms9, title: "Year 9: geometric algorithms", summary: "Writing a geometry rule as an algorithm, testing it with typical, boundary and odd cases, and refining it from the tests (Year 9)." }
   - { id: networks, title: Networks, summary: "Year 10: nodes, edges and degree, drawing a network without distances, whether every street can be driven once, and Euler's rule for solids." }
   - { id: proof10, title: "Year 10: proof", summary: "Telling a demonstration from a proof, writing a proof with a reason for every statement, and choosing the theorem that fits a problem." }
 ---

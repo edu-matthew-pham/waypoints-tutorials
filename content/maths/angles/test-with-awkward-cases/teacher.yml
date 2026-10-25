@@ -1,0 +1,30 @@
+summary: "Good tests include the boundary and the strange cases, not just easy ones. Test the triangle checker on a set of inputs and find where it gives the wrong answer."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can test an algorithm with a set of cases."
+  - "I can name typical, boundary and odd inputs."
+  - "I can find where an algorithm fails."
+struggle: "Testing only easy cases. Ask: what is the closest case to the edge of the rule?"
+before: |
+  Students need the last lesson.
+
+  The one idea: algorithms break at the edges, so tests must include boundary and odd cases. The S >= L fault is deliberate. Lengths are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says all the tests pass."
+    ask: "Did you try S equal to L?"
+    fix: "Add the boundary."
+stretch: "Design a test set of five cases that finds every fault in a checker."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Continues AC9M9SP03 node 2.
+
+  Where it leads: refining the algorithm (next).
+exit:
+  q: "Name a boundary case for \"S greater than L\"."
+  a: "S equal to L, such as 3, 4, 7."
+explain: |
+  Test with typical, boundary and odd cases. A fault is usually at the edge.

@@ -1,0 +1,30 @@
+summary: "Fix the failed tests with a smaller change, retest, and say what changed and why. Then extend the algorithm to say whether the triangle has a right, acute or obtuse angle."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can refine an algorithm from tests."
+  - "I can explain what changed and why."
+  - "I can extend an algorithm with a new decision."
+struggle: "Changing everything at once. Ask: what is the smallest change that fixes the failed case?"
+before: |
+  Students need the last two lessons and Pythagoras (Year 8).
+
+  The one idea: fix with a small change, retest everything, and explain. The right/acute/obtuse test is the converse of Pythagoras and its extension. Lengths are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student rewrites the algorithm."
+    ask: "Which single comparison caused the fault?"
+    fix: "Change one thing and retest."
+stretch: "Write the algorithm in pseudocode with a loop that tests a list of strip sets and prints a verdict for each."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9SP03 node 3.
+
+  Where it leads: Year 10 proof and trigonometry.
+exit:
+  q: "After a fix, what do you do before saying it works?"
+  a: "Retest the old cases."
+explain: |
+  Fix the fault with a small change, retest, and explain what changed and why.

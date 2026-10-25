@@ -1,0 +1,14 @@
+# Practice for "Refine it and explain the change".
+templates:
+  - q: "Strips {a}, {b} and {c} (the longest is {c}). What is {c}² minus ({a}² + {b}²)?"
+    vars: { a: "3..8", b: "3..8", c: "9..13" }
+    answer: "{c * c - a * a - b * b}"
+    explain: "{c * c} − ({a * a} + {b * b}) = {c * c - a * a - b * b}."
+  - q: "L² minus the sum of the other squares is {d}. What kind of triangle is it?"
+    cases:
+      - { d: "−7", k: "Acute", w: "Obtuse", e: "A negative difference means acute." }
+      - { d: "0", k: "Right", w: "Acute", e: "Zero is the Pythagoras case." }
+      - { d: "12", k: "Obtuse", w: "Acute", e: "A positive difference means obtuse." }
+      - { d: "−20", k: "Acute", w: "Right", e: "Negative means acute." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"
