@@ -2,6 +2,58 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## State of play (26 Oct 2026)
+
+Audit chat, 26 Oct, against `main` at 46e271f and gh-pages ("Site build from d47854a", 25 Oct 15:18 UTC). Counts are `lesson.md` files (courses = folders with an `index.md`).
+
+### By subject
+
+| Subject | Built and live | Only planned or proposed | Stale status fixed today |
+|---|---|---|---|
+| Maths | 250 lessons, 8 courses: Years 7–10 complete (Year 9 and 10 batches, Years 7–8 audit pass, connections, practice for every lesson) | Before Year 7 catch-up (Project doc before-year-7-plan, waiting for "go"); Years 8–10 connections library growth | maths.md: "not yet published" on the audit status, Year 9 heading and batch lines (all published 26 Oct) |
+| Science | 115 lessons, 15 courses: Years 7–10 every standard, hints Years 7–10, lead-in pilots | Practice pages and combining questions for Years 8–10; practical companion lessons (pilot); populations engine | science.md: hints/lead-ins heading (was "Proposed; not built"), practical previews (teacher list built), prerequisite checks, engines plan |
+| Code | 221 lessons, 26 courses incl. SQL (11, new 25 Oct), project briefs with hints, typical years | Arcade multiplayer over radio; benchmark clips for briefs; Node.js parked | code.md: SQL "proposed, not built"; Web pathway after the DOM "not built" |
+| How computers work | 70 lessons, 13 courses incl. Starting out, System admin on a Pi, Security lab; 12 project briefs | CTF scoreboard; trial Packets/Passwords against explicit shape | systems.md: briefs heading (was "first batch and proposed") |
+| Engineering | 46 lessons, 10 courses; `smaller:` lead-ins on 27 lessons; Arduino and capstone thinking pass | OpenSCAD (proposed, not approved); Python gear loop; 3D and animation parked | none needed |
+| Learning with AI | 57 lessons, 5 courses; staff course *AI and your tasks* (Teachers, 13 lessons with Make a lesson) | Contextual courses (Maths, Science, Writing, Coding) not started; dated vendor table | learning-with-ai.md: "Courses as built" listed 2 of 5 |
+| ICT skills | Live: Working with data (9) and Documents and slides (9), 16 cards. On main only: Files and systems (4 lessons, 6 cards) and swappable context in data lessons 1–6 and 9 | Investigating and judging information; Staying safe and well (plans only, need approval); `files` widget | ict.md: Files listed as still to propose; "none built" heading |
+| Shared | Navigation and search, Make your own version, project briefs, `smaller:`, diagrams, curriculum pointers | Boards catalogue and thin core; lesson position label; teacher.yml out of the clip hash; curriculum maps beyond 7–10; Kit tutorial format | shared.md: progression data/node check, coach prompt, reasoning checks, Create decisions, benchmark heading, navigation "not yet published" |
+
+### On main but not live
+
+`node tools/changed-lessons.mjs --live` picks up 11 lessons in 2 courses (`ict/data`: 7, `ict/files`: 4) and warns that shared files changed. Everything else is outside content/ and needs a whole-site build:
+- My path (`/my-path/`, `site/my-path.js`, "Add to my path" in every lesson footer and on search results).
+- Swappable context (`tools/context-core.mjs`, `lesson-core.mjs`, `lesson.mjs`, `check-context`; Create via `build-create.mjs`).
+- ICT subject page and Teachers pages (`content/ict/index.md` adds the Files pathway, `ict-teachers.md`, `teachers/index.md`), `misconceptions.json`, `search-index.mjs`.
+
+Recommended: **one whole-site publish** (Quick publish is enough: ICT lessons have no clips and nothing changed touches a clip hash; use the full publish if you want the usual route). publish-lessons alone would put the 11 ICT lessons up without the Files pathway on the subject page or My path; publish-navigation/create does not cover lesson pages. After it, spot-check `/ict/`, `/ict/files/`, `/my-path/` and one ICT data lesson.
+
+### Not yet tried with a class
+
+No course on the site is recorded as tried with a class. Flagged explicitly in the roadmaps: maths Algebra pilot (not run), Years 9–10 and the Years 7–8 pass; science Years 8–10 (drafted 9–11 Oct) and all new hints and lead-ins; Code extension courses and every MakeCode lesson against the live editor and real hardware (Watch-then-PRIMM pilot too); How computers work class plans, Starting out, System admin (real-Pi path untested), Security lab, briefs; Engineering lead-ins and capstones; all five AI courses and the staff course (pilot lessons 1–2 in a staff meeting); ICT Working with data, Documents and slides, Files and systems (colleague pilots).
+
+### Project docs that say something different from the repo (reported only, not edited)
+
+- `arcade-sequence`, `microbit-sequence`, `console-sequence`: say built "not yet published" or "needs a full publish"; all live now. `microbit-sequence` still titled "draft 2".
+- `turtle-sequence-status`: says both courses are one folder `content/code/python`, nothing live, class plans missing for A3–A11 and B1. Now two folders (`python-foundations`, `python-functions`), live, class plans exist for A2–A11 and B1.
+- `digital-systems-plan`: "ten courses"; lists the Raspberry Pi unit and Years 5–6 as not built and the subject name as open. Now 13 courses (System admin on a Pi, Security lab, Starting out built 25 Oct), name decided (How computers work), 12 project briefs.
+- `ict-files-systems-plan`: "plan only, not built, still needs approval". Built 26 Oct.
+- `digital-literacy-pathway-plan`: "not yet built", element names unchecked, mapping file to write. Three courses built, names checked, mapping written. `handoff-digital-literacy-pilot` (pilot one lesson, then stop) is overtaken too.
+- `maths-connections-pilot-status`: waits for your review before any Year 7 retrofit. Connections went into all seven Years 7–8 courses on 25 Oct (maths.md audit status).
+
+### Open questions for Matthew
+
+1. Maths when, where and why: did your review of the pilot happen? `maths-when-where-why.md` › Next still says the retrofit waits for it, but it was built in the 25 Oct pass.
+2. ICT: approve Investigating and judging information and Staying safe and well, or wait for the colleague pilots?
+3. Before Year 7 catch-up (22 lessons, pilot 2 first): go or not?
+4. Engineering OpenSCAD proposal: approve the one-lesson pilot on the `fab` widget, or park?
+5. Site content licence: still open in systems, engineering and Make your own version (no licence file).
+6. Should a chat refresh the six Project docs above?
+
+### Needs your approval
+
+- Commit trailer: this session's reminders gave no `Claude-Session` line, so the commit carries only `Co-Authored-By`.
+
 **Amended (25 Oct 2026, later):** search plus everything-at-once browsing was two extremes, and the pathway links had gone from the menu. Pathways are back under Subjects (links to their trail maps, so students are one click from a trail), and "List for teachers" on a subject page is now a one-screen index of pathways and courses (years, lesson counts); full cards stay on each pathway page. Trails stay the default view; the search box is unchanged.
 **Maths pathways, decided to wait (25 Oct 2026):** the four maths pathways (Algebra, Number, Geometry and measurement, Statistics and probability) merge the curriculum's six strands (Measurement with Space, Statistics with Probability). Kept as is: a pathway can hold one unit or an umbrella of two, so splitting a course later changes no navigation. ACARA's progressions divide Number into concepts and modelling, which our copy of the data does not carry; check the Kit data, and the curriculum map's strand rows, if teachers plan that way. Revisit after teacher feedback.
 
@@ -13,7 +65,7 @@ Shared files touched, all additions: `playground-board/index.html` (one script l
 
 Shared files touched, all additions: `playground-board/index.html` (one script line for `widgets/page.js`), `playground-board/style.css` (the `.pg-*` rules at the end), `misconceptions.json` (nine ids: `fake-heading`, `restyle-by-hand`, `order-needs-numbers`, `list-for-table`, `cram-the-page`, `slide-is-a-page`, `decoration-picture`, `low-contrast`, `no-credit-needed-online`), `content/ict/index.md` (a second pathway), AUTHORING.md (`widget: page` entry) and CLAUDE.md (ICT section). New: `content/ict/documents/` (nine lessons, no clips). The course appears with the next full publish.
 
-## Open projects: layered help built 25 Oct (hints and Show one way); benchmark clip still proposed (code chat; Matthew agreed)
+## Open projects: layered help and benchmark pictures built 25 Oct; benchmark clips not started (code chat; Matthew agreed)
 Built 25 Oct: milestone `hints:` (up to 3, one at a time), `reveal: true` + milestone `way:` ("Show one way", unlocked by ticking the earlier milestones or using every hint), a "Help used" list on the Show your teacher card, and hints and `way` in the teacher guide (AUTHORING › Open projects; `tools/projects.mjs`, `project-view.mjs`, `site/project.js`; the three micro:bit crossover briefs use it). Needs a full publish (site script and page layout). Not built: the benchmark clip (editing `render.mjs` outside its cache and main sections re-records every clip, so it needs its own plan), and rolling hints out to the other 34 briefs.
 **Benchmark pictures built 25 Oct** (two-picture version, Matthew's call): `benchmark:` on a brief lists 1 or 2 `{ file, caption }` pages of a finished state (typed-in numbers, no `<script>`), drawn by `render-pictures` (projects section, `projects/<course>/<id>-bench-N.png`) and shown on the brief page as "Ways it could look when it works". Used on the three micro:bit crossovers. Needs a full publish.
 **Plan for benchmark clips (later; not started).** The recorder (`render.mjs`) is lesson-shaped: `loadLessons`, `startApp(lesson)`, `<slug>/clips/`, build-site's clip lookup, `render-shards.mjs` and the workflows all assume a lesson. Cheapest route: treat a benchmark as a one-step pseudo-lesson with an output-only `clip:` (two finished versions, no code), enumerated in `render.mjs`'s main section and `render-shards.mjs` (neither is hashed), recorded by the unchanged recording code (so no existing clip re-records), output to `<course>/projects/<id>/clips/`, and read by `writeProjects`. Needs: a loader for `benchmark-clip:` in `projects.yml`, a pretend-micro:bit script for the pages (serial lines typed on a timer), a full publish and a check that `check-clips`/seed reuse find the new folder. Cost is mostly content (two versions per brief) and MakeCode parts (makecode.com unreachable here; self-hosted `pxt-core` + `pxt-microbit` from npm is an untested option for build-time use only).
@@ -168,7 +220,7 @@ Students expect coding to be fun and easy and read struggle as failure. Response
 
 `content/index.md` `about:` renders on the home page (About, Why we made this, How the lessons work). Any other `content/<name>.md` is a plain page at `/<name>/`: `approach.md` (Why we teach this way; references checked) and `behind-the-scenes.md` (how lessons are made and checked, privacy). Claims stay true to what the tools do; checks not yet built are worded as aims.
 
-## Shared: progression data and node check (decided 11 Oct 2026, not built; for maths and science)
+## Shared: progression data and node check (decided 11 Oct 2026; built 11 Oct by the maths chat, see below; for maths and science)
 
 The `introduces`/`assumes` scan suits code, where a dependency is a construct on screen; each subject has a different kind of dependency, so maths and science also get their own in-lesson checks (see their files).
 
@@ -434,7 +486,9 @@ Built as a course page rather than in lessons (lessons keep their chosen numbers
   - **Fix the busy-board lag in the same change.** Both edit `render.mjs`, and each edit re-records every clip, so doing the recorder lag (Open, above) together costs one full re-record, not two, and brings back the igneous clip.
   - **Check length with the slowest voice.** Some science clips run near or over the 30 s guide with Emma; after the first multi-voice publish, list clips over 30 s in their slowest voice and trim those `say:` lines.
 
-## Proposed (12 Oct 2026, science chat; Matthew agreed the idea): a one-move coach prompt on recap pages
+## Built (12 Oct 2026, science chat; Matthew agreed the idea): a one-move coach prompt on recap pages
+
+*Status (26 Oct audit): built for science recap pages (roadmap/science.md › Done: coach prompts; `coach: true` in science course index files). Heading said "Proposed"; the text is the original proposal.*
 
 **Why:** responsible AI use, aimed at beneficial rather than detrimental offloading. Lodge and Loble, *Artificial intelligence, cognitive offloading and implications for education* (UTS, March 2026; https://www.uts.edu.au/news/2026/03/experts-warn-unstructured-ai-use-in-schools-risks-cognitive-atrophy/contentassets/ai-cognitive-offloading-and-implications-for-education.pdf): offloading extraneous load can help, offloading the thinking that builds learning harms it, unstructured use drifts to the harmful kind and novices are hit hardest. It recommends metacognitive prompts, critical thinking within domain knowledge, teacher agency over AI tools, and favours teacher-facing AI.
 
@@ -624,12 +678,12 @@ Matthew approved the audit's Create items. Built:
 - **Words:** "video" for recordings, "clip instructions" for the script; "Video recorder", "Record video", "Use this video in the lesson", "Download lesson/course (.zip)".
 - Tests: `experiments/lesson-package-test.mjs` rewritten; `course-smoke`, `entry-smoke`, `authoring-smoke` updated (editing another step keeps a video; editing its own step needs re-recording). Locally all Create tests pass with `WP_TEST_CANVAS_CAPTURE=1` and Chromium.
 
-## Agreed 18 Oct 2026 (Matthew): reasoning checks for any subject, and clearer check names (not built)
+## Agreed 18 Oct 2026 (Matthew): reasoning checks for any subject, and clearer check names (built 18 Oct: see Built 18 Oct below)
 - **Reasoning check, subject-neutral:** keep maths wording for maths lessons; elsewhere use "Your thinking" (not "Your working"), "Show a model answer" (not "model solution") and a neutral default placeholder. Use it for "decide and justify" tasks in English, humanities, science and the AI courses: free writing (never marked), an optional pick ("which evidence/reason is strongest?"), then model answer(s) and rubric-style self-check `criteria`.
 - **Unmarked mode:** a reasoning check may have neither `answer` nor `picks`: the student writes, then sees one or more model answers (e.g. "a strong answer", "a different view that also works") and ticks the self-check. Use a marked pick only where one reason is clearly best. Validation and AUTHORING.md change to allow it.
 - **Names:** in AUTHORING.md call `sort` "sort into groups" (items into categories; groups can repeat) so it is not confused with ordering (`parsons`), and `match` "match pairs" (one-to-one).
 
-## Agreed 18 Oct 2026 (Matthew): Create keeps teachers in the design decisions (not built)
+## Agreed 18 Oct 2026 (Matthew): Create keeps teachers in the design decisions (built 18 Oct: see Built 18 Oct below)
 Principle: Create should involve teachers in the lesson-design decisions rather than let the AI make them silently (the same principle as the AI courses: keep the part that is the skill). Non-specialist teachers are a welcome audience and get guidance; specialists are not slowed down (expertise reversal).
 - **Starter and lesson prompts** (`create/start-prompt.md`, `create/authoring-prompt.mjs`): before drafting, the AI walks the teacher through four decisions: the one idea students leave with, the misconception to tackle, the opening move (e.g. predict or puzzle), and what the checks should catch. For each it asks first ("If you're not sure, say so and I'll suggest three with reasons"); a teacher who is unsure gets two or three options with reasons and chooses or writes their own; anyone can say "suggest and I'll adjust". It then drafts to those choices and lists them at the top of its reply (or as a comment in lesson.md).
 - **Create review** beside the preview: shows the teacher's own choices next to "Does the lesson do this?" for them to tick. Nothing is marked; a prompt for their judgement, like the reasoning check's self-check.
@@ -777,7 +831,7 @@ CI's Teachers smoke test had failed since 18 Oct 17:57: in Chrome stable (CI), `
 
 ## Decided (25 Oct 2026, Matthew): navigation and ways in, teacher-first, with search
 
-Replaces the 22 Oct "make the site easier to enter" proposal. **Built 25 Oct 2026 (pushed, not yet published): needs the full or quick publish, not publish-navigation alone, because it adds /about/, search-index.json and changes the home, subject and course pages.** Subject order is set by `order:` in each subject's index.md; subject pages and the Teachers page carry the search box; standards (maths, science, Digital Technologies) are searchable.
+Replaces the 22 Oct "make the site easier to enter" proposal. **Built 25 Oct 2026 (pushed; published 26 Oct in the site build from d47854a, so the "not yet published" note is history): needed the full or quick publish, not publish-navigation alone, because it adds /about/, search-index.json and changes the home, subject and course pages.** Subject order is set by `order:` in each subject's index.md; subject pages and the Teachers page carry the search box; standards (maths, science, Digital Technologies) are searchable.
 
 Not done, for Matthew's say (25 Oct 2026): (1) a Code curriculum map: the general coverage is built (roadmap/code.md › general coverage, `data/curriculum/code-coverage.yml`), but a map needs lesson-level dots, so it waits; (2) how long a course takes (no data yet; the strip shows lesson count); (3) "Copy link for students" on lesson pages (course pages only for now); (4) maths and science subject pages only gained the search box and the map link: they do not yet lead with a "by topic or year" layout, as the decision said; (5) the home page uses its own opening sentence, not the two-sentence overview line shared with the main site (unpack the curriculum, plan units, teach from a curated library of lessons or make your own); (6) a student-facing way in beyond one line ("Learning on your own?") and checking that every subject's course pages make sense to a student arriving cold; (7) years on course strips and in search come from the tagged standards, or from a year in the course title ("Year 8 Chemistry"), so a course's years follow its lessons as they are added (Algebra now reads Years 7–9 after the Year 9 batch); (8) watch a few teachers use it before changing the groupings (the main site's roadmap item E1). Easy to change later: menus, wording and grouping are reversible.
 

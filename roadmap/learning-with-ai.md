@@ -48,6 +48,8 @@ Do not present the routes as technically interchangeable: a simplified classifie
 
 ## Courses as built (18 Oct 2026)
 
+*Status (26 Oct audit): five courses now, 57 lessons; the three built after this list (Who Does AI Affect?, AI in your life, AI at our school) are under Status and the Proposal below.*
+
 **AI Foundations** (`content/ai/foundations/`, 13 lessons with `kinds-of-ai`, `shape: 5e`, class plans for all 13):
 - How AI generates text: Can you predict the next word? · Build a text generator with dice · Let the computer take over (a toy n-gram model, labelled as such; `text-prediction` and `word-sampler` boards).
 - How AI learns: How does a machine learn? · Why does AI make mistakes? · How do models combine clues? · Can a neural network learn?

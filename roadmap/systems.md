@@ -165,7 +165,9 @@ Why: primary coverage of AC9TDI6K01–6K04 is uneven, and every Years 7–8 cour
 
 Plans for every remaining systems lesson: 18 in Data representation, Networks and Inside a computer, then 29 in Compression, Security, Cyber safety (all but Passwords), How a web page is made, The command line, From gates to a processor and the two CTF courses' lessons. Each has an `inquiry`, one or two unplugged activities and one class question (number or plain multiple choice); security, cyber and CTF plans stay defensive. The third batch is shorter than the first: trial a few with classes before writing more depth.
 
-## Built (first batch) and proposed (25 Oct 2026, Matthew: build it): a project brief per course
+## Built (25 Oct 2026, Matthew: build it): a project brief per course
+
+*Status (26 Oct audit): all 12 briefs in 11 courses are built and live; heading was "Built (first batch) and proposed". The text below is the plan and build log.*
 
 The gap: How computers work has no project briefs or assessment tasks (the CTF finales and the security review are closed puzzles, not tasks a teacher collects and marks). In Years 7–10 this strand is usually assessed through school-set projects, so one brief per course is the fix. Quizzes are not needed: the lessons already have checks.
 

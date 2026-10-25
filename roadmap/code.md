@@ -139,7 +139,7 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 
 ## Proposed (discussed, not decided)
 
-**SQL and databases (25 Oct 2026; Matthew asked, proposed, not built).** Code has no SQL: Data detective reads CSV with pandas, Flask saves to CSV, Objects keeps records in memory. SQL is the most common data tool across school courses (Years 9–10 data work and senior computing), and Supabase is SQL with hosting on top, so the course teaches the idea and mentions Supabase in "Where this leads" (no accounts; the site's no-account rule stays). Matthew has run SQLite with Streamlit before; Gradio fills that role here (Streamlit is not in the playground). Checked 25 Oct: `sqlite3` works in the vendored Pyodide (a query ran under Node), so the Python lessons need nothing new.
+**SQL and databases (25 Oct 2026; Matthew asked; built 25 Oct and live: SQL playground, 11 lessons in `content/code/sql/`, Flask lesson 7 and Gradio lesson 5 optional; see Log. Status said "proposed, not built"; the text is the original proposal).** Code has no SQL: Data detective reads CSV with pandas, Flask saves to CSV, Objects keeps records in memory. SQL is the most common data tool across school courses (Years 9–10 data work and senior computing), and Supabase is SQL with hosting on top, so the course teaches the idea and mentions Supabase in "Where this leads" (no accounts; the site's no-account rule stays). Matthew has run SQLite with Streamlit before; Gradio fills that role here (Streamlit is not in the playground). Checked 25 Oct: `sqlite3` works in the vendored Pyodide (a query ran under Node), so the Python lessons need nothing new.
 - **Course (about 8 lessons, after Data detective, Years 9–10 and senior):** tables and SELECT; WHERE; ORDER BY and LIMIT; COUNT, AVG and GROUP BY; joining two tables; INSERT, UPDATE and DELETE; designing tables with keys; SQL from Python. Then **Flask with a database** as the main route (Flask Save's CSV becomes a table: routes, forms and a database is the common web app shape), and one optional **Gradio** lesson (a dashboard over a query, after Data dashboard).
 - **Playground:** a SQL playground (query box, results table, a starter database per lesson, Reset). Built on sql.js for the SQL-only lessons and on the Pyodide we already serve for the Python, Flask and Gradio ones (Matthew, 25 Oct: both; same SQLite, same starter files; roadmap/shared.md).
 - **Datasets:** small and real-feeling, one per lesson set (a music library, a sports carnival, a canteen), with the same data available as CSV so Data detective students see the same table both ways.
@@ -268,7 +268,9 @@ A brief that needs two courses belongs to the later one. Why not a pathway page 
 - Try the badge and the Show your teacher card with a class.
 - Test `microbit.js` with a real micro:bit in Chrome (the sandbox has no USB).
 
-## Proposed (12 Oct 2026, Matthew agreed the direction; not built): Web pathway after the DOM
+## Built (12 Oct 2026, Matthew agreed the direction): Web pathway after the DOM
+
+*Status (26 Oct audit): all four items are built (Bootstrap, Vue, vue-compare, dom-fetch), as each item says. Heading said "Proposed …; not built".*
 
 The plan keeps "build it yourself, then meet the real tool": students hand-build components (HTML & CSS) and state (DOM lesson 6) before a framework does the same work for them. Everything runs in the browser with no build step, and every library is hosted on our site.
 

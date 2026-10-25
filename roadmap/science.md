@@ -2,7 +2,9 @@
 
 The science chat's file. Lessons live in `content/science/` (see CLAUDE.md › Science).
 
-## Proposed (25 Oct 2026, science chat; not built): practical previews and recaps
+## Proposed (25 Oct 2026, science chat): practical previews and recaps
+
+*Status (26 Oct audit): the draft practicals list is built as the For science teachers page (`content/science-teachers.md`); the pilot companion lessons are not built. Heading said "not built".*
 
 Idea (Matthew): a board lesson as a mini experiment that **previews or recaps** a class practical, never replaces it. Today the boards teach the concept; none says "this is your class experiment", names the variables, or lets a student set their result beside the model's. Proposal: first a list for science teachers to correct, then a small pilot on the practicals they say they run.
 
@@ -79,7 +81,9 @@ Teacher columns (blank): *We run it* / *Preview would help* / *Recap would help*
 ### Pilot, once teachers have ticked it
 Pick two or three **Core** practicals that already have a board. Each gets a short companion lesson on the same board: a fair-test step (name what you change, measure and keep the same), then after the class practical a compare step (a reflect check: your result next to the board's, and where the real bench is messier). Mostly lesson text; no new widget unless a practical has no board. **Demo / no lab** rows need nothing: the board is already the experiment.
 
-## Proposed (25 Oct 2026, science chat; not built): hints, board lead-ins, and two lesson fixes
+## Built (25 Oct 2026, science chat; Matthew said go): hints, board lead-ins, and two lesson fixes
+
+*Status (26 Oct audit): built and live: hints for Years 7 to 10, the two lesson fixes, `push:` on coordination and the three board lead-in pilots (see the Done notes below). Not tried with a class. Heading said "Proposed …; not built"; the next paragraph is the original proposal.*
 
 Response to roadmap/shared.md › *Proposed (25 Oct): support when it's needed, invisible when it isn't* and its Amended block. Science agrees with the principle and the amendments (`smaller:` not `support:`, never counted, not on a Code Predict; science Engage only where the step is already a move). Nothing below is built.
 
@@ -347,7 +351,9 @@ Plan approved 11 Oct; each item pushed to `main` (source only). Year 7 node text
 - **Science node tags (waiting for the kit, Matthew 11 Oct):** the maths chat built the node check (`shared.md`). Science opts in by adding `data/progressions/science/` pages, `node:` on its lessons and itself to `CHECKED`; AC9S7U04 is ready to save from the pasted page. Needs the other science progression pages.
 - Explain clips for science (gap noted above), populations engine, the remaining Years 8–10 nodes: unchanged.
 
-## Planned: prerequisite checks and model checks (decided 11 Oct 2026, not built)
+## Planned: prerequisite checks and model checks (decided 11 Oct 2026)
+
+*Status (26 Oct audit): the shared part is built (every science lesson has `node:`, the node check runs in validate; shared.md › progression data) and the leads below were fixed 11 Oct. Heading said "not built"; the text is the original plan.*
 
 The code-style scan does not carry over: maths and science have no code to scan, and their tutorials sit beside class teaching. Checked against the repo: no lesson has a `node:` field (the node is named only in `teacher.yml` summaries, such as Plates "AC9S8U03, node 2"), and the repo holds no progression data (`prior_knowledge` lives in waypoints-kit and no build step reads it). 55 science and 19 maths lessons.
 
@@ -367,7 +373,9 @@ New subject **Science** with pathways Chemistry (built), Biology, Physics and Ea
 
 Slides embed the live board (`{{embed: URL}}`, Prepare loads it on the active slide only). Science courses have no cheat sheets (no commands to list; the primers carry the key ideas). Decided 9 Oct: no science revision sheets or glossaries either. Those belong to the planning side of the suite (Prepare, the node glossaries in waypoints-kit); here each lesson ends with a revision summary, and the deck and worksheet go into Prepare.
 
-## Science engines: Years 7–10 plan (decided 9 Oct 2026, not built)
+## Science engines: Years 7–10 plan (decided 9 Oct 2026)
+
+*Status (26 Oct audit): mostly built (atoms, crystals, convection, selection engines and the shared-board widgets, per the build notes below); still open: a populations engine with numbers over time. Heading said "not built".*
 
 Engines are organised by what they model, not by subject or year. Every Years 7–10 Understanding hinge node in waypoints-kit `data/science/` sorts into one of five engines or a widget on the shared board (see the maths boards plan; diagram and data work waits for it).
 

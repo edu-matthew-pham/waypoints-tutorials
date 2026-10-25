@@ -48,12 +48,14 @@ General ICT skills for students and for teachers of any subject, as its own subj
 
 ## Next
 - Matthew pilots the course with a colleague. After a publish (a new subject needs the full publish), check the Subjects menu, the subject page, search and the teacher guide.
-- The other pathways in the plan, each proposed for approval before building: files and systems, investigating and judging information (workshop-style), staying safe and well (workshop-style). Plans for all three are in the Project docs (see below).
+- The other pathways in the plan, each proposed for approval before building: investigating and judging information (workshop-style), staying safe and well (workshop-style). Plans are in the Project docs (see below). (Files and systems was on this list; built 26 Oct, see Built.)
 - Matthew also pilots Documents and slides with a colleague. Ask in particular whether the alt text and credit rules in the board are too strict or too loose, and whether the Years 6 to 8 fit is right.
 - Mapping file written 26 Oct: `data/curriculum/ict-digital-literacy.yml` (nothing reads it yet) and the Project doc `claude/ict-digital-literacy-mapping.md`. Element and sub-element names were checked against the Version 9 pages (two copies agree); only the Level 6 wording was read, so no level is claimed for the Years 5 to 8 pathways. Earlier drafts and the data course's `about:` used wrong labels; the ICT subject page now uses the Version 9 names.
 - Later ideas for the data course: a lesson on reading someone else's sheet and finding its mistakes, a lookup lesson, and clip-free class data entry.
 
-## Plans for the other pathways (26 Oct 2026, Project docs; none built, each to be approved first)
+## Plans for the other pathways (26 Oct 2026, Project docs; each to be approved first)
+
+*Status (26 Oct audit): Files and systems is built (cut to four lessons, no widget; see Built). Investigating and Staying safe are not built. Heading said "none built".*
 - `claude/ict-files-systems-plan.md`: Files and systems, Years 5 to 7, eight lessons on a new `files` widget (folders and paths, names, copy and move, cloud, versions, backup, fix it first, a rescue challenge). Open question: whether `shell.js`'s pretend filesystem can be shared.
 - `claude/ict-investigating-information-plan.md`: Investigating and judging information, Years 5 to 8, eight workshops and a challenge on scripted sources only (no real sites judged), mostly existing check types; check `source.js` before designing a new widget.
 - `claude/ict-safe-and-well-plan.md`: Staying safe and well, Years 5 to 8, seven workshops and a class agreement on made-up scenarios; needs a wellbeing review and a disclosure note; links to Cyber safety and privacy instead of repeating it.
