@@ -157,6 +157,7 @@ export const CONCEPTS = {
     { id: 'csv', label: 'csv.DictReader (rows of a CSV file)', re: /\bcsv\.(DictReader|reader|DictWriter|writer)\(/ },
     { id: 'assert', label: 'assert (a test case)', re: /^[ \t]*assert\b/m },
     { id: 'pandas', label: 'pandas (pd.read_csv, filtering a table)', re: /\bpd\.\w+\(|\bimport[ \t]+pandas\b/ },
+    { id: 'numpy', label: 'numpy (np.array, a test inside square brackets)', re: /\bnp\.\w+\(|\bimport[ \t]+numpy\b/ },
     { id: 'decorator', label: 'a decorator (@app.route above a function)', re: /^[ \t]*@[A-Za-z_][\w.]*/m },
     { id: 'try', label: 'try and except (catching an error)', re: /^[ \t]*(try|except\b[^:\n]*)[ \t]*:/m },
     { id: 'object', label: 'making an object (t = Turtle(), e = Enemy(5))', re: /=[ \t]*[A-Z]\w*\(|\.append\([ \t]*[A-Z]\w*\(/ },
