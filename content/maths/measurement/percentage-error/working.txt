@@ -1,0 +1,7 @@
+# Tia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: tia
+The hole should be 20 mm and is out by 0.04 mm.
+Relative error = 0.04 ÷ 20 = 0.002.
+So the percentage error is 0.002%.
+# endregion

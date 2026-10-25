@@ -1,0 +1,7 @@
+# Max's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: max
+The ruler reads 20 mm to the nearest mm.
+So the bolt is exactly 20 mm.
+The tolerance is 19.95 to 20.05, so it passes.
+# endregion

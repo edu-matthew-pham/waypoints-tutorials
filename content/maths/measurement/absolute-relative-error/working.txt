@@ -1,0 +1,7 @@
+# Una's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: una
+The hole should be 20 mm and is 20.04 mm.
+Absolute error = 0.04 mm.
+Relative error = 0.04 × 20 = 0.8.
+# endregion

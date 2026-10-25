@@ -1,0 +1,34 @@
+summary: "Students find the lower and upper bounds of a measurement from its precision (AC9M9M04, node 1)."
+time: 35
+timing: "Predict and Run 6 min · Investigate 10 min · Modify 8 min · Practise and Make 11 min"
+goals:
+  - I can say why a measurement is only an estimate.
+  - I can find the bounds from a reading and its precision.
+  - I can decide if a part passes a tolerance.
+struggle: "Thinking a reading is exact. Ask: could the true length be a bit more than the nearest mark?"
+before: |
+  Students need Scientific notation and decimals.
+
+  The one idea: half the smallest mark either side. A measured value alone is not the whole story.
+
+  The bolt hole numbers are made up for the task. Have rulers and a stopwatch so students can measure something.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the upper bound in Make is worked on paper first."
+stuck:
+  - see: "A student gives the bounds as ±1 unit."
+    ask: "How far could a reading be from the true value if it is the nearest mark?"
+    fix: "Half a mark."
+stretch: "Measure a desk with a ruler marked in cm and mm and compare the bounds."
+support: "A printed ruler with bounds shaded."
+leads: |
+  Continues AC9M9M04 node 1.
+
+  Where it leads: Absolute and relative error.
+exit:
+  q: "A reading is 7 cm to the nearest cm. What are the bounds?"
+  a: "6.5 cm and 7.5 cm."
+explain: |
+  A reading to the nearest mark could be half a mark out either way.
+
+  The true value is between the lower and the upper bound.

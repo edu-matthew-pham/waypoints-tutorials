@@ -1,0 +1,32 @@
+summary: "Students find a percentage error and use it to decide whether a difference is bigger than the measurement could be wrong by (AC9M9M04, node 3)."
+time: 35
+timing: "Predict and Run 6 min · Investigate 10 min · Modify 8 min · Practise and Make 11 min"
+goals:
+  - I can find the percentage error.
+  - I can compare a difference with the combined error.
+  - I can say if a result is real.
+struggle: "Forgetting ×100. Ask: is 0.002 a percentage?"
+before: |
+  Students need Absolute and relative error.
+
+  The one idea: a difference is only believable if it is bigger than the errors that could add up to produce it. The swimmers' times are made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the photo finish in Make is worked on paper first."
+stuck:
+  - see: "A student says the gap is within error because 0.01 is small."
+    ask: "Small compared with what?"
+    fix: "Compare it with the largest possible error in the gap: 0.002."
+stretch: "How precise must a timer be to separate times 0.002 s apart?"
+support: "A printed number line with the error bars."
+leads: |
+  Continues AC9M9M04 node 3.
+
+  Where it leads: Proportion and rate models.
+exit:
+  q: "A length of 200 cm is out by 1 cm. What is the percentage error?"
+  a: "0.5%."
+explain: |
+  Percentage error is the absolute error divided by the true value, times 100.
+
+  A difference is real only if it is bigger than the combined errors.

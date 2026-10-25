@@ -1,0 +1,34 @@
+summary: "Students find absolute and relative error and use relative error to compare (AC9M9M04, node 2)."
+time: 35
+timing: "Predict and Run 6 min · Investigate 10 min · Modify 8 min · Practise and Make 11 min"
+goals:
+  - I can find the absolute error.
+  - I can find the relative error.
+  - I can say which of two measurements is more accurate.
+struggle: "Comparing absolute errors across different sizes. Ask: how big is the error compared with the thing?"
+before: |
+  Students need Every measurement is an estimate.
+
+  The one idea: the same absolute error matters more on a small thing. Relative error has no unit.
+
+  The sizes are made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the comparison in Make is worked on paper first."
+stuck:
+  - see: "A student multiplies by the true value."
+    ask: "Should a bigger thing make the error look bigger or smaller?"
+    fix: "Smaller: divide."
+stretch: "Find the relative error of your own measurement of the classroom."
+support: "A printed card with the two formulas."
+leads: |
+  Continues AC9M9M04 node 2.
+
+  Where it leads: Percentage error.
+exit:
+  q: "A length should be 100 cm and is 98 cm. What is the relative error?"
+  a: "0.02."
+explain: |
+  Absolute error is how far out. Relative error is the absolute error divided by the true value.
+
+  Relative error lets you compare things of different sizes.

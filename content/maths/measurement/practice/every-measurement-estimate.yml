@@ -1,0 +1,10 @@
+# Practice for "Every measurement is an estimate".
+templates:
+  - q: "A tape reads {r} cm to the nearest cm. What is the upper bound in cm?"
+    vars: { r: "10..200" }
+    answer: "{r + 0.5}"
+    explain: "{r} + 0.5 = {r + 0.5}."
+  - q: "A tape reads {r} cm to the nearest cm. What is the lower bound in cm?"
+    vars: { r: "10..200" }
+    answer: "{r - 0.5}"
+    explain: "{r} − 0.5 = {r - 0.5}."

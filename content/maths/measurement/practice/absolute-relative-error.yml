@@ -1,0 +1,11 @@
+# Practice for "Absolute and relative error".
+templates:
+  - q: "A length should be {t} cm and is measured as {t + e} cm. What is the absolute error in cm?"
+    vars: { t: "20..100", e: "1..5" }
+    answer: "{e}"
+    explain: "|{t + e} − {t}| = {e}."
+  - q: "A length should be {t} cm and is out by {e} cm. What is the relative error as a decimal?"
+    vars: { t: [20, 25, 40, 50, 100, 200], e: "1..4" }
+    answer: "{e / t}"
+    tolerance: 0.001
+    explain: "{e} ÷ {t} = {e / t}."
