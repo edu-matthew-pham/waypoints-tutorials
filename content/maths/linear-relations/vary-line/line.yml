@@ -1,0 +1,12 @@
+# Boards for "Change a and b in a line".
+
+# region: run
+widget: graph
+x: -8, 8
+y: -5, 5
+grid: 1, 1
+axes: x, y
+slider a: -3, 3, 1, 0.5
+slider b: -4, 4, 0, 1
+plot: y = a x + b
+# endregion

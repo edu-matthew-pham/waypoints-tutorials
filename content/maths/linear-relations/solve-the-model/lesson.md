@@ -1,7 +1,7 @@
 ---
 order: 23
 unit: quad9
-node: AC9M9A05 n2
+node: [AC9M9A05 n2, AC9M9A05 n3]
 uses: [AC9M9A04 n3, AC9M9A05 n1]
 assumes: [AC9M9A05 n1]
 connection: stopping-distance

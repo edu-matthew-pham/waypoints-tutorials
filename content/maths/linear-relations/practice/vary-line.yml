@@ -1,0 +1,10 @@
+# Practice for "Change a and b in a line".
+templates:
+  - q: "For $y = {a}x + {b}$, what is $y$ when $x = 0$?"
+    vars: { a: "2..9", b: "1..9" }
+    answer: "{b}"
+    explain: "{a} × 0 + {b} = {b}."
+  - q: "A plan has a ${b} fee and ${a} per gigabyte. What does it cost for {n} gigabytes?"
+    vars: { a: "2..6", b: "5..12", n: "2..9" }
+    answer: "{a * n + b}"
+    explain: "{a} × {n} + {b} = {a * n + b}."

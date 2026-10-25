@@ -1,0 +1,8 @@
+# Jo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: jo
+The rule is y = ax + b.
+Changing b moves the line up or down.
+Changing a moves where the line starts.
+So to move the start, I change a.
+# endregion

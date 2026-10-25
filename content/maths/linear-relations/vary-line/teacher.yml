@@ -1,0 +1,34 @@
+summary: "Students change a and b in y = ax + b and say what each controls (AC9M9A06, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can say what a and b do to a line.
+  - I can choose a and b to match a situation.
+  - I can compare two linear rules.
+struggle: "Mixing up which number moves the start and which tilts the line. Ask: what is y when x is 0?"
+before: |
+  Students need Gradient.
+
+  The one idea: b is where the line starts; a is how steep. Change one at a time.
+
+  The phone plans are made up for the task.
+running:
+  - "Predict: show of hands before the board."
+  - "Paper: the equal-cost question in Make is worked on paper first."
+stuck:
+  - see: "A student says a moves the line up."
+    ask: "What is y when x is 0?"
+    fix: "It is b. So b moves the start."
+stretch: "Write a rule for a plan that beats both after 5 gigabytes."
+support: "A printed table of x and y for each plan."
+leads: |
+  Continues AC9M9A06 node 1.
+
+  Where it leads: Changing the numbers in a quadratic rule.
+exit:
+  q: "In y = 2x + 5, what is y when x = 0?"
+  a: "5: the line starts at 5."
+explain: |
+  In y = ax + b, b is where the line starts and a is how steep it is.
+
+  Change one number at a time to see what it controls.
