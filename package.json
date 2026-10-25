@@ -21,7 +21,8 @@
     "check-decks": "node tools/check-decks.mjs",
     "check-html": "node tools/check-html-lessons.mjs",
     "check-makecode": "node tools/check-makecode.mjs",
-    "check-practice": "node tools/check-practice.mjs"
+    "check-practice": "node tools/check-practice.mjs",
+    "check-blockers": "node tools/check-blockers.mjs"
   },
   "engines": {
     "node": ">=20"

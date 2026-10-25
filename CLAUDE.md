@@ -109,6 +109,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 - The turtle playground animates; in tests set speed to 10 and click Finish, or wait for the status to leave "Running".
 
 ## Gotchas
+- Ad blockers hide elements by generic class names (25 Oct 2026: EasyList's `##.theads` hid the Code trail cards; Fanboy social hides `.cshare` and `.wp-share`). Give new page parts site-specific class names (`wpt-…`) and avoid ad, share, social, banner, sponsor, promo and popup words; `npm run check-blockers` (after a build; `--wide` for one page of each kind per course, about 10 minutes) tests pages against the lists' generic rules.
 - Quote YAML captions that contain colons.
 - HTML lessons: tags in Markdown text (lesson text, task bodies, hints, teacher Markdown fields) go in backticks (a bare `<h1>` becomes a real tag on the page, guide and slides; a bare `<style>` swallows the page's script); validate warns, and `check-html` fails if a lesson script did not run. Plain-text check and teacher fields are escaped by the generators (`pt` in `teach.mjs`).
 - Display-only code regions (bug, compare, parsons) are not meant to run.
