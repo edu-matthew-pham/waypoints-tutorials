@@ -1,0 +1,29 @@
+# Two-bracket boards for "Two brackets". p and q are the numbers in the brackets (x + p)(x + q).
+
+# region: run
+widget: tiles
+mode: binomial
+slider p: 0, 6, 1
+slider q: 0, 6, 1
+# endregion
+
+# region: explain
+widget: tiles
+mode: binomial
+slider p: -4, 6, 2
+slider q: -4, 6, 3
+# endregion
+
+# region: explain-pic
+widget: tiles
+mode: binomial
+p: 4
+q: 3
+# endregion
+
+# region: vary
+widget: tiles
+mode: binomial
+slider p: -6, 8, 1
+slider q: -6, 8, 1
+# endregion

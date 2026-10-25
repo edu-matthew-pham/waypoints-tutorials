@@ -1,23 +1,25 @@
 // Index laws from expanded form: powers drawn as rows of their factors, so the laws can be seen, not just stated.
 //   widget: indexlaws
 //   mode: product            product (aᵐ × aⁿ: the factors join) | quotient (aᵐ ÷ aⁿ: pairs cancel) |
-//                            power ((aᵐ)ⁿ: n groups of m) | zero (aⁿ ÷ aⁿ: everything cancels, leaving 1)
+//                            power ((aᵐ)ⁿ: n groups of m) | zero (aⁿ ÷ aⁿ: everything cancels, leaving 1) |
+//                            negative (aᵐ ÷ aⁿ with n allowed past m: what is left under the line is 1 over a power,
+//                            so the index goes below zero: 2² ÷ 2⁵ = 1/2³ = 2⁻³; Year 9)
 //   slider a: 2, 10, 2       the base (or fixed "a: 2")
 //   slider m: 1, 6, 3        the first index (or fixed)
 //   slider n: 1, 6, 2        the second index (or fixed; in zero mode n follows m)
 //   result: off              hide the resulting power and value (students work it out)
 // The quotient board keeps m at least n (it raises m to n if needed).
 // state: { scope: { vars: { a, m, n, k (the index of the answer: m + n, m − n, m × n or 0), v (its value) } } }
-// Checks: "m = 3 and n = 4 and k = 7", "k = 0", "v = 64".
+// Checks: "m = 3 and n = 4 and k = 7", "k = 0", "v = 64", "k = -3" (negative mode; v is then a fraction such as 0.125).
 (function (B) {
   'use strict';
   var NS = 'http://www.w3.org/2000/svg';
   var SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹';
-  var sup = function (n) { return String(n).split('').map(function (c) { return SUP[+c]; }).join(''); };
+  var sup = function (n) { return String(n).split('').map(function (c) { return c === '-' ? '⁻' : SUP[+c]; }).join(''); };
   var spec = null, vars = {}, ui = {};
   function nums(t, where) { return String(t).split(',').map(function (x) { var v = Number(x.trim()); if (!isFinite(v)) throw new Error(where + ': "' + x.trim() + '" is not a number.'); return v; }); }
   function parse(s) {
-    s.mode = /^(product|quotient|power|zero)$/i.test(s.mode || '') ? s.mode.toLowerCase() : 'product';
+    s.mode = /^(product|quotient|power|zero|negative)$/i.test(s.mode || '') ? s.mode.toLowerCase() : 'product';
     s.sl = {}; s.fix = {};
     s.items.forEach(function (it) {
       if (it.kind !== 'slider') return;
@@ -39,9 +41,10 @@
     if (spec.mode === 'zero') vars.n = vars.m;
   }
   function calc() {
-    var a = vars.a, m = vars.m, n = vars.n, k = spec.mode === 'product' ? m + n : spec.mode === 'quotient' ? m - n : spec.mode === 'power' ? m * n : 0;
+    var a = vars.a, m = vars.m, n = vars.n, k = spec.mode === 'product' ? m + n : spec.mode === 'quotient' || spec.mode === 'negative' ? m - n : spec.mode === 'power' ? m * n : 0;
     return { k: k, v: Math.pow(a, k) };
   }
+  var frac = function (k, a) { return k < 0 ? '1/' + big(Math.pow(a, -k)) : big(Math.pow(a, k)); };
   var big = function (v) { return v >= 1e15 ? v.toExponential(3) : String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); };
 
   function draw(R) {
@@ -64,6 +67,12 @@
       label(x1 + 10, 70, '×', ink); label(x1 + 40, 70, a + sup(n), orange); row(n, x1 + 110, 50, orange);
       label(30, 170, '=', ink); var x2 = row(m, 110, 150, blue); row(n, x2, 150, orange);
       if (spec.res) label(30, 250, '= ' + a + sup(m + n) + ' : ' + m + ' + ' + n + ' = ' + (m + n) + ' factors of ' + a, purple);
+    } else if (spec.mode === 'negative') {
+      var c = Math.min(m, n);
+      label(30, 70, a + sup(m), blue); row(m, 110, 50, blue, c);
+      add('line', { x1: 100, y1: 112, x2: 110 + Math.max(m, n, 1) * 46, y2: 112, stroke: ink, 'stroke-width': 3 });
+      label(30, 150, a + sup(n), orange); row(n, 110, 130, orange, c);
+      if (spec.res) label(30, 240, '= ' + (R.k > 0 ? a + sup(R.k) : R.k === 0 ? '1' : '1/' + a + sup(-R.k) + ' = ' + a + sup(R.k)) + ' : ' + c + (c === 1 ? ' pair cancels' : ' pairs cancel') + (R.k > 0 ? ', ' + R.k + ' left on top' : R.k < 0 ? ', ' + (-R.k) + ' left underneath' : ', nothing left'), purple);
     } else if (spec.mode === 'quotient' || spec.mode === 'zero') {
       label(30, 70, a + sup(m), blue); row(m, 110, 50, blue, n);
       add('line', { x1: 100, y1: 112, x2: 110 + Math.max(m, 1) * 46, y2: 112, stroke: ink, 'stroke-width': 3 });
@@ -82,7 +91,7 @@
   function words(R) {
     var a = vars.a, m = vars.m, n = vars.n;
     var lhs = spec.mode === 'product' ? a + sup(m) + ' × ' + a + sup(n) : spec.mode === 'power' ? '(' + a + sup(m) + ')' + sup(n) : a + sup(m) + ' ÷ ' + a + sup(n);
-    return lhs + (spec.res ? ' = ' + a + sup(R.k) + ' = ' + big(R.v) : '');
+    return lhs + (spec.res ? ' = ' + a + sup(R.k) + ' = ' + frac(R.k, a) : '');
   }
   function slider(nm, label) {
     var sl = spec.sl[nm], row = document.createElement('div'); row.className = 'srow';
@@ -115,8 +124,9 @@
     var law = spec.mode === 'product' ? 'Multiplying powers of the same base: add the indices, aᵐ × aⁿ = aᵐ⁺ⁿ.'
       : spec.mode === 'quotient' ? 'Dividing powers of the same base: subtract the indices, aᵐ ÷ aⁿ = aᵐ⁻ⁿ.'
       : spec.mode === 'power' ? 'A power of a power: multiply the indices, (aᵐ)ⁿ = aᵐⁿ.'
+      : spec.mode === 'negative' ? 'Subtract the indices even when the second is bigger: the factors left underneath make a negative index, a⁻ⁿ = 1/aⁿ.'
       : 'Anything (but 0) divided by itself is 1, and the quotient law gives a⁰: so a⁰ = 1.';
-    ui.note.textContent = spec.res ? law + ' Here ' + a + sup(R.k) + ' = ' + big(R.v) + '.' : 'Count the factors of ' + a + ' that are left.';
+    ui.note.textContent = spec.res ? law + ' Here ' + a + sup(R.k) + ' = ' + frac(R.k, a) + '.' : 'Count the factors of ' + a + ' that are left.';
     B.say(ui.work.textContent + '. ' + ui.note.textContent);
     B.save({ vars: vars });
     B.post({ scope: { vars: { a: a, m: m, n: n, k: R.k, v: R.v }, points: {} } }, ui.work.textContent + '. ' + ui.note.textContent);

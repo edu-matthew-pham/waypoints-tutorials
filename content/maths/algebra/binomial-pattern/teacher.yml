@@ -1,0 +1,37 @@
+summary: Students see that (x + a)(x + b) = x² + (a + b)x + ab from the rectangle, use it without drawing, and come back to 47 × 53 as (50 − 3)(50 + 3) (AC9M9A02, node 2).
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 12 min · Practise and Make 8 min"
+goals:
+  - I can expand two brackets by adding the numbers and multiplying them.
+  - I can spot when the middle term disappears.
+  - I can use the pattern to multiply in my head.
+struggle: "Keeping the sum and the product the right way round, and carrying signs. Ask students to say 'add for the middle, multiply for the end' as they go."
+before: |
+  Do the Run board yourself first. Students need the Two brackets lesson: four pieces, strips and corner.
+
+  The one idea: the two strips join into one term (a + b) and the corner is a × b. The common mistake is swapping them (Sam's working). Negatives go in with their number.
+running:
+  - "Predict: take a show of hands before the picture is explained. Those who chose 2500 treated the rectangle as the square."
+  - "Run: ask students to read each pair of numbers and the middle and end out loud before moving the sliders."
+  - "Paper: the try-one after the worked example and 68 × 72 in Make are worked on paper first. Books out, and look for the numbers written as 70 plus or minus 2."
+  - "Modify: before (x + 6)(x − 6), ask what the middle number will be."
+stuck:
+  - see: "A student writes x² + 24x + 10 for (x + 6)(x + 4)."
+    ask: "How many strips are there? What do they make together?"
+    fix: "Middle = sum (10), end = product (24)."
+  - see: "A student gets (x − 8)(x + 3) middle +5."
+    ask: "What are the two numbers, with their signs?"
+    fix: "−8 and +3: −8 + 3 = −5."
+stretch: "Why does the pattern make (50 − 3)(50 + 3) so easy? Try 98 × 102."
+support: "A blank grid with the two numbers on the top and side, to fill in the corner and the strips."
+leads: |
+  Continues AC9M9A02 node 2.
+
+  Where it leads: factorising x² + bx + c (next lesson) runs the pattern backwards.
+exit:
+  q: "Expand (x + 4)(x − 9)."
+  a: "x² − 5x − 36."
+explain: |
+  The two strips join into one term, and the corner is the product. So $(x + a)(x + b) = x^2 + (a + b)x + ab$.
+
+  For example, $(x + 5)(x + 2) = x^2 + 7x + 10$, and $(x + 6)(x - 6) = x^2 - 36$ because the strips cancel.

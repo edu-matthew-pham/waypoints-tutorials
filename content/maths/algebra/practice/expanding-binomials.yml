@@ -1,0 +1,31 @@
+# Practice for "Two brackets".
+templates:
+  - q: "Expand (x + {a})(x + {b})."
+    vars: { a: "1..9", b: "1..9" }
+    answer: "x^2 + {a + b}x + {a * b}"
+    form: expanded
+    feedback:
+      - ["x^2 + {a * b}", "That leaves out the two strips, {b|c}x and {a|c}x."]
+    explain: "x² + {b|c}x + {a|c}x + {a * b} = x² + {a + b}x + {a * b}."
+  - q: "Expand (x + {a})(x − {b})."
+    vars: { a: "1..9", b: "1..9" }
+    where: "a != b"
+    answer: "x^2 {a - b|sc}x - {a * b}"
+    form: expanded
+    feedback:
+      - ["x^2 {a - b|sc}x + {a * b}", "{a} × (−{b}) is −{a * b}."]
+    explain: "x² − {b|c}x + {a|c}x − {a * b} = x² {a - b|sc}x − {a * b}."
+  - q: "Expand (x − {a})(x − {b})."
+    vars: { a: "1..9", b: "1..9" }
+    answer: "x^2 - {a + b}x + {a * b}"
+    form: expanded
+    feedback:
+      - ["x^2 - {a + b}x - {a * b}", "−{a} × (−{b}) is +{a * b}: a negative times a negative."]
+    explain: "x² − {b|c}x − {a|c}x + {a * b} = x² − {a + b}x + {a * b}."
+  - q: "Expand (x + {a})²."
+    vars: { a: "1..9" }
+    answer: "x^2 + {2 * a}x + {a * a}"
+    form: expanded
+    feedback:
+      - ["x^2 + {a * a}", "(x + {a})² is (x + {a})(x + {a}): four pieces, with two strips of {a|c}x."]
+    explain: "(x + {a})(x + {a}) = x² + {a|c}x + {a|c}x + {a * a} = x² + {2 * a}x + {a * a}."

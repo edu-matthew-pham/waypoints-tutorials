@@ -1,0 +1,29 @@
+# Boards for "The pattern". p and q are the numbers in the brackets (x + p)(x + q).
+
+# region: run
+widget: tiles
+mode: binomial
+slider p: 0, 8, 1
+slider q: 0, 8, 1
+# endregion
+
+# region: explain
+widget: tiles
+mode: binomial
+slider p: 0, 8, 5
+slider q: 0, 8, 2
+# endregion
+
+# region: explain-pic
+widget: tiles
+mode: binomial
+p: 5
+q: 2
+# endregion
+
+# region: vary
+widget: tiles
+mode: binomial
+slider p: -8, 8, 1
+slider q: -8, 8, 1
+# endregion

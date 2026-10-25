@@ -1,0 +1,44 @@
+summary: Students build (x + p)(x + q) as a rectangle on the board, see four pieces (x², two strips, a corner), expand every sign combination, and come back to a garden bed made bigger on two sides (AC9M9A02, node 1).
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can expand two brackets by finding all four pieces.
+  - I can expand two brackets with negative numbers in them.
+  - I can use an expansion to find an area.
+struggle: "Finding all four pieces, then the signs. Ask students to sketch the rectangle and label each piece before they write anything."
+before: |
+  Do the Run board yourself first. Students need Year 8 expanding (one bracket) and multiplying negatives.
+
+  The one idea: every term in one bracket multiplies every term in the other, so there are four pieces. The common mistake is multiplying only the firsts and the lasts ((x + 3)(x + 2) = x² + 6): it is planted after the worked example, in Ali's working.
+
+  The board draws (x + p)(x + q) as a rectangle: the x² square, a strip of p x-tiles, a strip of q x-tiles and p × q ones. Negative pieces are red, as on the Year 8 tiles.
+running:
+  - "Predict: take a show of hands. Students who chose x² + 12 multiplied the firsts and the lasts. Ask them to point to the two strips on the garden picture."
+  - "Run: ask students to read the count under the board aloud."
+  - "Investigate: draw the rectangle for (x + 4)(x + 3) live, label each piece at writing pace, then collect."
+  - "Paper: the try-one after the worked example and the garden size in Make are worked on paper first. Books out, and look for four labelled pieces."
+  - "Modify: before (x + 6)(x − 6), ask what will happen to the two strips."
+  - "Make: ask who thinks the new garden is bigger than the old bed before anyone calculates."
+stuck:
+  - see: "A student writes x² + 6 for (x + 3)(x + 2) (Ali's mistake)."
+    ask: "Sketch the rectangle. How many pieces are there?"
+    fix: "Four: x², 2x, 3x and 6. Every term multiplies every term."
+  - see: "A student gets the corner's sign wrong with two negatives."
+    ask: "What's a negative times a negative?"
+    fix: "Positive: (x − 3)(x − 4) has +12 in the corner."
+  - see: "A student writes 2x for x times x."
+    ask: "What's 5 times 5? So what's x times x?"
+    fix: "x², the big square, not 2x."
+stretch: "Expand (x + a)(x + b) with letters. What do the middle term and the last term have to do with a and b?"
+support: "A blank 2 by 2 grid to fill in: the bracket terms along the top and down the side, the four products inside."
+leads: |
+  This starts AC9M9A02.
+
+  Where it leads: the pattern (x + a)(x + b) = x² + (a + b)x + ab (next lesson), factorising quadratics, and solving quadratics (Years 9 and 10).
+exit:
+  q: "Expand (x − 4)(x + 6)."
+  a: "x² + 2x − 24."
+explain: |
+  Two brackets multiply like the sides of a rectangle. $(x + 4)(x + 3)$ is $x + 4$ across and $x + 3$ down, so the area has four pieces: $x \times x = x^2$, $x \times 3 = 3x$, $4 \times x = 4x$ and $4 \times 3 = 12$. Add them and collect the two strips: $x^2 + 7x + 12$.
+
+  Signs come with the numbers: $(x + 4)(x - 3) = x^2 - 3x + 4x - 12 = x^2 + x - 12$.

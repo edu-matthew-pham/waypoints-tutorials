@@ -2,11 +2,12 @@
 title: Algebra Foundations
 recap: true
 coach: true
-summary: Expressions and equations, three ways to solve them, each checked, then brackets, formulas, harder equations and inequalities.
+summary: Expressions and equations, three ways to solve them, each checked, then brackets, formulas, harder equations and inequalities, then two brackets and factorising quadratics.
 order: 1
 units:
   - { id: expressions, title: Expressions, summary: "Letters that stand for numbers: variables, formulas and expressions, and how to use them." }
   - { id: equations, title: Equations, summary: "What an equation says, and how to find the value that makes it true." }
   - { id: brackets, title: Brackets, summary: "Expanding and factorising with algebra tiles, then changing the subject of a formula (Year 8)." }
   - { id: solving, title: Equations and inequalities, summary: "Equations with x on both sides, brackets, negatives and fractions, then inequalities (Year 8)." }
+  - { id: binomials, title: Two brackets, summary: "Two brackets multiplied as the area of a rectangle, the pattern that comes out, then the same pattern run backwards to factorise (Year 9)." }
 ---

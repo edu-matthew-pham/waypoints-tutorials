@@ -13,6 +13,14 @@
 //   slider t: 1, 12, 9       ones in all (or fixed: "t: 9")
 //   slider k: 1, 9, 1        rows: the tiles are shared into k equal rows when k divides both, giving k(ax + b)
 //   values: k, s, t, f (1 when k rows work), h (1 when k is the highest common factor: fully factorised)
+// Two brackets (mode: binomial, Year 9): (x + p)(x + q) as a rectangle x + p wide and x + q tall: one x² tile, p and q
+// x-tiles, and p·q ones (negative tiles red). With target, students set p and q to factorise x² + Bx + C.
+//   mode: binomial
+//   slider p: -6, 8, 2       the number in the first bracket (or fixed "p: 2")
+//   slider q: -6, 8, 3       the number in the second bracket
+//   target: 5, 6             optional: the expression to factorise, x² + 5x + 6 (B, C); value r is 1 when it matches
+//   result: off              hide the expanded expression
+//   values (binomial): p, q, m (x-tiles in all: p + q), c (ones: p·q), r (1 when it matches the target), B, C
 // state: { scope: { vars: { k, a, b, p, q, m (x-tiles in all: k·a + p), c (ones in all: k·b + q) } } }
 // Checks: "k = 3 and a = 1 and b = 2", "m = 6 and c = 12 and k > 1".
 (function (B) {
@@ -20,12 +28,14 @@
   var spec = null, vars = {}, ui = {};
   var NAMES = ['k', 'a', 'b', 'p', 'q'], FNAMES = ['k', 's', 't'], XLEN = 3.3, GAP = 1.4;
   var gcd = function (x, y) { return y ? gcd(y, x % y) : Math.abs(x); };
-  var names = function () { return spec && spec.factor ? FNAMES : NAMES; };
+  var names = function () { return spec && spec.binomial ? ['p', 'q'] : spec && spec.factor ? FNAMES : NAMES; };
   var show = function (n) { return B.fmt(n).replace(/^-/, '−'); };
 
   function num(t, where) { var v = Number(String(t).trim()); if (!isFinite(v) || v !== Math.round(v)) throw new Error(where + ': "' + String(t).trim() + '" is not a whole number.'); return v; }
   function parse(s) {
     s.sl = {}; s.fixed = {};
+    s.binomial = /^binomial$/i.test(s.mode || '');
+    if (s.binomial) return parseBinomial(s);
     s.factor = s.s !== undefined || s.items.some(function (it) { return it.kind === 'slider' && it.name === 's'; });
     var NAMES = s.factor ? FNAMES : ['k', 'a', 'b', 'p', 'q'];
     s.items.forEach(function (it) {
@@ -56,12 +66,13 @@
 
   // Factorising: k rows work when k divides both totals; then each row is a x-tiles and b ones.
   function derive() {
-    if (!spec.factor) return;
+    if (!spec.factor || spec.binomial) return;
     var k = vars.k, ok = k > 0 && vars.s % k === 0 && vars.t % k === 0;
     vars.f = ok ? 1 : 0; vars.a = ok ? vars.s / k : vars.s; vars.b = ok ? vars.t / k : vars.t; vars.p = 0; vars.q = 0;
     vars.h = ok && gcd(vars.a, vars.b) === 1 ? 1 : 0;
   }
   function build() {
+    if (spec.binomial) return buildBinomial();
     derive();
     if (spec.factor && !vars.f) return buildHeap();
     var ink = B.css('--ink') || '#1d2430', muted = B.css('--muted') || '#5d6675', pos1 = B.css('--left') || '#2f6fb3', pos2 = B.css('--accent') || '#c2570a', neg = '#c0392b';
@@ -114,6 +125,63 @@
     board.create('text', [W / 2, H + 0.9, 'These do not share into ' + vars.k + ' equal rows'], { anchorX: 'middle', anchorY: 'middle', cssClass: 'tside', highlightCssClass: 'tside', fontSize: 16, strokeColor: ink, fixed: true, highlight: false });
     board.update();
   }
+  function parseBinomial(s) {
+    s.items.forEach(function (it) {
+      if (it.kind !== 'slider') return;
+      var where = 'Line ' + it.line + ' (slider ' + (it.name || '') + ')';
+      if (['p', 'q'].indexOf(it.name) < 0) throw new Error(where + ': two brackets use sliders p and q only.');
+      var v = it.value.split(',').map(function (t) { return num(t, where); });
+      if (v.length < 3 || !(v[0] < v[1]) || v[2] < v[0] || v[2] > v[1]) throw new Error(where + ': needs min, max, start with min < max and start between them.');
+      if (v[0] < -9 || v[1] > 9) throw new Error(where + ': keep p and q between −9 and 9.');
+      s.sl[it.name] = { name: it.name, min: v[0], max: v[1], start: v[2] };
+    });
+    ['p', 'q'].forEach(function (n) {
+      if (s[n] !== undefined) { if (s.sl[n]) throw new Error(n + ': give it a slider or a fixed value, not both.'); s.fixed[n] = num(s[n], n); }
+      else if (!s.sl[n]) throw new Error(n + ': needs a slider ("slider ' + n + ': -6, 8, 2") or a value ("' + n + ': 2").');
+    });
+    if (s.target !== undefined) { var t = String(s.target).split(',').map(function (x) { return num(x, 'target'); }); if (t.length !== 2) throw new Error('target: two whole numbers, B and C, for x² + Bx + C.'); s.tgt = t; }
+    s.showResult = !/^off$/i.test(s.result || '');
+  }
+  // "x + 3", "x − 2", "x"
+  function br(n) { return n ? 'x ' + (n < 0 ? '− ' + show(-n) : '+ ' + show(n)) : 'x'; }
+  function quad(B, C) { var t = 'x²'; if (B) t += ' ' + (B < 0 ? '− ' : '+ ') + (Math.abs(B) === 1 ? '' : show(Math.abs(B))) + 'x'; if (C) t += ' ' + (C < 0 ? '− ' : '+ ') + show(Math.abs(C)); return t; }
+  function term(n, x) { return (n < 0 ? '− ' : '+ ') + (x && Math.abs(n) === 1 ? '' : show(Math.abs(n))) + (x ? 'x' : ''); }
+  function buildBinomial() {
+    var ink = B.css('--ink') || '#1d2430', sq = B.css('--right') || '#8a4fb8', pos1 = B.css('--left') || '#2f6fb3', pos2 = B.css('--accent') || '#c2570a', neg = '#c0392b';
+    var p = vars.p, q = vars.q, ap = Math.abs(p), aq = Math.abs(q), X = XLEN;
+    var W = Math.max(X + ap, 6), H = Math.max(X + aq, 5);
+    var board = B.jsx({ boundingbox: [-1.8, H + 1.4, W + 0.8, -0.6], keepAspectRatio: true });
+    var top = H; // y of the rectangle's top edge
+    var tile = function (x, y, w, h, sign, lab, colour) {
+      var c = sign < 0 ? neg : colour;
+      board.create('polygon', [[x, y - h], [x + w, y - h], [x + w, y], [x, y]], { fillColor: c, fillOpacity: sign < 0 ? 0.35 : 0.3, borders: { strokeColor: c, strokeWidth: 1.5, highlight: false }, vertices: { visible: false }, fixed: true, highlight: false });
+      board.create('text', [x + w / 2, y - h / 2, (sign < 0 ? '−' : '') + lab], { anchorX: 'middle', anchorY: 'middle', cssClass: 'tlab', highlightCssClass: 'tlab', fontSize: lab === 'x²' ? 20 : 15, fixed: true, highlight: false });
+    };
+    var sp = p < 0 ? -1 : 1, sq2 = q < 0 ? -1 : 1;
+    tile(0, top, X, X, 1, 'x²', sq);
+    for (var i = 0; i < ap; i++) tile(X + i, top, 1, X, sp, 'x', pos1);
+    for (var j = 0; j < aq; j++) tile(0, top - X - j, X, 1, sq2, 'x', pos1);
+    for (var u = 0; u < ap; u++) for (var v = 0; v < aq; v++) tile(X + u, top - X - v, 1, 1, sp * sq2, '1', pos2);
+    var lab = function (x, y, t) { board.create('text', [x, y, t], { anchorX: 'middle', anchorY: 'middle', cssClass: 'tside', highlightCssClass: 'tside', fontSize: 18, strokeColor: ink, fixed: true, highlight: false }); };
+    board.create('polygon', [[0, top - X - aq], [X + ap, top - X - aq], [X + ap, top], [0, top]], { fillOpacity: 0, borders: { strokeColor: ink, strokeWidth: 2.5, highlight: false }, vertices: { visible: false }, fixed: true, highlight: false });
+    lab(X / 2, top + 0.6, 'x'); if (ap) lab(X + ap / 2, top + 0.6, p < 0 ? '− ' + ap : '+ ' + ap);
+    lab(-0.8, top - X / 2, 'x'); if (aq) lab(-0.8, top - X - aq / 2, q < 0 ? '− ' + aq : '+ ' + aq);
+    board.update();
+  }
+  function reportBinomial() {
+    var p = vars.p, q = vars.q, m = p + q, c = p * q;
+    ui.sliders.forEach(function (s) { s.out.textContent = s.n + ' = ' + show(vars[s.n]); });
+    var lhs = '(' + br(p) + ')(' + br(q) + ')';
+    var four = 'x² ' + (p ? term(p, true) + ' ' : '') + (q ? term(q, true) + ' ' : '') + (c ? term(c, false) : '');
+    var text = lhs + (spec.showResult ? ' = ' + four.trim() + (p && q ? ' = ' + quad(m, c) : '') : '');
+    var r = spec.tgt ? (m === spec.tgt[0] && c === spec.tgt[1] ? 1 : 0) : 0;
+    ui.work.textContent = text;
+    if (spec.tgt) ui.count.textContent = 'Target: ' + quad(spec.tgt[0], spec.tgt[1]) + '. ' + (r ? 'These brackets make it.' : 'These make ' + quad(m, c) + (c !== spec.tgt[1] ? ': the ones need to multiply to ' + show(spec.tgt[1]) + '.' : ': the x-tiles need to add to ' + show(spec.tgt[0]) + '.'));
+    else ui.count.textContent = spec.showResult ? 'One x², ' + Math.abs(m) + ' x-tile' + (Math.abs(m) === 1 ? '' : 's') + ' in all (' + show(p) + ' + ' + show(q) + ') and ' + Math.abs(c) + (c < 0 ? ' negative' : '') + ' one' + (Math.abs(c) === 1 ? '' : 's') + ' (' + show(p) + ' × ' + show(q) + ').' : 'One x², the x-tiles and the ones.';
+    B.say('');
+    B.save({ vars: vars });
+    B.post({ scope: { vars: { p: p, q: q, m: m, c: c, r: r, B: spec.tgt ? spec.tgt[0] : 0, C: spec.tgt ? spec.tgt[1] : 0 }, points: {} } }, text);
+  }
   function paintPanel() {
     var panel = B.el('gpanel'); panel.replaceChildren(); ui = { sliders: [] };
     ui.work = document.createElement('p'); ui.work.className = 'rulework'; ui.work.id = 'tsum'; ui.work.setAttribute('aria-live', 'polite'); panel.appendChild(ui.work);
@@ -139,6 +207,7 @@
   }
 
   function report() {
+    if (spec.binomial) return reportBinomial();
     derive();
     if (spec.factor) return reportFactor();
     var m = vars.k * vars.a + vars.p, c = vars.k * vars.b + vars.q, kx = vars.k * vars.a, kc = vars.k * vars.b;

@@ -1,0 +1,31 @@
+# Practice for "The pattern".
+templates:
+  - q: "Expand (x + {a})(x + {b})."
+    vars: { a: "1..12", b: "1..12" }
+    answer: "x^2 + {a + b}x + {a * b}"
+    form: expanded
+    feedback:
+      - ["x^2 + {a * b}x + {a + b}", "The middle is the sum {a} + {b} and the end is the product {a} × {b}."]
+    explain: "{a} + {b} = {a + b} and {a} × {b} = {a * b}."
+  - q: "Expand (x + {a})(x − {b})."
+    vars: { a: "1..12", b: "1..12" }
+    where: "a != b"
+    answer: "x^2 {a - b|sc}x - {a * b}"
+    form: expanded
+    feedback:
+      - ["x^2 {a - b|sc}x + {a * b}", "{a} × (−{b}) is −{a * b}."]
+    explain: "{a} + (−{b}) = {a - b} and {a} × (−{b}) = −{a * b}."
+  - q: "Expand (x − {a})(x − {b})."
+    vars: { a: "1..12", b: "1..12" }
+    answer: "x^2 - {a + b}x + {a * b}"
+    form: expanded
+    feedback:
+      - ["x^2 - {a + b}x - {a * b}", "−{a} × (−{b}) is +{a * b}."]
+    explain: "−{a} + (−{b}) = −{a + b} and (−{a}) × (−{b}) = {a * b}."
+  - q: "Expand (x + {a})(x − {a})."
+    vars: { a: "1..12" }
+    answer: "x^2 - {a * a}"
+    form: expanded
+    feedback:
+      - ["x^2 - {2 * a}x - {a * a}", "The strips cancel: {a} + (−{a}) = 0."]
+    explain: "The middle is {a} + (−{a}) = 0, and the end is −{a * a}."

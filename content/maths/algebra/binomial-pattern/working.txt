@@ -1,0 +1,9 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Expand (x + 3)(x + 5).
+The two numbers are 3 and 5.
+The middle number is 3 times 5, which is 15.
+The last number is 3 plus 5, which is 8.
+So (x + 3)(x + 5) = x² + 15x + 8.
+# endregion
