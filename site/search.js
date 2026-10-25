@@ -24,7 +24,7 @@
     return loading;
   }
   function has(ws, tok) { for (var i = 0; i < ws.length; i++) if (ws[i].indexOf(tok) === 0) return true; return false; }
-  var BONUS = { course: 3, unit: 1, standard: 1, page: 2, lesson: 0 }, LABEL = { course: 'Course', unit: 'Unit', lesson: 'Lesson', standard: 'Standard', page: 'Page' };
+  var BONUS = { course: 3, unit: 1, standard: 1, page: 2, lesson: 0, card: 0 }, LABEL = { card: 'Card', course: 'Course', unit: 'Unit', lesson: 'Lesson', standard: 'Standard', page: 'Page' };
   function search(q, subject) {
     var toks = words(q);
     if (!toks.length) return null;

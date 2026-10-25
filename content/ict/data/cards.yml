@@ -1,0 +1,109 @@
+# Reference cards for Working with data: one screen each, no ticks. `lesson` is the lesson folder that teaches it.
+cards:
+  - id: formula-keeps-up
+    title: "Use a formula, not a typed answer"
+    unit: sheets
+    lesson: a-formula-keeps-up
+    idea: "A formula starts with = and uses cell names, so the answer changes when a number changes. A typed answer goes stale."
+    steps:
+      - "Click the cell for the answer."
+      - "Type = then click the first cell (or type its name, such as B3)."
+      - "Type the sign (+, -, *, /) and click the next cell."
+      - "Press Enter. Change a number it uses and watch the answer follow."
+    watch: "If you typed the answer, it will not change. A formula shows in the formula bar."
+    apps:
+      Excel: "Same in every version. The formula bar is above the grid."
+      Sheets: "Same. Click the cell and the formula shows in the bar above the grid."
+  - id: copy-formula
+    title: "Copy a formula down a column"
+    unit: sheets
+    lesson: copy-a-formula
+    idea: "When you copy a formula, its cell names move with it, so each row works on its own row."
+    steps:
+      - "Write the formula in the first row."
+      - "Select that cell and the cells below it."
+      - "Fill down (or copy, then paste)."
+      - "Click a cell in the last row and check its formula uses that row."
+    apps:
+      Excel: "Ctrl+D fills down, or drag the small square at the cell's corner."
+      Sheets: "Ctrl+D fills down, or drag the small square at the cell's corner."
+  - id: fix-a-cell
+    title: "Fix a cell with $"
+    unit: sheets
+    lesson: a-cell-that-stays-put
+    idea: "A $ in front of a column letter or row number stops that part moving when the formula is copied. Use it for a number every row shares."
+    steps:
+      - "Write the formula with the shared cell, such as =B3*B1."
+      - "Put $ before the letter and the number of the shared cell, such as $B$1."
+      - "Copy the formula down and check every row still points at the shared cell."
+    watch: "Without the $, the shared cell slides down with each row and the answers go wrong after the first."
+    apps:
+      Excel: "F4 adds the $ signs to the cell you are editing (on some keyboards Fn+F4)."
+      Sheets: "Type the $ signs, or press F4 while editing."
+  - id: sum-a-column
+    title: "Add up a column"
+    unit: summing
+    lesson: add-up-a-column
+    idea: "SUM adds a range. A range is two cells with a colon between them, from the first to the last."
+    steps:
+      - "Click the cell under the numbers."
+      - "Type =SUM( then drag over the numbers (this writes B2:B9)."
+      - "Type ) and press Enter."
+    watch: "Check the range covers every number and nothing else, such as a heading."
+    apps:
+      Excel: "AutoSum on the Home tab writes the formula for you. Check the range it picked."
+      Sheets: "Sigma button in the toolbar (Functions), then SUM."
+  - id: typical-smallest-biggest
+    title: "Typical, smallest and biggest"
+    unit: summing
+    lesson: typical-smallest-biggest
+    idea: "AVERAGE gives the typical value, MIN the smallest, MAX the biggest. They use a range, like SUM."
+    steps:
+      - "Type =AVERAGE(, =MIN( or =MAX( in an answer cell."
+      - "Drag over the range and close the bracket."
+      - "Use ROUND to tidy the answer, for example =ROUND(AVERAGE(B2:B9),1)."
+    watch: "An empty cell is skipped, but a typed 0 is counted and drags the average down."
+    apps:
+      Excel: "The same functions with the same names."
+      Sheets: "The same functions with the same names."
+  - id: count-and-decide
+    title: "Count and decide"
+    unit: summing
+    lesson: count-and-decide
+    idea: "COUNTIF counts the cells that meet a rule. IF picks one answer or another. Words in a rule go inside quotes."
+    steps:
+      - "For a count, type =COUNTIF(range, rule), such as =COUNTIF(C2:C9,\">=5\")."
+      - "For a decision, type =IF(rule, answer if yes, answer if no)."
+      - "Use quotes round words, such as \"Yes\"."
+    watch: "\">\" and \">=\" are different. Check the cell that is exactly on the line."
+    apps:
+      Excel: "Commas separate the parts. Some regions use semicolons."
+      Sheets: "Commas separate the parts. Some regions use semicolons."
+  - id: sort-and-filter
+    title: "Put rows in order, or show only some"
+    unit: showing
+    lesson: put-rows-in-order
+    idea: "Sort moves whole rows so each row stays together. A filter hides the rows that do not match and keeps them."
+    steps:
+      - "Click inside the table (or select the whole table with its headings)."
+      - "Choose Sort and the column to sort by, small to large or large to small."
+      - "To show only some rows, turn on Filter and pick the values to keep."
+      - "Turn the filter off to bring every row back."
+    watch: "Sorting one column on its own breaks the rows apart. Select the whole table."
+    apps:
+      Excel: "Data tab, Sort and Filter."
+      Sheets: "Data menu, Sort range and Create a filter."
+  - id: choose-a-chart
+    title: "Choose a chart that tells the truth"
+    unit: showing
+    lesson: choose-a-chart
+    idea: "Column compares groups. Line shows change over time. Scatter shows two numbers against each other. Pie shows parts of one whole."
+    steps:
+      - "Select the headings and the numbers to chart."
+      - "Insert a chart and pick the type that matches the question."
+      - "Add a title and name both axes, with the units."
+      - "Ask what the chart shows. If it does not answer your question, try another type."
+    watch: "A pie for change over time hides the change. Use a line."
+    apps:
+      Excel: "Insert tab, Charts."
+      Sheets: "Insert menu, Chart, then choose the type in the editor."

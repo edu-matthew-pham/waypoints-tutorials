@@ -608,6 +608,24 @@ questions:               # class questions: question, number, trace or match, th
 
 The hook slide ("Why it matters") is plain context; a Discussion badge is for something students can argue about, so write an `inquiry` (a trade-off, "is it better to...", "what would break if...") rather than leaning on the hook. On the deck, a Run step with a turtle or HTML starter embeds the live playground in the slide (`{{embed: URL}}`, loaded with the starter and no `id`, so it opens fresh and keeps nothing); the link to the tutorial is the backup, under it. Starters whose address would pass 6000 characters keep the link only. On the deck, a question about a program shows the step's code in the left column (programs up to about 16 lines); set `slideCode: false` on a check or class question to hide it, or `slideCode: file.py#region` to show a different part (the loop, not the whole compare program). Slides go after the first step of their stage (Predict activities go before the "What happened?" reveal); `start` goes after the hook and `end` before the exit ticket. Validate checks the fields and that the stage exists. How to use it (a typical lesson): whole class for hook, Predict, Run and Investigate on the slides (votes, playing turtle or human computer, jigsaw reading of longer programs), then Modify and Make self-paced on the site, then a short show-and-tell. On the site keep at most about three checks per step (the Predict, the misconception and bug tasks); move further questions here as class questions.
 
+### ICT cards (`cards.yml`)
+
+A card is the reference side of an ICT skill (26 Oct 2026). `content/ict/<course>/cards.yml` holds `cards:`, each one screen, with no ticks and no progress; the lesson counts toward progress. The build makes `ict/<course>/reference/` (the Reference chip on the course page) and adds each card to search (`tools/ict-cards.mjs`).
+
+```yaml
+cards:
+  - id: sum-a-column          # anchor, unique in the course
+    title: Add up a column
+    unit: summing             # a unit id of the course
+    lesson: add-up-a-column   # the lesson folder that teaches it (validate checks)
+    idea: One or two sentences.
+    steps: [ ... ]            # 1 to 6 steps that work in any app
+    watch: Optional. The usual slip.
+    apps: { Excel: ..., Sheets: ... }   # where to find it; menus that rarely change
+```
+
+Keep to core functions; every card says other apps work the same. `npm run validate` checks the fields, the lesson and the unit.
+
 ## 11. Maths lessons
 
 A lesson with `language: maths` (see `content/maths/algebra/`) gets maths notation, maths checks and the board.

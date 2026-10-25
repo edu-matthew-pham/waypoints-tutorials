@@ -30,6 +30,16 @@ General ICT skills for students and for teachers of any subject, as its own subj
 - Tested 26 Oct: validate, build, `check-sheet.mjs`, all 34 board checks driven in a headless browser (each ticks with its intended actions and none is true at the start), no sideways scroll at 390 px (pages and boards), `check-decks ict/documents`, `check-blockers` (also `--wide`).
 - Known limits: the checks are rough counts (headings, steps, slides, words, contrast, alt text of three or more words, a credit with three parts); real apps check none of these, and the lessons and teacher notes say so. Contrast is the standard WCAG ratio; the 24-point rule is a rule of thumb. The credit lesson is general practice, not legal advice, and tells teachers to fit it to the school's own rules. Slides on a phone are small (the model scales to the width).
 
+## Decisions (Matthew, 26 Oct 2026): lessons and cards
+- ICT skills is its own subject with its own entry point: light courses plus cards. Other subjects may link in optionally (a lesson or card that says "needs this ICT skill"); maths, science and code lessons are left alone for now.
+- A skill has a **lesson** (counts toward progress) and a **card** (reference: no ticks, one screen: the idea, steps that work in any app, a note for each common app such as Word, Excel, Docs, Sheets, a "watch for" line, and a link to the lesson). Both exist; search finds both.
+- Each ICT course has a Reference page listing its cards (`<course>/reference/`, the Reference chip on the course page). Cards live in `content/ict/<course>/cards.yml` (`tools/ict-cards.mjs`, AUTHORING › ICT cards). Core functions only; app notes name menus that rarely change and always say other apps work the same.
+- Files and systems is cut to about four habit lessons (names and folders, copy/move/delete, versions and backup, fix it first) with no new widget for now; they link to the concept lessons in How computers work.
+
+## Built (26 Oct 2026): cards
+- First batch: 8 cards for Working with data and 8 for Documents and slides, from their lessons. Pictures are not drawn yet (text only); whether widgets can be drawn through `render-pictures` is untested.
+- Next: a "used in" list on a card (other subjects' lessons that need it) once a first subject links in; cards for the later pathways as each is built.
+
 ## Next
 - Matthew pilots the course with a colleague. After a publish (a new subject needs the full publish), check the Subjects menu, the subject page, search and the teacher guide.
 - The other pathways in the plan, each proposed for approval before building: files and systems, investigating and judging information (workshop-style), staying safe and well (workshop-style). Plans for all three are in the Project docs (see below).

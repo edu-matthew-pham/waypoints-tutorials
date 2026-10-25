@@ -44,6 +44,17 @@ for (const cards of loadAllMathsCards()) {
   errs.forEach((e) => console.error('✗ ' + e)); bad += errs.length;
   if (!errs.length) console.log(`✓ snippets/${cards.file}.json: ${cards.cards.length} cards typeset, units match ${cards.course}`);
 }
+// ICT cards: fields present, lesson and unit exist.
+import { loadIctCards, validateIctCards } from './ict-cards.mjs';
+import { readdirSync as rdirI, existsSync as exI } from 'node:fs';
+for (const c of (exI(pjoin(CONTENT_ROOT, 'ict')) ? rdirI(pjoin(CONTENT_ROOT, 'ict')) : [])) {
+  const dir = pjoin(CONTENT_ROOT, 'ict', c), cards = loadIctCards(dir);
+  if (!cards.length) continue;
+  const units = loadDirMeta(dir).units;
+  const errs = validateIctCards(cards, { course: `ict/${c}`, lessonSlugs: lessons.map((l) => l.slug), unitIds: Array.isArray(units) ? units.map((u) => u.id) : null });
+  errs.forEach((e) => console.error('✗ ' + e)); bad += errs.length;
+  if (!errs.length) console.log(`✓ ict/${c}/cards.yml: ${cards.length} cards, lessons and units match`);
+}
 // Diagrams (warnings, never a failure): each stays small enough for a phone and a slide (AUTHORING.md › Diagrams).
 import { diagramItems, diagramWarnings } from './diagram-core.mjs';
 {

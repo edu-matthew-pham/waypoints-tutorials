@@ -1,0 +1,104 @@
+# Reference cards for Documents and slides: one screen each, no ticks.
+cards:
+  - id: use-a-heading-style
+    title: "Make a heading with a style"
+    unit: structure
+    lesson: headings-say-what-a-part-is
+    idea: "A heading style tells the app (and a screen reader) what a part is. Big bold text only looks like a heading."
+    steps:
+      - "Click in the line."
+      - "Pick Heading 1 for a main part, Heading 2 for a part inside it."
+      - "Open the headings panel (outline) and check the order reads like a contents list."
+    watch: "If it does not appear in the headings panel, it is not a heading."
+    apps:
+      Word: "Home tab, Styles gallery. View, Navigation pane shows the headings."
+      Docs: "The styles box in the toolbar (\"Normal text\"). View, Show outline."
+  - id: change-the-style
+    title: "Change the style, not every line"
+    unit: structure
+    lesson: change-the-style-not-every-line
+    idea: "One style change reaches every part that uses the style, so the document stays matching."
+    steps:
+      - "Change one heading to look the way you want."
+      - "Update the style to match it."
+      - "Check that every heading of that level changed."
+    watch: "Colouring each heading by hand needs repeating for every one, and one is always missed."
+    apps:
+      Word: "Right-click the style in the Styles gallery, Update to match selection."
+      Docs: "Format, Paragraph styles, Update style to match."
+  - id: lists-and-tables
+    title: "Choose a list or a table"
+    unit: structure
+    lesson: lists-and-tables
+    idea: "A list is for items in a sequence or a set. A table is for things that have the same kinds of facts, in columns."
+    steps:
+      - Steps in order: "use a numbered list."
+      - Items with no order: "use a bullet list."
+      - Same facts about several things: "use a table, with a header row naming each column."
+    apps:
+      Word: "Home tab, bullets and numbering. Insert, Table. Table Design, Header Row."
+      Docs: "Format, Bullets and numbering. Insert, Table. Right-click, pin the header row."
+  - id: room-to-read
+    title: "Give the reader room"
+    unit: look
+    lesson: room-to-read
+    idea: "Space between lines, margins and alignment are for the reader. Shorter lines with space around them are easier to read."
+    steps:
+      - "Set line spacing so lines are not squashed (1.15 to 1.5)."
+      - "Keep margins wide enough that lines are not long."
+      - "Left-align body text. Centre only short things such as a title."
+    apps:
+      Word: "Layout tab, Margins. Home, Line and paragraph spacing."
+      Docs: "File, Page setup. Format, Line and paragraph spacing."
+  - id: one-idea-per-slide
+    title: "One idea per slide"
+    unit: slides
+    lesson: one-idea-per-slide
+    idea: "A slide supports what you say. Give it a title that states the idea and a few short points."
+    steps:
+      - "Write the idea as the slide's title."
+      - "Keep to a few short points, not sentences."
+      - "If there is a second idea, make a second slide."
+    watch: "A full page of text on a slide is a document on the wall."
+    apps:
+      PowerPoint: "Home, New Slide. Use the title placeholder for the title."
+      Slides: "Slide menu, New slide. Type the title in the title box."
+  - id: pictures-that-help
+    title: "A picture that helps, with alt text"
+    unit: slides
+    lesson: pictures-that-help
+    idea: "Use a picture only if it shows something the words do not. Alt text says what the picture shows, for anyone who cannot see it."
+    steps:
+      - "Ask what the picture shows that the words do not."
+      - "Add it, and make it big enough to read."
+      - "Write alt text of a short sentence about what it shows, not \"image of\"."
+    apps:
+      PowerPoint: "Right-click the picture, View Alt Text."
+      Word: "Right-click the picture, View Alt Text."
+      Docs and Slides: "Right-click the picture, Alt text."
+  - id: readable-from-the-back
+    title: "Readable from the back"
+    unit: slides
+    lesson: readable-from-the-back
+    idea: "Big text and strong contrast between text and background, so it can be read across a room."
+    steps:
+      - "Use at least 24 point for text and bigger for titles."
+      - "Use dark text on a light background, or light on dark."
+      - "Check that nothing runs off the slide."
+    watch: "Light grey on white is hard to read from anywhere."
+    apps:
+      PowerPoint: "Home, font size. Design, Variants for colours."
+      Slides: "Toolbar font size. Slide, Change background."
+  - id: credit-it
+    title: "Say whose it is"
+    unit: credit
+    lesson: whose-is-it
+    idea: "A credit says who made it, where it came from and what you may do with it (its licence). Being online does not make it free to use."
+    steps:
+      - "Note who made it, where you found it and the licence."
+      - "Check the licence allows what you plan, for example in a presentation."
+      - "Put the credit near the picture or in a list at the end."
+    watch: "Follow your school's own rules about sources."
+    apps:
+      Word: "Add the credit as a caption, or in a list at the end."
+      Docs and Slides: "Add the credit as a caption, or on a final slide."

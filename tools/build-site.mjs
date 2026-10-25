@@ -24,7 +24,7 @@ import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } fro
 import { loadCurriculum, curriculumMapHtml, CMAP_CSS } from './curriculum-map.mjs';
 import { buildPointerPages, POINTER_SUBJECTS } from './pointer-pages.mjs';
 import { reviewSheet } from './review-sheet.mjs';
-import { makeSearch } from './search-index.mjs';
+import { makeSearch, norm as normSearch } from './search-index.mjs';
 import { loadCoverage, shortCode } from './coverage.mjs';
 import { searchBoxHtml, SEARCH_HINTS } from './search-view.mjs';
 import { coachPrompt } from './coach.mjs';
@@ -41,6 +41,7 @@ import { MATH_JS } from './math-expr.mjs';
 import { loadProgressions } from './progressions.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
+import { loadIctCards, ictCardsBody, ictCardText } from './ict-cards.mjs';
 import { loadAllMathsCards, mathsRefItem, mathsCheatBody, mathsCheatMd, MATHS_CARD_CSS } from './maths-cards.mjs';
 import { deckFor, worksheetFor, cheatSheetFor, cheatSheetBody, unitSnippets, CHEAT_CSS, lessonGuideBody, teachPath, stepUrl, SITE_URL, prepareLink, TEACH_CSS, TEACH_JS, blocksId } from './teach.mjs';
 
@@ -347,7 +348,7 @@ const navFor = (pagePath, here, coursePath = null) => {
       // Each pathway with a built course, linking to its trail map (one click from anywhere, for students).
       pathways: sub.pathways.filter((pw) => pw.id && (pw.courses || []).some((c) => c.path)).map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw })) })),
     teachers: tsub ? { title: tsub.title, href: `${tsub.path}/`, on: subjectOn(tsub), items: tsub.links.map((l) => ({ title: l.title, href: l.href, group: l.group, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) })) } : null,
-    current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
+    current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) || ICT_CARDS.has(c.path) } : null,
   });
 };
 // Pictures of what snippet examples draw (tools/render-pictures.mjs, run by `npm run render`): { id: { w, h, hash } }.
@@ -387,6 +388,21 @@ for (const r of REFS) {
   mkdirSync(join(OUT, r.path), { recursive: true });
   writeFileSync(join(OUT, r.path, 'index.html'), page(r.title || data.title,
     `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(r.title || data.title)}</h1><p class="lede">${esc(r.summary || data.summary)}</p></header>${body}`, '', navFor(r.path, 'reference', parent)));
+}
+
+// ICT cards (26 Oct 2026): content/ict/<course>/cards.yml makes <course>/reference/ (tools/ict-cards.mjs).
+const ICT_CARDS = new Map();
+for (const path of [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).join('/')))].filter((p) => /^ict\/[^/]+$/.test(p))) {
+  const node = dirNode(path);
+  if ( !existsSync(join(CONTENT_ROOT, path, 'cards.yml'))) continue;
+  const cards = loadIctCards(join(CONTENT_ROOT, path));
+  if (!cards.length) continue;
+  ICT_CARDS.set(path, cards);
+  const lessonTitle = (f) => lessons.find((l) => l.slug === `${path}/${f}`)?.title || f;
+  mkdirSync(join(OUT, path, 'reference'), { recursive: true });
+  writeFileSync(join(OUT, path, 'reference', 'index.html'), page(`${node.title}: cards`,
+    `<header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: cards</h1><p class="lede">One screen for each skill, to look up when you need it. Each card says what to do in any app, then where to find it in the common ones, and links to the lesson that teaches it.</p></header>` +
+    ictCardsBody({ cards, units: node.meta?.units || [], lessonTitle }), '', navFor(`${path}/reference`, 'reference', path)));
 }
 
 // Playground pages live beside Reference on the paths that have a playground (PLAY is defined above).
@@ -439,6 +455,8 @@ copyFileSync(join('site', 'check.js'), join(OUT, 'check.js')); // the Check your
 const COVERAGE = loadCoverage('.', COURSES.map((c) => c.path).filter((p) => p.startsWith('code/')));
 for (const e of COVERAGE.std.values()) for (const p of [...e.focus, ...e.touches]) if (!COURSES.some((c) => c.path === p)) throw new Error(`data/curriculum/code-coverage.yml: ${e.code} names "${p}", which is not a course`);
 const SEARCH = makeSearch({ lessons, dirNode, courses: COURSES, subjects: SUBJECTS, pathwayOf, play: PLAY, coverage: COVERAGE });
+// ICT cards are found by search too, beside their lessons.
+for (const [path, cards] of ICT_CARDS) for (const c of cards) SEARCH.entries.push({ t: c.title, u: `${path}/reference/#${c.id}`, s: dirNode(path.split('/')[0]).title, sp: 'ict', c: dirNode(path).title, y: '', ty: 'card', d: c.idea.length > 150 ? c.idea.slice(0, 147).replace(/\s+\S*$/, '') + '…' : c.idea, k: normSearch(ictCardText(c)) });
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
 copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
 // Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
