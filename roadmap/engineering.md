@@ -113,6 +113,20 @@ From the six-subject review. Mechanisms and Structures already do design thinkin
 3. Optional: let `B.serial` accept an Uno's USB ids; surface-mount parts and 45° routing on the `pcb` board if a class wants them. (Done 12 Oct: compound gear trains; `shape: design` decks and worksheets say Inquire, not Predict.)
 4. (Done 12 Oct: `prerequisites()` reads `engineering` too.)
 
+## Proposed (25 Oct 2026, review chat; not approved): OpenSCAD, code as CAD
+
+A niche but useful bridge between Code and Engineering: a part is described in text, so variables, loops and modules do real work, and the Parametric design course's idea (change a number, the part changes) becomes the whole method. Nothing in the repo mentions it yet.
+
+- **Where it sits.** An optional extension after the console bridge (Code) and Parametric design (Engineering). It reuses variables, `for` loops and functions from the Python courses, in a different syntax. Typical fit Years 9+; teacher note only, not a year gate. The wider 3D and animation idea stays parked for a Digital Media / Design subject.
+- **Possible lessons (4 to 5, one move each).** Shapes and moving them (`cube`, `cylinder`, `translate`); variables and a labelled part (a box with a lid that fits: reuse the clearance numbers from Design and print › fit); `for` loops (a row of pegs, a gear-like ring); `module` and parameters (a box generator, one for each size); then a challenge that pairs with Capstone projects (a case for the plant monitor or the sorter). Checks are the usual kinds: questions, numbers, traces and `reasoning` boxes about a result; the part is judged by its dimensions, not by eye.
+- **Runtime options (decide before building).**
+  1. *Link out* to a hosted browser OpenSCAD and have students paste results back. Cheapest, but depends on school network access and has no code checks.
+  2. *Vendor a WebAssembly build* of OpenSCAD in a new `playground-openscad/`, loaded as local files like the other web libraries (no CDN). Gives live preview and code checks (`contains`, plus reading the output's size from the exported mesh). Largest cost: a new playground, size on disk, and the licence to read first (OpenSCAD is GPL; confirm what vendoring a build into the static site requires before any work).
+  3. *A model, not the real tool.* Teach the ideas on the existing `fab` widget with a few OpenSCAD-style lines it understands. No new dependency, but students would not use the real syntax.
+  Recommended: start with (3) for a single pilot lesson to see whether the idea works with a class, and decide on (2) after.
+- **Open questions.** Does the school network allow WASM and large downloads on student logins? Is 3D printing available to print what students make, or does the output stay on screen? Does a code-as-CAD course belong under Engineering or under Code's extensions? (Suggested: Engineering, with a link from Code's pathway page.)
+- **Not done / not checked.** No tool has been tested here. Any claim about a browser build's size, speed or licence needs checking at its source before it goes in a lesson.
+
 ## Parked
 
 - 3D and animation (12 Oct): taken out of Engineering, which is about physical things designed to a brief. Parked for a later Digital Media / Design subject (with video, audio and UX if they come). Keep the computational framing when it returns: keyframes as data, tweening and easing as maths, frames per second, meshes as lists of points, Blender driven by its Python API, Autodesk as a nod. Builds on Digital systems › Shapes as numbers and Code › p5.js.
