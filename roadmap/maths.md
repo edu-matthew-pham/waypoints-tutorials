@@ -252,6 +252,126 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 - Not done: the numberline `nested sets` mode in the earlier plan was not needed (a sort check does it). Nothing in batch 1 has been checked by a teacher.
 - Do not publish these lessons with publish-lessons alone: the three board modes are outside content/ and need Matthew's full publish first.
 
+## Year 10 plan (25 Oct 2026; planning only, nothing built)
+21 descriptors, 69 nodes, 23 of them hinges (`data/curriculum/maths.json`). About 59 lessons in five batches, same lesson shape as Year 9 batch 1 (picture-first Predict, a board Run where one helps, Investigate with a planted error, worked example then a `paper: true` try-one, Modify with an edge case, Practise with a review task, Make back to the opening, Also used in). Openings and Makes come from `data/connections/maths.yml`, which already covers every Year 10 node.
+
+**Order.** Only batch 1 builds on what exists (Year 9 batch 1: index laws, binomials, real numbers, scientific notation). Every other Year 10 batch needs a Year 9 batch that isn't built yet, so the plan interleaves by strand: Year 9 batch 2, then Year 10 batch 2, and so on.
+
+| Year 10 batch | Needs first |
+|---|---|
+| 1 Powers, exponentials and approximation (12) | Year 9 batch 1 (built) |
+| 2 Equations, two variables and models (13) | Year 9 batch 2 (gradient, quadratics, parameters) |
+| 3 Trigonometry, solids, error and proof (14) | Year 9 batch 3 (`trig`, cylinders, error intervals, enlargement) |
+| 4 Conditional probability and statistics (15) | Year 9 batch 4 (without replacement, histograms) |
+| 5 Networks and spatial algorithms (5) | Year 9 batch 5 (geometric algorithms) |
+
+**Year 10 nodes by course** (H = hinge; `class` = left to class, no lesson).
+- **Real numbers** (unit "Year 10: powers and approximation"): 10A01 n1 H exponent laws with letters, n2 negative exponents (one lesson for both: Year 9 taught each half); 10N01 n1 exact or approximate, n2 H truncating or rounding, n3 approximating over and over.
+- **Algebra** (unit "Year 10: quadratics by hand"; inequalities join the existing solving unit): 10A01 n3 H special products, n4 non-monic factorising and completing the square (two lessons), n5 solving algebraically; 10A02 n1 linear inequalities.
+- **Linear relations** (unit "Year 10: two variables"): 10A02 n2 regions, n3 H simultaneous equations (two lessons: substitution, elimination), n4 setting up in context.
+- **New course "Quadratics and exponentials"** (`functions/`): 10A03 n1 H constant ratio, n2 H exponential graphs, n3 equation and graph, n4 exponential equations; 10A04 n1 H which model, n2 writing the model, n3 judging the model; 10A05 n1 H conjecture with a graphing tool, n2 intersections, n3 circles as relations, n4 generalising (class). Proposal: Year 9's quadratics (9A04, 9A06, batch 2) move here too, instead of the "possibly a new course" in the 12 Oct plan. Linear relations stays linear.
+- **Measurement** (Area, volume, circles and Pythagoras): units "Year 10: composite solids" (10M01 n1 H decomposing, n2 H surface area, n3 volume, n4 modelling = Make of n3), "Year 10: log scales" beside sci9 (10M02 n1 H the log idea, n2 + n3 reading and comparing, one lesson), the Year 9 trig unit continued (10M03 n1 H elevation and depression, n2 bearings, n3 3D into 2D), "Year 10: error" (10M04 n1 sources, n2 H one error's effect, n3 errors that build up), "Year 10: scale" (10M05 n1 H scale factors, n2 scaled plans, n3 modelling = class and the Make of n2).
+- **Angles and shapes**: unit congruence continued as "Year 10: proof" (10SP01 n1 H demonstration or proof, n2 H writing a proof, n3 using theorems); new unit "Networks" (10SP02 n1–n3); algorithms unit continued (10SP03 n1 H defining the problem, n2 designing, n3 testing = class project and the Make of n2).
+- **Data and chance**: chance unit continued (10P01 n1 H the language, n2 H tables, Venns and trees, n3 independent or not; 10P02 n1 + n2 simulate and compare, one lesson; n3 = class); samples unit continued (10ST01 n1 misleading graphs, n2 samples in reports, n3 ethics = class); statistics unit continued (10ST02 n1 H five-number summary, n2 H boxplots, n3 comparing; 10ST03 n1 scatterplots, n2 describing association, n3 association or cause; 10ST04 n1 + n2 H row and column percentages, one lesson (Year 8 built two-way tables), n3 careful claims); 10ST05 n1 H posing the question (lesson), n2–n3 the investigation itself (class, like Year 8's Investigations).
+
+**Left to class (8 nodes):** 10A05 n4, 10M01 n4 and 10M05 n3 (modelling; each is the Make of the lesson before), 10SP03 n3, 10P02 n3, 10ST01 n3 (ethics is a discussion), 10ST05 n2–n3 (a real investigation). Each gets a teacher-guide line, not a lesson.
+
+**Board gap check (widget headers read 25 Oct).** One possible new board (a maths network), the rest small modes. Text, a hand SVG or real data does most of Year 10.
+
+| Need | Board today | Change |
+|---|---|---|
+| special products, non-monic (10A01 n3–n4) | `tiles` `mode: binomial` (x + p)(x + q) | coefficients on x, (2x + 1)(x + 3); difference of squares already works (q = −p) |
+| completing the square (10A01 n4) | `tiles` | `mode: square`: x² and the x-tiles split round it, the missing corner shown |
+| exponent laws, negatives (10A01 n1–n2) | `indexlaws` all modes | none |
+| inequalities, regions, simultaneous (10A02) | `numberline` `ray`, `graph` `shade` and `cross` | none |
+| exponentials (10A03) | `graph` plots `^`, sliders, table, dashed lines | none; the asymptote is a dashed `y = 0` plot. A ratio column on `table` only if a lesson asks |
+| which model, writing it (10A04) | `graph` `series` (real data) and plots | none |
+| conjectures, intersections (10A05 n1–n2) | `graph` sliders, `cross` | none |
+| circle as a relation (10A05 n3) | `graph` plots only y = … | `circle: h, k, r` (or two half-plots as a stopgap) |
+| composite solids (10M01) | `prism` (circle base from Year 9), `net` cylinder (Year 9) | none: hand SVG of the solid, the `formula` board for the volume. No 3D composite widget |
+| log scales (10M02) | none | a data picture (magnitudes, decibels); `numberline` `scale: log` only if the Run needs one |
+| elevation, bearings (10M03 n1–n2) | `trig` (Year 9, not built) | `trig` `view: elevation` (horizontal and eye level) and `view: bearing` (north line, 3-figure bearing) |
+| 3D into 2D (10M03 n3) | `space3d` box | `diagonal: on` (face diagonal, then space diagonal), the Year 9 note |
+| measurement error (10M04) | `formula`, `numberline` `interval` (Year 9) | `formula` `accuracy:`: each slider ± half its unit, result shown as a lowest–highest range |
+| scale (10M05) | `similar` with area/volume readouts (Year 9) | none; floor plans are hand SVGs |
+| proof (10SP01) | `geometry`, `parallel`, `congruence` | none; dragging is the demonstration, the `paper: true` reasoning is the proof |
+| networks (10SP02) | none (`network` is the systems one: packets) | new `netgraph`: nodes and edges, degrees live, click a path and see if it uses every edge once. Fallback: Mermaid diagrams with number and question checks, no board |
+| conditional probability (10P01) | `venn` (counts and table), `events` | `venn` `given: a` (the whole shrinks to A); `events` unequal branch weights on trees |
+| simulating it (10P02) | `events` trials, `chance` bag | `events` trials with the weighted first event (same change) |
+| boxplots (10ST02) | `data` dots, stem, two sets | `view: box` (five-number summary marked, two sets one above the other) |
+| scatterplots (10ST03) | `graph` `series` joins points | `series …, dots` (no line); a draggable line A, B already works for a line by eye |
+| two-way percentages (10ST04) | `venn` table | none: a Markdown table and number checks |
+| misleading reports (10ST01) | none | none: drawn charts, real headlines |
+
+**New board:** `netgraph` only, and only if Matthew wants the interactive Run (question 2 below). **Modes:** `tiles` (coefficients, square), `graph` (circle, dots), `trig` (elevation, bearing; after Year 9 builds `trig`), `space3d` (diagonal), `formula` (accuracy), `venn` (given), `events` (weights), `data` (box). **Shared tool:** `tools/math-expr.mjs` has no `pi`, so composite volumes either use a number for π or need `pi` added there (check roadmap/shared.md and `git log` first; Formulas with π may already show the way). Every lesson on a changed board needs Matthew's full publish first, not publish-lessons alone.
+
+**Batches** (lesson, node, opening → Make; `smaller:` on the hinge Practise or Modify task unless marked; † = figure needs a source link before it's stated).
+
+1. **Powers, exponentials and approximation (12; Real numbers, Quadratics and exponentials, Measurement).** Starts straight after Year 9 batch 1. One board change (`tiles` coefficients, for Non-monic factorising); the other 11 lessons need none and could go out with publish-lessons.
+   - All the laws, with letters (10A01 n1–n2, H): `scale-up-monster` (a model scaled by 3 has 27 times the volume) → simplify its scale-up formula. `smaller:` one law at a time with numbers.
+   - Exact or rounded, again (10N01 n1): `square-patch` (hood) → keep √ exact through a two-step calculation.
+   - Chop or round? (10N01 n2, H): `cents-chop` (a shop chops instead of rounding) → total the error over a day's sales. Prices and sales labelled made up. `smaller:` one price chopped and rounded.
+   - Rounding over and over (10N01 n3): `compound-savings` with the rate rounded each year → compare with exact. † a current bank rate (or label it made up).
+   - Same ratio each time (10A03 n1, H): `food-left-out` (why 4 hours, not double 2?) → doubling table. Source in the library (NSW Food Authority); † any bacteria doubling time stated as fact (or "a doubling time to try", made up). `smaller:` one ratio from two rows.
+   - Exponential graphs (10A03 n2, H): `cooling-tea` (will it get colder than the room?) → sketch from the class's own readings (no source needed). `smaller:` where does it cross the y-axis.
+   - From graph to equation (10A03 n3): `cooling-tea` (step) → read a and b off the class graph.
+   - Same base both sides (10A03 n4): `food-left-out` (step) → when does it pass 1000 times.
+   - How big is a step? (10M02 n1, H): `quake-magnitude` (Geoscience Australia, sourced) → magnitude 5 against 7. `smaller:` one step of the scale.
+   - Reading log scales (10M02 n2–n3): `noise-dose` (SafeWork SA, sourced) → how long at 100 dB; Also used in: `kilo-mega-giga`.
+   - Special products (10A01 n3, H): `mental-shortcut` (hood, 49² and 51 × 49 in your head) → its own shortcut; tiles. `smaller:` the four pieces with numbers.
+   - Non-monic factorising (10A01 n4): step only, use shown downstream (`frame-border`, next batch) → factorise the frame's area expression. Tiles with coefficients (the one board change if built in this batch; otherwise move it to batch 2).
+2. **Equations, two variables and models (13; Algebra, Linear relations, Quadratics and exponentials).** After Year 9 batch 2.
+   - Completing the square (10A01 n4): `ball-arc` (highest point) → its turning point. Tiles `mode: square`.
+   - Solving algebraically (10A01 n5): `frame-border` (border width for 1000 cm²) → solve and check the frame. Made-up sizes, labelled.
+   - Inequalities (10A02 n1): `ride-budget` → how many rides. Made-up prices, labelled.
+   - Regions (10A02 n2): `party-region` → which pizza and drink combos fit $120.
+   - Substitution, Elimination (10A02 n3, H; two lessons): `plans-cross` and `gym-or-casual` → when two plans cost the same. `smaller:` one variable already known. † gym prices if real (or made up).
+   - Setting it up (10A02 n4): `electricity-plan` (from a real bill: the student's own numbers, no source) → explain the answer in a sentence.
+   - Which model? (10A04 n1, H): `car-value` (same dollars or same share each year?) → test both on the data. † advertised prices for one model (a dated listing, or labelled made up). `smaller:` differences, then ratios, on three rows.
+   - Writing the model (10A04 n2): `compound-savings` → how long to double. † the rate.
+   - Judging the model (10A04 n3): `car-value` or `food-left-out` → what it ignores; `paper: true` reasoning.
+   - Make a conjecture (10A05 n1, H): `ball-arc` (hood) → what a does to every parabola. No `smaller:` yet (judgement hinge, see Smaller steps).
+   - Where they meet (10A05 n2): `plans-cross` → read the crossing on the graph.
+   - Circles as relations (10A05 n3): `centre-pivot` (the irrigation circle) → its equation from a measured arm. Graph `circle:`.
+3. **Trigonometry, solids, error and proof (14; Measurement, Angles and shapes).** After Year 9 batch 3.
+   - Looking up, looking down (10M03 n1, H): `lifeguard-tower` → how far out; Also used in: `tree-height`. Made up, labelled. `smaller:` which side is opposite the angle.
+   - Bearings (10M03 n2): `orienteering-leg` → north and east of the control; Also used in: `crow-flies`.
+   - The triangle inside (10M03 n3): `box-diagonal` (umbrella in a suitcase) → does it fit; `space3d` diagonal. Sizes labelled made up.
+   - Break it into solids, Surface area, Volume (10M01 n1 H, n2 H, n3): `grain-silo` (cylinder with a cone) throughout → how much grain, and paint for the outside; Also used in: `rainwater-tank` (BOM, sourced). † silo sizes from a real brochure (or labelled made up). `smaller:` n1 which solids, added or taken away; n2 is this face on the outside?
+   - Where errors come from (10M04 n1): `part-tolerance` (Year 9) → name the source.
+   - One measurement's error (10M04 n2, H): `carpet-error` → the most carpet you might need. `smaller:` the longest the 4.0 m side could be.
+   - Errors that build up (10M04 n3): `carpet-error` (multi-room) → the error on the total.
+   - Scale factors (10M05 n1, H): `floor-plan` → the plan's scale. `smaller:` one wall, plan to real. † a real estate floor plan (draw a made-up one).
+   - Using a plan (10M05 n2): `floor-plan` → will the couch fit; Make is the 10M05 n3 modelling task.
+   - Some cases or every case? (10SP01 n1, H): no entry (hood): opens on a pattern that holds for small cases and breaks (a demonstration fooled). No `smaller:` (judgement).
+   - Writing a proof (10SP01 n2, H): no entry (hood) → prove a quadrilateral property; `paper: true`. `smaller:` the first statement and its reason.
+   - Using theorems (10SP01 n3): `set-out-3-4-5` → check the corner; Also used in: `parallelogram-linkage`.
+4. **Conditional probability and statistics (15; Data and chance).** After Year 9 batch 4.
+   - "Given" (10P01 n1, H): `chance-of-rain` (FarmPoint, sourced) → what's known in each sentence. `smaller:` the smaller group the "given" picks.
+   - Tables, Venns and trees (10P01 n2, H): `rare-test` (made-up rates, labelled) → if the test says yes, how likely is it? `venn` `given:`, weighted tree. `smaller:` out of 1000 people, how many test positive.
+   - Independent or not? (10P01 n3): `survey-two-way` → does one change the other; Also used in: `bus-lateness`.
+   - Simulate it (10P02 n1–n2): `rare-test` simulated → compare with the table; Also used in: `penalty-shootout` (class n3).
+   - Misleading graphs (10ST01 n1): `cut-axis` (Year 9) → redraw it honestly.
+   - Who did they ask? (10ST01 n2): `screen-time-claim`, `fan-poll` → does the sample fit the claim. † any real report used (or a made-up one, labelled).
+   - Five numbers (10ST02 n1, H): `median-house-price` (Westpac, sourced) → the five numbers of a suburb's sales (made up, labelled). `smaller:` the median of the lower half.
+   - Boxplots, Comparing with boxplots (10ST02 n2 H, n3): `bus-lateness` (class or transport-app data) → which route is more reliable. `smaller:` where the box starts and ends.
+   - Scatterplots, Describing association (10ST03 n1–n2): `arm-span` (the class measures itself, no source) → is arm span your height.
+   - Linked, but not the cause (10ST03 n3): `ice-cream-drowning` → what else rises in summer. † monthly figures if shown (else described, as the library has it).
+   - Row or column percentages (10ST04 n1–n2, H): `survey-two-way` (the class's own survey) → which percentage answers the question. `smaller:` one row's percentage.
+   - A careful claim (10ST04 n3): `survey-two-way`, `ice-cream-drowning` → "may be linked" against "causes".
+   - A good question (10ST05 n1, H): `sleep-reaction` → pose and sharpen the question; the investigation (n2–n3) is class work. No `smaller:` (judgement).
+5. **Networks and spatial algorithms (5; Angles and shapes).** After Year 9 batch 5.
+   - Nodes and edges (10SP02 n1): `train-map` → what the map keeps and drops. Draw a made-up network: a real system map is copyright.
+   - Every street once (10SP02 n2): `street-sweeper` → can it, and from where (degrees). Made-up suburb.
+   - Euler's rule (10SP02 n3): `soccer-ball` (hood) → check F + V = E + 2 on it. † 12 pentagons and 20 hexagons.
+   - Pin the problem down, Write the algorithm (10SP03 n1 H, n2): `sprinkler-cover` (fewest sprinklers for the oval) → test on two ovals; n3 is the class project. † oval size and sprinkler radius (or labelled made up). No `smaller:` on n1 (judgement).
+
+**Hinges and `smaller:`.** 23 hinge nodes. 19 get a `smaller:` as listed (half the move with numbers, or the one question students stick on). Four are judgement hinges and wait for what teachers see, as for Years 7–8: 10A05 n1, 10SP01 n1, 10SP03 n1, 10ST05 n1. 10P01 n1 is borderline; its lead-in only names the smaller group, so it stays.
+
+**Sources still needed** (none stated yet; add the link or label the number made up when the lesson is built): bank savings rate, used-car prices, bacteria doubling time, gym prices if real, grain silo sizes, a floor plan, a real report for samples, ice-cream and drowning figures if shown, soccer ball panels, oval size. Already sourced in the library: food 2-hour/4-hour, earthquake energy, noise exposure, chance of rain, median house prices, rainwater per mm.
+
+**What applies from Year 9 batch 1:** voice and Writing the move rules, picture before symbols on every Predict (the question with a "?", never the answer), the opening never says what Predict asks, `smaller:` from the start, sources for every figure, and the hook-against-Predict check on every new lesson.
+
 ## Done: Practise this skill card (12 Oct 2026)
 - Every lesson with a practice file ends with a "Practise this skill" card (after Now you can, before Next lesson) opening `<course>/practice/?skill=<lesson>`. Show the answer also appears after a second try that only missed the form.
 
