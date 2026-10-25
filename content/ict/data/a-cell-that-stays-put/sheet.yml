@@ -6,16 +6,16 @@ cell A1: Object
 cell B1: Mass (kg)
 cell C1: Weight (N)
 cell A2: Backpack
-cell B2: 5
+cell B2: {{m[1]}}
 cell C2: =B2*B7
 cell A3: Bike
-cell B3: 12
+cell B3: {{m[2]}}
 cell A4: Dog
-cell B4: 20
+cell B4: {{m[3]}}
 cell A5: Student
-cell B5: 50
+cell B5: {{m[4]}}
 cell A7: g (N per kg)
-cell B7: 10
+cell B7: {{gE}}
 table: A1:C5
 tools: fill
 edit: C3
@@ -28,15 +28,15 @@ cell A1: Object
 cell B1: Mass (kg)
 cell C1: Weight (N)
 cell A2: Backpack
-cell B2: 5
+cell B2: {{m[1]}}
 cell A3: Bike
-cell B3: 12
+cell B3: {{m[2]}}
 cell A4: Dog
-cell B4: 20
+cell B4: {{m[3]}}
 cell A5: Student
-cell B5: 50
+cell B5: {{m[4]}}
 cell A7: g (N per kg)
-cell B7: 10
+cell B7: {{gE}}
 table: A1:C5
 tools: fill
 edit: C2:C5, B7
@@ -49,19 +49,19 @@ cell A1: Object
 cell B1: Mass (kg)
 cell C1: Weight (N)
 cell A2: Backpack
-cell B2: 5
+cell B2: {{m[1]}}
 cell C2: =B2*$B$7
 cell A3: Bike
-cell B3: 12
+cell B3: {{m[2]}}
 cell C3: =B3*$B$7
 cell A4: Dog
-cell B4: 20
+cell B4: {{m[3]}}
 cell C4: =B4*$B$7
 cell A5: Student
-cell B5: 50
+cell B5: {{m[4]}}
 cell C5: =B5*$B$7
 cell A7: g (N per kg)
-cell B7: 10
+cell B7: {{gE}}
 edit: B7
 rows: 12
 # endregion
@@ -77,11 +77,41 @@ cell A3: Bike
 cell A4: Dog
 cell A5: Student
 cell A7: g on Earth (N per kg)
-cell B7: 10
+cell B7: {{gE}}
 cell A8: g on the Moon (N per kg)
-cell B8: 1.6
+cell B8: {{gM}}
 table: A1:D5
 tools: fill
 edit: B2:D5
 rows: 12
+# endregion
+
+# region: run-solution
+cell C3: =B3*B8
+# endregion
+
+# region: practise-solution
+cell C2: =B2*$B$7
+cell C3: =B3*$B$7
+cell C4: =B4*$B$7
+cell C5: =B5*$B$7
+# endregion
+
+# region: practise-filled-solution
+cell B7: {{gM}}
+# endregion
+
+# region: make-solution
+cell B2: {{m[1]}}
+cell B3: {{m[2]}}
+cell B4: {{m[3]}}
+cell B5: {{m[4]}}
+cell C2: =B2*$B$7
+cell C3: =B3*$B$7
+cell C4: =B4*$B$7
+cell C5: =B5*$B$7
+cell D2: =B2*$B$8
+cell D3: =B3*$B$8
+cell D4: =B4*$B$8
+cell D5: =B5*$B$8
 # endregion

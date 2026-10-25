@@ -1,5 +1,5 @@
 inquiry:
-  q: "A student writes the g value, 10, inside every weight formula. Another keeps g in one cell and fixes it with $. The teacher asks for the Moon's weights. Who finishes first, and who is more likely to be right?"
+  q: "A student writes the g value, {{gE}}, inside every weight formula. Another keeps g in one cell and fixes it with $. The teacher asks for the Moon's weights. Who finishes first, and who is more likely to be right?"
   prompts:
     - "How many changes does each student make?"
     - "What if they miss one formula?"

@@ -11,11 +11,11 @@ before: |
 
   The one idea: a copy moves every name, so a name that has to stay (a shared value such as g, a rate, a price) gets a $ in front of its column letter and row number. Spreadsheet people call this an absolute reference; students need the idea 'fix it with $'.
 
-  Science link: weight (N) = mass (kg) × g, with g about 10 N/kg on Earth (a round value used in school science) and about 1.6 N/kg on the Moon. Use your class's values if they differ.
+  Science link: weight (N) = mass (kg) × g, with g about {{gE}} N/kg on Earth (a round value used in school science) and about {{gM}} N/kg on the Moon. Use your class's values if they differ.
 
   The page's sheet has no formula that needs $ typed for you: students type the $ themselves. In Excel and Sheets, F4 on a selected name toggles the $ signs; the sheet on the page just uses typing.
 running:
-  - "Predict: students who chose 120 expect the paste to move only the mass. Ask which cell the bike's weight would use for g."
+  - "Predict: students who chose {{m[2]*gE}} expect the paste to move only the mass. Ask which cell the bike's weight would use for g."
   - "Try: ask what B8 holds and why the answer is 0, not an error."
   - "Worked example: ask which part of =B2*$B$7 moves when pasted down and which part stays."
   - "Practise: students who forget the $ get 0 below the first row. Ask them to click C3 and say which cell it used for g."
@@ -24,7 +24,7 @@ stuck:
   - see: "A student writes =B2*B7 and fills down (Sam's mistake) and gets zeros."
     ask: "Click C3. Which cell does it use for g?"
     fix: "Put $ in front of the B and the 7 in the first formula, then fill down again."
-  - see: "A student types =B2*10, so g is inside every formula."
+  - see: "A student types =B2*{{gE}}, so g is inside every formula."
     ask: "How many formulas would you change to try the Moon?"
     fix: "Put g in its own cell and use $B$7 in the formula."
   - see: "A student writes =B2*$B7 or =B2*B$7 (half fixed)."
@@ -33,7 +33,7 @@ stuck:
   - see: "A student changes B7 and nothing changes."
     ask: "Does the weight cell hold a formula or a typed number?"
     fix: "Replace typed numbers with the formula and fill down."
-stretch: "Add a third column for Mars, where g is about 3.7 N per kg. What do you change, and what stays the same?"
+stretch: "Add a third column for Mars, where g is about {{gMars}} N per kg. What do you change, and what stays the same?"
 support: "A card: Copying moves every name. Put $ in front of the letter and the number of the cell that must stay: $B$7."
 leads: |
   Next in Working with data: Add up a column (SUM and ranges).

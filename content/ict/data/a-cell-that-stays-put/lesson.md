@@ -6,14 +6,14 @@ summary: "Copying a formula moves every cell name in it, which goes wrong when t
 language: maths
 hook: "Weight is mass times g. A sheet works out four weights on Earth. A teacher says: now do the Moon, where g is a lot smaller. Must she change every formula?"
 ---
-Weight is a force: **weight (N) = mass (kg) × g**. On Earth, g is about 10 newtons for every kilogram. The sheet below keeps g in its own cell, B7, so it is written once. C2 works out the weight of the backpack from its mass in B2 and g in B7.
+Weight is a force: **weight (N) = mass (kg) × g**. On Earth, g is about {{gE}} newtons for every kilogram. The sheet below keeps g in its own cell, B7, so it is written once. C2 works out the weight of the backpack from its mass in B2 and g in B7.
 
 | | A | B | C |
 |---|---|---|---|
 | **1** | Object | Mass (kg) | Weight (N) |
-| **2** | Backpack | 5 | `=B2*B7` |
-| **3** | Bike | 12 | |
-| **7** | g (N per kg) | 10 | |
+| **2** | Backpack | {{m[1]}} | `=B2*B7` |
+| **3** | Bike | {{m[2]}} | |
+| **7** | g (N per kg) | {{gE}} | |
 
 ## Predict: what lands in C3?
 
@@ -22,8 +22,8 @@ stage: predict
 insight: "Committing to what a pasted formula shows tests the move: every name moves, including the one that should not."
 check:
   type: predict
-  q: "C2 holds =B2*B7, which is 5 × 10 = 50. You copy C2 and paste it into C3, one row down. B3 holds 12. What does C3 show?"
-  options: ["120", "0", "50", "An error"]
+  q: "C2 holds =B2*B7, which is {{m[1]}} × {{gE}} = {{m[1]*gE}}. You copy C2 and paste it into C3, one row down. B3 holds {{m[2]}}. What does C3 show?"
+  options: ["{{m[2]*gE}}", "0", "{{m[1]*gE}}", "An error"]
   actual: "0. The pasted formula is =B3*B8. Both names moved down a row, so it multiplies the bike's mass by B8, which is empty. An empty cell counts as 0."
 ```
 
@@ -62,11 +62,11 @@ tasks:
       explain: "Line 2: Sam wrote =B2*B7, but the formula was going to be copied down. B7 should be $B$7 so that it stays put. Filling down was fine."
   - check:
       type: question
-      q: "Sam types =B2*10 in C2 and fills down, with g typed inside each formula. What goes wrong when Sam wants to try the Moon's g?"
+      q: "Sam types =B2*{{gE}} in C2 and fills down, with g typed inside each formula. What goes wrong when Sam wants to try the Moon's g?"
       options: ["Every formula has to be rewritten", "Nothing, the formulas follow", "The sheet shows an error", "Only C2 has to be rewritten"]
       answer: 0
-      feedback: [null, "A formula only follows a cell it names. The 10 is typed inside, so it is just a number.", "The sheet works fine, but it is stuck with 10.", "Every row has its own 10 inside its formula."]
-      explain: "The 10 sits inside each formula, so each would have to be changed. A g in its own cell, fixed with $, is changed once."
+      feedback: [null, "A formula only follows a cell it names. The {{gE}} is typed inside, so it is just a number.", "The sheet works fine, but it is stuck with {{gE}}.", "Every row has its own 10 inside its formula."]
+      explain: "The {{gE}} sits inside each formula, so each would have to be changed. A g in its own cell, fixed with $, is changed once."
 ```
 
 ### Fixing B7
@@ -74,8 +74,8 @@ tasks:
 ```worked
 \texttt{C2: =B2*\$B\$7} :: B2 can move with the row, but \texttt{\$B\$7} is fixed: it stays on B7.
 \texttt{C3} \to \texttt{=B3*\$B\$7} :: Pasted one row down, B2 moves to B3 and \texttt{\$B\$7} stays.
-\texttt{C3} = 12 \times 10 = 120 :: The bike's weight, using the same g.
-\texttt{B7} \text{ becomes } 1.6 \to 12 \times 1.6 = 19.2 :: Change g once and every weight follows.
+\texttt{C3} = {{m[2]}} \times {{gE}} = {{m[2]*gE}} :: The bike's weight, using the same g.
+\texttt{B7} \text{ becomes } {{gM}} \to {{m[2]}} \times {{gM}} = {{m[2]*gM}} :: Change g once and every weight follows.
 ```
 
 Now: what does the $ do?
@@ -92,9 +92,9 @@ insight: "Each task changes the shared cell, then where the formula is pasted, t
 tasks:
   - check:
       type: number
-      q: "C2 holds =B2*$B$7. B2 holds 5 and B7 holds 10. You change B7 to 1.6 (the Moon). What does C2 show?"
-      answer: 8
-      explain: "C2 works out 5 × 1.6 = 8."
+      q: "C2 holds =B2*$B$7. B2 holds {{m[1]}} and B7 holds {{gE}}. You change B7 to {{gM}} (the Moon). What does C2 show?"
+      answer: {{m[1]*gM}}
+      explain: "C2 works out {{m[1]}} × {{gM}} = {{m[1]*gM}}."
   - check:
       type: question
       q: "C2 holds =B2*$B$7. You copy it into D3 (one column right, one row down). What does D3 hold?"
@@ -105,7 +105,7 @@ tasks:
   - check:
       type: question
       q: "You will fill the formula for the weight of the object in row 2 down to row 5, with g in B7. Which do you write in C2?"
-      options: ["=B2*$B$7", "=B2*B7", "=B2*10", "=B2*$B7"]
+      options: ["=B2*$B$7", "=B2*B7", "=B2*{{gE}}", "=B2*$B7"]
       answer: 0
       feedback: [null, "Filled down, B7 becomes B8, B9 and B10, which are empty.", "That works until g changes, and then every formula has to be rewritten.", "The $ is only in front of the column. The row number would still move down."]
       explain: "$B$7 fixes both the column and the row, and B2 is left free to move down the rows."
@@ -133,10 +133,10 @@ tasks:
       explain: "g is in one cell, B7. The formulas all use it, so changing it changes every weight."
   - starter: "sheet.yml#practise"
     hint: ["In C2 type =B2*$B$7, then use Fill down to fill C3 to C5.", "If a weight shows 0, click the cell and read the formula. Which cell does it use for g?"]
-    check: { type: board, text: "Write a weight formula in C2 that fixes g in B7, and fill it down to C5.", when: "f_C2 = 1 and f_C3 = 1 and f_C4 = 1 and f_C5 = 1 and c_C2 = 50 and c_C3 = 120 and c_C4 = 200 and c_C5 = 500", explain: "C2 holds =B2*$B$7 and the cells below hold =B3*$B$7, =B4*$B$7 and =B5*$B$7. Each uses its own mass and the one fixed g." }
+    check: { type: board, text: "Write a weight formula in C2 that fixes g in B7, and fill it down to C5.", when: "f_C2 = 1 and f_C3 = 1 and f_C4 = 1 and f_C5 = 1 and c_C2 = {{m[1]*gE}} and c_C3 = {{m[2]*gE}} and c_C4 = {{m[3]*gE}} and c_C5 = {{m[4]*gE}}", explain: "C2 holds =B2*$B$7 and the cells below hold =B3*$B$7, =B4*$B$7 and =B5*$B$7. Each uses its own mass and the one fixed g." }
   - starter: "sheet.yml#practise-filled"
-    hint: ["Click B7 and type 1.6, then press Enter."]
-    check: { type: board, text: "The weights are filled in. Change g to 1.6, the Moon's, and read the new weights.", when: "c_B7 = 1.6 and c_C2 = 8 and c_C5 = 80", explain: "You changed one cell, B7, and all four weights followed: the backpack is 8 N and the student 80 N." }
+    hint: ["Click B7 and type {{gM}}, then press Enter."]
+    check: { type: board, text: "The weights are filled in. Change g to {{gM}}, the Moon's, and read the new weights.", when: "c_B7 = {{gM}} and c_C2 = {{m[1]*gM}} and c_C5 = {{m[4]*gM}}", explain: "You changed one cell, B7, and all four weights followed: the backpack is {{m[1]*gM}} N and the student {{m[4]*gM}} N." }
 ```
 
 ### Which cell?
@@ -167,3 +167,18 @@ check: { type: reflect, text: "In the spreadsheet app my school uses, I put g in
 ```
 
 Excel, Google Sheets and Numbers all use the dollar sign. You can type the $ yourself, or while the cursor is on a cell name in a formula, press F4 (Fn and F4 on some laptops) to put the $ signs in. Press it again to cycle through the ways of fixing the name. If a weight shows 0, click it and check the cell for g did not move.
+
+```context
+data:
+  m: [5, 12, 20, 50]
+  gE: 10
+  gM: 1.6
+  gMars: 3.7
+assert:
+  - gM < gE
+  - gM > 0
+  - gMars > gM
+  - gMars < gE
+  - m[1] != m[2]
+  - m[1] > 0
+```

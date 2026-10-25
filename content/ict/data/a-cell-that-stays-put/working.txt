@@ -1,8 +1,8 @@
 # Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
 
 # region: sam
-Sam's sheet has the mass of four objects in B2 to B5, and g (10) in B7.
-Sam types =B2*B7 into C2, and it shows 50 for the backpack.
+Sam's sheet has the mass of four objects in B2 to B5, and g ({{gE}}) in B7.
+Sam types =B2*B7 into C2, and it shows {{m[1]*gE}} for the backpack.
 Sam fills C2 down to C5.
 C3, C4 and C5 all show 0, though the bike, dog and student have mass.
 # endregion
