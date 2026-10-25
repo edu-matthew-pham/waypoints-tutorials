@@ -1,0 +1,20 @@
+# Practice for "Independent or not?". 100 students (made up).
+templates:
+  - q: "Of 100 students, {w} walk to school, {s} play a sport and {b} do both. What is P(sport | walk), as a decimal to 2 places?"
+    vars: { w: "30..50", s: "50..80", b: "15..28" }
+    answer: "{b / w}"
+    tolerance: 0.01
+    feedback:
+      - ["{b / s}", "That is P(walk | sport). Given walking, the group is the {w} walkers."]
+    explain: "{b} of the {w} walkers play sport: {b} ÷ {w}."
+  - q: "Of 100 students, {s} play a sport. If playing sport is independent of walking to school, how many of the {w} walkers play sport?"
+    vars: { w: [20, 30, 40, 50], s: [40, 50, 60, 70, 80] }
+    answer: "{w * s / 100}"
+    feedback:
+      - ["{s}", "That is the count for all 100 students. Independence means the same share of the {w} walkers: {s}% of {w}."]
+    explain: "The share is {s}/100, so {w} × {s} ÷ 100 = {w * s / 100} walkers."
+  - q: "Review: a bus was late on {k} of {n} school days (made up). What is the relative frequency of a late bus, as a decimal?"
+    vars: { n: [20, 25, 40, 50], k: "3..9" }
+    answer: "{k / n}"
+    tolerance: 0.005
+    explain: "{k} ÷ {n} = {k / n}."

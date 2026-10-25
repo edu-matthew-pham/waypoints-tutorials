@@ -1,0 +1,52 @@
+summary: "Students see that a strong link between two things leaves the cause open: one may cause the other, a third thing may cause both, or it may be chance. The context is ice-cream sales and drownings, with a year of made-up monthly figures (AC9M10ST03, node 3)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 17 min · Modify 8 min · Practise and Make 10 min"
+goals:
+  - I can explain why two things that go together do not always cause each other.
+  - I can suggest a third thing that could be behind both.
+  - I can write a reply that says what the data show and what they do not.
+struggle: "Hearing 'goes with' as 'causes'. Ask 'what would we expect to happen if we changed only one of them?'"
+before: |
+  Do the Run board yourself first. The cursor R reads all three lines for one month. Months are 1 (January) to 12 (December); each line is scaled so its highest month is 100, so the shapes are comparable.
+
+  The one idea: a link tells you the two go together, not why. There are three open explanations: one causes the other, a third thing causes both, or chance. Hot weather is the third thing here, and the lines show it: temperature has the same shape as both.
+
+  Every figure is made up: the town, the monthly ice-cream sales (thousand tubs: 90, 85, 60, 40, 25, 18, 17, 22, 35, 52, 70, 88), drownings (6, 6, 4, 3, 2, 1, 1, 2, 2, 3, 4, 6) and temperatures (29, 28, 26, 22, 18, 15, 14, 16, 19, 22, 25, 28 °C), the school's reading marks, and the shoe sizes. The ice-cream and drowning pairing is the standard classroom example of association without cause; none of the figures is real data. If you want real data, the Australian Bureau of Meteorology has monthly temperatures and the Royal Life Saving Society Australia publishes national drowning reports; neither is used in the lesson.
+
+  Be careful with the topic: drowning is a real and sad subject. The lesson only uses counts, in the third person, and never describes an incident.
+
+  Hidden: 'third thing' also covers chance and reverse cause. The reasoning task shows one way to test a third thing: compare like with like.
+running:
+  - "Predict: take a show of hands. Students who say 'fall a lot' have read the link as a cause; ask what else is different in summer."
+  - "Run: ask students to read all three values at month 7 and at month 1 and say what they notice."
+  - "Paper: the shoe size try-one is worked on paper first, with the worked example beside them. Look for the overall gap used where the within-year gap belongs."
+  - "Modify: before the edge cases ask 'what would an experiment look like?'. A fair test changes one thing and keeps the rest the same."
+stuck:
+  - see: "A student says ice cream causes drownings (Eli's mistake)."
+    ask: "What else is different in the months when more ice cream is sold?"
+    fix: "Add the temperature line. Ask what would happen to drownings in a hot month without ice cream."
+  - see: "A student says the link is just chance."
+    ask: "Is the pattern the same every month of the year?"
+    fix: "A pattern that holds across twelve months is unlikely to be chance. The question is the reason, not whether the link is real."
+  - see: "A student says if there is a third thing, there is no cause at all."
+    ask: "Could smoking cause lung disease even though age is linked to both?"
+    fix: "A link and a cause can both be real. A plot cannot tell them apart; an experiment or careful comparison can."
+stretch: "Find a news story that says two things are 'linked'. Write one third thing that could be behind both, and what you would compare to test it."
+support: "A card with the three questions: Did A cause B? Did B cause A? Is there a third thing behind both? Work through them for each pair."
+leads: |
+  Next: Row or column percentages, a fair way to compare groups in a two-way table. Then A careful claim brings the same care to what a table can say.
+
+  Where it leads in class: students look at a real news claim about a link and write a careful reply.
+exit:
+  q: "Sales of sunscreen and cases of sunburn rise together. Does that show sunscreen causes sunburn? Name a third thing."
+  a: "No. Both rise on hot, sunny days: more people go out, so more buy sunscreen and more get sunburnt. The sun is behind both."
+explain: |
+  A strong link between two things leaves three explanations open.
+
+  - One causes the other.
+  - A third thing causes both (hot weather here).
+  - It is chance, which a short run of data can produce.
+
+  The data alone cannot tell them apart. A careful reply says 'goes with', names the third thing and says what more evidence would help.
+sources:
+  - { title: "Made up for this lesson: the town and its monthly ice-cream sales, drownings and temperatures; the school's reading marks and shoe sizes. The ice-cream and drowning link is a classroom example, not a real data set.", url: "https://tutorials.learningwaypoints.com/maths/data/linked-not-the-cause/", checked: 2026-10-25 }

@@ -1,0 +1,36 @@
+# Boards for "Boxplots". Route 1's lateness on 11 school days, in minutes (made up). The Values box changes the data.
+
+# region: run
+widget: data
+values: 0, 1, 2, 2, 3, 4, 4, 5, 6, 8, 15
+range: 0, 20
+step: 1
+edit: on
+view: box
+dots: on
+outliers: on
+label: Minutes late
+# endregion
+
+# region: pic
+widget: data
+values: 0, 1, 2, 2, 3, 4, 4, 5, 6, 8, 15
+range: 0, 20
+step: 1
+view: box
+dots: on
+outliers: on
+label: Minutes late
+# endregion
+
+# region: modify
+widget: data
+values: 0, 1, 2, 2, 3, 4, 4, 5, 6, 8, 15
+range: 0, 20
+step: 1
+edit: on
+view: box
+dots: on
+outliers: on
+label: Minutes late
+# endregion

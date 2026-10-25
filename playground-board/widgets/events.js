@@ -17,8 +17,13 @@
 //                            label came up (sums, for two dice with show: sum)
 //   replace: off             a draw with nothing put back: the second list must equal the first, and the second pick
 //                            cannot be the first (no diagonal in the grid, fewer branches in the tree)
+//   weights: 18, 2; 49, 931  unequal chances for a two-event space: whole-number counts (people out of a total), one row per
+//                            first outcome and one column per second outcome, rows split by ";". Chances are count ÷ total (a
+//                            zero count drops that outcome). The tree shows each branch's chance (a second-stage branch is its
+//                            count ÷ its row's total, so conditional), outcomes show their counts, P(A) adds the chosen counts,
+//                            and trials pick outcomes in proportion to the counts. Default off (all outcomes equally likely).
 //   seed: 4                  fixed randomness for pictures and clips
-// state: { scope: { vars: { n (outcomes in A), m (all outcomes), p (P(A), 3 places), q (outcomes in not A), k (1 while not
+// state: { scope: { vars: { n (outcomes in A; with weights, the chosen counts added), m (all outcomes; with weights, the total), p (P(A), 3 places), q (outcomes in not A), k (1 while not
 //   A is shown), r (1 when A matches target), u (trials), c (times A happened), f (relative frequency), e (|f − p|) } } }
 // Checks: "n = 6 and m = 36", "r = 1", "k = 1", "u >= 100 and e < 0.05".
 (function (B) {
@@ -80,6 +85,18 @@
       if (!s.Bs) s.cells.push({ i: i, j: 0, a: a, b: null });
       else s.Bs.out.forEach(function (b, j) { if (!(s.norep && i === j)) s.cells.push({ i: i, j: j, a: a, b: b }); });
     });
+    s.wt = false; s.D = 0;
+    if (s.weights !== undefined) {
+      if (!s.Bs) throw new Error('weights: needs a second event.');
+      if (s.norep) throw new Error('weights: cannot be used with replace: off.');
+      var rows = String(s.weights).split(';').map(function (r) { return r.split(',').map(function (x) { return Number(x.trim()); }); });
+      if (rows.length !== s.A.out.length || rows.some(function (r) { return r.length !== s.Bs.out.length || r.some(function (v) { return !(v >= 0) || Math.round(v) !== v; }); }))
+        throw new Error('weights: ' + s.A.out.length + ' rows (one per first outcome, split by ";") of ' + s.Bs.out.length + ' whole numbers (one per second outcome), such as "18, 2; 49, 931".');
+      s.wt = true; s.rows = rows;
+      s.cells = s.cells.filter(function (c) { c.w = rows[c.i][c.j]; return c.w > 0; });
+      s.D = s.cells.reduce(function (t, c) { return t + c.w; }, 0);
+      if (!s.D) throw new Error('weights: at least one count must be more than 0.');
+    }
     if ((s.view0 === 'tree' || s.both) && (!s.Bs || s.cells.length > 16)) throw new Error('view: tree is for two events with at most 16 outcomes.');
     s.cells.forEach(function (c) {
       c.s = typeof c.a === 'number' && typeof c.b === 'number' ? c.a + c.b : null;
@@ -94,14 +111,16 @@
     s.seedv = s.seed !== undefined ? Number(s.seed) : null;
   }
   function inA(c) { return !!sel[c.i + ',' + c.j]; }
-  function count() { return spec.cells.filter(inA).length; }
+  function wOf(c) { return spec.wt ? c.w : 1; }
+  function total() { return spec.wt ? spec.D : spec.cells.length; }
+  function count() { return spec.cells.filter(inA).reduce(function (t, c) { return t + wOf(c); }, 0); }
 
   function add(parent, tag, at, text) { var e = document.createElementNS(NS, tag); Object.keys(at).forEach(function (k) { e.setAttribute(k, at[k]); }); if (text !== undefined) e.textContent = text; parent.appendChild(e); return e; }
   function cellBox(svg, c, x, y, w, h, colA, colN, ink, font) {
-    var on = inA(c), g = add(svg, 'g', { role: spec.choose ? 'button' : 'img', 'aria-label': c.say + (on ? ', in A' : ''), class: 'evcell' });
+    var on = inA(c), txt = spec.wt ? (view === 'tree' ? c.label + ': ' + c.w : String(c.w)) : c.label, g = add(svg, 'g', { role: spec.choose ? 'button' : 'img', 'aria-label': c.say + (spec.wt ? ', ' + c.w + ' of ' + spec.D : '') + (on ? ', in A' : ''), class: 'evcell' });
     if (spec.choose) { g.setAttribute('tabindex', '0'); g.setAttribute('aria-pressed', String(on)); }
     add(g, 'rect', { x: x, y: y, width: w, height: h, rx: 6, fill: on ? colA : notA ? colN : (B.css('--card') || '#fff'), 'fill-opacity': on || notA ? 0.85 : 1, stroke: on ? colA : ink, 'stroke-width': on ? 3 : 1.2 });
-    add(g, 'text', { x: x + w / 2, y: y + h / 2 + 1, 'text-anchor': 'middle', 'dominant-baseline': 'middle', 'font-size': Math.min(20, h * 0.42, w * (c.label.length > 4 ? 0.2 : 0.34)), 'font-weight': 700, 'font-family': font, fill: on || notA ? '#fff' : ink }, c.label);
+    add(g, 'text', { x: x + w / 2, y: y + h / 2 + 1, 'text-anchor': 'middle', 'dominant-baseline': 'middle', 'font-size': Math.min(20, h * 0.42, w * (txt.length > 4 ? 0.2 : 0.34), spec.wt ? w / (txt.length * 0.6) : 99), 'font-weight': 700, 'font-family': font, fill: on || notA ? '#fff' : ink }, txt);
     if (spec.choose) {
       var flip = function () { var k = c.i + ',' + c.j; if (sel[k]) delete sel[k]; else sel[k] = 1; B.moved = true; report(); };
       g.addEventListener('click', flip);
@@ -139,23 +158,28 @@
       spec.A.out.forEach(function (a, i) { line(lx - 14, ty + i * (cs + 6) + cs / 2 + 6, 'end', String(a), spec.cells.filter(function (c) { return c.i === i; }), spec.A.name.toLowerCase() + ' ' + a); });
       spec.cells.forEach(function (c) { cellBox(svg, c, lx + c.j * (cs + 6), ty + c.i * (cs + 6), cs, cs, colA, colN, ink, font); });
     } else {   // tree: first event's branches, then the second's, outcomes at the leaves
-      var L = spec.cells.length, lh = Math.min(46, 560 / L), x0 = 30, x1 = 210, x2 = 400, lw = 130;
-      W = x2 + lw + 30; H = L * lh + 60;
+      var L = spec.cells.length, lh = Math.min(46, 560 / L), x0 = 30, x1 = spec.wt ? 250 : 210, x2 = spec.wt ? 470 : 400, lw = spec.wt ? 190 : 130;
+      var bx = spec.wt ? x2 + 60 : x2;   // weighted trees keep room for the second outcome's name before the box
+      W = bx + lw + 30; H = L * lh + 60;
       add(svg, 'text', { x: (x0 + x1) / 2, y: 22, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 700, 'font-family': font, fill: muted }, spec.A.name);
       add(svg, 'text', { x: (x1 + x2) / 2 + 20, y: 22, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 700, 'font-family': font, fill: muted }, spec.Bs.name);
       var root = 40 + L * lh / 2, pos = 0;
       add(svg, 'circle', { cx: x0, cy: root, r: 6, fill: ink });
       spec.A.out.forEach(function (a, i) {
         var mine = spec.cells.filter(function (c) { return c.i === i; }), C2 = mine.length, my = 40 + (pos + C2 / 2) * lh, base = pos; pos += C2;
+        if (!C2) return;
+        var rowT = mine.reduce(function (t, c) { return t + wOf(c); }, 0), halo = { 'font-size': 14, 'font-weight': 700, 'font-family': font, fill: muted, stroke: B.css('--card') || '#fff', 'stroke-width': 4, 'paint-order': 'stroke', 'text-anchor': 'middle' };
         add(svg, 'line', { x1: x0, y1: root, x2: x1, y2: my, stroke: ink, 'stroke-width': 2 });
+        if (spec.wt) add(svg, 'text', Object.assign({ x: (x0 + x1) / 2 - 10, y: (root + my) / 2 - 6 }, halo), frac(rowT, spec.D));
         add(svg, 'text', { x: x1 + 8, y: my + 6, 'font-size': 18, 'font-weight': 700, 'font-family': font, fill: ink, stroke: B.css('--card') || '#fff', 'stroke-width': 4, 'paint-order': 'stroke' }, String(a));
         mine.forEach(function (c, j) {
           var b = c.b, ly = 40 + (base + j + 0.5) * lh;
           add(svg, 'line', { x1: x1 + 30, y1: my, x2: x2 - 34, y2: ly, stroke: ink, 'stroke-width': 1.5 });
+          if (spec.wt) add(svg, 'text', Object.assign({ x: (x1 + 30 + x2 - 34) / 2, y: (my + ly) / 2 - 4 }, halo), frac(c.w, rowT));
           add(svg, 'text', { x: x2 - 28, y: ly + 6, 'font-size': 16, 'font-weight': 700, 'font-family': font, fill: ink }, String(b));
         });
       });
-      spec.cells.forEach(function (c, k) { cellBox(svg, c, x2, 40 + k * lh + 3, lw, lh - 6, colA, colN, ink, font); });
+      spec.cells.forEach(function (c, k) { cellBox(svg, c, bx, 40 + k * lh + 3, lw, lh - 6, colA, colN, ink, font); });
     }
     if (count() || notA) {   // a key for the colours
       var ky = H + 6, kx = 20;
@@ -165,11 +189,12 @@
       H += 40;
     }
     svg.setAttribute('viewBox', '0 0 ' + Math.round(W) + ' ' + Math.round(H));
-    svg.setAttribute('aria-label', 'The sample space: ' + spec.cells.length + ' equally likely outcomes, ' + count() + ' chosen for event A.');
+    svg.setAttribute('aria-label', spec.wt ? 'The sample space: ' + spec.cells.length + ' outcomes out of ' + spec.D + ' people, ' + count() + ' chosen for event A.' : 'The sample space: ' + spec.cells.length + ' equally likely outcomes, ' + count() + ' chosen for event A.');
     el.appendChild(svg);
   }
   function once() {
     var k = Math.floor(rnd() * spec.cells.length);
+    if (spec.wt) { var r = rnd() * spec.D, acc = 0; for (k = 0; k < spec.cells.length - 1; k++) { acc += spec.cells[k].w; if (r < acc) break; } }
     tri.u++; tri.per[k] = (tri.per[k] || 0) + 1; tri.last = k;
   }
   function run(n) { for (var i = 0; i < n && tri.u < 20000; i++) once(); B.moved = true; report(); }
@@ -195,11 +220,11 @@
   function report() {
     draw();
     if (ui.compBtn) { ui.compBtn.textContent = notA ? 'Hide not A' : 'Show not A'; ui.compBtn.setAttribute('aria-pressed', String(notA)); }
-    var n = count(), m = spec.cells.length, p = n / m, q = m - n, hits = 0, tally = {};
+    var n = count(), m = total(), p = n / m, q = m - n, hits = 0, tally = {};
     spec.cells.forEach(function (c, k) { var ct = tri.per[k] || 0; if (inA(c)) hits += ct; tally[c.label] = (tally[c.label] || 0) + ct; });   // A can change after trials: count again
     var match = spec.tg ? spec.cells.every(function (c) { return inA(c) === spec.tg(c); }) : false;
-    ui.work.textContent = n === 0 ? 'Click outcomes to choose event A. ' + m + ' outcomes, all equally likely.' : 'P(A) = ' + n + '/' + m + (frac(n, m) !== n + '/' + m ? ' = ' + frac(n, m) : '') + ' ≈ ' + B.fmt(r3(p));
-    var note = notA ? 'Not A: the other ' + q + ' outcomes. P(not A) = ' + q + '/' + m + ' = 1 − P(A). Together A and not A cover every outcome once, so P(A) + P(not A) = 1.' : n ? n + ' of the ' + m + ' outcomes are in A.' : '';
+    ui.work.textContent = n === 0 ? (spec.wt ? 'Click outcomes to choose event A. Out of ' + m + ', each outcome has its own count.' : 'Click outcomes to choose event A. ' + m + ' outcomes, all equally likely.') : 'P(A) = ' + n + '/' + m + (frac(n, m) !== n + '/' + m ? ' = ' + frac(n, m) : '') + ' ≈ ' + B.fmt(r3(p));
+    var note = notA ? 'Not A: the other ' + q + ' outcomes. P(not A) = ' + q + '/' + m + ' = 1 − P(A). Together A and not A cover every outcome once, so P(A) + P(not A) = 1.' : n ? n + ' of the ' + m + (spec.wt ? '' : ' outcomes') + ' are in A.' : '';
     ui.note.textContent = note;
     var vars = { n: n, m: m, p: r3(p), q: q, k: notA ? 1 : 0, r: match ? 1 : 0, u: tri.u, c: hits, f: tri.u ? r3(hits / tri.u) : 0, e: tri.u ? r3(Math.abs(hits / tri.u - p)) : 1 };
     if (spec.trials) {
@@ -207,7 +232,7 @@
       var labels = []; spec.cells.forEach(function (c) { if (labels.indexOf(c.label) < 0) labels.push(c.label); });
       if (spec.sum) labels.sort(function (x, y) { return Number(x) - Number(y); });
       var head = spec.sum ? 'Sum' : 'Outcome', rows = '<tr><th>' + head + '</th><th>Count</th><th>Relative frequency</th><th>Probability</th></tr>';
-      labels.forEach(function (lb) { var ways = spec.cells.filter(function (c) { return c.label === lb; }).length, ct = tally[lb] || 0; rows += '<tr><td>' + lb + '</td><td>' + ct + '</td><td>' + (tri.u ? B.fmt(r3(ct / tri.u)) : '–') + '</td><td>' + frac(ways, m) + '</td></tr>'; });
+      labels.forEach(function (lb) { var ways = spec.cells.filter(function (c) { return c.label === lb; }).reduce(function (t, c) { return t + wOf(c); }, 0), ct = tally[lb] || 0; rows += '<tr><td>' + lb + '</td><td>' + ct + '</td><td>' + (tri.u ? B.fmt(r3(ct / tri.u)) : '–') + '</td><td>' + frac(ways, m) + '</td></tr>'; });
       ui.table.innerHTML = rows;
     }
     var text = ui.work.textContent + (note ? ' ' + note : '') + (spec.trials && tri.u ? ' ' + ui.trial.textContent : '');

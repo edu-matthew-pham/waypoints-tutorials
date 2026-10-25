@@ -1,0 +1,13 @@
+# Practice for "A good question".
+templates:
+  - q: "A class asks ${n}$ students for two numbers each: hours slept and a reaction time. How many numbers do they collect in all?"
+    vars: { n: "10..40" }
+    answer: "{n * 2}"
+    explain: "{n} students × 2 numbers = {n * 2}."
+  - q: "{s} Is this question ready to investigate?"
+    cases:
+      - { s: "'Among Year 10 students, is the hours of screen time yesterday related to the hours slept last night?'", k: "Yes: two measured variables and a group", w: "No: it names only one variable", e: "It names the group, two variables and how each is measured." }
+      - { s: "'Does music help?'", k: "No: no group, no variables, no measures", w: "Yes: it is short and clear", e: "It doesn't say who, help with what, or how it would be measured." }
+      - { s: "'Are students who play more sport happier?'", k: "Not yet: it needs a measure of each variable and a group", w: "Yes: it names two variables", e: "Both 'more sport' and 'happier' need a measure." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"

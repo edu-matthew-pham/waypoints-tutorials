@@ -10,9 +10,15 @@
 //   show: both | venn | table   what to draw (default both)
 //   blank: table             the table's four inside cells are boxes for students to fill from the diagram (value k)
 //   blank: venn              the diagram's four counts are boxes for students to fill from the table (value k)
+//   given: a | b | not a | not b   conditional probability: the whole shrinks to this group. Regions outside it are faded, the
+//                            readout becomes "of the g in the given group, h are chosen" and the chance is h/g (chosen parts
+//                            outside the group do not count; an empty group says the chance is not defined). Default off.
 // state: { scope: { vars: { x (1 if "A only" is chosen), y (both), z (B only), w (neither), n (how many are chosen),
 //   t (the total), p (n ÷ t, 3 places), k (1 when every blank box is right) } } }
-// Checks: "y = 1 and x = 0 and z = 0 and w = 0" (A and B), "x = 1 and y = 1 and z = 1 and w = 0" (A or B), "n = 25", "k = 1".
+//   With given: g (how many are in the given group), h (how many of those are chosen), c (h ÷ g, 3 places; 0 when g is 0).
+//   n, t and p keep their meaning (every chosen part, out of everyone), so c can be compared with p.
+// Checks: "y = 1 and x = 0 and z = 0 and w = 0" (A and B), "x = 1 and y = 1 and z = 1 and w = 0" (A or B), "n = 25", "k = 1",
+//   with given: "g = 50 and h = 30", "c = 0.6", "c = p" (the chance does not change when given: independent).
 (function (B) {
   'use strict';
   var NS = 'http://www.w3.org/2000/svg';
@@ -46,14 +52,23 @@
     var sh = String(s.show || 'both').trim().toLowerCase();
     if (['both', 'venn', 'table'].indexOf(sh) < 0) throw new Error('show: both, venn or table.');
     s.sv = sh !== 'table'; s.st = sh !== 'venn';
+    s.gv = null;
+    if (s.given !== undefined && String(s.given).trim() !== '') {
+      var gt = String(s.given).trim().toLowerCase().replace(/\s+/g, ' ');
+      if (['a', 'b', 'not a', 'not b'].indexOf(gt) < 0) throw new Error('given: a, b, not a or not b.');
+      s.gv = regionsFor(gt);
+      s.gname = gt === 'a' ? s.L[0] : gt === 'b' ? s.L[1] : gt === 'not a' ? 'not ' + s.L[0].toLowerCase() : 'not ' + s.L[1].toLowerCase();
+    }
     s.blank = s.blank ? String(s.blank).trim().toLowerCase() : '';
     if (s.blank && ['table', 'venn'].indexOf(s.blank) < 0) throw new Error('blank: table or venn.');
     if (s.blank === 'table' && !s.st || s.blank === 'venn' && !s.sv) throw new Error('blank: ' + s.blank + ' needs the ' + s.blank + ' shown.');
+    if (s.gv && s.blank) throw new Error('given: cannot be used with blank:.');
     if (s.blank && !(s.sv && s.st)) throw new Error('blank: needs show: both, so there is something to fill it from.');
   }
   function name(i) { return [spec.L[0] + ' only', spec.L[0] + ' and ' + spec.L[1], spec.L[1] + ' only', 'Neither'][i]; }
   function flip(i) { if (!spec.choose) return; sel[i] = sel[i] ? 0 : 1; B.moved = true; report(); }
   function add(parent, tag, at, text) { var e = document.createElementNS(NS, tag); Object.keys(at).forEach(function (k) { e.setAttribute(k, at[k]); }); if (text !== undefined) e.textContent = text; parent.appendChild(e); return e; }
+  function given() { var g = 0, h = 0; spec.c.forEach(function (v, i) { if (spec.gv && spec.gv[i]) { g += v; if (sel[i]) h += v; } }); return { g: g, h: h }; }
   function shown(i) { return spec.blank === 'venn' ? (typed[i] === '' ? '?' : typed[i]) : String(spec.c[i]); }
 
   function drawVenn(holder) {
@@ -74,15 +89,16 @@
       add(svg, 'circle', { cx: cx2, cy: cy, r: r, mask: 'url(#vnNotA)', fill: fill(2), 'fill-opacity': op(2) }),
       add(svg, 'rect', { x: 10, y: 34, width: 440, height: 256, rx: 8, mask: 'url(#vnOut)', fill: fill(3), 'fill-opacity': op(3) }),
     ];
+    if (spec.gv) shapes.forEach(function (sh, i) { if (!spec.gv[i]) sh.setAttribute('opacity', '0.3'); });
     svg.insertBefore(shapes[3], shapes[0]);
     add(svg, 'rect', { x: 10, y: 34, width: 440, height: 256, rx: 8, fill: 'none', stroke: ink, 'stroke-width': 2 });
     add(svg, 'circle', { cx: cx1, cy: cy, r: r, fill: 'none', stroke: ink, 'stroke-width': 2.5 });
     add(svg, 'circle', { cx: cx2, cy: cy, r: r, fill: 'none', stroke: ink, 'stroke-width': 2.5 });
-    add(svg, 'text', { x: 18, y: 24, 'font-size': 15, 'font-family': font, fill: muted }, 'All ' + spec.t);
+    add(svg, 'text', { x: 18, y: 24, 'font-size': 15, 'font-family': font, fill: muted }, spec.gv ? 'All ' + spec.t + '. Given ' + spec.gname + ': ' + given().g : 'All ' + spec.t);
     add(svg, 'text', { x: cx1 - 60, y: cy - r - 6, 'text-anchor': 'middle', 'font-size': 18, 'font-weight': 700, 'font-family': font, fill: ink }, spec.L[0]);
     add(svg, 'text', { x: cx2 + 60, y: cy - r - 6, 'text-anchor': 'middle', 'font-size': 18, 'font-weight': 700, 'font-family': font, fill: ink }, spec.L[1]);
     [[cx1 - 48, cy], [(cx1 + cx2) / 2, cy], [cx2 + 48, cy], [410, 270]].forEach(function (pt, i) {
-      add(svg, 'text', { x: pt[0], y: pt[1] + 8, 'text-anchor': 'middle', 'font-size': 26, 'font-weight': 700, 'font-family': font, fill: ink, stroke: card, 'stroke-width': 4, 'paint-order': 'stroke' }, shown(i));
+      add(svg, 'text', { x: pt[0], y: pt[1] + 8, 'text-anchor': 'middle', 'font-size': 26, 'font-weight': 700, 'font-family': font, fill: ink, stroke: card, 'stroke-width': 4, 'paint-order': 'stroke', 'fill-opacity': spec.gv && !spec.gv[i] ? 0.35 : 1 }, shown(i));
     });
     if (spec.choose) shapes.forEach(function (sh, i) { sh.style.cursor = 'pointer'; sh.addEventListener('click', function () { flip(i); }); });
     svg.setAttribute('aria-label', 'Venn diagram of ' + spec.L[0] + ' and ' + spec.L[1] + ': ' + [0, 1, 2, 3].map(function (i) { return name(i) + ' ' + shown(i); }).join(', ') + '.');
@@ -91,7 +107,7 @@
   function drawTable(holder) {
     var tb = document.createElement('table'); tb.className = 'vntable';
     var cell = function (i) { // A only = (A, not B), both = (A, B), B only = (not A, B), neither = (not A, not B)
-      var td = document.createElement('td'); td.className = 'vncell' + (sel[i] ? ' on' : '');
+      var td = document.createElement('td'); td.className = 'vncell' + (sel[i] ? ' on' : ''); if (spec.gv && !spec.gv[i]) td.style.opacity = '0.35';
       if (spec.blank === 'table') {
         var inp = document.createElement('input'); inp.type = 'text'; inp.inputMode = 'numeric'; inp.size = 3; inp.value = typed[i];
         inp.setAttribute('aria-label', name(i)); inp.addEventListener('input', function () { typed[i] = inp.value.trim(); checked[i] = 0; B.moved = true; report(true); }); inp.addEventListener('change', function () { checked[i] = 1; report(true); });
@@ -154,6 +170,14 @@
     var wrong = spec.blank ? typed.map(function (v, i) { return checked[i] && v !== '' && Number(v) !== spec.c[i] ? name(i) : null; }).filter(Boolean) : [];   // only once a box is left
     ui.note.textContent = wrong.length ? 'Check: ' + wrong.join(', ') + '.' : chosen.length > 1 ? 'Each person is counted once: the parts do not overlap.' : '';
     var vars = { x: sel[0], y: sel[1], z: sel[2], w: sel[3], n: n, t: spec.t, p: r3(n / spec.t), k: right ? 1 : 0 };
+    if (spec.gv) {
+      var gg = given(); vars.g = gg.g; vars.h = gg.h; vars.c = gg.g ? r3(gg.h / gg.g) : 0;
+      ui.work.textContent = !gg.g ? 'Nothing is in the given group (' + spec.gname + '), so there is nothing to take a chance of: it is not defined.'
+        : !chosen.length ? 'Given ' + spec.gname + ': ' + gg.g + ' of the ' + spec.t + '. Choose the parts you want the chance of.'
+        : 'Given ' + spec.gname + ' (' + gg.g + '), ' + gg.h + ' are chosen. Chance = ' + gg.h + '/' + gg.g + (frac(gg.h, gg.g) !== gg.h + '/' + gg.g ? ' = ' + frac(gg.h, gg.g) : '') + ' ≈ ' + B.fmt(r3(gg.h / gg.g));
+      var outside = chosen.some(function (i) { return !spec.gv[i]; });
+      ui.note.textContent = outside ? 'Chosen parts outside the given group do not count: knowing ' + spec.gname + ' rules them out.' : '';
+    }
     B.say(ui.work.textContent);
     B.save({ sel: sel, typed: typed });
     B.post({ scope: { vars: vars, points: {} } }, ui.work.textContent);

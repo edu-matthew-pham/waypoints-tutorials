@@ -1,0 +1,20 @@
+# Practice for "Comparing with boxplots". Comparing the interquartile ranges of two sets.
+templates:
+  - q: "Set A has quartiles {a1} and {a3}. Set B has quartiles {b1} and {b3}. By how much is A's interquartile range bigger than B's?"
+    vars: { a1: "4..10", a3: "20..28", b1: "10..14", b3: "16..19" }
+    answer: "{(a3 - a1) - (b3 - b1)}"
+    tolerance: 0
+    feedback:
+      - ["{a3 - a1}", "That is A's IQR on its own. Take B's IQR away from it."]
+    explain: "A: {a3} − {a1} = {a3 - a1}. B: {b3} − {b1} = {b3 - b1}. The difference is {a3 - a1} − {b3 - b1} = {(a3 - a1) - (b3 - b1)}."
+  - q: "Class X's quartiles are {x1} and {x3}, and class Y's are {y1} and {y3}. How many times as long is X's box as Y's?"
+    vars: { x1: [10, 20, 30], x3: [50, 60, 70], y1: [30, 40], y3: [50, 60] }
+    where: "(x3 - x1) % (y3 - y1) = 0"
+    answer: "{(x3 - x1) / (y3 - y1)}"
+    tolerance: 0.01
+    explain: "X: {x3} − {x1} = {x3 - x1}. Y: {y3} − {y1} = {y3 - y1}. {x3 - x1} ÷ {y3 - y1} = {(x3 - x1) / (y3 - y1)}."
+  - q: "A boxplot's five numbers are {a}, {b}, {c}, {d} and {e}. What is the interquartile range?"
+    vars: { a: "1..6", b: "8..14", c: "15..20", d: "21..30", e: "31..45" }
+    answer: "{d - b}"
+    tolerance: 0
+    explain: "The quartiles are {b} and {d}, so the IQR is {d} − {b} = {d - b}."

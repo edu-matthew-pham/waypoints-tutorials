@@ -1,0 +1,42 @@
+summary: "Students draw and read a boxplot from the five numbers: the box is the middle half, the bar is the median, the whiskers reach the furthest values inside the 1.5 × IQR fences, and values beyond them are outliers (AC9M10ST02, node 2)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 10 min · Practise and Make 13 min"
+goals:
+  - I can say what each part of a boxplot shows.
+  - I can find the fences and say whether a value is an outlier.
+  - I can read how late a normal day is from the box.
+struggle: "Reading the box as how many values there are, or the whiskers as the box. Ask: what fraction of the days is inside the box, whatever its length?"
+before: |
+  Students need the five numbers from the previous lesson. This is a hinge lesson: students who misread the median bar or read box width as how many values there are can't compare distributions in the next lesson.
+
+  The board draws a boxplot with the median-of-halves quartiles from the previous lesson. With `outliers: on` the whiskers stop at the last value inside the fences (upper quartile + 1.5 × IQR and lower quartile − 1.5 × IQR) and a cross marks each outlier; a value exactly on a fence is not an outlier. The 1.5 rule is a convention that the lesson states, not something students derive; it is a fine moment to say that other rules exist.
+
+  The bus, its minutes late and the second route are made up for the task. The library entry (bus-lateness) suggests the class records two real routes for a few weeks and checks the comparison holds; that is a good real-data follow-up.
+running:
+  - "Predict: show of hands before the check. Hold the picture up and ask where half the days sit."
+  - "Run: ask which number will change before anyone edits the 15."
+  - "Paper: the fence try-one and the Make are worked on paper first."
+  - "Modify: all-the-same and the value on the fence are the edge cases."
+stuck:
+  - see: "A student says the box is where most of the values are, so a wider box has more values."
+    ask: "How many of the 11 days are inside the box, and would that change if the box were wider?"
+    fix: "About half of the days are in the box whatever its width. A wider box means the middle half is more spread out."
+  - see: "A student draws the whisker to the outlier."
+    ask: "Is that value beyond the fence?"
+    fix: "If it is, mark it with a cross and stop the whisker at the highest value inside the fence."
+  - see: "A student uses 1.5 × the median for the fence."
+    ask: "What does the fence measure from, and what is it a multiple of?"
+    fix: "It measures from the box's end, a distance of 1.5 times the IQR."
+stretch: "Make up five values that give an IQR of zero but a range of 10. Draw the boxplot."
+support: "Mark the five numbers on a number line on paper first, draw the box between the quartiles, then add the median bar and whiskers."
+leads: |
+  Continues AC9M10ST02 (node 2; a hinge).
+
+  Where it leads: comparing distributions with boxplots (next), where two routes sit one above the other.
+exit:
+  q: "A boxplot's five numbers are 5, 8, 12, 20 and 41. What is the upper fence, and is 41 an outlier?"
+  a: "IQR = 12; fence = 20 + 18 = 38; 41 is beyond it, so it's an outlier."
+explain: |
+  A boxplot draws the five numbers as a picture. The box runs from the lower quartile to the upper quartile, the bar inside is the median, and the whiskers reach the lowest and highest values that aren't outliers.
+
+  A value is an outlier if it is more than 1.5 times the interquartile range beyond the box. It is marked with a cross.

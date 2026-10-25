@@ -1,0 +1,21 @@
+# Practice for "Five numbers". Quartiles and the interquartile range from ordered values (median of each half).
+templates:
+  - q: "Seven values in order are {a}, {b}, {c}, {d}, {e}, {f} and {g}. What is the lower quartile?"
+    vars: { a: "1..5", b: "6..10", c: "11..15", d: "16..20", e: "21..25", f: "26..30", g: "31..40" }
+    answer: "{b}"
+    tolerance: 0
+    feedback:
+      - ["{c}", "That leaves the median in the lower half. With seven values the median ({d}) is left out of both halves."]
+    explain: "The median is {d}, the 4th value. The lower half is {a}, {b}, {c} and its median is {b}."
+  - q: "Eight values in order are {a}, {b}, {c}, {d}, {e}, {f}, {g} and {h}. What is the upper quartile? (a decimal if needed)"
+    vars: { a: "1..5", b: "6..10", c: "11..15", d: "16..20", e: "21..25", f: "26..30", g: "31..36", h: "37..45" }
+    answer: "{(f + g) / 2}"
+    tolerance: 0.01
+    explain: "The upper half is {e}, {f}, {g}, {h}, and its median is halfway between {f} and {g}: {(f + g) / 2}."
+  - q: "Nine values in order are {a}, {b}, {c}, {d}, {e}, {f}, {g}, {h} and {i}. What is the interquartile range?"
+    vars: { a: "1..5", b: "6..9", c: "10..14", d: "15..18", e: "19..22", f: "23..27", g: "28..32", h: "33..38", i: "39..45" }
+    answer: "{(g + h) / 2 - (b + c) / 2}"
+    tolerance: 0.01
+    feedback:
+      - ["{i - a}", "That is the range. The interquartile range is the length of the middle half."]
+    explain: "The median is {e}. The lower half {a}, {b}, {c}, {d} has median {(b + c) / 2}; the upper half {f}, {g}, {h}, {i} has median {(g + h) / 2}. The IQR is {(g + h) / 2} − {(b + c) / 2} = {(g + h) / 2 - (b + c) / 2}."

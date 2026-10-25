@@ -1,0 +1,48 @@
+summary: "Students decide what a two-way table lets them say about a link: name the groups, give the percentages, say 'more likely', and keep 'causes' for more evidence. The context is the school survey on travel and sport, with made-up counts (AC9M10ST04, node 3)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 17 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can say how much higher one group's percentage is, in points and in times as likely.
+  - I can write a claim from a table that names its groups and stops short of 'causes'.
+  - I can say what more I would need to find a cause.
+struggle: "Letting go of 'makes'. Ask 'what else could be different about the riders?' before they rewrite the sentence."
+before: |
+  Do the Investigate tasks yourself. The table is the same as Row or column percentages (200 Year 10 students, made up): Ride 30 play sport of 40 (75%), Walk 33 of 60 (55%), Bus or car 40 of 100 (40%).
+
+  The one idea: a table shows who differs, not why. The careful claim names the group, gives the percentage of each, says 'more likely' and says 'in this survey'. Percentage points are the gap between two percentages (35); 'times as likely' divides them (1.875).
+
+  Third things the students might name: living close to school, having a bike at home, a parent's attitude to exercise. The point is to show that a link leaves several explanations open, as in the ice-cream and drowning lesson.
+
+  Every figure is made up: the school, the survey and the breakfast quiz table. No real study is quoted.
+running:
+  - "Predict: take a show of hands. The students who choose 'makes' have turned a link into a cause."
+  - "Investigate: ask for the third thing before showing the options, and write two or three on the board."
+  - "Make: have students read their claim to a partner, who checks it names both groups and uses 'more likely'."
+stuck:
+  - see: "A student keeps writing 'because' or 'makes'."
+    ask: "Did the survey change how anyone travelled, or just ask them?"
+    fix: "The survey only asked. A claim that something makes something else needs a change you can see."
+  - see: "A student mixes up percentage points and times as likely."
+    ask: "Are you subtracting the percentages, or dividing one by the other?"
+    fix: "Points: subtract. Times as likely: divide."
+  - see: "A student says that because other things might matter, the table tells us nothing."
+    ask: "Is a difference of 35 points nothing?"
+    fix: "The link is real in this survey. The claim is limited to what the table shows."
+stretch: "Write a claim for the walkers against the riders, then invent a third thing that could explain it and say what you would compare to test it."
+support: "A sentence frame: 'In this survey, students who ___ were more likely to ___ (__%) than students who ___ (__%).'"
+leads: |
+  Next: A good question, planning an investigation that names two variables.
+
+  Where it leads in class: students take a claim from the news and decide whether the table behind it supports it.
+exit:
+  q: "A table shows that 70% of students who join a choir say they like school, against 50% of those who don't. Write one careful sentence."
+  a: "In this survey, students who join a choir were more likely to say they like school (70%) than those who don't (50%)."
+explain: |
+  A two-way table shows a link between groups.
+
+  - Name the group each percentage is of.
+  - Say how much higher: in percentage points (subtract) or times as likely (divide).
+  - Use 'more likely' and 'in this survey'.
+  - Keep 'causes' for evidence where one thing is changed and the rest kept the same.
+sources:
+  - { title: "Made up for this lesson: the school survey on travel and sport and the breakfast quiz table.", url: "https://tutorials.learningwaypoints.com/maths/data/a-careful-claim/", checked: 2026-10-25 }

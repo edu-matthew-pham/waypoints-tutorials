@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Route 1's median is 4 minutes late and Route 2's median is 5.
+Route 1's box is from 2 to 6 and Route 2's box is from 4 to 6.
+Route 1 has the lower median, so it is the more reliable route.
+So Sam takes Route 1.
+# endregion

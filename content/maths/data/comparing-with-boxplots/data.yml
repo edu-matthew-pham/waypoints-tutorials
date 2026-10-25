@@ -1,0 +1,41 @@
+# Boards for "Comparing with boxplots". Two bus routes' lateness on the same 11 school days, in minutes (made up).
+# The Values box changes Route 1 only; Route 2 stays as it is.
+
+# region: run
+widget: data
+values: 0, 1, 2, 2, 3, 4, 4, 5, 6, 8, 15
+second: 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7
+names: Route 1, Route 2
+range: 0, 20
+step: 1
+edit: on
+view: box
+outliers: on
+label: Minutes late
+# endregion
+
+# region: pic
+widget: data
+values: 0, 1, 2, 2, 3, 4, 4, 5, 6, 8, 15
+second: 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7
+names: Route 1, Route 2
+range: 0, 20
+step: 1
+view: box
+outliers: on
+label: Minutes late
+# endregion
+
+# region: modify
+widget: data
+values: 0, 1, 2, 2, 3, 4, 4, 5, 6, 8, 15
+second: 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7
+names: Route 1, Route 2
+range: 0, 20
+step: 1
+edit: on
+view: box
+dots: on
+outliers: on
+label: Minutes late
+# endregion

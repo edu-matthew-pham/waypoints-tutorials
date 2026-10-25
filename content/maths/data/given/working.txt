@@ -1,0 +1,9 @@
+# Ravi's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ravi
+The question: what is the chance of a cloudy morning, given that it rained?
+The days with both rain and a cloudy morning: 30.
+"Given" means I look at the cloudy mornings, which is 50 days.
+30 ÷ 50 = 0.6.
+So the chance of a cloudy morning, given rain, is 0.6.
+# endregion

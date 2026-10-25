@@ -1,0 +1,8 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+Route 1's box runs from 2 to 6 minutes late.
+Route 2's box runs from 4 to 6 minutes late, so it is narrower.
+A narrower box means fewer buses ran on Route 2.
+So Route 1 is the busier route.
+# endregion

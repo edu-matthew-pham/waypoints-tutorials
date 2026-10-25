@@ -1,0 +1,14 @@
+# Practice for "Row or column percentages".
+templates:
+  - q: "A row of a two-way table (made up) has ${t}$ students, and ${t * pct / 100}$ of them play sport. What percentage of this group play sport?"
+    vars: { t: [20, 25, 40, 50], pct: "10..90 by 10" }
+    answer: "{pct}"
+    explain: "{t * pct / 100} ÷ {t} = {pct / 100}, which is {pct}%."
+  - q: "A row has ${t}$ students and ${t * pct / 100}$ of them play sport. What percentage of this group do not play sport?"
+    vars: { t: [20, 25, 40, 50], pct: "10..90 by 10" }
+    answer: "{100 - pct}"
+    explain: "{t * pct / 100} ÷ {t} = {pct}% play, so {100 - pct}% do not."
+  - q: "Group A has ${a}$ students and ${a * p / 100}$ play sport. Group B has ${b}$ students and ${b * r / 100}$ play sport. By how many percentage points is Group A's percentage higher than Group B's?"
+    vars: { a: [20, 40, 50], b: [20, 40, 50], p: "50..90 by 10", r: "10..40 by 10" }
+    answer: "{p - r}"
+    explain: "A: {p}%, B: {r}%. The difference is {p} − {r} = {p - r} percentage points."

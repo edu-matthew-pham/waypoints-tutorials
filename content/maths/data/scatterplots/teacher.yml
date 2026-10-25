@@ -1,0 +1,48 @@
+summary: "Students plot a dot from two measurements (first across, second up), read a dot's coordinates, and compare a dot with the line height = arm span. The context is a class's arm span and height with made-up numbers (AC9M10ST03, node 1)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can plot a dot from two measurements, putting the first across and the second up.
+  - I can read the two numbers of a dot from a scatterplot.
+  - I can say whether a dot is above, on or below the line where the two measurements are equal.
+struggle: "Putting the two numbers the wrong way round, or reading a dot's height off the wrong axis. Ask 'which measurement did we name first, and which axis is that?'"
+before: |
+  Do the Run board yourself first. P snaps to whole numbers; the arrow buttons under the graph move it a step at a time.
+
+  The one idea: one student is one dot, with the first measurement across and the second up. A scatterplot shows every pair at once, and a reference line (here height = arm span) gives something to compare each dot against.
+
+  Every number is made up: Tom, the twelve students and the five on paper. Nothing here is a real class. If your class measures itself first (tape measures; the library's suggestion) use the real data in place of the twelve dots: the Make step then answers your own question. Measure to the nearest centimetre and agree how to measure an arm span (fingertip to fingertip, arms straight out).
+
+  Hidden: measuring errors (a slumped arm span, shoes on). They show up as dots far from the line, which is where the next lesson goes.
+running:
+  - "Predict: take a show of hands before the Run. Students who chose 'below' usually swapped the two numbers; ask them which axis arm span is on."
+  - "Run: ask students to say 'across, then up' aloud as they drag P."
+  - "Paper: the five-student try-one is worked on paper first, with the worked example beside them. Look for a dot placed on the line being counted as above."
+  - "Modify: before the metres question ask 'about how many cm is a student tall?' and then 'where is 1.62 on that scale?'."
+stuck:
+  - see: "A student puts the bigger number across (Mia's mistake)."
+    ask: "Which measurement did the question name first? Which axis is it on?"
+    fix: "Label the axes on the page, then say 'across to arm span, up to height' as each dot is placed."
+  - see: "A student counts dots by whether they look close to the line, not by comparing the two numbers."
+    ask: "What is the height and what is the arm span? Which is bigger?"
+    fix: "Write the two numbers beside the dot and compare them. A dot is above the line when the second number is bigger."
+  - see: "A student says two students with the same arm span make one dot."
+    ask: "Do they have the same height too?"
+    fix: "One dot per student. The dots share their first number, so they sit one above the other."
+stretch: "Draw a scatterplot on paper for any two measurements you can take in the classroom (hand span and foot length, say), then decide where a line like height = arm span could go, or whether none makes sense."
+support: "Give a printed grid with the axes labelled and a row of pairs to plot one at a time, ticking each pair off. Mark 'across' and 'up' on the grid."
+leads: |
+  Next: Describing association: how the dots slope, how tightly they cluster, and whether a straight line fits.
+
+  Where it leads in class: students measure their own class (hand span against foot length, or arm span against height) and make the scatterplot in a spreadsheet or on paper. Any real class data replaces the made-up numbers.
+exit:
+  q: "A student has an arm span of 168 cm and a height of 171 cm. Which two numbers do you use to place the dot, and is it above or below the line height = arm span?"
+  a: "Across 168, up 171. 171 is bigger than 168, so the dot is above the line."
+explain: |
+  A scatterplot shows two measurements for each person at once. Each person is one dot.
+
+  - Across: the first measurement (arm span here).
+  - Up: the second measurement (height here).
+  - A reference line such as height = arm span shows where the two numbers are equal: dots above it have the bigger second number, dots below it have the smaller.
+sources:
+  - { title: "Made up for this lesson: Tom, the twelve students' arm spans and heights, and the five pairs for the paper task. A real class would give its own numbers.", url: "https://tutorials.learningwaypoints.com/maths/data/scatterplots/", checked: 2026-10-25 }

@@ -20,6 +20,10 @@
 //   cross: 1, 2            where plots 1 and 2 meet: a point, its coordinates, and a dashed line down to x (the solution)
 //   series Gas: 0,5; 1,7; 2,6   a line through data points (x,y pairs, x going up), named for the legend; up to 3
 //   series: A, B, C        a line through named points (draggable ones too: students draw the graph)
+//   series Pairs: 160,158; 172,175; 165,166, dots   a scatterplot: the points alone, no line, in any order (x values may repeat); up to 3 series
+//                          with the draggable line (point A: …, drag; line: A, B) students fit a line by eye; a cursor does not go with dots.
+//                          If the range does not reach 0 (x: 140, 190), the axes sit along the lower and left edges, numbered from there
+//                          (start the range on a multiple of the grid spacing so the numbers fall on it)
 //   point B: 4, 6, drag y  a point that moves only up and down ("drag x": only across); checks see where it lands
 //   cursor R: 1            a cursor along the first series: a slider (step 1) and a click on the graph read values
 //                          off it; point R sits on the first series (S, T on the others) and a readout names the values
@@ -129,12 +133,15 @@
         s.cross = ab;
       } else if (it.kind === 'series') {
         var sv = it.value.trim(), ser = { name: it.name || '', where: where };
+        // A trailing ", dots" makes a scatter: the points alone, no line, in any order (x values may repeat).
+        sv = sv.replace(/\s*[,;]\s*dots\s*$/i, function () { ser.dots = true; return ''; });
         if (/^[A-Z](\s*,\s*[A-Z])+$/.test(sv)) ser.ends = sv.split(',').map(function (t) { return t.trim(); });
         else {
           ser.pts = sv.split(';').filter(function (t) { return t.trim(); }).map(function (t) { var a = nums(t.trim(), 2, where); return [num(a[0], where), num(a[1], where)]; });
-          if (ser.pts.length < 2) throw new Error(where + ': a series needs at least two points, such as "series: 0,5; 1,7".');
-          ser.pts.forEach(function (q, i) { if (i && !(q[0] > ser.pts[i - 1][0])) throw new Error(where + ': the x values must go up (' + show(ser.pts[i - 1][0]) + ' is followed by ' + show(q[0]) + ').'); });
+          if (ser.pts.length < (ser.dots ? 1 : 2)) throw new Error(where + ': a series needs at least two points, such as "series: 0,5; 1,7".');
+          if (!ser.dots) ser.pts.forEach(function (q, i) { if (i && !(q[0] > ser.pts[i - 1][0])) throw new Error(where + ': the x values must go up (' + show(ser.pts[i - 1][0]) + ' is followed by ' + show(q[0]) + ').'); });
         }
+        if (ser.dots && ser.ends) throw new Error(where + ': ", dots" goes with data points, such as "series: 160,158; 172,175, dots".');
         s.series.push(ser);
       } else if (it.kind === 'cursor') {
         var cv = nums(it.value, 1, where).map(function (t) { return num(t, where); });
@@ -155,6 +162,7 @@
       if (!/^[A-Z]$/.test(s.cursor.name)) throw new Error(cw + ': the cursor needs a one-letter capital name, such as "cursor R: 1".');
       if (!s.series.length || !s.series[0].pts) throw new Error(cw + ': a cursor reads the first series, which needs data points, such as "series: 0,5; 1,7".');
       if (s.series.some(function (r) { return !r.pts; })) throw new Error(cw + ': a cursor needs every series to be data points, not named points.');
+      if (s.series.some(function (r) { return r.dots; })) throw new Error(cw + ': a cursor follows a line, so it does not go with a ", dots" scatter.');
       var cn = [], c0 = s.cursor.name.charCodeAt(0);
       s.series.forEach(function (r, i) { cn.push(String.fromCharCode(c0 + i)); });
       if (cn.some(function (n) { return n > 'Z' || names.indexOf(n) >= 0; })) throw new Error(cw + ': the cursor points ' + cn.join(', ') + ' clash with another point or run past Z; rename the cursor.');
@@ -199,25 +207,30 @@
 
   // Data graphs start their axes at 0 in the corner, so leave a margin for the tick labels.
   function frame() {
-    var x = spec.xr, y = spec.yr, data = spec.series.length > 0;
-    return [x[0] - (data && x[0] === 0 ? (x[1] - x[0]) * 0.06 : 0), y[1], x[1], y[0] - (data && y[0] === 0 ? (y[1] - y[0]) * 0.08 : 0)];
+    var x = spec.xr, y = spec.yr, data = spec.series.length > 0, scat = spec.series.some(function (r) { return r.dots; });
+    return [x[0] - (data && (x[0] === 0 || (scat && x[0] > 0)) ? (x[1] - x[0]) * 0.06 : 0), y[1], x[1], y[0] - (data && (y[0] === 0 || (scat && y[0] > 0)) ? (y[1] - y[0]) * 0.08 : 0)];
   }
   function build() {
     var ink = B.css('--ink') || '#1d2430', muted = B.css('--muted') || '#5d6675', line = B.css('--line') || '#e4e1da';
     var xr = spec.xr, yr = spec.yr;
     var bb = frame(), board = B.jsx({ boundingbox: bb, keepAspectRatio: !!spec.circle });
     if (spec.gridStep) board.create('grid', [], { majorStep: [spec.gridXY[0], spec.gridXY[1]], minorElements: 0, strokeColor: line, strokeOpacity: 1, highlight: false });
-    var axis = function (p1, p2, span, which) {
+    var axis = function (p1, p2, span, which, skip) {
       var gs = spec.gridXY[which === 'x' ? 0 : 1];
       var name = spec.axisLabels[which === 'x' ? 0 : 1];
+      var ticks = { ticksDistance: gs ? Math.max(nice(span), gs) : nice(span), insertTicks: false, minorTicks: 0, majorHeight: 8, strokeColor: muted, drawZero: false, label: { cssClass: 'ticklabel', highlightCssClass: 'ticklabel', strokeColor: muted } };
+      // an axis moved to the corner of a scatter: the y axis leaves out the number it shares with the x axis
+      if (skip) ticks.generateLabelText = function (tick, zero, value) { var d = this.getDistanceFromZero(zero, tick); return Math.abs(d - skip) < 1e-9 ? '' : this.formatLabelText(value !== undefined && value !== null ? value : d / this.evalVisProp('scale')); };
       return board.create('axis', [p1, p2], {
         name: name, withLabel: true, strokeColor: muted, highlight: false, lastArrow: { size: 6 }, fixed: true,
         label: { position: which === 'x' ? 'rt' : 'urt', offset: which === 'x' ? [-14 - (name.length - 1) * 6, 14] : [10, -8], cssClass: 'axisname', highlightCssClass: 'axisname', strokeColor: ink },
-        ticks: { ticksDistance: gs ? Math.max(nice(span), gs) : nice(span), insertTicks: false, minorTicks: 0, majorHeight: 8, strokeColor: muted, drawZero: false, label: { cssClass: 'ticklabel', highlightCssClass: 'ticklabel', strokeColor: muted } },
+        ticks: ticks,
       });
     };
-    axis([0, 0], [1, 0], xr[1] - xr[0], 'x');
-    axis([0, 0], [0, 1], yr[1] - yr[0], 'y');
+    // A ", dots" scatter whose range does not reach 0 puts the axes along its lower and left edges, with their numbers.
+    var scat = spec.series.some(function (r) { return r.dots; }), ox = scat && xr[0] > 0 ? xr[0] : 0, oy = scat && yr[0] > 0 ? yr[0] : 0;
+    axis([ox, oy], [ox + 1, oy], xr[1] - xr[0], 'x');
+    axis([ox, oy], [ox, oy + 1], yr[1] - yr[0], 'y', ox || oy ? oy : 0);
     var scopeVars = function (x) { var v = Object.assign({}, vars); if (x !== undefined) v.x = x; return v; };
     // Shaded regions, under the plots: a filled curve along the boundary, closed off at the edge of the view.
     spec.shades.forEach(function (sh, i) {
@@ -348,6 +361,10 @@
     // Series: lines through data points (small dots at the data) or through named points (students draw the graph).
     spec.series.forEach(function (r, i) {
       var colour = B.css(COLOURS[(spec.plots.length + i) % COLOURS.length]) || '#2f6fb3'; r.colour = colour;
+      if (r.dots) {   // a scatter: just the points
+        r.pts.forEach(function (q) { board.create('point', [q[0], q[1]], { name: '', size: 4, fillColor: colour, strokeColor: colour, fixed: true, withLabel: false, showInfobox: false, highlight: false }); });
+        return;
+      }
       var through = r.pts ? r.pts.map(function (q) { return [q[0], q[1]]; }) : r.ends.map(function (n) { return objs[n]; });
       board.create('polygonalchain', through, { borders: { strokeColor: colour, strokeWidth: 3, highlight: false, fixed: true }, vertices: r.pts ? { size: 3, fillColor: colour, strokeColor: colour, fixed: true, withLabel: false, highlight: false } : { visible: false }, fixed: true, highlight: false });
     });

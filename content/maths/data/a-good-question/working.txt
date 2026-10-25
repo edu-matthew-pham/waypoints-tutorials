@@ -1,0 +1,8 @@
+# Zoe's plan for the "find the vague question" task. Plain text: students click the wrong line, nothing runs.
+
+# region: zoe
+My topic is sleep and how students do at school.
+My question: Does sleep matter?
+I will ask whoever I see at lunch how they slept.
+Then I will see what they say.
+# endregion

@@ -1,0 +1,23 @@
+# Practice for "Misleading graphs". Bars on a cut axis and the honest percentage.
+templates:
+  - q: "Two bars are drawn on an axis that starts at {z}. Their values are {a} and {b}. How many times as tall does the first bar look as the second? (1 decimal place)"
+    vars: { z: [30, 40, 50, 60], a: [80, 90, 100, 110], b: [65, 70, 75, 85] }
+    where: "a > b and b > z"
+    answer: "{(a - z) / (b - z)}"
+    tolerance: 0.06
+    feedback:
+      - ["{a / b}", "That is the real ratio. The question asks how tall the bars look on the cut axis, measured from {z}."]
+    explain: "({a} − {z}) ÷ ({b} − {z}) = {a - z} ÷ {b - z} = {(a - z) / (b - z)}."
+  - q: "A chart shows sales rising from {a} to {b} on an axis that starts well above 0. By what percentage did sales really rise? (1 decimal place)"
+    vars: { a: [200, 250, 400, 500], b: [220, 270, 430, 540] }
+    where: "b > a"
+    answer: "{(b - a) * 100 / a}"
+    tolerance: 0.06
+    feedback:
+      - ["{b - a}", "That is the difference. Divide by the starting value to get a percentage."]
+    explain: "({b} − {a}) ÷ {a} × 100 = {(b - a) * 100 / a}%."
+  - q: "A pictograph shows {k} times as many as last year by drawing the icon {k} times as wide and {k} times as tall. How many times as big, by area, does the icon look?"
+    vars: { k: [2, 3, 4, 5, 6, 7, 8] }
+    answer: "{k * k}"
+    tolerance: 0
+    explain: "{k} × {k} = {k * k} times the area."

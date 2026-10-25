@@ -1,0 +1,9 @@
+# Ben's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ben
+The plot shows study time across and test mark up, for 12 students.
+The dots rise from left to right, so the direction is positive.
+The line through them rises by only about 2 marks for every extra hour. That is a gentle slope.
+A gentle slope means the dots are not following the pattern much, so the association is weak.
+So this is a weak positive association.
+# endregion

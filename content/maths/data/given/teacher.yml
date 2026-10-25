@@ -1,0 +1,50 @@
+summary: "Students read 'given', 'if … then' and 'knowing that' as pointing at a smaller group, and find the chance inside it. They see that P(rain | cloudy) and P(cloudy | rain) use different groups. The context is 100 made-up spring days sorted by rain and cloudy mornings (AC9M10P01, node 1)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can say which event is given and which is asked about.
+  - I can find a chance inside the group the 'given' picks.
+  - I can say why P(A | B) and P(B | A) are usually different.
+struggle: "Dividing by all the days instead of the group. Ask: 'Given what? Which days are left once you know that?'"
+before: |
+  Do the Run board yourself first. Students need and / or from a Venn diagram (Year 9) and a two-way table.
+
+  The one idea: "given" shrinks the whole to one group. Everything else is a count inside that group. The Venn board fades the days outside the group and says "of the g in the group, h are chosen". The notation P(A | B) is introduced here as a way of writing the words; it is not a formula.
+
+  The language forms to put side by side: "given", "if … then", "knowing that", "of the". 'Of' is the odd one out: "of the cloudy mornings, how many had rain" is the same as "given a cloudy morning".
+
+  Every count is made up: the 100 days, the cloudy mornings, the bike, scooter, sport and netball counts. The one real fact is what a forecast chance of rain means (more than the gauge's smallest measurable rainfall, 0.2 mm), from FarmPoint. This matters for the opening: the 0.4 here is a count from the town's days, not a forecast.
+running:
+  - "Predict: show of hands. Many choose 'equal' because the 30 days appear in both."
+  - "Run: ask students to say the group out loud before they read the board."
+  - "Paper: the sport try-one and the forecast Make are worked on paper first. Look for the group named in the first line."
+  - "Modify: before the empty board, ask 'if no day had rain, which days would you look at?'"
+stuck:
+  - see: "A student divides by 100 whatever the question says."
+    ask: "Once you know it was cloudy, which days are still possible?"
+    fix: "Cross out the days that do not fit the given, then count what is left."
+  - see: "A student says P(rain | cloudy) and P(cloudy | rain) are the same because the same 30 days are in both."
+    ask: "What is the group in each? How big is each group?"
+    fix: "Same top, different bottom: 30/50 and 30/40."
+  - see: "A student reads 'given' as 'and' and answers 0.3."
+    ask: "Is that out of all the days or only the cloudy ones?"
+    fix: "'And' keeps the whole at 100. 'Given' shrinks the whole to the group."
+stretch: "A test can give a result called 'positive' for people who do and do not have a condition. Say in words what 'the chance of a positive test, given the person has the condition' and 'the chance of having the condition, given a positive test' mean. Which one would you want a doctor to tell you?"
+support: "A printed Venn diagram and table. The student shades the given group first and crosses out the rest."
+leads: |
+  Continues AC9M10P01 node 1.
+
+  Where it leads: reading conditional chances from tables, Venn diagrams and trees (next lesson), and deciding whether two events are independent.
+exit:
+  q: "Of 60 students, 24 play football and 9 play football and tennis. What is the chance a football player plays tennis? What is the chance a tennis player plays football if 18 play tennis?"
+  a: "9/24 = 0.375, then 9/18 = 0.5. The group changes, so the answer changes."
+explain: |
+  A chance "given" something is found inside the group where that thing is true.
+
+  - Spot the given: "given", "knowing that", "if … then" and "of the" point at the group.
+  - Shrink the whole: only the days or people in that group are counted.
+  - Divide: count what you want inside the group, then divide by the size of the group.
+  - Swapping the events changes the group, so P(A | B) is usually not P(B | A).
+sources:
+  - { title: "Interpreting BOM forecasts (FarmPoint, Tasmanian Government): chance of rain is the likelihood of more than the minimum measurable rainfall (0.2 mm)", url: "https://farmpoint.tas.gov.au/news/interpreting-bom-forecasts", checked: 2026-10-22 }
+  - { title: "Made up for this lesson: the 100 days with their rain and cloudy-morning counts, and the bike, scooter, netball and sport counts.", url: "https://tutorials.learningwaypoints.com/maths/data/given/", checked: 2026-10-25 }

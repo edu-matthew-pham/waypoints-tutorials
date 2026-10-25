@@ -1,0 +1,8 @@
+# Maya's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: maya
+The test says positive. I want the chance the person has the condition.
+Of the 20 people who have it, 18 test positive. That is 9 in 10.
+So the chance of having the condition, given a positive test, is 9 in 10 = 0.9.
+That means a positive result is right nine times out of ten.
+# endregion

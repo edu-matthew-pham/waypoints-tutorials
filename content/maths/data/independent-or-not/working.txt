@@ -1,0 +1,8 @@
+# Aiden's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: aiden
+I want to know whether walking to school changes playing sport.
+18 walkers play sport, and 42 students who do not walk play sport.
+18 and 42 are not equal, so walking makes a difference to sport.
+So the two events are dependent.
+# endregion

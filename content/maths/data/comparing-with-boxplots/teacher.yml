@@ -1,0 +1,42 @@
+summary: "Students compare two data sets drawn as boxplots on one scale by centre, spread, shape and outliers, and learn that a lower median doesn't make a route more reliable (AC9M10ST02, node 3)."
+time: 45
+timing: "Predict and Run 9 min · Investigate 14 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can compare two boxplots by centre and spread.
+  - I can say what an outlier does and doesn't change.
+  - I can say which of two data sets is steadier and why.
+struggle: "Stopping at the medians. Ask: what would your week be like on each route?"
+before: |
+  Students need to read a boxplot (previous lesson) and the interquartile range.
+
+  The one idea: compare the centres, then the spreads, then the shapes and outliers, and say what it means for the situation. In the Run students edit Route 1 only (the second set isn't editable on the board) so they see what steadier looks like in the data.
+
+  The routes and their lateness are made up for the task. Here "reliable" is defined as about the same lateness each day, so the comparison has a clear answer; real people would also weigh how often a bus is very late, or how early it is, so the choice isn't forced. The library entry (bus-lateness) suggests the class times two real routes for a few weeks and checks the comparison holds. The shape part of the node (symmetric or skewed) is touched through the median's position in the box and the outlier; a fuller treatment with histograms and other displays is left to class.
+running:
+  - "Predict: show of hands before the check. Expect Route 1 for its lower median; don't comment."
+  - "Run: ask what they will change in Route 1 before they edit anything. The very late days must move in."
+  - "Paper: the walk and bus try-one and the Make are worked on paper first."
+  - "Modify: overlapping boxes is the edge case. Ask what a box can and can't tell you about single days."
+stuck:
+  - see: "A student says Route 1 is better because its median is lower."
+    ask: "Would you rather know how late a bus is on most days, or save a minute on a typical day?"
+    fix: "The median is the typical day, but the spread and the outlier say how much you can rely on it."
+  - see: "A student compares the highest and lowest values and ignores the quartiles."
+    ask: "Which values are the middle half of the days?"
+    fix: "The box. The whiskers show how far the rest reach."
+  - see: "A student says the outlier makes the box longer."
+    ask: "Which numbers is the box made from?"
+    fix: "The quartiles. One very late day changes the highest value and the range, not the quartiles."
+stretch: "Time two real routes or journeys for ten days and draw their boxplots. Do they agree with your guess?"
+support: "Cut-out cards for the five numbers of each set. Line them up on a number line and compare centre, then spread."
+leads: |
+  Completes AC9M10ST02 (node 3).
+
+  Where it leads: scatterplots (Year 10 statistics), where each person gives two measurements.
+exit:
+  q: "Class A has a median of 62 and an interquartile range of 8. Class B has a median of 65 and an interquartile range of 20. Which class has marks that are more alike, and which has the higher typical mark?"
+  a: "Class A's marks are more alike (IQR 8); Class B has the higher typical mark (median 65)."
+explain: |
+  To compare two boxplots, compare their centres (the median bars), their spreads (the box lengths and whiskers), their shapes and their outliers, then say what it means in the situation.
+
+  A lower median isn't the same as more reliable: a longer box means the middle half of the days is more spread out.

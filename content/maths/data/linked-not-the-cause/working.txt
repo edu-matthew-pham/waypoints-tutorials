@@ -1,0 +1,9 @@
+# Eli's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: eli
+In the six coolest months, ice-cream sales are low and drownings are low.
+In the six warmest months, both are high.
+So more ice-cream sales go with more drownings.
+So ice cream must be causing the drownings.
+The council should ban it.
+# endregion

@@ -1,0 +1,33 @@
+# Boards for "Independent or not?". 100 students (made up) sorted by walking to school (A) and playing a sport (B).
+# Counts are in the order: A only, both, B only, neither. `given: a` shrinks the whole to the walkers, so c (the chance given
+# walking) can be compared with p (the chance on its own).
+
+# region: run
+widget: venn
+labels: Walk, Sport
+counts: 12, 18, 42, 28
+given: a
+# endregion
+
+# region: bus
+widget: venn
+labels: Rain, Late
+counts: 10, 10, 15, 65
+given: a
+# endregion
+
+# region: never
+widget: venn
+labels: Walk, Bus
+counts: 30, 0, 25, 45
+given: a
+# endregion
+
+# region: explain-pic
+widget: venn
+labels: Walk, Sport
+counts: 12, 18, 42, 28
+given: a
+event: b
+choose: off
+# endregion

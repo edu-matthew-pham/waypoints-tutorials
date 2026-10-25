@@ -1,0 +1,8 @@
+# Lee's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lee
+The club's poll got 50 000 votes, and 92% of them said yes.
+That is a very large sample.
+A sample this big must be reliable.
+So about 92% of the whole city wants the bigger stadium.
+# endregion

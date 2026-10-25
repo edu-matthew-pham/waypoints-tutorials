@@ -1,0 +1,21 @@
+# Practice for "Given". Two-way tables of days sorted by rain and cloudy mornings.
+templates:
+  - q: "Of 100 days, {r} had rain and a cloudy morning, and {c} had a cloudy morning in all. What is P(rain | cloudy), as a decimal to 2 places?"
+    vars: { r: "12..40", c: "50..80" }
+    answer: "{r / c}"
+    tolerance: 0.01
+    feedback:
+      - ["{r / 100}", "That divides by all 100 days. Given a cloudy morning, look only at the {c} cloudy mornings."]
+    explain: "{r} of the {c} cloudy mornings had rain: {r} ÷ {c}."
+  - q: "{r} days had rain and a cloudy morning, {c} had a cloudy morning, and {a} had rain. What is P(cloudy | rain), as a decimal to 2 places?"
+    vars: { r: "12..30", c: "40..70", a: "35..60" }
+    answer: "{r / a}"
+    tolerance: 0.01
+    feedback:
+      - ["{r / c}", "That is P(rain | cloudy). Given rain, look only at the {a} days with rain."]
+    explain: "{r} of the {a} rainy days had a cloudy morning: {r} ÷ {a}."
+  - q: "Of {k} days with a clear morning, {r} had rain. What is P(rain | clear), as a decimal to 2 places?"
+    vars: { k: "40..60", r: "6..20" }
+    answer: "{r / k}"
+    tolerance: 0.01
+    explain: "{r} ÷ {k}."

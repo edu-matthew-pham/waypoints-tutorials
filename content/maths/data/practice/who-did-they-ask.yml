@@ -1,0 +1,18 @@
+# Practice for "Who did they ask?". Percentages from a random sample and estimates for the population.
+templates:
+  - q: "In a random sample of {n} students, {k} chose the library as their favourite place. What percentage is that? (1 decimal place)"
+    vars: { n: [200, 250, 400, 500], k: [60, 90, 120, 150] }
+    where: "k < n / 2"
+    answer: "{k * 100 / n}"
+    tolerance: 0.06
+    explain: "{k} ÷ {n} × 100 = {k * 100 / n}%."
+  - q: "A random sample finds {p}% of students prefer the pool. Estimate how many of the school's {t} students prefer the pool."
+    vars: { p: [30, 40, 55, 60], t: [800, 1000, 1500, 1800] }
+    answer: "{p * t / 100}"
+    tolerance: 0.5
+    explain: "{p}% of {t} = {p / 100} × {t} = {p * t / 100}. It's an estimate, because a different sample could give a slightly different percentage."
+  - q: "A website poll gets {v} votes and {p}% say yes. How many yes votes is that?"
+    vars: { v: [2000, 4000, 10000, 50000], p: [60, 75, 80, 92] }
+    answer: "{v * p / 100}"
+    tolerance: 0.5
+    explain: "{p}% of {v} = {v * p / 100} yes votes. That counts the people who voted, not the whole city."

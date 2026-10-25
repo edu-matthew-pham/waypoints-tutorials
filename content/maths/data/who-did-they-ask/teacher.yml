@@ -1,0 +1,42 @@
+summary: "Students judge whether a report's sample fits its claim by asking who answered, how many, how they were chosen and who is missing, and see that a small random sample can beat a huge self-chosen one (AC9M10ST01, node 2)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 10 min · Practise and Make 13 min"
+goals:
+  - I can say who a report's numbers describe.
+  - I can explain why a very large sample can still be a poor one.
+  - I can use a fair sample's percentage to estimate for a population.
+struggle: "Thinking a bigger sample is always a better one. Ask: more of whom? If the new people are chosen the same way, is anything fixed?"
+before: |
+  Students need the Year 8 lessons on bias and sampling methods and the Year 9 lesson on how two methods give different answers.
+
+  The one idea: judge a report by its sample, not its size. The questions are on the board: who answered, how many, how chosen, who is missing. The library entries (fan-poll, screen-time-claim) suggest a class check with a real poll or report; use a real one only after you have read it yourself, because a real report is a copyright text and not reproduced here.
+
+  The poll, the council survey, the café, the school survey and the gaming-site headline are all made up for the task. Self-selection (a voluntary poll), convenience sampling (whoever is easy to reach) and non-response (most people don't answer) are named in the tasks, not as a list to memorise.
+running:
+  - "Predict: show of hands before the check. Expect most hands for 50 000. Don't say anything until the Run."
+  - "Run: ask whether a quarter of the city sounds like a lot. Then ask whether it matters who the quarter is."
+  - "Investigate: the worked example is the checklist. Ask students to say it back using the café."
+  - "Make: the percentage is worked on paper first."
+stuck:
+  - see: "A student says the club's poll must be right because so many voted."
+    ask: "If another 50 000 fans voted, would that tell you more about people who are not fans?"
+    fix: "No. More of the same kind of voter doesn't reach the people who are missing."
+  - see: "A student says the random survey of 400 is too small to trust."
+    ask: "Is it biased, or just small? What does small cost you?"
+    fix: "It varies more from sample to sample, but picking at random gives every resident the same chance, so it isn't biased."
+  - see: "A student says 54% and 92% can't both be right."
+    ask: "Who does each number describe?"
+    fix: "92% describes the poll's voters, and 54% describes the random sample of the city. Both can be true of their own groups."
+stretch: "Design a way to find out what your year level thinks about a school issue that is fair and doable in a week. Who is missing from your plan?"
+support: "A table with four rows (who answered, how many, how chosen, who is missing) filled in together for the café survey."
+leads: |
+  Continues AC9M10ST01 (node 2).
+
+  Where it leads: five numbers and boxplots (next), then reading and comparing data sets. The ethical side of data (node 3) is left to a class discussion.
+exit:
+  q: "A radio show asks listeners to text in their view and 4 000 do. Can the result be stated for the whole country? Why or why not?"
+  a: "No: the listeners chose to text in, so the result describes people who listen to that show and care enough to answer."
+explain: |
+  A report's numbers describe the people it asked. Check who answered, how many, how they were picked and who is missing.
+
+  A very large poll that people choose to join can say less about everyone than a small sample picked at random.

@@ -1,0 +1,33 @@
+# Boards for "Five numbers". The suburb's 11 sale prices (thousands of dollars, made up). The Values box changes the data.
+
+# region: run
+widget: data
+values: 480, 495, 510, 520, 545, 560, 590, 610, 640, 720, 1450
+range: 400, 1500
+step: 10
+edit: on
+view: box
+dots: on
+label: Sale price (thousands of dollars)
+# endregion
+
+# region: pic
+widget: data
+values: 480, 495, 510, 520, 545, 560, 590, 610, 640, 720, 1450
+range: 400, 1500
+step: 10
+view: box
+dots: on
+label: Sale price (thousands of dollars)
+# endregion
+
+# region: modify
+widget: data
+values: 480, 495, 510, 520, 545, 560, 590, 610, 640, 720, 1450
+range: 400, 3000
+step: 10
+edit: on
+view: box
+dots: on
+label: Sale price (thousands of dollars)
+# endregion

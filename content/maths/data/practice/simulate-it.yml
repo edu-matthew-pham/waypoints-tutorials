@@ -1,0 +1,17 @@
+# Practice for "Simulate it". Simulated screening test results (made up).
+templates:
+  - q: "A simulation of the screening test gave {a} people with the condition and a positive test, and {b} people without it and a positive test. What is the simulated chance of the condition, given a positive test? Decimal to 2 places."
+    vars: { a: "15..30", b: "40..70" }
+    answer: "{a / (a + b)}"
+    tolerance: 0.01
+    feedback:
+      - ["{a / 1000}", "That is out of all 1000 people. Given a positive test, divide by the positives, {a} + {b}."]
+    explain: "The positives are {a} + {b} = {a + b}. {a} of them have the condition: {a} ÷ {a + b}."
+  - q: "The table gives a chance of {t}% and a simulation gave {s}%. How many percentage points apart are they?"
+    vars: { t: [25, 27, 30], s: [22, 29, 31, 34, 35] }
+    answer: "{abs(s - t)}"
+    explain: "The gap is the difference between {s} and {t}: {abs(s - t)} percentage points."
+  - q: "Review: a coin is tossed and a die with {n} faces is rolled. How many outcomes are there in all?"
+    vars: { n: "4..12" }
+    answer: "{2 * n}"
+    explain: "2 × {n} = {2 * n} outcomes."

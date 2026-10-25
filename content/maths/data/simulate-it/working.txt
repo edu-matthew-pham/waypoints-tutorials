@@ -1,0 +1,8 @@
+# Zoe's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: zoe
+The table says the chance of the condition, given a positive test, is 18 ÷ 67 = 0.27.
+I ran the simulation for 100 people and got 0.35.
+0.35 is not 0.27, so the table must be wrong.
+I will use 0.35 as the answer.
+# endregion

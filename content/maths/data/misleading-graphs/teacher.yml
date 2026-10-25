@@ -1,0 +1,42 @@
+summary: "Students find the feature that makes a graph misleading (a cut axis, a chosen window, a picture scaled in two directions), say how it acts on the reader, and redraw the numbers honestly (AC9M10ST01, node 1)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 10 min · Practise and Make 13 min"
+goals:
+  - I can name the feature that makes a graph misleading.
+  - I can say how that feature works on the reader.
+  - I can work out the honest change from the labelled numbers.
+struggle: "Believing the height of the line instead of the labels. Ask: what number is the bottom of the axis, and how many members is that?"
+before: |
+  Students need percentage change and the Year 9 lesson on graphs that make a point (a cut axis on a bar chart).
+
+  The one idea: the picture and the numbers can disagree, and the numbers win. This lesson widens Year 9's cut axis to a chosen window, a tilted pie and a pictograph scaled in two directions, and names the mechanism each time.
+
+  The club, the canteen, the temperatures and the car sales are made up for the task. The library entry (cut-axis) suggests a class check: collect two real graphs from news or ads and name the feature in each.
+running:
+  - "Predict: show of hands before the check. Hold the question until the numbers are read out loud."
+  - "Run: ask where the bottom of the axis is before anyone calculates."
+  - "Paper: the canteen try-one and the Make growth are worked on paper first."
+  - "Modify: the temperature graph is the edge case. Ask when a cut axis is fine."
+stuck:
+  - see: "A student says the club grew nearly three times."
+    ask: "What number does the bottom of the axis stand for?"
+    fix: "205, so the heights show how far above 205 each point is. Use the labels: 212 and 224."
+  - see: "A student says every cut axis is a lie."
+    ask: "What is the reader being asked to compare: sizes or changes?"
+    fix: "Bars invite a comparison of sizes, so they start at 0. A line graph of change over time can start higher if it is labelled."
+  - see: "A student says the doubled icon looks twice as big."
+    ask: "How much of the page does the icon cover now compared with before?"
+    fix: "Twice as wide and twice as tall is four times the area."
+stretch: "Find a real graph in the news that cuts its axis and redraw it from 0. What changes about the story?"
+support: "Squared paper: draw the club's two bars from 205 and then from 0, and measure both."
+leads: |
+  Continues AC9M10ST01 (node 1).
+
+  Where it leads: Who did they ask? (next), where the question is who the numbers describe, then reading and comparing data with boxplots.
+exit:
+  q: "A bar chart's axis starts at 50. The bars show 80 and 60. How many times as tall does the first bar look as the second?"
+  a: "(80 − 50) ÷ (60 − 50) = 3 times, though 80 is only about 1.3 times 60."
+explain: |
+  A graph can mislead without a single wrong number. A vertical axis that doesn't start at zero, a time window picked to suit the story, or a picture scaled in two directions all change what the eye sees.
+
+  Check what the bottom of the axis is, read the labels, and work out the real change: for the club, 12 more members on 212 is about 5.7%.

@@ -1,0 +1,16 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+In the survey, 33 students walk to school and play a sport.
+There are 200 students in the survey altogether.
+So the percentage of walkers who play sport is 33 out of 200.
+33 ÷ 200 = 0.165, which is 16.5%.
+So 16.5% of the walkers play sport.
+# endregion
+
+# region: mia
+I want to know what percentage of riders play sport.
+30 riders play sport, and 103 students play sport altogether.
+30 ÷ 103 = 0.29, which is about 29%.
+So 29% of riders play sport.
+# endregion

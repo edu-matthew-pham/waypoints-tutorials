@@ -1,0 +1,8 @@
+# Ben's working for the "find the step too far" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ben
+The table shows 75% of riders play sport and 40% of bus or car students do.
+That is a big difference, so students who ride are more likely to play sport.
+So riding to school makes students play sport.
+The school should give every student a bike.
+# endregion

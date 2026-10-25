@@ -1,0 +1,49 @@
+summary: "Students turn a vague wondering about sleep into an investigation question with two named variables, a group, a measure for each and a direction. The context is sleep and reaction time in a Year 10 class, with made-up figures (AC9M10ST05, node 1)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 17 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can name the two variables in a question.
+  - I can say which variable might explain the other.
+  - I can rewrite a vague question so it names who, what is measured and how.
+struggle: "Writing the question with all parts. Ask 'what would you write in the first column of the table?' to push them from the idea to the measure."
+before: |
+  Do the Investigate tasks yourself. The context is whether hours slept goes with reaction time, measured by a ruler drop in centimetres.
+
+  The one idea: a question is ready when a stranger could collect the data from it. It names the group (Year 10 students at our school), both variables (hours slept last night, ruler-drop distance), how each is measured, and which variable might explain the other (hours slept is explanatory, reaction time the response).
+
+  This is a hinge node: a vague question carries through collecting and judging, so the next step (collecting and displaying) has nothing to aim at. It has no smaller step because it is a judgement, and a smaller step would hand over the answer.
+
+  Zoe's question ('Does sleep matter?') names one variable and no measure. The usual slips are leaving out the group, leaving out the measure, and picking a variable nobody can measure. Every figure and person is made up. Real reaction-time tests (ruler drop, online tests) are common school activities, but none is quoted here.
+running:
+  - "Predict: ask for a show of hands for each option, then ask what each one is missing."
+  - "Investigate: for Zoe's plan ask 'what would you write in the first column of her table?' They cannot, which is the point."
+  - "Make: swap questions in pairs. The partner names the two variables, the group and the measures. If they cannot, the question is not ready."
+stuck:
+  - see: "A student writes 'does sleep affect school?'"
+    ask: "What number would you write down for 'school'? For 'sleep'?"
+    fix: "Choose a measure for each, such as hours slept last night and a test mark or a ruler-drop distance."
+  - see: "A student leaves out who is asked."
+    ask: "Everyone in the world, or one class?"
+    fix: "Name the group the question is about and who will actually be asked."
+  - see: "A student thinks a question is good because it is interesting."
+    ask: "Could someone else collect the data from your question without asking you anything?"
+    fix: "Interesting isn't enough. Two variables, a group and measures make it usable."
+stretch: "Write a second question about the same two variables with a different group, and say how the answer might differ."
+support: "A frame: 'Among ___, is ___ (measured by ___) related to ___ (measured by ___)?'"
+leads: |
+  Next: Collect the data, display it on a scatterplot and describe the pattern. The question set here decides every step after it.
+
+  Where it leads in class: the class runs the investigation, then judges what it can and cannot show.
+exit:
+  q: "Make this question ready: 'Does music help?'"
+  a: "Any version that names a group, two variables and how each is measured, for example: Among Year 10 students, do students who listen to music while studying score higher on a 10-question quiz?"
+explain: |
+  A bivariate question is ready when it names:
+
+  - the group (who is asked),
+  - two variables, and which one might explain the other,
+  - how each variable is measured.
+
+  If a stranger could collect the data from it without asking you, it is ready.
+sources:
+  - { title: "Made up for this lesson: the class, the sleep log and the ruler-drop reaction times.", url: "https://tutorials.learningwaypoints.com/maths/data/a-good-question/", checked: 2026-10-25 }

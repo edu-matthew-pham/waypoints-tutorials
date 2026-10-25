@@ -6,14 +6,20 @@
 //   step: 1                          where clicked values land (default 1; 0.5 or 0.1 for measured data)
 //   edit: on                         students can change the data (click, or the box of values); default off
 //   show: mean, median, mode, range  which statistics to show (marked on the plot and written underneath); or none
-//   view: dots | stem | both         dot plot (default), stem-and-leaf plot (whole numbers, stems of tens), or both
+//   view: dots | stem | both | box   dot plot (default), stem-and-leaf plot (whole numbers, stems of tens), or both; or box: a boxplot
+//                                    (whiskers to the lowest and highest, box from the lower to the upper quartile, a bar at the median)
+//   dots: on                         (box view) also show the data as dots under each box; default off
+//   outliers: on                     (box view) mark values beyond 1.5 × IQR from the box as crosses; the whiskers stop at the last value inside
 //   label: Hours of sleep (h)        what the values measure, under the line
 //   second: 5, 6, 8, 9               a second data set, drawn above the first for comparing (not editable)
 //   names: Class A, Class B          names for the two sets
+// Quartiles (box view, and the values below): the median of the lower half and of the upper half; when the count is odd the median is left out of both halves.
 // state: { scope: { vars: { n (count), s (sum), m (mean), d (median), o (the mode; the smallest if several), k (how many
 //   modes; 0 when every value appears once), r (range), l (lowest), h (highest), and the same in capitals for the second
-//   set: N, S, M, D, O, K, R, L, H } } }
-// Checks: "m = 8", "n = 7 and d = 6", "k = 1 and o = 7", "r = 10", "M > m".
+//   set: N, S, M, D, O, K, R, L, H; and always: q_lo (lower quartile), q_hi (upper quartile), q_iqr (q_hi − q_lo), w_lo and w_hi
+//   (where the whiskers end), q_out (how many values are outliers; 0 unless `outliers: on`), and in capitals Q_LO, Q_HI, Q_IQR,
+//   W_LO, W_HI, Q_OUT for the second set (names with an underscore, because a name without one is read as letters multiplied) } } }
+// Checks: "m = 8", "n = 7 and d = 6", "k = 1 and o = 7", "r = 10", "M > m", "l = 3 and q_lo = 5 and d = 8 and q_hi = 11 and h = 15", "q_iqr = 6", "Q_IQR < q_iqr".
 (function (B) {
   'use strict';
   var spec = null, vals = [], ui = {};
@@ -36,11 +42,14 @@
     all.forEach(function (v) { if (v < s.lo || v > s.hi) throw new Error('values: ' + v + ' is outside the range ' + s.lo + ' to ' + s.hi + '.'); });
     s.edit = /^on$/i.test(s.edit || '');
     var sh = String(s.show === undefined ? 'mean, median, mode, range' : s.show).toLowerCase();
+    var boxView = String(s.view || '').trim().toLowerCase() === 'box';
+    if (s.show === undefined && boxView) sh = 'none';
     s.shows = /^none$/.test(sh.trim()) ? [] : sh.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
     s.shows.forEach(function (t) { if (['mean', 'median', 'mode', 'range'].indexOf(t) < 0) throw new Error('show: mean, median, mode, range, or none.'); });
     s.view = String(s.view || 'dots').trim().toLowerCase();
-    if (['dots', 'stem', 'both'].indexOf(s.view) < 0) throw new Error('view: dots, stem or both.');
-    if (s.view !== 'dots' && all.some(function (v) { return v !== Math.round(v) || v < 0; })) throw new Error('view: stem-and-leaf plots here need whole numbers from 0 up.');
+    if (['dots', 'stem', 'both', 'box'].indexOf(s.view) < 0) throw new Error('view: dots, stem, both or box.');
+    s.dotsOn = /^on$/i.test(s.dots || ''); s.outl = /^on$/i.test(s.outliers || '');
+    if ((s.view === 'stem' || s.view === 'both') && all.some(function (v) { return v !== Math.round(v) || v < 0; })) throw new Error('view: stem-and-leaf plots here need whole numbers from 0 up.');
     var nm = String(s.names || '').split(',').map(function (t) { return t.trim(); }).filter(Boolean);
     s.nameA = nm[0] || (s.two ? 'Set A' : ''); s.nameB = nm[1] || 'Set B';
     s.lab = s.label ? String(s.label).trim() : '';
@@ -48,19 +57,25 @@
 
   function stats(v) {
     var n = v.length, sorted = v.slice().sort(function (a, b) { return a - b; });
-    if (!n) return { n: 0, s: 0, m: 0, d: 0, o: 0, k: 0, r: 0, l: 0, h: 0, sorted: sorted, modes: [] };
+    if (!n) return { n: 0, s: 0, m: 0, d: 0, o: 0, k: 0, r: 0, l: 0, h: 0, q1: 0, q3: 0, iqr: 0, wl: 0, wh: 0, out: 0, outs: [], sorted: sorted, modes: [] };
     var sum = v.reduce(function (a, b) { return a + b; }, 0);
     var med = n % 2 ? sorted[(n - 1) / 2] : (sorted[n / 2 - 1] + sorted[n / 2]) / 2;
     var count = {}; sorted.forEach(function (x) { count[x] = (count[x] || 0) + 1; });
     var top = Math.max.apply(null, Object.keys(count).map(function (x) { return count[x]; }));
     var modes = top > 1 ? Object.keys(count).filter(function (x) { return count[x] === top; }).map(Number).sort(function (a, b) { return a - b; }) : [];
-    return { n: n, s: r2(sum), m: r2(sum / n), d: r2(med), o: modes.length ? modes[0] : 0, k: modes.length, r: r2(sorted[n - 1] - sorted[0]), l: sorted[0], h: sorted[n - 1], sorted: sorted, modes: modes };
+    var midOf = function (a) { return a.length % 2 ? a[(a.length - 1) / 2] : (a[a.length / 2 - 1] + a[a.length / 2]) / 2; };
+    var lowH = sorted.slice(0, Math.floor(n / 2)), upH = sorted.slice(Math.ceil(n / 2));
+    var q1 = lowH.length ? midOf(lowH) : sorted[0], q3 = upH.length ? midOf(upH) : sorted[n - 1], iqr = q3 - q1;
+    var outs = spec && spec.outl ? sorted.filter(function (x) { return x < q1 - 1.5 * iqr || x > q3 + 1.5 * iqr; }) : [];
+    var inside = sorted.filter(function (x) { return outs.indexOf(x) < 0; });
+    return { n: n, s: r2(sum), m: r2(sum / n), d: r2(med), o: modes.length ? modes[0] : 0, k: modes.length, r: r2(sorted[n - 1] - sorted[0]), l: sorted[0], h: sorted[n - 1], q1: r2(q1), q3: r2(q3), iqr: r2(iqr), wl: inside[0], wh: inside[inside.length - 1], out: outs.length, outs: outs, sorted: sorted, modes: modes };
   }
 
   function build() {
     var ink = B.css('--ink') || '#1d2430', muted = B.css('--muted') || '#5d6675', blue = B.css('--left') || '#2f6fb3', orange = B.css('--accent') || '#c2570a', green = B.css('--ok') || '#1a7f37', purple = B.css('--right') || '#7a4fb3';
     var el = B.el('board');
     if (spec.view === 'stem') { stemBoard(el); return; }
+    if (spec.view === 'box') { boxBoard(ink, blue, orange); return; }
     var span = spec.hi - spec.lo, pad = span * 0.04;
     var A = stats(vals), Bs = spec.two ? stats(spec.two) : null;
     var maxStack = function (v) { var c = {}, m = 0; v.forEach(function (x) { c[x] = (c[x] || 0) + 1; m = Math.max(m, c[x]); }); return m; };
@@ -113,6 +128,41 @@
       });
     }
     function onDot(uc) { var x = r2(Math.round(uc[0] / spec.stepv) * spec.stepv); return vals.indexOf(x) >= 0 && uc[1] > 0; }
+    board.update();
+  }
+
+  // Box view: one boxplot per data set (the first at the bottom, the second above it), on a number line.
+  function boxBoard(ink, blue, orange) {
+    var span = spec.hi - spec.lo, pad = span * 0.04, unit = span / 26;
+    var sets = [[vals, spec.two ? spec.nameA : '', blue]].concat(spec.two ? [[spec.two, spec.nameB, orange]] : []);
+    var maxStack = function (v) { var c = {}, m = 0; v.forEach(function (x) { c[x] = (c[x] || 0) + 1; m = Math.max(m, c[x]); }); return m; };
+    var tops = [], y = 0;
+    sets.forEach(function (st) { var dots = spec.dotsOn ? maxStack(st[0]) + 0.8 : 0; var base = y; var boxY = base + 1.2 * unit + dots * unit; tops.push({ base: base, boxY: boxY }); y = boxY + 3 * unit + 1.6 * unit + (sets.length > 1 ? 0.8 * unit : 0); });
+    var board = B.jsx({ boundingbox: [spec.lo - pad, y + 0.6 * unit, spec.hi + pad, -3.2 * unit], keepAspectRatio: true });
+    var u = 1 / board.unitY;
+    sets.forEach(function (st, i) {
+      var S = stats(st[0]), y0 = tops[i].base, by = tops[i].boxY, bh = 3 * unit, col = st[2];
+      board.create('segment', [[spec.lo, y0], [spec.hi, y0]], { strokeColor: ink, strokeWidth: 2, fixed: true, highlight: false });
+      var tick = span <= 20 ? 1 : span <= 50 ? 5 : 10; if (spec.stepv < 1 && span <= 5) tick = 0.5;
+      for (var t = Math.ceil(spec.lo / tick) * tick; t <= spec.hi + 1e-9; t = r2(t + tick)) {
+        board.create('segment', [[t, y0 - 5 * u], [t, y0 + 5 * u]], { strokeColor: ink, strokeWidth: 1.5, fixed: true, highlight: false });
+        board.create('text', [t, y0 - 16 * u, show(t)], { anchorX: 'middle', anchorY: 'middle', cssClass: 'ticklabel', highlightCssClass: 'ticklabel', fixed: true, highlight: false });
+      }
+      if (st[1]) board.create('text', [spec.lo, by + bh + 0.9 * unit, st[1]], { anchorX: 'left', anchorY: 'middle', cssClass: 'tside', highlightCssClass: 'tside', strokeColor: col, fixed: true, highlight: false });
+      if (spec.dotsOn) {
+        var c = {};
+        st[0].slice().sort(function (a, b) { return a - b; }).forEach(function (x) { c[x] = (c[x] || 0) + 1; board.create('point', [x, y0 + (c[x] - 0.5) * unit], { name: '', size: Math.max(3, Math.min(8, unit * board.unitX / 2.6)), fillColor: col, strokeColor: col, fixed: true, showInfobox: false, highlight: false }); });
+      }
+      if (!S.n) return;
+      var mid = by + bh / 2, cap = bh * 0.3;
+      board.create('segment', [[S.wl, mid], [S.q1, mid]], { strokeColor: col, strokeWidth: 2.5, fixed: true, highlight: false });
+      board.create('segment', [[S.q3, mid], [S.wh, mid]], { strokeColor: col, strokeWidth: 2.5, fixed: true, highlight: false });
+      board.create('segment', [[S.wl, mid - cap], [S.wl, mid + cap]], { strokeColor: col, strokeWidth: 2.5, fixed: true, highlight: false });
+      board.create('segment', [[S.wh, mid - cap], [S.wh, mid + cap]], { strokeColor: col, strokeWidth: 2.5, fixed: true, highlight: false });
+      board.create('polygon', [[S.q1, by], [S.q3, by], [S.q3, by + bh], [S.q1, by + bh]], { fillColor: col, fillOpacity: 0.18, borders: { strokeColor: col, strokeWidth: 2.5 }, vertices: { visible: false }, fixed: true, highlight: false });
+      board.create('segment', [[S.d, by], [S.d, by + bh]], { strokeColor: ink, strokeWidth: 4, fixed: true, highlight: false });
+      S.outs.forEach(function (x) { board.create('point', [x, mid], { name: '', face: 'x', size: 5, fillColor: col, strokeColor: col, fixed: true, showInfobox: false, highlight: false }); });
+    });
     board.update();
   }
 
@@ -181,7 +231,7 @@
       go.addEventListener('click', apply); ui.box.addEventListener('keydown', function (e) { if (e.key === 'Enter') apply(); });
       row.append(lab, ui.box, go); panel.appendChild(row);
       ui.err = document.createElement('p'); ui.err.className = 'tcount'; ui.err.setAttribute('aria-live', 'polite'); panel.appendChild(ui.err);
-      var hint = document.createElement('p'); hint.className = 'tcount'; hint.textContent = 'Click the line to add a value; click a dot to remove it.'; if (spec.view !== 'stem') panel.appendChild(hint);
+      var hint = document.createElement('p'); hint.className = 'tcount'; hint.textContent = 'Click the line to add a value; click a dot to remove it.'; if (spec.view === 'dots' || spec.view === 'both') panel.appendChild(hint);
     }
     var bar = document.createElement('div'); bar.className = 'gbar';
     var again = document.createElement('button'); again.type = 'button'; again.textContent = 'Start again'; again.addEventListener('click', B.restart);
@@ -196,6 +246,7 @@
     if (spec.shows.indexOf('median') >= 0) parts.push('median ' + (S.n ? show(S.d) : '–'));
     if (spec.shows.indexOf('mode') >= 0) parts.push('mode ' + (!S.n ? '–' : S.k === 0 ? 'none (every value once)' : S.modes.map(show).join(' and ')));
     if (spec.shows.indexOf('range') >= 0) parts.push('range ' + (S.n ? show(S.h) + ' − ' + show(S.l) + ' = ' + show(S.r) : '–'));
+    if (spec.view === 'box' && S.n) parts.unshift('lowest ' + show(S.l) + ', lower quartile ' + show(S.q1) + ', median ' + show(S.d) + ', upper quartile ' + show(S.q3) + ', highest ' + show(S.h) + '; interquartile range ' + show(S.q3) + ' − ' + show(S.q1) + ' = ' + show(S.iqr) + (spec.outl ? (S.out ? '; ' + S.out + (S.out === 1 ? ' outlier: ' : ' outliers: ') + S.outs.map(show).join(', ') : '; no outliers') : ''));
     return (name ? name + ': ' : '') + S.n + (S.n === 1 ? ' value' : ' values') + (parts.length ? '. ' + parts.join(', ') : '');
   }
 
@@ -209,8 +260,9 @@
     ui.stem.replaceChildren();
     if (spec.view === 'both') { ui.stem.appendChild(stemPlot(vals, spec.two ? spec.nameA : '')); if (spec.two) ui.stem.appendChild(stemPlot(spec.two, spec.nameB)); }
     if (ui.box && document.activeElement !== ui.box) ui.box.value = A.sorted.map(function (x) { return B.fmt(x); }).join(', ');
-    var scope = { n: A.n, s: A.s, m: A.m, d: A.d, o: A.o, k: A.k, r: A.r, l: A.l, h: A.h };
-    if (Bs) ['n', 's', 'm', 'd', 'o', 'k', 'r', 'l', 'h'].forEach(function (k) { scope[k.toUpperCase()] = Bs[k]; });
+    var KEYS = { n: 'n', s: 's', m: 'm', d: 'd', o: 'o', k: 'k', r: 'r', l: 'l', h: 'h', q1: 'q_lo', q3: 'q_hi', iqr: 'q_iqr', wl: 'w_lo', wh: 'w_hi', out: 'q_out' };
+    var scope = {}; Object.keys(KEYS).forEach(function (k) { scope[KEYS[k]] = A[k]; });
+    if (Bs) Object.keys(KEYS).forEach(function (k) { scope[KEYS[k].toUpperCase()] = Bs[k]; });
     B.say(line(A, spec.two ? spec.nameA : '') + (Bs ? '. ' + line(Bs, spec.nameB) : '') + '.');
     B.save({ vals: vals });
     B.post({ scope: { vars: scope, points: {} } }, ui.work.textContent + '. ' + [].map.call(ui.stats.children, function (l) { return l.textContent; }).join('. '));
@@ -218,7 +270,7 @@
 
   B.widget('data', {
     sections: ['board', 'gpanel'],
-    label: function (s) { return (s.view === 'stem' ? 'A stem-and-leaf plot' : 'A dot plot') + (s.label ? ' of ' + s.label : '') + (s.second !== undefined ? ', comparing two sets' : ''); },
+    label: function (s) { return (s.view === 'stem' ? 'A stem-and-leaf plot' : s.view === 'box' ? 'A boxplot' : 'A dot plot') + (s.label ? ' of ' + s.label : '') + (s.second !== undefined ? ', comparing two sets' : ''); },
     parse: parse,
     start: function (fresh) {
       spec = B.spec;

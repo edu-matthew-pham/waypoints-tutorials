@@ -1,0 +1,51 @@
+summary: "Students describe a scatterplot with four words: direction, strength, form and outliers. They draw a line by eye, find an outlier from the gaps to a line, and separate how steep a line is from how strong the association is. The data are made up (AC9M10ST03, node 2)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 17 min · Modify 8 min · Practise and Make 10 min"
+goals:
+  - I can describe a scatterplot using direction, strength, form and outliers.
+  - I can tell a strong association from a steep one, and a negative one from a weak one.
+  - I can find an outlier and say what I would check about it.
+struggle: "Using 'weak' for a falling line or a gentle slope. Ask 'how close are the dots to the line?' before 'which way does it lean?'"
+before: |
+  Do the Run board yourself first. A and B move up and down only; the line is drawn through them. The check ticks for a line within about 15 ms of the best-fit line at 5 and 10 hours.
+
+  The one idea: four separate words. Direction is which way the dots lean, strength is how tightly they follow the pattern, form is a line or a curve, and an outlier is a dot apart from the rest. Students tend to merge them (falling means weak; gentle means weak).
+
+  Strength is judged by eye here. There is no correlation coefficient in this node and none is used. If students ask, strong means the dots all sit close to the line, moderate means they follow it with a lot of scatter, and weak means a pattern is hard to see.
+
+  Every data set is made up: the sleep and reaction times, ages and heights, month of birth, study time and the eight students. Real reaction-time tests (an online test, or a ruler drop) would give real data; the Make question avoids a cause on purpose: the next lesson is about that.
+
+  Hidden: the line by eye is not exact. Different students will draw slightly different lines; the check is a range, not one line.
+running:
+  - "Predict: take a show of hands. Students who choose A usually think 'up is strong'; ask what would make C weaker than A."
+  - "Run: ask students to place the line, then compare with a neighbour's. Why are the lines close but not the same?"
+  - "Paper: the eight-student outlier task is worked on paper first, with the worked example beside them. Look for the gap worked out without its sign."
+  - "Modify: before the flat-row question, ask what the second measurement does as the first goes up."
+stuck:
+  - see: "A student calls the gently rising study time plot weak (Ben's mistake)."
+    ask: "How close are the dots to the line? Would the dots be closer if the line were steeper?"
+    fix: "Cover the line and look only at how tightly the dots follow a path. Steepness depends on the units on the axes, so it cannot be strength."
+  - see: "A student says a negative association is bad or weak."
+    ask: "What does 'negative' say about the dots? What does 'weak' say?"
+    fix: "Negative is direction. Show a strong negative plot (dots tight on a falling line) next to a weak positive one."
+  - see: "A student deletes an outlier without comment."
+    ask: "Why is that dot so different? Could it be a slip or something real?"
+    fix: "Report it, then check it: re-measure, or see whether the student is unusual in another way."
+stretch: "Draw a plot of your own that is strong, positive and non-linear. Then draw one that is weak, negative and has one outlier."
+support: "A card with the four words and the options for each (positive, negative, none; strong, moderate, weak; linear, non-linear; outliers: yes, where, or none) to circle for each plot."
+leads: |
+  Next: Linked, but not the cause. A strong association shows two things go together; it does not show why.
+
+  Where it leads in class: a spreadsheet scatterplot of a real pair of class measurements, described in a sentence with the four words.
+exit:
+  q: "The dots of a plot hug a line that rises gently. Is the association strong or weak, and what does the gentle slope tell you?"
+  a: "Strong: the dots are close to the line. The gentle slope only says the second measurement goes up slowly as the first goes up."
+explain: |
+  Describe a scatterplot with four words.
+
+  - Direction: positive (the dots rise to the right), negative (they fall) or none.
+  - Strength: how tightly the dots follow one pattern: strong, moderate or weak.
+  - Form: a straight line (linear) or a curve (non-linear).
+  - Outliers: a dot far from the rest. Report it, then check it.
+sources:
+  - { title: "Made up for this lesson: hours slept and reaction times for 14 students, ages and heights, month of birth and height, study time and test marks, and the eight arm span and height pairs. A class could collect real data with a reaction-time test.", url: "https://tutorials.learningwaypoints.com/maths/data/describing-association/", checked: 2026-10-25 }

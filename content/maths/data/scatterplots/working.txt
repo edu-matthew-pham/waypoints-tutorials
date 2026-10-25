@@ -1,0 +1,9 @@
+# Mia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+Tom has an arm span of 150 cm and a height of 175 cm.
+The axes are arm span across the bottom and height up the side.
+I start at the corner and go across to 175, because 175 is the bigger number.
+Then I go up to 150 and put my dot there.
+That dot is below the dashed line, so Tom's arm span is longer than his height.
+# endregion

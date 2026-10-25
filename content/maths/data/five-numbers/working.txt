@@ -1,0 +1,8 @@
+# Mia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+The nine times in order are 3, 4, 6, 7, 12, 13, 15, 16, 20, and the median is the fifth one, 12.
+The lowest time is 3.
+The lower quartile is halfway between the lowest time and the median.
+(3 + 12) ÷ 2 = 7.5, so the lower quartile is 7.5.
+# endregion

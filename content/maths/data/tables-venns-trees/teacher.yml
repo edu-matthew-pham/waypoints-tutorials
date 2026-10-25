@@ -1,0 +1,49 @@
+summary: "Students fill in a two-way table for 1000 people from stated rates, read the chance of the condition given a positive test inside the Positive column, and see the same four counts as a Venn diagram and a tree. The context is a made-up screening test for a rare condition (AC9M10P01, node 2)."
+time: 50
+timing: "Predict and Run 10 min · Investigate 18 min · Modify 8 min · Practise and Make 14 min"
+goals:
+  - I can build a two-way table from rates by starting with a group of people.
+  - I can read a chance given a group off a table, a Venn diagram or a tree.
+  - I can say why a test that is usually right can be wrong most of the time it says positive.
+struggle: "Taking 'right 9 times in 10' as the chance given a positive. Ask: 'Of all the people who tested positive, who are they?'"
+before: |
+  Do the Run board and the tree yourself first. Students need the last lesson (given).
+
+  The one idea: start from a group of 1000, turn each rate into a count, and read the chance inside the group the "given" picks. The tree shows the same four counts: each first branch is the share of 1000, each second branch is the share of its own group (that is the conditional chance on the branch), and the numbers at the leaves are the counts. Multiplying along a branch is shown by the branch labels and the counts agreeing, not taught as a rule here.
+
+  Every rate is made up: 2 in 100 have the condition, 9 in 10 of them test positive, 1 in 20 of the others do. They are chosen so 1000 people give whole counts (18, 2, 49, 931). Say clearly that real test rates come from the maker and a doctor looks them up; no real condition is named on purpose.
+
+  The surprising answer (about 1 in 4) is the point. It depends on how rare the condition is. Do the Modify board to see it move: with fewer false alarms the chance rises to 0.56; with none it is 1.
+running:
+  - "Predict: show of hands. Most students choose 'about 9 in 10'."
+  - "Run: ask students to say the group out loud: the positives, not the 1000."
+  - "Paper: the scanner is worked first as the example. The second test and the Make table are worked on paper first. Look for the table and the group named in the first line."
+  - "Modify: ask for a prediction before each board: will the chance go up or down?"
+stuck:
+  - see: "A student answers 0.9 for the chance of the condition given a positive."
+    ask: "Which of the 1000 people tested positive? Are they all people with the condition?"
+    fix: "Count all the positives, 18 + 49, and use that as the group."
+  - see: "A student divides by 1000."
+    ask: "Once you know the test was positive, which people are still possible?"
+    fix: "Cross out everyone who tested negative. The 67 left are the whole."
+  - see: "A student gets 49 false alarms by taking 1 in 20 of 1000."
+    ask: "Who can be wrongly positive: people with the condition or without it?"
+    fix: "Only the 980 without the condition: 980 ÷ 20 = 49."
+stretch: "Find the chance of having the condition, given a negative test. What does a negative result tell you? Then ask what would happen to the chance given a positive if the condition were twice as common."
+support: "A blank table with the row and column totals already filled in (20, 980, 67, 933). The student fills the four inside cells."
+leads: |
+  Continues AC9M10P01 node 2.
+
+  Where it leads: deciding whether two events are independent, and simulating a conditional chance (the lessons after this one).
+exit:
+  q: "A test is positive for 8 of the 10 people who have a condition and for 5 of the 90 who don't. Given a positive test, what is the chance a person has it?"
+  a: "8 out of 13 positives, 8/13 = 0.62."
+explain: |
+  A conditional chance is read from a table, Venn diagram or tree by looking only at the group that is given.
+
+  - Start from a group of 1000 and turn each rate into a count.
+  - "Given a positive test" means the group is everyone who tested positive, with and without the condition.
+  - The chance is the condition's positives over all the positives.
+  - A rare condition means most of the positives can be false alarms, even from a good test.
+sources:
+  - { title: "Made up for this lesson: the 1000 people, the condition, the test and its rates, the phone-case scanner and the sport counts. A real test's rates come from its maker and a doctor looks them up.", url: "https://tutorials.learningwaypoints.com/maths/data/tables-venns-trees/", checked: 2026-10-25 }

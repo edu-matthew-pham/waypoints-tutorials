@@ -1,0 +1,14 @@
+# Practice for "A careful claim".
+templates:
+  - q: "In group A, ${p * k}$% play sport, and in group B, ${p}$% do. How many times as likely are students in group A to play sport?"
+    vars: { p: "10..30 by 10", k: "2..3" }
+    answer: "{k}"
+    explain: "{p * k} ÷ {p} = {k} times as likely."
+  - q: "${a}$% of group A play sport and ${b}$% of group B do. By how many percentage points is group A's percentage higher?"
+    vars: { a: "50..90 by 10", b: "10..40 by 10" }
+    answer: "{a - b}"
+    explain: "{a} − {b} = {a - b} percentage points."
+  - q: "Review: ${t}$ students were asked and ${pct}$% of them ride. How many ride?"
+    vars: { t: [20, 40, 50, 80], pct: [10, 25, 50] }
+    answer: "{t * pct / 100}"
+    explain: "{pct}% of {t} = {pct / 100} × {t} = {t * pct / 100}."

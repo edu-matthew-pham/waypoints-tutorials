@@ -1,0 +1,48 @@
+# Boards for "Tables, Venns and trees". A screening test for a rare condition, 1000 people (all rates made up):
+# 20 have the condition; the test is positive for 18 of them and wrongly positive for 49 of the 980 others.
+# Venn counts are in the order: condition only (tests negative), both (condition and positive), positive only, neither.
+
+# region: run
+widget: venn
+labels: Condition, Positive
+counts: 2, 18, 49, 931
+given: b
+# endregion
+
+# region: tree
+widget: events
+first: Yes, No
+second: Positive, Negative
+names: Condition, Test
+weights: 18, 2; 49, 931
+view: tree
+# endregion
+
+# region: better
+widget: events
+first: Yes, No
+second: Positive, Negative
+names: Condition, Test
+weights: 18, 2; 14, 966
+view: tree
+# endregion
+
+# region: nofalse
+widget: events
+first: Yes, No
+second: Positive, Negative
+names: Condition, Test
+weights: 18, 2; 0, 980
+view: tree
+# endregion
+
+# region: explain-pic
+widget: events
+first: Yes, No
+second: Positive, Negative
+names: Condition, Test
+weights: 18, 2; 49, 931
+view: tree
+event: b = Positive
+choose: off
+# endregion

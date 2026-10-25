@@ -1,0 +1,46 @@
+summary: "Students find the five-number summary (lowest, lower quartile, median, upper quartile, highest) by the median-of-halves method, say what each number means, and see why reports quote the middle half rather than the extremes (AC9M10ST02, node 1)."
+time: 45
+timing: "Predict and Run 9 min · Investigate 14 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can find the five numbers of a data set.
+  - I can say what each of the five numbers tells you.
+  - I can find the interquartile range.
+struggle: "Where to split: whether the median is in a half, and what to do with an even count. Ask: how many values are in each half, and is the middle one left out?"
+before: |
+  Students need the median (Year 7) and a feel for skewed data and outliers (Year 9). The ethics of data (AC9M10ST01 node 3) isn't a lesson here; it is taught in class, as the previous two lessons lead into it.
+
+  This is a hinge lesson: a wrong quartile gives a wrongly drawn boxplot in the next lesson, so check every student can find the median of a half before moving on.
+
+  The method here is the median of each half. With an odd number of values the middle value is left out of both halves; with an even number it is not a value at all, so nothing is left out. Different books use different conventions, and a spreadsheet's quartile function can give slightly different answers (it may interpolate), so tell students the rule this site uses before they check a result against a calculator or spreadsheet. The Year 10 curriculum's wider tier asks students to compare conventions; that is a good extension here.
+
+  The suburb's sales, the canteen waiting times and the test values are made up for the task. The Westpac page is for the idea that reports use medians for house prices because a few very high or low prices skew the average.
+running:
+  - "Predict: show of hands before the check. Don't reveal the method; the Investigate does that."
+  - "Run: ask which numbers the highest sale changed before anyone presses the button."
+  - "Paper: the nine-value try-one and the Make are worked on paper first. Walk the room and check each student finds the median first."
+  - "Modify: the even count (twelve values) is the edge case."
+stuck:
+  - see: "A student gives the lower quartile as halfway between the lowest value and the median."
+    ask: "Is the lower quartile a distance, or the middle value of a group?"
+    fix: "It is the median of the lower half of the ordered values: a value (or a halfway point between two values) from the data, not a point halfway along a line."
+  - see: "A student leaves the median in both halves for an odd count and gets 8 not 9."
+    ask: "How many values are in each half? Is any value counted twice?"
+    fix: "With nine values, take the 5th out as the median; the halves are the first four and the last four."
+  - see: "A student says the interquartile range is the highest minus the lowest."
+    ask: "Which values does the box (the middle half) go between?"
+    fix: "That is the range. The interquartile range is the upper quartile take away the lower quartile."
+stretch: "Compare this method with a spreadsheet's quartile function on the eleven prices. Do they agree? Why might they not?"
+support: "Write the values on strips of paper, fold the ordered strip in half, then fold each half again. The folds are the quartiles."
+leads: |
+  Continues AC9M10ST02 (node 1; a hinge).
+
+  Where it leads: boxplots (next), which draw the five numbers as one picture, and then comparing distributions.
+exit:
+  q: "Seven values in order are 4, 7, 9, 12, 15, 18 and 22. What are the lower and upper quartiles?"
+  a: "Median 12. Lower half 4, 7, 9 gives 7. Upper half 15, 18, 22 gives 18."
+explain: |
+  The five numbers are the lowest value, the lower quartile, the median, the upper quartile and the highest value. They cut the ordered data into four groups of about the same size.
+
+  Find the median, then the median of each half; when there is an odd number of values the middle one is left out of both halves. The interquartile range, upper quartile take away lower quartile, is the length of the middle half.
+sources:
+  - { title: "Median house prices explained (Westpac): medians are used for house prices because a few unusually high or low prices can skew the average", url: "https://www.westpac.com.au/personal-banking/home-loans/median-house-prices-explained/", checked: 2026-10-22 }

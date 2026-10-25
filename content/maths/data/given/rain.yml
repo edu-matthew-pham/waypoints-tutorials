@@ -1,0 +1,41 @@
+# Boards for "Given". A town's 100 spring days (made up), sorted by two yes/no questions: did it rain that day (A), and was
+# the morning cloudy (B). Counts are in the order: rain only (clear morning), both, cloudy only (dry day), neither.
+# `given:` shrinks the whole to one group, so the board reads "of the g in the group, h are chosen".
+
+# region: run
+widget: venn
+labels: Rain, Cloudy
+counts: 10, 30, 20, 40
+given: b
+# endregion
+
+# region: clear
+widget: venn
+labels: Rain, Cloudy
+counts: 10, 30, 20, 40
+given: not b
+# endregion
+
+# region: rainy
+widget: venn
+labels: Rain, Cloudy
+counts: 10, 30, 20, 40
+given: a
+# endregion
+
+# region: nodry
+widget: venn
+labels: Rain, Cloudy
+counts: 0, 0, 20, 80
+given: a
+event: b
+# endregion
+
+# region: explain-pic
+widget: venn
+labels: Rain, Cloudy
+counts: 10, 30, 20, 40
+given: b
+event: a
+choose: off
+# endregion

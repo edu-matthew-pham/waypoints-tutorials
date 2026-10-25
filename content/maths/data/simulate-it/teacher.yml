@@ -1,0 +1,49 @@
+summary: "Students design a simulation of the screening test where the second step depends on the first, run it many times on the board, and compare the simulated chance with the table. They see that a simulation wanders around the calculated chance and settles as trials grow (AC9M10P02, nodes 1 and 2)."
+time: 50
+timing: "Predict and Run 10 min · Investigate 18 min · Modify 8 min · Practise and Make 14 min"
+goals:
+  - I can design a simulation where the second step depends on the first.
+  - I can run it many times and work out a conditional chance from the counts.
+  - I can compare the simulated chance with the calculated one and say why more trials get closer.
+struggle: "Forgetting that the second step changes with the first. Ask: 'Is the chance of a positive the same for everyone? Who has a different chance?'"
+before: |
+  Do the Run board yourself first. Students need the last lessons (tables, Venns and trees) and Year 9's simulation lessons.
+
+  The one idea: a simulation picks random people with the right chances, then counts. A conditional chance is read from the counts inside the group, so the Positive rows give the chance given a positive. The board here picks one outcome in proportion to its count (the tree in the last lesson), so one trial is one imaginary person. The two-step design with digits is the same idea in a form a student could do with dice, a spreadsheet or code.
+
+  The board has no field for the chance given a positive: students read the count table and divide. That is deliberate. Results are random, so no check depends on a particular count: the board checks wait for a number of trials, and the number questions use counts given in the question.
+
+  Every rate and count is made up: the screening test, the simulated counts and the counters. A simulation of a made-up test says nothing about any real test.
+running:
+  - "Predict: show of hands before the board. Most choose exactly 67."
+  - "Run: ask each group to report its own simulated chance after 1000 trials. They will differ: put them on the board."
+  - "Paper: the counters design and the Make comparison are worked on paper first. Look for a different second step."
+  - "Modify: before the last board, ask 'what is the chance there are no positives in 10 trials?' (about half)."
+stuck:
+  - see: "A student gives every person the same chance of a positive."
+    ask: "Is a positive equally likely for someone who has the condition and someone who doesn't?"
+    fix: "Make the second step depend on the first: 9 in 10 for people with it, 1 in 20 for the rest."
+  - see: "A student divides by the number of trials."
+    ask: "Given a positive test, which trials are you looking at?"
+    fix: "Only the trials with a positive result: add the two Positive rows."
+  - see: "A student says the table is wrong because the simulation gave a different number."
+    ask: "If you ran it again, would you get exactly the same number? How many trials was it?"
+    fix: "Run more trials and see whether the result settles near the table's number."
+stretch: "Change the board's rates so 100 people in 1000 have the condition, the test is positive for 9 in 10 of them and for 1 in 20 of the rest. Predict the chance given a positive, then simulate it. What did a more common condition do?"
+support: "A printed table of the four outcomes with a space for tallies, and the calculation written as a fraction to fill in: ___ ÷ (___ + ___)."
+leads: |
+  Continues AC9M10P02 nodes 1 and 2.
+
+  Where it leads: node 3, a real decision supported by a simulation (class work), and Year 10's other probability and statistics lessons.
+exit:
+  q: "A simulation gave 12 people with the condition and a positive test, and 36 without it and a positive test. What is the simulated chance of the condition, given a positive test?"
+  a: "12 out of 48, which is 0.25."
+explain: |
+  A simulation can model a conditional chance if the second step depends on the first.
+
+  - Pick people at random using the first chance, then use the chance that goes with each result for the second step.
+  - Run it many times and count each outcome.
+  - The chance given a positive is the positives with the condition over all the positives.
+  - The simulated chance differs a little from the calculated one, and the gap shrinks as the trials grow.
+sources:
+  - { title: "Made up for this lesson: the screening test and its rates (as in the last lesson), the simulated counts, and the bags of counters.", url: "https://tutorials.learningwaypoints.com/maths/data/simulate-it/", checked: 2026-10-25 }

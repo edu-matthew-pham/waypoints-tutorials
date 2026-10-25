@@ -1,0 +1,82 @@
+# Boards for "Describing association". Every data set is made up for this lesson.
+# Sleep and reaction time: hours slept across (x), reaction time in milliseconds up (y), 14 students.
+
+# region: run
+widget: graph
+axes: Sleep (hours), Reaction time (ms)
+x: 4, 11
+y: 260, 360
+grid: 1, 20
+snap: 1, 5
+series Students: 5.5,330; 6,350; 6,305; 6.5,335; 7,310; 7,325; 7.5,300; 7.5,340; 8,290; 8,315; 8.5,295; 9,320; 9,280; 9.5,300, dots
+point A: 5, 320, drag y
+point B: 10, 320, drag y
+line: A, B
+# endregion
+
+# region: sleep
+widget: graph
+axes: Sleep (hours), Reaction time (ms)
+x: 4, 11
+y: 260, 360
+grid: 1, 20
+series Data: 5.5,330; 6,350; 6,305; 6.5,335; 7,310; 7,325; 7.5,300; 7.5,340; 8,290; 8,315; 8.5,295; 9,320; 9,280; 9.5,300, dots
+# endregion
+
+# region: birth
+widget: graph
+axes: Month of birth, Height (cm)
+x: 0, 13
+y: 150, 175
+grid: 2, 5
+series Data: 1,162; 2,158; 3,171; 4,165; 5,160; 6,168; 7,155; 8,170; 9,163; 10,159; 11,167; 12,161; 3,157; 8,166, dots
+# endregion
+
+# region: age
+widget: graph
+axes: Age (years), Height (cm)
+x: 4, 18
+y: 100, 180
+grid: 2, 20
+series Data: 5,108; 6,114; 7,120; 8,127; 9,132; 10,138; 11,144; 12,151; 13,157; 14,162; 15,165; 16,167; 17,168, dots
+# endregion
+
+# region: gentle
+widget: graph
+axes: Study time (hours), Test mark
+x: 0, 11
+y: 40, 80
+grid: 2, 10
+series Data: 0.5,52; 1,55; 2,56; 3,57; 3.5,60; 4.5,60; 5,63; 6,62; 7,67; 8,67; 9,71; 10,71, dots
+# endregion
+
+# region: outlier
+widget: graph
+axes: Arm span (cm), Height (cm)
+x: 140, 190
+y: 140, 190
+grid: 10
+plot: y = x, dashed
+series Data: 152,150; 158,157; 163,164; 167,166; 171,172; 176,175; 169,181; 180,179, dots
+# endregion
+
+# region: modify
+widget: graph
+axes: Arm span (cm), Height (cm)
+x: 140, 190
+y: 140, 190
+grid: 10
+snap: 1
+plot: y = x, dashed
+series Class: 152,150; 155,157; 158,156; 160,163; 162,160; 164,166; 166,163; 168,171; 170,168; 173,175; 176,172; 181,183, dots
+point P: 165, 165, drag
+# endregion
+
+# region: explain-pic
+widget: graph
+axes: Sleep (hours), Reaction time (ms)
+x: 4, 11
+y: 260, 360
+grid: 1, 20
+series Data: 5.5,330; 6,350; 6,305; 6.5,335; 7,310; 7,325; 7.5,300; 7.5,340; 8,290; 8,315; 8.5,295; 9,320; 9,280; 9.5,300, dots
+# endregion

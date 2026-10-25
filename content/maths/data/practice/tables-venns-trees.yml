@@ -1,0 +1,22 @@
+# Practice for "Tables, Venns and trees". Screening tests on 1000 people (made up).
+templates:
+  - q: "Of 1000 people, {k} have a condition. The test is positive for {a} of those with it, and wrongly positive for {b} of the others. Given a positive test, what is the chance the person has the condition? Decimal to 2 places."
+    vars: { k: "40..60", a: "20..39", b: "20..60" }
+    answer: "{a / (a + b)}"
+    tolerance: 0.01
+    feedback:
+      - ["{a / k}", "That is the chance of a positive test, given the condition. Given a positive test, look at all the positives: {a} + {b}."]
+    explain: "The positives are {a} + {b} = {a + b}. {a} of them have the condition: {a} ÷ {a + b}."
+  - q: "Of 1000 people, {k} have a condition. The test is positive for {a} of those with it, and wrongly positive for {b} of the others. Given the person has the condition, what is the chance the test is positive? Decimal to 2 places."
+    vars: { k: "40..60", a: "20..39", b: "20..60" }
+    answer: "{a / k}"
+    tolerance: 0.01
+    feedback:
+      - ["{a / (a + b)}", "That is the chance of the condition, given a positive test. Given the condition, the group is the {k} people with it."]
+    explain: "The group is the {k} people with the condition, and {a} test positive: {a} ÷ {k}."
+  - q: "Review: of {n} people, {x} play sport, {y} play music and {z} play both. How many play neither?"
+    vars: { n: "90..120", x: "30..40", y: "20..30", z: "5..12" }
+    answer: "{n - x - y + z}"
+    feedback:
+      - ["{n - x - y}", "The {z} who play both were taken off twice. Add them back once."]
+    explain: "{x} + {y} − {z} = {x + y - z} play something, so {n} − {x + y - z} = {n - x - y + z} play neither."

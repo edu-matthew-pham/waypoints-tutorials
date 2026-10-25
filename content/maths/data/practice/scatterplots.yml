@@ -1,0 +1,14 @@
+# Practice for "Scatterplots".
+templates:
+  - q: "A student has arm span ${a}$ cm and height ${h}$ cm. How many centimetres above the line height = arm span is their dot? Give a negative number if it is below the line."
+    vars: { a: "150..180", h: "148..184" }
+    answer: "{h - a}"
+    explain: "The dot is {h} up and the line is at {a} for that arm span, so it is {h} − {a} = {h - a} cm above (negative means below)."
+  - q: "Four students are ${a}$, ${a + 2}$, ${a + 6}$ and ${a + 8}$ cm tall. What is their mean height, in cm?"
+    vars: { a: "150..170" }
+    answer: "{a + 4}"
+    explain: "The four heights add to {4 * a + 16}, and {4 * a + 16} ÷ 4 = {a + 4}."
+  - q: "On a scatterplot of arm span across and height up, a student is at ${a}$ across and ${h}$ up. A second student has the same arm span and is ${d}$ cm taller. How far up is the second student's dot?"
+    vars: { a: "150..180", h: "150..180", d: "2..9" }
+    answer: "{h + d}"
+    explain: "The second dot is at the same place across, {d} cm higher: {h} + {d} = {h + d}."

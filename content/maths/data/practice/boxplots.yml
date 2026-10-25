@@ -1,0 +1,19 @@
+# Practice for "Boxplots". The box's length and the fences from five numbers.
+templates:
+  - q: "A boxplot's five numbers are {a}, {b}, {c}, {d} and {e}. What is the interquartile range?"
+    vars: { a: "1..6", b: "8..14", c: "15..20", d: "21..30", e: "31..45" }
+    answer: "{d - b}"
+    tolerance: 0
+    feedback:
+      - ["{e - a}", "That is the range. The interquartile range is the length of the box."]
+    explain: "The box runs from the lower quartile {b} to the upper quartile {d}, so the IQR is {d} − {b} = {d - b}."
+  - q: "A boxplot's five numbers are {a}, {b}, {c}, {d} and {e}. What is the upper fence (upper quartile + 1.5 × IQR)?"
+    vars: { a: "1..6", b: "8..14", c: "15..20", d: "21..30", e: "31..45" }
+    answer: "{d + 1.5 * (d - b)}"
+    tolerance: 0.01
+    explain: "IQR = {d} − {b} = {d - b}, and 1.5 × {d - b} = {1.5 * (d - b)}, so the fence is {d} + {1.5 * (d - b)} = {d + 1.5 * (d - b)}."
+  - q: "A boxplot's five numbers are {a}, {b}, {c}, {d} and {e}. What is the lower fence (lower quartile − 1.5 × IQR)?"
+    vars: { a: "1..6", b: "8..14", c: "15..20", d: "21..30", e: "31..45" }
+    answer: "{b - 1.5 * (d - b)}"
+    tolerance: 0.01
+    explain: "IQR = {d} − {b} = {d - b}, and 1.5 × {d - b} = {1.5 * (d - b)}, so the fence is {b} − {1.5 * (d - b)} = {b - 1.5 * (d - b)}."

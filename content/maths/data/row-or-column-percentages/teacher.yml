@@ -1,0 +1,49 @@
+summary: "Students compare groups of different sizes with row percentages, and learn to say what each percentage is of. The context is how Year 10 students travel to school and whether they play sport, with made-up survey counts (AC9M10ST04, nodes 1 and 2)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 17 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can fill in a two-way table and check its totals.
+  - I can work out a row percentage and say what group it is a percentage of.
+  - I can tell a row percentage from a column percentage.
+struggle: "Choosing which total to divide by. Ask 'which group is the question about?' and point at that row before they touch the calculator."
+before: |
+  Do the Investigate tasks yourself. The table is 200 Year 10 students (made up): Ride 30 play sport and 10 do not (40), Walk 33 and 27 (60), Bus or car 40 and 60 (100). 103 play sport in all.
+
+  The one idea: a percentage needs a whole. Row percentages divide by the row total, so they compare the groups (75%, 55%, 40%). Column percentages divide by the column total and answer a different question: of the 103 players, 29.1% ride, 32.0% walk and 38.8% come by bus or car.
+
+  The common slips: dividing by the grand total (Dev: 33 ÷ 200 = 16.5%), dividing by the other total (Mia: 30 ÷ 103), and choosing the group with the biggest count. All three come from not asking 'percentage of what?'.
+
+  Every figure is made up. The pairing of travel to school and sport is invented for the lesson; no real survey is quoted. If you want real data, the Australian Bureau of Statistics publishes how Australians travel to work, but none of it is used here.
+running:
+  - "Predict: take a show of hands before looking at any percentage. Students who pick 'bus or car' have compared counts."
+  - "Investigate: ask students to say each percentage in a full sentence beginning 'Of the...'."
+  - "Modify: the small group edge case is the start of 'how much to trust it'. Ask what one extra student would change."
+stuck:
+  - see: "A student divides by 200 every time (Dev's mistake)."
+    ask: "Which group is the question about? How many students are in it?"
+    fix: "Circle the row, read its total, and divide by that number."
+  - see: "A student gets 29% for the riders (Mia's mistake)."
+    ask: "Who is the 103? Who is the 40?"
+    fix: "103 is everyone who plays sport. The question is about riders, so use the Ride row's total, 40."
+  - see: "A student says bus or car is the most sporty because 40 is the biggest number."
+    ask: "How many students are in that group compared with the riders?"
+    fix: "Counts depend on group size. Change each count to a percentage of its own group."
+stretch: "Write a column percentage sentence and a row percentage sentence for the same cell, and say which question each one answers."
+support: "Give a table with the row totals circled and the sentence 'Of the ___ who ___, ___% ___'. Fill the blanks together for the walkers."
+leads: |
+  Next: A careful claim. A row percentage shows a link between travel and sport; it doesn't say that the way they travel is the reason.
+
+  Where it leads in class: students take a table from the news and report what the percentages show and what they do not.
+exit:
+  q: "In a survey, 18 of the 30 students in Year 9 are in a band, and 24 of the 60 students in Year 10. Which year has the higher percentage in a band?"
+  a: "Year 9: 18 ÷ 30 = 60%, against 24 ÷ 60 = 40% for Year 10."
+explain: |
+  A percentage needs a whole, and a row percentage uses the row total as the whole.
+
+  - Pick the group the question is about: that is the row.
+  - Divide the cell by the row total.
+  - Say it with the group in the sentence: 'Of the walkers, 55% play sport.'
+
+  A column percentage divides by the column total and answers another question: 'Of the players, 29.1% ride.'
+sources:
+  - { title: "Made up for this lesson: the school, the 200 students, how they travel and whether they play sport.", url: "https://tutorials.learningwaypoints.com/maths/data/row-or-column-percentages/", checked: 2026-10-25 }

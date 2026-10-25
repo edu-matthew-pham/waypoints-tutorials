@@ -1,0 +1,14 @@
+# Practice for "Describing association".
+templates:
+  - q: "A line passes through $({x1}, {y1})$ and $({x1 + d}, {y1 + g * d})$. What is its gradient?"
+    vars: { x1: "1..4", d: "2..6", g: "-9..-2", y1: "100..140" }
+    answer: "{g}"
+    explain: "The y value changes by {g * d} while x changes by {d}, so the gradient is {g * d} ÷ {d} = {g}."
+  - q: "A line through a plot rises ${m}$ marks for every extra hour of study. How many more marks does the line give for ${h}$ more hours?"
+    vars: { m: "2..5", h: "2..9" }
+    answer: "{m * h}"
+    explain: "{m} marks for each of {h} hours: {m} × {h} = {m * h}."
+  - q: "A line through a sleep and reaction time plot is at ${y1}$ ms at ${x1}$ hours and falls by ${k}$ ms for each extra hour. What reaction time does it give at ${x1 + n}$ hours? (ms)"
+    vars: { y1: "300..360 by 10", x1: "5..7", k: "5..15", n: "1..4" }
+    answer: "{y1 - k * n}"
+    explain: "From {x1} to {x1 + n} hours is {n} more hours, so the line falls by {k * n}: {y1} − {k * n} = {y1 - k * n}."

@@ -1,0 +1,14 @@
+# Practice for "Linked, but not the cause".
+templates:
+  - q: "In a school (made up), students with large shoes average ${a}$ on a reading test and students with small shoes average ${b}$. Inside each year level the gap is only ${c}$ marks. By how many marks does the gap shrink when students of the same year level are compared?"
+    vars: { a: "60..75", b: "48..58", c: "0..3" }
+    answer: "{a - b - c}"
+    explain: "The overall gap is {a} − {b} = {a - b}. Inside a year level it is {c}. The gap shrinks by {a - b} − {c} = {a - b - c}."
+  - q: "In January a town (made up) had ${k * m}$ drownings and in July it had ${k}$. How many times as many drownings were there in January as in July?"
+    vars: { k: "1..3", m: "2..6" }
+    answer: "{m}"
+    explain: "{k * m} ÷ {k} = {m} times as many."
+  - q: "Of ${t}$ students, ${t * pct / 100}$ sit at the front by choice. What percentage is that?"
+    vars: { t: [20, 40, 50], pct: "10..90 by 10" }
+    answer: "{pct}"
+    explain: "{t * pct / 100} ÷ {t} = {pct / 100}, which is {pct}%."
