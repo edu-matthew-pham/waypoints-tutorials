@@ -1,0 +1,52 @@
+# Boards for "Every street once". Junctions are nodes and streets are edges: junction A to F, a made-up suburb.
+# Odd junctions here: B and D (three streets each).
+
+# region: run
+widget: netgraph
+words: junction, street
+node A: 0, 0
+node B: 0, 4
+node C: 3, 6
+node D: 6, 4
+node E: 6, 0
+node F: 3, 2
+edges: A-B, B-C, C-D, D-E, E-A, B-F, F-D
+# endregion
+
+# region: explain
+widget: netgraph
+words: junction, street
+node A: 0, 0
+node B: 0, 4
+node C: 3, 6
+node D: 6, 4
+node E: 6, 0
+node F: 3, 2
+edges: A-B, B-C, C-D, D-E, E-A, B-F, F-D
+# endregion
+
+# region: explain-pic
+widget: netgraph
+words: junction, street
+node A: 0, 0
+node B: 0, 4
+node C: 3, 6
+node D: 6, 4
+node E: 6, 0
+node F: 3, 2
+edges: A-B, B-C, C-D, D-E, E-A, B-F, F-D
+path: B, A, E, D, C, B, F, D
+# endregion
+
+# region: close
+# Four junctions with three streets (A, B, D) plus E at the end of a spur: four odd junctions, so no route yet.
+widget: netgraph
+words: junction, street
+change: on
+node A: 2, 5
+node B: 0, 0
+node C: 4, 0
+node D: 2, 2
+node E: 6, 0
+edges: A-B, A-C, B-C, A-D, B-D, C-D, C-E
+# endregion

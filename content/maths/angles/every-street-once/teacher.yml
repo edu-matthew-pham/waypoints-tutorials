@@ -1,0 +1,45 @@
+summary: "Students try to drive every street of a made-up suburb once on a board, find that the start matters, and learn the rule: a route exists when a connected network has none or exactly two odd junctions (AC9M10SP02, node 2)."
+time: 40
+timing: "Opening and Predict 8 min · Run 6 min · Investigate 12 min · Modify 8 min · Practise and Make 6 min"
+goals:
+  - I can find the degree of every junction and count the odd ones.
+  - I can say when a route using every street once exists, and where it starts and ends.
+  - I can change a network by closing a street and say what that does to the degrees.
+struggle: "Believing any start works if a route exists. Have them start the Run board at A, then at B, and compare."
+before: |
+  Wattle Grove, the junction names and every number are made up; no real map is used.
+
+  The one idea: a walk that uses every edge exactly once (an Euler trail) exists in a connected network exactly when the number of odd-degree nodes is 0 or 2. With 2 it starts at one odd node and ends at the other; with 0 it starts anywhere and returns there.
+
+  Why: each time the route passes through a node it uses two of its edges, so a node in the middle of the route needs an even degree. Only the start and the end can be odd. Students don't need this proof; they meet the rule by trying it, then use it. The Make task and the Modify closures are the practice.
+
+  Two supporting facts from the last lesson: degrees add to twice the number of edges, so the number of odd nodes is always even. The condition "connected" matters too: the rule only works when you can get from any junction to any other.
+
+  The Run board is a netgraph board (a new widget). If it doesn't load, the lesson still works on paper from the Mermaid pictures.
+running:
+  - "Opening: let them try Wattle Grove with a finger before any rule. Several routes work, and the one start that fails (say, a start at Q) is worth noticing."
+  - "Predict: show of hands before the answer is shown. The triangle with a tail can't be done from A."
+  - "Run: ask them to try A first, fail, then try another start. Don't give the rule; ask what the numbers on the junctions have in common."
+  - "Paper: the four-junction try-one and the Make task are worked on paper first, with a sketch and the degrees written beside each junction."
+  - "Modify: ask which two junctions they'd want to make even before they click."
+stuck:
+  - see: "A student says the sweeper can start anywhere because there are only two odd junctions."
+    ask: "If it starts at an even junction, where does it have to end?"
+    fix: "With two odd junctions the route starts at one of them and finishes at the other."
+  - see: "A student counts the number of streets instead of the number of odd junctions."
+    ask: "How many streets meet at this junction? Is that odd?"
+    fix: "Count junctions with an odd degree, not streets."
+  - see: "A student closes a street and says the degrees stay the same."
+    ask: "How many streets does each end of that street have now?"
+    fix: "Closing a street takes one off each of its two ends."
+stretch: "Can a suburb have exactly one odd junction? Use the idea that degrees add to twice the number of streets."
+support: "Give students the suburb printed large, and have them write the degree on each junction before they try a route."
+leads: |
+  Continues AC9M10SP02.
+
+  Where it leads: solids drawn as networks, and Euler's rule for faces, vertices and edges (Euler's rule).
+exit:
+  q: "A connected suburb has four junctions with an odd number of streets. Can the sweeper do every street once?"
+  a: "No. A route can only start and finish at odd junctions, so two is the most it can handle."
+explain: |
+  A route that uses every street exactly once exists in a connected network when it has **no odd junctions** or **exactly two**. With two, it starts at one odd junction and finishes at the other. With none, it can start anywhere and comes back to where it started.

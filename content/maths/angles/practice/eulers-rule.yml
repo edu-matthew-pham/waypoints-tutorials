@@ -1,0 +1,22 @@
+# Practice for "Euler's rule". Finding a missing count and halving face sides.
+templates:
+  - q: "A solid has {f} faces and {v} vertices. How many edges does it have?"
+    vars: { f: "4..12", v: "4..14" }
+    where: "f + v > 10"
+    answer: "{f + v - 2}"
+    explain: "{f} + {v} = {f + v} = edges + 2, so the edges are {f + v - 2}."
+  - q: "A solid has {f} faces and {e} edges. How many vertices does it have?"
+    vars: { f: "4..10", e: "8..20" }
+    where: "e + 2 > f + 3"
+    answer: "{e + 2 - f}"
+    explain: "{f} + vertices = {e} + 2 = {e + 2}, so the vertices are {e + 2 - f}."
+  - q: "A solid has {v} vertices and {e} edges. How many faces does it have?"
+    vars: { v: "4..12", e: "6..20" }
+    where: "e + 2 > v + 3"
+    answer: "{e + 2 - v}"
+    explain: "faces + {v} = {e} + 2 = {e + 2}, so the faces are {e + 2 - v}."
+  - q: "A solid has {a} triangle faces and {b} square faces and nothing else. Every edge joins two faces. How many edges does it have?"
+    vars: { a: "2..8", b: "2..6" }
+    where: "(a * 3 + b * 4) % 2 = 0"
+    answer: "{(a * 3 + b * 4) / 2}"
+    explain: "The sides of all the faces add up to {a} × 3 + {b} × 4 = {a * 3 + b * 4}. Each edge is counted twice, so the edges are {(a * 3 + b * 4) / 2}."

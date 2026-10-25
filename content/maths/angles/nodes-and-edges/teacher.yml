@@ -1,0 +1,44 @@
+summary: "Students read a made-up train map as a network (nodes, edges, degree), see that the drawn length of a line isn't a distance, and update the counts when a line is added (AC9M10SP02, node 1)."
+time: 35
+timing: "Opening and Predict 8 min · Investigate 12 min · Modify 6 min · Practise and Make 9 min"
+goals:
+  - I can name the nodes and edges of a network and say what each one stands for.
+  - I can find the degree of a node.
+  - I can say what a network diagram keeps and what it leaves out.
+struggle: "Reading the drawn length of a line as a distance. Ask what the line would look like if the same two stations were drawn on a different page."
+before: |
+  The stations (Fernbank, Quay, Market, Hilltop, Westgate, Park), the bus stops and every number are made up. A real city's train map is copyright, so none is used here; if you like, bring one to class and ask the same question of it (what is joined to what, and what the map leaves out).
+
+  The one idea: a network diagram keeps connections and drops the rest. Nodes are the things (stations), edges are the joins (lines). Degree is the number of edges that meet at a node. The sum of all the degrees is twice the number of edges, because every edge has two ends; this is used in the next lesson.
+
+  Line length on a diagram like this is just what fits on the page. Mermaid, which draws the map, places boxes by its own layout rules, which is a useful point to make: the same network can be drawn many ways.
+
+  Wider idea: "connected" means you can follow edges from any node to any other. Marina (degree 0) is the first example of a node that isn't. Edge weights (distances or times) come later.
+running:
+  - "Opening: ask which stations they pass on the way from Fernbank to Hilltop before they see Predict."
+  - "Predict: take a show of hands before the answer is shown. Those who pick Market to Hilltop are reading the line length as a distance."
+  - "Paper: the degree try-one after the worked example and the Make task are worked on paper first. Books out, and look for a sketch with dots and lines."
+  - "Modify: ask for Marina's degree before students type it. Zero is an answer."
+stuck:
+  - see: "A student says Hilltop is the furthest because its line is the longest."
+    ask: "If I redraw the map with that line shorter, did the train get faster?"
+    fix: "Length on the page isn't length of the ride. The map only says the stations are joined."
+  - see: "A student gives Quay's degree as 4 (counting Quay itself) or counts the stations."
+    ask: "Count the lines at Quay, not the stations."
+    fix: "Degree is the number of edges that meet there. Quay has three: to Fernbank, Market and Park."
+  - see: "A student says Marina isn't on the map, so it has no degree."
+    ask: "Is Marina a node?"
+    fix: "It is a node, with degree 0."
+stretch: "Draw the same network a different way, with different line lengths. Does anything the map tells you change?"
+support: "Give students the map printed with each node coloured in as they count its edges."
+leads: |
+  Starts AC9M10SP02.
+
+  Where it leads: following paths and asking whether every edge can be used once (Every street once), then polyhedra as networks (Euler's rule).
+exit:
+  q: "A network has 9 edges. What do the degrees of all its nodes add up to?"
+  a: "18."
+explain: |
+  A **network** is nodes joined by edges. A map of train lines is a network: the stations are nodes and the lines are edges. The **degree** of a node is how many edges meet there.
+
+  A network keeps only who is joined to whom, so the length of a line on the page isn't a distance.

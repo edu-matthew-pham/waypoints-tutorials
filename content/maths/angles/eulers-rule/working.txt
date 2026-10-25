@@ -1,0 +1,8 @@
+# Ines's working for the soccer ball. Plain text: students click the wrong line.
+
+# region: ines
+A soccer ball has 12 pentagons and 20 hexagons.
+Each pentagon has 5 edges and each hexagon has 6.
+So the edges are 12 × 5 + 20 × 6 = 180.
+So the soccer ball has 180 edges.
+# endregion

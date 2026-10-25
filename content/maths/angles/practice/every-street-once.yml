@@ -1,0 +1,19 @@
+# Practice for "Every street once". Counting odd junctions and deciding if a route exists.
+templates:
+  - q: "A suburb has {a} junctions where an even number of streets meet and {b} junctions where an odd number meet. How many junctions is that in all?"
+    vars: { a: "2..6", b: "0..6" }
+    where: "b % 2 = 0"
+    answer: "{a + b}"
+    explain: "{a} + {b} = {a + b}."
+  - q: "A connected suburb has {b} junctions with an odd number of streets. The council closes a street between two of them. How many odd junctions are there now?"
+    vars: { b: "2..20" }
+    where: "b % 2 = 0"
+    answer: "{b - 2}"
+    explain: "Closing a street takes one off each end, so both ends flip from odd to even. {b} - 2 = {b - 2}."
+  - q: "The streets at each junction number {c}. Can the sweeper use every street once, if the suburb is connected?"
+    cases:
+      - { c: "2, 2, 2, 2, 4", k: "Yes: start anywhere and finish where it started", w1: "Yes, but it must finish somewhere different", w2: "No, there's a junction with 4 streets" }
+      - { c: "2, 3, 3, 4, 2", k: "Yes: start at one junction with 3 streets and finish at the other", w1: "Yes: start anywhere", w2: "No, there are two odd junctions" }
+      - { c: "3, 3, 3, 3, 2", k: "No: four junctions have an odd number", w1: "Yes: start at a junction with 3", w2: "Yes: start anywhere" }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "Count the odd numbers. None: start anywhere and come back. Exactly two: start at one and finish at the other. More than two: it can't be done."

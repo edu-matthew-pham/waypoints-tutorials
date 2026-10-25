@@ -1,0 +1,42 @@
+summary: "Students find faces + vertices = edges + 2 on a cube and a pyramid, use it to find a missing count, and count a soccer ball's 90 edges and 60 vertices from its patches (AC9M10SP02, node 3)."
+time: 40
+timing: "Opening and Predict 8 min · Run 4 min · Investigate 12 min · Modify 8 min · Practise and Make 8 min"
+goals:
+  - I can count the faces, vertices and edges of a solid.
+  - I can use faces + vertices = edges + 2 to find a missing count.
+  - I can explain why adding the sides of every face counts each edge twice.
+struggle: "Counting edges by adding up the sides of every face and not halving. Ask how many faces each edge touches."
+before: |
+  The soccer ball counts (12 pentagons, 20 hexagons, 60 vertices, 90 edges, 32 faces) are those of the truncated icosahedron. They are standard geometry results, but the lesson doesn't cite a page yet, so please check them against a source you trust before this goes out. Every other number in the lesson is worked out in the lesson itself.
+
+  The one idea: for a solid with flat faces and no holes, faces + vertices - edges = 2. Students find it by counting, then use it backwards. It is not proved here.
+
+  Linking to the last lessons: each edge of a solid joins two vertices, so the degrees of the vertices add to twice the edges, as in a network. Each edge is also on two faces, which is why adding the sides of every face gives twice the edges.
+
+  Limits: the rule fails for solids with holes (a picture frame), which are outside this lesson. The word "polyhedron" isn't needed.
+running:
+  - "Opening: ask for a guess at the number of seams before the lesson says anything. Most guesses are too low."
+  - "Predict: show of hands. The cube gives 14 against 12 edges, which is two more."
+  - "Paper: the pentagonal prism try-one and the Make task are worked on paper first, with a sketch of the solid."
+  - "Modify: ask them to check the 10, 8, 15 solid with the rule before they pick."
+stuck:
+  - see: "A student gives the soccer ball's edges as 180."
+    ask: "How many patches touch each seam?"
+    fix: "Two patches share every seam, so halve it: 90."
+  - see: "A student gives the vertices as 90 or 180."
+    ask: "How many patches meet at each corner?"
+    fix: "Three, so divide the 180 by 3: 60."
+  - see: "A student uses faces + vertices = edges, forgetting the 2."
+    ask: "Check it on a cube: 6 + 8 and 12."
+    fix: "It's edges + 2."
+stretch: "Find a solid of your own that has 7 faces, and check that the rule works."
+support: "Give students a cube and a pyramid to hold, with the counts in a table."
+leads: |
+  Completes AC9M10SP02.
+
+  Where it leads: the networks unit ends here. Later years use graphs for planning and shortest paths.
+exit:
+  q: "A solid has 6 faces and 10 vertices. How many edges?"
+  a: "14."
+explain: |
+  For a solid with flat faces, **faces + vertices = edges + 2**. Count two of the three and the rule gives the third. When you count edges from the sides of the faces, halve the total, because every edge is on two faces.

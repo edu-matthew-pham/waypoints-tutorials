@@ -1,0 +1,22 @@
+# Practice for "Nodes and edges". Degrees, the two ends of an edge, and what a network keeps.
+templates:
+  - q: "A network has {e} edges. Add up the degrees of all its nodes. What do you get?"
+    vars: { e: "4..15" }
+    answer: "{e * 2}"
+    explain: "Each edge has two ends, and each end counts once towards a degree, so the degrees add up to 2 × {e} = {e * 2}."
+  - q: "A network has {n} nodes, and every node has degree {d}. How many edges does it have?"
+    vars: { n: "4..10", d: "2..4" }
+    where: "n * d % 2 = 0"
+    answer: "{n * d / 2}"
+    explain: "The degrees add up to {n} × {d} = {n * d}. Each edge has two ends, so there are {n * d} ÷ 2 = {n * d / 2} edges."
+  - q: "A map has {n} stations. One station is joined to every other station, and no other lines are drawn. How many edges does the map have?"
+    vars: { n: "4..9" }
+    answer: "{n - 1}"
+    explain: "The middle station has {n - 1} lines, one to each other station. No other lines are drawn, so there are {n - 1} edges."
+  - q: "{w}. What does that tell you?"
+    cases:
+      - { w: "On a train map, the line from Alder to Birch is drawn twice as long as the line from Birch to Cedar", k: "Nothing about which ride is longer", w1: "The Alder to Birch ride is twice as long", w2: "The Birch to Cedar ride is twice as long" }
+      - { w: "On a bus network diagram, stop P is drawn at the top of the page and stop Q at the bottom", k: "Nothing about which stop is further north", w1: "P is north of Q", w2: "Q is north of P" }
+      - { w: "On a network diagram, two stations are drawn very close together", k: "Nothing about how far apart they are really", w1: "They're very close in real life", w2: "They're joined by a line" }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "A network diagram keeps which nodes are joined. Where a node sits on the page, and how long a line is drawn, don't mean distance or direction."

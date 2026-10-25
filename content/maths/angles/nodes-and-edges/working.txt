@@ -1,0 +1,8 @@
+# Lena's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lena
+The map has a line from Market to Hilltop and a line from Fernbank to Quay.
+On the page, the Market to Hilltop line is three times as long.
+So the ride from Market to Hilltop is three times as long.
+So the ride to Hilltop takes longest.
+# endregion

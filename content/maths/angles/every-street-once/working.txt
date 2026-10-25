@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+The streets at each junction: A 2, B 3, C 2, D 3, E 2, F 2.
+B and D are odd, so there are two odd junctions.
+Two odd junctions means the sweeper can start at any junction.
+So it can start at A and finish at D.
+# endregion
