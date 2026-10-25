@@ -1507,6 +1507,19 @@ Vary, Practise, Make).
     filled in). An empty cell beyond the table counts as 0 in a formula, but a cell outside the sheet's size is #REF!, so
     give boards where a paste can land outside the data enough `rows:`. Text cells have no `c_` value; to check a text
     result, count it with a COUNTIF in a cell the check can read.
+  - Swappable context (26 Oct 2026, built for `ict/data` lesson 9): a ```` ```context ```` block in lesson.md holds the
+    lesson's dataset once, so a teacher can put in their own. `data:` gives numbers, lists of numbers or words
+    (`dark: [4, 5.5, 3]`, `threshold: 10`); `assert:` lists claims the text makes about the data (`avg(sun) > avg(shade)`),
+    which validate checks. Everywhere else, `{{ expression }}` is replaced by its value before the lesson is read: in
+    lesson.md (text, tables, `actual:`, `explain:`, option text, `when:`, `answer:`), in files read through `file#region`
+    (sheet.yml cells and labels), in `teacher.yml` and the class plan. Expressions: names, `name[2]` (1-based), `+ - * / ( )`,
+    comparisons, and `sum avg max min count above(list, n) countif(list, ">10") round(x, n) abs`. Write every stored
+    answer that comes from the data as an expression (`c_B8 = {{avg(dark)}}`), never as a number. Add a
+    `<region>-solution` region beside each board starter holding the cells (and `chart` lines) a student adds;
+    `npm run check-context` runs each board check against that solution with the lesson's data and with a changed
+    dataset, so a check that was typed as a number fails. Words that name things (Dark, Sun, "beans") stay plain text;
+    use `assert` to say which claims the data must keep making. Create copies the block with the lesson, so editing
+    the block swaps the text, the starter and the checks in the preview. Pure logic: `tools/context-core.mjs`.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working

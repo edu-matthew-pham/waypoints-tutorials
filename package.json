@@ -11,6 +11,8 @@
     "nodes": "node tools/progressions.mjs --report",
     "check-nodes": "node tools/check-progressions.mjs",
     "check-forms": "node tools/check-forms.mjs",
+    "check-context": "node tools/check-context.mjs",
+    "check-sheet": "node tools/check-sheet.mjs",
     "check-concepts": "node tools/check-concepts.mjs",
     "check-python-errors": "node tools/check-python-errors.mjs",
     "check-p5-errors": "node tools/check-p5-errors.mjs",

@@ -8,6 +8,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
 import YAML from 'yaml';
 import { createRequire } from 'node:module';
+import { expandContext } from './context-core.mjs';
 import { snippetFrom, extractInlineCode, parseLessonText, validateLessonCore, snippetId, FEATURES, setSqlRunner } from './lesson-core.mjs';
 
 // SQL lessons: run a solution against its starting database (the same sql.js the playground uses), so a check on the rows can be tested.
@@ -75,11 +76,13 @@ export function loadLesson(dir) {
   // teacher.yml beside lesson.md: notes, goals, exit ticket, student explanation and solutions (see AUTHORING.md).
   const t = join(dir, 'teacher.yml');
   // A ```teacher block inside lesson.md (parseLessonText) wins; teacher.yml is the fallback.
-  if (!lesson.teacher && existsSync(t)) lesson.teacher = YAML.parse(readFileSync(t, 'utf8')) || {};
+  // Swappable context: a lesson with a ```context block expands {{ }} in these files too (tools/context-core.mjs).
+  const ex = (text) => (lesson.context ? expandContext(text, lesson.context, lesson.slug) : text);
+  if (!lesson.teacher && existsSync(t)) lesson.teacher = YAML.parse(ex(readFileSync(t, 'utf8'))) || {};
   // Class activities (content/<course>/class/<lesson>.yml): kept outside the lesson folder so editing them never
   // re-records the lesson's clips. They become slides in the deck and a section of the teacher guide (AUTHORING › Class plan).
   const c = join(dir, '..', 'class', `${dir.split(sep).pop()}.yml`);
-  if (!lesson.classPlan && existsSync(c)) lesson.classPlan = YAML.parse(readFileSync(c, 'utf8')) || {};
+  if (!lesson.classPlan && existsSync(c)) lesson.classPlan = YAML.parse(ex(readFileSync(c, 'utf8'))) || {};
   return lesson;
 }
 

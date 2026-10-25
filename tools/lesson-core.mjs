@@ -4,6 +4,7 @@ import YAML from 'yaml';
 import { scanModule } from './modules-scan.mjs';
 import { MATH } from './math-expr.mjs';
 import { diagramItems, diagramProblems } from './diagram-core.mjs';
+import { CONTEXT_RE, contextFrom, expandContext, failedAsserts } from './context-core.mjs';
 
 export const STAGES = ['predict', 'run', 'investigate', 'modify', 'practise', 'make', 'info'];
 export const VERBS = ['caption', 'show', 'clear', 'run', 'type', 'click', 'press', 'expect', 'wait'];
@@ -226,8 +227,12 @@ export const DEFAULT_PACING = {
 /** Read a code reference "file" or "file#region" via read(file). */
 export function snippetFrom(read, ref) {
   const [file, region] = String(ref).split('#');
-  const text = read(file);
+  let text = read(file);
   if (text === undefined || text === null) throw new Error(`code reference "${ref}": file not found`);
+  if (file !== 'context.yml' && String(text).includes('{{')) {
+    let c; try { c = read('context.yml'); } catch { c = undefined; }
+    if (c) text = expandContext(text, contextFrom(c, file), file);
+  }
   const lines = String(text).replace(/\r\n/g, '\n').split('\n');
   const marker = /^\s*(?:#|\/\/|<!--|\/\*|%%)\s*(end)?region\b\s*:?\s*([\w-]*)/; // %%: Mermaid (diagrams.mmd)
   let out = lines;
@@ -320,6 +325,8 @@ export function extractInlineCode(text) {
     : /\.css$/i.test(file) ? [`/* region: ${name} */`, '/* endregion */']
     : /\.(py|rb|sh|yml|yaml)$/i.test(file) ? [`# region: ${name}`, '# endregion']
     : /\.mmd$/i.test(file) ? [`%% region: ${name}`, '%% endregion'] : [`// region: ${name}`, '// endregion'];
+  // A ```context block (tools/context-core.mjs) is readable as the file context.yml, so starters can expand {{ }} from it.
+  text = text.replace(CONTEXT_RE, (_, body) => { inline['context.yml'] = body + '\n'; return ''; });
   const rest = text.replace(/^```code[ \t]+([\w.\-/]+)#([\w-]+)[ \t]*\n([\s\S]*?)\n```[ \t]*$\n?/gm, (_, file, name, body) => {
     const [open, close] = marks(file, name);
     inline[file] = (inline[file] ? inline[file] + '\n' : '') + `${open}\n${body}\n${close}\n`;
@@ -330,6 +337,10 @@ export function extractInlineCode(text) {
 
 export function parseLessonText(raw, slug = 'lesson') {
   raw = raw.replace(/\r\n/g, '\n');
+  // Swappable context: the block is cut out and every {{ expression }} in the lesson is replaced from its data.
+  let context;
+  const cm = raw.match(CONTEXT_RE);
+  if (cm) { context = { ...contextFrom(cm[1], slug), text: cm[1] + '\n' }; raw = expandContext(raw.replace(CONTEXT_RE, ''), context, slug); }
   const fm = raw.match(/^---\n([\s\S]*?)\n---\n?/);
   if (!fm) throw new Error(`${slug}: lesson.md must start with --- frontmatter ---`);
   const meta = YAML.parse(fm[1]) || {};
@@ -377,7 +388,9 @@ export function parseLessonText(raw, slug = 'lesson') {
     }
     return { index: i + 1, id: `step-${i + 1}`, title, body: body.trim(), config, tasks, ...(extraSteps ? { extraSteps } : {}) };
   });
+  if (context) ic.inline['context.yml'] = context.text;
   return {
+    ...(context ? { context } : {}),
     ...(Object.keys(ic.inline).length ? { inline: ic.inline } : {}),
     ...(teacher ? { teacher } : {}),
     ...(classPlan ? { classPlan } : {}),
@@ -432,6 +445,8 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     }
     if (known.turtle) known.turtle = ids;
   }
+  // Swappable context: the lesson's claims about its data (assert:) must hold for the data it carries.
+  if (lesson.context) for (const m of failedAsserts(lesson.context, lesson.slug)) errs.push(m);
   const snip = (ref) => snippetFrom(read, ref);
   // expected: file#region whose page is shown (as a picture, no code) behind "Show the expected result". HTML playground only.
   // picture: a region's page shown beside the code (HTML lessons; not on Predict or Run, where it would give the answer away).

@@ -1,5 +1,5 @@
 inquiry:
-  q: "The Dark plants averaged about 5 cm and the Sun plants about 13 cm. Does this prove light makes beans grow?"
+  q: "The Dark plants averaged about {{round(avg(dark), 0)}} cm and the Sun plants about {{round(avg(sun), 0)}} cm. Does this prove light makes beans grow?"
   prompts:
     - "What else might differ between the dark and the sunny place?"
     - "How many plants were measured, and would you be surprised if another class got a different result?"

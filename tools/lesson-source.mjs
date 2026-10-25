@@ -22,8 +22,10 @@ export function lessonSource(lesson) {
   }
   let md = readFileSync(join(lesson.dir, 'lesson.md'), 'utf8').replace(/\r\n/g, '\n');
   if (!/^```teacher[ \t]*$/m.test(md)) {
+    // A lesson with a context block folds its notes from the files as written, so {{ }} stays and follows a swapped dataset.
     const t = join(lesson.dir, 'teacher.yml'), tf = existsSync(t) ? YAML.parse(readFileSync(t, 'utf8')) || {} : null;
-    const plan = lesson.classPlan;
+    const cf = join(lesson.dir, '..', 'class', `${basename(lesson.dir)}.yml`);
+    const plan = lesson.context ? (existsSync(cf) ? YAML.parse(readFileSync(cf, 'utf8')) || {} : null) : lesson.classPlan;
     if (tf || plan) {
       const block = { ...(tf || {}), ...(plan ? { class: plan } : {}) };
       md = md.replace(/\s*$/, '\n') + '\n```teacher\n' + YAML.stringify(block).trimEnd() + '\n```\n';
