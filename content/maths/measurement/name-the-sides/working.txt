@@ -1,0 +1,8 @@
+# Mo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mo
+The triangle has its right angle at the bottom right.
+The marked angle is the one at the top.
+The upright side is opposite, because it is upright.
+The bottom side is adjacent.
+# endregion

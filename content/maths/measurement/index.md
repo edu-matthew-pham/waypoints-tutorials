@@ -10,6 +10,7 @@ units:
   - { id: circles, title: Circles, summary: "Centre, radius, diameter and circumference; rolling circles out to find π; and C = πd; then (Year 8) A = πr² and circle problems." }
   - { id: pythagoras, title: Pythagoras, summary: "Squares on the sides of a right-angled triangle, finding any side, and testing whether a triangle is right-angled." }
   - { id: sci9, title: Scientific notation, summary: "Writing very big and very small numbers as a number from 1 to 10 times a power of 10, calculating with them, and using them for real measurements (Year 9)." }
+  - { id: trig9, title: Trigonometry, summary: "Naming the sides from an angle, why the ratios stay fixed, sine, cosine and tangent, then finding sides and angles and solving spatial problems (Year 9)." }
   - { id: time, title: Time zones, summary: "Changing times between time zones, and when flights land." }
   - { id: logs10, title: Log scales, summary: "One step on a log scale is a multiplication, not an addition: earthquake magnitudes and decibels, then a ruler that fits a blood cell and the distance to the Sun (Year 10)." }
 ---

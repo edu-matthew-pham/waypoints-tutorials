@@ -1,0 +1,32 @@
+summary: "Students name the hypotenuse, opposite and adjacent sides from a marked angle and see the names swap when the angle moves (AC9M9SP01, node 1)."
+time: 35
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 8 min · Practise and Make 9 min"
+goals:
+  - I can name the hypotenuse.
+  - I can name the opposite and adjacent sides from a marked angle.
+  - I can say what happens to the names when the angle moves.
+struggle: "Naming by position on the page (upright is opposite). Ask: which angle am I standing at?"
+before: |
+  Students need Pythagoras (the hypotenuse).
+
+  The one idea: the names belong to the angle, not the page. Use your finger on the marked angle: touching sides are adjacent, the one it doesn't touch is opposite.
+running:
+  - "Predict: show of hands. Look for the bottom side answer."
+  - "Run: ask students to say the new names before pressing the button."
+stuck:
+  - see: "A student calls the upright side opposite from every angle."
+    ask: "Which angle are you standing at?"
+    fix: "Move your finger to the marked angle, then find the side across from it."
+stretch: "Draw a triangle on paper, mark an angle and swap the names with a partner."
+support: "A printed triangle with the marked angle highlighted."
+leads: |
+  Continues AC9M9SP01 node 1.
+
+  Where it leads: Same angle, same ratio.
+exit:
+  q: "Which side is always the hypotenuse?"
+  a: "The side across from the right angle."
+explain: |
+  The hypotenuse is across from the right angle. Opposite and adjacent depend on the marked angle.
+
+  Touch the marked angle with your finger: sides that touch it are adjacent (and the hypotenuse), the other is opposite.

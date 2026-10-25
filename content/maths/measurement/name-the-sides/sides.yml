@@ -1,0 +1,9 @@
+# Boards for "Name the sides".
+
+# region: run
+widget: trig
+slider t: 15, 75, 35, 5
+h: 6
+show: none
+switch: on
+# endregion

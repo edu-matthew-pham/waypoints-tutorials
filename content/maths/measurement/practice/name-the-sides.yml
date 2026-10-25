@@ -1,0 +1,10 @@
+# Practice for "Name the sides".
+templates:
+  - q: "A right-angled triangle has sides {3 * k}, {4 * k} and {5 * k} cm. How long is the hypotenuse?"
+    vars: { k: "1..9" }
+    answer: "{5 * k}"
+    explain: "The hypotenuse is the longest side: {5 * k} cm."
+  - q: "A right-angled triangle has sides {5 * k}, {12 * k} and {13 * k} cm. The marked angle is between the {5 * k} and the {13 * k}. How long is the opposite side?"
+    vars: { k: "1..7" }
+    answer: "{12 * k}"
+    explain: "The side that doesn't touch the marked angle is {12 * k} cm."
