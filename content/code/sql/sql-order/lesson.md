@@ -141,7 +141,7 @@ stuck:
     fix: Add DESC for biggest first.
 stretch: Sort by two columns, such as genre and then plays DESC.
 support: Give the query with ORDER BY done and ask only for LIMIT.
-leads: "Next course lesson: count and group rows."
+leads: "Next lesson: count and add up rows to one answer."
 exit:
   q: "What is the order of the parts of a query so far?"
   a: "SELECT, FROM, WHERE, ORDER BY, LIMIT."
