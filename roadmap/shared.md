@@ -780,7 +780,11 @@ Teachers often work out a tutorial backwards: build an example project, then dec
 
 Not all projects are alike. Some are hobby projects with many ideas at once; others were made for students and already fit a level. The route should ask which it is, because that changes how hard it cuts.
 
-**Proposed route, "Start from a project":**
+**First version (small): a prompt template.** Create's prompt start is already a template the teacher copies into their own AI chat, so this is a second template (beside `create/start-prompt.md`) that runs the steps below, plus a published `concepts.json` (each idea and the lesson that `introduces:` it, by pathway), linked from the prompt like `board-catalogue.json`, so the AI can say which ideas are taught already and where. No new Create screens beyond a start card.
+
+**Later, only if worth it:** run the scan in the page (`concepts-core.mjs`) so a teacher sees taught and new before any chat.
+
+**Proposed route, "Start from a project" (the template's steps):**
 1. Paste or upload the finished code; say whether it was made for students or is a personal project.
 2. Scan it with `concepts-core.mjs` (already in the browser for Open projects): list the ideas it uses, split into "taught already" (with the lesson that `introduces:` it, from the pathway tags) and "new". Show "Do first" courses for anything taught elsewhere.
 3. The teacher picks the one or two new ideas worth teaching; the rest become starter code or labelled "copy for now" recipes.
@@ -789,4 +793,4 @@ Not all projects are alike. Some are hobby projects with many ideas at once; oth
 
 **Limits:** the scan reads Python, HTML/CSS and MakeCode only (Arduino C++, plain JavaScript and p5.js would get the planning help but no scan). Hobby projects are often beyond the class: the scan shows the gap; the starter has to hide the rest.
 
-Shared files it would touch: `create/index.html` (a fourth start card), `create/entry.mjs`, a new prompt beside `create/start-prompt.md`, and `concepts-core.mjs` (read only). Code notes point here (roadmap/code.md › Proposed).
+Shared files the first version would touch: a new prompt beside `create/start-prompt.md`, a start card in `create/index.html` and `create/entry.mjs`, and a build step writing `concepts.json` from lessons' `introduces:`. Code notes point here (roadmap/code.md › Proposed).
