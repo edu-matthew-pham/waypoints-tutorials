@@ -1,0 +1,35 @@
+inquiry:
+  q: What is the club app protecting, and from whom?
+  prompts:
+  - Who would want it?
+  - What might they try?
+  notes: A threat model asks what matters, who might want it and how they could get it. Keep it to the made-up club app.
+activities:
+- at: predict
+  kind: activity
+  title: What matters most?
+  minutes: 5
+  do: 'Pairs list what the club app holds, then rank it from most to least damaging if it leaked.
+
+    '
+  notes: Rankings differ; the point is naming what matters and why.
+- at: investigate
+  kind: discussion
+  title: Defence for each
+  minutes: 4
+  do: 'Pick the top item and name one defence that fits it.
+
+    '
+  notes: Match the defence to the threat, not the other way round.
+questions:
+- at: investigate
+  title: What does HTTPS protect?
+  type: question
+  q: The club app uses HTTPS. What does that protect?
+  options:
+  - Data on its way
+  - Stored passwords
+  - Who may use the admin page
+  - All of the app
+  answer: 0
+  explain: Only data in transit; stored data and permissions need their own defences.

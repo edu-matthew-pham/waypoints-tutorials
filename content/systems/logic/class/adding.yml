@@ -1,0 +1,35 @@
+inquiry:
+  q: How could a circuit add two numbers?
+  prompts:
+  - What is 1 + 1 in binary?
+  - What goes in the next place?
+  notes: Carrying, like base ten. Keep it to two bits first.
+activities:
+- at: predict
+  kind: activity
+  title: Add by hand
+  minutes: 5
+  do: 'Students add 1 + 1 and then 3 + 1 in binary on mini whiteboards, showing the carries.
+
+    '
+  notes: Write 0, carry 1. Compare with 5 + 5 in base ten.
+- at: modify
+  kind: discussion
+  title: Which gate?
+  minutes: 3
+  do: 'Sum and carry of two bits: which gate gives each?
+
+    '
+  notes: Sum is XOR, carry is AND. Show the four rows.
+questions:
+- at: investigate
+  title: 1 + 1
+  type: question
+  q: In binary, what is 1 + 1?
+  options:
+  - '10'
+  - '2'
+  - '11'
+  - '1'
+  answer: 0
+  explain: Write 0 and carry 1.

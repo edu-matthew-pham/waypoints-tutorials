@@ -1,0 +1,35 @@
+inquiry:
+  q: A club asks for your email to join. What may it do with it?
+  prompts:
+  - Who decides?
+  - What would you want to be asked first?
+  notes: 'APP 6: use information for the purpose it was collected for. Keep it to the made-up club.'
+activities:
+- at: predict
+  kind: activity
+  title: Where can it go?
+  minutes: 5
+  do: 'Pairs mark which uses of a member''s email the club may make without asking: send the meeting time, give it to a sports shop for adverts, keep it for ever.
+
+    '
+  notes: Only the first, plainly. Link each decision to the purpose it was collected for.
+- at: end
+  kind: discussion
+  title: Write the notice
+  minutes: 3
+  do: 'Write two sentences the club could show when asking for an email, saying what it will and won''t do with it.
+
+    '
+  notes: Plain words, a clear purpose. This is the heart of APP 1 and 5.
+questions:
+- at: investigate
+  title: Which use?
+  type: question
+  q: A club collected emails to send meeting times. May it give them to a shop for adverts?
+  options:
+  - Not without asking
+  - Yes, always
+  - Only on weekends
+  - Yes, if the shop is local
+  answer: 0
+  explain: Information is used for the purpose it was collected for unless people agree to more.

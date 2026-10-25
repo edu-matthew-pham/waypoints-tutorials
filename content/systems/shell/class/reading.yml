@@ -1,0 +1,35 @@
+inquiry:
+  q: Does ls show everything in a folder?
+  prompts:
+  - What might a file do to hide?
+  - How would you find one line in a long file?
+  notes: Hidden dot files, grep and cat.
+activities:
+- at: predict
+  kind: activity
+  title: What is missing?
+  minutes: 4
+  do: 'Give pairs a folder listing and a list of what the folder really holds. Spot the missing name.
+
+    '
+  notes: A dot file is hidden; ls -a shows it.
+- at: run
+  kind: discussion
+  title: Find the line
+  minutes: 3
+  do: 'A notes file has 40 lines. How would you find the line about Friday without reading all of it?
+
+    '
+  notes: grep Friday notes.txt. Contrast reading with searching.
+questions:
+- at: investigate
+  title: Hidden
+  type: question
+  q: Which command shows files whose names start with a dot?
+  options:
+  - ls -a
+  - ls
+  - pwd
+  - cat
+  answer: 0
+  explain: -a means all, including hidden names.

@@ -1,0 +1,35 @@
+inquiry:
+  q: How could you tell a real school email from a fake one?
+  prompts:
+  - Where does the link really go?
+  - What would make you stop and check?
+  notes: 'Where a link goes, not what it says. Defensive: spotting and reporting.'
+activities:
+- at: predict
+  kind: activity
+  title: Spot the signs
+  minutes: 5
+  do: 'Give pairs two printed emails, one made-up phish and one genuine. Circle every sign that would make them stop before clicking.
+
+    '
+  notes: Urgent wording, an odd sender address and a link that doesn't match its text. Don't ask students to write a phish.
+- at: end
+  kind: discussion
+  title: What do you do?
+  minutes: 3
+  do: 'You think an email is fake. Write the three things you do next.
+
+    '
+  notes: Don't click, tell someone, report it. Link to the school's real reporting route.
+questions:
+- at: investigate
+  title: Where does it go?
+  type: question
+  q: A link says school.example/login. How can you check where it really goes?
+  options:
+  - Look at the address it points to before clicking
+  - Trust the words of the link
+  - Click to find out
+  - Reply and ask the sender
+  answer: 0
+  explain: Link words can say anything; the address is what matters.

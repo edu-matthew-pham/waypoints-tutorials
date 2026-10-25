@@ -1,0 +1,35 @@
+inquiry:
+  q: You send a photo and it arrives smaller but not identical. Is that a fault?
+  prompts:
+  - Who decided what to throw away?
+  - When would you never want that to happen?
+  notes: Lossy is a deliberate trade, not an error. Compare a holiday photo with a bank statement scan or a spreadsheet; students usually find the rule themselves.
+activities:
+- at: predict
+  kind: activity
+  title: Nearly the same shade
+  minutes: 5
+  do: 'Give pairs a row of 12 grey squares with slightly different shades written as numbers. Merge any shades within 10 of each other into one shade. Now swap rows with another pair and try to get their original numbers back.
+
+    '
+  notes: 'The originals can''t be recovered, which is what lossy means. Try a bigger step: the row gets shorter and looks worse.'
+- at: end
+  kind: discussion
+  title: Choose for each
+  minutes: 3
+  do: 'For each file, choose lossy or lossless and say why: a holiday photo, a spreadsheet of marks, a song, a program.
+
+    '
+  notes: Marks and programs can't lose a single number. Photos and songs usually can. Accept reasoned disagreement.
+questions:
+- at: investigate
+  title: Which kind?
+  type: question
+  q: A school stores a spreadsheet of student marks. Which kind of compression suits it?
+  options:
+  - Lossless, because every number must come back exactly
+  - Lossy, because it is smaller
+  - 'Either: marks never matter'
+  - 'Neither: spreadsheets can''t be compressed'
+  answer: 0
+  explain: A changed mark is a wrong mark, so nothing may be lost.

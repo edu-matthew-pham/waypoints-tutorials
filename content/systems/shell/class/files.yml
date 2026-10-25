@@ -1,0 +1,35 @@
+inquiry:
+  q: How does a computer know where a file is?
+  prompts:
+  - What would a full address look like?
+  - What does 'where I am' mean?
+  notes: Folder tree, full paths and the idea of a current folder.
+activities:
+- at: predict
+  kind: activity
+  title: Walk the tree
+  minutes: 5
+  do: 'Draw a folder tree on the board. A student moves a marker as the class calls out cd steps, then says the full path to where it stopped.
+
+    '
+  notes: Full paths start from the top. Mark where relative paths begin.
+- at: modify
+  kind: discussion
+  title: Two ways to say it
+  minutes: 3
+  do: 'Give the path to the same file twice: from the top, and from where you are.
+
+    '
+  notes: They name the same file. Which is shorter depends on where you are.
+questions:
+- at: investigate
+  title: Where am I?
+  type: question
+  q: You are in /home/sam and type cd projects. What does pwd show?
+  options:
+  - /home/sam/projects
+  - /projects
+  - /home/projects
+  - projects
+  answer: 0
+  explain: cd moved you into the folder inside where you were.

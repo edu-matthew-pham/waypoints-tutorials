@@ -1,0 +1,30 @@
+inquiry:
+  q: A processor only follows instructions. How could that run a game?
+  prompts:
+  - What would it need to remember?
+  - What is an instruction made of?
+  notes: Instructions are numbers in memory. Many tiny steps, very fast.
+activities:
+- at: predict
+  kind: activity
+  title: Be the processor
+  minutes: 6
+  do: 'Write memory on the board: LOAD 6, ADD 7, OUT, HALT, with 5 and 3 in cells 6 and 7. A student acts as the processor: fetch, decode, execute, once per step.
+
+    '
+  notes: Output 8. The same three steps repeat for every instruction.
+- at: run
+  kind: discussion
+  title: Count the ticks
+  minutes: 3
+  do: 'If each instruction takes three ticks, how long does the program take?
+
+    '
+  notes: Four instructions, twelve ticks.
+questions:
+- at: investigate
+  title: Ticks
+  type: number
+  q: Each instruction takes 3 clock ticks. How many ticks does a 4-instruction program take?
+  answer: 12
+  explain: 4 × 3 = 12.

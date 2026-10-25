@@ -1,0 +1,35 @@
+inquiry:
+  q: Everyone shares one computer. How do you stop others changing your files?
+  prompts:
+  - What three things could someone do to a file?
+  - Who gets to do each?
+  notes: Read, write and run, for owner, group and everyone else.
+activities:
+- at: predict
+  kind: activity
+  title: Three keys
+  minutes: 5
+  do: 'Give each student a file card showing rwx for owner, group and others (for example rw-, r--, r--). Others say what they may do with it.
+
+    '
+  notes: Only what is marked. A dash is a no.
+- at: modify
+  kind: discussion
+  title: Your file, their view
+  minutes: 3
+  do: 'Which permissions would you give your marks file for yourself, your teacher and everyone else?
+
+    '
+  notes: Accept reasonable choices; ask what each person needs.
+questions:
+- at: investigate
+  title: Read only
+  type: question
+  q: Everyone else has r-- on a file. What can they do?
+  options:
+  - Read it but not change it
+  - Change it
+  - Run it
+  - Delete it
+  answer: 0
+  explain: r-- is read only.

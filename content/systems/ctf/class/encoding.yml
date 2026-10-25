@@ -1,0 +1,35 @@
+inquiry:
+  q: A message looks scrambled. Is it safe?
+  prompts:
+  - Who could unscramble it?
+  - What would make it safe?
+  notes: Encoding has no key; encryption does.
+activities:
+- at: predict
+  kind: activity
+  title: Decode it
+  minutes: 4
+  do: 'Pairs decode a short base64 line with a chart, no key.
+
+    '
+  notes: Anyone can, so it isn't protection.
+- at: modify
+  kind: discussion
+  title: Add a key
+  minutes: 3
+  do: 'Add a shared key word to the scramble. Who can read it now?
+
+    '
+  notes: Only people with the key. That is encryption.
+questions:
+- at: investigate
+  title: Encoding or encryption?
+  type: question
+  q: Base64 has no key. Is it encryption?
+  options:
+  - 'No: anyone can undo it'
+  - 'Yes'
+  - Only for text
+  - Only online
+  answer: 0
+  explain: Anyone can decode it.

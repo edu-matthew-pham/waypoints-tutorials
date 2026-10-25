@@ -1,0 +1,35 @@
+inquiry:
+  q: You type a web name and a page appears. How does your computer know where to go?
+  prompts:
+  - What would you need to find a house?
+  - What if two names looked almost the same?
+  notes: Names are for people; addresses are for computers. Hold the lookalike-name idea for the Predict.
+activities:
+- at: predict
+  kind: activity
+  title: Phone book
+  minutes: 5
+  do: 'Give pairs a short list of names with numbers. One partner asks for a name and the other looks it up. Ask for a name that isn''t there, and one that differs from a real name by one letter.
+
+    '
+  notes: No entry means no address; a name one letter different is a different entry. That is what DNS does.
+- at: modify
+  kind: discussion
+  title: Follow the route
+  minutes: 3
+  do: 'A packet for 192.0.2.44 reaches a router with three rows. Match it to a row using the starting numbers. Which way does it go?
+
+    '
+  notes: The row that matches is the one used. Use the board's own rows so students see the same table.
+questions:
+- at: investigate
+  title: Lookalike
+  type: question
+  q: A link goes to schoo1.edu.au instead of school.edu.au. What happens?
+  options:
+  - It goes to a different site, because the names differ
+  - It goes to the school anyway
+  - The browser fixes the spelling
+  - Nothing loads
+  answer: 0
+  explain: DNS looks up the exact name, and a lookalike is a separate name with its own address.

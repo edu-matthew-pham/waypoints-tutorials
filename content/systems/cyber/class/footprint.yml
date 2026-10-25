@@ -1,0 +1,35 @@
+inquiry:
+  q: Ava uses the club app for a week. How much does it know about her?
+  prompts:
+  - What did she type? What did she not type?
+  - Who else might see it?
+  notes: Typed data and collected data. Keep it about the made-up club app, not about students' own accounts.
+activities:
+- at: predict
+  kind: activity
+  title: Everything it could record
+  minutes: 5
+  do: 'Pairs list everything the club app could record about a member in a week: what they typed, and what the phone or app could add. Compare lists.
+
+    '
+  notes: 'The second list is usually longer: location, times, pages opened, device.'
+- at: end
+  kind: discussion
+  title: Shrink the footprint
+  minutes: 3
+  do: 'Pick two things from your list you''d stop the app collecting. What would the app lose?
+
+    '
+  notes: Less data means less to leak. Some things the app needs; some it doesn't.
+questions:
+- at: investigate
+  title: Typed or collected?
+  type: question
+  q: Which does an app collect without anyone typing it?
+  options:
+  - Where the phone is
+  - The name Ava enters
+  - A poll answer
+  - The password she chooses
+  answer: 0
+  explain: Location and device details are collected as she uses the app.

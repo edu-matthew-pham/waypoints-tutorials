@@ -1,0 +1,35 @@
+inquiry:
+  q: A team tests every line of its code and finds no bugs. Is the app safe?
+  prompts:
+  - What isn't in their code?
+  - Who else touches the app?
+  notes: People, settings and add-ons count too. Keep it conceptual.
+activities:
+- at: predict
+  kind: activity
+  title: Beyond the code
+  minutes: 5
+  do: 'Pairs list ways into an app that aren''t a bug in its own code.
+
+    '
+  notes: Shared passwords, old add-ons, default settings, a person tricked. Compare lists.
+- at: modify
+  kind: discussion
+  title: Sort the weaknesses
+  minutes: 3
+  do: 'Sort your list into: the team''s code, other people''s code, settings, people.
+
+    '
+  notes: Each needs a different kind of fix.
+questions:
+- at: investigate
+  title: Kinds of weakness
+  type: question
+  q: Which is a weakness that isn't a bug in the club's own code?
+  options:
+  - A shared password
+  - A typo in a comment
+  - A slow page
+  - The wrong colour
+  answer: 0
+  explain: People and add-ons can let someone in however good the code is.

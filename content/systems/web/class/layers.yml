@@ -1,0 +1,35 @@
+inquiry:
+  q: Take the style off a web page. What is left?
+  prompts:
+  - What is the page made of?
+  - Which parts did the style change?
+  notes: Content, structure, style. Let students predict before the board.
+activities:
+- at: predict
+  kind: activity
+  title: Strip it back
+  minutes: 5
+  do: 'Show a page, then its plain version with no style. Students name what disappeared and what stayed.
+
+    '
+  notes: The look goes; words and structure stay.
+- at: modify
+  kind: discussion
+  title: Which layer?
+  minutes: 3
+  do: 'Sort: a heading, a colour, the words, a list, a font. Which layer is each?
+
+    '
+  notes: Structure, style, content, structure, style.
+questions:
+- at: investigate
+  title: Which layer?
+  type: question
+  q: A page's headings and lists belong to which layer?
+  options:
+  - Structure
+  - Style
+  - Content only
+  - None of them
+  answer: 0
+  explain: Structure says what each part is; style says how it looks.

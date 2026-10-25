@@ -1,0 +1,35 @@
+inquiry:
+  q: Your video call app works on your laptop and your phone, which have different cameras. What does the app have to know about the camera?
+  prompts:
+  - What would every app need to contain if there were no operating system?
+  - Who decides which app gets the camera?
+  notes: Leave it open. The answer is that the app asks the operating system and the OS handles the hardware. Come back to it at the webcam board.
+activities:
+- at: predict
+  kind: activity
+  title: Be the operating system
+  minutes: 5
+  do: 'One student plays the OS holding a drawer of driver cards, one per device. Another plays an app and asks ''the camera, please''. The OS finds the matching card and passes the video back. Then hand the OS a webcam with no card.
+
+    '
+  notes: With no driver the OS can't use the device, and the app just gets 'no camera'. Don't name 'driver' until after the board.
+- at: investigate
+  kind: discussion
+  title: Who gets the camera?
+  minutes: 3
+  do: 'Two apps ask for the camera at once. What should the OS do? Decide in pairs.
+
+    '
+  notes: Take turns, or refuse the second. The OS shares hardware between programs; that is its job.
+questions:
+- at: investigate
+  title: Why a driver?
+  type: question
+  q: A new webcam works on your friend's laptop but not yours. What is the most likely missing piece?
+  options:
+  - A driver for that webcam on your laptop
+  - A faster processor
+  - A bigger screen
+  - A new video call app
+  answer: 0
+  explain: The OS needs a driver for each device. The app only asks the OS for "the camera".

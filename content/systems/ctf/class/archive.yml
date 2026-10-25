@@ -1,0 +1,35 @@
+inquiry:
+  q: An old archive is being wiped on Friday. Why check it first?
+  prompts:
+  - What might still work?
+  - What would you change?
+  notes: 'Defensive: find, report, change.'
+activities:
+- at: predict
+  kind: activity
+  title: Plan the check
+  minutes: 5
+  do: 'Pairs list what an old archive might leak.
+
+    '
+  notes: Reused passwords and codes.
+- at: make
+  kind: discussion
+  title: Report
+  minutes: 4
+  do: 'Write three lines for the club: what you found and what to change.
+
+    '
+  notes: The report matters as much as the flags.
+questions:
+- at: investigate
+  title: Why check?
+  type: question
+  q: Why check what an old archive gives away?
+  options:
+  - Leaked secrets may still work
+  - To keep it
+  - To delete it faster
+  - To copy it
+  answer: 0
+  explain: Find them, then change them.

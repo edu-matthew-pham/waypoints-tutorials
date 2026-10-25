@@ -1,0 +1,35 @@
+inquiry:
+  q: How could a circuit remember a value after the switch is released?
+  prompts:
+  - What if an output fed back into an input?
+  - How would you change what it remembers?
+  notes: A latch holds a bit by feeding outputs back. Leave the idea open before the board.
+activities:
+- at: predict
+  kind: activity
+  title: Hold on
+  minutes: 4
+  do: 'Two students hold each other''s hands (the feedback). A third presses Set, lets go. Does the pair stay?
+
+    '
+  notes: 'They stay: feedback keeps the state. Reset breaks it.'
+- at: modify
+  kind: discussion
+  title: Both at once
+  minutes: 3
+  do: 'What happens if Set and Reset are pressed together? Why do designers avoid it?
+
+    '
+  notes: Both outputs are forced; the result is unreliable when released.
+questions:
+- at: investigate
+  title: What is Q?
+  type: question
+  q: You turn Set on, then off. What is Q?
+  options:
+  - Still 1
+  - '0'
+  - Unknown
+  - '2'
+  answer: 0
+  explain: The feedback holds it until Reset.

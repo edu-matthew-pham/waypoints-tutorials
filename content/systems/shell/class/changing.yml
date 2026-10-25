@@ -1,0 +1,35 @@
+inquiry:
+  q: A shell has no recycle bin. What does that change about deleting?
+  prompts:
+  - What would you check first?
+  - How could you practise safely?
+  notes: rm is immediate. Stress looking first and copying before changing.
+activities:
+- at: predict
+  kind: activity
+  title: A safe habit
+  minutes: 4
+  do: 'Pairs write a three-step habit for deleting: look first, copy first, then rm. Compare habits.
+
+    '
+  notes: Check the name, check where you are, copy if unsure.
+- at: modify
+  kind: discussion
+  title: What does -r do?
+  minutes: 3
+  do: 'A folder holds three files. What does rm -r do to them? What would rm without -r say?
+
+    '
+  notes: -r removes the folder and everything in it; without it, rm refuses a folder.
+questions:
+- at: investigate
+  title: Where is it?
+  type: question
+  q: You type rm notes.txt. Where is the file now?
+  options:
+  - Gone
+  - In the bin
+  - In Documents
+  - Renamed
+  answer: 0
+  explain: rm deletes straight away.

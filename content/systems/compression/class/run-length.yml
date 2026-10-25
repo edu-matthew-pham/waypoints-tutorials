@@ -1,0 +1,30 @@
+inquiry:
+  q: A page of plain text and a busy photo are both saved. Which should shrink more, and why?
+  prompts:
+  - What is repeated in each?
+  - What could you write instead of 'white white white white'?
+  notes: 'Long runs shrink a lot; a row that changes every pixel doesn''t shrink at all. Don''t name run-length encoding yet: students should invent ''count, then colour'' themselves.'
+activities:
+- at: predict
+  kind: activity
+  title: Say it shorter
+  minutes: 5
+  do: 'One student reads a row of 20 black and white squares aloud, square by square. The class writes it down. Now the reader may only say how many of each colour come in a row (''4 white, 2 black...''). Compare how much was said.
+
+    '
+  notes: 'The second reading is shorter and rebuilds the row exactly. Then try a row that alternates every square: the ''short'' version is longer.'
+- at: modify
+  kind: discussion
+  title: Worst case
+  minutes: 3
+  do: 'Draw a row that gets no shorter however you write it. What does your row look like?
+
+    '
+  notes: 'Alternating squares. Run-length helps only when there are runs: that''s the honest limit of the idea.'
+questions:
+- at: investigate
+  title: Count the runs
+  type: number
+  q: A row is 5 white, 2 black, 3 white. How many numbers does run-length encoding store?
+  answer: 3
+  explain: 'One number per run: 5, 2, 3. Stored square by square it would be 10 numbers.'

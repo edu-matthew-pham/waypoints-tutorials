@@ -1,0 +1,35 @@
+inquiry:
+  q: A page hides a field. Can a visitor see what's in it?
+  prompts:
+  - What did the browser receive?
+  - Where would you look?
+  notes: Hidden isn't private.
+activities:
+- at: predict
+  kind: activity
+  title: View source
+  minutes: 4
+  do: 'Show a page and its source side by side. Students spot hidden data.
+
+    '
+  notes: Everything the browser got is visible.
+- at: modify
+  kind: discussion
+  title: What should change?
+  minutes: 3
+  do: 'What should the page never send to a visitor?
+
+    '
+  notes: Don't send secrets to the browser at all.
+questions:
+- at: investigate
+  title: Hidden?
+  type: question
+  q: A hidden field holds emails. Can a visitor see them?
+  options:
+  - Yes, in the page source
+  - 'No'
+  - Only admins
+  - Only on phones
+  answer: 0
+  explain: The browser received everything.

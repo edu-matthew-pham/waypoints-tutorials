@@ -161,13 +161,13 @@ Why: primary coverage of AC9TDI6K01–6K04 is uneven, and every Years 7–8 cour
 
 `class/<lesson>.yml` for all eight Starting out lessons and Cyber › Passwords (none of the 56 systems lessons had one). Starting out leans on unplugged, whole-class versions of each board (volunteers as switches, dot cards and parts; strips passed by different routes); Passwords keeps the inquiry order (guesses collected without judging, names only after students compare explanations). Each has an `inquiry` where there's a real disagreement, two to four activities and one class question. Decks pass `check-decks`. Next: the other courses, in the order a class is likely to meet them (Data representation, Networks, Inside a computer, then the rest).
 
-## Done (25 Oct 2026): class plans, second batch
+## Done (25 Oct 2026): class plans, second and third batches
 
-Plans for all ten Data representation lessons, five Networks and three Inside a computer lessons (18 files; the notes keep to what each lesson already teaches, and the CTF and journey plans stay defensive). Number and plain-question class questions only, no new boards. Decks pass the overflow check (the 16 decks that overflow today are in other subjects). Still without plans: Making data smaller, Security and privacy, Cyber safety, How a web page is made, Command line, From gates to a processor, Capture the flag.
+Plans for every remaining systems lesson: 18 in Data representation, Networks and Inside a computer, then 29 in Compression, Security, Cyber safety (all but Passwords), How a web page is made, The command line, From gates to a processor and the two CTF courses' lessons. Each has an `inquiry`, one or two unplugged activities and one class question (number or plain multiple choice); security, cyber and CTF plans stay defensive. The third batch is shorter than the first: trial a few with classes before writing more depth.
 
 ## Next
 
-0. Class plans for the courses listed above, then try a few with classes.
+0. Try a few class plans with classes; deepen the third batch where they run thin.
 1. Years 5–6: built (Starting out); try it with a Year 5–6 class and a Year 7 catch-up group.
 2. A CTF scoreboard (points, hints that cost points) only if classes want one; it would need storage the site doesn't have.
 3. Trial Packets and Passwords (inquiry 5E) against an explicit-shape lesson on one concept, then decide which concept lessons to rebuild the same way (candidates: the other seven Cyber missions, Everything is numbers, Who can see your data, Threat models).

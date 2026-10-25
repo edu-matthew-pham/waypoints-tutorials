@@ -1,0 +1,35 @@
+inquiry:
+  q: Why would a school ask students to try to get into a practice portal?
+  prompts:
+  - What separates testing from attacking?
+  - What must you have before you start?
+  notes: Permission, scope, and reporting. The portal is a practice system built for this; make that clear before students start.
+activities:
+- at: predict
+  kind: discussion
+  title: Rules of the test
+  minutes: 4
+  do: 'In pairs write three rules a tester must follow: who has agreed, what is in scope, what happens to what you find.
+
+    '
+  notes: Permission, a clear scope and a report. Keep the three rules on the board while students work.
+- at: make
+  kind: activity
+  title: Report back
+  minutes: 4
+  do: 'Write a three-line report for the portal''s owner: what you found, why it matters, how to fix it.
+
+    '
+  notes: The report matters as much as the flags. This is where the ethics lands.
+questions:
+- at: investigate
+  title: Ethical testing
+  type: question
+  q: What makes testing a system ethical?
+  options:
+  - You have permission and report what you find
+  - You test late at night
+  - You keep what you find to yourself
+  - You use a made-up name
+  answer: 0
+  explain: Permission and reporting turn it into testing, not attacking.

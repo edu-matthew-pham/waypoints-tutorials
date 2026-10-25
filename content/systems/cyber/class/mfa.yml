@@ -1,0 +1,35 @@
+inquiry:
+  q: Is a long password enough on its own?
+  prompts:
+  - What if it leaks anyway?
+  - What else could prove it's really you?
+  notes: 'Something you know, have or are. Link back to Passwords: a strong password can still leak.'
+activities:
+- at: predict
+  kind: activity
+  title: Two checks
+  minutes: 4
+  do: 'Give one student a password slip and a second card (the code). The door opens only for someone with both. Try with each one missing.
+
+    '
+  notes: Missing either blocks them. Link to Ava's leaked password.
+- at: modify
+  kind: discussion
+  title: The fake sign-in
+  minutes: 3
+  do: 'Ava is tricked into typing her code into a look-alike page. Does the second factor still protect her? Why or why not?
+
+    '
+  notes: A code typed into a fake page can be used straight away. Second factors help a lot but aren't magic; this leads to Spot the phish.
+questions:
+- at: investigate
+  title: Second factor
+  type: question
+  q: Ava's password leaks but she uses a code sent to her phone. What stops the attacker?
+  options:
+  - They don't have her phone
+  - The password is too long
+  - The code is easy to guess
+  - Nothing
+  answer: 0
+  explain: The code goes to a device only Ava has.

@@ -1,0 +1,35 @@
+inquiry:
+  q: How could simple gates make a bigger decision?
+  prompts:
+  - What if one gate's output fed another?
+  - How would you check it by hand?
+  notes: Trace a signal through gates one at a time.
+activities:
+- at: predict
+  kind: activity
+  title: Trace it
+  minutes: 5
+  do: 'Draw OR feeding NOT on the board. Students trace the lamp for every pair of inputs.
+
+    '
+  notes: Work through all four rows; the result is NOR.
+- at: modify
+  kind: discussion
+  title: Build a rule
+  minutes: 3
+  do: 'A school door''s lamp lights if the card is valid AND the time is before 6. How would you let a teacher in at any time?
+
+    '
+  notes: Add an input and an OR. It shows gates combining into rules.
+questions:
+- at: investigate
+  title: Output
+  type: question
+  q: Both switches are off. They go into an OR gate whose output goes into a NOT gate. Is the lamp on?
+  options:
+  - 'On'
+  - 'Off'
+  - Half on
+  - Can't tell
+  answer: 0
+  explain: OR gives 0; NOT flips it to 1.

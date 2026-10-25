@@ -1,0 +1,35 @@
+inquiry:
+  q: Two people who have never met want to share a secret on a network anyone can watch. How could they?
+  prompts:
+  - What goes wrong if one of them sends the key first?
+  - Could something be public and still safe?
+  notes: 'Let students find the problem with sending a key. Open padlocks (public to lock, private to open) are the way out. Keep it conceptual: no key sizes or maths.'
+activities:
+- at: predict
+  kind: activity
+  title: Open padlocks
+  minutes: 6
+  do: 'One student holds the only key to a padlock and hands out copies of the open padlock to the class. Others lock a note in a box with a padlock and pass it across the room. Who can open the box?
+
+    '
+  notes: Everyone can lock, only the keyholder can unlock. Eve can have a padlock too. Don't name public and private yet.
+- at: modify
+  kind: discussion
+  title: Prove it's you
+  minutes: 3
+  do: 'The keyholder wants to prove a message came from them. How could they use their key to do that?
+
+    '
+  notes: This leads into signing, which the lesson touches lightly. Accept sensible ideas without insisting on the full answer.
+questions:
+- at: investigate
+  title: Which key opens it?
+  type: question
+  q: Alice gives out padlocks (her public key). Which key opens what is locked with one?
+  options:
+  - Alice's private key
+  - Any copy of the padlock
+  - Eve's key
+  - Bob's password
+  answer: 0
+  explain: Only Alice's private key, which never leaves her, opens it.

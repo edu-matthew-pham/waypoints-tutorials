@@ -1,0 +1,30 @@
+inquiry:
+  q: No command counts how many different pets are in a list. How could small commands do it together?
+  prompts:
+  - What if one command's output became the next command's input?
+  - In what order would you put them?
+  notes: Let students order sort, uniq and wc before the board. Revisit at the end.
+activities:
+- at: predict
+  kind: activity
+  title: Pass it on
+  minutes: 5
+  do: 'Three students stand in a row as sort, uniq and wc. A list on a card goes in at one end: sort puts it in order, uniq drops neighbouring repeats, wc counts the lines.
+
+    '
+  notes: 'Sort groups repeats, uniq drops them, wc counts: the order matters.'
+- at: modify
+  kind: discussion
+  title: Swap the order
+  minutes: 3
+  do: 'Run it again with uniq before sort. What goes wrong?
+
+    '
+  notes: Repeats aren't neighbours, so uniq misses them. This is why sort comes first.
+questions:
+- at: investigate
+  title: How many lines?
+  type: number
+  q: pets.txt is cat, dog, cat, bird. How many lines does sort pets.txt | uniq | wc -l print?
+  answer: 3
+  explain: 'After sort the two cats are together; uniq keeps one: bird, cat, dog.'

@@ -1,0 +1,35 @@
+inquiry:
+  q: A student signs in with the right password. Should they be able to change the class marks?
+  prompts:
+  - What has the password proved?
+  - Who decides what each person may do?
+  notes: Authentication is who you are; authorisation is what you may do. Use Kai (the practice student), not Sam, as the example.
+activities:
+- at: predict
+  kind: activity
+  title: Two desks
+  minutes: 5
+  do: 'Set up Check-in (a student shows a name card) and a Marks cupboard with a list of who may open it. Students pass the first desk, then try the second.
+
+    '
+  notes: Passing check-in doesn't open the cupboard. Keep the words 'authentication' and 'authorisation' for after the board.
+- at: investigate
+  kind: discussion
+  title: Add a second lock
+  minutes: 3
+  do: 'A password leaks. Add a second check at the first desk. What would it be, and who can still get in?
+
+    '
+  notes: Something only the real person has, such as a code on their phone. Link back to second factors in Cyber safety.
+questions:
+- at: investigate
+  title: Which step?
+  type: question
+  q: Checking a password proves who you are. What is that called?
+  options:
+  - Authentication
+  - Authorisation
+  - Encryption
+  - Permission
+  answer: 0
+  explain: Authentication proves who you are; authorisation decides what you may do.

@@ -1,0 +1,35 @@
+inquiry:
+  q: Two pages look the same. Why might one still be worse?
+  prompts:
+  - Who else reads a page?
+  - What do they read?
+  notes: Screen readers and search use structure. Style alone can't carry meaning.
+activities:
+- at: predict
+  kind: activity
+  title: Hear the page
+  minutes: 5
+  do: 'One student reads Page B as a screen reader would: just the words, no headings. The rest try to find ''This week'' by ear alone.
+
+    '
+  notes: With no headings there is nothing to jump between.
+- at: make
+  kind: discussion
+  title: Change the look
+  minutes: 3
+  do: 'Say how you''d change every page on a site to a new colour with one edit. What has to be true?
+
+    '
+  notes: The style sits in one place, apart from the structure.
+questions:
+- at: investigate
+  title: Why structure?
+  type: question
+  q: Why mark a heading as a heading instead of only making it big?
+  options:
+  - Programs and readers can find it
+  - It loads faster
+  - It looks bolder
+  - It uses less memory
+  answer: 0
+  explain: Structure is what programs read; looks are for eyes.

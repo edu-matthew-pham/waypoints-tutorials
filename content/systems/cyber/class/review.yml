@@ -1,0 +1,35 @@
+inquiry:
+  q: Before an app launches, who should check it, and for what?
+  prompts:
+  - What happens if nobody does?
+  - What would you check first?
+  notes: Defensive review of the made-up club app. Leave it open; the flags are where it gets checked.
+activities:
+- at: predict
+  kind: activity
+  title: Review plan
+  minutes: 5
+  do: 'Pairs list five things to check in the club app before launch. Compare lists across the room.
+
+    '
+  notes: Passwords, permissions, what is stored, what travels, what is shown. Different pairs find different things; that is the point of a second pair of eyes.
+- at: make
+  kind: discussion
+  title: Rank the fixes
+  minutes: 4
+  do: 'You have time to fix three of your five. Which three, and why?
+
+    '
+  notes: There is never time for everything. Rank by who would be hurt most.
+questions:
+- at: investigate
+  title: Why review?
+  type: question
+  q: Why does a team review its own app before launch?
+  options:
+  - To find and fix problems first
+  - To make it slower
+  - To delay the launch
+  - To look busy
+  answer: 0
+  explain: Fixing before launch is cheaper and nobody's data is exposed.

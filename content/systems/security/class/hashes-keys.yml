@@ -1,0 +1,35 @@
+inquiry:
+  q: A website is hacked and its password list stolen. Should the site have stored your password at all?
+  prompts:
+  - What could it store instead?
+  - How could it still tell you typed the right one?
+  notes: Store a one-way fingerprint (a hash), not the password. Salt is the second step. Keep it defensive.
+activities:
+- at: predict
+  kind: activity
+  title: One-way rule
+  minutes: 5
+  do: 'Give each student a rule that is easy to apply but can''t be undone: add the digits of a number, then double it. Each student hands over only the result. Can the class work out the starting number?
+
+    '
+  notes: Several numbers give the same result, so you can't tell which went in. Real hashes are built so that is practically hopeless, and different inputs almost never collide.
+- at: investigate
+  kind: discussion
+  title: Same password, same hash
+  minutes: 3
+  do: 'Two students both use the same password. What do their stored fingerprints look like? What might an attacker learn?
+
+    '
+  notes: 'Matching fingerprints show matching passwords. That is why salt is added: a different extra bit for each person.'
+questions:
+- at: investigate
+  title: What is stored?
+  type: question
+  q: A site stores your password's hash. When you sign in, what does it do?
+  options:
+  - Hashes what you type and compares it
+  - Decrypts the stored hash
+  - Compares your typing to the saved password
+  - Emails your password to you
+  answer: 0
+  explain: The site never keeps the password, only the hash to compare against.
