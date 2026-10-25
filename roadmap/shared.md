@@ -49,7 +49,7 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 2. ICT: **approved 26 Oct:** build Investigating and judging information and Staying safe and well (being built; Staying safe still needs the school wellbeing review before class use).
 3. Before Year 7 catch-up: **decided 26 Oct:** build all 22 in a separate chat with its own roadmap (`roadmap/before-year-7.md`, handoff Project doc `handoff-before-year-7`).
 4. Engineering OpenSCAD: **decided 26 Oct:** parked until the main suite has been piloted.
-5. Site content licence: leaning to CC BY-SA 4.0 (Matthew, 26 Oct); non-commercial (BY-NC-SA) being weighed. No licence file yet.
+5. Site content licence: **interim notice added 26 Oct** (`LICENSE.md`, linked from About): teachers may use and adapt for their own classes and share free with credit; no selling, paid products, republishing as their own, or building/training products without permission. An open licence (CC BY-SA, possibly NC) waits until the school confirms in writing that the work is Matthew's (outside-employment IP question).
 6. Project docs: **answered 26 Oct:** this chat orchestrates for now and updated the docs above (status blocks added; plan text kept).
 
 ### Needs your approval

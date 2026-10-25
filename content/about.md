@@ -18,6 +18,8 @@ We also built it because the browser can now do things it couldn't a few years a
 
 That helps every teacher. Specialists get a coherent sequence to teach from, adapt or use for revision. Teachers working outside their specialism, which is common in coding and not rare in maths and science, also get plain-language notes, slides and answers so they can run a lesson with confidence.
 
+**Using these lessons.** Teachers are welcome to use and adapt the lessons for their own classes, and to share adapted versions free of charge with students and colleagues, keeping a credit. They aren't open for anyone to sell, put in a paid product or republish as their own resource without permission. [Full terms](https://github.com/edu-matthew-pham/waypoints-tutorials/blob/main/LICENSE.md).
+
 Teachers can [suggest or request a lesson](https://forms.gle/CoRAXJWHnVQ8mXpPA). Each one is checked before it's added and refined as it's used. Part of [Learning Waypoints](https://learningwaypoints.com).
 
 ## How the lessons work
