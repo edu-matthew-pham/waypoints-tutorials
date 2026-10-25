@@ -874,3 +874,6 @@ Already modular: widgets and playgrounds are shared; lesson, class plan, `teache
 2. **Swappable context.** A `context:` or `data:` block per lesson (a sheet's dataset, a case's names, the club app) so a teacher can put in their school's version without rewriting steps. The check must follow the change: stored answers and `solutions` have to be recomputed or the lesson will mark its own author wrong. Do one subject at a time, starting with ICT `sheet` (data is already a board setup) and the maths boards.
 3. **My path.** A shareable sequence of chosen lessons or steps in the teacher's order, with their own note, as a link (no accounts; stored in the link or a draft like Create's shared draft links). Suits "use a bit, not all of it".
 Not proposed: lifting single steps between lessons (4); do it only if someone asks. Build order: 1, then 3, then 2.
+
+## Fixed (25 Oct 2026, maths chat): reasoning answer row overflowed on phones
+`tools/lesson-view.mjs` `.ansrow` now wraps and its input has `max-width:100%`: on a 390px screen the "Answer" label plus the 14em box ran 13–20px past the edge in every `reasoning` check. Lesson pages carry the CSS inline, so this reaches live pages only on the full publish.

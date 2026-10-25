@@ -957,7 +957,7 @@ export const MATHS_CSS = `.check label.rs-lab{display:block;margin:.4em 0;font-w
 .worked .wm{display:block;font-size:1.08em;overflow-x:auto}.worked .why{display:block;color:var(--muted);font-size:15px;margin-top:2px}
 .worked-go{display:flex;gap:8px;margin-top:8px}.worked-go button{font:inherit;font-size:14px;font-weight:600;padding:5px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
 .worked-go button[hidden]{display:none}.worked-go .wnext{background:var(--c,var(--accent));border-color:transparent;color:#fff}@media(prefers-color-scheme:dark){.worked-go .wnext{color:#0f141a}}
-.ansrow input{width:14em;font-family:ui-monospace,Menlo,Consolas,monospace}`;
+.ansrow{flex-wrap:wrap}.ansrow input{max-width:100%;box-sizing:border-box;width:14em;font-family:ui-monospace,Menlo,Consolas,monospace}`;
 
 /** "Try it yourself" iframe. siteRoot is the URL of the site root (with trailing slash), e.g. "../../../". */
 export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = null, versions = null) {
