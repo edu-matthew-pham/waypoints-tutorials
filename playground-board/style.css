@@ -933,3 +933,28 @@ table.sh td input:focus-visible { outline: none; }
   table.sh td { min-width: 4.4em; }
   table.sh td input { min-width: 4.4em; padding: 7px 4px; text-overflow: ellipsis; }
 }
+
+/* Sheet tools: copy and paste, sort, filter, chart */
+table.sh tr.sh-hide { display: none; }
+table.sh td.sh-copied { outline: 2px dashed var(--left); outline-offset: -2px; }
+.sh-tools { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px; margin-top: 8px; }
+.sh-tools button, .sh-buttons button { font: 600 14px/1 system-ui, sans-serif; padding: 8px 12px; min-height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.sh-tools button:disabled { opacity: .5; cursor: default; }
+.sh-tools button:focus-visible, .sh-in:focus-visible, .sh-field select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.sh-field { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--muted); }
+.sh-field select, .sh-in { font: 15px/1.2 system-ui, sans-serif; padding: 6px 8px; min-height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); max-width: 100%; }
+.sh-note { margin: 0; font-size: 14px; color: var(--muted); align-self: center; }
+.sh-chart { margin-top: 4px; }
+.sh-ch-title { margin: 8px 0 0; font: 700 16px/1.3 system-ui, sans-serif; text-align: center; }
+.sh-ch-box { border: 1px solid var(--line); border-radius: 8px; background: var(--card); margin-top: 6px; }
+.sh-ch-box:empty { display: none; }
+.sh-ch-svg { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
+.sh-ch-t { font: 11px system-ui, sans-serif; fill: var(--muted); }
+.sh-ch-r { text-anchor: end; } .sh-ch-m { text-anchor: middle; }
+.sh-ch-ax { font-size: 12px; fill: var(--ink); }
+.sh-ch-grid { stroke: var(--line); stroke-width: 1; }
+.sh-ch-axis { stroke: var(--muted); stroke-width: 1.5; }
+.sh-ch-bar { fill: var(--left); }
+.sh-ch-line { fill: none; stroke: var(--left); stroke-width: 2.5; }
+.sh-ch-dot { fill: var(--accent); stroke: var(--card); stroke-width: 1.5; }
+@media (max-width: 480px) { .sh-field select, .sh-in { font-size: 14px; padding: 6px; } .sh-tools { gap: 6px; } }

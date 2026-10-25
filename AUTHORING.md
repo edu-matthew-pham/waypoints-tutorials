@@ -1472,6 +1472,23 @@ Vary, Practise, Make).
     one), `f_B3` (1 if the cell holds a formula, else 0), `n_formulas`, `n_errors` and each `name`. Checks such as
     `"f_D2 = 1 and c_D2 = c_C2 - c_B2"` need a formula, not a typed answer. `node tools/check-sheet.mjs` tests the
     formula engine (add a case for each new function or rule).
+    Tools (added 25 Oct 2026, Working with data lessons 2 to 9): `table: A1:D9` marks a table (its first row is the
+    heading row) and `tools: fill sort filter chart` (any of them, separated by spaces) switches on **Copy, Paste and
+    Fill down** (Ctrl+C and Ctrl+V on a selected cell work too; a pasted formula's relative references move like a
+    real app's, `$` keeps a name fixed, and a name pushed off the sheet gives #REF!), a **Sort** (by one column, whole
+    rows move, formulas using their own row follow, empty cells go last; saved with the table because it moves locked
+    cells), a **Filter** (show rows where a column is, is not, is more than or is less than a value; rows are hidden,
+    never deleted; live, so it re-applies when cells change) and a **Chart** (column `bar`, `line`, `scatter` or `pie`; the
+    student types the Labels range and the Values range, a title and axis titles; a scatter chart's Labels are its
+    x numbers). `chart type: line`, `chart labels: A2:A7`, `chart values: B2:B7`, `chart title:`, `chart xlabel:` and
+    `chart ylabel:` lines preset the chart. Extra check values: with a table `n_shown` (data rows showing),
+    `filter_on` (0 or 1), `filter_col` (0 for A, 1 for B, ..., -1 when no filter), and `up_B` and `down_B` (1 when that
+    column is in order, low to high or high to low, in every column of the table); with the chart `ch_bar`, `ch_line`,
+    `ch_scatter` and `ch_pie` (1 for the type chosen when the chart can be drawn), `ch_n` (points), `ch_sum` (the sum of
+    the plotted values: use it to tell which column was plotted), and `ch_title`, `ch_xlab`, `ch_ylab` (1 when that text is
+    filled in). An empty cell beyond the table counts as 0 in a formula, but a cell outside the sheet's size is #REF!, so
+    give boards where a paste can land outside the data enough `rows:`. Text cells have no `c_` value; to check a text
+    result, count it with a COUNTIF in a cell the check can read.
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working
