@@ -1,0 +1,13 @@
+# Boards for "Linear or quadratic?". Transport for NSW typical stopping distances; x is speed in tens of km/h.
+
+# region: run
+widget: graph
+x: 0, 8
+y: -10, 70
+grid: 1, 10
+axes: Speed (tens of km/h), Distance (m)
+slider m: 0, 15, 4, 1
+slider c: -20, 20, 0, 1
+series Data: 3,19; 4,27; 5,37; 6,56
+plot: y = mx + c
+# endregion

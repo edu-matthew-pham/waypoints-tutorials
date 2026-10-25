@@ -1,0 +1,39 @@
+summary: "Students use first and second differences to compare a straight-line and a quadratic model of real stopping distances, and say where each fails (AC9M9A05, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can use differences to decide between a line and a curve.
+  - I can say when neither model fits exactly.
+  - I can say why an under-estimate matters in a real situation.
+struggle: "Expecting a perfect pattern. Ask: do the differences have to match exactly for the model to be useful?"
+before: |
+  Students need Recognising a quadratic.
+
+  The one idea: choose the model whose pattern is closer, and say how far it is out and where it stops working. The common mistake is assuming a rate from one step (Pat's working).
+
+  The figures are typical stopping distances from Transport for NSW (checked 25 October 2026) on a reasonable road surface. They don't separate reaction and braking distances, so the lesson says that split from the physics, not from the table.
+running:
+  - "Predict: take a show of hands. Those who chose 46 or 47 kept the rate steady. Reveal the real figure after Run."
+  - "Run: ask students to say, before setting m and c, how much each 10 km/h should add."
+  - "Paper: the try-one after the worked example and the under-estimate in Make are worked on paper first. Books out, and look for the differences written out."
+  - "Modify: before the zero-speed question, ask what a stopped car needs."
+stuck:
+  - see: "A student says the data is linear because it always goes up."
+    ask: "Are the differences equal?"
+    fix: "8, 10, 19: no. A line needs equal differences."
+  - see: "A student says the data must be quadratic because it curves."
+    ask: "Are the second differences equal?"
+    fix: "2 and 9: not exactly. It's a better fit than a line, but not exact."
+stretch: "Fit y = ax² + bx to the points at 30 and 60 km/h, and see how far it is out at 40 and 50."
+support: "A printed table with space for both rows of differences."
+leads: |
+  Continues AC9M9A05 node 1.
+
+  Where it leads: Solving the model and saying what the answer means, then reporting its limits.
+exit:
+  q: "A table has first differences 4, 4, 4. Linear, quadratic or neither?"
+  a: "Linear: the first differences are equal."
+explain: |
+  A line has equal first differences. A quadratic has equal second differences. Real data usually fits neither exactly.
+
+  Choose the better model, say how far it is out, and say where it stops working.

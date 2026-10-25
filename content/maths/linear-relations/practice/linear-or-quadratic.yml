@@ -1,0 +1,14 @@
+# Practice for "Linear or quadratic?".
+templates:
+  - q: "A table has y = {a}, {a + d}, {a + 2 * d}, {a + 3 * d}. Is it linear or quadratic?"
+    vars: { a: "1..9", d: "2..8" }
+    choices: ["Linear: the first differences are all {d}", "Quadratic: the second differences are {d}"]
+    explain: "Each value goes up by {d}: equal first differences, so linear."
+  - q: "A table has y = {a}, {a + d}, {a + 2 * d + 2 * s}, {a + 3 * d + 6 * s}. What is the second difference?"
+    vars: { a: "1..5", d: "1..5", s: "1..4" }
+    answer: "{2 * s}"
+    explain: "First differences {d}, {d + 2 * s}, {d + 4 * s}. Second differences {2 * s}."
+  - q: "A stopping distance rises from {a} m to {b} m when the speed goes up 10 km/h. How many metres more is that?"
+    vars: { a: "10..30", b: "31..60" }
+    answer: "{b - a}"
+    explain: "{b} − {a} = {b - a} m."

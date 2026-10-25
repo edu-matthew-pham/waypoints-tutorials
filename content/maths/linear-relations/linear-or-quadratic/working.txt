@@ -1,0 +1,8 @@
+# Pat's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: pat
+Stopping distance: 19 m at 30 km/h, 27 m at 40 km/h.
+From 30 to 40 km/h the distance goes up by 8 m.
+So every 10 km/h more adds 8 m.
+At 60 km/h: 19 + 8 + 8 + 8 = 43 m.
+# endregion
