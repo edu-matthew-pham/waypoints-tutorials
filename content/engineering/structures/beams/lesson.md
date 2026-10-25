@@ -68,14 +68,18 @@ tasks:
 stage: investigate
 insight: "Two rules: the supports share the load like a lever (the nearer support holds more), and stiffness depends on depth cubed (the I value)."
 tasks:
-  - check:
+  - smaller:
+      check: { type: question, q: "Picture the load sitting right on top of the left support. How much does the right support have to hold?", options: ["Nothing: the left one takes it all", "Half the load", "All of it"], answer: 0, shuffle: false, feedback: [null, "Half would mean the load is in the middle. This one is right over the left support.", "Then the left support would be doing nothing, but the load is sitting on it."], explain: "The nearer a support is to the load, the more it holds. Slide the load a little way along and the right support starts to take some." }
+    check:
       type: answer
       q: "A 10 N load sits 0.1 m from the left support of a 0.5 m beam. How much does the left support hold, in newtons?"
       answer: "8"
       feedback:
         - ["2", "That is the right support. The nearer support holds more."]
       explain: "10 × 0.4 ÷ 0.5 = 8 N (and the right holds 2 N)."
-  - check:
+  - smaller:
+      check: { type: number, q: "Standing the strip on its edge made it 10 times deeper. Depth counts three times over, so work out 10 × 10 × 10.", answer: 1000, explain: "That's why it's about a thousand times stiffer for depth alone. Now try the same with 2 instead of 10." }
+    check:
       type: answer
       q: "A beam is made twice as deep (same width). How many times stiffer is it?"
       answer: "8"

@@ -55,7 +55,15 @@ check: { type: board, text: "Switch pin 9 on. Does the motor turn? Compare the c
 stage: investigate
 insight: "Following both paths, the small control current and the big motor current, models the move. Sam's 'the code must be wrong' is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check:
+        type: question
+        q: "Your code can set a pin HIGH or LOW, and when. What is the one thing it can't change about that pin?"
+        options: ["How much current the pin is able to supply", "Whether the pin is on or off", "When the pin switches on", "Which pin the sketch uses"]
+        answer: 0
+        feedback: [null, "Code does that. It's what digitalWrite is for.", "Code does that too, with delay() or a timer.", "That's a line of code you can edit."]
+        explain: "The code decides on and off. How much current a pin can give is fixed by the chip, so a motor that needs far more needs a different route."
+    check:
       type: number
       q: "The motor needs 700 mA to start. A pin can safely give 20 mA. How many times too much is that?"
       answer: 35

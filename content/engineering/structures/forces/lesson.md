@@ -57,7 +57,9 @@ tasks:
       q: "How hard does A-B pull, in newtons?"
       answer: 500
       explain: "500 N. Each support holds up half the load, and the bottom member holds the feet together."
-  - check:
+  - smaller:
+      check: { type: question, q: "Hold a heavy bag up with a stick pushing straight up and you push as hard as the bag weighs. Now lean the stick over so it slants, and only part of your push goes upwards. To keep the bag up, do you push harder or softer?", options: ["Harder, to make up for the part that doesn't go up", "Softer, because the stick is leaning", "The same"], answer: 0, shuffle: false, feedback: [null, "Leaning wastes some of the push sideways, so you'd need more, not less.", "Only a straight push would be the same. A slanted one loses some sideways."], explain: "A slanted push needs to be bigger than the load it holds. That's what A-C is doing." }
+    check:
       type: question
       q: "A-C pushes with 707 N, more than the 1000 N load shared between two sides (500 N each). Why more?"
       options: ["It pushes at a slant: only part of its push holds the load up, so it must push harder", "The board is wrong", "The load gets bigger as it goes down", "Pushes are always bigger than pulls"]

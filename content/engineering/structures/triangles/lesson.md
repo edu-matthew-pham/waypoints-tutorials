@@ -71,7 +71,9 @@ tasks:
 stage: investigate
 insight: "The counting rule (for a flat frame on a pin and a roller) gives the number of members a frame needs to be rigid with none spare. Zoe adds 3 instead of taking it away, planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check: { type: number, q: "Take a frame with 4 joints. Each joint can move 2 ways, so that's 8 ways to move. The pin and roller stop 3 of them. How many ways are left for the members to stop?", answer: 5, explain: "8 - 3 = 5. Each member stops one way, so the frame needs 5 members. The supports take moves away, they don't add any." }
+    check:
       type: answer
       q: "A frame has 8 joints, on a pin and a roller. How many members does it need to be rigid with none spare?"
       answer: "13"

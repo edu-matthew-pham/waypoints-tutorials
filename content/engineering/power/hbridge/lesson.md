@@ -69,7 +69,9 @@ tasks:
 stage: investigate
 insight: "Reading the driver's three signals in a sketch models the move in code. Sam's PWM on a direction pin is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check: { type: number, q: "ENA takes 0 to 255, and 255 is full speed. What number gives 80% of full speed? (nearest whole number)", answer: 204, tolerance: 1, feedback: [[80, "That's 80 out of 100. ENA's scale tops out at 255."]], explain: "0.8 × 255 = 204. Speed is a number on ENA; the direction pins aren't part of it." }
+    check:
       type: question
       q: "IN1 on pin 8, IN2 on pin 7, ENA on pin 9. Which lines make the motor go backwards at three-quarter speed?"
       options: ["digitalWrite(8, LOW); digitalWrite(7, HIGH); analogWrite(9, 191);", "digitalWrite(8, HIGH); digitalWrite(7, LOW); analogWrite(9, -191);", "analogWrite(8, 191); analogWrite(7, 0);", "digitalWrite(9, LOW); analogWrite(8, 191);"]

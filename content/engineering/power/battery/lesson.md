@@ -58,7 +58,9 @@ check: { type: board, text: "The PP3 is fitted. Note its run time, then try 4 ×
 stage: investigate
 insight: "Working run time from capacity and draw, then planning on 80%, models the move. Sam's 'more mAh is more powerful' is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check: { type: number, q: "A robot draws 300 mA from a 600 mAh battery, and you let it use all of it. How many hours does it run?", answer: 2, tolerance: 0.01, feedback: [[0.5, "That's current ÷ capacity. Hours come from how much charge there is shared out over how fast it's used."]], explain: "600 ÷ 300 = 2 hours. The task is the same sum, with 80% taken first and minutes at the end." }
+    check:
       type: number
       q: "A 1000 mAh LiPo powers a robot drawing 900 mA. Using only 80% of it, how many minutes does it last? (nearest whole minute)"
       answer: 53

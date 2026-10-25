@@ -60,7 +60,15 @@ tasks:
 stage: investigate
 insight: "Separating the two jobs (signal and power) and the one shared thing (ground) models the move. Sam's 'separate means unconnected' is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check:
+        type: question
+        q: "Pin 9 is at 5 V. The driver has to read that. Five volts above what?"
+        options: ["Above the Uno's GND, which is the 0 V the Uno measures from", "Above the ground under your feet", "Above whatever the driver's battery − happens to be", "Above the battery's +"]
+        answer: 0
+        feedback: [null, "Nothing in the circuit knows about the floor. A voltage is measured between two points of the circuit.", "That's the 0 V the driver measures from, and it only matches the Uno's if the two are joined.", "The + side has its own voltage and isn't the reference for a signal."]
+        explain: "The 5 V is measured from the Uno's GND. The driver measures from its own 0 V, so the two have to be the same point."
+    check:
       type: question
       q: "Which wires join the two halves of the circuit?"
       options: ["The signal wires (pin to driver) and one ground wire", "None: they must stay separate", "The Uno's 5V to the battery's +", "Only the signal wires"]

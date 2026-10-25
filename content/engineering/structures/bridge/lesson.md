@@ -79,7 +79,9 @@ tasks:
       answer: "1000"
       tolerance: 10
       explain: "8000 ÷ 2.83² = 8000 ÷ 8 = 1000 N."
-  - check:
+  - smaller:
+      check: { type: number, q: "A 4 m pushed member buckles at 500 N. Brace it at its middle and each half is 2 m. Using 8000 ÷ L², how many newtons can a 2 m half take?", answer: 2000, explain: "8000 ÷ 4 = 2000 N, up from 500 N. Compare the two numbers." }
+    check:
       type: question
       q: "A pushed member is cut in half by bracing it at its middle. How much bigger a push can each half take?"
       options: ["4 times", "2 times", "The same", "Half as much"]
