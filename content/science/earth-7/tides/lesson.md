@@ -78,12 +78,14 @@ tasks:
         - ["The sun and moon pull in line", "Spring tides"]
         - ["The sun pulls at right angles to the moon", "Neap tides"]
         - ["Smallest difference between high and low tide", "Neap tides"]
+    hint: ["For each one, think about where the moon is compared with the sun, and whether their pulls on the oceans would be working together or across each other.", "Move the moon through the month on the board and read the line under it, which names the kind of tide each time."]
   - check:
       type: question
       q: "Do spring tides happen only in spring?"
       options: ["No: they happen about every two weeks all year, at new and full moon ('spring' as in springing up)", "Yes, only in September to November", "Only in the Northern Hemisphere's spring", "Only once a year"]
       answer: 0
       feedback: [null, "Check the chart: two a month.", "Twice a month, every month.", "Twice a month, every month."]
+    hint: ["Count how many times the chart shows the biggest tides in one month.", "Then ask yourself whether anything on the chart depends on the time of year."]
   - check: { type: reflect, text: "I can explain tides with the moon's gravity, and when spring and neap tides happen." }
 ```
 
@@ -123,6 +125,7 @@ check:
   answer: 15
   tolerance: 1
   explain: "About 14.8 days: half the moon's 29.5-day cycle, from new moon to full moon."
+hint: "Look at where the biggest tides fall along the days axis, and count the gap between neighbouring ones."
 ```
 
 ## Elaborate: the best low tide
@@ -138,6 +141,7 @@ check:
   answer: 0
   feedback: [null, "Quarter moons give neap tides: the smallest range, so the lows are not very low.", "The chart shows the range changes through the month.", "In the bulge model, the moon overhead puts your coast under a bulge: high tide, not low."]
   explain: "Many coastal First Nations communities have long timed fishing and gathering by the moon and tides; ask local knowledge holders about your own coast."
+hint: ["Which tides have the biggest range, and what does that mean for how low the water gets?", "Check the chart for which moon phases go with the lowest lows."]
 ```
 
 ## Evaluate: look back

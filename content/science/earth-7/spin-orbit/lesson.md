@@ -64,24 +64,27 @@ tasks:
       q: "Rotation (spinning) or revolution (orbiting)?"
       options: ["Rotation", "Revolution"]
       items:
-        - ["Takes about 24 hours", "Rotation"]
+        - ["Takes about a day", "Rotation"]
         - ["Takes about 365¼ days", "Revolution"]
         - ["Causes day and night", "Rotation"]
         - ["The sun seems to rise in the east", "Rotation"]
         - ["Goes through the seasons once", "Revolution"]
         - ["Different stars are in the night sky in June and December", "Revolution", "Night faces a different part of space as we go round the sun."]
+    hint: ["For each one, ask whether it repeats every day or only shows up as the Earth gets a long way round the sun.", "If you're not sure, press Play a day or Play a year on the board and see which one it shows up in."]
   - check:
       type: number
-      q: "About how many times does the Earth spin in one trip round the sun?"
+      q: "About how many sunrises (days) fit into one trip of the Earth round the sun?"
       answer: 365
       tolerance: 1
-      explain: "About 365¼ times, which is why we add a leap day every four years."
+      explain: "About 365¼ days, which is why we add a leap day every four years. (Counted against the stars the Earth turns once more than that, because it has also moved round the sun.)"
+    hint: ["How long did Play a day take on the board compared with Play a year?", "The board keeps count of the days you've played, so you can see how many days fit into one year."]
   - check:
       type: question
       q: "During Play a year, what did the Earth's axis do?"
       options: ["It kept pointing the same way in space, so sometimes the north end leans towards the sun and sometimes away", "It always leaned towards the sun", "It flipped over at midyear", "It stood straight up"]
       answer: 0
       feedback: [null, "Watch the N line in December and June: it points the same way, but the sun is on the other side.", "It never flips.", "It is tilted 23.4°."]
+    hint: ["Which way did the white N line point in December, and which way in June?", "Use the Date slider to jump to those two dates and compare the line with the edges of the picture, not with the sun."]
   - check: { type: reflect, text: "I can explain the difference between rotation and revolution and what each one causes, and describe the tilted axis." }
 ```
 
@@ -107,6 +110,7 @@ check:
   options: ["Sunset gets later until early January, then earlier until mid-June, then later again: a yearly cycle", "Sunset is at the same time every day", "Sunset is latest in June and earliest in December", "Sunset changes randomly"]
   answer: 0
   feedback: [null, "Use the date slider: daylight hours change with the date.", "That's the Northern Hemisphere pattern. In Canberra the long summer evenings come in December and January.", "The pattern repeats every year."]
+hint: ["Think about how the hours of daylight in Canberra change across the year, and what that does to when the sun sets.", "Move the Date slider through the year and watch the daylight hours on the board."]
 ```
 
 ## Elaborate: different places
@@ -124,6 +128,7 @@ tasks:
       options: ["Davis station: the sun doesn't set at all", "Darwin", "Canberra", "They are all 12 hours"]
       answer: 0
       feedback: [null, "Darwin is closest to the equator, where day length changes least.", "Try Hobart and Davis station.", "Only on two days a year (the equinoxes) are they all close to 12 hours."]
+    hint: ["Think about which of these places gets the most sunshine on that date, and what the tilt does to a place near the pole.", "Set the board to that date and switch between the places to compare their hours of daylight."]
 ```
 
 ### Three places
@@ -142,5 +147,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 **Revision summary**
 
 - **Rotation:** the Earth spins on its axis once a day: day and night.
-- **Revolution:** the Earth goes round the sun once a year (about 365¼ days, about 365 spins).
+- **Revolution:** the Earth goes round the sun once a year (about 365¼ days, so about 365 sunrises).
 - The **axis is tilted 23.4°** and always points the same way in space, so each hemisphere leans towards the sun for half the year.

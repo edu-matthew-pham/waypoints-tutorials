@@ -65,12 +65,14 @@ tasks:
       options: ["About 5 million km closer", "About 5 million km farther", "The same distance", "Twice as close"]
       answer: 0
       feedback: [null, "Check the distance on the board: about 147 in December and 152 in June.", "The orbit is nearly a circle, but not quite.", "Nowhere near: the orbit is almost a circle."]
+    hint: ["What does the board say the distance is in late December, and what does it say in late June?", "The line under the board gives the distance in millions of kilometres, so you can compare the two numbers."]
   - check:
       type: question
       q: "If distance caused seasons, what would be true?"
       options: ["Both hemispheres would have summer at the same time", "Australia would have summer in December", "Seasons would be opposite in the two hemispheres", "Nothing would change"]
       answer: 0
       feedback: [null, "Australia does have summer in December, but so would London if distance caused it.", "That's what really happens, and distance can't explain it.", "Distance changes would affect the whole Earth at once."]
+    hint: "Think about what a change in the Earth's distance from the sun would do to everyone on Earth at the same time, and compare that with what London and Canberra really do in December."
   - check:
       type: sort
       q: "Which go with Canberra's summer, and which with its winter?"
@@ -81,6 +83,7 @@ tasks:
         - ["About 9½ hours of daylight", "Winter"]
         - ["Sunlight hits the ground at a low angle, spread over a bigger area", "Winter"]
         - ["About 14½ hours of daylight", "Summer"]
+    hint: ["For each one, ask whether it's about how long the sun is up, how high it climbs, or how the Earth is leaning, and whether that makes Canberra warmer or cooler.", "If you're unsure about one, set the Date slider to late December and then late June and see which it matches."]
   - check: { type: reflect, text: "I can explain seasons using tilt, sun height and day length, and explain why distance can't be the cause." }
 ```
 
@@ -122,6 +125,7 @@ tasks:
       options: ["The Northern Hemisphere leans towards the sun in June, and the Southern Hemisphere leans away", "London is closer to the sun", "London is nearer the equator", "The sun is bigger in London"]
       answer: 0
       feedback: [null, "Both cities are the same distance from the sun.", "London is farther from the equator than Canberra.", "It's the same sun."]
+    hint: ["Both cities are the same distance from the sun on 22 June, so what could be different about how each one is facing it?", "Look at the side view on the board for each hemisphere, and at the hours of daylight for each city."]
 ```
 
 ### Same date
@@ -143,6 +147,7 @@ tasks:
       options: ["They disappear: about 12 hours of daylight and the same noon sun all year", "They get stronger", "They swap", "Nothing changes"]
       answer: 0
       feedback: [null, "Check the daylight at three dates.", "Try a bigger tilt for stronger seasons.", "Look again: the daylight stops changing."]
+    hint: ["With the tilt gone, what would make one month different from another?", "Set the tilt to 0° and slide the date through the year, watching the daylight hours and the noon sun in the line under the board."]
   - check:
       type: question
       q: "In Kakadu, Bininj people recognise six seasons, marked by changes in rain, wind, plants and animals, rather than four. Why can both systems be useful?"

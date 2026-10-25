@@ -66,6 +66,7 @@ tasks:
       answer: 0
       feedback: [null, "Both arrows were there: push forward, friction back.", "If the push were bigger, the box would speed up: check the graph."]
       explain: "Balanced forces: equal and opposite. They are both still acting; they cancel out."
+    hint: ["Think back to the graph when you found the steady speed. What was it doing, and what were the push and friction arrows doing at that moment?", "Look at the arrows on the board while the speed is steady, and ask whether either one has gone."]
   - check:
       type: sort
       q: "What happens with each net force? (The box is already moving to the right.)"
@@ -75,6 +76,7 @@ tasks:
         - ["Push 6 N, friction 6 N", "Steady speed"]
         - ["Push 2 N, friction 6 N", "Slows down"]
         - ["Push 12 N, friction 6 N", "Speeds up"]
+    hint: ["Compare the push with the friction for each one, and ask which is left over and which way it points.", "If you're not sure, set that push on the Explore board and watch the speed-time graph."]
   - check:
       type: sort
       q: "Balanced or unbalanced?"
@@ -122,6 +124,7 @@ insight: "A vertical case with motion (falling at a steady speed) tests whether 
 try: { playground: board, starter: "boards.yml#skydiver", height: 560 }
 tasks:
   - check: { type: board, text: "A skydiver and her gear, 100 kg (weight 980 N), fall at a steady speed. Set the air resistance.", when: "A = 980" }
+    hint: ["Think about the box that kept a steady speed, and what its forces were doing at that time.", "Her weight is shown as an arrow, so slide the air resistance and let the line under the board tell you what her forces are doing."]
   - check:
       type: question
       q: "Her forces are balanced. Is she still falling?"
@@ -129,6 +132,7 @@ tasks:
       answer: 0
       feedback: [null, "Balanced forces don't stop motion; they stop it changing.", "Speeding up needs a net force downwards."]
       explain: "This steady speed is her terminal velocity: weight and air resistance cancel, so her speed stays the same."
+    hint: "Think back to the box on the track when its forces balanced, and what the graph and the dots did then."
 ```
 
 ### Set the air resistance
@@ -144,6 +148,7 @@ insight: "Making the box stop with friction connects unbalanced forces to slowin
 try: { playground: board, starter: "boards.yml#stop", height: 640 }
 tasks:
   - check: { type: board, text: "Make the moving box slow down and stop.", when: "t >= 1 and v = 0" }
+    hint: ["Which of the two forces on the box would have to be bigger for its speed to fall?", "The line under the board tells you the net force and which way it points, and the graph shows what the speed does when you change the push."]
   - check:
       type: question
       q: "Once the box has stopped, with a push of 2 N, the friction is shown as 2 N, not 6 N. Why?"
@@ -151,6 +156,7 @@ tasks:
       answer: 0
       feedback: [null, "There is still friction: it matches the push so the box stays put.", "Push gently on a heavy box that doesn't move: friction matches your push."]
       explain: "A stationary object's friction matches the push, up to a limit (6 N here). Beyond that, the object starts sliding."
+    hint: ["Picture pushing gently on a heavy box that doesn't budge. Is the friction on it bigger than your push, or not?", "With the box stopped, slide the push on the board and watch what the friction arrow does."]
 ```
 
 ### Stop it

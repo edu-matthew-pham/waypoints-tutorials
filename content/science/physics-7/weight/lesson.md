@@ -72,25 +72,29 @@ tasks:
         - ["A force, pulling towards the planet", "Weight"]
         - ["How much matter an object has", "Mass"]
         - ["Changes if g changes", "Weight"]
+    hint: ["For each one, ask whether it's about how much stuff there is, or about how hard gravity pulls on it.", "If you're stuck, ask yourself whether it would change on the Moon, like you saw on the board."]
   - check:
       type: number
       q: "A 5 kg bag on Earth (g = 9.8 N/kg). What is its weight, in N?"
       answer: 49
       tolerance: 0.1
       explain: "Weight = mass × g = 5 × 9.8 = 49 N."
+    hint: ["What did the line under the board say that mass, g and weight have to do with each other?", "Put the numbers from the question into that, and remember the answer is a force."]
   - check:
       type: number
       q: "The same 5 kg bag on Mars (g = 3.7 N/kg). Its weight, in N?"
       answer: 18.5
       tolerance: 0.1
       explain: "5 × 3.7 = 18.5 N. Same mass, smaller weight."
+    hint: "It's the same bag, so which of mass, g and weight stays the same and which one changes when you move it to Mars?"
   - check:
       type: question
       q: "Why is the astronaut's weight smaller on the Moon?"
       options: ["The Moon has much less mass than Earth, so its gravity pulls less (smaller g)", "There is no air on the Moon", "She has less mass there", "The Moon is further from the Sun"]
       answer: 0
       feedback: [null, "Air doesn't cause weight: things weigh the same in a vacuum chamber on Earth.", "Her mass hasn't changed: same matter.", "Distance from the Sun isn't it; the Moon's own gravity is."]
-      explain: "Gravity depends on mass. The Moon has about 1/80 of Earth's mass, so its g is only 1.6 N/kg."
+      explain: "Gravity depends on mass. The Moon has about 1/80 of Earth's mass, and it's also much smaller, which together make its g only 1.6 N/kg."
+    hint: ["Think about what brings an astronaut back down after a jump on the Moon.", "Weight is what a planet's gravity does to her, so ask what is different about the Moon compared with Earth."]
   - check: { type: reflect, text: "I explained the difference between mass and weight, with units, and showed how to work out weight." }
 ```
 
@@ -136,6 +140,7 @@ tasks:
       answer: 0
       feedback: [null, "Its mass stays the same; its weight is what changes.", "Weight depends on g: 24.8 N/kg on Jupiter, 3.7 N/kg on Mars."]
       explain: "24.8 ÷ 3.7 ≈ 6.7, so its weight would be nearly seven times bigger."
+    hint: ["Compare g for Mars and for Jupiter on the board and ask how many times bigger one is than the other.", "The rover itself isn't changing, so ask which of its properties does change."]
 ```
 
 ### Weigh the rover
@@ -155,6 +160,7 @@ check:
   answer: 0
   feedback: [null, "On Earth air slows the feather; on the Moon there's no air.", "With no air, there's nothing to make it float."]
   explain: "The heavier hammer is pulled harder, but it also has more mass to get moving, so both speed up at the same rate. Air resistance is what makes feathers fall slowly on Earth."
+hint: "Think about why a feather drifts down slowly on Earth, and whether that still applies on the Moon."
 ```
 
 ## Evaluate: look back

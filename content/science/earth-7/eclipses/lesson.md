@@ -75,18 +75,21 @@ tasks:
         - ["The Earth is between the sun and the moon", "Lunar eclipse"]
         - ["The moon's shadow falls on part of Earth", "Solar eclipse"]
         - ["The moon turns a dark red", "Lunar eclipse", "Sunlight bent through Earth's air reaches the moon and is reddened, like a sunset."]
+    hint: ["For each one, ask where the moon is compared with the Earth and the sun, and whether the shadow lands on Earth or on the moon.", "Think about which phase of the moon goes with each of those positions."]
   - check:
       type: match
       q: "Match each shadow to what you'd see from inside it."
       pairs:
         - ["Umbra", "The dark centre: the light source is completely blocked (a total eclipse)"]
         - ["Penumbra", "The outer part: the light source is partly blocked (a partial eclipse)"]
+    hint: "On the side view the shadow has a dark inner part and a lighter outer part, so think about how much of the sun you could still see from inside each one."
   - check:
       type: question
       q: "Why isn't there a solar eclipse at every new moon?"
       options: ["The moon's orbit is tilted about 5° to Earth's, so the moon usually passes above or below the line from the sun to the Earth", "The moon is too small", "The sun is sometimes too bright", "The moon moves too fast"]
       answer: 0
       feedback: [null, "It's just big enough to cover the sun when it's exactly in line.", "Brightness doesn't stop the shadow.", "Speed doesn't matter: the line-up does."]
+    hint: ["If the moon is between the sun and the Earth at every new moon, what else would have to be true for its shadow to land on Earth?", "Watch the side view as you step through the new moons, and see where the moon is compared with the plane of Earth's orbit."]
   - check: { type: reflect, text: "I can state the conditions for solar and lunar eclipses, describe the umbra and penumbra, and explain why eclipses don't happen every month." }
 ```
 
@@ -129,6 +132,7 @@ tasks:
       options: ["At every new moon and every full moon", "About twice a year", "Never", "Only in summer"]
       answer: 0
       feedback: [null, "Look at the log: every one.", "That's the real, tilted orbit.", "Every line-up gave one."]
+    hint: "Read down the log under the board and see what it says for each new moon and each full moon."
 ```
 
 ### Flat orbit
@@ -148,6 +152,7 @@ check:
   answer: 0
   feedback: [null, "Size matters for total or annular, not for when.", "Not needed to predict them.", "Those dates tell you when a line-up is possible, but not whether the moon passes above, below or through the line."]
   explain: "Long records let people find patterns (like the 18-year saros cycle) even without the model; the 3D model explains why the pattern exists."
+hint: ["Think about what the dates of new and full moons tell you, and what they leave out.", "Look at the side view and ask what has to be true about where the moon is, besides the date, for its shadow to reach Earth."]
 ```
 
 ## Evaluate: look back

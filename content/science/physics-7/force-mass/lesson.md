@@ -60,6 +60,7 @@ tasks:
       answer: 0
       feedback: [null, "More mass means more resistance to a change in motion.", "On the board, doubling the mass from 2 kg to 4 kg halved the acceleration: mass matters."]
       explain: "For the same force, the smaller mass accelerates more."
+    hint: ["Which would be easier to get moving with the same push, a small trolley or a loaded one?", "Look back at what happened to the acceleration when you doubled the mass on the board."]
   - check:
       type: question
       q: "Which statement is right?"
@@ -72,11 +73,13 @@ tasks:
       q: "Same trolley, 2 kg. Pushing with 2 N gives 1 m/s², 4 N gives 2 m/s², 6 N gives 3 m/s². What acceleration would 10 N give (m/s²)?"
       answer: 5
       explain: "The acceleration goes up by the same amount for each extra newton: 10 N gives 5 m/s²."
+    hint: ["Look at how much the acceleration goes up each time the push goes up by 2 N.", "Then think about how many steps like that it is from 6 N to 10 N."]
   - check:
       type: number
       q: "Same push of 8 N. A 1 kg trolley accelerates at 8 m/s², 2 kg at 4 m/s², 4 kg at 2 m/s². What acceleration would 8 kg give (m/s²)?"
       answer: 1
       explain: "Each time the mass doubles, the acceleration halves: 8 kg gives 1 m/s²."
+    hint: ["What happens to the acceleration each time the mass goes up?", "Check your idea against the 1 kg to 2 kg step and the 2 kg to 4 kg step, and see if it holds for both."]
   - check: { type: reflect, text: "I can say how force and mass affect acceleration, and read the pattern from data." }
 ```
 
@@ -99,7 +102,7 @@ stage: practise
 insight: "Acceleration needs an unbalanced force, so the effect of a net force on motion comes back before force and mass are compared."
 check:
   type: question
-  q: "Looking back at unbalanced forces: a box slides to the right. Friction pulls it left with 6 N and nothing pushes it. What does the box do?"
+  q: "Looking back at unbalanced forces: a box slides to the right. Friction acts on it towards the left with 6 N and nothing pushes it. What does the box do?"
   options: ["It slows down", "It keeps sliding at a steady speed", "It speeds up to the right", "It stops straight away"]
   answer: 0
   feedback: [null, "A steady speed needs balanced forces. Here friction is not balanced by anything.", "The net force points left, against the motion, so it cannot speed up to the right.", "The net force changes the speed gradually. The box slows down first."]
@@ -115,6 +118,7 @@ insight: "Choosing the force to hit a target acceleration for a given mass uses 
 try: { playground: board, starter: "boards.yml#adjust", height: 640 }
 tasks:
   - check: { type: board, text: "The trolley is 5 kg. Set the push so the acceleration is 2 m/s².", when: "m = 5 and a = 2" }
+    hint: ["If the acceleration comes out too small, will you want more push or less?", "Slide the push and read the acceleration under the board each time, until it lands where you want it."]
   - check:
       type: question
       q: "You change the mass to 10 kg and keep the same push. What must happen to the acceleration?"
@@ -122,6 +126,7 @@ tasks:
       answer: 0
       feedback: [null, "More mass, less acceleration.", "The push is the same, but now there is twice as much mass to speed up."]
       explain: "Doubling the mass halves the acceleration for the same push."
+    hint: "Think about what happened to the acceleration when you doubled the mass from 2 kg to 4 kg."
 ```
 
 ### The push you need
@@ -141,6 +146,7 @@ check:
   answer: 0
   feedback: [null, "Less mass means more acceleration.", "The mass changes, so the acceleration does."]
   explain: "The same force on a smaller mass gives a bigger acceleration. This is one reason rockets are built in stages that fall away."
+hint: "Think about the loaded and empty trolleys, and which way a rocket's mass is going as it burns fuel."
 ```
 
 ## Evaluate: look back

@@ -63,24 +63,28 @@ tasks:
       type: parsons
       code: "phases.txt#order"
       text: "Put the phases in order, starting from new moon."
+    hint: ["After new moon, is the lit part of the moon growing or shrinking, and what happens once it gets to full?", "If you get stuck, go back to the Explore board and press Next phase to watch the names go by."]
   - check:
       type: question
       q: "At first quarter, where is Earth's shadow?"
-      options: ["Pointing away from the sun, nowhere near the moon: half the moon is dark only because we see half of its lit side", "Covering half the moon", "Covering the whole moon", "In front of the sun"]
+      options: ["Pointing away from the sun, nowhere near the moon: the lit half of the moon is always there, and what changes is how much of it we can see", "Covering half the moon", "Covering the whole moon", "In front of the sun"]
       answer: 0
       feedback: [null, "Turn the shadow on with the moon at first quarter: it is far away.", "That's the shadow explanation; the board shows otherwise.", "The shadow always points away from the sun."]
+    hint: ["Which way does Earth's shadow point, and where is the moon when it's at first quarter?", "Turn Show Earth's shadow on, take the moon to first quarter, and see how close the shadow gets."]
   - check:
       type: question
       q: "At full moon, where is the moon?"
       options: ["On the far side of the Earth from the sun, so we see its whole lit half", "Between the Earth and the sun", "At a right angle to the sun", "Closest to the sun"]
       answer: 0
       feedback: [null, "That's new moon: we see only the dark half.", "That's a quarter moon.", "It's the farthest from the sun of any phase."]
+    hint: ["At full moon we see the whole lit half, so where does the moon have to be for the side facing the sun to be the side facing us?", "Drag the moon to full moon on the board and see where it ends up compared with the Earth and the sun."]
   - check:
       type: question
       q: "In a lunar eclipse, a full moon goes dark and reddish for an hour or two. How is that different from the moon's phases?"
       options: ["An eclipse is Earth's shadow falling on the moon, only at some full moons; the phases come from how much of the lit half we see, every month", "There is no difference: a lunar eclipse is just a very dark phase", "A lunar eclipse happens at new moon, when the moon is dark", "An eclipse is the moon going through all its phases in an hour"]
       answer: 0
       feedback: [null, "Phases happen every month with no shadow involved; an eclipse needs Earth's shadow to fall on the moon, which is rare.", "New moon is a phase: we see the unlit half. A lunar eclipse needs a full moon, with the Earth between the sun and the moon.", "The phases take about 29.5 days; in an eclipse, Earth's shadow moves across a full moon."]
+    hint: ["Which of the two needs Earth's shadow to land on the moon, and how often does that happen?", "Think about the Show Earth's shadow button, and how close the shadow got to the moon in most of the phases."]
   - check: { type: reflect, text: "I can sequence the eight phases and explain them by the moon's position, not Earth's shadow." }
 ```
 
@@ -103,11 +107,11 @@ stage: practise
 insight: "The moon's month is easier to picture next to the Earth's own spin and year, which this question brings back."
 check:
   type: question
-  q: "Looking back at spinning and orbiting: about how many times does the Earth spin during one trip round the sun?"
+  q: "Looking back at spinning and orbiting: about how many days (sunrises) happen during one trip round the sun?"
   options: ["About 365", "Once", "About 12", "About 24"]
   answer: 0
-  feedback: [null, "The Earth spins once a day, and a trip round the sun takes a year.", "12 is about the number of months, not the number of spins.", "24 is the number of hours in one spin."]
-  explain: "One spin is a day and a trip round the sun is about 365¼ days, so the Earth spins about 365 times each year."
+  feedback: [null, "A day is about one spin, and a trip round the sun takes a year.", "12 is about the number of months, not the number of days.", "24 is the number of hours in one day."]
+  explain: "One spin is a day and a trip round the sun is about 365¼ days, so there are about 365 days, and about 365 sunrises, each year."
 ```
 
 ## Practise: name the phase
@@ -117,6 +121,7 @@ stage: practise
 insight: "Predicting the phase from a position, many times with feedback, makes the model reliable."
 try: { playground: board, starter: "boards.yml#quiz", height: 640 }
 check: { type: board, text: "Name the phase correctly for five moons.", when: "c >= 5" }
+hint: ["Look at where the moon is compared with the sun, and which side of it faces us.", "If you get one wrong, read the line under the board before you press Next moon, because it tells you what to look for."]
 ```
 
 The moon is placed for you and the view from Earth is hidden. Where is it compared with the sun? Name the phase.
@@ -133,6 +138,7 @@ check:
   answer: 30
   tolerance: 1
   explain: "About 29.5 days later: 30 or 31 March."
+hint: ["The moon goes through all its phases between one full moon and the next.", "Take the moon once all the way round on the Explore board and watch how many days after new moon it has been."]
 ```
 
 ## Elaborate: the view from Japan
@@ -148,6 +154,7 @@ check:
   options: ["People in the Northern Hemisphere see the moon 'upside down' compared with us, so left and right swap", "Japan sees a different moon", "The moon's phase is different in Japan", "It's lit on the left everywhere"]
   answer: 0
   feedback: [null, "Everyone sees the same moon.", "The phase is the same everywhere on the same night: only the way up changes.", "Compare this board with the first one."]
+hint: ["You and someone in Japan are looking at the same moon on the same night, so what's different about where you're each standing?", "Compare this board with the one from Explore and see what has changed in the picture of the moon from Earth."]
 ```
 
 ## Evaluate: look back

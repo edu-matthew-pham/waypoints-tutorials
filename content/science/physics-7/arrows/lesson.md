@@ -82,6 +82,7 @@ tasks:
       answer: 0
       feedback: [null, "Equal forces get equal arrows.", "The ground pushes up: support always points away from the surface."]
       explain: "Equal sizes, equal lengths. Weight points down; the support from the ground points up."
+    hint: ["If two forces are exactly the same size, how would you show that in a drawing?", "And think about which way the ground pushes back on something sitting on it, then check the Support arrow on the trolley board."]
   - check: { type: reflect, text: "I can say what an arrow's length and direction show, and name the forces on the trolley." }
 ```
 
@@ -104,10 +105,13 @@ try: { playground: board, starter: "boards.yml#book", height: 560 }
 tasks:
   - starter: "boards.yml#book"
     check: { type: board, text: "A 5 kg pile of books rests on a table (its weight is 5 × 9.8 = 49 N). Set the table's push so the diagram is right.", when: "N = 49" }
+    hint: ["The books aren't sinking into the table or lifting off it, so what must the table's push be doing compared with their weight?", "Slide the table's push and keep an eye on the line under the board, which tells you when the forces on the books balance."]
   - starter: "boards.yml#tug"
     check: { type: board, text: "In a tug of war, Team A pulls with 300 N and Team B with 300 N. Set both pulls.", when: "L = 300 and R = 300" }
+    hint: ["Team A's pull is already set, so think about what the two arrows would have to look like for neither team to win.", "Slide Team B's pull and watch the line under the board, which tells you when the rope isn't being pulled either way."]
   - starter: "boards.yml#skydiver"
     check: { type: board, text: "A 50 kg skydiver (weight 490 N) has reached a steady speed: air resistance now equals her weight. Set it.", when: "A = 490" }
+    hint: "Her weight is already worked out and drawn as an arrow, so slide the air resistance until its arrow and the line under the board say the forces on her are balanced."
 ```
 
 ### A book on a table
@@ -134,6 +138,7 @@ check:
     - ["A sled slowing down on flat snow", "Backward arrow longer than forward arrow"]
     - ["A box being pushed but not moving", "Forward and backward arrows equal", "Friction matches the push."]
     - ["A runner speeding up out of the blocks", "Forward arrow longer than backward arrow"]
+hint: "For each one, ask whether it is speeding up, slowing down or staying at the same speed, and what the forward and backward forces would have to be doing to make that happen."
 ```
 
 ## Elaborate: a boomerang
@@ -149,6 +154,7 @@ check:
   answer: 0
   feedback: [null, "Nothing pushes it forward once it leaves the hand: it keeps moving because it was thrown. The shape makes the air push on it.", "Weight depends only on mass and gravity, not on shape."]
   explain: "The aerofoil shape makes the air push on it: lift. Spinning, the lift tilts the boomerang so it curves back. Its force diagram: weight down, lift, and air resistance against its motion."
+hint: ["Think about what a wing does to the air going over it, and what the air then does to the wing.", "Once the boomerang has left the hand, ask what is still touching it."]
 ```
 
 ## Evaluate: look back
