@@ -1,0 +1,14 @@
+# Practice for "Change a, h and k in a curve".
+templates:
+  - q: "For $y = (x - {h})^2 + {k}$, what is the $x$-coordinate of the turning point?"
+    vars: { h: "1..9", k: "1..9" }
+    answer: "{h}"
+    explain: "x − {h} = 0 at x = {h}."
+  - q: "For $y = (x + {h})^2 + {k}$, what is the $x$-coordinate of the turning point?"
+    vars: { h: "1..9", k: "1..9" }
+    answer: "-{h}"
+    explain: "x + {h} = 0 at x = −{h}."
+  - q: "For $y = (x - {h})^2 + {k}$, what is the $y$-coordinate of the turning point?"
+    vars: { h: "1..9", k: "1..9" }
+    answer: "{k}"
+    explain: "The turning point is ({h}, {k})."

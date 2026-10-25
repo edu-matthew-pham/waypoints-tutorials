@@ -1,0 +1,13 @@
+# Boards for "Change a, h and k in a curve".
+
+# region: run
+widget: graph
+x: -8, 8
+y: -5, 8
+grid: 1, 1
+axes: x, y
+slider a: -2, 2, 1, 0.5
+slider h: -5, 5, 0, 1
+slider k: -4, 6, 0, 1
+plot: y = a (x - h)^2 + k
+# endregion

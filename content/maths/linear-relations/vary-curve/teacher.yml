@@ -1,0 +1,34 @@
+summary: "Students change a, h and k in y = a(x − h)² + k and say what each controls (AC9M9A06, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can read the turning point from the rule.
+  - I can say what a does.
+  - I can write a rule for a given peak.
+struggle: "The sign inside the bracket. Ask: what x makes the bracket zero?"
+before: |
+  Students need Graph a quadratic and Change a and b in a line.
+
+  The one idea: the turning point is (h, k). The sign of h flips because the bracket is zero at the turning point.
+
+  The ball rule is made up for the task.
+running:
+  - "Predict: show of hands before the board."
+  - "Paper: the greatest-height question in Make is worked on paper first."
+stuck:
+  - see: "A student says (x + 3)² turns at x = 3."
+    ask: "What x makes x + 3 zero?"
+    fix: "x = −3."
+stretch: "Write a rule for a ball that peaks at (3, 10) and lands at t = 0."
+support: "A printed worked example with both brackets."
+leads: |
+  Continues AC9M9A06 node 2.
+
+  Where it leads: Solving problems with these rules.
+exit:
+  q: "What is the turning point of y = (x − 1)² + 4?"
+  a: "(1, 4)."
+explain: |
+  In y = a(x − h)² + k the turning point is (h, k). A negative a gives a peak.
+
+  The bracket must be zero at the turning point, so the sign of h flips.

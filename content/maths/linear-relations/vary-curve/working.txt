@@ -1,0 +1,8 @@
+# Lee's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lee
+y = (x + 3)^2 + 2
+Compare with y = a(x - h)^2 + k.
+The bracket has +3, so h = 3.
+The turning point is (3, 2).
+# endregion
