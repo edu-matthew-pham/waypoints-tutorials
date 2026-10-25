@@ -21,9 +21,14 @@ on:
       minutes:
         description: Minutes to spend drawing pictures (a sample, not all of them)
         default: "15"
+      publish_branch:
+        description: "Also push the built micro:bit editor to the orphan branch makecode-editor (build-time use only; leave off until the comparison with the live site looks right)"
+        type: boolean
+        default: false
 
+# Read only, except that the publish_branch input pushes the branch makecode-editor (never main or gh-pages).
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -241,6 +246,51 @@ jobs:
             note "pictures ${{ matrix.target }}: per-picture failures" "draws nothing: $(grep -c 'draws nothing' "$RUNNER_TEMP/pictures.log")"$'\n'"$(grep -E '^- makecode' "$RUNNER_TEMP/pictures.log" | grep -v 'draws nothing' | cut -c1-250 | head -n 12)"
           fi
           [ -f "$RUNNER_TEMP/serve.log" ] && note "pictures ${{ matrix.target }}: static server 404s" "$(grep '^404' "$RUNNER_TEMP/serve.log" | sort | uniq -c | sort -rn | head -30)"
+
+      # The built editor, for build-time use only (drawing block pictures). An orphan branch, so main's clones stay
+      # small; never merged into main and never copied to gh-pages. MIT code (pxt, pxt-microbit, pxt-common-packages);
+      # the MICROSOFT and MAKECODE names are trademarks, so this is an unmodified build for rendering, not a site.
+      - name: Push the editor to the makecode-editor branch
+        if: matrix.target == 'microbit' && inputs.publish_branch
+        run: |
+          SRC="$RUNNER_TEMP/pxt-target"; OUT="$RUNNER_TEMP/branch"
+          PK="$SRC/built/packaged"
+          big=$(find "$PK" -type f -size +95M | head -3)
+          [ -z "$big" ] || { echo "::error title=file over GitHub's 100 MB limit::$big"; exit 1; }
+          MB=$(du -sm "$PK" | cut -f1)
+          echo "::notice title=editor size::$MB MB; largest: $(find "$PK" -type f -printf '%s %P\n' | sort -rn | head -8 | awk '{printf "%d MB %s; ", $1/1048576, $2}')"
+          [ "$MB" -lt 800 ] || { echo "::error title=editor over 800 MB::trim it before pushing"; exit 1; }
+          mkdir -p "$OUT/editor"; cp -r "$PK/." "$OUT/editor/"
+          cp "$SRC/LICENSE.txt" "$SRC/THIRD-PARTY-NOTICES.txt" "$RUNNER_TEMP/serve.mjs" "$OUT/"
+          CORE=$(node -p "require('$SRC/node_modules/pxt-core/package.json').version")
+          SHA=$(git -C "$SRC" rev-parse --short HEAD)
+          cat > "$OUT/README.md" <<EOF
+          # MakeCode micro:bit editor, static build (build-time use only)
+
+          An unmodified \`pxt staticpkg\` build of microsoft/pxt-microbit, so the Waypoints build can draw MakeCode
+          block and simulator pictures without reaching makecode.com. Not a hosted editor: do not serve it as a site,
+          and never copy it to gh-pages. Students keep using makecode.com.
+
+          - pxt-microbit: $TAG ($SHA)
+          - pxt-core: $CORE
+          - built: $(date -u +%Y-%m-%d) by the workflow "MakeCode static editor (test)" in edu-matthew-pham/waypoints-tutorials
+          - licences: LICENSE.txt and THIRD-PARTY-NOTICES.txt (MIT, plus Apache 2.0 parts). MICROSOFT and MAKECODE are trademarks of Microsoft.
+          - micro:bit only: Arcade's simulator (microsoft/pxt-arcade-sim) is private, so Arcade cannot be built this way.
+
+          Use (from a clone of this branch at \`<dir>\`), from the Waypoints repo:
+
+          \`\`\`
+          node <dir>/serve.mjs <dir>/editor &      # port 8300; maps /--docs to docs.html, as MakeCode's own server does
+          MAKECODE_RENDER=http://localhost:8300 MAKECODE_EDITOR=http://localhost:8300/index.html WP_ONLY=makecode node tools/render-pictures.mjs
+          \`\`\`
+          EOF
+          cd "$OUT"
+          git init -q -b makecode-editor
+          git config user.name "github-actions"; git config user.email "actions@users.noreply.github.com"
+          git add -A; git commit -q -m "MakeCode micro:bit static editor: pxt-microbit $TAG, pxt-core $CORE"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git push -f origin makecode-editor 2>&1 | sed "s#x-access-token:[^@]*@##"
+          echo "::notice title=branch pushed::makecode-editor, $MB MB, pxt-microbit $TAG, pxt-core $CORE"
 
       - uses: actions/upload-artifact@v4
         if: always()
