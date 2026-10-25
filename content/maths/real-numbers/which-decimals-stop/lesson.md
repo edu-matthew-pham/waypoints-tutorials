@@ -28,13 +28,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "10/24" }
     - wait: 1500
 ---
-A terminating decimal is a fraction over 10, 100, 1000…: $0.175 = \frac{175}{1000}$. Since $10 = 2 \times 5$, those denominators are made only of 2s and 5s. So:
-
-1. Write the fraction in **simplest form**.
-2. Break the denominator into **prime factors**.
-3. Only 2s and 5s: it **terminates**. Any other prime (3, 7, 11…): it **recurs**.
-
-$\frac{7}{40}$: $40 = 2 \times 2 \times 2 \times 5$, so it terminates (0.175). $\frac{7}{30}$: $30 = 2 \times 3 \times 5$ has a 3, so it recurs (0.2333…).
+A terminating decimal is a fraction over 10, 100, 1000…: $0.175 = \frac{175}{1000}$. What does that tell you about the denominators that can give a decimal that stops?
 
 ## Predict: eleven fiftieths
 
@@ -48,7 +42,7 @@ check:
   actual: "It terminates: 50 = 2 × 5 × 5, only 2s and 5s. 11/50 = 22/100 = 0.22."
 ```
 
-Break 50 into primes.
+What is it about the bottom number that decides it?
 
 ## Run: test the rule
 
@@ -58,6 +52,14 @@ insight: "Trying many denominators with their prime factors shown connects 2s an
 try: { playground: board, starter: "divide.yml#run", height: 680 }
 check: { type: board, text: "Set 11/50 and check your prediction. Then try 11/30.", when: "a = 11 and b = 50", explain: "50 = 2 × 5²: only 2s and 5s, so 11/50 = 0.22." }
 ```
+
+The rule behind it: since $10 = 2 \times 5$, those denominators are made only of 2s and 5s. So:
+
+1. Write the fraction in **simplest form**.
+2. Break the denominator into **prime factors**.
+3. Only 2s and 5s: it **terminates**. Any other prime (3, 7, 11…): it **recurs**.
+
+$\frac{7}{40}$: $40 = 2 \times 2 \times 2 \times 5$, so it terminates (0.175). $\frac{7}{30}$: $30 = 2 \times 3 \times 5$ has a 3, so it recurs (0.2333…).
 
 ## Investigate: why 2s and 5s
 

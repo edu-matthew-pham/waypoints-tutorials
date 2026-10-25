@@ -79,7 +79,7 @@ tasks:
       explain: "Line 3: 2.4 does round to 2, but 2 tins hold only 2 L, not enough. Here she must round up: 3 tins."
   - check:
       type: number
-      q: "A car uses 7 L of petrol per 100 km. How many litres does a 350 km trip use?"
+      q: "A car uses 7 L of petrol per 100 km (made up for the task). How many litres does a 350 km trip use?"
       answer: 24.5
       tolerance: 0
       explain: "350 km is 3.5 lots of 100 km: 3.5 × 7 = 24.5 L."

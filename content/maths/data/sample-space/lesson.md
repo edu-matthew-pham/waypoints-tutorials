@@ -32,7 +32,7 @@ explainClip:
 - The **sample space** is the list of every possible outcome: a coin $\{H, T\}$, a dice $\{1, 2, 3, 4, 5, 6\}$.
 - An **event** is one or more of those outcomes, such as "an even number".
 - When the outcomes are **equally likely**, $P(\text{event}) = \dfrac{\text{favourable outcomes}}{\text{total outcomes}}$.
-- When they are not (a spinner with a bigger sector, a bag with more red counters), use the sizes or counts. Either way, the probabilities of all the outcomes add to 1.
+- The probabilities of all the outcomes add to 1.
 
 ## Predict: a third each?
 
@@ -61,6 +61,8 @@ check: { type: board, text: "Run at least 1000 spins. Is the relative frequency 
 ```
 
 The table lists the sample space, each outcome's probability, and what happened.
+
+When outcomes are **not** equally likely (a spinner with a bigger sector, a bag with more red counters), use the sizes or counts instead of dividing by the number of outcomes.
 
 ## Investigate: list, then count
 

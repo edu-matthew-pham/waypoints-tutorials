@@ -34,7 +34,7 @@ explainClip:
     - expect: { selector: "#gread", contains: "Temperature = 24 °C" }
     - wait: 1200
 ---
-A graph of real data pairs two measurements. Each point says: **when this one was measured, that one was measured**. To read a graph, first check the **axis labels**: what is measured across, and what is measured up. The data on these graphs are examples.
+A graph of real data pairs two measurements. Each point says: **when this one was measured, that one was measured**. To read a graph, first check the **axis labels**: what is measured across, and what is measured up. The data on these graphs are made up for the task.
 
 ## Predict: what does a point say?
 
