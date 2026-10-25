@@ -1,0 +1,32 @@
+summary: "Students set up a two-part rate model for walking time and use it (AC9M9M05, node 1)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can say what each part of a model adds.
+  - I can match each rate with its unit.
+  - I can calculate the walking time.
+struggle: "Mixing the units. Ask: is the climb a distance along the track or a height?"
+before: |
+  Students need Rates and ratios (Year 8).
+
+  The one idea: two rates, two units, add the times. Naismith's rule: about 5 km/h on level ground plus 1 hour per 600 m of ascent (bushwalk.com navigation FAQ, checked 25 October 2026). The track is made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the lookout walk in Make is worked on paper first."
+stuck:
+  - see: "A student adds the climb to the distance."
+    ask: "Is the climb how far you walk, or how high you go?"
+    fix: "How high. It has its own rate."
+stretch: "Find a local walk on a topographic map and use the rule."
+support: "A printed card with the two rates and their units."
+leads: |
+  Continues AC9M9M05 node 1.
+
+  Where it leads: Solving the model.
+exit:
+  q: "A track climbs 300 m. How long does the climb add by Naismith's rule?"
+  a: "0.5 hours."
+explain: |
+  Naismith's rule has two rates added together: time on the flat is distance ÷ 5 and time climbing is climb ÷ 600.
+
+  Match each part with its unit.

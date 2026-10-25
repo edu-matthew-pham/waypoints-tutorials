@@ -1,0 +1,7 @@
+# Kai's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kai
+The track is 8 km with a 450 m climb. The rule is 5 km/h plus 600 m per hour of climb.
+450 m is 0.45 km, so the distance is 8 + 0.45 = 8.45 km.
+Time = 8.45 ÷ 5 = 1.69 hours.
+# endregion
