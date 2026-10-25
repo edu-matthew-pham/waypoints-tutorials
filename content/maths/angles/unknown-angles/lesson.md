@@ -50,6 +50,8 @@ check:
   actual: "110°. c = 180° − 50° − 60° = 70° (angles in a triangle), then x = 180° − 70° = 110° (a straight line). Notice: 110° = 50° + 60°."
 ```
 
+<figure class="situation" role="img" aria-label="A triangle ABC with angle A marked 50 degrees and angle B marked 60 degrees. The side BC is extended past C. The outside angle x, between the extended line and side CA, is marked with a question mark."><svg viewBox="0 0 300 250" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M40 215 L240 215 L158.5 73.8 Z"/><line x1="240" y1="215" x2="128.5" y2="21.8"/><path d="M70 215 A30 30 0 0 0 59.3 192" stroke-width="1.2"/><path d="M210 215 A30 30 0 0 1 225 189" stroke-width="1.2"/><path d="M145.5 51.3 A26 26 0 0 0 141.8 93.7" stroke-width="1.2"/><text x="78" y="205" text-anchor="start" fill="currentColor" stroke="none">50°</text><text x="206" y="205" text-anchor="end" fill="currentColor" stroke="none">60°</text><text x="30" y="235" text-anchor="middle" fill="currentColor" stroke="none">A</text><text x="250" y="235" text-anchor="middle" fill="currentColor" stroke="none">B</text><text x="172" y="74" text-anchor="start" fill="currentColor" stroke="none">C</text><text x="114" y="66" text-anchor="end" fill="currentColor" stroke="none">x = ?</text></svg></figure>
+
 Two steps: which angle can you find first?
 
 ## Run: drag the triangle

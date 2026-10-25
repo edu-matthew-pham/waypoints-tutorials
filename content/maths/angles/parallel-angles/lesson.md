@@ -52,6 +52,8 @@ check:
   actual: "115°. Co-interior angles are not equal: they add to 180°, so e = 180° − 65° = 115°."
 ```
 
+<figure class="situation" role="img" aria-label="Two parallel lines, marked with arrows, crossed by a slanted line. c is the angle between the lines on the left of the crossing line at the top crossing, marked 65 degrees. e is the angle between the lines on the left of the crossing line at the bottom crossing, marked with a question mark."><svg viewBox="0 0 340 270" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="30" y1="80" x2="290" y2="80"/><line x1="30" y1="190" x2="290" y2="190"/><line x1="233.3" y1="30" x2="135.4" y2="240"/><path d="M250 80 l-6 -5 M250 80 l-6 5 M258 80 l-6 -5 M258 80 l-6 5" stroke-width="1.2"/><path d="M250 190 l-6 -5 M250 190 l-6 5 M258 190 l-6 -5 M258 190 l-6 5" stroke-width="1.2"/><path d="M188 80 A22 22 0 0 0 200.7 99.9" stroke-width="1.2"/><text x="178.7" y="101.1" text-anchor="end" fill="currentColor" stroke="none">c = 65°</text><path d="M168 170.1 A22 22 0 0 0 136.7 190" stroke-width="1.2"/><text x="136.6" y="169.7" text-anchor="end" fill="currentColor" stroke="none">e = ?</text></svg></figure>
+
 Corresponding and alternate angles are equal. Is a co-interior pair the same?
 
 ## Run: test it
@@ -150,6 +152,14 @@ tasks:
       feedback:
         - ["140", "g is not in the same place as a. Find e first, then use a straight line."]
       explain: "e = 140° (corresponding to a), then g = 180° − 140° = 40° (a straight line). Or: b = 40° (a straight line), f = 40° (corresponding), g = 40° (vertically opposite)."
+    smaller:
+      check:
+        type: question
+        q: "Which angle is the same size as $a$, and why?"
+        options: ["$e$: it's in the same place at the other crossing", "$c$: it's just below $a$ at the same crossing", "$f$: it's next to $e$"]
+        answer: 0
+        feedback: [null, "c and a are side by side on the crossing line. Together they make a straight line.", "f is next to e, so it's the other size."]
+        explain: "a and e are corresponding, so e is 140° too. Then g is one more step from e."
   - starter: "lines.yml#make"
     hint: ["h = 180° − t, so t = 50°.", "b is corresponding to f, and f is on a straight line with h."]
     check: { type: board, text: "Turn the crossing line until $h = 130^\\circ$. Work out $b$ first, then pick $h$ and $b$ to check.", when: "h = 130 and u = 2 and v = 8", explain: "f = 50° (a straight line with h), so b = 50° (corresponding)." }

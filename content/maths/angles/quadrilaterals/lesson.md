@@ -28,18 +28,7 @@ explainClip:
     - caption: { text: "It has every parallelogram property too.", say: "It has every property of a parallelogram too." }
     - wait: 1200
 ---
-A **quadrilateral** has four sides. Its name comes from its **properties**:
-
-| Name | Properties |
-|---|---|
-| **trapezium** | at least one pair of parallel sides |
-| **parallelogram** | two pairs of parallel sides (opposite sides equal) |
-| **rhombus** | four equal sides (so two pairs of parallel sides) |
-| **rectangle** | four right angles (so two pairs of parallel sides) |
-| **square** | four equal sides and four right angles |
-| **kite** | two pairs of equal sides next to each other |
-
-The board marks **parallel** sides with matching arrows, **equal** sides with matching ticks, and right angles with a small square. When a shape has every property of another, it belongs to that family too: a square is also a rectangle, a rhombus and a parallelogram.
+A **quadrilateral** has four sides. Its name comes from its **properties**: what is true about its sides and angles.
 
 ## Predict: square or rectangle?
 
@@ -65,6 +54,17 @@ check: { type: board, text: "Drag the corners to make a rectangle that is not a 
 ```
 
 Watch for the arrows (parallel sides), ticks (equal sides) and right-angle marks.
+
+| Name | Properties |
+|---|---|
+| **trapezium** | at least one pair of parallel sides |
+| **parallelogram** | two pairs of parallel sides (opposite sides equal) |
+| **rhombus** | four equal sides (so two pairs of parallel sides) |
+| **rectangle** | four right angles (so two pairs of parallel sides) |
+| **square** | four equal sides and four right angles |
+| **kite** | two pairs of equal sides next to each other |
+
+The board marks **parallel** sides with matching arrows, **equal** sides with matching ticks, and right angles with a small square. When a shape has every property of another, it belongs to that family too: a square is also a rectangle, a rhombus and a parallelogram.
 
 ## Investigate: a family of properties
 

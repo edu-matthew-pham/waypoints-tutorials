@@ -27,12 +27,6 @@ explainClip:
 ---
 An algorithm can decide whether two triangles are **congruent**, **similar** or **neither**. It looks at the parts that are known to be equal (or in the same ratio) and asks yes/no questions about them.
 
-Three things make it work:
-
-- **Order**: test congruence before similarity, because congruent triangles are similar too.
-- **Every case**: each test (SSS, SAS, ASA or AAS, RHS, and AA, SSS and SAS for similarity) has a path, and "not enough to tell" catches the rest.
-- **Testing**: run it on one pair of every kind, including SSA, which must not be called congruent.
-
 ## Predict: angles only
 
 ```step
@@ -55,6 +49,12 @@ check: { type: board, text: "Follow the algorithm for all six pairs of triangles
 ```
 
 Answer "yes" only when the description tells you the parts are equal. Open **The whole key** to see the algorithm as numbered steps.
+
+Three things make it work:
+
+- **Order**: test congruence before similarity, because congruent triangles are similar too.
+- **Every case**: each test (SSS, SAS, ASA or AAS, RHS, and AA, SSS and SAS for similarity) has a path, and "not enough to tell" catches the rest.
+- **Testing**: run it on one pair of every kind, including SSA, which must not be called congruent.
 
 ## Investigate: build and check it
 
@@ -185,8 +185,42 @@ tasks:
 stage: make
 insight: "Designing and testing their own algorithm shows whether they order the tests, cover every case and check it."
 try: { playground: board, starter: "keys.yml#better", height: 640 }
-hint: ["Start from the tests you know: SSS, SAS, ASA or AAS, RHS.", "Write one test pair of triangles for each answer, including SSA."]
-check: { type: reflect, text: "I wrote my own algorithm (a flowchart or numbered steps) that says congruent, similar or not enough to tell, tested it on one pair of every kind, and fixed what went wrong." }
+tasks:
+  - hint: ["One box for each question, A to F, with an arrow out for yes and one for no.", "Write the answer for the pair next to each box as you go."]
+    check:
+      type: reasoning
+      paper: true
+      q: "Draw the algorithm from the Run board on paper as a flowchart, questions A to F. Then follow this pair through it: both triangles have sides 6 cm and 8 cm, and a 30° angle opposite the 6 cm side. Where does the pair end up, and why?"
+      steps:
+        - ["A: all three pairs of sides equal? No.", "only two sides are known"]
+        - ["B: two pairs of sides equal, with the angle between them equal? No.", "the 30° angle is opposite the 6 cm side, so it is not between the 6 cm and 8 cm sides"]
+        - ["C: two pairs of angles equal? No.", "only one angle is known"]
+        - ["E: a right angle with equal hypotenuses? No.", "no right angle is given"]
+        - ["F: all three pairs of sides in the same ratio? No.", "the third side is not known"]
+        - ["It ends at 'Neither, or not enough to tell'.", "no test fits what is known, and the angle not being between the sides is why SAS fails"]
+      picks:
+        - step: 6
+          q: "Where does the pair end up, and why?"
+          options:
+            - "Not enough to tell: the angle is not between the two sides, so no test fits"
+            - "Congruent (SAS): two sides and an angle are equal"
+            - "Similar (AA): there is an angle that matches"
+            - "Congruent (SSS): the sides match"
+          answer: 0
+          feedback: [null, "SAS needs the angle between the two sides. Here it is opposite the 6 cm side.", "AA needs two pairs of angles. Only one angle is known.", "SSS needs all three pairs of sides. The third side is not known."]
+      criteria:
+        - "I drew a box for each question, with an arrow for yes and one for no."
+        - "I answered each question from what the pair says, not from what I could work out."
+        - "My pair ends at 'not enough to tell', and I can say why SAS fails."
+      explain: "No at A, B, C, E and F, so it reaches 'Neither, or not enough to tell'. Two sides and an angle are equal, but the angle is not between them, so it isn't SAS. This is the pair a weaker algorithm calls congruent."
+  - hint: ["Start from the tests you know: SSS, SAS, ASA or AAS, RHS.", "Write one test pair of triangles for each answer, including SSA."]
+    check: { type: reflect, text: "I wrote my own algorithm (a flowchart or numbered steps) that says congruent, similar or not enough to tell, tested it on one pair of every kind, and fixed what went wrong." }
 ```
+
+### Run the pair
+
+Draw the board's algorithm in your book, then follow the pair through it.
+
+### Your own algorithm
 
 Write an algorithm that sorts pairs of triangles into **congruent**, **similar** and **not enough to tell**. Draw it as a flowchart or write numbered steps. Swap with a partner: trace their algorithm on your test pairs, and describe in words how it works.

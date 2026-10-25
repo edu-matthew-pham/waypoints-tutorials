@@ -31,8 +31,6 @@ explainClip:
 ---
 A **rotation** turns a shape about a fixed point, the **centre of rotation**. To describe one, give the **centre**, the **angle** and the **direction** (clockwise or anticlockwise). The shape keeps its size and shape.
 
-About the origin, an anticlockwise turn of 90° changes $(x, y)$ to $(-y, x)$; 180° (a half turn) changes it to $(-x, -y)$; 270° changes it to $(y, -x)$.
-
 ## Predict: a quarter turn
 
 ```step
@@ -57,6 +55,8 @@ check: { type: board, text: "Turn the triangle 90° anticlockwise. Was your pred
 ```
 
 The black dot is the centre of rotation. The sliders turn the shape anticlockwise.
+
+About the origin, an anticlockwise turn of 90° changes $(x, y)$ to $(-y, x)$; 180° (a half turn) changes it to $(-x, -y)$; 270° changes it to $(y, -x)$.
 
 ## Investigate: how to turn a point
 

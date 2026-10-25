@@ -41,6 +41,19 @@ check:
   actual: "They stay the same. Doubling every side makes a bigger triangle of exactly the same shape."
 ```
 
+Picture the two triangles side by side, one twice the size of the other.
+
+## Run: scale a triangle
+
+```step
+stage: run
+insight: "Changing the scale factor shows every side multiplied by the same number and the shape unchanged."
+try: { playground: board, starter: "sim.yml#run", height: 600 }
+check: { type: board, text: "Make a copy with scale factor 2. Divide each copy side by its matching original side. Did the angles change, as you predicted?", when: "k = 2", explain: "6 ÷ 3, 8 ÷ 4 and 10 ÷ 5 all equal 2: the same scale factor, the same angles." }
+```
+
+Then try a scale factor less than 1. What happens to the copy?
+
 In an enlargement, every length is multiplied by the same **scale factor** $k$, and every angle stays the same. Congruent shapes are similar with $k = 1$.
 
 $$k = \frac{\text{copy length}}{\text{matching original length}}$$
@@ -54,17 +67,6 @@ Triangles are similar when any one of these holds:
 | **SAS** | two pairs of sides in the same ratio, and the angle between them equal |
 
 Translations, reflections and rotations move a shape without changing its size, so they make **congruent** shapes. An enlargement makes a **similar** shape.
-
-## Run: scale a triangle
-
-```step
-stage: run
-insight: "Changing the scale factor shows every side multiplied by the same number and the shape unchanged."
-try: { playground: board, starter: "sim.yml#run", height: 600 }
-check: { type: board, text: "Make a copy with scale factor 2. Divide each copy side by its matching original side. Did the angles change, as you predicted?", when: "k = 2", explain: "6 ÷ 3, 8 ÷ 4 and 10 ÷ 5 all equal 2: the same scale factor, the same angles." }
-```
-
-Then try a scale factor less than 1. What happens to the copy?
 
 ## Investigate: scale factors
 
@@ -172,6 +174,8 @@ tasks:
       feedback:
         - ["1", "That takes 5 away. The scale factor is 5 ÷ 10 = 0.5."]
       explain: "k = 0.5, so 6 × 0.5 = 3 cm. A scale factor less than 1 makes the copy smaller."
+    smaller:
+      check: { type: number, q: "Just the long side: what do you multiply 10 by to get 5?", answer: 0.5, tolerance: 0, explain: "10 × 0.5 = 5. Every side gets multiplied by that same number." }
   - check:
       type: question
       q: "A triangle is moved by a transformation, and its image is similar but not congruent. Which transformation was it?"

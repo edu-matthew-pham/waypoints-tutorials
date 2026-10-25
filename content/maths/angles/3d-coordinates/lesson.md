@@ -144,6 +144,8 @@ tasks:
       feedback:
         - ["15", "Floor 0 is the ground floor, so floor 4 is 4 floors up."]
       explain: "4 floors × 3 m = 12 m up."
+    smaller:
+      check: { type: number, q: "The ground floor is floor 0. How many floors up from the ground is floor 4?", answer: 4, tolerance: 0, explain: "Floor 4 is four floors above the ground floor. Each one is 3 m." }
   - check:
       type: question
       q: "Where are all the points with z = 0?"

@@ -229,6 +229,33 @@ tasks:
       answer: 0
       feedback: [null, "Whatever the order, some bird still reaches the last 'no' and gets a name it may not deserve.", "Bird-watchers will meet mynas. A key has to say when a bird is not in it.", "The trouble is not the first question; it is the last 'no'."]
       explain: "Every path must end in a right answer, and 'not in this key' is a right answer. For example, ask 'Bright blue on its head?' before naming a fairy-wren."
+  - hint: ["One box for each question. Draw an arrow out for yes and another for no.", "Write her answer next to each question as you go."]
+    check:
+      type: reasoning
+      paper: true
+      q: "Draw your fixed key on paper as a flowchart: the five questions, then 'Bright blue on its head?' before the fairy-wren, with 'not in this key' on its no. Now take a female superb fairy-wren, mostly brown, and follow her through. Where does she end up, and why?"
+      steps:
+        - ["Mostly black and white? No.", "she is mostly brown"]
+        - ["White with a yellow crest? No.", "she has no crest"]
+        - ["Pink and grey? No.", "she is brown"]
+        - ["Mostly red? No.", "she is brown, not red"]
+        - ["Bright blue on its head? No.", "a female's head is brown"]
+        - ["She ends at 'not in this key'.", "she says no to every question, and the blue-head question only fits the males"]
+      picks:
+        - step: 6
+          q: "Why does she end at 'not in this key'?"
+          options:
+            - "She says no to every question, and the blue-head question only fits the males"
+            - "She is not a superb fairy-wren, so 'not in this key' is right"
+            - "She says yes to 'Bright blue on its head?'"
+            - "The key stops at the first question she says no to"
+          answer: 0
+          feedback: [null, "She is a superb fairy-wren: the female is brown. The key's new question only fits the males.", "Her head is brown, so her answer is no.", "A no sends her on to the next question."]
+      criteria:
+        - "I drew a box for every question, with an arrow for yes and one for no."
+        - "I wrote her answer at each box."
+        - "My last box says 'not in this key', and I can say why she ends there."
+      explain: "Her path is no, no, no, no, no: 'not in this key'. She is a fairy-wren, so the key misses her. The fix is another question for her, and then testing again with her in the test birds."
 ```
 
 ### Which bird?
@@ -237,7 +264,9 @@ Use the key above. The myna's colours are from the [Australian Museum](https://a
 
 ### Fix the key
 
-A real key also has to work for plain birds: female superb fairy-wrens are mostly brown, not blue ([Australian Museum](https://australian.museum/learn/animals/birds/superb-fairy-wren/)). How would your fixed key handle one?
+### Draw it and run her
+
+A real key also has to work for plain birds: female superb fairy-wrens are mostly brown, not blue ([Australian Museum](https://australian.museum/learn/animals/birds/superb-fairy-wren/)). Draw the key in your book, then follow one through it.
 
 Stretch: write an algorithm that sorts triangles by their **angles** into acute, right-angled and obtuse. Test it on one triangle of each class, and say how it works to a partner.
 

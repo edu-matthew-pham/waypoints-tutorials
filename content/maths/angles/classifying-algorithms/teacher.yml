@@ -23,7 +23,7 @@ running:
   - "Run: ask which triangle the algorithm gets wrong, and why."
   - "Investigate: ask what test shapes Pia should have used."
   - "Modify: ask students to describe the quad algorithm in words."
-  - "Make: back to the bird key. Ask who can find a bird it gets wrong before anyone looks at the options; then ask what every key needs (a way to say 'not in this key')."
+  - "Make: back to the bird key. Ask who can find a bird it gets wrong before anyone looks at the options; then ask what every key needs (a way to say 'not in this key'). Then books out: students draw their fixed key as a flowchart and follow a female superb fairy-wren through it, one box at a time, before they pick why she ends at 'not in this key'. Ask what the key should do with her."
 stuck:
   - see: "A student asks the general question first."
     ask: "What would a square be called by this question?"

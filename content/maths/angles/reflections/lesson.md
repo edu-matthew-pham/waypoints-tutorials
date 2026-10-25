@@ -30,9 +30,6 @@ explainClip:
 ---
 A **reflection** flips a shape over a mirror line. Each point and its image are the same distance from the mirror, on opposite sides, and the mirror cuts the line joining them at right angles.
 
-- Reflect in the **x-axis**: the point moves up or down, so $y$ changes sign: $(x, y) \to (x, -y)$.
-- Reflect in the **y-axis**: the point moves left or right, so $x$ changes sign: $(x, y) \to (-x, y)$.
-
 ## Predict: flip over the x-axis
 
 ```step
@@ -57,6 +54,9 @@ check: { type: board, text: "Reflect the triangle in the x-axis. Was your predic
 ```
 
 Press the buttons to choose a mirror, and read the list of corners.
+
+- Reflect in the **x-axis**: the point moves up or down, so $y$ changes sign: $(x, y) \to (x, -y)$.
+- Reflect in the **y-axis**: the point moves left or right, so $x$ changes sign: $(x, y) \to (-x, y)$.
 
 ## Investigate: which coordinate changes
 

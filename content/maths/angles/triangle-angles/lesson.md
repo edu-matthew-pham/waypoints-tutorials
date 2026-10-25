@@ -131,6 +131,8 @@ tasks:
         - ["90", "Three angles of 90° would add to 270°."]
         - ["180", "180° is the total. Share it between three equal angles."]
       explain: "180° ÷ 3 = 60°."
+    smaller:
+      check: { type: number, q: "What do the three angles of any triangle add to, in degrees?", answer: 180, tolerance: 0, explain: "180°. Three equal angles share that between them." }
   - check:
       type: question
       q: "Edge case: can a triangle have two right angles?"

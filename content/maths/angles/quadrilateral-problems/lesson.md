@@ -45,6 +45,17 @@ check:
   actual: "110°, 70° and 110°. The opposite angle is equal (70°), and each neighbour is 180° − 70° = 110°."
 ```
 
+Picture the parallelogram, with its 70° angle in one corner.
+
+## Run: make a parallelogram
+
+```step
+stage: run
+insight: "Making parallelograms on the board shows opposite angles equal and neighbours adding to 180° every time."
+try: { playground: board, starter: "quad.yml#run", height: 640 }
+check: { type: board, text: "Drag the corners to make a parallelogram that is not a rectangle. Check the angles: were you right?", when: "z = 4", explain: "Opposite angles are equal and each pair of neighbours adds to 180°, whatever the parallelogram." }
+```
+
 Here are the properties to use:
 
 | Shape | Angles | Diagonals |
@@ -57,15 +68,6 @@ Here are the properties to use:
 | isosceles trapezium | base angles equal (in pairs) | equal |
 
 Neighbouring angles of a parallelogram add to 180° because they are **co-interior** angles between parallel sides.
-
-## Run: make a parallelogram
-
-```step
-stage: run
-insight: "Making parallelograms on the board shows opposite angles equal and neighbours adding to 180° every time."
-try: { playground: board, starter: "quad.yml#run", height: 640 }
-check: { type: board, text: "Drag the corners to make a parallelogram that is not a rectangle. Check the angles: were you right?", when: "z = 4", explain: "Opposite angles are equal and each pair of neighbours adds to 180°, whatever the parallelogram." }
-```
 
 ## Investigate: find the angles
 

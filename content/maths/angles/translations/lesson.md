@@ -166,6 +166,14 @@ tasks:
       answer: 0
       feedback: [null, "Right would make x bigger.", "Up would make y bigger.", "Check the change in x: from 2 to −1."]
       explain: "x goes from 2 to −1 (3 left); y goes from 5 to 3 (2 down)."
+    smaller:
+      check:
+        type: question
+        q: "Look at x only: it goes from 2 to −1. Did it move left or right?"
+        options: ["Left: x got smaller", "Right: x got bigger"]
+        answer: 0
+        feedback: [null, "−1 is less than 2, so x got smaller."]
+        explain: "−1 is less than 2, so x moved left. Now do the same with y."
   - check:
       type: question
       q: "Review: in which quadrant is the point (−3, 2)?"

@@ -104,6 +104,8 @@ tasks:
   - starter: "views.yml#free"
     hint: ["Piles of 1 cube only.", "Use six of the nine cells, with at least one in every row and every column."]
     check: { type: board, text: "Build a shape with 6 cubes whose front view and side view each have 3 squares.", when: "n = 6 and f = 3 and s = 3", explain: "Six piles of one cube spread over the 3 by 3 base, with every row and every column used, give 3 squares in the front view and 3 in the side view." }
+    smaller:
+      check: { type: number, q: "The front view shows 3 squares in a row, all one cube tall. How many of the 3 columns must have at least one cube in them?", answer: 3, tolerance: 0, explain: "A square in the front view comes from a column with a cube in it. 3 squares means all 3 columns." }
   - starter: "views.yml#free"
     check: { type: board, text: "Build the fewest cubes that give a top view of 4 squares.", when: "n = 4 and t = 4", explain: "Each square of the top view needs at least one cube, so the fewest is 4." }
   - starter: "views.yml#free"
