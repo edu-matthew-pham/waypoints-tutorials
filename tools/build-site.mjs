@@ -793,12 +793,13 @@ for (const node of dirs.values()) {
       const view = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
         `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trail map</button><button type="button" data-view="list">List for teachers</button></div>`;
       writeFileSync(join(OUT, pp, 'index.html'), page(`${pw.title}: ${node.title}`,
-        (useTrail ? `<style>${TRAIL_CSS}</style>` : '') + `<header class="top"><a class="crumb" href="../../">← ${esc(node.title)}</a><h1>${esc(pw.title)}</h1>${pw.summary ? `<p class="lede">${esc(pw.summary)}</p>` : ''}</header>` +
+        (useTrail ? `<style>${TRAIL_CSS}</style>` : '') + `<style>.pswitch{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:2px 0 10px}.pswitch a{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:var(--card)}.pswitch a:hover{border-color:var(--accent)}.pswitch a[aria-current]{background:var(--ink);color:var(--card);border-color:var(--ink)}.pswitch .pall{border-style:dashed}</style>` +
+        `<header class="top"><nav class="pswitch" aria-label="Pathways in ${esc(node.title)}"><a class="pall" href="../../">← All ${esc(node.title)} pathways</a>${pathways.map((x) => `<a href="../${esc(x.id)}/"${x === pw ? ' aria-current="page"' : ''}>${esc(x.title)}</a>`).join('')}</nav><h1>${esc(pw.title)}</h1>${pw.summary ? `<p class="lede">${esc(pw.summary)}</p>` : ''}</header>` +
         (useTrail ? view + `<div class="pview-map">${trail}</div>` : '') + `<div class="pview-list">` +
         (pw.about ? `<div class="pabout">${new Marked().parse(String(pw.about))}</div>` : '') +
         (built ? '' : `<p class="pnote">Nothing to open here yet: these courses are being written. The other pathways teach the same big ideas, so you can start there.</p>`) +
         `<section class="pathway">${stages(pw, pup)}</section></div>` +
-        (others ? `<p class="ptools">Other pathways: ${others}</p>` : ''),
+        '',
         `<script src="${pup}progress.js" data-root="${pup}" defer></script>` + (useTrail ? `<script src="${pup}trail.js" data-root="${pup}" defer></script>` : ''), navFor(pp, 'home')));
     }
     continue;
