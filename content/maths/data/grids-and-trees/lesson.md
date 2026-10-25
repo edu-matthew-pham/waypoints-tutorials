@@ -8,6 +8,7 @@ summary: "Two events, one after the other, make a sample space of pairs. A grid 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A game asks you to toss a coin and roll a dice: you win with heads and an even number. Is that a good chance or a poor one? First you need every way the two can land."
+connection: survey-two-way   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8330
   url: http://127.0.0.1:8330/index.html
@@ -40,6 +41,8 @@ check:
   options: ["8", "6", "12"]
   actual: "12. Each of the 2 coin results goes with each of the 6 dice results: 2 × 6 = 12 pairs."
 ```
+
+<figure class="situation" role="img" aria-label="A coin with heads and tails on the left, and a row of six dice faces numbered 1 to 6 on the right. Underneath: how many outcomes when you toss the coin and roll the dice? is a question mark."><svg viewBox="0 0 400 200" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><circle cx="85" cy="84" r="32" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56"/><text x="85" y="89" text-anchor="middle" fill="currentColor" stroke="none">H | T</text><text x="85" y="140" text-anchor="middle" fill="currentColor" stroke="none">coin</text><rect x="200" y="70" width="28" height="28" rx="4" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="214" y="89" text-anchor="middle" fill="currentColor" stroke="none">1</text><rect x="232" y="70" width="28" height="28" rx="4" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="246" y="89" text-anchor="middle" fill="currentColor" stroke="none">2</text><rect x="264" y="70" width="28" height="28" rx="4" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="278" y="89" text-anchor="middle" fill="currentColor" stroke="none">3</text><rect x="296" y="70" width="28" height="28" rx="4" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="310" y="89" text-anchor="middle" fill="currentColor" stroke="none">4</text><rect x="328" y="70" width="28" height="28" rx="4" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="342" y="89" text-anchor="middle" fill="currentColor" stroke="none">5</text><rect x="360" y="70" width="28" height="28" rx="4" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="374" y="89" text-anchor="middle" fill="currentColor" stroke="none">6</text><text x="296" y="125" text-anchor="middle" fill="currentColor" stroke="none">dice</text><text x="200" y="185" text-anchor="middle" fill="currentColor" stroke="none">coin, then dice: ? outcomes</text></svg></figure>
 
 ## Run: heads and an even number
 
@@ -184,3 +187,46 @@ check: { type: board, text: "Design a two-dice game that you win exactly half th
 ```
 
 Write the rule of your game in words, then check a friend's game with the grid.
+
+## Make: a survey tree on paper
+
+```step
+stage: make
+insight: "A tree for two yes/no survey questions makes them list pairs, keep YN and NY apart, and count an event."
+hint: ["Two branches first, then two more from each.", "Write each pair at the end of its path."]
+check:
+  type: reasoning
+  paper: true
+  q: "A form asks each student two questions: 'Do you walk to school?' and 'Do you play a sport?' Each answer is Yes or No. Draw a tree on paper for one student's answers. How many of the pairs of answers have exactly one Yes?"
+  steps:
+    - ["Walk: two branches, Yes and No", "the first question has two answers"]
+    - ["Sport: Yes and No on each branch, so 4 pairs: YY, YN, NY, NN", "every answer to the first goes with every answer to the second"]
+    - ["Exactly one Yes: YN and NY", "these are different pairs: one walks and does not play, the other plays and does not walk"]
+    - ["2 pairs", "two of the four"]
+  picks:
+    - step: 3
+      q: "Do YN and NY count as two pairs or one?"
+      options:
+        - "Two: they are different answers from different kinds of student"
+        - "One: they have the same letters"
+        - "Only YN counts, because walking is asked first"
+      answer: 0
+      feedback: [null, "The letters match but the pairs do not. Walk-only and sport-only students are different.", "Both orders happen. Neither is left out."]
+  answer: "2"
+  feedback:
+    - ["1", "Yes-No and No-Yes are different pairs: list both."]
+    - ["4", "That is all the pairs. Exactly one Yes leaves out YY and NN."]
+  criteria:
+    - "My tree has two branches, then two more on each."
+    - "I listed all four pairs."
+    - "I counted YN and NY as two different pairs."
+  explain: "The four pairs are YY, YN, NY, NN. Exactly one Yes is YN or NY: 2 pairs."
+```
+
+Do this one in your book. A school really can use a form like this, and the answers fill a two-way table. Draw the tree, list the four pairs, and type how many have exactly one Yes.
+
+**Also used in**
+
+- **Surveys.** The tree for two yes/no questions has the same four cells as the school's two-way table of walkers and sports players.
+- **Menus and codes.** Two choices on a menu, two coins, and the digits of a code all make pairs, and a tree lists them once.
+- **Next.** Counting the pairs in an event gives its probability, and the next lesson puts 'and', 'or' and 'not' on the same pictures.

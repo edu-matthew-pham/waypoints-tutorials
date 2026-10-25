@@ -7,6 +7,7 @@ summary: "Numerical data is discrete when it is counted (siblings: 0, 1, 2, …)
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "How many siblings do you have? How long does it take you to run 100 m? Both answers are numbers, but they behave differently. How?"
+connection: canteen-queue   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8179
   url: http://127.0.0.1:8179/index.html
@@ -218,3 +219,41 @@ check: { type: board, text: "Make a data set of 6 swim times, all between 13 s a
 ```
 
 Then: if you rounded your times to the nearest second, how many different values would be left?
+
+## Make: the canteen line on paper
+
+```step
+stage: make
+insight: "Counting a line and timing a wait shows both kinds of numbers in one place; the paper task asks them to sort and choose the reason for continuous."
+hint: ["Could there be 3.5 people in the line?", "Could a wait be 94.3 seconds?"]
+check:
+  type: reasoning
+  paper: true
+  q: "The canteen records two things at lunch. The first is how many people are in the line, counted each minute. The second is how long each person waits, timed with a stopwatch. On paper, say whether each is discrete or continuous, and what values you could write down for each."
+  steps:
+    - ["People in the line: counted, so 0, 1, 2, 3 and so on: discrete", "you cannot have 3.5 people"]
+    - ["Waiting time: measured, so any value in a range, such as 94.3 s: continuous", "a stopwatch gives a value rounded to some precision"]
+    - ["A wait of 94.3 s stands for any time from 94.25 s to 94.35 s", "measured values are always rounded"]
+  picks:
+    - step: 2
+      q: "Why is the waiting time continuous?"
+      options:
+        - "It is measured, so it could take any value in a range, and the stopwatch rounds it"
+        - "It has a decimal point, and anything with decimals is continuous"
+        - "It is a number, so it is continuous"
+      answer: 0
+      feedback: [null, "Having decimals is not the test: shoe sizes have decimals and are not continuous. Ask whether any value in between is possible.", "The number of people is a number too, and that is discrete."]
+  criteria:
+    - "I said counted data is discrete and measured data is continuous."
+    - "I gave values that fit each, such as 3 people and 94.3 s."
+    - "I said a measured value is rounded."
+  explain: "People in the line: counted, discrete (0, 1, 2, 3). Waiting time: measured, continuous (any value in a range, rounded to the stopwatch's precision, such as 94.3 s)."
+```
+
+Do this one in your book. The line and the wait are real things a canteen could record. Write your three lines, then choose the reason the wait is continuous.
+
+**Also used in**
+
+- **Queues.** Counting the people in the line (discrete) and timing the waits (continuous) need different tools and different graphs.
+- **Sport.** Goals in a season are counted; a 100 m time is measured.
+- **Next.** The data lessons that follow ask which display and which summary fit each kind.

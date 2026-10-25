@@ -7,6 +7,7 @@ summary: "Four numbers that sum up a data set: the mean (add, then share equally
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A team scored 3, 5, 5, 6 and 11 goals. What is a typical game? There are at least three good answers, and they are all useful."
+connection: power-bill   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8180
   url: http://127.0.0.1:8180/index.html
@@ -42,6 +43,8 @@ check:
     - "$5.5$"
   actual: "6. The total is 3 + 5 + 5 + 6 + 11 = 30, shared equally between 5 games is 6. (5 is the median and the mode; 8 is the range.)"
 ```
+
+<figure class="situation" role="img" aria-label="A dot plot of five games on a line from 0 to 12 goals: 3, 5, 5, 6 and 11. Above the plot: the mean is a question mark."><svg viewBox="0 0 400 200" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><text x="200" y="24" text-anchor="middle" fill="currentColor" stroke="none">mean = ?</text><circle cx="114" cy="130" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="170" cy="130" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="170" cy="116" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="198" cy="130" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="338" cy="130" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><line x1="20" y1="150" x2="376" y2="150"/><line x1="30" y1="150" x2="30" y2="155"/><text x="30" y="170" text-anchor="middle" fill="currentColor" stroke="none">0</text><line x1="86" y1="150" x2="86" y2="155"/><text x="86" y="170" text-anchor="middle" fill="currentColor" stroke="none">2</text><line x1="142" y1="150" x2="142" y2="155"/><text x="142" y="170" text-anchor="middle" fill="currentColor" stroke="none">4</text><line x1="198" y1="150" x2="198" y2="155"/><text x="198" y="170" text-anchor="middle" fill="currentColor" stroke="none">6</text><line x1="254" y1="150" x2="254" y2="155"/><text x="254" y="170" text-anchor="middle" fill="currentColor" stroke="none">8</text><line x1="310" y1="150" x2="310" y2="155"/><text x="310" y="170" text-anchor="middle" fill="currentColor" stroke="none">10</text><line x1="366" y1="150" x2="366" y2="155"/><text x="366" y="170" text-anchor="middle" fill="currentColor" stroke="none">12</text><text x="200" y="190" text-anchor="middle" fill="currentColor" stroke="none">goals in a game</text></svg></figure>
 
 What would you do with the five scores to get one number?
 
@@ -218,3 +221,46 @@ check: { type: board, text: "Make 5 values (from 0 to 12) with a mean of 6 and a
 ```
 
 Then make a different set with the same mean and median.
+
+## Make: a power bill on paper
+
+```step
+stage: make
+insight: "A week of electricity readings with one hot day makes mean and median differ; the paper task makes them compute both and say why."
+hint: ["The median is the 4th value of 7.", "The total is 126."]
+check:
+  type: reasoning
+  paper: true
+  q: "A family's electricity use over 7 days, in kWh, was 14, 15, 15, 16, 17, 18 and 31 (the 31 was a heatwave day with the air conditioner on). How many kWh higher is the mean than the median?"
+  steps:
+    - ["Median: the list is in order, so the 4th of 7 is 16 kWh", "sort first, then take the middle"]
+    - ["Mean: $14 + 15 + 15 + 16 + 17 + 18 + 31 = 126$, and $126 \\div 7 = 18$ kWh", "add, then share equally"]
+    - ["$18 - 16 = 2$ kWh", "the mean is higher"]
+    - ["The median is the better 'typical day'", "one very high day pulls the mean up"]
+  picks:
+    - step: 4
+      q: "Why is the mean higher than the median?"
+      options:
+        - "The one very high day pulls the mean up, but the median is just the middle value"
+        - "The mean is always higher than the median"
+        - "The two use different days"
+      answer: 0
+      feedback: [null, "Not always: it depends on the data. Look at the 31.", "Both use all seven days."]
+  answer: "2"
+  feedback:
+    - ["18", "That is the mean. Take the median away from it."]
+    - ["16", "That is the median. How much higher is the mean?"]
+  criteria:
+    - "I put the list in order before finding the median."
+    - "I added and shared equally for the mean."
+    - "I said what the 31 does to the mean and the median."
+  explain: "Median 16 and mean 126 ÷ 7 = 18, so the mean is 2 kWh higher. The heatwave day pulls the mean up, and the median stays near a normal day."
+```
+
+Do this one in your book. The readings are made up, but your family's bill hides the same thing: an average that one hot day can lift. Work out the median and the mean, type how much higher the mean is, then choose the reason.
+
+**Also used in**
+
+- **Bills.** The 'average daily use' on an electricity bill is a mean. It hides hot and cold days and how many people live in the house.
+- **House prices and wages.** Reports often give a median, so that a few very high values do not drag the typical figure up.
+- **Sport.** Goals per game, runs per over and points per match are all summarised the same way.

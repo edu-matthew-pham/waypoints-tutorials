@@ -4,6 +4,7 @@ timing: "Predict and Run 6 min · Investigate 10 min · Modify 8 min · Practise
 goals:
   - I can say whether numerical data is discrete (counted) or continuous (measured).
   - I can explain why a measurement is always rounded, and choose a sensible precision.
+struggle: "Treating any decimal as continuous. Ask: could there be a value between these two? Was it counted or measured?"
 before: |
   Try the Run board first. This short lesson opens the Data unit; the next lesson calculates mean, median, mode and range.
 
@@ -16,6 +17,7 @@ running:
   - "Investigate: build a two-column list on the board (counted / measured) from students' own examples."
   - "Modify: let the age question be a short debate."
   - "Make: ask what happens to the six times if rounded to whole seconds."
+  - "Paper: the canteen line is worked in books; the page marks the reason the wait is continuous. Books out, and look for a measured value written with its rounding."
 stuck:
   - see: "A student calls any decimal data continuous (Ava's mistake)."
     ask: "What values are possible between 7 and 7.5 for a shoe size?"

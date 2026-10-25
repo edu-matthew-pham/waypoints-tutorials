@@ -5,6 +5,7 @@ goals:
   - I can calculate the mean, median, mode and range of a data set.
   - I can find the median of an even number of values.
   - I can handle data with two modes or no mode.
+struggle: "Finding the median from a list that is not in order. Ask: is the list in order yet?"
 before: |
   Do the Run and Make boards yourself first. Students need Counting and measuring and division with decimals.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the even-count median with the sorted list on the board."
   - "Modify: for the keep-the-median task, ask which other values would work (only 6)."
   - "Make: collect different answers and check them on the board."
+  - "Paper: the power bill is worked in books; the page marks the difference of mean and median (2) and the reason. Books out, and look for the list put in order before the median."
 stuck:
   - see: "A student takes the middle of the unsorted list (Leo's mistake)."
     ask: "Is the list in order?"

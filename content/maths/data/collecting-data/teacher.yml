@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Noah what the factory sells afterwards."
   - "Modify: ask what changed when the sample grew."
   - "Make: ask what you would give up by not measuring everyone."
+  - "Paper: the canteen question is worked in books; the page marks the reason for a sample, then shows a model. Books out, and check each page names the population first."
 stuck:
   - see: "A student says a sample is always worse."
     ask: "What would a census of every battery leave?"

@@ -7,6 +7,7 @@ summary: "An investigation asks a question that data can answer, plans who to me
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Do students your age sleep less on school nights? You could argue about it, or you could measure it. What would you need to decide first?"
+connection: canteen-queue   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8302
   url: http://127.0.0.1:8302/index.html
@@ -205,3 +206,41 @@ check: { type: board, text: "Build a sample of 20 sleep values whose median is 8
 ```
 
 Now write a report of four short parts: the question, the plan (variable, sample and how you would choose it), what the data show (shape, centre, spread), and the limits of your answer.
+
+## Make: a canteen plan on paper
+
+```step
+stage: make
+insight: "A plan for a real school question has to fix what is measured, from whom and when, before any numbers exist; the paper task asks for the plan and the fair-comparison reason."
+hint: ["Say who or what you count, and when.", "What could make one day different from another for a reason other than being Friday?"]
+check:
+  type: reasoning
+  paper: true
+  q: "Is the canteen line longer on Fridays? On paper, write a plan with three parts: the question and what you will count, when and how you will count, and what you will report. Then choose the reason that makes the comparison fair."
+  steps:
+    - ["Question: is the line at lunch longer on Fridays than on other days? I count the number of people in the line", "a counted variable the canteen can use"]
+    - ["Count at the same time each day, such as 12:35, for several Fridays and several other days", "so only the day of the week changes"]
+    - ["Report the median and range for Fridays and for other days, and one limit", "say what the data show and what could be wrong"]
+  picks:
+    - step: 2
+      q: "Why count at the same time on every day?"
+      options:
+        - "So the days are compared fairly: only the day of the week changes"
+        - "So it takes less time"
+        - "So the Friday lines look longer"
+      answer: 0
+      feedback: [null, "Time saved is not the point. The count must be fair.", "A fair plan does not decide the answer first."]
+  criteria:
+    - "My question names a variable I can count, and who or what is counted."
+    - "My plan says when and how often, the same way every day."
+    - "My report names a centre, a spread and one limit, such as an excursion or bad weather."
+  explain: "Count the people in the line at the same time on several Fridays and several other days. Report the median and range for each, and say that an excursion day or wet weather could change who buys lunch."
+```
+
+Do this one in your book. Plan first, count later. You are planning for the canteen, so the plan is what matters here, not the numbers. Write the three parts, then pick the reason.
+
+**Also used in**
+
+- **The canteen.** The real question: is the line longer on Fridays, and would a second window help? The report goes to the canteen.
+- **The student council and year coordinator.** Any question about school life starts with a plan for the data.
+- **Science.** A fair test starts the same way: one thing changes, everything else is kept the same.

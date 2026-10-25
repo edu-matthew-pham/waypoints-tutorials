@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Zoe where the 4 with both are."
   - "Modify: ask which outcomes are both over 9 and doubles."
   - "Make: ask how many outcomes are in A, in B and in both."
+  - "Paper: the survey task is worked in books; the page marks the answer (65) and the reason for taking the overlap away once. Books out, then look at the page for the 18 sitting in the overlap, not the screen."
 stuck:
   - see: "A student adds the two totals for 'or'."
     ask: "Is anyone in both totals?"

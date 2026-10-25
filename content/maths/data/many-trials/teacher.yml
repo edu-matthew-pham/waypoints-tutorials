@@ -5,6 +5,7 @@ goals:
   - I can describe how the relative frequency changes as the number of trials grows.
   - I can use a large experiment to estimate a probability.
   - I can explain why a run of one outcome does not make another one 'due'.
+struggle: "Thinking a short run shows the true chance, or that a coin is due a tail. Ask: how would the coin know what came before?"
 before: |
   Do the Run and Make boards first. Students need Predict and test.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: show the 7/10 → 8/11 and 501/1000 → 502/1001 calculation on the board."
   - "Modify: collect the class's estimates for the mystery bag; reveal 3 red, 7 yellow."
   - "Make: collect how many flips each student needed."
+  - "Paper: the review task is worked in books; the page marks the fall (0.4) and the reason for trusting 500. Books out, and ask which number sat nearest the long-run share."
 stuck:
   - see: "A student thinks heads is 'due' (Zara's mistake)."
     ask: "How would the coin know what happened before?"

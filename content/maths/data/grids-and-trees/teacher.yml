@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Max to toss a red and a blue coin."
   - "Modify: ask why the sums of 8 lie on a diagonal."
   - "Make: ask how many outcomes make a half."
+  - "Paper: the survey tree is worked in books; the page marks the number of pairs with exactly one Yes and the reason YN and NY are different. Books out, and look for four pairs listed, not three."
 stuck:
   - see: "A student adds the outcomes (2 + 6 = 8)."
     ask: "How many dice results go with heads? With tails?"

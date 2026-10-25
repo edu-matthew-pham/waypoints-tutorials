@@ -8,6 +8,7 @@ summary: "Data can come from everyone (a census), from some (a sample), from an 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Every five years Australia asks every household the census questions. A TV ratings company measures viewing in only a few thousand homes. Why doesn't it just measure everyone?"
+connection: canteen-sample   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8333
   url: http://127.0.0.1:8333/index.html
@@ -204,3 +205,41 @@ check: { type: reflect, text: "I wrote a question, named its population, chose a
 ```
 
 Choose a question about your school or town, such as "How long do students spend on homework?" or "Does a reminder sign reduce littering?" Write the population, the technique you would use, and one reason it suits the question better than the others.
+
+## Make: a canteen question on paper
+
+```step
+stage: make
+insight: "Deciding census or sample for a real school question makes them weigh cost against accuracy and name the population."
+hint: ["Name the population first.", "Ask: what would it cost to ask all 900?"]
+check:
+  type: reasoning
+  paper: true
+  q: "The canteen has 900 students on the roll and wants to know which new lunch item to stock. On paper, name the population, choose census or sample, and say how you would choose who to ask."
+  steps:
+    - ["Population: all 900 students on the roll", "not just the ones who use the canteen now"]
+    - ["A sample of about 60 is quicker and cheaper than asking all 900, and close enough if chosen well", "a census would be exact but slow and costly for this question"]
+    - ["Choose the 60 at random from the roll", "so every student has the same chance of being asked"]
+  picks:
+    - step: 2
+      q: "Why a sample, not a census?"
+      options:
+        - "A fair sample of 60 can answer the question much faster and for less cost"
+        - "A sample is always more accurate than a census"
+        - "A census is impossible because students do not answer"
+      answer: 0
+      feedback: [null, "A census would be exact. We choose a sample for cost and time.", "Students can answer. The trouble is time and cost."]
+  criteria:
+    - "I named the population."
+    - "I chose a technique and gave a reason about cost and time."
+    - "I said how the 60 would be chosen fairly."
+  explain: "The population is all 900 students. A random sample of about 60 from the roll is quicker and cheaper, and close enough if it is chosen fairly."
+```
+
+Do this one in your book. The 900 is made up, but every school canteen has this choice. Write your three parts, then choose the reason that decides between census and sample.
+
+**Also used in**
+
+- **The census.** Every five years the whole country is counted, because the questions matter enough to pay for. A shop deciding what to stock could never afford that.
+- **Polls and ratings.** A poll of about a thousand voters, or a ratings panel in a few thousand homes, stands in for millions.
+- **Factories.** Testing every bottle or battery would use up the product, so only a sample is tested.

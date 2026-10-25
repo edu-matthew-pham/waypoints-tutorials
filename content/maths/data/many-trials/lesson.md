@@ -7,6 +7,7 @@ summary: "Over a few trials the relative frequency jumps about; over many it set
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Flip a coin ten times and you might get 7 heads. Is the coin unfair, or are ten flips just not enough to tell?"
+connection: few-reviews   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8186
   url: http://127.0.0.1:8186/index.html
@@ -206,5 +207,49 @@ check: { type: board, text: "Keep flipping until you have at least 1000 flips an
 ```
 
 How many flips did it take? Compare with others.
+
+## Make: reviews on paper
+
+```step
+stage: make
+insight: "A product with few reviews shows a short run swinging far from where many trials settle; the paper task makes them compute two relative frequencies and say which to trust."
+hint: ["Relative frequency = 5-star reviews divided by all reviews.", "Subtract the smaller from the larger."]
+check:
+  type: reasoning
+  paper: true
+  q: "A new bike light has 5 reviews, and all 5 give it 5 stars. Later it has 500 reviews, and 300 give it 5 stars. Find the relative frequency of 5-star reviews after 5 reviews and after 500. How far did it fall?"
+  steps:
+    - ["After 5 reviews: $\\tfrac{5}{5} = 1$", "relative frequency is the count divided by the number of trials"]
+    - ["After 500 reviews: $\\tfrac{300}{500} = 0.6$", "same working with more trials"]
+    - ["$1 - 0.6 = 0.4$", "it fell by 0.4"]
+    - ["The 500 reviews give the better picture of the light", "short runs swing a lot, and long runs settle"]
+  picks:
+    - step: 4
+      q: "Which tells you more about how good the light really is?"
+      options:
+        - "The 500 reviews, because the relative frequency settles as the number of trials grows"
+        - "The 5 reviews, because all five are 5 stars"
+        - "Both tell the same, because both are reviews"
+      answer: 0
+      feedback: [null, "Five reviews can swing a long way. Look at how far it fell.", "The two do not agree. The bigger run is the steadier one."]
+  answer: "0.4"
+  feedback:
+    - ["0.6", "That is the share after 500 reviews. Take it from 1."]
+    - ["1", "That is the share after 5 reviews, before it fell."]
+  criteria:
+    - "I divided the count by the number of reviews each time."
+    - "I found the fall by subtracting."
+    - "I said why 500 reviews tell me more than 5."
+  explain: "5/5 = 1 and 300/500 = 0.6, a fall of 0.4. The small run was far from the larger one: with few trials the relative frequency swings, and with many it settles."
+```
+
+Do this one in your book. The review counts are made up, but a shop page really can show five reviews or five hundred. Work out both relative frequencies, type the fall, then choose the reason you trust the bigger run.
+
+**Also used in**
+
+- **Product reviews.** Five 5-star reviews are weaker evidence than five hundred averaging 4.6, because small samples swing a lot.
+- **Next year.** Year 8 samples show the same thing: how much a sample varies depends on how big it is.
+- **Coin flips.** A run of heads is only a short run, and the coin is not 'due' a tail.
+
 
 Sources: every count in this lesson is made up for the task (the flips, the drawing pin and the spinners). Nothing here comes from a real experiment.

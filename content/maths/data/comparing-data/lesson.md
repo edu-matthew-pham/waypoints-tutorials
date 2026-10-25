@@ -7,6 +7,7 @@ summary: "Describe a data set by its shape (symmetrical or skewed, with clusters
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Two classes sit the same quiz. One has the top score; the other has nobody below 12. Which class did better? It depends on what you compare."
+connection: bus-lateness   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8183
   url: http://127.0.0.1:8183/index.html
@@ -47,6 +48,8 @@ check:
     - "They are the same"
   actual: "Class A. Its scores range from 12 to 18 (a range of 6); Class B's go from 6 to 22 (a range of 16). The centres are close: medians 15 and 16."
 ```
+
+<figure class="situation" role="img" aria-label="Two rows of dots on the same number line from 4 to 24. Class A, top row: 12, 14, 15, 15, 16, 17 and 18, bunched together. Class B, bottom row: 6, 10, 13, 16, 19, 20 and 22, spread out. Above them: which class is more consistent? is a question mark."><svg viewBox="0 0 400 200" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><text x="200" y="20" text-anchor="middle" fill="currentColor" stroke="none">Which class is more consistent?  ?</text><text x="8" y="75" text-anchor="start" fill="currentColor" stroke="none">A</text><circle cx="158" cy="75" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="190" cy="75" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="206" cy="75" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="206" cy="61" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="222" cy="75" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="238" cy="75" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="254" cy="75" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><text x="8" y="135" text-anchor="start" fill="currentColor" stroke="none">B</text><circle cx="62" cy="135" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="126" cy="135" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="174" cy="135" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="222" cy="135" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="270" cy="135" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="286" cy="135" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><circle cx="318" cy="135" r="5.5" fill="#1D9E75" fill-opacity="0.5" stroke="#0F6E56"/><line x1="20" y1="165" x2="360" y2="165"/><line x1="30" y1="165" x2="30" y2="170"/><text x="30" y="185" text-anchor="middle" fill="currentColor" stroke="none">4</text><line x1="94" y1="165" x2="94" y2="170"/><text x="94" y="185" text-anchor="middle" fill="currentColor" stroke="none">8</text><line x1="158" y1="165" x2="158" y2="170"/><text x="158" y="185" text-anchor="middle" fill="currentColor" stroke="none">12</text><line x1="222" y1="165" x2="222" y2="170"/><text x="222" y="185" text-anchor="middle" fill="currentColor" stroke="none">16</text><line x1="286" y1="165" x2="286" y2="170"/><text x="286" y="185" text-anchor="middle" fill="currentColor" stroke="none">20</text><line x1="350" y1="165" x2="350" y2="170"/><text x="350" y="185" text-anchor="middle" fill="currentColor" stroke="none">24</text></svg></figure>
 
 Look at how far apart each class's lowest and highest scores are.
 
@@ -219,3 +222,46 @@ check: { type: board, text: "Change Set A (5 values) so it has a higher median t
 ```
 
 Write two headlines about your sets: one where A wins, one where B wins.
+
+## Make: two bus routes on paper
+
+```step
+stage: make
+insight: "Comparing two bus routes needs a centre and a spread for each; the paper task makes them compute both and choose the reason that uses both."
+hint: ["Write each list in order first.", "Median: the 4th of 7 values."]
+check:
+  type: reasoning
+  paper: true
+  q: "Two bus routes get you to school. Over 7 school days, Route 52 was 1, 2, 3, 3, 4, 5 and 20 minutes late. Route 7 was 2, 4, 4, 5, 5, 6 and 6 minutes late. How many minutes later is Route 7's median than Route 52's? Then say which route is more reliable."
+  steps:
+    - ["Route 52: median 3 min, range $20 - 1 = 19$ min", "the median is the 4th of 7 values"]
+    - ["Route 7: median 5 min, range $6 - 2 = 4$ min", "same steps for the other route"]
+    - ["$5 - 3 = 2$ min", "Route 7's median is 2 min later"]
+    - ["Route 7 is more reliable: it is usually 2 min later, but never more than 6 min late, while Route 52 was once 20 min late", "use a centre and a spread, in context"]
+  picks:
+    - step: 4
+      q: "Which sentence compares the routes well?"
+      options:
+        - "Route 7 is later in the middle, but its spread is small; Route 52 is usually earlier but swings a lot"
+        - "Route 52 is better: its median is lower"
+        - "Route 52 is better: its earliest day was 1 min late"
+      answer: 0
+      feedback: [null, "That uses the centre only. The 20-minute day matters if you must be on time.", "That is one value from one set. Compare a centre and a spread for both."]
+  answer: "2"
+  feedback:
+    - ["19", "That is Route 52's range. Take the two medians away from each other."]
+    - ["5", "That is Route 7's median. How much later is it than Route 52's?"]
+  criteria:
+    - "I found a median and a range for both routes."
+    - "My comparison uses a centre and a spread, with the bus times in it."
+    - "I did not judge by one value from each set."
+  explain: "Medians 3 and 5, so Route 7's is 2 min later. Ranges 19 and 4: Route 7 is steadier. If you must be at school on time, Route 7 is the safer bus."
+```
+
+Do this one in your book. The lateness figures are made up, but a real class could log them in a week. Work out both medians and both ranges on paper, type the difference in medians, then choose the sentence that compares the routes well.
+
+**Also used in**
+
+- **Choosing a route.** Which bus is more reliable is a centre-and-spread question, and a week or two of recording answers it better than a guess.
+- **Classes and brands.** Which class did better, or which battery lasts longer, needs the same two numbers for each set.
+- **Waiting times.** Queues and waits are usually skewed: most are short and a few are very long, so the spread tells you more than the average.

@@ -8,6 +8,7 @@ summary: "'A and B' means both happen; 'A or B' means at least one happens (both
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A raffle prize goes to someone who plays sport or music. In a class of 30, 20 play sport and 13 play music. How many are in the draw?"
+connection: survey-two-way   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8331
   url: http://127.0.0.1:8331/index.html
@@ -41,6 +42,8 @@ check:
   options: ["8/30", "25/30", "33/30"]
   actual: "25/30. 12 sport only, 8 both and 5 music only: each counted once. 33/30 counts the 8 twice (and a probability can't be more than 1)."
 ```
+
+<figure class="situation" role="img" aria-label="A Venn diagram of 30 students. The Sport circle holds 20 students and the Music circle holds 13. Their overlap holds 8. The parts outside the overlap are marked with question marks. Underneath: how many are in the draw, sport or music, is a question mark."><svg viewBox="0 0 400 200" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><circle cx="150" cy="95" r="65" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56"/><circle cx="250" cy="95" r="65" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="120" y="22" text-anchor="middle" fill="currentColor" stroke="none">Sport 20</text><text x="280" y="22" text-anchor="middle" fill="currentColor" stroke="none">Music 13</text><text x="112" y="100" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="288" y="100" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="200" y="100" text-anchor="middle" fill="currentColor" stroke="none">8</text><text x="200" y="188" text-anchor="middle" fill="currentColor" stroke="none">in the draw (sport or music): ? students</text></svg></figure>
 
 ## Run: choose the regions
 
@@ -198,3 +201,46 @@ check: { type: board, text: "Two dice: make an event of the form 'A or B', where
 ```
 
 Write your events A and B in words, and how many outcomes are in A, in B and in both.
+
+## Make: a survey on paper
+
+```step
+stage: make
+insight: "A real survey sorts 80 students into four cells; the paper task makes them add the totals and take the overlap away once, and choose that reason."
+hint: ["Put the 18 in the overlap first.", "Walk only is 38 − 18."]
+check:
+  type: reasoning
+  paper: true
+  q: "A Year 8 survey asks 80 students two questions. 38 walk to school, 45 play a sport, and 18 do both. How many students walk or play a sport?"
+  steps:
+    - ["Both = 18, and those 18 are in the 38 and in the 45", "the overlap is in both totals"]
+    - ["$38 + 45 - 18 = 65$", "add the totals, then take the overlap away once"]
+    - ["$65$ students walk or play a sport", "everyone inside the circles"]
+    - ["$P = \\tfrac{65}{80}$, and neither is $80 - 65 = 15$", "check: 65 + 15 = 80, the whole year"]
+  picks:
+    - step: 2
+      q: "What do you do with the 18 who walk and play a sport?"
+      options:
+        - "Add the totals, then take the 18 away once"
+        - "Add the totals: 38 + 45"
+        - "Add the totals and the 18: 38 + 45 + 18"
+      answer: 0
+      feedback: [null, "That counts the 18 twice: they are in both totals.", "That counts them three times. They are already in both totals."]
+  answer: "65"
+  feedback:
+    - ["83", "That adds the totals and counts the 18 twice. Take the overlap away once."]
+    - ["27", "That takes the totals away from each other. Add them first."]
+  criteria:
+    - "I drew a Venn diagram or a table with the 18 in the overlap."
+    - "I took the overlap away once, not twice and not never."
+    - "My 'walk or sport' and 'neither' add up to 80."
+  explain: "38 + 45 − 18 = 65. The 18 are in both totals, so they are taken away once. Neither: 80 − 65 = 15."
+```
+
+Do this one in your book, not on the screen. The counts are made up, but the question is real: a school asks it to plan buses and sport. Draw a Venn diagram or a two-way table first, then work out how many walk or play, and type your answer.
+
+**Also used in**
+
+- **Surveys.** A school asks "do you walk, and do you play a sport?" and sorts every answer into the four cells of a two-way table. "Both", "either" and "neither" all read straight off it.
+- **Weather.** "Will it rain on Friday or Saturday?" is an "or" question, and the next lesson shows how to answer "at least one wet day" by counting the days with none.
+- **Screening and games.** Medical tests and board games ask "and" and "or" questions, and the overlap is where mistakes creep in.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Ben where a roll of 3 goes."
   - "Modify: ask why counting 'no six' is quicker than 'at least one six'."
   - "Make: ask how many outcomes make a quarter of 36."
+  - "Paper: the forecast task is worked in books; the page marks the number of dry days and the reason for 1 − 0.3. Books out, then ask if anyone found the wet days first and subtracted."
 stuck:
   - see: "A student says a heart and a spade are complementary."
     ask: "Where do clubs go?"

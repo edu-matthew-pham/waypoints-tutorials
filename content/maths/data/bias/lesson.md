@@ -8,6 +8,7 @@ summary: "Bias is anything in the way data is collected that pushes the result o
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A survey at a footy match finds that 90% of people love football. Is that what the whole town thinks?"
+connection: fan-poll   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8334
   url: http://127.0.0.1:8334/index.html
@@ -198,3 +199,41 @@ check: { type: reflect, text: "I named each source of bias in the survey below, 
 ```
 
 The canteen wants to know if students would buy a healthier lunch. It plans to ask the students in the canteen queue: "Wouldn't you love a fresh, delicious salad bar?" with their names on the form. Name every bias, say which way it pushes the result, and write a fairer plan.
+
+## Make: a fan poll on paper
+
+```step
+stage: make
+insight: "A website poll of fans shows the self-selection bias in a new case; the paper task asks them to say who answered, which way it pushes, and a fix."
+hint: ["Who is likely to visit this website, and who is likely to vote?", "Would more votes from the same people help?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A football club's website poll gets 1,200 votes, and 92% say the city needs a bigger stadium. The club tells the council the city wants one. On paper, say who answered, which way that pushes the result, and how you would find out what the city thinks."
+  steps:
+    - ["Who answered? Visitors to a football club's website who chose to vote", "they chose themselves, and they are fans"]
+    - ["Fans want a bigger stadium more than most people, so 92% is probably too high", "say which way it pushes the result"]
+    - ["Fix: ask a random sample of people from the whole city", "everyone in the city then has the same chance to be asked"]
+  picks:
+    - step: 2
+      q: "Why can't the council trust the 92%?"
+      options:
+        - "The voters chose themselves and they are fans, so the result is pushed up"
+        - "1,200 votes is too few, so the result is just random"
+        - "92% is too high to be true"
+      answer: 0
+      feedback: [null, "The number of votes is not the problem: a bigger biased poll is still biased.", "The size of the percentage does not show bias. Who answered does."]
+  criteria:
+    - "I said who answered and that they chose themselves."
+    - "I said which way the bias pushes: too high."
+    - "My fix gives every person in the city the same chance of being asked."
+  explain: "The voters chose themselves and are fans, so the 92% is probably too high. A random sample of the whole city would give everyone the same chance."
+```
+
+Do this one in your book. The poll numbers are made up, but real clubs, councils and shops quote polls like this. Write your three parts, then choose the reason that matters most.
+
+**Also used in**
+
+- **Websites and phone-ins.** Radio and online polls only hear from people who bother to reply, and those people usually feel strongly.
+- **Gyms and expos.** A survey handed out at the gym finds out about gym-goers, not about everyone.
+- **Product testing.** A company that only asks happy customers will find out its customers are happy.

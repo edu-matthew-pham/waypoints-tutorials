@@ -8,6 +8,7 @@ summary: "An event and its complement (everything else that could happen) cover 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "The forecast says a 30% chance of rain. What is the chance it stays dry? You know straight away, but why does it work?"
+connection: chance-of-rain   # data/connections/maths.yml (pilot: Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8328
   url: http://127.0.0.1:8328/index.html
@@ -40,6 +41,8 @@ check:
   options: ["You need to know the other colours", "0.65", "0.35"]
   actual: "0.65. Not red is every other outcome, so P(not red) = 1 − 0.35, whatever the other colours are."
 ```
+
+<figure class="situation" role="img" aria-label="A spinner. A red part takes 0.35 of the circle. The rest of the circle, in other colours, is marked with a question mark. Beside it: the chance of not red is a question mark."><svg viewBox="0 0 400 200" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M110 100 L110 20 A80 80 0 0 1 174.7 147.0 Z" fill="#D85A30" fill-opacity="0.35" stroke="#993C1D"/><path d="M110 100 L174.7 147.0 A80 80 0 1 1 110 20 Z" fill="currentColor" fill-opacity="0.08"/><text x="142" y="92" text-anchor="middle" fill="currentColor" stroke="none">red</text><text x="70" y="106" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="280" y="80" text-anchor="middle" fill="currentColor" stroke="none">P(red) = 0.35</text><text x="280" y="115" text-anchor="middle" fill="currentColor" stroke="none">P(not red) = ?</text></svg></figure>
 
 ## Run: an event and its complement
 
@@ -197,3 +200,45 @@ check: { type: board, text: "Two dice: choose an event A with P(A) = 1/4. Then s
 ```
 
 Then describe your event in words, so someone else could check it.
+
+## Make: a forecast on paper
+
+```step
+stage: make
+insight: "A rain forecast needs the complement to turn into days; the paper task makes them state why P(dry) = 1 - P(rain) and use it."
+hint: ["Dry is the complement of rain.", "30% of 40 days are wet."]
+check:
+  type: reasoning
+  paper: true
+  q: "The forecast says a 30% chance of rain on each school day for the next 40 school days. If the forecasts are right, about how many of those days will be dry?"
+  steps:
+    - ["$P(\\text{rain}) = 0.3$", "30% as a decimal"]
+    - ["$P(\\text{dry}) = 1 - 0.3 = 0.7$", "rain and dry cover every outcome once"]
+    - ["$0.7 \\times 40 = 28$ days", "about 28 dry days"]
+  picks:
+    - step: 2
+      q: "Why is the chance of a dry day 1 − 0.3?"
+      options:
+        - "Rain and dry together cover every outcome exactly once, so their chances add to 1"
+        - "Dry days never overlap with sunny days"
+        - "The forecaster always rounds up"
+      answer: 0
+      feedback: [null, "Think about a day that is neither rain nor dry. Is there one?", "The forecast is not rounded up. The two chances simply add to 1."]
+  answer: "28"
+  feedback:
+    - ["12", "That is the number of wet days. The question asks for the dry ones."]
+    - ["0.7", "That is the chance of one dry day, not the number of days."]
+  criteria:
+    - "I wrote P(rain) and P(dry) so they add to 1."
+    - "I used the complement, not the other colours or days."
+    - "My answer is about 28, and I said 'about'."
+  explain: "P(dry) = 1 − 0.3 = 0.7, and 0.7 × 40 = 28. Rain here means any rain at all, so a wet day can be a light shower."
+```
+
+Do this one in your book. The 40 days are made up, but a real school can check the forecast against a term of rain. Write the complement first, then the number of days, and type the dry days.
+
+**Also used in**
+
+- **Forecasts.** The chance of rain is the chance of any rain at all. The complement is the chance of staying dry.
+- **Camps.** A three-day camp with a 30% chance of rain each day is easiest to answer by finding the chance of no rain at all and taking it from 1. You will meet that in Year 10.
+- **Games.** A 1-in-8 bonus spin is a 7-in-8 ordinary spin.

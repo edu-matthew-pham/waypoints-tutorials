@@ -20,6 +20,7 @@ running:
   - "Investigate: ask who chooses to phone a radio station."
   - "Modify: ask whether growing the sample changed who is in it."
   - "Make: ask for one fix for each bias."
+  - "Paper: the fan poll is worked in books; the page marks the reason picked (self-selected fans), then shows a model. Books out, and look for 'too high' written next to who answered."
 stuck:
   - see: "A student says the sample is fine because it is big."
     ask: "Who is in it? Would more of the same people change that?"

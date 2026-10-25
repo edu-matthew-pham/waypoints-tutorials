@@ -5,6 +5,7 @@ goals:
   - I can describe the shape of a data set (symmetrical, skewed, clusters, gaps, outliers).
   - I can compare two data sets using a measure of centre and a measure of spread.
   - I can write a comparison with numbers and in context.
+struggle: "Using a centre and a spread together, in words. Ask: which route is later in the middle, and which is steadier?"
 before: |
   Do the Run and Make boards first. Students need Mean, median, mode and range, and Stem-and-leaf plots.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: write a sentence frame on the board: 'On average … (median …), but … is more spread (range …).'"
   - "Modify: for the same-mean edge case, ask students to invent a third set with mean 10 and range 100."
   - "Make: read out pairs of headlines."
+  - "Paper: the two bus routes are worked in books (medians and ranges); the page marks the difference in medians and the comparing sentence. Books out, then ask who chose the bus they would catch and why."
 stuck:
   - see: "A student compares one value from each set (Mia's mistake)."
     ask: "Does one student's score describe the whole class?"

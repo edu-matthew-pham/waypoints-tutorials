@@ -20,6 +20,7 @@ running:
   - "Investigate: ask students to name a second source of bias."
   - "Modify: ask what the report would say with different samples."
   - "Make: ask students to swap reports and find the limits the author left out."
+  - "Paper: the canteen plan is written in books; the page marks the reason for counting at the same time. Books out, then read two plans aloud and ask what each would find out on a wet Friday."
 stuck:
   - see: "A student asks an opinion question."
     ask: "What would you write down for each person?"
