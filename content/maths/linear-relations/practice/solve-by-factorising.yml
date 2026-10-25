@@ -1,0 +1,22 @@
+# Practice for "Solving by factorising".
+templates:
+  - q: "Solve x² {-(p + q)|s}x {p * q|s} = 0. What is the larger solution?"
+    vars: { p: "-8..8", q: "-8..8" }
+    where: "p < q and p != 0 and q != 0"
+    answer: "{q}"
+    feedback:
+      - ["{-q}", "Take care with the sign: each bracket gives the number that makes it 0."]
+    explain: "(x {-p|s})(x {-q|s}) = 0, so x = {p} or x = {q}. The larger is {q}."
+  - q: "Solve x² {-(p + q)|s}x {p * q|s} = 0. What is the smaller solution?"
+    vars: { p: "-8..8", q: "-8..8" }
+    where: "p < q and p != 0 and q != 0"
+    answer: "{p}"
+    feedback:
+      - ["{-p}", "Take care with the sign: each bracket gives the number that makes it 0."]
+    explain: "(x {-p|s})(x {-q|s}) = 0, so x = {p} or x = {q}. The smaller is {p}."
+  - q: "A rectangle is x m wide and (x + {d}) m long, with area {w * (w + d)} m². How wide is it? (x m)"
+    vars: { w: "2..9", d: "1..6" }
+    answer: "{w}"
+    feedback:
+      - ["{w + d}", "That's the length. The width is x."]
+    explain: "x² + {d}x − {w * (w + d)} = 0, so (x + {w + d})(x − {w}) = 0. x = {w} (the other solution, −{w + d}, can't be a width)."

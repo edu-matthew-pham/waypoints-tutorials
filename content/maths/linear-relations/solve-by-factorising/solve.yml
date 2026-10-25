@@ -1,0 +1,21 @@
+# Boards for "Solving by factorising".
+
+# region: run
+widget: graph
+x: -11, 9
+y: -45, 25
+grid: 1, 5
+snap: 1
+plot: y = x(x + 3) - 40
+point P: 0, 0, drag
+# endregion
+
+# region: vary
+widget: graph
+x: -2, 10
+y: -12, 20
+grid: 1, 2
+slider p: 0, 8, 1
+slider q: 0, 8, 7
+plot: y = (x - p)(x - q)
+# endregion

@@ -1,0 +1,8 @@
+# Alex's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: alex
+Solve x^2 - 5x + 6 = 0.
+(x - 2)(x - 3) = 0
+So x = -2 or x = -3.
+Check: 2 x 3 = 6.
+# endregion

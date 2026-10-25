@@ -2396,6 +2396,17 @@ nodes:
       step: "The step that answers 'when does it land?': set the height to zero and factorise."
       assessed: "Tests reward both solutions, and saying which makes sense in context."
     entries:
+      - id: garden-area
+        kind: world
+        steps: [1, 2, 4]
+        domain: building
+        picture: spatial
+        situation: "A rectangular garden bed is x m wide and 3 m longer than it is wide. It must cover 40 square metres. How wide is it?"
+        maths: "x(x + 3) = 40, so x² + 3x − 40 = 0 and (x + 8)(x − 5) = 0: x = 5 or x = −8. Only x = 5 can be a width."
+        given: "The area and how the length compares with the width."
+        hidden: "That a negative solution is a correct answer to the equation but not to the situation."
+        check: "Mark out a rectangle of 5 m by 8 m and count the area."
+        figures: []
       - see: ball-arc
 
   AC9M9A04 n4:

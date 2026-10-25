@@ -1,0 +1,39 @@
+summary: "Students solve a monic quadratic equation by factorising and the null factor law, and use the situation to choose a sensible solution (AC9M9A04, node 3)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 8 min · Practise and Make 15 min"
+goals:
+  - I can use 'if a product is 0, a factor is 0' to solve a factorised equation.
+  - I can make one side 0, factorise and find both solutions.
+  - I can say which solution fits the situation, and why.
+struggle: "The sign of the solution: x − 2 = 0 gives x = 2. Ask: what number makes this bracket 0?"
+before: |
+  Students need Factorising quadratics and Graphing a quadratic.
+
+  The one idea: if two things multiply to 0, one of them is 0. The common mistake is writing the number in the bracket as the solution without changing its sign (Alex's working).
+
+  The garden's size is made up for the task. In a real design, a hedge or a fence would take space too.
+running:
+  - "Predict: take a show of hands. Those who chose 6 or 7 tried numbers: ask them to check the area."
+  - "Run: ask students to find the second place where the curve meets the axis, and say what it would mean for the garden."
+  - "Paper: the try-one after the worked example and the garden in Make are worked on paper first. Books out, and look for 'make one side 0' written first."
+  - "Modify: before the board task, ask which number each bracket needs to be 0."
+stuck:
+  - see: "A student answers x = −2 for (x − 2) = 0."
+    ask: "What is −2 − 2?"
+    fix: "−4, not 0. x = 2 makes the bracket 0."
+  - see: "A student solves x(x + 3) = 40 by saying x = 40 or x + 3 = 40."
+    ask: "Does the null factor law work when the product is 40?"
+    fix: "Only when it's 0: move the 40 over first."
+stretch: "Make up a rectangle problem whose equation has the solutions 3 and −7."
+support: "A list of factor pairs of the constant, with their sums, to choose from."
+leads: |
+  Continues AC9M9A04 node 3.
+
+  Where it leads: three ways to solve the same quadratic (next), then modelling stopping distances.
+exit:
+  q: "Solve x² − 4x − 5 = 0."
+  a: "(x − 5)(x + 1) = 0, so x = 5 or x = −1."
+explain: |
+  If two numbers multiply to give 0, one of them must be 0. So (x + 8)(x − 5) = 0 means x + 8 = 0 or x − 5 = 0.
+
+  Move everything to one side, factorise, solve each bracket, and then decide which solutions make sense in the situation.
