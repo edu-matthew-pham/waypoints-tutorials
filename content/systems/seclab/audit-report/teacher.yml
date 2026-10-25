@@ -35,6 +35,8 @@ stretch: "Add one fix that a scan cannot check, such as turning on automatic upd
 support: "A checklist: before scan, four fixes, restart, after scan."
 leads: |
   Links: Security and privacy (finale); Cyber safety and privacy (threat models); System admin on a Raspberry Pi.
+
+  Beyond this course, legal hosted practice: picoCTF (Carnegie Mellon, free for school students) and PECAN+ (pecanplus.org, run by Edith Cowan University for Australian students in Years 10 to 12; free, with practice challenges at practice.pecanplus.org and a yearly event, the 2026 one already held). Check each one's account and age requirements, and your school's policy, before recommending it.
 exit:
   q: "Name one thing a port scan cannot tell you."
   a: "Any of: whether passwords are strong, what the file permissions are, what is inside the files."

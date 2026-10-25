@@ -15,7 +15,7 @@ before: |
 
   Years 7–8 classes can do this lesson after the first unit: the Data and System sections then lean on your explanation of hashing and HTTPS.
 
-  Extension: picoCTF (Carnegie Mellon) has free CTF practice for school students; check its account and age requirements, and your school's policy, before recommending it.
+  Extension: picoCTF (Carnegie Mellon) has free CTF practice for school students, and PECAN+ (pecanplus.org) is a free national CTF for Australian students in Years 10 to 12; check each one's account and age requirements, and your school's policy, before recommending them.
 running:
   - "Engage: ask what a security team is for."
   - "Explore: ask which wrong fix sounded most convincing, and why it falls short."
