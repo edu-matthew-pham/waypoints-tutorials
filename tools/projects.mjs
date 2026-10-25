@@ -2,7 +2,7 @@
 // content/<course>/projects.yml, with example programs beside it in content/<course>/projects/. Kept outside the
 // lesson folders, so adding a brief never re-records a lesson's clips.
 //
-//   playground: turtle                    the course's playground (turtle, html, dom, microbit, arcade)
+//   playground: turtle                    the course's playground (turtle, html, dom, microbit, arcade, p5)
 //   projects:
 //     - id: night-sky                     slug, unique in the course
 //       title: Night sky
@@ -24,7 +24,7 @@ import { join } from 'node:path';
 import { parse as YAMLparse } from 'yaml';
 import { conceptIds, conceptsIn, CONCEPTS } from './concepts-core.mjs';
 
-export const LANG_OF = { turtle: 'python', python: 'python', html: 'html', dom: 'html', microbit: 'makecode', arcade: 'makecode' };
+export const LANG_OF = { turtle: 'python', python: 'python', html: 'html', dom: 'html', microbit: 'makecode', arcade: 'makecode', p5: 'javascript' };
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 /** Every course's briefs: [{ course, file, dir, projects: [...] }], parts filled in. defaultPlay(course) names the course's playground. */
@@ -38,7 +38,7 @@ export function loadProjects(root, defaultPlay) {
         const file = join(dir, e.name);
         const data = YAMLparse(readFileSync(file, 'utf8')) || {};
         const projects = (Array.isArray(data.projects) ? data.projects : []).map((p) => {
-          const parts = (Array.isArray(p.parts) && p.parts.length ? p.parts : [{ playground: p.playground, uses: p.uses, example: p.example, starter: p.starter }])
+          const parts = (Array.isArray(p.parts) && p.parts.length ? p.parts : [{ playground: p.playground, uses: p.uses, example: p.example, starter: p.starter, answers: p.answers, height: p.height }])
             .map((x) => {
               const playground = x.playground || data.playground || defaultPlay(rel);
               const read = (f) => (f && existsSync(join(dir, 'projects', f)) ? readFileSync(join(dir, 'projects', f), 'utf8') : null);
@@ -48,6 +48,8 @@ export function loadProjects(root, defaultPlay) {
                 example: x.example || null, exampleCode: read(x.example),
                 starter: typeof x.starter === 'string' ? (x.starter.includes('\n') || !read(x.starter) ? x.starter : read(x.starter)) : null,
                 height: Number(x.height) || null,
+                answers: Array.isArray(x.answers) ? x.answers.map(String) : [], // console examples: what is typed at each input(), for the picture
+
               };
             });
           return { ...p, parts };

@@ -1,0 +1,39 @@
+playground: turtle
+projects:
+  - id: quiz
+    title: A quiz game
+    after: console-guess
+    goal: |
+      Write a **quiz** about something you know well. It asks every question in turn, says whether each answer was right, and finishes with a score.
+    example: quiz.py
+    answers: ["canberra", "8", "blue"]
+    uses: [input, list, for-of, variable-update]
+    milestones:
+      - "At least three questions, each with its own right answer."
+      - "One loop asks them all, whatever the number of questions."
+      - "The program says whether each answer was right, and ends with the score."
+    stretch:
+      - "Ignore capital letters, so Canberra and canberra both count."
+      - "Count how many answers were wrong, and give a message for a perfect score."
+      - "Ask the questions in a random order."
+    teacher: |
+      Builds on the guessing game (a running count) and Lists (one loop over them all). Each question is a small list of a question and its answer, so `item[0]` and `item[1]` are the recipe here; students do not need to write them from scratch. The picture shows one run with a wrong answer. A good conversation: where does the score start, and what happens if it starts inside the loop?
+
+  - id: fortune
+    title: A fortune teller
+    after: console-menu
+    goal: |
+      Build a **fortune teller**. It keeps asking for a question, answers each one with a reply picked at random, and stops when you type `quit`.
+    example: fortune.py
+    answers: ["Will I pass maths?", "Is it Friday?", "quit"]
+    uses: [while, break, list, random]
+    milestones:
+      - "At least five replies, kept in a list."
+      - "It keeps asking until you type quit."
+      - "Each answer is picked at random from the list."
+    stretch:
+      - "Say something different when the question is blank."
+      - "Count the questions and say how many were asked when you leave."
+      - "Give a longer reply when the question ends in a question mark."
+    teacher: |
+      The menu loop with `break` from Menu with break, with a list of replies in place of the menu. `random.choice` is a recipe here (Catch the turtle taught `import random`); students who want to explain it can use `random.randint` on an index instead. The loop's exit is the point: ask where `quit` has to be checked, before or after the reply.

@@ -1,0 +1,55 @@
+playground: p5
+projects:
+  - id: sky
+    title: A night sky
+    after: p5-lists
+    goal: |
+      Paint a **night sky**: a crowd of stars scattered at random, a moon, some ground, and stars that twinkle.
+    example: sky.js
+    uses: [array, push, for-of, random]
+    milestones:
+      - "At least fifty stars at random places, made by one loop."
+      - "Every star is kept in a list, and one loop draws them all."
+      - "The stars twinkle: their size changes a little as the sketch runs."
+    stretch:
+      - "A shooting star that crosses the sky now and then."
+      - "Stars of different colours, kept in each star's own object."
+      - "A city skyline of rectangles along the bottom."
+    teacher: |
+      Builds on Lists of shapes (an array and a loop over it) and keeps each star as a small object, so `s.x` and `s.y` are recipes here. The twinkle is `sin` of the frame count; students can copy that line and change the numbers, which is enough. The moon is a pale circle with a night-coloured one over it: a good quick lesson in drawing order.
+
+  - id: bounce
+    title: Bouncing balls
+    after: p5-objects
+    goal: |
+      Make a handful of **balls that bounce** around the canvas, each with its own colour and speed, and turn round whenever they hit a wall.
+    example: bounce.js
+    uses: [object, property, for-of, if]
+    milestones:
+      - "Several balls, each an object with its own place, speed and colour."
+      - "One loop moves and draws every ball, every frame."
+      - "Each ball turns back at a wall instead of leaving."
+    stretch:
+      - "Make a ball shrink a little every time it hits a wall."
+      - "Click to add one more ball where you clicked."
+      - "Leave a faint trail by drawing a see-through background each frame."
+    teacher: |
+      The same shape as Objects and stars with a new rule: when a ball reaches a wall, its speed flips sign. The test for each wall is one `if` and two sides joined with `||`, which students often split into two checks; both work. If a ball seems to stick to a wall, ask where the edge test is and how far from the centre the edge really is.
+
+  - id: pattern
+    title: A pattern maker
+    after: p5-functions
+    goal: |
+      Write your own **flower function** that draws one flower anywhere, then use it in loops to cover the canvas with a pattern.
+    example: pattern.js
+    uses: [function, param, for-count, random]
+    milestones:
+      - "A function of your own that draws one flower, with its place and size as parameters."
+      - "Loops call it to fill the canvas in rows and columns."
+      - "Each flower has a size or colour of its own, using random."
+    stretch:
+      - "A second function for a different shape, such as a leaf or a bee."
+      - "Make the rows shift along by half a flower, like bricks."
+      - "Give flower a third parameter for its colour."
+    teacher: |
+      Builds on Functions in p5.js: a function with parameters, called many times. The petals use `cos` and `sin` to place circles round a centre; students can copy that recipe and change the numbers, and the conversation is about what stays in the function and what is passed in. The picture is one run: the random sizes and colours make every run different.

@@ -546,7 +546,7 @@ function writeRecap(node, courseLessons) {
 const PROJECTS = new Map(loadProjects(CONTENT_ROOT, (c) => PLAY[c]?.kind || 'turtle').map((s) => [s.course, s]));
 const PREREQS = prerequisites(loadDirMeta, CONTENT_ROOT);
 let PROJPICS = null;
-const PLAY_EXT = { python: 'py', html: 'html', makecode: 'ts' };
+const PLAY_EXT = { python: 'py', html: 'html', makecode: 'ts', javascript: 'js' };
 // Basics nearly every program uses: never listed under "You also used".
 const ALSO_SKIP = new Set(['import-star', 'import-from', 'variable', 'arithmetic', 'string', 'print', 'page-wrapper', 'heading', 'paragraph', 'attribute']);
 function taughtWhere(course) {
@@ -909,7 +909,7 @@ for (const coursePath of teachCourses) {
   }).join('');
   // Open projects (tools/projects.mjs): each brief, its notes and one possible solution (its example), for the teacher.
   const pset = PROJECTS.get(coursePath);
-  const HL = { python: 'python', html: 'html', makecode: 'typescript' };
+  const HL = { python: 'python', html: 'html', makecode: 'typescript', javascript: 'javascript' };
   const projectsGuide = pset ? `<section class="tunit" id="projects"><h2>Open projects</h2><p class="muted">Self-paced briefs students can pick up after the lesson named on each. Students tick their own milestones and claim a badge; the page lights the skills their code uses. Badges stay in the student's browser: ask them to press Show your teacher. <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/projects/">Open the projects page</a></p>` +
     pset.projects.map((p) => `<details class="primer"><summary><b>${esc(p.title)}</b> <span class="muted">(after ${esc(p.after)}; ${esc(p.parts.flatMap((x) => x.uses.map((u) => skillLabel(x.language, u))).join(', '))})</span></summary>${md(p.goal)}` +
       `<p><b>Milestones:</b></p><ul>${(p.milestones || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` + (p.teacher ? md(p.teacher) : '') +

@@ -274,6 +274,19 @@ await pictures({
   },
 });
 
+const p5Draw = async (page, j) => {
+  await page.goto(`http://localhost:${port}/_playground-p5/index.html?code=${encodeURIComponent(j.code)}`);
+  await page.click('#run');
+  await page.waitForFunction(() => ['done', 'error'].includes(window.__playground?.status), null, { timeout: 15000 });
+  if (await page.evaluate(() => window.__playground.status) === 'error') return null;
+  await page.waitForTimeout(900);
+  const canvas = page.frameLocator('#preview').locator('canvas').first();
+  if (!(await canvas.count())) return null;
+  const box = await canvas.boundingBox();
+  const buf = await page.screenshot({ clip: { x: box.x, y: box.y, width: box.width, height: box.height } });
+  return { data: `data:image/png;base64,${buf.toString('base64')}`, w: Math.round(box.width * 2), h: Math.round(box.height * 2), div: 2 };
+};
+
 // ---- Open projects (tools/projects.mjs): a brief's example as its picture ("one way it could look"), never its code.
 // Python runs in the turtle playground (a program that waits for clicks or keys is pictured after 4 seconds); HTML and
 // DOM examples are pages, like expected results. MakeCode examples are drawn in makecode-out (projects/<course>/<id>). _pictures/projects/<course>/<id>[-<part>].png.
@@ -282,9 +295,32 @@ await pictures({
   name: 'projects', dir: join(DIR, 'projects'), viewport: { width: 900, height: 700 },
   base: hashDir('playground', 'media', String(withMedia), String(showPage), 'projects-v1'),
   jobs: loadProjects('content', () => undefined).flatMap((s) => s.projects.flatMap((p) => p.parts.map((x, i) => ({ x, i, p }))
-    .filter(({ x }) => x.exampleCode && ['python', 'html'].includes(x.language))
-    .map(({ x, i, p }) => ({ id: `${s.course}/${p.id}${p.parts.length > 1 ? `-${i + 1}` : ''}`, lang: x.language, code: `<!-- ${x.language} -->\n${x.exampleCode}`, src: x.exampleCode })))),
+    .filter(({ x }) => x.exampleCode && ['python', 'html', 'javascript'].includes(x.language))
+    .map(({ x, i, p }) => ({ id: `${s.course}/${p.id}${p.parts.length > 1 ? `-${i + 1}` : ''}`, lang: x.language, code: `<!-- ${x.language} -->\n${x.exampleCode}`, src: x.exampleCode, answers: x.answers })))),
   async draw(page, j) {
+    if (j.lang === 'javascript') return p5Draw(page, { code: j.src }); // p5.js sketch: the canvas, as in the p5 section
+    if (j.lang === 'python' && !/\bturtle\b/.test(j.src)) { // console program: the transcript, with j.answers typed at each input()
+      await page.setViewportSize({ width: 900, height: 700 });
+      await page.goto(`http://localhost:${port}/_playground/?console=1&speed=10&autorun=1&code=${encodeURIComponent(j.src)}`);
+      const answers = [...(j.answers || [])];
+      for (let n = 0; n < 40; n++) {
+        await page.waitForFunction(() => document.querySelector('.con-in') || ['done', 'error', 'stopped'].includes(window.__playground?.status), null, { timeout: 4000 }).catch(() => {});
+        const field = await page.$('.con-in');
+        if (!field) break;
+        if (!answers.length) throw new Error(`${j.id}: the example asks for more answers than its brief's answers: list gives`);
+        await field.fill(answers.shift()); await field.press('Enter');
+      }
+      const st = await page.evaluate(() => window.__playground);
+      if (st?.status === 'error') throw new Error(`${j.id}: the example failed: ${st.error}`);
+      const out = await page.$('#output');
+      const box = out && await out.boundingBox();
+      if (!box) return null;
+      const lines = await page.evaluate(() => document.getElementById('output').innerText.split('\n').length);
+      const height = Math.min(Math.ceil(box.height), Math.max(120, lines * 24 + 32));
+      const width = Math.min(box.width, 640);
+      const buf = await page.screenshot({ clip: { x: box.x, y: box.y, width, height } });
+      return { data: `data:image/png;base64,${buf.toString('base64')}`, w: Math.round(width * 2), h: height * 2, div: 2 };
+    }
     if (j.lang === 'html') {
       await page.setViewportSize({ width: 520, height: 700 });
       await showPage(page, withMedia(j.src));
@@ -416,18 +452,6 @@ await pictures({
 // explainPicture and expected: (key `<slug>/<key>`, expected ones `<slug>/exp-<key>`). A sketch that animates is
 // captured after a short wait; one that uses random() differs each time it is drawn, then stays cached.
 const { pictureItems: p5PictureItems, expectedItems: p5ExpectedItems } = await import('./lesson.mjs');
-const p5Draw = async (page, j) => {
-  await page.goto(`http://localhost:${port}/_playground-p5/index.html?code=${encodeURIComponent(j.code)}`);
-  await page.click('#run');
-  await page.waitForFunction(() => ['done', 'error'].includes(window.__playground?.status), null, { timeout: 15000 });
-  if (await page.evaluate(() => window.__playground.status) === 'error') return null;
-  await page.waitForTimeout(900);
-  const canvas = page.frameLocator('#preview').locator('canvas').first();
-  if (!(await canvas.count())) return null;
-  const box = await canvas.boundingBox();
-  const buf = await page.screenshot({ clip: { x: box.x, y: box.y, width: box.width, height: box.height } });
-  return { data: `data:image/png;base64,${buf.toString('base64')}`, w: Math.round(box.width * 2), h: Math.round(box.height * 2), div: 2 };
-};
 const p5Lessons = loadLessons().filter((l) => l.language === 'javascript');
 await pictures({
   name: 'p5', dir: join(DIR, 'p5'), viewport: { width: 1000, height: 700 },
