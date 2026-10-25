@@ -39,9 +39,33 @@ projects:
 
       A good counter never loses count: if the page opens late, the next press still shows the right number.
     milestones:
-      - "Each press of A adds 1 on the micro:bit and sends the count by name (serial write value)."
-      - "My page shows the count and updates on every press (try it with the pretend micro:bit)."
-      - "The Reset button on my page sends a command, and the micro:bit goes back to 0."
+      - text: "Each press of A adds 1 on the micro:bit and sends the count by name (serial write value)."
+        hints:
+          - "The count needs a variable that keeps its value between presses."
+          - "Inside on button A pressed, change the variable by 1, then send it."
+          - "Send it with serial write value, giving it a name such as count."
+        part: 1
+        way: |
+          input.onButtonPressed(Button.A, function () {
+              count += 1
+              serial.writeValue("count", count)
+          })
+      - text: "My page shows the count and updates on every press (try it with the pretend micro:bit)."
+        hints:
+          - "The page hears each value with microbit.onValue(function (name, number) { ... })."
+          - "Check the name is the one your micro:bit sends, then put the number in the page with textContent."
+        part: 2
+        way: |
+          microbit.onValue(function (name, number) {
+            if (name === "count") {
+              document.querySelector("#count").textContent = number;
+            }
+          });
+      - text: "The Reset button on my page sends a command, and the micro:bit goes back to 0."
+        hints:
+          - 'A button click on the page can send a line: microbit.send("word").'
+          - "On the micro:bit, read the line that arrives and check it is your word before you reset the count."
+    reveal: true
     stretch:
       - "Turn the page red when the count passes a number you choose."
       - "Show the count on the micro:bit's own screen too."
@@ -68,10 +92,30 @@ projects:
 
       Use a different radio group from the rest of the class so you only see your own packets.
     milestones:
-      - "The sender sends a named reading by radio (send value) on your group."
-      - "The bridge passes each packet on to the computer (serial write value)."
-      - "My page adds a new line to a list for every packet, so I can see the order they arrived."
+      - text: "The sender sends a named reading by radio (send value) on your group."
+        hints:
+          - "Both micro:bits must be on the same radio group, set first."
+          - "Radio send value takes a name (8 letters at most) and a number."
+      - text: "The bridge passes each packet on to the computer (serial write value)."
+        hints:
+          - "The bridge uses on radio received value, which gives you the name and the value."
+          - "Pass both straight on with serial write value."
+        part: 1
+        way: |
+          radio.onReceivedValue(function (name, value) {
+              serial.writeValue(name, value)
+          })
+      - text: "My page adds a new line to a list for every packet, so I can see the order they arrived."
+        hints:
+          - 'Make a new list item for each packet with document.createElement("li").'
+          - "Give it text, then add it to the end of the list on the page with append."
+        part: 2
+        way: |
+          var line = document.createElement("li");
+          line.textContent = name + " = " + number;
+          document.querySelector("#log").append(line);
       - "I tried a different radio group on the sender and saw the packets stop, then put it back."
+    reveal: true
     stretch:
       - "Send two different names from the sender and colour them differently on the page."
       - "Show how many packets have arrived so far."
@@ -98,10 +142,27 @@ projects:
 
       Then use it for something real: log the light near a window for a lesson, or the temperature in two parts of the room, and say what the numbers show.
     milestones:
-      - "The micro:bit sends a reading every second by name."
-      - "My page adds each reading to the end of a list."
-      - "My page shows the lowest and highest reading so far, updating as new ones arrive."
+      - text: "The micro:bit sends a reading every second by name."
+        hints:
+          - "A forever loop that sends, then pauses for 1000 ms, repeats for ever."
+          - "Send the sensor reading with serial write value and a name."
+      - text: "My page adds each reading to the end of a list."
+        hints:
+          - "Make the list once, outside the function that runs for each reading."
+          - "Add each new number to the end with push."
+        part: 2
+        way: |
+          readings.push(number);
+      - text: "My page shows the lowest and highest reading so far, updating as new ones arrive."
+        hints:
+          - "Math.min and Math.max can look at a whole list."
+          - "If both start at 0, the lowest never changes. Work out why, then fix it."
+        part: 2
+        way: |
+          document.querySelector("#low").textContent = Math.min.apply(null, readings);
+          document.querySelector("#high").textContent = Math.max.apply(null, readings);
       - "I logged something real and wrote one sentence about what the numbers showed."
+    reveal: true
     stretch:
       - "Show the average as well."
       - "Add a Clear button that starts the log again."

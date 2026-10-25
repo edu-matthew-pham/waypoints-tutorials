@@ -622,7 +622,7 @@ function writeProjects(node, set) {
         uses: x.uses.map((u) => ({ id: u.id, label: skillLabel(x.language, u), href: href(u.id, dup) })),
         embed: tryEmbed(fake, step, starter || '', dup, '', null, VERSIONS) };
     });
-    const data = { key: `${node.path}/${p.id}`, id: p.id, milestones: p.milestones || [], parts: parts.map(({ embed, title, ...rest }) => rest) };
+    const data = { key: `${node.path}/${p.id}`, id: p.id, milestones: p.milestones || [], hints: (p.msx || []).map((m) => m.hints || []), reveal: p.reveal === true, parts: parts.map(({ embed, title, ...rest }) => rest) };
     mkdirSync(join(OUT, dp), { recursive: true });
     writeFileSync(join(OUT, dp, 'index.html'), page(`${p.title}: a project`, `<style>${PROJECT_CSS}</style>` +
       projectPageBody({ esc, md: (t) => mdp.parse(t), course: node.path, courseTitle: node.title, p, after: afterText(p), pic: picOf(p, dup), parts, data }),
@@ -968,7 +968,7 @@ for (const coursePath of teachCourses) {
   const HL = { python: 'python', html: 'html', makecode: 'typescript', javascript: 'javascript', sql: 'sql' };
   const projectsGuide = pset ? `<section class="tunit" id="projects"><h2>Open projects</h2><p class="muted">Self-paced briefs students can pick up after the lesson named on each. Students tick their own milestones and claim a badge; the page lights the skills their code uses. Badges stay in the student's browser: ask them to press Show your teacher. <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/projects/">Open the projects page</a></p>` +
     pset.projects.map((p) => `<details class="primer"><summary><b>${esc(p.title)}</b> <span class="muted">(after ${esc(p.after)}; ${esc(p.parts.flatMap((x) => x.uses.map((u) => skillLabel(x.language, u))).join(', '))})</span></summary>${md(p.goal)}` +
-      `<p><b>Milestones:</b></p><ul>${(p.milestones || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` + (p.teacher ? md(p.teacher) : '') +
+      `<p><b>Milestones:</b></p><ul>${(p.msx || []).map((m) => `<li>${esc(m.text)}${(m.hints || []).length ? `<ol class="muted">${m.hints.map((h) => `<li>${esc(h)}</li>`).join('')}</ol>` : ''}${m.way ? `<div class="muted">Students can earn this piece (reveal on): <code>${esc(m.way).replace(/\n/g, '<br>')}</code></div>` : ''}</li>`).join('')}</ul>` + (p.teacher ? md(p.teacher) : '') +
       p.parts.filter((x) => x.exampleCode).map((x) => codeBlock(highlightCode, x.exampleCode, HL[x.language] || 'python', `One possible solution${x.title ? `: ${x.title}` : ''}`)).join('') + `</details>`).join('') + `</section>` : '';
   // Project briefs (tools/briefs.mjs): each brief's teacher notes and the criteria it evidences, for the teacher.
   const bset = BRIEFS.get(coursePath), bcur = bset ? loadCurriculum(coursePath.split('/')[0]) : null;

@@ -67,6 +67,29 @@ if (dataEl) {
   }
   claim.addEventListener('click', () => { me.claimed = today(); store(); paintClaim(); paintBadge(); document.getElementById('pj-badge').scrollIntoView({ behavior: 'smooth', block: 'center' }); });
 
+  // Layered help: hints one at a time; "Show one way" opens once the milestones before it are ticked or every hint is used.
+  me.hints ||= {}; me.peeked ||= {};
+  const wayBtns = [...document.querySelectorAll('[data-way-btn]')];
+  function paintHelp() {
+    document.querySelectorAll('[data-hints]').forEach((box) => {
+      const i = +box.dataset.hints, n = me.hints[i] || 0, list = D.hints[i] || [];
+      box.replaceChildren(...list.slice(0, n).map((t, k) => Object.assign(document.createElement('p'), { textContent: `Hint ${k + 1}: ${t}` })));
+      const btn = document.querySelector(`[data-hint="${i}"]`);
+      if (btn) { btn.textContent = n ? (n < list.length ? 'Another hint?' : 'No more hints') : 'Need a hint?'; btn.disabled = n >= list.length; }
+    });
+    wayBtns.forEach((b) => {
+      const i = +b.dataset.wayBtn, earlier = boxes.slice(0, i).every((x) => x.checked), used = (me.hints[i] || 0) >= (D.hints[i] || []).length && (D.hints[i] || []).length > 0;
+      const open = !!me.peeked[i];
+      b.disabled = !open && !(earlier || used) ;
+      b.title = b.disabled ? 'Tick the milestones before this one, or use every hint, first' : '';
+      b.textContent = open ? 'Hide' : 'Show one way';
+      document.querySelector(`[data-way="${i}"]`).hidden = !open;
+    });
+  }
+  document.querySelectorAll('[data-hint]').forEach((b) => b.addEventListener('click', () => { const i = +b.dataset.hint; me.hints[i] = Math.min((me.hints[i] || 0) + 1, (D.hints[i] || []).length); store(); paintHelp(); }));
+  wayBtns.forEach((b) => b.addEventListener('click', () => { const i = +b.dataset.wayBtn; me.peeked[i] = !me.peeked[i] || undefined; store(); paintHelp(); }));
+  boxes.forEach((b) => b.addEventListener('change', paintHelp));
+
   // The badge, and the card to show the teacher.
   const builtWith = () => D.parts.flatMap((p, i) => p.uses.filter((u) => used[i].has(u.id)).map((u) => u.label)
     .concat(p.known.filter((k) => used[i].has(k.id) && !p.uses.some((u) => u.id === k.id)).map((k) => k.label)));
@@ -84,6 +107,9 @@ if (dataEl) {
     const b = builtWith();
     fill('pjd-used', b.length ? b : ['(run the code on this page to list what it uses)']);
     fill('pjd-ms', D.milestones.filter((_, i) => me.ms[i]).map((m) => `✓ ${m}`));
+    const hinted = D.milestones.map((m, i) => ((me.hints[i] || 0) ? `Hints used on: ${m}` : null)).filter(Boolean), looked = D.milestones.map((m, i) => (me.peeked[i] ? `Looked at one way for: ${m}` : null)).filter(Boolean);
+    document.getElementById('pjd-help').hidden = !(hinted.length || looked.length);
+    fill('pjd-helpl', [...hinted, ...looked]);
     document.getElementById('pjd-reflect').textContent = me.reflect || '(not written yet)';
     const d = document.getElementById('pj-dialog');
     if (d.showModal) d.showModal(); else d.setAttribute('open', '');
@@ -99,6 +125,6 @@ if (dataEl) {
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     });
   });
-  paintClaim(); paintSkills();
+  paintClaim(); paintSkills(); paintHelp();
   window.__project = { used: () => used.map((s) => [...s]), state: () => me };
 }

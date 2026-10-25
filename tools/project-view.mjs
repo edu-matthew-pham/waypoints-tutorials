@@ -25,6 +25,10 @@ export const PROJECT_CSS = `
 .pjbtn{font:inherit;font-weight:600;font-size:15px;padding:8px 16px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;margin:4px 8px 4px 0}
 .pjbtn.ghost{background:transparent;color:var(--accent)}.pjbtn[disabled]{opacity:.45;cursor:default}
 .pjclaim small{color:var(--muted);display:block}
+.pjhint{margin:4px 0 0 30px;font-size:14.5px}.pjhint:empty{display:none}.pjhint p{margin:4px 0;padding:6px 10px;border-left:3px solid var(--accent);background:var(--bg);border-radius:0 8px 8px 0}
+.pjhbtn{font:inherit;font-size:13.5px;margin:4px 8px 0 30px;padding:2px 10px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--accent);cursor:pointer}.pjhbtn[hidden]{display:none}.pjhbtn[disabled]{opacity:.5;cursor:default;color:var(--muted)}
+.pjway{margin:6px 0 0 30px}.pjway[hidden]{display:none}.pjway pre{margin:4px 0;padding:8px 12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:auto;font-size:13.5px}
+.pjway small{color:var(--muted)}
 .pjbadge{border:2px solid var(--accent);border-radius:16px;padding:16px 20px;margin:16px 0;background:color-mix(in srgb,var(--accent) 6%,var(--card))}
 .pjbadge h2{margin:0 0 4px;font-size:1.25rem}.pjbadge .pjstar{color:var(--accent)}
 .pjpart h2{font-size:1.1rem;margin:22px 0 6px}
@@ -49,7 +53,9 @@ export function projectListBody({ esc, course, title, cards }) {
 
 /** One brief. parts: [{ title, embed, uses: [{ id, label, href }] }]; pic: { src, w, h } | null. */
 export function projectPageBody({ esc, md, course, courseTitle, p, after, pic, parts, data }) {
-  const ms = (p.milestones || []).map((m, i) => `<li><label><input type="checkbox" data-ms="${i}"><span>${esc(m)}</span></label></li>`).join('');
+  const ms = (p.msx || (p.milestones || []).map((text) => ({ text }))).map((m, i) => `<li><label><input type="checkbox" data-ms="${i}"><span>${esc(m.text)}</span></label>` +
+    ((m.hints || []).length ? `<button type="button" class="pjhbtn" data-hint="${i}">Need a hint?</button><div class="pjhint" data-hints="${i}" aria-live="polite"></div>` : '') +
+    (p.reveal === true && m.way ? `<button type="button" class="pjhbtn" data-way-btn="${i}" disabled>Show one way</button><div class="pjway" data-way="${i}" hidden><small>One way to do this step (yours can differ):</small><pre><code>${esc(m.way)}</code></pre></div>` : '') + `</li>`).join('');
   const stretch = (p.stretch || []).length ? `<section class="pjbox"><h2>Make it yours</h2><ul>${p.stretch.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>` : '';
   const skills = parts.map((pt, i) => `${parts.length > 1 ? `<p><b>${esc(pt.title)}</b></p>` : ''}<div class="pjskills">${pt.uses.map((u) => skillChip(esc, pt, i, u)).join('')}</div><p class="pj-also" data-part="${i}"></p>`).join('');
   return `<header class="top"><a class="crumb" href="../">← ${esc(courseTitle)}: projects</a><h1>${esc(p.title)}</h1></header>` +
@@ -64,7 +70,7 @@ export function projectPageBody({ esc, md, course, courseTitle, p, after, pic, p
     `<section class="pjbadge" id="pj-badge" hidden><h2><span class="pjstar">★</span> ${esc(p.title)}</h2><p id="pj-when"></p><p><b>You built it with:</b> <span id="pj-used"></span></p>` +
     `<button type="button" class="pjbtn" id="pj-show">Show your teacher</button><button type="button" class="pjbtn ghost" id="pj-dl">Download my code</button></section>` +
     `<dialog class="pjshow" id="pj-dialog" aria-label="Your badge"><p class="pjk">${esc(courseTitle)} · project badge</p><h2><span class="pjstar">★</span> ${esc(p.title)}</h2><p class="pjk" id="pjd-when"></p>` +
-    `<h3>Built with</h3><ul id="pjd-used"></ul><h3>Milestones</h3><ul id="pjd-ms"></ul><h3>The hardest part</h3><blockquote id="pjd-reflect"></blockquote>` +
+    `<h3>Built with</h3><ul id="pjd-used"></ul><h3>Milestones</h3><ul id="pjd-ms"></ul><div id="pjd-help" hidden><h3>Help used</h3><ul id="pjd-helpl"></ul></div><h3>The hardest part</h3><blockquote id="pjd-reflect"></blockquote>` +
     `<form method="dialog"><button class="pjbtn">Close</button></form></dialog>` +
     `<script type="application/json" id="pj-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
 }

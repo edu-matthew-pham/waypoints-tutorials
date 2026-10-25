@@ -11,7 +11,11 @@
 //         Draw a night sky ...
 //       example: night-sky.py             a possible result: drawn as the brief's picture, never shown to students
 //       uses: [loop-index, param, random] 3 or 4 concept ids (tools/concepts-core.mjs); { id, label } renames one
-//       milestones: [It runs ..., ...]    2 to 4, ticked by the student
+//       milestones: [It runs ..., ...]    2 to 4, ticked by the student. Each is a string, or an object for layered help:
+//         - { text: ..., hints: [..., ...], way: "one piece of code", part: 1 }
+//           hints: up to 3, shown one at a time (a generic move, never the joined-up answer); way: one piece of this
+//           project's solution for that milestone, behind "Show one way" (needs reveal: true; part = the crossover part, from 1)
+//       reveal: true                      lets students earn "Show one way" (off by default; the teacher guide always has the full example)
 //       stretch: [...]                    "make it yours" ideas
 //       teacher: |                        notes for the teacher guide (Markdown)
 //       parts:                            optional, for a crossover: one playground each (title, playground,
@@ -52,7 +56,8 @@ export function loadProjects(root, defaultPlay) {
 
               };
             });
-          return { ...p, parts };
+          const msx = (Array.isArray(p.milestones) ? p.milestones : []).map((m) => (typeof m === 'string' ? { text: m } : { text: String(m?.text ?? ''), hints: Array.isArray(m?.hints) ? m.hints.map(String) : [], way: m?.way ? String(m.way).replace(/\s+$/, '') : '', part: Number(m?.part) || 1 }));
+          return { ...p, milestones: msx.map((m) => m.text), msx, parts };
         });
         out.push({ course: rel, file, dir, projects });
       }
@@ -77,6 +82,13 @@ export function checkProjects(set, lessonsIn) {
     if (!p.after || !names.has(String(p.after))) err(`${tag}: after: names no lesson of ${set.course} (${p.after})`);
     const ms = Array.isArray(p.milestones) ? p.milestones : [];
     if (ms.length < 2 || ms.length > 4) err(`${tag} needs 2 to 4 milestones (it has ${ms.length})`);
+    for (const [i, m] of (p.msx || []).entries()) {
+      if (!m.text) err(`${tag}: milestone ${i + 1} has no text`);
+      if ((m.hints || []).length > 3) err(`${tag}: milestone ${i + 1} has ${m.hints.length} hints (3 at most)`);
+      if (m.way && p.reveal !== true) err(`${tag}: milestone ${i + 1} has a way: but the project has no reveal: true`);
+      if (m.way && (m.part < 1 || m.part > p.parts.length)) err(`${tag}: milestone ${i + 1}: part ${m.part} does not exist`);
+      if (m.way && p.parts[m.part - 1]?.exampleCode && !p.parts[m.part - 1].exampleCode.replace(/\s+/g, '').includes(m.way.replace(/\s+/g, ''))) warn(`${tag}: milestone ${i + 1}: way: is not a piece of the part's example (so it may not fit the solution)`);
+    }
     for (const [i, part] of p.parts.entries()) {
       const pt = p.parts.length > 1 ? `${tag} part ${i + 1}` : tag;
       if (!LANG_OF[part.playground]) err(`${pt}: no playground for projects called "${part.playground}" (turtle, html, dom, microbit, arcade)`);
