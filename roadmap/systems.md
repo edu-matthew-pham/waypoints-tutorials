@@ -182,6 +182,23 @@ Not built; needs a decision first. Today every security lesson is simulated and 
 - **Gate:** teacher-led sign-off like the LiPo one in Power and motors: agreed rules, isolated lab only, school IT and policy approval. It breaks the "no attack or exploit practice" rule for the simulated courses, so say so in its course page and keep the simulated courses unchanged.
 - **Shape:** mostly teacher notes and printable task sheets (the `briefs.yml` format fits), with little on-page content, because the work happens on the Pi. Open: kit cost per group, who builds the target, whether a pre-made Pi image is worth building.
 
+## Proposed (25 Oct 2026, Matthew: track it): System admin on a Raspberry Pi
+Not built. A course after The command line, which teaches the same commands in a pretend terminal; here students keep a real machine running for other people. Works on an offline lab network (a Pi per group and a switch, no internet, nothing on the school network).
+1. Set up: flash the OS, first boot, connect with `ssh`.
+2. Software: `apt` install, update, remove.
+3. Users and groups: accounts, `sudo`, who can do what.
+4. Services: start, stop, enable, read their logs.
+5. Share files: a Samba share for the class.
+6. Host something: Jellyfin as a media server (own or Creative Commons media), ports and access.
+7. Keep it running: backups, scheduled jobs with `cron`, updates.
+8. Challenge: run a small class server for a week and write it up (a project brief).
+
+Conventions (Matthew, 25 Oct):
+- **One tool taught, others named.** Each lesson ends with an "Other options" box: what else exists and why we chose this one (Plex and Emby need an account or a licence for some features, Kodi plays on one device; NFS for Linux-only networks, Nextcloud as a web option).
+- **Offline first, "With internet" notes.** The core task works offline; a `tier: typical` step says what internet access adds and what it costs (automatic updates and off-site backups from `cron`, remote access through a VPN such as Tailscale or WireGuard rather than opening router ports, a domain and certificates), and why exposing a server raises the stakes.
+- The Pi and Kali security lab (above) would come after this course and audit the servers students built here.
+Open: kit per group, whether a pre-made Pi image saves class time, how much on-page content versus teacher notes and briefs.
+
 ## Next
 
 0. Try a few class plans with classes; deepen the third batch where they run thin.
