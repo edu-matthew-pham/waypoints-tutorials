@@ -34,11 +34,17 @@ General ICT skills for students and for teachers of any subject, as its own subj
 - ICT skills is its own subject with its own entry point: light courses plus cards. Other subjects may link in optionally (a lesson or card that says "needs this ICT skill"); maths, science and code lessons are left alone for now.
 - A skill has a **lesson** (counts toward progress) and a **card** (reference: no ticks, one screen: the idea, steps that work in any app, a note for each common app such as Word, Excel, Docs, Sheets, a "watch for" line, and a link to the lesson). Both exist; search finds both.
 - Each ICT course has a Reference page listing its cards (`<course>/reference/`, the Reference chip on the course page). Cards live in `content/ict/<course>/cards.yml` (`tools/ict-cards.mjs`, AUTHORING › ICT cards). Core functions only; app notes name menus that rarely change and always say other apps work the same.
-- Files and systems is cut to about four habit lessons (approved by Matthew 26 Oct 2026, not yet built) (names and folders, copy/move/delete, versions and backup, fix it first) with no new widget for now; they link to the concept lessons in How computers work.
+- Files and systems is cut to about four habit lessons (approved by Matthew 26 Oct 2026, built the same day: see Built, files) (names and folders, copy/move/delete, versions and backup, fix it first) with no new widget for now; they link to the concept lessons in How computers work.
 
 ## Built (26 Oct 2026): cards
 - First batch: 8 cards for Working with data and 8 for Documents and slides, from their lessons. Pictures are not drawn yet (text only); whether widgets can be drawn through `render-pictures` is untested.
 - Next: a "used in" list on a card (other subjects' lessons that need it) once a first subject links in; cards for the later pathways as each is built.
+
+## Built (26 Oct 2026): Files and systems
+- `content/ict/files/` (third pathway in `content/ict/index.md`, `years: "5-7"`), course `ict/files`, four lessons in four units, no widget and no clips: **A place for everything** (folders, paths, names that work, year-month-day), **Copy, move or delete** (copy leaves two, move leaves one, a bin may not exist, a shortcut only points), **Versions and backup** (a version protects from a bad edit, a backup from a lost place, sync copies mistakes), **Fix it first** (read, save, one change, restart, ask with details). Same shape as the other courses, using sort, match, question and bug checks on made-up folders; each ends with a `tier: typical` step in the school's own storage, to be fitted to the school's approved system.
+- Six cards in `content/ict/files/cards.yml`. Misconceptions: `final-final-name`, `copy-is-move`, `only-one-copy`, `change-everything`.
+- Tested 26 Oct: validate, build, pages and reference render at 1100 and 390 px with no sideways scroll or script errors, `check-decks ict/files`. The checks were not driven answer by answer in a browser (validate checks answers exist and the shape).
+- Not done: a `files` widget (deferred), a rescue challenge, and the app notes on cards have not been checked against current Windows, Mac, Drive and OneDrive menus.
 
 ## Next
 - Matthew pilots the course with a colleague. After a publish (a new subject needs the full publish), check the Subjects menu, the subject page, search and the teacher guide.

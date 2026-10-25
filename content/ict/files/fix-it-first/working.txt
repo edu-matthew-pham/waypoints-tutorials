@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam's video has no sound.
+He wants it fixed quickly.
+He changes the volume, the output device and the app settings all at once.
+The sound comes back, but he does not know which change fixed it, so when it breaks again he starts from the beginning.
+# endregion

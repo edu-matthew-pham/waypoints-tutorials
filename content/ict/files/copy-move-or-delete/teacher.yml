@@ -1,0 +1,41 @@
+summary: "Students learn that copy leaves the original and makes two files, move leaves one in a new place, delete sends a file to a bin that may not exist on every device, and a shortcut only points. They sort actions, find a mistake in a drag to a USB stick, and plan how to take work home safely."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 6 min · Make and own storage 9 min"
+goals:
+  - I can say whether an action copies, moves or deletes.
+  - I can check where a file is after I act.
+  - I can say that a USB stick or shared drive may have no bin.
+struggle: "Students drag files and trust the result. Ask what is left in the first folder."
+before: |
+  Check your school's approved storage and fit the last step to it. Does it have a bin? Is anything backed up for them? Say so in the lesson.
+
+  The one idea: say which one you are doing, then look in both places. The folders and files here are made up. Use practice files for the last step, never real work.
+running:
+  - "Predict: students who say two files are thinking of a copy. Ask what move means."
+  - "Try: ask what is left in the first folder."
+  - "Worked example: ask Dev what he checked."
+  - "Practise: ask which job you could not undo."
+  - "Own storage: watch for deleting a real file. Use practice files only."
+stuck:
+  - see: "A student is sure drag always copies."
+    ask: "Look at the first folder. What is in it?"
+    fix: "Drag can move or copy. Look, and use Copy and Paste when it matters."
+  - see: "A student empties the bin to tidy up."
+    ask: "Can you get back what is in it?"
+    fix: "Leave it for a while. Emptying is final."
+  - see: "A student thinks a shortcut is a copy."
+    ask: "If the file moves, what does the shortcut do?"
+    fix: "A shortcut points. It has no file inside."
+stretch: "Find out what your school's storage does when you delete something. How long is it kept? Who can get it back?"
+support: "A card: Copy = two. Move = one, new place. Delete = bin. Then look."
+leads: |
+  Next in Files and systems: versions and backup, so one mistake cannot take your work.
+
+  Check your school's rules on deleting from shared drives.
+exit:
+  q: "How can you tell if you copied or moved a file?"
+  a: "Look in the first folder. If the file is still there it was a copy; if it is gone it was a move."
+explain: |
+  **Copy** makes a second file. **Move** takes the file to a new place, so there is still one. **Delete** sends it to a bin, which can usually be emptied, and some places have no bin. A **shortcut** only points to a file.
+
+  After you act, look in both places.

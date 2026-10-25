@@ -1,0 +1,29 @@
+inquiry:
+  q: "A student deletes a file from a shared drive and says she put it in the bin so it is fine. Is it fine? What would you want to know first?"
+  prompts:
+    - "Does a shared drive have a bin?"
+    - "Who can get it back?"
+  notes: "The answer depends on the system. The habit is to find out before you rely on a bin, and to copy first when it matters."
+activities:
+  - at: predict
+    kind: activity
+    title: "Copy, move, delete"
+    minutes: 3
+    do: |
+      Use three paper folders on a table and a paper file. Ask students to tell you which action you are doing as you act. Then ask what is left in the first folder.
+    notes: "The paper file makes the difference between one and two physical."
+  - at: make
+    kind: discussion
+    title: "Where is the bin?"
+    minutes: 4
+    do: |
+      Ask which places they use have a bin and which do not (laptop, USB stick, shared drive, cloud).
+    notes: "Each system differs. Find out for the school's own."
+questions:
+  - at: investigate
+    title: "How many files?"
+    type: question
+    q: "You copy a file to a USB stick. How many files are there?"
+    options: ["Two", "One", "None", "Three"]
+    answer: 0
+    explain: "A copy makes a second file."

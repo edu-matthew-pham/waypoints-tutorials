@@ -18,4 +18,11 @@ pathways:
     about: "This follows the Digital Literacy general capability (mainly its Creating and exchanging element: create, communicate and collaborate, and respect intellectual property). Each lesson uses a small page or slide on the screen, then asks students to do the same in the app your school uses. The core is what every word processor and slide app shares: styles and headings, lists and tables, room to read, one idea per slide, pictures with alt text, readable size and contrast, and credits for what you did not make. Features that change from year to year are left out on purpose."
     courses:
       - { path: ict/documents, id: documents, stage: foundations, tagline: "Headings, lists, layout and slides that people can read." }
+  - id: files
+    title: Files and systems
+    summary: "Folders, names, copy and move, versions and backup, and a routine for when something goes wrong."
+    fit: "Start here to stop losing work, in File Explorer, Finder, Drive or OneDrive."
+    about: "This follows the Digital Literacy general capability (mainly its Managing and operating element: manage content, protect content, and select and operate tools). Four short lessons teach the ideas every file system shares: folders and paths, names that work, copy, move and delete, versions and backup, and a routine for fixing things. The pictures are made-up folders on the page, and nothing touches a real device. Each lesson ends with a step in the storage your school has approved, so teachers should fit that step to the school's own system, and students should use only school-approved cloud services."
+    courses:
+      - { path: ict/files, id: files, stage: foundations, tagline: "Find your work, keep it safe and fix it first." }
 ---

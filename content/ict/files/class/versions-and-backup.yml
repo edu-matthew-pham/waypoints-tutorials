@@ -1,0 +1,29 @@
+inquiry:
+  q: "A student says her work is safe because it is in the cloud. Another says it is safe because she has three copies on her laptop. Who is safer, and what would you ask each?"
+  prompts:
+    - "What happens to each if the laptop is lost?"
+    - "What happens to each if she deletes the file?"
+  notes: "Neither is fully safe. The first has another place but sync can copy a delete. The second has three copies but one place. The best is both: versions, and a second approved place."
+activities:
+  - at: predict
+    kind: activity
+    title: "Lose the file"
+    minutes: 3
+    do: |
+      Ask students to write, on paper, what they would lose if their device broke tonight. Then which of it exists in a second place.
+    notes: "Most find that their newest work is in one place only."
+  - at: make
+    kind: discussion
+    title: "How often?"
+    minutes: 4
+    do: |
+      How much work could you afford to lose: an hour, a day, a week? What does that say about how often to back up?
+    notes: "The answer sets the habit. Little and often."
+questions:
+  - at: investigate
+    title: "A backup is"
+    type: question
+    q: "A backup is a copy kept:"
+    options: ["In a different place", "In the same folder", "Under a new name", "As a shortcut"]
+    answer: 0
+    explain: "A different place, so losing one place does not lose the work."

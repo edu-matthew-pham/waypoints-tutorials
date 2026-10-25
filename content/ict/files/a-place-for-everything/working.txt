@@ -1,0 +1,8 @@
+# Ana's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ana
+Ana saves her bean results as results.txt.
+She changes the numbers and saves again as results-final.txt.
+She changes them once more and saves it as results-final-final-2.txt, so the name says nothing about what is inside.
+The next week she cannot tell which file is newest.
+# endregion

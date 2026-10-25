@@ -1,0 +1,41 @@
+summary: "Students learn that saving over a file replaces the old one, that a version is an earlier state of a file and a backup is a copy in a different place, and that sync is not a backup on its own because it copies deletions and mistakes. They sort versions and backups, find a mistake about a single copy, and plan how to protect a project."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 6 min · Make and own storage 9 min"
+goals:
+  - I can say what a version is and what a backup is.
+  - I can explain that sync copies mistakes and deletions.
+  - I can plan how to protect my project.
+struggle: "Students think the cloud is a backup because it is somewhere else. Ask what happens when they delete a file from their folder."
+before: |
+  Find out what your school's storage does: Does it keep versions? For how long? Are deleted files kept? Is there a school backup? Fit the last step and the plan question to the answers, and say them out loud.
+
+  The one idea: a version protects from a bad edit; a backup protects from a lost place. Use only approved storage. Do not teach students to sign up to a service of their own for school work. The files here are made up.
+running:
+  - "Predict: students who say Undo are thinking of the open file. Ask what happens after you close it."
+  - "Try: ask which protects against a bad edit and which against a lost device."
+  - "Worked example: ask Lin how many places her project was in."
+  - "Practise: ask what happens to a synced copy when you delete."
+  - "Own storage: check they used a practice file."
+stuck:
+  - see: "A student says the cloud is a backup."
+    ask: "What happens in the cloud if you delete it on your laptop?"
+    fix: "Sync copies the change. Find out whether your service keeps old versions."
+  - see: "A student saves two copies in one folder and calls it a backup."
+    ask: "If the folder is lost, how many copies are left?"
+    fix: "A backup is in a different place."
+  - see: "A student has no version history."
+    ask: "What could you do by hand?"
+    fix: "Save a copy with the date in its name before a big change."
+stretch: "Plan a backup for a whole class project: who keeps which copy, where, and how often?"
+support: "A card: Two places. Dated copy. Check it opens."
+leads: |
+  Next in Files and systems: fix it first, a routine for when something goes wrong.
+
+  Check your school's rules on where student work may be stored.
+exit:
+  q: "What is the difference between a version and a backup?"
+  a: "A version is an earlier state of the same file; a backup is a copy in a different place."
+explain: |
+  **Save** replaces the old file. A **version** is an earlier state of a file, kept by version history or by a dated copy. A **backup** is a copy in a different place. A **synced** folder copies deletions and mistakes too, so it is not a backup on its own.
+
+  Use two places, save dated copies before big changes, and check the copy opens.

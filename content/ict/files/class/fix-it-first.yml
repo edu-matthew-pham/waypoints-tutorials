@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do experts ask 'what changed?' and 'what did you try?' before touching anything?"
+  prompts:
+    - "What does 'what changed' tell you?"
+    - "What does 'what did you try' save?"
+  notes: "It narrows the cause and avoids repeating steps. It is also how we test in science: one change at a time."
+activities:
+  - at: predict
+    kind: activity
+    title: "Describe it"
+    minutes: 3
+    do: |
+      Show a screen with an error message. Ask pairs to describe the problem in one sentence for a helper who cannot see it.
+    notes: "Compare the sentences. Which gives the helper the most?"
+  - at: make
+    kind: discussion
+    title: "Whose problem?"
+    minutes: 4
+    do: |
+      Make two lists on the board: problems students can try the routine on, and problems they should ask about.
+    notes: "Locked school settings and other people's logins go in the second list."
+questions:
+  - at: investigate
+    title: "One change"
+    type: question
+    q: "Why change one thing at a time?"
+    options: ["You know which change worked", "It is faster", "The computer needs time", "It is the rule"]
+    answer: 0
+    explain: "Then you know which change fixed it."

@@ -6,7 +6,9 @@ summary: What is built so far in ICT skills (one pilot lesson on spreadsheets), 
 
 ICT skills are the everyday tools every subject uses: spreadsheets, documents, slides and files. This is separate from Digital Technologies, which is about how computers work and how to make things with code. It is for students in any class, and for teachers of any subject who want a class to get better at a tool they use.
 
-**This is a pilot.** One course is started, [Working with data](../ict/data/) (usually Years 6–8), and it has one lesson so far: [A formula keeps up](../ict/data/a-formula-keeps-up/). It hasn't been tried with a class yet. We'd like a colleague to try it before we build more, so please tell us what you find.
+**This is a pilot.** Three courses are built, none tried with a class yet: [Working with data](../ict/data/) (nine lessons on spreadsheets), [Documents and slides](../ict/documents/) (nine lessons on headings, lists, layout, slides and credits) and [Files and systems](../ict/files/) (four lessons on folders and names, copy and move, versions and backup, and fixing problems). All usually suit Years 5 to 8. We'd like a colleague to try one with a class before we build more, so please tell us what worked and what didn't.
+
+Each course also has a **Reference** page of cards: one screen for each skill, with steps for any app and a note for each common app, to look up when you need it. Lessons count toward progress; cards do not.
 
 ## How it teaches
 
@@ -23,10 +25,8 @@ ICT skills maps loosely to the Digital Literacy general capability, at pathway l
 
 These are plans, not promises. We'll propose each pathway for your approval before building it.
 
-1. Working with data: more lessons (adding up and averaging a column, sorting and filtering, one chart that fits the data).
-2. Documents and presentations.
-3. Files and systems.
-4. Investigating and judging information, and staying safe and well, as short workshop-style lessons.
+1. Investigating and judging information, and staying safe and well, as short workshop-style lessons.
+2. More cards as lessons are added.
 
 Touch typing is a link out to existing tools, not something we'll rebuild.
 

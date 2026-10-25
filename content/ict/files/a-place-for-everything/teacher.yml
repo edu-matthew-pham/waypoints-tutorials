@@ -1,0 +1,41 @@
+summary: "Students learn that a folder holds files and sits inside another folder, that a path is the address of a file read from the outside in, and that a good name says what the file is and has the date as year-month-day. They sort files into folders, name files, and plan folders for their own subjects."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 6 min · Make and own storage 9 min"
+goals:
+  - I can read a path and say which folder a file is in.
+  - I can give a file a name that says what it is and when.
+  - I can plan folders for my own subjects.
+struggle: "Students save everything on the desktop or in Downloads and rely on search. Ask them to find a file from three weeks ago without searching."
+before: |
+  Check your school's approved storage first and fit the last step to it: a shared drive, OneDrive, Google Drive or the local device.
+
+  The one idea: a folder says what it is for, a name says what is in the file, and the path joins them into an address. The folders and files here are made up.
+running:
+  - "Predict: students who pick the file name have the path the wrong way round. Say it aloud from the outside in."
+  - "Try: ask what a stranger would need to know to find the file."
+  - "Worked example: ask Ana what the name will mean next week."
+  - "Practise: ask which name they could find by sorting."
+  - "Own storage: check the name before they save. Does it say what and when?"
+stuck:
+  - see: "A student cannot say what the path means."
+    ask: "Which folder do you open first?"
+    fix: "Read it from the left: open the first folder, then the next, and the file is last."
+  - see: "A student names everything final."
+    ask: "What will it be called when you save another one?"
+    fix: "Put the date in the name, not the word final. The newest sorts last."
+  - see: "A student changes the ending to change the type."
+    ask: "What is inside the file?"
+    fix: "Use Save as or Export to change the type. Renaming only changes the label."
+stretch: "Plan the folders for a whole term in all your subjects. Which folders would you open most? Could a friend find a file from your plan?"
+support: "A card with three words: what it is, when, where. Say all three before you save."
+leads: |
+  Next in Files and systems: copy, move or delete, so you know which one you did.
+
+  Check your school's rules on where student work should be stored.
+exit:
+  q: "Why does a name with the date as year-month-day help?"
+  a: "A list sorted by name is then also in date order."
+explain: |
+  A **folder** holds files and other folders. A **path** is the address of a file, read from the outside in. A good name says what the file is and has the date as **year-month-day**.
+
+  The ending, such as .docx, says what kind of file it is. Changing it by typing does not change the file.

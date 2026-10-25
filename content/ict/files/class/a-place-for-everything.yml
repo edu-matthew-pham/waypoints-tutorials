@@ -1,0 +1,29 @@
+inquiry:
+  q: "A friend saves everything on the desktop and finds files by searching. Another uses folders and names. What would happen to each if the computer was swapped for a new one?"
+  prompts:
+    - "Which of them could find a file by looking?"
+    - "What would the second friend need to tell someone to help them find a file?"
+  notes: "Search is useful, and folders and names are what you can still use when search fails or when someone else needs your file. The path is something you can say out loud."
+activities:
+  - at: predict
+    kind: activity
+    title: "Say the path"
+    minutes: 3
+    do: |
+      Show a folder picture on the board. Pick a file and ask a student to say its path from the outside in. Others check by pointing.
+    notes: "Reading aloud makes the order stick."
+  - at: make
+    kind: discussion
+    title: "What will it be called next week?"
+    minutes: 4
+    do: |
+      Show three names such as final, final-final and new. Ask which will still make sense next week and why.
+    notes: "The words that describe the file's position in time stop being true. A date does not."
+questions:
+  - at: investigate
+    title: "Which is the path?"
+    type: question
+    q: "Which is the path of the file results.txt inside Beans, inside Science?"
+    options: ["Science/Beans/results.txt", "results.txt/Beans/Science", "Beans/Science/results.txt", "Science/results.txt"]
+    answer: 0
+    explain: "Outside in: Science, then Beans, then the file."

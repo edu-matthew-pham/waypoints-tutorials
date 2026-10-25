@@ -533,5 +533,9 @@
   "slide-is-a-page": {"home": "ict/documents/one-idea-per-slide", "text": "A paragraph or a whole report section is copied onto one slide, so the audience reads instead of listening and the slide holds many ideas; a slide carries one."},
   "decoration-picture": {"home": "ict/documents/pictures-that-help", "text": "A picture is added because it looks nice, not because it shows something the words cannot; it takes space and attention and says nothing about the idea."},
   "low-contrast": {"home": "ict/documents/readable-from-the-back", "text": "Pale text is put on a pale background, or small text on a slide, because it looks soft on the screen in front of you; from the back of the room it cannot be read."},
-  "no-credit-needed-online": {"home": "ict/documents/whose-is-it", "text": "A picture or text found online is treated as free for anyone to use, without a credit or a look at the licence; someone made it, and the licence says what you may do."}
+  "no-credit-needed-online": {"home": "ict/documents/whose-is-it", "text": "A picture or text found online is treated as free for anyone to use, without a credit or a look at the licence; someone made it, and the licence says what you may do."},
+  "final-final-name": {"home": "ict/files/a-place-for-everything", "text": "A file is named final, final-final or new instead of saying what it is and when; those words stop being true as soon as another version is saved."},
+  "copy-is-move": {"home": "ict/files/copy-move-or-delete", "text": "Dragging a file is assumed to copy it (or to move it) without looking where it is afterwards; drag can do either, depending on where it is dropped."},
+  "only-one-copy": {"home": "ict/files/versions-and-backup", "text": "Work is kept in one place only, so one failure loses it; a backup is a copy in a different place."},
+  "change-everything": {"home": "ict/files/fix-it-first", "text": "Several things are changed at once when something goes wrong, so it is not known which change helped."}
 }

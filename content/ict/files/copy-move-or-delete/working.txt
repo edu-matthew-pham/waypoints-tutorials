@@ -1,0 +1,8 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+Dev finishes his poster on a school computer.
+He drags it onto his USB stick and pulls the stick out.
+He does not look at the school folder or the stick to see where the poster is now.
+At home the stick has the poster but at school it is gone from his folder.
+# endregion

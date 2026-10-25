@@ -1,0 +1,8 @@
+# Lin's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lin
+Lin works on her science project for a week.
+She saves it on her laptop each day.
+She keeps only that one copy, on the laptop, and does not put it anywhere else.
+Her laptop breaks, and the project is gone.
+# endregion

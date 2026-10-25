@@ -1,0 +1,41 @@
+summary: "Students learn a short routine for fixing problems: read the message, save their work, change one thing and test, restart, and ask with details. They sort good first moves from ones to avoid, find a mistake in changing everything at once, and learn which problems are not theirs to fix."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 6 min · Make and own system 9 min"
+goals:
+  - I can follow a routine when something goes wrong.
+  - I can write a help message that says what I saw and what I tried.
+  - I can tell which problems are not mine to fix.
+struggle: "Students click until it works, then cannot say how. Ask what they changed and in what order."
+before: |
+  Find out how students report problems at your school (a help desk, a form, a person) and fit the last step to it.
+
+  The one idea: read, save, change one thing, restart, ask with details. Some problems belong to the school: locked settings and other people's logins. The problems here are made up.
+running:
+  - "Predict: students who click OK are in a hurry. Ask what the message was."
+  - "Try: ask which move you could undo."
+  - "Worked example: ask Sam what he would do if it broke again."
+  - "Practise: ask what a helper needs to know."
+  - "Own system: check no real passwords appear in the message."
+stuck:
+  - see: "A student restarts first, without saving."
+    ask: "What happens to what is not saved?"
+    fix: "Save first, if the app lets you. Then restart."
+  - see: "A student writes 'it's broken'."
+    ask: "What did you see?"
+    fix: "Add the message, what you did before, and what you tried."
+  - see: "A student tries another person's login."
+    ask: "Whose is it?"
+    fix: "Never. Ask the teacher or IT."
+stretch: "Write a one-page 'Fix it first' card for a younger class, with the routine and an example."
+support: "A card: Read. Save. One change. Restart. Ask."
+leads: |
+  This is the last lesson in Files and systems. Next: Documents and slides, or another ICT pathway.
+
+  Check your school's help process and fit the last step to it.
+exit:
+  q: "Why change one thing at a time?"
+  a: "Then you know which change fixed it, or which made it worse."
+explain: |
+  A routine fixes most problems: **read** the message, **save** your work, **change one thing** and test, **restart**, then **ask** with details. A good help message says what you saw and what you tried.
+
+  Some problems belong to the school, such as locked settings. Ask for those.

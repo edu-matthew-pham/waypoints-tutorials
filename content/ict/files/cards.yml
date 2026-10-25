@@ -1,0 +1,91 @@
+# Reference cards for Files and systems: one screen each, no ticks.
+cards:
+  - id: read-a-path
+    title: "Read a path"
+    unit: find
+    lesson: a-place-for-everything
+    idea: "A path is the address of a file: the folders you open, from the outside in, then the file."
+    steps:
+      - "Start at the first folder in the path."
+      - "Open each folder in turn."
+      - "The last part is the file."
+      - "Use the path bar to check where you are."
+    watch: "The folder before the file name is the one it is directly inside."
+    apps:
+      "File Explorer": "The path is in the bar at the top of the window."
+      "Finder": "View, Show Path Bar, at the bottom of the window."
+      "Drive and OneDrive": "The folders you open are shown at the top, one after another."
+  - id: name-a-file
+    title: "Name a file so you can find it"
+    unit: find
+    lesson: a-place-for-everything
+    idea: "A good name says what the file is and has the date as year-month-day, so a list sorted by name is also in date order."
+    steps:
+      - "Start with what it is: bean-results, fractions-homework."
+      - "Add the date as year-month-day, such as 2026-10-12."
+      - "Use hyphens, not spaces or signs."
+      - "Keep the ending (.docx, .png). Do not type a new one to change the type."
+    watch: "Words such as final and new stop being true when you save another one."
+    apps:
+      "File Explorer": "Select the file and press F2 to rename."
+      "Finder": "Select the file and press Return to rename."
+      "Drive and OneDrive": "Right-click the file and choose Rename."
+  - id: copy-or-move
+    title: "Copy, move or delete"
+    unit: change
+    lesson: copy-move-or-delete
+    idea: "Copy makes a second file. Move takes it to a new place. Delete sends it to a bin, if there is one."
+    steps:
+      - "Say which one you are doing."
+      - "Use Copy and Paste for two files, or Cut and Paste to move."
+      - "Open both folders and look."
+      - "Delete only the one you are sure about."
+    watch: "Dragging can copy or move depending on where you drop it. A USB stick or shared drive may have no bin."
+    apps:
+      "File Explorer": "Ctrl+C copy, Ctrl+X cut, Ctrl+V paste. The Recycle Bin is on the desktop."
+      "Finder": "Cmd+C copy, Cmd+V paste, Option+Cmd+V moves. Deleted files go to the Bin."
+      "Drive and OneDrive": "Right-click for Make a copy, Move to and Remove. Check the Bin or Recycle bin."
+  - id: keep-versions
+    title: "Keep earlier versions"
+    unit: keep
+    lesson: versions-and-backup
+    idea: "A version is an earlier state of the same file. Saving over a file replaces it unless an earlier version is kept."
+    steps:
+      - "Before a big change, save a copy with the date in its name."
+      - "Or find version history in your app or storage."
+      - "To go back, open the earlier version and save it as the current one."
+      - "Check the older version opens."
+    watch: "Undo only works while the file is open."
+    apps:
+      "Word and Excel": "File, Info or Version History, in storage that keeps versions."
+      "Docs and Sheets": "File, Version history, See version history."
+      "Any app": "Save As with a new date in the name."
+  - id: make-a-backup
+    title: "Make a backup"
+    unit: keep
+    lesson: versions-and-backup
+    idea: "A backup is a second copy in a different place, so losing one place does not lose the work."
+    steps:
+      - "Pick a second place the school has approved."
+      - "Copy the file there."
+      - "Open the copy to check it works."
+      - "Repeat often. Your newest work is what you would lose."
+    watch: "A synced folder copies deletions and mistakes too, so it is not a backup on its own."
+    apps:
+      "File Explorer and Finder": "Copy the folder to approved storage."
+      "Drive and OneDrive": "Use the school's account only. Find out if old versions and deleted files are kept, and for how long."
+  - id: fix-it-first
+    title: "Fix it first"
+    unit: fix
+    lesson: fix-it-first
+    idea: "Read, save, change one thing, restart, then ask with details."
+    steps:
+      - "Read the message and say it aloud."
+      - "Save your work somewhere safe."
+      - "Change one thing and test."
+      - "Restart the app, then the device."
+      - "Ask: say what you saw and what you tried."
+    watch: "Some problems are not yours to fix, such as locked school settings and other people's logins."
+    apps:
+      "At school": "Report problems the way your school asks (a help desk, a form, a person)."
+      "A good message": "Name the app or file, the message, and what you tried. Never include a password."
