@@ -107,6 +107,7 @@ function hint(message, code) {
   if (/syntax error/i.test(message)) return 'The query is not written in a way SQL understands. Check the order of the words and that each part is spelled the way it appears in the lesson.';
   if (/ambiguous column name/i.test(message)) return 'Two tables have a column with that name, so SQL cannot tell which you mean. Put the table name and a dot in front of it.';
   if (/UNIQUE constraint failed|PRIMARY KEY/i.test(message)) return 'A row with that key is already there. Keys are never repeated, so pick one that is not used yet.';
+  if ((m = /table (\S+) has (\d+) columns? but (\d+) values? w/i.exec(message))) return `The table has ${m[2]} columns but the row has ${m[3]} values. Give one value for each column, or name the columns you are filling.`;
   return '';
 }
 
