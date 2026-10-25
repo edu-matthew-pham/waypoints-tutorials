@@ -1,0 +1,50 @@
+summary: Students find that copying a formula moves every cell name, including one that should stay put, and fix a shared cell with $. They work out weights from mass and g on a Year 7 science sheet, change g once to move from Earth to the Moon, and repeat it in the spreadsheet app the school uses.
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 10 min · Make and own app 10 min"
+goals:
+  - I can say which cell in a formula should stay put when it is copied.
+  - I can fix a cell name with $ and fill the formula down.
+  - I can change one shared cell and see every answer follow.
+struggle: "Seeing why a copy goes wrong. Students think the formula is broken, not that every name moved. Have them click the 0 cell and read which cell it used for g."
+before: |
+  Do the Try board yourself: paste C2 into C3 and read the formula in the bar.
+
+  The one idea: a copy moves every name, so a name that has to stay (a shared value such as g, a rate, a price) gets a $ in front of its column letter and row number. Spreadsheet people call this an absolute reference; students need the idea 'fix it with $'.
+
+  Science link: weight (N) = mass (kg) × g, with g about 10 N/kg on Earth (a round value used in school science) and about 1.6 N/kg on the Moon. Use your class's values if they differ.
+
+  The page's sheet has no formula that needs $ typed for you: students type the $ themselves. In Excel and Sheets, F4 on a selected name toggles the $ signs; the sheet on the page just uses typing.
+running:
+  - "Predict: students who chose 120 expect the paste to move only the mass. Ask which cell the bike's weight would use for g."
+  - "Try: ask what B8 holds and why the answer is 0, not an error."
+  - "Worked example: ask which part of =B2*$B$7 moves when pasted down and which part stays."
+  - "Practise: students who forget the $ get 0 below the first row. Ask them to click C3 and say which cell it used for g."
+  - "Own app: walk round. Common slips: $ only on one half of the name, or g typed inside the formula."
+stuck:
+  - see: "A student writes =B2*B7 and fills down (Sam's mistake) and gets zeros."
+    ask: "Click C3. Which cell does it use for g?"
+    fix: "Put $ in front of the B and the 7 in the first formula, then fill down again."
+  - see: "A student types =B2*10, so g is inside every formula."
+    ask: "How many formulas would you change to try the Moon?"
+    fix: "Put g in its own cell and use $B$7 in the formula."
+  - see: "A student writes =B2*$B7 or =B2*B$7 (half fixed)."
+    ask: "When you fill down, which part of B7 still moves?"
+    fix: "Fix both: $B$7 stays on B7 wherever it is pasted."
+  - see: "A student changes B7 and nothing changes."
+    ask: "Does the weight cell hold a formula or a typed number?"
+    fix: "Replace typed numbers with the formula and fill down."
+stretch: "Add a third column for Mars, where g is about 3.7 N per kg. What do you change, and what stays the same?"
+support: "A card: Copying moves every name. Put $ in front of the letter and the number of the cell that must stay: $B$7."
+leads: |
+  Next in Working with data: Add up a column (SUM and ranges).
+
+  Science: Year 7 and 8 forces and weight use the same formula. Mass and weight are different things (kg and N), so the sheet keeps them in separate columns.
+exit:
+  q: "C2 holds =B2*$B$7. You paste it into C6. What does C6 hold?"
+  a: "=B6*$B$7. B2 moves down four rows to B6, and $B$7 stays put."
+explain: |
+  When a formula is copied, **every** cell name in it moves.
+
+  A name with **$** in front of its letter and number does not. **$B$7** stays on B7 wherever the formula goes.
+
+  So put a shared number (like g) in its own cell, fix it with $, and fill the formula down. Change that one cell and every answer follows.

@@ -1,0 +1,29 @@
+inquiry:
+  q: "The Dark plants averaged about 5 cm and the Sun plants about 13 cm. Does this prove light makes beans grow?"
+  prompts:
+    - "What else might differ between the dark and the sunny place?"
+    - "How many plants were measured, and would you be surprised if another class got a different result?"
+  notes: "It supports the claim for these beans, in this setup. It is not proof for all beans. Fair tests control other variables (water, temperature, soil) and repeat the measurement."
+activities:
+  - at: predict
+    kind: activity
+    title: "Guess and give a reason"
+    minutes: 3
+    do: |
+      Each student writes Dark, Shade or Sun and one reason. Count the votes on the board.
+    notes: "Compare the votes with the averages afterwards: a guess with a reason is a hypothesis."
+  - at: end
+    kind: discussion
+    title: "Read each other's conclusions"
+    minutes: 5
+    do: |
+      Swap conclusions with a partner. Underline anything the numbers cannot support. Rewrite one sentence so it says only what the data shows.
+    notes: "Typical overclaims: 'all beans', 'proves', 'only'. Typical fixes: 'these beans', 'suggests', 'in this test'."
+questions:
+  - at: investigate
+    title: "Fair comparison"
+    type: question
+    q: "Three groups of five beans are compared. Which summary lets you compare the groups fairly?"
+    options: ["The average of each group", "The tallest of all fifteen", "The number of plants", "The first plant in each group"]
+    answer: 0
+    explain: "Each group's average is its typical height, so the three can be compared."

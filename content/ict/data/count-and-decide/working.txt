@@ -1,0 +1,7 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam wants C2 to say Tall if the height in B2 is 10 or more, and Short if not.
+Sam types =IF(B2>=10,Tall,Short) into C2.
+C2 shows #NAME? instead of Tall or Short.
+# endregion

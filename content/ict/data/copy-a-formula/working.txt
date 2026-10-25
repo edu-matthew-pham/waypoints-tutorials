@@ -1,0 +1,9 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam's sheet has five beans in rows 2 to 6, with the Day 1 height in column B and the Day 4 height in column C.
+Sam types =C2-B2 into D2, and it shows 8 for Bean A.
+For D3, Sam types =C2-B2 again, because it is the same sum.
+Sam types =C2-B2 into D4, D5 and D6 as well.
+Every growth shows 8, but Bean C only grew 6.
+# endregion

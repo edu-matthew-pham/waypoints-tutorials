@@ -1,0 +1,29 @@
+inquiry:
+  q: "A student writes the g value, 10, inside every weight formula. Another keeps g in one cell and fixes it with $. The teacher asks for the Moon's weights. Who finishes first, and who is more likely to be right?"
+  prompts:
+    - "How many changes does each student make?"
+    - "What if they miss one formula?"
+  notes: "One change against one per row. A missed formula gives a row that is still on Earth's g and looks fine, which is the dangerous part."
+activities:
+  - at: predict
+    kind: activity
+    title: "Which name should stay?"
+    minutes: 3
+    do: |
+      Write =B2*B7 on the board with B2 as the mass and B7 as g. Ask students which of the two names should move when the formula goes down a row and which should stay.
+    notes: "B2 moves (each row has its own mass). B7 stays. This is the whole idea."
+  - at: make
+    kind: discussion
+    title: "What else is shared?"
+    minutes: 4
+    do: |
+      A shared number might be g, a price, an exchange rate or a class size. Think of one from another subject where a sheet would keep it in its own cell.
+    notes: "Take a few: a tax or GST rate, the cost per kilowatt-hour, a scale in a map, a conversion factor."
+questions:
+  - at: investigate
+    title: "What does the $ do?"
+    type: question
+    q: "Which formula in C2 can be filled down so every row uses g from B7?"
+    options: ["=B2*$B$7", "=B2*B7", "=B2*B$7 typed as B7", "=B2*7"]
+    answer: 0
+    explain: "$B$7 stays on B7 as the formula moves down."

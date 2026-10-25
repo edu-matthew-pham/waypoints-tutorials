@@ -1,0 +1,52 @@
+summary: Students choose a chart type to answer a question (column to compare groups, line for change over time, scatter for two measurements, pie for parts of a whole) and give it a title and axis titles with units. They chart a cooling cup of water, animal lifespans, arm span against height and how a day is spent, and repeat it in the spreadsheet app the school uses.
+time: 50
+timing: "Predict and Try 10 min · Worked example 10 min · Vary 7 min · Practise 12 min · Make and own app 11 min"
+goals:
+  - I can choose the chart type that answers my question.
+  - I can say what each of four chart types shows.
+  - I can give a chart a title and axis titles with units.
+struggle: "Picking the chart from the data instead of from the question. Students click whichever picture looks nicest. Ask 'what do you want the reader to see?' before they touch the type."
+before: |
+  Do the Try board yourself: build the line chart, then change the type to Pie and Column and ask what each hides.
+
+  The one idea: the question decides the chart. Column: compare groups. Line: change over time. Scatter: do two measurements go together. Pie: parts of one whole.
+
+  On the page, students type the ranges (Labels and Values) rather than drag over the cells, because the principle is the same in every app: the chart needs labels and values. For a scatter chart, the Labels box holds the numbers for the horizontal axis, as in most apps' 'X values'.
+
+  Honest charts: column charts start at 0. A pie of unrelated numbers is meaningless. Titles and axis titles with units mean the chart stands alone. 3D effects and decoration are left out on purpose.
+
+  The values in the animal and arm span tables are rough, for teaching. Use class data if you have it, and have students predict what the scatter will look like before they build it.
+running:
+  - "Predict: students who chose pie think any numbers can be a pie. Ask what the whole would be."
+  - "Try: ask what the chart tells them that the table does not, and which type hides it."
+  - "Worked example: ask what each of the four charts is for, in their own words."
+  - "Practise: ask which axis each measurement goes on in the scatter and why it matters little which is which."
+  - "Own app: walk round. Common slips: selecting the heading row as a value, and leaving the title as 'Chart 1'."
+stuck:
+  - see: "A student makes a pie of the temperatures (Sam's mistake)."
+    ask: "What is the whole that the six slices share out?"
+    fix: "Change to a line chart: the temperatures follow each other in time."
+  - see: "A scatter chart shows an error or nothing."
+    ask: "Are both boxes numbers? Which box holds the horizontal axis?"
+    fix: "Labels is the horizontal numbers (arm span) and Values is the vertical numbers (height)."
+  - see: "A chart has no title or axis titles."
+    ask: "Could someone who has not seen the table tell what it shows?"
+    fix: "Add a title and name both axes with units."
+  - see: "A student's pie has a negative or empty slice."
+    ask: "Can an amount of time or a count be less than zero?"
+    fix: "Check the cells hold positive numbers."
+stretch: "Make a chart that could mislead (cut the axis, or choose the wrong type) and swap with a partner. Can they say what is wrong with it?"
+support: "A card: column compares groups. Line shows change over time. Scatter shows two measurements together. Pie shows parts of a whole. Title and name both axes."
+leads: |
+  Next in Working with data: the challenge, Report on an investigation.
+
+  Maths: scatter charts and lines of best fit in Years 7 and 8 statistics. Science: graphs of an investigation (the independent variable on the horizontal axis).
+exit:
+  q: "A student measured how far a ball rolled after being released from five different heights. Which chart shows whether a higher release goes with a longer roll?"
+  a: "A scatter chart: release height along the bottom and distance rolled up the side. Each dot is one roll."
+explain: |
+  A chart should answer a **question**.
+
+  **Column** compares amounts in groups. **Line** shows change over time. **Scatter** shows whether two measurements go together. **Pie** shows how one whole is shared.
+
+  Give it a **title** and **axis titles** with units, so a reader needs nothing else.

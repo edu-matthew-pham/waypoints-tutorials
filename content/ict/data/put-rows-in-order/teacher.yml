@@ -1,0 +1,52 @@
+summary: Students sort a table by one column and filter it to the rows that match a rule, learning that sorting moves whole rows, filtering only hides, and both work on the whole table. They answer questions about eight animals from Year 7 classification, and repeat it in the spreadsheet app the school uses.
+time: 45
+timing: "Predict and Try 10 min · Worked example 10 min · Vary 7 min · Practise 10 min · Make and own app 8 min"
+goals:
+  - I can sort a table by one column, low to high or high to low.
+  - I can filter a table to the rows that match a rule.
+  - I can say what happens to the rows that do not match, and why a whole table is selected.
+struggle: "Believing a sort only moves the column you clicked in. In real apps, selecting just one column can sort only that column. Let students read across a row after a sort to check the row still makes sense."
+before: |
+  Do the Try board yourself: sort by D, high to low, then read across a row.
+
+  The one idea: sorting reorders whole rows by one column; filtering hides the rows that do not match. Neither changes the data. Students do not need the Data menu names yet.
+
+  The sheet on the page always sorts the whole table below its heading row, as a real app does when the whole table is selected. The mistake in Sam's story is what happens in a real app when only one column is selected.
+
+  Filtering here is 'show rows where a column is, is not, is more than or is less than a value'. In Excel and Sheets, filters are drop-down menus on the heading row; the idea is the same.
+
+  Be careful with sorting a table that has formulas in it: a formula that uses another row (such as =B3-B2) can give a different answer after a sort. The sheet moves a formula with its row, so a formula that uses its own row keeps working. That is worth saying out loud in a real app.
+running:
+  - "Predict: students who chose Elephant think 'longest' means 'biggest'. Ask which column was sorted."
+  - "Try: ask what the Tortoise's group and mass are after the sort."
+  - "Worked example: ask what Sam would see if only the lifespans moved, and why that is worse than a mistake you can see."
+  - "Practise: ask how many rows are shown, and where the others went."
+  - "Own app: walk round. Common slips: only one column selected, and a header row sorted into the data."
+stuck:
+  - see: "A student sorts only one column (Sam's mistake) and the rows no longer make sense."
+    ask: "Read across one row. Does it still describe one animal?"
+    fix: "Undo, then select the whole table, headings included, and sort again."
+  - see: "A student sorts by the wrong column."
+    ask: "Which column holds the thing you are ordering by?"
+    fix: "Choose that column in 'Sort by'."
+  - see: "A student thinks filtering deleted rows."
+    ask: "What does the note 'Showing 2 of 8 rows' tell you?"
+    fix: "Choose Show all. The rows come back."
+  - see: "A student's filter shows no rows."
+    ask: "Does the word you typed match the cells, including spelling?"
+    fix: "Check the spelling, or choose a number rule such as is more than."
+stretch: "How would you find the three heaviest birds if there were many more rows? Which tool do you use first, sort or filter, and does the order matter?"
+support: "A card: Sort reorders whole rows by one column. Filter hides the rows that do not match. Select the whole table first."
+leads: |
+  Next in Working with data: Choose a chart (column, line, scatter and pie).
+
+  Science: classification (Year 7). Data check: lifespans and masses are rough figures for teaching. Use your own class data if you have it.
+exit:
+  q: "You sort the animals by Mass from low to high. Which animal is in row 2? And if you then filter to Birds, how many rows can you see?"
+  a: "The Mouse (0.02 kg) is in row 2 after the sort. Filtering to Birds shows 2 rows, the Eagle and the Penguin."
+explain: |
+  **Sorting** puts the rows of a table in order by one column. Whole rows move, so each row keeps its own numbers.
+
+  **Filtering** hides the rows that do not match a rule. Nothing is deleted, and Show all brings every row back.
+
+  Select the **whole table** first, headings included.

@@ -1,0 +1,83 @@
+# Sheets for "Typical, smallest and biggest".
+
+# region: run
+widget: sheet
+cell A1: Plant
+cell B1: Height (cm)
+cell A2: Bean A
+cell B2: 8.5
+cell A3: Bean B
+cell B3: 10
+cell A4: Bean C
+cell B4: 9.5
+cell A5: Bean D
+cell B5: 12
+cell A6: Bean E
+cell B6: 11
+cell A7: Bean F
+cell B7: 9
+cell A9: Average
+cell B9: =AVERAGE(B2:B7)
+cell A10: Shortest
+cell B10: =MIN(B2:B7)
+cell A11: Tallest
+cell B11: =MAX(B2:B7)
+edit: B2:B7
+# endregion
+
+# region: practise
+widget: sheet
+cell A1: Plant
+cell B1: Height (cm)
+cell A2: Bean A
+cell B2: 8.5
+cell A3: Bean B
+cell B3: 10
+cell A4: Bean C
+cell B4: 9.5
+cell A5: Bean D
+cell B5: 12
+cell A6: Bean E
+cell B6: 11
+cell A7: Bean F
+cell B7: 9
+cell A9: Average
+cell A10: Shortest
+cell A11: Tallest
+edit: B9:B11
+# endregion
+
+# region: practise-gap
+widget: sheet
+cell A1: Plant
+cell B1: Height (cm)
+cell A2: Bean A
+cell B2: 8.5
+cell A3: Bean B
+cell B3: 10
+cell A4: Bean C
+cell B4: 9.5
+cell A5: Bean D
+cell B5: 12
+cell A6: Bean E (not measured)
+cell A7: Bean F
+cell B7: 9
+cell A9: Average
+edit: B6, B9
+# endregion
+
+# region: make
+widget: sheet
+cell A1: Person
+cell B1: Arm span (cm)
+cell A2: Person 1
+cell A3: Person 2
+cell A4: Person 3
+cell A5: Person 4
+cell A6: Person 5
+cell A7: Person 6
+cell A9: Average
+cell A10: Shortest
+cell A11: Longest
+edit: B2:B7, B9:B11
+# endregion

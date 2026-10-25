@@ -1,0 +1,118 @@
+# Sheets for "Count and decide".
+
+# region: run
+widget: sheet
+cell A1: Plant
+cell B1: Height (cm)
+cell C1: Size
+cell A2: Bean A
+cell B2: 8.5
+cell C2: =IF(B2>=10,"Tall","Short")
+cell A3: Bean B
+cell B3: 10
+cell C3: =IF(B3>=10,"Tall","Short")
+cell A4: Bean C
+cell B4: 9.5
+cell C4: =IF(B4>=10,"Tall","Short")
+cell A5: Bean D
+cell B5: 12
+cell C5: =IF(B5>=10,"Tall","Short")
+cell A6: Bean E
+cell B6: 11
+cell C6: =IF(B6>=10,"Tall","Short")
+cell A7: Bean F
+cell B7: 9
+cell C7: =IF(B7>=10,"Tall","Short")
+cell A8: Bean G
+cell B8: 13.5
+cell C8: =IF(B8>=10,"Tall","Short")
+cell A9: Bean H
+cell B9: 7
+cell C9: =IF(B9>=10,"Tall","Short")
+cell A11: Tall plants
+cell B11: =COUNTIF(C2:C9,"Tall")
+edit: B2:B9
+# endregion
+
+# region: practise
+widget: sheet
+cell A1: Plant
+cell B1: Height (cm)
+cell C1: Size
+cell A2: Bean A
+cell B2: 8.5
+cell A3: Bean B
+cell B3: 10
+cell A4: Bean C
+cell B4: 9.5
+cell A5: Bean D
+cell B5: 12
+cell A6: Bean E
+cell B6: 11
+cell A7: Bean F
+cell B7: 9
+cell A8: Bean G
+cell B8: 13.5
+cell A9: Bean H
+cell B9: 7
+cell A11: Tall plants
+cell B11: =COUNTIF(C2:C9,"Tall")
+table: A1:C9
+tools: fill
+edit: C2:C9
+# endregion
+
+# region: practise-filled
+widget: sheet
+cell A1: Plant
+cell B1: Height (cm)
+cell C1: Size
+cell A2: Bean A
+cell B2: 8.5
+cell C2: =IF(B2>=10,"Tall","Short")
+cell A3: Bean B
+cell B3: 10
+cell C3: =IF(B3>=10,"Tall","Short")
+cell A4: Bean C
+cell B4: 9.5
+cell C4: =IF(B4>=10,"Tall","Short")
+cell A5: Bean D
+cell B5: 12
+cell C5: =IF(B5>=10,"Tall","Short")
+cell A6: Bean E
+cell B6: 11
+cell C6: =IF(B6>=10,"Tall","Short")
+cell A7: Bean F
+cell B7: 9
+cell C7: =IF(B7>=10,"Tall","Short")
+cell A8: Bean G
+cell B8: 13.5
+cell C8: =IF(B8>=10,"Tall","Short")
+cell A9: Bean H
+cell B9: 7
+cell C9: =IF(B9>=10,"Tall","Short")
+cell A11: Tall plants
+cell B11: =COUNTIF(C2:C9,"Tall")
+cell A12: Under 9 cm
+edit: B12
+# endregion
+
+# region: make
+widget: sheet
+cell A1: Student
+cell B1: Score (out of 10)
+cell C1: Result
+cell A2: Student 1
+cell A3: Student 2
+cell A4: Student 3
+cell A5: Student 4
+cell A6: Student 5
+cell A7: Student 6
+cell A8: Student 7
+cell A9: Student 8
+cell A11: Pass
+cell A12: Retry
+table: A1:C9
+tools: fill
+edit: B2:C9, B11:B12
+# endregion

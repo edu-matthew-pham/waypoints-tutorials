@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam's table has the animals in column A, their groups in B, their masses in C and their lifespans in D.
+Sam selects only the lifespan numbers, D2 to D9.
+Sam sorts the selection from high to low.
+The Tortoise's row now says Reptile, 50 kg and 2 years.
+# endregion

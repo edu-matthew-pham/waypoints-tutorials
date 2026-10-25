@@ -1,0 +1,50 @@
+summary: Students learn that SUM adds up a range of cells, that a colon in a range means every cell from one end to the other, and that the total follows when any cell in the range changes. They total a week of weather-station rainfall, then two weeks, then a week of their own numbers, and repeat it in the spreadsheet app the school uses.
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 10 min · Make and own app 10 min"
+goals:
+  - I can write a SUM formula for a range of cells.
+  - I can say what the colon in B2:B8 means.
+  - I can explain why a SUM follows when a cell in its range changes.
+struggle: "Telling a comma from a colon. =SUM(B2,B8) looks reasonable and shows a number, so nothing says it is wrong. Ask students to add up the cells by hand and compare."
+before: |
+  Do the Try board yourself: change B5 and click B9 to read the formula.
+
+  The one idea: SUM is a named formula that works on a range, and a range is a block of cells named by its two ends. Students do not need to know other functions yet.
+
+  The sheet on the page ignores words in a range (as Excel and Sheets do), so a heading in the range does no harm. A word typed where a number is expected (a typed 'five') is not added, which is a good thing to notice with students.
+
+  Real tools: Excel and Sheets have an AutoSum button (Σ) that guesses the range. Encourage students to check the range it picks, and to treat it as a first guess.
+running:
+  - "Predict: students who chose 46 think SUM remembers the old total. Ask when the sheet does the adding."
+  - "Try: ask which cell they changed and which cell moved."
+  - "Worked example: say the range aloud (from B2 down to B8) and ask what a comma would mean."
+  - "Practise: ask what block B2:C8 holds, and why one SUM can cover two columns."
+  - "Own app: walk round. Common slips: forgetting the =, or a range that stops a row short."
+stuck:
+  - see: "A student writes =SUM(B2,B8) (Sam's mistake) and gets a small total."
+    ask: "Which cells did the formula add? Add them yourself."
+    fix: "Use a colon: =SUM(B2:B8) adds every cell from B2 to B8."
+  - see: "A student's total is too small because the range stops at B7."
+    ask: "Which day is in B8? Is it in your range?"
+    fix: "Extend the range to the last day."
+  - see: "A student types the total as a number."
+    ask: "Change a day. Does the total follow?"
+    fix: "Replace the number with =SUM(B2:B8)."
+  - see: "A student's total shows a formula as words."
+    ask: "How does the sheet know it is a formula?"
+    fix: "Start with =."
+stretch: "Make a cell that shows what share of the week's rain fell on Saturday. Which formula do you need, and which parts of it would have to stay put if you copied it down?"
+support: "A card: =SUM(first cell:last cell). The colon means every cell from the first to the last."
+leads: |
+  Next in Working with data: Typical, smallest and biggest (AVERAGE, MIN and MAX).
+
+  Science and geography: rainfall, water use, mass and distance are all totalled this way. Use your own class data if you have it.
+exit:
+  q: "B2 to B6 hold 2, 4, 6, 8 and 10. What does =SUM(B2:B6) show?"
+  a: "30."
+explain: |
+  **SUM** is a ready-made formula that adds up the numbers in a **range**.
+
+  A range names a block of cells by its two ends, with a **colon**: B2:B8 means every cell from B2 down to B8. A comma only lists the cells you name.
+
+  When any cell in the range changes, the total works itself out again.

@@ -1,0 +1,29 @@
+inquiry:
+  q: "A farmer asks how tall your beans are. You could say the average, or the tallest. When would each answer be misleading?"
+  prompts:
+    - "What if one bean is much taller than the others?"
+    - "What if one bean did not grow?"
+  notes: "Each summary hides something. The average is pulled by an extreme plant, and the tallest says nothing about the rest. Reporting two or three together (typical and spread) is more honest."
+activities:
+  - at: predict
+    kind: activity
+    title: "Guess the typical"
+    minutes: 3
+    do: |
+      Show the six heights on the board (8.5, 10, 9.5, 12, 11, 9). Ask students to write down their guess for the typical height before any formula, then reveal 10.
+    notes: "Close guesses show students already have the idea. AVERAGE is the sheet's way of doing it every time."
+  - at: make
+    kind: discussion
+    title: "Missing or zero?"
+    minutes: 4
+    do: |
+      A plant pot was knocked over so Bean E has no measurement. Should the cell be empty or 0? What does each do to the average?
+    notes: "Empty: the average is of the five that were measured. 0: a plant of 0 cm is counted, which is a lie."
+questions:
+  - at: investigate
+    title: "Which function?"
+    type: question
+    q: "Which function shows the smallest number in B2:B7?"
+    options: ["MIN", "MAX", "AVERAGE", "SUM"]
+    answer: 0
+    explain: "MIN is the smallest and MAX the biggest."

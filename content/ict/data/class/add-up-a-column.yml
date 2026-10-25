@@ -1,0 +1,29 @@
+inquiry:
+  q: "Two students total a week of rainfall. One types =SUM(B2:B8). The other types =B2+B3+B4+B5+B6+B7+B8. Both get 46. Whose formula is better when the weather station records a second week?"
+  prompts:
+    - "How long is each formula for 30 days?"
+    - "What if a day's reading is added in a new row?"
+  notes: "Both are right today. SUM is shorter, easier to check, and makes it easy to read the range. For a longer period the long one is slow and easy to get wrong."
+activities:
+  - at: predict
+    kind: activity
+    title: "Add by hand first"
+    minutes: 3
+    do: |
+      Write the seven rainfall numbers on the board and have students add them in their heads or on paper. Then reveal =SUM(B2:B8) and 46.
+    notes: "46. The formula does the same adding, but again whenever a number changes."
+  - at: make
+    kind: discussion
+    title: "What else could SUM add up?"
+    minutes: 4
+    do: |
+      Think of other numbers in your subjects that get added up: steps in a week, cost of a camp, points in a game. What would the range be?
+    notes: "Take a few examples and ask what the first and last cells would be."
+questions:
+  - at: investigate
+    title: "Comma or colon?"
+    type: question
+    q: "Which formula adds up B2, B3, B4, B5 and B6?"
+    options: ["=SUM(B2:B6)", "=SUM(B2,B6)", "=SUM(B2;B6)", "=B2:B6"]
+    answer: 0
+    explain: "The colon names the block B2 to B6. The comma names only B2 and B6."

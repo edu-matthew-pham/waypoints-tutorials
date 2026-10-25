@@ -1,0 +1,29 @@
+inquiry:
+  q: "A student wants to know which bird lives longest. Should they sort first or filter first? Does the order matter?"
+  prompts:
+    - "What does each step show on its own?"
+    - "What would the table look like after doing them in the other order?"
+  notes: "For this question the order does not change the result, because a filter hides rows and a sort orders whatever is there. It matters for readability: filter first so there are fewer rows to read."
+activities:
+  - at: predict
+    kind: activity
+    title: "Order yourselves"
+    minutes: 3
+    do: |
+      Ask five students to hold up a card with their own birthday month number. Sort them from low to high without separating anyone from their card.
+    notes: "The cards move with the students, as whole rows do. That is the point of sorting by one column."
+  - at: make
+    kind: discussion
+    title: "A question for the data"
+    minutes: 4
+    do: |
+      What other questions could the animal table answer with a sort or a filter? Which would need both?
+    notes: "Examples: the lightest reptile, the longest-lived mammal, the animals over 10 kg."
+questions:
+  - at: investigate
+    title: "Sort or filter?"
+    type: question
+    q: "You want to see only the animals that live more than 20 years. Which do you use?"
+    options: ["Filter", "Sort", "Both", "Neither"]
+    answer: 0
+    explain: "A filter hides the rows that do not match the rule. A sort would only change the order."

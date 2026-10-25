@@ -1,0 +1,70 @@
+# Sheets for "Report on an investigation".
+
+# region: summarise
+widget: sheet
+cell A1: Plant
+cell B1: Dark
+cell C1: Shade
+cell D1: Sun
+cell A2: 1
+cell B2: 4
+cell C2: 9
+cell D2: 12
+cell A3: 2
+cell B3: 5.5
+cell C3: 10.5
+cell D3: 14
+cell A4: 3
+cell B4: 3
+cell C4: 8
+cell D4: 11.5
+cell A5: 4
+cell B5: 6
+cell C5: 11
+cell D5: 13
+cell A6: 5
+cell B6: 4.5
+cell C6: 9.5
+cell D6: 14.5
+cell A8: Average
+cell A9: Tallest
+cell A10: Shortest
+cell A11: Taller than 10 cm
+table: A1:D11
+tools: fill
+edit: B8:D11
+# endregion
+
+# region: chart
+widget: sheet
+cell A1: Plant
+cell B1: Dark
+cell C1: Shade
+cell D1: Sun
+cell A2: 1
+cell B2: 4
+cell C2: 9
+cell D2: 12
+cell A3: 2
+cell B3: 5.5
+cell C3: 10.5
+cell D3: 14
+cell A4: 3
+cell B4: 3
+cell C4: 8
+cell D4: 11.5
+cell A5: 4
+cell B5: 6
+cell C5: 11
+cell D5: 13
+cell A6: 5
+cell B6: 4.5
+cell C6: 9.5
+cell D6: 14.5
+cell A8: Average
+cell B8: =AVERAGE(B2:B6)
+cell C8: =AVERAGE(C2:C6)
+cell D8: =AVERAGE(D2:D6)
+edit: none
+tools: chart
+# endregion

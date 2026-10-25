@@ -1,0 +1,50 @@
+summary: Students learn that copying a formula moves its cell names with it, so one formula can be copied or filled down a whole column and each row works on its own cells. They fill a growth column for five Year 7 beans, add a growth per day column, and repeat it in the spreadsheet app the school uses.
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can copy a formula to another cell and say what happens to its cell names.
+  - I can fill a formula down a column so each row uses its own cells.
+  - I can tell a copied formula from the same text typed in every row.
+struggle: "Believing a copy is the same text. Students expect =C2-B2 to appear in D3, and the Predict shows the other answer. Have them click D3 and read the bar before you explain."
+before: |
+  Do the Try board yourself: copy D2, paste it into D3 and click D3 to read its formula.
+
+  The one idea: a formula's cell names are places relative to the cell it is in ('one to the left'), so when it is copied they move with it. Spreadsheet people call this a relative reference; students only need the idea that a copy moves its names.
+
+  The sheet on the page has Copy, Paste and Fill down buttons, and Ctrl+C and Ctrl+V work on a selected cell. The real tools work the same way. In Excel and Sheets, Ctrl+D fills down a selection, and the small square at the corner of a selected cell can be dragged down (or double-clicked in Excel and Sheets to fill as far as the data goes).
+
+  The next lesson, A cell that stays put, shows what to do when a copy must not move one of the names.
+running:
+  - "Predict: students who chose =C2-B2 think a copy is exact. Ask what D3 would then show, and whose growth that is."
+  - "Try: ask which row D3's formula uses, and whose bean that is."
+  - "Worked example: say the rule aloud (the cell one to the left take away the cell two to the left) and ask where it points in row 5."
+  - "Practise: ask who finds Fill down quickest and why it is less likely to slip than typing."
+  - "Own app: walk round. The common slips are pasting into the wrong cell and dragging the fill handle too far."
+stuck:
+  - see: "A student types =C2-B2 into every row (Sam's mistake) and every growth is 8."
+    ask: "Click D4 and read the formula. Which bean's row does it use?"
+    fix: "Copy D2 and paste it into D4, or select D2 and fill down. The names move for you."
+  - see: "A student copies the number 8 across instead of the formula."
+    ask: "Click the pasted cell. Does the bar show a formula or a number?"
+    fix: "Copy the cell that holds the formula =C2-B2, not a typed number."
+  - see: "A student pastes the formula and the answer is wrong because the formula was pasted into the wrong column."
+    ask: "Which two cells does it use now? Are they the Day 1 and Day 4 cells?"
+    fix: "Paste into the Growth column, so the formula has Day 4 one to the left and Day 1 two to the left."
+  - see: "A student fills too far down and gets a 0 or an error in an empty row."
+    ask: "Which rows have a bean in them?"
+    fix: "Fill only as far as the last plant. The empty rows are not wrong, just not needed."
+stretch: "Write one formula in F2 that shows whether Bean A grew more than Bean B (is D2 minus D3 positive?). What happens to it if you paste it into F3?"
+support: "A card: A copied formula moves its cell names by as much as the copy moves. D2 to D3 is one row down, so every row number goes up by one."
+leads: |
+  Next in Working with data: A cell that stays put (keeping one cell fixed while a formula is copied).
+
+  Years 6–8: the beans can be any measurements from a science investigation. Digital Technologies › Data representation covers how numbers are stored; this course is about using them.
+exit:
+  q: "D2 holds =C2-B2. You paste it into D8. What does D8 hold?"
+  a: "=C8-B8. D8 is six rows below D2, so each row number goes up by six."
+explain: |
+  When you copy a formula, its cell names **move** with it.
+
+  =C2-B2 in D2 means 'the cell one to the left, take away the cell two to the left'. Pasted into D3 it means the same thing in row 3, so it becomes =C3-B3.
+
+  So you write one formula and **fill it down** the column. Each row uses its own cells.

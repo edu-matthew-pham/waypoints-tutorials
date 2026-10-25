@@ -1,0 +1,29 @@
+inquiry:
+  q: "The scientist calls a bean Tall at 10 cm or more. A friend says 9 cm should be Tall. Who is right, and what changes in the sheet?"
+  prompts:
+    - "How many formulas does each person change?"
+    - "Does the count change? Does the data?"
+  notes: "Neither is wrong: the cut-off is a choice. It is also a good reason to put the cut-off in its own cell and fix it with $, so changing the choice means changing one number (the previous lesson's idea)."
+activities:
+  - at: predict
+    kind: activity
+    title: "Human IF"
+    minutes: 3
+    do: |
+      Hold up cards with heights (8.5, 10, 12, 7). Students stand if they would be Tall under the rule 'Tall is 10 or more' and sit if not. Count the standing.
+    notes: "That is exactly what IF does for each cell and COUNTIF does for the room."
+  - at: make
+    kind: discussion
+    title: "Where is the cut-off?"
+    minutes: 4
+    do: |
+      Why 10 cm? Who decides where Tall starts? What would change if we chose 9 or 11?
+    notes: "The sheet only follows the rule it is given. People choose the rule. Useful for any grading cut-off."
+questions:
+  - at: investigate
+    title: "Which sign?"
+    type: question
+    q: "B2 holds 10. Which test is true?"
+    options: ["B2>=10", "B2>10", "B2<10", "B2<>10"]
+    answer: 0
+    explain: ">= means more than or equal, so 10 passes. > and < leave out 10, and <> means not equal."

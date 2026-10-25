@@ -1,0 +1,52 @@
+summary: Students use AVERAGE, MIN and MAX to summarise a column of measurements, see which summary moves when one number changes, and learn that a typed 0 counts but an empty cell does not. They summarise six Year 7 bean heights, then six arm spans of their own, and repeat it in the spreadsheet app the school uses.
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 10 min · Make and own app 10 min"
+goals:
+  - I can use AVERAGE, MIN and MAX on a column of numbers.
+  - I can say what each one tells me and which one moves when one number changes.
+  - I can leave a missing measurement empty instead of typing 0.
+struggle: "Choosing what to summarise. Students can all type =AVERAGE, but knowing what the average does and does not tell them takes time. Ask 'does the average tell you if one bean is very different from the rest?'"
+before: |
+  Do the Try board yourself: change B5 and watch which of the three summaries moves.
+
+  The one idea: a summary is a formula that works on a whole range, and different summaries answer different questions. AVERAGE says what is typical, MIN and MAX say how far the numbers reach.
+
+  The AVERAGE here is the mean (total ÷ count). It is not the median or the mode. If a class has met those, ask which would not be pulled around by one very tall bean.
+
+  The missing-measurement idea matters in real data: an empty cell is skipped by AVERAGE, MIN and MAX, but a typed 0 is a real value. The sheet on the page does the same as Excel and Sheets here.
+
+  ROUND(x, 1) shows one decimal place. It changes the value held, not just the display; for display-only rounding, real tools have a number format, which is outside this course's core.
+running:
+  - "Predict: students who chose 12 think the average is the last number changed. Ask what the six plants share."
+  - "Try: ask which summary moved by a lot, a little or not at all, and why."
+  - "Worked example: ask which function they would use to catch a typing slip."
+  - "Practise: ask what the average of five is if the sixth is left empty, and what it would be with a 0."
+  - "Own app: walk round. Common slips: a range that misses a row, or typing 0 for a missing value."
+stuck:
+  - see: "A student types 0 for a missing measurement (Sam's mistake)."
+    ask: "Does the sheet treat 0 and an empty cell the same?"
+    fix: "Delete the 0. An empty cell is skipped by AVERAGE."
+  - see: "A student writes =AVERAGE(B2:B6), a row short."
+    ask: "Which plant is in B7? Is it in your range?"
+    fix: "Extend the range to B7."
+  - see: "A student writes =MAX(B2,B7) and gets the larger of two cells only."
+    ask: "Does a comma cover the cells in between?"
+    fix: "Use a colon: =MAX(B2:B7)."
+  - see: "A student swaps MIN and MAX."
+    ask: "Which of your two answers should be bigger?"
+    fix: "MIN is the smallest, MAX the biggest."
+stretch: "Which would you trust more to tell a farmer how tall these beans are: the average or the tallest? What would make you change your mind?"
+support: "A card: AVERAGE is the typical value, MIN is the smallest, MAX is the biggest. An empty cell is skipped; a 0 counts."
+leads: |
+  Next in Working with data: Count and decide (COUNTIF and IF).
+
+  Science: investigations often report an average of repeated measurements. Mathematics: the average here is the mean; Year 6–8 statistics also teaches median and mode.
+exit:
+  q: "Four heights are 6, 8, 10 and 12. What does =AVERAGE(B2:B5) show? And =MAX(B2:B5)-MIN(B2:B5)?"
+  a: "9 for the average (36 ÷ 4) and 6 for the spread (12 − 6)."
+explain: |
+  **AVERAGE**, **MIN** and **MAX** are functions that work on a range.
+
+  AVERAGE adds up the numbers and divides by how many there are, to give a typical value. MIN is the smallest and MAX the biggest, so MAX − MIN shows how spread out the numbers are.
+
+  An empty cell is skipped. A **0** you type is a real number, so it pulls the average down: leave a missing measurement empty.

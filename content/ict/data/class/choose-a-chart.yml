@@ -1,0 +1,29 @@
+inquiry:
+  q: "A newspaper chart shows two columns, 51 and 52, but the vertical axis starts at 50, so the second looks twice as big. Is the chart lying?"
+  prompts:
+    - "What does the reader see first, the numbers or the heights?"
+    - "How would you redraw it so it is fair?"
+  notes: "Every number on the chart is true, but the picture says something the numbers do not. Starting a column chart's axis at 0 is the fair way."
+activities:
+  - at: predict
+    kind: activity
+    title: "Four questions"
+    minutes: 3
+    do: |
+      Write four questions on the board: Which animal lives longest? How does the water's temperature change? Do tall people have long arms? How do I spend my day? Ask students to point at which chart each needs.
+    notes: "Column, line, scatter, pie. The question picks the chart."
+  - at: make
+    kind: discussion
+    title: "Column or pie?"
+    minutes: 4
+    do: |
+      Look at the pie of your day. Would a column chart show the same thing? What is easier to see in each?
+    notes: "Pie shows the share of the whole, columns make it easier to compare two similar parts. Both are fair; the choice depends on the question."
+questions:
+  - at: investigate
+    title: "Which chart?"
+    type: question
+    q: "Which chart shows how the temperature of a cup of tea changes over twenty minutes?"
+    options: ["A line chart", "A pie chart", "A scatter chart of one point", "A column chart of one number"]
+    answer: 0
+    explain: "Change over time is shown with a line chart."

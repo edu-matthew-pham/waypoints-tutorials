@@ -1,0 +1,63 @@
+# Sheets for "Copy a formula".
+
+# region: run
+widget: sheet
+cell A1: Plant
+cell B1: Day 1
+cell C1: Day 4
+cell D1: Growth
+cell A2: Bean A
+cell B2: 3
+cell C2: 11
+cell D2: =C2-B2
+cell A3: Bean B
+cell B3: 2
+cell C3: 11
+table: A1:D3
+tools: fill
+edit: D3
+# endregion
+
+# region: practise
+widget: sheet
+cell A1: Plant
+cell B1: Day 1
+cell C1: Day 4
+cell D1: Growth
+cell A2: Bean A
+cell B2: 3
+cell C2: 11
+cell D2: =C2-B2
+cell A3: Bean B
+cell B3: 2
+cell C3: 11
+cell A4: Bean C
+cell B4: 4
+cell C4: 10
+cell A5: Bean D
+cell B5: 5
+cell C5: 13
+cell A6: Bean E
+cell B6: 3
+cell C6: 9
+table: A1:D6
+tools: fill
+edit: B2:C6, D3:D6
+# endregion
+
+# region: make
+widget: sheet
+cell A1: Plant
+cell B1: Day 1
+cell C1: Day 4
+cell D1: Growth
+cell E1: Per day
+cell A2: Bean A
+cell A3: Bean B
+cell A4: Bean C
+cell A5: Bean D
+cell A6: Bean E
+table: A1:E6
+tools: fill
+edit: B2:E6
+# endregion

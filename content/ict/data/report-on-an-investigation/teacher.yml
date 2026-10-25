@@ -1,0 +1,48 @@
+summary: A challenge that brings the course together. Students summarise a class investigation (beans grown in dark, shade and sun) with AVERAGE, MAX, MIN and COUNTIF written once and copied across, chart the group averages with a title and axis titles, and pick a conclusion that matches the evidence. They then repeat it in the spreadsheet app the school uses.
+time: 55
+timing: "Predict and Plan 10 min · Summarise 15 min · Chart 12 min · Conclude 8 min · Own app 10 min"
+goals:
+  - I can summarise groups of measurements with formulas and functions.
+  - I can chart a comparison with a title and axis titles with units.
+  - I can write a conclusion that matches the data and no more.
+struggle: "Writing a conclusion that stops where the data stops. Students want to say 'light makes beans grow' for all beans. Ask 'how many beans, and where?' and let them rewrite."
+before: |
+  Do the Summarise board yourself: write the four formulas for column B and copy them across.
+
+  This is the course's challenge and there is no single path. It uses copying (moving names), functions on ranges, counting with a rule and a chart. If a student is stuck, point them back to the lesson that taught the move: copy, SUM, AVERAGE, COUNTIF or chart.
+
+  The data is made up for teaching but behaves as real data does: the groups overlap in spread and differ in average. Use your own class's investigation if you have one, and have students enter their own results in the last step. Three equal groups of five keeps the sums easy to check by hand.
+
+  The conclusion step is deliberately a question with four statements, one of which claims too much, one of which is false and one of which says only what the data shows. Then students write their own in two sentences. You may want to collect a few to read aloud and ask what could be challenged in each.
+running:
+  - "Predict: ask for reasons. Where does the guess come from, and what would change it?"
+  - "Plan: ask why average and not total, with equal groups, and what a slip looks like."
+  - "Summarise: walk round. Common slips: a range that stops at row 5, a missing colon, or the cell names not moved when copied across."
+  - "Chart: ask what the reader should see in one glance, and what the axes need to say."
+  - "Conclude: collect two or three sentences and ask what the data cannot say."
+stuck:
+  - see: "A student's average for a column is far too big or too small."
+    ask: "Which cells does your range cover? Is it the five heights only?"
+    fix: "Use B2:B6 for the five plants, not the heading or the other rows."
+  - see: "A student copies across but the numbers are the same in every column."
+    ask: "Click D8 and read the formula. Which column does it use?"
+    fix: "Copy the formula, do not type the same text. Copy and paste moves the column letters."
+  - see: "A student's chart shows only one column."
+    ask: "Which range did you give for the labels and for the values? How many cells does each cover?"
+    fix: "Both ranges are three cells wide: B1:D1 and B8:D8."
+  - see: "A student's conclusion says light is the only thing that matters."
+    ask: "What else could differ between the dark, shade and sun places? How would you check?"
+    fix: "Say what the averages show for these plants, and name one thing you would repeat or control."
+stretch: "Add a fourth condition, Dark with a lamp, with five plants of your own invention. Update every formula and the chart. How much work was it, and what made it easy?"
+support: "A card: write the formula for one column first, then copy it across. Row 8 AVERAGE, row 9 MAX, row 10 MIN, row 11 COUNTIF with the rule in quotes."
+leads: |
+  This is the end of Working with data. Other ICT skills pathways (documents and presentations, files and systems) follow.
+
+  Science: this is the pattern of a Year 7 and 8 investigation: a changed variable (light), a measured variable (height), a repeated measurement, a fair comparison and an honest conclusion.
+exit:
+  q: "Name one thing in your report that would change automatically if one measurement were corrected, and one thing you would have to change yourself."
+  a: "The averages, tallest, shortest and counts (and the chart) change by themselves. The conclusion sentence is written by hand, so you would re-read it."
+explain: |
+  A report turns measurements into an answer.
+
+  **Summarise** with formulas, so corrections follow. **Chart** the comparison, with a title and axis titles with units. **Conclude** with a sentence that says what the data shows, for these plants, and no more.

@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam has the temperature of a cup of water every minute for five minutes.
+Sam makes a pie chart of the six temperatures.
+The slices are almost the same size.
+Nobody looking at the pie can tell the water was cooling.
+# endregion

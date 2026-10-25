@@ -1,0 +1,70 @@
+# Sheets for "Add up a column".
+
+# region: run
+widget: sheet
+cell A1: Day
+cell B1: Rainfall (mm)
+cell A2: Monday
+cell B2: 0
+cell A3: Tuesday
+cell B3: 12
+cell A4: Wednesday
+cell B4: 4
+cell A5: Thursday
+cell B5: 0
+cell A6: Friday
+cell B6: 7
+cell A7: Saturday
+cell B7: 20
+cell A8: Sunday
+cell B8: 3
+cell A9: Total
+cell B9: =SUM(B2:B8)
+edit: B2:B8
+# endregion
+
+# region: practise
+widget: sheet
+cell A1: Day
+cell B1: Week 1 (mm)
+cell C1: Week 2 (mm)
+cell A2: Monday
+cell B2: 0
+cell C2: 5
+cell A3: Tuesday
+cell B3: 12
+cell C3: 0
+cell A4: Wednesday
+cell B4: 4
+cell C4: 0
+cell A5: Thursday
+cell B5: 0
+cell C5: 9
+cell A6: Friday
+cell B6: 7
+cell C6: 14
+cell A7: Saturday
+cell B7: 20
+cell C7: 2
+cell A8: Sunday
+cell B8: 3
+cell C8: 1
+cell A9: Total
+cell A11: Both weeks
+edit: B9:C9, B11
+# endregion
+
+# region: make
+widget: sheet
+cell A1: Day
+cell B1: Minutes read
+cell A2: Monday
+cell A3: Tuesday
+cell A4: Wednesday
+cell A5: Thursday
+cell A6: Friday
+cell A7: Saturday
+cell A8: Sunday
+cell A9: Total
+edit: B2:B9
+# endregion

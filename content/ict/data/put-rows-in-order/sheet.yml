@@ -1,0 +1,44 @@
+# Sheets for "Put the rows in order".
+
+# region: run
+widget: sheet
+cell A1: Animal
+cell B1: Group
+cell C1: Mass (kg)
+cell D1: Lifespan (years)
+cell A2: Mouse
+cell B2: Mammal
+cell C2: 0.02
+cell D2: 2
+cell A3: Eagle
+cell B3: Bird
+cell C3: 5
+cell D3: 25
+cell A4: Goldfish
+cell B4: Fish
+cell C4: 0.1
+cell D4: 10
+cell A5: Cat
+cell B5: Mammal
+cell C5: 4
+cell D5: 15
+cell A6: Frog
+cell B6: Amphibian
+cell C6: 0.03
+cell D6: 8
+cell A7: Tortoise
+cell B7: Reptile
+cell C7: 50
+cell D7: 80
+cell A8: Elephant
+cell B8: Mammal
+cell C8: 5000
+cell D8: 60
+cell A9: Penguin
+cell B9: Bird
+cell C9: 20
+cell D9: 20
+table: A1:D9
+tools: sort filter
+edit: none
+# endregion

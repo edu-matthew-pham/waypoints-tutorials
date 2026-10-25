@@ -1,0 +1,29 @@
+inquiry:
+  q: "A class measured thirty beans. One student typed 30 formulas. Another typed one and filled down. They find the measurements for one bean were wrong. Who has more to fix?"
+  prompts:
+    - "What does each student change when one measurement is wrong?"
+    - "What if the class adds another ten beans?"
+  notes: "Both fix the one measurement and the formula follows. The difference is writing and checking: filling down is quicker and gives the same rule on every row."
+activities:
+  - at: predict
+    kind: activity
+    title: "Point at the cells"
+    minutes: 3
+    do: |
+      Draw D2 with =C2-B2 on the board. Ask students to point (in the air) to the cells it uses, one left and two left. Move to D3 and ask which cells it would use.
+    notes: "One left and two left again, which are C3 and B3."
+  - at: make
+    kind: discussion
+    title: "Why not type it each time?"
+    minutes: 4
+    do: |
+      Three rows or three hundred? Talk with a partner: when is typing each formula still a good idea?
+    notes: "Hardly ever, but a good reason is a one-off formula that is different from its neighbours."
+questions:
+  - at: investigate
+    title: "What does D4 hold?"
+    type: question
+    q: "D2 holds =C2-B2. You paste it into D4. What does D4 hold?"
+    options: ["=C4-B4", "=C2-B2", "=C3-B3", "=D4-C4"]
+    answer: 0
+    explain: "D4 is two rows below D2, so each row number goes up by two."
