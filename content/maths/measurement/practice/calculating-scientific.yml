@@ -1,0 +1,15 @@
+# Practice for "Calculating in scientific notation". Answers are the power k of the finished answer.
+templates:
+  - q: "Work out ({a} × 10^{m}) × ({b} × 10^{n}) in scientific notation. What's the power of 10?"
+    vars: { a: "1..3", b: "2..3", m: "-6..8", n: "-6..8" }
+    where: "a * b < 10"
+    answer: "{m + n}"
+    explain: "{a} × {b} = {a * b} and {m} + {n} = {m + n}."
+  - q: "Work out ({a} × 10^{m}) × ({b} × 10^{n}) in scientific notation. What's the power of 10?"
+    vars: { a: "4..9", b: "4..9", m: "-6..8", n: "-6..8" }
+    answer: "{m + n + 1}"
+    explain: "{a} × {b} = {a * b}, which is more than 10: {a * b} = {a * b / 10} × 10. So the power goes up one: {m + n} + 1 = {m + n + 1}."
+  - q: "Work out ({2 * c} × 10^{m}) ÷ (2 × 10^{n}) in scientific notation. What's the power of 10?"
+    vars: { c: "1..4", m: "-6..8", n: "-6..8" }
+    answer: "{m - n}"
+    explain: "{2 * c} ÷ 2 = {c} and {m} − ({n}) = {m - n}."

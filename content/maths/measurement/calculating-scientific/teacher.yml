@@ -1,0 +1,39 @@
+summary: "Students multiply and divide numbers in scientific notation using the index laws, fix the number part when it reaches 10 or more, and use the speed of light and a time to find the distance to the Sun (AC9M9M02, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can multiply and divide numbers in scientific notation.
+  - I can fix the number part so it's from 1 to 10.
+  - I can use scientific notation to find a distance from a speed and a time.
+struggle: "Remembering the last step: check the number part. Ask students to circle it before they write the answer."
+before: |
+  Do the Run board yourself first. Students need Scientific notation and All the index laws.
+
+  The one idea: multiply or divide the number parts, add or subtract the powers, then fix the number part. The common mistake is stopping at 20 × 10⁷ (Mia's working).
+
+  Figures: light time about 8 minutes 20 seconds (Smithsonian), speed of light exact (NIST), distance 150 million km (NASA). The lesson uses 500 s.
+running:
+  - "Predict: take a show of hands. Those who chose 1.5 × 10¹⁰ lost the extra power from fixing 15."
+  - "Run: ask students to say what 15 × 10¹⁰ is in words before changing the board."
+  - "Paper: the try-one after the worked example and the Sun distance in Make are worked on paper first. Books out, and look for the step that fixes the number part."
+  - "Modify: before 3 × 10⁴ + 2 × 10³, ask whether you can add the powers."
+stuck:
+  - see: "A student stops at 20 × 10⁷."
+    ask: "Is 20 between 1 and 10?"
+    fix: "No: 20 = 2 × 10, so 2 × 10⁸."
+  - see: "A student adds numbers by adding powers."
+    ask: "What's 30 000 + 2 000?"
+    fix: "Write them as ordinary numbers: the index laws are for multiplying and dividing."
+stretch: "Light from the Moon takes about 1.3 seconds. How far is the Moon? Check it."
+support: "A flow card: multiply number parts, add powers, check the number part."
+leads: |
+  Continues AC9M9M02 node 2.
+
+  Where it leads: measurements in science and medicine (next).
+exit:
+  q: "Work out (4 × 10⁶) × (5 × 10⁻²) in scientific notation."
+  a: "2 × 10⁵."
+explain: |
+  To multiply, multiply the number parts and add the powers. To divide, divide the number parts and subtract the powers. Then check the number part is from 1 to 10: if it's 10 or more, move a factor of 10 into the power.
+
+  $(3 \times 10^8) \times (5 \times 10^2) = 15 \times 10^{10} = 1.5 \times 10^{11}$.

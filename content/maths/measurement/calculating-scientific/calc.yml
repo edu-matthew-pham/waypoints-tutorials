@@ -1,0 +1,29 @@
+# Boards for "Calculating with scientific notation". The board writes a × 10ᵏ out, to check a normalised answer.
+
+# region: run
+widget: placevalue
+mode: scientific
+slider a: 1, 9.9, 3
+slider k: -9, 12, 8
+# endregion
+
+# region: explain
+widget: placevalue
+mode: scientific
+slider a: 1, 9.9, 1.5
+slider k: -9, 12, 10
+# endregion
+
+# region: explain-pic
+widget: placevalue
+mode: scientific
+a: 1.5
+k: 11
+# endregion
+
+# region: vary
+widget: placevalue
+mode: scientific
+slider a: 1, 9.9, 4
+slider k: -9, 12, 3
+# endregion

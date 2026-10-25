@@ -1,0 +1,8 @@
+# Mia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+Work out (4 × 10³) × (5 × 10⁴).
+Multiply the numbers: 4 × 5 = 20.
+Add the powers: 3 + 4 = 7.
+So the answer is 20 × 10⁷.
+# endregion
