@@ -2,6 +2,8 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+**Amended (25 Oct 2026, later):** search plus everything-at-once browsing was two extremes, and the pathway links had gone from the menu. Pathways are back under Subjects (links to their trail maps, so students are one click from a trail), and "List for teachers" on a subject page is now a one-screen index of pathways and courses (years, lesson counts); full cards stay on each pathway page. Trails stay the default view; the search box is unchanged.
+
 ## Open in Prepare / Print, and a security gap in Prepare (25 Oct 2026, code chat; Matthew asked)
 
 - Built: guide pages have **Open in Prepare** (slides) and **Open in Print** (worksheet, cheat sheet) links (`prepareLink` in `tools/teach.mjs`); Prepare's main page and `/print` read `?src=<address of the .md>`. Both are on `main`; publish with the quick publish once Prepare has deployed.

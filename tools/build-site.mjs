@@ -340,7 +340,9 @@ const navFor = (pagePath, here, coursePath = null) => {
   const tsub = SUBJECTS.find((x) => x.teachers);
   return siteNav({
     root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '', aboutOn: at('about') || at('approach') || at('behind-the-scenes'),
-    subjects: SUBJECTS.filter((x) => !x.teachers).map((sub) => ({ title: sub.title, href: `${sub.path}/`, on: subjectOn(sub) })),
+    subjects: SUBJECTS.filter((x) => !x.teachers).map((sub) => ({ title: sub.title, href: `${sub.path}/`, on: subjectOn(sub),
+      // Each pathway with a built course, linking to its trail map (one click from anywhere, for students).
+      pathways: sub.pathways.filter((pw) => pw.id && (pw.courses || []).some((c) => c.path)).map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw })) })),
     teachers: tsub ? { title: tsub.title, href: `${tsub.path}/`, on: subjectOn(tsub), items: tsub.links.map((l) => ({ title: l.title, href: l.href, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) })) } : null,
     current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
   });
@@ -752,6 +754,18 @@ for (const node of dirs.values()) {
     const trailOn = node.meta?.trail === true || node.meta?.trail === 'units';
     const trailOpts = { stops: node.meta?.trail === 'units' ? 'units' : 'courses' };
     const heads = trailOn ? trailheadsHtml(pathways, pathways.map((pw) => layoutTrail(pw, pathways, dirs, lessonCount, { stops: 'courses' })), esc) : '';
+    // List for teachers (25 Oct 2026): one screen per subject. Each pathway with its courses as plain links, years and
+    // lesson counts; the full course cards are on each pathway's page.
+    const pindex = `<style>.pindex{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:6px 28px;margin:6px 0 10px}.pindex h2{font-size:18px;margin:14px 0 4px}.pindex h2 a{color:var(--ink);text-decoration:none}.pindex h2 a:hover{color:var(--accent)}.pindex ul{list-style:none;margin:0;padding:0}.pindex li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px solid var(--line);font-size:15px}.pindex li a{color:var(--ink)}.pindex li span{color:var(--muted);font-size:13px;white-space:nowrap}.pindex li.pst{border:0;padding:8px 0 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pindex li.later{color:var(--muted)}.pmore{color:var(--muted);font-size:14px}</style>` +
+      `<div class="pindex">` + pathways.map((pw) => {
+        const row = (c) => {
+          if (!c.path) return `<li class="later">${esc(c.title || '')}<span>coming later</span></li>`;
+          const [lo, hi] = SEARCH.yearsOfCourse(c.path), n = lessonCount(c.path);
+          return `<li><a href="${up}${esc(c.path)}/">${esc(dirs.get(c.path)?.title || c.path)}</a><span>${lo != null ? `${esc(SEARCH.yearsLabel(lo, hi))} · ` : ''}${n} lesson${n === 1 ? '' : 's'}</span></li>`;
+        };
+        const cs = pw.courses || [], f = cs.filter((c) => (c.stage || 'foundations') === 'foundations'), x = cs.filter((c) => c.stage === 'extensions');
+        return `<section><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)} <span aria-hidden="true">›</span></a></h2><ul>${f.map(row).join('')}${x.length ? `<li class="pst">Then</li>${x.map(row).join('')}` : ''}</ul></section>`;
+      }).join('') + `</div><p class="pmore">Each pathway's page has the full course descriptions, in order.</p>`;
     const viewToggle = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
       `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trails</button><button type="button" data-view="list">List for teachers</button></div>`;
     // Find a lesson (25 Oct 2026): the search box limited to this subject, with the ways teachers also look beside it.
@@ -761,7 +775,7 @@ for (const node of dirs.values()) {
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
       `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${heads ? '' : mapLink}` +
       // With trails, students start on the trailheads; the curriculum map card follows them (both views).
-      (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${body}</div>${mapLink}` : body) + create,
+      (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${pindex}</div>${mapLink}` : body) + create,
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (heads ? `<script src="${up}trailheads.js" data-root="${up}" defer></script>` : ''), navFor(node.path, 'home')));
     // One page per pathway: <subject>/paths/<id>/, with its courses in order and the planned ones as placeholders.
     for (const pw of pathways) {

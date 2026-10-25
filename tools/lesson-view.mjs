@@ -278,10 +278,13 @@ export const MAIN_SITE = 'https://learningwaypoints.com/';
 export const PREPARE_SITE = 'https://prepare.learningwaypoints.com/';
 export function siteNav({ root = '', subjects = [], teachers = null, current = null, here = 'home', homeOn = false, aboutOn = false }) {
   const link = (href, text, on, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
-  const dd = (id, top, label, items, on) => `<div class="sn-dd${on ? ' on' : ''}">${top}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="${id}" aria-label="${esc(label)}">▾</button><div class="sn-sub" id="${id}">${items}</div></div>`;
-  // Three items (25 Oct 2026): Subjects (the home page, with each subject under it), Teachers (the teacher pages and
-  // Prepare), About. Pathways and curriculum maps are reached from each subject's own page, not from this menu.
-  const subjectsMenu = dd('sn-subjects', link('', 'Subjects', homeOn, 'sn-top'), 'Subjects menu', subjects.map((s) => link(s.href, s.title, s.on)).join(''), homeOn || subjects.some((s) => s.on));
+  const dd = (id, top, label, items, on, cls = '') => `<div class="sn-dd${on ? ' on' : ''}">${top}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="${id}" aria-label="${esc(label)}">▾</button><div class="sn-sub${cls}" id="${id}">${items}</div></div>`;
+  // Three items (25 Oct 2026): Subjects (the home page, with each subject and its pathways' trail maps under it),
+  // Teachers (the teacher pages and Prepare), About. Curriculum maps are reached from each subject's own page.
+  const grouped = subjects.some((s) => s.pathways?.length);
+  const subjectsMenu = dd('sn-subjects', link('', 'Subjects', homeOn, 'sn-top'), 'Subjects menu', subjects.map((s) => grouped
+    ? `<div class="sn-grp">${link(s.href, s.title, s.on && !(s.pathways || []).some((x) => x.on), 'sn-subj')}${(s.pathways || []).map((x) => link(x.href, x.title, x.on, 'sn-pw')).join('')}</div>`
+    : link(s.href, s.title, s.on)).join(''), homeOn || subjects.some((s) => s.on), grouped ? ' sn-grid' : '');
   const teachersMenu = teachers ? dd('sn-teachers', link(teachers.href, 'Teachers', teachers.on && !teachers.items.some((x) => x.on), 'sn-top'), 'Teachers menu',
     teachers.items.map((x) => link(x.href, x.title, x.on)).join('') + `<a href="${PREPARE_SITE}" title="Waypoints Prepare: slide decks and print resources for teachers">Prepare <span aria-hidden="true">↗</span></a>`, teachers.on) : '';
   const about = link('about/', 'About', aboutOn);
@@ -307,12 +310,14 @@ html{scroll-padding-top:var(--nav,0px)}
 .sn-sub{display:none;position:absolute;top:100%;left:0;min-width:180px;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:6px;flex-direction:column}
 .sn-sub a{display:block}.sn-sub a[aria-current]{box-shadow:inset 3px 0 0 var(--accent);border-radius:4px}
 .sn-dd:hover .sn-sub,.sn-dd:focus-within .sn-sub,.sn-dd.open .sn-sub{display:flex}
+.sn-grid{min-width:0;width:max-content;max-width:min(760px,92vw);gap:4px 10px}.sn-dd:hover .sn-grid,.sn-dd:focus-within .sn-grid,.sn-dd.open .sn-grid{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr))}
+.sn-grp{display:flex;flex-direction:column;padding:2px 0 6px}.sitenav .sn-grp .sn-pw{font-weight:400;font-size:13px;padding:3px 10px 3px 18px;color:var(--muted)}.sitenav .sn-grp .sn-pw:hover{color:var(--ink)}
 .sn-menu{display:none;font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
 .sitenav .sn-back{color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;margin-right:6px;max-width:42vw;overflow:hidden;text-overflow:ellipsis}
 .sitenav .sn-back[hidden]{display:none}
 @media(min-width:701px) and (max-width:1100px){.sn-main .sn-top,.sn-main>a{padding:6px 6px}.sn-caret{margin-left:-6px}}
 @media(max-width:700px){.sn-menu{display:inline-block;margin-left:auto}.sn-main{display:none;order:9;flex-basis:100%;flex-direction:column;align-items:stretch;padding:4px 0 8px}.sitenav.open .sn-main{display:flex;max-height:calc(100vh - 120px);overflow-y:auto}
-.sn-dd{flex-direction:column;align-items:stretch}.sn-caret{display:none}.sn-sub{display:flex;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}
+.sn-dd{flex-direction:column;align-items:stretch}.sn-caret{display:none}.sn-sub{display:flex;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}.sn-dd .sn-grid{display:flex!important;width:auto;max-width:none}.sitenav .sn-grp .sn-pw{padding:4px 10px 4px 22px}
 .sitenav a[aria-current]{box-shadow:none}.sn-tools{order:8;flex-basis:100%;justify-content:flex-start;padding-bottom:6px;overflow-x:auto}.sitenav .sn-back{order:7;flex-basis:100%;max-width:none;margin:2px 0 6px;text-align:center}}
 @media print{.sitenav{display:none}}`;
 export const NAV_JS = `(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
