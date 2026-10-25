@@ -22,6 +22,8 @@ import { buildCreate } from './build-create.mjs';
 import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } from './trail.mjs';
 import { loadCurriculum, curriculumMapHtml, CMAP_CSS } from './curriculum-map.mjs';
 import { buildPointerPages, POINTER_SUBJECTS } from './pointer-pages.mjs';
+import { makeSearch } from './search-index.mjs';
+import { searchBoxHtml, SEARCH_HINTS } from './search-view.mjs';
 import { coachPrompt } from './coach.mjs';
 import { loadProjects, skillLabel } from './projects.mjs';
 import { PROJECT_CSS, projectListBody, projectPageBody } from './project-view.mjs';
@@ -323,18 +325,17 @@ const SUBJECTS = [...dirNode('').kids.entries()].filter(([, k]) => k.kind === 'd
   .map(([name, k]) => ({ path: name, title: k.title, order: k.order, pathways: Array.isArray(dirNode(name).meta?.pathways) ? dirNode(name).meta.pathways : [], map: dirNode(name).meta?.map === true && !!loadCurriculum(name), links: linksOf(name), teachers: k.audience === 'teachers' }))
   .sort((a, b) => a.teachers - b.teachers || (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
 const pathwayOf = (coursePath) => { for (const sub of SUBJECTS) for (const pw of sub.pathways) if ((pw.courses || []).some((c) => c.path === coursePath)) return { sub, pw }; return null; };
+// Subjects menu order (25 Oct 2026): the order of the `order:` in each subject's index.md; the home page uses it too.
 const navFor = (pagePath, here, coursePath = null) => {
   const c = coursePath && COURSES.find((x) => x.path === coursePath);
   const at = (p) => pagePath === p || pagePath.startsWith(p + '/');
   const inPw = coursePath ? pathwayOf(coursePath) : null;
+  const subjectOn = (sub) => at(sub.path) || inPw?.sub === sub || sub.links.some((l) => at(l.href.slice(0, -1)));
+  const tsub = SUBJECTS.find((x) => x.teachers);
   return siteNav({
-    root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '',
-    subjects: SUBJECTS.map((sub) => ({
-      title: sub.title, href: `${sub.path}/`, on: at(sub.path) || inPw?.sub === sub || sub.links.some((l) => at(l.href.slice(0, -1))),
-      items: sub.pathways.map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw }))
-        .concat(sub.map ? [{ title: 'Curriculum map', href: `${sub.path}/map/`, on: at(`${sub.path}/map`) }] : [])
-        .concat(sub.links.map((l) => ({ title: l.title, href: l.href, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) }))),
-    })),
+    root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '', aboutOn: at('about') || at('approach') || at('behind-the-scenes'),
+    subjects: SUBJECTS.filter((x) => !x.teachers).map((sub) => ({ title: sub.title, href: `${sub.path}/`, on: subjectOn(sub) })),
+    teachers: tsub ? { title: tsub.title, href: `${tsub.path}/`, on: subjectOn(tsub), items: tsub.links.map((l) => ({ title: l.title, href: l.href, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) })) } : null,
     current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
   });
 };
@@ -422,6 +423,17 @@ copyFileSync(join('site', 'trail.js'), join(OUT, 'trail.js')); // the trail map 
 copyFileSync(join('site', 'trailheads.js'), join(OUT, 'trailheads.js')); // the trailheads on a subject page (tools/trail.mjs)
 copyFileSync(join('site', 'curriculum-map.js'), join(OUT, 'curriculum-map.js')); // the curriculum map (tools/curriculum-map.mjs)
 copyFileSync(join('site', 'check.js'), join(OUT, 'check.js')); // the Check your school page (content/check.md)
+// Search (25 Oct 2026): the index is built here from the same data the pages use; site/search.js searches it in the browser.
+const SEARCH = makeSearch({ lessons, dirNode, courses: COURSES, subjects: SUBJECTS, pathwayOf, play: PLAY });
+writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
+copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
+// Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
+const afterOf = (coursePath) => {
+  const hit = pathwayOf(coursePath); if (!hit) return null;
+  const all = SUBJECTS.flatMap((sub) => sub.pathways.flatMap((pw) => pw.courses || []));
+  const me = (hit.pw.courses || []).find((c) => c.path === coursePath);
+  return (me?.after || []).map((ref) => { const cr = ref.split('#')[0], c = all.find((x) => x.path === cr || x.id === cr); return c ? (c.path ? dirs.get(c.path)?.title || c.path : c.title) : null; }).filter(Boolean);
+};
 copyFileSync(join('site', 'project.js'), join(OUT, 'project.js')); // project pages (tools/project-view.mjs)
 copyFileSync(join('tools', 'concepts-core.mjs'), join(OUT, 'concepts-core.js')); // the concept scan, for project pages
 
@@ -638,13 +650,25 @@ for (const node of dirs.values()) {
       `<div class="urows">${g.lessons.map(row).join('')}</div></section>`).join('');
     const challenge = node.meta?.challenge ? `<span class="badge" id="badge" data-unit="${esc(node.meta.challenge)}" hidden>★ Challenge complete</span>` : '';
     const hasChecks = courseLessons.some((l) => segmentsOf(l).length);
+    // The teacher strip (25 Oct 2026): what a teacher needs to choose this course, and a link to give students.
+    // Years come from the standards its lessons are tagged to (and from "Year 8" in titles); the lesson count leaves out
+    // optional lessons; "Do first" is the pathway's `after:`. Copying gives the course address only (no QR code: no phones).
+    const strip = (() => {
+      const [ylo, yhi] = SEARCH.yearsOfCourse(node.path), core = courseLessons.filter((l) => !l.optional).length, opt = courseLessons.length - core, first = afterOf(node.path);
+      const facts = [ylo != null ? ['For', SEARCH.yearsLabel(ylo, yhi)] : null, ['Lessons', `${core}${opt ? ` (and ${opt} optional)` : ''}`],
+        first ? ['Do first', first.length ? first.join(' and ') : 'No earlier course needed'] : null].filter(Boolean);
+      const guide = courseLessons.some((l) => l.teacher) ? `<a href="${up}teach/${node.path}/">Teacher guide</a>` : '';
+      return `<style>.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.cshare{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.cshare a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
+        `<div class="cstrip"><ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="cshare">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div></div>`;
+    })();
+    const COPY_JS = `<script>(function(){var b=document.querySelector('.copylink');if(!b)return;b.hidden=false;var m=document.querySelector('.copymsg');b.addEventListener('click',function(){var u=location.origin+location.pathname;function ok(){m.textContent='Link copied';setTimeout(function(){m.textContent=''},2000)}function fb(){var t=document.createElement('textarea');t.value=u;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){m.textContent=u}document.body.removeChild(t)}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,fb);else fb()})})();</script>`;
     writeFileSync(join(outDir, 'index.html'), page(node.title,
-      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}${challenge}</header>` +
+      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}${challenge}${strip}</header>` +
       (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') +
       `<div class="course" id="course" data-kind="${play?.kind || ''}">${rows}</div>` +
       (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : '') +
       (courseLessons.some((l) => l.teacher) ? `<p class="ptools">For teachers: <a href="${up}teach/${node.path}/">Teacher guide</a> (notes, answers, solutions, slides and worksheets)</p>` : ''),
-      `<script src="${up}progress.js" data-root="${up}" defer></script>` + (PROJECTS.has(node.path) ? `<script type="module" src="${up}project.js"></script>` : ''), navFor(node.path, 'course', node.path)));
+      `<script src="${up}progress.js" data-root="${up}" defer></script>` + (PROJECTS.has(node.path) ? `<script type="module" src="${up}project.js"></script>` : '') + COPY_JS, navFor(node.path, 'course', node.path)));
     continue;
   }
   // A folder with pathways (code/index.md): each pathway lists its courses in order, foundations then
@@ -700,9 +724,12 @@ for (const node of dirs.values()) {
     const heads = trailOn ? trailheadsHtml(pathways, pathways.map((pw) => layoutTrail(pw, pathways, dirs, lessonCount, { stops: 'courses' })), esc) : '';
     const viewToggle = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
       `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trails</button><button type="button" data-view="list">List for teachers</button></div>`;
+    // Find a lesson (25 Oct 2026): the search box limited to this subject, with the ways teachers also look beside it.
+    const finders = [cur ? `<a href="map/">Curriculum map</a>` : '', node.path === 'code' ? `<a href="${up}teach/code/ideas/">Big ideas across pathways</a>` : ''].filter(Boolean);
+    const subjSearch = searchBoxHtml({ root: up, subject: node.path, hint: SEARCH_HINTS[node.path] || SEARCH_HINTS[''], extra: finders.length ? `Or browse: ${finders.join(' · ')}` : '' });
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
-      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${heads ? '' : mapLink}` +
+      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${heads ? '' : mapLink}` +
       // With trails, students start on the trailheads; the curriculum map card follows them (both views).
       (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${body}</div>${mapLink}` : body) + create,
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (heads ? `<script src="${up}trailheads.js" data-root="${up}" defer></script>` : ''), navFor(node.path, 'home')));
@@ -732,10 +759,16 @@ for (const node of dirs.values()) {
     }
     continue;
   }
-  // The home page (content/index.md) can carry an about: section (Markdown) above the subjects.
-  const homeAbout = isRoot && node.meta?.about ? `<div class="pabout home-about">${new Marked().parse(String(node.meta.about))}</div><h2 class="home-subjects">Choose a subject</h2>` : '';
+  // The home page (25 Oct 2026) speaks to teachers first: find a lesson for your class (search), then the subjects. A
+  // line for students on their own sits between. The About text lives on /about/ (content/about.md). Teachers' own page
+  // gets the same search box. (A home page index.md can still carry an about: section.)
+  const homeAbout = isRoot
+    ? (node.meta?.about ? `<div class="pabout home-about">${new Marked().parse(String(node.meta.about))}</div>` : '') +
+      searchBoxHtml({ root: up, label: 'Find a lesson for your class', hint: SEARCH_HINTS[''] }) +
+      `<p class="home-own">Learning on your own? Pick a subject below and follow its trail map. There is nothing to install and no account to make, and your progress stays in this browser. <a href="about/">About these tutorials</a></p><h2 class="home-subjects" id="subjects">Choose a subject</h2>`
+    : node.path === 'teachers' ? searchBoxHtml({ root: up, label: 'Find a guide or a lesson', hint: SEARCH_HINTS.teachers }) : '';
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
-    `<header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${homeAbout}<ul class="lessons">${items}</ul>`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
+    `<style>.home-own{max-width:680px;color:var(--muted);margin:0 0 6px}.home-own a{color:var(--accent)}</style><header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${homeAbout}<ul class="lessons">${items}</ul>`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
 }
 
 // ---------- plain pages: content/<name>.md (besides index.md) becomes /<name>/ (approach, behind-the-scenes) ----------

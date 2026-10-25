@@ -1,5 +1,6 @@
 ---
 title: Learning with AI
+order: 6
 trail: units
 summary: Understand how AI works, investigate whether and when AI helps people learn, judge who AI affects, and decide how your school uses it.
 pathways:

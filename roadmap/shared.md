@@ -732,7 +732,9 @@ CI's Teachers smoke test had failed since 18 Oct 17:57: in Chrome stable (CI), `
 
 ## Decided (25 Oct 2026, Matthew): navigation and ways in, teacher-first, with search
 
-Replaces the 22 Oct "make the site easier to enter" proposal. Being built from the 25 Oct chat. Easy to change later: menus, wording and grouping are reversible.
+Replaces the 22 Oct "make the site easier to enter" proposal. **Built 25 Oct 2026 (pushed, not yet published): needs the full or quick publish, not publish-navigation alone, because it adds /about/, search-index.json and changes the home, subject and course pages.** Subject order is set by `order:` in each subject's index.md; subject pages and the Teachers page carry the search box; standards (maths, science, Digital Technologies) are searchable.
+
+Not done, for Matthew's say: (1) map Code courses to Digital Technologies Processes standards (`data/curriculum/digital-processes.json`, 54 standards; only 6 of 206 Code lessons are tagged now), then a Code curriculum map; (2) how long a course takes (no data yet; the strip shows lesson count); (3) "Copy link" on lesson pages; (4) watch teachers use it before changing the groupings. Easy to change later: menus, wording and grouping are reversible.
 
 **Who uses the navigation.** Teachers browse the site, choose lessons and give students a link. Students mostly arrive on a course or lesson page from that link, not the home page. Independent self-paced use is still welcome, just not the front door.
 

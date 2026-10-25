@@ -271,16 +271,20 @@ footer{margin-top:50px;color:var(--muted);font-size:14px}
  * pills stick below it and anchors land under it (it wraps to more rows on narrow screens). NAV_JS also adds the
  * menus and "Back to <lesson> › <step>": lesson pages remember the open step per tab (sessionStorage), other
  * pages offer the way back.
- * nav: { root, home, subjects: [{ title, href, on, items: [{ title, href, on }] }], current: { href, playground, reference } | null, here }
+ * nav: { root, subjects: [{ title, href, on }], teachers: { title, href, on, items: [{ title, href, on }] } | null, current: { href, playground, reference } | null, here, homeOn, aboutOn }
  * here: 'lesson' | 'course' | 'playground' | 'reference' | 'home'
  */
 export const MAIN_SITE = 'https://learningwaypoints.com/';
 export const PREPARE_SITE = 'https://prepare.learningwaypoints.com/';
-export function siteNav({ root = '', subjects = [], current = null, here = 'home', homeOn = false }) {
+export function siteNav({ root = '', subjects = [], teachers = null, current = null, here = 'home', homeOn = false, aboutOn = false }) {
   const link = (href, text, on, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
-  const menus = subjects.map((sub, i) => `<div class="sn-dd${sub.on ? ' on' : ''}">${link(sub.href, sub.title, sub.on && !sub.items.some((x) => x.on), 'sn-top')}` +
-    (sub.items.length ? `<button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-sub-${i}" aria-label="${esc(sub.title)} pathways">▾</button><div class="sn-sub" id="sn-sub-${i}">${sub.items.map((x) => link(x.href, x.title, x.on)).join('')}</div>` : '') + `</div>`).join('');
-  const tutorials = `<div class="sn-dd${homeOn ? ' on' : ''}">${link('', 'Tutorials', homeOn, 'sn-top')}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-tutorials" aria-label="Tutorials menu">▾</button><div class="sn-sub" id="sn-tutorials">${link('', 'Browse tutorials', homeOn)}${link('code/create/', 'Create lessons and courses', false)}</div></div>`;
+  const dd = (id, top, label, items, on) => `<div class="sn-dd${on ? ' on' : ''}">${top}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="${id}" aria-label="${esc(label)}">▾</button><div class="sn-sub" id="${id}">${items}</div></div>`;
+  // Three items (25 Oct 2026): Subjects (the home page, with each subject under it), Teachers (the teacher pages and
+  // Prepare), About. Pathways and curriculum maps are reached from each subject's own page, not from this menu.
+  const subjectsMenu = dd('sn-subjects', link('', 'Subjects', homeOn, 'sn-top'), 'Subjects menu', subjects.map((s) => link(s.href, s.title, s.on)).join(''), homeOn || subjects.some((s) => s.on));
+  const teachersMenu = teachers ? dd('sn-teachers', link(teachers.href, 'Teachers', teachers.on && !teachers.items.some((x) => x.on), 'sn-top'), 'Teachers menu',
+    teachers.items.map((x) => link(x.href, x.title, x.on)).join('') + `<a href="${PREPARE_SITE}" title="Waypoints Prepare: slide decks and print resources for teachers">Prepare <span aria-hidden="true">↗</span></a>`, teachers.on) : '';
+  const about = link('about/', 'About', aboutOn);
   const tools = !current ? '' :
     (current.playground ? link(`${current.href}playground/`, 'Playground', here === 'playground') : '') +
     (current.reference ? link(`${current.href}reference/`, 'Reference', here === 'reference') : '') +
@@ -288,7 +292,7 @@ export function siteNav({ root = '', subjects = [], current = null, here = 'home
   return `<nav class="sitenav" data-here="${esc(here)}" aria-label="Site"><div class="sn-in">` +
     `<a class="sn-brand" href="${MAIN_SITE}" title="Learning Waypoints: the main site">Learning Waypoints <span aria-hidden="true">↗</span></a>` +
     `<button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-main">Menu ▾</button>` +
-    `<div class="sn-main" id="sn-main">${tutorials}${menus}<a href="${PREPARE_SITE}" title="Waypoints Prepare: slide decks and print resources for teachers">Prepare <span aria-hidden="true">↗</span></a></div>` +
+    `<div class="sn-main" id="sn-main">${subjectsMenu}${teachersMenu}${about}</div>` +
     `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
 }
 export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}

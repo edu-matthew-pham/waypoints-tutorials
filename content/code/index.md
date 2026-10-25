@@ -1,5 +1,6 @@
 ---
 title: Code
+order: 3
 trail: units
 summary: Learn to program by predicting, running, investigating, modifying and making. Three pathways share the same big ideas; start with whichever fits your class.
 pathways:
