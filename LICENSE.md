@@ -20,7 +20,7 @@ When you share an adapted version, keep a credit such as "Adapted from Waypoints
 - Using them to build or train a product, including AI tools.
 - Removing the credit.
 
-To ask for permission, use the contact on [learningwaypoints.com](https://learningwaypoints.com).
+To ask for permission, email mattypham@gmail.com.
 
 ## Other people's parts
 
