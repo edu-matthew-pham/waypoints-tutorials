@@ -55,6 +55,7 @@ stage: run
 insight: "Hunting as the bird, then watching the average colour shift over generations, makes selection something students caused."
 try: { playground: science, starter: "boards.yml#hunt", height: 640 }
 check: { type: board, text: "Hunt and breed for three generations.", expect: { done: true } }
+hint: ["Be a hungry bird: which beetles jump out at you first on this ground, and are those the ones you're eating?", "The two bar charts under the board show the start and your latest generation with their averages, so check whether the average is moving as you go."]
 ```
 
 You are a bird. Click beetles to eat them (as fast as you can, like a hungry bird). Then press **Survivors breed**. Compare the bar charts: the start and the latest generation.
@@ -73,14 +74,16 @@ tasks:
         - ["Beetles in the population vary in colour", "1st"]
         - ["Birds eat the beetles that stand out most", "2nd"]
         - ["Beetles that blend in are more likely to survive", "3rd"]
-        - ["Survivors breed, passing on the alleles for their colour", "4th"]
+        - ["Survivors breed, passing on the genes for their colour", "4th"]
         - ["Over generations, the population's average colour shifts", "5th"]
+    hint: ["Tell it as the story of your board, from the beetles you saw at the start to the bar charts at the end.", "Each step needs the one before it, so for each card ask what has to have happened already for it to be true."]
   - check:
       type: question
       q: "Did any single beetle on the board change its colour?"
       options: ["No: each beetle kept its colour; the population changed because of who survived and bred", "Yes, the survivors got paler", "Yes, the eaten ones got darker", "Only the babies changed"]
       answer: 0
-      feedback: [null, "Survivors kept their colour.", "Eaten beetles were removed.", "Offspring were like their parents, plus a small random change."]
+      feedback: [null, "The survivors kept the colour they started with.", "The eaten beetles were removed from the population, not changed.", "Offspring were like their parents, plus a small random change."]
+    hint: ["Pick one beetle that survived a hunt: was it a different colour after the hunt than it was before?", "Think about what Survivors breed did, and read the line under the board again about where the new beetles' colours came from."]
   - check:
       type: question
       q: "What would happen if every beetle started exactly the same colour?"
@@ -94,6 +97,7 @@ tasks:
       answer: 0
       feedback: [null, "Shared DNA and anatomy say otherwise: they point to common ancestors.", "Evolution branches; it doesn't climb. Every species alive today has been evolving for the same length of time."]
       explain: "Splitting and selection, repeated over millions of years, give a branching tree of life. Every living thing is related; the question is how closely."
+    hint: ["If you trace our family line back, and a chimp's, and a mushroom's, has any of them been evolving for less time than the others?", "Splitting means one population becomes two that both keep changing, so picture what you get when that happens again and again."]
   - check:
       type: question
       q: "If relatives share ancestors, which pair would you expect to have the most similar DNA?"

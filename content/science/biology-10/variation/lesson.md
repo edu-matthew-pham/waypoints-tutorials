@@ -71,6 +71,7 @@ tasks:
         - ["The beetles' colour", "Continuous"]
         - ["Pea flower colour (purple or white)", "Discontinuous"]
         - ["Hand span", "Continuous"]
+    hint: ["For each one, picture two people and someone halfway between them, and ask whether that in-between value could really exist.", "Think about how you'd record it: would you measure it with a number, or tick one of a few boxes?"]
   - check:
       type: sort
       q: "Mainly inherited, mainly environmental, or both?"
@@ -81,12 +82,14 @@ tasks:
         - ["Height", "Both", "Genes set a range; food and health affect where you end up."]
         - ["Natural eye colour", "Inherited"]
         - ["Speaking French", "Environmental"]
+    hint: ["For each one, ask whether a baby could be born with it because it came in the sperm or the egg, or whether it comes from what happens to you and what you learn.", "Then ask the other way round: if you'd grown up somewhere completely different, with different food and different people, would this one have turned out differently?"]
   - check:
       type: question
       q: "Why does only inherited variation matter for evolution?"
       options: ["Only inherited characteristics are passed to offspring through genes", "Environmental variation isn't real", "Inherited variation is bigger", "Environmental variation only happens in humans"]
       answer: 0
       feedback: [null, "It's real, but not passed on.", "Size isn't the reason.", "Every organism is affected by its environment."]
+    hint: ["Think about a parent with a scar: is their baby born with the same scar, and why not?", "Ask what actually travels from a parent to their baby in the sperm or the egg."]
   - check: { type: reflect, text: "I can describe variation in a population and explain which kind is passed on." }
 ```
 

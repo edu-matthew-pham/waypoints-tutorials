@@ -69,18 +69,20 @@ tasks:
         - ["Chromosome", "One long DNA molecule, tightly coiled"]
         - ["Gene", "A section of DNA that codes for one protein"]
         - ["Allele", "One version of a gene"]
+    hint: ["Start by working out which of these sits inside which, from the biggest down to the smallest, and then match the meanings.", "Go back through the zoom on the board and read the line under the chromosome, the DNA and the gene, because each one says what it's made of or what it does."]
   - check:
       type: question
       q: "One gene decides your blood group, yet people have blood group A, B, AB or O. How?"
       options: ["People have different alleles (versions) of the same gene", "There is a separate gene for each blood group", "The environment decides", "Only some people have the gene"]
       answer: 0
       feedback: [null, "It's one gene in the same place on the chromosome; its versions differ.", "Blood group is set by your genes, not by what happens to you.", "Everyone has the gene; the version differs."]
+    hint: ["Is the blood group gene in one place on the chromosome for everyone, or does each blood group get its own bit of DNA?", "Picture the gene as one spot on the chromosome that everyone has, and ask what could be different about that spot from one person to the next."]
   - check:
       type: question
       q: "Your body cells have 46 chromosomes. Why are they described as 23 pairs?"
-      options: ["One of each pair came from each parent, and the two carry the same genes (perhaps different alleles)", "Each chromosome copies itself", "Boys and girls have different chromosomes", "Pairs are easier to count"]
+      options: ["One of each pair came from each parent, and the two carry the same genes in the same order (perhaps different alleles)", "Each chromosome copies itself", "Boys and girls have different chromosomes", "Pairs are easier to count"]
       answer: 0
-      feedback: [null, "Copying happens before division, but the pairs come from the two parents.", "Only one pair (the sex chromosomes) differs.", "There's a biological reason."]
+      feedback: [null, "Copying happens before division, but the pairs come from the two parents.", "Only one pair (the sex chromosomes) differs.", "Pairs aren't just a convenient way to count: they come from having two parents."]
   - check:
       type: question
       q: "Someone has the blood group alleles A and O, and their blood group is A. Which is their genotype and which their phenotype?"
@@ -130,7 +132,7 @@ check:
   q: "A nerve cell and a skin cell from the same person have the same DNA. Why do they look and work so differently?"
   options: ["Each cell uses (switches on) different genes", "They have different chromosomes", "Skin cells lose most of their DNA", "Nerve cells have extra genes"]
   answer: 0
-  feedback: [null, "The chromosomes are the same.", "They keep all of it.", "No extra genes: just different ones in use."]
+  feedback: [null, "Both cells carry the same chromosomes.", "Living skin cells keep all of their DNA.", "Neither cell has extra genes: they just use different ones."]
 ```
 
 ## Evaluate: look back

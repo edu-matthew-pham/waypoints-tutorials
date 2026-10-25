@@ -64,18 +64,21 @@ tasks:
       q: "On the board, every gamete had three chromosomes. Which is true?"
       options: ["Each gamete gets exactly one chromosome from each pair", "Each gamete gets any three chromosomes", "Each gamete gets all the red ones or all the blue ones", "Each gamete gets the whole pair from one chromosome"]
       answer: 0
-      feedback: [null, "Never two from the same pair.", "Mixtures of red and blue happen.", "Pairs separate."]
+      feedback: [null, "No gamete had two chromosomes from the same pair.", "Mixtures of red and blue happen.", "The two chromosomes of a pair go to different gametes."]
+    hint: ["Look along the gametes you made: did any of them ever have both chromosomes from the same pair, like both A ones?", "The letters under each gamete name its chromosomes, and a capital and a small letter that match are a pair, so read a few gametes and see what's always true."]
   - check:
       type: number
       q: "With 3 pairs, each with 2 choices, how many different gametes are possible?"
       answer: 8
       explain: "2 × 2 × 2 = 8."
+    hint: ["Start with just one pair: how many different gametes could it make, and what happens to that number when you add a second pair?", "Write them out with the letters like the board does, starting with A or a, and then add the B pair and the C pair to each one you've got."]
   - check:
       type: question
       q: "Humans have 23 pairs. About how many different combinations are possible?"
       options: ["2 to the power 23: over 8 million", "23: one new combination for each pair", "2 × 23 = 46: two choices for each of 23 pairs", "23 × 23 = 529"]
       answer: 0
       feedback: [null, "Each pair doesn't add one combination: it doubles the number there already.", "That adds the choices. Choices for different pairs multiply: 2 × 2 × 2 … 23 times.", "Each pair has 2 choices, so multiply 2 by itself 23 times, not 23 by itself."]
+    hint: ["When you went from one pair to two and then three, did the number of gametes go up by the same amount each time, or something else?", "Do what you did for three pairs in the last question, but keep going until you've got all 23 pairs."]
   - check: { type: reflect, text: "I can explain how meiosis halves the chromosome number and makes every gamete a different combination." }
 ```
 
@@ -105,6 +108,7 @@ check:
     - ["New cells are genetically identical to the parent cell", "Mitosis"]
     - ["New cells are all genetically different", "Meiosis"]
     - ["Healing a cut", "Mitosis"]
+hint: ["For each card, ask whether it's about making sperm and eggs or about growing and fixing the body.", "Then look back at the board, where the body cell and the gametes are both drawn, and compare how many chromosomes each one has."]
 ```
 
 ## Elaborate: even more variety

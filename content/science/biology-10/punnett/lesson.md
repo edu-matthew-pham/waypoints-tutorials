@@ -36,7 +36,7 @@ explainClip:
     - click: { selector: "[aria-label=\"Offspring 2, 2\"]" }
     - click: { selector: "[aria-label=\"Offspring 2, 2\"]" }
     - caption: { text: "1 PP : 2 Pp : 1 pp. Each offspring has a 3 in 4 chance of purple flowers.", say: "One P P, two P p, one p p: three in four will be purple." }
-hook: "Two purple-flowered pea plants can have white-flowered offspring. Gregor Mendel counted thousands of them in the 1860s and found the same ratio every time."
+hook: "Two purple-flowered pea plants can have white-flowered offspring. Gregor Mendel counted thousands of them in the 1860s and found a ratio close to 3 : 1 again and again."
 ---
 Each sperm or egg gets one of every pair of chromosomes at random, and that's all you need to follow a single gene from two parents to their offspring.
 
@@ -59,6 +59,7 @@ stage: run
 insight: "Filling the gametes and grid by hand, then breeding 100 offspring, links the square to real counts that vary around 75%."
 try: { playground: board, starter: "boards.yml#peas", height: 600 }
 check: { type: board, text: "Fill in the gametes and the grid correctly, then breed some offspring.", when: "f = 1 and n >= 100" }
+hint: ["Start at the edges: which alleles can a Pp parent put in its gametes, so what goes in each of its two gamete boxes?", "Each box in the grid gets the allele at the top of its column and the one at the start of its row, and the line under the grid tells you when it's all right, so then press Breed 100 offspring."]
 ```
 
 Click each gamete box to choose the allele it carries, then each grid cell for the offspring's genotype. When it's right, press **Breed 100 offspring** a few times and compare the percentage with the square.
@@ -83,7 +84,8 @@ tasks:
       q: "From Pp × Pp, a gardener grows 4 seeds. Are exactly 3 purple and 1 white?"
       options: ["Not necessarily: each seed has a 3 in 4 chance of purple, so small numbers vary; large numbers get close to 75%", "Yes, always exactly 3 and 1", "No, it's always half and half", "No: the square only works for animals"]
       answer: 0
-      feedback: [null, "Each seed is a separate chance: your breeds of 100 varied too.", "The square gives 3 : 1.", "Mendel used peas."]
+      feedback: [null, "Each seed is a separate chance, and your batches of 100 varied too.", "The square predicts 3 : 1, not half and half.", "The square works for any gene, in plants as well as animals."]
+    hint: ["If the first three seeds all come up purple, does the fourth seed know it's meant to be white?", "Look at your batches of 100 on the board: did you get exactly the same number of purple every time you bred?"]
   - check:
       type: question
       q: "Why can two purple parents have a white offspring?"
@@ -119,6 +121,7 @@ insight: "A second cross with a homozygous recessive parent gives a 1 : 1 ratio,
 try: { playground: board, starter: "boards.yml#test", height: 600 }
 tasks:
   - check: { type: board, text: "Fill in the square for a heterozygous black guinea pig crossed with a white one.", when: "f = 1" }
+    hint: ["Read each parent's genotype above the square first, and ask which alleles that parent can put in its gametes.", "Then each box in the grid takes one allele from the top of its column and one from the start of its row, just like the peas."]
   - check:
       type: question
       q: "What fraction of the offspring do you expect to be white?"
@@ -161,6 +164,7 @@ check:
   answer: 0
   feedback: [null, "Ff × Ff gives ff 1 time in 4.", "Each child is a new 1 in 4 chance; earlier children don't change it.", "Only ff children have it."]
   explain: "Each pregnancy is independent: the chance stays 1 in 4 every time."
+hint: ["When the next baby starts, do the egg and sperm have any idea what happened with the first child?", "Work out the parents' genotypes from the child who has it, and then draw their square the way you did for the peas."]
 ```
 
 ## Evaluate: look back
