@@ -2,6 +2,12 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## For every chat (25 Oct 2026, review chat): checklist added; tidy your own roadmap file when you reach a pause
+
+- `roadmap/checklist.md` now holds the steps before a push, a lesson review pass and what to say after a push (which publish route, which edits re-record clips). Handoffs and roadmaps should link to it instead of repeating those lines. Add a line there when you find a step that was missing.
+- The roadmaps have grown long (`shared.md` is about 800 lines, `science.md` and `maths.md` over 300 each). Not urgent, and not for the review chat to do while you are editing. At a natural pause, move your finished blocks (Built, Done, Changed) to `roadmap/done-<subject>-<month>.md` and keep a one-line pointer in the live file, so the live file holds only what is open. For `shared.md`, whichever chat built a block moves it; the review chat will do the leftovers when the others are idle.
+- Keep the newest block of each kind in place until it has been published once; "ready to publish" notes are how a returning chat sees what is still unpublished.
+
 ## Built (25 Oct 2026, code chat; Matthew said go): one name per idea across pathways, and a teacher view
 
 Details and reasons in `roadmap/code.md` › Proposed (Ideas across pathways). Two shared changes:
