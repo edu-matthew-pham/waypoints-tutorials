@@ -104,8 +104,10 @@ insight: "First the support shares on the board, then a brief: the least wood th
 try: { playground: board, starter: "beams.yml#vary-move", height: 520 }
 tasks:
   - starter: "beams.yml#vary-move"
+    hint: ["The closer the load is to a support, the more of it that support holds.", "8 N is most of the 10 N load, so the load has to be nearer the left support than the right."]
     check: { type: board, text: "Move the load until the left support holds 8 N.", when: "r_a = 8", explain: "0.1 m from the left support: 10 × 0.4 ÷ 0.5 = 8 N." }
   - starter: "beams.yml#vary"
+    hint: ["Two things to meet: the sag, and the wood. Try each shape and note both numbers.", "More than one shape might pass the sag. Then the wood decides."]
     check: { type: board, text: "The sag must be 0.5 mm or less, using the least wood (90 mm² or less). Choose the shape.", when: "ok = 1 and area_mm2 <= 90", explain: "The strip on its edge: 0.39 mm with 90 mm² of wood. The tube also passes the sag, but uses 90.2 mm²." }
 ```
 
@@ -151,7 +153,8 @@ stage: make
 insight: "A heavier load narrows the choice to one shape: students use the facts line to decide and justify."
 try: { playground: board, starter: "beams.yml#make", height: 520 }
 tasks:
-  - check: { type: board, text: "A shelf holds 25 N in the middle and may sag at most 0.5 mm. Choose the shape that meets the brief.", when: "ok = 1", explain: "Only the I-beam: 0.44 mm. The strip on its edge sags 0.96 mm and the tube 1.22 mm." }
+  - hint: ["Set the load first, then try every shape against the 0.5 mm limit.", "Wood far from the middle of the shape, top and bottom, stiffens it most."]
+    check: { type: board, text: "A shelf holds 25 N in the middle and may sag at most 0.5 mm. Choose the shape that meets the brief.", when: "ok = 1", explain: "Only the I-beam: 0.44 mm. The strip on its edge sags 0.96 mm and the tube 1.22 mm." }
   - check: { type: reflect, text: "In one or two sentences: which shape you chose, why it is stiffer, and one reason a builder might still choose another shape." }
 ```
 

@@ -152,6 +152,17 @@ tasks:
 stage: make
 insight: "Printing a calculated value (with map) combines a variable, a calculation and println: the monitor then shows the knob as people think of it."
 try: { playground: board, starter: "board.yml#make", height: 680 }
-hint: ["map(value, fromLow, fromHigh, toLow, toHigh) rescales a number.", "int percent = map(level, 0, 1023, 0, 100);", "Serial.println(percent); and test at both ends of the knob."]
-check: { type: board, text: "Print the knob as a percentage, 0 to 100, one number per line.", when: "g = 1 and n >= 2 and k > 100 and p >= k / 10.23 - 1 and p <= k / 10.23 + 1", explain: "map(level, 0, 1023, 0, 100) turns 0–1023 into 0–100." }
+tasks:
+  - hint: ["map() rescales a number: you give it the number, the range it's in now, and the range you want.", "Keep the answer in a new int variable, then print that."]
+    smaller:
+      check: { type: question, q: "In map(level, 0, 1023, 0, 100), which two numbers are the range you want?", options: ["0 and 100", "0 and 1023", "level and 0"], answer: 0, explain: "0 to 1023 is where the knob's numbers are now; 0 to 100 is where the coach wants them." }
+    check: { type: board, text: "Print the knob as a percentage, 0 to 100, one number per line, and check it with the knob somewhere in the middle.", when: "g = 1 and n >= 2 and k > 100 and k < 920 and p >= k / 10.23 - 1 and p <= k / 10.23 + 1", explain: "map(level, 0, 1023, 0, 100) turns 0–1023 into 0–100." }
+  - hint: ["Drag the knob right to the end, then read the last line on the monitor."]
+    check: { type: board, text: "Turn the knob all the way up. The monitor should say exactly 100.", when: "g = 1 and k >= 1020 and p = 100", explain: "map gives exactly 100 at 1023. A sum that rounds down on the way can stop at 99." }
 ```
+
+The PE department's interval timer has a knob for how hard each round is, and the coach wants it on the screen as a percentage, 0 to 100, not 0 to 1023.
+
+### Somewhere in the middle
+
+### At the top

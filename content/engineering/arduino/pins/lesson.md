@@ -148,6 +148,10 @@ tasks:
 stage: make
 insight: "Writing pinMode and digitalWrite from scratch for a new pin puts the lesson's two lines together without a model to copy."
 try: { playground: board, starter: "board.yml#make", height: 640 }
-hint: ["setup() runs first: set the pin up there.", "pinMode(7, OUTPUT); in setup(), digitalWrite(7, HIGH); in loop().", "Every line ends with ;"]
+hint: ["setup() runs once, first: that's where pin 7 gets ready.", "You need two lines: one in setup() that makes pin 7 an output, and one in loop() that switches it on.", "Every line ends with ;"]
+smaller:
+  check: { type: question, q: "Which of these only has to happen once, so it belongs in setup()?", options: ["pinMode(7, OUTPUT);", "digitalWrite(7, HIGH);", "delay(1000);"], answer: 0, explain: "Telling the board pin 7 is an output only has to happen once. Switching it on goes in loop()." }
 check: { type: board, text: "The LED is wired to pin 7. Write the sketch to switch it on (and keep it on).", when: "l = 255 and m = 1", explain: "pinMode(7, OUTPUT) in setup(), digitalWrite(7, HIGH) in loop()." }
 ```
+
+The bike shed's light is wired to pin 7, and it should come on whenever the board has power. This time you're starting from an empty sketch, so both lines are yours to write.

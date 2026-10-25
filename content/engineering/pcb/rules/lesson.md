@@ -46,7 +46,8 @@ stage: run
 insight: "Students use the table (in the board's note) to choose each width, and see SIG stay thin."
 try: { playground: board, starter: "rules.yml#run", height: 600 }
 tasks:
-  - check: { type: board, text: "Set each net's width so every trace passes. Use the table under the board.", when: "n_fail = 0", explain: "1.5 A needs 1 mm (safe to 2.4 A); 0.5 mm only carries 1.4 A. SIG stays at 0.25 mm." }
+  - hint: ["Find each net's current first, then look it up in the table: the width has to be safe for at least that much.", "Signals carry hardly any current, so they don't need to get wider."]
+    check: { type: board, text: "Set each net's width so every trace passes. Use the table under the board.", when: "n_fail = 0", explain: "1.5 A needs 1 mm (safe to 2.4 A); 0.5 mm only carries 1.4 A. SIG stays at 0.25 mm." }
   - check:
       type: question
       q: "Why not just make every trace 2 mm wide?"
@@ -101,6 +102,7 @@ tasks:
 stage: modify
 insight: "Two rules in one board: students set widths and choose a path for the squeezed net."
 try: { playground: board, starter: "rules.yml#vary", height: 620 }
+hint: ["Widen MA first, then look at where it's failing: a wide trace can't fit through the gap between two header pins.", "A wide trace can't fit through, so take it the long way round the header instead. The thin signal can still squeeze through."]
 check: { type: board, text: "In this version, MA's path squeezes between header pins. Make every trace pass: widths, and a path for MA.", when: "n_fail = 0 and w_ma >= 1", explain: "MA at 1 mm, routed around the header; SIG stays thin and can squeeze through." }
 ```
 
@@ -145,7 +147,8 @@ stage: make
 insight: "Students fix every rule on the board, then reason about the order: the full move from design to manufacture."
 try: { playground: board, starter: "rules.yml#vary", height: 620 }
 tasks:
-  - check: { type: board, text: "Make every trace pass the design rules.", when: "n_fail = 0", explain: "Ready for the design rule check in a real tool, then the files the maker needs (Gerbers)." }
+  - hint: ["Go through the failing traces one at a time: is each one too thin for its current, or too close to something?", "Width comes from the table; a clash usually means a new path, not a thinner trace."]
+    check: { type: board, text: "Make every trace pass the design rules.", when: "n_fail = 0", explain: "Ready for the design rule check in a real tool, then the files the maker needs (Gerbers)." }
   - check:
       type: answer
       q: "Your class needs 24 boards. The maker charges $20 to set up and $1.50 a board. What is the cost per board, in dollars?"

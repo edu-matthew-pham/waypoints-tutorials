@@ -46,7 +46,8 @@ insight: "Turning the bracket through all four ways settles the prediction: supp
 try: { playground: board, starter: "board.yml#run", height: 560 }
 tasks:
   - check: { type: board, text: "Turn the bracket round until it needs supports.", when: "s = 1", explain: "Upside down: the foot sticks out over nothing." }
-  - check: { type: board, text: "Find the way that needs no supports and puts the layers along the load.", when: "s = 0 and k = 1", explain: "Flat on its side." }
+  - hint: ["A support is needed wherever part of the bracket hangs over nothing. Which way round does every part have something under it?", "Then think about the load: printed layers peel apart more easily than they bend, so you want the layers running along the arm the load pulls on."]
+    check: { type: board, text: "Find the way that needs no supports and puts the layers along the load.", when: "s = 0 and k = 1", explain: "Flat on its side." }
 ```
 
 ### Supports

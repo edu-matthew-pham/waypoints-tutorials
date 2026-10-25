@@ -156,6 +156,17 @@ tasks:
 stage: make
 insight: "Reversing the mapping (brightest at the bottom of the knob) makes students reason about the calculation rather than copy it."
 try: { playground: board, starter: "board.yml#make", height: 680 }
-hint: ["When level / 4 is 0 you want 255, and when it is 255 you want 0.", "255 minus something.", "analogWrite(9, 255 - level / 4);"]
-check: { type: board, text: "Change it so the LED is brightest with the knob at 0 and off at the top. Test it at a few positions.", when: "g = 1 and k > 100 and k < 900 and w >= 255 - k / 4 - 1 and w <= 255 - k / 4 + 1", explain: "255 - level / 4 turns the scale round." }
+tasks:
+  - hint: ["When level / 4 is 0 you want 255, and when it's 255 you want 0.", "Start from 255 and take something away."]
+    smaller:
+      check: { type: number, q: "Halfway up, level / 4 is about 128. With the lamp the other way round, about how bright should it be?", answer: 127, tolerance: 2, explain: "255 − 128 = 127. Halfway is still about halfway; it's both ends that swap." }
+    check: { type: board, text: "Change it so the lamp is brightest with the knob at 0 and off at the top, and check it somewhere in the middle.", when: "g = 1 and k > 100 and k < 900 and w >= 255 - k / 4 - 1 and w <= 255 - k / 4 + 1", explain: "255 - level / 4 turns the scale round." }
+  - hint: ["Drag the knob right down to the bottom and look at the analogWrite value."]
+    check: { type: board, text: "Turn the knob all the way down. The lamp should be at full brightness, 255.", when: "g = 1 and k <= 3 and w = 255", explain: "At the bottom, 255 − 0 = 255: full brightness." }
 ```
+
+A bedside lamp: the knob sits by the bed, and it should work the way round a sleepy person expects, brightest with the knob turned all the way down and off at the top.
+
+### Somewhere in the middle
+
+### At the bottom

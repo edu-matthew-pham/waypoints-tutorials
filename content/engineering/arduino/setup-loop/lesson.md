@@ -163,6 +163,8 @@ tasks:
 stage: make
 insight: "Working from a timing back to the delays reverses the process."
 try: { playground: board, starter: "board.yml#make", height: 640 }
-hint: ["The light is on for 200 ms in every 2 seconds.", "2 s = 2000 ms: off for 2000 − 200 ms.", "delay(200) after HIGH and delay(1800) after LOW."]
+hint: ["The light is on for 200 ms in every 2 seconds.", "2 s is 2000 ms, and the light uses 200 of them: the rest is the off delay."]
+smaller:
+  check: { type: number, q: "The light's on for 200 ms out of every 2000 ms. How many milliseconds is it off?", answer: 1800, explain: "2000 − 200 = 1800, so that's the delay after LOW." }
 check: { type: board, text: "A lighthouse flashes for 0.2 s every 2 s. Change the delays to match.", when: "o = 200 and f = 1800", explain: "200 ms on and 1800 ms off makes one flash every 2000 ms." }
 ```

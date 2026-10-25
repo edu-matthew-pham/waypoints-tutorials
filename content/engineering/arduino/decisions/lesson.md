@@ -160,12 +160,16 @@ tasks:
 
 ### Between
 
-## Make: a middle band
+## Make: a safe level light
 
 ```step
 stage: make
-insight: "Combining two comparisons with && to light the LED only in a band applies the lesson to a new condition."
+insight: "Combining two comparisons with && to light the LED only in a band, and meeting a brief whose tests sit on both edges, applies the lesson to a new condition and makes students decide what happens at exactly 300 and 700."
 try: { playground: board, starter: "board.yml#make", height: 680 }
-hint: ["Two conditions, both true: &&.", "if (level > 300 && level < 700)", "Test it: turn the knob through the whole range."]
-check: { type: board, text: "Change the sketch so the LED is on only while the knob reads between 300 and 700. Test it by turning the knob from one end to the other.", when: "g = 1 and k > 300 and k < 700 and l = 255 and h >= 2", explain: "if (level > 300 && level < 700): on in the middle band, off at both ends." }
+hint: ["Two things must both be true: the level is above 300 and below 700. C++ joins them with &&.", "Look at the edges in the tests. What should happen at exactly 300, and at 301?"]
+smaller:
+  check: { type: question, q: "The tank reads exactly 700. Should the safe light be on?", options: ["No: 700 isn't below 700", "Yes: 700 is between 300 and 700"], answer: 0, explain: "Below 700 means 699 or less, so at 700 the light's off. That's why one of the tests is at exactly 700." }
+check: { type: board, text: "Write the decision so all 6 tests pass: the light is on only while the level is above 300 and below 700.", when: "u = 6 and q = 6", explain: "if (level > 300 && level < 700) lights it from 301 to 699 and leaves it off at both edges and beyond." }
 ```
+
+The water tank in the school garden has a level sensor, and the knob stands in for it. The caretaker wants a green light that's on only while the level is safe: above 300, so the pump can't run dry, and below 700, so the tank can't overflow. Exactly 300 and exactly 700 don't count as safe. Press **Run the tests** when you think it's right: they check both edges.

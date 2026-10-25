@@ -99,8 +99,10 @@ stage: modify
 insight: "Taking the pull-down away shows Sam's mistake on the board: a floating pin reads at random. Putting it back shows what the resistor is for."
 try: { playground: board, starter: "board.yml#vary", height: 540 }
 tasks:
-  - check: { type: board, text: "Remove the pull-down. Don't touch the button: watch pin 0 and the micro:bit.", when: "d = 0 and z = 1", explain: "Pin 0 reads 0 or 1 at random and the heart flickers: the pin is floating." }
-  - check: { type: board, text: "Put the pull-down back. Is the reading steady again?", when: "d = 1 and z = 1 and p = 0 and v = 0", explain: "A steady 0 until you press. The pull-down gives the pin a definite voltage when the button is open." }
+  - hint: ["The button under the board adds or removes the pull-down: the resistor from pin 0 to GND.", "Then keep your hands off the button and just watch pin 0's reading for a few seconds."]
+    check: { type: board, text: "Remove the pull-down. Don't touch the button: watch pin 0 and the micro:bit.", when: "d = 0 and z = 1", explain: "Pin 0 reads 0 or 1 at random and the heart flickers: the pin is floating." }
+  - hint: ["Same button as before. Then watch pin 0 for a few seconds without pressing anything."]
+    check: { type: board, text: "Put the pull-down back. Is the reading steady again?", when: "d = 1 and z = 1 and p = 0 and v = 0", explain: "A steady 0 until you press. The pull-down gives the pin a definite voltage when the button is open." }
   - check:
       type: question
       q: "A game counts button presses with no pull-down. What will the score do?"

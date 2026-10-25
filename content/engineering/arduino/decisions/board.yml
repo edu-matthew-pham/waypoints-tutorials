@@ -139,6 +139,12 @@ widget: arduino
 led: 13
 knob: A0
 level: 20
+test: 0, off
+test: 300, off
+test: 301, on
+test: 699, on
+test: 700, off
+test: 1023, off
 code: int level = 0;
 code:
 code: void setup() {
