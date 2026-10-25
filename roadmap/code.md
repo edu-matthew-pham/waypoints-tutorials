@@ -336,3 +336,40 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - 11 Oct: DOM course; p5.js course with Reference, pictures and clips; Data detective, Web apps with Flask, Apps with Gradio, Machine learning, Deeper Python, Objects, the console bridge, the Python playground, Check your school.
 - 10 Oct: Robotics, micro:bit and the computer, AI robots, Secret messages, the MakeCode hidden-assumptions scan.
 - 9 Oct: HTML & CSS, micro:bit Foundations, the MakeCode playground, Arcade written.
+
+## Proposed (25 Oct 2026, draft for Matthew to approve): general coverage of Digital Technologies Processes standards
+
+**Idea (Matthew):** don't tag lessons to standards one to one. Say which courses and pathways *generally cover* a standard. Only 6 of 206 Code lessons carry a `node:` today, so a Code teacher who finds a standard sees almost no lessons under it.
+
+**How it would work once approved:** a small data file (`data/curriculum/code-coverage.yml`: standard code → `core:` and `touches:` course paths). The standard's page and the search result then say "Covered in: Python functions and events (main focus), Micro:bit: talk and play (touches)", and a course's strip can list the standards it generally covers. No lesson-level claims. Standards with nothing listed say so plainly.
+
+**Drafted from the course titles and summaries only; I have not read the lessons.** Main focus (`core`) means the course is built around it; `touches` means it comes up but isn't the point. Years 7–8, then 9–10. Years 2–6 standards are outside the site's band.
+
+| Standard | Main focus | Touches |
+|---|---|---|
+| 8P09 Programs with functions | python-functions, microbit-play | python-foundations, console, arcade-advanced, p5, dom |
+| 8P06 Trace algorithms to predict output | every Code course (the Predict step) | |
+| 8P05 Nested algorithms (flowcharts, pseudocode) | | python-foundations, microbit, arcade (nesting yes; flowcharts and pseudocode not checked) |
+| 8P01 Acquire, store, validate data | data | deeper, flask, dom (JSON) |
+| 8P02 Analyse and visualise data | data | ml |
+| 8P03 Model structured data | objects, deeper | data |
+| 8P07 Design the user experience | site | html, css, bootstrap |
+| 8P04 Decompose problems, user stories | none in Code (Engineering design briefs) | |
+| 8P08 Generate and evaluate designs | none clear | bootstrap (compares with the hand-built page) |
+| 8P10, 8P11, 8P12 | none in Code | |
+| 8P13, 8P14 | already tagged in How computers work | |
+| 10P09 Modular programs, OOP, data structures | objects | games, vue, p5, flask |
+| 10P06 Validate against test cases | data | deeper |
+| 10P05 Algorithms with logical operators | | microbit, arcade, python-foundations |
+| 10P01 / 10P02 Data | data | flask (API), ml |
+| 10P03 Entities and relationships | | objects, deeper |
+| 10P07 Prototype the user experience | | html, css, bootstrap, vue |
+| 10P11 Interactive content for diverse audiences | dom, site | p5, vue |
+| 10P04, 10P08, 10P10, 10P12 | none in Code | |
+| 10P13, 10P14 | already tagged in How computers work (microbit-security touches 10P13) | |
+
+**Pathway roll-up (generated from the courses):** Python mainly covers functions, data, structured data and OOP; Web covers user experience, interactive content and JavaScript functions; MakeCode covers functions, decisions and logical operators, with radio and security touching threat models.
+
+**Gaps worth knowing (honest, not failures):** user stories and decomposition (4), alternative designs (8), evaluation against future impact (10), agile project management (12) and spreadsheets and databases (1, 2) are not Code's job as built. Engineering and a possible Design and Technologies subject are the likelier homes.
+
+**To approve:** the table (move any entry), and whether "touches" is worth showing at all or only "main focus".
