@@ -13,7 +13,7 @@ export function setupEntry({hasSaved, addFiles, examples}) {
     $('startTitle').focus(); window.scrollTo(0, 0);
   };
   function panel(id) {
-    for (const [button, section] of [['startPrompt','promptRoute'],['startOpen','openRoute'],['startExample','exampleRoute']]) {
+    for (const [button, section] of [['startPrompt','promptRoute'],['startProject','projectRoute'],['startOpen','openRoute'],['startExample','exampleRoute']]) {
       const open = section === id;
       $(section).hidden = !open;
       $(button).setAttribute('aria-expanded', String(open));
@@ -52,6 +52,32 @@ export function setupEntry({hasSaved, addFiles, examples}) {
       $('startCopyStatus').textContent = 'Select and copy the prompt above.';
     }
   };
+  // Start from a project: create/project-prompt.md, then the general starter prompt it builds on.
+  $('startProject').onclick = async () => {
+    panel('projectRoute');
+    if ($('projectPromptText').value) return;
+    $('copyProjectPrompt').disabled = true;
+    try {
+      const texts = await Promise.all(['project-prompt.md', 'start-prompt.md'].map(async name => {
+        const response = await fetch(new URL(name, import.meta.url), {cache:'no-cache'});
+        if (!response.ok) throw Error('The project prompt could not be loaded. Please try again.');
+        return response.text();
+      }));
+      $('projectPromptText').value = texts.join('');
+      $('projectCopyStatus').textContent = '';
+    } catch (error) { $('projectCopyStatus').textContent = error.message; }
+    finally { $('copyProjectPrompt').disabled = !$('projectPromptText').value; }
+  };
+  $('copyProjectPrompt').onclick = async () => {
+    try {
+      await navigator.clipboard.writeText($('projectPromptText').value);
+      $('projectCopyStatus').textContent = 'Prompt copied. Paste it into your preferred AI assistant, then give it your project.';
+    } catch {
+      $('projectPromptText').focus(); $('projectPromptText').select();
+      $('projectCopyStatus').textContent = 'Select and copy the prompt above.';
+    }
+  };
+  $('projectOpenFiles').onclick = () => panel('openRoute');
   $('startOpen').onclick = () => panel('openRoute');
   $('promptOpenFiles').onclick = () => panel('openRoute');
   $('startImportPackage').onclick = () => $('importPackage').click();
@@ -86,7 +112,7 @@ export function setupEntry({hasSaved, addFiles, examples}) {
     $('startResume').hidden = false;
     showStart();
   };
-  for (const id of ['startPrompt','startOpen','startExample']) $(id).disabled = false;
+  for (const id of ['startPrompt','startProject','startOpen','startExample']) $(id).disabled = false;
   $('startStatus').textContent = '';
   // Recorder returns and shared lessons open directly in their existing editing context.
   const url = new URL(location.href);

@@ -139,7 +139,7 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 
 ## Proposed (discussed, not decided)
 
-- **Create from a finished project** (25 Oct, Matthew asked to track): reverse-engineer a tutorial from a teacher's own project, using the concept scan to split taught and new ideas and cut it into milestones. Plan in roadmap/shared.md › Create from a finished project.
+- **Create from a finished project** (25 Oct; first version built: a Start from a project card and a published ideas-to-lessons file): reverse-engineer a tutorial from a teacher's own project, using the concept scan to split taught and new ideas and cut it into milestones. Plan in roadmap/shared.md › Create from a finished project.
 
 **`smaller:` for Code (25 Oct 2026, code chat's reply to `shared.md` › Proposed 25 Oct, amended).** Not built; the shared push waits for Matthew's go.
 

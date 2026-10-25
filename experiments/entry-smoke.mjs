@@ -11,7 +11,17 @@ try {
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base);await page.locator('#startPrompt:enabled').waitFor();
   assert.equal(await page.locator('#createWorkspace').isVisible(),false);
-  assert.equal(await page.locator('.start-card:visible').count(),3);
+  assert.equal(await page.locator('.start-card:visible').count(),4);
+  // Start from a project: the project prompt, then the general starter it builds on, and the ideas list it links.
+  await page.click('#startProject');await page.locator('#copyProjectPrompt:enabled').waitFor();
+  const projectPrompt=await page.locator('#projectPromptText').inputValue();
+  assert.match(projectPrompt,/^Help me turn a finished coding project/);
+  assert.match(projectPrompt,/project-ideas\.json/);
+  assert.match(projectPrompt,/Do not assume this is a coding lesson/,'the general instructions follow');
+  await page.click('#copyProjectPrompt');await page.waitForFunction(()=>document.querySelector('#projectCopyStatus').textContent.startsWith('Prompt copied'));
+  const ideas=await (await fetch(base+'project-ideas.json')).json();
+  assert.ok(ideas.languages.python.ideas.find(i=>i.id==='function').taughtIn.length>0);
+  assert.equal(await page.locator('#promptRoute').isVisible(),false);
   await page.click('#startPrompt');await page.locator('#copyStartPrompt:enabled').waitFor();
   await page.click('#copyStartPrompt');await page.waitForFunction(()=>document.querySelector('#startCopyStatus').textContent.startsWith('Prompt copied'));
   assert.match(await page.evaluate(()=>navigator.clipboard.readText()),/Do not assume this is a coding lesson/);

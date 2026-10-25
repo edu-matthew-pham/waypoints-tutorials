@@ -780,13 +780,15 @@ Add a `format-tutorial.md` to waypoints-kit, alongside its `format-prepare.md` (
 
 - **Built (25 Oct, code chat): project briefs for Console and p5.js.** `LANG_OF` has `p5: 'javascript'`; a brief may list `answers:` (typed at each `input()`), and `render-pictures` draws a Console example (no `turtle` in it) as its transcript through the turtle playground in console mode, and a p5 example with `p5Draw` (moved above the projects section). Existing project pictures are untouched (the section's hash base is unchanged). Needs a whole-site publish to go live.
 
-## Proposed (25 Oct 2026, Matthew asked to track; not built): Create from a finished project
+## Create from a finished project (25 Oct 2026; first version built the same day, Matthew: "go")
 
 Teachers often work out a tutorial backwards: build an example project, then decide what is worth teaching from it. Create has no route for that today (its starts are a prompt that asks what to teach, opening existing lesson files, or an example lesson), so a pasted project gets no guidance and tends to become a tour of the code.
 
 Not all projects are alike. Some are hobby projects with many ideas at once; others were made for students and already fit a level. The route should ask which it is, because that changes how hard it cuts.
 
 **First version (small): a prompt template.** Create's prompt start is already a template the teacher copies into their own AI chat, so this is a second template (beside `create/start-prompt.md`) that runs the steps below, plus a published `concepts.json` (each idea and the lesson that `introduces:` it, by pathway), linked from the prompt like `board-catalogue.json`, so the AI can say which ideas are taught already and where. No new Create screens beyond a start card.
+
+**Built (first version):** a fourth start card, **Start from a project** (`create/index.html`, `create/entry.mjs`), copies `create/project-prompt.md` followed by `start-prompt.md` (the project prompt says to start from the project instead of asking what to teach). `tools/project-ideas.mjs` writes `/code/create/project-ideas.json` at build (`build-create.mjs`): every idea in `CONCEPTS` (Python, HTML, JavaScript, MakeCode) with the first lesson in each Code pathway that introduces it, through `sameIdea`, plus the pathways' courses and `after:`. The start cards are now two by two. `experiments/entry-smoke.mjs` checks the card, the joined prompt and the ideas file. Not yet tried with a real teacher project.
 
 **Later, only if worth it:** run the scan in the page (`concepts-core.mjs`) so a teacher sees taught and new before any chat.
 

@@ -3,7 +3,8 @@
 import { cpSync, mkdirSync, copyFileSync, rmSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadLessons } from './lesson.mjs';
+import { loadLessons, loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
+import { projectIdeas } from './project-ideas.mjs';
 import { browserClip } from './export-browser-clip.mjs';
 import { buildBoardCatalogue } from './board-catalogue.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
@@ -22,6 +23,11 @@ export async function buildCreate(out = 'dist') {
   cpSync(join(root, 'create'), dest, { recursive: true });
   const lessons=loadLessons();
   writeFileSync(join(dest,'board-catalogue.json'),JSON.stringify(buildBoardCatalogue(lessons)));
+  // Ideas to lessons for the "Start from a project" prompt (tools/project-ideas.mjs, create/project-prompt.md).
+  const site = (process.env.SITE_URL || 'https://tutorials.learningwaypoints.com').replace(/\/$/, '');
+  const codeMeta = loadDirMeta(join(CONTENT_ROOT, 'code'));
+  const courseTitle = (p) => { try { return loadDirMeta(join(CONTENT_ROOT, p)).title || p; } catch { return p; } };
+  writeFileSync(join(dest,'project-ideas.json'),JSON.stringify(projectIdeas(codeMeta.pathways || [], lessons, courseTitle, site), null, 1));
   const sections = text => Object.fromEntries([...text.matchAll(/^## (\d+)\.[^\n]*\n([\s\S]*?)(?=^## \d+\.|$(?![\s\S]))/gm)].map(m => [m[1], m[0]]));
   const authoring = sections(readFileSync(join(root, 'AUTHORING.md'), 'utf8'));
   const building = sections(readFileSync(join(root, 'BUILDING.md'), 'utf8'));
