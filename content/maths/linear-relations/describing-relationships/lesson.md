@@ -7,6 +7,7 @@ summary: "Describe how one measurement changes as the other increases, one secti
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A graph tells a story about how two things change together. Telling that story in words, section by section, is how scientists and journalists use graphs."
+connection: heart-rate-recovery   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8149
   url: http://127.0.0.1:8149/index.html
@@ -47,6 +48,8 @@ check:
   options: ["Rides away, stops for a rest, rides home", "Rides up a hill, along the flat, then down a hill", "Rides away, then faster, then slower", "Rides away, then home, then away again"]
   actual: "Rides away, stops for a rest, rides home. Up means the distance from home is increasing, flat means it is not changing (stopped), and down means it is decreasing (riding back). The graph shows distance, not the shape of the road."
 ```
+
+<figure class="situation" role="img" aria-label="A graph of distance from home against time. The line rises, goes flat, then falls back to the start. What story does it tell is a question mark."><svg viewBox="0 0 360 200" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M50 20 V160 H330"/><text x="190" y="190" text-anchor="middle" fill="currentColor" stroke="none">time</text><text x="14" y="95" text-anchor="middle" fill="currentColor" stroke="none" transform="rotate(-90 14 95)">distance from home</text><path d="M50 160 L130 50 L210 50 L310 160" stroke="#185FA5" stroke-width="3"/><text x="260" y="60" fill="currentColor" stroke="none">what story? ?</text></svg></figure>
 
 What is measured up the side? What would the line do if the cyclist stopped?
 
@@ -200,3 +203,46 @@ check: { type: board, text: "Draw this story: a bath is empty at 0 minutes. It f
 Drag each point up or down. Then describe your graph in a sentence.
 
 Stretch: draw a bath that fills quickly at first, then slowly.
+
+## Make: heart rate after a run, on paper
+
+```step
+stage: make
+insight: "Describing sections by comparing start and end, then noticing that a decrease can slow down, is the judgement a fitness coach makes from a heart rate trace."
+hint: ["Compare the heart rate at the start and end of each section.", "For the drop in the first 5 minutes of recovery, subtract the heart rate at 20 minutes from the heart rate at 15."]
+check:
+  type: reasoning
+  paper: true
+  q: "A runner wears a heart rate monitor. Heart rate in beats per minute (bpm) at 0, 10, 15, 20 and 30 minutes was 70, 160, 160, 110 and 80. The runner stops at 15 minutes. On paper, describe each section, then find how many bpm the heart rate dropped in the first 5 minutes after stopping."
+  steps:
+    - ["0 to 10 min: as time increases, the heart rate increases, from 70 to 160 bpm", "compare the start and end of the section"]
+    - ["10 to 15 min: the heart rate is constant at 160 bpm", "time passes but the value does not change"]
+    - ["15 to 20 min: it decreases from 160 to 110, a drop of 50 bpm. 20 to 30 min: it decreases from 110 to 80, a drop of 30 bpm in twice the time", "recovery is fast at first, then slows"]
+  picks:
+    - step: 3
+      q: "What does the recovery section show?"
+      options:
+        - "The heart rate falls quickly at first, then more slowly"
+        - "The heart rate falls by the same amount every minute"
+        - "The heart rate falls, then rises again"
+      answer: 0
+      feedback: [null, "50 bpm in the first 5 minutes but only 30 in the next 10: the fall is not steady.", "Every value after 15 minutes is lower than the one before."]
+  answer: "50"
+  tolerance: 0
+  feedback:
+    - ["110", "110 is the heart rate at 20 minutes. How far did it fall from 160?"]
+    - ["30", "30 is the drop from 20 to 30 minutes. The question asks about the first 5 minutes after stopping."]
+  criteria:
+    - "I named each section as increases, constant or decreases."
+    - "I used the heart rates at the start and end of each section."
+    - "I took the later value from the earlier one to find the drop."
+  explain: "160 - 110 = 50, so the heart rate dropped 50 bpm in the first 5 minutes after stopping. It then fell only 30 bpm in the next 10 minutes."
+```
+
+Do this one in your book, not on the screen. The heart rates are made up for the task, and a real trace has bumps, so describe the trend. Name each section, then work out the drop and choose the reason.
+
+**Also used in**
+
+- **Fitness and sport.** Coaches look at how fast a heart rate comes down, not only how high it went.
+- **Health.** A resting heart rate that returns to normal sooner usually points to a fitter heart.
+- **Science.** The same words (increases, constant, decreases) describe temperature, water level or speed against time.

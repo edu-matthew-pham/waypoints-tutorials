@@ -207,3 +207,35 @@ check: { type: board, text: "Make a triangle that is isosceles and obtuse.", whe
 ```
 
 Then explain why the obtuse angle has to be the one between the equal sides.
+
+## Make: a wrong label, on paper
+
+```step
+stage: make
+insight: "Naming a triangle by its angles and its sides at once, and trusting both names, is the lesson's idea; the paper task asks for the reason that makes the label wrong."
+hint: ["Name it by its angles first, then by its sides.", "Equal angles sit opposite equal sides."]
+check:
+  type: reasoning
+  paper: true
+  q: "A tile maker's sheet says a triangle with angles 30°, 30° and 120° is scalene. On paper, name the triangle by its angles and by its sides, and say whether the sheet is right."
+  steps:
+    - ["120° is more than 90°, so the triangle is obtuse", "one angle over 90°"]
+    - ["Two angles are equal (30° and 30°), so the two sides opposite them are equal: it is isosceles", "equal angles sit opposite equal sides"]
+    - ["It is an obtuse isosceles triangle, so the sheet is wrong to say scalene", "a triangle can have one angle name and one side name together"]
+  picks:
+    - step: 2
+      q: "Why is the triangle isosceles?"
+      options:
+        - "Two angles are equal, so the sides opposite them are equal"
+        - "It has an obtuse angle, so it has to be isosceles"
+        - "It has three different angles"
+      answer: 0
+      feedback: [null, "An obtuse triangle can be scalene too. It is the equal angles that give equal sides.", "Two of its angles are 30°, so they are not all different."]
+  criteria:
+    - "I named it by its angles and by its sides."
+    - "I said which angles are equal and which sides they make equal."
+    - "I said why the sheet is wrong."
+  explain: "It is obtuse (120°) and isosceles (two 30° angles, so two equal sides), so scalene is wrong. The angles add to 180°, so the triangle is possible."
+```
+
+Do this one in your book, not on the screen. The angles are made up for the task. Write both names, say why, then choose the reason that makes the sheet wrong.

@@ -9,6 +9,7 @@ summary: In y = mx + c, the number in front of x sets how steep the line is and 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Ramps, roofs, ski runs and phone bills all have a steepness: how much more for each step along. In a rule like y = 3x + 1, one number decides it."
+connection: road-gradient   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8135
   url: http://127.0.0.1:8135/index.html
@@ -56,6 +57,8 @@ check:
     - "It moves 2 to the right"
   actual: "It gets steeper. When x = 0, y is still 1 (3 × 0 + 1 = 1), so the line still crosses the y-axis at 1, but now y goes up 3 for each step right instead of 1."
 ```
+
+<figure class="situation" role="img" aria-label="Small axes with the line y = x + 1 drawn, crossing the y-axis at 1. A second line through the same point, y = 3x + 1, is a question mark: where does it go?"><svg viewBox="0 0 300 180" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M60 160 V10 M60 150 H230"/><text x="48" y="154" text-anchor="end" fill="currentColor" stroke="none">0</text><text x="48" y="126" text-anchor="end" fill="currentColor" stroke="none">1</text><text x="225" y="170" text-anchor="end" fill="currentColor" stroke="none">x</text><text x="68" y="18" fill="currentColor" stroke="none">y</text><path d="M60 122 L172 10" stroke="#185FA5" stroke-width="3"/><text x="178" y="24" fill="currentColor" stroke="none">y = x + 1</text><circle cx="60" cy="122" r="4" fill="currentColor"/><text x="150" y="120" fill="currentColor" stroke="none">y = 3x + 1: where does it go? ?</text></svg></figure>
 
 $$y = x + 1 \quad\longrightarrow\quad y = 3x + 1$$
 
@@ -223,3 +226,46 @@ check: { type: board, text: "Choose any $m$, then drag $P$ onto your line, to th
 Choose your own steepness with the slider. Then use counting (1 right, $m$ up) to find a point on your line and drag $P$ there. Try a negative $m$ too.
 
 Stretch: without the board, give a point on $y = 3x + 1$ where $x = 10$.
+
+## Make: how steep is the hill, on paper
+
+```step
+stage: make
+insight: "A road sign's percentage is m written as up per 100 along: rise divided by run, and a bigger m is steeper."
+hint: ["How far up for each 1 m along? Divide the rise by the run.", "A percentage is the climb in every 100 m along, so multiply the answer by 100."]
+check:
+  type: reasoning
+  paper: true
+  q: "Hill A climbs 6 m while you travel 75 m along the flat. A sign on Hill B says 10%. On paper, work out Hill A's gradient as a percentage, then say which hill is steeper."
+  steps:
+    - ["$m = \\text{rise} \\div \\text{run} = 6 \\div 75$", "m is how far up for each step along"]
+    - ["$6 \\div 75 = 0.08$, up 0.08 m for each metre along, so 8 m up in 100 m: 8%", "a percentage is the climb in 100 m along"]
+    - ["Hill B is 10%, which is bigger than 8%, so Hill B is steeper", "a bigger m is a steeper line"]
+  picks:
+    - step: 1
+      q: "How do you find m from a climb of 6 m over 75 m along?"
+      options:
+        - "Divide the rise by the run: 6 ÷ 75"
+        - "Divide the run by the rise: 75 ÷ 6"
+        - "Take the rise from the run: 75 − 6"
+      answer: 0
+      feedback: [null, "75 ÷ 6 is how far along for each metre up, the upside-down of m.", "Gradient compares the two distances. Subtracting does not say how steep it is."]
+  answer: "8"
+  tolerance: 0
+  feedback:
+    - ["0.08", "That is the gradient as a decimal. A sign shows a percentage: how far up in 100 m along."]
+    - ["12.5", "That is 75 ÷ 6, upside down. Divide the rise by the run."]
+  criteria:
+    - "I divided the rise by the run."
+    - "I changed the decimal into a percentage by finding the climb in 100 m."
+    - "I compared 8% and 10% and said which is steeper."
+  explain: "6 ÷ 75 = 0.08, which is 8 m up in every 100 m: 8%. Hill B at 10% is steeper."
+```
+
+Do this one in your book, not on the screen. The hill is made up for the task, and a real sign gives the steepest part of the road. Divide, change it to a percentage, and compare.
+
+**Also used in**
+
+- **Roads and ramps.** A sign of 8% says the same thing as a line with $m = 0.08$.
+- **Roofs.** A roof pitch is the rise for each step along, so a steeper roof has a bigger $m$.
+- **Skiing and cycling.** Runs and hill climbs are rated by how much they go up for each distance along.

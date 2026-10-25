@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Noor's question again with a column of 1, 3, 1."
   - "Modify: ask for the fewest cubes first, then the most."
   - "Make: ask which drawing they would give a builder."
+  - "Paper: the bedroom-plan task is worked in books; the page marks two reasons (what a plan hides, and which view shows the slope). Books out, then look at the page to compare the three lines."
 stuck:
   - see: "A student adds all the piles to find a view."
     ask: "If you stand at the front, which cubes can you see in one column?"

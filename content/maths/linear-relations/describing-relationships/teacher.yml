@@ -5,6 +5,7 @@ goals:
   - I can describe a section of a graph as increasing, decreasing or constant.
   - I can tell the story of a graph in order, with the measurements named.
   - I can draw a graph that matches a story.
+struggle: "Reading a falling line as going downhill. Ask: what is measured up the side? Does the number get smaller?"
 before: |
   Do the Run, Modify (bath) and Make boards yourself first. In Make, the points move up and down only, so students choose each value and the times stay fixed.
 
@@ -19,6 +20,7 @@ running:
   - "Investigate: model the worked example live: section by section, start value, end value, then the word."
   - "Modify: after the cooling drink, ask: does the temperature ever go up? How does the drop in the first 10 minutes compare with the last 10?"
   - "Make: compare two students' baths: where is the flat part, and how do you know?"
+  - "Paper: the heart rate task in Make is worked in books; the page marks the drop (50 bpm) and the reason about a fall that slows. Books out, then compare each section with the model."
 stuck:
   - see: "A student says the line going down means the cyclist is going downhill (Omar's mistake)."
     ask: "What does the vertical axis measure? What would the line do if the road were flat but the cyclist rode home?"

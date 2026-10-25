@@ -6,6 +6,7 @@ title: The balance method
 summary: Do the same to both sides to get x on its own, then check your answer in the first equation.
 language: maths
 hook: "Engineers, nurses working out doses and anyone splitting a bill rearrange equations this way: keep it balanced, and every step stays true."
+connection: savings-weeks   # data/connections/maths.yml (Make on paper and Also used in; documentation only)
 ---
 Backtracking stops working when $x$ is on **both** sides, as in $x + 7 = 3x + 1$. What can you do instead?
 
@@ -20,6 +21,8 @@ check:
   options: ["$2x = 8$", "$2x = 11$", "$x = 8$", "$2x + 3 = 8$"]
   actual: "2x = 8. The left loses its 3 blocks and the right loses 3 too: 11 − 3 = 8. The bags of x stay."
 ```
+<figure class="situation" role="img" aria-label="A balance scale. On the left are two bags, each holding x blocks, and 3 loose blocks. On the right are 11 blocks. The scale is level. Three blocks are about to be taken from each side."><svg viewBox="0 0 430 205" width="430" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M100 40 H330" stroke-width="1.5"/><path d="M215 40 V150 M185 150 H245" stroke-width="1.5"/><path d="M110 40 L20 120 H200 Z M320 40 L230 120 H410 Z" stroke-width="0.8"/><rect x="28" y="76" width="40" height="44" rx="10" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="48" y="104" text-anchor="middle" fill="currentColor" stroke="none">x</text><rect x="74" y="76" width="40" height="44" rx="10" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="94" y="104" text-anchor="middle" fill="currentColor" stroke="none">x</text><rect x="124" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="148" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="172" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="234" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="262" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="290" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="318" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="346" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="374" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="234" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="262" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="290" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="318" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="346" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="110" y="142" text-anchor="middle" fill="currentColor" stroke="none">2 bags and 3 blocks</text><text x="320" y="142" text-anchor="middle" fill="currentColor" stroke="none">11 blocks</text><text x="215" y="185" text-anchor="middle" fill="currentColor" stroke="none">Take 3 blocks from each side. What equation is left?</text></svg></figure>
+
 
 The left side has two bags of $x$ and 3 blocks. The right side has 11 blocks. Picture taking 3 blocks from each side.
 
@@ -166,3 +169,49 @@ check:
 ```
 
 Give it to a friend to solve with the balance method, then check their answer in your first equation.
+
+## Make: two savers on paper
+
+```step
+stage: make
+insight: "Two people saving at different rates have x on both sides: the paper task asks for the move that gets the w terms together and the check in the first equation."
+hint: ["Take the smaller amount of w from both sides first.", "Check in the first equation, not the last line."]
+check:
+  type: reasoning
+  paper: true
+  q: "Mia has \\$20 and saves \\$15 a week. Jo has \\$80 and saves \\$10 a week. After how many weeks will they have the same amount? On paper, write the equation and solve it with the balance method."
+  steps:
+    - ["$20 + 15w = 80 + 10w$", "the same amount after $w$ weeks"]
+    - ["$20 + 5w = 80$", "take $10w$ from both sides, so the $w$ terms are on one side"]
+    - ["$5w = 60$", "take 20 from both sides"]
+    - ["$w = 12$", "divide both sides by 5"]
+    - ["Check: $20 + 15 \\times 12 = 200$ and $80 + 10 \\times 12 = 200$", "check in the first equation"]
+  picks:
+    - step: 2
+      q: "Why take $10w$ from both sides?"
+      options:
+        - "It gets the $w$ terms together on one side, and both sides lose the same"
+        - "It takes $10w$ from the left only, which is all that is needed"
+        - "It removes the blocks so only bags are left"
+      answer: 0
+      feedback: [null, "The same must come from both sides, or the equation is no longer balanced.", "Taking $10w$ removes bags, not blocks. And both sides must lose it."]
+  answer: "12"
+  answerLabel: "Weeks"
+  feedback:
+    - ["4", "That ignores Jo's $10w$. Jo's savings grow too, so take $10w$ from both sides."]
+    - ["60", "That is $5w$. Divide both sides by 5."]
+    - ["6", "Check it: Mia has 20 + 90 = 110 and Jo has 80 + 60 = 140."]
+  criteria:
+    - "I did the same to both sides at every step."
+    - "I got the $w$ terms together before the numbers."
+    - "I checked 12 weeks in the first equation, for both people."
+  explain: "Take 10w from both sides: 20 + 5w = 80. Take 20: 5w = 60. Divide by 5: w = 12. Check: each has \\$200."
+```
+
+Do this one in your book. The amounts are made up, but comparing two savings plans or two phone plans works this way. Write each step on both sides, check in the first equation, then type the number of weeks and choose the reason for the second line.
+
+**Also used in**
+
+- **Saving up.** \$45 saved plus \$15 a week for a \$180 ticket: do the same to both sides until $w$ is alone.
+- **Comparing plans.** Two phone or gym plans, each with a fixed fee and a rate: when do they cost the same?
+- **Formulas.** Rearranging speed = distance ÷ time uses the same moves on both sides.

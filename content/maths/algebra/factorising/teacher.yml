@@ -5,6 +5,7 @@ goals:
   - I can factorise an expression by taking out a common factor.
   - I can take out the highest common factor, including a letter, so the expression is fully factorised.
   - I can check a factorisation by expanding it.
+struggle: "Stopping at a common factor that is not the highest, and finding a letter in common (2x² and 4x share a 2 and an x). Ask 'do the terms inside the bracket share anything?' and always check by expanding."
 before: |
   Do the Run board and the Make task yourself first. Students need Expanding brackets (the lesson before) and highest common factors from Year 7 Number.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example live, including the check by expanding. Then ask: is Ava's answer wrong?"
   - "Modify: before the letter task, ask what goes into both 2x² and 4x. Students often find the 2 and miss the x."
   - "Make: collect students' expressions on the board and ask which ones are fully factorised with 4 outside."
+  - "Paper: equal rows is worked in books (HCF, factorised form, check by expanding). The page marks 6 and the reason it is 6 and not 3. Books out, then look at the page for the model."
 stuck:
   - see: "A student divides only the first term (6x + 9 = 3(2x + 9))."
     ask: "Expand your answer. Do you get back to where you started?"

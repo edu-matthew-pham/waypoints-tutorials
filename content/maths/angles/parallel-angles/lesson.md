@@ -7,6 +7,7 @@ summary: "When the lines are parallel, corresponding angles are equal, alternate
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A carpenter measures one angle where a brace crosses two parallel shelves. Without measuring again, she knows every other angle. How?"
+connection: periscope
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8170
   url: http://127.0.0.1:8170/index.html
@@ -243,3 +244,45 @@ check: { type: board, text: "Turn the crossing line so that the co-interior angl
 ```
 
 Then: can alternate angles ever add to $180^\circ$? When?
+
+## Make: the mirrors, on paper
+
+```step
+stage: make
+insight: "The two mirrors of a periscope are parallel and the ray between them is the transversal, so the angles inside on the same side are co-interior."
+hint: ["Sketch the two mirrors and the ray between them.", "Which two angles are inside, on the same side of the ray?"]
+check:
+  type: reasoning
+  paper: true
+  q: "In a tilted periscope, two parallel mirrors are crossed by the light ray between them. At the top mirror, the angle inside (between the mirrors) on the left of the ray is 50°. What is the angle inside, on the left of the ray, at the bottom mirror?"
+  steps:
+    - ["Sketch the two parallel mirrors with the ray crossing both, and mark the 50° inside on the left at the top", "the 50° is made up for the task"]
+    - ["The two angles inside on the same side of the ray are co-interior, so they add to 180°", "the mirrors are parallel"]
+    - ["180° − 50° = 130°", "take the 50° from the total"]
+  picks:
+    - step: 2
+      q: "Why do the two angles add to 180°?"
+      options:
+        - "They are co-interior angles between parallel lines"
+        - "They are alternate angles, so they are equal"
+        - "They are corresponding angles, so they are equal"
+      answer: 0
+      feedback: [null, "Alternate angles are on opposite sides of the ray, and are equal. These are on the same side.", "Corresponding angles are in the same place at each crossing. These are both inside the lines."]
+  answer: "130"
+  tolerance: 0
+  feedback:
+    - ["50", "That would be an alternate pair, on opposite sides of the ray. These are on the same side."]
+    - ["40", "That is 90° − 50°. The two angles together make 180°."]
+  criteria:
+    - "I sketched the mirrors and the ray, and marked both angles."
+    - "I named the pair as co-interior and gave the reason: the mirrors are parallel."
+    - "I checked that my two angles add to 180°."
+  explain: "The angles inside on the same side are co-interior, so they add to 180°: 180° − 50° = 130°."
+```
+
+Do this one in your book, not on the screen. The 50° is made up for the task: a real periscope sets its mirrors at 45°. Sketch it, name the pair, then type the angle.
+
+**Also used in**
+
+- **Carpentry.** A stair stringer is cut so every tread is parallel, and the same angle is marked on each: [Reasoning with angles](../angle-reasoning/).
+- **Light.** Light leaves a mirror at the angle it arrived, which a periscope uses twice.

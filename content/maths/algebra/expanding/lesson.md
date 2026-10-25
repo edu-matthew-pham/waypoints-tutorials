@@ -8,6 +8,7 @@ summary: The number outside a bracket multiplies every term inside it. 3(2x + 4)
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Three friends each buy a drink and a $4 snack. How do you write what they spend together?"
+connection: group-booking-expand   # data/connections/maths.yml (Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8165
   url: http://127.0.0.1:8165/index.html
@@ -244,3 +245,47 @@ check: { type: board, text: "Set $k$, $a$ and $b$ so the bracket expands to $6x 
 Find a bracket that expands to $6x + 12$. Then find a different one.
 
 Stretch: which bracket with the biggest possible $k$ expands to $12x + 18$?
+
+## Make: a group booking on paper
+
+```step
+stage: make
+insight: "Expanding says the same total two ways: per person, then everything together; the paper task asks for the step where the number outside reaches both terms."
+hint: ["Four people each pay the ticket and the fee.", "The 4 multiplies both terms inside."]
+check:
+  type: reasoning
+  paper: true
+  q: "Four friends each pay $t$ dollars for a ticket plus a \\$6 fee. Write the total as $4(t + 6)$, then expand it on paper. Find the total when a ticket costs \\$18, both ways."
+  steps:
+    - ["Total $= 4(t + 6)$", "four people each pay $t + 6$"]
+    - ["$4t + 24$", "the 4 multiplies both terms: four tickets and four fees"]
+    - ["$t = 18$: $4 \\times 18 + 24 = 72 + 24 = 96$", "put 18 into the expanded form"]
+    - ["Check: $4(18 + 6) = 4 \\times 24 = 96$", "the bracket form gives the same total"]
+  picks:
+    - step: 2
+      q: "Why is the expansion $4t + 24$?"
+      options:
+        - "The 4 multiplies the $t$ and the 6: four tickets and four fees"
+        - "The 4 only multiplies the $t$, and the 6 stays"
+        - "The 4 is added to both terms"
+      answer: 0
+      feedback: [null, "The fee is paid four times, so the 4 multiplies the 6 as well.", "Brackets with a number outside mean multiply, not add."]
+  answer: "96"
+  answerLabel: "Total (dollars)"
+  feedback:
+    - ["78", "That is $4t + 6$: only one fee. Four people pay the fee, so $4 \\times 6 = 24$."]
+    - ["24", "That is just the fees. Add the four tickets."]
+  criteria:
+    - "I multiplied the ticket and the fee by 4."
+    - "I got the same total from the bracket and the expansion."
+    - "My expansion has no brackets left."
+  explain: "4(t + 6) = 4t + 24. With t = 18: 72 + 24 = 96 dollars, and 4 × 24 = 96."
+```
+
+Do this one in your book. The prices are made up, but any group booking works this way. Expand, put in 18 both ways, then type the total and choose the reason for the expansion.
+
+**Also used in**
+
+- **Group bookings.** $3(t + 5) = 3t + 15$: the total of the tickets plus the total of the fees.
+- **Mental maths.** $7 \times 48 = 7(50 - 2) = 350 - 14 = 336$.
+- **Next lessons.** Factorising, which runs it backwards, and two brackets in Year 9.

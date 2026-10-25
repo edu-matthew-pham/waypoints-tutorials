@@ -1,6 +1,7 @@
 summary: Students say what a letter stands for, write an expression for a situation with a fee and a rate, test it with a case they can check, and use it for any number (AC9M7A02, node 3).
 time: 45
 timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+struggle: "Saying what the letter stands for before writing anything. Many students want the letter to be the answer, the total cost. Ask for the sentence \"Let ___ be the number of ___\" first, every time."
 goals:
   - I can say what the letter in an expression stands for, a number that changes.
   - I can write an expression for a situation with a once-only amount and an amount for each one.
@@ -18,6 +19,7 @@ running:
   - "Modify: ask for the sentence 'Let ___ be the number of ___' before each expression."
   - "Practise: for the plumber questions, ask which amount is paid once."
   - "Make: have students swap situations and write each other's expressions."
+  - "Paper: the fence task is worked in books; the page marks the number of posts (19) and the reason for p + 1. Books out, and look for a drawn fence with the posts counted before any expression appears."
 stuck:
   - see: "A student reads a letter as an object (Pia's mistake: 3a means 3 apples)."
     ask: "If a is 5, what is 3a? Is it 3 apples or something else?"

@@ -21,6 +21,7 @@ running:
   - "Modify: before the edge case y = 7 − x, ask: what is x if y = 5? Most find 2 mentally; then ask how they did it."
   - "Make: back to the opening marks. Ask for guesses first (many say 70, or 78 to make up for the 62); then ask students to show the formula they wrote and how they checked it."
   - "Paper: Make's rearrangement is done on paper first, one step per line; the page checks only the final formula. Books out, and look for the order of the undoing."
+  - "Pace: the target-pace task is worked in books; the page marks the pace (5.5) and the reason for dividing by d. Books out, and look for the rearranged formula before any number goes in."
 stuck:
   - see: "A student divides only one term (Jo's mistake)."
     ask: "Put in x = 2. Does your formula give back the y you started with?"

@@ -5,6 +5,7 @@ goals:
   - I can solve a two-step equation by backtracking.
   - I can name the step that undoes another (the inverse operation).
   - I can undo steps in the right order, last step first, and check my answer forwards.
+struggle: "Undoing in the wrong order. The number in front of x looks like the one to deal with first, so students divide before they take the extra number away. Ask 'what did the machine do last?' every time, and make the forwards check automatic."
 before: |
   This is a **hinge** lesson: the next lesson's balance method needs the same idea of order. Students who undo steps in the wrong order here will set up every later equation wrongly, so watch for it.
 
@@ -16,6 +17,7 @@ running:
   - "Mia's mistake is the most common error. Ask: what did the machine do last? That is the first thing to undo."
   - "Modify: the brackets task is the point. Ask students to say the machine's order aloud before undoing anything."
   - "Practise: insist on the forwards check every time. It catches the order mistake on its own."
+  - "Paper: the excursion bus is worked in books (equation, undo the fee, divide, check). The page marks 28 and the reason for taking the fee away first. Books out, then look at the page for the model."
 stuck:
   - see: "A student divides first in 2x + 3 = 11 and gets 2.5."
     ask: "What did the machine do last? What undoes that?"

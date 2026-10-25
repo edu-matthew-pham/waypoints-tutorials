@@ -7,6 +7,7 @@ summary: "y = 2x + 1 is a line; y < 2x + 1 is every point below it. Draw the bou
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A delivery zone, a speed limit, a budget: often the answer is not one point but a whole region of points that work."
+connection: load-limit   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8176
   url: http://127.0.0.1:8176/index.html
@@ -43,6 +44,8 @@ check:
     - "It is on the boundary line"
   actual: "No. Put x = 1 and y = 4 in: is 4 < 3? No. (1, 4) is above the line, outside the region."
 ```
+
+<figure class="situation" role="img" aria-label="Small axes with the line y = 2x + 1 and the point (1, 4) marked above the line. Is the point in the region below the line is a question mark."><svg viewBox="0 0 300 180" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M50 170 V10 M30 160 H200"/><text x="38" y="164" text-anchor="end" fill="currentColor" stroke="none">0</text><text x="195" y="178" text-anchor="end" fill="currentColor" stroke="none">x</text><text x="58" y="18" fill="currentColor" stroke="none">y</text><path d="M50 135 L108 20" stroke="#185FA5" stroke-width="3" stroke-dasharray="6 5"/><text x="114" y="30" fill="currentColor" stroke="none">y = 2x + 1</text><circle cx="75" cy="60" r="5" fill="#185FA5" stroke="none"/><text x="86" y="75" fill="currentColor" stroke="none">(1, 4): in y &lt; 2x + 1? ?</text></svg></figure>
 
 Put $x = 1$ and $y = 4$ into $y < 2x + 1$. Is it true?
 
@@ -211,3 +214,55 @@ check: { type: board, text: "Set $m$ and $c$ so the region $y \\le mx + c$ conta
 ```
 
 Find two different answers. What do they have in common?
+
+## Make: trailer load, on paper
+
+```step
+stage: make
+insight: "A load limit is a boundary: every load at or under it works. The inequality gives a number of boxes, and the situation, not the calculator, decides how to round it."
+hint: ["The total is the mower plus 40 for each box, and it may not go over 750.", "n is a whole number of boxes: what happens at 17?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A trailer is rated for 750 kg and already carries a 90 kg mower. Each box of pavers is 40 kg. On paper, write an inequality for n boxes, solve it, and say the most whole boxes that can go on."
+  steps:
+    - ["$90 + 40n \\le 750$", "the total may be 750 kg or less, so the limit itself is allowed"]
+    - ["$40n \\le 660$, so $n \\le 16.5$", "take 90 from both sides, then divide by 40"]
+    - ["Boxes come whole. 17 boxes would be $90 + 680 = 770$ kg, over the limit, so the most is 16", "round down, because rounding up breaks the limit"]
+  picks:
+    - step: 1
+      q: "Why is the inequality ≤ and not <?"
+      options:
+        - "A load of exactly 750 kg is allowed"
+        - "The mower has to be under 750 kg"
+        - "Every inequality in a problem uses ≤"
+      answer: 0
+      feedback: [null, "The 750 kg limit is for the whole load, mower and boxes together.", "Whether the limit itself is allowed comes from the situation."]
+    - step: 3
+      q: "Why is the answer 16 and not 17?"
+      options:
+        - "17 boxes make 770 kg, which is over the limit, and you cannot load half a box"
+        - "16.5 rounds to 17, but 16 is a safer number"
+        - "The inequality says n has to be less than 16"
+      answer: 0
+      feedback: [null, "Rounding to the nearest is not the rule here. 17 boxes break the limit.", "n ≤ 16.5 includes 16, and 16 is the largest whole number it allows."]
+  answer: "16"
+  tolerance: 0
+  feedback:
+    - ["16.5", "16.5 is the answer to the inequality, but you cannot load half a box."]
+    - ["17", "Check 17 boxes: 90 + 40 × 17 = 770 kg, over 750."]
+    - ["660", "660 kg is what is left for boxes. How many boxes of 40 kg is that?"]
+  criteria:
+    - "I wrote the inequality with ≤ and said why."
+    - "I solved it and kept the ≤ sign."
+    - "I checked 16 and 17 boxes against 750 kg before choosing."
+  explain: "90 + 40n ≤ 750 gives n ≤ 16.5. Only whole boxes can go on, and 17 would weigh 770 kg, so the most is 16 (730 kg)."
+```
+
+Do this one in your book, not on the screen. The trailer and the boxes are made up for the task, and a real rating plate is for the load only, so the trailer's own weight is not in it. Write the inequality, solve it, check 16 and 17, then type the number of boxes.
+
+**Also used in**
+
+- **Towing and delivery.** A rating plate is a limit, and everything at or under it is allowed.
+- **Lifts and bridges.** A sign saying "max 8 people" or "max 3 tonnes" is the same kind of region.
+- **Budgets.** A fixed cost plus a price each, kept under a limit, is the same inequality.

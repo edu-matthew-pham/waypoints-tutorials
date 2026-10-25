@@ -7,6 +7,7 @@ summary: Brackets keep a part together so it is worked out first. If a sentence 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "\"Add 4, then double it\" and \"double it, then add 4\" sound alike. They give different answers, and different expressions."
+connection: group-booking   # data/connections/maths.yml (Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8146
   url: http://127.0.0.1:8146/index.html
@@ -227,3 +228,47 @@ check:
 Say the steps in words: what does the rule do first, and what next?
 
 Stretch: write a rule of your own with brackets and ask a partner to find it from the board.
+
+## Make: a group booking on paper
+
+```step
+stage: make
+insight: "Booking for a group needs brackets because the fee is paid per person; the paper task asks for the expression and the reason for the brackets."
+hint: ["Everyone pays the ticket and the fee.", "Brackets keep the ticket and fee together."]
+check:
+  type: reasoning
+  paper: true
+  q: "Five friends each buy a cinema ticket costing $t$ dollars plus a \\$2 booking fee. On paper, write an expression for what they pay altogether, then find it when a ticket is \\$14."
+  steps:
+    - ["Each person pays $t + 2$ dollars", "the ticket plus their own fee"]
+    - ["$5(t + 2)$", "all five pay it, so the whole $t + 2$ is multiplied: brackets"]
+    - ["$5(14 + 2) = 5 \\times 16 = 80$", "put $t = 14$ in, brackets first"]
+    - ["Check: $5 \\times 14 + 5 \\times 2 = 70 + 10 = 80$", "five tickets and five fees"]
+  picks:
+    - step: 2
+      q: "Why are there brackets?"
+      options:
+        - "Everyone pays the fee as well as the ticket, so the whole $t + 2$ is multiplied by 5"
+        - "Brackets are always put around the last two terms"
+        - "The fee is only paid once, so it goes outside"
+      answer: 0
+      feedback: [null, "Brackets go where something is done to a whole result, not just around the last two terms.", "Each ticket has its own fee. The fee is paid five times."]
+  answer: "80"
+  answerLabel: "Total (dollars)"
+  feedback:
+    - ["72", "That is $5t + 2$: only one fee. Everyone pays the fee, so multiply the whole $t + 2$."]
+    - ["16", "That is one person's cost. Five people pay."]
+  criteria:
+    - "I wrote what one person pays before multiplying."
+    - "My expression has brackets, because the 5 multiplies the ticket and the fee."
+    - "I checked 80 a second way."
+  explain: "5(t + 2); when t = 14 that is 5 × 16 = 80 dollars."
+```
+
+Do this one in your book. The prices are made up, but real bookings add a fee for every ticket. Write the expression, put in 14, check it a second way, then type the total and choose the reason for the brackets.
+
+**Also used in**
+
+- **Group bookings.** Three friends each paying a ticket plus a \$5 fee pay $3(t + 5)$ altogether.
+- **Splitting a bill.** "Add \$8 delivery to the order, then split it between 4" is $\frac{n + 8}{4}$.
+- **Next lessons.** Expanding brackets, which writes $3(t + 5)$ as $3t + 15$.

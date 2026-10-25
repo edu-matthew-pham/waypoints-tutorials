@@ -5,6 +5,7 @@ goals:
   - I can check whether a value is a solution by putting it in place of the letter and working out both sides.
   - I can tell an expression from an equation.
   - I can explain that a solution makes both sides of an equation equal.
+struggle: "Reading 2x as two times x, not 2 and x side by side, and trusting a worked-out check over a feeling. Say 'two times x' aloud all lesson, and have students write the value of each side."
 before: |
   Do the Run and Modify boards yourself first. The surprise is the last Modify task: $2x = 7$ never balances with a whole number, and that is the point. Be ready to ask "what would $x$ have to be?" and accept 3.5 without teaching a method yet: solving step by step is the next two lessons.
 running:
@@ -14,6 +15,7 @@ running:
   - "Say 2x aloud as 'two times x', never 'two x', for the whole lesson. It prevents the 24-for-8 slip in the second task."
   - "Modify: the last task has no whole-number answer. Let students try every value before discussing."
   - "Make: share a few student equations and have the class check them by substitution."
+  - "Paper: the hall hire is worked in books (substitute 8, then 10, compare both sides). The page marks 10 and the reason 8 fails. Books out, then look at the page for the model."
 stuck:
   - see: "A student says x = 4 gives 2x = 24."
     ask: "What does 2x mean? Say it as a times sentence."

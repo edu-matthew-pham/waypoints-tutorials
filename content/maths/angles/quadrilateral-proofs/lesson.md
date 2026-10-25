@@ -54,6 +54,8 @@ check:
   actual: "No. Examples suggest the rule, but a proof gives reasons that work for every rectangle, such as two congruent triangles."
 ```
 
+<figure class="situation" role="img" aria-label="A rectangle with both diagonals drawn. Each diagonal is marked 10 centimetres. A question mark asks whether this is true for every rectangle."><svg viewBox="0 0 340 200" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="60" y="40" width="200" height="110" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="60" y1="40" x2="260" y2="150" stroke-dasharray="5 4"/><line x1="260" y1="40" x2="60" y2="150" stroke-dasharray="5 4"/><text x="110" y="62" text-anchor="middle" fill="currentColor" stroke="none">10 cm</text><text x="210" y="62" text-anchor="middle" fill="currentColor" stroke="none">10 cm</text><text x="160" y="185" text-anchor="middle" fill="currentColor" stroke="none">Every rectangle? ?</text></svg></figure>
+
 ## Run: test many shapes
 
 ```step
@@ -198,3 +200,44 @@ check: { type: board, text: "Make a quadrilateral with one pair of parallel side
 ```
 
 Then write a proof (or the plan of one) that its diagonals are equal. Which two triangles would you use?
+
+## Make: a proof plan, on paper
+
+```step
+stage: make
+insight: "Zane's one measured parallelogram is not a proof: a proof cuts along a diagonal and names the equal parts and the test."
+hint: ["Draw the diagonal AC. Which two triangles does it make?", "Which parts of the triangles are equal, and why?"]
+check:
+  type: reasoning
+  paper: true
+  q: "Zane measures one parallelogram ABCD: AB = CD = 6 cm. He says that proves opposite sides of every parallelogram are equal. On paper, plan a proof for any parallelogram, using the diagonal AC."
+  steps:
+    - ["Draw $AC$: it makes triangles $ABC$ and $CDA$", "each has $AC$ as a side"]
+    - ["$AC$ is shared, $\\angle BAC = \\angle DCA$ and $\\angle BCA = \\angle DAC$", "alternate angles, because $AB \\parallel DC$ and $AD \\parallel BC$"]
+    - ["$\\triangle ABC \\equiv \\triangle CDA$ (ASA)", "two angles and the side between them"]
+    - ["So $AB = CD$ and $BC = DA$", "matching sides of congruent triangles are equal"]
+  picks:
+    - step: 2
+      q: "What makes angle BAC equal to angle DCA?"
+      options:
+        - "Alternate angles between the parallel sides AB and DC"
+        - "They look equal in the drawing"
+        - "They add to 180°, as co-interior angles"
+      answer: 0
+      feedback: [null, "A drawing can look equal and still not be proved. A reason is needed.", "Co-interior angles add to 180°. These two are alternate, so they are equal."]
+    - step: 4
+      q: "Why are AB and CD equal?"
+      options:
+        - "They are matching sides of congruent triangles"
+        - "Zane measured them and both were 6 cm"
+        - "They look equal in the drawing"
+      answer: 0
+      feedback: [null, "One measured parallelogram is an example. A proof must work for every parallelogram.", "Looking equal is not a reason. The congruent triangles give one."]
+  criteria:
+    - "I cut the parallelogram along a diagonal into two triangles."
+    - "I gave a reason for each equal part, such as alternate angles."
+    - "I named the congruence test and said why the sides are equal."
+  explain: "Draw AC. The triangles share AC and have two pairs of equal alternate angles, so they are congruent (ASA). Matching sides are equal, so AB = CD and BC = DA for every parallelogram."
+```
+
+Do this one in your book, not on the screen. Zane's numbers are made up, but his mistake is common: one example is not a proof. Write the plan in four lines, then choose the reasons that matter most.

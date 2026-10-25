@@ -8,6 +8,7 @@ summary: "Congruent triangles are the same shape and size. You don't need all si
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A builder cuts a hundred identical roof trusses. To check two are the same, does she need to measure every side and every angle, or are three measurements enough?"
+connection: truss-triangles
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8322
   url: http://127.0.0.1:8322/index.html
@@ -46,6 +47,8 @@ check:
   options: ["Not always: it depends where the angle is", "Yes: two sides and an angle are enough", "No: you always need all three sides"]
   actual: "Not always. With the angle between the two sides (SAS) the triangle is fixed. With the angle somewhere else (SSA), two different triangles can fit."
 ```
+
+<figure class="situation" role="img" aria-label="Two triangles. Each has one side of 8 centimetres, one side of 6 centimetres and one angle of 40 degrees. Between them is a question mark: are they congruent?"><svg viewBox="0 0 340 160" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M20 120 L120 120 L80 40 Z"/><text x="70" y="142" text-anchor="middle" fill="currentColor" stroke="none">8 cm, 6 cm, 40°</text><path d="M220 120 L320 120 L300 40 Z"/><text x="270" y="142" text-anchor="middle" fill="currentColor" stroke="none">8 cm, 6 cm, 40°</text><text x="170" y="85" text-anchor="middle" fill="currentColor" stroke="none">congruent?</text><text x="170" y="105" text-anchor="middle" fill="currentColor" stroke="none">?</text></svg></figure>
 
 You do not need all six. These **congruence tests** each fix a triangle, so two triangles that share them are congruent. The angle between two sides is the **included angle**.
 
@@ -200,3 +203,40 @@ check: { type: board, text: "With AB = 6 and angle A = 40°, find a length of BC
 ```
 
 Then explain why SSA still is not a congruence test.
+
+## Make: are two trusses the same, on paper
+
+```step
+stage: make
+insight: "A roof truss factory must know when two measurements fix a triangle; the ambiguous SSA case is where a check on paper is needed."
+hint: ["Is the 40° angle between the 6 m and 4 m sides, or somewhere else?", "Name the test: SSS, SAS, ASA or SSA?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A factory checks two roof trusses by measuring a 6 m side, a 4 m side and a 40° angle on each. The angle is opposite the 4 m side, not between the two sides. Is that enough to be sure the trusses are identical? On paper, say why, and what else to measure."
+  steps:
+    - ["The 40° angle is not between the 6 m and 4 m sides, so this is SSA, not SAS", "the included angle is the one between the two sides"]
+    - ["SSA can fit two different triangles, so these trusses might not match", "with 4 m shorter than 6 m the third side can swing one of two ways"]
+    - ["Measure the third side too (SSS), or the angle between the 6 m and 4 m sides (SAS)", "those tests fix the triangle completely"]
+  picks:
+    - step: 2
+      q: "Why is it not enough?"
+      options:
+        - "Two different triangles can have these same measurements"
+        - "A truss needs all six measurements"
+        - "40° is too small an angle to use"
+      answer: 0
+      feedback: [null, "Three of the right measurements are enough, such as SSS or SAS.", "The size of the angle is not the problem. Where it sits is."]
+  criteria:
+    - "I named the test the measurements give, SSA, and said where the angle is."
+    - "I said two triangles can fit, so the trusses might differ."
+    - "I named a measurement that would be enough."
+  explain: "The angle is not between the two sides, so it is SSA, and two different trusses can fit it. Measuring all three sides (SSS) or the included angle (SAS) is enough."
+```
+
+Do this one in your book, not on the screen. The measurements are made up for the task. Real trusses have tolerances, but the idea is the same. Name the test, say whether it is enough, then choose the reason.
+
+**Also used in**
+
+- **Prefab building.** Wall frames, trusses and stair parts are cut to one drawing so any two fit the same way.
+- **Cut three sticks.** Three lengths make only one triangle, which is why a triangle is rigid.

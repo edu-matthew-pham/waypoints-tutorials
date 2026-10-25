@@ -5,6 +5,7 @@ goals:
   - I can substitute the values I know into a formula to make an equation.
   - I can solve the equation by undoing each operation, last first.
   - I can check my answer by substituting it back into the formula.
+struggle: "Choosing which letter the known number belongs to, then undoing the operation rather than repeating it. Write each known value beside its letter before substituting, and check by substituting back every time."
 before: |
   Do the Run and Modify boards yourself first. The board lets students hunt for the answer by moving a slider: that is fine at Run, but in Investigate and Modify they should write the equation and solve it first, then use the board to check.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example live. Ask after each line: what did we undo?"
   - "Modify: for the battery, ask what the minus means before anyone calculates."
   - "Make: ask how they found it: guessing with the slider, or writing 6w = 24?"
+  - "Paper: kayak hire is worked in books (substitute, undo the fee, divide, check). The page marks 7 and the reason 43 replaces T. Books out, then look at the page for the model."
 stuck:
   - see: "A student repeats the operation instead of undoing it (Mia's mistake)."
     ask: "Does your answer check? Put it back into the formula."

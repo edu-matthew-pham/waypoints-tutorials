@@ -7,6 +7,7 @@ summary: "A net is a flat pattern that folds into a solid. Six squares make a cu
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A cereal box starts as one flat piece of card. Which flat shapes fold up into a box, and which ones jam?"
+connection: box-net
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8295
   url: http://127.0.0.1:8295/index.html
@@ -42,6 +43,8 @@ check:
   options: ["No: some squares would land on top of each other", "Yes: a cube has six faces", "Only if the row is bent"]
   actual: "No. Fold the row round and the sixth square lands on the first. A net needs six squares on six different faces."
 ```
+
+<figure class="situation" role="img" aria-label="Six squares joined in a straight row, with a question mark: does the row fold into a cube?"><svg viewBox="0 0 310 170" width="310" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="20" y="40" width="45" height="45"/><rect x="65" y="40" width="45" height="45"/><rect x="110" y="40" width="45" height="45"/><rect x="155" y="40" width="45" height="45"/><rect x="200" y="40" width="45" height="45"/><rect x="245" y="40" width="45" height="45"/><text x="155" y="115" text-anchor="middle" fill="currentColor" stroke="none">Fold it into a cube?</text><text x="155" y="145" text-anchor="middle" fill="currentColor" stroke="none">?</text></svg></figure>
 
 Picture wrapping the row round a cube: where does the fifth square go?
 
@@ -187,3 +190,45 @@ check: { type: board, text: "Make a prism net with a surface area between 90 and
 ```
 
 Then: why does a net show the surface area exactly, when a 3D drawing does not?
+
+## Make: a gift box, on paper
+
+```step
+stage: make
+insight: "A gift box net is its six faces laid flat, so the card needed is the sum of six areas; pairs of equal faces shorten the sum."
+hint: ["List the faces: how many, and which are the same?", "Find each face's area, then add them."]
+check:
+  type: reasoning
+  paper: true
+  q: "A gift box for a mug is 10 cm long, 10 cm wide and 12 cm tall. How much card does its net need for the six faces, in cm², with no flaps?"
+  steps:
+    - ["The top and bottom are each 10 × 10 = 100 cm², so together 200 cm²", "two matching square faces"]
+    - ["The four sides are each 10 × 12 = 120 cm², so together 480 cm²", "four matching rectangles"]
+    - ["200 + 480 = 680 cm²", "the net is all six faces laid flat, so add their areas"]
+  picks:
+    - step: 3
+      q: "Why add the areas of all six faces?"
+      options:
+        - "The net is the six faces laid flat, so its area is all of them added"
+        - "Only the four sides need card"
+        - "You multiply the three lengths"
+      answer: 0
+      feedback: [null, "The top and bottom need card too.", "That gives the volume, the space inside, not the card."]
+  answer: "680"
+  tolerance: 0
+  feedback:
+    - ["1200", "That is 10 × 10 × 12, the volume. The card covers the faces: add their areas."]
+    - ["480", "That is only the four sides. The top and bottom need card too."]
+  criteria:
+    - "I listed all six faces and which ones match."
+    - "I found each area before adding."
+    - "I did not count the volume."
+  explain: "2 × 100 + 4 × 120 = 200 + 480 = 680 cm². The net lays all six faces flat."
+```
+
+Do this one in your book, not on the screen. The box size is made up for the task, and a real box also needs flaps for glue. Draw the net, label the faces, then type the area.
+
+**Also used in**
+
+- **Packaging.** Boxes, cartons and bags start as flat printed card, cut and folded from one net.
+- **Wrapping.** Gift wrap for a box needs about the area of its net, plus an overlap.

@@ -1,6 +1,7 @@
 summary: Students solve linear equations with x on both sides, brackets, negative answers and fractions by doing the same to both sides, writing one step per line, and verify every answer by substitution; a graph shows the solution as where the two sides meet (AC9M8A02, node 2).
 time: 50
 timing: "Predict and Run 8 min · Investigate 15 min · Modify 15 min · Practise and Make 12 min"
+struggle: "Signs: undoing a minus, and the x terms moving across. Ask for one step per line, and make the check in both sides a habit, not an extra."
 goals:
   - I can solve an equation with x on both sides, including negatives.
   - I can solve an equation with brackets by expanding first.
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example, saying why the smaller x term moves (so x stays positive)."
   - "Modify: for the no-solution task, ask what the graph would look like."
   - "Make: collect students' equations and solve one together."
+  - "Paper: the plans task is worked in books; the page marks the number of gigabytes (5) and the reason for adding 5. Books out, and look for the same thing done to both sides on every line."
 stuck:
   - see: "A student takes 7 away to undo − 7 (Ben's mistake)."
     ask: "What undoes taking 7 away?"

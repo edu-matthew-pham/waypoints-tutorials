@@ -5,6 +5,7 @@ goals:
   - I can find what each figure of a growing pattern adds, and write a rule like s = 3n + 1.
   - I can use a rule to work out a figure I have not drawn.
   - I can work backwards from a count to the figure number.
+struggle: "Finding what each figure adds when the figures share sides, so they multiply Figure 1 instead. Ask: what is the same in each new figure? What was already there?"
 before: |
   Do the Run and Modify boards yourself first. The board draws what each figure adds in orange: that is the whole idea of the lesson.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: before the backwards task, ask: is 46 the figure number or the number of sticks?"
   - "Practise: ask students to check each rule on Figure 1 and Figure 2 before answering."
   - "Make: collect different designs that give 52. Is there more than one?"
+  - "Paper: the fence task in Make is worked in books; the page marks the number (61) and the reason for the +1. Books out, then check the rule on a fence of 1 panel (5 pieces)."
 stuck:
   - see: "A student multiplies Figure 1 (Ben's mistake)."
     ask: "Build Figure 2 from Figure 1. How many sticks did you add?"

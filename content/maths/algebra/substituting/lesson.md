@@ -7,6 +7,7 @@ summary: To use a formula, replace each letter with its value, write in the × s
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A formula is a recipe for a number. Put in the values you know, and it gives you the one you want: a perimeter, a cost, a speed."
+connection: forecast-fahrenheit   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8143
   url: http://127.0.0.1:8143/index.html
@@ -42,6 +43,8 @@ check:
   options: ["16", "13", "30", "48"]
   actual: "16. 2l means 2 × l = 2 × 5 = 10, and 2w = 2 × 3 = 6. So P = 10 + 6 = 16. (48 comes from reading 2l as 25 and 2w as 23.)"
 ```
+
+<figure class="situation" role="img" aria-label="A rectangle 5 centimetres long and 3 centimetres wide. Its perimeter, P, is marked with a question mark."><svg viewBox="0 0 420 200" width="420" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="70" y="30" width="250" height="150" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="1"/><text x="195" y="22" text-anchor="middle" fill="currentColor" stroke="none">l = 5 cm</text><text x="332" y="110" text-anchor="start" fill="currentColor" stroke="none">w = 3 cm</text><text x="195" y="110" text-anchor="middle" fill="currentColor" stroke="none">P = ?</text></svg></figure>
 
 $$P = 2l + 2w$$
 
@@ -223,3 +226,49 @@ check: { type: board, text: "Make a rectangle with an area of 24 cm².", when: "
 Find a rectangle with area 24 cm². Then find another one. How many can you find with whole-number sides?
 
 Stretch: which of your rectangles has the smallest perimeter? Use $P = 2l + 2w$ to check.
+
+## Make: °F to °C, on paper
+
+```step
+stage: make
+insight: "A US forecast gives °F, and the conversion formula has brackets, a multiplication and a division. Writing the substituted line and working the brackets first shows whether the order holds up."
+hint: ["Replace F with 86 and keep the brackets.", "Work out the brackets first: 86 − 32."]
+check:
+  type: reasoning
+  paper: true
+  q: "A US weather forecast says 86 °F. The formula for degrees Celsius is $C = (F - 32) \\times 5 \\div 9$. What is the temperature in °C?"
+  steps:
+    - ["$C = (F - 32) \\times 5 \\div 9$, with $F = 86$", "write the formula and the value"]
+    - ["$C = (86 - 32) \\times 5 \\div 9$", "replace $F$ with its value and keep the brackets"]
+    - ["$= 54 \\times 5 \\div 9$", "brackets first: $86 - 32 = 54$"]
+    - ["$= 270 \\div 9 = 30$ °C", "then multiply and divide, left to right"]
+    - ["30 °C is a hot day, and 86 °F is a hot day too", "does the answer make sense?"]
+  picks:
+    - step: 3
+      q: "What do you work out first in $(86 - 32) \\times 5 \\div 9$?"
+      options:
+        - "The brackets: $86 - 32$"
+        - "The multiplication: $32 \\times 5$"
+        - "The division: $5 \\div 9$"
+      answer: 0
+      feedback: [null, "The 32 is inside the brackets with the 86. Work out the brackets first.", "Brackets come before division."]
+  answer: "30"
+  tolerance: 0
+  answerLabel: "Temperature (°C)"
+  feedback:
+    - ["68.2", "That does $32 \\times 5 \\div 9$ before the brackets. Work out $86 - 32$ first."]
+    - ["54", "That stops after the brackets. The formula then multiplies by 5 and divides by 9."]
+  criteria:
+    - "I wrote the formula, then the substituted line with the brackets kept."
+    - "I worked out the brackets before multiplying and dividing."
+    - "My answer makes sense for a hot day."
+  explain: "$(86 - 32) \\times 5 \\div 9 = 54 \\times 5 \\div 9 = 270 \\div 9 = 30$, so 86 °F is 30 °C. The formula is exact."
+```
+
+Do this one in your book, not on the screen. Write the formula, the line with 86 in place of $F$, then the arithmetic one step at a time, and type the temperature.
+
+**Also used in**
+
+- **Weather abroad.** US forecasts and ovens use °F. The conversion formula turns them into °C, once you put the value in.
+- **Ladders and scoreboards.** A rule like points $= 3W + D$ gives every team's points when you put in their wins and draws.
+- **Checking answers.** Every equation you solve later is checked by substituting the answer back in.

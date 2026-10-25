@@ -8,6 +8,7 @@ summary: "Similar shapes are the same shape but can be different sizes, like a p
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "How can you find the height of a tree without climbing it? Its shadow and your own shadow make two triangles of the same shape."
+connection: shadow-height
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8323
   url: http://127.0.0.1:8323/index.html
@@ -40,6 +41,8 @@ check:
   options: ["They stay the same", "They double", "They halve"]
   actual: "They stay the same. Doubling every side makes a bigger triangle of exactly the same shape."
 ```
+
+<figure class="situation" role="img" aria-label="Two right-angled triangles of the same shape. The small one has sides 3, 4 and 5 centimetres. The big one has every side doubled: 6, 8 and 10 centimetres. A question mark asks whether the angles are the same."><svg viewBox="0 0 340 190" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><polygon points="30,150 110,150 30,90" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><polygon points="150,150 310,150 150,30" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="22" y="124" text-anchor="end" fill="currentColor" stroke="none">3 cm</text><text x="70" y="168" text-anchor="middle" fill="currentColor" stroke="none">4 cm</text><text x="80" y="112" text-anchor="start" fill="currentColor" stroke="none">5 cm</text><text x="142" y="94" text-anchor="end" fill="currentColor" stroke="none">6 cm</text><text x="230" y="168" text-anchor="middle" fill="currentColor" stroke="none">8 cm</text><text x="240" y="80" text-anchor="start" fill="currentColor" stroke="none">10 cm</text><text x="90" y="142" text-anchor="end" fill="currentColor" stroke="none">?</text><text x="288" y="142" text-anchor="end" fill="currentColor" stroke="none">?</text></svg></figure>
 
 Picture the two triangles side by side, one twice the size of the other.
 
@@ -211,3 +214,45 @@ check: { type: board, text: "The original's sides are 6, 8 and 10 cm. In the cop
 ```
 
 Then say what the copy's other two sides are, and how you know the angles match.
+
+## Make: a tree height, on paper
+
+```step
+stage: make
+insight: "The tree and its shadow, and you and yours, make similar right-angled triangles, so the heights are in the same ratio as the shadows."
+hint: ["Match height with height and shadow with shadow.", "Find the scale factor from the two shadows."]
+check:
+  type: reasoning
+  paper: true
+  q: "You are 1.5 m tall and your shadow is 2 m long. At the same moment the gum tree's shadow is 10 m long. How tall is the tree, in metres?"
+  steps:
+    - ["The sun makes the same angle for both, so the two right-angled triangles are similar", "same angles, so same shape"]
+    - ["Your shadow 2 m matches the tree's shadow 10 m, so the scale factor is $10 \\div 2 = 5$", "match shadow with shadow, then divide"]
+    - ["Tree height $= 1.5 \\times 5 = 7.5$ m", "your height matches the tree's height: multiply by the same factor"]
+  picks:
+    - step: 2
+      q: "Which sides match in the two triangles?"
+      options:
+        - "Your height with the tree's height, your shadow with the tree's shadow"
+        - "Your height with the tree's shadow"
+        - "Your shadow with the tree's height"
+      answer: 0
+      feedback: [null, "That pairs a height with a shadow, so the sides do not match.", "That pairs a shadow with a height. Match like with like."]
+  answer: "7.5"
+  tolerance: 0
+  feedback:
+    - ["0.3", "That divides 1.5 by 5. The tree is taller than you, so multiply by the scale factor."]
+    - ["13.3", "That puts the ratio upside down. The scale factor is the tree's shadow ÷ your shadow."]
+  criteria:
+    - "I said the triangles are similar and why (the same sun angle)."
+    - "I matched height with height and shadow with shadow."
+    - "I found the scale factor first, then used it on 1.5 m."
+  explain: "Scale factor = 10 ÷ 2 = 5, so the tree is 1.5 × 5 = 7.5 m tall."
+```
+
+Do this one in your book, not on the screen. The heights and shadows are made up for the task, and it only works on level ground with the shadows measured at the same moment. Draw both triangles, label the matching sides, then type the tree's height.
+
+**Also used in**
+
+- **Plans and models.** Floor plans and scale models are similar to the real thing: every length is scaled by the same factor and the angles stay.
+- **Photos and screens.** Enlarging a photo keeps its shape only if both sides use the same scale factor.

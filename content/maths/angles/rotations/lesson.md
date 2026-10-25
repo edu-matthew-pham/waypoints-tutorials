@@ -7,6 +7,7 @@ summary: "A rotation turns a shape about a centre by an angle in a direction. Ab
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "The hands of a clock, a Ferris wheel, a spinning fan. Each turns about a centre by a certain angle, in a certain direction."
+connection: tile-rotation
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8299
   url: http://127.0.0.1:8299/index.html
@@ -42,6 +43,8 @@ check:
   options: ["(−1, 2)", "(1, 2)", "(−2, −1)", "(1, −2)"]
   actual: "(−1, 2). A is right of the centre, so it turns up and to the left. Its distance from the origin stays the same."
 ```
+
+<figure class="situation" role="img" aria-label="Axes with point A at 2 across and 1 up. A curved arrow shows A turning a quarter turn anticlockwise about the origin. Its new position, A prime, is marked with a question mark."><svg viewBox="0 0 350 200" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="25" y1="100" x2="325" y2="100"/><line x1="175" y1="10" x2="175" y2="190"/><text x="318" y="92" text-anchor="end" fill="currentColor" stroke="none">x</text><text x="185" y="22" text-anchor="start" fill="currentColor" stroke="none">y</text><defs><marker id="rot" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="currentColor" stroke="none"/></marker></defs><circle cx="175" cy="100" r="3" fill="currentColor"/><text x="166" y="114" text-anchor="end" fill="currentColor" stroke="none">O</text><circle cx="235" cy="70" r="4" fill="currentColor"/><text x="243" y="64" text-anchor="start" fill="currentColor" stroke="none">A (2, 1)</text><path d="M235 70 A67 67 0 0 0 148 41" stroke-dasharray="4 3" marker-end="url(#rot)"/><text x="140" y="34" text-anchor="end" fill="currentColor" stroke="none">A′ = ?</text><text x="300" y="40" text-anchor="end" fill="currentColor" stroke="none">90° anticlockwise</text></svg></figure>
 
 Picture a clock hand pointing right, turning up.
 
@@ -191,3 +194,46 @@ check: { type: board, text: "Turn the triangle so that B′ is at (1, −4).", w
 ```
 
 Then describe the rotation fully: the centre, the angle and the direction. How else could you say it, turning clockwise?
+
+## Make: a four-tile block, on paper
+
+```step
+stage: make
+insight: "A four-tile block is one design turned a quarter turn at a time; each turn of 90° anticlockwise about the centre sends (x, y) to (−y, x)."
+hint: ["Turn once, write the new point, then turn that point again.", "A quarter turn anticlockwise sends (x, y) to (−y, x)."]
+check:
+  type: reasoning
+  paper: true
+  q: "A four-tile block is made by turning one tile a quarter turn anticlockwise about the centre O (0, 0), again and again. A dot on the first tile is at (3, 1). Where is the dot on the third tile, after two quarter turns? Give its x-coordinate."
+  steps:
+    - ["One quarter turn anticlockwise: $(x, y)$ goes to $(-y, x)$", "the point turns about the centre $O$"]
+    - ["$(3, 1)$ goes to $(-1, 3)$ on the second tile", "$x = 3$, $y = 1$, so $(-y, x) = (-1, 3)$"]
+    - ["Turn again: $(-1, 3)$ goes to $(-3, -1)$ on the third tile", "$(-y, x)$ with $x = -1$ and $y = 3$"]
+    - ["The x-coordinate is $-3$", "check: two quarter turns make a half turn, so $(3, 1)$ goes to $(-3, -1)$"]
+  picks:
+    - step: 2
+      q: "Where does (3, 1) go after one quarter turn anticlockwise?"
+      options:
+        - "(−1, 3)"
+        - "(1, 3)"
+        - "(3, −1)"
+      answer: 0
+      feedback: [null, "That swaps the coordinates but forgets the sign change. It would be a reflection.", "That keeps x and changes the sign of y. It is a reflection, not a turn."]
+  answer: "-3"
+  tolerance: 0
+  feedback:
+    - ["-1", "That is the point after one turn, (−1, 3). Turn once more."]
+    - ["3", "Two quarter turns make a half turn, so both signs change."]
+  criteria:
+    - "I turned once and wrote the new point."
+    - "I turned the new point again, not the original."
+    - "I checked that two quarter turns make a half turn: (3, 1) to (−3, −1)."
+  explain: "(3, 1) turns to (−1, 3), then to (−3, −1). The x-coordinate on the third tile is −3."
+```
+
+Do this one in your book, not on the screen. The tile and the dot are made up for the task. Sketch the centre and the dot, turn it once, then turn the new point again, and type the x-coordinate.
+
+**Also used in**
+
+- **Tiles and patterns.** Four-tile blocks and wallpaper repeat by turning one design a quarter turn at a time.
+- **Wheels and fans.** Ferris wheels and fans turn each part about a centre by the same angle.

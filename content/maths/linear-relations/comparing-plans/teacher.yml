@@ -5,6 +5,7 @@ goals:
   - I can find where two plans cost the same from their graphs, and say what that means.
   - I can decide which plan is cheaper for a given amount, and explain why in words.
   - I can say which values make sense for a model, and spot an answer that does not.
+struggle: "Choosing by the fee alone. Ask: work out both plans for a big amount and for a small one. Which is cheaper in each case?"
 before: |
   Do the Run and Modify boards yourself first. This lesson uses the last two: solving with graphs (where lines meet) and writing rules from situations.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: before the electricians, ask: what did the c lesson say about lines with the same m?"
   - "Practise: for each answer, ask one student to say it as a sentence about the situation."
   - "Make: compare two students' rival plans. Both pass through (6, 50); which would you advertise to whom?"
+  - "Paper: the gym task in Make is worked in books; the page marks the reason for the choice. Books out, then compare their three steps with the model."
 stuck:
   - see: "A student says the plan with the lower fee is always cheaper (Leo's mistake)."
     ask: "Work out both plans for 10 GB. Which is cheaper now?"

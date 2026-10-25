@@ -1,6 +1,7 @@
 summary: Students tell the variables in a formula from the constants, and see that in an equation a letter can be one unknown number (AC9M7A01, node 1).
 time: 45
 timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+struggle: "Seeing that a letter stands for a quantity that can change, not one fixed number and not its place in the alphabet. Ask \"what does this letter stand for, and what else could it be?\""
 goals:
   - I can say which letters in a formula are variables and which numbers are constants.
   - I can say what a constant means in a real formula, such as a call-out fee.
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example live. Draw the contrast on the board: formula (variables, many values) and equation (unknown, one value)."
   - "Modify: for π, point out that a letter is not automatically a variable."
   - "Make: have two students compare 4s with s + s + s + s. Are they the same formula?"
+  - "Paper: the ladder task is worked in books; the page marks the points (22) and the reason the 3 is a constant. Books out, and look for the letters sorted into changes and stays the same before any arithmetic."
 stuck:
   - see: "A student gives a letter its alphabet value (Kim's mistake)."
     ask: "What does l stand for in this formula? How would you find its value?"

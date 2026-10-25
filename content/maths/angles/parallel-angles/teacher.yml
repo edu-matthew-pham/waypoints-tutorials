@@ -5,6 +5,7 @@ goals:
   - "I can state the rules: with parallel lines, corresponding and alternate angles are equal and co-interior angles add to 180°."
   - I can find an unknown angle using one of these rules, and say which rule.
   - I can find angles in two steps, giving a reason for each step.
+struggle: "Telling co-interior, alternate and corresponding apart. Ask: same place at each crossing, opposite sides between the lines, or same side between the lines?"
 before: |
   Do the Run board yourself first. Students need the pair names (Angles at parallel lines, the lesson before), angles on a straight line and vertically opposite angles (Year 6).
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example live, writing the reason beside each angle. Then ask: could you have found e another way?"
   - "Modify: in the two-step task, collect different routes to g and the reasons each uses."
   - "Make: ask why c and e can only be equal at 90°."
+  - "Make on paper: ask which two angles are on the same side of the ray, and which rule links them."
 stuck:
   - see: "A student makes co-interior angles equal (Leo's mistake)."
     ask: "On the board, pick c and e. Are they the same size?"

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask why each pair of parts is equal."
   - "Modify: ask which diagonal of the kite gets cut in half."
   - "Make: ask which two triangles the proof would use."
+  - "Paper: the proof plan is worked in books; the page marks two reasons (alternate angles, then matching sides of congruent triangles). Books out first, then look at the page to compare each line."
 stuck:
   - see: "A student says 'they look equal'."
     ask: "How do you know, for every shape like this?"

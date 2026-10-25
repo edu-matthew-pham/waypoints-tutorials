@@ -5,6 +5,7 @@ goals:
   - I can describe what happens to the line y = mx + c when c changes.
   - I can read where a line crosses the y-axis from its rule.
   - I can tell from their rules whether two lines are parallel.
+struggle: "Separating c from m. Ask: what is y when x is 0? Which number did that, and which number set the steepness?"
 before: |
   Do the Run and Modify boards yourself first. This lesson follows "What m does to a line": students should already read m as "up for each step right".
 
@@ -18,6 +19,7 @@ running:
   - "Modify: before 'Not on the axis', ask: why can't we just read c off the graph here? (T is not on the y-axis.)"
   - "Practise: the parallel question plants the same numbers in different places. Ask a student who chose it to work out the steepness of each line."
   - "Make: collect two students' answers and check them as a class: work out 2x at P and subtract from y."
+  - "Paper: the plans task in Make is worked in books; the page marks the number (8) and the reason for making the rules equal. Books out, then check 8 in both rules."
 stuck:
   - see: "A student says a bigger c makes the line steeper."
     ask: "How far up is the step on each line?"

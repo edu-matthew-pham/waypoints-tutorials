@@ -5,6 +5,7 @@ goals:
   - I can solve an equation by doing the same thing to both sides, and show each step.
   - I can solve an equation with x on both sides.
   - I can check my answer by putting it back into the first equation, every time.
+struggle: "Doing a step to one side only, and what to do when x is on both sides. Ask 'what happened to the right side?' and keep the scale on show. Taking the bags away from both sides is the move students rarely think of themselves."
 before: |
   This is a **hinge** lesson: later modelling work (ratios, rates, money problems) depends on fluent solving *and* the checking habit. A student who skips the check will not notice a wrong answer.
 
@@ -16,6 +17,7 @@ running:
   - "Leo's mistake (one side only) is the misconception this lesson exists to fix. Ask: what happened to the right side?"
   - "Modify: for x + 7 = 3x + 1, let students struggle briefly, then ask what else they could take away from both sides."
   - "Practise: students should write each step as a line of algebra, then check in the first equation. Equations with subtraction (adding to both sides) come in a later lesson."
+  - "Paper: the two savers are worked in books, one line per step, both sides each time. The page marks 12 and the reason for taking 10w from both sides. Books out, then look at the page for the model."
 stuck:
   - see: "A student changes one side only (2x + 3 = 11 becomes 2x = 11)."
     ask: "What did you do to the left side? Did the right side get the same?"

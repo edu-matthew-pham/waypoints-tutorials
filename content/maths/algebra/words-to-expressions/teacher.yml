@@ -1,6 +1,7 @@
 summary: Students turn words such as more than, less than, twice and divided by into expressions, writing the operations in the order the words say them and checking with a number (AC9M7A02, node 1).
 time: 45
 timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+struggle: "The order for \"less than\": 7 less than n is n − 7, not 7 − n. Ask students to try a real number first (7 less than 10) and see which expression gives it."
 goals:
   - I can say what operation each word in a sentence about a number means.
   - I can write an expression from words, with the operations in the right order.
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example live. Say the words in steps and write each step as you say it."
   - "Modify: at each task, ask 'what is the first thing the words do to n?' before writing."
   - "Make: ask for the expression in words as well as in symbols."
+  - "Paper: the venue task is worked in books; the page marks the cost (170) and the reason the hire fee is added once. Books out, and look for the letter defined before the expression."
 stuck:
   - see: "A student writes 7 − n for '7 less than n' (Ana's mistake)."
     ask: "What is 7 less than 10? What does 7 − 10 give?"

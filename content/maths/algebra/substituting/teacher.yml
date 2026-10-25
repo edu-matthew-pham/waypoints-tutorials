@@ -1,6 +1,7 @@
 summary: Students substitute values into formulas, writing in the hidden × signs and using the order of operations, including decimals, division and brackets (AC9M7A01, node 2).
 time: 45
 timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+struggle: "Seeing that 2l means 2 × l, then doing the multiplying before the adding, and the brackets before both. Ask for the formula written with the × signs in before any arithmetic."
 goals:
   - I can replace each letter in a formula with its value, writing in the × signs.
   - I can work out the result in the right order, including brackets and division.
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example live. Write the formula, the values, then the substituted line, before any arithmetic."
   - "Modify: before brackets, ask what 5(h + 4) means in words."
   - "Make: collect every rectangle the class found with area 24. Is there a pattern?"
+  - "Paper: the °F to °C task is worked in books; the page marks the answer (30) and the reason for working the brackets first. Books out, and look for the substituted line with the brackets kept."
 stuck:
   - see: "A student writes digits side by side (25 for 2l with l = 5)."
     ask: "What sign is hiding between the 2 and the l?"

@@ -5,6 +5,7 @@ goals:
   - I can show that the angles of a triangle add to 180°, by measuring and by tearing off the corners.
   - I can explain why this is true for every triangle, whatever its shape or size.
   - I can tell whether three angles could be the angles of a triangle.
+struggle: "Trusting 180 when a triangle looks very different. Ask students to tear off the three corners and line them up on a straight line."
 before: |
   Do the Run board and the tear-off task yourself first. Students should know that angles on a straight line add to 180° (Year 6).
 
@@ -20,6 +21,7 @@ running:
   - "Modify: before the right-angle task ask: if one angle is 90°, what must the other two add to? Then check on the board."
   - "Practise: Lia's measurement question is a chance to talk about measuring error, which science lessons need too."
   - "Make: ask a student to explain why the angle must be 90° before anyone builds it."
+  - "Make on paper: ask for the reason at each step, then ask why 119 is also 52 plus 67."
 stuck:
   - see: "A student thinks a bigger triangle has bigger angles (Kai's mistake)."
     ask: "If you make a photocopy twice as big, do the corners get pointier or blunter?"

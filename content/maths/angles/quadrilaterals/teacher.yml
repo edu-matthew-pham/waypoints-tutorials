@@ -18,6 +18,7 @@ running:
   - "Investigate: build a family tree on the board, from quadrilateral down to square."
   - "Modify: for the edge case, ask what co-interior angles say about the next corner."
   - "Make: ask why a trapezium can't have exactly three right angles."
+  - "Paper: the linkage task is worked in books; the page marks two reasons (which name still fits, and why the tray stays level). Books out, then look at the page to compare the names for closed and open."
 stuck:
   - see: "A student says a square is not a rectangle (Sam's mistake)."
     ask: "What does a shape need to be a rectangle? Does a square have it?"

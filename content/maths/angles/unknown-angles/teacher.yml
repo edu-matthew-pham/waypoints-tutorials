@@ -5,6 +5,7 @@ goals:
   - I can find an unknown angle in a triangle or polygon using its angle sum.
   - I can combine angle sums with straight-line and parallel-line angles, giving a reason for each step.
   - I can explain why an exterior angle of a triangle equals the sum of the two interior opposite angles.
+struggle: "Giving a reason for each step. Ask students to say which fact they used (angles in a triangle, a straight line, a right angle) before they write the number."
 before: |
   Do the first reasoning task yourself, then compare with its model. Students need Angles in a triangle, Angles in a polygon and Reasoning with angles.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model know, choose, say why for the triangle. Ask: what does a negative answer tell you (Zoe)?"
   - "Modify: before the pentagon, ask students for its angle sum and how they know."
   - "Make: ask students what c must be before they move anything."
+  - "Paper: the rafter task is worked in books; the page marks the cut angle (65) and the reason for the subtraction. Books out, then look at the page for the 180° check."
 stuck:
   - see: "A student uses 180° for a quadrilateral (Zoe's mistake)."
     ask: "How many triangles does a quadrilateral split into?"

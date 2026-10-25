@@ -7,6 +7,7 @@ summary: "A reflection flips a shape over a mirror line. In the x-axis, (x, y) b
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A face in a mirror, a butterfly's wings, a lake showing a mountain. The mirror line sits exactly halfway between each point and its reflection."
+connection: ambulance-mirror
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8298
   url: http://127.0.0.1:8298/index.html
@@ -41,6 +42,8 @@ check:
   options: ["(2, −1)", "(−2, 1)", "(−2, −1)", "(1, 2)"]
   actual: "(2, −1). The point flips over the x-axis, to the same distance below it, so only y changes sign."
 ```
+
+<figure class="situation" role="img" aria-label="Axes with point A at 2 across and 1 up, drawn above the x-axis. The x-axis is the mirror. Below the mirror, the reflected point A prime is marked with a question mark."><svg viewBox="0 0 350 200" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="25" y1="100" x2="325" y2="100"/><line x1="175" y1="10" x2="175" y2="190"/><text x="318" y="92" text-anchor="end" fill="currentColor" stroke="none">x</text><text x="185" y="22" text-anchor="start" fill="currentColor" stroke="none">y</text><circle cx="235" cy="70" r="4" fill="currentColor"/><text x="243" y="64" text-anchor="start" fill="currentColor" stroke="none">A (2, 1)</text><line x1="235" y1="76" x2="235" y2="122" stroke-dasharray="4 3"/><text x="243" y="138" text-anchor="start" fill="currentColor" stroke="none">A′ = ?</text><text x="30" y="118" text-anchor="start" fill="currentColor" stroke="none">mirror: x-axis</text></svg></figure>
 
 Picture the point flipping straight down over the x-axis.
 
@@ -190,3 +193,45 @@ check: { type: board, text: "Reflect the arrow so that its point (corner C) land
 ```
 
 Then write the rule for each mirror in your own words, and say which coordinate stays the same.
+
+## Make: a mirror word, on paper
+
+```step
+stage: make
+insight: "Mirror writing reflects each point in a vertical line: x changes sign and y stays the same, the same rule as the lesson's y-axis mirror."
+hint: ["A vertical mirror moves a point left or right, not up or down.", "Both points are the same distance from the mirror."]
+check:
+  type: reasoning
+  paper: true
+  q: "AMBULANCE is painted reflected so drivers read it the right way in their mirror. On a grid of the van front, the corner of the first letter is at (5, 3). The writing is reflected in the vertical mirror line, the y-axis. What is the x-coordinate of the reflected corner?"
+  steps:
+    - ["The mirror is the $y$-axis, a vertical line", "the point moves across it, left or right"]
+    - ["The point is 5 from the mirror, so its image is 5 on the other side", "the mirror sits halfway between a point and its image"]
+    - ["$x = -5$, and $y$ stays $3$", "the image is $(-5, 3)$"]
+  picks:
+    - step: 2
+      q: "Which coordinate changes in a reflection in the y-axis?"
+      options:
+        - "x changes sign, because the point crosses a vertical line and keeps its height"
+        - "y changes sign, because the word is reflected"
+        - "Both change sign"
+      answer: 0
+      feedback: [null, "y stays the same: the mirror is vertical, so the point does not move up or down.", "Both would change for a turn of 180°, not a reflection in one axis."]
+  answer: "-5"
+  tolerance: 0
+  feedback:
+    - ["5", "That is the original x-coordinate. The point crosses the mirror, so it ends up on the other side."]
+    - ["-3", "y stays 3. The mirror is vertical, so the point moves across, not up or down."]
+  criteria:
+    - "I said the point moves across the y-axis, so it keeps its height."
+    - "I used the same distance on both sides of the mirror."
+    - "I wrote the image as (−5, 3)."
+  explain: "The point is 5 to the right of the y-axis, so its image is 5 to the left: x = −5. y stays 3, so the image is (−5, 3)."
+```
+
+Do this one in your book, not on the screen. The grid and the corner are made up for the task. Sketch the axes and the corner, say which way the point moves, and type the x-coordinate of its image.
+
+**Also used in**
+
+- **Mirror writing.** Writing meant to be read in a mirror is reflected left to right, like AMBULANCE on a van's front.
+- **Symmetry in design.** Butterfly wings, logos and tile patterns are drawn on one side of a mirror line and reflected.

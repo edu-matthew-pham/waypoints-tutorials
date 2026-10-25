@@ -7,6 +7,7 @@ summary: "Find unknown angles in steps, giving a reason for each: what you know,
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A detective does not guess: every step has evidence. Finding an angle is the same. Each angle you find needs a reason, and the reasons are what make the answer trustworthy."
+connection: stair-stringer
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8171
   url: http://127.0.0.1:8171/index.html
@@ -264,3 +265,46 @@ check: { type: board, text: "Work out what $b$ must be for $h = 125^\\circ$. The
 Write your two steps first, then turn the line.
 
 Stretch: write your own two-step puzzle for a partner: give one angle, ask for one that is not a named pair with it, and write the model reasons.
+
+## Make: a stair cut, on paper
+
+```step
+stage: make
+insight: "A stair stringer makes the treads two parallel lines and the sloping edge a transversal; the cut needs a two-step chain with a reason at each step."
+hint: ["Find the angle next to the one you know first. What is the reason?", "The treads are parallel. Which pair of angles is in the same place at each crossing?"]
+check:
+  type: reasoning
+  paper: true
+  q: "On a stair stringer, two treads are level, parallel lines. The sloping edge crosses them. At the lower tread, the angle above the line on the right of the edge is 38°. What is the angle above the upper tread, on the left of the edge?"
+  steps:
+    - ["Sketch two level lines crossed by the sloping edge, with 38° above the lower line on the right", "the 38° is made up for the task"]
+    - ["The angle above the lower line on the left makes a straight line with 38°: 180° − 38° = 142°", "angles on a straight line add to 180°"]
+    - ["The angle above the upper line on the left is in the same place at the upper crossing, so it is also 142°", "corresponding angles on parallel lines are equal"]
+  picks:
+    - step: 3
+      q: "Why is the angle at the upper tread 142°?"
+      options:
+        - "It is in the same place at the other crossing, and the treads are parallel"
+        - "It is vertically opposite the 38° angle"
+        - "It is alternate to the 38° angle"
+        - "The two angles are co-interior, so they are equal"
+      answer: 0
+      feedback: [null, "Vertically opposite angles are at one crossing. These are at two.", "Alternate angles lie between the lines, on opposite sides. This one is above the upper line.", "Co-interior angles add to 180° and are not equal in general."]
+  answer: "142"
+  tolerance: 0
+  feedback:
+    - ["38", "That is the angle you were given. The one you want is next to it on a straight line, then copied up to the next tread."]
+    - ["52", "That is 90° − 38°. The treads are parallel, not at right angles to the edge."]
+  criteria:
+    - "I sketched two level lines and the sloping edge, and marked the 38°."
+    - "I gave a reason for each step: a straight line, then corresponding angles."
+    - "I checked that 142° and 38° make a straight line together."
+  explain: "180° − 38° = 142° on the lower tread (a straight line), then the same place at the upper tread is also 142° (corresponding angles, because the treads are parallel)."
+```
+
+Do this one in your book, not on the screen. Sketch the treads and the edge, write each step with its reason, then type the angle. The 38° is made up for the task: a real stair's pitch comes from the building rules.
+
+**Also used in**
+
+- **Carpentry.** A carpenter marks every tread cut from one angle, because the treads are parallel.
+- **Periscopes.** Two parallel mirrors give equal angles that keep the view level: [Finding angles with parallel lines](../parallel-angles/).

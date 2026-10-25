@@ -51,6 +51,8 @@ check:
   actual: "It stays the same: 180°. As one angle grows, the other two shrink by exactly as much."
 ```
 
+<figure class="situation" role="img" aria-label="A triangle, and the same triangle with one corner pulled out so one angle is much bigger. Under each: the three angles add to a question mark."><svg viewBox="0 0 340 170" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M30 130 L130 130 L90 50 Z"/><path d="M220 130 L300 130 L225 40 Z"/><path d="M50 130 A20 20 0 0 0 36 114 M110 130 A20 20 0 0 1 128 120 M98 66 A20 20 0 0 0 80 66" stroke-width="1.2"/><text x="80" y="155" text-anchor="middle" fill="currentColor" stroke="none">total = ?</text><text x="260" y="155" text-anchor="middle" fill="currentColor" stroke="none">total = ?</text><text x="175" y="90" text-anchor="middle" fill="currentColor" stroke="none">→</text></svg></figure>
+
 Picture a triangle you could pull out into a long, thin shape. Which angles change?
 
 ## Run: change the triangle
@@ -212,3 +214,39 @@ check: { type: board, text: "Make a triangle where one angle is exactly the othe
 Think first: if one angle is the other two added together, what fraction of $180°$ is it? Then build it.
 
 Stretch: can a triangle have one angle that is exactly twice the sum of the other two? How big is it?
+
+## Make: a garden bed, on paper
+
+```step
+stage: make
+insight: "A triangle's angles add to 180° and angles on a straight line add to 180°, so a path along a straight side needs both reasons."
+hint: ["Find the third angle of the bed first.", "The path makes a straight line with one side of the bed."]
+check:
+  type: reasoning
+  paper: true
+  q: "A triangular garden bed has two corners of 52° and 67°. A path runs straight along the bed's bottom side and past the corner C, so it makes a straight line with that side. What is the angle between the path and the bed's other side at C, in degrees?"
+  steps:
+    - ["The angles of the bed add to 180°, so the angle at C is 180 − 52 − 67 = 61°", "angles in a triangle add to 180°"]
+    - ["The path and the bed's side make a straight line, so the angle outside is 180 − 61 = 119°", "angles on a straight line add to 180°"]
+  picks:
+    - step: 1
+      q: "Why is the angle at C 61°?"
+      options:
+        - "Angles in a triangle add to 180°, so it is what is left after 52° and 67°"
+        - "Angles on a straight line add to 180°"
+        - "The three angles of the bed are equal"
+      answer: 0
+      feedback: [null, "A straight line is used in the second step. The bed's own three corners add to 180° too.", "The three corners are 52°, 67° and C, which are not equal."]
+  answer: "119"
+  tolerance: 0
+  feedback:
+    - ["61", "That is the angle inside the bed at C. The path makes a straight line with the side, so take 61° from 180°."]
+    - ["128", "That is 180 − 52. Find the angle at C first: 180 − 52 − 67, then use the straight line."]
+  criteria:
+    - "I found the third angle of the bed first and gave the reason."
+    - "I gave a second reason for the path: a straight line."
+    - "I checked that 119° is also 52° + 67°."
+  explain: "C = 180 − 52 − 67 = 61°. The angle outside is on a straight line with it: 180 − 61 = 119°. It also equals the other two angles, 52 + 67."
+```
+
+Do this one in your book, not on the screen. The bed and the angles are made up for the task. Sketch it, write each step with its reason, then type the angle.

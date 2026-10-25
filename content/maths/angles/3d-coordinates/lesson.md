@@ -8,6 +8,7 @@ summary: "A third axis, z, gives a point in space three coordinates (x, y, z). R
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Two drones are both above the same spot in a park. How can a controller tell where each one is, so they don't crash? Two numbers are not enough."
+connection: print-head
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8327
   url: http://127.0.0.1:8327/index.html
@@ -219,3 +220,45 @@ check: { type: board, text: "Make a box 4 units along x, 1 along y and 3 high.",
 ```
 
 Then write the coordinates of all eight corners of the box, and check two of them on the board.
+
+## Make: a printer layer, on paper
+
+```step
+stage: make
+insight: "A 3D printer builds up one layer at a time, so only z changes; the situation puts the three coordinates to work with a decimal."
+hint: ["Which of the three coordinates changes when the nozzle goes up?", "Three layers of 0.2 mm is one climb. Add it to where z started."]
+check:
+  type: reasoning
+  paper: true
+  q: "A 3D printer's nozzle is at (40, 25, 10) mm. It prints 3 more layers, each 0.2 mm higher than the one before, without moving along x or y. What is the nozzle's z-coordinate now, in mm?"
+  steps:
+    - ["Going up changes only z, so x stays 40 and y stays 25", "up is the third coordinate"]
+    - ["Three layers of 0.2 mm climb 3 × 0.2 = 0.6 mm", "each layer is 0.2 mm higher"]
+    - ["z = 10 + 0.6 = 10.6 mm, so the nozzle is at (40, 25, 10.6)", "add the climb to where z started"]
+  picks:
+    - step: 1
+      q: "Which coordinates change when the nozzle goes up for the next layer?"
+      options:
+        - "Only z, the third number"
+        - "Only x, the first number"
+        - "All three"
+      answer: 0
+      feedback: [null, "x is how far along. Going up does not move it along.", "Up is one direction, so one coordinate changes."]
+  answer: "10.6"
+  tolerance: 0
+  feedback:
+    - ["10.2", "That is one layer. The nozzle climbs three layers of 0.2 mm."]
+    - ["0.6", "That is only the climb. Add it to the z the nozzle started at."]
+  criteria:
+    - "I said that only z changes, and kept x and y the same."
+    - "I worked out the whole climb before adding it."
+    - "I wrote the nozzle's position as three coordinates, in order."
+  explain: "Only z changes: 3 × 0.2 = 0.6 mm up, so z = 10 + 0.6 = 10.6 mm. The nozzle is at (40, 25, 10.6)."
+```
+
+Do this one in your book, not on the screen. The position and layer height are made up for the task, and real printers set both in the slicer. Write which coordinate changes, work out the climb, then type the new z.
+
+**Also used in**
+
+- **Flight trackers.** A plane's position is latitude, longitude and altitude, and a climb changes only the altitude.
+- **Buildings.** A flat on floor 4 is 12 m up, the same z-coordinate idea.

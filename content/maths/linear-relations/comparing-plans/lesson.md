@@ -8,6 +8,7 @@ summary: Put two rules on one graph. Where the lines cross they cost the same; o
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Phone plans, gyms and streaming services all ask you to choose between a bigger fee and a lower rate. Two lines on one graph answer it for any amount."
+connection: gym-or-casual   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8139
   url: http://127.0.0.1:8139/index.html
@@ -42,6 +43,8 @@ check:
   options: ["Plan A: it has the lower fee", "Plan B", "They cost the same"]
   actual: "Plan B. For 6 GB, Plan A costs 20 + 5 × 6 = 50 dollars and Plan B costs 40. A's lower fee only wins for small amounts of data."
 ```
+
+<figure class="situation" role="img" aria-label="Two price tags. Plan A: 20 dollars a month plus 5 dollars per GB. Plan B: 40 dollars a month flat. Mia uses 6 GB: which tag costs less is a question mark."><svg viewBox="0 0 400 150" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="15" y="25" width="170" height="85" rx="8" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="100" y="50" text-anchor="middle" fill="currentColor" stroke="none" font-weight="bold">Plan A</text><text x="100" y="75" text-anchor="middle" fill="currentColor" stroke="none">20 a month</text><text x="100" y="95" text-anchor="middle" fill="currentColor" stroke="none">+ 5 per GB</text><rect x="215" y="25" width="170" height="85" rx="8" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="300" y="50" text-anchor="middle" fill="currentColor" stroke="none" font-weight="bold">Plan B</text><text x="300" y="82" text-anchor="middle" fill="currentColor" stroke="none">40 a month, flat</text><text x="200" y="135" text-anchor="middle" fill="currentColor" stroke="none">Mia uses 6 GB: which costs less? ?</text></svg></figure>
 
 (The plan prices are made up for the task.) Work out what each plan costs for 6 GB. Then think: is there an amount of data where they cost the same?
 
@@ -215,3 +218,41 @@ check: { type: board, text: "Design Plan B so that it costs the same as Plan A a
 Plan A is $T = 5g + 20$. Set the rate ($m$) and fee ($c$) of your own plan. The green point shows where the two plans cost the same.
 
 Stretch: write an advert for your plan that is honest: who should choose it, and who should not?
+
+## Make: gym or casual, on paper
+
+```step
+stage: make
+insight: "The crossing says unlimited wins from 4 visits a month, but the model assumes steady visits; the judgement is whether the person really goes that often every month."
+hint: ["Write a rule for each plan: casual is 15 times the visits, unlimited is 55 whatever the visits.", "Where do they cost the same? Then look at the months Sam actually had."]
+check:
+  type: reasoning
+  paper: true
+  q: "A gym charges 15 dollars a visit, or 55 dollars a month for unlimited visits. Sam went 5, 4, 2 and 1 times in the last four months. On paper, find where the two plans cost the same, then decide which plan Sam should choose and why."
+  steps:
+    - ["Casual: $C = 15n$. Unlimited: $C = 55$", "write one rule for each plan, with $n$ the visits in a month"]
+    - ["Same cost where $15n = 55$, so $n$ is about 3.7. Unlimited is only cheaper from 4 visits", "the lines cross between 3 and 4 visits"]
+    - ["Sam's months cost 75, 60, 30 and 15 dollars casual: 180 in all, against 220 for four months of unlimited. Casual is cheaper, even though two months were over 4 visits", "the model assumes steady visits, and Sam's months are not steady"]
+  picks:
+    - step: 3
+      q: "Which is the best reason to choose casual for Sam?"
+      options:
+        - "Sam's quiet months mean unlimited costs more over the four months, even though busy months favour it"
+        - "Casual always has the lower rate"
+        - "The lines cross at 3.7 visits, so casual is always cheaper"
+      answer: 0
+      feedback: [null, "Casual costs more per visit than unlimited does once you go often. Which plan wins depends on the number of visits.", "The lines cross at 3.7 visits: casual is cheaper below that and unlimited above it."]
+  criteria:
+    - "I wrote a rule for each plan."
+    - "I said where they cost the same, and which side each plan wins."
+    - "I used Sam's real months, not just one month, to decide."
+  explain: "The plans cost the same at about 3.7 visits a month. Sam's months were uneven: 180 dollars casual against 220 for unlimited, so casual is the better choice. If Sam went 4 or more times every month, unlimited would win."
+```
+
+Do this one in your book. The prices and Sam's visits are made up for the task, and a real gym may have joining fees or a minimum term. Write both rules, find where they meet, then choose the reason that decides it.
+
+**Also used in**
+
+- **Phone and streaming plans.** A lower fee with a higher rate beats a flat price only for light users.
+- **Hire and subscriptions.** Bikes, tools and software are all a per-use price against a flat one, and the answer depends on how often you use it.
+- **Breaking even.** A business asks the same question: from how many sales does the bigger fee pay off?

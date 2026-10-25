@@ -304,6 +304,45 @@ Work it out on paper first, one step per line, the way the bar model goes. Then 
 
 Check your answer by putting it back into the average. Stretch: if the last test is out of 100, what is the highest average you could still get?
 
+## Make: a target pace, on paper
+
+```step
+stage: make
+insight: "Time = pace × distance gives the time from the pace; a target time asks the other way round. Rearranging first, then putting the numbers in, is the step inside a question people really ask."
+hint: ["p was multiplied by d. What undoes multiplying?", "Divide both sides by d, then put the numbers in."]
+check:
+  type: reasoning
+  paper: true
+  q: "You want to run 8 km in 44 minutes (made up for the task). Time = pace × distance, so $t = pd$, where the pace $p$ is in minutes per kilometre. What pace do you need?"
+  steps:
+    - ["$t = pd$, with $t = 44$ and $d = 8$", "write the formula and what you know"]
+    - ["$p$ was multiplied by $d$, so divide both sides by $d$: $p = \\dfrac{t}{d}$", "undo the multiplying, on both sides"]
+    - ["$p = 44 \\div 8 = 5.5$ minutes per kilometre", "put the numbers in last"]
+    - ["Check: $5.5 \\times 8 = 44$", "put the pace back into the original formula"]
+  picks:
+    - step: 2
+      q: "How do you get $p$ on its own from $t = pd$?"
+      options:
+        - "Divide both sides by $d$"
+        - "Subtract $d$ from both sides"
+        - "Multiply both sides by $d$"
+      answer: 0
+      feedback: [null, "$p$ is multiplied by $d$, not added to it. Subtracting does not undo that.", "That multiplies by $d$ a second time. Undo multiplying by dividing."]
+  answer: "5.5"
+  tolerance: 0.001
+  answerLabel: "Pace (minutes per km)"
+  feedback:
+    - ["352", "That multiplies 44 by 8. $p$ was multiplied by $d$, so divide by $d$."]
+    - ["36", "That takes 8 from 44. Undo multiplying by dividing."]
+  criteria:
+    - "I made $p$ the subject before I put any numbers in."
+    - "I divided both sides by $d$."
+    - "I checked that 5.5 × 8 gives 44."
+  explain: "$p = t \\div d = 44 \\div 8 = 5.5$ minutes per kilometre, which is 5 minutes 30 seconds. Check: $5.5 \\times 8 = 44$."
+```
+
+Do this one in your book, not on the screen. The distance and time are made up for the task, and a real run has hills and a tired finish. Write the formula, rearrange it for the pace, put the numbers in, check, and type the pace.
+
 **Also used in**
 
 - **Running pace.** Time = pace × distance. Turn it around to find the pace you need for a target time.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Ravi's question again with 3 left and 2 down."
   - "Modify: for the undo question, ask what the opposite of each part is."
   - "Make: ask for the translation as a rule for (x, y)."
+  - "Paper: the game-move task is worked in books; the page marks y (3) and the reason that down takes away from y. Books out, then look at the page for x and y changed separately."
 stuck:
   - see: "A student adds when moving left or down."
     ask: "On the x-axis, does a number get bigger or smaller as you go left?"

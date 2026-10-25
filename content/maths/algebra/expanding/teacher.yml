@@ -5,6 +5,7 @@ goals:
   - I can expand a bracket by multiplying every term inside by the number outside.
   - I can expand when there are negative numbers inside or outside the bracket.
   - I can expand, then collect like terms, and show each step.
+struggle: "Multiplying only the first term, and the sign when something is negative. Draw the rows: every row has the ones as well as the x. Ask 'how many rows, and what is in each?'"
 before: |
   Do the Run board and the working check yourself first. Students need Algebra Foundations' brackets and expressions, and adding and subtracting negatives (Number Foundations). Multiplying two negatives (−2 × −5 = 10) is Year 8 Number: the tiles show it (a negative row flips every tile), but teach or recap it in class if it is new.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: before the negative-outside task, ask: what happens to a tile if you take it away twice? Then let the board show −2(x − 5)."
   - "Practise: the working check marks the first wrong line. Ask students who get a cross to say what that step did."
   - "Make: collect the different brackets for 6x + 12 and ask which uses the biggest number outside. That is the lead into factorising."
+  - "Paper: the group booking is worked in books (expand, then check both ways with 18). The page marks 96 and the reason the 4 reaches the 6. Books out, then look at the page for the model."
 stuck:
   - see: "A student multiplies only the first term (Sam's mistake)."
     ask: "How many rows are there? What is in each row?"

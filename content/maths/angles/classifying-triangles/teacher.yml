@@ -18,6 +18,7 @@ running:
   - "Investigate: for the impossible pair, ask what angles an equilateral triangle must have."
   - "Modify: for nearly equilateral, ask why the grid cannot do it exactly (the height is not a whole number of squares)."
   - "Make: ask which angle is obtuse and why."
+  - "Make on paper: ask which two names the triangle has, and why they can both be true."
 stuck:
   - see: "A student calls a triangle acute because it has an acute angle (Zara's mistake)."
     ask: "Which is the biggest angle?"

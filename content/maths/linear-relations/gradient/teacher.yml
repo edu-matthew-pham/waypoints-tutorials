@@ -5,6 +5,7 @@ goals:
   - I can describe what happens to the line y = mx + c when m gets bigger, is 0, or is negative.
   - I can read m from a rule as how far the line goes up for each step right.
   - I can find m for a line through (0, 1) and another point.
+struggle: "Believing a bigger number lifts the line instead of tilting it. Ask: where does the line cross the y-axis, before and after?"
 before: |
   Do the Run and Modify boards yourself first. Students should already be able to plot a line from a rule or a table, and work with negative numbers.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: each task changes one thing. Before the flat and down tasks, ask: what m do you think it will be? Then let them check."
   - "Practise: the 'which way' question plants a minus sign in c. Ask a student who chose y = 3x − 2 to work out y at x = 0 and x = 1."
   - "Make: collect a few students' m and P. Check one as a class: start at (0, 1), count 1 right, m up."
+  - "Paper: the hill task in Make is worked in books; the page marks the percentage (8) and the reason for rise divided by run. Books out, then compare each step with the model."
 stuck:
   - see: "A student says a bigger m moves the line up."
     ask: "Where does the line cross the y-axis when m is 1? When m is 3?"

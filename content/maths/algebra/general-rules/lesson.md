@@ -7,6 +7,7 @@ summary: Say what the letter stands for, write an expression for the situation, 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A party for 5 people, 50 people or 500: one expression gives the cost for all of them, if you say clearly what the letter stands for."
+connection: fence-posts   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8147
   url: http://127.0.0.1:8147/index.html
@@ -228,3 +229,47 @@ check: { type: reflect, text: "I wrote what my letter stands for, wrote an expre
 Make up a situation with a fee paid once and a price for each one: a club, a game, a delivery. Write "Let ___ be the number of ___." Then write an expression for the total, and test it with one case.
 
 Stretch: swap with a partner and see if they can write your expression from the story alone.
+
+## Make: a fence, on paper
+
+```step
+stage: make
+insight: "A fence of p panels needs p + 1 posts, not 2p: the posts between panels are shared. Testing the expression on a fence small enough to draw shows which one it is, and then 18 panels needs no drawing."
+hint: ["Draw 3 panels in a row and count the posts.", "Every panel adds one post, and the first post is extra."]
+check:
+  type: reasoning
+  paper: true
+  q: "A straight fence has a post at each end and a post between every two panels. The club's fence will be 18 panels long (made up for the task). Let $p$ be the number of panels. Write an expression for the number of posts, then use it to find how many posts to order."
+  steps:
+    - ["Let $p$ be the number of panels", "the letter stands for the number that changes"]
+    - ["3 panels need 4 posts when I draw them, so posts $= p + 1$", "test the expression on a case I can count"]
+    - ["$18 + 1 = 19$ posts", "put $p = 18$ into the expression"]
+    - ["Check another way: 18 panels have a post at their right-hand end, and there is one more post at the very start", "$18 + 1 = 19$ again"]
+  picks:
+    - step: 2
+      q: "Why is the number of posts $p + 1$ and not $2p$?"
+      options:
+        - "Neighbouring panels share a post, and the first post is extra"
+        - "Every panel has two posts of its own"
+        - "A fence of $p$ panels needs $p$ posts"
+      answer: 0
+      feedback: [null, "Draw it: the post between two panels belongs to both, so it is only counted once.", "Draw 3 panels. The last panel needs a post at its far end too, so that is 4 posts."]
+  answer: "19"
+  tolerance: 0
+  feedback:
+    - ["36", "That is $2 \\times 18$. Neighbouring panels share a post."]
+    - ["18", "That is one post for each panel. The first panel needs a post at both of its ends."]
+  criteria:
+    - "I said what $p$ stands for."
+    - "I tested my expression on a fence I drew and counted (3 panels, 4 posts)."
+    - "My answer for 18 panels is one more than 18."
+  explain: "posts $= p + 1$, so 18 panels need $18 + 1 = 19$ posts. A real fence with corners or a gate needs more."
+```
+
+Do this one in your book, not on the screen. The 18 panels are made up for the task, and the fence is straight: corners and gates each add a post. Draw a few panels first, say what the letter stands for, then write the expression and type the number of posts.
+
+**Also used in**
+
+- **Fences and decking.** Posts, rails and boards are ordered from a rule like $p + 1$, without drawing the whole job.
+- **Chairs and tables.** Joined tables seat a number that follows a rule in the number of tables, so one expression covers any size.
+- **Next lessons.** Growing patterns and tables: the same kind of rule, shown in a table and then on a graph.

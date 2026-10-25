@@ -9,6 +9,7 @@ summary: "Get the x terms on one side and the numbers on the other, doing the sa
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Two phone plans: 7 dollars plus 3 a gigabyte, or 5 a gigabyte minus a 9 dollar credit. When do they cost the same? 3x + 7 = 5x − 9."
+connection: plans-cross   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8175
   url: http://127.0.0.1:8175/index.html
@@ -46,6 +47,8 @@ check:
     - "$x = 2$"
   actual: "x = 8. Check: 3 × 8 + 7 = 31 and 5 × 8 − 9 = 31. Both sides are equal."
 ```
+
+<figure class="situation" role="img" aria-label="A balance. The left pan holds plan A, 3 x plus 7. The right pan holds plan B, 5 x minus 9. The two sides balance for one value of x, marked with a question mark."><svg viewBox="0 0 420 190" width="420" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="60" y1="70" x2="360" y2="70" stroke-width="2"/><polygon points="210,70 190,140 230,140" stroke-width="1.2" fill="#7F77DD" fill-opacity="0.2"/><line x1="170" y1="140" x2="250" y2="140" stroke-width="1.5"/><line x1="85" y1="70" x2="25" y2="97"/><line x1="85" y1="70" x2="145" y2="97"/><line x1="335" y1="70" x2="275" y2="97"/><line x1="335" y1="70" x2="395" y2="97"/><rect x="20" y="97" width="130" height="40" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="270" y="97" width="130" height="40" rx="3" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5" stroke-width="0.8"/><text x="85" y="122" text-anchor="middle" fill="currentColor" stroke="none">plan A: 3x + 7</text><text x="335" y="122" text-anchor="middle" fill="currentColor" stroke="none">plan B: 5x − 9</text><text x="210" y="38" text-anchor="middle" fill="currentColor" stroke="none">the two bills balance when x = ?</text><text x="210" y="172" text-anchor="middle" fill="currentColor" stroke="none">x is the number of gigabytes</text></svg></figure>
 
 Try each option in both sides. Or solve it: what could you take from both sides first?
 
@@ -231,3 +234,50 @@ check: { type: board, text: "Set $m$ and $c$ so that $2x + 1 = mx + c$ has the s
 ```
 
 Write your equation, then solve it on paper to check.
+
+## Make: when do two plans match, on paper
+
+```step
+stage: make
+insight: "Two price lists are two expressions; setting them equal and doing the same to both sides finds the usage where they cost the same, and substituting into both bills is the check."
+hint: ["Write each bill with x for the gigabytes, then set them equal.", "Take the smaller x term, 4x, from both sides first."]
+check:
+  type: reasoning
+  paper: true
+  q: "Plan A costs 10 dollars a month plus 4 dollars per gigabyte. Plan B costs 7 dollars per gigabyte, with a 5 dollar credit taken off the bill (made up for the task). At how many gigabytes do the two plans cost the same?"
+  steps:
+    - ["Let $x$ be the gigabytes. Plan A: $4x + 10$. Plan B: $7x - 5$", "write each bill in terms of $x$"]
+    - ["$4x + 10 = 7x - 5$", "the bills are equal"]
+    - ["$10 = 3x - 5$", "take $4x$ from both sides, the smaller $x$ term"]
+    - ["$15 = 3x$", "add 5 to both sides: this undoes $- 5$"]
+    - ["$x = 5$", "divide both sides by 3"]
+    - ["Check: $4 \\times 5 + 10 = 30$ and $7 \\times 5 - 5 = 30$", "both bills are 30 dollars"]
+  picks:
+    - step: 4
+      q: "How do you undo the $- 5$ in $10 = 3x - 5$?"
+      options:
+        - "Add 5 to both sides"
+        - "Take 5 from both sides"
+        - "Add 5 to the right side only"
+      answer: 0
+      feedback: [null, "That makes it 5 = 3x - 10: the minus is still there. Use the inverse and add.", "Whatever you do to one side, do to the other."]
+  answer: "5"
+  tolerance: 0
+  answerLabel: "Gigabytes"
+  feedback:
+    - ["15", "That is $3x$. Divide by 3 to get $x$."]
+    - ["3", "That is the number in front of $x$. Divide 15 by it."]
+  criteria:
+    - "I wrote the two bills and set them equal."
+    - "I did the same to both sides on every line."
+    - "I checked 5 gigabytes in both bills and got 30 dollars each."
+  explain: "$4x + 10 = 7x - 5$ gives $15 = 3x$, so $x = 5$ gigabytes. Both bills are 30 dollars: for more than 5 GB, plan A is cheaper."
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, and real plans also have data limits and fees. Write the two bills, set them equal, solve one step per line, check in both bills, and type the number of gigabytes.
+
+**Also used in**
+
+- **Phone plans and hire deals.** Where two deals cost the same tells you which to pick for the amount you use.
+- **Routes and trips.** Two hire companies or two routes can be compared the same way: when are they equal?
+- **Next.** Inequalities say when one deal is cheaper, not just when they match.

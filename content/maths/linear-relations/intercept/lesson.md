@@ -8,6 +8,7 @@ summary: In y = mx + c, the number on its own moves the line up or down without 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Two phone plans charge the same price per gigabyte but different monthly fees. What do their graphs look like?"
+connection: plans-cross   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8136
   url: http://127.0.0.1:8136/index.html
@@ -50,6 +51,8 @@ check:
     - "It moves 3 to the right"
   actual: "It moves up by 3 and is just as steep. Every value of y is 3 more than before (2x + 4 instead of 2x + 1), so the whole line moves up 3. m is still 2, so the steepness is the same."
 ```
+
+<figure class="situation" role="img" aria-label="Small axes with the line y = 2x + 1 drawn, crossing the y-axis at 1. The line y = 2x + 4 is a question mark: where does it go?"><svg viewBox="0 0 300 180" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M60 170 V10 M40 150 H230"/><text x="48" y="154" text-anchor="end" fill="currentColor" stroke="none">0</text><text x="48" y="122" text-anchor="end" fill="currentColor" stroke="none">1</text><text x="225" y="170" text-anchor="end" fill="currentColor" stroke="none">x</text><text x="68" y="18" fill="currentColor" stroke="none">y</text><path d="M60 122 L130 10" stroke="#185FA5" stroke-width="3"/><text x="136" y="24" fill="currentColor" stroke="none">y = 2x + 1</text><circle cx="60" cy="122" r="4" fill="currentColor"/><text x="150" y="110" fill="currentColor" stroke="none">y = 2x + 4: where does it go? ?</text></svg></figure>
 
 $$y = 2x + 1 \quad\longrightarrow\quad y = 2x + 4$$
 
@@ -216,3 +219,46 @@ check: { type: board, text: "Drag $P$ anywhere, then set $c$ so a line parallel 
 Choose where $P$ goes, then find the $c$ that takes the line through it. Check: is your line parallel to the dashed one?
 
 Stretch: write the rule of the line parallel to $y = 2x + 1$ that passes through $(5, 0)$.
+
+## Make: where two phone plans meet, on paper
+
+```step
+stage: make
+insight: "c is the amount paid once, a fee when positive and a credit when negative; where two plans cost the same is where their rules are equal."
+hint: ["Write each plan as T = (rate) × g + c. Is the credit a plus or a minus?", "Set the two rules equal, then collect the g terms on one side."]
+check:
+  type: reasoning
+  paper: true
+  q: "Plan A costs 7 dollars a month plus 3 dollars per GB. Plan B costs 5 dollars per GB with a 9 dollar credit taken off. On paper, write a rule for each plan, then find how many GB make them cost the same."
+  steps:
+    - ["Plan A: $T = 3g + 7$. Plan B: $T = 5g - 9$", "c is the amount paid once: a fee of +7, a credit of −9"]
+    - ["Same cost: $3g + 7 = 5g - 9$", "the plans cost the same where the two rules give the same T"]
+    - ["$16 = 2g$, so $g = 8$. Check: $3 \\times 8 + 7 = 31$ and $5 \\times 8 - 9 = 31$", "put 8 back into both rules"]
+  picks:
+    - step: 2
+      q: "How do you find where the two plans cost the same?"
+      options:
+        - "Make the two rules equal: 3g + 7 = 5g − 9"
+        - "Make the two fixed amounts equal: 7 = −9"
+        - "Add the two rules together"
+      answer: 0
+      feedback: [null, "7 and −9 are only where the lines start. Equal costs need the whole rules to be equal.", "Adding gives the cost of both plans together, not where they match."]
+  answer: "8"
+  tolerance: 0
+  feedback:
+    - ["31", "31 dollars is the cost where they meet. How many GB is that?"]
+    - ["16", "16 is 7 + 9. Divide by the 2 dollars a GB that separates the rates."]
+  criteria:
+    - "I wrote the credit as a minus: c = −9."
+    - "I made the two rules equal."
+    - "I checked 8 GB in both rules and got the same cost."
+  explain: "3g + 7 = 5g − 9 gives 16 = 2g, so g = 8. At 8 GB both plans cost 31 dollars."
+```
+
+Do this one in your book, not on the screen. The plans are made up for the task, and real plans have limits on data. Write both rules, make them equal, solve, and check your answer in both.
+
+**Also used in**
+
+- **Phone and internet plans.** A fee, a credit and a rate are all just c and m.
+- **Hire and subscriptions.** A joining fee is a positive c, a sign-up discount a negative c.
+- **Break-even.** A business finds where cost and income lines cross, the same way.

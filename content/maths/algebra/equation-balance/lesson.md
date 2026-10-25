@@ -20,6 +20,8 @@ check:
   options: ["$x = 4$", "$x = 5.5$", "$x = 7$", "$x = 8$"]
   actual: "x = 4. Two lots of 4 is 8, and 8 + 3 = 11, the same as the right side."
 ```
+<figure class="situation" role="img" aria-label="A balance scale. On the left are two bags, each holding an unknown number of blocks, and 3 loose blocks. On the right are 11 blocks. The scale is level."><svg viewBox="0 0 430 205" width="430" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M100 40 H330" stroke-width="1.5"/><path d="M215 40 V150 M185 150 H245" stroke-width="1.5"/><path d="M110 40 L20 120 H200 Z M320 40 L230 120 H410 Z" stroke-width="0.8"/><rect x="28" y="76" width="40" height="44" rx="10" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="48" y="104" text-anchor="middle" fill="currentColor" stroke="none">?</text><rect x="74" y="76" width="40" height="44" rx="10" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="94" y="104" text-anchor="middle" fill="currentColor" stroke="none">?</text><rect x="124" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="148" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="172" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="234" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="262" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="290" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="318" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="346" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="374" y="100" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="234" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="262" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="290" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="318" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><rect x="346" y="74" width="20" height="20" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="110" y="142" text-anchor="middle" fill="currentColor" stroke="none">2 bags and 3 blocks</text><text x="320" y="142" text-anchor="middle" fill="currentColor" stroke="none">11 blocks</text><text x="215" y="185" text-anchor="middle" fill="currentColor" stroke="none">Each bag holds the same number of blocks. How many?</text></svg></figure>
+
 
 $$2x + 3 = 11$$
 
@@ -176,3 +178,47 @@ check:
 Make an equation that a friend could solve. Check it by substitution before you press **Check answer**.
 
 Stretch: write one with $x$ on both sides.
+
+## Make: a hall hire on paper
+
+```step
+stage: make
+insight: "Checking two guesses by substitution is the whole idea of a solution: both sides must match. The paper task asks why one guess fails."
+hint: ["Work out the left side for each guess.", "A solution makes both sides equal."]
+check:
+  type: reasoning
+  paper: true
+  q: "A hall costs \\$40 to hire plus \\$6 for each person, so $6p + 40 = 100$ when the bill is \\$100. On paper, test $p = 8$ and $p = 10$ by substitution. Which one is the solution?"
+  steps:
+    - ["$p = 8$: $6 \\times 8 + 40 = 48 + 40 = 88$", "put 8 in for $p$ and work out the left side"]
+    - ["$88 \\ne 100$, so $p = 8$ is not a solution", "a solution makes both sides equal"]
+    - ["$p = 10$: $6 \\times 10 + 40 = 60 + 40 = 100$", "put 10 in for $p$"]
+    - ["$100 = 100$, so $p = 10$ is the solution", "both sides are equal"]
+  picks:
+    - step: 2
+      q: "Why is $p = 8$ not a solution?"
+      options:
+        - "The left side comes to 88, which is not the right side's 100"
+        - "8 is too small a number to be a solution"
+        - "The left side is bigger than 100"
+      answer: 0
+      feedback: [null, "Small numbers can be solutions. Work out both sides and compare them.", "The left side is 88, which is smaller than 100."]
+  answer: "10"
+  answerLabel: "Solution p"
+  feedback:
+    - ["88", "That is the left side when $p = 8$, not the solution. Which $p$ makes it 100?"]
+    - ["60", "That is $6 \\times 10$ only. Add the 40 to get the left side."]
+  criteria:
+    - "I worked out the left side for each guess, with 6p as 6 times p."
+    - "I compared the left side with 100 each time."
+    - "I said which guess is the solution and why."
+  explain: "6 × 8 + 40 = 88, not 100. 6 × 10 + 40 = 100, so p = 10."
+```
+
+Do this one in your book. The prices are made up, but any hire bill can be checked this way. Work out both guesses, then type the solution and choose the reason p = 8 fails.
+
+**Also used in**
+
+- **Budgets.** "4 tickets and a \$5 booking fee cost \$41" is an equation you can check with a guess.
+- **Recipes.** A total that has to match, such as 2 cups of flour per loaf and 3 spare, is checked the same way.
+- **Next lessons.** Backtracking and the balance method find the solution without guessing.

@@ -8,6 +8,7 @@ summary: "Find unknown angles in triangles and polygons in steps, with a reason 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A roof truss, a kite, a bridge brace: builders work out the angle they cannot measure from the ones they can. Every step needs a reason."
+connection: rafter-cut
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8172
   url: http://127.0.0.1:8172/index.html
@@ -265,3 +266,46 @@ check: { type: board, text: "Move the corners so that the exterior angle $x$ is 
 First work out what $c$ must be. Then find a triangle that has it.
 
 Stretch: design an angle puzzle for a partner with two unknown angles, and write the model reasons.
+
+## Make: a rafter cut, on paper
+
+```step
+stage: make
+insight: "A roof gives a right-angled triangle, so the cut angle at the ridge is the third angle: 180° − 90° − pitch, with a reason for each step."
+hint: ["Which angle in the triangle is the right angle?", "Angles in a triangle add to 180°."]
+check:
+  type: reasoning
+  paper: true
+  q: "A roof has a pitch of 25°. The rafter, the upright ridge post and half the span (flat) make a right-angled triangle. At what angle must the rafter be cut where it meets the ridge post? Give the angle in degrees."
+  steps:
+    - ["The post is upright and the span is flat, so they meet at $90^\\circ$", "a right-angled triangle"]
+    - ["The pitch $25^\\circ$ is the angle at the bottom of the rafter", "given"]
+    - ["Cut angle $= 180^\\circ - 90^\\circ - 25^\\circ = 65^\\circ$", "angles in a triangle add to $180^\\circ$"]
+    - ["Check: $25 + 65 + 90 = 180$", "the three angles add to $180^\\circ$"]
+  picks:
+    - step: 3
+      q: "Why take 90° and 25° away from 180°?"
+      options:
+        - "Angles in a triangle add to 180°, and the post meets the span at 90°"
+        - "The cut angle and the pitch add to 180°"
+        - "The cut angle equals the pitch, because the rafter slopes both ways"
+      answer: 0
+      feedback: [null, "The pitch and the cut are two angles of one triangle, with the right angle too. Three angles add to 180°.", "The cut and the pitch are different angles of the triangle."]
+  answer: "65"
+  tolerance: 0
+  feedback:
+    - ["155", "That is 180° − 25°. The triangle also has a right angle, so take that away too."]
+    - ["25", "That is the pitch. The cut angle is the third angle of the triangle."]
+  criteria:
+    - "I named the right angle and where it is."
+    - "I gave a reason for the subtraction: angles in a triangle."
+    - "I checked that 25 + 65 + 90 = 180."
+  explain: "The triangle has angles 90°, 25° and the cut. 180° − 90° − 25° = 65°, so the rafter is cut at 65°."
+```
+
+Do this one in your book, not on the screen. The pitch is made up for the task, and a real roof has timber thickness to allow for. Sketch the triangle, mark the angles, write a reason for each line, then type the cut angle.
+
+**Also used in**
+
+- **Trusses and braces.** Builders work out the angle they cannot measure from the ones they can.
+- **Cutting timber.** An angled cut, such as a brace or a stair stringer, comes from the angles of a right-angled triangle.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask how Mia could check her answer with the picture."
   - "Modify: for the two mirrors, ask what single move does the same."
   - "Make: ask for the rule written for both axes."
+  - "Paper: the mirror-word task is worked in books; the page marks the x-coordinate (-5) and the reason that x changes sign. Books out, then look at the page for the same distance either side of the mirror."
 stuck:
   - see: "A student changes the wrong coordinate."
     ask: "Does the point cross the mirror by going up and down, or left and right?"

@@ -8,6 +8,7 @@ summary: Words such as "more than", "less than", "twice" and "divided by" each m
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "\"Twice as many\", \"5 less than\", \"shared between 4\": every maths sentence about a number can be written with a letter."
+connection: venue-pricing   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8145
   url: http://127.0.0.1:8145/index.html
@@ -231,3 +232,49 @@ check:
 Say your expression in words, the way you did in this lesson.
 
 Stretch: write a story that your expression could describe.
+
+## Make: a venue price list, on paper
+
+```step
+stage: make
+insight: "A price list is words first: 'for each' multiplies and 'plus' adds once. Writing the expression from the words, then using it for a guest list, is the move the lesson has practised."
+hint: ["Which amount is paid for each guest?", "The hire fee is paid once, so it is added, not multiplied."]
+check:
+  type: reasoning
+  paper: true
+  q: "A party venue's price list says: hire fee 80 dollars, plus 6 dollars for each guest (made up for the task). Let $g$ be the number of guests. Write the cost as an expression, then find the cost for 15 guests."
+  steps:
+    - ["Let $g$ be the number of guests", "the number that changes"]
+    - ["6 dollars for each guest: $6g$", "\"for each\" means multiply"]
+    - ["Plus the hire fee, paid once: $6g + 80$", "\"plus\" means add, and the fee is not multiplied"]
+    - ["Test: 10 guests would cost $6 \\times 10 + 80 = 140$ dollars", "a case I can work out in words"]
+    - ["15 guests: $6 \\times 15 + 80 = 90 + 80 = 170$ dollars", "put $g = 15$ into the expression"]
+  picks:
+    - step: 3
+      q: "How does the 80 dollar hire fee go into the expression?"
+      options:
+        - "Added on once: $6g + 80$"
+        - "Multiplied by the guests too: $86g$"
+        - "Taken away: $80 - 6g$"
+      answer: 0
+      feedback: [null, "The fee is the same for 1 guest or 100. Only the 6 is multiplied by $g$.", "The hire fee is a cost on top, so add it."]
+  answer: "170"
+  tolerance: 0
+  answerLabel: "Cost (dollars)"
+  feedback:
+    - ["1290", "That is $86 \\times 15$. The 80 is paid once; only the 6 is multiplied by 15."]
+    - ["90", "That is the guests' share only. Add the hire fee."]
+  criteria:
+    - "I said what $g$ stands for."
+    - "My expression has 6 multiplied by $g$ and the 80 added on once."
+    - "I tested it with a case I could work out in words."
+  explain: "Cost $= 6g + 80$. For 15 guests: $6 \\times 15 + 80 = 170$ dollars."
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, and a real venue may add a minimum number of guests or a deposit. Say what the letter stands for, write the expression from the words, test it, then use it for 15 guests and type the cost.
+
+**Also used in**
+
+- **Price lists.** A taxi's flag fall plus an amount per kilometre, or a hire fee plus an amount per guest: each is words first, then an expression.
+- **Group bookings.** Next lesson: three friends each paying a ticket plus a fee is $3(t + 5)$, and the brackets matter.
+- **Comparing plans.** Once two price lists are rules, Year 8 linear relations compare them.

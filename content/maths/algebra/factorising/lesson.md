@@ -7,6 +7,7 @@ summary: "Factorising is expanding backwards. Share the terms into equal rows: 6
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "6 x-tiles and 9 ones. Can you share them into equal rows, with nothing left over?"
+connection: equal-rows   # data/connections/maths.yml (Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8167
   url: http://127.0.0.1:8167/index.html
@@ -238,3 +239,47 @@ check: { type: board, text: "Set $s$ and $t$ so that $sx + t$ is fully factorise
 Find an expression $sx + t$ that factorises fully as $4(\ldots)$. Then find another.
 
 Stretch: why can't $s$ and $t$ both be multiples of 8?
+
+## Make: equal rows on paper
+
+```step
+stage: make
+insight: "Choosing the highest common factor decides how many equal rows there are; the paper task asks why the answer is 6 and not a smaller factor."
+hint: ["Find a number that goes into both 12 and 18.", "Then check that the rows cannot share more."]
+check:
+  type: reasoning
+  paper: true
+  q: "You have 12 long tiles ($x$) and 18 small tiles (1). On paper, lay them in the greatest number of equal rows with none left over. Write the expression as a number of rows times one row, and check by expanding."
+  steps:
+    - ["$12x + 18$", "12 long tiles and 18 small ones"]
+    - ["The highest common factor of 12 and 18 is 6", "the most equal rows is the highest common factor"]
+    - ["$12x + 18 = 6(2x + 3)$", "divide both terms by 6"]
+    - ["Check: $6 \\times 2x + 6 \\times 3 = 12x + 18$", "expanding gets back to the start"]
+  picks:
+    - step: 2
+      q: "Why 6 rows?"
+      options:
+        - "6 is the highest common factor, so no more rows share equally"
+        - "3 is the first common factor you find, so use that"
+        - "30 is the sum of 12 and 18"
+      answer: 0
+      feedback: [null, "3 rows work, but the bracket 4x + 6 still shares a 2. Take out the highest.", "Rows must divide both numbers evenly; adding them is not that."]
+  answer: "6"
+  answerLabel: "Rows"
+  feedback:
+    - ["3", "3 rows work, but the rows still share a factor of 2. Take out the highest common factor."]
+    - ["2", "2 rows work, but 12 and 18 share a bigger factor. Look for the highest."]
+  criteria:
+    - "I used the highest common factor, not just any common factor."
+    - "Each row is the same: 2x + 3."
+    - "I checked by expanding."
+  explain: "The HCF of 12 and 18 is 6, so 12x + 18 = 6(2x + 3): 6 rows of 2 long tiles and 3 small ones."
+```
+
+Do this one in your book. The tile numbers are made up, but laying out tiles or chairs in equal rows is a real job. Write the factorised form and check it by expanding, then type the number of rows and choose the reason.
+
+**Also used in**
+
+- **Tiling and seating.** Laying tiles or chairs in equal rows with none left over is finding the highest common factor.
+- **Mental maths.** $7 \times 13 + 7 \times 7 = 7(13 + 7) = 140$.
+- **Next lessons.** Rearranging formulas, and factorising quadratics in Years 9 and 10.

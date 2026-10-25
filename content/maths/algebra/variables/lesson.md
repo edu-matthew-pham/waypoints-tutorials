@@ -7,6 +7,7 @@ summary: In a formula, letters stand for quantities that can change (variables) 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Recipes, phone bills and the perimeter of a garden bed all follow a formula. Some parts of a formula change from case to case and some never do. Which are which?"
+connection: ladder-points   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8142
   url: http://127.0.0.1:8142/index.html
@@ -45,6 +46,8 @@ check:
     - "The 2s change as well"
   actual: "l, w and P change, because different rectangles have different lengths, widths and perimeters. The 2s stay the same for every rectangle: there are always two lengths and two widths."
 ```
+
+<figure class="situation" role="img" aria-label="Two different rectangles. Rectangle A is long and thin, rectangle B is a square. Each has its length l along the top, its width w down the side, and a perimeter P marked with a question mark."><svg viewBox="0 0 420 140" width="420" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="20" y="40" width="200" height="40" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="120" y="32" text-anchor="middle" fill="currentColor" stroke="none">l</text><text x="232" y="64" text-anchor="start" fill="currentColor" stroke="none">w</text><text x="120" y="108" text-anchor="middle" fill="currentColor" stroke="none">P = ?</text><text x="120" y="128" text-anchor="middle" fill="currentColor" stroke="none">rectangle A</text><rect x="280" y="30" width="70" height="70" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="315" y="22" text-anchor="middle" fill="currentColor" stroke="none">l</text><text x="362" y="70" text-anchor="start" fill="currentColor" stroke="none">w</text><text x="315" y="118" text-anchor="middle" fill="currentColor" stroke="none">P = ?</text><text x="315" y="138" text-anchor="middle" fill="currentColor" stroke="none">rectangle B</text></svg></figure>
 
 $$P = 2l + 2w$$
 
@@ -207,3 +210,48 @@ check:
 Name the variables and the constant in your formula.
 
 Stretch: write a formula for the perimeter of a triangle with sides $a$, $b$ and $c$.
+
+## Make: a ladder, on paper
+
+```step
+stage: make
+insight: "On a competition ladder, wins, draws and points change from team to team, while the points for a win and a draw stay the same: the same split as in the rectangle formula, in a table students read every week."
+hint: ["Which parts of P = 3W + D are different for every team?", "Put W = 6 and D = 4 in, with the × sign."]
+check:
+  type: reasoning
+  paper: true
+  q: "A competition ladder gives points by $P = 3W + D$, where $W$ is a team's wins and $D$ its draws. The Emus have won 6 games and drawn 4 (made up for the task). How many points do they have?"
+  steps:
+    - ["$P$ is points, $W$ is wins, $D$ is draws", "each letter stands for a quantity"]
+    - ["$W$, $D$ and $P$ change from team to team. The 3 (and the 1 hiding beside $D$) stay the same", "variables change, constants do not"]
+    - ["$P = 3 \\times 6 + 4 = 18 + 4 = 22$", "$3W$ means $3 \\times W$: wins are worth 3 points each"]
+    - ["Check: 6 wins at 3 points is 18, and 4 draws at 1 point is 4", "$18 + 4 = 22$"]
+  picks:
+    - step: 2
+      q: "Which part of $P = 3W + D$ is the same for every team?"
+      options:
+        - "The 3, the points for a win"
+        - "$W$, the number of wins"
+        - "$P$, the points"
+      answer: 0
+      feedback: [null, "Every team has its own number of wins. That one changes.", "Every team has its own points. That one changes."]
+  answer: "22"
+  tolerance: 0
+  answerLabel: "Points"
+  feedback:
+    - ["364", "$3W$ means $3 \\times W$, not 3 and 6 side by side."]
+    - ["10", "That adds $W$ and $D$. A win is worth 3 points, not 1."]
+  criteria:
+    - "I named the variables and the constants."
+    - "I wrote 3 × 6 with the × sign."
+    - "I checked my answer with the points for wins and draws."
+  explain: "Variables: $P$, $W$ and $D$. Constants: the 3 and the 1. $P = 3 \\times 6 + 4 = 22$ points."
+```
+
+Do this one in your book, not on the screen. The Emus' results are made up for the task, but the 3-and-1 rule is how many ladders work. Sort the letters into those that change and those that stay, then work out the points and type your answer.
+
+**Also used in**
+
+- **Ladders and scoreboards.** Wins and draws change from team to team, and the points for each stay the same.
+- **Spreadsheets and price lists.** Every total is a rule with slots: write it once, and it works for any case.
+- **Next lessons.** Putting numbers in, then the same letters in every formula in science and later maths.

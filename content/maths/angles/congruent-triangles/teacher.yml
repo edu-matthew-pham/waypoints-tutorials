@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Tom which sides meet at the 40° angle."
   - "Modify: ask why the angles must add to less than 180°."
   - "Make: ask when SSA gives one triangle, and why that is not enough."
+  - "Make on paper: ask where the 40 degrees sits, and which test that makes."
 stuck:
   - see: "A student calls SSA 'SAS'."
     ask: "Is the angle between the two sides?"

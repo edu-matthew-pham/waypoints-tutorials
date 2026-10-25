@@ -5,6 +5,7 @@ goals:
   - I can find an unknown angle in two or more steps, using parallel-line, straight-line and vertically opposite angles.
   - I can give a reason for each step, naming the rule.
   - I can use angles to show whether two lines are parallel.
+struggle: "Choosing which angle to find first. Ask: which angle can you get from the one you know in one step, and what is the reason?"
 before: |
   Do the first reasoning task yourself first, then compare with its model. Students need both parallel-lines lessons and Year 6 angle facts (straight line, vertically opposite, at a point).
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model know, choose, say why on the board, writing the reason in short form. Accept any correct route."
   - "Modify: collect two different routes to f and ask which is shorter."
   - "Make: ask students to say their two steps before they turn the line."
+  - "Make on paper: ask for the reason at each line before anyone types an answer."
 stuck:
   - see: "A student links two angles that only look related (Kai's mistake)."
     ask: "Which rule links them? Name it."

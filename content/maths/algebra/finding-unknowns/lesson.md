@@ -7,6 +7,7 @@ summary: When a formula's answer is known but one letter is not, substitute what
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "You know how much fence you have and how long the garden bed must be. How wide can it be?"
+connection: hire-hours   # data/connections/maths.yml (Make on paper and Also used in; documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8144
   url: http://127.0.0.1:8144/index.html
@@ -46,6 +47,8 @@ check:
 ```
 
 $$P = 2l + 2w$$
+<figure class="situation" role="img" aria-label="A rectangle with a perimeter of 20 centimetres. Its length is 6 centimetres and its width is a question mark. Not drawn to scale."><svg viewBox="0 0 320 190" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="60" y="45" width="180" height="90" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="150" y="36" text-anchor="middle" fill="currentColor" stroke="none">length l = 6 cm</text><text x="252" y="95" fill="currentColor" stroke="none">w = ?</text><text x="150" y="95" text-anchor="middle" fill="currentColor" stroke="none">perimeter P = 20 cm</text><text x="150" y="165" text-anchor="middle" fill="currentColor" stroke="none" font-size="12">(not drawn to scale)</text></svg></figure>
+
 
 Which letters do you know? Which one is unknown?
 
@@ -210,3 +213,47 @@ check: { type: board, text: "You have 24 m of edging for a garden bed. Make the 
 The bed must use exactly 24 m of edging, and be twice as long as it is wide.
 
 Stretch: with the same 24 m, which rectangle gives the biggest area?
+
+## Make: kayak hire on paper
+
+```step
+stage: make
+insight: "A hire price is a formula with a known total and an unknown number of hours; the paper task asks which letter the known number replaces."
+hint: ["The money you have is the total cost.", "Undo the fee first, then divide."]
+check:
+  type: reasoning
+  paper: true
+  q: "Kayak hire costs $T = 5n + 8$ dollars for $n$ hours. You have \\$43. On paper, put the known value into the formula, solve for $n$ and check."
+  steps:
+    - ["$43 = 5n + 8$", "T is the total cost, so 43 goes in for T"]
+    - ["$43 - 8 = 35$, so $5n = 35$", "undo the + 8 first"]
+    - ["$n = 35 \\div 5 = 7$", "then undo the × 5"]
+    - ["Check: $5 \\times 7 + 8 = 35 + 8 = 43$", "put 7 back into the formula"]
+  picks:
+    - step: 1
+      q: "Why does 43 go in for $T$?"
+      options:
+        - "$T$ is the total cost, and \\$43 is the money available"
+        - "43 is the number we do not know, so it goes in for $n$"
+        - "43 and 8 are both money, so they are added"
+      answer: 0
+      feedback: [null, "$n$ is the unknown. The 43 is the known total, so it replaces $T$.", "Substitute 43 for $T$ and keep the 8 in the formula."]
+  answer: "7"
+  answerLabel: "Hours"
+  feedback:
+    - ["0.6", "That divides 43 by 5 first. Undo the + 8 first."]
+    - ["35", "That is $5n$. Divide by 5 to find the hours."]
+  criteria:
+    - "I put 43 in for T and left n as the unknown."
+    - "I undid the + 8 before the × 5."
+    - "I checked 7 hours in the formula."
+  explain: "43 = 5n + 8, so 5n = 35 and n = 7 hours. Check: 5 × 7 + 8 = 43."
+```
+
+Do this one in your book. The prices are made up, but hire shops charge a fee plus a rate like this. Write each step, check by substituting 7, then type the hours and choose the reason for the first line.
+
+**Also used in**
+
+- **Hire prices.** Bike hire is a fixed fee plus a rate per hour: with \$30, how many hours can you afford?
+- **Speed and distance.** $d = st$ with $d$ and $s$ known gives an equation for $t$.
+- **Next lessons.** The Equations unit, and finding $x$ for a given $y$ on a graph in Linear relations.

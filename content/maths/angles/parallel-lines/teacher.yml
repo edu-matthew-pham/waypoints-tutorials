@@ -5,6 +5,7 @@ goals:
   - I can find corresponding, alternate and co-interior angles where a line crosses two parallel lines.
   - I can tell these pairs apart from vertically opposite angles.
   - I can explain that the names say where the angles are, and parallel lines make the pairs equal or add to 180°.
+struggle: "Seeing which angles match. Ask students to shade the angles they think equal the marked one, then turn the line and see which stay equal."
 before: |
   Do the Run board and the Investigate board yourself first. Students need angles on a straight line and vertically opposite angles (Year 6).
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: draw the eight angles on the board and colour each pair as you name it. Ask: does each pair use both crossings?"
   - "Modify: before the tilt task, ask what changes if the lines are not parallel. Let the board show it."
   - "Make: collect the pairs students found and ask why only the pairs between the lines always work."
+  - "Make on paper: ask what the corresponding angles would be if the lines were parallel."
 stuck:
   - see: "A student names b and c as alternate (Mia's mistake)."
     ask: "Which crossing is each angle at?"

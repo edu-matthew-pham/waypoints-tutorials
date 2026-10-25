@@ -7,6 +7,7 @@ summary: Split a polygon into triangles from one corner. A shape with n sides ma
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Stop signs are octagons, honeycomb cells are hexagons, a soccer ball is pentagons and hexagons. The triangle rule tells you the angles of all of them."
+connection: tiling-shapes
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8163
   url: http://127.0.0.1:8163/index.html
@@ -50,6 +51,8 @@ check:
     - "It depends on the shape"
   actual: "360°. Any quadrilateral splits into 2 triangles from one corner, and 2 × 180° = 360°."
 ```
+
+<figure class="situation" role="img" aria-label="A lopsided quadrilateral with its four angles marked. In the middle: the four angles add to a question mark."><svg viewBox="0 0 320 175" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M40 150 L270 150 L240 40 L90 70 Z"/><path d="M62 150 A22 22 0 0 0 52 132 M248 150 A22 22 0 0 1 266 138 M232 62 A22 22 0 0 0 244 80 M100 88 A22 22 0 0 0 78 70" stroke-width="1.2"/><text x="160" y="112" text-anchor="middle" fill="currentColor" stroke="none">sum of the 4 angles = ?</text></svg></figure>
 
 Think about a square or a rectangle first. Does a lopsided quadrilateral have the same total?
 
@@ -210,3 +213,46 @@ check: { type: board, text: "Make a polygon whose angles add to $1260°$.", when
 Work it out first, then use **More sides** to check.
 
 Stretch: why can no polygon have angles that add to $1000°$?
+
+## Make: tiles that fit, on paper
+
+```step
+stage: make
+insight: "A tiling needs the angles meeting at a point to add to 360°, so the gap left by three regular pentagons shows why they do not tile."
+hint: ["Find the angle sum of a pentagon first.", "Angles around a point add to 360°."]
+check:
+  type: reasoning
+  paper: true
+  q: "Can regular pentagon tiles meet three at a point with no gap? On paper, work out how many degrees are left over at the point when three regular pentagons meet."
+  steps:
+    - ["The angles of a pentagon add to (5 − 2) × 180 = 540°", "a pentagon splits into 3 triangles"]
+    - ["Regular means equal angles, so each is 540 ÷ 5 = 108°", "all five angles match"]
+    - ["Three pentagons use 3 × 108 = 324°, and a full turn is 360°, so 360 − 324 = 36° is left", "angles around a point add to 360°"]
+    - ["A 36° gap is too small for another pentagon (108°), so they do not tile", "the gap must be filled exactly"]
+  picks:
+    - step: 3
+      q: "Why compare the angles with 360°?"
+      options:
+        - "Tiles meeting at a point must fill the full turn around it"
+        - "A pentagon's angles add to 360°"
+        - "360° is the angle sum of any polygon"
+      answer: 0
+      feedback: [null, "Its angles add to 540°.", "The sum depends on the number of sides."]
+  answer: "36"
+  tolerance: 0
+  feedback:
+    - ["72", "That is the outside angle, 180° − 108°. Add three inside angles and take the total from 360°."]
+    - ["324", "That is what the three pentagons cover. The gap is what is left of 360°."]
+  criteria:
+    - "I found the angle sum and then one angle of the regular pentagon."
+    - "I compared three of them with 360°."
+    - "I said why a gap means no tiling."
+  explain: "Each angle is 540 ÷ 5 = 108°. Three use 324°, leaving 360 − 324 = 36°, too small to fit another pentagon. Regular pentagons leave gaps."
+```
+
+Do this one in your book, not on the screen. Real tiles also have grout gaps, but the angles decide which shapes can fit. Work down the steps, then type the gap.
+
+**Also used in**
+
+- **Floors and walls.** Squares and regular hexagons tile because their angles add to 360° at a point. Pentagons leave gaps.
+- **Honeycomb.** Bees use hexagons, which fill the space with no gaps.

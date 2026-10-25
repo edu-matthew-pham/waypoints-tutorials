@@ -1,6 +1,7 @@
 summary: Students solve one-variable inequalities like equations, reversing the inequality sign when multiplying or dividing by a negative, show solutions on a number line with open or closed circles, and check graphically and by substitution (AC9M8A02, node 3).
 time: 45
 timing: "Predict and Run 8 min · Investigate 12 min · Modify 13 min · Practise and Make 12 min"
+struggle: "Reversing the sign when dividing by a negative, and deciding whether the end number is in or out. Ask students to test one value from their answer in the first inequality, before they show it on the line."
 goals:
   - I can solve an inequality, reversing the inequality sign when I multiply or divide by a negative.
   - I can show a solution on a number line with the right circle (open or closed) and direction.
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example, then the number-line argument for reversing (2 < 5, −2 > −5)."
   - "Modify: before 5 − x > 2, ask how to get x on its own when it has a minus sign."
   - "Make: collect students' inequalities and check one value from each."
+  - "Paper: the trailer task is worked in books; the page marks the number of boxes (16) and the reason for rounding down. Books out, and look for 16 and 17 both checked against 750."
 stuck:
   - see: "A student keeps the sign after dividing by a negative (Mia's mistake)."
     ask: "Pick a value from your answer and check it in the first inequality."

@@ -7,6 +7,7 @@ summary: "A translation slides every point of a shape the same distance in the s
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A chess piece slides across the board, a lift goes up, a character steps left on a screen. Each is a translation: every point moves the same way."
+connection: sprite-move
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8297
   url: http://127.0.0.1:8297/index.html
@@ -45,6 +46,8 @@ check:
   options: ["(4, −1)", "(4, 3)", "(−2, −1)", "(3, 2)"]
   actual: "(4, −1). Right adds 3 to x: 1 + 3 = 4. Down takes 2 from y: 1 − 2 = −1."
 ```
+
+<figure class="situation" role="img" aria-label="Axes with a small triangle whose corner A is at 1 across and 1 up. A dashed arrow shows the triangle moving 3 right and 2 down. The new position of A, A prime, is marked with a question mark."><svg viewBox="0 0 340 210" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="20" y1="130" x2="330" y2="130"/><line x1="80" y1="10" x2="80" y2="195"/><text x="325" y="122" text-anchor="end" fill="currentColor" stroke="none">x</text><text x="90" y="22" text-anchor="start" fill="currentColor" stroke="none">y</text><defs><marker id="tr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="currentColor" stroke="none"/></marker></defs><polygon points="110,100 170,100 110,70" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="104" y="114" text-anchor="end" fill="currentColor" stroke="none">A (1, 1)</text><line x1="110" y1="100" x2="196" y2="158" stroke-dasharray="4 3" marker-end="url(#tr)"/><text x="206" y="166" text-anchor="start" fill="currentColor" stroke="none">A′ = ?</text><text x="160" y="150" text-anchor="end" fill="currentColor" stroke="none">3 right, 2 down</text></svg></figure>
 
 Add to x for right, take from y for down.
 
@@ -202,3 +205,46 @@ check: { type: board, text: "Slide the triangle so that corner C′ lands exactl
 ```
 
 Then write the translation in words, and as a rule for $(x, y)$.
+
+## Make: a game move, on paper
+
+```step
+stage: make
+insight: "A game moves a character by adding to x and y: right adds to x, down takes away from y, and each press repeats the same move."
+hint: ["Do the right presses first, then the down press.", "Down takes away from y."]
+check:
+  type: reasoning
+  paper: true
+  q: "In a game, each press of the right arrow moves a character 5 to the right, and each press of the down arrow moves it 3 down (y goes up the screen, as on a maths grid). One corner of the character starts at (2, 6). The player presses right twice, then down once. What is the y-coordinate of the corner now?"
+  steps:
+    - ["Right 5 adds 5 to $x$; down 3 takes 3 from $y$", "each press is one translation"]
+    - ["Right twice: $x = 2 + 5 + 5 = 12$", "$y$ does not change for right"]
+    - ["Down once: $y = 6 - 3 = 3$", "down takes away from $y$"]
+    - ["The corner is now at $(12, 3)$", "$x$ and $y$ are changed separately"]
+  picks:
+    - step: 3
+      q: "What does 'down 3' do to y?"
+      options:
+        - "Takes 3 away: 6 − 3 = 3"
+        - "Adds 3: 6 + 3 = 9"
+        - "Takes 3 away from x instead"
+      answer: 0
+      feedback: [null, "Down makes y smaller. Adding 3 would move the corner up.", "Down changes y, not x."]
+  answer: "3"
+  tolerance: 0
+  feedback:
+    - ["9", "That adds 3 to y. Down takes away."]
+    - ["12", "That is the x-coordinate. The question asks for y."]
+  criteria:
+    - "I changed x for right and y for down, separately."
+    - "I took 3 away from y for down."
+    - "I wrote the new corner as (12, 3)."
+  explain: "Right twice gives x = 2 + 10 = 12. Down once gives y = 6 − 3 = 3. The corner is at (12, 3), so y = 3."
+```
+
+Do this one in your book, not on the screen. The moves and the corner are made up for the task; a real game moves the character a little each frame. Write the new x and y after each press, then type the y-coordinate.
+
+**Also used in**
+
+- **Games.** Moving a character is adding to x and y; a block-coding game does exactly this with its move blocks.
+- **Lifts and sliding doors.** Every point of a lift or a door moves the same way, which is what makes the move a translation.

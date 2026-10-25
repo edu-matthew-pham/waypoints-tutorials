@@ -9,6 +9,7 @@ summary: "Use the properties of parallelograms, rhombuses, rectangles, kites and
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A gate is braced with a diagonal so it stays a rectangle. A carpenter checks it by measuring both diagonals. Why does that work, and what does it tell her?"
+connection: parallelogram-linkage
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8325
   url: http://127.0.0.1:8325/index.html
@@ -44,6 +45,8 @@ check:
   options: ["110°, 70°, 110°", "70°, 70°, 70°", "110°, 110°, 70°", "You cannot tell"]
   actual: "110°, 70° and 110°. The opposite angle is equal (70°), and each neighbour is 180° − 70° = 110°."
 ```
+
+<figure class="situation" role="img" aria-label="A parallelogram ABCD. The angle at A is marked 70 degrees. The angles at B, C and D are each marked with a question mark."><svg viewBox="0 0 320 200" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><polygon points="50,160 230,160 270,50 90,50" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="80" y="150" text-anchor="start" fill="currentColor" stroke="none">70°</text><text x="210" y="150" text-anchor="end" fill="currentColor" stroke="none">?</text><text x="252" y="72" text-anchor="end" fill="currentColor" stroke="none">?</text><text x="112" y="72" text-anchor="start" fill="currentColor" stroke="none">?</text><text x="38" y="178" text-anchor="middle" fill="currentColor" stroke="none">A</text><text x="242" y="178" text-anchor="middle" fill="currentColor" stroke="none">B</text><text x="282" y="46" text-anchor="middle" fill="currentColor" stroke="none">C</text><text x="78" y="46" text-anchor="middle" fill="currentColor" stroke="none">D</text></svg></figure>
 
 Picture the parallelogram, with its 70° angle in one corner.
 
@@ -216,3 +219,47 @@ check: { type: board, text: "Make a kite (not a square) with a right angle at A,
 ```
 
 Then read angle C on the board and work out angles B and D, with a reason for each. The board rounds each angle to a whole degree, so its B and D can differ by 1°: your answer can be a half.
+
+## Make: a linkage tray, on paper
+
+```step
+stage: make
+insight: "A swinging toolbox tray is a parallelogram: neighbouring angles are co-interior, so they add to 180°, and the four angles add to 360° as a check."
+hint: ["Is angle B next to A or opposite it?", "Neighbouring angles of a parallelogram add to 180°."]
+check:
+  type: reasoning
+  paper: true
+  q: "A toolbox tray swings on two equal arms, so its hinge points A, B, C and D make a parallelogram. With the tray open, angle A is 64°. Find angle B, and check the four angles add to 360°."
+  steps:
+    - ["$A$ and $B$ are neighbours, between the parallel sides $AD$ and $BC$", "they are co-interior angles"]
+    - ["$A + B = 180^\\circ$", "co-interior angles between parallel sides add to $180^\\circ$"]
+    - ["$B = 180^\\circ - 64^\\circ = 116^\\circ$", "take $A$ away from $180^\\circ$"]
+    - ["$C = 64^\\circ$ and $D = 116^\\circ$, and $64 + 116 + 64 + 116 = 360$", "opposite angles are equal; check with the angle sum of $360^\\circ$"]
+  picks:
+    - step: 2
+      q: "Why can you find B from A like this?"
+      options:
+        - "A and B are neighbours between parallel sides, so they add to 180°"
+        - "A and B are opposite, so they are equal"
+        - "A and B must add to 360°, like all four angles"
+      answer: 0
+      feedback: [null, "Opposite angles are equal, but B is next to A, not opposite it.", "360° is for all four angles together. Two neighbours add to 180°."]
+  answer: "116"
+  tolerance: 0
+  feedback:
+    - ["64", "That is angle A. B is next to it, so B and A add to 180°."]
+    - ["296", "That is 360° − 64°, all three other angles together. Take A from 180° for its neighbour."]
+  criteria:
+    - "I wrote that A and B are co-interior, so they add to 180°."
+    - "I found C and D as well."
+    - "I checked that all four angles add to 360°."
+  explain: "A and B are neighbours between parallel sides, so B = 180° − 64° = 116°. Then C = 64° and D = 116°, and the four add to 360°."
+```
+
+Do this one in your book, not on the screen. The angle is made up for the task; real trays have arms that stop at a set angle. Write the reason for each line, check with 360°, and type angle B.
+
+**Also used in**
+
+- **Desk lamps and barriers.** Lamp arms and car-park barriers use the same parallelogram linkage, so the lamp head or the barrier arm keeps its direction as it moves.
+- **Garden beds.** Setting out a parallelogram-shaped bed means knowing which sides and angles must match.
+- **Frames.** A carpenter measures a frame's two diagonals: equal ones show a parallelogram frame is a rectangle.

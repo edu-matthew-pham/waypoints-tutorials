@@ -8,6 +8,7 @@ summary: "Quadrilaterals are named by their properties: parallel sides, equal si
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Is a square a rectangle? People argue about it. Maths settles it by asking what each name promises."
+connection: parallelogram-linkage
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8282
   url: http://127.0.0.1:8282/index.html
@@ -41,6 +42,8 @@ check:
   options: ["Yes", "No: a rectangle has two long sides and two short sides", "Only a big square"]
   actual: "Yes. A rectangle is a quadrilateral with four right angles, and a square has four right angles. It is a special rectangle, with its sides equal too."
 ```
+
+<figure class="situation" role="img" aria-label="A square with four right angles and four equal sides. Beside it the label asks: is it also a rectangle? with a question mark."><svg viewBox="0 0 340 190" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="50" y="40" width="110" height="110" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><path d="M50 126 H74 V150 M136 150 V126 H160 M160 64 H136 V40 M74 40 V64 H50" stroke-width="1.2"/><text x="105" y="100" text-anchor="middle" fill="currentColor" stroke="none">square</text><text x="190" y="100" text-anchor="start" fill="currentColor" stroke="none">is it a</text><text x="190" y="120" text-anchor="start" fill="currentColor" stroke="none">rectangle? ?</text></svg></figure>
 
 What does a shape need to be a rectangle?
 
@@ -209,3 +212,48 @@ check: { type: board, text: "Make a trapezium that is not a parallelogram, with 
 ```
 
 Then: how many right angles can such a trapezium have, and why not three?
+
+## Make: names and a linkage, on paper
+
+```step
+stage: make
+insight: "A tray frame that is a rectangle when closed and a leaning parallelogram when open shows what each name promises, and why the tray stays level."
+hint: ["Which promises still hold when the frame leans: equal sides, parallel sides, right angles?", "What do parallel sides do to the tray?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A toolbox tray hangs from two arms of equal length that stay parallel. Closed, the four hinge points make a rectangle. As the tray swings open, the frame leans over. On paper, say which names still fit the leaning frame, and why the tray stays level."
+  steps:
+    - ["Closed: four right angles, so a rectangle (and a parallelogram)", "a rectangle is a special parallelogram"]
+    - ["Leaning: both pairs of opposite sides are still parallel and equal, but the right angles are gone, so it is a parallelogram, not a rectangle", "a name stays only while all its properties hold"]
+    - ["The tray bar is opposite the base bar, so it stays parallel to it: the tray stays level", "opposite sides of a parallelogram are parallel"]
+  picks:
+    - step: 2
+      q: "Which name still fits the leaning frame?"
+      options:
+        - "Parallelogram: opposite sides are still parallel and equal"
+        - "Rectangle: it is the same frame, so it keeps its name"
+        - "Neither: it is no longer a quadrilateral"
+      answer: 0
+      feedback: [null, "The right angles are gone, so it is no longer a rectangle.", "It still has four straight sides, so it is still a quadrilateral."]
+    - step: 3
+      q: "Why does the tray stay level?"
+      options:
+        - "Opposite sides of a parallelogram are parallel, so the tray bar stays parallel to the base"
+        - "The hinges are tight, so the tray cannot tip"
+        - "The arms are long, so the tray hardly moves"
+      answer: 0
+      feedback: [null, "Friction might slow the tray, but it is not the reason it stays level.", "Even short arms keep it level. The shape is the reason."]
+  criteria:
+    - "I named the shape closed and open, using its properties."
+    - "I said which property is lost when the frame leans."
+    - "I linked parallel opposite sides to the tray staying level."
+  explain: "Closed it is a rectangle, and also a parallelogram. Leaning, it keeps its parallel, equal opposite sides but loses its right angles, so it is a parallelogram only. Its opposite sides stay parallel, so the tray stays level."
+```
+
+Do this one in your book, not on the screen. The frame is made up for the task, but real toolbox trays swing like this. Write the names for the closed and the open frame, give the property for each, then choose the reasons that matter most.
+
+**Also used in**
+
+- **Desk lamps and barriers.** Parallelogram arms keep a lamp head or a barrier arm pointing the same way as it moves.
+- **Frames.** Calling a frame a rectangle promises right angles and equal diagonals, so a builder can check it by measuring.

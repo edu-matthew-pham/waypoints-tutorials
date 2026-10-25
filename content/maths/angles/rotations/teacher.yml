@@ -22,6 +22,7 @@ running:
   - "Investigate: ask how Lee could test his answer."
   - "Modify: for the centre (1, 0), ask where A is measured from."
   - "Make: ask for the description with the direction."
+  - "Paper: the four-tile task is worked in books; the page marks the x-coordinate (-3) and the rule for one quarter turn. Books out, then look at the page for the second turn starting from the new point."
 stuck:
   - see: "A student swaps the coordinates without a sign."
     ask: "Which quadrant should the image be in?"

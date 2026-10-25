@@ -7,6 +7,7 @@ summary: "A pile of cubes can be drawn in 3D or as top, front and side views. A 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "An architect shows a building from above, from the front and from the side. Why not just one drawing?"
+connection: floor-plan
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8296
   url: http://127.0.0.1:8296/index.html
@@ -40,6 +41,8 @@ check:
   options: ["No: cubes behind the front ones do not show", "Yes: count the squares", "Only if you also know the side view"]
   actual: "No. A front view shows the tallest pile in each column; cubes behind it, or lower down, are hidden."
 ```
+
+<figure class="situation" role="img" aria-label="A front view of a pile of cubes: three columns, one cube tall, three cubes tall and two cubes tall. A question mark asks how many cubes are in the whole pile."><svg viewBox="0 0 340 200" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="110" y="130" width="30" height="30" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><rect x="140" y="70" width="30" height="30" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><rect x="140" y="100" width="30" height="30" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><rect x="140" y="130" width="30" height="30" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><rect x="170" y="100" width="30" height="30" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><rect x="170" y="130" width="30" height="30" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="155" y="182" text-anchor="middle" fill="currentColor" stroke="none">Front view</text><text x="225" y="110" text-anchor="start" fill="currentColor" stroke="none">How many cubes</text><text x="225" y="130" text-anchor="start" fill="currentColor" stroke="none">in all? ?</text></svg></figure>
 
 Picture a tall tower with a short pile directly behind it.
 
@@ -192,3 +195,48 @@ check: { type: board, text: "Build a solid whose top, front and side views each 
 ```
 
 Write one advantage and one disadvantage of nets and of 3D drawings.
+
+## Make: a bedroom plan, on paper
+
+```step
+stage: make
+insight: "A floor plan is the view from above: it shows lengths and widths to scale and hides heights, so another view is needed for them."
+hint: ["What is a floor plan the view from?", "What can't you see when you look straight down?"]
+check:
+  type: reasoning
+  paper: true
+  q: "Sam checks a bedroom's floor plan, drawn from above to scale, to see whether a bed and a desk fit and the door can open. They do. Then she buys a tall bookcase, and it hits the sloping ceiling. On paper, say what the plan shows, what it hides, and which view would have shown the problem."
+  steps:
+    - ["A plan is the top view: it shows lengths and widths of the floor", "so Sam could place the bed, desk and door swing to scale"]
+    - ["It cannot show how tall things are", "heights are hidden when you look straight down"]
+    - ["The ceiling slope shows in a front or side view", "those views show heights"]
+  picks:
+    - step: 1
+      q: "What does a view from above not show?"
+      options:
+        - "How tall things are"
+        - "How long things are"
+        - "How wide things are"
+      answer: 0
+      feedback: [null, "The plan shows lengths. It is heights that are hidden.", "The plan shows widths. It is heights that are hidden."]
+    - step: 3
+      q: "Which view would have shown the sloping ceiling?"
+      options:
+        - "A front or side view, which shows heights"
+        - "A second plan from above"
+        - "A bigger plan from above"
+      answer: 0
+      feedback: [null, "Another view from above still cannot show heights.", "Making the plan bigger does not change what it hides."]
+  criteria:
+    - "I said the plan is the top view and what it shows."
+    - "I said what it hides: heights."
+    - "I named a view that shows the sloping ceiling."
+  explain: "A plan shows lengths and widths, so the bed, desk and door could be placed. It hides heights, so only a front or side view shows the sloping ceiling."
+```
+
+Do this one in your book, not on the screen. Sam and her room are made up, but plans really hide heights. Write what the plan shows, what it hides and which view fills the gap, then choose the reasons that matter most.
+
+**Also used in**
+
+- **Architects and builders.** Plans, front and side views are drawn together because each hides what the others show.
+- **Packing and shipping.** A box must fit in all three directions, so you check length, width and height, not only the floor space.

@@ -7,6 +7,7 @@ summary: In a growing pattern, look at what each new figure adds. That gives a r
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Tiles along a path, seats around joined tables, fence posts and rails: each one grows by the same amount every time. A rule tells you how many you need for any length."
+connection: fence-posts   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8140
   url: http://127.0.0.1:8140/index.html
@@ -45,6 +46,8 @@ check:
   options: ["31", "40", "30", "13"]
   actual: "31. Each new square adds 3 sticks (it shares a side with the square before), so Figure 10 has 4 + 9 × 3 = 31. Another way: 3 × 10 + 1 = 31."
 ```
+
+<figure class="situation" role="img" aria-label="Three figures made of sticks: one square with 4 sticks, two joined squares with 7 sticks, three joined squares with 10 sticks. Figure 10 is a question mark."><svg viewBox="0 0 420 120" width="420" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M10 30 H40 M10 60 H40 M10 30 V60 M40 30 V60" stroke="#185FA5" stroke-width="3"/><path d="M70 30 H130 M70 60 H130 M70 30 V60 M100 30 V60 M130 30 V60" stroke="#185FA5" stroke-width="3"/><path d="M160 30 H250 M160 60 H250 M160 30 V60 M190 30 V60 M220 30 V60 M250 30 V60" stroke="#185FA5" stroke-width="3"/><text x="25" y="85" text-anchor="middle" fill="currentColor" stroke="none">Fig 1</text><text x="100" y="85" text-anchor="middle" fill="currentColor" stroke="none">Fig 2</text><text x="205" y="85" text-anchor="middle" fill="currentColor" stroke="none">Fig 3</text><text x="25" y="105" text-anchor="middle" fill="currentColor" stroke="none">4</text><text x="100" y="105" text-anchor="middle" fill="currentColor" stroke="none">7</text><text x="205" y="105" text-anchor="middle" fill="currentColor" stroke="none">10</text><text x="345" y="50" text-anchor="middle" fill="currentColor" stroke="none">Fig 10: ? sticks</text></svg></figure>
 
 | Figure | 1 | 2 | 3 |
 |---|---|---|---|
@@ -233,3 +236,46 @@ check: { type: board, text: "Set $a$ (dots in each new column) and $b$ (the star
 Design your own growing pattern of dots: $a$ dots in each new column, and $b$ dots to start with. Make Figure 10 have exactly 52 dots. Is there more than one way?
 
 Stretch: write the rule for your pattern, and say how many dots Figure 100 has.
+
+## Make: a fence order, on paper
+
+```step
+stage: make
+insight: "Each panel adds a post and rails, and the first post belongs to no panel, so the rule is the amount added plus the start; the check is a fence the student can count."
+hint: ["What does one more panel add: posts and rails?", "Count a fence of 1 panel and a fence of 2, then check your rule on both."]
+check:
+  type: reasoning
+  paper: true
+  q: "A straight fence is built in panels. Each panel has 3 rails and one post at its right-hand end, and the fence also needs a post at the very start. On paper, write a rule for the number of pieces (posts and rails) for n panels, then work out how many pieces a fence of 15 panels needs."
+  steps:
+    - ["Each new panel adds 1 post and 3 rails: 4 pieces", "look at what each new figure adds"]
+    - ["The first post at the start is not added by any panel, so pieces $= 4n + 1$", "the rule is the amount added each time, plus what was there to begin with"]
+    - ["$n = 15$: $4 \\times 15 + 1 = 61$ pieces", "put the number of panels in for n"]
+  picks:
+    - step: 2
+      q: "Why is there a +1 in the rule?"
+      options:
+        - "The first post at the start is not part of any panel's 4 pieces"
+        - "Every rule has a +1 at the end"
+        - "The last post is counted twice"
+      answer: 0
+      feedback: [null, "The number added on comes from the situation. Here it is the one extra post.", "Each panel's post is its right-hand end, so no post is counted twice."]
+  answer: "61"
+  tolerance: 0
+  feedback:
+    - ["60", "That is 4 × 15. The post at the start still needs adding."]
+    - ["64", "That adds a whole panel of 4 pieces at the start. The start only needs 1 post."]
+  criteria:
+    - "I said what each panel adds."
+    - "I explained the +1 as the post at the start."
+    - "I checked my rule on a fence of 1 panel (5 pieces) before using it."
+  explain: "Each panel adds 4 pieces and the start adds 1 post, so n panels need 4n + 1 pieces. For 15 panels: 4 × 15 + 1 = 61."
+```
+
+Do this one in your book, not on the screen. The fence is made up for the task, and a real one also has corners and gates, which each add a post. Say what each panel adds, find the rule, check it on a small fence, then type the number of pieces.
+
+**Also used in**
+
+- **Fencing and decking.** A fence of $p$ panels needs $p + 1$ posts, so the hardware order starts from the same rule.
+- **Tiles and seating.** A path of tiles or a row of joined tables grows by the same amount each time.
+- **Planning.** Once you have the rule you can price a job for any length without drawing it.

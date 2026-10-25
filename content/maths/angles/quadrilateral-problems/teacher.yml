@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Jo which pairs are co-interior."
   - "Modify: ask for a check using 360°."
   - "Make: ask which angles of the kite must be equal, and why."
+  - "Paper: the linkage task is worked in books; the page marks angle B (116) and the reason for using 180°. Books out, then look at the page for the 360° check, not the screen."
 stuck:
   - see: "A student subtracts from 180 for the opposite angle."
     ask: "Are those two angles between the same pair of parallel sides?"

@@ -51,6 +51,8 @@ check:
   actual: "No. Squash a regular hexagon and the sides stay equal but the angles change. Regular needs equal sides and equal angles."
 ```
 
+<figure class="situation" role="img" aria-label="A hexagon with a small tick on each of its six sides to show they are all equal. Beside it: all sides equal, so regular, question mark."><svg viewBox="0 0 340 190" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M175.0 95.0 L142.5 151.3 L77.5 151.3 L45.0 95.0 L77.5 38.7 L142.5 38.7 Z"/><path d="M163.1 125.6 L154.4 120.6" stroke-width="1.5"/><path d="M110.0 156.3 L110.0 146.3" stroke-width="1.5"/><path d="M56.9 125.6 L65.6 120.6" stroke-width="1.5"/><path d="M56.9 64.4 L65.6 69.4" stroke-width="1.5"/><path d="M110.0 33.7 L110.0 43.7" stroke-width="1.5"/><path d="M163.1 64.4 L154.4 69.4" stroke-width="1.5"/><text x="235" y="90" text-anchor="start" fill="currentColor" stroke="none">6 equal sides</text><text x="235" y="115" text-anchor="start" fill="currentColor" stroke="none">regular?  ?</text></svg></figure>
+
 Picture pushing two opposite corners of a regular hexagon towards each other.
 
 ## Run: a corner that points in
@@ -210,3 +212,35 @@ check: { type: board, text: "Make a dart: a kite with one corner pointing in.", 
 ```
 
 Then: is your dart regular? Why can a concave polygon never be regular?
+
+## Make: regular or not, on paper
+
+```step
+stage: make
+insight: "Regular needs both equal sides and equal angles; a concave polygon always has an angle over 180° that the others cannot match."
+hint: ["Name it by its number of sides first.", "What does a corner pointing in say about one of its angles?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A designer's shape has 5 straight sides, all the same length, and one corner points inward. Is it a regular pentagon? On paper, name the shape and give your reasons."
+  steps:
+    - ["It has 5 straight sides, so it is a pentagon", "polygons are named by their number of sides"]
+    - ["One corner points inward, so it is concave", "a corner pointing in has an inside angle over 180°"]
+    - ["A regular polygon has all angles equal, and the others are less than 180°, so this one is not regular", "regular needs equal sides and equal angles"]
+  picks:
+    - step: 3
+      q: "Why is it not regular, even though its sides are equal?"
+      options:
+        - "Its angles are not all equal, because one corner points in"
+        - "Regular polygons must have more than 5 sides"
+        - "Concave polygons have unequal sides"
+      answer: 0
+      feedback: [null, "A regular pentagon has 5 sides.", "Its sides are equal here. It is the angles that differ."]
+  criteria:
+    - "I named the shape from its number of sides."
+    - "I said it is concave and why."
+    - "I said regular needs equal sides and equal angles."
+  explain: "It is a concave pentagon. Equal sides are not enough: a regular polygon also needs equal angles, and the corner pointing in is bigger than 180°."
+```
+
+Do this one in your book, not on the screen. The shape is made up for the task. Sketch it, name it, then choose the reason it is not regular.

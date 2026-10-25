@@ -5,6 +5,7 @@ goals:
   - I can say which step is done first, and what is then done to its whole result.
   - I can put brackets around the part that is done first, and leave them out when they are not needed.
   - I can show with a number that 2(n + 3) and 2n + 3 are different.
+struggle: "Knowing when brackets are needed. Some students leave them out (6x + 2 for 'add 2, then multiply by 6'), and others put them everywhere. Ask 'is something done to a whole result here?' and test the expression with one number."
 before: |
   Do the Run and Modify boards yourself first. They hide the formula: the board does what the words say, so students check their brackets against it.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example live. Underline the part done first, then bracket it."
   - "Modify: before the no-brackets task, ask 'is anything done to a whole result here?'"
   - "Make: ask students to say the steps in words before they check their expression."
+  - "Paper: the group booking is worked in books (one person's cost, the expression, then put in 14). The page marks 80 and the reason for the brackets. Books out, then look at the page for the model."
 stuck:
   - see: "A student writes 6x + 2 for 'add 2, then multiply by 6' (Jo's mistake)."
     ask: "Try x = 1 in the words and in your expression. Do they agree?"

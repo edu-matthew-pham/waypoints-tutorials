@@ -8,6 +8,7 @@ summary: "Solve an inequality like an equation, doing the same to both sides, bu
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "You need more than 50 points to pass, and a ride needs riders at least 120 cm tall. Not one answer: a whole range of them."
+connection: load-limit   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8177
   url: http://127.0.0.1:8177/index.html
@@ -45,6 +46,8 @@ check:
     - "$x < 3$"
   actual: "x < −3. Check x = −4: −2 × (−4) = 8, and 8 > 6. But x = 0 (which x > −3 allows) gives 0, and 0 > 6 is false."
 ```
+
+<figure class="situation" role="img" aria-label="A number line from minus 6 to 6. At x equals minus 3, minus 2 times x is exactly 6. On the left of minus 3 and on the right of it there is a question mark: which side makes minus 2 x more than 6?"><svg viewBox="0 0 420 120" width="420" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="20" y1="72" x2="400" y2="72" stroke-width="1.2"/><line x1="20" y1="66" x2="20" y2="78" stroke-width="1"/><text x="20" y="96" text-anchor="middle" fill="currentColor" stroke="none">−6</text><line x1="115" y1="66" x2="115" y2="78" stroke-width="1"/><text x="115" y="96" text-anchor="middle" fill="currentColor" stroke="none">−3</text><line x1="210" y1="66" x2="210" y2="78" stroke-width="1"/><text x="210" y="96" text-anchor="middle" fill="currentColor" stroke="none">0</text><line x1="305" y1="66" x2="305" y2="78" stroke-width="1"/><text x="305" y="96" text-anchor="middle" fill="currentColor" stroke="none">3</text><line x1="400" y1="66" x2="400" y2="78" stroke-width="1"/><text x="400" y="96" text-anchor="middle" fill="currentColor" stroke="none">6</text><circle cx="115" cy="72" r="5" fill="#7F77DD" fill-opacity="0.6" stroke="#534AB7"/><text x="115" y="30" text-anchor="middle" fill="currentColor" stroke="none">−2x = 6 here</text><text x="50" y="60" text-anchor="middle" fill="currentColor" stroke="none" font-size="20">?</text><text x="360" y="60" text-anchor="middle" fill="currentColor" stroke="none" font-size="20">?</text></svg></figure>
 
 Pick a value from your answer and check it in $-2x > 6$.
 
@@ -212,3 +215,47 @@ check: { type: board, text: "Write an inequality with $-3x$ in it whose solution
 ```
 
 Swap with a partner: solve theirs, and check a value.
+
+## Make: a trailer load, on paper
+
+```step
+stage: make
+insight: "A load limit is an inequality: the load can be at most the rating, so the answer is a range, and boxes come whole, so the end of the range is rounded down."
+hint: ["The load is the mower plus 40 kg for each box.", "At most 750 kg means less than or equal to."]
+check:
+  type: reasoning
+  paper: true
+  q: "A trailer is rated for a load of 750 kg and already carries a 90 kg mower. Each box of pavers has a mass of 40 kg. What is the most boxes that can go on?"
+  steps:
+    - ["Let $n$ be the number of boxes. The load is $90 + 40n$ kg", "the mower plus 40 kg for each box"]
+    - ["$90 + 40n \\le 750$", "the load can be at most 750 kg, so 750 itself is allowed"]
+    - ["$40n \\le 660$, so $n \\le 16.5$", "take 90 from both sides, then divide by 40: a positive number, so the sign stays"]
+    - ["16 boxes: $90 + 16 \\times 40 = 730$ kg. 17 boxes would be 770 kg, over the limit", "boxes come whole, so go down to 16 and check both sides"]
+  picks:
+    - step: 4
+      q: "The solution is $n \\le 16.5$. How many boxes go on?"
+      options:
+        - "16, because half a box is not a box and 17 is over the limit"
+        - "17, because 16.5 rounds up"
+        - "16.5 boxes"
+      answer: 0
+      feedback: [null, "17 boxes would weigh 90 + 680 = 770 kg, over 750. Round down.", "Boxes come whole. You cannot load half a box."]
+  answer: "16"
+  tolerance: 0
+  feedback:
+    - ["17", "17 boxes would weigh 770 kg. Round 16.5 down, not up."]
+    - ["18", "That ignores the mower. The 90 kg is already on."]
+  criteria:
+    - "I wrote the load as 90 + 40n and used at most, not just less than."
+    - "I checked 16 boxes and 17 boxes against 750 kg."
+    - "My answer is a whole number of boxes."
+  explain: "$90 + 40n \\le 750$ gives $n \\le 16.5$, so at most 16 boxes: 730 kg. A 17th box makes 770 kg."
+```
+
+Do this one in your book, not on the screen. The rating and masses are made up for the task, and on a real trailer the rating plate says whether it counts the trailer's own weight. Write the load, the inequality, solve it, then decide what to do with 16.5 and type the number of boxes.
+
+**Also used in**
+
+- **Trailers and lifts.** A rating plate is a limit: the load must be at most that, so "how many boxes" is an inequality.
+- **Budgets.** "How many rides can I afford after the entry fee?" has the same shape: the cost can be at most what you have.
+- **Next.** Two limits at once, such as a budget and a time, make a region on a graph in Year 10.

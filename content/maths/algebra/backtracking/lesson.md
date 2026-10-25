@@ -6,6 +6,7 @@ title: Solving by backtracking
 summary: Undo what was done to x, last step first, to find the number you started with.
 language: maths
 hook: "Retracing your steps to find a lost key is backtracking: you undo your route, most recent first. Equations work the same way."
+connection: excursion-count   # data/connections/maths.yml (Make on paper and Also used in; documentation only)
 ---
 An equation like $2x + 3 = 11$ is a machine: $x$ goes in, gets multiplied by 2, then 3 is added, and 11 comes out. If you only see what comes out, how could you find $x$?
 
@@ -20,6 +21,8 @@ check:
   kind: number
   actual: "4. Take away the 3 first (11 − 3 = 8), then halve (8 ÷ 2 = 4)."
 ```
+<figure class="situation" role="img" aria-label="A number machine. A mystery number goes in, is multiplied by 2, then 3 is added, and 11 comes out. The number that went in is a question mark."><svg viewBox="0 0 370 90" width="370" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="10" y="25" width="50" height="40" rx="6" fill="#7F77DD" fill-opacity="0.35" stroke="#534AB7" stroke-width="0.8"/><text x="35.0" y="50" text-anchor="middle" fill="currentColor" stroke="none">?</text><path d="M62 45 H90 M84 39 L90 45 L84 51" stroke-width="1.2"/><rect x="92" y="25" width="70" height="40" rx="6" /><text x="127.0" y="50" text-anchor="middle" fill="currentColor" stroke="none">× 2</text><path d="M164 45 H192 M186 39 L192 45 L186 51" stroke-width="1.2"/><rect x="194" y="25" width="70" height="40" rx="6" /><text x="229.0" y="50" text-anchor="middle" fill="currentColor" stroke="none">+ 3</text><path d="M266 45 H294 M288 39 L294 45 L288 51" stroke-width="1.2"/><rect x="296" y="25" width="60" height="40" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="0.8"/><text x="326.0" y="50" text-anchor="middle" fill="currentColor" stroke="none">11</text><text x="35" y="85" text-anchor="middle" fill="currentColor" stroke="none">went in</text><text x="326" y="85" text-anchor="middle" fill="currentColor" stroke="none">came out</text></svg></figure>
+
 
 How did you work it out? Which step did you undo first?
 
@@ -180,3 +183,48 @@ check:
 Make a machine a friend could backtrack. Run 6 through your two steps, then write the equation.
 
 Stretch: make one where the machine adds first, so your equation needs brackets.
+
+## Make: the excursion bus on paper
+
+```step
+stage: make
+insight: "Counting students from a bus bill uses the whole lesson in one place: build the machine, undo the last step first, check forwards."
+hint: ["The machine multiplies the number of students by 4, then adds the booking fee.", "Undo the last step first."]
+check:
+  type: reasoning
+  paper: true
+  q: "A coach to the Year 8 excursion costs \\$30 to book plus \\$4 for each student, and the bill was \\$142. On paper, write the equation and backtrack it to find how many students went."
+  steps:
+    - ["$4n + 30 = 142$", "each student costs 4, then the booking fee of 30 is added"]
+    - ["$142 - 30 = 112$", "the fee was added last, so undo it first"]
+    - ["$112 \\div 4 = 28$", "then undo the × 4"]
+    - ["Check: $4 \\times 28 + 30 = 112 + 30 = 142$", "run the machine forwards"]
+  picks:
+    - step: 2
+      q: "Why take away the 30 first?"
+      options:
+        - "The booking fee was added last, so it is undone first"
+        - "30 is the bigger number, so it goes first"
+        - "You always divide first and subtract after"
+      answer: 0
+      feedback: [null, "It is not about which number is bigger. Undo the step the machine did last.", "Dividing first gets the order wrong. Undo the last step first."]
+  answer: "28"
+  answerLabel: "Students"
+  feedback:
+    - ["35.5", "That divides 142 by 4 first. The fee was added last, so take it away first."]
+    - ["112", "That is the students' share of the bill. Divide by 4 to find how many students."]
+    - ["27", "Check it: 4 × 27 + 30 = 138, not 142."]
+  criteria:
+    - "I wrote the equation before undoing anything."
+    - "I undid the fee first, because it was added last."
+    - "I checked 28 by running the machine forwards."
+  explain: "142 − 30 = 112, then 112 ÷ 4 = 28 students. Check: 4 × 28 + 30 = 142."
+```
+
+Do this one in your book. The prices are made up, but trip organisers work out head counts from a bill like this. Write the machine, undo it, check it, then type the number of students and choose the reason for the first step.
+
+**Also used in**
+
+- **Fees and totals.** A bus costs \$20 to book plus \$3 per student and the bill is \$80: undo the fee, then the price per student, to count who went.
+- **Temperature.** Celsius to Fahrenheit multiplies by 1.8 then adds 32. Going back undoes the 32 first.
+- **Next lessons.** The balance method, which does the same undoing to both sides and still works when $x$ is on both sides.

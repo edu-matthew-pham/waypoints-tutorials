@@ -18,6 +18,7 @@ running:
   - "Investigate: ask what Zara could do to check her block."
   - "Modify: for the prism, ask which side of the triangle each rectangle matches."
   - "Make: ask why the area has two parts, the ends and the sides."
+  - "Make on paper: ask how many faces are the same, and why the volume is not the answer."
 stuck:
   - see: "A student says any six joined squares fold into a cube."
     ask: "Which two squares would land on the same face?"

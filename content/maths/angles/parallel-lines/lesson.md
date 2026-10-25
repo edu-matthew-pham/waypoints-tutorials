@@ -226,3 +226,35 @@ check: { type: board, text: "Pick two angles between the parallel lines, at diff
 Find a pair, then turn the crossing line. Do they still add to $180^\circ$?
 
 Stretch: which pairs add to $180^\circ$ but are not between the lines?
+
+## Make: are they parallel, on paper
+
+```step
+stage: make
+insight: "The rule runs both ways: parallel lines have equal corresponding angles, so unequal corresponding angles mean the lines are not parallel."
+hint: ["Are the two angles in the same place at each crossing?", "What would be true of them if the lines were parallel?"]
+check:
+  type: reasoning
+  paper: true
+  q: "Two lines are crossed by a transversal. Angle a, above the top line on the left, is 72°. The angle in the same place at the bottom crossing is 75°. Are the lines parallel? On paper, give your reasons."
+  steps:
+    - ["The two angles are in the same place at each crossing, so they are corresponding", "same place, one at each crossing"]
+    - ["If the lines were parallel, corresponding angles would be equal", "that is the rule for parallel lines"]
+    - ["72° and 75° are not equal, so the lines are not parallel", "they would have to match"]
+  picks:
+    - step: 3
+      q: "Why are the lines not parallel?"
+      options:
+        - "The corresponding angles are not equal, and they would be if the lines were parallel"
+        - "75° is bigger than 72°, and bigger angles mean parallel lines"
+        - "Any two lines crossed by a transversal are parallel"
+      answer: 0
+      feedback: [null, "Which is bigger does not matter. Parallel lines need the two angles equal.", "Only some lines are parallel. The angles tell you which."]
+  criteria:
+    - "I named the pair as corresponding."
+    - "I said what parallel lines would do to that pair."
+    - "I compared 72° and 75° and gave my answer."
+  explain: "Corresponding angles are equal when the lines are parallel. These are 72° and 75°, so the lines are not parallel."
+```
+
+Do this one in your book, not on the screen. The angles are made up for the task, and real measurements are never exact. Sketch it, write the three steps, then choose the reason.

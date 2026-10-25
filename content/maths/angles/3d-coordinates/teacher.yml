@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Kim where (3, 5, 2) actually is."
   - "Modify: ask why a box from the origin has edges x, y and z."
   - "Make: ask for one corner on the floor and one on the z-axis."
+  - "Make on paper: ask which coordinate changes for the next layer, and why x and y stay put."
 stuck:
   - see: "A student writes the height first."
     ask: "What order did we agree: along, along, up?"

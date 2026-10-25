@@ -20,6 +20,7 @@ running:
   - "Investigate: link the prefixes to words they know (octopus, decade, pentathlon)."
   - "Modify: for the octagon, ask how small a move breaks regular."
   - "Make: ask whether a dart is still a kite, and why."
+  - "Make on paper: ask which angle is different, and why equal sides do not fix it."
 stuck:
   - see: "A student calls a rhombus regular (Kim's mistake)."
     ask: "Are its angles all the same?"

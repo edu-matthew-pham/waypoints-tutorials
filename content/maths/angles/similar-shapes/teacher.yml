@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Mia whether her photo would look stretched."
   - "Modify: ask why two rectangles with all 90° angles may not be similar."
   - "Make: ask which original side matches y."
+  - "Paper: the shadow task is worked in books; the page marks the height (7.5 m) and which sides match. Books out, then look at the page for the scale factor from the shadows."
 stuck:
   - see: "A student adds the same amount to every side."
     ask: "Would the picture look the same shape?"
