@@ -1,4 +1,4 @@
-# Sheets for "Count and decide".
+# Sheets for "Count and decide". Heights and the cut-off come from the context block in lesson.md.
 
 # region: run
 widget: sheet
@@ -6,32 +6,36 @@ cell A1: Plant
 cell B1: Height (cm)
 cell C1: Size
 cell A2: Bean A
-cell B2: 8.5
-cell C2: =IF(B2>=10,"Tall","Short")
+cell B2: {{h[1]}}
+cell C2: =IF(B2>={{cut[1]}},"Tall","Short")
 cell A3: Bean B
-cell B3: 10
-cell C3: =IF(B3>=10,"Tall","Short")
+cell B3: {{h[2]}}
+cell C3: =IF(B3>={{cut[1]}},"Tall","Short")
 cell A4: Bean C
-cell B4: 9.5
-cell C4: =IF(B4>=10,"Tall","Short")
+cell B4: {{h[3]}}
+cell C4: =IF(B4>={{cut[1]}},"Tall","Short")
 cell A5: Bean D
-cell B5: 12
-cell C5: =IF(B5>=10,"Tall","Short")
+cell B5: {{h[4]}}
+cell C5: =IF(B5>={{cut[1]}},"Tall","Short")
 cell A6: Bean E
-cell B6: 11
-cell C6: =IF(B6>=10,"Tall","Short")
+cell B6: {{h[5]}}
+cell C6: =IF(B6>={{cut[1]}},"Tall","Short")
 cell A7: Bean F
-cell B7: 9
-cell C7: =IF(B7>=10,"Tall","Short")
+cell B7: {{h[6]}}
+cell C7: =IF(B7>={{cut[1]}},"Tall","Short")
 cell A8: Bean G
-cell B8: 13.5
-cell C8: =IF(B8>=10,"Tall","Short")
+cell B8: {{h[7]}}
+cell C8: =IF(B8>={{cut[1]}},"Tall","Short")
 cell A9: Bean H
-cell B9: 7
-cell C9: =IF(B9>=10,"Tall","Short")
+cell B9: {{h[8]}}
+cell C9: =IF(B9>={{cut[1]}},"Tall","Short")
 cell A11: Tall plants
 cell B11: =COUNTIF(C2:C9,"Tall")
 edit: B2:B9
+# endregion
+
+# region: run-solution
+cell B2: {{cut[1]+0.5}}
 # endregion
 
 # region: practise
@@ -40,26 +44,37 @@ cell A1: Plant
 cell B1: Height (cm)
 cell C1: Size
 cell A2: Bean A
-cell B2: 8.5
+cell B2: {{h[1]}}
 cell A3: Bean B
-cell B3: 10
+cell B3: {{h[2]}}
 cell A4: Bean C
-cell B4: 9.5
+cell B4: {{h[3]}}
 cell A5: Bean D
-cell B5: 12
+cell B5: {{h[4]}}
 cell A6: Bean E
-cell B6: 11
+cell B6: {{h[5]}}
 cell A7: Bean F
-cell B7: 9
+cell B7: {{h[6]}}
 cell A8: Bean G
-cell B8: 13.5
+cell B8: {{h[7]}}
 cell A9: Bean H
-cell B9: 7
+cell B9: {{h[8]}}
 cell A11: Tall plants
 cell B11: =COUNTIF(C2:C9,"Tall")
 table: A1:C9
 tools: fill
 edit: C2:C9
+# endregion
+
+# region: practise-solution
+cell C2: =IF(B2>={{cut[1]}},"Tall","Short")
+cell C3: =IF(B3>={{cut[1]}},"Tall","Short")
+cell C4: =IF(B4>={{cut[1]}},"Tall","Short")
+cell C5: =IF(B5>={{cut[1]}},"Tall","Short")
+cell C6: =IF(B6>={{cut[1]}},"Tall","Short")
+cell C7: =IF(B7>={{cut[1]}},"Tall","Short")
+cell C8: =IF(B8>={{cut[1]}},"Tall","Short")
+cell C9: =IF(B9>={{cut[1]}},"Tall","Short")
 # endregion
 
 # region: practise-filled
@@ -68,33 +83,37 @@ cell A1: Plant
 cell B1: Height (cm)
 cell C1: Size
 cell A2: Bean A
-cell B2: 8.5
-cell C2: =IF(B2>=10,"Tall","Short")
+cell B2: {{h[1]}}
+cell C2: =IF(B2>={{cut[1]}},"Tall","Short")
 cell A3: Bean B
-cell B3: 10
-cell C3: =IF(B3>=10,"Tall","Short")
+cell B3: {{h[2]}}
+cell C3: =IF(B3>={{cut[1]}},"Tall","Short")
 cell A4: Bean C
-cell B4: 9.5
-cell C4: =IF(B4>=10,"Tall","Short")
+cell B4: {{h[3]}}
+cell C4: =IF(B4>={{cut[1]}},"Tall","Short")
 cell A5: Bean D
-cell B5: 12
-cell C5: =IF(B5>=10,"Tall","Short")
+cell B5: {{h[4]}}
+cell C5: =IF(B5>={{cut[1]}},"Tall","Short")
 cell A6: Bean E
-cell B6: 11
-cell C6: =IF(B6>=10,"Tall","Short")
+cell B6: {{h[5]}}
+cell C6: =IF(B6>={{cut[1]}},"Tall","Short")
 cell A7: Bean F
-cell B7: 9
-cell C7: =IF(B7>=10,"Tall","Short")
+cell B7: {{h[6]}}
+cell C7: =IF(B7>={{cut[1]}},"Tall","Short")
 cell A8: Bean G
-cell B8: 13.5
-cell C8: =IF(B8>=10,"Tall","Short")
+cell B8: {{h[7]}}
+cell C8: =IF(B8>={{cut[1]}},"Tall","Short")
 cell A9: Bean H
-cell B9: 7
-cell C9: =IF(B9>=10,"Tall","Short")
+cell B9: {{h[8]}}
+cell C9: =IF(B9>={{cut[1]}},"Tall","Short")
 cell A11: Tall plants
 cell B11: =COUNTIF(C2:C9,"Tall")
-cell A12: Under 9 cm
+cell A12: Under {{low[1]}} cm
 edit: B12
+# endregion
+
+# region: practise-filled-solution
+cell B12: =COUNTIF(B2:B9,"<{{low[1]}}")
 # endregion
 
 # region: make
@@ -115,4 +134,25 @@ cell A12: Retry
 table: A1:C9
 tools: fill
 edit: B2:C9, B11:B12
+# endregion
+
+# region: make-solution
+cell B2: 3
+cell C2: =IF(B2>=5,"Pass","Retry")
+cell B3: 7
+cell C3: =IF(B3>=5,"Pass","Retry")
+cell B4: 5
+cell C4: =IF(B4>=5,"Pass","Retry")
+cell B5: 9
+cell C5: =IF(B5>=5,"Pass","Retry")
+cell B6: 2
+cell C6: =IF(B6>=5,"Pass","Retry")
+cell B7: 6
+cell C7: =IF(B7>=5,"Pass","Retry")
+cell B8: 4
+cell C8: =IF(B8>=5,"Pass","Retry")
+cell B9: 8
+cell C9: =IF(B9>=5,"Pass","Retry")
+cell B11: =COUNTIF(C2:C9,"Pass")
+cell B12: =COUNTIF(C2:C9,"Retry")
 # endregion

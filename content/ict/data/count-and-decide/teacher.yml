@@ -13,21 +13,21 @@ before: |
 
   Comparison signs: = (equal), <> (not equal), > (more than), < (less than), >= (more than or equal), <= (less than or equal). A test using > leaves out the boundary value, which is a common slip: the boundary question in Vary is there for it.
 
-  Quote marks: words in a formula go in quotes. The sheet on the page shows #NAME? without them, as Excel and Sheets do. COUNTIF's rule is also in quotes (">=10", "Tall"), and does not mind capital letters.
+  Quote marks: words in a formula go in quotes. The sheet on the page shows #NAME? without them, as Excel and Sheets do. COUNTIF's rule is also in quotes (">={{cut[1]}}", "Tall"), and does not mind capital letters.
 
   Real tools: some offer smart quotes when pasted from a document, which breaks formulas. Type the quotes in the cell itself.
 running:
-  - "Predict: students who chose 4 think the count was fixed. Ask what C2 would show now and who changes it."
+  - "Predict: students who chose {{above(h, cut[1]-0.001)}} think the count was fixed. Ask what C2 would show now and who changes it."
   - "Try: ask which cell changed first, C2 or B11, and why."
   - "Worked example: say the IF aloud as a sentence and ask what each comma separates."
-  - "Practise: ask what the count would be if the rule were >10, and why Bean B changes sides."
+  - "Practise: ask what the count would be if the rule were >{{cut[1]}}, and why Bean B changes sides."
   - "Own app: walk round. Common slips: missing quotes, a missing bracket, and > where >= was meant."
 stuck:
   - see: "A student leaves the quote marks off Tall and Short (Sam's mistake)."
     ask: "What does the sheet think Tall is, if it is not in quotes?"
     fix: "Put quote marks around each word."
   - see: "A student writes > where >= was needed and Bean B comes out Short."
-    ask: "Is 10 more than 10? Which sign includes 10?"
+    ask: "Is {{cut[1]}} more than {{cut[1]}}? Which sign includes {{cut[1]}}?"
     fix: "Use >= to include the boundary."
   - see: "A student's COUNTIF shows 0."
     ask: "Does the rule match what is in the cells, including the quote marks?"
@@ -35,18 +35,18 @@ stuck:
   - see: "A student's IF shows TRUE or FALSE."
     ask: "How many parts does your IF have? Where are the two answers?"
     fix: "Write =IF(test, answer if true, answer if not)."
-stretch: "Add a third group, Very tall, for 12 cm or more. Which function lets one IF choose between three answers? (Hint: put an IF inside an IF.)"
-support: "A card: =IF(test, answer if true, answer if not). Words go in \"quotes\". >= means 10 or more; > means more than 10."
+stretch: "Add a third group, Very tall, for {{h[4]}} cm or more. Which function lets one IF choose between three answers? (Hint: put an IF inside an IF.)"
+support: "A card: =IF(test, answer if true, answer if not). Words go in \"quotes\". >= means {{cut[1]}} or more; > means more than {{cut[1]}}."
 leads: |
   Next in Working with data: Put the rows in order (sort and filter).
 
-  Science: sorting measurements into groups (tall and short, healthy and not) is the first step to comparing them. A cut-off such as 10 cm is a choice: ask students why that one.
+  Science: sorting measurements into groups (tall and short, healthy and not) is the first step to comparing them. A cut-off such as {{cut[1]}} cm is a choice: ask students why that one.
 exit:
-  q: "B2 holds 7. What does =IF(B2>=10,\"Tall\",\"Short\") show? And what would it show if B2 were 10?"
-  a: "Short for 7, and Tall for 10, because >= includes 10."
+  q: "B2 holds {{h[8]}}. What does =IF(B2>={{cut[1]}},\"Tall\",\"Short\") show? And what would it show if B2 were {{cut[1]}}?"
+  a: "Short for {{h[8]}}, and Tall for {{cut[1]}}, because >= includes {{cut[1]}}."
 explain: |
   **IF** lets a cell decide: =IF(test, answer if true, answer if not). A test compares cells, with signs like >=. Words in an answer go in **quote marks**.
 
-  **COUNTIF** counts how many cells in a range match a rule, such as ">=10" or "Tall".
+  **COUNTIF** counts how many cells in a range match a rule, such as ">={{cut[1]}}" or "Tall".
 
   Change a number and the decision and the count both follow.
