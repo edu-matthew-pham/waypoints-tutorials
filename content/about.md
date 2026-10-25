@@ -37,3 +37,7 @@ Every lesson starts with a prediction, gives students something to try, and chec
 [Why we teach this way →](../approach/) · [Behind the scenes →](../behind-the-scenes/)
 
 [Check your school](../check/) · [Choosing AI tools for learning](../choosing-ai-tools/)
+
+<h2 id="standards">About the standards</h2>
+
+Maths, science and How computers work are tagged lesson by lesson: each lesson says which waypoint of which standard it teaches. Code is not tagged that way. For the Digital Technologies Processes standards, a Code course is listed as **main focus** where it is built around the standard, or **touches on** where the standard comes up but is not the point. That is general coverage, not a promise that every lesson teaches it. Where a course only touches a standard, a teacher could extend it to cover the standard more fully.

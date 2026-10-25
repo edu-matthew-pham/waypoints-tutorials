@@ -52,7 +52,7 @@ const dyears = (d) => (d.years ? d.years.split(/[–-]/).map(Number) : [d.year, 
  * courses: [{ path, title }]; subjects: [{ path, title, teachers }]; pathwayOf(coursePath) -> { sub, pw } | null;
  * play: { [coursePath]: { label } }.
  */
-export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, play = {}, root = '.' }) {
+export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, play = {}, coverage = { std: new Map() }, root = '.' }) {
   const { map: desc, perSubject } = loadDescriptors(root);
   const subjTitle = (path) => dirNode(path.split('/')[0]).title;
   const codesOf = (l) => [].concat(l.node || [], l.woven || []).map((r) => String(r).split(/\s+/)[0]).filter((c) => desc.has(c));
@@ -100,8 +100,12 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
   for (const sub of STANDARD_SUBJECTS) {
     for (const d of perSubject[sub] || []) {
       const [lo, hi] = dyears(d), tagged = lessons.filter((l) => codesOf(l).includes(d.code)).length;
+      const cov = coverage.std.get(d.code), tt = (ps) => ps.map((p) => dirNode(p).title).join(', ');
+      // What a teacher sees under the title: lessons tagged to it, else the courses that generally cover it (said as such), else that nothing does yet.
+      const note = tagged ? `${tagged} lesson${tagged > 1 ? 's' : ''} here` : cov && (cov.focus.length || cov.touches.length)
+        ? [cov.focus.length ? (cov.all ? 'Main focus of every Code course' : `Main focus of ${tt(cov.focus.slice(0, 3))}${cov.focus.length > 3 ? ` and ${cov.focus.length - 3} more` : ''}`) : '', cov.touches.length ? `touched on in ${tt(cov.touches.slice(0, 3))}${cov.touches.length > 3 ? ` and ${cov.touches.length - 3} more` : ''}` : ''].filter(Boolean).join('; ') : 'no lessons yet';
       add({ t: d.title, u: `teach/curriculum/${sub}/${d.code}/`, s: sub === 'maths' ? 'Maths' : sub === 'science' ? 'Science' : 'Digital Technologies', sp: sub === 'digital-processes' ? 'code' : sub, c: d.strand || '', y: yearsLabel(lo, hi), ty: 'standard',
-        n: tagged, d: `${d.code}${tagged ? ` · ${tagged} lesson${tagged > 1 ? 's' : ''} here` : ''}`, k: [d.code, d.title, d.strand, d.description, yearTokens(lo, hi)].filter(Boolean).join(' ') });
+        n: tagged + (cov && (cov.focus.length || cov.touches.length) ? 1 : 0), d: `${d.code} · ${note}`, k: [d.code, d.title, d.strand, d.description, yearTokens(lo, hi)].filter(Boolean).join(' ') });
     }
   }
   for (const p of [

@@ -10,6 +10,7 @@ import { join } from 'node:path';
 import { parse as YAMLparse } from 'yaml';
 import { createHash } from 'node:crypto';
 import { CSS, NAV_CSS, NAV_JS } from './lesson-view.mjs';
+import { COVERAGE_NOTE, shortCode } from './coverage.mjs';
 import { KIT_REPO, KIT_SUBJECTS, WIDTH, nodeKey, nodeParam, isReviewed, yearText } from './kit-nodes.mjs';
 
 // Subjects with pointer pages: every imported Kit subject, as drafts until reviewed (19 Oct: review happens through the
@@ -52,7 +53,7 @@ function sharedAssets(OUT) {
 }
 
 export function buildPointerPages(subject, ctx) {
-  const { OUT, page, navFor, esc, lessons } = ctx;
+  const { OUT, page, navFor, esc, lessons, coverage = { std: new Map() }, courseTitle = (p) => p } = ctx;
   const cur = JSON.parse(readFileSync(join('data', 'curriculum', `${subject}.json`), 'utf8'));
   const review = loadReview(subject), kitV = review.kit || '';
   const name = LABEL[subject] || subject;
@@ -62,6 +63,13 @@ export function buildPointerPages(subject, ctx) {
   const byCode = new Map(ds.map((d) => [d.code, d]));
   const tagged = (code, n) => lessons.filter((l) => (l.node || []).map(String).some((r) => r === `${code} n${n}`));
   const base = `teach/curriculum/${subject}`;
+  // Courses that generally cover a standard (data/curriculum/code-coverage.yml), shown on its page and its waypoints' pages.
+  const covLinks = (paths, root) => paths.map((p) => `<a href="${root}${esc(p)}/">${esc(courseTitle(p))}</a>`).join(', ');
+  const coverageSection = (d, root) => {
+    const cov = coverage.std.get(d.code);
+    if (!cov || !(cov.focus.length || cov.touches.length)) return '';
+    return `<h2>Covered in these courses</h2>${cov.focus.length ? `<p><b>Main focus:</b> ${cov.all ? 'every Code course' : covLinks(cov.focus, root)}</p>` : ''}${cov.note ? `<p>${esc(cov.note)}</p>` : ''}${cov.touches.length ? `<p><b>Touches on it:</b> ${covLinks(cov.touches, root)}</p>` : ''}<p class="muted">${esc(COVERAGE_NOTE)}</p>`;
+  };
   const up = (p) => '../'.repeat(p.split('/').length);
   const draftNote = (reviewed) => reviewed ? '' : `<p class="draft" role="note"><b>Draft, from Waypoints Kit ${esc(kitV)}.</b> Generated from Kit's node data and not yet reviewed by a specialist in ${esc(name)}: treat it as a starting suggestion and check it before use.</p>`;
   const head = (reviewed) => (reviewed ? '' : '<meta name="robots" content="noindex">');
@@ -101,6 +109,7 @@ export function buildPointerPages(subject, ctx) {
       `<h2>Descriptor</h2><p class="chk">${esc(d.description)}</p>` +
       (d.knowledge ? `<h2>Prior knowledge</h2><p>${esc(d.knowledge)}</p>` : '') +
       (d.endpoint ? `<h2>By the end</h2><p>${esc(d.endpoint)}</p>` : '') +
+      coverageSection(d, up(sp)) +
       `<h2>Waypoints</h2><ul class="nodes">${d.nodes.map((n) => `<li><a href="n${n.n}/"><b>${n.n}. ${esc(n.label)}</b>${n.hinge ? '<span class="tag" style="display:inline">Hinge</span>' : ''}<span>${esc(n.checkpoint)}</span></a></li>`).join('')}</ul>` +
       `<p><a href="${esc(kitLink(d))}">Kit node file for ${esc(d.code)}</a> (JSON)</p>` + src,
       sReviewed);
@@ -114,7 +123,7 @@ export function buildPointerPages(subject, ctx) {
         `<header class="top"><a class="crumb" href="../">← ${esc(d.code)} ${esc(d.title)}</a><h1>${esc(n.label)}</h1><p class="tmeta">${esc(nodeKey(ref))} · waypoint ${n.n} of ${d.nodes.length} · ${esc(yearText(d))} ${esc(name)} · ${esc(d.strand)}${n.hinge ? ' · <b>Hinge</b>' : ''}</p></header>` + draftNote(reviewed) +
         `<h2>Checkpoint</h2><p class="chk">${esc(n.checkpoint)}</p>` +
         `<p><a class="make" href="${root}${CREATE_PATH}?node=${esc(nodeParam(ref))}">Make a primer for this</a><br><span class="muted">Opens Create with a Primer starter: title, goals from the success criteria, the misconception and width suggestions to choose from. Nothing is published until you send it in.</span></p>` +
-        `<h2>Lessons on this site</h2>${ls.length ? `<ul>${ls.map((l) => `<li><a href="${root}${esc(l.slug)}/">${esc(l.title)}</a></li>`).join('')}</ul>` : '<p class="muted">None yet.</p>'}` +
+        `<h2>Lessons on this site</h2>${ls.length ? `<ul>${ls.map((l) => `<li><a href="${root}${esc(l.slug)}/">${esc(l.title)}</a></li>`).join('')}</ul>` : (coverage.std.get(d.code) && (coverage.std.get(d.code).focus.length || coverage.std.get(d.code).touches.length) ? `<p class="muted">No lesson is tagged to this waypoint. The standard is generally covered by some courses; see the standard's page for which are the main focus and which only touch it.</p>` : '<p class="muted">None yet.</p>')}` +
         (n.criteria?.length ? `<h2>Success criteria</h2><ul>${n.criteria.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>` : '') +
         `<h2>Prior knowledge</h2>` + (prev ? `<p>Waypoint ${prev.n}: <a href="../n${prev.n}/">${esc(prev.label)}</a>.</p>` : (d.knowledge ? `<p>${esc(d.knowledge)}</p>` : '<p class="muted">Kit names none.</p>')) +
         `<h2>Width</h2><dl class="w">${w.minimum ? `<dt>Minimum</dt><dd>${esc(w.minimum)}</dd>` : ''}${w.typical ? `<dt>Typical</dt><dd>${esc(w.typical)}</dd>` : ''}${w.wider?.length ? `<dt>Wider</dt><dd><ul>${w.wider.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></dd>` : ''}</dl>` +

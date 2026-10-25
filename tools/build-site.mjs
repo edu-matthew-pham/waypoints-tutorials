@@ -23,6 +23,7 @@ import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } fro
 import { loadCurriculum, curriculumMapHtml, CMAP_CSS } from './curriculum-map.mjs';
 import { buildPointerPages, POINTER_SUBJECTS } from './pointer-pages.mjs';
 import { makeSearch } from './search-index.mjs';
+import { loadCoverage, shortCode } from './coverage.mjs';
 import { searchBoxHtml, SEARCH_HINTS } from './search-view.mjs';
 import { coachPrompt } from './coach.mjs';
 import { loadProjects, skillLabel } from './projects.mjs';
@@ -424,7 +425,9 @@ copyFileSync(join('site', 'trailheads.js'), join(OUT, 'trailheads.js')); // the 
 copyFileSync(join('site', 'curriculum-map.js'), join(OUT, 'curriculum-map.js')); // the curriculum map (tools/curriculum-map.mjs)
 copyFileSync(join('site', 'check.js'), join(OUT, 'check.js')); // the Check your school page (content/check.md)
 // Search (25 Oct 2026): the index is built here from the same data the pages use; site/search.js searches it in the browser.
-const SEARCH = makeSearch({ lessons, dirNode, courses: COURSES, subjects: SUBJECTS, pathwayOf, play: PLAY });
+const COVERAGE = loadCoverage('.', COURSES.map((c) => c.path).filter((p) => p.startsWith('code/')));
+for (const e of COVERAGE.std.values()) for (const p of [...e.focus, ...e.touches]) if (!COURSES.some((c) => c.path === p)) throw new Error(`data/curriculum/code-coverage.yml: ${e.code} names "${p}", which is not a course`);
+const SEARCH = makeSearch({ lessons, dirNode, courses: COURSES, subjects: SUBJECTS, pathwayOf, play: PLAY, coverage: COVERAGE });
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
 copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
 // Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
@@ -658,8 +661,11 @@ for (const node of dirs.values()) {
       const facts = [ylo != null ? ['For', SEARCH.yearsLabel(ylo, yhi)] : null, ['Lessons', `${core}${opt ? ` (and ${opt} optional)` : ''}`],
         first ? ['Do first', first.length ? first.join(' and ') : 'No earlier course needed'] : null].filter(Boolean);
       const guide = courseLessons.some((l) => l.teacher) ? `<a href="${up}teach/${node.path}/">Teacher guide</a>` : '';
-      return `<style>.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.cshare{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.cshare a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
-        `<div class="cstrip"><ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="cshare">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div></div>`;
+      const cov = COVERAGE.byCourse.get(node.path);
+      const stdLinks = (list) => list.map((e) => `<a href="${up}teach/curriculum/digital-processes/${esc(e.code)}/">${esc(e.title)}</a> <small>(${esc(shortCode(e.code))})</small>`).join(', ');
+      const stds = cov ? `<p class="cstd"><b>Standards, in general:</b> ${cov.focus.length ? `main focus: ${stdLinks(cov.focus.slice(0, 6))}${cov.focus.length > 6 ? ` and ${cov.focus.length - 6} more` : ''}` : ''}${cov.focus.length && cov.touches.length ? '; ' : ''}${cov.touches.length ? `touches on: ${stdLinks(cov.touches)}` : ''}. <a href="${up}about/#standards">What this means</a></p>` : '';
+      return `<style>.cstd{flex-basis:100%;margin:0;color:var(--muted)}.cstd a{color:var(--accent)}.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.cshare{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.cshare a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
+        `<div class="cstrip"><ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="cshare">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div>${stds}</div>`;
     })();
     const COPY_JS = `<script>(function(){var b=document.querySelector('.copylink');if(!b)return;b.hidden=false;var m=document.querySelector('.copymsg');b.addEventListener('click',function(){var u=location.origin+location.pathname;function ok(){m.textContent='Link copied';setTimeout(function(){m.textContent=''},2000)}function fb(){var t=document.createElement('textarea');t.value=u;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){m.textContent=u}document.body.removeChild(t)}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,fb);else fb()})})();</script>`;
     writeFileSync(join(outDir, 'index.html'), page(node.title,
@@ -934,7 +940,7 @@ for (const coursePath of teachCourses) {
 }
 mkdirSync(join(OUT, 'teach'), { recursive: true });
 // Curriculum pointer pages (tools/pointer-pages.mjs): teacher-facing, linked only from here, draft and noindex until reviewed.
-const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curriculum', `${sub}.json`))).map((sub) => buildPointerPages(sub, { OUT, page, navFor, esc, lessons }));
+const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curriculum', `${sub}.json`))).map((sub) => buildPointerPages(sub, { OUT, page, navFor, esc, lessons, coverage: COVERAGE, courseTitle: (p) => dirNode(p).title }));
 const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, ${esc(p.span)}${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
 writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>Each core idea, and the lesson where each pathway first teaches it.</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
 

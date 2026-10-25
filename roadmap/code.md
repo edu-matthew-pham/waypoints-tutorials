@@ -338,7 +338,9 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - 10 Oct: Robotics, micro:bit and the computer, AI robots, Secret messages, the MakeCode hidden-assumptions scan.
 - 9 Oct: HTML & CSS, micro:bit Foundations, the MakeCode playground, Arcade written.
 
-## Proposed (25 Oct 2026, draft for Matthew to approve): general coverage of Digital Technologies Processes standards
+## Done (25 Oct 2026, Matthew approved the first pass; touches shown, labelled): general coverage of Digital Technologies Processes standards
+
+**Built:** `data/curriculum/code-coverage.yml` (read by `tools/coverage.mjs`) lists main-focus and touches courses per standard. It shows on the standard's pointer page ("Covered in these courses", with a note that touches may not be a course's main focus and could be extended), on its waypoint pages, in search results, and as a "Standards, in general" line on each Code course's strip. Edit the yml to move an entry; the build fails if a course path is wrong. The table below is the first pass and may drift from the yml, which is the source.
 
 **Idea (Matthew):** don't tag lessons to standards one to one. Say which courses and pathways *generally cover* a standard. Only 6 of 206 Code lessons carry a `node:` today, so a Code teacher who finds a standard sees almost no lessons under it.
 

@@ -1,0 +1,24 @@
+# General coverage of the Digital Technologies Processes standards by the Code courses (25 Oct 2026).
+# Not lesson by lesson: a course is listed where it generally covers a standard.
+#   focus:   the course is built around it (`all` means every Code course).
+#   touches: it comes up in the course but is not the point; a teacher could extend it to cover the standard more fully.
+# Drafted from course titles and summaries, approved by Matthew as a first pass (25 Oct 2026); lessons were not read.
+# Standards with no entry here and no lessons tagged say so on their pages. Cyber safety and privacy (8P13, 8P14, 10P13,
+# 10P14) are tagged lesson by lesson in How computers work, so they are not listed. Years 2-6 are outside the site's band.
+standards:
+  AC9TDI8P09: { focus: [code/python-functions, code/microbit-play], touches: [code/python-foundations, code/console, code/arcade-advanced, code/p5, code/dom] }
+  AC9TDI8P06: { focus: all, touches: [], note: "Every Code lesson starts by asking students to predict what a program will do." }
+  AC9TDI8P05: { focus: [], touches: [code/python-foundations, code/microbit, code/arcade] }
+  AC9TDI8P01: { focus: [code/data], touches: [code/deeper, code/flask, code/dom] }
+  AC9TDI8P02: { focus: [code/data], touches: [code/ml] }
+  AC9TDI8P03: { focus: [code/objects, code/deeper], touches: [code/data] }
+  AC9TDI8P07: { focus: [code/site], touches: [code/html, code/css, code/bootstrap] }
+  AC9TDI8P08: { focus: [], touches: [code/bootstrap] }
+  AC9TDI10P09: { focus: [code/objects], touches: [code/games, code/vue, code/p5, code/flask] }
+  AC9TDI10P06: { focus: [code/data], touches: [code/deeper] }
+  AC9TDI10P05: { focus: [], touches: [code/microbit, code/arcade, code/python-foundations] }
+  AC9TDI10P01: { focus: [code/data], touches: [code/flask, code/ml] }
+  AC9TDI10P02: { focus: [code/data], touches: [code/flask, code/ml] }
+  AC9TDI10P03: { focus: [], touches: [code/objects, code/deeper] }
+  AC9TDI10P07: { focus: [], touches: [code/html, code/css, code/bootstrap, code/vue] }
+  AC9TDI10P11: { focus: [code/dom, code/site], touches: [code/p5, code/vue] }
