@@ -296,7 +296,8 @@ await pictures({
   base: hashDir('playground', 'media', String(withMedia), String(showPage), 'projects-v1'),
   jobs: loadProjects('content', () => undefined).flatMap((s) => s.projects.flatMap((p) => p.parts.map((x, i) => ({ x, i, p }))
     .filter(({ x }) => x.exampleCode && ['python', 'html', 'javascript'].includes(x.language))
-    .map(({ x, i, p }) => ({ id: `${s.course}/${p.id}${p.parts.length > 1 ? `-${i + 1}` : ''}`, lang: x.language, code: `<!-- ${x.language} -->\n${x.exampleCode}`, src: x.exampleCode, answers: x.answers })))),
+    .map(({ x, i, p }) => ({ id: `${s.course}/${p.id}${p.parts.length > 1 ? `-${i + 1}` : ''}`, lang: x.language, code: `<!-- ${x.language} -->\n${x.exampleCode}`, src: x.exampleCode, answers: x.answers })))
+    .concat(s.projects.flatMap((p) => (p.benchmark || []).filter((b) => b.code != null).map((b, n) => ({ id: `${s.course}/${p.id}-bench-${n + 1}`, lang: 'html', code: `<!-- html -->\n${b.code}`, src: b.code, answers: [] }))))),
   async draw(page, j) {
     if (j.lang === 'javascript') return p5Draw(page, { code: j.src }); // p5.js sketch: the canvas, as in the p5 section
     if (j.lang === 'python' && !/\bturtle\b/.test(j.src)) { // console program: the transcript, with j.answers typed at each input()

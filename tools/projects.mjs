@@ -15,6 +15,9 @@
 //         - { text: ..., hints: [..., ...], way: "one piece of code", part: 1 }
 //           hints: up to 3, shown one at a time (a generic move, never the joined-up answer); way: one piece of this
 //           project's solution for that milestone, behind "Show one way" (needs reveal: true; part = the crossover part, from 1)
+//       benchmark:                        optional, 1 or 2 more pictures beside the example's: pages of a FINISHED state (typed-in
+//         - { file: logger-a.html, caption: A light logger }   numbers, no scripts), drawn like the example and shown to students
+//                                         as "ways it could look" (a standard to aim for, not code). File is in <course>/projects/.
 //       reveal: true                      lets students earn "Show one way" (off by default; the teacher guide always has the full example)
 //       stretch: [...]                    "make it yours" ideas
 //       teacher: |                        notes for the teacher guide (Markdown)
@@ -57,7 +60,9 @@ export function loadProjects(root, defaultPlay) {
               };
             });
           const msx = (Array.isArray(p.milestones) ? p.milestones : []).map((m) => (typeof m === 'string' ? { text: m } : { text: String(m?.text ?? ''), hints: Array.isArray(m?.hints) ? m.hints.map(String) : [], way: m?.way ? String(m.way).replace(/\s+$/, '') : '', part: Number(m?.part) || 1 }));
-          return { ...p, milestones: msx.map((m) => m.text), msx, parts };
+          const read = (f) => (f && existsSync(join(dir, 'projects', f)) ? readFileSync(join(dir, 'projects', f), 'utf8') : null);
+          const benchmark = (Array.isArray(p.benchmark) ? p.benchmark : []).map((b) => ({ file: String(b?.file || ''), caption: String(b?.caption || ''), code: read(String(b?.file || '')) }));
+          return { ...p, milestones: msx.map((m) => m.text), msx, benchmark, parts };
         });
         out.push({ course: rel, file, dir, projects });
       }
@@ -82,6 +87,12 @@ export function checkProjects(set, lessonsIn) {
     if (!p.after || !names.has(String(p.after))) err(`${tag}: after: names no lesson of ${set.course} (${p.after})`);
     const ms = Array.isArray(p.milestones) ? p.milestones : [];
     if (ms.length < 2 || ms.length > 4) err(`${tag} needs 2 to 4 milestones (it has ${ms.length})`);
+    if ((p.benchmark || []).length > 2) err(`${tag}: benchmark: has ${p.benchmark.length} pictures (2 at most)`);
+    for (const [i, b] of (p.benchmark || []).entries()) {
+      if (!b.file || b.code == null) err(`${tag}: benchmark ${i + 1}: file "${b.file}" is not in ${set.course}/projects/`);
+      if (!b.caption) err(`${tag}: benchmark ${i + 1} needs a caption`);
+      if (b.code != null && /<script\b/i.test(b.code)) err(`${tag}: benchmark ${i + 1}: a benchmark page is a picture of a finished state: no <script>`);
+    }
     for (const [i, m] of (p.msx || []).entries()) {
       if (!m.text) err(`${tag}: milestone ${i + 1} has no text`);
       if ((m.hints || []).length > 3) err(`${tag}: milestone ${i + 1} has ${m.hints.length} hints (3 at most)`);

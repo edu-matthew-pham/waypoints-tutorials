@@ -29,6 +29,7 @@ export const PROJECT_CSS = `
 .pjhbtn{font:inherit;font-size:13.5px;margin:4px 8px 0 30px;padding:2px 10px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--accent);cursor:pointer}.pjhbtn[hidden]{display:none}.pjhbtn[disabled]{opacity:.5;cursor:default;color:var(--muted)}
 .pjway{margin:6px 0 0 30px}.pjway[hidden]{display:none}.pjway pre{margin:4px 0;padding:8px 12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:auto;font-size:13.5px}
 .pjway small{color:var(--muted)}
+.pjbenchrow{display:flex;flex-wrap:wrap;gap:16px}.pjbenchrow figure{margin:0;flex:1 1 260px;max-width:360px}.pjbenchrow img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}.pjbenchrow figcaption{font-size:13.5px;color:var(--muted);margin-top:4px}
 .pjbadge{border:2px solid var(--accent);border-radius:16px;padding:16px 20px;margin:16px 0;background:color-mix(in srgb,var(--accent) 6%,var(--card))}
 .pjbadge h2{margin:0 0 4px;font-size:1.25rem}.pjbadge .pjstar{color:var(--accent)}
 .pjpart h2{font-size:1.1rem;margin:22px 0 6px}
@@ -52,7 +53,7 @@ export function projectListBody({ esc, course, title, cards }) {
 }
 
 /** One brief. parts: [{ title, embed, uses: [{ id, label, href }] }]; pic: { src, w, h } | null. */
-export function projectPageBody({ esc, md, course, courseTitle, p, after, pic, parts, data }) {
+export function projectPageBody({ esc, md, course, courseTitle, p, after, pic, bench = [], parts, data }) {
   const ms = (p.msx || (p.milestones || []).map((text) => ({ text }))).map((m, i) => `<li><label><input type="checkbox" data-ms="${i}"><span>${esc(m.text)}</span></label>` +
     ((m.hints || []).length ? `<button type="button" class="pjhbtn" data-hint="${i}">Need a hint?</button><div class="pjhint" data-hints="${i}" aria-live="polite"></div>` : '') +
     (p.reveal === true && m.way ? `<button type="button" class="pjhbtn" data-way-btn="${i}" disabled>Show one way</button><div class="pjway" data-way="${i}" hidden><small>One way to do this step (yours can differ):</small><pre><code>${esc(m.way)}</code></pre></div>` : '') + `</li>`).join('');
@@ -61,6 +62,7 @@ export function projectPageBody({ esc, md, course, courseTitle, p, after, pic, p
   return `<header class="top"><a class="crumb" href="../">← ${esc(courseTitle)}: projects</a><h1>${esc(p.title)}</h1></header>` +
     `<div class="pjtop"><div><p class="pjafter">Open project · after ${esc(after)}</p><div class="pjgoal">${md(String(p.goal || ''))}</div></div>` +
     (pic ? `<figure><img src="${esc(pic.src)}" alt="One way it could look" width="${pic.w}" height="${pic.h}"><figcaption>One way it could look. Yours will be different.</figcaption></figure>` : '') + `</div>` +
+    (bench.length ? `<section class="pjbox pjbench"><h2>Ways it could look when it works</h2><p>These show a finished project at about the level to aim for. Yours will be different, and that is fine.</p><div class="pjbenchrow">${bench.map((b) => `<figure><img src="${esc(b.src)}" alt="${esc(b.caption)}" width="${b.w}" height="${b.h}" loading="lazy"><figcaption>${esc(b.caption)}</figcaption></figure>`).join('')}</div></section>` : '') +
     `<section class="pjbox"><h2>You'll use</h2><p>These light up when your code uses them. Click one to see where you learned it.</p>${skills}</section>` +
     parts.map((pt) => `<section class="pjpart">${parts.length > 1 ? `<h2>${esc(pt.title)}</h2>` : ''}${pt.embed}</section>`).join('') +
     `<section class="pjbox"><h2>Milestones</h2><p>Tick each one when it is true of your project. Nobody marks it: be honest with yourself.</p><ul class="pjms">${ms}</ul></section>` +

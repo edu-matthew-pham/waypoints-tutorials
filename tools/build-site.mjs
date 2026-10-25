@@ -605,6 +605,10 @@ function writeProjects(node, set) {
     const k = `${node.path}/${p.id}${p.parts.length > 1 ? `-${i + 1}` : ''}`, r = PROJPICS[k];
     return { src: `${from}_pictures/${r.mk ? 'makecode-out/projects' : 'projects'}/${k}.png?v=${r.hash || ''}`, w: Math.round(r.w / (r.div || 2)), h: Math.round(r.h / (r.div || 2)) };
   };
+  const benchOf = (p, from) => (p.benchmark || []).map((b, n) => {
+    const r = PROJPICS[`${node.path}/${p.id}-bench-${n + 1}`];
+    return r ? { src: `${from}_pictures/projects/${node.path}/${p.id}-bench-${n + 1}.png?v=${r.hash || ''}`, w: Math.round(r.w / (r.div || 2)), h: Math.round(r.h / (r.div || 2)), caption: b.caption } : null;
+  }).filter(Boolean);
   const mdp = new Marked();
   mkdirSync(join(OUT, pp), { recursive: true });
   const lup = '../'.repeat(pp.split('/').length);
@@ -625,7 +629,7 @@ function writeProjects(node, set) {
     const data = { key: `${node.path}/${p.id}`, id: p.id, milestones: p.milestones || [], hints: (p.msx || []).map((m) => m.hints || []), reveal: p.reveal === true, parts: parts.map(({ embed, title, ...rest }) => rest) };
     mkdirSync(join(OUT, dp), { recursive: true });
     writeFileSync(join(OUT, dp, 'index.html'), page(`${p.title}: a project`, `<style>${PROJECT_CSS}</style>` +
-      projectPageBody({ esc, md: (t) => mdp.parse(t), course: node.path, courseTitle: node.title, p, after: afterText(p), pic: picOf(p, dup), parts, data }),
+      projectPageBody({ esc, md: (t) => mdp.parse(t), course: node.path, courseTitle: node.title, p, after: afterText(p), pic: picOf(p, dup), bench: benchOf(p, dup), parts, data }),
       `<script type="module" src="${dup}project.js"></script>`, navFor(dp, 'course', node.path)));
   }
 }

@@ -65,6 +65,9 @@ projects:
         hints:
           - 'A button click on the page can send a line: microbit.send("word").'
           - "On the micro:bit, read the line that arrives and check it is your word before you reset the count."
+    benchmark:
+      - { file: counter-a.html, caption: "A plain counter that has counted 12 presses" }
+      - { file: counter-b.html, caption: "A door counter that turns red above 25" }
     reveal: true
     stretch:
       - "Turn the page red when the count passes a number you choose."
@@ -115,6 +118,9 @@ projects:
           line.textContent = name + " = " + number;
           document.querySelector("#log").append(line);
       - "I tried a different radio group on the sender and saw the packets stop, then put it back."
+    benchmark:
+      - { file: packets-a.html, caption: "A list of packets in the order they arrived" }
+      - { file: packets-b.html, caption: "The same list, coloured by name, with a count" }
     reveal: true
     stretch:
       - "Send two different names from the sender and colour them differently on the page."
@@ -162,6 +168,9 @@ projects:
           document.querySelector("#low").textContent = Math.min.apply(null, readings);
           document.querySelector("#high").textContent = Math.max.apply(null, readings);
       - "I logged something real and wrote one sentence about what the numbers showed."
+    benchmark:
+      - { file: logger-a.html, caption: "A logger showing readings, lowest and highest" }
+      - { file: logger-b.html, caption: "A logger used for a real question, with the average added" }
     reveal: true
     stretch:
       - "Show the average as well."
