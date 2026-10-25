@@ -6,6 +6,7 @@ uses: [AC9M7N07 n2]   # the "opposite way" idea from subtracting a negative
 title: Multiplying and dividing integers
 summary: a × b is a jumps of b from zero. A negative number of jumps goes the opposite way, so a negative times a negative is positive. Division undoes it with the same signs.
 language: maths
+connection: temperature-drop   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "A tank loses 3 litres an hour. Three hours ago, did it hold more water or less than now? Can a multiplication tell you?"
 app:
@@ -231,3 +232,48 @@ check: { type: board, text: "Set $a$ and $b$ so that both are negative and $a \\
 Find two negative numbers that multiply to 12. Then find another pair.
 
 Stretch: find three negative numbers that multiply to $-12$.
+
+## Make: an overnight drop, on paper
+
+```step
+stage: make
+insight: "Going back in time is a negative number of hours. The paper task makes them see why two negatives give the warmer morning temperature."
+hint: ["Going back 2 hours is −2 hours.", "The temperature changes by −2 °C for every hour forward."]
+check:
+  type: reasoning
+  paper: true
+  q: "On a clear winter night the temperature falls 2 °C every hour. It is 5 °C at 6 pm. What was the temperature at 4 pm, 2 hours earlier?"
+  steps:
+    - ["Change per hour: $-2$ °C. Going back 2 hours is $-2$ hours", "time going backwards is a negative number of hours"]
+    - ["Change in temperature: $-2 \\times (-2) = +4$ °C", "a negative times a negative is positive"]
+    - ["Temperature at 4 pm: $5 + 4 = 9$ °C", "start from the 6 pm temperature"]
+    - ["Check: from 9 °C, two hours of falling 2 °C gives $9 - 4 = 5$ °C at 6 pm", "running it forward gets back to the start"]
+  picks:
+    - step: 2
+      q: "Why is the change $+4$, not $-4$?"
+      options:
+        - "Two negatives multiply to a positive: going back in time reverses a fall"
+        - "Going back in time makes it colder, so the change is negative"
+        - "The temperature falls 2 °C an hour, so every change is negative"
+      answer: 0
+      feedback: [null, "Earlier in the evening it was warmer, not colder. A fall run backwards is a rise.", "That is true going forward. Going back 2 hours reverses it."]
+  answer: "9"
+  answerLabel: "Temperature at 4 pm (°C)"
+  tolerance: 0
+  feedback:
+    - ["1", "That is 5 − 4. At 4 pm it was warmer than at 6 pm, so add the 4."]
+    - ["4", "That is the change, +4. The question asks for the temperature, which starts from 5."]
+  criteria:
+    - "I wrote the time going back as a negative number of hours."
+    - "I got +4 from −2 × (−2) and said why the sign is positive."
+    - "I checked by running 9 °C forward two hours."
+  explain: "−2 × (−2) = +4, so the temperature at 4 pm was 5 + 4 = 9 °C. Forward from 9 °C, two hours of falling 2 °C gives 5 °C. Real cooling slows down later in the night, so the model suits a steady fall."
+```
+
+Do this one in your book, not on the screen. The 5 °C is made up for the task, but weather apps and farmers work back from a steady fall like this. Write the time as a signed number, multiply, add to the start, and type the temperature.
+
+**Also used in**
+
+- **Overnight cooling.** A steady fall of 2 °C an hour puts a clear night at about 5 °C by 10 pm if it starts from 13 °C at 6 pm.
+- **Bank accounts.** A steady loss of \$30 a week, taken back three weeks, is −30 × (−3) = +90.
+- **Tanks.** A tank losing 3 L an hour held 9 L more than it does now, 3 hours ago.

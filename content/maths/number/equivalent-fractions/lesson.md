@@ -236,7 +236,7 @@ hint: ["What is the biggest number that goes into both 8 and 12?", "Divide the t
 check:
   type: reasoning
   paper: true
-  q: "A pizza is cut into 12 equal slices and 8 slices are eaten. What fraction of the pizza was eaten, in simplest form?"
+  q: "A pizza is cut into 12 equal slices and 8 slices are eaten. Write the fraction eaten in simplest form. What is its bottom number?"
   steps:
     - ["$\\tfrac{8}{12}$ of the pizza was eaten", "8 of the 12 equal slices"]
     - ["The highest common factor of 8 and 12 is $4$", "4 is the biggest number that divides both"]
@@ -251,11 +251,10 @@ check:
         - "Any number works, as long as you subtract it from the top and the bottom"
       answer: 0
       feedback: [null, "The difference has nothing to do with it. Look for a number that divides both.", "Subtracting changes the amount: 8 − 2 = 6 over 12 − 2 = 10 is a different fraction. Divide, don't subtract."]
-  answer: "2/3"
-  form: simplest
+  answer: 3
   feedback:
-    - ["8/12", "That is the same amount, but it is not the simplest form. Divide the top and the bottom by 4."]
-    - ["4/6", "That is equal, but it simplifies again: divide the top and the bottom by 2."]
+    - [12, "That is the bottom of 8/12, which is not in simplest form yet. Divide the top and the bottom by 4."]
+    - [6, "That is the bottom of 4/6, which still simplifies: divide the top and the bottom by 2."]
   criteria:
     - "I wrote the fraction first, 8 out of 12."
     - "I divided the top and the bottom by the same number."

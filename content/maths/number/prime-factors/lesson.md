@@ -204,3 +204,43 @@ check: { type: board, text: "Grow a tree for 360, starting with any factor pair 
 ```
 
 Then compare with someone who started differently. Check by expanding: $8 \times 9 \times 5$.
+
+## Make: a tree for 504, on paper
+
+```step
+stage: make
+insight: "A tree is finished only when every branch is prime. The paper task makes them keep going past 63 and 8, and pick why they cannot stop there."
+hint: ["Start with 8 × 63.", "Can 63 or 8 be split again?"]
+check:
+  type: reasoning
+  paper: true
+  q: "Grow a factor tree for 504 on paper. What is the largest prime in its prime factorisation?"
+  steps:
+    - ["$504 = 8 \\times 63$", "any factor pair is a fine start"]
+    - ["$8 = 2 \\times 2 \\times 2$ and $63 = 9 \\times 7 = 3 \\times 3 \\times 7$", "keep splitting until every branch is prime"]
+    - ["$504 = 2^3 \\times 3^2 \\times 7$", "collect the primes with exponents"]
+    - ["Check: $8 \\times 9 \\times 7 = 504$, and the largest prime is $7$", "expanding gets back to the number"]
+  picks:
+    - step: 2
+      q: "Why can you not stop at $8 \\times 63$?"
+      options:
+        - "Neither 8 nor 63 is prime, so each has to be split again"
+        - "Because a tree must always have at least three branches"
+        - "Because the numbers must be written smallest first"
+      answer: 0
+      feedback: [null, "Trees can have any number of branches. What matters is that each end is prime.", "The order does not matter for being finished. What matters is that every end is prime."]
+  answer: "7"
+  answerLabel: "Largest prime in the factorisation"
+  tolerance: 0
+  feedback:
+    - ["63", "63 is not prime: it is 9 × 7. Keep splitting."]
+    - ["9", "9 is not prime: it is 3 × 3. Keep splitting."]
+    - ["504", "That is the number you started with. Which prime is biggest at the ends of the tree?"]
+  criteria:
+    - "Every end of my tree is a prime, and I checked each one."
+    - "I wrote the answer with exponents: 2³ × 3² × 7."
+    - "I expanded 8 × 9 × 7 to check I got back to 504."
+  explain: "504 = 8 × 63 = 2 × 2 × 2 × 3 × 3 × 7 = 2³ × 3² × 7. The primes are 2, 3 and 7, so the largest is 7. Check: 8 × 9 × 7 = 504."
+```
+
+Do this one in your book, not on the screen. Draw the tree, keep splitting until every end is prime, and write the factorisation with exponents. Then type the largest prime.

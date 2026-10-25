@@ -6,6 +6,7 @@ uses: [AC9M8M05 n2, AC9M7M06 n1]
 title: Ratio and rate models
 summary: "Model a practical problem: say what you need, decide whether it is a ratio (parts of the same kind, like cordial to water) or a rate (two different units, like m² per litre), set it up, solve, then interpret the answer in the situation, such as rounding up to whole tins."
 language: maths
+connection: electricity-plan   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "Painting a room, mixing cordial for a party, filling a pool, sharing the cost of a gift: the maths is easy once you choose the right model and remember what the answer means."
 app:
@@ -198,3 +199,48 @@ check: { type: board, text: "A 42 m² fence needs two coats. Paint covers 12 m²
 ```
 
 Then say how many 4 L tins to buy, and why.
+
+## Make: two electricity plans, on paper
+
+```step
+stage: make
+insight: "Each plan is a rate model: a charge per day plus a rate per kWh, with the household's real usage. The paper task makes them build both and compare the same period."
+hint: ["Work out each plan's cost for one day first.", "Then scale the difference to 90 days."]
+check:
+  type: reasoning
+  paper: true
+  q: "Plan A charges \\$1.00 a day plus \\$0.30 per kWh. Plan B charges \\$1.40 a day plus \\$0.24 per kWh. A household uses 12 kWh a day. How many dollars cheaper is the cheaper plan over a 90-day bill?"
+  steps:
+    - ["Plan A per day: $1.00 + 12 \\times 0.30 = 1.00 + 3.60 = 4.60$", "the daily charge plus the rate times the kWh used"]
+    - ["Plan B per day: $1.40 + 12 \\times 0.24 = 1.40 + 2.88 = 4.28$", "the same calculation with Plan B's numbers"]
+    - ["B is cheaper by $4.60 - 4.28 = 0.32$ dollars a day", "compare the two costs for the same day"]
+    - ["Over 90 days: $0.32 \\times 90 = 28.80$ dollars", "scale the daily difference to the whole bill"]
+  picks:
+    - step: 1
+      q: "What goes into each plan's cost for a day?"
+      options:
+        - "The daily charge, plus the rate per kWh times the kWh used"
+        - "Only the rate per kWh, because it is the bigger part"
+        - "Only the daily charge, because it is paid every day"
+      answer: 0
+      feedback: [null, "The daily charge is paid whatever you use, so it belongs in the cost. Plan B's rate is lower but its charge is higher.", "The kWh rate also matters: it is paid for every unit you use."]
+  answer: "28.80"
+  answerLabel: "Saving with the cheaper plan over 90 days ($)"
+  tolerance: 0.01
+  feedback:
+    - ["0.32", "That is the saving for one day. The bill is 90 days."]
+    - ["385.2", "That is Plan B's whole bill. The question asks how much cheaper it is than Plan A."]
+  criteria:
+    - "I included the daily charge and the usage cost for both plans."
+    - "I compared the plans over the same period."
+    - "I said which plan is cheaper for this household, and that a different usage could change that."
+  explain: "A costs \\$4.60 a day and B costs \\$4.28 a day, so B is \\$0.32 a day cheaper: \\$28.80 over 90 days. The household's usage matters: at very low usage, Plan A's smaller daily charge would win."
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, but every household can compare plans like this from a real bill, which shows the daily usage. Work out each plan for one day, find the difference, scale it to 90 days, and type the saving.
+
+**Also used in**
+
+- **Phone and internet plans.** A monthly fee plus a price per gigabyte is the same fixed-plus-rate model.
+- **Bike and car hire.** A fixed fee plus a rate per hour or per kilometre, compared for the trip you really take.
+- **Paint and fuel.** Coverage per litre and litres per 100 km turn a job's size into the amount you need.

@@ -6,6 +6,7 @@ uses: [AC9M7N01 n1]   # squares as a first power (Squares and square roots)
 title: Powers
 summary: "2 × 2 × 2 × 2 is written 2⁴: the base 2 is multiplied by itself, and the exponent 4 counts how many times. 2⁴ = 16, not 8."
 language: maths
+connection: paper-fold   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "Fold a sheet of paper in half, then again, and again. How many layers after 7 folds? There is a short way to write the answer."
 app:
@@ -217,3 +218,48 @@ check: { type: board, text: "Grow a tree for 64.", when: "c = 1", explain: "64 =
 ```
 
 Then write 64 as a power of 2, a power of 4 and a power of 8.
+
+## Make: folding paper, on paper
+
+```step
+stage: make
+insight: "Layers double with each fold, so after n folds there are 2 to the power n. The paper task makes them choose the exponent as a count, not a multiplier."
+hint: ["Each fold doubles the layers: 1, 2, 4, 8, …", "How many 2s are multiplied after 9 folds?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A sheet of paper is folded in half 9 times (as a thought experiment: real paper would not let you). How many layers are in the stack?"
+  steps:
+    - ["Each fold doubles the layers, so 9 folds multiply by 2 nine times", "doubling is multiplying by 2"]
+    - ["Layers $= 2^9$", "the exponent counts the 2s"]
+    - ["$2 \\times 2 = 4$, $8$, $16$, $32$, $64$, $128$, $256$, $512$", "multiply one 2 at a time"]
+    - ["$2^9 = 512$ layers", "check: $2^7 = 128$ and $128 \\times 2 \\times 2 = 512$"]
+  picks:
+    - step: 2
+      q: "Why is the number of layers 2⁹ and not 2 × 9?"
+      options:
+        - "Each fold multiplies the layers by 2, nine times: nine 2s multiplied"
+        - "Each fold adds 2 layers, nine times"
+        - "The exponent is the number of layers"
+      answer: 0
+      feedback: [null, "Folding doubles the stack. Adding 2 would give 2 × 9 = 18, far too few.", "The exponent counts the folds, which is how many 2s are multiplied."]
+  answer: "512"
+  answerLabel: "Layers after 9 folds"
+  tolerance: 0
+  feedback:
+    - ["18", "That is 2 × 9. The exponent counts how many 2s are multiplied, it does not multiply the base."]
+    - ["81", "That is 9². The base is 2, the number of folds is the exponent."]
+  criteria:
+    - "I wrote the layers as a power of 2 with the number of folds as the exponent."
+    - "I multiplied one 2 at a time, not 2 × 9."
+    - "I checked against 2⁷ = 128 from the lesson's hook."
+  explain: "2⁹ = 512. After 7 folds there are 128 layers, and two more folds make 128 × 2 × 2 = 512. In real life the paper's thickness and stiffness stop you long before 9 folds."
+```
+
+Do this one in your book, not on the screen. The nine folds are a thought experiment, but you can fold a real sheet and count the layers up to about six or seven. Write the power, work it out one 2 at a time, and type the layers.
+
+**Also used in**
+
+- **Paper.** Fold a real sheet and count: 2, 4, 8, 16 layers, with a power of 2 each time.
+- **Phone chains.** If everyone texts two people, the number of people reached doubles at each step.
+- **Computers.** Each extra bit doubles the patterns, so 8 bits give $2^8 = 256$.

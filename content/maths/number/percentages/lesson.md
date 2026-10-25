@@ -6,6 +6,7 @@ uses: [AC9M7N04 n2, AC9M7N06 n2]   # percentages as decimals; multiplying by a f
 title: Percentages of amounts
 summary: "15% of $80 is 0.15 × 80 = $12. Take it off for a discount ($68, or 80 × 0.85 in one step), add it on for an increase ($92, or 80 × 1.15). And 18 out of 24 is 18 ÷ 24 = 75%."
 language: maths
+connection: stacked-discount   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "The sign says 30% off. Before you reach the counter, how can you work out what you will pay?"
 app:
@@ -226,3 +227,49 @@ check: { type: board, text: "Set a price and a discount that save exactly $15.",
 ```
 
 Then find the pair with the lowest sale price.
+
+## Make: two discounts, on paper
+
+```step
+stage: make
+insight: "A second discount is a percentage of the new price. The paper task makes them find the price in two steps and say what the 10% is of."
+hint: ["Find the price after the first discount.", "What is the second 10% taken from?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A \\$150 jacket is on sale for 20% off. At the register a coupon takes a further 10% off the sale price. What do you pay, in dollars?"
+  steps:
+    - ["20% off leaves 80%: $150 \\times 0.8 = 120$", "keep what is left after the first discount"]
+    - ["The coupon is 10% of \\$120, not of \\$150", "the second discount is taken from the new price"]
+    - ["$120 \\times 0.9 = 108$ dollars", "10% off leaves 90%"]
+    - ["Check: $150 \\times 0.8 \\times 0.9 = 150 \\times 0.72 = 108$, so it is 28% off, not 30%", "the two discounts do not add"]
+  picks:
+    - step: 2
+      q: "What is the coupon's 10% taken of?"
+      options:
+        - "The sale price, \\$120"
+        - "The original price, \\$150"
+        - "The 20% already taken off"
+      answer: 0
+      feedback: [null, "The coupon is used at the register, after the first discount. It takes 10% of what you would otherwise pay.", "The 20% is a percentage, not an amount to take 10% of."]
+  answer: "108"
+  answerLabel: "Price paid ($)"
+  tolerance: 0
+  feedback:
+    - ["105", "That takes 30% off \\$150. The second 10% is of \\$120, so it is smaller than \\$15."]
+    - ["120", "That is the price after the first discount only. Now take 10% off it."]
+    - ["12", "That is 10% of \\$120, the coupon's saving. The question asks what you pay."]
+  criteria:
+    - "I took the second 10% off the sale price, not the original."
+    - "I kept what is left each time (× 0.8, then × 0.9)."
+    - "I could say why it is not 30% off."
+  explain: "150 × 0.8 = 120, then 120 × 0.9 = 108. Together that is 28% off: \\$42 saved, not \\$45. The price is made up for the task, but shops stack discounts like this."
+```
+
+Do this one in your book, not on the screen. The price is made up for the task, but 'a further 10% off at the register' is a real sign. Find each price in turn, check with one multiplier, and type what you pay.
+
+**Also used in**
+
+- **Sales.** The same two-step shows that 20% off then 10% off is 28% off in all.
+- **Was-prices.** A tag says \$48 after 20% off. The original was $48 \div 0.8 = \$60$, because \$48 is the 80% that is left.
+- **Savings.** A phone plan that rises 10% a year costs 1.1 times as much each year.

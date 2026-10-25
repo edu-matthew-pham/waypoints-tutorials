@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Sam what 10% of $220 is."
   - "Modify: ask whether two 20% discounts are better or worse for the shopper than one of 40%."
   - "Make: ask why the order does not matter (multiplying in either order)."
+  - "Paper: the GST task is worked in books; the page marks the answer ($300) and why it is ÷ 1.1, not 10% off. Books out, then look for the multiplier 1.1 written down."
 stuck:
   - see: "A student takes the second percentage of the original."
     ask: "What is the price just before the second change?"

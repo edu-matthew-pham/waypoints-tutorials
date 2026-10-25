@@ -18,6 +18,7 @@ running:
   - "Investigate: ask Ana whether 2 tins are enough."
   - "Modify: ask which of the problems were ratios."
   - "Make: ask how many 4 L tins, and what is left over."
+  - "Paper: the electricity-plan task is worked in books; the page marks the answer ($28.80) and what goes into each plan's daily cost. Books out, then ask which plan wins at much lower usage."
 stuck:
   - see: "A student multiplies area by coverage."
     ask: "What units would that give?"

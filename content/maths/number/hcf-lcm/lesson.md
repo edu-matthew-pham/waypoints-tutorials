@@ -5,6 +5,7 @@ node: AC9M7N02 n3
 title: HCF and LCM
 summary: "Put two prime factorisations side by side. The primes they share multiply to the highest common factor; all the primes (shared ones once) multiply to the lowest common multiple."
 language: maths
+connection: sizzle-packs   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "One bus leaves every 12 minutes, another every 18. Both leave at 8:00. When do they next leave together? Primes answer it without listing every time."
 app:
@@ -246,3 +247,47 @@ check:
 ```
 
 Check: grow trees for your two numbers on paper and compare their primes.
+
+## Make: a sausage sizzle on paper
+
+```step
+stage: make
+insight: "A real buying question needs the LCM, not the product; the paper task makes them choose it and say why."
+hint: ["Write 12 and 20 as primes first.", "Count the shared 2 × 2 once."]
+check:
+  type: reasoning
+  paper: true
+  q: "For the fundraiser sausage sizzle, sausages come in packs of 12 and bread in loaves of 20 slices. You want exactly as many sausages as slices, with none left over, and as few packs as possible. How many packs of sausages do you buy?"
+  steps:
+    - ["$12 = 2^2 \\times 3$ and $20 = 2^2 \\times 5$", "prime factorisations"]
+    - ["The totals must be equal, so I need a common multiple of 12 and 20", "packs of 12 and loaves of 20 both have to reach the same number"]
+    - ["LCM $= 2^2 \\times 3 \\times 5 = 60$", "all the primes, the shared $2^2$ once"]
+    - ["$60 \\div 12 = 5$ packs, and $60 \\div 20 = 3$ loaves", "5 × 12 = 60 = 3 × 20"]
+  picks:
+    - step: 3
+      q: "Which do you need here?"
+      options:
+        - "The LCM: the smallest total both pack sizes reach"
+        - "The HCF: the biggest number that divides both"
+        - "12 × 20 = 240"
+      answer: 0
+      feedback: [null, "The HCF is 4. You would be buying fewer than one pack.", "240 works, but it is a lot more than you need. Is there a smaller total both reach?"]
+  answer: "5"
+  feedback:
+    - ["60", "That is the number of sausages. How many packs make 60?"]
+    - ["3", "That is the loaves. The question asks for packs of sausages."]
+    - ["20", "That is the slices in a loaf. Divide the total by 12."]
+  criteria:
+    - "I wrote 12 and 20 as primes and counted the shared 2 × 2 once."
+    - "I found 60 and checked that 5 × 12 and 3 × 20 both make it."
+    - "I said why this is an LCM question, not an HCF one."
+  explain: "The LCM of 12 and 20 is 60. That is 5 packs of 12 and 3 loaves of 20. The product 240 also works but is four times too many."
+```
+
+Do this one in your book, not on the screen. The pack sizes are made up for the task, but schools sort out this kind of buying every fundraiser. Write the primes first, then work out the packs, and type your answer.
+
+**Also used in**
+
+- **Timetables.** Two buses that leave every 12 and 18 minutes meet again at the LCM, 36 minutes.
+- **Cutting.** A 120 cm by 80 cm sheet cut into equal squares with no waste uses the HCF, 40 cm.
+- **Fractions.** The lowest common denominator of two fractions is the LCM of their denominators.

@@ -6,6 +6,7 @@ uses: [AC9M7N08 n3, AC9M7N09 n3]   # sharing a total in a ratio; modelling with 
 title: Modelling with ratios
 summary: "Mixes, scale drawings and models: say what is known and unknown, choose the ratio, solve, and answer in the units of the situation."
 language: maths
+connection: recipe-scaling   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "A gardener mixes potting soil as 2 parts compost to 3 parts sand. She needs 40 litres of mix. How much of each does she need to buy?"
 app:
@@ -47,6 +48,8 @@ check:
   options: ["15 L", "60 L", "10 L", "6.7 L"]
   actual: "15 L. 1 + 3 = 4 parts, each 5 L, and sand is 3 parts. 60 L multiplies the total by 3; 6.7 L divides it by 3."
 ```
+
+<figure class="situation" role="img" aria-label="A bar for 20 litres of mortar cut into four equal parts. The first part is labelled cement and the other three parts together are labelled sand, with a question mark for how many litres of sand."><svg viewBox="0 0 400 130" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="20" y="40" width="90" height="50" fill="#BA7517" fill-opacity="0.3" stroke="#854F0B" stroke-width="1.5"/><rect x="110" y="40" width="270" height="50" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="1.5"/><path d="M200 40 V90 M290 40 V90" stroke="#0F6E56"/><text x="65" y="70" text-anchor="middle" fill="currentColor" stroke="none">cement</text><text x="245" y="70" text-anchor="middle" fill="currentColor" stroke="none">sand: ? litres</text><text x="200" y="28" text-anchor="middle" fill="currentColor" stroke="none">20 litres of mortar, cement : sand = 1 : 3</text><text x="65" y="112" text-anchor="middle" fill="currentColor" stroke="none" font-size="12">1 part</text><text x="245" y="112" text-anchor="middle" fill="currentColor" stroke="none" font-size="12">3 parts</text></svg></figure>
 
 Is the sand more or less than half of the mix? How do you know?
 
@@ -207,3 +210,49 @@ check: { type: board, text: "Design a mix: choose a ratio and a total so that th
 ```
 
 Then write what is known, what is unknown, and a check that your two amounts add to the total, with units.
+
+## Make: cooking for the camp, on paper
+
+```step
+stage: make
+insight: "Scaling a recipe is a ratio model: every ingredient grows by the same factor. The paper task makes them find it and say what does not scale."
+hint: ["The recipe serves 4 and the camp needs 30.", "Find the factor first, then use it on the rice."]
+check:
+  type: reasoning
+  paper: true
+  q: "A recipe serves 4 and uses 300 g of rice. The camp needs 30 serves. How many kilograms of rice are needed?"
+  steps:
+    - ["Serves go from 4 to 30, a factor of $30 \\div 4 = 7.5$", "the ratio 30 : 4 is the scale factor"]
+    - ["Every ingredient is scaled by the same factor 7.5", "keep the recipe's ratios the same"]
+    - ["Rice: $300 \\times 7.5 = 2250$ g", "scale the amount in grams"]
+    - ["$2250 \\text{ g} = 2.25$ kg", "give the answer in the unit the question asks for"]
+  picks:
+    - step: 2
+      q: "Why scale every ingredient by 7.5?"
+      options:
+        - "The taste stays the same only if all the amounts stay in the same ratio"
+        - "Because 7.5 is the number of cooks"
+        - "Because bigger pots need more of everything, including cooking time"
+      answer: 0
+      feedback: [null, "7.5 is the factor from 4 serves to 30 serves, not a number of people.", "Cooking time and pan size do not scale in the same ratio. The amounts of food do."]
+  answer: "2.25"
+  answerLabel: "Rice needed (kg)"
+  tolerance: 0.01
+  feedback:
+    - ["2250", "That is in grams. The question asks for kilograms."]
+    - ["300", "That is the rice for 4 serves. Scale it up."]
+    - ["1.2", "That is 300 g × 4 serves ÷ 1000. You need to scale to 30 serves."]
+  criteria:
+    - "I found the scale factor 30 ÷ 4 before using it."
+    - "I used the same factor on the rice, and my answer is in kg."
+    - "I said that cooking time and pan size do not scale by the same factor."
+  explain: "30 ÷ 4 = 7.5, and 300 g × 7.5 = 2250 g = 2.25 kg. Amounts scale by the ratio, but cooking time and seasoning do not, so a caterer tastes and adjusts."
+```
+
+Do this one in your book, not on the screen. The recipe is made up for the task, but camp cooks and caterers scale recipes like this every time. Find the scale factor, scale the rice, change grams to kilograms, and type the answer.
+
+**Also used in**
+
+- **Murals.** A test colour mixed 2 parts blue to 3 parts white becomes 4 L blue and 6 L white when 10 L is needed.
+- **Maps and models.** A scale such as 1 : 50 is a ratio you apply to every length the same way.
+- **Garden and building mixes.** Mortar, potting mix and fertiliser are all parts of a total.

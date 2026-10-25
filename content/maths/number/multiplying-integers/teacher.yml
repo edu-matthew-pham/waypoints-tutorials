@@ -5,6 +5,7 @@ goals:
   - I can multiply and divide integers, including two negatives.
   - I can explain why a negative times a negative is positive, from a pattern or the number line.
   - I can tell the rule for multiplying apart from the rule for adding negatives.
+struggle: "Believing two negatives make a bigger negative, as they do when adding. Before any calculation, ask for the sign of the answer: same signs or different signs?"
 before: |
   Do the Run board yourself first. Students need Adding and subtracting integers (subtracting goes the opposite way), which this lesson echoes: a negative number of jumps goes the opposite way.
 
@@ -20,6 +21,7 @@ running:
   - "Modify: each task changes one sign. Ask for the sign before the number."
   - "Practise: (−1)³ is a stretch for some; let them multiply two at a time."
   - "Make: collect pairs. Ask: could one of them be positive? (Then the product would be negative.)"
+  - "Paper: the overnight-drop task is worked in books; the page marks the answer (9 °C) and why −2 × (−2) is positive. Books out, then look for the time written as a negative number of hours."
 stuck:
   - see: "A student says −4 × (−3) = −12 (Kai's mistake)."
     ask: "What is −4 + (−3)? Is multiplying the same as adding?"

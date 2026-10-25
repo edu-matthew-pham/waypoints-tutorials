@@ -6,6 +6,7 @@ uses: [AC9M7N06 n3, AC9M7N09 n1]
 title: Percentage change
 summary: "An increase of p% multiplies by (1 + p/100); a decrease multiplies by (1 − p/100). One change after another means multiplying the multipliers, so up 20% then down 20% is × 1.2 × 0.8 = × 0.96: a 4% fall overall, not back to the start."
 language: maths
+connection: gst-price   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "A shop puts a price up 30% in March and has a 30% sale in April. The sign says 'back to the old price'. Is it?"
 app:
@@ -204,3 +205,49 @@ check: { type: board, text: "Find two changes that make an overall decrease of e
 ```
 
 Then explain why the order of the two changes does not matter to the final price.
+
+## Make: taking the GST off, on paper
+
+```step
+stage: make
+insight: "Undoing a percentage increase divides by the multiplier. The paper task makes them choose ÷ 1.1 over '10% off', and say why."
+hint: ["Adding GST multiplies by 1.1.", "Undo a multiplication by dividing."]
+check:
+  type: reasoning
+  paper: true
+  q: "A sticker on a tool says \\$330 including GST. GST is 10% of the price before GST. What was the price before GST, in dollars?"
+  steps:
+    - ["Adding GST is $\\times 1.1$", "an increase of 10% multiplies by 1.1"]
+    - ["The sticker price is $1.1 \\times$ the price before GST", "\\$330 is the result of that multiplication"]
+    - ["Price before GST $= 330 \\div 1.1 = 300$", "undo the multiplication by dividing"]
+    - ["Check: $300 \\times 1.1 = 330$, and the GST is $330 - 300 = 30$", "adding GST to \\$300 gets back to the sticker"]
+  picks:
+    - step: 3
+      q: "Why divide by 1.1, and not take 10% off \\$330?"
+      options:
+        - "The 10% was added to the price before GST, so it is 10% of \\$300, not of \\$330"
+        - "Taking 10% off always gives the wrong answer"
+        - "Dividing is the same as taking off 10%"
+      answer: 0
+      feedback: [null, "Taking 10% off is right in some questions. Here the 10% was worked out on a different amount.", "10% off \\$330 is \\$297. Dividing by 1.1 gives \\$300. They are not the same."]
+  answer: "300"
+  answerLabel: "Price before GST ($)"
+  tolerance: 0
+  feedback:
+    - ["297", "That takes 10% of \\$330. The GST was 10% of the smaller price before GST. Divide by 1.1."]
+    - ["363", "That adds GST to a price that already has it. Undo it: divide by 1.1."]
+    - ["30", "That is the GST. The question asks for the price before GST."]
+  criteria:
+    - "I wrote the GST as a multiplier of 1.1."
+    - "I divided by 1.1 and did not take 10% off \\$330."
+    - "I checked that \\$300 × 1.1 = \\$330."
+  explain: "330 ÷ 1.1 = 300. The GST is \\$30. Taking 10% off \\$330 gives \\$297, which is wrong, because the 10% was worked out on \\$300."
+```
+
+Do this one in your book, not on the screen. The price is made up for the task, but receipts show the GST line and people do work backwards from the sticker. Write the multiplier, undo it, check by multiplying forward, and type the price before GST.
+
+**Also used in**
+
+- **Quotes.** A tradesperson's \$250 plus GST is $250 \times 1.1 = \$275$ to pay.
+- **Sales.** 20% off then a further 10% off is $0.8 \times 0.9 = 0.72$: 28% off, not 30%.
+- **Wages and rents.** A rise of 4% a year is a multiplier of 1.04 applied again each year.

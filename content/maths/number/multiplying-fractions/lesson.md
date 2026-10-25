@@ -6,6 +6,7 @@ uses: [AC9M7N04 n1]   # simplifying fractions (Equivalent fractions)
 title: Multiplying and dividing fractions
 summary: "a/b × c/d is c/d of a/b: multiply the tops and multiply the bottoms. Multiplying by a fraction less than 1 makes a number smaller. Dividing asks how many fit: 3 ÷ 1/4 = 12."
 language: maths
+connection: bottle-fill   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "Three quarters of a pizza is left, and you eat half of what is left. How much of the whole pizza did you eat? Fractions of fractions are multiplications."
 app:
@@ -43,6 +44,8 @@ check:
   options: ["Smaller", "Bigger", "The same"]
   actual: "Smaller: 1/2 × 1/3 = 1/6, a third of a half. Multiplying by a number less than 1 takes only part."
 ```
+
+<figure class="situation" role="img" aria-label="A bar for one whole, with the left half shaded. The shaded half is cut into three equal parts, and one of those parts is marked with a question mark, to ask how much of the whole it is."><svg viewBox="0 0 400 130" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="20" y="40" width="360" height="50" stroke-width="1.5"/><rect x="20" y="40" width="180" height="50" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56" stroke-width="1.5"/><path d="M80 40 V90 M140 40 V90" stroke="#0F6E56"/><text x="40" y="70" fill="currentColor" stroke="none">?</text><text x="110" y="30" text-anchor="middle" fill="currentColor" stroke="none">half of the whole</text><text x="290" y="70" text-anchor="middle" fill="currentColor" stroke="none">not shaded</text><text x="200" y="115" text-anchor="middle" fill="currentColor" stroke="none">one third of the half is how much of the whole?</text></svg></figure>
 
 Think of it as $\tfrac{1}{3}$ of $\tfrac{1}{2}$.
 
@@ -228,3 +231,47 @@ check: { type: board, text: "Make the overlap exactly $\\tfrac{1}{4}$ of the squ
 ```
 
 Then find one where neither fraction has a 1 on top.
+
+## Make: filling bottles, on paper
+
+```step
+stage: make
+insight: "Dividing by a fraction asks how many fit. The paper task makes them choose to divide, expect a bigger answer, and check by multiplying back."
+hint: ["How many bottles of $\\tfrac{3}{4}$ L fit in 6 L?", "Dividing by a fraction less than 1 gives a bigger number."]
+check:
+  type: reasoning
+  paper: true
+  q: "A 6 L batch of homemade cordial goes into bottles that each hold $\\tfrac{3}{4}$ L. How many bottles can you fill?"
+  steps:
+    - ["I want how many $\\tfrac{3}{4}$ L fit into 6 L: $6 \\div \\tfrac{3}{4}$", "dividing counts how many fit"]
+    - ["$6 \\div \\tfrac{3}{4} = 6 \\times \\tfrac{4}{3}$", "divide by a fraction: multiply by it flipped"]
+    - ["$\\tfrac{24}{3} = 8$ bottles", "multiply the tops, then simplify"]
+    - ["Check: $8 \\times \\tfrac{3}{4} = 6$ L", "8 bottles of $\\tfrac{3}{4}$ L make the whole batch"]
+  picks:
+    - step: 1
+      q: "Why is this a division?"
+      options:
+        - "It asks how many bottles of $\\tfrac{3}{4}$ L fit into 6 L"
+        - "It asks for $\\tfrac{3}{4}$ of 6 L"
+        - "It asks for 6 L more than $\\tfrac{3}{4}$ L"
+      answer: 0
+      feedback: [null, "$\\tfrac{3}{4}$ of 6 L is 4.5 L, one amount, not a count of bottles.", "Nothing is being added. The question counts how many bottles fit."]
+  answer: "8"
+  answerLabel: "Bottles filled"
+  feedback:
+    - ["4.5", "That is $\\tfrac{3}{4}$ of 6. Each bottle holds less than a litre, so more than 6 bottles fit."]
+    - ["24", "That is $6 \\times 4$. You still need to divide by the 3 on the bottom of the flipped fraction."]
+  criteria:
+    - "I said I was counting how many bottles fit, so I divided."
+    - "I expected more than 6 bottles, because each holds less than 1 L."
+    - "I checked that 8 bottles of $\\tfrac{3}{4}$ L make 6 L."
+  explain: "6 ÷ 3/4 = 6 × 4/3 = 24/3 = 8 bottles. Check: 8 × 3/4 = 6 L. A real batch loses a little in the pot, so you might fill 7 and a bit."
+```
+
+Do this one in your book, not on the screen. The amounts are made up for the task, but a homemade drink or a school fete does face this. Say why it is a division, work it out, check by multiplying back, and type the number of bottles.
+
+**Also used in**
+
+- **Recipes.** A recipe for 4 that has to serve 30 multiplies every amount by a fraction or a whole number of the same ratio.
+- **Cutting.** How many $\tfrac{1}{8}$ m pieces of ribbon fit in a length is the same 'how many fit' division.
+- **Fuel and travel.** How many $\tfrac{3}{4}$-hour trips fit in a day uses the same division.

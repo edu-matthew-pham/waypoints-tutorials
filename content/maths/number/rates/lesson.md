@@ -6,6 +6,7 @@ uses: [AC9M7N08 n1]
 title: Rates
 summary: "A rate compares two quantities with different units: 60 km per hour, $4 per kg, 80 beats per minute. The unit rate is how much for 1 of the second quantity: divide the first by the second. A ratio compares quantities in the same units. Speeds convert with 1 km/h = 1000 m ÷ 3600 s."
 language: maths
+connection: unit-pricing   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "Speed limits, the price of petrol, your heart rate and how fast your phone downloads: all rates. Each one says 'this much per one of that'."
 app:
@@ -47,6 +48,8 @@ check:
   options: ["75 km", "300 km", "152 km", "2/150 km"]
   actual: "75 km: 150 ÷ 2 = 75. The car's speed is 75 km per hour."
 ```
+
+<figure class="situation" role="img" aria-label="Two number lines, one above the other. The top line is distance in kilometres, with 0 at the left and 150 at the right end, and a question mark in the middle. The bottom line is time in hours, with 0 at the left, 1 in the middle and 2 at the right end. Matching marks are joined by dashed lines."><svg viewBox="0 0 400 160" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M40 50 H340 M40 115 H340" stroke-width="1.5"/><path d="M40 42 V58 M190 42 V58 M340 42 V58 M40 107 V123 M190 107 V123 M340 107 V123" stroke-width="1.5"/><path d="M40 58 V107 M190 58 V107 M340 58 V107" stroke-dasharray="4 4" stroke="#0F6E56"/><text x="40" y="34" text-anchor="middle" fill="currentColor" stroke="none">0</text><text x="190" y="34" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="340" y="34" text-anchor="middle" fill="currentColor" stroke="none">150</text><text x="40" y="144" text-anchor="middle" fill="currentColor" stroke="none">0</text><text x="190" y="144" text-anchor="middle" fill="currentColor" stroke="none">1</text><text x="340" y="144" text-anchor="middle" fill="currentColor" stroke="none">2</text><text x="385" y="54" text-anchor="end" fill="currentColor" stroke="none" font-size="12">km</text><text x="385" y="119" text-anchor="end" fill="currentColor" stroke="none" font-size="12">hours</text></svg></figure>
 
 ## Run: set the rate
 
@@ -208,3 +211,49 @@ check: { type: board, text: "A drive covers 280 km in 3.5 hours at a steady spee
 ```
 
 Then give the speed in metres per second, to 1 decimal place.
+
+## Make: the better buy, on paper
+
+```step
+stage: make
+insight: "A fair comparison needs the same 'per'. The paper task makes them find a unit price for each pack and pick the right division."
+hint: ["Turn both packs into dollars per 100 g.", "Divide dollars by the number of 100 g lots."]
+check:
+  type: reasoning
+  paper: true
+  q: "Two packs of the same cereal: 500 g for \\$4.80, or 750 g for \\$6.60. What is the price per 100 g of the better value pack, in dollars?"
+  steps:
+    - ["500 g is five lots of 100 g: $4.80 \\div 5 = 0.96$ dollars per 100 g", "dollars divided by the number of 100 g lots"]
+    - ["750 g is 7.5 lots of 100 g: $6.60 \\div 7.5 = 0.88$ dollars per 100 g", "the same division for the bigger pack"]
+    - ["$0.88 < 0.96$, so the 750 g pack is cheaper per 100 g", "the lower unit price is the better value"]
+    - ["Check: $0.88 \\times 7.5 = 6.60$", "multiplying back gets the pack price"]
+  picks:
+    - step: 3
+      q: "Why compare the unit prices and not the pack prices?"
+      options:
+        - "The packs hold different amounts, so only the price per 100 g compares them fairly"
+        - "The cheaper pack price is always the better value"
+        - "The bigger pack is always the better value"
+      answer: 0
+      feedback: [null, "The \\$4.80 pack costs less but you get less cereal. Put both on the same 'per'.", "Not always: it depends on the prices. Work out the unit prices."]
+  answer: "0.88"
+  answerLabel: "Price per 100 g of the better pack ($)"
+  tolerance: 0.005
+  feedback:
+    - ["0.96", "That is the smaller pack's price per 100 g. Which pack is cheaper per 100 g?"]
+    - ["6.6", "That is the bigger pack's price, not the price per 100 g. Divide by 7.5."]
+    - ["1.14", "That is 7.5 ÷ 6.60 turned upside down. Dollars go first: 6.60 ÷ 7.5."]
+  criteria:
+    - "I put both packs on the same 'per' before comparing."
+    - "I divided dollars by the number of 100 g lots, not the other way round."
+    - "I said which pack is better value, and checked by multiplying back."
+  explain: "500 g pack: \\$4.80 ÷ 5 = \\$0.96 per 100 g. 750 g pack: \\$6.60 ÷ 7.5 = \\$0.88 per 100 g. The 750 g pack is better value, if you will finish it before it goes stale."
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, but supermarket shelf labels show the same unit price. Find a price per 100 g for each pack, compare, and type the lower price.
+
+**Also used in**
+
+- **Shelf labels.** The 'per 100 g' or 'per kg' price printed under each product is a unit rate worked out for you.
+- **Petrol.** Litres per 100 km tells you which car costs less to run, because every car is compared on the same distance.
+- **Heart rate.** Beats counted in 15 seconds become beats per minute by scaling to one minute.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Jay to split his income into parts."
   - "Modify: ask why time and a half is × 1.5."
   - "Make: ask what the model leaves out."
+  - "Paper: the first-job tax task is worked in books; the page marks the answer ($6120) and which part of the salary pays 30%. Books out, then look for the salary split into three parts."
 stuck:
   - see: "A student taxes the whole income at the top rate."
     ask: "Which part of the income is in the top bracket?"

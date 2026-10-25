@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Mia to say her rate in words."
   - "Modify: ask why the cheaper bag is not the better buy."
   - "Make: ask for the speed both ways."
+  - "Paper: the cereal task is worked in books; the page marks the answer ($0.88 per 100 g) and why only unit prices compare fairly. Books out, then look for dollars on top of the division and the same 'per' for both packs."
 stuck:
   - see: "A student divides the wrong way."
     ask: "What is it per? That goes second."

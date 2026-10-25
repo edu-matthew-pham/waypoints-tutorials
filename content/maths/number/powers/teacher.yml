@@ -18,6 +18,7 @@ running:
   - "Investigate: link 10³ to place value: thousands."
   - "Modify: for 2⁵ against 5², ask for a prediction before working them out."
   - "Make: collect the three names for 64 and ask for a fourth (64¹)."
+  - "Paper: the paper-folding task is worked in books; the page marks the answer (512) and why the exponent counts the folds. Books out, then look for a power of 2, not 2 × 9."
 stuck:
   - see: "A student multiplies base and exponent (Mia's mistake)."
     ask: "Write it the long way first. How many 2s?"

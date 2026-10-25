@@ -6,6 +6,7 @@ uses: [AC9M7N06 n3, AC9M7N08 n3]   # percentages of amounts (Percentages); shari
 title: Modelling with money
 summary: "Discounts, markups and profit: formulate the problem, choose fractions, percentages or ratios, solve, and say what the answer means in dollars."
 language: maths
+connection: fundraiser-track   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "A $120 jacket is 25% off, and then a coupon takes a further 20% off the new price. Is that the same as 45% off?"
 app:
@@ -204,3 +205,48 @@ check: { type: board, text: "Choose a price and a discount so the sale price is 
 ```
 
 Then write one sentence for a shopper explaining your sale.
+
+## Make: are we on track? On paper
+
+```step
+stage: make
+insight: "A fundraising goal is a model: what is left, over the time left. The paper task makes them choose the right time to divide by."
+hint: ["Work out what is still to raise.", "How many weeks are left, not gone?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A class has raised \\$380 of a \\$650 goal, with 3 of the 8 weeks to go. How many dollars a week must it raise from now to reach the goal?"
+  steps:
+    - ["Still to raise: $650 - 380 = 270$", "the goal minus what is already raised"]
+    - ["Weeks left: $8 - 5 = 3$", "5 weeks have gone, so 3 are left"]
+    - ["$270 \\div 3 = 90$ dollars a week", "what is left, shared over the time left"]
+    - ["So far the class raised $380 \\div 5 = 76$ a week, so it must speed up", "compare the pace so far with the pace needed"]
+  picks:
+    - step: 3
+      q: "What do you divide the \\$270 by?"
+      options:
+        - "The 3 weeks left, because the \\$270 is still to come"
+        - "The 8 weeks in all, because that is the whole fundraiser"
+        - "The 5 weeks gone, because that is when the money came in"
+      answer: 0
+      feedback: [null, "The \\$270 is raised in the weeks that are left, not in all 8.", "The 5 weeks have already happened. The \\$270 is raised in the weeks still to come."]
+  answer: "90"
+  answerLabel: "Dollars a week needed from now"
+  feedback:
+    - ["270", "That is the amount still to raise. Share it over the weeks left."]
+    - ["34", "That divides \\$270 by 8. Only 3 weeks are left."]
+    - ["54", "That divides \\$270 by 5, the weeks already gone. Divide by the weeks left."]
+  criteria:
+    - "I found what is still to raise before dividing."
+    - "I divided by the weeks left, not the weeks gone or the 8 in all."
+    - "I compared \\$90 a week with the \\$76 a week so far and said whether we are on track."
+  explain: "\\$650 − \\$380 = \\$270 still to raise, over 3 weeks: \\$90 a week. The class has been raising \\$76 a week, so it needs to speed up. The model assumes money comes in evenly, and real fundraisers often get most of it close to the event."
+```
+
+Do this one in your book, not on the screen. The figures are made up for the task, but a class really does ask this question halfway through a fundraiser. Work out what is left, how long is left, then the weekly amount, and type your answer.
+
+**Also used in**
+
+- **Savings goals.** The same model answers "how much a week must I save to afford it by my birthday?"
+- **Club budgets.** A club that needs a fixed amount by a date divides what is left by the time left.
+- **Sport.** A team chasing a target in the remaining overs or games uses what is left over the time left.

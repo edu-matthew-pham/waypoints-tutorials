@@ -18,6 +18,7 @@ running:
   - "Investigate: insist on checking by expanding every time."
   - "Modify: for 13, ask what a factor tree for a prime looks like."
   - "Make: compare the 360 trees across the room: different shapes, same primes."
+  - "Paper: the 504 tree is drawn in books; the page marks the answer (7) and why 8 × 63 is not the end. Books out, then look for every branch end being prime and the exponent form 2³ × 3² × 7."
 stuck:
   - see: "A student stops at 4 or 9 (Leo's mistake)."
     ask: "Is every circled number prime? Can 4 be split?"

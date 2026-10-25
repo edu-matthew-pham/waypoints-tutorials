@@ -6,6 +6,7 @@ uses: [AC9M8N05 n1]
 title: Money models
 summary: "Model a money problem by choosing what to calculate, then check the answer makes sense. Pay is the rate times the hours. Income tax is worked out in brackets: each part of the income is taxed at its own rate, so for incomes above $18 200 the rate on the last dollar (the marginal rate) is higher than the tax as a share of all the income (the effective rate)."
 language: maths
+connection: first-job-tax   # data/connections/maths.yml
 voice: { name: af_heart, speed: 1.1 }
 hook: "People sometimes turn down a pay rise because it 'puts them in a higher tax bracket'. Do they lose money? A tax model answers it."
 app:
@@ -211,3 +212,49 @@ check: { type: board, text: "Find an income (to the nearest $1000) that leaves a
 ```
 
 Then say whether your answer makes sense, and what the model leaves out.
+
+## Make: a first job's tax, on paper
+
+```step
+stage: make
+insight: "A first pay slip is tax in brackets. The paper task makes them split the salary into parts and pick which part pays the higher rate."
+hint: ["Split \\$52 000 at \\$18 200 and at \\$45 000.", "Only the part above \\$45 000 is taxed at 30%."]
+check:
+  type: reasoning
+  paper: true
+  q: "A first full-time job pays \\$52 000 a year. Using the rates in this lesson (no Medicare levy), how many dollars of income tax are taken in a year?"
+  steps:
+    - ["The first \\$18 200 is taxed at 0%", "the tax-free part"]
+    - ["$45 000 - 18 200 = 26 800$, and $26 800 \\times 0.15 = 4020$", "this part is taxed at 15%"]
+    - ["$52 000 - 45 000 = 7000$, and $7000 \\times 0.30 = 2100$", "only the part above \\$45 000 is taxed at 30%"]
+    - ["$4020 + 2100 = 6120$ dollars of tax, leaving \\$45 880", "add the parts, then take the tax from the salary"]
+  picks:
+    - step: 3
+      q: "How much of the \\$52 000 is taxed at 30%?"
+      options:
+        - "\\$7000: only the part above \\$45 000"
+        - "All \\$52 000, because the salary is in the 30% bracket"
+        - "\\$33 800: everything above the tax-free \\$18 200"
+      answer: 0
+      feedback: [null, "Each part is taxed at its own rate. The first \\$45 000 is not taxed at 30%.", "The part from \\$18 200 to \\$45 000 is taxed at 15%, not 30%."]
+  answer: "6120"
+  answerLabel: "Income tax for the year ($)"
+  tolerance: 0
+  feedback:
+    - ["15600", "That taxes the whole \\$52 000 at 30%. Only the part above \\$45 000 is taxed at 30%."]
+    - ["2100", "That is the tax on the top part only. Add the tax on the 15% part too."]
+    - ["45880", "That is what is left after tax. The question asks for the tax."]
+  criteria:
+    - "I split the salary into the three parts before multiplying."
+    - "I taxed only \\$7000 at 30% and left the first \\$18 200 untaxed."
+    - "I added the parts to get the tax, and took it from \\$52 000 for the take-home pay."
+  explain: "0 + \\$4020 + \\$2100 = \\$6120. That leaves \\$45 880 a year. A real pay slip also takes the Medicare levy, which this model leaves out, so check the ATO's calculator."
+```
+
+Do this one in your book, not on the screen. The salary is made up for the task, but everyone with a first job meets this question when they see how much pay is taken out. Split the salary into parts, tax each one, add them, and type the tax.
+
+**Also used in**
+
+- **Pay slips.** Casual and part-time pay takes tax out in the same brackets, using the rate and the hours worked.
+- **Pay rises.** The 'higher bracket' worry is answered by the marginal rate: only the extra dollars are taxed more.
+- **Budgets.** What is left after tax is the number a person plans their rent and saving from.
