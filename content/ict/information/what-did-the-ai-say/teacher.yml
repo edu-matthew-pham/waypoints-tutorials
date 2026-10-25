@@ -1,0 +1,45 @@
+summary: "Students treat an AI answer as a source with no author: they sort scripted replies into ones to check and ones to judge for themselves, choose an independent check, find the mistake of asking the AI to check itself, and open a named source rather than trusting it."
+time: 30
+timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 8 min · discussion and reflection 8 min"
+goals:
+  - I can explain why an AI answer is a source to check, not a check.
+  - I can check an AI fact in a place that would know.
+  - I can explain why asking the same AI again is not checking.
+struggle: "Students accept a fluent, confident reply, or think asking 'are you sure?' checks it. Ask: who would know this, apart from the AI?"
+before: |
+  The one idea: an AI answer is a source with no author to ask; check its facts like any other. There is no real AI on this page: every reply is scripted and labelled. Do not use a live chatbot for this lesson. AI Foundations has scripted response labs and an optional, teacher-approved prompt step if you want students to try a real tool under your school's rules.
+
+  The library reply gives the hours from Search like you mean it's Riverbank result, a similarly named place. That is a realistic failure, but this is a scripted example, not a claim about any real AI product.
+
+  Students may have strong views about AI. Keep the discussion on the method (what would you check, and where?), not on whether AI is good or bad. AI at our school and Does AI Help Us Learn? are the places for that debate.
+
+  Years 5 to 6: the floor and Practise. Years 7 to 8: add the wider step (?width=wider).
+running:
+  - "Engage: ask what the reply got wrong, and how they would find out."
+  - "Explore: ask which replies are facts and which are ideas."
+  - "Explain: ask Eli who else would know whether the quote is real."
+  - "Elaborate: ask what could go wrong with a named source."
+  - "Practise: ask which reply is fine without checking, and why."
+stuck:
+  - see: "A student says the AI said it was sure."
+    ask: "How does sounding sure help you check it?"
+    fix: "AI sounds sure whether it is right or wrong. Leave the reply and look elsewhere."
+  - see: "A student asks another chatbot to check."
+    ask: "Is that a place that would know, or another AI?"
+    fix: "Find a page or a book that would know."
+  - see: "A student says never use AI."
+    ask: "Which of the replies were fine to use?"
+    fix: "Ideas and wording you can judge yourself. Facts, numbers, dates and quotes need checking."
+stretch: "Write a scripted AI reply of your own that sounds sure and gets one fact wrong. Swap with a partner: can they find it and say how they checked?"
+support: "One sentence on a card: AI facts are leads. Find a place that would know."
+leads: |
+  Next: the challenge, Answer it from three sources.
+
+  More on AI: AI Foundations › Check what AI tells you, and AI in your life.
+exit:
+  q: "Why isn't asking the same AI 'are you sure?' a way to check its answer?"
+  a: "It is the same source again. It may just agree, or change its answer without a reason. A check needs a place that would know."
+explain: |
+  An AI answer is a **source** with no author to ask. It can sound sure and be wrong.
+
+  Treat its facts as **leads**: leave the reply and check them in a place that would know. Asking the same AI again is not a check.

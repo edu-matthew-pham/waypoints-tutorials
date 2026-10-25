@@ -1,0 +1,29 @@
+inquiry:
+  q: "If a search engine puts a result first, does that mean it is the best answer? Who decides the order?"
+  prompts:
+    - "What would make a page come first?"
+    - "Would you trust a result more if it was first? Why?"
+  notes: "Order comes from many things: how well the words match, how popular a page is, and paid adverts. None of them is a check that the page is true. Keep the discussion on what order can and cannot tell you."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Cross out the small words"
+    minutes: 4
+    do: |
+      Write a long question on the board. Students take turns crossing out a word that a search engine does not need. Stop when three or four strong words are left.
+    notes: "Ask after each cross-out: did we lose the thing, the place or the detail?"
+  - at: run
+    kind: activity
+    title: "Point, don't click"
+    minutes: 4
+    do: |
+      Show the made-up results page. Students point at the answer, an advert, an old date and the wrong place, without clicking anything.
+    notes: "The answer is on the results page. Reading first saves the click."
+questions:
+  - at: investigate
+    title: "Which is the place?"
+    type: question
+    q: "Which part of a result tells you who made the page?"
+    options: ["The address", "The title", "Its place on the list", "The snippet"]
+    answer: 0
+    explain: "The address, such as riverbend-library.example, names the site that made the page."

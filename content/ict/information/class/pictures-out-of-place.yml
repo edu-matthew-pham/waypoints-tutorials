@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is a cropped picture a lie? When is cropping fine?"
+  prompts:
+    - "Have you ever cropped a photo? Why?"
+    - "When does cutting something out change what the picture means?"
+  notes: "Cropping is normal: it removes clutter. It misleads when what was cut would change the meaning (empty seats, the rest of a sign). The test is whether the caption is still true of the whole scene."
+activities:
+  - at: predict
+    kind: activity
+    title: "Through a tube"
+    minutes: 3
+    do: |
+      Students roll a sheet of paper into a tube and look at one part of the room. They write a caption from what they see, then compare with the whole room.
+    notes: "A narrow view makes an easy wrong caption."
+  - at: modify
+    kind: discussion
+    title: "Same picture, two captions"
+    minutes: 4
+    do: |
+      Show the drawn bean picture. Pairs write an honest caption and a misleading one. Read some aloud; the class says which is which and how they know.
+    notes: "Keep it to the made-up drawings."
+questions:
+  - at: investigate
+    title: "Which question first?"
+    type: question
+    q: "A picture of snow is captioned Riverbend today. Which question checks it best?"
+    options: ["Where and when did it first appear?", "Is it a nice picture?", "How many likes does it have?"]
+    answer: 0
+    explain: "Where and when it first appeared shows whether it is Riverbend today."

@@ -1,0 +1,29 @@
+inquiry:
+  q: "If ten websites say the same thing, is it more likely to be true than if one does?"
+  prompts:
+    - "What if all ten copied the first?"
+    - "What would make two websites a real double check?"
+  notes: "Ten copies are one source. Two places that each found it out are two. Bring it back to: where did each page get it from?"
+activities:
+  - at: predict
+    kind: activity
+    title: "Pass it on"
+    minutes: 4
+    do: |
+      Whisper a short made-up fact down a row. Ask the last student: how many sources do we have? Then ask: who actually knows?
+    notes: "Every pass is a copy. Only the first person found it out."
+  - at: run
+    kind: discussion
+    title: "Who would know?"
+    minutes: 4
+    do: |
+      For the netball claim, list on the board who would know the results: the league, the school, the paper, the fan blog. Rank them.
+    notes: "Whoever keeps the records knows best. A fan blog is fun to read but does not keep scores."
+questions:
+  - at: investigate
+    title: "Copy or check?"
+    type: question
+    q: "Two pages say the same thing in the same words, and neither names a source. How many separate checks are they?"
+    options: ["Possibly none: one may copy the other, and neither says where it came from", "Two", "Three"]
+    answer: 0
+    explain: "Same words and no source suggest a copy. Neither found it out in a way you can see."

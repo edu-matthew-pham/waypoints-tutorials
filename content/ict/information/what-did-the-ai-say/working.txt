@@ -1,0 +1,9 @@
+# Eli's report, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: eli
+Eli asks a chatbot for a famous quote about science for his report.
+It gives him a quote and the name of a famous scientist.
+He asks the same chatbot if the quote is real, and it says yes, so he counts that as checking it.
+He puts the quote in his report with the scientist's name.
+His teacher cannot find the quote anywhere.
+# endregion

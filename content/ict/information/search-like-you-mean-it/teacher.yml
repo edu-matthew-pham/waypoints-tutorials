@@ -1,0 +1,43 @@
+summary: "Students turn a question into a few strong search words (the thing, the place, the detail) and read a results page before clicking: adverts, dates, addresses and snippets. Every result is made up, with .example addresses."
+time: 30
+timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 8 min · class search and reflection 8 min"
+goals:
+  - I can turn a question into a few strong search words.
+  - I can find the advert, the date and the address on a results page before I click.
+  - I can say why the top result is not always the best one.
+struggle: "Students click the first result out of habit. Ask them to point at the answer on the results page before anyone clicks."
+before: |
+  The one idea: a search is a few strong words, and a results page is read before it is clicked. Riverbend, its library and every result are made up (.example addresses), so no real site is judged.
+
+  The typical step is a real search, led by you, on a safe everyday question (opening hours near the school). Choose it in advance and try it on the class screen first, with safe search on. Skip it if your school does not allow it.
+
+  If a student brings up a contested topic (a political or health question they have seen argued about), do not judge the topic. Steer back to method: "What words would find the people who would know? Who made each result, and how old is it?" The lesson is the habit, not the answer.
+
+  Years 5 to 6: the floor and typical steps are enough. Years 7 to 8: add the wider step (open the lesson with ?width=wider).
+running:
+  - "Engage: take votes on the four searches. Ask what each extra or missing word does."
+  - "Explore: ask who can find the answer without clicking anything."
+  - "Explain: ask Leo what he should have read first."
+  - "Elaborate: ask for a different word for the same thing."
+  - "Class search: point at an advert, a date and an address before anyone clicks."
+stuck:
+  - see: "A student types the whole question."
+    ask: "Which three words matter most?"
+    fix: "Cross out the small words. Keep the thing, the place and the detail."
+  - see: "A student sorts the 2019 page as Click this first."
+    ask: "What year is it from? Do opening hours change?"
+    fix: "Read the date on every result."
+  - see: "A student says adverts are always bad."
+    ask: "Could an advert ever be useful? What does Ad tell you about its place?"
+    fix: "An advert can be useful. Its place is bought, so it is not a sign it answers the question."
+stretch: "Write two searches for the same question that find different kinds of pages: one finds the place's own page, one finds news about it. What changed?"
+support: "A card with three boxes: the thing, the place, the detail. Fill each with one word, then search."
+leads: |
+  Next: Who made it, and why? Finding the maker and the purpose of a page.
+exit:
+  q: "Why is the first result not always the one to click?"
+  a: "It may be an advert, out of date, or about something else. Being first is not a check."
+explain: |
+  A search works best with a few **strong words**: the thing, the place and the detail.
+
+  Read the **results page** before clicking: the word **Ad** means someone paid for the place, the **date** says how old it is, and the **address** says who made it.

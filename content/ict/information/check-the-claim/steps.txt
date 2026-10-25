@@ -1,0 +1,10 @@
+# The steps for checking a claim, in order. Plain text: students put them in order.
+
+# region: sideways
+Say the claim in a few words.
+Leave the page and open a new tab.
+Search for the claim or for who made the page.
+Find places that would know, such as the people who keep the records.
+See if they agree without copying each other.
+Decide how far to trust it, and say what you could not check.
+# endregion

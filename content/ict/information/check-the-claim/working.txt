@@ -1,0 +1,8 @@
+# Raj's check, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: raj
+Raj reads that Riverbend Primary has never lost a netball game in ten years.
+He searches for the claim in a new tab.
+He finds netball-legends.example saying the same thing, and counts it as a second source.
+He stops there and tells his class the claim is true.
+# endregion

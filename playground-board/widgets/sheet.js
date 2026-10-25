@@ -8,6 +8,8 @@
 //   cols: 5, rows: 8              the size (default: just big enough for the cells and edit ranges)
 //   name total_cost: D6           a named result for checks (needs an underscore; the cell must hold a number)
 //   formulas: on                  start with formulas showing instead of their results (a button toggles it)
+//   tools: chart axis             with a chart, a "Vertical axis starts at" box (chart ymin: 50 presets it); checks read
+//                                 ch_ymin and ch_zero (1 when a column or line chart's axis starts at zero or below)
 // Students click a cell and type; Enter or a click elsewhere finishes and recalculates; the arrow keys move; the
 // bar above the sheet shows the selected cell's name and its contents. Errors say what went wrong in plain words.
 // state: { scope: { vars: { c_B3 (the number in each cell that has one), f_B3 (1 if the cell holds a formula, else 0),
@@ -338,6 +340,22 @@
     return { lo: a, hi: b, ticks: ticks };
   }
 
+  // The vertical scale of a column or line chart. ch.ymin (text) sets where the axis starts, as a real app's
+  // "minimum bound" does; empty means automatic (from zero, or below it for negative values). A start above zero
+  // cuts off the bottom of the columns, which is how a chart can make a small difference look big.
+  function yScale(d, ch) {
+    var ymin = Math.min.apply(null, d.ys), ymax = Math.max.apply(null, d.ys);
+    if (ch.type === 'scatter') return niceScale(ymin, ymax);
+    var set = String(ch.ymin || '').trim(), lo = Number(set);
+    if (set === '' || !isFinite(lo)) return niceScale(Math.min(0, ymin), Math.max(0, ymax));
+    var sc = niceScale(lo, Math.max(ymax, lo + 1));
+    sc.ticks = sc.ticks.filter(function (t) { return t >= lo; });
+    if (sc.ticks[0] !== lo) sc.ticks.unshift(lo);
+    sc.lo = lo;
+    return sc;
+  }
+  B.sheetYScale = yScale;
+
   // ---------- the widget ----------
   var spec = null, ui = {}, raws = {}, vals = {}, sel = 'A1', showF = false, dims = { c: 1, r: 1 };
   var show = function (v) {
@@ -364,13 +382,14 @@
   }
 
   function parse(s) {
-    s.sheet = { cells: {}, names: {}, edit: null, tools: {}, table: null, chart: { type: '', labels: '', values: '', title: '', xl: '', yl: '' } };
+    s.sheet = { cells: {}, names: {}, edit: null, tools: {}, table: null, chart: { type: '', labels: '', values: '', title: '', xl: '', yl: '', ymin: '' } };
     var maxC = 1, maxR = 1;
     s.items.forEach(function (it) {
       var where = 'Line ' + it.line;
       if (it.kind === 'chart') {
-        var CK = { type: 'type', labels: 'labels', values: 'values', title: 'title', xlabel: 'xl', ylabel: 'yl' };
-        if (!CK[it.name]) throw new Error(where + ': "chart ' + it.name + '" is not type, labels, values, title, xlabel or ylabel.');
+        var CK = { type: 'type', labels: 'labels', values: 'values', title: 'title', xlabel: 'xl', ylabel: 'yl', ymin: 'ymin' };
+        if (!CK[it.name]) throw new Error(where + ': "chart ' + it.name + '" is not type, labels, values, title, xlabel, ylabel or ymin.');
+        if (it.name === 'ymin' && !isFinite(Number(it.value))) throw new Error(where + ': chart ymin is a number (where the vertical axis starts).');
         if (it.name === 'type' && !/^(bar|line|scatter|pie)$/.test(it.value)) throw new Error(where + ': chart type is bar, line, scatter or pie.');
         s.sheet.chart[CK[it.name]] = String(it.value);
         return;
@@ -393,7 +412,7 @@
       s.sheet.edit = set;
     } else if (/^none$/i.test(s.edit || '')) s.sheet.edit = {};
     String(s.tools || '').split(/[\s,]+/).filter(Boolean).forEach(function (t) {
-      if (!/^(sort|filter|fill|chart)$/.test(t)) throw new Error('tools: "' + t + '" is not sort, filter, fill or chart.');
+      if (!/^(sort|filter|fill|chart|axis)$/.test(t)) throw new Error('tools: "' + t + '" is not sort, filter, fill, chart or axis.');
       s.sheet.tools[t] = true;
     });
     if (s.table !== undefined) {
@@ -404,6 +423,7 @@
       if (s.sheet.table.r2 < s.sheet.table.r1 + 1) throw new Error('table: needs a header row and at least one row of data.');
       maxC = Math.max(maxC, s.sheet.table.c2 + 1); maxR = Math.max(maxR, s.sheet.table.r2);
     }
+    if (s.sheet.tools.axis && !s.sheet.tools.chart) throw new Error('tools: axis needs chart too (tools: chart axis).');
     if ((s.sheet.tools.sort || s.sheet.tools.filter || s.sheet.tools.fill) && !s.sheet.table) throw new Error('tools: sort, filter and fill need a table: line (such as "table: A1:D8").');
     var cols = s.cols !== undefined ? Number(s.cols) : 0, rows = s.rows !== undefined ? Number(s.rows) : 0;
     if (s.cols !== undefined && !(cols >= 1 && cols <= MAXC)) throw new Error('cols: a number from 1 to ' + MAXC + '.');
@@ -506,6 +526,7 @@
       var d = chartData(vals, chart), ty = d.ok ? chart.type : '';
       vars.ch_bar = ty === 'bar' ? 1 : 0; vars.ch_line = ty === 'line' ? 1 : 0; vars.ch_scatter = ty === 'scatter' ? 1 : 0; vars.ch_pie = ty === 'pie' ? 1 : 0;
       vars.ch_n = d.ok ? d.n : 0; vars.ch_sum = d.ok ? Math.round(d.sum * 1e9) / 1e9 : 0;
+      if (d.ok && (ty === 'bar' || ty === 'line')) { vars.ch_ymin = yScale(d, chart).lo; vars.ch_zero = vars.ch_ymin <= 0 ? 1 : 0; } else { vars.ch_ymin = 0; vars.ch_zero = 0; }
       vars.ch_title = chart.title.trim() ? 1 : 0; vars.ch_xlab = chart.xl.trim() ? 1 : 0; vars.ch_ylab = chart.yl.trim() ? 1 : 0;
     }
     var out = [];
@@ -683,9 +704,8 @@
       return;
     }
     var xs = d.xs;
-    var ymin = Math.min.apply(null, d.ys), ymax = Math.max.apply(null, d.ys);
-    var ys = chart.type === 'scatter' ? niceScale(ymin, ymax) : niceScale(Math.min(0, ymin), Math.max(0, ymax));
-    var py = function (v) { return T + ph - (v - ys.lo) / (ys.hi - ys.lo) * ph; };
+    var ys = yScale(d, chart);
+    var py = function (v) { return T + ph - (Math.max(ys.lo, Math.min(ys.hi, v)) - ys.lo) / (ys.hi - ys.lo) * ph; };
     ys.ticks.forEach(function (t) {
       s.appendChild(svg('line', { x1: L, x2: L + pw, y1: py(t), y2: py(t), class: 'sh-ch-grid' }));
       s.appendChild(svg('text', { x: L - 6, y: py(t) + 4, class: 'sh-ch-t sh-ch-r' }, String(t)));
@@ -720,6 +740,7 @@
 
   function field(label, input) {
     var l = document.createElement('label'); l.className = 'sh-field';
+    l.style.maxWidth = '100%'; l.style.minWidth = '0'; // fits a phone-width board (inline: style.css is in every board clip's hash)
     var sp = document.createElement('span'); sp.textContent = label;
     l.append(sp, input);
     return l;
@@ -735,7 +756,7 @@
     return b;
   }
   function textInput(label, value, onInput, w) {
-    var i = document.createElement('input'); i.type = 'text'; i.autocomplete = 'off'; i.spellcheck = false; i.value = value; i.className = 'sh-in';
+    var i = document.createElement('input'); i.type = 'text'; i.autocomplete = 'off'; i.spellcheck = false; i.value = value; i.className = 'sh-in'; i.style.boxSizing = 'border-box';
     if (w) i.size = w;
     i.addEventListener('input', function () { onInput(i.value); });
     return field(label, i);
@@ -777,6 +798,7 @@
       hd.append(field('Chart type', type), textInput('Labels', chart.labels, up('labels'), 7), textInput('Values', chart.values, up('values'), 7));
       ui.axisRow = document.createElement('div'); ui.axisRow.className = 'sh-tools';
       ui.axisRow.append(textInput('Horizontal axis title', chart.xl, up('xl'), 14), textInput('Vertical axis title', chart.yl, up('yl'), 14));
+      if (tools.axis) ui.axisRow.append(textInput('Vertical axis starts at', chart.ymin, up('ymin'), 5));
       var tr = document.createElement('div'); tr.className = 'sh-tools'; tr.append(textInput('Chart title', chart.title, up('title'), 26));
       ui.chartMsg = document.createElement('p'); ui.chartMsg.className = 'sh-note'; ui.chartMsg.setAttribute('aria-live', 'polite');
       ui.chartTitle = document.createElement('div'); ui.chartTitle.className = 'sh-ch-title';
@@ -806,7 +828,7 @@
         Object.keys(sv.table).forEach(function (k) { if (/^[A-L]\d{1,2}$/.test(k) && inTable(k)) raws[k] = String(sv.table[k]); });
       }
       if (sv && sv.filter && spec.sheet.tools.filter && typeof sv.filter.col === 'number' && /^(is|not|more|less)$/.test(sv.filter.op)) filt = { col: sv.filter.col, op: sv.filter.op, val: String(sv.filter.val) };
-      if (sv && sv.chart && spec.sheet.tools.chart) ['type', 'labels', 'values', 'title', 'xl', 'yl'].forEach(function (f) { if (typeof sv.chart[f] === 'string') chart[f] = sv.chart[f]; });
+      if (sv && sv.chart && spec.sheet.tools.chart) ['type', 'labels', 'values', 'title', 'xl', 'yl', 'ymin'].forEach(function (f) { if (typeof sv.chart[f] === 'string') chart[f] = sv.chart[f]; });
       var panel = B.el('gpanel'); panel.replaceChildren();
       ui = { inputs: {}, rows: {} };
       var bar = document.createElement('div'); bar.className = 'sh-bar';

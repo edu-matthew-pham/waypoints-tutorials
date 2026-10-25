@@ -1,0 +1,43 @@
+summary: "Students find who made a page, why (to inform, sell, persuade or entertain) and when, by sorting six made-up pages by purpose, finding a planted mistake and deciding when a date matters."
+time: 30
+timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 8 min · discussion and reflection 8 min"
+goals:
+  - I can find who made a page, and say why they made it.
+  - I can find a page's date and say when it matters.
+  - I can explain why a page that sells or persuades is read with care.
+struggle: "Students think a page that sells cannot be useful, or that a page with no adverts has no purpose. Ask what each page wants the reader to do."
+before: |
+  The one idea: every page has a maker, a purpose and a date. Purpose is not a verdict: a page that sells can be right, and a page that informs can be wrong. Every page here is made up (.example addresses).
+
+  The sort on the page uses clear cases only. Pages with two purposes (a review site that earns money when you buy, the bike shop's safety tips) are for discussion: accept either purpose when the student names the clue on the page.
+
+  Contested topics: if a student names a real page or a real argument, do not judge the topic. Ask the three questions about it instead: who made it, why, when? The method is the lesson.
+
+  Years 5 to 6: the floor and Practise. Years 7 to 8: add the wider step (?width=wider).
+running:
+  - "Engage: take a vote, then ask the 'need to know more' students what they would want to know."
+  - "Explore: ask which words on each page gave away its purpose."
+  - "Explain: ask what Mia should have asked before copying."
+  - "Elaborate: ask why a spider's legs and a bus fare are different."
+  - "Practise: ask whether the safety tips are wrong because the shop sells helmets."
+stuck:
+  - see: "A student says the shop page must be lying."
+    ask: "Could the tips still be right? How would you check?"
+    fix: "Purpose tells you what to check, not what is false."
+  - see: "A student cannot find who made a page."
+    ask: "What does the address say? Is there an About page?"
+    fix: "Look at the address, the bottom of the page and the About page."
+  - see: "A student says a review site that earns money from sales only informs."
+    ask: "What does the note at the end say they earn money from?"
+    fix: "Both are fair. The note shows it also wants you to buy."
+stretch: "Find a made-up page in this lesson that does two things at once. Write one sentence for each purpose."
+support: "A card with three questions: Who? Why? When? Tick each before using a page."
+leads: |
+  Next: Two pages, one question. Comparing two pages and deciding which to trust.
+exit:
+  q: "Name the four purposes a page can have."
+  a: "To inform, to sell, to persuade and to entertain. Many pages have more than one."
+explain: |
+  Before you use a page, find **who** made it (the address, a name, the About page), **why** (to inform, sell, persuade or entertain) and **when** (the date).
+
+  A page that sells or persuades can still be right: read it knowing what it wants.

@@ -1,0 +1,125 @@
+# Reference cards for Investigating and judging information: one screen each, no ticks.
+cards:
+  - id: search-words
+    title: "Search with strong words"
+    unit: search
+    lesson: search-like-you-mean-it
+    idea: "A few strong words find more than a whole sentence: the thing, the place and the detail that matters. Then read the results page before you click."
+    steps:
+      - "Write the question, then cross out the small words."
+      - "Keep the thing, the place and the detail."
+      - "Before clicking, find the adverts, the dates and the addresses."
+      - "Nothing useful? Change one word and search again."
+    watch: "The top result is not a check. It may be an advert, out of date, or about another place."
+    apps:
+      "Any search engine": "Adverts are marked Ad or Sponsored. The address is above or below each title."
+      "School search": "Use the search your school has set up, with safe search on."
+  - id: who-why-when
+    title: "Who made it, why and when"
+    unit: sources
+    lesson: who-made-it
+    idea: "Every page has a maker, a purpose (to inform, sell, persuade or entertain) and a date. Find all three before you use it."
+    steps:
+      - "Who: read the address, look for a name, open the About page."
+      - "Why: does it want you to learn, buy, agree or laugh?"
+      - "When: find the date it was written or updated."
+      - "No maker or date? Look for a page you can check."
+    watch: "A page that sells can still be right, and a page with no adverts can be wrong. Purpose tells you what to check."
+    apps:
+      "Any browser": "The address is at the top. About, Contact and dates are often at the bottom of the page."
+  - id: compare-two-pages
+    title: "Compare two pages"
+    unit: sources
+    lesson: two-pages-one-question
+    idea: "When pages disagree, compare what you can check about them (author, date, source, purpose), not how they look."
+    steps:
+      - "Ask the same questions of both pages."
+      - "Look for a named author and a date."
+      - "Look for where the facts came from."
+      - "Still unsure? Find a third source."
+    watch: "Big headings, exclamation marks and 'thousands agree' are not reasons."
+    apps:
+      "Any browser": "Open each page in its own tab so you can switch between them."
+  - id: read-sideways
+    title: "Check a claim by reading sideways"
+    unit: claims
+    lesson: check-the-claim
+    idea: "Leave the page. Search for the claim or its maker and see whether places that would know agree, without copying each other."
+    steps:
+      - "Say the claim in a few words."
+      - "Open a new tab."
+      - "Search for the claim or the page's maker."
+      - "Find places that would know."
+      - "Check they found it out, not copied it."
+      - "Decide how far to trust it."
+    watch: "Ten pages that copy one are one source. Nothing found means you could not check it, not that it is false."
+    apps:
+      "Any browser": "Ctrl+T (Cmd+T on a Mac) opens a new tab."
+      "Phones": "Press and hold a link to open it in a new tab."
+  - id: fact-opinion-advert
+    title: "Fact, opinion or advert?"
+    unit: claims
+    lesson: fact-opinion-or-advert
+    idea: "A fact can be checked (and can be wrong). An opinion is a view; a good one gives reasons. An advert wants you to buy."
+    steps:
+      - "Ask: could I check this?"
+      - "Ask: could people reasonably disagree?"
+      - "Ask: does it want my money or my sign-up?"
+      - "Check facts, weigh opinions' reasons, remember what adverts want."
+    watch: "Sounding sure does not make something a fact. Look for Sponsored or Paid on pages that look like news."
+    apps:
+      "Any page": "Sponsored, Ad, Paid partnership and Buy now are the clues to an advert."
+  - id: check-a-chart
+    title: "Check a chart"
+    unit: mislead
+    lesson: numbers-that-mislead
+    idea: "True numbers can still mislead. Check the axis, the whole and how many were counted."
+    steps:
+      - "Read the numbers on the axis, not just the shape."
+      - "A column chart should start at zero."
+      - "A pie chart's parts should add to 100%."
+      - "Ask how many people or things were counted, and who."
+    watch: "A line chart showing change can fairly start above zero, if it is labelled."
+    apps:
+      "Excel": "Format the vertical axis: Axis Options, Bounds, Minimum."
+      "Sheets": "Chart editor, Customise, Vertical axis, Min."
+  - id: trace-a-picture
+    title: "Trace a picture"
+    unit: mislead
+    lesson: pictures-out-of-place
+    idea: "A real picture can mislead through its caption, its date or its crop. Ask where it first appeared, who took it and when."
+    steps:
+      - "Separate what the picture shows from what the caption says."
+      - "Ask where it first appeared, and when."
+      - "Ask what might be outside the frame."
+      - "Can't find out? Don't share it."
+    watch: "Lots of shares are copies, not checks."
+    apps:
+      "Reverse image search": "Google Lens, Bing Visual Search and TinEye can find where a picture appeared before. Use them only if your school allows."
+  - id: check-an-ai-answer
+    title: "Check an AI answer"
+    unit: ai
+    lesson: what-did-the-ai-say
+    idea: "An AI answer is a source with no author to ask. Treat its facts, numbers, dates and quotes as leads to check."
+    steps:
+      - "Say the claim in a few words."
+      - "Ask who would know: the school, the council, a book."
+      - "Check it there."
+      - "If it names a source, open the source."
+    watch: "Asking the same AI 'are you sure?' is not a check."
+    apps:
+      "Any AI tool": "Use only the tools your school allows, and only when your teacher says you can."
+  - id: answer-from-sources
+    title: "Answer from several sources"
+    unit: challenge
+    lesson: answer-from-three-sources
+    idea: "Answer from the sources you can check, say how far you trust each, say no more than they show, and credit them."
+    steps:
+      - "Find who, why and when for each source."
+      - "Say how far you trust each, with a reason."
+      - "Write what the trusted sources agree on."
+      - "Say what you could not check."
+      - "Credit each: who, where, when."
+    watch: "The most exciting number usually comes from the source you trust least."
+    apps:
+      "Word and Docs": "Put the sources in a list under a heading, one credit per line."

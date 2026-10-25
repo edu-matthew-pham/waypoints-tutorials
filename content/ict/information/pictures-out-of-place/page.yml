@@ -1,0 +1,32 @@
+# Pages for "Pictures out of place". Every picture is drawn by the board, and every post is made up.
+
+# region: run
+widget: page
+mode: doc
+outline: off
+block title: Riverbend Daily Buzz (a made-up post)
+block image: crowd
+block caption: Hundreds queue for the new Riverbend skate park on opening day, 3 May 2026!
+block body: What the picture really is: a photo from the Riverbend Primary fair, 12 March 2019, posted on riverbend-primary.example. Four people are in it.
+block image: plant
+block caption: This bean grew in ONE DAY with BeanBoost drops!
+block body: What the picture really is: a garden club member's bean after four weeks, from riverbend-garden-club.example, June 2025.
+block image: sun
+block caption: Heatwave hits Riverbend today!
+block body: What the picture really is: a drawing from a children's book about the seasons. No date or place.
+alt b2: Four people in blue shirts standing in a row on grass
+alt b5: A bean plant with four leaves in a red pot
+alt b8: A yellow sun with rays on a blue sky
+# endregion
+
+# region: trace
+widget: page
+mode: doc
+outline: off
+block title: Riverbend Gazette: draft story
+block body: Volunteers planted beans in the community garden on Saturday.
+block image: bean
+block caption: Volunteers at the community garden.
+alt b3: A bean seedling in a brown pot
+tools: credit
+# endregion

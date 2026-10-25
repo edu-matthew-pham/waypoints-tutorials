@@ -1,0 +1,41 @@
+summary: "Students check a made-up claim by reading sideways: they leave the page, look at three other places, tell independent sources from copies, order the checking steps and decide when to stop."
+time: 30
+timing: "Engage and Explore 8 min · Explain 7 min · Elaborate and Practise 8 min · discussion and reflection 7 min"
+goals:
+  - I can check a claim by leaving the page and seeing what others say.
+  - I can tell a source that found something out from one that only copied it.
+  - I can say when I have checked enough, and when I could not check it.
+struggle: "Students count every page that agrees as more proof. Ask of each one: where did this page get it from?"
+before: |
+  The one idea: leave the page. Professional fact-checkers read sideways (opening new tabs about the source and the claim) rather than reading one page more closely. The claim, the blog and the three places are all made up (.example addresses).
+
+  Contested topics: if students want to check a real argued claim, use the same steps but do not settle the topic in class. Ask who would know, whether the places copy each other, and what could not be checked. If the topic is upsetting or political, park it and practise on a small claim instead.
+
+  Years 5 to 6: the floor and Practise. Years 7 to 8: add the wider science claim (?width=wider). The wider step's claim is invented and only asks how students would check it; do not tell them the answer is false or true.
+running:
+  - "Engage: ask what re-reading the blog could tell you."
+  - "Explore: ask which place would know the results best."
+  - "Explain: ask Raj where Place 3 got its fact."
+  - "Elaborate: ask how many places is enough for a small fact."
+  - "Practise: ask which places found it out for themselves."
+stuck:
+  - see: "A student reads the claim page more closely."
+    ask: "Who else would know?"
+    fix: "Open a new tab and search for the claim or the maker."
+  - see: "A student counts every agreeing page."
+    ask: "Where did this page get it from?"
+    fix: "A copy is not a check. Count places that found it out."
+  - see: "A student says nothing found means false."
+    ask: "Did anything show it is false?"
+    fix: "Nothing found means you cannot check it, not that it is false. Say so."
+stretch: "Write a made-up claim of your own and three places: one that would know, one that copies, one that has nothing to do with it. Swap with a partner."
+support: "The six steps on a card, in order, to tick as they go."
+leads: |
+  Next: Fact, opinion or advert? Telling what can be checked from a view or a sales line.
+exit:
+  q: "Why is a page that repeats a claim not always a second source?"
+  a: "It may have copied the first page. A separate check found it out for itself."
+explain: |
+  To check a claim, **leave the page**: open a new tab, search for the claim or the maker, and see what places that would know say.
+
+  If they agree **without copying** each other, trust it more. If no one else says it, you could not check it.

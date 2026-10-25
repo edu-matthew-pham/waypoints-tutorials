@@ -130,7 +130,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'For How computers work teachers', u: 'systems-teachers/', d: 'Which course to start with and what each needs: data, networks, security, hardware and the command line.' },
     { t: 'For engineering teachers', u: 'engineering-teachers/', d: 'What each Engineering course needs (browser only, or kits and a printer) and where to start.' },
     { t: 'For Learning with AI teachers', u: 'ai-teachers/', d: 'What the five AI courses are, the rules for using real AI, and where to start with a class.' },
-    { t: 'For ICT skills teachers', u: 'ict-teachers/', d: 'What is built so far in ICT skills (spreadsheets, a pilot), how it teaches, and what is planned.' },
+    { t: 'For ICT skills teachers', u: 'ict-teachers/', d: 'What is built so far in ICT skills (five pilot courses: data, documents, files, judging information, staying safe), how it teaches, and what is planned.' },
     { t: 'For maths teachers', u: 'maths-teachers/', d: 'What is here for Years 7 and 8 maths and a ten-minute tour.' },
   ]) add({ ...p, s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', k: `${p.t} ${p.d} teacher teachers` });
   return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel, typical: (path) => typical.has(path) };

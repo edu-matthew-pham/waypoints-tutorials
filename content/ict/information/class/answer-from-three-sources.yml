@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is it better to give a clear answer or an honest 'probably'?"
+  prompts:
+    - "When would a clear answer be wrong to give?"
+    - "When would 'we don't know' be unhelpful?"
+  notes: "A good answer is as clear as the evidence allows: 'probably yes, warmth helps' is both clear and honest. Overclaiming and refusing to answer are both failures."
+activities:
+  - at: run
+    kind: discussion
+    title: "Line up the sources"
+    minutes: 5
+    do: |
+      Put the three sources on the board. Students stand along a line from "trust a lot" to "don't rely on it" for each, and one person at each end says why.
+    notes: "Disagreement about the class blog is healthy: it is honest but small."
+  - at: make
+    kind: activity
+    title: "Check each sentence"
+    minutes: 6
+    do: |
+      Swap answers with a partner. For each sentence, the partner writes which source it came from. Any sentence with no source is crossed out or hedged.
+    notes: "This is reading sideways on a classmate's work."
+questions:
+  - at: investigate
+    title: "How far does it go?"
+    type: question
+    q: "The class test found 4 of 5 warm beans sprouted and 1 of 5 cold beans. What can it tell you on its own?"
+    options: ["That warmth may help, from a small test", "That warmth always works", "Nothing at all"]
+    answer: 0
+    explain: "It is a small honest test: a clue that agrees with the guide, not proof on its own."

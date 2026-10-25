@@ -1,0 +1,8 @@
+# Noor's share, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: noor
+Noor sees a post: a picture of a crowd with the caption Hundreds queue for the new skate park!
+She decides it is true because the picture looks real.
+She shares it with her class group.
+Later someone finds the picture first appeared in 2019, at a school fair.
+# endregion

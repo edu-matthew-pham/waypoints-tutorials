@@ -1,0 +1,45 @@
+summary: "Students see that real pictures mislead through a new caption, an old date or a crop, sort three made-up posts by how they mislead, and write a source line (who, where, when) for a picture."
+time: 30
+timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 8 min · discussion and reflection 8 min"
+goals:
+  - I can explain how a real picture can mislead through its caption, date or crop.
+  - I can ask where a picture first appeared, who took it and when.
+  - I can decide what to do before sharing a surprising picture.
+struggle: "Students think a real photo is proof. Ask: what does the picture show, and what does only the caption say?"
+before: |
+  The one idea: a picture is a source; the caption, date and crop can mislead even when the picture is real. The pictures are simple drawings made by the board (no photos, no real people), and the posts are made up.
+
+  Reverse image search exists on real devices (Google Lens, Bing Visual Search, TinEye), but this lesson does not use it: the drawings are not online. If you want to show it, use a safe picture of your own on the class screen.
+
+  AI-made pictures are taught in AI in your life › Can you spot a fake? (provenance, not glitch-spotting). This lesson stays with real pictures out of place.
+
+  Contested topics: real out-of-context pictures are often from disasters, protests or conflicts. Do not bring those in. If a student mentions one, ask only the three questions (where first, who, when) and park the event itself.
+
+  Years 5 to 6: the floor and Practise. Years 7 to 8: the typical reasoning step as well.
+running:
+  - "Engage: ask what the picture shows and what only the caption says."
+  - "Explore: read each 'what the picture really is' line together."
+  - "Explain: ask where Noor could have looked."
+  - "Elaborate: draw the wide and cropped flag picture on the board."
+  - "Practise: ask why who, where and when are enough to check it."
+stuck:
+  - see: "A student says the picture is real, so the post is true."
+    ask: "Which part did the camera see, and which part did a person write?"
+    fix: "Separate the picture from its caption."
+  - see: "A student cannot find the credit box."
+    ask: "What happens when you click the picture?"
+    fix: "Click the picture; the box appears above the page."
+  - see: "A student says lots of shares mean it is true."
+    ask: "Did any of the sharers check where it came from?"
+    fix: "Shares are copies, not checks."
+stretch: "Draw a simple scene, then write two captions: one honest, one that misleads. Which words changed the meaning?"
+support: "Three questions on a card: Where first? Who? When?"
+leads: |
+  Next: What did the AI say? An AI answer is a source too.
+exit:
+  q: "Name two ways a real picture can mislead."
+  a: "Any two of: a wrong caption, an old date passed off as new, a crop that hides what was around it."
+explain: |
+  A real picture can mislead through its **caption**, its **date** or its **crop**.
+
+  Treat a picture as a source: where did it **first** appear, who took it, and when?

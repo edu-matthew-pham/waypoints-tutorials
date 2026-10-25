@@ -1,0 +1,9 @@
+# Leo's search, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: leo
+Leo wants to know when the Riverbend library opens on Saturday.
+He types Riverbend library Saturday hours.
+He clicks the first result, a 2019 news story, without reading its date or address.
+It says the library opens on Saturday afternoons, so he goes at 2 pm.
+The library is closed.
+# endregion

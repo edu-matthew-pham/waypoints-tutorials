@@ -1499,7 +1499,10 @@ Vary, Practise, Make).
     never deleted; live, so it re-applies when cells change) and a **Chart** (column `bar`, `line`, `scatter` or `pie`; the
     student types the Labels range and the Values range, a title and axis titles; a scatter chart's Labels are its
     x numbers). `chart type: line`, `chart labels: A2:A7`, `chart values: B2:B7`, `chart title:`, `chart xlabel:` and
-    `chart ylabel:` lines preset the chart. Extra check values: with a table `n_shown` (data rows showing),
+    `chart ylabel:` lines preset the chart. `tools: chart axis` (26 Oct 2026, ICT › Numbers and charts that mislead) adds a
+    "Vertical axis starts at" box, like Excel's axis Minimum and Sheets' Min; `chart ymin: 50` presets it (empty is
+    automatic, from zero), and checks read `ch_ymin` (where the axis starts) and `ch_zero` (1 when a column or line chart
+    starts at zero or below). Extra check values: with a table `n_shown` (data rows showing),
     `filter_on` (0 or 1), `filter_col` (0 for A, 1 for B, ..., -1 when no filter), and `up_B` and `down_B` (1 when that
     column is in order, low to high or high to low, in every column of the table); with the chart `ch_bar`, `ch_line`,
     `ch_scatter` and `ch_pie` (1 for the type chosen when the chart can be drawn), `ch_n` (points), `ch_sum` (the sum of

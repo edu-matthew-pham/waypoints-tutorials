@@ -124,5 +124,11 @@ same('chart: scatter needs numbers for x', ch(cv, { type: 'scatter', labels: 'A2
 same('chart: scatter with numbers', ch(cv, { type: 'scatter', labels: 'C2:C4', values: 'B2:B4' }).xs.join(), '1,2,3');
 same('chart: a pie of nothing above zero', ch(calc({ B2: '0', B3: '0' }, { c: 2, r: 3 }), { type: 'pie', values: 'B2:B3' }).ok, false);
 same('chart: a bad range', ch(cv, { type: 'bar', values: 'B2-B4' }).ok, false);
-if (!bad) console.log(`✓ sheet engine: ${cases.length} formula cases and the copy, sort, filter and chart checks pass`);
+const ysc = B.sheetYScale, dz = ch(calc({ B2: '52', B3: '55', B4: '54' }, { c: 2, r: 4 }), { type: 'bar', values: 'B2:B4' });
+same('axis: starts at zero by default', ysc(dz, { type: 'bar', ymin: '' }).lo, 0);
+same('axis: a set start cuts off the bottom', ysc(dz, { type: 'bar', ymin: '50' }).lo, 50);
+same('axis: a set start is the first tick', ysc(dz, { type: 'bar', ymin: '50' }).ticks[0], 50);
+same('axis: setting 0 is the same as the default', ysc(dz, { type: 'bar', ymin: '0' }).lo, 0);
+same('axis: text in the box is ignored', ysc(dz, { type: 'bar', ymin: 'abc' }).lo, 0);
+if (!bad) console.log(`✓ sheet engine: ${cases.length} formula cases and the copy, sort, filter, chart and axis checks pass`);
 process.exit(bad ? 1 : 0);

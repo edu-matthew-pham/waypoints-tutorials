@@ -1,0 +1,29 @@
+inquiry:
+  q: "If most people agree with an opinion, does it become a fact?"
+  prompts:
+    - "Most people in our class like pizza. Is 'pizza is the best food' now a fact?"
+    - "What would make it a fact you could check?"
+  notes: "'Most people in our class like pizza' is a fact you could check by asking. 'Pizza is the best food' stays an opinion however many agree. Keep it on what can be checked."
+activities:
+  - at: run
+    kind: activity
+    title: "Stand in a corner"
+    minutes: 5
+    do: |
+      Label three corners Fact, Opinion and Advert. Read made-up statements; students walk to a corner and one from each corner says why.
+    notes: "Use small, everyday statements. Ask fact students how they would check it."
+  - at: modify
+    kind: discussion
+    title: "Turn it into a fact"
+    minutes: 4
+    do: |
+      Take an opinion such as "Netball is more fun than soccer" and rewrite it as something you could check, such as "In our class, 14 people chose netball and 10 chose soccer."
+    notes: "Checking needs something you could count, measure or look up."
+questions:
+  - at: investigate
+    title: "Which kind?"
+    type: question
+    q: "\"Our class planted 30 beans.\" Which kind of statement is it?"
+    options: ["A fact you could check", "An opinion", "An advert"]
+    answer: 0
+    explain: "You could count the beans or ask the class."

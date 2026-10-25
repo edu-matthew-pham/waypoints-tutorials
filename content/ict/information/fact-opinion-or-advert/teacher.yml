@@ -1,0 +1,43 @@
+summary: "Students tell facts (statements you could check, right or wrong), opinions (views with reasons) and adverts (lines that want a sale) apart, and decide what to do with each: check, weigh or remember what it wants."
+time: 30
+timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 8 min · discussion and reflection 8 min"
+goals:
+  - I can tell a fact I could check from an opinion or an advert.
+  - I can say what to do next with each kind.
+  - I can pull the checkable part out of a mixed statement.
+struggle: "Students call a statement a fact when they agree with it, and an opinion when they don't. Ask: could you check it, whether or not you agree?"
+before: |
+  The one idea: a fact is checkable (and can be wrong), an opinion is a view (a good one gives reasons), an advert wants a sale. All statements are made up. Real writing mixes the kinds; that is the Elaborate step.
+
+  Students often think "fact" means "true". Keep saying "a fact-type statement you could check". "The pool is 100 metres long" is a wrong fact, not an opinion.
+
+  Contested topics: if a student offers a real statement on an argued topic, sort its kind, not its truth. "Could we check this? Who would know?" is enough; you do not need to decide it in class. If a view is hurtful, deal with that under class rules, separately.
+
+  Years 5 to 6: the floor. Years 7 to 8: add the wider sponsored-story step (?width=wider).
+running:
+  - "Engage: take a vote. Ask what would make best in the world checkable."
+  - "Explore: for each, ask: could I check it? How?"
+  - "Explain: ask what Ava should have written instead."
+  - "Elaborate: ask which half of the pool sentence you could measure."
+  - "Practise: ask what the discount code tells you."
+stuck:
+  - see: "A student says a wrong statement is an opinion."
+    ask: "Could you check it?"
+    fix: "If you could check it, it is a fact-type statement, even when it is wrong."
+  - see: "A student calls a statement they agree with a fact."
+    ask: "Could someone reasonably disagree? Could you measure it?"
+    fix: "Agreeing does not make it checkable."
+  - see: "A student calls every advert a lie."
+    ask: "Could an advert contain a true fact?"
+    fix: "Adverts can contain facts. Check them, and remember what the advert wants."
+stretch: "Write one sentence of each kind about your school. Swap with a partner to sort."
+support: "One question on a card: Could I check this? Yes: fact. People could disagree: opinion. Wants my money: advert."
+leads: |
+  Next: Numbers and charts that mislead. A true number can still give the wrong idea.
+exit:
+  q: "Is 'The pool is 100 metres long' a fact or an opinion, if it is wrong?"
+  a: "A fact-type statement, because you could check it. Checking shows it is wrong."
+explain: |
+  A **fact** is something you could **check**, and it can be wrong. An **opinion** is a view; a good one gives reasons. An **advert** wants you to buy.
+
+  Check facts, weigh opinions' reasons, and remember what adverts want.

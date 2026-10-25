@@ -57,8 +57,8 @@ pathways:
     note: "Shares ideas with the command line course (Digital systems). Cloud storage touches privacy and identity only through which services the school approves."
   - id: investigating
     title: Investigating and judging information
-    status: planned
-    plan: "Project doc ict-investigating-information-plan"
+    status: built
+    course: ict/information
     focus: [Locate information, Acquire and collate data]
     touches: [Interpret data, Respect intellectual property]
     dt_overlap: [AC9TDI6P07, AC9TDI8P01, AC9TDI8P02]

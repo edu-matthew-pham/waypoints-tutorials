@@ -1,0 +1,8 @@
+# Zoe's choice, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: zoe
+Zoe reads Page A and Page B about watering beans.
+She picks Page A because it looks exciting and has big headings.
+She waters her beans three times a day.
+After a week the roots start to rot.
+# endregion

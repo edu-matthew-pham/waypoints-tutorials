@@ -1,0 +1,8 @@
+# Kai's poster, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kai
+Kai wants to know what students think of the new canteen menu.
+He asks four of his friends, and three say they love it.
+He writes on a poster: 75% of students in the school love the new menu!
+His teacher asks how many students he asked.
+# endregion

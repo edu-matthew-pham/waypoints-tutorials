@@ -1,0 +1,45 @@
+summary: "Students fix a made-up chart whose axis starts at 50 so a 6% rise looks like a tripling, spot a pie whose parts add to 140%, and ask how many were counted before trusting a percentage."
+time: 30
+timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 8 min · discussion and reflection 8 min"
+goals:
+  - I can check where a chart's axis starts and say what that does to the picture.
+  - I can tell when a pie chart is not one whole.
+  - I can ask how many were counted before trusting a percentage.
+struggle: "Students read the shape and never look at the numbers on the axis. Ask them to read the two numbers aloud before they say anything about the chart."
+before: |
+  The one idea: true numbers can still mislead through the axis, the whole and the sample. Everything is made up. The board is the sheet from Working with data, with one extra box: Vertical axis starts at (like Excel's axis Minimum and Sheets' Min).
+
+  Do the Explore board yourself first: set the axis start to 0, then back to 50, and ask the class what changed.
+
+  Links to Working with data › Choose a chart, and to Maths › Graphs that make a point for older students.
+
+  Contested topics: real misleading charts are often about argued topics. If you use one, ask only the three checks (axis, whole, how many) and do not discuss which side is right. Made-up data keeps the focus on the method.
+
+  Years 5 to 6: the floor and Practise. Years 7 to 8: add the wider step (?width=wider), which shows that an axis above zero is not always misleading.
+running:
+  - "Engage: take votes, then read the axis numbers aloud together."
+  - "Explore: ask what 'soar' would need the numbers to be."
+  - "Explain: add the pie's slices on the board."
+  - "Elaborate: ask why the chess club might not speak for everyone."
+  - "Practise: ask whether walking to school really changed."
+stuck:
+  - see: "A student says the rise is three times."
+    ask: "What numbers are on the axis at the bottom and the top of each column?"
+    fix: "Read the numbers, then set the axis to zero."
+  - see: "A student cannot find the axis box."
+    ask: "Which settings are under the chart?"
+    fix: "Vertical axis starts at, next to the axis titles. Type 0."
+  - see: "A student says every axis must start at zero."
+    ask: "What would a fever chart look like from zero?"
+    fix: "Columns need zero; a line showing change can zoom in if it is labelled."
+stretch: "Make a chart that misleads on purpose with the walking data, then write the caption a careful reader would add."
+support: "Three words on a card: axis, whole, how many."
+leads: |
+  Next: Pictures out of place. A real picture can mislead through its caption.
+exit:
+  q: "Why should a column chart's vertical axis start at zero?"
+  a: "Columns compare amounts by height. Cutting off the bottom makes small differences look big."
+explain: |
+  A chart can use true numbers and still mislead. Check the **axis** (a column chart should start at zero), the **whole** (a pie must add to 100%) and **how many** were counted.
+
+  Read the numbers, not just the shape.

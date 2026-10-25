@@ -1,0 +1,29 @@
+inquiry:
+  q: "If an AI is right most of the time, do you still need to check it?"
+  prompts:
+    - "What if it is about something that matters, like a time, a medicine or a quote in your report?"
+    - "How would you know which answers are the wrong ones?"
+  notes: "Right most of the time still means sometimes wrong, and you can't tell which from the reply. Checking depends on what is at stake. Keep the discussion on when to check and how, not on whether AI is good or bad."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Sure but wrong"
+    minutes: 4
+    do: |
+      Read the scripted library reply aloud in a confident voice. Then show the library's made-up page. Ask: what made it sound right?
+    notes: "Fluent and confident is how AI always sounds. That is the point."
+  - at: investigate
+    kind: activity
+    title: "Who would know?"
+    minutes: 4
+    do: |
+      For each scripted reply, students name a place that would know: the council, the school, a garden club, the person quoted.
+    notes: "If no one would know, it can't be checked, so don't rely on it."
+questions:
+  - at: run
+    title: "Check or not?"
+    type: question
+    q: "Which scripted reply most needs checking before you use it?"
+    options: ["The time a school event starts", "Ideas for a poster title", "A shorter way to write your sentence"]
+    answer: 0
+    explain: "A time is a fact that matters and could be wrong. Ideas and wording you can judge yourself."

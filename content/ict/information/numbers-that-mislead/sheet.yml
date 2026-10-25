@@ -1,0 +1,43 @@
+# Sheets for "Numbers and charts that mislead". All the numbers are made up.
+
+# region: run
+widget: sheet
+cell A1: Term
+cell B1: Fruit sold each day
+cell A2: Term 1
+cell B2: 52
+cell A3: Term 2
+cell B3: 55
+edit: none
+tools: chart axis
+chart type: bar
+chart labels: A2:A3
+chart values: B2:B3
+chart title: Fruit sales soar!
+chart xlabel: Term
+chart ylabel: Pieces of fruit
+chart ymin: 50
+# endregion
+
+
+# region: practise
+widget: sheet
+cell A1: Year
+cell B1: Students who walk to school
+cell A2: 2023
+cell B2: 120
+cell A3: 2024
+cell B3: 118
+cell A4: 2025
+cell B4: 121
+edit: none
+tools: chart axis
+chart type: bar
+chart labels: A2:A4
+chart values: B2:B4
+chart title: Walking to school
+chart xlabel: Year
+chart ylabel: Students
+chart ymin: 115
+# endregion
+

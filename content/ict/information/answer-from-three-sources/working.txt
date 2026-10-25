@@ -1,0 +1,8 @@
+# Tom's answer, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: tom
+Tom reads all three sources about warm soil and bean seeds.
+He sees that they all say warm soil helps.
+He writes that bean seeds sprout in 24 hours in warm soil, because that is the most exciting number.
+He does not say where the number came from.
+# endregion

@@ -1,0 +1,9 @@
+# Mia's research, for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+Mia wants to know what her bean plants need to grow.
+She searches bean plant needs and opens the first page that is not an advert.
+She copies "every plant needs plant food each week" into her report, without asking who made the page or why.
+The page was made by a shop that sells plant food.
+Her teacher asks how she knows it is true.
+# endregion

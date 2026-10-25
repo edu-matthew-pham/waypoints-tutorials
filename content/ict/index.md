@@ -25,6 +25,13 @@ pathways:
     about: "This follows the Digital Literacy general capability (mainly its Managing and operating element: manage content, protect content, and select and operate tools). Four short lessons teach the ideas every file system shares: folders and paths, names that work, copy, move and delete, versions and backup, and a routine for fixing things. The pictures are made-up folders on the page, and nothing touches a real device. Each lesson ends with a step in the storage your school has approved, so teachers should fit that step to the school's own system, and students should use only school-approved cloud services."
     courses:
       - { path: ict/files, id: files, stage: foundations, tagline: "Find your work, keep it safe and fix it first." }
+  - id: information
+    title: Investigating and judging information
+    summary: "Search words, who made a page and why, checking a claim, facts and adverts, charts and pictures that mislead, and AI answers."
+    fit: "Start here to find things and judge them: short workshops on made-up pages, with the debate as the point."
+    about: "This follows the Digital Literacy general capability (mainly its Investigating element: locate information, and acquire and collate data, where judging a source sits; it touches interpret data and respect intellectual property). Eight short workshops and a challenge ask one question: who made this, why, and how would you check it? Every page, post, chart and AI reply is made up for the lesson, with .example addresses, so no real site, outlet or person is judged, and no AI runs on the page. Practice claims are small and checkable (opening hours, a school netball league, beans) and contested topics are left out on purpose; the teacher notes say how to steer them back to method. Many tasks have more than one good answer, so checks accept reasoned choices and the class plans carry the discussion."
+    courses:
+      - { path: ict/information, id: information, stage: foundations, tagline: "Who made it, why, and how would you check?" }
   - id: safe
     title: Staying safe and well
     summary: "Your trail, who can see it, kind chats, who is on the other end, screens, pressure tricks, and a plan for when something goes wrong."

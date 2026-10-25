@@ -1,0 +1,29 @@
+inquiry:
+  q: "If every number on a chart is true, can the chart still be dishonest?"
+  prompts:
+    - "Who chose where the axis starts?"
+    - "What would an honest headline for the fruit chart say?"
+  notes: "A chart is made of choices: the axis, the type, the title. True numbers with a misleading picture can still give a false idea. Rewriting the headline ('Fruit sales up a little') makes the point."
+activities:
+  - at: run
+    kind: activity
+    title: "Zero and back"
+    minutes: 4
+    do: |
+      On the class screen, set the axis to 0, then 50, then 54. Students call out what they would believe each time.
+    notes: "Same numbers, three stories."
+  - at: modify
+    kind: discussion
+    title: "Who did they ask?"
+    minutes: 4
+    do: |
+      Give a made-up result: 80% of students want a longer lunch. Students list who might have been asked to get that, and who might give a different answer.
+    notes: "The sample decides what a percentage can say."
+questions:
+  - at: investigate
+    title: "Add the pie"
+    type: question
+    q: "A pie chart's slices are 50%, 30% and 30%. What is wrong?"
+    options: ["They add to 110%, so it is not one whole", "Nothing", "Two slices are the same size"]
+    answer: 0
+    explain: "A pie's parts add to 100%."

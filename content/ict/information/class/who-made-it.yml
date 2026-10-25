@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is a page that wants to sell you something always less trustworthy than one that doesn't?"
+  prompts:
+    - "Can you think of a time a shop gave you good advice?"
+    - "Can a page with nothing to sell still be wrong?"
+  notes: "Purpose is a clue about what to check, not a verdict. A shop's advice can be right, and a page with no adverts can be careless or out of date. Bring it back to: what would you check, and where?"
+activities:
+  - at: run
+    kind: discussion
+    title: "Defend a different group"
+    minutes: 4
+    do: |
+      Show this made-up page: "bestbikes.example: The 5 best bikes for kids (we earn money when you buy through our links)." Half the room argues it informs, half that it sells. Each side names the clue on the page.
+    notes: "Both are defensible. The point is the clue, not the label."
+  - at: modify
+    kind: activity
+    title: "Find the three"
+    minutes: 4
+    do: |
+      Show a made-up page on the board. Students point to who made it, why and when.
+    notes: "If a page has none of them, ask what that tells you."
+questions:
+  - at: investigate
+    title: "Which purpose?"
+    type: question
+    q: "A page says: Sign our petition to save the old oak tree. What is its main purpose?"
+    options: ["To persuade", "To sell", "To entertain", "To inform"]
+    answer: 0
+    explain: "It wants you to agree and to sign."

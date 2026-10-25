@@ -1,0 +1,29 @@
+inquiry:
+  q: "A plain page with a named expert, or a polished page with no name: which would you trust? Is there a case where the polished one wins?"
+  prompts:
+    - "What would the polished page need to show to win?"
+    - "What would make you doubt the plain page?"
+  notes: "Looks can come with care, and an expert can be out of date. The reasons that count are still checkable ones. Let students find a case where the polished page wins on reasons, not looks."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Rate them, then debate"
+    minutes: 8
+    do: |
+      In pairs, rate each page from 1 to 5 on: who made it, how recent it is, where its facts came from, what it wants. Then two sides argue which page to use. Every reason must be something you could check.
+    notes: "Accept 'neither yet, check a third source'. Stop anyone who argues from looks and ask what they could check."
+  - at: make
+    kind: activity
+    title: "Make Page A trustworthy"
+    minutes: 4
+    do: |
+      Groups list what Page A would need to add before they would use it.
+    notes: "An author, a date, a source, and no product to sell, or a clear note that it sells one."
+questions:
+  - at: run
+    title: "A reason or not?"
+    type: question
+    q: "Which of these is a reason you could check?"
+    options: ["It names the scientist who did the study", "It has a modern design", "It says it is the best site", "It has lots of photos"]
+    answer: 0
+    explain: "You can look up the scientist and the study. The others are about looks or boasts."

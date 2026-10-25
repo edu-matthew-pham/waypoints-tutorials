@@ -1,0 +1,43 @@
+summary: "Students compare two made-up pages that disagree about watering beans, sort clues into good reasons and not reasons, rate each page by the same questions and argue which to use."
+time: 30
+timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 6 min · debate and reflection 10 min"
+goals:
+  - I can compare two pages by who made them, when, and where their facts came from.
+  - I can say why looks, excitement and big numbers are not reasons to trust a page.
+  - I can say when I need a third source.
+struggle: "Students choose the page they like the look of, then find reasons afterwards. Ask them to give a reason they could check before they say which page."
+before: |
+  The one idea: compare what you can find out about two pages, not how they look. Good reasons are checkable: author, date, source, experience, purpose. Both pages are made up (.example addresses), and the watering advice on Page B is general, not a rule for every soil and climate.
+
+  The debate is the heart of the lesson: let students disagree, as long as each reason is something they could check. "Neither yet, I'd check a third source" is a strong answer, not a cop-out.
+
+  Contested topics: if students bring two real pages on an argued topic, do not decide the topic. Ask which clues on each page are checkable, and where a third source would be. Keep the class on the method.
+
+  Years 5 to 6: the floor (Engage to Practise). Years 7 to 8: the typical written argument as well.
+running:
+  - "Engage: take a vote. Ask the Page A voters what they liked."
+  - "Explore: ask what all the good reasons have in common."
+  - "Explain: ask what Zoe could have checked."
+  - "Elaborate: ask why averaging two claims is not checking."
+  - "Debate: two sides, each reason must be checkable."
+stuck:
+  - see: "A student says Page A is better because it is exciting."
+    ask: "What on Page A could you check?"
+    fix: "Excitement is not evidence. Find something you could look up."
+  - see: "A student says both pages are equally good."
+    ask: "Who wrote each? When? Where did the facts come from?"
+    fix: "Ask the same three questions of both, then compare."
+  - see: "A student thinks Page B must be right because it is a club."
+    ask: "How would you check Page B?"
+    fix: "Page B names its source. Checking it is the next step."
+stretch: "Rewrite Page A so it gives a reader good reasons to trust it. What did you have to add?"
+support: "A two-column table: Page A, Page B. Rows: who, when, source, wants what."
+leads: |
+  Next: Check the claim. Leaving the page to see what others say.
+exit:
+  q: "Name two good reasons to trust a page more, and one thing that is not a reason."
+  a: "Good reasons: a named author, a date, a source you can check, makers who would know. Not a reason: how it looks, exclamation marks, 'thousands agree'."
+explain: |
+  When two pages disagree, compare what you can **check**: who made it, when, where its facts came from, and what it wants.
+
+  How a page **looks** is not a reason. If two good pages still disagree, find a **third source**.
