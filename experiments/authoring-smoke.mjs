@@ -40,7 +40,7 @@ try{
  const courseDownload=page.waitForEvent('download');await page.click('#downloadCourse');const courseEntries=await readZipEntries(new Blob([await readFile(await(await courseDownload).path())]));const lessonPages=[...courseEntries].filter(([k])=>/^[^/]+\/[^/]+\/index\.html$/.test(k)).map(([,v])=>new TextDecoder().decode(v));assert.ok(lessonPages.some(html=>/href="\.\.\/_katex/.test(html)),'Course lesson pages share the maths assets');assert.ok([...courseEntries.keys()].some(k=>/^[^/]+\/_numbas\//.test(k)));
  results.push({mathsStarterPromptPreviewRecordingPackage:'pass'});
  await page.screenshot({path:dir+'/authoring-maths.png',fullPage:true});
- await page.goto(base+'clip.html');await page.waitForFunction(()=>document.querySelector('#app').options.length===10);
+ await page.goto(base+'clip.html');await page.waitForFunction(()=>document.querySelector('#app').options.length===11);
  const cases=[
   {app:'science',query:{code:'widget: heat\n'},steps:[{type:'action',value:JSON.stringify({type:{selector:'input[type=range]',text:'110'}})},{type:'action',value:JSON.stringify({expect:{selector:'#status',contains:'Steam'}})}]},
   {app:'physics',query:{code:'widget: balance\nleft: x + 2\nright: 5\n'},steps:[{type:'action',value:JSON.stringify({type:{selector:'input[type=range]',text:'3'}})},{type:'action',value:JSON.stringify({expect:{selector:'input[type=range]',value:'3'}})}]},

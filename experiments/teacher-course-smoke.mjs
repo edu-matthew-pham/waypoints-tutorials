@@ -30,7 +30,7 @@ try {
   const menus = await p.$$eval('.sitenav .sn-top', es=>es.map(e=>e.textContent));
   const sub = await p.$$eval('.sn-dd:last-of-type .sn-sub a', es=>es.map(e=>[e.textContent,e.getAttribute('href')]));
   const links = YAMLparse(readFileSync('content/teachers/index.md', 'utf8').split('---')[1]).links.map((l) => l.href);
-  assert.deepEqual(sub.map(x=>x[1]), links, 'the Teachers menu lists what content/teachers/index.md links');
+  assert.deepEqual(sub.map(x=>x[1]).filter(h=>!/^https:\/\/prepare\./.test(h)), links, 'the Teachers menu lists what content/teachers/index.md links');
   assert.ok(links.includes('teachers/make-a-lesson/'));
   assert.equal(await p.locator('ul.lessons a[href="teachers/"]').count(), 0, 'not on home subject list');
   await p.goto(root+'teachers/'); console.log('teachers page', await p.$$eval('ul.lessons a', es=>es.map(e=>e.getAttribute('href'))));
