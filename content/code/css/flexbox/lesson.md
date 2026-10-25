@@ -220,6 +220,22 @@ check:
   text: "Put the club menu in a row inside the header."
   rules: { tags: [header, nav, ul, li, a, style], contains: ["display:flex;"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "You want the links in the nav to sit in a row. Where does display: flex go?"
+    options:
+      - "On the nav, the box that holds the links"
+      - "On each link"
+      - "On the page's body only"
+      - "On the header's text"
+    answer: 0
+    feedback:
+      - null
+      - "Flex goes on the box that holds the items, and then they line up. A single link has nothing to line up."
+      - "The body would line up its own children, not the links in the nav."
+      - "Text isn't a box. Flex goes on the box that holds the items."
+    explain: "display: flex goes on the parent, the box that holds the items, and the items inside it line up in a row."
 ```
 
 Make the top of the club page: a `<header>` with the club name and, under it, a `<nav>` holding a list of at least three links. Put the links in a row, without bullets.

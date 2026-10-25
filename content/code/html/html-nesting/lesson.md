@@ -156,6 +156,22 @@ check:
   text: "Mark important words with <strong>, and one stressed word with <em> inside them."
   rules: { tags: [strong, em], contains: ["</em></strong>"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which line closes its tags in the right order?"
+    options:
+      - "<strong>Do <em>not</em></strong> be late"
+      - "<strong>Do <em>not</strong></em> be late"
+      - "<strong>Do <em>not</em> be late</strong></em>"
+      - "<em>Do <strong>not</em></strong> be late"
+    answer: 0
+    feedback:
+      - null
+      - "The em was opened last, so it has to close first."
+      - "The em was opened last, so it has to close first, before the strong."
+      - "The em closes before the strong, so close them in that order."
+    explain: "Tags close in the reverse of the order they opened, like putting on a jumper and then a coat, and taking off the coat first."
 ```
 
 Finish this school trip notice. Mark the most important words with `<strong>`, and one word inside them with `<em>`, closing `</em>` right before `</strong>`.

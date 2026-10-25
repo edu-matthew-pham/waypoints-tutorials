@@ -137,6 +137,22 @@ hint:
   - "Roll once before the loop. The loop keeps going while the roll is not 6."
   - "Inside the loop roll again and add 1 to the count."
 check: { type: code, text: "Roll a dice until a six comes up, then print how many rolls it took.", rules: { loops: 1, contains: ["randint(1, 6)", "+= 1"] } }
+smaller:
+  check:
+    type: question
+    q: "The dice must keep rolling until a six. Which line keeps the loop going?"
+    options:
+      - "while roll != 6:"
+      - "while roll == 6:"
+      - "while roll > 6:"
+      - "while 6:"
+    answer: 0
+    feedback:
+      - null
+      - "That stops straight away unless the very first roll is a six."
+      - "A dice never rolls more than 6, so this never runs."
+      - "6 is always true, so the loop would never stop."
+    explain: "The loop runs while the thing you are waiting for hasn't happened yet: while roll != 6."
 ```
 
 Make a dice game with the same parts. The computer rolls a dice (a random number from 1 to 6) again and again until it gets a six, then prints how many rolls it took.

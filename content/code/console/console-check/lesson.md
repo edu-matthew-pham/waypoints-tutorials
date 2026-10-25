@@ -163,6 +163,22 @@ hint:
   - "Put the cost calculation inside the if, and a helpful message in the else."
 check: { type: code, text: "Ask how many tickets, check it with isdigit, and print the total cost.", rules: { contains: ["input(", ".isdigit()", "int(", "12"] } }
 unlocks: [check-then-convert]
+smaller:
+  check:
+    type: question
+    q: "Someone types hello when you asked for a number. Where does the isdigit check go?"
+    options:
+      - "Before int(), to decide whether turning it into a number is safe"
+      - "After int(), to check the number"
+      - "Instead of asking the question"
+      - "Inside print()"
+    answer: 0
+    feedback:
+      - null
+      - "By then int() has already crashed on the word."
+      - "The question still needs asking. The check only decides what to do with the answer."
+      - "print() only shows things. It can't protect int()."
+    explain: "Ask first, check next, convert last. The check has to come before int(), or the crash happens before anything can stop it."
 ```
 
 Tickets to the school play cost **$12** each. Write a ticket machine that asks how many tickets, checks the answer is a number, and prints the total, such as `That will be $36.` If the answer is not a number, it prints a helpful message. Test it with 3, with 0 and with `three`.

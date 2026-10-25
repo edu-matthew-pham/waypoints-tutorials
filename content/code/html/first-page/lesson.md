@@ -166,6 +166,22 @@ check:
   text: "Write a page with a title, two headings and a paragraph under each."
   rules: { tags: [h1, h2, p] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "A page about a park needs a title and two sections. Which set of tags is right?"
+    options:
+      - "One h1 for the title, then an h2 for each section"
+      - "Three h1 headings"
+      - "Three h2 headings"
+      - "One h1 and two p tags"
+    answer: 0
+    feedback:
+      - null
+      - "One main title is enough. The h1 is the biggest heading and the sections sit under it."
+      - "The title is the top level, so it is the h1, with h2 under it."
+      - "p is for paragraphs. Headings are h1, h2 and so on."
+    explain: "h1 is the page title and h2 is a heading for each section under it. Each paragraph goes below its heading."
 ```
 
 Write a page about a place you know well (a park, a beach, a town you've visited): an `<h1>` title, two sections with `<h2>` headings, and a paragraph in each.

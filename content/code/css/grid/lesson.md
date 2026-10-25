@@ -186,6 +186,22 @@ check:
   text: "Make a page layout with Grid: at least two columns."
   rules: { contains: ["display: grid;", "grid-template-columns:"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which rule makes two columns, the second twice as wide as the first?"
+    options:
+      - "grid-template-columns: 1fr 2fr;"
+      - "grid-template-columns: 2fr 1fr;"
+      - "grid-columns: 2;"
+      - "display: columns 1fr 2fr;"
+    answer: 0
+    feedback:
+      - null
+      - "That has the first column twice as wide, not the second."
+      - "The property is grid-template-columns, and it lists the width of each column."
+      - "The row layout is display: grid, with the columns set by grid-template-columns."
+    explain: "grid-template-columns lists one width per column, and 1fr 2fr gives the second column two shares to the first one."
 ```
 
 Make a page for a local walk with two columns: the directions, and a side box (how far, how long, a map). Choose the column widths: a fixed width and `1fr`, or two shares such as `2fr 1fr`.

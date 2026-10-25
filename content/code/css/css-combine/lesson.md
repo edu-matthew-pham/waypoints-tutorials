@@ -174,6 +174,22 @@ check:
   text: "Style the club notice with one group rule and a signup class that overrides it."
   rules: { tags: [style], contains: ["h1,", "class=\"signup\"", ".signup {"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "A paragraph matches h1, h2, p { color: blue; } and also .signup { color: red; }. What colour is it?"
+    options:
+      - "Red, because a class beats a tag"
+      - "Blue, because it matches the group first"
+      - "Purple, a mix of both"
+      - "It doesn't show: the rules clash"
+    answer: 0
+    feedback:
+      - null
+      - "Matching first doesn't win. When two rules clash, the class beats the tag."
+      - "Colours don't mix. One rule's value wins."
+      - "The paragraph does show. One of the rules just wins."
+    explain: "When two rules clash, a class beats a tag, whichever is written first."
 ```
 
 Restyle the club notice. Write one group rule such as `h1, h2, p` that gives the heading and the paragraphs a colour and a font. Give the last paragraph the class `signup` and a `.signup` rule with a different colour and a bigger size.

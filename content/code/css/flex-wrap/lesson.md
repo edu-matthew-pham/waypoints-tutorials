@@ -204,6 +204,22 @@ check:
   text: "Make a gallery of at least six pictures that wraps, with items that share the space and have a minimum width."
   rules: { tags: [img], contains: ["display: flex;", "flex-wrap: wrap;", "flex: 1;", "min-width:"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "The pictures run out of room on a phone. Which property lets them drop onto a new line?"
+    options:
+      - "flex-wrap: wrap;"
+      - "flex-direction: column;"
+      - "gap: 10px;"
+      - "display: block;"
+    answer: 0
+    feedback:
+      - null
+      - "That stacks everything in one column, always. Wrapping only happens when there's no room."
+      - "gap spaces the items out but doesn't move any to a new line."
+      - "block would turn flex off, so the row wouldn't be a row any more."
+    explain: "A flex row stays on one line unless you ask it to wrap, so flex-wrap: wrap lets items drop down when there's no room."
 ```
 
 Make a trophy cabinet for a sports team, or a shelf of books you've read: a heading and at least six pictures, each with good alt text. It should fit a phone and a laptop: the pictures wrap onto new lines and share the room on each line. Pictures you can use: `trophy.svg`, `medal.svg`, `book.svg`, `ball.svg`, `star.svg`, `music.svg`.

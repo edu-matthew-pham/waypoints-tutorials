@@ -194,6 +194,22 @@ check:
   text: "Style the concert notice with a rule for h1, one for h2 and one for p."
   rules: { tags: [style], contains: ["h1 {", "h2 {", "p {"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which rule colours every paragraph blue?"
+    options:
+      - "p { color: blue; }"
+      - "<p> { color: blue; }"
+      - ".p { color: blue; }"
+      - "p: color blue"
+    answer: 0
+    feedback:
+      - null
+      - "In a style block the selector is the bare tag name, without angle brackets."
+      - "A dot means a class called p, and no paragraph has that class."
+      - "A rule needs curly brackets, with property: value; pairs inside."
+    explain: "A rule is a selector, then curly brackets with property: value; inside. A bare tag name picks every element of that kind."
 ```
 
 The `<style>` block is ready at the top of this concert notice, with no rules. Write three rules: one for `h1`, one for `h2` and one for `p`. Give each a colour, and change at least one font.

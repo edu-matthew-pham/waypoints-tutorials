@@ -218,6 +218,22 @@ check:
   text: "Put the club name on the left and the menu on the right of the header."
   rules: { tags: [header, nav], contains: ["display: flex;", "justify-content: space-between;", "align-items: center;"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which property puts the first item at one end and the last at the other end of the row?"
+    options:
+      - "justify-content: space-between;"
+      - "align-items: space-between;"
+      - "gap: space-between;"
+      - "flex-wrap: space-between;"
+    answer: 0
+    feedback:
+      - null
+      - "align-items works across the row. Spreading along it is justify-content."
+      - "gap takes a size, like 10px, not space-between."
+      - "flex-wrap decides about new lines, not spacing."
+    explain: "justify-content places the items along the row, and space-between pushes the first and last to the ends."
 ```
 
 The club's header has a name and a menu, one above the other. Make the header a row with the name at the left and the menu at the right, lined up across the bar.

@@ -147,6 +147,22 @@ hint:
   - "Work out the total first: total = cups * price. Then turn it into text in the print line."
   - "Each number joined onto text needs its own str()."
 check: { type: code, text: "Print a receipt line that joins a count and a calculated total with text.", rules: { contains: ["str(", "*"] } }
+smaller:
+  check:
+    type: question
+    q: "cups = 3. Which line prints 3 cups cost $12 with the number joined to the words?"
+    options:
+      - "print(str(cups) + \" cups cost $12\")"
+      - "print(cups + \" cups cost $12\")"
+      - "print(\"cups\" + 3)"
+      - "print(str(cups cups))"
+    answer: 0
+    feedback:
+      - null
+      - "A number and text can't be added. Turn the number into text first."
+      - "Put the name cups there, not the word, and turn it into text."
+      - "str() takes one thing in brackets, and the pieces are joined with +."
+    explain: "+ joins text to text, so turn the number into text with str() first."
 ```
 
 A café sells cups of hot chocolate. Write a receipt: store the number of cups and the price, work out the total, and print a line such as `3 cups cost $12`.

@@ -124,6 +124,22 @@ hint:
   - "Set name once at the top, then use it in more than one print line."
   - "Each print is one line: print(\"Welcome, \" + name)."
 check: { type: code, text: "Print a four-line sign, with your name stored once and used in two lines.", rules: { contains: ["name =", "+ name"] } }
+smaller:
+  check:
+    type: question
+    q: "You stored name = \"Ada\" at the top. Which line puts it inside a sentence on the sign?"
+    options:
+      - "print(\"Door of \" + name)"
+      - "print(\"Door of name\")"
+      - "print(\"Door of\" name)"
+      - "print(Door of + name)"
+    answer: 0
+    feedback:
+      - null
+      - "In quotes, name is just the word name. Outside the quotes it means what name holds."
+      - "Two pieces of text need a + between them."
+      - "Words to print need quotes round them."
+    explain: "Quotes make text, and a + joins text to what a name holds, so print(\"Door of \" + name) prints Door of Ada."
 ```
 
 Make a four-line sign for your classroom door. Store a name once at the top, use it in at least two of the lines, and run it.

@@ -198,6 +198,22 @@ check:
       - "href=\"#results\""
       - "href=\"#join\""
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "A link says href=\"#rules\". Where does it jump to?"
+    options:
+      - "The element with id=\"rules\""
+      - "The first heading on the page"
+      - "An element with class=\"rules\""
+      - "A new page called rules"
+    answer: 0
+    feedback:
+      - null
+      - "It doesn't jump to the first heading. It jumps to a place with that name."
+      - "A class can be on many elements, so jumps use an id."
+      - "The # means a place on this page, not a different page."
+    explain: "# and a name jump to the element on the page whose id is that name, so the heading needs id=\"rules\"."
 ```
 
 This page has three parts but no menu. Add a `<nav>` with a list of three links under the title, inside the `<header>`. Each link jumps to one of the headings: give them the ids `rules`, `results` and `join`.

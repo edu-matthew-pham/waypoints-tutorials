@@ -203,6 +203,12 @@ check:
   text: "Make a table with a heading row and at least two rows of data."
   rules: { tags: [table, tr, th, td] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: number
+    q: "The heading row has 3 cells: Day, Morning, Afternoon. How many cells should every other row have?"
+    answer: 3
+    explain: "Every row needs the same number of cells as the heading row, or the columns stop lining up."
 ```
 
 Make a table of your own: a timetable for two days, your sports results, or a list of games with their ratings. Give it a heading row and at least two rows of data.

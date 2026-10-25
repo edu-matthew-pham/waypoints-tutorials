@@ -191,6 +191,22 @@ check:
   text: "Write a top 5 list with a title and a smaller list inside one item."
   rules: { tags: [h1, ol, ul, li], contains: ["</ul></li>"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "A small bulleted list goes inside one item of a numbered list. Where does it sit?"
+    options:
+      - "Inside that item's li, before its closing li"
+      - "Between two li items, on its own"
+      - "After the closing ol"
+      - "Before the opening ol"
+    answer: 0
+    feedback:
+      - null
+      - "Then it would be a list sitting among the items, not inside one."
+      - "After the ol it is a separate list, not inside an item."
+      - "Before the ol it is a separate list, not inside an item."
+    explain: "A list inside an item goes between that item's li and its closing li, so the item holds it."
 ```
 
 Make a page with your top 5 (books, games, places, songs): a title, a numbered list of five items, and a smaller bulleted list inside one item, for example the reasons you picked it.

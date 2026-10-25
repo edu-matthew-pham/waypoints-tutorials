@@ -162,6 +162,18 @@ hint:
   - "A colour is text, so it goes in quotes: colour = \"purple\". Use it with pencolor(colour)."
 check: { type: code, text: "Use a variable for the pen colour and draw a shape with a loop.", rules: { uses: [pencolor], loops: 1 } }
 unlocks: [named-turn]
+smaller:
+  check:
+    type: question
+    q: "You wrote colour = \"purple\" at the top. Which line uses it to colour the pen?"
+    options: ["pencolor(colour)", "pencolor(\"colour\")", "colour(pencolor)", "pencolor = colour"]
+    answer: 0
+    feedback:
+      - null
+      - "In quotes it is the word colour, which is not a colour. Without quotes it is whatever the name holds."
+      - "pencolor is the thing that does the work, so it comes first, with the colour in brackets."
+      - "The brackets hand the colour to pencolor. An equals sign would be a variable of its own."
+    explain: "No quotes means \"use what colour holds\", so pencolor(colour) paints with purple."
 ```
 
 Make your own shape generator. Put three names at the top (`sides`, `size` and `colour`) and use all three below. Then change each one and watch the shape change.

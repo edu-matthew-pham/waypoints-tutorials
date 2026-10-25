@@ -168,6 +168,22 @@ check:
   text: "Highlight a phrase with a span and a class."
   rules: { tags: [style, span], contains: ["class=\"highlight\"", ".highlight {", "background-color:"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which tag wraps just a few words in a sentence, without starting a new line?"
+    options:
+      - "span"
+      - "div"
+      - "p"
+      - "section"
+    answer: 0
+    feedback:
+      - null
+      - "A div is a block, so it starts a new line and takes the whole width."
+      - "A p is a new paragraph, so it starts a new line."
+      - "A section is a block too, so it starts a new line."
+    explain: "span is inline, so it stays in the line and wraps just the words you give it. div and the others are blocks."
 ```
 
 Highlight the most important phrase in this concert notice. Put a `<span>` with the class `highlight` around just those words, and write a `.highlight` rule with a background colour.

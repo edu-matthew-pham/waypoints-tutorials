@@ -178,6 +178,22 @@ hint:
   - "One step is four lines: up, turn, across, turn back. Put those under a for line."
 check: { type: code, text: "Draw a staircase with 5 steps using a loop.", rules: { loops: 1 } }
 unlocks: [for-loop]
+smaller:
+  check:
+    type: question
+    q: "A staircase has 5 steps. Which part goes under the for line?"
+    options:
+      - "One step: up, turn, across, turn back"
+      - "All five steps, one after another"
+      - "Just the line going up"
+      - "Only the turns"
+    answer: 0
+    feedback:
+      - null
+      - "The loop is what makes the five. Write one step, and say how many times."
+      - "A step also needs the line across, or it never gets any further along."
+      - "The lines matter as much as the turns: a step is both."
+    explain: "Find the part that repeats, write it once, and let the loop do the counting."
 ```
 
 A loop works for any pattern, not only shapes. Find the part that repeats, write it once, and say how many times.

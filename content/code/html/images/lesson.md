@@ -194,6 +194,22 @@ check:
   text: "Make a page with a title, a picture with alt, and a paragraph."
   rules: { tags: [h1, img, p], contains: ["alt=\""] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which tag shows the trophy picture and describes it for someone who can't see it?"
+    options:
+      - "<img src=\"trophy.svg\" alt=\"A gold trophy\">"
+      - "<img href=\"trophy.svg\">"
+      - "<image src=\"trophy.svg\">"
+      - "<img alt=\"trophy.svg\">"
+    answer: 0
+    feedback:
+      - null
+      - "A picture's file goes in src, not href, and it needs alt text too."
+      - "The tag is img, short for image."
+      - "The file name goes in src. The alt is for the words that describe it."
+    explain: "img needs two attributes: src, which file to show, and alt, what to say about it."
 ```
 
 Make a page about a sport, a book or a band you like: a title, a picture, and a paragraph about it. The pictures you can use are `trophy.svg`, `medal.svg`, `book.svg`, `ball.svg`, `star.svg` and `music.svg`.

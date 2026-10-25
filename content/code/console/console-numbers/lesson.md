@@ -152,6 +152,22 @@ hint:
   - "tickets = int(input(\"How many tickets? \")) turns the answer into a number as it is stored."
   - "Work out the total, then use str() to join it onto the text."
 check: { type: code, text: "Ask how many tickets, turn the answer into a number, and print the total cost.", rules: { contains: ["int(input(", "12", "str("] } }
+smaller:
+  check:
+    type: question
+    q: "A person types 3 for tickets = input(\"How many? \"). What is tickets?"
+    options:
+      - "The text \"3\""
+      - "The number 3"
+      - "Both at once"
+      - "Nothing until you press Enter again"
+    answer: 0
+    feedback:
+      - null
+      - "input() always gives back text, even when it looks like a number."
+      - "It is one or the other, and text can't be multiplied by 12 the way a number can."
+      - "The answer is stored as soon as Enter is pressed."
+    explain: "input() always gives text, so \"3\" has to be turned into a number with int() before it can be multiplied by the price."
 ```
 
 Tickets to the school play cost **$12** each. Write a ticket machine that asks how many tickets and prints the total, such as `That will be $36.` Test it with 3. (Typing a word will stop it for now. Two lessons from now it learns to cope.)

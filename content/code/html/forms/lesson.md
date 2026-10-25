@@ -198,6 +198,22 @@ check:
   text: "Make a booking form with linked labels, a drop-down and a button."
   rules: { tags: [form, p, label, input, select, option, button], contains: ["for=\""] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "What links a label to its box, so that clicking the label picks the box?"
+    options:
+      - "The label's for matches the box's id"
+      - "They sit side by side"
+      - "They have the same name"
+      - "A line break between them"
+    answer: 0
+    feedback:
+      - null
+      - "Side by side looks linked but does nothing when clicked."
+      - "name sends the data. It doesn't link the label."
+      - "A line break only moves things down the page."
+    explain: "The label's for has to match the input's id. That's the link, so clicking the label goes to the box."
 ```
 
 Make a booking form for a bike repair, a library book or a pet-sitting job: a heading, at least two labelled fields (one a drop-down), and a button. Click every label to check it is linked.

@@ -175,6 +175,22 @@ check:
   text: "Give the page a dark header and light menu links, and leave the link in the text alone."
   rules: { tags: [style], contains: ["header {", "background-color:", "nav a {"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which selector styles only the links inside the nav, and not the link in the paragraph?"
+    options:
+      - "nav a"
+      - "a"
+      - "nav, a"
+      - ".nav"
+    answer: 0
+    feedback:
+      - null
+      - "That picks every link on the page, including the one in the text."
+      - "The comma means nav and also every a, so it still catches every link."
+      - "A dot means a class called nav. The selector for links inside the nav tag is nav a."
+    explain: "A space means inside: nav a picks only the links that sit inside a nav."
 ```
 
 Style this club page: a dark header, light menu links that fit it, and the link in the text left as it is.

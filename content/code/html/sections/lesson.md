@@ -200,6 +200,22 @@ check:
   text: "Name the parts: a header, a nav holding a list of links, a main with a section, and a footer."
   rules: { tags: [header, nav, ul, li, a, main, section, footer] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which part goes inside the nav tag?"
+    options:
+      - "The list of links"
+      - "The whole page"
+      - "The footer"
+      - "The main heading only"
+    answer: 0
+    feedback:
+      - null
+      - "The page has more parts than a menu, so the nav holds only the menu."
+      - "The footer is its own part, at the bottom."
+      - "The heading belongs to the header or the main part, not the menu."
+    explain: "nav names the menu, so the list of links goes inside it, and the other parts get their own tags."
 ```
 
 This club homepage is all plain text. Name its parts with `<header>`, `<nav>` (around the list of links), `<main>` with one `<section>`, and `<footer>`. Then change the words to a club of your own.

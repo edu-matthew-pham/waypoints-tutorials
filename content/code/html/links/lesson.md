@@ -176,6 +176,22 @@ check:
   text: "Make at least two items in your top 5 into links."
   rules: { tags: [ol, li, a], contains: ["href=\""] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Which line makes the word Hawks a link to https://example.com/hawks?"
+    options:
+      - "<a href=\"https://example.com/hawks\">Hawks</a>"
+      - "<a>https://example.com/hawks</a>"
+      - "<link href=\"https://example.com/hawks\">Hawks</link>"
+      - "<a src=\"https://example.com/hawks\">Hawks</a>"
+    answer: 0
+    feedback:
+      - null
+      - "The address has to go in an attribute, and the words go between the tags."
+      - "link is a different tag. A link in the text is a, short for anchor."
+      - "The address goes in href, not src."
+    explain: "A link is an a tag with the address in href, and the words people click go between the tags."
 ```
 
 Here is a top 5 list. Change the title and the items to your own favourites (books, games, places, songs). Then make two of the items links. Use `https://example.com/` followed by a name as the address, and click each link to test it.

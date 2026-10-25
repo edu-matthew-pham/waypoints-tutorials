@@ -201,6 +201,12 @@ check:
   text: "Make a card with a heading and a picture, styled with padding, a border and a width."
   rules: { tags: [style, div, h2, img], contains: ["padding:", "border:", "width:"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: number
+    q: "A box is 200 wide, with 20 of padding and a 5 border on each side. How wide is it altogether?"
+    answer: 250
+    explain: "Padding and border add to the width, on both sides: 200 + 20 + 20 + 5 + 5 = 250."
 ```
 
 Make a card for a product in a shop, a player in a team or a book you'd recommend: a `<div>` with a heading, a picture and a line of text, styled with padding, a border, margin and a width. Point at it with Box model and work out its width before you check.

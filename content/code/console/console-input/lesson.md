@@ -118,6 +118,22 @@ hint:
   - "Use both names in the final print, with + between the pieces and spaces inside the quotes."
 check: { type: code, text: "Ask two questions, store both answers, and print one line that uses both.", rules: { contains: ["= input(", "print(", "+"] } }
 unlocks: [ask-and-reply]
+smaller:
+  check:
+    type: question
+    q: "Your program asks two questions and uses both answers in one line. What does the first answer need?"
+    options:
+      - "A name of its own, so it is still there after the second question"
+      - "To be printed straight away"
+      - "Nothing: input() remembers every answer"
+      - "To be asked again at the end"
+    answer: 0
+    feedback:
+      - null
+      - "Printing shows it, but it is gone by the time you want to use it."
+      - "input() hands back one answer and forgets it, so the second question would wipe it out."
+      - "Asking twice would just give a different answer."
+    explain: "Each input() gives you one answer. Store it under a name, and it is still yours when the second question arrives."
 ```
 
 Write a program that asks **two** questions (for example a name and a favourite animal) and prints one sentence that uses both answers.

@@ -169,6 +169,22 @@ hint:
   - "Write three small functions, one for each key, then connect each with onkey."
   - "Left turns left 30 degrees: `left(30)`. Right turns right 30."
 check: { type: code, text: "Steer with three keys.", rules: { defs: 3, uses: [onkey, mainloop] } }
+smaller:
+  check:
+    type: question
+    q: "You wrote def go_up(): that moves the turtle forward. Which line makes the Up arrow run it?"
+    options:
+      - 'onkey(go_up, "Up")'
+      - 'onkey(go_up(), "Up")'
+      - 'onkey("Up", go_up)'
+      - "onkey(go_up, Up)"
+    answer: 0
+    feedback:
+      - null
+      - "The brackets run go_up straight away, once, before any key is pressed. Hand it over without brackets."
+      - "The function comes first and the key second."
+      - "A key is text, so it needs quotes."
+    explain: "onkey pairs a function with a key. Give it the function itself, with no brackets, and the key in quotes."
 ```
 
 Steer the turtle with the keys: **Up** moves forward 20, **Left** turns left 30 degrees, **Right** turns right 30 degrees.

@@ -149,6 +149,13 @@ hint:
   - "Start at the top left. The first stroke goes down 50, then across 50 to the right, then up 50 to the top."
   - "You can go back over a line you already drew. After the stroke up, turn right twice (right(180)) and go down 100 for the long stroke."
 check: { type: code, text: "Draw a 4 with forward, left and right.", rules: { uses: [forward, left, right] } }
+smaller:
+  check:
+    type: question
+    q: "The turtle starts facing right. After right(90), which way does it face?"
+    options: ["Down", "Up", "Right", "Left"]
+    answer: 0
+    explain: "right turns the way a clock hand turns, so a quarter turn from facing right leaves it facing down. left(90) would leave it facing up."
 ```
 
 Draw a **4** like the one on a calculator: a short stroke down, a bar across, then one long stroke from top to bottom. Use bars of 50 steps. The turtle may draw over a line it has already drawn, so you do not need to lift the pen.

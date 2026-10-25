@@ -164,6 +164,22 @@ hint:
   - "Use if / elif for each choice and else for anything else. One choice runs break."
 check: { type: code, text: "A menu app: while True, at least three choices with if and elif, and break to quit.", rules: { loops: 1, contains: ["while True", "elif", "break"] } }
 unlocks: [menu-loop]
+smaller:
+  check:
+    type: question
+    q: "Your menu sits in while True: and never ends by itself. Which word gets you out when the person picks quit?"
+    options:
+      - "break"
+      - "stop"
+      - "end"
+      - "exit"
+    answer: 0
+    feedback:
+      - null
+      - "Python has no word stop for this."
+      - "Python has no word end for this."
+      - "This isn't the word the loop uses. Python's way out of a loop is break."
+    explain: "break leaves the loop at once and the program carries on after it."
 ```
 
 Make your own menu app: a café, a game shop, a quiz scoreboard or a unit converter. It needs `while True`, at least three choices, a reply for a wrong choice, and a way to quit.

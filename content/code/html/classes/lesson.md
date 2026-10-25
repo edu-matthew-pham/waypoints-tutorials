@@ -179,6 +179,22 @@ check:
   text: "Mark the winners and the runners-up with classes, and style each class in its own colour."
   rules: { tags: [style], contains: ["class=\"winner\"", ".winner{", "class=\"runner\"", ".runner{"] }
 expected: page.html#sol-make
+smaller:
+  check:
+    type: question
+    q: "Some paragraphs have class=\"winner\". Which rule styles them all?"
+    options:
+      - ".winner { color: gold; }"
+      - "winner { color: gold; }"
+      - "#winner { color: gold; }"
+      - "class.winner { color: gold; }"
+    answer: 0
+    feedback:
+      - null
+      - "Without a dot it looks for a tag called winner, and there isn't one."
+      - "A hash is for one element with an id, not many with a class."
+      - "In CSS a class is a dot and the name, with nothing in front."
+    explain: "A dot and the class name picks every element with that class."
 ```
 
 This is a results page. Use a class named `winner` for the first-place paragraphs and a class named `runner` for the second-place paragraphs, then write a rule for each, with two different colours.

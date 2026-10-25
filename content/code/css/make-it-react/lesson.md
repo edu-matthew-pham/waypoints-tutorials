@@ -181,6 +181,22 @@ check:
   type: code
   text: "When Say hello is clicked, show Hi, and the name typed in the box."
   rules: { contains: ["addEventListener", ".value", ".textContent"] }
+smaller:
+  check:
+    type: question
+    q: "Which one reads what the person typed in the box with id name?"
+    options:
+      - "document.querySelector(\"#name\").value"
+      - "document.querySelector(\"#name\").text"
+      - "document.querySelector(\"#name\").typed"
+      - "document.querySelector(\"#name\")"
+    answer: 0
+    feedback:
+      - null
+      - "A box has no .text. What's typed is in .value."
+      - "There is no .typed. What's typed is in .value."
+      - "That finds the box but not what's in it. Add .value."
+    explain: "querySelector finds the box, and .value is what was typed in it."
 ```
 
 Make the page greet people: when someone types their name and clicks **Say hello**, the message shows `Hi, Ada!` (with their name). `.value` reads what was typed, and `+` joins words together.
