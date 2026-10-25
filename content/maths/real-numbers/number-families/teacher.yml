@@ -1,0 +1,39 @@
+summary: "Students sort numbers into natural, integer, rational and irrational, see why the families nest inside each other, and learn that a root sign alone doesn't make a number irrational (AC9M9N01, node 1)."
+time: 35
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 8 min · Practise and Make 9 min"
+goals:
+  - I can say which families a number belongs to.
+  - I can explain why every integer is rational.
+  - I can tell √16 from √7.
+struggle: "Deciding about roots. Ask: is the number under the root a perfect square?"
+before: |
+  Students need Irrational numbers and Recurring decimals from Year 8.
+
+  The one idea: the families nest. A number belongs to several, but has one smallest. The common mistake is calling any root irrational (Zoe's thinking).
+
+  Natural numbers: here counting numbers 1, 2, 3, ... Say if your school includes 0.
+running:
+  - "Predict: take a show of hands. Those who chose the rationals forgot √2 isn't a fraction."
+  - "Run: ask for the smallest family, not any family."
+  - "Paper: the try-one after the worked example and the four equations in Make are worked on paper first. Books out, and look for each answer written out before it's sorted."
+  - "Modify: before √2 + (−√2), ask what a number plus its opposite is."
+stuck:
+  - see: "A student calls √16 irrational."
+    ask: "What is √16?"
+    fix: "4: a whole number, so rational."
+  - see: "A student says 0.5 isn't rational because it has a decimal point."
+    ask: "Can you write 0.5 as a fraction?"
+    fix: "1/2: rational."
+stretch: "Is the sum of two irrational numbers always irrational? Is the product?"
+support: "A set of nested boxes: natural, integer, rational, real, with irrational outside the rationals."
+leads: |
+  Starts AC9M9N01.
+
+  Where it leads: exact or rounded (next), intervals on the number line, formulas with π and roots.
+exit:
+  q: "Is √20 rational or irrational? Why?"
+  a: "Irrational: 20 isn't a perfect square."
+explain: |
+  The natural numbers are inside the integers, the integers are inside the rational numbers, and the rational and irrational numbers together are the real numbers.
+
+  Each family answers a question the last couldn't: $2 - 5$ needs negatives, $1 \div 2$ needs fractions, and $x^2 = 2$ needs irrationals.

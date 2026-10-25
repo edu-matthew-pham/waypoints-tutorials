@@ -1,0 +1,7 @@
+# Zoe's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: zoe
+Is √16 rational or irrational?
+It has a square root sign.
+So it's irrational.
+# endregion

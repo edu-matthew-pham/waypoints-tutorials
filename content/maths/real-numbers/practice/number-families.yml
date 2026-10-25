@@ -1,0 +1,10 @@
+# Practice for "Number families".
+templates:
+  - q: "Is √{n} rational or irrational?"
+    vars: { n: "2..60" }
+    choices: ["{sqrt(n) = round(sqrt(n)) ? 'Rational: a whole number' : 'Irrational'}", "{sqrt(n) = round(sqrt(n)) ? 'Irrational' : 'Rational: a whole number'}"]
+    explain: "{sqrt(n) = round(sqrt(n)) ? 'It is a perfect square, so the root is a whole number.' : 'It is not a perfect square, so the digits never end or repeat.'}"
+  - q: "Which is the smallest family that contains {a}?"
+    vars: { a: [-9, -7, -5, -3, -2, 4, 6, 8] }
+    choices: ["{a < 0 ? 'Integers' : 'Natural numbers'}", "Rational numbers", "Irrational numbers"]
+    explain: "{a < 0 ? 'It is a negative whole number: an integer.' : 'It is a counting number: natural.'}"
