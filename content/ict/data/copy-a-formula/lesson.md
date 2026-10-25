@@ -11,8 +11,8 @@ In the last lesson you wrote a growth formula for one bean. Here are five beans,
 | | A | B | C | D |
 |---|---|---|---|---|
 | **1** | Plant | Day 1 | Day 4 | Growth |
-| **2** | Bean A | 3 | 11 | `=C2-B2` |
-| **3** | Bean B | 2 | 11 | |
+| **2** | Bean A | {{day1[1]}} | {{day4[1]}} | `=C2-B2` |
+| **3** | Bean B | {{day1[2]}} | {{day4[2]}} | |
 
 ## Predict: what lands in D3?
 
@@ -22,8 +22,8 @@ insight: "Committing to what a pasted formula holds tests the move: its cell nam
 check:
   type: predict
   q: "D2 holds =C2-B2. You copy D2 and paste it into D3, one row down. What does D3 hold?"
-  options: ["=C2-B2", "=C3-B3", "=C4-B4", "8"]
-  actual: "=C3-B3. The paste moves one row down, so every row number in the formula goes up by one. D3 then works out 11 - 2 = 9, Bean B's own growth."
+  options: ["=C2-B2", "=C3-B3", "=C4-B4", "{{day4[1]-day1[1]}}"]
+  actual: "=C3-B3. The paste moves one row down, so every row number in the formula goes up by one. D3 then works out {{day4[2]}} - {{day1[2]}} = {{day4[2]-day1[2]}}, Bean B's own growth."
 ```
 
 ## Try: copy and paste
@@ -33,7 +33,7 @@ stage: run
 insight: "Pasting D2 into D3 and reading the bar settles the prediction: the names moved down a row, so D3 uses Bean B's cells."
 try: { playground: board, starter: "sheet.yml#run", height: 420 }
 hint: ["Click D2, then the Copy button. Click D3, then the Paste button.", "Click D3 and look at the bar above the sheet. It shows what the cell holds."]
-check: { type: board, text: "Copy D2 and paste it into D3. What does the Growth in D3 show?", when: "f_D3 = 1 and c_D3 = 9", explain: "D3 shows 9. The pasted formula is =C3-B3, so it works on Bean B's row, not Bean A's." }
+check: { type: board, text: "Copy D2 and paste it into D3. What does the Growth in D3 show?", when: "f_D3 = 1 and c_D3 = {{day4[2]-day1[2]}}", explain: "D3 shows {{day4[2]-day1[2]}}. The pasted formula is =C3-B3, so it works on Bean B's row, not Bean A's." }
 ```
 
 Was your guess right? Click D3 and read the bar: `=C3-B3`. The pasted formula is not the same text as D2's. It is the same **rule**.
@@ -54,7 +54,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#sam"
-      text: "Sam's growth column shows 8 for every bean, but Bean C only grew 6. Click the line where Sam first goes wrong."
+      text: "Sam's growth column shows {{day4[1]-day1[1]}} for every bean, but Bean C only grew {{day4[3]-day1[3]}}. Click the line where Sam first goes wrong."
       answer: 3
       fault: logic
       misconception: same-formula-every-row
@@ -75,7 +75,7 @@ tasks:
 \texttt{D3} \to \texttt{=C3-B3} :: Pasted one row down, the same pattern points at C3 and B3.
 \texttt{D4} \to \texttt{=C4-B4} :: One more row down, one more row number.
 \texttt{D6} \to \texttt{=C6-B6} :: The pattern is the same in every row, so D6 uses row 6.
-\texttt{D6} = 9 - 4 = 5 \text{ (if C6 is 9 and B6 is 4)} :: Each row works out its own bean's growth.
+\texttt{D6} = {{day4[5]}} - {{day1[5]}} = {{day4[5]-day1[5]}} \text{ (Bean E's own heights)} :: Each row works out its own bean's growth.
 ```
 
 Now: which cell does D5 use?
@@ -92,9 +92,9 @@ insight: "Each task changes where the formula is pasted: further down, one colum
 tasks:
   - check:
       type: number
-      q: "E2 holds =B2*10. You copy E2 into E5. B5 holds 4. What does E5 show?"
-      answer: 40
-      explain: "E5 holds =B5*10, which is 4 × 10 = 40."
+      q: "E2 holds =B2*10. You copy E2 into E5. B5 holds {{day1[4]}}. What does E5 show?"
+      answer: {{day1[4] * 10}}
+      explain: "E5 holds =B5*10, which is {{day1[4]}} × 10 = {{day1[4] * 10}}."
   - check:
       type: question
       q: "D2 holds =B2+C2. You copy D2 and paste it one column to the right, into E2. What does E2 hold?"
@@ -133,7 +133,7 @@ tasks:
       explain: "D5's formula uses B5 and C5. The other rows use their own cells, so only D5 changes."
   - starter: "sheet.yml#practise"
     hint: ["Click D2, then choose Fill down. It copies the formula into the cells below.", "You can also copy D2 and paste it into each of D3 to D6 one at a time."]
-    check: { type: board, text: "Use the formula in D2 to fill D3 to D6 with growth formulas for the other four beans.", when: "f_D3 = 1 and f_D4 = 1 and f_D5 = 1 and f_D6 = 1 and c_D3 = 9 and c_D4 = 6 and c_D5 = 8 and c_D6 = 6", explain: "Each cell from D3 to D6 holds its own row's formula, such as =C5-B5 in D5. Filling down moved the names for you." }
+    check: { type: board, text: "Use the formula in D2 to fill D3 to D6 with growth formulas for the other four beans.", when: "f_D3 = 1 and f_D4 = 1 and f_D5 = 1 and f_D6 = 1 and c_D3 = {{day4[2]-day1[2]}} and c_D4 = {{day4[3]-day1[3]}} and c_D5 = {{day4[4]-day1[4]}} and c_D6 = {{day4[5]-day1[5]}}", explain: "Each cell from D3 to D6 holds its own row's formula, such as =C5-B5 in D5. Filling down moved the names for you." }
 ```
 
 ### Which cells change?
@@ -162,3 +162,12 @@ check: { type: reflect, text: "In the spreadsheet app my school uses, I typed th
 ```
 
 Excel, Google Sheets and Numbers all copy formulas this way. To fill down, select the cell and the cells below it, then press Ctrl+D (Cmd+D on a Mac) or drag the small square at the corner of the cell downwards. To copy and paste, use Ctrl+C and Ctrl+V. Click a pasted cell to check its formula used its own row.
+
+```context
+data:
+  day1: [3, 2, 4, 5, 3]
+  day4: [11, 11, 10, 13, 9]
+assert:
+  - day4[1] - day1[1] != day4[3] - day1[3]
+  - day4[1] - day1[1] != day4[2] - day1[2]
+```

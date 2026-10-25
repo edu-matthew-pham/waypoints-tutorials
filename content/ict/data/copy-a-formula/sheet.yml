@@ -7,12 +7,12 @@ cell B1: Day 1
 cell C1: Day 4
 cell D1: Growth
 cell A2: Bean A
-cell B2: 3
-cell C2: 11
+cell B2: {{day1[1]}}
+cell C2: {{day4[1]}}
 cell D2: =C2-B2
 cell A3: Bean B
-cell B3: 2
-cell C3: 11
+cell B3: {{day1[2]}}
+cell C3: {{day4[2]}}
 table: A1:D3
 tools: fill
 edit: D3
@@ -25,21 +25,21 @@ cell B1: Day 1
 cell C1: Day 4
 cell D1: Growth
 cell A2: Bean A
-cell B2: 3
-cell C2: 11
+cell B2: {{day1[1]}}
+cell C2: {{day4[1]}}
 cell D2: =C2-B2
 cell A3: Bean B
-cell B3: 2
-cell C3: 11
+cell B3: {{day1[2]}}
+cell C3: {{day4[2]}}
 cell A4: Bean C
-cell B4: 4
-cell C4: 10
+cell B4: {{day1[3]}}
+cell C4: {{day4[3]}}
 cell A5: Bean D
-cell B5: 5
-cell C5: 13
+cell B5: {{day1[4]}}
+cell C5: {{day4[4]}}
 cell A6: Bean E
-cell B6: 3
-cell C6: 9
+cell B6: {{day1[5]}}
+cell C6: {{day4[5]}}
 table: A1:D6
 tools: fill
 edit: B2:C6, D3:D6
@@ -60,4 +60,39 @@ cell A6: Bean E
 table: A1:E6
 tools: fill
 edit: B2:E6
+# endregion
+
+# What a student adds on each board (tools/check-context.mjs tries the step's check against it).
+# region: run-solution
+cell D3: =C3-B3
+# endregion
+
+# region: practise-solution
+cell D3: =C3-B3
+cell D4: =C4-B4
+cell D5: =C5-B5
+cell D6: =C6-B6
+# endregion
+
+# region: make-solution
+cell B2: {{day1[1]}}
+cell C2: {{day4[1]}}
+cell B3: {{day1[2]}}
+cell C3: {{day4[2]}}
+cell B4: {{day1[3]}}
+cell C4: {{day4[3]}}
+cell B5: {{day1[4]}}
+cell C5: {{day4[4]}}
+cell B6: {{day1[5]}}
+cell C6: {{day4[5]}}
+cell D2: =C2-B2
+cell D3: =C3-B3
+cell D4: =C4-B4
+cell D5: =C5-B5
+cell D6: =C6-B6
+cell E2: =D2/3
+cell E3: =D3/3
+cell E4: =D4/3
+cell E5: =D5/3
+cell E6: =D6/3
 # endregion

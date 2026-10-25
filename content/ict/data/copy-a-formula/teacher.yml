@@ -21,10 +21,10 @@ running:
   - "Practise: ask who finds Fill down quickest and why it is less likely to slip than typing."
   - "Own app: walk round. The common slips are pasting into the wrong cell and dragging the fill handle too far."
 stuck:
-  - see: "A student types =C2-B2 into every row (Sam's mistake) and every growth is 8."
+  - see: "A student types =C2-B2 into every row (Sam's mistake) and every growth is {{day4[1]-day1[1]}}."
     ask: "Click D4 and read the formula. Which bean's row does it use?"
     fix: "Copy D2 and paste it into D4, or select D2 and fill down. The names move for you."
-  - see: "A student copies the number 8 across instead of the formula."
+  - see: "A student copies the number {{day4[1]-day1[1]}} across instead of the formula."
     ask: "Click the pasted cell. Does the bar show a formula or a number?"
     fix: "Copy the cell that holds the formula =C2-B2, not a typed number."
   - see: "A student pastes the formula and the answer is wrong because the formula was pasted into the wrong column."
