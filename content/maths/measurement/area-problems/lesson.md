@@ -7,6 +7,7 @@ summary: "Pick the base and the height at a right angle to it, put both lengths 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "How much paint for the end wall of a house, with its triangle of roof? Real shapes mix rectangles and triangles, and real measurements mix metres and centimetres."
+connection: gable-paint
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8275
   url: http://127.0.0.1:8275/index.html
@@ -41,6 +42,8 @@ check:
   options: ["10 m²", "1000 m²", "1000 cm", "6.5 m²"]
   actual: "10 m². 250 cm = 2.5 m, and 4 × 2.5 = 10 m². 1000 mixes metres with centimetres; 6.5 adds."
 ```
+
+<figure class="situation" role="img" aria-label="A rectangular room 4 metres long and 250 centimetres wide. Its area is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="95" y="40" width="160" height="100" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="175" y="158" text-anchor="middle" fill="currentColor" stroke="none">4 m</text><text x="88" y="95" text-anchor="end" fill="currentColor" stroke="none">250 cm</text><text x="175" y="95" text-anchor="middle" fill="currentColor" stroke="none">area ? m²</text></svg></figure>
 
 Write both lengths in metres first.
 
@@ -230,4 +233,48 @@ hint: ["½ × b × h = 12, so b × h = 24.", "Pick a pair where the height is bi
 check: { type: board, text: "Design a right-angled sail with area 12 m² that is taller than it is wide.", when: "a = 12 and h > b", explain: "b × h = 24 with h bigger: base 3 m and height 8 m, or base 4 m and height 6 m." }
 ```
 
-Then work out the cost of the sailcloth at $15 per m² (a made-up price for the task).
+Then work out the cost of the sailcloth at \$15 per m² (a made-up price for the task).
+
+## Make: paint for a gable, on paper
+
+```step
+stage: make
+insight: "A gable is a triangle, and paint is bought by the litre: the area is one step, the coats a second (they cover the wall twice) and the tin's coverage a third."
+hint: ["Find the triangle's area first.", "Two coats cover the gable twice. How much area is that in all?"]
+check:
+  type: reasoning
+  paper: true
+  q: "The triangular gable end of a house has a base of 8 m and a height of 3 m. One litre of paint covers 10 m², and the gable gets two coats. How many litres of paint are needed?"
+  steps:
+    - ["Gable: $\\tfrac{1}{2} \\times 8 \\times 3 = 12$ m²", "a triangle is half of base × height"]
+    - ["Two coats: $12 \\times 2 = 24$ m² to cover", "each coat covers the whole gable again"]
+    - ["Paint: $24 \\div 10 = 2.4$ litres", "each litre covers 10 m², so divide the area by 10"]
+  picks:
+    - step: 2
+      q: "Why is 24 m² the area to cover?"
+      options:
+        - "Two coats means covering the 12 m² twice"
+        - "Two coats means covering half the area"
+        - "Two coats means adding 2 m² to the area"
+      answer: 0
+      feedback: [null, "Two coats put on more paint, not less.", "The second coat covers the whole gable again, not just 2 m²."]
+  answer: "2.4"
+  tolerance: 0
+  feedback:
+    - ["1.2", "That is for one coat. Two coats cover the gable twice."]
+    - ["24", "That is the area to cover. Each litre covers 10 m², so divide."]
+    - ["12", "That is the area of the gable, not the litres."]
+  criteria:
+    - "I found the area of the triangle with half of base × height."
+    - "I counted both coats before dividing by the coverage."
+    - "My answer is in litres, not m²."
+  explain: "½ × 8 × 3 = 12 m². Two coats: 24 m². At 10 m² per litre: 2.4 litres."
+```
+
+Do this one in your book, not on the screen. The gable, the coverage and the coats are made up for the task. A real job also takes the windows off, and rough walls drink more paint. Sketch the triangle, work it through, check it, and type the litres.
+
+**Also used in**
+
+- **Painting.** The coverage is printed on the tin, and a painter works out the area and the coats before buying.
+- **Sailmaking.** Cloth for a triangular sail is ordered by area, and the area also sets how much power the sail gives.
+- **Turf and lawn.** A wedge of lawn is a triangle: its area sets how much turf to buy.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Jo which formula measures round the edge."
   - "Modify: ask how many times bigger a radius-10 circle is than radius 5."
   - "Make: ask why r² comes before multiplying by π."
+  - "Paper: the table top is worked in books; the page marks the area and the reason for halving 1.2 m, then shows a model. Books out, and look for 0.6 written before anything is squared."
 stuck:
   - see: "A student uses 2πr for area."
     ask: "Is your answer a length or an amount of space?"

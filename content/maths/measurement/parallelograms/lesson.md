@@ -47,6 +47,8 @@ check:
   actual: "The same: 24 cm² each. Cut a triangle off the parallelogram and move it, and it becomes the 6 by 4 rectangle."
 ```
 
+<figure class="situation" role="img" aria-label="A rectangle and a parallelogram side by side. Both have a base of 6 cm and a perpendicular height of 4 cm. Under each, the area is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="45" y="50" width="90" height="60" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><polygon points="205,110 295,110 325,50 235,50" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="235" y1="50" x2="235" y2="110" stroke-dasharray="4 3"/><text x="90" y="128" text-anchor="middle" fill="currentColor" stroke="none">6 cm</text><text x="250" y="128" text-anchor="middle" fill="currentColor" stroke="none">6 cm</text><text x="40" y="85" text-anchor="end" fill="currentColor" stroke="none">4 cm</text><text x="229" y="85" text-anchor="end" fill="currentColor" stroke="none">4 cm</text><text x="90" y="152" text-anchor="middle" fill="currentColor" stroke="none">area ? cm²</text><text x="250" y="152" text-anchor="middle" fill="currentColor" stroke="none">area ? cm²</text></svg></figure>
+
 Picture the parallelogram as the rectangle pushed over. Does anything get added or taken away?
 
 ## Run: cut and move
@@ -216,3 +218,40 @@ check: { type: board, text: "Make a parallelogram that is not a rectangle, with 
 ```
 
 Then find a different base and height for the same area.
+
+## Make: a slanted tile, on paper
+
+```step
+stage: make
+insight: "A slanted tile gives three lengths and one of them is a slanted side; the key step is choosing the perpendicular height, the one at a right angle to the base."
+hint: ["Which length meets the base at a right angle?", "Multiply the base by that height."]
+check:
+  type: reasoning
+  paper: true
+  q: "A tiler cuts slanted tiles. Each tile is a parallelogram with a base of 30 cm, a slanted side of 20 cm and a perpendicular height of 16 cm. What area of floor does one tile cover, in cm²?"
+  steps:
+    - ["Base 30 cm and perpendicular height 16 cm", "the slanted 20 cm is not at a right angle to the base"]
+    - ["$A = b \\times h = 30 \\times 16$", "area is base × perpendicular height"]
+    - ["$A = 480$ cm²", "area is in square centimetres"]
+  picks:
+    - step: 1
+      q: "Which length goes with the base?"
+      options:
+        - "The perpendicular height, 16 cm"
+        - "The slanted side, 20 cm"
+        - "Both, added: 36 cm"
+      answer: 0
+      feedback: [null, "The slanted side is longer than the height. Cut and move the triangle and it disappears.", "Adding lengths gives a perimeter idea. Area multiplies the base and the height."]
+  answer: "480"
+  tolerance: 0
+  feedback:
+    - ["600", "That uses the slanted side, 20 cm. Use the perpendicular height, 16 cm."]
+    - ["46", "That adds the base and the height. Multiply them."]
+  criteria:
+    - "I chose the length at a right angle to the base."
+    - "I ignored the slanted side."
+    - "My answer is in cm²."
+  explain: "30 × 16 = 480 cm². The slanted side, 20 cm, is extra information."
+```
+
+Do this one in your book, not on the screen. The tile is made up for the task. Sketch it, mark the right angle, say which length you ignore, and type the area.

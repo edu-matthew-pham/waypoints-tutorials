@@ -8,6 +8,7 @@ summary: "Roll any circle out flat and its circumference is just over 3 of its d
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A bike wheel, a coin and the Earth's equator: wildly different sizes, but for each one the distance round is the same number of times the distance across."
+connection: wheel-roll
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8279
   url: http://127.0.0.1:8279/index.html
@@ -39,6 +40,8 @@ check:
   options: ["About 31 cm", "About 20 cm", "About 10 cm", "About 100 cm"]
   actual: "About 31 cm: just over 3 diameters (31.4 cm). 20 cm would be 2 diameters, which is less than the way round."
 ```
+
+<figure class="situation" role="img" aria-label="A circle with a diameter of 10 cm. The distance round the edge, the circumference, is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><circle cx="175" cy="100" r="60" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="115" y1="100" x2="235" y2="100"/><text x="175" y="93" text-anchor="middle" fill="currentColor" stroke="none">10 cm</text><text x="175" y="22" text-anchor="middle" fill="currentColor" stroke="none">distance round: ? cm</text></svg></figure>
 
 Picture walking round a circle compared with walking across it.
 
@@ -206,3 +209,46 @@ check: { type: board, text: "Find and roll out a circle whose circumference is b
 ```
 
 Predict the diameter before you roll.
+
+## Make: roll a wheel, on paper
+
+```step
+stage: make
+insight: "Rolling a wheel one turn gives C, and the width across gives d; the lengths come in different units, so changing to one unit comes before dividing."
+hint: ["Write both lengths in centimetres.", "C ÷ d: the way round divided by the way across."]
+check:
+  type: reasoning
+  paper: true
+  q: "A bike wheel is rolled one full turn along the floor. It goes 2.2 m. The wheel is 70 cm across. Work out C ÷ d, to two decimal places."
+  steps:
+    - ["Same unit: $2.2$ m $= 220$ cm", "C and d must be in the same unit before dividing"]
+    - ["$C \\div d = 220 \\div 70$", "the way round divided by the way across"]
+    - ["$\\approx 3.14$", "close to π, as for every circle"]
+  picks:
+    - step: 1
+      q: "Why change 2.2 m to 220 cm first?"
+      options:
+        - "C and d must be in the same unit before you divide"
+        - "Centimetres make the answer bigger"
+        - "Metres cannot be divided by centimetres"
+      answer: 0
+      feedback: [null, "The unit should not change the answer. A ratio of two lengths in the same unit has none.", "You can divide them, but the answer means nothing until both are in one unit."]
+  answer: "3.14"
+  tolerance: 0.01
+  feedback:
+    - ["0.03", "That divides metres by centimetres. Change both to one unit first."]
+    - ["0.32", "That is d ÷ C, upside down. Divide the way round by the way across."]
+  criteria:
+    - "I changed both lengths to the same unit."
+    - "I divided the circumference by the diameter, not the other way round."
+    - "I compared my answer with 3.14 and said why it might be a little off."
+  explain: "220 ÷ 70 ≈ 3.14, so the way round is just over 3 diameters, as for every circle."
+```
+
+Do this one in your book, not on the screen. The distance is made up for the task, and a real wheel gives a similar number, a little off because the tyre squashes. Change the unit, divide, compare with 3.14, and type the ratio.
+
+**Also used in**
+
+- **Cycling.** A bike computer needs the wheel's circumference, which is π times the wheel's width across.
+- **Racing.** In a 400 m race the outer lanes start further forward, because each lane's bends make a bigger circle.
+- **Round things in the room.** A tin, a plate and a coin all give about the same C ÷ d.

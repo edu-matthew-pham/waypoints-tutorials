@@ -20,6 +20,7 @@ running:
   - "Investigate: ask how tall each of Ella's pieces is."
   - "Modify: ask why taking away is quicker for the U."
   - "Make: ask for a second pair of lengths that also works."
+  - "Paper: the L-shaped living room is worked in books; the page marks the flooring area and the reason for taking the corner away, then shows a model. Books out, and look for two areas written before the subtraction. Ask who also found the skirting."
 stuck:
   - see: "A student uses the whole height for every piece."
     ask: "How tall is this piece on its own?"

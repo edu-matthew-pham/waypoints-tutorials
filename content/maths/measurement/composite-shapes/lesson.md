@@ -7,6 +7,7 @@ summary: "A composite shape is made of shapes you know. Cut it into pieces and a
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "An L-shaped bedroom, a house front with a pointed roof, a photo frame: none is a single rectangle, but each is easy once you cut it up."
+connection: l-shaped-floor
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8303
   url: http://127.0.0.1:8303/index.html
@@ -40,6 +41,8 @@ check:
   options: ["33 m²", "48 m²", "28 m²", "18 m²"]
   actual: "33 m². The whole 8 by 6 rectangle is 48 m², and the missing corner is 15 m²: 48 − 15 = 33. (28 is the perimeter, in metres.)"
 ```
+
+<figure class="situation" role="img" aria-label="An L-shaped room 8 metres wide and 6 metres tall, with a corner 5 metres wide and 3 metres deep missing from the top right. Its area is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M95 30 L155 30 L155 90 L255 90 L255 150 L95 150 Z" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><rect x="155" y="30" width="100" height="60" stroke-dasharray="4 3"/><text x="205" y="64" text-anchor="middle" fill="currentColor" stroke="none">missing</text><text x="175" y="168" text-anchor="middle" fill="currentColor" stroke="none">8 m</text><text x="88" y="95" text-anchor="end" fill="currentColor" stroke="none">6 m</text><text x="205" y="22" text-anchor="middle" fill="currentColor" stroke="none">5 m</text><text x="262" y="64" text-anchor="start" fill="currentColor" stroke="none">3 m</text><text x="175" y="125" text-anchor="middle" fill="currentColor" stroke="none">area ? m²</text></svg></figure>
 
 Sketch it first, then decide how you would find the area.
 
@@ -211,3 +214,50 @@ check: { type: board, text: "Change a and b so the L-shaped garden has an area o
 ```
 
 Then find your garden's perimeter, and say how many metres of edging it needs.
+
+## Make: flooring and skirting, on paper
+
+```step
+stage: make
+insight: "A living room that is a rectangle with a corner missing is quickest by taking away; flooring is an area and skirting is a perimeter, so they use different units."
+hint: ["Find the area of the whole 7 by 6 rectangle first.", "The missing corner is not floor. What do you do with its area?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A living room is an L-shape: 7 m along the bottom and 6 m up the left side, with a corner 4 m wide and 3 m deep missing from the top right. How many square metres of flooring cover it?"
+  steps:
+    - ["Whole rectangle: $7 \\times 6 = 42$ m²", "pretend the corner is there"]
+    - ["Missing corner: $4 \\times 3 = 12$ m²", "this part is not floor"]
+    - ["Floor: $42 - 12 = 30$ m²", "take the missing part away"]
+    - ["Skirting board: $7 + 3 + 4 + 3 + 3 + 6 = 26$ m", "the perimeter adds every edge, in metres"]
+  picks:
+    - step: 3
+      q: "Why take 12 m² away from 42 m²?"
+      options:
+        - "The corner is inside the 7 by 6 rectangle but is not floor"
+        - "The corner is more floor, so it should be added"
+        - "You always take the smaller number from the bigger"
+      answer: 0
+      feedback: [null, "The missing corner has no floor. Adding it would count floor that is not there.", "Which number is smaller is not the reason. Ask what the 12 m² is."]
+  answer: "30"
+  tolerance: 0
+  feedback:
+    - ["42", "That is the whole rectangle, with the missing corner counted."]
+    - ["54", "That adds the corner. It has no floor, so take it away."]
+    - ["26", "That is the skirting, a length in metres. Flooring is an area."]
+  criteria:
+    - "I wrote the area of the whole rectangle and the area of the missing corner."
+    - "I took the corner away, and my answer is in m²."
+    - "I found the skirting as a perimeter in m, not m²."
+  explain: "7 × 6 − 4 × 3 = 42 − 12 = 30 m² of flooring. Skirting goes round the edge: 26 m."
+```
+
+<figure class="situation" role="img" aria-label="An L-shaped living room 7 metres along the bottom and 6 metres up the left side, with a corner 4 metres wide and 3 metres deep missing from the top right."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M105 30 L165 30 L165 90 L245 90 L245 150 L105 150 Z" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><rect x="165" y="30" width="80" height="60" stroke-dasharray="4 3"/><text x="205" y="64" text-anchor="middle" fill="currentColor" stroke="none">missing</text><text x="175" y="168" text-anchor="middle" fill="currentColor" stroke="none">7 m</text><text x="98" y="95" text-anchor="end" fill="currentColor" stroke="none">6 m</text><text x="205" y="22" text-anchor="middle" fill="currentColor" stroke="none">4 m</text><text x="252" y="64" text-anchor="start" fill="currentColor" stroke="none">3 m</text><text x="175" y="125" text-anchor="middle" fill="currentColor" stroke="none">flooring ? m²</text></svg></figure>
+
+Do this one in your book, not on the screen. The room is made up for the task. A real job leaves out the doorways for the skirting and adds some for cutting waste. Write the big rectangle, take the corner away, and type the area.
+
+**Also used in**
+
+- **Building.** Flooring is sold by the square metre and skirting board by the metre.
+- **Houses.** The front of a house is a rectangle with a triangle for the roof, and paint is bought by the area.
+- **Maps.** A block of land with a corner cut off is a rectangle with a piece taken away.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Leo to check his radius forwards."
   - "Modify: ask how the two semicircles of the track make one circle."
   - "Make: ask which formula the edging needs."
+  - "Paper: one large against two mediums is worked in books; the page marks the difference and the reason for halving each width, then shows a model. Books out, and look for two radii squared, not the widths."
 stuck:
   - see: "A student stops at r² when working backwards."
     ask: "Is 15.9 the radius, or the radius squared?"

@@ -8,6 +8,7 @@ summary: "Because C ÷ d = π, the circumference is π × diameter: C = πd, or 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A bike wheel 70 cm across rolls forward one circumference with every turn. How many turns to school? A trundle wheel measures a sports field the same way."
+connection: bike-computer
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8280
   url: http://127.0.0.1:8280/index.html
@@ -40,6 +41,8 @@ check:
   options: ["31.4 cm", "15.7 cm", "78.5 cm", "10 cm"]
   actual: "31.4 cm. The diameter is 10 cm, and π × 10 ≈ 31.4. 15.7 uses the radius as the diameter; 10 cm is the diameter itself."
 ```
+
+<figure class="situation" role="img" aria-label="A circle with a radius of 5 cm. The distance round the edge, the circumference, is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><circle cx="175" cy="100" r="60" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="175" y1="100" x2="235" y2="100"/><text x="205" y="93" text-anchor="middle" fill="currentColor" stroke="none">5 cm</text><text x="175" y="22" text-anchor="middle" fill="currentColor" stroke="none">distance round: ? cm</text></svg></figure>
 
 Find the diameter first.
 
@@ -235,3 +238,46 @@ check:
 ```
 
 Then work out how many clicks it makes around a 400 m running track.
+
+## Make: set the bike computer, on paper
+
+```step
+stage: make
+insight: "A bike computer needs the distance one turn rolls, which is the circumference; the wheel is given across, so the diameter goes straight into C = πd with no halving or doubling."
+hint: ["Is 700 mm the radius or the diameter?", "Multiply the diameter by 3.14."]
+check:
+  type: reasoning
+  paper: true
+  q: "A bike computer asks for the wheel's circumference in mm when you set it up. The wheel is 700 mm across. Using π ≈ 3.14, what do you type in? Give the nearest whole number of millimetres."
+  steps:
+    - ["The wheel is 700 mm across, so $d = 700$ mm", "across means the diameter"]
+    - ["$C = \\pi d = 3.14 \\times 700$", "the circumference is π times the diameter"]
+    - ["$C = 2198$ mm", "about 2.2 m for every turn"]
+  picks:
+    - step: 2
+      q: "Which length do you multiply by π?"
+      options:
+        - "The diameter, the width across: 700"
+        - "The radius: 350"
+        - "The diameter squared"
+      answer: 0
+      feedback: [null, "With the radius you need a 2 as well (C = 2πr). 3.14 × 350 is only half the way round.", "Squaring is for area. The circumference is a length."]
+  answer: "2198"
+  tolerance: 2
+  feedback:
+    - ["1099", "That uses 350, half of 700. The 700 mm is already the diameter."]
+    - ["4396", "That doubles the diameter. C = π × d needs no extra 2."]
+  criteria:
+    - "I said whether 700 mm is the radius or the diameter."
+    - "I multiplied that length by 3.14."
+    - "My answer is in millimetres and is a bit over 3 times 700."
+  explain: "d = 700 mm, so C = 3.14 × 700 = 2198 mm."
+```
+
+Do this one in your book, not on the screen. Real tyres squash a little under a rider, so a rider rolls the bike one turn along chalk and measures. Write which length you have, multiply, check it is a bit over 3 diameters, and type the millimetres.
+
+**Also used in**
+
+- **Racing.** In a 400 m race the outer lanes start further forward, because each lane's bends make a bigger circle.
+- **Rolling wheels.** A wheel rolled one turn along the ground travels one circumference, which is how C ÷ d was first found.
+- **Trundle wheels.** A wheel that clicks once a turn measures a field, if its circumference is a metre.

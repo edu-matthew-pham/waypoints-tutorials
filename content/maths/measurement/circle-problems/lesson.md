@@ -8,6 +8,7 @@ summary: "Choose the formula by what you need: C = 2πr for a length round the e
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A running track, a round garden bed, a pizza deal: is a 30 cm pizza more than twice a 20 cm one? Circle problems need the right formula, sometimes run backwards."
+connection: pizza-value
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8308
   url: http://127.0.0.1:8308/index.html
@@ -42,6 +43,8 @@ check:
   options: ["2 m", "4 m", "6.28 m", "3.14 m"]
   actual: "2 m. 12.57 ÷ π = 4 = r², so r = √4 = 2 m."
 ```
+
+<figure class="situation" role="img" aria-label="A round rug with an area of 12.57 square metres. Its radius is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><circle cx="175" cy="90" r="62" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="175" y1="90" x2="237" y2="90"/><text x="207" y="83" text-anchor="middle" fill="currentColor" stroke="none">r = ?</text><text x="175" y="128" text-anchor="middle" fill="currentColor" stroke="none">area 12.57 m²</text></svg></figure>
 
 What times itself, times π, makes 12.57?
 
@@ -199,3 +202,46 @@ check: { type: board, text: "A round garden bed must have an area between 25 and
 ```
 
 Then work out how much edging the bed needs (its circumference), and say which value of π you used.
+
+## Make: one large or two mediums, on paper
+
+```step
+stage: make
+insight: "Widths on a menu are diameters; the area of each pizza needs the radius squared, so the large is much bigger than it looks and two mediums can still beat it."
+hint: ["Halve each width to get the radius, then square it.", "Find the area of one large, then of two mediums, then take one from the other."]
+check:
+  type: reasoning
+  paper: true
+  q: "A large pizza is 30 cm across and a medium is 23 cm across. How many square centimetres more pizza do two mediums have than one large? Use the π button on your calculator and round to the nearest whole number."
+  steps:
+    - ["Large: $r = 15$, so $A = \\pi \\times 15^2 = \\pi \\times 225 \\approx 707$ cm²", "the radius is half of 30; square it before multiplying by π"]
+    - ["Medium: $r = 11.5$, so $A = \\pi \\times 132.25 \\approx 415.5$ cm². Two mediums: about 831 cm²", "square 11.5, then double for two pizzas"]
+    - ["$831 - 707 = 124$ cm²", "the two mediums have more"]
+  picks:
+    - step: 1
+      q: "How do you get a pizza's area from its width?"
+      options:
+        - "Halve it for the radius, square that, then multiply by π"
+        - "Multiply the width by π"
+        - "Square the width, then multiply by π"
+      answer: 0
+      feedback: [null, "That is the circumference, a length round the edge.", "That uses the width as the radius, which makes 4 times too much."]
+  answer: "124"
+  tolerance: 1
+  feedback:
+    - ["496", "That uses each width as the radius. Halve the widths first."]
+    - ["831", "That is the area of the two mediums. The question asks how much more than the large."]
+  criteria:
+    - "I halved each width to get a radius before squaring."
+    - "I found the area of two mediums, not one."
+    - "I subtracted in the right order and my answer is in cm²."
+  explain: "Large: π × 15² ≈ 707 cm². Two mediums: 2 × π × 11.5² ≈ 831 cm². The difference is about 124 cm²."
+```
+
+Do this one in your book, not on the screen. The sizes are from a typical menu; prices are left out. Write each radius, square it, and keep the units, then type the difference.
+
+**Also used in**
+
+- **Food.** Menu sizes are widths, but the pizza you eat is area, so a bigger pizza is bigger than it looks. Value is area per dollar.
+- **Farming.** From the air, dry-country farms are green circles watered by an arm turning about a centre. The arm is the radius, and the corners of the paddock are what is left.
+- **Garden beds.** The edging is a circumference and the soil is an area.

@@ -46,6 +46,8 @@ check:
   actual: "28 cm². It is between 2 × 9 = 18 and 4 × 9 = 36 cm²: about 3.14 × 9 = 28.3 cm². (19 cm² is close to the circumference, 18.8 cm, a length.)"
 ```
 
+<figure class="situation" role="img" aria-label="A circle of radius 3 cm drawn inside a square of side 6 cm. Inside the circle: its area in square centimetres is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="105" y="20" width="140" height="140" stroke-dasharray="4 3"/><circle cx="175" cy="90" r="70" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="175" y1="90" x2="245" y2="90"/><text x="210" y="83" text-anchor="middle" fill="currentColor" stroke="none">3 cm</text><text x="175" y="128" text-anchor="middle" fill="currentColor" stroke="none">area ? cm²</text></svg></figure>
+
 Imagine the circle inside a square 6 cm by 6 cm.
 
 ## Run: slices into a rectangle
@@ -194,3 +196,41 @@ check: { type: board, text: "Find the radius (in steps of 0.5 cm) whose area is 
 ```
 
 Then explain why the area is not 3.14 × 4 = 12.56.
+
+## Make: a round table, on paper
+
+```step
+stage: make
+insight: "A table top is measured across, which is the diameter; the formula needs the radius, so the key step is halving before squaring."
+hint: ["The formula uses the radius. How far across is 1.2 m, and how far from the centre to the edge?", "Square the radius first, then multiply by 3.14."]
+check:
+  type: reasoning
+  paper: true
+  q: "A round table top is 1.2 m across and is to be varnished. What area of top is there, in m²? Use π ≈ 3.14 and give two decimal places."
+  steps:
+    - ["Across is the diameter, so $r = 1.2 \\div 2 = 0.6$ m", "the formula needs the radius, half the way across"]
+    - ["$A = \\pi r^2 = 3.14 \\times 0.6^2 = 3.14 \\times 0.36$", "square the radius first: 0.6 × 0.6 = 0.36"]
+    - ["$A \\approx 1.13$ m²", "area is in square metres"]
+    - ["Check: between $2r^2 = 0.72$ and $4r^2 = 1.44$", "a circle is bigger than the inside square and smaller than the outside one"]
+  picks:
+    - step: 1
+      q: "Why is the radius 0.6 and not 1.2?"
+      options:
+        - "1.2 m is the width across, so the radius is half of it"
+        - "A radius is always less than a metre"
+        - "The formula needs the diameter, so 1.2 is right"
+      answer: 0
+      feedback: [null, "A radius can be any length. This one is half the way across.", "A = πr² uses the radius. The width across is twice that."]
+  answer: "1.13"
+  tolerance: 0.01
+  feedback:
+    - ["4.52", "That uses 1.2 as the radius. 1.2 m is across: halve it first."]
+    - ["3.77", "That is the circumference, a length. Area is π × r²."]
+  criteria:
+    - "I halved the width across to get the radius."
+    - "I squared the radius before multiplying by π."
+    - "I checked my area is between 2r² and 4r²."
+  explain: "r = 0.6 m, so A = 3.14 × 0.36 ≈ 1.13 m², between 0.72 and 1.44."
+```
+
+Do this one in your book, not on the screen. The table is made up for the task. Write the radius, square it, multiply by 3.14, check it against the squares, and type the area.

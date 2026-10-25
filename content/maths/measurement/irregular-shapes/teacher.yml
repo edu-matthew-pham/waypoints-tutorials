@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Sam to look at one orange square."
   - "Modify: ask when the extra effort of a finer grid is worth it."
   - "Make: ask how they will say how precise their estimate is."
+  - "Paper: the grassfire is worked in books; the page marks the hectares and the half-square rule, then shows a model. Books out, and look for the area of one square (25 ha) before the count."
 stuck:
   - see: "A student counts every square the shape touches as whole."
     ask: "Is this orange square all inside?"

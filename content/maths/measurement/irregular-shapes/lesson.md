@@ -8,6 +8,7 @@ summary: "A lake or a leaf has no formula. Lay a grid over it: count the full sq
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "How big is a lake? Councils, farmers and park rangers estimate areas like this from maps all the time, with a grid and some careful counting."
+connection: fire-map
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8304
   url: http://127.0.0.1:8304/index.html
@@ -40,6 +41,8 @@ check:
   options: ["Too little", "Too much", "Exactly the area"]
   actual: "Too little. The squares on the edge are partly inside the lake, and their parts are left out. Counting each as a half fixes most of that."
 ```
+
+<figure class="situation" role="img" aria-label="A lake drawn over a grid of squares. The edge of the lake passes through some of the squares. The lake's area is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><path d="M75 25 H275 M75 50 H275 M75 75 H275 M75 100 H275 M75 125 H275 M75 150 H275 M75 25 V150 M100 25 V150 M125 25 V150 M150 25 V150 M175 25 V150 M200 25 V150 M225 25 V150 M250 25 V150 M275 25 V150" stroke-opacity="0.3"/><path d="M110 70 C120 40 170 35 205 50 C250 60 255 105 220 125 C190 140 140 135 115 110 C100 95 100 80 110 70 Z" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="175" y="172" text-anchor="middle" fill="currentColor" stroke="none">area of the lake: ?</text></svg></figure>
 
 Look at the squares the edge passes through.
 
@@ -185,3 +188,47 @@ check: { type: board, text: "Estimate the island's area to within 2 km² of the 
 ```
 
 Then write your estimate with its precision, and estimate the coastline with 32 pieces.
+
+## Make: area of a fire, on paper
+
+```step
+stage: make
+insight: "A map grid is read in metres and hectares, so one square's area comes first; the burnt area is the whole squares plus half the part squares."
+hint: ["One square is 500 m by 500 m. How many hectares is that?", "Part squares count as half."]
+check:
+  type: reasoning
+  paper: true
+  q: "A map of a grassfire has a grid laid over it. Each square is 500 m by 500 m on the ground. The burnt area covers 14 whole squares and 10 part squares. Estimate the burnt area in hectares (1 hectare is 10 000 m²)."
+  steps:
+    - ["One square: $500 \\times 500 = 250\\,000$ m² $= 25$ ha", "a hectare is 10 000 m², and 250 000 ÷ 10 000 = 25"]
+    - ["Squares: $14 + 10 \\div 2 = 19$", "count each part square as half"]
+    - ["Area: $19 \\times 25 = 475$ ha", "the number of squares times the area of one square"]
+  picks:
+    - step: 2
+      q: "How should the part squares be counted?"
+      options:
+        - "Each counts as half a square"
+        - "Each counts as a whole square"
+        - "Leave them out"
+      answer: 0
+      feedback: [null, "The fire only burnt part of each one, so whole squares count too much.", "That leaves out burnt ground, so the estimate is too small."]
+  answer: "475"
+  tolerance: 0
+  feedback:
+    - ["600", "That counted every part square as a whole one. Count each as half."]
+    - ["350", "That left the part squares out. Count each as half."]
+    - ["19", "That is the number of squares. Multiply by 25 ha for each one."]
+  criteria:
+    - "I worked out the area of one square before counting."
+    - "I counted the part squares as half."
+    - "I wrote my answer as an estimate (about 475 ha), not as exact."
+  explain: "One square is 25 ha. 14 + 5 = 19 squares, so about 19 × 25 = 475 ha."
+```
+
+Do this one in your book, not on the screen. The fire and the grid are made up for the task. Real fires burn patchily and maps stretch a little, so the fire service's own figure will differ. Work out one square, count, multiply, and type the hectares.
+
+**Also used in**
+
+- **Fire and flood maps.** Emergency teams lay a grid over a map to estimate how much land is burnt or under water.
+- **Lakes and islands.** The area of a lake or island is found by counting squares, with a finer grid for a closer estimate.
+- **Satellite views.** A farm circle seen from above is a case where a formula is exact and no counting is needed.

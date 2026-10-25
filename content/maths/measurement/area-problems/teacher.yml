@@ -18,6 +18,7 @@ running:
   - "Investigate: ask two students to share different splits of the house wall."
   - "Modify: for 1 m², draw a 1 m square and ask how many 1 cm squares fit along one side."
   - "Make: compare designs, then cost them."
+  - "Paper: the gable is worked in books; the page marks the litres and the reason picked for two coats (cover the area twice), then shows a model. Books out, and look for 24 m² written before the division."
 stuck:
   - see: "A student multiplies cm by m (Ivy's mistake)."
     ask: "What unit is each length in?"
