@@ -198,7 +198,12 @@ Conventions (Matthew, 25 Oct):
 - **Offline first, "With internet" notes.** The core task works offline; a `tier: typical` step says what internet access adds and what it costs (automatic updates and off-site backups from `cron`, remote access through a VPN such as Tailscale or WireGuard rather than opening router ports, a domain and certificates), and why exposing a server raises the stakes.
 - The Pi and Kali security lab (above) would come after this course and audit the servers students built here.
 - **Teacher's choice of start (Matthew, 25 Oct):** students flash and set up the Pi themselves (lesson 1 as written), or start from a ready-made image (lesson 1 becomes a short tour and `ssh` in). Both paths reach lesson 2 in the same state.
-Open: kit per group; whether school laptops can run an `ssh` client and join the lab switch, or the Pis need screens and keyboards; resetting Pis between classes (reimage, or a reset script); whether the `shell` board grows `apt`, `systemctl` and users so students can practise without a Pi; how much on-page content versus teacher notes and briefs; year level (likely 9–10); school IT approval for the lab network.
+Decided (Matthew, 25 Oct): flexible throughout, the lessons name the choice and both paths work.
+- **Kit:** Pi 4 or Pi 5, any number per group. Lessons use Raspberry Pi OS (64-bit) commands that are the same on both; one note covers the differences (the Pi 5 needs its 27 W supply).
+- **Access:** a screen and keyboard on each Pi (usually easier) or `ssh` from a laptop on the lab switch; lesson 1 shows both.
+- **Reset:** reimage, or a reset script; teacher notes give both.
+- **Practice without a Pi:** the `shell` board grows the features these lessons use (`apt`, users and `sudo`, services and logs, `cron`, network addresses), so every lesson can be done simulated; it is also the fallback where school IT does not approve a lab network.
+- **On the page** unless there is a reason to hide (answers in teacher notes, as elsewhere). Years 9–10.
 
 ## Next
 
