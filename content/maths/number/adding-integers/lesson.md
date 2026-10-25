@@ -6,6 +6,7 @@ title: Adding and subtracting integers
 summary: Start at the first number and move along the line. Adding a negative moves left; subtracting moves the opposite way to adding, so subtracting a negative moves right.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: lift-floors   # data/connections/maths.yml
 hook: "A temperature that rises 9 degrees from −4 °C, a lift that goes down 5 floors from level 2, a bank balance below zero: all of them are moves along a number line."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8161
@@ -41,6 +42,8 @@ Further left on the number line means less, and now the line is for working out:
 Adding a positive number moves right. But what does adding a negative do, and what about subtracting, including subtracting a negative?
 
 ## Predict: subtracting a negative
+
+<figure class="situation" role="img" aria-label="A number line from minus 6 to 10. A dot marks 5, the start. The sum 5 minus minus 3 lands on a question mark."><svg viewBox="0 0 400 120" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="16" y1="80" x2="384" y2="80"/><line x1="24.0" y1="75" x2="24.0" y2="85"/><text x="24.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−6</text><line x1="46.0" y1="75" x2="46.0" y2="85"/><text x="46.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−5</text><line x1="68.0" y1="75" x2="68.0" y2="85"/><text x="68.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−4</text><line x1="90.0" y1="75" x2="90.0" y2="85"/><text x="90.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−3</text><line x1="112.0" y1="75" x2="112.0" y2="85"/><text x="112.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−2</text><line x1="134.0" y1="75" x2="134.0" y2="85"/><text x="134.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−1</text><line x1="156.0" y1="75" x2="156.0" y2="85"/><text x="156.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">0</text><line x1="178.0" y1="75" x2="178.0" y2="85"/><text x="178.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">1</text><line x1="200.0" y1="75" x2="200.0" y2="85"/><text x="200.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">2</text><line x1="222.0" y1="75" x2="222.0" y2="85"/><text x="222.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">3</text><line x1="244.0" y1="75" x2="244.0" y2="85"/><text x="244.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">4</text><line x1="266.0" y1="75" x2="266.0" y2="85"/><text x="266.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">5</text><line x1="288.0" y1="75" x2="288.0" y2="85"/><text x="288.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">6</text><line x1="310.0" y1="75" x2="310.0" y2="85"/><text x="310.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">7</text><line x1="332.0" y1="75" x2="332.0" y2="85"/><text x="332.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">8</text><line x1="354.0" y1="75" x2="354.0" y2="85"/><text x="354.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">9</text><line x1="376.0" y1="75" x2="376.0" y2="85"/><text x="376.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">10</text><circle cx="266.0" cy="80" r="6" fill="#378ADD" stroke="#185FA5"/><text x="266.0" y="55" text-anchor="middle" fill="currentColor" stroke="none">start: 5</text><text x="200" y="24" text-anchor="middle" fill="currentColor" stroke="none">5 − (−3) lands on ?</text><text x="332.0" y="55" text-anchor="middle" fill="currentColor" stroke="none">?</text></svg></figure>
 
 ```step
 stage: predict
@@ -238,3 +241,46 @@ check: { type: board, text: "Make a subtraction that gives 10, where the number 
 Use the + and − buttons and both sliders. The answer must be 10, and you must subtract a negative number.
 
 Stretch: find two different subtractions that give $-3$, one subtracting a positive and one subtracting a negative.
+
+## Make: a lift on paper
+
+```step
+stage: make
+insight: "Levels below ground are where subtracting a negative stops being a rule and becomes a count; the paper task makes them choose why the lift crosses the ground floor."
+hint: ["Sketch a number line, or the lift buttons, from −3 up to 4.", "Subtracting a negative moves right: how far from −3 to 4?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A car park lift goes from level $-3$ (three floors below the ground) to level $4$. How many floors does it travel?"
+  steps:
+    - ["Start at $-3$ and finish at $4$", "the floors are numbers on a line, with the ground floor at 0"]
+    - ["Floors travelled = finish $-$ start $= 4 - (-3)$", "the distance between two numbers is the later one take away the earlier"]
+    - ["$4 - (-3) = 4 + 3 = 7$", "subtracting a negative moves right: the same as adding 3"]
+    - ["The lift travels $7$ floors", "check: 3 floors up to the ground, then 4 more, 3 + 4 = 7"]
+  picks:
+    - step: 2
+      q: "Why is the answer $4 - (-3)$ and not $4 - 3$?"
+      options:
+        - "The lift starts below the ground, so it crosses 3 more floors on the way up"
+        - "Two minus signs always make an answer bigger"
+        - "Because the lift is going up, not down"
+      answer: 0
+      feedback: [null, "That is a rule, not a reason. Count the floors on the line to see why.", "Going up is true, but 4 − 3 would be the trip from level 3 to level 4."]
+  answer: "7"
+  feedback:
+    - ["1", "That is 4 − 3, as if the lift started at level 3. It starts at −3, below the ground."]
+    - ["-7", "The lift goes up, so the number of floors is positive."]
+  criteria:
+    - "I wrote the start and the finish with their signs, $-3$ and $4$."
+    - "I wrote the distance as finish take away start."
+    - "I checked by counting the floors: 3 up to the ground, 4 more."
+  explain: "4 − (−3) = 7. From −3 up to 0 is 3 floors, and from 0 up to 4 is 4 more: 7 floors."
+```
+
+Do this one in your book, not on the screen. The levels are made up for the task, but the question is real: it is how far a lift, a diver or a thermometer travels from below zero to above it. Sketch the line, work out the distance, and type your answer.
+
+**Also used in**
+
+- **Lifts and buildings.** Car parks and shopping centres number their levels with negatives for floors below ground.
+- **Weather.** A night at −4 °C that warms to 5 °C has risen 9 degrees: finish take away start.
+- **Money.** An account at −\$30 that is topped up to \$50 has gained \$80.

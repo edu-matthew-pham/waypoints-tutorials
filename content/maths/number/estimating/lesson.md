@@ -7,6 +7,7 @@ title: Estimating to check
 summary: "Round each number to its first digit, then calculate: 29 × 61 ≈ 30 × 60 = 1800. If the calculator says 176.9 or 17 690, something slipped."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: receipt-check   # data/connections/maths.yml
 hook: "You type 3.2 × 48 and the calculator shows 15.36. Looks plausible. But before you trust it, how big should the answer be?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8289
@@ -195,3 +196,46 @@ check: { type: board, text: "Set a and b so that the estimate is exactly 2000 bu
 ```
 
 Then find a pair where the exact answer is more than 2000, and write which rounding you used and why.
+
+## Make: a shopping receipt on paper
+
+```step
+stage: make
+insight: "An estimate is only useful if it is close enough to catch the slip; the paper task makes them judge the size of a gap against what rounding could cause."
+hint: ["Round each price to the nearest dollar, then add.", "Six prices rounded to the nearest dollar can be off by less than \\$3 altogether."]
+check:
+  type: reasoning
+  paper: true
+  q: "Six items at the checkout cost \\$4.95, \\$9.80, \\$12.10, \\$8.75, \\$10.20 and \\$3.90 (prices made up for the task). The checkout screen says the total is \\$59.50. Round each price to the nearest dollar and add them. What is your estimate, in dollars?"
+  steps:
+    - ["\\$4.95 ≈ \\$5, \\$9.80 ≈ \\$10, \\$12.10 ≈ \\$12, \\$8.75 ≈ \\$9, \\$10.20 ≈ \\$10, \\$3.90 ≈ \\$4", "round each price to the nearest dollar"]
+    - ["$5 + 10 + 12 + 9 + 10 + 4 = 50$, so the estimate is \\$50", "add the rounded prices"]
+    - ["The checkout total of \\$59.50 is about \\$10 above the estimate", "compare the total with the estimate"]
+    - ["Rounding six prices cannot cause a gap that big, so something has been scanned twice", "each price moves by less than 50 cents, so six of them move the total by less than \\$3"]
+  picks:
+    - step: 3
+      q: "What does the gap of about \\$10 tell you?"
+      options:
+        - "It is too big to be rounding, so the total needs checking"
+        - "It is close enough: estimates are never exact"
+        - "The estimate must be wrong, because the checkout is a computer"
+      answer: 0
+      feedback: [null, "Estimates are never exact, but this one is only a few dollars out at most. A gap of \\$10 is too much.", "The estimate is close to the real prices. A machine can still scan an item twice."]
+  answer: "50"
+  feedback:
+    - ["60", "That is the checkout total rounded, not an estimate from the prices. Round each price and add."]
+    - ["59.5", "That is the checkout's total. Round the six prices and add them yourself."]
+  criteria:
+    - "I rounded every price to the nearest dollar, and kept the size of each."
+    - "I compared my estimate with the checkout total."
+    - "I said whether the gap was bigger than rounding could explain."
+  explain: "5 + 10 + 12 + 9 + 10 + 4 = 50. The checkout total is about \\$10 higher, and rounding six prices moves the total by under \\$3, so something is wrong. (The exact prices add to \\$49.70, so the \\$9.80 item has been scanned twice.)"
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, but the question is real: checkouts do double-scan things, and a quick estimate is how you notice. Round, add, and type your estimate. The page marks the estimate and the reason you pick.
+
+**Also used in**
+
+- **Shopping.** A quick estimate in the aisle tells you whether the checkout total is believable before you pay.
+- **Calculators.** Pressing the wrong key gives a total that is ten times too big or too small, and an estimate catches it.
+- **Later maths.** Estimating the answer first is the check on Pythagoras and on any answer from a calculator.

@@ -18,6 +18,7 @@ running:
   - "Investigate: have students write their estimate before the calculator answer is shown."
   - "Modify: ask when rounding both numbers up gives an estimate that is too big."
   - "Make: collect pairs of numbers; check which have an exact answer above and below 2000."
+  - "Paper: the receipt is worked in books; the page marks the estimate (50) and why a gap of about 10 dollars is too big for rounding. Books out, then look for each price rounded before adding."
 stuck:
   - see: "A student rounds 19.6 to 2 (Lina's slip)."
     ask: "Is 19.6 nearer 2 or 20?"

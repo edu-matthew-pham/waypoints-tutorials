@@ -6,6 +6,7 @@ title: Between the squares
 summary: "43 is not a perfect square, but it sits between 36 and 49, so √43 is between 6 and 7. Closer to 49 or to 36? Square a decimal to find out: 6.6² ≈ 43.6."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: square-patch   # data/connections/maths.yml
 hook: "A square vegetable patch needs 29 m² of soil. No whole number squares to 43, but a builder still needs to know the side, to the nearest 10 cm."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8265
@@ -37,6 +38,8 @@ Most numbers are not perfect squares, but they still have square roots. $\sqrt{2
 The method: find the perfect squares either side. $25 < 29 < 36$, and $\sqrt{25} = 5$, $\sqrt{36} = 6$, so $\sqrt{29}$ is between 5 and 6. Then try decimals to get closer.
 
 ## Predict: where is √43?
+
+<figure class="situation" role="img" aria-label="A square patch with an area of 43 square units. Its side length is marked with question marks, between two whole numbers."><svg viewBox="0 0 400 188" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="140" y="12" width="120" height="120" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56"/><text x="200" y="78" text-anchor="middle" fill="currentColor" stroke="none">area 43</text><text x="200" y="62" text-anchor="middle" fill="currentColor" stroke="none">square</text><text x="270" y="78" text-anchor="start" fill="currentColor" stroke="none">?</text><text x="200" y="152" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="200" y="176" text-anchor="middle" fill="currentColor" stroke="none">side length, in whole numbers: between ? and ?</text></svg></figure>
 
 ```step
 stage: predict
@@ -217,3 +220,47 @@ check: { type: board, text: "Make a square whose area is between 30 and 40.", wh
 ```
 
 Then find the smallest and the biggest side (in tenths) that work.
+
+## Make: a vegetable patch on paper
+
+```step
+stage: make
+insight: "Bounding the side by the squares either side, then squaring tenths, is the whole method; the paper task makes them say why the side is between two whole numbers before they use it."
+hint: ["Which two perfect squares is 90 between?", "Try 9.4, 9.5 and 9.6 squared, and see which is closest to 90."]
+check:
+  type: reasoning
+  paper: true
+  q: "A community garden has a square vegetable patch with an area of 90 m². Edging is bought by the metre and goes right round the patch. How much edging is needed, to the nearest metre?"
+  steps:
+    - ["The side is $\\sqrt{90}$", "the side of a square is the number that squares to its area"]
+    - ["$9^2 = 81$ and $10^2 = 100$, so the side is between 9 and 10", "90 is between 81 and 100"]
+    - ["$9.5^2 = 90.25$ is the closest tenth, so the side is about $9.5$ m", "90.25 is only 0.25 over; 9.4² = 88.36 is 1.64 under"]
+    - ["Edging $= 4 \\times 9.5 = 38$ m", "a square has 4 equal sides, so the edging goes round all four"]
+  picks:
+    - step: 2
+      q: "Why is the side between 9 and 10?"
+      options:
+        - "90 is between 9² = 81 and 10² = 100"
+        - "90 is between 9 and 10 tens"
+        - "Half of 90 is 45, which is near 9 × 5"
+      answer: 0
+      feedback: [null, "Compare 90 with the squares of the whole numbers, not with 9 and 10 themselves.", "Halving is not the way back from squaring: 45 × 45 is far too big."]
+  answer: "38"
+  feedback:
+    - ["9.5", "That is one side. The edging goes round all four."]
+    - ["360", "That is 4 × 90. Find the side first: it is the square root of 90."]
+  criteria:
+    - "I found the side from the area, not the area times 4."
+    - "I said which two squares 90 is between."
+    - "I squared a tenth or two to get as close to 90 as I could."
+    - "I multiplied the side by 4 for the edging."
+  explain: "The side is √90, between 9 and 10 because 81 < 90 < 100. 9.5² = 90.25, so the side is about 9.5 m. Edging goes round 4 sides: 4 × 9.5 = 38 m. (The corners overlap a little, so a gardener buys a bit extra.)"
+```
+
+Do this one in your book, not on the screen. The area is made up for the task, but the question is real: edging, fencing and turf for a square plot all start from its side. Show the two squares either side, then your tenths, and type the length of edging.
+
+**Also used in**
+
+- **Building.** Square paving, rooms and tiles of a known area: the side comes from the square root, and skirting or edging from the perimeter.
+- **Checking an answer.** The squares either side catch a wrong key press: a calculator saying √90 = 45 is clearly off.
+- **Pythagoras.** The longest side of a right-angled triangle is a square root, and "between 9 and 10" is the first check on it.

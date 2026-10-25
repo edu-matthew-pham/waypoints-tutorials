@@ -5,6 +5,7 @@ goals:
   - I can find equivalent fractions by multiplying or dividing the top and the bottom by the same number.
   - I can write a fraction in its simplest form using the highest common factor.
   - I can explain with a picture why two fractions are equal.
+struggle: "Adding or subtracting the same number to the top and the bottom (2/3 becoming 3/4). Ask them to shade both bars and compare the amounts; the bars disagree."
 before: |
   Do the Run board yourself first. Students need fractions as parts of a whole (Year 6) and factors and highest common factors (Year 7 Number).
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model the worked example with the bars: split each part (multiply), join parts (divide)."
   - "Modify: before the fewest-parts task, ask: how will you know you cannot join any more?"
   - "Make: collect pairs and ask for the simplest form of each."
+  - "Paper: the pizza is worked in books; the page marks the answer (2/3) and why the top and the bottom are divided by 4. Books out, then look for the highest common factor named before any dividing."
 stuck:
   - see: "A student adds the same number to the top and the bottom (Lily's mistake)."
     ask: "Set both on the bars. Is the same amount shaded?"

@@ -7,6 +7,7 @@ title: Adding and subtracting fractions
 summary: "Parts can be counted together only when they are the same size. Cut both fractions into the same parts first: 1/3 + 1/4 = 4/12 + 3/12 = 7/12. The lowest common multiple of the bottoms is the smallest choice."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: timber-cuts   # data/connections/maths.yml
 hook: "A recipe needs 1/2 of a cup of milk and 1/5 of a cup of cream. How much is that altogether? You cannot tell until the parts are the same size."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8269
@@ -35,6 +36,8 @@ You can add 2 apples and 3 apples, but 2 apples and 3 pears do not make 5 of any
 To add or subtract fractions with different bottoms, cut both into the **same parts** first, using equivalent fractions. The new bottom is a **common denominator**: a common multiple of the two bottoms, and the lowest common multiple is the smallest.
 
 ## Predict: a third and a quarter
+
+<figure class="situation" role="img" aria-label="Two bars of the same length. The first is cut into 3 equal parts with 1 shaded, one third. The second is cut into 4 equal parts with 1 shaded, one quarter. A third bar underneath, for the sum of the two, is marked with a question mark."><svg viewBox="0 0 400 190" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><g stroke="#185FA5"><rect x="50" y="15" width="100" height="30" fill="#378ADD" fill-opacity="0.45"/><rect x="150" y="15" width="100" height="30"/><rect x="250" y="15" width="100" height="30"/></g><g stroke="#0F6E56"><rect x="50" y="65" width="75" height="30" fill="#1D9E75" fill-opacity="0.45"/><rect x="125" y="65" width="75" height="30"/><rect x="200" y="65" width="75" height="30"/><rect x="275" y="65" width="75" height="30"/></g><rect x="50" y="125" width="300" height="30" stroke-dasharray="5 4"/><text x="40" y="35" text-anchor="end" fill="currentColor" stroke="none">1/3</text><text x="40" y="85" text-anchor="end" fill="currentColor" stroke="none">1/4</text><text x="200" y="145" text-anchor="middle" fill="currentColor" stroke="none">1/3 + 1/4 = ?</text><text x="200" y="182" text-anchor="middle" fill="currentColor" stroke="none">how much of the whole bar is shaded together?</text></svg></figure>
 
 ```step
 stage: predict
@@ -216,3 +219,45 @@ check: { type: board, text: "Make two fractions with different bottoms that add 
 ```
 
 Then find a pair where neither bottom is a multiple of the other.
+
+## Make: a board on paper
+
+```step
+stage: make
+insight: "Lining up the places before taking away is the move that fails when students subtract 85 from 24; the paper task makes them set it out and choose why."
+hint: ["Write 2.4 as 2.40 so the places line up.", "Take away both pieces: add them first, or subtract one at a time."]
+check:
+  type: reasoning
+  paper: true
+  q: "A shelf kit needs two pieces cut from one 2.4 m board: one 0.85 m long and one 1.25 m long. How much of the board is left, in metres?"
+  steps:
+    - ["Write the lengths with the same places: $2.40$, $0.85$, $1.25$", "tenths with tenths and hundredths with hundredths, like fractions with the same bottom"]
+    - ["$0.85 + 1.25 = 2.10$", "the two pieces together"]
+    - ["$2.40 - 2.10 = 0.30$", "take the pieces away from the board"]
+    - ["$0.3$ m is left", "check: 2.10 + 0.30 = 2.40, the whole board"]
+  picks:
+    - step: 1
+      q: "Why write 2.4 as 2.40 before you take anything away?"
+      options:
+        - "So the places line up: hundredths sit under hundredths"
+        - "So the answer has two decimal places"
+        - "Because 2.4 is a different number from 2.40"
+      answer: 0
+      feedback: [null, "The places are the reason. The answer's length does not matter.", "They are the same number. Only the places are written differently."]
+  answer: "0.3"
+  feedback:
+    - ["1.55", "That takes away only the 0.85 piece. The 1.25 piece comes off the board too."]
+  criteria:
+    - "I wrote every length to hundredths so the points lined up."
+    - "I took away both pieces, not just one."
+    - "I checked: the pieces and the offcut add back to 2.4 m."
+  explain: "0.85 + 1.25 = 2.10, and 2.40 − 2.10 = 0.30. About 0.3 m (30 cm) is left. The saw takes a few millimetres from each cut, so in a real shed the offcut is a little shorter."
+```
+
+Do this one in your book, not on the screen. The lengths are made up for the task, but the question is real: someone cutting shelves has to know whether the board is long enough. Write the lengths with the points lined up, take both pieces away, and type the length left.
+
+**Also used in**
+
+- **Building.** Decking, skirting boards and fence rails are cut from stock lengths, and the offcut tells you whether one more piece fits.
+- **Cooking.** Recipes add and take away fractions of a cup, and the pieces have to be the same size first.
+- **Money.** Receipts and bank balances add and subtract in dollars and cents, tenths and hundredths.

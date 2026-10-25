@@ -18,6 +18,7 @@ running:
   - "Investigate: ask students to draw Ana's recipe as blocks."
   - "Modify: for the impostor, ask what the multiplier would have to be."
   - "Make: collect the multipliers used: all give the same ratio."
+  - "Paper: the screen shape is worked in books; the page marks the answer (1800) and why 9 is multiplied by 200, not added to. Books out, then look for 1920 : 1080 simplified before any scaling."
 stuck:
   - see: "A student adds the same number to both terms (Ana's slip)."
     ask: "Draw 2 flour and 3 milk as blocks. What happens to the blocks when you make 3 copies?"

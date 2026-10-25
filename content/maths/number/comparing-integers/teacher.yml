@@ -5,6 +5,7 @@ goals:
   - I can put a set of integers, including negatives, in order from least to greatest.
   - I can write a comparison between two integers with < or >.
   - I can explain why −10 is less than −1, even though 10 is more than 1.
+struggle: "Seeing −8 as less than −2 when 8 looks bigger than 2. Ask \"which is colder?\" and have them mark both on the line before they decide."
 before: |
   Do the Run board and the Make task yourself first. Students should be able to find negative numbers on a number line (Year 6) and know what a temperature below zero means.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: each task changes one thing. Before the temperature task ask: which way is warmer?"
   - "Practise: the sign question plants the reversed sign. A student who picks < can place both on the line and say which is further left."
   - "Make: collect a few pairs. Ask: could P be positive? (No: a positive further from zero than Q would be greater than Q.)"
+  - "Paper: the week of frosts is worked in books; the page marks two reasons (why −8 is colder than −1, why −5 comes before −3) and has no number answer. Books out, then look for every night marked on a line before ordering."
 stuck:
   - see: "A student says −8 is greater than −2."
     ask: "Which is colder, −8 °C or −2 °C?"

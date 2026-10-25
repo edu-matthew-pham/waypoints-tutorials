@@ -228,3 +228,40 @@ check: { type: board, text: "Build a number with three digits that are not 0, an
 ```
 
 Then read your number out in expanded notation.
+
+## Make: a library count on paper
+
+```step
+stage: make
+insight: "Zeros are columns that are still there; the paper task makes them leave out the zero terms on purpose and say why."
+hint: ["Write the columns under the digits: ten thousands, thousands, hundreds, tens, ones.", "Which columns hold a zero?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A library lent 70 604 books in a year (the count is made up for the task). Write 70 604 in expanded notation, leaving out the columns with a zero. In the term for the 6, the power of 10 is $10^{?}$. What is the exponent?"
+  steps:
+    - ["7 is in the ten thousands, 0 in the thousands, 6 in the hundreds, 0 in the tens, 4 in the ones", "each column is a power of 10, from $10^4$ down to $10^0$"]
+    - ["$70\\,604 = 7 \\times 10^4 + 6 \\times 10^2 + 4 \\times 10^0$", "the thousands and tens digits are 0, so those terms add nothing"]
+    - ["The 6 is in the hundreds column, which is $10^2$", "the exponent counts the zeros in 100"]
+    - ["Check: $70\\,000 + 600 + 4 = 70\\,604$", "adding the terms gives the number back"]
+  picks:
+    - step: 2
+      q: "Why are there only three terms?"
+      options:
+        - "The thousands and tens digits are 0, and 0 × a power of 10 adds nothing"
+        - "Zero is not a digit, so it has no column"
+        - "The other columns are written with the ones term"
+      answer: 0
+      feedback: [null, "Zero is a digit, and it holds its column. That is why the 6 is not in the thousands.", "Every column keeps its own power of 10. A zero digit just makes its term 0."]
+  answer: "2"
+  feedback:
+    - ["3", "The 6 is in the hundreds column, with two zeros after it: 10². Count the zeros in 100."]
+    - ["4", "That is the exponent for the 7 in the ten thousands."]
+  criteria:
+    - "I named the column of every digit before I wrote any powers."
+    - "I left out the zero columns and said why."
+    - "I checked by adding the terms: 70 000 + 600 + 4."
+  explain: "70 604 = 7 × 10⁴ + 6 × 10² + 4 × 10⁰. The 6 is in the hundreds column, which is 10², so the exponent is 2. The zeros are still there as columns; their terms are 0 so they are left out."
+```
+
+Do this one in your book, not on the screen. The count is made up for the task, but the question is real: big counts such as crowds and populations are read column by column. Write the columns, then the terms, then type the exponent for the 6.

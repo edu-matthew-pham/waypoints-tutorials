@@ -7,6 +7,7 @@ title: Checking a model
 summary: "Every model makes assumptions: a steady speed with no stops, a fare with no starting charge, an exchange rate with no fees. When a model's answer and real life differ, look for the assumption that does not hold, then refine the model, for example by adding a fixed starting amount."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: electricity-plan   # data/connections/maths.yml; the paper task uses recipe-scaling
 hook: "A map app says the drive takes 3 hours. It takes 3 and a half. The maths was right; the model was too simple. Finding out why is the last step of modelling."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8321
@@ -197,3 +198,49 @@ check: { type: board, text: "A plumber charges $80 to come out, then $95 per hou
 ```
 
 Then name one assumption in the plumber's model, and say how a real bill might differ.
+
+## Make: a camp recipe on paper
+
+```step
+stage: make
+insight: "Scaling a recipe is a ratio model that works for the ingredients and fails for the bake time; the paper task makes them pick the assumption that breaks and the refinement that fits."
+hint: ["Which of the three numbers is about how much, and which is about how long?", "Would a deep dish of 7.5 times the food heat through in the same way?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A camp cook has a pasta bake recipe for 4 people: 500 g of pasta, baked for 30 minutes in one dish. The camp needs 30 serves. The cook's model multiplies everything by $30 \\div 4 = 7.5$: 3.75 kg of pasta and 225 minutes in the oven. Review the model."
+  steps:
+    - ["$30 \\div 4 = 7.5$, so $500 \\times 7.5 = 3750$ g of pasta", "the ingredients do scale in the ratio 30 : 4"]
+    - ["$30 \\times 7.5 = 225$ minutes does not follow", "baking time depends on how deep the dish is, not on how many people eat it"]
+    - ["Refine: scale the pasta by 7.5, but keep 30 minutes and bake in several dishes as deep as the original", "the model now assumes only what is true: the amounts scale, the time does not"]
+  picks:
+    - step: 2
+      q: "Why does the model go wrong for the baking time?"
+      options:
+        - "Time is not an amount of food: it depends on the dish, not on the number of serves"
+        - "30 × 7.5 is the wrong sum"
+        - "The cook should have divided 30 by 4 the other way round"
+      answer: 0
+      feedback: [null, "The arithmetic is right: 225. The model is what is wrong, not the sum.", "The ratio 30 : 4 is right for the pasta. The trouble is that it was used on the time as well."]
+    - step: 3
+      q: "What is the best refinement?"
+      options:
+        - "Scale the amounts by 7.5, keep the time near 30 minutes, and use several dishes"
+        - "Scale everything by 7.5 and check the pasta after 100 minutes"
+        - "Throw the model out: ratios do not work for recipes"
+      answer: 0
+      feedback: [null, "That still scales the time. Keep what works (the amounts) and change only what does not.", "The ratio works for the amounts. A model with one wrong assumption is refined, not thrown out."]
+  criteria:
+    - "I said which parts of the recipe the ratio does scale and which part it does not."
+    - "I gave a reason for the part that fails, not just \"it is wrong\"."
+    - "My refinement keeps what works and changes only what does not."
+  explain: "The amounts scale in the ratio 30 : 4, so 3.75 kg of pasta is a good answer. The time does not: 225 minutes would burn the edges. The refined model scales the amounts, keeps the time, and bakes in several dishes."
+```
+
+Do this one in your book, not on the screen. The recipe is made up for the task, but the question is real: caterers scale recipes and then check what the scaling got wrong. Write what the model assumes, which assumption fails, and how you would fix it. The page marks the two reasons you pick.
+
+**Also used in**
+
+- **Energy bills.** Two plans, each a daily charge plus a rate per unit. The comparison assumes the house uses the same amount all year, and summer and winter say otherwise.
+- **Travel.** A trip-time model assumes a steady speed with no stops, and every long drive has stops.
+- **Money.** An exchange-rate model assumes no fees, until the bank takes its cut.

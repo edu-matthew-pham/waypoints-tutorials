@@ -18,6 +18,7 @@ running:
   - "Investigate: for the decimals task, write 2.7 as 2.70 and ask why that is allowed."
   - "Modify: for the edge case, ask why only one fraction needs to change."
   - "Make: collect pairs; then challenge for one where neither bottom divides the other."
+  - "Paper: the board task is worked in books; the page marks the answer (0.3) and the reason for writing 2.40. Books out, then look for the points lined up, not the answer alone."
 stuck:
   - see: "A student adds the tops and the bottoms (Ella's mistake)."
     ask: "Is your answer bigger than each fraction you added?"

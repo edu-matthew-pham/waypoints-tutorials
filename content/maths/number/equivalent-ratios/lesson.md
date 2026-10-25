@@ -7,6 +7,7 @@ title: Equivalent and simplest ratios
 summary: "2 : 3 = 4 : 6 = 6 : 9: multiply or divide both numbers by the same number. 12 : 18 simplifies to 2 : 3 by dividing both by 6."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: screen-ratio   # data/connections/maths.yml
 hook: "A recipe for 4 uses 3 cups of flour and 5 of milk. How much milk do you need for 9 cups of flour?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8291
@@ -39,6 +40,8 @@ A ratio is in **simplest form** when no number greater than 1 divides both terms
 Adding the same number to both terms does **not** keep the ratio: $3 : 5$ is not $5 : 7$.
 
 ## Predict: which is the same as 2 : 3?
+
+<figure class="situation" role="img" aria-label="A row of blocks: 2 blue then 3 green, the ratio 2 to 3. Underneath, a dashed row of more blocks marked with question marks: an equivalent ratio."><svg viewBox="0 0 400 130" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="60" y="20" width="36" height="30" fill="#378ADD" fill-opacity="0.45" stroke="#185FA5"/><rect x="100" y="20" width="36" height="30" fill="#378ADD" fill-opacity="0.45" stroke="#185FA5"/><rect x="140" y="20" width="36" height="30" fill="#1D9E75" fill-opacity="0.45" stroke="#0F6E56"/><rect x="180" y="20" width="36" height="30" fill="#1D9E75" fill-opacity="0.45" stroke="#0F6E56"/><rect x="220" y="20" width="36" height="30" fill="#1D9E75" fill-opacity="0.45" stroke="#0F6E56"/><text x="40" y="41" text-anchor="end" fill="currentColor" stroke="none">2 : 3</text><rect x="60" y="80" width="260" height="30" stroke-dasharray="5 4"/><text x="40" y="101" text-anchor="end" fill="currentColor" stroke="none">? : ?</text><text x="190" y="101" text-anchor="middle" fill="currentColor" stroke="none">the same pattern, with more blocks</text></svg></figure>
 
 ```step
 stage: predict
@@ -199,3 +202,47 @@ check: { type: board, text: "Make a ratio equal to 3 : 5 with both terms bigger 
 ```
 
 Then explain how you know 24 : 40 is the same ratio as 3 : 5.
+
+## Make: a screen shape on paper
+
+```step
+stage: make
+insight: "The ratio of a screen is simplified once, then scaled; the paper task makes them multiply the second term, not add to it."
+hint: ["Simplify 1920 : 1080 first. What goes into both?", "How many times bigger is 3200 than the first number of the simplified ratio?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A TV screen is 1920 pixels wide and 1080 pixels high. A new display is 3200 pixels wide (the pixel counts are made up for the task). How many pixels high must it be to be exactly the same shape as the TV?"
+  steps:
+    - ["$1920 : 1080 = 16 : 9$", "divide both terms by their highest common factor, 120"]
+    - ["The width goes from $16$ to $3200$, which is $\\times 200$", "3200 ÷ 16 = 200"]
+    - ["The height is $9 \\times 200 = 1800$", "whatever happens to one term must happen to the other"]
+    - ["$3200 : 1800 = 16 : 9$", "check: divide both terms by 200 and the TV's shape comes back"]
+  picks:
+    - step: 3
+      q: "Why multiply 9 by 200?"
+      options:
+        - "The width was multiplied by 200, so the height has to be as well"
+        - "The width grew by 3184, so the height grows by 3184"
+        - "The height is always 9 times the width"
+      answer: 0
+      feedback: [null, "Adding the same amount to both terms changes the shape. Multiply both by the same number.", "It is 9 parts for every 16 parts of width, not 9 times."]
+  answer: "1800"
+  feedback:
+    - ["3184", "That adds the same number to the height. Multiply instead: both terms go × 200."]
+    - ["1920", "That is the TV's width. Scale 9 by the same number as the width."]
+  criteria:
+    - "I simplified 1920 : 1080 before I scaled."
+    - "I found what the first term was multiplied by."
+    - "I multiplied the other term by the same number."
+    - "I checked that the new screen simplifies to 16 : 9."
+  explain: "1920 : 1080 = 16 : 9. From 16 to 3200 is × 200, so the height is 9 × 200 = 1800 pixels. Check: 3200 : 1800 = 16 : 9."
+```
+
+Do this one in your book, not on the screen. The pixel counts are made up for the task, but the question is real: a screen, a photo or a video keeps its shape only if both sides scale together. Simplify first, then scale, and type the height.
+
+**Also used in**
+
+- **Screens.** A phone of 2400 by 1080 simplifies to 20 : 9, so it is a different shape from a 16 : 9 TV, and a video shows black bars.
+- **Photos.** A print has to keep the picture's ratio, or it must be cropped.
+- **Models.** A scale model or a map keeps the ratio between every pair of lengths, and similar shapes follow in Years 8 and 9.

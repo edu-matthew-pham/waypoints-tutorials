@@ -6,6 +6,7 @@ title: Comparing integers
 summary: On a number line, the number further left is less. So −7 is less than −2, even though 7 is more than 2.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: winter-minimums   # data/connections/maths.yml
 hook: "On a cold morning Thredbo is at −9 °C and Canberra at −3 °C (made-up temperatures for the task). Which is colder, and which number is bigger?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8160
@@ -38,6 +39,8 @@ Numbers below zero are **negative**: $-1, -2, -3$ and so on. Together with zero 
 So which of two integers is less, and how do you write that down? The signs are $<$ ("is less than") and $>$ ("is greater than").
 
 ## Predict: which is greater?
+
+<figure class="situation" role="img" aria-label="A number line from minus 10 to 10 with only minus 10, minus 5, 0, 5 and 10 labelled. Two question marks sit above it where minus 7 and minus 2 go. The question is which of the two is greater."><svg viewBox="0 0 400 125" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="16" y1="90" x2="384" y2="90"/><line x1="24.0" y1="85" x2="24.0" y2="95"/><text x="24.0" y="112" text-anchor="middle" fill="currentColor" stroke="none">−10</text><line x1="41.6" y1="85" x2="41.6" y2="95"/><line x1="59.2" y1="85" x2="59.2" y2="95"/><line x1="76.8" y1="85" x2="76.8" y2="95"/><line x1="94.4" y1="85" x2="94.4" y2="95"/><line x1="112.0" y1="85" x2="112.0" y2="95"/><text x="112.0" y="112" text-anchor="middle" fill="currentColor" stroke="none">−5</text><line x1="129.6" y1="85" x2="129.6" y2="95"/><line x1="147.2" y1="85" x2="147.2" y2="95"/><line x1="164.8" y1="85" x2="164.8" y2="95"/><line x1="182.4" y1="85" x2="182.4" y2="95"/><line x1="200.0" y1="85" x2="200.0" y2="95"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" stroke="none">0</text><line x1="217.6" y1="85" x2="217.6" y2="95"/><line x1="235.2" y1="85" x2="235.2" y2="95"/><line x1="252.8" y1="85" x2="252.8" y2="95"/><line x1="270.4" y1="85" x2="270.4" y2="95"/><line x1="288.0" y1="85" x2="288.0" y2="95"/><text x="288.0" y="112" text-anchor="middle" fill="currentColor" stroke="none">5</text><line x1="305.6" y1="85" x2="305.6" y2="95"/><line x1="323.2" y1="85" x2="323.2" y2="95"/><line x1="340.8" y1="85" x2="340.8" y2="95"/><line x1="358.4" y1="85" x2="358.4" y2="95"/><line x1="376.0" y1="85" x2="376.0" y2="95"/><text x="376.0" y="112" text-anchor="middle" fill="currentColor" stroke="none">10</text><text x="160" y="50" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="260" y="50" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="200" y="22" text-anchor="middle" fill="currentColor" stroke="none">where do −7 and −2 sit? which is greater?</text></svg></figure>
 
 ```step
 stage: predict
@@ -221,3 +224,50 @@ check: { type: board, text: "Place $P$ and $Q$ so that $P < Q$, but $P$ is furth
 Find a pair where the less number has the bigger size without its sign. The sentence under the line tells you which is less.
 
 Stretch: write three temperatures below zero, then put them in order from warmest to coldest.
+
+## Make: a week of frosts on paper
+
+```step
+stage: make
+insight: "Ordering five temperatures forces the misconception into the open: the biggest-looking number is the coldest night, not the warmest."
+hint: ["Draw a number line from −10 to 5 and mark each night on it.", "Further left is colder."]
+check:
+  type: reasoning
+  paper: true
+  q: "Overnight lows in Canberra one winter week, in °C (made up for the task): Mon $-3$, Tue $-8$, Wed $2$, Thu $-1$, Fri $-5$. Put the nights in order from coldest to warmest, and name the coldest and the warmest."
+  steps:
+    - ["Mark $-8$, $-5$, $-3$, $-1$ and $2$ on a number line", "temperatures are numbers on a line, with zero in the middle"]
+    - ["$-8$ is the furthest left, so Tuesday is the coldest", "further left is less, and less is colder"]
+    - ["From left to right: $-8$, $-5$, $-3$, $-1$, $2$", "reading left to right goes from least to greatest"]
+    - ["Coldest is Tuesday ($-8$ °C), warmest is Wednesday ($2$ °C)", "Wednesday is the only night above zero"]
+  picks:
+    - step: 2
+      q: "Why is $-8$ colder than $-1$?"
+      options:
+        - "$-8$ is further left on the line, so it is less"
+        - "8 is bigger than 1, so $-8$ is the bigger temperature"
+        - "A negative number is colder the closer it is to zero"
+      answer: 0
+      feedback: [null, "8 is bigger than 1, but the minus sign turns it round: −8 is 8 below zero.", "It is the other way. The further below zero, the colder."]
+    - step: 3
+      q: "Why does $-5$ come before $-3$ in the order?"
+      options:
+        - "$-5$ is to the left of $-3$, so it is less"
+        - "5 is more than 3, so it should come last"
+        - "It does not matter: both are negative"
+      answer: 0
+      feedback: [null, "Order by position on the line, not by the number without its sign.", "It matters. Negatives are in order too: the one further left is less."]
+  criteria:
+    - "I marked every night on a number line before I ordered them."
+    - "I put the one furthest left first."
+    - "I checked that my list goes up from left to right."
+  explain: "On the line, −8 is furthest left, so it is the coldest, and 2 is furthest right, so it is the warmest. In order: −8, −5, −3, −1, 2. A bigger number without its sign means colder when the number is negative."
+```
+
+Do this one in your book, not on the screen. The temperatures are made up for the task, but the question is real: weather reports list frosty lows, and you have to say which night was coldest. Mark the nights on a line, then order them. The page marks the two reasons you pick.
+
+**Also used in**
+
+- **Weather.** Overnight lows, and heights above or below sea level, are compared on a line with zero in the middle.
+- **Buildings.** Car park levels below ground are negative: level −3 is lower than level −1.
+- **Money.** An account at −\$50 owes more than one at −\$10, though 50 is the bigger number.

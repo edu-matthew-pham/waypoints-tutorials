@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Sam to check 300 ÷ 100."
   - "Modify: ask when the simple trip model is fine."
   - "Make: ask for an assumption about the plumber's time."
+  - "Paper: the camp recipe is worked in books; the page marks two reasons (why the time fails, and the refinement) and has no number answer. Books out, then look for which parts of the model were kept."
 stuck:
   - see: "A student says the maths is wrong."
     ask: "Is the calculation right? What did the model assume?"

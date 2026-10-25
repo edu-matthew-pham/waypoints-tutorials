@@ -5,6 +5,7 @@ goals:
   - I can add and subtract integers by moving along a number line.
   - I can explain why adding a negative number moves left.
   - I can explain why 5 − (−3) is 8, not 2.
+struggle: "Subtracting a negative. Students say \"two minuses make a plus\" without a reason, or treat the minus sign on the number as the operation. Ask them to say which way the move goes before they touch the board, and to draw the adding arrow first."
 before: |
   Do the Run board and the Make task yourself first. Students need the last lesson: further left is less.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: each task changes one thing. Ask students to say the direction before they set the board."
   - "Practise: the subtracted negative question plants Mia's mistake (−8). A student who gets −8 can draw the dashed arrow first."
   - "Make: collect a few answers. Ask: what do all the b values have in common, and why?"
+  - "Paper: the lift task is worked in books; the page marks the answer (7) and why it is 4 − (−3). Books out, then look for the start written with its sign and a checked count of floors."
 stuck:
   - see: "A student says 5 − (−3) = 2."
     ask: "Which way would 5 + (−3) go? So which way does 5 − (−3) go?"

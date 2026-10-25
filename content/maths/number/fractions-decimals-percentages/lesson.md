@@ -6,6 +6,7 @@ title: Fractions, decimals and percentages
 summary: "One amount, three ways to write it. A percentage is out of 100, so 3/4 = 75/100 = 75% = 0.75. Divide the top by the bottom for a decimal; put a percentage over 100 and simplify for a fraction."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: discount-compare   # data/connections/maths.yml
 hook: "A 25% discount, a quarter off, 0.25 of the price: the same saving, written three ways. Which is easiest depends on the job."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8174
@@ -34,6 +35,8 @@ You've written one amount as different fractions. **Percent** means "out of 100"
 A hundred grid shows why all three match, so you can move between them.
 
 ## Predict: three quarters
+
+<figure class="situation" role="img" aria-label="A bar cut into 4 equal parts with 3 shaded, three quarters. Below it, an empty bar of the same length marked with a question mark: how many out of 100. Then the percentage and the decimal are marked with question marks."><svg viewBox="0 0 400 135" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><g stroke="#185FA5"><rect x="50" y="15" width="75" height="30" fill="#378ADD" fill-opacity="0.45"/><rect x="125" y="15" width="75" height="30" fill="#378ADD" fill-opacity="0.45"/><rect x="200" y="15" width="75" height="30" fill="#378ADD" fill-opacity="0.45"/><rect x="275" y="15" width="75" height="30"/></g><text x="40" y="35" text-anchor="end" fill="currentColor" stroke="none">3/4</text><rect x="50" y="65" width="300" height="30" stroke-dasharray="5 4"/><text x="200" y="85" text-anchor="middle" fill="currentColor" stroke="none">? out of 100</text><text x="200" y="120" text-anchor="middle" fill="currentColor" stroke="none">as a percentage: ?     as a decimal: ?</text></svg></figure>
 
 ```step
 stage: predict
@@ -230,3 +233,46 @@ check: { type: board, text: "Choose a number of eighths ($a$) that is a whole-nu
 ```
 
 Which eighths cannot be shaded exactly on the grid? Why?
+
+## Make: two sale signs on paper
+
+```step
+stage: make
+insight: "Comparing a fraction off with a percentage off needs one form for both; the paper task makes them choose that form and say why."
+hint: ["Write 1/5 as a percentage.", "Work out each sale price: take the discount off \\$80."]
+check:
+  type: reasoning
+  paper: true
+  q: "Two shops sell the same \\$80 pair of boots (the prices are made up for the task). Shop A has a fifth off. Shop B has 25% off. What is the lower of the two sale prices, in dollars?"
+  steps:
+    - ["$\\tfrac{1}{5} = \\tfrac{20}{100} = 20\\%$", "multiply the top and the bottom by 20 to get hundredths"]
+    - ["Shop B's 25% is bigger than Shop A's 20%", "once both are percentages, they can be compared"]
+    - ["Shop B takes off 25% of \\$80, which is \\$20, so the price is \\$60", "a quarter of 80 is 20, and 80 − 20 = 60"]
+    - ["Shop A takes off 20% of \\$80, which is \\$16, so the price is \\$64", "check: \\$64 is more than \\$60, as the percentages said"]
+  picks:
+    - step: 1
+      q: "Why write a fifth as a percentage before comparing?"
+      options:
+        - "Then both discounts are in the same form, and 20% and 25% can be compared"
+        - "Because a fifth is always smaller than a percentage"
+        - "Because percentages are more accurate than fractions"
+      answer: 0
+      feedback: [null, "A fifth is not always smaller. 1/5 is 20% and 25% is a quarter: it depends on the amounts.", "They are the same amount in different forms. The form only matters for comparing."]
+  answer: "60"
+  feedback:
+    - ["64", "That is Shop A's price. Shop B's 25% off is more than a fifth off."]
+    - ["20", "That is how much Shop B takes off, not the price. Take it off the \\$80."]
+  criteria:
+    - "I wrote both discounts in the same form before comparing them."
+    - "I worked out both sale prices, not just one."
+    - "My cheaper shop is the one with the bigger discount."
+  explain: "A fifth is 20%, so Shop B's 25% is the bigger discount. 25% of 80 is 20, so the price is 60. Shop A's price is 64."
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, but the question is real: sale signs are written in different forms, and you have to put them in one form to compare. Write both as percentages, work out the prices, and type the lower one.
+
+**Also used in**
+
+- **Sales.** "A third off" and "30% off" sit next to each other in shop windows, and the third is the bigger discount.
+- **Sport.** A win rate of 7 out of 10 and 65% are compared by writing them the same way.
+- **Test marks.** 17 out of 20 and 82% are put on the same footing as percentages or as decimals.

@@ -37,6 +37,8 @@ Fraction bars show which fractions are equivalent, and they also show the one wi
 
 ## Predict: the same as 2/3
 
+<figure class="situation" role="img" aria-label="A bar cut into 3 equal parts with 2 shaded, two thirds. Under it, a bar of the same length with no cuts yet and a question mark: the same amount, written as a different fraction."><svg viewBox="0 0 400 140" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><g stroke="#185FA5"><rect x="50" y="15" width="100" height="30" fill="#378ADD" fill-opacity="0.45"/><rect x="150" y="15" width="100" height="30" fill="#378ADD" fill-opacity="0.45"/><rect x="250" y="15" width="100" height="30"/></g><rect x="50" y="75" width="300" height="30" stroke-dasharray="5 4"/><text x="40" y="35" text-anchor="end" fill="currentColor" stroke="none">2/3</text><text x="40" y="95" text-anchor="end" fill="currentColor" stroke="none">?</text><text x="200" y="125" text-anchor="middle" fill="currentColor" stroke="none">the same amount, cut into different parts</text><text x="200" y="95" text-anchor="middle" fill="currentColor" stroke="none">?</text></svg></figure>
+
 ```step
 stage: predict
 insight: "Committing to a fraction equal to 2/3 shows whether they multiply both numbers or add the same number to both."
@@ -224,3 +226,41 @@ check: { type: board, text: "Make the two bars equal, with neither fraction in l
 ```
 
 Then: what is the simplest form of both your fractions?
+
+## Make: a pizza on paper
+
+```step
+stage: make
+insight: "Dividing the top and the bottom by the highest common factor is the move; the paper task makes them say why that number and not just any common factor."
+hint: ["What is the biggest number that goes into both 8 and 12?", "Divide the top and the bottom by it."]
+check:
+  type: reasoning
+  paper: true
+  q: "A pizza is cut into 12 equal slices and 8 slices are eaten. What fraction of the pizza was eaten, in simplest form?"
+  steps:
+    - ["$\\tfrac{8}{12}$ of the pizza was eaten", "8 of the 12 equal slices"]
+    - ["The highest common factor of 8 and 12 is $4$", "4 is the biggest number that divides both"]
+    - ["$\\tfrac{8 \\div 4}{12 \\div 4} = \\tfrac{2}{3}$", "divide the top and the bottom by the same number: the amount stays the same"]
+    - ["$\\tfrac{2}{3}$, which is 4 slices out of 6 if the same pizza is cut into sixths", "check: $\\tfrac{4}{6} = \\tfrac{2}{3}$, the same amount"]
+  picks:
+    - step: 2
+      q: "Why divide the top and the bottom by 4?"
+      options:
+        - "4 is the biggest number that divides both 8 and 12, so one step reaches the simplest form"
+        - "4 is the difference between 8 and 12"
+        - "Any number works, as long as you subtract it from the top and the bottom"
+      answer: 0
+      feedback: [null, "The difference has nothing to do with it. Look for a number that divides both.", "Subtracting changes the amount: 8 − 2 = 6 over 12 − 2 = 10 is a different fraction. Divide, don't subtract."]
+  answer: "2/3"
+  form: simplest
+  feedback:
+    - ["8/12", "That is the same amount, but it is not the simplest form. Divide the top and the bottom by 4."]
+    - ["4/6", "That is equal, but it simplifies again: divide the top and the bottom by 2."]
+  criteria:
+    - "I wrote the fraction first, 8 out of 12."
+    - "I divided the top and the bottom by the same number."
+    - "My answer cannot be simplified any more."
+  explain: "8 of 12 slices is 8/12. The highest common factor of 8 and 12 is 4, so divide both by 4: 2/3. Four of six slices is the same amount."
+```
+
+Do this one in your book, not on the screen. The pizza is made up for the task, but the question is real: the same amount can be named by many fractions, and a simplest form is the one that is easy to compare. Write the fraction, find the highest common factor, and type the simplest form.

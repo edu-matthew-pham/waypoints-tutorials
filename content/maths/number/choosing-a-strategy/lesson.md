@@ -7,6 +7,7 @@ title: Choosing a strategy
 summary: "The same calculation can be quick or slow. Change the order (4 × 2.7 × 25 = 100 × 2.7), change the form (0.75 × 36 = 3/4 of 36), or split a number (12 × 2.5 = 24 + 6). Then check the answer is about right."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: stacked-discount   # data/connections/maths.yml
 hook: "Two students work out 20% of 35. One writes out a long multiplication; the other does it in their head. Which would you rather do at a shop counter?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8272
@@ -223,3 +224,46 @@ check: { type: board, text: "Choose an amount and a percentage you can do in you
 ```
 
 Then find two more, and say which was quickest and why.
+
+## Make: a stacked sale on paper
+
+```step
+stage: make
+insight: "Two discounts in a row is a chance to pick a strategy: take each off in turn with friendly numbers, or multiply once; the trap is adding the percentages."
+hint: ["20% is a fifth: what is a fifth of 150?", "The second 10% comes off the new price, not the old one."]
+check:
+  type: reasoning
+  paper: true
+  q: "A jacket is marked \\$150. The shop takes 20% off, and the register then takes a further 10% off the new price. What does the jacket cost, in dollars?"
+  steps:
+    - ["20% of \\$150 is \\$30, so the price is \\$150 − \\$30 = \\$120", "20% is a fifth, and 150 ÷ 5 = 30"]
+    - ["10% of \\$120 is \\$12", "the second discount is 10% of the new price, \\$120, not of \\$150"]
+    - ["\\$120 − \\$12 = \\$108", "take the second discount off the new price"]
+    - ["The jacket costs \\$108, which is 28% off, not 30%", "check: $0.8 \\times 0.9 = 0.72$, and 72% of 150 is 108"]
+  picks:
+    - step: 2
+      q: "Why is the second discount worked out on \\$120 and not on \\$150?"
+      options:
+        - "It is taken off the price after the first discount, and that price is \\$120"
+        - "Because 10% of 150 is too hard to work out"
+        - "Because the two discounts add up to 30% of 150"
+      answer: 0
+      feedback: [null, "10% of 150 is easy (\\$15). The reason is which price the discount is taken from.", "That would be 30% off in one go, \\$45. The second discount comes off the smaller price, so it takes off less."]
+  answer: "108"
+  feedback:
+    - ["105", "That takes 30% off the \\$150 in one go. The second discount is taken off \\$120, so it is \\$12, not \\$15."]
+    - ["120", "That stops after the first discount. The register takes a further 10% off."]
+  criteria:
+    - "I used a friendly fraction or a quick split, not a long multiplication."
+    - "I took the second discount off the new price."
+    - "I checked: 28% off \\$150 is \\$42, and \\$150 − \\$42 = \\$108."
+  explain: "20% of 150 is 30, so the price is 120. 10% of 120 is 12, so the jacket costs 108. That is 28% off, not 30%, because the second discount is taken from a smaller price."
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, but the question is real: shops do stack discounts, and the total is never the two percentages added. Pick the quick way to take off each one, and type the price.
+
+**Also used in**
+
+- **Sales.** "Extra 10% off" at the register comes off the price after the first discount, so it always takes off less than it sounds.
+- **Mental maths.** A fifth, a tenth, a quarter and a half do most of the work of a till, with no calculator.
+- **Checking.** Estimating first catches a wrong key press: 108 is a bit under three quarters of 150.

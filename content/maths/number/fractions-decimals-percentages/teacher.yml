@@ -5,6 +5,7 @@ goals:
   - I can convert between fractions, decimals and percentages.
   - I can explain why 0.5 = 50%, not 5%.
   - I can compare amounts written in different forms.
+struggle: "Treating the digits as the percentage (0.5 as 5%, 3/4 as 34%). Ask \"out of how many?\" and point at the hundred grid before they write the percent sign."
 before: |
   Do the Run board yourself first. Students need Equivalent fractions (the lesson before) and place value with decimals (Year 6).
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: model each line of the worked example with the grid beside it."
   - "Modify: before the 1/3 task, ask students to shade 1/3 of the grid exactly."
   - "Make: ask why odd numbers of eighths cannot be shaded exactly."
+  - "Paper: the two sale signs are worked in books; the page marks the lower price (60) and why both discounts go into one form first. Books out, then look for the fifth written as 20% before any prices."
 stuck:
   - see: "A student writes 0.5 as 5% (Max's mistake)."
     ask: "How many hundredths is 0.5? Shade it on the grid."

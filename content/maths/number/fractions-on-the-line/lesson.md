@@ -7,6 +7,7 @@ title: Fractions and decimals on the line
 summary: Split each unit into equal parts and count from zero. A negative fraction or decimal counts to the left, so −1.5 sits halfway between −2 and −1.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
+connection: measuring-jug   # data/connections/maths.yml
 hook: "A tide of −0.6 m, a share price down 1¼ dollars, a recipe with ¾ of a cup: numbers between the whole numbers, above and below zero."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8164
@@ -40,6 +41,8 @@ Between any two whole numbers on a number line there are fractions and decimals:
 So where exactly does each one go, positive or negative, fraction, decimal or mixed numeral?
 
 ## Predict: where is −1.5?
+
+<figure class="situation" role="img" aria-label="A number line from minus 4 to 4 with every whole number labelled. A question mark above the line stands for where minus 1.5 goes."><svg viewBox="0 0 400 115" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="22" y1="80" x2="378" y2="80"/><line x1="30.0" y1="75" x2="30.0" y2="85"/><text x="30.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−4</text><line x1="72.5" y1="75" x2="72.5" y2="85"/><text x="72.5" y="102" text-anchor="middle" fill="currentColor" stroke="none">−3</text><line x1="115.0" y1="75" x2="115.0" y2="85"/><text x="115.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">−2</text><line x1="157.5" y1="75" x2="157.5" y2="85"/><text x="157.5" y="102" text-anchor="middle" fill="currentColor" stroke="none">−1</text><line x1="200.0" y1="75" x2="200.0" y2="85"/><text x="200.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">0</text><line x1="242.5" y1="75" x2="242.5" y2="85"/><text x="242.5" y="102" text-anchor="middle" fill="currentColor" stroke="none">1</text><line x1="285.0" y1="75" x2="285.0" y2="85"/><text x="285.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">2</text><line x1="327.5" y1="75" x2="327.5" y2="85"/><text x="327.5" y="102" text-anchor="middle" fill="currentColor" stroke="none">3</text><line x1="370.0" y1="75" x2="370.0" y2="85"/><text x="370.0" y="102" text-anchor="middle" fill="currentColor" stroke="none">4</text><text x="200" y="28" text-anchor="middle" fill="currentColor" stroke="none">−1.5 goes where on this line?</text><text x="200" y="52" text-anchor="middle" fill="currentColor" stroke="none">?</text></svg></figure>
 
 ```step
 stage: predict
@@ -220,3 +223,46 @@ check: { type: board, text: "Put $P$ at a number between $-0.3$ and $-0.2$.", wh
 The line now shows only $-1$ to $0$, in twentieths. Find a number between $-0.3$ and $-0.2$.
 
 Stretch: find a number between $-\tfrac{1}{3}$ and $-\tfrac{1}{4}$. Can you always find another between any two?
+
+## Make: a measuring jug on paper
+
+```step
+stage: make
+insight: "A scale marked in quarters cannot show a third exactly; the paper task makes them put both on a common scale and compare the gaps."
+hint: ["Draw the jug from 1 to 2 and mark the quarters.", "Write 1½, 1⅔ and 1¾ all in twelfths."]
+check:
+  type: reasoning
+  paper: true
+  q: "A recipe needs $1\\tfrac{2}{3}$ cups of water. The jug is marked every quarter cup (the recipe is made up for the task). Which mark on the jug is nearest to $1\\tfrac{2}{3}$? Type it as a decimal, in cups."
+  steps:
+    - ["The marks near it are $1\\tfrac{1}{2} = 1.5$ and $1\\tfrac{3}{4} = 1.75$", "$1\\tfrac{2}{3}$ is about 1.67, between 1.5 and 1.75"]
+    - ["In twelfths: $1\\tfrac{6}{12}$, $1\\tfrac{8}{12}$ and $1\\tfrac{9}{12}$", "twelfths are a common size for halves, thirds and quarters"]
+    - ["$1\\tfrac{8}{12}$ is 1 twelfth below $1\\tfrac{9}{12}$ and 2 twelfths above $1\\tfrac{6}{12}$", "the nearer mark is the one with the smaller gap"]
+    - ["The nearest mark is $1\\tfrac{3}{4}$, which is $1.75$ cups", "pour to the three-quarter mark; it is a little more than the recipe wants"]
+  picks:
+    - step: 3
+      q: "Why is $1.75$ nearer than $1.5$?"
+      options:
+        - "The gap to 1.75 is 1 twelfth and the gap to 1.5 is 2 twelfths, so 1.75 is closer"
+        - "1.75 is a bigger number, so it is always the better choice"
+        - "Thirds are always closer to the higher quarter"
+      answer: 0
+      feedback: [null, "Bigger does not mean nearer. Compare the gaps on the line.", "It depends on the numbers. Here the gaps are 1 twelfth and 2 twelfths."]
+  answer: "1.75"
+  feedback:
+    - ["1.5", "That is the mark below, and it is the farther one: 2 twelfths away, against 1 twelfth."]
+    - ["1.67", "The jug has no mark there. Pick the nearest quarter."]
+  criteria:
+    - "I drew the jug as a number line with the quarter marks on it."
+    - "I put 1⅔ between the two marks it sits between."
+    - "I compared the two gaps, not just the size of the numbers."
+  explain: "1⅔ is 1 8/12. The marks either side are 1 6/12 (2 twelfths away) and 1 9/12 (1 twelfth away), so the nearest mark is 1¾ = 1.75 cups."
+```
+
+Do this one in your book, not on the screen. The recipe is made up for the task, but the question is real: a jug marked in quarters cannot show a third exactly, so you place it between the marks and pick the nearer one. Draw the jug as a line, mark the quarters, then place the third.
+
+**Also used in**
+
+- **Kitchens.** Measuring cups and jugs are number lines, marked in halves, quarters or thirds.
+- **Thermometers and rulers.** Readings between the marks are placed by counting the parts, the same way, and below zero they count left.
+- **Fuel gauges.** An eighth of a tank is a place on a scale, not a count.
