@@ -7,4 +7,5 @@ units:
   - { id: pages, title: Pages from Python, summary: "Routes join addresses to functions; templates build pages from data." }
   - { id: forms, title: Forms and saving, summary: "Take answers from a form, check them, and save them to a file so they last." }
   - { id: apis, title: APIs, summary: "Send data as JSON for other programs, then the same API in FastAPI." }
+  - { id: database, title: "A database behind the app", summary: "An optional extension: keep the members in a SQLite database instead of a file (do the SQL course lessons 1 to 8 first)." }
 ---
