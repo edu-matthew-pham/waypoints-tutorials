@@ -1,0 +1,39 @@
+summary: "Students find the gradient between two points as rise over run, including negative and zero gradients, and compare a ramp to a legal limit (AC9M9A03, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can find the rise and the run between two points.
+  - I can work out the gradient as rise over run.
+  - I can tell what a negative or zero gradient looks like.
+struggle: "Taking rise and run in the same order, and the sign. Ask: which point did you start from for both?"
+before: |
+  Students need What m does to a line (Year 8).
+
+  The one idea: gradient = rise ÷ run, and both are measured from the same starting point. The common mistakes are run over rise, and mixing the order so the sign is wrong (Zoe's working).
+
+  The ramp sizes are made up for the task. The 1 in 14 limit for ramps up to 9 m long is real, with its source in the lesson.
+running:
+  - "Predict: take a show of hands. Those who chose 8 subtracted the y values only."
+  - "Run: ask students to say the across and the up before dragging."
+  - "Paper: the try-one after the worked example and the ramp in Make are worked on paper first. Books out, and look for the rise and run written separately."
+  - "Modify: before B goes below A, ask what the rise will be."
+stuck:
+  - see: "A student gets 1/2 instead of 2 for the Predict."
+    ask: "Which is the across and which is the up?"
+    fix: "Up (the rise) goes on top: 8 over 4."
+  - see: "A student gets 2 instead of -2 for (0, 8) and (4, 0)."
+    ask: "Does the line go up or down from left to right?"
+    fix: "Down, so the gradient is negative."
+stretch: "Find a point C so that A, B and C are on the same line, and say how you know."
+support: "Count squares on a printed grid for the rise and run before using subtraction."
+leads: |
+  Continues AC9M9A03 node 1.
+
+  Where it leads: parallel and perpendicular lines (node 2), then the distance between two points.
+exit:
+  q: "Find the gradient through (1, 3) and (5, 11)."
+  a: "Rise 8, run 4, gradient 2."
+explain: |
+  Gradient is rise over run: the change in $y$ divided by the change in $x$, from the same starting point.
+
+  A line going up to the right has a positive gradient, a line going down has a negative gradient and a flat line has gradient 0.

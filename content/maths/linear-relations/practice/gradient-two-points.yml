@@ -1,0 +1,19 @@
+# Practice for "Gradient between two points".
+templates:
+  - q: "Find the gradient of the line through ({x}, {y}) and ({x + d}, {y + m * d})."
+    vars: { x: "0..4", y: "0..5", d: [1, 2, 3, 4], m: [-3, -2, -1, 1, 2, 3, 4] }
+    answer: "{m}"
+    feedback:
+      - ["{m * d}", "That's the rise. Divide it by the run, {d}."]
+    explain: "Rise {m * d}, run {d}: {m * d} ÷ {d} = {m}."
+  - q: "A line goes up {r} for every {u} across. What is its gradient?"
+    vars: { r: [2, 4, 6, 8, 10], u: [1, 2, 4, 5] }
+    answer: "{r / u}"
+    tolerance: 0.001
+    feedback:
+      - ["{u / r}", "That's run over rise, the wrong way up."]
+    explain: "Rise over run: {r} ÷ {u} = {r / u}."
+  - q: "Which line is steeper?"
+    vars: { a: "2..5", b: "6..11" }
+    choices: ["Gradient {b}", "Gradient {a}"]
+    explain: "{b} is bigger than {a}, so a gradient of {b} is steeper."

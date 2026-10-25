@@ -1,0 +1,23 @@
+# Boards for "Gradient between two points". A stays put; B moves, and the dashed sides show the run and the rise.
+
+# region: run
+widget: graph
+x: -1, 11
+y: -1, 11
+snap: 1
+point A: 1, 1
+point B: 4, 3, drag
+segment: A, B
+rise: A, B
+# endregion
+
+# region: vary
+widget: graph
+x: -1, 11
+y: -1, 11
+snap: 1
+point A: 2, 4, drag
+point B: 6, 6, drag
+segment: A, B
+rise: A, B
+# endregion

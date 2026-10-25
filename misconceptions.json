@@ -399,5 +399,7 @@
   "prefix-convert-multiply": {"home": "maths/measurement/real-measurements", "text": "The powers of ten of two units are multiplied to convert between them (10⁻³ × 10⁻⁶ = 10⁻⁹); converting divides one by the other: 10⁻³ ÷ 10⁻⁶ = 10³."},
   "root-sign-irrational": {"home": "maths/real-numbers/number-families", "text": "A number with a square root sign is called irrational (√16 is irrational); it depends on the number under the root: √16 = 4 is a whole number, √7 never ends or repeats."},
   "interval-ends-open": {"home": "maths/real-numbers/number-line-ranges", "text": "Both ends are left out of a range that includes them (a tolerance of 19.95 to 20.05 written 19.95 < x < 20.05); ≤ and ≥ keep the end (closed circle), < and > leave it out (open circle)."},
+  "gradient-run-over-rise": {"home": "maths/linear-relations/gradient-two-points", "text": "Gradient is found as run over rise (across divided by up) instead of rise over run."},
+  "gradient-order-mixed": {"home": "maths/linear-relations/gradient-two-points", "text": "The rise is taken from the points in one order and the run in the other (y2 − y1 over x1 − x2), so the sign comes out wrong."},
   "round-early": {"home": "maths/real-numbers/exact-or-rounded", "text": "Values are rounded at the start of a calculation (π as 3, √2 as 1.4) and the answer is treated as exact; keep exact values or full calculator values until the end, then round once."}
 }

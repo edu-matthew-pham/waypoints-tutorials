@@ -15,6 +15,7 @@
 //   segment: A, B          a segment between two points;   line: A, B   the whole line through them
 //   table: 0, 1, 2, 3      a table of values of each plot at these x values
 //   step: 1                the "1 right, m up" triangle on the first plot, from this x (shows how steep it is)
+//   rise: A, B             a dashed run/rise triangle between two points; checks can use h (across), v (up), m (gradient), d (length), p and q (midpoint)
 //   cross: 1, 2            where plots 1 and 2 meet: a point, its coordinates, and a dashed line down to x (the solution)
 //   series Gas: 0,5; 1,7; 2,6   a line through data points (x,y pairs, x going up), named for the legend; up to 3
 //   series: A, B, C        a line through named points (draggable ones too: students draw the graph)
@@ -70,7 +71,7 @@
       // A one-letter name (d, T) is also the letter used in legends and tables; a word (Time) only labels the axis.
       s.names = { x: /^[A-Za-z](\s|$)/.test(an[0]) ? an[0][0] : 'x', y: /^[A-Za-z](\s|$)/.test(an[1]) ? an[1][0] : 'y' }; s.axisLabels = an;
     }
-    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null; s.cross = null; s.series = []; s.cursor = null; s.shades = [];
+    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null; s.cross = null; s.rise = null; s.series = []; s.cursor = null; s.shades = [];
     var known = {};
     s.items.forEach(function (it) {
       var where = 'Line ' + it.line + ' (' + it.kind + (it.name ? ' ' + it.name : '') + ')';
@@ -113,6 +114,10 @@
         var e = it.value.split(',').map(function (t) { return t.trim(); });
         if (e.length !== 2) throw new Error(where + ': name two points, such as "' + it.kind + ': A, B".');
         s.lines.push({ kind: it.kind, ends: e, where: where });
+      } else if (it.kind === 'rise') {
+        var re = it.value.split(',').map(function (t) { return t.trim(); });
+        if (re.length !== 2 || re.some(function (t) { return !/^[A-Z]$/.test(t); })) throw new Error(where + ': name two points, such as "rise: A, B".');
+        s.rise = { ends: re, where: where };
       } else if (it.kind === 'cross') {
         var ab = it.value.split(',').map(function (t) { return Number(t.trim()); });
         if (ab.length !== 2 || ab.some(function (n) { return !(n >= 1) || n % 1; })) throw new Error(where + ': name two plots by number, such as "cross: 1, 2".');
@@ -154,6 +159,7 @@
       if (s.cursor.start < lo || s.cursor.start > hi) throw new Error(cw + ': the start must be within the first series (' + show(lo) + ' to ' + show(hi) + ').');
       s.cursor.lo = lo; s.cursor.hi = hi;
     }
+    if (s.rise) s.rise.ends.forEach(function (n) { if (names.indexOf(n) < 0) throw new Error(s.rise.where + ': there is no point ' + n + '.'); });
     s.lines.forEach(function (l) { l.ends.forEach(function (n) { if (names.indexOf(n) < 0) throw new Error(l.where + ': there is no point ' + n + '.'); }); });
     // Every name used in a plot or point must be x or a slider (dragged points take numbers only).
     var check = function (text, allowed, where) {
@@ -173,7 +179,15 @@
   function scope() {
     var p = {};
     Object.keys(objs).forEach(function (n) { p[n] = dragged[n] ? landing(objs[n]) : [round(objs[n].X()), round(objs[n].Y())]; });
-    return { vars: Object.assign({}, vars), points: p };
+    var v = Object.assign({}, vars);
+    if (spec.rise) {   // across (h), up (v), gradient (m), length (d) and midpoint (p, q) between the two named points
+      var a = p[spec.rise.ends[0]], b = p[spec.rise.ends[1]];
+      if (a && b) {
+        v.h = round(b[0] - a[0]); v.v = round(b[1] - a[1]); v.d = round(Math.sqrt(v.h * v.h + v.v * v.v));
+        v.m = v.h === 0 ? NaN : round(v.v / v.h); v.p = round((a[0] + b[0]) / 2); v.q = round((a[1] + b[1]) / 2);
+      }
+    }
+    return { vars: v, points: p };
   }
   var round = function (v) { return Math.round(v * 1e6) / 1e6; };
 
@@ -265,6 +279,20 @@
       board.create('text', [x0 + 0.5, function () { return f(x0); }, '1'], Object.assign({}, lab, { anchorY: 'top' }));
       board.create('text', [x0 + 1 + (spec.xr[1] - spec.xr[0]) * 0.015, function () { return (f(x0) + f(x0 + 1)) / 2; }, function () { var d = f(x0 + 1) - f(x0); return Math.abs(d) < 1e-9 ? '' : (d > 0 ? 'up ' : 'down ') + show(Math.abs(d)); }],
         Object.assign({}, lab, { anchorX: 'left', anchorY: 'middle' }));
+    }
+    // The run and rise between two points: a dashed right-angle triangle, labelled with how far across and how far up.
+    if (spec.rise) {
+      var pa = objs[spec.rise.ends[0]], pb = objs[spec.rise.ends[1]], ac = B.css('--accent') || '#c2570a';
+      var corner = board.create('point', [function () { return pb.X(); }, function () { return pa.Y(); }], { visible: false, withLabel: false, fixed: true });
+      var sg = { strokeColor: ac, strokeWidth: 2.5, dash: 2, highlight: false, fixed: true };
+      board.create('segment', [pa, corner], sg); board.create('segment', [corner, pb], sg);
+      var rl = { cssClass: 'steplabel', highlightCssClass: 'steplabel', strokeColor: ac, highlightStrokeColor: ac, fixed: true };
+      var offx = (spec.xr[1] - spec.xr[0]) * 0.015, offy = (spec.yr[1] - spec.yr[0]) * 0.04;
+      var dirOf = function (d) { return d >= 0 ? 1 : -1; };
+      board.create('text', [function () { return (pa.X() + pb.X()) / 2; }, function () { return pa.Y() - offy * dirOf(pb.Y() - pa.Y() || 1) * 0.6; },
+        function () { var d = pb.X() - pa.X(); return Math.abs(d) < 1e-9 ? '' : 'across ' + show(d); }], Object.assign({ anchorX: 'middle', anchorY: 'middle' }, rl));
+      board.create('text', [function () { return pb.X() + offx * (pb.X() >= pa.X() ? 1 : -1); }, function () { return (pa.Y() + pb.Y()) / 2; },
+        function () { var d = pb.Y() - pa.Y(); return Math.abs(d) < 1e-9 ? '' : (d > 0 ? 'up ' : 'down ') + show(Math.abs(d)); }], Object.assign({ anchorX: pb.X() >= pa.X() ? 'left' : 'right', anchorY: 'middle' }, rl));
     }
     // Where two plots meet (found numerically, so any two relations work): a point, its coordinates, and a dashed
     // line down to the x-axis, where the solution is read. Nothing is drawn when they do not meet in view (parallel lines).

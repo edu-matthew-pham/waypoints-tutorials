@@ -1,0 +1,8 @@
+# Zoe's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: zoe
+Find the gradient between (1, 7) and (4, 1).
+Rise: 1 - 7 = -6
+Run: 1 - 4 = -3
+Gradient: -6 / -3 = 2
+# endregion
