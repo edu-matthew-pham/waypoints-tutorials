@@ -1,0 +1,40 @@
+summary: "Fixing means closing what is not needed, updating what is old and tightening the login, in that order of thought: fewer doors, stronger locks. Each fix does one job and none of them does all of them, so you layer them and then check again."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can close a service, upgrade old software and tighten ssh."
+  - "I can say what each fix does and does not protect."
+  - "I can say why a service must restart for config changes."
+struggle: "Treating one fix as enough. Each fix does one job; the layering is the point."
+before: |
+  Try the boards yourselves.
+
+  The gate (read first). This course teaches security as audit and defence: you scan, read and fix a lab computer your class owns. The pretend Kali and target in the lessons are safe anywhere. The real-lab version is different, so it needs your sign-off before anyone starts: school policy and IT's agreement, a written lab agreement every student signs (lab-rules.txt on the board is a model), and a lab that is cut off from every other network: a Pi running Kali and a second Pi or a virtual machine as the target, joined by one switch or one ethernet cable, with no router and no internet. Download the Kali image and any tools once, at home or at IT's request. Scan only the target named on the lab sheet. This course does not teach breaking into anything: it stops at find, understand and fix. It relaxes the 'defensive only' rule of the other courses only in that the real lab uses real scanning tools on a computer the class owns.
+
+  Simplifications: key login is described but not set up on the board (a real lab would also create a key pair with `ssh-keygen` and copy it with `ssh-copy-id` before turning passwords off, or you lock yourself out: test in a second session first). The pretend firewall tracks `allow <port>` and `enable` only. `apt` reads a pretend local mirror (a real offline lab uses a mirror such as `apt-cacher-ng` or a USB bundle of `.deb` files). Make sure students know the lockout risk from System admin: allow ssh before enabling the firewall.
+
+  Real lab, if you run one: Kali Linux has a Raspberry Pi image (Pi 4 or Pi 5; the Pi 5 wants its 27 W supply); flash it with Raspberry Pi Imager or the Kali image instructions and boot it with a screen and keyboard, or ssh in. The target can be a second Pi (an older Raspberry Pi OS with a few extra services) or a purpose-made practice target your IT team approves. Start from the same state every time: re-flash, or snapshot a virtual machine. `nmap` is already on Kali. Give each pair a printed lab sheet naming the target's address, the one account they may use and what they are allowed to change.
+
+  Other options: `ufw` is the friendly firewall (`nftables` is what is underneath); `unattended-upgrades` installs security updates automatically; `fail2ban` blocks repeated failures.
+running:
+  - "Predict: wrong answers think a service can be closed in the firewall alone."
+  - "Try: ask which door is now closed."
+  - "Worked example: stop at Sam and ask what the firewall protects."
+  - "Vary: ask which fix covers which finding."
+  - "Make: ask what is left that you did not fix."
+stuck:
+  - see: "The ssh settings do not seem to apply."
+    ask: "Did you restart ssh?"
+    fix: "sudo systemctl restart ssh."
+  - see: "A student's config file lost lines."
+    ask: "Did you use tee without -a?"
+    fix: "tee replaces the file: write all the lines you want."
+stretch: "Find out how key login works and what must be done before password login is switched off."
+support: "A card pairing each finding with its fix."
+leads: |
+  Links: System admin on a Raspberry Pi (services, ufw, users); next: the audit report.
+exit:
+  q: "Why is upgrading Apache a better fix than just allowing it through the firewall?"
+  a: "The firewall only filters who reaches the door. The old program behind it is still old."
+explain: |
+  Fixing is layers. **Stop** services you don't need (`sudo systemctl stop name`). **Upgrade** what is old (`sudo apt update`, `sudo apt upgrade`). **Tighten** ssh: `PermitRootLogin no` and `PasswordAuthentication no` in `/etc/ssh/sshd_config`, then `sudo systemctl restart ssh`. **Filter** with the firewall: allow only what is needed. Each fix does one job.

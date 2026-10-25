@@ -1,0 +1,51 @@
+# Boards for "Close the doors: harden the target".
+
+# region: run
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+lab: on
+login: admin
+run: sudo systemctl stop telnet; sudo systemctl stop vsftpd
+pkgs: ufw
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+lab: on
+login: admin
+pkgs: ufw
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion

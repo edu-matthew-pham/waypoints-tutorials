@@ -1,0 +1,41 @@
+# Boards for "The rules of the lab, and your first look".
+
+# region: run
+widget: shell
+fs: kali
+ran: cat ping
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: kali
+run: cat lab-rules.txt
+# endregion
+
+# region: v1
+widget: shell
+fs: kali
+ran: ip
+# endregion
+
+# region: v2
+widget: shell
+fs: kali
+ran: ping
+# endregion
+
+# region: v3
+widget: shell
+fs: kali
+# endregion
+
+# region: make
+widget: shell
+fs: kali
+ran: hostname
+# endregion

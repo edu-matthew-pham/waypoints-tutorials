@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam scans with -sV and reads: OpenSSH 7.2p2.
+Sam says the version is just a number and it cannot matter.
+So Sam leaves it as it is.
+Sam writes 'no findings' in the report.
+# endregion

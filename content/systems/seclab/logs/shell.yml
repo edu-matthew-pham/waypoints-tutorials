@@ -1,0 +1,50 @@
+# Boards for "What guessing looks like in the log".
+
+# region: run
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+lab: on
+login: admin
+run: sudo grep -c Failed /var/log/auth.log
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+lab: on
+login: admin
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+lab: on
+login: admin
+has: /home/admin/fails.txt | 14
+# endregion

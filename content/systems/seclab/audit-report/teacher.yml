@@ -1,0 +1,42 @@
+summary: "A real audit is a cycle: scan to find, fix, then scan again to prove the fix worked, and write down what you did. Your report is the before and after scans, each finding with its fix, and an honest note on what a scan cannot see."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can run the audit cycle: scan, fix, scan again."
+  - "I can say what a scan can and cannot show."
+  - "I can report findings honestly, with their limits."
+struggle: "Wanting to say 'secure'. The report says 'these findings are fixed; these things were not tested'."
+before: |
+  Try the board yourself; it is the longest Make in the course.
+
+  The gate (read first). This course teaches security as audit and defence: you scan, read and fix a lab computer your class owns. The pretend Kali and target in the lessons are safe anywhere. The real-lab version is different, so it needs your sign-off before anyone starts: school policy and IT's agreement, a written lab agreement every student signs (lab-rules.txt on the board is a model), and a lab that is cut off from every other network: a Pi running Kali and a second Pi or a virtual machine as the target, joined by one switch or one ethernet cable, with no router and no internet. Download the Kali image and any tools once, at home or at IT's request. Scan only the target named on the lab sheet. This course does not teach breaking into anything: it stops at find, understand and fix. It relaxes the 'defensive only' rule of the other courses only in that the real lab uses real scanning tools on a computer the class owns.
+
+  The one idea: security work is a cycle with evidence, and an honest report names what it did not check. Simplifications: the pretend target has four findings. A real target would also have weak passwords, loose file permissions and web problems that need different tools: say so, and do not go there in this course.
+
+  Real lab, if you run one: Kali Linux has a Raspberry Pi image (Pi 4 or Pi 5; the Pi 5 wants its 27 W supply); flash it with Raspberry Pi Imager or the Kali image instructions and boot it with a screen and keyboard, or ssh in. The target can be a second Pi (an older Raspberry Pi OS with a few extra services) or a purpose-made practice target your IT team approves. Start from the same state every time: re-flash, or snapshot a virtual machine. `nmap` is already on Kali. Give each pair a printed lab sheet naming the target's address, the one account they may use and what they are allowed to change.
+
+  Assessment: the project brief (`audit-report`) turns the cycle into a hand-in; check that the 'does not protect against' column is honest and that the before and after scans really differ.
+
+  Beyond this course: if a student wants to go further (exploitation, web testing), treat it as a separate, closely supervised extension with its own sign-off, a contained lab and your school's agreement. A good next step that stays defensive is to set up the target themselves in System admin on a Raspberry Pi, then audit it here.
+running:
+  - "Predict: wrong answers trust the commands."
+  - "Try: ask what the before scan is for."
+  - "Worked example: stop at Sam and ask what a reboot would have done."
+  - "Vary: ask who could check the evidence."
+  - "Make: ask what is not tested."
+stuck:
+  - see: "The after scan still shows an old version."
+    ask: "Did you run apt update first?"
+    fix: "sudo apt update, then sudo apt upgrade."
+  - see: "ssh still shows password login."
+    ask: "Did you restart ssh?"
+    fix: "sudo systemctl restart ssh."
+stretch: "Add one fix that a scan cannot check, such as turning on automatic updates, and say how you would test it."
+support: "A checklist: before scan, four fixes, restart, after scan."
+leads: |
+  Links: Security and privacy (finale); Cyber safety and privacy (threat models); System admin on a Raspberry Pi.
+exit:
+  q: "Name one thing a port scan cannot tell you."
+  a: "Any of: whether passwords are strong, what the file permissions are, what is inside the files."
+explain: |
+  An audit is a cycle: **scan** and save it (`nmap -sV target > before.txt`), **fix** (stop, upgrade, tighten, filter), **scan again** (`> after.txt`) and compare. A scan sees open ports and versions only, so the report says what it did not check. Absence of findings is not proof of safety.

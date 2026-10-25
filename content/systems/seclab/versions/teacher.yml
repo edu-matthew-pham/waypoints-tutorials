@@ -1,0 +1,40 @@
+summary: "A scan can also ask each service for its version. Old versions have known problems that have since been fixed, so an old version is a finding. Some services are risky however new they are: telnet sends everything, including passwords, as readable text."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can read service versions from a scan."
+  - "I can say why an old version is a finding."
+  - "I can say why some services are risky at any version."
+struggle: "Treating versions as trivia. Ask: what fixes does this one not have?"
+before: |
+  Try the boards yourselves.
+
+  The gate (read first). This course teaches security as audit and defence: you scan, read and fix a lab computer your class owns. The pretend Kali and target in the lessons are safe anywhere. The real-lab version is different, so it needs your sign-off before anyone starts: school policy and IT's agreement, a written lab agreement every student signs (lab-rules.txt on the board is a model), and a lab that is cut off from every other network: a Pi running Kali and a second Pi or a virtual machine as the target, joined by one switch or one ethernet cable, with no router and no internet. Download the Kali image and any tools once, at home or at IT's request. Scan only the target named on the lab sheet. This course does not teach breaking into anything: it stops at find, understand and fix. It relaxes the 'defensive only' rule of the other courses only in that the real lab uses real scanning tools on a computer the class owns.
+
+  Simplifications: the versions and the advisory sheet are made up for the lab (they describe real kinds of old, not real exploits). A real audit looks versions up in a vulnerability database, with the internet, and checks whether a fix has been 'backported' (distributions often patch an old number). The board does not teach how to use any weakness, and this course does not either.
+
+  Real lab, if you run one: Kali Linux has a Raspberry Pi image (Pi 4 or Pi 5; the Pi 5 wants its 27 W supply); flash it with Raspberry Pi Imager or the Kali image instructions and boot it with a screen and keyboard, or ssh in. The target can be a second Pi (an older Raspberry Pi OS with a few extra services) or a purpose-made practice target your IT team approves. Start from the same state every time: re-flash, or snapshot a virtual machine. `nmap` is already on Kali. Give each pair a printed lab sheet naming the target's address, the one account they may use and what they are allowed to change.
+
+  Other options: `searchsploit` and online databases catalogue known problems: for the report, read them to understand the risk, and do not run what they list.
+running:
+  - "Predict: wrong answers treat the version as a label."
+  - "Try: ask which services the class thinks are old."
+  - "Worked example: stop at Sam and ask what a fixed problem is."
+  - "Vary: ask why the sheet is offline."
+  - "Make: ask what a reader needs from each finding line."
+stuck:
+  - see: "A student says telnet is fine because it is new."
+    ask: "Can someone watching the network read it?"
+    fix: "Plain text is a finding at any version."
+  - see: "The findings file is missing a line."
+    ask: "Did you use > on every line?"
+    fix: "> replaces the file; >> adds a line."
+stretch: "Find out what a CVE is and why vulnerability databases give each problem a number."
+support: "The advisory sheet next to the scan."
+leads: |
+  Links: Security and privacy; Secret messages (what encryption is for); next: What guessing looks like.
+exit:
+  q: "Why is an old version a finding?"
+  a: "It is missing fixes for problems that are public by now."
+explain: |
+  `nmap -sV target` asks each open service for its **version**. Old versions miss fixes for problems that are now public, so an old version is a **finding**. Some services are findings at any version: telnet sends everything, passwords included, as readable text, and ssh does the same job encrypted.

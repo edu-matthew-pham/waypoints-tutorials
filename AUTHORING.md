@@ -1080,6 +1080,11 @@ Vary, Practise, Make).
     `access: user /path` `can_read`; `writes: user /path` `can_write`; `nowrite: user /path` `blocked`; `cron: 30 2 * * *`
     `cron_has`; `ran: a b` `ran_it` (every command used); `as: user` `as_user`. Others: `on_pi`, `pend_n`, `sudoers_n`,
     `cron_n`, `fw_up`, `disk_pct`, `usb_pct`. Spec details are in the widget's header comment.
+    **Security lab** (`fs: kali`, `from: kali` or `lab: on`, for `systems/seclab/`): a pretend Kali laptop (10.0.0.5) and a target Pi
+    (`target`, 10.0.0.2) on an isolated switch, apt reading a local mirror, `nmap` (`-sn`, `-sV`, `-p`; the target and Kali only), `ssh admin@target`,
+    and a target with old ssh, apache2 and vsftpd, telnet, a loose `sshd_config` and a guessing run in `auth.log` (sudo lines log the program, not its
+    arguments, so counts stay clean). Values: `open_n`, `risky_n`, `old_n`, `pw_login`, `root_login`, `sv_used`. Fixing is stop services, `apt upgrade`,
+    `tee` into `sshd_config` plus `systemctl restart ssh`, and `ufw`. It teaches audit and defence only; real scanning needs the teacher's sign-off (course page).
   - `widget: cyber` (first used by `systems/cyber/`): defensive cyber safety and privacy on a made-up club app; every
     choice button is labelled "<row>: <option>" (row is the account, field, point, or a card's first 30 characters).
     `mode: breach` (`set: same | mixed`, `manager: on`; Leak!; values l, f, r, c, m), `mfa` (factors None, SMS code,

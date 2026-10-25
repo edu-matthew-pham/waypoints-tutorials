@@ -47,4 +47,5 @@ pathways:
     courses:
       - { path: systems/shell, id: shell, stage: foundations, tagline: "Talk to the computer in its own words." }
       - { path: systems/sysadmin, id: sysadmin, stage: extensions, after: [shell], tagline: "Run a server, then keep it safe." }
+      - { path: systems/seclab, id: seclab, stage: extensions, after: [shell], tagline: "Find what is open, fix it, prove it." }
 ---

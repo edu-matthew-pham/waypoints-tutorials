@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam is curious which computers are on the school Wi-Fi.
+Sam runs a port scan on the school network.
+Nothing breaks and nobody complains.
+So scanning without asking is fine.
+# endregion

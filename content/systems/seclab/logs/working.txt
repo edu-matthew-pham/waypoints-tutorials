@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam reads the log: 14 failed password attempts for root in two minutes.
+Sam says: they all failed, so there is nothing to do.
+Sam closes the log and goes home.
+Next week Sam notices an Accepted line from the same address.
+# endregion

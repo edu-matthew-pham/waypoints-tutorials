@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam scans the target and sees ports 21, 22, 23 and 80 open.
+Sam says: open means the computer has been broken into.
+So Sam switches the target off at once.
+Sam says the lab is safe now.
+# endregion

@@ -1,0 +1,45 @@
+# Boards for "Challenge: audit, fix and prove it".
+
+# region: run
+widget: shell
+fs: kali
+exists: /home/kali/before.txt
+ran: nmap
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: kali
+run: nmap -sV target > before.txt; cat before.txt
+# endregion
+
+# region: v1
+widget: shell
+fs: kali
+exists: /home/kali/before.txt
+has: /home/kali/before.txt | telnet | OpenSSH 7.2p2
+# endregion
+
+# region: v2
+widget: shell
+fs: kali
+# endregion
+
+# region: v3
+widget: shell
+exists: /home/kali/after.txt
+run: ssh admin@target; sudo systemctl stop telnet; sudo systemctl stop vsftpd; exit
+fs: kali
+# endregion
+
+# region: make
+widget: shell
+fs: kali
+exists: /home/kali/after.txt
+has: /home/kali/before.txt | telnet | OpenSSH 7.2p2
+# endregion

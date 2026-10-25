@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam fixes the target and writes 'all fixed' in the report.
+Sam does not scan again.
+The report goes to the teacher.
+The teacher scans: port 23 is open again after a reboot.
+# endregion

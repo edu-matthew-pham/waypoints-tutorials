@@ -1,0 +1,25 @@
+inquiry:
+  q: "You say it is secure now. What would convince someone else?"
+  prompts:
+  - "What evidence would you show?"
+  - "What did you not test?"
+  notes: "Before and after evidence, and honest limits."
+activities:
+- at: predict
+  kind: discussion
+  title: "Prove it"
+  minutes: 5
+  do: "Pairs swap their claims ('all fixed') and ask each other for the evidence."
+  notes: "Evidence beats claims."
+questions:
+- at: investigate
+  title: "Evidence"
+  type: question
+  q: "Which is the strongest evidence?"
+  options:
+  - "A second scan after the fixes"
+  - "I ran the commands"
+  - "It looks fine"
+  - "I trust it"
+  answer: 0
+  explain: "Compare scans."

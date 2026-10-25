@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam cannot upgrade Apache before the lab ends.
+So Sam turns on the firewall and leaves port 80 allowed.
+Sam says: the firewall makes old software safe.
+Sam writes 'fixed' in the report.
+# endregion

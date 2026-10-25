@@ -1,0 +1,43 @@
+# Boards for "What is listening: finding open ports".
+
+# region: run
+widget: shell
+fs: kali
+ran: nmap
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: kali
+run: nmap target
+# endregion
+
+# region: v1
+widget: shell
+fs: kali
+ran: nmap
+# endregion
+
+# region: v2
+widget: shell
+fs: kali
+ran: nmap
+# endregion
+
+# region: v3
+widget: shell
+fs: kali
+ran: nmap
+# endregion
+
+# region: make
+widget: shell
+fs: kali
+exists: /home/kali/scan1.txt
+ran: nmap
+# endregion

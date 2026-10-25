@@ -1,0 +1,25 @@
+briefs:
+  - id: audit-report
+    title: Audit a lab server
+    after: audit-report
+    nodes: ["AC9TDI10K01 n3", "AC9TDI10K01 n5"]
+    goal: |
+      You have been asked to audit the lab target and write the report a school would act on.
+
+      The report shows what you scanned (and had permission to scan), what you found, what you fixed, and how you proved it. It is honest about what you did **not** check.
+    handin:
+      - "The lab agreement you worked under: what was in scope, who gave permission, what you were allowed to change."
+      - "Your before and after scans, side by side, with the differences marked."
+      - "A table of findings: what each one is, the risk, the fix, and one thing the fix does not protect against."
+      - "A short explanation of the difference between proving who someone is (a login) and what they may do once in (permissions), using the login log from the target, and a list of what your audit did not test."
+    milestones:
+      - "Your lab agreement says exactly what was in scope and who agreed."
+      - "Your before and after scans are real and the differences match your fixes."
+      - "Every finding in your table has a risk, a fix and a limit."
+      - "Your log evidence explains authentication versus authorisation, and your list of what was not tested is honest and specific."
+    stretch:
+      - "Set up the target yourself in System admin on a Raspberry Pi, then audit it here."
+      - "Add a fix a scan cannot check, such as automatic updates, and say how you would test it."
+      - "Draw the target as a diagram: its services, ports and the firewall in front."
+    teacher: |
+      Good reports treat the audit as a cycle with evidence, and are plain about limits: a clean scan is clean only on what a scan sees. Check that the scans really differ, that each fix matches a finding, and that the 'does not protect against' column is honest rather than empty. The explanation of the login log is where node 3 shows: guessing is an attack on authentication, and permissions and root-login settings are authorisation. Node 5 shows in the table: stopping services, upgrading, ssh settings and the firewall are components that work together, and none does the whole job. A real-lab version needs your sign-off (see the course page); the brief works from the pretend lab's output too. This course does not teach breaking in: if a student wants to go further, treat it as a separate supervised extension.

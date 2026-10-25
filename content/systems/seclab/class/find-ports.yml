@@ -1,0 +1,25 @@
+inquiry:
+  q: "A computer is plugged into the network. What is it offering?"
+  prompts:
+  - "How would you find out without logging in?"
+  - "What does 'open' tell you?"
+  notes: "Which doors are open."
+activities:
+- at: predict
+  kind: activity
+  title: "Doors"
+  minutes: 5
+  do: "Draw a building with four doors labelled 21, 22, 23, 80. Students mark which doors are needed and which could be locked."
+  notes: "Needed depends on the job."
+questions:
+- at: investigate
+  title: "Open"
+  type: question
+  q: "A port is open. That means..."
+  options:
+  - "A service is listening"
+  - "The computer is hacked"
+  - "It is safe"
+  - "It is broken"
+  answer: 0
+  explain: "Open is only 'listening'."

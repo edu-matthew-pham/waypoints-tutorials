@@ -1,0 +1,42 @@
+summary: "A computer records every login attempt. A long run of failures for one account from one address in a short time is someone guessing passwords. Reading the log is the defender's view of an attack, and the fix is to make guessing harder, not to hope it fails."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can find failed and successful logins in auth.log."
+  - "I can say what a guessing pattern looks like."
+  - "I can name a defence that makes guessing pointless."
+struggle: "Seeing the pattern rather than the lines. Ask what a real person who forgot a password looks like."
+before: |
+  Try the boards yourselves.
+
+  The gate (read first). This course teaches security as audit and defence: you scan, read and fix a lab computer your class owns. The pretend Kali and target in the lessons are safe anywhere. The real-lab version is different, so it needs your sign-off before anyone starts: school policy and IT's agreement, a written lab agreement every student signs (lab-rules.txt on the board is a model), and a lab that is cut off from every other network: a Pi running Kali and a second Pi or a virtual machine as the target, joined by one switch or one ethernet cable, with no router and no internet. Download the Kali image and any tools once, at home or at IT's request. Scan only the target named on the lab sheet. This course does not teach breaking into anything: it stops at find, understand and fix. It relaxes the 'defensive only' rule of the other courses only in that the real lab uses real scanning tools on a computer the class owns.
+
+  Simplifications: the log on the board is made up for the lesson (14 failures from one address, one success). The pretend admin can read it with sudo; on a real Pi the first account can read it without. The addresses are private lab addresses. This lesson stays on the defender's side: it reads and counts, and does not teach how guessing is done.
+
+  Real lab, if you run one: Kali Linux has a Raspberry Pi image (Pi 4 or Pi 5; the Pi 5 wants its 27 W supply); flash it with Raspberry Pi Imager or the Kali image instructions and boot it with a screen and keyboard, or ssh in. The target can be a second Pi (an older Raspberry Pi OS with a few extra services) or a purpose-made practice target your IT team approves. Start from the same state every time: re-flash, or snapshot a virtual machine. `nmap` is already on Kali. Give each pair a printed lab sheet naming the target's address, the one account they may use and what they are allowed to change.
+
+  Other options: `fail2ban` blocks addresses automatically after repeated failures; `journalctl -u ssh` is the same story on systems that use the journal; a central log server keeps the record safe from the computer being attacked.
+
+  With internet: a server on the open internet is guessed at within minutes, all day, by automated scanners. That is why exposing a server raises the stakes (see System admin on a Raspberry Pi).
+running:
+  - "Predict: wrong answers treat failure as success of the defence."
+  - "Try: ask which user the failures target."
+  - "Worked example: stop at Sam and ask what the 'Accepted' line means a week later."
+  - "Vary: ask what the single success might be."
+  - "Make: ask what number the report should lead with."
+stuck:
+  - see: "Permission denied reading the log."
+    ask: "Did you use sudo?"
+    fix: "sudo grep ... /var/log/auth.log."
+  - see: "fails.txt is empty or missing."
+    ask: "Where is your > ?"
+    fix: "sudo grep -c ... > fails.txt"
+stretch: "Find out what fail2ban does and what it cannot protect against."
+support: "A card of the three grep commands."
+leads: |
+  Links: Security and privacy › Sign-in and permissions; Cyber safety and privacy › Passwords; next: Close the doors.
+exit:
+  q: "What pattern in a log says someone is guessing passwords?"
+  a: "Many failed logins for one account from one address in a short time."
+explain: |
+  Every login attempt is written to `/var/log/auth.log`. `sudo grep Failed` shows the failures and `grep -c` counts them. Many failures for one account from one address in a short time is **guessing**. The defence is to make guessing pointless or expensive: key login, no root login, limited attempts, long passwords.

@@ -1,0 +1,25 @@
+inquiry:
+  q: "Someone is trying to log in to the lab computer. How would you know?"
+  prompts:
+  - "Where would a computer write that down?"
+  - "What would a mistyped password look like next to guessing?"
+  notes: "The log, and the pattern of failures."
+activities:
+- at: predict
+  kind: activity
+  title: "Real or guessing"
+  minutes: 5
+  do: "Hand out six log lines. Students sort them: mistyped password, guessing, a normal login."
+  notes: "Rate, repetition and account tell the story."
+questions:
+- at: investigate
+  title: "Pattern"
+  type: question
+  q: "Which is guessing?"
+  options:
+  - "14 failures, one account, two minutes"
+  - "1 failure then a success"
+  - "A login at 9am"
+  - "A reboot"
+  answer: 0
+  explain: "Volume, repetition and speed."

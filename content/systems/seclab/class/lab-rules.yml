@@ -1,0 +1,25 @@
+inquiry:
+  q: "You are allowed to test one computer. How do you make sure you only touch that one?"
+  prompts:
+  - "Who decides what is in scope?"
+  - "What would you put in writing?"
+  notes: "Permission, a named target, and a contained lab."
+activities:
+- at: predict
+  kind: discussion
+  title: "Is it in scope?"
+  minutes: 5
+  do: "Read out five computers (the lab target, the school server, a friend's laptop, a classroom Pi, your own phone). Students stand for in scope, sit for not."
+  notes: "Only what is named on the sheet and owned by the school or student."
+questions:
+- at: investigate
+  title: "Scope"
+  type: question
+  q: "The sheet says 10.0.0.2. A scan of 10.0.0.9 is..."
+  options:
+  - "Out of scope"
+  - "Fine, it is nearby"
+  - "Fine if nothing breaks"
+  - "Fine if you are quick"
+  answer: 0
+  explain: "Scope is exactly what is on the sheet."

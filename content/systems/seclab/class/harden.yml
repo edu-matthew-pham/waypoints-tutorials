@@ -1,0 +1,25 @@
+inquiry:
+  q: "You have a list of problems. How do you decide what to fix first?"
+  prompts:
+  - "Which problem is easiest for an attacker?"
+  - "Which fix removes a whole door?"
+  notes: "Close doors first, then strengthen the ones you keep."
+activities:
+- at: predict
+  kind: activity
+  title: "Findings to fixes"
+  minutes: 5
+  do: "Cards of four findings and four fixes. Pairs match them and say what each fix does not cover."
+  notes: "Each fix covers one finding."
+questions:
+- at: investigate
+  title: "Layers"
+  type: question
+  q: "Which gives the strongest result?"
+  options:
+  - "Stop, upgrade, tighten and filter together"
+  - "Only the firewall"
+  - "Only an upgrade"
+  - "Only a new password"
+  answer: 0
+  explain: "Layers."

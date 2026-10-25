@@ -1,0 +1,25 @@
+inquiry:
+  q: "Two doors look the same. How do you tell which lock is weaker?"
+  prompts:
+  - "What does the lock's age tell you?"
+  - "Does a new lock always protect?"
+  notes: "Versions say which fixes are missing; some designs are weak anyway."
+activities:
+- at: predict
+  kind: discussion
+  title: "Old lock, new lock"
+  minutes: 4
+  do: "Show an old padlock and a new one. Which would you trust? Now a door with no lock at all but a 'private' sign (telnet)."
+  notes: "Design matters as well as age."
+questions:
+- at: investigate
+  title: "Version"
+  type: question
+  q: "Why is OpenSSH 7.2 a finding?"
+  options:
+  - "It misses fixes found since"
+  - "It is slow"
+  - "It is too new"
+  - "It is not installed"
+  answer: 0
+  explain: "Older versions have public problems."

@@ -1,0 +1,40 @@
+summary: "Every network service listens on a numbered port. A port scan asks each port whether anything answers, and lists what is open and what service is behind it. Open does not mean broken: it means something is listening. Whether that matters depends on what."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can scan a target and read the list of open ports."
+  - "I can say what a port and a service are."
+  - "I can save a scan as evidence."
+struggle: "Open versus broken. Students expect red alarms; a scan only reports what is listening."
+before: |
+  Try the boards yourself.
+
+  The gate (read first). This course teaches security as audit and defence: you scan, read and fix a lab computer your class owns. The pretend Kali and target in the lessons are safe anywhere. The real-lab version is different, so it needs your sign-off before anyone starts: school policy and IT's agreement, a written lab agreement every student signs (lab-rules.txt on the board is a model), and a lab that is cut off from every other network: a Pi running Kali and a second Pi or a virtual machine as the target, joined by one switch or one ethernet cable, with no router and no internet. Download the Kali image and any tools once, at home or at IT's request. Scan only the target named on the lab sheet. This course does not teach breaking into anything: it stops at find, understand and fix. It relaxes the 'defensive only' rule of the other courses only in that the real lab uses real scanning tools on a computer the class owns.
+
+  Simplifications: the pretend nmap supports `-sn`, `-sV` (next lesson) and `-p`, and scans only the target, Kali itself and the lab range. It shows `open` and `filtered` only. A real nmap has many more options and is very noisy on a real network: that is why the lab is isolated.
+
+  Real lab, if you run one: Kali Linux has a Raspberry Pi image (Pi 4 or Pi 5; the Pi 5 wants its 27 W supply); flash it with Raspberry Pi Imager or the Kali image instructions and boot it with a screen and keyboard, or ssh in. The target can be a second Pi (an older Raspberry Pi OS with a few extra services) or a purpose-made practice target your IT team approves. Start from the same state every time: re-flash, or snapshot a virtual machine. `nmap` is already on Kali. Give each pair a printed lab sheet naming the target's address, the one account they may use and what they are allowed to change.
+
+  Other options: `netstat` or `ss -tln` (run on the target) list its own open ports, the defender's view of the same thing; masscan and others scan faster, with the same permission rules.
+running:
+  - "Predict: wrong answers think a scan sees inside."
+  - "Try: ask which ports and services the class found."
+  - "Worked example: stop at Sam's mistake and ask what open means."
+  - "Vary: ask why Kali has nothing open."
+  - "Make: ask what a report is without evidence."
+stuck:
+  - see: "A student's nmap says 'not on the lab sheet'."
+    ask: "Which address did you scan?"
+    fix: "Only target or 10.0.0.2."
+  - see: "A student thinks open ports mean a break-in."
+    ask: "What is a web server doing?"
+    fix: "Listening on 80 on purpose."
+stretch: "Find out what the 1000 'most common ports' are and why a default scan only checks those."
+support: "A card of ports: 21 ftp, 22 ssh, 23 telnet, 80 web."
+leads: |
+  Links: Security and privacy › Names and addresses; Networks; next: Old versions and plain text.
+exit:
+  q: "What does it mean when a scan says a port is open?"
+  a: "A service is listening there. Whether that is a problem depends on the service."
+explain: |
+  A **port** is a numbered door on a computer; a **service** listens behind it. `nmap target` lists the open ports and what is behind them. Open means listening, not broken into. `nmap target > scan1.txt` saves the scan as evidence. Filtered means a firewall is not answering.

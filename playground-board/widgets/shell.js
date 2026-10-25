@@ -20,6 +20,12 @@
 //   updated: on           package lists already downloaded (default off: apt install needs sudo apt update first)
 //   pkgs: samba tree      packages already installed       users: alex:class, bob    extra users (user:group)
 //   stopped: ssh          services that start out stopped  ufw: on      firewall already on
+// Security lab (course Security lab; fs: kali, from: kali or lab: on): a pretend Kali laptop (10.0.0.5, user kali) and a target Pi
+// (target, 10.0.0.2, admin account `admin`) on an isolated switch with no internet; apt reads a local mirror. The target runs ssh
+// (old), vsftpd, telnet and apache2 (old), a loose sshd_config and an auth.log with a run of failed logins. nmap (-sn, -sV, -p) works
+// from Kali on the target only and refuses anything off the lab sheet; apt upgrade installs the fixed versions; a service reads
+// sshd_config when it is restarted. Extra values: open_n (reachable open ports on the target), risky_n (telnet or ftp reachable),
+// old_n (reachable services with old versions), pw_login and root_login (ssh settings in force), sv_used (nmap -sV used).
 // More checks (names with an underscore, for the board's when: conditions):
 //   on_pi (on the Pi, not the laptop)      as_user (the logged-in user is [as:])    pkg_in ([pkg:] is installed)
 //   svc_up / svc_boot ([svc:] is running / starts at boot)      port_up / port_reach ([port:] has a service / can be reached)
@@ -94,15 +100,28 @@
       owner: { '/home': 'root', '/etc': 'root', '/etc/hostname': 'root' }, mode: {}, group: {}, size: {},
     },
   };
-  var SYSFS = { pi: 1, laptop: 1 };
+  // The security lab (course Security lab): a pretend Kali laptop and a pretend target Pi on an isolated switch (10.0.0.x).
+  FS.kali = {
+    sys: true, user: 'kali',
+    dirs: ['/home', '/home/kali', '/etc'],
+    files: {
+      '/home/kali/lab-rules.txt': 'LAB RULES\n1. Only scan and test the computers named in the lab sheet: the target at 10.0.0.2.\n2. Never plug the lab switch into the school network.\n3. Write down what you change. Your teacher signs off before you start.\n4. Anything you find is reported and fixed, not used.\n5. The administrator account on the target account is admin (your teacher gives its password).',
+      '/home/kali/advisories.txt': 'LAB ADVISORY SHEET (offline copy, your teacher made it)\nOpenSSH below 8.0: old, upgrade it.\nvsftpd below 3.0: old, upgrade it.\nApache httpd below 2.4.50: old, upgrade it.\ntelnet: sends everything, including passwords, as readable text. Replace it with ssh.\nssh: allow password login only if you must; keys are stronger.',
+      '/etc/hostname': 'kali',
+    },
+    owner: { '/home': 'root', '/etc': 'root', '/etc/hostname': 'root' }, mode: {}, group: {}, size: {},
+  };
+  var SYSFS = { pi: 1, laptop: 1, kali: 1 };
+  var LAB_HOSTS = { target: 'pi', 'target.local': 'pi', '10.0.0.2': 'pi' };
 
   function parse(s) {
     s.fs0 = String(s.fs || 'school').toLowerCase();
-    if (!FS[s.fs0]) throw new Error('fs: school, hunt, empty, pi or laptop.');
-    s.fromLaptop = String(s.from || '').toLowerCase() === 'laptop';
+    if (!FS[s.fs0]) throw new Error('fs: school, hunt, empty, pi, laptop or kali.');
+    s.fromLaptop = /^(laptop|kali)$/.test(String(s.from || '').toLowerCase());
+    s.lab = s.fs0 === 'kali' || String(s.from || '').toLowerCase() === 'kali' || /^(on|yes|true)$/i.test(String(s.lab || ''));
     s.sys = !!SYSFS[s.fs0] || s.fromLaptop || /^(on|yes|true)$/i.test(String(s.system || ''));
-    s.kind0 = s.fromLaptop ? 'laptop' : (SYSFS[s.fs0] ? s.fs0 : 'pi');
-    s.net0 = !/^(off|no|false)$/i.test(String(s.net || 'on'));
+    s.kind0 = s.fromLaptop ? 'laptop' : (SYSFS[s.fs0] ? (s.fs0 === 'kali' ? 'laptop' : s.fs0) : 'pi');
+    s.net0 = !/^(off|no|false)$/i.test(String(s.net || 'on'));  // in the lab, apt reads a local mirror, never the internet
     s.updated0 = /^(on|yes|true)$/i.test(String(s.updated || ''));
     s.pending0 = s.pending !== undefined ? Math.max(0, +s.pending || 0) : 12;
     s.pkgs0 = String(s.pkgs || '').split(/[\s,]+/).filter(Boolean);
@@ -325,14 +344,20 @@
     cron: { desc: 'Regular background program processing daemon', ports: [] },
     smbd: { desc: 'Samba SMB Daemon', ports: [445, 139], pkg: 'samba' },
     jellyfin: { desc: 'Jellyfin Media Server', ports: [8096], pkg: 'jellyfin' },
-    'unattended-upgrades': { desc: 'Unattended Upgrades Shutdown', ports: [], pkg: 'unattended-upgrades' }
+    'unattended-upgrades': { desc: 'Unattended Upgrades Shutdown', ports: [], pkg: 'unattended-upgrades' },
+    vsftpd: { desc: 'vsftpd FTP server', ports: [21] },
+    telnet: { desc: 'Telnet server', ports: [23] },
+    apache2: { desc: 'The Apache HTTP Server', ports: [80] }
   };
+  var NEWVER = { ssh: 'OpenSSH 9.2p1', vsftpd: 'vsftpd 3.0.5', apache2: 'Apache httpd 2.4.62' };
+  var SVCNAME = { 21: 'ftp', 22: 'ssh', 23: 'telnet', 80: 'http', 139: 'netbios-ssn', 445: 'microsoft-ds', 8096: 'unknown' };
   var PKGSVC = { samba: 'smbd', jellyfin: 'jellyfin', 'unattended-upgrades': 'unattended-upgrades' };
   var PKGCMD = { tree: 'tree', cowsay: 'cowsay', ufw: 'ufw', smbclient: 'samba', vim: 'vim' };
   var LAPTOP_NO = { apt: 1, 'apt-get': 1, systemctl: 1, journalctl: 1, adduser: 1, deluser: 1, usermod: 1, groupadd: 1, addgroup: 1, crontab: 1, ufw: 1, smbclient: 1, ss: 1, reboot: 1, shutdown: 1 };
   var GIDS = { root: 0, adm: 4, sudo: 27, users: 100 };
   var KNOWN_HOSTS = { 'raspberrypi.local': 'pi', raspberrypi: 'pi', '192.168.1.23': 'pi' };
 
+  function khost(h) { return spec.lab ? LAB_HOSTS[h] : KNOWN_HOSTS[h]; }
   function clock(extra) { var mins = 600 + (st.count || 0) + (extra || 0), h = Math.floor(mins / 60) % 24, m = mins % 60; return { h: h, m: m, hms: (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m + ':' + (10 + (st.count || 0) % 50) }; }
   function stamp() { return 'Oct 25 ' + clock().hms + ' ' + st.m.host; }
   function logAuth(text) { var n = st.fs['/var/log/auth.log']; if (n && !n.dir) n.text += '\n' + stamp() + ' ' + text; }
@@ -354,7 +379,8 @@
   }
   function newMachine(kind) {
     var pi = kind === 'pi';
-    var m = { kind: kind, host: pi ? 'raspberrypi' : 'laptop', ip: pi ? '192.168.1.23' : '192.168.1.20', pkgs: {}, svc: {}, users: {}, groups: {}, cron: {}, ufw: { on: false, rules: [] },
+    var lab = !!spec.lab;
+    var m = { kind: kind, host: lab ? (pi ? 'target' : 'kali') : (pi ? 'raspberrypi' : 'laptop'), ip: lab ? (pi ? '10.0.0.2' : '10.0.0.5') : (pi ? '192.168.1.23' : '192.168.1.20'), cfgLoaded: {}, pkgs: {}, svc: {}, users: {}, groups: {}, cron: {}, ufw: { on: false, rules: [] },
       aptUpdated: spec.updated0, net: spec.net0, pending: spec.pending0, journal: {}, boot: 0, locked: false, smbLoaded: '', started: 0 };
     return m;
   }
@@ -369,10 +395,25 @@
     if (sv) { m.svc[sv] = { on: true, boot: true }; logSvc(sv, 'Started ' + SVC[sv].desc + '.'); }
   }
   function removePkg(p) { var m = st.m; delete m.pkgs[p]; var sv = PKGSVC[p]; if (sv) delete m.svc[sv]; }
+  // The lab's target: an old, over-open Pi. Services, versions, a loose ssh config and a log with a guessing run in it.
+  function labTarget(m) {
+    addUser('admin', ['sudo']);
+    ['vsftpd', 'telnet', 'apache2'].forEach(function (n) { m.svc[n] = { on: true, boot: true }; logSvc(n, 'Started ' + SVC[n].desc + '.'); });
+    m.ver = { ssh: { v: 'OpenSSH 7.2p2', old: true }, vsftpd: { v: 'vsftpd 2.0.8', old: true }, apache2: { v: 'Apache httpd 2.4.18', old: true }, telnet: { v: 'Linux telnetd', old: false } };
+    var conf = 'Port 22\nPermitRootLogin yes\nPasswordAuthentication yes';
+    st.fs['/etc/ssh'] = { dir: true, owner: 'root', group: 'root', mode: 0o755 };
+    st.fs['/etc/ssh/sshd_config'] = { dir: false, text: conf, owner: 'root', group: 'root', mode: 0o644 };
+    m.cfgLoaded['/etc/ssh/sshd_config'] = conf;
+    var log = st.fs['/var/log/auth.log'], lines = [];
+    for (var i = 0; i < 14; i++) lines.push('Oct 25 09:' + (10 + i) + ':0' + (i % 10) + ' target sshd[5' + (10 + i) + ']: Failed password for ' + (i % 4 === 3 ? 'invalid user admin1' : 'root') + ' from 10.0.0.9 port 5' + (4000 + i * 7) + ' ssh2');
+    lines.push('Oct 25 09:24:41 target sshd[540]: Accepted password for admin from 10.0.0.7 port 51022 ssh2');
+    if (log) log.text = lines.join('\n');
+  }
   function buildMachine(kind) {
     var back = snapNow(), m;
-    st.fs = fresh(kind); st.m = m = newMachine(kind); st.root = false;
-    var login = (kind === spec.kind0 && spec.login0) || FS[kind].user;
+    var fsn = spec.lab && kind === 'laptop' ? 'kali' : kind;
+    st.fs = fresh(fsn); st.m = m = newMachine(kind); st.root = false;
+    var login = (kind === spec.kind0 && spec.login0) || FS[fsn].user;
     setUser('root'); HOST = m.host;
     if (kind === 'pi') {
       m.users.pi = { uid: 1000, groups: ['sudo', 'users'], system: false };
@@ -380,13 +421,14 @@
       logSvc('ssh', 'Server listening on 0.0.0.0 port 22.'); logSvc('cron', 'Started Regular background program processing daemon.');
       syncAccounts();
       spec.pkgs0.forEach(function (p) { if (CATALOG[p]) installPkg(p); });
-    } else { m.users.sam = { uid: 1000, groups: ['sudo'], system: false }; syncAccounts(); }
+      if (spec.lab) labTarget(m);
+    } else { m.users[spec.lab ? 'kali' : 'sam'] = { uid: 1000, groups: ['sudo'], system: false }; syncAccounts(); }
     spec.users0.forEach(function (x) { var i = x.indexOf(':'), u = i < 0 ? x : x.slice(0, i), g = i < 0 ? '' : x.slice(i + 1).trim(); if (!m.users[u]) addUser(u, []); if (g) { if (!m.groups[g] && GIDS[g] === undefined) m.groups[g] = 1001 + Object.keys(m.groups).length; if (m.users[u].groups.indexOf(g) < 0) m.users[u].groups.push(g); } });
     spec.stopped0.forEach(function (n) { if (m.svc[n]) m.svc[n].on = false; });
     spec.disabled0.forEach(function (n) { if (m.svc[n]) m.svc[n].boot = false; });
     if (spec.ufw0 && kind === 'pi') { m.pkgs.ufw = 1; m.ufw.on = true; m.ufw.rules.push({ port: 22, act: 'allow' }); }
     syncAccounts();
-    setUser(m.users[login] ? login : FS[kind].user);
+    setUser(m.users[login] ? login : FS[fsn].user);
     st.cwd = HOME;
     var mach = snapNow(); restore(back); return mach;
   }
@@ -432,7 +474,7 @@
     sudo: function (a, input) {
       if (!a.length) throw new Err('sudo: usage: sudo command (runs the command as the administrator)');
       if (!isRoot() && !inGroup(USER, 'sudo')) { logAuth('sudo: ' + USER + ' : user NOT in sudoers ; COMMAND=' + a.join(' ')); throw new Err(USER + ' is not in the sudoers file. This incident will be reported.'); }
-      logAuth('sudo: ' + USER + ' : TTY=pts/0 ; PWD=' + st.cwd + ' ; USER=root ; COMMAND=' + a.join(' '));
+      logAuth('sudo: ' + USER + ' : TTY=pts/0 ; PWD=' + st.cwd + ' ; USER=root ; COMMAND=' + (spec.lab ? '/usr/bin/' + a[0] : a.join(' ')));
       var was = st.root; st.root = true;
       try { return execArgs(a, input); } finally { st.root = was; }
     },
@@ -455,11 +497,13 @@
       if (sub === 'update') {
         if (!m.net) throw new Err("Err:1 http://deb.debian.org/debian stable InRelease\n  Temporary failure resolving 'deb.debian.org'\n" + noNet);
         m.aptUpdated = true;
+        if (spec.lab) return 'Get:1 http://mirror.lab/debian stable InRelease [151 kB]\n(The lab has no internet: this is the lab\'s own local software mirror.)\nReading package lists... Done\n' + (m.pending ? m.pending + " packages can be upgraded." : 'All packages are up to date.');
         return 'Get:1 http://deb.debian.org/debian stable InRelease [151 kB]\nGet:2 http://archive.raspberrypi.com/debian stable InRelease [23 kB]\nFetched 174 kB in 2s\nReading package lists... Done\n' + (m.pending ? m.pending + " packages can be upgraded. Run 'apt list --upgradable' to see them." : 'All packages are up to date.');
       }
       if (sub === 'upgrade' || sub === 'full-upgrade') {
         if (!m.net) throw new Err(noNet);
         var n = m.aptUpdated ? m.pending : 0; m.pending = m.aptUpdated ? 0 : m.pending;
+        if (n && m.ver) Object.keys(NEWVER).forEach(function (k) { if (m.ver[k]) m.ver[k] = { v: NEWVER[k], old: false }; });
         return 'Reading package lists... Done\nCalculating upgrade... Done\n' + n + ' upgraded, 0 newly installed, 0 to remove and 0 not upgraded.' + (n ? '\nSetting up ' + n + ' packages... Done' : '') + (m.aptUpdated ? '' : '\n(Nothing was found to upgrade: run sudo apt update first so apt knows what is new.)');
       }
       if (sub === 'install') {
@@ -494,9 +538,10 @@
       if (sub === 'is-enabled') return sv.boot ? 'enabled' : 'disabled';
       if (['start', 'stop', 'restart', 'reload', 'enable', 'disable'].indexOf(sub) < 0) throw new Err('systemctl: ' + sub + ': try status, start, stop, restart, enable or disable');
       if (!isRoot()) throw new Err('Failed to ' + sub + ' ' + name + '.service: Interactive authentication required.\n(Changing services needs an administrator: try sudo systemctl ' + sub + ' ' + name + ')');
-      if (sub === 'start') { sv.on = true; if (name === 'smbd') m.smbLoaded = (st.fs['/etc/samba/smb.conf'] || {}).text || ''; logSvc(name, 'Started ' + SVC[name].desc + '.'); return ''; }
+      var loadCfg = function () { if (name === 'ssh' && st.fs['/etc/ssh/sshd_config']) { m.cfgLoaded = m.cfgLoaded || {}; m.cfgLoaded['/etc/ssh/sshd_config'] = st.fs['/etc/ssh/sshd_config'].text; } };
+      if (sub === 'start') { loadCfg(); sv.on = true; if (name === 'smbd') m.smbLoaded = (st.fs['/etc/samba/smb.conf'] || {}).text || ''; logSvc(name, 'Started ' + SVC[name].desc + '.'); return ''; }
       if (sub === 'stop') { sv.on = false; logSvc(name, 'Stopped ' + SVC[name].desc + '.'); return ''; }
-      if (sub === 'restart' || sub === 'reload') { sv.on = true; if (name === 'smbd') m.smbLoaded = (st.fs['/etc/samba/smb.conf'] || {}).text || ''; logSvc(name, (sub === 'restart' ? 'Restarted ' : 'Reloaded ') + SVC[name].desc + ' (settings read again).'); return ''; }
+      if (sub === 'restart' || sub === 'reload') { loadCfg(); sv.on = true; if (name === 'smbd') m.smbLoaded = (st.fs['/etc/samba/smb.conf'] || {}).text || ''; logSvc(name, (sub === 'restart' ? 'Restarted ' : 'Reloaded ') + SVC[name].desc + ' (settings read again).'); return ''; }
       if (sub === 'enable') { sv.boot = true; return 'Created symlink /etc/systemd/system/multi-user.target.wants/' + name + '.service.'; }
       sv.boot = false; return 'Removed /etc/systemd/system/multi-user.target.wants/' + name + '.service.';
     },
@@ -580,7 +625,7 @@
       if (!top) throw new Err('exit: this is the only session. (On a real Pi, exit logs you out.)');
       if (top.kind === 'su') { setUser(top.user); st.cwd = top.cwd; return ''; }
       st.pi = snapNow(); restore(top.back);
-      return 'Connection to raspberrypi closed. You are back on your laptop.';
+      return 'Connection to ' + st.pi.m.host + ' closed. You are back on ' + (spec.lab ? 'Kali' : 'your laptop') + '.';
     },
     chown: function (a) {
       needRoot('chown', 'chown: only an administrator can give a file to someone else. Try sudo chown user file');
@@ -639,16 +684,41 @@
     date: function () { var c = clock(); return 'Sun 25 Oct 2026 ' + c.hms + ' AEDT'; },
     uptime: function () { return ' ' + clock().hms + ' up ' + (st.count || 0) + ' min,  1 user,  load average: 0.03, 0.02, 0.00'; },
     hostname: function (a) { return a[0] === '-I' ? st.m.ip : st.m.host; },
-    ip: function () { return '1: lo: <LOOPBACK,UP>\n    inet 127.0.0.1/8\n2: eth0: <BROADCAST,MULTICAST,UP>\n    inet ' + st.m.ip + '/24 brd 192.168.1.255'; },
+    ip: function () { return '1: lo: <LOOPBACK,UP>\n    inet 127.0.0.1/8\n2: eth0: <BROADCAST,MULTICAST,UP>\n    inet ' + st.m.ip + '/24 brd ' + st.m.ip.replace(/\.\d+$/, '.255'); },
     ping: function (a) {
       var h = flags(a)[1].filter(function (x) { return !/^\d+$/.test(x); })[0], m = st.m;
-      if (!h) throw new Err('ping: ping which computer? Try ping raspberrypi.local');
-      var self = [m.host, m.host + '.local', m.ip, 'localhost', '127.0.0.1'], peer = KNOWN_HOSTS[h] === 'pi' || h === '192.168.1.20' || h === 'laptop' || h === 'laptop.local' || h === '192.168.1.50';
-      var reach = self.indexOf(h) >= 0 || peer || (h.indexOf('.') >= 0 && !/\.local$/.test(h) && m.net);
+      if (!h) throw new Err('ping: ping which computer? Try ping ' + (spec.lab ? 'target' : 'raspberrypi.local'));
+      var self = [m.host, m.host + '.local', m.ip, 'localhost', '127.0.0.1'], peer = khost(h) === 'pi' || (spec.lab ? (h === 'kali' || h === 'kali.local' || h === '10.0.0.5') : (h === '192.168.1.20' || h === 'laptop' || h === 'laptop.local' || h === '192.168.1.50'));
+      var reach = self.indexOf(h) >= 0 || peer || (h.indexOf('.') >= 0 && !/\.local$/.test(h) && m.net && !spec.lab);
       if (!reach) throw new Err(/^[\d.]+$/.test(h) ? 'ping: connect: Network is unreachable' : (/\.local$/.test(h) ? 'ping: ' + h + ': Name or service not known' : 'ping: ' + h + ': Temporary failure in name resolution (no internet on this network)'));
-      var ip = KNOWN_HOSTS[h] === 'pi' ? '192.168.1.23' : /^[\d.]+$/.test(h) ? h : '192.168.1.23';
+      var ip = /^[\d.]+$/.test(h) ? h : spec.lab ? (khost(h) === 'pi' ? '10.0.0.2' : '10.0.0.5') : (khost(h) === 'pi' ? '192.168.1.23' : '192.168.1.23');
       var out = ['PING ' + h + ' (' + ip + ') 56 bytes of data.']; for (var i = 1; i <= 3; i++) out.push('64 bytes from ' + ip + ': icmp_seq=' + i + ' ttl=64 time=0.' + (3 + i) + ' ms');
       out.push('3 packets transmitted, 3 received, 0% packet loss'); return out.join('\n');
+    },
+    nmap: function (a) {
+      if (!spec.lab) throw new Err('nmap: command not found.');
+      if (st.m.kind === 'pi') throw new Err('nmap: command not found. (Scanning is done from Kali, the other computer. Type exit to go back.)');
+      var fr = flags(a), f = fr[0], r = fr[1], pi = null, host = '', ports = null;
+      for (var i = 0; i < a.length; i++) { if (a[i] === '-p') { ports = String(a[i + 1] || '').split(',').map(Number).filter(Boolean); i++; } else if (a[i].charAt(0) !== '-') host = a[i]; }
+      if (!host) throw new Err('nmap: scan which computer? Try nmap target (or nmap -sV target for versions)');
+      if (!st.pi) st.pi = buildMachine('pi'); pi = st.pi.m;
+      st.used.nmap = 1; if (a.indexOf('-sV') >= 0) st.usedSV = 1;
+      var head = 'Starting Nmap 7.94 ( https://nmap.org )\n';
+      if (a.indexOf('-sn') >= 0) {
+        if (!/^10\.0\.0\./.test(host)) throw new Err('nmap: ' + host + ': only the lab network, 10.0.0.0/24, is on the lab sheet. Scan only what you are allowed to.');
+        return head + 'Nmap scan report for kali (10.0.0.5)\nHost is up.\nNmap scan report for target (10.0.0.2)\nHost is up (0.0004s latency).\nNmap done: 256 IP addresses (2 hosts up) scanned in 2.1 seconds';
+      }
+      var tgt = LAB_HOSTS[host] === 'pi';
+      if (host === 'kali' || host === 'localhost' || host === '10.0.0.5' || host === '127.0.0.1') return head + 'Nmap scan report for ' + host + '\nAll 1000 scanned ports on ' + host + ' are in ignored states.\n(Nothing is listening on this Kali computer.)';
+      if (!tgt) throw new Err('nmap: ' + host + ': not on the lab sheet, or not reachable. (' + (/^[\d.]+$/.test(host) ? 'Note: Host seems down.' : 'Failed to resolve.') + ' Scan only the target, 10.0.0.2.)');
+      var rows = [], fw = pi.ufw.on, shown = {};
+      Object.keys(pi.svc).forEach(function (n) { if (pi.svc[n].on && SVC[n]) SVC[n].ports.forEach(function (pt) { if (!shown[pt] && (!ports || ports.indexOf(pt) >= 0)) { shown[pt] = { n: n, open: !fw || pi.ufw.rules.some(function (x) { return x.port === pt && x.act === 'allow'; }) }; } }); });
+      Object.keys(shown).map(Number).sort(function (x, y) { return x - y; }).forEach(function (pt) {
+        var sh = shown[pt], ver = f.s || a.indexOf('-sV') >= 0 ? ((pi.ver && pi.ver[sh.n] && pi.ver[sh.n].v) || '') : '';
+        rows.push((pt + '/tcp      ').slice(0, 9) + ((sh.open ? 'open' : 'filtered') + '     ').slice(0, 9) + ((SVCNAME[pt] || sh.n) + '        ').slice(0, 9) + (sh.open ? ver : ''));
+      });
+      if (!rows.length) return head + 'Nmap scan report for target (10.0.0.2)\nHost is up (0.0004s latency).\nAll ports are closed or hidden.';
+      return head + 'Nmap scan report for target (10.0.0.2)\nHost is up (0.0004s latency).\nPORT     STATE    SERVICE  ' + (a.indexOf('-sV') >= 0 ? 'VERSION' : '') + '\n' + rows.join('\n') + '\nNmap done: 1 IP address (1 host up) scanned in 1.4 seconds';
     },
     ss: function () {
       var m = st.m, rows = ['State   Local Address:Port    Process'];
@@ -659,9 +729,9 @@
     ssh: function (a) {
       var t = flags(a)[1][0];
       if (!t) throw new Err('ssh: connect to what? Try ssh pi@raspberrypi.local (user@computer)');
-      if (st.m.kind === 'pi') throw new Err('ssh: you are already on the Pi. Try this from your laptop (a board that starts on a laptop), or ping 192.168.1.20 to see the laptop from here.');
+      if (st.m.kind === 'pi') throw new Err('ssh: you are already on the ' + (spec.lab ? 'target' : 'Pi') + '. Try this from ' + (spec.lab ? 'Kali (a board that starts there)' : 'your laptop (a board that starts on a laptop)') + '.');
       var at = t.indexOf('@'), user = at < 0 ? USER : t.slice(0, at), host = at < 0 ? t : t.slice(at + 1);
-      if (!KNOWN_HOSTS[host]) throw new Err('ssh: Could not resolve hostname ' + host + ': Name or service not known');
+      if (!khost(host)) throw new Err('ssh: Could not resolve hostname ' + host + ': Name or service not known');
       if (!st.pi) st.pi = buildMachine('pi');
       var pm = st.pi.m;
       if (pm.locked) throw new Err('ssh: connect to host ' + host + ' port 22: Connection timed out (the Pi has locked everyone out: its firewall blocks ssh. Only someone at its keyboard can fix that.)');
@@ -669,8 +739,8 @@
       if (!pm.users[user]) throw new Err(user + '@' + host + ': Permission denied (publickey,password). (You need an account on the Pi: it has no ' + user + '. Try ssh pi@' + host + ')');
       st.stack.push({ kind: 'ssh', back: snapNow() });
       var pi = st.pi; st.pi = null; st.fs = pi.fs; st.m = pm; st.root = false; HOST = pm.host; setUser(user); st.cwd = st.fs[HOME] ? HOME : '/';
-      logAuth('sshd[700]: Accepted password for ' + user + ' from 192.168.1.20 port 50' + (200 + st.count) + ' ssh2');
-      return '(Pretend: password accepted. On a real Pi you type ' + user + "'s password.)\nWelcome to Raspberry Pi OS. Type exit to come back to your laptop.";
+      logAuth('sshd[700]: Accepted password for ' + user + ' from ' + (spec.lab ? '10.0.0.5' : '192.168.1.20') + ' port 50' + (200 + st.count) + ' ssh2');
+      return '(Pretend: password accepted. On a real Pi you type ' + user + "'s password.)\nWelcome to Raspberry Pi OS. Type exit to come back to " + (spec.lab ? 'Kali' : 'your laptop') + '.';
     },
     reboot: function () { return SYS.shutdown(['-r']); },
     shutdown: function (a) {
@@ -679,7 +749,7 @@
       Object.keys(m.svc).forEach(function (n) { m.svc[n].on = m.svc[n].boot; });
       m.boot++; st.root = false;
       var top = st.stack[st.stack.length - 1], msg = restart ? 'The Pi restarts. Services set to start at boot are running again; the others stay stopped.' : 'The Pi powers off. (On a real one, wait for the green light to stop flashing before you pull the power.) Press start again to turn it back on.';
-      if (top && top.kind === 'ssh') { st.stack.pop(); st.pi = snapNow(); restore(top.back); return msg + '\nConnection to raspberrypi closed by remote host: you are back on your laptop.'; }
+      if (top && top.kind === 'ssh') { st.stack.pop(); st.pi = snapNow(); restore(top.back); return msg + '\nConnection to ' + st.pi.m.host + ' closed by remote host: you are back on ' + (spec.lab ? 'Kali' : 'your laptop') + '.'; }
       return msg;
     },
     df: function () {
@@ -875,12 +945,16 @@
     var w = spec.watch ? st.fs[resolve(spec.watch)] : null;
     var text = 'In ' + st.cwd + '. Commands run: ' + st.count + (L.err ? '. Last command failed' : '');
     ui.work.textContent = text; B.say(st.lines.length ? (L.err || (outLines.length ? outLines.length + ' line' + (outLines.length === 1 ? '' : 's') + ' of output' : 'Done')) : 'Type a command and press Enter');
-    B.save({ st: { fs: st.fs, cwd: st.cwd, hist: st.hist, lines: st.lines.slice(-120), count: st.count, used: st.used, usedA: st.usedA, usedGrep: st.usedGrep, found: st.found, cds: st.cds, read: st.read, existed: st.existed, user: USER, m: st.m, stack: st.stack, pi: st.pi } });
+    B.save({ st: { fs: st.fs, cwd: st.cwd, hist: st.hist, lines: st.lines.slice(-120), count: st.count, used: st.used, usedA: st.usedA, usedGrep: st.usedGrep, usedSV: st.usedSV, found: st.found, cds: st.cds, read: st.read, existed: st.existed, user: USER, m: st.m, stack: st.stack, pi: st.pi } });
     if (spec.gone && st.fs[resolve(spec.gone)]) st.existed = 1;
     var sv = {};
     if (spec.sys && st.m) {
       var m = st.m, nm = function (x) { return String(x || '').trim(); };
       var hasText = function (n, t) { return !!(n && !n.dir && n.text.indexOf(t) >= 0) ? 1 : 0; };
+      var lab = { open: 0, risky: 0, old: 0, pw: 0, root: 0 };
+      if (spec.lab) { if (m.kind === 'laptop' && !st.pi) st.pi = buildMachine('pi'); var tm = m.kind === 'pi' ? m : st.pi.m, fwx = tm.ufw.on;
+        Object.keys(tm.svc).forEach(function (n) { var sv = tm.svc[n]; if (!sv.on || !SVC[n]) return; SVC[n].ports.forEach(function (pt) { var open = !fwx || tm.ufw.rules.some(function (x) { return x.port === pt && x.act === 'allow'; }); if (!open) return; lab.open++; if (pt === 21 || pt === 23) lab.risky++; if (tm.ver && tm.ver[n] && tm.ver[n].old) lab.old++; }); });
+        var sc = (tm.cfgLoaded || {})['/etc/ssh/sshd_config'] || '', sshUp = tm.svc.ssh && tm.svc.ssh.on; lab.pw = sshUp && /PasswordAuthentication yes/.test(sc) ? 1 : 0; lab.root = sshUp && /PermitRootLogin yes/.test(sc) ? 1 : 0; }
       var hp = spec.has ? String(spec.has).split('|').map(nm) : null, gp = spec.group ? String(spec.group).split('|').map(nm) : null, wr = spec.writes ? nm(spec.writes).split(/\s+/) : null, nw = spec.nowrite ? nm(spec.nowrite).split(/\s+/) : null, ck = spec.cron ? nm(spec.cron).split(/\s+/) : null, mem = spec.member ? nm(spec.member).split(/\s+/) : null, acc = spec.access ? nm(spec.access).split(/\s+/) : null;
       sv = {
         on_pi: m.kind === 'pi' ? 1 : 0, as_user: spec.as && USER === spec.as ? 1 : 0,
@@ -890,11 +964,11 @@
         user_ok: spec.who && m.users[nm(spec.who)] ? 1 : 0,
         in_group: mem && m.users[mem[0]] && (mem[0] === mem[1] || m.users[mem[0]].groups.indexOf(mem[1]) >= 0) ? 1 : 0,
         conf_has: hp && hp.slice(1).every(function (t) { return hasText(st.fs[hp[0]], t); }) ? 1 : 0,
-        conf_live: hp && hp.length > 1 && hp.slice(1).every(function (t) { return String(m.smbLoaded || '').indexOf(t) >= 0; }) ? 1 : 0,
+        conf_live: hp && hp.length > 1 && hp.slice(1).every(function (t) { return String(hp[0] === '/etc/samba/smb.conf' ? m.smbLoaded : ((m.cfgLoaded || {})[hp[0]] || '')).indexOf(t) >= 0; }) ? 1 : 0,
         grp_is: gp && st.fs[gp[0]] && st.fs[gp[0]].group === gp[1] ? 1 : 0,
         can_write: wr && canAccess(wr[0], wr[1], 'w') ? 1 : 0, blocked: nw && !canAccess(nw[0], nw[1], 'w') ? 1 : 0,
         cron_has: ck && cronLines(USER).some(function (l) { return l.split(/\s+/).slice(0, 5).join(' ') === ck.join(' '); }) ? 1 : 0,
-        pend_n: m.pending, sudoers_n: Object.keys(m.users).filter(function (u) { return m.users[u].groups.indexOf('sudo') >= 0; }).length,
+        pend_n: m.pending, open_n: lab.open, risky_n: lab.risky, old_n: lab.old, pw_login: lab.pw, root_login: lab.root, sv_used: st.usedSV ? 1 : 0, sudoers_n: Object.keys(m.users).filter(function (u) { return m.users[u].groups.indexOf('sudo') >= 0; }).length,
         ran_it: spec.ran && String(spec.ran).split(/[\s,]+/).filter(Boolean).every(function (c) { return st.used[c]; }) ? 1 : 0,
         cron_n: cronLines(USER).length, can_read: acc && canAccess(acc[0], acc[1], 'r') ? 1 : 0,
         fw_up: m.ufw.on ? 1 : 0, disk_pct: disk().pct, usb_pct: st.fs['/media/usb'] ? usb().pct : 0,
@@ -926,7 +1000,7 @@
         else { setUser('sam'); HOST = 'school'; st.fs = fresh(); }
         if (!spec.sys || spec.start0) { st.cwd = resolve(spec.start0 || HOME); if (!st.fs[st.cwd] || !st.fs[st.cwd].dir) st.cwd = HOME; }
         spec.run0.forEach(function (c) { run(c, true); });
-        st.hist = []; st.count = 0; st.used = {}; st.usedA = 0; st.usedGrep = 0; st.cds = 0; st.last = null;
+        st.hist = []; st.count = 0; st.used = {}; st.usedA = 0; st.usedGrep = 0; st.usedSV = 0; st.cds = 0; st.last = null;
         if (spec.gone && st.fs[resolve(spec.gone)]) st.existed = 1;
       }
       paintPanel(); draw(); report();
