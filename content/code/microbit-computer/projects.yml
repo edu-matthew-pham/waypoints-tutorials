@@ -64,14 +64,14 @@ projects:
     title: Watch the radio packets
     after: radio-bridge
     goal: |
-      Three micro:bits, one story. A **sender** micro:bit sends readings by radio. A **bridge** micro:bit, plugged into the computer, hears every radio packet and passes it on. **Your own web page** lists each packet as it arrives (its name and its value), like a window on the radio.
+      Two micro:bits and a page. A **sender** micro:bit sends readings by radio. A **bridge** micro:bit, plugged into the computer, hears every radio packet and passes it on. **Your own web page** lists each packet as it arrives (its name and its value), like a window on the radio.
 
       Use a different radio group from the rest of the class so you only see your own packets.
     milestones:
       - "The sender sends a named reading by radio (send value) on your group."
       - "The bridge passes each packet on to the computer (serial write value)."
       - "My page adds a new line to a list for every packet, so I can see the order they arrived."
-      - "I can tell, from the list, which packets came from the sender and which were my own test lines."
+      - "I tried a different radio group on the sender and saw the packets stop, then put it back."
     stretch:
       - "Send two different names from the sender and colour them differently on the page."
       - "Show how many packets have arrived so far."
