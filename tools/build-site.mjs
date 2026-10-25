@@ -343,7 +343,7 @@ const navFor = (pagePath, here, coursePath = null) => {
     subjects: SUBJECTS.filter((x) => !x.teachers).map((sub) => ({ title: sub.title, href: `${sub.path}/`, on: subjectOn(sub),
       // Each pathway with a built course, linking to its trail map (one click from anywhere, for students).
       pathways: sub.pathways.filter((pw) => pw.id && (pw.courses || []).some((c) => c.path)).map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw })) })),
-    teachers: tsub ? { title: tsub.title, href: `${tsub.path}/`, on: subjectOn(tsub), items: tsub.links.map((l) => ({ title: l.title, href: l.href, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) })) } : null,
+    teachers: tsub ? { title: tsub.title, href: `${tsub.path}/`, on: subjectOn(tsub), items: tsub.links.map((l) => ({ title: l.title, href: l.href, group: l.group, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) })) } : null,
     current: c ? { href: `${c.path}/`, playground: !!PLAY[c.path], reference: REFS.some((r) => r.path === `${c.path}/reference`) } : null,
   });
 };
