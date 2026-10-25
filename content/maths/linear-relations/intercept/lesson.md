@@ -7,7 +7,7 @@ title: What c does to a line
 summary: In y = mx + c, the number on its own moves the line up or down without changing its steepness, so lines with the same m are parallel.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Two phone plans with the same price per gigabyte but different monthly fees never meet: their graphs are parallel. The fee is c."
+hook: "Two phone plans charge the same price per gigabyte but different monthly fees. What do their graphs look like?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8136
   url: http://127.0.0.1:8136/index.html

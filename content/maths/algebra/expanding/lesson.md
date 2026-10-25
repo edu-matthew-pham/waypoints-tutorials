@@ -7,7 +7,7 @@ title: Expanding brackets
 summary: The number outside a bracket multiplies every term inside it. 3(2x + 4) is 3 rows of 2x + 4, so 6x + 12. Then collect any like terms.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Three friends each buy a drink and a $4 snack. Three drinks and three snacks: the 3 goes to both. That is all expanding a bracket is."
+hook: "Three friends each buy a drink and a $4 snack. How do you write what they spend together?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8165
   url: http://127.0.0.1:8165/index.html

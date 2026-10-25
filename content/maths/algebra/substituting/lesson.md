@@ -29,7 +29,7 @@ explainClip:
     - expect: { selector: ".rulework", contains: "P = 2 × 4 + 2 × 2 = 12" }
     - wait: 1200
 ---
-To **substitute** into a formula is to replace each letter with its value, then work out the answer. A number written next to a letter, such as $2l$, means multiply: $2 \times l$.
+To **substitute** into a formula is to replace each letter with its value, then work out the answer.
 
 ## Predict: a perimeter
 
@@ -45,7 +45,7 @@ check:
 
 $$P = 2l + 2w$$
 
-What does $2l$ mean? Write the formula again with the × signs in.
+What does $2l$ mean here?
 
 ## Run: check your value
 
@@ -56,7 +56,7 @@ try: { playground: board, starter: "formula.yml#run", height: 520 }
 check: { type: board, text: "Set $l = 5$ and $w = 3$. Was your prediction right?", when: "l = 5 and w = 3" }
 ```
 
-Read the working under the rectangle. Where did the × signs come from?
+Read the working under the rectangle. Where did the × signs come from? A number written next to a letter, such as $2l$, means multiply: $2 \times l$.
 
 ## Investigate: three steps
 

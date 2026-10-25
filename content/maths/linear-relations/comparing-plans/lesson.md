@@ -43,7 +43,7 @@ check:
   actual: "Plan B. For 6 GB, Plan A costs 20 + 5 × 6 = 50 dollars and Plan B costs 40. A's lower fee only wins for small amounts of data."
 ```
 
-Work out what each plan costs for 6 GB. Then think: is there an amount of data where they cost the same?
+(The plan prices are made up for the task.) Work out what each plan costs for 6 GB. Then think: is there an amount of data where they cost the same?
 
 ## Run: where they cost the same
 

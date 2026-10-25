@@ -7,7 +7,7 @@ summary: Undo what was done to x, last step first, to find the number you starte
 language: maths
 hook: "Retracing your steps to find a lost key is backtracking: you undo your route, most recent first. Equations work the same way."
 ---
-An equation like $2x + 3 = 11$ is a machine: $x$ goes in, gets multiplied by 2, then 3 is added, and 11 comes out. **Backtracking** runs the machine backwards to find $x$.
+An equation like $2x + 3 = 11$ is a machine: $x$ goes in, gets multiplied by 2, then 3 is added, and 11 comes out. If you only see what comes out, how could you find $x$?
 
 ## Predict: what number went in?
 
@@ -32,7 +32,7 @@ try: { playground: board, starter: "machine.yml#run", height: 400 }
 check: { type: board, text: "Undo every step to find $x$.", expect: { solved: true } }
 ```
 
-Start from the output, 11. Choose an operation and a number that **undoes** the last step, then keep going back towards $x$.
+This is **backtracking**: running the machine backwards to find $x$. Start from the output, 11. Choose an operation and a number that **undoes** the last step, then keep going back towards $x$.
 
 ## Investigate: undo in reverse
 

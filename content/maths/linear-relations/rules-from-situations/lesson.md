@@ -8,7 +8,7 @@ title: Rules from real situations
 summary: Many real costs and amounts are a starting amount plus a rate. The starting amount is c and the rate is m, so the rule is y = mx + c.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Taxi fares, phone plans, gym memberships and a phone battery running down all follow the same pattern: where you start, and how much changes each time."
+hook: "Taxi fares, phone plans, gym memberships and a phone battery running down: what do they have in common?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8138
   url: http://127.0.0.1:8138/index.html
@@ -34,8 +34,7 @@ explainClip:
     - expect: { selector: "#legend", contains: "T = 2d + 4" }
     - wait: 1200
 ---
-So far the rules had $x$ and $y$. Real situations have their own letters: $T$ for a total cost, $d$ for a distance, $h$ for hours. The graph works the same way: $m$ is still how much the line goes up for each step right, and $c$ is still where it starts.
-
+So far the rules had $x$ and $y$. Real situations have their own letters: $T$ for a total cost, $d$ for a distance, $h$ for hours. 
 ## Predict: a taxi fare
 
 ```step
@@ -59,7 +58,9 @@ try: { playground: board, starter: "graph.yml#run", height: 680 }
 check: { type: board, text: "Set $m$ and $c$ so the line goes through all three fares.", when: "P on y = mx + c and Q on y = mx + c and R on y = mx + c" }
 ```
 
-The points are three real fares: 6 dollars for 1 km, 10 dollars for 3 km and 14 dollars for 5 km. Set $m$ and $c$ so the line passes through all three. Was your rule right?
+The graph works the same way as before: $m$ is how much the line goes up for each step right, and $c$ is where it starts.
+
+The points are three fares: 6 dollars for 1 km, 10 dollars for 3 km and 14 dollars for 5 km. (The fares are made up for the task.) Set $m$ and $c$ so the line passes through all three. Was your rule right?
 
 ## Investigate: from words to a rule
 
@@ -137,7 +138,7 @@ tasks:
 
 ### No starting amount
 
-Each task gives some real values as points. Set $m$ and $c$ so the line goes through them all.
+Each task gives some values as points. (They are made up for the task.) Set $m$ and $c$ so the line goes through them all.
 
 ### Going down
 
@@ -165,6 +166,8 @@ tasks:
         - ["6n + 12", "Which amount is paid once for the whole order? That one is c."]
         - ["18n", "The booking fee is paid once, not for every ticket."]
       explain: "T = 12n + 6: 12 dollars for each ticket (m) and 6 dollars once (c)."
+    smaller:
+      check: { type: "number", q: "Try it with numbers first: what do 2 tickets cost in total, booking fee included, in dollars?", answer: 30, explain: "2 tickets at 12 dollars is 24, and the 6 dollar booking fee is paid once: 30." }
   - check:
       type: question
       q: "A plumber charges $T = 80h + 60$ dollars for a job of $h$ hours. What does the 60 mean?"

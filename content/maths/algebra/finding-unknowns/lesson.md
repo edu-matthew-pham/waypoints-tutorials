@@ -6,7 +6,7 @@ title: Finding an unknown
 summary: When a formula's answer is known but one letter is not, substitute what you know. That leaves an equation; solve it by undoing, then check.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "You know how much fence you have and how long the garden bed must be. How wide can it be? A formula answers that too, worked backwards."
+hook: "You know how much fence you have and how long the garden bed must be. How wide can it be?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8144
   url: http://127.0.0.1:8144/index.html
@@ -31,7 +31,7 @@ explainClip:
     - expect: { selector: ".rulework", contains: "P = 2 × 6 + 2 × 4 = 20" }
     - wait: 1200
 ---
-So far you knew the letters and worked out the answer. Sometimes you know the answer, and one letter is the **unknown**. Substitute what you know: what is left is an equation, and you can solve it by undoing, as in the Equations unit.
+So far you knew the letters and worked out the answer. Sometimes you know the answer, and one letter is the **unknown**.
 
 ## Predict: how wide?
 
@@ -59,6 +59,8 @@ check: { type: board, text: "Keep $l = 6$. Change $w$ until the perimeter is 20 
 ```
 
 Change $w$ one step at a time. How much does $P$ go up for each 1 cm of width? Why?
+
+When you know the answer and one letter is missing, substitute what you know. What is left is an equation, and you can solve it by undoing, as in the Equations unit.
 
 ## Investigate: substitute, then solve
 

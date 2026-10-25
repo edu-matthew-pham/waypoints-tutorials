@@ -176,6 +176,8 @@ tasks:
       feedback:
         - ["9", "9 is the y of the meeting point. The solution is its x."]
       explain: "x = 3. Check: 4 × 3 − 3 = 9."
+    smaller:
+      check: { type: "number", q: "Two other lines meet at $(5, 12)$. Which number is the $x$?", answer: 5, explain: "A point is written (x, y): x first. The x is 5, and 12 is the y." }
   - check:
       type: answer
       q: "$y = 2x - 1$ and $y = -x + 5$ meet at $(2, 3)$. What value of $x$ makes $2x - 1 = -x + 5$ true?"

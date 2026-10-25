@@ -7,7 +7,7 @@ summary: Do the same to both sides to get x on its own, then check your answer i
 language: maths
 hook: "Engineers, nurses working out doses and anyone splitting a bill rearrange equations this way: keep it balanced, and every step stays true."
 ---
-Backtracking stops working when $x$ is on **both** sides, as in $x + 7 = 3x + 1$. The **balance method** works for every linear equation: whatever you do to one side, do to the other, so the scale stays level.
+Backtracking stops working when $x$ is on **both** sides, as in $x + 7 = 3x + 1$. What can you do instead?
 
 ## Predict: one move on both sides
 
@@ -32,7 +32,7 @@ try: { playground: board, starter: "solve.yml#run", height: 520 }
 check: { type: board, text: "Get $x$ on its own on one side.", expect: { solved: true } }
 ```
 
-Use **Take away** and **Share** on the board. Each step does the same to both sides, so the scale stays level, and the list underneath writes your steps as algebra.
+Use **Take away** and **Share** on the board. This is the **balance method**: whatever you do to one side, do to the other, so the scale stays level. It works for every linear equation. The list underneath writes your steps as algebra.
 
 ## Investigate: write it as algebra
 

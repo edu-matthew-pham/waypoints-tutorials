@@ -4,10 +4,10 @@ unit: rules
 node: [AC9M7A06 n1, AC9M7A06 n2]
 uses: [AC9M7A01 n2]   # substituting into a formula
 title: Changing one thing at a time
-summary: "To see what one variable does to a formula, change only that one and hold the rest still. Doubling h in V = lwh doubles V; doubling the side of a square makes its area four times as big."
+summary: "To see what one variable does to a formula, change only that one and hold the rest still, then read the table. The same test works on a box, on distance and on a square."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A scientist testing a plant changes the light, but not the water. In a formula, that is how you find what each letter does."
+hook: "A scientist testing a plant changes the light, but not the water. How would you test one letter in a formula the same way?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8301
   url: http://127.0.0.1:8301/index.html
@@ -28,10 +28,6 @@ explainClip:
     - wait: 1500
 ---
 A **formula** has several variables, such as $V = l \times w \times h$. To find out what one variable does to the output, **vary it systematically**: change that one, keep every other variable the same, and write the results in a table.
-
-| $h$ | 1 | 2 | 3 | 4 |
-|---|---|---|---|---|
-| $V$ (with $l = 2$, $w = 3$) | 6 | 12 | 18 | 24 |
 
 ## Predict: doubling h
 
@@ -56,7 +52,11 @@ try: { playground: board, starter: "formula.yml#run", height: 520 }
 check: { type: board, text: "Keep $l = 2$ and $w = 3$. Move $h$ up from 1 to 4 and watch $V$. Was your prediction right?", when: "l = 2 and w = 3 and h = 4", explain: "V = 6, 12, 18, 24: each step of 1 in h adds 6 to V, because l × w = 6." }
 ```
 
-Move one slider at a time.
+Move one slider at a time. Here is what the board shows:
+
+| $h$ | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| $V$ (with $l = 2$, $w = 3$) | 6 | 12 | 18 | 24 |
 
 ## Investigate: a fair test
 
@@ -155,6 +155,8 @@ tasks:
       feedback:
         - ["28", "l and h stay at 2 and 4: 2 × 4 × 4."]
       explain: "2 × 4 × 4 = 32."
+    smaller:
+      check: { type: "number", q: "Which two stay the same, $l$ and $h$? What is $l \\times h$?", answer: 8, explain: "l = 2 and h = 4 stay put: 2 × 4 = 8. Then w is the only one that changes." }
   - check:
       type: answer
       q: "$d = st$ with $s = 60$ km/h. The time doubles from 2 to 4 hours. What is $d$ now, in km?"

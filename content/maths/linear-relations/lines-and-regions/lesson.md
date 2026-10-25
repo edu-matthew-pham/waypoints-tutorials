@@ -167,6 +167,8 @@ tasks:
       answer: 0
       feedback: [null, "1 ≤ −2 is false.", "3 ≤ 1 is false."]
       explain: "(2, 1): 1 ≤ 3 × 2 − 2 = 4. True."
+    smaller:
+      check: { type: "number", q: "Try a different point first: when $x = 4$, what is $3x - 2$?", answer: 10, explain: "3 × 4 − 2 = 10. So at x = 4 the line is at 10, and a point there is in the region if its y is 10 or less." }
   - check:
       type: question
       q: "Which has a dashed boundary?"

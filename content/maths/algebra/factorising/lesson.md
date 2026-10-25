@@ -6,7 +6,7 @@ title: Factorising
 summary: "Factorising is expanding backwards. Share the terms into equal rows: 6x + 9 is 3 rows of 2x + 3, so 3(2x + 3). Take out the highest common factor, then check by expanding."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "6 x-tiles and 9 ones. Can you share them into equal rows, with nothing left over? The number of rows goes outside the bracket."
+hook: "6 x-tiles and 9 ones. Can you share them into equal rows, with nothing left over?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8167
   url: http://127.0.0.1:8167/index.html
@@ -29,8 +29,6 @@ explainClip:
     - wait: 1200
 ---
 In Expanding brackets you turned $3(2x + 4)$ into $6x + 12$. **Factorising** goes the other way: from $6x + 12$ back to a bracket.
-
-Factorising is sharing the tiles into equal rows: the number of rows goes outside the bracket, and one row goes inside.
 
 ## Predict: fully factorised
 
@@ -61,7 +59,7 @@ try: { playground: board, starter: "factor.yml#run", height: 560 }
 check: { type: board, text: "The board has $6x + 9$. Change $k$, the number of rows, until the tiles share into equal rows with more than one row. Was your prediction right?", when: "k = 3 and f = 1" }
 ```
 
-$k$ is the number of rows. When the tiles share equally, the board writes the bracket: $k$ outside, one row inside.
+$k$ is the number of rows. Factorising is sharing the tiles into equal rows: when they share equally, the board writes the bracket, with the number of rows ($k$) outside and one row inside.
 
 ## Investigate: the highest common factor
 

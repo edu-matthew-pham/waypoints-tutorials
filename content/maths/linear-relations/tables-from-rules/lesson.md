@@ -187,6 +187,8 @@ tasks:
         - ["49", "It looks like 5x became 53. 5x means 5 × x: 5 × 3 = 15."]
         - ["15", "That is 5 × 3. Now take away 4."]
       explain: "5 × 3 − 4 = 15 − 4 = 11."
+    smaller:
+      check: { type: "number", q: "Try another rule first: for $y = 4x - 1$, what is $4x$ when $x = 2$?", answer: 8, explain: "4x means 4 × x: 4 × 2 = 8, not 42. Then take away 1 to get y." }
   - check:
       type: question
       q: "Which table goes with the rule $y = x + 4$?"
