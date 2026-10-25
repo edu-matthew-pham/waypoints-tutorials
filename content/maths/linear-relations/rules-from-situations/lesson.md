@@ -33,6 +33,7 @@ explainClip:
     - caption: { text: "Together: T = 2d + 4. Starts at 4, up 2 for each km.", say: "Together, T equals two d plus four: start at four, up two per kilometre." }
     - expect: { selector: "#legend", contains: "T = 2d + 4" }
     - wait: 1200
+connection: taxi-fare
 ---
 So far the rules had $x$ and $y$. Real situations have their own letters: $T$ for a total cost, $d$ for a distance, $h$ for hours. 
 ## Predict: a taxi fare
@@ -42,10 +43,12 @@ stage: predict
 insight: "Committing to a rule before fitting the line shows whether students can tell the one-off amount from the rate in words."
 check:
   type: predict
-  q: "A taxi costs 4 dollars to get in, plus 2 dollars for each km. Which rule gives the fare $T$ for a trip of $d$ km?"
+  q: "The meter shows what this taxi charges. Which rule gives the fare $T$ for a trip of $d$ km?"
   options: ["$T = 2d + 4$", "$T = 4d + 2$", "$T = 6d$", "$T = 2d$"]
   actual: "T = 2d + 4. The 4 dollars is paid once, before you travel: it is where the line starts (c). The 2 dollars is paid for each km: it is the rate (m)."
 ```
+
+<figure class="situation" role="img" aria-label="A taxi meter. It shows: flag fall, 4 dollars, paid when you get in. Each km, 2 dollars. Trip of d km, fare T equals a question mark."><svg viewBox="0 0 320 190" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="15"><rect x="20" y="14" width="280" height="150" rx="14"/><rect x="40" y="30" width="240" height="34" rx="6" stroke-opacity="0.5"/><text x="160" y="53" text-anchor="middle" font-size="18" fill="currentColor" stroke="none">FARE  T = ?</text><text x="40" y="95" fill="currentColor" stroke="none">Flag fall (getting in): 4 dollars</text><text x="40" y="122" fill="currentColor" stroke="none">Each km: 2 dollars</text><text x="40" y="149" fill="currentColor" stroke="none">Trip: d km</text></svg></figure>
 
 Think about a trip of 0 km, then 1 km, then 2 km. What does each one cost?
 
@@ -212,3 +215,47 @@ check: { type: board, text: "Choose your own starting amount and rate (both more
 Invent a situation that is a starting amount plus a rate: a club with a joining fee and a weekly cost, a game with a starting score and points per level. Set $c$ and $m$, then drag $P$ to the total for 4 units.
 
 Stretch: tell a partner your situation in words. Can they write your rule?
+
+## Make: a taxi trip on paper
+
+```step
+stage: make
+insight: "Telling the one-off flag fall from the rate per km is the whole translation; the paper task makes them choose which number is c."
+hint: ["Which amount do you pay even for a trip of 0 km?", "Write the rule first, then put 14 in place of d."]
+check:
+  type: reasoning
+  paper: true
+  q: "A taxi company charges a flag fall of 5 dollars plus 3 dollars for each km (made up for the task). Write the rule for the fare $T$ for a trip of $d$ km, then work out the fare for a 14 km trip to the airport, in dollars."
+  steps:
+    - ["Flag fall 5 dollars, paid once: $c = 5$", "the amount for a trip of 0 km"]
+    - ["3 dollars for each km: $m = 3$", "'for each' signals the rate"]
+    - ["$T = 3d + 5$", "rate times distance, plus the flag fall"]
+    - ["$T = 3 \\times 14 + 5 = 42 + 5$", "put 14 in place of $d$"]
+    - ["The fare is $47$ dollars", "check: 14 km at 3 dollars is 42, and the flag fall makes 47"]
+  picks:
+    - step: 1
+      q: "Which number is c, the starting amount?"
+      options:
+        - "5 dollars, paid once to get in"
+        - "3 dollars, because it comes second in the words"
+        - "14, the length of the trip"
+      answer: 0
+      feedback: [null, "3 dollars is paid again for every km. That is the rate, m.", "14 is the distance d, the input, not a starting amount."]
+  answer: "47"
+  feedback:
+    - ["42", "That is the 14 km only (3 × 14). Add the 5 dollar flag fall."]
+    - ["88", "Check: 5 + 3 = 8, then 8 × 14 would charge the flag fall every km. It is paid once."]
+  criteria:
+    - "I wrote c and m in words before the rule."
+    - "My rule charges the flag fall once and the rate for each km."
+    - "I put 14 in place of d and worked it out step by step."
+  explain: "T = 3d + 5. For 14 km, 3 × 14 + 5 = 47 dollars."
+```
+
+Do this one in your book, not on the screen. A real taxi's price card lists a flag fall and a rate per km, and the trip to the airport is a fare you can work out before you get in. Write c and m, then the rule, then type the fare.
+
+**Also used in**
+
+- **Taxi and ride-share fares.** A fare estimator is this rule with the rate and flag fall from the price card (waiting time and tolls are extras).
+- **Phone plans and gym memberships.** A fee paid once plus a rate for each GB or week is the same rule.
+- **Venue pricing.** A hire fee plus a price per guest has the same shape.

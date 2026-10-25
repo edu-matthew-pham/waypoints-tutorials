@@ -5,6 +5,7 @@ goals:
   - I can plot ordered pairs from a table, across first and then up.
   - I can describe a straight-line graph by which way it goes and how much for each step.
   - I can tell from a table whether its points will lie on a straight line.
+struggle: "Across first, then up. Students who know the rule still plot (y, x) or lose track with negatives. Ask 'which number is x, and which way does it go?' before each point."
 before: |
   Do the Run and Modify boards yourself first. Points start in a row at the bottom of the board and snap to the grid; students drag each to its pair.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: before the negative inputs, ask: which way is across for a negative x?"
   - "Modify: after the curve, ask: what was different about the steps in the table?"
   - "Make: compare two students' lines: both go up 3 for each step right. Where do they start?"
+  - "Paper: the venue task is worked in books on squared paper; the page marks the cost for 20 guests (160) and that guests go across. Books out, then check the points lie on a line starting at 60."
 stuck:
   - see: "A student plots (y, x) by going up first (Sam's mistake)."
     ask: "Which number is x? Which way does the x-axis go?"

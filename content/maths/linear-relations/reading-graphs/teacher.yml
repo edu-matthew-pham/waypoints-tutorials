@@ -5,6 +5,7 @@ goals:
   - I can say what a point on a graph of real data means, with units.
   - I can find a value on one axis and read the matching value from the other.
   - I can tell the graph's variables from its axis labels.
+struggle: "Knowing which number comes from which axis. Students read the point as one number, or take the time as the temperature. Ask them to say each reading as a sentence with units."
 before: |
   Do the Run board and the Make board yourself first. The cursor reads both values off the line; students can click the graph, use the slider, or use the − and + buttons.
 
@@ -19,6 +20,7 @@ running:
   - "Investigate: model the worked example live on a projected graph: say the axes, put a finger on the known value, go to the line, then across."
   - "Modify: before the fuel graph, ask: which axis is the 26 on?"
   - "Make: compare two students' graphs. Both fall every two hours. How do they differ?"
+  - "Paper: the daylight graph is sketched in books from the given points; the page marks the 4 hours and that the 7 is a month, read along the bottom. Books out, then compare sketches."
 stuck:
   - see: "A student gives the time when asked for the temperature, or the reverse (Priya's mistake)."
     ask: "What is this axis called? Is 9 measured in hours or in degrees?"

@@ -33,6 +33,7 @@ explainClip:
     - caption: { text: "The table of values: inputs on top, outputs underneath.", say: "This is the table of values, with inputs on top and outputs underneath." }
     - expect: { selector: ".rulepairs", contains: "(3, 8)" }
     - wait: 1200
+connection: venue-pricing
 ---
 A pattern gave you a rule; now start from the rule. A **rule** such as $y = 2x + 3$ takes an **input** $x$ and gives an **output** $y$. A **table of values** lists inputs and their outputs. Each column is an **ordered pair** $(x, y)$: input first, output second.
 
@@ -47,6 +48,8 @@ check:
   options: ["$(4, 11)$", "$(4, 4)$", "$(11, 4)$", "$(4, 27)$"]
   actual: "(4, 11). The input is x = 4; the output is y = 2 × 4 + 3 = 11. The pair is written (input, output)."
 ```
+
+<figure class="situation" role="img" aria-label="A rule machine. The input x equals 4 goes in. The machine is labelled y equals 2x plus 3. The output y comes out as a question mark. The pair is written 4, comma, question mark."><svg viewBox="0 0 360 150" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="15"><text x="10" y="60" fill="currentColor" stroke="none">in: x = 4</text><line x1="82" y1="55" x2="122" y2="55"/><polyline points="114,49 122,55 114,61"/><rect x="122" y="25" width="116" height="60" rx="8"/><text x="180" y="60" text-anchor="middle" fill="currentColor" stroke="none">y = 2x + 3</text><line x1="238" y1="55" x2="278" y2="55"/><polyline points="270,49 278,55 270,61"/><text x="286" y="60" fill="currentColor" stroke="none">out: y = ?</text><text x="180" y="125" text-anchor="middle" fill="currentColor" stroke="none">The pair: ( 4 , ? )</text></svg></figure>
 
 $$y = 2x + 3$$
 
@@ -241,3 +244,46 @@ check:
 Use what you know from the pattern lesson: how much does the output go up when the input goes up by 1? Then check your rule with both pairs.
 
 Stretch: write a rule of your own, then give a partner two of its pairs and see if they can find it.
+
+## Make: a venue price table on paper
+
+```step
+stage: make
+insight: "A price list is a rule you put numbers into; the paper task makes them choose what goes in place of the letter."
+hint: ["The hire fee is paid once. The rate is paid for each guest.", "Put the number of guests in place of g."]
+check:
+  type: reasoning
+  paper: true
+  q: "A party venue charges a 50 dollar hire fee plus 8 dollars for each guest, so $C = 8g + 50$ (made up for the task). Make a table of values for 10, 20, 30 and 40 guests. What does a party of 30 guests cost, in dollars?"
+  steps:
+    - ["$g$ is the input, the number of guests", "the input goes in place of $g$"]
+    - ["$g = 30: \\; C = 8(30) + 50$", "put 30 in place of $g$"]
+    - ["$C = 240 + 50 = 290$", "multiply first, then add the hire fee"]
+    - ["Table: $(10, 130), (20, 210), (30, 290), (40, 370)$", "input first, then output"]
+  picks:
+    - step: 2
+      q: "To work out the cost for 30 guests, what goes in place of g?"
+      options:
+        - "30, the number of guests"
+        - "50, the hire fee"
+        - "8, the cost for each guest"
+      answer: 0
+      feedback: [null, "50 is a fixed amount in the rule. The input is the number of guests.", "8 is the rate, already in the rule. The input is the number of guests."]
+  answer: "290"
+  feedback:
+    - ["240", "That is 8 × 30 only. Add the 50 dollar hire fee."]
+    - ["380", "Check: 8 + 50 = 58 is not the rule. Multiply 8 by 30, then add 50."]
+  criteria:
+    - "I put the input in brackets before working out each output."
+    - "My pairs have the guests first and the cost second."
+    - "The costs go up by the same amount for each extra 10 guests."
+  explain: "C = 8(30) + 50 = 240 + 50 = 290 dollars. The table is (10, 130), (20, 210), (30, 290), (40, 370)."
+```
+
+Do this one in your book, not on the screen. A venue's price list is a rule: put the number of guests in, and the cost comes out. Fill in the table, then type the cost for 30 guests.
+
+**Also used in**
+
+- **Party and venue quotes.** The table is the venue's price list for each size of party, built from a hire fee and a price per guest.
+- **Spreadsheets.** A column of costs is a formula copied down a column of inputs.
+- **Conversion tables.** Centimetres to inches, or dollars to another currency, put each input through the same rule.

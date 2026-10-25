@@ -33,6 +33,7 @@ explainClip:
     - caption: { text: "At 15 h it is 24 °C: the point (15, 24).", say: "At fifteen hours it is twenty-four degrees: the point fifteen, twenty-four." }
     - expect: { selector: "#gread", contains: "Temperature = 24 °C" }
     - wait: 1200
+connection: daylight-hours
 ---
 A graph of real data pairs two measurements. Each point says: **when this one was measured, that one was measured**. To read a graph, first check the **axis labels**: what is measured across, and what is measured up. The data on these graphs are made up for the task.
 
@@ -47,6 +48,8 @@ check:
   options: ["At 15 hours the temperature is 24 °C", "At 24 hours the temperature is 15 °C", "The temperature went up by 15, then by 24", "It is 15 °C for 24 hours"]
   actual: "At 15 hours the temperature is 24 °C. The first number is read along the bottom axis (Time), the second up the side (Temperature), just as when you plotted points. (At 24 hours the temperature is 15 °C swaps the axes.)"
 ```
+
+<figure class="situation" role="img" aria-label="A graph with Time in hours along the bottom and Temperature in degrees Celsius up the side. One point is marked and labelled (15, 24). What it says is a question mark."><svg viewBox="0 0 340 210" width="340" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="60" y1="150" x2="320" y2="150"/><line x1="60" y1="150" x2="60" y2="14"/><text x="190" y="190" text-anchor="middle" fill="currentColor" stroke="none">Time (h)</text><text x="14" y="85" text-anchor="middle" transform="rotate(-90 14 85)" fill="currentColor" stroke="none">Temperature (°C)</text><line x1="260" y1="150" x2="260" y2="50" stroke-dasharray="4 4" stroke-opacity="0.5"/><line x1="60" y1="50" x2="260" y2="50" stroke-dasharray="4 4" stroke-opacity="0.5"/><circle cx="260" cy="50" r="5" fill="currentColor"/><text x="272" y="44" fill="currentColor" stroke="none">(15, 24)</text><text x="272" y="66" fill="currentColor" stroke="none">says: ?</text></svg></figure>
 
 Which axis is the first number read from? What are the units of each number?
 
@@ -206,3 +209,47 @@ check: { type: board, text: "Mia's phone is fully charged (100%) at 0 hours. It 
 The points move up and down only. Then answer: what does your graph say about the battery at 4 hours?
 
 Stretch: draw a graph where the battery falls quickly at first, then slowly.
+
+## Make: read a daylight graph on paper
+
+```step
+stage: make
+insight: "Reading the lowest and highest points of a year graph needs the right axis for each number; the paper task makes them pick the axis for the month."
+hint: ["Find the lowest point on the line first.", "Read the month along the bottom and the hours up the side."]
+check:
+  type: reasoning
+  paper: true
+  q: "This graph of daylight in a town over one year is made up for the task, shaped like a real southern-hemisphere year. Daylight (hours) is up the side and the month number is along the bottom. Its points are $(1, 14)$, $(3, 13)$, $(5, 11)$, $(7, 10)$, $(9, 12)$ and $(11, 14)$. Sketch it on squared paper. How many more hours of daylight does month 1 have than the shortest day's month?"
+  steps:
+    - ["The lowest point is $(7, 10)$", "the shortest daylight is the lowest point on the line"]
+    - ["Month 7 has $10$ hours of daylight", "the first number is the month, the second the hours"]
+    - ["Month 1 has $14$ hours: the point is $(1, 14)$", "read up the side from month 1"]
+    - ["$14 - 10 = 4$", "take the smaller from the larger"]
+    - ["Month 1 has $4$ more hours of daylight", "say it in a sentence, with units"]
+  picks:
+    - step: 2
+      q: "In the lowest point (7, 10), what does the 7 tell you?"
+      options:
+        - "It is month 7 (read along the bottom)"
+        - "There are 7 hours of daylight"
+        - "The line has gone down 7"
+      answer: 0
+      feedback: [null, "Hours are read up the side. The 10 is the hours.", "The first number is a position along the bottom axis, not a drop."]
+  answer: "4"
+  feedback:
+    - ["10", "That is the hours of daylight at the lowest point. Take it away from the hours in month 1."]
+    - ["6", "Check: month 1 is 14 hours, not 16."]
+  criteria:
+    - "I labelled the axes: month across, hours of daylight up."
+    - "I read each number from the right axis."
+    - "My answer says '4 more hours', with the unit."
+  explain: "The shortest day is at month 7 (10 hours). Month 1 has 14 hours, so 14 − 10 = 4 more hours."
+```
+
+Do this one in your book, not on the screen. Real daylight graphs (sunrise and sunset times for your own town) look just like this, with the highest and lowest points a half-year apart. Sketch the points, mark the lowest, then type your answer.
+
+**Also used in**
+
+- **Daylight and seasons.** A year of sunrise and sunset times, drawn as a graph, shows the longest and shortest days at its highest and lowest points.
+- **Weather and temperature.** The same reading skill finds the hottest day or the coldest night.
+- **Science.** Results graphs are read the same way: first the axes, then the point.

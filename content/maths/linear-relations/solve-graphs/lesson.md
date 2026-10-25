@@ -33,6 +33,7 @@ explainClip:
     - click: Make k smaller
     - expect: { selector: "#board", contains: "x = −1" }
     - wait: 1200
+connection: plans-cross
 ---
 An equation such as $2x + 3 = 11$ says two things are equal. Each side can be drawn as a line: $y = 2x + 3$, and $y = 11$ (a flat line, because 11 does not change with $x$). In the Equations unit you solved equations with a balance and by backtracking. Now you solve them by looking at a graph.
 
@@ -47,6 +48,8 @@ check:
   options: ["$x = 4$", "$x = 11$", "$x = 8$", "$x = 3$"]
   actual: "x = 4. Where they meet, both lines have the same y, so 2x + 3 = 11. That happens when x = 4 (2 × 4 + 3 = 11). The point is (4, 11): 11 is its y, not its x."
 ```
+
+<figure class="situation" role="img" aria-label="Two lines on a graph. A sloping line, y equals 2x plus 3, and a flat line, y equals 11. They meet at a point marked with a ring. Below the point on the x-axis is written x equals question mark."><svg viewBox="0 0 320 210" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="40" y1="160" x2="290" y2="160"/><line x1="40" y1="160" x2="40" y2="14"/><line x1="40" y1="130" x2="240" y2="30" stroke="#378ADD" stroke-width="2"/><line x1="40" y1="50" x2="260" y2="50" stroke="#1D9E75" stroke-width="2"/><circle cx="200" cy="50" r="6"/><line x1="200" y1="56" x2="200" y2="160" stroke-dasharray="4 4" stroke-opacity="0.6"/><text x="200" y="180" text-anchor="middle" fill="currentColor" stroke="none">x = ?</text><text x="246" y="20" fill="currentColor" stroke="none">y = 2x + 3</text><text x="266" y="54" fill="currentColor" stroke="none">y = 11</text></svg></figure>
 
 $$2x + 3 = 11$$
 
@@ -221,3 +224,46 @@ check: { type: board, text: "Set $m$ and $c$ so that the equation $2x + 1 = mx +
 Your line is $y = mx + c$. The green point shows where it meets $y = 2x + 1$. Move it so they meet at $x = 3$. (Your line cannot be $y = 2x + 1$ itself.)
 
 Stretch: write down your equation, then check $x = 3$ by substitution.
+
+## Make: when do two plans cost the same, on paper
+
+```step
+stage: make
+insight: "The solution is the x of the crossing, never its y; the paper task makes them pick which number answers the question."
+hint: ["Make a table for each plan at 0, 2, 4, 6, 8 and 10 GB.", "Plot both lines on the same grid."]
+check:
+  type: reasoning
+  paper: true
+  q: "Two phone plans (made up for the task). Plan A costs 7 dollars a month plus 3 dollars a GB, so $A = 3x + 7$. Plan B costs 5 dollars a GB, then takes off a 9 dollar credit, so $B = 5x - 9$. On squared paper draw both lines for $x$ from 0 to 10 GB. At how many GB do the two plans cost the same?"
+  steps:
+    - ["Draw $y = 3x + 7$ and $y = 5x - 9$", "each plan is a line"]
+    - ["The lines meet at $(8, 31)$", "at the meeting point both costs are equal"]
+    - ["$x = 8$", "the solution is the $x$ of the meeting point"]
+    - ["Check: $3(8) + 7 = 31$ and $5(8) - 9 = 31$", "substitute into both rules"]
+  picks:
+    - step: 3
+      q: "The lines meet at (8, 31). Which number answers 'how many GB cost the same?'"
+      options:
+        - "8, the x of the point"
+        - "31, the y of the point"
+        - "39, the two numbers added"
+      answer: 0
+      feedback: [null, "31 is the cost where they meet. The question asks for the GB, which is x.", "Neither number is added to the other. Read x for the GB."]
+  answer: "8"
+  feedback:
+    - ["31", "31 dollars is the cost of both plans at that point. The question asks how many GB, which is x."]
+    - ["4", "Check: 3(4) + 7 = 19, but 5(4) − 9 = 11. They are not equal at 4."]
+  criteria:
+    - "I drew both lines on the same grid and marked where they meet."
+    - "I read the solution from the x-axis, not the y."
+    - "I checked 8 in both rules and got 31 each time."
+  explain: "The lines meet at (8, 31), so x = 8 GB. Both plans cost 31 dollars there: 3 × 8 + 7 = 31 and 5 × 8 − 9 = 31."
+```
+
+Do this one in your book, not on the screen. Choosing a phone plan is exactly this: two price lists, and the question of when they cost the same. Draw both lines and mark where they meet, then type your answer.
+
+**Also used in**
+
+- **Phone plans.** Comparing two price lists finds the usage where they cost the same, and which is cheaper either side of it.
+- **Business.** A break-even point is where the cost line and the income line meet.
+- **Meeting up.** Two people moving at steady speeds meet where their distance lines cross.

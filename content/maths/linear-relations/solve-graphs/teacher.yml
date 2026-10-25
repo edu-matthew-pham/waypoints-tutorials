@@ -5,6 +5,7 @@ goals:
   - I can solve an equation by drawing each side as a line and finding where they meet.
   - I can explain why the solution is the x of the meeting point, not the y.
   - I can check a graph's answer by substitution, and recognise parallel lines as no solution.
+struggle: "Reading x, not y, at the meeting point. Ask 'what is the same about the lines here?' (the y), then 'which number goes into the equation?' (the x)."
 before: |
   Do the Run and Modify boards yourself first. This lesson joins the two units: the Equations unit's equations (solved with the balance and backtracking) and this unit's lines.
 
@@ -18,6 +19,7 @@ running:
   - "Modify: the last task has parallel lines. Ask: what did the last lesson say about lines with the same m? Then: what does that mean for the equation?"
   - "Practise: for each answer, ask a student to say which number is the y and why it is not the answer."
   - "Make: collect two different lines that work and compare them: both pass through (3, 7)."
+  - "Paper: the two phone plans are drawn on squared paper in books; the page marks x = 8 and that the answer is the x, not the 31. Books out, then check both rules at 8."
 stuck:
   - see: "A student gives the y of the meeting point as the solution."
     ask: "Put your answer into the equation. Is it true?"

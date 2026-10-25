@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Tom what he should change."
   - "Modify: ask whether the distance question works for any speed."
   - "Make: ask for the table, then the sentence."
+  - "Paper: the event budget is worked in books; the page marks the new profit (220) and that the costs stay at 440. Books out, then ask which numbers were held still."
 stuck:
   - see: "A student moves two sliders and describes the result."
     ask: "Which slider caused that change?"

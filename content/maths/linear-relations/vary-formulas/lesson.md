@@ -26,6 +26,7 @@ explainClip:
     - click: Make h bigger
     - expect: { selector: "body", contains: "2 × 3 × 3" }
     - wait: 1500
+connection: event-budget
 ---
 A **formula** has several variables, such as $V = l \times w \times h$. To find out what one variable does to the output, **vary it systematically**: change that one, keep every other variable the same, and write the results in a table.
 
@@ -40,6 +41,8 @@ check:
   options: ["24", "16", "14", "12"]
   actual: "24. V = 2 × 3 × 4 = 24: doubling one factor doubles the product."
 ```
+
+<figure class="situation" role="img" aria-label="Two boxes. The first has length 2, width 3 and height 2, so V is 12. The second has the same length and width but is twice as tall, height 4. Its volume V is a question mark."><svg viewBox="0 0 420 180" width="420" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="30" y="90" width="80" height="40"/><polygon points="30,90 54,66 134,66 110,90"/><polygon points="110,90 134,66 134,106 110,130"/><rect x="250" y="50" width="80" height="80"/><polygon points="250,50 274,26 354,26 330,50"/><polygon points="330,50 354,26 354,106 330,130"/><text x="70" y="148" text-anchor="middle" fill="currentColor" stroke="none">w = 3</text><text x="130" y="60" fill="currentColor" stroke="none">l = 2</text><text x="18" y="115" text-anchor="end" fill="currentColor" stroke="none">h = 2</text><text x="130" y="170" fill="currentColor" stroke="none">V = 12</text><text x="290" y="148" text-anchor="middle" fill="currentColor" stroke="none">w = 3</text><text x="350" y="40" fill="currentColor" stroke="none">l = 2</text><text x="238" y="95" text-anchor="end" fill="currentColor" stroke="none">h = 4</text><text x="350" y="170" fill="currentColor" stroke="none">V = ?</text></svg></figure>
 
 Keep l and w the same.
 
@@ -192,3 +195,46 @@ check: { type: board, text: "Make a box with volume 60 where $l > w > h$ (all di
 ```
 
 Now write a table (on paper or in a spreadsheet) that varies $h$ from 1 to 6 for your box, and describe in a sentence what happens to $V$ as $h$ goes up.
+
+## Make: change the ticket price on paper
+
+```step
+stage: make
+insight: "A fair test changes one number and holds the rest still; the paper task makes them choose which numbers stay put."
+hint: ["Work out the profit as it is first.", "Only the ticket price changes. Keep the costs and the number of people."]
+check:
+  type: reasoning
+  paper: true
+  q: "A school event has fixed costs of 200 dollars and a cost of 4 dollars per head. Tickets are 10 dollars and 60 people come, so $\\text{profit} = \\text{price} \\times n - (\\text{fixed} + \\text{cost} \\times n)$ (all made up for the task). Change only the ticket price, from 10 to 11 dollars. What is the new profit, in dollars?"
+  steps:
+    - ["Now: $10 \\times 60 - (200 + 4 \\times 60) = 600 - 440 = 160$", "work out the starting profit"]
+    - ["Keep $n = 60$, fixed 200 and cost 4 the same", "a fair test changes one number only"]
+    - ["$11 \\times 60 - 440 = 660 - 440 = 220$", "the costs are still 440"]
+    - ["Profit goes up by $220 - 160 = 60$", "each extra dollar of price brings 60 more, one per person"]
+  picks:
+    - step: 2
+      q: "Raising the price from 10 to 11. What happens to the costs, 200 + 4 × 60 = 440?"
+      options:
+        - "They stay at 440, because only the price changed"
+        - "They go up by 1"
+        - "They are worked out again with 11 in place of 4"
+      answer: 0
+      feedback: [null, "Nothing in the costs depends on the ticket price.", "The 4 is the cost per head, not the price. It does not change."]
+  answer: "220"
+  feedback:
+    - ["600", "That is the takings at 10 dollars. Use 11, then take away the costs."]
+    - ["161", "Raising the price by 1 dollar brings in 1 dollar from each of the 60 people, not 1 dollar in all."]
+  criteria:
+    - "I wrote down which numbers stay the same before I changed the price."
+    - "I worked out the starting profit and the new profit with the same costs."
+    - "I can say why the profit went up by 60."
+  explain: "Costs stay at 200 + 4 × 60 = 440. Takings are 11 × 60 = 660, so profit is 220: 60 more than the 160 before. In real life a higher price may mean fewer people come."
+```
+
+Do this one in your book, not on the screen. Organisers test one number at a time like this in a budget spreadsheet: "what if we raise the price by a dollar?" Work out both profits, then type the new one.
+
+**Also used in**
+
+- **Event budgets.** A spreadsheet tests one change at a time: the price, the numbers or the costs.
+- **Science experiments.** A fair test changes one thing and keeps everything else the same.
+- **Spreadsheets and simulations.** Every "what if" is one input changed while the rest are held still.

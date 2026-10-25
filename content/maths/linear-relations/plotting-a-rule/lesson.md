@@ -8,6 +8,7 @@ summary: Plot each ordered pair from a rule's table as a point, across first and
 language: maths
 hook: "A table of numbers hides its pattern; a graph shows it at a glance. Plotting the pairs turns a rule into a picture you can read."
 explainPicture: { ref: graph.yml#pic, caption: "The pairs of $y = 2x + 1$: $(0, 1)$, $(1, 3)$, $(2, 5)$, $(3, 7)$. They lie on a straight line, going up 2 for each step right." }
+connection: venue-pricing
 ---
 You've made tables of ordered pairs from rules; now you **plot** them. To plot the point $(x, y)$, start at $(0, 0)$, go **across** $x$, then **up** $y$. Then look at the shape the points make.
 
@@ -22,6 +23,8 @@ check:
   options: ["A straight line going up", "A curve that gets steeper", "Scattered points, no pattern", "A flat line"]
   actual: "A straight line going up. Each step of 1 across adds the same amount (2) to y, so every point is the same step up from the one before."
 ```
+
+<figure class="situation" role="img" aria-label="An empty grid with x across from 0 to 4 and y up from 0 to 8. Below it the four pairs to plot: (0, 1), (1, 3), (2, 5) and (3, 7). The shape they make is a question mark."><svg viewBox="0 0 320 210" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><line x1="50" y1="150" x2="280" y2="150"/><line x1="50" y1="150" x2="50" y2="12"/><line x1="105" y1="22" x2="105" y2="150" stroke-opacity="0.15"/><text x="105" y="166" text-anchor="middle" fill="currentColor" stroke="none">1</text><line x1="160" y1="22" x2="160" y2="150" stroke-opacity="0.15"/><text x="160" y="166" text-anchor="middle" fill="currentColor" stroke="none">2</text><line x1="215" y1="22" x2="215" y2="150" stroke-opacity="0.15"/><text x="215" y="166" text-anchor="middle" fill="currentColor" stroke="none">3</text><line x1="270" y1="22" x2="270" y2="150" stroke-opacity="0.15"/><text x="270" y="166" text-anchor="middle" fill="currentColor" stroke="none">4</text><line x1="50" y1="134" x2="270" y2="134" stroke-opacity="0.15"/><text x="42" y="139" text-anchor="end" fill="currentColor" stroke="none">1</text><line x1="50" y1="118" x2="270" y2="118" stroke-opacity="0.15"/><text x="42" y="123" text-anchor="end" fill="currentColor" stroke="none">2</text><line x1="50" y1="102" x2="270" y2="102" stroke-opacity="0.15"/><text x="42" y="107" text-anchor="end" fill="currentColor" stroke="none">3</text><line x1="50" y1="86" x2="270" y2="86" stroke-opacity="0.15"/><text x="42" y="91" text-anchor="end" fill="currentColor" stroke="none">4</text><line x1="50" y1="70" x2="270" y2="70" stroke-opacity="0.15"/><text x="42" y="75" text-anchor="end" fill="currentColor" stroke="none">5</text><line x1="50" y1="54" x2="270" y2="54" stroke-opacity="0.15"/><text x="42" y="59" text-anchor="end" fill="currentColor" stroke="none">6</text><line x1="50" y1="38" x2="270" y2="38" stroke-opacity="0.15"/><text x="42" y="43" text-anchor="end" fill="currentColor" stroke="none">7</text><line x1="50" y1="22" x2="270" y2="22" stroke-opacity="0.15"/><text x="42" y="27" text-anchor="end" fill="currentColor" stroke="none">8</text><text x="285" y="154" fill="currentColor" stroke="none">x</text><text x="44" y="14" text-anchor="end" fill="currentColor" stroke="none">y</text><text x="160" y="190" text-anchor="middle" fill="currentColor" stroke="none">(0, 1)  (1, 3)  (2, 5)  (3, 7)  make a ? shape</text></svg></figure>
 
 | $x$ | 0 | 1 | 2 | 3 |
 |---|---|---|---|---|
@@ -180,3 +183,47 @@ check: { type: board, text: "Place $A$, $B$ and $C$ (left to right) on a straigh
 Choose where your line starts. Then place the other points so the line goes up 3 for each step to the right.
 
 Stretch: what rule $y = \ldots$ gives your points? Check it with all three.
+
+## Make: plot a price list on paper
+
+```step
+stage: make
+insight: "A venue's price list is a rule; the paper task makes them build the table, plot across then up, and say which number goes across."
+hint: ["Work out the cost for 0 guests first: that is just the hire fee.", "Plot guests across and cost up."]
+check:
+  type: reasoning
+  paper: true
+  q: "A party venue charges a 60 dollar hire fee plus 5 dollars for each guest, so $C = 5g + 60$ (the prices are made up for the task). On squared paper, make a table for 0, 10, 20 and 30 guests and plot the points, guests across and cost up. What does the cost come to for 20 guests, in dollars?"
+  steps:
+    - ["$g = 0, 10, 20, 30$ gives $C = 60, 110, 160, 210$", "put each input into the rule"]
+    - ["Pairs $(0, 60), (10, 110), (20, 160), (30, 210)$", "input first, then output"]
+    - ["Plot each one: across the guests, then up the cost", "across first, then up"]
+    - ["Up 50 for every 10 guests, so the points lie on a straight line", "the same step each time"]
+    - ["For 20 guests the cost is $160$ dollars", "read off the point $(20, 160)$"]
+  picks:
+    - step: 3
+      q: "For the pair (20, 160), how do you plot it?"
+      options:
+        - "Across 20 (guests), then up 160 (cost)"
+        - "Across 160, then up 20"
+        - "Up 20 first, then across 160"
+      answer: 0
+      feedback: [null, "The first number is x, how far across. The guests go across.", "Across comes first, then up."]
+  answer: "160"
+  feedback:
+    - ["110", "That is the cost for 10 guests. Use 20."]
+    - ["100", "That is 5 × 20 only. Add the 60 dollar hire fee."]
+  criteria:
+    - "My table has the hire fee in the 0 guests column."
+    - "I plotted across first, then up, for every point."
+    - "My points lie on a straight line, and I can say the step (up 50 for every 10 guests)."
+  explain: "5 × 20 + 60 = 160. The points go up 50 for every 10 guests, so they lie on a straight line starting at 60."
+```
+
+Do this one in your book, not on the screen. Venues really do charge a hire fee plus an amount per guest: that is the table you plot. Draw the table and the graph on squared paper, then type the cost for 20 guests.
+
+**Also used in**
+
+- **Party and venue quotes.** A venue's price list is a rule. Plotted, it shows at a glance what any number of guests will cost.
+- **Taxi fares and phone plans.** A fee plus an amount for each one is the same straight line, and a later lesson names its steepness and its start.
+- **Science graphs.** Plotted results that lie on a line show the same-step-each-time pattern.

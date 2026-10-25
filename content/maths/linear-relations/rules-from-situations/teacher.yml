@@ -5,6 +5,7 @@ goals:
   - I can write a rule like T = 2d + 4 from a situation described in words.
   - I can explain what m and c mean in a situation (the rate and the starting amount).
   - I can use a rule to work out a value, and check it in words.
+struggle: "Telling the one-off amount (c) from the rate (m) when the words give them in either order. Ask 'what would a trip of 0 km cost?' before they write the rule."
 before: |
   Do the Run and Modify boards yourself first. Students should already know what m and c do to a line (the first two lessons of this course).
 
@@ -20,6 +21,7 @@ running:
   - "Modify: before the battery task, ask: which way will this line go?"
   - "Practise: for the plumber question, ask students to say what 80 means in words too."
   - "Make: pair students to swap situations and write each other's rules."
+  - "Paper: the airport taxi task is worked in books; the page marks the fare (47) and that the flag fall of 5 is c. Books out, then look at the page for c and m named before the rule."
 stuck:
   - see: "A student uses the numbers in the order they appear (Zoe's mistake)."
     ask: "Which amount is paid only once? Which is paid again for every km?"
