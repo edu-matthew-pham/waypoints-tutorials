@@ -139,6 +139,8 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 
 ## Proposed (discussed, not decided)
 
+**More `smaller:` lead-ins (25 Oct 2026; deliberately paused, revisit after class trials).** Built so far: 42 (the three first lead-ins, eight more, and 31 on the Make steps of Python Foundations, Python functions, Console, HTML and CSS). Not built: about 100 Make steps in the MakeCode courses (micro:bit, micro:bit play, Arcade, Arcade advanced, Robotics and the rest) and in the extension courses. Rule if we add more: Make steps with a check only, never Predict, never open challenge tasks, Modify steps skipped (they are guided); one question or number on the idea the step turns on, with a reason on each wrong option. Why paused: the lead-in is a second layer on top of hints that already escalate, it is closed by default, and we don't know if students open it. Teachers and classmates already do this job, and some independence is part of learning to code (Effort notes: name the hard part, don't remove it). Evidence to look for before adding more: students stalling on a Make step with nobody to ask, or home use turning out to be common.
+
 - **Create from a finished project** (25 Oct; first version built: a Start from a project card and a published ideas-to-lessons file): reverse-engineer a tutorial from a teacher's own project, using the concept scan to split taught and new ideas and cut it into milestones. Plan in roadmap/shared.md › Create from a finished project.
 
 **`smaller:` for Code (25 Oct 2026, code chat's reply to `shared.md` › Proposed 25 Oct, amended).** Not built; the shared push waits for Matthew's go.
