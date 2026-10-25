@@ -14,6 +14,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## How we work
 - "Let's track and discuss" means: record proposals in your subject's roadmap file (`roadmap/code.md`, `maths.md`, `science.md`, or `shared.md` for the build and shared tools), commit with the attribution trailers and push to `main` (`git pull --rebase` first), do not build. Pushes to `main` publish nothing, and cloud sessions lose unpushed commits (updated 19 Oct 2026; the old "do not push" dates from when a push published).
+- Testing and review steps (before a push, a lesson review pass, what to say after a push) are in `roadmap/checklist.md`; handoffs link to it.
 - Parallel chats (one each for code, maths and science): follow ROADMAP.md › Working in parallel. Pull before starting and before every push, keep notes in your own roadmap file, check `roadmap/shared.md` and `git log` before changing a shared tool, never force-push.
 - "go" (or "defaults") means: build the whole batch, test in a headless browser, commit with the attribution trailers, `git push origin HEAD:main`. Do not re-render clips locally (the publish workflow records them); render one lesson (`node tools/render.mjs --lesson <slug>`) only to look at a new or changed clip. Batch the work into one push where possible.
 - Pushing deploys nothing: the site changes only when Matthew runs the manual publish workflow (Publishing, above). Say what is ready to publish when a push is done.
