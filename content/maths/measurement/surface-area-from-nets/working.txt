@@ -1,0 +1,7 @@
+# Dee's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dee
+Can: radius 3 cm, height 10 cm.
+The curved side is 2 × 3.14 × 3 × 10 = 188.4 cm².
+So the total surface area is 188.4 cm².
+# endregion

@@ -1,0 +1,10 @@
+# Practice for "Area and volume problems".
+templates:
+  - q: "A box is {a} cm by {b} cm by {c} cm. What is its volume in cm³?"
+    vars: { a: "2..9", b: "2..9", c: "2..9" }
+    answer: "{a * b * c}"
+    explain: "{a} × {b} × {c} = {a * b * c}."
+  - q: "A box is {a} cm by {b} cm by {c} cm with a lid. What is the area of paper needed to wrap all of it in cm²?"
+    vars: { a: "2..9", b: "2..9", c: "2..9" }
+    answer: "{2 * (a * b + a * c + b * c)}"
+    explain: "2 × ({a}×{b} + {a}×{c} + {b}×{c}) = {2 * (a * b + a * c + b * c)}."

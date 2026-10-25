@@ -1,0 +1,32 @@
+summary: "Students choose between surface area and volume, and use both to compare designs (AC9M9M01, node 3)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can choose surface area or volume for the question.
+  - I can give the right units.
+  - I can compare designs with a table.
+struggle: "Mixing up area and volume. Ask: is it a covering question or a filling question?"
+before: |
+  Students need Volume of prisms and cylinders.
+
+  The one idea: covering is area, filling is volume. A table of cases is how to compare. The best can has height about equal to its width (diameter = height at the minimum). Values are calculated with π ≈ 3.14.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the can design in Make is worked on paper first."
+stuck:
+  - see: "A student writes cm³ for a surface area."
+    ask: "Is it a flat covering or a space inside?"
+    fix: "Area is cm², volume is cm³."
+stretch: "Use a spreadsheet to find the radius that gives the least metal."
+support: "A printed table with the radius and height filled in."
+leads: |
+  Continues AC9M9M01 node 3.
+
+  Where it leads: Measurement error.
+exit:
+  q: "Paint covering a wall: area or volume?"
+  a: "Area."
+explain: |
+  Covering needs surface area (square units). Filling needs volume (cubic units).
+
+  A table of designs for the same volume shows which uses least material.

@@ -1,0 +1,10 @@
+# Practice for "Volume of prisms and cylinders".
+templates:
+  - q: "A box has base {a} cm by {b} cm and height {c} cm. What is its volume in cm³?"
+    vars: { a: "2..9", b: "2..9", c: "2..9" }
+    answer: "{a * b * c}"
+    explain: "{a} × {b} × {c} = {a * b * c}."
+  - q: "A prism has a base of area {a} cm² and a height of {h} cm. What is its volume in cm³?"
+    vars: { a: "3..20", h: "2..12" }
+    answer: "{a * h}"
+    explain: "{a} × {h} = {a * h}."

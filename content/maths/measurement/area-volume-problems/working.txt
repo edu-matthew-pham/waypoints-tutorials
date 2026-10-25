@@ -1,0 +1,7 @@
+# Bea's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: bea
+Can A: radius 3 cm, height 13.3 cm. Can B: radius 4 cm, height 7.5 cm.
+Total surface area of can A = 306 cm². Can B = 289 cm².
+So can B uses 17 cm³ less metal.
+# endregion

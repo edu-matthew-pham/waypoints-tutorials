@@ -1,0 +1,34 @@
+summary: "Students unfold prisms and cylinders into nets and add the area of every piece (AC9M9M01, node 1)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can draw or describe the net of a prism or cylinder.
+  - I can find the area of each piece, including the curved side.
+  - I can add them without missing a face.
+struggle: "Forgetting a face. Ask: tick each piece of the net as you add it."
+before: |
+  Students need Circles and area of a circle (Year 8).
+
+  The one idea: the net shows every face; the curved side is a rectangle as wide as the circumference. Use π ≈ 3.14 or the calculator button, and say which.
+
+  The can's size is made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the label in Make is worked on paper first. Bring an empty can if you can."
+stuck:
+  - see: "A student leaves out the circular ends."
+    ask: "How many pieces does the net have?"
+    fix: "Three: the rectangle and two circles."
+stretch: "Find a can at home and check its label width against 2πr."
+support: "A printed net with each piece labelled."
+leads: |
+  Continues AC9M9M01 node 1.
+
+  Where it leads: Volume of prisms and cylinders.
+exit:
+  q: "How wide is a can's label when flattened, if the radius is r?"
+  a: "2πr, the circumference."
+explain: |
+  Unfold the solid into its net, find the area of each piece and add them.
+
+  A cylinder's curved side becomes a rectangle with width 2πr.

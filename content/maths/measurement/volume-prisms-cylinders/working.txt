@@ -1,0 +1,7 @@
+# Raj's working for the "find the volume" task. Plain text: students click the wrong line, nothing runs.
+
+# region: raj
+The tank has diameter 2.2 m and height 2 m.
+V = π r² h.
+V = 3.14 × 2.2 × 2.2 × 2 = 30.4 m³.
+# endregion
