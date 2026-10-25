@@ -1,6 +1,6 @@
 {
  "subject": "systems",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -11,7 +11,9 @@
    "strand": "Digital systems",
    "title": "Digital systems and components",
    "description": "identify and explore digital systems and their components for a purpose",
-   "prior": [],
+   "prior": [
+    "AC9TDIFK01"
+   ],
    "knowledge": "Students can recognise and explore digital systems (hardware and software) for a purpose (AC9TDIFK01). They have identified some hardware and software components used for familiar purposes. They have not yet identified components by name or explained how component combinations enable a system's purpose.",
    "endpoint": "Students identify digital systems in familiar contexts and explain how components (input, output, storage, processing) work together to serve a purpose.",
    "nodes": [
@@ -106,7 +108,9 @@
    "strand": "Digital systems",
    "title": "Data as pictures, numbers and words",
    "description": "represent data as pictures, symbols, numbers and words",
-   "prior": [],
+   "prior": [
+    "AC9TDIFK02"
+   ],
    "knowledge": "Students can represent data using objects, pictures and symbols (AC9TDIFK02). They have matched physical objects and pictures to what they represent. They have not yet worked with multiple simultaneous representation forms (words, numbers, symbols, pictures) or reasoned about equivalence across forms.",
    "endpoint": "Students represent the same data using different forms — pictures, symbols, numbers and words — and recognise that different forms can convey equivalent information.",
    "nodes": [
@@ -464,7 +468,8 @@
    "title": "Internal components and function",
    "description": "Investigate the main internal components of common digital systems and their function",
    "prior": [
-    "AC9TDI4K01"
+    "AC9TDI4K01",
+    "AC9TDI4K02"
    ],
    "knowledge": "Students can explore and describe a range of digital systems and their peripherals for a variety of purposes (AC9TDI4K01). They understand that digital systems have input and output components. They have not yet investigated what happens inside a digital system — internal components and their specific functions remain unexplored.",
    "endpoint": "Students investigate the main internal components of common digital systems (CPU, memory, input/output components, storage) and explain how each component performs a specific function within the system.",
@@ -1400,7 +1405,8 @@
    "description": "represent documents online as content (text), structure (markup) and presentation (styling) and explain why such representations are important",
    "prior": [
     "AC9TDI8P11",
-    "AC9TDI8P12"
+    "AC9TDI8P12",
+    "AC9TDI8K04"
    ],
    "knowledge": "Students can use a range of digital tools to create and communicate content (AC9TDI8P11, AC9TDI8P12). They have not yet formally encountered the three-layer model of web documents or the rationale for separating content, structure and presentation.",
    "endpoint": "Students represent online documents by separating content (text), structure (HTML markup) and presentation (CSS styling), and explain why this separation is important for design, maintenance and accessibility.",

@@ -1,6 +1,6 @@
 {
  "subject": "english",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -427,7 +427,9 @@
    "strand": "Language",
    "title": "Words work together in sentences",
    "description": "recognise that sentences are made up of groups of words that work together in particular ways to make meaning",
-   "prior": [],
+   "prior": [
+    "AC9EFLA05"
+   ],
    "knowledge": "Students recognise that sentences express ideas (AC9EFLA05). They have not yet examined how words within a sentence work as a system — how nouns connect to verbs, or adjectives to nouns.",
    "endpoint": "Students can identify that words in a sentence have particular roles and work together — nouns, verbs and adjectives connect to make meaning — and can demonstrate this across multiple simple examples.",
    "nodes": [
@@ -1317,7 +1319,10 @@
    "strand": "Literacy",
    "title": "Read using phonic knowledge",
    "description": "read decodable and authentic texts using developing phonic knowledge, and monitor meaning using context and emerging grammatical knowledge",
-   "prior": [],
+   "prior": [
+    "AC9EFLY11",
+    "AC9EFLY12"
+   ],
    "knowledge": "Students are developing letter-sound knowledge (AC9EFLY11, AC9EFLY12). They have not yet been asked to apply phonic decoding strategies within connected text, or to monitor for meaning breakdown and self-correct using context.",
    "endpoint": "Students can read decodable and authentic texts using developing phonic knowledge — navigating correctly, attempting unknown words using phonics, and monitoring for meaning using context and grammatical knowledge.",
    "nodes": [
@@ -1513,7 +1518,9 @@
    "strand": "Literacy",
    "title": "Create short written texts",
    "description": "create and participate in shared editing of short written texts to record and report ideas and events using some learnt vocabulary, basic sentence boundary punctuation and spelling some consonant–vowel–consonant words correctly",
-   "prior": [],
+   "prior": [
+    "AC9EFLY09"
+   ],
    "knowledge": "Students have beginning letter-sound and word knowledge (AC9EFLY09–15). They have not yet been asked to compose and edit connected written text — integrating spelling, vocabulary, punctuation and ideas into a coherent short text.",
    "endpoint": "Students can create short written texts to record or report ideas and events — using learnt vocabulary, CVC spelling and basic sentence punctuation — and can participate in shared editing to improve a text.",
    "nodes": [
@@ -1860,7 +1867,9 @@
    "strand": "Literacy",
    "title": "Segment and blend phonemes",
    "description": "segment sentences into individual words; orally blend and segment single-syllable spoken words; isolate, blend and manipulate phonemes in single-syllable words (phonological awareness)",
-   "prior": [],
+   "prior": [
+    "AC9EFLY09"
+   ],
    "knowledge": "Students can recognise phonemes (AC9EFLY09). They have not yet been explicitly taught to blend phonemes into words, segment words into phonemes, or manipulate individual phonemes by substitution, addition or deletion.",
    "endpoint": "Students can blend phonemes into words, segment single-syllable words into phonemes, and manipulate phonemes by addition, deletion and substitution — demonstrating secure phoneme-level awareness across a range of single-syllable word types.",
    "nodes": [
@@ -2038,7 +2047,10 @@
    "strand": "Literacy",
    "title": "Write and read CVC words",
    "description": "write consonant–vowel–consonant (CVC) words by representing sounds with the appropriate letters, and blend sounds associated with letters when reading CVC words",
-   "prior": [],
+   "prior": [
+    "AC9EFLY11",
+    "AC9EFLY10"
+   ],
    "knowledge": "Students can name letters, produce letter sounds (AC9EFLY11), and segment and blend phonemes (AC9EFLY10). They have not yet been asked to connect phoneme-grapheme knowledge in both directions: encoding (writing) and decoding (reading) CVC words.",
    "endpoint": "Students can write CVC words by encoding phonemes as letters, and read CVC words by blending the letter sounds — demonstrating bidirectional phoneme-grapheme correspondence at the CVC level.",
    "nodes": [
@@ -2104,7 +2116,9 @@
    "strand": "Literacy",
    "title": "Use letters and sounds to spell",
    "description": "use knowledge of letters and sounds to spell words",
-   "prior": [],
+   "prior": [
+    "AC9EFLY12"
+   ],
    "knowledge": "Students can write CVC words (AC9EFLY12) and have letter-sound knowledge. They have not yet been explicitly asked to apply letter-sound knowledge independently as a self-directed spelling strategy across unknown words.",
    "endpoint": "Students can use letter-sound knowledge as a spelling strategy — making plausible attempts at unknown words by representing phonemes with appropriate graphemes.",
    "nodes": [
@@ -2144,7 +2158,9 @@
    "strand": "Literacy",
    "title": "Read and write high-frequency words",
    "description": "read and write some high-frequency words and other familiar words",
-   "prior": [],
+   "prior": [
+    "AC9EFLY12"
+   ],
    "knowledge": "Students can decode CVC words phonically (AC9EFLY12). They have not yet been asked to build a set of words that are recognised and written automatically — including high-frequency words that cannot always be decoded phonically.",
    "endpoint": "Students can read and write an increasing number of high-frequency words and other familiar words — including words that cannot be fully decoded phonically — with sufficient automaticity to support fluent reading and independent writing.",
    "nodes": [
@@ -2274,7 +2290,9 @@
    "strand": "Language",
    "title": "Language, expressions and gestures",
    "description": "understand how language, facial expressions and gestures are used to interact with others when asking for and providing information, making offers, exclaiming, requesting and giving commands",
-   "prior": [],
+   "prior": [
+    "AC9EFLA01"
+   ],
    "knowledge": "Students can explore how language is used differently at home and school depending on relationships and contexts (AC9EFLA01). They have not yet understood the specific functions of language, facial expressions and gestures across distinct interaction types such as requesting, exclaiming, and commanding.",
    "endpoint": "Students understand how language, facial expressions and gestures work together across different types of interaction — providing information, making offers, exclaiming, requesting and giving commands.",
    "nodes": [
@@ -2385,7 +2403,9 @@
    "strand": "Language",
    "title": "Language to justify preferences",
    "description": "explore language to provide reasons for likes, dislikes and preferences",
-   "prior": [],
+   "prior": [
+    "AC9EFLA02"
+   ],
    "knowledge": "Students can explore different ways of using language to express preferences, likes and dislikes (AC9EFLA02). They have not yet used connective language such as 'because' to provide reasons, or comparative adjectives to express degrees of preference.",
    "endpoint": "Students explore language that provides reasons for likes, dislikes and preferences, including connective and comparative language.",
    "nodes": [
@@ -2467,7 +2487,9 @@
    "strand": "Language",
    "title": "Texts organised by purpose",
    "description": "explore how texts are organised according to their purpose, such as to recount, narrate, express opinion, inform, report and explain",
-   "prior": [],
+   "prior": [
+    "AC9EFLA03"
+   ],
    "knowledge": "Students can understand that texts can take many forms and be used for different purposes (AC9EFLA03). They have not yet explored how organisation (stages and structure) differs systematically across text types such as recount, narrative, and information text.",
    "endpoint": "Students explore how texts are organised differently according to purpose, identifying the typical stages of familiar text types including recount, narrative, opinion, information, report and explanation.",
    "nodes": [
@@ -2549,7 +2571,10 @@
    "strand": "Language",
    "title": "Repetition, rhyme and rhythm",
    "description": "explore how repetition, rhyme and rhythm create cohesion in simple poems, chants and songs",
-   "prior": [],
+   "prior": [
+    "AC9EFLA04",
+    "AC9EFLE04"
+   ],
    "knowledge": "Students can understand conventions of print and screen including how books and simple digital texts are organised (AC9EFLA04) and have explored rhythms and sound patterns in literary texts at Foundation level (AC9EFLE04). They have not yet explored how repetition, rhyme and rhythm function specifically as cohesion-creating devices within the text as a whole.",
    "endpoint": "Students explore how repetition, rhyme and rhythm create cohesion in simple poems, chants and songs.",
    "nodes": [
@@ -2711,7 +2736,9 @@
    "strand": "Language",
    "title": "Simple sentences",
    "description": "understand that a simple sentence consists of a single independent clause representing a single event or idea",
-   "prior": [],
+   "prior": [
+    "AC9EFLA05"
+   ],
    "knowledge": "Students can recognise that sentences are key units for expressing ideas (AC9EFLA05). They have not yet understood the internal structure of a simple sentence — that it consists of a single independent clause with a process (verb), participants (noun groups) and optional circumstances (adverbs).",
    "endpoint": "Students understand that a simple sentence is a single independent clause representing one event or idea, containing a process, participants and optional circumstances.",
    "nodes": [
@@ -2817,7 +2844,9 @@
    "strand": "Language",
    "title": "Word classes",
    "description": "understand that words can represent people, places and things (nouns, including pronouns), happenings and states (verbs), qualities (adjectives) and details such as when, where and how (adverbs)",
-   "prior": [],
+   "prior": [
+    "AC9EFLA06"
+   ],
    "knowledge": "Students can recognise that sentences are made up of groups of words that work together in particular ways (AC9EFLA06). They have not yet understood the distinct semantic roles that different word classes play — nouns, verbs, adjectives and adverbs as categories with specific functions.",
    "endpoint": "Students understand the major word classes — nouns (including pronouns), verbs, adjectives and adverbs — and the semantic roles each plays in a sentence.",
    "nodes": [
@@ -2943,7 +2972,9 @@
    "strand": "Language",
    "title": "Images contribute to meaning",
    "description": "compare how images in different types of texts contribute to meaning",
-   "prior": [],
+   "prior": [
+    "AC9EFLA07"
+   ],
    "knowledge": "Students can explore the contribution of images and words to meaning in stories and informative texts (AC9EFLA07). They have not yet compared how images function differently across different text types, or how image sequences build meaning, or how images can carry meaning not present in the verbal text.",
    "endpoint": "Students compare how images in different types of texts contribute to meaning, including how image sequences build meaning, how images carry meaning independent of words, and how First Nations Australian authors use images.",
    "nodes": [
@@ -3025,7 +3056,9 @@
    "strand": "Language",
    "title": "Learning area vocabulary",
    "description": "recognise the vocabulary of learning area topics",
-   "prior": [],
+   "prior": [
+    "AC9EFLA08"
+   ],
    "knowledge": "Students can recognise and develop awareness of vocabulary used in familiar contexts related to personal experiences (AC9EFLA08). They have not yet systematically recognised topic-specific vocabulary tied to learning area disciplines, or understood the cultural and contextual dimension of vocabulary such as Acknowledgement of Country.",
    "endpoint": "Students recognise vocabulary associated with learning area topics, including topic-specific terms used in classroom discussions and protocols such as Acknowledgement of Country.",
    "nodes": [
@@ -3106,7 +3139,9 @@
    "strand": "Language",
    "title": "Sentence boundary punctuation",
    "description": "understand that written language uses punctuation such as full stops, question marks and exclamation marks, and uses capital letters for familiar proper nouns",
-   "prior": [],
+   "prior": [
+    "AC9EFLA09"
+   ],
    "knowledge": "Students can identify punctuation as a feature of written text different from letters, and recognise capital letters at sentence beginnings (AC9EFLA09). They have not yet understood the specific signalling functions of sentence-ending punctuation marks or the use of capital letters for proper nouns.",
    "endpoint": "Students understand sentence boundary punctuation — full stops, question marks, exclamation marks — and use capital letters for familiar proper nouns.",
    "nodes": [
@@ -3212,7 +3247,9 @@
    "strand": "Literature",
    "title": "Language and images create meaning in literature",
    "description": "discuss how language and images are used to create characters, settings and events in literature by First Nations Australian, and wide-ranging Australian and world authors and illustrators",
-   "prior": [],
+   "prior": [
+    "AC9EFLE01"
+   ],
    "knowledge": "Students can share ideas about stories, poems and images in literature, reflecting on experiences (AC9EFLE01). They have not yet discussed specifically how language choices and image choices work to construct characters, settings and events, or engaged with the diversity of literature from First Nations Australian, Australian and world authors.",
    "endpoint": "Students discuss how language and images are used to create characters, settings and events in literature from First Nations Australian, wide-ranging Australian and world authors and illustrators.",
    "nodes": [
@@ -3293,7 +3330,9 @@
    "strand": "Literature",
    "title": "Connect literature to personal experience",
    "description": "discuss literary texts and share responses by making connections with students' own experiences",
-   "prior": [],
+   "prior": [
+    "AC9EFLE02"
+   ],
    "knowledge": "Students can respond to stories and share feelings and thoughts about events and characters (AC9EFLE02). They have not yet systematically connected literary texts to their own experiences as an interpretive strategy, or asked questions about texts to deepen response.",
    "endpoint": "Students discuss literary texts and share responses by making connections with their own experiences, using drawing, role-play and discussion.",
    "nodes": [
@@ -3375,7 +3414,9 @@
    "strand": "Literature",
    "title": "Plot, character and setting",
    "description": "discuss plot, character and setting, which are features of stories",
-   "prior": [],
+   "prior": [
+    "AC9EFLE03"
+   ],
    "knowledge": "Students can recognise different types of literary texts and identify features including events and characters (AC9EFLE03). They have not yet discussed plot, character and setting as the three core structural features of stories, or explored how these features operate across different story types.",
    "endpoint": "Students discuss plot, character and setting as features of stories, recognising these across different story types including traditional tales and narratives.",
    "nodes": [
@@ -3476,7 +3517,9 @@
    "strand": "Literature",
    "title": "Sound patterns in poetry",
    "description": "listen to and discuss poems, chants, rhymes and songs, and imitate and invent sound patterns including alliteration and rhyme",
-   "prior": [],
+   "prior": [
+    "AC9EFLE04"
+   ],
    "knowledge": "Students can explore and replicate the rhythms and sound patterns of literary texts such as poems and chants at Foundation level (AC9EFLE04). They have not yet specifically identified and invented alliteration, or systematically imitated and created their own sound patterns.",
    "endpoint": "Students listen to and discuss poems, chants, rhymes and songs, and imitate and invent sound patterns including alliteration and rhyme.",
    "nodes": [
@@ -3581,7 +3624,9 @@
    "strand": "Literature",
    "title": "Retell using plot and language",
    "description": "orally retell or adapt a familiar story using plot and characters, language features including vocabulary, and structure of a familiar text, through role-play, writing, drawing or digital tools",
-   "prior": [],
+   "prior": [
+    "AC9EFLE05"
+   ],
    "knowledge": "Students can retell and adapt familiar literary texts through play, performance, images or writing at Foundation level (AC9EFLE05). They have not yet deliberately drawn on plot, character, vocabulary choices and text structure as resources for retelling — the Year 1 expectation makes these elements explicit as tools.",
    "endpoint": "Students orally retell or adapt a familiar story using plot and characters, appropriate vocabulary and text structure, through role-play, writing, drawing or digital tools.",
    "nodes": [
@@ -3662,7 +3707,9 @@
    "strand": "Literacy",
    "title": "Features indicate text purpose",
    "description": "discuss different texts and identify some features that indicate their purposes",
-   "prior": [],
+   "prior": [
+    "AC9EFLY01"
+   ],
    "knowledge": "Students can identify some familiar texts such as stories and informative texts and their purposes (AC9EFLY01). They have not yet identified specific textual features — language, layout, structural elements — as indicators of purpose.",
    "endpoint": "Students discuss different texts and identify features that indicate their purposes.",
    "nodes": [
@@ -3720,7 +3767,9 @@
    "strand": "Literacy",
    "title": "Turn-taking and active listening",
    "description": "use interaction skills including turn-taking, speaking clearly, using active listening behaviours and responding to the contributions of others, and contributing ideas and questions",
-   "prior": [],
+   "prior": [
+    "AC9EFLY02"
+   ],
    "knowledge": "Students can interact in informal and structured situations by listening while others speak and using some features of spoken language (AC9EFLY02). They have not yet applied the full set of interaction skills systematically — turn-taking, active listening, responding to others' contributions, and contributing ideas and questions as a coordinated set.",
    "endpoint": "Students use interaction skills including turn-taking, active listening, responding to others' contributions, and contributing ideas and questions in discussions.",
    "nodes": [
@@ -3801,7 +3850,9 @@
    "strand": "Literacy",
    "title": "Compare text types",
    "description": "describe some similarities and differences between imaginative, informative and persuasive texts",
-   "prior": [],
+   "prior": [
+    "AC9EFLY03"
+   ],
    "knowledge": "Students can identify some differences between imaginative and informative texts (AC9EFLY03). They have not yet described similarities and differences systematically across all three text type categories — imaginative, informative and persuasive.",
    "endpoint": "Students describe similarities and differences between imaginative, informative and persuasive texts.",
    "nodes": [
@@ -3883,7 +3934,9 @@
    "strand": "Literacy",
    "title": "Read with phrasing and fluency",
    "description": "read decodable and authentic texts using developing phonic knowledge, phrasing and fluency, and monitoring meaning using context and grammatical knowledge",
-   "prior": [],
+   "prior": [
+    "AC9EFLY04"
+   ],
    "knowledge": "Students can read decodable and authentic texts using developing phonic knowledge and monitor meaning at Foundation level (AC9EFLY04). They have not yet developed consistent phrasing and fluency, or systematically used context and grammatical knowledge as monitoring strategies alongside phonics.",
    "endpoint": "Students read decodable and authentic texts with developing phrasing and fluency, monitoring meaning using context and grammatical knowledge.",
    "nodes": [
@@ -3971,7 +4024,9 @@
    "strand": "Literacy",
    "title": "Build literal and inferred meaning",
    "description": "use comprehension strategies such as visualising, predicting, connecting, summarising and questioning when listening, viewing and reading to build literal and inferred meaning by drawing on vocabulary and growing knowledge of context and text structures",
-   "prior": [],
+   "prior": [
+    "AC9EFLY05"
+   ],
    "knowledge": "Students can use comprehension strategies such as visualising, predicting, connecting and summarising at Foundation level (AC9EFLY05). They have not yet explicitly applied inferencing, questioning as a deliberate strategy, or drawn on vocabulary and text structure knowledge to build beyond literal meaning.",
    "endpoint": "Students use comprehension strategies — visualising, predicting, connecting, summarising, questioning — to build literal and inferred meaning when listening, viewing and reading.",
    "nodes": [
@@ -4077,7 +4132,9 @@
    "strand": "Literacy",
    "title": "Create and edit written texts",
    "description": "create and re-read to edit short written and/or multimodal texts to report on a topic, express an opinion or recount a real or imagined event, using grammatically correct simple sentences, some topic-specific vocabulary, sentence boundary punctuation and correct spelling of some one- and two-syllable words",
-   "prior": [],
+   "prior": [
+    "AC9EFLY06"
+   ],
    "knowledge": "Students can create and participate in shared editing of short written texts to record and retell experiences (AC9EFLY06). They have not yet independently created texts across three purposes (report, opinion, recount), or applied grammatically correct simple sentences, topic vocabulary, sentence punctuation and spelling as a coordinated set of writing conventions.",
    "endpoint": "Students create and edit short written and/or multimodal texts to report, express opinion or recount, using simple sentences, topic vocabulary, sentence punctuation and correct spelling of some one- and two-syllable words.",
    "nodes": [
@@ -4178,7 +4235,9 @@
    "strand": "Literacy",
    "title": "Deliver structured presentations",
    "description": "create and deliver short oral and/or multimodal presentations on personal and learnt topics, which include an opening, middle and concluding statement; some topic-specific vocabulary and appropriate gesture, volume and pace",
-   "prior": [],
+   "prior": [
+    "AC9EFLY07"
+   ],
    "knowledge": "Students can create and deliver short spoken texts to report ideas and events to peers (AC9EFLY07). They have not yet structured presentations with explicit opening, middle and concluding statements, or deliberately used topic-specific vocabulary and paralinguistic features (gesture, volume, pace) as presenting tools.",
    "endpoint": "Students create and deliver short oral and/or multimodal presentations with an opening, middle and concluding statement, topic vocabulary, and appropriate gesture, volume and pace.",
    "nodes": [
@@ -4343,7 +4402,9 @@
    "strand": "Literacy",
    "title": "Segment phonemes in words",
    "description": "segment words into separate phonemes (sounds) including consonant blends or clusters at the beginnings and ends of words (phonological awareness)",
-   "prior": [],
+   "prior": [
+    "AC9EFLY15"
+   ],
    "knowledge": "Students can recognise and generate rhyming words, identify syllables and segment single-syllable CVC words into onset and rime at Foundation level (AC9EFLY15). They have not yet segmented words fully into individual phonemes, particularly those containing consonant blends or clusters.",
    "endpoint": "Students segment words into all separate phonemes including consonant blends and clusters at word beginnings and ends.",
    "nodes": [
@@ -4842,7 +4903,8 @@
    "title": "Grammatical morphemes and word families",
    "description": "recognise and know how to use grammatical morphemes to create word families",
    "prior": [
-    "AC9E1LY14"
+    "AC9E1LY14",
+    "AC9EFLY15"
    ],
    "knowledge": "Students can read and write an increasing number of high-frequency words (AC9E1LY14). At Foundation level students understand that words can be made of more than one meaningful part (AC9EFLY15). They have not yet systematically used grammatical morphemes — inflectional endings such as -s, -ed, -ing, -er — to generate and recognise word families.",
    "endpoint": "Students recognise and use grammatical morphemes to create and read word families.",
@@ -6730,7 +6792,8 @@
    "title": "Manipulate complex sounds",
    "description": "manipulate more complex sounds in spoken words and use knowledge of blending, segmenting, phoneme deletion and phoneme substitution to read and write words",
    "prior": [
-    "AC9E1LY09"
+    "AC9E1LY09",
+    "AC9E1LY15"
    ],
    "knowledge": "Students segment words into separate phonemes including consonant blends and clusters, and manipulate phonemes by addition, deletion and substitution to generate new words (AC9E1LY09/10). They have not yet applied these skills to more complex phoneme sequences including multi-phoneme blends and medial substitution.",
    "endpoint": "Students can manipulate complex sounds in spoken words using blending, segmenting, deletion and substitution to read and write words.",
@@ -8673,7 +8736,8 @@
    "title": "Multisyllabic words and phonemes",
    "description": "understand how to apply knowledge of phoneme-grapheme (sound-letter) relationships, syllables, and blending and segmenting to fluently read and write multisyllabic words with more complex letter patterns",
    "prior": [
-    "AC9E2LY09"
+    "AC9E2LY09",
+    "AC9E2LY12"
    ],
    "knowledge": "Students manipulate complex sounds and use vowel digraphs, consonant clusters and silent letters to read and write multisyllabic words (AC9E2LY09-10). They have not yet applied this knowledge to more complex patterns including consonant digraphs representing different sounds.",
    "endpoint": "Students apply phoneme-grapheme knowledge and syllable patterns to fluently read and write multisyllabic words with more complex letter patterns.",
@@ -9996,7 +10060,8 @@
    "title": "Effects of text structure",
    "description": "describe the effects of text structures and language features when responding to and sharing opinions about texts",
    "prior": [
-    "AC9E3LE04"
+    "AC9E3LE04",
+    "AC9E3LE02"
    ],
    "knowledge": "Students discuss how literary devices enhance meaning and shape reader response (AC9E3LE04). They have not yet described the effects of text structures and language features in formal responses to texts.",
    "endpoint": "Students can describe how specific text structures and language features produce effects in a literary text, use metalanguage to support their responses, and share opinions about texts by connecting personal response to specific textual evidence.",
@@ -10969,7 +11034,8 @@
    "title": "Complex letter combinations",
    "description": "understand how to use and apply phonological and morphological knowledge to read and write multisyllabic words with more complex letter combinations, including a variety of vowel sounds and known prefixes and suffixes",
    "prior": [
-    "AC9E3LY09"
+    "AC9E3LY09",
+    "AC9E3LY12"
    ],
    "knowledge": "Students apply phoneme-grapheme knowledge and syllable patterns to fluently read and write multisyllabic words (AC9E3LY09). They have not yet applied this knowledge to more complex letter combinations including a variety of vowel sounds and known prefixes and suffixes.",
    "endpoint": "Students can read and write multisyllabic words with more complex letter combinations — including a variety of vowel sounds and known prefixes and suffixes — by applying phonological and morphological knowledge.",
@@ -11660,7 +11726,8 @@
    "title": "Expanded noun groups",
    "description": "Understand how noun groups can be expanded in a variety of ways to provide a fuller description of a person, place, thing or idea",
    "prior": [
-    "AC9E4LA08"
+    "AC9E4LA08",
+    "AC9E4LA07"
    ],
    "knowledge": "Students can understand how adverb groups/phrases and prepositional phrases work in different ways to provide circumstantial detail (AC9E4LA08). They have not yet examined how multiple modifiers are combined within a noun group to build a precise, layered description.",
    "endpoint": "Students explain how noun groups are expanded by combining determiners, adjectives, classifiers and other modifiers, and identify how noun group expansion creates precision and richness of description across different text types.",
@@ -13095,7 +13162,8 @@
    "title": "Shared patterns, different sounds",
    "description": "Use phonic, morphemic and vocabulary knowledge to read and spell words that share common letter patterns but have different pronunciations",
    "prior": [
-    "AC9E4LY09"
+    "AC9E4LY09",
+    "AC9E4LY11"
    ],
    "knowledge": "Students can use and apply phonological and morphological knowledge to read and spell complex letter combinations (AC9E4LY09). They have not yet focused on the specific challenge of words that share written patterns but diverge in pronunciation — cross-pattern reading requiring multiple knowledge sources.",
    "endpoint": "Students use phonic, morphemic and vocabulary knowledge together to read and spell words that share common letter patterns with different pronunciations, recognising that spelling context and word meaning are resources for pronunciation.",
@@ -15286,7 +15354,8 @@
    "title": "Phonic knowledge for complex words",
    "description": "use phonic knowledge of common and less common grapheme–phoneme relationships to read and write increasingly complex words",
    "prior": [
-    "AC9E5LY08"
+    "AC9E5LY08",
+    "AC9E5LY10"
    ],
    "knowledge": "Students can use phonic, morphemic and vocabulary knowledge to read and spell words that share common letter patterns (AC9E5LY08). They have not yet applied phonic generalisations to read and write words with uncommon letter patterns such as those in 'pneumonia', 'resuscitate' and 'vegetation'.",
    "endpoint": "Students can apply phonic knowledge of common and less common grapheme–phoneme relationships to read and write increasingly complex words including those with uncommon letter patterns.",
@@ -16472,7 +16541,8 @@
    "description": "Identify and explain the ways that characters, settings and events combine to create meaning in narratives",
    "prior": [
     "AC9E6LA07",
-    "AC9E6LE03"
+    "AC9E6LE03",
+    "AC9E6LE05"
    ],
    "knowledge": "Students can identify and explain how images, figures and visual elements contribute to meaning (AC9E6LA07) and identify characteristics of an author's individual style (AC9E6LE03). They have not yet examined how narrative elements — characters, settings and events — combine to create meaning, rather than each contributing independently.",
    "endpoint": "Students identify and explain how characters, settings and events combine to create meaning in narratives.",
@@ -17713,7 +17783,8 @@
    "description": "understand the effect of nominalisation in texts",
    "prior": [
     "AC9E7LA05",
-    "AC9E7LA08"
+    "AC9E7LA08",
+    "AC9E7LA06"
    ],
    "knowledge": "Students can understand how word choice constructs meaning and how different grammatical categories function (AC9E7LA05, AC9E7LA08). They have not yet examined nominalisation — the process of converting verbs and other word classes into nouns — and its effect on tone, abstraction and register.",
    "endpoint": "Students understand how nominalisation works and what effects it creates in texts, including changes to tone, abstraction and formality.",
@@ -19076,7 +19147,8 @@
    "title": "Language empowers relationships and roles",
    "description": "recognise how language empowers relationships and roles",
    "prior": [
-    "AC9E7LA01"
+    "AC9E7LA01",
+    "AC9E8LA01"
    ],
    "knowledge": "Students understand how language expresses and creates personal and social identities (AC9E7LA01). They have not yet examined how language functions as a mechanism of power within communities — shaping membership, authority and social roles.",
    "endpoint": "Students recognise how specific language choices empower or constrain relationships and define roles within communities.",
@@ -19181,7 +19253,8 @@
    "title": "Indirect evaluation devices",
    "description": "understand how evaluation can be expressed directly and indirectly using devices such as allusion, evocative vocabulary and metaphor",
    "prior": [
-    "AC9E7LA02"
+    "AC9E7LA02",
+    "AC9E8LA02"
    ],
    "knowledge": "Students recognise evaluative language and understand how evaluations are substantiated by textual evidence (AC9E7LA02). They have not yet examined how evaluation can be embedded indirectly through literary devices that position readers without explicit appraisal language.",
    "endpoint": "Students understand how evaluation is expressed both directly and indirectly through devices including allusion, evocative vocabulary and metaphor.",
@@ -19288,7 +19361,8 @@
    "title": "Adapting and subverting text structures",
    "description": "examine how authors adapt and subvert text structures and language features by experimenting with spoken, written, visual and multimodal elements, and their combination",
    "prior": [
-    "AC9E7LA03"
+    "AC9E7LA03",
+    "AC9E8LA03"
    ],
    "knowledge": "Students identify and describe how text structure and language features vary by purpose (AC9E7LA03). They have not yet examined how authors deliberately adapt or subvert expected structures for artistic or rhetorical effect.",
    "endpoint": "Students examine how authors adapt and subvert text structures and language features through experimentation with spoken, written, visual and multimodal elements.",
@@ -19391,7 +19465,8 @@
    "title": "Cohesion through nominalisation and connectives",
    "description": "investigate a range of cohesive devices that condense information in texts, including nominalisation, and devices that link, expand and develop ideas, including text connectives",
    "prior": [
-    "AC9E7LA04"
+    "AC9E7LA04",
+    "AC9E8LA04"
    ],
    "knowledge": "Students understand how cohesion devices including overviews and paragraph structure guide readers (AC9E7LA04). They have not yet examined nominalisation as a condensing device or the range of text connectives that signal logical relationships between ideas.",
    "endpoint": "Students investigate how nominalisation condenses information and how text connectives link, expand and develop ideas across extended texts.",
@@ -19493,7 +19568,8 @@
    "title": "Creative sentence variation for effect",
    "description": "identify how authors vary sentence structures creatively for effects, such as intentionally using a dependent clause on its own or a sentence fragment",
    "prior": [
-    "AC9E7LA05"
+    "AC9E7LA05",
+    "AC9E8LA05"
    ],
    "knowledge": "Students understand how complex and compound-complex sentences elaborate, extend and explain ideas (AC9E7LA05). They have not yet examined how authors deliberately violate sentence conventions as a creative device.",
    "endpoint": "Students identify how authors use intentional structural violations — dependent clauses as sentences, sentence fragments, interrupting clauses — to achieve deliberate effects.",
@@ -19596,7 +19672,8 @@
    "description": "understand how abstract nouns and nominalisation can be used to summarise ideas in text",
    "prior": [
     "AC9E7LA05",
-    "AC9E9LA04"
+    "AC9E9LA04",
+    "AC9E8LA06"
    ],
    "knowledge": "Students understand how complex and compound-complex sentences elaborate, extend and explain ideas (AC9E7LA05). They have encountered nominalisation as a cohesive device (AC9E9LA04). They have not yet focused specifically on how abstract nouns and nominalisation function to summarise and carry forward prior ideas within a text.",
    "endpoint": "Students understand how abstract nouns and nominalisation summarise ideas, structure arguments and allow texts to treat prior content as an established premise.",
@@ -19670,7 +19747,8 @@
    "title": "Symbols in still and moving images",
    "description": "analyse how symbols in still and moving images augment meaning",
    "prior": [
-    "AC9E7LA07"
+    "AC9E7LA07",
+    "AC9E8LA07"
    ],
    "knowledge": "Students analyse how vectors, angle and social distance in visual texts create perspective (AC9E7LA07). They have not yet examined how symbols within images augment meaning through cultural or conventional associations that extend beyond what is literally depicted.",
    "endpoint": "Students analyse how symbols in still and moving images augment meaning, including how symbolic meanings differ across groups and cultures.",
@@ -19745,7 +19823,8 @@
    "title": "Vocabulary choices for style, mood and tone",
    "description": "analyse how vocabulary choices contribute to style, mood and tone",
    "prior": [
-    "AC9E7LA08"
+    "AC9E7LA08",
+    "AC9E8LA08"
    ],
    "knowledge": "Students investigate how vocabulary builds specialist knowledge, including terms with everyday and technical meanings (AC9E7LA08). They have not yet analysed how vocabulary choices create a text's distinctive style, mood and tone as interconnected qualities.",
    "endpoint": "Students analyse how vocabulary choices contribute to style, mood and tone in texts.",
@@ -19847,7 +19926,8 @@
    "title": "Punctuation for referencing and citing",
    "description": "understand punctuation conventions for referencing and citing others for formal and informal purposes",
    "prior": [
-    "AC9E7LA09"
+    "AC9E7LA09",
+    "AC9E8LA09"
    ],
    "knowledge": "Students understand how colons and brackets support meaning (AC9E7LA09). They have not yet examined the punctuation conventions specific to referencing and citation — how to integrate others' words and ideas into their own writing with appropriate attribution.",
    "endpoint": "Students understand punctuation conventions for referencing and citing others in formal and informal contexts, including when to use direct quotation and when to report sources.",
@@ -19919,7 +19999,8 @@
    "title": "Representations of people and places across contexts",
    "description": "analyse the representations of people and places in literary texts, drawn from historical, social and cultural contexts, by First Nations Australian, and wide-ranging Australian and world authors",
    "prior": [
-    "AC9E7LE01"
+    "AC9E7LE01",
+    "AC9E8LE01"
    ],
    "knowledge": "Students identify and explore ideas, viewpoints and issues in literary texts across historical, social and cultural contexts (AC9E7LE01). They have not yet analysed how representations of people and places are constructed — examining the choices authors make and what those choices reveal about context.",
    "endpoint": "Students analyse how representations of people and places in literary texts reflect and are shaped by historical, social and cultural contexts, across First Nations Australian, Australian and world authors.",
@@ -19995,7 +20076,8 @@
    "title": "Personal response and subsequent analysis",
    "description": "present a personal response to a literary text comparing initial impressions and subsequent analysis of the whole text",
    "prior": [
-    "AC9E7LE02"
+    "AC9E7LE02",
+    "AC9E8LE02"
    ],
    "knowledge": "Students form and justify opinions about texts, identifying agreement and difference with others (AC9E7LE02). They have not yet compared their initial impressions with a developed whole-text analysis — the dialectic between first response and considered interpretation.",
    "endpoint": "Students present a personal response to a literary text that compares initial impressions with subsequent analysis of the whole text.",
@@ -20096,7 +20178,8 @@
    "title": "Features that influence text preferences",
    "description": "analyse how features of literary texts influence readers' preference for texts",
    "prior": [
-    "AC9E7LE03"
+    "AC9E7LE03",
+    "AC9E8LE03"
    ],
    "knowledge": "Students explain how literary devices and language features create character and influence emotions and opinions (AC9E7LE03). They have not yet analysed how the combination of text features shapes readers' preferences and judgements about literary value.",
    "endpoint": "Students analyse how features of literary texts — characterisation, setting, plot, theme and literary devices — influence readers' preference for texts.",
@@ -20170,7 +20253,8 @@
    "title": "Aesthetic qualities of authorial style",
    "description": "analyse texts and evaluate the aesthetic qualities and appeal of an author's literary style",
    "prior": [
-    "AC9E7LE04"
+    "AC9E7LE04",
+    "AC9E8LE04"
    ],
    "knowledge": "Students discuss the aesthetic and social value of literary texts using appropriate metalanguage (AC9E7LE04). They have not yet analysed and evaluated the aesthetic qualities of a specific author's literary style as a distinctive and comparably assessed set of choices.",
    "endpoint": "Students analyse and evaluate the aesthetic qualities and appeal of an author's literary style.",
@@ -20244,7 +20328,8 @@
    "title": "Complex literary devices and intertextuality",
    "description": "analyse the effect of text structures, language features and literary devices such as extended metaphor, metonymy, allegory, symbolism and intertextual references",
    "prior": [
-    "AC9E7LE06"
+    "AC9E7LE06",
+    "AC9E8LE05"
    ],
    "knowledge": "Students identify and explain how literary devices create layers of meaning in texts including poetry (AC9E7LE06). They have not yet analysed the more complex devices that operate across whole texts or invoke meaning from outside the text — extended metaphor, metonymy, allegory, symbolism and intertextuality.",
    "endpoint": "Students analyse the effect of text structures, language features and literary devices including extended metaphor, metonymy, allegory, symbolism and intertextual references.",
@@ -20350,7 +20435,8 @@
    "title": "Create and edit experimental literary texts",
    "description": "create and edit literary texts, that may be a hybrid, that experiment with text structures, language features and literary devices for purposes and audiences",
    "prior": [
-    "AC9E7LE07"
+    "AC9E7LE07",
+    "AC9E8LE06"
    ],
    "knowledge": "Students create and edit literary texts experimenting with language features and literary devices (AC9E7LE07). They have not yet created hybrid texts that experiment specifically with text structures, or focused editing on structural integration of experiments.",
    "endpoint": "Students create and edit literary texts, including hybrids, that experiment with text structures, language features and literary devices for purposes and audiences.",
@@ -20429,7 +20515,8 @@
    "title": "Representations reflect contexts",
    "description": "analyse how representations of people, places, events and concepts reflect contexts",
    "prior": [
-    "AC9E7LY01"
+    "AC9E7LY01",
+    "AC9E8LY01"
    ],
    "knowledge": "Students explain how current technology affects reading, creating and responding to texts (AC9E7LY01). They have not yet analysed systematically how representations across media reflect the contexts in which they are produced.",
    "endpoint": "Students analyse how representations of people, places, events and concepts in texts reflect the contexts in which those texts are produced.",
@@ -20504,7 +20591,8 @@
    "title": "Analyse how language positions listeners",
    "description": "listen to spoken texts that have different purposes and audiences, analysing how language features position listeners to respond in particular ways, and use interacting skills to present and discuss opinions regarding these texts",
    "prior": [
-    "AC9E7LY02"
+    "AC9E7LY02",
+    "AC9E8LY02"
    ],
    "knowledge": "Students use interaction skills to discuss and present ideas, evaluating features of spoken texts (AC9E7LY02). They have not yet analysed how language features specifically position listeners — the mechanism through which spoken texts direct response.",
    "endpoint": "Students listen to spoken texts, analyse how language features position listeners to respond in particular ways, and use interaction skills to present and discuss opinions about those texts.",
@@ -20577,7 +20665,8 @@
    "title": "Evaluate perspective representation through language",
    "description": "analyse and evaluate how language features are used to represent a perspective of an issue, event, situation, individual or group",
    "prior": [
-    "AC9E7LY03"
+    "AC9E7LY03",
+    "AC9E8LY03"
    ],
    "knowledge": "Students analyse how language features shape meaning and vary according to audience and purpose (AC9E7LY03). They have not yet evaluated language features as perspective-representing devices — moving from describing what features do to evaluating how effectively they represent a perspective.",
    "endpoint": "Students analyse and evaluate how language features represent perspectives on issues, events, situations, individuals or groups.",
@@ -20652,7 +20741,8 @@
    "title": "Evaluate idea organisation and its impact",
    "description": "analyse the organisation of ideas in paragraphs and extended texts, and evaluate its impact on meaning",
    "prior": [
-    "AC9E7LY04"
+    "AC9E7LY04",
+    "AC9E8LY04"
    ],
    "knowledge": "Students explain how ideas are structured using taxonomies, cause and effect, metaphors and chronology (AC9E7LY04). They have not yet evaluated the impact of organisational choices on meaning — moving from describing organisation to assessing its effectiveness.",
    "endpoint": "Students analyse the organisation of ideas in paragraphs and extended texts and evaluate its impact on meaning.",
@@ -20727,7 +20817,8 @@
    "title": "Compare ideas across texts using comprehension strategies",
    "description": "use comprehension strategies such as visualising, predicting, connecting, summarising, monitoring, questioning and inferring to compare and contrast ideas and opinions in and between texts",
    "prior": [
-    "AC9E7LY05"
+    "AC9E7LY05",
+    "AC9E8LY05"
    ],
    "knowledge": "Students use comprehension strategies including inferring to analyse and summarise information and ideas (AC9E7LY05). They have not yet deployed strategies specifically to compare and contrast ideas and opinions across multiple texts simultaneously.",
    "endpoint": "Students use comprehension strategies to compare and contrast ideas and opinions in and between texts.",
@@ -20801,7 +20892,8 @@
    "title": "Create critical written and multimodal texts",
    "description": "plan, create, edit and publish written and multimodal texts, organising, expanding and developing ideas, and selecting text structures, language features, literary devices and multimodal features for purposes and audiences in ways that may be imaginative, reflective, informative, persuasive, analytical and/or critical",
    "prior": [
-    "AC9E7LY06"
+    "AC9E7LY06",
+    "AC9E8LY06"
    ],
    "knowledge": "Students plan, create and publish texts selecting structures, language features and literary devices for purpose (AC9E7LY06). They have not yet developed analytical and critical text types, or focused on multi-element selection across structures, language features, literary devices and multimodal features simultaneously.",
    "endpoint": "Students plan, create, edit and publish written and multimodal texts selecting text structures, language features, literary devices and multimodal features for purposes and audiences across imaginative, reflective, informative, persuasive, analytical and critical modes.",
@@ -20905,7 +20997,8 @@
    "title": "Plan and deliver analytical presentations",
    "description": "plan, create, rehearse and deliver spoken and multimodal presentations for purpose and audience, using language features, literary devices and features of voice such as volume, tone, pitch and pace, and organising, expanding and developing ideas in ways that may be imaginative, reflective, informative, persuasive, analytical and/or critical",
    "prior": [
-    "AC9E7LY07"
+    "AC9E7LY07",
+    "AC9E8LY07"
    ],
    "knowledge": "Students plan, create and deliver presentations selecting structures, devices and voice features for purpose and audience (AC9E7LY07). They have not yet developed analytical and critical spoken modes, or deliberately coordinated literary devices, language features and voice features simultaneously.",
    "endpoint": "Students plan, create, rehearse and deliver spoken and multimodal presentations using language features, literary devices and voice features for purposes and audiences across analytical and critical modes.",
@@ -21006,7 +21099,8 @@
    "title": "Spelling for stylistic effect",
    "description": "understand how spelling is used in texts for particular effects; for example, characterisation, humour and to represent accents and distinctive speech",
    "prior": [
-    "AC9E7LY08"
+    "AC9E7LY08",
+    "AC9E8LY08"
    ],
    "knowledge": "Students use spelling rules and word origins including Greek and Latin roots to learn and spell new words (AC9E7LY08). They have not yet examined spelling as a deliberate authorial device used for characterisation, humour and accent representation.",
    "endpoint": "Students understand how spelling is used deliberately in texts to create effects including characterisation, humour and representation of accents and distinctive speech.",
@@ -22284,7 +22378,8 @@
    "description": "analyse and evaluate the aesthetic qualities of texts",
    "prior": [
     "AC9E9LE04",
-    "AC9E9LE05"
+    "AC9E9LE05",
+    "AC9E7LE07"
    ],
    "knowledge": "Students analyse the effect of complex literary devices and evaluate an author's literary style (AC9E9LE04, AC9E9LE05). They have not yet analysed and evaluated the aesthetic qualities of texts using literary analysis terminology.",
    "endpoint": "Students analyse and evaluate the aesthetic qualities of texts.",

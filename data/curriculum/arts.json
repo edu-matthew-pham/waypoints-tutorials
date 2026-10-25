@@ -1,6 +1,6 @@
 {
  "subject": "arts",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -253,7 +253,10 @@
    "strand": "Dance: presenting and performing",
    "title": "Share arts works with audiences",
    "description": "share their arts works with audiences",
-   "prior": [],
+   "prior": [
+    "AC9ADAFC01",
+    "AC9ADAFD01"
+   ],
    "knowledge": "Students have created simple movement sequences and arts works communicating personal ideas (AC9ADAFC01). They have some experience of physical play and movement exploration (AC9ADAFD01).",
    "endpoint": "Students share their arts works — including movement and dance — with audiences.",
    "nodes": [
@@ -2818,7 +2821,10 @@
    "strand": "Music: creating and making",
    "title": "Select and combine elements of music",
    "description": "select and combine elements of music when composing and practising music for performance",
-   "prior": [],
+   "prior": [
+    "AC9AMUFC01",
+    "AC9AMUFD01"
+   ],
    "knowledge": "Students have created arts works that communicate ideas (AC9AMUFC01) and made deliberate choices during making. They have explored voice, body percussion and sound sources through play (AC9AMUFD01). They have no formal vocabulary for elements of music and have not yet deliberately selected or combined musical elements.",
    "endpoint": "Students select and combine elements of music when composing and practising music, using at least two elements deliberately to create expressive or communicative effects.",
    "nodes": [
@@ -2931,7 +2937,9 @@
    "strand": "Music: developing practices and skills",
    "title": "Develop listening and performance skills",
    "description": "develop listening skills and skills for singing and playing instruments",
-   "prior": [],
+   "prior": [
+    "AC9AMUFD01"
+   ],
    "knowledge": "Students have explored their speaking and singing voices through play (AC9AMUFD01) and discovered ways voice can communicate ideas. They have not yet formally practised listening skills for specific musical purposes, ensemble blending, or instrumental technique.",
    "endpoint": "Students develop listening skills for specific musical purposes and demonstrate developing skills for singing and playing instruments across a range of sound sources.",
    "nodes": [
@@ -3043,7 +3051,9 @@
    "strand": "Music: exploring and responding",
    "title": "Music across cultures and contexts",
    "description": "explore where, why and how people across cultures, communities and/or other contexts experience music",
-   "prior": [],
+   "prior": [
+    "AC9AMUFE01"
+   ],
    "knowledge": "Students have explored how arts are important for people and communities (AC9AMUFE01) and can identify arts works in their own life. They have not yet formally explored music across diverse cultural or community contexts, or considered the different roles people play in relation to music.",
    "endpoint": "Students explore where, why and how people across cultures, communities and other contexts experience music, and share observations about music preferences and purposes.",
    "nodes": [
@@ -3131,6 +3141,7 @@
    "title": "First Nations Australian music",
    "description": "explore examples of music composed and/or performed by First Nations Australians",
    "prior": [
+    "AC9AMUFE01",
     "AC9AMU2E01"
    ],
    "knowledge": "Students have explored how arts are important for communities (AC9AMUFE01) including listening to First Nations Australians talk about arts and Country/Place. They have explored music from diverse cultural contexts (AC9AMU2E01). This is their first focused exploration of music specifically by First Nations Australian composers and performers.",
@@ -3220,7 +3231,9 @@
    "strand": "Music: presenting and performing",
    "title": "Perform music in informal settings",
    "description": "sing and play music in informal settings",
-   "prior": [],
+   "prior": [
+    "AC9AMUFP01"
+   ],
    "knowledge": "Students can share arts works with audiences (AC9AMUFP01), understand the audience relationship, and have practised basic music performance skills (staying in time, using singing voice). They have not yet performed with formal introductions, staging decisions or post-performance reflection.",
    "endpoint": "Students sing and play music in informal settings, following agreed performance decisions, introducing performances to audiences, and contributing to post-performance discussion.",
    "nodes": [
@@ -3332,7 +3345,9 @@
    "strand": "Visual arts: creating and making",
    "title": "Use visual conventions and materials to create artworks",
    "description": "use visual conventions, visual arts processes and materials to create artworks",
-   "prior": [],
+   "prior": [
+    "AC9AVAFC01"
+   ],
    "knowledge": "Students can create artworks that communicate ideas using materials and play (AC9AVAFC01). They have begun making deliberate choices about what to include and why. They have not yet used visual conventions deliberately or selected processes to serve specific communicative intentions.",
    "endpoint": "Students use visual conventions, visual arts processes and materials to create artworks, making deliberate choices about how these elements work together.",
    "nodes": [
@@ -3421,7 +3436,9 @@
    "strand": "Visual arts: developing practices and skills",
    "title": "Experiment and play with visual conventions and materials",
    "description": "experiment and play with visual conventions, visual arts processes and materials",
-   "prior": [],
+   "prior": [
+    "AC9AVAFD01"
+   ],
    "knowledge": "Students can use play and imagination to discover possibilities with materials (AC9AVAFD01). They have begun noticing visual qualities and developing ideas through experimentation. They have not yet deliberately experimented with visual conventions as named elements.",
    "endpoint": "Students experiment and play with visual conventions, visual arts processes and materials, reflecting on what they discover.",
    "nodes": [
@@ -3509,7 +3526,9 @@
    "strand": "Visual arts: exploring and responding",
    "title": "Visual arts across cultures and contexts",
    "description": "explore where, why and how people across cultures, communities and/or other contexts experience visual arts",
-   "prior": [],
+   "prior": [
+    "AC9AVAFE01"
+   ],
    "knowledge": "Students can identify arts in their own lives and explain why arts matter to communities (AC9AVAFE01). They have begun to recognise that arts serve functions beyond personal enjoyment. They have not yet investigated specific artists, their practices or arts across different cultural contexts.",
    "endpoint": "Students explore where, why and how people across cultures, communities and other contexts experience visual arts, and share observations and questions about artworks and artists.",
    "nodes": [
@@ -3687,7 +3706,9 @@
    "strand": "Visual arts: presenting and performing",
    "title": "Share artworks in informal settings",
    "description": "share artworks and/or visual arts practice in informal settings",
-   "prior": [],
+   "prior": [
+    "AC9AVAFP01"
+   ],
    "knowledge": "Students can share artworks with an audience and say something about the work (AC9AVAFP01). They have basic experience of informal sharing with peers and the teacher. They have not yet made deliberate decisions about audience, context or presentation format.",
    "endpoint": "Students share artworks and/or visual arts practice in informal settings, making choices about audience and ways to share.",
    "nodes": [

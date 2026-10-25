@@ -1,6 +1,6 @@
 {
  "subject": "maths",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -537,7 +537,10 @@
    "strand": "Number",
    "title": "Part-Part-Whole to 10",
    "description": "partition and combine collections up to 10 using part-part-whole relationships and subitising to recognise and name the parts",
-   "prior": [],
+   "prior": [
+    "AC9MFN03",
+    "AC9MFN02"
+   ],
    "knowledge": "Students can count collections to at least 20 (AC9MFN03) and subitise collections to 5 (AC9MFN02). They have not yet systematically split a collection into two named parts and used part-part-whole language to describe the relationship.",
    "endpoint": "Students partition and combine collections up to 10, using part-part-whole relationships and subitising to recognise and name the parts.",
    "nodes": [
@@ -625,7 +628,10 @@
    "strand": "Number",
    "title": "Addition and subtraction situations",
    "description": "represent practical situations involving addition, subtraction and quantification with physical and virtual materials and use counting or subitising strategies",
-   "prior": [],
+   "prior": [
+    "AC9MFN03",
+    "AC9MFN04"
+   ],
    "knowledge": "Students can quantify and compare collections using counting (AC9MFN03) and use part-part-whole reasoning to partition and combine collections to 10 (AC9MFN04). They have not yet represented joining and separating situations as mathematical relationships using materials or drawings.",
    "endpoint": "Students represent practical situations involving addition, subtraction and quantification using physical and virtual materials, and use counting or subitising strategies to find results.",
    "nodes": [
@@ -714,7 +720,9 @@
    "strand": "Number",
    "title": "Equal sharing and grouping",
    "description": "represent practical situations that involve equal sharing and grouping with physical and virtual materials and use counting or subitising strategies",
-   "prior": [],
+   "prior": [
+    "AC9MFN04"
+   ],
    "knowledge": "Students can quantify collections using counting and have experience with part-part-whole relationships to 10 (AC9MFN04). They have not yet applied the idea of equal groups — sharing so that each person gets the same amount, or forming groups of the same size.",
    "endpoint": "Students represent practical situations involving equal sharing and grouping using materials, and use counting or subitising to determine the size of equal groups.",
    "nodes": [
@@ -1077,7 +1085,10 @@
    "strand": "Algebra",
    "title": "Skip counting patterns",
    "description": "Recognise, continue and create pattern sequences, with numbers, symbols, shapes and objects, formed by skip counting, initially by twos, fives and tens",
-   "prior": [],
+   "prior": [
+    "AC9MFA01",
+    "AC9MFN01"
+   ],
    "knowledge": "Students can recognise, copy and continue repeating patterns (AC9MFA01). They can count to at least 20 (AC9MFN01). They have not yet connected skip counting to pattern sequences, or recognised the structural properties of skip-counting sequences (e.g. digit patterns, growing totals).",
    "endpoint": "Students recognise, continue and create pattern sequences formed by skip counting by twos, fives and tens, using numbers, symbols, shapes and objects.",
    "nodes": [
@@ -1164,7 +1175,9 @@
    "strand": "Algebra",
    "title": "Repeating patterns",
    "description": "Recognise, continue and create repeating patterns with numbers, symbols, shapes and objects, identifying the repeating unit",
-   "prior": [],
+   "prior": [
+    "AC9MFA01"
+   ],
    "knowledge": "Students can recognise, copy and continue repeating patterns (AC9MFA01). They have not yet identified the unit of repeat explicitly, represented patterns abstractly using letters or symbols, or recognised repeating structure in the natural number sequence.",
    "endpoint": "Students recognise, continue and create repeating patterns with numbers, symbols, shapes and objects, identifying the repeating unit.",
    "nodes": [
@@ -1251,7 +1264,10 @@
    "strand": "Measurement",
    "title": "Order by length, mass, capacity, duration",
    "description": "Compare directly and indirectly and order objects and events using attributes of length, mass, capacity and duration, communicating reasoning",
-   "prior": [],
+   "prior": [
+    "AC9MFM01",
+    "AC9MFM02"
+   ],
    "knowledge": "Students can identify and compare length, capacity, mass and duration using direct comparisons (AC9MFM01). They can sequence days of the week and times of day (AC9MFM02). They have not yet compared indirectly using a mediating object, or ordered three or more objects using a single attribute and communicated the reasoning systematically.",
    "endpoint": "Students compare directly and indirectly and order objects and events using attributes of length, mass, capacity and duration, communicating reasoning.",
    "nodes": [
@@ -1331,6 +1347,7 @@
    "title": "Measure length with informal units",
    "description": "Measure the length of shapes and objects using informal units, recognising that units need to be uniform and used end-to-end",
    "prior": [
+    "AC9MFM01",
     "AC9M1M01"
    ],
    "knowledge": "Students can compare objects directly by length (AC9MFM01) and order objects by length using direct comparison (AC9M1M01). They have not yet iterated a unit along a length to produce a numerical measure, or reasoned about why units must be uniform and placed end-to-end.",
@@ -1419,7 +1436,9 @@
    "strand": "Measurement",
    "title": "Duration and sequence of events",
    "description": "Describe the duration and sequence of events using years, months, weeks, days and hours",
-   "prior": [],
+   "prior": [
+    "AC9MFM02"
+   ],
    "knowledge": "Students can sequence days of the week and times of day, connecting them to familiar events (AC9MFM02). They have not yet used the full hierarchy of time units (years, months, weeks, days, hours), compared the number of days across months, or represented event sequences using pictorial timelines.",
    "endpoint": "Students describe the duration and sequence of events using years, months, weeks, days and hours.",
    "nodes": [
@@ -1509,7 +1528,10 @@
    "strand": "Number",
    "title": "Numbers to 120",
    "description": "Recognise, represent and order numbers to at least 120 using physical and virtual materials, numerals, number lines and charts",
-   "prior": [],
+   "prior": [
+    "AC9MFN01",
+    "AC9MFN03"
+   ],
    "knowledge": "Students can name, represent and order numbers to at least 20 (AC9MFN01). They can quantify and compare collections to at least 20 using counting (AC9MFN03). They have not yet read, written or ordered numbers in the two-digit range up to 120, or used patterns in the number system (tens/ones) to navigate across decades.",
    "endpoint": "Students recognise, represent and order numbers to at least 120 using physical and virtual materials, numerals, number lines and charts.",
    "nodes": [
@@ -1596,7 +1618,11 @@
    "strand": "Number",
    "title": "Partition two-digit numbers",
    "description": "Partition one- and two-digit numbers in different ways using physical and virtual materials, including partitioning two-digit numbers into tens and ones",
-   "prior": [],
+   "prior": [
+    "AC9MFN04",
+    "AC9MFN01",
+    "AC9MFN02"
+   ],
    "knowledge": "Students can partition and combine collections up to 10 using part-part-whole relationships (AC9MFN04). They can represent numbers to at least 20 (AC9MFN01). They have not yet partitioned two-digit numbers systematically into tens and ones, or explored non-standard partitions of two-digit numbers.",
    "endpoint": "Students partition one- and two-digit numbers in different ways using physical and virtual materials, including partitioning two-digit numbers into tens and ones.",
    "nodes": [
@@ -1684,6 +1710,7 @@
    "title": "Quantify sets by skip counting",
    "description": "Quantify sets of objects, to at least 120, by partitioning collections into equal groups using number knowledge and skip counting",
    "prior": [
+    "AC9MFN03",
     "AC9M1A01"
    ],
    "knowledge": "Students can quantify and compare collections to at least 20 using counting (AC9MFN03). They can recognise and continue skip counting sequences by twos, fives and tens (AC9M1A01). They have not yet applied skip counting systematically to count large collections beyond 20 by grouping into equal groups.",
@@ -1771,7 +1798,10 @@
    "strand": "Number",
    "title": "Add and subtract within 20",
    "description": "Add and subtract numbers within 20, using physical and virtual materials, part-part-whole knowledge to 10 and a variety of calculation strategies",
-   "prior": [],
+   "prior": [
+    "AC9MFN05",
+    "AC9MFN04"
+   ],
    "knowledge": "Students can represent practical addition and subtraction situations using materials and counting strategies (AC9MFN05). They can partition and combine collections to 10 using part-part-whole relationships (AC9MFN04). They have not yet applied systematic calculation strategies (counting on, bridging through 10, partitioning) to add and subtract within 20.",
    "endpoint": "Students add and subtract numbers within 20 using physical and virtual materials, part-part-whole knowledge to 10 and a variety of calculation strategies.",
    "nodes": [
@@ -1868,6 +1898,7 @@
    "title": "Model additive problems",
    "description": "Use mathematical modelling to solve practical problems involving additive situations including simple money transactions; represent the situations with diagrams, physical and virtual materials, and use calculation strategies to solve the problem",
    "prior": [
+    "AC9MFN05",
     "AC9M1N04"
    ],
    "knowledge": "Students can represent practical addition and subtraction situations using materials and counting strategies (AC9MFN05). They can add and subtract within 20 using calculation strategies (AC9M1N04). They have not yet used structured mathematical modelling (Think Board, diagrams, multiple representations) to connect real-world additive situations to mathematical representations and calculations.",
@@ -1957,6 +1988,7 @@
    "title": "Model sharing and grouping",
    "description": "Use mathematical modelling to solve practical problems involving equal sharing and grouping; represent the situations with diagrams, physical and virtual materials, and use calculation strategies to solve the problem",
    "prior": [
+    "AC9MFN06",
     "AC9M1N04"
    ],
    "knowledge": "Students can represent practical equal sharing and grouping situations using materials (AC9MFN06). They can add and subtract within 20 using calculation strategies (AC9M1N04). They have not yet modelled sharing and grouping using structured representations (diagrams, Think Boards) and calculation strategies, or connected equal grouping to the idea of repeated equal quantities.",
@@ -2046,7 +2078,9 @@
    "strand": "Space",
    "title": "Compare and classify shapes",
    "description": "Make, compare and classify familiar shapes; recognise familiar shapes and objects in the environment, identifying the similarities and differences between them",
-   "prior": [],
+   "prior": [
+    "AC9MFSP01"
+   ],
    "knowledge": "Students can sort, name and create familiar shapes and recognise them in the environment (AC9MFSP01). They have not yet classified shapes by comparing multiple properties simultaneously, nor distinguished between regular and irregular instances of the same shape type.",
    "endpoint": "Students make, compare and classify familiar shapes; recognise familiar shapes and objects in the environment, identifying the similarities and differences between them.",
    "nodes": [
@@ -2128,7 +2162,9 @@
    "strand": "Space",
    "title": "Give and follow directions",
    "description": "Give and follow directions to move people and objects to different locations within a space",
-   "prior": [],
+   "prior": [
+    "AC9MFSP02"
+   ],
    "knowledge": "Students can describe position and location of themselves and objects within a familiar space (AC9MFSP02). They have not yet given or followed multi-step directional instructions, created algorithms for movement, or used ordinal and positional language to direct others.",
    "endpoint": "Students give and follow directions to move people and objects to different locations within a space.",
    "nodes": [
@@ -2218,7 +2254,9 @@
    "strand": "Statistics",
    "title": "Acquire and record categorical data",
    "description": "Acquire and record data for categorical variables in various ways including using digital tools, objects, images, drawings, lists, tally marks and symbols",
-   "prior": [],
+   "prior": [
+    "AC9MFST01"
+   ],
    "knowledge": "Students can collect, sort and compare data represented by objects and images (AC9MFST01). They have not yet designed data collection processes, selected from multiple recording formats, or reviewed the effectiveness of their collection method.",
    "endpoint": "Students acquire and record data for categorical variables in various ways including using digital tools, objects, images, drawings, lists, tally marks and symbols.",
    "nodes": [
@@ -2310,6 +2348,7 @@
    "title": "Represent and compare categorical data",
    "description": "Represent collected data for a categorical variable using one-to-one displays and digital tools where appropriate; compare the data using frequencies and discuss the findings",
    "prior": [
+    "AC9MFST01",
     "AC9M1ST01"
    ],
    "knowledge": "Students can collect, sort and compare data represented by objects and images (AC9MFST01). They can acquire and record data using lists, tallies and symbols (AC9M1ST01). They have not yet represented data in formal one-to-one displays, used frequency counts to compare categories, or discussed findings in terms of most/least frequent categories.",
@@ -3385,7 +3424,8 @@
    "title": "Multiply and divide with strategies",
    "description": "multiply and divide by one-digit numbers using repeated addition, equal grouping, arrays, and partitioning to support a variety of calculation strategies",
    "prior": [
-    "AC9M1N06"
+    "AC9M1N06",
+    "AC9M1N03"
    ],
    "knowledge": "Students use mathematical modelling to solve practical problems involving equal sharing and grouping (AC9M1N06). They have not yet formalised arrays or used repeated addition, skip counting and partitioning as multiplication and division strategies.",
    "endpoint": "Students multiply and divide by one-digit numbers using repeated addition, equal grouping, arrays and partitioning, and select from a range of calculation strategies to solve problems.",
@@ -3728,7 +3768,8 @@
    "title": "Acquire and sort categorical data",
    "description": "acquire data for categorical variables through surveys, observation, experiment and using digital tools; sort data into relevant categories and display data using lists and tables",
    "prior": [
-    "AC9M1ST01"
+    "AC9M1ST01",
+    "AC9M1ST02"
    ],
    "knowledge": "Students acquire and record categorical data using lists, drawings and symbols (AC9M1ST01). They have not yet used surveys, observation experiments, or digital tools as acquisition methods, or sorted data into explicitly defined categories before recording.",
    "endpoint": "Students acquire categorical data through surveys, observation, experiment and digital tools; sort data into relevant categories; and display data using lists and tables.",
@@ -6886,7 +6927,8 @@
    "title": "Likelihood and chance events",
    "description": "Describe possible everyday events and the possible outcomes of chance experiments and order outcomes or events based on their likelihood of occurring; identify independent or dependent events",
    "prior": [
-    "AC9M3P01"
+    "AC9M3P01",
+    "AC9M3P02"
    ],
    "knowledge": "Students can describe outcomes as likely, unlikely, certain or impossible with reasoning (AC9M3P01). They have not yet ordered events by likelihood on a scale, or identified independent and dependent events.",
    "endpoint": "Students order events by likelihood, use relative composition to reason about probability, and identify independent and dependent events.",
@@ -7202,7 +7244,8 @@
    "title": "Many-to-one data displays",
    "description": "Acquire data for categorical and discrete numerical variables to address a question of interest or purpose, using digital tools; represent data using many-to-one pictographs, column graphs and other displays or visualisations; interpret and discuss the information that has been created",
    "prior": [
-    "AC9M3ST01"
+    "AC9M3ST01",
+    "AC9M3ST02"
    ],
    "knowledge": "Students can collect categorical and discrete numerical data and record using frequency tables (AC9M3ST01). They have not yet used many-to-one displays where one symbol represents multiple data points.",
    "endpoint": "Students acquire data, represent it using many-to-one displays, and interpret and discuss the information shown.",
@@ -10426,7 +10469,8 @@
    "title": "Prime, composite and square numbers",
    "description": "Identify and describe the properties of prime, composite and square numbers and use these properties to solve problems and simplify calculations",
    "prior": [
-    "AC9M5N02"
+    "AC9M5N02",
+    "AC9M5N04"
    ],
    "knowledge": "Students can express natural numbers as products of their factors and determine if one number is divisible by another (AC9M5N02). They can recognise multiples. They have not yet classified numbers as prime or composite, nor explored square numbers as a distinct number class.",
    "endpoint": "Students can identify and describe the properties of prime, composite and square numbers and use these properties to simplify calculations and solve problems.",
@@ -10637,7 +10681,8 @@
    "description": "Apply knowledge of place value to add and subtract decimals, using digital tools where appropriate; use estimation and rounding to check the reasonableness of answers",
    "prior": [
     "AC9M5N01",
-    "AC9M5N06"
+    "AC9M5N06",
+    "AC9M5N05"
    ],
    "knowledge": "Students can interpret, compare and order numbers with more than 2 decimal places using place value understanding (AC9M5N01). They can solve problems involving multiplication of larger numbers and use estimation to check reasonableness (AC9M5N06). They have not yet systematically applied place value to addition and subtraction of decimals with different numbers of decimal places.",
    "endpoint": "Students can apply place value knowledge to add and subtract decimals, use digital tools where appropriate, and use estimation and rounding to check the reasonableness of answers.",
@@ -10732,7 +10777,8 @@
    "description": "Solve problems involving addition and subtraction of fractions using knowledge of equivalent fractions",
    "prior": [
     "AC9M5N05",
-    "AC9M6N03"
+    "AC9M6N03",
+    "AC9M5N07"
    ],
    "knowledge": "Students can solve problems involving addition and subtraction of fractions with the same or related denominators using different strategies (AC9M5N05). They can compare and order fractions using equivalence (AC9M6N03). They have not yet added or subtracted fractions with unrelated denominators requiring a common denominator to be found.",
    "endpoint": "Students can solve problems involving addition and subtraction of fractions with different denominators using knowledge of equivalent fractions.",
@@ -11965,7 +12011,7 @@
    "year": 7,
    "span": 1,
    "strand": "Algebra",
-   "title": "Algebraic expressions",
+   "title": "Formulating algebraic expressions",
    "description": "formulate algebraic expressions using constants, variables, operations and brackets",
    "prior": [
     "AC9M7A01",
@@ -12069,7 +12115,7 @@
    "year": 7,
    "span": 1,
    "strand": "Algebra",
-   "title": "Solve linear equations",
+   "title": "Solving one-variable linear equations",
    "description": "solve one-variable linear equations with natural number solutions; verify the solution by substitution",
    "prior": [
     "AC9M6A02",
@@ -12170,7 +12216,7 @@
    "year": 7,
    "span": 1,
    "strand": "Algebra",
-   "title": "Graphs of functions",
+   "title": "Relationships in graphs",
    "description": "describe relationships between variables represented in graphs of functions from authentic data",
    "prior": [
     "AC9M6SP02"
@@ -12244,7 +12290,7 @@
    "year": 7,
    "span": 1,
    "strand": "Algebra",
-   "title": "Tables and graphs from patterns",
+   "title": "Tables of values and graphing",
    "description": "generate tables of values from visually growing patterns or the rule of a function; describe and plot these relationships on the Cartesian plane",
    "prior": [
     "AC9M6SP02",
@@ -12348,7 +12394,7 @@
    "year": 7,
    "span": 1,
    "strand": "Algebra",
-   "title": "Manipulate formulas",
+   "title": "Manipulating formulas with digital tools",
    "description": "manipulate formulas involving several variables using digital tools, and describe the effect of systematic variation in the values of the variables",
    "prior": [
     "AC9M7A01",
@@ -12427,7 +12473,8 @@
    "title": "Area of triangles and parallelograms",
    "description": "solve problems involving the area of triangles and parallelograms using established formulas and appropriate units",
    "prior": [
-    "AC9M6M02"
+    "AC9M6M02",
+    "AC9M6M01"
    ],
    "knowledge": "Students can establish and apply the area formula for a rectangle (from AC9M6M02). Students understand area as the measure of a 2D region and can use appropriate units.",
    "endpoint": "Students solve problems involving the area of triangles and parallelograms using established formulas with appropriate units.",
@@ -12670,7 +12717,7 @@
    "year": 7,
    "span": 1,
    "strand": "Measurement",
-   "title": "Angles with parallel lines",
+   "title": "Angles and parallel lines",
    "description": "identify corresponding, alternate and co-interior relationships between angles formed when parallel lines are crossed by a transversal; use them to solve problems and explain reasons",
    "prior": [
     "AC9M6M04"
@@ -12770,7 +12817,7 @@
    "year": 7,
    "span": 1,
    "strand": "Measurement",
-   "title": "Angle sum of triangles",
+   "title": "Interior angle sums",
    "description": "demonstrate that the interior angle sum of a triangle in the plane is 180° and apply this to determine the interior angle sum of other shapes and the size of unknown angles",
    "prior": [
     "AC9M6M04"
@@ -13076,7 +13123,8 @@
    "title": "Prime factorisation and exponent notation",
    "description": "represent natural numbers as products of powers of prime numbers using exponent notation",
    "prior": [
-    "AC9M6N02"
+    "AC9M6N02",
+    "AC9M6N07"
    ],
    "knowledge": "Students can identify prime and composite numbers and know their basic properties (from AC9M6N02). Students can use factor trees to find factors of numbers.",
    "endpoint": "Students represent any natural number as a product of powers of prime factors using exponent notation, and apply this to find lowest common multiples and greatest common divisors.",
@@ -13180,7 +13228,8 @@
    "title": "Expanded notation and powers of 10",
    "description": "represent natural numbers in expanded notation using place value and powers of 10",
    "prior": [
-    "AC9M6N06"
+    "AC9M6N06",
+    "AC9M5N01"
    ],
    "knowledge": "Students understand place value for large whole numbers and can multiply and divide by powers of 10 (from AC9M6N06). Students can write numbers in expanded form using place value (e.g. 7000 = 7 × 1000).",
    "endpoint": "Students represent natural numbers in expanded notation using powers of 10, and explain the connection between place value and exponent notation.",
@@ -13250,7 +13299,7 @@
    "year": 7,
    "span": 1,
    "strand": "Number",
-   "title": "Rational numbers on a number line",
+   "title": "Equivalent representations of rational numbers",
    "description": "find equivalent representations of rational numbers and represent rational numbers on a number line",
    "prior": [
     "AC9M6N03",
@@ -13359,7 +13408,8 @@
    "description": "round decimals to a given accuracy appropriate to the context and use appropriate rounding and estimation to check the reasonableness of solutions",
    "prior": [
     "AC9M6N04",
-    "AC9M6N06"
+    "AC9M6N06",
+    "AC9M6N05"
    ],
    "knowledge": "Students can round whole numbers and simple decimals. Students understand decimal place value and can multiply/divide decimals by powers of 10 (from AC9M6N04, AC9M6N06).",
    "endpoint": "Students round decimals to a specified accuracy appropriate to the context and use estimation to judge whether solutions are reasonable.",
@@ -13584,10 +13634,11 @@
    "year": 7,
    "span": 1,
    "strand": "Number",
-   "title": "Add and subtract integers",
+   "title": "Integers: compare, order, add and subtract",
    "description": "compare, order and solve problems involving addition and subtraction of integers",
    "prior": [
-    "AC9M6N01"
+    "AC9M6N01",
+    "AC9M6N04"
    ],
    "knowledge": "Students can locate integers on a number line and recognise negative integers in context (from AC9M6N01). Students understand magnitude and direction in simple contexts (above/below zero, gain/loss).",
    "endpoint": "Students compare and order integers using inequality notation and solve problems involving addition and subtraction of integers.",
@@ -13876,7 +13927,8 @@
    "title": "Sample space and probability",
    "description": "identify the sample space for single-stage events; assign probabilities to the outcomes of these events and predict relative frequencies for related events",
    "prior": [
-    "AC9M6P01"
+    "AC9M6P01",
+    "AC9M6P02"
    ],
    "knowledge": "Students can assign probabilities on a 0–1 scale using fractions, percentages and decimals (from AC9M6P01). Students have experience with probability language and listing outcomes.",
    "endpoint": "Students identify sample spaces for single-stage events, assign probabilities to outcomes, and use these to predict relative frequencies.",
@@ -14402,7 +14454,8 @@
    "description": "acquire data sets for discrete and continuous numerical variables and calculate the range, median, mean and mode; make and justify decisions about which measures of central tendency provide useful insights into the nature of the distribution of data",
    "prior": [
     "AC9M6ST01",
-    "AC9M6ST03"
+    "AC9M6ST03",
+    "AC9M6ST02"
    ],
    "knowledge": "Students can interpret and compare distributions using mode and range (from AC9M6ST01). Students have planned and conducted statistical investigations (from AC9M6ST03).",
    "endpoint": "Students acquire data sets, calculate range, median, mean and mode, and justify which measure best describes a given distribution.",
@@ -14682,7 +14735,7 @@
    "year": 8,
    "span": 1,
    "strand": "Algebra",
-   "title": "Simplify linear expressions",
+   "title": "Linear expressions",
    "description": "create, expand, factorise, rearrange and simplify linear expressions, applying the associative, commutative, identity, distributive and inverse properties",
    "prior": [
     "AC9M7A02"
@@ -14785,7 +14838,7 @@
    "year": 8,
    "span": 1,
    "strand": "Algebra",
-   "title": "Graph and solve linear equations",
+   "title": "Graphing linear relations and solving equations",
    "description": "graph linear relations on the Cartesian plane using digital tools where appropriate; solve linear equations and one-variable inequalities using graphical and algebraic techniques; verify solutions by substitution",
    "prior": [
     "AC9M7A05",
@@ -14889,11 +14942,12 @@
    "year": 8,
    "span": 1,
    "strand": "Algebra",
-   "title": "Model with linear functions",
+   "title": "Modelling with linear functions",
    "description": "use mathematical modelling to solve applied problems involving linear relations, including financial contexts; formulate problems with linear functions, choosing a representation; interpret and communicate solutions in terms of the situation, reviewing the appropriateness of the model",
    "prior": [
     "AC9M8A02",
-    "AC9M7N09"
+    "AC9M7N09",
+    "AC9M7A06"
    ],
    "knowledge": "Students can graph linear relations and solve linear equations (from AC9M8A02). Students have experience with mathematical modelling (from AC9M7N09).",
    "endpoint": "Students formulate linear function models for applied problems, choose appropriate representations, solve and interpret solutions, and review model appropriateness.",
@@ -14965,7 +15019,7 @@
    "year": 8,
    "span": 1,
    "strand": "Algebra",
-   "title": "Experiment with linear functions",
+   "title": "Experimenting with linear functions",
    "description": "experiment with linear functions and relations using digital tools, making and testing conjectures and generalising emerging patterns",
    "prior": [
     "AC9M8A02",
@@ -15267,7 +15321,9 @@
    "strand": "Measurement",
    "title": "Duration and time zones",
    "description": "solve problems involving duration, including using 12- and 24-hour time across multiple time zones",
-   "prior": [],
+   "prior": [
+    "AC9M6M03"
+   ],
    "knowledge": "Students can calculate elapsed time and convert between 12- and 24-hour time. Students understand the concept of time zones informally.",
    "endpoint": "Students solve problems involving duration and time zone conversion, including multi-zone itinerary and scheduling problems.",
    "nodes": [
@@ -15408,7 +15464,8 @@
    "description": "use Pythagoras' theorem to solve problems involving the side lengths of right-angled triangles",
    "prior": [
     "AC9M7N01",
-    "AC9M7SP02"
+    "AC9M7SP02",
+    "AC9M7M05"
    ],
    "knowledge": "Students can identify perfect squares, square roots, and right-angled triangles (from AC9M7N01, AC9M7SP02). Students have informal exposure to the 3-4-5 triangle.",
    "endpoint": "Students state and apply Pythagoras' theorem to find unknown side lengths in right-angled triangles in practical and geometric contexts.",
@@ -15590,7 +15647,8 @@
    "description": "recognise irrational numbers in applied contexts, including square roots and π",
    "prior": [
     "AC9M7N01",
-    "AC9M7M03"
+    "AC9M7M03",
+    "AC9M7N04"
    ],
    "knowledge": "Students can locate non-perfect square roots between consecutive integers and understand π as the constant ratio C/d (from AC9M7N01, AC9M7M03). Students understand the real number line and rational number representation.",
    "endpoint": "Students recognise irrational numbers in applied contexts, understand that they cannot be expressed as exact fractions, and approximately locate them on the real number line.",
@@ -15739,7 +15797,8 @@
    "description": "recognise terminating and recurring decimals, using digital tools as appropriate",
    "prior": [
     "AC9M7N04",
-    "AC9M7N02"
+    "AC9M7N02",
+    "AC9M7N03"
    ],
    "knowledge": "Students can convert fractions to decimals and understand that some fractions produce repeating decimals (from AC9M7N04). Students understand prime factorisation (from AC9M7N02).",
    "endpoint": "Students recognise terminating and recurring decimals and identify from the prime factorisation of the denominator whether a fraction produces a terminating decimal.",
@@ -15811,7 +15870,7 @@
    "year": 8,
    "span": 1,
    "strand": "Number",
-   "title": "Four operations with integers",
+   "title": "Four operations with integers and rationals",
    "description": "use the 4 operations with integers and with rational numbers, choosing and using efficient strategies and digital tools where appropriate",
    "prior": [
     "AC9M7N07",
@@ -15965,7 +16024,8 @@
    "title": "Complementary events",
    "description": "recognise that complementary events have a combined probability of one; use this relationship to calculate probabilities in applied contexts",
    "prior": [
-    "AC9M7P01"
+    "AC9M7P01",
+    "AC9M7P02"
    ],
    "knowledge": "Students can assign probabilities to single-stage events and verify they sum to 1 (from AC9M7P01). Students understand the sample space.",
    "endpoint": "Students recognise complementary events, use P(A) + P(not A) = 1 to find probabilities, and apply this to practical contexts including AI applications.",
@@ -16442,7 +16502,8 @@
    "description": "design, create and test algorithms involving a sequence of steps and decisions that identify congruency or similarity of shapes, and describe how the algorithm works",
    "prior": [
     "AC9M7SP04",
-    "AC9M8SP01"
+    "AC9M8SP01",
+    "AC9M6SP03"
    ],
    "knowledge": "Students have designed classification algorithms for shapes (from AC9M7SP04). Students know the conditions for congruence and similarity (from AC9M8SP01).",
    "endpoint": "Students design, test and describe algorithms (flowcharts or pseudocode) that classify triangles as congruent, similar, or neither, based on given measurements.",
@@ -16514,7 +16575,8 @@
    "description": "investigate techniques for data collection including census, sampling, experiment and observation, and explain the practicalities and implications of obtaining data through these techniques",
    "prior": [
     "AC9M7ST03",
-    "AC9M7ST01"
+    "AC9M7ST01",
+    "AC9M7ST02"
    ],
    "knowledge": "Students can plan and conduct statistical investigations and identify variable types (from AC9M7ST03, AC9M7ST01). Students understand sampling informally.",
    "endpoint": "Students distinguish census from sampling, identify appropriate collection techniques for different situations, and explain the practicalities, limitations and bias implications of each.",
@@ -16821,7 +16883,8 @@
    "title": "Exponent laws",
    "description": "apply the exponent laws to numerical expressions with integer exponents and extend to variables",
    "prior": [
-    "AC9M8N02"
+    "AC9M8N02",
+    "AC9M8A01"
    ],
    "knowledge": "Students can establish and apply exponent laws with positive integer exponents and the zero exponent using numbers (AC9M8N02). They have not yet applied exponent laws to negative integer exponents, or extended the laws systematically to algebraic expressions involving variables.",
    "endpoint": "Students apply all exponent laws to numerical expressions with integer exponents (including negative) and extend these laws to simplify algebraic expressions involving variables.",
@@ -17519,7 +17582,8 @@
    "title": "Volume and surface area",
    "description": "solve problems involving the volume and surface area of right prisms and cylinders using appropriate units",
    "prior": [
-    "AC9M8M03"
+    "AC9M8M03",
+    "AC9M8M01"
    ],
    "knowledge": "Students can solve problems involving the circumference and area of a circle using formulas (AC9M8M03). They have not yet extended these to three-dimensional objects — finding surface area by unfolding nets, or calculating volumes of right prisms and cylinders.",
    "endpoint": "Students solve problems involving the surface area and volume of right prisms and cylinders using appropriate formulas and units.",
@@ -18422,7 +18486,8 @@
    "title": "Trigonometric ratios",
    "description": "recognise the constancy of the sine, cosine and tangent ratios for a given angle in right-angled triangles using properties of similarity",
    "prior": [
-    "AC9M8SP01"
+    "AC9M8SP01",
+    "AC9M3M06"
    ],
    "knowledge": "Students can identify conditions for congruence and similarity of triangles (AC9M8SP01). They have not yet used similarity to establish that side-length ratios in right-angled triangles are constant for a given angle, or named and used sine, cosine and tangent.",
    "endpoint": "Students recognise that sine, cosine and tangent ratios are constant for a given angle in right-angled triangles and explain this using properties of similarity.",
@@ -19896,7 +19961,8 @@
    "title": "Pythagoras and trigonometry in practical contexts",
    "description": "solve practical problems applying Pythagoras' theorem and trigonometry of right-angled triangles, including problems involving direction and angles of elevation and depression",
    "prior": [
-    "AC9M9SP01"
+    "AC9M9SP01",
+    "AC9M9M03"
    ],
    "knowledge": "Students can recognise sine, cosine and tangent as constant ratios for a given angle using similarity (AC9M9SP01). They have not yet applied Pythagoras' theorem and trigonometry to multi-step practical problems involving bearings, elevation and depression, or decomposition of 3D problems into 2D.",
    "endpoint": "Students solve practical multi-step problems applying Pythagoras' theorem and trigonometry of right-angled triangles, including problems involving direction, bearings, and angles of elevation and depression.",

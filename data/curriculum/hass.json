@@ -1,6 +1,6 @@
 {
  "subject": "hass",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -248,7 +248,9 @@
    "strand": "Knowledge and understanding",
    "title": "Country/Place and First Nations Australians",
    "description": "the importance of Country/Place to First Nations Australians and the Country/Place on which the school is located",
-   "prior": [],
+   "prior": [
+    "AC9HSFK03"
+   ],
    "knowledge": "Students have general experience of place from AC9HSFK03. No formal prior knowledge of First Nations Australian concepts of Country/Place.",
    "endpoint": "Students identify the importance of Country/Place to First Nations Australians, name the local First Nations Australian language group, and identify the Country/Place on which their school is located.",
    "nodes": [
@@ -650,7 +652,9 @@
    "strand": "Knowledge and understanding",
    "title": "Family structures and roles over time",
    "description": "differences in family structures and roles today, and how these have changed or remained the same over time",
-   "prior": [],
+   "prior": [
+    "AC9HSFK01"
+   ],
    "knowledge": "From Foundation (AC9HSFK01): Students identified people in their family, where they were born and raised, and how family members are related. They used relationship vocabulary and created concept maps of family.",
    "endpoint": "Students explain differences in family structures and roles today, and describe how these have changed or remained the same over time.",
    "nodes": [
@@ -738,6 +742,7 @@
    "title": "Daily life continuity and change",
    "description": "continuity and change between aspects of their daily lives and their parents' and grandparents' childhoods",
    "prior": [
+    "AC9HSFK02",
     "AC9HS1K01"
    ],
    "knowledge": "From Foundation (AC9HSFK02): Students explored celebrations and commemorations and their significance. From AC9HS1K01: Students compared family structures and roles across generations.",
@@ -826,7 +831,9 @@
    "strand": "Knowledge and understanding",
    "title": "Features of local places",
    "description": "the natural, managed and constructed features of local places, and their location",
-   "prior": [],
+   "prior": [
+    "AC9HSFK03"
+   ],
    "knowledge": "From Foundation (AC9HSFK03): Students identified features of familiar places and why some places are special. They used basic place vocabulary (near, far, natural, built).",
    "endpoint": "Students identify the natural, managed and constructed features of local places and describe their location.",
    "nodes": [
@@ -914,7 +921,9 @@
    "title": "Changing and caring for places",
    "description": "how places change and how they can be cared for by different groups including First Nations Australians",
    "prior": [
-    "AC9HS1K03"
+    "AC9HSFK03",
+    "AC9HS1K03",
+    "AC9HSFK04"
    ],
    "knowledge": "From Foundation (AC9HSFK03): Students identified features of places and how places can be looked after. From AC9HS1K03: Students classified local place features as natural, managed or constructed.",
    "endpoint": "Students explain how places change and how they can be cared for by different groups including First Nations Australians.",
@@ -1002,7 +1011,9 @@
    "strand": "Skills",
    "title": "Develop questions about past and present",
    "description": "develop questions about objects, people, places and events in the past and present",
-   "prior": [],
+   "prior": [
+    "AC9HSFS01"
+   ],
    "knowledge": "From Foundation (AC9HSFS01): Students posed questions about familiar objects, people, places and events using basic stems (What, Where, Who, Why, How).",
    "endpoint": "Students develop questions about objects, people, places and events in the past and present to guide inquiry.",
    "nodes": [
@@ -1065,7 +1076,9 @@
    "strand": "Skills",
    "title": "Collect and record information",
    "description": "collect, sort and record information and data from observations and from provided sources, including unscaled timelines and labelled maps or models",
-   "prior": [],
+   "prior": [
+    "AC9HSFS02"
+   ],
    "knowledge": "From Foundation (AC9HSFS02): Students sorted and recorded information using pictorial timelines and located features on pictorial maps or models.",
    "endpoint": "Students collect, sort and record information from observations and provided sources, including unscaled timelines and labelled maps.",
    "nodes": [
@@ -1153,6 +1166,8 @@
    "title": "Interpret observations and comparisons",
    "description": "interpret information and data from observations and provided sources, including the comparison of objects from the past and present",
    "prior": [
+    "AC9HSFS02",
+    "AC9HSFS03",
     "AC9HS1S02"
    ],
    "knowledge": "From Foundation (AC9HSFS02, AC9HSFS03): Students sorted information from sources and shared perspectives. From AC9HS1S02: Students collected and recorded information from observations and sources.",
@@ -1241,7 +1256,9 @@
    "strand": "Skills",
    "title": "Discuss perspectives",
    "description": "discuss perspectives related to objects, people, places and events",
-   "prior": [],
+   "prior": [
+    "AC9HSFS03"
+   ],
    "knowledge": "From Foundation (AC9HSFS03): Students shared a perspective on information, recognised that perspectives differ, and explained reasons for their own views.",
    "endpoint": "Students discuss perspectives related to objects, people, places and events, comparing their own views with those of others.",
    "nodes": [
@@ -1304,6 +1321,7 @@
    "title": "Draw conclusions and make proposals",
    "description": "draw conclusions and make proposals",
    "prior": [
+    "AC9HSFS04",
     "AC9HS1S03"
    ],
    "knowledge": "From Foundation (AC9HSFS04): Students drew conclusions in response to inquiry questions supported by evidence. From AC9HS1S03: Students interpreted information and compared objects from past and present.",
@@ -1368,7 +1386,9 @@
    "strand": "Skills",
    "title": "Develop narratives and observations",
    "description": "develop narratives and share observations, using sources, and subject-specific terms",
-   "prior": [],
+   "prior": [
+    "AC9HSFS05"
+   ],
    "knowledge": "From Foundation (AC9HSFS05): Students shared narratives using sources and basic time/place terms.",
    "endpoint": "Students develop narratives and share observations about the past and places, using sources and subject-specific terms for time sequence.",
    "nodes": [
@@ -1627,7 +1647,9 @@
    "title": "Local First Nations interconnections",
    "description": "the interconnections of First Nations Australians to a local Country/Place",
    "prior": [
-    "AC9HS1K03"
+    "AC9HSFK04",
+    "AC9HS1K03",
+    "AC9HS1K04"
    ],
    "knowledge": "From Foundation (AC9HSFK04): Students identified the importance of Country/Place to First Nations Australians and named the local language group. From Y1 (AC9HS1K03): Students explored place features including through Dreaming and Creation stories.",
    "endpoint": "Students explain the interconnections of First Nations Australians to a local Country/Place.",
@@ -2145,7 +2167,9 @@
    "title": "Significant Australian events, symbols and identity",
    "description": "significant events, symbols and emblems that are important to Australia's identity and diversity, and how they are celebrated, commemorated or recognised in Australia, including Australia Day, Anzac Day, NAIDOC Week, National Sorry Day, Easter, Christmas, and other religious and cultural festivals",
    "prior": [
-    "AC9HS2K01"
+    "AC9HSFK02",
+    "AC9HS2K01",
+    "AC9HS2K02"
    ],
    "knowledge": "From Foundation (AC9HSFK02) and Y2 (AC9HS2K01): Students explored celebrations, commemorations and local significance. They understand social, cultural and spiritual significance.",
    "endpoint": "Students identify and explain significant Australian events, symbols and emblems and describe how they are celebrated, commemorated or recognised, including multiple perspectives on their significance.",
@@ -2965,7 +2989,8 @@
    "title": "Diversity and continuity of First Nations Australians",
    "description": "the diversity of First Nations Australians, their social organisation and their continuous connection to Country/Place",
    "prior": [
-    "AC9HS3K04"
+    "AC9HS3K04",
+    "AC9HS3K02"
    ],
    "knowledge": "From Y3 (AC9HS3K04): Students explored the ways First Nations Australians in different parts of Australia are interconnected with Country/Place through poems, songs, paintings and stories.",
    "endpoint": "Students explain the diversity of First Nations Australians, their social organisation and their continuous connection to Country/Place.",
@@ -3053,7 +3078,9 @@
    "strand": "Knowledge and understanding",
    "title": "Establishment of the first british colony",
    "description": "the causes of the establishment of the first British colony in Australia in 1788",
-   "prior": [],
+   "prior": [
+    "AC9HS3K01"
+   ],
    "knowledge": "From Y3: Students explored community change and diversity of contributions. At Y4 students begin studying colonisation of Australia.",
    "endpoint": "Students explain the causes of the establishment of the first British colony in Australia in 1788.",
    "nodes": [
@@ -3117,7 +3144,8 @@
    "title": "Experiences of individuals in establishing the first british colony",
    "description": "the experiences of individuals and groups, including military and civilian officials, and convicts involved in the establishment of the first British colony",
    "prior": [
-    "AC9HS4K02"
+    "AC9HS4K02",
+    "AC9HS3K02"
    ],
    "knowledge": "From AC9HS4K02: Students explained causes of the first British colony. They now examine who was involved and what they experienced.",
    "endpoint": "Students describe the experiences of diverse individuals and groups involved in establishing the first British colony.",
@@ -3182,7 +3210,8 @@
    "title": "Effects of colonisation on First Nations Australians",
    "description": "the effects of contact with other people on First Nations Australians and their Countries/Places following the arrival of the First Fleet and how this was viewed by First Nations Australians as an invasion",
    "prior": [
-    "AC9HS4K01"
+    "AC9HS4K01",
+    "AC9HS3K02"
    ],
    "knowledge": "From AC9HS4K01-K03: Students have explored First Nations Australian diversity and First Fleet establishment. They now examine contact from First Nations Australian perspectives.",
    "endpoint": "Students explain the effects of contact following 1788 on First Nations Australians, including how colonisation was experienced as an invasion.",
@@ -3510,7 +3539,8 @@
    "title": "Cultural, religious and social groups and identity",
    "description": "diversity of cultural, religious and/or social groups to which they and others in the community belong, and their importance to identity",
    "prior": [
-    "AC9HS3K02"
+    "AC9HS3K02",
+    "AC9HS3K07"
    ],
    "knowledge": "From Y3 (AC9HS3K02): Students explored significant Australian events, symbols and identity. From Foundation-Y2: Students explored celebrations, family structures and community connections.",
    "endpoint": "Students explain the diversity of cultural, religious and social groups to which they and others belong and describe their importance to identity.",
@@ -4231,7 +4261,8 @@
    "title": "Individuals and groups in colonial development",
    "description": "the role of a significant individual or group, including First Nations Australians and those who migrated to Australia, in the development of events in an Australian colony",
    "prior": [
-    "AC9HS4K04"
+    "AC9HS4K04",
+    "AC9HS4K01"
    ],
    "knowledge": "From AC9HS4K04 (Effects of contact and invasion): Students explain the effects of contact and invasion on First Nations Australians and early colonists. Students have prior understanding of colonial figures and events from Year 4.",
    "endpoint": "Students explain the role of a significant individual or group, including First Nations Australians and migrants, in the development of a key event or industry in an Australian colony, and assess the economic, social or political impact of that event or development.",
@@ -4345,7 +4376,8 @@
    "title": "People shape places",
    "description": "the influence of people, including First Nations Australians and people in other countries, on the characteristics of a place",
    "prior": [
-    "AC9HS4K05"
+    "AC9HS4K05",
+    "AC9HS3K03"
    ],
    "knowledge": "From AC9HS4K05 (Importance of environments): Students explain the importance of environments and the connections people have to them. Students understand that places have natural and human characteristics.",
    "endpoint": "Students explain the influence of people, including First Nations Australians and people in other countries, on the characteristics of a place, evaluating both positive and negative effects of human influence.",
@@ -5713,7 +5745,8 @@
    "title": "Federation and democracy",
    "description": "significant individuals, events and ideas that led to Australia's Federation, the Constitution and democratic system of government",
    "prior": [
-    "AC9HS5K06"
+    "AC9HS5K06",
+    "AC9HS5K01"
    ],
    "knowledge": "From AC9HS5K06 (Democracy, elections and representatives): Students explain the key values and features of Australia's democracy, including elections and the roles of elected representatives. Students understand democratic values and electoral features.",
    "endpoint": "Students explain the significant individuals, events and ideas that led to Australia's Federation, the Constitution and democratic system of government, identifying the origins and influences that shaped Australia's constitutional framework.",
@@ -5828,7 +5861,8 @@
    "description": "changes in Australia's political system and to Australian citizenship after Federation and throughout the 20th century that impacted First Nations Australians, migrants, women and children",
    "prior": [
     "AC9HS5K06",
-    "AC9HS6K01"
+    "AC9HS6K01",
+    "AC9HS5K03"
    ],
    "knowledge": "From AC9HS5K06 (Democracy, elections and representatives): Students understand the key values and features of Australian democracy. From AC9HS6K01 (Federation and democracy): Students have just studied the founding of Australia's democratic system.",
    "endpoint": "Students explain the changes in Australia's political system and citizenship that impacted First Nations Australians, migrants, women and children after Federation and throughout the 20th century, assessing the significance of key changes.",

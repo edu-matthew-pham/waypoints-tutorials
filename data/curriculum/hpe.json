@@ -1,6 +1,6 @@
 {
  "subject": "hpe",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -868,7 +868,10 @@
    "strand": "Movement and physical activity",
    "title": "Fundamental movement in varied situations",
    "description": "practise fundamental movement skills and apply them in a variety of movement situations",
-   "prior": [],
+   "prior": [
+    "AC9HPFM01",
+    "AC9HPFM02"
+   ],
    "knowledge": "Students have practised fundamental movement skills in minor game and play situations (AC9HPFM01). They have experimented with different ways of moving their body safely and manipulating objects and space (AC9HPFM02).",
    "endpoint": "Students practise fundamental movement skills and apply them in a variety of movement situations.",
    "nodes": [
@@ -998,6 +1001,7 @@
    "title": "Moving and manipulating objects",
    "description": "investigate different ways of moving their body, and manipulating objects and space, and draw conclusions about their effectiveness",
    "prior": [
+    "AC9HPFM02",
     "AC9HP2M01"
    ],
    "knowledge": "Students have experimented with different ways of moving their body safely and manipulating objects and space (AC9HPFM02). They can practise fundamental movement skills in varied situations (AC9HP2M01).",
@@ -1095,7 +1099,9 @@
    "strand": "Movement and physical activity",
    "title": "Physical activity enjoyment",
    "description": "participate in a range of physical activities in natural and outdoor settings, and investigate factors and settings that make physical activity enjoyable",
-   "prior": [],
+   "prior": [
+    "AC9HPFM03"
+   ],
    "knowledge": "Students have participated in activities in natural and outdoor settings and explored the benefits of being physically active (AC9HPFM03).",
    "endpoint": "Students participate in physical activities in natural and outdoor settings and investigate factors and settings that make physical activity enjoyable.",
    "nodes": [
@@ -1186,7 +1192,9 @@
    "strand": "Movement and physical activity",
    "title": "Co-construct fair play rules",
    "description": "co-construct and apply rules to promote fair play in a range of physical activities",
-   "prior": [],
+   "prior": [
+    "AC9HPFM04"
+   ],
    "knowledge": "Students have followed rules to promote fair play in a range of physical activities (AC9HPFM04). They have practised turn-taking and basic inclusion in game contexts.",
    "endpoint": "Students co-construct and apply rules to promote fair play in a range of physical activities.",
    "nodes": [
@@ -1277,7 +1285,9 @@
    "strand": "Movement and physical activity",
    "title": "Collaborative participation",
    "description": "apply strategies to work collaboratively when participating in physical activities",
-   "prior": [],
+   "prior": [
+    "AC9HPFM04"
+   ],
    "knowledge": "Students have followed rules to promote fair play (AC9HPFM04) and have experienced cooperative interaction in basic game contexts. There is no direct Foundation predecessor for collaborative strategy use — this is a new demand at this band.",
    "endpoint": "Students apply strategies to work collaboratively in physical activities.",
    "nodes": [
@@ -1368,7 +1378,9 @@
    "strand": "Personal, social and community health",
    "title": "Personal qualities and identities",
    "description": "describe their personal qualities and those of others, and explain how they contribute to developing identities",
-   "prior": [],
+   "prior": [
+    "AC9HPFP01"
+   ],
    "knowledge": "Students have investigated who they are and the people in their world (AC9HPFP01). They can name people in their life and explore basic features of themselves and their communities.",
    "endpoint": "Students describe personal qualities and explain how they contribute to developing identities.",
    "nodes": [
@@ -1464,7 +1476,9 @@
    "strand": "Personal, social and community health",
    "title": "Respectful relationships",
    "description": "identify and explore skills and strategies to develop respectful relationships",
-   "prior": [],
+   "prior": [
+    "AC9HPFP02"
+   ],
    "knowledge": "Students have practised personal and social skills to interact respectfully with others (AC9HPFP02). They can demonstrate basic respectful interaction in familiar contexts.",
    "endpoint": "Students identify and explore skills and strategies to develop respectful relationships.",
    "nodes": [
@@ -1530,7 +1544,9 @@
    "strand": "Personal, social and community health",
    "title": "Emotional responses",
    "description": "identify how different situations influence emotional responses",
-   "prior": [],
+   "prior": [
+    "AC9HPFP03"
+   ],
    "knowledge": "Students have expressed and described emotions they experience (AC9HPFP03). They can name basic emotions and connect them to personal experiences.",
    "endpoint": "Students identify how different situations influence emotional responses.",
    "nodes": [
@@ -1621,7 +1637,9 @@
    "strand": "Personal, social and community health",
    "title": "Seek, give or deny permission",
    "description": "practise strategies they can use when they need to seek, give or deny permission respectfully",
-   "prior": [],
+   "prior": [
+    "AC9HPFP04"
+   ],
    "knowledge": "Students have explored how to seek, give or deny permission respectfully when sharing possessions or personal space (AC9HPFP04).",
    "endpoint": "Students practise strategies for seeking, giving or denying permission respectfully.",
    "nodes": [
@@ -1687,7 +1705,9 @@
    "strand": "Personal, social and community health",
    "title": "Protective behaviours and help-seeking",
    "description": "identify and demonstrate protective behaviours and help-seeking strategies they can use to help them and others stay safe",
-   "prior": [],
+   "prior": [
+    "AC9HPFP05"
+   ],
    "knowledge": "Students have demonstrated protective behaviours, named body parts and rehearsed help-seeking strategies that help keep them safe (AC9HPFP05).",
    "endpoint": "Students identify and demonstrate protective behaviours and help-seeking strategies to help them and others stay safe.",
    "nodes": [
@@ -1778,7 +1798,9 @@
    "strand": "Personal, social and community health",
    "title": "Health messages in community",
    "description": "investigate a range of health messages and practices in their community and discuss their purposes",
-   "prior": [],
+   "prior": [
+    "AC9HPFP06"
+   ],
    "knowledge": "Students have identified health symbols, messages and strategies in their community that support their health and safety (AC9HPFP06).",
    "endpoint": "Students investigate health messages and practices in their community and discuss their purposes.",
    "nodes": [
@@ -2259,7 +2281,9 @@
    "strand": "Movement and physical activity",
    "title": "Regular physical activity and health",
    "description": "participate in physical activities to explore how their body feels and describe how regular physical activity helps the body stay healthy and well",
-   "prior": [],
+   "prior": [
+    "AC9HPFM03"
+   ],
    "knowledge": "Students have participated in a range of physical activities in natural and outdoor settings and explored the benefits of being physically active at a general level (AC9HPFM03). They can identify enjoyment as a reason for activity but have not yet explored specific physiological or wellbeing effects.",
    "endpoint": "Students participate in physical activities and describe how regular physical activity helps the body stay healthy and well.",
    "nodes": [

@@ -1,6 +1,6 @@
 {
  "subject": "science",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -721,7 +721,9 @@
    "strand": "Biological",
    "title": "Basic needs of plants and animals",
    "description": "identify the basic needs of plants and animals, including air, water, food or shelter, and describe how the places they live meet those needs",
-   "prior": [],
+   "prior": [
+    "AC9SFU01"
+   ],
    "knowledge": "Students can observe and describe features of living things and their environments (AC9SFU01, F band). They have not yet systematically identified needs of living things or described how habitat features meet those needs.",
    "endpoint": "Students identify the basic needs of plants and animals (air, water, food, shelter) and describe how features of the places they live meet those needs — connecting habitat features to specific survival requirements.",
    "nodes": [
@@ -852,7 +854,9 @@
    "strand": "Physical",
    "title": "Pushes and pulls",
    "description": "describe pushes and pulls in terms of strength and direction and predict the effect of these forces on objects' motion and shape",
-   "prior": [],
+   "prior": [
+    "AC9SFU02"
+   ],
    "knowledge": "Students have informally experienced pushing and pulling objects. They have not yet described forces in terms of strength and direction or predicted their effects on motion and shape.",
    "endpoint": "Students describe pushes and pulls in terms of strength (stronger/weaker) and direction, predict how push and pull forces affect the motion and shape of objects, and represent forces using simple labels, arrows or role-play.",
    "nodes": [
@@ -1051,7 +1055,9 @@
    "strand": "Chemical",
    "title": "Physical changes to materials",
    "description": "recognise that materials can be changed physically without changing their material composition and explore the effect of different actions on materials including bending, twisting, stretching and breaking into smaller pieces",
-   "prior": [],
+   "prior": [
+    "AC9SFU03"
+   ],
    "knowledge": "Students can observe and describe properties of materials (AC9SFU03, F band). They have not yet distinguished between changing the form of a material and changing its composition, or systematically explored multiple physical change actions.",
    "endpoint": "Students recognise that physical actions (bending, twisting, stretching, folding, cutting, crushing) change the shape or size of a material without changing what it is made of, and explore how different materials respond differently to the same physical action.",
    "nodes": [
@@ -1566,6 +1572,7 @@
    "title": "Processing and representing data",
    "description": "construct and use representations, including tables, simple column graphs and visual or physical models, to organise data and information, show simple relationships and identify patterns",
    "prior": [
+    "AC9SFI03",
     "AC9S1I04"
    ],
    "knowledge": "Students can represent observations in provided templates and identify simple patterns with guidance (AC9SFI03, F band; AC9S1I04, 1-2 band). They have not yet constructed representations independently or used representations specifically to identify patterns and relationships.",
@@ -1869,6 +1876,7 @@
    "title": "Life cycles",
    "description": "compare characteristics of living and non-living things and examine the differences between the life cycles of plants and animals",
    "prior": [
+    "AC9SFU01",
     "AC9S1U01"
    ],
    "knowledge": "Students can identify and describe features of living things and group them based on observable characteristics (AC9SFU01, F band; AC9S1U01, 1-2 band). They have not yet formally compared living and non-living things using a characteristic framework, or examined the different structural forms life cycles can take (metamorphic vs non-metamorphic).",
@@ -1966,7 +1974,9 @@
    "strand": "Earth and space",
    "title": "Soils, rocks and minerals",
    "description": "compare the observable properties of soils, rocks and minerals and investigate why they are important Earth resources",
-   "prior": [],
+   "prior": [
+    "AC9SFU03"
+   ],
    "knowledge": "Students can observe and describe properties of natural and made materials (AC9SFU03, F band). They have not yet systematically compared soil types, distinguished rocks from minerals, or examined Earth materials as resources that living things depend on.",
    "endpoint": "Students compare observable properties of soils, rocks and minerals using appropriate vocabulary, understand that minerals are components of rocks, and explain why soils, rocks and minerals are important resources for living things including humans.",
    "nodes": [
@@ -2165,7 +2175,10 @@
    "strand": "Chemical",
    "title": "Solids, liquids and change of state",
    "description": "investigate the observable properties of solids and liquids and how adding or removing heat energy leads to a change of state",
-   "prior": [],
+   "prior": [
+    "AC9SFU03",
+    "AC9S2U03"
+   ],
    "knowledge": "Students can observe and describe properties of materials and sort them by observable features (AC9SFU03, F band). They have not yet formally defined solid and liquid using observable properties, investigated change of state, or connected heat energy addition/removal to state transitions.",
    "endpoint": "Students describe the observable properties that distinguish solids from liquids, explain that adding or removing heat energy causes changes of state (solid ↔ liquid), and give examples of state change in everyday and cultural contexts — including how state change enables recycling of materials.",
    "nodes": [
@@ -2760,7 +2773,9 @@
    "title": "Properties of materials",
    "description": "examine the properties of natural and made materials including fibres, metals, glass and plastics and consider how these properties influence their use",
    "prior": [
-    "AC9S2U03"
+    "AC9SFU03",
+    "AC9S2U03",
+    "AC9S3U04"
    ],
    "knowledge": "Students can recognise that objects are made of materials and describe observable properties of those materials (AC9SFU03). They can recognise that physical actions change the shape of materials without changing their composition (AC9S2U03). They have not yet systematically compared material classes (fibres, metals, glass, plastics) or connected material properties to selection for specific uses.",
    "endpoint": "Students examine properties of natural and made materials across fibres, metals, glass and plastics, use property vocabulary to describe and compare materials, and explain how specific properties determine why materials are selected for particular uses.",
@@ -3486,7 +3501,8 @@
    "title": "Weathering, erosion, transportation and deposition",
    "description": "describe how weathering, erosion, transportation and deposition cause slow or rapid change to Earth's surface",
    "prior": [
-    "AC9S3U02"
+    "AC9S3U02",
+    "AC9S4U02"
    ],
    "knowledge": "Students can compare observable properties of soils and rocks and explain their importance as Earth resources (AC9S3U02). They have not yet distinguished weathering from erosion, examined the agents driving each, or connected these processes to landscape change over time.",
    "endpoint": "Students describe how weathering breaks down rock material and how erosion, transportation and deposition move and redistribute that material to change Earth's surface — across both slow geological and rapid event-driven timescales — and examine human impacts on these processes.",
@@ -3581,7 +3597,9 @@
    "strand": "Physical",
    "title": "Light",
    "description": "identify sources of light, recognise that light travels in a straight path and describe how shadows are formed and light can be reflected and refracted",
-   "prior": [],
+   "prior": [
+    "AC9S2U02"
+   ],
    "knowledge": "Students have informally encountered light and shadows in earlier years. They have not yet examined light as travelling in straight paths, distinguished natural from artificial sources, or described reflection and refraction as distinct interactions between light and matter.",
    "endpoint": "Students identify natural and artificial light sources, explain that light travels in straight paths from a source, describe shadow formation and the conditions that affect shadow size and shape, explain reflection and refraction as different interactions of light with surfaces and media, and represent these using ray diagrams.",
    "nodes": [
@@ -3681,7 +3699,8 @@
    "title": "Particle model of matter",
    "description": "explain observable properties of solids, liquids and gases by modelling the motion and arrangement of particles",
    "prior": [
-    "AC9S3U04"
+    "AC9S3U04",
+    "AC9S4U04"
    ],
    "knowledge": "Students can classify materials as solids or liquids by observable properties and explain changes of state using heat energy (AC9S3U04). They have not yet used a particle model to explain why solids, liquids and gases behave as they do, or examined gases as a third state of matter with distinct properties.",
    "endpoint": "Students use a particle model — describing the arrangement, spacing and motion of particles — to explain the observable properties of solids, liquids and gases, and connect state changes to changes in particle behaviour when heat energy is added or removed.",
@@ -5634,8 +5653,13 @@
    "strand": "Biological",
    "title": "Classification and biodiversity",
    "description": "investigate the role of classification in ordering and organising the diversity of life on Earth and use and develop classification tools including dichotomous keys",
-   "prior": [],
-   "knowledge": "Students can name and describe familiar living things and sort them into broad groups (animals, plants). They have not studied formal taxonomy or constructed classification tools.",
+   "prior": [
+    "AC9SFU01",
+    "AC9S3U01",
+    "AC9S5U01",
+    "AC9S6U01"
+   ],
+   "knowledge": "Students can group living things by their external features (AC9SFU01), compare living and non-living things and the life cycles of plants and animals (AC9S3U01), and explain how structural features and behaviours help living things survive in their habitats (AC9S5U01). They have not studied formal taxonomy or constructed classification tools.",
    "endpoint": "Students investigate why classification systems are used, apply and construct dichotomous keys, and evaluate how classification tools order and organise biodiversity.",
    "nodes": [
     {
@@ -5810,8 +5834,11 @@
    "strand": "Biological",
    "title": "Food webs and ecosystems",
    "description": "use models, including food webs, to represent matter and energy flow in ecosystems and predict the impact of changing abiotic and biotic factors on populations",
-   "prior": [],
-   "knowledge": "Students can identify producers, consumers and decomposers and construct simple food chains. They have not studied energy flow quantitatively or modelled multi-factor ecosystem changes.",
+   "prior": [
+    "AC9S4U01",
+    "AC9S6U01"
+   ],
+   "knowledge": "Students can explain the roles of producers, consumers and decomposers in a habitat and construct simple food chains (AC9S4U01), and know that a habitat's physical conditions affect the growth and survival of living things (AC9S6U01). They have not studied energy flow quantitatively or modelled multi-factor ecosystem changes.",
    "endpoint": "Students use food web models to represent matter and energy flow, and predict the impact of changes to abiotic and biotic factors on populations.",
    "nodes": [
     {
@@ -5982,8 +6009,11 @@
    "strand": "Earth and space",
    "title": "Earth-Sun-Moon system",
    "description": "model cyclic changes in the relative positions of the Earth, sun and moon and explain how these cycles cause eclipses and influence predictable phenomena on Earth, including seasons and tides",
-   "prior": [],
-   "knowledge": "Students can describe day/night as caused by Earth's rotation and identify moon phases from observation. They have not modelled 3D spatial relationships or explained tides and eclipses mechanistically.",
+   "prior": [
+    "AC9S2U01",
+    "AC9S6U02"
+   ],
+   "knowledge": "Students can identify patterns in the changing positions of the sun, moon and stars in the sky and observe moon phases (AC9S2U01), and can relate Earth's tilt, rotation and revolution around the sun to day and night and day length (AC9S6U02). They have not modelled the Earth, sun and moon together as one system or explained eclipses, seasons and tides mechanistically.",
    "endpoint": "Students model and explain how cyclic changes in Earth-sun-moon positions cause eclipses, seasons and tides.",
    "nodes": [
     {
@@ -6156,8 +6186,10 @@
    "strand": "Physical",
    "title": "Forces and motion",
    "description": "investigate and represent balanced and unbalanced forces, including gravitational force, acting on objects, and relate changes in an object's motion to its mass and the magnitude and direction of forces acting on it",
-   "prior": [],
-   "knowledge": "Students can identify pushes and pulls as forces and know that gravity pulls objects toward Earth. They have not represented forces as vectors, analysed balanced/unbalanced states, or applied F=ma reasoning.",
+   "prior": [
+    "AC9S4U03"
+   ],
+   "knowledge": "Students can identify pushes and pulls as forces and have investigated how frictional, gravitational and magnetic forces affect the motion of objects (AC9S4U03). They have not represented forces as vectors, analysed balanced and unbalanced forces, or related changes in motion to an object's mass and the size and direction of the forces on it.",
    "endpoint": "Students represent and explain how balanced and unbalanced forces, including gravity, relate to changes in an object's motion in terms of mass, magnitude and direction.",
    "nodes": [
     {
@@ -6333,8 +6365,12 @@
    "strand": "Chemical",
    "title": "Particle theory and properties",
    "description": "use particle theory to describe the arrangement of particles in a substance, including the motion of and attraction between particles, and relate this to the properties of the substance",
-   "prior": [],
-   "knowledge": "Students know that matter exists as solids, liquids and gases and can describe observable properties. They have not used particle theory to explain properties or modelled particle behaviour at a submicroscopic level.",
+   "prior": [
+    "AC9S3U04",
+    "AC9S3U03",
+    "AC9S5U04"
+   ],
+   "knowledge": "Students know that matter exists as solids, liquids and gases, can describe observable properties, and know that adding or removing heat energy changes state (AC9S3U04) and changes temperature (AC9S3U03). They have used a simple particle model of motion and arrangement to explain the properties of solids, liquids and gases (AC9S5U04). They have not included attraction between particles, or used the model to explain a wider range of properties such as compressibility, density and diffusion, or energy in changes of state.",
    "endpoint": "Students use particle theory to describe the arrangement, motion and attraction of particles in substances and relate this to observable physical properties, including changes of state.",
    "nodes": [
     {
@@ -6504,9 +6540,11 @@
    "title": "Pure substances and mixtures",
    "description": "use a particle model to describe differences between pure substances and mixtures and apply understanding of properties of substances to separate mixtures",
    "prior": [
+    "AC9S4U04",
+    "AC9S6U04",
     "AC9S7U05"
    ],
-   "knowledge": "Students can classify materials as solids, liquids or gases and have an introductory particle model from AC9S7U05. They have not formally distinguished pure substances from mixtures at the particle level or applied separation techniques systematically.",
+   "knowledge": "Students know how the properties of materials influence their use (AC9S4U04), have compared reversible changes including dissolving and changes of state (AC9S6U04), and have an introductory particle model from AC9S7U05. They have not formally distinguished pure substances from mixtures at the particle level or applied separation techniques systematically.",
    "endpoint": "Students use a particle model to describe the difference between pure substances and mixtures, and select and apply appropriate separation techniques based on properties of substances.",
    "nodes": [
     {
@@ -6680,6 +6718,7 @@
    "title": "Cells as basic units",
    "description": "recognise cells as the basic units of living things, compare plant and animal cells, and describe the functions of specialised cell structures and organelles",
    "prior": [
+    "AC9SFU01",
     "AC9S3U01",
     "AC9S5U01",
     "AC9S7U01"
@@ -6846,7 +6885,8 @@
    "description": "analyse the relationship between structure and function of cells, tissues and organs in a plant and an animal organ system and explain how these systems enable survival of the individual",
    "prior": [
     "AC9S8U01",
-    "AC9S5U01"
+    "AC9S5U01",
+    "AC9S7U01"
    ],
    "knowledge": "Students can describe organelle functions and cell specialisation (AC9S8U01) and explain how structural features enable survival at the organism level (AC9S5U01). They have not yet encountered the tissue or organ as organisational levels, or analysed how structure at sub-organism levels enables system-level survival functions.",
    "endpoint": "Students analyse structure-function relationships across the cell → tissue → organ → organ system hierarchy in one plant and one animal system, explaining how integrated system function enables individual survival.",
@@ -7527,6 +7567,7 @@
    "title": "Elements, compounds and mixtures",
    "description": "classify matter as elements, compounds or mixtures and compare different representations of these, including 2-dimensional and 3-dimensional models, symbols for elements and formulas for molecules and compounds",
    "prior": [
+    "AC9SFU03",
     "AC9S2U03",
     "AC9S5U04",
     "AC9S7U06",
@@ -8946,7 +8987,8 @@
    "title": "Body systems and negative feedback",
    "description": "compare the role of body systems in regulating and coordinating the body's response to a stimulus, and describe the operation of a negative feedback mechanism",
    "prior": [
-    "AC9S8U02"
+    "AC9S8U02",
+    "AC9S8U01"
    ],
    "knowledge": "Students can analyse structure-function relationships across cells, tissues and organs in body systems (AC9S8U02). They have not yet examined how multiple systems coordinate responses to stimuli, or modelled negative feedback as a regulatory mechanism.",
    "endpoint": "Students compare how the nervous and endocrine systems coordinate responses to stimuli — using models of receptor-command centre-effector pathways — and describe how negative feedback maintains homeostasis, including the effects of feedback system disorders.",
@@ -10135,7 +10177,8 @@
    "description": "explain the role of meiosis and mitosis and the function of chromosomes, DNA and genes in heredity and predict patterns of Mendelian inheritance",
    "prior": [
     "AC9S9U02",
-    "AC9S8U01"
+    "AC9S8U01",
+    "AC9S9U01"
    ],
    "knowledge": "Students can describe reproductive structures and processes in animals and plants and analyse how sexual and asexual reproduction enable species survival (AC9S9U02). They can recognise cells as the basic units of living things and describe specialised cell structures (AC9S8U01). They have not yet examined the molecular basis of heredity — chromosomes, DNA and genes as functional units — or the mechanics of meiosis and mitosis as cell division processes, or Mendelian inheritance as a predictive model.",
    "endpoint": "Students explain the roles of meiosis and mitosis in heredity, describe the structural relationship between chromosomes, DNA and genes, and predict genotype and phenotype ratios in monohybrid crosses including dominant/recessive and sex-linked patterns.",
@@ -10335,7 +10378,8 @@
     "AC9S5U01",
     "AC9S6U01",
     "AC9S7U01",
-    "AC9S9U02"
+    "AC9S9U02",
+    "AC9S9U01"
    ],
    "knowledge": "Students can explain how specific structural features and behaviours are adaptations enabling survival in particular habitats (AC9S5U01), analyse how physical conditions affect organism survival (AC9S6U01), and explain classification systems and biodiversity (AC9S7U01). They understand sexual and asexual reproduction and the role of variation in species survival (AC9S9U02). They have not yet encountered natural selection as a mechanistic explanation for how populations change over time, or engaged with the evidence base — fossil record, anatomical and chemical similarities, geographical distribution — that supports the theory.",
    "endpoint": "Students use the theory of evolution by natural selection to explain both past and present biological diversity, and analyse multiple lines of scientific evidence — fossil record, anatomical and chemical similarities, geographical distribution — that support the theory.",

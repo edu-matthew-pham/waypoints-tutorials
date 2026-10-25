@@ -1,6 +1,6 @@
 {
  "subject": "design",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -208,7 +208,9 @@
    "strand": "Knowledge and understanding",
    "title": "Designed solutions for needs",
    "description": "identify how familiar products, services and environments are designed and produced by people to meet personal or local community needs and sustainability",
-   "prior": [],
+   "prior": [
+    "AC9TDEFK01"
+   ],
    "knowledge": "Students can explore how familiar products, services and environments are designed by people (AC9TDEFK01). They can identify design decisions and connect them to a purpose. They have not yet connected design to community-level needs or to sustainability considerations.",
    "endpoint": "Students identify how familiar products, services and environments are designed and produced to meet personal or local community needs, including sustainability.",
    "nodes": [
@@ -278,7 +280,10 @@
    "strand": "Knowledge and understanding",
    "title": "Materials affect movement",
    "description": "explore how technologies including materials affect movement in products",
-   "prior": [],
+   "prior": [
+    "AC9TDEFK01",
+    "AC9TDEFP01"
+   ],
    "knowledge": "Students can explore how products are designed by people (AC9TDEFK01). They have made simple solutions using materials (AC9TDEFP01). They have not yet systematically connected material properties to movement outcomes, or explored how changing materials or forces changes how a product moves.",
    "endpoint": "Students explore how material properties and forces affect movement in products, and explain how changing materials can change how a product moves.",
    "nodes": [
@@ -496,7 +501,9 @@
    "strand": "Processes and production skills",
    "title": "Describe, draw and model ideas",
    "description": "generate and communicate design ideas through describing, drawing or modelling, including using digital tools",
-   "prior": [],
+   "prior": [
+    "AC9TDEFP01"
+   ],
    "knowledge": "Students can generate and communicate design ideas through drawing or modelling (AC9TDEFP01). They have communicated ideas for a purpose. They have not yet labelled drawings, shown multiple views, used digital tools to communicate design ideas, or compared existing products to generate new ideas.",
    "endpoint": "Students generate and communicate design ideas through describing, drawing or modelling — including labelled drawings with multiple views and using digital tools.",
    "nodes": [
@@ -595,7 +602,9 @@
    "strand": "Processes and production skills",
    "title": "Safely make designed solutions",
    "description": "use materials, components, tools, equipment and techniques to safely make designed solutions",
-   "prior": [],
+   "prior": [
+    "AC9TDEFP01"
+   ],
    "knowledge": "Students can use materials and equipment to make solutions safely (AC9TDEFP01). They have practised basic joining and construction techniques. They have not yet deliberately selected materials for a purpose, or demonstrated safe use of a range of tools and techniques across different construction contexts.",
    "endpoint": "Students use materials, components, tools, equipment and techniques to safely make designed solutions across different construction contexts.",
    "nodes": [
@@ -667,7 +676,9 @@
    "strand": "Processes and production skills",
    "title": "Evaluate success and sustainability",
    "description": "evaluate the success of design ideas and solutions based on personal preferences and including sustainability",
-   "prior": [],
+   "prior": [
+    "AC9TDEFP01"
+   ],
    "knowledge": "Students can evaluate what they made using personal preferences (AC9TDEFP01). They have shared opinions about their design. They have not yet evaluated against sustainability considerations, reflected on environmental impacts, or compared design ideas for strengths and weaknesses in a structured way.",
    "endpoint": "Students evaluate the success of design ideas and solutions based on personal preferences and sustainability considerations.",
    "nodes": [
@@ -739,6 +750,7 @@
    "title": "Sequence making steps cooperatively",
    "description": "sequence steps for making designed solutions cooperatively",
    "prior": [
+    "AC9TDEFP01",
     "AC9TDE2P02"
    ],
    "knowledge": "Students can use materials and equipment to make solutions (AC9TDEFP01, AC9TDE2P02). They have followed steps to make things. They have not yet formally sequenced steps for making as a planning activity, recorded procedures, or identified roles for cooperative group making.",

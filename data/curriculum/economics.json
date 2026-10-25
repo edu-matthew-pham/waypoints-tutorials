@@ -1,6 +1,6 @@
 {
  "subject": "economics",
- "source": "waypoints-kit 5f973ec",
+ "source": "waypoints-kit 6bb92e4",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -3267,7 +3267,8 @@
    "description": "how and why the economic indicators influence economic decision-making",
    "prior": [
     "AC9HE9K01",
-    "AC9HE9K02"
+    "AC9HE9K02",
+    "AC9HE9K03"
    ],
    "knowledge": "Students understand the role of Australia's financial sector and its effect on economic decision-making by individuals, businesses and global markets (AC9HE9K01). They understand how economic decision-making involves the interdependence of consumers, businesses, the financial sector and government (AC9HE9K02). They can explain how economic decisions by one actor affect others across the system.",
    "endpoint": "Students explain how and why economic indicators influence economic decision-making by governments, businesses and individuals in Australia.",

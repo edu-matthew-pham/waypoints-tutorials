@@ -7,7 +7,8 @@
 //
 // Each node keeps everything a teacher pointer page (tools/pointer-pages.mjs) and Create's node picker need: checkpoint,
 // success criteria, width (minimum, typical, wider), hinge and its reason, response modes with Kit's reasons, related
-// standards. The standard keeps its prior knowledge text and progression endpoint. Kit holds what the curriculum says:
+// standards. The standard keeps its prior knowledge text and progression endpoint; its `prior` list (what it builds on)
+// joins the codes that text names with its parents in the kit's progression maps. Kit holds what the curriculum says:
 // corrections go to Kit and are re-imported, never edited here.
 //
 // waypoints-kit holds one JSON file per descriptor in data/<subject>/ (copied from ACARA Progressions). Descriptor
@@ -32,7 +33,8 @@ const SUBJECTS = {
 if (!kit || !SUBJECTS[subject]) { console.error(`usage: node tools/import-curriculum.mjs <path to waypoints-kit> [${Object.keys(SUBJECTS).join(' | ')}]`); process.exit(1); }
 const { prefix: PREFIX, kit: KITDIR, only: ONLY } = SUBJECTS[subject];
 const KIT = KITDIR || subject;   // the kit's folder
-const CODE = /AC9[A-Z]{1,4}\d{1,2}[A-Z]{1,3}\d{2}/g;
+// Foundation codes have F where the year goes (AC9SFU01), so F is allowed in place of the year digits.
+const CODE = /AC9[A-Z]{1,4}(?:\d{1,2}|F)[A-Z]{1,3}\d{2}/g;
 const MODES = ['consolidation', 'context_breadth', 'repertoire_building', 'structured_reasoning', 'integration'];
 // Foundation codes have F where the year goes (AC9MFN04, AC9EFLA01): year 0.
 const yearOf = (c) => { const m = String(c).match(/^AC9[A-Z]+?(F(?=[A-Z0-9])|\d{1,2}(?=[A-Z]))/); return m ? (m[1] === 'F' ? 0 : Number(m[1])) : NaN; };
@@ -102,8 +104,29 @@ const spanOf = (code) => (yearOf(code) === 0 ? 1 : SUBJECTS[subject].span || (su
 // A two-year band as text: science's H and I descriptors start at their code year (7H01 is Years 7–8); the banded
 // subjects end at it (Arts AC9AMU8E01 is Years 7–8).
 const bandOf = (c) => { const y = yearOf(c), sp = spanOf(c); return subject === 'science' ? `${y}–${y + sp - 1}` : `${y - sp + 1}–${y}`; };
+// Which descriptors lead to which: Progressions' map for each learning area, copied into the kit as
+// data/<folder>/<folder>_progression_map.json (strands, each a tree in which a child builds on its parent). Every map
+// in the kit is read, since one map can hold several of the site's subjects (HASS's holds History, Geography, Civics and
+// Economics). Only parents from earlier years are taken for now: same-year map links (about 50, mostly maths and English)
+// would make the node check ask for earlier lessons in maths and systems (roadmap/shared.md), and the maths map has one
+// later-year parent (AC9M3A02 above AC9M2A03). Same-year links written in the prior knowledge text are kept.
+const fromMap = new Map();
+const walk = (nodes, parent) => {
+  for (const n of Array.isArray(nodes) ? nodes : []) {
+    if (!n?.code) continue;
+    if (parent && parent !== n.code) { if (!fromMap.has(n.code)) fromMap.set(n.code, new Set()); fromMap.get(n.code).add(parent); }
+    walk(n.children, n.code);
+  }
+};
+for (const dir of readdirSync(join(kit, 'data'))) {
+  let m;
+  try { m = JSON.parse(readFileSync(join(kit, 'data', dir, `${dir}_progression_map.json`), 'utf8')); } catch { continue; }
+  for (const strand of Object.values(m.progression_threads?.strands || {})) walk(strand.tree);
+}
 const want = [...all.keys()].filter((c) => yearOf(c) >= 0 && yearOf(c) <= 10);
-const prior = (s) => [...new Set(String(s.prior_knowledge || '').match(CODE) || [])].filter((c) => c !== s.code);
+// A descriptor builds on the codes its prior knowledge text names, then the map's parents in this subject.
+const mapPrior = (code) => [...(fromMap.get(code) || [])].filter((c) => all.has(c) && yearOf(c) < yearOf(code));
+const prior = (s) => [...new Set([...(String(s.prior_knowledge || '').match(CODE) || []), ...mapPrior(s.code)])].filter((c) => c !== s.code);
 for (const c of [...want]) for (const p of prior(all.get(c))) if (!want.includes(p) && all.has(p)) want.push(p);
 
 // A title already in the committed file wins when only its capitals differ (fixed by hand: "3D", "Earth-Sun-Moon").
