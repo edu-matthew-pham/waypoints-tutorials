@@ -24,7 +24,7 @@ stuck:
     fix: "Wrap it in str() before joining with +."
 stretch: Find the longest song of each decade (the 1980s, the 1990s...), using year // 10 * 10 for the decade.
 support: Give students the rock average with the count already added, and ask them to do the oldest song by copying the longest pattern.
-leads: "Next lesson counts every genre at once with a dictionary and draws a bar chart. In pandas (Lesson 5) these become one-word methods such as .mean() and .max()."
+leads: "Next lesson counts every genre at once with a dictionary and draws a bar chart. In pandas (the next lesson) these become one-word methods such as .mean() and .max()."
 exit:
   q: "Why does an average of the pop songs need its own count?"
   a: "len(songs) counts every song; the average of some songs divides their total by how many of them there are, counted inside the if."

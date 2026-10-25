@@ -23,7 +23,7 @@ Counting is tally marks on a whiteboard, one row per genre; the bar chart is the
 
 1. Run Lesson 3's chart, then add `print(counts)` after the first loop.
 2. Open `survey.csv` in the Files tab and spot four kinds of mess.
-3. In Lesson 4, change `168` to `16`, run, and read the AssertionError. Put it back.
+3. In Lesson 5, change `168` to `16`, run, and read the AssertionError. Put it back.
 
 ## Questions students ask
 

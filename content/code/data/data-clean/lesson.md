@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 unit: show
 introduces: [try, assert, none]
 title: Clean it, test it

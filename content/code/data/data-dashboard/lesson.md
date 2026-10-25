@@ -1,7 +1,7 @@
 ---
-order: 5
+order: 6
 unit: app
-introduces: [pandas]
+assumes: [pandas]
 recipes: [import-module, dotted-call]
 title: A data dashboard
 summary: "Read the table with pandas and put it behind a Gradio app: choose a genre, see its songs as a table and a bar chart."
@@ -30,7 +30,7 @@ explainClip:
         say: "The function kept only the K-pop rows, for a table and a chart."
     - wait: 3000
 ---
-You have done it all by hand: reading rows, filtering, counting, charting. Now meet the tools data scientists use for the same jobs. **pandas** reads a CSV into a table in one line (and numbers stay numbers), and **Gradio** turns a function into an app with inputs and outputs.
+You have done it all by hand: reading rows, filtering, counting, charting. Last lessons you used **pandas** for the same jobs. Now **Gradio** turns a function into an app with inputs and outputs, and pandas supplies the table behind it.
 
 The playground runs a small stand-in for Gradio, so it works in the browser. The same program runs unchanged in real Gradio on a computer or a Hugging Face Space.
 
@@ -55,7 +55,7 @@ stage: run
 code: dashboard.py#run
 try: { playground: python, starter: "dashboard.py#run", files: [../sets/music.csv], height: 560 }
 check: { type: reflect, text: "I can say which line picks the rows, and why the function returns rows twice." }
-unlocks: [read-a-csv-with-pandas, filter-a-table, an-app-with-gradio]
+unlocks: [an-app-with-gradio]
 ```
 
 Run it (pandas takes a few seconds to load the first time). The app opens in the **App** tab: choose a genre, press **Submit**.

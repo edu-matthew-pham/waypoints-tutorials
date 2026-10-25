@@ -25,7 +25,7 @@ stuck:
     fix: "\"#\" * int(minutes / 5)."
 stretch: Print the bars in order, biggest first (sorted(counts, key=counts.get, reverse=True) is one way to look up).
 support: Give students the counting loop and ask them only to write the loop that draws the bars.
-leads: "Next lesson cleans messy data and checks code with test cases. Lesson 5 draws the same chart with Gradio's BarPlot."
+leads: "Next lesson cleans messy data and checks code with test cases. Lesson 6 draws the same chart with Gradio's BarPlot."
 exit:
   q: "Why does counting need if genre in counts:?"
   a: "The first time a genre appears it has no count yet, so counts[genre] + 1 would fail; it starts at 1 instead."

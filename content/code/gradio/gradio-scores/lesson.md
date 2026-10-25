@@ -8,7 +8,7 @@ summary: "Save every quiz score in a SQLite database, and show the top scores in
 language: python
 hook: "A quiz is more fun when it remembers who got what."
 ---
-Optional, and it uses the SQL course (lessons 1 to 8 first). The `pd.DataFrame(...)` line turns rows into a table the app can show: copy it as it is, or see Data detective. Last lesson the quiz marked your answers and forgot you. Now each score is saved in a database file, `scores.db`, and a **scoreboard** table shows the best five. The database is the memory: the app asks it in SQL and shows the answer.
+Optional, and it uses the SQL course (lessons 1 to 8 first). It also uses pandas, from Data detective lesson 3: `pd.DataFrame(...)` turns rows into a table the app can show. Last lesson the quiz marked your answers and forgot you. Now each score is saved in a database file, `scores.db`, and a **scoreboard** table shows the best five. The database is the memory: the app asks it in SQL and shows the answer.
 
 ## Predict
 

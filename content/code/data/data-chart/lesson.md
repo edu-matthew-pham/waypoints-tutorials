@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 unit: show
 title: A bar chart in text
 summary: Count every genre at once with a dictionary, then draw each count as a bar of # characters.
@@ -147,4 +147,4 @@ check:
   explain: "A chart shows the data, and data is a choice. Before claiming anything, ask who collected it, how, and what is missing."
 ```
 
-Real charting tools (spreadsheets, pandas, Gradio's BarPlot in Lesson 5) draw the same bars from the same counts. Next: data that is messy, and how to check your code with test cases.
+Real charting tools (spreadsheets, pandas, Gradio's BarPlot in Lesson 6) draw the same bars from the same counts. Next: data that is messy, and how to check your code with test cases.

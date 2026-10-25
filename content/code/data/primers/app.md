@@ -20,7 +20,7 @@ A vending machine: buttons are the inputs, the machinery inside is the function,
 
 ## Try it yourself (5 minutes)
 
-1. Run Lesson 5's dashboard and choose two genres.
+1. Run Lesson 6's dashboard and choose two genres.
 2. Add the year slider: one item in `inputs`, one parameter in the function.
 3. Point a classmate at your dashboard and ask them a question it answers.
 
