@@ -2,6 +2,12 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## Open in Prepare / Print, and a security gap in Prepare (25 Oct 2026, code chat; Matthew asked)
+
+- Built: guide pages have **Open in Prepare** (slides) and **Open in Print** (worksheet, cheat sheet) links (`prepareLink` in `tools/teach.mjs`); Prepare's main page and `/print` read `?src=<address of the .md>`. Both are on `main`; publish with the quick publish once Prepare has deployed.
+- Step 1 of the security fix is on a Prepare branch, `trust-src-param`, not yet merged: `?src=` loads at once only from the Waypoints sites, localhost and our two GitHub accounts; any other host asks the teacher first.
+- **To do (step 2): sanitise what Prepare renders.** Prepare's slides (Marp, `html: true`) and Print (marked) show raw HTML from the loaded file with nothing removed, so a pasted or linked file can run script in Prepare's page (tested 25 Oct: an `<img onerror>` ran on both). Step 1 only limits where `?src=` loads from; pasting or importing a file is still unsafe, and so is a link from a trusted site if that site's file is ever changed. The fix is to strip script, event handlers and `javascript:` links from the rendered output, without breaking the things decks rely on: `{{embed}}` boards, Mermaid diagrams, answer controls and Marp's own styles. Needs tests with real decks (`npm run check-decks` here, Prepare's e2e tests there). Not started.
+
 ## For every chat (25 Oct 2026, review chat): checklist added; tidy your own roadmap file when you reach a pause
 
 - `roadmap/checklist.md` now holds the steps before a push, a lesson review pass and what to say after a push (which publish route, which edits re-record clips). Handoffs and roadmaps should link to it instead of repeating those lines. Add a line there when you find a step that was missing.
