@@ -8,7 +8,7 @@ x: 0, 15
 y: 0, 8000
 grid: 5, 2000
 axes: Time (years), Savings ($)
-slider r: 5, 30, 20, 5
+slider r: 5, 30, 10, 5
 plot: y = 1000((1 + r/100)^x)
 plot: y = 2000 + 300x, dashed
 cross: 1, 2

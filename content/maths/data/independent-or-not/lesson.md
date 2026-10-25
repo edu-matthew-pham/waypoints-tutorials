@@ -43,7 +43,7 @@ Make a guess before you use the board.
 stage: run
 insight: "The chance given walking is read inside the walkers. The chance on its own is read across everyone. If the two are equal, knowing someone walks tells you nothing about sport."
 try: { playground: board, starter: "walk.yml#run", height: 640 }
-check: { type: board, text: "The board is given 'walk'. Choose everyone who plays a sport (Walk and Sport, and Sport only). The readout gives the chance given walking. Compare it with the chance on its own: 60 of the 100.", when: "g = 30 and c = p" }
+check: { type: board, text: "The board is given 'walk'. Choose everyone who plays a sport (Walk and Sport, and Sport only). The readout gives the chance given walking. Compare it with the chance on its own: 60 of the 100.", when: "g = 30 and c = p and n > 0" }
 ```
 
 The board gives two numbers when you choose Sport. One is the chance of sport among the walkers. The other is out of all 100 students.
@@ -121,7 +121,7 @@ try: { playground: board, starter: "walk.yml#run", height: 640 }
 tasks:
   - starter: "walk.yml#run"
     hint: ["Choose Walk and Sport and Sport only: that is everyone who plays a sport.", "c is the chance given walking, p is the chance on its own."]
-    check: { type: board, text: "Back on the walking survey. Choose everyone who plays a sport and check that the chance given walking equals the chance on its own.", when: "c = p and g = 30", explain: "0.6 and 0.6: equal, so knowing a student walks does not change the chance they play a sport." }
+    check: { type: board, text: "Back on the walking survey. Choose everyone who plays a sport and check that the chance given walking equals the chance on its own.", when: "c = p and g = 30 and n > 0", explain: "0.6 and 0.6: equal, so knowing a student walks does not change the chance they play a sport." }
   - starter: "walk.yml#bus"
     hint: "Now the days are sorted by rain and a late bus. The board is given rain. Choose Late."
     check: { type: board, text: "A different board: rain and a late bus (the days from the worked example). Choose everyone with a late bus and read the chance given rain, then compare it with the chance on its own.", when: "c = 0.5 and p = 0.25", explain: "0.5 given rain and 0.25 on its own are not equal, so a late bus is not independent of rain." }

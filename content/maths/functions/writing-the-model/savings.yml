@@ -8,7 +8,7 @@ x: 0, 20
 y: 0, 3000
 grid: 5, 500
 axes: Time (years), Balance ($)
-slider r: 0, 10, 5, 1
+slider r: 0, 10, 3, 1
 plot: y = 1000((1 + r/100)^x)
 plot: y = 1000 + 10rx, dashed
 table: 0, 1, 2, 5, 10, 15, 20
