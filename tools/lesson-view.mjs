@@ -385,7 +385,7 @@ var done0=(load().done||{})[key];paint(evalRules(rules,'',kind).map(function(r){
 window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==(box.dataset.play||key))return;var pn=box.closest('.tpanel'),stp=box.closest('.step');
 // Only the open task listens. MakeCode in full screen is the exception: the bar shows every task of the step and pills cannot be switched.
 if(pn&&!pn.classList.contains('active')&&!((m.kind==='microbit'||m.kind==='arcade')&&stp&&stp.querySelector('.try.full')))return;
-var res=evalRules(rules,m.code||'',kind);paint(res);
+var res=evalRules(rules,m.code||'',kind,m.output);paint(res);
 if(m.quiet&&!(load().done||{})[key]){}
 else if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
 else if(m.kind==='html'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep going: the list shows what your page still needs.'}}
@@ -953,6 +953,7 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (t.speed) q.set('speed', t.speed);
   if (t.boxes) q.set('boxes', '1'); // HTML playground: start with the Boxes view on
   if (t.boxmodel) q.set('boxmodel', '1'); // ... or with the Box model view on
+  if (t.db) q.set('db', t.db); // SQL playground: the starting database, data/<name>.sql
   if (t.playground === 'microbit' || t.playground === 'arcade') {
     q.set('target', t.playground); // one MakeCode playground, two editors
     const pkg = makecodePackage(lesson); if (pkg) q.set('pkg', pkg); // the lesson's extensions (robot), added to the step's project

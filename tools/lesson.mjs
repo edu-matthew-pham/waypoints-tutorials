@@ -7,7 +7,25 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
 import YAML from 'yaml';
-import { snippetFrom, extractInlineCode, parseLessonText, validateLessonCore, snippetId, FEATURES } from './lesson-core.mjs';
+import { createRequire } from 'node:module';
+import { snippetFrom, extractInlineCode, parseLessonText, validateLessonCore, snippetId, FEATURES, setSqlRunner } from './lesson-core.mjs';
+
+// SQL lessons: run a solution against its starting database (the same sql.js the playground uses), so a check on the rows can be tested.
+{
+  const root = resolve(import.meta.dirname, '..');
+  const mod = { exports: {} };   // sql-wasm.js is a plain script: give it a CommonJS shell
+  new Function('module', 'exports', 'require', '__dirname', '__filename', readFileSync(join(root, 'vendor', 'sql', 'sql-wasm.js'), 'utf8'))(mod, mod.exports, createRequire(import.meta.url), join(root, 'vendor', 'sql'), join(root, 'vendor', 'sql', 'sql-wasm.js'));
+  const init = mod.exports.default || mod.exports;
+  const SQL = await init({ locateFile: (f) => join(root, 'vendor', 'sql', f) });
+  setSqlRunner((dbName, code) => {
+    const db = new SQL.Database();
+    try {
+      if (dbName) db.exec(readFileSync(join(root, 'data', 'sql', `${dbName}.sql`), 'utf8'));
+      const sets = db.exec(code); const set = sets[sets.length - 1];
+      return set ? [set.columns.join(' | '), ...set.values.map((r) => r.map((v) => (v === null ? 'NULL' : String(v))).join(' | '))].join('\n') : '';
+    } finally { db.close(); }
+  });
+}
 
 export * from './lesson-core.mjs';
 

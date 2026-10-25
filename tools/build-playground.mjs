@@ -106,6 +106,19 @@ export function buildP5Playground(out = 'dist') {
   return dest;
 }
 
+/** The SQL playground: our editor and results page plus vendored sql.js (vendor/sql, MIT: SQLite compiled to WebAssembly), and the starting databases from data/sql/*.sql. Nothing is loaded from a CDN. */
+export function buildSqlPlayground(out = 'dist') {
+  const dest = join(out, '_playground-sql');
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(join(root, 'playground-sql'), dest, { recursive: true });
+  mkdirSync(join(dest, 'vendor'), { recursive: true });
+  for (const f of ['sql-wasm.js', 'sql-wasm.wasm', 'LICENSE-sql.js.txt']) copyFileSync(join(root, 'vendor', 'sql', f), join(dest, 'vendor', f));
+  const data = join(root, 'data', 'sql');
+  if (existsSync(data)) { mkdirSync(join(dest, 'data'), { recursive: true }); for (const f of readdirSync(data)) if (f.endsWith('.sql')) copyFileSync(join(data, f), join(dest, 'data', f)); }
+  stampPlayground(dest);
+  return dest;
+}
+
 /**
  * Files a page in the HTML or DOM playground can load as if they sat beside it (the preview's <base> is media/):
  * the course pictures (media/html/) and the web libraries (vendor/web/: Bootstrap, Vue, Preact, Svelte). Copied after
@@ -238,6 +251,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   console.log('Playground built into ' + buildPlayground(out));
   console.log('HTML playground built into ' + buildHtmlPlayground(out));
   console.log('p5.js playground built into ' + buildP5Playground(out));
+  console.log('SQL playground built into ' + buildSqlPlayground(out));
   console.log('Web page and JavaScript playground built into ' + buildDomPlayground(out));
   console.log('Board built into ' + await buildMathsPlayground(out));
   console.log('MakeCode playground built into ' + buildMakecodePlayground(out));

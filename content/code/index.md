@@ -19,6 +19,7 @@ pathways:
       - { path: code/gradio, stage: extensions, after: [code/console] }
       - { path: code/ml, stage: extensions, after: [code/data] }
       - { path: code/games, stage: extensions, after: [code/objects] }
+      - { path: code/sql, stage: extensions, after: [code/data] }
       - { path: code/flask, stage: extensions, after: [code/console, code/html] }
   - id: web
     title: Web

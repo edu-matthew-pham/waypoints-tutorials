@@ -6,6 +6,7 @@ export const PLAYGROUND_REGISTRY=[
  entry('html','_playground-html','HTML and CSS','html',{title:'HTML and CSS playground',sample:'<!doctype html>\n<h1>Hello</h1>\n<p>Change this paragraph.</p>\n',file:'page.html',run:null,note:'Live preview. Interactions inside its sandboxed page use manual recording.'}),
  entry('dom','_playground-dom','Web page and JavaScript','html',{title:'Web page and JavaScript playground',sample:'<h1>Hello</h1>\n<button onclick="this.textContent=\'Clicked\'">Try me</button>\n',file:'page.html',runLabel:'Run ▶',note:'Run/outer controls are automated; interactions inside the page use manual recording.'}),
  entry('p5','_playground-p5','p5.js','javascript',{title:'p5.js playground',sample:'function setup() { createCanvas(400, 300); }\nfunction draw() { background(240); circle(200, 150, 80); }\n',file:'sketch.js',runLabel:'Run ▶',note:'A running sketch is ready, rather than finished. Canvas interactions use manual recording.'}),
+ entry('sql','_playground-sql','SQL and databases','sql',{title:'SQL playground',sample:'SELECT 1 + 1;\n',file:'query.sql',runLabel:'Run ▶',note:'The database runs in the page. Results are a table.'}),
  entry('board','_playground-board','Shared maths and science boards','maths',{title:'Board',draftApp:'physics',editor:null,run:null,sample:'widget: balance\nleft: x + 2\nright: 5\n',file:'board.yml',note:'Local board controls can be automated. Choose a widget supported by the board.'}),
  entry('science','_playground-science','Science particle simulations','science',{title:'Science board',editor:null,run:null,sample:'widget: heat\n',file:'science.yml',note:'Local simulation controls can be automated. A model illustrates an idea; it is not experimental evidence.'}),
  entry('microstudio','_playground-microstudio','microStudio game (play only)','python',{title:'Example game (play only)',height:400,editor:null,run:null,recording:'manual',sample:'def update():\n    pass\n\ndef draw():\n    screen.clear("#102030")\n',file:'game.py',note:'The game starts itself. Record its interactions manually; this is not the microStudio authoring editor.'}),
@@ -25,7 +26,7 @@ export function inferPlayground(lesson,step=null){
  if(step?.config.try?.playground)return playground(step.config.try.playground)?.id||null;
  if(!step&&!lesson.steps?.some(s=>s.config.try||s.config.code||s.config.clip))return null;
  const first=lesson.steps?.find(s=>s.config.try?.playground);if(first)return playground(first.config.try.playground)?.id||null;
- return ({maths:'board',science:'science',html:'html',javascript:'p5',makecode:'microbit',arcade:'arcade',python:'turtle'}[lesson.language])||null;
+ return ({maths:'board',science:'science',html:'html',javascript:'p5',sql:'sql',makecode:'microbit',arcade:'arcade',python:'turtle'}[lesson.language])||null;
 }
 export function playgroundURL(id,siteRoot,query={}){
  const p=playground(id);if(!p)throw Error('Unknown playground: '+id);

@@ -17,7 +17,7 @@ import { readFileSync } from 'node:fs';
 import { diagramSpec } from './diagram-core.mjs';
 import { snippetId, unlockKind, pictureSpec, usesBoardPictures, pictureBoard, makecodePackage, makecodeExtensions, captionText, voiceSpec, CLIP_VOICES, VOICE_LABELS } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
-import { buildPlayground, buildPyPlayground, buildMicrostudioPlayground, buildP5Playground, buildDomPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildNumbas, buildMakecodePlayground, buildExplainStage } from './build-playground.mjs';
+import { buildPlayground, buildPyPlayground, buildMicrostudioPlayground, buildP5Playground, buildSqlPlayground, buildDomPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildNumbas, buildMakecodePlayground, buildExplainStage } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } from './trail.mjs';
 import { loadCurriculum, curriculumMapHtml, CMAP_CSS } from './curriculum-map.mjs';
@@ -217,6 +217,7 @@ buildPlayground(OUT);
 buildPyPlayground(OUT);
 buildMicrostudioPlayground(OUT);
 buildP5Playground(OUT);
+buildSqlPlayground(OUT);
 buildDomPlayground(OUT);
 buildHtmlPlayground(OUT);
 await buildMathsPlayground(OUT);
@@ -226,7 +227,7 @@ buildNumbas(OUT);
 buildMakecodePlayground(OUT);
 buildExplainStage(OUT);
 // Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
-const VERSIONS = Object.fromEntries(['_playground', '_playground-py', '_playground-microstudio', '_playground-p5', '_playground-dom', '_playground-html', '_playground-board', '_playground-makecode', '_playground-science'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
+const VERSIONS = Object.fromEntries(['_playground', '_playground-py', '_playground-microstudio', '_playground-p5', '_playground-sql', '_playground-dom', '_playground-html', '_playground-board', '_playground-makecode', '_playground-science'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
 await buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
@@ -286,6 +287,7 @@ const PLAY = { 'code/python-foundations': { kind: 'turtle', dir: '_playground', 
   'code/vue': { kind: 'dom', dir: '_playground-dom', label: 'Vue', id: 'free/vue', code: '<div id="app">\n  <p>Clicks: {{ count }}</p>\n  <button @click="count++">Click me</button>\n</div>\n\n<script src="vue.js"></script>\n<script>\n  const { createApp, ref } = Vue;\n  createApp({\n    setup() {\n      const count = ref(0);\n      return { count };\n    }\n  }).mount("#app");\n</script>\n' },
   // Games with microStudio: the game player with an editor beside it (edit.html), for trying ideas when microstudio.dev is not open.
   'code/games': { kind: 'microstudio', dir: '_playground-microstudio', page: 'edit.html', label: 'Python game', id: 'free/games' },
+  'code/sql': { kind: 'sql', dir: '_playground-sql', label: 'SQL', id: 'free/sql', code: 'SELECT 1 + 1;\n' },
   'code/p5': { kind: 'p5', dir: '_playground-p5', label: 'p5.js', id: 'free/p5', code: 'function setup() {\n  createCanvas(400, 300);\n  background(240);\n  circle(200, 150, 100);\n}\n' },
   'code/flask': { kind: 'turtle', dir: '_playground-py', label: 'Python', id: 'free/flask', code: 'from flask import Flask\n\napp = Flask(__name__)\n\n\n@app.route("/")\ndef home():\n    return "<h1>Hello</h1>"\n\n\napp.run()\n' },
   'code/gradio': { kind: 'turtle', dir: '_playground-py', label: 'Python', id: 'free/gradio', code: 'import gradio as gr\n\n\ndef shout(text):\n    return text.upper() + "!"\n\n\ngr.Interface(fn=shout, inputs="text", outputs="text").launch()\n' },
@@ -549,7 +551,7 @@ function writeRecap(node, courseLessons) {
 const PROJECTS = new Map(loadProjects(CONTENT_ROOT, (c) => PLAY[c]?.kind || 'turtle').map((s) => [s.course, s]));
 const PREREQS = prerequisites(loadDirMeta, CONTENT_ROOT);
 let PROJPICS = null;
-const PLAY_EXT = { python: 'py', html: 'html', makecode: 'ts', javascript: 'js' };
+const PLAY_EXT = { python: 'py', html: 'html', makecode: 'ts', javascript: 'js', sql: 'sql' };
 // Basics nearly every program uses: never listed under "You also used".
 const ALSO_SKIP = new Set(['import-star', 'import-from', 'variable', 'arithmetic', 'string', 'print', 'page-wrapper', 'heading', 'paragraph', 'attribute']);
 function taughtWhere(course) {
@@ -915,7 +917,7 @@ for (const coursePath of teachCourses) {
   }).join('');
   // Open projects (tools/projects.mjs): each brief, its notes and one possible solution (its example), for the teacher.
   const pset = PROJECTS.get(coursePath);
-  const HL = { python: 'python', html: 'html', makecode: 'typescript', javascript: 'javascript' };
+  const HL = { python: 'python', html: 'html', makecode: 'typescript', javascript: 'javascript', sql: 'sql' };
   const projectsGuide = pset ? `<section class="tunit" id="projects"><h2>Open projects</h2><p class="muted">Self-paced briefs students can pick up after the lesson named on each. Students tick their own milestones and claim a badge; the page lights the skills their code uses. Badges stay in the student's browser: ask them to press Show your teacher. <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/projects/">Open the projects page</a></p>` +
     pset.projects.map((p) => `<details class="primer"><summary><b>${esc(p.title)}</b> <span class="muted">(after ${esc(p.after)}; ${esc(p.parts.flatMap((x) => x.uses.map((u) => skillLabel(x.language, u))).join(', '))})</span></summary>${md(p.goal)}` +
       `<p><b>Milestones:</b></p><ul>${(p.milestones || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` + (p.teacher ? md(p.teacher) : '') +

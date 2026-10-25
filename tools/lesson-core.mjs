@@ -31,7 +31,7 @@ export function voiceSpec(v) {
 export const captionText = (v) => (v && typeof v === 'object' ? String(v.text ?? '') : String(v ?? ''));
 export const captionSay = (v) => (v && typeof v === 'object' && v.say !== undefined ? String(v.say) : captionText(v));
 // board: interactive diagrams (balance, machine, graph…); maths is its old name and still works.
-export const PLAYGROUND_KINDS = ['turtle', 'python', 'microstudio', 'p5', 'dom', 'html', 'board', 'maths', 'microbit', 'arcade', 'science'];
+export const PLAYGROUND_KINDS = ['turtle', 'python', 'microstudio', 'p5', 'sql', 'dom', 'html', 'board', 'maths', 'microbit', 'arcade', 'science'];
 const isBoard = (pg) => ['board', 'maths', 'science'].includes(pg);
 /** What a board check can expect from a board's report: the board (balance, machine), and the science board (done: the widget's task is finished). Newer boards use when: conditions. */
 export const BOARD_KEYS = ['balanced', 'solved', 'x'];
@@ -87,6 +87,11 @@ export const HTML_RULES = ['contains', 'tags'];
 /** Code rules the MakeCode playgrounds can check (read from main.ts, the JavaScript the blocks compile to). */
 /** Code rules the p5.js playground can check (JavaScript read from the student's text). */
 export const P5_RULES = ['contains', 'defs', 'params', 'calls', 'loops', 'returns', 'uses'];
+/** Code rules the SQL playground can check: the query text (contains) and the result table it makes (rows, columns, result). */
+export const SQL_RULES = ['contains', 'rows', 'columns', 'result'];
+/** Node only: lesson.mjs installs a function (dbName, query) => the result table as text, so a solution can be checked against the rows it makes. Absent in the browser (Create), where such checks are skipped. */
+let sqlRunner = null;
+export const setSqlRunner = (fn) => { sqlRunner = fn; };
 export const MAKECODE_RULES = ['contains', 'inside', 'count', 'defs', 'calls', 'params'];
 
 /**
@@ -96,7 +101,21 @@ export const MAKECODE_RULES = ['contains', 'inside', 'count', 'defs', 'calls', '
  * loops (for/while lines), returns (return lines), params (one function with this many parameters),
  * imports (list of module names), uses (list of names that must appear, such as pencolor). Returns [{ label, ok }].
  */
-export function evalRules(rules, text, kind) {
+export function evalRules(rules, text, kind, output) {
+  // kind 'sql': the query text and the result table. Case and spacing never matter; comments (-- and /* */) are ignored.
+  //   contains: fragments the query must have   rows: how many rows come back   columns: the column names, in order
+  //   result: the table the query must make (header line, then one line per row, values joined by " | ")
+  if (kind === 'sql') {
+    const src = String(text).replace(/\/\*[\s\S]*?\*\//g, '').replace(/--.*$/gm, '').toLowerCase().replace(/\s+/g, '');
+    const lines = String(output || '').split('\n').filter((l) => l.trim() !== '');
+    const norm = (s) => String(s).split('\n').map((l) => l.split('|').map((c) => c.trim().toLowerCase()).join('|')).filter((l) => l !== '').join('\n');
+    const out = [];
+    (rules.contains || []).forEach((frag) => out.push({ label: `Your query has ${frag}`, ok: src.includes(String(frag).toLowerCase().replace(/\s+/g, '')) }));
+    if (rules.columns) out.push({ label: `The table has the columns ${rules.columns.join(', ')}`, ok: lines.length > 0 && norm(lines[0]) === rules.columns.map((c) => String(c).trim().toLowerCase()).join('|') });
+    if (rules.rows !== undefined) out.push({ label: rules.rows === 0 ? 'The query finds no rows' : `The table has ${rules.rows} row${rules.rows === 1 ? '' : 's'}`, ok: Math.max(0, lines.length - 1) === rules.rows && (rules.rows > 0 || lines.length === 0 || lines.length === 1) });
+    if (rules.result) out.push({ label: 'The table is the one asked for', ok: norm(output || '') === norm(rules.result) });
+    return out;
+  }
   // kind 'html': HTML and CSS (comments are <!-- --> and /* */; # is a colour or a link, not a comment; case does not matter).
   if (kind === 'html') {
     const src = String(text).replace(/<!--[\s\S]*?-->/g, '').replace(/\/\*[\s\S]*?\*\//g, '').toLowerCase();
@@ -192,7 +211,7 @@ export const snippetId = (label) => String(label).toLowerCase().replace(/[^a-z0-
 
 /** Which playground (and so which snippet list) a step's unlocks refer to. */
 // The Python playground (Pyodide) shares the turtle playground's Python snippets, unlocks and code rules.
-export const unlockKind = (lesson, step) => (['python', 'microstudio'].includes(step.config.try?.playground) ? 'turtle' : step.config.try?.playground === 'dom' ? 'html' : step.config.try?.playground) || (lesson.language === 'html' ? 'html' : lesson.language === 'javascript' ? 'p5' : lesson.language === 'science' ? 'science' : 'turtle');
+export const unlockKind = (lesson, step) => (['python', 'microstudio'].includes(step.config.try?.playground) ? 'turtle' : step.config.try?.playground === 'dom' ? 'html' : step.config.try?.playground) || (lesson.language === 'html' ? 'html' : lesson.language === 'javascript' ? 'p5' : lesson.language === 'sql' ? 'sql' : lesson.language === 'science' ? 'science' : 'turtle');
 
 export const DEFAULT_PACING = {
   typeCps: 55,        // characters per second when code is "typed" into the stage's code panel
@@ -481,7 +500,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       const r = k.rules;
       if (!r || typeof r !== 'object' || Array.isArray(r)) err(where, `check (code) needs rules, a mapping using ${CODE_RULES.join(', ')}`);
       else {
-        for (const key of Object.keys(r)) if (!CODE_RULES.includes(key)) err(where, `unknown code rule "${key}" (use ${CODE_RULES.join(', ')})`);
+        for (const key of Object.keys(r)) if (![...CODE_RULES, ...SQL_RULES].includes(key)) err(where, `unknown code rule "${key}" (use ${CODE_RULES.join(', ')})`);
         for (const key of ['defs', 'calls', 'loops', 'returns', 'params']) if (r[key] !== undefined && !(Number.isInteger(r[key]) && r[key] > 0)) err(where, `code rule ${key} must be a whole number above 0`);
         if (r.uses !== undefined && !(Array.isArray(r.uses) && r.uses.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule uses must be a list of names, such as [pencolor]');
         if (r.imports !== undefined && !(Array.isArray(r.imports) && r.imports.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule imports must be a list of module names');
@@ -489,13 +508,16 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         const frags = (v) => Array.isArray(v) ? v.every((f) => typeof f === 'string' && f.trim()) : typeof v === 'string' && v.trim();
         if (r.inside !== undefined && !(r.inside && typeof r.inside === 'object' && !Array.isArray(r.inside) && Object.keys(r.inside).length && Object.values(r.inside).every(frags))) err(where, 'code rule inside must map a block to code fragments, such as { "basic.forever": ["basic.pause("] }');
         if (r.count !== undefined && !(r.count && typeof r.count === 'object' && !Array.isArray(r.count) && Object.keys(r.count).length && Object.values(r.count).every((n) => Number.isInteger(n) && n > 0))) err(where, 'code rule count must map a code fragment to a whole number, such as { "basic.show": 3 }');
+        if (r.rows !== undefined && !(Number.isInteger(r.rows) && r.rows >= 0)) err(where, 'code rule rows must be a whole number (0 or more)');
+        if (r.columns !== undefined && !(Array.isArray(r.columns) && r.columns.length && r.columns.every((f) => typeof f === 'string' && f.trim()))) err(where, 'code rule columns must be a list of column names');
+        if (r.result !== undefined && !(typeof r.result === 'string' && r.result.trim())) err(where, 'code rule result must be the expected table as text: a header line, then one line per row, values joined by " | "');
         if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
       }
-      const pk = c.try ? ({ python: 'turtle', dom: 'html' }[c.try.playground] || c.try.playground || (lesson.language === 'html' ? 'html' : lesson.language === 'javascript' ? 'p5' : 'turtle')) : null;
-      if (!pk || !['turtle', 'html', 'p5', ...MAKECODE_KINDS].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
+      const pk = c.try ? ({ python: 'turtle', dom: 'html' }[c.try.playground] || c.try.playground || (lesson.language === 'html' ? 'html' : lesson.language === 'javascript' ? 'p5' : lesson.language === 'sql' ? 'sql' : 'turtle')) : null;
+      if (!pk || !['turtle', 'html', 'p5', 'sql', ...MAKECODE_KINDS].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
       else if (r && typeof r === 'object') {
-        const allowedR = pk === 'html' ? HTML_RULES : pk === 'p5' ? P5_RULES : MAKECODE_KINDS.includes(pk) ? MAKECODE_RULES : CODE_RULES.filter((x) => !['tags', 'inside', 'count'].includes(x));
-        const pname = pk === 'html' ? 'HTML' : pk === 'p5' ? 'p5.js' : MAKECODE_KINDS.includes(pk) ? 'MakeCode' : 'turtle';
+        const allowedR = pk === 'sql' ? SQL_RULES : pk === 'html' ? HTML_RULES : pk === 'p5' ? P5_RULES : MAKECODE_KINDS.includes(pk) ? MAKECODE_RULES : CODE_RULES.filter((x) => !['tags', 'inside', 'count'].includes(x));
+        const pname = pk === 'sql' ? 'SQL' : pk === 'html' ? 'HTML' : pk === 'p5' ? 'p5.js' : MAKECODE_KINDS.includes(pk) ? 'MakeCode' : 'turtle';
         for (const key of Object.keys(r)) if (CODE_RULES.includes(key) && !allowedR.includes(key)) err(where, `code rule ${key} does not work in the ${pname} playground (use ${allowedR.join(', ')})`);
         if (r.tags !== undefined && !(Array.isArray(r.tags) && r.tags.every((t) => /^[a-z][a-z0-9]*$/i.test(String(t))))) err(where, 'code rule tags must be a list of tag names without brackets, such as [ul, li]');
       }
@@ -935,7 +957,10 @@ function validateTeacher(lesson, snip, err) {
       try { code = snip(ref); } catch (e) { err(w, `solutions.${id}: ${e.message}`); continue; }
       // A solution must pass the check it answers.
       if (item.check?.type === 'code' && item.check.rules) {
-        const failed = evalRules(item.check.rules, code, unlockKind(lesson, item.step)).filter((r) => !r.ok).map((r) => r.label);
+        const uk = unlockKind(lesson, item.step);
+        if (uk === 'sql' && !sqlRunner) continue;
+        let out; if (uk === 'sql') { try { out = sqlRunner(item.step.config.try?.db, code); } catch (e) { err(w, `solutions.${id}: the query fails: ${e.message}`); continue; } }
+        const failed = evalRules(item.check.rules, code, uk, out).filter((r) => !r.ok).map((r) => r.label);
         if (failed.length) err(w, `solutions.${id} fails its own check: ${failed.join('; ')}`);
       }
     }
