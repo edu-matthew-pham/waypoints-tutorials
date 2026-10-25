@@ -125,6 +125,10 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'Check your school', u: 'check/', d: 'Can your school devices and network run the in-browser Python lessons?' },
     { t: 'Choosing AI tools for learning', u: 'choosing-ai-tools/', d: 'A teacher guide to comparing AI tools fairly.' },
     { t: 'For science teachers', u: 'science-teachers/', d: 'How the science boards sit beside class practicals, and a draft list of common Year 7 to 10 practicals to correct.' },
+    { t: 'For code teachers', u: 'code-teachers/', d: 'Which Code course to start with, how a lesson runs, what you need in the room, and a review sheet.' },
+    { t: 'For How computers work teachers', u: 'systems-teachers/', d: 'Which course to start with and what each needs: data, networks, security, hardware and the command line.' },
+    { t: 'For engineering teachers', u: 'engineering-teachers/', d: 'What each Engineering course needs (browser only, or kits and a printer) and where to start.' },
+    { t: 'For Learning with AI teachers', u: 'ai-teachers/', d: 'What the five AI courses are, the rules for using real AI, and where to start with a class.' },
     { t: 'For maths teachers', u: 'maths-teachers/', d: 'What is here for Years 7 and 8 maths and a ten-minute tour.' },
   ]) add({ ...p, s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', k: `${p.t} ${p.d} teacher teachers` });
   return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel, typical: (path) => typical.has(path) };
