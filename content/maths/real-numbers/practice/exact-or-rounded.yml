@@ -1,0 +1,12 @@
+# Practice for "Exact or rounded?".
+templates:
+  - q: "A square patch has an area of {a} m². Its side is √{a} m. What is the side to 2 decimal places?"
+    vars: { a: [20, 30, 40, 50, 60, 70, 80, 90] }
+    answer: "{rd(sqrt(a), 2)}"
+    tolerance: 0.006
+    explain: "√{a} = {sqrt(a)}…, so {rd(sqrt(a), 2)}."
+  - q: "Edging goes round a square patch of area {a} m² (4 sides). To 1 decimal place, how long is it? Use the full calculator value, then round at the end."
+    vars: { a: [20, 30, 40, 50, 60, 70, 80, 90] }
+    answer: "{rd(4 * sqrt(a), 1)}"
+    tolerance: 0.06
+    explain: "4 × √{a} = {4 * sqrt(a)}…, so {rd(4 * sqrt(a), 1)}."

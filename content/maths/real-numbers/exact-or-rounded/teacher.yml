@@ -1,0 +1,39 @@
+summary: "Students tell exact values like √50 from rounded decimals, see rounding early change an answer, and decide when to keep an exact form or round (AC9M9N01, node 2)."
+time: 35
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 8 min · Practise and Make 9 min"
+goals:
+  - I can say whether a value is exact or rounded.
+  - I can explain why rounding early causes errors.
+  - I can round at the end of a calculation.
+struggle: "Not rounding in the middle. Ask students to keep the calculator's full value, or write the exact form, until the last line."
+before: |
+  Students need Number families. Calculators needed.
+
+  The one idea: an exact value stays exact until the end; round once. The common mistake is rounding at the start and calling the result exact (Lee's working).
+
+  The patch is made up: area 50 m².
+running:
+  - "Predict: take a show of hands. Those who chose 50 m² assumed 7.1 was the exact side."
+  - "Run: ask students to press √50 on a calculator and read the digits aloud."
+  - "Paper: the try-one after the worked example and the edging in Make are worked on paper first. Books out, and look for rounding at the last line only."
+  - "Modify: before 7.07², ask if the answer will be more or less than 50."
+stuck:
+  - see: "A student rounds √50 to 7 and squares it."
+    ask: "What's 7 × 7? How far off is that from 50?"
+    fix: "49: round to more places, or keep the exact value."
+  - see: "A student writes 7.07 = √50."
+    ask: "Is 7.07 exactly the square root of 50?"
+    fix: "No: it's close. Use ≈."
+stretch: "How many decimal places of √50 do you need so that squaring gives 50.00 to 2 places?"
+support: "A card: 'exact' (√, π, fractions) and 'rounded' (decimals with ≈)."
+leads: |
+  Continues AC9M9N01 node 2.
+
+  Where it leads: tolerances and intervals (next), formulas with π and roots.
+exit:
+  q: "Which is exact: √8 or 2.83?"
+  a: "√8. 2.83 is rounded."
+explain: |
+  $\sqrt{50}$ is exact. 7.07 is rounded: close, but not equal. Keep the exact value or the calculator's full value through the calculation, and round once at the end.
+
+  Rounding early adds a small error that later steps can grow.

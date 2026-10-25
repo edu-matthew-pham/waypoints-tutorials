@@ -1,0 +1,8 @@
+# Lee's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lee
+A 1 m square has a diagonal of √2 m. Find the length of a cable that goes along 2 diagonals.
+√2 is about 1.4.
+2 diagonals: 2 × 1.4 = 2.8.
+So the cable is exactly 2.8 m.
+# endregion
