@@ -139,6 +139,8 @@ Risks: we depend on Microsoft's hosted editor and its unversioned message API. F
 
 ## Proposed (discussed, not decided)
 
+- **Create from a finished project** (25 Oct, Matthew asked to track): reverse-engineer a tutorial from a teacher's own project, using the concept scan to split taught and new ideas and cut it into milestones. Plan in roadmap/shared.md › Create from a finished project.
+
 **`smaller:` for Code (25 Oct 2026, code chat's reply to `shared.md` › Proposed 25 Oct, amended).** Not built; the shared push waits for Matthew's go.
 
 *Fit.* Yes for Modify, Make and Investigate tasks, where Code's sticking points are. But the review's three Code forms (a pre-filled trace row, the same code one line fewer, a filled Parsons) are not question, number or answer, so as ordered the first push gives Code nothing to write. Two small additions make it fit, both without boards: `trace` as a lead-in kind (a plain table check, no layout cost), and an optional display-only `code:` on the lead-in (`smaller: { code: file.py#region, check: {…} }`, rendered as the step's `code:` is). Parsons can wait. `answer` (Numbas) is maths only.

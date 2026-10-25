@@ -773,3 +773,20 @@ Add a `format-tutorial.md` to waypoints-kit, alongside its `format-prepare.md` (
 **Done (25 Oct 2026, maths chat; Matthew asked): `paper: true` on the `reasoning` check, for every subject.** Working done by hand, not typed: the working box becomes one line ("Work it out on paper first…" in maths, "Write it in your book or on paper first…" elsewhere), the answer and picks are marked as before, then the model solution shows with "Put your page beside this and compare, step by step" and a self-check about the page. Not Mathspace-style step marking: the page checks the answer, the student's page holds the working. Changes: `lesson-view.mjs` (render and handler; the handler works with no textarea), `lesson-core.mjs` (paper must be true; no placeholder), AUTHORING › reasoning. Used first in the maths pilots (Finding a side: try one after the worked example, the screen, the ladder; Pythagoras: the shortcut). Ideas for other subjects: trace tables by hand (code), force or particle diagrams (science), binary conversions and the tiny processor (Digital systems), written responses in the AI courses (unmarked, with `models:`).
 
 - **Built (25 Oct, code chat): project briefs for Console and p5.js.** `LANG_OF` has `p5: 'javascript'`; a brief may list `answers:` (typed at each `input()`), and `render-pictures` draws a Console example (no `turtle` in it) as its transcript through the turtle playground in console mode, and a p5 example with `p5Draw` (moved above the projects section). Existing project pictures are untouched (the section's hash base is unchanged). Needs a whole-site publish to go live.
+
+## Proposed (25 Oct 2026, Matthew asked to track; not built): Create from a finished project
+
+Teachers often work out a tutorial backwards: build an example project, then decide what is worth teaching from it. Create has no route for that today (its starts are a prompt that asks what to teach, opening existing lesson files, or an example lesson), so a pasted project gets no guidance and tends to become a tour of the code.
+
+Not all projects are alike. Some are hobby projects with many ideas at once; others were made for students and already fit a level. The route should ask which it is, because that changes how hard it cuts.
+
+**Proposed route, "Start from a project":**
+1. Paste or upload the finished code; say whether it was made for students or is a personal project.
+2. Scan it with `concepts-core.mjs` (already in the browser for Open projects): list the ideas it uses, split into "taught already" (with the lesson that `introduces:` it, from the pathway tags) and "new". Show "Do first" courses for anything taught elsewhere.
+3. The teacher picks the one or two new ideas worth teaching; the rest become starter code or labelled "copy for now" recipes.
+4. Cut the project into milestones, each a smaller working version teaching one new idea; the whole project becomes the final Make or challenge. A project made for students may need little cutting; a hobby project usually needs a simpler version first.
+5. Hand a tailored prompt to the AI step with the existing design questions (one idea, misconception, opening, checks, video), and optionally write a `projects.yml` brief from the same milestones.
+
+**Limits:** the scan reads Python, HTML/CSS and MakeCode only (Arduino C++, plain JavaScript and p5.js would get the planning help but no scan). Hobby projects are often beyond the class: the scan shows the gap; the starter has to hide the rest.
+
+Shared files it would touch: `create/index.html` (a fourth start card), `create/entry.mjs`, a new prompt beside `create/start-prompt.md`, and `concepts-core.mjs` (read only). Code notes point here (roadmap/code.md › Proposed).
