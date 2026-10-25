@@ -103,8 +103,8 @@
   var ZOOM = [
     { title: 'A person', text: 'About 37 trillion cells, nearly all with the same DNA.', draw: 'person' },
     { title: 'A cell', text: 'The nucleus holds the DNA.', draw: 'cell' },
-    { title: 'The nucleus', text: '46 chromosomes in 23 pairs: one of each pair from each parent.', draw: 'nucleus' },
-    { title: 'A chromosome', text: 'One very long molecule of DNA, coiled tightly around proteins.', draw: 'chromosome' },
+    { title: 'The nucleus', text: '46 chromosomes in 23 pairs: one of each pair from each parent. (Drawn here in the copied, X-shaped form they take before a cell divides.)', draw: 'nucleus' },
+    { title: 'A chromosome', text: 'One very long molecule of DNA, coiled tightly around proteins. The X shape is how it looks just after it has copied itself, ready for the cell to divide: two identical copies joined in the middle.', draw: 'chromosome' },
     { title: 'DNA', text: 'A double helix: two strands joined by pairs of bases (A with T, C with G).', draw: 'dna' },
     { title: 'A gene', text: 'A section of DNA whose order of bases is the instructions for one protein. Proteins build your characteristics.', draw: 'gene' },
   ];
