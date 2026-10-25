@@ -1,0 +1,8 @@
+# Pia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: pia
+Area of the large pizza, radius 15 cm.
+A = π × 15².
+Use π = 3.
+3 × 225 = 675, so the area is exactly 675 cm².
+# endregion

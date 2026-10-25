@@ -1,0 +1,37 @@
+summary: "Students substitute into formulas with π and roots, keep the value exact while they compare, and round once at the end, using a large pizza against two mediums (AC9M9N01, node 4)."
+time: 35
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 8 min · Practise and Make 9 min"
+goals:
+  - I can substitute real numbers, including π, into a formula.
+  - I can give an exact answer in terms of π.
+  - I can round at the end and say why.
+struggle: "Squaring the radius, not the diameter. Ask: half of 30 first."
+before: |
+  Students need Exact or rounded? and the Year 8 area of a circle. Calculators needed.
+
+  The one idea: keep π exact while you compare; round once at the end. The common mistake is rounding π to 3 and calling it exact (Pia's working).
+
+  The pizza sizes are made up for the task.
+running:
+  - "Predict: take a show of hands. Those who chose one large went by width, not area."
+  - "Run: ask students to say the radius before they square it."
+  - "Paper: the try-one after the worked example and the extra pizza in Make are worked on paper first. Books out, and look for π left unmultiplied until the end."
+  - "Modify: before diameter 12, ask what the radius is."
+stuck:
+  - see: "A student squares 30 to get 900π."
+    ask: "Is 30 the radius or the diameter?"
+    fix: "The diameter: halve it. r = 15, 225π."
+  - see: "A student uses π = 3.14 and calls the answer exact."
+    ask: "Does π end at 3.14?"
+    fix: "No: it's approximate. Use ≈."
+stretch: "How big would a third pizza have to be to beat both? Use areas in π."
+support: "The formula card A = πr² with a worked example in terms of π."
+leads: |
+  Finishes AC9M9N01.
+
+  Where it leads: surface area and volume with π, Pythagoras with roots, error and tolerance.
+exit:
+  q: "A circle has diameter 10 cm. What's its exact area?"
+  a: "25π cm²."
+explain: |
+  Keep π or a root exact while you work, and round once at the end. If π is on both sides of a comparison, you can compare the other numbers: $225\pi$ against $264.5\pi$.

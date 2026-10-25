@@ -242,7 +242,15 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 
 **3. What applies from the pilots.** Voice and "Writing the move" rules (maths-when-where-why.md); picture before symbols on every Predict (a hand SVG of the situation, never the answer); the opening never says what Predict asks; `smaller:` on the Practise task where the node's hinge bites, from the start; sources for every figure.
 
-**Still open (Matthew):** the 12 Oct plan said Year 9 waits for a class pilot of Algebra. The pilot lessons are ready for that but no class has used them yet. Build batch 1 now, or after a class has tried the pilots?
+**Batch 1 built (25 Oct 2026), not yet published, not yet tried with a class.** Matthew said to build ahead of a class pilot. 14 lessons, same shape as the pilots (picture-first Predict, a board Run where one helps, Investigate with a planted error, worked example then a paper try-one, Modify with an edge case, Practise with a review, Make back to the opening, Also used in), `smaller:` on the hinge Practise or Modify task, `paper: true` reasoning in Make:
+- Algebra, unit binomials: Two brackets, The pattern, Factorising quadratics, Expand or factorise? (9A02 n1–n4).
+- Real numbers, unit powers9: Negative powers, All the index laws, Index laws with letters (9A01 n1–n3).
+- Measurement, unit sci9: Scientific notation, Calculating in scientific notation, Real measurements (9M02 n1–n3).
+- Real numbers, unit reals9: Number families, Exact or rounded?, Ranges on the line, Formulas with π and roots (9N01 n1–n4); these four have no playground, only checks (one numberline board in Ranges).
+- Board changes (shared, need a full publish before these lessons work live): `tiles` `mode: binomial` (with `target:`), `indexlaws` `mode: negative`, `placevalue` `mode: scientific`. The `graph` board is reused unchanged in Expand or factorise?. No new widget.
+- Sourced figures: SI prefixes (BIPM), speed of light (NIST), Earth–Sun distance (NASA), light time (Smithsonian), hair width and red blood cell size (Wikipedia, Micrometre). Other sizes (garden, bowl, bolt hole, pizzas, patch) are labelled made up.
+- Not done: the numberline `nested sets` mode in the earlier plan was not needed (a sort check does it). Nothing in batch 1 has been checked by a teacher.
+- Do not publish these lessons with publish-lessons alone: the three board modes are outside content/ and need Matthew's full publish first.
 
 ## Done: Practise this skill card (12 Oct 2026)
 - Every lesson with a practice file ends with a "Practise this skill" card (after Now you can, before Next lesson) opening `<course>/practice/?skill=<lesson>`. Show the answer also appears after a second try that only missed the form.

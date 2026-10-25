@@ -1,0 +1,15 @@
+# Practice for "Formulas with π and roots".
+templates:
+  - q: "A circle has radius {r} cm. Its exact area is kπ cm². What's k?"
+    vars: { r: "2..15" }
+    answer: "{r * r}"
+    explain: "{r}² = {r * r}: {r * r}π."
+  - q: "A circle has diameter {d} cm. Its exact area is kπ cm². What's k?"
+    vars: { d: [4, 6, 8, 10, 12, 14, 16, 18, 20] }
+    answer: "{d * d / 4}"
+    explain: "r = {d / 2} and {d / 2}² = {d * d / 4}."
+  - q: "Use the π key. A circle has radius {r} cm. What's its area to 1 decimal place?"
+    vars: { r: "2..15" }
+    answer: "{rd(3.141592653589793 * r * r, 1)}"
+    tolerance: 0.06
+    explain: "π × {r * r} = {3.141592653589793 * r * r}…, so {rd(3.141592653589793 * r * r, 1)} cm²."
