@@ -79,6 +79,16 @@ Clips on these widgets re-record on the next full publish. AUTHORING updated for
 
 `playground-board/widgets/coordination.js`, feedback mode: `push: hot | cold` lets the Air slider go only one way from 22 °C (for the biology-9/feedback board lead-in in push (2)), and the board reports `e` (1 sweating, −1 shivering, 0 neither). No other board changes; only clips on the `coordination` widget re-record. AUTHORING › coordination updated, including what the model really does: in steady heat a smaller response stays on to hold 37 °C.
 
+## Changed by the science chat (25 Oct 2026): Year 7–10 rigour pass, more widget edits
+
+All widget code, so clips on these widgets re-record on the next full publish; no format or authoring change except where noted.
+
+- `universe`: reports `x`, the number of home galaxies space has been expanded from (documented in AUTHORING › universe); the redshift lesson's check uses it, because `e` never reset.
+- `climate`: the info line says the model lets all sunlight reach the ground (really about half is reflected or absorbed on the way down).
+- `forces`: the status line no longer says the forces are balanced when only left and right balance; it says up and down do not.
+- `selection` (in `playground-science/main.js`): the end message says whether the average colour moved towards or away from the ground; with a student hunter, Done hunting needs at least 5 beetles eaten; with `change: on`, the task is not done until the ground has been changed.
+- `cell`: the chromosome and nucleus zoom text says the X is the copied chromosome.
+
 ## Changed by the science chat (25 Oct 2026): `kscale:` on the reaction widget
 
 `playground-science/main.js` (science-owned, noted here because every science-board clip hashes it): the `reaction` widget takes `kscale:` (kelvins shown per model kelvin; default 1, so no other board changes). Used by Chemistry 8 *Hotter or colder?* so nitrogen + oxygen runs at a true 1800 K instead of 600 K. AUTHORING › Atoms and reactions has the line. All 17 science-board clips re-record on the next full publish.
