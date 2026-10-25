@@ -7,9 +7,9 @@ const root=join(dirname(fileURLToPath(import.meta.url)),'..');
 export async function buildValidator(dest) {
   const entries=[];
   const add=(name,body)=>entries.push(['waypoints-validator/'+name,body]);
-  for(const file of ['validate-lesson.mjs','lesson-validation.mjs','lesson-core.mjs','modules-scan.mjs','math-expr.mjs','diagram-core.mjs']) {
+  for(const file of ['validate-lesson.mjs','lesson-validation.mjs','lesson-core.mjs','modules-scan.mjs','math-expr.mjs','diagram-core.mjs','context-core.mjs']) {
     let text=readFileSync(join(root,'tools',file),'utf8');
-    if(file==='lesson-core.mjs')text=text.replace("from 'yaml'","from './vendor/yaml/index.js'");
+    if(file==='lesson-core.mjs'||file==='context-core.mjs')text=text.replace("from 'yaml'","from './vendor/yaml/index.js'");
     add(file,text);
   }
   const snippets={},shared={};
