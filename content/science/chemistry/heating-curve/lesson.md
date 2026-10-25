@@ -53,7 +53,7 @@ try: { playground: science, starter: "boards.yml#heat", height: 520 }
 check: { type: board, text: "Heat the water from ice to steam.", expect: { done: true } }
 ```
 
-Drag the temperature slider and watch the particles. Where does the heat go?
+Drag the temperature slider and watch what the particles do at each change of state. The slider only sets the temperature, so it can't show where the energy goes, but hold on to that question, because the graph in the next step is what answers it. Also, at exactly 0 °C and 100 °C real water is part one state and part the other, while the board shows just one.
 
 ## Explain: energy in, energy out
 
