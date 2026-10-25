@@ -706,7 +706,7 @@ export function promptHtml(p, id = '') {
     + `<p class="aip-row"><button type="button" class="aip-copy">Copy prompt</button> <span class="aip-note">Use an AI tool your school allows, and only if your teacher says you can. Check its reply with what you practised here.</span></p></div>`;
 }
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', diagramHtml = () => '', maths = null, blocksPicture = () => null } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, createHref = '', snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', diagramHtml = () => '', maths = null, blocksPicture = () => null } = deps;
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
   const isMaths = lesson.language === 'maths' && !!maths;
   // Answer checks with form: are marked by Numbas, loaded only on lessons that have one (tools/maths-forms.mjs).
@@ -875,7 +875,7 @@ ${explainHtml}
 ${steps}${tiered ? `<script>${WIDTH_JS}</script>` : ''}${extraHead}
 ${teachersHtml}
 ${recapHtml}${practiceCard}${nextCard}
-${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : '') + (hasForms && maths.forms ? `<script src="${esc(siteRoot)}${esc(maths.forms.src)}" defer></script><script>${maths.forms.js}</script>` : ''), siteNavHtml);
+${createHref ? `<aside class="wpt-mine"><a class="wpt-mine-btn" href="${esc(createHref)}">Make your own version</a><span>Opens a copy in Create, with its boards and marking, to change for your class. The original stays as it is.</span></aside><style>.wpt-mine{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin:2rem 0 .5rem;padding:.7rem 1rem;border:1px solid var(--line,#ddd);border-radius:10px;font-size:.9rem}.wpt-mine-btn{font-weight:600;padding:.4rem .8rem;border:1px solid currentColor;border-radius:8px;text-decoration:none}.wpt-mine span{opacity:.8}@media print{.wpt-mine{display:none}}</style>` : ''}${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : '') + (hasForms && maths.forms ? `<script src="${esc(siteRoot)}${esc(maths.forms.src)}" defer></script><script>${maths.forms.js}</script>` : ''), siteNavHtml);
 }
 
 // A choice of voices on voiced clips (roadmap/shared.md): the lesson's own voice is mixed into the .mp4; another

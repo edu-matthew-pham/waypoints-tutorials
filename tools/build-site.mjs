@@ -12,6 +12,7 @@ import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import { Marked } from 'marked';
 import { parse as YAMLparse } from 'yaml';
+import { lessonSource } from './lesson-source.mjs';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV_CSS, NAV_JS, makecodeBlock } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
 import { diagramSpec } from './diagram-core.mjs';
@@ -174,6 +175,7 @@ function conceptLinks(lesson) {
 function buildLesson(lesson, parentTitle, course) {
   const dir = join(OUT, lesson.slug);
   mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, 'source.json'), JSON.stringify(lessonSource(lesson))); // Make your own version (opens in Create)
   writeFileSync(join(dir, 'index.html'), lessonPageHtml(lesson, {
     Marked, highlightCode,
     snippet: (ref) => getSnippet(lesson.dir, ref),
@@ -189,6 +191,7 @@ function buildLesson(lesson, parentTitle, course) {
     siteRoot: '../'.repeat(lesson.depth),
     conceptLinks: conceptLinks(lesson),
     source: `content/${lesson.slug}/lesson.md`,
+    createHref: `${'../'.repeat(lesson.depth)}code/create/?open=${lesson.slug}`,
     teacherGuide: lesson.teacher ? `${'../'.repeat(lesson.depth)}${teachPath(lesson)}` : '',
     siteNavHtml: navFor(lesson.slug, 'lesson', lesson.slug.split('/').slice(0, -1).join('/')),
     maths: lesson.language === 'maths' ? { markedMath, textWithMath, workedHtml, forms: { js: FORMS_JS, src: `_numbas/numbas-jme.min.js?v=${NUMBAS_VERSION()}` } } : null,

@@ -11,6 +11,7 @@ import { highlightCode } from './highlight.js';
 import { setupAuthoring } from './authoring.mjs';
 import { setupWorkspace } from './workspace.mjs';
 import { setupEntry } from './entry.mjs';
+import { setFrontmatter } from './lesson-package.mjs';
 import { REQUEST_FORM_URL } from './config.js';
 import { DESIGN } from './design-decisions.mjs';
 import { EXAMPLE, EXAMPLES } from './lesson-starters.mjs';
@@ -387,6 +388,21 @@ try {
    try{const starter=await authoring.openNode(nodeParam);await workspace.addFiles(starter,{replaceInitial:!hasSaved});$('authorStatus').textContent='Opened a Primer starter from '+nodeParam+'. Check the goals, choose a misconception and width, then write the steps.'}
    catch(error){$('authorStatus').textContent=$('startStatus').textContent='Could not open that waypoint: '+error.message}
    const address=new URL(location.href);address.searchParams.delete('node');address.searchParams.set('workspace','1');history.replaceState(null,'',address);
+  }
+  // ?open=<lesson slug> ("Make your own version" on a lesson page): a copy of the lesson's folder, built beside the page as source.json.
+  const openParam=new URL(location.href).searchParams.get('open');
+  if(openParam){
+   try{
+    if(!/^[a-z0-9][a-z0-9\-/]*$/.test(openParam)||openParam.includes('//'))throw Error('that is not a lesson address');
+    const response=await fetch(new URL('../../'+openParam+'/source.json',location.href),{cache:'no-cache'});
+    if(!response.ok)throw Error('the lesson was not found on this site');
+    const src=await response.json();
+    const copy={...src.files};
+    copy['lesson.md']=setFrontmatter(copy['lesson.md'],{title:src.title+' (my version)',author:'Adapted from '+src.title+' (Learning Waypoints)'});
+    await workspace.addFiles(copy,{replaceInitial:!hasSaved});
+    $('packageStatus').textContent='Opened a copy of “'+src.title+'”. It is saved in this browser; the original is unchanged. If you share it, say where it came from.';
+   }catch(error){$('packageStatus').textContent=$('startStatus').textContent='Could not open that lesson: '+error.message}
+   const address=new URL(location.href);address.searchParams.delete('open');address.searchParams.set('workspace','1');history.replaceState(null,'',address);
   }
   setupEntry({hasSaved,addFiles:(next,options)=>workspace.addFiles(next,options),examples:EXAMPLES});
 } catch(error) { $('packageStatus').textContent=$('startStatus').textContent='Local draft/video storage unavailable: '+error.message+'. Allow browser storage and reload to open the workspace.'; }
