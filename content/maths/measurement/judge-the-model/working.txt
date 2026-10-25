@@ -1,0 +1,7 @@
+# Cam's report for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: cam
+Naismith's rule: 5 km/h plus 1 hour per 600 m of climb.
+The lookout walk is 8 km with 450 m of climb, so the rule gives 2.35 hours.
+Report to the teacher: our walk will take 2.35 hours.
+# endregion

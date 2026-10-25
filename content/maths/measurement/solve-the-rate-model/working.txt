@@ -1,0 +1,7 @@
+# Ben's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ben
+Up the lookout track: 8 km and 450 m of climb takes 2.35 hours.
+The way back is the same walk.
+So up and back is 2.35 × 2 = 4.7 hours.
+# endregion

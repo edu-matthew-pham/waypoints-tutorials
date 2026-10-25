@@ -1,0 +1,11 @@
+# Practice for "Solve the rate model".
+templates:
+  - q: "A walk is {d} km with no climb. How many hours by Naismith's rule (5 km/h)?"
+    vars: { d: "5..50 by 5" }
+    answer: "{d / 5}"
+    tolerance: 0.01
+    explain: "{d} ÷ 5 = {d / 5} hours."
+  - q: "A group has {h} hours of level walking at 5 km/h. How many km can they walk?"
+    vars: { h: "1..8" }
+    answer: "{5 * h}"
+    explain: "{h} × 5 = {5 * h} km."

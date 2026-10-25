@@ -1,0 +1,12 @@
+# Practice for "Judge the model".
+templates:
+  - q: "A group walks {d} km at {p} km/h on the flat. How many hours is that?"
+    vars: { d: [8, 12, 16, 20, 24], p: [4, 5] }
+    answer: "{d / p}"
+    tolerance: 0.01
+    explain: "{d} ÷ {p} = {d / p} hours."
+  - q: "The rule gives {a} hours and the group's pace gives {a + e} hours. How many hours longer is the group's time?"
+    vars: { a: "2..5", e: [0.25, 0.5, 0.75, 1] }
+    answer: "{e}"
+    tolerance: 0.01
+    explain: "{a + e} − {a} = {e}."

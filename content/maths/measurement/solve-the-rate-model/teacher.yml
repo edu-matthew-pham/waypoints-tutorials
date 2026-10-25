@@ -1,0 +1,34 @@
+summary: "Students use the rate model for the return trip and for planning a start time (AC9M9M05, node 2)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can use the model for a return trip.
+  - I can work back from a finish time.
+  - I can say what the answer means for the plan.
+struggle: "Counting the climb twice. Ask: does the way back climb as well?"
+before: |
+  Students need Set up a rate model.
+
+  The one idea: a model answers the question you ask it. Use it forwards and backwards, then decide what it means. Hours to minutes: 0.45 hours is 27 minutes.
+
+  Naismith's rule is a rule of thumb (bushwalk.com navigation FAQ, checked 25 October 2026). The track and times are made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the whole outing in Make is worked on paper first."
+stuck:
+  - see: "A student doubles the whole time."
+    ask: "Does the walk down climb?"
+    fix: "No: the climb is counted once."
+stretch: "Plan a real local walk using the rule and a map."
+support: "A printed timeline to fill in."
+leads: |
+  Continues AC9M9M05 node 2.
+
+  Where it leads: Judging the model.
+exit:
+  q: "0.5 hours is how many minutes?"
+  a: "30."
+explain: |
+  Use the model forwards to find a time, or backwards to find a distance or a start.
+
+  Say what the answer means for the plan, and leave a margin.

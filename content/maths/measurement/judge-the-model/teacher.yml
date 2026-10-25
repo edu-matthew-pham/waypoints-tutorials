@@ -1,0 +1,32 @@
+summary: "Students test a rate model against a different case and report its answer with its limits (AC9M9M05, node 3)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can say what a model assumes.
+  - I can test it with different numbers.
+  - I can report the answer with its limits.
+struggle: "Reporting the model's answer as fact. Ask: who was the rule made for?"
+before: |
+  Students need Solve the rate model.
+
+  The one idea: a model gives an estimate, and the report says what it assumes. The group pace of 4 km/h is made up for the task: real data is better (a guide time, a trial walk).
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the group's time in Make is worked on paper first."
+stuck:
+  - see: "A student says the rule is wrong."
+    ask: "Who was it built for?"
+    fix: "It's fine for its use: it is the use for a different group that's the issue."
+stretch: "Time a real walk and compare it with the rule."
+support: "A printed report frame: the answer, the range, the reason."
+leads: |
+  Continues AC9M9M05 node 3.
+
+  Where it leads: Year 10 modelling: which model fits.
+exit:
+  q: "Why report a range, not one number, from a model?"
+  a: "The model is an estimate; the range shows how much depends on its assumptions."
+explain: |
+  A model is only as good as what it assumes.
+
+  Test it on a different case and report the answer, the range and the reason.

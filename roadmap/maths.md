@@ -260,6 +260,18 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 - Sourced figures: ramps at most 1 in 14 for up to 9 m (AS 1428.1, via the Queensland Health slides); stopping distances 19, 27, 37 and 56 m at 30 to 60 km/h (Transport for NSW speeding page, checked 25 Oct 2026). The solve-the-model quadratic and the ball and phone-plan rules are labelled made up for the task.
 - Do not publish batch 2 with publish-lessons alone (the `rise:` directive is a board change).
 
+**Year 9 batch 3 built (25 Oct 2026), not yet published, not yet tried with a class.** 18 lessons, same shape as batches 1 and 2, each with a practice page, teacher.yml and misconceptions entries:
+- Trigonometry (Measurement, unit `trig9`, orders 21 to 27): name-the-sides, same-angle-same-ratio, sine-cosine-tangent (9SP01 n1 to n3), find-a-side-trig, find-an-angle, similar-triangles-scale, ramp-to-a-door (9M03 n1 to n4). Boards on the new `trig` widget in the first six (the last two have none).
+- Enlargement (Angles and shapes, unit `enlarge9`, orders 25 and 26): enlargement-keeps, scale-factors-area-volume (9SP02 n1, n2). No board: SVG pictures and checks.
+- Surface area and volume (Measurement, unit `solids9`, orders 28 to 30): surface-area-from-nets, volume-prisms-cylinders, area-volume-problems (9M01 n1 to n3). No board; the `net` cylinder and `prism` circle modes in the plan were not needed.
+- Measurement error (unit `error9`, orders 31 to 33): every-measurement-estimate, absolute-relative-error, percentage-error (9M04 n1 to n3). No board (numberline `interval:` not needed).
+- Proportion and rate models (unit `models9`, orders 34 to 36): proportion-rate-model, solve-the-rate-model, judge-the-model (9M05 n1 to n3), one Naismith's rule thread.
+- Board change (outside content/): new widget `playground-board/widgets/trig.js` (registered in the board's `index.html`): a right triangle with a marked angle `t` and hypotenuse `h`, sides named from the angle, live sin, cos and tan, `show:` to pick rows (or `none`), `switch: on` to look from the other angle. Full publish needed, with batch 1 and 2's board changes.
+- Sourced figures: the 1 in 14 ramp limit for up to 9 m (Queensland Health slides on AS 1428.1), 1 mm of rain on 1 m² is about a litre (Bureau of Meteorology climate data FAQ), Naismith's rule 5 km/h plus 1 hour per 600 m (bushwalk.com navigation FAQ). All checked 25 Oct 2026. Tree, flagpole, can, tank, bolt hole, swimmer times, screen sizes and the group's 4 km/h pace are labelled made up for the task.
+- Not built from the plan: no `similar` area and volume readouts, no `net` cylinder, no numberline interval (lessons use pictures and checks instead).
+- Do not publish batch 3 with publish-lessons alone (the `trig` widget is a board change).
+
+
 
 ## Year 10 plan (25 Oct 2026; planning only, nothing built)
 21 descriptors, 69 nodes, 23 of them hinges (`data/curriculum/maths.json`). About 59 lessons in five batches, same lesson shape as Year 9 batch 1 (picture-first Predict, a board Run where one helps, Investigate with a planted error, worked example then a `paper: true` try-one, Modify with an edge case, Practise with a review task, Make back to the opening, Also used in). Openings and Makes come from `data/connections/maths.yml`, which already covers every Year 10 node.
