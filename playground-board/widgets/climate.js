@@ -69,7 +69,7 @@
     panel.appendChild(bar);
     var a = albedo(), box = el('div', 'cinfo');
     box.appendChild(el('b', '', Math.round(a * 100) + '% of the sunlight is reflected; ' + Math.round(S * (1 - a)) + ' W/m² is absorbed and warms the surface.'));
-    box.appendChild(el('i', '', 'Light, bright surfaces (ice, snow) reflect most sunlight; dark surfaces (ocean, forest) absorb most. W/m² means joules of energy every second, for each square metre.'));
+    box.appendChild(el('i', '', 'Light, bright surfaces (ice, snow) reflect most sunlight; dark surfaces (ocean, forest) absorb most. W/m² means joules of energy every second, for each square metre. This model lets all the sunlight reach the ground; really, clouds and the air reflect or absorb about half of it on the way down.'));
     panel.appendChild(box);
   }
 

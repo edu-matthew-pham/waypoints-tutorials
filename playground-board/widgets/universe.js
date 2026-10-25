@@ -6,7 +6,8 @@
 //                    galaxy as home and every other galaxy moves away from it, faster the farther it is. Click galaxies
 //                    to measure their distance, speed and the redshift of their light; the points build Hubble's graph.
 //                    Values: e 1 once space has expanded by half again, h home galaxies tried, m galaxies measured,
-//                    z largest redshift measured (×1000), q 1 once the graph has 3 points or more
+//                    z largest redshift measured (×1000), q 1 once the graph has 3 points or more, x home galaxies
+//                    space has been expanded from
 (function (B) {
   'use strict';
   var spec = null, st = null, bd = null, raf = 0;
@@ -156,7 +157,7 @@
     ex.addEventListener('click', function () {
       if (st.playing) return; st.playing = true; B.moved = true; var a0 = st.a, a1 = st.a < 1.02 ? 1.6 : 1, t0 = performance.now();
       cancelAnimationFrame(raf);
-      (function tick(now) { var f = Math.min(1, (now - t0) / 2500); st.a = a0 + (a1 - a0) * f; bd.update(); if (f < 1) raf = requestAnimationFrame(tick); else { st.playing = false; if (st.a >= 1.5) st.expanded = 1; st.pts = {}; Object.keys(st.measured).forEach(function (k) { var d = Math.hypot.apply(null, posAt(GALS[k], st.a)) * UNIT; st.pts[k] = [d, H0 * d]; }); paintExpand(); report(); } })(t0);
+      (function tick(now) { var f = Math.min(1, (now - t0) / 2500); st.a = a0 + (a1 - a0) * f; bd.update(); if (f < 1) raf = requestAnimationFrame(tick); else { st.playing = false; if (st.a >= 1.5) { st.expanded = 1; st.from[st.home] = 1; } st.pts = {}; Object.keys(st.measured).forEach(function (k) { var d = Math.hypot.apply(null, posAt(GALS[k], st.a)) * UNIT; st.pts[k] = [d, H0 * d]; }); paintExpand(); report(); } })(t0);
     });
     var hm = el('button', '', st.pick === 'home' ? 'Click a galaxy to live in…' : 'Live in a different galaxy'); hm.type = 'button'; hm.setAttribute('aria-pressed', String(st.pick === 'home'));
     hm.addEventListener('click', function () { st.pick = st.pick === 'home' ? null : 'home'; paintExpand(); });
@@ -180,7 +181,7 @@
       msg = n + ' of ' + STAGES.length + ' stages visited.'; ok = n === STAGES.length;
     } else {
       var m = Object.keys(st.measured).length, q = Object.keys(st.pts).length;
-      vars = { e: st.expanded, h: Object.keys(st.homes).length, m: m, z: Math.round(st.zmax * 1000), q: q >= 3 ? 1 : 0 };
+      vars = { e: st.expanded, h: Object.keys(st.homes).length, x: Object.keys(st.from).length, m: m, z: Math.round(st.zmax * 1000), q: q >= 3 ? 1 : 0 };
       msg = (st.expanded ? 'Space has expanded. ' : '') + m + ' galaxies measured from ' + vars.h + ' home galax' + (vars.h === 1 ? 'y' : 'ies') + '.'; ok = st.expanded && q >= 3;
     }
     B.say(msg, ok);
@@ -198,7 +199,7 @@
         return;
       }
       var c = 0, bi = 0; GALS.forEach(function (g, i) { var d = Math.hypot(g.x, g.y); if (i === 0 || d < c) { c = d; bi = i; } });
-      st = { a: 1, home: bi, homes: {}, measured: {}, pts: {}, sel: null, zmax: 0, expanded: 0, pick: null, playing: false };
+      st = { a: 1, home: bi, homes: {}, from: {}, measured: {}, pts: {}, sel: null, zmax: 0, expanded: 0, pick: null, playing: false };
       st.homes[bi] = 1; buildExpand(); paintExpand(); report();
     },
     redraw: function () { if (spec.mode === 'timeline') { buildTimeline(); paintTimeline(); } else { buildExpand(); paintExpand(); } },

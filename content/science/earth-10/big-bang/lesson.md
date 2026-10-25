@@ -33,7 +33,7 @@ explainClip:
     - wait: 600
 hook: "The hydrogen nuclei in the water you drink were made in the first minutes of the universe. The carbon in you was made inside stars."
 ---
-Before weighing the evidence for the big bang, you need a clear picture of what the theory says.
+Before you weigh up the evidence for the big bang, it helps to be clear about what the theory actually says.
 
 ## Engage: an explosion?
 
@@ -68,10 +68,11 @@ tasks:
       type: parsons
       code: "timeline.txt#order"
       text: "Put the stages of the universe in order."
+    hint: ["Place the ones you're sure of first, and then for each of the others ask what had to be there already before it could form.", "The Explore board steps through every stage with its time and temperature, so go back to it and press Later → to check what came before what."]
   - check:
       type: question
       q: "Why could atoms only form after about 380 000 years?"
-      options: ["Before then the universe was too hot: electrons moved too fast to stay attached to nuclei", "There were no electrons", "Stars hadn't made them yet", "Gravity was too weak"]
+      options: ["Before then the universe was too hot: light and other radiation had enough energy to knock electrons off any atom as soon as it formed", "There were no electrons", "Stars hadn't made them yet", "Gravity was too weak"]
       answer: 0
       feedback: [null, "Electrons were there, but too energetic.", "Hydrogen and helium atoms came first, before any stars.", "It's about temperature, not gravity."]
   - check:
@@ -126,7 +127,7 @@ check:
   q: "Measurements show the universe's expansion is speeding up, and galaxies hold far more mass than we can see. How do scientists treat these findings?"
   options: ["They add new ideas (dark energy, dark matter) to the model and test them with new observations, from telescopes such as ASKAP in Western Australia", "They throw out the big bang theory", "They ignore them", "They prove the universe is shrinking"]
   answer: 0
-  feedback: [null, "The core evidence (redshift, the microwave background, the hydrogen and helium proportions) still fits.", "Science follows the evidence.", "It's expanding, faster over time."]
+  feedback: [null, "The core evidence (redshift, the microwave background, the hydrogen and helium proportions) still fits.", "Scientists can't ignore a measurement, so they have to explain it.", "It's still expanding, and faster over time, not shrinking."]
 ```
 
 ## Evaluate: look back

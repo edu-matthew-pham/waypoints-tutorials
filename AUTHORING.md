@@ -1368,7 +1368,7 @@ Vary, Practise, Make).
     `mode: expand`, a field of galaxies: "Let space expand" stretches distances ×1.6; "Live in a different galaxy"
     re-centres; click galaxies to measure distance, speed (H₀ about 70 km/s/Mpc) and a spectrum with the shift drawn
     5 times bigger; points build a distance–speed graph. Values: `e` 1 once expanded, `h` homes tried, `m`
-    measured, `z` largest redshift ×1000, `q` 1 with 3 or more points.
+    measured, `z` largest redshift ×1000, `q` 1 with 3 or more points, `x` home galaxies space has been expanded from.
   - `widget: climate` (AC9S10U04): `mode: albedo`, a row of surfaces (`tiles: ocean, forest, ice, ...`, 4 to 10;
     click to change; Melt the ice, Freeze the oceans, Clear the forests); values `a` % reflected, `e` absorbed W/m²,
     `i` ice tiles, `k` kinds used, `g` range of % reflected seen. `mode: balance` (Sunlight and Reflected sliders)

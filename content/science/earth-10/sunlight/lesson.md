@@ -29,7 +29,7 @@ explainClip:
     - wait: 600
 hook: "Fresh snow reflects about 80% of the sunlight that hits it. The open ocean reflects about 6%. When sea ice melts, that difference matters for the whole planet."
 ---
-To understand climate, start with the energy coming in.
+Climate starts with the energy coming in from the sun, and how much of it Earth keeps.
 
 ## Engage: does all sunlight warm the Earth?
 
@@ -49,7 +49,8 @@ check:
 stage: run
 insight: "Changing surfaces and watching the reflected and absorbed amounts shift makes albedo a measurable property."
 try: { playground: board, starter: "boards.yml#surfaces", height: 640 }
-check: { type: board, text: "Change the surfaces until you have seen the percentage reflected change by at least 30 points.", when: "g >= 30" }
+check: { type: board, text: "Change the surfaces until the percentage reflected has gone up or down by at least 30 (say from 30% to 60%).", when: "g >= 30" }
+hint: ["You need a big swing, so find the surface that reflects the most and the one that reflects the least, and turn as many tiles as you can into one and then into the other.", "Each tile shows its own percentage underneath, clicking a tile cycles it through the surfaces, and the buttons change every tile of one kind at once, so watch the Reflected figure at the top as you go."]
 ```
 
 Click a surface to change it, or use the buttons. Watch the white reflected arrows and the absorbed energy.
@@ -70,12 +71,13 @@ tasks:
         - ["Sea ice", "Reflects most"]
         - ["Dark forest", "Absorbs most"]
         - ["Thick white cloud", "Reflects most"]
+    hint: ["Picture each one from above on a sunny day and ask whether most of the sunlight would bounce back up or soak in and warm it.", "The board puts a percentage reflected under every surface, so check those numbers rather than going by how shiny something looks."]
   - check:
       type: question
       q: "Arctic sea ice melts and is replaced by open ocean. What happens to the energy absorbed there?"
       options: ["It increases, which warms the area and melts more ice", "It decreases", "It stays the same", "The ocean reflects more"]
       answer: 0
-      feedback: [null, "Ocean reflects far less than ice.", "Ice reflects about 80%, ocean about 6%.", "The ocean is darker."]
+      feedback: [null, "Ocean reflects far less than ice.", "Ice reflects about 80%, ocean about 6%.", "Dark ocean water reflects much less than white ice."]
   - check:
       type: question
       q: "Why does fresh snow reflect most of the sunlight that hits it, while the open ocean absorbs most?"

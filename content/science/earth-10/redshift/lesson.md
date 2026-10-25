@@ -56,6 +56,7 @@ tasks:
       feedback: [null, "Shorter wavelengths are at the violet end. Which way did the lines move?", "The colours across the spectrum are the same; only the dark lines have moved.", "Temperature changes the overall glow, not where hydrogen's lines sit."]
       explain: "Hydrogen always leaves its dark lines at the same wavelengths. Lines moved towards the red mean longer wavelengths: the light has been stretched. That is a redshift."
   - check: { type: board, text: "Let space expand, then measure at least three galaxies at different distances.", when: "e = 1 and q = 1" }
+    hint: "Press Let space expand first and wait for it to finish, then click one galaxy close to Home and a couple out near the edges, and each one you click adds a dot to the graph under the board."
 ```
 
 ### Reading a spectrum
@@ -111,13 +112,15 @@ tier: typical
 insight: "Seeing the same pattern from two home galaxies shows expansion has no centre."
 try: { playground: board, starter: "boards.yml#expand", height: 760 }
 tasks:
-  - check: { type: board, text: "Live in two different galaxies and let space expand from each.", when: "h >= 2 and e = 1" }
+  - check: { type: board, text: "Live in two different galaxies and let space expand from each.", when: "x >= 2" }
+    hint: ["Press Back to the start if space has already stretched, then press Live in a different galaxy and click the one you want to move to.", "Once you've moved, press Let space expand again, and the orange lines show how far each galaxy moved as seen from your new home."]
   - check:
       type: question
       q: "From the second home galaxy, what did the other galaxies do?"
       options: ["They all moved away, farther ones faster: the same pattern as before", "They moved towards it", "Only some moved", "Nothing"]
       answer: 0
-      feedback: [null, "Watch the orange lines from the new home.", "Not in an expanding universe.", "Every galaxy moved."]
+      feedback: [null, "Watch the orange lines from the new home.", "In an expanding universe they don't, from any home.", "Watch again: every galaxy moved away."]
+    hint: ["Look at the orange lines from your new home and compare how long they are for the galaxies close by and the ones far away.", "Then think back to what the lines looked like from your first home, and ask whether anything about the pattern was different."]
 ```
 
 ### Two homes
