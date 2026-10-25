@@ -1,0 +1,25 @@
+briefs:
+  - id: teach-the-shell
+    title: Teach the command line
+    after: permissions
+    nodes: ["AC9TDI10K01 n1", "AC9TDI10K01 n3"]
+    goal: |
+      Make a **one-page guide** or a **short screen recording** that teaches a Year 7 student the command line, using the pretend terminal from the lessons to show your examples.
+
+      It should show how to find and read files, how a pipe joins small commands, and how file permissions decide who may do what. It should also explain what the operating system is doing in all this.
+    handin:
+      - "Your guide or recording, with three commands, each with what it does and an example of it working."
+      - "One pipe of at least two commands, with what each part does and what comes out."
+      - "A permission string such as rw-r--r-- decoded in plain words, and one example of how it stops something from happening."
+      - "A short explanation of what the operating system does here, and how that is different from signing in."
+    milestones:
+      - "Your three commands are correct and each example works in the pretend terminal."
+      - "Your pipe works, and you can explain where each part's output goes."
+      - "Your permission string is decoded and your example shows the permission acting."
+      - "You have explained the operating system's job, in words a Year 7 student would follow."
+    stretch:
+      - "A short quiz with an answer key for a classmate to try."
+      - "Show what happens when someone tries a command they do not have permission for."
+      - "Explain why the same command works the same way on different computers."
+    teacher: |
+      The point is that the operating system sits between programs and hardware: the same small program works whether its input is the keyboard, a file or another program's output, because the operating system joins them. Strong guides say so in words a younger student could follow, rather than listing commands. For permissions, check that the example really shows the file being refused or allowed (a student who can read but not change a file). The last item separates proving who you are (signing in) from what you may do once you have (permissions): a distinction Access control and Who can read what both teach.

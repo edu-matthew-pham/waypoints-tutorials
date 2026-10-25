@@ -1,0 +1,25 @@
+briefs:
+  - id: dot-card-message
+    title: A secret message in dots
+    after: counting-dots
+    nodes: ["AC9TDI6K03 n1", "AC9TDI6K04 n1", "AC9TDI6K04 n2"]
+    goal: |
+      Send a **secret message** to a partner using only things that are **on or off**: dot cards, torch flashes or claps.
+
+      Pick a word of three or four capital letters. Turn each letter into its code number, then turn each number into a row of face-up and face-down dot cards. Your partner turns the cards back into numbers and then into letters to read your message.
+    handin:
+      - "Your word, kept secret until your partner has decoded it."
+      - "A table with one row for each letter: the letter, its code number and its row of cards (face up or face down)."
+      - "Your partner's decoded word, next to yours."
+      - "A short explanation: what the face-up and face-down cards stand for, and one other thing in the world that is either on or off."
+    milestones:
+      - "Each letter has its code number."
+      - "Each number is made with dot cards and written as face up or face down."
+      - "Your partner decoded the message and you checked it."
+      - "You can say what face up and face down mean, and how a letter ends up stored as cards."
+    stretch:
+      - "Send the message with a torch or claps instead of cards."
+      - "Add a space between two words and work out its code."
+      - "Find out how many different letters one row of cards could make."
+    teacher: |
+      Capital A is 65 and the codes go up in order, so seven cards (64, 32, 16, 8, 4, 2, 1) are enough for every capital letter. Students will need the code table from Letters as codes. Look for students who count the alphabet position (A is 1) instead of using the code, who add the dots of face-down cards, or who reverse the order of the cards. The explanation joins the three steps of the unit: letters are stored as numbers, and numbers are stored as on and off.

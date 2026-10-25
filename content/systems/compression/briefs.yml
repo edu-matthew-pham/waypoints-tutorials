@@ -1,0 +1,27 @@
+briefs:
+  - id: squash-it
+    title: Squash it and see
+    after: lossy-lossless
+    nodes: ["AC9TDI10K03 n1", "AC9TDI10K03 n2", "AC9TDI10K03 n3"]
+    goal: |
+      A club wants to share a lot of files without using up its storage or its internet. Your job is to find out **what compression really does**, and to say when it is safe to use.
+
+      Take **one image and one text document** your teacher approves. Save each in at least two ways, one that keeps everything and one that throws some away. Compare the file sizes and look closely at what changed. Then compress a short row of pixels by hand using run-length encoding, and have a partner rebuild it.
+    handin:
+      - "A table of file sizes: each file, each format, and its size, with a note on which formats keep everything and which do not."
+      - "Close-up pictures or a description of what changed in the image when information was thrown away."
+      - "A row of at least 20 pixels you designed, its run-length encoding, and your partner's rebuilt row next to the original."
+      - "A short explanation: one real reason file size matters, which of your files you would compress each way and why, and one thing that could go wrong if the wrong kind of compression were used."
+    milestones:
+      - "You have saved each file in at least two formats and recorded every size."
+      - "You have looked at the results closely and written down what is different, or that nothing is."
+      - "Your pixel row is encoded and your partner rebuilt it exactly."
+      - "You can say which kind of compression suits each of your files and give a reason."
+    stretch:
+      - "Find a picture that run-length encoding would shrink a lot and one it would hardly shrink, and say why."
+      - "Save the image at three quality levels and find where you first notice a difference."
+      - "Write the encoding of a row that gets longer when you run-length encode it."
+    teacher: |
+      Agree the files and the tools first. PNG, GIF, ZIP and similar keep everything; JPEG at lower quality throws information away. Exact sizes will differ between tools, which is fine: the pattern is the evidence. A photo usually shrinks well with JPEG and little with PNG, while a simple drawing with large areas of one colour does the opposite. Let students zoom in on a heavily compressed JPEG to see blocks and smudges.
+
+      For the explanation, strong answers match context to type: a bank statement, a program or a marked spreadsheet must come back exactly, so lossless; a holiday photo or a song usually does not need to. The consequence of getting it wrong is concrete, for example a number in a scanned document that is no longer readable. Check the run-length row: students sometimes encode the length without the value, or lose which colour comes first.

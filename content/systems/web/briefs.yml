@@ -1,0 +1,25 @@
+briefs:
+  - id: two-looks
+    title: One page, two looks
+    after: separation
+    nodes: ["AC9TDI10K02 n1", "AC9TDI10K02 n2", "AC9TDI10K02 n3"]
+    goal: |
+      A club has one page of information and wants it to look different for the website and for a printed noticeboard, without rewriting the page.
+
+      Make a **small page** about something you know well, with a heading, paragraphs and a list. Give it **one look** using CSS. Then give the same page **a second look** by changing only the CSS. Explain what each layer did.
+    handin:
+      - "Your page's HTML, the CSS for each look, and a screenshot of the page with each look."
+      - "A table sorting at least six things from your page into content, structure and presentation."
+      - "An explanation of one tag in your HTML and one rule in your CSS: what each one does that the other does not."
+      - "A sentence or two on why separating the layers helped when you made the second look."
+    milestones:
+      - "The HTML uses a heading, paragraphs and a list, and no styling."
+      - "The CSS gives the page a look by targeting tags or classes."
+      - "The second look changes only the CSS, and the HTML is exactly the same."
+      - "Your table and explanation are complete."
+    stretch:
+      - "A third look that reads well on a phone."
+      - "A look that uses a different layout, not just different colours."
+      - "Show what the page is like with no CSS at all, and explain why it still works."
+    teacher: |
+      Students can use the site's HTML playground or any editor the school approves; it is the separation that matters, not a clever design. Check that the HTML for both looks is identical: students often edit the HTML "just a little" for the second look, which is the point to discuss. In the table, the common slip is putting a tag such as a heading in the presentation column because it looks big. A strong explanation says the tag says what the text is, and the rule says how it looks.

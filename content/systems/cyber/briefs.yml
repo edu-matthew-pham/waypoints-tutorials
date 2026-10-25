@@ -1,0 +1,25 @@
+briefs:
+  - id: privacy-review
+    title: A privacy review
+    after: privacy
+    nodes: ["AC9TDI10P14 n1", "AC9TDI10P14 n2"]
+    goal: |
+      The club wants to know whether its app respects members' privacy. Read the description of **the club app** your teacher gives you, or the published privacy policy of an app your teacher approves, and review it against the **Australian Privacy Principles**.
+
+      Choose **two principles**, for example one about collecting information and one about using or sharing it. For each, find evidence in the app that it does or does not follow the principle, and suggest one specific change.
+    handin:
+      - "The two principles you chose, each in your own words, and whether it is about collecting, using or sharing information."
+      - "For each principle, a quote or a description from the app that is your evidence, and your judgement: does it comply?"
+      - "For each principle, one specific change the app should make."
+      - "A short note on which change you would make first and why."
+    milestones:
+      - "You have read the app's description or policy all the way through."
+      - "You can say what each of your two principles requires, in plain words."
+      - "You have found evidence for each one and made a judgement."
+      - "Each change is specific enough that a developer could act on it."
+    stretch:
+      - "Review a third principle."
+      - "Compare how two different apps deal with the same principle."
+      - "Write the sentence you would put on the sign-up screen to ask members' permission."
+    teacher: |
+      Give students a one-page description of the club app (what it collects, what it does with it, who it shares with), or approve a real policy that is short enough to read. The review is about the app, never about a person. Strong work names a specific principle (not "privacy in general"), quotes the evidence, and gives a change that follows from it, such as asking before sharing emails with a sponsor, or collecting only what the app needs. Watch for students who judge from general feelings, and for changes that are not actually specific, such as "be more careful with data".

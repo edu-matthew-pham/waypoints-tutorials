@@ -1,0 +1,25 @@
+briefs:
+  - id: protect-the-portal
+    title: Protect a school portal
+    after: keys
+    nodes: ["AC9TDI10K01 n3", "AC9TDI10K01 n4", "AC9TDI10K01 n5"]
+    goal: |
+      A made-up school portal holds student marks. Students sign in, and teachers can change marks. Your task is to explain **how the portal is kept safe**, from the moment a student signs in to the moment their marks are read.
+
+      Draw the journey of one sign-in and one mark change, labelling each protection where it acts. Then explain how the protections work together, and what would still go wrong if one of them were missing.
+    handin:
+      - "A labelled diagram of the journey, showing at least: the connection between the browser and the portal, how the password is stored, who may do what once signed in."
+      - "An explanation of what public and private keys protect and how, and what a hash protects and how it differs from encrypting something."
+      - "One example that shows the difference between proving who you are and being allowed to do something, and what the permission protects against."
+      - "A paragraph on how the protections depend on each other: for each of two protections, what would still be at risk if the other one were missing."
+    milestones:
+      - "Your diagram follows one sign-in from start to finish with every protection labelled."
+      - "You have explained what each protection guards: data on its way, stored data, and what a signed-in person may do."
+      - "Your example separates signing in from permission."
+      - "You have shown, for at least two protections, what is left open when the other is missing."
+    stretch:
+      - "Add what happens when a teacher turns on a second sign-in step."
+      - "Show where the portal's name is looked up and what could go wrong if someone lured a student to a look-alike name."
+      - "Say what you would check first if the portal had a break-in."
+    teacher: |
+      Defensive and conceptual only: the portal is made up, and students explain protections, not ways round them. Strong answers keep three ideas apart: public and private keys protect data on its way (only the holder of the private key can read it); a salted hash protects what is stored (the site keeps a fingerprint, not the password, and cannot turn it back); permissions decide what a signed-in person may do (a student can sign in correctly and still not change marks). The common slip is saying a hash is "encrypted" or that HTTPS protects stored passwords: Public and private keys and Hashes and salt are the lessons to return to. The last item is the node's main idea (10K01 n5): protections cover different risks, so they interact and none is enough alone.

@@ -1,0 +1,25 @@
+briefs:
+  - id: alarm-from-gates
+    title: An alarm from gates
+    after: combine
+    nodes: ["AC9TDI8K04 n3"]
+    goal: |
+      A school store room needs an alarm. It should sound when **the door is open or the window is open**, but **only when the key switch is off**.
+
+      Design the alarm using AND, OR and NOT gates. Test it on every combination of the three inputs, and explain why the computer inside it works with only on and off.
+    handin:
+      - "A diagram of your alarm built from gates, with each input and the output labelled."
+      - "A complete truth table for your alarm, with one row for each combination of the three inputs."
+      - "Evidence that you tested it, such as screenshots from a logic simulator or a hand trace of each row."
+      - "A paragraph explaining why the alarm, and computers in general, use two states, on and off, and what the gates do with them."
+    milestones:
+      - "Your plan says in words when the alarm should sound, row by row."
+      - "Your gates match the plan, and you can say what each gate outputs for any inputs."
+      - "Every row of the truth table has been tested, and any that failed have been fixed."
+      - "Your explanation links the gates to on and off states."
+    stretch:
+      - "Add a fourth input, such as a test button that always sounds the alarm."
+      - "Build the same alarm using only one kind of gate."
+      - "Add a memory so the alarm keeps sounding after the door is closed."
+    teacher: |
+      Students can use a logic simulator the school approves, the site's gates board from the lessons, or paper. The design is (door OR window) AND NOT key, so the alarm should sound in exactly 3 of the 8 rows (key off, and the door or the window or both open): check that students work out each row rather than copying one. Look for students who put the NOT in the wrong place, or who confuse OR with "exactly one". The last item is the node's main idea: two states are easy for electronics to tell apart reliably, so gates can be built from them and combined into any rule.
