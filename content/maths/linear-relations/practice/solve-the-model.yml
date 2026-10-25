@@ -1,0 +1,10 @@
+# Practice for "Use the model, check the answer".
+templates:
+  - q: "A length $x$ in metres satisfies $x^2 + {q - p}x - {p * q} = 0$. Lengths can't be negative. What is $x$?"
+    vars: { p: "1..5", q: "6..9" }
+    answer: "{p}"
+    explain: "(x − {p})(x + {q}) = 0 gives x = {p} or x = −{q}. Keep {p}."
+  - q: "The model $d = x^2 + x + 7$ gives the stopping distance in metres at $x$ tens of km/h. What is $d$ when $x = {x}$?"
+    vars: { x: "2..9" }
+    answer: "{x * x + x + 7}"
+    explain: "{x}² + {x} + 7 = {x * x + x + 7}."

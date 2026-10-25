@@ -1,0 +1,34 @@
+summary: "Students solve a quadratic model by factorising, keep the solution that fits the situation, and say how far the model can be trusted (AC9M9A05, nodes 2 and 3)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can solve a quadratic model for a real question.
+  - I can choose the solution that makes sense.
+  - I can say how far a model can be trusted.
+struggle: "Treating every solution as an answer. Ask: could the car really be going that fast backwards?"
+before: |
+  Students need Solve by factorising and Linear or quadratic.
+
+  The one idea: solve, then check each answer against the situation. Sometimes one is thrown out (negative speed); sometimes both fit (a ball going up and down).
+
+  The model is made up for the task from three Transport for NSW stopping distances (checked 25 October 2026).
+running:
+  - "Predict: ask for a show of hands, then let the board settle it."
+  - "Paper: the council question in Make is worked on paper first."
+stuck:
+  - see: "A student reports x = 7 as 7 km/h."
+    ask: "What does x count?"
+    fix: "Tens of km/h, so 7 is 70 km/h."
+stretch: "Find the speed at which the model gives 100 m and say why the answer is rough."
+support: "A printed worked example for x² + x − 60 = 0."
+leads: |
+  Continues AC9M9A05 nodes 2 and 3.
+
+  Where it leads: Changing the numbers in a rule.
+exit:
+  q: "Solving a model gives x = 4 or x = -3 for a length in metres. Which do you keep?"
+  a: "x = 4: a length can't be negative."
+explain: |
+  Solve the equation, then check each answer against the situation. Keep the ones that make sense.
+
+  Then say how far the model can be trusted: it is best near the data it was fitted to.

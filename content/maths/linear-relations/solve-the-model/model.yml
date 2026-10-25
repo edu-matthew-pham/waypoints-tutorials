@@ -1,0 +1,12 @@
+# Boards for "Use the model, check the answer".
+
+# region: run
+widget: graph
+x: -8, 8
+y: -5, 80
+grid: 1, 10
+axes: Speed (tens of km/h), Distance (m)
+slider t: 0, 80, 20, 1
+plot: y = x^2 + x + 7
+plot: y = t
+# endregion

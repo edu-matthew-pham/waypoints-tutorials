@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Solve x² + x + 7 = 37 for the speed x (tens of km/h).
+x² + x - 30 = 0, so (x + 6)(x - 5) = 0.
+x = -6 or x = 5.
+The speeds are 5 and -6, so 50 km/h and -60 km/h.
+# endregion
