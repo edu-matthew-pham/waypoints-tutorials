@@ -27,7 +27,7 @@ explainClip:
     - wait: 3000
     - caption: { text: "Shells fill in order: 2, then 8, then 8. The outer shell matters most.", say: "Shells fill in order: two, then eight, then eight. The outer shell matters most." }
     - wait: 800
-hook: "Neon glows in signs but never reacts with anything. Sodium, one proton heavier, catches fire in water. The difference is one electron."
+hook: "Neon glows in signs but never reacts with anything. Sodium, with just one more proton, fizzes violently in water and can catch fire. The difference is one electron."
 ---
 In Year 9 you met the atom with its tiny nucleus, and now you'll work out how its electrons are arranged.
 
@@ -50,6 +50,7 @@ stage: run
 insight: "Adding electrons one at a time shows each shell filling and a new one starting at 3 and 11, the rule students then state."
 try: { playground: board, starter: "boards.yml#sodium", height: 720 }
 check: { type: board, text: "Build sodium-23 and watch where each electron goes.", when: "t = 1" }
+hint: ["The card gives you the atomic number and the mass number, so set the protons and neutrons first and then add the electrons one at a time.", "Watch the shells in the line under the board as you add each electron, and notice when the next one has to go further out."]
 ```
 
 Add protons, neutrons and electrons one at a time. Watch the electrons: when does a new shell start?
@@ -72,6 +73,7 @@ tasks:
       options: ["2, 8, 7", "2, 15", "8, 8, 1", "2, 8, 8"]
       answer: 0
       feedback: [null, "The second shell is full at 8.", "Start from the first shell, which holds only 2.", "That's 18 electrons: argon."]
+    hint: ["Fill the shells from the inside out: how many fit in the first shell, and how many in the next, before you have to start a third?", "You can check on the board by giving the atom 17 electrons and reading the shells in the line under it."]
   - check:
       type: number
       q: "Magnesium has 12 electrons. How many are in its outer shell?"
@@ -111,8 +113,9 @@ tasks:
       q: "Potassium has one more electron than argon. Where does it go?"
       options: ["It starts a fourth shell: 2, 8, 8, 1", "Into the third shell: 2, 8, 9", "Into the first shell"]
       answer: 0
-      feedback: [null, "For the first 20 elements the third shell is full at 8.", "The first shell is full at 2."]
+      feedback: [null, "For the first 20 elements the third shell is treated as full at 8.", "The first shell is full at 2."]
       explain: "A full shell, then a new one: that's why potassium starts a new row of the periodic table."
+    hint: ["How many electrons can the third shell take for the elements up to 20, and how many has argon already got there?", "Add one more proton and one more electron on the board and see where the new electron goes."]
 ```
 
 ### Argon

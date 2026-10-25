@@ -49,9 +49,10 @@ stage: run
 insight: "Comparing times and the percentage of collisions that react shows energy, not just frequency, driving the change."
 try: { playground: science, starter: "boards.yml#compare", height: 600 }
 check: { type: board, text: "Run the reaction at two different temperatures and compare.", expect: { done: true } }
+hint: ["Do one run, then change only the temperature before you run it again, so you know that's what made the difference.", "Move the temperature slider first and then press Reset, because a run only counts if the temperature stays the same from start to finish."]
 ```
 
-Run it at 300 K first. Then press **Reset**, move the temperature (try 500 K) and run it again. Watch two numbers in the panel: **collisions** and **reactions**.
+Run it at 300 K first. Then move the temperature (try 500 K), press **Reset** so the new run starts clean, and run it again. Watch two numbers in the panel: **collisions** and **reactions**.
 
 ## Explain: collisions and energy
 
@@ -66,6 +67,7 @@ tasks:
       answer: 0
       feedback: [null, "Colour is just a code for atom type.", "Particles can collide many times before one collision reacts.", "They touched: that is what a collision is."]
       explain: "A collision reacts only if it has at least the activation energy. The rest bounce off."
+    hint: "Compare the collisions and reactions numbers in the panel: what was different about the few collisions that did react?"
   - check:
       type: sort
       q: "What happens when the temperature goes up?"
@@ -83,6 +85,7 @@ tasks:
       answer: 0
       feedback: [null, "Particles bounce or react on contact; they don't linger.", "The container stays the same size."]
       explain: "Temperature changes how hard particles hit far more than how often. That is why heat has such a big effect."
+    hint: "When you heated it on the board, what changed more: how many collisions there were, or the share of them that reacted?"
   - check:
       type: question
       q: "You want to test how temperature changes the rate of marble chips reacting with acid. Which plan is a fair test?"
@@ -161,6 +164,7 @@ insight: "A catalyst changes the threshold, not the particles' energy; comparing
 try: { playground: science, starter: "boards.yml#catalyst", height: 580 }
 tasks:
   - check: { type: board, text: "Compare the reaction with and without the catalyst.", expect: { done: true } }
+    hint: ["Do one run with the catalyst off, then turn it on and run it again with everything else the same.", "Press the Catalyst button first and then Reset, because a run only counts if nothing changes while it's going."]
   - check:
       type: question
       q: "With the catalyst, the reaction sped up but the temperature didn't change. How?"
@@ -168,6 +172,7 @@ tasks:
       answer: 0
       feedback: [null, "The temperature in the panel didn't change, so the particles' energies didn't either.", "A catalyst is not a reactant: it may join in along the way, but it is given back unchanged, so the same amount is there at the end."]
       explain: "A catalyst provides a route with a lower activation energy. (In the model it simply halves the threshold; real catalysts often work on their surface.)"
+    hint: "Did the temperature in the panel change when you turned the catalyst on, and what does that tell you about the particles' energy?"
 ```
 
 ### Compare

@@ -93,6 +93,7 @@ tasks:
         - ["2H₂O → 2H₂ + O₂ (electricity passed through water)", "Decomposition"]
         - ["magnesium + copper sulfate → magnesium sulfate + copper", "Displacement"]
         - ["chlorine + sodium bromide → sodium chloride + bromine", "Displacement", "Non-metals can displace each other too."]
+    hint: ["For each one, count how many substances go in and how many come out.", "When it's two in and two out, look at whether one element has ended up somewhere new, and line each equation up with the letter patterns you matched first."]
   - check:
       type: question
       q: "Zinc is more reactive than copper. What are the products of zinc + copper sulfate?"
@@ -100,6 +101,7 @@ tasks:
       answer: 0
       feedback: [null, "A displacement swaps one element for another; it doesn't add it.", "Zinc is more reactive, so it does displace copper.", "Sulfate stays joined to a metal."]
       explain: "The more reactive metal (zinc) takes the less reactive one's place: zinc + copper sulfate → zinc sulfate + copper."
+    hint: ["Does the zinc join on to the copper sulfate, or take something's place?", "Think back to the zinc and copper oxide board: what was the zinc joined to at the end, and what was left on its own?"]
   - check:
       type: question
       q: "Copper is put into zinc sulfate solution. What happens?"
@@ -107,6 +109,7 @@ tasks:
       answer: 0
       feedback: [null, "Displacement only goes one way: more reactive replaces less reactive.", "Copper doesn't react with zinc sulfate."]
       explain: "Reactivity decides whether a displacement happens."
+    hint: "Which of the two metals is more reactive, and which one would have to do the pushing out here?"
   - check:
       type: question
       q: "Aluminium burns in oxygen. It is a synthesis reaction (A + B → AB). What is the product?"
@@ -163,6 +166,7 @@ check:
   answer: 0
   feedback: [null, "Even heated strongly, copper won't take oxygen from zinc oxide.", "More copper wouldn't help."]
   explain: "A displacement goes only from more reactive to less reactive. The reactivity series (potassium, sodium, calcium, magnesium, aluminium, zinc, iron, copper, silver, gold) predicts which way."
+hint: "Which metal is more reactive, copper or zinc, and which one is already holding the oxygen?"
 ```
 
 ## Elaborate: making useful things

@@ -82,11 +82,13 @@ tasks:
       q: "A sample starts with 800 nuclei. How many are left after 3 half-lives?"
       answer: 100
       explain: "800 → 400 → 200 → 100. After 3 half-lives, an eighth is left."
+    hint: ["After the first half-life, how many are left, and is the next half going to be half of those or half of the 800?", "Write 800 at the top and take one step down for each half-life, halving whatever you had at the step before."]
   - check:
       type: number
       q: "Carbon-14 has a half-life of 5730 years. How many years until a quarter of a sample is left?"
       answer: 11460
       explain: "A quarter is left after 2 half-lives: 2 × 5730 = 11 460 years."
+    hint: ["How many half-lives does it take to get from the whole sample down to a quarter?", "On the board's graph a quarter is one of the dashed lines, so count how many half-lives the curve takes to get there."]
   - check:
       type: question
       q: "You watch one carbon-14 nucleus. When will it decay?"
@@ -94,6 +96,7 @@ tasks:
       answer: 0
       feedback: [null, "5730 years is when about half of a large sample has gone, not when any one nucleus goes.", "About half the nuclei last longer than one half-life."]
       explain: "Decay is random for each nucleus. Only for a large sample can we say how many will go in a given time."
+    hint: ["On the board, did the orange squares all go at the same moment, or one at a time?", "Press Start again and run it once more, and watch whether the same squares go first."]
   - check:
       type: question
       q: "A sample is heated, crushed and dissolved in acid. What happens to its half-life?"
@@ -132,6 +135,7 @@ tasks:
       answer: 12.5
       tolerance: 0.1
       explain: "330 minutes is 3 half-lives: 100% → 50% → 25% → 12.5%."
+    hint: ["How many half-lives of 110 minutes fit into 330 minutes?", "Start at 100% and halve it once for each half-life."]
   - check:
       type: question
       q: "Fluorine-18 is used in PET scans: it is made in the hospital, injected, and its radiation is detected outside the body. Why does a half-life of about 2 hours suit this?"
@@ -162,6 +166,7 @@ tasks:
       answer: 17190
       tolerance: 10
       explain: "An eighth is left after 3 half-lives: 3 × 5730 = 17 190 years."
+    hint: ["How many times do you have to halve the carbon-14 to get down to an eighth?", "Once you know how many half-lives that is, remember that each one is 5730 years."]
   - check:
       type: question
       q: "Radiocarbon dating works back to about 50 000 years. Why not further?"

@@ -53,13 +53,15 @@ try: { playground: board, starter: "boards.yml#sled", height: 640 }
 tasks:
   - starter: "boards.yml#sled"
     check: { type: board, text: "Change the rope's pull so the forces on the sled balance in both directions.", expect: { balanced: true } }
+    hint: ["Up and down already balance, so look only at the forces across and ask which one is bigger at the moment.", "The net force is written under the board, and the friction arrow's label shows its size as you change the rope."]
   - starter: "boards.yml#lift"
     check: { type: board, text: "A 500 kg lift moves up at a steady speed. Set the cable's pull so the forces balance.", expect: { balanced: true } }
+    hint: ["A steady speed means the lift's motion isn't changing, so how does the cable's pull have to compare with its weight?", "The line under the board shows the lift's weight, and the label on each arrow shows its size, so compare the two as you move the slider."]
 ```
 
 ### The sled
 
-Up and down already balance; work on the forces across.
+Up and down already balance, so the forces to work on are the ones across.
 
 ### The lift
 
@@ -78,6 +80,7 @@ tasks:
       answer: 0
       feedback: [null, "Forces the object exerts on other things belong on their diagrams, not this one.", "Every force goes on, including ones that balance."]
       explain: "One object, every force on it, each as an arrow starting at the object, labelled with what causes it and its size."
+    hint: "The sled pulls on the rope as well, so think about whether that force was drawn on the sled's diagram on the board."
   - check:
       type: number
       q: "A 600 N skydiver has 450 N of air resistance acting up on her. What is the net force on her, in newtons, downwards?"
@@ -95,6 +98,7 @@ tasks:
       answer: 0
       feedback: [null, "Balanced forces mean no change; it can still be moving.", "Speeding up needs a net force up."]
       explain: "First law: balanced forces keep the motion the same, here steady upward motion."
+    hint: "It's already moving up when you look at it, so think about what a net force would do to that motion and whether there is one."
   - check: { type: reflect, text: "I can draw a free body diagram, find the net force in each direction and say what the motion will do." }
 ```
 
@@ -119,12 +123,13 @@ insight: "Balancing two directions at once with four forces is the full multi-fo
 try: { playground: board, starter: "boards.yml#plane", height: 640 }
 tasks:
   - check: { type: board, text: "Set lift and thrust so the plane cruises: balanced in both directions.", expect: { balanced: true } }
+    hint: ["Take the two directions one at a time, up and down first and then across.", "The net force under the board only covers left and right, so check up and down by comparing the labels on the lift and weight arrows."]
   - check:
       type: question
       q: "The pilot now increases thrust a little and leaves everything else the same. What happens?"
       options: ["The plane speeds up: a net force forward", "Nothing changes", "The plane climbs straight up"]
       answer: 0
-      feedback: [null, "The forces across no longer balance.", "Thrust is forward; climbing needs more lift."]
+      feedback: [null, "The forces across no longer balance.", "Thrust pushes forward, and climbing needs more lift."]
       explain: "Thrust bigger than drag gives a net force forward, so the plane accelerates (until the extra speed raises the drag to match)."
 ```
 

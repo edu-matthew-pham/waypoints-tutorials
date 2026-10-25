@@ -6,7 +6,7 @@ show: H2 x15, Cl2 x15
 react: H2 + Cl2 -> 2 HCl
 ea: 3
 goal: compare
-caption: "Run it at one temperature, then reset, change the temperature and run it again."
+caption: "Run it at one temperature, then change the temperature, press Reset and run it again."
 # endregion
 
 # region: dilute
@@ -37,7 +37,7 @@ ea: 3
 catalyst: on
 slider: off
 goal: compare
-caption: "Run it without the catalyst, then reset, turn the catalyst on and run it again."
+caption: "Run it without the catalyst, then turn the catalyst on, press Reset and run it again."
 # endregion
 
 # region: explain

@@ -34,6 +34,7 @@ tasks:
       q: "A 1500 kg car has an engine force of 4000 N and a resistance of 1000 N. What is its acceleration (m/s²)?"
       answer: 2
       explain: "Net force = 4000 − 1000 = 3000 N. a = F ÷ m = 3000 ÷ 1500 = 2 m/s²."
+    hint: "Is the engine the only force on the car along the road, and which way does the other one point?"
   - check:
       type: number
       q: "It accelerates at 2 m/s² from rest. What is its speed after 6 s (m/s)?"

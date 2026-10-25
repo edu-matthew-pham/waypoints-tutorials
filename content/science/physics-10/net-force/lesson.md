@@ -48,7 +48,9 @@ insight: "Changing one force and watching the net force move by the same amount 
 try: { playground: board, starter: "boards.yml#car", height: 640 }
 tasks:
   - check: { type: board, text: "Change the driving force until the net force is zero.", when: "f = 0" }
+    hint: ["Add up everything pushing the car backwards first, and then ask how big the forward push has to be for the two sides to cancel.", "The net force is written under the board, and it tells you which way it points as well as how big it is."]
   - check: { type: board, text: "Now make the net force 1000 N backward (to the left). You can change both adjustable forces.", when: "f = -1000" }
+    hint: ["For the net force to point backwards, the backward side has to be bigger, so how much bigger does it need to be?", "You can change both the driving force and the air resistance, and the line under the board shows the net force and its direction after every click."]
 ```
 
 ### Balance them
@@ -77,6 +79,7 @@ tasks:
       q: "Two people push a stalled car forward with 300 N and 250 N. Friction acts backward with 400 N. What is the net force, in newtons? (forward is positive)"
       answer: 150
       explain: "Forward: 300 + 250 = 550 N. Backward: 400 N. Net: 550 − 400 = 150 N forward."
+    hint: ["Which of these forces push the car forward, and which push it back?", "Add up each side on its own first, and then compare the two totals."]
   - check:
       type: number
       q: "In a tug of war, Team A pulls left with 1800 N and Team B pulls right with 2100 N. What is the size of the net force, in newtons?"
@@ -89,6 +92,7 @@ tasks:
       answer: 0
       feedback: [null, "Weight is balanced by air resistance, so there is no net force to speed her up.", "Zero net force means no change in motion, not no motion."]
       explain: "Balanced forces give a net force of zero: the motion doesn't change. She keeps falling at the same speed (terminal velocity)."
+    hint: "She's already falling, so think about what a net force would do to that fall, and what happens when there isn't one."
   - check:
       type: sort
       q: "What will the motion do?"
@@ -97,7 +101,7 @@ tasks:
         - ["Net force 500 N forward", "Change (speed up, slow down or turn)"]
         - ["Net force 200 N backward on a moving bike", "Change (speed up, slow down or turn)", "It slows down."]
         - ["Forward 900 N, backward 900 N", "Stay the same"]
-        - ["A puck sliding on ice with no friction", "Stay the same", "No forces along its path: no net force."]
+        - ["A puck sliding on ice with no friction", "Stay the same", "With no forces along its path there is no net force."]
   - check:
       type: sort
       q: "Contact or non-contact force?"
@@ -136,13 +140,15 @@ insight: "Four forces, two adjustable, make students combine same-direction forc
 try: { playground: board, starter: "boards.yml#tug", height: 640 }
 tasks:
   - check: { type: board, text: "Change Ana's or Cai's pull until the rope doesn't move: net force zero.", when: "f = 0" }
+    hint: ["Add up the left team and the right team separately, and see which side is ahead and by how much.", "The net force under the board tells you which side is winning, and each click changes a pull by 50 N."]
   - check:
       type: question
       q: "Ana pulls 400 N and Ben 300 N to the left. Cai pulls 450 N to the right. How hard must Dee pull right for the net force to be zero?"
       options: ["250 N", "700 N", "150 N"]
       answer: 0
-      feedback: [null, "700 N is the whole left team; Cai already provides 450 N of it.", "Check: 450 + 150 = 600, not 700."]
+      feedback: [null, "700 N is the whole left team; Cai already provides 450 N of it.", "Add them again: 450 + 150 = 600, not 700."]
       explain: "Left: 400 + 300 = 700 N. Right must also be 700 N: 450 + 250 = 700."
+    hint: "Start with how hard the whole left team pulls, because the right team has to match that between them, and Cai is already doing part of it."
 ```
 
 ### Balance the rope
@@ -158,6 +164,7 @@ insight: "Running the board with a zero net force shows the car keeps its speed,
 try: { playground: board, starter: "boards.yml#cruise", height: 640 }
 tasks:
   - check: { type: board, text: "The car starts at 20 m/s. Set the driving force so it keeps a steady speed, then press Play and run it for at least 3 seconds.", when: "t >= 3 and f = 0 and v > 0" }
+    hint: ["A steady speed means the speed isn't changing, so what does the net force on the car have to be?", "Add up the two resistance forces, check the net force under the board before you press Play, and then watch the speed–time graph while it runs."]
   - check:
       type: question
       q: "The car's engine is still pushing with 1500 N, but it isn't speeding up. Why?"

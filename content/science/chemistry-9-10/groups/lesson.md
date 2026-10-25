@@ -74,12 +74,14 @@ tasks:
         - ["Neon (2, 8)", "Group 18"]
         - ["Argon (2, 8, 8)", "Group 18"]
         - ["Potassium (2, 8, 8, 1)", "Group 1"]
+    hint: ["Sodium has 11 electrons but it's in group 1, so which of its numbers does the group match?", "Click a few elements on the table board and compare their orange electrons with the group numbers along the top."]
   - check:
       type: question
       q: "Why do the noble gases (group 18) hardly react?"
       options: ["Their outer shells are full, so they don't tend to lose, gain or share electrons", "They are gases", "They have no electrons"]
       answer: 0
       feedback: [null, "Chlorine and fluorine are gases too, and very reactive.", "They have electrons: their shells are full."]
+    hint: ["Chlorine is a gas too and it's very reactive, so can being a gas be the reason?", "Click neon or argon on the table board and look at its outer shell."]
   - check:
       type: question
       q: "Element X is in group 17. What do you predict about it?"

@@ -51,6 +51,7 @@ stage: run
 insight: "Seeing whole molecules appear and the tally change with each coefficient makes balancing a count of real atoms, not a number puzzle."
 try: { playground: board, starter: "boards.yml#water", height: 720 }
 check: { type: board, text: "Balance the equation with the smallest whole numbers.", when: "l = 1" }
+hint: ["Which row of the tally says different right now, and which molecule could you have more of to fix it?", "Fix one row at a time, and each time you change a number, check whether another row has gone out."]
 ```
 
 Use **+** and **−** to change how many of each molecule there are. Watch the drawing and the atom tally: balanced means every row says "same".
@@ -68,11 +69,13 @@ tasks:
       answer: 0
       feedback: [null, "It balances the count but describes the wrong product.", "The size isn't the problem: the substance is."]
       explain: "The small numbers (subscripts) say what the substance is. Coefficients say how many molecules there are, which is the only thing you can choose."
+    hint: "What substance would H₂O₂ be, and is it the one you get when hydrogen burns?"
   - check:
       type: number
       q: "How many hydrogen atoms are in 2 H₂O?"
       answer: 4
       explain: "Each H₂O has 2 hydrogen atoms; two of them have 4."
+    hint: ["How many water molecules is 2 H₂O, and how many hydrogen atoms are in each one?", "Set H₂O to 2 on the board and count the white balls in the drawing."]
   - check:
       type: number
       q: "In CH₄ + 2 O₂ → CO₂ + 2 H₂O, how many oxygen atoms are on the products side?"
@@ -109,10 +112,13 @@ try: { playground: board, starter: "boards.yml#methane", height: 720 }
 tasks:
   - starter: "boards.yml#methane"
     check: { type: board, text: "Balance the burning of methane: CH₄ + O₂ → CO₂ + H₂O.", when: "l = 1" }
+    hint: ["Which element shows up in only one substance on each side? Start with that one and leave the tricky one till last.", "Oxygen is in both products, so it's easiest to sort out once carbon and hydrogen already say same."]
   - starter: "boards.yml#ammonia"
     check: { type: board, text: "Balance the making of ammonia: N₂ + H₂ → NH₃.", when: "l = 1" }
+    hint: ["Which row of the tally is out at the start, and which molecule can you change to fix just that row?", "Get the nitrogen right first and then the hydrogen, and if the board says every number can be divided, bring them all down."]
   - starter: "boards.yml#magnesium"
     check: { type: board, text: "Balance magnesium burning: Mg + O₂ → MgO.", when: "l = 1" }
+    hint: ["Which row of the tally is different at the start, and which molecule can you add to fix just that row?", "Fixing the oxygen will knock the magnesium out of step, so go back and fix that row next."]
 ```
 
 ### Methane

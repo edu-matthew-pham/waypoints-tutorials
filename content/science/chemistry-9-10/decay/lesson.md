@@ -89,16 +89,19 @@ tasks:
         - ["Stopped by a sheet of paper or a few centimetres of air", "Alpha"]
         - ["Stopped by a few millimetres of aluminium", "Beta"]
         - ["Reduced by thick lead or concrete, never stopped completely", "Gamma"]
+    hint: ["For each card, work out which of the three questions it answers: what leaves, what happens to the numbers, or what stops it, and then think back to what you saw for each kind.", "Press each button on the radon board again and read the line under the board, and fire each kind at the barriers to check how far it gets."]
   - check:
       type: number
       q: "Uranium-238 (92 protons) decays by alpha decay. What is the mass number of the new nucleus?"
       answer: 234
       explain: "An alpha particle takes 4 particles (2 protons, 2 neutrons): 238 − 4 = 234. The atomic number drops to 90, which is thorium: thorium-234."
+    hint: ["How many particles are in one alpha particle, counting the protons and the neutrons together?", "On the radon board, compare the mass number before and after you pressed Alpha decay."]
   - check:
       type: number
       q: "Carbon-14 (6 protons) decays by beta decay. What is the atomic number of the new nucleus?"
       answer: 7
       explain: "A neutron turns into a proton, so 6 + 1 = 7 protons: nitrogen. The mass number stays 14, so carbon-14 becomes nitrogen-14, which is stable."
+    hint: ["The beta electron comes out of the nucleus, not the shells, so what's left behind in the nucleus when it goes?", "Press Beta decay on the radon board and watch which of the two numbers changes in the line under the board."]
   - check:
       type: question
       q: "A nucleus gives out a gamma ray. What changes?"
@@ -106,6 +109,7 @@ tasks:
       answer: 0
       feedback: [null, "That is beta decay.", "That is alpha decay."]
       explain: "Gamma is energy, with no particles, so the protons and neutrons stay the same. Gamma rays usually come straight after an alpha or beta decay, carrying away the new nucleus's extra energy."
+    hint: ["Think about what a gamma ray is made of, and whether any of it could take protons or neutrons away.", "Press Gamma ray on the radon board and compare the name and the numbers before and after."]
   - check:
       type: question
       q: "A detector picks up radiation from a source through paper, but nothing once 5 mm of aluminium is in the way. What is the source giving out?"
@@ -148,6 +152,7 @@ insight: "Matching the kind of radiation to a job (treat from inside, image from
 try: { playground: board, starter: "boards.yml#iodine", height: 720 }
 tasks:
   - check: { type: board, text: "Iodine-131 is used to treat thyroid cancer. Decay it the way it really decays, until it is stable.", when: "s = 1 and r >= 1" }
+    hint: ["You don't have to guess, because after each press the line under the board tells you whether that's how iodine-131 really decays.", "If you pressed the wrong kind first, press Start again, because only a run done the real way from the start counts."]
   - check:
       type: question
       q: "Iodine-131 collects in the thyroid gland and gives out beta particles. Why does that suit treating thyroid cancer?"
@@ -179,6 +184,7 @@ insight: "The same alpha that a sheet of paper stops is safe in a smoke alarm an
 try: { playground: board, starter: "boards.yml#americium", height: 720 }
 tasks:
   - check: { type: board, text: "Smoke alarms hold a speck of americium-241, which gives out alpha particles. Decay it once the way it really decays.", when: "z = 93 and a = 237" }
+    hint: ["Read the first sentence of the task again, because it says what comes out of americium-241.", "After you press, check the line under the board, which says whether that's how americium-241 really decays."]
   - check:
       type: question
       q: "Why is the americium in a smoke alarm safe to have on the ceiling?"
@@ -193,6 +199,7 @@ tasks:
       answer: 0
       feedback: [null, "Alpha is alpha: it is where the source is that changes.", "Breathing has no effect on how fast a nucleus decays."]
       explain: "Outside the body, skin and air stop alpha. Inside, alpha delivers all its energy to the cells next to it. That is why homes over some rocks are tested for radon and ventilated."
+    hint: "What stops alpha outside your body, and is any of that left between the radon and your lung cells once you've breathed it in?"
 ```
 
 ### Americium

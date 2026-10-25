@@ -50,6 +50,7 @@ stage: run
 insight: "Removing every force from a moving object and watching it coast confronts the 'motion needs force' belief directly."
 try: { playground: board, starter: "boards.yml#puck", height: 640 }
 check: { type: board, text: "Get the puck moving, then turn the push to 0 and friction off, and watch it coast for a few seconds.", when: "t >= 3 and P = 0 and F = 0 and v > 0" }
+hint: ["The puck has to still be moving once both the push and friction are gone, so think about which one to change first.", "The line under the board shows the time, the speed and the acceleration, and the Friction button says whether it's on or off."]
 ```
 
 Press **Play** to push the puck. After a second or two, slide **Push** to 0 and turn **Friction** off. Watch the graph and the dots.
@@ -67,12 +68,13 @@ tasks:
       answer: 0
       feedback: [null, "Check the graph: a flat line means constant speed.", "Check the dots: they stayed evenly spaced."]
       explain: "No net force, no change in motion: Newton's first law."
+    hint: ["Think back to the board, and look at what the speed–time graph did once the push and friction were both gone.", "The dots under the track are dropped every half second, so their spacing shows whether the puck was covering the same distance each time."]
   - check:
       type: question
       q: "Which statement is Newton's first law?"
       options: ["An object stays at rest or keeps moving at a constant velocity unless a net force acts on it", "A moving object needs a force to keep it moving", "Every object eventually comes to rest", "Heavier objects are harder to keep moving"]
       answer: 0
-      feedback: [null, "That is Aristotle's idea, which the puck contradicts.", "Only when a force (often friction) stops it.", "Mass makes it harder to change motion, not to keep it going."]
+      feedback: [null, "That is Aristotle's idea, which the puck contradicts.", "It stops only when a force, often friction, acts against it.", "Mass makes it harder to change motion, not to keep it going."]
   - check:
       type: question
       q: "So why does a ball rolling on grass slow down and stop?"
@@ -80,12 +82,14 @@ tasks:
       answer: 0
       feedback: [null, "There is no store of force inside the ball.", "Gravity pulls down, not backwards, on flat ground.", "Only because a force acts: on smooth ice it goes much further."]
       explain: "The 'hidden' forces, friction and air resistance, are the net force that slows it."
+    hint: "Something has to change the ball's motion, so what's touching it while it rolls along?"
   - check:
       type: question
       q: "What is inertia?"
       options: ["An object's tendency to resist changes in its motion (more mass, more inertia)", "A force that keeps objects moving", "The friction on a moving object"]
       answer: 0
       feedback: [null, "Inertia isn't a force: it is resistance to a change in motion.", "Friction is a force; inertia is a property of the object."]
+    hint: "Think about the puck coasting on the board with the push at 0 and friction off, and ask whether anything was pushing it along."
   - check: { type: reflect, text: "I explained why a moving object doesn't need a force to keep moving, and what really slows things down." }
 ```
 
@@ -115,7 +119,7 @@ tasks:
       q: "Friction is 2 N and the puck's mass is 1 kg. While it slides, what is happening?"
       options: ["A net force of 2 N backwards makes it slow down steadily", "Its push slowly runs out", "Friction is balanced by its motion"]
       answer: 0
-      feedback: [null, "There is no push: Push is 0.", "Motion isn't a force; nothing balances friction here."]
+      feedback: [null, "There is no push at all, so the push is 0 N.", "Motion isn't a force; nothing balances friction here."]
       explain: "The only horizontal force is friction, so it is the net force. The graph slopes down in a straight line: steady slowing."
 ```
 

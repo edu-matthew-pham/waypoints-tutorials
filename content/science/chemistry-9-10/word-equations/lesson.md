@@ -127,6 +127,7 @@ tasks:
       answer: 0
       feedback: [null, "Where did the oxide's oxygen come from? Oxygen is a reactant.", "That is the reaction backwards.", "Light is energy, not a substance."]
       explain: "magnesium + oxygen → magnesium oxide."
+    hint: ["Where did the oxygen in magnesium oxide come from, and is the light something you could collect in a jar?", "Check that every element in the product turns up somewhere on the left of the arrow."]
   - check:
       type: question
       q: "Hydrochloric acid neutralises sodium hydroxide, making salt (sodium chloride) and water."
@@ -148,6 +149,7 @@ tasks:
       answer: 0
       feedback: [null, "The fizz is only one product; there are three.", "Water is missing.", "The acid is a reactant too."]
       explain: "Acid + carbonate → salt + water + carbon dioxide (the fizz)."
+    hint: "The question names three products, so check whether all three are on the right, and whether everything you started with is on the left."
 ```
 
 ### Magnesium
@@ -174,6 +176,7 @@ tasks:
       answer: 0
       feedback: [null, "Atoms are never made in a reaction.", "The extra mass is oxygen, a reactant."]
       explain: "The word equation shows it: magnesium + oxygen → magnesium oxide. The product contains the oxygen as well."
+    hint: "If the ash weighs more, something must have joined the magnesium, so what was around the ribbon while it burned?"
 ```
 
 ### Magnesium oxide

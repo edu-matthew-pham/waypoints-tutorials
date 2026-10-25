@@ -56,7 +56,9 @@ insight: "Tuning the push to hit a target acceleration for a given mass makes st
 try: { playground: board, starter: "boards.yml#fma", height: 660 }
 tasks:
   - check: { type: board, text: "Give the 4 kg trolley an acceleration of 2 m/s².", when: "m = 4 and a = 2" }
+    hint: ["How much does the acceleration reading go up each time you add one newton to the push?", "The acceleration is in the line under the board, after the time and the speed, and it changes as soon as you change the push, before you press Play."]
   - check: { type: board, text: "Now double the mass to 8 kg and get the same acceleration, 2 m/s².", when: "m = 8 and a = 2" }
+    hint: ["With twice the mass, does the same push give you more acceleration or less?", "Set the Mass to 8 kg first, then watch the acceleration under the board as you change the Push."]
 ```
 
 ### Target 1
@@ -78,7 +80,7 @@ tasks:
       q: "For 4 kg you needed 8 N; for 8 kg, 16 N. What rule links force, mass and acceleration?"
       options: ["Force = mass × acceleration (F = ma)", "Force = mass + acceleration", "Force = mass ÷ acceleration"]
       answer: 0
-      feedback: [null, "4 + 2 = 6, not 8.", "4 ÷ 2 = 2, not 8."]
+      feedback: [null, "With a mass of 4 kg and an acceleration of 2 m/s², adding gives 6, but the board needed 8 N.", "Dividing 4 by 2 gives 2, but the board needed 8 N."]
       explain: "8 = 4 × 2 and 16 = 8 × 2. F is the net force in N, m the mass in kg, a the acceleration in m/s²."
   - check:
       type: number
@@ -102,6 +104,7 @@ tasks:
       answer: 0
       feedback: [null, "F = ma uses the net force: the push minus the friction.", "Friction alone isn't the net force.", "Opposite forces subtract."]
       explain: "Net force 10 − 4 = 6 N, so a = 6 ÷ 2 = 3 m/s²."
+    hint: "Is the push the only force on the box along the floor, or is something working against it?"
   - check:
       type: match
       q: "Match each quantity to its unit."
@@ -145,6 +148,7 @@ tasks:
         - ["The mass doubles, same net force", "Halves"]
         - ["Both force and mass double", "Stays the same", "2F ÷ 2m = F ÷ m."]
         - ["The net force halves, same mass", "Halves"]
+    hint: ["Think back to the board, where twice the mass needed a different push to get the same acceleration.", "Take each change on its own, and ask whether it makes the trolley easier or harder to speed up."]
   - check:
       type: number
       q: "A trolley accelerates at 6 m/s². The net force is tripled and the mass stays the same. New acceleration, in m/s²?"
@@ -180,6 +184,7 @@ tasks:
       answer: 0
       feedback: [null, "Same deceleration with more mass needs more force: F = ma.", "More mass needs more force, not less."]
       explain: "F = ma: the same deceleration with more mass needs more force. With the same braking force, the loaded car would decelerate less and take longer to stop."
+    hint: "Think back to the board, when you doubled the mass but still wanted the same acceleration."
 ```
 
 ### Deceleration

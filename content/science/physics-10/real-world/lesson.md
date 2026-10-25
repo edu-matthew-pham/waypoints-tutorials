@@ -40,10 +40,11 @@ tasks:
   - check:
       type: question
       q: "A spearthrower (woomera) is a long, light lever that holds the back of the spear. Why does it make a spear go faster than throwing by hand?"
-      options: ["It makes the arm effectively longer, so the force acts on the spear for a longer time and distance, giving a bigger acceleration and a higher launch speed", "It makes the spear heavier", "It removes air resistance"]
+      options: ["It makes the arm effectively longer, so the force acts on the spear for a longer time and distance, and the spear leaves at a higher speed", "It makes the spear heavier", "It removes air resistance"]
       answer: 0
       feedback: [null, "A heavier spear would accelerate less.", "Air resistance is still there."]
       explain: "A longer push means more time to accelerate the spear, so it leaves at a higher speed. The same idea explains why a longer bow draw or a golf club swing launches faster."
+    hint: ["Think about what the thrower's arm does differently with the woomera, from the start of the throw to the moment the spear leaves.", "It's the same spear either way, so look for what changes about the push."]
   - check:
       type: number
       q: "A 1000 kg car going 20 m/s is stopped by crumple zones in 0.5 s. What is its acceleration (m/s², size only)?"
@@ -61,6 +62,7 @@ tasks:
       answer: 0
       feedback: [null, "A longer stop reduces the force.", "The time changes, so the acceleration and force do."]
       explain: "Twice the stopping time gives half the acceleration and so half the force: 20 000 N."
+    hint: ["What stays the same between the two crashes, and what changes?", "Work through it the same way as the 0.5 s crash, the acceleration first and then the force."]
   - check: { type: reflect, text: "I can use Newton's laws to explain a design or technique, and evaluate a safety feature with a calculation." }
 ```
 

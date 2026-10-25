@@ -51,6 +51,7 @@ stage: run
 insight: "Changing only the neutrons while the name stays 'Carbon' makes 'same element, different mass' something students see; the board's stable or radioactive line adds that isotopes can differ in stability."
 try: { playground: board, starter: "boards.yml#carbon", height: 720 }
 check: { type: board, text: "Keep 6 protons and make carbon-13 and carbon-14 as well.", when: "z = 6 and i >= 3" }
+hint: ["Which of the three rows can you change and still have carbon at the top of the board?", "Each time you change it, the mass number in the line under the board changes, so stop at 13 and then at 14."]
 ```
 
 Use **+** and **−** for the neutrons and watch the name at the top, the mass number and the line that says whether the nucleus is stable. Try a few more neutrons, or fewer.
@@ -79,6 +80,7 @@ tasks:
         - ["Mass number", "Different"]
         - ["How they react with oxygen", "Same", "Reactions depend on the electrons, and both have 6."]
         - ["Whether the nucleus is stable", "Different", "Carbon-12 is stable; carbon-14 is radioactive."]
+    hint: ["For each row, work out whether it depends on the protons, the neutrons or the electrons, then ask whether carbon-12 and carbon-14 have the same number of that.", "For the last row, build carbon-12 and carbon-14 on the board and compare what the line at the bottom says about each nucleus."]
   - check:
       type: number
       q: "Chlorine has two common isotopes, chlorine-35 and chlorine-37 (17 protons). How many neutrons are in chlorine-37?"
@@ -91,6 +93,7 @@ tasks:
       answer: 0
       feedback: [null, "Neutrons sit in the nucleus and take no part in reactions.", "It burns the same way: only its nucleus is different."]
       explain: "Isotopes of an element have the same number of electrons, so they react in the same way. Only the nucleus differs."
+    hint: "When atoms join up in a reaction, which of their particles take part, and has carbon-14 got any more or fewer of those than carbon-12?"
   - check:
       type: question
       q: "Some isotopes are unstable. What does that mean?"
@@ -98,6 +101,7 @@ tasks:
       answer: 0
       feedback: [null, "That is about reactions, which depend on electrons, not on the nucleus.", "Instability is about the nucleus, not the electrons."]
       explain: "An unstable (radioactive) nucleus has a mix of protons and neutrons that does not last. It decays, giving out radiation. Most elements have both stable and unstable isotopes."
+    hint: "Build carbon-14 again and read the line under the board, and notice which part of the atom it says is going to change."
   - check: { type: reflect, text: "I can say what isotopes are, what is the same and what is different about them, and use names like carbon-14." }
 ```
 
@@ -124,6 +128,7 @@ insight: "Making carbon-14 from nitrogen-14 shows that a nucleus can change into
 try: { playground: board, starter: "boards.yml#nitrogen", height: 720 }
 tasks:
   - check: { type: board, text: "High in the air, a neutron from space hits a nitrogen-14 nucleus. The nucleus takes in the neutron and a proton is knocked out. Make the carbon-14 that results (a neutral atom).", when: "t = 1" }
+    hint: ["Do it in the order the task tells the story: first the neutron goes in, then a proton comes out, and watch the name at the top as you go.", "Once the nucleus matches the card, check the charge in the line under the board, because the card asks for a neutral atom."]
   - check:
       type: question
       q: "Plants take in carbon dioxide, including a little made with carbon-14. Animals eat the plants. Why does that matter for dating old bones?"
@@ -146,6 +151,7 @@ insight: "The relative atomic mass on the periodic table is an average over isot
 try: { playground: board, starter: "boards.yml#chlorine", height: 720 }
 tasks:
   - check: { type: board, text: "Make chlorine-37.", when: "t = 1" }
+    hint: "Which row can you change without the name at the top changing, and how far does the mass number have to go?"
   - check:
       type: number
       q: "About 3 in every 4 chlorine atoms are chlorine-35, and 1 in 4 is chlorine-37. What is the average mass number? (to 1 decimal place)"

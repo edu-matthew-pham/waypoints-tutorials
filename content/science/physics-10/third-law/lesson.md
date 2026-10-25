@@ -12,7 +12,7 @@ app:
   url: http://127.0.0.1:8281/index.html
   readySelector: "#gpanel"
   layout: full
-explainPicture: { ref: boards.yml#book, caption: "The forces on a book: the Earth pulls it down; the table pushes it up. These two balance, but they are not a third-law pair: they both act on the book." }
+explainPicture: { ref: boards.yml#book-balanced, caption: "The forces on a book: the Earth pulls it down; the table pushes it up. These two balance, but they are not a third-law pair: they both act on the book." }
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "Newton's third law"
@@ -50,6 +50,7 @@ stage: run
 insight: "Seeing the only force on the skater is the wall's push makes the 'other half' of the pair the one that changes her motion."
 try: { playground: board, starter: "boards.yml#skater", height: 640 }
 check: { type: board, text: "Press Play while the wall pushes, then set its push to 0 (she lets go). Let her glide for a few seconds.", when: "P = 0 and v > 0 and t >= 3" }
+hint: ["She needs to be moving before she lets go, so give the wall's push a moment to work after you press Play.", "Use the − button beside the wall's push to take it to 0, and the speed under the board tells you whether she's still gliding."]
 ```
 
 The board shows only the forces on the **skater**. Her push on the wall acts on the wall, so it isn't drawn here.
@@ -75,7 +76,7 @@ tasks:
         - ["A rocket pushes gas down", "The gas pushes the rocket up"]
         - ["The Earth pulls you down", "You pull the Earth up"]
         - ["A swimmer pushes water back", "The water pushes the swimmer forward"]
-      explain: "Swap the two objects and reverse the direction: that's the partner."
+      explain: "Swap the two objects and reverse the direction, and that gives you the partner."
   - check:
       type: question
       q: "A pile of books rests on a table. Its weight is 49 N down; the table pushes it up with 49 N. Are these a third-law pair?"
@@ -83,6 +84,7 @@ tasks:
       answer: 0
       feedback: [null, "Equal and opposite on the same object means balanced, not a third-law pair.", "Third-law pairs act on different objects, so they can't cancel."]
       explain: "Balanced forces act on one object. A third-law pair always acts on two objects: Earth pulls book, book pulls Earth; table pushes book, book pushes table."
+    hint: ["What is each of those two forces acting on?", "For both forces, name who's doing the pushing or pulling and what it's being done to."]
   - check:
       type: question
       q: "A truck and a small car collide. Which feels the bigger force?"
@@ -90,6 +92,7 @@ tasks:
       answer: 0
       feedback: [null, "Mass changes the effect, not the force.", "The car's bigger change in motion comes from its smaller mass (F = ma), not a bigger force."]
       explain: "Third law: the forces are equal. The car, with less mass, accelerates more (F = ma), which is why it fares worse."
+    hint: "What does the third law say about the sizes of the two forces in a pair?"
   - check:
       type: question
       q: "A horse pulls a cart forward with 500 N. By the third law, the cart pulls back on the horse with 500 N. So how can the cart start moving?"
@@ -97,6 +100,7 @@ tasks:
       answer: 0
       feedback: [null, "Third-law pairs are always exactly the same size. Look only at the forces on the cart.", "Only forces on the same object can cancel. These two act on different objects."]
       explain: "To see what the cart does, add only the forces on the cart: the horse's pull forward and friction back. The cart's pull acts on the horse, not the cart."
+    hint: ["To work out what the cart does, which forces should you be adding up?", "Look at each force and ask what it's acting on: the horse, the cart or the road."]
   - check: { type: reflect, text: "I can state Newton's third law, name both forces in a pair, and tell a pair from two balanced forces." }
 ```
 
@@ -123,13 +127,15 @@ insight: "Balancing the book, then naming the partner of each force, separates '
 try: { playground: board, starter: "boards.yml#book", height: 640 }
 tasks:
   - check: { type: board, text: "Set the table's push so the forces on the book balance.", expect: { balanced: true } }
+    hint: ["The table has to hold the books up against the Earth's pull, so how does its push have to compare with the weight?", "The weight is written beside its arrow and the table's push beside its slider, so compare the two as you change it."]
   - check:
       type: question
       q: "What is the partner of 'the table pushing the book up'?"
       options: ["The book pushing the table down", "The Earth pulling the book down", "The table pulling the Earth"]
       answer: 0
       feedback: [null, "That acts on the book too: it's the force the table's push balances.", "Swap the objects: table on book becomes book on table."]
-      explain: "Swap the two objects and reverse the direction."
+      explain: "Swap the two objects and reverse the direction, and you have the partner."
+    hint: "Ask what the table's push is acting on, and then what each force in the options is acting on."
 ```
 
 ### Balance the book

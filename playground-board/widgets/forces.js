@@ -276,6 +276,8 @@
   function describe() {
     var hz = sim.hz, n = round2(hz.net);
     var sideways = spec.fric || spec.forces.some(function (f) { return f.dir[0]; });
+    var vz = round2(hz.vert), vtxt = vz ? 'Left and right balance, but up and down do not: the net force is ' + fmt(Math.abs(vz)) + ' N ' + (vz > 0 ? 'up' : 'down') + '.' : '';
+    if (!n && vtxt && !spec.motion) return vtxt;
     if (!spec.motion) return n ? 'The forces are unbalanced: the net force is ' + fmt(Math.abs(n)) + ' N to the ' + (n > 0 ? 'right' : 'left') + '.' : 'The forces are balanced: the net force is 0 N' + (sideways ? '' : ' (up and down cancel out)') + '.';
     if (sim.over) return sim.endMsg + ' Press Play again, or change a force first.';
     if (!sim.running && sim.t === 0) return 'Set the forces, then press Play.';

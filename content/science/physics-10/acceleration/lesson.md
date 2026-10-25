@@ -4,7 +4,7 @@ node: AC9S10U05 n3
 woven: [AC9S9I04, AC9S9I05]
 unit: newton
 title: What is acceleration, exactly?
-summary: Acceleration is the rate of change of velocity, a = Δv ÷ Δt, in m/s². It has a direction, the same as the net force. Slowing down is acceleration too (opposite to the motion), and on a speed–time graph acceleration is the gradient.
+summary: Acceleration is the rate of change of velocity, a = Δv ÷ Δt, in m/s². It has a direction, the same as the net force. Slowing down is acceleration too (opposite to the motion), and on a speed–time graph of straight-line motion acceleration is the gradient.
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -70,6 +70,7 @@ tasks:
       q: "The trolley went from 0 to 12 m/s in 4 s. What was its acceleration, in m/s²?"
       answer: 3
       explain: "a = change in velocity ÷ time = (12 − 0) ÷ 4 = 3 m/s². Its speed went up by 3 m/s every second."
+    hint: ["How much did the speed go up altogether, and how many seconds did that take?", "Acceleration is the change in speed for each second, and the heading of this part of the lesson shows how to work it out."]
   - check:
       type: question
       q: "On the speed–time graph, where can you see the acceleration?"
@@ -83,6 +84,7 @@ tasks:
       options: ["m/s² (metres per second, per second)", "m/s", "N", "km/h"]
       answer: 0
       feedback: [null, "m/s is velocity. Acceleration is how many m/s are added each second.", "N is force.", "km/h is a speed."]
+    hint: "Acceleration counts how much speed gets added and how long that takes, so its unit has to carry both of those."
   - check:
       type: number
       q: "A cyclist goes from 2 m/s to 10 m/s in 4 s. Acceleration, in m/s²?"
@@ -98,6 +100,7 @@ tasks:
         - ["A runner rounding a bend at a steady speed", "Accelerating", "Its direction changes, so its velocity changes."]
         - ["A trolley speeding up from rest", "Accelerating"]
         - ["A parked car", "Not accelerating"]
+    hint: ["For each one, ask whether its velocity is changing, not whether it's fast.", "Speeding up isn't the only kind of change, so look for anything about the motion that's different from a moment ago."]
   - check:
       type: question
       q: "A trolley is moving to the right, and the net force on it points to the left. Which way does its acceleration point?"
@@ -138,6 +141,7 @@ tasks:
       q: "It went from 8 m/s to 0 in 4 s. What was its acceleration, in m/s²? (Use a minus sign for slowing down.)"
       answer: -2
       explain: "(0 − 8) ÷ 4 = −2 m/s². The minus sign means the acceleration points backwards, opposite to the motion, the same way as the net force (friction)."
+    hint: "Take the starting speed away from the final speed to get the change, and keep whatever sign that gives you."
   - check:
       type: question
       q: "Which way did the net force point while it slowed down?"
@@ -182,4 +186,4 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Acceleration** is the rate of change of velocity: **a = Δv ÷ Δt**, in **m/s²**.
 - It has a **direction**, the same as the net force. Slowing down is acceleration opposite to the motion (negative).
 - A fast object at a steady speed has **zero** acceleration.
-- On a speed–time graph, acceleration is the **gradient**.
+- On a speed–time graph of motion in a straight line, acceleration is the **gradient**. (Going round a bend at steady speed is still acceleration, because the direction changes.)

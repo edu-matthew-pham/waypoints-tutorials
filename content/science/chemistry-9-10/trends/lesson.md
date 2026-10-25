@@ -78,6 +78,7 @@ tasks:
       answer: 0
       feedback: [null, "Lithium and beryllium are metals too; the reason is the shells.", "Period 1 has 2 elements and periods 2 and 3 have 8."]
       explain: "Each period fills one shell. When a shell is full, the next electron starts a new one, and a new period begins."
+    hint: ["How many electrons fit in the second shell, and where does sodium's eleventh electron have to go?", "Click neon and then sodium on the board, and compare how many shells the line under the board gives for each."]
   - check:
       type: number
       q: "An element has electrons in shells 2, 8, 8, 2. Which period is it in?"
@@ -101,6 +102,7 @@ tasks:
       answer: 0
       feedback: [null, "Period 3 means 3 shells.", "That is oxygen, in period 2."]
       explain: "Period 3: three shells. Group 16: six outer electrons. So 2, 8, 6 (16 electrons, atomic number 16)."
+    hint: "Which way does a period run across the table and which way does a group run, and what does each of them tell you about the shells?"
   - check:
       type: question
       q: "Why do properties repeat from one period to the next?"
@@ -156,6 +158,7 @@ insight: "Mendeleev's table worked as a pattern before electrons explained it: a
 try: { playground: board, starter: "boards.yml#metalloids", height: 820 }
 tasks:
   - check: { type: board, text: "Find the two metalloids in the first 20 elements: they sit on the border between the metals and the non-metals.", when: "n = k" }
+    hint: ["Find where the metal colour stops and the non-metal colour starts, and look at the elements sitting on that border.", "The key under the table has a third colour besides metal and non-metal."]
   - check:
       type: question
       q: "Mendeleev ordered elements by mass and grouped them by how they reacted, leaving gaps. He predicted the properties of a missing element below silicon; germanium was found 17 years later (1886) and matched. What does this show?"

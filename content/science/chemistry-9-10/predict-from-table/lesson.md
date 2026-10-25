@@ -37,10 +37,13 @@ try: { playground: board, starter: "boards.yml#table", height: 680 }
 tasks:
   - starter: "boards.yml#table"
     check: { type: board, text: "Click the element in group 2, period 3. How many outer electrons does it have?", when: "z = 12 and o = 2" }
+    hint: "Find group 2 along the top of the table first, then count down the rows to period 3."
   - starter: "boards.yml#table"
     check: { type: board, text: "Click the element in group 17 (the halogens), period 2.", when: "z = 9 and o = 7" }
+    hint: "Find the group 17 column along the top, then pick the right row, counting hydrogen and helium's row as period 1."
   - starter: "boards.yml#table"
     check: { type: board, text: "Click the element in group 18 (the noble gases), period 3.", when: "z = 18 and o = 8" }
+    hint: "Follow the group 18 column down from helium and count the rows as you go."
 ```
 
 ### Group 2, period 3
@@ -72,6 +75,7 @@ tasks:
       answer: 0
       feedback: [null, "Smaller means the outer electron is closer and held tighter.", "Same group, same pattern, but reactivity grows down group 1."]
       explain: "Down group 1 there are more shells, so the outer electron is further away, held less tightly and lost more easily."
+    hint: ["Think about where each outer electron sits: which one is closer to the pull of the nucleus?", "Rubidium is three rows further down than lithium, so ask what that means for how many shells sit between its outer electron and the nucleus."]
   - check:
       type: question
       q: "Chlorine (group 17) forms compounds with sodium (group 1). Predict the ions."
@@ -79,6 +83,7 @@ tasks:
       answer: 0
       feedback: [null, "Metals lose electrons; non-metals gain them.", "Sodium has one outer electron to give and chlorine needs one to complete its shell."]
       explain: "Group 1 loses 1 electron, group 17 gains 1, so they combine one to one: NaCl."
+    hint: ["How many outer electrons does sodium have, and what's the quickest way for it to end up with a full outer shell?", "Now do the same for chlorine with its seven, and remember an electron lost is a plus charge and an electron gained is a minus."]
   - check:
       type: question
       q: "Why are the noble gases (group 18) almost unreactive?"

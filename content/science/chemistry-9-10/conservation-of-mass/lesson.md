@@ -46,6 +46,7 @@ tasks:
       q: "In an open dish, 2.4 g of magnesium burns and the white ash weighs 4.0 g. What mass of oxygen from the air joined in (g)?"
       answer: 1.6
       explain: "4.0 − 2.4 = 1.6 g. The ash is heavier because it contains oxygen from the air."
+    hint: ["What in the air could have joined the magnesium while it burned?", "Everything in the ash is either the magnesium you started with or what joined it, so compare the two masses."]
   - check:
       type: question
       q: "A log burns in an open fire and the ash is much lighter than the log. Is mass conserved?"
@@ -53,6 +54,7 @@ tasks:
       answer: 0
       feedback: [null, "Mass isn't destroyed: it left as gases.", "Ash is a different substance from wood."]
       explain: "Count the gases, and the total mass of reactants (wood and oxygen) equals the total mass of products (ash, carbon dioxide and water vapour)."
+    hint: "What are the products when wood burns, and which of them are still sitting in the fireplace?"
   - check:
       type: question
       q: "The balanced equation 2H₂ + O₂ → 2H₂O has 4 hydrogen atoms and 2 oxygen atoms on each side. What does this tell you about mass?"

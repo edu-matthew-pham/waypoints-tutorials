@@ -36,8 +36,10 @@ try: { playground: board, starter: "boards.yml#radon", height: 660 }
 tasks:
   - starter: "boards.yml#radon"
     check: { type: board, text: "Radon-222 is unstable. Decay it step by step until the isotope is stable.", when: "s = 1" }
+    hint: ["Each new nucleus has its own way of decaying, so look at the one you've got now before you press, rather than pressing the same button every time.", "After each press the line under the board says whether that's how it really decays, so if it says otherwise, press Start again and use what it told you."]
   - starter: "boards.yml#uranium"
     check: { type: board, text: "Start from uranium-238 and follow the chain to the end. It has eight alpha decays and six beta decays.", when: "s = 1 and x = 8 and y = 6" }
+    hint: ["It's a long chain, so at each step read what the board says about the nucleus you've just made before you choose the next decay.", "The chain under the board shows every step so far, so you can count your alphas and betas against the eight and six."]
 ```
 
 ### Radon to lead
@@ -46,7 +48,7 @@ Use Alpha decay or Beta decay at each step. The board tells you whether that is 
 
 ### The long chain
 
-Each step changes the atomic number and the mass number. Keep an eye on both.
+Each step changes the atomic number, and an alpha step changes the mass number too, so keep an eye on both.
 
 ## Explain: tracking numbers
 
@@ -65,6 +67,7 @@ tasks:
       q: "Uranium-238 has atomic number 92. After one alpha decay, what is the new atomic number?"
       answer: 90
       explain: "An alpha particle carries away 2 protons, so 92 − 2 = 90 (thorium)."
+    hint: ["How many protons does one alpha particle take with it?", "Press Alpha decay on the uranium board and watch the atomic number in the line under the board."]
   - check:
       type: number
       q: "And the new mass number, after the alpha decay from mass number 238?"
@@ -75,6 +78,7 @@ tasks:
       q: "Thorium-234 (atomic number 90) then decays by beta emission. What is the new atomic number?"
       answer: 91
       explain: "A neutron becomes a proton, so the atomic number goes up by 1: 91 (protactinium). The mass number stays at 234."
+    hint: ["In beta decay, what does one of the neutrons in the nucleus turn into?", "Press Beta decay on the board and see which number changes and which one stays put."]
   - check:
       type: number
       q: "Uranium-238 ends as lead-206. By how much does the mass number fall in total?"

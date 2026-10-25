@@ -52,6 +52,7 @@ stage: run
 insight: "Building the atom particle by particle makes the atomic number, mass number and charge things students can count, not definitions to recite."
 try: { playground: board, starter: "boards.yml#carbon", height: 720 }
 check: { type: board, text: "Build carbon-12: a neutral atom.", when: "t = 1" }
+hint: ["Start with the protons, because they decide the name at the top of the board, so keep adding until it says carbon.", "The line under the board adds up the mass number as you go, so add neutrons until it matches the card, and then think about what neutral means for the electrons."]
 ```
 
 Use **+** and **−** for protons, neutrons and electrons. The board names the element from the protons, and adds up the mass number and the charge. Red: protons. Grey: neutrons. Blue: electrons.
@@ -69,6 +70,7 @@ tasks:
       answer: 0
       feedback: [null, "The nucleus is tiny but dense; the rest is mostly empty space.", "Electrons take up the space but have almost no mass."]
       explain: "Protons and neutrons each have a relative mass of 1; an electron about 1/1840. So the nucleus, a tiny fraction of the atom's size, holds nearly all its mass."
+    hint: "Electrons take up most of the room in an atom, but how heavy is one electron next to a proton?"
   - check:
       type: sort
       q: "Proton, neutron or electron?"
@@ -86,6 +88,7 @@ tasks:
       q: "Sodium has atomic number 11 and mass number 23. How many neutrons does a sodium atom have?"
       answer: 12
       explain: "Mass number minus atomic number: 23 − 11 = 12 neutrons."
+    hint: ["What does the mass number count, and which of those particles has the atomic number already counted for you?", "Think back to building carbon-12: the mass number went up whether you added a proton or a neutron, but the atomic number only moved with the protons."]
   - check:
       type: number
       q: "How many electrons does a neutral sodium atom have?"
@@ -124,6 +127,7 @@ insight: "A bigger atom with an odd mass number checks the counting rule without
 try: { playground: board, starter: "boards.yml#chlorine", height: 720 }
 tasks:
   - check: { type: board, text: "Build chlorine-35 (atomic number 17).", when: "t = 1" }
+    hint: ["The card gives you two numbers, so which one sets the protons, and how many neutrons do you need to make up the other?", "Watch the name at the top until it says chlorine and the mass number in the line under the board, and do the electrons last."]
   - check:
       type: question
       q: "You add one proton to a chlorine atom. What is it now?"
@@ -131,6 +135,7 @@ tasks:
       answer: 0
       feedback: [null, "That would be adding a neutron.", "Ions have a different number of electrons, not protons."]
       explain: "The atomic number (protons) decides the element: 18 protons is argon."
+    hint: "Try it on the board: add one proton to your chlorine and see what happens to the name at the top."
 ```
 
 ### Chlorine-35
@@ -146,6 +151,7 @@ insight: "Changing only electrons shows charge comes from the electron count whi
 try: { playground: board, starter: "boards.yml#ion", height: 720 }
 tasks:
   - check: { type: board, text: "Make a sodium ion with a charge of +1.", when: "t = 1" }
+    hint: ["Which particle has a negative charge, and do you need more of it or fewer to end up at +1?", "Change one thing at a time and watch the charge in the line under the board, and keep an eye on the name at the top too."]
   - check:
       type: question
       q: "How did you give sodium a charge of +1?"
