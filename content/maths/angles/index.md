@@ -11,6 +11,7 @@ units:
   - { id: solids, title: Solids, summary: "Nets that fold into solids, the views of a pile of cubes, and (Year 8) points in 3D." }
   - { id: transform, title: Transformations, summary: "Sliding, flipping and turning a shape on the coordinate plane." }
   - { id: congruence, title: Congruence and similarity, summary: "Year 8: the tests that make triangles congruent, similar shapes and scale factors, and proving and using properties of quadrilaterals." }
+  - { id: enlarge9, title: Enlargement, summary: "What an enlargement keeps (angles and shape) and what it changes (lengths, area and volume), and the scale factors k, k² and k³ (Year 9)." }
   - { id: algorithms, title: Algorithms, summary: "Writing a clear set of steps to sort shapes into classes, and (Year 8) to decide whether two triangles are congruent, similar or neither." }
   - { id: networks, title: Networks, summary: "Year 10: nodes, edges and degree, drawing a network without distances, whether every street can be driven once, and Euler's rule for solids." }
 ---

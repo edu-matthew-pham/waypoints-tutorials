@@ -1,0 +1,10 @@
+# Practice for "Scale factors for area and volume".
+templates:
+  - q: "A shape has area {a} cm². It is enlarged by a scale factor of {k}. What is the new area in cm²?"
+    vars: { a: "2..9", k: "2..6" }
+    answer: "{a * k * k}"
+    explain: "{a} × {k}² = {a * k * k}."
+  - q: "A solid has volume {a} cm³. It is enlarged by a scale factor of {k}. What is the new volume in cm³?"
+    vars: { a: "2..9", k: "2..5" }
+    answer: "{a * k * k * k}"
+    explain: "{a} × {k}³ = {a * k * k * k}."

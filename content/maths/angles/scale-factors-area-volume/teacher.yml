@@ -1,0 +1,32 @@
+summary: "Students use scale factor k for length, k² for area and k³ for volume (AC9M9SP02, node 2)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can scale lengths, areas and volumes.
+  - I can find k from an area or a volume.
+  - I can explain why a bigger copy of an animal doesn't work.
+struggle: "Multiplying area by k. Ask: how many cubes now, doubling in all three directions?"
+before: |
+  Students need What enlargement keeps.
+
+  The one idea: each extra direction multiplies by k again. The monster is a model of area against volume, not real anatomy. Strength ∝ cross-section and weight ∝ volume are standard modelling assumptions.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the monster question in Make is worked on paper first."
+stuck:
+  - see: "A student multiplies the area by the scale factor."
+    ask: "How many small squares fit when you double a 1 by 1 square?"
+    fix: "Four. Draw it."
+stretch: "Why do small animals lose heat faster than big ones?"
+support: "Linking cubes to build the 2 by 2 by 2 cube."
+leads: |
+  Continues AC9M9SP02 node 2.
+
+  Where it leads: Surface area and volume of prisms and cylinders.
+exit:
+  q: "A cube is enlarged by a scale factor of 2. By how much is its volume multiplied?"
+  a: "8."
+explain: |
+  Lengths are multiplied by k, areas by k × k and volumes by k × k × k.
+
+  The more dimensions, the more k appears.

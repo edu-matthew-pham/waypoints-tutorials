@@ -1,0 +1,7 @@
+# Ray's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ray
+A box has surface area 40 cm². It is enlarged with a scale factor of 3.
+Lengths are multiplied by 3, so the area is too.
+New area = 40 × 3 = 120 cm².
+# endregion

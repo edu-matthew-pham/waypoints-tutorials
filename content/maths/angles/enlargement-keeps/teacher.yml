@@ -1,0 +1,34 @@
+summary: "Students say what an enlargement keeps (angles, shape) and what it changes (lengths, perimeter, area) (AC9M9SP02, node 1)."
+time: 35
+timing: "Predict and Run 6 min · Investigate 10 min · Modify 8 min · Practise and Make 11 min"
+goals:
+  - I can say what stays the same in an enlargement.
+  - I can use a scale factor to find a length.
+  - I can tell an enlargement from a stretch.
+struggle: "Thinking angles scale. Ask: do the angles in a triangle still have to add to 180°?"
+before: |
+  Students need Similar shapes (Year 8).
+
+  The one idea: one scale factor for every length, and the angles stay. A factor under 1 is a reduction.
+
+  The screen sizes are examples; students can check their own device.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the screen question in Make is worked on paper first."
+stuck:
+  - see: "A student says the angles double."
+    ask: "Do the angles in a triangle still add to 180°?"
+    fix: "Doubled angles would add to 360°, so they can't change."
+stretch: "Find a screen size for which 1920 by 1080 fits exactly."
+support: "A printed grid with a shape and its enlargement."
+leads: |
+  Continues AC9M9SP02 node 1.
+
+  Where it leads: Scale factors for area and volume.
+exit:
+  q: "A shape is enlarged by a scale factor of 3. What happens to the angles?"
+  a: "They stay the same."
+explain: |
+  An enlargement multiplies every length by the same scale factor. The angles and the shape stay the same.
+
+  A different factor for width and height is a stretch, not an enlargement.

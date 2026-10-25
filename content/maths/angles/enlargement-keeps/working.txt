@@ -1,0 +1,7 @@
+# Kim's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kim
+The triangle has angles 40°, 60° and 80°.
+It is enlarged with a scale factor of 2.
+So the new angles are 80°, 120° and 160°.
+# endregion

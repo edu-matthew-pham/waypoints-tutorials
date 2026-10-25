@@ -1,0 +1,10 @@
+# Practice for "What enlargement keeps".
+templates:
+  - q: "A side is {a} cm. It is enlarged with a scale factor of {k}. How long is the new side in cm?"
+    vars: { a: "2..12", k: "2..9" }
+    answer: "{a * k}"
+    explain: "{a} × {k} = {a * k}."
+  - q: "A side of {a} cm becomes {a * k} cm in an enlargement. What is the scale factor?"
+    vars: { a: "2..12", k: "2..9" }
+    answer: "{k}"
+    explain: "{a * k} ÷ {a} = {k}."
