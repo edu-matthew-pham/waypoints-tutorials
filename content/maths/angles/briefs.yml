@@ -1,0 +1,33 @@
+briefs:
+  - id: sprinkler-test
+    title: Test and improve the sprinkler plan
+    after: write-the-algorithm
+    nodes: ["AC9M10SP03 n3"]
+    goal: |
+      A school is laying sprinklers on a **curved lawn**: an oval, not a rectangle. You have an algorithm that works for a rectangle. Does it still work on the oval, and can you make it better?
+
+      Choose **two ovals** to test (for example a long thin one and a nearly round one; give each a width and a length of your own, and a sprinkler reach, all made up for the task and labelled that way). Run your algorithm by hand on each. Find a case where it fails or wastes sprinklers. Then change the algorithm and show that the change fixes that case.
+
+      Finally, explain your improved algorithm to **someone who has not seen the problem**: the groundskeeper, who will decide how many sprinklers to order.
+    handin:
+      - "Your algorithm written as numbered steps or a flowchart, before and after your change."
+      - "A drawing of each oval you tested, with the sprinklers placed and the covered and uncovered parts shown."
+      - "A short note: which case failed, what you changed, and why the change fixes it."
+      - "A one-page explanation for the groundskeeper that says how many sprinklers each oval needs and why you trust the answer."
+    milestones:
+      - "You have chosen two ovals and a sprinkler reach, and written them down with units."
+      - "You have run the algorithm on both ovals and shown the result on a drawing."
+      - "You have found a case that fails or wastes sprinklers, and can say exactly what went wrong."
+      - "You have changed the algorithm, tested the change on the failing case, and written the explanation for the groundskeeper."
+    stretch:
+      - "Find an oval where your improved algorithm still fails, and say what you would change next."
+      - "Compare your count with the fewest sprinklers you can find by trial and error, and say how close the algorithm gets."
+      - "Change the sprinkler reach and say how the number of sprinklers changes."
+    teacher: |
+      This is the class project for AC9M10SP03 node 3. The lessons before it cover pinning the problem down (node 1) and writing the algorithm (node 2); the brief asks students to test, refine and justify.
+
+      The oval, the sprinkler reach and every number in a student's work are made up, as in the lessons. The rectangle algorithm in the lesson (cells with a side of 1.4 times the reach, a sprinkler in the middle of each) covers the oval but often uses more sprinklers than needed, so the failure students find may be waste rather than a gap. Accept either, as long as the student can show it on a drawing.
+
+      Strong work names the failing case before changing anything, then makes one specific change (for example, skip a cell whose middle is outside the oval and cover its corner another way) and tests it on the same case. The explanation for the groundskeeper should say what the algorithm does without jargon and give a number, not just a method.
+
+      Look for students who change the algorithm until it "works" on one oval without checking the other, or who explain a change without saying which failure it addresses.

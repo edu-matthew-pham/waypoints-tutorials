@@ -1,0 +1,33 @@
+summary: "A self-test on the fairness of reports and the care owed to people whose data is collected (AC9M10ST01, node 3, taught in class)."
+time: 10
+timing: "Fair reporting 5 min · Collecting data about people 5 min"
+goals:
+  - I can say when a report is accurate but still unfair.
+  - I can name how framing and leaving things out shape a claim.
+  - I can say what people should be told and free to do before they give data.
+before: |
+  A Quick check: a few questions on what students should know for AC9M10ST01 node 3, which you teach as a class discussion. It has no board, no clip and no new teaching, and it is optional, so it never holds up course completion.
+
+  Use it as a self-test after your discussion, a starter, or revision. The discussion itself is the lesson. Node 3 asks students to name an ethical consideration beyond technical accuracy and to explain how an ethical or political framing has shaped a claim, so good class talk uses a real report that you have read yourself. This page uses made-up reports only; every number and organisation is invented.
+running:
+  - "Before the questions, show two headlines that report the same number in different words and ask which one a reader would believe more."
+  - "After the second step, ask students what they would change about a survey they have already taken."
+struggle: "Telling a true-but-misleading claim from a false one. Ask: is the number wrong, or is something left out or framed to push you?"
+stuck:
+  - see: "A student says a report that uses correct numbers cannot be unethical."
+    ask: "Could a true number still leave out something that changes how you feel about it?"
+    fix: "Yes. A correct number can be framed, selected or left without context so that it pushes a reader."
+  - see: "A student says anonymous data is always safe to share."
+    ask: "Could a question be harmful even if no names are attached?"
+    fix: "Yes. Sensitive questions can cause harm or pressure, and in a small group an answer may point to one person."
+stretch: "Find a news headline that reports a statistic. Say what it frames, what it leaves out and who gains if you believe it."
+support: "Give two sentences that report the same number with different words and ask which words push the reader."
+leads: |
+  Back in class: a discussion of a real report you have read; the sleep investigation brief on the Data and chance briefs page raises consent and privacy when collecting data from classmates.
+exit:
+  q: "Name one way a report can be accurate and still unfair."
+  a: "It leaves out some results, frames the numbers to push a reader, uses a misleading scale, overstates what a small sample shows, or hides who paid for it."
+explain: |
+  A report can have correct numbers and still be unfair: what it leaves out, how it frames the numbers, and who gains from it all shape the claim.
+
+  When you collect data from people, taking part should be voluntary, they should know how it will be used, and the results should not point to any one person.
