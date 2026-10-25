@@ -161,16 +161,35 @@ function diagramHtml(lesson, v, key) {
   return `<figure class="diagram${sp.role === 'misconception' ? ' dmis' : ''}"><img src="${esc(d.url)}" alt="${esc(sp.alt)}" width="${d.w}" height="${d.h}" loading="lazy">${sp.caption ? `<figcaption>${esc(sp.caption)}</figcaption>` : ''}</figure>`;
 }
 
-// "Builds on" and "Put to work in": lessons linked by a theory concept (tools/concepts-core.mjs THEORY), across subjects.
+// Before Year 7 (26 Oct 2026, roadmap/before-year-7.md): short catch-up lessons in `maths/before-year-7` and
+// `science/before-year-7`, tagged `node:` with the Year 3-6 standards they teach. A lesson that lists one of those nodes
+// in `assumes:` gets a "Catch up first" row, and the catch-up lesson gets "Leads into" back.
+const isCatchUp = (l) => /^(maths|science)\/before-year-7\//.test(l.slug);
+const refList = (v) => (Array.isArray(v) ? v : v ? [v] : []).map((x) => String(x).trim().replace(/\s+/g, ' '));
+let CATCH = null;
+function catchUpIndex() {
+  if (CATCH) return CATCH;
+  const taught = new Map(), first = new Map(), leads = new Map();
+  for (const l of lessons.filter(isCatchUp)) for (const r of refList(l.node)) taught.set(r, [...(taught.get(r) || []), l]);
+  const add = (m, k, v) => { const a = m.get(k) || []; if (!a.some((x) => x.slug === v.slug)) m.set(k, [...a, v]); };
+  for (const l of lessons.filter((x) => !isCatchUp(x))) for (const r of refList(l.assumes)) for (const c of taught.get(r) || []) { add(first, l.slug, c); add(leads, c.slug, l); }
+  return (CATCH = { first, leads });
+}
+
+// "Builds on" and "Put to work in": lessons linked by a theory concept (tools/concepts-core.mjs THEORY), across subjects;
+// plus "Catch up first" and "Leads into" for Before Year 7 lessons (by assumed node).
 let THEORY_LINKS = null;
 function conceptLinks(lesson) {
-  const tl = (THEORY_LINKS ||= theoryLinks(lessons)).get(lesson.slug);
-  if (!tl) return null;
+  const tl = (THEORY_LINKS ||= theoryLinks(lessons)).get(lesson.slug) || { on: [], in: [] };
   const up = '../'.repeat(lesson.depth), bySlug = (s) => lessons.find((x) => x.slug === s);
-  const one = ({ slug, label }) => { const l = bySlug(slug); if (!l) return null; const c = slug.split('/').slice(0, -1).join('/');
-    return { href: `${up}${slug}/`, title: l.title, where: `${dirNode(slug.split('/')[0]).title} › ${dirNode(c).title}`, label }; };
+  const where = (slug) => { const c = slug.split('/').slice(0, -1).join('/'); return `${dirNode(slug.split('/')[0]).title} › ${dirNode(c).title}`; };
+  const one = ({ slug, label }) => { const l = bySlug(slug); if (!l) return null;
+    return { href: `${up}${slug}/`, title: l.title, where: where(slug), label }; };
   const on = tl.on.map(one).filter(Boolean), used = tl.in.map(one).filter(Boolean);
-  return on.length || used.length ? { on, in: used } : null;
+  const ci = catchUpIndex();
+  const plain = (l) => ({ href: `${up}${l.slug}/`, title: l.title, where: where(l.slug), label: l.title });
+  const catchUp = (ci.first.get(lesson.slug) || []).map(plain), leads = (ci.leads.get(lesson.slug) || []).map(plain);
+  return on.length || used.length || catchUp.length || leads.length ? { on, in: used, catchUp, leads } : null;
 }
 
 function buildLesson(lesson, parentTitle, course) {
@@ -717,8 +736,12 @@ for (const node of dirs.values()) {
       const cov = COVERAGE.byCourse.get(node.path);
       const stdLinks = (list) => list.map((e) => `<a href="${up}teach/curriculum/digital-processes/${esc(e.code)}/">${esc(e.title)}</a> <small>(${esc(shortCode(e.code))})</small>`).join(', ');
       const stds = cov ? `<p class="cstd"><b>Standards, in general:</b> ${cov.focus.length ? `main focus: ${stdLinks(cov.focus.slice(0, 6))}${cov.focus.length > 6 ? ` and ${cov.focus.length - 6} more` : ''}` : ''}${cov.focus.length && cov.touches.length ? '; ' : ''}${cov.touches.length ? `touches on: ${stdLinks(cov.touches)}` : ''}. <a href="${up}about/#standards">What this means</a></p>` : '';
-      return `<style>.cstd{flex-basis:100%;margin:0;color:var(--muted)}.cstd a{color:var(--accent)}.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.wpt-teach{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.wpt-teach a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
-        `<div class="cstrip"><ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="wpt-teach">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div>${stds}</div>`;
+      // Before Year 7 (26 Oct 2026): a course whose lessons link to catch-up lessons says so, with a link to that course.
+      const cuIdx = catchUpIndex(), cuSlugs = new Set(courseLessons.flatMap((l) => (cuIdx.first.get(l.slug) || []).map((c) => c.slug)));
+      const cuCourse = [...cuSlugs][0]?.split('/').slice(0, -1).join('/');
+      const catchCard = cuSlugs.size ? `<p class="wpt-catch"><b>Before Year 7</b> ${cuSlugs.size} short catch-up ${cuSlugs.size === 1 ? 'lesson leads' : 'lessons lead'} into this course, for students who need the earlier idea first: <a href="${up}${cuCourse}/">see them</a>. Each lesson links to its own catch-up lesson.</p>` : '';
+      return `<style>.wpt-catch{flex-basis:100%;margin:0;color:var(--muted)}.wpt-catch a{color:var(--accent)}.cstd{flex-basis:100%;margin:0;color:var(--muted)}.cstd a{color:var(--accent)}.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.wpt-teach{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.wpt-teach a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
+        `<div class="cstrip"><ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="wpt-teach">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div>${catchCard}${stds}</div>`;
     })();
     const COPY_JS = `<script>(function(){var b=document.querySelector('.copylink');if(!b)return;b.hidden=false;var m=document.querySelector('.copymsg');b.addEventListener('click',function(){var u=location.origin+location.pathname;function ok(){m.textContent='Link copied';setTimeout(function(){m.textContent=''},2000)}function fb(){var t=document.createElement('textarea');t.value=u;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){m.textContent=u}document.body.removeChild(t)}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,fb);else fb()})})();</script>`;
     writeFileSync(join(outDir, 'index.html'), page(node.title,

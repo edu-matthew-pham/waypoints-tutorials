@@ -59,6 +59,13 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 **Amended (25 Oct 2026, later):** search plus everything-at-once browsing was two extremes, and the pathway links had gone from the menu. Pathways are back under Subjects (links to their trail maps, so students are one click from a trail), and "List for teachers" on a subject page is now a one-screen index of pathways and courses (years, lesson counts); full cards stay on each pathway page. Trails stay the default view; the search box is unchanged.
 **Maths pathways, decided to wait (25 Oct 2026):** the four maths pathways (Algebra, Number, Geometry and measurement, Statistics and probability) merge the curriculum's six strands (Measurement with Space, Statistics with Probability). Kept as is: a pathway can hold one unit or an umbrella of two, so splitting a course later changes no navigation. ACARA's progressions divide Number into concepts and modelling, which our copy of the data does not carry; check the Kit data, and the curriculum map's strand rows, if teachers plan that way. Revisit after teacher feedback.
 
+## Changed (26 Oct 2026): "Catch up first" links for Before Year 7 (science chat; Matthew agreed)
+- `tools/build-site.mjs` (`catchUpIndex`, `conceptLinks`) and `tools/lesson-view.mjs` (`linksHtml`): a lesson under `maths/before-year-7/` or `science/before-year-7/` is found by its `node:`; any lesson whose `assumes:` names one of those nodes gets a "Catch up first" row, and the catch-up lesson gets a "Leads into" row listing those lessons. Node refs in `assumes:` were already accepted and did nothing visible, so no lesson file needs a new field.
+- Course pages: a course whose lessons link to catch-up lessons gets a "Before Year 7" line in its teacher strip (`.wpt-catch`), linking to the catch-up course.
+- The existing "Builds on" / "Put to work in" rows still read only theory concept ids.
+- Needs a full publish (every page with a link changes).
+- Kit (waypoints-kit): the same node ids can be shown there; to do.
+
 ## Changed (26 Oct 2026): back link on trail maps
 - Every pathway trail map (`<subject>/paths/<id>/` in all seven trail subjects: Code, Maths, Science, How computers work, Engineering, Learning with AI, ICT skills) now has a "← All <subject> pathways" link at the top left of the map itself (`opts.back` in `trailHtml`, `tools/trail.mjs`; class `wpt-tback`), because people navigate by the map rather than the chip row. On phones it is the first item of the list. The chip row stays. Tested at 1280 and 390 px, light and dark, keyboard reachable, `check-blockers` clean. Needs a full publish (shared page code).
 
