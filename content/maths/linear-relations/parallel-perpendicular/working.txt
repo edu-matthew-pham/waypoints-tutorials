@@ -1,0 +1,8 @@
+# Kai's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kai
+A line has gradient 3. Find the gradient of a perpendicular line.
+Change the sign only: -3
+Check: 3 x (-3) = -9
+-9 is not -1, so I'll leave it as -3.
+# endregion

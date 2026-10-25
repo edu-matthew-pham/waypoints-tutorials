@@ -1,0 +1,19 @@
+# Boards for "Parallel and perpendicular". The axes have about the same scale, so right angles look right.
+
+# region: run
+widget: graph
+x: -8, 8
+y: -5, 5
+slider m: -4, 4, 1, 0.5
+plot: y = 2x + 1, dashed
+plot: y = mx
+# endregion
+
+# region: vary
+widget: graph
+x: -8, 8
+y: -5, 5
+slider m: -4, 4, 1, 0.5
+plot: y = 2x, dashed
+plot: y = mx
+# endregion

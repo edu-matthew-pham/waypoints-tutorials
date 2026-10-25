@@ -1,0 +1,39 @@
+summary: "Students use gradients to decide whether lines are parallel or perpendicular, and find the gradient of a parallel or perpendicular line (AC9M9A03, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can tell parallel lines from their gradients.
+  - I can find the gradient of a perpendicular line by turning it upside down and changing the sign.
+  - I can check a pair of lines against the product of −1.
+struggle: "Turning the gradient upside down as well as changing the sign. Ask: what do the two gradients multiply to?"
+before: |
+  Students need Gradient between two points.
+
+  The one idea: parallel lines have equal gradients, and perpendicular gradients multiply to −1. The common mistake is changing the sign only (Kai's working).
+
+  The car-park coordinates are made up for the task. The board's axes are about equal in scale, so right angles look right, but trust the numbers over the picture.
+running:
+  - "Predict: take a show of hands. Those who chose 'You can't tell' haven't yet linked gradient to angle."
+  - "Run: ask students to predict m before moving the slider."
+  - "Paper: the try-one after the worked example and the car park in Make are worked on paper first. Books out, and look for both gradients written before the product."
+  - "Modify: before they set m, ask them to say the gradient of the dashed line."
+stuck:
+  - see: "A student answers -3 for a perpendicular to gradient 3."
+    ask: "What do 3 and -3 multiply to?"
+    fix: "-9. It has to be -1, so turn it upside down: -1/3."
+  - see: "A student says two lines are parallel because they look it."
+    ask: "What are their gradients?"
+    fix: "Work them out from the points and compare."
+stretch: "Find the rule of the line through (2, 5) that is perpendicular to y = 2x + 1."
+support: "Fix the gradients as fractions (2/1, 1/2) so that 'upside down' is easy to see."
+leads: |
+  Continues AC9M9A03 node 2.
+
+  Where it leads: coordinate geometry proofs in Year 10 (Is this shape a rectangle?).
+exit:
+  q: "A line has gradient 3/5. What is the gradient of a perpendicular line?"
+  a: "-5/3."
+explain: |
+  Parallel lines have the same gradient.
+
+  Perpendicular lines have gradients that multiply to −1: turn one upside down and change the sign.

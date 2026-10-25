@@ -401,5 +401,6 @@
   "interval-ends-open": {"home": "maths/real-numbers/number-line-ranges", "text": "Both ends are left out of a range that includes them (a tolerance of 19.95 to 20.05 written 19.95 < x < 20.05); ≤ and ≥ keep the end (closed circle), < and > leave it out (open circle)."},
   "gradient-run-over-rise": {"home": "maths/linear-relations/gradient-two-points", "text": "Gradient is found as run over rise (across divided by up) instead of rise over run."},
   "gradient-order-mixed": {"home": "maths/linear-relations/gradient-two-points", "text": "The rise is taken from the points in one order and the run in the other (y2 − y1 over x1 − x2), so the sign comes out wrong."},
+  "perpendicular-negate-only": {"home": "maths/linear-relations/parallel-perpendicular", "text": "The gradient of a perpendicular line is found by changing the sign only (3 becomes −3), not by turning it upside down as well."},
   "round-early": {"home": "maths/real-numbers/exact-or-rounded", "text": "Values are rounded at the start of a calculation (π as 3, √2 as 1.4) and the answer is treated as exact; keep exact values or full calculator values until the end, then round once."}
 }

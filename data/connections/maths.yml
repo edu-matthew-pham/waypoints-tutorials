@@ -2298,7 +2298,18 @@ nodes:
     purpose:
       world: "Car-park lines and floor tiles have to be parallel or at right angles, checked by gradient on the plan."
       next: "Coordinate geometry proofs (Year 10)."
-    entries: []
+    entries:
+      - id: car-park-lines
+        kind: world
+        steps: [1, 2]
+        domain: building
+        picture: spatial
+        situation: "A car-park plan has kerb lines and bay lines. Are the bay lines square to the kerb?"
+        maths: "Parallel: equal gradients. Perpendicular: gradients multiply to −1."
+        given: "The coordinates of the ends of each line on the plan."
+        hidden: "Real plans are scaled and may have curved kerbs."
+        check: "Measure the angle between a bay line and the kerb in a school car park."
+        figures: []
 
   AC9M9A03 n3:
     move: "Find the distance between two points with Pythagoras."

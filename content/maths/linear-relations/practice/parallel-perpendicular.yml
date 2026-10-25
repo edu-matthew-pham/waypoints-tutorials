@@ -1,0 +1,23 @@
+# Practice for "Parallel and perpendicular".
+templates:
+  - q: "A line has gradient {m}. What is the gradient of a line parallel to it?"
+    vars: { m: "-8..8" }
+    answer: "{m}"
+    explain: "Parallel lines have the same gradient: {m}."
+  - q: "A line has gradient {m}. What is the gradient of a line perpendicular to it? (A decimal is fine.)"
+    vars: { m: [2, 4, 5, 8, 10, -2, -4, -5, -8, -10] }
+    answer: "{-1 / m}"
+    tolerance: 0.001
+    feedback:
+      - ["{-m}", "That changes the sign only. Turn it upside down too."]
+    explain: "Turn {m} upside down: 1/{m}. Change the sign: {-1 / m}. Check: {m} × {-1 / m} = -1."
+  - q: "A line has gradient {a}/{b}. What is the gradient of a line perpendicular to it, as a decimal?"
+    vars: { a: [1, 2, 3], b: [2, 4, 5] }
+    where: "a < b"
+    answer: "{-b / a}"
+    tolerance: 0.001
+    explain: "Turn {a}/{b} upside down: {b}/{a}. Change the sign: {-b / a}."
+  - q: "Lines have gradients {m} and {n}. Are they parallel, perpendicular or neither?"
+    vars: { m: [2, 3, 4, 5], n: [2, 3, 4, 5] }
+    choices: ["{m == n ? 'Parallel' : 'Neither'}", "Perpendicular"]
+    explain: "{m == n ? 'Equal gradients: parallel.' : m + ' and ' + n + ' multiply to ' + (m * n) + ', not -1, and they are not equal.'}"
