@@ -37,3 +37,22 @@ INSERT INTO artists VALUES
  ('Kito','Japan',2016),
  ('Ayla Reed','USA',2014),
  ('Juno & Co','Ireland',2010);
+
+-- Listener reviews. song_id holds the id of a row in songs.
+CREATE TABLE reviews (
+  id INTEGER PRIMARY KEY,
+  song_id INTEGER,
+  stars INTEGER,
+  comment TEXT
+);
+INSERT INTO reviews VALUES
+ (1,1,5,'Instant favourite'),
+ (2,1,4,'Great chorus'),
+ (3,3,5,'Dance all night'),
+ (4,3,3,'A bit repetitive'),
+ (5,4,4,'Perfect for summer'),
+ (6,6,5,'Gorgeous voice'),
+ (7,9,2,'Too quiet'),
+ (8,11,4,'Catchy'),
+ (9,11,5,'On repeat'),
+ (10,14,3,'Slow but nice');
