@@ -65,8 +65,8 @@ tasks:
       q: "On the board, why did the puck turn round?"
       options: ["The push kept acting: the net force pointed left, so the puck slowed, stopped and then sped up to the left", "The puck ran out of the force that was carrying it right", "The push only started working once the puck had stopped"]
       answer: 0
-      feedback: [null, "Nothing was carrying it right: on frictionless ice it would slide on forever. What did the push do?", "Look at the graph: the speed started falling the moment the push acted."]
-      explain: "An unbalanced force changes the motion in the direction of the net force for as long as it acts. Slowing down, stopping and reversing were all the same change: towards the left."
+      feedback: [null, "Nothing was carrying it to the right, because on frictionless ice it would slide on forever, so what did the push do?", "Look at the graph, because the speed started falling the moment the push acted."]
+      explain: "An unbalanced force changes the motion in the direction of the net force for as long as it acts, so slowing down, stopping and reversing were all the same change, towards the left."
     hint: ["Imagine the same puck on the ice with nothing pushing it at all. What would it do?", "Watch the speed-time graph from the moment the push starts, and ask whether anything waits until the puck has stopped."]
   - check:
       type: sort
@@ -74,9 +74,9 @@ tasks:
       options: ["Changing: unbalanced force", "Not changing: balanced forces"]
       items:
         - ["A cyclist braking at the lights", "Changing: unbalanced force"]
-        - ["A car going round a roundabout at a steady 30 km/h", "Changing: unbalanced force", "Its speed is steady but its direction keeps changing: that is a change in motion."]
+        - ["A car going round a roundabout at a steady 30 km/h", "Changing: unbalanced force", "Its speed is steady but its direction keeps changing, and that counts as a change in motion."]
         - ["A lift rising at a steady speed", "Not changing: balanced forces"]
-        - ["A ball thrown upwards, slowing as it rises", "Changing: unbalanced force", "Weight pulls it down the whole time: it slows, stops at the top and falls."]
+        - ["A ball thrown upwards, slowing as it rises", "Changing: unbalanced force", "Weight pulls it down the whole time, so it slows, stops at the top and then falls."]
         - ["A book resting on a desk", "Not changing: balanced forces"]
         - ["A netball changing direction when it bounces off the backboard", "Changing: unbalanced force"]
         - ["A train sitting at a platform", "Not changing: balanced forces"]
@@ -86,16 +86,16 @@ tasks:
       q: "A car drives round a bend at a steady 40 km/h. Are the forces on it balanced?"
       options: ["No: its direction is changing, so there is a net force towards the inside of the bend", "Yes: its speed isn't changing", "There are no forces on it"]
       answer: 0
-      feedback: [null, "Steady speed in a straight line means balanced. Is it going in a straight line?", "The road grips the tyres, or the car would slide straight on."]
-      explain: "A change of direction is a change in motion, so it needs an unbalanced force. Here the tyres' grip on the road pulls the car towards the inside of the bend."
+      feedback: [null, "A steady speed in a straight line means balanced forces, but is the car going in a straight line?", "The road grips the tyres, or the car would just slide straight on."]
+      explain: "A change of direction is a change in motion, so it needs an unbalanced force, and here that's the tyres' grip on the road pulling the car towards the inside of the bend."
     hint: ["Is the car travelling in a straight line as it goes round the bend?", "Picture the car on really slippery ice: if the tyres couldn't grip, where would it go?"]
   - check:
       type: question
       q: "A cyclist rides to the right and is slowing down. Which force diagram fits?"
       options: ["Forward push 40 N to the right, air resistance and friction 70 N to the left", "Forward push 70 N to the right, air resistance and friction 40 N to the left", "Forward push 50 N to the right, air resistance and friction 50 N to the left", "No forward push, and no other forces"]
       answer: 0
-      feedback: [null, "A net force to the right would speed her up.", "Equal and opposite: balanced, so a steady speed.", "With no forces at all, she would keep going at the same speed."]
-      explain: "Slowing down to the right means a net force to the left: the backward arrow is longer (70 N − 40 N = 30 N to the left)."
+      feedback: [null, "A net force to the right would speed her up, and that's not what's happening.", "Equal and opposite forces are balanced, and that would give a steady speed.", "With no forces at all she would keep going at the same speed, but there are forces here."]
+      explain: "Slowing down while moving right means there's a net force to the left, because the backward arrow is longer: 70 N − 40 N = 30 N to the left."
     hint: ["Work out which way the net force has to point for her to be slowing down, and then look for the option that gives you that.", "For each option, take the smaller force from the bigger one and see which side is left over."]
   - check: { type: reflect, text: "I explained, with a force diagram, why the puck slowed, stopped and turned round, and named a change in motion that is only a change of direction." }
 ```
@@ -122,8 +122,8 @@ check:
   q: "Looking back at force arrows: a box rests on a table. Which arrows go in its force diagram?"
   options: ["Weight down and support up, the same length", "Only weight, pointing down", "Weight down, longer than the support up", "Weight and support, both pointing down"]
   answer: 0
-  feedback: [null, "The table pushes back up. Support is a force too.", "If the weight arrow were longer, the box would sink into the table. The two are equal.", "The table pushes up. Support always points away from the surface."]
-  explain: "Equal forces get equal arrows. Weight points down and support points up, so the arrows balance."
+  feedback: [null, "The table pushes back up, because support is a force too.", "If the weight arrow were longer, the box would sink into the table, but the two forces are equal.", "The table pushes up on the box, because support always points away from the surface."]
+  explain: "Equal forces get arrows of equal length, and since weight points down and support points up, the two arrows balance."
 ```
 
 ## Elaborate: from standing still
@@ -140,7 +140,7 @@ tasks:
       type: number
       q: "The push is 7 N to the right and friction is 4 N to the left. What is the net force, in newtons?"
       answer: 3
-      explain: "7 N − 4 N = 3 N to the right: unbalanced, so the box speeds up to the right. With a push of 4 N or less, friction matches it and the box stays still."
+      explain: "7 N − 4 N = 3 N to the right, so the forces are unbalanced and the box speeds up to the right, whereas with a push of 4 N or less, friction matches the push and the box stays still."
     hint: ["The two forces act in opposite directions along the same line. How would you combine them to see what's left over?", "Draw it as two arrows and ask how much longer the longer one is."]
 ```
 
@@ -160,15 +160,15 @@ tasks:
       q: "You want to test whether a bigger push changes a trolley's speed more quickly. Which plan is a fair test?"
       options: ["Use the same trolley on the same surface, and change only the size of the push", "Use a heavier trolley for the bigger push", "Push one trolley on carpet and the other on tiles"]
       answer: 0
-      feedback: [null, "Changing the mass as well means you can't tell which change made the difference.", "Different surfaces give different friction: two things changed."]
-      explain: "Change one variable (the push), measure one (how quickly the speed changes) and keep the rest the same (trolley, surface)."
+      feedback: [null, "If you change the mass as well, you can't tell which change made the difference.", "Different surfaces give different friction, so that would mean two things changed."]
+      explain: "You change one variable (the push), measure one (how quickly the speed changes) and keep the rest the same (trolley and surface)."
     hint: "Look at each plan and count how many things differ between the two trials, because that decides whether you can tell what caused the result."
   - check:
       type: question
       q: "A spearthrower lets the thrower keep pushing on the spear over a longer arc. Why does the spear leave faster?"
       options: ["The unbalanced force acts on the spear for longer, so its speed keeps increasing for longer", "The spearthrower makes the spear lighter", "The spearthrower stores the spear's speed and releases it"]
       answer: 0
-      feedback: [null, "The spear's mass doesn't change.", "Nothing is stored: the speed builds up while the push acts."]
+      feedback: [null, "The spear's mass doesn't change, so that can't be the reason.", "Nothing is stored up, because the speed builds up while the push acts."]
       explain: "The longer an unbalanced force acts, the more the motion changes. Spearthrowers, used by First Peoples across much of mainland Australia, extend the throwing arm so the push lasts longer."
     hint: "Think about what happens to the spear's speed for as long as the thrower is still pushing on it."
 ```

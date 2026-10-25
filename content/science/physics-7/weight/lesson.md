@@ -78,22 +78,22 @@ tasks:
       q: "A 5 kg bag on Earth (g = 9.8 N/kg). What is its weight, in N?"
       answer: 49
       tolerance: 0.1
-      explain: "Weight = mass × g = 5 × 9.8 = 49 N."
+      explain: "Weight is mass × g, so it's 5 × 9.8 = 49 N."
     hint: ["What did the line under the board say that mass, g and weight have to do with each other?", "Put the numbers from the question into that, and remember the answer is a force."]
   - check:
       type: number
       q: "The same 5 kg bag on Mars (g = 3.7 N/kg). Its weight, in N?"
       answer: 18.5
       tolerance: 0.1
-      explain: "5 × 3.7 = 18.5 N. Same mass, smaller weight."
+      explain: "The mass is the same but g is smaller, so the weight is smaller too: 5 × 3.7 = 18.5 N."
     hint: "It's the same bag, so which of mass, g and weight stays the same and which one changes when you move it to Mars?"
   - check:
       type: question
       q: "Why is the astronaut's weight smaller on the Moon?"
       options: ["The Moon has much less mass than Earth, so its gravity pulls less (smaller g)", "There is no air on the Moon", "She has less mass there", "The Moon is further from the Sun"]
       answer: 0
-      feedback: [null, "Air doesn't cause weight: things weigh the same in a vacuum chamber on Earth.", "Her mass hasn't changed: same matter.", "Distance from the Sun isn't it; the Moon's own gravity is."]
-      explain: "Gravity depends on mass. The Moon has about 1/80 of Earth's mass, and it's also much smaller, which together make its g only 1.6 N/kg."
+      feedback: [null, "Air doesn't cause weight, since things weigh the same in a vacuum chamber on Earth.", "Her mass hasn't changed, because she's still made of the same matter.", "The distance from the Sun isn't the reason, because what matters here is the Moon's own gravity."]
+      explain: "Gravity depends on mass, and the Moon has only about 1/80 of Earth's mass and is also much smaller, which together make its g just 1.6 N/kg."
     hint: ["Think about what brings an astronaut back down after a jump on the Moon.", "Weight is what a planet's gravity does to her, so ask what is different about the Moon compared with Earth."]
   - check: { type: reflect, text: "I explained the difference between mass and weight, with units, and showed how to work out weight." }
 ```
@@ -120,8 +120,8 @@ check:
   q: "Looking back at balanced forces: a 2 kg bag hangs still from a spring balance. Its weight is about 20 N. What force does the spring pull up with?"
   options: ["About 20 N: the forces are balanced", "0 N, because the bag is not moving", "About 40 N, so that it can lift the bag", "About 2 N"]
   answer: 0
-  feedback: [null, "The bag is not moving because the spring pulls up as hard as gravity pulls down.", "If the pull were bigger than the weight, the bag would speed up upwards.", "2 kg is the mass. The spring has to balance the weight, which is about 20 N."]
-  explain: "The bag is still, so the forces are balanced: the spring pulls up with a force equal to the weight, about 20 N."
+  feedback: [null, "The bag isn't moving because the spring pulls up as hard as gravity pulls down.", "If the pull were bigger than the weight, the bag would speed up upwards, and it isn't.", "2 kg is the mass, but the spring has to balance the weight, and that's a force."]
+  explain: "The bag is still, so the forces are balanced and the spring pulls up with a force equal to the weight, about 20 N."
 ```
 
 ## Elaborate: a rover on Jupiter
@@ -138,8 +138,8 @@ tasks:
       q: "A rover's wheels are designed for its weight on Mars. It is sent to Jupiter instead (if it could land). What is the problem?"
       options: ["Its weight would be over six times bigger, so its wheels and legs might collapse", "Its mass would be bigger, so it would need more fuel", "Nothing: weight is the same everywhere"]
       answer: 0
-      feedback: [null, "Its mass stays the same; its weight is what changes.", "Weight depends on g: 24.8 N/kg on Jupiter, 3.7 N/kg on Mars."]
-      explain: "24.8 ÷ 3.7 ≈ 6.7, so its weight would be nearly seven times bigger."
+      feedback: [null, "Its mass stays the same, and it's the weight that changes.", "Weight depends on g, which is 24.8 N/kg on Jupiter and 3.7 N/kg on Mars."]
+      explain: "Dividing 24.8 by 3.7 gives about 6.7, so its weight would be nearly seven times bigger."
     hint: ["Compare g for Mars and for Jupiter on the board and ask how many times bigger one is than the other.", "The rover itself isn't changing, so ask which of its properties does change."]
 ```
 
@@ -158,7 +158,7 @@ check:
   q: "On the Moon (no air), an astronaut dropped a hammer and a feather together (Apollo 15, 1971). What happened?"
   options: ["They hit the ground together", "The hammer landed first", "The feather floated away"]
   answer: 0
-  feedback: [null, "On Earth air slows the feather; on the Moon there's no air.", "With no air, there's nothing to make it float."]
+  feedback: [null, "On Earth the air slows the feather, but on the Moon there's no air.", "With no air, there's nothing to make it float."]
   explain: "The heavier hammer is pulled harder, but it also has more mass to get moving, so both speed up at the same rate. Air resistance is what makes feathers fall slowly on Earth."
 hint: "Think about why a feather drifts down slowly on Earth, and whether that still applies on the Moon."
 ```

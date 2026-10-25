@@ -64,8 +64,8 @@ tasks:
       q: "When the box moved at a steady speed, what was true?"
       options: ["The push equalled friction: balanced, net force 0", "There were no forces on it", "The push was bigger than friction"]
       answer: 0
-      feedback: [null, "Both arrows were there: push forward, friction back.", "If the push were bigger, the box would speed up: check the graph."]
-      explain: "Balanced forces: equal and opposite. They are both still acting; they cancel out."
+      feedback: [null, "Both arrows were still there, with the push going forward and friction pulling back.", "If the push were bigger than friction, the box would speed up, and the graph shows that it didn't."]
+      explain: "Balanced forces are equal and opposite, so they're both still acting but they cancel each other out."
     hint: ["Think back to the graph when you found the steady speed. What was it doing, and what were the push and friction arrows doing at that moment?", "Look at the arrows on the board while the speed is steady, and ask whether either one has gone."]
   - check:
       type: sort
@@ -83,9 +83,9 @@ tasks:
       options: ["Balanced", "Unbalanced"]
       items:
         - ["A book resting on a desk", "Balanced"]
-        - ["A car cruising at a steady speed", "Balanced", "Steady speed in a straight line: balanced."]
+        - ["A car cruising at a steady speed", "Balanced", "A steady speed in a straight line means the forces are balanced."]
         - ["A ball speeding up as it rolls down a slope", "Unbalanced"]
-        - ["A skydiver falling at a steady speed", "Balanced", "Air resistance equals weight."]
+        - ["A skydiver falling at a steady speed", "Balanced", "Air resistance is equal to her weight, so the forces cancel."]
         - ["A cyclist braking", "Unbalanced"]
         - ["A plane taking off down the runway", "Unbalanced"]
   - check: { type: reflect, text: "I explained why a car at a steady speed has balanced forces, even though its engine is running." }
@@ -111,8 +111,8 @@ check:
   q: "Looking back at force arrows: a diagram shows a 30 N push to the right and 10 N of friction to the left. How do the arrows look?"
   options: ["The push arrow is three times as long as the friction arrow, and they point opposite ways", "The two arrows are the same length", "Both arrows point to the right", "The friction arrow is longer, because friction is stronger"]
   answer: 0
-  feedback: [null, "The forces are different sizes, so the arrows are different lengths.", "Friction acts against the push, so its arrow points the other way.", "The push is the bigger force (30 N against 10 N), so its arrow is longer."]
-  explain: "The length of an arrow shows the size of the force, and it points the way the force acts. 30 N is three times 10 N."
+  feedback: [null, "The forces are different sizes, so their arrows have to be different lengths.", "Friction acts against the push, so its arrow points the other way.", "The push is the bigger force at 30 N against 10 N, so its arrow is the longer one."]
+  explain: "The length of an arrow shows the size of the force and it points the way the force acts, so a 30 N push gets an arrow three times as long as a 10 N friction force."
 ```
 
 ## Elaborate: the falling skydiver
@@ -130,8 +130,8 @@ tasks:
       q: "Her forces are balanced. Is she still falling?"
       options: ["Yes, at a steady speed", "No, she has stopped in mid-air", "She is speeding up"]
       answer: 0
-      feedback: [null, "Balanced forces don't stop motion; they stop it changing.", "Speeding up needs a net force downwards."]
-      explain: "This steady speed is her terminal velocity: weight and air resistance cancel, so her speed stays the same."
+      feedback: [null, "Balanced forces don't stop motion, but they do stop it from changing.", "She would only be speeding up if there were a net force downwards, and here there isn't."]
+      explain: "This steady speed is her terminal velocity, which happens because weight and air resistance cancel and so her speed stays the same."
     hint: "Think back to the box on the track when its forces balanced, and what the graph and the dots did then."
 ```
 
@@ -154,8 +154,8 @@ tasks:
       q: "Once the box has stopped, with a push of 2 N, the friction is shown as 2 N, not 6 N. Why?"
       options: ["Friction only resists as much as it needs to, up to its limit", "Friction disappears when things stop", "The board is wrong"]
       answer: 0
-      feedback: [null, "There is still friction: it matches the push so the box stays put.", "Push gently on a heavy box that doesn't move: friction matches your push."]
-      explain: "A stationary object's friction matches the push, up to a limit (6 N here). Beyond that, the object starts sliding."
+      feedback: [null, "There is still friction, and it matches the push so the box stays put.", "If you push gently on a heavy box that doesn't move, friction is matching your push."]
+      explain: "The friction on a stationary object matches the push up to a limit, which is 6 N here, and beyond that the object starts sliding."
     hint: ["Picture pushing gently on a heavy box that doesn't budge. Is the friction on it bigger than your push, or not?", "With the box stopped, slide the push on the board and watch what the friction arrow does."]
 ```
 

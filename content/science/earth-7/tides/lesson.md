@@ -65,7 +65,7 @@ tasks:
       q: "What mainly causes the tides?"
       options: ["The moon's gravity pulling on the oceans", "The wind", "The Earth's spin alone", "The moon's light"]
       answer: 0
-      feedback: [null, "Wind makes waves, not tides.", "Spin carries the beach through the bulges, but the moon's pull makes them.", "Light has nothing to do with it."]
+      feedback: [null, "Wind makes waves, but it doesn't make tides.", "The spin carries the beach through the bulges, but it's the moon's pull that makes them.", "Light has nothing to do with the tides."]
   - check:
       type: sort
       q: "Spring tides or neap tides?"
@@ -84,7 +84,7 @@ tasks:
       q: "Do spring tides happen only in spring?"
       options: ["No: they happen about every two weeks all year, at new and full moon ('spring' as in springing up)", "Yes, only in September to November", "Only in the Northern Hemisphere's spring", "Only once a year"]
       answer: 0
-      feedback: [null, "Check the chart: two a month.", "Twice a month, every month.", "Twice a month, every month."]
+      feedback: [null, "Check the chart, which shows two biggest tides a month.", "They come twice a month, every month, whatever the season.", "They come twice a month, every month, whatever the season."]
     hint: ["Count how many times the chart shows the biggest tides in one month.", "Then ask yourself whether anything on the chart depends on the time of year."]
   - check: { type: reflect, text: "I can explain tides with the moon's gravity, and when spring and neap tides happen." }
 ```
@@ -109,8 +109,8 @@ check:
   q: "Looking back at the moon's phases: at new moon, where is the moon?"
   options: ["Between the Earth and the sun, so the sun, moon and Earth are in a line", "On the far side of the Earth from the sun", "At a right angle to the sun", "Behind the sun"]
   answer: 0
-  feedback: [null, "That is full moon.", "That is a quarter moon.", "The moon always goes round the Earth, never round the sun."]
-  explain: "At new moon the moon is between the Earth and the sun. The sun and moon pull in line, which gives a spring tide."
+  feedback: [null, "That's where the moon is at full moon.", "That's where the moon is at a quarter moon.", "The moon always goes round the Earth and never round the sun."]
+  explain: "At new moon the moon is between the Earth and the sun, so they pull in line and that gives a spring tide."
 ```
 
 ## Elaborate: reading a tide chart
@@ -124,7 +124,7 @@ check:
   q: "On the board's chart, about how many days are there between one spring tide and the next?"
   answer: 15
   tolerance: 1
-  explain: "About 14.8 days: half the moon's 29.5-day cycle, from new moon to full moon."
+  explain: "It's about 14.8 days, which is half the moon's 29.5-day cycle, from new moon to full moon."
 hint: "Look at where the biggest tides fall along the days axis, and count the gap between neighbouring ones."
 ```
 
@@ -139,8 +139,8 @@ check:
   q: "Reef walking and gathering shellfish is best at the lowest low tides. When should you plan to go?"
   options: ["Near a new or full moon, at low tide: spring tides give the lowest lows", "At a quarter moon", "Any day: low tides are always the same", "When the moon is high overhead"]
   answer: 0
-  feedback: [null, "Quarter moons give neap tides: the smallest range, so the lows are not very low.", "The chart shows the range changes through the month.", "In the bulge model, the moon overhead puts your coast under a bulge: high tide, not low."]
-  explain: "Many coastal First Nations communities have long timed fishing and gathering by the moon and tides; ask local knowledge holders about your own coast."
+  feedback: [null, "Quarter moons give neap tides, which have the smallest range, so the lows are not very low.", "The chart shows that the range changes through the month.", "In the bulge model, having the moon overhead puts your coast under a bulge, and that means high tide, not low."]
+  explain: "Many coastal First Nations communities have long timed fishing and gathering by the moon and tides, so ask local knowledge holders about your own coast."
 hint: ["Which tides have the biggest range, and what does that mean for how low the water gets?", "Check the chart for which moon phases go with the lowest lows."]
 ```
 

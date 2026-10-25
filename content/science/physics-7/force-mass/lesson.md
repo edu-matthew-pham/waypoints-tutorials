@@ -58,7 +58,7 @@ tasks:
       q: "The same unbalanced force acts on a 2 kg object and an 8 kg object. Which accelerates more?"
       options: ["The 2 kg object", "The 8 kg object", "Both the same"]
       answer: 0
-      feedback: [null, "More mass means more resistance to a change in motion.", "On the board, doubling the mass from 2 kg to 4 kg halved the acceleration: mass matters."]
+      feedback: [null, "More mass means more resistance to a change in motion, so the mass does make a difference.", "On the board, doubling the mass from 2 kg to 4 kg halved the acceleration, so mass matters."]
       explain: "For the same force, the smaller mass accelerates more."
     hint: ["Which would be easier to get moving with the same push, a small trolley or a loaded one?", "Look back at what happened to the acceleration when you doubled the mass on the board."]
   - check:
@@ -66,19 +66,19 @@ tasks:
       q: "Which statement is right?"
       options: ["A bigger unbalanced force gives a bigger acceleration, and a bigger mass gives a smaller one", "A bigger mass gives a bigger acceleration", "Force and mass don't affect acceleration"]
       answer: 0
-      feedback: [null, "It is the other way round for mass.", "On the board, changing the mass changed the acceleration, and changing the push does too."]
-      explain: "More force, more acceleration. More mass, less acceleration."
+      feedback: [null, "It works the other way round for mass.", "On the board, changing the mass changed the acceleration, and changing the push does too, so both matter."]
+      explain: "A bigger force gives more acceleration, but a bigger mass gives less."
   - check:
       type: number
       q: "Same trolley, 2 kg. Pushing with 2 N gives 1 m/s², 4 N gives 2 m/s², 6 N gives 3 m/s². What acceleration would 10 N give (m/s²)?"
       answer: 5
-      explain: "The acceleration goes up by the same amount for each extra newton: 10 N gives 5 m/s²."
+      explain: "The acceleration goes up by the same amount for each extra newton, so 10 N gives 5 m/s²."
     hint: ["Look at how much the acceleration goes up each time the push goes up by 2 N.", "Then think about how many steps like that it is from 6 N to 10 N."]
   - check:
       type: number
       q: "Same push of 8 N. A 1 kg trolley accelerates at 8 m/s², 2 kg at 4 m/s², 4 kg at 2 m/s². What acceleration would 8 kg give (m/s²)?"
       answer: 1
-      explain: "Each time the mass doubles, the acceleration halves: 8 kg gives 1 m/s²."
+      explain: "Each time the mass doubles, the acceleration halves, so 8 kg gives 1 m/s²."
     hint: ["What happens to the acceleration each time the mass goes up?", "Check your idea against the 1 kg to 2 kg step and the 2 kg to 4 kg step, and see if it holds for both."]
   - check: { type: reflect, text: "I can say how force and mass affect acceleration, and read the pattern from data." }
 ```
@@ -105,7 +105,7 @@ check:
   q: "Looking back at unbalanced forces: a box slides to the right. Friction acts on it towards the left with 6 N and nothing pushes it. What does the box do?"
   options: ["It slows down", "It keeps sliding at a steady speed", "It speeds up to the right", "It stops straight away"]
   answer: 0
-  feedback: [null, "A steady speed needs balanced forces. Here friction is not balanced by anything.", "The net force points left, against the motion, so it cannot speed up to the right.", "The net force changes the speed gradually. The box slows down first."]
+  feedback: [null, "A steady speed needs balanced forces, but here nothing balances the friction.", "The net force points left, against the motion, so the box can't be speeding up to the right.", "The net force changes the speed gradually, so the box slows down first."]
   explain: "The net force is 6 N to the left, against the motion, so the box slows down."
 ```
 
@@ -124,8 +124,8 @@ tasks:
       q: "You change the mass to 10 kg and keep the same push. What must happen to the acceleration?"
       options: ["It halves", "It doubles", "It stays the same"]
       answer: 0
-      feedback: [null, "More mass, less acceleration.", "The push is the same, but now there is twice as much mass to speed up."]
-      explain: "Doubling the mass halves the acceleration for the same push."
+      feedback: [null, "More mass means less acceleration, not more.", "The push is the same, but now there's twice as much mass to speed up."]
+      explain: "For the same push, doubling the mass halves the acceleration."
     hint: "Think about what happened to the acceleration when you doubled the mass from 2 kg to 4 kg."
 ```
 
@@ -144,8 +144,8 @@ check:
   q: "A rocket burns fuel, so its mass falls while the thrust stays the same. What happens to its acceleration?"
   options: ["It increases", "It decreases", "It stays the same"]
   answer: 0
-  feedback: [null, "Less mass means more acceleration.", "The mass changes, so the acceleration does."]
-  explain: "The same force on a smaller mass gives a bigger acceleration. This is one reason rockets are built in stages that fall away."
+  feedback: [null, "Less mass actually means more acceleration.", "The mass changes, so the acceleration changes with it."]
+  explain: "The same force on a smaller mass gives a bigger acceleration, and that's one reason rockets are built in stages that fall away."
 hint: "Think about the loaded and empty trolleys, and which way a rocket's mass is going as it burns fuel."
 ```
 

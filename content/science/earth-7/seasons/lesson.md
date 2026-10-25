@@ -64,14 +64,14 @@ tasks:
       q: "In late December, when it's summer in Canberra, how far is the Earth from the sun compared with late June?"
       options: ["About 5 million km closer", "About 5 million km farther", "The same distance", "Twice as close"]
       answer: 0
-      feedback: [null, "Check the distance on the board: about 147 in December and 152 in June.", "The orbit is nearly a circle, but not quite.", "Nowhere near: the orbit is almost a circle."]
+      feedback: [null, "Check the distance on the board, which shows about 147 million km in December and 152 million km in June.", "The orbit is nearly a circle, but not quite, so the distance does change a little.", "It's nowhere near that much, because the orbit is almost a circle."]
     hint: ["What does the board say the distance is in late December, and what does it say in late June?", "The line under the board gives the distance in millions of kilometres, so you can compare the two numbers."]
   - check:
       type: question
       q: "If distance caused seasons, what would be true?"
       options: ["Both hemispheres would have summer at the same time", "Australia would have summer in December", "Seasons would be opposite in the two hemispheres", "Nothing would change"]
       answer: 0
-      feedback: [null, "Australia does have summer in December, but so would London if distance caused it.", "That's what really happens, and distance can't explain it.", "Distance changes would affect the whole Earth at once."]
+      feedback: [null, "Australia does have summer in December, but London would too if distance were the cause.", "That's what really happens, and distance can't explain it.", "A change in distance would affect the whole Earth at once."]
     hint: "Think about what a change in the Earth's distance from the sun would do to everyone on Earth at the same time, and compare that with what London and Canberra really do in December."
   - check:
       type: sort
@@ -107,8 +107,8 @@ check:
   q: "Looking back at the Earth's spin and orbit: as the Earth goes round the sun, what does its tilted axis do?"
   options: ["It keeps pointing the same way in space", "It always leans towards the sun", "It flips over halfway through the year", "It stands straight up"]
   answer: 0
-  feedback: [null, "Because it keeps pointing the same way, the north end leans towards the sun for half the year and away for the other half.", "It never flips over.", "It is tilted about 23.4°."]
-  explain: "The axis keeps pointing the same way in space. That is why each hemisphere leans towards the sun for half the year."
+  feedback: [null, "Because the axis keeps pointing the same way, the north end leans towards the sun for half the year and away for the other half, so it can't always lean towards the sun.", "The axis never flips over, so that doesn't happen.", "It's tilted about 23.4°, so it isn't straight up."]
+  explain: "The axis keeps pointing the same way in space, and that's why each hemisphere leans towards the sun for half the year."
 ```
 
 ## Practise: the other hemisphere
@@ -124,7 +124,7 @@ tasks:
       q: "On 22 June, London has about 16½ hours of daylight and Canberra about 9½. Why?"
       options: ["The Northern Hemisphere leans towards the sun in June, and the Southern Hemisphere leans away", "London is closer to the sun", "London is nearer the equator", "The sun is bigger in London"]
       answer: 0
-      feedback: [null, "Both cities are the same distance from the sun.", "London is farther from the equator than Canberra.", "It's the same sun."]
+      feedback: [null, "Both cities are the same distance from the sun, so that can't explain it.", "London is actually farther from the equator than Canberra is.", "It's the same sun shining on both cities."]
     hint: ["Both cities are the same distance from the sun on 22 June, so what could be different about how each one is facing it?", "Look at the side view on the board for each hemisphere, and at the hours of daylight for each city."]
 ```
 
@@ -146,14 +146,14 @@ tasks:
       q: "With no tilt, what happens to Canberra's seasons?"
       options: ["They disappear: about 12 hours of daylight and the same noon sun all year", "They get stronger", "They swap", "Nothing changes"]
       answer: 0
-      feedback: [null, "Check the daylight at three dates.", "Try a bigger tilt for stronger seasons.", "Look again: the daylight stops changing."]
+      feedback: [null, "Check the daylight at three different dates.", "Try a bigger tilt, because that's what makes the seasons stronger.", "Look again, because the daylight stops changing through the year."]
     hint: ["With the tilt gone, what would make one month different from another?", "Set the tilt to 0° and slide the date through the year, watching the daylight hours and the noon sun in the line under the board."]
   - check:
       type: question
       q: "In Kakadu, Bininj people recognise six seasons, marked by changes in rain, wind, plants and animals, rather than four. Why can both systems be useful?"
       options: ["The tilt model explains why the year changes; a six-season calendar describes the changes people actually observe in that place", "Only the four-season model is science", "The six seasons are caused by a different tilt", "Kakadu has no seasons"]
       answer: 0
-      feedback: [null, "Careful observation of local signs over many generations is knowledge too.", "Same Earth, same tilt.", "Near the tropics the big change is wet and dry, which a four-season calendar doesn't show well."]
+      feedback: [null, "Careful observation of local signs over many generations is knowledge too, so it isn't worth less.", "It's the same Earth with the same tilt, so the tilt doesn't change from place to place.", "Near the tropics the big change is between wet and dry, and a four-season calendar doesn't show that well."]
 ```
 
 ### No tilt

@@ -64,8 +64,8 @@ tasks:
       q: "When you made the push bigger, what happened to its arrow?"
       options: ["It got longer, pointing the same way", "It changed direction", "It stayed the same; only the number changed"]
       answer: 0
-      feedback: [null, "The push still acted to the right. Only its size changed.", "Look again: the arrow's length grows with the force."]
-      explain: "Length shows size. A force twice as big gets an arrow twice as long."
+      feedback: [null, "The push still acts to the right, so the arrow keeps its direction and it's only the size that changed.", "Have another look, because the arrow's length does change when the force does."]
+      explain: "The length of an arrow shows the size of the force, so a force twice as big gets an arrow twice as long."
   - check:
       type: match
       q: "Match each force to what causes it."
@@ -80,8 +80,8 @@ tasks:
       q: "The trolley's weight is 49 N and the support is 49 N. How should their arrows look?"
       options: ["The same length, pointing in opposite directions", "Weight longer, because it is heavier", "Both pointing down"]
       answer: 0
-      feedback: [null, "Equal forces get equal arrows.", "The ground pushes up: support always points away from the surface."]
-      explain: "Equal sizes, equal lengths. Weight points down; the support from the ground points up."
+      feedback: [null, "When two forces are equal, their arrows are drawn the same length, so this doesn't match what the numbers say.", "The ground pushes up on the trolley, because support always points away from the surface."]
+      explain: "The two forces are equal in size, so their arrows are the same length, and since weight points down while the support from the ground points up, the arrows point in opposite directions."
     hint: ["If two forces are exactly the same size, how would you show that in a drawing?", "And think about which way the ground pushes back on something sitting on it, then check the Support arrow on the trolley board."]
   - check: { type: reflect, text: "I can say what an arrow's length and direction show, and name the forces on the trolley." }
 ```
@@ -134,9 +134,9 @@ check:
   options: ["Forward arrow longer than backward arrow", "Forward and backward arrows equal", "Backward arrow longer than forward arrow"]
   items:
     - ["A cyclist speeding up", "Forward arrow longer than backward arrow"]
-    - ["A car driving at a steady 60 km/h", "Forward and backward arrows equal", "Steady speed: the forces cancel."]
+    - ["A car driving at a steady 60 km/h", "Forward and backward arrows equal", "The speed is steady, so the forces cancel."]
     - ["A sled slowing down on flat snow", "Backward arrow longer than forward arrow"]
-    - ["A box being pushed but not moving", "Forward and backward arrows equal", "Friction matches the push."]
+    - ["A box being pushed but not moving", "Forward and backward arrows equal", "Friction matches the push, so the forces cancel."]
     - ["A runner speeding up out of the blocks", "Forward arrow longer than backward arrow"]
 hint: "For each one, ask whether it is speeding up, slowing down or staying at the same speed, and what the forward and backward forces would have to be doing to make that happen."
 ```
@@ -152,8 +152,8 @@ check:
   q: "First Peoples of Australia shaped boomerangs with a curved upper surface, like an aircraft wing. In flight, as air moves over it, which force does that shape mainly create?"
   options: ["Lift: air pushing the boomerang up (and sideways, which curves its path)", "Thrust: the shape keeps pushing it forward, like an engine", "More weight"]
   answer: 0
-  feedback: [null, "Nothing pushes it forward once it leaves the hand: it keeps moving because it was thrown. The shape makes the air push on it.", "Weight depends only on mass and gravity, not on shape."]
-  explain: "The aerofoil shape makes the air push on it: lift. Spinning, the lift tilts the boomerang so it curves back. Its force diagram: weight down, lift, and air resistance against its motion."
+  feedback: [null, "Nothing pushes it forward once it leaves the hand, so it keeps moving because it was thrown, and it's the shape that makes the air push on it.", "Weight depends only on mass and gravity, so the shape can't change it."]
+  explain: "The aerofoil shape makes the air push on it, and that push is lift. Because the boomerang is spinning, the lift tilts it so it curves back, and its force diagram shows weight down, lift, and air resistance against its motion."
 hint: ["Think about what a wing does to the air going over it, and what the air then does to the wing.", "Once the boomerang has left the hand, ask what is still touching it."]
 ```
 

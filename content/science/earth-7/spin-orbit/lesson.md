@@ -69,7 +69,7 @@ tasks:
         - ["Causes day and night", "Rotation"]
         - ["The sun seems to rise in the east", "Rotation"]
         - ["Goes through the seasons once", "Revolution"]
-        - ["Different stars are in the night sky in June and December", "Revolution", "Night faces a different part of space as we go round the sun."]
+        - ["Different stars are in the night sky in June and December", "Revolution", "Night faces a different part of space as we go round the sun, so the stars we see change."]
     hint: ["For each one, ask whether it repeats every day or only shows up as the Earth gets a long way round the sun.", "If you're not sure, press Play a day or Play a year on the board and see which one it shows up in."]
   - check:
       type: number
@@ -83,7 +83,7 @@ tasks:
       q: "During Play a year, what did the Earth's axis do?"
       options: ["It kept pointing the same way in space, so sometimes the north end leans towards the sun and sometimes away", "It always leaned towards the sun", "It flipped over at midyear", "It stood straight up"]
       answer: 0
-      feedback: [null, "Watch the N line in December and June: it points the same way, but the sun is on the other side.", "It never flips.", "It is tilted 23.4°."]
+      feedback: [null, "Watch the N line in December and June, because it points the same way both times but the sun is on the other side.", "It never flips, so that isn't what you saw.", "It's tilted 23.4°, so it isn't straight up."]
     hint: ["Which way did the white N line point in December, and which way in June?", "Use the Date slider to jump to those two dates and compare the line with the edges of the picture, not with the sun."]
   - check: { type: reflect, text: "I can explain the difference between rotation and revolution and what each one causes, and describe the tilted axis." }
 ```
@@ -109,7 +109,7 @@ check:
   q: "A student in Canberra records sunset time every week for a year. What pattern will they find?"
   options: ["Sunset gets later until early January, then earlier until mid-June, then later again: a yearly cycle", "Sunset is at the same time every day", "Sunset is latest in June and earliest in December", "Sunset changes randomly"]
   answer: 0
-  feedback: [null, "Use the date slider: daylight hours change with the date.", "That's the Northern Hemisphere pattern. In Canberra the long summer evenings come in December and January.", "The pattern repeats every year."]
+  feedback: [null, "Use the date slider, because the daylight hours change with the date.", "That's the Northern Hemisphere pattern, but in Canberra the long summer evenings come in December and January.", "The pattern repeats every year, so it isn't random."]
 hint: ["Think about how the hours of daylight in Canberra change across the year, and what that does to when the sun sets.", "Move the Date slider through the year and watch the daylight hours on the board."]
 ```
 
@@ -127,7 +127,7 @@ tasks:
       q: "On 22 December, where is the day longest: Darwin, Canberra, Hobart or Davis station (Antarctica)?"
       options: ["Davis station: the sun doesn't set at all", "Darwin", "Canberra", "They are all 12 hours"]
       answer: 0
-      feedback: [null, "Darwin is closest to the equator, where day length changes least.", "Try Hobart and Davis station.", "Only on two days a year (the equinoxes) are they all close to 12 hours."]
+      feedback: [null, "Darwin is the closest to the equator, and that's where day length changes the least.", "Try comparing Hobart and Davis station.", "They're only all close to 12 hours on two days a year, the equinoxes."]
     hint: ["Think about which of these places gets the most sunshine on that date, and what the tilt does to a place near the pole.", "Set the board to that date and switch between the places to compare their hours of daylight."]
 ```
 

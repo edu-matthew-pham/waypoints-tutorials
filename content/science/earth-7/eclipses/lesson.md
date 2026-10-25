@@ -74,7 +74,7 @@ tasks:
         - ["The moon is between the sun and the Earth", "Solar eclipse"]
         - ["The Earth is between the sun and the moon", "Lunar eclipse"]
         - ["The moon's shadow falls on part of Earth", "Solar eclipse"]
-        - ["The moon turns a dark red", "Lunar eclipse", "Sunlight bent through Earth's air reaches the moon and is reddened, like a sunset."]
+        - ["The moon turns a dark red", "Lunar eclipse", "Sunlight bent through Earth's air still reaches the moon and is reddened, just like a sunset."]
     hint: ["For each one, ask where the moon is compared with the Earth and the sun, and whether the shadow lands on Earth or on the moon.", "Think about which phase of the moon goes with each of those positions."]
   - check:
       type: match
@@ -88,7 +88,7 @@ tasks:
       q: "Why isn't there a solar eclipse at every new moon?"
       options: ["The moon's orbit is tilted about 5° to Earth's, so the moon usually passes above or below the line from the sun to the Earth", "The moon is too small", "The sun is sometimes too bright", "The moon moves too fast"]
       answer: 0
-      feedback: [null, "It's just big enough to cover the sun when it's exactly in line.", "Brightness doesn't stop the shadow.", "Speed doesn't matter: the line-up does."]
+      feedback: [null, "The moon is just big enough to cover the sun when it's exactly in line, so its size isn't the problem.", "The sun's brightness doesn't stop the moon's shadow from forming.", "The moon's speed doesn't matter here, because what counts is the line-up."]
     hint: ["If the moon is between the sun and the Earth at every new moon, what else would have to be true for its shadow to land on Earth?", "Watch the side view as you step through the new moons, and see where the moon is compared with the plane of Earth's orbit."]
   - check: { type: reflect, text: "I can state the conditions for solar and lunar eclipses, describe the umbra and penumbra, and explain why eclipses don't happen every month." }
 ```
@@ -113,8 +113,8 @@ check:
   q: "Looking back at the moon's phases: at which phase is the moon between the Earth and the sun?"
   options: ["New moon", "Full moon", "First quarter", "Last quarter"]
   answer: 0
-  feedback: [null, "At full moon the Earth is between the sun and the moon.", "At a quarter moon the moon is at a right angle to the sun.", "At a quarter moon the moon is at a right angle to the sun."]
-  explain: "At new moon the moon is between the Earth and the sun, so we see its dark half. A solar eclipse can only happen at new moon."
+  feedback: [null, "At full moon the Earth is between the sun and the moon, so that's the other way round.", "At a quarter moon the moon is at a right angle to the sun, not in line with it.", "At a quarter moon the moon is at a right angle to the sun, not in line with it."]
+  explain: "At new moon the moon is between the Earth and the sun, so we see its dark half, and a solar eclipse can only happen at new moon."
 ```
 
 ## Elaborate: a flat orbit
@@ -131,7 +131,7 @@ tasks:
       q: "With a flat orbit, how often were there eclipses?"
       options: ["At every new moon and every full moon", "About twice a year", "Never", "Only in summer"]
       answer: 0
-      feedback: [null, "Look at the log: every one.", "That's the real, tilted orbit.", "Every line-up gave one."]
+      feedback: [null, "Look at the log, which shows an eclipse every time.", "That's what happens with the real, tilted orbit, not the flat one.", "With a flat orbit, every line-up gave one."]
     hint: "Read down the log under the board and see what it says for each new moon and each full moon."
 ```
 
@@ -150,8 +150,8 @@ check:
   q: "Many ancient peoples recorded eclipses carefully but found them hard to predict. Babylonian astronomers eventually noticed eclipses repeat in a cycle of about 18 years. Which missing idea makes eclipses predictable from first principles?"
   options: ["The moon's tilted orbit, and where it crosses Earth's orbit plane: eclipses happen only when that crossing line points at the sun", "The size of the moon", "The speed of light", "The exact date of every new and full moon"]
   answer: 0
-  feedback: [null, "Size matters for total or annular, not for when.", "Not needed to predict them.", "Those dates tell you when a line-up is possible, but not whether the moon passes above, below or through the line."]
-  explain: "Long records let people find patterns (like the 18-year saros cycle) even without the model; the 3D model explains why the pattern exists."
+  feedback: [null, "The moon's size matters for whether an eclipse is total or annular, but not for when one happens.", "You don't need that to predict eclipses.", "Those dates tell you when a line-up is possible, but not whether the moon passes above, below or through the line."]
+  explain: "Long records let people find patterns, like the 18-year saros cycle, even without the model, and the 3D model explains why the pattern exists."
 hint: ["Think about what the dates of new and full moons tell you, and what they leave out.", "Look at the side view and ask what has to be true about where the moon is, besides the date, for its shadow to reach Earth."]
 ```
 

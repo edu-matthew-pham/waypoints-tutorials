@@ -69,14 +69,14 @@ tasks:
       q: "At first quarter, where is Earth's shadow?"
       options: ["Pointing away from the sun, nowhere near the moon: the lit half of the moon is always there, and what changes is how much of it we can see", "Covering half the moon", "Covering the whole moon", "In front of the sun"]
       answer: 0
-      feedback: [null, "Turn the shadow on with the moon at first quarter: it is far away.", "That's the shadow explanation; the board shows otherwise.", "The shadow always points away from the sun."]
+      feedback: [null, "Turn the shadow on with the moon at first quarter and you'll see it's far away.", "That's the shadow explanation, but the board shows something different.", "The shadow always points away from the sun, so it can't be there."]
     hint: ["Which way does Earth's shadow point, and where is the moon when it's at first quarter?", "Turn Show Earth's shadow on, take the moon to first quarter, and see how close the shadow gets."]
   - check:
       type: question
       q: "At full moon, where is the moon?"
       options: ["On the far side of the Earth from the sun, so we see its whole lit half", "Between the Earth and the sun", "At a right angle to the sun", "Closest to the sun"]
       answer: 0
-      feedback: [null, "That's new moon: we see only the dark half.", "That's a quarter moon.", "It's the farthest from the sun of any phase."]
+      feedback: [null, "That's new moon, when we see only the dark half.", "That's a quarter moon.", "At full moon the moon is actually as far from the sun as it ever gets, not the closest."]
     hint: ["At full moon we see the whole lit half, so where does the moon have to be for the side facing the sun to be the side facing us?", "Drag the moon to full moon on the board and see where it ends up compared with the Earth and the sun."]
   - check:
       type: question
@@ -110,8 +110,8 @@ check:
   q: "Looking back at spinning and orbiting: about how many days (sunrises) happen during one trip round the sun?"
   options: ["About 365", "Once", "About 12", "About 24"]
   answer: 0
-  feedback: [null, "A day is about one spin, and a trip round the sun takes a year.", "12 is about the number of months, not the number of days.", "24 is the number of hours in one day."]
-  explain: "One spin is a day and a trip round the sun is about 365¼ days, so there are about 365 days, and about 365 sunrises, each year."
+  feedback: [null, "A day is about one spin, and a trip round the sun takes a whole year.", "12 is about the number of months in a year, not the number of days.", "24 is the number of hours in one day, not the number of days in a year."]
+  explain: "One spin is a day and a trip round the sun takes about 365¼ days, so there are about 365 days, and about 365 sunrises, in each year."
 ```
 
 ## Practise: name the phase
@@ -137,7 +137,7 @@ check:
   q: "A student sees a full moon on 1 March. On about what day of March will the next full moon be?"
   answer: 30
   tolerance: 1
-  explain: "About 29.5 days later: 30 or 31 March."
+  explain: "It's about 29.5 days later, so that's 30 or 31 March."
 hint: ["The moon goes through all its phases between one full moon and the next.", "Take the moon once all the way round on the Explore board and watch how many days after new moon it has been."]
 ```
 
@@ -153,7 +153,7 @@ check:
   q: "From Australia a waxing crescent is lit on the left. From Japan it is lit on the right. Why?"
   options: ["People in the Northern Hemisphere see the moon 'upside down' compared with us, so left and right swap", "Japan sees a different moon", "The moon's phase is different in Japan", "It's lit on the left everywhere"]
   answer: 0
-  feedback: [null, "Everyone sees the same moon.", "The phase is the same everywhere on the same night: only the way up changes.", "Compare this board with the first one."]
+  feedback: [null, "Everyone sees the same moon, so that can't be it.", "The phase is the same everywhere on the same night, and only the way up changes.", "Try comparing this board with the first one."]
 hint: ["You and someone in Japan are looking at the same moon on the same night, so what's different about where you're each standing?", "Compare this board with the one from Explore and see what has changed in the picture of the moon from Earth."]
 ```
 
