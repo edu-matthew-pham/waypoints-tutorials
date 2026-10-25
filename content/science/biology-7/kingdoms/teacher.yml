@@ -40,7 +40,7 @@ leads: |
 
   In class: a tray of specimens or photos (moss, mushroom, bread mould, insect, shell), and a microscope slide of pond water.
 exit:
-  q: "A slime grows on a dead log. It isn't green and it absorbs food from the wood. Which kingdom? Why?"
+  q: "A white, fuzzy growth spreads over a dead log. It isn't green and it absorbs food from the wood. Which kingdom? Why?"
   a: "Fungi: it can't make food from sunlight and it absorbs food from dead material."
 explain: |
   Living things are grouped into **kingdoms** by observable features: **animals** (eat other living things), **plants** (make food from sunlight), **fungi** (absorb food from other material), **protists** (mostly one cell with a nucleus) and **bacteria** (one tiny cell, no nucleus).
