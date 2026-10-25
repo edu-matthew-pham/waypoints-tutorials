@@ -24,6 +24,7 @@ One place for the testing and review steps. Handoffs and roadmaps link here inst
 - **Checks.** Each question has per-option `feedback` that answers that wrong idea; options are not led by length or order; the answer is not in the question.
 - **Hints.** Up to three, escalating, none giving the line or the answer. Where students stick (`stuck:` in teacher notes, or a hinge node), add a `smaller:` lead-in (AUTHORING › Smaller step).
 - **Effort.** `npm run effort` for the lesson: `struggle:` in `teacher.yml`, goals a student would recognise, hints that escalate.
+- **Picture or diagram.** Would a picture explain this better than the text? Named boxes and arrows (a flow, a wiring path, a process) go in a Mermaid `diagram:` (AUTHORING › Diagrams); a spatial or "what it makes" idea goes in a picture (`picture:`, `expected:`, a board picture or an inline SVG). Skip it when the text is already clear.
 - **Brief against checks.** Every number in the brief matches the check and the stored answer. Boundary cases (equal to the limit) are tested, not only the middle.
 - **Teacher layer.** `teacher.yml` notes, stuck list, exit ticket; class plan has at most about three checks per site step.
 - **Claims.** Facts, figures and studies are checked against the source and carry their limits. Mark anything you could not reach as unverified.
