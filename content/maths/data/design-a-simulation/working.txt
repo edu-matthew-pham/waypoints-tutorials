@@ -1,0 +1,7 @@
+# Raj's working for the "find the mistake" task. Plain text.
+
+# region: raj
+The striker scores 4 out of every 5 penalties.
+I will use digits 0 to 4 as a goal and 5 to 9 as a miss.
+Five digits make one shootout, and I will run 100 shootouts.
+# endregion

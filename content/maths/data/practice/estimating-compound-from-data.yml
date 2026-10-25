@@ -1,0 +1,18 @@
+# Practice for "Late and rainy: estimating and and or".
+templates:
+  - q: "In {n} records, {a} were A and B, {b} were A only, {c} were B only and the rest were neither. What is the relative frequency of A and B (a decimal)?"
+    vars: { a: "2..9", b: "3..12", c: "3..12", z: "5..15" }
+    let: { n: "a + b + c + z" }
+    answer: "{a / n}"
+    tolerance: 0.005
+    explain: "{a} ÷ {n} = {a / n}."
+  - q: "In a record of {n} days, A happened on {a} days, B on {b} days and both on {c}. On how many days did A or B happen?"
+    vars: { n: [60, 80, 100], a: "20..40", b: "15..30", c: "5..12" }
+    answer: "{a + b - c}"
+    feedback:
+      - ["{a + b}", "The {c} days when both happened are in each total. Take them off once."]
+    explain: "{a} + {b} − {c} = {a + b - c}."
+  - q: "The relative frequency of an event is {p}%. About how many times do you expect it in {n} trials?"
+    vars: { p: "5..45 by 5", n: [100, 200, 400] }
+    answer: "{p * n / 100}"
+    explain: "{p}% of {n} = {p * n / 100}."

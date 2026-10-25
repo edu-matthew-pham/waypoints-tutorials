@@ -1,0 +1,30 @@
+summary: "To simulate something you cannot repeat, match each outcome to a share of random digits, decide what one trial is, and plan how many trials to run."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can match digits to a probability."
+  - "I can say what one trial is."
+  - "I can plan how many digits a simulation needs."
+struggle: "Matching the count, not the share. Ask: out of 10 digits, how many is 80%?"
+before: |
+  Students need last lessons and relative frequency (Year 8).
+
+  The one idea: a simulation gives each outcome the right share of random digits, defines one trial, and repeats. The scoring rates are made up; do not claim a real player's rate.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says digits 0 to 4 for 80%."
+    ask: "How many of the 10 digits is that?"
+    fix: "5 of 10 is 50%. 80% needs 8."
+stretch: "Design a simulation where chances are not round: a player scores 7 in 12."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9P03 node 1.
+
+  Where it leads: running the simulation (next).
+exit:
+  q: "A player scores 30% of the time. Which digits are goals?"
+  a: "Three digits, such as 0 to 2."
+explain: |
+  Give each outcome the right share of random digits, define one trial, then repeat it many times.

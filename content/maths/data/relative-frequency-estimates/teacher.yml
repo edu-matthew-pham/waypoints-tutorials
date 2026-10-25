@@ -1,0 +1,30 @@
+summary: "When you cannot count outcomes, a record of what happened gives an estimate: the relative frequency. More records give a steadier estimate."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can find a relative frequency from a record."
+  - "I can use it as an estimate and to predict."
+  - "I can say why more records are better."
+struggle: "Treating 0.2 as exact. Ask: if we watched another 40 days, would it be 8 again?"
+before: |
+  Students need Year 8 simulations (relative frequency).
+
+  The one idea: a record gives an estimate, steadier with more data. All bus records here are made up; use your own school's if you can.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says the probability is 8."
+    ask: "Is 8 a share of the days or a count of them?"
+    fix: "Divide by the number of days: 8 ÷ 40."
+stretch: "Plot the running relative frequency over the 40 days. When does it settle?"
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9P02 node 1.
+
+  Where it leads: and, or with Venn diagrams (next), then compound estimates.
+exit:
+  q: "Late on 6 of 20 days. Estimate P(late)."
+  a: "0.3."
+explain: |
+  Relative frequency is the number of times it happened divided by the number of trials. It is an estimate of the probability, and a longer record gives a steadier one.

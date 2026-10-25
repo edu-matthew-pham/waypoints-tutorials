@@ -1,0 +1,7 @@
+# Zoe's working for the "find the mistake" task. Plain text.
+
+# region: zoe
+20 students play sport and 13 play music, out of 30.
+To find how many play sport or music I add: 20 + 13 = 33.
+So 33 students play sport or music.
+# endregion

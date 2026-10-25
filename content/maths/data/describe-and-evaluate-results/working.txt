@@ -1,0 +1,7 @@
+# Ivy's working for the "find the mistake" task. Plain text.
+
+# region: ivy
+The theory says P(two goals) = 0.64.
+Group 1 got 29 two-goal tries out of 50, so 0.58.
+That is not 0.64, so the theory is wrong.
+# endregion

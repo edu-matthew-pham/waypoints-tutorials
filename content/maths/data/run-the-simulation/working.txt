@@ -1,0 +1,7 @@
+# Mia's working for the "find the mistake" task. Plain text.
+
+# region: mia
+I ran the simulation of two kicks 20 times.
+Both kicks were goals in 11 of them, so the relative frequency is 11/20 = 0.55.
+That is not 0.64, so the counting must be wrong.
+# endregion

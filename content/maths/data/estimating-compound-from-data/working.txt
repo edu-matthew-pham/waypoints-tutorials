@@ -1,0 +1,7 @@
+# Kim's working for the "find the mistake" task. Plain text.
+
+# region: kim
+Late on 14 of the 40 days, and rainy on 14 of the 40 days.
+So late or rainy is 14 + 14 = 28 days out of 40.
+That is 28/40 = 0.7.
+# endregion

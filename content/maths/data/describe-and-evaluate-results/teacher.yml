@@ -1,0 +1,30 @@
+summary: "Small groups of trials vary a lot, a simulation leaves things out, and a real season is only a short run; describe the results, compare with the theory and explain the gap."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can describe how simulated results vary."
+  - "I can compare results with the theory."
+  - "I can give reasons for a gap."
+struggle: "Treating a gap as an error. Ask: with 50 trials, how much should it wobble?"
+before: |
+  Students need the last lesson.
+
+  The one idea: results vary by chance, more trials steady them, and a model leaves things out. All group and season numbers are made up. 0.8⁵ is 0.32768.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says the simulation is wrong."
+    ask: "What did one group of 50 get? What did all five get together?"
+    fix: "One group wobbles. Pool the groups."
+stretch: "Run 10 groups of 10 and compare their spread with 10 groups of 100."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9P03 node 3.
+
+  Where it leads: statistics, starting with where data came from.
+exit:
+  q: "Why might 10 real penalties differ from a model's prediction?"
+  a: "Chance in a short run, and things the model leaves out."
+explain: |
+  Describe the results with numbers, compare them with the theory, and explain differences by chance variation, a short run and what the model leaves out.

@@ -1,0 +1,7 @@
+# Tess's working for the "find the mistake" task. Plain text.
+
+# region: tess
+The bus was late on 2 of her first 5 school days.
+So the probability of a late bus is exactly 2/5 = 0.4.
+In the next 100 days it will be late on exactly 40.
+# endregion

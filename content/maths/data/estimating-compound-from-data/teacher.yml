@@ -1,0 +1,30 @@
+summary: "A table of what happened on 40 days gives estimates for \"late and rainy\", \"late or rainy\" and \"late on a dry day\", and lets you predict how many days to expect."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can read an \"and\" and an \"or\" probability from a two-way table of records."
+  - "I can use it to predict."
+  - "I can say it is only an estimate."
+struggle: "Adding the two totals for \"or\". Ask: which cell is counted in both totals?"
+before: |
+  Students need the last two lessons.
+
+  The one idea: the table is a record, so its relative frequencies are estimates. Conditional probability ("of the rainy days") is only previewed here and is Year 10. All numbers are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student gives 28/40 for late or rainy."
+    ask: "Where are the both-days counted?"
+    fix: "In both 14s. Take 10 away once: 18/40."
+stretch: "Draw a bar chart of the late share on rainy and on dry days."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9P02 node 3.
+
+  Where it leads: simulations (next).
+exit:
+  q: "Table: both 5, A only 10, B only 7, neither 18. P(A or B)?"
+  a: "22/40."
+explain: |
+  Each cell of the table over the total is an estimate of "and". Or adds the cells in either, counting the overlap once.

@@ -1,0 +1,34 @@
+# Penalty kicks for "Run it a thousand times".
+
+# region: run
+widget: events
+first: goal, goal, goal, goal, miss
+second: goal, goal, goal, goal, miss
+names: Kick 1, Kick 2
+view: grid
+trials: on
+seed: 11
+target: a = goal and b = goal
+# endregion
+
+# region: six
+widget: events
+first: goal, goal, goal, miss, miss
+second: goal, goal, goal, miss, miss
+names: Kick 1, Kick 2
+view: grid
+trials: on
+seed: 11
+target: a = goal and b = goal
+# endregion
+
+# region: miss
+widget: events
+first: goal, goal, goal, goal, miss
+second: goal, goal, goal, goal, miss
+names: Kick 1, Kick 2
+view: grid
+trials: on
+seed: 11
+target: a = miss or b = miss
+# endregion

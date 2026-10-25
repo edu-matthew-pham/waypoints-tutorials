@@ -1,0 +1,19 @@
+# Practice for "Run it a thousand times".
+templates:
+  - q: "A player scores on {g} of {t} equally likely outcomes. Two kicks are taken. How many of the {t * t} pairs are two goals?"
+    vars: { t: [5, 6, 8, 10], g: "2..4" }
+    answer: "{g * g}"
+    feedback:
+      - ["{g + g}", "Each goal on the first kick goes with every goal on the second: multiply."]
+    explain: "{g} × {g} = {g * g}."
+  - q: "A simulation of {n} trials gave {k} successes. What is the relative frequency (a decimal)?"
+    vars: { n: [500, 1000, 2000], k: "2..9" }
+    let: { m: "k * 100" }
+    answer: "{m / n}"
+    tolerance: 0.0005
+    explain: "{m} ÷ {n} = {m / n}."
+  - q: "A probability is counted as 0.{a}. After {n} trials a simulation gave a relative frequency of 0.{b}. By how much do they differ?"
+    vars: { a: "50..80", b: "40..70", n: [200, 500, 1000] }
+    answer: "{abs(a - b) / 100}"
+    tolerance: 0.001
+    explain: "|0.{a} − 0.{b}| = {abs(a - b) / 100}."

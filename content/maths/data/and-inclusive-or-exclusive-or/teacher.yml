@@ -1,0 +1,30 @@
+summary: "\"Sport or music\" can mean either one or both, or exactly one. A Venn diagram shows each meaning as a different set of regions."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can tell and, inclusive or and exclusive or apart."
+  - "I can count each from a Venn diagram."
+  - "I can say why adding two totals double counts."
+struggle: "Adding the two totals. Ask: where are the students who play both counted?"
+before: |
+  Students need Venn diagrams (Year 8).
+
+  The one idea: or includes both unless someone says "but not both". Counts are made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says 33 students."
+    ask: "Where are the 8 who play both counted?"
+    fix: "In both totals. Take them off once: 25."
+stretch: "Write a survey question with an unambiguous exclusive or."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Continues AC9M9P02 node 2.
+
+  Where it leads: compound probabilities estimated from data (next).
+exit:
+  q: "20 play A, 15 play B, 5 play both. How many play A or B?"
+  a: "30."
+explain: |
+  And is the overlap. Inclusive or is everything in either circle, counting the overlap once. Exclusive or is either circle without the overlap.

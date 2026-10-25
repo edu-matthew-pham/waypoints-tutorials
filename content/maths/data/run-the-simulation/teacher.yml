@@ -1,0 +1,30 @@
+summary: "A computer can run a simulation of two kicks a thousand times. Compare the relative frequency of one kick and of two goals in a row with what counting predicts."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can run a simulation and read its relative frequency."
+  - "I can compare it with the counted probability."
+  - "I can say why more trials help."
+struggle: "Expecting an exact match. Ask: if we ran it again, would we get exactly the same number?"
+before: |
+  Students need the last lesson.
+
+  The one idea: simulated relative frequencies vary around the counted probability and settle with more trials. The board uses 4 goals and 1 miss on each kick; rates are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says the simulation is wrong because it is 0.652, not 0.64."
+    ask: "Run it again. Is it the same?"
+    fix: "It varies. Compare over many trials."
+stretch: "Simulate three kicks by running the board twice and combining."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Continues AC9M9P03 node 2.
+
+  Where it leads: describing results and why they differ from reality (next).
+exit:
+  q: "1000 trials: 648 successes. Relative frequency?"
+  a: "0.648."
+explain: |
+  Run the simulation many times, find the relative frequency, and compare it with the counted probability. They agree more closely the more trials you run.

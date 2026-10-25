@@ -1,0 +1,18 @@
+# Practice for "And, or, and or-but-not-both".
+templates:
+  - q: "{a} students play sport only, {b} play both sport and music, and {c} play music only. How many play sport or music (either one or both)?"
+    vars: { a: "4..15", b: "2..9", c: "3..12" }
+    answer: "{a + b + c}"
+    feedback:
+      - ["{a + 2 * b + c}", "The {b} who play both are counted once, not twice."]
+    explain: "{a} + {b} + {c} = {a + b + c}."
+  - q: "{a} students play sport only, {b} play both and {c} play music only. How many play exactly one of the two?"
+    vars: { a: "4..15", b: "2..9", c: "3..12" }
+    answer: "{a + c}"
+    explain: "{a} + {c} = {a + c}; the {b} who play both are left out."
+  - q: "In a group, {s} play sport, {m} play music and {b} play both. How many play sport or music?"
+    vars: { s: "12..25", m: "10..20", b: "2..9" }
+    answer: "{s + m - b}"
+    feedback:
+      - ["{s + m}", "The {b} who play both are in each total. Take them off once."]
+    explain: "{s} + {m} − {b} = {s + m - b}."
