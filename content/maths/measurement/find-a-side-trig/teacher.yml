@@ -1,0 +1,34 @@
+summary: "Students choose sine, cosine or tangent and use it to find an unknown side, checking the answer makes sense (AC9M9M03, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can pick the right ratio for the sides I know and want.
+  - I can multiply or divide to find the side.
+  - I can say if an answer is possible.
+struggle: "Multiplying or dividing the wrong way. Ask: which side is on top of the fraction?"
+before: |
+  Students need Sine, cosine and tangent.
+
+  The one idea: name the sides, pick the ratio, then it's one step. Check the hypotenuse is the longest side.
+
+  Calculators must be in degree mode: check this at the start. The tree figures are made up for the task.
+running:
+  - "Predict: show of hands before the board."
+  - "Paper: the tree height in Make is worked on paper first."
+stuck:
+  - see: "A student divides to find the opposite side."
+    ask: "Is the unknown on top of the fraction or underneath?"
+    fix: "On top: multiply both sides by the bottom."
+stretch: "Measure a real height at school with a phone clinometer app."
+support: "A printed three-step recipe: name the sides, pick the ratio, calculate."
+leads: |
+  Continues AC9M9M03 node 1.
+
+  Where it leads: Finding an unknown angle.
+exit:
+  q: "Opposite = adjacent × ?"
+  a: "tan of the angle."
+explain: |
+  Name the sides from the angle, choose the ratio that has the side you know and the side you want, and solve.
+
+  If the unknown is on top, multiply. If it is underneath, divide.

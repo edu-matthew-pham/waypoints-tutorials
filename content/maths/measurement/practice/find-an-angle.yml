@@ -1,0 +1,12 @@
+# Practice for "Find an angle".
+templates:
+  - q: "A triangle has opposite {k} and adjacent {k}. What is the angle?"
+    vars: { k: "2..30" }
+    answer: "45"
+    tolerance: 0.5
+    explain: "tan⁻¹(1) = 45°."
+  - q: "A triangle has opposite {k} and hypotenuse {2 * k}. What is the angle?"
+    vars: { k: "2..30" }
+    answer: "30"
+    tolerance: 0.5
+    explain: "sin⁻¹(0.5) = 30°."

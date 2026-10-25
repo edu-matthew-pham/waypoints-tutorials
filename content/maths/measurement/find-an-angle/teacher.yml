@@ -1,0 +1,34 @@
+summary: "Students use tan⁻¹, sin⁻¹ and cos⁻¹ to find an unknown angle from two sides (AC9M9M03, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can pick the ratio from the two sides I know.
+  - I can use the inverse key to find the angle.
+  - I can check the angle makes sense.
+struggle: "Using tan instead of tan⁻¹. Ask: are you going from angle to ratio, or ratio to angle?"
+before: |
+  Students need Find a side with trigonometry.
+
+  The one idea: the inverse key undoes the ratio. Check the calculator is in degree mode.
+
+  The 1 in 14 limit applies to ramps up to 9 m (AS 1428.1, via the Queensland Health slides). The 0.6 m ramp is made up for the task.
+running:
+  - "Predict: show of hands before the board."
+  - "Paper: the ramp angle in Make is worked on paper first."
+stuck:
+  - see: "A student gets 0.07° for the ramp."
+    ask: "Did you use the inverse key?"
+    fix: "tan⁻¹ turns the ratio into the angle."
+stretch: "What angle is a 1 in 8 ramp, and which kind of ramp is it?"
+support: "A printed card with the three inverse keys and the sides each uses."
+leads: |
+  Continues AC9M9M03 node 2.
+
+  Where it leads: Similar triangles, scale and proportion.
+exit:
+  q: "tan of an angle is 1. What is the angle?"
+  a: "45°."
+explain: |
+  tan⁻¹, sin⁻¹ and cos⁻¹ turn a ratio back into an angle.
+
+  Name the sides, pick the ratio, then use its inverse.

@@ -1,0 +1,7 @@
+# Pat's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: pat
+Adjacent = 20 m, angle = 40°. I want the opposite side.
+tan 40° = opposite ÷ adjacent.
+So opposite = 20 ÷ tan 40° = 20 ÷ 0.839 = 23.8 m.
+# endregion

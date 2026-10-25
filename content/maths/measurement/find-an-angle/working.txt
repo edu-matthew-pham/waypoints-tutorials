@@ -1,0 +1,7 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+The ramp rises 1 m over a run of 14 m. I want the angle.
+tan(angle) = 1 ÷ 14 = 0.071.
+So the angle = tan 0.071 = 0.07°.
+# endregion

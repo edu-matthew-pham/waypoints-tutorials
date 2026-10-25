@@ -1,0 +1,10 @@
+# Practice for "Find a side with trigonometry".
+templates:
+  - q: "A triangle has hypotenuse {2 * k} and a 30° angle. Use sin 30° = 0.5. How long is the opposite side?"
+    vars: { k: "1..15" }
+    answer: "{k}"
+    explain: "{2 * k} × 0.5 = {k}."
+  - q: "A triangle has adjacent side {k} and a 45° angle. Use tan 45° = 1. How long is the opposite side?"
+    vars: { k: "2..30" }
+    answer: "{k}"
+    explain: "{k} × 1 = {k}."

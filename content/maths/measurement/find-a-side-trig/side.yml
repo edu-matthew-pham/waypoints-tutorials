@@ -1,0 +1,8 @@
+# Boards for "Find a side with trigonometry".
+
+# region: run
+widget: trig
+slider t: 10, 80, 40, 5
+slider h: 2, 10, 5, 1
+show: tan
+# endregion

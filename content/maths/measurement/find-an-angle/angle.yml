@@ -1,0 +1,8 @@
+# Boards for "Find an angle".
+
+# region: run
+widget: trig
+slider t: 1, 20, 10, 1
+h: 10
+show: tan
+# endregion
