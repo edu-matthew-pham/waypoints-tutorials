@@ -1,0 +1,39 @@
+summary: "Students solve a quadratic with algebra, a graph and a table, and connect the three: zeros in the table, x-intercepts and factors are the same numbers (AC9M9A04, node 4)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 8 min · Practise and Make 15 min"
+goals:
+  - I can find the solutions of a quadratic from a table.
+  - I can read the solutions from the x-intercepts of a graph.
+  - I can say how the three ways match the factors.
+struggle: "Matching a graph's intercepts to the signs in the brackets. Ask: what x makes this bracket 0?"
+before: |
+  Students need Solving by factorising and Graphing a quadratic.
+
+  The one idea: the solutions are the same numbers whether you read them from a table, a graph or the brackets. The common mistake is stopping at the first zero in a table and missing the other (Mei's working).
+
+  The poster's size is made up for the task.
+running:
+  - "Predict: take a show of hands. Those who chose (x − 9)(x + 5) copied the intercepts into the brackets without flipping the signs."
+  - "Run: ask students to say which x gives 0 in the table and where it is on the graph."
+  - "Paper: the try-one after the worked example and the poster in Make are worked on paper first. Books out, and look for each method named."
+  - "Modify: before the edge cases, ask how many times the curve will cross the axis."
+stuck:
+  - see: "A student writes (x − 9)(x + 5) for crossings at −9 and 5."
+    ask: "What x makes (x − 9) zero?"
+    fix: "x = 9, not −9. Use (x + 9)(x − 5)."
+  - see: "A student reports one solution from a table."
+    ask: "Could there be a zero outside the table?"
+    fix: "Extend the table to negatives or use algebra."
+stretch: "Find c so that y = x² − 6x + c touches the x-axis once."
+support: "A printed table already filled in, with the zeros circled, to match with the graph."
+leads: |
+  Continues AC9M9A04 node 4.
+
+  Where it leads: deciding whether a change is linear or quadratic and modelling it (next).
+exit:
+  q: "A graph crosses the x-axis at 1 and 7. Write the equation in factorised form."
+  a: "(x − 1)(x − 7) = 0."
+explain: |
+  The solutions of a quadratic equation are the zeros of its table, the x-intercepts of its graph and the numbers that make each bracket 0.
+
+  They are the same numbers seen three ways. A table of whole numbers can miss one, so check with a second method.

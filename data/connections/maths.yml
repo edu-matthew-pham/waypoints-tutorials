@@ -2414,6 +2414,17 @@ nodes:
     purpose:
       hood: "The x-intercepts, the factors and the zeros in the table are the same two numbers seen three ways."
     entries:
+      - id: poster-area
+        kind: world
+        steps: [1, 2, 3]
+        domain: design
+        picture: spatial
+        situation: "A poster is 4 cm longer than it is wide and covers 45 square centimetres. How wide is it? Can you find it from a table, a graph and an equation?"
+        maths: "x(x + 4) = 45, so x² + 4x − 45 = 0. The zeros of the table, the x-intercepts of the graph and the solutions of (x + 9)(x − 5) = 0 are the same numbers: −9 and 5."
+        given: "The area and how much longer than wide."
+        hidden: "That a table of whole numbers can miss a solution, and that only one solution fits a poster."
+        check: "Cut out a 5 cm by 9 cm rectangle and check the area."
+        figures: []
       - see: ball-arc
 
   AC9M9A05 n1:

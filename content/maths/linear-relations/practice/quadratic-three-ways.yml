@@ -1,0 +1,15 @@
+# Practice for "Three ways to solve".
+templates:
+  - q: "A graph crosses the x-axis at x = {p} and x = {q}. Which is the factorised equation?"
+    vars: { p: "-6..-1", q: "1..6" }
+    choices: ["(x {-p|s})(x {-q|s}) = 0", "(x {p|s})(x {q|s}) = 0"]
+    explain: "x = {p} comes from (x {-p|s}) = 0 and x = {q} from (x {-q|s}) = 0."
+  - q: "For y = x² {b|s}x {c|s}, what is y when x = {x}?"
+    vars: { b: [-4, -2, 2, 4], c: [-6, -3, 3, 6], x: "-3..4" }
+    answer: "{x * x + b * x + c}"
+    explain: "{x}² + {b} × {x} + {c} = {x * x + b * x + c}."
+  - q: "Solve x² {-(p + q)|s}x {p * q|s} = 0. What is the sum of the two solutions?"
+    vars: { p: "-8..8", q: "-8..8" }
+    where: "p < q and p != 0 and q != 0"
+    answer: "{p + q}"
+    explain: "(x {-p|s})(x {-q|s}) = 0, so x = {p} or x = {q}. Their sum is {p + q}."

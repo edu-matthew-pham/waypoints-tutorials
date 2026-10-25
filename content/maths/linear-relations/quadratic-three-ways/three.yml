@@ -1,0 +1,22 @@
+# Boards for "Three ways to solve".
+
+# region: run
+widget: graph
+x: -12, 8
+y: -55, 40
+grid: 1, 5
+snap: 1
+plot: y = x^2 + 4x - 45
+table: -10, -9, -8, 3, 4, 5, 6
+point P: -5, -20, drag
+# endregion
+
+# region: vary
+widget: graph
+x: -2, 6
+y: -6, 10
+grid: 1, 2
+slider c: -3, 8, 0, 1
+plot: y = x^2 - 4x + c
+table: 0, 1, 2, 3, 4
+# endregion
