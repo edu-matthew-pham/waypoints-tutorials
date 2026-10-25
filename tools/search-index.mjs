@@ -56,17 +56,19 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
   const { map: desc, perSubject } = loadDescriptors(root);
   const subjTitle = (path) => dirNode(path.split('/')[0]).title;
   const codesOf = (l) => [].concat(l.node || [], l.woven || []).map((r) => String(r).split(/\s+/)[0]).filter((c) => desc.has(c));
-  const yearsOf = (codes, texts) => {
-    // A year named in the titles ("Year 8 Chemistry") beats the band of the standards (Years 7-8); otherwise the standards' years.
-    const named = texts.flatMap(yearsInText), ys = named.length ? named : codes.flatMap((c) => dyears(desc.get(c)));
-    return ys.length ? [Math.min(...ys), Math.max(...ys)] : [null, null];
+  const span = (ys) => (ys.length ? [Math.min(...ys), Math.max(...ys)] : [null, null]);
+  // A year in a title ("Year 8 Chemistry") beats the band of the standards (Years 7-8). Without one, the years of the
+  // tagged standards and any named in the summaries, together (Algebra: Years 7 to 9).
+  const yearsOf = (codes, texts, titles = []) => {
+    const named = titles.flatMap(yearsInText);
+    return named.length ? span(named) : span([...codes.flatMap((c) => dyears(desc.get(c))), ...texts.flatMap(yearsInText)]);
   };
   const courseCodes = new Map(), courseYears = new Map();
   for (const c of courses) {
     const ls = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === c.path);
     const codes = [...new Set(ls.flatMap(codesOf))];
     courseCodes.set(c.path, codes);
-    courseYears.set(c.path, yearsOf(codes, [c.title, dirNode(c.path).summary, ...(dirNode(c.path).meta?.units || []).map((u) => `${u.title} ${u.summary || ''}`)]));
+    courseYears.set(c.path, yearsOf(codes, [dirNode(c.path).summary, ...(dirNode(c.path).meta?.units || []).map((u) => `${u.title} ${u.summary || ''}`)], [c.title]));
   }
   const entries = [];
   const short = (s) => { const t = String(s || '').replace(/\s+/g, ' ').trim(); return t.length > 150 ? t.slice(0, 147).replace(/\s+\S*$/, '') + '…' : t; };
@@ -84,7 +86,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
       k: [pwOf(c.path), play[c.path]?.label, LANG[first?.language], subjTitle(c.path), yearTokens(lo, hi), stdWords(courseCodes.get(c.path)), d.meta?.tagline, d.summary].filter(Boolean).join(' ') });
     for (const u of d.meta?.units || []) {
       if (!lessons.some((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id)) continue;
-      const [ulo, uhi] = yearsOf(lessons.filter((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id).flatMap(codesOf), [u.title, u.summary]);
+      const [ulo, uhi] = yearsOf(lessons.filter((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id).flatMap(codesOf), [u.summary], [u.title]);
       add({ t: u.title, u: `${c.path}/#unit-${u.id}`, s: subjTitle(c.path), sp: c.path.split('/')[0], c: c.title, y: yearsLabel(ulo ?? lo, uhi ?? hi), ty: 'unit', d: short(u.summary),
         k: [c.title, pwOf(c.path), play[c.path]?.label, subjTitle(c.path), yearTokens(ulo ?? lo, uhi ?? hi), u.summary].filter(Boolean).join(' ') });
     }
@@ -93,7 +95,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     const cp = l.slug.split('/').slice(0, -1).join('/'), cn = dirNode(cp), codes = codesOf(l);
     const unit = (cn.meta?.units || []).find((u) => u.id === l.unit);
     const [lo0, hi0] = courseYears.get(cp) || [null, null];
-    const [lo, hi] = yearsOf(codes, [l.title]);
+    const [lo, hi] = yearsOf(codes, [], [l.title]);
     add({ t: l.title.replace(/^Optional:\s*/, ''), u: `${l.slug}/`, s: subjTitle(l.slug), sp: l.slug.split('/')[0], c: cn.title, y: yearsLabel(lo ?? lo0, hi ?? hi0), ty: 'lesson', d: short(l.summary || l.hook),
       k: [cn.title, unit?.title, pwOf(cp), play[cp]?.label, LANG[l.language], subjTitle(l.slug), yearTokens(lo ?? lo0, hi ?? hi0), stdWords(codes), ideaWords(l), l.summary].filter(Boolean).join(' ') });
   }
