@@ -1,0 +1,30 @@
+summary: "A report says what was found, how strong the evidence is, and what to do. A small difference between two weeks can be chance; say so."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can report findings with a number."
+  - "I can say how strong the evidence is."
+  - "I can recommend what to do next."
+struggle: "Claiming more than the data shows. Ask: how big is the difference next to how much the bins vary?"
+before: |
+  Students need the last lesson.
+
+  The one idea: a report says what, how sure and what next. Assessment note: investigations are marked on whether the evidence supports the conclusion. The numbers are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student writes \"recycling improved\"."
+    ask: "How big is the difference next to the spread?"
+    fix: "Say it may be chance, and what more data would show."
+stretch: "Write the report for the principal and for the poster."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9ST05 node 3.
+
+  Where it leads: Year 10 statistics.
+exit:
+  q: "Name one thing that makes evidence stronger."
+  a: "More data, a fair sample, a pattern that repeats."
+explain: |
+  Report the finding with numbers, say how strong the evidence is by comparing the difference with the spread, and recommend what to do.

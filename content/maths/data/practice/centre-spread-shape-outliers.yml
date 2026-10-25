@@ -1,0 +1,11 @@
+# Practice for "Which is better".
+templates:
+  - q: "Brand A has mean {m} and range {r}. Brand B has mean {m2} and range {r2}. By how much does B's range exceed A's?"
+    vars: { m: "40..50", r: "4..9", m2: "41..52", r2: "15..30" }
+    answer: "{r2 - r}"
+    explain: "{r2} − {r} = {r2 - r}."
+  - q: "A set has values {a}, {b}, {c}, {d} and an outlier {e}. What is the mean of all five?"
+    vars: { a: "9..11", b: "10..12", c: "10..12", d: "11..13", e: "30..50 by 5" }
+    answer: "{(a + b + c + d + e) / 5}"
+    tolerance: 0.05
+    explain: "({a} + {b} + {c} + {d} + {e}) ÷ 5 = {(a + b + c + d + e) / 5}."

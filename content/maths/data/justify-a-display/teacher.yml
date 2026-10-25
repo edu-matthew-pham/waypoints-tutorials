@@ -1,0 +1,28 @@
+summary: "The same data can need different displays for different readers. Choose a display for its audience and purpose, say why, and read it in context."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can choose a display for an audience and purpose."
+  - "I can justify the choice."
+  - "I can read the display in context."
+struggle: "Saying \"I like it\". Ask: who reads it and what do they need to do?"
+before: |
+  Students need the last lesson. Sales counts are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says any graph will do."
+    ask: "Would you put a table of numbers on a poster?"
+    fix: "Choose for the reader."
+stretch: "Make two displays for two readers."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9ST04 node 2.
+
+  Where it leads: a whole investigation.
+exit:
+  q: "Name a reader and a display that suits them."
+  a: "E.g. children: picture graph."
+explain: |
+  Choose the display for the data type, the reader and the job. Say why.

@@ -1,0 +1,7 @@
+# Nina's working for the "find the mistake" task. Plain text.
+
+# region: nina
+Brand A is drawn on a plot from 0 to 20 and brand B on a plot from 0 to 100.
+B looks narrower, so B's results are more consistent.
+So B is the better battery.
+# endregion

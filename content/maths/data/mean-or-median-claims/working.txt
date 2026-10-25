@@ -1,0 +1,7 @@
+# Lena's working for the "find the mistake" task. Plain text.
+
+# region: lena
+The seven house prices are 520, 540, 560, 580, 600, 640 and 2400 thousand dollars.
+The mean is about 834, so a typical house costs $834 000.
+That is the number to tell the buyer.
+# endregion

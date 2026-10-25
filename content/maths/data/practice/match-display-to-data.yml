@@ -1,0 +1,16 @@
+# Practice for "The right graph for the data".
+templates:
+  - q: "{s} Which display suits it best?"
+    cases:
+      - { s: "The favourite sport of each of 80 students.", k: "A bar chart", w: "A line graph", e: "Sports are categories, so use bars." }
+      - { s: "The temperature each hour through a day.", k: "A line graph", w: "A pie chart", e: "Time order calls for a line." }
+      - { s: "What share of the budget goes to each of 4 areas.", k: "A pie chart", w: "A scatter plot", e: "Parts of a whole suit a pie." }
+      - { s: "The heights of 100 students.", k: "A histogram", w: "A pie chart", e: "Measurements suit a histogram." }
+      - { s: "Each student's hours of sleep and test mark.", k: "A scatter plot", w: "A pie chart", e: "Two numbers for each person suit a scatter plot." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"
+  - q: "In a survey, {a} of {n} students walk to school. What angle is the walking slice in a pie chart (degrees)?"
+    vars: { n: [20, 24, 30, 40, 60], a: "3..9" }
+    answer: "{a / n * 360}"
+    tolerance: 0.5
+    explain: "{a} ÷ {n} × 360 = {a / n * 360}."

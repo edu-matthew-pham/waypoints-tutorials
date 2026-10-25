@@ -1,0 +1,7 @@
+# Omar's working for the "find the mistake" task. Plain text.
+
+# region: omar
+The clinic waits are mostly 5 to 10 minutes with a few long ones.
+Most of the data is on the left, so it is skewed left.
+So the mean is below the median.
+# endregion

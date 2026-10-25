@@ -1,0 +1,7 @@
+# Ben's working for the "find the mistake" task. Plain text.
+
+# region: ben
+Group A asked 30 students in the library and Group B drew 30 names at random.
+Group A found 0.3 and Group B found 0.7.
+Both samples have 30 students, so they are equally good and the truth is 0.5.
+# endregion

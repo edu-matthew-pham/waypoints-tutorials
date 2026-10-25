@@ -1,0 +1,30 @@
+summary: "A distribution's shape says where the values pile up and where the long tail runs. A tail to the right is skewed right and pulls the mean above the median."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can describe a distribution as symmetric or skewed."
+  - "I can name the direction by the tail."
+  - "I can link the skew to the mean and the median."
+struggle: "Naming the skew by where most data is. Ask: where is the long tail?"
+before: |
+  Students need mean and median, dot plots.
+
+  The one idea: the tail names the skew, and it pulls the mean towards it. Waiting times are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says skewed left because the bulk is on the left."
+    ask: "Where does the long tail go?"
+    fix: "The tail names it: right."
+stretch: "Find a real data set that is skewed left."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9ST03 node 1.
+
+  Where it leads: comparing distributions (next).
+exit:
+  q: "Mean 30, median 25. Which skew?"
+  a: "Right."
+explain: |
+  Look for the long tail. The tail points the way the data is skewed, and the mean is pulled towards it.

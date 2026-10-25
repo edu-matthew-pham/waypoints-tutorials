@@ -1,0 +1,12 @@
+# Batteries for "Two data sets, one scale".
+
+# region: run
+widget: data
+values: 8, 9, 9, 10, 10, 10, 11, 11, 12
+second: 5, 7, 9, 10, 10, 12, 13, 14, 15
+names: Brand A, Brand B
+range: 0, 20
+edit: on
+label: Battery life (hours)
+show: mean, median, range
+# endregion

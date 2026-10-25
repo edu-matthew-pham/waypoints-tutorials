@@ -1,0 +1,28 @@
+summary: "A graph's axis, scale and window can make a small difference look huge. Read the numbers, check where the axis starts, and redraw from zero."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can read the axis to check a display."
+  - "I can say how a display steers a view."
+  - "I can redraw it fairly."
+struggle: "Trusting bar heights. Ask: where does the axis start?"
+before: |
+  Students need bar charts and percentages. The values are made up; the trick is the point.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says X is 2.5 times longer."
+    ask: "What are the labels?"
+    fix: "Read the numbers, not the bars."
+stretch: "Collect two real ads with charts and test them."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Continues AC9M9ST02 node 2.
+
+  Where it leads: shape of a distribution.
+exit:
+  q: "What should a bar chart axis start at?"
+  a: "Zero."
+explain: |
+  Check the axis, the scale and the time window. Read the numbers and redraw fairly.

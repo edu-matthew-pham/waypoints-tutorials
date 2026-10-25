@@ -1,0 +1,30 @@
+summary: "A claim about an average depends on which average was used and how the data was collected. One very high value drags the mean but hardly moves the median."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can say which average a claim uses."
+  - "I can say when an outlier makes the mean misleading."
+  - "I can ask how a claim's data was collected."
+struggle: "Believing a headline average. Ask: which average, and from whom?"
+before: |
+  Students need mean and median (Year 7) and bias (Year 8).
+
+  The one idea: an average claim needs which average and how the data was collected. The prices and the staff salaries are made up; the Westpac page is for the idea that median house prices resist very high sales.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says the mean is always the best."
+    ask: "Does the 2400 sale look like a typical house?"
+    fix: "The median ignores how far the biggest value is."
+stretch: "Find a news headline with an average in it and question it."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9ST01 node 2.
+
+  Where it leads: sampling method and results (next).
+exit:
+  q: "Which average resists an outlier?"
+  a: "The median."
+explain: |
+  Check which average a claim uses and how the data was collected. One outlier can drag the mean but hardly moves the median.

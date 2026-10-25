@@ -1,0 +1,7 @@
+# Sia's working for the "find the mistake" task. Plain text.
+
+# region: sia
+The data are favourite fruits: apple, banana, orange.
+I will join the three points with a line graph.
+The line shows how popular fruit changes.
+# endregion

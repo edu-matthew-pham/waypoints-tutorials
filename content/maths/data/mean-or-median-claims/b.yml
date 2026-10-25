@@ -1,0 +1,11 @@
+# House prices for "The average is... which average".
+
+# region: run
+widget: data
+values: 520, 540, 560, 580, 600, 640, 2400
+range: 400, 2500
+step: 10
+edit: on
+show: mean, median
+label: Sale price (thousands of dollars)
+# endregion

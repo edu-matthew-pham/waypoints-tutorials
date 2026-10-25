@@ -1,0 +1,30 @@
+summary: "Each kind of data has a display that suits it: bars for categories, pies for parts of a whole, lines for change over time, histograms for measurements and scatter plots for two numbers."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can match a display to the kind of data."
+  - "I can say why a wrong display misleads."
+  - "I can calculate pie chart angles."
+struggle: "Using a line graph for categories. Ask: is there an order between apple and banana?"
+before: |
+  Students need Year 7 and 8 displays.
+
+  The one idea: the data type decides the display. Counts are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student uses a line graph for fruit."
+    ask: "Does the line between apple and banana mean anything?"
+    fix: "No: categories need bars."
+stretch: "Make the same data into two displays and say which is clearer."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9ST04 node 1.
+
+  Where it leads: justifying a display for an audience (next).
+exit:
+  q: "Which display for change over time?"
+  a: "A line graph."
+explain: |
+  Match the display to the data type: bars for categories, pies for parts of a whole, lines for time, histograms for measurements and scatter plots for pairs.

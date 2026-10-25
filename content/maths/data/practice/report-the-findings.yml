@@ -1,0 +1,13 @@
+# Practice for "Report the findings and how sure you are".
+templates:
+  - q: "Group A mean {a}, group B mean {b}. How many points higher is B's mean?"
+    vars: { a: "50..60", b: "61..70" }
+    answer: "{b - a}"
+    explain: "{b} − {a} = {b - a}."
+  - q: "{s} How strong is the evidence?"
+    cases:
+      - { s: "Two means differ by 2 points but values vary by about 40 points.", k: "Weak: the difference is small next to the spread", w: "Strong: one is higher", e: "2 against a spread of 40 is within normal variation." }
+      - { s: "Two means differ by 30 points and values vary by about 10 points.", k: "Strong: the difference is large next to the spread", w: "Weak: the difference is small", e: "30 is far bigger than the spread of 10." }
+      - { s: "Eight weeks in a row the mean rose.", k: "Stronger: the pattern repeats", w: "Weaker: it is only means", e: "A repeating pattern is more convincing." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"

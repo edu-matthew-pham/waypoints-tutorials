@@ -1,0 +1,7 @@
+# Zed's working for the "find the mistake" task. Plain text.
+
+# region: zed
+We want the percentage of recycling that is recyclable.
+I will sort the bins on the day after the school fair because there will be a lot of rubbish.
+That will give a good picture of the whole year.
+# endregion

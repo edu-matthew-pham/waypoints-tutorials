@@ -1,0 +1,7 @@
+# Zed2's working for the "find the mistake" task. Plain text.
+
+# region: zed2
+Week 1 had a mean of 67.1% and week 2 had a mean of 68.1%.
+Week 2 is higher, so recycling has improved.
+We should tell the school it is working.
+# endregion

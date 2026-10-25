@@ -1,0 +1,30 @@
+summary: "To compare two data sets fairly, draw them on the same scale, one above the other. Then the centre, the spread and the shape can be read side by side."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can draw or read two sets on a shared scale."
+  - "I can find and compare their ranges."
+  - "I can say why the scale must match."
+struggle: "Comparing plots with different scales. Ask: does the same width mean the same number?"
+before: |
+  Students need dot plots and range (Year 7).
+
+  The one idea: compare on one scale. The battery data are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student compares the two plots by eye on different scales."
+    ask: "Do 5 cm mean the same on both?"
+    fix: "Redraw on one scale."
+stretch: "Draw both as back-to-back stem plots."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Continues AC9M9ST03 node 2.
+
+  Where it leads: judging centre, spread and shape (next).
+exit:
+  q: "Why use one scale for two plots?"
+  a: "So the same length means the same amount."
+explain: |
+  Plot both sets on one scale, one above the other. Then compare their centres and spreads directly.

@@ -1,0 +1,15 @@
+# Practice for "A graph for who and why".
+templates:
+  - q: "Of {n} items sold, {a} were drinks. What percentage is that?"
+    vars: { n: [100, 120, 150, 200, 250], a: "20..60" }
+    answer: "{a / n * 100}"
+    tolerance: 0.1
+    explain: "{a} ÷ {n} × 100 = {a / n * 100}."
+  - q: "{s} Which display suits the reader best?"
+    cases:
+      - { s: "A principal wants exact numbers to compare four food types.", k: "A labelled bar chart", w: "An unlabelled picture", e: "Exact comparison needs labelled bars." }
+      - { s: "Students passing a noticeboard have a few seconds.", k: "One big simple picture", w: "A table of 40 numbers", e: "A poster must be quick to read." }
+      - { s: "A report must show change in sales over a year.", k: "A line graph by month", w: "A pie chart", e: "Time order calls for a line." }
+      - { s: "A teacher wants to see how marks are spread across a class.", k: "A histogram or dot plot", w: "A pie chart of names", e: "A distribution needs a histogram or dot plot." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"

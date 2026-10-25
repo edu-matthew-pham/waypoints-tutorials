@@ -1,0 +1,7 @@
+# Pia's working for the "find the mistake" task. Plain text.
+
+# region: pia
+Brand X is 100 hours and brand Y is 94 hours; the chart axis starts at 90.
+The X bar is 10 units tall and the Y bar is 4 units tall.
+So X lasts 2.5 times as long as Y.
+# endregion

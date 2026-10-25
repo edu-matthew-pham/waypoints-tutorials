@@ -1,0 +1,30 @@
+summary: "Turn a worry into a statistical question, decide what to measure and where, when and how often to sample, and plan ahead for what could skew the data."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can pose a statistical question."
+  - "I can plan what to measure and how to sample."
+  - "I can say what might skew the data."
+struggle: "Choosing a question that cannot be answered with data. Ask: what would you count or measure?"
+before: |
+  Students need the sampling lessons.
+
+  The one idea: plan before you collect. This is a made-up school audit; do a real one if the school will let you.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student only wants to check the cleanest bin."
+    ask: "Would that show what is in all the bins?"
+    fix: "Sample fairly."
+stretch: "Plan the audit for your own school."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9ST05 node 1.
+
+  Where it leads: collecting and analysing the data (next).
+exit:
+  q: "Name one thing that could skew a recycling audit."
+  a: "An event day, or checking only one place."
+explain: |
+  Pose a question data can answer, plan what to measure and how to sample, and think ahead about what could skew it.

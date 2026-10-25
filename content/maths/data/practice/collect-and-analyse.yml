@@ -1,0 +1,11 @@
+# Practice for "Collect and analyse the audit".
+templates:
+  - q: "Five bins were {a}%, {b}%, {c}%, {d}% and {e}% recyclable (made up). What is the mean?"
+    vars: { a: "50..60", b: "60..70", c: "60..70", d: "70..80", e: "70..90" }
+    answer: "{(a + b + c + d + e) / 5}"
+    tolerance: 0.05
+    explain: "({a} + {b} + {c} + {d} + {e}) ÷ 5 = {(a + b + c + d + e) / 5}."
+  - q: "Five bins were {a}%, {b}%, {c}%, {d}% and {e}% recyclable (made up). What is the range?"
+    vars: { a: "50..60", b: "61..70", c: "61..70", d: "71..80", e: "81..95" }
+    answer: "{e - a}"
+    explain: "{e} − {a} = {e - a}."

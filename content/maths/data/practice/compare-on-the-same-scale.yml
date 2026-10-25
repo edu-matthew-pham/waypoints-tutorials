@@ -1,0 +1,10 @@
+# Practice for "Two data sets, one scale".
+templates:
+  - q: "Set A runs from {a} to {b}. Set B runs from {c} to {d}. How much wider is B's range than A's?"
+    vars: { a: "10..20", b: "30..40", c: "5..15", d: "40..55" }
+    answer: "{(d - c) - (b - a)}"
+    explain: "B: {d} − {c} = {d - c}. A: {b} − {a} = {b - a}. Difference: {(d - c) - (b - a)}."
+  - q: "Set A has mean {m} and range {r}. Set B has mean {m} and range {r2}. Which is more consistent? Answer with the range of the more consistent set."
+    vars: { m: "20..30", r: "4..9", r2: "12..20" }
+    answer: "{r}"
+    explain: "Same mean, but A's range {r} is smaller than B's {r2}, so A is more consistent."

@@ -1,0 +1,102 @@
+---
+order: 30
+unit: stats9
+node: AC9M9ST01 n1
+uses: ["AC9M8ST01 n2", "AC9M8ST02 n1"]
+connection: fan-poll
+title: "Who was asked, and how"
+summary: "A survey report says how the data was obtained. Find that, say who was left out, and say how it could change the result."
+language: maths
+voice: { name: af_heart, speed: 1.1 }
+hook: "A club's website poll says 92% want a bigger stadium. Does the city?"
+---
+A football club's website ran a poll and reported that 92% of the 1200 people who voted want a bigger stadium (made up for the task). Before trusting a number, look for how the data was obtained. Have a guess whether 92% of the city wants a bigger stadium, and we'll come back to it at the end.
+
+## Predict: 92% of the city?
+
+```step
+stage: "predict"
+insight: "Deciding whether the poll speaks for the city shows whether students trust the size of the sample (1200) or ask who chose to answer."
+check: {"type": "predict", "q": "1200 people voted in the club website poll and 92% said yes. Does that show 92% of the city wants a bigger stadium?", "options": ["Probably not: the voters were mostly fans who chose to vote", "Yes: 1200 is a big sample", "Yes: 92% is a clear result"], "actual": "Probably not. People on the club's site are mostly fans who chose to vote. Who answered decides what the number means."}
+```
+
+## Run: find the method
+
+```step
+stage: "run"
+insight: "A report's small print holds the method: who could answer, how they were reached and who chose to take part."
+check: {"type": "question", "q": "Here is the report's small print: \"Poll open on the club website, Monday to Friday. Anyone could vote once from each device.\" Which phrase tells you how the data was obtained?", "options": ["Open on the club website; anyone could vote", "92% want a bigger stadium", "1200 people voted", "Monday to Friday"], "answer": 0, "feedback": [null, "That is the result, not the method.", "That is the sample size.", "That is when, but not who or how."], "explain": "The method is who could answer and how: an open poll on the club's own site, so the people chose themselves."}
+```
+
+## Investigate: what the method does to the result
+
+```step
+stage: "investigate"
+insight: "A self-selected sample reflects the people who chose to answer, and a big one stays biased; asking who was left out finds the weakness."
+tasks:
+  - {"check": {"type": "question", "q": "In the club poll, who chose whether to be in the sample?", "options": ["The people who voted chose themselves", "The club chose them", "They were picked at random", "The council chose them"], "answer": 0, "feedback": [null, "The club only provided the poll.", "Nobody was picked.", "The council wasn't involved."], "explain": "Self-selected: whoever visited and felt like voting. That tends to over-represent people with strong views, here fans."}, "smaller": {"check": {"type": "question", "q": "Did the poll go to a random sample of the city, or could only visitors to the club site vote?", "options": ["Only visitors to the club site", "A random sample", "Everyone in the city", "Only people who dislike the club"], "answer": 0, "feedback": [null, "Nobody was chosen at random.", "Not everyone knows the site.", "Nobody was excluded for that reason."], "explain": "Only visitors to the club site could vote."}}}
+  - {"check": {"type": "question", "q": "Which group is most likely missing from the poll?", "options": ["Residents who never visit the club site, such as those near the stadium who dislike noise", "Fans who visit every day", "Members of the club", "People who voted twice"], "answer": 0, "feedback": [null, "Fans are over-represented.", "Members are over-represented.", "Repeat voters are in the sample too."], "explain": "People who never visit the site, and may feel quite differently, had no chance to answer."}}
+  - {"check": {"type": "bug", "code": "working.txt#dan", "text": "Dan reads the report. Click the line where he goes wrong.", "answer": 2, "fault": "logic", "misconception": "big-sample-no-bias", "explain": "Line 2: a large sample reduces chance error but not bias. 1200 self-selected fans are still fans. Ask how they were chosen, not just how many."}}
+```
+
+### Who chose
+
+```worked
+\text{Result: } 92\% \text{ yes} :: What the report says.
+\text{Method: open poll, self-selected} :: How the data was obtained.
+\text{Missing: people who never visit the club site} :: Who could not answer, so the result may differ.
+```
+
+### Who is missing
+
+### Find the mistake
+
+## Modify: other reports
+
+```step
+stage: "modify"
+insight: "Finding the method and the gap in other short reports."
+tasks:
+  - {"check": {"type": "question", "q": "A school survey was handed out only in the canteen queue on a Friday. Who is likely to be missing?", "options": ["Students who bring lunch or are away", "Students who buy canteen food", "Students who are hungry", "Nobody"], "answer": 0, "feedback": [null, "They are in the sample.", "They are in the sample.", "Some students are missing for sure."], "explain": "Students who bring lunch, are away, or eat elsewhere had no chance to be asked."}}
+  - {"check": {"type": "question", "q": "A radio station asks listeners to phone in with their view on a new road. What type of sample is it?", "options": ["Self-selected", "Random", "Systematic", "A census"], "answer": 0, "feedback": [null, "No one was chosen at random.", "There is no fixed pattern of choosing.", "Only listeners who phoned in took part."], "explain": "The listeners chose themselves by phoning in."}}
+  - {"check": {"type": "question", "q": "A report says \"a random sample of 50 students from the whole school roll\". What is the best response?", "options": ["The method is sound but 50 gives only a rough result", "It is useless because it is only 50", "It must be exactly right", "Nothing can be learned"], "answer": 0, "feedback": [null, "A random sample is reliable in method, just not very precise.", "Random samples still vary.", "It tells you something, with some uncertainty."], "explain": "Random choice avoids bias, and 50 is small, so expect it to vary."}}
+```
+
+### Canteen queue
+
+### Phone-in
+
+### Random 50
+
+## Practise: spot the method
+
+```step
+stage: "practise"
+insight: "Naming the method and the likely bias from reports."
+tasks:
+  - {"check": {"type": "question", "q": "\"Customers who left a review online rated the café 4.8.\" What is the main issue?", "options": ["Only customers who chose to review are counted", "The rating is too high", "There are too many customers", "Nothing"], "answer": 0, "feedback": [null, "The rating is not the problem; the method is.", "The number of customers is not given.", "Self-selection is the problem."], "explain": "Reviewers choose themselves, and people with strong feelings review most."}}
+  - {"check": {"type": "question", "q": "A university surveys every 20th student leaving the library. What is the weakness?", "options": ["Library users aren't all students", "The sample is too regular", "It is a census", "It is random"], "answer": 0, "feedback": [null, "A pattern isn't a problem if the pattern is unrelated.", "It is not everyone.", "Choosing every 20th is systematic, not random."], "explain": "Only people leaving the library are reachable, so students who rarely go are left out."}}
+  - {"check": {"type": "number", "q": "Review: of 40 days, it rained on 14, the bus was late on 14, and both on 10. How many days had neither?", "answer": 22, "tolerance": 0, "explain": "14 + 14 − 10 = 18 days had rain or late, so 40 − 18 = 22."}}
+```
+
+### Reviews
+
+### Library
+
+### Review
+
+## Make: back to the poll
+
+```step
+stage: "make"
+insight: "Returning to the opening: find the number behind the percentage, and plan how to ask the whole city, on paper."
+check: {"type": "reasoning", "paper": true, "q": "92% of the 1200 voters in the club poll said yes. How many voters said yes? Then think about how you would find what the whole suburb thinks. (The numbers are made up for the task.)", "steps": [["$92\\% \\text{ of } 1200 = 0.92 \\times 1200$", "percentage of the total"], ["$= 1104$", "calculate"]], "answer": "1104", "answerLabel": "Voters saying yes", "tolerance": 0, "feedback": [["92", "That is the percentage. Find how many voters it is."], ["1200", "That is all voters."]], "criteria": ["I found the number who said yes.", "I said who was missing.", "I suggested a random sample of the suburb."], "explain": "1104 voters said yes. A random sample of the suburb, such as every 20th house on the roll, would let residents who never visit the site have a say."}
+```
+
+Write one sentence for the news: what could be said honestly about this poll?
+
+**Also used in**
+
+- **News polls.** Every report should say who was asked and how, and good ones do.
+- **Health claims.** "9 in 10 customers felt better" depends on which customers were asked.
+- **Next lesson.** Claims about means and medians: how was the average found?

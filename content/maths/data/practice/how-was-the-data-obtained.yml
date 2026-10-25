@@ -1,0 +1,15 @@
+# Practice for "Who was asked, and how".
+templates:
+  - q: "{s} What is the main weakness?"
+    cases:
+      - { s: "A survey about school uniform is posted on the student council's page, and anyone can reply.", k: "Only students who choose to reply are counted", w: "The survey is too short", e: "Self-selected: students with strong views reply, and others do not." }
+      - { s: "To find the town's favourite sport, a researcher asks people leaving a football match.", k: "Only football fans are asked", w: "Too many people are asked", e: "People at a football match are not the whole town." }
+      - { s: "A shop emails a satisfaction survey to customers who bought something this month.", k: "Customers who did not buy anything are left out", w: "The email is too long", e: "Only people who bought are asked, so unhappy non-buyers are missing." }
+      - { s: "A teacher asks the three students in the front row how long homework takes.", k: "The front row may not represent the class", w: "Three students is the whole class", e: "A convenient group is unlikely to be typical." }
+      - { s: "A site asks visitors to vote on their favourite game, and some vote ten times.", k: "People can vote many times, so the count means little", w: "The vote is anonymous", e: "Repeat voting spoils the data." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"
+  - q: "{p}% of {n} voters in an open website poll said yes. How many said yes?"
+    vars: { p: "55..95 by 5", n: [200, 400, 800, 1200] }
+    answer: "{p * n / 100}"
+    explain: "{p}% of {n} = {p * n / 100}."

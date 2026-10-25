@@ -1,0 +1,30 @@
+summary: "Record the percentage of each bin that is recyclable, display it, and use the mean, median and range to describe what the school is doing."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can find the mean, median and range of collected data."
+  - "I can display it so two weeks compare."
+  - "I can say whether a small difference matters."
+struggle: "Reporting only the mean. Ask: did all the bins look the same?"
+before: |
+  Students need the last lesson.
+
+  The one idea: analyse with both a centre and a spread. The audit data are made up; collect your own if you can.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says week 2 is better because 68.1 > 67.1."
+    ask: "How much do the bins vary?"
+    fix: "One point is small next to a range of 20."
+stretch: "Collect the real data in your school."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Continues AC9M9ST05 node 2.
+
+  Where it leads: reporting findings (next).
+exit:
+  q: "The mean is 67 and the range is 26. What does the range add?"
+  a: "How much the bins differ."
+explain: |
+  Calculate the centre and the spread, display the data, and describe what you find.

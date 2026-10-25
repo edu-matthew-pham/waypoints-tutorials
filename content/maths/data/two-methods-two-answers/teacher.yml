@@ -1,0 +1,30 @@
+summary: "Ask the same question of the same school with two different sampling methods and you get two different results. The method, not just the size, decides which to trust."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can say how two sampling methods give different results."
+  - "I can pick the more trustworthy one."
+  - "I can use it to estimate for a population."
+struggle: "Treating equal sizes as equal quality. Ask: who could the library group not reach?"
+before: |
+  Students need Year 8 sampling.
+
+  The one idea: the method decides whether a sample is fair. All numbers are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says both are 30 so both are fine."
+    ask: "Who could each method not reach?"
+    fix: "The library group misses everyone not in the library."
+stretch: "Plan a stratified sample by year level."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9ST02 node 1.
+
+  Where it leads: displays that support a view (next).
+exit:
+  q: "Name a random method that uses the school roll."
+  a: "Draw numbers at random for the roll positions."
+explain: |
+  The way you choose the sample decides who is represented. Equal sample sizes are not equal quality.

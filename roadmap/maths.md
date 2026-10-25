@@ -271,6 +271,13 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 - Not built from the plan: no `similar` area and volume readouts, no `net` cylinder, no numberline interval (lessons use pictures and checks instead).
 - Do not publish batch 3 with publish-lessons alone (the `trig` widget is a board change).
 
+**Year 9 batch 4 built (25 Oct 2026), not yet published, not yet tried with a class.** 21 lessons in the Data and chance course (`content/maths/data/`, orders 21 to 41), same shape as batches 1 to 3, each with a practice page, teacher.yml and misconceptions entries. New units `chance9` and `stats9` in the course's `index.md`.
+- Chance (unit `chance9`, orders 21 to 29): compound-outcomes, with-and-without-replacement, probabilities-add-to-one (9P01 n1 to n3); relative-frequency-estimates, and-inclusive-or-exclusive-or, estimating-compound-from-data (9P02 n1 to n3); design-a-simulation, run-the-simulation, describe-and-evaluate-results (9P03 n1 to n3). Boards: `events` for 21 to 23 and 28, `venn` for 25; the rest are tables and checks.
+- Statistics (unit `stats9`, orders 30 to 41): how-was-the-data-obtained, mean-or-median-claims (9ST01 n1, n2); two-methods-two-answers, displays-that-persuade (9ST02 n1, n2); describe-shape, compare-on-the-same-scale, centre-spread-shape-outliers (9ST03 n1 to n3); match-display-to-data, justify-a-display (9ST04 n1, n2); plan-an-investigation, collect-and-analyse, report-the-findings (9ST05 n1 to n3, the recycling audit thread). Boards: `data` for 31, 34, 35, 36 and 40 (second data set for comparing); the rest are pictures and checks.
+- Board change (outside content/): `events` gets `replace: off` (a draw with nothing put back: the second list must equal the first, no diagonal in the grid, fewer branches in the tree). Full publish needed, with the earlier board changes. No histogram or back-to-back widget was built (dot plots with `second:` and checks were enough).
+- Sources: no real figures are used except the Westpac explainer linked in mean-or-median-claims for why median house prices are reported; bus, battery, poll, canteen, clinic and recycling numbers are all labelled made up for the task.
+- Do not publish batch 4 with publish-lessons alone (the `events` change is a board change).
+
 
 
 ## Year 10 plan (25 Oct 2026; planning only, nothing built)

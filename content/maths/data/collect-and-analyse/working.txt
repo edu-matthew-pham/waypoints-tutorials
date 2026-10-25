@@ -1,0 +1,7 @@
+# Kai's working for the "find the mistake" task. Plain text.
+
+# region: kai
+The ten bins had 62, 70, 55, 81, 66, 74, 59, 68, 72 and 64 percent recyclable.
+The mean is 67.1, so every bin is about 67% recyclable.
+So the recycling is working well.
+# endregion

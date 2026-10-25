@@ -1,0 +1,7 @@
+# Max's working for the "find the mistake" task. Plain text.
+
+# region: max
+The canteen has one set of sales data.
+So one graph is the best graph for everyone who reads it.
+I will use the same pie chart for the principal and the poster.
+# endregion

@@ -1,0 +1,16 @@
+# Practice for "Shape: symmetric or skewed".
+templates:
+  - q: "{s} What shape is it?"
+    cases:
+      - { s: "Most values are small and a few are very large; the tail runs to the right.", k: "Skewed right", w: "Skewed left", e: "The tail is on the right." }
+      - { s: "Most values are large and a few are very small; the tail runs to the left.", k: "Skewed left", w: "Skewed right", e: "The tail is on the left." }
+      - { s: "The mean is 41 and the median is 36.", k: "Skewed right", w: "Skewed left", e: "Mean above median means a right tail." }
+      - { s: "The mean is 22 and the median is 27.", k: "Skewed left", w: "Skewed right", e: "Mean below median means a left tail." }
+      - { s: "House prices in a city, with a few mansions.", k: "Skewed right", w: "Skewed left", e: "A few huge values make a right tail." }
+      - { s: "Marks on a very easy test, with a few poor results.", k: "Skewed left", w: "Skewed right", e: "A few low marks make a left tail." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"
+  - q: "The mean is {m} and the median is {d}. How much higher is the mean than the median?"
+    vars: { m: "30..60", d: "20..29" }
+    answer: "{m - d}"
+    explain: "{m} − {d} = {m - d}, so the data is skewed right."

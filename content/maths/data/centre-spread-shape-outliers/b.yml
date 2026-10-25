@@ -1,0 +1,21 @@
+# Batteries for "Which is better".
+
+# region: run
+widget: data
+values: 8, 9, 9, 10, 10, 10, 11, 11, 12
+second: 5, 7, 9, 10, 10, 12, 13, 14, 15
+names: Brand A, Brand B
+range: 0, 20
+edit: on
+label: Battery life (hours)
+show: mean, median, range
+# endregion
+
+# region: out
+widget: data
+values: 9, 10, 10, 10, 11, 11, 11, 12, 30
+range: 0, 35
+edit: on
+show: mean, median, range
+label: Battery life (hours)
+# endregion

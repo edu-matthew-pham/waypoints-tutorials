@@ -1,0 +1,14 @@
+# Practice for "Graphs that make a point".
+templates:
+  - q: "A bar chart's axis starts at {z}. Bars show {a} and {b}. How many times as tall does the first bar look (a decimal)?"
+    vars: { z: [50, 60, 70, 80], a: "90..99", b: "85..89" }
+    answer: "{(a - z) / (b - z)}"
+    tolerance: 0.02
+    feedback:
+      - ["{a / b}", "That is the true ratio. The chart measures each bar from {z}."]
+    explain: "({a} − {z}) ÷ ({b} − {z}) = {(a - z) / (b - z)}."
+  - q: "The real values are {a} and {b}. How many percent bigger is {a} than {b}? (1 decimal place)"
+    vars: { a: "100..130", b: "90..99" }
+    answer: "{(a - b) / b * 100}"
+    tolerance: 0.1
+    explain: "({a} − {b}) ÷ {b} × 100 = {(a - b) / b * 100}."

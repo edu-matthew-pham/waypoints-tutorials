@@ -1,0 +1,21 @@
+# Recycling audit for "Collect and analyse the audit".
+
+# region: run
+widget: data
+values: 62, 70, 55, 81, 66, 74, 59, 68, 72, 64
+range: 0, 100
+edit: on
+show: mean, median, range
+label: Recyclable (% of the bin)
+# endregion
+
+# region: two
+widget: data
+values: 62, 70, 55, 81, 66, 74, 59, 68, 72, 64
+second: 58, 60, 63, 66, 68, 70, 71, 73, 75, 77
+names: Week 1, Week 2
+range: 0, 100
+edit: on
+show: mean, median, range
+label: Recyclable (% of the bin)
+# endregion

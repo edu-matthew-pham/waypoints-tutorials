@@ -1,0 +1,28 @@
+# Waiting times for "Shape: symmetric or skewed".
+
+# region: run
+widget: data
+values: 5, 6, 6, 7, 7, 7, 8, 8, 9, 10, 12, 15, 22, 30
+range: 0, 45
+edit: on
+show: mean, median
+label: Waiting time (minutes)
+# endregion
+
+# region: sym
+widget: data
+values: 3, 4, 5, 5, 6, 8
+range: 0, 12
+edit: on
+show: mean, median
+label: Score
+# endregion
+
+# region: left
+widget: data
+values: 2, 5, 7, 8, 8, 9, 9, 9, 10, 10, 10
+range: 0, 12
+edit: on
+show: mean, median
+label: Test mark (out of 10)
+# endregion

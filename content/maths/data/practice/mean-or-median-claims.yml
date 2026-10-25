@@ -1,0 +1,16 @@
+# Practice for "The average is... which average".
+templates:
+  - q: "Five prices (dollars, made up): {a}, {b}, {c}, {d} and {e}. What is the median?"
+    vars: { a: "10..20", b: "21..30", c: "31..40", d: "41..50", e: "200..400 by 50" }
+    answer: "{c}"
+    explain: "The middle of five ordered values is the third: {c}."
+  - q: "Five values are {a}, {b}, {c}, {d} and {e}. What is the mean?"
+    vars: { a: "10..20", b: "20..30", c: "30..40", d: "40..50", e: "50..60" }
+    answer: "{(a + b + c + d + e) / 5}"
+    tolerance: 0.05
+    explain: "({a} + {b} + {c} + {d} + {e}) ÷ 5 = {(a + b + c + d + e) / 5}."
+  - q: "Ten staff earn ${s} each (thousand) and the boss earns ${b}. Which is typical for staff: the median (${s}) or the mean? Give the mean to 1 decimal place, in thousands."
+    vars: { s: [40, 50, 60], b: [300, 400, 500] }
+    answer: "{(10 * s + b) / 11}"
+    tolerance: 0.1
+    explain: "(10 × {s} + {b}) ÷ 11 = {(10 * s + b) / 11}, well above {s}."

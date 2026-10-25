@@ -1,0 +1,30 @@
+summary: "Compare two distributions on centre, spread, shape and outliers, and say which is better for the job. Two sets can share a median and still be very different."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can compare two sets on centre, spread, shape and outliers."
+  - "I can say which is better for a purpose."
+  - "I can say why a median alone is not enough."
+struggle: "Stopping at the centre. Ask: would you rely on the median if the spread were huge?"
+before: |
+  Students need the last two lessons.
+
+  The one idea: compare four features, and decide for a purpose. The data are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says the batteries are the same because the medians match."
+    ask: "How far apart are the best and the worst of each?"
+    fix: "Compare spread too."
+stretch: "Add an outlier to brand B and re-argue."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9ST03 node 3.
+
+  Where it leads: choosing a display for the data.
+exit:
+  q: "Same median, range 3 versus range 12. Which is steadier?"
+  a: "The range 3 set."
+explain: |
+  Look at centre, spread, shape and outliers together. Decide which is better for the job.

@@ -1,0 +1,17 @@
+# Practice for "Planning: is the recycling working".
+templates:
+  - q: "You sort {a} bins a day for {d} days. How many bins in all?"
+    vars: { a: "3..8", d: "3..6" }
+    answer: "{a * d}"
+    explain: "{a} × {d} = {a * d}."
+  - q: "Each bin takes {t} minutes to sort. How many minutes for {n} bins?"
+    vars: { t: "3..8", n: [15, 20, 24, 30] }
+    answer: "{t * n}"
+    explain: "{t} × {n} = {t * n}."
+  - q: "{s} Is this a good plan?"
+    cases:
+      - { s: "Five bins from different places on each of five ordinary days.", k: "Yes: it is spread across places and days", w: "No: it only looks at one place", e: "Spread samples avoid skew." }
+      - { s: "Only the bins by the canteen, only on the day after an event.", k: "No: one place and one unusual day", w: "Yes: it is spread across places and days", e: "One place and a special day skew the data." }
+      - { s: "Every bin on one Monday.", k: "No: one day may not be typical", w: "Yes: it is spread across places and days", e: "Sample over several days." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"

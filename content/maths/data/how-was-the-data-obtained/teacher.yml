@@ -1,0 +1,30 @@
+summary: "A survey report says how the data was obtained. Find that, say who was left out, and say how it could change the result."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can find how data was obtained in a report."
+  - "I can say who was left out."
+  - "I can say how that might change the result."
+struggle: "Trusting the number because it is big. Ask: who chose to answer?"
+before: |
+  Students need Year 8 bias and sampling.
+
+  The one idea: before you use a number, ask who was asked and how. The poll is made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says 1200 is big enough."
+    ask: "Would 12 000 fans be more representative of the city?"
+    fix: "A bigger biased sample is still biased."
+stretch: "Rewrite the report so it says how the data was obtained."
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9ST01 node 1.
+
+  Where it leads: mean and median claims (next).
+exit:
+  q: "A phone-in poll: what is the main issue?"
+  a: "The listeners chose themselves."
+explain: |
+  Find how the data was obtained. Ask who was left out and how that could change the result.

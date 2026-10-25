@@ -1,0 +1,14 @@
+# Practice for "Two samples, two answers".
+templates:
+  - q: "A random sample of {n} students found {k} like the new menu. Estimate how many of the {t} students like it."
+    vars: { n: [20, 25, 40, 50], k: "5..15", t: [400, 600, 800] }
+    answer: "{k * t / n}"
+    explain: "{k} ÷ {n} × {t} = {k * t / n}."
+  - q: "{s} Is this sample likely to be fair for the whole school?"
+    cases:
+      - { s: "30 names are drawn at random from the school roll.", k: "Yes: every student has an equal chance", w: "No: it leaves most students out", e: "A random draw from the whole roll is fair." }
+      - { s: "30 students are asked at the library at lunch.", k: "No: it leaves most students out", w: "Yes: every student has an equal chance", e: "Only library users are reachable." }
+      - { s: "The first 30 students into the canteen are asked.", k: "No: it leaves most students out", w: "Yes: every student has an equal chance", e: "They are all canteen users." }
+      - { s: "Every 30th name on the roll is asked, starting from a random place.", k: "Yes: every student has an equal chance", w: "No: it leaves most students out", e: "A systematic sample from the whole roll is fair." }
+    choices: ["{k}", "{w}"]
+    explain: "{e}"

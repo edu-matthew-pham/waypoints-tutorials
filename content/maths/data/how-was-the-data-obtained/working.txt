@@ -1,0 +1,7 @@
+# Dan's working for the "find the mistake" task. Plain text.
+
+# region: dan
+The club poll had 1200 voters and 92% said yes.
+1200 is a big sample, so the result is reliable.
+So 92% of the city wants a bigger stadium.
+# endregion

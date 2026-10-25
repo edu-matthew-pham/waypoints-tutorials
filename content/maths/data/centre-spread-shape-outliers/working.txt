@@ -1,0 +1,7 @@
+# Jo's working for the "find the mistake" task. Plain text.
+
+# region: jo
+Brand A and brand B both have a median of 10 hours.
+So their results are about the same.
+So the brands are equally good.
+# endregion

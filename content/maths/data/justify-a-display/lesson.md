@@ -1,0 +1,102 @@
+---
+order: 38
+unit: stats9
+node: AC9M9ST04 n2
+uses: ["AC9M9ST04 n1", "AC9M9ST02 n2"]
+connection: canteen-queue
+title: "A graph for who and why"
+summary: "The same data can need different displays for different readers. Choose a display for its audience and purpose, say why, and read it in context."
+language: maths
+voice: { name: af_heart, speed: 1.1 }
+hook: "The canteen's sales data for the principal, and for a poster: same data, same graph?"
+---
+The canteen has a week's sales: 180 items in all, of which 45 were drinks, 70 hot food, 40 sandwiches and 25 fruit (made up for the task). The principal wants a quick report to decide what to stock. Students want a poster for the noticeboard. Have a guess whether one graph suits both readers, and we'll come back to it at the end.
+
+## Predict: one graph for all
+
+```step
+stage: "predict"
+insight: "Deciding whether one display fits two readers shows whether students think of audience and purpose."
+check: {"type": "predict", "q": "The same canteen data is for the principal (to decide what to stock) and for a poster (to catch students' eyes). Does one display suit both?", "options": ["Not always: audience and purpose change what is clearest", "Yes: one graph is always best", "No: a table is the only option"], "actual": "Not always. A principal needs exact values to compare; a poster needs a simple, eye-catching picture. Choose for the reader and the job."}
+```
+
+## Run: read the share
+
+```step
+stage: "run"
+insight: "Turning a count into a percentage of the total is how a display is read in context."
+check: {"type": "number", "q": "Drinks were 45 of the 180 items sold. What percentage of sales were drinks?", "answer": 25, "tolerance": 0, "explain": "45 ÷ 180 × 100 = 25."}
+```
+
+## Investigate: audience and purpose
+
+```step
+stage: "investigate"
+insight: "A good display fits its reader and job: exact values for decisions, simple pictures for notices; a display that fits neither helps nobody."
+tasks:
+  - {"check": {"type": "question", "q": "The principal wants to compare the exact numbers of drinks, hot food, sandwiches and fruit. Which is clearest?", "options": ["A bar chart with the numbers labelled", "A 3-D pie chart without numbers", "A line graph over the week", "An unlabelled picture"], "answer": 0, "feedback": [null, "3-D slices are hard to compare.", "The data are not in time order.", "Without numbers it can't be compared."], "explain": "A labelled bar chart lets the principal compare sizes and read exact values."}, "smaller": {"check": {"type": "question", "q": "Which type of data is food type (drinks, hot food, sandwiches, fruit)?", "options": ["Categories", "Measurements"], "answer": 0, "feedback": [null, "They are names, not measurements."], "explain": "Categories."}}}
+  - {"check": {"type": "question", "q": "A noticeboard poster should be...", "options": ["Simple, big and quick to read", "Packed with small numbers", "In tiny print", "As complex as possible"], "answer": 0, "feedback": [null, "Passers-by will not stop to read.", "They cannot read it.", "Complex is hard to take in."], "explain": "A poster has seconds to make its point, so keep it simple and clear."}}
+  - {"check": {"type": "bug", "code": "working.txt#max", "text": "Max reads the sales. Click the line where he goes wrong.", "answer": 2, "fault": "logic", "misconception": "one-graph-fits-all", "explain": "Line 2: the best display depends on who reads it and why. The same graph can suit one reader and not another."}}
+```
+
+### For the principal
+
+```worked
+\tfrac{45}{180} = 25\% :: Drinks as a share of sales.
+\text{principal} \to \text{labelled bar chart} :: Compare exact values.
+\text{poster} \to \text{simple picture, one message} :: Catch the eye.
+```
+
+### For the poster
+
+### Find the mistake
+
+## Modify: change the reader
+
+```step
+stage: "modify"
+insight: "Choosing and justifying displays for other readers."
+tasks:
+  - {"check": {"type": "question", "q": "A council report compares population over 20 years. Which display?", "options": ["A line graph", "A pie chart", "A scatter of names", "A stem-and-leaf plot only"], "answer": 0, "feedback": [null, "Parts of a whole would not show change.", "Names do not matter here.", "A stem plot ignores time order."], "explain": "A line graph shows change over time."}}
+  - {"check": {"type": "question", "q": "For a young children's display on fruit eaten, which is likely best?", "options": ["A big picture graph with fruit symbols", "A table of decimals", "A box plot", "A histogram with 20 bins"], "answer": 0, "feedback": [null, "Too abstract for the reader.", "Young children cannot read it.", "Too detailed."], "explain": "A picture graph, for the reader."}}
+  - {"check": {"type": "question", "q": "Which sentence best justifies a choice?", "options": ["A bar chart, because the data are categories and the principal wants to compare sizes", "A bar chart, because it is nice", "A pie chart, because I like pies", "Any graph will do"], "answer": 0, "feedback": [null, "\"Nice\" is not a reason.", "Preference is not a reason.", "The choice matters."], "explain": "A justification gives the data type and the purpose."}}
+```
+
+### Council report
+
+### Young children
+
+### Justify
+
+## Practise: shares and readers
+
+```step
+stage: "practise"
+insight: "Calculating shares for a report, and choosing a display, with a review."
+tasks:
+  - {"check": {"type": "number", "q": "Of 180 sales, 70 were hot food. What percentage is that (1 decimal place)?", "answer": 38.9, "tolerance": 0.1, "explain": "70 ÷ 180 × 100 = 38.9."}}
+  - {"check": {"type": "number", "q": "Of 180 sales, 25 were fruit. What pie-chart angle is that (degrees, nearest whole)?", "answer": 50, "tolerance": 0.5, "explain": "25 ÷ 180 × 360 = 50."}}
+  - {"check": {"type": "question", "q": "Review: a continuous measurement such as height is best shown with a...", "options": ["Histogram", "Pie chart", "Line graph of names", "Table of names"], "answer": 0, "feedback": [null, "Not parts of a whole.", "Names are not heights.", "Names are not heights."], "explain": "Histogram."}}
+```
+
+### Hot food share
+
+### Fruit angle
+
+### Review
+
+## Make: the principal's report
+
+```step
+stage: "make"
+insight: "Returning to the canteen: produce a number for the principal's report, with the display justified, on paper."
+check: {"type": "reasoning", "paper": true, "q": "Of the week's 180 items, 45 were drinks. The principal asks what percentage of sales are drinks. Give it, then name the display you would use and why. (The numbers are made up for the task.)", "steps": [["Share: $45 \\div 180 = 0.25$", "drinks over all"], ["Percentage: $0.25 \\times 100 = 25$", "convert"]], "answer": "25", "answerLabel": "Percent drinks", "tolerance": 0, "feedback": [["45", "That is the count. Make it a percentage of 180."], ["4", "That is 180 ÷ 45, upside down."]], "criteria": ["I found the percentage.", "I named a display that suits the data.", "I said why it suits the reader."], "explain": "25%. A labelled bar chart lets the principal compare the four types exactly; a simple pie could do for the poster."}
+```
+
+Sketch both displays and say which reader each is for.
+
+**Also used in**
+
+- **Business.** An annual report has exact tables for analysts and a headline chart for shareholders.
+- **Health.** The same infection data is a line graph for the minister and a map for the public.
+- **Next lesson.** Planning a whole statistical investigation.
