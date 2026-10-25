@@ -1,0 +1,34 @@
+summary: "Students use the scale factor between similar triangles to find a side, and see area scale by the factor squared (AC9M9M03, node 3)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can find the scale factor from matching sides.
+  - I can use it to find another side.
+  - I can say what happens to the area.
+struggle: "Adding instead of multiplying. Ask: does the 3, 4, 5 triangle keep its shape if every side gets 15 more?"
+before: |
+  Students need Same angle, same ratio.
+
+  The one idea: matching sides are in the same ratio; find the factor from the pair you know, then use it. Check matching sides by their angle.
+
+  The flagpole and shadow lengths are made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the flagpole in Make is worked on paper first."
+stuck:
+  - see: "A student adds the same amount to each side."
+    ask: "If every side grew by 15, would the triangle keep its shape?"
+    fix: "Draw it: a thin sliver. Multiply to keep the shape."
+stretch: "Show the areas of the 3, 4, 5 and 9, 12, 15 triangles are 6 and 54."
+support: "A printed pair of triangles with matching sides in the same colour."
+leads: |
+  Continues AC9M9M03 node 3.
+
+  Where it leads: Multi-step spatial problems.
+exit:
+  q: "Triangle sides are multiplied by 5. By how much is the area multiplied?"
+  a: "25."
+explain: |
+  Similar triangles have the same angles. Multiply every side by the same scale factor.
+
+  The area is multiplied by the factor squared.

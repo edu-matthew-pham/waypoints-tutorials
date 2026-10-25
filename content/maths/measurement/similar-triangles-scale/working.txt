@@ -1,0 +1,7 @@
+# Jo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: jo
+Sides 3, 4, 5. The longest side must become 20.
+20 − 5 = 15, so I add 15 to every side.
+New triangle: 18, 19, 20.
+# endregion

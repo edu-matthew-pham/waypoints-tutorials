@@ -1,0 +1,10 @@
+# Practice for "Ramp to a door".
+templates:
+  - q: "A ramp rises {r} m at a gradient of 1 in 14. How long is its run along the ground in metres?"
+    vars: { r: "2..9" }
+    answer: "{r * 14 / 10}"
+    explain: "{r / 10} × 14 = {r * 14 / 10} m."
+  - q: "A ramp's rise is {3 * k} and its run is {4 * k}. How long is the ramp surface?"
+    vars: { k: "1..9" }
+    answer: "{5 * k}"
+    explain: "A 3-4-5 triangle scaled by {k}: {5 * k}."

@@ -1,0 +1,7 @@
+# Ali's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ali
+The gradient is 1 in 14, so rise ÷ run = 1 ÷ 14.
+That means the angle is 14°.
+So the ramp is 14° to the ground.
+# endregion

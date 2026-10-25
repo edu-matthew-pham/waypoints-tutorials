@@ -1,0 +1,10 @@
+# Practice for "Similar triangles and scale".
+templates:
+  - q: "A triangle has sides {3 * a}, {4 * a}, {5 * a}. A similar triangle has its shortest side {3 * b}. What is its longest side?"
+    vars: { a: "1..4", b: "5..12" }
+    answer: "{5 * b}"
+    explain: "The sides are in the ratio 3 : 4 : 5, so the longest is {5 * b}."
+  - q: "A triangle has area {k}. A similar copy has every side multiplied by {f}. What is the copy's area?"
+    vars: { k: "2..12", f: "2..5" }
+    answer: "{k * f * f}"
+    explain: "The area is multiplied by {f}² = {f * f}: {k * f * f}."

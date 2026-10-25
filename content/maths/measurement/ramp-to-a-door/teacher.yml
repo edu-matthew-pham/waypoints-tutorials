@@ -1,0 +1,32 @@
+summary: "Students combine a gradient, Pythagoras and an inverse ratio to design a ramp to a door (AC9M9M03, node 4)."
+time: 40
+timing: "Predict and Run 6 min · Investigate 12 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can choose the right tool for each part of a problem.
+  - I can combine a gradient, Pythagoras and trigonometry.
+  - I can say what the triangle doesn't tell me.
+struggle: "Not knowing where to start. Ask: draw the triangle: which two sides do you know?"
+before: |
+  Students need Find an angle and Similar triangles and scale.
+
+  The one idea: draw the triangle, say what is known and wanted, then pick the tool. Sources: the 1 in 14 limit is for ramps up to 9 m (AS 1428.1, via the Queensland Health slides). The door heights are made up for the task.
+running:
+  - "Predict: show of hands before the check."
+  - "Paper: the ramp angle in Make is worked on paper first."
+stuck:
+  - see: "A student says the angle is 14°."
+    ask: "Is 1 in 14 an angle or a ratio?"
+    fix: "A ratio: rise ÷ run. The angle is tan⁻¹ of it."
+stretch: "Design a ramp for a 0.9 m door and say what else the standard asks for."
+support: "A printed triangle with rise, run and ramp labelled."
+leads: |
+  Continues AC9M9M03 node 4.
+
+  Where it leads: Enlargement and scale in two and three dimensions.
+exit:
+  q: "Rise 1, run 14: which tool gives the angle?"
+  a: "tan⁻¹(1 ÷ 14)."
+explain: |
+  Draw the triangle and mark what you know. The gradient gives a side, Pythagoras gives the third side, and an inverse ratio gives the angle.
+
+  Then check the answer makes sense.
