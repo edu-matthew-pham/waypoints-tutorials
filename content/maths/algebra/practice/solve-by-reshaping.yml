@@ -1,0 +1,26 @@
+# Practice for "Solving by reshaping".
+templates:
+  - q: "Solve x² + {s - r}x = {r * s}. Give the positive solution."
+    vars: { r: "1..9", s: "2..12" }
+    where: "s > r"
+    answer: "{r}"
+    form: whole
+    feedback:
+      - ["{r * s}", "Move the {r * s} across first: x² + {s - r}x − {r * s} = 0."]
+      - ["-{s}", "That is the other solution. The question asks for the positive one."]
+    explain: "x² + {s - r}x − {r * s} = 0 is (x + {s})(x − {r}) = 0, so x = −{s} or x = {r}. The positive one is {r}."
+  - q: "A rectangle's length is {d} cm more than its width, and its area is {w * (w + d)} cm². How wide is it, in cm?"
+    vars: { w: "2..9", d: "1..6" }
+    answer: "{w}"
+    form: whole
+    feedback:
+      - ["{w + d}", "That is the length. The width is the shorter side."]
+    explain: "w(w + {d}) = {w * (w + d)}, so w² + {d}w − {w * (w + d)} = 0 and (w + {w + d})(w − {w}) = 0. A width can't be negative, so w = {w}."
+  - q: "Solve {m}^x = {pow(m, n)}."
+    vars: { m: [2, 3, 5], n: "2..5" }
+    where: "pow(m, n) <= 625"
+    answer: "{n}"
+    form: whole
+    feedback:
+      - ["{pow(m, n)}", "The unknown is the power: {m} to what is {pow(m, n)}?"]
+    explain: "{pow(m, n)} = {m}^{n}, so x = {n}."

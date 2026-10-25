@@ -1,0 +1,46 @@
+summary: "Students solve two equations in two letters by elimination: add or subtract the equations so one letter cancels, multiplying one or both first if no coefficients match, then find the other letter (AC9M10A02, node 3, second of two lessons on the hinge). Edge cases: a false result (no solution) and a true result (infinitely many). The gym prices are made up."
+time: 45
+timing: "Predict and Run 8 min · Investigate 16 min · Modify 11 min · Practise and Make 10 min"
+goals:
+  - I can subtract or add two equations so one letter cancels.
+  - I can multiply an equation so two coefficients match, then cancel.
+  - I can find the second letter and check it in the other equation.
+struggle: "Subtracting only the first terms. Ask students to write the subtraction in brackets, (4v + 5k) − (4v + 2k), and take away each term in turn."
+before: |
+  Do the paper try-one and the Make task yourself first. Students need Solving by substitution in the same unit, and negative numbers in subtraction.
+
+  The one idea: equal things taken from equal things leave equal things, so you may add or subtract whole equations. The common mistake is applying the subtraction to some terms but not others (Sam's working). The Predict is the same idea without the algebra: compare the receipts and see what is different.
+
+  This is the second lesson on the hinge. Substitution is quicker when a letter is already alone; elimination when the coefficients match or can be made to. Both lessons end with the crossing as a point on a graph.
+
+  The prices are made up so the answers are whole.
+running:
+  - "Predict: take a show of hands. 18 is the extra dollars, not the price of one class; 3 is the extra number of classes."
+  - "Run: ask students to check Ben's receipt as well."
+  - "Paper: the try-one after the worked example (Cara and Dan) and the Dev and Eli pair in Make are worked on paper first. Books out, example beside them; look at what was done to every term."
+  - "Modify: before the no-solution task, ask what 0 = 4 can mean. Before the infinitely-many task, ask whether the second equation tells you anything new."
+stuck:
+  - see: "A student gets 3v + 7k when subtracting."
+    ask: "Which sign does the second equation's 2k have when you take it away?"
+    fix: "5k − 2k = 3k, and 4v − 4v = 0. Every term of the second equation is subtracted."
+  - see: "A student multiplies only the left side."
+    ask: "If 2v + k = 22 is true, is 4v + 2k = 22 true?"
+    fix: "No: 4v + 2k = 44. Both sides are multiplied."
+  - see: "A student finds k = 6 and stops."
+    ask: "Do you know the visit price yet? Where can you use k = 6?"
+    fix: "Put k = 6 into one receipt: 4v + 12 = 44, so v = 8. Check on the other receipt."
+stretch: "Show that the pair 2v + 3k = 12 and 4v + 6k = 24 has many solutions, and find three of them. Why are the lines the same?"
+support: "Use the pair with equal coefficients only (subtract). Add the multiply-first step after the class has succeeded with several."
+leads: |
+  Finishes the hinge of AC9M10A02 (node 3).
+
+  Next: Setting up equations from a situation (choose a method), then Where they meet (a line and a curve) in functions.
+exit:
+  q: "Solve 2x + y = 11 and 2x + 3y = 19."
+  a: "Subtract: 2y = 8, so y = 4. Then 2x + 4 = 11, so x = 3.5. Check: 7 + 12 = 19."
+explain: |
+  **Elimination** adds or subtracts whole equations so a letter cancels. For $4v + 2k = 44$ and $4v + 5k = 62$, subtract the first from the second: $3k = 18$, so $k = 6$. Put $k$ back to find $v = 8$. Check in the other equation.
+
+  If no coefficients match, **multiply** an equation (both sides) first. If the letter's terms have opposite signs, **add**.
+
+  A false result such as $0 = 4$ means no solution (parallel lines). A true result such as $0 = 0$ means infinitely many (the same line).

@@ -1,0 +1,9 @@
+# Maya's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: maya
+An account pays 5% a year. I start with $1,000. What is the model?
+5% is 0.05, so each year the balance is multiplied by 0.05.
+So A = 1000 x 0.05^n, where n is the number of years.
+After 1 year that gives 1000 x 0.05 = 50.
+Fifty dollars is less than I started with, but that can't be right. Maybe I rounded.
+# endregion

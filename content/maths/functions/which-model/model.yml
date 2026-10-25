@@ -1,0 +1,54 @@
+# Boards for "Which model?". x is the age of the car in years. The dots are made-up advertised prices for one model
+# of car (new, then 1, 2, 3 and 4 years old). The dashed line is a straight-line model, the solid curve an exponential one.
+
+# region: run
+widget: graph
+x: 0, 6
+y: 0, 32000
+grid: 1, 8000
+axes: Age (years), Price ($)
+slider m: -8000, 0, -3000, 500
+slider b: 0.5, 1, 0.9, 0.05
+series Prices: 0,30000; 1,24000; 2,19200; 3,15360; 4,12288
+plot: y = 30000(b^x)
+plot: y = 30000 + mx, dashed
+table: 0, 1, 2, 3, 4, 5, 6
+# endregion
+
+# region: explain
+widget: graph
+x: 0, 6
+y: 0, 32000
+grid: 1, 8000
+axes: Age (years), Price ($)
+slider m: -8000, 0, -3000, 500
+slider b: 0.5, 1, 0.9, 0.05
+series Prices: 0,30000; 1,24000; 2,19200; 3,15360; 4,12288
+plot: y = 30000(b^x)
+plot: y = 30000 + mx, dashed
+table: 0, 1, 2, 3, 4
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 6
+y: 0, 32000
+grid: 1, 8000
+axes: Age (years), Price ($)
+series Prices: 0,30000; 1,24000; 2,19200; 3,15360; 4,12288
+plot: y = 30000(0.8^x)
+plot: y = 30000 - 6000x, dashed
+table: 0, 1, 2, 3, 4
+# endregion
+
+# region: vary
+widget: graph
+x: 0, 10
+y: 0, 32000
+grid: 1, 8000
+axes: Age (years), Price ($)
+slider b: 0.5, 1, 0.7, 0.05
+plot: y = 30000(b^x)
+plot: y = 30000 - 4800x, dashed
+table: 0, 2, 4, 6, 7, 8, 10
+# endregion

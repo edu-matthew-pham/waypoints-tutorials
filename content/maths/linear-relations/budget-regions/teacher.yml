@@ -1,0 +1,44 @@
+summary: "Students turn a spending limit with two kinds of item into an inequality in two letters, find where its boundary meets each axis, and read the shaded region as the set of plans that fit (AC9M10A02, node 2). The prices are made up."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can write a budget as an inequality such as 24p + 12d ≤ 120.
+  - I can find where the boundary meets each axis by putting the other letter equal to 0.
+  - I can tell which plans fit by reading the shaded region.
+struggle: "Dividing the budget by the same price on both axes. Ask: which item is on the d-axis, and what does one of it cost?"
+before: |
+  Do the Run board and the paper try-one yourself first. Students need Lines and regions (Year 8) and the idea of a line through two intercepts.
+
+  The one idea: the budget line joins the two extreme plans, all pizzas and no packs, and all packs and no pizzas. Each intercept uses its own price. The common mistake is the same price on both axes (Mia's working).
+
+  The prices (24 dollars and 12 dollars) and the budget (120 dollars) are made up so the intercepts are whole numbers. Real prices are not so tidy. The region includes points such as 1.5 pizzas; only whole-number points are real plans (the edge-case task).
+running:
+  - "Predict: take a show of hands. 5 is 120 ÷ 24 and 10 is 120 ÷ 12; neither is what is left after the pizzas."
+  - "Run: ask students to find the point with 4 pizzas and read the highest d in the region."
+  - "Paper: the try-one after the worked example (a 96 dollars budget) and the party plan in Make are worked on paper first. Books out, example beside them."
+  - "Modify: before the strict-limit task, ask whether spending exactly 120 dollars should count."
+stuck:
+  - see: "A student marks the d-axis crossing at 5."
+    ask: "Which price are you dividing 120 by? Which item is on the d-axis?"
+    fix: "Packs are on the d-axis and cost 12, so 120 ÷ 12 = 10."
+  - see: "A student shades the side without the origin."
+    ask: "What does it cost to buy nothing? Does that fit the budget?"
+    fix: "0 ≤ 120 is true, so the origin's side is shaded."
+  - see: "A student says (1.5, 6) cannot be in the region."
+    ask: "Is it in the shaded part? Is it a plan the shop can sell?"
+    fix: "It is in the region, but it is not a whole-number plan. The region lists every point that fits the inequality; the real plans are the whole-number points."
+stretch: "Add a second rule: the class needs at least 4 pizzas. Shade both. What is the region now?"
+support: "Use the Run board: read the cost of the point you drag to, one plan at a time, before drawing any line."
+leads: |
+  Starts AC9M10A02 (node 2).
+
+  Next: Setting up equations (a rule from a situation), then Solving by substitution and elimination, which find the one plan that meets two conditions at once.
+exit:
+  q: "Tickets cost 10 dollars and snacks 5 dollars. The budget is 60 dollars. Where does the boundary of 10t + 5s ≤ 60 meet each axis?"
+  a: "t-axis (s = 0): 10t = 60, t = 6. s-axis (t = 0): 5s = 60, s = 12. The line joins (6, 0) and (0, 12)."
+explain: |
+  A budget with two kinds of item is an inequality in two letters: $24p + 12d \le 120$.
+
+  To graph it, put each letter equal to 0 in turn. With $p = 0$: $12d = 120$ so $d = 10$. With $d = 0$: $24p = 120$ so $p = 5$. Draw a solid line through $(5, 0)$ and $(0, 10)$, then test $(0, 0)$ to shade the side that fits.
+
+  Every point in the region is a plan within the budget. Only the whole-number points are plans the shop can sell.

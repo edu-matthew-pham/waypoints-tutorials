@@ -1,0 +1,50 @@
+summary: "Students find where an exponential curve and a line meet from a graph, state the coordinates, and refine the answer by zooming in or by halving the gap in a table (AC9M10A05, node 2)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can read where two graphs meet and say what the coordinates mean.
+  - I can narrow a crossing down by zooming in or by comparing values in a table.
+  - I can say which plan is better before and after the crossing.
+struggle: "Stopping at one comparison. Ask 'is that true for every year, or just that one?' and have them check a second year on the other side."
+before: |
+  Do the three boards yourself first: the full window (Run), the 6 to 10 window (Investigate) and the 8 to 8.4 window (Modify). Students need the exponential model from lesson 6 and where two lines meet from Year 9.
+
+  The one idea: the crossing is the decision. Before it one plan wins and after it the other, so the right choice depends on how long you save. The first graph gives a window, not an answer; zooming in or halving the gap narrows it to the accuracy you need.
+
+  All numbers are made up: $2,000 and $300 a year for plan A, $1,000 and 20% a year for plan B. 20% is much higher than a real savings account; it is chosen so the plans swap in a short time. Say so in class.
+
+  The board marks the crossing with its coordinates (8.2, 4460). The board has no zoom control, so the zoom is three boards with smaller windows.
+running:
+  - "Predict: take a show of hands. Those who chose Plan A assumed the plan that starts ahead stays ahead. Don't correct it yet."
+  - "Run: ask students to move r and say which way the crossing goes."
+  - "Paper: the try-one after the worked example and the dollars gap in Make are worked on paper first. Look for the two values written side by side at each x."
+  - "Modify: before the 'swap back' edge case, ask what the line adds each year and what the curve adds."
+stuck:
+  - see: "A student compares at one time only (Jo's mistake)."
+    ask: "Is the same plan ahead at 6 years?"
+    fix: "Check one year on each side. If the leader changes, the plans cross in between."
+  - see: "A student reads the crossing as a point on one axis only (8.2, or 4460)."
+    ask: "What are the two numbers, and what does each one mean?"
+    fix: "Write it as a point: 8.2 years is the time, $4,460 is the amount both plans are worth then."
+  - see: "A student stops at 'between 8 and 9' when asked for 1 decimal place."
+    ask: "Which of 8.1, 8.2 and 8.3 is closest to equal?"
+    fix: "Make a table at those values and compare the two columns."
+stretch: "Find a rate r for which the plans meet at about 5 years. Then: is there a rate for which they never meet in 15 years? Which of the three windows is the board using when you do?"
+support: "Print the table for 6 to 10 years and highlight which plan is larger in each row. Draw a line where the highlight changes."
+leads: |
+  Next: circles as relations. They have a centre and a radius, and they are not functions.
+
+  Where it leads in class: choosing between plans, break-even points and when one model overtakes another.
+exit:
+  q: "Plan A is worth 1,000 + 200x and Plan B is worth 500 × 1.5ˣ. At x = 3 A is 1,600 and B is 1,687.5. At x = 2 A is 1,400 and B is 1,125. Between which two values of x do they meet?"
+  a: "Between 2 and 3: A is ahead at 2 and B is ahead at 3."
+explain: |
+  Where two graphs meet, the two values are **equal**. The coordinates of that point tell you both the time and the common value.
+
+  To find a crossing exactly enough:
+
+  1. Read a window from the graph.
+  2. Zoom in on that window, or make a table of the two values in it.
+  3. Find where the one in front changes, and halve the gap again if you need more figures.
+sources:
+  - { title: "Made up for this lesson: Plan A ($2,000 and $300 a year) and Plan B ($1,000 and 20% a year) are not real accounts.", url: "https://tutorials.learningwaypoints.com/maths/functions/where-they-meet/", checked: 2026-10-25 }

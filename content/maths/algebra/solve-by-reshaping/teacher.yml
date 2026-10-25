@@ -1,0 +1,48 @@
+summary: "Students set up (30 + 2x)(20 + 2x) = 1200 for a framed photo, expand it, move everything to one side, factorise, throw out the negative width and check; the same reshaping solves equations with the unknown in a power (AC9M10A01, node 5)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can set up a quadratic equation from a picture, reshape it so one side is 0, and factorise to solve it.
+  - I can put my answers back into the picture and throw out the one that doesn't fit.
+  - I can solve an equation with the unknown in a power by writing both sides with the same base.
+struggle: "Putting the border on one end only (30 + x), solving while the right side is not 0 (Taz), and keeping a negative width. Ask students to mark the border on both ends of each side of the sketch."
+before: |
+  Do the Run board yourself first. Students need Factorising quadratics from Year 9 and Special products from this unit. The graph plots the framed area against the border; the dashed line is the target.
+
+  The one idea: set it up from the picture, expand, move everything across so one side is 0, divide out a common number, factorise, then check each answer against the picture. The common mistake is setting each bracket equal to the number on the right (Taz's working, planted after the worked example). The negative answer solves the equation but not the frame: check in the context.
+
+  Node 5 is also about verifying by substitution, so each Make and Investigate task ends with a check in the original equation or picture. The exponent equations (writing both sides as powers of the same base) rely on the index laws from Real numbers; students who find them hard can write the powers of 2 and 3 out first.
+
+  The photo and print sizes are made up for this lesson: the numbers are chosen so the quadratic factorises. The smaller steps ask for half the move (the equation, then the two numbers).
+running:
+  - "Predict: take a show of hands for 5, 10, 15 and 2.5. Ask the 10s to find the framed picture's sides."
+  - "Run: ask students why the curve starts at 600 when the border is 0."
+  - "Investigate: ask what would happen if the border were only on two sides. Draw the sketch live for Taz's mistake: why 12 on the right means the brackets are not 0."
+  - "Paper: the try-one after the worked example and the print in Make are worked on paper first. Books out, and look for 2x added to both sides of the picture."
+  - "Modify: before 2^x = 1/8, ask what 2⁻¹ is."
+  - "Make: before anyone writes, ask whether the border will be bigger or smaller than 5, and how they know."
+stuck:
+  - see: "A student writes (30 + x)(20 + x) = 1200."
+    ask: "Mark the border on your sketch. How many ends does each side have?"
+    fix: "Two: 30 + 2x and 20 + 2x."
+  - see: "A student writes (x + 30)(x − 5) = 1200 as x = −30 or x = 5."
+    ask: "What number do the brackets multiply to there?"
+    fix: "1200 is not 0. They start from 4x² + 100x − 600 = 0, divided by 4: x² + 25x − 150 = 0."
+  - see: "A student gives x = −30 as the border."
+    ask: "Can you cut a frame −30 cm wide?"
+    fix: "No. Put both answers back in the picture and keep the one that fits."
+stretch: "Find the border for a 30 cm by 20 cm photo when the framed area is 1000 cm². It doesn't factorise: use the board to estimate it, then ask what a different method might give."
+support: "A template: sketch, the two sides with 2x added, the equation, expanded, = 0, divided, brackets, answers, which fits, check. Powers of 2 and 3 up to 2⁷ and 3⁵ on a card."
+leads: |
+  Continues the Year 10 algebra work (AC9M10A01 node 5).
+
+  Where it leads: the quadratic formula, for equations that don't factorise, and Solving inequalities (next lesson).
+exit:
+  q: "A rectangle's length is 2 m more than its width, and its area is 15 m². Find the width."
+  a: "3 m: w(w + 2) = 15, so (w + 5)(w − 3) = 0 and w = 3 (w = −5 is thrown out)."
+explain: |
+  A photo 30 cm by 20 cm with a border $x$ all the way round has sides $30 + 2x$ and $20 + 2x$, because the border is at both ends.
+
+  The framed area is $(30 + 2x)(20 + 2x) = 4x^2 + 100x + 600$. Setting it to 1200 and moving everything across gives $4x^2 + 100x - 600 = 0$, which is $x^2 + 25x - 150 = 0$ after dividing by 4. That factorises as $(x + 30)(x - 5) = 0$.
+
+  Both $x = -30$ and $x = 5$ solve the equation, but a border can't be negative, so the answer is 5 cm.

@@ -1,0 +1,47 @@
+# Boards for "Setting up equations". k is kilowatt-hours used in a day, c is the cost for the day in cents.
+# All plan prices are made up. Plan A: c = 120 + 24k. Plan B: c = 72 + 28k. They meet at (12, 408).
+
+# region: run
+widget: graph
+axes: k (kWh per day), c (cents per day)
+x: -1, 24
+y: -20, 760
+grid: off
+snap: 1, 6
+plot: y = 120 + 24x, from 0
+plot: y = 72 + 28x, from 0
+point P: 5, 100, drag
+# endregion
+
+# region: explain
+widget: graph
+axes: k (kWh per day), c (cents per day)
+x: -1, 24
+y: -20, 760
+grid: off
+plot: y = 120 + 24x, from 0
+plot: y = 72 + 28x, from 0
+point M: 12, 408
+# endregion
+
+# region: explain-pic
+widget: graph
+axes: k (kWh per day), c (cents per day)
+x: -1, 24
+y: -20, 760
+grid: off
+plot: y = 120 + 24x, from 0
+plot: y = 72 + 28x, from 0
+cross: 1, 2
+# endregion
+
+# region: usage
+widget: graph
+axes: k (kWh per day), c (cents per day)
+x: -1, 24
+y: -20, 760
+grid: off
+snap: 1, 6
+plot: y = 120 + 24x, from 0
+point P: 5, 100, drag
+# endregion

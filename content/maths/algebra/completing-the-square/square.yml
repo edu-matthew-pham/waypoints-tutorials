@@ -1,0 +1,29 @@
+# Boards for "Completing the square". x² + bx + c with b = 2h: the corner needs h² ones; what is left over (or short) is k.
+
+# region: run
+widget: tiles
+mode: square
+slider h: -5, 6, 3
+slider c: -12, 30, 9
+# endregion
+
+# region: explain
+widget: tiles
+mode: square
+slider h: 1, 5, 3
+slider c: 1, 15, 9
+# endregion
+
+# region: explain-pic
+widget: tiles
+mode: square
+h: 3
+c: 5
+# endregion
+
+# region: vary
+widget: tiles
+mode: square
+slider h: -6, 6, 3
+slider c: -12, 30, 5
+# endregion

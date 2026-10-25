@@ -16,6 +16,7 @@
 //   table: 0, 1, 2, 3      a table of values of each plot at these x values
 //   step: 1                the "1 right, m up" triangle on the first plot, from this x (shows how steep it is)
 //   rise: A, B             a dashed run/rise triangle between two points; checks can use h (across), v (up), m (gradient), d (length), p and q (midpoint)
+//   circle: h, k, r       a circle with centre (h, k) and radius r (numbers or slider letters), with its equation (x − h)² + (y − k)² = r² listed under the graph; x and y then keep the same scale, so it looks round (the view grows to fit); checks read the sliders (h, k, r)
 //   cross: 1, 2            where plots 1 and 2 meet: a point, its coordinates, and a dashed line down to x (the solution)
 //   series Gas: 0,5; 1,7; 2,6   a line through data points (x,y pairs, x going up), named for the legend; up to 3
 //   series: A, B, C        a line through named points (draggable ones too: students draw the graph)
@@ -71,7 +72,7 @@
       // A one-letter name (d, T) is also the letter used in legends and tables; a word (Time) only labels the axis.
       s.names = { x: /^[A-Za-z](\s|$)/.test(an[0]) ? an[0][0] : 'x', y: /^[A-Za-z](\s|$)/.test(an[1]) ? an[1][0] : 'y' }; s.axisLabels = an;
     }
-    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null; s.cross = null; s.rise = null; s.series = []; s.cursor = null; s.shades = [];
+    s.sliders = []; s.plots = []; s.points = []; s.lines = []; s.table = null; s.step = null; s.cross = null; s.rise = null; s.circle = null; s.series = []; s.cursor = null; s.shades = [];
     var known = {};
     s.items.forEach(function (it) {
       var where = 'Line ' + it.line + ' (' + it.kind + (it.name ? ' ' + it.name : '') + ')';
@@ -118,6 +119,10 @@
         var re = it.value.split(',').map(function (t) { return t.trim(); });
         if (re.length !== 2 || re.some(function (t) { return !/^[A-Z]$/.test(t); })) throw new Error(where + ': name two points, such as "rise: A, B".');
         s.rise = { ends: re, where: where };
+      } else if (it.kind === 'circle') {
+        var cc = it.value.split(',').map(function (t) { return t.trim(); });
+        if (cc.length !== 3 || cc.some(function (t) { return !t; })) throw new Error(where + ': give the centre and the radius, such as "circle: 0, 0, 5".');
+        s.circle = { h: cc[0], k: cc[1], r: cc[2], fh: WPM.compile(cc[0]), fk: WPM.compile(cc[1]), fr: WPM.compile(cc[2]), where: where };
       } else if (it.kind === 'cross') {
         var ab = it.value.split(',').map(function (t) { return Number(t.trim()); });
         if (ab.length !== 2 || ab.some(function (n) { return !(n >= 1) || n % 1; })) throw new Error(where + ': name two plots by number, such as "cross: 1, 2".');
@@ -167,6 +172,7 @@
     };
     s.plots.forEach(function (p) { check(p.rhs, p.vertical ? [] : ['x'], 'plot ' + p.text); });
     s.shades.forEach(function (sh) { check(sh.rhs, sh.axis === 'x' ? [] : ['x'], 'shade ' + sh.text); });
+    if (s.circle) { ['h', 'k', 'r'].forEach(function (n) { check(s.circle[n], [], 'circle ' + n); }); if (WPM.vars(s.circle.r).length === 0 && !(WPM.evaluate(s.circle.r, {}) > 0)) throw new Error(s.circle.where + ': the radius must be more than 0.'); }
     s.points.forEach(function (p) {
       if (p.drag) { num(p.x, 'point ' + p.name); num(p.y, 'point ' + p.name); } else { check(p.x, [], 'point ' + p.name); check(p.y, [], 'point ' + p.name); }
     });
@@ -199,7 +205,7 @@
   function build() {
     var ink = B.css('--ink') || '#1d2430', muted = B.css('--muted') || '#5d6675', line = B.css('--line') || '#e4e1da';
     var xr = spec.xr, yr = spec.yr;
-    var bb = frame(), board = B.jsx({ boundingbox: bb });
+    var bb = frame(), board = B.jsx({ boundingbox: bb, keepAspectRatio: !!spec.circle });
     if (spec.gridStep) board.create('grid', [], { majorStep: [spec.gridXY[0], spec.gridXY[1]], minorElements: 0, strokeColor: line, strokeOpacity: 1, highlight: false });
     var axis = function (p1, p2, span, which) {
       var gs = spec.gridXY[which === 'x' ? 0 : 1];
@@ -235,6 +241,13 @@
       if (p.vertical) return board.create('segment', [[function () { try { return p.tree(scopeVars()); } catch (e) { return NaN; } }, yr[0] - 1e3], [function () { try { return p.tree(scopeVars()); } catch (e) { return NaN; } }, yr[1] + 1e3]], { strokeColor: colour, strokeWidth: p.dashed ? 2.5 : 3, dash: p.dashed ? 2 : 0, highlight: false, fixed: true, point1: { visible: false }, point2: { visible: false } });
       return board.create('functiongraph', [function (x) { try { return p.tree(scopeVars(x)); } catch (e) { return NaN; } }, p.from !== null ? Math.max(p.from, xr[0]) : xr[0], p.to !== null ? Math.min(p.to, xr[1]) : xr[1]], { strokeColor: colour, strokeWidth: p.dashed ? 2.5 : 3, dash: p.dashed ? 2 : 0, highlight: false, fixed: true });
     });
+    // A circle by centre and radius (sliders allowed); the radius is kept above 0 so a slider at 0 draws nothing odd.
+    if (spec.circle) {
+      var cir = spec.circle, ccol = B.css(COLOURS[(spec.plots.length + spec.shades.length) % COLOURS.length]) || '#2f6fb3';
+      var cv = function (f) { return function () { try { return f(scopeVars()); } catch (e) { return NaN; } }; };
+      cir.colour = ccol;
+      board.create('circle', [[cv(cir.fh), cv(cir.fk)], function () { var r = cv(cir.fr)(); return r > 0 ? r : 1e-6; }], { strokeColor: ccol, strokeWidth: 3, fillColor: ccol, fillOpacity: 0.06, highlight: false, fixed: true, center: { visible: false }, point2: { visible: false } });
+    }
     objs = {}; dragged = {};
     spec.points.forEach(function (p) {
       var coords = p.drag ? (startAt[p.name] || [num(p.x), num(p.y)]) : [function () { return p.fx(scopeVars()); }, function () { return p.fy(scopeVars()); }];
@@ -458,7 +471,7 @@
       spec.series.forEach(function (r) { var li = document.createElement('li'); li.style.setProperty('--c', r.colour || B.css(COLOURS[spec.series.indexOf(r) % 4])); li.textContent = r.name; sl.appendChild(li); });
       panel.appendChild(sl);
     }
-    if (spec.plots.length || spec.shades.length) { var lg = document.createElement('ul'); lg.id = 'legend'; panel.appendChild(lg); }
+    if (spec.plots.length || spec.shades.length || spec.circle) { var lg = document.createElement('ul'); lg.id = 'legend'; panel.appendChild(lg); }
     if (spec.table) { var tb = document.createElement('table'); tb.id = 'gtable'; panel.appendChild(tb); }
     moveRow(panel);
     if (spec.sliders.length || spec.points.some(function (p) { return p.drag; })) {
@@ -472,7 +485,7 @@
   function report(quiet) {
     sliders.forEach(function (s) { s.out.textContent = s.sl.name + ' = ' + show(vars[s.sl.name]); });
     var lg = B.el('legend');
-    if (lg && (spec.plots.length || spec.shades.length)) {
+    if (lg && (spec.plots.length || spec.shades.length || spec.circle)) {
       lg.replaceChildren();
       spec.plots.forEach(function (p) {
         var li = document.createElement('li'); li.style.setProperty('--c', p.colour); if (p.dashed) li.className = 'dashed';
@@ -486,6 +499,13 @@
         li.textContent = named(sh.text.replace('<=', '≤').replace('>=', '≥')) + ': shaded (' + (sh.strict ? 'dashed boundary: points on the line are not included' : 'solid boundary: points on the line are included') + ')';
         lg.appendChild(li);
       });
+      if (spec.circle) {   // (x − h)² + (y − k)² = r², with the values put in
+        var cs = spec.circle, ch = cs.fh(vars), ck = cs.fk(vars), cr = cs.fr(vars);
+        var sq = function (letter, c) { return c === 0 ? letter + '²' : '(' + letter + (c > 0 ? ' − ' : ' + ') + show(Math.abs(c)) + ')²'; };
+        var cli = document.createElement('li'); cli.style.setProperty('--c', cs.colour);
+        cli.textContent = named(sq('x', ch) + ' + ' + sq('y', ck) + ' = ' + show(round(cr * cr)));
+        lg.appendChild(cli);
+      }
     }
     var tb = B.el('gtable');
     if (tb) {
@@ -527,6 +547,6 @@
       report();
     },
     redraw: function () { startAt = scope().points; build(); report(); },
-    resize: function () { var b = B.jsxBoard; b.resizeContainer(B.el('board').clientWidth, B.el('board').clientHeight); b.setBoundingBox(frame(), false); },
+    resize: function () { var b = B.jsxBoard; b.resizeContainer(B.el('board').clientWidth, B.el('board').clientHeight); b.setBoundingBox(frame(), !!spec.circle); },
   });
 })(WPB);

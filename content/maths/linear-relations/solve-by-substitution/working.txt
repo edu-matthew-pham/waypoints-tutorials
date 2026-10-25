@@ -1,0 +1,8 @@
+# Zoe's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: zoe
+Solve c = g + 3 and 5c − 2g = 21.
+Replace c in the second equation by g + 3: 5g + 3 − 2g = 21.
+Collect the g terms: 3g + 3 = 21, so 3g = 18 and g = 6.
+Then c = 6 + 3 = 9.
+# endregion

@@ -1,0 +1,8 @@
+# Lena's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lena
+Solve 40 − 4.5r ≥ 12.
+Take 40 from both sides: −4.5r ≥ −28.
+Divide both sides by −4.5: r ≥ 6.2.
+Check r = 0: 40 − 0 = 40 ≥ 12 is true, but 0 ≥ 6.2 is false.
+# endregion

@@ -1,0 +1,36 @@
+# Practice for "Setting up equations". Plans, prices and bills are made up.
+templates:
+  - q: "A plan charges {f} cents a day plus {r} cents per kWh. How many cents does a day with {k} kWh cost?"
+    vars: { f: [60, 72, 90, 100, 120], r: [20, 24, 28, 30, 35], k: "3..20" }
+    answer: "{f + r * k}"
+    feedback:
+      - ["{(f + r) * k}", "The daily charge is paid once a day, not for each kWh."]
+      - ["{r * k}", "That is only the kWh part. Add the daily charge."]
+    explain: "{f} + {r} × {k} = {f} + {r * k} = {f + r * k} cents."
+  - q: "A hire shop charges {f} dollars to start plus {r} dollars for each hour. Write the cost in dollars for {h} hours."
+    vars: { f: [8, 10, 12, 15, 20], r: "3..9", h: "2..8" }
+    answer: "{f + r * h}"
+    feedback:
+      - ["{(f + r) * h}", "The starting charge is paid once, not for each hour."]
+    explain: "{f} + {r} × {h} = {f + r * h} dollars."
+  - q: "Plan A is c = {f1} + {r1}k and Plan B is c = {f2} + {r2}k (cents for a day, k kWh in the day). At what k do they cost the same?"
+    vars: { f2: [60, 72, 80, 90], r1: "20..24", d: "2..5", k: "4..15" }
+    let: { r2: "r1 + d", f1: "f2 + d * k" }
+    answer: "{k}"
+    feedback:
+      - ["{f1 + r1 * k}", "That is the cost, in cents. The question asks for k."]
+    explain: "{f1} + {r1}k = {f2} + {r2}k gives {f1 - f2} = {d}k, so k = {k}. The cost is {f1 + r1 * k} cents."
+  - q: "Plan A is c = {f1} + {r1}k and Plan B is c = {f2} + {r2}k (cents for a day, k kWh in the day). What does a day cost, in cents, where the two plans cost the same?"
+    vars: { f2: [60, 72, 80, 90], r1: "20..24", d: "2..5", k: "4..15" }
+    let: { r2: "r1 + d", f1: "f2 + d * k" }
+    answer: "{f1 + r1 * k}"
+    feedback:
+      - ["{k}", "That is k. The question asks for the cost, in cents."]
+    explain: "{f1} + {r1}k = {f2} + {r2}k gives k = {k}. The cost is {f1} + {r1} × {k} = {f1 + r1 * k} cents."
+  - q: "Plan A is c = {f1} + {r1}k and Plan B is c = {f2} + {r2}k (cents for a day). The plans cost the same at k = {k}. A household uses {u} kWh a day. How many cents a day does the cheaper plan save?"
+    vars: { f2: [60, 72, 80, 90], r1: "20..24", d: "2..5", k: "4..10", e: "1..6" }
+    let: { r2: "r1 + d", f1: "f2 + d * k", u: "k + e" }
+    answer: "{d * e}"
+    feedback:
+      - ["{f1 + r1 * u}", "That is Plan A's cost. The question asks how much cheaper the cheaper plan is."]
+    explain: "Above k = {k}, Plan A (the lower rate) is cheaper. At {u} kWh: Plan A is {f1 + r1 * u} cents, Plan B is {f2 + r2 * u} cents. The saving is {d * e} cents a day."

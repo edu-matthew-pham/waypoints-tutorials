@@ -1,0 +1,8 @@
+# Tess's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: tess
+Plan A: the daily charge is 1.20 dollars and the rate is 24 cents per kWh.
+Let k be the kWh used in a day and c the cost for the day in dollars.
+So c = 1.20 + 24k.
+For k = 10 that gives c = 241.20 dollars for the day.
+# endregion

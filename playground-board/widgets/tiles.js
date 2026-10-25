@@ -29,6 +29,18 @@
 //   target: 6, 7, 2          three numbers: the expression to factorise, 6x² + 7x + 2 (A, B, C); value r is 1 when
 //                            a·b, the x-tiles and the ones all match. Two numbers (B, C) mean x² + Bx + C, as before.
 //   values (coefficients): a, b, n (x² tiles: a·b), A (the target's x² number), plus p, q, m, c, r, B, C as above
+// Completing the square (mode: square, Year 10): x² + bx + c with b = 2h. The x² tile sits top left, h x-tiles go down
+// its right side and h across its bottom, and the corner they leave is an h by h square of ones. That makes the big
+// square (x + h)², so x² + bx + c = (x + h)² + k, where k is the ones you have (c) minus the h² the corner needs.
+// Leftover ones (k > 0) sit to the right; if the ones run short (k < 0) the missing ones are red, "take away".
+//   mode: square
+//   slider h: -5, 6, 3       half the number of x: b = 2h (whole numbers from -6 to 6; or fixed "h: 3"); negative h
+//                            gives negative (red) x-tiles, and the corner is still positive (two negatives)
+//   slider c: -12, 30, 5     the ones you start with (-12 to 30; or fixed "c: 5")
+//   corner: off              leave the corner empty and hide the leftover (students say how many ones it needs)
+//   result: off              hide the written form (x + h)² + k
+//   values (square): h, b (2h), c, s (h²: ones the corner needs), k (c − h²), u and v (the turning point of
+//   y = x² + bx + c is (u, v) = (−h, k))
 // state: { scope: { vars: { k, a, b, p, q, m (x-tiles in all: k·a + p), c (ones in all: k·b + q) } } }
 // Checks: "k = 3 and a = 1 and b = 2", "m = 6 and c = 12 and k > 1".
 (function (B) {
@@ -36,12 +48,14 @@
   var spec = null, vars = {}, ui = {};
   var NAMES = ['k', 'a', 'b', 'p', 'q'], FNAMES = ['k', 's', 't'], XLEN = 3.3, GAP = 1.4;
   var gcd = function (x, y) { return y ? gcd(y, x % y) : Math.abs(x); };
-  var names = function () { return spec && spec.binomial ? ['a', 'b', 'p', 'q'] : spec && spec.factor ? FNAMES : NAMES; };
+  var names = function () { return spec && spec.square ? ['h', 'c'] : spec && spec.binomial ? ['a', 'b', 'p', 'q'] : spec && spec.factor ? FNAMES : NAMES; };
   var show = function (n) { return B.fmt(n).replace(/^-/, '−'); };
 
   function num(t, where) { var v = Number(String(t).trim()); if (!isFinite(v) || v !== Math.round(v)) throw new Error(where + ': "' + String(t).trim() + '" is not a whole number.'); return v; }
   function parse(s) {
     s.sl = {}; s.fixed = {};
+    s.square = /^square$/i.test(s.mode || '');
+    if (s.square) return parseSquare(s);
     s.binomial = /^binomial$/i.test(s.mode || '');
     if (s.binomial) return parseBinomial(s);
     s.factor = s.s !== undefined || s.items.some(function (it) { return it.kind === 'slider' && it.name === 's'; });
@@ -80,6 +94,7 @@
     vars.h = ok && gcd(vars.a, vars.b) === 1 ? 1 : 0;
   }
   function build() {
+    if (spec.square) return buildSquare();
     if (spec.binomial) return buildBinomial();
     derive();
     if (spec.factor && !vars.f) return buildHeap();
@@ -191,6 +206,73 @@
     B.save({ vars: vars });
     B.post({ scope: { vars: { a: a, b: b, n: n, p: p, q: q, m: m, c: c, r: r, A: T ? T[0] : 0, B: T ? T[1] : 0, C: T ? T[2] : 0 }, points: {} } }, text);
   }
+  // Completing the square: sliders h and c only.
+  function parseSquare(s) {
+    var rng = { h: [-6, 6], c: [-12, 30] };
+    s.items.forEach(function (it) {
+      if (it.kind !== 'slider') return;
+      var where = 'Line ' + it.line + ' (slider ' + (it.name || '') + ')';
+      if (!rng[it.name]) throw new Error(where + ': completing the square uses sliders h and c only.');
+      var v = it.value.split(',').map(function (t) { return num(t, where); });
+      if (v.length < 3 || !(v[0] < v[1]) || v[2] < v[0] || v[2] > v[1]) throw new Error(where + ': needs min, max, start with min < max and start between them.');
+      if (v[0] < rng[it.name][0] || v[1] > rng[it.name][1]) throw new Error(where + ': keep ' + it.name + ' between ' + rng[it.name][0] + ' and ' + rng[it.name][1] + '.');
+      s.sl[it.name] = { name: it.name, min: v[0], max: v[1], start: v[2] };
+    });
+    ['h', 'c'].forEach(function (n) {
+      if (s[n] !== undefined) {
+        if (s.sl[n]) throw new Error(n + ': give it a slider or a fixed value, not both.');
+        s.fixed[n] = num(s[n], n);
+        if (s.fixed[n] < rng[n][0] || s.fixed[n] > rng[n][1]) throw new Error(n + ': keep it between ' + rng[n][0] + ' and ' + rng[n][1] + '.');
+      } else if (!s.sl[n]) throw new Error(n + ': needs a slider ("slider ' + n + ': ' + (n === 'h' ? '-5, 6, 3' : '-12, 30, 5') + '") or a value ("' + n + ': 3").');
+    });
+    s.cornerOn = !/^off$/i.test(s.corner || '');
+    s.showResult = !/^off$/i.test(s.result || '');
+  }
+  function buildSquare() {
+    var ink = B.css('--ink') || '#1d2430', sq = B.css('--right') || '#8a4fb8', pos1 = B.css('--left') || '#2f6fb3', pos2 = B.css('--accent') || '#c2570a', neg = '#c0392b';
+    var h = vars.h, ah = Math.abs(h), sh = h < 0 ? -1 : 1, k = vars.c - h * h, ak = Math.abs(k), X = XLEN, S = X + ah;
+    var showFix = spec.cornerOn && k !== 0, cols = Math.max(1, Math.min(ak, 6));
+    var W = Math.max(S + (showFix ? 1.2 + cols : 0), 8), top = S;
+    var board = B.jsx({ boundingbox: [-1.8, top + 1.6, W + 0.8, -0.8], keepAspectRatio: true });
+    var tile = function (x, y, w, hh, sign, lab, colour) {
+      var c = sign < 0 ? neg : colour;
+      board.create('polygon', [[x, y - hh], [x + w, y - hh], [x + w, y], [x, y]], { fillColor: c, fillOpacity: sign < 0 ? 0.35 : 0.3, borders: { strokeColor: c, strokeWidth: 1.5, highlight: false }, vertices: { visible: false }, fixed: true, highlight: false });
+      board.create('text', [x + w / 2, y - hh / 2, (sign < 0 ? '−' : '') + lab], { anchorX: 'middle', anchorY: 'middle', cssClass: 'tlab', highlightCssClass: 'tlab', fontSize: lab === 'x²' ? 20 : 15, fixed: true, highlight: false });
+    };
+    var lab = function (x, y, t) { board.create('text', [x, y, t], { anchorX: 'middle', anchorY: 'middle', cssClass: 'tside', highlightCssClass: 'tside', fontSize: 18, strokeColor: ink, fixed: true, highlight: false }); };
+    tile(0, top, X, X, 1, 'x²', sq);
+    for (var i = 0; i < ah; i++) tile(X + i, top, 1, X, sh, 'x', pos1);
+    for (var j = 0; j < ah; j++) tile(0, top - X - j, X, 1, sh, 'x', pos1);
+    for (var u = 0; u < ah; u++) for (var v = 0; v < ah; v++) {
+      if (spec.cornerOn) tile(X + u, top - X - v, 1, 1, 1, '1', pos2);
+      else board.create('polygon', [[X + u, top - X - v - 1], [X + u + 1, top - X - v - 1], [X + u + 1, top - X - v], [X + u, top - X - v]], { fillOpacity: 0, borders: { strokeColor: ink, strokeWidth: 1, dash: 2, highlight: false }, vertices: { visible: false }, fixed: true, highlight: false });
+    }
+    board.create('polygon', [[0, 0], [S, 0], [S, top], [0, top]], { fillOpacity: 0, borders: { strokeColor: ink, strokeWidth: 2.5, highlight: false }, vertices: { visible: false }, fixed: true, highlight: false });
+    lab(X / 2, top + 0.6, 'x'); if (ah) lab(X + ah / 2, top + 0.6, h < 0 ? '− ' + ah : '+ ' + ah);
+    lab(-0.8, top - X / 2, 'x'); if (ah) lab(-0.8, top - X - ah / 2, h < 0 ? '− ' + ah : '+ ' + ah);
+    if (showFix) {
+      var x0 = S + 1.2;
+      for (var n = 0; n < ak; n++) tile(x0 + (n % 6), top - Math.floor(n / 6), 1, 1, k < 0 ? -1 : 1, '1', pos2);
+      lab(x0 + (cols - 1) / 2 + 0.5, top + 0.6, k > 0 ? show(k) + ' left over' : 'take away ' + ak);
+    }
+    board.update();
+  }
+  function reportSquare() {
+    var h = vars.h, c = vars.c, b = 2 * h, s = h * h, k = c - s, ab = Math.abs(b);
+    ui.sliders.forEach(function (sl) { sl.out.textContent = sl.n + ' = ' + show(vars[sl.n]); });
+    var whole = quad(b, c);
+    var sqr = h ? '(x ' + (h < 0 ? '− ' + show(-h) : '+ ' + show(h)) + ')²' : 'x²';
+    var text = whole + (spec.showResult && spec.cornerOn ? ' = ' + sqr + (k ? ' ' + (k < 0 ? '− ' + show(-k) : '+ ' + show(k)) : '') : '');
+    ui.work.textContent = text;
+    var xs = ab ? ab + ' ' + (b < 0 ? 'negative ' : '') + 'x-tile' + (ab === 1 ? '' : 's') + ' (' + Math.abs(h) + ' down each side)' : 'no x-tiles';
+    var base = 'One x², ' + xs + ' and ' + (c < 0 ? Math.abs(c) + ' negative' : c) + ' one' + (Math.abs(c) === 1 ? '' : 's') + '.';
+    if (!spec.cornerOn) ui.count.textContent = base + ' How many ones would fill the corner?';
+    else if (!spec.showResult) ui.count.textContent = base;
+    else ui.count.textContent = base + ' The corner needs ' + s + ' one' + (s === 1 ? '' : 's') + (k === 0 ? ', exactly the ones you have.' : k > 0 ? '; you have ' + show(c) + ', so ' + k + ' ' + (k === 1 ? 'is' : 'are') + ' left over.' : '; you have ' + show(c) + ', so it is ' + (-k) + ' short: take ' + (-k) + ' away.');
+    B.say('');
+    B.save({ vars: vars });
+    B.post({ scope: { vars: { h: h, b: b, c: c, s: s, k: k, u: -h, v: k }, points: {} } }, text);
+  }
   function paintPanel() {
     var panel = B.el('gpanel'); panel.replaceChildren(); ui = { sliders: [] };
     ui.work = document.createElement('p'); ui.work.className = 'rulework'; ui.work.id = 'tsum'; ui.work.setAttribute('aria-live', 'polite'); panel.appendChild(ui.work);
@@ -216,6 +298,7 @@
   }
 
   function report() {
+    if (spec.square) return reportSquare();
     if (spec.binomial) return reportBinomial();
     derive();
     if (spec.factor) return reportFactor();

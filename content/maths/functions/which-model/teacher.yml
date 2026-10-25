@@ -1,0 +1,48 @@
+summary: "Students test tables for a line, a quadratic and an exponential using differences, second differences and ratios, and say which pattern they found. The hinge node: classify, then justify (AC9M10A04, node 1)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can tell a line, a quadratic and an exponential apart from a table.
+  - I can show the pattern that proves my choice.
+  - I can say what a model leaves out.
+struggle: "Choosing from the look of the numbers ('it goes down, so it's a line'). Ask 'what test did you try?' and have them write the differences and the ratio under the table before they choose."
+before: |
+  Do the Run board yourself first. Students need the exponential ratio (lesson 1) and difference and second-difference tests from Year 9 (Linear or quadratic?).
+
+  The hinge: students must decide AND justify. The three tests go in order: first differences (line), second differences (quadratic), ratios (exponential). Marks go to showing the constant pattern, not to naming the model.
+
+  All car prices are made up: 30,000 new and 20% off each year. Say so in class. Real listings also depend on kilometres, condition and the market. A class option: each group picks one model on a car-sales site, writes down five asking prices at different ages and tests them. Expect a rough fit, not an exact one; that is the lesson.
+running:
+  - "Predict: take a show of hands before revealing. Those who chose 11,520 repeated the last drop; don't correct it yet."
+  - "Run: ask where the dashed line and the dots separate, and what the solid curve does differently."
+  - "Paper: the try-one after the worked example and the dollars gap in Make are worked on paper first. Look for the ratio written as a division, not a subtraction."
+  - "Modify: before the ratio of 1, ask what multiplying by 1 does."
+stuck:
+  - see: "A student says the table is a line because the price 'goes down by about the same amount'."
+    ask: "What are the drops, written out? 6,000, then what?"
+    fix: "Write the three drops and the three ratios under the table. Drops 6,000, 4,800, 3,840 are not equal; ratios 0.8, 0.8, 0.8 are."
+  - see: "A student divides the wrong way (24,000 ÷ 30,000 versus 30,000 ÷ 24,000)."
+    ask: "Is each price bigger or smaller than the one before? Should the ratio be bigger or smaller than 1?"
+    fix: "Divide each value by the one before it. A falling table has a ratio below 1."
+  - see: "A student tests only one pair and decides."
+    ask: "Does the next pair give the same answer?"
+    fix: "A pattern needs at least three values and two equal gaps or ratios."
+stretch: "Find a table that is both a line and an exponential. Then find one that is a quadratic and not an exponential. Real prices rarely fit exactly: how close does the exponential fit your class's real listings?"
+support: "A table with two extra rows: 'difference' and 'ratio'. Fill both for 2, 4, 6, 8 and for 2, 4, 8, 16 so the contrast is visible before they classify."
+leads: |
+  Next: writing the model, y = a(bⁿ), with an initial value and a growth or decay factor, and using it to answer a question in dollars.
+
+  Where it leads in class: judging how well a model fits real data, and what it leaves out.
+exit:
+  q: "A table goes 80, 100, 125, 156.25. Linear, quadratic or exponential? Show the test."
+  a: "Exponential: 100 ÷ 80 = 1.25, 125 ÷ 100 = 1.25 and 156.25 ÷ 125 = 1.25. The differences 20, 25, 31.25 are not equal."
+explain: |
+  To choose a model from a table, test it three ways, in order:
+
+  1. **First differences.** If they are equal, it's a line.
+  2. **Second differences** (differences of the differences). If they are equal, it's a quadratic.
+  3. **Ratios.** Divide each value by the one before. If they are equal, it's an exponential.
+
+  Say which test worked, and show the numbers.
+sources:
+  - { title: "Made up for this lesson: the car prices (30,000 new, 20% off each year) are not real listings. Real prices also depend on kilometres and condition.", url: "https://tutorials.learningwaypoints.com/maths/functions/which-model/", checked: 2026-10-25 }

@@ -1,0 +1,8 @@
+# Taz's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: taz
+Solve (x + 5)(x − 3) = 20.
+(x + 5)(x − 3) = 20 means x + 5 = 20 or x − 3 = 20.
+So x = 15 or x = 23.
+Check x = 15: (20)(12) = 240, which is not 20.
+# endregion

@@ -1,0 +1,32 @@
+# Practice for "Completing the square".
+templates:
+  - q: "x² + {2 * a}x {c|s} = (x + {a})² + k. What is k?"
+    vars: { a: "2..9", c: "-12..30" }
+    answer: "{c - a * a}"
+    form: whole
+    feedback:
+      - ["{c}", "The bracket (x + {a})² already has a corner of {a * a}. Take it away from {c}."]
+      - ["{c + a * a}", "Take the corner away; do not add it."]
+    explain: "Half of {2 * a} is {a}, the corner needs {a * a} ones, and {c|p} − {a * a} = {c - a * a}."
+  - q: "x² − {2 * a}x {c|s} = (x − {a})² + k. What is k?"
+    vars: { a: "2..9", c: "-12..30" }
+    answer: "{c - a * a}"
+    form: whole
+    feedback:
+      - ["{c}", "The bracket (x − {a})² already has a corner of {a * a}. Take it away from {c}."]
+      - ["{c + a * a}", "Take the corner away; do not add it."]
+    explain: "Half of −{2 * a} is −{a}, the corner is (−{a}) × (−{a}) = {a * a}, and {c|p} − {a * a} = {c - a * a}."
+  - q: "What is the lowest value of y = x² + {2 * a}x {c|s}?"
+    vars: { a: "1..9", c: "-6..30" }
+    answer: "{c - a * a}"
+    form: whole
+    feedback:
+      - ["{c}", "That is not it: the (x + {a})² already has a corner of {a * a}."]
+    explain: "x² + {2 * a}x {c|s} = (x + {a})² {c - a * a|s}. The square is never below 0, so the lowest value is {c - a * a}."
+  - q: "The lowest point of y = x² + {2 * a}x {c|s} is where x = ?"
+    vars: { a: "1..9", c: "-6..30" }
+    answer: "-{a}"
+    form: whole
+    feedback:
+      - ["{a}", "The bracket is (x + {a}), which is zero when x = −{a}."]
+    explain: "x² + {2 * a}x {c|s} = (x + {a})² + k, and (x + {a})² is zero when x = −{a}."

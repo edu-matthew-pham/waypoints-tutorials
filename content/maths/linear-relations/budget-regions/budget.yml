@@ -1,0 +1,66 @@
+# Boards for "Regions from a budget". p is pizzas, d is drink packs; pizzas 24 dollars, packs 12 dollars, budget 120 dollars.
+# 24p + 12d <= 120 is the same as d <= 10 - 2p. Points are whole plans, so dragged points land on the grid.
+
+# region: run
+widget: graph
+axes: p (pizzas), d (drink packs)
+x: -1, 7
+y: -1, 12
+shade: y <= 10 - 2x
+point P: 3, 5, drag
+# endregion
+
+# region: explain
+widget: graph
+axes: p (pizzas), d (drink packs)
+x: -1, 7
+y: -1, 12
+shade: y <= 10 - 2x
+point A: 2, 3
+point B: 3, 5
+# endregion
+
+# region: explain-pic
+widget: graph
+axes: p (pizzas), d (drink packs)
+x: -1, 7
+y: -1, 12
+shade: y <= 10 - 2x
+point A: 2, 3
+point B: 3, 5
+# endregion
+
+# region: exact
+widget: graph
+axes: p (pizzas), d (drink packs)
+x: -1, 7
+y: -1, 12
+shade: y <= 10 - 2x
+point P: 1, 1, drag
+# endregion
+
+# region: strict-pic
+widget: graph
+axes: p (pizzas), d (drink packs)
+x: -1, 7
+y: -1, 12
+shade: y < 10 - 2x
+point A: 3, 4
+# endregion
+
+# region: prices
+widget: graph
+axes: p (pizzas), d (drink packs)
+x: -1, 6
+y: -1, 14
+shade: y <= 12 - 2x
+point P: 1, 1, drag
+# endregion
+
+# region: which-pic
+widget: graph
+axes: p (pizzas), d (drink packs)
+x: -1, 6
+y: -1, 10
+shade: y <= 8 - 2x
+# endregion

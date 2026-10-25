@@ -1,0 +1,28 @@
+# Practice for "Which model?".
+templates:
+  - q: "A table goes {a}, {a * b}, {a * b * b}, {a * b * b * b}. What do you multiply by each time?"
+    vars: { a: "2..9", b: "2..5" }
+    answer: "{b}"
+    feedback:
+      - ["{a * b - a}", "{a * b - a} is how far it goes up from {a} to {a * b}. The ratio is what you multiply by: {a * b} ÷ {a}."]
+    explain: "{a * b} ÷ {a} = {b}, and {a * b * b} ÷ {a * b} = {b}. Each value is {b} times the one before."
+  - q: "A table goes {a}, {a + d}, {a + 2 * d}, {a + 3 * d}. What is the first difference?"
+    vars: { a: "10..40 by 5", d: "3..9" }
+    answer: "{d}"
+    explain: "{a + d} − {a} = {d}, and every step adds {d}. Equal differences mean a line."
+  - q: "A table goes {a}, {a + 3}, {a + 8}, {a + 15}. What is the second difference?"
+    vars: { a: "1..9" }
+    answer: "2"
+    feedback:
+      - ["3", "3 is one of the first differences (3, 5, 7). The second difference is the gap between those."]
+    explain: "First differences 3, 5, 7. Second differences 2, 2."
+  - q: "Which model fits the table?"
+    cases:
+      - { t: "2, 4, 8, 16", k: "exponential: each value is 2 times the one before", w1: "linear: it adds the same amount each time", w2: "quadratic: the second differences are equal" }
+      - { t: "3, 9, 27, 81", k: "exponential: each value is 3 times the one before", w1: "linear: it adds the same amount each time", w2: "quadratic: the second differences are equal" }
+      - { t: "5, 8, 11, 14", k: "linear: it adds 3 every time", w1: "exponential: each value is the same number of times the one before", w2: "quadratic: the second differences are equal" }
+      - { t: "1, 4, 9, 16", k: "quadratic: the second differences are both 2", w1: "linear: it adds the same amount each time", w2: "exponential: each value is the same number of times the one before" }
+      - { t: "100, 80, 64, 51.2", k: "exponential: each value is 0.8 times the one before", w1: "linear: it takes off the same amount each time", w2: "quadratic: the second differences are equal" }
+      - { t: "50, 40, 30, 20", k: "linear: it takes off 10 every time", w1: "exponential: each value is the same number of times the one before", w2: "quadratic: the second differences are equal" }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "For {t}, test the differences and the ratios. Only {k} holds every time."

@@ -1,0 +1,50 @@
+# Boards for "Writing the model". x is the number of years, r is the yearly rate in per cent (made up, not an offer
+# from a bank). The balance starts at $1,000 and is A = 1000(1 + r/100)^x. The dashed line adds the same dollars
+# each year (simple interest at the same rate) so the two can be compared.
+
+# region: run
+widget: graph
+x: 0, 20
+y: 0, 3000
+grid: 5, 500
+axes: Time (years), Balance ($)
+slider r: 0, 10, 5, 1
+plot: y = 1000((1 + r/100)^x)
+plot: y = 1000 + 10rx, dashed
+table: 0, 1, 2, 5, 10, 15, 20
+# endregion
+
+# region: explain
+widget: graph
+x: 0, 20
+y: 0, 3000
+grid: 5, 500
+axes: Time (years), Balance ($)
+slider r: 0, 10, 5, 1
+plot: y = 1000((1 + r/100)^x)
+plot: y = 1000 + 10rx, dashed
+table: 0, 1, 2, 5, 10
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 20
+y: 0, 3000
+grid: 5, 500
+axes: Time (years), Balance ($)
+plot: y = 1000(1.05^x)
+plot: y = 1000 + 50x, dashed
+table: 0, 1, 2, 5, 10
+# endregion
+
+# region: vary
+widget: graph
+x: 0, 20
+y: 0, 3000
+grid: 5, 500
+axes: Time (years), Balance ($)
+slider r: 0, 10, 7, 1
+plot: y = 1000((1 + r/100)^x)
+plot: y = 1000 + 10rx, dashed
+table: 0, 5, 8, 9, 10, 11, 12, 15, 20
+# endregion

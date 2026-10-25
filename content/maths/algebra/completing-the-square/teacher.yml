@@ -1,0 +1,48 @@
+summary: "Students fill the corner of an x² and x-tile square, take away the ones they did not have, and read the lowest (or highest) point from the result: x² + 6x + 5 = (x + 3)² − 4, then the ball's highest point (AC9M10A01, node 4)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can write x² + bx + c as (x + b/2)² + k by filling the corner and taking away what I did not have.
+  - I can read the lowest point of y = x² + bx + c from the completed square.
+  - I can use it to find the highest point of a ball's path.
+struggle: "Copying the number after the bracket without taking the corner away (Rin), and the sign of the bracket when b is negative. Ask students to say how many ones the corner needs before they write anything."
+before: |
+  Do the Run board yourself first. Students need Special products from this unit: (x + 3)² is x² + 6x + 9, two strips and a corner. Here the corner is the missing piece.
+
+  The one idea: half the x-tiles go down each side, the corner needs half times half ones, and k is what you have minus what the corner needs (positive: left over, negative: short and taken away). The common mistake is writing k = c (Rin's working, planted after the worked example).
+
+  Hinge node: solving quadratics, the turning point and later the quadratic formula all use this move. The smaller steps ask for half the move with numbers (the corner, then the subtraction). If a student's bracket is right and k is wrong, ask what (x + 4)² already has in it.
+
+  The board makes a bowl, so the ball (a hill) is turned over by taking a minus out first. The height formula is made up for this lesson and leaves out air resistance, so the ball in real life is not exactly this arch. The board only does an even number of x-tiles (b from −12 to 12); the odd case, with halves, is done on paper.
+running:
+  - "Predict: take a show of hands for 9, 6, 3 and 12. Ask the 6s where the 6 came from."
+  - "Run: ask how many ones are missing when c = 5, and what the minus sign on the 4 means."
+  - "Investigate: draw x² + 8x + 3 live and ask how many ones the 4-by-4 corner needs before Rin's line 3."
+  - "Paper: the try-one after the worked example and the ball in Make are worked on paper first. Books out, and look for the minus taken out at the start of the ball."
+  - "Modify: before the lowest point (−2, 1), ask which of h and c sets the left-and-right position."
+  - "Make: before anyone writes, ask whether 14 or 5 is the biggest height, and how they would know."
+stuck:
+  - see: "A student writes x² + 8x + 3 = (x + 4)² + 3 (Rin's mistake)."
+    ask: "How many ones does the (x + 4)² square already hold in its corner?"
+    fix: "16. So 3 is 13 short of it: (x + 4)² − 13."
+  - see: "A student writes x² − 8x + 20 = (x + 4)² + 4."
+    ask: "Which way do the x-tiles go on the board when b is negative?"
+    fix: "Red: the bracket is (x − 4). The corner is still +16."
+  - see: "A student writes h = 14 − (t − 3)² but says the lowest point is 14."
+    ask: "Is (t − 3)² taken from 14 or added to it?"
+    fix: "Taken from it, so it is biggest when the square is 0: a highest point, not a lowest."
+stretch: "Complete the square for 2x² + 12x + 5 by taking out the 2 first: 2(x² + 6x) + 5, and say where its lowest point is. Then try the odd case x² + 5x + 1 with halves."
+support: "A table with columns b, b ÷ 2, (b ÷ 2)², and c − (b ÷ 2)². Draw the x² and x-tile square for each before filling in the table."
+leads: |
+  Continues the Year 10 algebra work (AC9M10A01 node 4, second half).
+
+  Where it leads: Solving by reshaping (next lesson), and the quadratic formula, which is this move done once with letters.
+exit:
+  q: "Write x² + 6x + 1 as (x + 3)² + k. What is k?"
+  a: "−8: the corner needs 9 and there is 1, so k = 1 − 9 = −8."
+explain: |
+  A square with sides $x + 3$ is an $x$ by $x$ square, two strips of $3x$, and a corner of 9. That is $(x + 3)^2 = x^2 + 6x + 9$.
+
+  If you have $x^2 + 6x + 5$, you have the square and the strips but only 5 ones for a corner that needs 9. So it is the square, with 4 ones taken away: $x^2 + 6x + 5 = (x + 3)^2 - 4$.
+
+  A square is never below zero, so the lowest value of $(x + 3)^2 - 4$ is $-4$, when $x = -3$.

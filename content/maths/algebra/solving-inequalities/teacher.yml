@@ -1,0 +1,48 @@
+summary: "Students solve 12 + 4.5r ≤ 40 for a day at the fair, read r ≤ 6.2 as six whole rides, reverse the sign when dividing by a negative, solve with the unknown on both sides and solve a double inequality; they finish by comparing two parks (AC9M10A02, node 1)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can solve a linear inequality from a budget and show it on a number line.
+  - I can reverse the sign when I divide by a negative, and say why.
+  - "I can read the answer in the context: whole rides, not 6.2."
+struggle: "Forgetting the entry fee when finding the most rides, rounding to the nearest instead of down, and keeping the sign after dividing by a negative (Lena). Ask students to check a value from their answer in the original before they show it."
+before: |
+  Do the Run board yourself first. Students need Year 8 Inequalities (solving, reversing for a negative, open and closed circles). This lesson does not teach the reversal again: it uses it in a context where the answer has to make sense, adds the unknown on both sides, a strict inequality with a whole boundary, and a double inequality.
+
+  The one idea: solve like an equation (reverse for a negative), show the whole range, then ask which values the situation allows. The common mistake is keeping the sign after dividing by a negative (Lena's working, planted after the worked example); her check at r = 0 is the clue.
+
+  Not a hinge node, but the smaller steps help where students stick: the negative coefficient in Modify and Practise. The number line board shows whole-number and half-number boundaries only, so 6.2 is read from the solved inequality, not placed on the line.
+
+  All prices (the fair, the bike, the scooter, the skate park, Park A and Park B) are made up for this lesson: no figure here is a real price.
+running:
+  - "Predict: take a show of hands for 6, 7, 8 and 9. Ask the 8s what they did with the entry fee."
+  - "Run: ask students why the answer is the last whole number under the line, not the nearest."
+  - "Investigate: ask what 6.2 rides would mean, and who would round it up."
+  - "Paper: the try-one after the worked example and the two parks in Make are worked on paper first. Books out, and look for the sign being kept or reversed."
+  - "Modify: before 18 − 3x > 6, ask students to predict whether the ray goes left or right."
+  - "Make: before anyone writes, ask who thinks Park B is cheaper for every number of rides."
+stuck:
+  - see: "A student writes r ≥ 6.2 after dividing by −4.5 (Lena's mistake)."
+    ask: "Is r = 0 allowed? Does 0 ≥ 6.2 agree?"
+    fix: "No: dividing by a negative reverses the sign, so r ≤ 6.2."
+  - see: "A student says the most rides is 7."
+    ask: "What do 7 rides cost altogether, with the entry?"
+    fix: "12 + 31.50 = $43.50, over $40. Round down, not to the nearest."
+  - see: "A student gives 6 for 12 + 4.5r < 39."
+    ask: "Does 6 rides cost less than $39, or exactly $39?"
+    fix: "Exactly $39. The sign is strict, so 6 is not included: 5."
+stretch: "Find when Park B stops being cheaper if its rides were $3.50 instead of $3. Is there a number of rides where they cost the same? Say what the line crossing means."
+support: "A table of rides 0 to 8 with the cost at each, so students can see the cost cross $40 before they solve. A sentence frame: I have $__ left after the entry, and each ride costs $__, so __ rides."
+leads: |
+  Continues the Year 10 algebra work (AC9M10A02, node 1).
+
+  Where it leads: inequalities with two variables and shaded regions (the next node), and linear programming in Year 11 and 12.
+exit:
+  q: "You have $50 and a day costs $14 entry plus $3.50 a ride. What is the most whole rides?"
+  a: "10: 14 + 3.5r ≤ 50, so r ≤ 10.28, and 10 whole rides."
+explain: |
+  An entry of $12 and $4.50 a ride costs $12 + 4.5r$ for $r$ rides. With $40 to spend, $12 + 4.5r \le 40$.
+
+  Solve it like an equation: $4.5r \le 28$, so $r \le 6.2$. If you divide by a negative, reverse the sign.
+
+  The solution is a range, but rides come whole, so the context picks the values: the most is 6 rides, which costs $39. Seven would cost $43.50.

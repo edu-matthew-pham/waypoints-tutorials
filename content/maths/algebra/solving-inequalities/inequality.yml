@@ -1,0 +1,43 @@
+# Boards for "Solving inequalities" (Year 10). The cost of a day at the fair against the number of rides; then a ray on a number line.
+
+# region: run
+widget: graph
+x: 0, 10
+y: 0, 60
+grid: 1, 10
+axes: Rides, Cost ($)
+slider r: 0, 10, 0
+plot: y = 12 + 4.5x
+plot: y = 40, dashed
+point A: r, 12 + 4.5r
+# endregion
+
+# region: explain
+widget: graph
+x: 0, 10
+y: 0, 60
+grid: 1, 10
+axes: Rides, Cost ($)
+slider r: 0, 10, 0
+plot: y = 12 + 4.5x
+plot: y = 40, dashed
+point A: r, 12 + 4.5r
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 10
+y: 0, 60
+grid: 1, 10
+axes: Rides, Cost ($)
+plot: y = 12 + 4.5x
+plot: y = 40, dashed
+point A: 6, 39
+# endregion
+
+# region: ray
+widget: numberline
+range: -6, 12
+point P: 0, drag
+ray: P
+# endregion

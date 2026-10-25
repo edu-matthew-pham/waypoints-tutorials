@@ -1,0 +1,20 @@
+# Practice for "Where they meet".
+templates:
+  - q: "Plan A is worth ${a} + {d}x$ dollars after $x$ years. The plans meet at $x = {x}$. How much is Plan A worth at the crossing, in dollars?"
+    vars: { a: "100..900 by 100", d: "20..80 by 10", x: "2..9" }
+    answer: "{a + d * x}"
+    feedback:
+      - ["{d * x}", "{d * x} is only what has been added. Add the starting {a} as well."]
+    explain: "{a} + {d} × {x} = {a + d * x}."
+  - q: "At 3 years Plan A is worth ${a}$ and Plan B is worth ${b}$. At 4 years A is worth ${a + 100}$ and B is worth ${b * 2}$. Plan B is ahead at 4 years. Which is ahead at 3 years?"
+    vars: { a: [800, 900, 1000], b: [300, 400, 450] }
+    choices: ["Plan A", "Plan B", "Neither"]
+    explain: "At 3 years A is {a} and B is {b}, so A is ahead. B is ahead at 4 years, so the plans swap in between."
+  - q: "The plans swap between which two years?"
+    cases:
+      - { t: "A is ahead at 2 years and B is ahead at 3 years", k: "between 2 and 3 years", w1: "between 3 and 4 years", w2: "between 1 and 2 years" }
+      - { t: "B is ahead at 4 years and A is ahead at 5 years", k: "between 4 and 5 years", w1: "between 5 and 6 years", w2: "between 3 and 4 years" }
+      - { t: "A is ahead at 6 years and B is ahead at 7 years", k: "between 6 and 7 years", w1: "between 7 and 8 years", w2: "between 5 and 6 years" }
+      - { t: "B is ahead at 8 years and A is ahead at 9 years", k: "between 8 and 9 years", w1: "between 9 and 10 years", w2: "between 7 and 8 years" }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "{t}, so the leader changes {k}."

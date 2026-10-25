@@ -1,0 +1,45 @@
+# Practice for "Solving by substitution". Each question asks for one letter.
+templates:
+  - q: "Solve the pair y = {m}x + {c} and y = {n}x + {d}. What is x?"
+    vars: { m: "3..7", n: "0..2", c: [1, 2, 3, 4, 5, 6], X: "1..8" }
+    let: { d: "(m - n) * X + c" }
+    answer: "{X}"
+    feedback:
+      - ["{m * X + c}", "That is y at the crossing. The question asks for x."]
+    explain: "Set the rules equal: {m}x + {c} = {n}x + {d}, so {m - n}x = {d - c} and x = {X}. Then y = {m * X + c}."
+  - q: "Solve the pair y = {m}x + {c} and y = {n}x + {d}. What is y?"
+    vars: { m: "3..7", n: "0..2", c: [1, 2, 3, 4, 5, 6], X: "1..8" }
+    let: { d: "(m - n) * X + c" }
+    answer: "{m * X + c}"
+    feedback:
+      - ["{X}", "That is x. Put x into one of the rules to find y."]
+    explain: "{m}x + {c} = {n}x + {d} gives x = {X}. Then y = {m} × {X} + {c} = {m * X + c}."
+  - q: "Solve the pair x = {k}y and {m}x + y = {T}. What is y?"
+    vars: { k: "2..4", m: "2..3", y: "2..7" }
+    let: { T: "(m * k + 1) * y" }
+    answer: "{y}"
+    feedback:
+      - ["{k * y}", "That is x. The question asks for y."]
+    explain: "Replace x by {k}y, in brackets: {m}({k}y) + y = {T}, so {m * k + 1}y = {T} and y = {y}. Then x = {k * y}."
+  - q: "Solve the pair y = x − {a} and {m}y + x = {T}. What is x?"
+    vars: { a: "1..3", m: "2..4", x: "4..10" }
+    let: { T: "(m + 1) * x - m * a" }
+    answer: "{x}"
+    feedback:
+      - ["{x - a}", "That is y. The question asks for x."]
+      - ["{(T + a) / (m + 1)}", "Put brackets round x − {a}: {m}(x − {a}) = {m}x − {m * a}."]
+    explain: "Replace y by x − {a}: {m}(x − {a}) + x = {T}, so {m + 1}x − {m * a} = {T} and x = {x}. Then y = {x - a}."
+  - q: "Lite costs {A} dollars a month plus {B} dollars per GB. Big costs {C} dollars a month plus {D} dollars per GB. At how many GB do they cost the same?"
+    vars: { A: [8, 10, 12, 15], B: "4..7", D: "1..2", g: "2..9" }
+    let: { C: "A + (B - D) * g" }
+    answer: "{g}"
+    feedback:
+      - ["{A + B * g}", "That is the cost. The question asks for the GB."]
+    explain: "{A} + {B}g = {C} + {D}g gives {B - D}g = {C - A}, so g = {g}. The cost is {A + B * g} dollars."
+  - q: "Lite costs {A} dollars a month plus {B} dollars per GB. Big costs {C} dollars a month plus {D} dollars per GB. What is the cost, in dollars, where the plans cost the same?"
+    vars: { A: [8, 10, 12, 15], B: "4..7", D: "1..2", g: "2..9" }
+    let: { C: "A + (B - D) * g" }
+    answer: "{A + B * g}"
+    feedback:
+      - ["{g}", "That is the GB. The question asks for the cost."]
+    explain: "{A} + {B}g = {C} + {D}g gives g = {g}. The cost is {A} + {B} × {g} = {A + B * g} dollars."

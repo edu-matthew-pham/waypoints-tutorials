@@ -1,0 +1,22 @@
+# Practice for "Circles as relations".
+templates:
+  - q: "A circle is $(x - {h})^2 + (y - {k})^2 = {r * r}$. What is its radius?"
+    vars: { h: "1..5", k: "1..5", r: "2..9" }
+    answer: "{r}"
+    feedback:
+      - ["{r * r}", "{r * r} is the radius squared. The radius is its square root."]
+    explain: "r² = {r * r}, so r = {r}."
+  - q: "A circle has centre $({h}, {k})$ and radius {r}. What number is on the right side of its equation?"
+    vars: { h: "-5..5", k: "-5..5", r: "2..9" }
+    answer: "{r * r}"
+    feedback:
+      - ["{r}", "{r} is the radius. The right side is the radius squared."]
+    explain: "r² = {r} × {r} = {r * r}."
+  - q: "Is $({a}, {b})$ on the circle $x^2 + y^2 = {a * a + b * b}$? Type 1 for yes and 0 for no."
+    vars: { a: "1..9", b: "1..9" }
+    answer: "1"
+    explain: "{a}² + {b}² = {a * a} + {b * b} = {a * a + b * b}, so it is on the circle."
+  - q: "What is the centre of the circle $(x - {h})^2 + (y + {k})^2 = 16$?"
+    vars: { h: "1..6", k: "1..6" }
+    answer: "({h}, {-k})"
+    explain: "x − {h} = 0 gives x = {h}, and y + {k} = 0 gives y = −{k}."

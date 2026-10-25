@@ -1,0 +1,48 @@
+# Boards for "Solving by substitution". g is gigabytes, c is the monthly cost in dollars; all prices are made up.
+# Lite: c = 12 + 4g. Big: c = 30 + g. They meet at (6, 36).
+
+# region: run
+widget: graph
+axes: g (GB), c (dollars)
+x: -0.5, 10
+y: -2, 60
+grid: off
+snap: 1, 2
+plot: y = 12 + 4x, from 0
+plot: y = 30 + x, from 0
+point P: 2, 40, drag
+# endregion
+
+# region: explain
+widget: graph
+axes: g (GB), c (dollars)
+x: -0.5, 10
+y: -2, 60
+grid: off
+plot: y = 12 + 4x, from 0
+plot: y = 30 + x, from 0
+point M: 6, 36
+# endregion
+
+# region: explain-pic
+widget: graph
+axes: g (GB), c (dollars)
+x: -0.5, 10
+y: -2, 60
+grid: off
+plot: y = 12 + 4x, from 0
+plot: y = 30 + x, from 0
+cross: 1, 2
+# endregion
+
+# region: bigger
+widget: graph
+axes: g (GB), c (dollars)
+x: -0.5, 10
+y: -2, 60
+grid: off
+snap: 1, 2
+plot: y = 12 + 4x, from 0
+plot: y = 36 + x, from 0
+point P: 2, 40, drag
+# endregion

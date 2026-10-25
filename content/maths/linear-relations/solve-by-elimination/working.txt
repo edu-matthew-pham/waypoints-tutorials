@@ -1,0 +1,7 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Solve 5p + 3q = 29 and 2p + 3q = 17.
+Subtract the second equation from the first: (5p − 2p) + (3q + 3q) = 29 − 17.
+So 3p + 6q = 12.
+# endregion

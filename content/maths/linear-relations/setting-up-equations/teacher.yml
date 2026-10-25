@@ -1,0 +1,46 @@
+summary: "Students turn a rate card into a rule with named letters and one unit, set two plans equal, solve, and say the answer in the words of the situation, checking it makes sense (AC9M10A02, node 4). The electricity plans and the sample bill are made up; students can repeat the Make task with a real bill from home."
+time: 45
+timing: "Predict and Run 8 min · Investigate 16 min · Modify 11 min · Practise and Make 10 min"
+goals:
+  - I can name the letters, with units, and write a rule from a rate card.
+  - I can keep every quantity in the same unit before I set up an equation.
+  - I can say a solution in the words of the situation and check it makes sense.
+struggle: "Mixing cents and dollars in one rule. Ask students to circle every number's unit before writing the rule, and to change them all to one unit."
+before: |
+  Do the Run board and the Make task yourself first. Students need Solving by substitution and Solving by elimination in this unit. This lesson is mostly setting up and interpreting, not new algebra.
+
+  The one idea: the maths is only half the work. The letters need meanings and units, the answer needs to be said in the situation's words, and it needs a sense check (a negative number of kWh, or half a ticket, is not an answer). The common mistake is mixing units (Tess's working).
+
+  The rate cards, the sample bill (90 days, 1,260 kWh) and all prices are made up so the crossing is a whole number. In the Make task, students can use a real bill from home, but they need not: a sample is enough, and no one should be asked to show a bill. Real plans add time-of-use rates, discounts and solar credits that this model ignores.
+running:
+  - "Predict: take a show of hands. Students who chose Plan B were looking at the daily charge; ask what the rate does over 1,260 kWh."
+  - "Run: ask which plan is cheaper to the right of the crossing, and what the bill's 14 kWh a day tells you."
+  - "Paper: the try-one after the worked example (Plans C and D, then A and B) and the bill in Make are worked on paper first. Books out, example beside them; look for one unit throughout."
+  - "Modify: before the 2.5 tickets task, ask what a ticket is; before the negative task, ask what negative kWh would mean."
+stuck:
+  - see: "A student writes c = 120k + 24."
+    ask: "Which charge is paid once a day, and which for every kWh?"
+    fix: "120 cents once a day, 24 cents for each kWh: c = 120 + 24k."
+  - see: "A student gets 720 as the answer to the bill."
+    ask: "What unit is 720? What unit does the question want?"
+    fix: "720 cents is 7.20 dollars. Divide by 100."
+  - see: "A student gives k = 12 as the answer and stops."
+    ask: "Which plan is cheaper above 12 kWh a day, and what does this household use?"
+    fix: "Plan A is cheaper above 12 kWh a day, and this household uses 14, so choose A."
+stretch: "Find a real rate card (a phone or energy plan) and write two rules for it. Where do they cross, and which kind of household should pick each plan?"
+support: "Give the rules written already. Students solve, then say the answer in words."
+leads: |
+  Finishes AC9M10A02 (node 4).
+
+  Where it leads: Where they meet and Circles as relations in functions, where the crossing is of a line and a curve, then Judging the model in AC9M10A04.
+exit:
+  q: "A plan is 90 cents a day plus 30 cents per kWh. Write the cost c for a day with k kWh, and find c when k = 10."
+  a: "c = 90 + 30k. For k = 10: 90 + 300 = 390 cents, which is 3.90 dollars."
+explain: |
+  To set up a problem from a situation:
+
+  1. **Name the letters, with units**: $k$ is the kWh used in a day, $c$ is the cost for the day in cents.
+  2. **Write each rule** in one unit: Plan A is $c = 120 + 24k$, Plan B is $c = 72 + 28k$.
+  3. **Solve**: set the rules equal, $120 + 24k = 72 + 28k$, so $k = 12$ and $c = 408$.
+  4. **Say it in the situation's words**: at 12 kWh a day the plans cost the same, 408 cents a day. Above that Plan A is cheaper.
+  5. **Check it makes sense**: no negative kWh and no half tickets.

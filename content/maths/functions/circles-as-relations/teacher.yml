@@ -1,0 +1,50 @@
+summary: "Students write and read the equation of a circle, explain why a circle is a relation but not a function, and say how a move changes the centre and radius (AC9M10A05, node 3)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can read the centre and radius from the equation of a circle.
+  - I can write the equation of a circle from its centre and radius.
+  - I can explain why a circle isn't a function.
+struggle: "The signs in the brackets: (x + 3) means the centre's x is −3. Ask 'what value of x makes this bracket zero?' and have them check against the graph."
+before: |
+  Do the Run board yourself first. Students need the distance between two points and Pythagoras from Year 9.
+
+  The one idea: a circle is every point a fixed distance from a centre, so (x − h)² + (y − k)² = r². The board draws it and lists the equation under the graph, so the signs can be compared with the sliders. The board keeps x and y at the same scale so it looks round, and the view grows to fit.
+
+  A circle fails the vertical line test: x = 3 meets x² + y² = 25 at (3, 4) and (3, −4). That is the 'relation but not a function' part of the node.
+
+  The pivot and arm length are made up: one square is 100 m and the arm is 5 squares. A class option: choose a circular paddock on a satellite map (a centre-pivot circle is easy to find), put a grid over a printout and write its equation. Expect a rough fit.
+running:
+  - "Predict: take a show of hands. Those who chose (4, 4) added or matched coordinates. Don't correct it yet."
+  - "Run: ask what happens to the signs in the equation as h and k change."
+  - "Paper: the try-one after the worked example and the tree in Make are worked on paper first. Look for squaring each coordinate before adding."
+  - "Modify: before the radius of 0, ask what the sum of two squares can be."
+stuck:
+  - see: "A student copies the signs from the brackets for the centre (Alex's mistake)."
+    ask: "What value of x makes (x − 3) equal to zero?"
+    fix: "The centre is where each bracket is zero. (x − 3) → 3, (y + 1) → −1."
+  - see: "A student puts the radius, not its square, on the right (or the other way round)."
+    ask: "What is the distance from the centre squared?"
+    fix: "Write r² on the right: radius 3 → 9. Reading backwards: right side 49 → radius 7."
+  - see: "A student adds the coordinates (3 + 4) instead of squaring."
+    ask: "What does Pythagoras say about the distance from (0, 0) to (3, 4)?"
+    fix: "Distance² = x² + y². Compare that with r²."
+stretch: "Find the equation of a circle that passes through (0, 0) with centre (3, 4). Then: the top half of x² + y² = 25 is a function, y = √(25 − x²). Can you describe the bottom half?"
+support: "A table with columns x, y, x², y², x² + y². Fill it for (3, 4), (0, 5), (4, 4) and (2, 3) and circle the ones that equal 25."
+leads: |
+  Next: judging a model and making a conjecture. Both are done in class.
+
+  Where it leads in class: coverage zones, distance problems and, later, conic sections.
+exit:
+  q: "A circle has equation (x − 2)² + (y + 5)² = 36. What are its centre and radius? Is it a function?"
+  a: "Centre (2, −5), radius 6. It isn't a function: a vertical line through the centre meets it twice."
+explain: |
+  A **circle** is every point a fixed distance, the **radius** $r$, from a **centre** $(h, k)$. Its equation is
+
+  $(x - h)^2 + (y - k)^2 = r^2$
+
+  - The centre is where each bracket is zero: $(x - 3)$ gives $h = 3$, and $(y + 1)$ gives $k = -1$.
+  - The right side is the radius **squared**.
+  - A circle is a **relation**, but not a **function**: most $x$ values have two $y$ values.
+sources:
+  - { title: "Made up for this lesson: the pivot and the arm length (5 squares of 100 m) and the tree at (4, 3.5) are not from a real farm.", url: "https://tutorials.learningwaypoints.com/maths/functions/circles-as-relations/", checked: 2026-10-25 }

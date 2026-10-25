@@ -1,0 +1,45 @@
+# Practice for "Regions from a budget". All prices and budgets are made up.
+templates:
+  - q: "Pizzas cost {a} dollars and packs of drinks cost {b} dollars. The budget is {B} dollars. Where does the boundary of {a}p + {b}d ≤ {B} cross the d-axis? Give d."
+    vars: { a: [10, 12, 15, 16, 18, 20, 24, 30], b: [4, 5, 6, 8, 9, 10], D: "5..12" }
+    where: "a != b"
+    let: { B: "b * D" }
+    answer: "{D}"
+    feedback:
+      - ["{B / a}", "The d-axis is where p = 0. Divide the budget by the price of a pack, {b}, not the pizza price."]
+    explain: "With p = 0: {b}d = {B}, so d = {B} ÷ {b} = {D}."
+  - q: "Pizzas cost {a} dollars and packs of drinks cost {b} dollars. The budget is {B} dollars. Where does the boundary of {a}p + {b}d ≤ {B} cross the p-axis? Give p."
+    vars: { a: [10, 12, 15, 16, 18, 20, 24, 30], b: [4, 5, 6, 8, 9, 10], P: "2..9" }
+    where: "a != b"
+    let: { B: "a * P" }
+    answer: "{P}"
+    feedback:
+      - ["{B / b}", "The p-axis is where d = 0. Divide the budget by the price of a pizza, {a}, not the pack price."]
+    explain: "With d = 0: {a}p = {B}, so p = {B} ÷ {a} = {P}."
+  - q: "Pizzas cost {a} dollars and packs cost {b} dollars. A plan has {p} pizzas and {d} packs. How many dollars does it cost?"
+    vars: { a: [12, 15, 18, 20, 24], b: [4, 5, 6, 8, 10], p: "1..6", d: "1..8" }
+    answer: "{a * p + b * d}"
+    feedback:
+      - ["{a * d + b * p}", "Match each price to its own number: {a} dollars for each of {p} pizzas, {b} dollars for each of {d} packs."]
+    explain: "{a} × {p} + {b} × {d} = {a * p} + {b * d} = {a * p + b * d} dollars."
+  - q: "The budget is {B} dollars. Pizzas cost {a} dollars. After buying {p} pizzas, how many dollars are left to spend on drinks?"
+    vars: { a: [12, 15, 18, 20, 24], p: "1..6", L: "6..60" }
+    let: { B: "a * p + L" }
+    answer: "{L}"
+    feedback:
+      - ["{a * p}", "That is what the pizzas cost. The money left is the budget minus that."]
+    explain: "{p} pizzas cost {a * p} dollars. {B} − {a * p} = {L} dollars left."
+  - q: "Packs of drinks cost {b} dollars. After buying pizzas, {L} dollars are left. How many packs can be bought?"
+    vars: { b: [4, 5, 6, 8, 10, 12], d: "1..9" }
+    let: { L: "b * d" }
+    answer: "{d}"
+    feedback:
+      - ["{L}", "That is the money. Divide it by the price of one pack, {b}."]
+    explain: "{L} ÷ {b} = {d} packs."
+  - q: "The boundary of {a}p + {b}d ≤ {B} is drawn. The plan ({p}, {d}) costs {a * p + b * d} dollars. By how many dollars is it over budget? (A plan outside the region.)"
+    vars: { a: [12, 15, 18, 20, 24], b: [4, 5, 6, 8, 10], p: "2..6", d: "2..8", over: "2..14" }
+    let: { B: "a * p + b * d - over" }
+    answer: "{over}"
+    feedback:
+      - ["{a * p + b * d}", "That is the cost. Over budget is the cost minus the budget, {B}."]
+    explain: "{a * p + b * d} − {B} = {over} dollars over, so the plan is outside the region."

@@ -11,4 +11,5 @@ units:
   - { id: lines9, title: "Coordinate geometry", summary: "Gradient, parallel and perpendicular lines, distance and midpoint between two points." }
   - { id: quad9, title: "Quadratic relationships", summary: "Recognise, graph and solve quadratic relationships, and use them to model real situations." }
   - { id: vary9, title: "Changing the rule", summary: "What the numbers in a rule do to its graph." }
+  - { id: twovars10, title: "Year 10: two variables", summary: "Budgets as regions, then solving two equations at once by substitution and elimination, and setting up equations from a situation." }
 ---

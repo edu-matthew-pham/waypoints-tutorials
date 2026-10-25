@@ -1,0 +1,78 @@
+# Boards for "Where they meet". x is the number of years. Plan A saves $2,000 now and adds $300 a year (steady).
+# Plan B starts with $1,000 and grows by r% a year (r is made up). Where the curve meets the line, the plans are equal.
+# zoom1 and zoom2 show the same plans with a smaller window around the crossing at r = 20: (8.2, 4460).
+
+# region: run
+widget: graph
+x: 0, 15
+y: 0, 8000
+grid: 5, 2000
+axes: Time (years), Savings ($)
+slider r: 5, 30, 20, 5
+plot: y = 1000((1 + r/100)^x)
+plot: y = 2000 + 300x, dashed
+cross: 1, 2
+table: 0, 2, 4, 6, 8, 10, 12
+# endregion
+
+# region: explain
+widget: graph
+x: 0, 15
+y: 0, 8000
+grid: 5, 2000
+axes: Time (years), Savings ($)
+slider r: 5, 30, 20, 5
+plot: y = 1000((1 + r/100)^x)
+plot: y = 2000 + 300x, dashed
+cross: 1, 2
+table: 0, 2, 4, 6, 8, 10
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 15
+y: 0, 8000
+grid: 5, 2000
+axes: Time (years), Savings ($)
+plot: y = 1000(1.2^x)
+plot: y = 2000 + 300x, dashed
+cross: 1, 2
+table: 0, 2, 4, 6, 8, 10
+# endregion
+
+# region: zoom1
+widget: graph
+x: 6, 10
+y: 3500, 6000
+grid: 1, 500
+axes: Time (years), Savings ($)
+plot: y = 1000(1.2^x)
+plot: y = 2000 + 300x, dashed
+cross: 1, 2
+table: 6, 7, 8, 9, 10
+# endregion
+
+# region: zoom2
+widget: graph
+x: 8, 8.4
+y: 4400, 4520
+grid: 0.1, 20
+axes: Time (years), Savings ($)
+plot: y = 1000(1.2^x)
+plot: y = 2000 + 300x, dashed
+cross: 1, 2
+table: 8, 8.1, 8.2, 8.3, 8.4
+# endregion
+
+# region: vary
+widget: graph
+x: 0, 15
+y: 0, 8000
+grid: 5, 2000
+axes: Time (years), Savings ($)
+slider r: 5, 30, 25, 5
+plot: y = 1000((1 + r/100)^x)
+plot: y = 2000 + 300x, dashed
+cross: 1, 2
+table: 0, 2, 4, 6, 8, 10, 12
+# endregion

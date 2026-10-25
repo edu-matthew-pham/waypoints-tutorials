@@ -1,0 +1,8 @@
+# Rin's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: rin
+Write x² + 8x + 3 as (x + 4)² + k.
+Half of 8 is 4, so the bracket is (x + 4)².
+So x² + 8x + 3 = (x + 4)² + 3.
+Check with x = 0: the left side is 3, the right side is 16 + 3 = 19.
+# endregion

@@ -11,4 +11,5 @@ units:
   - { id: solving, title: Equations and inequalities, summary: "Equations with x on both sides, brackets, negatives and fractions, then inequalities (Year 8)." }
   - { id: binomials, title: Two brackets, summary: "Two brackets multiplied as the area of a rectangle, the pattern that comes out, then the same pattern run backwards to factorise (Year 9)." }
   - { id: products10, title: "Special products and factorising", summary: "A bracket squared and the difference of two squares, then factorising when x² has a number in front (Year 10).", }
+  - { id: solve10, title: "Year 10: solving", summary: "Completing the square, solving by reshaping and solving inequalities in a context (Year 10)." }
 ---

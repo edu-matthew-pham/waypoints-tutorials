@@ -1,0 +1,26 @@
+# Practice for "Writing the model".
+templates:
+  - q: "An account grows by ${r}\\%$ a year. What is the growth factor?"
+    vars: { r: "2..9" }
+    answer: "{1 + r / 100}"
+    feedback:
+      - ["{r / 100}", "{r / 100} is {r}% on its own. Keep the whole balance and add {r}%: 1 + {r / 100}."]
+    explain: "1 + {r / 100} = {1 + r / 100}."
+  - q: "A value falls by ${r}\\%$ a year. What do you multiply it by each year?"
+    vars: { r: "5..40 by 5" }
+    answer: "{1 - r / 100}"
+    feedback:
+      - ["{r / 100}", "{r / 100} keeps only {r}% of the value. It keeps the rest: 1 − {r / 100}."]
+    explain: "It keeps 100% − {r}% = {100 - r}%: {1 - r / 100}."
+  - q: "${a}$ dollars grows by $10\\%$ a year. What is the balance after 2 years, in dollars?"
+    vars: { a: [100, 200, 300, 400, 500, 1000, 2000] }
+    answer: "{a * 1.21}"
+    feedback:
+      - ["{a * 1.2}", "That adds 10% of {a} twice. The second year's 10% is of the new balance: {a} × 1.1 × 1.1."]
+    explain: "{a} × 1.1 = {a * 1.1} and {a * 1.1} × 1.1 = {a * 1.21}."
+  - q: "A model is $A = {a}({b}^n)$. What is the starting amount, in dollars?"
+    vars: { a: "100..900 by 100", b: [1.02, 1.03, 1.05, 1.08] }
+    answer: "{a}"
+    feedback:
+      - ["{b}", "{b} is the growth factor. The starting amount is the number in front, where n = 0."]
+    explain: "At n = 0 the power is 1, so A = {a}."

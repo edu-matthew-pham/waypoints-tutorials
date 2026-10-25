@@ -1,0 +1,49 @@
+# Practice for "Solving by elimination". Each question asks for one letter.
+templates:
+  - q: "Solve {a}x + {b}y = {T1} and {a}x + {d}y = {T2}. What is y?"
+    vars: { a: "2..5", b: "1..3", e: "1..4", x: "1..6", y: "1..6" }
+    let: { d: "b + e", T1: "a * x + b * y", T2: "a * x + (b + e) * y" }
+    answer: "{y}"
+    feedback:
+      - ["{x}", "That is x. The question asks for y."]
+      - ["{e * y}", "That is {e}y, from subtracting. Divide by {e}."]
+    explain: "Subtract: {e}y = {T2 - T1}, so y = {y}. Then {a}x + {b * y} = {T1}, so x = {x}."
+  - q: "Solve {a}x + {b}y = {T1} and {a}x + {d}y = {T2}. What is x?"
+    vars: { a: "2..5", b: "1..3", e: "1..4", x: "1..6", y: "1..6" }
+    let: { d: "b + e", T1: "a * x + b * y", T2: "a * x + (b + e) * y" }
+    answer: "{x}"
+    feedback:
+      - ["{y}", "That is y. Put y into an equation to find x."]
+    explain: "Subtract: {e}y = {T2 - T1}, so y = {y}. Then {a}x + {b * y} = {T1}, so {a}x = {a * x} and x = {x}."
+  - q: "Solve {p}x + {q}y = {T1} and {r}x − {q}y = {T2}. What is x?"
+    vars: { p: "2..5", q: "1..4", r: "2..5", x: "3..8", y: "1..3" }
+    where: "r * x > q * y"
+    let: { T1: "p * x + q * y", T2: "r * x - q * y" }
+    answer: "{x}"
+    feedback:
+      - ["{y}", "That is y. The question asks for x."]
+      - ["{T1 - T2}", "That subtracts the equations. The y terms are +{q}y and −{q}y, so add."]
+    explain: "The y terms are opposite, so add: {p + r}x = {T1 + T2}, so x = {x}. Then y = {y}."
+  - q: "Solve {p}x + y = {A} and {r}x + 2y = {B}. Multiply the first equation by 2 and subtract. What is x?"
+    vars: { p: "2..4", r: "1..7", x: "1..7", y: "1..6" }
+    where: "2 * p != r"
+    let: { A: "p * x + y", B: "r * x + 2 * y" }
+    answer: "{x}"
+    feedback:
+      - ["{y}", "That is y. The question asks for x."]
+    explain: "Double the first: {2 * p}x + 2y = {2 * A}. Subtract {r}x + 2y = {B}: {2 * p - r}x = {2 * A - B}, so x = {x}. Then y = {y}."
+  - q: "A visit costs v dollars and a class costs k dollars. Ava buys 4 visits and 2 classes for {A} dollars. Ben buys 4 visits and {n} classes for {B} dollars. What does one class cost?"
+    vars: { v: "5..12", k: "3..9", n: "3..6" }
+    let: { A: "4 * v + 2 * k", B: "4 * v + n * k" }
+    answer: "{k}"
+    feedback:
+      - ["{v}", "That is the price of a visit. The question asks for a class."]
+      - ["{B - A}", "That is the extra cost for {n - 2} extra classes. Divide by {n - 2}."]
+    explain: "Ben bought {n - 2} more classes and paid {B - A} dollars more, so one class costs {B - A} ÷ {n - 2} = {k} dollars. A visit costs {v} dollars."
+  - q: "A visit costs v dollars and a class costs k dollars. Ava buys 4 visits and 2 classes for {A} dollars. Ben buys 4 visits and {n} classes for {B} dollars. What does one visit cost?"
+    vars: { v: "5..12", k: "3..9", n: "3..6" }
+    let: { A: "4 * v + 2 * k", B: "4 * v + n * k" }
+    answer: "{v}"
+    feedback:
+      - ["{k}", "That is the price of a class. Put it into Ava's bill to find a visit."]
+    explain: "Classes: {B - A} ÷ {n - 2} = {k} dollars. Ava: 4 visits + {2 * k} = {A}, so 4 visits cost {A - 2 * k} and one visit costs {v} dollars."

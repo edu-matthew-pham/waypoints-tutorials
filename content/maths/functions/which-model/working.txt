@@ -1,0 +1,8 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+The prices are 30000, 24000, 19200, 15360. Is it linear or exponential?
+The price goes down every year, so it's a straight line going down.
+The line is y = 30000 - 6000x.
+At 3 years that gives 12000, but the table says 15360. The table must be wrong.
+# endregion

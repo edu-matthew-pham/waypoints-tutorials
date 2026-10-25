@@ -1,0 +1,8 @@
+# Mia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+Graph 24p + 12d <= 120 (pizzas $24, packs $12, budget $120).
+Where does the boundary cross the p-axis? Put d = 0: 24p = 120, so p = 5.
+Where does it cross the d-axis? Put p = 0: 24d = 120, so d = 5.
+Draw a solid line through (5, 0) and (0, 5), test (0, 0) and shade the side with it.
+# endregion

@@ -1,0 +1,8 @@
+# Jo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: jo
+Plan A is 2000 + 300x. Plan B is 1000(1.2^x). Which is the better plan?
+At 10 years, A = 2000 + 3000 = 5000 and B = 1000 x 1.2^10 = 6192.
+B is bigger at 10 years, so B is the better plan.
+B is the better plan, whatever the number of years.
+# endregion

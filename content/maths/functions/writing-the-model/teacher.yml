@@ -1,0 +1,50 @@
+summary: "Students turn a rate a year into a growth or decay factor, write A = a(bⁿ), and use it to answer a question in dollars (AC9M10A04, node 2)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can turn a percentage rate into a growth or decay factor.
+  - I can write a model with a starting amount and a factor.
+  - I can use the model to find a value and say what it means in dollars.
+struggle: "Using the rate on its own as the factor (0.05 for 5% growth). Say 'what stays, and what is added?': 100% stays, plus 5%."
+before: |
+  Do the Run board yourself first. Students need the ratio idea from lesson 1 and y = a(bˣ) from lesson 3.
+
+  The one idea: a rate a year is a factor, 1 + r for growth and 1 − r for decay. The model then reads A = a(bⁿ): a is the starting amount, b the factor, n the number of years.
+
+  The rates and the $1,000 are made up and are not an offer. Real accounts change the rate and may charge fees and tax; the model assumes one fixed rate. The sources line points at ASIC's MoneySmart calculator for real figures: check the page before class.
+
+  Rounding: keep the exact power in the calculator and round to the cent at the end.
+running:
+  - "Predict: take a show of hands. Those who chose 1,100 added $50 twice. Don't correct it yet."
+  - "Run: ask students to compare the two curves after 10 and 20 years, and say what the dashed line is leaving out."
+  - "Paper: the try-one after the worked example and the compound against simple task in Make are worked on paper first. Look for 1.04, not 0.04, in the working."
+  - "Modify: before the rate of 0, ask what 1 + 0 is."
+stuck:
+  - see: "A student uses 0.05 as the factor (Maya's mistake)."
+    ask: "If you multiply 1,000 by 0.05, do you have more or less than before?"
+    fix: "A bigger balance means a factor above 1. Write 1 + 0.05 and say what each part is: the balance you keep and the interest you add."
+  - see: "A student works 2 years as 1,000 + 50 + 50."
+    ask: "Is the second year's 5% of 1,000 or of the new balance?"
+    fix: "Work year 2 as 1,050 × 1.05. Interest is paid on the interest."
+  - see: "A student writes the decay factor as 0.08 for losing 8%."
+    ask: "What share of the value is kept?"
+    fix: "It keeps 92%: 0.92. Factor = 1 − rate for a decay."
+stretch: "How long to double at 7% a year? Try the table, then write 1.07ⁿ = 2 and see why the same-base trick doesn't work for it. Rule of 72: 72 ÷ 7 is about 10. How close is that?"
+support: "A table with an extra row: 'what stays' and 'what is added'. Fill it for 5%, 10% and 20% before writing the factor."
+leads: |
+  Next: two models at once, such as a steady saver and a compounding one, and finding where they meet.
+
+  Where it leads in class: loans, depreciation and population models.
+exit:
+  q: "A phone loses 20% of its value each year and costs 900 new. Write the model and find its value after 3 years."
+  a: "A = 900(0.8ⁿ). After 3 years: 900 × 0.8³ = 460.80 dollars."
+explain: |
+  A rate a year changes the balance by the same **share** each year, so the model multiplies.
+
+  - Growth of r%: factor $b = 1 + r/100$, for example 5% is 1.05.
+  - Decay of r%: factor $b = 1 - r/100$, for example 8% is 0.92.
+
+  The model is $A = a(b^n)$: $a$ is the starting amount and $n$ is the number of years. Always give the answer in dollars (or the unit in the question).
+sources:
+  - { title: "MoneySmart compound interest calculator (ASIC): a real calculator to check the model's figures, with fees and tax", url: "https://moneysmart.gov.au/saving/compound-interest-calculator", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the $1,000 and the 5% a year are not an offer from a bank.", url: "https://tutorials.learningwaypoints.com/maths/functions/writing-the-model/", checked: 2026-10-25 }

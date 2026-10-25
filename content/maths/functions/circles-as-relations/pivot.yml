@@ -1,0 +1,50 @@
+# Boards for "Circles as relations". One square is 100 m. The pivot of a centre-pivot sprinkler is the centre (h, k),
+# and the arm is the radius r. The arm length is made up. The legend lists the equation (x − h)² + (y − k)² = r².
+
+# region: run
+widget: graph
+x: -8, 8
+y: -8, 8
+grid: 1, 1
+axes: East (squares of 100 m), North (squares of 100 m)
+slider h: -4, 4, 0, 1
+slider k: -4, 4, 0, 1
+slider r: 1, 6, 2, 1
+circle: h, k, r
+point C: h, k
+# endregion
+
+# region: explain
+widget: graph
+x: -8, 8
+y: -8, 8
+grid: 1, 1
+axes: East (squares of 100 m), North (squares of 100 m)
+slider h: -4, 4, 0, 1
+slider k: -4, 4, 0, 1
+slider r: 1, 6, 2, 1
+circle: h, k, r
+# endregion
+
+# region: explain-pic
+widget: graph
+x: -8, 8
+y: -8, 8
+grid: 1, 1
+axes: East (squares of 100 m), North (squares of 100 m)
+circle: 0, 0, 5
+point A: 3, 4
+point B: 0, 0
+# endregion
+
+# region: vary
+widget: graph
+x: -8, 8
+y: -8, 8
+grid: 1, 1
+axes: East (squares of 100 m), North (squares of 100 m)
+slider h: -4, 4, 3, 1
+slider k: -4, 4, -1, 1
+slider r: 1, 6, 4, 1
+circle: h, k, r
+# endregion

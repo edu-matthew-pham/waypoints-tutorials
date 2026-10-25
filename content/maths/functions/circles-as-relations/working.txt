@@ -1,0 +1,8 @@
+# Alex's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: alex
+Find the centre and radius of (x - 3)^2 + (y + 1)^2 = 16.
+Copy the numbers from the brackets with their signs, so the centre is (-3, 1).
+The right side is r^2, so r^2 = 16 and the radius is 4.
+Centre (-3, 1), radius 4.
+# endregion

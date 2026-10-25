@@ -1,0 +1,36 @@
+# Boards for "Solving by reshaping". The area of a framed photo against its border width w.
+
+# region: run
+widget: graph
+x: 0, 10
+y: 0, 2000
+grid: 1, 200
+axes: Border (cm), Area (cm²)
+slider w: 0, 10, 0
+plot: y = 4x^2 + 100x + 600
+plot: y = 1200, dashed
+point A: w, 4w^2 + 100w + 600
+# endregion
+
+# region: explain
+widget: graph
+x: 0, 10
+y: 0, 2000
+grid: 1, 200
+axes: Border (cm), Area (cm²)
+slider w: 0, 10, 0
+plot: y = 4x^2 + 100x + 600
+plot: y = 1200, dashed
+point A: w, 4w^2 + 100w + 600
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 10
+y: 0, 2000
+grid: 1, 200
+axes: Border (cm), Area (cm²)
+plot: y = 4x^2 + 100x + 600
+plot: y = 1200, dashed
+point A: 5, 1200
+# endregion

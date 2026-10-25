@@ -1,0 +1,20 @@
+# Practice for "Solving inequalities".
+templates:
+  - q: "Solve {a}x + {b} ≤ {a * c + b}. Give the largest whole number x can be."
+    vars: { a: "2..9", b: "1..20", c: "1..12" }
+    answer: "{c}"
+    form: whole
+    feedback:
+      - ["{a * c + b}", "Take the {b} away first, then divide by {a}."]
+    explain: "{a}x ≤ {a * c}, so x ≤ {c}. The largest whole number is {c}."
+  - q: "A day costs {e|m} entry plus {p|m} a ride. You have {e + p * n + 1|m}. What is the most whole rides?"
+    vars: { e: "5..20", p: "2..9", n: "2..9" }
+    answer: "{n}"
+    form: whole
+    feedback:
+      - ["{n + 1}", "{n + 1} rides cost {e + p * (n + 1)|m}, which is over {e + p * n + 1|m}."]
+    explain: "{e} + {p}r ≤ {e + p * n + 1}, so {p}r ≤ {p * n + 1} and r ≤ {n} and a bit. Rides come whole, so {n}."
+  - q: "Solve {k} − {a}x ≥ {k - a * c}. Write your answer as an inequality, such as x ≤ 3."
+    vars: { a: "2..9", c: "1..9", k: "20..40" }
+    answer: "x <= {c}"
+    explain: "Take {k} from both sides: −{a}x ≥ −{a * c}. Divide by −{a} and reverse: x ≤ {c}."
