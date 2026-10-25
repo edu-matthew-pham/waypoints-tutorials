@@ -1,0 +1,42 @@
+summary: "Students see that errors add up over many steps: a total of several readings has a worst-case error of the number of pieces times one piece's error, and a product of several measurements has about the sum of their percentage errors (AC9M10M04, node 3)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 8 min · Practise and Make 10 min"
+goals:
+  - I can find how far out a total of many readings could be.
+  - I can say that percentage errors add up when measurements are multiplied.
+  - I can say what a worst-case bound does and does not tell me.
+struggle: "Taking a long job's error to be one step's error. Ask: if every piece is 5 cm too long, how long is the wall?"
+before: |
+  Students need One error, one result.
+
+  The Run and Modify boards use the `accuracy: 0.1` setting of the formula board, so under the working they show the lowest and highest the result could be. For the volume board these are found at the corners, which is exact for products of positive numbers.
+
+  The honest point: the bounds are worst cases, where every error pushes the same way. Real errors partly cancel, so the real error is usually much smaller. A bound is what you can promise, not what will happen. The wall, fence, tank and boxes are made up for the task.
+running:
+  - "Predict: show of hands. Those who pick 5 cm are using one piece's error; ask them how long the wall is if all five pieces are 5 cm too long."
+  - "Run: ask what happens to the gap between lowest and highest when one slider moves (nothing: the gap is fixed by the number of pieces)."
+  - "Paper: the box after the worked example and the beam in Make are worked on paper first."
+  - "Investigate: the ten shorter pieces make the point that more steps means more error."
+stuck:
+  - see: "A student says the fence is out by 1 cm."
+    ask: "How many times did Sam place the ruler?"
+    fix: "30 times, each up to 1 cm out: up to 30 cm in the worst case."
+  - see: "A student multiplies the percentage errors."
+    ask: "If a side is 2% too big, how many times is it counted in a cube's volume?"
+    fix: "Three times: 2% + 2% + 2%, about 6%."
+  - see: "A student says the real error is 30 cm."
+    ask: "Do all 30 errors have to go the same way?"
+    fix: "No: 30 cm is the most, not what it is."
+stretch: "A wall is measured as one piece to the nearest 10 cm, and the same wall as 100 pieces each to the nearest 1 cm. Which total is better known?"
+support: "A table with the number of pieces down the side and the worst-case error beside it."
+leads: |
+  Continues AC9M10M04 (node 3).
+
+  Where it leads: scale and plans, where a reading from the plan is multiplied by the scale and so is its error.
+exit:
+  q: "Twelve pieces are each measured to the nearest 0.1 m. How far out could the total be, at most?"
+  a: "12 × 0.05 = 0.6 m."
+explain: |
+  When a job is done in many steps, the errors add: in the worst case the total is out by the number of steps times one step's error.
+
+  When measurements are multiplied, their percentage errors add up, about. A bound is the most a result could be out by; real errors usually partly cancel.

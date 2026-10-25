@@ -1,0 +1,16 @@
+# Working for the "find the mistake" tasks. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+Dev's group measures a table six times with a cloth tape: 1.52, 1.53, 1.51, 1.52, 1.53, 1.52 m.
+The teacher's laser says the table is 1.60 m long.
+The readings are all within 0.02 m of each other.
+So the readings agree, which means the tape must be accurate.
+We will report the table as 1.52 m.
+# endregion
+
+# region: mia
+Mia's group finds every mass they weigh comes out 3 g too high.
+The scale shows 3 g with nothing on it.
+They write: this is human error, we should read the scale more carefully.
+Next time everyone will be more careful.
+# endregion

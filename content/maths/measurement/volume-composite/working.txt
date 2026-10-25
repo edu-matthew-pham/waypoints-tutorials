@@ -1,0 +1,8 @@
+# Tom's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: tom
+A concrete block is 40 cm by 20 cm by 20 cm. A round hole with a radius of 5 cm goes straight through the 20 cm height.
+Block: 40 × 20 × 20 = 16 000 cm³.
+Hole: 3.14 × 5² × 20 = 1570 cm³.
+Concrete: 16 000 + 1570 = 17 570 cm³.
+# endregion

@@ -1,0 +1,42 @@
+summary: "Students read three-figure bearings, draw the triangle with the bearing's angle at the start, and find the north and east parts of a leg, or the bearing from the parts (AC9M10M03, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can read a three-figure bearing and say which way it points.
+  - I can find the north and east parts of a leg from its bearing and length.
+  - I can find a bearing from the north and east parts.
+struggle: "Which side is next to the angle. Ask: where does the bearing start from? Mark that line first."
+before: |
+  Do the Run board yourself first (the trig board's bearing view). Students need Looking up, looking down, and sine, cosine and tangent from Year 9.
+
+  The one idea: a bearing is the angle from north, so north is next to it and east is opposite it, as long as the path is in the first quarter. Past 090° the path points south of east, and the angle in the triangle is measured from the south line (180° − the bearing). The board shows the north part going negative; we don't use negative sines here, the triangle does the work.
+
+  The common mistake is Mina's: putting the bearing's angle against the east line. Distances and bearings are made up for the task. The note about magnetic north is general: orienteering maps say how far the needle is off.
+running:
+  - "Predict: show of hands. Those who chose east have read 040° as 40° from the east line."
+  - "Run: before anyone moves a slider, ask where the control is when the bearing is 180°."
+  - "Paper: the 130° try-one after the worked example and the north part in Make are worked on paper first. Look for the sketch of the compass cross first."
+  - "Modify: for 200°, ask which line the angle is measured from."
+stuck:
+  - see: "A student uses cos for east."
+    ask: "Which side is next to the bearing's angle, north or east?"
+    fix: "North. The bearing is measured from the north line, so north is adjacent: cosine for north, sine for east."
+  - see: "A student uses 130° as the angle in the triangle for a bearing of 130°."
+    ask: "Sketch the path. Is the angle from the north line or the south line smaller?"
+    fix: "From the south line: 180° − 130° = 50°."
+  - see: "A student writes a bearing as 40°."
+    ask: "How many figures does a bearing have?"
+    fix: "Three: 040°."
+stretch: "Plan a two-leg course on the school grounds: 100 m on 040°, then 80 m on 130°. How far, and on what bearing, is the finish from the start?"
+support: "A printed compass cross with the start in the middle, and the angle for each question drawn in."
+leads: |
+  Continues AC9M10M03.
+
+  Where it leads: finding the right triangle inside a 3D shape.
+exit:
+  q: "A leg is 100 m on a bearing of 060°. Which is bigger, north or east?"
+  a: "East (87 m against 50 m). 060° is closer to east than to north."
+explain: |
+  A bearing is an angle measured clockwise from north, in three figures.
+
+  Draw the triangle with the angle at the start, between the north line and the path. North is next to the angle ($\cos$) and east is opposite it ($\sin$). Past 090°, measure the angle from the south line.

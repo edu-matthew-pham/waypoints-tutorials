@@ -1,0 +1,42 @@
+summary: "Students draw the triangle for an angle of elevation or depression, see that the two angles at either end of a line of sight are equal, and use tangent or sine to find a distance or an angle (AC9M10M03, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can say which angle is the angle of elevation and which is the angle of depression.
+  - I can draw the triangle and put the angle in the right corner.
+  - I can name the sides from that angle and find a distance or an angle.
+struggle: "Putting the angle of depression at the top, inside the triangle, between the tower and the line of sight. Ask: down from what? Where is the horizontal line?"
+before: |
+  Do the Run board yourself first (the trig board's elevation view). Students need Find a side with trigonometry and Find an angle from Year 9.
+
+  This is a hinge lesson: students who can't set up the triangle for elevation and depression can't pull the right triangle out of a 3D problem in The triangle inside. The common mistake is Dee's: measuring the angle of depression down from the vertical.
+
+  All numbers are made up for the task (the tower, the swimmer, the cliff, the drone, the tree). The board shows the distance as height ÷ tan t, so it flattens out for small angles: that is what the last Make question is about.
+running:
+  - "Predict: show of hands. Those who chose 82° have measured the swimmer's angle from the tower."
+  - "Run: ask where the swimmer is for 8° before anyone moves a slider (a long way out, over 40 m)."
+  - "Paper: the hiker try-one after the worked example and the lifeguard in Make are worked on paper first. Look for the triangle drawn and the angle marked before any calculating."
+  - "Modify: before the eye-height question, ask whether the 1.6 m is added or subtracted."
+stuck:
+  - see: "A student puts the 8° at the lifeguard's eyes, inside the triangle."
+    ask: "Down from what? Draw the horizontal line at her eyes. Where does the 8° sit against it?"
+    fix: "Between the horizontal and the line of sight. The same angle is at the swimmer, with the tower opposite it."
+  - see: "A student multiplies the height by tan to get the distance."
+    ask: "Is the distance more or less than the height when the angle is only 8°?"
+    fix: "Much more, so divide: distance = height ÷ tan 8°."
+  - see: "A student forgets the eye height and says the tree is 23.1 m."
+    ask: "The angle is measured from her eyes. How far above the ground are they?"
+    fix: "Add 1.6 m to the height above her eyes."
+stretch: "Use a phone clinometer app to measure the height of the tallest tree or building at school from two different distances. Do the answers agree? Why might they not?"
+support: "A printed triangle with the tower, the ground and the line of sight, and the angle already marked at the bottom."
+leads: |
+  Starts AC9M10M03.
+
+  Where it leads: bearings, then finding the right triangle inside a 3D shape.
+exit:
+  q: "From a 20 m cliff the angle of depression to a boat is 30°. What is the angle of elevation from the boat to the cliff top?"
+  a: "30°. They're alternate angles."
+explain: |
+  A line of sight makes the same size angle at both ends: the angle of depression from the top and the angle of elevation from the bottom.
+
+  Draw the triangle with the angle at the bottom, where the height is opposite it and the distance along the ground is next to it. Then use tangent: $\tan t = \text{height} \div \text{distance}$.

@@ -1,0 +1,18 @@
+# Boards for "Bearings". The trig board's bearing view: north is up, the bearing is turned clockwise from north.
+
+# region: run
+widget: trig
+view: bearing
+units: m
+slider t: 0, 360, 90, 5
+slider h: 100, 1000, 400, 50
+# endregion
+
+# region: vary
+widget: trig
+view: bearing
+units: m
+slider t: 0, 360, 60, 5
+slider h: 100, 1000, 500, 50
+show: north, east
+# endregion

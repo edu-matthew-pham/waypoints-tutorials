@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+The floor of the suitcase is 80 cm by 50 cm, so its diagonal is √(80² + 50²) = 94.3 cm.
+The second triangle has the floor diagonal and the 30 cm height as its shorter sides.
+So the longest line is 94.3 + 30 = 124.3 cm.
+124.3 is longer than 120, so the umbrella fits.
+# endregion

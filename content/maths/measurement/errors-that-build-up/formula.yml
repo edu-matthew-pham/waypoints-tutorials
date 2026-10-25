@@ -1,0 +1,46 @@
+# Boards for "Errors that build up". Every slider value is a reading to the nearest 0.1 m (0.05 m either way).
+
+# region: run
+widget: formula
+formula: T = a + b + c + d + e
+slider a: 3, 5, 4.2, 0.1
+slider b: 3, 5, 3.8, 0.1
+slider c: 3, 5, 4.1, 0.1
+slider d: 3, 5, 3.9, 0.1
+slider e: 3, 5, 4.3, 0.1
+units: m
+accuracy: 0.1
+# endregion
+
+# region: explain
+widget: formula
+formula: T = a + b + c + d + e
+slider a: 3, 5, 4.2, 0.1
+slider b: 3, 5, 3.8, 0.1
+slider c: 3, 5, 4.1, 0.1
+slider d: 3, 5, 3.9, 0.1
+slider e: 3, 5, 4.3, 0.1
+units: m
+accuracy: 0.1
+# endregion
+
+# region: pic
+widget: formula
+formula: T = a + b + c + d + e
+slider a: 3, 5, 4, 0.1
+slider b: 3, 5, 4, 0.1
+slider c: 3, 5, 4, 0.1
+slider d: 3, 5, 4, 0.1
+slider e: 3, 5, 4, 0.1
+units: m
+accuracy: 0.1
+# endregion
+
+# region: volume
+widget: formula
+formula: V = lwh
+slider l: 3, 5, 3.5, 0.1
+slider w: 2, 4, 2.5, 0.1
+slider h: 2, 3, 2.2, 0.1
+accuracy: 0.1
+# endregion

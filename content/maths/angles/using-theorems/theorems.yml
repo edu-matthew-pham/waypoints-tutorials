@@ -1,0 +1,33 @@
+# Geometry boards for "Using theorems". classify: on names the shape and marks right angles (r: 1 acute, 2 right, 3 obtuse);
+# diagonals: on draws AC and BD and reports l (equal), u (cut each other in half) and y (at 90°).
+
+# region: run
+widget: geometry
+shape: triangle
+corners: 1,1; 4,1; 3,4
+classify: on
+# endregion
+
+# region: explain
+widget: geometry
+shape: triangle
+corners: 1,1; 4,1; 1,5
+classify: on
+# endregion
+
+# region: explain-pic
+widget: geometry
+shape: triangle
+corners: 1,1; 4,1; 1,5
+classify: on
+# endregion
+
+# region: frame
+widget: geometry
+shape: polygon
+sides: 4
+corners: 1,1; 6,1; 8,4; 3,4
+classify: on
+diagonals: on
+sum: off
+# endregion

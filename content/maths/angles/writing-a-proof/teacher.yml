@@ -1,0 +1,48 @@
+summary: Students write proofs as statements with a reason for each, for opposite angles of a parallelogram and for an exterior angle of a triangle, and learn that a reason cannot be the conclusion (AC9M10SP01, node 2).
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can write a proof as statements, each with a reason.
+  - I can use the parallel-line rules and the angle sum as reasons.
+  - I can tell when a line has no reason, or uses the conclusion as its reason.
+struggle: "Writing the reason for every line, and not using the thing to be proved as a reason. After each line ask 'how do you know?' until the answer is a given, a rule or an earlier line."
+before: |
+  Do the Run board yourself first. Students need co-interior and alternate angles (Parallel lines), the angle sum, and Proving quadrilateral properties from Year 8 for the idea of proof.
+
+  The one idea: a proof is a list of statements, each with a reason that is a given, a rule or an earlier line. The common mistake is giving the conclusion as the reason (Nia's working).
+
+  Hinge node: the first line is the one students stick on. The smaller step asks only for that line and its reason. A two-column layout is fine, but any clear layout with reasons works.
+
+  The proof of B = D mirrors the worked proof of A = C. If students prefer, they can use the triangle proof for the exterior angle in the same layout.
+
+  Nothing here is a real measurement.
+running:
+  - "Predict: take a show of hands. Most will say 70°. Ask them why, and write the first reason they say on the board."
+  - "Run: ask whether any parallelogram will break it. Keep asking what would convince Ben."
+  - "Paper: the exterior angle proof after the worked example and the proof of B = D in Make are worked on paper first. Books out, and look for a reason beside every line."
+  - "Investigate: ask a student to read Nia's line 3 aloud and say what it is being used for."
+  - "Modify: before the trapezium, ask which line of the proof would stop working."
+  - "Make: ask what Ben could still argue with."
+stuck:
+  - see: "A student writes a line with no reason."
+    ask: "How do you know that?"
+    fix: "Write 'because' and finish it with a given, a rule or an earlier line."
+  - see: "A student uses the conclusion as a reason (Nia's mistake)."
+    ask: "Is that the thing you were asked to prove?"
+    fix: "Go back to what is given (parallel sides) and use a rule such as co-interior angles."
+  - see: "A student uses alternate angles for A + B = 180°."
+    ask: "Do alternate angles add to 180° or are they equal?"
+    fix: "A and B are on the same side of the transversal: co-interior, so they add to 180°."
+stretch: "Prove that adjacent angles of a parallelogram add to 180°, then that a quadrilateral with both pairs of opposite angles equal is a parallelogram."
+support: "A proof frame: 'Given: __. Line 1: __ because __. Line 2: __ because __. So __.' and a picture of the parallelogram with the parallel sides marked."
+leads: |
+  This covers AC9M10SP01 node 2.
+
+  Where it leads: Using theorems (next lesson), where a short proof shows a frame is a rectangle, and the proofs students will meet in senior mathematics.
+exit:
+  q: "Triangle ABC has a = 50° and b = 60°. Side AC is extended past C, making an exterior angle x. Write a proof, with a reason for each line, that x = a + b."
+  a: "c = 180° − 50° − 60° = 70° (angles in a triangle). x = 180° − 70° = 110° (angles on a straight line). So x = 110° = a + b."
+explain: |
+  A **proof** is a list of statements, each with a **reason**. A reason is a given fact, a rule you already know (such as co-interior angles add to 180°), or a line you have already proved.
+
+  To prove opposite angles of a parallelogram are equal: A + B = 180° and B + C = 180° (co-interior angles), so A = C. A reason cannot be the conclusion itself.

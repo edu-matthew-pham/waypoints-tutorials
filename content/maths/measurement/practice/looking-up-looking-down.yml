@@ -1,0 +1,18 @@
+# Practice for "Looking up, looking down".
+templates:
+  - q: "From the top of a {h} m tower the angle of depression to a point on level ground is 45°. How far is the point from the foot of the tower? (metres)"
+    vars: { h: "5..40" }
+    answer: "{h}"
+    explain: "At 45° the height and the distance are equal (tan 45° = 1), so {h} m."
+  - q: "From the top of a {h} m tower the angle of depression to a boat is 30°. How long is the line of sight? Use sin 30° = 0.5. (metres)"
+    vars: { h: "5..40" }
+    answer: "{2 * h}"
+    explain: "The tower is opposite the 30° angle, so line = {h} ÷ 0.5 = {2 * h} m."
+  - q: "A tree is {h} m tall and you stand {h} m from its foot, looking at the top from ground level. What is the angle of elevation? (degrees)"
+    vars: { h: "5..30" }
+    answer: "45"
+    explain: "Height and distance are equal, so tan t = 1 and t = 45°."
+  - q: "From a cliff top the angle of depression to a boat is {a}°. What is the angle of elevation from the boat up to the cliff top? (degrees)"
+    vars: { a: "10..70" }
+    answer: "{a}"
+    explain: "The two angles are alternate angles, so they are equal: {a}°."

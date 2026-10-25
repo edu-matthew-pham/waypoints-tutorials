@@ -1,0 +1,30 @@
+# Practice for "Where errors come from". Choices: name the source or the kind; numbers: average and error.
+templates:
+  - q: "{d}. Where does the error come from?"
+    cases:
+      - { d: "A ruler has had its first centimetre worn off, so every length reads 1 cm short", k: "The instrument", w1: "The person", w2: "The method" }
+      - { d: "A student measures a table's length along a curve in the tape instead of in a straight line", k: "The method", w1: "The instrument", w2: "The person" }
+      - { d: "A student writes 3.4 cm for a reading of 3.1 cm", k: "The person", w1: "The instrument", w2: "The method" }
+      - { d: "A kitchen scale shows 5 g with nothing on it", k: "The instrument", w1: "The method", w2: "The person" }
+      - { d: "A group times a race from a long way back so the sound of the starting gun reaches them late", k: "The method", w1: "The person", w2: "The instrument" }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "{k}: this is the part of the measuring that the error comes from."
+  - q: "Every reading is {e} {d} too big. Is this a systematic or a random error?"
+    vars: { e: "1..4" }
+    cases:
+      - { d: "mm" }
+      - { d: "g" }
+      - { d: "cm" }
+    choices: ["Systematic: the error pushes every reading the same way", "Random: the readings are all different", "Neither: the readings agree"]
+    explain: "Every reading is {e} {d} too big, the same way each time: systematic. Averaging will not take it out."
+  - q: "Four readings are {a}, {a + 0.2}, {a + 0.1} and {a + 0.3} cm. What is the mean? (cm)"
+    vars: { a: "10..20" }
+    answer: "{a + 0.15}"
+    tolerance: 0.005
+    explain: "The sum is 4 × {a} + 0.6, so the mean is {a} + 0.15 = {a + 0.15} cm."
+  - q: "A tape reads {r} m for a length that a laser says is {t} m. By how much is the tape out? (m)"
+    vars: { r: [1.52, 2.48, 3.15, 4.07], d: [0.05, 0.08, 0.12] }
+    let: { t: "r + d" }
+    answer: "{d}"
+    tolerance: 0.001
+    explain: "{t} − {r} = {d} m."

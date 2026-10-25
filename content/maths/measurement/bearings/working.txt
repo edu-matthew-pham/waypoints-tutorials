@@ -1,0 +1,7 @@
+# Mina's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mina
+The boat sails 800 m on a bearing of 025°, so it heads a little east of north.
+That makes 25° the angle between its path and the east line.
+East is next to that angle, so east = 800 × cos 25° = 725 m.
+# endregion

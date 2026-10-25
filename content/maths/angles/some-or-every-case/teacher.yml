@@ -1,0 +1,50 @@
+summary: Students meet a formula that gives forty primes in a row and then fails, drag a triangle to see a demonstration, and learn what a proof does that cases cannot (AC9M10SP01, node 1).
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can say why checking many cases does not prove a claim about every case.
+  - I can tell a demonstration from a proof, and say what a proof gives that cases do not.
+  - I can find a counterexample, check it by hand, and say why one is enough.
+struggle: "Feeling that forty cases in a row, or a hundred measurements, must be enough. Keep asking what the next case could be, and let them check the failing case by hand."
+before: |
+  Do the Predict yourself first: n² + n + 41 is prime for n = 0 to 39 and gives 1681 = 41 × 41 at n = 40. (It also fails at n = 41, where it is 41 × 43.) The point is not a trick about primes. It is that a long run of agreeing cases is a description of the cases, not a reason.
+
+  Students need congruence and angle reasoning from Year 8 and Year 7. The Run board is the exterior angle board from Unknown angles: they drag it and see x = a + b. Call that a demonstration, and say the next lessons turn it into a proof. The board rounds to the nearest degree, so a sum can look 1° out.
+
+  The algebra proof (a letter for any whole number) is a taste of what a proof is, not an algebra lesson. Students need only n, n + 1 and n + 2 and collecting terms.
+
+  Ivy's circle regions are 1, 2, 4, 8, 16 and then 31 for points joined on a circle with no three lines meeting at a point. A drawing of 6 points is worth doing on paper if you have time.
+
+  This is a judgement hinge, so there is no smaller step. Teachers who find students stuck can add one after seeing where.
+
+  Nothing here is a real measurement: the formula and the counts are mathematical facts.
+running:
+  - "Predict: take a show of hands before anyone calculates. Students who say prime are trusting the run. Do not correct yet."
+  - "Run: ask how many triangles would be enough. Keep going until someone says no number is."
+  - "Paper: the three-in-a-row proof and the changed formula in Make are worked on paper first. Books out, and look for a letter, not a number, on the first line."
+  - "Investigate: ask who has a triangle they think will break x = a + b. Try it."
+  - "Modify: ask what a counterexample has to do to count."
+  - "Make: ask what each of the three lines is for."
+stuck:
+  - see: "A student says forty primes in a row means it is true."
+    ask: "What is the forty-first case? Have you checked it?"
+    fix: "Work out n = 40 together. The check is the only thing that settles it."
+  - see: "A student proves the three-in-a-row claim by trying 4 + 5 + 6."
+    ask: "What would you try to be sure about every set of three?"
+    fix: "Write the numbers with a letter: n, n + 1, n + 2. The letter stands for any whole number."
+  - see: "A student thinks a counterexample needs to be a big or hard case."
+    ask: "Is 2 a counterexample to 'every prime is odd'?"
+    fix: "Yes. A counterexample is any one case that breaks the claim."
+stretch: "Show that n² + n + 41 is not prime when n = 41. Then find another n where n² + n + 41 is divisible by 41, and say why. (When n is a multiple of 41, every term is.)"
+support: "A strip of the first 10 values of n² + n + 41 to read, and a frame for the proof: 'Call the numbers __, __ and __. Add them: __. This is 3 times __.'"
+leads: |
+  This covers AC9M10SP01 node 1.
+
+  Where it leads: Writing a proof (next lesson) and Using theorems. The idea of a counterexample is used again when students test conjectures in algebra and probability.
+exit:
+  q: "Mia measured the diagonals of 6 rectangles and they were equal each time. Is that a proof that every rectangle's diagonals are equal? Say why."
+  a: "No. Six rectangles are six cases. A proof gives a reason that works for every rectangle, such as two congruent triangles."
+explain: |
+  A **demonstration** checks some cases and shows the claim works for those. A **proof** gives a reason that covers every case at once.
+
+  A letter that stands for any whole number, or a rule that holds for every triangle, turns a demonstration into a proof. A single **counterexample**, a checked case that breaks the claim, is enough to show a claim is false.

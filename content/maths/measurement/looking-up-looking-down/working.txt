@@ -1,0 +1,9 @@
+# Dee's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dee
+The lifeguard's eyes are 6 m up, and she looks down at the swimmer at 8°.
+I'll put the 8° at her eyes, inside the triangle, between the tower and her line of sight.
+So the sand is opposite the 8° and the tower is next to it.
+tan 8° = d ÷ 6.
+d = 6 × tan 8° = 6 × 0.1405 = 0.84 m.
+# endregion

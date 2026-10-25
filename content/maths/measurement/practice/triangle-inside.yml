@@ -1,0 +1,16 @@
+# Practice for "The triangle inside".
+templates:
+  - q: "A box is {a * 3} cm by {a * 4} cm by {a * 12} cm. How long is its longest straight line, in cm?"
+    vars: { a: "1..6" }
+    answer: "{a * 13}"
+    explain: "Floor diagonal: {a * 5} (3-4-5 scaled). Then {a * 5}² + {a * 12}² gives {a * 13} (5-12-13 scaled)."
+  - q: "A box is {a * 2} cm by {a * 3} cm by {a * 6} cm. How long is its longest straight line, in cm?"
+    vars: { a: "1..8" }
+    answer: "{a * 7}"
+    explain: "4 + 9 + 36 = 49, so the line is 7 times {a}: {a * 7} cm."
+  - q: "A cube has sides of {a} cm. How long is the line from one corner to the opposite corner, to the nearest 0.1 cm?"
+    vars: { a: "2..12" }
+    let: { v: "round(a * sqrt(3) * 10) / 10" }
+    answer: "{v}"
+    tolerance: 0.05
+    explain: "The line is {a} × √3 = {v|f1} cm."

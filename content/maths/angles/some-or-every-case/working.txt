@@ -1,0 +1,8 @@
+# Ivy's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ivy
+Ivy puts points on a circle and joins every pair with a straight line. She counts the regions inside.
+She finds 2 points make 2 regions, 3 points make 4, 4 points make 8 and 5 points make 16.
+The regions double each time.
+So 6 points will make 32, and that is proved for any number of points.
+# endregion

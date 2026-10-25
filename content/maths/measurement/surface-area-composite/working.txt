@@ -1,0 +1,9 @@
+# Mei's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mei
+Mei paints the silo: a wall 6 m tall with a radius of 2 m, and a cone roof with a slant length of 2.5 m.
+Curved wall: 2 × 3.14 × 2 × 6 = 75.4 m².
+Cone roof: 3.14 × 2 × 2.5 = 15.7 m².
+The cone and the cylinder join along a circle, so she adds both circles: 2 × 3.14 × 2² = 25.1 m².
+Total: 75.4 + 15.7 + 25.1 = 116.2 m².
+# endregion

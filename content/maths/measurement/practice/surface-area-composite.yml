@@ -1,0 +1,20 @@
+# Practice for "Surface area of composite objects".
+templates:
+  - q: "A box is {a} cm by {b} cm by {c} cm. A smaller box, {p} cm by {q} cm by {r} cm, stands on top of it with its {p} by {q} face wholly on the top. What is the surface area of the whole stack in cm², including the bottom?"
+    vars: { a: "4..9", b: "4..9", c: "2..6", p: "2..3", q: "2..3", r: "1..4" }
+    answer: "{2 * (a * b + a * c + b * c) + 2 * r * (p + q)}"
+    feedback:
+      - ["{2 * (a * b + a * c + b * c) + 2 * (p * q + p * r + q * r)}", "The face where the boxes touch is hidden on both. Take it away twice."]
+    explain: "The big box is 2 × ({a}×{b} + {a}×{c} + {b}×{c}) = {2 * (a * b + a * c + b * c)}. The small box adds only its four sides, 2 × {r} × ({p} + {q}) = {2 * r * (p + q)}, because its top stays and its bottom is hidden along with the part of the top it covers."
+  - q: "{n} cubes with sides of {s} cm are glued in a row, face to face, to make a long box. What is its surface area in cm²?"
+    vars: { n: "2..5", s: "2..6" }
+    answer: "{2 * s * s * (1 + 2 * n)}"
+    feedback:
+      - ["{6 * n * s * s}", "The glued faces are hidden. Count only the outside."]
+    explain: "The long box is {s} by {s} by {n * s}: 2 × ({s}×{s} + {s}×{n * s} + {s}×{n * s}) = {2 * s * s * (1 + 2 * n)}."
+  - q: "A cube with sides of {s} cm has a square hole {h} cm by {h} cm drilled straight through the middle, from one face to the opposite one. What is its surface area in cm²?"
+    vars: { s: "4..9", h: "1..3" }
+    answer: "{6 * s * s - 2 * h * h + 4 * s * h}"
+    feedback:
+      - ["{6 * s * s - 2 * h * h}", "The hole also has four inside walls, each {s} by {h}. Add them."]
+    explain: "The plain cube is 6 × {s}² = {6 * s * s}. The hole removes two squares of {h * h}: {6 * s * s - 2 * h * h}. It adds four walls of {s} × {h}: {4 * s * h}. Total {6 * s * s - 2 * h * h + 4 * s * h}."

@@ -1,0 +1,42 @@
+summary: "Students name where a measurement error comes from (the instrument, the method or the person) and tell an error that pushes every reading one way (systematic) from one that goes both ways (random). Averaging helps the second kind only (AC9M10M04, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 8 min · Practise and Make 10 min"
+goals:
+  - I can say whether an error comes from the instrument, the method or the person.
+  - I can tell a systematic error from a random one.
+  - I can say why readings that agree are not necessarily right.
+struggle: "Calling every error 'human error' or 'rounding'. Ask: if a different, careful person did the measuring with the same tool, would the error go away?"
+before: |
+  Students need Every measurement is an estimate (Year 9) and the idea of a true value.
+
+  The one idea: an error has a source, and knowing the source tells you what to fix. The three sources are a convenient sorting scheme, not a law: some cases sit between two (a stopwatch pressed late is the person, the stopwatch lag is the instrument), and the lesson says so in its Modify edge case. The systematic and random split is the part that carries forward: it explains why repeating a measurement helps one kind and not the other.
+
+  All the readings in this lesson are made up for the task. No outside figures are used.
+running:
+  - "Predict: show of hands. Those who say the person are treating every error as a slip; ask what would change if someone else measured with the same calipers."
+  - "Run: do the sort in pairs, then ask each pair to say what they would change to remove the error."
+  - "Paper: the 0.08 m try-one after the worked example and the corrected reading in Make are worked on paper first."
+  - "Investigate: Dev's line is a common one. Ask whether six readings that agree could all be wrong the same way."
+stuck:
+  - see: "A student says the tape is accurate because the six readings agree."
+    ask: "Compared with what? What does the laser say?"
+    fix: "Agreeing readings are precise, but they can all be 0.08 m low. Check against a trusted value."
+  - see: "A student blames 'human error' for every item."
+    ask: "If a different person did it with the same tool, would the error go away?"
+    fix: "If not, the error is in the instrument or the method."
+  - see: "A student says averaging fixes the stretched tape."
+    ask: "Every reading is low. What is the average of numbers that are all low?"
+    fix: "Also low. Averaging only helps when readings go both ways."
+stretch: "Why is 'precise' a different word from 'accurate'? Give a set of readings that is precise but not accurate, and one that is accurate on average but not precise."
+support: "A table with three columns, Instrument, Method, Person, and one example cut out for each to stick in."
+leads: |
+  Starts AC9M10M04.
+
+  Where it leads: how one measurement's error changes a calculated result (next lesson), and how errors build up over many steps.
+exit:
+  q: "A scale shows 3 g when nothing is on it. Is that an instrument, a method or a person error, and is it systematic or random?"
+  a: "Instrument; systematic, because it adds 3 g to every reading."
+explain: |
+  An error can come from the instrument, the method or the person.
+
+  A systematic error pushes every reading the same way, so repeating and averaging does not remove it. A random error goes both ways, so the average is closer. Readings that agree with each other can all be wrong in the same way, so check against a trusted value.

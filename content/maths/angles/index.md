@@ -14,4 +14,5 @@ units:
   - { id: enlarge9, title: Enlargement, summary: "What an enlargement keeps (angles and shape) and what it changes (lengths, area and volume), and the scale factors k, k² and k³ (Year 9)." }
   - { id: algorithms, title: Algorithms, summary: "Writing a clear set of steps to sort shapes into classes, and (Year 8) to decide whether two triangles are congruent, similar or neither." }
   - { id: networks, title: Networks, summary: "Year 10: nodes, edges and degree, drawing a network without distances, whether every street can be driven once, and Euler's rule for solids." }
+  - { id: proof10, title: "Year 10: proof", summary: "Telling a demonstration from a proof, writing a proof with a reason for every statement, and choosing the theorem that fits a problem." }
 ---

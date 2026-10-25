@@ -1,0 +1,25 @@
+# Practice for "Some cases or every case?". Choices and numbers.
+templates:
+  - q: "{n} wants to be sure that {claim}. Which is a proof?"
+    cases:
+      - { n: "Ana", claim: "the sum of any two even numbers is even", k: "Write them as 2m and 2n: the sum is 2(m + n), twice a whole number", w1: "2 + 4, 6 + 10 and 12 + 14 are all even", w2: "50 pairs gave an even sum" }
+      - { n: "Ben", claim: "the sum of any two consecutive whole numbers is odd", k: "Write them as n and n + 1: the sum is 2n + 1, one more than an even number", w1: "3 + 4, 10 + 11 and 99 + 100 are all odd", w2: "a calculator checked every pair up to 1000" }
+      - { n: "Mia", claim: "the angles of every triangle add to 180°", k: "Draw a line through one corner parallel to the opposite side: the alternate angles are equal and the three angles make a straight line", w1: "30 torn triangles all made a straight line", w2: "100 protractor measurements all added to about 180°" }
+      - { n: "Jai", claim: "the diagonals of every rectangle are equal", k: "The diagonals make two congruent triangles (SAS), so they are equal", w1: "Six rectangles all had equal diagonals", w2: "One rectangle drawn carefully had two diagonals of 10 cm" }
+    choices: ["{k}", ["{w1}", "These are examples. A proof gives a reason that covers every case."], ["{w2}", "More examples are still examples. A proof gives a reason that covers every case."]]
+    explain: "A proof gives a reason that does not depend on the particular case: a letter for any number, or a property that every shape of the kind has."
+  - q: "Claim: \"every odd number greater than 1 is prime\". Which of these odd numbers is a counterexample?"
+    cases:
+      - { k: "9", w1: "7", w2: "11", e: "9 = 3 × 3 is odd and not prime." }
+      - { k: "15", w1: "13", w2: "17", e: "15 = 3 × 5 is odd and not prime." }
+      - { k: "21", w1: "19", w2: "23", e: "21 = 3 × 7 is odd and not prime." }
+      - { k: "25", w1: "23", w2: "29", e: "25 = 5 × 5 is odd and not prime." }
+      - { k: "27", w1: "29", w2: "31", e: "27 = 3 × 9 is odd and not prime." }
+    choices: ["{k}", ["{w1}", "{w1} is odd and prime, so it agrees with the claim."], ["{w2}", "{w2} is odd and prime, so it agrees with the claim."]]
+    explain: "{e} One case that breaks the claim is enough."
+  - q: "Three consecutive whole numbers start at {n}. Add them and divide by 3. What do you get?"
+    vars: { n: "2..40" }
+    answer: "{n + 1}"
+    feedback:
+      - ["{n}", "n + (n + 1) + (n + 2) = 3n + 3. Dividing by 3 gives n + 1, the middle number."]
+    explain: "{n} + {n + 1} + {n + 2} = {3 * n + 3}, and {3 * n + 3} ÷ 3 = {n + 1}. It is always the middle number, because n + (n + 1) + (n + 2) = 3(n + 1)."

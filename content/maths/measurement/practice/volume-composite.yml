@@ -1,0 +1,14 @@
+# Practice for "Volume of composite objects".
+templates:
+  - q: "A block is {a} cm by {b} cm by {c} cm. A square hole {s} cm by {s} cm goes straight through, along the {c} cm side. What is the volume of the block with the hole in cm³?"
+    vars: { a: "6..12", b: "6..12", c: "2..9", s: "1..4" }
+    answer: "{a * b * c - s * s * c}"
+    feedback:
+      - ["{a * b * c + s * s * c}", "A hole has nothing in it: take its volume away, don't add it."]
+    explain: "{a}×{b}×{c} − {s}×{s}×{c} = {a * b * c} − {s * s * c} = {a * b * c - s * s * c}."
+  - q: "A pool is {L} m long and {w} m wide. The first {l1} m is {d1} m deep and the rest is {d2} m deep. What is its volume in m³?"
+    vars: { L: "12..16", w: "4..7", l1: "6..9", d1: "1..2", d2: "3..4" }
+    answer: "{l1 * w * d1 + (L - l1) * w * d2}"
+    feedback:
+      - ["{L * w * d2}", "That is the whole pool as deep as the deep end. The shallow part holds less."]
+    explain: "{l1}×{w}×{d1} + {L - l1}×{w}×{d2} = {l1 * w * d1} + {(L - l1) * w * d2} = {l1 * w * d1 + (L - l1) * w * d2}."

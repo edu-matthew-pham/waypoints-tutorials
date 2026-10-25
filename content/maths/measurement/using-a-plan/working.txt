@@ -1,0 +1,8 @@
+# Leo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: leo
+Leo's plan is drawn at a scale of 1 : 50.
+The long wall measures 8.4 cm on the plan.
+Real length = 8.4 × 50 = 420.
+So the long wall is 420 m long, plenty of room for a 2.2 m sofa.
+# endregion

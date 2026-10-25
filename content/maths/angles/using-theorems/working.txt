@@ -1,0 +1,8 @@
+# Theo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: theo
+Theo checks the top frame of a market stall, a four-sided frame ABCD.
+He measures both diagonals: AC = 2.6 m and BD = 2.6 m.
+A rectangle's diagonals are equal.
+So the frame ABCD is a rectangle.
+# endregion

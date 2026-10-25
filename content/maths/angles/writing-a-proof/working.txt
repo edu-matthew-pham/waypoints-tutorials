@@ -1,0 +1,8 @@
+# Nia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nia
+Nia wants to prove that opposite angles of a parallelogram are equal.
+ABCD is a parallelogram.
+Opposite angles of a parallelogram are equal, so angle A = angle C.
+That proves it.
+# endregion

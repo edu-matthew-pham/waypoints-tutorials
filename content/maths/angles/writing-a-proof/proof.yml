@@ -1,0 +1,33 @@
+# Geometry boards for "Writing a proof". classify: on reports p (pairs of parallel sides) and names the shape.
+
+# region: run
+widget: geometry
+shape: polygon
+sides: 4
+corners: 1,1; 6,1; 8,4; 3,4
+classify: on
+# endregion
+
+# region: explain
+widget: geometry
+shape: polygon
+sides: 4
+corners: 1,1; 6,1; 8,4; 3,4
+classify: on
+# endregion
+
+# region: explain-pic
+widget: geometry
+shape: polygon
+sides: 4
+corners: 1,1; 6,1; 8,4; 3,4
+classify: on
+# endregion
+
+# region: trapezium
+widget: geometry
+shape: polygon
+sides: 4
+corners: 1,1; 8,1; 6,4; 3,4
+classify: on
+# endregion

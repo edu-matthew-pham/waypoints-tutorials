@@ -1,0 +1,43 @@
+summary: "Students break a composite object into cylinders, cones and boxes, decide whether each volume is added or taken away, and say which faces are hidden where solids join (AC9M10M01, node 1)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can name the solids a composite object is made of.
+  - I can say whether each solid is added or taken away.
+  - I can say which faces are hidden where two solids join.
+struggle: "Using the whole cylinder for the cone, or adding a hole. Ask: does the cone hold as much as the cylinder that fits round it? Is there concrete in a hole?"
+before: |
+  Students need Volume of prisms and cylinders (Year 9).
+
+  The one idea: name the solids first, then decide add or take away. This is a hinge lesson, so the folded easier questions are there for students who cannot yet say how many solids they can see.
+
+  The cone's volume has not been taught before. The lesson gives it as a fact (a cone holds a third of the cylinder that fits round it), with the sand-and-pour demonstration as the reason; a cone in a cylinder is a good thing to have on the desk. The proof is beyond this course. The curved surface of a cone is handled the same way in the next lesson.
+
+  All sizes (silo, seed silo, pipe, shed) are made up. A real silo brochure or a real pipe catalogue makes a good class extension, and then the brochure's stated capacity is the check.
+running:
+  - "Predict: show of hands before the check. Those who chose 94 treated the roof as a full cylinder."
+  - "Run: if you have a hollow cone and cylinder with the same base and height, do the three pours now."
+  - "Paper: the pipe in Investigate and the silo in Make are worked on paper first. Books out, and look for the solids named before any calculating."
+stuck:
+  - see: "A student gets 94.2 m³ for the silo."
+    ask: "How much of the cylinder that fits round the roof does the cone hold?"
+    fix: "A third. The cone's volume is 6.28 m³, not 18.84."
+  - see: "A student gets 2.57 m³ for the pipe."
+    ask: "Is there concrete in the hole?"
+    fix: "No. Take the hole's volume away from the whole cylinder: 1.57 − 1.0048."
+  - see: "A student says 'the cone is a hole in the cylinder, so subtract it'."
+    ask: "Does the grain fill the roof?"
+    fix: "Yes. The roof is more space for grain, so its volume is added."
+stretch: "Find the volume of grain the silo holds if it is filled only up to 5 m on the wall. What if it is filled to the join and a bit into the cone?"
+support: "A printed silo and pipe with the solids drawn separately, so students can name them before calculating."
+leads: |
+  Starts AC9M10M01 (surface area and volume of composite objects).
+
+  Where it leads: Surface area of composite objects (hidden faces), then Volume of composite objects and the modelling task.
+exit:
+  q: "A water pipe is a big cylinder with a smaller cylinder through the middle. Do you add or take away the small cylinder's volume to find the pipe's material?"
+  a: "Take it away: the hole has no material in it."
+explain: |
+  An object made of solids is found in parts. Name the solids, then add the volumes of the parts that make up the space, and take away the volumes of the parts that are holes.
+
+  A cone holds a third of the cylinder that fits round it. Where two solids join, the faces that touch are hidden inside.

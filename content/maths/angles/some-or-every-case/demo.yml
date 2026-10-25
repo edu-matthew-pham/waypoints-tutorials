@@ -1,0 +1,20 @@
+# Geometry boards for "Some cases or every case?". exterior: C extends the side into C and marks the exterior angle x.
+
+# region: run
+widget: geometry
+corners: 1,1; 9,1; 4,6
+exterior: C
+# endregion
+
+# region: explain
+widget: geometry
+corners: 1,1; 9,1; 4,6
+exterior: C
+# endregion
+
+# region: explain-pic
+widget: geometry
+corners: 1,1; 9,1; 4,6
+exterior: C
+angles: given a, b
+# endregion

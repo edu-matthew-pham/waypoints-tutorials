@@ -8,7 +8,13 @@
 //   result: off               hide the result's value (students work it out); the substitution still shows
 //   hide: formula             hide the formula and the working, showing only the sliders and the result ("T = 13"): a
 //                             mystery rule that students write as an expression and check against its values
-// state: { scope: { vars: { each slider, and the subject (P) } } }
+//   accuracy: 0.1             (Year 10, measurement error) every slider value is a reading to the nearest 0.1, so it can be out by
+//                             half of that either way (4 reads as 3.95 to 4.05). Under the working the board shows the lowest and
+//                             highest the result could be, found at the corners of those ranges: right for a formula that only
+//                             grows or only shrinks as each slider grows (products, sums, differences; not a power or a quotient
+//                             that changes direction). Hidden when "result: off". Without accuracy: nothing changes.
+// state: { scope: { vars: { each slider, and the subject (P); with accuracy: also res_lo, res_hi (the lowest and highest result)
+//          and res_out (half the gap between them, the most the result can be out either way) } } }
 (function (B) {
   'use strict';
   var spec = null, vars = {}, ui = {};
@@ -37,6 +43,12 @@
     s.showResult = !/^off$/i.test(s.result || '');
     s.hidden = /^formula$/i.test(s.hide || '');
     if (s.hidden && !s.showResult) throw new Error('hide: formula needs the result to show: remove "result: off".');
+    s.acc = 0;
+    if (s.accuracy !== undefined && s.accuracy !== '') {
+      s.acc = Number(s.accuracy);
+      if (!(s.acc > 0)) throw new Error('accuracy: a size above 0, such as "accuracy: 0.1" (the readings are to the nearest 0.1).');
+      if (s.sliders.length > 6) throw new Error('accuracy: works with up to six sliders.');
+    }
   }
 
   // 2l + 2w with l = 4, w = 3 -> 2 × 4 + 2 × 3 (letters next to numbers become "×"; a negative value in brackets)
@@ -44,6 +56,20 @@
     var t = spec.rhs.replace(/\s+/g, ' ').replace(/\*/g, '×');
     t = t.replace(/(\d|\))\s*(?=[a-z])/g, '$1 × ').replace(/([a-z])\s*(?=[a-z(])/g, '$1 × ');
     return t.replace(/[a-z]/g, function (n) { return n in vars ? (vars[n] < 0 ? '(' + show(vars[n]) + ')' : show(vars[n])) : n; }).replace(/-/g, '−').replace(/\//g, '÷');
+  }
+
+  // The lowest and highest result when every slider may be out by half the accuracy either way: try every corner.
+  function bounds() {
+    var h = spec.acc / 2, n = spec.sliders.length, lo = Infinity, hi = -Infinity;
+    for (var m = 0; m < (1 << n); m++) {
+      var t = Object.assign({}, vars);
+      spec.sliders.forEach(function (sl, i) { t[sl.name] = vars[sl.name] + ((m >> i) & 1 ? h : -h); });
+      var r = spec.f(t);
+      if (r < lo) lo = r;
+      if (r > hi) hi = r;
+    }
+    var q = function (x) { return Math.round(x * 1e6) / 1e6; };
+    return { lo: q(lo), hi: q(hi), out: q((hi - lo) / 2) };
   }
 
   function drawRect() {
@@ -63,12 +89,17 @@
 
   function report() {
     var v = Math.round(spec.f(vars) * 1e6) / 1e6;
-    ui.sliders.forEach(function (s) { s.out.textContent = s.sl.name + ' = ' + show(vars[s.sl.name]); });
+    var half = spec.acc / 2, rd = function (x) { return show(Math.round(x * 1e6) / 1e6); };
+    ui.sliders.forEach(function (s) { s.out.textContent = s.sl.name + ' = ' + show(vars[s.sl.name]) + (spec.acc ? ' (' + rd(vars[s.sl.name] - half) + ' to ' + rd(vars[s.sl.name] + half) + ')' : ''); });
     ui.work.textContent = spec.subject + ' = ' + (spec.hidden ? '' : substituted() + (spec.showResult ? ' = ' : '')) + (spec.showResult ? show(v) + spec.unit : '');
     if (spec.rect) drawRect();
     var sc = Object.assign({}, vars); sc[spec.subject] = v;
+    if (spec.acc) {
+      var bd = bounds(); sc.res_lo = bd.lo; sc.res_hi = bd.hi; sc.res_out = bd.out;
+      ui.range.textContent = spec.showResult ? 'Lowest it could be: ' + show(bd.lo) + spec.unit + '. Highest it could be: ' + show(bd.hi) + spec.unit + '.' : '';
+    }
     B.save({ vars: vars });
-    B.post({ scope: { vars: sc, points: {} } }, spec.sliders.map(function (s) { return s.name + ' = ' + vars[s.name]; }).join(', ') + (spec.showResult ? '; ' + spec.subject + ' = ' + v : ''));
+    B.post({ scope: { vars: sc, points: {} } }, spec.sliders.map(function (s) { return s.name + ' = ' + vars[s.name]; }).join(', ') + (spec.showResult ? '; ' + spec.subject + ' = ' + v : '') + (spec.acc && spec.showResult ? '; lowest ' + sc.res_lo + ', highest ' + sc.res_hi : ''));
   }
 
   B.widget('formula', {
@@ -85,6 +116,7 @@
       if (!spec.hidden) { var f = document.createElement('p'); f.className = 'rulename'; f.textContent = spec.formula.replace(/\*/g, '×').replace(/-/g, '−'); box.appendChild(f); }
       if (spec.rect) { ui.svg = document.createElementNS(SVGNS, 'svg'); ui.svg.setAttribute('class', 'fsvg'); ui.svg.setAttribute('role', 'img'); box.appendChild(ui.svg); }
       ui.work = document.createElement('p'); ui.work.className = 'rulework'; ui.work.setAttribute('aria-live', 'polite'); box.appendChild(ui.work);
+      if (spec.acc) { ui.range = document.createElement('p'); ui.range.className = 'rulework'; ui.range.setAttribute('aria-live', 'polite'); box.appendChild(ui.range); }
       panel.appendChild(box);
       spec.sliders.forEach(function (sl) {
         var row = document.createElement('div'); row.className = 'srow';

@@ -5,8 +5,13 @@
 //   size: 6               the length of each axis (2 to 10)
 //   target: 3, 2, 4       a point Q (shown as a ring) to move P to
 //   box: on               draw the box from the origin to P (its edges are x, y and z long)
+//   diagonal: on          draw the box too, with the floor diagonal (corner to corner across the floor) and the space diagonal
+//                         (corner to the opposite top corner), and shade the right-angled triangle that holds the space diagonal
+//   scale: 10             each grid step stands for this many units (default 1); only the diagonal readouts use it
+//   units: cm             the unit named in the diagonal readouts
 // state: { scope: { vars: { x, y, z, d (1 when P is on the target), v (the box's volume x × y × z) } } }
-// Checks: "x = 3 and y = 2 and z = 4", "d = 1".
+//   With diagonal: on, also f (floor diagonal, √(x² + y²)) and g (space diagonal, √(x² + y² + z²)), both times the scale.
+// Checks: "x = 3 and y = 2 and z = 4", "d = 1", "x = 8 and y = 5 and z = 3".
 (function (B) {
   'use strict';
   var NS = 'http://www.w3.org/2000/svg';
@@ -27,13 +32,18 @@
     s.tgt = s.target !== undefined ? nums(s.target, 'target') : null;
     if (s.tgt && s.tgt.length !== 3) throw new Error('target: x, y, z, such as "3, 2, 4".');
     s.box = /^on$/i.test(s.box || '');
+    s.diag = /^on$/i.test(s.diagonal || '');
+    if (s.diag) s.box = true;
+    s.scale = s.scale !== undefined ? nums(s.scale, 'scale')[0] : 1;
+    if (!(s.scale > 0)) throw new Error('scale: more than 0.');
+    s.units = s.units ? ' ' + String(s.units).trim() : '';
   }
   function draw() {
     var el = B.el('board'); el.replaceChildren(); el.style.position = 'relative';
     var svg = document.createElementNS(NS, 'svg'); svg.setAttribute('role', 'img'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
     svg.style.position = 'absolute'; svg.style.left = '0'; svg.style.top = '0';
     var add = function (tag, at, text) { var e = document.createElementNS(NS, tag); Object.keys(at).forEach(function (k) { e.setAttribute(k, at[k]); }); if (text !== undefined) e.textContent = text; svg.appendChild(e); return e; };
-    var ink = B.css('--ink') || '#1d2430', blue = B.css('--left') || '#2f6fb3', orange = B.css('--accent') || '#c2570a', muted = B.css('--muted') || '#5d6675', purple = B.css('--right') || '#8a4fb8', green = B.css('--ok') || '#2e7d32', line = B.css('--line') || '#d9dde3';
+    var ink = B.css('--ink') || '#1d2430', blue = B.css('--left') || '#2f6fb3', orange = B.css('--accent') || '#c2570a', muted = B.css('--muted') || '#5d6675', purple = B.css('--right') || '#8a4fb8', green = B.css('--ok') || '#2e7d32', line = B.css('--line') || '#d9dde3', bad = B.css('--bad') || '#c0392b';
     var font = 'system-ui, sans-serif', S = spec.size, u = 40, C = Math.cos(Math.PI / 6);
     var W = 2 * (S + 1.6) * C * u + 160, ox = W / 2, oy = (S + 1.6) * u, H = oy + (S + 1.2) * u;
     svg.setAttribute('viewBox', '0 0 ' + W.toFixed(0) + ' ' + H.toFixed(0));
@@ -49,6 +59,12 @@
     if (spec.box) {
       var c = [[0, 0, 0], [x, 0, 0], [x, y, 0], [0, y, 0], [0, 0, z], [x, 0, z], [x, y, z], [0, y, z]];
       [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]].forEach(function (e) { seg(c[e[0]], c[e[1]], green, 2); });
+    }
+    if (spec.diag && x > 0 && y > 0) {
+      add('polygon', { points: [[0, 0, 0], [x, y, 0], [x, 0, 0]].map(function (q) { var a = P(q[0], q[1], q[2]); return a[0].toFixed(1) + ',' + a[1].toFixed(1); }).join(' '), fill: ink, 'fill-opacity': 0.07 });
+      if (z > 0) add('polygon', { points: [[0, 0, 0], [x, y, 0], [x, y, z]].map(function (q) { var a = P(q[0], q[1], q[2]); return a[0].toFixed(1) + ',' + a[1].toFixed(1); }).join(' '), fill: bad, 'fill-opacity': 0.14 });
+      seg([0, 0, 0], [x, y, 0], ink, 3.5);
+      if (z > 0) seg([0, 0, 0], [x, y, z], bad, 4);
     }
     // the path from the origin: along x, then y, then up z
     seg([0, 0, 0], [x, 0, 0], blue, 3, '7 5'); seg([x, 0, 0], [x, y, 0], orange, 3, '7 5'); seg([x, y, 0], [x, y, z], purple, 3, '7 5');
@@ -85,11 +101,14 @@
     draw();
     var x = vars.x, y = vars.y, z = vars.z, on = spec.tgt && x === spec.tgt[0] && y === spec.tgt[1] && z === spec.tgt[2];
     ui.work.textContent = 'P = (' + B.fmt(x) + ', ' + B.fmt(y) + ', ' + B.fmt(z) + ')';
-    var note = B.fmt(x) + ' along x, ' + B.fmt(y) + ' along y, then ' + B.fmt(z) + ' up the z-axis.' + (spec.tgt ? (on ? ' P is on Q.' : ' Not on Q yet.') : '') + (spec.box ? ' The box is ' + B.fmt(x) + ' × ' + B.fmt(y) + ' × ' + B.fmt(z) + ' = ' + B.fmt(Math.round(x * y * z * 100) / 100) + ' cubic units.' : '');
+    var fl = Math.round(Math.sqrt(x * x + y * y) * spec.scale * 100) / 100, sp = Math.round(Math.sqrt(x * x + y * y + z * z) * spec.scale * 100) / 100;
+    var note = B.fmt(x) + ' along x, ' + B.fmt(y) + ' along y, then ' + B.fmt(z) + ' up the z-axis.' + (spec.tgt ? (on ? ' P is on Q.' : ' Not on Q yet.') : '') + (spec.box ? ' The box is ' + B.fmt(x) + ' × ' + B.fmt(y) + ' × ' + B.fmt(z) + ' = ' + B.fmt(Math.round(x * y * z * 100) / 100) + ' cubic units.' : '') + (spec.diag ? ' Floor diagonal (black) ' + B.fmt(fl) + spec.units + ', space diagonal (red) ' + B.fmt(sp) + spec.units + '.' : '');
     ui.note.textContent = note;
     B.say(ui.work.textContent + '. ' + note);
     B.save({ vars: vars });
-    B.post({ scope: { vars: { x: x, y: y, z: z, d: on ? 1 : 0, v: Math.round(x * y * z * 100) / 100 }, points: {} } }, ui.work.textContent + '. ' + note);
+    var sv = { x: x, y: y, z: z, d: on ? 1 : 0, v: Math.round(x * y * z * 100) / 100 };
+    if (spec.diag) { sv.f = fl; sv.g = sp; }
+    B.post({ scope: { vars: sv, points: {} } }, ui.work.textContent + '. ' + note);
   }
   B.widget('space3d', {
     sections: ['board', 'gpanel'],

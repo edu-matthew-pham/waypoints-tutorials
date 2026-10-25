@@ -1,0 +1,19 @@
+# Practice for "Using a plan". Read a plan, then decide.
+templates:
+  - q: "A plan at 1 : {s} shows a wall {p} cm long. A door gap of {g} m takes some of it. How much wall is left? (m)"
+    vars: { s: [50, 100], p: [6, 8, 8.4, 10], g: [0.8, 0.9, 1.0] }
+    answer: "{p * s / 100 - g}"
+    tolerance: 0.01
+    feedback:
+      - ["{p * s / 100}", "That is the whole wall. Take away the door gap."]
+    explain: "{p} × {s} = {p * s} cm = {p * s / 100} m, and {p * s / 100} − {g} = {p * s / 100 - g} m."
+  - q: "A plan is drawn at 1 : {s}. A length of {p} cm is read off it, and the reading is out by up to 0.05 cm. How far out could the real length be? (cm)"
+    vars: { s: [20, 50, 100, 200], p: [2.5, 3.4, 4.8, 6, 7.2] }
+    answer: "{0.05 * s}"
+    tolerance: 0.01
+    explain: "0.05 × {s} = {0.05 * s} cm."
+  - q: "At 1 : {s}, a wall is {p} cm on the plan. A cupboard is {c} m wide. How much space is spare along the wall? (m, negative if it doesn't fit)"
+    vars: { s: [50, 100], p: [3, 4, 5, 6], c: [1.2, 1.5, 2.0, 2.5] }
+    answer: "{p * s / 100 - c}"
+    tolerance: 0.01
+    explain: "The real wall is {p * s / 100} m, and {p * s / 100} − {c} = {p * s / 100 - c} m."

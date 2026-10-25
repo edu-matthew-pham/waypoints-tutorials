@@ -1,0 +1,31 @@
+# Practice for "Using theorems". Numbers and choices.
+templates:
+  - q: "A corner has sides {a} m and {b} m. How long must the diagonal be, in metres, for the corner to be square?"
+    vars: { k: "2..8" }
+    let: { a: "3 * k", b: "4 * k" }
+    answer: "{5 * k}"
+    feedback:
+      - ["{a + b}", "Pythagoras compares squares: {a}² + {b}² = {a * a + b * b}, and the diagonal squared must match."]
+    explain: "{a}² + {b}² = {a * a} + {b * b} = {a * a + b * b} = {5 * k}². (The 3-4-5 triangle, {k} times bigger.)"
+  - q: "A corner has sides {a} m and {b} m. How long must the diagonal be, in metres, for the corner to be square?"
+    vars: { k: "1..9" }
+    let: { a: "5 * k", b: "12 * k" }
+    answer: "{13 * k}"
+    explain: "{a}² + {b}² = {a * a} + {b * b} = {a * a + b * b} = {13 * k}². (The 5-12-13 triangle, {k} times bigger.)"
+  - q: "A corner has sides {a} m and {b} m, and the diagonal is {c} m. Compared with a right angle, the corner is..."
+    cases:
+      - { a: "6", b: "8", c: "10", k: "exactly 90°", w1: "narrower than 90°", w2: "wider than 90°", e: "6² + 8² = 100 = 10²." }
+      - { a: "6", b: "8", c: "10.5", k: "wider than 90°", w1: "narrower than 90°", w2: "exactly 90°", e: "6² + 8² = 100, but 10.5² = 110.25: a longer diagonal means a wider corner." }
+      - { a: "6", b: "8", c: "9.5", k: "narrower than 90°", w1: "wider than 90°", w2: "exactly 90°", e: "6² + 8² = 100, but 9.5² = 90.25: a shorter diagonal means a narrower corner." }
+      - { a: "9", b: "12", c: "15", k: "exactly 90°", w1: "narrower than 90°", w2: "wider than 90°", e: "9² + 12² = 225 = 15²." }
+      - { a: "5", b: "12", c: "12.5", k: "narrower than 90°", w1: "wider than 90°", w2: "exactly 90°", e: "5² + 12² = 169, but 12.5² = 156.25: a shorter diagonal means a narrower corner." }
+      - { a: "5", b: "12", c: "13.5", k: "wider than 90°", w1: "narrower than 90°", w2: "exactly 90°", e: "5² + 12² = 169, but 13.5² = 182.25: a longer diagonal means a wider corner." }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "{e}"
+  - q: "{d} Which theorem lets you decide?"
+    cases:
+      - { d: "You know a frame is a parallelogram, and its two diagonals are equal.", k: "The rectangle test", w1: "Pythagoras' converse", w2: "The parallelogram test" }
+      - { d: "A frame's opposite sides are equal in pairs, and you want to know if the opposite sides are parallel.", k: "The parallelogram test", w1: "The rectangle test", w2: "Pythagoras' converse" }
+      - { d: "A triangle has sides 9, 40 and 41 and you want to know if it has a right angle.", k: "Pythagoras' converse", w1: "The rectangle test", w2: "The parallelogram test" }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "Match the facts you have to what the theorem needs. Pythagoras' converse compares a² + b² with c². The rectangle test needs a parallelogram with equal diagonals. The parallelogram test needs both pairs of opposite sides equal."

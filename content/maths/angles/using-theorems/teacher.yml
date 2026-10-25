@@ -1,0 +1,46 @@
+summary: Students check a slab corner with Pythagoras' converse, decide which theorem fits a frame (rectangle test, parallelogram test), and prove the rectangle test with congruent triangles (AC9M10SP01, node 3).
+time: 50
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 15 min"
+goals:
+  - I can match what I know about a shape to the theorem that fits.
+  - I can use Pythagoras' converse to decide whether a corner is square.
+  - I can say why equal diagonals only make a rectangle when the shape is a parallelogram.
+struggle: "Using a theorem the wrong way round. Ask 'what does the theorem need, and do I have it?' before anyone uses it."
+before: |
+  Do the Run board and the paper tasks yourself first. Students need Pythagoras' theorem and its converse (Measurement, Year 8), the Year 8 proofs about quadrilaterals, and the previous lesson's idea of a reason for every line.
+
+  The one idea: a theorem is used by matching its conditions. Pythagoras' converse compares a² + b² with c². The rectangle test needs a parallelogram first. The parallelogram test needs both pairs of opposite sides equal. The common mistake is reversing a theorem (Theo's working): a rectangle's diagonals are equal, but equal diagonals alone do not make a rectangle (an isosceles trapezium has them).
+
+  The 5.2 m string, the slab and shed sizes, and the market stall are made up, so no figure is a real measurement. The 3-4-5 check is the way builders set out a square corner; that is why the lesson opens on it.
+
+  The rectangle test proof in Make is the longest piece of the unit. Let students pick the congruence test first, and give the plan (which two triangles) to students who need it.
+running:
+  - "Predict: take a show of hands before anyone calculates. Ask what string length would mean exactly square."
+  - "Run: ask students to count the slope across the dots, and say whether 3² + 4² gives 5²."
+  - "Paper: the slab with sides 6 and 8 after the worked example, and the shed base and the stall frame proof in Make, are worked on paper first. Books out, and look for a reason beside every line."
+  - "Investigate: ask who has met a frame that was out of square. Ask which theorem they would use to check it."
+  - "Modify: before the board, ask what must be true of a parallelogram for its diagonals to be equal."
+  - "Make: ask which two triangles share a side before anyone writes."
+stuck:
+  - see: "A student adds the sides, 6 + 8, and compares with the diagonal."
+    ask: "What does Pythagoras compare?"
+    fix: "Square the two sides first, add the squares, then compare with the diagonal squared."
+  - see: "A student says equal diagonals make a rectangle (Theo's mistake)."
+    ask: "Is there a shape with equal diagonals that isn't a rectangle?"
+    fix: "An isosceles trapezium. The shape must be a parallelogram first."
+  - see: "A student says equal opposite sides make a rectangle."
+    ask: "Can a parallelogram lean over?"
+    fix: "Yes. Equal opposite sides give a parallelogram. A rectangle also needs a right angle or equal diagonals."
+stretch: "Prove the converse of the rectangle test's idea differently: a parallelogram with a right angle is a rectangle. Or find another triple that works for a square corner (7, 24, 25)."
+support: "A table of theorems to tick: what it needs, what it gives, and whether I have it. A strip of squares up to 20² to look up."
+leads: |
+  This covers AC9M10SP01 node 3.
+
+  Where it leads: the proofs students meet in senior mathematics, where choosing the theorem and giving a reason for each line is the whole skill.
+exit:
+  q: "A corner has sides 9 m and 12 m, and the diagonal is 15 m. Is the corner square? Name the theorem."
+  a: "Yes. 9² + 12² = 225 = 15², so by Pythagoras' converse the angle is a right angle."
+explain: |
+  A **theorem** is a result already proved. To use one, match the facts you have to the facts it needs, and check its direction.
+
+  **Pythagoras' converse:** if a² + b² = c², the angle opposite c is 90°. **The rectangle test:** a parallelogram with equal diagonals is a rectangle (equal diagonals alone are not enough). **The parallelogram test:** both pairs of opposite sides equal makes a parallelogram.

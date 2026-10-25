@@ -1,0 +1,42 @@
+summary: "Students see that a calculated result carries the errors of every measurement in it, find the lowest and highest a result could be from the lowest and highest of each measurement, and see why the area's error is bigger than a length's (AC9M10M04, node 2)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 10 min · Practise and Make 13 min"
+goals:
+  - I can find the lowest and highest a result could be from the lowest and highest of each measurement.
+  - I can say how far a result could be out.
+  - I can explain why an area is out by more than a length.
+struggle: "Taking the area's error to be a length's error (0.05 m, so 0.05 m²). Ask: if the length and the width are both 5 cm bigger, how much extra floor is that?"
+before: |
+  Students need bounds from Every measurement is an estimate (Year 9) and percentage error.
+
+  This is a hinge lesson: students who cannot trace one error into a result cannot reason about errors that build up (next lesson). Do the Run board yourself first: under the working it shows the lowest and highest the result could be. The board reads each slider as a reading to the nearest 0.1, because the lesson's `accuracy: 0.1` setting; the two numbers are found by trying every low and high combination, which is exact for products and sums.
+
+  The room, courtyard and tile are made up for the task. The method is a worst case: errors in practice often partly cancel, which the next lesson comes back to.
+running:
+  - "Predict: show of hands. Those who pick 12.05 are using one length's error for the area; ask them to draw the room with both lengths 5 cm longer."
+  - "Run: before moving a slider, ask what the highest area will be if the length is the high bound but the width is not."
+  - "Paper: the courtyard after the worked example and the carpet order in Make are worked on paper first."
+  - "Modify: with the perimeter, ask why four small errors add rather than multiply."
+stuck:
+  - see: "A student says the area is out by 0.05 m²."
+    ask: "If the length and the width are both 5 cm longer, how big is the extra strip of floor?"
+    fix: "Two strips: about 4 × 0.05 and 3 × 0.05, so about 0.35 m²."
+  - see: "A student uses the lowest length with the highest width."
+    ask: "Which pair gives the biggest area?"
+    fix: "Both at their highest. For the lowest area use both at their lowest."
+  - see: "A student gives the order as 12.35 m²."
+    ask: "Can you buy 12.35 m² of carpet?"
+    fix: "Sold in whole square metres: round up to 13."
+stretch: "Show that the percentage error of the area is close to the sum of the percentage errors of the length and the width. Why does it not quite match?"
+support: "A rectangle drawn on squared paper with the extra 0.05 strips shaded along two sides."
+leads: |
+  Continues AC9M10M04 (node 2).
+
+  Where it leads: errors that build up over many steps (next lesson), and the percentage error of a result.
+exit:
+  q: "A square is measured as 5.0 m by 5.0 m, each to the nearest 0.1 m. What is the highest its area could be?"
+  a: "5.05 × 5.05 = 25.5025 m²."
+explain: |
+  A result calculated from measurements has an error too, and it is usually bigger than any one measurement's error.
+
+  Use the lowest and highest of each measurement: the lowest result comes from every measurement at its lowest, and the highest from every measurement at its highest. For a 4.0 m by 3.0 m room, to the nearest 0.1 m, the area could be from 11.65 m² to 12.35 m².

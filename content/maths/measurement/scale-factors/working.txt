@@ -1,0 +1,8 @@
+# Ivy's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ivy
+Ivy's plan is drawn at a scale of 1 : 50.
+A wall measures 5 cm on the plan.
+Real length = 5 ÷ 50 = 0.1 cm.
+So the real wall is 0.1 cm long.
+# endregion

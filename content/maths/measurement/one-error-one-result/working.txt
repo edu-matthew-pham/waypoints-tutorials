@@ -1,0 +1,9 @@
+# Noor's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: noor
+Noor measures a room as 4.0 m by 3.0 m, each to the nearest 0.1 m.
+Each length could be out by 0.05 m.
+The area is 4.0 × 3.0 = 12.0 m².
+So the area is out by 0.05 m², at most 12.05 m².
+She orders 12.05 m² of carpet.
+# endregion

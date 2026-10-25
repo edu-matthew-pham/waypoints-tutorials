@@ -1,0 +1,45 @@
+summary: "Students find the volume of composite objects by adding parts or taking one away, check by a second route, then state what a model of a tank or silo assumes (AC9M10M01, nodes 3 and 4)."
+time: 50
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 8 min · Practise and Make 17 min"
+goals:
+  - I can find a composite volume by adding or by taking away.
+  - I can check by finding it a second way.
+  - I can say what a model of a tank or silo assumes.
+struggle: "Adding a hole, and treating the model's answer as exact. Ask: is there anything in a hole? What did the model leave out?"
+before: |
+  Students need Break it into solids and Surface area of composite objects.
+
+  Two ideas: the same volume can be found by adding parts or by subtracting one from a bigger solid (the pool), and a model's answer is only as good as its assumptions (Make, which is the modelling task of node 4).
+
+  1 mm of rain on 1 m² of surface is about 1 litre (Bureau of Meteorology, approximate). The tank's cone-shaped bottom, the roof, the pool and the silo are made up for the task. Real tank and silo brochures make a good extension: the brochure's stated capacity is the check.
+
+  The Make asks students to write at least three assumptions on paper before calculating. Typical ones: perfect shapes, no wall thickness, filled to the brim, all the rain reaches the tank, grain fills the cone's tip. The silo question uses the 81.6 m³ answer from Break it into solids.
+running:
+  - "Predict: show of hands before the check. Those who chose 76 left the cone out; 99 counted it as a full cylinder."
+  - "Paper: the pool in Investigate and the tank in Make are worked on paper first. Books out; in Make, assumptions come first."
+  - "Make: ask which assumption they think changes the answer most, and which way."
+stuck:
+  - see: "A student gets 17 570 cm³ for the block with the hole."
+    ask: "Is there concrete in the hole?"
+    fix: "No. Take the hole's volume away from the block."
+  - see: "A student gets 836 mm."
+    ask: "How many litres is 1 mm on 100 m²?"
+    fix: "100 litres. Divide 8360 by 100."
+  - see: "A student says the model is wrong because the silo has walls."
+    ask: "What would you change in the model, and which way would the answer move?"
+    fix: "Thicker walls make the inside smaller, so the model's volume is a little too big."
+stretch: "Add a wall thickness of 2 cm to the tank and work out the inside radius. How much does the capacity change, as a percentage?"
+support: "A printed pool and tank with the boxes and cone drawn separately, and a frame: assumption, calculation, which way it pushes."
+leads: |
+  Finishes AC9M10M01 (nodes 3 and 4).
+
+  Where it leads: Year 10 measurement error, and modelling in Functions.
+exit:
+  q: "A pool has a shallow end and a deep end. Name two ways to find its volume."
+  a: "Add the shallow box and the deep box, or take the missing water away from a box as deep as the deep end."
+explain: |
+  A composite volume is found by adding the parts or by taking a part away from a bigger solid. Both ways give the same answer, so one checks the other.
+
+  A model of a real tank or silo makes assumptions, such as perfect shapes, and its answer is only as good as they are.
+sources:
+  - { title: "Climate data FAQ (Bureau of Meteorology)", url: "https://www.bom.gov.au/climate/how/faq-data.shtml", checked: 2026-10-25 }

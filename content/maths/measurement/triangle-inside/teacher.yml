@@ -1,0 +1,42 @@
+summary: "Students find the right-angled triangle inside a box, floor first and then the one standing on the floor diagonal, and use Pythagoras twice, or trigonometry for the slope of the line (AC9M10M03, node 3)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can find the right-angled triangle on the floor of a box and the one standing up inside it.
+  - I can find the longest line inside a box with Pythagoras twice.
+  - I can find the angle that line makes with the floor.
+struggle: "Seeing the second triangle. Ask: what does the floor diagonal become in the standing triangle? Point to the floor diagonal and to the height."
+before: |
+  Do the Run board yourself first (the space3d board's diagonal view). Students need Looking up, looking down and Pythagoras from Year 8.
+
+  The one idea: a 3D problem is two 2D problems, with the answer to the first inside the second. This relies on drawing the triangle clearly, as in Looking up, looking down; students who struggle there will struggle here.
+
+  The common mistake is Sam's: adding the floor diagonal and the height instead of using Pythagoras again. It makes the umbrella look as if it fits. The sizes (suitcase, umbrella, fish tank, storeroom) are made up for the task. In practice a real umbrella has thickness, which makes fitting harder.
+running:
+  - "Predict: show of hands. Those who chose 'no, it's longer than every side' haven't thought about the diagonal. Those who chose 'yes, 80 + 50 + 30' have added the sides."
+  - "Run: before anyone moves a slider, ask which side of the box is the longest line you can fit."
+  - "Paper: the fish tank try-one after the worked example and the suitcase in Make are worked on paper first. Look for the floor triangle drawn first."
+  - "Modify: for the cube, ask whether the answer will be more or less than twice a side."
+stuck:
+  - see: "A student adds 80 + 50 + 30."
+    ask: "Is the shortest path across a box along the edges or straight across?"
+    fix: "Straight across: use Pythagoras, floor first and then the standing triangle."
+  - see: "A student adds the floor diagonal and the height."
+    ask: "Is the standing triangle right-angled? Which side is the hypotenuse?"
+    fix: "The space diagonal. Use Pythagoras again: square, add, square root."
+  - see: "A student gets 28.3 for √(80² + 50²) on a calculator."
+    ask: "Did you square each side first, then add?"
+    fix: "Square each, add, then take the square root of the total."
+stretch: "What is the longest straight line inside the classroom? Measure the room, predict, and calculate."
+support: "A printed box with the floor triangle and the standing triangle drawn in two colours."
+leads: |
+  Finishes AC9M10M03.
+
+  Where it leads: solids in Year 10 measurement, where the same triangle gives heights and slant lengths.
+exit:
+  q: "A box is 6 cm by 6 cm by 7 cm. What is the longest straight line inside it?"
+  a: "11 cm (36 + 36 + 49 = 121)."
+explain: |
+  To find a length inside a box, find a right-angled triangle. The floor gives one: its hypotenuse is the floor diagonal.
+
+  Then the floor diagonal and the height are the shorter sides of a second triangle, standing up. Its hypotenuse is the longest line in the box: $\sqrt{l^2 + w^2 + h^2}$.

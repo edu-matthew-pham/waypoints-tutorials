@@ -1,0 +1,34 @@
+# Practice for "Writing a proof". Numbers and choices.
+templates:
+  - q: "ABCD is a parallelogram and angle A = {a}°. What is angle C, in degrees?"
+    vars: { a: "40..140" }
+    answer: "{a}"
+    feedback:
+      - ["{180 - a}", "That is angle B. Angle C is opposite A, and opposite angles are equal."]
+    explain: "A + B = 180° and B + C = 180° (co-interior angles), so C = A = {a}°."
+  - q: "ABCD is a parallelogram and angle A = {a}°. What is angle B, in degrees?"
+    vars: { a: "40..140" }
+    where: "a != 90"
+    answer: "{180 - a}"
+    feedback:
+      - ["{a}", "That is angle C. Angle B is next to A, between the same parallel lines: A + B = 180°."]
+    explain: "A and B are co-interior angles between the parallel sides AD and BC, so B = 180 − {a} = {180 - a}°."
+  - q: "ABCD is a parallelogram. Angle A = ({m}x + {k})° and angle C = ({n}x − {j})°. Find x."
+    vars: { m: "2..3", n: "4..5", k: "5..20", j: "5..20" }
+    answer: "{(k + j) / (n - m)}"
+    where: "(k + j) % (n - m) = 0"
+    explain: "Opposite angles are equal: {m}x + {k} = {n}x − {j}, so {k + j} = {n - m}x and x = {(k + j) / (n - m)}."
+  - q: "A triangle has angles {a}° and {b}°. One side is extended at the third corner, making an exterior angle x. What is x, in degrees?"
+    vars: { a: "25..80", b: "25..80" }
+    answer: "{a + b}"
+    feedback:
+      - ["{180 - a - b}", "That is the third angle inside. x is on a straight line with it: x = 180 − {180 - a - b}."]
+    explain: "c = 180 − {a} − {b} = {180 - a - b}° (angles in a triangle), x = 180 − {180 - a - b} = {a + b}° (a straight line)."
+  - q: "In parallelogram ABCD with AD ∥ BC and AB ∥ DC, what is the reason for \"{s}\"?"
+    cases:
+      - { s: "angle A + angle B = 180°" }
+      - { s: "angle B + angle C = 180°" }
+      - { s: "angle C + angle D = 180°" }
+      - { s: "angle D + angle A = 180°" }
+    choices: ["Co-interior angles between parallel lines add to 180°", ["Alternate angles are equal", "Alternate angles are equal, they do not add to 180°."], ["Vertically opposite angles are equal", "The two angles are not vertically opposite."]]
+    explain: "Each pair sits between a pair of parallel sides, on the same side of the transversal: co-interior angles."

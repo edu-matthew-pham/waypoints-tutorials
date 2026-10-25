@@ -1,0 +1,43 @@
+summary: "Students find the surface area of a composite object by counting only the faces on the outside: joined faces are hidden and a hole adds an inside surface (AC9M10M01, node 2)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can say which faces of a composite object are on the outside.
+  - I can leave out the faces that are joined.
+  - I can add the inside surface of a hole.
+struggle: "Adding every face of every solid. Ask: can a painter reach this face?"
+before: |
+  Students need Break it into solids and Surface area from nets (Year 9). This is a hinge lesson: the folded easier questions let students count the flat circles first.
+
+  The one idea: the surface area is the outside faces only. Joined faces are hidden (counted for neither solid), and a hole adds an inside surface.
+
+  The curved face of a cone, πrl, is given as a fact, like the cone's volume in the last lesson. The slant length is the long side of the right-angled triangle inside the cone, so Pythagoras (Year 8) finds it when it isn't given. Students often use the height instead of the slant length; ask which one is along the sloping side.
+
+  All sizes are made up. The silo's base sits on the ground and is not painted; a real silo has a base too, but nobody paints it.
+running:
+  - "Predict: show of hands before the check. Those who chose 116 counted the join; 104 counted the ground."
+  - "Run: hold up a paper cone and cut it open along the slant to show the fan; the arc length is the circumference of the base."
+  - "Paper: the pipe in Investigate and the silo in Make are worked on paper first. Look for faces chosen before any calculating."
+stuck:
+  - see: "A student gets 116.2 m² for the silo."
+    ask: "Where the cone sits on the cylinder, can a painter reach that circle?"
+    fix: "No. Both joined circles are hidden. Paint the wall and the roof only."
+  - see: "A student uses 1.5 (the height) in πrl for the roof."
+    ask: "Is the height the distance along the sloping side?"
+    fix: "No. l is along the slope: 2.5 m."
+  - see: "A student gets 6.8 m² for the pipe."
+    ask: "Can a painter reach the inside of the hole?"
+    fix: "Yes. A hole adds an inside surface: 2 × 3.14 × 0.4 × 2."
+stretch: "Fill in a square hole through a cube with a cube cap: does the surface area change by the same amount as the volume? What changes if the hole is wider?"
+support: "A printed silo with the five faces labelled and a tick or cross for painted."
+leads: |
+  Continues AC9M10M01 node 2.
+
+  Where it leads: Volume of composite objects and the modelling task, then Year 10 measurement error.
+exit:
+  q: "A box stands on top of a bigger box. Why is the surface area of the stack less than the two boxes' surface areas added together?"
+  a: "The face where they touch is hidden on both, so it counts for neither."
+explain: |
+  The surface area of a composite object is just the outside faces. Where two solids join, the faces that touch are hidden, so they are left out.
+
+  A hole through a solid takes away two faces but adds an inside wall, so the surface area can go up.

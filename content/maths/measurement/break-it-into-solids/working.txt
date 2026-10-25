@@ -1,0 +1,8 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+The silo is a cylinder (radius 2 m, height 6 m) with a cone roof (radius 2 m, height 1.5 m).
+Cylinder: V = 3.14 × 2² × 6 = 75.36 m³.
+Cone: V = 3.14 × 2² × 1.5 = 18.84 m³.
+Total: 75.36 + 18.84 = 94.2 m³.
+# endregion

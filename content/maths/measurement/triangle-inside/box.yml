@@ -1,0 +1,24 @@
+# Boards for "The triangle inside". The space3d board's diagonal view: a box from the origin to P, with the floor
+# diagonal and the space diagonal and the standing right-angled triangle shaded.
+
+# region: run
+widget: space3d
+size: 6
+box: on
+diagonal: on
+slider x: 1, 6, 3, 1
+slider y: 1, 6, 4, 1
+slider z: 1, 6, 2, 1
+# endregion
+
+# region: vary
+widget: space3d
+size: 10
+box: on
+diagonal: on
+scale: 10
+units: cm
+slider x: 1, 10, 8, 1
+slider y: 1, 10, 5, 1
+slider z: 1, 10, 3, 1
+# endregion

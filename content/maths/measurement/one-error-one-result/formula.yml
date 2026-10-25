@@ -1,0 +1,34 @@
+# Boards for "One error, one result". Each slider value is a reading to the nearest 0.1 m, so it can be out by 0.05 m
+# either way; the board shows the lowest and highest the result could be.
+
+# region: run
+widget: formula
+formula: A = lw
+slider l: 3, 5, 3.5, 0.1
+slider w: 2, 4, 2.5, 0.1
+accuracy: 0.1
+# endregion
+
+# region: explain
+widget: formula
+formula: A = lw
+slider l: 3, 5, 3.5, 0.1
+slider w: 2, 4, 2.5, 0.1
+accuracy: 0.1
+# endregion
+
+# region: pic
+widget: formula
+formula: A = lw
+slider l: 3, 5, 4, 0.1
+slider w: 2, 4, 3, 0.1
+accuracy: 0.1
+# endregion
+
+# region: perim
+widget: formula
+formula: P = 2l + 2w
+slider l: 3, 5, 3.5, 0.1
+slider w: 2, 4, 2.5, 0.1
+accuracy: 0.1
+# endregion

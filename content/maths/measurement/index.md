@@ -16,4 +16,8 @@ units:
   - { id: models9, title: Proportion and rate models, summary: "Setting up, solving and judging a model of a proportion or a rate, with a bushwalk and a holiday as the examples (Year 9)." }
   - { id: time, title: Time zones, summary: "Changing times between time zones, and when flights land." }
   - { id: logs10, title: Log scales, summary: "One step on a log scale is a multiplication, not an addition: earthquake magnitudes and decibels, then a ruler that fits a blood cell and the distance to the Sun (Year 10)." }
+  - { id: composite10, title: Composite solids, summary: "Break an object into cylinders, cones and boxes, find its volume by adding or taking away, and its surface area from the faces you can see (Year 10)." }
+  - { id: error10, title: "Measurement error", summary: "Where an error comes from, how one measurement's error moves a calculated result, and how errors build up over many steps (Year 10)." }
+  - { id: trig10, title: "Trigonometry in practice", summary: "Angles of elevation and depression, bearings, and the right-angled triangle inside a 3D shape (Year 10)." }
+  - { id: scale10, title: "Scale", summary: "Scale factors between a plan or model and the real thing, and using a scaled plan to decide whether something fits (Year 10)." }
 ---

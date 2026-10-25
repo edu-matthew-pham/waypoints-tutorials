@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam measures a 30 m fence by laying a 1 m ruler end to end, 30 times.
+Each time he marks the end of the ruler he could be out by up to 1 cm.
+So the whole fence could be out by 1 cm.
+He writes the fence as 30.00 m, to the nearest centimetre.
+# endregion

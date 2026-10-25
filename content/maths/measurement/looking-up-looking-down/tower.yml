@@ -1,0 +1,22 @@
+# Boards for "Looking up, looking down". The trig board's elevation view: a tower of height h, a target on the level
+# ground at distance h ÷ tan t, and the two equal angles (depression at the top, elevation at the bottom).
+
+# region: run
+widget: trig
+view: elevation
+look: down
+units: m
+slider t: 5, 60, 20, 1
+slider h: 2, 20, 4, 1
+show: tan
+# endregion
+
+# region: vary
+widget: trig
+view: elevation
+look: up
+units: m
+slider t: 5, 80, 35, 1
+slider h: 10, 100, 40, 5
+show: tan
+# endregion

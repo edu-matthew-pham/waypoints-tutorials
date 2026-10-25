@@ -10,6 +10,19 @@
 // state: { scope: { vars: { t (marked angle), h (hypotenuse), o (opposite), a (adjacent), s (sin), c (cos),
 //   n (tan), w (1 when viewed from the other angle) } } }  Ratios to 3 decimal places, sides to 2.
 // Checks: "t = 35 and h = 10", "t = 45", "w = 1", "h = 5".
+//
+// Two more views (Year 10), same sliders t and h, drawn differently. The default view is the triangle above.
+//   view: elevation   a high point and a low point joined by a line of sight. h = the height (up to 200), t = the angle
+//                     (5 to 85) that the line of sight makes with the horizontal. The angle of depression at the top and
+//                     the angle of elevation at the bottom are drawn together, equal. The distance is h ÷ tan t.
+//                     look: down | up   who is looking (the eye sits at the top, or at the bottom); units: m
+//                     show: sin, cos, tan  works as in the triangle view (default: tan; opposite = height, adjacent = distance)
+//   view: bearing     a north line, a distance h (up to 5000) at a bearing t (0 to 360, clockwise from north), with its
+//                     north and east parts. show: north, east  adds a line for each part (default: none).
+// view: elevation state: scope vars t (angle), h (height), d (distance along the ground), l (line of sight), o, a, s, c,
+//   n (as in the triangle view: o = height, a = d), w = 0.   Checks: "t = 8 and h = 6".
+// view: bearing state: scope vars t (bearing), h (distance), n (north part, negative = south), e (east part, negative =
+//   west).   Checks: "t = 40 and h = 600", "t = 225".
 (function (B) {
   'use strict';
   var spec = null, vars = {}, ui = {};
@@ -29,22 +42,103 @@
     NAMES.forEach(function (n) { if (s[n] !== undefined) { if (s.sl[n]) throw new Error(n + ': a slider or a value, not both.'); s.fixed[n] = nums(s[n], n)[0]; } });
     NAMES.forEach(function (n) { if (!s.sl[n] && s.fixed[n] === undefined) throw new Error(n + ': needs a slider or a value.'); });
     var hi = function (n) { return s.sl[n] ? s.sl[n].max : s.fixed[n]; }, lo = function (n) { return s.sl[n] ? s.sl[n].min : s.fixed[n]; };
-    if (lo('t') < 5 || hi('t') > 85) throw new Error('t: an angle from 5 to 85 degrees.');
-    if (lo('h') <= 0 || hi('h') > 20) throw new Error('h: more than 0, up to 20.');
+    s.view = String(s.view || 'triangle').trim().toLowerCase();
+    if (['triangle', 'elevation', 'bearing'].indexOf(s.view) < 0) throw new Error('view: triangle, elevation or bearing.');
+    var tlo = s.view === 'bearing' ? 0 : 5, thi = s.view === 'bearing' ? 360 : 85, hlim = s.view === 'bearing' ? 5000 : s.view === 'elevation' ? 200 : 20;
+    if (lo('t') < tlo || hi('t') > thi) throw new Error('t: ' + (s.view === 'bearing' ? 'a bearing from 0 to 360 degrees.' : 'an angle from 5 to 85 degrees.'));
+    if (lo('h') <= 0 || hi('h') > hlim) throw new Error('h: more than 0, up to ' + hlim + '.');
+    s.look = /^up$/i.test(String(s.look || '').trim()) ? 'up' : 'down';
     s.u = s.units ? String(s.units).trim() : '';
-    s.rows = (s.show ? String(s.show).split(',').map(function (x) { return x.trim().toLowerCase(); }) : ['sin', 'cos', 'tan']).filter(function (x) { return ['sin', 'cos', 'tan'].indexOf(x) >= 0; });
-    if (!s.rows.length && !/^none$/i.test(String(s.show || '').trim())) throw new Error('show: use sin, cos and/or tan, or none.');
-    s.sw = /^(on|yes|true)$/i.test(String(s.switch || '').trim());
+    var okRows = s.view === 'bearing' ? ['north', 'east'] : ['sin', 'cos', 'tan'], dflt = s.view === 'bearing' ? [] : s.view === 'elevation' ? ['tan'] : ['sin', 'cos', 'tan'];
+    s.rows = (s.show ? String(s.show).split(',').map(function (x) { return x.trim().toLowerCase(); }) : dflt).filter(function (x) { return okRows.indexOf(x) >= 0; });
+    if (!s.rows.length && s.show && !/^none$/i.test(String(s.show).trim())) throw new Error('show: use ' + okRows.join(' and/or ') + ', or none.');
+    if (!s.rows.length && !s.show && s.view === 'triangle') throw new Error('show: use sin, cos and/or tan, or none.');
+    s.sw = s.view === 'triangle' && /^(on|yes|true)$/i.test(String(s.switch || '').trim());
   }
 
   function calc() {
     var t = vars.t, h = vars.h, w = vars.w ? 1 : 0, rad = t * Math.PI / 180;
+    if (spec.view === 'elevation') {   // h is the height; the triangle's angle is at the bottom (equal to the angle of depression at the top)
+      var dd = h / Math.tan(rad), ll = h / Math.sin(rad);
+      return { T: t, ht: h, h: ll, o: h, a: dd, w: 0, base: { o: h, a: dd }, s: Math.sin(rad), c: Math.cos(rad), n: Math.tan(rad) };
+    }
+    if (spec.view === 'bearing') return { T: t, h: h, w: 0, N: h * Math.cos(rad), E: h * Math.sin(rad) };
     var base = { o: h * Math.sin(rad), a: h * Math.cos(rad) };   // for the angle t at the left corner
     var T = w ? 90 - t : t, o = w ? base.a : base.o, a = w ? base.o : base.a;
     return { T: T, h: h, o: o, a: a, w: w, base: base, s: o / h, c: a / h, n: o / a };
   }
 
+  var z2 = function (v) { return Math.round(v * 100) / 100 + 0; };   // no negative zero
+  var bearingText = function (v) { var q = String(Math.round(v)); while (q.length < 3) q = '0' + q; return q; };
+  function lab(board, fx, x, y, str, col, ax, ay, size) { return board.create('text', [x, y, str], Object.assign({ anchorX: ax, anchorY: ay, cssClass: 'tside', highlightCssClass: 'tside', strokeColor: col, fontSize: size || 15 }, fx)); }
+
+  // view: elevation. The tower is on the left (height h), the target on the ground at distance h ÷ tan t.
+  function buildElev() {
+    var ink = B.css('--ink') || '#1d2430', blue = B.css('--left') || '#2f6fb3', orange = B.css('--accent') || '#c2570a', purple = B.css('--right') || '#8a4fb8', muted = B.css('--muted') || '#5d6675';
+    var k = calc(), d = k.a, ht = k.o, span = Math.max(d, ht), u = spec.u ? ' ' + spec.u : '', down = spec.look !== 'up';
+    var board = B.jsx({ boundingbox: [-0.24 * span, ht + 0.2 * span, d + 0.16 * span, -0.14 * span], keepAspectRatio: true });
+    var fx = { fixed: true, highlight: false };
+    var H = [0, ht], S = [d, 0], F = [0, 0], rad = vars.t * Math.PI / 180;
+    board.create('segment', [[-0.1 * span, 0], [d + 0.1 * span, 0]], Object.assign({ strokeColor: ink, strokeWidth: 2 }, fx));
+    board.create('segment', [H, [d + 0.08 * span, ht]], Object.assign({ strokeColor: muted, strokeWidth: 1.5, dash: 2 }, fx));
+    board.create('segment', [F, H], Object.assign({ strokeColor: blue, strokeWidth: 5 }, fx));
+    board.create('segment', [F, S], Object.assign({ strokeColor: purple, strokeWidth: 5, dash: 0 }, fx));
+    board.create('segment', [H, S], Object.assign({ strokeColor: orange, strokeWidth: 3 }, fx));
+    var z = 0.05 * span;
+    board.create('polygon', [[0, 0], [z, 0], [z, z], [0, z]], Object.assign({ fillOpacity: 0, borders: { strokeColor: ink, strokeWidth: 1.5, highlight: false }, vertices: { visible: false } }, fx));
+    // the two equal angles: depression at the top (below the horizontal), elevation at the bottom (above the ground)
+    var ra = Math.min(0.3 * d, 0.45 * ht + 0.1 * span);
+    board.create('arc', [H, [ra * Math.cos(rad), ht - ra * Math.sin(rad)], [ra, ht]], Object.assign({ strokeColor: ink, strokeWidth: down ? 3 : 1.5 }, fx));
+    board.create('arc', [S, [d - ra * Math.cos(rad), ra * Math.sin(rad)], [d - ra, 0]], Object.assign({ strokeColor: ink, strokeWidth: down ? 1.5 : 3 }, fx));
+    lab(board, fx, ra + 0.03 * span, ht + 0.02 * span, B.fmt(r2(vars.t)) + '° depression', ink, 'left', 'bottom', down ? 15 : 13);
+    lab(board, fx, d - ra - 0.03 * span, -0.02 * span, B.fmt(r2(vars.t)) + '° elevation', ink, 'right', 'top', down ? 13 : 15);
+    // the eye, and the thing looked at
+    var eye = down ? H : S, tgt = down ? S : H;
+    board.create('point', eye, { name: '', size: 6, fillColor: ink, strokeColor: ink, fixed: true, highlight: false, showInfobox: false });
+    board.create('point', tgt, { name: '', size: 6, fillColor: '#fff', strokeColor: ink, strokeWidth: 2, fixed: true, highlight: false, showInfobox: false });
+    lab(board, fx, eye[0] + (down ? -0.02 : 0.02) * span, eye[1] + 0.03 * span, 'eye', ink, down ? 'right' : 'left', 'bottom', 14);
+    lab(board, fx, tgt[0] + (down ? 0.02 : -0.02) * span, tgt[1] + 0.03 * span, 'target', ink, down ? 'left' : 'right', 'bottom', 14);
+    lab(board, fx, -0.03 * span, ht / 2, 'height ' + B.fmt(r2(ht)) + u, blue, 'right', 'middle');
+    lab(board, fx, d / 2, -0.07 * span, 'distance ' + B.fmt(r2(d)) + u, purple, 'middle', 'top');
+    var nx = ht / k.h, ny = d / k.h;   // a step away from the line of sight, up and to the right
+    lab(board, fx, d / 2 + 0.05 * span * nx, ht / 2 + 0.05 * span * ny, 'line of sight ' + B.fmt(r2(k.h)) + u, orange, 'left', 'bottom');
+    board.update();
+  }
+
+  // view: bearing. The start is at the middle; north is up; the bearing is turned clockwise from north.
+  function buildBear() {
+    var ink = B.css('--ink') || '#1d2430', blue = B.css('--left') || '#2f6fb3', orange = B.css('--accent') || '#c2570a', purple = B.css('--right') || '#8a4fb8', muted = B.css('--muted') || '#5d6675';
+    var k = calc(), R = k.h, N = k.N, E = k.E, u = spec.u ? ' ' + spec.u : '', rad = vars.t * Math.PI / 180;
+    var board = B.jsx({ boundingbox: [-1.45 * R, 1.4 * R, 1.45 * R, -1.4 * R], keepAspectRatio: true });
+    var fx = { fixed: true, highlight: false }, P = [E, N], A = [0, N], big = Math.abs(N) > 1e-9 * R, wide = Math.abs(E) > 1e-9 * R;
+    board.create('circle', [[0, 0], R], Object.assign({ strokeColor: muted, strokeWidth: 1, dash: 2, fillColor: 'none' }, fx));
+    board.create('segment', [[-1.15 * R, 0], [1.15 * R, 0]], Object.assign({ strokeColor: muted, strokeWidth: 1 }, fx));
+    board.create('segment', [[0, -1.15 * R], [0, 1.15 * R]], Object.assign({ strokeColor: ink, strokeWidth: 2, dash: 2 }, fx));
+    [['N', 0, 1.27], ['E', 1.27, 0], ['S', 0, -1.27], ['W', -1.27, 0]].forEach(function (c) { lab(board, fx, c[1] * R, c[2] * R, c[0], c[0] === 'N' ? ink : muted, 'middle', 'middle', c[0] === 'N' ? 18 : 15); });
+    if (big) board.create('segment', [[0, 0], A], Object.assign({ strokeColor: blue, strokeWidth: 4 }, fx));
+    if (wide) board.create('segment', [A, P], Object.assign({ strokeColor: purple, strokeWidth: 4 }, fx));
+    board.create('segment', [[0, 0], P], Object.assign({ strokeColor: orange, strokeWidth: 3 }, fx));
+    if (big && wide) {
+      var zz = 0.06 * R, sx = E > 0 ? 1 : -1, sy = N > 0 ? -1 : 1;
+      board.create('polygon', [A, [sx * zz, N], [sx * zz, N + sy * zz], [0, N + sy * zz]], Object.assign({ fillOpacity: 0, borders: { strokeColor: ink, strokeWidth: 1.5, highlight: false }, vertices: { visible: false } }, fx));
+    }
+    var t = vars.t % 360;
+    if (t !== 0) {
+      var ra = 0.3 * R, mid = (t / 2) * Math.PI / 180;
+      board.create('arc', [[0, 0], [ra * Math.sin(rad), ra * Math.cos(rad)], [0, ra]], Object.assign({ strokeColor: ink, strokeWidth: 2.5 }, fx));
+      lab(board, fx, 0.46 * R * Math.sin(mid), 0.46 * R * Math.cos(mid), bearingText(vars.t) + '°', ink, 'middle', 'middle', 15);
+    }
+    board.create('point', [0, 0], { name: '', size: 6, fillColor: ink, strokeColor: ink, fixed: true, highlight: false, showInfobox: false });
+    board.create('point', P, { name: '', size: 6, fillColor: '#fff', strokeColor: ink, strokeWidth: 2, fixed: true, highlight: false, showInfobox: false });
+    if (big) lab(board, fx, -0.03 * R, N / 2, (N >= 0 ? 'north ' : 'south ') + B.fmt(r2(Math.abs(N))) + u, blue, 'right', 'middle');
+    if (wide) lab(board, fx, E / 2, N + (N >= 0 ? 0.04 : -0.07) * R, (E >= 0 ? 'east ' : 'west ') + B.fmt(r2(Math.abs(E))) + u, purple, 'middle', N >= 0 ? 'bottom' : 'top');
+    lab(board, fx, E / 2 + 0.04 * R * (E >= 0 ? 1 : -1), N / 2 - 0.04 * R * (N >= 0 ? 1 : -1), B.fmt(r2(R)) + u, orange, E >= 0 ? 'left' : 'right', N >= 0 ? 'top' : 'bottom');
+    board.update();
+  }
+
   function build() {
+    if (spec.view === 'elevation') return buildElev();
+    if (spec.view === 'bearing') return buildBear();
     var ink = B.css('--ink') || '#1d2430', blue = B.css('--left') || '#2f6fb3', orange = B.css('--accent') || '#c2570a', purple = B.css('--right') || '#8a4fb8';
     var k = calc(), hmax = spec.sl.h ? spec.sl.h.max : spec.fixed.h, rad = vars.t * Math.PI / 180;
     var W = hmax * Math.cos(rad), H = hmax * Math.sin(rad);
@@ -78,13 +172,14 @@
     ui.work = document.createElement('p'); ui.work.className = 'rulework'; ui.work.id = 'gsum'; ui.work.setAttribute('aria-live', 'polite'); panel.appendChild(ui.work);
     ui.note = document.createElement('p'); ui.note.className = 'tcount'; ui.note.setAttribute('aria-live', 'polite'); panel.appendChild(ui.note);
     var label = { t: 'the angle', h: 'the size (hypotenuse)' };
+    var what = function (n) { var v = spec.view; return n === 't' ? (v === 'bearing' ? 'the bearing' : 'the angle') : (v === 'elevation' ? 'the height' : v === 'bearing' ? 'the distance' : 'the triangle'); };
     NAMES.forEach(function (n) {
       var sl = spec.sl[n]; if (!sl) return;
       var row = document.createElement('div'); row.className = 'srow';
       var lab = document.createElement('label'); lab.className = 'vname'; lab.textContent = n; lab.htmlFor = 'sl-' + n;
-      var minus = document.createElement('button'); minus.type = 'button'; minus.textContent = '−'; minus.setAttribute('aria-label', n === 't' ? 'Make the angle smaller' : 'Make the triangle smaller');
+      var minus = document.createElement('button'); minus.type = 'button'; minus.textContent = '−'; minus.setAttribute('aria-label', 'Make ' + what(n) + ' smaller');
       var r = document.createElement('input'); r.type = 'range'; r.id = 'sl-' + n; r.min = sl.min; r.max = sl.max; r.step = sl.step; r.value = vars[n];
-      var plus = document.createElement('button'); plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', n === 't' ? 'Make the angle bigger' : 'Make the triangle bigger');
+      var plus = document.createElement('button'); plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', 'Make ' + what(n) + ' bigger');
       var out = document.createElement('output'); out.htmlFor = r.id;
       var set = function (v) { v = Math.max(sl.min, Math.min(sl.max, r2(sl.min + Math.round((v - sl.min) / sl.step) * sl.step))); vars[n] = v; r.value = v; B.moved = true; build(); report(); };
       r.addEventListener('input', function () { set(Number(r.value)); });
@@ -110,6 +205,7 @@
   function report() {
     var k = calc(), f = function (v) { return B.fmt(r2(v)); };
     ui.outs.forEach(function (x) { x.out.textContent = x.n + ' = ' + B.fmt(vars[x.n]) + (x.n === 't' ? '°' : ''); });
+    if (spec.view === 'bearing') return reportBearing(k);
     var line = {
       sin: 'sin ' + f(k.T) + '° = opposite ÷ hypotenuse = ' + f(k.o) + ' ÷ ' + f(k.h) + ' = ' + B.fmt(r3(k.s)),
       cos: 'cos ' + f(k.T) + '° = adjacent ÷ hypotenuse = ' + f(k.a) + ' ÷ ' + f(k.h) + ' = ' + B.fmt(r3(k.c)),
@@ -117,10 +213,28 @@
     };
     spec.rows.forEach(function (name) { ui.rows[name].textContent = line[name]; });
     ui.work.textContent = 'Marked angle ' + f(k.T) + '°: opposite ' + f(k.o) + ', adjacent ' + f(k.a) + ', hypotenuse ' + f(k.h) + (spec.u ? ' ' + spec.u : '');
-    ui.note.textContent = spec.rows.length ? 'Change the size and the ratios stay put. Change the angle and they move.' : 'The sloping side is the hypotenuse. The other two are named from the marked angle.';
+    if (spec.view === 'elevation') ui.work.textContent = 'Angle ' + f(k.T) + '°: height ' + f(k.o) + ', distance ' + f(k.a) + ', line of sight ' + f(k.h) + (spec.u ? ' ' + spec.u : '');
+    ui.note.textContent = spec.view === 'elevation' ? 'The angle of depression from the top and the angle of elevation from the bottom are the same size.' : spec.rows.length ? 'Change the size and the ratios stay put. Change the angle and they move.' : 'The sloping side is the hypotenuse. The other two are named from the marked angle.';
     B.say(ui.work.textContent + ". " + spec.rows.map(function (n) { return line[n]; }).join('. '));
     B.save({ vars: vars });
-    B.post({ scope: { vars: { t: r2(k.T), h: r2(k.h), o: r2(k.o), a: r2(k.a), s: r3(k.s), c: r3(k.c), n: r3(k.n), w: k.w }, points: {} } }, ui.work.textContent);
+    var sv = { t: r2(k.T), h: spec.view === 'elevation' ? r2(k.ht) : r2(k.h), o: r2(k.o), a: r2(k.a), s: r3(k.s), c: r3(k.c), n: r3(k.n), w: k.w };
+    if (spec.view === 'elevation') { sv.d = r2(k.a); sv.l = r2(k.h); }
+    B.post({ scope: { vars: sv, points: {} } }, ui.work.textContent);
+  }
+
+  function reportBearing(k) {
+    var f = function (v) { return B.fmt(z2(v)); }, u = spec.u ? ' ' + spec.u : '', b = bearingText(vars.t);
+    var np = z2(k.N), ep = z2(k.E);
+    var line = {
+      north: 'north part = distance × cos(bearing) = ' + f(vars.h) + ' × cos ' + f(vars.t) + '° = ' + f(np) + u + (np < 0 ? ' (negative: that is south)' : ''),
+      east: 'east part = distance × sin(bearing) = ' + f(vars.h) + ' × sin ' + f(vars.t) + '° = ' + f(ep) + u + (ep < 0 ? ' (negative: that is west)' : ''),
+    };
+    spec.rows.forEach(function (name) { ui.rows[name].textContent = line[name]; });
+    ui.work.textContent = 'Bearing ' + b + '°, ' + f(vars.h) + u + ' away: ' + f(Math.abs(np)) + u + (np < 0 ? ' south' : ' north') + ' and ' + f(Math.abs(ep)) + u + (ep < 0 ? ' west' : ' east');
+    ui.note.textContent = 'A bearing is measured clockwise from north, in three figures.';
+    B.say(ui.work.textContent + '. ' + spec.rows.map(function (n) { return line[n]; }).join('. '));
+    B.save({ vars: vars });
+    B.post({ scope: { vars: { t: z2(vars.t), h: z2(vars.h), n: np, e: ep }, points: {} } }, ui.work.textContent);
   }
 
   B.widget('trig', {

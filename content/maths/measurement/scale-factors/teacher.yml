@@ -1,0 +1,41 @@
+summary: "Students find the scale factor between a model or plan and the real thing and convert both ways: multiply to go from the plan to the real thing, divide to go back, and change units last. They check that areas use the scale factor squared (AC9M10M05, node 1)."
+time: 40
+timing: "Predict and Run 7 min · Investigate 14 min · Modify 8 min · Practise and Make 11 min"
+goals:
+  - I can find the scale factor from two matching lengths.
+  - I can go from a plan to the real thing and back.
+  - I can change units after converting.
+struggle: "Dividing when the real thing is bigger. Ask: is the real bed bigger or smaller than the one on the plan?"
+before: |
+  Students need What enlargement keeps and Scale factors for area and volume (Year 9).
+
+  This is a hinge lesson: scale factor mistakes carry into reading plans and modelling. The two common slips are the direction (Ivy's working) and forgetting to change units: 200 cm is 2 m, not 200 m.
+
+  The plan, car and map are made up for the task. The map scale in Modify (1 : 20 000) is an example, not a particular map.
+running:
+  - "Predict: show of hands. Those who pick 200 m forgot the units; those who pick 0.02 m divided."
+  - "Paper: the 1 : 50 wall after the worked example and the bedroom area in Make are worked on paper first."
+  - "Modify: for the map, ask first how many centimetres are in a kilometre."
+stuck:
+  - see: "A student divides 5 by 50 for a plan to real conversion."
+    ask: "Is the real wall bigger or smaller than the plan?"
+    fix: "Bigger, so multiply."
+  - see: "A student answers 200 m for the bed."
+    ask: "What unit is 2 × 100 in?"
+    fix: "Centimetres. 200 cm is 2 m."
+  - see: "A student multiplies a plan area by 100."
+    ask: "What are the real sides? Multiply them."
+    fix: "Areas use the scale factor squared, or find the real sides first."
+stretch: "A model is made at 1 : 10. How many times as much paint does the real thing need, and how many times as heavy is it?"
+support: "A conversion strip: plan cm, times the scale, real cm, then metres."
+leads: |
+  Starts AC9M10M05.
+
+  Where it leads: reading a scaled plan to decide whether things fit (next lesson), then a modelling task.
+exit:
+  q: "At 1 : 200 a building is 6.5 cm on the plan. How long is the building in metres?"
+  a: "6.5 × 200 = 1300 cm = 13 m."
+explain: |
+  A scale such as 1 : 100 is a scale factor of 100. Plan to real: multiply by it. Real to plan: divide by it. Change units last, because the answer comes out in the plan's unit.
+
+  Areas use the scale factor squared, so a plan area of 12 cm² at 1 : 100 is 12 m².

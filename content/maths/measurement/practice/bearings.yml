@@ -1,0 +1,18 @@
+# Practice for "Bearings".
+templates:
+  - q: "A walker goes {d} m on a bearing of 090°. How far east is she? (metres)"
+    vars: { d: "50..500" }
+    answer: "{d}"
+    explain: "090° is due east, so all {d} m are east."
+  - q: "A boat sails {d} km on a bearing of 000°. How far north does it go? (km)"
+    vars: { d: "10..90" }
+    answer: "{d}"
+    explain: "000° is due north, so all {d} km are north."
+  - q: "A walker goes {n} m north and then {n} m east. What is her bearing from the start? (degrees)"
+    vars: { n: "100..400" }
+    answer: "45"
+    explain: "Equal north and east parts: tan t = 1, so the bearing is 045°."
+  - q: "A leg is {2 * d} m long on a bearing of 030°. How far east is it? Use sin 30° = 0.5. (metres)"
+    vars: { d: "50..300" }
+    answer: "{d}"
+    explain: "East is opposite the 30° angle: {2 * d} × 0.5 = {d} m."
