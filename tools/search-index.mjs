@@ -119,6 +119,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'Behind the scenes', u: 'behind-the-scenes/', d: 'How a lesson is made and checked.' },
     { t: 'Check your school', u: 'check/', d: 'Can your school devices and network run the in-browser Python lessons?' },
     { t: 'Choosing AI tools for learning', u: 'choosing-ai-tools/', d: 'A teacher guide to comparing AI tools fairly.' },
+    { t: 'For science teachers', u: 'science-teachers/', d: 'How the science boards sit beside class practicals, and a draft list of common Year 7 to 10 practicals to correct.' },
     { t: 'For maths teachers', u: 'maths-teachers/', d: 'What is here for Years 7 and 8 maths and a ten-minute tour.' },
   ]) add({ ...p, s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', k: `${p.t} ${p.d} teacher teachers` });
   return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel };
