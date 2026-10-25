@@ -1,0 +1,22 @@
+# Boards for "Recognising a quadratic". Handshake counts, then y = ax² with its table.
+
+# region: run
+widget: graph
+x: 0, 9
+y: -2, 40
+grid: 1, 5
+axes: People, Handshakes
+snap: 1
+series Handshakes: 1,0; 2,1; 3,3; 4,6; 5,10; 6,15; 7,21; 8,28
+cursor R: 2
+# endregion
+
+# region: vary
+widget: graph
+x: -1, 6
+y: -2, 90
+grid: 1, 10
+slider a: 0, 3, 1, 1
+plot: y = ax^2, from 0
+table: 0, 1, 2, 3, 4, 5
+# endregion

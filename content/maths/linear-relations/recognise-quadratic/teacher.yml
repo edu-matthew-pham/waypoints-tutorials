@@ -1,0 +1,39 @@
+summary: "Students recognise a quadratic from the constant second differences of a table or from an x² in the equation (AC9M9A04, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can find first and second differences of a table.
+  - I can tell a linear table from a quadratic one.
+  - I can use the second differences to carry on a quadratic pattern.
+struggle: "Stopping at the first differences. Ask: are the first differences equal? If not, what do you do next?"
+before: |
+  Students need Plotting a rule from Year 7.
+
+  The one idea: equal first differences make a line, and equal second differences make a quadratic. The common mistake is stopping when the first differences aren't equal (Sam's working).
+
+  The handshake counts are a number pattern. Nothing here is a measurement.
+running:
+  - "Predict: take a show of hands. Those who chose 13 or 14 kept adding 3 or 4, as if the pattern were steady."
+  - "Run: ask students to say how much each new person adds."
+  - "Paper: the try-one after the worked example and the 8 people in Make are worked on paper first. Books out, and look for a row of first differences."
+  - "Modify: before the second task, ask what the second difference is for a = 1 and a = 2."
+stuck:
+  - see: "A student says a table isn't quadratic because the first differences aren't equal."
+    ask: "What happens if you take the differences again?"
+    fix: "Equal second differences make it quadratic."
+  - see: "A student thinks y = 3x + 2 is quadratic because it goes up."
+    ask: "What power of x is there?"
+    fix: "Only x to the power 1: a straight line."
+stretch: "Show that the second difference of y = ax² is always 2a."
+support: "A printed table with empty rows for the first and second differences."
+leads: |
+  Continues AC9M9A04 node 1.
+
+  Where it leads: graphing a quadratic next, and modelling stopping distances later in the unit.
+exit:
+  q: "A table gives y = 2, 6, 12, 20 for x = 1, 2, 3, 4. Linear, quadratic or neither?"
+  a: "Quadratic: first differences 4, 6, 8, second differences 2, 2."
+explain: |
+  A table is linear when its first differences are equal. It is quadratic when its first differences change by the same amount each time, so its second differences are equal.
+
+  A quadratic equation has x² as its highest power.

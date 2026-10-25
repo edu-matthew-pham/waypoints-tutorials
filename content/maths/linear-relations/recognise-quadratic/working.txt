@@ -1,0 +1,8 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+The table is y = 2, 5, 10, 17.
+First differences: 3, 5, 7
+3, 5 and 7 are not equal, so it isn't quadratic.
+It must be something else.
+# endregion
