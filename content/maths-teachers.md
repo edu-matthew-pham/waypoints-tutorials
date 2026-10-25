@@ -4,7 +4,7 @@ summary: What is here for Years 7 and 8 maths, how a lesson runs, and a ten-minu
 ---
 ## What is here
 
-Six maths courses so far, written against the Australian Curriculum (version 9) for Years 7 and 8. Each lesson teaches one step of the curriculum's own learning progression, and says which earlier steps it relies on.
+Eight maths courses so far, written against the Australian Curriculum (version 9) for Years 7 to 10 (Year 9 and 10 lessons are being added a batch at a time). Each lesson teaches one step of the curriculum's own learning progression, and says which earlier steps it relies on.
 
 - [**Algebra Foundations**](../maths/algebra/): expressions and formulas, equations (try and check, backtracking, the balance method), brackets (expanding, factorising, changing the subject), harder equations and inequalities.
 - [**Linear relations**](../maths/linear-relations/): patterns to tables to graphs, changing one variable in a formula, gradient and intercept, lines and regions, solving and modelling with lines.
