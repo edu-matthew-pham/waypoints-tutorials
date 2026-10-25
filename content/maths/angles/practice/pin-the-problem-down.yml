@@ -1,0 +1,26 @@
+# Practice for "Pin the problem down". Numbers and choices.
+templates:
+  - q: "A sprinkler's spray reaches {r} m (made up). To 1 decimal place, how long is the side of the biggest square one sprinkler covers? (The corner is the furthest point.)"
+    vars: { r: "4..14" }
+    answer: "{rd(r * 1.41421356, 1)}"
+    tolerance: 0.05
+    feedback:
+      - ["{2 * r}", "That's the width of the circle. The corner is further from the middle than the edge is."]
+      - ["{r}", "That's the radius. The square's side is longer than that."]
+    explain: "The corner is half a diagonal from the middle, s ÷ √2 = {r}, so s = {r}√2 ≈ {r * 1.41421356|f1} m."
+  - q: "A cell is {a} m wide and {b} m tall, with a sprinkler in the middle (made up). How far is the sprinkler from a corner, in metres?"
+    vars: { k: "1..9" }
+    let: { a: "6 * k", b: "8 * k" }
+    answer: "{5 * k}"
+    feedback:
+      - ["{a / 2 + b / 2}", "Add the squares of the half-sides, then take the square root: {a / 2}² + {b / 2}² = {(a / 2) ^ 2 + (b / 2) ^ 2}."]
+    explain: "The corner is {a / 2} m across and {b / 2} m along from the middle: √({a / 2}² + {b / 2}²) = {5 * k} m."
+  - q: "{s} In the pinned-down sprinkler job, what kind of piece is this?"
+    cases:
+      - { s: "The oval is 60 m long and 30 m wide.", k: "An input", w1: "An output", w2: "An assumption", e: "It's a number that goes into the problem." }
+      - { s: "The number of sprinklers and where each one goes.", k: "An output", w1: "An input", w2: "An assumption", e: "It's the answer the job has to give." }
+      - { s: "Every point of the oval is within the spray's reach of a sprinkler.", k: "What must be true", w1: "An input", w2: "An assumption", e: "A layout either meets it or it doesn't." }
+      - { s: "There is no wind to push the spray.", k: "An assumption", w1: "An input", w2: "An output", e: "It's something taken for granted, and said out loud." }
+      - { s: "The spray is a full circle on flat ground.", k: "An assumption", w1: "An output", w2: "An input", e: "It's taken for granted, not given as a number." }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "{e}"

@@ -1,0 +1,11 @@
+# Zoe's algorithm for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: zoe
+Read the oval's length L, its width W and the spray's reach r.
+Set s = 1.4 × r.
+Set cols = L ÷ s, rounded up. Set rows = W ÷ s, rounded up.
+Set w = L ÷ cols and h = W ÷ rows.
+For each row j from 1 to rows and each column i from 1 to cols:
+    put a sprinkler at x = i × w and y = j × h.
+Say how many sprinklers, and where each one is.
+# endregion

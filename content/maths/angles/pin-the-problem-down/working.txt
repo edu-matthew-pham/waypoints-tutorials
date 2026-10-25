@@ -1,0 +1,8 @@
+# Kai's pinned-down problem for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kai
+Kai pins down the oval problem.
+Input: the oval's area in square metres, and the sprinkler's radius.
+Output: the number of sprinklers.
+Rule: sprinklers = oval area ÷ the area of one sprinkler's circle.
+# endregion

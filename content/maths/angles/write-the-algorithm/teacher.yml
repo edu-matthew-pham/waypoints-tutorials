@@ -1,0 +1,45 @@
+summary: "Students turn the pinned-down sprinkler job into numbered steps with a decision and a loop, run the steps by hand on two ovals, and find a bug where a sprinkler is placed on the edge of its cell instead of the middle (AC9M10SP03, node 2)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 17 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - "I can write the steps of an algorithm exactly enough for a machine."
+  - "I can say which steps compute, which decide and which repeat."
+  - "I can run an algorithm by hand on two different inputs."
+struggle: "Rounding a count down, and putting a sprinkler on the edge of its cell. Ask: what is left over if you round down? Where is the middle of the first cell?"
+before: |
+  Do the Predict and the senior oval yourself first. Students need Pin the problem down, Pythagoras and the Year 9 idea that an algorithm has computation and decision steps.
+
+  The one idea: an algorithm is exact steps that work for any input. Here the steps cut the oval into cells no wider than 1.4 × the reach (the biggest square is about 1.41 × the reach, so 1.4 is on the safe side), with a sprinkler in the middle of each cell. A decision guards the input and a loop places one sprinkler in every cell.
+
+  The steps always cover the oval, but they don't always use the fewest sprinklers: the 11.5 m by 4 m oval in Modify needs two when one would do. That is on purpose, to show the gap. Testing awkward ovals (a curved one, a tree in the middle), finding where the algorithm fails and refining it is node 3, the class project, and isn't covered here.
+
+  The junior and senior ovals, the reach and the sizes are all made up. A flowchart or pseudocode both work; the numbered steps and the flowchart in the lesson say the same thing.
+running:
+  - "Predict: take a show of hands. Most will say 6 or 9. Ask a student to say what happens to the leftover strip."
+  - "Paper: the senior oval and the third oval are worked on paper first, a step at a time, with the steps beside you."
+  - "Investigate: ask a student to point at the loop and say what would have to be written without it."
+  - "Modify: before 11.5 m by 4 m, ask whether the algorithm will place one or two."
+  - "Make: ask whether the answer meets the success criterion, and how they know."
+stuck:
+  - see: "A student rounds 3.57 to 4 for one side and 2.14 to 2 for the other."
+    ask: "What happens to the last strip on the short side?"
+    fix: "Round both counts up: any part-cell still needs a sprinkler."
+  - see: "A student sets the cell size to s, not to L ÷ cols."
+    ask: "Do the cells fill the oval exactly?"
+    fix: "Divide each side by the rounded count, so the cells fit with no gaps."
+  - see: "A student puts the sprinkler at x = i × w."
+    ask: "Where is the middle of the first cell?"
+    fix: "Half a cell in: (i − 0.5) × w."
+stretch: "Write the same algorithm in pseudocode with a loop that reads a list of ovals and prints each count, then try a staggered layout, where every second row is shifted half a cell, and see whether it needs fewer sprinklers."
+support: "A printed copy of the seven steps and a blank table with columns for s, cols, rows, w, h and the count."
+leads: |
+  This covers AC9M10SP03 node 2.
+
+  Node 3 (testing, refining and justifying) is left to class: the project is to test this algorithm on the school's own oval, find where it fails, and refine it. Where it leads: the same habit of pinning down, then writing steps, then testing, for any spatial job.
+exit:
+  q: "A sprinkler reaches 8 m (s = 11.2). Run the algorithm on an oval 25 m long and 14 m wide. How many sprinklers does it place?"
+  a: "25 ÷ 11.2 ≈ 2.23 rounds up to 3 columns. 14 ÷ 11.2 = 1.25 rounds up to 2 rows. 3 × 2 = 6 sprinklers."
+explain: |
+  An **algorithm** is exact steps that work for any input. Some steps compute a number, one decides whether to go on, and a loop repeats the placing for every cell.
+
+  For the sprinklers: find s = 1.4 × r, count the columns and rows with each rounded up, work out the cell size, then put a sprinkler in the middle of every cell. It always covers the oval; it doesn't always use the fewest.

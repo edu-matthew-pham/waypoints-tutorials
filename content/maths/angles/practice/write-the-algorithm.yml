@@ -1,0 +1,31 @@
+# Practice for "Write the algorithm". Counts, cell sizes and step types. Spray reach 8 m, so s = 11.2.
+templates:
+  - q: "Run the algorithm on an oval {L} m long and {W} m wide (r = 8, so s = 11.2). How many sprinklers does it place?"
+    vars: { L: "14..70 by 2", W: "14..40 by 2" }
+    answer: "{ceil(L * 10 / 112) * ceil(W * 10 / 112)}"
+    feedback:
+      - ["{floor(L * 10 / 112) * floor(W * 10 / 112)}", "Round each count up: a part-cell still needs a sprinkler."]
+    explain: "{L} ÷ 11.2 rounds up to {ceil(L * 10 / 112)} columns and {W} ÷ 11.2 rounds up to {ceil(W * 10 / 112)} rows, so {ceil(L * 10 / 112)} × {ceil(W * 10 / 112)} = {ceil(L * 10 / 112) * ceil(W * 10 / 112)}."
+  - q: "The cells on an oval {L} m long are each {w} m wide (after rounding up the count). How far along the oval is the middle of the first cell, in metres?"
+    vars: { w: "6..11" }
+    let: { L: "w * 4" }
+    answer: "{w / 2}"
+    feedback:
+      - ["{w}", "That's the end of the first cell. The middle is half a cell in."]
+    explain: "(1 − 0.5) × {w} = {w / 2} m."
+  - q: "{s} Which kind of step is this?"
+    cases:
+      - { s: "Set s = 1.4 × r.", k: "A computation", w1: "A decision", w2: "A loop", e: "It finds a number." }
+      - { s: "If L, W or r is zero or less, say 'not an oval' and stop.", k: "A decision", w1: "A computation", w2: "A loop", e: "It chooses between stopping and going on." }
+      - { s: "For each row and each column, put a sprinkler in the middle of the cell.", k: "A loop", w1: "A computation", w2: "A decision", e: "It repeats the placing for every cell." }
+      - { s: "Set cols = L ÷ s, rounded up.", k: "A computation", w1: "A decision", w2: "A loop", e: "It finds a number." }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "{e}"
+  - q: "{d} With s = 11.2, which kind of test case is this oval?"
+    cases:
+      - { d: "It is exactly 11.2 m long and 11.2 m wide.", k: "A boundary case", w1: "A typical case", w2: "An odd case", e: "It sits right where the count changes from 1 to 2." }
+      - { d: "It is 40 m long and 24 m wide.", k: "A typical case", w1: "A boundary case", w2: "An odd case", e: "Nothing special: an ordinary oval." }
+      - { d: "It is 0 m long.", k: "An odd case", w1: "A typical case", w2: "A boundary case", e: "It isn't an oval at all, and the decision step catches it." }
+      - { d: "It is exactly 22.4 m long and 10 m wide.", k: "A boundary case", w1: "A typical case", w2: "An odd case", e: "22.4 is exactly two cells, right where the count changes." }
+    choices: ["{k}", "{w1}", "{w2}"]
+    explain: "{e}"

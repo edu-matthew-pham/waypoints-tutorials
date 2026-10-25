@@ -16,4 +16,5 @@ units:
   - { id: algorithms9, title: "Year 9: geometric algorithms", summary: "Writing a geometry rule as an algorithm, testing it with typical, boundary and odd cases, and refining it from the tests (Year 9)." }
   - { id: networks, title: Networks, summary: "Year 10: nodes, edges and degree, drawing a network without distances, whether every street can be driven once, and Euler's rule for solids." }
   - { id: proof10, title: "Year 10: proof", summary: "Telling a demonstration from a proof, writing a proof with a reason for every statement, and choosing the theorem that fits a problem." }
+  - { id: algorithms10, title: "Year 10: algorithms", summary: "Pinning a spatial problem down exactly and splitting it into smaller problems, then writing the steps of an algorithm with a decision and a loop and running it on two cases." }
 ---
