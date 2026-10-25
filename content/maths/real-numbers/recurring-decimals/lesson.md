@@ -29,7 +29,7 @@ explainClip:
 A fraction is a division: $\frac{3}{8} = 3 \div 8$. Doing the division gives a decimal that does one of two things:
 
 - it **terminates** (stops): $\frac{3}{8} = 0.375$;
-- it **recurs** (repeats a block of digits forever): $\frac{1}{3} = 0.333\ldots$, $\frac{1}{7} = 0.142857142857\ldots$
+- it **recurs** (repeats a block of digits forever): $\frac{2}{9} = 0.222\ldots$, $\frac{1}{7} = 0.142857142857\ldots$
 
 Long division shows why. Each step has a **remainder**, and the remainder is always less than the denominator. If a remainder is 0, the decimal stops. If not, a remainder must come back sooner or later, and from then on the same digits repeat.
 
@@ -164,6 +164,8 @@ tasks:
       answer: 0
       feedback: [null, "The 1 does not repeat.", "Only the 6 repeats.", "That is rounded, not exact."]
       explain: "Only the 6 repeats: a dot over the 6."
+    smaller:
+      check: { type: question, q: "In 0.1666…, does the 1 ever come round again?", options: ["No: it only appears once", "Yes: it keeps coming back"], answer: 0, feedback: [null, "Read the digits again: 1, then 6, 6, 6… The 1 appears once."], explain: "The 1 appears once, at the start. Only the 6 comes round and round." }
   - check:
       type: number
       q: "Review: write 3/4 as a decimal."

@@ -138,6 +138,8 @@ tasks:
         - ["7", "7 m is one side. The perimeter goes all the way round: 4 sides."]
         - ["196", "That is 4 × 49. Find the side first: √49."]
       explain: "Side = √49 = 7 m. Perimeter = 4 × 7 = 28 m."
+    smaller:
+      check: { type: number, q: "Just the side first: the garden is a square of area 49 m². How long is one side, in metres?", answer: 7, explain: "7 × 7 = 49. Now go all the way round." }
   - check:
       type: question
       q: "Edge case: is 50 a perfect square?"

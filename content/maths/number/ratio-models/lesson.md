@@ -7,7 +7,7 @@ title: Modelling with ratios
 summary: "Mixes, scale drawings and models: say what is known and unknown, choose the ratio, solve, and answer in the units of the situation."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A builder mixes mortar as 1 part cement to 3 parts sand. She needs 20 litres of mix. How much of each does she need to buy?"
+hook: "A gardener mixes potting soil as 2 parts compost to 3 parts sand. She needs 40 litres of mix. How much of each does she need to buy?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8293
   url: http://127.0.0.1:8293/index.html

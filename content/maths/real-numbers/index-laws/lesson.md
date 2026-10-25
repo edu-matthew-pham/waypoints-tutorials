@@ -31,7 +31,7 @@ A power is repeated multiplication: $2^3 = 2 \times 2 \times 2$. The **base** is
 
 | Law | Why | Example |
 |---|---|---|
-| $a^m \times a^n = a^{m+n}$ | the factors join | $2^3 \times 2^2 = 2^5$ |
+| $a^m \times a^n = a^{m+n}$ | the factors join | $5^2 \times 5^3 = 5^5$ |
 | $a^m \div a^n = a^{m-n}$ | pairs of factors cancel | $3^5 \div 3^2 = 3^3$ |
 | $(a^m)^n = a^{mn}$ | $n$ groups of $m$ factors | $(2^3)^2 = 2^6$ |
 | $a^0 = 1$ | $a^n \div a^n = 1$ and $= a^0$ | $7^0 = 1$ |

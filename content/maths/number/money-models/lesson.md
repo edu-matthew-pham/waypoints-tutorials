@@ -32,7 +32,7 @@ explainClip:
 To **model** a money problem: say what you need to find, choose the calculation, work it out, then check the answer makes sense in the situation.
 
 - **Pay:** pay = rate × hours. Overtime at "time and a half" pays 1.5 × the rate.
-- **Income tax** (simplified from Australia's 2026–27 rates, without the Medicare levy):
+- **Income tax** (simplified from [Australia's 2026–27 resident rates, ATO](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents), which leave out the 2% Medicare levy):
 
 | Income | Rate on that part |
 |---|---|
@@ -42,7 +42,7 @@ To **model** a money problem: say what you need to find, choose the calculation,
 | \$135 001 to \$190 000 | 37% |
 | over \$190 000 | 45% |
 
-Each **part** of the income is taxed at its own rate. The **marginal rate** is the rate on the last dollar; the **effective rate** is all the tax as a percentage of the income.
+The **marginal rate** is the rate on the last dollar; the **effective rate** is all the tax as a percentage of the income.
 
 ## Predict: one more dollar
 
@@ -64,6 +64,8 @@ insight: "Moving the income across brackets shows each part taxed at its own rat
 try: { playground: board, starter: "tax.yml#run", height: 560 }
 check: { type: board, text: "Set the income to $60 000. Read the tax and the two rates. Was your prediction right?", when: "i = 60000", explain: "Tax $8520: the marginal rate is 30%, but the effective rate is 8520 ÷ 60 000 = 14.2%." }
 ```
+
+Each **part** of the income is taxed at its own rate, so only the part above a threshold pays the higher rate.
 
 ## Investigate: marginal and effective
 

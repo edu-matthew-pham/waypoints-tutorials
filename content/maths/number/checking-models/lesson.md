@@ -33,7 +33,7 @@ A **model** is a simplified version of a real situation. Every model makes **ass
 | water bill = rate × litres | no fixed charge | bills add a service charge |
 | US dollars = 0.65 × Australian dollars | no fees, a fixed rate | banks charge fees; rates change daily |
 
-To **review** a model: compare its answer with real life, name the assumption that does not hold, and **refine** the model (add the stop, the starting charge, the fee). A simple model is fine when the difference does not matter for the decision.
+To **review** a model: compare its answer with real life, name the assumption that does not hold, and **refine** the model (add the stop, the fee, whatever was left out). A simple model is fine when the difference does not matter for the decision. The fares and the exchange rate in this lesson are made up for the task.
 
 ## Predict: the taxi fare
 

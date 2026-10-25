@@ -7,7 +7,7 @@ title: Multiplying and dividing integers
 summary: a × b is a jumps of b from zero. A negative number of jumps goes the opposite way, so a negative times a negative is positive. Division undoes it with the same signs.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A tank loses 3 litres an hour. Three hours ago, did it hold more or less than now? A negative rate times a negative time: the answer is a positive change."
+hook: "A tank loses 3 litres an hour. Three hours ago, did it hold more water or less than now? Can a multiplication tell you?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8166
   url: http://127.0.0.1:8166/index.html
@@ -37,9 +37,9 @@ explainClip:
     - expect: { selector: "#nlsum", contains: "−2 × (−3) = 6" }
     - wait: 1200
 ---
-You can add and subtract integers by moving along a number line. Now: multiplying and dividing. $3 \times 2$ is 3 jumps of 2 from zero, and $3 \times (-2)$ is 3 jumps of $-2$.
+You can add and subtract integers by moving along a number line. Now: multiplying and dividing. $4 \times 3$ is 4 jumps of 3 from zero, and $4 \times (-3)$ is 4 jumps of $-3$.
 
-But what is $-3 \times (-2)$? A negative number of jumps? A pattern answers it first, and then the line shows why.
+But what could a negative number of jumps mean? A pattern answers it first, and then the line shows why.
 
 ## Predict: −3 × (−2)
 

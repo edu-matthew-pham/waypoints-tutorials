@@ -34,7 +34,7 @@ explainClip:
 ---
 A **prime** has exactly two factors, 1 and itself: 2, 3, 5, 7, 11, 13, … (1 is not prime.) Every whole number above 1 that is not prime can be split into primes. Writing it that way, with exponents, is its **prime factorisation**:
 
-$$36 = 2 \times 2 \times 3 \times 3 = 2^2 \times 3^2$$
+$$84 = 2 \times 2 \times 3 \times 7 = 2^2 \times 3 \times 7$$
 
 A **factor tree** finds it: split the number into any factor pair, then split each branch that is not prime, until every branch ends in a prime.
 
@@ -160,6 +160,8 @@ tasks:
       answer: 0
       feedback: [null, "9 is not prime.", "9 and 10 are not prime.", "15 is not prime."]
       explain: "90 = 9 × 10 = 3 × 3 × 2 × 5 = 2 × 3² × 5."
+    smaller:
+      check: { type: question, q: "$90 = 9 \\times 10$. Can the 9 be split any further?", options: ["Yes: $3 \\times 3$", "No: 9 is prime"], answer: 0, feedback: [null, "A prime has only 1 and itself as factors. 3 divides 9."], explain: "9 = 3 × 3, so keep splitting until every branch is a prime." }
   - check:
       type: answer
       q: "Which number has the prime factorisation $2^3 \\times 5$?"

@@ -7,7 +7,7 @@ title: Multiplying and dividing fractions
 summary: "a/b × c/d is c/d of a/b: multiply the tops and multiply the bottoms. Multiplying by a fraction less than 1 makes a number smaller. Dividing asks how many fit: 3 ÷ 1/4 = 12."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Half of a pizza is left, and you eat a third of what is left. How much of the whole pizza did you eat? Fractions of fractions are multiplications."
+hook: "Three quarters of a pizza is left, and you eat half of what is left. How much of the whole pizza did you eat? Fractions of fractions are multiplications."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8270
   url: http://127.0.0.1:8270/index.html
@@ -31,7 +31,6 @@ explainClip:
 ---
 "Of" means multiply: $\tfrac{1}{3}$ of 12 is $\tfrac{1}{3} \times 12 = 4$. A fraction of a fraction works the same way: $\tfrac{3}{4}$ of $\tfrac{2}{3}$ is $\tfrac{2}{3} \times \tfrac{3}{4}$.
 
-To multiply fractions, **multiply the tops and multiply the bottoms**: no common denominator needed. A square cut into columns and rows shows why: the parts multiply, and so do the shaded ones.
 
 ## Predict: half of a third
 
@@ -57,6 +56,8 @@ check: { type: board, text: "The board shows $\\tfrac{1}{2}$ of the square. Chan
 ```
 
 $a$ of $b$ columns are blue; $c$ of $d$ rows are orange. The overlap is purple.
+
+To multiply fractions, **multiply the tops and multiply the bottoms**: no common denominator needed. The square shows why: the parts multiply, and so do the shaded ones.
 
 ## Investigate: multiply, and divide
 
@@ -196,6 +197,8 @@ tasks:
       feedback:
         - ["3/32", "That multiplies. How many eighths fit in 3/4?"]
       explain: "3/4 = 6/8: six eighths. (3/4 ÷ 1/8 = 3/4 × 8 = 6.)"
+    smaller:
+      check: { type: number, q: "How many pieces $\\tfrac{1}{8}$ m long fit in a whole metre?", answer: 8, explain: "Eight eighths make a whole. Now fit them into three quarters of a metre." }
   - check:
       type: answer
       q: "Review: work out $\\tfrac{1}{2} + \\tfrac{1}{5}$."

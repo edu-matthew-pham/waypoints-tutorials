@@ -7,7 +7,7 @@ title: Equivalent and simplest ratios
 summary: "2 : 3 = 4 : 6 = 6 : 9: multiply or divide both numbers by the same number. 12 : 18 simplifies to 2 : 3 by dividing both by 6."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A recipe for 4 uses 2 cups of flour and 3 of milk. How much milk do you need for 10 cups of flour?"
+hook: "A recipe for 4 uses 3 cups of flour and 5 of milk. How much milk do you need for 9 cups of flour?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8291
   url: http://127.0.0.1:8291/index.html
@@ -32,11 +32,11 @@ explainClip:
 ---
 Doubling a recipe keeps the taste the same. Two ratios are **equivalent** when one is the other with *both* numbers multiplied (or both divided) by the same number:
 
-$$2 : 3 = 4 : 6 = 6 : 9 \qquad (\times 2,\ \times 3)$$
+$$3 : 5 = 6 : 10 = 9 : 15 \qquad (\times 2,\ \times 3)$$
 
-A ratio is in **simplest form** when no number greater than 1 divides both terms. To simplify, divide both by their highest common factor: $12 : 18$, divide by 6, gives $2 : 3$. It is the same idea as equivalent fractions.
+A ratio is in **simplest form** when no number greater than 1 divides both terms. To simplify, divide both by their highest common factor: $12 : 20$, divide by 4, gives $3 : 5$. It is the same idea as equivalent fractions.
 
-Adding the same number to both terms does **not** keep the ratio: $2 : 3$ is not $4 : 5$.
+Adding the same number to both terms does **not** keep the ratio: $3 : 5$ is not $5 : 7$.
 
 ## Predict: which is the same as 2 : 3?
 
@@ -162,6 +162,8 @@ tasks:
       feedback:
         - ["11", "That adds 6 to the 5. 2 → 8 is × 4, so 5 × 4."]
       explain: "2 → 8 is × 4, so 5 × 4 = 20."
+    smaller:
+      check: { type: number, q: "What do you multiply 2 by to get 8?", answer: 4, explain: "2 × 4 = 8. Whatever happens to one side of the ratio has to happen to the other." }
   - check:
       type: answer
       q: "Pink paint is 3 parts red to 1 part white. How many parts of white go with 12 parts of red?"

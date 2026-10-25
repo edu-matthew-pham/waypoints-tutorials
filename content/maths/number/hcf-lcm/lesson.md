@@ -196,6 +196,8 @@ tasks:
         - ["2", "2 divides both, but so does a bigger number."]
         - ["90", "90 is the LCM."]
       explain: "18 = 2 × 3² and 30 = 2 × 3 × 5. Shared: 2 × 3 = 6."
+    smaller:
+      check: { type: question, q: "Break them into primes: $18 = 2 \\times 3 \\times 3$ and $30 = 2 \\times 3 \\times 5$. Which primes are in both?", options: ["2 and 3", "2, 3 and 5", "3 and 5", "Just 2"], answer: 0, feedback: [null, "5 is only in 30.", "5 is only in 30, and 18 has no 5.", "3 is in both as well."], explain: "Both have a 2 and a 3. The HCF multiplies the primes they share." }
   - check:
       type: answer
       q: "To add $\\tfrac{1}{6} + \\tfrac{1}{8}$, both fractions need the same denominator. What is the smallest one that works?"

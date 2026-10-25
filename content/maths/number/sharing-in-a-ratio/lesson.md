@@ -7,7 +7,7 @@ title: Sharing in a ratio
 summary: "Share $60 in the ratio 2 : 3. Add the parts (5), find one part ($60 ÷ 5 = $12), then multiply: $24 and $36."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Ana and Ben earn $60 washing cars. Ana did 2 cars, Ben did 3. They agree to share the money in that ratio. How much does each get?"
+hook: "Two friends win a prize and agree to share it by how much each one put in. How do you cut it up so it is fair?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8292
   url: http://127.0.0.1:8292/index.html
@@ -30,11 +30,11 @@ explainClip:
 ---
 To **share a total in a ratio**, think of the total cut into equal **parts**:
 
-1. **Add the parts:** $2 + 3 = 5$ parts.
-2. **Find one part:** $\$60 \div 5 = \$12$.
-3. **Multiply:** Ana gets $2 \times \$12 = \$24$, Ben $3 \times \$12 = \$36$.
+1. **Add the parts:** for $3 : 4$, that is $3 + 4 = 7$ parts.
+2. **Find one part:** $\$70 \div 7 = \$10$.
+3. **Multiply:** the first share is $3 \times \$10 = \$30$ and the second $4 \times \$10 = \$40$.
 
-Check: $\$24 + \$36 = \$60$. The shares must add to the total.
+Check: $\$30 + \$40 = \$70$. The shares must add to the total.
 
 ## Predict: how much does Ben get?
 

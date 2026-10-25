@@ -4,7 +4,7 @@ unit: placevalue
 node: AC9M7N05 n3
 uses: [AC9M7N05 n1]   # rounding (Rounding decimals)
 title: Estimating to check
-summary: "Round each number to its first digit, then calculate: 38 × 52 ≈ 40 × 50 = 2000. If the calculator says 197.6 or 19 760, something slipped."
+summary: "Round each number to its first digit, then calculate: 29 × 61 ≈ 30 × 60 = 1800. If the calculator says 176.9 or 17 690, something slipped."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "You type 3.2 × 48 and the calculator shows 15.36. Looks plausible. But before you trust it, how big should the answer be?"
@@ -30,7 +30,7 @@ explainClip:
 ---
 An **estimate** is a quick answer that is close, found by rounding the numbers to something easy. A good habit: round each number to its **first digit** (keep its size), do the easy calculation, and compare with the real answer.
 
-$$38 \times 52 \approx 40 \times 50 = 2000$$
+$$29 \times 61 \approx 30 \times 60 = 1800$$
 
 If the exact answer is near the estimate, it is **reasonable**. If it is ten times too big or too small, check the decimal point.
 

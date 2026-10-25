@@ -7,7 +7,7 @@ title: Percentages of amounts
 summary: "15% of $80 is 0.15 × 80 = $12. Take it off for a discount ($68, or 80 × 0.85 in one step), add it on for an increase ($92, or 80 × 1.15). And 18 out of 24 is 18 ÷ 24 = 75%."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A jacket is $80, and the sign says 15% off. Before you reach the counter, can you work out what you will pay?"
+hook: "The sign says 30% off. Before you reach the counter, how can you work out what you will pay?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8271
   url: http://127.0.0.1:8271/index.html
@@ -28,12 +28,12 @@ explainClip:
     - caption: { text: "Or 0.15 × 80 = 12.", say: "Or multiply by nought point one five." }
     - wait: 1400
 ---
-A percentage is a number of hundredths: $15\% = \tfrac{15}{100} = 0.15$. So 15% **of** an amount is $0.15 \times$ the amount, the same "of means multiply" as for fractions.
+A percentage is a number of hundredths: $20\% = \tfrac{20}{100} = 0.2$. So 20% **of** an amount is $0.2 \times$ the amount, the same "of means multiply" as for fractions.
 
 Three questions come up again and again:
 
-- **A percentage of an amount:** 15% of $80 is 0.15 × 80 = $12.
-- **An increase or decrease:** add it on or take it off, or multiply by what is left ($100\% - 15\% = 85\%$, so $\times 0.85$).
+- **A percentage of an amount:** 20% of $45 is 0.2 × 45 = $9.
+- **An increase or decrease:** add it on or take it off, or multiply by what is left ($100\% - 20\% = 80\%$, so $\times 0.8$).
 - **What percentage one amount is of another:** divide, then $\times 100$.
 
 ## Predict: 15% off

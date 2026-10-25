@@ -7,7 +7,7 @@ title: Percentage change
 summary: "An increase of p% multiplies by (1 + p/100); a decrease multiplies by (1 − p/100). One change after another means multiplying the multipliers, so up 20% then down 20% is × 1.2 × 0.8 = × 0.96: a 4% fall overall, not back to the start."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A shop puts a price up 20% in March and has a 20% sale in April. The sign says 'back to the old price'. Is it?"
+hook: "A shop puts a price up 30% in March and has a 30% sale in April. The sign says 'back to the old price'. Is it?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8316
   url: http://127.0.0.1:8316/index.html
@@ -34,7 +34,7 @@ A percentage change is a multiplication by a **multiplier**:
 - an **increase** of $p\%$: multiply by $1 + \frac{p}{100}$ (up 15%: × 1.15);
 - a **decrease** of $p\%$: multiply by $1 - \frac{p}{100}$ (down 15%: × 0.85).
 
-When one change follows another, the second is a percentage of the **new** amount, so multiply the multipliers: up 20% then down 20% is $1.2 \times 0.8 = 0.96$, a 4% decrease overall. Ask "a percentage of what?" every time.
+When one change follows another, the second is a percentage of the **new** amount, so multiply the multipliers: up 30% then down 30% is $1.3 \times 0.7 = 0.91$, a 9% decrease overall. Ask "a percentage of what?" every time.
 
 ## Predict: up then down
 
@@ -190,6 +190,8 @@ tasks:
 ### Review: percentage of
 
 ### GST
+
+GST is 10% on most things you buy in Australia ([ATO](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/how-gst-works)).
 
 ## Make: an overall change
 

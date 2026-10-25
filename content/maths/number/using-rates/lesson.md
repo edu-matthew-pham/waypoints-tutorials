@@ -31,10 +31,10 @@ explainClip:
 ---
 A rate links two quantities, so you can go either way:
 
-- **total = rate × amount**: 30 L of petrol at $2.05 per L costs $30 × 2.05$ = \$61.50;
-- **amount = total ÷ rate**: \$61.50 at $2.05 per L buys $61.50 \div 2.05 = 30$ L.
+- **total = rate × amount**: 30 L of petrol at $1.80 per L costs $30 × 1.80$ = \$54.00;
+- **amount = total ÷ rate**: \$54.00 at $1.80 per L buys $54 \div 1.80 = 30$ L.
 
-For speed, **distance = speed × time** and **time = distance ÷ speed**. Write the units at each step: they tell you whether to multiply or divide (km ÷ km/h = h). Then check: is the answer about the right size?
+For speed, **distance = speed × time** and **time = distance ÷ speed**. Write the units at each step: they tell you whether to multiply or divide (km ÷ km/h = h). Then check: is the answer about the right size? The petrol prices and the exchange rate in this lesson are made up for the task.
 
 ## Predict: fill the tank
 

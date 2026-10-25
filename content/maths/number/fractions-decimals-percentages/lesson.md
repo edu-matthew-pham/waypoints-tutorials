@@ -29,7 +29,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "3/4 = 75/100" }
     - wait: 1200
 ---
-You've written one amount as different fractions. **Percent** means "out of 100", so a percentage is a fraction with 100 parts: $75\% = \tfrac{75}{100}$. A **decimal** shows tenths, hundredths and thousandths: $0.75$ is 75 hundredths.
+You've written one amount as different fractions. **Percent** means "out of 100", so a percentage is a fraction with 100 parts: $40\% = \tfrac{40}{100}$. A **decimal** shows tenths, hundredths and thousandths: $0.40$ is 40 hundredths.
 
 A hundred grid shows why all three match, so you can move between them.
 

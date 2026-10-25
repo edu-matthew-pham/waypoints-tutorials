@@ -6,7 +6,7 @@ title: Comparing integers
 summary: On a number line, the number further left is less. So −7 is less than −2, even though 7 is more than 2.
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Thredbo at −9 °C, Canberra at −3 °C: which is colder, and which number is bigger?"
+hook: "On a cold morning Thredbo is at −9 °C and Canberra at −3 °C (made-up temperatures for the task). Which is colder, and which number is bigger?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8160
   url: http://127.0.0.1:8160/index.html
@@ -174,6 +174,8 @@ tasks:
       answer: 0
       feedback: [null, "Find both: −9 is further left, so −9 is the smaller one. The sign opens towards the greater number."]
       explain: "−6 > −9: −6 is to the right of −9."
+    smaller:
+      check: { type: question, q: "Which of $-6$ and $-9$ is further left on the number line?", options: ["$-9$", "$-6$"], answer: 0, feedback: [null, "Find both on the line. Which one has the other to its right?"], explain: "−9 is further left. Further left is less, so the sign opens towards −6." }
   - check:
       type: question
       q: "Which list is in order from least to greatest?"

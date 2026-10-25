@@ -35,7 +35,7 @@ explainClip:
     - expect: { selector: "#nlsum", contains: "= 1 1/2" }
     - wait: 1200
 ---
-You know the sign rules for integers: the same signs give a positive, different signs a negative, for multiplying and dividing. They work just the same for fractions and decimals: $-0.5 \times (-4) = 2$, and $-\tfrac{3}{4} \times \tfrac{2}{5} = -\tfrac{3}{10}$.
+You know the sign rules for integers: the same signs give a positive, different signs a negative, for multiplying and dividing. They work just the same for fractions and decimals: $-0.2 \times (-6) = 1.2$, and $-\tfrac{3}{4} \times \tfrac{2}{5} = -\tfrac{3}{10}$.
 
 This lesson also looks for **efficient** ways to calculate: choosing the order, or splitting a number, so the arithmetic is easy.
 

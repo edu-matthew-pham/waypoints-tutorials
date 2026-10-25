@@ -161,6 +161,8 @@ tasks:
       feedback:
         - ["0.75", "1 : 4 is 5 parts altogether, not 4."]
       explain: "5 parts make 3 L, so one part is 0.6 L of cordial."
+    smaller:
+      check: { type: number, q: "A $1 : 4$ mix: how many equal parts is that altogether?", answer: 5, explain: "1 part cordial and 4 parts water make 5 parts." }
   - check:
       type: number
       q: "A bus seats 45 people. How many buses are needed for 200 people?"

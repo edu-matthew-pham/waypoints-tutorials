@@ -6,7 +6,7 @@ title: Between the squares
 summary: "43 is not a perfect square, but it sits between 36 and 49, so √43 is between 6 and 7. Closer to 49 or to 36? Square a decimal to find out: 6.6² ≈ 43.6."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A square vegetable patch needs 43 m² of soil. No whole number squares to 43, but a builder still needs to know the side, to the nearest 10 cm."
+hook: "A square vegetable patch needs 29 m² of soil. No whole number squares to 43, but a builder still needs to know the side, to the nearest 10 cm."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8265
   url: http://127.0.0.1:8265/index.html
@@ -32,9 +32,9 @@ explainClip:
     - expect: { selector: "#gsum", contains: "6.6 × 6.6" }
     - wait: 1400
 ---
-Most numbers are not perfect squares, but they still have square roots. $\sqrt{43}$ is the side of a square with area 43: no whole number, but somewhere between two.
+Most numbers are not perfect squares, but they still have square roots. $\sqrt{29}$ is the side of a square with area 29: no whole number, but somewhere between two.
 
-The method: find the perfect squares either side. $36 < 43 < 49$, and $\sqrt{36} = 6$, $\sqrt{49} = 7$, so $\sqrt{43}$ is between 6 and 7. Then try decimals to get closer.
+The method: find the perfect squares either side. $25 < 29 < 36$, and $\sqrt{25} = 5$, $\sqrt{36} = 6$, so $\sqrt{29}$ is between 5 and 6. Then try decimals to get closer.
 
 ## Predict: where is √43?
 

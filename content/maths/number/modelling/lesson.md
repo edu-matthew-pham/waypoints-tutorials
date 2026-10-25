@@ -7,7 +7,7 @@ title: Modelling with money
 summary: "Discounts, markups and profit: formulate the problem, choose fractions, percentages or ratios, solve, and say what the answer means in dollars."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A $200 bike is 20% off, and then a coupon takes a further 10% off the new price. Is that the same as 30% off?"
+hook: "A $120 jacket is 25% off, and then a coupon takes a further 20% off the new price. Is that the same as 45% off?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8294
   url: http://127.0.0.1:8294/index.html
@@ -34,7 +34,7 @@ Money problems are ratio and percentage problems with a context. The habit is th
 2. **Solve:** choose an efficient calculation, estimate first, and use a calculator where it helps.
 3. **Interpret:** say what the answer means, in dollars, with a sensible amount of rounding, and **justify** why you chose that representation.
 
-Two traps: a percentage is always *of* something (the **original** amount for profit or discount), and percentages of different amounts cannot be added.
+One trap: a percentage is always *of* something (the **original** amount for profit or discount).
 
 ## Predict: two discounts
 
@@ -59,7 +59,7 @@ try: { playground: board, starter: "mm.yml#run", height: 420 }
 check: { type: board, text: "Set the discount to 30%. What is the sale price? Is it the same as your predicted price for two discounts?", when: "p = 30 and n = 140", explain: "30% off $200 is $140. Two discounts of 20% then 10% leave $144, because the second is of $160, not $200." }
 ```
 
-Now set 20%, then use 10% off that price.
+Now set 20%, then use 10% off that price. A percentage is of its own amount, so percentages of different amounts cannot be added.
 
 ## Investigate: formulate, solve, interpret
 

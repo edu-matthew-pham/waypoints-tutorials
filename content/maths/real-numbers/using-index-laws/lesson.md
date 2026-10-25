@@ -7,7 +7,7 @@ title: Using the index laws
 summary: "Simplify one step at a time: powers of powers first, then multiply and divide from left to right, keeping each base. The laws only join powers of the same base: 2³ × 3² cannot become one power. They also make scientific notation quick."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Scientists write the distance to the Sun as 1.5 × 10⁸ km. Multiplying numbers like that takes seconds with the index laws, as long as you only join powers of the same base."
+hook: "Scientists write the distance to the Sun as 1.5 × 10⁸ km. How do you multiply numbers like that quickly?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8315
   url: http://127.0.0.1:8315/index.html
@@ -31,9 +31,7 @@ Simplify an expression with several powers one law at a time, keeping track of e
 
 $$(2^3)^2 \times 2^4 \div 2^5 = 2^6 \times 2^4 \div 2^5 = 2^{10} \div 2^5 = 2^5$$
 
-The laws only work for powers of the **same base**. $2^3 \times 3^2 = 8 \times 9 = 72$: it is not $6^5$, and it cannot be written as one power of a whole number by the laws.
-
-In **scientific notation**, the powers of 10 follow the laws: $(3 \times 10^4) \times (2 \times 10^3) = 6 \times 10^7$.
+In **scientific notation**, the powers of 10 follow the laws (the Sun is about 150 million km from Earth, or $1.5 \times 10^8$ km: [NASA](https://science.nasa.gov/earth/facts/)): $(3 \times 10^4) \times (2 \times 10^3) = 6 \times 10^7$.
 
 ## Predict: different bases
 

@@ -31,7 +31,7 @@ explainClip:
     - caption: { text: "× 2 on the top and the bottom.", say: "Times two on the top and the bottom." }
     - wait: 1200
 ---
-A fraction names an amount: $\tfrac{2}{3}$ is 2 of 3 equal parts. The top number is the **numerator** (how many parts) and the bottom number the **denominator** (how many equal parts in the whole); here they're just the top and the bottom. The same amount can be cut into more parts, or fewer, and named by a different fraction. Fractions that name the same amount are **equivalent**.
+A fraction names an amount: $\tfrac{5}{8}$ is 5 of 8 equal parts. The top number is the **numerator** (how many parts) and the bottom number the **denominator** (how many equal parts in the whole); here they're just the top and the bottom. The same amount can be cut into more parts, or fewer, and named by a different fraction. Fractions that name the same amount are **equivalent**.
 
 Fraction bars show which fractions are equivalent, and they also show the one with the fewest parts: the **simplest form**.
 

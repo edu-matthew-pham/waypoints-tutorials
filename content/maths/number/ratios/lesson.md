@@ -7,7 +7,7 @@ title: What is a ratio?
 summary: "2 red counters and 3 blue: the ratio of red to blue is 2 : 3 (part to part); red to all the counters is 2 : 5 (part to whole). Order matters."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A fruit punch is 2 cups of juice for every 3 cups of lemonade. Swap them and it tastes completely different. How do we write a recipe like that down?"
+hook: "A fruit punch is 4 cups of juice for every 3 cups of lemonade. Swap them and it tastes completely different. How do we write a recipe like that down?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8290
   url: http://127.0.0.1:8290/index.html
@@ -28,12 +28,12 @@ explainClip:
     - caption: { text: "Add a blue: now 2 : 4 and 2 : 6.", say: "Add a blue block and both ratios change." }
     - wait: 1400
 ---
-A **ratio** compares two (or more) quantities of the same kind. "2 red to 3 blue" is written $2 : 3$. The order matters: red first means 2 comes first.
+A **ratio** compares two (or more) quantities of the same kind. "3 red to 4 blue" is written $3 : 4$. The order matters: red first means 3 comes first.
 
 There are two kinds of comparison:
 
-- **Part to part:** red to blue is $2 : 3$.
-- **Part to whole:** red to *all* the counters is $2 : 5$, because there are $2 + 3 = 5$ counters in all. This is the same as the fraction $\tfrac{2}{5}$.
+- **Part to part:** red to blue is $3 : 4$.
+- **Part to whole:** red to *all* the counters is $3 : 7$, because there are $3 + 4 = 7$ counters in all. This is the same as the fraction $\tfrac{3}{7}$.
 
 ## Predict: red to blue
 

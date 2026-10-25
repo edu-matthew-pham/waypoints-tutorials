@@ -32,7 +32,7 @@ A **rate** compares two quantities measured in **different units**: 60 km per ho
 
 The **unit rate** is the amount for **one** of the second quantity. Divide the first by the second, and keep the units:
 
-$$150 \text{ km in } 2.5 \text{ h} \;\Rightarrow\; 150 \div 2.5 = 60 \text{ km per h}$$
+$$120 \text{ km in } 2.5 \text{ h} \;\Rightarrow\; 120 \div 2.5 = 48 \text{ km per h}$$
 
 Rates convert like units. For speed: 1 km = 1000 m and 1 h = 3600 s, so $54 \text{ km/h} = 54 \times 1000 \div 3600 = 15 \text{ m/s}$ (divide by 3.6).
 
@@ -178,6 +178,8 @@ tasks:
       feedback:
         - ["0.59", "That is kilograms per dollar. Dollars per kilogram: 3.40 ÷ 2."]
       explain: "3.40 ÷ 2 = $1.70 per kg."
+    smaller:
+      check: { type: question, q: "'Per kilogram' means for each 1 kg. Which division gives that?", options: ["Dollars ÷ kilograms", "Kilograms ÷ dollars"], answer: 0, feedback: [null, "That gives kilograms for each dollar. The thing that comes after 'per' is the one you divide by."], explain: "The amount after 'per' goes second: dollars ÷ kilograms." }
   - check:
       type: question
       q: "Review: what is the ratio 12 : 18 in simplest form?"

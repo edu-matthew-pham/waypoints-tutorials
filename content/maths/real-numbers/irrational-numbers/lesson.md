@@ -7,7 +7,7 @@ title: Irrational numbers
 summary: "A rational number is a fraction: its decimal stops or repeats. An irrational number cannot be written as a fraction: its decimal never stops and never repeats. √2, √3 and π are irrational; √16 = 4 is not."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "The diagonal of a 1 m square tile is exactly √2 metres long. You can measure it, but you can never write it down as a fraction or a decimal that ends."
+hook: "The diagonal of a 1 m square tile is exactly √2 metres long. You can measure it, but can you write that length down as a fraction, or as a decimal?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8312
   url: http://127.0.0.1:8312/index.html
@@ -30,9 +30,9 @@ explainClip:
     - expect: { selector: "#gsum", contains: "1.41" }
     - wait: 1500
 ---
-A **rational** number can be written as a fraction $\frac{a}{b}$ of integers (whole numbers or their negatives, with $b \ne 0$): 0.25, $\frac{1}{7}$, −3, $0.\overline{3}$. Its decimal **terminates** or **recurs**.
+A **rational** number can be written as a fraction $\frac{a}{b}$ of integers (whole numbers or their negatives, with $b \ne 0$): 0.25, $\frac{1}{7}$, −3, $0.\overline{3}$.
 
-An **irrational** number cannot be written as a fraction. Its decimal goes on **forever without repeating**. Examples: $\sqrt{2} = 1.41421356\ldots$, $\sqrt{3}$, $\sqrt{5}$, and $\pi = 3.14159265\ldots$ The square root of a whole number is irrational unless the number is a perfect square: $\sqrt{16} = 4$ is rational.
+An **irrational** number cannot be written as a fraction. Examples: $\sqrt{3}$, $\sqrt{5}$, $\sqrt{7}$, and $\pi = 3.14159265\ldots$ The square root of a whole number is irrational unless the number is a perfect square: $\sqrt{16} = 4$ is rational.
 
 Irrational numbers are ordinary numbers you can calculate with; we use the exact form ($\sqrt{2}$, $\pi$) or a rounded value (1.414, 3.14).
 
@@ -58,6 +58,8 @@ check: { type: board, text: "Find the first 3 decimal digits of √2 by zooming 
 ```
 
 Press the piece of the line that √2 is in. A wrong piece shows you the squares of its ends.
+
+A rational number's decimal **terminates** or **recurs**. An irrational number's decimal goes on **forever without repeating**.
 
 ## Investigate: rational or irrational
 

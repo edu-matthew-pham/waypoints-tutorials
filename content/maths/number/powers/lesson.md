@@ -33,9 +33,9 @@ explainClip:
 ---
 When the same number is multiplied again and again, there is a short way to write it:
 
-$$2 \times 2 \times 2 \times 2 = 2^4$$
+$$3 \times 3 \times 3 \times 3 = 3^4$$
 
-The **base** (2) is the number being multiplied. The **exponent** (4), also called the index or power, counts how many times it appears. You say "2 to the power of 4". You have met two already: $5^2$ is "5 squared", and $2^3$ is "2 cubed".
+The **base** (3) is the number being multiplied. The **exponent** (4), also called the index or power, counts how many times it appears. You say "3 to the power of 4". You have met two already: $5^2$ is "5 squared", and $4^3$ is "4 cubed".
 
 The board grows a **factor tree**: it splits a number into a factor pair (two numbers that multiply to it), and keeps splitting until every branch is a **prime**, a number with exactly two factors, 1 and itself (2, 3, 5, 7, …).
 
@@ -173,6 +173,8 @@ tasks:
       feedback:
         - ["12", "That is 4 × 3. 4³ is 4 × 4 × 4."]
       explain: "4 × 4 × 4 = 64."
+    smaller:
+      check: { type: number, q: "$4^3$ means $4 \\times 4 \\times 4$. What is the first step, $4 \\times 4$?", answer: 16, explain: "4 × 4 = 16. Then multiply by 4 once more." }
   - check:
       type: answer
       q: "Work out $10^5$."

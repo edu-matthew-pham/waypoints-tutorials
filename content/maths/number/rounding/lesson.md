@@ -35,7 +35,7 @@ To **round** a decimal to a number of **decimal places**, find the two numbers w
 - 5 or more: round **up**.
 - 4 or less: round **down** (the digits stay).
 
-So 3.746 to 2 decimal places: the digit after the hundredths is 6, so round up to 3.75. A number exactly halfway rounds up.
+So 5.382 to 2 decimal places: the digit after the hundredths is 2, so round down to 5.38. A number exactly halfway rounds up.
 
 ## Predict: round 3.746
 

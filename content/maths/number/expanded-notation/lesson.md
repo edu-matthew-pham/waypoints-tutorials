@@ -39,12 +39,12 @@ explainClip:
 ---
 You already know that the 5 in 4052 is worth 50, not 5. A number is built from its digits, each worth *digit × its column*. Every column is ten times the one to its right, so every column is a **power of 10**:
 
-| Column | ones | tens | hundreds | thousands | ten thousands |
-| --- | --- | --- | --- | --- | --- |
-| Power of 10 | $10^0$ | $10^1$ | $10^2$ | $10^3$ | $10^4$ |
-| Value | 1 | 10 | 100 | 1000 | 10 000 |
+| Column | ones | tens | hundreds | and so on |
+| --- | --- | --- | --- | --- |
+| Power of 10 | $10^0$ | $10^1$ | $10^2$ | … |
+| Value | 1 | 10 | 100 | … |
 
-The exponent counts the zeros in the value: $10^3 = 1000$ has three zeros. Writing a number as a sum of *digit × power of 10* is called **expanded notation**.
+The exponent counts the zeros in the value: $10^2 = 100$ has two zeros. Writing a number as a sum of *digit × power of 10* is called **expanded notation**.
 
 ## Predict: how much is 10³?
 
@@ -181,6 +181,8 @@ tasks:
         - ["64", "Do not add the digits: 6 × 10⁵ = 600 000 and 4 × 10² = 400."]
         - ["60400", "6 × 10⁵ has five zeros: 600 000."]
       explain: "600 000 + 400 = 600 400."
+    smaller:
+      check: { type: number, q: "$6 \\times 10^5$ is a 6 followed by how many zeros?", answer: 5, explain: "The exponent counts the zeros: 6 × 10⁵ = 600 000." }
   - check:
       type: question
       q: "Why is $6300 \\times 100$ the same as $6300 \\times 10^2$, and why is it easy?"

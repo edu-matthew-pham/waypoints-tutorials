@@ -9,7 +9,7 @@ title: Negative powers
 summary: "Keep dividing by the base and the powers go below zero: 2⁻³ is 1/2³ = 1/8, a small positive number, not a negative one."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A micrometre is written 10⁻⁶ metres. How can a power be negative, and what does it mean?"
+hook: "Scientists write a nanometre as 10⁻⁹ metres. How can a power be negative, and what does it mean?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8344
   url: http://127.0.0.1:8344/index.html

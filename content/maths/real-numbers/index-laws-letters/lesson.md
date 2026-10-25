@@ -9,7 +9,7 @@ title: Index laws with letters
 summary: "A letter stands for a number, so the index laws work on it the same way. Numbers in front multiply; indices add, subtract or multiply by the same laws."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Make an animal 10 times longer and it's 1000 times heavier. Letters and index laws show why."
+hook: "Make an animal 10 times longer, and how much heavier does it get? Letters and index laws can tell you."
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8346
   url: http://127.0.0.1:8346/index.html
