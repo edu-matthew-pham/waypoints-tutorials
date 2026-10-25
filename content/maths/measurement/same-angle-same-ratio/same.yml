@@ -1,0 +1,8 @@
+# Boards for "Same angle, same ratio".
+
+# region: run
+widget: trig
+slider t: 15, 75, 35, 5
+slider h: 2, 10, 5, 1
+show: sin
+# endregion

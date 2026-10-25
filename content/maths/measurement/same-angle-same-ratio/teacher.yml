@@ -1,0 +1,34 @@
+summary: "Students see that scaling a right-angled triangle keeps the ratio of any two sides, so the angle alone sets the ratio (AC9M9SP01, node 2)."
+time: 35
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 8 min · Practise and Make 9 min"
+goals:
+  - I can say why a bigger copy has the same ratios.
+  - I can use a fixed ratio to find a side.
+  - I can use similar triangles to find a height from shadows.
+struggle: "Thinking a bigger triangle has bigger ratios. Ask: if every side doubles, what happens to the division?"
+before: |
+  Students need Name the sides and Similar shapes (Year 8 scale factors).
+
+  The one idea: the ratio belongs to the angle, not the size. Don't name sine yet; the next lesson does.
+
+  The shadow lengths are made up for the task.
+running:
+  - "Predict: show of hands before the board."
+  - "Paper: the shadow question in Make is worked on paper first."
+stuck:
+  - see: "A student adds the same amount to both sides."
+    ask: "Do all the sides get bigger by the same amount, or the same factor?"
+    fix: "The same factor: double means ×2."
+stretch: "Find a tall thing at school and measure its height by the shadow method."
+support: "A printed pair of triangles with the sides labelled."
+leads: |
+  Continues AC9M9SP01 node 2.
+
+  Where it leads: Sine, cosine and tangent.
+exit:
+  q: "A triangle's sides are all tripled. What happens to opposite ÷ hypotenuse?"
+  a: "Nothing: it stays the same."
+explain: |
+  A bigger copy of a right-angled triangle has all sides multiplied by the same factor, so the ratio of any two sides is unchanged.
+
+  The angle decides the ratio.

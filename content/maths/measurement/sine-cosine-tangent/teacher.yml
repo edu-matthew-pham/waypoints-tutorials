@@ -1,0 +1,34 @@
+summary: "Students name sine, cosine and tangent and match each to its pair of sides (AC9M9SP01, node 3)."
+time: 35
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 8 min · Practise and Make 9 min"
+goals:
+  - I can name sine, cosine and tangent from the sides.
+  - I can choose which ratio to use from the sides I know.
+  - I can read a ratio for an angle.
+struggle: "Mixing up sine and cosine. Ask: which side does the angle touch?"
+before: |
+  Students need Same angle, same ratio.
+
+  The one idea: each ratio is a name for a pair of sides, fixed by the angle. A calculator stores the values. Don't introduce SOH CAH TOA unless the class asks; the board shows the words.
+
+  The tree measurements are made up for the task.
+running:
+  - "Predict: show of hands before the board."
+  - "Paper: the tangent question in Make is worked on paper first."
+stuck:
+  - see: "A student puts the adjacent side over the opposite for tangent."
+    ask: "Which side goes on top?"
+    fix: "Opposite on top: tangent is opposite ÷ adjacent."
+stretch: "Find the angle where sine and cosine are equal and say why."
+support: "A printed card showing which sides each ratio uses."
+leads: |
+  Continues AC9M9SP01 node 3.
+
+  Where it leads: Finding a missing side with trigonometry.
+exit:
+  q: "Which ratio uses the opposite and the adjacent sides?"
+  a: "Tangent."
+explain: |
+  Sine is opposite ÷ hypotenuse, cosine is adjacent ÷ hypotenuse, tangent is opposite ÷ adjacent.
+
+  Each is a fixed number for a given angle.

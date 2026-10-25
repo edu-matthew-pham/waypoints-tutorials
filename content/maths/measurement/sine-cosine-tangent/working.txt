@@ -1,0 +1,8 @@
+# Lee's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lee
+The triangle has opposite 3, adjacent 4 and hypotenuse 5.
+I want the sine of the marked angle.
+Sine is adjacent ÷ hypotenuse = 4 ÷ 5 = 0.8.
+So sin = 0.8.
+# endregion

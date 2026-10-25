@@ -1,0 +1,7 @@
+# Boards for "Sine, cosine and tangent".
+
+# region: run
+widget: trig
+slider t: 5, 85, 35, 5
+h: 10
+# endregion

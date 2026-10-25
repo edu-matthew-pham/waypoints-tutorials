@@ -1,0 +1,12 @@
+# Practice for "Sine, cosine and tangent".
+templates:
+  - q: "A triangle has opposite {3 * k}, adjacent {4 * k} and hypotenuse {5 * k}. What is the sine of the marked angle?"
+    vars: { k: "1..9" }
+    answer: "0.6"
+    tolerance: 0.001
+    explain: "{3 * k} ÷ {5 * k} = 0.6."
+  - q: "A triangle has opposite {3 * k}, adjacent {4 * k} and hypotenuse {5 * k}. What is the cosine of the marked angle?"
+    vars: { k: "1..9" }
+    answer: "0.8"
+    tolerance: 0.001
+    explain: "{4 * k} ÷ {5 * k} = 0.8."

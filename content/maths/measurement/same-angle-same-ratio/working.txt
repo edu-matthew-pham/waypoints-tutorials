@@ -1,0 +1,8 @@
+# Ana's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ana
+Small triangle: opposite 3, hypotenuse 5.
+Big copy: opposite 6, hypotenuse 10.
+Small ratio: 3 ÷ 5 = 0.6. Big ratio: 6 ÷ 10 = 0.6.
+So the bigger triangle has a bigger ratio.
+# endregion

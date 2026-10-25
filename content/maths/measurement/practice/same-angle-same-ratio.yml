@@ -1,0 +1,10 @@
+# Practice for "Same angle, same ratio".
+templates:
+  - q: "A triangle has opposite {3 * k} and hypotenuse {5 * k}. A bigger copy at the same angle has hypotenuse {5 * m}. How long is its opposite side?"
+    vars: { k: "1..3", m: "4..9" }
+    answer: "{3 * m}"
+    explain: "The ratio is 3 : 5, so the opposite side is {3 * m}."
+  - q: "A triangle has opposite {4 * k} and hypotenuse {5 * k}. A copy at the same angle has opposite {4 * m}. How long is its hypotenuse?"
+    vars: { k: "1..3", m: "4..9" }
+    answer: "{5 * m}"
+    explain: "The ratio is 4 : 5, so the hypotenuse is {5 * m}."
