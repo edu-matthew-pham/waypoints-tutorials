@@ -27,12 +27,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "= 33" }
     - wait: 1600
 ---
-A **composite shape** is made of simple shapes joined together. To find its area:
-
-1. **Cut** it into rectangles, triangles or other shapes you know, find each area and **add** them; or
-2. see it as a **big rectangle** and **take away** the pieces that are missing.
-
-Read every length you need from the diagram: a missing side is often the difference of two others. The **perimeter** is the total length round the outside, in units of length (m), not area (m²).
+A **composite shape** is made of simple shapes joined together.
 
 ## Predict: an L-shaped room
 
@@ -46,7 +41,7 @@ check:
   actual: "33 m². The whole 8 by 6 rectangle is 48 m², and the missing corner is 15 m²: 48 − 15 = 33. (28 is the perimeter, in metres.)"
 ```
 
-Sketch it, then decide: cut it up, or take a piece away?
+Sketch it first, then decide how you would find the area.
 
 ## Run: cut it up
 
@@ -58,6 +53,13 @@ check: { type: board, text: "Try a cut, then the take-away. Do they all give the
 ```
 
 Each button shows a different way to see the same shape.
+
+Here's how to find the area of a shape like that:
+
+1. **Cut** it into rectangles, triangles or other shapes you know, find each area and **add** them; or
+2. see it as a **big rectangle** and **take away** the pieces that are missing.
+
+Read every length you need from the diagram: a missing side is often the difference of two others. The **perimeter** is the total length round the outside, in units of length (m), not area (m²).
 
 ## Investigate: lengths and pieces
 
@@ -184,6 +186,8 @@ tasks:
       feedback:
         - ["70", "The right part is only 3 m tall: 6 × 3, not 6 × 7."]
       explain: "4 × 7 + 6 × 3 = 28 + 18 = 46 m²."
+    smaller:
+      check: { type: number, q: "Take the right part on its own: 6 m wide and 3 m tall. How many square metres is that part?", answer: 18, tolerance: 0, explain: "6 × 3 = 18 m². Now the left part, then add." }
 ```
 
 ### Rectangle and triangle

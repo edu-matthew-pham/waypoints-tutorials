@@ -28,11 +28,7 @@ explainClip:
     - caption: { text: "So use the base and the height: ½ × 10 × 4 = 20.", say: "So use the base and the height: twenty square centimetres." }
     - wait: 1200
 ---
-Area problems come with extra information. Three moves sort them out:
-
-- **Choose the base and its height.** The height is at a right angle to the base; a slanted side is not needed.
-- **Use one unit.** Change every length to the same unit (100 cm = 1 m) before you multiply. Area comes out in square units: m² or cm².
-- **Split the shape.** A shape made of rectangles and triangles has area equal to the sum of the parts (or a big shape minus a missing part).
+Before you multiply anything, read what the question gives you. What shape is it, and are the lengths in the same unit?
 
 ## Predict: metres and centimetres
 
@@ -58,6 +54,12 @@ check: { type: board, text: "Make a rectangle with base 4 m and height 2.5 m (25
 ```
 
 Each grid square is 1 m by 1 m: one square metre.
+
+That's three moves to sort an area problem out:
+
+- **Choose the base and its height.** The height is at a right angle to the base; a slanted side is not needed.
+- **Use one unit.** Change every length to the same unit (100 cm = 1 m) before you multiply. Area comes out in square units: m² or cm².
+- **Split the shape.** A shape made of rectangles and triangles has area equal to the sum of the parts (or a big shape minus a missing part).
 
 ## Investigate: choose, convert, split
 
@@ -146,7 +148,7 @@ tasks:
       explain: "1 m² is 100 cm by 100 cm: 100 × 100 = 10 000 cm²."
   - check:
       type: answer
-      q: "A wall 5 m wide and 2.4 m high is painted. One litre of paint covers 4 m². How many litres are needed?"
+      q: "A wall 5 m wide and 2.4 m high is painted. One litre of paint covers 4 m² (a made-up figure for this task). How many litres are needed?"
       answer: "3"
       feedback:
         - ["12", "12 m² is the area. Each litre covers 4 m²."]
@@ -158,7 +160,7 @@ tasks:
       options: ["m²", "cm²", "mm²", "m"]
       answer: 0
       feedback: [null, "cm² would give hundreds of millions: too small a unit.", "Far too small.", "m measures length, not area."]
-      explain: "Square metres: an oval is about 10 000 m² (one hectare, a 100 m by 100 m square)."
+      explain: "Square metres: an oval covers thousands of square metres (a 100 m by 100 m square is 10 000 m²)."
 ```
 
 ### A sail
@@ -228,4 +230,4 @@ hint: ["½ × b × h = 12, so b × h = 24.", "Pick a pair where the height is bi
 check: { type: board, text: "Design a right-angled sail with area 12 m² that is taller than it is wide.", when: "a = 12 and h > b", explain: "b × h = 24 with h bigger: base 3 m and height 8 m, or base 4 m and height 6 m." }
 ```
 
-Then work out the cost of the sailcloth at $15 per m².
+Then work out the cost of the sailcloth at $15 per m² (a made-up price for the task).

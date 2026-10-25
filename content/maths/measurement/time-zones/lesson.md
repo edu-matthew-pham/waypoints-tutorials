@@ -28,7 +28,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "Sydney 10:00" }
     - wait: 1500
 ---
-Each place keeps its own clock, set by its **time zone**. A zone is written as its **offset** from UTC (Coordinated Universal Time). This lesson uses the offsets for most of October: Sydney UTC+11 (daylight saving, from early October to early April; UTC+10 the rest of the year), Perth UTC+8, Tokyo UTC+9, London UTC+1 (until late October) and Los Angeles UTC−7 (until early November).
+Each place keeps its own clock, set by its **time zone**. A zone is written as its **offset** from UTC (Coordinated Universal Time). This lesson uses the offsets for most of October: Sydney UTC+11 (daylight saving, from early October to early April; UTC+10 the rest of the year), Perth UTC+8, Tokyo UTC+9, London UTC+1 (until late October) and Los Angeles UTC−7 (until early November). These were checked on [timeanddate.com](https://www.timeanddate.com/) for [Sydney](https://www.timeanddate.com/time/change/australia/sydney), [Perth](https://www.timeanddate.com/time/zone/australia/perth), [Tokyo](https://www.timeanddate.com/time/zone/japan/tokyo), [London](https://www.timeanddate.com/time/zone/uk/london) and [Los Angeles](https://www.timeanddate.com/time/zones/pt) ([its clock change](https://www.timeanddate.com/time/change/usa/los-angeles)). Check again before you plan a real call, because the dates move every year.
 
 To change a time from one zone to another, find the **difference** between the offsets. A place with a bigger offset is **ahead** (later); a smaller offset is **behind** (earlier). Go by the offsets, not the map: Los Angeles is east of Sydney across the Pacific, but across the International Date Line, so it is 18 hours behind. Add or take away the difference, and change the **day** if you cross midnight. **24-hour time** (21:30, not 9:30 pm) avoids mixing up morning and night.
 
@@ -162,6 +162,8 @@ tasks:
       feedback:
         - ["13", "Perth's offset is smaller: it is behind. Take 3 hours away."]
       explain: "Perth is 3 hours behind: 10:00 − 3 = 07:00."
+    smaller:
+      check: { type: question, q: "Sydney is UTC+11 and Perth is UTC+8. Is Perth's clock earlier or later than Sydney's?", options: ["Earlier", "Later"], answer: 0, explain: "Perth's offset is 3 less, so it is 3 hours earlier. Its time is Sydney's time with 3 hours taken off." }
   - check:
       type: number
       q: "A train leaves at 08:45 and arrives at 17:20 the same day (one time zone). How many minutes is the trip?"

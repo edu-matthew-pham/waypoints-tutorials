@@ -28,11 +28,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "diameter 8" }
     - wait: 1400
 ---
-A **circle** is every point the same distance from one point, its **centre**. That distance is the **radius** ($r$).
-
-- The **diameter** ($d$) goes right across through the centre. It is two radii: $d = 2r$, so $r = d \div 2$.
-- A **chord** is a straight line joining any two points on the circle. The diameter is the longest chord.
-- The **circumference** ($C$) is the distance all the way round: the circle's perimeter.
+A **circle** is every point the same distance from one point, its **centre**. That distance is the **radius** ($r$). A line right across the circle, through the centre, is the **diameter** ($d$).
 
 ## Predict: radius 5
 
@@ -58,6 +54,13 @@ check: { type: board, text: "Make a circle with diameter 10 cm. What is its radi
 ```
 
 Watch the radius and the diameter as the circle grows.
+
+The board was showing how they fit together.
+
+The diameter is two radii: $d = 2r$, so $r = d \div 2$. Two more words:
+
+- A **chord** is a straight line joining any two points on the circle. The diameter is the longest chord.
+- The **circumference** ($C$) is the distance all the way round: the circle's perimeter.
 
 ## Investigate: the parts
 
@@ -173,6 +176,8 @@ tasks:
       feedback:
         - ["6", "That doubles."]
       explain: "3 ÷ 2 = 1.5 cm."
+    smaller:
+      check: { type: number, q: "Say a circle has radius 4 cm. Two radii, end to end through the centre, make a line right across it. How long is that line, in cm?", answer: 8, tolerance: 0, explain: "4 + 4 = 8 cm. That line is the diameter, so the diameter is bigger than the radius." }
   - check:
       type: question
       q: "What is the longest chord of a circle?"

@@ -33,10 +33,6 @@ explainClip:
 ---
 A triangle also has a **base** (any side) and a **perpendicular height**: the distance from the opposite corner (the apex) straight down to the base, at a right angle.
 
-Two copies of a triangle, one turned round, fit together into a parallelogram with the same base and height. So the triangle is **half** of it:
-
-$$A = \tfrac{1}{2} \times b \times h$$
-
 ## Predict: a 6 by 4 triangle
 
 ```step
@@ -61,6 +57,12 @@ check: { type: board, text: "Press **Add a turned copy**. What do the two triang
 ```
 
 The dashed orange line is the height, from the top straight down to the base.
+
+Here's why the turned copy gives the area.
+
+Two copies of a triangle, one turned round, fit together into a parallelogram with the same base and height. So the triangle is **half** of it:
+
+$$A = \tfrac{1}{2} \times b \times h$$
 
 ## Investigate: half of base times height
 
@@ -140,6 +142,8 @@ tasks:
         - ["2.5", "That uses base × height = 20. For a triangle, ½ × 8 × h = 20, so 8 × h = 40."]
         - ["80", "That multiplies. Undo the steps: double 20, then divide by 8."]
       explain: "½ × 8 × h = 20, so 4 × h = 20 and h = 5 cm."
+    smaller:
+      check: { type: number, q: "Two copies of this triangle, area 20 cm² each, fit together into a parallelogram. What is the parallelogram's area, in cm²?", answer: 40, tolerance: 0, explain: "20 + 20 = 40 cm². Its base is 8 cm, so what height gives 40?" }
   - check:
       type: question
       q: "Edge case: a right-angled triangle has sides 6 cm, 8 cm and 10 cm, with the right angle between the 6 cm and 8 cm sides. What is its area?"

@@ -27,12 +27,7 @@ explainClip:
     - click: Finer grid
     - wait: 1600
 ---
-An **irregular shape** has curved or uneven edges, so no formula fits. Estimate instead:
-
-- **Area:** put a grid over the shape. Count the **full squares**, and count each **part square** as half (some are mostly in, some mostly out, so on average half). Multiply by the area of one square. A **finer grid** gives a closer estimate.
-- **Perimeter:** join points on the edge with **straight pieces** and add their lengths. More, shorter pieces follow the curve more closely.
-
-Always say how precise your estimate is ("about 25 km², to the nearest whole km²").
+An **irregular shape** has curved or uneven edges, so no formula fits. Estimate instead: lay a grid over it and count squares.
 
 ## Predict: only the full squares
 
@@ -58,6 +53,13 @@ check: { type: board, text: "Count the squares, then make the grid finer. Was yo
 ```
 
 **Count the squares** colours full squares green and part squares orange.
+
+Here's what the counting was doing.
+
+- **Area:** put a grid over the shape. Count the **full squares**, and count each **part square** as half (some are mostly in, some mostly out, so on average half). Multiply by the area of one square. A **finer grid** gives a closer estimate.
+- **Perimeter:** join points on the edge with **straight pieces** and add their lengths. More, shorter pieces follow the curve more closely.
+
+Always say how precise your estimate is ("about 25 km², to the nearest whole km²").
 
 ## Investigate: why half?
 

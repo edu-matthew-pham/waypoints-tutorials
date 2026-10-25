@@ -27,11 +27,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "circumference 25.13" }
     - wait: 1400
 ---
-The last lesson found that $C \div d = \pi$ for every circle. Turned round, that is a formula for the circumference:
-
-$$C = \pi d \qquad \text{or, since } d = 2r, \qquad C = 2\pi r$$
-
-Use $\pi \approx 3.14$, as the questions say. Going backwards, from a circumference to the diameter, divide by π: $d = C \div \pi$.
+The last lesson found that $C \div d = \pi$ for every circle. Use $\pi \approx 3.14$, as the questions say.
 
 ## Predict: radius 5
 
@@ -57,6 +53,14 @@ check: { type: board, text: "Make a circle with radius 2.5 cm and roll it out. W
 ```
 
 Predict the circumference from the diameter before you roll.
+
+Here's the rule behind the roll.
+
+Turned round, $C \div d = \pi$ gives a formula for the circumference:
+
+$$C = \pi d \qquad \text{or, since } d = 2r, \qquad C = 2\pi r$$
+
+Going backwards, from a circumference to the diameter, divide by π: $d = C \div \pi$.
 
 ## Investigate: forwards and backwards
 

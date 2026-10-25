@@ -34,15 +34,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "but c²" }
     - wait: 1200
 ---
-Pythagoras' theorem only works for right-angled triangles, and that is what makes it a test. Take the three sides of any triangle, call the **longest** one $c$, and compare:
-
-| If… | the angle opposite $c$ is… | the triangle is… |
-|---|---|---|
-| $a^2 + b^2 = c^2$ | 90° | right-angled |
-| $a^2 + b^2 < c^2$ | more than 90° | obtuse |
-| $a^2 + b^2 > c^2$ | less than 90° | acute |
-
-Whole numbers that fit exactly, like 3, 4, 5, are called **Pythagorean triples**.
+Take the three sides of a triangle and call the **longest** one $c$.
 
 ## Predict: 4, 5 and 6
 
@@ -68,6 +60,18 @@ check: { type: board, text: "The angle between a and b is 70°. Change it until 
 ```
 
 **Open the angle** and **Close the angle** change the corner between a and b.
+
+Here's what the board was showing.
+
+Pythagoras' theorem only works for right-angled triangles, and that is what makes it a test. Compare the squares:
+
+| If… | the angle opposite $c$ is… | the triangle is… |
+|---|---|---|
+| $a^2 + b^2 = c^2$ | 90° | right-angled |
+| $a^2 + b^2 < c^2$ | more than 90° | obtuse |
+| $a^2 + b^2 > c^2$ | less than 90° | acute |
+
+Whole numbers that fit exactly, like 3, 4, 5, are called **Pythagorean triples**.
 
 ## Investigate: compare the squares
 

@@ -33,12 +33,6 @@ explainClip:
 ---
 A **right prism** has the same shape all the way through, like a loaf of bread: cut it anywhere, straight across, and you get the same slice. That slice is the **cross-section**. A box has a rectangle cross-section; a **triangular prism** (a tent, a triangular chocolate box) has a triangle.
 
-The layer idea works for every prism. Each layer is the cross-section, and the layers go all the way along:
-
-$$V = \text{area of the cross-section} \times \text{length}$$
-
-Volume and **capacity** (how much a container holds) are linked: 1 cm³ holds 1 millilitre, so 1000 cm³ holds 1 litre.
-
 ## Predict: a triangular prism
 
 ```step
@@ -63,6 +57,14 @@ check: { type: board, text: "Build the prism up to 5 cm. What is each layer, and
 ```
 
 The board stands the prism on its triangle end, so its length points up (h on the board). The orange triangle is the cross-section: half of a 4 by 3 rectangle, cut along its diagonal.
+
+Here's why the layers give the volume.
+
+The layer idea works for every prism. Each layer is the cross-section, and the layers go all the way along:
+
+$$V = \text{area of the cross-section} \times \text{length}$$
+
+Volume and **capacity** (how much a container holds) are linked: 1 cm³ holds 1 millilitre, so 1000 cm³ holds 1 litre.
 
 ## Investigate: cross-section times length
 

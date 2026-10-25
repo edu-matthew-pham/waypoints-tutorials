@@ -6,7 +6,7 @@ title: Volume and capacity
 summary: "Volume measures space in cubic units; capacity measures how much a container holds. 1 cm³ holds 1 mL, 1000 cm³ holds 1 L, and 1 m³ holds 1000 L. A cubic metre is 100 × 100 × 100 = 1 000 000 cm³, not 100."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "A 1 L milk carton and a 10 cm cube hold exactly the same amount. A cubic metre of water is a tonne. Why do the units fit together so neatly?"
+hook: "How much water does a box hold, and how do you get it from the box's size? A cubic metre of water weighs about a tonne, but how do litres and cubic centimetres fit together?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8305
   url: http://127.0.0.1:8305/index.html
@@ -32,15 +32,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "1 L" }
     - wait: 1500
 ---
-**Volume** is the space a solid takes up, in cubic units (cm³, m³). **Capacity** is how much a container holds, in millilitres (mL), litres (L) or kilolitres (kL). They link exactly:
-
-| Volume | Capacity |
-|---|---|
-| 1 cm³ | 1 mL |
-| 1000 cm³ (a 10 cm cube) | 1 L |
-| 1 m³ | 1000 L = 1 kL |
-
-A cubic metre is 100 cm × 100 cm × 100 cm = **1 000 000 cm³**: a length conversion is used three times, once for each direction.
+**Volume** is the space a solid takes up, in cubic units (cm³, m³). **Capacity** is how much a container holds, in millilitres (mL), litres (L) or kilolitres (kL). How do the two fit together?
 
 ## Predict: a 10 cm cube
 
@@ -66,6 +58,20 @@ check: { type: board, text: "Make a box that holds exactly 1 L. Was your predict
 ```
 
 The panel gives the volume and the capacity together.
+
+Here's how volume and capacity line up.
+
+They link exactly:
+
+| Volume | Capacity |
+|---|---|
+| 1 cm³ | 1 mL |
+| 1000 cm³ (a 10 cm cube) | 1 L |
+| 1 m³ | 1000 L = 1 kL |
+
+A cubic metre is 100 cm × 100 cm × 100 cm = **1 000 000 cm³**: a length conversion is used three times, once for each direction.
+
+Water links the units to mass too. A litre of water has a mass of about a kilogram, so a cubic metre of water, 1000 L, is about a tonne. (That is how the litre was first defined: from 1901 to 1964 it was "the volume occupied by a mass of 1 kilogram of pure water" at its greatest density, [BIPM, 1901](https://www.bipm.org/committees/cg/cgpm/3-1901/resolution-1).)
 
 ## Investigate: converting units
 
@@ -93,7 +99,7 @@ tasks:
       options: ["Kilolitres (or cubic metres)", "Millilitres", "Cubic centimetres", "Litres, to the nearest millilitre"]
       answer: 0
       feedback: [null, "Millions of them: far too small a unit.", "Tens of millions: far too small.", "A pool cannot be measured that precisely."]
-      explain: "A pool holds tens of kilolitres (tens of cubic metres)."
+      explain: "A backyard pool might hold something like 30 kilolitres (30 cubic metres), a size made up for the task."
 ```
 
 ### Cubic metres
@@ -161,6 +167,8 @@ tasks:
       answer: 600
       tolerance: 0
       explain: "0.6 × 1000 = 600 L."
+    smaller:
+      check: { type: number, q: "A cubic metre is 100 cm long, 100 cm wide and 100 cm high. How many cm³ is that?", answer: 1000000, tolerance: 0, explain: "100 × 100 × 100 = 1 000 000 cm³, and a litre is 1000 of them. So how many litres in one cubic metre?" }
   - check:
       type: number
       q: "A box is 20 cm by 15 cm by 10 cm. How many litres does it hold?"

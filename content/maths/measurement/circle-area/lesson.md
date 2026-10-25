@@ -32,11 +32,7 @@ explainClip:
     - click: Make the number of pieces bigger
     - wait: 1600
 ---
-Cut a circle into equal slices (sectors) and lay them out top to tail. Half the slices point up and half point down, so the shape is about **half the circumference** long ($\pi r$) and **one radius** high ($r$). The more slices, the closer it is to a rectangle. So
-
-$$A = \pi r \times r = \pi r^2$$
-
-A quick check: a circle fits inside a square of side $2r$ (area $4r^2$) and around a square of area $2r^2$, so its area is between $2r^2$ and $4r^2$: about $3.14 r^2$. Do not mix it up with the circumference, $C = 2\pi r$, which is a length.
+A circle has no straight sides to multiply. How would you measure the space inside it?
 
 ## Predict: radius 3
 
@@ -60,6 +56,14 @@ insight: "Rearranging more and more slices shows the shape approaching a rectang
 try: { playground: board, starter: "circle.yml#run", height: 600 }
 check: { type: board, text: "Rearrange the pieces, then use at least 16 slices. Was your prediction right?", when: "k = 1 and n >= 16", explain: "The slices make a near-rectangle πr long and r high: A = πr × r = πr²." }
 ```
+
+The slices you rearranged work like this.
+
+Cut a circle into equal slices (sectors) and lay them out top to tail. Half the slices point up and half point down, so the shape is about **half the circumference** long ($\pi r$) and **one radius** high ($r$). The more slices, the closer it is to a rectangle. So
+
+$$A = \pi r \times r = \pi r^2$$
+
+A quick check: a circle fits inside a square of side $2r$ (area $4r^2$) and around a square of area $2r^2$, so its area is between $2r^2$ and $4r^2$: about $3.14 r^2$. Do not mix it up with the circumference, $C = 2\pi r$, which is a length.
 
 ## Investigate: why it works
 

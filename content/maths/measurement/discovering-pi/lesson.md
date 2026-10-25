@@ -28,12 +28,6 @@ explainClip:
 ---
 The **circumference** of a circle is hard to measure with a ruler, because it is curved. But you can roll the circle along a line for one full turn: the track it leaves is exactly its circumference, laid flat.
 
-Compare that track with the **diameter**, and something remarkable happens: for every circle, big or small, the circumference is the same number of diameters. That number is called **π** (the Greek letter pi, said "pie"):
-
-$$\pi = \frac{C}{d} \approx 3.14$$
-
-People have known this for a long time: an Egyptian text, the Rhind papyrus, written about 1650 BC, already uses a value close to 3.16 ([MacTutor History of Mathematics](https://mathshistory.st-andrews.ac.uk/HistTopics/Pi_through_the_ages/)).
-
 ## Predict: diameter 10
 
 ```step
@@ -58,6 +52,14 @@ check: { type: board, text: "Roll out at least three circles of different sizes.
 ```
 
 Change the radius, then press **Roll it out**. Each size adds a row to the table.
+
+Here's what the three circles showed.
+
+Compare that track with the **diameter**, and something remarkable happens: for every circle, big or small, the circumference is the same number of diameters. That number is called **π** (the Greek letter pi, said "pie"):
+
+$$\pi = \frac{C}{d} \approx 3.14$$
+
+People have known this for a long time: an Egyptian text, the Rhind papyrus, written about 1650 BC, already uses a value close to 3.16 ([MacTutor History of Mathematics](https://mathshistory.st-andrews.ac.uk/HistTopics/Pi_through_the_ages/)).
 
 ## Investigate: the same number every time
 

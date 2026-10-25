@@ -29,13 +29,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "= 30" }
     - wait: 1500
 ---
-A **right prism** has the same cross-section (its end, or base) all the way along. For every right prism,
-
-$$V = A \times h$$
-
-where $A$ is the area of the end and $h$ is the length (or height) of the prism. Find $A$ with the right area formula for the end: a rectangle, a triangle, or a composite shape.
-
-To find a missing length, work backwards: $h = V \div A$. Convert units before you start, so every length is in the same unit.
+A **right prism** has the same cross-section (its end, or base) all the way along.
 
 ## Predict: how deep?
 
@@ -59,6 +53,16 @@ insight: "Building a tank to a capacity shows the depth that a base of 12 m² ne
 try: { playground: board, starter: "prism.yml#run", height: 600 }
 check: { type: board, text: "Build the 4 m by 3 m tank that holds 36 000 L. Was your prediction right?", when: "l = 4 and w = 3 and c = 36000", explain: "36 000 L = 36 m³ = 12 m² × 3 m." }
 ```
+
+Here's the rule the tank was using.
+
+For every right prism,
+
+$$V = A \times h$$
+
+where $A$ is the area of the end and $h$ is the length (or height) of the prism. Find $A$ with the right area formula for the end: a rectangle, a triangle, or a composite shape.
+
+To find a missing length, work backwards: $h = V \div A$. Convert units before you start, so every length is in the same unit.
 
 ## Investigate: the end, then the length
 

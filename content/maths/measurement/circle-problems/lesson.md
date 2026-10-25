@@ -31,12 +31,6 @@ explainClip:
 ---
 Ask first: is the answer a **length** round the edge (circumference, $C = 2\pi r$) or the **space** inside (area, $A = \pi r^2$)?
 
-To find the radius from an area, undo each step: divide by $\pi$, then take the square root.
-
-$$r = \sqrt{A \div \pi}$$
-
-For part of a circle, take the fraction: a semicircle is half the area $\frac{1}{2}\pi r^2$, a quarter circle a quarter. Its perimeter is the curved part plus the straight edges. Say which value of π you used (the π button, or 3.14).
-
 ## Predict: a round rug
 
 ```step
@@ -59,6 +53,14 @@ insight: "Searching for the radius that gives the area shows the two steps that 
 try: { playground: board, starter: "circle.yml#run", height: 560 }
 check: { type: board, text: "Find the radius of the 12.57 m² rug. Was your prediction right?", when: "r = 2", explain: "π × 2² = π × 4 ≈ 12.57 m²." }
 ```
+
+Here's how the board's answer comes out.
+
+To find the radius from an area, undo each step: divide by $\pi$, then take the square root.
+
+$$r = \sqrt{A \div \pi}$$
+
+For part of a circle, take the fraction: a semicircle is half the area $\frac{1}{2}\pi r^2$, a quarter circle a quarter. Its perimeter is the curved part plus the straight edges. Say which value of π you used (the π button, or 3.14).
 
 ## Investigate: backwards and in parts
 

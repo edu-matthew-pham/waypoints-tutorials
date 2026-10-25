@@ -31,7 +31,7 @@ explainClip:
     - expect: { selector: "#gsum", contains: "= 24" }
     - wait: 1200
 ---
-The **area** of a shape is how many unit squares it covers. A rectangle 6 cm long and 4 cm high has 4 rows of 6 squares: $6 \times 4 = 24$ square centimetres, written 24 cm².
+The **area** of a shape is how many unit squares it covers. A rectangle 5 cm long and 3 cm high has 3 rows of 5 squares: $5 \times 3 = 15$ square centimetres, written 15 cm².
 
 A **parallelogram** has two pairs of parallel sides, like a rectangle pushed over. Its **base** is one side, and its **perpendicular height** is the distance straight up from the base to the opposite side, at a right angle (marked ∟). The slanted side is longer than the height.
 
@@ -179,6 +179,8 @@ tasks:
       feedback:
         - ["60", "6 cm is the slanted side. Use the height, 4.5 cm."]
       explain: "10 × 4.5 = 45 cm²."
+    smaller:
+      check: { type: question, q: "Cut the triangle off one end and move it, and the slanted side is gone. Which length is left as the rectangle's side: 6 cm or 4.5 cm?", options: ["6 cm", "4.5 cm"], answer: 1, explain: "The cut goes straight down, at a right angle to the base, so the height 4.5 cm is the rectangle's side. The slanted side disappears." }
   - check:
       type: question
       q: "A parallelogram's base is 5 m and its height 2 m. How is its area written?"

@@ -33,10 +33,6 @@ explainClip:
 ---
 **Volume** is how much space a solid takes up, counted in unit cubes. A cube 1 cm along each edge is one **cubic centimetre**, 1 cm³.
 
-A box (a **rectangular prism**; a **prism** is any solid with the same shape all the way through) fills up in layers. The bottom layer covers the base: a 4 cm by 3 cm base holds $4 \times 3 = 12$ cubes. Every layer above is the same, so the number of layers is the height:
-
-$$V = \text{area of the base} \times \text{height} = A \times h$$
-
 ## Predict: fill the box
 
 ```step
@@ -61,6 +57,12 @@ check: { type: board, text: "Build the box up to 5 layers. How many cubes in eac
 ```
 
 The top layer is orange. Count the cubes in it, then the layers.
+
+Here's the rule the layers show.
+
+A box (a **rectangular prism**; a **prism** is any solid with the same shape all the way through) fills up in layers. The bottom layer covers the base: a 4 cm by 3 cm base holds $4 \times 3 = 12$ cubes. Every layer above is the same, so the number of layers is the height:
+
+$$V = \text{area of the base} \times \text{height} = A \times h$$
 
 ## Investigate: base times height
 
@@ -137,6 +139,8 @@ tasks:
         - ["51", "That subtracts. How many layers of 20 make 60?"]
         - ["1200", "That multiplies. Divide the volume by the base area."]
       explain: "The base is 4 × 5 = 20 cm², and 60 ÷ 20 = 3 cm."
+    smaller:
+      check: { type: number, q: "The base is 4 cm by 5 cm. How many cubes fill one layer?", answer: 20, tolerance: 0, explain: "4 × 5 = 20 cubes in a layer. Now, how many layers of 20 make 60?" }
   - check:
       type: answer
       q: "A box is 2.5 cm long, 4 cm wide and 2 cm high. What is its volume, in cm³?"
