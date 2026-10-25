@@ -1,0 +1,32 @@
+# Boards for "Factorising quadratics". The target is x² + Bx + C; set p and q so the rectangle matches.
+
+# region: run
+widget: tiles
+mode: binomial
+target: 7, 12
+slider p: 0, 9, 1
+slider q: 0, 9, 1
+# endregion
+
+# region: explain
+widget: tiles
+mode: binomial
+target: 5, 6
+slider p: 0, 8, 1
+slider q: 0, 8, 6
+# endregion
+
+# region: explain-pic
+widget: tiles
+mode: binomial
+p: 2
+q: 3
+# endregion
+
+# region: vary
+widget: tiles
+mode: binomial
+target: 1, -12
+slider p: -9, 9, 0
+slider q: -9, 9, 0
+# endregion

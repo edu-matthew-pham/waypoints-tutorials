@@ -1,0 +1,25 @@
+# Practice for "Factorising quadratics".
+templates:
+  - q: "Factorise x^2 + {a + b}x + {a * b}."
+    vars: { a: "1..9", b: "1..9" }
+    where: "a <= b"
+    answer: "(x + {a})(x + {b})"
+    form: factorised
+    explain: "{a} and {b} multiply to {a * b} and add to {a + b}. Check by expanding."
+  - q: "Factorise x^2 - {a + b}x + {a * b}."
+    vars: { a: "1..9", b: "1..9" }
+    where: "a <= b"
+    answer: "(x - {a})(x - {b})"
+    form: factorised
+    explain: "−{a} and −{b} multiply to {a * b} and add to −{a + b}."
+  - q: "Factorise x^2 + {a - b|sc}x - {a * b}."
+    vars: { a: "1..9", b: "1..9" }
+    where: "a > b"
+    answer: "(x + {a})(x - {b})"
+    form: factorised
+    explain: "{a} and −{b} multiply to −{a * b} and add to {a - b}."
+  - q: "Factorise x^2 - {a * a}."
+    vars: { a: "2..12" }
+    answer: "(x - {a})(x + {a})"
+    form: factorised
+    explain: "−{a} and {a} multiply to −{a * a} and add to 0."

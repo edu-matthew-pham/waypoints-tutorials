@@ -1,0 +1,7 @@
+# Mia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+Factorise x² − x − 6.
+Two numbers that multiply to 6: 2 and 3.
+So x² − x − 6 = (x − 2)(x + 3).
+# endregion

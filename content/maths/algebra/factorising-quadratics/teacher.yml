@@ -1,0 +1,37 @@
+summary: "Students run the pattern backwards: pack x² + bx + c into a rectangle by finding two numbers that add to b and multiply to c, and come back to a garden bed's missing side (AC9M9A02, node 3)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can factorise x² + bx + c by finding two numbers.
+  - I can use the signs of b and c to find the signs of the numbers.
+  - I can check a factorisation by expanding.
+struggle: "Listing factor pairs and keeping the signs right. Ask students to write the pairs that multiply to c first, then look for the sum."
+before: |
+  Do the Run board yourself first. Students need The pattern: add for the middle, multiply for the end.
+
+  The one idea: the two numbers multiply to c and add to b. The common mistake is finding a pair that multiplies to c and not checking the sum or signs (Mia's working).
+running:
+  - "Predict: take a show of hands. Those who chose x + 9 added 3 and 9 to get 12 (the end) rather than 7."
+  - "Run: ask students to say the two numbers and what they add to before the board agrees."
+  - "Paper: the try-one after the worked example and the garden size in Make are worked on paper first. Books out, and look for the list of factor pairs."
+  - "Modify: before x² − 5x + 6, ask what sign the two numbers have."
+stuck:
+  - see: "A student gives (x + 1)(x + 15) for x² + 8x + 15."
+    ask: "What do 1 and 15 add to?"
+    fix: "Check both rules: multiply to 15, add to 8: 3 and 5."
+  - see: "A student gets the signs wrong."
+    ask: "What sign is c? What sign is b?"
+    fix: "c negative: one of each sign. c positive: same sign as b."
+stretch: "Factorise x² − 6x + 9 and x² + 6x + 9. What do you notice?"
+support: "A table of factor pairs of c with a column for their sum."
+leads: |
+  Continues AC9M9A02 node 3.
+
+  Where it leads: choosing between forms (next lesson), solving quadratics, and parabolas that cross the x-axis.
+exit:
+  q: "Factorise x² + 2x − 15."
+  a: "(x + 5)(x − 3)."
+explain: |
+  To factorise $x^2 + bx + c$, find two numbers that multiply to $c$ and add to $b$. Then $x^2 + bx + c = (x + p)(x + q)$.
+
+  For example, $x^2 + 7x + 12$: 3 and 4 multiply to 12 and add to 7, so it's $(x + 3)(x + 4)$. Check by expanding.
