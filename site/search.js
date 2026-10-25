@@ -41,6 +41,21 @@
     out.sort(function (a, b) { return b.s - a.s || a.e.t.localeCompare(b.e.t); });
     return out;
   }
+  // "Add to my path" (/my-path/): the path code is loaded once, on the first press.
+  var pathLoading = null;
+  function pathAdd(slug) {
+    if (window.wpPathAdd) return Promise.resolve(window.wpPathAdd(slug));
+    if (!pathLoading) pathLoading = new Promise(function (ok, no) { var s = document.createElement('script'); s.src = root + 'my-path.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
+    return pathLoading.then(function () { return window.wpPathAdd(slug); });
+  }
+  function pathButton(slug) {
+    var li = document.createElement('div'), b = document.createElement('button');
+    b.type = 'button'; b.className = 'wpt-path-add'; b.textContent = 'Add to my path'; li.style.padding = '0 12px 8px';
+    b.addEventListener('click', function () {
+      pathAdd(slug).then(function (n) { li.replaceChildren(); var a = document.createElement('a'); a.href = root + 'my-path/'; a.textContent = 'Added. My path has ' + n + (n === 1 ? ' lesson' : ' lessons') + ' – open it'; a.style.display = 'inline'; li.appendChild(a); }, function () { b.textContent = 'Not available'; });
+    });
+    li.appendChild(b); return li;
+  }
   forms.forEach(function (form) {
     form.hidden = false;
     var input = form.querySelector('input'), list = form.querySelector('.wp-results'), subject = form.dataset.subject || '', shown = [];
@@ -59,6 +74,7 @@
         var meta = [e.ty === 'standard' ? 'Standard' : LABEL[e.ty], e.ty === 'course' || e.ty === 'standard' || e.ty === 'page' ? e.s : e.s + ' › ' + e.c, e.y].filter(Boolean).join(' · ');
         a.innerHTML = '<b>' + esc(e.t) + '</b><span>' + esc(meta) + '</span>' + (e.d ? '<span>' + esc(e.d) + '</span>' : '');
         li.appendChild(a); list.appendChild(li); shown.push(a);
+        if (e.ty === 'lesson') li.appendChild(pathButton(e.u.replace(/\/$/, '')));
       });
       if (res.length > 12) { var more = document.createElement('li'); more.className = 'wp-none'; more.textContent = 'Showing the first 12 of ' + res.length + '. Add a word to narrow it down.'; list.appendChild(more); }
     }

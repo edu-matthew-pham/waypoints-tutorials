@@ -26,7 +26,7 @@ import { buildPointerPages, POINTER_SUBJECTS } from './pointer-pages.mjs';
 import { reviewSheet } from './review-sheet.mjs';
 import { makeSearch, norm as normSearch } from './search-index.mjs';
 import { loadCoverage, shortCode } from './coverage.mjs';
-import { searchBoxHtml, SEARCH_HINTS } from './search-view.mjs';
+import { searchBoxHtml, SEARCH_HINTS, SEARCH_CSS } from './search-view.mjs';
 import { coachPrompt } from './coach.mjs';
 import { loadProjects, skillLabel } from './projects.mjs';
 import { PROJECT_CSS, projectListBody, projectPageBody } from './project-view.mjs';
@@ -450,6 +450,7 @@ copyFileSync(join('site', 'progress.js'), join(OUT, 'progress.js'));
 copyFileSync(join('site', 'trail.js'), join(OUT, 'trail.js')); // the trail map on pathway pages (tools/trail.mjs)
 copyFileSync(join('site', 'trailheads.js'), join(OUT, 'trailheads.js')); // the trailheads on a subject page (tools/trail.mjs)
 copyFileSync(join('site', 'curriculum-map.js'), join(OUT, 'curriculum-map.js')); // the curriculum map (tools/curriculum-map.mjs)
+copyFileSync(join('site', 'my-path.js'), join(OUT, 'my-path.js')); // My path (content/my-path.md)
 copyFileSync(join('site', 'check.js'), join(OUT, 'check.js')); // the Check your school page (content/check.md)
 // Search (25 Oct 2026): the index is built here from the same data the pages use; site/search.js searches it in the browser.
 const COVERAGE = loadCoverage('.', COURSES.map((c) => c.path).filter((p) => p.startsWith('code/')));
@@ -849,7 +850,7 @@ for (const f of readdirSync(CONTENT_ROOT).filter((n) => n.endsWith('.md') && n !
   const fm = raw.match(/^---\n([\s\S]*?)\n---\n?/);
   const meta = fm ? (YAMLparse(fm[1]) || {}) : {};
   const title = meta.title || titleCase(name);
-  const body = new Marked().parse(fm ? raw.slice(fm[0].length) : raw);
+  const body = new Marked().parse(fm ? raw.slice(fm[0].length) : raw).replace('<!--wpt-search-css-->', `<style>${SEARCH_CSS}</style>`);
   mkdirSync(join(OUT, name), { recursive: true });
   writeFileSync(join(OUT, name, 'index.html'), page(title,
     `<style>.approach table{display:block;max-width:100%;overflow-x:auto}</style><header class="top"><a class="crumb" href="../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header><div class="pabout approach">${body}</div>`,

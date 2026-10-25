@@ -123,6 +123,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'Why we teach this way', u: 'approach/', d: 'The ideas behind these tutorials.' },
     { t: 'Behind the scenes', u: 'behind-the-scenes/', d: 'How a lesson is made and checked.' },
     { t: 'Check your school', u: 'check/', d: 'Can your school devices and network run the in-browser Python lessons?' },
+    { t: 'My path', u: 'my-path/', d: 'Pick lessons, put them in your own order, add a note and share one link.' },
     { t: 'Choosing AI tools for learning', u: 'choosing-ai-tools/', d: 'A teacher guide to comparing AI tools fairly.' },
     { t: 'For science teachers', u: 'science-teachers/', d: 'How the science boards sit beside class practicals, and a draft list of common Year 7 to 10 practicals to correct.' },
     { t: 'For code teachers', u: 'code-teachers/', d: 'Which Code course to start with, how a lesson runs, what you need in the room, and a review sheet.' },

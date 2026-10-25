@@ -5,6 +5,7 @@ audience: teachers
 links:
   - { title: Create lessons and courses, href: code/create/, group: Make your own, summary: "Write or paste a lesson, preview it with a live playground, and request that it be added." }
   - { title: Make a lesson, href: teachers/make-a-lesson/, group: Make your own }
+  - { title: My path, href: my-path/, group: Make your own, summary: "Pick lessons, put them in your order, add a note and share one link. No account." }
   - { title: For code teachers, href: code-teachers/, group: Subject guides, summary: "Which Code course to start with, how a lesson runs, what you need, and a review sheet." }
   - { title: For How computers work teachers, href: systems-teachers/, group: Subject guides, summary: "Which course to start with and what each needs." }
   - { title: For engineering teachers, href: engineering-teachers/, group: Subject guides, summary: "What each course needs (browser only, or kits) and where to start." }
