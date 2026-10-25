@@ -1,0 +1,17 @@
+# Practice for "Index laws with letters".
+templates:
+  - q: "Simplify {p}x^{m} × {q}x^{n}."
+    vars: { p: "2..9", q: "2..9", m: "1..6", n: "1..6" }
+    answer: "{p * q}x^{m + n}"
+    form: simplified
+    explain: "{p} × {q} = {p * q} and x^{m} × x^{n} = x^{m + n}."
+  - q: "Simplify {p * q}x^{m + n} ÷ {p}x^{n}."
+    vars: { p: "2..6", q: "2..6", m: "1..5", n: "1..5" }
+    answer: "{q}x^{m}"
+    form: simplified
+    explain: "{p * q} ÷ {p} = {q} and x^{m + n} ÷ x^{n} = x^{m}."
+  - q: "Simplify ({p}x^{m})^{n}."
+    vars: { p: "2..4", m: "1..4", n: "2..3" }
+    answer: "{pow(p, n)}x^{m * n}"
+    form: simplified
+    explain: "{p}^{n} = {pow(p, n)} and (x^{m})^{n} = x^{m * n}."

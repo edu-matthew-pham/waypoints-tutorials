@@ -1,0 +1,8 @@
+# Kim's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kim
+Simplify 3a² × 4a³.
+Multiply the numbers: 3 × 4 = 12.
+Multiply the powers of a: 2 × 3 = 6.
+So 3a² × 4a³ = 12a⁶.
+# endregion

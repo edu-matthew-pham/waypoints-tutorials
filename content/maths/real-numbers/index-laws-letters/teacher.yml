@@ -1,0 +1,39 @@
+summary: "Students apply the index laws to letters: coefficients multiply, indices add, subtract or multiply, and a scaled-up lizard shows weight and leg strength growing at different rates (AC9M9A01, node 3)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can simplify products and quotients of powers of letters.
+  - I can deal with the number in front separately from the letters.
+  - I can explain why volume grows faster than area.
+struggle: "Keeping coefficients and indices apart. Ask students to circle the numbers in front and simplify them first."
+before: |
+  Do the Run board yourself first. Students need All the index laws.
+
+  The one idea: a letter is a number, so the same laws work; coefficients are multiplied or divided on their own. The common mistake is multiplying indices for a product (Kim's working).
+
+  The lizard is a model: similar shapes scale as k, k² and k³. Real animals change shape as they get bigger.
+running:
+  - "Predict: take a show of hands. Those who chose 100 times used area, not volume."
+  - "Run: ask students to say how many a's there are before reading the index."
+  - "Paper: the try-one after the worked example and the leg load in Make are worked on paper first. Books out, and look for the numbers worked out separately."
+  - "Modify: before a² ÷ a⁵, ask whether the answer is bigger or smaller than 1."
+stuck:
+  - see: "A student writes 3a² × 4a³ = 12a⁶."
+    ask: "How many a's are there in all?"
+    fix: "Five: a² is two a's and a³ is three. 12a⁵."
+  - see: "A student writes (3a²)³ = 3a⁶."
+    ask: "Which part is cubed?"
+    fix: "The whole bracket: 3³ = 27 as well."
+stretch: "Why can an ant carry many times its own weight but an elephant can't? Use k³ ÷ k²."
+support: "A card with the three laws and a worked example with numbers and letters side by side."
+leads: |
+  Continues AC9M9A01 node 3.
+
+  Where it leads: scientific notation (next), area and volume scaling, exponential functions (Year 10).
+exit:
+  q: "Simplify 8x⁵ ÷ 2x²."
+  a: "4x³."
+explain: |
+  A letter stands for a number, so the index laws work on it. Multiplying adds the indices, dividing subtracts them, and a power of a power multiplies them.
+
+  Numbers in front multiply or divide on their own: $3a^2 \times 4a^3 = 12a^5$.

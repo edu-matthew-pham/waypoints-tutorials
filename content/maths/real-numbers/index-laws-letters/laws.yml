@@ -1,0 +1,33 @@
+# Boards for "Index laws with letters". A letter stands for any number, so the board uses a number for the base.
+
+# region: run
+widget: indexlaws
+mode: product
+slider a: 2, 10, 3
+slider m: 1, 6, 2
+slider n: 1, 6, 3
+# endregion
+
+# region: explain
+widget: indexlaws
+mode: product
+a: 2
+slider m: 1, 6, 2
+slider n: 1, 6, 1
+# endregion
+
+# region: explain-pic
+widget: indexlaws
+mode: product
+a: 3
+m: 2
+n: 3
+# endregion
+
+# region: vary
+widget: indexlaws
+mode: negative
+slider a: 2, 10, 5
+slider m: 1, 6, 2
+slider n: 1, 6, 5
+# endregion
