@@ -2360,6 +2360,17 @@ nodes:
       world: "Stopping distance grows faster than speed: the differences in the table aren't constant, but their differences are."
       next: "Graphing (n2), modelling change (A05)."
     entries:
+      - id: handshakes
+        kind: world
+        steps: [1, 2]
+        domain: social
+        picture: spatial
+        situation: "Everyone in a group shakes hands with everyone else once. How many handshakes for 6 people? For 30?"
+        maths: "The counts 0, 1, 3, 6, 10 have first differences 1, 2, 3, 4 and constant second differences of 1: a quadratic."
+        given: "The number of people."
+        hidden: "That the count is n(n − 1)/2: each person shakes n − 1 hands, but every handshake is counted twice."
+        check: "Act it out with a small group and count."
+        figures: []
       - see: stopping-distance
 
   AC9M9A04 n2:
