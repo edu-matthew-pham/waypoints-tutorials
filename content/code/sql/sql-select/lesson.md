@@ -5,6 +5,24 @@ moveId: sql-select
 title: Look inside a table
 summary: Read data from a table with SELECT, choosing the columns you want.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8190
+  url: http://127.0.0.1:8190/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "SELECT chooses the columns. FROM names the table."
+  clip:
+    - caption: "A query that asks for two columns."
+    - type: { into: "SQL query", text: "SELECT title, artist FROM songs;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "Paper Planes Home" }
+    - caption: "Every song comes back, but only those two columns."
+    - wait: 1800
 hook: "A music app knows thousands of songs. Asking it for just the titles takes one line."
 ---
 A **database** stores information in **tables**, like a spreadsheet with strict rules. **SQL** is the language you use to ask a table a question. The question comes back as a new table.

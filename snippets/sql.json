@@ -1,0 +1,171 @@
+{
+ "title": "SQL reference",
+ "summary": "The SQL from the course, each command with what it does. Copy a card into the query box.",
+ "language": "sql",
+ "groups": [
+  {
+   "name": "Asking questions",
+   "items": [
+    {
+     "label": "SELECT everything",
+     "code": "SELECT * FROM ‹songs›;",
+     "hint": "Shows every column and every row of a table. The star means all columns.",
+     "matches": "[sS][eE][lL][eE][cC][tT]\\s+\\*",
+     "example": "SELECT * FROM songs;"
+    },
+    {
+     "label": "SELECT some columns",
+     "code": "SELECT ‹title›, ‹artist› FROM ‹songs›;",
+     "hint": "Shows only the columns you name, in the order you name them, separated by commas.",
+     "example": "SELECT title, artist FROM songs;"
+    },
+    {
+     "label": "WHERE",
+     "code": "SELECT * FROM ‹songs› WHERE ‹year› > ‹2015›;",
+     "hint": "Keeps only the rows where the test is true. Use =, <, >, <=, >= and != to compare.",
+     "matches": "\\b[wW][hH][eE][rR][eE]\\b",
+     "example": "SELECT title, year FROM songs WHERE year > 2015;"
+    },
+    {
+     "label": "AND, OR",
+     "code": "SELECT * FROM ‹songs› WHERE ‹genre› = '‹pop›' AND ‹year› > ‹2015›;",
+     "hint": "AND needs both tests to be true. OR needs at least one. Text goes in single quotes.",
+     "example": "SELECT title FROM songs WHERE genre = 'pop' AND year > 2015;"
+    },
+    {
+     "label": "LIKE",
+     "code": "SELECT * FROM ‹songs› WHERE ‹title› LIKE '‹%love%›';",
+     "hint": "Matches text by pattern. % stands for any run of letters, so %love% finds a title with love anywhere in it.",
+     "example": "SELECT title FROM songs WHERE title LIKE '%love%';"
+    },
+    {
+     "label": "ORDER BY",
+     "code": "SELECT * FROM ‹songs› ORDER BY ‹plays› DESC;",
+     "hint": "Sorts the rows. ASC goes low to high (the default); DESC goes high to low.",
+     "matches": "[oO][rR][dD][eE][rR]\\s+[bB][yY]",
+     "example": "SELECT title, plays FROM songs ORDER BY plays DESC;"
+    },
+    {
+     "label": "LIMIT",
+     "code": "SELECT * FROM ‹songs› ORDER BY ‹plays› DESC LIMIT ‹3›;",
+     "hint": "Stops after that many rows. With ORDER BY it gives a top three or bottom three.",
+     "matches": "\\b[lL][iI][mM][iI][tT]\\b",
+     "example": "SELECT title, plays FROM songs ORDER BY plays DESC LIMIT 3;"
+    }
+   ]
+  },
+  {
+   "name": "Counting and adding up",
+   "items": [
+    {
+     "label": "COUNT",
+     "code": "SELECT COUNT(*) FROM ‹songs›;",
+     "hint": "Counts the rows. Add a WHERE to count only the rows that pass the test.",
+     "matches": "[cC][oO][uU][nN][tT]\\s*\\(",
+     "example": "SELECT COUNT(*) FROM songs WHERE genre = 'rock';"
+    },
+    {
+     "label": "SUM, AVG, MIN, MAX",
+     "code": "SELECT AVG(‹seconds›) FROM ‹songs›;",
+     "hint": "One answer from a whole column: SUM adds, AVG averages, MIN and MAX find the smallest and largest.",
+     "matches": "\\b([sS][uU][mM]|[aA][vV][gG]|[mM][iI][nN]|[mM][aA][xX])\\s*\\(",
+     "example": "SELECT MIN(seconds), MAX(seconds), AVG(seconds) FROM songs;"
+    },
+    {
+     "label": "AS (a nicer column name)",
+     "code": "SELECT COUNT(*) AS ‹how_many› FROM ‹songs›;",
+     "hint": "Gives a result column a name of your choice, so the table reads clearly.",
+     "example": "SELECT COUNT(*) AS how_many FROM songs;"
+    },
+    {
+     "label": "GROUP BY",
+     "code": "SELECT ‹genre›, COUNT(*) FROM ‹songs› GROUP BY ‹genre›;",
+     "hint": "Makes one row per group and works out the count, sum or average for each group.",
+     "matches": "[gG][rR][oO][uU][pP]\\s+[bB][yY]",
+     "example": "SELECT genre, COUNT(*) AS songs FROM songs GROUP BY genre;"
+    }
+   ]
+  },
+  {
+   "name": "Tables that link",
+   "items": [
+    {
+     "label": "JOIN",
+     "code": "SELECT ‹songs›.‹title›, ‹artists›.‹country› FROM ‹songs› JOIN ‹artists› ON ‹songs›.‹artist› = ‹artists›.‹name›;",
+     "hint": "Puts two tables side by side, matching rows where the ON test is true. Name the table before the column: songs.title.",
+     "matches": "\\b[jJ][oO][iI][nN]\\b",
+     "example": "SELECT songs.title, artists.country\nFROM songs\nJOIN artists ON songs.artist = artists.name;"
+    }
+   ]
+  },
+  {
+   "name": "Changing the data",
+   "items": [
+    {
+     "label": "INSERT",
+     "code": "INSERT INTO ‹songs› (‹title›, ‹artist›) VALUES ('‹Song›', '‹Artist›');",
+     "hint": "Adds one new row. List the columns, then the values in the same order.",
+     "matches": "[iI][nN][sS][eE][rR][tT]\\s+[iI][nN][tT][oO]"
+    },
+    {
+     "label": "UPDATE",
+     "code": "UPDATE ‹songs› SET ‹plays› = ‹plays› + 1 WHERE ‹id› = ‹3›;",
+     "hint": "Changes values in existing rows. Always add a WHERE, or every row changes.",
+     "matches": "\\b[uU][pP][dD][aA][tT][eE]\\b"
+    },
+    {
+     "label": "DELETE",
+     "code": "DELETE FROM ‹songs› WHERE ‹id› = ‹3›;",
+     "hint": "Removes rows. Always add a WHERE, or every row goes.",
+     "matches": "[dD][eE][lL][eE][tT][eE]\\s+[fF][rR][oO][mM]"
+    }
+   ]
+  },
+  {
+   "name": "Designing tables",
+   "items": [
+    {
+     "label": "CREATE TABLE",
+     "code": "CREATE TABLE ‹pets› (\n  ‹id› INTEGER PRIMARY KEY,\n  ‹name› TEXT,\n  ‹age› INTEGER\n);",
+     "hint": "Makes a new, empty table. Each column has a name and a type: INTEGER, REAL (decimals) or TEXT.",
+     "matches": "[cC][rR][eE][aA][tT][eE]\\s+[tT][aA][bB][lL][eE]"
+    },
+    {
+     "label": "PRIMARY KEY",
+     "code": "‹id› INTEGER PRIMARY KEY",
+     "hint": "A column whose value is different in every row, so each row can be told apart and found again. It is the column other tables point to.",
+     "matches": "[pP][rR][iI][mM][aA][rR][yY]\\s+[kK][eE][yY]"
+    },
+    {
+     "label": "Link to another table",
+     "code": "‹song_id› INTEGER REFERENCES ‹songs›(‹id›)",
+     "hint": "A column that holds another table's key (a foreign key). It is how a review points to the song it is about.",
+     "matches": "[rR][eE][fF][eE][rR][eE][nN][cC][eE][sS]"
+    }
+   ]
+  },
+  {
+   "name": "SQL from Python",
+   "items": [
+    {
+     "label": "Connect and ask",
+     "code": "import sqlite3\ndb = sqlite3.connect('‹music.db›')\nrows = db.execute('SELECT * FROM ‹songs›').fetchall()",
+     "hint": "Opens the database file, runs a query and gets the rows back as a list you can loop over.",
+     "matches": "sqlite3\\.connect"
+    },
+    {
+     "label": "A ? for each value",
+     "code": "db.execute('SELECT * FROM ‹songs› WHERE ‹year› > ?', (‹2015›,))",
+     "hint": "Put a ? where a value goes and give the values in brackets after. Never join text into the query yourself.",
+     "matches": "execute\\([^)]*\\?"
+    },
+    {
+     "label": "Save the changes",
+     "code": "db.commit()",
+     "hint": "INSERT, UPDATE and DELETE only stick once you commit. Without it the change is lost when the program ends.",
+     "matches": "\\.commit\\("
+    }
+   ]
+  }
+ ]
+}

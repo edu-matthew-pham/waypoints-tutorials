@@ -8,10 +8,42 @@ projects:
 
       The page talks to the micro:bit with `microbit.js`, which is already in the starter. In this preview it opens a **pretend micro:bit** (type the lines it would send). For the real thing, download the page and open it in Chrome or Edge with the micro:bit plugged in.
     milestones:
-      - "The micro:bit sends a reading again and again, by name (serial write value)."
-      - "My page shows the reading as it changes (try it with the pretend micro:bit)."
-      - "My page changes how it looks when the reading crosses a line I chose."
-      - "A button on my page sends a command, and the micro:bit does something when it arrives."
+      - text: "The micro:bit sends a reading again and again, by name (serial write value)."
+        hints:
+          - "A forever loop that sends a reading and then pauses repeats for ever."
+          - "Send the sensor reading with serial write value, using a name such as temp."
+        part: 1
+        way: |
+          basic.forever(function () {
+              serial.writeValue("temp", input.temperature())
+              basic.pause(1000)
+          })
+      - text: "My page shows the reading as it changes (try it with the pretend micro:bit)."
+        hints:
+          - "The page hears each reading with microbit.onValue(function (name, number) { ... })."
+          - "Check the name is the one your micro:bit sends, then put the number on the page with textContent."
+        part: 2
+        way: |
+            microbit.onValue(function (name, number) {
+              if (name === "temp") {
+                document.querySelector("#reading").textContent = number + " °C";
+      - text: "My page changes how it looks when the reading crosses a line I chose."
+        hints:
+          - "Pick the line first, such as 25 degrees."
+          - "Use a comparison on the number, and change a style with el.style.background."
+        part: 2
+        way: |
+                document.body.style.background = number > 25 ? "#ffd6d0" : "white";
+      - text: "A button on my page sends a command, and the micro:bit does something when it arrives."
+        hints:
+          - 'A button click on the page can send a line, such as microbit.send("word").'
+          - "On the micro:bit, read the line that arrives and check it is your word before you act on it."
+        part: 2
+        way: |
+            document.querySelector("#alarm").addEventListener("click", function () {
+              microbit.send("alarm");
+            });
+    reveal: true
     stretch:
       - "Send two readings and show both."
       - "Keep a list of the last ten readings on the page."

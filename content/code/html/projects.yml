@@ -8,9 +8,28 @@ projects:
     example: about-me.html
     uses: [heading, list, link, image]
     milestones:
-      - "My page has a main heading and at least two smaller headings."
-      - "It has a list and a picture (with alt words that say what it shows)."
-      - "At least one link goes to a real page, and it opens."
+      - text: "My page has a main heading and at least two smaller headings."
+        hints:
+          - "One heading is the biggest and says what the page is about. The others are smaller."
+          - "The tags run from h1 (biggest) down to h6. Use one h1 and give each section its own h2."
+        way: |
+          <h1>Football: my guide</h1>
+          <p>I have played for six years. Here is why I love it.</p>
+
+          <h2>Why it is great</h2>
+      - text: "It has a list and a picture (with alt words that say what it shows)."
+        hints:
+          - "A list is a set of li items wrapped in ul (dots) or ol (numbers)."
+          - "A picture is img with src for the file and alt for words that describe it."
+        way: |
+          <img src="ball.svg" alt="A black and white football" width="120">
+      - text: "At least one link goes to a real page, and it opens."
+        hints:
+          - "A link is the a tag, and href holds where it goes."
+          - "For a page on another site, href needs the whole address, starting with https://."
+        way: |
+          <a href="https://www.theifab.com/laws/">Laws of the Game</a>
+    reveal: true
     stretch:
       - "A list inside a list (for example, favourites by category)."
       - "A picture that is also a link."
@@ -26,9 +45,26 @@ projects:
     example: order-form.html
     uses: [form, button, id, css-rule]
     milestones:
-      - "Each box has a label linked to it (clicking the label puts the cursor in the box)."
-      - "There is a number box, a choice (select or radio buttons) and a button."
-      - "CSS lays it out neatly, so the labels and boxes line up."
+      - text: "Each box has a label linked to it (clicking the label puts the cursor in the box)."
+        hints:
+          - "A box and its label are linked by an id on the box and the same word in the label's for."
+          - "Click the label in the preview. If the cursor jumps into the box, they are linked."
+        way: |
+          <label for="who">Your name</label>
+          <input id="who">
+      - text: "There is a number box, a choice (select or radio buttons) and a button."
+        hints:
+          - "input has a type. One of the types makes a number box."
+          - "A select holds a list of option tags, one for each choice."
+        way: |
+          <input id="count" type="number" min="1" value="1">
+      - text: "CSS lays it out neatly, so the labels and boxes line up."
+        hints:
+          - "Labels are inline, so they will not take a width until you change how they display."
+          - "Give every label the same width, and the boxes will start in the same place."
+        way: |
+          label { display: inline-block; width: 110px; margin: 6px 0; }
+    reveal: true
     stretch:
       - "A box for a note, with a textarea."
       - "Required boxes, with the word required."

@@ -8,9 +8,22 @@ projects:
     example: looks.html
     uses: [js-query, js-event, class-list]
     milestones:
-      - "Each button changes something you can see."
-      - "Pressing a button again switches its look back off."
-      - "The page still reads well in every look, and with two looks on at once."
+      - text: "Each button changes something you can see."
+        hints:
+          - "Write the look as a CSS class first. Then the button only has to add that class to the page."
+          - "A click handler can call classList.toggle with the class name."
+        way: |
+          document.querySelector("#dark").addEventListener("click", () => {
+            page.classList.toggle("dark");
+          });
+      - text: "Pressing a button again switches its look back off."
+        hints:
+          - "add only turns a class on. Look for the classList method that turns it on and off."
+      - text: "The page still reads well in every look, and with two looks on at once."
+        hints:
+          - "Turn both looks on together and read the page. Can you still see the words?"
+          - "If one look sets a colour that clashes with another, change one of the two classes."
+    reveal: true
     stretch:
       - "A third look of your own (a colour theme, wider spacing, a hidden part)."
       - "After Saving between visits: remember which looks were on."
@@ -25,9 +38,25 @@ projects:
     example: flashcards.html
     uses: [input-value, create-element, class-list]
     milestones:
-      - "Adding makes a new card on the page."
-      - "Clicking a card shows its answer, and clicking again shows the question."
-      - "An empty box adds nothing."
+      - text: "Adding makes a new card on the page."
+        hints:
+          - "Read what is in the two boxes with .value, then make a new element for the card."
+          - "A new element is not on the page until you append it to a tag that is."
+        way: |
+          const card = document.createElement("div");
+          card.className = "card";
+      - text: "Clicking a card shows its answer, and clicking again shows the question."
+        hints:
+          - "Put both the question and the answer in the card, and hide one of them with CSS."
+          - "A class on the card can decide which one is hidden. Toggle it on click."
+        way: |
+          card.addEventListener("click", () => card.classList.toggle("flipped"));
+      - text: "An empty box adds nothing."
+        hints:
+          - "Check the boxes before you make the card. If either one is empty, stop."
+        way: |
+          if (q === "" || a === "") return;
+    reveal: true
     stretch:
       - "A count of how many cards there are."
       - "A Shuffle button."
@@ -43,9 +72,23 @@ projects:
     example: story.html
     uses: [js-query, js-event, text-content]
     milestones:
-      - "My story has at least three places to be."
-      - "One ending can be reached two different ways."
-      - "A Start again button takes the reader back to the beginning."
+      - text: "My story has at least three places to be."
+        hints:
+          - "Plan on paper first: a box for each place and an arrow for each choice."
+          - "A variable can hold which place the reader is in, as a word."
+        way: |
+          let place = "start";
+          const words = document.querySelector("#words");
+      - text: "One ending can be reached two different ways."
+        hints:
+          - "Two different places can both send the reader to the same next place."
+          - "In the click handler, check where the reader is now, then set where they go next."
+      - text: "A Start again button takes the reader back to the beginning."
+        hints:
+          - "On an ending, a button can set the place back to the first one."
+        way: |
+          else place = "start";
+    reveal: true
     stretch:
       - "Something the reader carries (a key, a coin) that changes a later choice."
       - "A picture that changes with each place."
@@ -60,9 +103,23 @@ projects:
     example: habits.html
     uses: [local-storage, create-element, json-data]
     milestones:
-      - "Clicking a habit ticks it, and clicking again unticks it."
-      - "The ticks are still there after I run the page again."
-      - "A Clear button starts fresh."
+      - text: "Clicking a habit ticks it, and clicking again unticks it."
+        hints:
+          - "Keep a list of the habits that are ticked."
+          - "On a click, if the habit is in the list take it out, and if not put it in."
+        way: |
+          if (ticks.includes(h)) ticks = ticks.filter((t) => t !== h);
+          else ticks.push(h);
+      - text: "The ticks are still there after I run the page again."
+        hints:
+          - "localStorage keeps text between visits. A list needs turning into text first."
+          - "Save the list every time it changes, and read it back when the page starts."
+        way: |
+          localStorage.setItem("ticks", JSON.stringify(ticks));
+      - text: "A Clear button starts fresh."
+        hints:
+          - "Empty the list, save the empty list, then show the page again."
+    reveal: true
     stretch:
       - "Add your own habits from a box."
       - "Show how many habits are done out of how many."

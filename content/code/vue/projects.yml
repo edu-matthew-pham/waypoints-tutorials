@@ -8,9 +8,23 @@ projects:
     example: poll.html
     uses: [vue-ref, vue-text, vue-on, vue-if]
     milestones:
-      - "Every answer has a button, and each click counts."
-      - "The totals on the page update by themselves."
-      - "A message shows before anyone votes, and a different one after."
+      - text: "Every answer has a button, and each click counts."
+        hints:
+          - "Each answer needs its own number kept in data."
+          - "A button can use @click to add one to its number."
+        way: |
+          <button @click="votes.pizza++">Pizza ({{ votes.pizza }})</button>
+      - text: "The totals on the page update by themselves."
+        hints:
+          - "Put the number in double curly brackets, and the page keeps up with the data."
+      - text: "A message shows before anyone votes, and a different one after."
+        hints:
+          - "v-if shows a tag only when its test is true. v-else goes straight after it."
+          - "The test can add up all the answers and check if the total is more than zero."
+        way: |
+          <p v-if="votes.pizza + votes.tacos + votes.sushi > 0">Thanks for voting! {{ votes.pizza + votes.tacos + votes.sushi }} votes so far.</p>
+          <p v-else>No votes yet. Be the first!</p>
+    reveal: true
     stretch:
       - "A Reset button."
       - "A bar for each answer that grows with its votes (`:style` with a width)."
@@ -25,9 +39,25 @@ projects:
     example: reading-log.html
     uses: [vue-for, vue-model, vue-computed]
     milestones:
-      - "My books show from a list."
-      - "Adding a book puts it on the list."
-      - "The filter and the count are both worked out from the list, so they keep up on their own."
+      - text: "My books show from a list."
+        hints:
+          - "Keep the books in a list in data, one object for each book."
+          - "v-for makes one tag for each item in the list."
+        way: |
+          <li v-for="b in shown">{{ b.title }}: {{ b.stars }} stars</li>
+      - text: "Adding a book puts it on the list."
+        hints:
+          - "A text box with v-model keeps what is typed in a data value."
+          - "A function can push a new object onto the list, using that value."
+        way: |
+          books.value.push({ title: newTitle.value, stars: 3 });
+      - text: "The filter and the count are both worked out from the list, so they keep up on their own."
+        hints:
+          - "A computed value is worked out from other data, and it updates when that data changes."
+          - "Do not change the list itself to filter it. Make a new computed value that is the view you want."
+        way: |
+          const count = computed(() => books.value.length);
+    reveal: true
     stretch:
       - "Sort by rating."
       - "Pick the rating when you add a book."
@@ -42,9 +72,22 @@ projects:
     example: gallery.html
     uses: [vue-component, vue-props, vue-for]
     milestones:
-      - "The card is written once."
-      - "Each card gets its own data through props."
-      - "Adding an item to the list adds a card, with no new HTML."
+      - text: "The card is written once."
+        hints:
+          - "A component is a name, and a template that says what the card looks like."
+        way: |
+          app.component("pet-card", {
+            props: ["name", "kind", "age"],
+      - text: "Each card gets its own data through props."
+        hints:
+          - "Props are the blanks a card has. The tag that uses the card fills each one in."
+          - "Pass a prop with a colon in front of its name, such as :name."
+        way: |
+          <pet-card v-for="p in pets" :name="p.name" :kind="p.kind" :age="p.age"></pet-card>
+      - text: "Adding an item to the list adds a card, with no new HTML."
+        hints:
+          - "If the cards come from a v-for over a list, a new item in the list is a new card."
+    reveal: true
     stretch:
       - "A Favourite button on each card."
       - "Two kinds of card that share one component, told apart by a prop."

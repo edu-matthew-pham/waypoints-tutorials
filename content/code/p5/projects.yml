@@ -8,9 +8,25 @@ projects:
     example: sky.js
     uses: [array, push, for-of, random]
     milestones:
-      - "At least fifty stars at random places, made by one loop."
-      - "Every star is kept in a list, and one loop draws them all."
-      - "The stars twinkle: their size changes a little as the sketch runs."
+      - text: "At least fifty stars at random places, made by one loop."
+        hints:
+          - "A counting loop can run the same lines sixty times."
+          - "Inside the loop, random picks a different place each time."
+        way: |
+          for (let i = 0; i < 60; i++) {
+            stars.push({ x: random(width), y: random(height * 0.7), size: random(1, 4) });
+          }
+      - text: "Every star is kept in a list, and one loop draws them all."
+        hints:
+          - "Make the list outside setup, so draw can use it too."
+          - "In draw, a for-of loop gives you each star in turn."
+      - text: "The stars twinkle: their size changes a little as the sketch runs."
+        hints:
+          - "draw runs again and again. If the size changes a little each time, the star seems to twinkle."
+          - "sin of the frame count goes up and down smoothly. Add a little of it to the size."
+        way: |
+          circle(s.x, s.y, s.size + 1 + sin(frameCount * 0.05 + s.x));
+    reveal: true
     stretch:
       - "A shooting star that crosses the sky now and then."
       - "Stars of different colours, kept in each star's own object."
@@ -26,9 +42,28 @@ projects:
     example: bounce.js
     uses: [object, property, for-of, if]
     milestones:
-      - "Several balls, each an object with its own place, speed and colour."
-      - "One loop moves and draws every ball, every frame."
-      - "Each ball turns back at a wall instead of leaving."
+      - text: "Several balls, each an object with its own place, speed and colour."
+        hints:
+          - "An object holds a ball's own x, y, speed and colour in one place."
+          - "A loop in setup can make a few of them with random values and push each onto a list."
+        way: |
+          balls.push({
+            x: random(40, 360), y: random(40, 260),
+            dx: random(-3, 3), dy: random(2, 5),
+            colour: color(random(80, 255), random(80, 255), random(80, 255)),
+          });
+      - text: "One loop moves and draws every ball, every frame."
+        hints:
+          - "In draw, a for-of loop visits every ball. Move it, then draw it."
+      - text: "Each ball turns back at a wall instead of leaving."
+        hints:
+          - "When a ball gets close to a wall, its speed in that direction can flip to the other sign."
+          - "Check the left and right walls for x, and the top and bottom for y. Remember that the ball has a size."
+        way: |
+          if (b.x < 15 || b.x > width - 15) {
+            b.dx = -b.dx;
+          }
+    reveal: true
     stretch:
       - "Make a ball shrink a little every time it hits a wall."
       - "Click to add one more ball where you clicked."
@@ -44,9 +79,26 @@ projects:
     example: pattern.js
     uses: [function, param, for-count, random]
     milestones:
-      - "A function of your own that draws one flower, with its place and size as parameters."
-      - "Loops call it to fill the canvas in rows and columns."
-      - "Each flower has a size or colour of its own, using random."
+      - text: "A function of your own that draws one flower, with its place and size as parameters."
+        hints:
+          - "Write the flower so it draws around x and y, wherever they are."
+          - "Whatever you want to change from one flower to the next goes in the brackets as a parameter."
+        way: |
+          function flower(x, y, size) {
+      - text: "Loops call it to fill the canvas in rows and columns."
+        hints:
+          - "One loop inside another gives you rows and columns."
+          - "Work out the place from the row and column numbers, so each flower is further along than the last."
+        way: |
+          for (let row = 0; row < 3; row++) {
+            for (let col = 0; col < 4; col++) {
+              flower(65 + col * 90, 60 + row * 90, random(20, 36));
+            }
+          }
+      - text: "Each flower has a size or colour of its own, using random."
+        hints:
+          - "random gives a different number each time it runs, so calling it inside the loop makes each flower different."
+    reveal: true
     stretch:
       - "A second function for a different shape, such as a leaf or a bee."
       - "Make the rows shift along by half a flower, like bricks."

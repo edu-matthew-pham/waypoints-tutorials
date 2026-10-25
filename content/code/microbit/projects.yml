@@ -8,9 +8,28 @@ projects:
     example: plant-monitor.ts
     uses: [if, else, variable-update]
     milestones:
-      - "The face changes with the light level, decided by if and else."
-      - "A third face for too hot, in one if … else if … else, with the questions in an order that works."
-      - "A button shows how many times it has checked, counted in a variable."
+      - text: "The face changes with the light level, decided by if and else."
+        hints:
+          - "Pick a light level that counts as dark. What would you want the micro:bit to show when it is below that?"
+          - "Ask the question inside a forever block: if the light level is below your number, show one face, else show another."
+          - "Light level is a number from 0 (dark) to 255 (bright), so try your limit with your hand over the micro:bit."
+        way: |
+          if (input.lightLevel() < 40) {
+              basic.showIcon(IconNames.Asleep)
+      - text: "A third face for too hot, in one if … else if … else, with the questions in an order that works."
+        hints:
+          - "Add the hot question as an else if, between the if and the final else."
+          - "Think about dark and hot at the same time: the first question that is true wins, so which one do you want first?"
+        way: |
+          } else if (input.temperature() > 30) {
+              basic.showIcon(IconNames.Sad)
+      - text: "A button shows how many times it has checked, counted in a variable."
+        hints:
+          - "You need a variable that starts at 0 outside the forever block, and grows each time round."
+          - "Change the variable by 1 inside the forever block, then show it when a button is pressed."
+        way: |
+          checks += 1
+    reveal: true
     stretch:
       - "A bar graph of the light on B."
       - "A warning that flashes, not just a face."
@@ -26,9 +45,24 @@ projects:
     example: answer-machine.ts
     uses: [list, list-index, random]
     milestones:
-      - "Shaking it shows an answer picked at random from my list."
-      - "My list has at least five answers, and every one can come up."
-      - "Someone else used it for a real question."
+      - text: "Shaking it shows an answer picked at random from my list."
+        hints:
+          - "Make a list of answers, then use the on shake block to show one of them."
+          - "Pick a random place in the list, and show the answer that is at that place."
+        way: |
+          input.onGesture(Gesture.Shake, function () {
+              basic.showString(answers[randint(0, answers.length - 1)])
+      - text: "My list has at least five answers, and every one can come up."
+        hints:
+          - "Count the places: a list of five has places 0 to 4, not 1 to 5."
+          - "Instead of typing the biggest place, use the length of the list minus 1, so it still works when you add answers."
+        way: |
+          answers[randint(0, answers.length - 1)]
+      - text: "Someone else used it for a real question."
+        hints:
+          - "Hand it to a friend without explaining it. Do they know to shake it?"
+          - "If they were confused, change one thing, such as a message on start."
+    reveal: true
     stretch:
       - "A second list on button A for a different kind of question."
       - "Never the same answer twice in a row."

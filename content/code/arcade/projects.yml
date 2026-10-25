@@ -8,9 +8,27 @@ projects:
     example: treasure-hunt.ts
     uses: [variable, random, if]
     milestones:
-      - "My player moves with the controller and the treasure appears somewhere new each time."
-      - "Touching the treasure scores a point."
-      - "Something changes when the score passes a number I chose, decided by an if."
+      - text: "My player moves with the controller and the treasure appears somewhere new each time."
+        hints:
+          - "Make a sprite for the player, and use the move block with the controller."
+          - "Put the treasure at a random place: pick a random x and a random y inside the screen."
+        way: |
+          coin.setPosition(randint(10, 150), randint(10, 110))
+      - text: "Touching the treasure scores a point."
+        hints:
+          - "Use the on overlap block with the player kind and the treasure kind."
+          - "Inside it, change the score by 1, then move the treasure to a new random place."
+        way: |
+          sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+              info.changeScoreBy(1)
+      - text: "Something changes when the score passes a number I chose, decided by an if."
+        hints:
+          - "Put an if after the score changes, and ask whether the score is at least your number."
+          - "Choose a change you can see, such as the background colour."
+        way: |
+          if (info.score() >= 10) {
+                  scene.setBackgroundColor(9)
+    reveal: true
     stretch:
       - "A countdown: score as much as you can in 30 seconds."
       - "Two kinds of treasure, worth different points."
@@ -26,9 +44,32 @@ projects:
     example: escape.ts
     uses: [if, else, random]
     milestones:
-      - "At least one enemy follows the player (it turns towards them, using if and else)."
-      - "Getting caught costs a life, once per catch."
-      - "There is a way to win, and the game says so."
+      - text: "At least one enemy follows the player (it turns towards them, using if and else)."
+        hints:
+          - "Do it on every update: compare the enemy x with the player x."
+          - "If the enemy is left of the player, move right, else move left. Do y the same way."
+        way: |
+          if (ghost.x < hero.x) {
+                  ghost.vx = 30
+              } else {
+                  ghost.vx = -30
+              }
+      - text: "Getting caught costs a life, once per catch."
+        hints:
+          - "Use the on overlap block with the player and the enemy."
+          - "If it keeps taking lives, the enemy is still touching you. Move it away inside the same block."
+        way: |
+          info.changeLifeBy(-1)
+              otherSprite.setPosition(randint(0, 160), 0)
+      - text: "There is a way to win, and the game says so."
+        hints:
+          - "Pick a way to win: survive for a time, collect enough, or reach a place."
+          - "Game over with true means a win."
+        way: |
+          info.startCountdown(30)
+          info.onCountdownEnd(function () {
+              game.over(true)
+    reveal: true
     stretch:
       - "Enemies that speed up over time."
       - "A safe zone where enemies cannot go."

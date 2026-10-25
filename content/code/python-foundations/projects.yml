@@ -8,9 +8,37 @@ projects:
     example: pattern-maker.py
     uses: [loop-index, if, remainder, variable-update]
     milestones:
-      - "It runs and draws a pattern with at least 8 parts."
-      - "Something changes as the loop goes on (colour, size or shape), decided by an if."
-      - "I changed one number and the pattern changed the way I expected."
+      - text: "It runs and draws a pattern with at least 8 parts."
+        hints:
+          - "Put the drawing of one part inside a for loop, so it repeats."
+          - "Pen up, move on a little at the end of each time round, so the parts do not land on top of each other."
+          - "Count how many times the loop runs: 8 or more gives 8 or more parts."
+        way: |
+              pendown()
+              begin_fill()
+              for side in range(4):
+                  forward(size)
+                  left(90)
+              end_fill()
+              penup()
+              forward(size + 6)
+      - text: "Something changes as the loop goes on (colour, size or shape), decided by an if."
+        hints:
+          - "Say the rule aloud first, such as every third part is gold."
+          - "i % 3 gives the remainder, which cycles 0, 1, 2, 0, 1, 2. Test it in an if."
+          - "Use elif for the second case and else for the rest."
+        way: |
+              if i % 3 == 0:
+                  fillcolor("gold")
+              elif i % 3 == 1:
+                  fillcolor("tomato")
+              else:
+                  fillcolor("teal")
+      - text: "I changed one number and the pattern changed the way I expected."
+        hints:
+          - "Find the number that controls the change: how many times, the size, or the 3 in i % 3."
+          - "Predict what will change, change just that one number, run it, and compare."
+    reveal: true
     stretch:
       - "Use elif for a third colour."
       - "Make each part a little bigger than the last."

@@ -5,6 +5,24 @@ moveId: sql-order
 title: Put the rows in order
 summary: Sort with ORDER BY, reverse with DESC, and keep the top few with LIMIT.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8192
+  url: http://127.0.0.1:8192/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "ORDER BY sorts. DESC puts the biggest first."
+  clip:
+    - caption: "The three most played songs."
+    - type: { into: "SQL query", text: "SELECT title, plays FROM songs ORDER BY plays DESC LIMIT 3;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "Backyard Summer" }
+    - caption: "Sorted first, then LIMIT keeps the top three."
+    - wait: 1800
 hook: "Every top ten list is the same question: sort everything, then keep the first ten."
 ---
 A table has no fixed order. `ORDER BY` sorts the rows, and `LIMIT` keeps only the first few. Together they make a top list.

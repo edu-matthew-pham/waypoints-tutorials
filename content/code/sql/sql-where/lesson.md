@@ -5,6 +5,24 @@ moveId: sql-where
 title: Keep only the rows you want
 summary: Filter rows with WHERE, using = for text and > or < for numbers.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8191
+  url: http://127.0.0.1:8191/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "WHERE keeps only the rows that pass a test."
+  clip:
+    - caption: "Songs from after 2021."
+    - type: { into: "SQL query", text: "SELECT title, year FROM songs WHERE year > 2021;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "Glass Hearts" }
+    - caption: "Every row left is newer than 2021."
+    - wait: 1800
 hook: "Fifteen songs is easy to scan. Fifteen million is not, so we ask the database to do the looking."
 ---
 Last lesson every row came back. Most questions need only some rows: the pop songs, the long ones, the new ones. `WHERE` keeps the rows that pass a test.

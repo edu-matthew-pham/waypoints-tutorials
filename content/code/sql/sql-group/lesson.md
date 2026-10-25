@@ -5,6 +5,24 @@ moveId: sql-group
 title: One answer for each group
 summary: Use GROUP BY to count or add up for each genre, artist or year at once.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8194
+  url: http://127.0.0.1:8194/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "GROUP BY makes one row for each group."
+  clip:
+    - caption: "Songs in each genre."
+    - type: { into: "SQL query", text: "SELECT genre, COUNT(*) AS songs FROM songs GROUP BY genre;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "electronic" }
+    - caption: "Each genre appears once, with its own count."
+    - wait: 1800
 hook: "How many songs in each genre? You could run five queries, or ask once."
 ---
 `COUNT(*)` gave one answer for the whole table. `GROUP BY` sorts the rows into piles, one pile for each value in a column, and gives one answer for **each pile**.

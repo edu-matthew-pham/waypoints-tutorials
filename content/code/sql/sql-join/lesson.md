@@ -5,6 +5,24 @@ moveId: sql-join
 title: Join two tables
 summary: Combine rows from two tables with JOIN ... ON, matching a column they share.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8195
+  url: http://127.0.0.1:8195/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "JOIN puts two tables side by side where a value matches."
+  clip:
+    - caption: "Each song with its artist's country."
+    - type: { into: "SQL query", text: "SELECT songs.title, artists.country FROM songs JOIN artists ON songs.artist = artists.name;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "Japan" }
+    - caption: "The country came from a different table."
+    - wait: 1800
 hook: "A song knows its artist's name. It does not know where the artist is from. That lives in a different table."
 ---
 Real databases keep each kind of thing in its own table, so a fact is stored once. The music library now has two tables: `songs` and `artists`. The artist's name is in both. A **JOIN** lines up each song with its artist by matching that name.

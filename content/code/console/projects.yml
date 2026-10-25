@@ -9,9 +9,35 @@ projects:
     answers: ["canberra", "8", "blue"]
     uses: [input, list, for-of, variable-update]
     milestones:
-      - "At least three questions, each with its own right answer."
-      - "One loop asks them all, whatever the number of questions."
-      - "The program says whether each answer was right, and ends with the score."
+      - text: "At least three questions, each with its own right answer."
+        hints:
+          - "Keep each question and its answer together as a small list, inside one big list."
+          - "In each small list, item[0] is the question and item[1] is the answer."
+        way: |
+          questions = [
+              ["What is the capital of Australia? ", "canberra"],
+              ["How many legs does a spider have? ", "8"],
+              ["What colour do you get from blue and yellow? ", "green"],
+          ]
+      - text: "One loop asks them all, whatever the number of questions."
+        hints:
+          - "for item in questions runs the same code once for each question."
+          - "Ask with input(item[0]) and keep what they type in a variable."
+        way: |
+          for item in questions:
+              answer = input(item[0]).lower()
+      - text: "The program says whether each answer was right, and ends with the score."
+        hints:
+          - "Start score at 0 before the loop, not inside it."
+          - "Inside the loop, if the answer matches item[1], add 1 to score."
+          - "After the loop, print the score joined to text, using str()."
+        way: |
+              if answer == item[1]:
+                  print("Correct!")
+                  score = score + 1
+              else:
+                  print("Not quite. It was " + item[1] + ".")
+    reveal: true
     stretch:
       - "Ignore capital letters, so Canberra and canberra both count."
       - "Count how many answers were wrong, and give a message for a perfect score."
@@ -28,9 +54,28 @@ projects:
     answers: ["Will I pass maths?", "Is it Friday?", "quit"]
     uses: [while, break, list, random]
     milestones:
-      - "At least five replies, kept in a list."
-      - "It keeps asking until you type quit."
-      - "Each answer is picked at random from the list."
+      - text: "At least five replies, kept in a list."
+        hints:
+          - 'A list is square brackets with commas between the items, such as ["a", "b"].'
+          - "Write replies that make sense whatever the question is."
+        way: |
+          replies = ["Yes, definitely.", "Ask again later.", "Not a chance.", "It looks good.", "Hard to say."]
+      - text: "It keeps asking until you type quit."
+        hints:
+          - "while True keeps going until something tells it to stop."
+          - "Inside it, check whether they typed quit before you reply, and use break to leave."
+        way: |
+          while True:
+              question = input("Ask a question: ")
+              if question == "quit":
+                  break
+      - text: "Each answer is picked at random from the list."
+        hints:
+          - "Put import random at the top of the program."
+          - "random.choice(a_list) gives back one item from the list, picked at random."
+        way: |
+              print(random.choice(replies))
+    reveal: true
     stretch:
       - "Say something different when the question is blank."
       - "Count the questions and say how many were asked when you leave."

@@ -5,6 +5,24 @@ moveId: sql-count
 title: Count and add up
 summary: Turn many rows into one answer with COUNT, SUM, AVG and MAX.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8193
+  url: http://127.0.0.1:8193/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "COUNT counts rows instead of listing them."
+  clip:
+    - caption: "How many rock songs?"
+    - type: { into: "SQL query", text: "SELECT COUNT(*) FROM songs WHERE genre = 'rock';" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "3" }
+    - caption: "One number comes back, not a list."
+    - wait: 1800
 hook: "How many songs, how many plays, how long on average: the database can answer without showing you a single song."
 ---
 So far a query gave back rows from the table. A **summary function** turns many rows into **one** value: `COUNT(*)` counts rows, `SUM(plays)` adds a column up, `AVG` averages it and `MAX` finds the biggest.

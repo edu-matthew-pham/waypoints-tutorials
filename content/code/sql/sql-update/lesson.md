@@ -5,6 +5,28 @@ moveId: sql-update
 title: Change and remove rows
 summary: Fix rows with UPDATE, remove them with DELETE, and always say which rows with WHERE.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8197
+  url: http://127.0.0.1:8197/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "UPDATE changes values in rows that match."
+  clip:
+    - caption: "Give song 1 another hundred plays."
+    - type: { into: "SQL query", text: "UPDATE songs SET plays = plays + 100 WHERE id = 1;" }
+    - click: "Run ▶"
+    - wait: 700
+    - caption: "Check it."
+    - type: { into: "SQL query", text: "SELECT title, plays FROM songs WHERE id = 1;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "5500" }
+    - caption: "Only the row with id 1 changed."
+    - wait: 1800
 hook: "One missing WHERE line, and every row in the table changes. Databases do exactly what you ask."
 ---
 `UPDATE` changes values in rows that already exist. `DELETE` removes rows. Both act on **every row** unless you say which with `WHERE`.

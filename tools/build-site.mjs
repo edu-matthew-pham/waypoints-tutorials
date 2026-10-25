@@ -300,7 +300,7 @@ const PLAY = { 'code/python-foundations': { kind: 'turtle', dir: '_playground', 
 // Maths cards (snippets/maths.json, maths-<name>.json): a Reference page and cheat sheets for the course each names.
 const MATHS_CARDS = loadAllMathsCards();
 const REFS = [{ file: 'turtle', path: 'code/python-foundations/reference' }, { file: 'turtle', path: 'code/python-functions/reference' }, { file: 'html', path: 'code/html/reference' }, { file: 'html', path: 'code/css/reference' }, { file: 'microbit', path: 'code/microbit/reference' }, { file: 'microbit', path: 'code/microbit-play/reference' }, { file: 'arcade', path: 'code/arcade/reference' }, { file: 'arcade', path: 'code/arcade-advanced/reference' }, { file: 'robot', path: 'code/robotics/reference' },
-  { file: 'p5', path: 'code/p5/reference' }, { file: 'microstudio', path: 'code/games/reference' }, { file: 'microbit', path: 'code/microbit-computer/reference' }, { file: 'microbit', path: 'code/microbit-security/reference' },
+  { file: 'p5', path: 'code/p5/reference' }, { file: 'sql', path: 'code/sql/reference' }, { file: 'microstudio', path: 'code/games/reference' }, { file: 'microbit', path: 'code/microbit-computer/reference' }, { file: 'microbit', path: 'code/microbit-security/reference' },
   // groups: only these groups of the file; title and summary: shown instead of the file's own.
   { file: 'turtle', path: 'code/console/reference', groups: ['Text in and out', 'Code structure'], title: 'Python console reference', summary: 'The commands from the console bridge, with what each one does.' },
   { file: 'turtle', path: 'code/deeper/reference', groups: ['Text in and out', 'Text and collections', 'Files', 'Code structure', 'Objects'], title: 'Python console reference', summary: 'Text, lists, dictionaries and files in the console, with what each command does.' },
@@ -354,6 +354,7 @@ const PICS = { python: { pics: readPics([]), dir: '_pictures/' }, html: { pics: 
 // Arcade blocks share the MakeCode manifest; render-pictures draws its snippet blocks as arcade/<snippet id>.png,
 // because Arcade and micro:bit snippets can share a label (if, pause).
 PICS.javascript = { pics: readPics(['p5']), dir: '_pictures/p5/' };
+PICS.sql = { pics: {}, dir: '_pictures/sql/' };   // no pictures yet: SQL cards show the query, and never borrow a turtle picture by id
 PICS.microstudio = { pics: readPics(['microstudio']), dir: '_pictures/microstudio/' };   // drawn by the microStudio player (render-pictures)   // its own folder: p5 cards never borrow turtle pictures by id
 PICS.arcade = { pics: Object.fromEntries(Object.entries(PICS.makecode.pics).filter(([k]) => k.startsWith('arcade/')).map(([k, v]) => [k.slice(7), v])), dir: '_pictures/makecode/arcade/' };
 // A MakeCode program's blocks picture (drawn by render-pictures), as { url, w, h } from base (the site root), or null.

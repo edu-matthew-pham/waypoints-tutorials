@@ -5,6 +5,24 @@ moveId: sql-keys
 title: Link tables with keys
 summary: Store another table's id in a column, so a row can point at exactly one row elsewhere.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8199
+  url: http://127.0.0.1:8199/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "A key links a row in one table to a row in another."
+  clip:
+    - caption: "Each review with its song."
+    - type: { into: "SQL query", text: "SELECT songs.title, reviews.stars FROM songs JOIN reviews ON reviews.song_id = songs.id;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "Paper Planes Home" }
+    - caption: "The review's song_id found the song's id."
+    - wait: 1800
 hook: "A review says 'Great chorus'. Which song? The review stores a number, and the number points at one row."
 ---
 The `reviews` table does not store song titles. It stores a `song_id`: the **id** of a row in `songs`. A column that holds another table's key is called a **foreign key**. A join matches it up: `reviews.song_id = songs.id`.

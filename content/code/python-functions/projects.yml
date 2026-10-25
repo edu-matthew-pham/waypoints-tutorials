@@ -8,9 +8,40 @@ projects:
     example: street.py
     uses: [param, list, for-of]
     milestones:
-      - "It runs and draws at least four things along a street."
-      - "Each kind of thing is drawn by my own function with parameters (where, how big, what colour)."
-      - "A list says what goes on the street, and a loop draws it."
+      - text: "It runs and draws at least four things along a street."
+        hints:
+          - "Keep a list of the things to draw, one entry for each."
+          - "Use a variable for the next x position, and move it along after each thing."
+      - text: "Each kind of thing is drawn by my own function with parameters (where, how big, what colour)."
+        hints:
+          - "Write the drawing of one house as a function, with def."
+          - "Put what changes between houses in the brackets: x, size and colour."
+          - 'Then call it with different numbers, such as house(-230, 50, "lightblue").'
+        way: |
+          def house(x, size, colour):
+              penup()
+              goto(x, -60)
+              pendown()
+              fillcolor(colour)
+              begin_fill()
+              for side in range(4):
+                  forward(size)
+                  left(90)
+              end_fill()
+      - text: "A list says what goes on the street, and a loop draws it."
+        hints:
+          - "Each entry in the list can hold the kind of thing it is and its size."
+          - "Loop with for thing in street, and use thing[0] and thing[1] to pick out the parts."
+          - "Add the size and a gap to x at the end of each time round, so the next one sits further along."
+        way: |
+          x = -230
+          for thing in street:
+              if thing[0] == "house":
+                  house(x, thing[1], thing[2])
+              else:
+                  tree(x, thing[1])
+              x = x + thing[1] + 25
+    reveal: true
     stretch:
       - "Add a second kind of thing with its own function."
       - "Make the sky or road with a function too."
@@ -26,9 +57,30 @@ projects:
     example: bar-chart.py
     uses: [list, for-of, return-value, if]
     milestones:
-      - "It draws one bar per value in my list, with heights from the data."
-      - "My own function returns a colour, picked with an if, and the bars use it."
-      - "I changed a value in the list and the chart changed with it."
+      - text: "It draws one bar per value in my list, with heights from the data."
+        hints:
+          - "Keep the values in a list, then loop over it with for h in hours."
+          - "A bar's height is its value times a number that makes it big enough to see."
+        way: |
+          for h in hours:
+              bar(h * 30, colour_for(h))
+      - text: "My own function returns a colour, picked with an if, and the bars use it."
+        hints:
+          - "A function that decides takes the value in and uses return to give a colour back."
+          - "Use if and elif for the big and small values, with a plain return at the end for the rest."
+          - "In the loop, hand the colour to the function that draws the bar."
+        way: |
+          def colour_for(value):
+              if value >= 5:
+                  return "tomato"
+              elif value >= 3:
+                  return "gold"
+              return "mediumseagreen"
+      - text: "I changed a value in the list and the chart changed with it."
+        hints:
+          - "Change one number in the list and run it again."
+          - "If nothing changed, check that the loop reads the list and not typed-in numbers."
+    reveal: true
     stretch:
       - "Write each value above its bar with write()."
       - "Draw the bars sideways."
@@ -44,9 +96,28 @@ projects:
     example: stamp-art.py
     uses: [callback, global, list-index, if]
     milestones:
-      - "A click draws a shape where I clicked."
-      - "At least two keys change what the next stamp looks like."
-      - "A friend used it without me explaining the keys (or the screen tells them)."
+      - text: "A click draws a shape where I clicked."
+        hints:
+          - "onscreenclick takes a function, and Turtle gives that function x and y."
+          - "Your function must take x and y, go to that spot, and then draw."
+          - "Click on the drawing first, so it can hear you."
+        way: |
+          def draw_here(x, y):
+              goto(x, y)
+      - text: "At least two keys change what the next stamp looks like."
+        hints:
+          - "Keep what changes (colour, size) in variables."
+          - "A key's function changes the variable with global, and the next stamp uses it."
+          - 'Connect it with onkey(your_function, "b") and finish with listen().'
+        way: |
+          def bigger():
+              global size
+              size = size + 10
+      - text: "A friend used it without me explaining the keys (or the screen tells them)."
+        hints:
+          - "Watch someone use it without telling them anything."
+          - "If they get stuck, write the keys on the screen with write(), or make the toy show what changed."
+    reveal: true
     stretch:
       - "A key that clears the screen."
       - "Cycle through a list of colours with one key."
@@ -62,10 +133,37 @@ projects:
     example: my-game.py
     uses: [callback, random, bool-value, and-or]
     milestones:
-      - "It runs, and something moves by itself on a timer."
-      - "The player scores by doing something, and the score shows on screen."
-      - "There is a way to win or lose, checked with and or or."
-      - "Someone else played it and I changed one thing because of what they did."
+      - text: "It runs, and something moves by itself on a timer."
+        hints:
+          - "Write a function that moves the thing, and have it ask ontimer to call it again."
+          - "Use random.randint for the new x and y."
+        way: |
+              goto(random.randint(-150, 150), random.randint(-120, 120))
+              show()
+              ontimer(move, 1200)
+      - text: "The player scores by doing something, and the score shows on screen."
+        hints:
+          - "A click function checks if the click was near the thing."
+          - "If it was, add 1 to score (with global score), then draw the text again."
+          - "Write the score with write(), after clear() so the old one goes."
+        way: |
+          def clicked(x, y):
+              global score, caught
+              if playing and not caught and abs(x - xcor()) < 20 and abs(y - ycor()) < 20:
+                  score = score + 1
+      - text: "There is a way to win or lose, checked with and or or."
+        hints:
+          - "Decide the rule first: what score wins, and what makes you lose."
+          - "Join two conditions with or: lose when lives reach 0, or win when score reaches the target."
+          - "When the game ends, stop by not asking ontimer to call it again."
+        way: |
+              if lives == 0 or score >= 10:
+                  playing = False
+      - text: "Someone else played it and I changed one thing because of what they did."
+        hints:
+          - "Ask someone to play, and watch without helping."
+          - "Change one thing they struggled with: the speed, the size, or how many lives."
+    reveal: true
     stretch:
       - "Levels: it gets faster after every five points."
       - "A start screen and a game-over screen."

@@ -8,9 +8,40 @@ projects:
     example: race.py
     uses: [object, list, for-of, random]
     milestones:
-      - "At least four turtles line up, each a different colour."
-      - "Every turtle moves a random amount each turn, from one loop over the list."
-      - "The race stops when one crosses the line, and the page says which."
+      - text: "At least four turtles line up, each a different colour."
+        hints:
+          - "Make each racer with Turtle(), and keep them all in a list."
+          - "Use a loop with a counter to place each one a bit lower than the last, and pick its colour from a list."
+        way: |
+          for i in range(4):
+              t = Turtle()
+              t.shape("turtle")
+              t.color(colours[i])
+              t.penup()
+              t.goto(-200, 90 - i * 60)
+              t.pendown()
+              t.pensize(4)
+              racers.append(t)
+      - text: "Every turtle moves a random amount each turn, from one loop over the list."
+        hints:
+          - "A loop over the racers moves each one once. Wrap it in another loop for the turns."
+          - "Use random.randint(a, b) for how far each one moves."
+        way: |
+              for r in racers:
+                  r.forward(random.randint(5, 20))
+      - text: "The race stops when one crosses the line, and the page says which."
+        hints:
+          - "Check each racer's xcor() against the finish line inside the loop."
+          - "Remember who crossed first in a variable, and stop the outer loop when it is set."
+          - "Say who won with write() on another turtle placed beside the winner."
+        way: |
+          winner = None
+          while winner == None:
+              for r in racers:
+                  r.forward(random.randint(5, 20))
+                  if r.xcor() > 180 and winner == None:
+                      winner = r
+    reveal: true
     stretch:
       - "Let the player bet on a colour before the race, with textinput."
       - "Race again without running the program again: a click starts a new race."
@@ -26,9 +57,38 @@ projects:
     example: aquarium.py
     uses: [class, method, attribute, object]
     milestones:
-      - "My Fish class makes a fish with its own colour and speed."
-      - "A swim method moves a fish and turns it at the walls."
-      - "A timer swims every fish in the tank, again and again."
+      - text: "My Fish class makes a fish with its own colour and speed."
+        hints:
+          - "Start with class Fish: and an __init__ that takes the colour."
+          - "Store what each fish keeps with self., such as self.speed, and make its turtle in __init__."
+        way: |
+          class Fish:
+              def __init__(self, colour, y):
+                  self.turtle = Turtle()
+                  self.turtle.shape("circle")
+                  self.turtle.color(colour)
+                  self.turtle.penup()
+                  self.turtle.goto(random.randint(-200, 200), y)
+                  self.speed = random.randint(2, 6)
+      - text: "A swim method moves a fish and turns it at the walls."
+        hints:
+          - "A method is a def inside the class, with self as the first name."
+          - "Move forward by self.speed, then check xcor() against each wall and turn if it is past."
+        way: |
+              def swim(self):
+                  self.turtle.forward(self.speed)
+                  if self.turtle.xcor() > 230 or self.turtle.xcor() < -230:
+                      self.turtle.left(180)
+      - text: "A timer swims every fish in the tank, again and again."
+        hints:
+          - "Keep the fish in a list, such as tank."
+          - "Write a tick function that loops over the tank calling swim, then asks ontimer to run it again."
+        way: |
+          def tick():
+              for f in tank:
+                  f.swim()
+              ontimer(tick, 50)
+    reveal: true
     stretch:
       - "A second kind of thing in the tank (bubbles, a crab) with its own class."
       - "Click to drop food, and the nearest fish swims towards it."

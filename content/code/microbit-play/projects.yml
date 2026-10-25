@@ -8,9 +8,28 @@ projects:
     example: quiz-buzzer.ts
     uses: [radio-number, if, bool-value]
     milestones:
-      - "Pressing a buzzer sends its team's number by radio."
-      - "Only the first press counts: later presses are ignored until the round is reset."
-      - "Every buzzer shows who won, and a reset starts a new round."
+      - text: "Pressing a buzzer sends its team's number by radio."
+        hints:
+          - "Every buzzer needs the same radio group, set at the start."
+          - "Give each micro:bit a team number in a variable, and send it when button A is pressed."
+        way: |
+          radio.sendNumber(team)
+      - text: "Only the first press counts: later presses are ignored until the round is reset."
+        hints:
+          - "You need a true or false variable that says whether the round is open."
+          - "Check it before you send anything, and set it to false as soon as someone has buzzed."
+        way: |
+          if (open) {
+                  open = false
+      - text: "Every buzzer shows who won, and a reset starts a new round."
+        hints:
+          - "When a number arrives from another buzzer, show it and close the round too."
+          - "Pick a number that no team uses, such as 0, as the reset message that opens the round again."
+        way: |
+          if (receivedNumber == 0) {
+                  open = true
+                  basic.clearScreen()
+    reveal: true
     stretch:
       - "A different sound for each team."
       - "The quizmaster's micro:bit keeps the score."
@@ -26,10 +45,34 @@ projects:
     example: my-game.ts
     uses: [function, variable-update, random, if]
     milestones:
-      - "It runs, and the player does something with buttons, tilt or shake."
-      - "It keeps a score and shows it at the end."
-      - "It gets harder or ends, checked with if."
-      - "Someone else played it and I changed one thing because of what they did."
+      - text: "It runs, and the player does something with buttons, tilt or shake."
+        hints:
+          - "Start with one thing that moves and one button that moves it."
+          - "Keep it on the screen: check the edge with if before you change the position."
+        way: |
+          input.onButtonPressed(Button.A, function () {
+              if (x > 0) {
+                  x = x - 1
+              }
+          })
+      - text: "It keeps a score and shows it at the end."
+        hints:
+          - "A variable that starts at 0 and changes by 1 each time the player does well."
+          - "Show it with show number when the game ends, then set it back to 0."
+        way: |
+          basic.showString("SCORE")
+                      basic.showNumber(score)
+      - text: "It gets harder or ends, checked with if."
+        hints:
+          - "Use the score in a calculation, such as a pause that gets shorter as the score goes up."
+          - "Or end the game when something goes wrong, with an if that checks for it."
+        way: |
+          basic.pause(400 - score * 20)
+      - text: "Someone else played it and I changed one thing because of what they did."
+        hints:
+          - "Watch without helping. Where did they get stuck or bored?"
+          - "Change one thing only, then ask them to try again."
+    reveal: true
     stretch:
       - "Levels from a list, as in Fake-outs and levels."
       - "A two-player version over radio."

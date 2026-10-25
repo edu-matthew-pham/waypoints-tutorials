@@ -8,9 +8,26 @@ projects:
     example: business.html
     uses: [bootstrap, bs-component, bs-grid]
     milestones:
-      - "The navbar and the cards come from Bootstrap's classes."
-      - "The cards sit in a row on a wide screen and stack on a narrow one."
-      - "Every box in the form has a label."
+      - text: "The navbar and the cards come from Bootstrap's classes."
+        hints:
+          - "You do not write the CSS: you add Bootstrap's class names to your tags."
+          - "A navbar needs navbar on the outer tag, and each link needs a nav-link class."
+        way: |
+          <nav class="navbar navbar-expand bg-dark" data-bs-theme="dark">
+      - text: "The cards sit in a row on a wide screen and stack on a narrow one."
+        hints:
+          - "Bootstrap's grid is a row holding columns. Each column says how wide it is."
+          - "col-md-4 means a third of the row from the medium size up, and a full row below that."
+        way: |
+          <div class="row" id="services">
+            <div class="col-md-4">
+      - text: "Every box in the form has a label."
+        hints:
+          - "Label and box are linked the same way as in plain HTML: for on the label and id on the box."
+          - "Bootstrap's form-label and form-control only change how they look."
+        way: |
+          <label for="name" class="form-label">Your name</label><input id="name" class="form-control">
+    reveal: true
     stretch:
       - "An alert for this week's special."
       - "A footer with the opening hours."
@@ -25,9 +42,24 @@ projects:
     example: business-yours.html
     uses: [bootstrap, css-rule, class-selector]
     milestones:
-      - "My own rules come after the link to Bootstrap."
-      - "There are at least three changes someone could point to."
-      - "It still works on a narrow screen."
+      - text: "My own rules come after the link to Bootstrap."
+        hints:
+          - "When two rules fight, the one that comes later wins."
+          - "So your own style tag goes below the link to Bootstrap, not above it."
+        way: |
+          <link rel="stylesheet" href="bootstrap.min.css">
+          <style>
+      - text: "There are at least three changes someone could point to."
+        hints:
+          - "A colour, a font and a shape (rounded or square corners) are easy changes to spot."
+          - "Use the class names Bootstrap already put on the tag as your selector."
+        way: |
+          body { font-family: Georgia, serif; background: #fbf7ef; }
+      - text: "It still works on a narrow screen."
+        hints:
+          - "Make the preview narrow and look at it, or use Full screen to resize."
+          - "Change colours, fonts and borders, but leave the grid classes alone."
+    reveal: true
     stretch:
       - "Try the same page with Pico or Bulma instead, and say which you'd pick and why."
     teacher: |

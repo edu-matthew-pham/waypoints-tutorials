@@ -8,9 +8,22 @@ projects:
     example: recipe-card.html
     uses: [table, class-selector, box]
     milestones:
-      - "The ingredients are in a table with a heading row."
-      - "The steps are a numbered list."
-      - "A class selector gives the card a border, padding and a width, so it looks like a card."
+      - text: "The ingredients are in a table with a heading row."
+        hints:
+          - "A table is made of rows (tr), and each row holds cells."
+          - "Use th for the cells in the first row and td for the rest."
+        way: |
+          <tr><th>Ingredient</th><th>Amount</th></tr>
+      - text: "The steps are a numbered list."
+        hints:
+          - "A numbered list is the same shape as a dotted one, with a different outer tag."
+      - text: "A class selector gives the card a border, padding and a width, so it looks like a card."
+        hints:
+          - "Put class=\"card\" on the tag that wraps everything, then write a rule that starts with a dot."
+          - "The box model has three parts to set: border, padding and width."
+        way: |
+          .card { width: 320px; border: 2px solid #c2570a; padding: 16px; background: #fff7ef; font-family: sans-serif; }
+    reveal: true
     stretch:
       - "A second card, with the same class, for another recipe."
       - "Rounded corners and a shadow."
@@ -24,9 +37,28 @@ projects:
     example: event-page.html
     uses: [semantic, flex, flex-options, class-selector]
     milestones:
-      - "It uses page sections: header, nav, main and footer."
-      - "Three or more cards sit side by side with Flexbox, with space between them."
-      - "When the preview is narrow, the cards still fit (they wrap or shrink)."
+      - text: "It uses page sections: header, nav, main and footer."
+        hints:
+          - "These are tags with names that say what part of the page they are."
+          - "The menu goes in nav, and the main content goes in main."
+        way: |
+          <header>
+            <h1>Games Club Night</h1>
+            <nav><a href="#on">What's on</a><a href="#when">When</a></nav>
+          </header>
+      - text: "Three or more cards sit side by side with Flexbox, with space between them."
+        hints:
+          - "Flexbox starts on the parent: set display on the tag that wraps the cards."
+          - "gap puts space between the cards without margins."
+        way: |
+          .cards { display: flex; flex-wrap: wrap; gap: 12px; padding: 16px; }
+      - text: "When the preview is narrow, the cards still fit (they wrap or shrink)."
+        hints:
+          - "Flexbox can let items drop onto a new line when the row is full."
+          - "A card with a small minimum width lets more of them fit before wrapping."
+        way: |
+          .card { flex: 1; min-width: 120px; border: 1px solid #ccc; border-radius: 10px; padding: 12px; }
+    reveal: true
     stretch:
       - "Menu links that jump to each section."
       - "A different colour for each card."

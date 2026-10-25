@@ -5,6 +5,28 @@ moveId: sql-insert
 title: Add a row
 summary: Put a new row into a table with INSERT INTO, then check it with SELECT.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8196
+  url: http://127.0.0.1:8196/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "INSERT adds a new row."
+  clip:
+    - caption: "Add a song."
+    - type: { into: "SQL query", text: "INSERT INTO songs (title, artist) VALUES ('Moonlight', 'Kito');" }
+    - click: "Run ▶"
+    - wait: 700
+    - caption: "Now ask for it."
+    - type: { into: "SQL query", text: "SELECT title, artist FROM songs WHERE title = 'Moonlight';" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "Moonlight" }
+    - caption: "The new row is in the table."
+    - wait: 1800
 hook: "Until now you only looked. A real app also has to save: a new song, a new order, a new sign-up."
 ---
 Everything so far read data. `INSERT INTO` **adds** a row. The queries in this lesson have two parts: the change, then a `SELECT` so you can see what it did.

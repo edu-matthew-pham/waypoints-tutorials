@@ -5,6 +5,32 @@ moveId: sql-create
 title: Design your own table
 summary: Make a table with CREATE TABLE, choose a type for each column, and give every row a key.
 language: sql
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-sql" 8198
+  url: http://127.0.0.1:8198/index.html
+  ready: SQL query
+  layout: full
+pacing:
+  keyDelayMs: 40
+explainClip:
+  query: { db: music, zoom: 1.6 }
+  caption: "CREATE TABLE makes a new, empty table."
+  clip:
+    - caption: "A table of pets with a key."
+    - type: { into: "SQL query", text: "CREATE TABLE pets (id INTEGER PRIMARY KEY, name TEXT);" }
+    - click: "Run ▶"
+    - wait: 700
+    - caption: "Add a pet."
+    - type: { into: "SQL query", text: "INSERT INTO pets (name) VALUES ('Biscuit');" }
+    - click: "Run ▶"
+    - wait: 700
+    - caption: "Read it back."
+    - type: { into: "SQL query", text: "SELECT * FROM pets;" }
+    - click: "Run ▶"
+    - wait: 700
+    - expect: { selector: "#result", contains: "Biscuit" }
+    - caption: "The table now holds the row."
+    - wait: 1800
 hook: "Every table you have used was designed by someone. Now you design one."
 ---
 A table starts as a list of columns. For each one you choose a **name** and a **type**: `INTEGER` for whole numbers, `TEXT` for text. One column is the **primary key**: its value is different in every row, so a row can always be found by it.
