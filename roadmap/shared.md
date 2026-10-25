@@ -21,6 +21,8 @@ Audit chat, 26 Oct, against `main` at 46e271f and gh-pages ("Site build from d47
 
 ### On main but not live
 
+*Update (26 Oct 2026, 06:54): Matthew ran a whole-site publish ("Site build from cc446ab"), so Files and systems, swappable context and My path below are now live. Still to publish: the trail back link (dff6662d) and the two ICT pathways being built; one full publish once they land.*
+
 `node tools/changed-lessons.mjs --live` picks up 11 lessons in 2 courses (`ict/data`: 7, `ict/files`: 4) and warns that shared files changed. Everything else is outside content/ and needs a whole-site build:
 - My path (`/my-path/`, `site/my-path.js`, "Add to my path" in every lesson footer and on search results).
 - Swappable context (`tools/context-core.mjs`, `lesson-core.mjs`, `lesson.mjs`, `check-context`; Create via `build-create.mjs`).
@@ -45,9 +47,9 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 
 1. Maths when, where and why: **answered 26 Oct:** no separate review; the aim is a full suite to pilot. Retrofit covers Years 7–10 (maths-when-where-why.md › Next updated).
 2. ICT: **approved 26 Oct:** build Investigating and judging information and Staying safe and well (being built; Staying safe still needs the school wellbeing review before class use).
-3. Before Year 7 catch-up (22 lessons, pilot 2 first): go or not?
-4. Engineering OpenSCAD proposal: approve the one-lesson pilot on the `fab` widget, or park?
-5. Site content licence: still open in systems, engineering and Make your own version (no licence file).
+3. Before Year 7 catch-up: **decided 26 Oct:** build all 22 in a separate chat with its own roadmap (`roadmap/before-year-7.md`, handoff Project doc `handoff-before-year-7`).
+4. Engineering OpenSCAD: **decided 26 Oct:** parked until the main suite has been piloted.
+5. Site content licence: leaning to CC BY-SA 4.0 (Matthew, 26 Oct); non-commercial (BY-NC-SA) being weighed. No licence file yet.
 6. Project docs: **answered 26 Oct:** this chat orchestrates for now and updated the docs above (status blocks added; plan text kept).
 
 ### Needs your approval

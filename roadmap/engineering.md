@@ -115,6 +115,8 @@ From the six-subject review. Mechanisms and Structures already do design thinkin
 
 ## Proposed (25 Oct 2026, review chat; not approved): OpenSCAD, code as CAD
 
+*Parked (26 Oct 2026, Matthew): not now; revisit after the main suite has been piloted.*
+
 A niche but useful bridge between Code and Engineering: a part is described in text, so variables, loops and modules do real work, and the Parametric design course's idea (change a number, the part changes) becomes the whole method. Nothing in the repo mentions it yet.
 
 - **Where it sits.** An optional extension after the console bridge (Code) and Parametric design (Engineering). It reuses variables, `for` loops and functions from the Python courses, in a different syntax. Typical fit Years 9+; teacher note only, not a year gate. The wider 3D and animation idea stays parked for a Digital Media / Design subject.
