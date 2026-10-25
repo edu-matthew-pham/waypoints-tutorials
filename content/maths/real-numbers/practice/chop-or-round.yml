@@ -1,0 +1,22 @@
+# Practice for "Chop or round?".
+templates:
+  - q: "A sale price works out to ${d}.{c}{e}. Chop it to the cent. Give the price as a decimal."
+    vars: { d: "1..9", c: "10..99", e: "11..99" }
+    answer: "{d + c / 100}"
+    tolerance: 0.001
+    explain: "Cut after the cent: ${d}.{c}."
+  - q: "A sale price works out to ${d}.{c}{e}. Round it to the nearest cent. Give the price as a decimal."
+    vars: { d: "1..9", c: "10..98", e: "11..99" }
+    answer: "{rd(d + c / 100 + e / 10000, 2)}"
+    tolerance: 0.001
+    explain: "The digit after the cent is {floor(e / 10)}, so ${d}.{c}{e} rounds to {rd(d + c / 100 + e / 10000, 2)}."
+  - q: "A till chops {n * 500} prices to the cent. On average each chop loses half a cent. About how many dollars is lost in all?"
+    vars: { n: "2..24" }
+    answer: "{n * 500 * 5 / 1000}"
+    tolerance: 0.01
+    explain: "{n * 500} × 0.5 cents = {n * 250} cents = ${n * 500 * 5 / 1000}."
+  - q: "A price works out to ${d}.{c}{e}. A till chops it to the cent. How many cents lower than the exact price is the till's price? Give the answer as a decimal number of cents."
+    vars: { d: "1..9", c: "10..99", e: "11..99" }
+    answer: "{e / 100}"
+    tolerance: 0.006
+    explain: "The cut-off digits are 0.00{e} of a dollar, which is {e / 100} cents."

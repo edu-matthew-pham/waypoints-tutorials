@@ -1,0 +1,46 @@
+summary: "Students compare a table that adds with one that multiplies on a graph board, find the constant ratio, tell the two kinds of table apart, and use the doubling model to see why the last hours of a food-safety rule matter most (AC9M10A03, node 1)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can tell a table that adds from a table that multiplies.
+  - I can find the ratio of an exponential table.
+  - I can explain why doubling 4 times is not the same as doubling once.
+struggle: "Checking differences instead of ratios. Ask 'what do I do to this number to get the next one?', adding or multiplying, before any dividing."
+before: |
+  Do the Run and Modify boards yourself first. Students need powers from Year 8 (2⁴ = 16) and straight-line tables from Linear relations.
+
+  The one idea: an exponential table has a constant ratio between neighbours, where a linear table has a constant difference. The board puts both on one graph: they agree for the first step (100 to 200) and then split. That is the picture to come back to.
+
+  All numbers in the germ model are made up: 100 germs at the start, doubling every half hour. Say so in class. Real doubling times depend on the germs and the temperature, and the food rule's cut-offs come from food-safety research, not from this model. The model only shows the shape: why 'twice as long' is not 'twice as much' when things multiply.
+running:
+  - "Predict: take a show of hands. Those who chose 3,200 are adding or thinking 'twice as long, twice as many'. Don't correct it yet."
+  - "Run: ask students to read the two rows of the table at 2 hours and at 4 hours, and say what the dashed row is doing."
+  - "Paper: the try-one after the worked example and the picnic in Make are worked on paper first. Books out, and look for division (ratio), not subtraction."
+  - "Modify: before the ratio of 1, ask what multiplying by 1 does."
+stuck:
+  - see: "A student checks the differences to see if a table is exponential (Priya's mistake)."
+    ask: "What do you do to 3 to get 6, and to 6 to get 12: add or multiply?"
+    fix: "Write ÷ under each arrow: 6 ÷ 3, 12 ÷ 6, 24 ÷ 12. Differences test a line; ratios test an exponential."
+  - see: "A student says 4 hours is only twice as bad as 2 hours."
+    ask: "How many half-hours is 2 hours? And 4 hours? How many extra doublings is that?"
+    fix: "Count the doublings: 4 for the first 2 hours, 4 more for the next 2. Four more doublings is × 16."
+  - see: "A student thinks a falling table (80, 40, 20, 10) can't be exponential."
+    ask: "What do you multiply 80 by to get 40?"
+    fix: "Multiply by 0.5 each time. A ratio below 1 is still a constant ratio."
+stretch: "Find a ratio that makes the germs reach 10,000 after 3 half-hours from 100. Is it a whole number? Then: can an exponential table ever be the same as a linear one? (Only with ratio 1.)"
+support: "A table with an extra row for each step: '+?' on one row and '×?' on the next. Fill both for 2, 4, 8, 16 and for 2, 4, 6, 8 so the contrast is visible."
+leads: |
+  Next: the graph of an exponential (y-intercept, growth or decay, the line it never reaches), then reading the rule y = a(bˣ) from a graph, then solving equations where x is the power.
+
+  Where it leads in class: compound interest and depreciation (the same percentage each year), and half-life in science.
+exit:
+  q: "A table goes 3, 12, 48, 192. Is it linear or exponential? What is the next value?"
+  a: "Exponential: each value is 4 times the one before. The next value is 768."
+explain: |
+  A table is **exponential** when each value is the same number of times the one before. That number is the **ratio**: divide a value by the one before it.
+
+  A linear table has a constant **difference** instead: the same amount added each step. $5, 10, 15, 20$ is linear. $5, 10, 20, 40$ is exponential, with ratio 2.
+
+  A ratio below 1 is still exponential: $80, 40, 20, 10$ has ratio 0.5.
+sources:
+  - { title: "The 2-hour/4-hour rule (NSW Food Authority): under 2 hours use or refrigerate, 2 to 4 hours use but don't refrigerate, 4 hours or more throw out (food held between 5 °C and 60 °C)", url: "https://www.foodauthority.nsw.gov.au/sites/default/files/2021-07/2_hour_4_hour_rule.pdf", checked: 2026-10-25 }

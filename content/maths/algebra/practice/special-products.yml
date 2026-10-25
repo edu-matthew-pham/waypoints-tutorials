@@ -1,0 +1,42 @@
+# Practice for "Special products".
+templates:
+  - q: "Expand (x + {a})²."
+    vars: { a: "2..12" }
+    answer: "x^2 + {2 * a}x + {a * a}"
+    form: expanded
+    feedback:
+      - ["x^2 + {a * a}", "(x + {a})² is (x + {a})(x + {a}): four pieces, with two strips of {a|c}x."]
+    explain: "(x + {a})(x + {a}) = x² + {a|c}x + {a|c}x + {a * a} = x² + {2 * a}x + {a * a}."
+  - q: "Expand (x − {a})²."
+    vars: { a: "2..12" }
+    answer: "x^2 - {2 * a}x + {a * a}"
+    form: expanded
+    feedback:
+      - ["x^2 - {a * a}", "That's what (x − {a})(x + {a}) makes. (x − {a})² has two red strips."]
+      - ["x^2 + {2 * a}x + {a * a}", "Both strips are red: −{a}x and −{a}x."]
+      - ["x^2 - {2 * a}x - {a * a}", "−{a} × (−{a}) is +{a * a}: a negative times a negative."]
+    explain: "(x − {a})(x − {a}) = x² − {a|c}x − {a|c}x + {a * a} = x² − {2 * a}x + {a * a}."
+  - q: "Expand (x + {a})(x − {a})."
+    vars: { a: "2..12" }
+    answer: "x^2 - {a * a}"
+    form: expanded
+    feedback:
+      - ["x^2 + {a * a}", "{a} × (−{a}) is −{a * a}."]
+      - ["x^2 - {2 * a}x - {a * a}", "The strips are +{a}x and −{a}x: they cancel."]
+    explain: "x² − {a|c}x + {a|c}x − {a * a} = x² − {a * a}: the strips cancel."
+  - q: "Expand ({m}x + {a})²."
+    vars: { m: "2..4", a: "1..6" }
+    answer: "{m * m}x^2 + {2 * m * a}x + {a * a}"
+    form: expanded
+    feedback:
+      - ["{m * m}x^2 + {a * a}", "Two strips are missing: ({m}x + {a})² is ({m}x + {a})({m}x + {a})."]
+      - ["{m}x^2 + {2 * m * a}x + {a * a}", "{m}x times {m}x is {m * m}x²: {m} × {m} and x × x."]
+    explain: "{m * m}x² + {m * a}x + {m * a}x + {a * a} = {m * m}x² + {2 * m * a}x + {a * a}."
+  - q: "Expand ({m}x + {a})({m}x − {a})."
+    vars: { m: "2..4", a: "1..6" }
+    answer: "{m * m}x^2 - {a * a}"
+    form: expanded
+    feedback:
+      - ["{m * m}x^2 + {a * a}", "{a} × (−{a}) is −{a * a}."]
+      - ["{m}x^2 - {a * a}", "{m}x times {m}x is {m * m}x²."]
+    explain: "{m * m}x² − {m * a}x + {m * a}x − {a * a} = {m * m}x² − {a * a}."

@@ -13,7 +13,7 @@ pathways:
     courses:
       - { path: maths/algebra, stage: foundations, tagline: "Expressions and equations, solved three ways and checked." }
       - { path: maths/linear-relations, id: linear-relations, stage: foundations, after: [maths/algebra, number-foundations], tagline: "Rules, tables and straight-line graphs." }
-      - { title: Non-linear relations, stage: extensions, summary: "Quadratics, exponentials and their graphs.", after: [linear-relations], tagline: "Curves: quadratics and exponentials." }
+      - { path: maths/functions, id: functions, stage: extensions, after: [linear-relations, real-numbers], tagline: "Curves: exponentials now, quadratics next." }
   - id: number
     title: Number
     summary: Integers, fractions, decimals and percentages, ratios and powers.

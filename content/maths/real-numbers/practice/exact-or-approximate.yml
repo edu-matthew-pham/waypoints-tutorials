@@ -1,0 +1,16 @@
+# Practice for "Exact or approximate?".
+templates:
+  - q: "A square patch has an area of {a} m². The path across it is √{a} × √2. How long is it, exactly?"
+    vars: { a: [8, 18, 32, 50, 72, 98] }
+    answer: "{sqrt(2 * a)}"
+    explain: "√{a} × √2 = √{2 * a} = {sqrt(2 * a)}."
+  - q: "A square patch has an area of {a} m². Someone rounds the side to 2 decimal places and √2 to 1.41. What path length do they get, to 2 decimal places?"
+    vars: { a: [8, 18, 32, 50, 72, 98] }
+    answer: "{rd(rd(sqrt(a), 2) * 1.41, 2)}"
+    tolerance: 0.006
+    explain: "The side is {rd(sqrt(a), 2)}, and {rd(sqrt(a), 2)} × 1.41 = {rd(sqrt(a), 2) * 1.41}, so {rd(rd(sqrt(a), 2) * 1.41, 2)}."
+  - q: "A square patch has an area of {a} m². The exact path across it is {sqrt(2 * a)} m. A student gets {rd(rd(sqrt(a), 2) * 1.41, 2)} m with rounded numbers. How much shorter is that than the exact path, in metres?"
+    vars: { a: [8, 18, 32, 50, 72, 98] }
+    answer: "{rd(sqrt(2 * a) - rd(rd(sqrt(a), 2) * 1.41, 2), 2)}"
+    tolerance: 0.006
+    explain: "{sqrt(2 * a)} − {rd(rd(sqrt(a), 2) * 1.41, 2)} = {rd(sqrt(2 * a) - rd(rd(sqrt(a), 2) * 1.41, 2), 2)} m."

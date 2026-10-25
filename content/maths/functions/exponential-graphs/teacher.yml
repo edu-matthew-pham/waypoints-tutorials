@@ -1,0 +1,42 @@
+summary: "Students draw y = a(bˣ) on a graph board, find that a is where it starts and b above or below 1 decides growth or decay, and see that a decay graph never reaches the asymptote y = 0, using a cooling cup of tea (AC9M10A03, node 2)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can read where an exponential graph starts from its rule.
+  - I can say whether y = a(bˣ) grows or decays from b.
+  - I can explain why a decay graph never reaches the x-axis.
+struggle: "Believing repeated halving eventually reaches 0. Keep halving a number on paper or a calculator and look at how small it gets without ever being 0."
+before: |
+  Do the Run and Modify boards yourself first. Students need the ratio from the last lesson (Same ratio each time) and where a line crosses the y-axis from Linear relations.
+
+  The one idea: the base b decides growth (more than 1) or decay (between 0 and 1), and a decay graph gets closer and closer to y = 0 without reaching it. The tea comes back at the end: the gap between tea and room decays, so the tea settles above room temperature.
+
+  All the tea readings are made up (tea at 90 °C, room at 20 °C, the gap halving every 10 minutes). Real readings follow a similar pattern, and your students' own will show how close. A class practical: hot (not boiling) water in a cup, a thermometer, a reading every 2 minutes for 20 minutes. Supervise the hot water. Plot the readings, then the gap to the room (tea minus room), and ask what shape the gap makes.
+running:
+  - "Predict: take a show of hands. The common wrong answer is 'it falls by 35 °C again, to 20 °C': students expect a steady fall."
+  - "Run: ask students to read the table for b = 0.5 down the column: 16, 8, 4, 2... and say whether it ever hits 0."
+  - "Paper: the try-one after the worked example and the tea in Make are worked on paper first. Books out, and look for the 20 °C added back on."
+  - "Modify: before the base of 1, ask what multiplying by 1 does."
+stuck:
+  - see: "A student says a decay graph reaches 0 (Kim's mistake)."
+    ask: "What is half of 0.001? And half of that?"
+    fix: "Halve a number several times on a calculator: it gets tiny but never 0. The graph gets as close to the axis as you like but never touches it."
+  - see: "A student reads b as where the graph crosses the y-axis."
+    ask: "What is y when x is 0? Put 0 in."
+    fix: "Anything to the power 0 is 1, so y = a. The y-axis crossing is a; b is what you multiply by."
+  - see: "A student says y = 0.8(5^x) is decay because of the 0.8."
+    ask: "Which number has the x in its power?"
+    fix: "The base 5 decides. 0.8 is the starting value a."
+stretch: "Why can't b be negative? Try b = −1 on paper: −1, 1, −1, 1... Or: if the tea were at 5 °C in a 20 °C room, what would the gap do?"
+support: "A table of the first six values of 80(0.5ˣ) with the x row and y row, and a halving arrow between neighbours. Draw the curve by hand from it."
+leads: |
+  Next: reading the rule y = a(bˣ) from a graph (a from the start, b from the ratio of neighbours), then solving equations where x is in the power.
+
+  Where it leads in class: modelling growth and decay (is it linear or exponential?), compound interest, and half-life.
+exit:
+  q: "For y = 10(0.5ˣ): where does it cross the y-axis, does it grow or decay, and what line does it get close to but never reach?"
+  a: "At 10; decay; y = 0."
+explain: |
+  In $y = a(b^x)$, $a$ is where the graph crosses the $y$-axis, because $b^0 = 1$. $b$ is what you multiply by each step.
+
+  If $b > 1$ the graph **grows**. If $0 < b < 1$ it **decays**: the values get smaller but never reach 0. The line $y = 0$ is the **asymptote**: the graph gets as close as you like but never touches it.

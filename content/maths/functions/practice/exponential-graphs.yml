@@ -1,0 +1,38 @@
+# Practice for "Exponential graphs".
+templates:
+  - q: "Where does y = {a}({b}^x) cross the y-axis? Give the value of y."
+    vars: { a: "2..9", b: "2..5" }
+    answer: "{a}"
+    feedback:
+      - ["{b}", "{b} is what you multiply by. The graph crosses the y-axis where x = 0: put 0 in."]
+      - ["{a * b}", "{a * b} is y when x = 1. The y-axis is where x = 0."]
+    explain: "At x = 0, {b}^0 = 1, so y = {a} × 1 = {a}."
+  - q: "Is {f} growth or decay?"
+    cases:
+      - { f: "y = 5(1.2^x)", k: "Growth: the base is more than 1", w: "Decay: the base is less than 1" }
+      - { f: "y = 5(0.8^x)", k: "Decay: the base is less than 1", w: "Growth: the base is more than 1" }
+      - { f: "y = 100(0.9^x)", k: "Decay: the base is less than 1", w: "Growth: the base is more than 1" }
+      - { f: "y = 0.8(5^x)", k: "Growth: the base is more than 1", w: "Decay: the base is less than 1" }
+      - { f: "y = 40(0.5^x)", k: "Decay: the base is less than 1", w: "Growth: the base is more than 1" }
+      - { f: "y = 2(3^x)", k: "Growth: the base is more than 1", w: "Decay: the base is less than 1" }
+      - { f: "y = 0.1(2^x)", k: "Growth: the base is more than 1", w: "Decay: the base is less than 1" }
+    choices: ["{k}", "{w}"]
+    explain: "The base, the number with the x in its power, decides. {k}."
+  - q: "The graph of y = {a}(0.5^x) gets closer and closer to a horizontal line but never reaches it. What is y on that line?"
+    vars: { a: "2..9" }
+    answer: "0"
+    feedback:
+      - ["{a}", "{a} is where the graph starts. It falls from there."]
+    explain: "Halving never gives 0, so the graph gets close to y = 0 and never reaches it."
+  - q: "For y = {a}({b}^x), what is y when x = {n}?"
+    vars: { a: "1..5", b: "2..4", n: "2..3" }
+    answer: "{a * pow(b, n)}"
+    feedback:
+      - ["{a * b * n}", "Multiply by {b} {n} times, not by {b} × {n}."]
+    explain: "{b}^{n} = {pow(b, n)}, so y = {a} × {pow(b, n)} = {a * pow(b, n)}."
+  - q: "For y = {a}(2^x), what is y when x = -1?"
+    vars: { a: [2, 4, 6, 8, 10, 12, 14] }
+    answer: "{a / 2}"
+    feedback:
+      - ["{a * 2}", "That's y at x = 1. One step back divides by 2."]
+    explain: "One step back from x = 0 divides by 2: {a} ÷ 2 = {a / 2}."

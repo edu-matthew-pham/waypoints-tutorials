@@ -1,0 +1,50 @@
+# Boards for "Same base both sides". x is the number of half-hours (doublings); y = 2^x is the germ count in hundreds
+# (so 2^6 = 64 means 6,400 germs from a start of 100). The line y = t is the target. Where they meet, x solves 2^x = t.
+
+# region: run
+widget: graph
+x: 0, 8
+y: 0, 140
+grid: 1, 20
+slider t: 8, 128, 8, 8
+plot: y = 2^x
+plot: y = t
+cross: 1, 2
+table: 0, 1, 2, 3, 4, 5, 6, 7
+# endregion
+
+# region: explain
+widget: graph
+x: 0, 8
+y: 0, 140
+grid: 1, 20
+slider t: 8, 128, 8, 56
+plot: y = 2^x
+plot: y = t
+cross: 1, 2
+table: 0, 1, 2, 3, 4, 5, 6, 7
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 8
+y: 0, 140
+grid: 1, 20
+plot: y = 2^x
+plot: y = 64
+cross: 1, 2
+table: 0, 1, 2, 3, 4, 5, 6, 7
+# endregion
+
+# region: vary
+widget: graph
+x: 0, 6
+y: 0, 260
+grid: 1, 50
+slider b: 2, 6, 3
+slider t: 1, 250, 81
+plot: y = b^x
+plot: y = t
+cross: 1, 2
+table: 0, 1, 2, 3, 4, 5
+# endregion

@@ -1,0 +1,8 @@
+# Rosa's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: rosa
+Round $1.5555 to the nearest cent.
+The cents are 1.55, and 55 is left over after them.
+Drop the left over digits, so the rounded price is $1.55.
+Rounded to the nearest cent: $1.55.
+# endregion

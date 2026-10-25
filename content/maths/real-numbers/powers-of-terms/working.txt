@@ -1,0 +1,8 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+Simplify 6a³ ÷ 3a⁵ and write the answer with a positive index.
+Numbers first: 6 ÷ 3 = 2.
+Letters: a³ ÷ a⁵ = a³⁻⁵ = a⁻².
+So the answer is −2a².
+# endregion

@@ -1,0 +1,8 @@
+# Priya's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: priya
+Is the table 3, 6, 12, 24 exponential?
+Exponential means it goes up by the same amount each step, so I'll check the differences.
+6 − 3 = 3, 12 − 6 = 6, 24 − 12 = 12. The differences aren't the same.
+So the table isn't exponential.
+# endregion

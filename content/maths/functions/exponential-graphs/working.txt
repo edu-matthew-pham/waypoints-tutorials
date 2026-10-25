@@ -1,0 +1,8 @@
+# Kim's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kim
+Sketch y = 4 × 0.5^x.
+When x = 0, y = 4, so the graph starts at 4.
+0.5 is less than 1, so y gets smaller as x grows: 4, 2, 1, 0.5, ...
+Keep halving and y reaches 0, so the graph crosses the x-axis.
+# endregion

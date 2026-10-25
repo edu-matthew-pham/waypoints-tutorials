@@ -1,0 +1,39 @@
+summary: "Students apply the product, quotient and power laws to whole algebraic terms, including a power of a bracket like (2k)³ and a negative index written as a fraction, using a lizard scaled up by 2k (AC9M10A01, nodes 1 and 2)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 10 min · Practise and Make 13 min"
+goals:
+  - I can cube or square a whole term, number and letter together.
+  - I can divide terms by dividing the numbers and subtracting the indices.
+  - I can write a negative index as a fraction.
+struggle: "Raising only the letter to the power and leaving the number alone. Ask students to write the bracket out as a product, (2k)(2k)(2k), and count the 2s."
+before: |
+  Do the Investigate step yourself first. Students need Index laws with letters and Negative powers (Year 9). This lesson covers both nodes of AC9M10A01 that deal with exponents: terms (node 1) and negative indices (node 2).
+
+  The one idea: a power outside a bracket belongs to everything inside it. The common mistakes are cubing the letter but not the number ((3a²)³ = 3a⁶), and reading a negative index as a negative number (Dev's working).
+
+  The lizard is a model: similar shapes scale as k, k² and k³, and real animals change shape as they grow. No data is used, so there are no sources. Year 9's Index laws with letters opens with the same lizard; here the scale factor is a term (2k) so the laws have to handle the number as well as the letter.
+running:
+  - "Predict: take a show of hands. 18 times comes from adding the three scale factors, and 36 times is area."
+  - "Run: ask what the 3 in 6³ counts."
+  - "Paper: the try-one after the worked example and the load on the legs in Make are worked on paper first. Books out, and look for the number cubed as well as the letter."
+  - "Modify: before 12x⁵y ÷ 4x²y, ask what y ÷ y is."
+stuck:
+  - see: "A student writes (2k)³ = 2k³."
+    ask: "Write (2k)³ out as three brackets multiplied. How many 2s are there?"
+    fix: "Three: 2 × 2 × 2 = 8, so 8k³."
+  - see: "A student writes 6a³ ÷ 3a⁵ = −2a²."
+    ask: "What does a⁻² mean in the pattern a², a¹, a⁰, ...?"
+    fix: "a⁻² = 1/a², so the answer is 2/a²."
+stretch: "A cube's surface is 6s² and its volume is s³. Write surface ÷ volume with a positive index, then find it for a side of 3a."
+support: "A card with the three laws, the rule a⁻ⁿ = 1/aⁿ and one worked example with a number in front."
+leads: |
+  Starts AC9M10A01 (nodes 1 and 2).
+
+  Where it leads: special products (next), factorising quadratics that start with more than x², then exponential relations (a^x) where the same laws are used on powers of a number.
+exit:
+  q: "Simplify (3x²)³."
+  a: "27x⁶."
+explain: |
+  A power outside a bracket applies to every part inside: $(2k)^3 = 2^3 \times k^3 = 8k^3$.
+
+  Divide terms by dividing the numbers and subtracting the indices. If the index comes out negative, write the letter underneath: $4k^2 \div 8k^3 = \dfrac{1}{2k}$.

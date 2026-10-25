@@ -1,0 +1,27 @@
+# Practice for "From graph to equation".
+templates:
+  - q: "A graph goes through (0, {a}) and (1, {a * b}). Write its rule in the form y = a(b^x)."
+    vars: { a: "2..9", b: "2..5" }
+    answer: "{a}({b}^x)"
+    feedback:
+      - ["{a * b}({b}^x)", "{a * b} is the value at x = 1. a is the value at x = 0."]
+      - ["{b}({a}^x)", "a and b are swapped. a is where it starts ({a}) and b is what you multiply by ({b})."]
+    explain: "a = {a} and b = {a * b} ÷ {a} = {b}, so y = {a}({b}^x)."
+  - q: "A graph goes through (0, {a}) and (1, {a / 2}). Write its rule."
+    vars: { a: [8, 12, 16, 20, 24, 40, 80] }
+    answer: "{a}(0.5^x)"
+    feedback:
+      - ["{a}(2^x)", "The value gets smaller, so b is less than 1: {a / 2} ÷ {a} = 0.5."]
+    explain: "a = {a}, and b = {a / 2} ÷ {a} = 0.5, so y = {a}(0.5^x). It decays."
+  - q: "A graph goes through (1, {a * b}) and (2, {a * b * b}), but you aren't told where it crosses the y-axis. Write its rule."
+    vars: { a: "2..5", b: "2..4" }
+    answer: "{a}({b}^x)"
+    feedback:
+      - ["{a * b}({b}^x)", "{a * b} is the value at x = 1, not x = 0. One step back divides by {b}: a = {a * b} ÷ {b}."]
+    explain: "b = {a * b * b} ÷ {a * b} = {b}. One step back from (1, {a * b}) is {a * b} ÷ {b} = {a}, so a = {a}: y = {a}({b}^x)."
+  - q: "A graph has the rule y = {a}({b}^x). What value of y does it pass through at x = 1?"
+    vars: { a: "2..9", b: "2..5" }
+    answer: "{a * b}"
+    feedback:
+      - ["{a + b}", "Add? No: at x = 1 you multiply a by b once."]
+    explain: "y = {a} × {b}^1 = {a * b}."

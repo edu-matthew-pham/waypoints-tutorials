@@ -1,0 +1,30 @@
+# Practice for "Same ratio each time".
+templates:
+  - q: "A table goes {a}, {a * b}, {a * b * b}, {a * b * b * b}. What do you multiply by each time?"
+    vars: { a: "2..9", b: "2..5" }
+    answer: "{b}"
+    feedback:
+      - ["{a * b - a}", "{a * b - a} is how far it goes up from {a} to {a * b}. The ratio is what you multiply by: {a * b} ÷ {a}."]
+    explain: "{a * b} ÷ {a} = {b}, and {a * b * b} ÷ {a * b} = {b}. Each value is {b} times the one before."
+  - q: "The table goes {a}, {a * b}, {a * b * b}, {a * b * b * b}. What comes next?"
+    vars: { a: "2..9", b: "2..4" }
+    answer: "{a * b * b * b * b}"
+    feedback:
+      - ["{a * b * b * b + (a * b * b * b - a * b * b)}", "That adds the last difference again. This table multiplies: {a * b * b * b} × {b}."]
+    explain: "The ratio is {b}, so the next value is {a * b * b * b} × {b} = {a * b * b * b * b}."
+  - q: "The table goes {a}, {a / 2}, {a / 4}, {a / 8}. What comes next?"
+    vars: { a: [16, 32, 48, 64, 80, 96] }
+    answer: "{a / 16}"
+    feedback:
+      - ["{a / 8 - a / 2}", "That keeps subtracting. This table multiplies by 0.5: halve {a / 8}."]
+    explain: "Each value is half the one before, so the next is {a / 8} ÷ 2 = {a / 16}."
+  - q: "Which table is exponential?"
+    cases:
+      - { k: "3, 6, 12, 24", w: "3, 6, 9, 12", v: "3, 5, 10, 11" }
+      - { k: "5, 10, 20, 40", w: "5, 10, 15, 20", v: "5, 10, 15, 25" }
+      - { k: "2, 6, 18, 54", w: "2, 6, 10, 14", v: "2, 4, 8, 14" }
+      - { k: "1, 4, 16, 64", w: "1, 4, 7, 10", v: "1, 4, 9, 16" }
+      - { k: "100, 50, 25, 12.5", w: "100, 75, 50, 25", v: "100, 50, 25, 20" }
+      - { k: "4, 12, 36, 108", w: "4, 12, 20, 28", v: "4, 12, 24, 48" }
+    choices: ["{k}", "{w}", "{v}"]
+    explain: "Only {k} multiplies by the same number each time. {w} adds the same amount each time, so it's linear."

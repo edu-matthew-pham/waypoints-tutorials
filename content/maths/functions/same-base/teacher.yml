@@ -1,0 +1,46 @@
+summary: "Students find where y = 2ˣ meets a horizontal line on a graph board, then solve equations with x in the power by writing both sides as powers of the same base and matching the indices, using the doubling sandwich from lesson 1 (AC9M10A03, node 4)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can solve 2ˣ = 64 by writing both sides as powers of 2.
+  - I can rewrite a base like 4 or 8 as a power of 2 to match the other side.
+  - I can explain why I can't divide by the base to solve for x.
+struggle: "Treating the base as something multiplying x and dividing by it (3ˣ = 81 → x = 27). Count the multiplications: how many 3s make 81?"
+before: |
+  Do the Run and Modify boards yourself first. Students need the index laws from Year 9 (powers of powers, negative powers) and the doubling ideas from the first lesson.
+
+  The one idea: if aˣ = aʸ then x = y, so rewrite both sides as powers of the same base and match the indices. The board shows it as a picture: the curve y = 2ˣ meeting the line y = t. For a t that isn't a power of 2 (like 24) the answer is between whole numbers, which the board shows and algebra alone can't yet find. Logarithms come later.
+
+  The sandwich numbers are made up: a start of 100 germs, doubling every half hour, and 6,400 as the worry point. The rule itself (2 hours, 4 hours) is NSW Food Authority's.
+running:
+  - "Predict: take a show of hands. 32 (64 ÷ 2) is Eli's mistake: dividing by the base."
+  - "Run: ask students to find t so that the answer is a whole number, then one where it isn't, and say what the board shows."
+  - "Paper: the try-one after the worked example and the sandwich in Make are worked on paper first. Books out, and look for both sides written with the same base."
+  - "Modify: before 5ˣ = 1/25, ask: is x bigger or smaller than 0? (The right side is less than 1.)"
+stuck:
+  - see: "A student divides by the base: 3ˣ = 81, x = 27 (Eli's mistake)."
+    ask: "How many 3s do you multiply to make 81?"
+    fix: "3, 9, 27, 81: four 3s. Then write 81 = 3⁴ so the bases match."
+  - see: "A student solves 4ˣ = 32 as x = 5 because 2⁵ = 32."
+    ask: "What's 4 as a power of 2?"
+    fix: "4 = 2², so 4ˣ = 2²ˣ. Then 2x = 5."
+  - see: "A student gets 6 for the sandwich and stops."
+    ask: "What does x count?"
+    fix: "x is half-hours, so 6 half-hours is 3 hours."
+stretch: "How long for the germs to reach 1,000? Predict from the board (it is between 3 and 4 half-hours), then try to find it with algebra. What goes wrong? (That is what logarithms are for.)"
+support: "A strip of powers: 2¹ = 2 up to 2⁸ = 256, 3¹ to 3⁵ = 243 and 5¹ to 5⁴ = 625. Students look up the base's powers before solving."
+leads: |
+  Next: Year 10 modelling: choosing whether a situation is linear or exponential, writing the model from the situation and judging it. Solving when the unknown isn't a whole-number power uses logarithms or a digital tool.
+
+  Where it leads in class: compound interest (how long to double), half-life, and population growth.
+exit:
+  q: "Solve 9ˣ = 81, then solve 4ˣ = 8."
+  a: "9ˣ = 81: x = 2. 4ˣ = 8: 2²ˣ = 2³, so x = 1.5."
+explain: |
+  To solve an equation with $x$ in the power, write both sides as powers of the same base. If $2^x = 2^6$ then $x = 6$.
+
+  The base isn't multiplying $x$, so you can't divide by it. $3^x = 81$ means 3 multiplied $x$ times, which is $3^4$.
+
+  If the bases differ, find a base that makes both. $8^x = 32$: $8 = 2^3$, $32 = 2^5$, so $2^{3x} = 2^5$ and $x = \dfrac{5}{3}$.
+sources:
+  - { title: "The 2-hour/4-hour rule (NSW Food Authority): the rule's cut-offs are quoted in the opening. The germ counts and the 6,400 worry point are made up", url: "https://www.foodauthority.nsw.gov.au/sites/default/files/2021-07/2_hour_4_hour_rule.pdf", checked: 2026-10-25 }

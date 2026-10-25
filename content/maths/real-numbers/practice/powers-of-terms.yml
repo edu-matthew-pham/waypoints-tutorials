@@ -1,0 +1,26 @@
+# Practice for "Powers of terms".
+templates:
+  - q: "Simplify ({p}x^{m})^{n}."
+    vars: { p: "2..4", m: "1..4", n: "2..3" }
+    answer: "{pow(p, n)}x^{m * n}"
+    form: simplified
+    feedback:
+      - ["{p}x^{m * n}", "The number in front is raised to the power as well."]
+    explain: "{p}^{n} = {pow(p, n)} and (x^{m})^{n} = x^{m * n}."
+  - q: "Simplify {p}x^{m} × {q}x^{n}y."
+    vars: { p: "2..9", q: "2..9", m: "1..6", n: "1..6" }
+    answer: "{p * q}x^{m + n}y"
+    form: simplified
+    explain: "{p} × {q} = {p * q} and x^{m} × x^{n} = x^{m + n}."
+  - q: "Simplify {p * q}a^{m + n}b^{2} ÷ {p}a^{m}b."
+    vars: { p: "2..6", q: "2..6", m: "1..4", n: "1..4" }
+    answer: "{q}a^{n}b"
+    form: simplified
+    explain: "{p * q} ÷ {p} = {q}, a^{m + n} ÷ a^{m} = a^{n} and b² ÷ b = b."
+  - q: "Simplify {p}a^{m} ÷ a^{m + n} and write the answer with a positive index."
+    vars: { p: "2..9", m: "1..3", n: "1..3" }
+    answer: "{p}/a^{n}"
+    form: simplified
+    feedback:
+      - ["-{p}a^{n}", "A negative index isn't a negative number. It puts the letter underneath."]
+    explain: "a^{m} ÷ a^{m + n} = a^-{n} = 1/a^{n}, so the answer is {p}/a^{n}."

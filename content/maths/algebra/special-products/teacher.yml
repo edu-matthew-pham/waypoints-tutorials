@@ -1,0 +1,48 @@
+summary: "Students take two strips off a square lawn and see why (x − 3)² has a corner to put back, then meet the difference of two squares, where the strips cancel, and use both to square 51 and multiply 49 × 51 in their heads (AC9M10A01, node 3)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can expand a bracket squared, with a plus or a minus, and say why there are two strips and a corner.
+  - I can expand (x + a)(x − a) and say why there's no x term.
+  - I can use the patterns to work out something like 49 × 51 in my head.
+struggle: "Squaring each term and dropping the strips, and the sign of the corner when both numbers are negative. Ask students to draw the square and label the two strips before they write anything."
+before: |
+  Do the Run board yourself first. Students need Two brackets, The pattern and Factorising quadratics from Year 9. The picture is the same rectangle on the tiles board; red pieces are taken away.
+
+  The one idea: (x + a)² and (x − a)² are a bracket times itself, so there are two strips and a corner; (x + a)(x − a) has two strips that are opposites, so they cancel. The common mistake is squaring each term, (x − 4)² = x² + 16 (Dev's working, planted after the worked example).
+
+  Hinge node: sign errors in expanding carry into factorising and completing the square. The smaller steps ask for half the move with numbers (the two strips, then the corner). If a student's strips are right and the corner is wrong, ask what a negative times a negative is.
+
+  The lawn and the numbers 51, 49 and 98 × 102 are made up: no figure here is a real measurement.
+running:
+  - "Predict: take a show of hands. Students who chose x² − 9 squared each term. Ask them to point to the two strips on the lawn picture."
+  - "Run: ask students which pieces are red, and why the corner isn't."
+  - "Investigate: draw the square for (x − 4)² live and shade the corner that was taken off twice."
+  - "Paper: the try-one after the worked example and 51² and 49 × 51 in Make are worked on paper first. Books out, and look for 50 + 1 and 50 − 1 written out."
+  - "Modify: before (x + 9)(x − 9), ask what the two strips will be."
+  - "Make: before anyone writes, ask who thinks 49 × 51 is bigger than 51 × 51."
+stuck:
+  - see: "A student writes (x − 4)² = x² + 16 (Dev's mistake)."
+    ask: "Sketch the square. How many pieces are there?"
+    fix: "Four: x², two strips of −4x and a corner of +16. Every term multiplies every term."
+  - see: "A student writes x² − 9 for (x − 3)²."
+    ask: "What's (x − 3) times (x − 3), one piece at a time?"
+    fix: "x², −3x, −3x and +9: the corner is a negative times a negative."
+  - see: "A student gets (x + 6)(x − 6) = x² + 36."
+    ask: "What's 6 times −6?"
+    fix: "−36. The corner is negative here, and the strips cancel."
+stretch: "Expand (x + 2)(x² + 3x + 1) by building a bigger rectangle with an x² side, then check the answer by putting x = 1 into both sides."
+support: "A blank 2 by 2 grid to fill in for each product, with the brackets' terms along the top and down the side. A strip of squares: 49, 64, 81, 100, 121, 144."
+leads: |
+  Starts the Year 10 expand and factorise work (AC9M10A01 node 3).
+
+  Where it leads: factorising when there's a number in front of x² (next lesson), completing the square, and solving quadratics.
+exit:
+  q: "Expand (x − 6)²."
+  a: "x² − 12x + 36."
+explain: |
+  A bracket squared is the bracket times itself: $(x + 3)^2 = (x + 3)(x + 3) = x^2 + 3x + 3x + 9 = x^2 + 6x + 9$. There are four pieces: a square, two strips and a corner. It isn't $x^2 + 9$.
+
+  With a minus sign, the strips are red and the corner is still positive: $(x - 3)^2 = x^2 - 6x + 9$.
+
+  When the brackets differ only in their sign, the strips cancel: $(x + 3)(x - 3) = x^2 - 3x + 3x - 9 = x^2 - 9$.

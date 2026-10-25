@@ -1,0 +1,8 @@
+# Mia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+A square patch has an area of 50 m². Find the path from corner to corner.
+The side is √50, which is about 7.07 m.
+The path is the side times √2, which is about 7.07 × 1.41 = 9.9687 m.
+So the path is exactly 9.9687 m.
+# endregion

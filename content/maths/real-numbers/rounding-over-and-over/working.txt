@@ -1,0 +1,8 @@
+# Jin's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: jin
+A saver starts with $1000. The real rate is 4.6% a year, but she plans with 5%.
+After 1 year: $1050 against $1046, so the plan is $4 too high.
+The gap grows by $4 each year, so after 10 years it is 10 × 4 = $40.
+So her plan is only $40 too high after 10 years.
+# endregion

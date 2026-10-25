@@ -1,0 +1,38 @@
+# Boards for "Non-monic factorising". (ax + p)(bx + q): a and b put a number in front of each x. The target is Ax² + Bx + C.
+
+# region: run
+widget: tiles
+mode: binomial
+target: 2, 7, 3
+slider a: 1, 3, 1
+slider b: 1, 3, 1
+slider p: 0, 9, 1
+slider q: 0, 9, 3
+# endregion
+
+# region: explain
+widget: tiles
+mode: binomial
+target: 2, 7, 3
+slider a: 1, 3, 1
+slider b: 1, 3, 1
+slider p: 0, 9, 1
+slider q: 0, 9, 3
+# endregion
+
+# region: explain-pic
+widget: tiles
+mode: binomial
+a: 2
+p: 1
+q: 3
+# endregion
+
+# region: vary
+widget: tiles
+mode: binomial
+slider a: 1, 4, 1
+slider b: 1, 4, 1
+slider p: -9, 9, 0
+slider q: -9, 9, 0
+# endregion

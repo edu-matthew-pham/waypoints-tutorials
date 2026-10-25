@@ -1,0 +1,8 @@
+# Priya's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: priya
+Factorise 2x² + 7x + 3.
+I need two numbers that multiply to 3 and add to 7.
+The pairs that make 3 are 1 and 3, and they add to 4.
+So there's no pair, and 2x² + 7x + 3 can't be factorised.
+# endregion

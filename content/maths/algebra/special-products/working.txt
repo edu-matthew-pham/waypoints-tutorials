@@ -1,0 +1,8 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+Expand (x − 4)².
+(x − 4)² means (x − 4)(x − 4).
+x times x is x², and −4 times −4 is 16.
+So (x − 4)² = x² + 16.
+# endregion

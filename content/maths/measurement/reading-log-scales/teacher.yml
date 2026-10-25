@@ -1,0 +1,49 @@
+summary: "Students read a decibel scale as steps that multiply (every 3 dB halves the safe time, so 100 dB allows 15 minutes against 8 hours), then use one ruler of powers of 10 to put a blood cell, a hair and the distance to the Sun side by side, and compare two sizes by counting steps (AC9M10M02, nodes 2 and 3)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - I can read a level on the decibel scale as a number of 3 dB steps.
+  - I can explain why a log ruler is used for sizes that run from tiny to huge.
+  - I can compare two quantities on a log ruler by counting the steps between them.
+struggle: "Using the average for the middle of a log ruler, or taking hours off instead of halving. Ask students: is each step on the ruler the same amount added, or the same number multiplied?"
+before: |
+  Do the Run board yourself first. Students need How big is a step? (the same multiplier each step) and scientific notation.
+
+  Two ideas: a step on a log scale is a multiplication (halving per 3 dB), and a log ruler gives every power of 10 the same space, so the middle is a multiplication too. The common mistakes are taking hours off per step and averaging the ends of the ruler (Priya's working).
+
+  Source: SafeWork SA's standard is 85 dB(A) averaged over 8 hours, and every 3 dB(A) increase doubles the risk of hearing damage. The lesson reads "doubles the risk" as "half the time for the same risk", so 88 dB is 4 hours, 91 dB is 2 hours and 100 dB is 15 minutes. That reading is the lesson's own, so check it against SafeWork's published exposure table before you rely on the minutes. The lesson never explains how decibels are calculated, only the 3 dB step.
+
+  Sizes: red blood cell 6 to 8 micrometres and hair 20 to 200 micrometres (the lesson uses 8 and 70, Wikipedia, Micrometre); the Earth to the Sun about 150 million km (NASA).
+running:
+  - "Predict: take a show of hands. Those who chose 5 hours took 3 hours off for 3 dB."
+  - "Run: ask students to say what the next row of the table will be before they slide."
+  - "Paper: the 97 dB try-one and the concert in Make are worked on paper first. Books out, and look for the steps counted before any halving."
+  - "Investigate: put the ruler on the board and ask where 10⁻² m would sit before they answer the middle question."
+  - "Modify: before 82 dB, ask whether 82 is above or below 85."
+stuck:
+  - see: "A student says 91 dB is 8 − 3 − 3 = 2 hours, and 100 dB is 8 − 15 = a negative time."
+    ask: "At 88 dB is the time 3 hours less, or half as long?"
+    fix: "Half as long. Halve once for every 3 dB: 15 dB is 5 halvings."
+  - see: "A student says halfway between 10 m and 1000 m is 505 m."
+    ask: "How many ×10 steps are there between 10 and 1000?"
+    fix: "Two. Halfway is one step from each end: 100 m."
+  - see: "A student says halving 5 times is dividing by 10."
+    ask: "What is 2 × 2 × 2 × 2 × 2?"
+    fix: "32. Five halvings divide by 32."
+stretch: "The safe time at 100 dB is 32 times shorter than at 85 dB. The earthquake step was 32 times the energy. Do those two 32s mean the same thing?"
+support: "A strip with the decibel levels 85, 88, 91, 94, 97, 100 and the safe time under each, filled in from the left."
+leads: |
+  Finishes AC9M10M02.
+
+  Where it leads: exponential graphs and growth and decay (Year 10 Algebra), and science scales that run over many powers of ten.
+exit:
+  q: "How many hours is it safe to stay at 94 dB, if 85 dB allows 8 hours and every 3 dB halves it?"
+  a: "1 hour (3 steps, 8 ÷ 8)."
+explain: |
+  Equal steps on a log scale are equal multipliers. On the decibel scale each 3 dB step halves the safe time: 8 hours, 4, 2, 1, and so on.
+
+  A log ruler puts every power of 10 the same distance apart, so two things $10^{k}$ times apart are $k$ steps apart, and the middle between 10 and 1000 is 100.
+sources:
+  - { title: "Workplace exposure standards for noise (SafeWork SA): 85 dB(A) averaged over 8 hours; every 3 dB(A) increase doubles the risk of hearing damage", url: "https://safework.sa.gov.au/workers/your-health-and-safety-at-work/hazardous-noise/workplace-exposure-standards", checked: 2026-10-25 }
+  - { title: "Micrometre (Wikipedia): hair width 20 to 200 micrometres, red blood cell 6 to 8", url: "https://en.wikipedia.org/wiki/Micrometre", checked: 2026-10-25 }
+  - { title: "Earth facts (NASA): the average distance from the Sun, 150 million km", url: "https://science.nasa.gov/earth/facts/", checked: 2026-10-25 }

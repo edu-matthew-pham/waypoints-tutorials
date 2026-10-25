@@ -21,6 +21,14 @@
 //   target: 5, 6             optional: the expression to factorise, x² + 5x + 6 (B, C); value r is 1 when it matches
 //   result: off              hide the expanded expression
 //   values (binomial): p, q, m (x-tiles in all: p + q), c (ones: p·q), r (1 when it matches the target), B, C
+// Coefficients (mode: binomial, Year 10): (ax + p)(bx + q) is a rectangle ax + p wide and bx + q tall: a·b x² tiles,
+// b·p + a·q x-tiles in all and p·q ones. a and b are whole numbers from 1 to 4 and default to 1, so the boards above
+// are unchanged.
+//   slider a: 1, 3, 2        the number of x in the first bracket (or fixed "a: 2"; default 1)
+//   slider b: 1, 3, 1        the number of x in the second bracket (or fixed "b: 3"; default 1)
+//   target: 6, 7, 2          three numbers: the expression to factorise, 6x² + 7x + 2 (A, B, C); value r is 1 when
+//                            a·b, the x-tiles and the ones all match. Two numbers (B, C) mean x² + Bx + C, as before.
+//   values (coefficients): a, b, n (x² tiles: a·b), A (the target's x² number), plus p, q, m, c, r, B, C as above
 // state: { scope: { vars: { k, a, b, p, q, m (x-tiles in all: k·a + p), c (ones in all: k·b + q) } } }
 // Checks: "k = 3 and a = 1 and b = 2", "m = 6 and c = 12 and k > 1".
 (function (B) {
@@ -28,7 +36,7 @@
   var spec = null, vars = {}, ui = {};
   var NAMES = ['k', 'a', 'b', 'p', 'q'], FNAMES = ['k', 's', 't'], XLEN = 3.3, GAP = 1.4;
   var gcd = function (x, y) { return y ? gcd(y, x % y) : Math.abs(x); };
-  var names = function () { return spec && spec.binomial ? ['p', 'q'] : spec && spec.factor ? FNAMES : NAMES; };
+  var names = function () { return spec && spec.binomial ? ['a', 'b', 'p', 'q'] : spec && spec.factor ? FNAMES : NAMES; };
   var show = function (n) { return B.fmt(n).replace(/^-/, '−'); };
 
   function num(t, where) { var v = Number(String(t).trim()); if (!isFinite(v) || v !== Math.round(v)) throw new Error(where + ': "' + String(t).trim() + '" is not a whole number.'); return v; }
@@ -129,27 +137,27 @@
     s.items.forEach(function (it) {
       if (it.kind !== 'slider') return;
       var where = 'Line ' + it.line + ' (slider ' + (it.name || '') + ')';
-      if (['p', 'q'].indexOf(it.name) < 0) throw new Error(where + ': two brackets use sliders p and q only.');
+      if (['a', 'b', 'p', 'q'].indexOf(it.name) < 0) throw new Error(where + ': two brackets use sliders a, b, p and q only.');
       var v = it.value.split(',').map(function (t) { return num(t, where); });
       if (v.length < 3 || !(v[0] < v[1]) || v[2] < v[0] || v[2] > v[1]) throw new Error(where + ': needs min, max, start with min < max and start between them.');
-      if (v[0] < -9 || v[1] > 9) throw new Error(where + ': keep p and q between −9 and 9.');
+      if ((it.name === 'a' || it.name === 'b') ? (v[0] < 1 || v[1] > 4) : (v[0] < -9 || v[1] > 9)) throw new Error(where + (it.name === 'a' || it.name === 'b' ? ': keep a and b between 1 and 4.' : ': keep p and q between −9 and 9.'));
       s.sl[it.name] = { name: it.name, min: v[0], max: v[1], start: v[2] };
     });
-    ['p', 'q'].forEach(function (n) {
-      if (s[n] !== undefined) { if (s.sl[n]) throw new Error(n + ': give it a slider or a fixed value, not both.'); s.fixed[n] = num(s[n], n); }
-      else if (!s.sl[n]) throw new Error(n + ': needs a slider ("slider ' + n + ': -6, 8, 2") or a value ("' + n + ': 2").');
+    ['a', 'b', 'p', 'q'].forEach(function (n) {
+      if (s[n] !== undefined) { if (s.sl[n]) throw new Error(n + ': give it a slider or a fixed value, not both.'); s.fixed[n] = num(s[n], n); if ((n === 'a' || n === 'b') && (s.fixed[n] < 1 || s.fixed[n] > 4)) throw new Error(n + ': keep a and b between 1 and 4.'); }
+      else if (!s.sl[n]) { if (n === 'a' || n === 'b') s.fixed[n] = 1; else throw new Error(n + ': needs a slider ("slider ' + n + ': -6, 8, 2") or a value ("' + n + ': 2").'); }
     });
-    if (s.target !== undefined) { var t = String(s.target).split(',').map(function (x) { return num(x, 'target'); }); if (t.length !== 2) throw new Error('target: two whole numbers, B and C, for x² + Bx + C.'); s.tgt = t; }
+    if (s.target !== undefined) { var t = String(s.target).split(',').map(function (x) { return num(x, 'target'); }); if (t.length !== 2 && t.length !== 3) throw new Error('target: two whole numbers, B and C, for x² + Bx + C, or three, A, B and C, for Ax² + Bx + C.'); s.tgt = t.length === 2 ? [1, t[0], t[1]] : t; }
     s.showResult = !/^off$/i.test(s.result || '');
   }
   // "x + 3", "x − 2", "x"
-  function br(n) { return n ? 'x ' + (n < 0 ? '− ' + show(-n) : '+ ' + show(n)) : 'x'; }
-  function quad(B, C) { var t = 'x²'; if (B) t += ' ' + (B < 0 ? '− ' : '+ ') + (Math.abs(B) === 1 ? '' : show(Math.abs(B))) + 'x'; if (C) t += ' ' + (C < 0 ? '− ' : '+ ') + show(Math.abs(C)); return t; }
+  function br(n, a) { var x = a === undefined || a === 1 ? 'x' : a + 'x'; return n ? x + ' ' + (n < 0 ? '− ' + show(-n) : '+ ' + show(n)) : x; }
+  function quad(B, C, A) { var t = (A === undefined || A === 1) ? 'x²' : show(A) + 'x²'; if (B) t += ' ' + (B < 0 ? '− ' : '+ ') + (Math.abs(B) === 1 ? '' : show(Math.abs(B))) + 'x'; if (C) t += ' ' + (C < 0 ? '− ' : '+ ') + show(Math.abs(C)); return t; }
   function term(n, x) { return (n < 0 ? '− ' : '+ ') + (x && Math.abs(n) === 1 ? '' : show(Math.abs(n))) + (x ? 'x' : ''); }
   function buildBinomial() {
     var ink = B.css('--ink') || '#1d2430', sq = B.css('--right') || '#8a4fb8', pos1 = B.css('--left') || '#2f6fb3', pos2 = B.css('--accent') || '#c2570a', neg = '#c0392b';
-    var p = vars.p, q = vars.q, ap = Math.abs(p), aq = Math.abs(q), X = XLEN;
-    var W = Math.max(X + ap, 6), H = Math.max(X + aq, 5);
+    var p = vars.p, q = vars.q, ap = Math.abs(p), aq = Math.abs(q), X = XLEN, na = vars.a, nb = vars.b;
+    var W = Math.max(na * X + ap, 6), H = Math.max(nb * X + aq, 5);
     var board = B.jsx({ boundingbox: [-1.8, H + 1.4, W + 0.8, -0.6], keepAspectRatio: true });
     var top = H; // y of the rectangle's top edge
     var tile = function (x, y, w, h, sign, lab, colour) {
@@ -158,29 +166,30 @@
       board.create('text', [x + w / 2, y - h / 2, (sign < 0 ? '−' : '') + lab], { anchorX: 'middle', anchorY: 'middle', cssClass: 'tlab', highlightCssClass: 'tlab', fontSize: lab === 'x²' ? 20 : 15, fixed: true, highlight: false });
     };
     var sp = p < 0 ? -1 : 1, sq2 = q < 0 ? -1 : 1;
-    tile(0, top, X, X, 1, 'x²', sq);
-    for (var i = 0; i < ap; i++) tile(X + i, top, 1, X, sp, 'x', pos1);
-    for (var j = 0; j < aq; j++) tile(0, top - X - j, X, 1, sq2, 'x', pos1);
-    for (var u = 0; u < ap; u++) for (var v = 0; v < aq; v++) tile(X + u, top - X - v, 1, 1, sp * sq2, '1', pos2);
+    for (var ix = 0; ix < na; ix++) for (var iy = 0; iy < nb; iy++) tile(ix * X, top - iy * X, X, X, 1, 'x²', sq);
+    for (var i = 0; i < ap; i++) for (var ry = 0; ry < nb; ry++) tile(na * X + i, top - ry * X, 1, X, sp, 'x', pos1);
+    for (var j = 0; j < aq; j++) for (var cx = 0; cx < na; cx++) tile(cx * X, top - nb * X - j, X, 1, sq2, 'x', pos1);
+    for (var u = 0; u < ap; u++) for (var v = 0; v < aq; v++) tile(na * X + u, top - nb * X - v, 1, 1, sp * sq2, '1', pos2);
     var lab = function (x, y, t) { board.create('text', [x, y, t], { anchorX: 'middle', anchorY: 'middle', cssClass: 'tside', highlightCssClass: 'tside', fontSize: 18, strokeColor: ink, fixed: true, highlight: false }); };
-    board.create('polygon', [[0, top - X - aq], [X + ap, top - X - aq], [X + ap, top], [0, top]], { fillOpacity: 0, borders: { strokeColor: ink, strokeWidth: 2.5, highlight: false }, vertices: { visible: false }, fixed: true, highlight: false });
-    lab(X / 2, top + 0.6, 'x'); if (ap) lab(X + ap / 2, top + 0.6, p < 0 ? '− ' + ap : '+ ' + ap);
-    lab(-0.8, top - X / 2, 'x'); if (aq) lab(-0.8, top - X - aq / 2, q < 0 ? '− ' + aq : '+ ' + aq);
+    board.create('polygon', [[0, top - nb * X - aq], [na * X + ap, top - nb * X - aq], [na * X + ap, top], [0, top]], { fillOpacity: 0, borders: { strokeColor: ink, strokeWidth: 2.5, highlight: false }, vertices: { visible: false }, fixed: true, highlight: false });
+    lab(na * X / 2, top + 0.6, na === 1 ? 'x' : na + 'x'); if (ap) lab(na * X + ap / 2, top + 0.6, p < 0 ? '− ' + ap : '+ ' + ap);
+    lab(-0.8, top - nb * X / 2, nb === 1 ? 'x' : nb + 'x'); if (aq) lab(-0.8, top - nb * X - aq / 2, q < 0 ? '− ' + aq : '+ ' + aq);
     board.update();
   }
   function reportBinomial() {
-    var p = vars.p, q = vars.q, m = p + q, c = p * q;
+    var a = vars.a, b = vars.b, p = vars.p, q = vars.q, n = a * b, xp = b * p, xq = a * q, m = xp + xq, c = p * q, co = n !== 1;
     ui.sliders.forEach(function (s) { s.out.textContent = s.n + ' = ' + show(vars[s.n]); });
-    var lhs = '(' + br(p) + ')(' + br(q) + ')';
-    var four = 'x² ' + (p ? term(p, true) + ' ' : '') + (q ? term(q, true) + ' ' : '') + (c ? term(c, false) : '');
-    var text = lhs + (spec.showResult ? ' = ' + four.trim() + (p && q ? ' = ' + quad(m, c) : '') : '');
-    var r = spec.tgt ? (m === spec.tgt[0] && c === spec.tgt[1] ? 1 : 0) : 0;
+    var lhs = '(' + br(p, a) + ')(' + br(q, b) + ')';
+    var four = (co ? n + 'x²' : 'x²') + ' ' + (xp ? term(xp, true) + ' ' : '') + (xq ? term(xq, true) + ' ' : '') + (c ? term(c, false) : '');
+    var text = lhs + (spec.showResult ? ' = ' + four.trim() + (xp && xq ? ' = ' + quad(m, c, n) : '') : '');
+    var T = spec.tgt, r = T ? (n === T[0] && m === T[1] && c === T[2] ? 1 : 0) : 0;
     ui.work.textContent = text;
-    if (spec.tgt) ui.count.textContent = 'Target: ' + quad(spec.tgt[0], spec.tgt[1]) + '. ' + (r ? 'These brackets make it.' : 'These make ' + quad(m, c) + (c !== spec.tgt[1] ? ': the ones need to multiply to ' + show(spec.tgt[1]) + '.' : ': the x-tiles need to add to ' + show(spec.tgt[0]) + '.'));
+    if (T) ui.count.textContent = 'Target: ' + quad(T[1], T[2], T[0]) + '. ' + (r ? 'These brackets make it.' : 'These make ' + quad(m, c, n) + (n !== T[0] ? ': the x² tiles need to be ' + T[0] + ' (a × b).' : c !== T[2] ? ': the ones need to multiply to ' + show(T[2]) + '.' : ': the x-tiles need to add to ' + show(T[1]) + '.'));
+    else if (co) ui.count.textContent = spec.showResult ? show(n) + ' x² tile' + (n === 1 ? '' : 's') + ', ' + Math.abs(m) + ' x-tile' + (Math.abs(m) === 1 ? '' : 's') + ' in all (' + show(xp) + ' + ' + show(xq) + ') and ' + Math.abs(c) + (c < 0 ? ' negative' : '') + ' one' + (Math.abs(c) === 1 ? '' : 's') + ' (' + show(p) + ' × ' + show(q) + ').' : 'The x² tiles, the x-tiles and the ones.';
     else ui.count.textContent = spec.showResult ? 'One x², ' + Math.abs(m) + ' x-tile' + (Math.abs(m) === 1 ? '' : 's') + ' in all (' + show(p) + ' + ' + show(q) + ') and ' + Math.abs(c) + (c < 0 ? ' negative' : '') + ' one' + (Math.abs(c) === 1 ? '' : 's') + ' (' + show(p) + ' × ' + show(q) + ').' : 'One x², the x-tiles and the ones.';
     B.say('');
     B.save({ vars: vars });
-    B.post({ scope: { vars: { p: p, q: q, m: m, c: c, r: r, B: spec.tgt ? spec.tgt[0] : 0, C: spec.tgt ? spec.tgt[1] : 0 }, points: {} } }, text);
+    B.post({ scope: { vars: { a: a, b: b, n: n, p: p, q: q, m: m, c: c, r: r, A: T ? T[0] : 0, B: T ? T[1] : 0, C: T ? T[2] : 0 }, points: {} } }, text);
   }
   function paintPanel() {
     var panel = B.el('gpanel'); panel.replaceChildren(); ui = { sliders: [] };

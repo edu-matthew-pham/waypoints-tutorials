@@ -1,0 +1,46 @@
+summary: "Students pack 2x² + 7x + 3 into a rectangle, find that the two numbers multiply to a × c and not c, split the strips and factorise by grouping, then come back to a frame's area and share a common factor between the brackets (AC9M10A01, node 4)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can factorise a quadratic with a number in front of x² by finding two numbers that multiply to a × c.
+  - I can split the strips and take out what each pair has in common.
+  - I can take out a common factor first, and check by expanding.
+struggle: "Looking for a pair that multiplies to the last number only, and keeping the signs right. Ask students to write a × c first, then list the pairs, then find the one that adds to the middle."
+before: |
+  Do the Run board yourself first. Students need Factorising quadratics (Year 9) and Special products. The board now takes a number in front of each x: (ax + p)(bx + q) is a rectangle with a × b big squares, b × p + a × q strips and p × q ones.
+
+  The one idea: with a number in front of x², the two numbers for the strips multiply to a × c, then split the middle term and group. The common mistake is looking for a pair that multiplies to c as in the monic case (Priya's working, planted after the worked example).
+
+  Completing the square is not in this lesson; it comes next. The frame's size (6 cm by 4 cm) and its area expression are made up. Solving "how wide a border gives 1000 cm²" is a later lesson; this one only factorises.
+
+  Not every quadratic factorises with whole numbers (2x² + 3x + 4 doesn't). If a student asks, say yes, and that's what completing the square and the quadratic formula are for.
+running:
+  - "Predict: take a show of hands. Students who chose x + 6 took 7 − 1. Ask them to point to the 2x on the picture and count the big squares it needs."
+  - "Run: ask students to read the target message aloud (the x² tiles, then the ones, then the strips) before they move a slider."
+  - "Investigate: draw the rectangle for 2x² + 7x + 3, then split the 7 strips into 6 and 1 on the picture."
+  - "Paper: the try-one after the worked example and the frame area in Make are worked on paper first. Books out, and look for a × c written down."
+  - "Modify: before 6x² + 11x + 3, ask what 6 × 3 is, and which pair of numbers makes it."
+  - "Make: ask who thinks the frame is bigger than the photo before anyone calculates."
+stuck:
+  - see: "A student says 2x² + 7x + 3 can't be factorised (Priya's mistake)."
+    ask: "What's the x² number times the last number?"
+    fix: "6. 1 and 6 multiply to 6 and add to 7: split the strips that way."
+  - see: "A student has the right numbers but can't group."
+    ask: "What do 2x² + 6x have in common? And x + 3?"
+    fix: "2x(x + 3) + 1(x + 3): both pairs share (x + 3)."
+  - see: "A student's factorisation expands to the wrong middle number."
+    ask: "Expand it. What are the two strips?"
+    fix: "Check by expanding every time: the strips should add to the middle."
+stretch: "Is 2x² + 3x + 4 factorisable with whole numbers? What would the pair have to be, and why can't it?"
+support: "A table with columns: a × c, the pairs that make it, their sum. A rectangle drawn for the student to pack tiles into."
+leads: |
+  Continues AC9M10A01 node 4.
+
+  Where it leads: completing the square, solving quadratics by factorising, and the frame that must be exactly 1000 cm² (batch 2).
+exit:
+  q: "Factorise 2x² + 11x + 5."
+  a: "(2x + 1)(x + 5)."
+explain: |
+  When there's a number in front of $x^2$, the two numbers for the strips multiply to $a \times c$, not $c$. For $2x^2 + 7x + 3$: $2 \times 3 = 6$, and $1$ and $6$ add to $7$.
+
+  Split the middle term and group: $2x^2 + 6x + x + 3 = 2x(x + 3) + 1(x + 3) = (2x + 1)(x + 3)$. Check by expanding.

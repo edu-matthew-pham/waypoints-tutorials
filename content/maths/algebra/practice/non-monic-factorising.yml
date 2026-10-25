@@ -1,0 +1,34 @@
+# Practice for "Factorising when x² has a number".
+templates:
+  - q: "Factorise {m * n}x^2 + {m * q + n * p}x + {p * q}."
+    vars: { m: "1..3", n: "1..3", p: "1..6", q: "1..6" }
+    where: "m * n > 1 and m >= n and gcd(m, p) = 1 and gcd(n, q) = 1"
+    answer: "({m}x + {p})({n}x + {q})"
+    form: factorised
+    feedback:
+      - ["({m}x + {q})({n}x + {p})", "Expand it: the strips are {m * p}x and {n * q}x. They need to add to {m * q + n * p}x."]
+    explain: "{m * n} × {p * q} = {m * n * p * q}; the strips split as {m * q}x and {n * p}x, which add to {m * q + n * p}x. Check by expanding."
+  - q: "Factorise {m * n}x^2 - {m * q + n * p}x + {p * q}."
+    vars: { m: "1..3", n: "1..3", p: "1..6", q: "1..6" }
+    where: "m * n > 1 and m >= n and gcd(m, p) = 1 and gcd(n, q) = 1"
+    answer: "({m}x - {p})({n}x - {q})"
+    form: factorised
+    feedback:
+      - ["({m}x + {p})({n}x + {q})", "That makes +{m * q + n * p}x. The middle is −{m * q + n * p}x, so both numbers are negative."]
+    explain: "The numbers multiply to {m * n * p * q} and add to −{m * q + n * p}: both negative. Check by expanding."
+  - q: "Factorise {m * n}x^2 + {m * q - n * p|s}x - {p * q}."
+    vars: { m: "1..3", n: "1..3", p: "1..6", q: "1..6" }
+    where: "m * n > 1 and m * q > n * p and gcd(m, p) = 1 and gcd(n, q) = 1"
+    answer: "({m}x - {p})({n}x + {q})"
+    form: factorised
+    feedback:
+      - ["({m}x + {p})({n}x - {q})", "Expand it: the strips are −{m * q}x and +{n * p}x, which make the wrong sign in the middle."]
+    explain: "The numbers multiply to −{m * n * p * q} and add to {m * q - n * p}. Check by expanding."
+  - q: "Take out the common factor, then factorise {k * m * n}x^2 + {k * (m * q + n * p)}x + {k * p * q}."
+    vars: { k: "2..4", m: "1..3", n: "1..2", p: "1..5", q: "1..5" }
+    where: "m * n > 1 and m >= n and gcd(m, p) = 1 and gcd(n, q) = 1"
+    answer: "{k}({m}x + {p})({n}x + {q})"
+    form: factorised
+    feedback:
+      - ["({m}x + {p})({n}x + {q})", "That's one {k}th of the expression. The common factor {k} stays outside."]
+    explain: "Take out {k}: {k}({m * n}x² + {m * q + n * p}x + {p * q}) = {k}({m}x + {p})({n}x + {q})."

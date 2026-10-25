@@ -1,0 +1,53 @@
+# Boards for "From graph to equation". The dashed curve is cup B's gap to the room (made-up readings): it starts at 50
+# and is 0.8 times the one before every 10 minutes, so y = 50(0.8^x). Students slide a and b to cover it.
+
+# region: run
+widget: graph
+x: 0, 5
+y: 0, 60
+grid: 1, 10
+axes: Time (10-minute steps), Gap (°C)
+slider a: 10, 60, 30, 10
+slider b: 0.5, 1.5, 0.5, 0.1
+plot: y = a(b^x)
+plot: y = 50(0.8^x), dashed
+table: 0, 1, 2, 3, 4
+# endregion
+
+# region: explain
+widget: graph
+x: 0, 5
+y: 0, 60
+grid: 1, 10
+axes: Time (10-minute steps), Gap (°C)
+slider a: 10, 60, 30, 20
+slider b: 0.5, 1.5, 0.5, 0.3
+plot: y = a(b^x)
+plot: y = 50(0.8^x), dashed
+table: 0, 1, 2, 3
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 5
+y: 0, 60
+grid: 1, 10
+axes: Time (10-minute steps), Gap (°C)
+plot: y = 50(0.8^x)
+point A: 0, 50
+point B: 1, 40
+point C: 2, 32
+table: 0, 1, 2, 3
+# endregion
+
+# region: grow
+widget: graph
+x: 0, 5
+y: 0, 70
+grid: 1, 10
+slider a: 2, 12, 4, 2
+slider b: 0.5, 2.5, 1, 0.1
+plot: y = a(b^x)
+plot: y = 8(1.5^x), dashed
+table: 0, 1, 2, 3, 4
+# endregion

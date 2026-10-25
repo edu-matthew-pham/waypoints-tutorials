@@ -1,0 +1,82 @@
+# Boards for "Exponential graphs". y = a(b^x): a is the starting value (where the graph crosses the y-axis), b is
+# what you multiply by each step. The "tea" board is the cooling cup: the room is 20 °C and the gap shrinks by b each
+# 10-minute step (made-up readings).
+
+# region: run
+widget: graph
+x: -3, 5
+y: -2, 40
+grid: 1, 10
+slider a: 1, 5, 2
+slider b: 0.5, 2, 2, 0.5
+plot: y = a(b^x)
+table: -2, -1, 0, 1, 2, 3
+# endregion
+
+# region: explain
+widget: graph
+x: -3, 5
+y: -2, 40
+grid: 1, 10
+slider a: 1, 5, 2
+slider b: 0.5, 2, 2, 0.5
+plot: y = a(b^x)
+table: -2, -1, 0, 1, 2, 3
+# endregion
+
+# region: explain-pic
+widget: graph
+x: -1, 6
+y: -10, 90
+grid: 1, 20
+plot: y = 80(0.5^x)
+point A: 0, 80
+table: 0, 1, 2, 3, 4, 5
+# endregion
+
+# region: vary
+widget: graph
+x: -3, 5
+y: -2, 40
+grid: 1, 10
+slider a: 1, 8, 2
+slider b: 0.5, 3, 2, 0.5
+plot: y = a(b^x)
+table: -2, -1, 0, 1, 2
+# endregion
+
+# region: through-5-10
+widget: graph
+x: -1, 4
+y: -2, 24
+grid: 1, 4
+slider a: 1, 8, 2
+slider b: 0.5, 3, 1, 0.5
+plot: y = a(b^x)
+point P: 0, 5
+point Q: 1, 10
+# endregion
+
+# region: decay
+widget: graph
+x: -1, 4
+y: -1, 10
+grid: 1, 2
+slider a: 1, 8, 2
+slider b: 0.5, 3, 2, 0.5
+plot: y = a(b^x)
+point P: 0, 3
+point Q: 1, 1.5
+# endregion
+
+# region: tea
+widget: graph
+x: 0, 6
+y: 0, 100
+grid: 1, 20
+axes: Time (10-minute steps), Tea (°C)
+slider b: 0.3, 0.9, 0.5, 0.1
+plot: y = 20 + 70(b^x)
+plot: y = 20, dashed
+table: 0, 1, 2, 3, 4, 5, 6
+# endregion

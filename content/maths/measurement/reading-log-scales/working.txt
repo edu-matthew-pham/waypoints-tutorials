@@ -1,0 +1,9 @@
+# Priya's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: priya
+Priya's ruler has marks at 10 m and 1000 m. She finds the number halfway between them.
+The ruler has equal steps of ×10 between its marks.
+Halfway between 10 and 1000 is the average of the two.
+(10 + 1000) ÷ 2 = 505.
+So the halfway mark is 505 m.
+# endregion

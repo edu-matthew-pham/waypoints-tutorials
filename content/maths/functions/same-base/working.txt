@@ -1,0 +1,8 @@
+# Eli's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: eli
+Solve 3^x = 81.
+I'll undo the 3 like in an equation, so I divide both sides by 3.
+x = 81 ÷ 3 = 27.
+So x = 27.
+# endregion

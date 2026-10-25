@@ -1,0 +1,39 @@
+summary: "Students find that multiplying exact roots gives √50 × √2 = 10 while rounded decimals give 9.9687, and learn that an approximation swaps an exact number for a nearby different one (AC9M10N01, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can say which of two numbers is exact and which is an approximation.
+  - I can say what is lost when a root is replaced by a decimal.
+  - I can work a two-step calculation exactly, then with rounded values, and find the gap.
+struggle: "Treating a rounded decimal as if it were the number itself. Ask: if you square 7.07, do you get 50?"
+before: |
+  Do the Run step yourself first. Students need Number families and Year 9's Exact or rounded? (rounding at the end). Calculators needed, with a square root key.
+
+  The one idea: a decimal is a different number from the irrational it stands in for, so a calculation done with decimals is a calculation about different numbers. The common mistake is calling the answer exact (Mia's working).
+
+  The patch is made up: an area of 50 m². There are no real figures, so no sources. This lesson is about what an approximation is; Year 9's Exact or rounded? is about when to round, so don't repeat it.
+running:
+  - "Predict: take a show of hands. Those who chose 10 m expected the rounded numbers to give the exact answer."
+  - "Run: have students say their two calculator results aloud. The builder's way is the surprise."
+  - "Paper: the try-one after the worked example and the path in Make are worked on paper first. Books out, and look for the two roots combined before any decimal appears."
+  - "Modify: before the edge case, ask what makes a decimal exact."
+stuck:
+  - see: "A student writes √50 × √2 = 7.07 × 1.41 = 10."
+    ask: "Press 7.07 × 1.41. Do you get exactly 10?"
+    fix: "9.9687. Combine the roots first: √100 = 10."
+  - see: "A student says 0.125 is an approximation because it is a decimal."
+    ask: "Is 0.125 × 8 exactly 1?"
+    fix: "Yes: 0.125 is exactly 1/8. Only decimals that were cut short are approximations."
+stretch: "Find a square patch whose side is rational but whose rounded side is not. Why does this not happen with the diagonal path?"
+support: "A card: 'exact' (√50, √100 = 10, 1/8) and 'approximate' (7.07, 1.41, 3.14)."
+leads: |
+  Starts AC9M10N01.
+
+  Where it leads: chop or round (next), then repeated approximation, where a small difference grows.
+exit:
+  q: "Is 7.07 the exact value of √50? Why or why not?"
+  a: "No. 7.07 squared is 49.9849, not 50."
+explain: |
+  $\sqrt{50}$ is exact. 7.07 is a different number: close, but $7.07^2 = 49.9849$. A calculation done with rounded values gives an answer for the rounded numbers, not for the exact ones.
+
+  Combine exact roots first: $\sqrt{50} \times \sqrt{2} = \sqrt{100} = 10$.

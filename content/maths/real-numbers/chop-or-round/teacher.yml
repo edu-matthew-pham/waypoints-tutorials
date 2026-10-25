@@ -1,0 +1,39 @@
+summary: "Students chop and round four sale prices, see that chopping always goes down so the errors pile up while rounding errors go both ways and cancel, and work out what a chopping till loses over a week (AC9M10N01, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can chop and round a price to the cent and get the right answers.
+  - I can say which of chopping and rounding is biased, and why.
+  - I can work out what a bias adds up to over many sales.
+struggle: "Using 'round' for 'cut off'. Ask: what does the digit after the cent tell you to do? If you never look at it, you're chopping."
+before: |
+  Do the Run step yourself first. Students need to know how to round to a place (Number Foundations, Rounding) and Exact or approximate? (the lesson before).
+
+  The one idea: chopping always moves a number down, so the errors all point one way and add up; rounding moves numbers up or down roughly equally, so the errors mostly cancel. The common mistake is calling chopping "rounding" (Rosa's working).
+
+  Everything here is made up: the prices ($2.37, $4.59, $3.94, $6.28 with 15% off), the number of sales (4000 a day) and the six-day week. The half-a-cent average assumes the digits past the cent are spread evenly; across eight made-up prices the chop lost 0.41 cents per sale, a little under that, which is expected for a small sample. No real figures, so no sources.
+running:
+  - "Predict: take a show of hands. $14.60 or $14.61 are the guesses that expect chopping to make no real difference."
+  - "Run: ask which prices changed when chopped, and which changed when rounded."
+  - "Paper: the try-one after the worked example and the week in Make are worked on paper first. Books out, and look for the digit after the cent being checked before rounding."
+  - "Modify: before the surcharge, ask whether the chopped price is higher or lower than the exact one."
+stuck:
+  - see: "A student writes $1.5555 rounded is $1.55."
+    ask: "What is the digit straight after the cent? Is it 5 or more?"
+    fix: "It is 5, so round up to $1.56."
+  - see: "A student says chopping helps the shop in a sale."
+    ask: "Is the chopped price higher or lower than the exact one?"
+    fix: "Lower. In a discount sale the customer pays less than exact, so the shop loses."
+stretch: "Rounding half up always goes up on exactly .5 of a cent. If every price ended in exactly half a cent, would rounding still be fair?"
+support: "A strip with the place under the cent marked: $3.34|90. Cover everything after the bar to chop; look at the first digit after the bar to round."
+leads: |
+  Continues AC9M10N01 (node 2).
+
+  Where it leads: repeating an approximation (next), then compound interest and repeated change.
+exit:
+  q: "Chop $3.3490 to the cent. Then round it."
+  a: "Chopped: $3.34. Rounded: $3.35 (the next digit is 9)."
+explain: |
+  To chop a price, cut it off after the cent. To round it, look at the digit after the cent: 5 or more goes up.
+
+  Chopping always makes a number smaller, so over thousands of prices the errors add up in one direction. Rounding goes up and down about equally, so the errors mostly cancel.

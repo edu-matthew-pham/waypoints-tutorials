@@ -1,0 +1,21 @@
+# Practice for "How big is a step?".
+templates:
+  - q: "A magnitude {a + 1} earthquake releases about 32 times the energy of a magnitude {a}. About how many times the energy of a magnitude {a} does a magnitude {a + 2} release?"
+    vars: { a: "1..8" }
+    answer: "1024"
+    feedback:
+      - ["64", "Two steps is 32 × 32, not 2 × 32."]
+    explain: "Two steps up: 32 × 32 = 1024."
+  - q: "Each step up the magnitude scale multiplies the energy by about 32. About how many times as much energy does a magnitude {a + n} earthquake release than a magnitude {a}?"
+    vars: { a: "2..5", n: "2..3" }
+    answer: "{pow(32, n)}"
+    feedback:
+      - ["{32 * n}", "{n} steps means multiplying by 32 {n} times, not by {n} × 32."]
+    explain: "{n} steps up: 32 multiplied {n} times is {pow(32, n)}."
+  - q: "A magnitude {a} earthquake releases what fraction of the energy of a magnitude {a + 1} earthquake? Each step up multiplies the energy by about 32."
+    vars: { a: "1..8" }
+    answer: "1/32"
+    form: simplest
+    feedback:
+      - ["32", "Going down a step divides the energy by 32, so it's a 32nd."]
+    explain: "One step down divides by 32: 1/32."

@@ -1,0 +1,44 @@
+summary: "Students see that one step up the earthquake magnitude scale multiplies the energy by about 32, so several steps multiply it over and over (32 × 32 for two steps) instead of adding. This is what makes the scale logarithmic (AC9M10M02, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can say that one step on a log scale multiplies, not adds.
+  - I can work out how many times as much energy two quakes differ by when they are several steps apart.
+  - I can explain why "only two points bigger" hides a multiplication of about a thousand.
+struggle: "Reading steps as additions: 3 steps as 3 × 32. Ask students: after one step the energy is 32 times as much. What is it after the next step, compared with where you started?"
+before: |
+  Do the Run board yourself first. Students need powers and scientific notation from Year 9.
+
+  This is a hinge lesson: students who read a log scale as additive cannot read any log scale later (decibels, pH, the sizes ruler in the next lesson). The common mistake is multiplying the number of steps by 32 (Maya's working).
+
+  The one figure is Geoscience Australia's: each step up the magnitude scale is about a 32-fold increase in the energy released. The lesson says "about" every time, because that is the source's word. It does not teach how a magnitude is measured, only what a step means.
+running:
+  - "Predict: take a show of hands. Those who chose 2 times or 10 times read one step as a small change; those who chose 'not much more' read it as one extra unit."
+  - "Run: ask where the curve will be at magnitude 7 before anyone moves a slider (it is far off the top of the board)."
+  - "Paper: the try-one after the worked example and the two quakes in Make are worked on paper first. Books out, and look for the steps counted before any multiplying."
+  - "Modify: before 'down a step', ask whether the energy of a magnitude 4 is bigger or smaller than a 5."
+stuck:
+  - see: "A student writes 3 steps = 3 × 32 = 96."
+    ask: "After one step it's 32 times as much. After the second step, what do you multiply that by?"
+    fix: "By 32 again: 32 × 32, then × 32 again."
+  - see: "A student says a magnitude 4 has 32 times the energy of a magnitude 5."
+    ask: "Is 4 higher or lower on the scale than 5?"
+    fix: "Lower, so it has less energy: a 32nd of it."
+  - see: "A student says the energy goes up by about 32 each step."
+    ask: "Up by 32 means plus 32. Is that what the board shows?"
+    fix: "No: 1, 32, 1024. Times 32 each step, not plus 32."
+stretch: "A magnitude 9 is how many times a magnitude 5? Write it as a power of 32, then roughly as a power of 10."
+support: "A table with one column for the magnitude and one for the energy: 5 is 1, 6 is 32, 7 is 32 × 32, and the student writes the next row."
+leads: |
+  Starts AC9M10M02.
+
+  Where it leads: reading log scales in context (decibels, a ruler of sizes), then comparing quantities across many orders of magnitude.
+exit:
+  q: "A magnitude 8 against a magnitude 6: about how many times as much energy?"
+  a: "About 1000 (32 × 32 = 1024)."
+explain: |
+  On a logarithmic scale each step is a multiplication, not an addition.
+
+  Each step up the earthquake scale is about 32 times the energy. Two steps is $32 \times 32 = 1024$, three steps is $32^3 = 32\,768$. Going down a step divides by 32.
+sources:
+  - { title: "Australian earthquakes explained (Geoscience Australia): each step up the magnitude scale is about a 32-fold increase in the energy released", url: "https://ga.gov.au/news/news-archive/australian-earthquakes-explained", checked: 2026-10-25 }

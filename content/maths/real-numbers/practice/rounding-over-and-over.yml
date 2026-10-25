@@ -1,0 +1,17 @@
+# Practice for "Rounding over and over".
+templates:
+  - q: "$1000 grows at {r}% a year. What is the balance after {n} years, to the nearest cent? Use 1000 × {1 + r / 100}^{n}."
+    vars: { r: [2.4, 3.2, 3.6, 4.4, 4.6, 5.4, 6.3, 6.6], n: [5, 10, 15, 20] }
+    answer: "{rd(1000 * pow(1 + r / 100, n), 2)}"
+    tolerance: 0.02
+    explain: "1000 × {1 + r / 100}^{n} = {rd(1000 * pow(1 + r / 100, n), 2)}."
+  - q: "$1000 really grows at {r}% a year, but someone plans with {round(r)}%. What does their plan say the balance is after {n} years, to the nearest cent?"
+    vars: { r: [2.4, 3.2, 3.6, 4.4, 4.6, 5.4, 6.3, 6.6], n: [5, 10, 15, 20] }
+    answer: "{rd(1000 * pow(1 + round(r) / 100, n), 2)}"
+    tolerance: 0.02
+    explain: "1000 × {1 + round(r) / 100}^{n} = {rd(1000 * pow(1 + round(r) / 100, n), 2)}."
+  - q: "$1000 really grows at {r}% a year, but someone plans with {round(r)}%. After {n} years, how many dollars is their plan away from the real balance, to the nearest cent?"
+    vars: { r: [2.4, 3.2, 3.6, 4.4, 4.6, 5.4, 6.3, 6.6], n: [5, 10, 15, 20] }
+    answer: "{rd(abs(1000 * pow(1 + round(r) / 100, n) - 1000 * pow(1 + r / 100, n)), 2)}"
+    tolerance: 0.03
+    explain: "The real balance is {rd(1000 * pow(1 + r / 100, n), 2)} and the plan is {rd(1000 * pow(1 + round(r) / 100, n), 2)}, so they are {rd(abs(1000 * pow(1 + round(r) / 100, n) - 1000 * pow(1 + r / 100, n)), 2)} apart."

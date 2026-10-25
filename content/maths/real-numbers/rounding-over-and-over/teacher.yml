@@ -1,0 +1,39 @@
+summary: "Students use a rounded rate (5% for 4.6%) in a savings balance year after year, see that the gap grows faster than the first year's $4 because the error is multiplied in each year, and learn to keep exact factors and round once at the end (AC9M10N01, node 3)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can work out a balance after several years with powers.
+  - I can find the gap between an exact and a rounded calculation.
+  - I can explain why the gap grows faster than a fixed amount a year.
+struggle: "Expecting the first year's error to be repeated, not multiplied. Ask: does the extra each year earn anything?"
+before: |
+  Do the Run step yourself first. Students need powers on a calculator, and the lesson before (Chop or round?).
+
+  The one idea: using a rounded value again and again multiplies its error, so the gap grows faster than steadily. The common mistake is adding the first year's gap (Jin's working).
+
+  The rates and balances are made up: $1000 at 4.6% a year, planned as 5%. Real savings rates are on banks' own sites and change, so none is quoted. No real figures, so no sources.
+running:
+  - "Predict: take a show of hands. $40 comes from adding the first year's gap every year."
+  - "Run: have students enter 1.046^10 and 1.05^10 themselves, and read the gap aloud."
+  - "Paper: the try-one after the worked example and the 20 year gap in Make are worked on paper first. Books out, and look for both balances at the same number of years."
+  - "Modify: before the 30 year edge case, ask whether the gap will be about three times as big or more."
+stuck:
+  - see: "A student says the gap after 10 years is $40."
+    ask: "Work out both balances after 2 years. Is the gap $8?"
+    fix: "$8.38: the first year's extra $4 also earns interest, so the gap grows faster than $4 a year."
+  - see: "A student rounds 1.046 to 1.0 to keep it simple."
+    ask: "What does multiplying by 1 do to the balance?"
+    fix: "Nothing: no growth at all. Keep 1.046 and round the final answer once."
+stretch: "How many years until the plan with 5% is double the real balance's gap after 10 years? Estimate, then check on a calculator."
+support: "A table with years 1 to 5 for both factors, filled in a row at a time, so the gap column can be seen growing."
+leads: |
+  Continues AC9M10N01 (node 3).
+
+  Where it leads: exponential relations (the same repeated multiplying), and modelling growth and decay.
+exit:
+  q: "Does the gap between 1.05^n and 1.046^n times $1000 grow by the same amount each year? Why?"
+  a: "No. Each year's extra also earns, so the gap grows faster each year."
+explain: |
+  Money in an account is multiplied by the same factor each year, so after $n$ years it's $1000 \times 1.046^n$.
+
+  If you round the factor to 1.05, the error isn't added each year: it is multiplied in, so the gap grows faster and faster. Keep the exact factor all the way and round once, at the end.

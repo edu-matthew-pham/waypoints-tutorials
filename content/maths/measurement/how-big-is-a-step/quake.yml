@@ -1,0 +1,50 @@
+# Boards for "How big is a step?". Energy against magnitude, with one step up the scale = about 32 times the energy.
+# E is measured in "times the energy of a magnitude 5". The curve leaves the page: that is the problem a log scale solves.
+
+# region: run
+widget: graph
+axes: M (magnitude), E (times a magnitude 5)
+x: 4, 8
+y: -2, 40
+grid: 1, 10
+slider m: 5, 6, 5
+plot: y = 32^(x-5)
+point A: m, 32^(m-5)
+table: 5, 6
+# endregion
+
+# region: explain
+widget: graph
+axes: M (magnitude), E (times a magnitude 5)
+x: 4, 8
+y: -2, 40
+grid: 1, 10
+slider m: 5, 6, 5
+plot: y = 32^(x-5)
+point A: m, 32^(m-5)
+table: 5, 6
+# endregion
+
+# region: explain-pic
+widget: graph
+axes: M (magnitude), E (times a magnitude 5)
+x: 4, 8
+y: -2, 40
+grid: 1, 10
+slider m: 5, 6, 6
+plot: y = 32^(x-5)
+point A: m, 32^(m-5)
+table: 5, 6
+# endregion
+
+# region: vary
+widget: graph
+axes: M (magnitude), E (times a magnitude 5)
+x: 2, 8
+y: -2, 40
+grid: 1, 10
+slider m: 3, 7, 5
+plot: y = 32^(x-5)
+point A: m, 32^(m-5)
+table: 4, 5, 6, 7
+# endregion

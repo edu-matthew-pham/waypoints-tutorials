@@ -1,0 +1,8 @@
+# Tom's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: tom
+A graph goes through (0, 5), (1, 15) and (2, 45). Write y = a(b^x).
+a is where it crosses the y-axis, so a = 5.
+b is the next number in the table, so b = 15.
+So y = 5(15^x).
+# endregion

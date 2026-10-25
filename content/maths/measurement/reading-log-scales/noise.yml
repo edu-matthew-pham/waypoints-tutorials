@@ -1,0 +1,50 @@
+# Boards for "Reading log scales". Safe hours against decibels: every 3 dB halves the time (8 hours at 85 dB).
+# The curve squashes against the bottom: a log scale would spread it out.
+
+# region: run
+widget: graph
+axes: L (dB), T (hours)
+x: 82, 100
+y: -0.5, 9
+grid: 3, 1
+slider d: 85, 91, 85, 3
+plot: y = 8 * 0.5^((x-85)/3)
+point A: d, 8 * 0.5^((d-85)/3)
+table: 85, 88, 91
+# endregion
+
+# region: explain
+widget: graph
+axes: L (dB), T (hours)
+x: 82, 100
+y: -0.5, 9
+grid: 3, 1
+slider d: 85, 91, 85, 3
+plot: y = 8 * 0.5^((x-85)/3)
+point A: d, 8 * 0.5^((d-85)/3)
+table: 85, 88, 91
+# endregion
+
+# region: explain-pic
+widget: graph
+axes: L (dB), T (hours)
+x: 82, 100
+y: -0.5, 9
+grid: 3, 1
+slider d: 85, 91, 88, 3
+plot: y = 8 * 0.5^((x-85)/3)
+point A: d, 8 * 0.5^((d-85)/3)
+table: 85, 88, 91
+# endregion
+
+# region: vary
+widget: graph
+axes: L (dB), T (hours)
+x: 79, 109
+y: -1, 17
+grid: 3, 4
+slider d: 82, 106, 85, 3
+plot: y = 8 * 0.5^((x-85)/3)
+point A: d, 8 * 0.5^((d-85)/3)
+table: 82, 85, 91, 97, 103
+# endregion

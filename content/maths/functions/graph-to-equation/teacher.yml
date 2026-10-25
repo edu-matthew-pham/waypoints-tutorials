@@ -1,0 +1,44 @@
+summary: "Students match a decaying curve on a graph board, read a and b off points and tables, write y = a(bˣ), and read growth or decay back from a rule, using two cups of tea cooling at different speeds (AC9M10A03, node 3)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can write y = a(bˣ) from two points or a table.
+  - I can read where an exponential starts and whether it grows or decays from its rule.
+  - I can say which of two decay rules cools faster, and why.
+struggle: "Using the next value in the table as b. a is the value at x = 0; b is what you multiply by: a value divided by the one before."
+before: |
+  Do the Run and Modify boards yourself first. Students need the last two lessons (the ratio, and where an exponential starts and what growth and decay look like).
+
+  The one idea: from a graph, a is the value at x = 0 and b is one value divided by the one before. Check with a third point. Going the other way, a rule tells you the start, growth or decay, and the asymptote without drawing.
+
+  All the readings are made up: two cups at 70 °C in a 20 °C room, so the gap starts at 50 °C. Cup A halves it every 10 minutes (b = 0.5). Cup B, a flask, keeps 0.8 of it (b = 0.8). If you did the class practical from the last lesson, use your students' own readings in place of cup A and B for the Make.
+running:
+  - "Predict: take a show of hands. 50(40^x) is Tom's mistake: b read as the next value."
+  - "Run: ask students to read the dashed row of the table (50, 40, 32, 25.6) and say how to get each value from the one before without sliding."
+  - "Paper: the try-one after the worked example and the two cups in Make are worked on paper first. Books out, and look for a division to find b."
+  - "Modify: before 'no point at x = 0', ask what they need to find first (b), then how to step back."
+stuck:
+  - see: "A student writes b = 15 for a table 5, 15, 45 (Tom's mistake)."
+    ask: "What do you multiply 5 by to get 15?"
+    fix: "15 ÷ 5 = 3, so b = 3. Check: 5 × 3 × 3 = 45."
+  - see: "A student swaps a and b: y = 0.8(50^x)."
+    ask: "Which number is the value when x is 0?"
+    fix: "a is the start: put x = 0 in your rule and see if it gives the graph's first value."
+  - see: "A student uses the value at x = 1 as a (Modify, no point at x = 0)."
+    ask: "What is x for the first point they gave you?"
+    fix: "Step back: divide the value at x = 1 by b to get the value at x = 0."
+stretch: "Cup C's gap starts at 60 and is 15 after 2 steps. Find b, then write the rule. Try it on the board."
+support: "A table with x = 0, 1, 2, 3 and the ratio arrow ×? between neighbours. Fill in a from the first row, then b from the arrow, then write y = a(b^x)."
+leads: |
+  Next: solving when x is in the power (finding when a cup's gap, or a germ count, reaches a number) by writing both sides with the same base. Then, in Year 10 modelling, choosing between a linear and an exponential model.
+
+  Where it leads in class: compound interest (b = 1 + rate), depreciation, and half-life.
+exit:
+  q: "A graph goes through (0, 6) and (1, 18). Write its rule. Does it grow or decay?"
+  a: "y = 6(3^x). It grows, because b = 3 is more than 1."
+explain: |
+  For an exponential graph $y = a(b^x)$, **a** is where it crosses the $y$-axis: the value at $x = 0$.
+
+  **b** is what you multiply by each step, so divide any value by the one before it: $b = 40 \div 50 = 0.8$.
+
+  Check with the next point. If the ratio is the same, the rule fits.

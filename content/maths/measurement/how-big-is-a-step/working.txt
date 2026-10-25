@@ -1,0 +1,9 @@
+# Maya's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: maya
+Maya works out how many times more energy a magnitude 7 earthquake releases than a magnitude 4.
+Each step up the scale multiplies the energy by about 32.
+From 4 to 7 is 3 steps.
+So the energy goes up by 3 × 32 = 96 times.
+That is about 96 times as much energy.
+# endregion
