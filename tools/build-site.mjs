@@ -959,7 +959,7 @@ for (const coursePath of teachCourses) {
       cheat = `<p>Cheat sheet: <a href="cheatsheet-${esc(u.id)}/">Open to print</a> <span class="muted">(A4, ${mathsCourse ? 'with board pictures' : 'with a picture of what each command draws'})</span> · <a href="${esc(prepareLink('print', url))}" target="_blank" rel="noopener">Open in Print</a> · <a href="cheatsheet-${esc(u.id)}.md" download>Markdown</a> <button type="button" class="copyurl" data-url="${esc(url)}">Copy address for Prepare</button></p>`;
     }
     const rows = mine.map((l) => l.teacher
-      ? `<li><a href="${esc(l.slug.split('/').pop())}/">${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}</a>${l.optional ? ' <span class="muted">(optional)</span>' : ''} <span class="muted">· <a href="${esc(l.slug.split('/').pop())}/deck.md" download>slides</a> · <a href="${esc(l.slug.split('/').pop())}/worksheet.md" download>worksheet</a></span></li>`
+      ? `<li><a href="${esc(l.slug.split('/').pop())}/">${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}</a>${l.optional ? ' <span class="muted">(optional)</span>' : ''} <span class="muted">· <a href="${esc(prepareLink('prepare', `${SITE_URL}/${teachPath(l)}deck.md`))}" target="_blank" rel="noopener" title="Open the slides in Prepare">slides</a> · <a href="${esc(prepareLink('print', `${SITE_URL}/${teachPath(l)}worksheet.md`))}" target="_blank" rel="noopener" title="Open the worksheet in Print">worksheet</a></span></li>`
       : `<li>${esc(l.title)} <span class="muted">(teacher notes coming)</span></li>`).join('');
     return `<section class="tunit"><h2>${esc(u.title)}</h2>${u.summary ? `<p class="muted">${esc(u.summary)}</p>` : ''}${primer}${cheat}<ul>${rows}</ul></section>`;
   }).join('');
