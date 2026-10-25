@@ -350,7 +350,9 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 
 
 
-## Year 10 plan (25 Oct 2026; planning only, nothing built)
+## Year 10: built (25–26 Oct 2026; plan below, status in the notes under each batch)
+
+**Status: all five batches are built and pushed to `main`, not yet published or tried with a class.** About 59 lessons plus 3 project briefs and an ethics quick check; the 69 nodes are all built or assigned to class. Board changes (`trig`, `space3d`, `formula`, `venn`, `events`, `data`, `graph`, `tiles`, `netgraph`) and the `lesson-view.mjs` phone fix need the full publish. The text below is the original plan; the "built" notes after each batch are current.
 21 descriptors, 69 nodes, 23 of them hinges (`data/curriculum/maths.json`). About 59 lessons in five batches, same lesson shape as Year 9 batch 1 (picture-first Predict, a board Run where one helps, Investigate with a planted error, worked example then a `paper: true` try-one, Modify with an edge case, Practise with a review task, Make back to the opening, Also used in). Openings and Makes come from `data/connections/maths.yml`, which already covers every Year 10 node.
 
 **Decided (25 Oct, Matthew):** Year 10 batch 1 is built now; Year 10 batch 2 waits until Year 9's batches are finished. Networks (batch 5): use both. Mermaid diagrams carry the network pictures in all three lessons (decks and worksheets too); the `netgraph` board is used only for "Every street once" (10SP02 n2), where trying routes is how students find the odd-degree rule. If the board slips, that lesson ships as a Mermaid version (count the degrees, answer a question check). `netgraph` needs the full publish.
