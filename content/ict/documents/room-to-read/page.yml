@@ -1,0 +1,59 @@
+# Pages for "Room to read".
+
+# region: run
+widget: page
+mode: doc
+spacing: 1
+margin: 1
+align: centre
+block title: Bean growth report
+block h1: Aim
+block body: We wanted to find out if beans grow better in light or in the dark. We planted six beans in pots.
+block h1: Method
+block body: We put three beans in a dark cupboard and three on a sunny windowsill. We watered them every day.
+block h1: Results
+block body: After four days the beans in the light were taller than the beans in the dark.
+tools: layout
+# endregion
+
+# region: practise
+widget: page
+mode: doc
+spacing: 1
+margin: 2
+align: centre
+block title: Where the rain goes
+block h1: Rain
+block body: Rain falls on roofs, roads and the ground. Some of it soaks into the soil and some of it runs away.
+block h1: Drains
+block body: Drains carry the water that runs off roads away to creeks. This stops the road from flooding.
+block h1: Creeks
+block body: Creeks carry the water to the sea, picking up whatever is on the ground on the way.
+tools: layout
+# endregion
+
+# region: practise-wide
+widget: page
+mode: doc
+spacing: 3
+margin: 1
+align: left
+block title: Where the rain goes
+block body: Rain falls on roofs, roads and the ground and some of it soaks into the soil while the rest runs away along gutters and drains to creeks that carry it to the sea picking up whatever is on the ground on the way.
+block body: Drains carry the water that runs off roads away to creeks which stops the road from flooding, but the water that runs into drains is not cleaned before it reaches the creek.
+tools: layout
+# endregion
+
+# region: make
+widget: page
+mode: doc
+spacing: 1
+margin: 1
+align: centre
+block title: Where the rain goes
+block h1: Rain
+block body: Rain falls on roofs, roads and the ground. Some of it soaks into the soil and some of it runs away.
+block h1: Drains
+block body: Drains carry the water that runs off roads away to creeks.
+tools: layout text
+# endregion

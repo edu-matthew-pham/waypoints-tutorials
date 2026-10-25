@@ -1,0 +1,8 @@
+# Kai's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: kai
+Kai makes a slide about how beans grow in the sun.
+Kai adds a big picture of a crowd of people because it looks good.
+The slide now has a title and the picture.
+The audience asks what the people have to do with beans.
+# endregion

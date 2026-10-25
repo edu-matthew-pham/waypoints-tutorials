@@ -1,0 +1,29 @@
+inquiry:
+  q: "A recipe, a shopping list and a class timetable. Which is a numbered list, which is a bulleted list and which is a table, and why?"
+  prompts:
+    - "What does the reader do with each one?"
+    - "What would be lost if the timetable were a bulleted list?"
+  notes: "Recipe: numbered, because order matters. Shopping list: bulleted, no order. Timetable: a table, since each slot has a day and a time, and the reader looks across and down."
+activities:
+  - at: predict
+    kind: activity
+    title: "Shuffle the steps"
+    minutes: 3
+    do: |
+      Write four steps on cards in order. Shuffle them and ask students to say whether anything was lost. Then do the same with four items for a shopping list.
+    notes: "The steps lose meaning when shuffled. The shopping list does not. That is the difference between a numbered and a bulleted list."
+  - at: make
+    kind: discussion
+    title: "Table or list?"
+    minutes: 4
+    do: |
+      Find one fact set in this week's work that would be easier to read as a table. What are the columns?
+    notes: "Take a few examples, such as test scores with a name, a date and a mark."
+questions:
+  - at: investigate
+    title: "Which list?"
+    type: question
+    q: "The top three finishers in a race are listed first, second and third. Which fits?"
+    options: ["A numbered list", "A bulleted list", "A table", "A heading"]
+    answer: 0
+    explain: "A ranking has an order, so numbers fit."

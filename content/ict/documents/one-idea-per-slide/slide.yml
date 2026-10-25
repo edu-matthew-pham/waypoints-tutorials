@@ -1,0 +1,42 @@
+# Slides for "One idea per slide".
+
+# region: run
+widget: page
+mode: slide
+block title: What beans need
+block bullet: Light helps leaves grow
+block bullet: Dark beans are pale
+block bullet: Water softens the seed
+block bullet: Dry beans do not sprout
+block bullet: Soil holds the roots
+block bullet: Roots need air in the soil
+tools: slides
+# endregion
+
+# region: practise
+widget: page
+mode: slide
+block title: What beans need
+block bullet: Light helps leaves grow
+block bullet: Dark beans are pale
+block bullet: Water softens the seed
+block bullet: Dry beans do not sprout
+tools: slides add text
+# endregion
+
+# region: practise-long
+widget: page
+mode: slide
+block title: Light and beans
+block bullet: The beans that we planted in the sunny window grew to an average height of 13 cm over four days
+tools: text
+# endregion
+
+# region: make
+widget: page
+mode: slide
+block title:
+block bullet:
+block bullet:
+tools: text add
+# endregion

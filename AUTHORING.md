@@ -1493,6 +1493,34 @@ Vary, Practise, Make).
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working
     (the embedding contract is in the project notes).
+  - `widget: page` (ICT skills › Documents and slides, 26 Oct 2026): a small document or slide deck, for what every
+    word processor and slide app shares. `mode: doc | slide`. One `block <style>: text` line per part, in order. Doc
+    styles: `title`, `h1`, `h2`, `body`, `bullet`, `number`, `caption`, `table` (`block table: Day|Height; 1|3`: cells
+    split by `|`, rows by `;`) and `image` (`block image: bean`; pictures drawn by the widget, so no photos and no
+    credits to chase: `bean`, `plant`, `sun`, `chart`, `crowd`). Slide styles: `title`, `bullet`, `text`, `image`; a
+    slide starts at the first block and at every block with a break. Start values for the Nth block use `b3`:
+    `alt b3:`, `credit b3:`, `fake b3: bold | big | both` (looks like a heading but keeps Body text: the fake-heading
+    mistake), `newslide b3: yes`, `big b3: yes`. `style h1: 22 serif bold` sets a style's start size, font and bold;
+    `spacing`, `margin` (1 to 3), `align: left | centre`, `bg` (white, navy, yellow, grey, dark), `ink` (black, white,
+    yellow, pale, blue), `header: on | off` (a table's first row), `outline: off` (hides the headings panel). The
+    headings panel (Heading 1 and 2 only, like Word's Navigation pane) always shows in doc mode. `tools:` says what the
+    student may do (default none, look only): `style` (choose a block's style), `text`, `format` (bold, bigger,
+    smaller on one block: by-hand formatting), `styledef` (change a style for every block that uses it),
+    `layout`, `add` (add and delete blocks), `alt`, `credit`, `colour` (slides), `header`, `size` (small or large
+    picture), `slides` (start a new slide, move up and down). Values for `when:`: `n_blocks`, `n_title`, `n_h1`, `n_h2`,
+    `n_body`, `n_bullet`, `n_number`, `n_table`, `n_images`, `n_empty`, `n_words`, `n_outline` (Heading 1 plus 2),
+    `n_skips` (a Heading 2 before any Heading 1), `n_fake` (body or bullet text made bold or bigger by hand),
+    `n_direct` (any block with by-hand bold or size), `st_N` (block N's style: title 1, h1 2, h2 3, body 4, bullet 5,
+    number 6, caption 7, table 8, image 9; Text on a slide is body), `size_`, `font_` (1 sans, 2 serif) and `bold_`
+    plus `title | h1 | h2 | body`, `spacing_n`, `margin_n`, `align_n` (1 left, 2 centre), `table_header`, `n_alt`
+    (pictures with alt text of three or more words that does not begin "image of" or "picture of"), `n_credit`
+    (pictures whose credit has three comma-separated parts: who, where, licence), `n_big`, `n_slides`, `max_words`,
+    `max_bullets` (on one slide), `n_untitled` (slides that do not start with a title), `n_overflow` (slides whose
+    text runs off the bottom: measured in the browser, drawn with a red edge), `font_min` (smallest text, in points on
+    a 960-wide slide), `contrast_x10` and `contrast_ok` (1 when text and background reach 4.5 to 1, the usual
+    standard). The checks are rough counts, not judgement: say so in teacher notes. Drive each check in a headless
+    browser (the ICT boards test pattern: `.render-tmp/docs-test.mjs` style, an iframe of
+    `_playground-board/index.html?id=t&kind=board&fresh=1&code=...`).
 - **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

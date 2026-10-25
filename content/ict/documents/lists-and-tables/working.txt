@@ -1,0 +1,8 @@
+# Ravi's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ravi
+Ravi writes the four steps of his experiment: plant, water, wait, measure.
+Ravi puts them in a bulleted list because bullets look neat.
+He shares the report with a partner.
+His partner does not know which step to do first.
+# endregion

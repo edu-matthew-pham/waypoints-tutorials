@@ -1,0 +1,51 @@
+# Pages for "Lists and tables".
+
+# region: run
+widget: page
+mode: doc
+block title: How we grew the beans
+block h1: Method
+block body: Plant the beans in damp soil.
+block body: Water them every day.
+block body: Wait four days.
+block body: Measure each bean with a ruler.
+tools: style
+# endregion
+
+# region: practise
+widget: page
+mode: doc
+block title: How we grew the beans
+block h1: Results
+block table: Condition|Height (cm); Dark|4; Shade|9; Sun|13
+block body: The beans in the sun grew the tallest.
+tools: header
+# endregion
+
+# region: practise-steps
+widget: page
+mode: doc
+block title: How we grew the beans
+block h1: Method
+block bullet: Plant the beans in damp soil.
+block bullet: Water them every day.
+block bullet: Measure each bean with a ruler.
+tools: style
+# endregion
+
+# region: make
+widget: page
+mode: doc
+block title: How we grew the beans
+block h1: What we needed
+block body: Beans
+block body: Pots
+block body: A ruler
+block h1: What we did
+block body: Plant the beans in damp soil.
+block body: Water them every day.
+block body: Measure each bean with a ruler.
+block h1: Results
+block table: Condition|Height (cm); Dark|4; Shade|9; Sun|13
+tools: style text header
+# endregion

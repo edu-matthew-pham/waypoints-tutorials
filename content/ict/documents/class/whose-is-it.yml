@@ -1,0 +1,29 @@
+inquiry:
+  q: "You paint a picture and put it online. Someone uses it in an advert and says they found it. How do you feel, and what would you want them to do?"
+  prompts:
+    - "What would you want them to ask?"
+    - "What would a credit change?"
+  notes: "Most students say they would want to be asked or at least credited. That is the point of licences and credits: the maker decides, and the user checks."
+activities:
+  - at: predict
+    kind: activity
+    title: "Who made this?"
+    minutes: 3
+    do: |
+      Show a picture with its page open. Ask students to find who made it, where it is from and what the licence says.
+    notes: "The three parts are on the page for good pictures. If one is missing, discuss what to do."
+  - at: make
+    kind: discussion
+    title: "Credit or no credit?"
+    minutes: 4
+    do: |
+      Go through a list of things used in a report. Which need a credit and which do not?
+    notes: "Own work and common knowledge do not. Other people's pictures, charts, copied words and ideas do."
+questions:
+  - at: investigate
+    title: "What needs a credit?"
+    type: question
+    q: "Which needs a credit?"
+    options: ["A photo someone else took", "Your own drawing", "Beans are seeds", "A graph from your own results"]
+    answer: 0
+    explain: "Someone else made it, so say who."

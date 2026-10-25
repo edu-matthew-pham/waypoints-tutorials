@@ -1,0 +1,43 @@
+# Pages for "Headings say what a part is".
+
+# region: run
+widget: page
+mode: doc
+block title: Bean growth report
+block body: Aim
+block body: We wanted to find out if beans grow better in light or in the dark.
+block body: Method
+block body: We planted six beans in pots and put three in a dark cupboard.
+fake b2: both
+fake b4: both
+tools: style
+# endregion
+
+# region: practise
+widget: page
+mode: doc
+block title: Bean growth report
+block body: Aim
+block body: We wanted to find out if beans grow best in light or in the dark.
+block body: Method
+block body: Equipment
+block body: Beans, pots, soil and a ruler.
+block body: Results
+block body: The beans in the sun grew tallest.
+fake b2: both
+fake b4: both
+fake b5: bold
+fake b7: both
+tools: style
+# endregion
+
+# region: make
+widget: page
+mode: doc
+block body: My title
+block body: Part one
+block body: A sentence about part one.
+block body: Part two
+block body: A sentence about part two.
+tools: style text
+# endregion

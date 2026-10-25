@@ -1,0 +1,43 @@
+summary: "Students learn that layout is for the reader: space between parts, margins that keep lines short enough to follow, and a left edge for paragraphs. They open up a crowded page and repeat it in the word processor the school uses."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can use space, margins and alignment to make a page easier to read.
+  - I can say why squeezing a page to save room can make it worse.
+  - I can find these settings in my own word processor.
+struggle: "Students treat white space as wasted. Ask them to find a part on a crowded page and then on an opened page, and say which was faster."
+before: |
+  Do the Try board yourself: switch between Tight and Open and between Left and Centred and look at how quickly you find the Method part.
+
+  The one idea: layout is for the reader. White space, margins and a left edge help the eye. Squeezing a page to save paper does the opposite.
+
+  The page on screen is a model of what every word processor does. In Word, margins and spacing are under Layout and the paragraph settings. In Docs, margins are under File › Page setup.
+running:
+  - "Predict: students who say 'longer is worse' are thinking of paper. Ask who the page is for."
+  - "Try: ask what the white space told them."
+  - "Worked example: ask Jay what the limit really meant for the reader."
+  - "Practise: for the long lines, ask where their eye lost its place."
+  - "Own app: many students will move to a huge font to fill the page. Ask what the reader needs."
+stuck:
+  - see: "A student shrinks margins to fit more words."
+    ask: "Find the start of the next line. How easy is it with long lines?"
+    fix: "Keep margins at their default and cut the words instead."
+  - see: "A student centres every paragraph."
+    ask: "Where does each line start? Can your eye jump to it?"
+    fix: "Align paragraphs to the left. Keep centring for short titles."
+  - see: "A student removes all the space between paragraphs."
+    ask: "Where does one paragraph stop?"
+    fix: "Use space between paragraphs, not blank lines made with Enter."
+stretch: "Take a page from a textbook and write down three layout choices the designer made to help the reader. Which one helps you most?"
+support: "A card: Space between parts. Margins not narrow. Paragraphs left. Cut words, not room."
+leads: |
+  Next in Documents and slides: slides, where one idea per slide matters more than anything.
+
+  Years 6–8: ask for a real page, such as a school newsletter, and say which layout choices help.
+exit:
+  q: "A report is a little over the page limit. Name one better fix than narrowing the margins."
+  a: "Cut words that are not needed. Narrow margins make the page harder to read."
+explain: |
+  **Layout** is for the reader. **Space** between parts shows where each starts, **margins** keep lines short enough to follow and a **left edge** lets the eye find the next line.
+
+  Squeezing a page to save room usually makes it harder to read. Cut words first.

@@ -1,0 +1,9 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam's report has six parts, and each has a Heading 1 heading.
+Sam wants every heading bigger, so she clicks each heading and makes it bigger by hand.
+The six headings now look the same.
+A week later she adds a seventh part and gives it Heading 1.
+The seventh heading is smaller than the other six.
+# endregion

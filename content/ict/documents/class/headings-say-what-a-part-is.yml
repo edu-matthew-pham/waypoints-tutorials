@@ -1,0 +1,29 @@
+inquiry:
+  q: "Two students hand in reports that look identical. One used Heading 1 and one made the words bold. Which report is easier to use, and how would you find out?"
+  prompts:
+    - "What could you do with one that you cannot do with the other?"
+    - "Who else besides the writer uses the headings?"
+  notes: "Open the headings panel for each. Only the real headings appear. The look is for the eye. The style is for the app, the contents list and a screen reader."
+activities:
+  - at: predict
+    kind: activity
+    title: "Headings from the back"
+    minutes: 3
+    do: |
+      Show a report page for five seconds. Ask students to say how many parts it has. Then show the headings panel of the same report and compare.
+    notes: "The panel answers at a glance because every part named itself."
+  - at: make
+    kind: discussion
+    title: "Who uses headings?"
+    minutes: 4
+    do: |
+      Who besides you uses a heading? Think of a reader in a hurry, a screen reader and the contents list.
+    notes: "Take a few answers. A screen reader user hears the headings listed and picks one. That is a good reason to use real styles."
+questions:
+  - at: investigate
+    title: "Look or style?"
+    type: question
+    q: "A part of your report is bold and size 20 with the style Body text. What does the app think it is?"
+    options: ["A paragraph", "A heading", "A title", "A list"]
+    answer: 0
+    explain: "The app goes by the style, so it is body text that happens to look big."

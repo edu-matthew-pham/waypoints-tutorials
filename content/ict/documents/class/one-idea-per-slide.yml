@@ -1,0 +1,29 @@
+inquiry:
+  q: "You are listening to a talk. The slide has 80 words on it. What do you do, and what do you stop doing?"
+  prompts:
+    - "Can you read and listen at the same time?"
+    - "What would you rather see on the slide?"
+  notes: "Most people read and stop listening. That is what a crowded slide does. A few words and a clear title let the audience listen to the speaker."
+activities:
+  - at: predict
+    kind: activity
+    title: "Three seconds"
+    minutes: 3
+    do: |
+      Show a crowded slide for three seconds, then hide it. Ask what the main idea was. Then show a one-idea slide for three seconds and ask again.
+    notes: "Only the one-idea slide gets a reliable answer. That is the test of a slide."
+  - at: make
+    kind: discussion
+    title: "What do you say?"
+    minutes: 4
+    do: |
+      Take a slide from your talk. What do you say that is not on the slide? Why did you leave it off?
+    notes: "The speaker carries the detail. The slide helps the audience remember the idea."
+questions:
+  - at: investigate
+    title: "How many slides?"
+    type: question
+    q: "A talk has three findings about the beans. How many slides do they need?"
+    options: ["Three, one for each", "One", "Six", "Two"]
+    answer: 0
+    explain: "One idea per slide, so one slide for each finding."

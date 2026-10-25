@@ -1,0 +1,28 @@
+# Slides for "Whose is it?". Pictures are drawn for the lessons; the cards are pretend.
+
+# region: run
+widget: page
+mode: slide
+block title: Beans need light
+block image: bean
+tools: credit
+# endregion
+
+# region: practise
+widget: page
+mode: slide
+block title: Beans need light
+block image: bean
+block image: sun
+tools: credit
+# endregion
+
+# region: make
+widget: page
+mode: slide
+block title: Beans need light
+block image: plant
+block bullet: Dark beans are pale
+block bullet: Sun beans grew tallest
+tools: credit slides add text
+# endregion

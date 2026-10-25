@@ -1,0 +1,43 @@
+summary: "Students learn to ask whether a picture shows the idea or only fills space, to make it large enough to see, and to write alt text that says what it shows for someone who cannot see it. They add alt text on a slide and repeat it in the slide app the school uses."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can say whether a picture shows the idea or only decorates.
+  - I can write alt text that says what a picture shows.
+  - I can make a picture large enough to see from the back.
+struggle: "Students write alt text as a label ('chart') or a file name. Ask a partner to listen to it with eyes closed and say what the picture shows."
+before: |
+  Do the Try board yourself: click the chart, write alt text and press Make larger.
+
+  The one idea: a picture should show the idea, big enough to see, with alt text for those who cannot see it.
+
+  The pictures on the board are drawn for the lesson. In the class apps, students use pictures they make, photos they take or free pictures with a credit (next lesson). Do not use a picture without a credit. PowerPoint and Slides can suggest alt text automatically: ask students to read it and fix it.
+running:
+  - "Predict: students who say the bars or the words think the screen reader reads the picture. Ask how it could."
+  - "Try: ask a partner to hear the alt text and say what the picture shows."
+  - "Worked example: ask Kai what the audience was meant to learn from the crowd."
+  - "Practise: for the extra picture, ask which one a person could not do without."
+  - "Own app: the common slip is leaving the suggested alt text unread. Ask whether it says what the picture means for the slide."
+stuck:
+  - see: "A student writes 'picture of a chart' as alt text."
+    ask: "What does the chart say?"
+    fix: "Say what it shows: Beans in the sun grew 13 cm, in the dark 4 cm."
+  - see: "A student adds a picture to every slide."
+    ask: "What does this one show that the words do not?"
+    fix: "Keep the pictures that show the idea. Cut the rest."
+  - see: "A student makes the picture tiny to fit more words."
+    ask: "Could the back row see it?"
+    fix: "Make it large and cut the words."
+stretch: "Write alt text for a chart with three bars so that someone who cannot see it could redraw it. What numbers did you need?"
+support: "A card: Show the idea. Big enough to see. Alt text says what it shows."
+leads: |
+  Next in Documents and slides: readable from the back, size and contrast.
+
+  Years 6–8: this overlaps with Digital Technologies, where students create and communicate content for an audience.
+exit:
+  q: "Write alt text for a picture of a bean seedling in a pot next to a taller one."
+  a: "Any short description of what it shows, such as: Two bean plants in pots, the one on the right much taller."
+explain: |
+  A picture should **show the idea**, be **big enough to see** and have **alt text**, a short description of what it shows, for people who cannot see it.
+
+  If a picture only fills space, take it out.

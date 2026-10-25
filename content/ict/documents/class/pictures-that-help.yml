@@ -1,0 +1,29 @@
+inquiry:
+  q: "Choose a picture for a slide about how fast beans grow in the sun. What would make it a good one, and what would make it a bad one?"
+  prompts:
+    - "What does the picture show that the words cannot?"
+    - "Could someone who cannot see it still get the idea?"
+  notes: "A good one shows the growth, such as a chart or a seedling beside a taller one. A bad one is a pretty picture with nothing to do with beans. Alt text carries the idea for the listener."
+activities:
+  - at: predict
+    kind: activity
+    title: "Describe it with eyes closed"
+    minutes: 3
+    do: |
+      One student describes a picture to a partner with their eyes closed, using only the words they would put in alt text. The partner says what they think the picture shows.
+    notes: "If the partner misses the idea, the alt text missed it too."
+  - at: make
+    kind: discussion
+    title: "Does it earn its place?"
+    minutes: 4
+    do: |
+      Look at a slide you made. Choose a picture and say what it shows that the words do not.
+    notes: "Pictures that cannot say it should go."
+questions:
+  - at: investigate
+    title: "Alt text"
+    type: question
+    q: "What is alt text for?"
+    options: ["Describing a picture for someone who cannot see it", "Naming the file", "Adding a caption under the picture", "Making the picture load faster"]
+    answer: 0
+    explain: "Alt text describes what a picture shows, for screen readers and for when a picture does not load."

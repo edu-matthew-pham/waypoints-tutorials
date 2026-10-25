@@ -1,0 +1,8 @@
+# Mia's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: mia
+Mia types the word Method on its own line, above her method.
+Mia selects it and makes it bold and size 18 so it stands out.
+She builds a contents list from the headings in her report.
+Method is missing from the contents list.
+# endregion

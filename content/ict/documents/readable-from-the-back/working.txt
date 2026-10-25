@@ -1,0 +1,8 @@
+# Priya's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: priya
+Priya makes a slide about her bean results.
+Priya picks pale grey words on a white background because it looks soft and calm on her screen.
+She presents it in the school hall.
+The students at the back cannot read it.
+# endregion

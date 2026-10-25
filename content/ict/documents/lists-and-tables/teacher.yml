@@ -1,0 +1,43 @@
+summary: "Students choose between a bulleted list, a numbered list and a table by looking at the shape of the facts: no order, an order, or several facts for each item. They give a table a header row so its columns are named, and repeat it in the word processor the school uses."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can choose a bulleted list, a numbered list or a table to fit the facts.
+  - I can say what a table's header row is for.
+  - I can make each of them in my own word processor.
+struggle: "Students choose by look (bullets look neat, a table looks serious). Ask each time: does the order matter, and does each item have more than one fact?"
+before: |
+  Do the Try board yourself: choose Numbered list for the four steps, then drag in your mind step 3 above step 2. The numbers follow, because the style counts them.
+
+  The one idea: the shape of the facts picks the shape of the list. No order is bulleted, an order is numbered, several facts for each item is a table.
+
+  The header row matters more than it looks. It tells the app, and a screen reader, which row names the columns.
+running:
+  - "Predict: students who choose a table for steps are matching the idea of 'a plan'. Ask what the columns would be."
+  - "Try: ask what happens to the numbers if one step moves."
+  - "Worked example: ask Ravi's partner what they needed to know."
+  - "Practise: for the table, ask what the first row says."
+  - "Own app: the common slip is typing the numbers by hand. Ask what happens when a step is added."
+stuck:
+  - see: "A student types 1. 2. 3. by hand."
+    ask: "What happens to your numbers if you add a step in the middle?"
+    fix: "Use the numbered list button, so the app counts."
+  - see: "A student puts a list of steps in a table."
+    ask: "What are your columns? Does each step have more than one fact?"
+    fix: "One fact each and an order: a numbered list."
+  - see: "A student's table has no header row."
+    ask: "Which row names the columns? Does the app know that?"
+    fix: "Turn on the header row option, or make the first row a header."
+stretch: "Make a table of the equipment with columns for the item, how many and where it is kept. Which parts of the equipment list were better as a list?"
+support: "A card: No order, bullets. An order, numbers. Several facts each, a table with a header row."
+leads: |
+  Next in Documents and slides: room to read, the white space that makes a page easy to use.
+
+  Years 6–8: a good moment to use a real science method from another class as the example.
+exit:
+  q: "Three students each have a name, a year and a favourite subject. Which fits best: a bulleted list, a numbered list or a table?"
+  a: "A table with a column for each fact. Each student has three facts and the reader will want to compare them."
+explain: |
+  Choose the shape by the facts. **No order**: a bulleted list. **An order**: a numbered list. **Several facts for each item**: a table, with a header row naming the columns.
+
+  Use the list and table tools, not typing the bullets, numbers or lines yourself, so the app keeps them right when you change something.

@@ -958,3 +958,44 @@ table.sh td.sh-copied { outline: 2px dashed var(--left); outline-offset: -2px; }
 .sh-ch-line { fill: none; stroke: var(--left); stroke-width: 2.5; }
 .sh-ch-dot { fill: var(--accent); stroke: var(--card); stroke-width: 1.5; }
 @media (max-width: 480px) { .sh-field select, .sh-in { font-size: 14px; padding: 6px; } .sh-tools { gap: 6px; } }
+
+/* Page: a small document or slide deck (widgets/page.js). The paper and slides keep their own colours in dark mode. */
+.pg-main { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
+.pg-outline { flex: 0 0 150px; min-width: 130px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 8px 10px; }
+.pg-right { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.pg-oh { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.pg-o { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 3px 0; font: 14px/1.3 system-ui, sans-serif; color: var(--accent); cursor: pointer; }
+.pg-o-h2 { padding-left: 14px; }
+.pg-none { margin: 0; font-size: 13px; color: var(--muted); }
+.pg-bar, .pg-tool { border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 8px 10px; display: flex; flex-direction: column; gap: 6px; }
+.pg-row, .pg-seg { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pg-sellabel { font-size: 13px; font-weight: 600; color: var(--muted); }
+.pg-f { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; }
+.pg-f select, .pg-in, .pg-text { font: 14px system-ui, sans-serif; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg, #fff); color: inherit; }
+.pg-in { min-width: 220px; }
+.pg-text { width: 100%; box-sizing: border-box; resize: vertical; }
+.pg-size { font-weight: 600; min-width: 3.5em; text-align: center; }
+.pg-bar button, .pg-tool button { font: 13px system-ui, sans-serif; padding: 4px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: inherit; cursor: pointer; }
+.pg-bar button.pg-on, .pg-tool button.pg-on { background: var(--accent); color: #fff; border-color: var(--accent); }
+.pg-stage { min-width: 0; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.pg-page { box-sizing: border-box; width: 100%; max-width: 520px; background: #fff; color: #1b1b1b; border: 1px solid #c9c9c9; box-shadow: 0 1px 4px rgba(0,0,0,.18); }
+.pg-b { margin: 0 0 var(--pg-gap, 6px); }
+.pg-fig { margin: 0 0 var(--pg-gap, 6px); }
+.pg-fig svg { display: block; max-width: 100%; height: auto; }
+.pg-cap { display: block; opacity: .85; }
+.pg-noalt { margin: 0; font: 13px system-ui, sans-serif; color: #b03a2e; }
+.pg-li { position: relative; padding-left: 1.4em; }
+.pg-li::before { content: "\2022"; position: absolute; left: .35em; }
+.pg-num::before { content: attr(data-n); left: 0; }
+.pg-blank { opacity: .5; font-style: italic; }
+.pg-sel-able { cursor: pointer; border-radius: 3px; }
+.pg-sel { outline: 2px solid #3a7bd5; outline-offset: 2px; }
+.pg-table { border-collapse: collapse; margin: 0 0 var(--pg-gap, 6px); }
+.pg-table td, .pg-table th { border: 1px solid #888; padding: 3px 8px; text-align: left; }
+.pg-table th { background: #e6edf7; font-weight: 700; }
+.pg-slidewrap { display: flex; flex-direction: column; gap: 3px; max-width: 100%; }
+.pg-slideno { font-size: 12px; color: var(--muted); }
+.pg-slide { box-sizing: border-box; max-width: 100%; overflow: hidden; border: 1px solid #888; border-radius: 4px; }
+.pg-slide.pg-over { border: 2px solid #c0392b; }
+.pg-slide .pg-b { margin: 0 0 var(--pg-gap, 6px); }
+@media (max-width: 480px) { .pg-outline { flex: 1 1 100%; } .pg-in { min-width: 0; width: 100%; } }

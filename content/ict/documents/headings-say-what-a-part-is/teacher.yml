@@ -1,0 +1,45 @@
+summary: "Students learn that a heading is a style, not a look. A line that is only bold and big is still body text to the app, so it does not appear in the headings panel or contents list and a screen reader cannot jump to it. They give styles to a report's parts on a page and repeat it in the word processor the school uses."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can say what a heading style tells the app that bold and big text does not.
+  - I can give a part of a document the right heading style.
+  - I can find the headings panel in my own word processor.
+struggle: "The fake heading looks right, so nothing tells a student it is wrong until they open the headings panel. Have them open it early and again after each change."
+before: |
+  Do the Try board yourself: choose Heading 1 for Aim, then look at the headings panel on the left.
+
+  The one idea: a heading is a style that says what a part is. Bold and big is only a look.
+
+  The page on the screen is a small teaching model with only what every word processor shares: styles, a headings panel, lists and tables. It is not Word or Docs, and nothing here depends on either. The last step asks students to do the same in the app your school uses: styles sit in the toolbar's styles list in Word, Docs and Pages, and the headings panel is the Navigation pane (Word) or Document outline (Docs).
+
+  Years 6–8. Use a real report from another subject for the last step if you have one.
+running:
+  - "Predict: students who answer Aim and Method think the panel reads how a line looks. Ask how the app could tell."
+  - "Try: ask what changed on the page when they chose Heading 1. Nothing visible changes, so what did?"
+  - "Worked example: ask Mia what she was trying to do and what she should have chosen."
+  - "Practise: students often forget Equipment is a level down. Ask which part it belongs to."
+  - "Own app: the common slip is pressing Bold again. Ask them to open the headings panel to check."
+stuck:
+  - see: "A student makes a heading bold and bigger by hand."
+    ask: "Open the headings panel. Is it listed? How would the app know it is a heading?"
+    fix: "Undo the by-hand look and choose Heading 1 from the styles list."
+  - see: "A student uses Heading 2 for the main parts because it looks nicer."
+    ask: "Look at the headings panel. Which is the main level?"
+    fix: "Choose by level (Heading 1 is the top), not by look. The look can be changed later in the style."
+  - see: "A student types the whole sentence as the heading."
+    ask: "Could you read the panel quickly if every heading were a sentence?"
+    fix: "Use a short name for the part."
+stretch: "Open the headings panel in your app and use it to jump to the last part of a long document. Then use it to move a whole part up the document."
+support: "A card: Pick the style from the list. Do not press Bold. Check the headings panel."
+leads: |
+  Next in Documents and slides: changing a style once so every part that uses it follows.
+
+  Years 6–8: this builds on any extended writing in class. Digital Technologies › selecting tools for content creation overlaps in purpose.
+exit:
+  q: "A line is bold and size 18 but its style is Body text. Will it appear in the headings panel?"
+  a: "No. The panel lists parts with a heading style, and this line only looks like one."
+explain: |
+  A document has parts, and each part has a **style**. A style such as **Heading 1** tells the app what the part is.
+
+  Making text bold and bigger by hand only changes how it looks. The app still treats it as body text, so it is missing from the headings panel and the contents list.

@@ -1,0 +1,57 @@
+# Slides for "Readable from the back".
+
+# region: run
+widget: page
+mode: slide
+bg: white
+ink: yellow
+block title: Our bean results
+block bullet: Sun beans grew 13 cm
+block bullet: Shade beans grew 9.6 cm
+block bullet: Dark beans grew 4.6 cm
+tools: colour
+# endregion
+
+# region: practise
+widget: page
+mode: slide
+style title: 24
+style body: 16
+block title: Our bean results
+block bullet: Sun beans grew 13 cm
+block bullet: Shade beans grew 9.6 cm
+block bullet: Dark beans grew 4.6 cm
+tools: styledef
+# endregion
+
+# region: practise-over
+widget: page
+mode: slide
+spacing: 3
+style title: 40
+style body: 28
+block title: What beans need
+block bullet: Light helps leaves grow
+block bullet: Dark beans are pale
+block bullet: Water softens the seed
+block bullet: Dry beans do not sprout
+block bullet: Soil holds the roots
+block bullet: Roots need air in the soil
+block bullet: Warmth speeds it up
+block bullet: Cold slows it down
+tools: add
+# endregion
+
+# region: make
+widget: page
+mode: slide
+bg: grey
+ink: pale
+style title: 40
+style body: 18
+block title: What beans need
+block bullet: Light helps leaves grow
+block bullet: Water softens the seed
+block bullet: Soil holds the roots
+tools: colour styledef add text
+# endregion

@@ -1,0 +1,43 @@
+summary: "Students learn that a style is one definition used by every part that has it, so changing the style once changes them all and any added later, while changes made by hand stay on top of the style. They set the look of a report through its styles and repeat it in the word processor the school uses."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can change a style once so every part with it changes.
+  - I can say why changing each part by hand goes wrong.
+  - I can tell when formatting by hand is the right choice.
+struggle: "Students reach for the toolbar buttons they know (Bold, bigger) on the selected text, because it feels direct. Have them make the change in the Styles panel and then add a new part."
+before: |
+  Do the Try board yourself: raise Heading 1 to 22 pt in the Styles panel and watch all three headings change. Then select one heading and use Bigger on it, and see that a later change to the style does not reach it.
+
+  The one idea: look lives in the style. Define it once. By hand is for a one-off.
+
+  In Word, change a style by right-clicking it in the styles gallery and choosing Modify. In Docs, change one example, then use Update Heading 1 to match. In Pages, use the paragraph styles panel. The page on the screen is a teaching model of that, not any one app.
+running:
+  - "Predict: ask what a style is, if all three changed. If a student says only one, ask what the word 'style' suggests."
+  - "Try: ask how many things they changed and how many things moved."
+  - "Worked example: ask Sam what she could have done once instead of six times."
+  - "Practise: the odd heading is the by-hand mistake. Ask how it got there."
+  - "Own app: the common slip is changing a selected heading and not updating the style. Ask them to add another heading to test."
+stuck:
+  - see: "A student changes headings one at a time."
+    ask: "How many headings would you have to change in a 30-page report?"
+    fix: "Change the style once."
+  - see: "A student changes the style but one part does not follow."
+    ask: "Was that part changed by hand earlier?"
+    fix: "Take off the by-hand change (clear the formatting) so the style can show through."
+  - see: "A student cannot find where to change a style in their app."
+    ask: "Which example heading could you right-click or select?"
+    fix: "Word: right-click the style, Modify. Docs: change a heading, then Update to match."
+stretch: "Change the Title and Body text styles, then add a new heading and a new paragraph. Which of them follow the new look without you touching them?"
+support: "A card: Change the style in the style panel. Do not select a heading and format it."
+leads: |
+  Next in Documents and slides: lists and tables.
+
+  Years 6–8: this is a good moment to set up a class report template with its styles, so every student's report starts consistent.
+exit:
+  q: "A report has 20 Heading 1 parts. You want them all bigger. What is the quickest way?"
+  a: "Change the Heading 1 style once, and all 20 follow."
+explain: |
+  A **style** is a look defined once. Every part with that style follows it, including parts you add later.
+
+  Changing a part by hand only changes that part, and it stays on top of the style. Use the style for what should match everywhere, and by hand for one exception.

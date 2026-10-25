@@ -1,0 +1,29 @@
+inquiry:
+  q: "The same investigation, two audiences: a reader at a desk and a listener in a hall. What changes between the report and the slides, and what stays the same?"
+  prompts:
+    - "Which words from the report make it onto the slides?"
+    - "What does the reader get that the listener does not?"
+  notes: "The facts stay the same. The report has the detail and lets the reader choose where to go. The slides carry one idea at a time, and the speaker carries the rest."
+activities:
+  - at: predict
+    kind: activity
+    title: "Two audiences"
+    minutes: 3
+    do: |
+      Ask students to say who will read the report and who will watch the slides, and what each one needs.
+    notes: "A reader skims and jumps, so headings. A listener cannot jump, so one idea at a time."
+  - at: make
+    kind: discussion
+    title: "Does it say too much?"
+    minutes: 5
+    do: |
+      Read the conclusion in your report. Does it claim more than the data shows? Swap with a partner and say what you would change.
+    notes: "The beans were only one kind, grown for four days. A good conclusion says for these plants."
+questions:
+  - at: make
+    title: "Which audience?"
+    type: question
+    q: "Which needs real headings and a table: the report or the talk?"
+    options: ["The report", "The talk", "Both the same", "Neither"]
+    answer: 0
+    explain: "A reader skims and jumps around a report. A talk has one idea at a time."

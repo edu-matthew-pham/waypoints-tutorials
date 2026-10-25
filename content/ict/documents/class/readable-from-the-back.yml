@@ -1,0 +1,29 @@
+inquiry:
+  q: "Stand at the back of the room. Which of these slides can you read, and which can you not? What do the readable ones have in common?"
+  prompts:
+    - "How big is the text?"
+    - "How different are the colours in lightness?"
+  notes: "The readable ones are large and light on dark, or dark on light. The ones you cannot read have pale colours, small text, or both."
+activities:
+  - at: predict
+    kind: activity
+    title: "Read from the back"
+    minutes: 3
+    do: |
+      Show four slides at the front with different sizes and colours. Students at the back write down what they can read. Compare.
+    notes: "Size and contrast decide it. Ask what the best slide had that the worst did not."
+  - at: make
+    kind: discussion
+    title: "Cut or shrink?"
+    minutes: 4
+    do: |
+      A slide has too many words. Argue for cutting them and for shrinking the text. Which wins at the back of the room?
+    notes: "Cutting wins. Shrinking loses the back row."
+questions:
+  - at: investigate
+    title: "Contrast"
+    type: question
+    q: "Which has the strongest contrast?"
+    options: ["White on navy", "Pale grey on white", "Yellow on white", "Light blue on light grey"]
+    answer: 0
+    explain: "One is very dark and the other very light."

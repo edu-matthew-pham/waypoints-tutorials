@@ -1,0 +1,57 @@
+# Pages for "Change the style, not every line".
+
+# region: run
+widget: page
+mode: doc
+block title: Bean growth report
+block h1: Aim
+block body: We wanted to find out if beans grow better in light or in the dark.
+block h1: Method
+block body: We planted six beans and put three in a cupboard.
+block h1: Results
+block body: The beans in the light grew taller.
+tools: styledef add text
+# endregion
+
+# region: practise
+widget: page
+mode: doc
+block title: Bean growth report
+block h1: Aim
+block body: We wanted to find out if beans grow better in light or in the dark.
+block h1: Method
+block h2: Equipment
+block body: Beans, pots, soil and a ruler.
+block h2: Steps
+block body: Plant the beans and measure them each day.
+block h1: Results
+block body: The beans in the light grew taller.
+tools: styledef
+# endregion
+
+# region: practise-odd
+widget: page
+mode: doc
+block title: Bean growth report
+block h1: Aim
+block body: We wanted to find out if beans grow better in light or in the dark.
+block h1: Method
+block body: We planted six beans and put three in a cupboard.
+block h1: Results
+block body: The beans in the light grew taller.
+fake b4: big
+tools: format
+# endregion
+
+# region: make
+widget: page
+mode: doc
+block title: Bean growth report
+block h1: Aim
+block body: We wanted to find out if beans grow better in light or in the dark.
+block h1: Method
+block body: We planted six beans and put three in a cupboard.
+block h1: Results
+block body: The beans in the light grew taller.
+tools: styledef add text
+# endregion

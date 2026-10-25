@@ -1,0 +1,8 @@
+# Omar's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: omar
+Omar needs a picture of a bean plant for his slide.
+Omar searches the web and clicks the first picture.
+He puts it on his slide without finding out who made it or checking the licence, because it was on the internet.
+His teacher says he cannot use it.
+# endregion

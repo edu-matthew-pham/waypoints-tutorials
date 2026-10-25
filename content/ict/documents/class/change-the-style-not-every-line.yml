@@ -1,0 +1,29 @@
+inquiry:
+  q: "Your teacher wants every heading in a class report to be the same blue. How would you change 40 headings across 12 pages?"
+  prompts:
+    - "What if one student adds a heading later?"
+    - "What if the teacher then changes their mind to green?"
+  notes: "Change the style once. The later heading and the green change are both free. By hand needs the whole job again."
+activities:
+  - at: predict
+    kind: activity
+    title: "Change it once"
+    minutes: 3
+    do: |
+      Ask a volunteer to change the Heading 1 style in a shared document while everyone watches the headings. Count the changes made and the headings that moved.
+    notes: "One change, all headings. That ratio is the point."
+  - at: make
+    kind: discussion
+    title: "When is by hand right?"
+    minutes: 4
+    do: |
+      Name something that should be by hand and something that should be in a style.
+    notes: "A single word in italic is by hand. Everything that repeats (headings, captions, quotes) belongs in a style."
+questions:
+  - at: investigate
+    title: "Style or by hand?"
+    type: question
+    q: "You want every caption under a picture to be small and grey. Which fits?"
+    options: ["A style", "By hand on each caption", "Either is fine", "Neither"]
+    answer: 0
+    explain: "Captions repeat, so give them one style and change it once."

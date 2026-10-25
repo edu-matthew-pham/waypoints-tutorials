@@ -1,0 +1,43 @@
+summary: "A challenge that uses the whole course. Students turn a class bean investigation into a one-page report (real headings, a numbered method, a table with a header row, a look set through styles, room to read) and a three-slide talk (one idea per slide, a picture with alt text and a credit, readable size and contrast), then repeat it with their own class's results in the school's apps."
+time: 60
+timing: "Predict and Structure 12 min · Look 8 min · Slides 12 min · Show 10 min · Judge and own apps 18 min"
+goals:
+  - I can make a report with real headings, a list and a table.
+  - I can make three slides that carry one idea each and can be read from the back.
+  - I can credit a picture and say what it shows.
+struggle: "Students change the look by hand because it feels faster. Ask them to check the headings panel and add a new heading."
+before: |
+  Do each board yourself in order. The boards chain: Structure gives the report its parts, Look sets the styles and layout on a report that already has them, Slides splits the story, Show adds the picture, the credit and the colours.
+
+  The challenge reuses the bean results from Working with data (average 4.6, 9.6 and 13 cm), so a class that did that course will know the numbers. Use your own class's results if you have them: the last step asks for a report and three slides in the school's apps.
+
+  The checks are rough counts (headings, steps, slides, words, contrast). They do not judge whether a report is good. Use the whole-class discussion for that.
+running:
+  - "Structure: ask which lines a reader would want to jump to."
+  - "Look: ask what changes if they add a heading afterwards."
+  - "Slides: ask what they would say aloud on each slide."
+  - "Show: ask a partner to listen to the alt text with eyes closed."
+  - "Own apps: walk round and look at headings panels and slide titles first."
+stuck:
+  - see: "A student makes a heading bold by hand."
+    ask: "What does the headings panel say?"
+    fix: "Choose the Heading 1 style."
+  - see: "A student puts all the findings on one slide."
+    ask: "How many ideas are there?"
+    fix: "One slide for each: what we did, what we found, what it means."
+  - see: "A student has a picture with no credit."
+    ask: "Who made it, and what does the licence say?"
+    fix: "Credit it with who, where and the licence, or use their own."
+stretch: "Add a Sources slide and a short text version of the report for someone who uses a screen reader. What does the text version leave out?"
+support: "A card for each part: Styles, not by hand. One idea per slide. Big, strong colours. Alt text and a credit."
+leads: |
+  This is the end of Documents and slides. Later pathways in ICT skills (files, investigating information and staying safe) are planned.
+
+  Years 6–8: use this as the report and talk for any science or humanities investigation.
+exit:
+  q: "Name one thing you would check in a report, and one thing in a slide, before handing them in."
+  a: "For example: the headings panel lists the parts (report), and the back row can read the text (slide)."
+explain: |
+  A **report** is read at a desk, so give it real **headings**, **lists** and **tables** and room to read. A **talk** is heard, so give each slide **one idea**, a **title** that says it, **few words**, and text **large** with strong **contrast**.
+
+  Use a picture only when it shows the idea, give it **alt text**, and **credit** what you did not make.

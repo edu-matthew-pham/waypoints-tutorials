@@ -1,0 +1,8 @@
+# Jay's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: jay
+Jay's report is one page and a bit long, and the limit is one page.
+Jay sets the margins to narrow and the space between parts to tight so it fits.
+It now fits on one page.
+His teacher says it is hard to read.
+# endregion

@@ -1,0 +1,8 @@
+# Lena's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: lena
+Lena has a report paragraph about how beans grow.
+Lena copies the whole paragraph onto one slide and reads it aloud.
+Her slide has nine lines of small text.
+Half of her class stop listening.
+# endregion

@@ -1,0 +1,29 @@
+inquiry:
+  q: "Look at two pages with the same words. One is crowded and one has room. Where does your eye go first on each, and why?"
+  prompts:
+    - "Which part could you find fastest?"
+    - "What is the page trying to tell you?"
+  notes: "With room, the eye lands on headings and then paragraphs. Crowded, it has no place to start. White space is how a page tells you where to look."
+activities:
+  - at: predict
+    kind: activity
+    title: "Find the Method"
+    minutes: 3
+    do: |
+      Show two copies of the same report page, one crowded and one open. Ask students to raise a hand when they find the word Method. Compare the times.
+    notes: "The open one is faster. Time, not opinion, is the measure."
+  - at: make
+    kind: discussion
+    title: "Short on room?"
+    minutes: 4
+    do: |
+      Your report is a line over the limit. List all the ways to fix it without making the page harder to read.
+    notes: "Cut words, remove a repeated point, shorten a heading. Narrow margins and tiny text are the ways not to."
+questions:
+  - at: investigate
+    title: "Left or centre?"
+    type: question
+    q: "Which is easier to read for a long paragraph?"
+    options: ["Aligned to the left", "Centred", "No difference", "Aligned to the right"]
+    answer: 0
+    explain: "A left edge lets the eye find the start of each line."

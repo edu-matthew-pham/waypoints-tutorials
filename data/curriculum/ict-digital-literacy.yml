@@ -1,0 +1,80 @@
+# ICT skills and the Australian Curriculum Digital Literacy general capability (26 Oct 2026).
+#
+# Pathway level only, "focus" (the pathway's main job) and "touches" (a lesson or two). No per-lesson tags, and no node
+# derivation: Kit's node data covers learning-area descriptors only, and the capability is levelled indicators, not
+# content descriptions (Project doc digital-literacy-pathway-plan). Nothing reads this file yet; it is the record that a
+# later tool (a "which standards does this touch" line on the ICT pages, as for code-coverage.yml) would read.
+#
+# Element and sub-element names are the Version 9 names, checked 26 Oct 2026 against two copies that agree:
+#   https://www.australiancurriculum.edu.au/curriculum-information/understand-this-general-capability/digital-literacy
+#   https://www.qcaa.qld.edu.au/downloads/aciqv9/general-resources/ac9_gc_digital_literacy_learning_continuum.pdf
+# VERIFIED: the four elements and their twelve sub-elements (below). The Level 6 (Years 9 to 10) indicator wording quoted
+# in the Project doc ict-digital-literacy-mapping. NOT VERIFIED: the indicator wording at the levels for Years 5 to 8
+# (the continuum runs Level 1, Prep, to Level 6, Years 9 to 10; which level covers which years was not checked), so no
+# level is claimed for any pathway.
+#
+# Overlapping Digital Technologies descriptors are codes in data/curriculum/digital-processes.json or systems.json
+# (checked to exist 26 Oct 2026). "Overlap" means the descriptor covers similar ground, not that a lesson is tagged to it.
+
+elements:
+  - id: safety
+    name: Practising digital safety and wellbeing
+    sub: [Manage online safety, Manage digital privacy and identity, Manage digital wellbeing]
+  - id: investigating
+    name: Investigating
+    sub: [Locate information, Acquire and collate data, Interpret data]
+  - id: creating
+    name: Creating and exchanging
+    sub: [Plan, "Create, communicate and collaborate", Respect intellectual property]
+  - id: managing
+    name: Managing and operating
+    sub: [Manage content, Protect content, Select and operate tools]
+
+pathways:
+  - id: data
+    title: Working with data
+    status: built
+    course: ict/data
+    focus: [Acquire and collate data, Interpret data]
+    touches: ["Select and operate tools", "Create, communicate and collaborate"]
+    dt_overlap: [AC9TDI8P01, AC9TDI8P02, AC9TDI10P01, AC9TDI10P02, AC9TDI6P07, AC9TDI8P11]
+    note: "Acquire and collate data is where the continuum puts evaluating data as well as collecting it; the course covers collecting, summarising and charting, and the challenge asks for a conclusion that matches the evidence."
+  - id: documents
+    title: Documents and slides
+    status: built
+    course: ict/documents
+    focus: ["Create, communicate and collaborate", Respect intellectual property]
+    touches: ["Select and operate tools", Plan, "Manage content"]
+    dt_overlap: [AC9TDI6P07, AC9TDI8P11, AC9TDI6P08, AC9TDI8P12]
+    note: "Respect intellectual property is lesson 8 (who made it, where, the licence). Plan is touched where the challenge asks which parts a report needs."
+  - id: files
+    title: Files and systems
+    status: planned
+    plan: "Project doc ict-files-systems-plan"
+    focus: [Manage content, Protect content, Select and operate tools]
+    touches: [Manage digital privacy and identity]
+    dt_overlap: [AC9TDI4K01, AC9TDI6K01, AC9TDI8K01, AC9TDI6P07, AC9TDI8P11, AC9TDI6P09]
+    note: "Shares ideas with the command line course (Digital systems). Cloud storage touches privacy and identity only through which services the school approves."
+  - id: investigating
+    title: Investigating and judging information
+    status: planned
+    plan: "Project doc ict-investigating-information-plan"
+    focus: [Locate information, Acquire and collate data]
+    touches: [Interpret data, Respect intellectual property]
+    dt_overlap: [AC9TDI6P07, AC9TDI8P01, AC9TDI8P02]
+    note: "Judging a source is the part of Acquire and collate data (evaluate) that the Digital Technologies descriptors cover least. Evaluating AI answers is touched lightly and points to the AI courses."
+  - id: safe
+    title: Staying safe and well
+    status: planned
+    plan: "Project doc ict-safe-and-well-plan"
+    focus: [Manage online safety, Manage digital privacy and identity, Manage digital wellbeing]
+    touches: []
+    dt_overlap: [AC9TDI6P09, AC9TDI8P13, AC9TDI6P10, AC9TDI8P14, AC9TDI10P13, AC9TDI10P14]
+    note: "Already taught in Digital systems > Cyber safety and privacy (8P13, 8P14, 10P13 nodes 1 and 2, 10P14); this pathway links there and adds the everyday and wellbeing side."
+  - id: typing
+    title: Touch typing
+    status: link-out
+    plan: "Link to existing free tools only; nothing built."
+    focus: ["Select and operate tools"]
+    touches: []
+    dt_overlap: []

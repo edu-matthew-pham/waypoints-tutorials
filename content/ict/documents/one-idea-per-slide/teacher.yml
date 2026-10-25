@@ -1,0 +1,43 @@
+summary: "Students learn that a slide has one idea, a title that says it and few words, because an audience reads a slide while trying to listen. They split a crowded slide by idea, shorten a long bullet and repeat it in the slide app the school uses."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can split a slide so each one holds one idea.
+  - I can write a title that says the idea.
+  - I can cut a bullet to a few words.
+struggle: "Students think slides are their notes, so they put everything on them. Ask what they would say aloud if the slide already said it."
+before: |
+  Do the Try board yourself: start a new slide at the water bullets and at the soil bullets, and look at the three slides.
+
+  The one idea: a slide is for the audience, who are listening to you. One idea, a title that says it, a few words.
+
+  The board has 'Start a new slide here' and 'Add below' for titles. In PowerPoint and Slides, use New slide and the title box. The checks are rough: they count slides, bullets and words. Good slides need judgement, so use the class discussion.
+running:
+  - "Predict: students who say one are thinking about the file. Ask who the slide is for."
+  - "Try: ask which bullets belong together and how they know."
+  - "Worked example: ask what Lena's audience was doing while she read."
+  - "Practise: the long bullet is a whole sentence. Ask which words carry the idea."
+  - "Own app: the common slip is a title like 'Results'. Ask what the audience should take away."
+stuck:
+  - see: "A student keeps everything on one slide."
+    ask: "How many different ideas are there? How long would you look at it?"
+    fix: "Split by idea."
+  - see: "A student gives each slide the title 'Slide 2'."
+    ask: "What should the audience remember from this slide?"
+    fix: "A title that says the idea, such as 'Water softens the seed'."
+  - see: "A student cuts the words so far that the idea goes."
+    ask: "Could someone who missed your talk still say what this slide means?"
+    fix: "Keep enough for the idea. Say the detail."
+stretch: "Take a page of your report and turn it into a three-slide talk. What do you say on each slide that is not written on it?"
+support: "A card: One idea. A title that says it. A few words. Say the rest."
+leads: |
+  Next in Documents and slides: pictures that help, with alt text.
+
+  Years 6–8: a good moment to have students give a one-minute talk from a three-slide deck.
+exit:
+  q: "A slide has a title and a paragraph of 60 words. Name two fixes."
+  a: "Cut it to a few words, and if there is more than one idea, split it into slides. Say the rest aloud."
+explain: |
+  A slide is read in seconds, by an audience who are also listening to you. So give it **one idea**, a **title that says it** and **few words**.
+
+  More ideas mean more slides. The detail goes in what you say or in a handout.

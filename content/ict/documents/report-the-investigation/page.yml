@@ -1,0 +1,69 @@
+# Pages for the challenge "Report the investigation".
+
+# region: structure
+widget: page
+mode: doc
+block body: Do beans need light?
+block body: Aim
+block body: We wanted to find out if beans grow taller in the light or in the dark.
+block body: Method
+block body: Plant five beans in each of three places: the dark, the shade and the sun.
+block body: Water them every day for four days.
+block body: Measure each bean and find the average for each place.
+block body: Results
+block table: Place|Average height (cm); Dark|4.6; Shade|9.6; Sun|13
+block body: Conclusion
+block body: On average, the beans in the sun were taller (about 13 cm) than those in the dark (about 5 cm), for these plants.
+fake b2: both
+fake b4: both
+fake b8: both
+fake b10: both
+tools: style header
+# endregion
+
+# region: look
+widget: page
+mode: doc
+spacing: 1
+margin: 1
+align: centre
+block title: Do beans need light?
+block h1: Aim
+block body: We wanted to find out if beans grow taller in the light or in the dark.
+block h1: Method
+block number: Plant five beans in each of three places: the dark, the shade and the sun.
+block number: Water them every day for four days.
+block number: Measure each bean and find the average for each place.
+block h1: Results
+block table: Place|Average height (cm); Dark|4.6; Shade|9.6; Sun|13
+block h1: Conclusion
+block body: On average, the beans in the sun were taller (about 13 cm) than those in the dark (about 5 cm), for these plants.
+header: on
+tools: styledef layout
+# endregion
+
+# region: slides
+widget: page
+mode: slide
+block title: Do beans need light?
+block bullet: We grew beans in the dark, the shade and the sun.
+block bullet: We watered them every day for four days.
+block bullet: Dark beans grew 4.6 cm.
+block bullet: Shade beans grew 9.6 cm.
+block bullet: Sun beans grew 13 cm.
+block bullet: More light meant taller beans, for these plants.
+tools: slides add text
+# endregion
+
+# region: show
+widget: page
+mode: slide
+bg: white
+ink: pale
+style title: 40
+style body: 20
+block title: Sun beans grew tallest
+block image: plant
+block bullet: Sun beans grew 13 cm
+tools: alt credit size colour styledef
+# endregion

@@ -1,0 +1,43 @@
+summary: "Students learn that slides are read from the back of a room, so text must be large (about 24 points or more) and the text and background must differ strongly in lightness (a contrast of at least 4.5 to 1), and that words that do not fit are cut, not shrunk. They set sizes and colours on a slide and repeat it in the slide app the school uses."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can choose text and background colours that can be read from the back of a room.
+  - I can set text large enough for a slide.
+  - I can cut words when a slide does not fit.
+struggle: "Students judge colours from their own screen, up close. Have them step back, or look at the board from the back of the room."
+before: |
+  Do the Try board yourself: pick yellow text on white, then white on navy, and watch the contrast number change.
+
+  The one idea: slides are read from across a room. Large text, strong contrast, few words.
+
+  The board's contrast number is the standard WCAG ratio between the two colours, and 4.5 to 1 is the usual threshold for readable text. The 24-point rule is a rule of thumb, not a standard. The board's checks count sizes and whether text fits; standing at the back of the room is the real test.
+running:
+  - "Predict: students who say yes are judging the colour, not the lightness. Ask them to squint at it."
+  - "Try: ask which pair they would choose and what the number says."
+  - "Worked example: ask Priya how she could have tested it."
+  - "Practise: for the slide that runs off, ask which bullet the audience can live without."
+  - "Own app: students often shrink text to fit. Ask what happens at the back."
+stuck:
+  - see: "A student chooses pale text on a pale background."
+    ask: "Step back from the screen. Can you still read it?"
+    fix: "Make one very light and the other very dark."
+  - see: "A student shrinks text to fit more words."
+    ask: "Could the back row read it?"
+    fix: "Cut words, or split into more slides."
+  - see: "A student uses fancy colours that clash."
+    ask: "Does the colour help the idea or distract from it?"
+    fix: "Keep colours plain and strong."
+stretch: "Look at the colour pairs on your school's slide template. Which meet 4.5 to 1? Which do not?"
+support: "A card: Big text. Light on dark, or dark on light. Cut words, not size. Step back to test."
+leads: |
+  Next in Documents and slides: whose is it? Crediting what you use.
+
+  Years 6–8: ask students to look at a slide from a class talk at the back of the room.
+exit:
+  q: "Your words do not fit on a slide at 28 points. What should you do?"
+  a: "Cut words, or split the slide. Do not shrink the text, because the back row cannot read it."
+explain: |
+  A slide is read from across a room. Make the text **large**, about 24 points or more, and make the text and background **very different in lightness**.
+
+  If the words do not fit, **cut words**. Do not shrink the text.
