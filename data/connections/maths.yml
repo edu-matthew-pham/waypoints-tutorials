@@ -3594,7 +3594,11 @@ nodes:
         given: "A real ball, or a picture."
         hidden: "Nothing."
         check: "Count on the ball."
-        figures: []
+        figures:
+          - claim: "A truncated icosahedron has 32 faces (12 pentagons and 20 hexagons), 90 edges and 60 vertices. A modern ball is a more spherical version of the same pattern."
+            source: { title: "Truncated icosahedron (Wikipedia)", url: "https://en.wikipedia.org/wiki/Truncated_icosahedron", checked: 2026-10-25 }
+          - claim: "Buckminsterfullerene, C60, has 60 carbon atoms in 12 pentagons and 20 hexagons, a truncated icosahedron."
+            source: { title: "Symmetry of buckminsterfullerene (Royal Society of Chemistry)", url: "https://edu.rsc.org/feature/symmetry-of-buckminsterfullerene/2020237.article", checked: 2026-10-25 }
 
   AC9M10SP03 n1:
     move: "Define a spatial problem precisely and break it into smaller problems."

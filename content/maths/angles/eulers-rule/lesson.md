@@ -11,7 +11,7 @@ language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A soccer ball has 32 patches. How many seams, without counting every one?"
 ---
-A soccer ball is stitched from flat patches: 12 pentagons and 20 hexagons. The corners where patches meet are the vertices, the seams are the edges, and each patch is a face. Counting 90 seams by hand would be slow. There's a rule that links the three counts, and you'll find it on simpler solids first.
+A classic soccer ball is stitched from flat patches: 12 pentagons and 20 hexagons (the shape is called a [truncated icosahedron](https://en.wikipedia.org/wiki/Truncated_icosahedron); modern balls are rounder versions of it). The corners where patches meet are the vertices, the seams are the edges, and each patch is a face. Counting 90 seams by hand would be slow. There's a rule that links the three counts, and you'll find it on simpler solids first.
 
 ## A patch of the ball
 
@@ -213,6 +213,6 @@ Back to the ball. Work it out on paper first, then type the number of vertices.
 
 **Also used in**
 
-- **Molecules and domes.** The carbon cage called buckminsterfullerene has the same 60 corners as the soccer ball, so chemists count it the same way.
+- **Molecules and domes.** The carbon cage called buckminsterfullerene has 60 carbon atoms at the corners of the same 12 pentagons and 20 hexagons, so chemists count it the same way ([Royal Society of Chemistry](https://edu.rsc.org/feature/symmetry-of-buckminsterfullerene/2020237.article)).
 - **Map colouring and planning.** Euler's rule is one of the first results about networks drawn on a surface.
 - **Back to the sweeper.** The degrees of a solid's vertices add to twice its edges, just like a suburb's junctions.
