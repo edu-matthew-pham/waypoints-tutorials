@@ -1,0 +1,39 @@
+summary: "Students turn a tolerance into a range on the number line, use ≤ and < to keep or leave out the ends, and check measurements against it (AC9M9N01, node 3)."
+time: 35
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 8 min · Practise and Make 9 min"
+goals:
+  - I can write a tolerance as a range with its limits.
+  - I can show a range on the number line with open and closed ends.
+  - I can decide if a measurement is in a range.
+struggle: "Open or closed ends. Ask: does the end point itself count?"
+before: |
+  Students need Exact or rounded?.
+
+  The one idea: a range has two ends, and each end is in or out. The common mistake is leaving both out when the limits count (Ben's working).
+
+  The bolt hole, shaft and measurements are made up for the task.
+running:
+  - "Predict: take a show of hands. Those who chose 'No: it isn't 20 mm' read the tolerance as one number."
+  - "Run: ask students to say each limit before dragging."
+  - "Paper: the try-one after the worked example and the four holes in Make are worked on paper first. Books out, and look for both limits written first."
+  - "Modify: before 3 ≤ x < 8, ask whether 8 is in."
+stuck:
+  - see: "A student fails a hole of exactly 19.95."
+    ask: "Is the limit itself allowed?"
+    fix: "Yes: ≤ keeps the end. It passes."
+  - see: "A student writes the range as 20 < x < 0.05."
+    ask: "What are the two limits as numbers?"
+    fix: "19.95 and 20.05."
+stretch: "A measuring tool reads to 0.01. What's the biggest real hole that could read 20.05?"
+support: "A number line from 19.9 to 20.1 with the limits already marked."
+leads: |
+  Continues AC9M9N01 node 3.
+
+  Where it leads: absolute and relative error (Year 9), solving inequalities.
+exit:
+  q: "A part is 30 mm ± 0.2 mm. Write the range."
+  a: "29.8 ≤ x ≤ 30.2."
+explain: |
+  A tolerance gives a range on the number line: 20 ± 0.05 means $19.95 \le x \le 20.05$.
+
+  ≤ and ≥ keep the end (a closed circle). < and > leave it out (an open circle).

@@ -1,0 +1,7 @@
+# Ben's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ben
+A hole passes if it is from 19.95 mm up to 20.05 mm, including both limits.
+So 19.95 < x < 20.05.
+A hole of exactly 20.05 mm passes.
+# endregion

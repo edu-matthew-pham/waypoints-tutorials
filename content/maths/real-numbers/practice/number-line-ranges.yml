@@ -1,0 +1,15 @@
+# Practice for "Ranges on the line".
+templates:
+  - q: "A part is {a} mm ± {t} mm. What is the upper limit?"
+    vars: { a: "10..60", t: [0.1, 0.2, 0.5] }
+    answer: "{a + t}"
+    tolerance: 0.001
+    explain: "{a} + {t} = {a + t}."
+  - q: "A part is {a} mm ± {t} mm. A hole measures {a - t}. Does it pass the range {a - t} ≤ x ≤ {a + t}?"
+    vars: { a: "10..60", t: [0.1, 0.2, 0.5] }
+    choices: ["Yes: the end counts", "No: it's on the end"]
+    explain: "≤ keeps the end, so it passes."
+  - q: "How many whole numbers satisfy {a} ≤ x < {b}?"
+    vars: { a: "1..6", b: "8..14" }
+    answer: "{b - a}"
+    explain: "{a} up to {b - 1}: that's {b - a} numbers. {b} is left out."

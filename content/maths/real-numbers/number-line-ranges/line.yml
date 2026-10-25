@@ -1,0 +1,20 @@
+# Number lines for "Ranges on the line". Tolerance limits for a bolt hole, then rays.
+
+# region: run
+widget: numberline
+range: 19.9, 20.1
+labels: 0.05
+snap: 0.01
+point M: 20.04, Measured hole
+point A: 19.9, drag
+point B: 20.1, drag
+compare: A, B
+# endregion
+
+# region: vary
+widget: numberline
+range: -2, 10
+snap: 1
+point P: 0, drag
+ray: P
+# endregion

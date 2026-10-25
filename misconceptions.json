@@ -398,5 +398,6 @@
   "sci-not-normalised": {"home": "maths/measurement/calculating-scientific", "text": "An answer is left with a number part of 10 or more (20 × 10⁷), or the power is not changed when the number part is rewritten; move the factor of 10 into the power: 2 × 10⁸."},
   "prefix-convert-multiply": {"home": "maths/measurement/real-measurements", "text": "The powers of ten of two units are multiplied to convert between them (10⁻³ × 10⁻⁶ = 10⁻⁹); converting divides one by the other: 10⁻³ ÷ 10⁻⁶ = 10³."},
   "root-sign-irrational": {"home": "maths/real-numbers/number-families", "text": "A number with a square root sign is called irrational (√16 is irrational); it depends on the number under the root: √16 = 4 is a whole number, √7 never ends or repeats."},
+  "interval-ends-open": {"home": "maths/real-numbers/number-line-ranges", "text": "Both ends are left out of a range that includes them (a tolerance of 19.95 to 20.05 written 19.95 < x < 20.05); ≤ and ≥ keep the end (closed circle), < and > leave it out (open circle)."},
   "round-early": {"home": "maths/real-numbers/exact-or-rounded", "text": "Values are rounded at the start of a calculation (π as 3, √2 as 1.4) and the answer is treated as exact; keep exact values or full calculator values until the end, then round once."}
 }
