@@ -30,6 +30,35 @@ check:
   explain: "Criteria are what you will test at the end; constraints decide what you are allowed to build with."
 ```
 
+## Develop: two ideas first
+
+```step
+stage: investigate
+insight: "Comparing two concepts against the brief's criteria before planning one gives the range of ideas the Develop stage asks for (MYP Design B), and makes the choice something a student can defend."
+tasks:
+  - check:
+      type: question
+      q: "Two ideas for the wait. A: wait with delay() for a random 2 to 5 seconds, then light the LED. B: keep checking the button while waiting, using millis(). Which can catch a false start?"
+      options: ["B: during a delay() the sketch isn't looking at the button", "A: delay() is more accurate", "Both, as long as the wait is random"]
+      answer: 0
+      feedback: [null, "delay() is accurate, but nothing else happens while it runs, so an early press goes unseen.", "The randomness isn't the problem. The sketch has to be watching the button during the wait."]
+      explain: "While delay() runs, the sketch does nothing else, so it can't see an early press. A millis() loop keeps checking the button the whole time it waits."
+  - check:
+      type: reasoning
+      q: "Now two ideas of your own. For each one, say which criterion in the brief it's strongest on and which it's weakest on. Then say which you'll build, and why."
+      placeholder: "Idea 1: … strongest on … weakest on … Idea 2: … I'll build … because …"
+      models: [{ title: "One way to write it", text: "Idea 1: B's millis() loop, with the time on the serial monitor. Strongest on false starts: it watches the button the whole time. Weakest on explaining itself without a laptop. Idea 2: the same loop with an LCD. Strongest for a lunchtime game nobody has to set up. Weakest on parts: more wiring to go wrong. I'll build idea 1 first, because catching false starts is the hard criterion, then add the LCD once every test passes." }]
+      criteria: ["Each idea is a different way of doing it, not the same idea with one thing changed.", "For each one I named a criterion from the brief it's strong on and one it's weak on.", "My choice says which criterion decided it."]
+```
+
+### Two ways to do it
+
+Before you plan one design, look at two. Most design choices are a trade: one idea is better on one criterion and worse on another, and the brief tells you which matters more.
+
+### Your own two ideas
+
+Make them really different, not the same idea with one part changed. A quick sketch of each in your book helps.
+
 ## Develop: plan before you build
 
 ```step
@@ -73,15 +102,33 @@ tasks:
 
 ```step
 stage: modify
-insight: "Running the test table written in Develop, and recording every result including failures, is the evidence for the evaluation."
+insight: "Judging another team's results against the brief first, then running the test table written in Develop and writing up one failure, is the evidence for the evaluation."
 tasks:
+  - check:
+      type: question
+      q: "Another team's game: ten rounds with waits from 2.1 to 4.9 s and times of 190 to 320 ms; three deliberate false starts, two caught and one shown as a time of 0 ms. Which criterion fails?"
+      options: ["False starts: the one shown as 0 ms wasn't caught", "The waits: 4.9 s is too close to 5", "None: two out of three false starts is most of them"]
+      answer: 0
+      feedback: [null, "4.9 s is inside 2 to 5 seconds, so the waits are fine.", "The brief says a false start must be caught, so every one counts."]
+      explain: "A time of 0 ms means the early press counted as a go. The brief says false starts must be caught, so one miss fails it. Next: when in the wait did that press happen?"
   - check: { type: reflect, text: "I ran my tests: ten normal rounds (all times shown, all waits between 2 and 5 s), and three deliberate false starts (each one caught), and recorded the results." }
-  - check: { type: reflect, text: "I fixed at least one failure and ran that test again, and I recorded what I changed and why." }
+  - check:
+      type: reasoning
+      q: "Pick one test that failed. Write what happened, what caused it, what you changed, and what the test showed when you ran it again."
+      placeholder: "Test: … What happened: … Cause: … Change: … Re-test: …"
+      models: [{ title: "One way to write it", text: "Test: false start 3. What happened: it showed 0 ms instead of \"Too soon!\". Cause: I only checked for an early press once, at the start of the wait, so a press near the end slipped through; I checked by pressing late on purpose. Change: check the button on every pass of the waiting loop. Re-test: ten more false starts at different times, all caught, and the ten normal rounds still fine." }]
+      criteria: ["I named the test, not just \"it didn't work\".", "My cause is something I checked, not a guess I left there.", "I ran the same test again and wrote what it showed."]
 ```
+
+### Another team's results
+
+Before you run yours, read someone else's. Check each result against the brief, not against what looks close enough.
 
 ### Run the tests
 
 ### Fix and re-test
+
+If everything passed first time, pick the test that came closest to failing and write about that instead.
 
 ## Evaluate: against the brief
 

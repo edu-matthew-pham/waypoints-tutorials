@@ -35,6 +35,35 @@ check:
   explain: "Criteria are what you will test at the end; constraints decide what you are allowed to build with."
 ```
 
+## Develop: two ideas first
+
+```step
+stage: investigate
+insight: "Comparing two concepts against the brief's criteria before planning one gives the range of ideas the Develop stage asks for (MYP Design B), and makes the choice something a student can defend."
+tasks:
+  - check:
+      type: question
+      q: "Two ideas for the beeping. A: one steady beep rate from 30 to 100 cm. B: beeping that speeds up as the car gets closer. B is nicer to use. Does the brief ask for it?"
+      options: ["No: it's extra, and it still has to pass the brief's tests at 30 and 100 cm", "Yes: beeping means it has to speed up", "It doesn't matter what the brief says if the family likes it"]
+      answer: 0
+      feedback: [null, "The brief only says beeping from 30 to 100 cm. Speeding up is your idea, which is fine, as long as it still meets the brief.", "The family wrote the brief, so it's what you test against. Extras are fine on top."]
+      explain: "Extras are welcome, but they don't replace the criteria: whatever the beep does, it still has to start at exactly 100 cm and turn steady below 30."
+  - check:
+      type: reasoning
+      q: "Now two ideas of your own. For each one, say which criterion in the brief it's strongest on and which it's weakest on. Then say which you'll build, and why."
+      placeholder: "Idea 1: … strongest on … weakest on … Idea 2: … I'll build … because …"
+      models: [{ title: "One way to write it", text: "Idea 1: one beep rate from 30 to 100 cm. Strongest on the tests: three bands with clear edges. Weakest on use: it doesn't tell you how close you're getting inside the band. Idea 2: the beep speeds up as the distance drops. Strongest on use. Weakest on testing: the edges are harder to hear when the rate keeps changing. I'll build idea 1 first, pass every test, then add idea 2 as an improvement and run the same tests again." }]
+      criteria: ["Each idea is a different way of doing it, not the same idea with one thing changed.", "For each one I named a criterion from the brief it's strong on and one it's weak on.", "My choice says which criterion decided it."]
+```
+
+### Two ways to do it
+
+Before you plan one design, look at two. Most design choices are a trade: one idea is better on one criterion and worse on another, and the brief tells you which matters more.
+
+### Your own two ideas
+
+Make them really different, not the same idea with one part changed. A quick sketch of each in your book helps.
+
 ## Develop: plan before you build
 
 ```step
@@ -79,15 +108,33 @@ tasks:
 
 ```step
 stage: modify
-insight: "Running the test table written in Develop, and recording every result including failures, is the evidence for the evaluation."
+insight: "Judging another team's results against the brief first, then running the test table written in Develop and writing up one failure, is the evidence for the evaluation."
 tasks:
+  - check:
+      type: question
+      q: "Another team's results: 101 cm off, 100 cm beeping, 60 cm beeping, 30 cm steady, 29 cm steady, 10 cm steady. Which result doesn't match the brief?"
+      options: ["30 cm: it should still be beeping", "101 cm: it should be beeping", "29 cm: it should be beeping", "None: they all match"]
+      answer: 0
+      feedback: [null, "Over 100 cm is off, so 101 cm off is right.", "Under 30 cm is steady, so 29 cm steady is right.", "Look again at exactly 30: the brief says beeping from 30 to 100."]
+      explain: "Beeping runs from 30 to 100, so at exactly 30 it should still beep; steady starts below 30. Their code probably says distance <= 30 where it needs distance < 30."
   - check: { type: reflect, text: "I ran every test in my table with a ruler (29, 30, 100 and 101 cm, plus one in each band) and recorded each result, including any where the sensor was unreliable." }
-  - check: { type: reflect, text: "I fixed at least one failure and ran that test again, and I recorded what I changed and why." }
+  - check:
+      type: reasoning
+      q: "Pick one test that failed. Write what happened, what caused it, what you changed, and what the test showed when you ran it again."
+      placeholder: "Test: … What happened: … Cause: … Change: … Re-test: …"
+      models: [{ title: "One way to write it", text: "Test: 30 cm. What happened: steady instead of beeping. Cause: my code said if (distance <= 30) for steady, so 30 landed in the wrong band; I checked by printing the distance and the band. Change: if (distance < 30). Re-test: 30 cm beeps and 29 cm is steady, and I ran 100 and 101 cm again in case the change broke them." }]
+      criteria: ["I named the test, not just \"it didn't work\".", "My cause is something I checked, not a guess I left there.", "I ran the same test again and wrote what it showed."]
 ```
+
+### Another team's results
+
+Before you run yours, read someone else's. Check each result against the brief, not against what looks close enough.
 
 ### Run the tests
 
 ### Fix and re-test
+
+If everything passed first time, pick the test that came closest to failing and write about that instead.
 
 ## Evaluate: against the brief
 

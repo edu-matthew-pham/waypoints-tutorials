@@ -36,6 +36,35 @@ check:
   explain: "Criteria are what you will test at the end; constraints decide what you are allowed to build with."
 ```
 
+## Develop: two ideas first
+
+```step
+stage: investigate
+insight: "Comparing two concepts against the brief's criteria before planning one gives the range of ideas the Develop stage asks for (MYP Design B), and makes the choice something a student can defend."
+tasks:
+  - check:
+      type: question
+      q: "Two ideas for following the line. A: two line sensors, one each side of the line, correcting only when one of them sees it. B: one sensor that follows the edge of the line, turning back and forth. Which is more likely to meet the under-60 s criterion?"
+      options: ["A: it can drive straight most of the time", "B: one sensor is quicker to read", "Neither: the motors decide the speed"]
+      answer: 0
+      feedback: [null, "Reading the sensor is quick either way. Following one edge means turning all the time, so it covers more ground.", "The motors set the top speed, but a robot that's zig-zagging can't use it."]
+      explain: "With a sensor each side, the robot drives straight until it drifts. Following one edge means swinging back and forth the whole way round."
+  - check:
+      type: reasoning
+      q: "Now two ideas of your own. For each one, say which criterion in the brief it's strongest on and which it's weakest on. Then say which you'll build, and why."
+      placeholder: "Idea 1: … strongest on … weakest on … Idea 2: … I'll build … because …"
+      models: [{ title: "One way to write it", text: "Idea 1: two sensors and a 9 V battery (about 45 g). Strongest on weight. Weakest on the 30-minute run: small 9 V batteries run down fast with two motors. Idea 2: two sensors and four AA cells, 6 V (about 95 g). Strongest on battery life. Weakest on weight, but still under 150 g. I'll build idea 2, because the battery test is the criterion I'm least sure of, and it still fits the weight limit." }]
+      criteria: ["Each idea is a different way of doing it, not the same idea with one thing changed.", "For each one I named a criterion from the brief it's strong on and one it's weak on.", "My choice says which criterion decided it."]
+```
+
+### Two ways to do it
+
+Before you plan one design, look at two. Most design choices are a trade: one idea is better on one criterion and worse on another, and the brief tells you which matters more.
+
+### Your own two ideas
+
+Make them really different, not the same idea with one part changed. A quick sketch of each in your book helps.
+
 ## Develop: plan before you build
 
 ```step
@@ -78,15 +107,33 @@ tasks:
 
 ```step
 stage: modify
-insight: "Running the test table written in Develop, and recording every result including failures, is the evidence for the evaluation."
+insight: "Judging another team's results against the brief first, then running the test table written in Develop and writing up one failure, is the evidence for the evaluation."
 tasks:
+  - check:
+      type: question
+      q: "Another team's robot ran the course in 52 s, 58 s and 64 s, left the line once in each run, and its battery lasted 35 minutes. Which criterion doesn't it meet?"
+      options: ["Under 60 s: the third run took 64 s", "Leaving the line: it did that every run", "The battery: 35 minutes is too close", "None: the average time is under 60 s"]
+      answer: 0
+      feedback: [null, "The brief allows leaving the line once. Once a run is fine.", "35 minutes is more than the 30 the brief asks for.", "The average is 58 s, but one run took 64. The brief is about each run, so the slow one counts."]
+      explain: "52 and 58 pass, but 64 doesn't, so it doesn't reliably finish under 60 s. Leaving the line once a run is allowed, and 35 minutes beats 30. Next to test: why one run was slower."
   - check: { type: reflect, text: "I ran the course at least three times, timing each run and counting how often it left the line, and ran a battery test (or calculated it from a measured current)." }
-  - check: { type: reflect, text: "I fixed at least one failure and ran that test again, and I recorded what I changed and why." }
+  - check:
+      type: reasoning
+      q: "Pick one test that failed. Write what happened, what caused it, what you changed, and what the test showed when you ran it again."
+      placeholder: "Test: … What happened: … Cause: … Change: … Re-test: …"
+      models: [{ title: "One way to write it", text: "Test: run 3. What happened: it took 64 s and slowed down on the last corner. Cause: the batteries were getting low; I checked by timing a run on fresh ones, 53 s. Change: fresh AAs at the start of each test session, and a note in my evaluation that time depends on charge. Re-test: three runs on fresh batteries, 51, 54 and 55 s." }]
+      criteria: ["I named the test, not just \"it didn't work\".", "My cause is something I checked, not a guess I left there.", "I ran the same test again and wrote what it showed."]
 ```
+
+### Another team's results
+
+Before you run yours, read someone else's. Check each result against the brief, not against what looks close enough.
 
 ### Run the tests
 
 ### Fix and re-test
+
+If everything passed first time, pick the test that came closest to failing and write about that instead.
 
 ## Evaluate: against the brief
 

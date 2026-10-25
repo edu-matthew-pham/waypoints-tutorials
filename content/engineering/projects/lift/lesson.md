@@ -37,6 +37,35 @@ check:
   explain: "Criteria are what you will test at the end; constraints decide what you are allowed to build with."
 ```
 
+## Develop: two ideas first
+
+```step
+stage: investigate
+insight: "Comparing two concepts against the brief's criteria before planning one gives the range of ideas the Develop stage asks for (MYP Design B), and makes the choice something a student can defend."
+tasks:
+  - check:
+      type: question
+      q: "Two gear pairs meet the brief on paper: 8 → 24 lifts up to 600 g in 15 s, and 16 → 40 lifts up to 500 g in 12.5 s. What's the catch with 8 → 24?"
+      options: ["It takes exactly 15 s, so any slowing at all fails the time", "It can't lift 450 g", "It turns the drum the wrong way"]
+      answer: 0
+      feedback: [null, "600 g is more than 450 g, so it can lift it. The problem is the time.", "Direction comes from the motor driver, not the gear pair."]
+      explain: "15 s is the limit, and a real lift slows a little with a load and with losses, so 8 → 24 has no time to spare. 16 → 40 has 2.5 s spare, though less extra force."
+  - check:
+      type: reasoning
+      q: "Now two ideas of your own. For each one, say which criterion in the brief it's strongest on and which it's weakest on. Then say which you'll build, and why."
+      placeholder: "Idea 1: … strongest on … weakest on … Idea 2: … I'll build … because …"
+      models: [{ title: "One way to write it", text: "Idea 1: 16 → 40 with a timed stop at 12.5 s. Strongest on time: 2.5 s spare. Weakest on stopping at the top: if the lift slows down, the timed stop leaves it short. Idea 2: 16 → 40 with a limit switch at the top. Strongest on stopping in the right place whatever the speed. Weakest on parts: one more switch to mount and wire. I'll build idea 2, because stopping at the top is in the brief and a timed stop only works if nothing changes." }]
+      criteria: ["Each idea is a different way of doing it, not the same idea with one thing changed.", "For each one I named a criterion from the brief it's strong on and one it's weak on.", "My choice says which criterion decided it."]
+```
+
+### Two ways to do it
+
+Before you plan one design, look at two. Most design choices are a trade: one idea is better on one criterion and worse on another, and the brief tells you which matters more.
+
+### Your own two ideas
+
+Make them really different, not the same idea with one part changed. A quick sketch of each in your book helps.
+
 ## Develop: plan before you build
 
 ```step
@@ -79,15 +108,33 @@ tasks:
 
 ```step
 stage: modify
-insight: "Running the test table written in Develop, and recording every result including failures, is the evidence for the evaluation."
+insight: "Judging another team's results against the brief first, then running the test table written in Develop and writing up one failure, is the evidence for the evaluation."
 tasks:
+  - check:
+      type: question
+      q: "Another team's lift took 13.1, 13.4, 13.0, 14.8 and 13.2 s, and stalled at the start of the fourth lift until someone helped it. What should they test next?"
+      options: ["Starting with the full load, to see if it stalls again", "Nothing: every time is under 15 s", "The stop at the top"]
+      answer: 0
+      feedback: [null, "A lift that needs a helping hand hasn't met the brief, even if the times look fine.", "The stop wasn't the problem. Something happened at the start."]
+      explain: "A stall at the start means the gearing had barely enough force for that lift, and the slow 14.8 s was the same lift. Test starting under full load until they know why."
   - check: { type: reflect, text: "I lifted the load five times, timed each lift, and recorded the predicted time beside the measured one, plus any stalls." }
-  - check: { type: reflect, text: "I fixed at least one failure and ran that test again, and I recorded what I changed and why." }
+  - check:
+      type: reasoning
+      q: "Pick one test that failed. Write what happened, what caused it, what you changed, and what the test showed when you ran it again."
+      placeholder: "Test: … What happened: … Cause: … Change: … Re-test: …"
+      models: [{ title: "One way to write it", text: "Test: lift 4. What happened: it stalled at the start, then went when I helped it. Cause: the string had wound on in a lump, which makes the drum bigger and needs more force; I checked by winding it neatly and lifting again, no stall. Change: a guide so the string winds on in one layer. Re-test: five more lifts, no stalls, 13.0 to 13.5 s." }]
+      criteria: ["I named the test, not just \"it didn't work\".", "My cause is something I checked, not a guess I left there.", "I ran the same test again and wrote what it showed."]
 ```
+
+### Another team's results
+
+Before you run yours, read someone else's. Check each result against the brief, not against what looks close enough.
 
 ### Run the tests
 
 ### Fix and re-test
+
+If everything passed first time, pick the test that came closest to failing and write about that instead.
 
 ## Evaluate: against the brief
 
