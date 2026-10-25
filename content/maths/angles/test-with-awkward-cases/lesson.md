@@ -5,6 +5,7 @@ node: AC9M9SP03 n2
 uses: ["AC9M9SP03 n1"]
 title: "Testing an algorithm: where does it fail?"
 summary: "Good tests include the boundary and the strange cases, not just easy ones. Test the triangle checker on a set of inputs and find where it gives the wrong answer."
+connection: field-guide-key   # data/connections/maths.yml (documentation only)
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "The machine's first program says 3, 4 and 7 make a triangle. What would it cut?"
@@ -96,6 +97,7 @@ Which kind of test found each fault? Typical, boundary or odd input?
 
 **Also used in**
 
+- **Bird keys.** A key built for five birds names a common myna (brown, black head, yellow bill) a superb fairy-wren, because nobody tested a bird outside the five. Female fairy-wrens are mostly brown too ([Australian Museum: common myna](https://australian.museum/learn/animals/birds/common-myna/), [superb fairy-wren](https://australian.museum/learn/animals/birds/superb-fairy-wren/)).
 - **Software.** Testers deliberately try zero, negative and enormous inputs.
 - **Engineering.** A bridge is tested at its limit, not just under normal loads.
 - **Next lesson.** Refining the algorithm from the tests and explaining the change.

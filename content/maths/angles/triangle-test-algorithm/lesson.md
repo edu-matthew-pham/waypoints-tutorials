@@ -5,6 +5,7 @@ node: AC9M9SP03 n1
 uses: ["AC9M7SP04 n2"]
 title: "Writing a geometry rule as an algorithm"
 summary: "An algorithm is a list of steps with decisions. Write the rule for whether three strips can make a triangle as steps, and mark which are computations and which are decisions."
+connection: field-guide-key   # data/connections/maths.yml (documentation only)
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A cutting machine is given three strip lengths for a triangular frame. How does it know the frame will close?"
@@ -96,6 +97,7 @@ Write the algorithm in your own words as numbered steps and mark the decision.
 
 **Also used in**
 
+- **Bird keys.** The Year 7 and 8 bird key is the same kind of algorithm: each question is a decision, and the answer is a name instead of "triangle".
 - **Computer graphics.** A program checks a mesh triangle is valid before it draws it.
 - **Building and design.** Frames, trusses and kites use triangles because the sides must satisfy this rule.
 - **Next lesson.** Testing the algorithm with awkward cases to find where it fails.
