@@ -30,7 +30,7 @@ stuck:
 stretch: "Type 1 diabetes means the pancreas makes too little insulin. Which part of the pathway fails, and what happens to blood glucose after a meal? (The command centre's message is missing; glucose stays high.)"
 support: "Give a two-row table: Nervous | Endocrine, with columns Signal, Travels by, Speed, Lasts."
 leads: |
-  Next: Nerve or hormone? (node 4), then feedback (node 5).
+  Next: Which system runs it? (node 4), then feedback (node 5).
 
   In class: reaction-time ruler drop (nerves) beside a discussion of how long a blush or a fright lasts (hormones); a map of the major glands.
 exit:

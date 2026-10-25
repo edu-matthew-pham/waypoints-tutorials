@@ -2,8 +2,8 @@
 order: 4
 node: AC9S9U01 n4
 unit: control
-title: Nerve or hormone?
-summary: "The nervous system sends fast, short-lived electrical impulses along nerves to one place. The endocrine system releases hormones into the blood: slower, longer-lasting, and they reach every cell but act only on target cells."
+title: Which system runs it?
+summary: "Given a job for the body, you decide whether nerves or hormones should run it, and say why: how fast the message has to be, how long the effect should last and how many places it has to reach. Nerves suit fast, short jobs aimed at one place; hormones suit slower, lasting jobs that reach many cells, and only target cells with matching receptors respond."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -26,49 +26,46 @@ explainClip:
     - wait: 2000
 hook: "A fright makes you jump in a fraction of a second. Your heart is still pounding a few minutes later. Two different systems are at work."
 ---
-Nerves are one way your body sends messages, and there's a second way that works quite differently.
+You've seen how each system carries a message, so the real skill is choosing: given a job for the body, which system should run it, and how can you tell?
 
-## Engage: how do hormones travel?
+## Engage: blinking and growing
 
 ```step
 stage: predict
-insight: "Students who think hormones travel along nerves won't expect the slow rise and long tail; the race shows the difference."
+insight: "Students who think one system does everything, or that a longer-lasting effect is simply a better one, pick the wrong pair; the right choice depends on the job."
 check:
   type: predict
-  q: "Adrenaline is a hormone released when you get a fright. How does it reach your heart?"
-  options: ["Along a nerve, like an impulse", "In the blood, carried all round the body", "It is made in the heart", "Through the air you breathe"]
-  actual: "In the blood. The adrenal glands release it into the bloodstream, which carries it everywhere; cells with the right receptors (heart, liver, muscles) respond."
+  q: "Dust flies at your eye and you blink. Over the next few years you grow taller. Which system runs each?"
+  options: ["Both are run by nerves", "Both are run by hormones", "Blinking is run by nerves and growing by hormones", "Blinking is run by hormones and growing by nerves"]
+  actual: "Blinking by nerves and growing by hormones. A blink has to happen in a fraction of a second and then stop, which suits a nerve signal to the eyelid muscles. Growth needs a message that lasts for years and reaches bones all over the body, which suits a hormone carried in the blood."
 ```
 
-## Explore: race them
+## Explore: give each job to a system
 
 ```step
 stage: run
-insight: "Seeing the same fright as two curves, one a sharp spike and one a slow rise and long tail, makes speed and duration visible."
-try: { playground: board, starter: "boards.yml#race", height: 520 }
-check: { type: board, text: "Run the race and compare the nerve with the hormone.", when: "r >= 1" }
+insight: "Deciding for a mix of jobs, with 'both' allowed, makes students weigh speed, duration and reach instead of just recalling which system is 'fast'."
+check:
+  type: sort
+  q: "Which system should run each job?"
+  options: ["Nerves", "Hormones", "Both"]
+  items:
+    - ["Pulling your hand off a hot pan", "Nerves", "It has to happen in a fraction of a second, in one place, and stop when the danger does."]
+    - ["Growing taller over several years", "Hormones", "It needs a message that lasts for years and reaches bones all over the body."]
+    - ["Bringing blood sugar down in the hour after a meal", "Hormones", "There's no rush, and the message has to reach the liver and muscles, which is what insulin in the blood does."]
+    - ["Blinking when dust flies at your eye", "Nerves"]
+    - ["Kicking a ball", "Nerves"]
+    - ["Staying alert and keeping your heart pounding for minutes after a scare", "Hormones", "Adrenaline in the blood keeps the whole body ready for as long as it lasts."]
+    - ["Swerving your bike away from a car, then having shaky hands on the ride home", "Both", "The swerve is a nerve response, and the shaky hands afterwards are adrenaline."]
+hint: ["For each job, ask whether it has to happen in a split second and stop, or whether it can take longer and needs to last.", "Also ask how many places the message has to reach: one muscle, or cells all over the body."]
 ```
 
-Press **Send both signals** and watch both responses to the same fright. Which starts sooner? Which lasts longer?
-
-## Explain: comparing the two
+## Explain: choosing and justifying
 
 ```step
 stage: investigate
-insight: "Sorting features into the two systems and linking each to its job is the hinge comparison."
+insight: "Predicting which system coordinates a job and justifying it by speed, duration and reach is the node; the target-cell idea explains how one message in the blood can still be specific."
 tasks:
-  - check:
-      type: sort
-      q: "Nervous system or endocrine system?"
-      options: ["Nervous system", "Endocrine system"]
-      items:
-        - ["Electrical impulses", "Nervous system"]
-        - ["Chemical messages in the blood", "Endocrine system"]
-        - ["Very fast", "Nervous system"]
-        - ["Effects last minutes to years", "Endocrine system"]
-        - ["Goes to one exact place", "Nervous system"]
-        - ["Reaches the whole body; target cells respond", "Endocrine system"]
-    hint: ["For each one, ask whether it sounds like the jump you make the instant you get a fright or the pounding heart that hangs around for minutes afterwards.", "Run the race on the board again and compare the two curves, and the line under the button says how each message travels and where it goes."]
   - check:
       type: question
       q: "Every cell in the body gets the same adrenaline in the blood. Why do only some cells respond?"
@@ -88,20 +85,28 @@ tasks:
       options: ["Nervous: the response must be very fast and go to particular muscles", "Endocrine: a hormone in the blood reaches every leg muscle at once", "Endocrine: the race lasts a long time, so the effect must last", "Both equally: every response uses both systems"]
       answer: 0
       feedback: [null, "Hormones would reach the legs, but far too slowly for a start.", "The start itself takes a split second, so it needs nerves.", "Many responses use both, but the instant start is nervous."]
-  - check: { type: reflect, text: "I can compare nerves and hormones by speed, how long the effect lasts, how the message travels and where it acts." }
+  - check:
+      type: question
+      q: "A friend says hormones are better than nerves because their effects last longer. What's the best reply?"
+      options: ["Neither is better: a long-lasting effect suits growth, but it would be no use for pulling your hand off a hot pan", "You're right, because lasting longer always means a stronger response", "You're right, because nerves only work for reflexes", "Hormones last longer, but nerves are better for every job because they're faster"]
+      answer: 0
+      feedback: [null, "How long an effect lasts says nothing about how strong it is.", "Nerves run much more than reflexes, such as moving your legs when you walk.", "Speed helps for a blink, but it would be the wrong tool for something that has to last for years."]
+      explain: "Each system suits different jobs: nerves for fast, short jobs aimed at one place, hormones for slower, lasting jobs that reach many cells."
+    hint: ["Think of one job where lasting a long time is exactly what you want, and one where it would be a disaster."]
+  - check: { type: reflect, text: "I can choose between nerves and hormones for a job and explain why, using speed, how long the effect lasts and how many places it has to reach." }
 ```
-
-### Which system
 
 ### Target cells
 
 ### The right tool
 
-### Which one?
+### The sprinter
+
+### Hormones are better?
 
 ### In your own words
 
-In your book: make a comparison table (nerves, hormones) with rows for message, route, speed, duration and where it acts.
+In your book: make a comparison table (nerves, hormones) with rows for message, route, speed, duration and where it acts, then add two jobs for each system and a reason for each.
 
 ## Elaborate: both at once
 
@@ -121,31 +126,34 @@ check:
 hint: ["For each one, ask how quickly it happens and how long it lasts after the car has gone.", "On the race board the nerve curve is over in a moment and the hormone curve keeps going for minutes, so match each part of the bike ride to one of those shapes."]
 ```
 
-## Elaborate: insulin
+## Elaborate: when a receptor is faulty
 
 ```step
 stage: modify
 tier: wider
-insight: "A hormone with a clear target links this lesson to blood sugar control in the next."
+insight: "A hormone only works where there is a receptor to take its message in, so a faulty receptor behaves much like a missing hormone."
 check:
   type: question
-  q: "After a meal, the pancreas releases insulin. Liver and muscle cells take up glucose from the blood. Which describes it?"
-  options: ["The pancreas is the gland, insulin is the hormone, liver and muscle cells are targets", "The liver is the gland, insulin is the target", "Insulin is a nerve impulse from the pancreas", "Glucose is the hormone"]
+  q: "A person's liver cells have faulty insulin receptors, but their pancreas still releases normal insulin. What happens to their blood glucose after a meal?"
+  options: ["It stays high, because the insulin reaches the liver but the liver cells can't respond to it", "It falls normally, because the insulin is still in the blood", "It falls faster, because there's insulin left over", "Nothing changes, because glucose is controlled by nerves"]
   answer: 0
-  feedback: [null, "The liver responds; it doesn't release insulin.", "Insulin travels in the blood.", "Glucose is the sugar being controlled."]
+  feedback: [null, "Insulin only works on cells whose receptors can take the message in, so having it in the blood isn't enough.", "Insulin that can't be used doesn't bring glucose down any faster.", "Blood glucose after a meal is a job for a hormone, not for nerves."]
+  explain: "A hormone only works where there is a receptor to take its message in. With faulty receptors, a normal amount of insulin reaches the liver but the liver can't act on it, so the effect is much like having no insulin."
+hint: "Ask what the insulin has to do to a liver cell to get its message across, and what happens if that can't happen."
 ```
 
 ## Evaluate: look back
 
 ```step
 stage: info
-check: { type: reflect, text: "I compared my first answer about how hormones travel with what I now know." }
+check: { type: reflect, text: "I compared my first answer about blinking and growing with what I now know." }
 ```
 
 Write one sentence: "At first I thought… Now I think… because…"
 
 **Revision summary**
 
-- **Nervous system:** electrical impulses along neurons; very fast; short-lived; to one exact place.
-- **Endocrine system:** **hormones** released by **glands** into the **blood**; slower; longer-lasting; reach every cell but act only on **target cells** with matching receptors.
-- Many responses use both.
+- To pick a system for a job, ask how fast it has to be, how long the effect should last and how many places it has to reach.
+- **Nerves** suit jobs that are fast, short and aimed at one place, like a blink or pulling your hand off a hot pan.
+- **Hormones** suit jobs that can take minutes or years, need to last, or reach many places at once, like growth. Every cell gets the hormone, but only **target cells** with matching receptors respond.
+- Many responses need both, like a swerve followed by a pounding heart.

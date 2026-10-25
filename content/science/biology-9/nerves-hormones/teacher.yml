@@ -1,19 +1,19 @@
-summary: Students compare the nervous and endocrine systems by message, route, speed, duration and target (AC9S9U01, node 4, a hinge node).
+summary: Students choose nervous or hormonal control for a job and justify it by speed, duration and reach, including why only target cells respond (AC9S9U01, node 4, a hinge node).
 time: 20
 timing: "Engage and Explore 6 min · Explain 9 min · Evaluate 3 min · Typical adds 2 min, Wider about 2 min"
 goals:
-  - I can explain that hormones travel in the blood, not along nerves.
+  - I can choose nerves or hormones for a job and say why.
   - I can compare nervous and hormonal responses by speed and duration.
   - I can explain why only target cells respond to a hormone.
 before: |
   A concept tutorial for introducing or revising the idea. Set the width with `?width=minimum`, `typical` (default) or `wider`.
 
-  The hinge misconception is that hormones travel along nerves. The Engage question puts it directly.
+  This lesson follows Nerves or hormones?, which taught how each system carries a message. Here students use that to choose a system for a job and justify the choice, which is what the node asks. The hinge misconception is that a longer-lasting effect makes hormones the better system; the sort and the friend's claim question test it.
 
   Board notes: the race is schematic, compressing about 10 minutes into 5 seconds; the curves show shape (sharp spike against slow rise and long tail), not real values.
 running:
-  - "Engage: count how many chose 'along a nerve'."
-  - "Explore: ask what the long tail of the hormone curve feels like after a fright."
+  - "Engage: count how many chose each pair, and ask what a blink needs that growing doesn't."
+  - "Explore: the sort has no board; ask for the reason with each choice. 'Both' is a real answer."
   - "Explain: the target-cell question is the checkpoint."
 struggle: "Choosing nerve or hormone by speed, reach and how long the effect lasts. When a student picks one, ask whether it would be quick enough to pull a hand off a hot pan."
 stuck:
@@ -28,7 +28,7 @@ support: "Give the comparison table with rows already labelled."
 leads: |
   Next: negative feedback (node 5), using both systems to control body temperature.
 exit:
-  q: "Give two differences between a nervous and a hormonal response."
-  a: "Nerves: electrical, fast, short-lived, one place. Hormones: chemical in the blood, slower, longer-lasting, target cells everywhere."
+  q: "Which system would you give blinking to, and which growing, and why?"
+  a: "Blinking to nerves, because it has to be fast, short and in one place; growing to hormones, because it has to last for years and reach cells all over the body."
 explain: |
   **Nerves:** fast electrical impulses to one place, short-lived. **Hormones:** chemicals released by glands into the blood, slower and longer-lasting; every cell gets them but only target cells (with matching receptors) respond.
