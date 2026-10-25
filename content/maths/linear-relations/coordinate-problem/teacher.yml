@@ -1,0 +1,39 @@
+summary: "Students use gradient, distance and midpoint together on a plan, and judge whether a straight-line answer fits the real situation (AC9M9A03, node 5)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 14 min · Modify 8 min · Practise and Make 15 min"
+goals:
+  - I can check whether a point is on a line using gradients.
+  - I can choose gradient, distance or midpoint for each question on a plan.
+  - I can say when a straight-line answer is not the real distance.
+struggle: "Choosing the tool. Ask: is the question about direction (gradient), length (distance) or middle (midpoint)?"
+before: |
+  Students need the four earlier lessons of this unit.
+
+  The one idea: the three tools answer different questions about the same two points. The common mistake is dividing a point's own coordinates instead of the differences (Mia's working).
+
+  The park, the bench, the lamp and the sprinkler are made up for the task. A hedge or a hill could change whether a real sprinkler reaches.
+running:
+  - "Predict: take a show of hands. Those who chose 'You can't tell' haven't linked gradient to a point being on a line."
+  - "Run: ask students to say the gradient of the dashed triangle each time they place T."
+  - "Paper: the try-one after the worked example and the lamp in Make are worked on paper first. Books out, and look for the differences written before the division."
+  - "Modify: before they drag T, ask how far up 3 across will be."
+stuck:
+  - see: "A student divides a point's own coordinates for the gradient."
+    ask: "From which point to which point?"
+    fix: "Subtract the gate's coordinates first: rise 5, run 3."
+  - see: "A student chooses the wrong tool."
+    ask: "Is the question about direction, length or the middle?"
+    fix: "Direction is gradient, length is distance, middle is midpoint."
+stretch: "Where along the path is the point one third of the way from the gate?"
+support: "Print the plan on squared paper and count the rise and run."
+leads: |
+  Continues AC9M9A03 node 5.
+
+  Where it leads: Quadratic relationships (next unit), and proofs with coordinates in Year 10.
+exit:
+  q: "A path goes from (0, 0) to (6, 8). How long is it, and where is its midpoint?"
+  a: "10, and (3, 4)."
+explain: |
+  The gradient tells you whether a point is on a line, the distance tells you how long it is, and the midpoint tells you where the middle is.
+
+  A straight-line answer is the shortest possible: a real path that bends is longer.

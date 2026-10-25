@@ -1,0 +1,21 @@
+# Practice for "Gradient, distance and midpoint together".
+templates:
+  - q: "A path goes from ({a}, {b}) to ({c}, {d}). What is the x-coordinate of its midpoint?"
+    vars: { a: "0..8", b: "0..8", c: "0..8", d: "0..8" }
+    where: "(a + c) % 2 == 0 and a != c"
+    answer: "{(a + c) / 2}"
+    explain: "({a} + {c}) ÷ 2 = {(a + c) / 2}."
+  - q: "A path goes from (0, 0) to ({a}, {b}). Is the point ({2 * a}, {2 * b}) on the line through them?"
+    vars: { a: "1..5", b: "1..5" }
+    choices: ["Yes: the gradient from (0, 0) is the same", "No: it has a different gradient"]
+    explain: "From (0, 0) to ({a}, {b}) the gradient is {b}/{a}; to ({2 * a}, {2 * b}) it's {2 * b}/{2 * a}, which is the same."
+  - q: "A path goes from (0, 0) to ({a}, {b}). Is the point ({a + 1}, {b}) on the line through them?"
+    vars: { a: "1..6", b: "1..6" }
+    choices: ["No: it has a different gradient", "Yes: the gradient is the same"]
+    explain: "From (0, 0) the gradient is {b}/{a} for the path and {b}/{a + 1} for the point: not the same."
+  - q: "A path goes from (0, 0) to ({a}, {b}). How long is it, to 1 decimal place?"
+    vars: { a: "2..9", b: "2..9" }
+    where: "a != b"
+    answer: "{rd(sqrt(a * a + b * b), 1)}"
+    tolerance: 0.06
+    explain: "{a * a} + {b * b} = {a * a + b * b}. √{a * a + b * b} ≈ {rd(sqrt(a * a + b * b), 1)}."

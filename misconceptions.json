@@ -409,6 +409,7 @@
   "perpendicular-negate-only": {"home": "maths/linear-relations/parallel-perpendicular", "text": "The gradient of a perpendicular line is found by changing the sign only (3 becomes −3), not by turning it upside down as well."},
   "distance-add-differences": {"home": "maths/linear-relations/distance-two-points", "text": "The distance between two points is found by adding the across and up differences (3 + 4 = 7) instead of squaring, adding and square-rooting them."},
   "midpoint-sum-not-half": {"home": "maths/linear-relations/midpoint", "text": "The midpoint is found by adding the coordinates and not halving the sum, giving (12, 12) for the midpoint of (2, 3) and (10, 9)."},
+  "gradient-coordinates-not-differences": {"home": "maths/linear-relations/coordinate-problem", "text": "The gradient from one point to another is found by dividing the second point's own coordinates (y ÷ x) instead of the differences (rise ÷ run)."},
   "round-early": {"home": "maths/real-numbers/exact-or-rounded", "text": "Values are rounded at the start of a calculation (π as 3, √2 as 1.4) and the answer is treated as exact; keep exact values or full calculator values until the end, then round once."}
 =======
   "round-early": {"home": "maths/real-numbers/exact-or-rounded", "text": "Values are rounded at the start of a calculation (π as 3, √2 as 1.4) and the answer is treated as exact; keep exact values or full calculator values until the end, then round once."},

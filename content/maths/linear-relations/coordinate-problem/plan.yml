@@ -1,0 +1,26 @@
+# Boards for "Gradient, distance and midpoint together". About equal scale on both axes.
+
+# region: run
+widget: graph
+x: -2, 14
+y: -1, 11
+snap: 1
+point G: 2, 1
+point P: 6, 9
+point T: 4, 3, drag
+segment: G, P
+rise: G, T
+# endregion
+
+# region: vary
+widget: graph
+x: -2, 14
+y: -1, 11
+snap: 1
+point G: 2, 1
+point P: 6, 9
+point M: 3, 3, drag
+point T: 4, 3, drag
+segment: G, P
+rise: G, T
+# endregion
