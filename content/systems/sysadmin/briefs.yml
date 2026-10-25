@@ -1,0 +1,25 @@
+briefs:
+  - id: admin-report
+    title: The class server report
+    after: class-server
+    nodes: ["AC9TDI10K01 n3", "AC9TDI10K01 n5"]
+    goal: |
+      You have set up a server for your class. Now write the **admin log and report** an administrator would hand to a school.
+
+      The log shows what you did and why, in order. The report explains how the parts work together to keep the server safe, and where it is still weak.
+    handin:
+      - "Your admin log: each command you ran in the class server, with a line on what it did and why."
+      - "A table of the layers (accounts and groups, permissions, firewall, backup), with what each one protects against and one thing it does not protect against."
+      - "A short explanation of the difference between proving who someone is (a sign-in) and what they may do once in (permissions), using one example from your server."
+      - "Your answer to one question: should this server be reachable from the internet? Give two reasons, and what you would do instead."
+    milestones:
+      - "Your log is in order and each line says what it did and why it was needed."
+      - "Every layer in your table has a risk it covers and a risk it does not."
+      - "Your explanation of signing in versus permissions uses an example from your own server."
+      - "You have given two reasons about the internet question, and one safer choice."
+    stretch:
+      - "Add automatic security updates and say which risk they cover."
+      - "Test the restore and add what you found to the log."
+      - "Draw the server as a diagram: which part talks to which, over which ports."
+    teacher: |
+      Strong reports treat each part as a layer with its own job: a firewall cannot stop a stolen password, permissions cannot stop a failed disk, and a backup cannot stop a leak. Check that the 'does not protect against' column is honest, not empty. For the sign-in versus permissions line, look for a concrete example (Alex can log in but cannot write to a folder owned by another group). For the internet question the best answers mention that an open port is scanned within minutes and that a VPN keeps the server on a private network. The two nodes are chosen because the hand-ins evidence them: node 3 (authentication and authorisation, and what a mechanism protects against) and node 5 (at least two components securing a networked system and how they interact).

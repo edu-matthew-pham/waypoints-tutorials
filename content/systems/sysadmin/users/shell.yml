@@ -1,0 +1,50 @@
+# Boards for "Accounts, groups and sudo".
+
+# region: run
+widget: shell
+fs: pi
+updated: on
+who: alex
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+run: sudo adduser alex
+updated: on
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+updated: on
+users: alex:class
+member: alex sudo
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+ran: cat
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+users: alex:class
+as: alex
+access: alex /home/pi/Documents/readme.txt
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+updated: on
+who: bob
+member: bob sudo
+# endregion

@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam is tired of typing sudo before every command.
+So Sam logs in as root and does everything that way.
+Sam installs tree. It works.
+So working as root all the time is the best way.
+# endregion

@@ -1,0 +1,25 @@
+inquiry:
+  q: "A program has to be running before anyone can use it. Who starts it, and what if the computer restarts?"
+  prompts:
+  - "What happens to your programs when you restart your own computer?"
+  - "Which should come back by themselves?"
+  notes: "The operating system starts services; enable decides which come back."
+activities:
+- at: predict
+  kind: activity
+  title: "Now or boot"
+  minutes: 4
+  do: "Two cards: NOW and BOOT. Read out commands (start, enable, stop, disable); students hold up the card that matches."
+  notes: "enable-now combines both."
+questions:
+- at: investigate
+  title: "Boot"
+  type: question
+  q: "status says disabled. What does that mean?"
+  options:
+  - "It will not start at boot"
+  - "It is not installed"
+  - "It is broken"
+  - "It is running"
+  answer: 0
+  explain: "Disabled is about boot, not about now."

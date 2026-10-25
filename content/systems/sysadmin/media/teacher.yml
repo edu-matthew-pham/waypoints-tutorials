@@ -1,0 +1,40 @@
+summary: "Jellyfin serves your films and music to any device on the network, through a web page on port 8096. It runs as its own user, so it can only read files that user is allowed to read. A firewall decides which ports can be reached."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can install a media server and find its port."
+  - "I can explain why a service cannot read a private home folder."
+  - "I can let one port through a firewall and no others."
+struggle: "Seeing the service as a user. Ask: whose account runs it, and what may that account read?"
+before: |
+  Try the boards yourselves.
+
+  The one idea: a service runs as a user and gets only that user's rights; a firewall decides which ports can be reached. This links permissions (lesson 3) and ports (Networks).
+
+  Simplifications: the pretend Pi has Jellyfin in its apt list. A real Raspberry Pi OS does not: add Jellyfin's own repository first (see jellyfin.org install page), which downloads a key, and then `sudo apt install jellyfin`. Jellyfin also asks for a first-run setup in the browser (an admin account, a library folder). The board shows only what matters for the lesson.
+
+  Taught: Jellyfin (free, open source, no account). Other options to name: Plex (free to play your own media; some features need a Plex account or a paid Plex Pass), Emby (some features need a licence), Kodi (plays on one device, not a server). On a Pi, transcoding (changing a video's format on the fly) is slow, so use files the devices can play directly.
+
+  With internet: metadata (posters, descriptions) is fetched from the internet. Reaching your server away from home should use a VPN (Tailscale or WireGuard), not an opened router port: an open port is scanned within minutes.
+running:
+  - "Predict: wrong answers think a service is all-powerful."
+  - "Try: ask which of the listed ports is which."
+  - "Worked example: stop at the library bug and ask whose permissions apply."
+  - "Vary: after the firewall task, ask what else is blocked."
+  - "Make: ask what would make this unsafe to put on the internet."
+stuck:
+  - see: "Jellyfin finds no films."
+    ask: "Who owns the folder? Can the jellyfin user open it?"
+    fix: "Move the films to /srv/media."
+  - see: "Other devices cannot connect."
+    ask: "Is the service running? Is the port allowed?"
+    fix: "systemctl status jellyfin, sudo ufw allow 8096."
+stretch: "Find out what transcoding is and why a Pi is slow at it."
+support: "A card: the user, the folder, the port."
+leads: |
+  Links: Networks (ports); Accounts, groups and sudo; Services; next: Keep it running.
+exit:
+  q: "Why might Jellyfin find no films in /home/pi/Videos?"
+  a: "It runs as the jellyfin user, and a private home folder keeps other users out."
+explain: |
+  **Jellyfin** is a media server: it serves your films and music over the network, on port 8096. It runs as its own user, so it can only read files that user may read, which is why films go in a shared place like `/srv/media`, not a private home folder. A **firewall** (`ufw`) blocks every port you do not allow: `sudo ufw allow 8096`.

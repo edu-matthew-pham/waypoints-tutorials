@@ -1,0 +1,42 @@
+summary: "Each person gets an account and a private home folder. Groups give several accounts the same rights. Only users in the sudo group may use sudo, and the system logs every time they do."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can create an account and say what its home folder protects."
+  - "I can add a user to a group without removing the other groups."
+  - "I can say who may use sudo, and where the log shows it."
+struggle: "-a versus no -a on usermod. Show both on the board and run id after each."
+before: |
+  Try the boards yourself.
+
+  The one idea: accounts say who you are; groups and permissions say what you may do. This is authentication and authorisation (Security and privacy › Sign-in and permissions) on a real system.
+
+  Simplifications: the pretend Pi's pi account is not in the adm group, so reading /var/log/auth.log needs sudo (on a real Pi it does not). Passwords are always accepted. `su alex` starts a pretend session and `exit` returns.
+
+  On a real Pi: sudo adduser asks for a password and details; give each student their own account on the group's Pi so the log tells them apart. Never share the pi password.
+
+  Other options: `useradd` is the low-level version of `adduser`; `visudo` and `/etc/sudoers.d/` give finer control over who may run what.
+
+  With internet: a school with many Pis would use one directory (for example LDAP or Microsoft Entra) rather than adding each account by hand.
+running:
+  - "Predict: wrong answers think 'logged in' means 'allowed everywhere'."
+  - "Try: ask why a home folder is private by default."
+  - "Worked example: stop at the -a question and ask what would happen to Alex's groups."
+  - "Vary: after the log, ask what it would show if Alex had guessed passwords."
+  - "Make: ask who should and should not get sudo."
+stuck:
+  - see: "A student's usermod removed their other groups."
+    ask: "Did you use -a?"
+    fix: "Use -aG, then check with id."
+  - see: "Permission denied reading the log."
+    ask: "Did you use sudo?"
+    fix: "sudo cat /var/log/auth.log."
+stretch: "Find out what the root account is and why Raspberry Pi OS leaves it without a password."
+support: "A card: adduser makes, usermod -aG adds to a group, id shows."
+leads: |
+  Links: Security and privacy › Sign-in and permissions; The command line › Who can read what; next: Services.
+exit:
+  q: "What is the difference between adduser and usermod -aG?"
+  a: "adduser makes the account and its home. usermod -aG adds an existing account to a group."
+explain: |
+  `sudo adduser alex` makes an account with a private home folder. Groups give several accounts the same rights: `sudo usermod -aG class alex` adds alex to class and keeps Alex's other groups. Only users in the **sudo** group may use `sudo`, and `/var/log/auth.log` records who did.

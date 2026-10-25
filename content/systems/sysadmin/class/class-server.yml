@@ -1,0 +1,25 @@
+inquiry:
+  q: "Your class gets one Pi. How do you make it safe to share?"
+  prompts:
+  - "What could go wrong?"
+  - "Which part would stop each one?"
+  notes: "Who, what, which doors, what if."
+activities:
+- at: predict
+  kind: discussion
+  title: "What could go wrong?"
+  minutes: 5
+  do: "List five things that could go wrong with a shared server. Match each to the layer that covers it."
+  notes: "Each layer covers one."
+questions:
+- at: investigate
+  title: "Order"
+  type: question
+  q: "You are on ssh. What comes first?"
+  options:
+  - "sudo ufw allow ssh"
+  - "sudo ufw enable"
+  - "sudo reboot"
+  - "exit"
+  answer: 0
+  explain: "Allow first, then enable."

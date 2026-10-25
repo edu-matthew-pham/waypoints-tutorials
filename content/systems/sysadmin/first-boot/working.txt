@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam wants to know how much space the Pi has left.
+Sam opens a terminal on the laptop and types df -h.
+Sam reads: 41% used.
+So the Pi has plenty of room.
+# endregion

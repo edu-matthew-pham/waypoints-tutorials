@@ -1065,6 +1065,21 @@ Vary, Practise, Make).
     `o` last output as a number, `l` its lines, `u` used a pipe, `p` used > or >>, `e` last command failed, `n`
     commands, `h` different commands, `a` used ls -a, `g` used grep, `c` cd count, `d` folder depth. Clips type with
     `type: { into: Command, text: ls }` then `press: Enter`.
+    **System layer** (`fs: pi` or `fs: laptop`, for `systems/sysadmin/`; the `school` board is unchanged): the same terminal
+    as a Raspberry Pi, with owners and groups (`ls -l` adds a group column; every folder on the way to a file must be
+    enterable), `sudo` (only for users in the sudo group, logged in `/var/log/auth.log`; `sudo echo x >> f` fails and
+    `echo x | sudo tee -a f` works, as on a real Pi), `apt` (a pretend source of seven packages; lists are empty until
+    `sudo apt update`; `net: off` makes it fail), `systemctl` and `journalctl -u`, `adduser`, `usermod -aG` (without `-a` it
+    replaces the groups), `groupadd`, `id`, `su`, `chown`, `chgrp`, `chmod`, `crontab` (`echo "30 2 * * *" | crontab -`),
+    `tar`, `df`, `du`, `ufw` (allow ssh before enable, or an ssh session is locked out), `ss`, `ping`, `hostname`,
+    `uptime`, `reboot` (services take their boot setting), `smbclient -L` (shows shares from the config smbd last read) and
+    `ssh` from a pretend laptop (`from: laptop`). Setup: `login`, `net: on | off`, `pending: 12`, `updated: on`, `pkgs: a b`,
+    `users: alex:class, bob`, `stopped: ssh`, `disabled: smbd`, `ufw: on`. Check setup (each pairs with a value for `when:`):
+    `pkg:` `pkg_in`; `svc:` `svc_up`, `svc_boot`; `port:` `port_up`, `port_reach`; `who:` `user_ok`; `member: alex sudo` `in_group`;
+    `has: /path | text | more` `conf_has` (in the file) and `conf_live` (read by the service); `group: /path | class` `grp_is`;
+    `access: user /path` `can_read`; `writes: user /path` `can_write`; `nowrite: user /path` `blocked`; `cron: 30 2 * * *`
+    `cron_has`; `ran: a b` `ran_it` (every command used); `as: user` `as_user`. Others: `on_pi`, `pend_n`, `sudoers_n`,
+    `cron_n`, `fw_up`, `disk_pct`, `usb_pct`. Spec details are in the widget's header comment.
   - `widget: cyber` (first used by `systems/cyber/`): defensive cyber safety and privacy on a made-up club app; every
     choice button is labelled "<row>: <option>" (row is the account, field, point, or a card's first 30 characters).
     `mode: breach` (`set: same | mixed`, `manager: on`; Leak!; values l, f, r, c, m), `mfa` (factors None, SMS code,

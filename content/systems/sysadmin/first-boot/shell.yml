@@ -1,0 +1,45 @@
+# Boards for "Log in to the Pi from your laptop".
+
+# region: run
+widget: shell
+fs: pi
+from: laptop
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+run: ssh pi@raspberrypi.local
+from: laptop
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+from: laptop
+ran: hostname
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+ran: ping
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+from: laptop
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+from: laptop
+ran: uptime
+# endregion

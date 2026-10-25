@@ -1,0 +1,25 @@
+inquiry:
+  q: "You want to watch your own films on the TV. What has to be installed, running and allowed?"
+  prompts:
+  - "Where are the films?"
+  - "What stops the TV reaching the Pi?"
+  notes: "A service, a readable folder and an open port."
+activities:
+- at: predict
+  kind: discussion
+  title: "Who can read it?"
+  minutes: 4
+  do: "Draw the Pi, the jellyfin user and the folder. Is there a door the user can open?"
+  notes: "Permissions apply to services too."
+questions:
+- at: investigate
+  title: "Port"
+  type: question
+  q: "What does :8096 in the address pick?"
+  options:
+  - "Which service on the Pi"
+  - "The password"
+  - "The film"
+  - "The device"
+  answer: 0
+  explain: "The port names the door."

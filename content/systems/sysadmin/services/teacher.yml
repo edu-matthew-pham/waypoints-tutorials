@@ -1,0 +1,40 @@
+summary: "A service is a program that runs in the background so others can use it. systemctl starts and stops one now, and enable decides whether it starts at every boot. These are two separate things."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can start and stop a service, and enable it for boot."
+  - "I can say why running now and starting at boot are different."
+  - "I can read a service's log with journalctl."
+struggle: "Enable versus start. Make students say both out loud: 'now' and 'at boot'."
+before: |
+  Try the boards yourself.
+
+  The one idea: the operating system starts and watches background programs. A service's state and its boot setting are separate.
+
+  Simplifications: the pretend Pi has five services (ssh, cron, smbd, jellyfin, unattended-upgrades). `reboot` is instant. On a real Pi `systemctl status` pages its output: press q to leave.
+
+  Other options: `service smbd start` is the older form of the same thing; Docker or containers are another way to run a service (parked).
+
+  With internet: services that others reach over the internet are a bigger risk than ones on the school network, because anyone can try them (see the last lesson).
+running:
+  - "Predict: wrong answers think enable starts it."
+  - "Try: ask which command did which job."
+  - "Worked example: show status before and after on the board."
+  - "Vary: after the reboot task, ask which services a server must have enabled."
+  - "Make: ask why it is proved by rebooting."
+stuck:
+  - see: "A student enabled the service but cannot connect."
+    ask: "Is it running? What does status say?"
+    fix: "sudo systemctl start name, or enable --now."
+  - see: "systemctl says 'Interactive authentication required'."
+    ask: "Did you use sudo?"
+    fix: "sudo systemctl ..."
+stretch: "Find out what a unit file is and where the Pi keeps them."
+support: "Two sticky notes: NOW (start, stop) and BOOT (enable, disable)."
+leads: |
+  Links: Networks (ports and servers); next: Share files with Samba.
+exit:
+  q: "smbd is running but disabled. What happens after a reboot?"
+  a: "It stays off: disabled means it does not start at boot."
+explain: |
+  A **service** is a program the operating system keeps running. `sudo systemctl start name` runs it now; `sudo systemctl enable name` runs it at every boot. They are separate. `systemctl status name` shows both, and `journalctl -u name` shows its log.

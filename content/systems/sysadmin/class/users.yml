@@ -1,0 +1,25 @@
+inquiry:
+  q: "A whole class shares one computer. How do you give each person what they need and no more?"
+  prompts:
+  - "What does each person need?"
+  - "What happens if everyone shares one password?"
+  notes: "Separate accounts and groups; the log shows who did what."
+activities:
+- at: predict
+  kind: activity
+  title: "Who may?"
+  minutes: 5
+  do: "Give three students a card each: owner, class member, stranger. A file card says rwxrwx---. What may each do?"
+  notes: "Group members share the middle three."
+questions:
+- at: investigate
+  title: "-aG"
+  type: question
+  q: "What does usermod -G (without a) do?"
+  options:
+  - "Replaces all the user's groups"
+  - "Adds one group"
+  - "Deletes the user"
+  - "Lists groups"
+  answer: 0
+  explain: "Without -a the group list is replaced."

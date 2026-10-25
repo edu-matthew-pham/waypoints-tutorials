@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam installs Jellyfin.
+Sam leaves the films in /home/pi/Videos, a private folder.
+Jellyfin scans and finds 0 films.
+Sam decides Jellyfin is broken and reinstalls it.
+# endregion

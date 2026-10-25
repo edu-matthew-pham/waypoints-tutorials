@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Alex cannot save files in /srv/class.
+Sam types sudo chmod 777 /srv/class.
+Now everyone can write there, including strangers and the web server.
+So Sam says: whenever access fails, chmod 777.
+# endregion

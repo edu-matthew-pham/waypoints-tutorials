@@ -1,0 +1,25 @@
+inquiry:
+  q: "You can't touch the computer. How do you control it?"
+  prompts:
+  - "What do you need to find it?"
+  - "What proves you are allowed?"
+  notes: "A name or address, then an account and password."
+activities:
+- at: predict
+  kind: activity
+  title: "Two prompts"
+  minutes: 4
+  do: "Write the laptop prompt and the Pi prompt on cards. Hold up the one where the next command runs."
+  notes: "The prompt tells you."
+questions:
+- at: investigate
+  title: "Refused"
+  type: question
+  q: "ssh says Connection refused. The Pi is on. What is the likeliest cause?"
+  options:
+  - "ssh is not running on the Pi"
+  - "Wrong password"
+  - "No name"
+  - "Laptop broken"
+  answer: 0
+  explain: "Refused means nothing is listening on port 22."

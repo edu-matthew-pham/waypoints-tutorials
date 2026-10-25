@@ -1,0 +1,42 @@
+summary: "On a Pi you add programs with apt, from a software source on the internet. You update the lists first, then install. sudo runs one command as the administrator, and the system records who used it."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can update the package lists, then install a program."
+  - "I can say what sudo does and why a normal user needs it."
+  - "I can explain what happens when there is no internet."
+struggle: "Update versus upgrade. Update gets the list; upgrade installs newer versions. Say it as: update the menu, upgrade the meal."
+before: |
+  Try the boards yourself.
+
+  The one idea: the operating system keeps programs apart from users, so changing the system needs an administrator, and apt fetches programs from a software source.
+
+  Simplification: the pretend software source has seven packages (samba, jellyfin, ufw, tree, cowsay, unattended-upgrades and vim); real ones have tens of thousands. Pi OS Lite already has nano, openssh-server and cron.
+
+  Offline: the course works without the internet on the pretend Pi. On a real Pi with no internet, plan for it in advance: download the `.deb` packages and their dependencies on another computer and install with `sudo apt install ./file.deb`; or run a local mirror (for example `apt-cacher-ng` on one Pi in the room); or use the Pi's own power: with no network, `sudo apt update` fails by design. Jellyfin is not in Raspberry Pi OS's own list: a real install adds Jellyfin's repository first (lesson 6 says so). Say this before students try it for real.
+
+  With internet: automatic security updates (`unattended-upgrades`) belong in the last lessons.
+
+  Real Pi (optional, any time): the pretend Pi is the same for every student, so nothing here needs hardware. If you have Pis, any number per group works, Pi 4 or Pi 5. A Pi 5 needs a 27 W USB-C supply (a 15 W phone charger makes it complain and limit USB power). Students can sit at a Pi with a screen and keyboard, or reach it by `ssh` from a laptop once it is on the network. Either start works for every lesson after the first: choose a ready-made image (you set the hostname, the user and ssh once, then clone the card) or have students flash their own with Raspberry Pi Imager (OS: Raspberry Pi OS Lite 64-bit; in the settings set a hostname, a user and password, ssh on, and Wi-Fi if needed). Both reach lesson 2 in the same state. To start again: reflash the card, or write a short reset script (remove added users, `sudo apt remove`, restore saved config files) and run it.
+running:
+  - "Predict: wrong answers think apt already knows everything."
+  - "Try: ask what update changed."
+  - "Worked example: stop at the sudo question and ask who decides who may sudo (lesson 3)."
+  - "Vary: after the offline task, ask what a school would do."
+  - "Make: ask why admins update first on a new machine."
+stuck:
+  - see: "A student gets 'Unable to locate package'."
+    ask: "Did you run sudo apt update?"
+    fix: "Update the lists, then install."
+  - see: "A student gets 'Permission denied'."
+    ask: "Did you use sudo?"
+    fix: "sudo apt install name."
+stretch: "Find out what a repository is and why Jellyfin asks you to add one."
+support: "A card with the order: update, then install."
+leads: |
+  Links: The command line (permissions); next: Accounts, groups and sudo (who is allowed to sudo).
+exit:
+  q: "Why do you run sudo apt update before installing?"
+  a: "It downloads the list of packages; without it, a new Pi does not know what exists."
+explain: |
+  `sudo apt update` downloads the list of available programs. `sudo apt install name` installs one. `sudo apt upgrade` installs newer versions. `sudo` runs one command as the administrator, and the system records who used it. Without a network, apt cannot reach its source.

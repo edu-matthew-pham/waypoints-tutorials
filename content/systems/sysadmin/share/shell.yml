@@ -1,0 +1,55 @@
+# Boards for "Share files with Samba".
+
+# region: run
+widget: shell
+fs: pi
+pkgs: samba
+has: /etc/samba/smb.conf | [classshare]
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+pkgs: samba
+run: echo -e "[classshare]\npath = /srv/class" | sudo tee -a /etc/samba/smb.conf; sudo systemctl restart smbd; smbclient -L localhost
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+pkgs: samba
+users: alex:class
+group: /srv/class | class
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+pkgs: samba
+users: alex:class
+run: sudo chgrp class /srv/class
+writes: alex /srv/class
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+pkgs: samba
+users: bob
+run: sudo chmod 777 /srv/class
+nowrite: bob /srv/class
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+pkgs: samba
+users: alex:class
+has: /etc/samba/smb.conf | [class] | /srv/class
+writes: alex /srv/class
+# endregion

@@ -1,0 +1,25 @@
+inquiry:
+  q: "The computer breaks tonight. What would you wish you had done last week?"
+  prompts:
+  - "What would you lose?"
+  - "How would you know the copy works?"
+  notes: "A copy somewhere else, made automatically, and tested."
+activities:
+- at: predict
+  kind: activity
+  title: "Cron cards"
+  minutes: 5
+  do: "Five cards in a row: minute, hour, day, month, weekday. Give a schedule in words and the class builds the line."
+  notes: "Order matters: minute comes first."
+questions:
+- at: investigate
+  title: "Fields"
+  type: question
+  q: "In 30 2 * * *, what is 30?"
+  options:
+  - "The minute"
+  - "The hour"
+  - "The day"
+  - "The weekday"
+  answer: 0
+  explain: "The first field is the minute."

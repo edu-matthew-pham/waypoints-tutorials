@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Alex is in the group class.
+Sam wants to give Alex sudo as well, so types sudo usermod -G sudo alex.
+Sam checks: alex is in sudo.
+So Alex is now in class and sudo.
+# endregion

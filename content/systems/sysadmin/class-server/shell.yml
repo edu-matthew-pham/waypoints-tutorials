@@ -1,0 +1,56 @@
+# Boards for "Challenge: the class server".
+
+# region: run
+widget: shell
+fs: pi
+from: laptop
+pkgs: ufw
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+pkgs: ufw
+run: sudo ufw allow ssh; sudo ufw enable; sudo ufw status
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+updated: on
+pkg: samba
+svc: jellyfin
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+pkgs: ufw jellyfin
+port: 8096
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+pkgs: samba
+disabled: smbd
+svc: smbd
+ran: reboot
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+updated: on
+pkgs: ufw
+users: alex:class, bob:class
+port: 445
+has: /etc/samba/smb.conf | [class] | /srv/class
+writes: alex /srv/class
+cron: 30 2 * * *
+# endregion

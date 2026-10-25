@@ -1,0 +1,53 @@
+# Boards for "Host Jellyfin, a media server".
+
+# region: run
+widget: shell
+fs: pi
+updated: on
+port: 8096
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+pkgs: jellyfin
+run: ss -tln
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+pkgs: jellyfin
+access: jellyfin /srv/media/holiday.mp4
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+pkgs: jellyfin ufw
+port: 8096
+ufw: on
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+pkgs: jellyfin
+port: 8096
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+updated: on
+pkgs: ufw
+ufw: on
+pkg: jellyfin
+access: jellyfin /srv/media/holiday.mp4
+port: 8096
+# endregion

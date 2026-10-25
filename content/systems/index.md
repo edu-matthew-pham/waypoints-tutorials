@@ -46,4 +46,5 @@ pathways:
     about: "**The command line** (Years 8–10) supports AC9TDI10K01 (what the operating system does, and access control): folders and paths, reading and finding, changing files, pipes and permissions, on a pretend Linux computer in the browser. For the real thing: a Raspberry Pi, WebVM in a browser tab, or Mac Terminal (teacher notes)."
     courses:
       - { path: systems/shell, id: shell, stage: foundations, tagline: "Talk to the computer in its own words." }
+      - { path: systems/sysadmin, id: sysadmin, stage: extensions, after: [shell], tagline: "Run a server, then keep it safe." }
 ---

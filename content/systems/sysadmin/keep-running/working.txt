@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam wants a backup every 15 minutes.
+Sam writes the cron line 15 * * * *.
+Sam says: the first number is 15, so it runs every 15 minutes.
+So four backups an hour.
+# endregion

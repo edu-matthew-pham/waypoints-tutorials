@@ -1,0 +1,25 @@
+inquiry:
+  q: "Where do programs come from, and who decides what gets installed?"
+  prompts:
+  - "How does your phone get apps?"
+  - "Who should be allowed to add programs to a shared computer?"
+  notes: "A store or source; only administrators."
+activities:
+- at: predict
+  kind: discussion
+  title: "Menu and meal"
+  minutes: 4
+  do: "Update the menu, then order. What happens if you order before you have seen the menu?"
+  notes: "That is what apt install without update does."
+questions:
+- at: investigate
+  title: "Order"
+  type: question
+  q: "Which comes first on a new Pi?"
+  options:
+  - "sudo apt update"
+  - "sudo apt install"
+  - "sudo reboot"
+  - "sudo apt remove"
+  answer: 0
+  explain: "The lists have to be downloaded before anything can be installed."

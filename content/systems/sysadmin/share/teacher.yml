@@ -1,0 +1,40 @@
+summary: "Samba shares a folder so Windows, Mac and Linux computers can use it. The share is described in a config file the service reads when it starts, so you restart it after a change. The folder's group and permissions decide who may write."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can add a share to Samba and restart the service."
+  - "I can use tee to write a file I do not own."
+  - "I can set a folder so a group can write and strangers cannot."
+struggle: "The sudo-and-redirect gotcha. Run the failing command so students read the error."
+before: |
+  Try the boards yourselves.
+
+  The one idea: a service reads its settings at start-up, and the files it serves have owners, groups and permissions that decide who may use them.
+
+  Simplifications: the pretend smb.conf only needs [name] and path. The real one also wants `read only = no`, `valid users = @class` and a Samba password for each user (`sudo smbpasswd -a alex`), because Samba's passwords are separate from the Pi's. Say this before students try it for real.
+
+  Taught: Samba (works with Windows, Mac and Linux). Other options to name: NFS (file sharing between Linux computers, simpler but with no passwords), Nextcloud (a web page for files, like your own Drive, needs a web server and database), Syncthing (copies folders between computers).
+
+  With internet: sharing outside the school needs a VPN (Tailscale or WireGuard) or the files can be read by anyone who finds the port. Do not open router ports for Samba.
+running:
+  - "Predict: wrong answers think the service watches its file."
+  - "Try: show the failing sudo echo version first."
+  - "Worked example: stop at 777 and ask who else it lets in."
+  - "Vary: after taking rights away, ask whether Bob is stopped from reading."
+  - "Make: ask what a real hand-in folder would also need."
+stuck:
+  - see: "Permission denied writing smb.conf."
+    ask: "Are you using sudo echo with >> ?"
+    fix: "echo ... | sudo tee -a file."
+  - see: "The share does not appear."
+    ask: "Did you restart smbd?"
+    fix: "sudo systemctl restart smbd."
+stretch: "Find out why Samba needs its own password for each user."
+support: "A card with the three jobs: share, restart, group."
+leads: |
+  Links: Who can read what (permissions); Accounts, groups and sudo; next: Host Jellyfin.
+exit:
+  q: "Why does smbd need a restart after you edit smb.conf?"
+  a: "It reads the file when it starts, not every time it is used."
+explain: |
+  A **share** is a folder offered over the network. Samba reads its shares from `/etc/samba/smb.conf` when it starts, so after a change you restart it: `sudo systemctl restart smbd`. Who may write is decided by the folder's owner, group and permissions: `sudo chgrp class /srv/class` and `sudo chmod 775 /srv/class`. Writing a root-owned file needs `echo ... | sudo tee -a file`.

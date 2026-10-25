@@ -1,0 +1,25 @@
+inquiry:
+  q: "Thirty students need to hand in work to one place. Who should be able to do what?"
+  prompts:
+  - "Who may add files? Who may only read?"
+  - "What would stop strangers?"
+  notes: "Group members write; others read or nothing."
+activities:
+- at: predict
+  kind: discussion
+  title: "Who writes?"
+  minutes: 4
+  do: "Draw the folder and three people: Alex (class), Bob (not in class), a stranger. Mark who may read and who may write."
+  notes: "Group write; others read at most."
+questions:
+- at: investigate
+  title: "Restart"
+  type: question
+  q: "You edited smb.conf. What now?"
+  options:
+  - "Restart smbd"
+  - "Nothing"
+  - "Reboot router"
+  - "Reinstall"
+  answer: 0
+  explain: "It reads its settings at start."

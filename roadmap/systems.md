@@ -182,8 +182,8 @@ Not built; needs a decision first. Today every security lesson is simulated and 
 - **Gate:** teacher-led sign-off like the LiPo one in Power and motors: agreed rules, isolated lab only, school IT and policy approval. It breaks the "no attack or exploit practice" rule for the simulated courses, so say so in its course page and keep the simulated courses unchanged.
 - **Shape:** mostly teacher notes and printable task sheets (the `briefs.yml` format fits), with little on-page content, because the work happens on the Pi. Open: kit cost per group, who builds the target, whether a pre-made Pi image is worth building.
 
-## Proposed (25 Oct 2026, Matthew: track it): System admin on a Raspberry Pi
-Not built. A course after The command line, which teaches the same commands in a pretend terminal; here students keep a real machine running for other people. Works on an offline lab network (a Pi per group and a switch, no internet, nothing on the school network).
+## Built (25 Oct 2026): System admin on a Raspberry Pi
+Built 25 Oct (`content/systems/sysadmin/`, eight lessons, extension after The command line, Years 9–10, project brief `admin-report`; the shell widget gained a Pi layer, `fs: pi | laptop`). Notes from the build: the pretend `pi` is not in `adm`, so reading `auth.log` needs `sudo` (a simplification, in the teacher notes); apt has seven packages; a real Samba share also needs `smbpasswd` and a few more config lines, and a real Pi needs Jellyfin's repository added first (both in the teacher notes); apt needs a source, so offline classes need a local mirror or `.deb` files (lesson 2 notes). No clips or voice (a picture each), so no clip ports used. Not tried with a class; real-Pi path untested. A course after The command line, which teaches the same commands in a pretend terminal; here students keep a real machine running for other people. Works on an offline lab network (a Pi per group and a switch, no internet, nothing on the school network).
 1. Set up: flash the OS, first boot, connect with `ssh`.
 2. Software: `apt` install, update, remove.
 3. Users and groups: accounts, `sudo`, who can do what.

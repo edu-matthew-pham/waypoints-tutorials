@@ -1,0 +1,40 @@
+summary: "A server that nobody looks after fails. Back up what matters with tar to a separate disk, schedule the job with cron, watch the disk space, and test the restore: a backup you have never restored is only a hope."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can back up a folder with tar and list or restore it."
+  - "I can read and write a cron schedule."
+  - "I can say why a backup must be on a different disk and be tested."
+struggle: "The five cron fields. Write them above the line: minute hour day month weekday."
+before: |
+  Try the boards yourselves.
+
+  The one idea: running a system means planning for failure: a copy on a different disk, a schedule that runs without you, and a restore you have tested. This is the overall picture of securing a system (AC9TDI10K01 node 5): backups, firewall, accounts and updates each cover a different risk.
+
+  Simplifications: tar paths are shown as typed; the pretend /media/usb is a USB drive. `crontab -e` opens an editor on a real Pi (nano); the board refuses it and takes `echo "..." | crontab -`, which replaces your whole schedule. Disk sizes are made up.
+
+  Other options: `rsync` copies only what changed and suits big folders; `rsnapshot` and `borg` keep many versions.
+
+  With internet: off-site backups (rclone to cloud storage, or another Pi at home) protect against fire and theft; automatic security updates (`unattended-upgrades`) keep the Pi patched; monitoring can email you when the disk is nearly full.
+running:
+  - "Predict: wrong answers read the fields as 'every 30 minutes'."
+  - "Try: ask what would be lost if the card failed now."
+  - "Worked example: stop at the untested backup and ask how you would know."
+  - "Vary: after the restore, ask how often it should be tested."
+  - "Make: ask what the 3-2-1 rule is (three copies, two kinds of media, one off-site)."
+stuck:
+  - see: "A cron line does not run when expected."
+    ask: "Which field is the minute? The hour?"
+    fix: "Minute, hour, day, month, weekday, in that order."
+  - see: "tar says it cannot find the folder."
+    ask: "Where are you? Does the path start from there?"
+    fix: "cd to the parent, or give the whole path."
+stretch: "Find out what the 3-2-1 backup rule says."
+support: "The five fields written above a cron line."
+leads: |
+  Links: Cyber safety and privacy › Threat models; Security and privacy; next: The class server.
+exit:
+  q: "What are two reasons a backup might fail you?"
+  a: "It is on the same disk; it has never been tested."
+explain: |
+  `tar -czf backup.tar.gz folder` makes a compressed copy; `tar -tzf` lists it; `tar -xzf` restores it. `cron` runs a command on a schedule: five fields (minute, hour, day of month, month, weekday), so `30 2 * * *` is 02:30 every day. Keep the backup on a different disk, and test the restore.

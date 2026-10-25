@@ -1,0 +1,42 @@
+summary: "Set up the Pi as the class server: a hand-in share, accounts in one group, a firewall that lets only the right ports through, and a nightly backup. Then explain what each part protects, and what it does not."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can set up a share, accounts, a firewall and a backup that work together."
+  - "I can say what each part protects against and what it does not."
+  - "I can explain why exposing a server to the internet raises the stakes."
+struggle: "The order of the firewall steps and remembering every layer. Give students a checklist and tick it as they go."
+before: |
+  Try the board yourself; it is the longest Make in the course.
+
+  The one idea: several components together secure a networked system, and each covers a different risk. Students should leave able to say, for each layer, what it does not protect: the firewall does not stop a stolen password; permissions do not stop a failed disk; a backup does not stop a leak.
+
+  Simplifications: the pretend firewall tracks `allow <port>` and `enable`, not source addresses or default policies. The real `ufw` lets you restrict by network (for example only 192.168.1.0/24) which is what a school would do.
+
+  This is the capstone for System admin. Students then complete the brief (an admin log and a short report), which assesses AC9TDI10K01 nodes 3 and 5. If you have a real Pi, setting up the same server on it is a good practical.
+
+  A later extension, a lab with Kali Linux on a Pi in an offline network, is planned (roadmap/systems.md); it needs your sign-off and a lab network the school IT team approves.
+
+  With internet: automatic updates, off-site backups and a VPN (Tailscale or WireGuard) belong on a server people use from home. A domain name and certificate (Let's Encrypt) matter when a service is public, and so does an honest answer to 'should it be public at all?'
+running:
+  - "Predict: wrong answers think the rule can come second."
+  - "Try: ask what would have happened in the other order."
+  - "Worked example: ask which layer would have stopped each of the 'what if' stories."
+  - "Vary: have pairs check each other's work."
+  - "Make: ask each pair which layer they would add next."
+stuck:
+  - see: "The share works but nobody can save."
+    ask: "Who owns the folder, and which group?"
+    fix: "chgrp class and chmod 775."
+  - see: "A student gets locked out of ssh."
+    ask: "Did you allow ssh before enabling?"
+    fix: "Restart the board: this is the lesson. On a real Pi it needs a keyboard."
+stretch: "Add automatic security updates (unattended-upgrades) and say which risk they cover."
+support: "A checklist of the five layers."
+leads: |
+  Links: Networks (ports); Cyber safety and privacy; Security and privacy; The command line.
+exit:
+  q: "Name two layers of the class server and one thing each does not protect against."
+  a: "Any two, for example: firewall (does not stop a stolen password), backup (does not stop a leak)."
+explain: |
+  No single lock secures a server. **Accounts and groups** decide who; **permissions** decide what; the **firewall** decides which ports can be reached (allow ssh before you enable it); a **backup** with a **schedule** covers what happens when it breaks. Exposing a server to the internet raises the stakes: use a VPN instead of opening router ports.

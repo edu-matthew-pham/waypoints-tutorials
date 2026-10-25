@@ -1,0 +1,44 @@
+# Boards for "Keep it running: backups and schedules".
+
+# region: run
+widget: shell
+fs: pi
+exists: /media/usb/docs.tar.gz
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+run: tar -czf /media/usb/docs.tar.gz Documents; ls -l /media/usb
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+cron: 30 2 * * *
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+run: tar -czf /media/usb/docs.tar.gz Documents; rm Documents/readme.txt
+exists: /home/pi/Documents/readme.txt
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+ran: df du
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+exists: /media/usb/backup.tar.gz
+cron: 30 2 * * *
+# endregion

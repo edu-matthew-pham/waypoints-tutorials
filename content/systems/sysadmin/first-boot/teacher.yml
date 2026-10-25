@@ -1,0 +1,40 @@
+summary: "A Raspberry Pi can run with no screen. From your laptop you reach it by name or address and type to it with ssh. Every command after ssh runs on the Pi, until you type exit."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 10 min · Practise and Make 12 min"
+goals:
+  - "I can log in to the Pi from my laptop with ssh."
+  - "I can say where a command runs: on the laptop, or on the Pi."
+  - "I can explain why a name is steadier than an address."
+struggle: "Students forget which computer they are typing on. Read the prompt aloud every time: sam@laptop or pi@raspberrypi."
+before: |
+  Try the boards yourself.
+
+  The one idea: ssh joins your keyboard to another computer, so commands run there. Names and addresses find a computer (Networks › Across the internet); an account says who may use it (Security and privacy).
+
+  Simplifications: the pretend laptop knows one Pi, `raspberrypi.local` or `192.168.1.23`, and its password is always accepted. A real Pi asks for the password you set.
+
+  Real Pi (optional, any time): the pretend Pi is the same for every student, so nothing here needs hardware. If you have Pis, any number per group works, Pi 4 or Pi 5. A Pi 5 needs a 27 W USB-C supply (a 15 W phone charger makes it complain and limit USB power). Students can sit at a Pi with a screen and keyboard, or reach it by `ssh` from a laptop once it is on the network. Either start works for every lesson after the first: choose a ready-made image (you set the hostname, the user and ssh once, then clone the card) or have students flash their own with Raspberry Pi Imager (OS: Raspberry Pi OS Lite 64-bit; in the settings set a hostname, a user and password, ssh on, and Wi-Fi if needed). Both reach lesson 2 in the same state. To start again: reflash the card, or write a short reset script (remove added users, `sudo apt remove`, restore saved config files) and run it.
+
+  Other options: this lesson uses `ssh`, which is on Mac, Linux and recent Windows. On older Windows, PuTTY does the same job. A Pi with a screen and keyboard needs no ssh at all; the next lessons are identical.
+running:
+  - "Predict: the wrong answers think the laptop does the work."
+  - "Try: ask whose prompt it is."
+  - "Worked example: point out how little changes on screen, but everything changes where it runs."
+  - "Vary: ask why a wrong user is refused even though the Pi is reachable."
+  - "Make: ask what an administrator checks first when a server seems slow."
+stuck:
+  - see: "A student runs commands and nothing seems to change."
+    ask: "Whose prompt is it? Have you logged in?"
+    fix: "ssh pi@raspberrypi.local first."
+  - see: "A student types exit and thinks the Pi has shut down."
+    ask: "What did exit end?"
+    fix: "Only the session. The Pi keeps running."
+stretch: "Find out what ssh keys are and why many servers do not allow passwords at all."
+support: "Write the two prompts on the board: sam@laptop and pi@raspberrypi."
+leads: |
+  Links: Networks › Across the internet (names and addresses); Security and privacy › Names and addresses; next: Install software.
+exit:
+  q: "Where does a command run after you ssh to the Pi, and how do you get back?"
+  a: "On the Pi. Type exit to return to your laptop."
+explain: |
+  `ssh pi@raspberrypi.local` joins your keyboard to the Pi. After you log in, every command runs on the Pi, and only the text comes back. `exit` brings you back. The name `raspberrypi.local` is steadier than the address, which the router may change.

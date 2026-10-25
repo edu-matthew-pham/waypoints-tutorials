@@ -1,0 +1,8 @@
+# Working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+smbd is stopped, so the class share is down.
+Sam types sudo systemctl enable smbd.
+The command prints no error.
+So the share is up. Sam tells the class.
+# endregion

@@ -1,0 +1,54 @@
+# Boards for "Services: start, stop and enable".
+
+# region: run
+widget: shell
+fs: pi
+pkgs: samba
+stopped: smbd
+disabled: smbd
+svc: smbd
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+pkgs: samba
+run: sudo systemctl stop smbd; systemctl status smbd
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+pkgs: samba
+svc: smbd
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+pkgs: samba
+disabled: smbd
+svc: smbd
+ran: reboot
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+pkgs: samba
+ran: journalctl
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+pkgs: samba
+disabled: smbd
+svc: smbd
+ran: reboot
+# endregion

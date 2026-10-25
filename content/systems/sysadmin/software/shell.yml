@@ -1,0 +1,45 @@
+# Boards for "Install software with apt".
+
+# region: run
+widget: shell
+fs: pi
+pkg: tree
+# endregion
+
+# region: explain
+widget: shell
+fs: pi
+# endregion
+
+# region: explain-pic
+widget: shell
+fs: pi
+run: sudo apt update; sudo apt install tree; tree
+# endregion
+
+# region: v1
+widget: shell
+fs: pi
+pkg: cowsay
+# endregion
+
+# region: v2
+widget: shell
+fs: pi
+updated: on
+pkgs: tree
+pkg: tree
+# endregion
+
+# region: v3
+widget: shell
+fs: pi
+net: off
+# endregion
+
+# region: make
+widget: shell
+fs: pi
+pending: 12
+pkg: tree
+# endregion
