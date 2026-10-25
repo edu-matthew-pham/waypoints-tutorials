@@ -1,0 +1,19 @@
+# Practice for "Graphing a quadratic".
+templates:
+  - q: "A parabola crosses the x-axis at x = {a} and x = {b}. What is the x-coordinate of its turning point?"
+    vars: { a: "-6..4", b: "6..14" }
+    where: "(a + b) % 2 == 0"
+    answer: "{(a + b) / 2}"
+    feedback:
+      - ["{a + b}", "That adds the intercepts. Halve it."]
+    explain: "({a} + {b}) ÷ 2 = {(a + b) / 2}."
+  - q: "A ball follows y = {b}x - x², landing after {b} seconds. How high is it at its highest? (x in seconds, y in metres)"
+    vars: { b: [2, 4, 6, 8, 10, 12] }
+    answer: "{b * b / 4}"
+    feedback:
+      - ["{b / 2}", "That's the time of the highest point. The height is y."]
+    explain: "The top is at x = {b / 2}. y = {b} × {b / 2} − {b / 2}² = {b * b / 4}."
+  - q: "A ball is thrown and lands {t} seconds later. After how many seconds is it highest?"
+    vars: { t: [2, 4, 6, 8, 10, 12, 14] }
+    answer: "{t / 2}"
+    explain: "The path is symmetrical, so the top is halfway: {t} ÷ 2 = {t / 2}."

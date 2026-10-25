@@ -1,0 +1,8 @@
+# Jo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: jo
+The ball's height is y = 6x - x^2, with x in seconds.
+The turning point is at (3, 9).
+So the highest the ball goes is 3 metres.
+It's highest after 3 seconds.
+# endregion

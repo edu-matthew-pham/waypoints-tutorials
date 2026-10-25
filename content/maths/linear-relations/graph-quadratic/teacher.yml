@@ -1,0 +1,39 @@
+summary: "Students graph a quadratic, find its axis of symmetry and turning point from the x-intercepts, and say what each coordinate means for a thrown ball (AC9M9A04, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can find the axis of symmetry halfway between the x-intercepts.
+  - I can find the turning point and say what each coordinate means.
+  - I can say where a model of a ball stops making sense.
+struggle: "Reading the height from the wrong axis. Ask: which axis is the height on?"
+before: |
+  Students need Recognising a quadratic and The midpoint.
+
+  The one idea: a parabola is symmetrical, so the turning point is halfway between the x-intercepts, and the x-coordinate is a time while the y-coordinate is a height. The common mistake is reporting the x-coordinate as the height (Jo's working).
+
+  The ball's formula and numbers are made up for the task. The model leaves out air resistance.
+running:
+  - "Predict: take a show of hands. Those who chose 'can't tell' haven't linked the arc to its symmetry."
+  - "Run: ask students to say the time and the height at P in words."
+  - "Paper: the try-one after the worked example and the highest point in Make are worked on paper first. Books out, and look for the axis found before the height."
+  - "Modify: before they set b, ask when the ball lands for b = 8."
+stuck:
+  - see: "A student reports 3 as the greatest height."
+    ask: "Is 3 a time or a height?"
+    fix: "A time: the height is y = 9."
+  - see: "A student finds the axis by adding the intercepts."
+    ask: "Is the middle of 1 and 5 bigger than both?"
+    fix: "Halve the sum: (1 + 5) ÷ 2 = 3."
+stretch: "Show that the ball's highest point for y = bx − x² is at x = b/2, and find the height in terms of b."
+support: "Mark both intercepts on a printed graph and fold the paper to find the axis."
+leads: |
+  Continues AC9M9A04 node 2.
+
+  Where it leads: Solving by factorising, using the null factor law.
+exit:
+  q: "A parabola crosses the x-axis at 2 and 10. What is the x-coordinate of its turning point?"
+  a: "6."
+explain: |
+  A parabola is symmetrical about its axis, and the turning point sits on the axis, halfway between the x-intercepts.
+
+  The turning point of a thrown ball's graph gives the time of the highest point (x) and the greatest height (y).

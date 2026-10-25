@@ -1,0 +1,21 @@
+# Boards for "Graphing a quadratic". About equal scale is not needed here; heights are in metres.
+
+# region: run
+widget: graph
+x: -1, 8
+y: -3, 12
+axes: Time (s), Height (m)
+snap: 1
+plot: y = 6x - x^2, from 0, to 6
+point P: 1, 5, drag
+# endregion
+
+# region: vary
+widget: graph
+x: -1, 12
+y: -3, 28
+grid: 1, 2
+axes: Time (s), Height (m)
+slider b: 2, 10, 6, 1
+plot: y = bx - x^2, from 0
+# endregion
