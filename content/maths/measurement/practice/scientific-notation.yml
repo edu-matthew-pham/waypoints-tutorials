@@ -1,0 +1,22 @@
+# Practice for "Scientific notation".
+templates:
+  - q: "Write {d * pow(10, k)} as a × 10^k with a from 1 to 10. What's k?"
+    vars: { d: "11..99", k: "2..6" }
+    where: "d % 10 != 0"
+    answer: "{k + 1}"
+    explain: "The point moves {k + 1} places right from {d / 10} to {d * pow(10, k)}: k = {k + 1}."
+  - q: "Write {rd(d * pow(10, 0 - m), m)} as a × 10^k with a from 1 to 10. What's k?"
+    vars: { d: "11..99", m: "3..6" }
+    where: "d % 10 != 0"
+    answer: "{1 - m}"
+    explain: "The point moves {m - 1} places right to reach {d / 10}, so the power is negative: k = {1 - m}."
+  - q: "Write {a} × 10^{k} as an ordinary number."
+    vars: { a: "2..9", k: "2..6" }
+    answer: "{a * pow(10, k)}"
+    form: simplified
+    explain: "The point moves {k} places right: {a * pow(10, k)}."
+  - q: "Write {a} × 10^-{m} as a decimal."
+    vars: { a: "2..9", m: "2..6" }
+    answer: "{rd(a * pow(10, 0 - m), m)}"
+    form: simplified
+    explain: "The point moves {m} places left: {rd(a * pow(10, 0 - m), m)}."

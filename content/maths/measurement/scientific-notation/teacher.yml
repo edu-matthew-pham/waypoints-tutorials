@@ -1,0 +1,39 @@
+summary: "Students write numbers in scientific notation with a number part from 1 to 10, see the decimal point move left or right on a board, and avoid the sign slip on small numbers (AC9M9M02, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can write a big number in scientific notation.
+  - I can write a small number in scientific notation with a negative power.
+  - I can turn scientific notation back into a decimal.
+struggle: "The sign of the power for small numbers. Ask students: did the point move right (a negative power) or left?"
+before: |
+  Do the Run board yourself first. Students need Negative powers.
+
+  This is a hinge lesson: exponent sign errors on small numbers corrupt everything after it. The common mistake is a positive power for a small number (Ravi's working).
+
+  The speed of light, 299 792 458 m/s, is exact (NIST). The lesson rounds it to 3 × 10⁸ for the task.
+running:
+  - "Predict: take a show of hands. Those who chose 3 × 10⁹ counted the digits (9) rather than the zeros or the moves."
+  - "Run: ask students to say which way the point moves before they press the slider."
+  - "Paper: the try-one after the worked example and the speed of light in Make are worked on paper first. Books out, and look for an arrow showing which way the point moved."
+  - "Modify: before 5.1 × 10⁻³, ask if the number is bigger or smaller than 1."
+stuck:
+  - see: "A student writes 0.0004 = 4 × 10⁴."
+    ask: "Is 0.0004 bigger or smaller than 1?"
+    fix: "Smaller, so the power is negative: 4 × 10⁻⁴."
+  - see: "A student writes 12 × 10³ as scientific notation."
+    ask: "Is 12 between 1 and 10?"
+    fix: "No: 1.2 × 10⁴."
+stretch: "Why does the number part have to be from 1 to 10? What goes wrong if it doesn't?"
+support: "A strip with the decimal point and an arrow, and a number line of powers of 10 from 10⁻⁵ to 10⁵."
+leads: |
+  Starts AC9M9M02.
+
+  Where it leads: calculating with scientific notation (next), measurements in science and medicine.
+exit:
+  q: "Write 0.0072 in scientific notation."
+  a: "7.2 × 10⁻³."
+explain: |
+  Scientific notation is a number from 1 up to (but not including) 10, times a power of 10.
+
+  Big numbers have a positive power: $45\,000 = 4.5 \times 10^4$. Small numbers have a negative power: $0.0072 = 7.2 \times 10^{-3}$. The power says how many places the decimal point moves.

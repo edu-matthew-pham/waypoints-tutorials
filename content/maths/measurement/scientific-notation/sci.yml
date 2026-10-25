@@ -1,0 +1,29 @@
+# Boards for "Scientific notation". a × 10ᵏ and the number written out.
+
+# region: run
+widget: placevalue
+mode: scientific
+slider a: 1, 9.9, 1.5
+slider k: -9, 12, 0
+# endregion
+
+# region: explain
+widget: placevalue
+mode: scientific
+a: 4.5
+slider k: -9, 12, 0
+# endregion
+
+# region: explain-pic
+widget: placevalue
+mode: scientific
+a: 3
+k: 8
+# endregion
+
+# region: vary
+widget: placevalue
+mode: scientific
+slider a: 1, 9.9, 2.5
+slider k: -9, 12, 3
+# endregion

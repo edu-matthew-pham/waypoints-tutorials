@@ -9,5 +9,6 @@ units:
   - { id: volume, title: Volume, summary: "Volume as layers: the area of the base times the height, for rectangular and triangular prisms, and capacity in millilitres; then (Year 8) litres and cubic metres, and prism problems." }
   - { id: circles, title: Circles, summary: "Centre, radius, diameter and circumference; rolling circles out to find π; and C = πd; then (Year 8) A = πr² and circle problems." }
   - { id: pythagoras, title: Pythagoras, summary: "Squares on the sides of a right-angled triangle, finding any side, and testing whether a triangle is right-angled." }
+  - { id: sci9, title: Scientific notation, summary: "Writing very big and very small numbers as a number from 1 to 10 times a power of 10, calculating with them, and using them for real measurements (Year 9)." }
   - { id: time, title: Time zones, summary: "Changing times between time zones, and when flights land." }
 ---

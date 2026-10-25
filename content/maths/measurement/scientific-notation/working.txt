@@ -1,0 +1,8 @@
+# Ravi's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ravi
+Write 0.0004 in scientific notation.
+The first digit is 4, so the number part is 4.
+The point moves 4 places, so the power is 4.
+So 0.0004 = 4 × 10⁴.
+# endregion
