@@ -1,0 +1,39 @@
+summary: "Students keep dividing a power down past zero, see that a negative power is a reciprocal and not a negative number, and use micrometre sizes to compare a hair and a cell (AC9M9A01, node 1)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can work out a negative power as a fraction or a decimal.
+  - I can explain why 2⁻³ is not −8.
+  - I can compare very small sizes written as powers of 10.
+struggle: "Believing a negative power makes a negative number. Keep going back to the pattern: divide by the base each time."
+before: |
+  Do the Run board yourself first. Students need the Year 8 index laws and a⁰ = 1.
+
+  The one idea: a negative power is a reciprocal. a⁻ⁿ = 1/aⁿ. The common mistake is reading it as a negative number (Tess's working).
+
+  Sizes: hair width about 20 to 200 micrometres and a typical red blood cell 6 to 8 micrometres (Wikipedia, Micrometre). The lesson uses 70 and 8: say they're chosen for the task.
+running:
+  - "Predict: take a show of hands. Those who chose −10⁶ read the negative power as a negative number."
+  - "Run: ask students to read the cancelled pairs and what's left underneath aloud."
+  - "Paper: the try-one after the worked example and the hair and cell in Make are worked on paper first. Books out, and look for both sizes written in metres."
+  - "Modify: before (1/2)⁻², ask which way the fraction flips."
+stuck:
+  - see: "A student writes 2⁻³ = −8."
+    ask: "What's 2⁻³ in the pattern 2², 2¹, 2⁰, ...?"
+    fix: "Keep halving: 4, 2, 1, 1/2, 1/4, 1/8."
+  - see: "A student writes 2⁻³ = 1/6."
+    ask: "What's 2³?"
+    fix: "8. The reciprocal is 1/8."
+stretch: "What is 0.5⁻³? Predict first, then check on the board."
+support: "A strip with the powers of 10 from 10³ down to 10⁻³ and the decimal for each."
+leads: |
+  Starts AC9M9A01.
+
+  Where it leads: all the index laws on numbers (next), index laws on letters, then scientific notation.
+exit:
+  q: "Work out 4⁻² as a fraction."
+  a: "1/16."
+explain: |
+  A negative power is a reciprocal: $a^{-n} = \dfrac{1}{a^n}$. For example, $2^{-3} = \dfrac{1}{2^3} = \dfrac{1}{8}$.
+
+  It's not a negative number. $10^{-6}$ is a millionth, a small positive number.

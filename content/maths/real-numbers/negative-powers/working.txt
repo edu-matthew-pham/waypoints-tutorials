@@ -1,0 +1,8 @@
+# Tess's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: tess
+Work out 3⁻².
+3⁻² means 3 to the power of −2.
+So 3⁻² = 3 × −2.
+That is −6.
+# endregion

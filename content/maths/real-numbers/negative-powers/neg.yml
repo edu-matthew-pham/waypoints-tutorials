@@ -1,0 +1,33 @@
+# Boards for "Negative powers". aᵐ ÷ aⁿ with n bigger than m: what's left underneath is 1 over a power.
+
+# region: run
+widget: indexlaws
+mode: negative
+a: 2
+slider m: 1, 6, 2
+slider n: 1, 6, 5
+# endregion
+
+# region: explain
+widget: indexlaws
+mode: negative
+a: 2
+slider m: 1, 6, 2
+slider n: 1, 6, 3
+# endregion
+
+# region: explain-pic
+widget: indexlaws
+mode: negative
+a: 2
+m: 2
+n: 5
+# endregion
+
+# region: vary
+widget: indexlaws
+mode: negative
+slider a: 2, 10, 10
+slider m: 1, 6, 2
+slider n: 1, 6, 5
+# endregion

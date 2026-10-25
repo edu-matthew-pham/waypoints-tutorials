@@ -1,0 +1,19 @@
+# Practice for "Negative powers".
+templates:
+  - q: "Work out {a}^-{n} as a fraction."
+    vars: { a: "2..9", n: "1..3" }
+    where: "pow(a, n) <= 100"
+    answer: "1/{pow(a, n)}"
+    form: simplest
+    feedback:
+      - ["-{pow(a, n)}", "A negative power isn't a negative number. It's a reciprocal."]
+    explain: "{a}^-{n} = 1/{a}^{n} = 1/{pow(a, n)}."
+  - q: "Work out {k} × 10^-{n} as a decimal."
+    vars: { k: "2..9", n: "1..4" }
+    answer: "{rd(k * pow(10, 0 - n), n)}"
+    form: simplified
+    explain: "10^-{n} = 1/{pow(10, n)}, so {k} × 10^-{n} = {k}/{pow(10, n)}."
+  - q: "How many metres is 10^-{n} m, as 1 over a power of 10? Type the power of 10 on the bottom as a number."
+    vars: { n: "1..6" }
+    answer: "{pow(10, n)}"
+    explain: "10^-{n} = 1/10^{n} = 1/{pow(10, n)}."
