@@ -390,3 +390,7 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 **Gaps worth knowing (honest, not failures):** user stories and decomposition (4), alternative designs (8), evaluation against future impact (10), agile project management (12) and spreadsheets and databases (1, 2) are not Code's job as built. Engineering and a possible Design and Technologies subject are the likelier homes.
 
 **To approve:** the table (move any entry), and whether "touches" is worth showing at all or only "main focus".
+
+### Review sheet for teachers (25 Oct 2026, built)
+`tools/review-sheet.mjs` makes `/teach/code/review/` (printable page) and `review.md` (Prepare Print Markdown), generated from `code-coverage.yml`, the courses' years and `after:`, so it cannot drift. Three tables: courses (Use, years you use it), standards (our focus and touches against Agree, Should be focus, Wrong) and the standards no course covers (Yes, I cover it another way / Gap). Linked from the Code subject page and the teacher guide index; in search. Same idea as the science practicals checklist (which science has since folded into its For science teachers page). Not yet given to any teacher; when sheets come back, fix `code-coverage.yml` and the course years. Needs the full or quick publish.
+

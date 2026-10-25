@@ -22,6 +22,7 @@ import { buildCreate } from './build-create.mjs';
 import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } from './trail.mjs';
 import { loadCurriculum, curriculumMapHtml, CMAP_CSS } from './curriculum-map.mjs';
 import { buildPointerPages, POINTER_SUBJECTS } from './pointer-pages.mjs';
+import { reviewSheet } from './review-sheet.mjs';
 import { makeSearch } from './search-index.mjs';
 import { loadCoverage, shortCode } from './coverage.mjs';
 import { searchBoxHtml, SEARCH_HINTS } from './search-view.mjs';
@@ -754,7 +755,7 @@ for (const node of dirs.values()) {
     const viewToggle = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
       `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trails</button><button type="button" data-view="list">List for teachers</button></div>`;
     // Find a lesson (25 Oct 2026): the search box limited to this subject, with the ways teachers also look beside it.
-    const finders = [cur ? `<a href="map/">Curriculum map</a>` : '', node.path === 'code' ? `<a href="${up}teach/code/ideas/">Big ideas across pathways</a>` : ''].filter(Boolean);
+    const finders = [cur ? `<a href="map/">Curriculum map</a>` : '', node.path === 'code' ? `<a href="${up}teach/code/ideas/">Big ideas across pathways</a> · <a href="${up}teach/code/review/">Review sheet</a>` : ''].filter(Boolean);
     const subjSearch = searchBoxHtml({ root: up, subject: node.path, hint: SEARCH_HINTS[node.path] || SEARCH_HINTS[''], extra: finders.length ? `Or browse: ${finders.join(' · ')}` : '' });
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
@@ -839,6 +840,17 @@ const ideasPages = SUBJECTS.filter((sub) => sub.pathways.length > 1 && !sub.teac
   writeFileSync(join(dir, 'index.html'), teachPage(`${sub.title}: ideas across pathways`, css + body, `teach/${sub.path}/ideas`, null));
   return { path: `${sub.path}/ideas/`, title: `${sub.title}: ideas across pathways` };
 }).filter(Boolean);
+// Code review sheet (tools/review-sheet.mjs): our coverage and year guesses as a printable tick-sheet for teachers.
+{
+  const codeCourses = COURSES.map((c) => c.path).filter((p) => p.startsWith('code/') && !p.startsWith('code/create'));
+  const rs = reviewSheet({ coverage: COVERAGE, courses: codeCourses, courseTitle: (p) => dirNode(p).title, yearsLabel: SEARCH.yearsLabel, yearsOf: SEARCH.yearsOfCourse,
+    lessonCount: (p) => lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === p && !l.optional).length, afterOf });
+  const dir = join(OUT, 'teach', 'code', 'review');
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, 'index.html'), teachPage('Code courses: which do you use?', rs.body, 'teach/code/review', null));
+  writeFileSync(join(dir, 'review.md'), rs.md);
+  ideasPages.push({ path: 'code/review/', title: 'Code courses: which do you use? (review sheet)' });
+}
 for (const coursePath of teachCourses) {
   const node = dirNode(coursePath);
   const ls = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === coursePath);
@@ -970,7 +982,7 @@ mkdirSync(join(OUT, 'teach'), { recursive: true });
 // Curriculum pointer pages (tools/pointer-pages.mjs): teacher-facing, linked only from here, draft and noindex until reviewed.
 const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curriculum', `${sub}.json`))).map((sub) => buildPointerPages(sub, { OUT, page, navFor, esc, lessons, coverage: COVERAGE, courseTitle: (p) => dirNode(p).title }));
 const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, ${esc(p.span)}${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
-writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>Each core idea, and the lesson where each pathway first teaches it.</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
+writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>${x.path.endsWith('review/') ? 'A printable tick-sheet: our course years and standards coverage, for you to correct.' : 'Each core idea, and the lesson where each pathway first teaches it.'}</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
 
 writeFileSync(join(OUT, '.nojekyll'), '');
 // Pages keeps its custom domain only while the published branch has this file, and a rebuild publish replaces the branch.
