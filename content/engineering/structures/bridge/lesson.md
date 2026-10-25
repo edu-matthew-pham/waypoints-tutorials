@@ -143,12 +143,12 @@ tasks:
 
 ```step
 stage: make
-insight: "Three criteria at once: hold the load, cost no more than $300, and keep a safety margin (fail at 1400 N or more). Students build, test, and test to failure."
+insight: "Four criteria at once, two of which pull against each other: hold the load, cost no more than $300, keep a safety margin (fail at 1400 N or more), and have a full deck so people can walk across. A cheaper bridge exists without the deck, so students see what a criterion costs."
 try: { playground: board, starter: "bridge.yml#make", height: 600 }
 tasks:
-  - hint: ["Start from the bridge you built in Vary.", "Take out any member that isn't needed: every joint still needs members in two directions.", "Press Load until it fails: it must hold 1400 N or more."]
-    check: { type: board, text: "Build a bridge that holds 1000 N, costs $300 or less, and gives way only at 1400 N or more. Test it, then load it until it fails.", when: "stable = 1 and fail = 0 and cost <= 300 and fail_load >= 1400", explain: "A Pratt (or Howe) truss: 13 members, $293, failing at about 1414 N." }
-  - check: { type: reflect, text: "In one or two sentences: which member failed first when you loaded it to failure, and how you would make the bridge stronger for the least money." }
+  - hint: ["Start from the bridge you built in Vary.", "Start from the bridge you built in Vary and take out members that aren't needed, but keep the deck A-B, B-C, C-D and D-E: a bridge without it is cheaper, but nobody can walk on it.", "Press Load until it fails: it must hold 1400 N or more."]
+    check: { type: board, text: "Build a bridge that holds 1000 N, costs $300 or less, gives way only at 1400 N or more, and has a deck people can walk on: members A-B, B-C, C-D and D-E. Test it, then load it until it fails.", when: "stable = 1 and fail = 0 and cost <= 300 and fail_load >= 1400 and f_ab > 0 and f_bc > 0 and f_cd > 0 and f_de > 0", explain: "A Pratt (or Howe) truss: 13 members, $293, failing at about 1414 N. Without the deck members a 9-member bridge costs about $253, so the deck is worth about $40." }
+  - check: { type: reflect, text: "In one or two sentences: which member failed first when you loaded it to failure, and how you would make the bridge stronger for the least money? Then say what the deck cost you, and whether you would keep it." }
 ```
 
 ### The cheapest safe bridge

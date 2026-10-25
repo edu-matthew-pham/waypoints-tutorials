@@ -81,7 +81,9 @@ Principles: borrow first and build only where a lesson needs a check (benchmark 
 
 - `engineering/mechanisms/losses` (Mechanisms unit Real machines; `assumes: [efficiency, energy-conservation, energy-transfer]`, so Science › Year 9 Efficiency and Conservation link to it): the winch's compound train lifts 2700 g, not 3000 g, at 95% per mesh; pulleys at 90% per wheel need 5 ropes instead of 3, and 9 and 10 ropes give the same pull; efficiencies multiply; work in = work out ÷ efficiency, the rest is heat and sound; a 900 N brief needs 6 ropes, not 3; the Gear trains brief redone (ratio 8.33 or 9 within 45 s). `efficiency:` option on the `train` and `lever` (pulley) widgets (default 100, so every earlier lesson is unchanged); pulleys now allow up to 10 ropes. Port 8600: Engineering's 8500–8539 are used up, so it continues at 8600–8639.
 
-## Proposed (25 Oct 2026, review chat; not approved): engineering thinking in Arduino and the capstones
+## Approved and built (25 Oct 2026, review chat): engineering thinking in Arduino and the capstones
+
+Built in three pushes: (1) Arduino Makes with a brief and edge tests, plus hints (fed7675); (2) all eight capstones: Develop compares two given ideas (checked question) then an unmarked `reasoning` box for the student's own two ideas; Test reads another team's results (checked question) before the student's own run, then a `reasoning` box for one fixed failure; (3) Bridge Make gains a deck criterion (A-B, B-C, C-D, D-E present, via `f_ab > 0 …`) that trades against cost: the cheapest safe bridge without the deck is about $253, with it $293. Not yet tried with a class; the bridge check and seven of the capstones are validated and built but not clicked through in a browser. The original proposal follows.
 
 From the six-subject review. Mechanisms and Structures already do design thinking well (Winch: criteria to a design, a "no pair passes" Vary ending in the trade-off for the client, a Make that reverses the job; Bridge: test to failure, then trade $300 against 1400 N). Arduino and the capstones are where it thins out. Nothing below is built.
 
