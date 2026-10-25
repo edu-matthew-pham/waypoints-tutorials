@@ -1,0 +1,39 @@
+summary: "Students find the straight-line distance between two points on a grid using Pythagoras on the across and up differences (AC9M9A03, node 3)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can find the across and up differences between two points.
+  - I can use Pythagoras to find the distance between them.
+  - I can say why the distance is shorter than going across and then up.
+struggle: "Adding the differences instead of squaring first. Ask: which side of the triangle is the distance?"
+before: |
+  Students need Gradient between two points and Pythagoras from Year 8.
+
+  The one idea: the distance is the long side of a right-angled triangle made from the across and up differences. The common mistake is adding the differences (Lin's working).
+
+  The helicopter, base and farms are made up for the task. The board's axes are about equal in scale, so the distance looks right.
+running:
+  - "Predict: take a show of hands. Those who chose 17 added the two distances: the helicopter isn't on the road."
+  - "Run: ask students to say the two short sides before they find the long one."
+  - "Paper: the try-one after the worked example and the second farm in Make are worked on paper first. Books out, and look for the squares written out."
+  - "Modify: before they move B to 10 km, ask what across and up they will use."
+stuck:
+  - see: "A student answers 7 for the distance between (1, 5) and (4, 1)."
+    ask: "Is 7 longer than the straight line should be?"
+    fix: "The straight line is the long side, √(9 + 16) = 5."
+  - see: "A student gets a negative number under the square root."
+    ask: "What is a negative number squared?"
+    fix: "Positive: (−4)² = 16."
+stretch: "Find all the whole-number points exactly 5 away from (0, 0)."
+support: "Draw the triangle on squared paper and count the two short sides."
+leads: |
+  Continues AC9M9A03 node 3.
+
+  Where it leads: the midpoint, a combined problem, then circles in Year 10 (all points a fixed distance from a centre).
+exit:
+  q: "Find the distance between (0, 0) and (8, 6)."
+  a: "10."
+explain: |
+  The straight-line distance between two points is the long side of a right-angled triangle.
+
+  Find the across and up differences, square them, add, then take the square root.

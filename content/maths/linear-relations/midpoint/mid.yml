@@ -1,0 +1,23 @@
+# Boards for "The midpoint".
+
+# region: run
+widget: graph
+x: -2, 14
+y: -1, 9
+snap: 1
+point A: 2, 3
+point B: 10, 9
+point M: 4, 4, drag
+segment: A, B
+# endregion
+
+# region: vary
+widget: graph
+x: -2, 14
+y: -1, 13
+snap: 1
+point A: 2, 3
+point M: 5, 7
+point B: 7, 7, drag
+segment: A, B
+# endregion

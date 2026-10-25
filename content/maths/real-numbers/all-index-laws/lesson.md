@@ -22,10 +22,10 @@ explainClip:
   say: "The laws are the same. Subtract the indices, even if the answer goes negative."
   clip:
     - caption: { text: "2² ÷ 2²: everything cancels. 2⁰ = 1.", say: "Two squared over two squared cancels to one." }
-    - click: Make n bigger
+    - click: Make the second index bigger
     - wait: 900
     - caption: { text: "2² ÷ 2³: 2 − 3 = −1, so 2⁻¹.", say: "Two minus three is minus one, so two to the minus one." }
-    - click: Make n bigger
+    - click: Make the second index bigger
     - wait: 900
     - caption: { text: "2² ÷ 2⁴: 2 − 4 = −2, so 2⁻².", say: "Two minus four is minus two." }
     - wait: 800

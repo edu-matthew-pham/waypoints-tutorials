@@ -24,7 +24,7 @@ explainClip:
     - caption: { text: "2² ÷ 2³: one 2 is left underneath.", say: "Two squared over two cubed leaves one two underneath." }
     - wait: 800
     - caption: { text: "That's 1/2 = 2⁻¹.", say: "That's one over two, which is two to the minus one." }
-    - click: Make n bigger
+    - click: Make the second index bigger
     - wait: 900
     - caption: { text: "2² ÷ 2⁴: two 2s underneath: 1/4 = 2⁻².", say: "Two squared over two to the fourth is one over four." }
     - wait: 900

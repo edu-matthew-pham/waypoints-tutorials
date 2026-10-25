@@ -1,0 +1,8 @@
+# Tam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: tam
+Find the midpoint of (2, 3) and (10, 9).
+Add the x-coordinates: 2 + 10 = 12
+Add the y-coordinates: 3 + 9 = 12
+The midpoint is (12, 12)
+# endregion

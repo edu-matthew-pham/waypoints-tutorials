@@ -1,0 +1,39 @@
+summary: "Students find the midpoint of two points by averaging each coordinate, and work backwards to a missing end point (AC9M9A03, node 4)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can find the point halfway between two points.
+  - I can average the x-coordinates and the y-coordinates separately.
+  - I can find an end point when I know the midpoint.
+struggle: "Adding without halving. Ask: is the answer between the two points?"
+before: |
+  Students need Gradient between two points.
+
+  The one idea: the midpoint is the average of each coordinate. The common mistake is adding without halving (Tam's working): a quick check is whether the answer lies between the two points.
+
+  The homes and schools are made up for the task.
+running:
+  - "Predict: take a show of hands. Those who chose (12, 12) added the coordinates."
+  - "Run: ask whether M is on the line and how far from each end."
+  - "Paper: the try-one after the worked example and the bus stop in Make are worked on paper first. Books out, and look for both averages written out."
+  - "Modify: before B moves, ask what the step from A to M is."
+stuck:
+  - see: "A student gets (12, 12) for the midpoint."
+    ask: "Is (12, 12) between the two points?"
+    fix: "No: halve each sum to get (6, 6)."
+  - see: "A student averages x and y together."
+    ask: "Which coordinates go together?"
+    fix: "x with x, and y with y."
+stretch: "Find a point a third of the way from A to B."
+support: "Count squares along the line on a grid and halve the count."
+leads: |
+  Continues AC9M9A03 node 4.
+
+  Where it leads: the combined problem next, then coordinate geometry proofs in Year 10.
+exit:
+  q: "Find the midpoint of (2, 6) and (8, 12)."
+  a: "(5, 9)."
+explain: |
+  The midpoint is halfway between two points.
+
+  Its x-coordinate is the average of the two x-coordinates, and its y-coordinate is the average of the two y-coordinates.

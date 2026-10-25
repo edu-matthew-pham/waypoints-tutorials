@@ -22,10 +22,10 @@ explainClip:
   say: "A letter is a number you haven't chosen yet. The same laws work."
   clip:
     - caption: { text: "a² × a¹: three a's in all: a³.", say: "A squared times a: three a's, so a cubed." }
-    - click: Make n bigger
+    - click: Make the second index bigger
     - wait: 900
     - caption: { text: "a² × a²: four a's: a⁴. The indices add.", say: "Two and two: four a's. The indices add." }
-    - click: Make n bigger
+    - click: Make the second index bigger
     - wait: 900
     - caption: { text: "a² × a³: five a's: a⁵.", say: "Two and three make five." }
     - wait: 800

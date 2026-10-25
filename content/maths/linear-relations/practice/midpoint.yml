@@ -1,0 +1,23 @@
+# Practice for "The midpoint".
+templates:
+  - q: "Find the x-coordinate of the midpoint of ({a}, {b}) and ({c}, {d})."
+    vars: { a: "0..8", b: "0..8", c: "0..8", d: "0..8" }
+    where: "(a + c) % 2 == 0 and a != c"
+    answer: "{(a + c) / 2}"
+    feedback:
+      - ["{a + c}", "That adds the x-coordinates. Halve it."]
+    explain: "({a} + {c}) ÷ 2 = {(a + c) / 2}."
+  - q: "Find the y-coordinate of the midpoint of ({a}, {b}) and ({c}, {d})."
+    vars: { a: "0..8", b: "-6..8", c: "0..8", d: "-6..8" }
+    where: "(b + d) % 2 == 0 and b != d"
+    answer: "{(b + d) / 2}"
+    feedback:
+      - ["{b + d}", "That adds the y-coordinates. Halve it."]
+    explain: "({b} + {d}) ÷ 2 = {(b + d) / 2}."
+  - q: "The midpoint of P and ({c}, {d}) is ({m}, {n}). What is the x-coordinate of P?"
+    vars: { c: "0..9", d: "0..9", m: "1..9", n: "1..9" }
+    where: "2 * m - c >= -3"
+    answer: "{2 * m - c}"
+    feedback:
+      - ["{m - c}", "That's the step from the end to the midpoint. Go the same again."]
+    explain: "({2 * m - c} + {c}) ÷ 2 = {m}, so P has x = {2 * m - c}."

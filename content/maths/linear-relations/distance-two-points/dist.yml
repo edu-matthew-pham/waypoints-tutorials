@@ -1,0 +1,23 @@
+# Boards for "Distance between two points". About equal scale on both axes.
+
+# region: run
+widget: graph
+x: -2, 14
+y: -1, 9
+snap: 1
+point A: 0, 0
+point B: 4, 3, drag
+segment: A, B
+rise: A, B
+# endregion
+
+# region: vary
+widget: graph
+x: -2, 14
+y: -1, 9
+snap: 1
+point A: 0, 0
+point B: 3, 3, drag
+segment: A, B
+rise: A, B
+# endregion
