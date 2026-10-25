@@ -64,23 +64,23 @@ tasks:
       q: "Why is it called a dichotomous key?"
       options: ["Each step splits into exactly two choices", "It uses two kinds of feature", "It identifies two organisms"]
       answer: 0
-      feedback: [null, "It can use many features, one per step.", "It can identify as many organisms as it has endings."]
-      explain: "Dichotomous means dividing into two."
+      feedback: [null, "It can use lots of different features, one at each step, so that isn't why it has the name.", "It can identify as many organisms as it has endings, so the name isn't about a pair of them."]
+      explain: "Dichotomous means dividing into two, which is what every step of the key does."
   - check:
       type: question
       q: "A student identified the crocodile as a green tree frog. Where did they most likely go wrong?"
       options: ["At \"Does it have dry, scaly skin?\": they answered no", "At \"Does it have a backbone?\"", "The key is wrong"]
       answer: 0
-      feedback: [null, "A crocodile does have a backbone: both frog and crocodile are down the same path until the skin question.", "The key leads to the crocodile when every answer matches its description."]
-      explain: "A wrong answer at one step sends you down the wrong branch, and every later answer can't fix it."
+      feedback: [null, "A crocodile has a backbone just like a frog, so both of them take the same branch there and the slip must come later.", "The key does lead to the crocodile when every answer matches its description, so the fault is more likely in how someone used it."]
+      explain: "One wrong answer sends you down the wrong branch, and no later answer can bring you back."
     hint: ["Follow the key for the crocodile and then for the frog, and see which question is the first one where their answers differ.", "Open 'The whole key' under the board and trace each path with your finger, because the wrong turn is on the stretch where the two paths part."]
   - check:
       type: question
       q: "Which is a good question for a key?"
       options: ["Does it have six legs?", "Is it scary?", "Is it big?", "Is it a kangaroo?"]
       answer: 0
-      feedback: [null, "People disagree about what is scary. Questions must be about features everyone can check.", "Big compared with what? It needs a clear yes or no.", "Asking for the name skips the point of the key."]
-      explain: "A good question is about an observable feature with a clear yes or no."
+      feedback: [null, "People disagree about what's scary, so a key needs questions about features everyone can check.", "Big compared with what? Two people could answer differently, so it needs a clear yes or no.", "Asking for the name skips the whole point of the key, which is to lead you to one."]
+      explain: "A good question asks about a feature you can observe, and it has a clear yes or no answer."
     hint: ["Picture two people looking at the same animal, and think about which of these they could still disagree on.", "Try each question on a real animal, like a kookaburra or a spider, and see which ones you could answer without anyone arguing."]
   - check: { type: reflect, text: "I can explain, step by step, how I used the key to identify one specimen, naming the feature at each step." }
 ```
@@ -105,8 +105,8 @@ check:
   q: "Looking back at why we classify: what job is a dichotomous key for?"
   options: ["Identifying an organism you do not know", "Deciding which organism is better", "Showing exactly how organisms are related", "Giving a new organism its name"]
   answer: 0
-  feedback: [null, "Groups describe features and relationships, not worth.", "A key sorts by features that are easy to check, one step at a time. It does not show ancestry.", "The name is chosen by scientists. A key leads you to a name that already exists."]
-  explain: "A key identifies an organism by asking about features you can observe. Different classifications suit different purposes."
+  feedback: [null, "Groups describe features and relationships, not how good an organism is, so a key can't decide that.", "A key sorts by features that are easy to check, one step at a time, so it doesn't show ancestry.", "Scientists choose the name, and a key only leads you to a name that already exists."]
+  explain: "A key identifies an organism by asking about features you can observe, and different classifications suit different purposes."
 ```
 
 ## Elaborate: a different key
@@ -124,8 +124,8 @@ tasks:
       q: "The two keys ask different questions in a different order, but give the same names. Why?"
       options: ["Each animal has the same features whichever order you check them in", "One of the keys must be wrong", "Keys always ask the same questions"]
       answer: 0
-      feedback: [null, "Both lead every specimen to its correct name.", "Look again: this one starts with legs, not a backbone."]
-      explain: "A key is one way of checking features. Different keys can sort the same organisms in different orders."
+      feedback: [null, "Both keys lead every specimen to its correct name, so neither one is wrong.", "They don't, actually, because this one starts with legs and not a backbone."]
+      explain: "A key is one way of checking features, and different keys can sort the same organisms in a different order."
 ```
 
 ### Second key
@@ -143,8 +143,8 @@ check:
   q: "A key's first question is \"Is it brown?\" The specimens include a brown kangaroo, a grey kangaroo and a brown spider. What is wrong with this question?"
   options: ["Colour varies within a species and isn't reliable: the two kangaroos go different ways", "Nothing: colour is observable", "It should ask about size instead"]
   answer: 0
-  feedback: [null, "Observable, yes, but unreliable: animals of the same kind can differ in colour.", "Size is even less clear-cut."]
-  explain: "Good keys use features that don't vary within a kind of organism: legs, body covering, backbone."
+  feedback: [null, "You can certainly see colour, but think about whether every animal of the same kind looks the same.", "Size wouldn't help, because it's even harder to give a clear yes or no."]
+  explain: "Good keys use features that don't vary within a kind of organism, such as legs, body covering and backbone."
 hint: ["Picture a brown kangaroo and a grey kangaroo, and think about which way each would go on that first question.", "Ask whether the two kangaroos would end up in the same place, and what that would mean for the key."]
 ```
 

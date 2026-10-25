@@ -66,16 +66,16 @@ tasks:
       options: ["A reason to classify", "Not a reason"]
       items:
         - ["To identify an organism they don't know", "A reason to classify"]
-        - ["To use names every scientist understands", "A reason to classify", "One scientific name, whatever language you speak."]
+        - ["To use names every scientist understands", "A reason to classify", "Each organism has one scientific name that works whatever language you speak."]
         - ["To see which organisms are related", "A reason to classify"]
         - ["To make the living world look neat", "Not a reason"]
-        - ["To decide which organisms are better", "Not a reason", "Groups describe features and relationships, not worth."]
+        - ["To decide which organisms are better", "Not a reason", "Groups describe features and relationships, so they don't say which organisms are better."]
   - check:
       type: question
       q: "Which is classification, not just a list?"
       options: ["Grouping animals by shared features, such as backbone or no backbone, then smaller groups inside", "Writing animals in alphabetical order", "Numbering animals in the order you saw them"]
       answer: 0
-      feedback: [null, "Alphabetical order tells you nothing about the animals themselves.", "That records when you saw them, not what they are like."]
+      feedback: [null, "Alphabetical order only tells you about the names, and nothing about the animals themselves.", "That records when you saw them, but it doesn't tell you anything about what they're like."]
       explain: "Classification groups things by what they share, so the group tells you something about each member."
     hint: ["If you looked at where one animal sits in each of these, which would tell you something about the animal itself?", "Think back to the key you just used, where the backbone question put animals into groups, and what knowing the group told you."]
   - check:
@@ -83,8 +83,8 @@ tasks:
       q: "A supermarket groups food by aisle: dairy, bakery, fruit. How is that like scientific classification?"
       options: ["Groups by shared features help people find things and talk about them", "It isn't: only scientists classify", "Both put things in alphabetical order"]
       answer: 0
-      feedback: [null, "Everyday life is full of classification.", "Neither does; both group by shared features."]
-      explain: "Libraries, supermarkets and phone contacts all classify, for a purpose. Scientific classification's purposes are identifying, communicating and showing relationships."
+      feedback: [null, "Plenty of everyday things are classified, so it isn't only scientists who do it.", "Supermarket aisles aren't alphabetical, and scientific groups aren't either, so look for what they really have in common."]
+      explain: "Libraries, supermarkets and phone contacts all classify for a purpose, and scientific classification's purposes are identifying, communicating and showing relationships."
   - check: { type: reflect, text: "I can give two reasons why living things are classified, and an everyday example of classification." }
 ```
 
@@ -113,8 +113,8 @@ tasks:
       q: "You could group these animals by where they live (land, water, air) or by body features (backbone, feathers, fur). Which is more useful for showing how they are related?"
       options: ["Body features: a platypus and a kangaroo share fur and milk, though one swims", "Where they live: animals in the same place are related", "Both are equally useful for every purpose"]
       answer: 0
-      feedback: [null, "A crocodile and a fish both live in water but are not close relatives.", "Each suits a different purpose: habitat groups help an ecologist; feature groups show relationships."]
-      explain: "Grouping by habitat suits some jobs (planning a reserve); grouping by shared features suits others (showing relationships). The purpose decides the system."
+      feedback: [null, "A crocodile and a fish both live in water, but they aren't close relatives, so living in the same place doesn't show that.", "Each one suits a different purpose, so they can't be equally good for showing how animals are related."]
+      explain: "Grouping by habitat suits some jobs (planning a reserve), while grouping by shared features suits others (showing relationships), so the purpose decides the system."
     hint: ["Would someone planning a wetland reserve and someone studying how animals are related want to group them the same way?", "Try one animal from the list, like the platypus, in each grouping and see who ends up next to it, and whether those neighbours are really alike."]
 ```
 
@@ -136,8 +136,8 @@ tasks:
       q: "Many Aboriginal and Torres Strait Islander peoples group plants and animals in ways tied to Country: by uses, seasons, relationships between species and cultural knowledge. Scientific classification groups by shared features and ancestry. What does comparing them show?"
       options: ["Each system is built for its purposes, and each holds knowledge the other may not", "Only one of them can be correct", "Classification systems never change"]
       answer: 0
-      feedback: [null, "They answer different questions, and they can inform each other.", "Scientific classification itself has changed many times (see Kingdoms)."]
-      explain: "Every classification reflects the purposes and knowledge of the people who built it. Ecologists increasingly work with First Peoples' knowledge of species and seasons."
+      feedback: [null, "The two systems answer different questions, and they can even inform each other, so it isn't a matter of one being right.", "Scientific classification has itself changed many times, as you saw in Kingdoms."]
+      explain: "Every classification reflects the purposes and knowledge of the people who built it, and ecologists increasingly work with First Peoples' knowledge of species and seasons."
 ```
 
 ### The key again

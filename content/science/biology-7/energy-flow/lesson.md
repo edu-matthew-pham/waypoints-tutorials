@@ -64,7 +64,7 @@ tasks:
       type: number
       q: "A lizard gets 100 kJ from the grasshoppers it eats. About how much reaches a kookaburra that eats the lizard, in kJ?"
       answer: 10
-      explain: "About 10% passes on: 100 × 0.1 = 10 kJ."
+      explain: "About 10% passes on, so 100 × 0.1 gives 10 kJ."
     hint: ["Look at the kJ numbers under the organisms on the board and see what happens to the amount each time you go up one level.", "The board's line shows how much of the producer's energy reached each organism, so you can compare one level with the next."]
   - check:
       type: sort
@@ -73,7 +73,7 @@ tasks:
       items:
         - ["Heat given off by the animal's body", "Not passed to the next level"]
         - ["Energy used for moving, breathing and keeping warm", "Not passed to the next level"]
-        - ["Parts not eaten (bones, fur, roots)", "Not passed to the next level", "These go to decomposers, not up the chain."]
+        - ["Parts not eaten (bones, fur, roots)", "Not passed to the next level", "These stay behind and go to decomposers, so they never move up the chain."]
         - ["Energy stored in the eaten animal's body", "Passed to the next level"]
     hint: ["While the lizard was alive, what did it spend energy on before anything ate it?", "For each one, ask whether that energy would still be in the lizard when the kookaburra eats it."]
   - check:
@@ -81,8 +81,8 @@ tasks:
       q: "Which statement is true?"
       options: ["Energy flows one way through a web and is lost as heat; matter (the atoms) is recycled by decomposers", "Energy and matter are both recycled", "Energy is recycled by decomposers; matter is lost"]
       answer: 0
-      feedback: [null, "Decomposers recycle the atoms (matter). Energy leaves as heat and must keep coming in as sunlight.", "That's swapped. What do decomposers give back to the soil: nutrients (atoms), or energy from sunlight?"]
-      explain: "That's why every food web needs a constant supply of sunlight, but no new atoms."
+      feedback: [null, "Part of that is right, since decomposers return atoms to the soil, but check what happens to energy once it's given off as heat.", "That's the wrong way round, so ask yourself what decomposers actually give back to the soil: nutrients or energy from sunlight?"]
+      explain: "That's why every food web needs a constant supply of sunlight, but doesn't need any new atoms."
     hint: ["Think about what a plant needs from the soil to grow, and whether that's the same thing as the sunlight it uses.", "Remember the board: the energy got smaller at each step, so ask where the missing part went and whether anything could pick it up again."]
   - check: { type: reflect, text: "I explained why only a small part of the energy reaches the top of a food chain, and how energy differs from matter." }
 ```
@@ -107,8 +107,8 @@ check:
   q: "Looking back at food webs: in the chain grass → grasshopper → lizard → kookaburra, which is the secondary consumer?"
   options: ["The lizard", "The grasshopper", "The kookaburra", "The grass"]
   answer: 0
-  feedback: [null, "The grasshopper eats a producer, so it is a primary consumer.", "The kookaburra eats a secondary consumer, so it is a tertiary consumer.", "Grass makes its own food: it is the producer."]
-  explain: "A secondary consumer eats a primary consumer. The lizard eats the grasshopper, which eats the grass."
+  feedback: [null, "The grasshopper eats a producer, so it is a primary consumer.", "The kookaburra eats a secondary consumer, so it is a tertiary consumer.", "Grass makes its own food, so it's the producer."]
+  explain: "A secondary consumer eats a primary consumer, and the lizard eats the grasshopper, which eats the grass."
 ```
 
 ## Elaborate: why so few eagles?
@@ -122,7 +122,7 @@ check:
   q: "Why are there far fewer wedge-tailed eagles than grasshoppers in an ecosystem?"
   options: ["So little energy reaches the top of the food chain that it can only support a few large predators", "Eagles have fewer babies", "Grasshoppers are easier to see"]
   answer: 0
-  feedback: [null, "Breeding matters, but the limit is the energy available at the top.", "Being easy to see doesn't change how many there are."]
+  feedback: [null, "Breeding rates do vary, but that doesn't explain such a steep drop in numbers, so think about what limits a predator at the top.", "How easy they are to spot doesn't change how many there actually are, so it can't be the reason."]
   explain: "Each level up gets about a tenth of the energy, so it can support far fewer organisms."
 ```
 
@@ -137,8 +137,8 @@ check:
   q: "A rainforest's plants capture far more energy each year than a desert's. What would you predict about their food webs?"
   options: ["The rainforest receives and captures more energy, so it can support more organisms", "They would be the same size", "The desert would have more top predators"]
   answer: 0
-  feedback: [null, "More energy captured at the bottom means more available at every level.", "Less energy at the bottom means less at the top."]
-  explain: "Energy captured by producers sets the size of everything above them."
+  feedback: [null, "If the rainforest captures far more energy to begin with, there's no reason to expect the two webs to come out the same size.", "The desert's plants capture much less energy, so check what that means for the animals at the top."]
+  explain: "The energy producers capture sets the size of everything above them, so more at the bottom means more at the top."
 ```
 
 ## Evaluate: look back

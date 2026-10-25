@@ -68,42 +68,42 @@ tasks:
       items:
         - ["Kookaburra", "Animals"]
         - ["Wattle tree", "Plants"]
-        - ["Yeast (used to make bread rise)", "Fungi", "Not green, absorbs sugar: a fungus, even though it is one cell."]
+        - ["Yeast (used to make bread rise)", "Fungi", "It isn't green and it absorbs sugar, so it's a fungus even though it's only one cell."]
         - ["Paramecium (one cell with a nucleus, in pond water)", "Protists"]
         - ["Huntsman spider", "Animals"]
-        - ["Kelp (a giant brown seaweed)", "Protists", "Algae like kelp make food from sunlight but are usually grouped with protists, not plants. A boundary case."]
+        - ["Kelp (a giant brown seaweed)", "Protists", "Algae like kelp make food from sunlight, but they're usually grouped with protists rather than plants, which makes kelp a boundary case."]
         - ["Bacteria that cause tooth decay", "Bacteria"]
         - ["Grass", "Plants"]
         - ["Mould on an orange", "Fungi"]
-        - ["Coral", "Animals", "It looks like a plant, but coral polyps are tiny animals that catch food."]
+        - ["Coral", "Animals", "It looks like a plant, but coral is made of tiny animals called polyps that catch food."]
     hint: ["For each one, think about where its food comes from, and for the single-celled ones whether the cell has a nucleus.", "A few of these don't look like the group they belong to, so go by what the organism actually does and not by what it looks like, and take extra care with the coral and the kelp."]
   - check:
       type: question
       q: "Which feature best separates plants from fungi?"
       options: ["Plants make their own food using sunlight; fungi absorb food from other material", "Plants grow in soil; fungi don't", "Fungi are smaller than plants"]
       answer: 0
-      feedback: [null, "Many fungi grow in soil, and some plants don't.", "Some fungi are huge underground; some plants are tiny."]
+      feedback: [null, "Many fungi grow in soil too, and some plants don't, so where they grow can't be what separates them.", "Some fungi are huge underground and some plants are tiny, so size doesn't separate them either."]
   - check:
       type: question
       q: "Why do scientists use observable features to classify?"
       options: ["Anyone can check them, so everyone sorts the same organism the same way", "They always show which organisms are most closely related", "Because organisms choose their own group"]
       answer: 0
-      feedback: [null, "Not always: a mushroom looks more like a plant, yet DNA shows it is closer to animals. Think about who can check a feature.", "Groups are decided by people, using evidence."]
+      feedback: [null, "Not always, since a mushroom looks more like a plant even though DNA shows it's closer to animals, so think about who can check a feature.", "Organisms don't pick their own group, because people decide the groups by weighing the evidence."]
   - check:
       type: question
       q: "DNA evidence shows which living things share a recent common ancestor. Which is a mushroom's closer relative?"
       options: ["A sea star (an animal)", "A fern (a plant)", "Neither: fungi aren't related to anything"]
       answer: 0
-      feedback: [null, "Ferns and mushrooms both grow on the forest floor and stay put, but that's a feature, not family. DNA puts fungi closer to animals.", "All living things are related; the question is how closely."]
-      explain: "Fungi and animals share a more recent common ancestor than fungi and plants do. Kingdoms sort by features; they don't always show who is related."
+      feedback: [null, "Ferns and mushrooms both stay put on the forest floor, but sharing a feature isn't the same as being family, so check what the DNA evidence says.", "All living things are related in some way, so the real question is how closely."]
+      explain: "Fungi and animals share a more recent common ancestor than fungi and plants do, so kingdoms sort by features but don't always show who is related."
     hint: ["The key sorted these by what you can see, but is looking alike the same as being family?", "Read the question again: it says DNA evidence, so set aside where each one grows and what it looks like."]
   - check:
       type: question
       q: "Scientists once used two kingdoms (plants and animals), then five, and now group life into three domains. Why did it keep changing?"
       options: ["New evidence (microscopes, then DNA) showed groups that didn't fit the old system", "The earlier scientists were careless", "Living things have evolved into new kingdoms since then"]
       answer: 0
-      feedback: [null, "They sorted carefully with the evidence they had. What new evidence came later?", "The organisms didn't change in a few hundred years; what we know about them did."]
-      explain: "Microscopes revealed single-celled life that was neither plant nor animal; DNA showed that 'bacteria' are really two very different groups (bacteria and archaea), and that protists aren't one family. Classification is a model, revised when the evidence demands it."
+      feedback: [null, "Earlier scientists sorted carefully with the evidence they had, so think about what new evidence turned up later.", "The organisms themselves didn't change in a few hundred years, so look for something that did change."]
+      explain: "Microscopes revealed single-celled life that was neither plant nor animal, and DNA showed that 'bacteria' are really two very different groups (bacteria and archaea) and that protists aren't one family, so classification is a model that gets revised when the evidence demands it."
   - check: { type: reflect, text: "I placed five organisms in their kingdoms and gave the feature that decided each one, and I can explain why kingdoms aren't family trees." }
 ```
 
@@ -131,7 +131,7 @@ check:
   q: "Looking back at why scientists classify: which is a reason to group living things?"
   options: ["To use names every scientist understands, and to show how organisms are related", "To decide which organisms are better than others", "To put them in alphabetical order", "To make the living world look tidy"]
   answer: 0
-  feedback: [null, "Groups describe features and relationships, not worth.", "Alphabetical order tells you nothing about the organisms themselves.", "Classification is for identifying, communicating and showing relationships, not for neatness."]
+  feedback: [null, "Groups describe features and relationships, not how good an organism is, so that can't be the reason.", "Alphabetical order would only tell you about the names, and nothing about the organisms themselves.", "Tidiness isn't the point, because a classification has to be useful for something real."]
   explain: "Scientists classify to identify organisms, to communicate clearly with one name, and to show how organisms are related."
 ```
 
@@ -145,8 +145,8 @@ check:
   q: "Euglena is a single cell that swims with a tail, and it is green: it makes food from sunlight, but also eats when it is dark. Why is it hard to classify?"
   options: ["It has features of both plants (makes food) and animals (moves and eats)", "It is too small to see", "It doesn't have any features"]
   answer: 0
-  feedback: [null, "Microscopes let us see it clearly; the problem is its mix of features.", "It has plenty of features: they just don't fit one group."]
-  explain: "It is placed with the protists, but it shows why classification systems keep changing as we learn more."
+  feedback: [null, "A microscope lets us see it clearly, so size isn't what makes it hard.", "It has plenty of features, so the difficulty must lie in how they fit the groups we have."]
+  explain: "It's placed with the protists, but it shows why classification systems keep changing as we learn more."
 ```
 
 ## Elaborate: the full address of a kangaroo
@@ -159,7 +159,7 @@ check:
   type: parsons
   code: "hierarchy.txt#order"
   text: "Put the red kangaroo's classification in order, from the biggest group to the smallest."
-  explain: "Kingdom, phylum, class, order, family, genus, species: each level is a smaller group that shares more features. The two-part scientific name is genus + species: Osphranter rufus."
+  explain: "Kingdom, phylum, class, order, family, genus, species: each level is a smaller group that shares more features, and the two-part scientific name is the genus plus the species: Osphranter rufus."
 hint: ["Each level is a smaller group inside the one before it, so ask which line could describe the most kinds of living things and which the fewest.", "Each line starts with the name of its level, and the descriptions get more and more specific as you go, so use those to check your order."]
 ```
 

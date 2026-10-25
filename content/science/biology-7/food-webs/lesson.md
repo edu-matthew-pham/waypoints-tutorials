@@ -65,26 +65,26 @@ tasks:
       q: "What is each organism's role in the bush web?"
       options: ["Producer", "Primary consumer", "Secondary consumer", "Decomposer"]
       items:
-        - ["Grass", "Producer", "It makes its own food using sunlight."]
-        - ["Grasshopper", "Primary consumer", "It eats a producer."]
+        - ["Grass", "Producer", "It makes its own food using sunlight, so it's a producer."]
+        - ["Grasshopper", "Primary consumer", "It eats a producer, so it's a primary consumer."]
         - ["Kangaroo", "Primary consumer"]
-        - ["Lizard", "Secondary consumer", "It eats a primary consumer."]
+        - ["Lizard", "Secondary consumer", "It eats a primary consumer, so it's a secondary consumer."]
         - ["Dingo", "Secondary consumer"]
-        - ["Fungi and bacteria", "Decomposer", "They break down dead grass, dead dingoes and droppings."]
+        - ["Fungi and bacteria", "Decomposer", "They break down dead grass, dead dingoes and droppings, so they're decomposers."]
     hint: ["For each one, ask what it eats and whether that food is a producer or another consumer.", "Use the web you drew and follow the arrows back from each animal to see what feeds it."]
   - check:
       type: question
       q: "The kookaburra eats both lizards and grasshoppers. What does that make it?"
       options: ["A secondary consumer when it eats grasshoppers, and a tertiary consumer when it eats lizards", "A producer", "A primary consumer"]
       answer: 0
-      feedback: [null, "It can't make its own food.", "It doesn't eat plants."]
-      explain: "In a web, one animal can feed at more than one level."
+      feedback: [null, "A producer makes its own food, and the kookaburra can't do that, so that label doesn't fit.", "A primary consumer eats plants, but this kookaburra eats lizards and grasshoppers, so that label doesn't fit either."]
+      explain: "In a web, one animal can feed at more than one level, depending on what it's eating at the time."
   - check:
       type: question
       q: "Why do decomposers belong in a food web?"
       options: ["They feed on dead organisms and wastes from every level, returning nutrients to the soil", "They don't; only animals that hunt belong", "They make food from sunlight"]
       answer: 0
-      feedback: [null, "Without decomposers, dead matter would pile up and plants would run out of nutrients.", "That's what producers do."]
+      feedback: [null, "Decomposers aren't hunters, but they still have a part in the web, so think about what happens to everything that dies.", "Making food from sunlight is what producers do, and decomposers get their food a different way."]
     hint: ["What would happen to a dead dingo or a patch of dead grass if nothing ever broke it down?", "Think about what the grass needs from the soil to grow, and where that could come from."]
   - check: { type: reflect, text: "I can name the producer, consumers and decomposers in a food web, and say which way the arrows point and why." }
 ```
@@ -109,8 +109,8 @@ check:
   q: "Looking back at the kingdoms: a mushroom grows on a dead log. How does it get its food?"
   options: ["It absorbs food from the dead log: it is a fungus, so it is a decomposer", "It makes food from sunlight, like a plant", "It hunts and eats small animals", "It makes food from the soil, like a plant"]
   answer: 0
-  feedback: [null, "A mushroom is not green and cannot make food from sunlight.", "Mushrooms do not catch food. Fungi absorb it from dead material.", "Plants make food from sunlight. Fungi absorb food from other material."]
-  explain: "Fungi absorb food from dead material. In a food web that makes them decomposers."
+  feedback: [null, "A mushroom isn't green and can't make food from sunlight, so it doesn't feed the way a plant does.", "Mushrooms can't catch or chase anything, so think about how a fungus feeds while staying in one place.", "Plants make food from sunlight, and fungi aren't plants, so they must feed in a different way."]
+  explain: "Fungi absorb food from dead material, and in a food web that makes them decomposers."
 ```
 
 ## Elaborate: chain or web?
@@ -124,8 +124,8 @@ check:
   q: "The food chain grass → grasshopper → lizard → kookaburra is part of the web. What does the chain leave out?"
   options: ["Other foods each animal eats, and other animals that eat the same food", "Nothing: a chain and a web show the same thing", "The direction of energy flow"]
   answer: 0
-  feedback: [null, "The web shows the kookaburra eating grasshoppers too, and kangaroos eating grass.", "Chains have arrows too."]
-  explain: "A chain shows one path. A web shows every path, which is why it can predict what happens when one population changes."
+  feedback: [null, "The web shows more than the chain does, since the kookaburra eats grasshoppers too and kangaroos eat grass as well.", "A chain has arrows too, so it does show the direction of energy flow."]
+  explain: "A chain shows one path, but a web shows every path, which is why it can predict what happens when one population changes."
 ```
 
 ## Elaborate: an Antarctic web
