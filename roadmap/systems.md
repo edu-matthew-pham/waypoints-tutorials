@@ -197,7 +197,8 @@ Conventions (Matthew, 25 Oct):
 - **One tool taught, others named.** Each lesson ends with an "Other options" box: what else exists and why we chose this one (Plex and Emby need an account or a licence for some features, Kodi plays on one device; NFS for Linux-only networks, Nextcloud as a web option).
 - **Offline first, "With internet" notes.** The core task works offline; a `tier: typical` step says what internet access adds and what it costs (automatic updates and off-site backups from `cron`, remote access through a VPN such as Tailscale or WireGuard rather than opening router ports, a domain and certificates), and why exposing a server raises the stakes.
 - The Pi and Kali security lab (above) would come after this course and audit the servers students built here.
-Open: kit per group, whether a pre-made Pi image saves class time, how much on-page content versus teacher notes and briefs.
+- **Teacher's choice of start (Matthew, 25 Oct):** students flash and set up the Pi themselves (lesson 1 as written), or start from a ready-made image (lesson 1 becomes a short tour and `ssh` in). Both paths reach lesson 2 in the same state.
+Open: kit per group; whether school laptops can run an `ssh` client and join the lab switch, or the Pis need screens and keyboards; resetting Pis between classes (reimage, or a reset script); whether the `shell` board grows `apt`, `systemctl` and users so students can practise without a Pi; how much on-page content versus teacher notes and briefs; year level (likely 9–10); school IT approval for the lab network.
 
 ## Next
 
