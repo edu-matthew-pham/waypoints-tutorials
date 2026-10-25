@@ -8,6 +8,7 @@ summary: "Simplify one step at a time: powers of powers first, then multiply and
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Scientists write the distance to the Sun as 1.5 × 10⁸ km. How do you multiply numbers like that quickly?"
+connection: kilo-mega-giga
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8315
   url: http://127.0.0.1:8315/index.html
@@ -191,3 +192,54 @@ check: { type: board, text: "Show a power of a power of 2 whose value is 256 on 
 ```
 
 Then write an expression using all three laws that simplifies to 2⁵, and swap with a partner to check.
+
+## Make: a school's photos, on paper
+
+```step
+stage: make
+insight: "Scientific notation with the laws: multiply the numbers, add the indices, then notice that 10 is 10¹ and the base is the same again. Multiplying the indices is the planted slip."
+hint: ["Write 2000 as $2 \\times 10^3$.", "2 × 5 = 10, and 10 is $10^1$."]
+check:
+  type: reasoning
+  paper: true
+  q: "A school stores 2000 photos, each about $5 \\times 10^5$ bytes. In total they take $1 \\times 10^{k}$ bytes. What is $k$?"
+  steps:
+    - ["$2000 = 2 \\times 10^3$", "write the count as a number times a power of 10"]
+    - ["$(2 \\times 10^3) \\times (5 \\times 10^5) = 10 \\times 10^8$", "multiply the numbers, 2 × 5 = 10, and add the indices, 3 + 5 = 8"]
+    - ["$10 \\times 10^8 = 10^1 \\times 10^8 = 10^9$", "10 is $10^1$, and the base is 10 again, so add the indices"]
+    - ["So $k = 9$: about a gigabyte", "a gigabyte is $10^9$ bytes on a storage label"]
+  picks:
+    - step: 2
+      q: "What do you do with the indices 3 and 5?"
+      options:
+        - "Add them: same base, multiplying"
+        - "Multiply them: 3 × 5"
+        - "Leave them, since the numbers 2 and 5 differ"
+      answer: 0
+      feedback: [null, "Multiplying the indices is for a power of a power. Here two powers are multiplied.", "Only the base needs to match: both are powers of 10."]
+    - step: 3
+      q: "Why can you add 1 and 8?"
+      options:
+        - "10 is the same as 10¹, so it is another power of 10"
+        - "Because the answer should be 9"
+        - "Because 10 is bigger than 9"
+      answer: 0
+      feedback: [null, "Work out why, don't work back from the answer.", "Size does not decide. The base must match."]
+  answer: "9"
+  tolerance: 0
+  feedback:
+    - ["8", "The numbers multiply to 10, which is $10^1$: that adds one more to the 8."]
+    - ["15", "That multiplies the indices (3 × 5). Same base multiplied: add them."]
+  criteria:
+    - "I wrote both numbers as a number times a power of 10."
+    - "I multiplied the numbers and added the indices."
+    - "I turned the 10 into $10^1$ before I joined the powers."
+  explain: "(2 × 10³)(5 × 10⁵) = 10 × 10⁸ = 10¹ × 10⁸ = 10⁹. So k = 9."
+```
+
+Do this one in your book, not on the screen. The photo sizes are made up for the task. (Think too: each fold of a sheet of paper doubles its layers, so 7 folds make 2⁷ = 128, which is the same law.) Write each number with its power, join them, and type k.
+
+**Also used in**
+
+- **Computing.** Storage, memory and download speeds are products and quotients of powers of 10.
+- **Paper.** Each fold doubles the layers, so 7 folds make 2⁷ = 128 layers.

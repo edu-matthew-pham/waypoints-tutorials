@@ -194,3 +194,49 @@ check: { type: board, text: "Find a fraction with denominator 60 that terminates
 ```
 
 Then explain, using primes, why your fraction stops and 1/60 does not.
+
+## Make: a classmate's claim, on paper
+
+```step
+stage: make
+insight: "Simplifying first is the whole point: 24 has a 3, but 9/24 is 3/8. The reasons (simplify, primes, 10 = 2 × 5) are marked, not a number."
+hint: ["Simplify 9/24 first.", "What is the new denominator made of?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A classmate says: '9/24 must recur, because 24 = 2 × 2 × 2 × 3 has a 3 in it.' Without dividing, decide whether she is right. Then check by dividing."
+  steps:
+    - ["$\\tfrac{9}{24} = \\tfrac{3}{8}$", "simplify first: 9 and 24 share a factor of 3"]
+    - ["$8 = 2 \\times 2 \\times 2$, only 2s", "break the simplified denominator into primes"]
+    - ["Only 2s and 5s, so $\\tfrac{9}{24}$ terminates. Her 3 cancelled with the 9", "10 = 2 × 5, so only 2s and 5s multiply up to 10, 100, 1000…"]
+    - ["Check: $3 \\div 8 = 0.375$, which stops", "the division agrees"]
+  picks:
+    - step: 1
+      q: "Why simplify before looking at the primes?"
+      options:
+        - "The 3 in 24 cancels with the 9 on top, and only the simplified denominator counts"
+        - "Smaller numbers are easier to divide"
+        - "The top number must be prime"
+      answer: 0
+      feedback: [null, "True, but that is not why it changes the answer.", "The top number can be anything."]
+    - step: 3
+      q: "Why do only 2s and 5s give a decimal that stops?"
+      options:
+        - "10 = 2 × 5, so only those multiply up to 10, 100, 1000…"
+        - "2 and 5 are the smallest primes"
+        - "Even denominators always stop"
+      answer: 0
+      feedback: [null, "3 is smaller than 5 and does not work.", "6 is even, and 1/6 recurs."]
+  criteria:
+    - "I simplified before looking at the primes."
+    - "I named the primes in the simplified denominator."
+    - "I checked with a division."
+  explain: "9/24 = 3/8, and 8 = 2 × 2 × 2 has only 2s, so it terminates: 0.375. The 3 in 24 cancels with the 9."
+```
+
+Do this one in your book, not on the screen. The classmate is made up for the task. Decide first, write your reasons in your own words, then pick the key reasons on the screen.
+
+**Also used in**
+
+- **Money.** Prices in dollars and cents are fractions over 100 = 2 × 2 × 5 × 5, so they always stop. Shares in threes and sixes do not.
+- **Later.** Any fraction you meet can be sorted into stops or repeats with the same two moves: simplify, then look at the primes.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Ana to work out √16."
   - "Modify: ask how 1/7's digits differ from √3's."
   - "Make: ask what exact means here."
+  - "Paper: the tile-diagonal task in Make is worked in books; the page marks the reasons (perfect square, never repeats), not a number. Books out, then look for a decision before the reasons, and 'close to, not equal'."
 stuck:
   - see: "A student calls a long calculator decimal irrational."
     ask: "Does it repeat? Is it a fraction?"

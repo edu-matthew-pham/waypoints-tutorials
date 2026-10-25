@@ -8,6 +8,7 @@ summary: "Every point on the number line is a real number, rational or irrationa
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A carpenter needs a brace across a 1 m by 2 m gate: √5 metres. Where is √5 on a tape measure, and how close is close enough?"
+connection: square-patch
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8313
   url: http://127.0.0.1:8313/index.html
@@ -46,6 +47,8 @@ check:
   options: ["6 and 7", "20 and 21", "4 and 5", "39 and 41"]
   actual: "6 and 7: 6² = 36 and 7² = 49, and 40 is between them. (Halving 40 gives 20, but 20² = 400.)"
 ```
+
+<figure class="situation" role="img" aria-label="A square vegetable patch with an area of 40 square metres. Its side length is marked with a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="110" y="35" width="130" height="130" fill="#1D9E75" fill-opacity="0.25" stroke="#0F6E56"/><text x="175" y="25" text-anchor="middle" fill="currentColor" stroke="none">side ? m</text><text x="175" y="105" text-anchor="middle" fill="currentColor" stroke="none">area 40 m²</text></svg></figure>
 
 ## Run: place √5
 
@@ -186,3 +189,49 @@ check: { type: board, text: "Find the first 2 decimal digits of √7, without a 
 ```
 
 Then mark √7 on a sketch of the number line between 2 and 3.
+
+## Make: edging a patch, on paper
+
+```step
+stage: make
+insight: "A square of area 50 m² has a side between 7 and 8, and which tenth it rounds to needs one more squaring. Halving 50 is the planted slip."
+hint: ["49 and 64 are the squares either side of 50.", "Square 7.05, halfway between 7.0 and 7.1."]
+check:
+  type: reasoning
+  paper: true
+  q: "A square vegetable patch must have an area of 50 m². Its side is $\\sqrt{50}$ m. What is the side to the nearest tenth of a metre?"
+  steps:
+    - ["$7^2 = 49$ and $8^2 = 64$, so $7 < \\sqrt{50} < 8$", "the perfect squares either side of 50"]
+    - ["50 is just over 49, so the side is just over 7", "50 is much nearer 49 than 64"]
+    - ["$7.05^2 = 49.7025$, which is under 50, so $\\sqrt{50}$ is past halfway between 7.0 and 7.1", "square the halfway value to see which tenth is nearer"]
+    - ["The side is about 7.1 m", "check: $7.1^2 = 50.41$, just over 50"]
+  picks:
+    - step: 3
+      q: "How do you choose between 7.0 and 7.1?"
+      options:
+        - "Square the halfway value 7.05: it is under 50, so the root is past halfway"
+        - "Halve 50 to get 25"
+        - "It is just over 7, so round down to 7.0"
+      answer: 0
+      feedback: [null, "A square root is the number that times itself makes 50, not half of it.", "Being just over 7 is not enough: 7.0 and 7.1 are both close. Check the halfway value."]
+  answer: "7.1"
+  answerLabel: "Side (m)"
+  tolerance: 0
+  feedback:
+    - ["7", "That is the whole number just under. To the nearest tenth, test 7.0 and 7.1."]
+    - ["25", "That halves 50. The side times itself must make 50."]
+    - ["7.07", "That is 2 decimal places. The question asks for the nearest tenth."]
+  criteria:
+    - "I started with the squares either side of 50."
+    - "I squared a decimal to choose the tenth."
+    - "I checked my side by squaring it."
+  explain: "49 < 50 < 64, so the side is between 7 and 8. 7.05² = 49.70 is under 50, so √50 is past halfway: 7.1 m (7.07 to two decimal places)."
+```
+
+Do this one in your book, not on the screen. The patch is made up for the task, but you can check it: square your side and you should get back about 50. Bound the root, squeeze it, and type the side.
+
+**Also used in**
+
+- **Gardens.** The edging for the patch is 4 sides, about 4 × 7.07 = 28.3 m, with a little extra for the corners.
+- **Carpentry.** A brace across a 1 m by 2 m gate is √5 m long, placed the same way.
+- **Later.** The same patch returns when exact and rounded answers are compared.

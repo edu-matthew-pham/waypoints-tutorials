@@ -8,6 +8,7 @@ summary: "The sign rules for integers work for every fraction and decimal: work 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A temperature falls half a degree an hour for three hours. A share loses 2.4 dollars over 6 days. Negative fractions and decimals are everywhere money and weather are measured."
+connection: temperature-drop
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8178
   url: http://127.0.0.1:8178/index.html
@@ -249,3 +250,47 @@ check: { type: board, text: "Set $a$ and $b$ to two negative fractions (not whol
 ```
 
 Then: two negative fractions whose product is $\tfrac{1}{4}$?
+
+## Make: a cold night, on paper
+
+```step
+stage: make
+insight: "Going back in time gives a negative number of hours; a negative rate times it is positive, so the night was warmer earlier. Students own the working and pick the reason for the sign."
+hint: ["3 pm is 3 hours before 6 pm, so the time is $-3$.", "Rate times time gives the change, then add it to the 6 pm reading."]
+check:
+  type: reasoning
+  paper: true
+  q: "On a clear winter night the temperature falls 1.5 °C every hour. At 6 pm it is 3 °C. What was it at 3 pm, in °C?"
+  steps:
+    - ["The rate is $-1.5$ °C an hour, and 3 pm is 3 hours before 6 pm, so the time is $-3$", "going back in time is a negative number of hours"]
+    - ["$-1.5 \\times (-3) = +4.5$", "same signs give a positive: it was warmer earlier"]
+    - ["$3 + 4.5 = 7.5$ °C", "start from the 6 pm reading and add the change"]
+    - ["Check: $7.5 + 3 \\times (-1.5) = 7.5 - 4.5 = 3$", "falling for 3 hours lands back on the 6 pm reading"]
+  picks:
+    - step: 2
+      q: "Why is the change $+4.5$ and not $-4.5$?"
+      options:
+        - "A negative rate times a negative number of hours is positive"
+        - "The temperature is falling, so every change is negative"
+        - "You divide $-1.5$ by 3, which gives a negative"
+      answer: 0
+      feedback: [null, "Falling is true going forward. Going back in time flips the sign, so the temperature was higher.", "Rate times time is multiplying, not dividing."]
+  answer: "7.5"
+  answerLabel: "Temperature at 3 pm (°C)"
+  tolerance: 0
+  feedback:
+    - ["4.5", "That is the change. The question asks for the temperature at 3 pm: add it to the 3 °C."]
+    - ["-1.5", "That takes the 4.5 away, but it was warmer earlier. Add it."]
+  criteria:
+    - "I wrote 3 pm as 3 hours back, a time of $-3$."
+    - "I worked out the sign of the change before the size."
+    - "My answer is warmer than 3 °C, because the night was cooling."
+  explain: "$-1.5 \\times (-3) = 4.5$, so 3 pm was 4.5 °C warmer than 6 pm: 3 + 4.5 = 7.5 °C."
+```
+
+Do this one in your book, not on the screen. The numbers are made up for the task, and real nights cool quickly at first and more slowly later, but a steady rate gives a sensible guess. Work out the change first, then the temperature, and type your answer.
+
+**Also used in**
+
+- **Weather.** A steady fall of a few degrees an hour, forwards or back in time, is a rate times a positive or negative number of hours.
+- **Money.** A balance falling \$20 a day was \$60 higher three days ago: the same sign rules.

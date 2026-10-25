@@ -7,6 +7,7 @@ summary: "Dividing a fraction out gives a decimal that either stops (terminates)
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Type 1 ÷ 7 into a calculator and the screen fills up. Does it ever stop? Long division can tell you, and it does not need a bigger screen."
+connection: split-bill
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8310
   url: http://127.0.0.1:8310/index.html
@@ -193,3 +194,46 @@ check: { type: board, text: "Find a fraction with a repeating block of 2 digits 
 ```
 
 Then write your fraction's decimal with a bar over the repeating block.
+
+## Make: the spare cent, on paper
+
+```step
+stage: make
+insight: "Long division of 94 by 3 shows the remainder 1 coming back, so the 3 repeats forever. That is why a bill cannot be split exactly."
+hint: ["Divide 94 by 3: 31 remainder 1.", "Bring down a 0 and look at the remainder."]
+check:
+  type: reasoning
+  paper: true
+  q: "Three friends split a \\$94 bill evenly. Divide 94 by 3 by long division on paper. What digit repeats forever?"
+  steps:
+    - ["$94 \\div 3 = 31$ remainder 1", "$3 \\times 31 = 93$, and 1 is left"]
+    - ["Bring down a 0: $10 \\div 3 = 3$ remainder 1", "the remainder is 1 again"]
+    - ["The remainder 1 has come back, so the 3 repeats forever: $94 \\div 3 = 31.\\overline{3}$", "a remainder that comes back means the digits repeat"]
+    - ["Rounded to the cent, each pays \\$31.33, and $3 \\times \\$31.33 = \\$93.99$ is a cent short", "a rounded value is not the exact amount"]
+  picks:
+    - step: 3
+      q: "How do you know the 3s never stop?"
+      options:
+        - "The remainder 1 has come round again, so the same step happens again"
+        - "The calculator screen shows lots of 3s"
+        - "94 does not divide by 3 exactly"
+      answer: 0
+      feedback: [null, "A screen only shows so many digits. The remainder is the proof.", "True, but 94 ÷ 3 could still stop later. A remainder that comes back is what makes it repeat."]
+  answer: "3"
+  tolerance: 0
+  feedback:
+    - ["1", "That is the remainder, which keeps coming back. The digit in the answer is the 3."]
+    - ["33", "That is the cents. One digit repeats."]
+  criteria:
+    - "I wrote the remainder at every step."
+    - "I said the remainder came back, not just that the 3s kept going."
+    - "I used a bar or dots to show the repeating digit."
+  explain: "94 ÷ 3 = 31 r 1, then 10 ÷ 3 = 3 r 1, again and again. The remainder 1 keeps coming back, so 3 repeats: 31.333… = 31.3 with a bar over the 3."
+```
+
+Do this one in your book, not on the screen. The bill is made up for the task. Divide on paper, watch the remainder, write the answer with a bar, and type the repeating digit.
+
+**Also used in**
+
+- **Shopping.** Splitting a bill three ways never comes out in whole cents.
+- **Next.** Which fractions stop and which repeat, without dividing.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Lia to check with numbers."
   - "Modify: ask why 7³ + 7⁴ is not 7⁷."
   - "Make: ask a partner to simplify their expression."
+  - "Paper: the school-photos task in Make is worked in books; the page marks the answer (9) and the reasons for adding the indices and for writing 10 as 10 to the 1. Books out, then look for both numbers written as a number times a power of 10."
 stuck:
   - see: "A student adds indices for different bases."
     ask: "Circle the bases: are they the same?"

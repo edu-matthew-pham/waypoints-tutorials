@@ -8,6 +8,7 @@ summary: "3.746 to 2 decimal places is 3.75: look at the next digit, 6, and roun
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A stopwatch says 12.846 seconds. Do you report 12.846, 12.85, 12.8 or 13? It depends who is asking, and what the timer can really measure."
+connection: split-bill
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8288
   url: http://127.0.0.1:8288/index.html
@@ -196,3 +197,46 @@ check: { type: board, text: "Set the number so that, to 2 decimal places, it rou
 ```
 
 Then find the smallest number you can that still rounds to 4.57.
+
+## Make: splitting the bill, on paper
+
+```step
+stage: make
+insight: "A real share does not come out in whole cents. Rounding to the cent keeps the next digit as the deciding one, and a check shows the bill is a cent short."
+hint: ["Cents are 2 decimal places.", "Look at the digit straight after the cents."]
+check:
+  type: reasoning
+  paper: true
+  q: "Three friends split a \\$94 restaurant bill evenly. \\$94 ÷ 3 = 31.333… Each pays this much, to the nearest cent. (Write it as 31.xx.)"
+  steps:
+    - ["$94 \\div 3 = 31.333\\ldots$", "a calculator gives the exact share, with more places than a till can use"]
+    - ["The digit after the cents is 3, which is under 5, so round down: \\$31.33", "only the next digit decides"]
+    - ["$3 \\times \\$31.33 = \\$93.99$", "check the shares against the bill"]
+    - ["The bill is 1 cent short, so one friend pays \\$31.34", "rounding left a cent over; someone covers it"]
+  picks:
+    - step: 2
+      q: "How do you round 31.333… to the cent?"
+      options:
+        - "Look at the digit after the cents: 3 is under 5, so the cents stay at 33"
+        - "Round up, because someone must cover the bill: 31.34"
+        - "Round to one decimal place: 31.3"
+      answer: 0
+      feedback: [null, "If all three rounded up they would pay 3 × \\$31.34 = \\$94.02. The next digit decides, and it is 3.", "Cents are 2 decimal places, not 1."]
+  answer: "31.33"
+  tolerance: 0
+  feedback:
+    - ["31.34", "That rounds up, but the digit after the cents is 3, not 5 or more."]
+    - ["31.3", "That is 1 decimal place. Cents are 2."]
+  criteria:
+    - "I rounded to 2 decimal places, because cents are hundredths."
+    - "I looked at one digit: the one after the cents."
+    - "I checked 3 shares against the bill."
+  explain: "The digit after the hundredths is 3, so 31.333… rounds to \\$31.33. Three shares make \\$93.99, one cent short of \\$94."
+```
+
+Do this one in your book, not on the screen. The bill is made up for the task, but the stray cent is real: whoever splits a bill meets it. Round the share, check it against the bill, and type the share.
+
+**Also used in**
+
+- **Shopping.** Splitting a bill leaves a stray cent, and someone has to cover it.
+- **Building.** The paint calculation says the wall needs 3.4 tins. You buy 4: here the job, not the digit, decides which way to round.

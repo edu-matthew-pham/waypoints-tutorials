@@ -8,6 +8,7 @@ summary: "Share $60 in the ratio 2 : 3. Add the parts (5), find one part ($60 ÷
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Two friends win a prize and agree to share it by how much each one put in. How do you cut it up so it is fair?"
+connection: rent-split
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8292
   url: http://127.0.0.1:8292/index.html
@@ -47,6 +48,8 @@ check:
   options: ["$36", "$30", "$20", "$24"]
   actual: "$36. There are 2 + 3 = 5 parts, each $12, and Ben has 3 parts. $30 is an equal split; $24 is Ana's share."
 ```
+
+<figure class="situation" role="img" aria-label="A bar of 60 dollars cut into 5 equal parts. Ana has the first 2 parts and Ben has the last 3 parts. Ben's share is marked with a question mark."><svg viewBox="0 0 400 165" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="50" y="50" width="60" height="40" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56"/><rect x="110" y="50" width="60" height="40" fill="#1D9E75" fill-opacity="0.3" stroke="#0F6E56"/><rect x="170" y="50" width="60" height="40" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><rect x="230" y="50" width="60" height="40" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><rect x="290" y="50" width="60" height="40" fill="#378ADD" fill-opacity="0.3" stroke="#185FA5"/><text x="110" y="40" text-anchor="middle" fill="currentColor" stroke="none">Ana: 2 parts</text><text x="260" y="40" text-anchor="middle" fill="currentColor" stroke="none">Ben: 3 parts</text><text x="200" y="120" text-anchor="middle" fill="currentColor" stroke="none">$60 shared in all</text><text x="260" y="150" text-anchor="middle" fill="currentColor" stroke="none">Ben gets: ?</text></svg></figure>
 
 Should Ben get more or less than half of the money?
 
@@ -209,3 +212,47 @@ check: { type: board, text: "Choose a ratio and a total so that Ana's share is e
 ```
 
 Then find two different ratios (with their totals) that give the same share.
+
+## Make: sharing the rent, on paper
+
+```step
+stage: make
+insight: "Three flatmates share the rent by room size: add the parts, find one part, then multiply. An equal split is the planted wrong answer."
+hint: ["Add 12 + 10 + 8 first.", "One part is the rent divided by all the parts."]
+check:
+  type: reasoning
+  paper: true
+  q: "Three flatmates share a \\$450 weekly rent in the ratio of their room sizes: 12 m², 10 m² and 8 m². How much does the flatmate in the 12 m² room pay, in dollars?"
+  steps:
+    - ["$12 + 10 + 8 = 30$ parts", "add the parts of the ratio"]
+    - ["$\\$450 \\div 30 = \\$15$ for one part", "one part is the total divided by the number of parts"]
+    - ["The 12 m² room: $12 \\times \\$15 = \\$180$", "a share is its number of parts times one part"]
+    - ["Check: $\\$180 + \\$150 + \\$120 = \\$450$", "the shares add back to the rent"]
+  picks:
+    - step: 2
+      q: "How do you find what one part is worth?"
+      options:
+        - "Divide the rent by all the parts added: 450 ÷ 30"
+        - "Divide the rent by the number of flatmates: 450 ÷ 3"
+        - "Divide the rent by the room's own number: 450 ÷ 12"
+      answer: 0
+      feedback: [null, "That is an equal split, \\$150 each. The rooms are different sizes, so the shares are not equal.", "That divides by one flatmate's parts. Divide by all the parts first."]
+  answer: "180"
+  answerLabel: "Share (dollars)"
+  tolerance: 0
+  feedback:
+    - ["150", "That is an equal split. The biggest room pays more than the others."]
+    - ["15", "That is one part. The 12 m² room has 12 parts."]
+  criteria:
+    - "I added all the parts before dividing."
+    - "I found one part, then multiplied."
+    - "My three shares add back to \\$450."
+  explain: "12 + 10 + 8 = 30 parts. \\$450 ÷ 30 = \\$15 a part. The 12 m² room pays 12 × \\$15 = \\$180, the others \\$150 and \\$120."
+```
+
+Do this one in your book, not on the screen. The rent and the room sizes are made up for the task. Whether room size is the fairest way to share a rent is for the flatmates to argue about. Work out one part, then the biggest share, and type it.
+
+**Also used in**
+
+- **Flatmates.** Rent, power and internet are often shared by room size or by use, and the shares must add back to the bill.
+- **Mixing.** The mural team's 10 litres of paint in the ratio 2 : 3 is the same sum: 5 parts of 2 litres each.

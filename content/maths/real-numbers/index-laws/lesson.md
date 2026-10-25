@@ -8,6 +8,7 @@ summary: "Write powers out as factors and the laws appear: multiplying powers of
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "2¹⁰ × 2¹⁰ has over a million as its answer, but you can write it down in a second: 2²⁰. Write the powers out once, and you will see why."
+connection: kilo-mega-giga
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8314
   url: http://127.0.0.1:8314/index.html
@@ -196,3 +197,46 @@ check: { type: board, text: "Make a product of two powers of 2 equal to 2⁹, wi
 ```
 
 Then write 2⁹ as a quotient of two powers of 2, and as a power of a power.
+
+## Make: kilo, mega, giga, on paper
+
+```step
+stage: make
+insight: "A gigabyte is a thousand megabytes, so the powers of 10 multiply and the indices add. Multiplying them (18) is the planted slip."
+hint: ["1000 is $10^3$.", "Same base multiplied: add the indices."]
+check:
+  type: reasoning
+  paper: true
+  q: "A megabyte is $10^6$ bytes, and a gigabyte is 1000 megabytes. A gigabyte is $10^{?}$ bytes. What is the index?"
+  steps:
+    - ["$1000 = 10^3$, so 1 GB is $10^3$ MB", "1000 is three 10s multiplied"]
+    - ["1 GB $= 10^3 \\times 10^6$ bytes", "a thousand megabytes of a million bytes each"]
+    - ["$10^3 \\times 10^6 = 10^{3+6} = 10^9$", "same base, multiplying: add the indices"]
+    - ["Check: three 10s and six 10s make nine 10s, 1 000 000 000", "write the powers out to see the factors join"]
+  picks:
+    - step: 3
+      q: "Why do you add the indices?"
+      options:
+        - "Three 10s multiplied by six 10s make nine 10s multiplied"
+        - "There are 3 groups of 6, so multiply: 3 × 6"
+        - "The bigger index wins, so keep 6"
+      answer: 0
+      feedback: [null, "3 groups of 6 is a power of a power. Here two powers are multiplied.", "Both sets of 10s are multiplied together, so all of them count."]
+  answer: "9"
+  tolerance: 0
+  feedback:
+    - ["18", "That multiplies the indices (3 × 6). Two powers multiplied add their indices."]
+    - ["3", "That subtracts. Multiplying powers adds the indices."]
+  criteria:
+    - "I wrote 1000 as a power of 10."
+    - "I added the indices, because the base is the same."
+    - "I checked by counting the factors of 10."
+  explain: "10³ × 10⁶ = 10⁹: three factors of 10 and six more make nine. A gigabyte is 10⁹ bytes."
+```
+
+Do this one in your book, not on the screen. The sizes are the powers of 10 on storage labels ([SI prefixes, BIPM](https://www.bipm.org/en/measurement-units/si-prefixes)); some software counts in steps of 1024 instead. Write the powers, join them, and type the index.
+
+**Also used in**
+
+- **Computing.** Storage, memory and download speeds all use kilo, mega and giga.
+- **Next lesson.** Using the laws together on longer expressions, and on scientific notation.

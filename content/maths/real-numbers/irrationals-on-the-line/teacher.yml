@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Ben to check 25 × 25."
   - "Modify: ask when 1.41 is good enough."
   - "Make: ask for the squares they checked."
+  - "Paper: the patch task in Make is worked in books; the page marks the answer (7.1) and the reason for squaring the halfway value. Books out, then look for the squares either side of 50 on the page before any decimal."
 stuck:
   - see: "A student halves the number."
     ask: "What times itself gives 50?"

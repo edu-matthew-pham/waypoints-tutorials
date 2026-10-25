@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Kai how many 3s there are."
   - "Modify: ask how (2²)³ differs from 2² × 2³."
   - "Make: ask for all the ways they found."
+  - "Paper: the kilo-mega-giga task in Make is worked in books; the page marks the answer (9) and the reason for adding the indices. Books out, then look for 1000 written as 10 to the 3 before the laws are used."
 stuck:
   - see: "A student multiplies the bases."
     ask: "Write both powers out: what number is repeated?"

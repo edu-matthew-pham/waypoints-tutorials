@@ -7,6 +7,7 @@ summary: "A square number is the area of a square: 6² = 6 × 6 = 36. The square
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A square patio uses 49 tiles. How long is each side? Squares and square roots go back and forth between a side and an area."
+connection: square-pavers
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8264
   url: http://127.0.0.1:8264/index.html
@@ -42,6 +43,8 @@ check:
   options: ["25", "10", "7", "52"]
   actual: "25. 5² means 5 × 5: a square with side 5 has 5 rows of 5 unit squares. 10 is 5 × 2, double, not squared."
 ```
+
+<figure class="situation" role="img" aria-label="A square with a side of 5 units. Inside it: the number of unit squares it covers is a question mark."><svg viewBox="0 0 350 180" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="110" y="35" width="130" height="130" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="175" y="25" text-anchor="middle" fill="currentColor" stroke="none">5</text><text x="95" y="105" text-anchor="end" fill="currentColor" stroke="none">5</text><text x="175" y="98" text-anchor="middle" fill="currentColor" stroke="none">? unit squares</text></svg></figure>
 
 Picture a square with side 5. How many unit squares does it cover?
 
@@ -217,3 +220,45 @@ check: { type: board, text: "Make a perfect square bigger than 144 (past the lis
 ```
 
 Then write its square root, and check by multiplying.
+
+## Make: a square patio, on paper
+
+```step
+stage: make
+insight: "A patio laid in square pavers is a square number: the count is the area, and the side is the square root. The count is past the list, so 13 comes from testing."
+hint: ["The count of pavers is side × side.", "Which number times itself makes 169? Try past 12."]
+check:
+  type: reasoning
+  paper: true
+  q: "A square patio is laid with 169 square pavers. How many pavers are along one side?"
+  steps:
+    - ["The patio is a square of pavers, so $\\text{side} \\times \\text{side} = 169$", "the count of pavers is the area, in unit squares"]
+    - ["$\\sqrt{169}$: which number times itself makes 169?", "the square root undoes squaring"]
+    - ["$13 \\times 13 = 169$, so the side is 13 pavers", "$12^2 = 144$ is too small and $14^2 = 196$ is too big"]
+  picks:
+    - step: 2
+      q: "How do you get the side from the number of pavers?"
+      options:
+        - "Find the number that times itself makes 169"
+        - "Halve 169"
+        - "Divide 169 by 4, one for each side"
+      answer: 0
+      feedback: [null, "Half of 169 does not multiply by itself to make 169.", "Dividing by 4 is for a perimeter. The count is the whole area."]
+  answer: "13"
+  tolerance: 0
+  feedback:
+    - ["84.5", "That is half of 169. Which number times itself makes 169?"]
+    - ["42.25", "That divides by 4. The count is side × side, so take a square root."]
+  criteria:
+    - "I wrote the count as side × side."
+    - "I checked my side by multiplying it by itself."
+    - "I used 12² = 144 to know the side was past 12."
+  explain: "side × side = 169, and 13 × 13 = 169, so each side is 13 pavers."
+```
+
+Do this one in your book, not on the screen. The patio is made up for the task, and a real one has cut pavers at the edges. Write the count as side × side, find the root, check it, and type the side.
+
+**Also used in**
+
+- **Building.** Pavers, tiles and turf are bought by the count or the area, and a square layout is a square number.
+- **Gardens.** A square vegetable patch of 50 m² has a side of √50, between 7 and 8 m. Roots that are not whole come next.

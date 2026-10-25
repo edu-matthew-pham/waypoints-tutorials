@@ -8,6 +8,7 @@ summary: "2 red counters and 3 blue: the ratio of red to blue is 2 : 3 (part to 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A fruit punch is 4 cups of juice for every 3 cups of lemonade. Swap them and it tastes completely different. How do we write a recipe like that down?"
+connection: paint-mix
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8290
   url: http://127.0.0.1:8290/index.html
@@ -46,6 +47,8 @@ check:
   options: ["2 : 3", "3 : 2", "2 : 5", "5 : 2"]
   actual: "2 : 3. Red comes first, so 2 comes first. 3 : 2 is blue to red; 2 : 5 is red to all the counters."
 ```
+
+<figure class="situation" role="img" aria-label="A bag holding 2 red counters and 3 blue counters. Underneath: the ratio of red to blue is a question mark to a question mark."><svg viewBox="0 0 400 170" width="400" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="40" y="20" width="320" height="80" rx="14" fill="#888780" fill-opacity="0.15" stroke="#5F5E5A"/><circle cx="90" cy="60" r="18" fill="#D85A30" fill-opacity="0.45" stroke="#993C1D"/><circle cx="140" cy="60" r="18" fill="#D85A30" fill-opacity="0.45" stroke="#993C1D"/><circle cx="210" cy="60" r="18" fill="#378ADD" fill-opacity="0.4" stroke="#185FA5"/><circle cx="260" cy="60" r="18" fill="#378ADD" fill-opacity="0.4" stroke="#185FA5"/><circle cx="310" cy="60" r="18" fill="#378ADD" fill-opacity="0.4" stroke="#185FA5"/><text x="115" y="125" text-anchor="middle" fill="currentColor" stroke="none">red</text><text x="260" y="125" text-anchor="middle" fill="currentColor" stroke="none">blue</text><text x="200" y="158" text-anchor="middle" fill="currentColor" stroke="none">red to blue: ? : ?</text></svg></figure>
 
 How many counters are in the bag altogether?
 
@@ -194,3 +197,45 @@ check: { type: board, text: "Make a three-colour ratio with 10 parts in all, and
 ```
 
 Then write the ratio of the first colour to the whole.
+
+## Make: a paint mix, on paper
+
+```step
+stage: make
+insight: "A three-colour mix makes the second number in a part-to-whole ratio the sum of all the parts, not one other colour."
+hint: ["Add all three colours first.", "The second number is the whole mix."]
+check:
+  type: reasoning
+  paper: true
+  q: "The mural team tests a colour: 4 litres of blue, 5 litres of white and 3 litres of yellow. The ratio of white to the whole mix is $5 : ?$"
+  steps:
+    - ["$4 + 5 + 3 = 12$ litres in all", "the whole is every part added"]
+    - ["White to the whole is $5 : 12$", "the second number is the whole mix, not one other colour"]
+    - ["As a fraction, $\\tfrac{5}{12}$ of the mix is white", "part to whole is a fraction"]
+    - ["Check: $\\tfrac{4}{12} + \\tfrac{5}{12} + \\tfrac{3}{12} = 1$", "the parts of the whole add to one whole"]
+  picks:
+    - step: 2
+      q: "In 'white to the whole mix', what does the second number stand for?"
+      options:
+        - "All 12 litres: the three colours added"
+        - "The other colours: 4 + 3 = 7"
+        - "The blue only: 4"
+      answer: 0
+      feedback: [null, "That is white to the others, a part-to-part ratio.", "That is white to blue. The whole mix includes every colour."]
+  answer: "12"
+  feedback:
+    - ["7", "That is the blue and yellow only. The whole mix includes the white."]
+    - ["3", "That is the yellow. The whole is all the colours together."]
+  criteria:
+    - "I added all three colours to find the whole."
+    - "I put white first, because it was named first."
+    - "My parts add back to the whole."
+  explain: "4 + 5 + 3 = 12 litres, so white to the whole mix is 5 : 12, which is the fraction 5/12."
+```
+
+Do this one in your book, not on the screen. The litres are made up for the task. Add the parts first, write the ratio, then type the number that goes in the gap.
+
+**Also used in**
+
+- **Mixing.** Mural paint, concrete and cordial are all recipes in a ratio, and the whole is the parts added together.
+- **Next lessons.** Scaling a recipe up and down, then sharing 10 litres of a 2 : 3 mix between the colours.

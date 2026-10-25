@@ -18,6 +18,7 @@ running:
   - "Investigate: write 6² = 36 and √36 = 6 on the board as a pair that undo each other."
   - "Modify: before the perimeter task, ask what the 49 is: an area or a length?"
   - "Make: collect squares past 144 and their roots; look at the last digits."
+  - "Paper: the patio task in Make is worked in books; the page marks the answer (13) and the reason for taking a root. Books out, then look for the check 13 x 13 on the page."
 stuck:
   - see: "A student writes 5² = 10 (Ava's mistake)."
     ask: "Draw a square with side 5. How many unit squares?"

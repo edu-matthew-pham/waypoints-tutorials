@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Zoe whether 1/7 is a fraction."
   - "Modify: ask which denominators gave decimals that stop."
   - "Make: ask for the longest block they found."
+  - "Paper: the spare-cent task in Make is worked in books; the page marks the repeating digit (3) and the reason (the remainder comes back). Books out, then look for a remainder written beside every step."
 stuck:
   - see: "A student says a long calculator decimal never stops, so it is irrational."
     ask: "Do the digits repeat?"

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Max to simplify."
   - "Modify: ask which numerators work for denominator 15, and why."
   - "Make: ask for the reason in primes."
+  - "Paper: the classmate's-claim task in Make is worked in books; the page marks the reasons (simplify first, 10 = 2 x 5), not a number. Books out, then look for a simplified fraction written before any prime factors."
 stuck:
   - see: "A student judges by the denominator's size or digits."
     ask: "What are its prime factors?"

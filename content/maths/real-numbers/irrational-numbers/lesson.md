@@ -204,3 +204,49 @@ check: { type: board, text: "Find the first 4 decimal digits of π.", when: "d =
 ```
 
 Then explain why 3.1416 is not exactly π.
+
+## Make: the tile diagonal, on paper
+
+```step
+stage: make
+insight: "A calculator's display stops, but the number does not. The reasons (perfect squares, never repeating) are the point, so the marks are on the reasons."
+hint: ["Is 2 a perfect square?", "What does a calculator display do when a decimal is endless?"]
+check:
+  type: reasoning
+  paper: true
+  q: "A tiler measures the diagonal of a 1 m square tile. Her calculator shows $\\sqrt{2} = 1.414213562$. She says: 'That stops, so it is a fraction: 1414213562 over 1000000000.' Is she right? Decide, and give your reasons."
+  steps:
+    - ["No: the calculator shows only the first 10 digits of $\\sqrt{2}$", "a display has to stop somewhere; that does not mean the number stops"]
+    - ["2 is not a perfect square ($1^2 = 1$ and $2^2 = 4$), so $\\sqrt{2}$ is irrational", "the root of a whole number that is not a perfect square is irrational"]
+    - ["An irrational decimal never stops and never repeats, so no fraction equals it", "rational means the decimal stops or repeats"]
+    - ["1414213562 over 1000000000 is a rational number very close to $\\sqrt{2}$, not equal to it", "an approximation, like 3.14 for $\\pi$"]
+  picks:
+    - step: 2
+      q: "Why is $\\sqrt{2}$ irrational?"
+      options:
+        - "2 is not a perfect square: no whole number times itself makes 2"
+        - "The calculator stopped after 10 digits"
+        - "2 is a small number, so its root is rational"
+      answer: 0
+      feedback: [null, "A display stops for any number, even an irrational one.", "Size does not decide. Perfect squares do."]
+    - step: 3
+      q: "What does irrational say about the decimal?"
+      options:
+        - "It never stops and never repeats"
+        - "It repeats a block of digits forever"
+        - "It has more than ten digits"
+      answer: 0
+      feedback: [null, "A decimal that repeats is rational: it is a fraction.", "Rational decimals can be long too, like 1/7. It is the never stopping and never repeating."]
+  criteria:
+    - "I decided first, then gave reasons."
+    - "I used 'perfect square' or 'never repeats' in a reason."
+    - "I said her fraction is close to $\\sqrt{2}$, not equal to it."
+  explain: "No. Her display shows the first digits only. 2 is not a perfect square, so √2 is irrational: its decimal never stops or repeats, and no fraction equals it. Her fraction is a close approximation."
+```
+
+Do this one in your book, not on the screen. The tile is a real shape, a square with side 1 m, but the tiler and her claim are made up for the task. Decide first, then write your reasons, then pick the key reasons on the screen.
+
+**Also used in**
+
+- **Building.** The diagonal of a square or a rectangle comes out as a root, and the next lesson places roots like it on a tape measure.
+- **Circles.** $\pi$ is the other famous number whose decimal never stops or repeats.

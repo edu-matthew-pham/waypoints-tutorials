@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Leo whether 9000 hours makes sense."
   - "Modify: ask why the gap grows by the same amount each hour."
   - "Make: ask what the model leaves out."
+  - "Paper: the drip-rate task in Make is worked in books; the page marks the answer (50) and the reason for multiplying by the drop factor. Books out, then look for the units written beside each step."
 stuck:
   - see: "A student multiplies to find a time."
     ask: "What units does your answer have?"

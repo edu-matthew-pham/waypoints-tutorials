@@ -18,6 +18,7 @@ running:
   - "Investigate: ask what Kai's 2.35 and 2.4 would mean if 2.349 were a real length."
   - "Modify: for the paint, ask what happens if she buys 3 tins."
   - "Make: collect the smallest and largest numbers that round to 4.57."
+  - "Paper: the bill-splitting task in Make is worked in books; the page marks the answer (31.33) and the reason for rounding down. Books out, then look for the one digit after the cents being named, and the 93.99 check."
 stuck:
   - see: "A student cuts digits off (3.74)."
     ask: "Is 3.746 nearer 3.74 or 3.75? Where does it sit on the line?"
