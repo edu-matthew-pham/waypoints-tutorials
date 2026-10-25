@@ -10,6 +10,9 @@ import { diagramSpec, deckSource, diagramItems } from './diagram-core.mjs';
 
 export const SITE_URL = (process.env.SITE_URL || 'https://tutorials.learningwaypoints.com').replace(/\/$/, '');
 export const PREPARE_URL = 'https://prepare.learningwaypoints.com/';
+// Open a generated file in Prepare: slides on its main page (presents at once), a worksheet or cheat sheet in Print.
+// Both read ?src=<address of the .md file>.
+export const prepareLink = (app, fileUrl) => `${PREPARE_URL}${app === 'print' ? 'print' : ''}?src=${encodeURIComponent(fileUrl)}`;
 const STAGES = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 const bare = (t) => String(t).replace(STAGES, '');
 // A maths task's text carries its worked example (a numbered list of $maths$ lines), so slides and worksheets keep it.
@@ -619,9 +622,9 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
     return `<h3>${esc(name)}</h3>${splitFiles(snip(ref)).map((f) => showProgram(f.code, f.name || '')).join('')}`;
   }).join('');
   const stuck = (T.stuck || []).length ? `<table class="stuck"><thead><tr><th>What you will see</th><th>A question to ask</th><th>The fix</th></tr></thead><tbody>${T.stuck.map((x) => `<tr><td data-label="What you will see">${esc(x.see)}</td><td data-label="A question to ask">${esc(x.ask)}</td><td data-label="The fix">${esc(x.fix)}</td></tr>`).join('')}</tbody></table>` : '';
-  const dl = files.map((f) => `<li><b>${esc(f.label)}</b> <a href="${esc(f.href)}" download>Download</a> <button type="button" class="copyurl" data-url="${esc(f.url)}">Copy address for Prepare</button><span class="muted"> ${esc(f.note || '')}</span></li>`).join('');
+  const dl = files.map((f) => `<li><b>${esc(f.label)}</b> ${f.app ? `<a class="openin" href="${esc(prepareLink(f.app, f.url))}" target="_blank" rel="noopener">Open in ${f.app === 'print' ? 'Print' : 'Prepare'}</a> ` : ''}<a href="${esc(f.href)}" download>Download</a> <button type="button" class="copyurl" data-url="${esc(f.url)}">Copy address for Prepare</button><span class="muted"> ${esc(f.note || '')}</span></li>`).join('');
   return `<header class="top"><a class="crumb" href="../">← Teacher guide</a><h1>${esc(lesson.title)}</h1><p class="lede">${esc(T.summary || lesson.summary)}</p><p class="tmeta">${esc(course)}${unit ? ` · ${esc(unit)}` : ''}${T.time ? ` · about ${T.time} minutes` : ''} · <a href="${esc(studentHref)}">Open the student lesson</a></p></header>` +
-    sec('Classroom resources', `<p>Load these into <a href="${PREPARE_URL}" target="_blank" rel="noopener">Waypoints Prepare</a>: choose <b>Load URL</b> and paste the copied address, or download the file and import it. In Prepare, the worksheet's Teacher edition shows the answers; the student copy hides them.</p><ul class="dl">${dl}</ul>`) +
+    sec('Classroom resources', `<p>Open these in <a href="${PREPARE_URL}" target="_blank" rel="noopener">Waypoints Prepare</a> with one click. To share a file another way, copy its address and paste it into <b>Load URL</b>, or download the file and import it. In Prepare, the worksheet's Teacher edition shows the answers; the student copy hides them.</p><ul class="dl">${dl}</ul>`) +
     sec('Students will be able to', T.goals ? `<ul>${T.goals.map((g) => `<li>${esc(g)}</li>`).join('')}</ul>` : '') +
     sec('Timing', T.timing ? `<p>${esc(T.timing)}</p>` : '') +
     sec('Before class', T.before ? md(T.before) : '') +
@@ -646,7 +649,7 @@ export const TEACH_CSS = `.tg{margin:26px 0}.tg h2{font-size:1.15rem;margin:0 0 
 .answers li{margin:0 0 10px}.stuck{width:100%;border-collapse:collapse;font-size:14px}.stuck th,.stuck td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}.stuck th{background:var(--card)}
 @media(max-width:560px){.stuck,.stuck tbody,.stuck tr,.stuck td{display:block}.stuck thead{display:none}.stuck tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;padding:4px 0}.stuck td{border:0;padding:4px 10px;overflow-wrap:anywhere}.stuck td::before{content:attr(data-label);display:block;font-weight:700;font-size:12px;color:var(--muted)}}
 .dl{list-style:none;padding:0;display:grid;gap:8px}.dl li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
-.copyurl{font:inherit;font-size:13px;margin-left:6px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);cursor:pointer}
+.openin{font-size:13px;margin-right:6px}.copyurl{font:inherit;font-size:13px;margin-left:6px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);cursor:pointer}
 .blocks{margin:8px 0}.blocks img{max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px}.mkjs summary{cursor:pointer;color:var(--muted);font-size:14px}
 .coachp{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px}.tunit{margin:26px 0}.tunit h2{margin:0 0 4px;font-size:1.15rem}.tunit ul{margin:6px 0}.primer{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px}`;
 export const TEACH_JS = `document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.copyurl');if(!b)return;var u=b.dataset.url,done=function(){var t=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=t},1500)};

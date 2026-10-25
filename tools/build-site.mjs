@@ -41,7 +41,7 @@ import { loadProgressions } from './progressions.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
 import { loadAllMathsCards, mathsRefItem, mathsCheatBody, mathsCheatMd, MATHS_CARD_CSS } from './maths-cards.mjs';
-import { deckFor, worksheetFor, cheatSheetFor, cheatSheetBody, unitSnippets, CHEAT_CSS, lessonGuideBody, teachPath, stepUrl, SITE_URL, TEACH_CSS, TEACH_JS, blocksId } from './teach.mjs';
+import { deckFor, worksheetFor, cheatSheetFor, cheatSheetBody, unitSnippets, CHEAT_CSS, lessonGuideBody, teachPath, stepUrl, SITE_URL, prepareLink, TEACH_CSS, TEACH_JS, blocksId } from './teach.mjs';
 
 const require = createRequire(import.meta.url);
 const { highlightCode } = require('./highlight.cjs');
@@ -866,8 +866,8 @@ for (const coursePath of teachCourses) {
     writeFileSync(join(dir, 'deck.md'), deckFor(l, ctx));
     writeFileSync(join(dir, 'worksheet.md'), worksheetFor(l, ctx));
     const files = [
-      { label: 'Slides', href: 'deck.md', url: `${SITE_URL}/${teachPath(l)}deck.md`, note: 'Present from the browser, or export to PowerPoint or PDF.' },
-      { label: 'Worksheet', href: 'worksheet.md', url: `${SITE_URL}/${teachPath(l)}worksheet.md`, note: 'Print the student copy; the Teacher edition has the answers.' },
+      { label: 'Slides', app: 'prepare', href: 'deck.md', url: `${SITE_URL}/${teachPath(l)}deck.md`, note: 'Present from the browser, or export to PowerPoint or PDF.' },
+      { label: 'Worksheet', app: 'print', href: 'worksheet.md', url: `${SITE_URL}/${teachPath(l)}worksheet.md`, note: 'Print the student copy; the Teacher edition has the answers.' },
     ];
     const isM = l.language === 'maths';
     const body = lessonGuideBody(l, { esc: isM ? mathsGuide.esc : esc, md: isM ? mathsGuide.md : md, snip, highlightCode, codeBlock, studentHref: `${'../'.repeat(l.depth + 1)}${l.slug}/`, course: node.title, unit: ctx.unit, files, blocks: (code) => blocksPic(code, '../'.repeat(teachPath(l).split('/').filter(Boolean).length)), diagram: (key, blank) => diagramPic(l, key, blank, '../'.repeat(teachPath(l).split('/').filter(Boolean).length)) });
@@ -941,7 +941,7 @@ for (const coursePath of teachCourses) {
       writeFileSync(join(courseDir, `cheatsheet-${u.id}.md`), sheet);
       const url = `${SITE_URL}/teach/${coursePath}/cheatsheet-${u.id}.md`;
       cheatPage({ dir: `teach/${coursePath}/cheatsheet-${u.id}`, title: `${u.title}: cheat sheet`, sections: [{ title: u.title, items: unitItems[u.id] }], back: '../', backLabel: 'Teacher guide', mdName: `../cheatsheet-${u.id}.md`, mdUrl: url });
-      cheat = `<p>Cheat sheet: <a href="cheatsheet-${esc(u.id)}/">Open to print</a> <span class="muted">(A4, ${mathsCourse ? 'with board pictures' : 'with a picture of what each command draws'})</span> · <a href="cheatsheet-${esc(u.id)}.md" download>Markdown</a> <button type="button" class="copyurl" data-url="${esc(url)}">Copy address for Prepare</button></p>`;
+      cheat = `<p>Cheat sheet: <a href="cheatsheet-${esc(u.id)}/">Open to print</a> <span class="muted">(A4, ${mathsCourse ? 'with board pictures' : 'with a picture of what each command draws'})</span> · <a href="${esc(prepareLink('print', url))}" target="_blank" rel="noopener">Open in Print</a> · <a href="cheatsheet-${esc(u.id)}.md" download>Markdown</a> <button type="button" class="copyurl" data-url="${esc(url)}">Copy address for Prepare</button></p>`;
     }
     const rows = mine.map((l) => l.teacher
       ? `<li><a href="${esc(l.slug.split('/').pop())}/">${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}</a>${l.optional ? ' <span class="muted">(optional)</span>' : ''} <span class="muted">· <a href="${esc(l.slug.split('/').pop())}/deck.md" download>slides</a> · <a href="${esc(l.slug.split('/').pop())}/worksheet.md" download>worksheet</a></span></li>`
