@@ -17,6 +17,7 @@ eats A: G
 eats N: I
 eats X: A, N
 eats D: R, X, A
+either A: foxes, which also eat it, have increased
 # endregion
 
 # region: choose

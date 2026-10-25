@@ -1277,7 +1277,9 @@ Vary, Practise, Make).
     `mode: remove` (optionally `remove: D`): one species is removed, students predict each other population
     (↑, ↓ or –) and check against the model's cascade with a reason for each (`r`, `p` predictions, `k`, `h` 1 once
     checked, `c` matching). The cascade follows feeding links outward, nearest effects first; disagreeing effects
-    at the same distance are "could go either way".
+    at the same distance are "could go either way". Because the model takes only the nearest effect, a species
+    pushed both ways by paths of different lengths (rabbits when the dingo goes: the dingo no longer eats them, but
+    the foxes that do have increased) is marked by hand with `either A: reason`.
   - `widget: classifier` (AI; first used by `code/microbit-computer`): students train an image model in Teachable
     Machine, export it with **Upload my model** and paste the link; the board tests it on a fixed set of photos.
     - `testset: recycling` (photos and labels in `playground-board/media/classifier/<name>/test.json`; the recycling set

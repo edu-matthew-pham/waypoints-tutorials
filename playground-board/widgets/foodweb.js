@@ -8,6 +8,8 @@
 //                                                happens to each other population, then compare with the model
 //   energy: 10000                        trace: energy at the producers (kJ); each level up keeps 10%
 //   remove: D                            remove: the species taken out (otherwise students choose)
+//   either A: reason                     remove: show A as "could go either way", with this reason added (for a species the
+//                                        removal pushes both ways through different paths)
 // state: { scope: { vars } }
 //   build:  c correct arrows, x wrong arrows, k arrows in the web
 //   trace:  l longest chain traced (number of organisms), n chains traced
@@ -167,6 +169,8 @@
     eatsOf(X).forEach(function (id) { put(id, 'up', org(X) + ', which ate it, is gone'); });
     for (var depth = 0; depth < 6 && Object.keys(step).length; depth++) {
       var front = step; Object.keys(front).forEach(function (id) { m[id] = front[id]; });
+      // a species the board says is pushed both ways: shown as either, and it does not spread a change either way
+      spec.items.forEach(function (it) { if (it.kind === 'either' && front[it.name]) front[it.name] = m[it.name] = { dir: 'either', why: front[it.name].why.concat([it.value]) }; });
       step = {};
       Object.keys(front).forEach(function (Y) {
         var d = front[Y].dir; if (d === 'either') return;
