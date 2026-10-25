@@ -24,3 +24,16 @@ INSERT INTO songs VALUES
  (13,'River Song','Juno & Co','folk',2019,247,1500),
  (14,'Midnight Bus','Ayla Reed','soul',2023,264,4700),
  (15,'Lemonade Sky','Mira Vale','pop',2022,183,6900);
+
+-- Who the artists are: one row each. songs.artist matches artists.name.
+CREATE TABLE artists (
+  name TEXT,
+  country TEXT,
+  formed INTEGER
+);
+INSERT INTO artists VALUES
+ ('Mira Vale','Australia',2017),
+ ('The Dunes','New Zealand',2012),
+ ('Kito','Japan',2016),
+ ('Ayla Reed','USA',2014),
+ ('Juno & Co','Ireland',2010);

@@ -6,4 +6,5 @@ order: 3
 units:
   - { id: ask, title: "Ask a table", summary: "Choose columns, filter rows and put them in order." }
   - { id: summarise, title: "Summarise", summary: "Count, add up and average rows, then do it for each group." }
+  - { id: tables, title: "More than one table", summary: "Join tables, change data and design tables with keys." }
 ---
