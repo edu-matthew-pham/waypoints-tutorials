@@ -1,0 +1,10 @@
+# Boards for "Tenths and hundredths".
+
+# region: grid
+widget: bars
+a: 3
+b: 10
+slider c: 0, 100, 0
+hundred: on
+show: decimal, percent
+# endregion

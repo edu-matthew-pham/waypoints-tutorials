@@ -1,0 +1,7 @@
+# Boards for "Probability from 0 to 1".
+
+# region: bag
+widget: chance
+device: bag
+outcomes: red 3, blue 1
+# endregion

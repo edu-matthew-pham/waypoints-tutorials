@@ -2,6 +2,7 @@
 order: 7
 unit: equations
 node: AC9M7A03 n1
+assumes: [AC9M6A02 n2]
 title: Equations as a balance
 summary: An equation says two things are equal. Find the value that makes it true, then check it.
 language: maths

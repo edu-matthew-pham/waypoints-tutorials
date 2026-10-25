@@ -1,0 +1,9 @@
+# Boards for "Same amount, different fraction".
+
+# region: bars
+widget: bars
+a: 1
+b: 2
+slider c: 0, 12, 1
+slider d: 1, 12, 3
+# endregion

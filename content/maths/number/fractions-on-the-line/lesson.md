@@ -2,6 +2,7 @@
 order: 11
 unit: fractions
 node: AC9M7N04 n3
+assumes: [AC9M4N04 n1, AC9M4N04 n2]
 uses: [AC9M7N07 n1]      # ordering negatives (Comparing integers)
 title: Fractions and decimals on the line
 summary: Split each unit into equal parts and count from zero. A negative fraction or decimal counts to the left, so −1.5 sits halfway between −2 and −1.

@@ -2,6 +2,7 @@
 order: 12
 unit: fractions
 node: AC9M7N06 n1
+assumes: [AC9M5N05 n1]
 uses: [AC9M7N04 n1, AC9M7N02 n3]   # equivalent fractions; the LCM (HCF and LCM)
 title: Adding and subtracting fractions
 summary: "Parts can be counted together only when they are the same size. Cut both fractions into the same parts first: 1/3 + 1/4 = 4/12 + 3/12 = 7/12. The lowest common multiple of the bottoms is the smallest choice."

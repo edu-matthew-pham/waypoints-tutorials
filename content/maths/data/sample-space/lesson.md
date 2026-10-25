@@ -2,6 +2,7 @@
 order: 6
 unit: chance
 node: [AC9M7P01 n1, AC9M7P01 n2]
+assumes: [AC9M6P01 n1]
 uses: [AC9M7N04 n2]   # writing a probability as a fraction, decimal or percentage
 title: Sample spaces and probability
 summary: "The sample space lists every possible outcome. When the outcomes are equally likely, the probability of an event is favourable outcomes ÷ total outcomes; when they are not (a spinner with a bigger sector), use the sizes. The probabilities add to 1."

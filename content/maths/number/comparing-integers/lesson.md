@@ -2,6 +2,7 @@
 order: 1
 unit: integers
 node: AC9M7N07 n1
+assumes: [AC9M6N01 n1, AC9M6N01 n2]
 title: Comparing integers
 summary: On a number line, the number further left is less. So −7 is less than −2, even though 7 is more than 2.
 language: maths

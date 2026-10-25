@@ -1,0 +1,7 @@
+# Boards for "Undo it".
+
+# region: machine
+widget: machine
+ops: × 2, + 3
+output: 11
+# endregion

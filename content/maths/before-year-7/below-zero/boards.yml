@@ -1,0 +1,9 @@
+# Boards for "Below zero".
+
+# region: thermometer
+widget: numberline
+range: -10, 10
+context: Temperature (°C)
+point Q: -3
+point P: 0, drag
+# endregion

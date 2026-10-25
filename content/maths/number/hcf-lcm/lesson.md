@@ -2,6 +2,7 @@
 order: 8
 unit: powers
 node: AC9M7N02 n3
+assumes: [AC9M5N02 n1, AC9M5N02 n2]
 title: HCF and LCM
 summary: "Put two prime factorisations side by side. The primes they share multiply to the highest common factor; all the primes (shared ones once) multiply to the lowest common multiple."
 language: maths

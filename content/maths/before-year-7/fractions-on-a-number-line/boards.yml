@@ -1,0 +1,9 @@
+# Boards for "Fractions on a number line".
+
+# region: quarters
+widget: numberline
+range: 0, 3
+fractions: 4
+snap: 0.25
+point P: 0, drag
+# endregion

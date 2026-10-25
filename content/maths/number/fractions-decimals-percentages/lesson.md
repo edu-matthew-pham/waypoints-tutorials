@@ -2,6 +2,7 @@
 order: 10
 unit: fractions
 node: AC9M7N04 n2
+assumes: [AC9M4N01 n1, AC9M4N01 n2, AC9M5N04 n1]
 title: Fractions, decimals and percentages
 summary: "One amount, three ways to write it. A percentage is out of 100, so 3/4 = 75/100 = 75% = 0.75. Divide the top by the bottom for a decimal; put a percentage over 100 and simplify for a fraction."
 language: maths

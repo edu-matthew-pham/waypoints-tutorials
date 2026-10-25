@@ -1,0 +1,10 @@
+# Boards for "Find the missing number".
+
+# region: scale
+widget: balance
+left: x + 5
+right: 12
+min: 0
+max: 10
+start: 1
+# endregion

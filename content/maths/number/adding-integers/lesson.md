@@ -2,6 +2,7 @@
 order: 2
 unit: integers
 node: AC9M7N07 n2
+assumes: [AC9M6N01 n2]
 title: Adding and subtracting integers
 summary: Start at the first number and move along the line. Adding a negative moves left; subtracting moves the opposite way to adding, so subtracting a negative moves right.
 language: maths

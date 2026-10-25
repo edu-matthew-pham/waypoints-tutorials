@@ -2,6 +2,7 @@
 order: 8
 unit: equations
 node: AC9M7A03 n2
+assumes: [AC9M5A01 n1, AC9M5A01 n3]
 title: Solving by backtracking
 summary: Undo what was done to x, last step first, to find the number you started with.
 language: maths

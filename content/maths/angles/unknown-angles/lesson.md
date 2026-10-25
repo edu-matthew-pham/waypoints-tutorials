@@ -2,6 +2,7 @@
 order: 6
 unit: angle-sums
 node: AC9M7M05 n3
+assumes: [AC9M6M04 n1, AC9M6M04 n2]
 uses: [AC9M7M04 n3]   # chains of reasons with parallel-line angles (Reasoning with angles)
 title: Unknown angles in shapes
 summary: "Find unknown angles in triangles and polygons in steps, with a reason for each: the angle sum of the shape, angles on a straight line, equal angles in an isosceles triangle. An exterior angle of a triangle equals the sum of the two interior opposite angles."

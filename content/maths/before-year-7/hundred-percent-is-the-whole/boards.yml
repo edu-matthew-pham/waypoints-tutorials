@@ -1,0 +1,7 @@
+# Boards for "100% is the whole".
+
+# region: bar
+widget: percent
+q: 60
+slider p: 0, 100, 0, 5
+# endregion

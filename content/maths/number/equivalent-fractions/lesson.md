@@ -2,6 +2,7 @@
 order: 9
 unit: fractions
 node: AC9M7N04 n1
+assumes: [AC9M4N03 n1]
 title: Equivalent fractions
 summary: "Fractions are equal when they shade the same amount. Multiply or divide the top and the bottom by the same number: 2/3 = 4/6 = 8/12. Dividing by the highest common factor gives the simplest form."
 language: maths

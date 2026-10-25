@@ -2,6 +2,7 @@
 order: 7
 unit: powers
 node: AC9M7N02 n2
+assumes: [AC9M5N02 n1, AC9M5N02 n2]
 title: Prime factors
 summary: "Split a number into factor pairs until every branch is a prime: 36 = 2 × 2 × 3 × 3 = 2² × 3². Every tree for 36 ends with the same primes."
 language: maths

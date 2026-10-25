@@ -2,6 +2,7 @@
 order: 1
 unit: parallel
 node: AC9M7M04 n1
+assumes: [AC9M6M04 n1, AC9M6M04 n2]
 title: Angles at parallel lines
 summary: "A line crossing two parallel lines makes eight angles. Pairs in the same place at each crossing are corresponding; between the lines on opposite sides, alternate; between the lines on the same side, co-interior."
 language: maths

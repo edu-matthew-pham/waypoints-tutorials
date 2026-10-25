@@ -1,0 +1,11 @@
+# Boards for "Adding fractions with the same parts".
+
+# region: fifths
+widget: fracadd
+slider a: 0, 5, 1
+b: 5
+slider c: 0, 5, 1
+d: 5
+k: 5
+op: +
+# endregion

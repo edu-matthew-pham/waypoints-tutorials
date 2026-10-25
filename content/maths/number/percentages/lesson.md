@@ -2,6 +2,7 @@
 order: 14
 unit: fractions
 node: AC9M7N06 n3
+assumes: [AC9M5N04 n1]
 uses: [AC9M7N04 n2, AC9M7N06 n2]   # percentages as decimals; multiplying by a fraction less than 1
 title: Percentages of amounts
 summary: "15% of $80 is 0.15 × 80 = $12. Take it off for a discount ($68, or 80 × 0.85 in one step), add it on for an increase ($92, or 80 × 1.15). And 18 out of 24 is 18 ÷ 24 = 75%."

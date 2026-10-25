@@ -2,6 +2,7 @@
 order: 17
 unit: placevalue
 node: [AC9M7N03 n1, AC9M7N03 n2]
+assumes: [AC9M4N05 n1, AC9M4N05 n2]
 uses: [AC9M7N02 n1]   # exponent notation and powers of 10 (Powers)
 title: Place value and powers of 10
 summary: "Each place value column is a power of 10: the thousands column is 10³, the ones column is 10⁰ = 1. So 4052 = 4 × 10³ + 5 × 10¹ + 2 × 10⁰."

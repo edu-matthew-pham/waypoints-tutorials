@@ -1,0 +1,7 @@
+# Boards for "Angles on a line and at a point".
+
+# region: line
+widget: parallel
+slider t: 30, 150, 60
+angles: hidden
+# endregion

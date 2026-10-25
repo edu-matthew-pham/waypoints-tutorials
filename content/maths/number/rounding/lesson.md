@@ -2,6 +2,7 @@
 order: 18
 unit: placevalue
 node: [AC9M7N05 n1, AC9M7N05 n2]
+assumes: [AC9M4N01 n2]
 uses: [AC9M7N03 n1]   # the place value columns (Place value and powers of 10)
 title: Rounding decimals
 summary: "3.746 to 2 decimal places is 3.75: look at the next digit, 6, and round up. How much to round depends on what the number is for."

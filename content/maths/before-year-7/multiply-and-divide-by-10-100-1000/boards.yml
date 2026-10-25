@@ -1,0 +1,8 @@
+# Boards for "Multiply and divide by 10, 100 and 1000".
+
+# region: shift
+widget: placevalue
+places: 5
+n: 35
+shift: on
+# endregion

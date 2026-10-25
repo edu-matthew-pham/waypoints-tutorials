@@ -2,6 +2,7 @@
 order: 9
 unit: equations
 node: AC9M7A03 n3
+assumes: [AC9M6A02 n2]
 title: The balance method
 summary: Do the same to both sides to get x on its own, then check your answer in the first equation.
 language: maths
