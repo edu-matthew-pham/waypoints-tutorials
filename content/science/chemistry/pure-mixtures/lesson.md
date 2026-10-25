@@ -64,28 +64,28 @@ tasks:
       q: "Pure substance or mixture?"
       options: ["Pure substance", "Mixture"]
       items:
-        - ["Distilled water", "Pure substance", "Only one kind of particle."]
-        - ["Salt water", "Mixture", "Two kinds: water and salt."]
-        - ["Sandy water", "Mixture", "Two kinds: water and sand."]
-        - ["Air", "Mixture", "Mostly nitrogen and oxygen."]
-        - ["Copper wire", "Pure substance", "Only copper particles."]
-      explain: "Count the kinds of particles, not how the material looks."
+        - ["Distilled water", "Pure substance", "It has only one kind of particle."]
+        - ["Salt water", "Mixture", "It has two kinds of particle, water and salt."]
+        - ["Sandy water", "Mixture", "It has two kinds of particle, water and sand."]
+        - ["Air", "Mixture", "It is mostly nitrogen and oxygen particles, and that is more than one kind."]
+        - ["Copper wire", "Pure substance", "It has only copper particles."]
+      explain: "What matters is how many kinds of particle there are, not how the material looks."
     hint: ["For each one, picture zooming right in and count how many kinds of particles you'd see, whatever it looks like from outside.", "Switch between the samples on the board and count the different colours and sizes in each."]
   - check:
       type: question
       q: "Salt water looks exactly the same all the way through. Why is it still a mixture?"
       options: ["It contains two kinds of particles, even though they are evenly spread", "Because people added the salt", "It isn't: the salt has disappeared, so it is pure water", "Because it is slightly cloudy"]
       answer: 0
-      feedback: [null, "Seawater is a mixture too, and nobody added its salt. It is about the particles.", "The salt is still there: you can taste it, and if you evaporate the water the salt is left behind.", "Salt water is perfectly clear. Looks can't tell you."]
-      explain: "Evenly spread or not, two kinds of particles make a mixture."
+      feedback: [null, "Seawater is a mixture too even though nobody added its salt, so it is the particles that matter.", "The salt is still there, because you can taste it and if you evaporate the water the salt is left behind.", "Salt water is perfectly clear, so how it looks can't be the reason."]
+      explain: "It doesn't matter whether the particles are evenly spread, because two kinds of particle make a mixture."
     hint: ["Leave how it looks out of it for a moment: how many kinds of particles did you count in the salt water on the board?", "And if you boiled all the water away, would anything be left in the dish, and what would that tell you about where the salt went?"]
   - check:
       type: question
       q: "So is \"100% pure\" orange juice a pure substance?"
       options: ["Yes, nothing has been added", "No: it contains water, sugars, acids and many other kinds of particles"]
       answer: 1
-      feedback: ["That is the shopping meaning of pure.", null]
-      explain: "\"Pure\" on the label only means nothing was added."
+      feedback: ["That is what pure means when you're shopping, but it isn't the scientific meaning.", null]
+      explain: "The word \"pure\" on a label only means that nothing was added, which is not the same as having one kind of particle."
     hint: ["Is the label using the word the way a shopper does or the way a scientist does?", "Think about what's in a glass of juice besides water, and whether it's all one kind of particle."]
   - check: { type: reflect, text: "I wrote the difference between a pure substance and a mixture using particles, with salt water as an example." }
 ```
@@ -110,8 +110,8 @@ check:
   q: "Looking back at the particle model: if you could zoom into a drop of pure water, what would you see?"
   options: ["Only water particles, with empty space between them, always moving", "Water particles with a little air between them", "Smooth water, all the way down", "Water particles and salt particles evenly mixed"]
   answer: 0
-  feedback: [null, "There is nothing between particles, not even air.", "Water is made of particles, far too small to see.", "Pure water has only one kind of particle."]
-  explain: "Pure means one kind of particle. Those particles still have empty space between them and never stop moving."
+  feedback: [null, "There is nothing between particles, not even air, so there is no air in the gaps.", "Water is made of particles that are far too small to see, so it isn't smooth all the way down.", "Pure water has only one kind of particle, so salt particles can't be in it."]
+  explain: "Pure means one kind of particle, and those particles still have empty space between them and never stop moving."
 ```
 
 ## Elaborate: even and uneven mixtures
@@ -125,10 +125,10 @@ check:
   q: "A **homogeneous** mixture is evenly mixed: every part is the same. A **heterogeneous** mixture is uneven: you can find different parts. Name each diagram."
   options: ["Pure substance", "Homogeneous mixture", "Heterogeneous mixture"]
   items:
-    - ["Diagram A", "Heterogeneous mixture", "Two kinds, unevenly spread: the big particles sit in a clump."]
-    - ["Diagram B", "Pure substance", "Only one kind of particle."]
-    - ["Diagram C", "Homogeneous mixture", "Two kinds, evenly spread through each other."]
-  explain: "A and C are both mixtures; the difference is how evenly the particles are spread."
+    - ["Diagram A", "Heterogeneous mixture", "It has two kinds of particle that are unevenly spread, because the big particles sit in a clump."]
+    - ["Diagram B", "Pure substance", "It has only one kind of particle."]
+    - ["Diagram C", "Homogeneous mixture", "It has two kinds of particle that are evenly spread through each other."]
+  explain: "A and C are both mixtures, and the difference between them is how evenly the particles are spread."
 hint: ["Start by counting how many kinds of particles each diagram has, and only look at how they're spread if there's more than one.", "Each colour or size on the board is a different kind, so check whether the different kinds are scattered through each other or gathered in one spot."]
 ```
 
@@ -145,13 +145,13 @@ check:
   q: "Pure substance or mixture? Think about the particles, not the label or the look."
   options: ["Pure substance", "Mixture"]
   items:
-    - ["Table sugar from the packet", "Pure substance", "One kind of particle: sucrose."]
-    - ["Milk", "Mixture", "Water, fats, proteins, sugars and more."]
-    - ["A gold ring stamped 24 carat", "Pure substance", "24-carat gold is pure gold; lower carats are mixed with other metals."]
-    - ["Concrete", "Mixture", "Cement, sand, gravel and water."]
-    - ["A cup of tea", "Mixture", "Water plus many dissolved substances from the tea leaves."]
-    - ["A diamond", "Pure substance", "Only carbon."]
-    - ["Tap water", "Mixture", "Water with small amounts of dissolved minerals and chlorine: clean, but not pure."]
+    - ["Table sugar from the packet", "Pure substance", "Sugar has one kind of particle, which is sucrose."]
+    - ["Milk", "Mixture", "Milk is made of water, fats, proteins, sugars and more."]
+    - ["A gold ring stamped 24 carat", "Pure substance", "24-carat gold is pure gold, but lower carats are mixed with other metals."]
+    - ["Concrete", "Mixture", "Concrete is made of cement, sand, gravel and water."]
+    - ["A cup of tea", "Mixture", "Tea is water plus many dissolved substances from the tea leaves."]
+    - ["A diamond", "Pure substance", "A diamond is made only of carbon."]
+    - ["Tap water", "Mixture", "Tap water has small amounts of dissolved minerals and chlorine in it, so it is clean but not pure."]
 ```
 
 ## Elaborate: solvents and solutes
@@ -168,15 +168,15 @@ tasks:
       q: "In salt water, what is the solvent?"
       options: ["Water", "Salt"]
       answer: 0
-      feedback: [null, "The salt is what dissolves: the solute. The solvent is what does the dissolving."]
-      explain: "The solvent does the dissolving: water."
+      feedback: [null, "The salt is what dissolves, so it is the solute, and the solvent is what does the dissolving."]
+      explain: "The solvent is the one that does the dissolving, and in salt water that is the water."
   - check:
       type: question
       q: "In a soft drink, what are the solutes?"
       options: ["Water", "Sugar and carbon dioxide gas"]
       answer: 1
-      feedback: ["Water does the dissolving, so it is the solvent. The solutes are what dissolve in it.", null]
-      explain: "A gas can be a solute too: that's the fizz."
+      feedback: ["Water does the dissolving, so it is the solvent, and the solutes are what dissolves in it.", null]
+      explain: "A gas can be a solute too, and the dissolved carbon dioxide is what makes the drink fizz."
 ```
 
 A **solution** is a homogeneous mixture. The **solute** dissolves; the **solvent** does the dissolving.
@@ -199,7 +199,7 @@ tasks:
       q: "Stainless steel looks like a single shiny metal. It is mostly iron, with chromium and nickel particles spread evenly through it. Pure substance or mixture?"
       options: ["Pure substance", "Mixture"]
       answer: 1
-      feedback: ["Looking like one metal isn't the test. Count the kinds of particle: iron, chromium and nickel.", null]
+      feedback: ["Looking like one metal isn't the test, so count the kinds of particle instead.", null]
       explain: "Alloys are mixtures, even though they look like one metal."
   - check:
       type: question
@@ -213,7 +213,7 @@ tasks:
       q: "Which statement is true of every pure substance?"
       options: ["It always has the same make-up, with one kind of particle", "It looks shiny and even", "It occurs naturally"]
       answer: 0
-      feedback: [null, "Salt water looks even all the way through and is a mixture. Looks can't tell you.", "Distilled water is made by people and is pure; seawater is natural and is a mixture."]
+      feedback: [null, "Salt water looks even all the way through and is still a mixture, so looks can't tell you.", "Distilled water is made by people and is pure, while seawater is natural and is a mixture, so that isn't the rule."]
       explain: "That is what makes the definition useful: a pure substance's make-up can't vary."
 ```
 

@@ -79,28 +79,28 @@ tasks:
       q: "On the heating curve, the line is flat from 1 to 9 minutes. What is happening?"
       options: ["The ice is melting: energy goes into freeing the particles from their fixed places, so the temperature doesn't rise", "Nothing: the stove was turned off", "The water is boiling"]
       answer: 0
-      feedback: [null, "The heat was on the whole time.", "Boiling is the second flat part, at 100 °C."]
+      feedback: [null, "The heat was on the whole time, so that can't be the reason the line is flat.", "Boiling is at the second flat part, which sits at 100 °C, and this part is earlier on the curve."]
       explain: "During a change of state, the energy goes into overcoming the attraction between particles, not into making them move faster, so the temperature stays constant."
     hint: ["Was the stove on or off during those minutes, and if it was on, where could that energy be going if the particles aren't speeding up?", "Think about what else energy could do to particles besides making them move faster, and what the particles in ice are being held in."]
   - check:
       type: number
       q: "At what temperature (°C) is the second flat part of water's heating curve?"
       answer: 100
-      explain: "100 °C: water's boiling point (at sea level). The first flat part, at 0 °C, is its melting point."
+      explain: "The second flat part is at 100 °C, which is water's boiling point at sea level, and the first flat part at 0 °C is its melting point."
   - check:
       type: question
       q: "The curve is drawn to scale: the stove gives the same energy every minute. Why is the flat part at 100 °C about seven times longer than the one at 0 °C?"
       options: ["Boiling pulls the particles completely apart, which takes far more energy than loosening them from their fixed places", "The stove gives less energy once the water is hot", "Steam is lighter than ice, so it takes longer to make"]
       answer: 0
-      feedback: [null, "The stove is steady the whole time; the same energy goes in every minute.", "Weight isn't the reason: it is how much energy it takes to separate the particles."]
+      feedback: [null, "The stove is steady the whole time, so the same energy goes in every minute.", "Weight isn't the reason here, so think about what the energy is actually doing to the particles."]
       explain: "Melting only frees the particles to slide past each other. Boiling has to pull them far apart against their attraction, so it needs about seven times as much energy (2260 kJ for each kilogram, against 334 kJ to melt it)."
   - check:
       type: question
       q: "What does adding energy do to the particles in a solid, before it melts?"
       options: ["They vibrate faster, so the temperature rises", "They get bigger", "They start to leave the solid straight away"]
       answer: 0
-      feedback: [null, "Particles don't grow; their motion changes.", "They stay in place until the solid reaches its melting point."]
-      explain: "Temperature is a measure of how fast the particles move on average. Energy in, faster particles, higher temperature, until a change of state begins."
+      feedback: [null, "Particles never change size when they're heated, so think about what else energy could change.", "They stay in their places until the solid reaches its melting point, so they can't leave straight away."]
+      explain: "Temperature measures how fast the particles move on average, so adding energy makes them move faster and the temperature rises until a change of state begins."
   - check:
       type: match
       q: "What happens to the particles in each change of state?"
@@ -109,7 +109,7 @@ tasks:
         - ["Freezing", "Particles slow down and settle into fixed places, giving out energy"]
         - ["Evaporating", "Fast particles at the surface pull free of the others and escape as a gas"]
         - ["Condensing", "Gas particles slow down and are pulled close together into a liquid, giving out energy"]
-      explain: "Energy in frees the particles from each other's attraction; energy out lets the attraction pull them back together."
+      explain: "Energy going in frees the particles from each other's attraction, and energy coming out lets the attraction pull them back together."
     hint: ["Take one change at a time and picture the particles: are they getting free of each other, or settling back together?", "Then think about whether that needs energy put in or lets energy out, because the right description says which."]
   - check: { type: reflect, text: "I can explain changes of state with particles and say whether energy goes in or out for each." }
 ```
@@ -144,7 +144,7 @@ check:
   q: "Looking back at states of matter: a small jar of gas is opened in the middle of a large, sealed room. A few minutes later, where are its particles?"
   options: ["Spread through the whole room", "Mostly at the top of the room", "Still in a clump where the jar was", "Mostly on the floor"]
   answer: 0
-  feedback: [null, "Gas particles do not float up. They move in every direction.", "Fast-moving particles do not stay in a clump.", "Gas particles move in every direction, not just down."]
+  feedback: [null, "Gas particles don't float up, because they move in every direction.", "Fast-moving particles don't stay in a clump, since they keep moving and spreading out.", "Gas particles don't just sink to the floor, since they move in every direction."]
   explain: "Gas particles move fast in every direction and barely attract each other, so they spread to fill the room."
 ```
 
@@ -163,8 +163,8 @@ tasks:
       q: "Why does the stearic acid's temperature stay at 69 °C for 8 minutes while it freezes?"
       options: ["As particles settle into fixed places they give out energy, which keeps the temperature steady", "The room warms the wax", "The thermometer stopped working"]
       answer: 0
-      feedback: [null, "The room is cooler than the stearic acid; it can't keep it warm.", "The flat part is real: it is the freezing point."]
-      explain: "Freezing gives energy out. Until every particle has settled, that energy balances what is lost to the room."
+      feedback: [null, "The room is cooler than the stearic acid, so it can't be what keeps it warm.", "The flat part is a real result, so something must be happening to explain it."]
+      explain: "Freezing gives energy out, so until every particle has settled, that energy balances what the wax loses to the room."
     hint: ["Is the room warmer or cooler than the stearic acid, and so what must be holding the temperature up?", "Think about what happens to energy when particles settle into fixed places: does it go in or come out?"]
 ```
 
@@ -183,8 +183,8 @@ check:
   q: "Why does sweating cool you down, even on a hot day?"
   options: ["Evaporating sweat takes energy in, and it takes it from your skin", "Sweat is colder than your body", "The wind blows the heat away"]
   answer: 0
-  feedback: [null, "Sweat starts at body temperature.", "A breeze helps, but the cooling comes from evaporation."]
-  explain: "Changing liquid to gas needs energy. The fastest particles escape from the sweat, carrying energy away from your skin."
+  feedback: [null, "Sweat comes out at body temperature, so it isn't colder than you to begin with.", "A breeze can help, but sweat cools you even on a still day."]
+  explain: "Changing a liquid to a gas needs energy, so the fastest particles escape from the sweat and carry energy away from your skin."
 ```
 
 ## Evaluate: look back

@@ -71,36 +71,36 @@ tasks:
       q: "Which technique uses each property difference?"
       options: ["Magnet", "Filtration", "Evaporation", "Sieving", "Letting it settle, then pouring off"]
       items:
-        - ["Iron is magnetic; sand isn't.", "Magnet", "Magnetism."]
-        - ["Sand grains are too big to pass through filter paper; water and dissolved salt pass through.", "Filtration", "Particle size."]
-        - ["Water turns to vapour easily when heated; salt barely does at all, even in a hot dish.", "Evaporation", "Water vaporises easily and salt does not."]
-        - ["Pebbles are much bigger than grains of rice.", "Sieving", "Particle size, with bigger holes."]
-        - ["Oil is less dense than water, so it floats on top.", "Letting it settle, then pouring off", "Density."]
-      explain: "Each technique uses one property difference."
+        - ["Iron is magnetic; sand isn't.", "Magnet", "A magnet can pick out the iron because magnetism is the property that differs."]
+        - ["Sand grains are too big to pass through filter paper; water and dissolved salt pass through.", "Filtration", "Filter paper separates them because the particles differ in size."]
+        - ["Water turns to vapour easily when heated; salt barely does at all, even in a hot dish.", "Evaporation", "Water vaporises much more easily than salt does, so evaporation separates them."]
+        - ["Pebbles are much bigger than grains of rice.", "Sieving", "A sieve works like filter paper, using particle size, but with bigger holes."]
+        - ["Oil is less dense than water, so it floats on top.", "Letting it settle, then pouring off", "Oil is less dense than water, so the oil settles on top and can be poured off."]
+      explain: "Each technique works because it uses one property difference between the parts."
     hint: ["For each one, ask what is different about the two parts that the technique makes use of.", "Think about whether it comes down to how big the bits are, how hot it has to get before they change, whether they float or sink, or whether a magnet notices them."]
   - check:
       type: question
       q: "Why does filter paper catch the sand but not the salt?"
       options: ["Salt is lighter than sand", "Sand grains are too big for the tiny holes; dissolved salt is spread out as single particles small enough to pass through", "The salt has disappeared", "Sand sticks to the paper"]
       answer: 1
-      feedback: ["Weight isn't what the filter tests. The holes test size.", null, "The salt is still in the water. Evaporate it and the salt comes back.", "The sand is held back because it can't fit through the holes."]
-      explain: "Filter paper sorts by particle size."
+      feedback: ["Weight isn't what a filter tests, because the holes in the paper test something else about the particles.", null, "The salt is still in the water, and if you evaporate the water it comes back.", "Sand doesn't get caught by sticking to the paper, so think about what the holes do."]
+      explain: "Filter paper sorts the particles by size, so the big sand grains stay behind and the tiny dissolved salt particles pass through."
     hint: ["What is the filter paper actually testing, how heavy something is or something else about it?", "Try Filter paper on the bench and read the line under the board about the holes and what gets through."]
   - check:
       type: question
       q: "Why did the magnet have to come before the filter paper?"
       options: ["Iron and sand are both too big for the filter, so filtering first would trap them together", "Magnets don't work underwater", "It's the rule for separating"]
       answer: 0
-      feedback: [null, "Magnets work fine through water.", "There is no fixed rule. The order depends on the mixture and the properties."]
-      explain: "The magnet picks out just the iron first; then the filter only catches sand."
+      feedback: [null, "Magnets work fine through water, so that isn't why the order matters.", "There is no fixed rule, because the order depends on the mixture and its properties."]
+      explain: "The magnet picks out just the iron first, so the filter then only has to catch the sand."
     hint: ["Try the filter paper on the bench before the magnet and see where the iron ends up.", "Then ask yourself whether you could still pull the iron away from the sand afterwards."]
   - check:
       type: question
       q: "What do all separation techniques have in common?"
       options: ["Each one uses a difference in a physical property between the parts of the mixture", "Each one turns the mixture into new substances", "Each one separates the heavier part from the lighter part", "Each one needs heat"]
       answer: 0
-      feedback: [null, "You get back the same substances you mixed: the particles don't change.", "Weight is only one possibility. The magnet used magnetism and the filter used particle size.", "The magnet and the filter paper needed no heat. Only evaporation did."]
-      explain: "Find a property where the parts differ, then choose the technique that uses it."
+      feedback: [null, "You get back the same substances you mixed, because the particles don't change.", "Weight is only one possibility, since the magnet used magnetism and the filter used particle size.", "The magnet and the filter paper needed no heat, and only evaporation did."]
+      explain: "You find a property where the parts differ and then choose the technique that uses it."
   - check: { type: reflect, text: "I explained how I separated the iron, sand and salt, naming the property difference for each step." }
 ```
 
@@ -126,8 +126,8 @@ check:
   q: "Looking back at density: air is much less dense than water. Why?"
   options: ["Air particles are far apart, so there are far fewer in each cm³", "Each air particle is lighter than a water particle", "Air particles are smaller", "Air has no mass"]
   answer: 0
-  feedback: [null, "Surprisingly, an average air particle is heavier than a water particle. The difference is spacing.", "Particles do not change size between states.", "Air does have mass, about 1.2 g in every litre."]
-  explain: "Fewer particles in each cm³ means less mass in each cm³: lower density. Density is one of the property differences a separation can use."
+  feedback: [null, "Surprisingly, an average air particle is heavier than a water particle, so that isn't the reason.", "Particles don't change size between states, so air particles aren't smaller.", "Air does have mass, about 1.2 g in every litre, so that can't be the reason."]
+  explain: "Fewer particles in each cm³ means less mass in each cm³, which is a lower density, and density is one of the property differences a separation can use."
 ```
 
 ## Elaborate: choose, and rule out
@@ -145,7 +145,7 @@ check:
     - ["Evaporation", "Works, but not the best", "It leaves the chalk, but takes a lot of energy and also leaves any dissolved minerals mixed in."]
     - ["A magnet", "Won't work", "Chalk isn't magnetic."]
     - ["A kitchen sieve", "Won't work", "Chalk dust is far smaller than the holes."]
-  explain: "Name the property difference, then rule out techniques that can't use it."
+  explain: "Name the property difference first, and then rule out the techniques that can't use it."
 hint: ["For each technique, picture chalk dust in water going through it and ask what the technique needs to be different about the chalk.", "Then think about whether a technique that does work might also bring other things along, or take far more effort than the job needs."]
 ```
 
@@ -161,7 +161,7 @@ check:
   options: ["Particle size", "Density", "Boiling point", "Magnetism"]
   items:
     - ["Panning for gold: swirling water washes away gravel and leaves gold flakes in the pan.", "Density", "Gold is very dense, so it stays at the bottom."]
-    - ["Making fresh water from seawater by boiling it and cooling the steam.", "Boiling point", "Water boils far below salt, so only water turns to steam."]
+    - ["Making fresh water from seawater by boiling it and cooling the steam.", "Boiling point", "Water boils at a far lower temperature than salt does, so only the water turns to steam."]
     - ["Sifting flour to remove lumps.", "Particle size", "Lumps are too big for the mesh."]
     - ["Leaving fresh milk to stand so the cream rises to the top.", "Density", "Cream is less dense than the rest of the milk."]
 ```
@@ -178,10 +178,10 @@ check:
   options: ["Particle size", "Density", "Boiling point", "Magnetism"]
   items:
     - ["Home: a tea bag keeps the leaves out of your cup.", "Particle size", "The leaves are too big for the bag's tiny holes."]
-    - ["Recycling: overhead magnets pull steel cans off the conveyor belt.", "Magnetism", "Steel is magnetic."]
-    - ["Recycling: air jets blow light paper and plastic film off heavier glass and metal.", "Density", "Light, thin materials are carried by the air."]
+    - ["Recycling: overhead magnets pull steel cans off the conveyor belt.", "Magnetism", "Steel is magnetic, so the magnets pull the cans out."]
+    - ["Recycling: air jets blow light paper and plastic film off heavier glass and metal.", "Density", "Light, thin materials are carried off by the air, while the heavier glass and metal stay where they are."]
     - ["Water treatment: water sits in big tanks so mud sinks to the bottom.", "Density", "Mud particles are denser than water."]
-    - ["Water treatment: water trickles through deep beds of sand.", "Particle size", "Small particles get trapped between the sand grains."]
+    - ["Water treatment: water trickles through deep beds of sand.", "Particle size", "Small particles get trapped between the sand grains as the water trickles past."]
 ```
 
 ## Elaborate: muddy creek water
@@ -194,7 +194,7 @@ check:
   type: parsons
   code: "creek.txt#order"
   text: "On a camping trip, the only water is from a muddy creek, and it may contain germs. Order these plans from most effective to least effective at making it safe to drink."
-  explain: "Filtering removes the mud (particle size) and boiling kills germs, so combining them is best. Boiling alone makes it safer but leaves mud. A cloth alone removes some mud but not germs."
+  explain: "Filtering removes the mud because of its particle size and boiling kills germs, so combining them is best, while boiling alone makes it safer but leaves the mud, and a cloth alone removes some mud but not germs."
 ```
 
 ## Elaborate: a boil water alert
@@ -209,7 +209,7 @@ tasks:
       q: "An alert says: \"Boil water, then let it cool, before drinking. A jug filter is not enough.\" Why include the jug filter line?"
       options: ["Many homes own jug filters and might trust them, but most aren't designed to remove germs", "Jug filters make the water less safe", "Filtering removes germs better than boiling, so the alert has it wrong"]
       answer: 0
-      feedback: [null, "The filter doesn't make the water worse; it just doesn't do the job needed here.", "Most jug filters are made to improve taste and remove some chemicals, not to remove germs. Boiling kills germs."]
+      feedback: [null, "The filter doesn't make the water worse, but it doesn't do the job that is needed here.", "Most jug filters are made to improve taste and remove some chemicals rather than germs, whereas boiling kills germs."]
       explain: "Good science communication answers the question its audience will actually have, and heads off the mistake they are likely to make."
   - check:
       type: sort

@@ -64,8 +64,8 @@ tasks:
         - ["A smell spreading across a room", "Explains it well"]
         - ["Air being easy to squash but water not", "Explains it well"]
         - ["A metal bar getting longer when heated", "Explains it well"]
-        - ["Why copper is orange and gold is yellow", "Can't explain it", "Plain balls have no colour of their own."]
-        - ["Why iron rusts but gold doesn't", "Can't explain it", "Reactions need atoms with parts that join and swap."]
+        - ["Why copper is orange and gold is yellow", "Can't explain it", "In the model the particles are plain balls, and plain balls have no colour of their own."]
+        - ["Why iron rusts but gold doesn't", "Can't explain it", "Reactions need atoms with parts that can join and swap, and the plain particles in this model don't have any."]
         - ["Why metals conduct electricity", "Can't explain it"]
     hint: ["For each one, ask what the model pictures particles as, and whether the thing needs anything more than that.", "Pick out the ones you can explain by describing how the particles are spaced, how they move or how they attract, and be honest about the ones you can't."]
   - check:
@@ -73,7 +73,7 @@ tasks:
       q: "Why can't the particle model explain why some substances react?"
       options: ["It treats particles as plain balls with no parts, so it says nothing about how they could join or swap", "Because reactions are too fast to see", "Because the model only works for gases"]
       answer: 0
-      feedback: [null, "Speed is not the problem; the model has nothing inside the particles.", "It works for solids and liquids too."]
+      feedback: [null, "Speed isn't what limits the model, so think about what it says a particle is.", "The model works for solids and liquids as well as gases, so that can't be the limit."]
       explain: "To explain a phenomenon, a model needs the right parts. Reactions need atoms that can join and rearrange (Year 8), and electricity needs electrons (Year 9)."
     hint: ["What does the particle model say a particle actually is?", "Now think about what particles would have to be able to do for one substance to turn into a different one, and whether a plain ball can do that."]
   - check:
@@ -81,15 +81,15 @@ tasks:
       q: "What evidence supports the particle model?"
       options: ["Diffusion, gases being compressible, and tiny specks in water jiggling under a microscope", "We can see particles with our eyes", "It explains everything"]
       answer: 0
-      feedback: [null, "Particles are far too small to see.", "It doesn't, and no model does."]
-      explain: "The jiggling of tiny grains from pollen in water (Brownian motion) is the particles of water knocking them about: strong evidence, explained by Einstein in 1905."
+      feedback: [null, "Particles are far too small to see with our eyes, so that can't be the evidence.", "No model explains everything, and this one doesn't either."]
+      explain: "Tiny grains of pollen in water jiggle (Brownian motion) because moving water particles keep knocking them about, which Einstein explained in 1905 and which is strong evidence for particles."
   - check:
       type: question
       q: "The particle model explains a smell spreading across a room. Which part of the model does the explaining?"
       options: ["Particles are always moving, with space between them, so the smell's particles spread out between the air particles", "Smell particles are lighter than air, so they float up and spread", "Smell particles get bigger until they fill the room", "The smell spreads only because a breeze carries it"]
       answer: 0
-      feedback: [null, "Smells spread downwards and sideways too, not just up: the particles move in every direction.", "Particles never change size. They spread out; they don't grow.", "A draught helps, but a smell still spreads in still air, because its particles move by themselves."]
-      explain: "What the model assumes (moving particles with space between them) is exactly what diffusion needs. That is why it explains it well."
+      feedback: [null, "Smells spread downwards and sideways as well as up, because the particles move in every direction.", "Particles never change size, so they spread out rather than grow.", "A draught helps, but a smell still spreads in still air, because its particles move by themselves."]
+      explain: "The model assumes moving particles with space between them, which is exactly what diffusion needs, so it explains it well."
   - check: { type: reflect, text: "I can name something the particle model explains well and something it can't, with a reason for each." }
 ```
 
@@ -115,8 +115,8 @@ check:
   q: "Looking back at squashing: a syringe of air can be squashed, but a syringe of water cannot. What does the particle model say is different?"
   options: ["Air particles are far apart, with space to move into; water particles are already close together", "Air particles are smaller than water particles", "Water particles are harder than air particles", "Air has no mass, so nothing pushes back"]
   answer: 0
-  feedback: [null, "Particles of a substance are the same size in every state. The difference is the spacing.", "Particles never squash, in any state.", "Air does have mass: about 1.2 g in every litre."]
-  explain: "The spacing explains it. This is the kind of job the particle model does well: explaining how substances behave from the arrangement and motion of their particles."
+  feedback: [null, "Particles of a substance are the same size in every state, so the difference must be something else.", "Particles never squash in any state, so that isn't what makes the difference.", "Air does have mass, about 1.2 g in every litre, so that isn't the reason."]
+  explain: "The spacing explains it, and this is the kind of job the particle model does well: explaining how substances behave from the arrangement and motion of their particles."
 ```
 
 ## Elaborate: a better model
@@ -130,8 +130,8 @@ check:
   q: "In Year 8 the particles get parts: they are made of atoms of different types that can join. What can this new model explain that the plain particle model couldn't?"
   options: ["Why substances react and make new substances", "Why gases are easy to squash", "Why smells spread"]
   answer: 0
-  feedback: [null, "The plain particle model already explains that.", "Diffusion was already explained."]
-  explain: "A new model keeps what the old one did well and adds what it couldn't do. Scientists choose the simplest model that does the job."
+  feedback: [null, "The plain particle model already explains that, so it can't be what the new model adds.", "The plain model already explained diffusion, so that isn't something new."]
+  explain: "A new model keeps what the old one did well and adds what it couldn't do, and scientists choose the simplest model that does the job."
 ```
 
 ## Elaborate: how the idea grew
@@ -145,7 +145,7 @@ check:
   q: "Ancient Greek thinkers suggested matter is made of tiny particles, but most people didn't accept it for over 2000 years. What changed?"
   options: ["Evidence: experiments on gases, chemical reactions and Brownian motion that the idea explained and predicted", "Someone saw a particle", "It was voted on"]
   answer: 0
-  feedback: [null, "Atoms were first imaged in the 1950s, long after the model was accepted.", "Science doesn't settle ideas by vote."]
+  feedback: [null, "Atoms were first imaged in the 1950s, which was long after the model was accepted, so nobody could have relied on that.", "Science doesn't settle ideas by vote, so that can't be what changed people's minds."]
   explain: "Models are accepted when they explain and predict evidence better than the alternatives, and changed when new evidence doesn't fit."
 ```
 

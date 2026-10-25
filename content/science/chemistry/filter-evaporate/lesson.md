@@ -58,15 +58,15 @@ tasks:
       q: "Name what you got."
       options: ["Residue", "Filtrate", "Salt crystals"]
       items:
-        - ["The sand left in the filter paper", "Residue", "The solid left behind."]
-        - ["The salty water that came through the paper", "Filtrate", "The liquid that passes through."]
-        - ["What was left in the dish after evaporating", "Salt crystals", "The salt never left; only the water did."]
+        - ["The sand left in the filter paper", "Residue", "It's the solid that stays behind in the paper."]
+        - ["The salty water that came through the paper", "Filtrate", "It's the liquid that passes through the paper."]
+        - ["What was left in the dish after evaporating", "Salt crystals", "The salt stayed in the dish the whole time, and only the water went."]
     hint: ["For each one, ask whether it stayed behind in the paper, came through it, or only turned up after the heating.", "Look at which part sat on the dashed line of the filter paper and which part dropped below it."]
 ```
 
 ### Filtration
 
-The dashed line is the filter paper. Its holes are smaller than a sand grain.
+The dashed line is the filter paper, and its holes are smaller than a sand grain.
 
 ### Evaporation
 
@@ -93,9 +93,9 @@ tasks:
   - check:
       type: question
       q: "Filtration can't get the salt out of salt water, but evaporation can. Why?"
-      options: ["Dissolved salt particles are small enough to pass through the paper, but when heated only the water particles escape, because water boils far below salt", "Salt is heavier than water, so it sinks while the lighter water rises away", "Heating destroys the water and leaves the salt", "Dissolved salt has disappeared, and heating makes it come back"]
+      options: ["Dissolved salt particles are small enough to pass through the paper, but when heated only the water particles escape, because water turns to vapour far more easily than salt does", "Salt is heavier than water, so it sinks while the lighter water rises away", "Heating destroys the water and leaves the salt", "Dissolved salt has disappeared, and heating makes it come back"]
       answer: 0
-      feedback: [null, "Weight isn't the test. Water particles escape as a gas at a far lower temperature than salt particles.", "The water isn't destroyed: it escapes into the air as water vapour, and could be collected again.", "The salt never disappeared: it was spread out as single particles among the water particles all along."]
+      feedback: [null, "Weight isn't what decides this, and the heating step depends on how easily each kind of particle escapes as a gas.", "The water isn't destroyed: it escapes into the air as water vapour, and could be collected again.", "The salt never disappeared: it was spread out as single particles among the water particles all along."]
       explain: "Filtration sorts by particle size, and dissolved particles are tiny. Evaporation uses the fact that water turns to vapour far more easily than salt does: the water leaves, the salt stays."
     hint: ["Think about how big a dissolved salt particle is compared with the holes in the paper, and then about what happens to the water and the salt when you heat the dish.", "Run the filter board and then the evaporate board again and watch which particles move and which stay."]
 ```
@@ -116,8 +116,8 @@ check:
   q: "Looking back at pure substances and mixtures: before it is filtered, is sandy salt water a pure substance?"
   options: ["No: it has three kinds of particle (water, salt and sand), so it is a mixture", "Yes, because it is all water", "Yes, because the salt has dissolved", "No, because it looks cloudy"]
   answer: 0
-  feedback: [null, "Salt and sand are in it too. Count the kinds of particle.", "Dissolved salt is still there as a separate kind of particle. You can taste it, and it comes back when the water evaporates.", "Looks cannot tell you. Count the kinds of particle."]
-  explain: "Count the kinds of particle, not how it looks: water, salt and sand make three, so it is a mixture."
+  feedback: [null, "Salt and sand are in it as well as the water, so it's worth counting the kinds of particle before you decide.", "Dissolved salt is still there as a separate kind of particle, because you can taste it and it comes back when the water evaporates.", "How it looks can't tell you whether it's pure, so count the kinds of particle instead."]
+  explain: "What matters is the number of kinds of particle rather than how it looks, and water, salt and sand make three, so it's a mixture."
 ```
 
 ## Practise: which technique?
@@ -157,8 +157,8 @@ tasks:
       q: "During evaporation, which particles leave the dish?"
       options: ["Only water particles", "Water and salt", "Only salt"]
       answer: 0
-      feedback: [null, "Salt doesn't boil until well over 1000 °C, far hotter than the dish gets, so it stays behind.", "The salt is what is left in the dish. The water is what leaves."]
-      explain: "Water turns to vapour far more easily than salt."
+      feedback: [null, "Salt doesn't boil until well over 1000 °C, far hotter than the dish gets, so it stays behind.", "The salt is what's left in the dish, and it's the water that leaves."]
+      explain: "That's because water turns to vapour far more easily than salt does."
 ```
 
 ### The procedure
@@ -178,10 +178,10 @@ check:
   q: "Filtration or evaporation?"
   options: ["Filtration", "Evaporation"]
   items:
-    - ["A coffee machine holds the grounds in a paper cone.", "Filtration", "Grounds don't dissolve; the coffee is the filtrate."]
-    - ["Shallow sea-salt ponds are left in the sun for weeks.", "Evaporation", "Sun and wind evaporate the water, leaving salt."]
-    - ["A pool pump pushes water through a sand or cartridge filter.", "Filtration", "Leaves, dirt and hair are trapped."]
-    - ["Wet clothes on a washing line dry out.", "Evaporation", "Water particles escape into the air."]
+    - ["A coffee machine holds the grounds in a paper cone.", "Filtration", "The grounds don't dissolve, so the paper holds them back and the coffee that comes through is the filtrate."]
+    - ["Shallow sea-salt ponds are left in the sun for weeks.", "Evaporation", "The sun and wind evaporate the water, so the salt is left behind."]
+    - ["A pool pump pushes water through a sand or cartridge filter.", "Filtration", "Leaves, dirt and hair are too big to get through, so they're trapped."]
+    - ["Wet clothes on a washing line dry out.", "Evaporation", "Water particles escape from the wet cloth into the air as vapour, so the clothes dry."]
 ```
 
 ## Elaborate: First Nations separation techniques
@@ -195,9 +195,9 @@ check:
   q: "Which property difference does each technique use?"
   options: ["Some parts are lighter than others", "Some parts are bigger or look different", "Different boiling points"]
   items:
-    - ["Winnowing: seeds are tossed in a coolamon so the breeze carries the husks away.", "Some parts are lighter than others", "Husks are lighter for their size than seeds."]
+    - ["Winnowing: seeds are tossed in a coolamon so the breeze carries the husks away.", "Some parts are lighter than others", "Husks are lighter than seeds of the same size, so the breeze carries them off."]
     - ["Yandying: the coolamon is rocked in a rhythm so seeds and heavier grit move to different parts of the dish.", "Some parts are lighter than others", "Grit is heavier than seed, so it moves differently when shaken."]
-    - ["Hand-picking: sticks and stones are picked out of the seeds by hand.", "Some parts are bigger or look different", "They are easy to see and grab."]
+    - ["Hand-picking: sticks and stones are picked out of the seeds by hand.", "Some parts are bigger or look different", "Sticks and stones are easy to see and grab, so you can just pick them out."]
 ```
 
 Many Aboriginal communities have long processed grass seeds into flour. A coolamon, a shallow wooden dish, is one of the tools used.
@@ -214,22 +214,22 @@ tasks:
       q: "What is the pattern in the results?"
       options: ["Finer paper gives a clearer filtrate but takes longer", "Coarser paper is better in every way", "There is no pattern"]
       answer: 0
-      feedback: [null, "Coarse paper is fastest, but look at the filtrate column: it is cloudy.", "Read down both columns: as the paper gets finer, the time goes up and the filtrate gets clearer."]
-      explain: "Clarity and speed trade off."
+      feedback: [null, "Coarse paper is the fastest, but the filtrate column shows it comes out cloudy.", "Try reading down both columns again, because both the time and the filtrate change in a steady way as the paper changes."]
+      explain: "The finer the paper, the clearer the filtrate but the longer it takes, so you give up some speed to get clarity."
   - check:
       type: question
       q: "Why is the fine paper's filtrate clearer?"
       options: ["Its smaller holes trap smaller mud particles", "It soaks up the mud", "The water goes slower, so the mud is lighter"]
       answer: 0
-      feedback: [null, "The mud sits on top of the paper because it can't fit through the holes, not because the paper soaks it up.", "Speed doesn't change the mud. What matters is the size of the mud particles compared with the holes."]
-      explain: "Particle size versus hole size."
+      feedback: [null, "The mud sits on top of the paper because it can't fit through the holes, not because the paper soaks it up.", "Slower water doesn't change the mud itself, so think about what is stopping the mud from getting through."]
+      explain: "Mud particles that are bigger than the holes get stopped, and smaller holes stop smaller particles."
   - check:
       type: question
       q: "Why does the fine paper take longer?"
       options: ["Smaller holes let less water through each second", "The fine paper soaks up more of the water", "The water gets heavier"]
       answer: 0
-      feedback: [null, "The paper holds only a little water. The time goes on squeezing water through the tiny holes.", "It is the same water. What changes is how easily it gets through the holes."]
-      explain: "Less space to flow through, and trapped mud blocks holes too."
+      feedback: [null, "The paper holds only a little water, so that can't account for the extra time.", "It's the same water in each test, so the difference must come from the paper."]
+      explain: "There's less space for the water to flow through, and the trapped mud blocks some of the holes as well."
 ```
 
 A class filtered 100 mL of the same muddy water through three grades of filter paper. (Sample results, not measured.)

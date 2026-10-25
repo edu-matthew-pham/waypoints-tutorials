@@ -58,14 +58,14 @@ tasks:
       q: "Which pen wrote the note?"
       options: ["Pen A", "Pen B", "Neither"]
       answer: 1
-      feedback: ["Compare the spots: Pen A has a red dye that the note doesn't.", null, "Line up the spots: one pen's dyes match the note's at every height."]
+      feedback: ["Look at the red spot in Pen A's lane, because the note has no spot at that height.", null, "Line the spots up height by height, because at least one of the pens does match the note."]
       explain: "Pen B's dyes match the note's at every height, so Pen B is the likely pen. Pen A has an extra red dye, so it can't be."
     hint: ["Line up the spots from the note with the spots from each pen, and see whose dyes match the note's at every height.", "One of the pens leaves a spot at a height where the note has nothing, so check each lane against the note's, one height at a time."]
 ```
 
 ### Distillation
 
-Blue: water particles. Orange: salt particles.
+The blue particles are water and the orange particles are salt.
 
 ### Chromatography
 
@@ -84,22 +84,22 @@ tasks:
       q: "Both techniques heat a liquid until it turns to gas. Sort each statement."
       options: ["Evaporation only", "Distillation only", "Both"]
       items:
-        - ["Uses the difference in boiling point", "Both", "The liquid boils far below the dissolved solid."]
+        - ["Uses the difference in boiling point", "Both", "The liquid turns to vapour at a much lower temperature than the dissolved solid does."]
         - ["Needs heat", "Both"]
         - ["The vapour escapes into the air", "Evaporation only"]
-        - ["The vapour is cooled and collected as a liquid", "Distillation only", "This is the key difference."]
+        - ["The vapour is cooled and collected as a liquid", "Distillation only", "Collecting the vapour is what sets distillation apart from evaporation."]
         - ["You end up with only the solid", "Evaporation only"]
         - ["You end up with the liquid and the solid", "Distillation only"]
-        - ["Needs a condenser and a collecting flask", "Distillation only", "Extra equipment to catch the vapour."]
-      explain: "Same property, different outcome: distillation keeps the vapour by cooling it."
+        - ["Needs a condenser and a collecting flask", "Distillation only", "That extra equipment is there to catch and cool the vapour."]
+      explain: "Both use the same property, but distillation cools the vapour and collects it, so you get the liquid as well as the solid."
     hint: ["For each statement, ask what happens to the steam in each technique, and whether the statement depends on that.", "Run the distillation board again and watch where the water particles end up, then compare that with what the evaporation board did to them."]
   - check:
       type: question
       q: "Why do the dyes in the ink end up at different heights?"
       options: ["Heavier dyes sink lower", "Each dye dissolves in the water and sticks to the paper differently, so the water carries each one a different distance", "The water makes new colours as it rises", "The dyes evaporate at different speeds"]
       answer: 1
-      feedback: ["It isn't weight: every dye is pulled up by the water, against gravity.", null, "The colours were in the ink all along. The water only separates them.", "Nothing evaporates here. The water carries the dyes up the paper."]
-      explain: "Dyes that dissolve well and stick weakly travel furthest."
+      feedback: ["It isn't weight, because the water pulls every dye up the paper against gravity.", null, "The colours were in the ink all along, and the water only separates them.", "Nothing evaporates here, because the water carries the dyes up the paper."]
+      explain: "Dyes that dissolve well in the water and stick only weakly to the paper get carried the furthest."
     hint: ["Which way did the water carry the dyes on the board, and what does that tell you about whether weight is the reason?", "Every dye gets the same water, so think about what could be different from one dye to the next that makes some go further."]
   - check:
       type: match
@@ -109,7 +109,7 @@ tasks:
         - ["Get salt from seawater, letting the water go", "Evaporation"]
         - ["Find out which dyes are in a black ink", "Chromatography"]
         - ["Get sand out of sandy water", "Filtration"]
-      explain: "Need the liquid back? Distil. Need only the dissolved solid? Evaporate. Several dissolved substances, such as dyes? Chromatography."
+      explain: "If you need the liquid back, you distil; if you only need the dissolved solid, you evaporate; and if you have several dissolved substances, such as dyes, you use chromatography."
   - check: { type: reflect, text: "I wrote the principle of each technique, a mixture each one suits, and what makes distillation different from evaporation." }
 ```
 
@@ -133,7 +133,7 @@ check:
   q: "Looking back at heating curves: water in a flask is boiling and the heat stays on full. What does a thermometer in the water show over the next few minutes?"
   options: ["It stays at about 100 °C", "It keeps rising", "It drops, because the water is turning to steam", "It goes up and down"]
   answer: 0
-  feedback: [null, "While the water boils, the energy goes into separating the particles, not speeding them up.", "The heat is still on. The water stays at its boiling point until it has all boiled away.", "The reading is steady while the water boils."]
+  feedback: [null, "While the water boils, the energy goes into separating the particles, not speeding them up.", "The heat is still on, so the water stays at its boiling point until it has all boiled away.", "A steadily boiling pot doesn't make the reading bounce about."]
   explain: "During a change of state the temperature stays the same: the energy goes into pulling the particles apart into steam."
 ```
 
@@ -148,12 +148,12 @@ check:
   q: "Both use the same property. Which would you choose?"
   options: ["Evaporation", "Distillation"]
   items:
-    - ["A salt farm wants salt from seawater.", "Evaporation", "Only the salt is wanted. Sun and wind do it for free."]
+    - ["A salt farm wants salt from seawater.", "Evaporation", "Only the salt is wanted, and the sun and wind evaporate the water for free."]
     - ["A ship needs drinking water from seawater.", "Distillation", "The water is what's wanted, so the vapour must be collected."]
-    - ["A lab wants very pure water with nothing dissolved in it.", "Distillation", "Distilled water leaves every dissolved substance behind."]
-    - ["You want sugar crystals from sugar syrup.", "Evaporation", "Only the sugar is wanted."]
+    - ["A lab wants very pure water with nothing dissolved in it.", "Distillation", "Distilling leaves every dissolved substance behind, so the water comes out very pure."]
+    - ["You want sugar crystals from sugar syrup.", "Evaporation", "Only the sugar is wanted, so the water can just evaporate away."]
     - ["You want to keep both the water and the salt from a salt solution.", "Distillation", "Distillation collects the water and leaves the salt."]
-  explain: "Ask: do I need the liquid? If yes, distil."
+  explain: "Ask yourself whether you need the liquid back, because if you do, you distil."
 ```
 
 ## Elaborate: three techniques, three properties
@@ -168,8 +168,8 @@ check:
   options: ["Boiling point", "How well each substance dissolves and sticks to the paper", "How much solid can stay dissolved"]
   items:
     - ["Crystallisation: a hot, concentrated solution is left to cool, and crystals form.", "How much solid can stay dissolved", "Less solid can stay dissolved as the solution cools, so it comes out as crystals."]
-    - ["Chromatography: food colourings separate on paper.", "How well each substance dissolves and sticks to the paper", "Each colouring travels a different distance."]
-    - ["Distillation: alcohol is separated from water.", "Boiling point", "Alcohol boils at about 78 °C, water at 100 °C."]
+    - ["Chromatography: food colourings separate on paper.", "How well each substance dissolves and sticks to the paper", "Each colouring dissolves and sticks a little differently, so each travels a different distance."]
+    - ["Distillation: alcohol is separated from water.", "Boiling point", "Alcohol boils at about 78 °C and water at 100 °C, so the alcohol turns to vapour first."]
 ```
 
 ## Elaborate: First Nations knowledge and plant oils
@@ -205,15 +205,15 @@ tasks:
       q: "An unknown dye has Rf = 0.50 in the same setup. Which dye could it be?"
       options: ["The red dye", "The blue dye", "None of them"]
       answer: 0
-      feedback: [null, "The blue dye's Rf is 0.80. Which dye had 0.50?", "Compare the numbers: one dye in the same setup had an Rf of 0.50."]
-      explain: "Same Rf value, same conditions: probably the same substance."
+      feedback: [null, "The blue dye's Rf was 0.80, and that isn't 0.50, so it can't be the match.", "Compare the numbers first, because one of the Rf values you worked out earlier may be a match."]
+      explain: "If the Rf value is the same and the conditions are the same, it's probably the same substance."
   - check:
       type: question
       q: "A green ink gives just one spot. What can you conclude?"
       options: ["It is probably one dye, but two dyes with the same Rf value would also give one spot", "It is definitely a pure substance", "The test failed"]
       answer: 0
-      feedback: [null, "One spot is evidence, not proof: two dyes that travel the same distance would sit on top of each other.", "A single spot is a real result: the ink moved up the paper and stayed together."]
-      explain: "Testing again with a different solvent would check."
+      feedback: [null, "One spot is evidence, not proof: two dyes that travel the same distance would sit on top of each other.", "The test worked, because the ink did move up the paper and stayed together as one spot."]
+      explain: "To check, you could run the test again with a different solvent, because two dyes that sit together in one solvent often separate in another."
 ```
 
 Chemists compare spots with the **Rf value**: the distance the spot moved divided by the distance the water moved, both measured from the pencil line. In the Pen A lane, the water moved **10.0 cm**.

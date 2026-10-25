@@ -88,7 +88,7 @@ tasks:
       q: "Why does a gas spread to fill its whole container?"
       options: ["Gas particles are light and float", "Its particles move fast in all directions and barely attract each other", "Its particles expand to fill the space", "Air pushes it around"]
       answer: 1
-      feedback: ["The gas spread downwards and sideways too, not just up.", null, "Particles never change size. The spaces between them grow.", "There was no air in the box, and the gas still spread."]
+      feedback: ["The gas spread downwards and sideways as well as up, so being light and floating isn't the explanation.", null, "Particles never change size, so they can't expand to fill the space.", "There was no air in the box and the gas still spread, so air can't be doing the pushing."]
       explain: "Nothing holds gas particles together, so they spread in every direction until they fill the space."
     hint: ["When you removed the jar from the gas, which way did the particles go, and what do you think that says about what's holding them?", "Take the jar off the gas again and watch where the particles end up, up, down or sideways."]
   - check:
@@ -96,15 +96,15 @@ tasks:
       q: "Why does a solid keep its shape?"
       options: ["Its particles don't move", "Strong attraction holds its particles in fixed positions, where they vibrate", "Its particles are bigger", "It is heavier than a liquid"]
       answer: 1
-      feedback: ["Solid particles vibrate. They don't leave their positions, because attraction holds them there.", null, "Particles of a substance are the same size in every state.", "Mass doesn't decide shape: ice keeps its shape and is lighter than the same volume of water."]
-      explain: "Each particle vibrates but stays in its place, so the whole shape stays."
+      feedback: ["Solid particles do move, because they vibrate, but they don't leave their positions.", null, "Particles of a substance are the same size in every state, so size can't explain the shape.", "Mass doesn't decide shape, because ice keeps its shape and is lighter than the same volume of water."]
+      explain: "Each particle vibrates but stays in its place, so the whole solid keeps its shape."
     hint: ["Watch the solid's particles for a few seconds: are they still, or doing something, and what keeps them from wandering off?", "Choose Solid and remove the jar, and look at whether any particle leaves its spot."]
   - check: { type: reflect, text: "I wrote why juice spreads across a table but a sugar cube keeps its shape, using arrangement, motion and attraction, and I could point to a particle diagram for each sentence." }
 ```
 
 ### Describe each state
 
-Watch the board while you sort. Every description fits exactly one state.
+Watch the board while you sort, because every description fits exactly one state.
 
 ### Why gases fill
 
@@ -124,8 +124,8 @@ check:
   q: "Looking back at the particle model: which statement about particles is true?"
   options: ["Particles are always moving, even in a solid", "The particles in a solid have stopped moving", "There is air between the particles of water", "Particles get bigger when they are heated"]
   answer: 0
-  feedback: [null, "Solid particles vibrate in place. They never stop moving.", "Air is made of particles too. Between particles there is nothing at all.", "Particles never change size. Heated particles move faster and spread out."]
-  explain: "Key idea 3: particles are always moving. In a solid they vibrate in place, held there by strong attraction."
+  feedback: [null, "Solid particles vibrate in place, so they never stop moving.", "Air is made of particles too, so there is nothing at all between the particles of water.", "Particles never change size, and heated particles just move faster and spread out."]
+  explain: "This is the third key idea, that particles are always moving, and in a solid they vibrate in place, held there by strong attraction."
 ```
 
 ## Elaborate: six substances
@@ -147,15 +147,15 @@ tasks:
         - ["Cooking oil (0.92 g/cm³)", "Middle pair"]
         - ["Carbon dioxide (0.0018 g/cm³)", "Least dense pair"]
         - ["Air (0.0012 g/cm³)", "Least dense pair"]
-      explain: "Spacing predicts the groups: solids and liquids close together, then a huge drop to the gases."
+      explain: "Spacing predicts the groups, with the solids and liquids close together and then a huge drop to the gases."
     hint: ["Count the particles in each window, since they all show the same small volume, and think about what more particles in the same space means for density.", "The two gases are easy to spot because their windows are almost empty, so it's the solids and liquids you need to compare."]
   - check:
       type: question
       q: "Iron and aluminium have the same spacing, but iron is almost three times denser. Why?"
       options: ["Each iron particle is heavier", "Iron particles are bigger", "Aluminium has air gaps in it"]
       answer: 0
-      feedback: [null, "Bigger particles at the same spacing would mean fewer per cm³, not more mass.", "Solid aluminium has no air gaps."]
-      explain: "Spacing explains the big groups; the mass of each particle explains differences within a group. The same goes for carbon dioxide and air."
+      feedback: [null, "Bigger particles at the same spacing would mean fewer per cm³, not more mass.", "Solid aluminium has no air gaps in it, so that can't explain the difference."]
+      explain: "Spacing explains the big groups, and the mass of each particle explains the differences within a group, as it does for carbon dioxide and air."
     hint: ["Look at the iron and aluminium windows on the board and see whether the spacing can explain a difference in density.", "If it can't, think about what else is in the same volume, and what could differ between one iron particle and one aluminium particle."]
 ```
 
@@ -178,19 +178,19 @@ tasks:
       q: "When liquid water becomes steam, the space between the particles…"
       options: ["stays the same", "increases a lot", "decreases"]
       answer: 1
-      feedback: ["Look at the steam on the board: its particles are far apart.", null, "Heating makes particles move faster and spread out, not pack closer."]
-      explain: "Steam takes up roughly 1,700 times the volume of the same mass of liquid water."
+      feedback: ["Look at the steam on the board again and compare how far apart its particles are with the liquid.", null, "Think about what heating does to the speed of the particles, and what that does to the gaps between them."]
+      explain: "The space between the particles increases a lot, and that is why steam takes up roughly 1,700 times the volume of the same mass of liquid water."
   - check:
       type: question
       q: "What lets particles move further apart as water is heated?"
       options: ["They gain energy, so they can overcome the attraction", "The attraction disappears", "The particles shrink"]
       answer: 0
-      feedback: [null, "The attraction is still there; faster particles can overcome it.", "Particles never change size."]
+      feedback: [null, "The attraction doesn't disappear, but faster-moving particles can overcome it.", "Particles never change size when they're heated, so that isn't it."]
 ```
 
 ### From ice to steam
 
-Drag the temperature slowly from −20 °C to 120 °C. Watch the motion and the spacing.
+Drag the temperature slowly from −20 °C to 120 °C, and watch the motion and the spacing as you go.
 
 ### Spacing
 
@@ -206,7 +206,7 @@ check:
   type: parsons
   code: "attraction.txt#order"
   text: "Put the substances in order of attraction between their particles, strongest first."
-  explain: "Higher boiling point means stronger attraction. Salt needs over 1400 °C; oxygen is already a gas at −183 °C."
+  explain: "A higher boiling point means stronger attraction, so salt, which needs over 1400 °C, is at one end and oxygen, which is already a gas at −183 °C, is at the other."
 ```
 
 To boil, a substance's particles need enough energy to pull completely away from each other. The stronger the attraction, the hotter it has to get.
@@ -227,8 +227,8 @@ check:
     - "Ice floats because of air bubbles trapped inside it"
     - "Solid particles are always further apart than liquid particles"
   answer: 1
-  feedback: ["A model that explains most cases is still useful. Scientists refine models when they meet an exception.", null, "Clear ice with no bubbles still floats.", "For almost every substance the solid is packed slightly more closely. Water is the exception."]
-  explain: "The model keeps its core ideas and gains a detail. (The diagram exaggerates the gap: ice takes up about 9% more space than the same mass of water.)"
+  feedback: ["A model that explains most cases is still useful, and scientists refine a model when they meet an exception.", null, "Clear ice with no bubbles in it still floats, so bubbles can't be the reason.", "For almost every substance the solid is packed slightly more closely than the liquid, so that statement isn't true in general."]
+  explain: "The model keeps its core ideas and gains one extra detail for water. (The diagram exaggerates the gap: ice takes up about 9% more space than the same mass of water.)"
 ```
 
 ## Evaluate: look back

@@ -68,37 +68,37 @@ tasks:
       q: "What is between the particles?"
       options: ["Air", "Water", "Nothing: empty space"]
       answer: 2
-      feedback: ["Air is made of particles too. Between particles there is nothing at all.", "The particles are the water. There is no water between them.", null]
-      explain: "There is nothing between particles, not even air."
+      feedback: ["Air is made of particles too, so it can't be what fills the gaps between particles.", "The particles are the water, so there is no more water in the gaps between them.", null]
+      explain: "There's nothing at all between the particles, not even air."
     hint: ["If you put air in the gaps, what would that air be made of?", "Have a look at the steam sample and at what is drawn in the gaps between the particles."]
   - check:
       type: question
       q: "Do the particles in ice ever stop moving?"
       options: ["Yes, ice is frozen still", "No, they vibrate in place"]
       answer: 1
-      feedback: ["Watch the ice sample again: every particle jiggles in its place.", null]
-      explain: "Even in a solid, particles vibrate. They never stop."
+      feedback: ["Watch the ice sample again and look closely at each particle.", null]
+      explain: "Even in a solid the particles vibrate, and they never stop."
   - check:
       type: question
       q: "Ice, liquid water and steam: are their particles the same?"
       options: ["Yes: only the arrangement and motion change", "No: ice particles are bigger", "No: steam particles are smaller"]
       answer: 0
-      feedback: [null, "Particles never change size. Ice particles are the same water particles, held in a pattern.", "Particles never change size. Steam particles are the same, just far apart."]
-      explain: "All three are made of the same water particles."
+      feedback: [null, "Particles never change size, so ice particles can't be bigger than the others.", "Particles never change size, so steam particles can't be smaller either."]
+      explain: "All three are made of the same water particles, and only how those particles are arranged and how they move is different."
     hint: ["When you went from ice to steam on the board, was it the particles themselves that looked different, or something about how they sit and move?", "Click between Ice and Steam and keep your eye on a single particle each time."]
   - check:
       type: sort
       q: "Which statements are part of particle theory?"
       options: ["Part of particle theory", "Not true"]
       items:
-        - ["All matter is made of tiny particles.", "Part of particle theory", "Key idea 1."]
-        - ["There is empty space between particles.", "Part of particle theory", "Key idea 2."]
-        - ["Particles are always moving.", "Part of particle theory", "Key idea 3. Even in solids they vibrate."]
-        - ["Particles attract each other.", "Part of particle theory", "Key idea 4. Strongest in solids, weakest in gases."]
-        - ["Particles expand when they are heated.", "Not true", "Particles never change size. They move faster and spread out."]
-        - ["There is air between the particles.", "Not true", "Air is made of particles too."]
-        - ["Particles in a solid do not move.", "Not true", "They vibrate in place."]
-      explain: "Remember the four key ideas as: particles, space, motion, attraction."
+        - ["All matter is made of tiny particles.", "Part of particle theory", "This is the first key idea."]
+        - ["There is empty space between particles.", "Part of particle theory", "This is the second key idea."]
+        - ["Particles are always moving.", "Part of particle theory", "This is the third key idea, and it holds even in solids, where the particles vibrate."]
+        - ["Particles attract each other.", "Part of particle theory", "This is the fourth key idea, and the attraction is strongest in solids and weakest in gases."]
+        - ["Particles expand when they are heated.", "Not true", "Particles never change size, so when they're heated they move faster and spread out instead."]
+        - ["There is air between the particles.", "Not true", "Air is made of particles too, so it can't be in the gaps between particles."]
+        - ["Particles in a solid do not move.", "Not true", "Particles in a solid do move, because they vibrate in place."]
+      explain: "You can remember the four key ideas as particles, space, motion and attraction."
   - check:
       type: match
       q: "Match each state to its particles: arrangement, motion and attraction."
@@ -112,11 +112,11 @@ tasks:
 
 ### Between the particles
 
-Look at any sample. What fills the gaps?
+Look at any sample and think about what fills the gaps between the particles.
 
 ### Ice
 
-Watch the ice sample closely.
+Watch the ice sample for a few seconds and see what each particle is doing.
 
 ### Same particles?
 
@@ -124,11 +124,11 @@ Think about what changed between the three samples, and what did not.
 
 ### The four key ideas
 
-Sort each statement.
+Sort each statement into the group it belongs to.
 
 ### Across the states
 
-Compare the three samples on the board.
+Compare the three samples on the board and see how the particles sit and move in each.
 
 ## Practise: name that state
 
@@ -161,7 +161,7 @@ check:
     - ["Ice keeps its shape on a plate.", "Its particles are held in fixed positions by strong attraction", "Strong attraction holds each particle in place."]
     - ["You can't squash an ice cube.", "Its particles are packed closely, with very little space between them", "There is almost no empty space to push the particles into."]
     - ["An ice cube held in your hand starts to melt.", "Its particles vibrate more as they warm, until they break free of their positions", "Warming makes particles vibrate more until they slide past each other."]
-  explain: "Each property comes from one particle feature: arrangement, motion or attraction."
+  explain: "Each property comes down to one particle feature, which is either arrangement, motion or attraction."
 ```
 
 On paper: draw a particle diagram of ice and label it with these three explanations.
@@ -204,7 +204,7 @@ tasks:
       options: ["The grains are alive and swimming", "Water particles are always moving and keep bumping into the grains", "The water is flowing slowly"]
       answer: 1
       feedback: ["Brown checked this: grains from long-dead plants, and even specks of dust, jiggled the same way.", null, "The jiggling goes in random directions, not along with a flow."]
-      explain: "This is Brownian motion: millions of tiny bumps from moving water particles. It was early strong evidence that particles are real and always moving."
+      explain: "This is Brownian motion, caused by millions of tiny bumps from moving water particles, and it was early strong evidence that particles are real and always moving."
 ```
 
 ### What it explains
@@ -227,7 +227,7 @@ check:
     - "Its particles are lighter"
   items:
     - ["Bike tyres are filled with air, not water.", "A gas can be squashed, so it cushions bumps", "Air particles have space to move closer when you hit a bump."]
-    - ["Car brakes use a liquid in the pipes to push the brake pads.", "A liquid hardly squashes, so a push at one end moves the other end straight away", "A gas would just squash."]
+    - ["Car brakes use a liquid in the pipes to push the brake pads.", "A liquid hardly squashes, so a push at one end moves the other end straight away", "A gas would just squash instead of passing the push along."]
     - ["Bridge beams are made of solid steel.", "Solid particles are held in fixed positions, so the shape stays under a load", "Strong attraction keeps the steel particles in place."]
 ```
 
