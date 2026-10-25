@@ -252,6 +252,15 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 - Not done: the numberline `nested sets` mode in the earlier plan was not needed (a sort check does it). Nothing in batch 1 has been checked by a teacher.
 - Do not publish these lessons with publish-lessons alone: the three board modes are outside content/ and need Matthew's full publish first.
 
+**Year 9 batch 2 built (25 Oct 2026), not yet published, not yet tried with a class.** 13 lessons in `content/maths/linear-relations/`, same shape as batch 1 (picture-first Predict, board Run, Investigate with a planted error, worked example then paper try-one, Modify with an edge case, Practise with a review, Make back to the opening, Also used in), `smaller:` on hinge tasks, `paper: true` reasoning in Make. Each has a practice page, teacher.yml and misconceptions entries:
+- Coordinate geometry (unit `lines9`): gradient-two-points, parallel-perpendicular, distance-two-points, midpoint, coordinate-problem.
+- Quadratic relationships (unit `quad9`): recognise-quadratic, graph-quadratic, solve-by-factorising, quadratic-three-ways, linear-or-quadratic, solve-the-model (A05 n2 and n3 together).
+- Changing the rule (unit `vary9`): vary-line (y = ax + b), vary-curve (y = a(x − h)² + k). A06 n3 is not built.
+- Board change (outside content/): the `graph` widget gained `rise: A, B` (dashed run and rise triangle; scope letters h across, v up, m gradient, d length, p and q midpoint). Full publish needed, together with batch 1's board modes (`tiles` binomial, `indexlaws` negative, `placevalue` scientific).
+- Sourced figures: ramps at most 1 in 14 for up to 9 m (AS 1428.1, via the Queensland Health slides); stopping distances 19, 27, 37 and 56 m at 30 to 60 km/h (Transport for NSW speeding page, checked 25 Oct 2026). The solve-the-model quadratic and the ball and phone-plan rules are labelled made up for the task.
+- Do not publish batch 2 with publish-lessons alone (the `rise:` directive is a board change).
+
+
 ## Year 10 plan (25 Oct 2026; planning only, nothing built)
 21 descriptors, 69 nodes, 23 of them hinges (`data/curriculum/maths.json`). About 59 lessons in five batches, same lesson shape as Year 9 batch 1 (picture-first Predict, a board Run where one helps, Investigate with a planted error, worked example then a `paper: true` try-one, Modify with an edge case, Practise with a review task, Make back to the opening, Also used in). Openings and Makes come from `data/connections/maths.yml`, which already covers every Year 10 node.
 
