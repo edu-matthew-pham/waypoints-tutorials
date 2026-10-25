@@ -143,6 +143,20 @@ hint:
   - "One bar for each number in the list: for h in heights does that, and each time round h is the next height."
   - "A bar is a rectangle: forward(20), left(90), forward(h), left(90), forward(20), left(90), forward(h), left(90). Then move on before the next bar."
 check: { type: code, text: "Draw a bar for each number using a for-each loop.", rules: { loops: 1, contains: ["for h in heights"] } }
+smaller:
+  check:
+    type: question
+    q: "After drawing one bar, the turtle is back where that bar started, facing right. What does it need to do before the next bar?"
+    options:
+      - "Move along, past the bar it just drew"
+      - "Turn round and go back to the start"
+      - "Nothing: the loop moves it on"
+    answer: 0
+    feedback:
+      - null
+      - "Then every bar starts in the same place, and they all draw on top of each other."
+      - "The loop only hands it the next height. Where it draws is up to your code."
+    explain: "Without a step along, every bar lands on the same spot. Move forward at least the bar's width before the next one."
 unlocks: [for-each-item]
 ```
 

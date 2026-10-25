@@ -160,6 +160,20 @@ hint:
   - "Ask for the password once before the loop, then ask again inside it."
   - "The condition is: the attempt is not the secret."
 check: { type: code, text: "Keep asking for the password until it is right, then print a welcome.", rules: { loops: 1, contains: ["input("] } }
+smaller:
+  check:
+    type: question
+    q: "Ama's program asks for the password once, before the loop. Inside the loop it only prints Wrong, try again. She types the wrong word. What happens?"
+    options:
+      - "Wrong, try again prints over and over, and it never asks again"
+      - "It asks for the password again"
+      - "It stops after one Wrong, try again"
+    answer: 0
+    feedback:
+      - null
+      - "Only an input inside the loop can ask again, and there isn't one."
+      - "The loop stops only when its condition is false, and nothing inside it changes the guess."
+    explain: "Nothing inside the loop changes the guess, so the condition stays true forever. Ask again inside the loop, so each pass gets a new guess."
 unlocks: [while-loop]
 ```
 

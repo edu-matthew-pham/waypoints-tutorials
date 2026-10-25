@@ -1,0 +1,37 @@
+playground: turtle
+projects:
+  - id: race
+    title: A turtle race
+    after: objects-lists
+    goal: |
+      Hold a **turtle race**: line up some turtles, move each one a random amount every turn, and stop when one crosses the finish line. Then say who won.
+    example: race.py
+    uses: [object, list, for-of, random]
+    milestones:
+      - "At least four turtles line up, each a different colour."
+      - "Every turtle moves a random amount each turn, from one loop over the list."
+      - "The race stops when one crosses the line, and the page says which."
+    stretch:
+      - "Let the player bet on a colour before the race, with textinput."
+      - "Race again without running the program again: a click starts a new race."
+      - "Give each turtle a speed of its own, kept in a second list."
+    teacher: |
+      Builds on Many turtles (a turtle each) and Lists of stars (one loop over them all). The stopping rule is the hard part: students who check for a winner after the whole loop finish one turn late, which is a good conversation about where a check goes. `winner == None` is a recipe here; `None` comes properly in Deeper Python. The turtle shape always draws in the same green, so the example gives each racer a coloured trail; circles take a colour if students want coloured racers.
+
+  - id: aquarium
+    title: An aquarium
+    after: objects-methods
+    goal: |
+      Fill an **aquarium** with fish that swim by themselves. Each fish is an object made from a class you write, with its own colour and speed and a method that moves it.
+    example: aquarium.py
+    uses: [class, method, attribute, object]
+    milestones:
+      - "My Fish class makes a fish with its own colour and speed."
+      - "A swim method moves a fish and turns it at the walls."
+      - "A timer swims every fish in the tank, again and again."
+    stretch:
+      - "A second kind of thing in the tank (bubbles, a crab) with its own class."
+      - "Click to drop food, and the nearest fish swims towards it."
+      - "Fish that speed up for a moment when you click them."
+    teacher: |
+      The same shape as Stars that move themselves: a class with `__init__` and one method, a list of objects, and a timer that calls the method on each. Ask students where they'd change how every fish swims (the method) and where they'd add one more fish (the list).

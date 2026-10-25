@@ -149,6 +149,17 @@ hint:
   - "Set total to 0 before the loop. Ask once before the loop and again at the end of every pass."
   - "Inside the loop: total += int(answer), then ask again."
 check: { type: code, text: "Keep asking for points until 0 is typed, then print the total.", rules: { loops: 1, contains: ["+=", "int("] } }
+smaller:
+  check:
+    type: trace
+    text: "Someone types these scores, one at a time. Fill in the total after each one."
+    table: |
+      | typed | total |
+      | 5 | 5 |
+      | 3 | [8] |
+      | 4 | [12] |
+      | 0 | [12] |
+    explain: "The total is set to 0 once, before the loop, and each score adds to it. Typing 0 ends the loop, so the total stays at 12."
 unlocks: [running-total]
 ```
 

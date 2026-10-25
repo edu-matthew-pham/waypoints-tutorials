@@ -202,6 +202,20 @@ check:
   type: code
   text: "Write your function and call it three times."
   rules: { defs: 1, calls: 3 }
+smaller:
+  check:
+    type: question
+    q: "Ana writes def square(): with the drawing lines under it, and presses Run. Nothing is drawn. Why?"
+    options:
+      - "She never called it: square() on its own line runs it"
+      - "The drawing lines should be outside the def"
+      - "A def needs a number in its brackets"
+    answer: 0
+    feedback:
+      - null
+      - "Inside the def is right: those lines are the recipe. A recipe does nothing until someone uses it."
+      - "Brackets can be empty. Parameters come next lesson."
+    explain: "A def only gives the lines a name. They run when you call the name, square(), and each call runs them again."
 ```
 
 Write a function that draws any shape you like (a rectangle, a hexagon, a star), then call it three times in a row.

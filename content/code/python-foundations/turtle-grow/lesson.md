@@ -157,6 +157,17 @@ hint:
   - "Give the thickness its own variable, like size, and set it before the loop."
   - "Use pensize(width) inside the loop, and add to width at the end of each pass."
 check: { type: code, text: "Make the pen thicker every pass using a variable.", rules: { uses: [pensize], loops: 1 } }
+smaller:
+  check:
+    type: trace
+    text: "width starts at 2, and each pass draws a line, then adds 2 to width. Fill in the width each line is drawn with."
+    table: |
+      | pass | width |
+      | 1 | 2 |
+      | 2 | [4] |
+      | 3 | [6] |
+      | 5 | [10] |
+    explain: "Each pass draws with whatever width holds, then adds 2, so the next line is a bit thicker. That's size = size + 10 again, with a different name."
 unlocks: [grow-value]
 ```
 

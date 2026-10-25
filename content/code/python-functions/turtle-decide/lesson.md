@@ -151,6 +151,20 @@ stage: make
 insight: "Goals only: a function that decides, called for every item in a list, inside a drawing loop."
 try: { starter: "decide.py#make", height: 460 }
 check: { type: code, text: "Write a function that returns a colour for a score, and use it to colour a bar for every score.", rules: { defs: 1, returns: 1, loops: 1, contains: ["if"] } }
+smaller:
+  check:
+    type: question
+    q: "A function says: if score >= 70, return green; elif score >= 50, return orange. There's nothing after that. What does it give back for a score of 30?"
+    options:
+      - "Nothing at all, so the bar gets no colour"
+      - "Red"
+      - "Orange"
+    answer: 0
+    feedback:
+      - null
+      - "Red is what you want, but nothing in the function says red."
+      - "30 isn't 50 or more, so the orange line doesn't run."
+    explain: "No check is true for 30, so the function ends without returning anything (Python calls that None). An else: return red covers everything left."
 ```
 
 Draw a bar for each score, as tall as the score, coloured by a function you write: **green** for 70 or more, **orange** for 50 or more, **red** below that. Most people need two goes at the bars: draw one bar first, then loop.

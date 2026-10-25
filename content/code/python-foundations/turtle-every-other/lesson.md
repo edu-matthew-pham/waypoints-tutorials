@@ -133,6 +133,20 @@ hint:
   - "Put the new check first, before the others. Python stops at the first true answer."
   - "i % 3 == 0 is true for 0, 3 and 6. Use elif for the red check."
 check: { type: code, text: "Make every third side green, using elif.", rules: { uses: [elif], contains: ["i % 3"] } }
+smaller:
+  check:
+    type: question
+    q: "Side 6 is a third side and an even one. You want it green. Which check has to come first?"
+    options:
+      - "The green one, i % 3 == 0"
+      - "The red one, i % 2 == 0"
+      - "It doesn't matter, Python checks both"
+    answer: 0
+    feedback:
+      - null
+      - "Then 6 gets red: Python stops at the first true answer and never reaches the green check."
+      - "Python stops at the first check that's true, so the order decides."
+    explain: "Python asks the checks in order and stops at the first true one, so the check you want to win goes first."
 unlocks: [every-other]
 ```
 

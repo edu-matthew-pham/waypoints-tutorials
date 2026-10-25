@@ -191,6 +191,12 @@ hint:
   - "Write one function that draws a button at a given place, and call it twice."
   - "In clicked, use two separate if statements, one for each button. Change count by +1 or -1."
 check: { type: code, text: "Build a two-button counter.", rules: { defs: 2, uses: [onscreenclick] } }
+smaller:
+  check:
+    type: number
+    q: "A button's left edge is at x = -100 and it's 80 wide. At what x is its right edge?"
+    answer: -20
+    explain: "-100 + 80 = -20. A click is on that button when its x is between -100 and -20, and its y is between the bottom and the top, worked out the same way."
 ```
 
 Build a counter with **two buttons**: `+1` on the left and `-1` on the right, with the number shown above.
