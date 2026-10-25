@@ -5,17 +5,17 @@ widget: sheet
 cell A1: Plant
 cell B1: Height (cm)
 cell A2: Bean A
-cell B2: 8.5
+cell B2: {{heights[1]}}
 cell A3: Bean B
-cell B3: 10
+cell B3: {{heights[2]}}
 cell A4: Bean C
-cell B4: 9.5
+cell B4: {{heights[3]}}
 cell A5: Bean D
-cell B5: 12
+cell B5: {{heights[4]}}
 cell A6: Bean E
-cell B6: 11
+cell B6: {{heights[5]}}
 cell A7: Bean F
-cell B7: 9
+cell B7: {{heights[6]}}
 cell A9: Average
 cell B9: =AVERAGE(B2:B7)
 cell A10: Shortest
@@ -25,26 +25,36 @@ cell B11: =MAX(B2:B7)
 edit: B2:B7
 # endregion
 
+# region: run-solution
+cell B5: {{bumped[4]}}
+# endregion
+
 # region: practise
 widget: sheet
 cell A1: Plant
 cell B1: Height (cm)
 cell A2: Bean A
-cell B2: 8.5
+cell B2: {{heights[1]}}
 cell A3: Bean B
-cell B3: 10
+cell B3: {{heights[2]}}
 cell A4: Bean C
-cell B4: 9.5
+cell B4: {{heights[3]}}
 cell A5: Bean D
-cell B5: 12
+cell B5: {{heights[4]}}
 cell A6: Bean E
-cell B6: 11
+cell B6: {{heights[5]}}
 cell A7: Bean F
-cell B7: 9
+cell B7: {{heights[6]}}
 cell A9: Average
 cell A10: Shortest
 cell A11: Tallest
 edit: B9:B11
+# endregion
+
+# region: practise-solution
+cell B9: =AVERAGE(B2:B7)
+cell B10: =MIN(B2:B7)
+cell B11: =MAX(B2:B7)
 # endregion
 
 # region: practise-gap
@@ -52,18 +62,22 @@ widget: sheet
 cell A1: Plant
 cell B1: Height (cm)
 cell A2: Bean A
-cell B2: 8.5
+cell B2: {{heights[1]}}
 cell A3: Bean B
-cell B3: 10
+cell B3: {{heights[2]}}
 cell A4: Bean C
-cell B4: 9.5
+cell B4: {{heights[3]}}
 cell A5: Bean D
-cell B5: 12
+cell B5: {{heights[4]}}
 cell A6: Bean E (not measured)
 cell A7: Bean F
-cell B7: 9
+cell B7: {{heights[6]}}
 cell A9: Average
 edit: B6, B9
+# endregion
+
+# region: practise-gap-solution
+cell B9: =AVERAGE(B2:B7)
 # endregion
 
 # region: make
@@ -80,4 +94,16 @@ cell A9: Average
 cell A10: Shortest
 cell A11: Longest
 edit: B2:B7, B9:B11
+# endregion
+
+# region: make-solution
+cell B2: 150
+cell B3: 162
+cell B4: 158
+cell B5: 171
+cell B6: 149
+cell B7: 165
+cell B9: =AVERAGE(B2:B7)
+cell B10: =MIN(B2:B7)
+cell B11: =MAX(B2:B7)
 # endregion

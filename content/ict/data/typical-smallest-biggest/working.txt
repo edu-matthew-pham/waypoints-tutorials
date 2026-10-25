@@ -4,6 +4,6 @@
 Sam's sheet has the heights of six beans in B2 to B7, measured on day 10.
 Bean E's pot was knocked over, so it was not measured.
 Sam types 0 into B6, so the cell is not empty.
-Sam writes =AVERAGE(B2:B7) in B9 and it shows 8.2.
-Every bean that was measured is taller than 8.2.
+Sam writes =AVERAGE(B2:B7) in B9 and it shows {{round((sum(heights) - heights[5]) / 6, 1)}}.
+Every bean that was measured is taller than {{round((sum(heights) - heights[5]) / 6, 1)}}.
 # endregion

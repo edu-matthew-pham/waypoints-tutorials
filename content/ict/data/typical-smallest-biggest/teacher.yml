@@ -17,7 +17,7 @@ before: |
 
   ROUND(x, 1) shows one decimal place. It changes the value held, not just the display; for display-only rounding, real tools have a number format, which is outside this course's core.
 running:
-  - "Predict: students who chose 12 think the average is the last number changed. Ask what the six plants share."
+  - "Predict: students who chose {{heights[4]}} think the average is the last number changed. Ask what the six plants share."
   - "Try: ask which summary moved by a lot, a little or not at all, and why."
   - "Worked example: ask which function they would use to catch a typing slip."
   - "Practise: ask what the average of five is if the sixth is left empty, and what it would be with a 0."
