@@ -190,6 +190,7 @@ function layoutCourses(pw, pathways, dirs, lessonCount) {
 /** The map's HTML (filled in by site/trail.js) and its data. up: from this page to the site root. */
 export function trailHtml(layout, up, esc, opts = {}) {
   // opts.projects(path): how many open project briefs a course has (tools/projects.mjs), shown as a side branch on its stop.
+  // opts.back: { href, label } draws a "← All <subject> pathways" link at the map's top left (and first in the phone list).
   const projects = (n) => (n.path && !n.unit && opts.projects ? opts.projects(n.path) : 0);
   const { nodes, cols, rows, fcols } = layout;
   const zone = (cls, label, from, to) => (to > from ? `<p class="tzone ${cls}" style="grid-column:${from + 1} / ${to + 1};grid-row:${rows + 1}">${label}</p>` : '');
@@ -219,6 +220,7 @@ export function trailHtml(layout, up, esc, opts = {}) {
     `<div class="tcard" id="tcard" aria-live="polite"></div>` +
     `<div class="tscroll"><div class="tmap${narrow ? ' tunits' : ''}${layout.expand ? ' texp' : ''}" id="tmap" style="--cols:${cols};--rows:${rows};--per:${layout.per || 2};--fz:${(100 * fcols / cols).toFixed(2)}%">` +
     `<svg class="tlines" aria-hidden="true"></svg>` +
+    (opts.back ? `<a class="wpt-tback" href="${esc(opts.back.href)}"><span aria-hidden="true">←</span> ${esc(opts.back.label)}</a>` : '') +
     zone('tzf', 'Foundations', 0, fcols) +
     nodes.filter((n) => n.col < fcols).map(stopHtml).join('') +
     zone('tze', 'Extensions', fcols, cols) +
@@ -255,6 +257,9 @@ min-width:calc(var(--cols) * 220px);padding:18px 8px 0;border-radius:20px;backgr
 .tatitle{margin:0 10px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);line-height:1.3;text-align:center}
 .tastops{display:grid;grid-template-columns:repeat(var(--per),minmax(112px,1fr));margin-top:10px}
 .tunit{margin:6px 2px}.tunit .tdot{width:44px;height:44px;font-size:14px}.tunit .tlab{max-width:118px}.tunit .tlab b{font-size:13.5px}.tunit .tmeta{font-size:12.5px}
+.tmap:has(.wpt-tback){padding-top:58px}
+.wpt-tback{position:absolute;z-index:2;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 1px 3px color-mix(in srgb,var(--ink) 12%,transparent)}
+.wpt-tback:hover{border-color:var(--accent);color:var(--accent)}.wpt-tback:focus-visible{outline:3px solid var(--investigate);outline-offset:3px}
 .tlines{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
 .tlines path{fill:none;stroke-linecap:round}
 .tlines .walked{stroke:var(--ink);stroke-width:5}.tlines .open{stroke:var(--muted);stroke-width:3.5;stroke-dasharray:1 9}
@@ -289,6 +294,7 @@ min-width:calc(var(--cols) * 220px);padding:18px 8px 0;border-radius:20px;backgr
 .tunit{margin:6px 0;align-self:stretch}.tunit .tlab{max-width:none;flex:1;min-width:0}.tunit .tlab b{font-size:15px}.tunit .tafter{display:none}
 .tmap.tunits{min-width:0}.tunits .tnode{margin-left:calc(min(var(--c),2) * 14px)}.tunits .tafter{display:none}.tunits .tlab{max-width:none;flex:1;min-width:0}.tunits .tlab b{font-size:15px}.tunits .tnode{align-self:stretch;max-width:calc(100% - min(var(--c),2) * 14px)}
 .tcard .tgo{justify-content:flex-start}
+.tmap:has(.wpt-tback){padding-top:10px}.wpt-tback{position:static;align-self:flex-start;margin:2px 0 6px;max-width:100%}
 }
 `;
 

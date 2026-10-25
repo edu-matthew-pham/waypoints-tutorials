@@ -816,7 +816,7 @@ for (const node of dirs.values()) {
       // Trail map (students, the default) and list (teachers: about, what each course covers). The choice
       // is remembered per browser; without JavaScript the list shows. tools/trail.mjs, site/trail.js.
       // trail: units opens courses into their units on the map (one at a time); trailheads keep one dot per course.
-      const trail = useTrail && trailHtml(layoutTrail(pw, pathways, dirs, lessonCount, { stops: trailOpts.stops === 'units' ? 'expand' : 'courses' }), pup, esc, { projects: (path) => PROJECTS.get(path)?.projects.length || 0 });
+      const trail = useTrail && trailHtml(layoutTrail(pw, pathways, dirs, lessonCount, { stops: trailOpts.stops === 'units' ? 'expand' : 'courses' }), pup, esc, { projects: (path) => PROJECTS.get(path)?.projects.length || 0, back: { href: '../../', label: `All ${node.title} pathways` } });
       const view = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
         `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trail map</button><button type="button" data-view="list">List for teachers</button></div>`;
       writeFileSync(join(OUT, pp, 'index.html'), page(`${pw.title}: ${node.title}`,
