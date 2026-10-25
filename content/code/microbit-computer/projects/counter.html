@@ -1,0 +1,23 @@
+<style>
+  body { font-family: sans-serif; }
+  #count { font-size: 72px; margin: 10px 0; }
+</style>
+<h1>Press counter</h1>
+<button id="connect">Connect</button>
+<button id="reset">Reset</button>
+<p id="count">0</p>
+
+<script src="microbit.js"></script>
+<script>
+  document.querySelector("#connect").addEventListener("click", microbit.connect);
+  microbit.pretend(["count:1", "count:2", "count:3"]);
+
+  microbit.onValue(function (name, number) {
+    if (name === "count") {
+      document.querySelector("#count").textContent = number;
+    }
+  });
+  document.querySelector("#reset").addEventListener("click", function () {
+    microbit.send("reset");
+  });
+</script>

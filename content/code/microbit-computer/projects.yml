@@ -31,3 +31,93 @@ projects:
         example: dashboard.html
         starter: dashboard-starter.html
         height: 560
+  - id: press-counter
+    title: A press counter
+    after: commands
+    goal: |
+      Make a **counter that lives on both sides**. The micro:bit counts every press of button A and sends the count. **Your own web page** shows it big, and has a Reset button that tells the micro:bit to start again from 0.
+
+      A good counter never loses count: if the page opens late, the next press still shows the right number.
+    milestones:
+      - "Each press of A adds 1 on the micro:bit and sends the count by name (serial write value)."
+      - "My page shows the count and updates on every press (try it with the pretend micro:bit)."
+      - "The Reset button on my page sends a command, and the micro:bit goes back to 0."
+    stretch:
+      - "Turn the page red when the count passes a number you choose."
+      - "Show the count on the micro:bit's own screen too."
+    teacher: |
+      The smallest crossover: one variable on the micro:bit, one name on the wire, one element on the page. It suits students who have done lessons 1 and 2 of this course and the first DOM lessons. The count lives on the micro:bit, and the page only shows what it is sent: ask "where does the real count live?" and what happens if the page is closed and opened again.
+
+      In the playground preview USB is blocked, so `microbit.js` opens a pretend micro:bit (type `count:3`). A real micro:bit needs the downloaded page in Chrome or Edge.
+    parts:
+      - title: The micro:bit
+        playground: microbit
+        uses: [variable-update, serial-write, serial-read]
+        example: counter.ts
+      - title: The web page
+        playground: dom
+        uses: [js-event, text-content, js-query]
+        example: counter.html
+        starter: counter-starter.html
+        height: 480
+  - id: radio-packets
+    title: Watch the radio packets
+    after: radio-bridge
+    goal: |
+      Three micro:bits, one story. A **sender** micro:bit sends readings by radio. A **bridge** micro:bit, plugged into the computer, hears every radio packet and passes it on. **Your own web page** lists each packet as it arrives (its name and its value), like a window on the radio.
+
+      Use a different radio group from the rest of the class so you only see your own packets.
+    milestones:
+      - "The sender sends a named reading by radio (send value) on your group."
+      - "The bridge passes each packet on to the computer (serial write value)."
+      - "My page adds a new line to a list for every packet, so I can see the order they arrived."
+      - "I can tell, from the list, which packets came from the sender and which were my own test lines."
+    stretch:
+      - "Send two different names from the sender and colour them differently on the page."
+      - "Show how many packets have arrived so far."
+    teacher: |
+      A crossover that makes the packet idea from Networks visible: a packet has a name, a value and an order. The sender and the bridge are the same micro:bit program with different jobs, so it also suits pairs: one builds the sender, one builds the bridge and page. Remind students that `sendValue` names are cut at 8 characters.
+
+      The example shows the bridge and the page. The sender is two blocks (radio set group, then radio send value inside a forever loop); the dashboard's temperature sender is a good model. The playground preview can only run one micro:bit, so test with the pretend micro:bit (type `temp:21`).
+    parts:
+      - title: The bridge micro:bit
+        playground: microbit
+        uses: [radio, radio-value, serial-write]
+        example: packets.ts
+      - title: The web page
+        playground: dom
+        uses: [js-event, create-element, append-element]
+        example: packets.html
+        starter: packets-starter.html
+        height: 520
+  - id: data-logger
+    title: A data logger
+    after: send-data
+    goal: |
+      Turn the micro:bit into a **data logger**. It sends a reading (light, temperature or movement) every second. **Your own web page** keeps each reading in a list, and shows the **lowest**, the **highest** and **how many** readings it has seen so far.
+
+      Then use it for something real: log the light near a window for a lesson, or the temperature in two parts of the room, and say what the numbers show.
+    milestones:
+      - "The micro:bit sends a reading every second by name."
+      - "My page adds each reading to the end of a list."
+      - "My page shows the lowest and highest reading so far, updating as new ones arrive."
+      - "I logged something real and wrote one sentence about what the numbers showed."
+    stretch:
+      - "Show the average as well."
+      - "Add a Clear button that starts the log again."
+      - "Download the page and log with a real micro:bit."
+    teacher: |
+      The logger pairs naturally with Science: the same page can log any sensor, so the question can come from a practical (does the light change near the window? does the room cool at lunch?). The new idea is keeping history: the dashboard shows only the latest reading, and the logger remembers all of them. Expect students to need a nudge to compare each new reading with the lowest and highest so far.
+
+      Check that the lowest and highest start properly: starting both at 0 is the usual bug (the lowest never changes). Starting from the first reading, or from very large and very small numbers, fixes it. In the preview, type `light:80`, `light:140` and so on.
+    parts:
+      - title: The micro:bit
+        playground: microbit
+        uses: [serial-write, running-time]
+        example: logger.ts
+      - title: The web page
+        playground: dom
+        uses: [js-event, text-content, js-query]
+        example: logger.html
+        starter: logger-starter.html
+        height: 560

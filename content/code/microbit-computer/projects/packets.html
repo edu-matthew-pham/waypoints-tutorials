@@ -1,0 +1,20 @@
+<style>
+  body { font-family: sans-serif; }
+  #log { font-family: monospace; padding-left: 20px; }
+</style>
+<h1>Radio packets</h1>
+<button id="connect">Connect</button>
+<p>Packets heard so far:</p>
+<ol id="log"></ol>
+
+<script src="microbit.js"></script>
+<script>
+  document.querySelector("#connect").addEventListener("click", microbit.connect);
+  microbit.pretend(["temp:21", "temp:23", "light:140"]);
+
+  microbit.onValue(function (name, number) {
+    var line = document.createElement("li");
+    line.textContent = name + " = " + number;
+    document.querySelector("#log").append(line);
+  });
+</script>

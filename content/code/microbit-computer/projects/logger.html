@@ -1,0 +1,25 @@
+<style>
+  body { font-family: sans-serif; }
+  p { font-size: 22px; margin: 6px 0; }
+</style>
+<h1>Light logger</h1>
+<button id="connect">Connect</button>
+<p>Readings: <span id="count">0</span></p>
+<p>Lowest: <span id="low">-</span></p>
+<p>Highest: <span id="high">-</span></p>
+
+<script src="microbit.js"></script>
+<script>
+  document.querySelector("#connect").addEventListener("click", microbit.connect);
+  microbit.pretend(["light:80", "light:140", "light:30"]);
+
+  var readings = [];
+  microbit.onValue(function (name, number) {
+    if (name === "light") {
+      readings.push(number);
+      document.querySelector("#count").textContent = readings.length;
+      document.querySelector("#low").textContent = Math.min.apply(null, readings);
+      document.querySelector("#high").textContent = Math.max.apply(null, readings);
+    }
+  });
+</script>
