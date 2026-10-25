@@ -1,0 +1,156 @@
+name: MakeCode static editor (test)
+
+# Manual only. A trial, not part of publishing: it touches no branch and no live site.
+# 1. Builds the MakeCode editor as static files (pxt staticpkg), one job per target: micro:bit (microsoft/pxt-microbit)
+#    and Arcade (microsoft/pxt-arcade), each at a pinned tag. The build needs github.com (target libs) and
+#    www.makecode.com (cloud compile of the native hex), which Actions can reach and the Claude sandbox cannot.
+#    Uploads each result as the artifact makecode-<target>-static.
+# 2. Serves it on localhost, blocks the makecode.com hosts in /etc/hosts, and runs render-pictures' MakeCode sections
+#    against it (MAKECODE_RENDER for blocks, MAKECODE_EDITOR for simulator pictures). Those overrides are one URL for
+#    both targets, so each job draws the other target's programs with the wrong editor: only its own target's pictures
+#    are counted. Pictures go to a scratch folder and are uploaded as makecode-<target>-pictures for checking by eye.
+on:
+  workflow_dispatch:
+    inputs:
+      microbit_tag:
+        description: pxt-microbit tag to build
+        default: v9.1.1
+      arcade_tag:
+        description: pxt-arcade tag to build
+        default: v4.2.1
+      minutes:
+        description: Minutes to spend drawing pictures (a sample, not all of them)
+        default: "15"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: microbit
+            repo: microsoft/pxt-microbit
+          - target: arcade
+            repo: microsoft/pxt-arcade
+    env:
+      TAG: ${{ matrix.target == 'arcade' && inputs.arcade_tag || inputs.microbit_tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build the static editor
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "1"   # pxt-microbit's dev tools want a browser; the build does not
+        run: |
+          git clone --depth 1 --branch "$TAG" "https://github.com/${{ matrix.repo }}" "$RUNNER_TEMP/pxt-target"
+          cd "$RUNNER_TEMP/pxt-target"
+          npm install --no-audit --no-fund
+          # The local TypeScript (4.8) must win over any global tsc on the runner.
+          PATH="$PWD/node_modules/.bin:$PATH" node node_modules/pxt-core/built/pxt.js staticpkg
+          echo "### Static ${{ matrix.target }} editor ($TAG)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Size: $(du -sh built/packaged | cut -f1), files: $(find built/packaged -type f | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"; ls built/packaged >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: makecode-${{ matrix.target }}-static
+          path: ${{ runner.temp }}/pxt-target/built/packaged
+          retention-days: 90
+
+      - name: Install site tools and the browser
+        run: |
+          npm ci --omit=optional
+          npx playwright-core install --with-deps chromium
+          node tools/build-playground.mjs
+
+      # A tiny server for the static editor. MakeCode's routes (/--docs for the blocks renderer, /--run, /--embed)
+      # map to the packaged files; render.html asks for <origin>/--docs?render=1.
+      - name: Serve the static editor on port 8300
+        run: |
+          cat > "$RUNNER_TEMP/serve.mjs" <<'EOF'
+          import { createServer } from 'node:http';
+          import { readFile, stat } from 'node:fs/promises';
+          import { join, extname, normalize } from 'node:path';
+          const root = process.argv[2];
+          const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.wasm': 'application/wasm', '.woff2': 'font/woff2', '.woff': 'font/woff', '.manifest': 'text/cache-manifest', '.hex': 'text/plain' };
+          const routes = { '/': 'index.html', '/--docs': 'docs.html', '/--run': 'run.html', '/--embed': 'embed.js' };
+          createServer(async (req, res) => {
+            let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+            p = routes[p] || p;
+            const file = join(root, normalize(p).replace(/^(\.\.[/\\])+/, ''));
+            try {
+              const s = await stat(file);
+              const f = s.isDirectory() ? join(file, 'index.html') : file;
+              res.writeHead(200, { 'content-type': types[extname(f)] || 'application/octet-stream', 'access-control-allow-origin': '*' });
+              res.end(await readFile(f));
+            } catch { console.log('404', req.url); res.writeHead(404); res.end(); }
+          }).listen(8300, () => console.log('serving', root));
+          EOF
+          nohup node "$RUNNER_TEMP/serve.mjs" "$RUNNER_TEMP/pxt-target/built/packaged" > "$RUNNER_TEMP/serve.log" 2>&1 &
+          sleep 2
+          for r in / /--docs; do echo "$r: $(curl -s -o /dev/null -w '%{http_code}' http://localhost:8300$r)"; done
+
+      # Proof that pictures come from the static build: MakeCode's own hosts no longer resolve.
+      - name: Block makecode.com
+        run: |
+          for h in makecode.microbit.org arcade.makecode.com makecode.com www.makecode.com pxt.azureedge.net cdn.makecode.com trg-microbit.userpxt.io trg-arcade.userpxt.io; do
+            echo "0.0.0.0 $h" | sudo tee -a /etc/hosts > /dev/null
+          done
+          curl -s -m 10 -o /dev/null -w 'makecode.microbit.org: %{http_code}\n' https://makecode.microbit.org/ || echo "makecode.microbit.org: blocked"
+
+      - name: Draw MakeCode pictures from the static editor
+        env:
+          WP_ONLY: makecode
+          MAKECODE_RENDER: http://localhost:8300
+          MAKECODE_EDITOR: http://localhost:8300/index.html
+        run: |
+          WP_DEADLINE=$(( $(date +%s) + ${{ inputs.minutes }} * 60 )) node tools/render-pictures.mjs --out "$RUNNER_TEMP/pics" 2>&1 | tee "$RUNNER_TEMP/pictures.log"
+          # Keep only this target's pictures: Arcade blocks are in makecode/arcade/, Arcade output pictures are under
+          # an arcade course folder; everything else is micro:bit.
+          # Lesson programs' blocks are saved by hash (makecode/code/<hash>.png), so their ids are worked out as
+          # render-pictures does.
+          cat > "$RUNNER_TEMP/arcade-ids.mjs" <<'EOF'
+          const { blocksId, makecodePrograms } = await import(process.cwd() + '/tools/teach.mjs');
+          const { loadLessons, getSnippet } = await import(process.cwd() + '/tools/lesson.mjs');
+          const targetOf = (l) => l.steps.map((s) => s.config.try?.playground).find((k) => k === 'microbit' || k === 'arcade') || 'microbit';
+          const ids = new Set();
+          for (const l of loadLessons().filter((l) => l.language === 'makecode' && targetOf(l) === 'arcade'))
+            for (const code of makecodePrograms(l, (ref) => getSnippet(l.dir, ref))) ids.add(blocksId(code));
+          console.log([...ids].join('\n'));
+          EOF
+          node "$RUNNER_TEMP/arcade-ids.mjs" | sed 's#^#makecode/#; s#$#.png#' > "$RUNNER_TEMP/arcade-files.txt"
+          echo "makecode/arcade/" >> "$RUNNER_TEMP/arcade-files.txt"
+          P="$RUNNER_TEMP/pics/_pictures"
+          cd "$P"
+          for f in $(find makecode makecode-out -name '*.png' 2>/dev/null); do
+            case "$f" in makecode-out/*arcade*) a=1 ;; makecode-out/*) a=0 ;; *) grep -qxF "$f" "$RUNNER_TEMP/arcade-files.txt" || [ "${f#makecode/arcade/}" != "$f" ] && a=1 || a=0 ;; esac
+            if [ "${{ matrix.target }}" = arcade ] && [ $a = 0 ]; then rm "$f"; fi
+            if [ "${{ matrix.target }}" != arcade ] && [ $a = 1 ]; then rm "$f"; fi
+          done
+          cd "$GITHUB_WORKSPACE"
+          {
+            echo "### ${{ matrix.target }} pictures from the static editor (makecode.com blocked)"
+            echo "- blocks (makecode): $(find "$P/makecode" -name '*.png' 2>/dev/null | wc -l)"
+            echo "- simulator (makecode-out): $(find "$P/makecode-out" -name '*.png' 2>/dev/null | wc -l)"
+            echo '```'; grep -E "^- makecode|cannot be reached|could not be drawn|Out of time" "$RUNNER_TEMP/pictures.log" | head -40; echo '```'
+            echo "Requests the static server could not answer:"
+            echo '```'; grep '^404' "$RUNNER_TEMP/serve.log" | sort | uniq -c | sort -rn | head -20; echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: makecode-${{ matrix.target }}-pictures
+          path: |
+            ${{ runner.temp }}/pics/_pictures
+            ${{ runner.temp }}/pictures.log
+            ${{ runner.temp }}/serve.log
+          retention-days: 7
