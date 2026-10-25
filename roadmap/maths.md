@@ -101,6 +101,14 @@ Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (als
 - *Open, shared:* reasoning checks have no slot for a model diagram, so the model flowcharts are step lists; the validate warning "figure outside backticks" fires on correct `<figure>` markup (about 30 existing lessons plus the four new ones).
 - *Still to do (the full version):* letters-first and shape-in-words Predict pictures (groups B and C), the paper Make in about 115 lessons, `struggle:` in 45 teacher.yml files, connections and "Also used in".
 
+### Picture check (26 Oct 2026)
+
+Checked all 194 inline `situation` figures added in the last two days (181 lessons in data, number, real-numbers, measurement, algebra, linear-relations and angles) at 390 and 1200 px, light and dark (dark follows the system setting; there is no switch). Dark mode reads fine everywhere. Fixed in `lesson.md` only, no check or answer touched: 41 lessons.
+- Text cut off at the edge of the picture in 18 lessons (completing-the-square, scale-factors-area-volume, similar-shapes, write-the-algorithm, distance-two-points, gradient, intercept, recognise-quadratic, vary-formulas, break-it-into-solids, surface-area-composite, finding-a-side, name-the-sides, right-or-not, scientific-notation, powers-of-terms, special-products, variables): picture widened to fit, same scale. Plan boxes in setting-up-equations widened (text ran over the edge).
+- Labels crossed by lines or crowded (rotations, translations, quadrilateral-proofs, given, scatterplots, two-way-tables, lines-and-regions, plotting-a-rule, quadratic-three-ways, solve-the-rate-model, time-zones, scale-factors, using-a-plan, exact-or-approximate, volume-composite, volume-prisms-cylinders, non-monic-factorising, the cone-roof label in break-it-into-solids and surface-area-composite): moved.
+- A doubled "? ?" at the end of a label (8 lessons) cut to one.
+- No picture gives its Predict answer away. Still slightly tight: "moment" beside the arrow in time-zones; the 51 label at the left edge in squares-and-roots lessons.
+- Needs your approval: none. Not done: the four lessons with a figure inside a hidden tab (break-it-into-solids, surface-area-composite, volume-composite, reading-log-scales) were checked with the tab forced open. Publish with Publish changed lessons.
 ## Done: prerequisite checks (decided and built 11 Oct 2026)
 
 The code-style scan does not carry over: maths and science have no code to scan, and their tutorials sit beside class teaching. Checked against the repo: no lesson has a `node:` field (the node is named only in `teacher.yml` summaries, such as Plates "AC9S8U03, node 2"), and the repo holds no progression data (`prior_knowledge` lives in waypoints-kit and no build step reads it). 55 science and 19 maths lessons.

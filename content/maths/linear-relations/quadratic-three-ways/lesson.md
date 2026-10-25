@@ -34,7 +34,7 @@ check:
   actual: "(x + 9)(x − 5). Each bracket is 0 at an intercept: x + 9 = 0 at x = −9, and x − 5 = 0 at x = 5. Check: 9 × (−5) = −45 and 9 − 5 = 4."
 ```
 
-<figure class="situation" role="img" aria-label="A curve that opens upward and crosses the x-axis at minus 9 and at 5."><svg viewBox="0 0 320 170" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><path d="M10 60 H310" stroke-width="1.5"/><path d="M60 8 Q165 292 270 8" stroke-width="3"/><circle cx="81" cy="60" r="4" fill="currentColor"/><circle cx="249" cy="60" r="4" fill="currentColor"/><text x="68" y="48" fill="currentColor" stroke="none">−9</text><text x="244" y="48" fill="currentColor" stroke="none">5</text></svg></figure>
+<figure class="situation" role="img" aria-label="A curve that opens upward and crosses the x-axis at minus 9 and at 5."><svg viewBox="0 0 320 170" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><path d="M10 60 H310" stroke-width="1.5"/><path d="M60 8 Q165 292 270 8" stroke-width="3"/><circle cx="81" cy="60" r="4" fill="currentColor"/><circle cx="249" cy="60" r="4" fill="currentColor"/><text x="50" y="48" fill="currentColor" stroke="none">−9</text><text x="264" y="48" fill="currentColor" stroke="none">5</text></svg></figure>
 
 The curve crosses the axis in two places. What do the brackets look like?
 
