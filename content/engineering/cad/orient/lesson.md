@@ -47,6 +47,14 @@ try: { playground: board, starter: "board.yml#run", height: 560 }
 tasks:
   - check: { type: board, text: "Turn the bracket round until it needs supports.", when: "s = 1", explain: "Upside down: the foot sticks out over nothing." }
   - hint: ["A support is needed wherever part of the bracket hangs over nothing. Which way round does every part have something under it?", "Then think about the load: printed layers peel apart more easily than they bend, so you want the layers running along the arm the load pulls on."]
+    smaller:
+      check:
+        type: question
+        q: "Picture the arm as a stack of card sheets glued together, standing on end. You pull on the top of the stack. What gives way first?"
+        options: ["The glue between the sheets", "The card of each sheet", "Nothing: it's equally strong every way"]
+        answer: 0
+        feedback: [null, "Each sheet is solid along its length, so that's the strong part.", "Glue is weaker than the card itself, so the stack comes apart at the glue."]
+        explain: "Layers are like the sheets: strong along themselves, weaker where one sticks to the next."
     check: { type: board, text: "Find the way that needs no supports and puts the layers along the load.", when: "s = 0 and k = 1", explain: "Flat on its side." }
 ```
 

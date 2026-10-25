@@ -166,6 +166,8 @@ insight: "The Gear trains brief, redone with 95% per mesh: the frictionless answ
 try: { playground: board, starter: "losses.yml#make", height: 600 }
 tasks:
   - hint: ["With friction the train lifts 200 × ratio × 0.9 grams (two meshes).", "1500 ÷ (200 × 0.9025) ≈ 8.3: you need a ratio of at least 8.3.", "The time is 5 × ratio seconds, so 45 s allows a ratio up to 9. Which two stages multiply to between 8.3 and 9?"]
+    smaller:
+      check: { type: number, q: "The motor pulls 200 g at ratio 1, but friction means only 90% of that force gets through. What does it lift at ratio 1, in grams?", answer: 180, explain: "200 × 0.9 = 180 g. Each step up in ratio multiplies that, so how big must the ratio be to reach 1500 g?" }
     check: { type: board, text: "Lift 1500 g within 45 s with a compound train, now that each mesh is 95% efficient.", when: "load_g = 1500 and l = 1 and time_s <= 45", explain: "A ratio of 9 (8 → 24 = 8 → 24, 45 s) or 8.33 (8 → 40 = 24 → 40, 41.7 s). Ratio 7.5, the frictionless answer, now lifts only 1354 g." }
   - check: { type: reflect, text: "In one or two sentences: how friction changed your design, and where the extra energy goes." }
 ```

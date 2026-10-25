@@ -50,7 +50,16 @@ insight: "One rope fails at 150 N; adding ropes that hold the bottom block until
 try: { playground: board, starter: "pulleys.yml#run", height: 540 }
 tasks:
   - check: { type: board, text: "With one rope holding the sack, press Pull.", when: "s = 1 and n = 1", explain: "It does not move: one rope holds the whole 400 N, and you can pull only 150 N." }
-  - check: { type: board, text: "Add ropes (more pulleys) until your 150 N lifts the sack. Use as few as you can.", when: "l = 1 and n = 3", explain: "Three ropes: each holds 400 ÷ 3 ≈ 133 N, and 133 N is less than 150 N. Two ropes would each need 200 N." }
+  - smaller:
+      check:
+        type: number
+        q: "Two ropes hold the sack up and share it equally. How many newtons does each rope hold?"
+        answer: 200
+        feedback:
+          - [400, "That's one rope holding it all. With two ropes sharing, each holds half."]
+          - [800, "Sharing makes each rope's load smaller, not bigger."]
+        explain: "400 ÷ 2 = 200 N each, and your hand pulls the same as a rope holds. Is that under 150?"
+    check: { type: board, text: "Add ropes (more pulleys) until your 150 N lifts the sack. Use as few as you can.", when: "l = 1 and n = 3", explain: "Three ropes: each holds 400 ÷ 3 ≈ 133 N, and 133 N is less than 150 N. Two ropes would each need 200 N." }
   - check:
       type: number
       q: "With 3 ropes, how much rope did you pull to lift the sack 1 m (in metres)?"

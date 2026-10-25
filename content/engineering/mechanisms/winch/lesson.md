@@ -77,7 +77,15 @@ Was your prediction right? Slower **and** stronger, by the same 3.
 stage: investigate
 insight: "The worked example models the move with numbers: ratio = driven ÷ driver, divide the speed, multiply the strength, then the time and both criteria. The faded example practises it on 16 → 40. Sam's upside-down ratio is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check:
+        type: number
+        q: "The motor gear has 16 teeth and the winch gear has 40. When the motor makes one full turn, 16 teeth push past. What fraction of a turn does the winch gear make? Give a decimal."
+        answer: 0.4
+        feedback:
+          - [2.5, "That's the other way up. 16 of the winch gear's 40 teeth is less than a whole turn."]
+        explain: "16 out of 40 teeth is 0.4 of a turn, so the winch turns slower than the motor."
+    check:
       type: answer
       q: "Now 16 → 40 (ratio 2.5). How many turns a minute does the winch make?"
       answer: "48"

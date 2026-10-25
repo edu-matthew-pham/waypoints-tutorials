@@ -107,6 +107,8 @@ insight: "A longer crank gives a bigger swing, up to the limit the rule sets: st
 try: { playground: board, starter: "fourbar.yml#vary", height: 600 }
 tasks:
   - hint: ["A longer crank swings the rocker farther.", "Keep shortest + longest no more than the other two.", "Try 40 mm."]
+    smaller:
+      check: { type: number, q: "The other bars stay at 80, 60 and 70 mm. The crank plus the longest bar, 80, mustn't come to more than the other two together. How long can the crank be, at most, in mm?", answer: 50, explain: "60 + 70 = 130, and 130 − 80 = 50 mm. Longer than that and it jams." }
     check: { type: board, text: "A wiper must swing at least 100°, and its crank must turn all the way. Change the crank and turn it.", when: "full = 1 and swing >= 100 and t = 1", explain: "A 40 mm crank swings the rocker 100°, and 40 + 80 ≤ 60 + 70." }
   - check:
       type: question

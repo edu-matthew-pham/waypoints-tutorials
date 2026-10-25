@@ -81,7 +81,16 @@ Was your prediction right? An idler changes the **direction**, not the ratio. En
 stage: investigate
 insight: "The worked example models the compound move: put a small gear on the same axle as a big one, so the next stage starts again from a small driver. Stage ratios multiply. The first train is strong enough but too slow; the faded one passes. Kai's adding is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check:
+        type: number
+        q: "The motor turns 120 times a minute. After 16 → 40 the middle axle turns 48 times a minute. Then 8 → 24 makes it 3 times slower again. How many times a minute does the winch turn?"
+        answer: 16
+        feedback:
+          - [45, "That takes 3 off. 3 times slower means divide by 3."]
+          - [144, "3 times slower means divide, not multiply."]
+        explain: "48 ÷ 3 = 16 turns a minute. The motor's 120 became 16, and 120 ÷ 16 = 7.5 is the overall ratio."
+    check:
       type: answer
       q: "Now 16 → 40, then 8 → 24 on the same axle as the 40. What is the overall ratio?"
       answer: "7.5"

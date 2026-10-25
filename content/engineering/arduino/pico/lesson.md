@@ -65,6 +65,8 @@ tasks:
         - [300, "The scale is different: work out the fraction first."]
         - [65535, "That is the whole range."]
       explain: "300 ÷ 1023 ≈ 0.293, and 0.293 × 65535 ≈ 19200."
+    smaller:
+      check: { type: number, q: "Turn the knob exactly halfway. On the Arduino that reads about 512 out of 1023. What would the Pico read, out of 65535? (nearest hundred)", answer: 32800, tolerance: 100, feedback: [[512, "That's the Arduino's number. The Pico's scale is much bigger."]], explain: "Halfway is halfway on any scale: half of 65535 is about 32800." }
   - check:
       type: bug
       code: "alarm.py#sam"

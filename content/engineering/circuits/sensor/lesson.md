@@ -178,6 +178,14 @@ stage: make
 insight: "Setting a threshold so the lights switch on at the right darkness reverses the process: from a behaviour to a number."
 try: { playground: board, starter: "board.yml#make", height: 580 }
 hint: ["Work out the reading at 20% light and at 40% light.", "20% reads about 205 and 40% about 409.", "Set the threshold between them (such as 300), then turn the light down to check the lights come on."]
+smaller:
+  check:
+    type: question
+    q: "Less light means a smaller reading here, and 20% light reads about 205. The lights should come on when it's that dark or darker. Do they come on when the reading is below the threshold or above it?"
+    options: ["Below it", "Above it"]
+    answer: 0
+    feedback: [null, "Darker means smaller, so above the threshold is the bright side."]
+    explain: "Darker gives smaller numbers, so the lights come on when the reading drops below the threshold."
 check: { type: board, text: "Set the threshold so the lights come on when the light drops to 20%, but stay off at 40%. Then test it by making it dark.", when: "t > 205 and t <= 409 and l = 1", explain: "A threshold between 205 and 409 does it. Real night lights also leave a gap (hysteresis) so they don't flicker at dusk." }
 ```
 

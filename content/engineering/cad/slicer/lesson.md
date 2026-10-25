@@ -126,5 +126,13 @@ stage: make
 insight: "Meeting two criteria at once (strength and time) forces the trade-off decision."
 try: { playground: board, starter: "board.yml#make", height: 560 }
 hint: ["Infill costs time; walls buy strength.", "Try lowering the infill and adding walls.", "4 walls and 0–10% infill at 0.2 mm layers."]
+smaller:
+  check:
+    type: question
+    q: "Going from 20% to 100% infill took the time from 81 to 192 minutes and lifted strength from 51 to 79. Going from 2 to 4 walls took it from 81 to about 106 minutes and lifted strength to 95. Which bought more strength for the time?"
+    options: ["The extra walls", "The extra infill", "They're about the same"]
+    answer: 0
+    feedback: [null, "It cost 111 more minutes for 28 more strength.", "Walls gave 44 more strength for about 25 more minutes."]
+    explain: "Walls: about 25 minutes for 44 strength. Infill: 111 minutes for 28."
 check: { type: board, text: "The bracket needs strength 80 or more, and the queue allows 100 minutes at most. Find settings that do both.", when: "s >= 80 and t <= 100", explain: "More walls and little infill: strength from the walls, time saved inside." }
 ```

@@ -106,6 +106,8 @@ From the six-subject review. Mechanisms and Structures already do design thinkin
 
 ## Next
 
+0. (25 Oct, review chat) `smaller:` lead-ins added to 19 lessons (arduino 3, cad 4, circuits 4, linkages 3, mechanisms 5): one question or number each, at the step the `stuck:` list names, `lesson.md` only so no clips re-record. Still without one (22): parametric 2, pcb 3, power 5, projects 8, structures 4. Not tried with a class.
+
 1. Practise with code: the sample lesson's Python loop over every gear pair. A maths lesson has no Python playground; either a short linked Python task (console bridge) or leave it to the Code pathway.
 2. (Done 12 Oct: efficiency per mesh and pulley friction in `mechanisms/losses`; Structures is its own pathway.)
 3. Optional: let `B.serial` accept an Uno's USB ids; surface-mount parts and 45° routing on the `pcb` board if a class wants them. (Done 12 Oct: compound gear trains; `shape: design` decks and worksheets say Inquire, not Predict.)

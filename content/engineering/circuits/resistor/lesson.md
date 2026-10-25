@@ -70,7 +70,9 @@ tasks:
 stage: investigate
 insight: "Ohm's law with the LED's 2 V taken off models the move with numbers; the faded tasks apply it to 470 Ω, then reverse it to find the smallest safe resistor. Sam's 'resistor first' idea is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check: { type: number, q: "Pin 0 gives 3.3 V and the LED takes 2 V of it. How many volts are left across the resistor?", answer: 1.3, tolerance: 0.01, explain: "3.3 − 2 = 1.3 V. That's the push the resistor works with." }
+    check:
       type: number
       q: "Now 470 Ω. How many milliamps? (1 decimal place)"
       answer: 2.8

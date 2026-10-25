@@ -69,7 +69,9 @@ Was your prediction right?
 stage: investigate
 insight: "Tracing the loop from pin to GND models the move; the questions apply it to a wire, the pin and a torch. Sam's 'one wire is enough' is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check: { type: number, q: "6 mA flows out of pin 0 and through the resistor and the LED. Nothing is stored along the way. How many mA flow back into GND?", answer: 6, explain: "Current isn't used up. What goes out of pin 0 comes back in at GND." }
+    check:
       type: question
       q: "The loop is complete and pin 0 is on. Where is the current smallest?"
       options: ["Nowhere: it is the same all the way round the loop", "In the GND wire, because the LED used it up", "In the pin 0 wire, before it reaches the LED", "In the resistor"]

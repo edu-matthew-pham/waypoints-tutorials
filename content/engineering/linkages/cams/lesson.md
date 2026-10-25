@@ -166,6 +166,14 @@ insight: "Students turn a written motion into a cam and a lift, then test it: th
 try: { playground: board, starter: "cams.yml#vary", height: 560 }
 tasks:
   - hint: ["Steady rise and steady fall: which graph is made of straight lines?", "The heart cam. Now set how far it must rise."]
+    smaller:
+      check:
+        type: question
+        q: "On the displacement graph, what does a steady rise look like?"
+        options: ["A straight sloping line", "A flat line", "A smooth wave", "A straight vertical drop"]
+        answer: 0
+        feedback: [null, "Flat means the follower is resting.", "A wave is the round cam, where the speed keeps changing.", "A vertical line is a sudden jump, not a steady move."]
+        explain: "Steady speed up is a straight slope, and steady speed down is a straight slope the other way. Now which cam draws that?"
     check: { type: board, text: "A toy fish must rise 25 mm at a steady speed and sink at a steady speed, over and over. Choose the cam, set the lift and turn it.", when: "c = 4 and lift_mm = 25 and t = 1", explain: "The heart cam with a 25 mm lift: straight-line rise and fall." }
   - check: { type: reflect, text: "In one or two sentences: describe a toy of your own, the cam it needs, and what its displacement graph would look like." }
 ```

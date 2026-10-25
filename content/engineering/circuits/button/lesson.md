@@ -62,7 +62,15 @@ tasks:
 stage: investigate
 insight: "Tracing what pin 0 is joined to in each state models the move: held, 3V wins through the button; up, the pull-down joins it to GND. Sam's 'nothing means 0' is planted after the method."
 tasks:
-  - check:
+  - smaller:
+      check:
+        type: question
+        q: "Pin 0 has two joins while you hold the button: a plain wire to 3V through the button, and a 10 kΩ resistor to GND. Which one lets current flow more easily?"
+        options: ["The plain wire", "The 10 kΩ resistor", "They're equal"]
+        answer: 0
+        feedback: [null, "A resistor holds current back. The button is just wire.", "10 kΩ is a lot of holding back; a wire has none."]
+        explain: "The wire wins easily, so pin 0 sits at the 3V end."
+    check:
       type: question
       q: "While the button is held, pin 0 is joined to 3V through the button and to GND through the 10 kΩ pull-down. Why does it read 1?"
       options: ["The button joins it straight to 3V; the 10 kΩ only lets a tiny current leak to GND", "The pull-down switches off when the button is pressed", "Pin 0 adds the two voltages", "It doesn't: it reads 0"]

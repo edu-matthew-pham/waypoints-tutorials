@@ -216,6 +216,8 @@ insight: "Two criteria pull against each other: more advantage means more hand t
 try: { playground: board, starter: "levers.yml#make", height: 600 }
 tasks:
   - hint: ["The load is 900 N and you push 200 N: you need an advantage of at least 900 ÷ 200 = 4.5.", "Your hand may move 0.5 m to lift the load 0.1 m: an advantage of at most 5.", "Your distance from the pivot ÷ the load's distance must be between 4.5 and 5. With the push at the end, try a pivot between 0.3 m and 0.4 m."]
+    smaller:
+      check: { type: number, q: "Your 200 N push has to lift a 900 N load. How many times as strong must the lever make your push?", answer: 4.5, explain: "900 ÷ 200 = 4.5. That's the least advantage that works; the hand-travel limit sets the most." }
     check: { type: board, text: "Lift 900 N with a 200 N push, with your hand moving no more than 0.5 m. Move the pivot (or your push) and lift.", when: "load_n = 900 and push_n = 200 and travel_m = 0.5 and p = 1 and l = 1", explain: "An advantage between 4.5 and 5 meets both: for example the pivot at 0.35 m (advantage 4.7, hand moves 0.47 m)." }
   - check: { type: reflect, text: "In one or two sentences: where your pivot and push are, how the design meets each criterion, and what it gives up." }
 ```

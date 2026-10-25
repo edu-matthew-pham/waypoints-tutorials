@@ -180,6 +180,8 @@ insight: "Students work back from the flow to the stroke and the radius, then te
 try: { playground: board, starter: "crank.yml#make", height: 560 }
 tasks:
   - hint: ["Per stroke = flow ÷ strokes a minute: 900 ÷ 30.", "Stroke = water per stroke ÷ piston area.", "30 cm³ ÷ 6 cm² = 5 cm = 50 mm, so the radius is 25 mm."]
+    smaller:
+      check: { type: number, q: "The pump turns 30 times a minute, so that's 30 strokes a minute. It has to move 900 cm³ a minute. How much water must each stroke move, in cm³?", answer: 30, explain: "900 ÷ 30 = 30 cm³ a stroke. The piston's size and the stroke then have to give that." }
     check: { type: board, text: "A garden pump must move 900 cm³ a minute at 30 turns a minute, with a piston 6 cm² in area. Set the crank radius and turn it.", when: "r_mm = 25 and t = 1", explain: "900 ÷ 30 = 30 cm³ a stroke; 30 ÷ 6 = 5 cm stroke; radius 25 mm." }
   - check: { type: reflect, text: "In one or two sentences: how you worked back from the flow to the crank, and what you would change to pump faster without a bigger crank." }
 ```

@@ -64,6 +64,8 @@ tasks:
       answer: 0
       feedback: [null, "Both are far from the threshold: a slip at 300 passes.", "None is at the threshold.", "One case can't show both behaviours."]
       explain: "Both sides of 300, 300 itself, and the two ends."
+    smaller:
+      check: { type: question, q: "The brief says blink at 300 or below. One sketch says level < 300, another says level <= 300. A test reads 250. Do the two sketches behave differently?", options: ["No: both blink at 250, so that test can't tell them apart", "Yes: only <= blinks at 250", "Yes: only < blinks at 250", "Only one of them runs at all"], answer: 0, feedback: [null, "250 is below 300, so it passes either way. Only a reading of exactly 300 splits them.", "250 is below 300, so it passes either way. Only a reading of exactly 300 splits them.", "Both run. They just agree on 250."], explain: "A reading far from the threshold gets the same answer from both. Only a test at 300 shows which one is right." }
   - check:
       type: bug
       code: "working.txt#sam"

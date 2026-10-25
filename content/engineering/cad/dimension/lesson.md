@@ -66,6 +66,8 @@ tasks:
         - ["56.4", "A gap and a wall on each side: add 2 × (1 + 2)."]
         - ["57.4", "Two walls and two gaps."]
       explain: "53.4 + 2 × 1 + 2 × 2 = 59.4 mm."
+    smaller:
+      check: { type: number, q: "A 30 mm part sits in a box with a 2 mm wall on each side, and no gap. How wide is the box on the outside (mm)?", answer: 34, feedback: [[32, "One wall is 2, but there's a wall on the left and another on the right."]], explain: "30 + 2 + 2 = 34 mm. The same two-sides idea carries on to the gaps." }
   - check:
       type: bug
       code: "working.txt#sam"

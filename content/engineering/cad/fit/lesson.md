@@ -67,6 +67,8 @@ tasks:
         - ["10.3", "Allow for the printer too: the hole shrinks 0.2 and the peg grows 0.1."]
         - ["10", "Same size won't go in."]
       explain: "printed peg 10.1, so the printed hole must be 10.4; drawn 10.4 + 0.2 = 10.6 mm."
+    smaller:
+      check: { type: number, q: "Printers make holes about 0.2 mm smaller than drawn. If you draw a hole 10.5 mm wide, how wide does it come out (mm)?", answer: 10.3, tolerance: 0.02, feedback: [[10.5, "The printer shrinks holes, so it won't come out as drawn."], [10.7, "Smaller, not bigger: a hole loses 0.2 mm."]], explain: "10.5 − 0.2 = 10.3 mm. So a hole has to be drawn bigger than you want it." }
   - check:
       type: bug
       code: "working.txt#sam"

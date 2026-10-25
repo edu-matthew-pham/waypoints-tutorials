@@ -154,5 +154,7 @@ stage: make
 insight: "Placing every part from scattered positions puts the whole idea together: each part bridges two strips, and the loop runs from pin 13 back to GND."
 try: { playground: board, starter: "board.yml#make", height: 620 }
 hint: ["Plan the strips first: pin 13's strip, a middle strip, a GND strip.", "Resistor from pin 13's strip to a new strip; LED long leg in that strip, short leg in the GND wire's strip.", "For example: resistor in i2 and i8, LED long leg in h8 and short leg in h4."]
+smaller:
+  check: { type: question, q: "The resistor has both legs in pin 13's strip. Does any current go through it?", options: ["No: both legs are joined by the strip, so the current skips it", "Yes: it's plugged into pin 13", "Yes, but only a little", "Only if the LED is in the same strip too"], answer: 0, feedback: [null, "Plugged in isn't enough. Current goes through a part only when its two legs are in different strips.", "Current takes the strip, which is a free path, instead of the resistor.", "Putting the LED in too would just short it out as well."], explain: "A part only works when its legs are in different strips, so each part carries the loop on to the next strip." }
 check: { type: board, text: "The wires to pin 13 and GND are in. Place the resistor and the LED so the LED lights safely.", when: "l = 1 and r = 1 and z = 0", explain: "Pin 13's strip → resistor → a middle strip → LED (long leg first) → GND's strip." }
 ```
