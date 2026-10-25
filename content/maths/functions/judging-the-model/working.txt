@@ -1,0 +1,9 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+The model N = 100 x 2^(3t) says the bacteria double every 20 minutes.
+A lab counted 6,400 cells at 3 hours, so I tried a 30-minute doubling time.
+That gives 100 x 2^6 = 6,400, which matches the lab exactly.
+So the model with 30 minutes is true for any time I like.
+At 24 hours it says 100 x 2^48 = 28,147,497,671,065,600 cells, so that is what a tray left out all day holds.
+# endregion

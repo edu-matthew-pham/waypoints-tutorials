@@ -1,0 +1,18 @@
+# Practice for "Make a conjecture".
+templates:
+  - q: "In $y = ax^2$, what is $y$ when $a = {a}$ and $x = {x}$?"
+    vars: { a: "2..6", x: "2..5" }
+    answer: "{a * x * x}"
+    feedback:
+      - ["{a * x}", "That's {a} × {x}. Square the {x} first."]
+    explain: "{a} × {x}² = {a} × {x * x} = {a * x * x}."
+  - q: "A ball's height is $h = 20 - {a}t^2$. How high is it after {t} seconds?"
+    vars: { a: "1..4", t: "1..2" }
+    answer: "{20 - a * t * t}"
+    explain: "20 − {a} × {t}² = 20 − {a * t * t} = {20 - a * t * t}."
+  - q: "A ball's height is $h = {a * t * t} - {a}t^2$. After how many seconds does it land?"
+    vars: { a: "1..5", t: "1..4" }
+    answer: "{t}"
+    feedback:
+      - ["{a * t * t}", "That's the starting height. The ball lands when the height is 0: {a}t² = {a * t * t}."]
+    explain: "{a}t² = {a * t * t}, so t² = {t * t} and t = {t}."

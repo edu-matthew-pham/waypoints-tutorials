@@ -1,0 +1,50 @@
+summary: "Students vary one number in a rule on a graphing board, state a conjecture as an if-then claim, test it on cases chosen to break it, and refine it when one case disagrees (AC9M10A05, node 1)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 12 min · Modify 8 min · Practise and Make 15 min"
+goals:
+  - I can state a conjecture as a claim that could be wrong.
+  - I can test it by changing one number at a time, including a case that might break it.
+  - I can say whether the cases support it or reject it, and fix it if it fails.
+struggle: "Choosing a test. Students pick more cases like the ones that already worked. Ask 'which value might break it?' and point at zero, negatives and very small numbers."
+before: |
+  Do the Run board yourself first. The graph draws the height of a ball dropped from a 20 m cliff, h = 20 − at², and marks where it meets the ground. The dashed line is the ground. The slider is a, how strong gravity is on a made-up planet.
+
+  The one idea: a conjecture is a claim about every case in a family ("if a is bigger, the ball lands sooner"), not a note about one graph. Cases that agree support it and can never prove it. One case that disagrees rejects it, and the useful next move is to refine the claim and test it again.
+
+  Students have used a board to vary a and b in a line, and a, h and k in a curve (Year 9). Here the new move is writing the claim down first and then choosing tests, rather than playing with the slider.
+
+  The conjecture holds for a above 0 and has no landing time at a = 0 (the ball hangs at 20 m) or below (it climbs). The worked example uses y = ax² for a conjecture that fails: with negative a, a bigger a gives a wider curve.
+
+  Everything is made up: the cliff, the planets and the values of a. A class option: on Earth, a is a little under 5, so a = 5 is close to a real drop from 20 m (about 2 s). Let students look the number up for themselves if they ask; the lesson does not depend on it.
+running:
+  - "Predict: take a show of hands before the Run. Those who pick the widest curve for the biggest a are guessing from the look of the curve. Don't correct it yet."
+  - "Run: ask students to write the conjecture in the form 'If … then …' before they test anything."
+  - "Investigate: the bug is Ivy calling two agreeing tests a proof. Ask how many tests would be enough."
+  - "Paper: the try-one after the worked example and the Make question are worked on paper first."
+stuck:
+  - see: "A student writes an observation ('at a = 2 it lands at 3.2 s') and calls it a conjecture."
+    ask: "Could a new value of a make this wrong?"
+    fix: "A conjecture says what happens for every a in the family: 'If a is bigger, then …'."
+  - see: "A student tests only values near the ones that worked."
+    ask: "Which value of a might break it?"
+    fix: "Try the edge: zero, a negative, and a very small number."
+  - see: "A student says the conjecture is proved after two or three agreeing cases."
+    ask: "What would one case that disagrees do to it?"
+    fix: "Agreeing cases support a conjecture. A proof says why it is true for every case (Year 10 proof lessons)."
+stretch: "Landing time is the square root of 20 ÷ a. Test: is the landing time halved when a is quadrupled? Then find a rule for how it changes when a is multiplied by 9."
+support: "A table with columns a, landing time and 'sooner or later than the row above'. Fill it from the board for a = 1, 2, 4 and 5, then say what the last column shows."
+leads: |
+  Next: judging a model, and generalising a pattern across several experiments (10A05 n4, taught in class). Making and testing conjectures comes back whenever students use a graphing tool on a new family.
+
+  Where it leads: the proof lessons in Angles (Some cases or every case?), where a conjecture that survives every test is finally argued for every case.
+exit:
+  q: "In y = ax², Mia says 'if a is bigger, the curve is narrower'. Write one test that could show her wrong, and say what you'd expect to see."
+  a: "Any negative pair: a = −1 and a = −3. −1 is bigger, but y = −x² is wider than y = −3x². One case that disagrees rejects the claim; she could change it to 'if a is further from 0'."
+explain: |
+  A **conjecture** is a claim about a whole family of cases that you can test: "If $a$ is bigger, then the ball lands sooner."
+
+  - **State it as if-then**, so a new case could show it wrong.
+  - **Test it** by changing one number at a time, and include a case that might break it (zero, a negative, a very small number).
+  - **Cases that agree support it**; they don't prove it. **One case that disagrees rejects it**, and you can then refine the claim.
+sources:
+  - { title: "Made up for this lesson: the 20 m cliff, the planets and every value of a. The rule h = 20 − at² is a simple model of a dropped ball without air resistance.", url: "https://tutorials.learningwaypoints.com/maths/functions/make-a-conjecture/", checked: 2026-10-25 }

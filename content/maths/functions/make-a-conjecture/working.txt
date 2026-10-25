@@ -1,0 +1,8 @@
+# Ivy's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: ivy
+Conjecture: if a is bigger, the ball lands sooner.
+Tests: a = 1 lands at about 4.5 s. a = 2 lands at about 3.2 s.
+The landing time went down both times, so the conjecture is proved.
+So it is true for every value of a.
+# endregion

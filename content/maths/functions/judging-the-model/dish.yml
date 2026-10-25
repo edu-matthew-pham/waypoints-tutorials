@@ -1,0 +1,38 @@
+# Boards for "Judging the model". x is the time in hours, d is the doubling time in minutes (made up for this lesson:
+# real doubling times depend on the bacteria and the temperature). The count starts at 100 cells and is
+# N = 100(2^(60x/d)). The dashed horizontal line is the most a small dish could hold (1,000,000 cells, also made up).
+
+# region: run
+widget: graph
+x: 0, 8
+y: 0, 1000000
+grid: 1, 200000
+axes: Time (hours), Cells
+slider d: 10, 60, 20, 5
+plot: y = 100(2^(60x/d))
+plot: y = 1000000, dashed
+table: 0, 1, 2, 3, 4, 5, 6, 7, 8
+# endregion
+
+# region: explain-pic
+widget: graph
+x: 0, 8
+y: 0, 1000000
+grid: 1, 200000
+axes: Time (hours), Cells
+plot: y = 100(2^(3x))
+plot: y = 1000000, dashed
+table: 0, 2, 4, 5
+# endregion
+
+# region: vary
+widget: graph
+x: 0, 8
+y: 0, 1000000
+grid: 1, 200000
+axes: Time (hours), Cells
+slider d: 10, 60, 20, 5
+plot: y = 100(2^(60x/d))
+plot: y = 1000000, dashed
+table: -1, 0, 3, 4, 5, 6, 7, 8
+# endregion

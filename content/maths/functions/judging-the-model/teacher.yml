@@ -1,0 +1,50 @@
+summary: "Students interpret a model's result in words, test it against a measurement, name what it assumes and say how far to trust it. The context is bacteria in food left out, using a made-up doubling time (AC9M10A04, node 3)."
+time: 45
+timing: "Predict and Run 10 min · Investigate 15 min · Modify 8 min · Practise and Make 12 min"
+goals:
+  - I can say what a modelled result means in the situation.
+  - I can check a model against a real measurement and change it if it is off.
+  - I can name an assumption the model makes and say where the model stops being reliable.
+struggle: "Treating a model that fits one measurement as true everywhere. Ask 'where did we check it, and what about further out?'"
+before: |
+  Do the Run board yourself first. Students need the exponential model from Writing the model.
+
+  The one idea: a model is built on assumptions and checked on a range. Judging it means interpreting the result, testing it on a real measurement, naming the assumption that fails and reporting how far to trust it.
+
+  Every number is made up: the 100 cells, the 20 and 30 minute doubling times, the 1,000,000-cell dish, the lab count of 6,400, the pond plant, the yeast and the car. Real doubling times depend on the bacteria and the temperature. The one real figure is the NSW Food Authority 2-hour/4-hour rule (food between 5 °C and 60 °C: under 2 hours use or refrigerate, 2 to 4 hours use but do not refrigerate, 4 hours or more throw out). The rule is a safety margin, not the output of this model: make sure no one leaves thinking the model proves that 4 hours is the limit.
+
+  Hidden: the doubling time is the same however many cells there are. That is the assumption that fails first.
+running:
+  - "Predict: take a show of hands. Those who chose 2 or 4 added hours; those who chose 4096 forgot the first two hours were already done."
+  - "Run: ask students to find where the curve passes the dashed line, then ask what happens to the curve after that."
+  - "Paper: the yeast try-one and the Make comparison are worked on paper first. Look for the hour before and the hour after the limit."
+  - "Modify: before the edge case ask 'what time is x = −1?'. The model was built for after the start."
+stuck:
+  - see: "A student says the model is right because it matched the lab at 3 hours."
+    ask: "What would it say at 24 hours, and could a tray hold that?"
+    fix: "Compute the model for a much later time. A model matching one point says it works near that point."
+  - see: "A student says the model is 'wrong' because it stops fitting at 8 hours."
+    ask: "Was it wrong at 3 hours?"
+    fix: "A model can be useful inside a range. Report the answer with the range it was checked on."
+  - see: "A student blames the arithmetic when the model and the lab disagree."
+    ask: "Is the calculation right? Then which assumption is off?"
+    fix: "Check the sum, then change the assumption, here the doubling time."
+stretch: "Sketch what a more realistic curve would do: grow like the model at first, then flatten near the dish limit. Which part of the curve is the model good for?"
+support: "A table with columns for hour, model count and dish limit. Fill in the hours and tick the ones where the model count is under the limit."
+leads: |
+  Next: Make a conjecture, exploring a function family with a graphing tool before trusting it.
+
+  Where it leads in class: a full modelling task with a report on assumptions, methods and findings.
+exit:
+  q: "A model for a colony says 200 × 1.5ʰ cells after h hours. A dish holds 10,000 cells. In which whole hour does the model first pass the dish, and what should you say about hours after it?"
+  a: "200 × 1.5¹⁰ = 11,533 and 200 × 1.5⁹ = 7,689, so hour 10. After it the model is not reliable, because the dish is full."
+explain: |
+  A model is judged by what it says, whether it matches data, what it assumes and how far out it can be trusted.
+
+  - Interpret: say what the result means in the situation, with units.
+  - Test: compare the model with a real measurement; change an input such as the doubling time if it is off.
+  - Assumptions: the doubling time stays the same however many cells there are.
+  - Range: past the point where the food or room runs out, the model's numbers describe something that does not exist.
+sources:
+  - { title: "The 2-hour/4-hour rule (NSW Food Authority): food left between 5 °C and 60 °C: under 2 hours use or refrigerate; 2 to 4 hours use but do not refrigerate; 4 hours or more throw out", url: "https://www.foodauthority.nsw.gov.au/sites/default/files/2021-07/2_hour_4_hour_rule.pdf", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the 100 cells, the doubling times, the 1,000,000-cell dish, the lab count, the plant, the yeast and the car.", url: "https://tutorials.learningwaypoints.com/maths/functions/judging-the-model/", checked: 2026-10-25 }

@@ -1,0 +1,38 @@
+# Boards for "Make a conjecture". A ball is dropped from a 20 m cliff on made-up planets; a is how strong gravity is
+# (made up). The height after t seconds is h = 20 - a t^2. The dashed line is the ground; the board marks where they meet.
+
+# region: run
+widget: graph
+x: -1, 6
+y: -3, 22
+grid: 1, 2
+axes: t (seconds), h (metres)
+slider a: 0.5, 6, 1, 0.5
+plot: y = 20 - a x^2, from 0
+plot: y = 0, dashed
+cross: 1, 2
+table: 0, 1, 2, 3, 4
+# endregion
+
+# region: vary
+widget: graph
+x: -1, 6
+y: -3, 22
+grid: 1, 2
+axes: t (seconds), h (metres)
+slider a: -2, 6, 1, 1
+plot: y = 20 - a x^2, from 0
+plot: y = 0, dashed
+cross: 1, 2
+# endregion
+
+# region: explain-pic
+widget: graph
+x: -1, 6
+y: -3, 22
+grid: 1, 2
+axes: t (seconds), h (metres)
+plot: y = 20 - 2 x^2, from 0
+plot: y = 0, dashed
+cross: 1, 2
+# endregion

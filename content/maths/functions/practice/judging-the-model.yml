@@ -1,0 +1,14 @@
+# Practice for "Judging the model".
+templates:
+  - q: "A dish starts with ${a}$ cells that double every hour. The dish holds at most ${a * pow(2, k) - a}$ cells. How many cells does the model give after ${k}$ hours, and is that more than the dish holds? Give the number of cells."
+    vars: { a: [10, 20, 50, 100], k: "3..8" }
+    answer: "{a * pow(2, k)}"
+    explain: "{a} × 2^{k} = {a * pow(2, k)}, which is more than the {a * pow(2, k) - a} the dish holds, so the model can't be right after {k} hours."
+  - q: "A model says $N = {a}({b}^n)$. After 3 steps the model gives ${a * b * b * b}$ but the real count is ${a * b * b}$. How many times too high is the model's count?"
+    vars: { a: [10, 20, 50], b: [2, 3, 4] }
+    answer: "{b}"
+    explain: "The model's count is {a * b * b * b} and the real count is {a * b * b}. {a * b * b * b} ÷ {a * b * b} = {b}."
+  - q: "A model is $V = {a}(0.9^n)$ dollars. What does it give after 2 years, in dollars?"
+    vars: { a: "1000..9000 by 1000" }
+    answer: "{a * 0.81}"
+    explain: "{a} × 0.9 × 0.9 = {a * 0.81}."
