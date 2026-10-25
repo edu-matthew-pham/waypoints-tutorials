@@ -39,7 +39,9 @@ Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (als
 - `answer` checks with `form:` match feedback with `F.check(fb, v, '')`, and with no form the checker calls any two equations equivalent (even `x = (y-7)/2` and `x = y/2 - 7`). So every wrong rearrangement gets the *first* feedback message, in this lesson's Investigate and Modify checks as well as the new Make. Right answers are unaffected. Fix in `lesson-view.mjs` (compare with the check's form, or compare the sides as expressions).
 - `teach.mjs` puts the lesson intro into the "Why it matters" slide's speaker note as one line, so an SVG in the intro shows as raw markup in the notes. Fix: strip `<figure>`/`<svg>` in `note()`. The slide itself (the hook) is fine. Lesson images in general need a home: the build copies no lesson-folder images, and Create's safe Markdown drops `<svg>`.
 
-## Audit: Years 7–8 against the Year 9 standard (25 Oct 2026; proposal, nothing edited yet)
+## Audit: Years 7–8 against the Year 9 standard (25 Oct 2026; done: minor refinement and full version pushed, see the notes at the end)
+
+**Status (26 Oct 2026):** the audit's fixes are built and on `main` for all seven courses (Predict pictures, openings, `smaller:`, paper Makes, `struggle:`, connections), picture-checked 26 Oct, not yet published or tried with a class. Only the leftovers in "Still to do (the full version)" below remain. The text under this heading is the original proposal.
 
 121 lessons tagged to a Year 7 or 8 node, in seven courses (Algebra 14, Angles 21, Data 20, Linear relations 12, Measurement 18, Number 30, Real numbers 6). The standard is "What applies from the pilots" in the Year 9 plan above. Script: `.render-tmp/audit.mjs` (lesson text, teacher.yml, the curriculum's hinge flags, `data/connections/maths.yml`); the openings and figures were read by hand.
 
@@ -241,12 +243,12 @@ Angles and shapes gains three units and six lessons (10 to 15): Solids (Nets, 7S
 - Review fixes: SSA triangles that could not exist, fuel values off the grid, a temperature peak always at 15 h, "Similar (AA)" also true for congruent triangles (now "Similar, not congruent"), right answers that stood out by length or were the only same-crossing pair, banks with the same answer every time (now varied, including "Yes" cases for sample size), focus after a wrong choice.
 - Not done: turning off Pick on parallel-lines diagrams (students can move the marked pair); geometry diagrams for triangle and polygon angles (the template would need the widget's rounded angles).
 
-## Next: pilot Algebra with a class (agreed 12 Oct 2026, before Year 9)
+## Pilot Algebra with a class (agreed 12 Oct 2026; not run: on 25 Oct Matthew said to build Year 9 ahead of a class pilot, so this is still open and can happen on the published lessons)
 - One lesson, then its practice (the lesson's "Practise this skill" card), for one or two lessons. Expanding then Factorising suit it: the form messages get used.
 - Watch for: where students stall on the lesson page; which practice messages they hit (format slips, "Use the letter n", Show the answer); whether 3 in a row feels right; whether mixed practice helps or confuses.
 - Bring back: the questions or messages that confused them, and anything they typed that was right but marked wrong. Fix those, then decide Year 9's first strand.
 
-## Proposed: Year 9 (12 Oct 2026; waits for the Algebra pilot)
+## Year 9 (12 Oct 2026 plan; all five batches built 25 Oct 2026, on `main`, not yet published or tried with a class; status notes under each batch, the original plan text follows)
 23 descriptors, 70 nodes (`data/curriculum/maths.json`). About 45 lessons, built in five batches, each a push with a review, practice sets and the usual checks. Year 9 units go into the existing courses where the Year 8 work leads (progress is per lesson, so nothing moves); two new courses where nothing fits.
 
 **Before batch 1, from the pilot:** change the lesson shape or practice where students stalled; keep what worked. Questions to settle: is one lesson then its practice the right rhythm; do students use Show the answer or skip; is 3 in a row right.
@@ -359,7 +361,7 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 
 **Year 10 batch 1: built (25 Oct 2026, validated, built, every page and board loaded in headless Chromium with no page errors, practice and forms checks pass; not yet tried with a class).** 12 lessons: Real numbers (powers-of-terms, exact-or-approximate, chop-or-round, rounding-over-and-over), new course Quadratics and exponentials at `content/maths/functions/` (same-ratio, exponential-graphs, graph-to-equation, same-base), Measurement (how-big-is-a-step, reading-log-scales), Algebra (special-products, non-monic-factorising). Only the last two need a board change (`tiles` coefficients, see shared.md): full publish. The rest can go through publish-lessons. Sources still to approve: NSW Food Authority 2-hour/4-hour rule (same-ratio, same-base); check the noise-dose and quake-magnitude figures in their teacher.yml.
 
-**Order.** Only batch 1 builds on what exists (Year 9 batch 1: index laws, binomials, real numbers, scientific notation). Every other Year 10 batch needs a Year 9 batch that isn't built yet, so the plan interleaves by strand: Year 9 batch 2, then Year 10 batch 2, and so on.
+**Order (as planned; all Year 9 and Year 10 batches are now built, so this is history).** Only batch 1 builds on what exists (Year 9 batch 1: index laws, binomials, real numbers, scientific notation). Every other Year 10 batch needs a Year 9 batch that isn't built yet, so the plan interleaves by strand: Year 9 batch 2, then Year 10 batch 2, and so on.
 
 | Year 10 batch | Needs first |
 |---|---|
