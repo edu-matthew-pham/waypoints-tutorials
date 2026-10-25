@@ -1,0 +1,25 @@
+briefs:
+  - id: fix-the-leaky-page
+    title: Fix a leaky page
+    after: archive
+    nodes: ["AC9TDI8K02 n4", "AC9TDI10P14 n3"]
+    goal: |
+      A club's sign-up page works, but it **gives things away** to anyone who looks at it. Your job is to find what it gives away, fix each leak, and explain what your fixes do and do not protect.
+
+      Use the sign-up page your teacher gives you, or build a small one of your own that has at least **two leaks** (for example a comment with a password in it, a hidden field with members' details, or a "secret" that is only encoded). View its source, list what you find, then fix the page.
+    handin:
+      - "The page before and after, with the leaks marked."
+      - "A list of each leak: what it gave away, how you found it, and how you fixed it."
+      - "A small demonstration of the difference between encoding and encryption: a message encoded by a public rule, then scrambled with a key, and what someone without the key can and cannot read. Show that the key-scrambled message can be turned back."
+      - "For each fix, one sentence on what it protects against and one on what it does not."
+    milestones:
+      - "You have viewed the page's source and written down everything that should not be there."
+      - "Each leak is fixed in a way that stops the information being sent to the browser, or scrambles it with a key, not just hides it."
+      - "Your encoding and encryption demonstration works, and the key-scrambled message is reversed with the key."
+      - "You have said what each fix does and does not protect."
+    stretch:
+      - "Find out what your page tells a visitor about the tools used to make it."
+      - "Show what a stranger could still learn from your fixed page."
+      - "Write the checks you would run before any club page goes live."
+    teacher: |
+      Defensive only: students look at their own or a supplied page and fix it, and nothing here tries to get into anyone else's system. A page for them to fix can be as simple as an HTML file with a comment, a hidden input and a base64 line. The main ideas from the course: hiding something on a page does not keep it private, because the browser receives everything; and encoding (base64, hex, binary) has no key, so anyone can undo it, while encryption needs a key. Strong answers fix a leak by not sending the information at all, and are honest about limits, for example that a key-scrambled message still reveals that a message exists, or that removing a field does not remove what was already copied. A simple shift cipher with a key is enough for the demonstration; real encryption is not expected.
