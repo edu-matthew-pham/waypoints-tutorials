@@ -53,6 +53,17 @@ jobs:
           git clone --depth 1 --branch "$TAG" "https://github.com/${{ matrix.repo }}" "$RUNNER_TEMP/pxt-target"
           cd "$RUNNER_TEMP/pxt-target"
           npm install --no-audit --no-fund
+          # Arcade's simulator is a separate repo, microsoft/pxt-arcade-sim, that its own CI checks out with a deploy
+          # key (it looks private, and npm only has a security placeholder). Without it staticpkg stops at
+          # "scandir 'public'". An empty stand-in lets the editor be packaged, which is enough for blocks pictures
+          # (the renderer is part of the editor); simulator pictures for Arcade cannot work this way.
+          if [ "${{ matrix.target }}" = arcade ] && [ ! -f node_modules/pxt-arcade-sim/tsconfig.json ]; then
+            echo "pxt-arcade-sim not available: using an empty stand-in"
+            mkdir -p node_modules/pxt-arcade-sim/public
+            echo '{"compilerOptions":{"target":"es5","module":"none","outFile":"../../built/sim.js"},"files":["stub.ts"]}' > node_modules/pxt-arcade-sim/tsconfig.json
+            echo 'namespace pxsim {}' > node_modules/pxt-arcade-sim/stub.ts
+            echo '<!doctype html><title>no simulator</title>' > node_modules/pxt-arcade-sim/public/simulator.html
+          fi
           # The local TypeScript (4.8) must win over any global tsc on the runner.
           PATH="$PWD/node_modules/.bin:$PATH" node node_modules/pxt-core/built/pxt.js staticpkg 2>&1 | tee "$RUNNER_TEMP/build.log"
           echo "### Static ${{ matrix.target }} editor ($TAG)" >> "$GITHUB_STEP_SUMMARY"
