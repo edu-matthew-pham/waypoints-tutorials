@@ -1,0 +1,8 @@
+# Grace's thinking for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: grace
+A message in Grace's game says she has won a rare pet, but only if she claims it in 5 minutes.
+She thinks: it has a countdown, so it must be real and I have to be quick.
+She clicks the link and types in her game username and password.
+The next day she can't sign in to her account.
+# endregion

@@ -1,0 +1,47 @@
+summary: "Students match ways of sharing a photo to who sees it first, find the mistake in treating a private group as private for ever, and learn to choose the smallest audience that does the job while picturing who could end up seeing it. Typical width (Years 7 and 8): set a made-up account's privacy settings on the club app board."
+time: 35
+timing: "Engage and Explore 8 min · Explain 10 min · Elaborate 10 min · Evaluate 7 min"
+goals:
+  - I can say who sees something first when I share it.
+  - I can explain why the audience can grow after I share.
+  - I can choose the smallest audience that does the job.
+struggle: "Students trust settings completely. The setting chooses the first audience; the people in it choose the second."
+before: |
+  **⚑ Wellbeing review:** this course is a draft. Share this lesson and these notes with the school's wellbeing lead before teaching, and agree the support pathway and any local wording.
+
+  **If a student discloses something:** follow the school's child-protection procedure. Listen, don't probe, don't promise to keep it secret, and pass it on as the procedure says. Thank them and steer the class back to Lena and Theo.
+
+  **Ground rules:** Lena, Theo, Ava and the club app are made up. Don't ask students which apps they use, whether their accounts are public or what has been shared about them. The closing think is private.
+
+  The one idea: two audiences, the one you chose and the one you might get. No age rules for accounts are stated; for current rules point to the eSafety Commissioner (esafety.gov.au).
+
+  Years 5 and 6: give the link with `?width=minimum` (the settings board is for Years 7 and 8). The board is the `cyber` widget's settings set from How computers work › Your digital footprint.
+running:
+  - "Engage: ask what 'private' means to them before revealing the answer."
+  - "Explore: ask which way of sharing has the biggest first audience."
+  - "Explain: draw two circles on the board, chosen audience inside, possible audience outside."
+  - "Elaborate (Years 7 and 8): ask why the app starts with settings open."
+  - "Evaluate: a quiet minute; collect nothing."
+stuck:
+  - see: "A student says a private account keeps everything safe."
+    ask: "What can someone in the group do with their phone?"
+    fix: "They can screenshot or forward. Settings choose the first audience only."
+  - see: "A student turns meeting reminders off on the board too."
+    ask: "Why did Ava join the app?"
+    fix: "Keep what she needs; make the rest private."
+  - see: "A student mentions something shared about them or a classmate."
+    ask: "(Don't probe.) Thank them, and bring it back to Theo."
+    fix: "Follow up privately, and through the wellbeing team or child-protection procedure if needed."
+stretch: "Think of a time a bigger audience is the right choice (a school art show page, a fundraiser). What would you check first?"
+support: "Draw the two circles on a card. Before sharing, name who is in the inner circle."
+leads: |
+  Next: pause before you post. Group chats move fast, and screenshots travel.
+
+  Links: How computers work › Your digital footprint (the same settings board, with more on what apps collect).
+exit:
+  q: "Why can a photo in a private group reach people outside it?"
+  a: "Anyone in the group can screenshot or forward it."
+explain: |
+  Every post has two audiences: **the one you chose** (the person, group or followers you sent it to) and **the one you might get** (anyone they show or forward it to).
+
+  Choose the **smallest audience that does the job**. Settings help with the first audience; they cannot stop a screenshot.

@@ -1,0 +1,28 @@
+inquiry:
+  q: "Why might someone not tell an adult when something goes wrong online? What would make it easier?"
+  prompts:
+    - "Think about Ollie and Zara, not yourself."
+    - "What could an adult say or do that would make telling easier?"
+  notes: "Common reasons: fear of trouble, of losing a device, of making it worse, embarrassment. Use the answers to say what the school actually does when a student tells. Keep it general."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Our school's version"
+    minutes: 5
+    do: |
+      Look at the plan. Who at our school could you tell? Where is the report button in an app? Add the school's own route to the plan.
+    notes: "Fill in the school's process (the wellbeing team, a form, a teacher). No student names a person they would tell out loud unless they want to."
+  - at: end
+    kind: info
+    title: "Where to get help"
+    do: |
+      A trusted adult at home or school. The school's wellbeing team. Kids Helpline: 1800 55 1800, free, any time. eSafety Commissioner: esafety.gov.au
+    notes: "Leave this slide up at the end. Check the Kids Helpline number is current."
+questions:
+  - at: investigate
+    title: "Keep it or delete it?"
+    type: question
+    q: "Someone sends Zara a mean message. Which step comes right after 'Stop: don't reply'?"
+    options: ["Keep it: don't delete", "Block the account", "Send it to friends"]
+    answer: 0
+    explain: "Keep it first, so a trusted adult can see what happened. Then tell, then block and report together."

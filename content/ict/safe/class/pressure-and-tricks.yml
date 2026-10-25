@@ -1,0 +1,29 @@
+inquiry:
+  q: "Grace lost her account. She says, 'I'm so stupid, I can't tell anyone.' What would you say to her?"
+  prompts:
+    - "Who designed the trick, and who was it designed to work on?"
+    - "What could telling someone fix?"
+  notes: "Tricks are designed to work on everyone. Telling early means the account can often be recovered. Lesson 7 picks this up."
+activities:
+  - at: run
+    kind: activity
+    title: "Name the push"
+    minutes: 4
+    do: |
+      Your teacher reads made-up messages aloud. Hold up one finger for hurry, two for a prize you didn't enter, three for everyone has it, a fist for no push.
+    notes: "Keep messages made up and harmless (game skins, stickers, shoes). Mix in a couple with no push."
+  - at: investigate
+    kind: activity
+    title: "Stop, check, ask"
+    minutes: 3
+    do: |
+      Say it together, with a hand movement for each: Stop (hand up), Check (point to eyes), Ask (point to a trusted adult).
+    notes: "A movement helps younger classes remember. Optional for Years 7 and 8."
+questions:
+  - at: investigate
+    title: "Passwords"
+    type: question
+    q: "Who should you send your password to?"
+    options: ["Nobody: type it only into the real app or site", "A friend you trust", "The game's support team if they message you"]
+    answer: 0
+    explain: "Real support never asks for your password in a message."

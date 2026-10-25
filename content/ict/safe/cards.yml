@@ -1,0 +1,102 @@
+# Reference cards for Staying safe and well: one screen each, no ticks. No real apps are named; the "apps" notes
+# describe kinds of place (a group chat, a game, any app) because menus differ and the habit is the same.
+cards:
+  - id: before-you-post
+    title: "Before you post"
+    unit: trail
+    lesson: a-days-trail
+    idea: "Most of what you do online is fine. Three questions find the parts worth a second thought."
+    steps:
+      - "Can I take it back? Others may save or pass it on."
+      - "Does it say where I am? A street sign, a uniform or a live location can."
+      - "Is it about someone else? Then ask them first."
+      - "Choose the smallest audience that does the job."
+    watch: "Deleting takes it off your screen, not off everyone else's."
+    apps:
+      "Group chats": "Everyone in the group can screenshot or forward."
+      "Photos": "Look at the background before you share."
+      "Any app": "Location sharing is a setting; check whether it is on."
+  - id: check-the-audience
+    title: "Check who can see it"
+    unit: trail
+    lesson: who-can-see-this
+    idea: "Every post has two audiences: the people you chose, and anyone they show or forward it to."
+    steps:
+      - "Say who sees it first: one person, a group, followers, anyone."
+      - "Picture who could see it later."
+      - "Pick the smallest audience that does the job."
+      - "Check your settings: profile, location, tagging."
+    watch: "Private settings choose the first audience. They cannot stop a screenshot."
+    apps:
+      "Any app": "Look in Settings for Privacy; options often start open."
+      "Group chats": "Check who is in the group before you post."
+  - id: the-pause
+    title: "Pause before you send"
+    unit: together
+    lesson: pause-before-you-post
+    idea: "A message has no face and no voice, so it can land harder than you meant."
+    steps:
+      - "How will they read it? Read it as them."
+      - "Would I say it to their face?"
+      - "Is there a kinder version, or is no reply better?"
+      - "If a chat turns on someone: don't add to it, check on them privately, tell a trusted adult."
+    watch: "'Only joking' doesn't travel with the words."
+    apps:
+      "Group chats": "A private message can support someone without adding to the group."
+      "Any app": "Most apps let you edit or delete, but others may already have seen it."
+  - id: check-first
+    title: "Check first with a trusted adult"
+    unit: together
+    lesson: who-is-on-the-other-end
+    idea: "Online you only see what someone chooses to show. Friendly is not the same as known."
+    steps:
+      - "Keep your full name, school, address, phone and photos for people you know in real life."
+      - "Notice requests for details, secrets, photos, a more private app, or meeting up."
+      - "Say 'I need to ask first' and tell a trusted adult."
+    watch: "Someone safe doesn't ask you to keep secrets from the adults who look after you."
+    apps:
+      "Games": "Use the game's own block and report buttons, with an adult."
+      "Any app": "A request to move to another app is a reason to check first."
+  - id: notice-and-choose
+    title: "Screens: notice, then choose"
+    unit: you
+    lesson: screens-and-me
+    idea: "How screen time feels during and after tells you more than counting minutes. There is no right number."
+    steps:
+      - "Notice: tired, on edge, left out, or happy, calm, connected?"
+      - "Decide before you start: one or two videos, one game."
+      - "Turn off autoplay or notifications you don't need."
+      - "Charge the device outside the bedroom at night."
+    watch: "Autoplay, endless feeds and streaks are designed to keep you going."
+    apps:
+      "Video apps": "Autoplay is usually a switch in Settings."
+      "Any device": "Most have a screen-time or focus setting you can choose to use."
+  - id: stop-check-ask
+    title: "Stop, check, ask"
+    unit: you
+    lesson: pressure-and-tricks
+    idea: "Hurry, a prize you didn't enter and 'everyone has it' are pushes. Pressure to hurry is the sign to slow down."
+    steps:
+      - "Stop: take your finger off the button."
+      - "Check: who is it really from? Did I enter or ask for this?"
+      - "Ask a trusted adult before you click, pay, or give details."
+      - "Never send a password or code to anyone."
+    watch: "A real offer will still be there after you ask."
+    apps:
+      "Games": "Pop-ups with countdowns and free prizes are the usual push."
+      "Email and messages": "Check where a link really goes before you open it."
+  - id: when-it-goes-wrong
+    title: "When something goes wrong"
+    unit: help
+    lesson: when-something-goes-wrong
+    idea: "You don't have to sort it out alone. Telling early is how things get fixed, even if you made a mistake."
+    steps:
+      - "Stop: don't reply."
+      - "Keep it: don't delete. A screenshot or the username helps."
+      - "Tell a trusted adult."
+      - "Block and report, together."
+      - "Look after yourself, and keep talking."
+    watch: "If it's a picture that shouldn't be shared, don't save or send it: tell an adult straight away."
+    apps:
+      "Any app": "Look for Block and Report on the message, the profile or the three dots menu."
+      "Help": "Kids Helpline 1800 55 1800 (free). eSafety Commissioner: esafety.gov.au."

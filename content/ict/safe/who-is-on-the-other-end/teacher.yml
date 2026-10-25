@@ -1,0 +1,49 @@
+summary: "Students predict how much a profile tells them, sort a new online contact's messages into fine and check with a trusted adult first (personal details, secrets, photos, moving to a more private app, meeting), find the mistake in treating friendly as trusted, and name their trusted adults. Typical width (Years 7 and 8): gifts and flattery as ways to build trust fast."
+time: 40
+timing: "Engage and Explore 10 min · Explain 12 min · Elaborate 8 min · Evaluate 10 min"
+goals:
+  - I can explain why a profile does not prove who someone is.
+  - I can name requests that mean I should check with a trusted adult first.
+  - I can name trusted adults I could ask.
+struggle: "Students think they would always be able to tell. Agree that most people are who they say, then ask how you could tell from a profile alone."
+before: |
+  **⚑ Wellbeing review:** this lesson is about grooming warning signs, taught gently and without naming it. Read it with the school's wellbeing lead and child-protection contact before teaching; agree the support pathway, the school's wording for "trusted adult", and whether to name grooming with older classes.
+
+  **If a student discloses something:** this lesson is the most likely in the course to prompt a disclosure. Follow the school's child-protection procedure. Listen, don't probe, don't promise to keep it secret, and pass it on as the procedure says. Thank them and steer the class back to Amira.
+
+  **Ground rules:** Amira, Kai, StarPainter12 and the game are made up. Never ask who students talk to online, which games they play, or whether anyone has asked them for these things. No real incidents, no frightening stories, no detail of what could happen next: the message is "most people are fine; a few requests mean check first, and asking is never wrong". The closing think is private.
+
+  No laws or age rules are stated. For reporting, point to the school's process first, then the eSafety Commissioner (esafety.gov.au/report); Kids Helpline (1800 55 1800, kidshelpline.com.au; checked 26 Oct 2026, check it is current) is free for young people.
+
+  Years 5 and 6: give the link with `?width=minimum` to hide the Year 8 sort.
+running:
+  - "Engage: ask what a profile really is (what someone typed)."
+  - "Explore: ask what the 'check first' messages have in common."
+  - "Explain: list the five requests on the board: details, secrets, photos, a more private app, meeting."
+  - "Elaborate (Years 7 and 8): ask why a gift might come before a request."
+  - "Evaluate: practise saying 'I need to ask first' out loud as a class."
+stuck:
+  - see: "A student says they'd never fall for it."
+    ask: "What would a friendly profile look like? How is it different from a real friend's?"
+    fix: "You can't tell from the profile. That's why the check is about what's asked, not who seems nice."
+  - see: "A student says telling an adult would get them in trouble."
+    ask: "What do you think the adult's job is?"
+    fix: "To help. Asking first is never wrong. Lesson 7 comes back to this."
+  - see: "A student starts describing a real contact or chat."
+    ask: "(Don't probe.) Thank them, and say you'd like to talk after class."
+    fix: "Follow the child-protection procedure; don't investigate yourself."
+stretch: "Write a short friendly reply that says no to a request and changes the subject."
+support: "A card with the five requests and the words 'I need to ask first'."
+leads: |
+  Next: screens and me. How screens fit in your day, and choosing your own limits.
+
+  Links: How computers work › Spot the phish (Years 7 and 8; messages that pretend to be someone you trust).
+exit:
+  q: "Name two requests from a new online contact that mean you should check with a trusted adult first."
+  a: "Any two of: personal details (school, address, phone), keeping a secret, photos of you, moving to a more private app, meeting up."
+explain: |
+  You only see what someone chooses to show. **Friendly is not the same as known.**
+
+  If a new contact asks for **personal details**, a **secret**, **photos** of you, to move to a **more private app**, or to **meet**, stop and check with a **trusted adult**: someone you know in real life who looks out for you.
+
+  Asking first is never wrong, and you are not in trouble for it.

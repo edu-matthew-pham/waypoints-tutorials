@@ -1,0 +1,29 @@
+inquiry:
+  q: "Noah's video app starts the next video by itself. Whose job is it to stop: Noah's, or the app's?"
+  prompts:
+    - "What can Noah change on his own?"
+    - "What could only the app's makers change?"
+  notes: "Both have a share. Avoid blaming students; the habits are tools, not tests."
+activities:
+  - at: run
+    kind: discussion
+    title: "What do the good ones share?"
+    minutes: 3
+    do: |
+      Look at the screen times that left Priya feeling good. What do they have in common?
+    notes: "People, making or learning something, and a time she chose."
+  - at: investigate
+    kind: activity
+    title: "Helpful habits wall"
+    minutes: 6
+    do: |
+      On sticky notes, write a screen habit that could help anyone (not your own, and no names). Put them on the board, then group the ones that are alike.
+    notes: "Anonymous and general. This is the 'class survey of helpful habits': no hours, no apps, nothing personal. Expect ideas such as charging outside the bedroom, deciding before starting, turning off autoplay."
+questions:
+  - at: investigate
+    title: "Keeps you, or helps you stop?"
+    type: question
+    q: "Which feature helps you stop?"
+    options: ["A reminder at a time you chose", "The next video starts by itself", "A streak you lose if you miss a day"]
+    answer: 0
+    explain: "A reminder you set is your own limit. The other two pull you back."

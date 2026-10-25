@@ -65,8 +65,8 @@ pathways:
     note: "Judging a source is the part of Acquire and collate data (evaluate) that the Digital Technologies descriptors cover least. Evaluating AI answers is touched lightly and points to the AI courses."
   - id: safe
     title: Staying safe and well
-    status: planned
-    plan: "Project doc ict-safe-and-well-plan"
+    status: built
+    course: ict/safe
     focus: [Manage online safety, Manage digital privacy and identity, Manage digital wellbeing]
     touches: []
     dt_overlap: [AC9TDI6P09, AC9TDI8P13, AC9TDI6P10, AC9TDI8P14, AC9TDI10P13, AC9TDI10P14]

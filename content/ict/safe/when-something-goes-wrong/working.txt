@@ -1,0 +1,8 @@
+# Ollie's thinking for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: ollie
+Ollie clicks a link in a game chat that promised free coins.
+His game account starts sending strange messages to his friends.
+He thinks: if I tell anyone, I'll get in trouble, so I'll just hide it.
+He says nothing, and a week later he can't get into the account at all.
+# endregion

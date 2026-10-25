@@ -1,0 +1,29 @@
+inquiry:
+  q: "Ari says, 'I was only joking, so it's not my fault Sam left.' Is he right?"
+  prompts:
+    - "Does what you meant matter? Does what they felt matter more?"
+    - "What could Ari do now to fix it?"
+  notes: "Both matter, but the reader only has the words. Fixing it (saying sorry, checking on Sam) is part of the habit. Keep it about Ari."
+activities:
+  - at: predict
+    kind: activity
+    title: "Two tones"
+    minutes: 3
+    do: |
+      Your teacher reads "nice drawing 🙄" twice, in two different voices. Which one would Leo hear in his head?
+    notes: "Read it once warmly, once sarcastically. Text carries neither."
+  - at: end
+    kind: activity
+    title: "Kinder versions"
+    minutes: 6
+    do: |
+      In pairs, rewrite these made-up messages so they are kind, or decide no reply is best: "that's so cringe", "why would u even post that", "everyone's talking about you".
+    notes: "Paper only; don't collect or read them out unless a pair offers. Accept 'no reply' as a strong answer."
+questions:
+  - at: investigate
+    title: "The pause"
+    type: question
+    q: "Which pause question catches a message that's fine to say out loud, but not in text?"
+    options: ["How will they read it?", "Would I say it to their face?", "Is it a good joke?"]
+    answer: 0
+    explain: "Without a voice or a face, even a friendly line can be read the wrong way."

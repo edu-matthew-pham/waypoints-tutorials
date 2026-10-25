@@ -1,0 +1,29 @@
+inquiry:
+  q: "Amira says, 'If I tell my mum about StarPainter12, she'll stop me playing the game.' What could Amira do?"
+  prompts:
+    - "What would a trusted adult want to happen?"
+    - "Is there more than one adult Amira could ask?"
+  notes: "Worry about losing access is a common reason not to tell. A trusted adult's job is to help; there is often more than one (a teacher, the school counsellor). Keep it about Amira."
+activities:
+  - at: run
+    kind: activity
+    title: "Five requests"
+    minutes: 4
+    do: |
+      In pairs, find what the 'check first' messages have in common. Can you sort them into five kinds?
+    notes: "Personal details, a secret, photos, a more private app, meeting up."
+  - at: end
+    kind: activity
+    title: "Practise the words"
+    minutes: 3
+    do: |
+      Say it together: "I need to ask first." Then: "I don't share that online. Want to play another round?"
+    notes: "Rehearsing a refusal makes it easier to use. Keep it light."
+questions:
+  - at: investigate
+    title: "Secrets"
+    type: question
+    q: "Why is 'don't tell your parents' a reason to check first?"
+    options: ["Someone safe doesn't ask you to keep secrets from the adults who look after you", "Parents don't understand games", "It means they don't like your parents"]
+    answer: 0
+    explain: "A request for secrecy from a new contact is the clearest sign to check with a trusted adult."

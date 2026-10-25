@@ -1,0 +1,6 @@
+# Boards for "Screens and me". A made-up app and a made-up session model (the feed widget from AI in your life).
+
+# region: design
+widget: feed
+mode: design
+# endregion

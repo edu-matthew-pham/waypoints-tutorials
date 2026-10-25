@@ -1,0 +1,8 @@
+# Mia's thinking for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: mia
+Mia takes a silly photo of her friend Jo at lunch.
+She thinks: I'll post it now, and if it's a problem I'll delete it later.
+She posts it to the class group chat without asking Jo.
+Ten minutes later Jo asks her to take it down. Mia deletes it, but two people have already saved it.
+# endregion

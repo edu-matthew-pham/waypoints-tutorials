@@ -25,4 +25,11 @@ pathways:
     about: "This follows the Digital Literacy general capability (mainly its Managing and operating element: manage content, protect content, and select and operate tools). Four short lessons teach the ideas every file system shares: folders and paths, names that work, copy, move and delete, versions and backup, and a routine for fixing things. The pictures are made-up folders on the page, and nothing touches a real device. Each lesson ends with a step in the storage your school has approved, so teachers should fit that step to the school's own system, and students should use only school-approved cloud services."
     courses:
       - { path: ict/files, id: files, stage: foundations, tagline: "Find your work, keep it safe and fix it first." }
+  - id: safe
+    title: Staying safe and well
+    summary: "Your trail, who can see it, kind chats, who is on the other end, screens, pressure tricks, and a plan for when something goes wrong."
+    fit: "Start here for everyday life online: short workshops on made-up stories, with nothing personal asked."
+    about: "This follows the Digital Literacy general capability (mainly its Practising digital safety and wellbeing element: manage online safety, manage digital privacy and identity, and manage digital wellbeing). Eight short workshops on made-up stories, discussed in pairs and as a class, end with the class writing its own agreement. No student is asked to share their own experiences, and reflections stay private. It states no laws or age rules and points to the eSafety Commissioner instead. Passwords, phishing and the digital footprint are taught in How computers work › Cyber safety and privacy, which these lessons link to. The school's wellbeing team should read the lessons and teacher notes before they are used with a class."
+    courses:
+      - { path: ict/safe, id: safe, stage: foundations, tagline: "Habits, words and a plan for everyday life online." }
 ---

@@ -177,7 +177,7 @@ details.hints[open] summary{border-bottom:1px solid var(--line);margin-bottom:6p
 .tmsg{margin:8px 0 0;font-size:14px;font-weight:600;color:var(--run)}
 .resetstart{font:inherit;font-size:13px;margin:6px 0;padding:4px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
 nav.steps a .cnt{font-weight:500;color:var(--muted);margin-left:5px}
-.buglines{margin:6px 0;padding:0 0 0 2.2em;background:var(--code);border-radius:10px;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;list-style:decimal;color:var(--com)}
+.buglines{margin:6px 0;padding:0 0 0 2.2em;overflow-x:auto;background:var(--code);border-radius:10px;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;list-style:decimal;color:var(--com)}
 .buglines li{padding-right:6px}.check .buglines button{display:block;width:100%;margin:0;padding:0 8px;border:0;border-radius:6px;background:none;text-align:left;color:var(--codeink);cursor:pointer}
 .check .buglines button:hover{background:rgba(255,255,255,.1)}.check .buglines button.no{background:rgba(255,100,100,.25)}.check .buglines button.yes{background:rgba(74,222,128,.28)}
 .buglines code{white-space:pre;font:inherit}

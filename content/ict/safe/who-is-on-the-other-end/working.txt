@@ -1,0 +1,8 @@
+# Amira's thinking for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: amira
+Amira meets StarPainter12 in a drawing game.
+They chat about shading and swap tips for a week.
+Amira thinks: she's so nice and likes the same things, so she must be who she says she is.
+When StarPainter12 asks which school she goes to, Amira tells her.
+# endregion

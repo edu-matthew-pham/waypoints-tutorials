@@ -1,0 +1,29 @@
+inquiry:
+  q: "Kai's dog photo was deleted after a minute. Two people had already saved it. Whose job was it to think first: Kai's, or the people who saved it?"
+  prompts:
+    - "What could Kai have done before posting?"
+    - "What could the people who saved it do now?"
+  notes: "Both. The poster can pause; the viewers can choose not to keep or pass things on. Keep it about Kai, not about students' own chats."
+activities:
+  - at: predict
+    kind: activity
+    title: "Stand on the line"
+    minutes: 3
+    do: |
+      One end of the room is "gone for good", the other is "still around". Stand where you think Kai's deleted photo is.
+    notes: "Ask a few students at each end why. Don't settle it until the Explore step."
+  - at: investigate
+    kind: discussion
+    title: "Where could Mia stop?"
+    minutes: 4
+    do: |
+      Read Mia's four lines. Point to the line where a pause would have changed what happened. What would she ask herself?
+    notes: "Line 2 is where the thinking goes wrong; line 3 is where asking Jo would have helped."
+questions:
+  - at: investigate
+    title: "Which question?"
+    type: question
+    q: "A photo of your team in uniform, with the school's name on it. Which question matters most?"
+    options: ["Does it say where I am?", "Can I take it back?", "Is it a good photo?"]
+    answer: 0
+    explain: "The uniform and the school's name say where you are most days. The team is in it too, so ask them as well."

@@ -1,0 +1,49 @@
+summary: "Students predict how a joking message lands, sort replies to a friend's video as kind or likely to hurt, find the mistake in judging a message by what was meant, and learn a three-question pause plus what a bystander can do. Typical width (Years 7 and 8): a screenshot in a big year-group chat."
+time: 40
+timing: "Engage and Explore 10 min · Explain 12 min · Elaborate 8 min · Evaluate 10 min"
+goals:
+  - I can explain why a message can land harder than it was meant.
+  - I can use a pause before I send.
+  - I can say what I could do when a chat turns on someone.
+struggle: "Students defend jokes ('it was only a joke'). Agree that it may have been meant as one, then ask what the reader could see."
+before: |
+  **⚑ Wellbeing review:** this lesson touches on group-chat unkindness and bullying, so it is especially worth reading with the school's wellbeing lead before teaching. Agree the support pathway and any local wording, and align it with the school's bullying policy and reporting process.
+
+  **If a student discloses something:** follow the school's child-protection procedure (and the bullying policy where it applies). Listen, don't probe, don't promise to keep it secret, and pass it on as the procedure says. Thank them and steer the class back to Ari and Sam.
+
+  **Ground rules:** Ari, Sam, Ruby, Leo, Jo and Mei are made up. Never ask whether this has happened in the class's own chats or to anyone they know, and don't ask for examples. Some students may be on either side of something like this right now: watch for distress, and avoid blame. The message is "a pause and a kinder choice help", not "you are bad if you did this". The closing think is private.
+
+  No laws are stated. For reporting serious online bullying, point to the school's process first, then the eSafety Commissioner (esafety.gov.au/report).
+
+  Years 5 and 6: give the link with `?width=minimum` to hide the year-group chat scenario.
+running:
+  - "Engage: read Ruby's message aloud in two different tones. Which one does Leo get?"
+  - "Explore: ask why '(no reply)' counts as kind."
+  - "Explain: put the three pause questions on the board; leave them up for the rest of the course."
+  - "Elaborate (Years 7 and 8): name the bystander's three moves."
+  - "Evaluate: pairs write their own kinder version of a made-up message, on paper, not shared with the class."
+stuck:
+  - see: "A student insists it was only a joke."
+    ask: "What could Sam see: the joke, or the words?"
+    fix: "What was meant doesn't travel. Read it as the other person."
+  - see: "A student thinks the only choices are join in or fight back."
+    ask: "What could you do that nobody else in the chat sees?"
+    fix: "Don't add to it, check on them privately, tell a trusted adult."
+  - see: "A student becomes upset or starts talking about a real chat."
+    ask: "(Don't probe.) Acknowledge it quietly, and offer to talk after class."
+    fix: "Follow up privately and through the wellbeing team or the bullying policy."
+stretch: "Rewrite Ari's message so it is a joke Sam would laugh at too, or decide it can't be done. Why?"
+support: "The three pause questions on a card on the desk."
+leads: |
+  Next: who is on the other end? Not everyone online is who they say.
+
+  Links: AI in your life › A fake about someone (Years 7 and up; bystanders and reporting when a fake is shared).
+exit:
+  q: "Name one thing a bystander can do when a group chat turns on someone."
+  a: "Not add to it, check on them privately, or tell a trusted adult."
+explain: |
+  A message has **no face and no voice**. What you meant doesn't travel with the words.
+
+  Before you send, **pause**: How will they read it? Would I say it to their face? Is there a kinder version, or is no reply better?
+
+  When a chat turns on someone: don't add to it, check on them privately, and tell a trusted adult if it keeps going.

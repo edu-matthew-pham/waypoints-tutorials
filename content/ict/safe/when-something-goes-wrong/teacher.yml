@@ -1,0 +1,49 @@
+summary: "Students predict what happens when a problem is deleted and kept secret, sort first moves into helps and makes it harder, and learn a five-step plan as a diagram: stop, keep it, tell a trusted adult, block and report, look after yourself, with 'made a mistake? tell anyway'. Typical width (Years 7 and 8): choose the next step in harder situations."
+time: 40
+timing: "Engage and Explore 10 min · Explain 12 min · Elaborate 8 min · Evaluate 10 min"
+goals:
+  - I can say the plan for when something goes wrong online.
+  - I can explain why keeping it and telling helps more than deleting.
+  - I can explain why telling helps even if I made a mistake.
+struggle: "Students believe telling means losing their device or getting in trouble. Name that worry out loud as common, and say what adults actually do: help."
+before: |
+  **⚑ Wellbeing review:** this is the course's key lesson for help-seeking. Read it with the school's wellbeing lead and child-protection contact before teaching. Agree: who students should tell at school, the school's reporting process, and how the school responds when a student tells (so the lesson's promise that telling helps is true here). One line tells students not to save or forward a picture that shouldn't be shared (for example a nude image) and to tell an adult straight away; check the wording with the wellbeing lead, especially for Years 5 and 6.
+
+  **If a student discloses something:** this lesson invites help-seeking, so a disclosure is possible. Follow the school's child-protection procedure. Listen, don't probe, don't promise to keep it secret (say you may need to tell someone whose job is to help), and pass it on as the procedure says. Thank them for telling.
+
+  **Ground rules:** Zara, Ollie, Kai, Mei, Ari and Priya are made up. Never ask what has happened to students or people they know, and don't ask for examples. Avoid suggesting that devices will be taken away. The closing think is private.
+
+  **Support:** the school's wellbeing team; Kids Helpline 1800 55 1800, kidshelpline.com.au (free, for young people; checked 26 Oct 2026, check it is current); the eSafety Commissioner's reporting pages at esafety.gov.au/report (checked 26 Oct 2026) and its pages for kids at esafety.gov.au/kids. No laws are stated; eSafety explains what can be reported and how.
+
+  The diagram is a Mermaid flowchart (lesson.md › diagrams.mmd#plan). Years 5 and 6: give the link with `?width=minimum`.
+running:
+  - "Engage: ask why deleting feels like the safe choice."
+  - "Explore: ask what the 'helps' moves have in common (calm, and bringing in help)."
+  - "Explain: walk through the diagram; ask who students could tell at school (in general, no names needed)."
+  - "Elaborate (Years 7 and 8): ask which situation was hardest to place."
+  - "Evaluate: say the school's own reporting route and the Kids Helpline number aloud."
+stuck:
+  - see: "A student says telling just gets your phone taken away."
+    ask: "What would you want an adult to do if you told them?"
+    fix: "Adults would much rather know. Telling early is how things get fixed."
+  - see: "A student says you should fight back."
+    ask: "What might the sender want you to do?"
+    fix: "Stop and don't reply. Block and report with an adult instead."
+  - see: "A student becomes quiet or upset, or starts to describe something real."
+    ask: "(Privately.) Would you like to talk after class?"
+    fix: "Follow the child-protection procedure; involve the wellbeing team."
+stretch: "Make a poster of the plan for a younger class, in your own words."
+support: "The diagram printed on a card, with the school's own reporting route added."
+leads: |
+  Next: our class agreement. The class writes how it will treat each other online.
+
+  Links: AI in your life › A fake about someone (Years 7 and up; the same plan when a fake is shared).
+exit:
+  q: "Name the first three steps of the plan."
+  a: "Stop (don't reply), keep it (don't delete), tell a trusted adult."
+explain: |
+  When something online upsets or worries you: **stop** (don't reply), **keep it** (don't delete), **tell a trusted adult**, **block and report** together, and **look after yourself**.
+
+  Made a mistake yourself? **Tell anyway.** Most things can be fixed, more easily if you tell early.
+
+  Kids Helpline: **1800 55 1800**, free, any time.

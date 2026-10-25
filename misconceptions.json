@@ -537,5 +537,11 @@
   "final-final-name": {"home": "ict/files/a-place-for-everything", "text": "A file is named final, final-final or new instead of saying what it is and when; those words stop being true as soon as another version is saved."},
   "copy-is-move": {"home": "ict/files/copy-move-or-delete", "text": "Dragging a file is assumed to copy it (or to move it) without looking where it is afterwards; drag can do either, depending on where it is dropped."},
   "only-one-copy": {"home": "ict/files/versions-and-backup", "text": "Work is kept in one place only, so one failure loses it; a backup is a copy in a different place."},
-  "change-everything": {"home": "ict/files/fix-it-first", "text": "Several things are changed at once when something goes wrong, so it is not known which change helped."}
+  "change-everything": {"home": "ict/files/fix-it-first", "text": "Several things are changed at once when something goes wrong, so it is not known which change helped."},
+  "delete-takes-it-back": {"home": "ict/safe/a-days-trail", "text": "Deleting a post or message is thought to take it back from everyone; anyone who saw it before it was deleted may have saved, screenshotted or passed it on."},
+  "private-means-private": {"home": "ict/safe/who-can-see-this", "text": "A private account or a small group is thought to mean only the chosen people will ever see a post; anyone in the audience can screenshot or forward it to people outside."},
+  "joke-is-fine-if-meant": {"home": "ict/safe/pause-before-you-post", "text": "A message is judged by what the sender meant, so a joke is fine if it was meant as one; the person reading it sees only the words, without the tone or the face."},
+  "friendly-means-trusted": {"home": "ict/safe/who-is-on-the-other-end", "text": "Someone online who is friendly, shares the same interests or says they are the same age is taken to be who they say; a friendly profile can be made by anyone, so personal details and secrets wait until a trusted adult has checked."},
+  "rush-means-real": {"home": "ict/safe/pressure-and-tricks", "text": "A countdown, a prize or 'everyone has it' is taken as a reason to act now; pressure to hurry is a sign to slow down, check and ask."},
+  "tell-means-trouble": {"home": "ict/safe/when-something-goes-wrong", "text": "Telling a trusted adult is thought to get you in trouble or make things worse, so a problem is kept secret or deleted; telling early, and keeping what happened, is how things get fixed."}
 }

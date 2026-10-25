@@ -1,0 +1,29 @@
+inquiry:
+  q: "Theo's cartoon was forwarded by a friend. Who is responsible for it reaching the bigger group: Theo, the friend who forwarded it, or the cousin who shared it again?"
+  prompts:
+    - "What could each person have done differently?"
+    - "Does forwarding something make it partly yours?"
+  notes: "Everyone in the chain made a choice. The poster can pause; each viewer can choose not to pass it on. Keep it about Theo's made-up group."
+activities:
+  - at: run
+    kind: activity
+    title: "Two circles"
+    minutes: 4
+    do: |
+      Draw two circles, one inside the other. In the inner one, write who Lena chose. In the outer one, write who could see it later. Do it for the private group and for the message to her mum.
+    notes: "The outer circle is smallest for a message to one trusted person, but never zero."
+  - at: investigate
+    kind: discussion
+    title: "What could the friend do?"
+    minutes: 3
+    do: |
+      Theo's friend sees the cartoon. What are her choices? Which one stops it going further?
+    notes: "Not forwarding, and telling Theo it might hurt the teacher. Bystanders have power too."
+questions:
+  - at: investigate
+    title: "Smallest audience"
+    type: question
+    q: "Lena wants feedback on her art from her art teacher only. Which is best?"
+    options: ["Send it through the school's own system to the teacher", "Post it publicly", "Put it in the class group chat"]
+    answer: 0
+    explain: "The school's own system reaches the one person who needs it."

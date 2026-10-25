@@ -1,0 +1,27 @@
+inquiry:
+  q: "Should a class agreement be about what we do, or what we don't do?"
+  prompts:
+    - "Which is easier to remember: 'We pause before we post' or 'Don't post mean things'?"
+    - "Which tells you what to do in the moment?"
+  notes: "Positive lines say what to do. Both can work; a mix is fine if most are positive."
+activities:
+  - at: make
+    kind: activity
+    title: "Write our lines"
+    minutes: 10
+    do: |
+      In groups of three, write one or two lines for our agreement. Keep each under ten words if you can. Start with "We...".
+    notes: "Paper. Circulate and nudge don'ts into dos. No line names a real person or event."
+  - at: make
+    kind: discussion
+    title: "Choose and agree"
+    minutes: 10
+    do: |
+      Groups read their lines. Put similar lines together. Choose about five that everyone can keep.
+    notes: "Read lines without naming groups. A thumbs up, sideways or down vote works; aim for lines everyone can keep."
+  - at: end
+    kind: info
+    title: "Where it lives"
+    do: |
+      Our agreement will be kept where we can all see it. We'll look at it again in a few weeks.
+    notes: "Name the place (a poster, a page the school approves) and a date to revisit."

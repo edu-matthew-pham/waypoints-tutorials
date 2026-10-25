@@ -1,0 +1,8 @@
+# Ari's thinking for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: ari
+Someone posts "lol look at Sam's haircut" in the class group chat.
+Ari thinks: I'm only joking, so it's fine if I add one too.
+He posts "haha did his little brother cut it?"
+Two more people join in, and Sam leaves the group.
+# endregion

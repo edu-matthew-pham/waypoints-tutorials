@@ -1,0 +1,49 @@
+summary: "Students sort made-up messages by the push they use (hurry, a prize you didn't enter, everyone has it, no push), find the mistake in treating a countdown as a sign it's real, and learn stop, check, ask, and never to send a password or code. Typical width (Years 7 and 8): mark a made-up inbox Safe or Report, checking where links really go."
+time: 35
+timing: "Engage and Explore 10 min · Explain 10 min · Elaborate 8 min · Evaluate 7 min"
+goals:
+  - I can spot hurry, a prize I didn't enter, and 'everyone has it'.
+  - I can explain why pressure to hurry means slow down.
+  - I can say why I never send a password or code to anyone.
+struggle: "Students feel embarrassed at the thought of being tricked. Say that tricks are designed to work on everyone, adults included; spotting the push is a skill, not a test of being clever."
+before: |
+  **⚑ Wellbeing review:** this course is a draft. Share this lesson and these notes with the school's wellbeing lead before teaching, and agree the support pathway and any local wording.
+
+  **If a student discloses something:** follow the school's child-protection procedure. Listen, don't probe, don't promise to keep it secret, and pass it on as the procedure says. Thank them and steer the class back to Leo and Grace. A student who has lost money or an account may feel ashamed: reassure them that telling was right.
+
+  **Ground rules:** Leo, Grace, Ava and every message are made up; addresses use `.example`. Don't ask whether students have been tricked, have bought things in games, or what games they play. The closing think is private.
+
+  No laws or consumer rules are stated. For reporting scams, point families to the eSafety Commissioner (esafety.gov.au) or the school's process.
+
+  The board (Years 7 and 8) is the `cyber` widget's easy inbox from How computers work › Spot the phish, which teaches phishing in more depth. Years 5 and 6: give the link with `?width=minimum`.
+running:
+  - "Engage: ask whether a real prize would vanish in 60 seconds."
+  - "Explore: list the three pushes on the board."
+  - "Explain: practise 'Stop, check, ask' with a made-up pop-up."
+  - "Elaborate (Years 7 and 8): ask why the link text and where it goes can differ."
+  - "Evaluate: ask which push the shoe ad used (two of them)."
+stuck:
+  - see: "A student says they'd just click to see if it's real."
+    ask: "What does the message want you to do first?"
+    fix: "Clicking is what it wants. Close it, and check another way."
+  - see: "A student thinks giving the password is fine if they change it later."
+    ask: "What could someone do with it in one minute?"
+    fix: "Passwords and codes are only typed into the real app, never sent."
+  - see: "A student says something like this has happened to them."
+    ask: "(Don't probe.) Thank them; say telling someone was the right move."
+    fix: "Follow up privately; involve parents or the wellbeing team as the school's process says."
+stretch: "Find the push in an ad you make up yourself, then rewrite it with no push at all. What changed?"
+support: "A card: Hurry? Prize I didn't enter? Everyone has it? Then: Stop, check, ask."
+leads: |
+  Next: when something goes wrong. Stop, keep it, tell, block and report.
+
+  Links: How computers work › Spot the phish (Years 7 and 8; checking links and sender addresses).
+exit:
+  q: "A message says you have 1 minute to claim a prize. What do you do?"
+  a: "Slow down: stop, check where it's from (did I enter?), and ask a trusted adult before clicking. Never send a password or code."
+explain: |
+  Some messages are built to make you act before you think: **hurry**, **a prize you didn't enter**, **everyone has it**.
+
+  Pressure to hurry is the sign to **slow down**: **Stop. Check. Ask.**
+
+  Never send a password or a code to anyone. Nobody real minds you checking.

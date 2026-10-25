@@ -1,0 +1,8 @@
+# Theo's thinking for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: theo
+Theo draws a funny cartoon of his teacher.
+He thinks: it's a private group of friends, so nobody else will ever see it.
+He posts it in the group.
+One friend screenshots it and sends it to her cousin, who shares it with a bigger group.
+# endregion
