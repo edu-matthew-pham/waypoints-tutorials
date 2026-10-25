@@ -2,6 +2,83 @@
 
 The science chat's file. Lessons live in `content/science/` (see CLAUDE.md › Science).
 
+## Proposed (25 Oct 2026, science chat; not built): practical previews and recaps
+
+Idea (Matthew): a board lesson as a mini experiment that **previews or recaps** a class practical, never replaces it. Today the boards teach the concept; none says "this is your class experiment", names the variables, or lets a student set their result beside the model's. Proposal: first a list for science teachers to correct, then a small pilot on the practicals they say they run.
+
+**Tags below are Claude's judgement of common Australian school practice (ACARA does not mandate practicals), not a survey. Draft for a science teacher to correct.**
+- **Core**: commonly run for that topic.
+- **Optional**: often offered, not run everywhere.
+- **Demo / no lab**: usually shown or simulated, or too slow or unsafe for students; the board is already the experiment.
+
+Teacher columns (blank): *We run it* / *Preview would help* / *Recap would help* / *Ours differs (how)*.
+
+### Year 7
+
+| Practical | Tag | Our lesson |
+|---|---|---|
+| Filtering and evaporating a salt–sand mixture | Core | chemistry/filter-evaporate, separating |
+| Chromatography of inks | Core | chemistry/distil-chroma |
+| Distilling salt water | Optional (often a demo) | chemistry/distil-chroma |
+| Heating or cooling curve (ice or water, or wax) | Core | chemistry/heating-curve |
+| Particles: dye in water, diffusion | Core | chemistry/particle-model, states |
+| Properties: solubility, density | Optional | chemistry/properties |
+| Dichotomous key (leaves, invertebrates, pond life) | Core | biology-7/keys |
+| Quadrat or pitfall sampling | Optional (needs a site) | biology-7/food-webs (no sampling board) |
+| Food web removal, cascades | Demo / no lab | biology-7/cascades |
+| Moon phases (torch and ball) | Core | earth-7/phases |
+| Seasons (tilted globe and lamp) | Core | earth-7/seasons |
+| Eclipses and tides | Demo / no lab | earth-7/eclipses, tides |
+| Forces: spring balance, friction, ramp or trolley | Core | physics-7/arrows, balanced, unbalanced |
+| Weight versus mass | Core | physics-7/weight, force-mass |
+
+### Year 8
+
+| Practical | Tag | Our lesson |
+|---|---|---|
+| Microscope: onion skin, cheek cells | Core | biology-8/cells-everywhere, plant-cells, cell-parts |
+| Organ dissection (heart, lung, kidney) | Optional | biology-8/organs, organ-systems |
+| Elements and compounds (burning magnesium, iron and sulfur) | Optional (teacher demo) | chemistry-8/elements, compounds |
+| Physical versus chemical change (bicarbonate and vinegar, candle) | Core | chemistry-8/physical-change, chemical-change, signs |
+| Exothermic and endothermic temperature change | Core | chemistry-8/energy-change |
+| Crystals from cooling (sugar or salt solutions) | Optional | earth-8/igneous |
+| Plate tectonics models (card, clay) | Optional | earth-8/plates |
+| Energy transformations (ball drop, pendulum, torch) | Core | physics-8/kinds, transform, flows |
+
+### Year 9
+
+| Practical | Tag | Our lesson |
+|---|---|---|
+| Reaction time (ruler drop) | Core | biology-9/stimuli, pathways |
+| Heart rate and exercise (feedback) | Optional | biology-9/feedback |
+| Heat transfer: conduction rods, convection dye, insulation | Core | physics-9/heat-transfer |
+| Static electricity (balloons, charged rods) | Core | physics-9/static-charge |
+| Series and parallel circuits | Core | physics-9/electric-current |
+| Sound: tuning fork, water glasses | Optional | physics-9/wave-or-particle |
+| Reflection and refraction (ray box) | Core | physics-9/light, bending-light |
+| Conservation of mass (sealed bag, balloon) | Core | chemistry-9-10/conservation-of-mass |
+| Metals with acid, word equations | Core | chemistry-9-10/word-equations |
+| Half-life with dice or coins | Core (usual model) | chemistry-9-10/half-life |
+| Carbon cycle model, greenhouse bottle | Optional | earth-9/carbon-stores, earth-10/greenhouse |
+
+### Year 10
+
+| Practical | Tag | Our lesson |
+|---|---|---|
+| Trolley, ticker timer, F = ma | Core | physics-10/net-force, acceleration, f-ma |
+| Balloon rocket, action and reaction | Optional | physics-10/third-law |
+| Reaction rates (thiosulfate and acid, marble chips) | Core | chemistry-9-10/collision-theory |
+| Reaction types (combustion, displacement, neutralisation) | Core | chemistry-9-10/reaction-types |
+| Flame tests | Optional | chemistry-9-10/groups |
+| Alkali metals in water | Demo / no lab | chemistry-9-10/groups |
+| Punnett squares with coins; strawberry DNA extraction | Optional | biology-10/punnett, dna-genes |
+| Natural selection game (beans and tweezers) | Optional | biology-10/natural-selection |
+| Greenhouse bottle, albedo | Optional | earth-10/greenhouse, energy-balance |
+| Expanding universe (balloon model) | Demo / no lab | earth-10/redshift |
+
+### Pilot, once teachers have ticked it
+Pick two or three **Core** practicals that already have a board. Each gets a short companion lesson on the same board: a fair-test step (name what you change, measure and keep the same), then after the class practical a compare step (a reflect check: your result next to the board's, and where the real bench is messier). Mostly lesson text; no new widget unless a practical has no board. **Demo / no lab** rows need nothing: the board is already the experiment.
+
 ## Proposed (25 Oct 2026, science chat; not built): hints, board lead-ins, and two lesson fixes
 
 Response to roadmap/shared.md › *Proposed (25 Oct): support when it's needed, invisible when it isn't* and its Amended block. Science agrees with the principle and the amendments (`smaller:` not `support:`, never counted, not on a Code Predict; science Engage only where the step is already a move). Nothing below is built.
