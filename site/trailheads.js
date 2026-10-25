@@ -44,7 +44,7 @@
     here = here || going;
 
     pws.forEach(function (pw) {
-      var card = document.querySelector('.thead[data-pw="' + pw.id + '"]');
+      var card = document.querySelector('.wpt-card[data-pw="' + pw.id + '"]');
       if (!card) return;
       var built = pw.nodes.filter(function (n) { return !n.soon; });
       var done = built.filter(function (n) { return st[pw.id + '|' + n.id].kind === 'done'; }).length;
@@ -57,15 +57,15 @@
         if (here && here.pw === pw && here.n === n) dot.classList.add('here');
         if (s.kind === 'done') [].forEach.call(card.querySelectorAll('path[data-from="' + n.id + '"]'), function (p) { p.classList.add('walked'); });
       });
-      var prog = card.querySelector('.thprog');
+      var prog = card.querySelector('.wpt-prog');
       if (done || started) {
         prog.hidden = false;
         prog.textContent = done + ' of ' + built.length + (built.some(function (n) { return n.unit; }) ? ' topics done' : ' courses done') + (started ? ' · ' + started + ' in progress' : '');
       }
-      if (here && here.pw === pw) card.querySelector('.thgo').textContent = 'Continue the ' + pw.title + ' trail →';
+      if (here && here.pw === pw) card.querySelector('.wpt-go').textContent = 'Continue the ' + pw.title + ' trail →';
     });
 
-    var cont = document.getElementById('thcont');
+    var cont = document.getElementById('wpt-cont');
     if (cont && here) {
       cont.textContent = '';
       var k = document.createElement('small'); k.textContent = 'Continue on the ' + here.pw.title + ' trail';
