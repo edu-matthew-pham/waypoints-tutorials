@@ -205,6 +205,48 @@ expected: page.html#sol-make
 
 Make a card for a product in a shop, a player in a team or a book you'd recommend: a `<div>` with a heading, a picture and a line of text, styled with padding, a border, margin and a width. Point at it with Box model and work out its width before you check.
 
+## Change a price tag
+
+```step
+stage: modify
+try: { playground: html, starter: "price.html#tag", height: 420, boxes: true }
+hint: "Padding is space inside the border, margin is space outside it. Put both in the `.tag` rule."
+check:
+  type: code
+  text: "Give the tag some padding so the words are off the border, and a margin so two tags would not touch."
+  rules: { contains: ["padding:", "margin:"] }
+```
+
+A shop's price tag is a box. This one has the words jammed against the border. Add padding so they sit comfortably inside, and a margin so that two tags side by side would not touch.
+
+```code price.html#tag
+<style>
+  .tag {
+    background-color: gold;
+    border: 3px solid black;
+  }
+</style>
+<div class="tag">
+  <h2>Bike helmet</h2>
+  <p>$45</p>
+</div>
+```
+
+```code price.html#sol-tag
+<style>
+  .tag {
+    background-color: gold;
+    border: 3px solid black;
+    padding: 16px;
+    margin: 20px;
+  }
+</style>
+<div class="tag">
+  <h2>Bike helmet</h2>
+  <p>$45</p>
+</div>
+```
+
 ```teacher
 summary: Students see every element as a box of content, padding, border and margin, and find out that width sets only the content, so padding and border make the box wider.
 time: 45
@@ -257,6 +299,7 @@ solutions:
   step-4#t2: page.html#sol-margin
   step-4#t3: page.html#sol-width
   step-6: page.html#sol-make
+  step-7: price.html#sol-tag
 struggle: "Working out that padding and border add to the width. Ask for the sum on paper first (200 + 20 + 20 + 5 + 5), then check it with Box model."
 class:
   activities:

@@ -40,4 +40,5 @@ solutions:
   step-4#t1: page.html#sol-add
   step-4#t2: page.html#sol-limit
   step-5: page.html#sol-make
+  step-6: bill.html#sol-bill
 struggle: "Text versus number: \"4\" + \"5\" is \"45\". Show the page, ask what + does to text, and only then show Number()."

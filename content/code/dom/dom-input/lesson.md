@@ -150,6 +150,70 @@ check: { type: reflect, text: "I made a calculator or converter that reads a box
 
 Make a small tool that reads a **number** from a box and shows an answer: a tip calculator, a temperature converter (°C to °F), an age-in-days counter, a unit converter. Check for a bad number with `isNaN(...)`, as the page on this lesson does.
 
+## Change a bill splitter
+
+```step
+stage: modify
+try: { playground: dom, starter: "bill.html#bill", height: 460 }
+hint: "Add a third box with its own `id`, read it with `Number(...)` like the other two, and work the tip out before you divide."
+check:
+  type: code
+  text: "Add a tip box, and include the tip in what each person pays."
+  rules: { contains: ['id="tip"', '#tip'] }
+```
+
+This page splits a restaurant bill between friends. It reads two boxes, checks that they hold sensible numbers and shows each person's share. Add a third box for a tip in percent, and make each share include it. For a $60 bill with a 10% tip and 4 people, each person should pay $16.50.
+
+```code bill.html#bill
+<h1>Split the bill</h1>
+<p>
+  Bill: $<input id="bill" type="number" value="60">
+  People: <input id="people" type="number" value="4">
+  <button id="go">Split it</button>
+</p>
+<p id="result"></p>
+
+<script>
+  const go = document.querySelector("#go");
+  go.addEventListener("click", function () {
+    const bill = Number(document.querySelector("#bill").value);
+    const people = Number(document.querySelector("#people").value);
+    if (isNaN(bill) || isNaN(people) || people < 1) {
+      document.querySelector("#result").textContent = "Enter a bill and how many people.";
+    } else {
+      const share = bill / people;
+      document.querySelector("#result").textContent = "Each person pays $" + share.toFixed(2);
+    }
+  });
+</script>
+```
+
+```code bill.html#sol-bill
+<h1>Split the bill</h1>
+<p>
+  Bill: $<input id="bill" type="number" value="60">
+  Tip %: <input id="tip" type="number" value="10">
+  People: <input id="people" type="number" value="4">
+  <button id="go">Split it</button>
+</p>
+<p id="result"></p>
+
+<script>
+  const go = document.querySelector("#go");
+  go.addEventListener("click", function () {
+    const bill = Number(document.querySelector("#bill").value);
+    const tip = Number(document.querySelector("#tip").value);
+    const people = Number(document.querySelector("#people").value);
+    if (isNaN(bill) || isNaN(tip) || isNaN(people) || people < 1) {
+      document.querySelector("#result").textContent = "Enter a bill, a tip and how many people.";
+    } else {
+      const share = bill * (1 + tip / 100) / people;
+      document.querySelector("#result").textContent = "Each person pays $" + share.toFixed(2);
+    }
+  });
+</script>
+```
+
 ## Where this leads
 
 ```step

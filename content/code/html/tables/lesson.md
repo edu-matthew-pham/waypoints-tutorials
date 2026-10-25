@@ -207,6 +207,73 @@ expected: page.html#sol-make
 
 Make a table of your own: a timetable for two days, your sports results, or a list of games with their ratings. Give it a heading row and at least two rows of data.
 
+## Change a bus timetable
+
+```step
+stage: modify
+try: { playground: html, starter: "bus.html#bus", height: 440 }
+hint: "A new row is a whole `<tr>` ... `</tr>`. Put it between the Market row and the Library row. A new column needs one more cell in every row, the heading row too."
+check:
+  type: code
+  text: "Add the Park stop at 8:16, between Market and Library, then add a Platform column."
+  rules: { contains: ["<td>Park</td>", "<td>8:16</td>", "<th>Platform</th>"] }
+```
+
+A bus timetable is a table. The 7 now stops at the Park at 8:16, between the Market and the Library, so add that row in the right place. Then add a Platform column, with a heading and a platform number for every stop.
+
+```code bus.html#bus
+<h1>Route 7 to the library</h1>
+<table>
+  <tr>
+    <th>Stop</th>
+    <th>Leaves</th>
+  </tr>
+  <tr>
+    <td>Station</td>
+    <td>8:05</td>
+  </tr>
+  <tr>
+    <td>Market</td>
+    <td>8:12</td>
+  </tr>
+  <tr>
+    <td>Library</td>
+    <td>8:20</td>
+  </tr>
+</table>
+```
+
+```code bus.html#sol-bus
+<h1>Route 7 to the library</h1>
+<table>
+  <tr>
+    <th>Stop</th>
+    <th>Leaves</th>
+    <th>Platform</th>
+  </tr>
+  <tr>
+    <td>Station</td>
+    <td>8:05</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Market</td>
+    <td>8:12</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Park</td>
+    <td>8:16</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Library</td>
+    <td>8:20</td>
+    <td>3</td>
+  </tr>
+</table>
+```
+
 ```teacher
 summary: Students build tables one row at a time with table, tr, th and td, and learn that every row needs the same number of cells.
 time: 45
@@ -254,6 +321,7 @@ solutions:
   step-4#t1: page.html#sol-row
   step-4#t2: page.html#sol-col
   step-6: page.html#sol-make
+  step-7: bus.html#sol-bus
 struggle: "Building a table row by row with the same number of cells in each. Have them count the cells per row before they look at the page."
 class:
   activities:

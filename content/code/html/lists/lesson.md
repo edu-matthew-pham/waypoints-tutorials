@@ -195,6 +195,53 @@ expected: page.html#sol-make
 
 Make a page with your top 5 (books, games, places, songs): a title, a numbered list of five items, and a smaller bulleted list inside one item, for example the reasons you picked it.
 
+## Change a recipe
+
+```step
+stage: modify
+try: { playground: html, starter: "recipe.html#pancakes", height: 460, boxes: true }
+hint: "Change `<ul>` to `<ol>` at the start of the list, and `</ul>` to `</ol>` at the end. Both ends, or the list never closes."
+check:
+  type: code
+  text: "Make the method a numbered list, then add one more step to it."
+  rules: { tags: [ol, ul, li], contains: ["<ol>", "</ol>"] }
+```
+
+A recipe is two lists: what you need, and what you do. The steps have to happen in order, so the method should be numbered, not bulleted. Change that list, then add one more step of your own (the pancake needs turning over). The ingredients stay as bullets.
+
+```code recipe.html#pancakes
+<h1>Pancakes</h1>
+<h2>You need</h2>
+<ul>
+  <li>1 cup of flour</li>
+  <li>1 egg</li>
+  <li>1 cup of milk</li>
+</ul>
+<h2>Method</h2>
+<ul>
+  <li>Whisk everything together.</li>
+  <li>Pour a small circle into a hot pan.</li>
+  <li>Wait for bubbles to appear.</li>
+</ul>
+```
+
+```code recipe.html#sol-pancakes
+<h1>Pancakes</h1>
+<h2>You need</h2>
+<ul>
+  <li>1 cup of flour</li>
+  <li>1 egg</li>
+  <li>1 cup of milk</li>
+</ul>
+<h2>Method</h2>
+<ol>
+  <li>Whisk everything together.</li>
+  <li>Pour a small circle into a hot pan.</li>
+  <li>Wait for bubbles to appear.</li>
+  <li>Flip it and cook the other side.</li>
+</ol>
+```
+
 ```teacher
 summary: Students make bulleted and numbered lists, keep every item inside its list, and put a list inside an item.
 time: 45
@@ -246,6 +293,7 @@ solutions:
   step-4#t2: page.html#sol-bring
   step-4#t3: page.html#sol-inner
   step-6: page.html#sol-make
+  step-7: recipe.html#sol-pancakes
 struggle: "Keeping every li inside its list. Turn on Boxes and ask which box each item sits in, rather than moving the tag for them."
 class:
   activities:
