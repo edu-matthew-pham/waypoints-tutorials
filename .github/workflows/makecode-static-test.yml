@@ -29,6 +29,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    # Arcade needs microsoft/pxt-arcade-sim (private) and also fails its own hex step, so it is an experiment.
+    continue-on-error: ${{ matrix.target == 'arcade' }}
     strategy:
       fail-fast: false
       matrix:
@@ -196,6 +198,37 @@ jobs:
             echo "Requests the static server could not answer:"
             echo '```'; grep '^404' "$RUNNER_TEMP/serve.log" | sort | uniq -c | sort -rn | head -20; echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+
+      # Is a self-hosted picture the same picture? Compares each one with the live site's (drawn by makecode.com).
+      # Blocks should match closely; simulator pictures can differ in what a running program shows.
+      - name: Compare with the live site
+        if: matrix.target == 'microbit'
+        run: |
+          command -v compare >/dev/null || sudo apt-get install -y -qq imagemagick > /dev/null
+          LIVE=https://tutorials.learningwaypoints.com/_pictures
+          cd "$GITHUB_WORKSPACE/dist/_pictures"
+          : > "$RUNNER_TEMP/cmp.txt"
+          for f in $(find makecode makecode-out -name '*.png' | sort); do
+            if ! curl -sf -m 20 -o "$RUNNER_TEMP/live.png" "$LIVE/$f"; then echo "missing $f" >> "$RUNNER_TEMP/cmp.txt"; continue; fi
+            a=$(identify -format '%wx%h' "$f"); b=$(identify -format '%wx%h' "$RUNNER_TEMP/live.png")
+            if [ "$a" != "$b" ]; then echo "size $f static=$a live=$b" >> "$RUNNER_TEMP/cmp.txt"; continue; fi
+            d=$(compare -metric AE -fuzz 3% "$f" "$RUNNER_TEMP/live.png" null: 2>&1 || true); d=${d%% *}
+            case "$d" in ''|*[!0-9]*) echo "error $f $d" >> "$RUNNER_TEMP/cmp.txt" ;; *) echo "diff $f $d $(( ${a%x*} * ${a#*x} ))" >> "$RUNNER_TEMP/cmp.txt" ;; esac
+          done
+          note() { echo "::notice title=$1::$(printf '%s\n' "$2" | cut -c1-260 | sed 's/%/%25/g' | awk '{printf "%s%%0A",$0}')"; }
+          for kind in makecode makecode-out; do
+            grep -E "^(missing|size|error|diff) $kind/" "$RUNNER_TEMP/cmp.txt" | awk -v k="$kind" '
+              { n++ }
+              $1=="missing" { miss++ }
+              $1=="size" { sz++; szl[sz]=$0 }
+              $1=="error" { er++ }
+              $1=="diff" { if ($3==0) same++; else { pct=100*$3/$4; if (pct<0.5) near++; else { far++; fl[far]=sprintf("%5.1f%% %s", pct, $2) } } }
+              END { printf "%s: %d pictures. identical: %d; within 0.5%% of pixels: %d; further apart: %d; different size: %d; not on live site: %d; compare errors: %d\n", k, n, same, near, far, sz, miss, er;
+                    for (i=1;i<=sz && i<=6;i++) print "  " szl[i];
+                    for (i=1;i<=far && i<=6;i++) print "  " fl[i] }' > "$RUNNER_TEMP/cmp-$kind.txt"
+            cat "$RUNNER_TEMP/cmp-$kind.txt"
+          done
+          note "compare with live site" "$(cat "$RUNNER_TEMP"/cmp-makecode.txt "$RUNNER_TEMP"/cmp-makecode-out.txt)"
 
       - name: Report pictures
         if: always()
