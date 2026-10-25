@@ -1,5 +1,6 @@
 ---
 title: Arcade advanced skills
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Go further with Arcade. Every sprite of a kind, functions and parameters, gravity and jumping, levels from lists, and power-ups that run out, ending in a power-ups challenge and a game of your own. Each unit points to a MakeCode skillmap that practises it.
 tagline: "Platformers, levels and power-ups: the skills behind bigger games."
 order: 2.5

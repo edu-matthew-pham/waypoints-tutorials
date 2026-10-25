@@ -1,5 +1,6 @@
 ---
 title: Deeper Python in the console
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "One idea at a time, in the console: text, lists, dictionaries and errors, then a text adventure built from all of them, saved to a file."
 tagline: "Text, lists and errors, then a text adventure that saves."
 order: 4

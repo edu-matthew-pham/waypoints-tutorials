@@ -1,5 +1,6 @@
 ---
 title: "micro:bit: talk and play"
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Name jobs as functions, send messages by radio and measure time, ending in a reaction game and a two-player radio duel.
 tagline: "Connect micro:bits by radio and build a reaction game to race a friend."
 order: 1.5

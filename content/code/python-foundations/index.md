@@ -1,5 +1,6 @@
 ---
 title: Python Foundations with Turtle
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Learn Python by drawing with a turtle.
 tagline: "Draw with code: commands, loops, values, choices and lists."
 order: 1

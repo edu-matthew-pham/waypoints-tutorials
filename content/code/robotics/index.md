@@ -1,5 +1,6 @@
 ---
 title: Robotics challenges
+years: "7-9"  # typical fit, shown as "Usually Years 7-9"; a guide, not a rule (25 Oct 2026)
 summary: Drive, sense and decide with a two-wheeled micro:bit robot. Each idea runs in the robot simulator first, then on a real robot.
 tagline: "Program a robot to drive, sense and decide."
 order: 3

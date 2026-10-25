@@ -1,5 +1,6 @@
 ---
 title: "Your site, for real"
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "Bring any page you have made (hand-built, Bootstrap or Vue) and get it ready for real people: check it works for everyone, then put it online. No new framework: it works the same on every page."
 tagline: "Make your page work for everyone, then put it online."
 order: 13

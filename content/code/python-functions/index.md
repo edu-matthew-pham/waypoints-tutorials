@@ -1,5 +1,6 @@
 ---
 title: Python functions and events
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Write your own functions, then use them to make a button and a game.
 tagline: "Build with code: functions, modules, events, then your own catch-the-turtle game."
 order: 1.5

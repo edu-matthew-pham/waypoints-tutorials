@@ -1,5 +1,6 @@
 ---
 title: Drawing and animation with p5.js
+years: "7-9"  # typical fit, shown as "Usually Years 7-9"; a guide, not a rule (25 Oct 2026)
 summary: "Draw and animate with JavaScript and p5.js: shapes, movement, decisions, lists, objects and functions, ending in a small game you build yourself."
 tagline: "Draw and animate with JavaScript."
 order: 9

@@ -1,5 +1,6 @@
 ---
 title: Secret messages
+years: "7-9"  # typical fit, shown as "Usually Years 7-9"; a guide, not a rule (25 Oct 2026)
 summary: Radio is a shared space, so how do you keep a message private, know it was not changed, and know who sent it? Build ciphers, a checksum and a challenge–response lock with micro:bits, then defend a radio door lock in a capture-the-flag finale.
 tagline: "Send secret radio messages, then defend a lock in a capture-the-flag."
 order: 5

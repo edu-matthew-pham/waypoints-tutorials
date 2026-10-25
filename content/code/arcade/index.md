@@ -1,5 +1,6 @@
 ---
 title: Arcade Foundations
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Make games with blocks in the Arcade simulator. Sprites, movement, speed, overlaps, score and lives, timers, decisions and projectiles, ending in Space dodger, a game built in milestones.
 tagline: "Make your own games with sprites, scores and lives."
 order: 2

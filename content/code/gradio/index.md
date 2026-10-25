@@ -1,5 +1,6 @@
 ---
 title: Apps with Gradio
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "Turn Python functions into apps with inputs and outputs: a greeter, a calculator with several inputs, and a quiz built from a list of questions, in an in-browser stand-in for Gradio that runs the same code as the real thing."
 tagline: "Turn your Python into apps people can click."
 order: 3

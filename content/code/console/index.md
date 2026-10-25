@@ -1,5 +1,6 @@
 ---
 title: "Console bridge: text in, text out"
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "input(), print() and a text menu: the same logic as the turtle courses, as text in and text out. Every Python extension starts here."
 tagline: "Make programs that ask questions and answer back."
 order: 2

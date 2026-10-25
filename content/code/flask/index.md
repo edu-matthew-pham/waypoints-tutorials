@@ -1,5 +1,6 @@
 ---
 title: Web apps with Flask
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "Your own HTML pages with Python behind them: routes, pages built from data, forms, saving to a file and JSON, ending with the same API in FastAPI."
 tagline: "Put Python behind your own web pages."
 order: 6

@@ -1,5 +1,6 @@
 ---
 title: Data detective
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "A real data set in Python: read a CSV, count, average and find the biggest, draw a bar chart, clean messy data and check it with test cases, then build a dashboard."
 tagline: "Find the story hiding in a real data set."
 order: 5

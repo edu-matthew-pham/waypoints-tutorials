@@ -20,7 +20,8 @@ export const norm = (s) => String(s || '').toLowerCase()
   .replace(/\b(?:year|yr|y)\s*(\d{1,2})\b/g, 'year$1')
   .replace(/[^a-z0-9. ]+/g, ' ').replace(/\s+/g, ' ').trim();
 
-const yearsLabel = (lo, hi) => (lo == null ? '' : lo === hi ? (lo === 0 ? 'Foundation' : `Year ${lo}`) : lo === 0 ? `Foundation–Year ${hi}` : `Years ${lo}–${hi}`);
+const yearsLabel0 = (lo, hi) => (lo == null ? '' : lo === hi ? (lo === 0 ? 'Foundation' : `Year ${lo}`) : lo === 0 ? `Foundation–Year ${hi}` : `Years ${lo}–${hi}`);
+const yearsLabel = (lo, hi, usual = false) => { const t = yearsLabel0(lo, hi); return t && usual ? `Usually ${t}` : t; };
 const yearTokens = (lo, hi) => { if (lo == null) return ''; let o = ''; for (let y = lo; y <= hi; y++) o += ` year${y}`; return o + (lo === 0 ? ' foundation' : ''); };
 // Years named in a title or summary: "Year 8 Chemistry", "(Year 8)", "Years 7–8".
 function yearsInText(text) {
@@ -63,11 +64,14 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     const named = titles.flatMap(yearsInText);
     return named.length ? span(named) : span([...codes.flatMap((c) => dyears(desc.get(c))), ...texts.flatMap(yearsInText)]);
   };
-  const courseCodes = new Map(), courseYears = new Map();
+  const courseCodes = new Map(), courseYears = new Map(), typical = new Set();
   for (const c of courses) {
     const ls = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === c.path);
     const codes = [...new Set(ls.flatMap(codesOf))];
     courseCodes.set(c.path, codes);
+    // `years: "6-8"` in a course's index.md (Code, 25 Oct 2026): its typical fit, which beats the standards' years.
+    const ty = String(dirNode(c.path).meta?.years || '').match(/^(\d{1,2})\s*[-–]\s*(\d{1,2})$|^(\d{1,2})$/);
+    if (ty) { courseYears.set(c.path, ty[3] ? [+ty[3], +ty[3]] : [+ty[1], +ty[2]]); typical.add(c.path); continue; }
     courseYears.set(c.path, yearsOf(codes, [dirNode(c.path).summary, ...(dirNode(c.path).meta?.units || []).map((u) => `${u.title} ${u.summary || ''}`)], [c.title]));
   }
   const entries = [];
@@ -82,12 +86,12 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
   for (const c of courses) {
     const d = dirNode(c.path), [lo, hi] = courseYears.get(c.path);
     const first = lessons.find((l) => l.slug.startsWith(c.path + '/'));
-    add({ t: c.title, u: `${c.path}/`, s: subjTitle(c.path), sp: c.path.split('/')[0], c: '', y: yearsLabel(lo, hi), ty: 'course', d: short(d.summary),
+    add({ t: c.title, u: `${c.path}/`, s: subjTitle(c.path), sp: c.path.split('/')[0], c: '', y: yearsLabel(lo, hi, typical.has(c.path)), ty: 'course', d: short(d.summary),
       k: [pwOf(c.path), play[c.path]?.label, LANG[first?.language], subjTitle(c.path), yearTokens(lo, hi), stdWords(courseCodes.get(c.path)), d.meta?.tagline, d.summary].filter(Boolean).join(' ') });
     for (const u of d.meta?.units || []) {
       if (!lessons.some((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id)) continue;
-      const [ulo, uhi] = yearsOf(lessons.filter((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id).flatMap(codesOf), [u.summary], [u.title]);
-      add({ t: u.title, u: `${c.path}/#unit-${u.id}`, s: subjTitle(c.path), sp: c.path.split('/')[0], c: c.title, y: yearsLabel(ulo ?? lo, uhi ?? hi), ty: 'unit', d: short(u.summary),
+      const [ulo, uhi] = typical.has(c.path) ? [null, null] : yearsOf(lessons.filter((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id).flatMap(codesOf), [u.summary], [u.title]);
+      add({ t: u.title, u: `${c.path}/#unit-${u.id}`, s: subjTitle(c.path), sp: c.path.split('/')[0], c: c.title, y: yearsLabel(ulo ?? lo, uhi ?? hi, typical.has(c.path)), ty: 'unit', d: short(u.summary),
         k: [c.title, pwOf(c.path), play[c.path]?.label, subjTitle(c.path), yearTokens(ulo ?? lo, uhi ?? hi), u.summary].filter(Boolean).join(' ') });
     }
   }
@@ -95,8 +99,8 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     const cp = l.slug.split('/').slice(0, -1).join('/'), cn = dirNode(cp), codes = codesOf(l);
     const unit = (cn.meta?.units || []).find((u) => u.id === l.unit);
     const [lo0, hi0] = courseYears.get(cp) || [null, null];
-    const [lo, hi] = yearsOf(codes, [], [l.title]);
-    add({ t: l.title.replace(/^Optional:\s*/, ''), u: `${l.slug}/`, s: subjTitle(l.slug), sp: l.slug.split('/')[0], c: cn.title, y: yearsLabel(lo ?? lo0, hi ?? hi0), ty: 'lesson', d: short(l.summary || l.hook),
+    const [lo, hi] = typical.has(cp) ? [null, null] : yearsOf(codes, [], [l.title]);
+    add({ t: l.title.replace(/^Optional:\s*/, ''), u: `${l.slug}/`, s: subjTitle(l.slug), sp: l.slug.split('/')[0], c: cn.title, y: yearsLabel(lo ?? lo0, hi ?? hi0, lo == null && typical.has(cp)), ty: 'lesson', d: short(l.summary || l.hook),
       k: [cn.title, unit?.title, pwOf(cp), play[cp]?.label, LANG[l.language], subjTitle(l.slug), yearTokens(lo ?? lo0, hi ?? hi0), stdWords(codes), ideaWords(l), l.summary].filter(Boolean).join(' ') });
   }
   for (const sub of STANDARD_SUBJECTS) {
@@ -123,5 +127,5 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'For science teachers', u: 'science-teachers/', d: 'How the science boards sit beside class practicals, and a draft list of common Year 7 to 10 practicals to correct.' },
     { t: 'For maths teachers', u: 'maths-teachers/', d: 'What is here for Years 7 and 8 maths and a ten-minute tour.' },
   ]) add({ ...p, s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', k: `${p.t} ${p.d} teacher teachers` });
-  return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel };
+  return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel, typical: (path) => typical.has(path) };
 }

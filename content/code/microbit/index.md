@@ -1,5 +1,6 @@
 ---
 title: micro:bit Foundations
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Program a micro:bit with blocks in the simulator. Pictures, loops, buttons, variables, sensors, decisions and lists, ending in a pocket pet you build yourself.
 tagline: "Make a micro:bit show pictures, sense the world and look after a pocket pet."
 order: 1

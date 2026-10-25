@@ -1,5 +1,6 @@
 ---
 title: AI robots
+years: "7-9"  # typical fit, shown as "Usually Years 7-9"; a guide, not a rule (25 Oct 2026)
 summary: Drive a robot with a model you trained, on the computer or on your wrist. Turn labels into moves, keep the robot safe when the model is unsure or goes quiet, and make it more careful where a mistake costs more.
 tagline: "Drive a robot with an AI model you trained."
 order: 5

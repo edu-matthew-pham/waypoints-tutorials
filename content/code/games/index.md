@@ -1,5 +1,6 @@
 ---
 title: Games with microStudio
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "Make a real game in Python on microStudio, a free game engine in the browser: a game loop, keys, stars as objects, catching and scoring, then sprites, sound and sharing."
 tagline: "Make a real game in a real game engine."
 order: 8

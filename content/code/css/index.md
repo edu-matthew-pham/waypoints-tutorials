@@ -1,5 +1,6 @@
 ---
 title: Layout and components
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Control how a page is laid out, with boxes, Flexbox, Grid and components that repeat.
 tagline: "Lay out a page like a real website, on a laptop and on a phone."
 order: 2.5

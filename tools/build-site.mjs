@@ -684,7 +684,7 @@ for (const node of dirs.values()) {
     // optional lessons; "Do first" is the pathway's `after:`. Copying gives the course address only (no QR code: no phones).
     const strip = (() => {
       const [ylo, yhi] = SEARCH.yearsOfCourse(node.path), core = courseLessons.filter((l) => !l.optional).length, opt = courseLessons.length - core, first = afterOf(node.path);
-      const facts = [ylo != null ? ['For', SEARCH.yearsLabel(ylo, yhi)] : null, ['Lessons', `${core}${opt ? ` (and ${opt} optional)` : ''}`],
+      const facts = [ylo != null ? (SEARCH.typical(node.path) ? ['Usually', SEARCH.yearsLabel(ylo, yhi)] : ['For', SEARCH.yearsLabel(ylo, yhi)]) : null, ['Lessons', `${core}${opt ? ` (and ${opt} optional)` : ''}`],
         first ? ['Do first', first.length ? first.join(' and ') : 'No earlier course needed'] : null].filter(Boolean);
       const guide = courseLessons.some((l) => l.teacher) ? `<a href="${up}teach/${node.path}/">Teacher guide</a>` : '';
       const cov = COVERAGE.byCourse.get(node.path);
@@ -761,7 +761,7 @@ for (const node of dirs.values()) {
         const row = (c) => {
           if (!c.path) return `<li class="later">${esc(c.title || '')}<span>coming later</span></li>`;
           const [lo, hi] = SEARCH.yearsOfCourse(c.path), n = lessonCount(c.path);
-          return `<li><a href="${up}${esc(c.path)}/">${esc(dirs.get(c.path)?.title || c.path)}</a><span>${lo != null ? `${esc(SEARCH.yearsLabel(lo, hi))} · ` : ''}${n} lesson${n === 1 ? '' : 's'}</span></li>`;
+          return `<li><a href="${up}${esc(c.path)}/">${esc(dirs.get(c.path)?.title || c.path)}</a><span>${lo != null ? `${esc(SEARCH.yearsLabel(lo, hi, SEARCH.typical(c.path)))} · ` : ''}${n} lesson${n === 1 ? '' : 's'}</span></li>`;
         };
         const cs = pw.courses || [], f = cs.filter((c) => (c.stage || 'foundations') === 'foundations'), x = cs.filter((c) => c.stage === 'extensions');
         return `<section><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)} <span aria-hidden="true">›</span></a></h2><ul>${f.map(row).join('')}${x.length ? `<li class="pst">Then</li>${x.map(row).join('')}` : ''}</ul></section>`;

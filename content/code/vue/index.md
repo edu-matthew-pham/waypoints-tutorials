@@ -1,5 +1,6 @@
 ---
 title: Apps with Vue
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "Build pages that keep up with their data by themselves: data shown with {{ }}, lists with v-for, choices with v-if, events and inputs, computed values and components, ending in a to-do app. An optional last lesson builds the same app in Vue, Preact and Svelte."
 tagline: "Build apps where the page keeps up with your data by itself."
 order: 12

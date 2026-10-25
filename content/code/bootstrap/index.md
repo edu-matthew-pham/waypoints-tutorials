@@ -1,5 +1,6 @@
 ---
 title: Pages with Bootstrap
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "Rebuild the club page with Bootstrap's ready-made parts: buttons, a navbar, cards, a grid and a form, styled by class names instead of your own CSS. Then compare it with the hand-built page and make Bootstrap look like yours."
 tagline: "Make a page look polished in minutes with ready-made parts."
 order: 11

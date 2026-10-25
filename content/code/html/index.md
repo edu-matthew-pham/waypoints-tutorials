@@ -1,5 +1,6 @@
 ---
 title: Structure and style a page
+years: "6-8"  # typical fit, shown as "Usually Years 6-8"; a guide, not a rule (25 Oct 2026)
 summary: Build web pages by typing HTML and CSS and watching the page change.
 tagline: "Build your own web pages and watch them change as you type."
 order: 2

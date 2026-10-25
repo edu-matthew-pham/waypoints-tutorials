@@ -1,5 +1,6 @@
 ---
 title: The DOM and the browser console
+years: "9-10"  # typical fit, shown as "Usually Years 9-10"; a guide, not a rule (25 Oct 2026)
 summary: "Make a real web page react with JavaScript: find elements, change them, listen for clicks and typing, and keep a list and a score, ending in a quiz page you build."
 tagline: "Make a web page react when people click and type."
 order: 10
