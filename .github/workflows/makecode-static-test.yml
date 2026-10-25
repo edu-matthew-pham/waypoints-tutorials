@@ -153,7 +153,7 @@ jobs:
           MAKECODE_RENDER: http://localhost:8300
           MAKECODE_EDITOR: http://localhost:8300/index.html
         run: |
-          WP_DEADLINE=$(( $(date +%s) + ${{ inputs.minutes }} * 60 )) node tools/render-pictures.mjs --out "$RUNNER_TEMP/pics" 2>&1 | tee "$RUNNER_TEMP/pictures.log"
+          WP_DEADLINE=$(( $(date +%s) + ${{ inputs.minutes }} * 60 )) node tools/render-pictures.mjs 2>&1 | tee "$RUNNER_TEMP/pictures.log"
           # Keep only this target's pictures: Arcade blocks are in makecode/arcade/, Arcade output pictures are under
           # an arcade course folder; everything else is micro:bit.
           # Lesson programs' blocks are saved by hash (makecode/code/<hash>.png), so their ids are worked out as
@@ -169,7 +169,7 @@ jobs:
           EOF
           node "$RUNNER_TEMP/arcade-ids.mjs" | sed 's#^#makecode/#; s#$#.png#' > "$RUNNER_TEMP/arcade-files.txt"
           echo "makecode/arcade/" >> "$RUNNER_TEMP/arcade-files.txt"
-          P="$RUNNER_TEMP/pics/_pictures"
+          P="$GITHUB_WORKSPACE/dist/_pictures"
           cd "$P"
           for f in $(find makecode makecode-out -name '*.png' 2>/dev/null); do
             case "$f" in makecode-out/*arcade*) a=1 ;; makecode-out/*) a=0 ;; *) grep -qxF "$f" "$RUNNER_TEMP/arcade-files.txt" || [ "${f#makecode/arcade/}" != "$f" ] && a=1 || a=0 ;; esac
@@ -190,9 +190,12 @@ jobs:
         if: always()
         run: |
           note() { echo "::notice title=$1::$(printf '%s\n' "$2" | cut -c1-260 | sed 's/%/%25/g' | awk '{printf "%s%%0A",$0}')"; }
-          P="$RUNNER_TEMP/pics/_pictures"
+          P="$GITHUB_WORKSPACE/dist/_pictures"
           note "pictures ${{ matrix.target }}: counts" "blocks: $(find "$P/makecode" -name '*.png' 2>/dev/null | wc -l); simulator: $(find "$P/makecode-out" -name '*.png' 2>/dev/null | wc -l)"
-          [ -f "$RUNNER_TEMP/pictures.log" ] && note "pictures ${{ matrix.target }}: log" "$(grep -v '^$' "$RUNNER_TEMP/pictures.log" | tail -n 60)"
+          if [ -f "$RUNNER_TEMP/pictures.log" ]; then
+            note "pictures ${{ matrix.target }}: log (without per-picture lines)" "$(grep -v '^$' "$RUNNER_TEMP/pictures.log" | grep -v 'draws nothing' | head -n 20; echo ...; grep -v 'draws nothing' "$RUNNER_TEMP/pictures.log" | tail -n 25)"
+            note "pictures ${{ matrix.target }}: per-picture failures" "draws nothing: $(grep -c 'draws nothing' "$RUNNER_TEMP/pictures.log")"$'\n'"$(grep -E '^- makecode' "$RUNNER_TEMP/pictures.log" | grep -v 'draws nothing' | cut -c1-250 | head -n 12)"
+          fi
           [ -f "$RUNNER_TEMP/serve.log" ] && note "pictures ${{ matrix.target }}: static server 404s" "$(grep '^404' "$RUNNER_TEMP/serve.log" | sort | uniq -c | sort -rn | head -30)"
 
       - uses: actions/upload-artifact@v4
@@ -200,7 +203,7 @@ jobs:
         with:
           name: makecode-${{ matrix.target }}-pictures
           path: |
-            ${{ runner.temp }}/pics/_pictures
+            dist/_pictures
             ${{ runner.temp }}/pictures.log
             ${{ runner.temp }}/serve.log
           retention-days: 7
