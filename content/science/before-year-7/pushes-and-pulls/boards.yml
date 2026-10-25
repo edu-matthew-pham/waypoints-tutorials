@@ -1,0 +1,9 @@
+# Boards for "Pushes and pulls".
+
+# region: wagon
+widget: forces
+object: Wagon
+mass: 5
+force P: right, 10, Push by the child, adjust 0-40 by 5
+force Q: left, 20, Pull by the dog, adjust 0-40 by 5
+# endregion

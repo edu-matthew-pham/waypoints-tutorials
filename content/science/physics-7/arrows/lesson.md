@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S7U04 n1
+assumes: [AC9S4U03 n1]
 woven: [AC9S7H02, AC9S7I04]
 unit: forces
 title: How big, which way?

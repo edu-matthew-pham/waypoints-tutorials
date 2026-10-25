@@ -1,6 +1,7 @@
 ---
 order: 2
 node: AC9S7U04 n2
+assumes: [AC9S4U03 n1]
 unit: forces
 title: Does balanced mean no forces?
 introduces: [balanced-forces]

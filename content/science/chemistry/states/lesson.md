@@ -1,6 +1,7 @@
 ---
 order: 2
 node: AC9S7U05 n2
+assumes: [AC9S5U04 n2]
 woven: [AC9S7H01, AC9S7I05]
 unit: particles
 title: Why does a gas fill its container?

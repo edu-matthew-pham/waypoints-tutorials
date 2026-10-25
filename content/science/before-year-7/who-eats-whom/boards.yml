@@ -1,0 +1,12 @@
+# Boards for "Who eats whom? A first look".
+
+# region: chain
+widget: foodweb
+organism G: Grass
+organism H: Grasshopper
+organism L: Lizard
+organism K: Kookaburra
+eats H: G
+eats L: H
+eats K: L
+# endregion

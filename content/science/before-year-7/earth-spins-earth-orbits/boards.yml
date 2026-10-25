@@ -1,0 +1,6 @@
+# Boards for "Earth spins, Earth orbits".
+
+# region: earth
+widget: sky
+mode: earth
+# endregion

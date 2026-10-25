@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S7U03 n1
+assumes: [AC9S6U02 n1, AC9S6U02 n2]
 woven: [AC9S7I05]
 unit: earth
 title: Spinning and orbiting

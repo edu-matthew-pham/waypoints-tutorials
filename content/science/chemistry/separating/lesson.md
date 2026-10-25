@@ -1,6 +1,7 @@
 ---
 order: 7
 node: AC9S7U06 n2
+assumes: [AC9S6U04 n1]
 woven: [AC9S7H04, AC9S7I06]
 unit: mixtures
 title: How do you separate a mixture?

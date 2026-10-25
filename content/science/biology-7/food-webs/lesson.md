@@ -1,6 +1,7 @@
 ---
 order: 4
 node: AC9S7U02 n1
+assumes: [AC9S4U01 n1, AC9S4U01 n4]
 woven: [AC9S7I04]
 unit: foodwebs
 title: Who eats whom?

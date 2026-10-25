@@ -1,6 +1,7 @@
 ---
 order: 6
 node: AC9S7U06 n1
+assumes: [AC9S4U04 n1]
 woven: [AC9S7I06]
 unit: mixtures
 title: Pure substance or mixture?

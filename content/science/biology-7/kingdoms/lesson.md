@@ -1,6 +1,7 @@
 ---
 order: 2
 node: AC9S7U01 n2
+assumes: [AC9S3U01 n1, AC9S5U01 n1]
 woven: [AC9S7H01]
 unit: classification
 title: Plant, animal or something else?

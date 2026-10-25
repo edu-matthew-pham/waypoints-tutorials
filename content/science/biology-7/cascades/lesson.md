@@ -2,7 +2,7 @@
 order: 6
 node: AC9S7U02 n4
 woven: [AC9S7H03, AC9S7I01]
-assumes: [AC9S7U02 n3]   # abiotic factors and population effects: taught in class (no tutorial yet)
+assumes: [AC9S7U02 n3, AC9S6U01 n2]   # abiotic factors and population effects: taught in class (no tutorial yet)
 unit: foodwebs
 title: What if the dingo disappeared?
 summary: A biotic factor is a living part of an ecosystem. When one population changes, the effect ripples along the food web, beyond the species directly linked to it. Tracing the links lets you predict the cascade.

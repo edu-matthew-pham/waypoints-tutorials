@@ -1,6 +1,7 @@
 ---
 order: 4
 node: AC9S7U05 n4
+assumes: [AC9S3U04 n2, AC9S3U04 n3]
 woven: [AC9S7I05]
 unit: particles
 title: Where does the heat go?

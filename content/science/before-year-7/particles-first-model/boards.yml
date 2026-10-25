@@ -1,0 +1,6 @@
+# Boards for "Particles: the first model".
+
+# region: zoom
+widget: zoom
+samples: ice, water, steam
+# endregion
