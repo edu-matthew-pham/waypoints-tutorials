@@ -1,0 +1,15 @@
+# Practice for "Real measurements".
+templates:
+  - q: "{a} mg is {a} × 10^k µg. What's k?"
+    vars: { a: "2..9" }
+    answer: "3"
+    explain: "1 mg = 10³ µg."
+  - q: "{a} × 10^{m} m is {a} × 10^k nm. What's k?"
+    vars: { a: "2..9", m: "-6..-1" }
+    answer: "{m + 9}"
+    explain: "1 m = 10⁹ nm, so the power goes up by 9: {m} + 9 = {m + 9}."
+  - q: "{a} µg is how many mg as a decimal?"
+    vars: { a: "2..9" }
+    answer: "{a / 1000}"
+    form: simplified
+    explain: "1 µg = 10⁻³ mg, so {a} µg = {a / 1000} mg."

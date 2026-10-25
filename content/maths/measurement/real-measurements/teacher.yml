@@ -1,0 +1,39 @@
+summary: "Students convert between unit prefixes by dividing powers of 10 and use scientific notation for very small and very large measurements, including a label and a note with the same dose written two ways (AC9M9M02, node 3)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can convert between prefixes using powers of 10.
+  - I can compare measurements written in scientific notation.
+  - I can say what a slip of 1000 means for a dose.
+struggle: "Which way to convert. Ask students: after the conversion, should the number be bigger or smaller?"
+before: |
+  Do the Run board yourself first. Students need Calculating in scientific notation.
+
+  The one idea: a prefix is a power of 10, so converting divides one power by the other. The common mistake is multiplying the powers (Dev's working).
+
+  Prefixes are from the BIPM SI table. The doses are invented for the lesson; do not use them as real doses.
+running:
+  - "Predict: take a show of hands. Those who chose 1000 times either way didn't convert the units first."
+  - "Run: ask students whether the number should get bigger or smaller when the unit gets smaller."
+  - "Paper: the try-one after the worked example and the 1000 times slip in Make are worked on paper first. Books out, and look for both amounts in the same unit."
+  - "Modify: before 3 mm to nanometres, ask which unit is smaller."
+stuck:
+  - see: "A student gets 10⁻⁹ for milligrams to micrograms."
+    ask: "Did you multiply or divide the powers?"
+    fix: "Divide: 10⁻³ ÷ 10⁻⁶ = 10³."
+  - see: "A student says 0.25 mg is 25 µg."
+    ask: "How many micrograms in one milligram?"
+    fix: "1000: 0.25 × 1000 = 250."
+stretch: "A nanometre is a billionth of a metre. How many nanometres fit across a 1 mm dot?"
+support: "A ladder of prefixes: kilo, base, milli, micro, nano, with the power of 10 beside each."
+leads: |
+  Finishes AC9M9M02.
+
+  Where it leads: Year 10 growth and decay, science measurements.
+exit:
+  q: "How many micrograms are in 3 milligrams?"
+  a: "3000, or 3 × 10³."
+explain: |
+  Prefixes are powers of 10: milli is $10^{-3}$, micro is $10^{-6}$, nano is $10^{-9}$. To convert, divide one power by the other.
+
+  1 mg $= 10^{-3} \div 10^{-6}$ µg $= 10^{3}$ µg, so 0.25 mg is 250 µg.

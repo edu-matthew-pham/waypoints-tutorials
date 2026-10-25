@@ -1,0 +1,29 @@
+# Boards for "Real measurements". The board writes a × 10ᵏ out, to see a converted number in full.
+
+# region: run
+widget: placevalue
+mode: scientific
+slider a: 1, 9.9, 2.5
+slider k: -9, 12, 2
+# endregion
+
+# region: explain
+widget: placevalue
+mode: scientific
+a: 2.5
+slider k: -9, 12, 2
+# endregion
+
+# region: explain-pic
+widget: placevalue
+mode: scientific
+a: 2.5
+k: -1
+# endregion
+
+# region: vary
+widget: placevalue
+mode: scientific
+slider a: 1, 9.9, 3
+slider k: -9, 12, 6
+# endregion

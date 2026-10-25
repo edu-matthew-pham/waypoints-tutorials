@@ -1,0 +1,8 @@
+# Dev's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: dev
+Convert 0.25 mg to micrograms.
+1 mg = 10⁻³ g and 1 µg = 10⁻⁶ g.
+So 1 mg = 10⁻³ × 10⁻⁶ µg = 10⁻⁹ µg.
+So 0.25 mg = 0.25 × 10⁻⁹ µg.
+# endregion
