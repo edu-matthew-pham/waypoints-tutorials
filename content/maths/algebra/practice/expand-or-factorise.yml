@@ -1,0 +1,23 @@
+# Practice for "Expand or factorise?".
+templates:
+  - q: "Expand (x - {a})(x + {b})."
+    vars: { a: "1..9", b: "1..9" }
+    where: "a != b"
+    answer: "x^2 {b - a|sc}x - {a * b}"
+    form: expanded
+    explain: "−{a} + {b} = {b - a} and −{a} × {b} = −{a * b}."
+  - q: "Factorise x^2 {b - a|sc}x - {a * b}."
+    vars: { a: "1..9", b: "1..9" }
+    where: "a != b"
+    answer: "(x - {a})(x + {b})"
+    form: factorised
+    explain: "−{a} and {b} multiply to −{a * b} and add to {b - a}."
+  - q: "The curve is y = (x - {a})(x - {b}), with {a} smaller than {b}. Where does it meet the x-axis on the left? Type the number."
+    vars: { a: "1..8", b: "2..9" }
+    where: "a < b"
+    answer: "{a}"
+    explain: "x − {a} = 0 at x = {a}."
+  - q: "The curve is y = (x - {a})(x - {b}). What is y when x = 0?"
+    vars: { a: "1..9", b: "1..9" }
+    answer: "{a * b}"
+    explain: "(0 − {a})(0 − {b}) = {a * b}."

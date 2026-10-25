@@ -1,0 +1,51 @@
+# Boards for "Expand or factorise". The dashed curve is y = x² − 6x + 5; the solid one is (x − p)(x − q).
+
+# region: run
+widget: graph
+x: -1, 8
+y: -6, 10
+grid: 1
+slider p: 0, 8, 0
+slider q: 0, 8, 8
+plot: y = x^2 - 6x + 5, dashed
+plot: y = (x - p)(x - q)
+point A: p, 0
+point B: q, 0
+# endregion
+
+# region: explain
+widget: graph
+x: -1, 8
+y: -6, 10
+grid: 1
+slider p: 0, 8, 0
+slider q: 0, 8, 6
+plot: y = x^2 - 5x + 6, dashed
+plot: y = (x - p)(x - q)
+point A: p, 0
+point B: q, 0
+# endregion
+
+# region: explain-pic
+widget: graph
+x: -1, 8
+y: -6, 10
+grid: 1
+slider p: 0, 8, 2
+slider q: 0, 8, 3
+plot: y = (x - p)(x - q)
+point A: p, 0
+point B: q, 0
+# endregion
+
+# region: vary
+widget: graph
+x: -9, 9
+y: -20, 30
+grid: 1, 5
+slider p: -8, 8, 2
+slider q: -8, 8, 6
+plot: y = (x - p)(x - q)
+point A: p, 0
+point B: q, 0
+# endregion

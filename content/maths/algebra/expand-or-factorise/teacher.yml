@@ -1,0 +1,37 @@
+summary: "Students see expanding and factorising as undoing each other, match a curve y = (x − p)(x − q) to an expanded one on a graph, and use each form for what it shows: meeting points or start value (AC9M9A02, node 4)."
+time: 45
+timing: "Predict and Run 8 min · Investigate 15 min · Modify 12 min · Practise and Make 10 min"
+goals:
+  - I can expand and factorise to move between the two forms.
+  - I can read where a curve meets the x-axis from the factorised form.
+  - I can find where it starts from the expanded form.
+struggle: "Choosing which form to use. Ask students what the question wants: where it meets the axis (factorise) or where it starts (the last number)."
+before: |
+  Do the Run board yourself first. Students need Factorising quadratics and The pattern. Graphing parabolas is not assumed: the board just shows a curve and where it meets the axis.
+
+  The one idea: the two forms are the same curve. Factorised shows where it meets zero; expanded shows where it starts (the last number). The common mistake is checking an expansion without comparing every term (Leo's working).
+running:
+  - "Predict: take a show of hands. Those who chose the expanded form can't yet say why a product being zero helps."
+  - "Run: ask students to say each point's coordinates before moving on."
+  - "Paper: the try-one after the worked example and the bowl in Make are worked on paper first. Books out, and look for both forms side by side."
+  - "Modify: before (x − 3)², ask how many meeting points they expect."
+stuck:
+  - see: "A student says (x − 2)(x − 5) meets the axis at −2 and −5."
+    ask: "What x makes x − 2 equal zero?"
+    fix: "x = 2: the sign flips from the bracket."
+  - see: "A student says the curve starts at the middle number."
+    ask: "What's y when x = 0?"
+    fix: "Put x = 0 in: the last number."
+stretch: "What does x² + 4 look like? Can you factorise it? Use the graph."
+support: "A two-column table: factorised form on the left, expanded on the right, with the meeting points and the start value to fill in."
+leads: |
+  Continues AC9M9A02 node 4.
+
+  Where it leads: solving quadratic equations, and parabolas and their turning points (Year 10).
+exit:
+  q: "Where does y = (x + 4)(x − 7) meet the x-axis?"
+  a: "At x = −4 and x = 7."
+explain: |
+  Expanding and factorising are opposites. $(x - 1)(x - 5)$ and $x^2 - 6x + 5$ are the same curve.
+
+  Factorised form shows where it meets the x-axis: each bracket is zero, at $x = 1$ and $x = 5$. Expanded form shows where it starts: put $x = 0$ in to get 5.

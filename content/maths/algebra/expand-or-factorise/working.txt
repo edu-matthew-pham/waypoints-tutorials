@@ -1,0 +1,9 @@
+# Leo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: leo
+Factorise x² + x − 6.
+Two numbers that multiply to −6: 2 and −3.
+So x² + x − 6 = (x + 2)(x − 3).
+Check: (x + 2)(x − 3) = x² − 3x + 2x − 6 = x² − x − 6.
+That matches, so it's right.
+# endregion
