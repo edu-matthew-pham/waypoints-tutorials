@@ -43,16 +43,16 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 
 ### Open questions for Matthew
 
-1. Maths when, where and why: did your review of the pilot happen? `maths-when-where-why.md` › Next still says the retrofit waits for it, but it was built in the 25 Oct pass.
-2. ICT: approve Investigating and judging information and Staying safe and well, or wait for the colleague pilots?
+1. Maths when, where and why: **answered 26 Oct:** no separate review; the aim is a full suite to pilot. Retrofit covers Years 7–10 (maths-when-where-why.md › Next updated).
+2. ICT: **approved 26 Oct:** build Investigating and judging information and Staying safe and well (being built; Staying safe still needs the school wellbeing review before class use).
 3. Before Year 7 catch-up (22 lessons, pilot 2 first): go or not?
 4. Engineering OpenSCAD proposal: approve the one-lesson pilot on the `fab` widget, or park?
 5. Site content licence: still open in systems, engineering and Make your own version (no licence file).
-6. Should a chat refresh the six Project docs above?
+6. Project docs: **answered 26 Oct:** this chat orchestrates for now and updated the docs above (status blocks added; plan text kept).
 
 ### Needs your approval
 
-- Commit trailer: this session's reminders gave no `Claude-Session` line, so the commit carries only `Co-Authored-By`.
+- Commit trailer: the 35c0dee6 commit has no `Claude-Session` line (none was given at the time); later commits carry it. Nothing else is blocked.
 
 **Amended (25 Oct 2026, later):** search plus everything-at-once browsing was two extremes, and the pathway links had gone from the menu. Pathways are back under Subjects (links to their trail maps, so students are one click from a trail), and "List for teachers" on a subject page is now a one-screen index of pathways and courses (years, lesson counts); full cards stay on each pathway page. Trails stay the default view; the search box is unchanged.
 **Maths pathways, decided to wait (25 Oct 2026):** the four maths pathways (Algebra, Number, Geometry and measurement, Statistics and probability) merge the curriculum's six strands (Measurement with Space, Statistics with Probability). Kept as is: a pathway can hold one unit or an umbrella of two, so splitting a course later changes no navigation. ACARA's progressions divide Number into concepts and modelling, which our copy of the data does not carry; check the Kit data, and the curriculum map's strand rows, if teachers plan that way. Revisit after teacher feedback.
