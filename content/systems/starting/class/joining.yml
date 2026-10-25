@@ -1,0 +1,29 @@
+inquiry:
+  q: "Should a school put its computers on cables or Wi-Fi?"
+  prompts:
+    - "Which computers move around? Which stay on a desk?"
+    - "What slows Wi-Fi down?"
+  notes: "Both, depending on the device: cables for desktops and printers that never move (fastest, steadiest), Wi-Fi for laptops and tablets. The Make sort is this argument."
+activities:
+  - at: start
+    kind: activity
+    title: "Our school network"
+    minutes: 4
+    do: |
+      List every device in this room that's on a network. Next to each, write how it's joined: cable, Wi-Fi or mobile data.
+    notes: "Interactive whiteboard (often cable), laptops (Wi-Fi), the teacher's phone (Wi-Fi or mobile). The printer down the hall shows the network reaches beyond the room."
+  - at: modify
+    kind: activity
+    title: "Walk away from the router"
+    minutes: 3
+    do: |
+      If your laptop shows Wi-Fi bars, watch them as you walk to the far side of the room or into the corridor.
+    notes: "Optional, if it's safe and allowed. It's the board's distance slider, for real."
+questions:
+  - at: investigate
+    title: "What is the internet?"
+    type: question
+    q: "What is the internet?"
+    options: ["Lots of networks joined together", "One huge computer", "Your home Wi-Fi", "A website"]
+    answer: 0
+    explain: "Homes, schools and companies each have a network; the internet joins them."

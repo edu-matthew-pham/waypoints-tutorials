@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why not send a message in one piece? Wouldn't that be simpler?"
+  prompts:
+    - "What if a road on the way is blocked?"
+    - "What if everyone's huge messages were going at once?"
+  notes: "Small pieces share the network fairly and each can go round a broken link. The cost is that they can arrive out of order, which the numbers fix."
+activities:
+  - at: predict
+    kind: activity
+    title: "Pass the pieces"
+    minutes: 6
+    do: |
+      Cut SEE YOU AT LUNCH into four numbered strips. Send them from the front to the back of the room by four different routes (different rows of students).
+    notes: "Have one route go the long way round. The student at the back lays them out in arrival order first, then in number order."
+  - at: modify
+    kind: activity
+    title: "A broken link"
+    minutes: 3
+    do: |
+      One row of students 'breaks' (hands in laps). Send the strips again. Do they still arrive?
+    notes: "They go round. The internet has many paths for this reason."
+questions:
+  - at: investigate
+    title: "Back in order"
+    type: question
+    q: "Pieces arrive as 3, 1, 4, 2. How does the computer read the message?"
+    options: ["It puts them in order by their numbers", "It reads them as they arrived", "It asks the router", "It can't"]
+    answer: 0
+    explain: "The numbers say the order: 1, 2, 3, 4."

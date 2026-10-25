@@ -1,0 +1,29 @@
+inquiry:
+  q: "Your phone number is digits. Should a computer store it as a number or as text?"
+  prompts:
+    - "Would you ever add two phone numbers?"
+    - "What happens to the 0 at the front if it's stored as a number?"
+  notes: "Text: no maths is ever done with it, and a number would drop the leading 0 (0412 becomes 412). The rule students should leave with: will we do maths with it? Then a number. If not, text."
+activities:
+  - at: predict
+    kind: activity
+    title: "Join or add?"
+    minutes: 3
+    do: |
+      Two cards: 12 and 3. One group joins them like words (put them side by side). The other adds them. Compare.
+    notes: "123 and 15. Same keys, different jobs. The board shows why: as text, 12 is two characters."
+  - at: make
+    kind: discussion
+    title: "Year level: number or text?"
+    minutes: 3
+    do: |
+      Stand on the left if year level should be a number, on the right if text. Be ready to say what the club will do with it.
+    notes: "Either is defensible until someone says 'next year we add 1'. That job makes it a number."
+questions:
+  - at: investigate
+    title: "Which type?"
+    type: question
+    q: "A shop's app adds up prices for a total. How should it store each price?"
+    options: ["As a number", "As text", "As letters", "It doesn't matter"]
+    answer: 0
+    explain: "It does maths with prices, so they're numbers."

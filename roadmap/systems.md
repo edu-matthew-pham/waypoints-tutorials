@@ -157,6 +157,10 @@ Why: primary coverage of AC9TDI6K01–6K04 is uneven, and every Years 7–8 cour
 
 **Decisions for Matthew:** (1) one "Start here" course, or a short course at the start of each pathway (Data, Hardware, Networks); (2) the new `parts` widget, or teach 6K01 with pictures and question checks only; (3) explicit shape (recommended at this age) or the inquiry 5E shape Packets uses.
 
+## Done (25 Oct 2026): class plans, first batch
+
+`class/<lesson>.yml` for all eight Starting out lessons and Cyber › Passwords (none of the 56 systems lessons had one). Starting out leans on unplugged, whole-class versions of each board (volunteers as switches, dot cards and parts; strips passed by different routes); Passwords keeps the inquiry order (guesses collected without judging, names only after students compare explanations). Each has an `inquiry` where there's a real disagreement, two to four activities and one class question. Decks pass `check-decks`. Next: the other courses, in the order a class is likely to meet them (Data representation, Networks, Inside a computer, then the rest).
+
 ## Next
 
 1. Years 5–6: built (Starting out); try it with a Year 5–6 class and a Year 7 catch-up group.

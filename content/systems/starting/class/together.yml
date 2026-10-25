@@ -1,0 +1,29 @@
+inquiry:
+  q: "If the screen breaks in the middle of a game, is the game still going?"
+  prompts:
+    - "Where is the score kept while you play?"
+    - "What job does the screen actually do?"
+  notes: "Yes: the processor and memory carry on; the screen only shows the result. Students who say the game stops are picturing the screen as the computer. The Try board settles it."
+activities:
+  - at: predict
+    kind: activity
+    title: "The parts take turns"
+    minutes: 5
+    do: |
+      Bring back the five volunteers. Press A three times, passing the card each time. Then the Screen sits down. Press A again: what changes?
+    notes: "Memory's score still goes up; nobody can see it. Then try sitting down Memory instead: the processor has nowhere to keep the score."
+  - at: investigate
+    kind: discussion
+    title: "Say the path"
+    minutes: 3
+    do: |
+      With a partner, say the order the parts take turns for one press of A. Then for Save.
+    notes: "Press: buttons, processor, memory, processor, screen. Save: memory, processor, storage."
+questions:
+  - at: investigate
+    title: "What's missing?"
+    type: question
+    q: "You can play and see the score, but Save doesn't work. Which part is missing?"
+    options: ["Storage", "Memory", "The screen", "The buttons"]
+    answer: 0
+    explain: "Saving needs storage; playing doesn't."

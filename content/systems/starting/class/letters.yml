@@ -1,0 +1,36 @@
+inquiry:
+  q: "Would it be better if A were stored as 1, B as 2, and so on? What would go wrong?"
+  prompts:
+    - "Where would small letters go? Spaces? Full stops?"
+    - "Why might the codes start at 65 instead?"
+  notes: "Alphabet places run out fast: small letters, digits, spaces and punctuation all need numbers too, so the code table puts them all in one list (spaces at 32, digits from 48, capitals from 65, small letters from 97). Come back to it after the Vary step, when they've typed a space and a 7."
+activities:
+  - at: start
+    kind: activity
+    title: "A class code chart"
+    minutes: 4
+    do: |
+      Copy the chart: A 65, B 66, C 67 … Z 90. Write your first name as numbers. Swap with a partner and decode theirs.
+    notes: "Keep the charts for the Make step. Early finishers can add a 97 for small a."
+  - at: predict
+    kind: discussion
+    title: "Hold up your answer"
+    minutes: 2
+    do: |
+      A is 65, B is 66, C is 67. What number is D? Show it on your fingers or a whiteboard.
+    notes: "Ask a student who said 4 to explain their thinking before the board settles it. Their answer is Sam's mistake later."
+  - at: investigate
+    kind: activity
+    title: "Human code table"
+    minutes: 4
+    do: |
+      Five volunteers each hold a code: 72, 69, 76, 76, 79. The class reads them as letters, left to right.
+    notes: "HELLO. Then swap two volunteers: the numbers are the same, the word changes. Order matters."
+questions:
+  - at: investigate
+    title: "Read it back"
+    type: question
+    q: "A message arrives as 67, 65, 66. What does it say?"
+    options: ["CAB", "ABC", "CBA", "3 1 2"]
+    answer: 0
+    explain: "67 is C, 65 is A, 66 is B, in that order."

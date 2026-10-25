@@ -1,0 +1,36 @@
+inquiry:
+  q: "Memory and storage both remember things. Why would a computer need both?"
+  prompts:
+    - "What happens to each when the power goes off?"
+    - "Which one would you want your saved game in? Which one is the game using right now?"
+  notes: "Memory empties when the power goes off but is fast for what's being used now; storage keeps things with the power off. This is the confusion that lasts into Year 9, so return to it at the Vary step's Turn off and on."
+activities:
+  - at: start
+    kind: activity
+    title: "Five parts, five people"
+    minutes: 5
+    do: |
+      Five volunteers wear labels: Buttons, Processor, Memory, Storage, Screen. Someone 'presses A': pass a card saying SCORE 1 along the right people.
+    notes: "Buttons to Processor, Processor writes the score on Memory's card, Processor tells Screen. Keep the five for Working together."
+  - at: predict
+    kind: discussion
+    title: "Where's my saved game?"
+    minutes: 2
+    do: |
+      Point to the volunteer who keeps your saved game overnight.
+    notes: "Students pointing at Memory are the lesson. Don't correct yet: the Try board shows it."
+  - at: modify
+    kind: activity
+    title: "Turn off and on"
+    minutes: 2
+    do: |
+      'Power off!' Memory wipes their card clean. Storage keeps theirs. 'Power on!' What's left?
+    notes: "Do this before students press Turn off and on on the site, so the board confirms what they just saw."
+questions:
+  - at: investigate
+    title: "Which part?"
+    type: question
+    q: "Which part takes in what you do?"
+    options: ["Input", "Output", "Memory", "Storage"]
+    answer: 0
+    explain: "Input: buttons, a keyboard, a touch screen, a microphone."

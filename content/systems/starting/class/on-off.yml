@@ -1,0 +1,28 @@
+inquiry:
+  q: "A light switch can only be on or off. Could a computer built only from switches store the number 7? How?"
+  prompts:
+    - "What if there were two switches? Three?"
+    - "How would you know which pattern meant 7?"
+  notes: "Yes, with several switches and an agreed meaning for each pattern. This lesson finds the patterns; the next one gives them their numbers. Leave the 'which pattern is 7' question open until Counting dots."
+activities:
+  - at: predict
+    kind: activity
+    title: "Two students, two switches"
+    minutes: 4
+    do: |
+      Two volunteers stand at the front. Each holds a hand up (on) or down (off). The class calls out every different pattern. How many are there?
+    notes: "Four, including both hands down. If the class says three, ask what both down looks like: that's Sam's mistake."
+  - at: investigate
+    kind: activity
+    title: "Add a third switch"
+    minutes: 4
+    do: |
+      A third volunteer joins. For each pattern of the first two, the third can be up or down. List them all.
+    notes: "Eight. Draw the 4 patterns twice on the board, once with the new switch off and once on: doubling, not adding."
+questions:
+  - at: investigate
+    title: "Four switches"
+    type: number
+    q: "Three switches make 8 patterns. How many do four switches make?"
+    answer: 16
+    explain: "Each switch doubles the patterns: 8 doubled is 16."

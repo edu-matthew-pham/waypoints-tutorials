@@ -1,0 +1,37 @@
+activities:
+  - at: start
+    kind: activity
+    title: "Real dot cards"
+    minutes: 5
+    do: |
+      Five students hold the dot cards (16, 8, 4, 2, 1) facing the class. Turn cards over to show 5, then 10, then 31.
+    notes: "Print CS Unplugged's binary cards. Students holding cards keep them for the Investigate activity."
+  - at: predict
+    kind: discussion
+    title: "How many dots?"
+    minutes: 2
+    do: |
+      Cards 8, 4, 2, 1. The 4 and the 1 are face up. Show your answer on a whiteboard.
+    notes: "Ask a student who wrote 41 to explain: they read the cards as digits. Add the dots you can see."
+  - at: investigate
+    kind: activity
+    title: "Biggest card that fits"
+    minutes: 4
+    do: |
+      Call a number (9, 12, 13). The card holders decide, from the left, 'does my card fit in what's left?' and turn up or stay down.
+    notes: "Say the method aloud each time. It's the worked example done with people."
+  - at: end
+    kind: activity
+    title: "Your initial"
+    minutes: 3
+    do: |
+      Look up the first letter of your name on the code chart. Which of the seven cards (64 to 1) make it?
+    notes: "A is 64 + 1; Z (90) is 64 + 16 + 8 + 2. Links back to Letters are numbers."
+questions:
+  - at: investigate
+    title: "Thirteen"
+    type: question
+    q: "Which cards show 13?"
+    options: ["8, 4 and 1", "8 and 5", "4, 4, 4 and 1", "13 alone"]
+    answer: 0
+    explain: "Biggest that fits is 8, leaving 5; 4 fits, leaving 1; then the 1 card."
