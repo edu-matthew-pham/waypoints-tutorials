@@ -8,6 +8,7 @@ summary: "Pythagoras works backwards: square the two shorter sides and add, then
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Given only three lengths, can you tell whether a triangle has a right angle, without drawing it? Builders do exactly this when they mark out a square corner with a tape measure."
+connection: set-out-3-4-5   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8286
   url: http://127.0.0.1:8286/index.html
@@ -47,6 +48,8 @@ check:
   options: ["Acute", "Right-angled", "Obtuse"]
   actual: "Acute. 4² + 5² = 16 + 25 = 41, and 6² = 36. The two squares are more than the longest one, so the biggest angle is less than 90°."
 ```
+
+<figure class="situation" role="img" aria-label="A triangle with sides of 4 centimetres, 5 centimetres and 6 centimetres. The question asks whether it is right-angled, acute or obtuse."><svg viewBox="0 0 280 195" width="280" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><polygon points="30,160 210,160 97.5,61" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><text x="52" y="112" text-anchor="end" fill="currentColor" stroke="none">4 cm</text><text x="160" y="104" text-anchor="start" fill="currentColor" stroke="none">5 cm</text><text x="120" y="180" text-anchor="middle" fill="currentColor" stroke="none">6 cm</text><text x="97" y="86" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="150" y="45" text-anchor="start" fill="currentColor" stroke="none">right, acute or obtuse?</text></svg></figure>
 
 Compare $4^2 + 5^2$ with $6^2$.
 
@@ -221,3 +224,49 @@ check: { type: board, text: "Find a right-angled triangle with whole-number side
 ```
 
 Then: is the triple you found a multiple of another one?
+
+## Make: is the corner square, on paper
+
+```step
+stage: make
+insight: "A builder's check is the converse of Pythagoras: square the two strings, add, and compare with the diagonal's square. The size of the gap says which way the corner is out."
+hint: ["Which length is c? It is the longest.", "Compare 1.5² + 2² with 2.55²."]
+check:
+  type: reasoning
+  paper: true
+  q: "A builder pegs out a corner of a slab. One string is 1.5 m long, the other is 2 m long, and the diagonal between their ends measures 2.55 m. On paper, test the corner. Is it a right angle, or is it more or less than 90°?"
+  steps:
+    - ["$c = 2.55$ m, the diagonal", "c is the longest side"]
+    - ["$1.5^2 + 2^2 = 2.25 + 4 = 6.25$", "square the two shorter sides and add"]
+    - ["$2.55^2 = 6.5025$, and $6.25 < 6.5025$", "compare with the longest side squared"]
+    - ["The angle opposite the diagonal is more than 90°, so the corner is not square", "a² + b² less than c² means obtuse"]
+  picks:
+    - step: 1
+      q: "Which length is c in the test?"
+      options:
+        - "The diagonal, 2.55 m, because it is the longest"
+        - "The 2 m string, because it is the longer string"
+        - "Any of them: it does not matter which one is c"
+      answer: 0
+      feedback: [null, "c is the longest side of the triangle, and the diagonal is longer than both strings.", "It matters: c is always the longest side, opposite the angle you are testing."]
+    - step: 4
+      q: "What does the test tell the builder?"
+      options:
+        - "The angle is more than 90°: the pegs are too far apart, so the corner is not square"
+        - "The angle is less than 90°: the pegs are too close together"
+        - "It is square: 2.55 m is near enough to 2.5 m"
+      answer: 0
+      feedback: [null, "A longer diagonal means the angle has opened wider, not closed.", "1.5, 2 and 2.5 would be exactly square (3-4-5 halved). A diagonal 5 cm too long leaves the corner a little over 90°, enough to show on a slab."]
+  criteria:
+    - "I chose the diagonal as c because it is the longest."
+    - "I squared all three lengths before comparing."
+    - "I said which way the corner is out, and what to do: bring the diagonal in to 2.5 m."
+  explain: "1.5² + 2² = 6.25 but 2.55² = 6.5025, so the diagonal is too long and the angle is more than 90°. Move a peg until the diagonal reads 2.5 m, where 2.25 + 4 = 6.25 = 2.5²."
+```
+
+Do this one in your book, not on the screen. The measurements are made up for the task. Write the test with all three squares, then choose what it tells the builder.
+
+**Also used in**
+
+- **Builders.** A 3-4-5 triangle of string checks a corner is square. Bigger copies such as 6-8-10 or 9-12-15 are more accurate on a slab.
+- **Frames and gardens.** If both diagonals of a four-sided frame are equal and opposite sides match, it is a rectangle.

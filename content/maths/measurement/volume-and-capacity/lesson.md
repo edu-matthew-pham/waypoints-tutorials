@@ -7,6 +7,7 @@ summary: "Volume measures space in cubic units; capacity measures how much a con
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "How much water does a box hold, and how do you get it from the box's size? A cubic metre of water weighs about a tonne, but how do litres and cubic centimetres fit together?"
+connection: rainwater-tank   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8305
   url: http://127.0.0.1:8305/index.html
@@ -45,6 +46,8 @@ check:
   options: ["1 L", "100 mL", "10 L", "1000 L"]
   actual: "1 L. 10 × 10 × 10 = 1000 cm³, and each cm³ holds 1 mL: 1000 mL = 1 L."
 ```
+
+<figure class="situation" role="img" aria-label="A cube-shaped box 10 centimetres along every edge. How much water it holds is marked with a question mark."><svg viewBox="0 0 300 200" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><polygon points="50,170 145,170 145,75 50,75" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><polygon points="50,75 145,75 190,45 95,45" fill="#378ADD" fill-opacity="0.1" stroke="#185FA5"/><polygon points="145,170 190,140 190,45 145,75" fill="#378ADD" fill-opacity="0.1" stroke="#185FA5"/><text x="97" y="189" text-anchor="middle" fill="currentColor" stroke="none">10 cm</text><text x="42" y="125" text-anchor="end" fill="currentColor" stroke="none">10 cm</text><text x="212" y="140" text-anchor="start" fill="currentColor" stroke="none">10 cm</text><text x="150" y="30" text-anchor="start" fill="currentColor" stroke="none">holds ? of water</text></svg></figure>
 
 How many cubic centimetres is it, and how many millilitres is that?
 
@@ -202,3 +205,47 @@ check: { type: board, text: "Design a carton that holds 600 mL, with a base that
 ```
 
 Then say which of your designs would fit best in a lunch box, and why.
+
+## Make: a tank for the roof, on paper
+
+```step
+stage: make
+insight: "Rain on a roof is a thin layer: 1 mm over 1 m² is 0.001 m³, which is 1 L. The tank's volume in m³ then becomes litres, and the two are compared."
+hint: ["Find the rain in litres, then the tank in litres.", "1 mm of rain on 1 m² is 1 L; 1 m³ holds 1000 L."]
+check:
+  type: reasoning
+  paper: true
+  q: "A roof has an area of 80 m². In a storm 30 mm of rain falls on it, and all of it runs into an empty tank that is 1.5 m long, 1 m wide and 1.2 m high. By how many litres does the rain overflow the tank?"
+  steps:
+    - ["$80 \\times 30 = 2400$ L of rain", "1 mm of rain on 1 m² is 1 L"]
+    - ["Tank: $1.5 \\times 1 \\times 1.2 = 1.8$ m³, and $1.8 \\times 1000 = 1800$ L", "1 m³ holds 1000 L"]
+    - ["$2400 - 1800 = 600$ L", "rain minus what the tank holds"]
+  picks:
+    - step: 1
+      q: "Why does 1 mm of rain on 1 m² make 1 L?"
+      options:
+        - "A layer 1 mm deep over 1 m² is 0.001 m³, and 0.001 m³ is 1 L"
+        - "1 mm is the same as 1 mL"
+        - "A litre is defined as a square metre of rain"
+      answer: 0
+      feedback: [null, "1 mm is a length and 1 mL is a volume. It is the layer's volume, 1 m² × 0.001 m, that equals 1 L.", "A litre is 1000 cm³. Rain over 1 m², 1 mm deep, happens to be exactly that."]
+  answer: "600"
+  tolerance: 0
+  feedback:
+    - ["1800", "That is how much the tank holds. The question asks how much is left over."]
+    - ["2400", "That is all the rain. Take away what the tank holds."]
+    - ["0.6", "That is in cubic metres. The question asks for litres."]
+  criteria:
+    - "I changed rain on the roof into litres, and the tank into litres."
+    - "I changed m³ to litres by multiplying by 1000."
+    - "I took the tank's capacity away from the rain."
+  explain: "Rain: 80 × 30 = 2400 L. Tank: 1.5 × 1 × 1.2 = 1.8 m³ = 1800 L. The overflow is 2400 − 1800 = 600 L. The Bureau of Meteorology calls the 1 mm = 1 L rule approximate, and real tanks collect less than falls on the roof."
+```
+
+Do this one in your book, not on the screen. The roof, the storm and the tank are made up for the task. Write the rain and the tank in litres, then type the overflow.
+
+**Also used in**
+
+- **Rainwater tanks.** The Bureau of Meteorology says 1 mm of rain on 1 m² gives about 1 L, an approximation ([Bureau of Meteorology](https://www.bom.gov.au/climate/how/faq-data.shtml)). Real tanks collect less, because some water is lost.
+- **Pool dosing.** The label is per 10 000 L, so the pool's volume in m³ is changed to litres first.
+- **Cartons.** A 1 L carton holds 1000 cm³, about a 10 cm cube.

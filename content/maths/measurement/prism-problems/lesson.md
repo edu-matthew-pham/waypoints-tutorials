@@ -8,6 +8,7 @@ summary: "The volume of any right prism is the area of its end (the cross-sectio
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A farmer needs a water trough that holds 500 L, a builder orders concrete in cubic metres, a pool needs filling. Each is a prism problem, often run backwards."
+connection: pool-dose   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8306
   url: http://127.0.0.1:8306/index.html
@@ -42,6 +43,8 @@ check:
   options: ["3 m", "3000 m", "12 m", "0.3 m"]
   actual: "3 m. 36 000 L = 36 m³. The base is 4 × 3 = 12 m², so the depth is 36 ÷ 12 = 3 m."
 ```
+
+<figure class="situation" role="img" aria-label="A tank with a base 4 metres by 3 metres that holds 36 000 litres when full. Its depth is marked with a question mark."><svg viewBox="0 0 320 200" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><polygon points="75,175 205,175 205,85 75,85" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><polygon points="75,85 205,85 265,50 135,50" fill="#378ADD" fill-opacity="0.1" stroke="#185FA5"/><polygon points="205,175 265,140 265,50 205,85" fill="#378ADD" fill-opacity="0.1" stroke="#185FA5"/><text x="140" y="193" text-anchor="middle" fill="currentColor" stroke="none">4 m</text><text x="67" y="135" text-anchor="end" fill="currentColor" stroke="none">depth ?</text><text x="270" y="150" text-anchor="start" fill="currentColor" stroke="none">3 m</text><text x="60" y="30" text-anchor="start" fill="currentColor" stroke="none">holds 36 000 L when full</text></svg></figure>
 
 Change the litres to cubic metres first.
 
@@ -199,3 +202,48 @@ check: { type: board, text: "Design a box with a base area of 80 cm² that holds
 ```
 
 Then explain how you found the height before you moved the slider.
+
+## Make: a pool dose, on paper
+
+```step
+stage: make
+insight: "A pool dose runs volume to litres to doses: the box volume in m³, times 1000, then how many lots of 10 000 L."
+hint: ["Find the volume in cubic metres first.", "1 m³ holds 1000 L."]
+check:
+  type: reasoning
+  paper: true
+  q: "A backyard pool is 6 m long and 3.5 m wide. Its floor slopes, so use an average depth of 1.2 m. The chlorine label says to add 50 g for every 10 000 L. How many grams do you add?"
+  steps:
+    - ["$V = 6 \\times 3.5 \\times 1.2 = 25.2$ m³", "the pool is a box of average depth: length × width × depth"]
+    - ["$25.2 \\times 1000 = 25200$ L", "1 m³ holds 1000 L"]
+    - ["$25200 \\div 10000 = 2.52$ lots of 10 000 L", "the label doses per 10 000 L"]
+    - ["$2.52 \\times 50 = 126$ g", "50 g for each lot"]
+  picks:
+    - step: 2
+      q: "How do you change cubic metres to litres?"
+      options:
+        - "Multiply by 1000: a cubic metre holds 1000 L"
+        - "Multiply by 100, like metres to centimetres"
+        - "Divide by 1000"
+      answer: 0
+      feedback: [null, "A cubic metre is 100 × 100 × 100 cm³, not 100.", "Litres are the smaller unit, so there are more of them: multiply."]
+  answer: "126"
+  tolerance: 0
+  feedback:
+    - ["12.6", "That used 100 L to the cubic metre. A cubic metre holds 1000 L."]
+    - ["25200", "That is the litres. The label gives 50 g for every 10 000 L."]
+    - ["2.52", "That is the number of 10 000 L lots. Each lot needs 50 g."]
+  criteria:
+    - "I found the volume in m³ before changing units."
+    - "I changed m³ to litres by multiplying by 1000."
+    - "My answer is in grams and uses the label's rate."
+  explain: "6 × 3.5 × 1.2 = 25.2 m³ = 25200 L, which is 2.52 lots of 10 000 L. At 50 g a lot, that is 126 g."
+```
+
+Do this one in your book, not on the screen. The pool and the label are made up for the task: for a real pool, follow the real label. Write each step, then type the grams.
+
+**Also used in**
+
+- **Pool chemicals.** The label doses per 10 000 L, and a pool floor slopes, so people use an average depth.
+- **Rainwater tanks.** The Bureau of Meteorology says 1 mm of rain on 1 m² gives about 1 L ([Bureau of Meteorology](https://www.bom.gov.au/climate/how/faq-data.shtml)), so a roof's area tells you how many litres a storm could fill.
+- **Troughs.** A farmer works out the length and the end to hold the litres a trough needs.

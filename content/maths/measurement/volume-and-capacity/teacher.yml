@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Ravi to draw his cubic metre."
   - "Modify: ask which unit a council would use for a dam."
   - "Make: ask whose carton is easiest to hold."
+  - "Paper: the rainwater tank is worked in books. Books out; look for both amounts in litres before they are compared, and ask why 1 mm on 1 m² is 1 L."
 stuck:
   - see: "A student says 1 m³ = 100 cm³."
     ask: "How many cm along each of the three edges?"

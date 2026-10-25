@@ -8,6 +8,7 @@ summary: "Fill a box with unit cubes layer by layer. Each layer has as many cube
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "How many sugar cubes fit in a box, how much water fills a fish tank, how much concrete for a path? All are volumes: how much space a solid takes up."
+connection: concrete-path   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8276
   url: http://127.0.0.1:8276/index.html
@@ -44,6 +45,8 @@ check:
   options: ["60", "12", "94", "47"]
   actual: "60: 5 layers of 12. 12 is one layer; 94 counts the squares on all six outside faces, which is not the space inside."
 ```
+
+<figure class="situation" role="img" aria-label="A box built of unit cubes: 4 cubes long, 3 cubes wide and 5 cubes high. The number of cubes that fill it is marked with a question mark."><svg viewBox="0 0 320 205" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><polygon points="65,175 165,175 165,50 65,50" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><polygon points="65,50 165,50 210,23 110,23" fill="#378ADD" fill-opacity="0.1" stroke="#185FA5"/><polygon points="165,175 210,148 210,23 165,50" fill="#378ADD" fill-opacity="0.1" stroke="#185FA5"/><line x1="90.0" y1="175" x2="90.0" y2="50" stroke="#185FA5" stroke-width="0.5"/><line x1="90.0" y1="50" x2="135.0" y2="23" stroke="#185FA5" stroke-width="0.5"/><line x1="115.0" y1="175" x2="115.0" y2="50" stroke="#185FA5" stroke-width="0.5"/><line x1="115.0" y1="50" x2="160.0" y2="23" stroke="#185FA5" stroke-width="0.5"/><line x1="140.0" y1="175" x2="140.0" y2="50" stroke="#185FA5" stroke-width="0.5"/><line x1="140.0" y1="50" x2="185.0" y2="23" stroke="#185FA5" stroke-width="0.5"/><line x1="65" y1="150.0" x2="165" y2="150.0" stroke="#185FA5" stroke-width="0.5"/><line x1="165" y1="150.0" x2="210" y2="123.0" stroke="#185FA5" stroke-width="0.5"/><line x1="65" y1="125.0" x2="165" y2="125.0" stroke="#185FA5" stroke-width="0.5"/><line x1="165" y1="125.0" x2="210" y2="98.0" stroke="#185FA5" stroke-width="0.5"/><line x1="65" y1="100.0" x2="165" y2="100.0" stroke="#185FA5" stroke-width="0.5"/><line x1="165" y1="100.0" x2="210" y2="73.0" stroke="#185FA5" stroke-width="0.5"/><line x1="65" y1="75.0" x2="165" y2="75.0" stroke="#185FA5" stroke-width="0.5"/><line x1="165" y1="75.0" x2="210" y2="48.0" stroke="#185FA5" stroke-width="0.5"/><line x1="180.0" y1="166.0" x2="180.0" y2="41.0" stroke="#185FA5" stroke-width="0.5"/><line x1="80.0" y1="41.0" x2="180.0" y2="41.0" stroke="#185FA5" stroke-width="0.5"/><line x1="195.0" y1="157.0" x2="195.0" y2="32.0" stroke="#185FA5" stroke-width="0.5"/><line x1="95.0" y1="32.0" x2="195.0" y2="32.0" stroke="#185FA5" stroke-width="0.5"/><text x="115" y="195" text-anchor="middle" fill="currentColor" stroke="none">4 long</text><text x="57" y="118" text-anchor="end" fill="currentColor" stroke="none">5 high</text><text x="225" y="150" text-anchor="start" fill="currentColor" stroke="none">3 wide</text><text x="225" y="100" text-anchor="start" fill="currentColor" stroke="none">? cubes</text></svg></figure>
 
 How many cubes fit on the bottom? How many layers?
 
@@ -225,3 +228,46 @@ check: { type: board, text: "Build a box with volume 36 cm³ that is more than o
 ```
 
 Then find another box with the same volume and a different height.
+
+## Make: concrete for a path, on paper
+
+```step
+stage: make
+insight: "A path is a thin slab: its top is one big layer and the thickness is the height, so V = A × h with all lengths in metres."
+hint: ["Which face is one whole layer?", "Keep every length in metres: 0.1 m, not 10 cm."]
+check:
+  type: reasoning
+  paper: true
+  q: "A concrete path is 12 m long, 1.2 m wide and 0.1 m thick. How many cubic metres of concrete does it need?"
+  steps:
+    - ["The path is a thin slab: one layer is its top, 12 m by 1.2 m", "volume is layers of the base"]
+    - ["$A = 12 \\times 1.2 = 14.4$ m²", "the area of the top"]
+    - ["$V = 14.4 \\times 0.1 = 1.44$ m³", "the thickness, 0.1 m, is the height: how many metres of layers"]
+  picks:
+    - step: 3
+      q: "Why is 0.1 m the height here?"
+      options:
+        - "The slab lies flat: its top is one layer, and 0.1 m is how deep it goes"
+        - "It is the smallest number, so it must be the height"
+        - "The height is always the last number in the question"
+      answer: 0
+      feedback: [null, "The size of a number is not the reason. The path lies flat, and 0.1 m is its depth.", "The order of the numbers does not decide it. What decides it is the shape: a flat slab with a top layer."]
+  answer: "1.44"
+  tolerance: 0
+  feedback:
+    - ["14.4", "That is the area of the top. Multiply by the thickness."]
+    - ["144", "That uses 10 for the thickness. Keep every length in metres: 0.1 m."]
+  criteria:
+    - "I worked out the area of the top first."
+    - "I used 0.1 m for the thickness, not 10."
+    - "My answer is in m³."
+  explain: "The top is 12 × 1.2 = 14.4 m², and the slab is 0.1 m thick: 14.4 × 0.1 = 1.44 m³. A supplier would add some for wastage and the reinforcing mesh."
+```
+
+Do this one in your book, not on the screen. The path is made up for the task. Write the top's area, then the volume, and type the answer.
+
+**Also used in**
+
+- **Concrete paths and slabs.** Concrete is ordered by the cubic metre. Suppliers add some for wastage and for the space the reinforcing mesh takes.
+- **Garden soil.** A raised bed is a box of soil, sold by the cubic metre.
+- **Packing.** A box of sugar cubes is layers of cubes: a base, then the number of layers.

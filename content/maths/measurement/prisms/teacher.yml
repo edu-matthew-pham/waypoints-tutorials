@@ -16,6 +16,7 @@ running:
   - "Investigate: hold up a triangular box or a tent picture and ask what a slice looks like."
   - "Modify: for the edge case, turn a real prism over."
   - "Make: ask why l × w × h must be 48."
+  - "Paper: the corner bed is worked in books. Books out; look for the halving on the floor before the depth, and ask how much extra to order (soil settles)."
 stuck:
   - see: "A student multiplies the three lengths of a triangular prism (Lena's mistake)."
     ask: "What shape is the slice? What is its area?"

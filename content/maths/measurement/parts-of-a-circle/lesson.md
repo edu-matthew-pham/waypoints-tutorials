@@ -42,6 +42,8 @@ check:
   actual: "10 cm: the diameter goes from the edge, through the centre, to the other edge: two radii. 2.5 halves the radius."
 ```
 
+<figure class="situation" role="img" aria-label="A circle with its centre marked. A radius of 5 centimetres is drawn from the centre to the edge. Below it, the diameter right across the circle is marked with a question mark."><svg viewBox="0 0 300 195" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><circle cx="150" cy="90" r="70" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="150" y1="90" x2="220" y2="90" stroke="#D85A30" stroke-width="3"/><circle cx="150" cy="90" r="3" fill="currentColor"/><text x="185" y="80" text-anchor="middle" fill="currentColor" stroke="none">5 cm</text><line x1="80" y1="176" x2="220" y2="176" stroke-width="0.8"/><line x1="80" y1="171" x2="80" y2="181" stroke-width="0.8"/><line x1="220" y1="171" x2="220" y2="181" stroke-width="0.8"/><text x="150" y="192" text-anchor="middle" fill="currentColor" stroke="none">diameter = ?</text></svg></figure>
+
 Picture a radius, then another one pointing the opposite way.
 
 ## Run: diameter 10
@@ -227,3 +229,46 @@ check:
 ```
 
 Then: how many of those circles fit side by side in the lid?
+
+## Make: a round table, on paper
+
+```step
+stage: make
+insight: "A table with room to pull out chairs is a circle inside a bigger circle with the same centre: the clear space is added to the radius, on every side."
+hint: ["Draw the table, then a bigger circle round it with the same centre.", "The 0.5 m is added to the radius, or twice to the diameter."]
+check:
+  type: reasoning
+  paper: true
+  q: "A round table has a diameter of 1.2 m. It stands in the middle of a square room, and people need 0.5 m clear all round the table to pull out a chair. What is the smallest width the room can be, in metres?"
+  steps:
+    - ["Sketch the table and a bigger circle round it, 0.5 m out, with the same centre", "the clear space goes all the way round"]
+    - ["$r = 1.2 \\div 2 = 0.6$ m, so the big circle has $r = 0.6 + 0.5 = 1.1$ m", "the clear space is added to the radius"]
+    - ["$d = 2 \\times 1.1 = 2.2$ m", "the room must be as wide as the big circle's diameter"]
+  picks:
+    - step: 2
+      q: "How does the 0.5 m get into the working?"
+      options:
+        - "It is on every side: add it to the radius, then double (or add it to the diameter twice)"
+        - "Add it once to the diameter: 1.2 + 0.5"
+        - "Add it to the radius and stop: the room is 1.1 m wide"
+      answer: 0
+      feedback: [null, "That leaves out the space on the other side of the table.", "1.1 m is the radius of the big circle. The room is as wide as its diameter."]
+  answer: "2.2"
+  tolerance: 0
+  feedback:
+    - ["1.7", "That adds the 0.5 m once. There is clear space on both sides of the table."]
+    - ["1.1", "That is the radius of the big circle. The room must be as wide as its diameter."]
+  criteria:
+    - "I drew the table and the clear space as two circles with the same centre."
+    - "I changed between radius and diameter the right way each time."
+    - "My answer is bigger than the table's 1.2 m."
+  explain: "The table's radius is 0.6 m, so the big circle has radius 0.6 + 0.5 = 1.1 m and diameter 2.2 m. The room is at least 2.2 m wide."
+```
+
+Do this one in your book, not on the screen. The table and the room are made up for the task. Sketch the two circles, work out the room's width, and type it.
+
+**Also used in**
+
+- **Wheels.** A bike wheel rolls smoothly because every point on its rim is the same distance from the axle: the radius.
+- **Farm circles.** From the air, farms in dry country are green circles, watered by an arm turning about a centre. The arm is a radius.
+- **Pizza.** A pizza is sold by its diameter, but how much you get depends on the radius. The area lessons come back to this.

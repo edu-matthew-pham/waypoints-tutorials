@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Kim to check her answer on the board."
   - "Modify: ask how a flight can land before it took off."
   - "Make: ask for the times as they would appear on a ticket."
+  - "Paper: the overseas final is worked in books. Books out; look for the direction decided from the offsets before any adding, and the day written down. The answer holds only for dates from 4 to 24 October 2026."
 stuck:
   - see: "A student adds the difference for a city that is behind."
     ask: "Which offset is bigger? Which clock is later?"

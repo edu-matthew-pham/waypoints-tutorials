@@ -7,6 +7,7 @@ summary: "A city with a bigger UTC offset is ahead; a smaller offset is behind. 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "You call your cousin in London after school and wake her up at 5 am. A flight from Sydney lands in Los Angeles before it took off. Time zones explain both."
+connection: overseas-match   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8309
   url: http://127.0.0.1:8309/index.html
@@ -45,6 +46,8 @@ check:
   options: ["11:00 pm Sunday", "7:00 pm Monday", "7:00 pm Sunday", "10:00 am Monday"]
   actual: "11:00 pm Sunday. London is 10 hours behind Sydney: 9:00 am − 10 hours goes back past midnight to 11:00 pm the day before."
 ```
+
+<figure class="situation" role="img" aria-label="Two clocks for the same moment. Sydney, UTC plus 11, shows 9:00 am Monday. London, UTC plus 1, shows a question mark."><svg viewBox="0 0 350 125" width="350" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><rect x="10" y="18" width="140" height="92" rx="6" stroke-width="1"/><text x="80" y="40" text-anchor="middle" fill="currentColor" stroke="none">Sydney</text><text x="80" y="58" text-anchor="middle" fill="currentColor" stroke="none">UTC+11</text><text x="80" y="92" text-anchor="middle" fill="currentColor" stroke="none">9:00 am Monday</text><rect x="200" y="18" width="140" height="92" rx="6" stroke-width="1"/><text x="270" y="40" text-anchor="middle" fill="currentColor" stroke="none">London</text><text x="270" y="58" text-anchor="middle" fill="currentColor" stroke="none">UTC+1</text><text x="270" y="92" text-anchor="middle" fill="currentColor" stroke="none">?</text><line x1="156" y1="64" x2="194" y2="64" stroke-width="1"/><line x1="188" y1="59" x2="194" y2="64" stroke-width="1"/><line x1="188" y1="69" x2="194" y2="64" stroke-width="1"/><text x="175" y="52" text-anchor="middle" fill="currentColor" stroke="none">same</text><text x="175" y="86" text-anchor="middle" fill="currentColor" stroke="none">moment</text></svg></figure>
 
 Is London ahead of Sydney or behind?
 
@@ -214,3 +217,47 @@ check: { type: board, text: "A 14-hour flight leaves Sydney on Saturday. Choose 
 ```
 
 Then write both times for your flight, in 24-hour time with the day, as you would on a ticket.
+
+## Make: the final, on paper
+
+```step
+stage: make
+insight: "Overseas sport is the offset difference, the direction, and the day: Sydney is ahead of London, so add, and cross midnight into the next day."
+hint: ["Which offset is bigger?", "Add the difference, and if you pass 24:00, take 24 away and move to the next day."]
+check:
+  type: reasoning
+  paper: true
+  q: "A made-up final kicks off at 8 pm (20:00) on Saturday 17 October 2026, London time (UTC+1 on that date). It is shown live in Sydney (UTC+11). At what hour, in 24-hour time, does it start in Sydney? Say which day it is there, too."
+  steps:
+    - ["Sydney is $11 - 1 = 10$ hours ahead of London", "the bigger offset is ahead"]
+    - ["$20{:}00 + 10\\ \\text{h} = 30{:}00$", "ahead means add"]
+    - ["$30{:}00 - 24 = 06{:}00$, on Sunday 18 October", "past midnight is the next day"]
+  picks:
+    - step: 1
+      q: "How do you decide which way to go?"
+      options:
+        - "Sydney's offset (+11) is bigger than London's (+1), so Sydney is ahead: add 10 hours"
+        - "Sydney is behind London, so take 10 hours away"
+        - "Add 11 hours, Sydney's whole offset"
+      answer: 0
+      feedback: [null, "The bigger offset is ahead, and +11 is bigger than +1.", "London is already +1, so the difference is 10, not 11."]
+  answer: "6"
+  tolerance: 0
+  feedback:
+    - ["10", "That takes the 10 hours away. Sydney is ahead, so add them and cross midnight."]
+    - ["30", "30:00 is past midnight. Take away 24 to get the hour on the next day."]
+    - ["7", "That adds 11, the whole of Sydney's offset. London is already +1, so add the difference, 10."]
+  criteria:
+    - "I compared the two offsets and said which city is ahead."
+    - "I changed the day when I passed midnight."
+    - "I wrote the time in 24-hour time."
+  explain: "Sydney is 11 − 1 = 10 hours ahead of London. 20:00 + 10 h = 30:00, which is 06:00 on Sunday 18 October in Sydney."
+```
+
+Do this one in your book, not on the screen. The final is made up for the task, and the answer uses the offsets for 4 to 24 October 2026, so it holds only on a date in that window. Write the offsets, the sum and the day, then type the hour.
+
+**Also used in**
+
+- **Watching sport live.** A match overseas kicks off at a strange hour here. Daylight saving moves different places' clocks on different dates, so the gap can change by an hour.
+- **Calls to family abroad.** Work out whose clock is later before you ring, or you wake someone up.
+- **Flights.** A flight's arrival time is local time at the landing city, so it can look earlier than the departure.

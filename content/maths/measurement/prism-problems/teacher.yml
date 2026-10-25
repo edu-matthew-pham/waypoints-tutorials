@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Mia which face stays the same all the way along."
   - "Modify: ask for the depth before they move the slider."
   - "Make: ask for the plan in one sentence."
+  - "Paper: the pool dose is worked in books. Books out; look for m³ to litres before the dose, and the average depth."
 stuck:
   - see: "A student multiplies three lengths for a triangular prism."
     ask: "What shape is the end, and what is its area?"

@@ -45,6 +45,8 @@ check:
   actual: "12 cm². Two copies make a 6 by 4 parallelogram, 24 cm², so one triangle is half: 12 cm². 24 is the parallelogram."
 ```
 
+<figure class="situation" role="img" aria-label="A triangle with a base of 6 centimetres and a perpendicular height of 4 centimetres. Its area is marked with a question mark."><svg viewBox="0 0 300 190" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><polygon points="40,160 220,160 150,40" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="150" y1="40" x2="150" y2="160" stroke="#D85A30" stroke-width="2" stroke-dasharray="5 3"/><path d="M150 148 L162 148 L162 160" stroke-width="0.8"/><text x="130" y="180" text-anchor="middle" fill="currentColor" stroke="none">6 cm</text><text x="143" y="105" text-anchor="end" fill="currentColor" stroke="none">4 cm</text><text x="70" y="148" text-anchor="start" fill="currentColor" stroke="none">area = ?</text></svg></figure>
+
 How would two copies of the triangle fit together?
 
 ## Run: add a turned copy
@@ -221,3 +223,45 @@ check: { type: board, text: "Make a triangle with area 15 cm².", when: "a = 15"
 ```
 
 Then find a second triangle with the same area and a different base.
+
+## Make: a sail, on paper
+
+```step
+stage: make
+insight: "A sailmaker's cloth is the sail's area: base along the boom, perpendicular height up the mast, then halve."
+hint: ["Which two sides meet at a right angle?", "A triangle is half of base × height."]
+check:
+  type: reasoning
+  paper: true
+  q: "A triangular sail has a base of 3.2 m along the boom and a perpendicular height of 5 m up the mast. How much cloth does it need, in m², not counting the seams?"
+  steps:
+    - ["The boom and mast meet at a right angle, so the base is 3.2 m and the height is 5 m", "the height is perpendicular to the base"]
+    - ["$A = \\tfrac{1}{2} \\times 3.2 \\times 5$", "a triangle is half of base × height"]
+    - ["$A = \\tfrac{1}{2} \\times 16 = 8$ m²", "multiply, then halve"]
+  picks:
+    - step: 2
+      q: "Why is there a half in the working?"
+      options:
+        - "Two copies of the triangle make a parallelogram of base × height, so one triangle is half"
+        - "A sail has two sides, so you halve"
+        - "The height is only half as long as it looks"
+      answer: 0
+      feedback: [null, "A sail is flat cloth in one piece here. The half comes from the shape.", "The height is the whole 5 m. The half is for the triangle, not for the height."]
+  answer: "8"
+  tolerance: 0
+  feedback:
+    - ["16", "That is base × height, the parallelogram. A triangle is half of it."]
+    - ["8.2", "That adds the two lengths. Multiply, then halve."]
+  criteria:
+    - "I sketched the sail and marked the base and the perpendicular height."
+    - "I halved base × height."
+    - "My answer is in m²."
+  explain: "3.2 × 5 = 16 and half of 16 is 8, so the sail needs 8 m² of cloth."
+```
+
+Do this one in your book, not on the screen. The sail's measurements are made up for the task; a real sail has curved edges. Sketch it, mark the base and the height, and type the area.
+
+**Also used in**
+
+- **Sails.** A sailmaker orders cloth by the sail's area, from its base and height.
+- **Gable ends.** A painter quoting for the triangular end of a house works out its area first, then the litres of paint.

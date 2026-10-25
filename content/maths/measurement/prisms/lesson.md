@@ -8,6 +8,7 @@ summary: "Any right prism has the same shape all the way along: its cross-sectio
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A tent, a chocolate bar in a triangular box, a drink carton: how much do they hold? If the shape is the same all the way through, one rule finds them all."
+connection: garden-bed-soil   # data/connections/maths.yml
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8277
   url: http://127.0.0.1:8277/index.html
@@ -44,6 +45,8 @@ check:
   options: ["30 cm³", "60 cm³", "12 cm³", "6 cm³"]
   actual: "30 cm³. The triangle is ½ × 4 × 3 = 6 cm², and 5 layers of 6 is 30. 60 is the whole box; 6 is one layer."
 ```
+
+<figure class="situation" role="img" aria-label="A triangular prism lying on its side. The triangle at the end has sides of 4 centimetres and 3 centimetres at a right angle. The prism is 5 centimetres long. Its volume is marked with a question mark."><svg viewBox="0 0 300 200" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><polygon points="40,170 160,170 40,80" fill="#378ADD" fill-opacity="0.2" stroke="#185FA5"/><line x1="160" y1="170" x2="250" y2="120" stroke-width="1"/><line x1="40" y1="80" x2="130" y2="30" stroke-width="1"/><line x1="130" y1="30" x2="250" y2="120" stroke-width="1"/><line x1="40" y1="80" x2="160" y2="170" stroke-width="1"/><line x1="40" y1="170" x2="130" y2="120" stroke-width="0.8" stroke-dasharray="4 3"/><line x1="130" y1="120" x2="250" y2="120" stroke-width="0.8" stroke-dasharray="4 3"/><line x1="130" y1="120" x2="130" y2="30" stroke-width="0.8" stroke-dasharray="4 3"/><text x="100" y="190" text-anchor="middle" fill="currentColor" stroke="none">4 cm</text><text x="32" y="130" text-anchor="end" fill="currentColor" stroke="none">3 cm</text><text x="212" y="166" text-anchor="start" fill="currentColor" stroke="none">5 cm</text><text x="14" y="30" text-anchor="start" fill="currentColor" stroke="none">volume = ?</text></svg></figure>
 
 What is the area of the triangle end?
 
@@ -224,3 +227,46 @@ check: { type: board, text: "Build a triangular prism with volume 24 cm³.", whe
 ```
 
 Then find one that is as long as possible.
+
+## Make: soil for a corner bed, on paper
+
+```step
+stage: make
+insight: "A triangular bed is a triangular prism lying flat: the floor is the cross-section and the soil depth is the length, so halve first."
+hint: ["Which shape stays the same all the way down through the soil?", "The two sides at the right angle are the triangle's base and height."]
+check:
+  type: reasoning
+  paper: true
+  q: "A triangular garden bed fits into a corner. Its two straight sides at the right angle are 2 m and 1.5 m long, and it is filled with soil 0.4 m deep. How many cubic metres of soil fill it to the top?"
+  steps:
+    - ["The bed is a triangular prism: the floor is the triangle, and it is 0.4 m deep", "the same shape all the way down, so cross-section × depth"]
+    - ["Triangle $= \\tfrac{1}{2} \\times 2 \\times 1.5 = 1.5$ m²", "the two sides at the right angle are the base and height"]
+    - ["$V = 1.5 \\times 0.4 = 0.6$ m³", "cross-section area × depth"]
+  picks:
+    - step: 2
+      q: "Why is the floor 1.5 m² and not 3 m²?"
+      options:
+        - "A triangle is half of the 2 × 1.5 rectangle"
+        - "Soil settles, so you take some off"
+        - "The bed is only 1.5 m wide"
+      answer: 0
+      feedback: [null, "Settling is a reason to order a little extra, not to change the floor's area.", "Both sides count: the triangle is cut from a 2 m by 1.5 m rectangle."]
+  answer: "0.6"
+  tolerance: 0
+  feedback:
+    - ["1.2", "That treats the bed as a rectangle, 2 × 1.5 × 0.4. The floor is a triangle: halve."]
+    - ["1.5", "That is the area of the floor. Multiply by the depth."]
+  criteria:
+    - "I found the shape that repeats all the way down, and halved for the triangle."
+    - "My lengths are all in metres."
+    - "My answer is in m³."
+  explain: "The triangle floor is ½ × 2 × 1.5 = 1.5 m². With soil 0.4 m deep, V = 1.5 × 0.4 = 0.6 m³. Suppliers suggest ordering a little extra, because soil settles."
+```
+
+Do this one in your book, not on the screen. The bed is made up for the task. Sketch the triangle, work out the soil in cubic metres, and type it.
+
+**Also used in**
+
+- **Garden beds.** Soil is sold by the cubic metre, and suppliers suggest ordering a little extra because it settles.
+- **Concrete paths.** A path is a long, thin slab: its cross-section times its length, ordered in cubic metres.
+- **Tents.** The space inside a triangular tent is a triangular prism.

@@ -16,6 +16,7 @@ running:
   - "Investigate: link V = A × h to area: the base is an area, the height counts layers."
   - "Modify: for the missing height, ask how many layers of 20 make 60."
   - "Make: collect boxes with volume 36 and sort them by height."
+  - "Paper: the concrete path is worked in books. Books out; look for the top area first, and ask whether anyone used 10 for the thickness (metres, not centimetres)."
 stuck:
   - see: "A student counts only the cubes or squares they can see (Finn's mistake)."
     ask: "What is under the top layer?"
