@@ -25,11 +25,7 @@ explainClip:
     - caption: { text: "With an outlier, the median describes a typical value better.", say: "With an outlier, the median is the better description." }
     - wait: 1400
 ---
-Mean, median and mode all describe a "typical" value, but they can disagree. Which is most useful depends on the data and the question:
-
-- An **outlier** (a value far from the rest) pulls the **mean** towards it; the **median** hardly moves.
-- With no outliers, the **mean** uses every value, so it is often the best summary.
-- The **mode** answers "which is most common?": the size a shop should stock most.
+Mean, median and mode all describe a "typical" value, but they can disagree. Which one should you trust?
 
 ## Predict: a fair average
 
@@ -58,6 +54,12 @@ check: { type: board, text: "Click the dot at 40 to remove it. How much does the
 ```
 
 Then put a very large value back (type it in). Which measure jumps?
+
+Which measure is most useful depends on the data and the question:
+
+- An **outlier** (a value far from the rest) pulls the **mean** towards it; the **median** hardly moves.
+- With no outliers, the **mean** uses every value, so it is often the best summary.
+- The **mode** answers "which is most common?": the size a shop should stock most.
 
 ## Investigate: choosing a measure
 

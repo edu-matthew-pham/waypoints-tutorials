@@ -7,7 +7,7 @@ title: How samples vary
 summary: "Random samples from the same population give different results. That is sampling variation, not a mistake. Bigger samples vary less, so their results are more reliable."
 language: maths
 voice: { name: af_heart, speed: 1.1 }
-hook: "Two polls of the same election, taken the same week, give 52% and 48% for the same party. Is one of them wrong?"
+hook: "Say two polls of the same election, taken the same week, give 52% and 48% for the same party (the numbers are made up for this lesson). Is one of them wrong?"
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8337
   url: http://127.0.0.1:8337/index.html
@@ -28,7 +28,7 @@ explainClip:
     - expect: { selector: "#gnote", contains: "10 samples so far" }
     - wait: 1600
 ---
-How much can you trust one sample? This lesson takes many samples from the same school and compares them.
+How much can you trust one sample? Take lots of them from the same school and see how they compare. The school and its students are made up for the task.
 
 ## Predict: two samples
 
@@ -107,7 +107,7 @@ tasks:
     check: { type: board, text: "Now the samples measure mean hours of sleep. Take at least 10 samples of 50 or more. Do means vary less with bigger samples too?", when: "n >= 50 and s >= 10", explain: "Yes: means of bigger samples bunch closer to the school's mean, just as proportions did." }
   - check:
       type: question
-      q: "A weather service runs its forecast model 50 times with slightly different starting data. In 40 runs it rains. What chance of rain does this suggest?"
+      q: "A weather service runs its forecast model 50 times with slightly different starting data. Say it rains in 40 runs (made-up numbers). What chance of rain does this suggest?"
       options: ["An 80% chance of rain", "It will rain", "It won't rain", "A 40% chance of rain"]
       answer: 0
       feedback: [null, "Not certain: 10 runs had no rain.", "Most runs had rain.", "40 is the count, not the percentage."]
@@ -193,3 +193,5 @@ check: { type: board, text: "Find a sample size where the results of 10 samples 
 ```
 
 Write the smallest size that worked for you, and why you might not always choose a bigger one.
+
+Sources: the two polls, the school and its students, and the forecast runs are made up for this lesson. No real poll or forecast is used.

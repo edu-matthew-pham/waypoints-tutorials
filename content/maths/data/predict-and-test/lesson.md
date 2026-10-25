@@ -31,11 +31,7 @@ explainClip:
     - caption: { text: "Close to 10, but rarely exactly: chance varies.", say: "Close to ten, but rarely exactly. Chance varies." }
     - wait: 1400
 ---
-A probability lets you **predict** what should happen over many trials:
-
-$$\text{expected count} = \text{probability} \times \text{number of trials}$$
-
-So in 60 rolls of a fair dice you expect about $60 \times \tfrac{1}{6} = 10$ sixes. Then you **test** it: run the experiment, record the counts in a table, and compare. The **relative frequency** (count ÷ trials) is the experiment's estimate of the probability.
+A fair dice, sixty rolls, and a count of sixes. Say what you expect before you see it.
 
 ## Predict: how many sixes?
 
@@ -63,6 +59,12 @@ insight: "Running 60 rolls and comparing the count of sixes with 10 shows that t
 try: { playground: board, starter: "chance.yml#run", height: 620 }
 check: { type: board, text: "Roll 60 times (press Run 10 six times). How many sixes did you get? Was your prediction right?", when: "t >= 60" }
 ```
+
+A probability lets you **predict** what should happen over many trials:
+
+$$\text{expected count} = \text{probability} \times \text{number of trials}$$
+
+So in 60 rolls of a fair dice you expect about $60 \times \tfrac{1}{6} = 10$ sixes. Then you **test** it: run the experiment, record the counts in a table, and compare. The **relative frequency** (count ÷ trials) is the experiment's estimate of the probability.
 
 Compare with others: did anyone get exactly 10? What was the furthest from 10?
 
@@ -182,6 +184,8 @@ tasks:
         - ["2", "That is the number of red counters. Use P(red) = 2/10."]
         - ["32", "That is blue: 40 × 8/10."]
       explain: "P(red) = 2/10 = 1/5, and 40 × 1/5 = 8."
+    smaller:
+      check: { type: number, q: "Just the chance: 2 of the 10 counters are red. What fraction of the draws should be red? Give a decimal.", answer: 0.2, tolerance: 0.001, feedback: [[2, "That's the number of red counters. Out of how many counters?"]], explain: "2 out of 10 is 0.2. Then 0.2 of the 40 draws." }
   - check:
       type: answer
       q: "A spinner landed on green 18 times in 60 spins. What is the relative frequency of green? (A decimal.)"

@@ -172,6 +172,8 @@ tasks:
       feedback:
         - ["5", "60 − 35 − 20 counts the 12 with both twice."]
       explain: "Case only 23, both 12, protector only 8: 43. So 60 − 43 = 17 have neither."
+    smaller:
+      check: { type: number, q: "Same 60 people: 35 have a case, 20 have a screen protector, 12 have both. How many have a screen protector but no case?", answer: 8, tolerance: 0, feedback: [[20, "12 of those 20 have a case too."]], explain: "20 − 12 = 8 have a protector only. Now put the four groups together." }
   - check:
       type: answer
       q: "Review: a bag has 7 counters, 2 of them green. What is P(not green)?"

@@ -25,12 +25,7 @@ explainClip:
     - caption: { text: "Mode: the most common: 5. Range: 11 − 3 = 8.", say: "The mode is the most common, five. The range is eleven take three: eight." }
     - wait: 1400
 ---
-A data set can have many values. To describe it in a few numbers, statisticians use **measures of centre** (what is typical) and of **spread** (how varied):
-
-- the **mean**: add all the values, then divide by how many there are;
-- the **median**: sort the values; it is the middle one (or halfway between the two middle ones);
-- the **mode**: the value that appears most often;
-- the **range**: highest minus lowest, a simple measure of spread.
+A data set can have many values. To describe it in a few numbers, statisticians use **measures of centre** (what is typical) and of **spread** (how varied).
 
 ## Predict: a typical game
 
@@ -48,7 +43,7 @@ check:
   actual: "6. The total is 3 + 5 + 5 + 6 + 11 = 30, shared equally between 5 games is 6. (5 is the median and the mode; 8 is the range.)"
 ```
 
-The mean shares the total equally. What is the total?
+What would you do with the five scores to get one number?
 
 ## Run: move the mean
 
@@ -60,6 +55,13 @@ check: { type: board, text: "Add one more game so that the mean becomes exactly 
 ```
 
 Watch the triangle (mean) and the dashed line (median) as you add values. Which moves more when you add a big score?
+
+Here are the four measures:
+
+- the **mean**: add all the values, then divide by how many there are;
+- the **median**: sort the values; it is the middle one (or halfway between the two middle ones);
+- the **mode**: the value that appears most often;
+- the **range**: highest minus lowest, a simple measure of spread.
 
 ## Investigate: the four measures
 
@@ -179,6 +181,8 @@ tasks:
       feedback:
         - ["30", "Sort first: 17, 19, 21, 25, 30."]
       explain: "Sorted: 17, 19, 21, 25, 30. The middle value is 21."
+    smaller:
+      check: { type: number, q: "Put 21, 17, 30, 25, 19 in order, smallest first. What number comes fourth?", answer: 25, tolerance: 0, feedback: [[21, "That's the third in order. Count one more along."], [30, "That's the last one in order. Count along from 17."]], explain: "In order: 17, 19, 21, 25, 30. The fourth is 25. Now which one is in the middle?" }
   - check:
       type: answer
       q: "Find the range of $4.5, 7.2, 3.9, 6.1$."

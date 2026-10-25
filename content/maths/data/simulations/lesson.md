@@ -126,6 +126,8 @@ tasks:
       answer: 100
       tolerance: 0
       explain: "1/6 × 600 = 100. A simulation will give a number near 100, not exactly."
+    smaller:
+      check: { type: number, q: "Look at the grid of two dice. How many of the 36 pairs make a total of 7?", answer: 6, tolerance: 0, feedback: [[1, "Count them all: (1, 6), (2, 5), and so on."]], explain: "(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1): 6 of 36, which is 1/6. Now share that over 600 rolls." }
 ```
 
 ### 1000 trials

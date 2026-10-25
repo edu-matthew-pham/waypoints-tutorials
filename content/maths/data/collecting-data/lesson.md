@@ -38,6 +38,8 @@ The **population** is everyone (or everything) the question is about. There are 
 | **experiment** | change something on purpose and measure what happens | half a class revises with music, half without |
 | **observation** | watch and record without changing anything | counting cars past the school gate |
 
+The census in the hook is real: [the ABS counts every person and household every five years](https://www.abs.gov.au/about/legislation-and-policy/privacy/collection-notices/2026-census-population-and-housing-census-data-collection-notice). So is the ratings company: [OzTAM](https://calendar.oztam.com.au/TheOzTAMPanel.aspx) measures viewing in a panel of 5,250 homes across its five city markets (the panel size OzTAM gives for its metropolitan markets). In between censuses the ABS asks a sample: [about 26,000 households a month](https://www.abs.gov.au/participate-survey/household-survey/monthly-population-survey) take part in its Monthly Population Survey.
+
 ## Predict: a sample of 20
 
 ```step
@@ -132,7 +134,7 @@ tasks:
       options: ["It costs a great deal and takes months to collect and process", "The population never changes", "Five is a lucky number", "A sample would be impossible"]
       answer: 0
       feedback: [null, "The population changes every day.", "It is a practical choice.", "Surveys of samples are run in between."]
-      explain: "A census of millions of homes is expensive and slow. Smaller samples (such as the monthly Labour Force Survey) fill the gaps."
+      explain: "A census of millions of homes is expensive and slow. Smaller samples (such as the ABS Monthly Population Survey, about 26,000 households a month) fill the gaps."
   - check:
       type: question
       q: "A council wants to know how many cars use a road each morning. Which technique fits best?"

@@ -27,7 +27,7 @@ explainClip:
     - caption: { text: "Together they cover every outcome once: 2/6 + 4/6 = 1.", say: "Together they make one." }
     - wait: 1600
 ---
-An **event** is a set of outcomes, such as "roll a 5 or a 6". Its **complement**, written **not A** (or A′), is every other outcome in the sample space.
+An **event** is a set of outcomes, such as "roll a 5 or a 6".
 
 ## Predict: not red
 
@@ -50,7 +50,7 @@ try: { playground: board, starter: "ev.yml#run", height: 520 }
 check: { type: board, text: "Click the outcomes for A: 'roll at least 5'. Then press Show not A. Do P(A) and P(not A) add to 1? Does that match your prediction?", when: "r = 1 and k = 1", explain: "P(A) = 2/6 and P(not A) = 4/6. Every outcome is in exactly one of them, so they add to 1." }
 ```
 
-Every outcome is in A or in not A, never both and never neither. So:
+The **complement** of an event A, written **not A** (or A′), is every other outcome in the sample space. Every outcome is in A or in not A, never both and never neither. So:
 
 $$P(A) + P(\text{not } A) = 1 \qquad P(\text{not } A) = 1 - P(A)$$
 
@@ -126,6 +126,8 @@ tasks:
       answer: 0
       feedback: [null, "That is the chance of no heads (TTT).", "That is exactly one head.", "Count the 8 outcomes: only TTT has no head."]
       explain: "Only TTT has no heads, so P(at least one head) = 1 − 1/8 = 7/8."
+    smaller:
+      check: { type: number, q: "Three coins make 8 outcomes, from HHH to TTT. How many of them have no heads at all?", answer: 1, tolerance: 0, feedback: [[0, "Look at TTT."], [3, "That's the outcomes with exactly one head. We want none."]], explain: "Only TTT has no heads. One outcome out of 8." }
   - check:
       type: number
       q: "A factory finds that 2% of its light globes are faulty. What percentage are not faulty?"

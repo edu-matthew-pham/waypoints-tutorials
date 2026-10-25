@@ -25,12 +25,7 @@ explainClip:
     - caption: { text: "A measurement is rounded: 14.6 s could be anything from 14.55 to 14.65 s.", say: "A measurement is always rounded to some precision." }
     - wait: 1400
 ---
-Statistics starts with **data**: values collected to answer a question. Numerical data comes in two kinds:
-
-- **Discrete** data is **counted**: number of siblings, goals scored, cars in a car park. It takes separate values, usually whole numbers.
-- **Continuous** data is **measured**: height, time, mass, temperature. It can take any value in a range; we round it when we record it.
-
-The kind of data changes how you collect it, and how you display it later in this unit.
+Statistics starts with **data**: values collected to answer a question. Before you work with some numbers, it helps to ask what values they could take.
 
 ## Predict: which can be 152.5?
 
@@ -48,7 +43,7 @@ check:
   actual: "A height in cm. Heights are measured, so they can be any value (152.5 cm, or 152.47 cm with a better ruler). The others are counted: whole numbers only."
 ```
 
-Ask of each one: is it counted, or measured?
+How does each of these get its number?
 
 ## Run: add a time
 
@@ -60,6 +55,13 @@ check: { type: board, text: "These are 100 m times in seconds. Add a time of $14
 ```
 
 Times can land between the marks. Could you add 14.35 s? What would you need to measure it?
+
+Numerical data comes in two kinds:
+
+- **Discrete** data is **counted**: number of siblings, goals scored, cars in a car park. It takes separate values, usually whole numbers.
+- **Continuous** data is **measured**: height, time, mass, temperature. It can take any value in a range; we round it when we record it.
+
+The kind of data changes how you collect it, and how you display it later in this unit.
 
 ## Investigate: counted or measured
 

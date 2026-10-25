@@ -142,6 +142,8 @@ tasks:
       feedback:
         - ["1/11", "The sums 2 to 12 are not equally likely: count the pairs."]
       explain: "6 of the 36 pairs make 7: 6/36 = 1/6."
+    smaller:
+      check: { type: number, q: "Just the pairs: two dice make a grid with 6 rows and 6 columns. How many pairs is that in all?", answer: 36, tolerance: 0, feedback: [[12, "That's 6 + 6. Each face of one dice goes with every face of the other."]], explain: "6 × 6 = 36 pairs. Now how many of them make 7?" }
   - check:
       type: answer
       q: "Two coins are tossed. What is P(two heads)?"

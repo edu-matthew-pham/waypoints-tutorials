@@ -189,6 +189,8 @@ tasks:
         - ["4/10", "Right: simplify it."]
         - ["1/2", "Two colours, but not the same number of counters."]
       explain: "4 of 10 = 2/5."
+    smaller:
+      check: { type: number, q: "Just the counting: how many counters are in the bag altogether?", answer: 10, tolerance: 0, feedback: [[2, "That's the number of colours. Count the counters."]], explain: "4 yellow and 6 purple: 10 counters. Now how many are yellow?" }
   - check:
       type: answer
       q: "Pick a letter at random from the word MATHS. What is the probability it is a vowel? (A fraction.)"

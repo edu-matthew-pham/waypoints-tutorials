@@ -27,8 +27,6 @@ explainClip:
 ---
 A short experiment rarely matches the expected count, as you saw with the dice. So what happens as the number of trials grows?
 
-The **relative frequency** (count ÷ trials) jumps about over the first few trials, then settles closer and closer to the **probability**. This is called the **law of large numbers**. It is why a large experiment (or a simulation) gives a good estimate of a probability you cannot work out from a sample space.
-
 ## Predict: 10 or 1000?
 
 ```step
@@ -56,6 +54,8 @@ check: { type: board, text: "Run 10 flips, then keep going to at least 1000. Wat
 ```
 
 Where is the line after 10 flips? After 1000? Press Start again and run it again: does the start look the same?
+
+The **relative frequency** (count ÷ trials) jumps about over the first few trials, then settles closer and closer to the **probability**. This is called the **law of large numbers**. It is why a large experiment (or a simulation) gives a good estimate of a probability you cannot work out from a sample space.
 
 ## Investigate: settling, not balancing
 
@@ -90,7 +90,7 @@ tasks:
 
 ### Settling, not balancing
 
-Here is why more trials help.
+Here is why more trials help. The flip counts here are made up for the task; real coins behave the same way.
 
 ```worked
 \tfrac{7}{10} = 0.7 :: Ten flips: one result changes the fraction by 0.1.
@@ -144,6 +144,8 @@ Each task changes one thing.
 
 ### Which to trust
 
+The spinner counts are made up for the task.
+
 ### Long runs
 
 ## Practise: many trials
@@ -185,6 +187,8 @@ tasks:
 
 ### Estimate
 
+The drawing-pin counts are made up for the task, not from a real experiment.
+
 ### Streaks
 
 ### Use the estimate
@@ -202,3 +206,5 @@ check: { type: board, text: "Keep flipping until you have at least 1000 flips an
 ```
 
 How many flips did it take? Compare with others.
+
+Sources: every count in this lesson is made up for the task (the flips, the drawing pin and the spinners). Nothing here comes from a real experiment.

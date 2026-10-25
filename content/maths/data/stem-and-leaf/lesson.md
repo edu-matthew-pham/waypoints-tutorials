@@ -26,13 +26,7 @@ explainClip:
     - caption: { text: "Every value is still there, and the shape shows where most of them are.", say: "Every value is kept, and the shape shows where most of them are." }
     - wait: 1400
 ---
-A **stem-and-leaf plot** is a display that keeps every value. For two-digit numbers:
-
-- the **stem** is the tens digit, written once down the left;
-- the **leaves** are the units digits, written in order along each stem's row;
-- a **key** says how to read it: $3 \mid 5$ means $35$.
-
-Turned on its side, it looks like a bar graph, so you can see the shape of the data and still read every value.
+A **stem-and-leaf plot** is a display that keeps every value.
 
 ## Predict: read a row
 
@@ -62,6 +56,14 @@ check: { type: board, text: "Add 44 and 29 to the data (type them in the box). W
 ```
 
 The dot plot and the stem-and-leaf plot show the same data. Which is easier to read exact values from?
+
+For two-digit numbers:
+
+- the **stem** is the tens digit, written once down the left;
+- the **leaves** are the units digits, written in order along each stem's row;
+- a **key** says how to read it: $3 \mid 5$ means $35$.
+
+Turned on its side, it looks like a bar graph, so you can see the shape of the data and still read every value.
 
 ## Investigate: build and read
 
@@ -194,6 +196,8 @@ tasks:
       feedback:
         - ["7", "Use whole values: 79 − 52."]
       explain: "79 − 52 = 27."
+    smaller:
+      check: { type: number, q: "A row of a plot reads $4 \\mid 1\\ 6\\ 8$. What is the biggest value in that row?", answer: 48, tolerance: 0, feedback: [[8, "That's only the leaf. What's the stem?"]], explain: "The stem 4 is the tens and the leaf 8 is the units: 48. Read the range from whole values like this." }
   - check:
       type: question
       q: "Values $41, 44, 62, 65$. Which stems should the plot have?"
