@@ -5,7 +5,7 @@ goals:
   - I can name a cell by its column letter and row number.
   - I can write a formula that starts with = and uses cell names.
   - I can explain why a formula keeps up when a cell changes and a typed answer does not.
-struggle: "Typing the answer instead of the formula. A student who types 8 in D2 gets a correct-looking sheet, so nothing tells them it is wrong until a cell changes. Have them change B2 and watch."
+struggle: "Typing the answer instead of the formula. A student who types {{a4-a1}} in D2 gets a correct-looking sheet, so nothing tells them it is wrong until a cell changes. Have them change B2 and watch."
 before: |
   Do the Try board yourself: change B2, then click D2 and read the bar above the sheet.
 
@@ -17,7 +17,7 @@ before: |
 
   Years 6–8: the data is a plant-growth table like one in Year 7 science. Use your own class data if you have it, and have students type their own measurements in the last step.
 running:
-  - "Predict: students who chose 8 think D2 only shows what it showed before. Ask what 'formula' might mean."
+  - "Predict: students who chose {{a4-a1}} think D2 only shows what it showed before. Ask what 'formula' might mean."
   - "Try: ask why D2 changed when B2 was the cell they typed in."
   - "Worked example: ask which part of =C2-B2 is the = and which part is the names. Say the formula aloud: take B2 from C2."
   - "Practise: students often write =C3-B3 for D4 by copying. Ask which row Bean C is in."
@@ -42,8 +42,8 @@ leads: |
 
   Years 6–8: the same sheet can record real measurements from a science investigation. Digital Technologies › Data representation covers how data is stored; this course is about using it.
 exit:
-  q: "B2 holds 4, C2 holds 9 and D2 holds =C2-B2. You change B2 to 6. What does D2 show?"
-  a: "3. The formula works out 9 - 6 again."
+  q: "B2 holds {{e1}}, C2 holds {{e4}} and D2 holds =C2-B2. You change B2 to {{e1new}}. What does D2 show?"
+  a: "{{e4-e1new}}. The formula works out {{e4}} - {{e1new}} again."
 explain: |
   A spreadsheet is a grid of **cells**, and each has a name: the column letter, then the row number, such as **C2**.
 

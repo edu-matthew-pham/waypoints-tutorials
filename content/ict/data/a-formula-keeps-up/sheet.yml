@@ -7,8 +7,8 @@ cell B1: Day 1
 cell C1: Day 4
 cell D1: Growth
 cell A2: Bean A
-cell B2: 3
-cell C2: 11
+cell B2: {{a1}}
+cell C2: {{a4}}
 cell D2: =C2-B2
 edit: B2:C2
 # endregion
@@ -20,15 +20,15 @@ cell B1: Day 1
 cell C1: Day 4
 cell D1: Growth
 cell A2: Bean A
-cell B2: 3
-cell C2: 11
+cell B2: {{a1}}
+cell C2: {{a4}}
 cell D2: =C2-B2
 cell A3: Bean B
-cell B3: 2
-cell C3: 11
+cell B3: {{b1}}
+cell C3: {{b4}}
 cell A4: Bean C
-cell B4: 4
-cell C4: 10
+cell B4: {{c1}}
+cell C4: {{c4}}
 edit: D3:D4
 # endregion
 
@@ -42,4 +42,26 @@ cell A2: Bean A
 cell A3: Bean B
 cell A4: Bean C
 edit: B2:D4
+# endregion
+
+# What a student adds on each board (tools/check-context.mjs tries the step's check against it).
+# region: run-solution
+cell B2: {{fix}}
+# endregion
+
+# region: practise-solution
+cell D3: =C3-B3
+cell D4: =C4-B4
+# endregion
+
+# region: make-solution
+cell B2: {{a1}}
+cell C2: {{a4}}
+cell D2: =C2-B2
+cell B3: {{b1}}
+cell C3: {{b4}}
+cell D3: =C3-B3
+cell B4: {{c1}}
+cell C4: {{c4}}
+cell D4: =C4-B4
 # endregion

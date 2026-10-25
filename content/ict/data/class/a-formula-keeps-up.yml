@@ -1,5 +1,5 @@
 inquiry:
-  q: "You work out the growth on a calculator and type 8 in the sheet. Your friend types a formula. Whose sheet is better, and when would you find out?"
+  q: "You work out the growth on a calculator and type {{a4-a1}} in the sheet. Your friend types a formula. Whose sheet is better, and when would you find out?"
   prompts:
     - "What happens to each sheet if you find the Day 1 height was wrong?"
     - "Which is quicker if there are 30 plants?"
@@ -10,8 +10,8 @@ activities:
     title: "Change one number"
     minutes: 3
     do: |
-      Write 3 and 11 on the board, with D2 = C2 − B2 = 8. Change the 3 to a 5. Ask the class what D2 shows now, then compare it with what a sheet that only remembered 8 would show.
-    notes: "6, not 8. The point is that the formula works the answer out again."
+      Write {{a1}} and {{a4}} on the board, with D2 = C2 − B2 = {{a4-a1}}. Change the {{a1}} to a {{fix}}. Ask the class what D2 shows now, then compare it with what a sheet that only remembered {{a4-a1}} would show.
+    notes: "{{a4-fix}}, not {{a4-a1}}. The point is that the formula works the answer out again."
   - at: make
     kind: discussion
     title: "Which cells should be formulas?"
