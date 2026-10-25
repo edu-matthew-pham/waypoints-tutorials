@@ -393,5 +393,6 @@
   "sci-notation-places": {"home": "maths/real-numbers/scientific-notation", "text": "The power of 10 counts the zeros, or has the wrong sign for small numbers (0.00042 = 4.2 × 10⁴, or 4.2 × 10⁻⁵); it counts how many places the decimal point moves, negative for numbers less than 1: 4.2 × 10⁻⁴."},
   "pattern-sum-product": {"home": "maths/algebra/binomial-pattern", "text": "The middle number is the product and the last number is the sum ((x + 3)(x + 5) = x² + 15x + 8); the middle is the sum a + b and the last is the product ab."},
   "check-not-compared": {"home": "maths/algebra/expand-or-factorise", "text": "A factorisation is accepted after expanding without comparing every term (x² − x − 6 taken as matching x² + x − 6); each term of the expansion must equal the original, including the signs."},
+  "subtract-negative-index": {"home": "maths/real-numbers/all-index-laws", "text": "Dividing by a negative power is taken as subtracting its size (5⁶ ÷ 5⁻² = 5⁴); subtracting a negative index adds: 6 − (−2) = 8, so 5⁸."},
   "round-early": {"home": "maths/real-numbers/exact-or-rounded", "text": "Values are rounded at the start of a calculation (π as 3, √2 as 1.4) and the answer is treated as exact; keep exact values or full calculator values until the end, then round once."}
 }

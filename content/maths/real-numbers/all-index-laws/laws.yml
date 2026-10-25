@@ -1,0 +1,33 @@
+# Boards for "All the index laws". The board divides aᵐ by aⁿ; past zero the answer is a negative power.
+
+# region: run
+widget: indexlaws
+mode: negative
+a: 10
+slider m: 1, 6, 3
+slider n: 1, 6, 1
+# endregion
+
+# region: explain
+widget: indexlaws
+mode: negative
+a: 2
+slider m: 1, 6, 2
+slider n: 1, 6, 2
+# endregion
+
+# region: explain-pic
+widget: indexlaws
+mode: negative
+a: 10
+m: 3
+n: 6
+# endregion
+
+# region: vary
+widget: indexlaws
+mode: negative
+slider a: 2, 10, 2
+slider m: 1, 6, 4
+slider n: 1, 6, 4
+# endregion

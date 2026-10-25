@@ -1,0 +1,39 @@
+summary: "Students use all the index laws with zero and negative indices, take care subtracting a negative, and work out how many photos fit on a phone from powers of 10 (AC9M9A01, node 2)."
+time: 40
+timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practise and Make 10 min"
+goals:
+  - I can simplify powers of the same base with negative and zero indices.
+  - I can subtract a negative index correctly.
+  - I can use powers of 10 to divide very big numbers.
+struggle: "Signs: subtracting a negative index. Ask students to write 6 − (−2) with the brackets before they work it out."
+before: |
+  Do the Run board yourself first. Students need Negative powers and the Year 8 index laws.
+
+  The one idea: the laws don't change; the care is in the signs. The common mistake is subtracting the size of a negative index (Jo's working).
+
+  Prefix sizes (kilo 10³, mega 10⁶, giga 10⁹) are from the BIPM SI prefixes table. Phone storage in practice sometimes counts in 1024s: the lesson uses the SI powers of 10 and says so.
+running:
+  - "Predict: take a show of hands. Those who chose 32 or 320 000 lost or added zeros."
+  - "Run: ask students to say the index of the answer before they read it."
+  - "Paper: the try-one after the worked example and the photos in Make are worked on paper first. Books out, and look for the indices written with brackets."
+  - "Modify: before (2⁻¹)⁻³, ask whether the answer is bigger or smaller than 1."
+stuck:
+  - see: "A student writes 5⁶ ÷ 5⁻² = 5⁴."
+    ask: "What's 6 − (−2)?"
+    fix: "8. Subtracting a negative adds."
+  - see: "A student writes (5⁻²)³ = 5⁻⁵."
+    ask: "Do you add or multiply for a power of a power?"
+    fix: "Multiply: −2 × 3 = −6."
+stretch: "How many kilobytes make a gigabyte? Work out 10⁹ ÷ 10³ and say what the index tells you."
+support: "A law card: product (add), quotient (subtract), power (multiply), with one example each."
+leads: |
+  Continues AC9M9A01 node 2.
+
+  Where it leads: index laws on letters (next), scientific notation, exponential decay (Year 10).
+exit:
+  q: "Simplify 4⁻² × 4⁵ ÷ 4⁻¹."
+  a: "4⁴ = 256."
+explain: |
+  The index laws work with any indices. Multiplying adds the indices, dividing subtracts them, and a power of a power multiplies them.
+
+  Subtracting a negative adds: $5^6 \div 5^{-2} = 5^{6 - (-2)} = 5^8$.

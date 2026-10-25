@@ -1,0 +1,8 @@
+# Jo's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: jo
+Simplify 5⁶ ÷ 5⁻².
+Same base, so subtract the indices.
+6 − 2 = 4.
+So 5⁶ ÷ 5⁻² = 5⁴.
+# endregion

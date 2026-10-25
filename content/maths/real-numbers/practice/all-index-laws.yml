@@ -1,0 +1,19 @@
+# Practice for "All the index laws". Answers are the index of the single power.
+templates:
+  - q: "Simplify {a}^{m} × {a}^-{n}. It's {a} to what power?"
+    vars: { a: "2..9", m: "1..8", n: "1..8" }
+    where: "m != n"
+    answer: "{m - n}"
+    explain: "Multiplying adds the indices: {m} + (−{n}) = {m - n}."
+  - q: "Simplify {a}^{m} ÷ {a}^-{n}. It's {a} to what power?"
+    vars: { a: "2..9", m: "1..8", n: "1..8" }
+    answer: "{m + n}"
+    explain: "Dividing subtracts the indices: {m} − (−{n}) = {m + n}."
+  - q: "Simplify ({a}^-{m})^{n}. It's {a} to what power?"
+    vars: { a: "2..9", m: "1..5", n: "2..5" }
+    answer: "{0 - m * n}"
+    explain: "A power of a power multiplies the indices: −{m} × {n} = −{m * n}."
+  - q: "Simplify {a}^-{m} ÷ {a}^{n}. It's {a} to what power?"
+    vars: { a: "2..9", m: "1..8", n: "1..8" }
+    answer: "{0 - m - n}"
+    explain: "Dividing subtracts: −{m} − {n} = −{m + n}."
