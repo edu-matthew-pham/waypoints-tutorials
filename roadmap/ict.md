@@ -34,7 +34,7 @@ General ICT skills for students and for teachers of any subject, as its own subj
 - ICT skills is its own subject with its own entry point: light courses plus cards. Other subjects may link in optionally (a lesson or card that says "needs this ICT skill"); maths, science and code lessons are left alone for now.
 - A skill has a **lesson** (counts toward progress) and a **card** (reference: no ticks, one screen: the idea, steps that work in any app, a note for each common app such as Word, Excel, Docs, Sheets, a "watch for" line, and a link to the lesson). Both exist; search finds both.
 - Each ICT course has a Reference page listing its cards (`<course>/reference/`, the Reference chip on the course page). Cards live in `content/ict/<course>/cards.yml` (`tools/ict-cards.mjs`, AUTHORING › ICT cards). Core functions only; app notes name menus that rarely change and always say other apps work the same.
-- Files and systems is cut to about four habit lessons (names and folders, copy/move/delete, versions and backup, fix it first) with no new widget for now; they link to the concept lessons in How computers work.
+- Files and systems is cut to about four habit lessons (approved by Matthew 26 Oct 2026, not yet built) (names and folders, copy/move/delete, versions and backup, fix it first) with no new widget for now; they link to the concept lessons in How computers work.
 
 ## Built (26 Oct 2026): cards
 - First batch: 8 cards for Working with data and 8 for Documents and slides, from their lessons. Pictures are not drawn yet (text only); whether widgets can be drawn through `render-pictures` is untested.
