@@ -1,0 +1,28 @@
+# Meal deals for "Listing every outcome of two choices".
+
+# region: run
+widget: events
+first: Burger, Wrap, Salad, Soup
+second: Water, Juice, Milk
+names: Main, Drink
+view: both
+target: b = Juice
+# endregion
+
+# region: nosaladmilk
+widget: events
+first: Burger, Wrap, Salad, Soup
+second: Water, Juice, Milk
+names: Main, Drink
+view: both
+target: a != Salad and b != Milk
+# endregion
+
+# region: soup
+widget: events
+first: Burger, Wrap, Salad, Soup
+second: Water, Juice, Milk
+names: Main, Drink
+view: both
+target: a = Soup
+# endregion

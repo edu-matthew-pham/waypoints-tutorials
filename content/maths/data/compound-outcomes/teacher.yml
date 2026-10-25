@@ -1,0 +1,32 @@
+summary: "A meal deal is a main and a drink. Listing the deals in an order (every main with every drink) shows that two-step outcomes multiply, and stops you missing one."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can list every outcome of two choices without missing one."
+  - "I can count them by multiplying."
+  - "I can explain why two choices multiply rather than add."
+struggle: "Adding the two menus. Ask: does the burger go with water only, or with every drink?"
+before: |
+  Students need grids and tree diagrams (Year 8).
+
+  The one idea: every first choice pairs with every second one, so the count multiplies, and listing one first choice at a time stops missed deals. The menu is made up; use your own canteen's if you like.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student says 7 deals."
+    ask: "Does the burger go with all three drinks?"
+    fix: "Each main pairs with every drink: multiply."
+stretch: "Add a third choice (a side) and say how the count changes. What if some pairs are not allowed?"
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Starts AC9M9P01 node 1.
+
+  Where it leads: draws without putting back (next).
+exit:
+  q: "2 shirts and 5 pairs of shorts. How many outfits?"
+  a: "10."
+explain: |
+  Each choice from the first group goes with every choice from the second. List one first choice at a time and you will not miss any.
+
+  Count by multiplying.

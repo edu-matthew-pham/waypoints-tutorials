@@ -1,0 +1,32 @@
+# Counter draws for "Every outcome, and the total of 1".
+
+# region: run
+widget: events
+first: red, red, blue, green
+second: red, red, blue, green
+names: First counter, Second counter
+replace: off
+view: grid
+complement: on
+target: a = red or b = red
+# endregion
+
+# region: blue
+widget: events
+first: red, red, blue, green
+second: red, red, blue, green
+names: First counter, Second counter
+replace: off
+view: grid
+target: a = blue or b = blue
+# endregion
+
+# region: tworeds
+widget: events
+first: red, red, blue, green
+second: red, red, blue, green
+names: First counter, Second counter
+replace: off
+view: grid
+target: a = red and b = red
+# endregion

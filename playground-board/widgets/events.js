@@ -15,6 +15,8 @@
 //   complement: on           a "Show not A" button: shades every other outcome and writes P(not A) (shown: starts shown)
 //   trials: on               Run 1, 10, 100, 1000: relative frequency of A against P(A), and a table of how often each
 //                            label came up (sums, for two dice with show: sum)
+//   replace: off             a draw with nothing put back: the second list must equal the first, and the second pick
+//                            cannot be the first (no diagonal in the grid, fewer branches in the tree)
 //   seed: 4                  fixed randomness for pictures and clips
 // state: { scope: { vars: { n (outcomes in A), m (all outcomes), p (P(A), 3 places), q (outcomes in not A), k (1 while not
 //   A is shown), r (1 when A matches target), u (trials), c (times A happened), f (relative frequency), e (|f − p|) } } }
@@ -70,11 +72,13 @@
     var v = String(s.view || 'grid').trim().toLowerCase();
     if (['grid', 'tree', 'both'].indexOf(v) < 0) throw new Error('view: grid, tree or both.');
     s.view0 = v === 'tree' ? 'tree' : 'grid'; s.both = v === 'both';
+    s.norep = /^off$/i.test(s.replace || '');
+    if (s.norep && (!s.Bs || String(s.first).trim() !== String(s.second).trim())) throw new Error('replace: off needs a second event with the same list as the first (a draw with nothing put back).');
     // the outcomes: cells of the grid (row = first, column = second), or the list for one event
     s.cells = [];
     s.A.out.forEach(function (a, i) {
       if (!s.Bs) s.cells.push({ i: i, j: 0, a: a, b: null });
-      else s.Bs.out.forEach(function (b, j) { s.cells.push({ i: i, j: j, a: a, b: b }); });
+      else s.Bs.out.forEach(function (b, j) { if (!(s.norep && i === j)) s.cells.push({ i: i, j: j, a: a, b: b }); });
     });
     if ((s.view0 === 'tree' || s.both) && (!s.Bs || s.cells.length > 16)) throw new Error('view: tree is for two events with at most 16 outcomes.');
     s.cells.forEach(function (c) {
@@ -139,14 +143,14 @@
       W = x2 + lw + 30; H = L * lh + 60;
       add(svg, 'text', { x: (x0 + x1) / 2, y: 22, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 700, 'font-family': font, fill: muted }, spec.A.name);
       add(svg, 'text', { x: (x1 + x2) / 2 + 20, y: 22, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 700, 'font-family': font, fill: muted }, spec.Bs.name);
-      var C2 = spec.Bs.out.length, root = 40 + L * lh / 2;
+      var root = 40 + L * lh / 2, pos = 0;
       add(svg, 'circle', { cx: x0, cy: root, r: 6, fill: ink });
       spec.A.out.forEach(function (a, i) {
-        var my = 40 + (i * C2 + C2 / 2) * lh;
+        var mine = spec.cells.filter(function (c) { return c.i === i; }), C2 = mine.length, my = 40 + (pos + C2 / 2) * lh, base = pos; pos += C2;
         add(svg, 'line', { x1: x0, y1: root, x2: x1, y2: my, stroke: ink, 'stroke-width': 2 });
         add(svg, 'text', { x: x1 + 8, y: my + 6, 'font-size': 18, 'font-weight': 700, 'font-family': font, fill: ink, stroke: B.css('--card') || '#fff', 'stroke-width': 4, 'paint-order': 'stroke' }, String(a));
-        spec.Bs.out.forEach(function (b, j) {
-          var ly = 40 + (i * C2 + j + 0.5) * lh;
+        mine.forEach(function (c, j) {
+          var b = c.b, ly = 40 + (base + j + 0.5) * lh;
           add(svg, 'line', { x1: x1 + 30, y1: my, x2: x2 - 34, y2: ly, stroke: ink, 'stroke-width': 1.5 });
           add(svg, 'text', { x: x2 - 28, y: ly + 6, 'font-size': 16, 'font-weight': 700, 'font-family': font, fill: ink }, String(b));
         });

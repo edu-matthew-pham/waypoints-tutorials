@@ -1,0 +1,7 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+There are 4 mains and 3 drinks.
+A deal is a main and a drink, so 4 + 3 = 7 deals.
+So there are 7 different meal deals.
+# endregion

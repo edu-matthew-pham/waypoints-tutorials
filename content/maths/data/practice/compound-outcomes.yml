@@ -1,0 +1,16 @@
+# Practice for "Listing every outcome of two choices".
+templates:
+  - q: "A menu has {a} mains and {b} drinks. How many different meal deals (a main and a drink)?"
+    vars: { a: "3..9", b: "2..6" }
+    answer: "{a * b}"
+    feedback:
+      - ["{a + b}", "Each main goes with every drink: multiply, don't add."]
+    explain: "{a} × {b} = {a * b}."
+  - q: "A shop sells {a} bases, {b} toppings and {c} sauces. How many base, topping and sauce combinations?"
+    vars: { a: "2..5", b: "3..6", c: "2..4" }
+    answer: "{a * b * c}"
+    explain: "Each choice multiplies: {a} × {b} × {c} = {a * b * c}."
+  - q: "There are {a} shirts and {b} pairs of shorts. One pair clashes with one shirt and is never worn together. How many outfits are there?"
+    vars: { a: "3..8", b: "2..7" }
+    answer: "{a * b - 1}"
+    explain: "{a} × {b} = {a * b} pairs, minus the 1 that clashes: {a * b - 1}."

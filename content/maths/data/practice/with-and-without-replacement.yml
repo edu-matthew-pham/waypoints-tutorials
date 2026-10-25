@@ -1,0 +1,18 @@
+# Practice for "Putting it back, or not".
+templates:
+  - q: "{n} names are in a hat and two are drawn for two jobs, with nothing put back. How many ordered outcomes?"
+    vars: { n: "3..12" }
+    answer: "{n * (n - 1)}"
+    feedback:
+      - ["{n * n}", "The first name stays out, so the second job has {n - 1} names to choose from."]
+    explain: "{n} × {n - 1} = {n * (n - 1)}."
+  - q: "{n} names are in a hat and two are drawn for two jobs, and the first name IS put back. How many ordered outcomes?"
+    vars: { n: "3..12" }
+    answer: "{n * n}"
+    explain: "{n} × {n} = {n * n}."
+  - q: "{n} people, {k} of them from your table. Two are drawn in order with nothing put back. How many outcomes have both from your table?"
+    vars: { n: "8..14", k: "3..6" }
+    answer: "{k * (k - 1)}"
+    feedback:
+      - ["{k * k}", "The first person stays out, so the second comes from the {k - 1} left at your table."]
+    explain: "{k} × {k - 1} = {k * (k - 1)}."

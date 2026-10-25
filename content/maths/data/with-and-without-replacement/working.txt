@@ -1,0 +1,7 @@
+# Priya's working for the "find the mistake" task. Plain text.
+
+# region: priya
+5 names are in the hat and two are drawn for two jobs.
+The first name is not put back, but there are still 5 names for the second job, so 5 × 5 = 25.
+So there are 25 outcomes.
+# endregion

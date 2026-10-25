@@ -1,0 +1,20 @@
+# Name draws for "Putting it back, or not".
+
+# region: run
+widget: events
+first: Ana, Ben, Cai, Dee
+second: Ana, Ben, Cai, Dee
+names: First job, Second job
+view: both
+replace: off
+target: a = Ana or b = Ana
+# endregion
+
+# region: with
+widget: events
+first: Ana, Ben, Cai, Dee
+second: Ana, Ben, Cai, Dee
+names: First job, Second job
+view: both
+target: a = b
+# endregion

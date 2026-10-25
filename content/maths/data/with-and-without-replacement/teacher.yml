@@ -1,0 +1,32 @@
+summary: "When something drawn is put back the choices stay the same; when it is not, they shrink. Listing the outcomes both ways shows what changes."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can say whether a draw is with or without put-back."
+  - "I can list and count the outcomes both ways."
+  - "I can explain why the second choice shrinks."
+struggle: "Keeping 4 choices for the second draw. Ask: if Ana is out of the hat, who is left?"
+before: |
+  Students need the last lesson.
+
+  The one idea: without put-back the second choice has one fewer outcome. The board's grid shows the empty diagonal. Probabilities are found by counting equally likely outcomes; multiplying along branches is Year 10. Class sizes here are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student writes 5 × 5 for two names drawn from 5."
+    ask: "If Ana is out, can she be drawn again?"
+    fix: "The second job has 4 names left: 5 × 4."
+stretch: "Three names drawn in a row with no put-back from 6: how many outcomes?"
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Continues AC9M9P01 node 2.
+
+  Where it leads: probabilities for every outcome (next).
+exit:
+  q: "4 names, two drawn with no put-back. How many outcomes?"
+  a: "12."
+explain: |
+  When a drawn item is not put back, the next draw has one fewer choice. List the outcomes with an empty diagonal in the grid.
+
+  Then count favourable outcomes over all.

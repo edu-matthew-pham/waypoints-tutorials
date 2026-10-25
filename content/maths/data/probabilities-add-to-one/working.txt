@@ -1,0 +1,7 @@
+# Lee's working for the "find the mistake" task. Plain text.
+
+# region: lee
+Two counters are drawn from 2 red, 1 blue and 1 green. There are 12 outcomes.
+P(two reds) = 2/12, P(red and blue) = 4/12, P(red and green) = 4/12.
+That is every kind of result, and the total is 10/12, which is fine because probabilities do not have to total 1.
+# endregion

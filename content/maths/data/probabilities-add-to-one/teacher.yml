@@ -1,0 +1,32 @@
+summary: "Give each outcome its probability, then add them up. If the total is not 1, an outcome was missed or counted wrongly."
+time: 40
+timing: "Predict and Run 8 min · Investigate 10 min · Modify 10 min · Practise and Make 12 min"
+goals:
+  - "I can give each outcome its probability."
+  - "I can check that the probabilities of all outcomes add to 1."
+  - "I can use the total to find a missing probability."
+struggle: "Treating the two reds as one outcome. Ask: if you painted them different colours, would the count change?"
+before: |
+  Students need the last lesson.
+
+  The one idea: the probabilities of all outcomes add to 1, which makes the total a check on the list. The board treats counters as different (two red entries), so counts are of equally likely outcomes. Counter numbers are made up.
+running:
+  - "Predict: show of hands before the check."
+  - "Make: the working is done on paper first."
+stuck:
+  - see: "A student counts RR once, getting 9 outcomes."
+    ask: "Are the two reds the same counter?"
+    fix: "Different counters make different outcomes: 12."
+stretch: "Add a second blue. What are the probabilities of 0, 1 and 2 reds?"
+support: "A printed copy of the situation and a blank table to fill in."
+leads: |
+  Completes AC9M9P01 node 3.
+
+  Where it leads: using data, not counting, to estimate probabilities (next).
+exit:
+  q: "A list of probabilities is 0.3, 0.3, 0.3. What is wrong?"
+  a: "The total is 0.9: an outcome is missing."
+explain: |
+  Add up the probabilities of all the outcomes. The total must be 1.
+
+  A smaller total means something was left out.
