@@ -255,6 +255,8 @@ Year 10 needs, for later: `graph` scatter (dots, not a line) and log axis; `data
 ## Year 10 plan (25 Oct 2026; planning only, nothing built)
 21 descriptors, 69 nodes, 23 of them hinges (`data/curriculum/maths.json`). About 59 lessons in five batches, same lesson shape as Year 9 batch 1 (picture-first Predict, a board Run where one helps, Investigate with a planted error, worked example then a `paper: true` try-one, Modify with an edge case, Practise with a review task, Make back to the opening, Also used in). Openings and Makes come from `data/connections/maths.yml`, which already covers every Year 10 node.
 
+**Decided (25 Oct, Matthew):** Year 10 batch 1 is built now; Year 10 batch 2 waits until Year 9's batches are finished. Networks (batch 5): start with Mermaid diagrams and plain checks, no new board; decide on `netgraph` when batch 5 comes up (it earns its cost only if students need to click a path to find the odd-degree rule, or another subject reuses it).
+
 **Order.** Only batch 1 builds on what exists (Year 9 batch 1: index laws, binomials, real numbers, scientific notation). Every other Year 10 batch needs a Year 9 batch that isn't built yet, so the plan interleaves by strand: Year 9 batch 2, then Year 10 batch 2, and so on.
 
 | Year 10 batch | Needs first |
