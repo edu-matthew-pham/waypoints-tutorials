@@ -5,7 +5,7 @@ introduces: [class, attribute]
 title: A Star class
 summary: Make a new kind of object with class, set up each one in __init__, and store its values with self.
 language: python
-hook: "Game engines are full of classes: one Enemy class, a hundred enemies made from it, each with its own position and health."
+hook: "A cookie cutter makes the same shape every time. A class does that for objects in a program."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

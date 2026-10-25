@@ -5,7 +5,7 @@ introduces: [method]
 title: Stars that move themselves
 summary: Give the Star class methods (move, restart, touches), so the game loop is short and a new kind of falling thing is one class.
 language: python
-hook: "In a game engine you never move every enemy by hand: you tell each enemy to update itself, and it knows how."
+hook: "Press a vending machine's button and it dispenses: you don't push the levers yourself. A method makes an object work like that."
 app:
   command: "node \"$REPO_ROOT/tools/serve.mjs\" \"$REPO_ROOT/dist/_playground\" 8123"
   url: "http://127.0.0.1:8123/index.html"

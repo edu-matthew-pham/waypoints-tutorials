@@ -35,7 +35,7 @@ explainClip:
     - caption:
         text: "The right one says Correct. The challenge does this for a whole list of questions."
         say: "The right one says Correct. The challenge asks a whole list."
-hook: "A quiz is a list of questions, a number for where you are, a score, and a click: everything you have learned in one page."
+hook: "By the end you'll have a real quiz on one page: questions, a score and feedback on every click."
 ---
 Your quiz keeps its questions as **data**, in an array of objects, and uses everything from the course:
 

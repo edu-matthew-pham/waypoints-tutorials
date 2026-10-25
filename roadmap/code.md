@@ -312,6 +312,7 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 - An Arcade "Worlds" unit (tilemaps); a picture of the robot arena.
 
 ## Log
+- 25 Oct: voice pass over the extension courses (Objects, Deeper, Data, Gradio, ML, Flask, p5.js, DOM, Vue, Bootstrap, Your site, Games): no stock phrases or exclamations in student text (every `!` is program output); seven hooks rewritten where four Objects hooks and three "everything you have learned" hooks repeated one shape. `check-html` passes with the four new Web steps.
 - 25 Oct: four Web "Change a …" steps, the first in the HTML, CSS and DOM courses: a bus timetable (Tables), a recipe (Lists), a price tag (Boxes) and a bill splitter (Inputs), each with a solution region and code check. All are inline code blocks in `lesson.md`, so no clips re-record. Web had none; the register's Web rows are the thinnest left (`roadmap/code-real-world.md`).
 - 25 Oct: five more project briefs (Console: a quiz game, a fortune teller; p5.js: a night sky, bouncing balls, a pattern maker), 34 in 15 courses, with pictures drawn and the pages loading clean. The projects tool now draws Console transcripts (brief `answers:`) and p5 sketches (built by Code; roadmap/shared.md). Needs the whole-site publish.
 - 25 Oct: eight more `smaller:` lead-ins (turtle-grow, every-other, for-each, functions, buttons, decide; console-while, console-total), all in the built pages with the fold above the hints; Objects project briefs (a turtle race, an aquarium) with pictures drawn. 

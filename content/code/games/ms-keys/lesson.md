@@ -4,7 +4,7 @@ unit: loop
 title: Keys and movement
 summary: "Check the arrow keys in update() and move a paddle, keep it on the screen, then make a player that moves four ways and speeds up."
 language: python
-hook: "A game asks the keyboard a question 60 times a second: is the left arrow down right now?"
+hook: "Is the left arrow down right now? The game asks again 60 times a second."
 ---
 In the turtle course, pressing a key **called** a function once. A game engine works the other way round: every frame, `update()` **asks** whether a key is down, and moves a little if it is. Hold the key and it moves smoothly; let go and it stops.
 

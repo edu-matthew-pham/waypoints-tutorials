@@ -5,7 +5,7 @@ title: The same model in scikit-learn
 summary: "Build the nearest-neighbour model and the fair test again with scikit-learn, the library data scientists use, then compare it with a decision tree."
 language: python
 recipes: [import-from, object, attribute]
-hook: "Everything you built by hand has a name in scikit-learn, a library used in science, banks and hospitals. Now you know what it does inside."
+hook: "Scientists, banks and hospitals use scikit-learn to do in a line what you built by hand."
 ---
 **scikit-learn** is a Python library of machine-learning models. It does in a few lines what you wrote by hand: `train_test_split` shuffles and splits, `KNeighborsClassifier(n_neighbors=1)` is your nearest-neighbour model, `fit` gives it the training examples, `score` tests it, and `predict` guesses a new penguin. The data is read with pandas (from Data detective): `X` is the measurements and `y` is the answers. It takes several seconds to load the first time.
 

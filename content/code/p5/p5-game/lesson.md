@@ -31,7 +31,7 @@ explainClip:
     - expect: {selector: "#status", contains: "Running"}
     - wait: 1100
     - caption: "Click the ball: the score goes up and the ball jumps. A miss does nothing."
-hook: "Everything you have learned in one game: a list of objects, a loop, a function, a decision, and a click."
+hook: "A list, a loop, a function, a decision and a click: today they all go into one game."
 ---
 Your game has falling circles. When you **click** one, you score and it starts again at the top. If one reaches the bottom, it starts again too.
 
