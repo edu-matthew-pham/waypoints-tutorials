@@ -1,5 +1,5 @@
 inquiry:
-  q: "Two students total a week of rainfall. One types =SUM(B2:B8). The other types =B2+B3+B4+B5+B6+B7+B8. Both get 46. Whose formula is better when the weather station records a second week?"
+  q: "Two students total a week of rainfall. One types =SUM(B2:B8). The other types =B2+B3+B4+B5+B6+B7+B8. Both get {{sum(w1)}}. Whose formula is better when the weather station records a second week?"
   prompts:
     - "How long is each formula for 30 days?"
     - "What if a day's reading is added in a new row?"
@@ -10,8 +10,8 @@ activities:
     title: "Add by hand first"
     minutes: 3
     do: |
-      Write the seven rainfall numbers on the board and have students add them in their heads or on paper. Then reveal =SUM(B2:B8) and 46.
-    notes: "46. The formula does the same adding, but again whenever a number changes."
+      Write the seven rainfall numbers on the board and have students add them in their heads or on paper. Then reveal =SUM(B2:B8) and {{sum(w1)}}.
+    notes: "{{sum(w1)}}. The formula does the same adding, but again whenever a number changes."
   - at: make
     kind: discussion
     title: "What else could SUM add up?"

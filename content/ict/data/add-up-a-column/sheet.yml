@@ -5,22 +5,26 @@ widget: sheet
 cell A1: Day
 cell B1: Rainfall (mm)
 cell A2: Monday
-cell B2: 0
+cell B2: {{w1[1]}}
 cell A3: Tuesday
-cell B3: 12
+cell B3: {{w1[2]}}
 cell A4: Wednesday
-cell B4: 4
+cell B4: {{w1[3]}}
 cell A5: Thursday
-cell B5: 0
+cell B5: {{w1[4]}}
 cell A6: Friday
-cell B6: 7
+cell B6: {{w1[5]}}
 cell A7: Saturday
-cell B7: 20
+cell B7: {{w1[6]}}
 cell A8: Sunday
-cell B8: 3
+cell B8: {{w1[7]}}
 cell A9: Total
 cell B9: =SUM(B2:B8)
 edit: B2:B8
+# endregion
+
+# region: run-solution
+cell B5: {{fix}}
 # endregion
 
 # region: practise
@@ -29,29 +33,35 @@ cell A1: Day
 cell B1: Week 1 (mm)
 cell C1: Week 2 (mm)
 cell A2: Monday
-cell B2: 0
-cell C2: 5
+cell B2: {{w1[1]}}
+cell C2: {{w2[1]}}
 cell A3: Tuesday
-cell B3: 12
-cell C3: 0
+cell B3: {{w1[2]}}
+cell C3: {{w2[2]}}
 cell A4: Wednesday
-cell B4: 4
-cell C4: 0
+cell B4: {{w1[3]}}
+cell C4: {{w2[3]}}
 cell A5: Thursday
-cell B5: 0
-cell C5: 9
+cell B5: {{w1[4]}}
+cell C5: {{w2[4]}}
 cell A6: Friday
-cell B6: 7
-cell C6: 14
+cell B6: {{w1[5]}}
+cell C6: {{w2[5]}}
 cell A7: Saturday
-cell B7: 20
-cell C7: 2
+cell B7: {{w1[6]}}
+cell C7: {{w2[6]}}
 cell A8: Sunday
-cell B8: 3
-cell C8: 1
+cell B8: {{w1[7]}}
+cell C8: {{w2[7]}}
 cell A9: Total
 cell A11: Both weeks
 edit: B9:C9, B11
+# endregion
+
+# region: practise-solution
+cell B9: =SUM(B2:B8)
+cell C9: =SUM(C2:C8)
+cell B11: =SUM(B2:C8)
 # endregion
 
 # region: make
@@ -67,4 +77,15 @@ cell A7: Saturday
 cell A8: Sunday
 cell A9: Total
 edit: B2:B9
+# endregion
+
+# region: make-solution
+cell B2: 20
+cell B3: 15
+cell B4: 0
+cell B5: 30
+cell B6: 10
+cell B7: 45
+cell B8: 25
+cell B9: =SUM(B2:B8)
 # endregion

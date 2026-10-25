@@ -15,7 +15,7 @@ before: |
 
   Real tools: Excel and Sheets have an AutoSum button (Σ) that guesses the range. Encourage students to check the range it picks, and to treat it as a first guess.
 running:
-  - "Predict: students who chose 46 think SUM remembers the old total. Ask when the sheet does the adding."
+  - "Predict: students who chose {{sum(w1)}} think SUM remembers the old total. Ask when the sheet does the adding."
   - "Try: ask which cell they changed and which cell moved."
   - "Worked example: say the range aloud (from B2 down to B8) and ask what a comma would mean."
   - "Practise: ask what block B2:C8 holds, and why one SUM can cover two columns."
@@ -40,8 +40,8 @@ leads: |
 
   Science and geography: rainfall, water use, mass and distance are all totalled this way. Use your own class data if you have it.
 exit:
-  q: "B2 to B6 hold 2, 4, 6, 8 and 10. What does =SUM(B2:B6) show?"
-  a: "30."
+  q: "B2 to B6 hold {{quiz[1]}}, {{quiz[2]}}, {{quiz[3]}}, {{quiz[4]}} and {{quiz[5]}}. What does =SUM(B2:B6) show?"
+  a: "{{sum(quiz)}}."
 explain: |
   **SUM** is a ready-made formula that adds up the numbers in a **range**.
 

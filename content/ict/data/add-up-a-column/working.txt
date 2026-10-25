@@ -3,6 +3,6 @@
 # region: sam
 Sam's sheet has a week of rainfall in B2 to B8, Monday to Sunday.
 Sam types =SUM(B2,B8) into B9, to add up the week.
-B9 shows 3.
+B9 shows {{w1[1] + w1[7]}}.
 The week had lots of rain, so 3 cannot be the total.
 # endregion

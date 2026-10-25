@@ -11,10 +11,10 @@ Here is a week of rainfall from a school weather station, in millimetres. The to
 | | A | B |
 |---|---|---|
 | **1** | Day | Rainfall (mm) |
-| **2** | Monday | 0 |
-| **3** | Tuesday | 12 |
+| **2** | Monday | {{w1[1]}} |
+| **3** | Tuesday | {{w1[2]}} |
 | **…** | … | … |
-| **8** | Sunday | 3 |
+| **8** | Sunday | {{w1[7]}} |
 | **9** | Total | `=SUM(B2:B8)` |
 
 ## Predict: what is the new total?
@@ -24,9 +24,9 @@ stage: predict
 insight: "Committing to what the total shows after one reading changes tests the move: SUM works its answer out again from the whole range."
 check:
   type: predict
-  q: "The total in B9 is 46. Thursday's rainfall in B5 was recorded as 0, but the gauge was found to have been blocked and the right amount is 6. You change B5 to 6. What does B9 show?"
-  options: ["46", "52", "6", "40"]
-  actual: "52. SUM adds up every cell from B2 to B8 again whenever one of them changes: 46 + 6 = 52."
+  q: "The total in B9 is {{sum(w1)}}. Thursday's rainfall in B5 was recorded as {{w1[4]}}, but the gauge was found to have been blocked and the right amount is {{fix}}. You change B5 to {{fix}}. What does B9 show?"
+  options: ["{{sum(w1)}}", "{{sum(w1) - w1[4] + fix}}", "{{fix}}", "{{sum(w1) - fix}}"]
+  actual: "{{sum(w1) - w1[4] + fix}}. SUM adds up every cell from B2 to B8 again whenever one of them changes: {{sum(w1)}} + {{fix - w1[4]}} = {{sum(w1) - w1[4] + fix}}."
 ```
 
 ## Try: change a reading
@@ -35,8 +35,8 @@ check:
 stage: run
 insight: "Changing B5 and reading B9 settles the prediction: the total follows every cell in its range."
 try: { playground: board, starter: "sheet.yml#run", height: 400 }
-hint: ["Click B5, type 6 and press Enter.", "Click B9 and read the bar. It shows the SUM formula."]
-check: { type: board, text: "Change Thursday's rainfall in B5 to 6. What does the Total in B9 show?", when: "c_B5 = 6 and c_B9 = 52", explain: "B9 shows 52. The formula =SUM(B2:B8) adds up B2 to B8 again whenever one of them changes." }
+hint: ["Click B5, type {{fix}} and press Enter.", "Click B9 and read the bar. It shows the SUM formula."]
+check: { type: board, text: "Change Thursday's rainfall in B5 to {{fix}}. What does the Total in B9 show?", when: "c_B5 = {{fix}} and c_B9 = {{sum(w1) - w1[4] + fix}}", explain: "B9 shows {{sum(w1) - w1[4] + fix}}. The formula =SUM(B2:B8) adds up B2 to B8 again whenever one of them changes." }
 ```
 
 Was your guess right? You did not change the formula in B9. You changed one number in its range, and the total followed.
@@ -57,11 +57,11 @@ tasks:
   - check:
       type: bug
       code: "working.txt#sam"
-      text: "Sam's total shows 3, but the week had much more rain. Click the line where Sam first goes wrong."
+      text: "Sam's total shows {{w1[1] + w1[7]}}, but the week had much more rain. Click the line where Sam first goes wrong."
       answer: 2
       fault: logic
       misconception: comma-not-colon
-      explain: "Line 2: =SUM(B2,B8) adds only the two cells named, B2 and B8: 0 + 3 = 3. A colon, =SUM(B2:B8), adds every cell between them."
+      explain: "Line 2: =SUM(B2,B8) adds only the two cells named, B2 and B8: {{w1[1]}} + {{w1[7]}} = {{w1[1] + w1[7]}}. A colon, =SUM(B2:B8), adds every cell between them."
   - check:
       type: question
       q: "Sam's other formula is =SUM(B1:B8), and B1 holds the heading Rainfall (mm). What does it show?"
@@ -76,8 +76,8 @@ tasks:
 ```worked
 \texttt{=SUM(} \ldots \texttt{)} :: Start with =, then the name of the function and a bracket.
 \texttt{B2:B8} :: The range: from the first cell to the last, with a colon between them.
-0 + 12 + 4 + 0 + 7 + 20 + 3 = 46 :: SUM adds up the numbers in B2 to B8.
-\texttt{B5} \text{ becomes } 6 \to 52 :: Change a cell in the range and the total works itself out again.
+{{w1[1]}} + {{w1[2]}} + {{w1[3]}} + {{w1[4]}} + {{w1[5]}} + {{w1[6]}} + {{w1[7]}} = {{sum(w1)}} :: SUM adds up the numbers in B2 to B8.
+\texttt{B5} \text{ becomes } {{fix}} \to {{sum(w1) - w1[4] + fix}} :: Change a cell in the range and the total works itself out again.
 ```
 
 Now: what does the colon do?
@@ -94,9 +94,9 @@ insight: "Each task changes the range: a shorter one, a different list of cells,
 tasks:
   - check:
       type: number
-      q: "B2 to B8 hold 0, 12, 4, 0, 7, 20 and 3. What does =SUM(B3:B6) show?"
-      answer: 23
-      explain: "B3 to B6 hold 12, 4, 0 and 7, which add to 23."
+      q: "B2 to B8 hold {{w1[1]}}, {{w1[2]}}, {{w1[3]}}, {{w1[4]}}, {{w1[5]}}, {{w1[6]}} and {{w1[7]}}. What does =SUM(B3:B6) show?"
+      answer: {{w1[2] + w1[3] + w1[4] + w1[5]}}
+      explain: "B3 to B6 hold {{w1[2]}}, {{w1[3]}}, {{w1[4]}} and {{w1[5]}}, which add to {{w1[2] + w1[3] + w1[4] + w1[5]}}."
   - check:
       type: question
       q: "You want the total for Tuesday to Friday only, which are B3 to B6. Which formula do you write?"
@@ -128,15 +128,15 @@ try: { playground: board, starter: "sheet.yml#practise", height: 420 }
 tasks:
   - check:
       type: number
-      q: "B9 holds =SUM(B2:B8) and shows 46. You change Sunday's rainfall in B8 from 3 to 10. What does B9 show now?"
-      answer: 53
-      explain: "Sunday went up by 7, so the total goes up by 7: 46 + 7 = 53."
+      q: "B9 holds =SUM(B2:B8) and shows {{sum(w1)}}. You change Sunday's rainfall in B8 from {{w1[7]}} to {{newsun}}. What does B9 show now?"
+      answer: {{sum(w1) - w1[7] + newsun}}
+      explain: "Sunday went up by {{newsun - w1[7]}}, so the total goes up by {{newsun - w1[7]}}: {{sum(w1)}} + {{newsun - w1[7]}} = {{sum(w1) - w1[7] + newsun}}."
   - starter: "sheet.yml#practise"
     hint: ["Click B9 and type =SUM(B2:B8), then press Enter.", "Both weeks are in the sheet: Week 1 is in column B and Week 2 in column C."]
-    check: { type: board, text: "Write a formula in B9 that adds up Week 1's rainfall. Then write one in C9 for Week 2.", when: "f_B9 = 1 and f_C9 = 1 and c_B9 = 46 and c_C9 = 31", explain: "B9 holds =SUM(B2:B8), which is 46, and C9 holds =SUM(C2:C8), which is 31. You can copy B9 across to C9." }
+    check: { type: board, text: "Write a formula in B9 that adds up Week 1's rainfall. Then write one in C9 for Week 2.", when: "f_B9 = 1 and f_C9 = 1 and c_B9 = {{sum(w1)}} and c_C9 = {{sum(w2)}}", explain: "B9 holds =SUM(B2:B8), which is {{sum(w1)}}, and C9 holds =SUM(C2:C8), which is {{sum(w2)}}. You can copy B9 across to C9." }
   - starter: "sheet.yml#practise"
     hint: ["A range can be a block: B2:C8 starts at B2 and ends at C8, and holds both weeks.", "Click B11 and type =SUM(B2:C8)."]
-    check: { type: board, text: "Write one formula in B11 that adds up both weeks at once.", when: "f_B11 = 1 and c_B11 = 77", explain: "B11 holds =SUM(B2:C8). A range can be a block of cells: it covers B2 down to C8, which is both weeks. 46 + 31 = 77." }
+    check: { type: board, text: "Write one formula in B11 that adds up both weeks at once.", when: "f_B11 = 1 and c_B11 = {{sum(w1) + sum(w2)}}", explain: "B11 holds =SUM(B2:C8). A range can be a block of cells: it covers B2 down to C8, which is both weeks. {{sum(w1)}} + {{sum(w2)}} = {{sum(w1) + sum(w2)}}." }
 ```
 
 ### What does it add up to?
@@ -167,3 +167,17 @@ check: { type: reflect, text: "In the spreadsheet app my school uses, I typed a 
 ```
 
 Excel, Google Sheets and Numbers all have SUM. You can type the range or drag across the cells with the mouse after the bracket. There is also an AutoSum button (a Greek capital sigma, Σ) that writes a SUM for the cells above or to the left of the selected cell. If your total looks too small, check the range has the first and last cells you meant.
+
+```context
+data:
+  w1: [0, 12, 4, 0, 7, 20, 3]
+  w2: [5, 0, 0, 9, 14, 2, 1]
+  quiz: [2, 4, 6, 8, 10]
+  fix: 6
+  newsun: 10
+assert:
+  - fix > 0
+  - w1[4] < fix
+  - newsun != w1[7]
+  - w1[1] + w1[7] < sum(w1)
+```
