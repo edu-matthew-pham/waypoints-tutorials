@@ -13,7 +13,7 @@ before: |
 
   Kingdoms are not the endpoint. The five-kingdom scheme (common in Year 7) sorts by observable features, which is what the descriptor asks for, but it is not a family tree: fungi share a more recent common ancestor with animals than with plants, "protists" is a grab-bag of unrelated groups, and "bacteria" hides the archaea. Two Explain questions make this explicit, and the history (two kingdoms, then five, then three domains as microscopes and then DNA added evidence) shows classification as a model revised under evidence, the point about scientific rigour.
 
-  Model notes: algae such as kelp are grouped with protists here; many textbooks differ. Yeast is a single-celled fungus, so "can you see one without a microscope?" doesn't place it: it is in the sort, not the key, on purpose.
+  Model notes: algae such as kelp are grouped with protists here; many textbooks differ. The key is a simplification: a single cell with a nucleus goes to Protist and a many-celled thing that makes its own food goes to Plant, so it would misplace yeast (a single-celled fungus) and kelp. Yeast is in the sort, not the key, on purpose.
 running:
   - "Engage: ask the 'plant' voters which feature they used. Keep the list."
   - "Explore: specimen names appear only after the key places them; students should read descriptions, not guess."

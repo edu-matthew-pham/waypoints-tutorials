@@ -140,7 +140,7 @@ tasks:
   - check: { type: board, text: "React the hydrogen and oxygen.", expect: { done: true } }
   - check:
       type: number
-      q: "In 2H₂ + O₂ → 2H₂O, 12 hydrogen particles react with 6 oxygen particles. How many water particles can form?"
+      q: "In 2H₂ + O₂ → 2H₂O, 12 hydrogen particles react with 6 oxygen particles. How many water particles could form in total if every one of them reacted? (The board stops once most have, because the last few take a long time to meet.)"
       answer: 12
       explain: "Every 2 H₂ and 1 O₂ make 2 H₂O. Six times over: 12 H₂O, with 24 H and 12 O atoms, the same as at the start."
 ```

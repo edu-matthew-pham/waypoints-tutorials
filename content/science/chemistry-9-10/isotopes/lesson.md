@@ -127,7 +127,7 @@ tier: typical
 insight: "Making carbon-14 from nitrogen-14 shows that a nucleus can change into another element, ready for decay, and gives carbon-14 a real source."
 try: { playground: board, starter: "boards.yml#nitrogen", height: 720 }
 tasks:
-  - check: { type: board, text: "High in the air, a neutron from space hits a nitrogen-14 nucleus. The nucleus takes in the neutron and a proton is knocked out. Make the carbon-14 that results (a neutral atom).", when: "t = 1" }
+  - check: { type: board, text: "High in the air, a fast neutron made by cosmic rays hits a nitrogen-14 nucleus. The nucleus takes in the neutron and a proton is knocked out. Make the carbon-14 that results (a neutral atom).", when: "t = 1" }
     hint: ["Do it in the order the task tells the story: first the neutron goes in, then a proton comes out, and watch the name at the top as you go.", "Once the nucleus matches the card, check the charge in the line under the board, because the card asks for a neutral atom."]
   - check:
       type: question
