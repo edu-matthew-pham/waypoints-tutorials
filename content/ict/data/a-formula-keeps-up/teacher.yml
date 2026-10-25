@@ -1,0 +1,50 @@
+summary: Students learn that a spreadsheet cell has a name, that a cell starting with = is a formula that works its answer out from other cells by name, and that it works it out again when those cells change. They write growth formulas for a Year 7 bean-plant sheet and repeat the idea in the spreadsheet app the school uses.
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 8 min · Make and own app 12 min"
+goals:
+  - I can name a cell by its column letter and row number.
+  - I can write a formula that starts with = and uses cell names.
+  - I can explain why a formula keeps up when a cell changes and a typed answer does not.
+struggle: "Typing the answer instead of the formula. A student who types 8 in D2 gets a correct-looking sheet, so nothing tells them it is wrong until a cell changes. Have them change B2 and watch."
+before: |
+  Do the Try board yourself: change B2, then click D2 and read the bar above the sheet.
+
+  The one idea: a formula uses cells' names, not their numbers, so the answer follows the cells. A number typed in as the answer does not.
+
+  The sheet on the page is a small teaching model with only what every spreadsheet shares: names, numbers, text, formulas that start with =, and the operators + - * /. It is not Excel or Sheets, and nothing here depends on either.
+
+  The last step asks students to do the same in the app your school uses. It works the same in Excel (desktop or web), Google Sheets and Numbers. Where they differ: Enter moves down in all of them, and Google Sheets or Excel may offer a pop-up of function names as students type; they can ignore it for now.
+
+  Years 6–8: the data is a plant-growth table like one in Year 7 science. Use your own class data if you have it, and have students type their own measurements in the last step.
+running:
+  - "Predict: students who chose 8 think D2 only shows what it showed before. Ask what 'formula' might mean."
+  - "Try: ask why D2 changed when B2 was the cell they typed in."
+  - "Worked example: ask which part of =C2-B2 is the = and which part is the names. Say the formula aloud: take B2 from C2."
+  - "Practise: students often write =C3-B3 for D4 by copying. Ask which row Bean C is in."
+  - "Own app: walk round. The common slip is a missing =, which shows the formula as words."
+stuck:
+  - see: "A student types the answer into D2 (Sam's mistake)."
+    ask: "Change B2. What happens to D2? Which cell would know about the change?"
+    fix: "Delete it and type =C2-B2: use the names so the sheet can follow."
+  - see: "A student writes C2-B2 without the = and sees the words C2-B2."
+    ask: "How does the sheet know this is a sum and not a word?"
+    fix: "Start every formula with =."
+  - see: "A student writes the cell name the wrong way round (2C, 3D)."
+    ask: "Look at the headings. What comes first, the letter or the number?"
+    fix: "Column letter first, then row number: D3."
+  - see: "A student's formula shows an error such as #NAME? or #REF!."
+    ask: "Read the message under the sheet. What does it say went wrong?"
+    fix: "Check the names are real cells and the spelling is right."
+stretch: "Write one formula in E2 that shows how many times taller Bean A is on day 4 than on day 1. Which operator do you need? What if B2 were empty?"
+support: "A card: A cell's name is its column letter then its row number. Start a formula with =. Use cell names, not the numbers in them."
+leads: |
+  Next in Working with data: functions that work on a whole column (SUM and AVERAGE).
+
+  Years 6–8: the same sheet can record real measurements from a science investigation. Digital Technologies › Data representation covers how data is stored; this course is about using it.
+exit:
+  q: "B2 holds 4, C2 holds 9 and D2 holds =C2-B2. You change B2 to 6. What does D2 show?"
+  a: "3. The formula works out 9 - 6 again."
+explain: |
+  A spreadsheet is a grid of **cells**, and each has a name: the column letter, then the row number, such as **C2**.
+
+  A cell that starts with **=** is a **formula**. It uses other cells' names, and works its answer out again whenever one of them changes. A number you type in as the answer is only a number: it does not follow.

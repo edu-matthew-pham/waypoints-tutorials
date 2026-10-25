@@ -1,0 +1,45 @@
+# Sheets for "A formula keeps up".
+
+# region: run
+widget: sheet
+cell A1: Plant
+cell B1: Day 1
+cell C1: Day 4
+cell D1: Growth
+cell A2: Bean A
+cell B2: 3
+cell C2: 11
+cell D2: =C2-B2
+edit: B2:C2
+# endregion
+
+# region: practise
+widget: sheet
+cell A1: Plant
+cell B1: Day 1
+cell C1: Day 4
+cell D1: Growth
+cell A2: Bean A
+cell B2: 3
+cell C2: 11
+cell D2: =C2-B2
+cell A3: Bean B
+cell B3: 2
+cell C3: 11
+cell A4: Bean C
+cell B4: 4
+cell C4: 10
+edit: D3:D4
+# endregion
+
+# region: make
+widget: sheet
+cell A1: Plant
+cell B1: Day 1
+cell C1: Day 4
+cell D1: Growth
+cell A2: Bean A
+cell A3: Bean B
+cell A4: Bean C
+edit: B2:D4
+# endregion

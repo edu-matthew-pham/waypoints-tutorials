@@ -1,0 +1,29 @@
+inquiry:
+  q: "You work out the growth on a calculator and type 8 in the sheet. Your friend types a formula. Whose sheet is better, and when would you find out?"
+  prompts:
+    - "What happens to each sheet if you find the Day 1 height was wrong?"
+    - "Which is quicker if there are 30 plants?"
+  notes: "The typed answer is fine until something changes, and then it is silently wrong. The formula follows. The rule students should leave with: if the answer comes from other cells, make it a formula."
+activities:
+  - at: predict
+    kind: activity
+    title: "Change one number"
+    minutes: 3
+    do: |
+      Write 3 and 11 on the board, with D2 = C2 − B2 = 8. Change the 3 to a 5. Ask the class what D2 shows now, then compare it with what a sheet that only remembered 8 would show.
+    notes: "6, not 8. The point is that the formula works the answer out again."
+  - at: make
+    kind: discussion
+    title: "Which cells should be formulas?"
+    minutes: 4
+    do: |
+      Look at your sheet. Which cells did you type, and which hold formulas? Why?
+    notes: "Measurements are typed (they are the data). Anything worked out from them is a formula. Take a few examples."
+questions:
+  - at: investigate
+    title: "Formula or typed number?"
+    type: question
+    q: "A sheet has the total of five test marks in G2. The marks are in B2 to F2. A student edits B2. Which G2 stays right?"
+    options: ["A formula that adds B2 to F2", "A typed total", "Either one", "Neither"]
+    answer: 0
+    explain: "Only the formula follows the change in B2."

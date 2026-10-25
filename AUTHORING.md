@@ -1458,6 +1458,20 @@ Vary, Practise, Make).
     6); each molecule is drawn, with an atom tally per element. `start: 1, 2, 1, 2`. Values: `b` 1 while balanced,
     `l` 1 while balanced with the smallest whole numbers (check with `when: "l = 1"`), `c` changes, `m` largest
     coefficient.
+  - `widget: sheet` (ICT skills › Working with data): a small spreadsheet, for what every spreadsheet app shares.
+    `cell A1: Plant` gives a cell's contents (text, a number, or a formula that starts with `=`; columns A to L, rows
+    1 to 30). Formulas use cell names (`=C2-B2`), ranges (`B2:B5`), `+ - * / ^ &`, brackets, the comparisons
+    `= <> < > <= >=` and the functions SUM, AVERAGE, MIN, MAX, COUNT, COUNTIF, IF, ROUND and ABS (nothing else on
+    purpose: the course teaches core functions that do not change from year to year). `edit: B2:C2, D4` lists the
+    cells students may change (default all; `edit: none` is read-only); locked cells are shaded and editable ones
+    outlined. `cols:` and `rows:` set the size (default: just big enough). `formulas: on` starts with formulas
+    showing (a button toggles it). Students click a cell and type; Enter, Tab, the arrow keys or a click elsewhere
+    finish and recalculate; a bar above the sheet shows the selected cell's name and contents. Errors show the usual
+    codes (#DIV/0!, #NAME?, #REF!, #VALUE!, #CIRC!, #ERROR!) with a plain-words line under the sheet. `name total_cost:
+    D6` names a cell for checks (it needs an underscore). Values for `when:`: `c_B3` (the number in a cell that holds
+    one), `f_B3` (1 if the cell holds a formula, else 0), `n_formulas`, `n_errors` and each `name`. Checks such as
+    `"f_D2 = 1 and c_D2 = c_C2 - c_B2"` need a formula, not a typed answer. `node tools/check-sheet.mjs` tests the
+    formula engine (add a case for each new function or rule).
   - Each task's `starter` loads its own board when the task is opened. Work is saved in the browser per step;
     `?fresh=1` on the board's address starts from the setup and saves nothing (slides on a shared projector).
   - The board's old address, `_playground-maths/`, forwards to it with the same parameters, so embeds keep working

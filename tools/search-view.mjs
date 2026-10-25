@@ -26,6 +26,7 @@ export const SEARCH_HINTS = {
   science: 'Try chemical reactions, cells, Year 8, or a code such as AC9S8U02',
   systems: 'Try binary, networks, encryption, Year 9, or a standard such as AC9TDI8K03',
   engineering: 'Try gears, Arduino, CAD, 3D printing',
+  ict: 'Try spreadsheets, formulas, cells, Year 7',
   ai: 'Try how AI works, ethics, prompts',
   teachers: 'Try guides, Create, Make a lesson, AI tools',
 };

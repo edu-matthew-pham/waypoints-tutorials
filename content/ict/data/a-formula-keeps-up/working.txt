@@ -1,0 +1,9 @@
+# Sam's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: sam
+Sam's sheet has Bean A's Day 1 height (3) in B2 and Day 4 height (11) in C2.
+Sam wants D2 to show how much the bean grew.
+Sam types 8 into D2, because 11 - 3 is 8.
+Later Sam finds the Day 1 height was 5, and changes B2 to 5.
+D2 still shows 8, but the bean grew 6.
+# endregion
