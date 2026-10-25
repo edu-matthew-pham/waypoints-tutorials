@@ -54,10 +54,21 @@ jobs:
           cd "$RUNNER_TEMP/pxt-target"
           npm install --no-audit --no-fund
           # The local TypeScript (4.8) must win over any global tsc on the runner.
-          PATH="$PWD/node_modules/.bin:$PATH" node node_modules/pxt-core/built/pxt.js staticpkg
+          PATH="$PWD/node_modules/.bin:$PATH" node node_modules/pxt-core/built/pxt.js staticpkg 2>&1 | tee "$RUNNER_TEMP/build.log"
           echo "### Static ${{ matrix.target }} editor ($TAG)" >> "$GITHUB_STEP_SUMMARY"
           echo "Size: $(du -sh built/packaged | cut -f1), files: $(find built/packaged -type f | wc -l)" >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; ls built/packaged >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      # The Claude sandbox cannot download Actions logs or artifacts, but it can read annotations, so the
+      # results that matter are repeated as annotations (one per step, newlines encoded).
+      - name: Report build
+        if: always()
+        run: |
+          [ -f "$RUNNER_TEMP/build.log" ] || exit 0
+          note() { echo "::notice title=$1::$(printf '%s\n' "$2" | cut -c1-260 | sed 's/%/%25/g' | awk '{printf "%s%%0A",$0}')"; }
+          note "build ${{ matrix.target }}: last lines" "$(tail -n 40 "$RUNNER_TEMP/build.log")"
+          note "build ${{ matrix.target }}: first errors" "$(grep -v 'error TS' "$RUNNER_TEMP/build.log" | grep -iE 'error|fail|ENOTFOUND|hex' | sort | uniq -c | sort -rn | head -25)"
+          note "build ${{ matrix.target }}: TS error count" "$(grep -c 'error TS' "$RUNNER_TEMP/build.log") lines; $(grep 'error TS' "$RUNNER_TEMP/build.log" | sed -E 's/\([0-9,]+\)//' | cut -d: -f1 | sort | uniq -c | sort -rn | head -8)"
 
       - uses: actions/upload-artifact@v4
         with:
@@ -106,6 +117,36 @@ jobs:
           done
           curl -s -m 10 -o /dev/null -w 'makecode.microbit.org: %{http_code}\n' https://makecode.microbit.org/ || echo "makecode.microbit.org: blocked"
 
+      # What the static editor does when asked for the two pages render-pictures uses: which requests fail, what the
+      # page logs. Written as an annotation.
+      - name: Probe the static editor
+        run: |
+          cat > "$RUNNER_TEMP/probe.mjs" <<'EOF'
+          import { chromium } from 'playwright-core';
+          const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
+          const out = [];
+          for (const url of ['http://localhost:8300/--docs?render=1', 'http://localhost:8300/index.html?controller=1']) {
+            const page = await browser.newPage();
+            out.push('## ' + url);
+            page.on('requestfailed', (r) => out.push('FAILED ' + r.url().slice(0, 120) + ' ' + (r.failure()?.errorText || '')));
+            page.on('response', (r) => { if (r.status() >= 400) out.push(r.status() + ' ' + r.url().slice(0, 120)); });
+            page.on('console', (m) => { if (['error', 'warning'].includes(m.type())) out.push('console.' + m.type() + ' ' + m.text().slice(0, 160)); });
+            page.on('pageerror', (e) => out.push('pageerror ' + String(e).slice(0, 160)));
+            page.on('message', () => {});
+            await page.exposeFunction('wpSeen', (d) => out.push('message ' + JSON.stringify(d).slice(0, 120)));
+            await page.addInitScript(() => addEventListener('message', (e) => { try { window.wpSeen({ type: e.data?.type, source: e.data?.source }); } catch {} }));
+            try { await page.goto(url, { waitUntil: 'load', timeout: 20000 }); } catch (e) { out.push('goto: ' + e.message.split('\n')[0]); }
+            await page.waitForTimeout(15000);
+            out.push('title: ' + await page.title() + '; body text length: ' + (await page.evaluate(() => document.body.innerText.length)));
+            await page.close();
+          }
+          await browser.close();
+          const text = [...new Set(out)].slice(0, 70).join('\n');
+          console.log(text);
+          console.log('::notice title=probe ${{ matrix.target }}::' + text.replace(/%/g, '%25').replace(/\n/g, '%0A'));
+          EOF
+          cp "$RUNNER_TEMP/probe.mjs" ./probe.tmp.mjs && node ./probe.tmp.mjs; rm -f ./probe.tmp.mjs
+
       - name: Draw MakeCode pictures from the static editor
         env:
           WP_ONLY: makecode
@@ -144,6 +185,15 @@ jobs:
             echo "Requests the static server could not answer:"
             echo '```'; grep '^404' "$RUNNER_TEMP/serve.log" | sort | uniq -c | sort -rn | head -20; echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report pictures
+        if: always()
+        run: |
+          note() { echo "::notice title=$1::$(printf '%s\n' "$2" | cut -c1-260 | sed 's/%/%25/g' | awk '{printf "%s%%0A",$0}')"; }
+          P="$RUNNER_TEMP/pics/_pictures"
+          note "pictures ${{ matrix.target }}: counts" "blocks: $(find "$P/makecode" -name '*.png' 2>/dev/null | wc -l); simulator: $(find "$P/makecode-out" -name '*.png' 2>/dev/null | wc -l)"
+          [ -f "$RUNNER_TEMP/pictures.log" ] && note "pictures ${{ matrix.target }}: log" "$(grep -v '^$' "$RUNNER_TEMP/pictures.log" | tail -n 60)"
+          [ -f "$RUNNER_TEMP/serve.log" ] && note "pictures ${{ matrix.target }}: static server 404s" "$(grep '^404' "$RUNNER_TEMP/serve.log" | sort | uniq -c | sort -rn | head -30)"
 
       - uses: actions/upload-artifact@v4
         if: always()
