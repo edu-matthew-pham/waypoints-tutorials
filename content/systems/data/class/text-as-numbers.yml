@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is the digit 7 in a text message the number seven?"
+  prompts:
+    - "Could you add two of them and get an answer?"
+    - "What would your phone need to store to show a 7?"
+  notes: "In text, 7 is the character with code 55, not an amount. Let students argue; the Modify step settles it when they type a 7 and see 55."
+activities:
+  - at: predict
+    kind: activity
+    title: "Write it in codes"
+    minutes: 5
+    do: |
+      Hand out a code chart showing A = 65 in order, and a to z from 97. Write your first name as a list of numbers on a slip. Swap slips with a partner and decode.
+    notes: "Capitals first, then a lower case name if time allows. Watch for students who count the alphabet position (A = 1) instead of the code."
+  - at: modify
+    kind: discussion
+    title: "Why is a space a number?"
+    minutes: 2
+    do: |
+      Your partner's slip needs a space between two words. What code goes there, and why does it need one?
+    notes: "A space is 32: it's a character like any other. Without a code, two words would run together."
+questions:
+  - at: investigate
+    title: "What is stored?"
+    type: question
+    q: "You type the digit 8 in a message. What does the computer store?"
+    options: ["The code for the character 8", "The number eight, to add with", "A picture of an 8", "Eight switches turned on"]
+    answer: 0
+    explain: "In text, 8 is a character with its own code (56). It's only an amount if a program is told to read it as one."

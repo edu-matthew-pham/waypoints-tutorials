@@ -1,0 +1,28 @@
+inquiry:
+  q: "A computer only has switches that are on or off. How could it hold the number 22?"
+  prompts:
+    - "How many switches would you need?"
+    - "What would each switch have to mean?"
+  notes: "Let students invent a scheme first. Many will say 'a row of 22 switches'. Keep that idea: it works, but it's wasteful, and doubling places fix it."
+activities:
+  - at: predict
+    kind: activity
+    title: "Human cards"
+    minutes: 6
+    do: |
+      Five students hold cards worth 16, 8, 4, 2, 1 and stand in a row. 'Show 11!' Students step forward (on) or back (off). The class checks the sum.
+    notes: "11 is 8, 2, 1. Try 5 then 6: only two students move. Then 7 to 8: everyone changes, which the Modify step shows on the board."
+  - at: modify
+    kind: discussion
+    title: "Why does 8 change everyone?"
+    minutes: 2
+    do: |
+      Count up from 6 to 8 with the human cards. Who moved at each step? Why did 7 to 8 take so many?
+    notes: "4 + 2 + 1 = 7, and the next number needs the 8 place. Same as 99 to 100 in decimal."
+questions:
+  - at: investigate
+    title: "Read it"
+    type: number
+    q: "The 16, 4 and 1 cards are face up, so the bits read 10101. What number is it?"
+    answer: 21
+    explain: "16 + 4 + 1 = 21. The 8 and 2 cards are face down."

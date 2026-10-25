@@ -1,0 +1,29 @@
+inquiry:
+  q: "When you buy something online, the data crosses places you don't control. What makes it safe?"
+  prompts:
+    - "List every stop between your laptop and the shop."
+    - "Which stop do you have to trust?"
+  notes: "Students list devices; the point is that encryption doesn't depend on trusting them. Keep their list for the Make step."
+activities:
+  - at: predict
+    kind: activity
+    title: "Journey line-up"
+    minutes: 6
+    do: |
+      Give groups cards: Laptop encrypts, Split into packets, Wi-Fi, Router, Router, Shop reassembles, Shop decrypts. Put them in order. One card is a decoy.
+    notes: "The order mirrors the lesson. Many students put encryption after Wi-Fi: the Predict answer is that it happens first, on the laptop."
+  - at: investigate
+    kind: discussion
+    title: "What can Eve see?"
+    minutes: 3
+    do: |
+      Eve sits on the café Wi-Fi. What does she see with HTTPS on? With it off?
+    notes: "Scrambled text versus plain text. Eve can see that a packet exists, not what's in it."
+questions:
+  - at: investigate
+    title: "Order"
+    type: question
+    q: "Which comes first in the journey of an online purchase?"
+    options: ["The browser encrypts the data", "A router passes a packet on", "The shop decrypts the data", "The packets are put back in order"]
+    answer: 0
+    explain: "The browser encrypts on your laptop before anything leaves."

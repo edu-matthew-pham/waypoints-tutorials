@@ -1,0 +1,21 @@
+inquiry:
+  q: "A web colour is written #FF8800. Why would anyone choose letters to write numbers?"
+  prompts:
+    - "What does a long row of 0s and 1s feel like to read?"
+    - "How could you shorten it without losing anything?"
+  notes: "Optional lesson. The answer is groups of four bits, one hex digit each. Keep it short."
+activities:
+  - at: predict
+    kind: activity
+    title: "Bits in fours"
+    minutes: 4
+    do: |
+      Write 10100011 on the board. Put a gap in the middle: 1010 0011. Work out each group as a number from 0 to 15.
+    notes: "1010 is 10, 0011 is 3. Then show that 10 is written A, so the byte is A3. Hex is only a tidier way to write the same bits."
+questions:
+  - at: investigate
+    title: "One hex digit"
+    type: number
+    q: "How many bits does one hex digit stand for?"
+    answer: 4
+    explain: "Four bits make 16 patterns, 0 to 15, which is exactly the 16 hex digits 0 to 9 then A to F."

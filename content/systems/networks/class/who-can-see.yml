@@ -1,0 +1,29 @@
+inquiry:
+  q: "You type your PIN on café Wi-Fi. Who could see it, and would you do it?"
+  prompts:
+    - "Who handles your data on its way?"
+    - "Does the café owner need to be bad for it to be seen?"
+  notes: "Anyone on the path could copy plain text; they don't have to be targeting you. Keep it factual and defensive."
+activities:
+  - at: predict
+    kind: activity
+    title: "Pass the note"
+    minutes: 5
+    do: |
+      Pass a folded note across the room through five students. Each may read it. Then pass a note scrambled with a shift of 3 (A becomes D). Who can read it now?
+    notes: "Plain notes are read by everyone along the way. The scrambled note is useless to them unless they know the key. Do not teach breaking the cipher."
+  - at: modify
+    kind: discussion
+    title: "A key of 0"
+    minutes: 2
+    do: |
+      Scramble a word with a shift of 0. What does the message look like now?
+    notes: "Unchanged: a key must actually change something. Link to the board's key sliders."
+questions:
+  - at: investigate
+    title: "Where is it scrambled?"
+    type: question
+    q: "Where should private data be scrambled?"
+    options: ["On your device, before it leaves", "At the café's router", "Only when it arrives", "Nowhere: packets are always safe"]
+    answer: 0
+    explain: "Anywhere later leaves the first part of the trip readable."

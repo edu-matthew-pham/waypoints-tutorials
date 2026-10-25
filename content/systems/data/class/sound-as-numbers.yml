@@ -1,0 +1,28 @@
+inquiry:
+  q: "A good recording and a bad one are both lists of numbers. What makes one better?"
+  prompts:
+    - "Would more numbers always sound better?"
+    - "What would you lose if you stored far fewer?"
+  notes: "More samples a wave and more levels both help, and both cost more numbers. The tension between quality and size comes back in Making data smaller."
+activities:
+  - at: predict
+    kind: activity
+    title: "Sample the wave"
+    minutes: 6
+    do: |
+      Draw a smooth wave on the board. Four volunteers each mark its height at evenly spaced points, then the class joins the dots with steps. Repeat with twice as many points.
+    notes: "Steps with 4 points are a rough copy; with 8 they hug the wave. This is the Predict's answer before anyone touches the board."
+  - at: modify
+    kind: discussion
+    title: "Round it off"
+    minutes: 3
+    do: |
+      Now round every height to the nearest line on a grid with only four heights. What happened to the quiet parts of the wave?
+    notes: "Few levels means big rounding steps. This is what Levels 4 shows in Modify."
+questions:
+  - at: investigate
+    title: "How many numbers?"
+    type: number
+    q: "A recording takes 10 samples for each wave and lasts 3 waves. How many numbers does it store?"
+    answer: 30
+    explain: "10 samples × 3 waves = 30 numbers."

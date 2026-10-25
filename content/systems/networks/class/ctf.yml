@@ -1,0 +1,29 @@
+inquiry:
+  q: "You've been asked to check the club network for risks. What would you look at first?"
+  prompts:
+    - "What can anyone on the Wi-Fi capture?"
+    - "What would you fix first, and why?"
+  notes: "A defensive check: finding readable traffic, not breaking in. Keep every idea; the flags are where it gets checked."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Plan the capture"
+    minutes: 4
+    do: |
+      Before opening the board, in pairs write three things you could look for in captured traffic: readable data, packets out of order, missing packets.
+    notes: "Each maps to a flag in the lesson. Don't give the flags away."
+  - at: make
+    kind: activity
+    title: "Report back"
+    minutes: 5
+    do: |
+      Pairs write a three-line report for the club: what you found, what was risky, what you fixed.
+    notes: "Plain words for a non-technical reader. This is the challenge's evidence."
+questions:
+  - at: investigate
+    title: "Fix it"
+    type: question
+    q: "A club printer sends jobs as plain text over the Wi-Fi. What is the right fix?"
+    options: ["Use an encrypted connection to the printer", "Make the Wi-Fi password longer only", "Move the printer closer", "Turn the printer off"]
+    answer: 0
+    explain: "Encryption keeps captured traffic unreadable. A password only controls who joins."

@@ -1,0 +1,28 @@
+inquiry:
+  q: "Text, colour and sound are all numbers, and numbers are bits. So is a photo just a very long string of 0s and 1s?"
+  prompts:
+    - "What would you need to know to turn that string back into the photo?"
+    - "What do 8 bits in a row give you?"
+  notes: "Yes, and the reading rules tell you where each piece starts and stops. This lesson is the chain: character, code, 8 bits."
+activities:
+  - at: predict
+    kind: activity
+    title: "Spell it in switches"
+    minutes: 6
+    do: |
+      Use a chart of codes. Write your initials as codes, then as bytes (8 bits each). A partner reads your bits back and checks the letters.
+    notes: "A is 01000001. Wrong order of bits is the common slip. Check against the Predict's answer before students use the board."
+  - at: run
+    kind: discussion
+    title: "Where do letters stop?"
+    minutes: 3
+    do: |
+      Here are 16 bits with no gaps. How do you know where one letter ends and the next begins?
+    notes: "Every character here is exactly 8 bits, so count in eights. That's why a byte matters."
+questions:
+  - at: investigate
+    title: "How many bits?"
+    type: number
+    q: "How many bits does the word cat take, with 8 bits for each letter?"
+    answer: 24
+    explain: "3 letters × 8 bits = 24 bits."

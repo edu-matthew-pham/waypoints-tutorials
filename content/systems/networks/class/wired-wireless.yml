@@ -1,0 +1,29 @@
+inquiry:
+  q: "Your game lags. Is it the Wi-Fi, the internet, or the game? How would you find out?"
+  prompts:
+    - "What could you change to test just one thing?"
+    - "What would you measure?"
+  notes: "Students blame one cause with confidence. The lesson separates bandwidth, delay and loss; return to this at the end and ask which they'd test."
+activities:
+  - at: predict
+    kind: activity
+    title: "Pipe and delay"
+    minutes: 5
+    do: |
+      Two lines of students pass a stack of cards: one line passes a big handful at a time (high bandwidth, slow walk), the other passes one card very fast. Which moves 50 cards sooner? Which gets the first card there sooner?
+    notes: "Big handful: more cards each trip, later first card. One card: fast first card, slow overall. That's bandwidth against delay."
+  - at: modify
+    kind: discussion
+    title: "Walls and distance"
+    minutes: 2
+    do: |
+      Where in your own home does Wi-Fi get worse? Why might a cable not care?
+    notes: "Walls and distance weaken radio; a cable carries a signal along a path. Link to the board's wall and distance sliders."
+questions:
+  - at: investigate
+    title: "Which property?"
+    type: question
+    q: "A video call freezes, but a big download finishes quickly. Which property is the problem?"
+    options: ["Delay, or lost packets", "Bandwidth", "File size", "Screen size"]
+    answer: 0
+    explain: "Downloads need bandwidth; calls need steady, quick packets. A fast link with delay or loss can still freeze a call."

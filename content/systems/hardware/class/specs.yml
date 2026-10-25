@@ -1,0 +1,29 @@
+inquiry:
+  q: "Phone adverts boast of cores, gigahertz and gigabytes. Which number would you check before buying, and why?"
+  prompts:
+    - "Which one makes it fastest? Which keeps your photos?"
+    - "Could a bigger number ever not matter?"
+  notes: "Students pick the biggest number. The lesson separates what each spec measures; return at the end and ask what they'd check now."
+activities:
+  - at: predict
+    kind: activity
+    title: "The desk and the cupboard"
+    minutes: 5
+    do: |
+      A student works at a desk (the RAM): books they're using now sit on it. A cupboard holds everything else (storage). Hand them tasks: how many books fit on the desk at once? What happens if the desk is full?
+    notes: "A full desk means swapping with the cupboard, slowly. The processor is how fast they work."
+  - at: modify
+    kind: discussion
+    title: "Match the spec"
+    minutes: 3
+    do: |
+      Match each job to a spec: 40 browser tabs, saving 500 photos, loading a big game, a video call.
+    notes: "RAM, storage, storage speed, network. Accept reasonable disagreement."
+questions:
+  - at: investigate
+    title: "Which spec?"
+    type: question
+    q: "Which spec says how much a computer can keep when switched off?"
+    options: ["Storage", "RAM", "Processor cores", "Graphics"]
+    answer: 0
+    explain: "Storage keeps things with the power off; RAM empties."

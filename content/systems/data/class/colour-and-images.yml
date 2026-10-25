@@ -1,0 +1,28 @@
+inquiry:
+  q: "Red and green paint make a muddy brown. Why does a screen make yellow from red and green?"
+  prompts:
+    - "What is a screen doing that paint isn't?"
+    - "What would happen if you turned all three lights off?"
+  notes: "A screen adds light; paint takes it away. Don't resolve it before the Predict, where students commit to what 255, 255, 0 looks like."
+activities:
+  - at: predict
+    kind: activity
+    title: "Three torches"
+    minutes: 5
+    do: |
+      Three groups hold red, green and blue cellophane over torches. Shine two at once on a white wall. What colour appears? Then all three.
+    notes: "Red and green give yellow; all three give near-white. If you have no torches, use three coloured slides on a projector."
+  - at: make
+    kind: activity
+    title: "A picture is a list"
+    minutes: 4
+    do: |
+      On a 4 by 4 grid, colour each square with two or three colours. Write your picture as 16 colour names, row by row. Swap with a partner and redraw it.
+    notes: "The redrawn picture should match if the list is in order. That's how the board's 48 numbers work: 16 pixels, three numbers each."
+questions:
+  - at: investigate
+    title: "How many numbers?"
+    type: number
+    q: "A tiny picture is 4 pixels wide and 4 pixels high. Each pixel stores 3 numbers. How many numbers does the picture store?"
+    answer: 48
+    explain: "16 pixels × 3 numbers each = 48."

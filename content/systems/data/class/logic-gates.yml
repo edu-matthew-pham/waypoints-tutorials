@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do computers use only on and off, when we use ten digits?"
+  prompts:
+    - "What goes wrong if a switch has ten settings?"
+    - "How easy is it to tell 'half on' from 'a bit more than half on'?"
+  notes: "Two states are easy to tell apart and hard to confuse. Collect ideas about reliability, then let the gate board show what two states can do."
+activities:
+  - at: predict
+    kind: activity
+    title: "Human AND"
+    minutes: 5
+    do: |
+      Two students stand a metre apart, each holding one end of a rope. A third student pulls only if both ends reach them. Who must say 'on' for the lamp to light? Change the rule: one is enough (OR).
+    notes: "AND needs both; OR needs one. Don't name the gate until they've played it. Connect to switches in a line and side by side."
+  - at: modify
+    kind: discussion
+    title: "Build a rule"
+    minutes: 3
+    do: |
+      A school door lights its green lamp only if the card is valid AND it's before 6 pm. What would you change to let teachers in at any time?
+    notes: "A new input and an OR. It shows gates combining into rules."
+questions:
+  - at: investigate
+    title: "OR gate"
+    type: question
+    q: "An OR gate has inputs A = 1 and B = 0. What is the output?"
+    options: ["1", "0", "10", "It depends on the gate's size"]
+    answer: 0
+    explain: "OR gives 1 when at least one input is 1."

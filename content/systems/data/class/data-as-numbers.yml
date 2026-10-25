@@ -1,0 +1,28 @@
+inquiry:
+  q: "A photo, a song and a message are all stored the same way. So how does the computer know which is which?"
+  prompts:
+    - "What would you need to be told about a pile of numbers before you could use it?"
+    - "Could a computer ever tell just by looking?"
+  notes: "Students often say the computer 'just knows'. Leave it open: the lesson's answer is that the file type tells the program which rule to read with. Come back to it at the end."
+activities:
+  - at: predict
+    kind: activity
+    title: "Three readers, one list"
+    minutes: 6
+    do: |
+      Write 72, 105, 33 on the board. Three groups each get a different reading rule: a letter chart, a strip of greys (0 black, 255 white), or a loudness ruler (128 in the middle). Each group draws what their rule makes of the numbers.
+    notes: "Groups finish with Hi!, three greys and three bars. Hold them side by side before anyone opens the board: the numbers never changed. Don't say 'encoding' yet."
+  - at: modify
+    kind: activity
+    title: "Swap the rule"
+    minutes: 3
+    do: |
+      Swap rules between groups and read the same numbers again. What did the group with the letter chart make of the greys they'd drawn?
+    notes: "Wrong-reader noise is the point. Link it to the music program opening a text file in Practise."
+questions:
+  - at: investigate
+    title: "How many levels?"
+    type: number
+    q: "A text file holds 65, 66, 67, 68. A music program opens it and reads each number as a sound level. How many sound levels does it play?"
+    answer: 4
+    explain: "One per number: four. They are all low, near the quiet end, so it sounds like a short, dull click. The program has no idea they were letters."

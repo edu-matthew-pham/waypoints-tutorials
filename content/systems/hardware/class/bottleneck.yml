@@ -1,0 +1,29 @@
+inquiry:
+  q: "Your laptop is slow. A friend says buy a faster processor. Is that always the right upgrade?"
+  prompts:
+    - "What would you check before spending money?"
+    - "How would you know which part is slow?"
+  notes: "Many will say yes. The lesson shows the slowest part sets the speed; come back to this at the end."
+activities:
+  - at: predict
+    kind: activity
+    title: "The slowest worker"
+    minutes: 5
+    do: |
+      Four students pass a bucket down a line, each with a different speed (one very slow). Time how long a job takes. Then speed up a fast student; then the slow one.
+    notes: "Speeding up a fast student changes almost nothing. That's the bottleneck."
+  - at: modify
+    kind: discussion
+    title: "Non-example"
+    minutes: 3
+    do: |
+      You doubled the processor and the download is no faster. Why? What did you actually need?
+    notes: "The download was limited by the network. This is the Non-example in Modify."
+questions:
+  - at: investigate
+    title: "Which upgrade?"
+    type: question
+    q: "A laptop spends 80 of the 90 seconds loading from a slow hard disk. Which upgrade helps most?"
+    options: ["A faster drive (SSD)", "A faster processor", "More cores", "A bigger screen"]
+    answer: 0
+    explain: "The disk is the slowest part, so speeding it up saves the most."

@@ -1,0 +1,29 @@
+inquiry:
+  q: "You send a long message to a friend through busy routers. What could go wrong, and how would you fix it?"
+  prompts:
+    - "What if a piece is lost? What if they arrive out of order?"
+    - "What could you write on each piece to help?"
+  notes: "This is the typed Engage, out loud. Collect fixes without judging; students who say 'number the pieces' have invented TCP. Return at the end."
+activities:
+  - at: predict
+    kind: activity
+    title: "Cut the message"
+    minutes: 6
+    do: |
+      Cut a sentence into four strips. Each strip goes by a different route (different students, a delay at one, a lost strip). The receiver tries to rebuild the message.
+    notes: "Pieces arrive in odd order and one goes missing. Don't number them yet. Then add numbers and run it again."
+  - at: investigate
+    kind: discussion
+    title: "Ask again"
+    minutes: 3
+    do: |
+      The receiver says 'I have 1, 3, 4. I'm missing a piece.' What should the sender do?
+    notes: "Resend piece 2. That's what TCP does: numbers show what's missing, and the receiver asks again."
+questions:
+  - at: investigate
+    title: "What's missing?"
+    type: question
+    q: "Ali receives packets 1, 2 and 4 of a 4-packet message. What does TCP do?"
+    options: ["Asks for packet 3 to be sent again", "Throws the message away", "Joins what it has and ignores the gap", "Sends all four packets again"]
+    answer: 0
+    explain: "The numbers show packet 3 is missing, so it is sent again. Only the missing packet is resent."

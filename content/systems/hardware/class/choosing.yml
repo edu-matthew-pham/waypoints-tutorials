@@ -1,0 +1,29 @@
+inquiry:
+  q: "You have $900 for a school media lab computer. Do you buy the biggest numbers?"
+  prompts:
+    - "What does the job need most?"
+    - "What would you leave out to stay in budget?"
+  notes: "Spend on the bottleneck, not on everything. Keep their first picks to compare with their final choice."
+activities:
+  - at: predict
+    kind: activity
+    title: "Spend the budget"
+    minutes: 6
+    do: |
+      Groups get play money and price cards for cores, RAM, storage and a graphics card. Spend $900 on a computer for video editing. Compare choices across groups.
+    notes: "Groups that spread money evenly usually lose to those who backed the bottleneck."
+  - at: make
+    kind: discussion
+    title: "Justify it"
+    minutes: 3
+    do: |
+      Tell another group what your job needed most and what you left out. Would they have chosen the same?
+    notes: "Matches the Make step's reflect check."
+questions:
+  - at: investigate
+    title: "Where to spend?"
+    type: question
+    q: "A computer is for exporting video, which uses every core. Where should most of the budget go?"
+    options: ["Processor cores", "A bigger screen", "Network speed", "A second keyboard"]
+    answer: 0
+    explain: "The job needs processor power most."

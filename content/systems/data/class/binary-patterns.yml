@@ -1,0 +1,28 @@
+inquiry:
+  q: "A school wants an ID for every student, using as few switches as possible. How do you decide how many?"
+  prompts:
+    - "If you add one more switch, how many more IDs do you get?"
+    - "Is it double, or just one more?"
+  notes: "Each extra bit doubles the patterns. Let students guess before the Predict; many say 'one more'."
+activities:
+  - at: predict
+    kind: activity
+    title: "Count the patterns"
+    minutes: 5
+    do: |
+      Two switches: write every on and off pattern (00, 01, 10, 11). Now three switches. Count how many patterns each gives. What would four give?
+    notes: "4, then 8, then 16. Ask for the rule before showing the board's 2ⁿ."
+  - at: modify
+    kind: discussion
+    title: "Zero uses a pattern"
+    minutes: 2
+    do: |
+      Four cards make 16 patterns, but the biggest number is only 15. Where did the sixteenth go?
+    notes: "Zero. Counting from 0 means the last number is one less than the number of patterns."
+questions:
+  - at: investigate
+    title: "How many patterns?"
+    type: number
+    q: "How many different patterns can 5 switches make?"
+    answer: 32
+    explain: "2 × 2 × 2 × 2 × 2 = 32, one more doubling than 4 switches."

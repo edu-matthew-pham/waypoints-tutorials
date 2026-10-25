@@ -1,0 +1,29 @@
+inquiry:
+  q: "You enlarge a logo on a poster. Why does one kind of picture go blocky and another stay sharp?"
+  prompts:
+    - "What does the computer know about each kind?"
+    - "What would you tell it to do to enlarge each one?"
+  notes: "A bitmap only knows pixels; a vector knows shapes. Don't name the two kinds yet."
+activities:
+  - at: predict
+    kind: activity
+    title: "Grid or instructions?"
+    minutes: 6
+    do: |
+      Pair A: draw a circle on 8 by 8 squared paper, colouring squares. Pair B: write instructions for a circle ("centre here, size this, colour this"). Now each pair redraws it on a grid four times the size.
+    notes: "A's redraw needs every square redone and still looks stepped; B just changes one number. Hold both up."
+  - at: modify
+    kind: discussion
+    title: "Which stores less?"
+    minutes: 2
+    do: |
+      Count what each pair had to write down. A circle's instructions are a handful of numbers. What about a photograph of a face?
+    notes: "Vectors win for logos and diagrams; photos have no clean shapes, so they stay as pixels."
+questions:
+  - at: investigate
+    title: "Which kind?"
+    type: question
+    q: "Which is best saved as a vector picture?"
+    options: ["A club logo made of circles and straight lines", "A photo of the school oval", "A scan of a handwritten page", "A screenshot of a game"]
+    answer: 0
+    explain: "A logo is shapes, so the shapes can be stored and redrawn at any size. The others are pictures of the real world and are stored as pixels."
