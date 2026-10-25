@@ -48,6 +48,7 @@ stage: run
 insight: "Using a real key, with feedback on wrong turns, makes the binary decision logic concrete."
 try: { playground: board, starter: "boards.yml#animals", height: 600 }
 check: { type: board, text: "Use the key to identify at least 5 specimens.", when: "n >= 5" }
+hint: ["Choose a specimen and answer each question about that specimen's description, not about the animal you think it is.", "If the key names the wrong animal, the board tells you which step to look at again, and 'The whole key' under the board lays out every question if you want to see where each answer leads."]
 ```
 
 Choose a specimen and read its description carefully. Answer each question about **that** specimen. The name appears only when you get it right.
@@ -72,6 +73,7 @@ tasks:
       answer: 0
       feedback: [null, "A crocodile does have a backbone: both frog and crocodile are down the same path until the skin question.", "The key leads to the crocodile when every answer matches its description."]
       explain: "A wrong answer at one step sends you down the wrong branch, and every later answer can't fix it."
+    hint: ["Follow the key for the crocodile and then for the frog, and see which question is the first one where their answers differ.", "Open 'The whole key' under the board and trace each path with your finger, because the wrong turn is on the stretch where the two paths part."]
   - check:
       type: question
       q: "Which is a good question for a key?"
@@ -79,6 +81,7 @@ tasks:
       answer: 0
       feedback: [null, "People disagree about what is scary. Questions must be about features everyone can check.", "Big compared with what? It needs a clear yes or no.", "Asking for the name skips the point of the key."]
       explain: "A good question is about an observable feature with a clear yes or no."
+    hint: ["Picture two people looking at the same animal, and think about which of these they could still disagree on.", "Try each question on a real animal, like a kookaburra or a spider, and see which ones you could answer without anyone arguing."]
   - check: { type: reflect, text: "I can explain, step by step, how I used the key to identify one specimen, naming the feature at each step." }
 ```
 
@@ -115,6 +118,7 @@ insight: "Two keys for the same animals reach the same names by different questi
 try: { playground: board, starter: "boards.yml#second", height: 600 }
 tasks:
   - check: { type: board, text: "Identify 3 specimens with this second key.", when: "n >= 3" }
+    hint: "This key starts with legs and not a backbone, so read each question fresh and don't follow the path you used before."
   - check:
       type: question
       q: "The two keys ask different questions in a different order, but give the same names. Why?"
@@ -141,6 +145,7 @@ check:
   answer: 0
   feedback: [null, "Observable, yes, but unreliable: animals of the same kind can differ in colour.", "Size is even less clear-cut."]
   explain: "Good keys use features that don't vary within a kind of organism: legs, body covering, backbone."
+hint: ["Picture a brown kangaroo and a grey kangaroo, and think about which way each would go on that first question.", "Ask whether the two kangaroos would end up in the same place, and what that would mean for the key."]
 ```
 
 ## Evaluate: look back

@@ -39,7 +39,7 @@ check:
   type: predict
   q: "Grass captures 10 000 kJ of energy from sunlight. A grasshopper eats grass, a lizard eats grasshoppers, a kookaburra eats lizards. About how much of that energy reaches the kookaburra?"
   options: ["Almost all of it, 10 000 kJ", "About half", "About 10 kJ", "It goes round and comes back to the grass"]
-  actual: "About 10 kJ. Roughly 90% is used or lost as heat at each step, so only about 10% passes on: 10 000 → 1 000 → 100 → 10."
+  actual: "About 10 kJ. Roughly 90% is used for living, lost as heat or left uneaten at each step, so only about 10% passes on (a rule of thumb: it varies, from about 5% to 20%): 10 000 → 1 000 → 100 → 10."
 ```
 
 ## Explore: follow the energy
@@ -49,6 +49,7 @@ stage: run
 insight: "Tracing a chain click by click, with the energy shrinking at each level, connects arrows to energy flow and loss."
 try: { playground: board, starter: "boards.yml#trace", height: 600 }
 check: { type: board, text: "Trace a food chain of at least four organisms, from a producer to the top.", when: "l >= 4" }
+hint: ["Click the producer first, then ask which organism eats it, and keep going up one at a time until the board says the chain is complete.", "Watch the kJ number under each organism and the line under the board, which tells you how much of the producer's energy has reached the one you just clicked."]
 ```
 
 Click a **producer**, then follow the arrows up, one organism at a time. Watch the energy under each organism.
@@ -64,6 +65,7 @@ tasks:
       q: "A lizard gets 100 kJ from the grasshoppers it eats. About how much reaches a kookaburra that eats the lizard, in kJ?"
       answer: 10
       explain: "About 10% passes on: 100 × 0.1 = 10 kJ."
+    hint: ["Look at the kJ numbers under the organisms on the board and see what happens to the amount each time you go up one level.", "The board's line shows how much of the producer's energy reached each organism, so you can compare one level with the next."]
   - check:
       type: sort
       q: "Where does the other 90% go at each step?"
@@ -73,6 +75,7 @@ tasks:
         - ["Energy used for moving, breathing and keeping warm", "Not passed to the next level"]
         - ["Parts not eaten (bones, fur, roots)", "Not passed to the next level", "These go to decomposers, not up the chain."]
         - ["Energy stored in the eaten animal's body", "Passed to the next level"]
+    hint: ["While the lizard was alive, what did it spend energy on before anything ate it?", "For each one, ask whether that energy would still be in the lizard when the kookaburra eats it."]
   - check:
       type: question
       q: "Which statement is true?"
@@ -80,6 +83,7 @@ tasks:
       answer: 0
       feedback: [null, "Decomposers recycle the atoms (matter). Energy leaves as heat and must keep coming in as sunlight.", "That's swapped. What do decomposers give back to the soil: nutrients (atoms), or energy from sunlight?"]
       explain: "That's why every food web needs a constant supply of sunlight, but no new atoms."
+    hint: ["Think about what a plant needs from the soil to grow, and whether that's the same thing as the sunlight it uses.", "Remember the board: the energy got smaller at each step, so ask where the missing part went and whether anything could pick it up again."]
   - check: { type: reflect, text: "I explained why only a small part of the energy reaches the top of a food chain, and how energy differs from matter." }
 ```
 
@@ -118,7 +122,7 @@ check:
   q: "Why are there far fewer wedge-tailed eagles than grasshoppers in an ecosystem?"
   options: ["So little energy reaches the top of the food chain that it can only support a few large predators", "Eagles have fewer babies", "Grasshoppers are easier to see"]
   answer: 0
-  feedback: [null, "Breeding matters, but the limit is the energy available at the top.", "That's about counting, not about how many there are."]
+  feedback: [null, "Breeding matters, but the limit is the energy available at the top.", "Being easy to see doesn't change how many there are."]
   explain: "Each level up gets about a tenth of the energy, so it can support far fewer organisms."
 ```
 
@@ -131,7 +135,7 @@ insight: "Comparing two ecosystems' energy input applies the flow principle to e
 check:
   type: question
   q: "A rainforest's plants capture far more energy each year than a desert's. What would you predict about their food webs?"
-  options: ["The rainforest can support more organisms and more levels of consumers", "They would be the same size", "The desert would have more top predators"]
+  options: ["The rainforest receives and captures more energy, so it can support more organisms", "They would be the same size", "The desert would have more top predators"]
   answer: 0
   feedback: [null, "More energy captured at the bottom means more available at every level.", "Less energy at the bottom means less at the top."]
   explain: "Energy captured by producers sets the size of everything above them."
@@ -149,6 +153,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 **Revision summary**
 
 - **Energy** enters as sunlight captured by producers and **flows one way** along the arrows.
-- At each step only about **10%** is passed on; about **90%** is used for living or lost as **heat**.
+- At each step only about **10%** is passed on; about **90%** is used for living, lost as **heat** or left uneaten (it goes to decomposers).
 - That's why there are **few top predators**.
 - **Matter cycles**: decomposers return atoms to the soil and air, and producers use them again. Energy does not cycle.

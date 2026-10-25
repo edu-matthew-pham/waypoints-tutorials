@@ -49,6 +49,7 @@ stage: run
 insight: "Using a short key shows one purpose in action: features organised into groups let you identify something you don't know."
 try: { playground: board, starter: "boards.yml#key", height: 600 }
 check: { type: board, text: "Use the key to identify two of the animals.", when: "n >= 2" }
+hint: ["Read the description of the animal first, and answer each question about that animal and not about the one you think it is.", "If the key names the wrong animal, the board tells you which step to look at again, and 'The whole key' under the board lays out every question in order."]
 ```
 
 Answer each question about the animal shown. The key is built from groups: backbone or not, then feathers or not.
@@ -76,6 +77,7 @@ tasks:
       answer: 0
       feedback: [null, "Alphabetical order tells you nothing about the animals themselves.", "That records when you saw them, not what they are like."]
       explain: "Classification groups things by what they share, so the group tells you something about each member."
+    hint: ["If you looked at where one animal sits in each of these, which would tell you something about the animal itself?", "Think back to the key you just used, where the backbone question put animals into groups, and what knowing the group told you."]
   - check:
       type: question
       q: "A supermarket groups food by aisle: dairy, bakery, fruit. How is that like scientific classification?"
@@ -105,6 +107,7 @@ insight: "Comparing two systems for one purpose shows a classification is chosen
 try: { playground: board, starter: "boards.yml#key", height: 600 }
 tasks:
   - check: { type: board, text: "Identify the rest of the animals with the key.", when: "n >= 5" }
+    hint: "Pick a specimen you haven't done yet, and answer every question from its description."
   - check:
       type: question
       q: "You could group these animals by where they live (land, water, air) or by body features (backbone, feathers, fur). Which is more useful for showing how they are related?"
@@ -112,6 +115,7 @@ tasks:
       answer: 0
       feedback: [null, "A crocodile and a fish both live in water but are not close relatives.", "Each suits a different purpose: habitat groups help an ecologist; feature groups show relationships."]
       explain: "Grouping by habitat suits some jobs (planning a reserve); grouping by shared features suits others (showing relationships). The purpose decides the system."
+    hint: ["Would someone planning a wetland reserve and someone studying how animals are related want to group them the same way?", "Try one animal from the list, like the platypus, in each grouping and see who ends up next to it, and whether those neighbours are really alike."]
 ```
 
 ### Finish the key

@@ -55,6 +55,7 @@ stage: run
 insight: "Choosing tools on a real mixture, where order matters, turns property-technique pairs into reasoning instead of a list."
 try: { playground: science, starter: "boards.yml#bench", height: 560 }
 check: { type: board, text: "Get iron, sand and salt each on its own.", expect: { done: true } }
+hint: ["Think about which part you could pick out on its own first, and what each tool does to the parts it isn't meant for.", "If a tool catches two things together, the line under the board says so, and Start again lets you try a different order."]
 ```
 
 The beaker holds water with dissolved salt, sand and iron filings. Use the tools to get **iron, sand and salt each on its own**. The order matters, and you can start again.
@@ -72,10 +73,11 @@ tasks:
       items:
         - ["Iron is magnetic; sand isn't.", "Magnet", "Magnetism."]
         - ["Sand grains are too big to pass through filter paper; water and dissolved salt pass through.", "Filtration", "Particle size."]
-        - ["Water boils at 100 °C; salt doesn't boil until 1413 °C.", "Evaporation", "Boiling point."]
+        - ["Water turns to vapour easily when heated; salt barely does at all, even in a hot dish.", "Evaporation", "Water vaporises easily and salt does not."]
         - ["Pebbles are much bigger than grains of rice.", "Sieving", "Particle size, with bigger holes."]
         - ["Oil is less dense than water, so it floats on top.", "Letting it settle, then pouring off", "Density."]
       explain: "Each technique uses one property difference."
+    hint: ["For each one, ask what is different about the two parts that the technique makes use of.", "Think about whether it comes down to how big the bits are, how hot it has to get before they change, whether they float or sink, or whether a magnet notices them."]
   - check:
       type: question
       q: "Why does filter paper catch the sand but not the salt?"
@@ -83,6 +85,7 @@ tasks:
       answer: 1
       feedback: ["Weight isn't what the filter tests. The holes test size.", null, "The salt is still in the water. Evaporate it and the salt comes back.", "The sand is held back because it can't fit through the holes."]
       explain: "Filter paper sorts by particle size."
+    hint: ["What is the filter paper actually testing, how heavy something is or something else about it?", "Try Filter paper on the bench and read the line under the board about the holes and what gets through."]
   - check:
       type: question
       q: "Why did the magnet have to come before the filter paper?"
@@ -90,6 +93,7 @@ tasks:
       answer: 0
       feedback: [null, "Magnets work fine through water.", "There is no fixed rule. The order depends on the mixture and the properties."]
       explain: "The magnet picks out just the iron first; then the filter only catches sand."
+    hint: ["Try the filter paper on the bench before the magnet and see where the iron ends up.", "Then ask yourself whether you could still pull the iron away from the sand afterwards."]
   - check:
       type: question
       q: "What do all separation techniques have in common?"
@@ -142,6 +146,7 @@ check:
     - ["A magnet", "Won't work", "Chalk isn't magnetic."]
     - ["A kitchen sieve", "Won't work", "Chalk dust is far smaller than the holes."]
   explain: "Name the property difference, then rule out techniques that can't use it."
+hint: ["For each technique, picture chalk dust in water going through it and ask what the technique needs to be different about the chalk.", "Then think about whether a technique that does work might also bring other things along, or take far more effort than the job needs."]
 ```
 
 ## Elaborate: size, density and boiling point

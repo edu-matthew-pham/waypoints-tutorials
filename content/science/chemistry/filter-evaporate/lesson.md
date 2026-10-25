@@ -28,7 +28,7 @@ explainClip:
     - wait: 800
 hook: "How do you get clean salt back out of sandy salt water? Two techniques, in the right order: filtration takes out what didn't dissolve, and evaporation takes the water away from what did."
 ---
-Both of these lean on a difference you met last time, **particle size** for filtration and **boiling point** for evaporation, so here it's all about doing them properly.
+Both of these lean on a difference you met last time, **particle size** for filtration and **how easily a substance turns to vapour** for evaporation, so here it's all about doing them properly.
 
 ## Engage: sandy salt water
 
@@ -61,6 +61,7 @@ tasks:
         - ["The sand left in the filter paper", "Residue", "The solid left behind."]
         - ["The salty water that came through the paper", "Filtrate", "The liquid that passes through."]
         - ["What was left in the dish after evaporating", "Salt crystals", "The salt never left; only the water did."]
+    hint: ["For each one, ask whether it stayed behind in the paper, came through it, or only turned up after the heating.", "Look at which part sat on the dashed line of the filter paper and which part dropped below it."]
 ```
 
 ### Filtration
@@ -95,7 +96,8 @@ tasks:
       options: ["Dissolved salt particles are small enough to pass through the paper, but when heated only the water particles escape, because water boils far below salt", "Salt is heavier than water, so it sinks while the lighter water rises away", "Heating destroys the water and leaves the salt", "Dissolved salt has disappeared, and heating makes it come back"]
       answer: 0
       feedback: [null, "Weight isn't the test. Water particles escape as a gas at a far lower temperature than salt particles.", "The water isn't destroyed: it escapes into the air as water vapour, and could be collected again.", "The salt never disappeared: it was spread out as single particles among the water particles all along."]
-      explain: "Filtration sorts by particle size, and dissolved particles are tiny. Evaporation uses boiling point: the water leaves, the salt stays."
+      explain: "Filtration sorts by particle size, and dissolved particles are tiny. Evaporation uses the fact that water turns to vapour far more easily than salt does: the water leaves, the salt stays."
+    hint: ["Think about how big a dissolved salt particle is compared with the holes in the paper, and then about what happens to the water and the salt when you heat the dish.", "Run the filter board and then the evaporate board again and watch which particles move and which stay."]
 ```
 
 ### Filtration
@@ -125,6 +127,7 @@ stage: practise
 insight: "Choosing between filtration, evaporation, both or neither, with feedback, builds the habit of asking 'did it dissolve?'"
 try: { playground: science, starter: "boards.yml#quiz", height: 320 }
 check: { type: board, text: "Choose the right technique six times.", expect: { done: true } }
+hint: ["Ask yourself whether the part you want has dissolved or is just sitting in the liquid, and whether there's a liquid there at all.", "After each answer the line under the board explains it, so if you slip, use that on the next one."]
 ```
 
 For each mixture, choose what you would use to get the part named. Start by asking: did it dissolve?
@@ -141,6 +144,7 @@ tasks:
       code: "steps.txt#design"
       text: "You have a dry mixture of sand and salt. Order the steps to end up with dry sand and salt crystals, separately."
       explain: "Dissolving first is the key move: the salt has to be in solution before the filter can separate it from the sand."
+    hint: ["Start from what you have: can a filter tell two dry solids apart, and what would you have to change so that one of them could get through?", "Work out which step has to come before filtering, and which has to come after it to get the salt back."]
   - check:
       type: question
       q: "During filtering, which particles pass through the paper?"
@@ -154,7 +158,7 @@ tasks:
       options: ["Only water particles", "Water and salt", "Only salt"]
       answer: 0
       feedback: [null, "Salt doesn't boil until well over 1000 °C, far hotter than the dish gets, so it stays behind.", "The salt is what is left in the dish. The water is what leaves."]
-      explain: "Water boils far below salt."
+      explain: "Water turns to vapour far more easily than salt."
 ```
 
 ### The procedure

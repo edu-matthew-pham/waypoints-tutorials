@@ -70,6 +70,7 @@ tasks:
         - ["Air", "Mixture", "Mostly nitrogen and oxygen."]
         - ["Copper wire", "Pure substance", "Only copper particles."]
       explain: "Count the kinds of particles, not how the material looks."
+    hint: ["For each one, picture zooming right in and count how many kinds of particles you'd see, whatever it looks like from outside.", "Switch between the samples on the board and count the different colours and sizes in each."]
   - check:
       type: question
       q: "Salt water looks exactly the same all the way through. Why is it still a mixture?"
@@ -77,6 +78,7 @@ tasks:
       answer: 0
       feedback: [null, "Seawater is a mixture too, and nobody added its salt. It is about the particles.", "The salt is still there: you can taste it, and if you evaporate the water the salt is left behind.", "Salt water is perfectly clear. Looks can't tell you."]
       explain: "Evenly spread or not, two kinds of particles make a mixture."
+    hint: ["Leave how it looks out of it for a moment: how many kinds of particles did you count in the salt water on the board?", "And if you boiled all the water away, would anything be left in the dish, and what would that tell you about where the salt went?"]
   - check:
       type: question
       q: "So is \"100% pure\" orange juice a pure substance?"
@@ -84,6 +86,7 @@ tasks:
       answer: 1
       feedback: ["That is the shopping meaning of pure.", null]
       explain: "\"Pure\" on the label only means nothing was added."
+    hint: ["Is the label using the word the way a shopper does or the way a scientist does?", "Think about what's in a glass of juice besides water, and whether it's all one kind of particle."]
   - check: { type: reflect, text: "I wrote the difference between a pure substance and a mixture using particles, with salt water as an example." }
 ```
 
@@ -126,6 +129,7 @@ check:
     - ["Diagram B", "Pure substance", "Only one kind of particle."]
     - ["Diagram C", "Homogeneous mixture", "Two kinds, evenly spread through each other."]
   explain: "A and C are both mixtures; the difference is how evenly the particles are spread."
+hint: ["Start by counting how many kinds of particles each diagram has, and only look at how they're spread if there's more than one.", "Each colour or size on the board is a different kind, so check whether the different kinds are scattered through each other or gathered in one spot."]
 ```
 
 On paper: draw your own particle diagram for each type and label the key difference.

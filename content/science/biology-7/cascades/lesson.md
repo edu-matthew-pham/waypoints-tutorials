@@ -52,6 +52,7 @@ stage: run
 insight: "Committing to a prediction for every population before seeing the model's reasons makes students trace each link themselves."
 try: { playground: board, starter: "boards.yml#dingo", height: 620 }
 check: { type: board, text: "Remove the dingo, predict every other population, then check.", when: "h = 1" }
+hint: ["Press the button, then for each organism ask what it eats and what eats it, and whether either of those was affected by the dingo going.", "Work outwards from the dingo one link at a time, because the species next to it change first and then push on the ones next to them, and the line under the board counts how many you still have to predict."]
 ```
 
 Press **Remove the dingo**. Then click each organism to choose **↑ more**, **↓ fewer** or **– little change**. When you have predicted all of them, press **Check my predictions** and read the reason for each.
@@ -78,6 +79,7 @@ tasks:
       code: "steps.txt#cascade"
       text: "Put the cascade in order."
       explain: "Each step follows one link in the web: that's how an effect reaches species that never met the dingo."
+    hint: ["Start with what happens first, and then ask at each line what that change does to the next animal along the web.", "Each line should cause the one after it, so check that every line follows on from the one above."]
   - check:
       type: question
       q: "On the board, the insects could go either way. Why?"
@@ -85,6 +87,7 @@ tasks:
       answer: 0
       feedback: [null, "They are: they eat grass and bandicoots eat them.", "It can: it shows that two effects disagree, and which ones."]
       explain: "Real outcomes depend on which effect is stronger. Scientists would need to measure."
+    hint: ["Look at what the insects eat and what eats them, and see which way each of those changed.", "Read the board's reasons for the insects, because it lists more than one, and ask whether they push the same way."]
   - check: { type: reflect, text: "I traced one cascade, link by link, from the dingo to a species it never ate." }
 ```
 
@@ -121,9 +124,9 @@ insight: "A famous real cascade, with evidence, connects the model to observed e
 check:
   type: question
   q: "Wolves were returned to Yellowstone National Park (USA) in 1995. Elk numbers fell and elk stopped grazing near rivers. Willow and aspen trees then grew back along the rivers, and beavers returned. Which explains the beavers?"
-  options: ["Fewer elk eating young trees meant more trees, which beavers use for food and dams", "Wolves eat beavers' predators", "Beavers followed the wolves"]
+  options: ["Fewer elk eating young trees meant more trees, which beavers use for food and dams", "Wolves protect the beavers from their predators", "Beavers followed the wolves"]
   answer: 0
-  feedback: [null, "Wolves do eat some beaver predators, but the main link scientists describe is through the trees.", "Beavers depend on trees, not on wolves directly."]
+  feedback: [null, "Wolves aren't what beavers rely on; the link scientists describe runs through the trees.", "Beavers depend on trees, not on wolves directly."]
   explain: "Wolves → fewer elk → more trees → more beavers: a three-link cascade, observed in the field. (Scientists still debate how strong each link was.)"
 ```
 
@@ -135,6 +138,7 @@ tier: wider
 insight: "Choosing which species to remove and predicting the whole web tests transfer to an unfamiliar web."
 try: { playground: board, starter: "boards.yml#choose", height: 620 }
 check: { type: board, text: "Choose a species to remove, predict every other population, then check.", when: "h = 1" }
+hint: "Work outwards from the one you pick, one link at a time, and use 'Start again' afterwards to try a producer and then a top predator."
 ```
 
 Pick any plant or animal to remove. Which removal do you think changes the most populations? Try a producer and a top predator.
@@ -165,7 +169,7 @@ tasks:
       explain: "Scientific responses to an issue have impacts on many groups. Good decisions use evidence and weigh environmental, economic, social and ethical considerations together."
 ```
 
-The **Dingo Fence** runs about 5,600 km across south-eastern Australia to keep dingoes away from sheep. Studies comparing the two sides found more foxes and kangaroos, and fewer small native mammals, where dingoes are kept out: the cascade you traced. So should the fence stay, move, or let dingoes back in some places?
+The **Dingo Fence** runs about 5,600 km across inland Queensland, New South Wales and South Australia to keep dingoes away from sheep. Studies comparing the two sides found more foxes and kangaroos, and fewer small native mammals, where dingoes are kept out: the cascade you traced. So should the fence stay, move, or let dingoes back in some places?
 
 ### Four kinds of consideration
 

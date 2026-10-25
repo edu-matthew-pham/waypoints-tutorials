@@ -59,7 +59,8 @@ tasks:
       options: ["Pen A", "Pen B", "Neither"]
       answer: 1
       feedback: ["Compare the spots: Pen A has a red dye that the note doesn't.", null, "Line up the spots: one pen's dyes match the note's at every height."]
-      explain: "Pen B's dyes match the note's exactly. Pen A has an extra red dye."
+      explain: "Pen B's dyes match the note's at every height, so Pen B is the likely pen. Pen A has an extra red dye, so it can't be."
+    hint: ["Line up the spots from the note with the spots from each pen, and see whose dyes match the note's at every height.", "One of the pens leaves a spot at a height where the note has nothing, so check each lane against the note's, one height at a time."]
 ```
 
 ### Distillation
@@ -91,6 +92,7 @@ tasks:
         - ["You end up with the liquid and the solid", "Distillation only"]
         - ["Needs a condenser and a collecting flask", "Distillation only", "Extra equipment to catch the vapour."]
       explain: "Same property, different outcome: distillation keeps the vapour by cooling it."
+    hint: ["For each statement, ask what happens to the steam in each technique, and whether the statement depends on that.", "Run the distillation board again and watch where the water particles end up, then compare that with what the evaporation board did to them."]
   - check:
       type: question
       q: "Why do the dyes in the ink end up at different heights?"
@@ -98,6 +100,7 @@ tasks:
       answer: 1
       feedback: ["It isn't weight: every dye is pulled up by the water, against gravity.", null, "The colours were in the ink all along. The water only separates them.", "Nothing evaporates here. The water carries the dyes up the paper."]
       explain: "Dyes that dissolve well and stick weakly travel furthest."
+    hint: ["Which way did the water carry the dyes on the board, and what does that tell you about whether weight is the reason?", "Every dye gets the same water, so think about what could be different from one dye to the next that makes some go further."]
   - check:
       type: match
       q: "Match each job to the technique that suits it."

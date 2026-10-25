@@ -90,6 +90,7 @@ tasks:
       answer: 1
       feedback: ["The gas spread downwards and sideways too, not just up.", null, "Particles never change size. The spaces between them grow.", "There was no air in the box, and the gas still spread."]
       explain: "Nothing holds gas particles together, so they spread in every direction until they fill the space."
+    hint: ["When you removed the jar from the gas, which way did the particles go, and what do you think that says about what's holding them?", "Take the jar off the gas again and watch where the particles end up, up, down or sideways."]
   - check:
       type: question
       q: "Why does a solid keep its shape?"
@@ -97,6 +98,7 @@ tasks:
       answer: 1
       feedback: ["Solid particles vibrate. They don't leave their positions, because attraction holds them there.", null, "Particles of a substance are the same size in every state.", "Mass doesn't decide shape: ice keeps its shape and is lighter than the same volume of water."]
       explain: "Each particle vibrates but stays in its place, so the whole shape stays."
+    hint: ["Watch the solid's particles for a few seconds: are they still, or doing something, and what keeps them from wandering off?", "Choose Solid and remove the jar, and look at whether any particle leaves its spot."]
   - check: { type: reflect, text: "I wrote why juice spreads across a table but a sugar cube keeps its shape, using arrangement, motion and attraction, and I could point to a particle diagram for each sentence." }
 ```
 
@@ -146,6 +148,7 @@ tasks:
         - ["Carbon dioxide (0.0018 g/cm³)", "Least dense pair"]
         - ["Air (0.0012 g/cm³)", "Least dense pair"]
       explain: "Spacing predicts the groups: solids and liquids close together, then a huge drop to the gases."
+    hint: ["Count the particles in each window, since they all show the same small volume, and think about what more particles in the same space means for density.", "The two gases are easy to spot because their windows are almost empty, so it's the solids and liquids you need to compare."]
   - check:
       type: question
       q: "Iron and aluminium have the same spacing, but iron is almost three times denser. Why?"
@@ -153,6 +156,7 @@ tasks:
       answer: 0
       feedback: [null, "Bigger particles at the same spacing would mean fewer per cm³, not more mass.", "Solid aluminium has no air gaps."]
       explain: "Spacing explains the big groups; the mass of each particle explains differences within a group. The same goes for carbon dioxide and air."
+    hint: ["Look at the iron and aluminium windows on the board and see whether the spacing can explain a difference in density.", "If it can't, think about what else is in the same volume, and what could differ between one iron particle and one aluminium particle."]
 ```
 
 ### Rank by spacing
@@ -168,6 +172,7 @@ insight: "The same particles at different temperatures connect motion and energy
 try: { playground: science, starter: "boards.yml#heat", height: 500 }
 tasks:
   - check: { type: board, text: "Heat the water from ice, through liquid, to steam.", expect: { done: true } }
+    hint: "Slide the temperature slowly from the far left to the far right, and read the line under the board each time the particles change how they move."
   - check:
       type: question
       q: "When liquid water becomes steam, the space between the particles…"

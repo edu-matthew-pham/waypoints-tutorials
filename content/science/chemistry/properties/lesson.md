@@ -72,6 +72,7 @@ tasks:
       answer: 0
       feedback: [null, "Particles never squash, in any state. Air particles don't squash either: the difference is the space between them.", "Weight doesn't stop a plunger. The water particles are already touching.", "Particles never stop moving. They are already as close as they can get."]
       explain: "The particles stay the same size; there is just no empty space left."
+    hint: ["When you pushed the water plunger, did any particle on the board look squashed, or was it something about the room they had?", "Push the water as far as it goes and watch the \"Space inside\" percentage under the board, then do the same with air to compare."]
   - check:
       type: question
       q: "Why is air much less dense than water?"
@@ -79,6 +80,7 @@ tasks:
       answer: 1
       feedback: ["Surprisingly, a water particle is lighter than an average air particle. The difference is spacing.", null, "Particles don't change size between states.", "Air does have mass, about 1.2 g in every litre."]
       explain: "Fewer particles in each cm³ means less mass in each cm³: lower density."
+    hint: ["Think about how many particles are in the same small space for air and for water, and what that does to the mass in each cm³.", "Pull the plunger right out, switch between Water and Air, and compare the particle count in the dashed window."]
   - check: { type: reflect, text: "I explained why air can be squashed and why air is less dense than water, naming a particle feature for each, not just 'because it's a gas'." }
 ```
 
@@ -121,6 +123,7 @@ check:
     - ["The smell of honey spreads through a whole room.", "Motion: how fast the particles move", "Smell particles keep moving and spread out between the moving air particles."]
     - ["Warm honey pours faster than cold honey.", "Motion: how fast the particles move", "Faster particles overcome the attraction more easily."]
   explain: "Honey and water have the same arrangement but behave differently: attraction makes the difference."
+hint: ["For each one, ask what the particles are doing differently: how close they sit, how fast they move, or how strongly they pull on each other.", "Honey and water both have their particles close together, so think about what else could make honey pour slowly."]
 ```
 
 ## Elaborate: float or sink
@@ -199,6 +202,7 @@ tasks:
       answer: 2
       feedback: ["There is no fixed pattern, so the particles can slide past each other.", "The particles attract strongly, which holds them back as they slide.", null]
       explain: "No fixed pattern, so it flows; strong attraction makes it slow."
+    hint: "Look at the particles in X and ask whether they're locked in a pattern or free to get past each other, and then whether anything seems to be holding them back."
   - check:
       type: question
       q: "If you warm X, how does its flow change?"

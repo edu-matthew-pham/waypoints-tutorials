@@ -70,6 +70,7 @@ tasks:
       answer: 2
       feedback: ["Air is made of particles too. Between particles there is nothing at all.", "The particles are the water. There is no water between them.", null]
       explain: "There is nothing between particles, not even air."
+    hint: ["If you put air in the gaps, what would that air be made of?", "Have a look at the steam sample and at what is drawn in the gaps between the particles."]
   - check:
       type: question
       q: "Do the particles in ice ever stop moving?"
@@ -84,6 +85,7 @@ tasks:
       answer: 0
       feedback: [null, "Particles never change size. Ice particles are the same water particles, held in a pattern.", "Particles never change size. Steam particles are the same, just far apart."]
       explain: "All three are made of the same water particles."
+    hint: ["When you went from ice to steam on the board, was it the particles themselves that looked different, or something about how they sit and move?", "Click between Ice and Steam and keep your eye on a single particle each time."]
   - check:
       type: sort
       q: "Which statements are part of particle theory?"
@@ -105,6 +107,7 @@ tasks:
         - ["Liquid", "Close together with no pattern, sliding past each other, weaker attraction"]
         - ["Gas", "Far apart, moving fast in all directions, very weak attraction"]
       explain: "The three states differ in the same three ways: arrangement, motion and attraction."
+    hint: ["Take one state at a time and picture whether its particles stay in a pattern and whether they swap neighbours.", "Flick between Ice and Liquid water on the board and watch whether a particle stays put or moves along to a new neighbour."]
 ```
 
 ### Between the particles
@@ -134,6 +137,7 @@ stage: practise
 insight: "Reliable matching of diagrams to states needs practice with feedback that names the particle feature every time."
 try: { playground: science, starter: "boards.yml#identify", height: 500 }
 check: { type: board, text: "Name the state of six substances correctly.", expect: { done: true } }
+hint: ["Look first at how close the particles are, and then at whether they stay in place or move around.", "After each answer the line under the board explains it, so if you get one wrong, read it and use it on the next round."]
 ```
 
 Each round shows a new substance through the zoom lens. Is it a solid, a liquid or a gas?
@@ -170,6 +174,7 @@ tier: wider
 insight: "Spacing and motion go together: building the states from the two features shows why some combinations never happen."
 try: { playground: science, starter: "boards.yml#build", height: 520 }
 check: { type: board, text: "Build a solid, a liquid and a gas.", expect: { done: true } }
+hint: ["Think about what each state needs from the two choices, how close the particles are and how they move.", "If a combination isn't a real state, the line under the board tells you which state those particles would really make, so use that to change one choice."]
 ```
 
 Choose how close the particles are and how they move. Try the combinations that don't make a real state too, and read what the board says.

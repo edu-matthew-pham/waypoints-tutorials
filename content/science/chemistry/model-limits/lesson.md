@@ -67,6 +67,7 @@ tasks:
         - ["Why copper is orange and gold is yellow", "Can't explain it", "Plain balls have no colour of their own."]
         - ["Why iron rusts but gold doesn't", "Can't explain it", "Reactions need atoms with parts that join and swap."]
         - ["Why metals conduct electricity", "Can't explain it"]
+    hint: ["For each one, ask what the model pictures particles as, and whether the thing needs anything more than that.", "Pick out the ones you can explain by describing how the particles are spaced, how they move or how they attract, and be honest about the ones you can't."]
   - check:
       type: question
       q: "Why can't the particle model explain why some substances react?"
@@ -74,6 +75,7 @@ tasks:
       answer: 0
       feedback: [null, "Speed is not the problem; the model has nothing inside the particles.", "It works for solids and liquids too."]
       explain: "To explain a phenomenon, a model needs the right parts. Reactions need atoms that can join and rearrange (Year 8), and electricity needs electrons (Year 9)."
+    hint: ["What does the particle model say a particle actually is?", "Now think about what particles would have to be able to do for one substance to turn into a different one, and whether a plain ball can do that."]
   - check:
       type: question
       q: "What evidence supports the particle model?"

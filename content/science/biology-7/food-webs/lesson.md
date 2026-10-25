@@ -49,6 +49,7 @@ stage: run
 insight: "Drawing each link, with wrong-way arrows flagged, builds the web structure and the arrow convention together."
 try: { playground: board, starter: "boards.yml#bush", height: 600 }
 check: { type: board, text: "Draw every feeding link, each arrow from the food to the eater.", when: "c = k and x = 0" }
+hint: ["Click the food first and then the organism that eats it, so ask where the energy in the grasshopper comes from.", "The line under the board counts your links and turns an arrow red if it isn't right, and if the fungi and bacteria have no arrows yet, think about what happens to a dead dingo."]
 ```
 
 Click a **food**, then the organism that **eats** it. The board tells you how many links there are. Don't forget the **decomposers**: what do fungi and bacteria feed on?
@@ -70,6 +71,7 @@ tasks:
         - ["Lizard", "Secondary consumer", "It eats a primary consumer."]
         - ["Dingo", "Secondary consumer"]
         - ["Fungi and bacteria", "Decomposer", "They break down dead grass, dead dingoes and droppings."]
+    hint: ["For each one, ask what it eats and whether that food is a producer or another consumer.", "Use the web you drew and follow the arrows back from each animal to see what feeds it."]
   - check:
       type: question
       q: "The kookaburra eats both lizards and grasshoppers. What does that make it?"
@@ -83,6 +85,7 @@ tasks:
       options: ["They feed on dead organisms and wastes from every level, returning nutrients to the soil", "They don't; only animals that hunt belong", "They make food from sunlight"]
       answer: 0
       feedback: [null, "Without decomposers, dead matter would pile up and plants would run out of nutrients.", "That's what producers do."]
+    hint: ["What would happen to a dead dingo or a patch of dead grass if nothing ever broke it down?", "Think about what the grass needs from the soil to grow, and where that could come from."]
   - check: { type: reflect, text: "I can name the producer, consumers and decomposers in a food web, and say which way the arrows point and why." }
 ```
 
@@ -133,6 +136,7 @@ tier: wider
 insight: "Building a second, unfamiliar web (marine) tests the structure rather than a memorised example."
 try: { playground: board, starter: "boards.yml#sea", height: 600 }
 check: { type: board, text: "Build the Antarctic food web. Phytoplankton are tiny drifting producers; krill eat them; the rest you can work out from the list.", when: "c = k and x = 0" }
+hint: ["Start from the producer and work upwards, and for each animal ask what it eats from the list.", "Some animals eat more than one food, so read each sentence for every food it names, and the line under the board will count your links and turn a wrong one red."]
 ```
 
 Krill eat phytoplankton. Small fish eat krill. Squid eat small fish and krill. Penguins eat small fish, krill and squid. Leopard seals eat penguins and small fish. Bacteria break down dead phytoplankton and dead leopard seals.

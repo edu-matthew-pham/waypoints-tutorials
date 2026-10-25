@@ -50,6 +50,7 @@ stage: run
 insight: "Placing specimens with feature questions shows that kingdoms are decided by observable features, not by first impressions."
 try: { playground: board, starter: "boards.yml#kingdoms", height: 560 }
 check: { type: board, text: "Use the key to place at least 5 specimens in their kingdom.", when: "n >= 5" }
+hint: ["Start at the first question and answer it from the description, then follow the key down one step at a time.", "If you land in the wrong kingdom, the board tells you which question to look at again, so reread what the description says about that feature."]
 ```
 
 Choose a specimen, read its description, and answer each question about it. The key tells you its kingdom.
@@ -75,6 +76,7 @@ tasks:
         - ["Grass", "Plants"]
         - ["Mould on an orange", "Fungi"]
         - ["Coral", "Animals", "It looks like a plant, but coral polyps are tiny animals that catch food."]
+    hint: ["For each one, think about where its food comes from, and for the single-celled ones whether the cell has a nucleus.", "A few of these don't look like the group they belong to, so go by what the organism actually does and not by what it looks like, and take extra care with the coral and the kelp."]
   - check:
       type: question
       q: "Which feature best separates plants from fungi?"
@@ -94,6 +96,7 @@ tasks:
       answer: 0
       feedback: [null, "Ferns and mushrooms both grow on the forest floor and stay put, but that's a feature, not family. DNA puts fungi closer to animals.", "All living things are related; the question is how closely."]
       explain: "Fungi and animals share a more recent common ancestor than fungi and plants do. Kingdoms sort by features; they don't always show who is related."
+    hint: ["The key sorted these by what you can see, but is looking alike the same as being family?", "Read the question again: it says DNA evidence, so set aside where each one grows and what it looks like."]
   - check:
       type: question
       q: "Scientists once used two kingdoms (plants and animals), then five, and now group life into three domains. Why did it keep changing?"
@@ -157,6 +160,7 @@ check:
   code: "hierarchy.txt#order"
   text: "Put the red kangaroo's classification in order, from the biggest group to the smallest."
   explain: "Kingdom, phylum, class, order, family, genus, species: each level is a smaller group that shares more features. The two-part scientific name is genus + species: Osphranter rufus."
+hint: ["Each level is a smaller group inside the one before it, so ask which line could describe the most kinds of living things and which the fewest.", "Each line starts with the name of its level, and the descriptions get more and more specific as you go, so use those to check your order."]
 ```
 
 ## Evaluate: look back

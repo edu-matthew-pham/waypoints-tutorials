@@ -63,6 +63,7 @@ insight: "Reading a real heating curve, sorting the changes by energy in or out,
 try: { playground: board, starter: "boards.yml#curve", height: 560 }
 tasks:
   - check: { type: board, text: "This is a heating curve for 1 kg of ice, heated steadily until it is steam. Move the cursor R along the whole curve, to 74 minutes. Where is the line flat?", when: "x(R) = 74" }
+    hint: "Move R slowly along the curve with its slider, and notice where the temperature stops changing even though the minutes keep ticking over."
   - check:
       type: sort
       q: "Does the substance take energy in, or give energy out?"
@@ -72,6 +73,7 @@ tasks:
         - ["Boiling or evaporating (liquid to gas)", "Energy in"]
         - ["Freezing (liquid to solid)", "Energy out"]
         - ["Condensing (gas to liquid)", "Energy out", "Steam on your skin burns badly because it gives out energy as it condenses."]
+    hint: ["Picture water turning to ice in a freezer: is the freezer warming it up, or pulling something out of it, and what do you think that something is?", "Then for each change, ask whether the particles are being pulled apart or let settle back together, and what that needs."]
   - check:
       type: question
       q: "On the heating curve, the line is flat from 1 to 9 minutes. What is happening?"
@@ -79,6 +81,7 @@ tasks:
       answer: 0
       feedback: [null, "The heat was on the whole time.", "Boiling is the second flat part, at 100 °C."]
       explain: "During a change of state, the energy goes into overcoming the attraction between particles, not into making them move faster, so the temperature stays constant."
+    hint: ["Was the stove on or off during those minutes, and if it was on, where could that energy be going if the particles aren't speeding up?", "Think about what else energy could do to particles besides making them move faster, and what the particles in ice are being held in."]
   - check:
       type: number
       q: "At what temperature (°C) is the second flat part of water's heating curve?"
@@ -107,6 +110,7 @@ tasks:
         - ["Evaporating", "Fast particles at the surface pull free of the others and escape as a gas"]
         - ["Condensing", "Gas particles slow down and are pulled close together into a liquid, giving out energy"]
       explain: "Energy in frees the particles from each other's attraction; energy out lets the attraction pull them back together."
+    hint: ["Take one change at a time and picture the particles: are they getting free of each other, or settling back together?", "Then think about whether that needs energy put in or lets energy out, because the right description says which."]
   - check: { type: reflect, text: "I can explain changes of state with particles and say whether energy goes in or out for each." }
 ```
 
@@ -153,6 +157,7 @@ insight: "Reading a cooling curve applies the same idea in reverse: a flat part 
 try: { playground: board, starter: "boards.yml#cooling", height: 560 }
 tasks:
   - check: { type: board, text: "Melted stearic acid (a waxy substance used in candles) is cooling. Move R to where it starts to freeze (the line goes flat).", when: "x(R) = 4" }
+    hint: "Move R along the curve and look for where the temperature stops falling even though the time keeps passing."
   - check:
       type: question
       q: "Why does the stearic acid's temperature stay at 69 °C for 8 minutes while it freezes?"
@@ -160,6 +165,7 @@ tasks:
       answer: 0
       feedback: [null, "The room is cooler than the stearic acid; it can't keep it warm.", "The flat part is real: it is the freezing point."]
       explain: "Freezing gives energy out. Until every particle has settled, that energy balances what is lost to the room."
+    hint: ["Is the room warmer or cooler than the stearic acid, and so what must be holding the temperature up?", "Think about what happens to energy when particles settle into fixed places: does it go in or come out?"]
 ```
 
 ### Freezing stearic acid
