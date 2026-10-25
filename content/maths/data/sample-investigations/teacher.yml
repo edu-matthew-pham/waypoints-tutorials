@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Zara who her sample can speak for."
   - "Modify: ask why the bigger sample's estimate is safer."
   - "Make: ask how you will protect the people who answer."
+  - "Paper: the canteen claim is written on paper; the page marks the reason for 'about 45%' and then shows a model. Books out; read the claims, not the screens."
 stuck:
   - see: "A student writes an exact value for the population."
     ask: "Did you measure everyone?"

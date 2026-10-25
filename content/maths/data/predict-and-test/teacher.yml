@@ -5,6 +5,7 @@ goals:
   - I can predict how often an outcome should happen in a number of trials.
   - I can run an experiment, record counts and work out relative frequencies.
   - I can explain why results differ from predictions in a short experiment.
+struggle: "Expecting the count to land exactly on the expected value, and then calling a fair dice unfair after a short run. Ask: did everyone in the class get exactly 10?"
 before: |
   Do the Run board first. Students need Sample spaces and probability.
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: link relative frequency to Fractions, decimals and percentages."
   - "Modify: before the two-students question, ask what range of heads in 10 flips is normal."
   - "Make: ask for the general rule: trials = expected count ÷ probability."
+  - "Paper: the forecast question is worked on paper; the page marks the number and the reason, then shows a model. Books out, and look at the pages."
 stuck:
   - see: "A student expects the predicted count exactly (Noah's mistake)."
     ask: "Look at the class's counts. Did everyone get 10?"

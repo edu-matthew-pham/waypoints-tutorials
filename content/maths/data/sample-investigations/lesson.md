@@ -8,6 +8,7 @@ summary: "A sample investigation asks a question about a population, plans a fai
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "You can't see the whole school's answer, only your sample's. How close is your estimate, and how would you say so honestly?"
+connection: canteen-sample   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8338
   url: http://127.0.0.1:8338/index.html
@@ -197,3 +198,37 @@ check: { type: reflect, text: "I planned an investigation: a question about a po
 ```
 
 Choose a question about your school (sleep, screen time, travel to school, lunch). Write the plan as five stages. If your teacher agrees, carry it out with a class sample and write the report.
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Turning a made-up canteen sample into an honest claim, with the reason for 'about' picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "The canteen asks a random sample of 60 of its 900 students which new item to stock. 27 choose wraps (made up). Write what the canteen can claim about all 900 students. Work it out on paper."
+  steps:
+    - ["$27 \\div 60 = 0.45$, so 45% of the sample chose wraps", "count over sample size"]
+    - ["About 45% of all 900 students would choose wraps, give or take", "a random sample gives an estimate for the whole group"]
+    - ["Another sample of 60 could give a slightly different percentage, so a close race needs a bigger sample", "samples vary"]
+  picks:
+    - step: 2
+      q: "Why say 'about 45%' and not 'exactly 45%'?"
+      options: ["A random sample estimates the whole school, and another sample would give a slightly different percentage", "The sample was biased towards wraps", "Percentages from a sample are always wrong"]
+      answer: 0
+      feedback: [null, "Nothing in the plan says the sample was unfair. Even a fair sample varies.", "A fair sample is usually close. It is an estimate, not an exact value."]
+  criteria:
+    - "I worked out the sample's percentage first."
+    - "My claim says 'about' and names the group it speaks for."
+    - "I said what could change it: another sample, or a bigger one."
+  explain: "27 out of 60 is 45%. A fair sample gives an estimate: about 45% of the 900, give or take, and another sample would differ a little."
+```
+
+Do this one in your book or on paper, one step per line, then pick the reason.
+
+**Also used in**
+
+- **The canteen.** Plan who to ask, ask fairly, and report 'about 45%', not 'exactly'.
+- **School council.** Surveys on start times or uniform need an honest line on how sure you are.
+- **Poll headlines.** Check who was asked, and how many, before believing a percentage.

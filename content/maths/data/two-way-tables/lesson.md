@@ -8,6 +8,7 @@ summary: "When everyone in a group is sorted by two yes/no questions, a Venn dia
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "In a class of 30, 20 play sport and 13 play music. That adds to 33, more than the class. Nobody miscounted. What is going on?"
+connection: survey-two-way   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8329
   url: http://127.0.0.1:8329/index.html
@@ -40,6 +41,8 @@ check:
   options: ["Someone made a mistake", "Some play both, and were counted twice", "Some play neither"]
   actual: "Some play both. They were counted once with sport and again with music. Here 8 play both."
 ```
+
+<figure class="situation" role="img" aria-label="A class of 30 drawn as two overlapping circles: sport with 20 students and music with 13. The overlap, the students who play both, is marked with a question mark."><svg viewBox="0 0 320 175" width="320" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><rect x="10" y="8" width="300" height="159" rx="8" stroke-width="1"/><text x="20" y="26" text-anchor="start" fill="currentColor" stroke="none" font-size="11">class of 30</text><circle cx="125" cy="95" r="55" stroke-width="1.5"/><circle cx="195" cy="95" r="55" stroke-width="1.5"/><text x="98" y="92" text-anchor="middle" fill="currentColor" stroke="none">sport</text><text x="98" y="110" text-anchor="middle" fill="currentColor" stroke="none">20</text><text x="222" y="92" text-anchor="middle" fill="currentColor" stroke="none">music</text><text x="222" y="110" text-anchor="middle" fill="currentColor" stroke="none">13</text><text x="160" y="100" text-anchor="middle" fill="currentColor" stroke="none" font-size="20">?</text><text x="160" y="158" text-anchor="middle" fill="currentColor" stroke="none" font-size="11">? = plays both</text></svg></figure>
 
 ## Run: find the groups
 
@@ -200,3 +203,43 @@ check: { type: reflect, text: "I chose two yes/no questions, counted the four gr
 ```
 
 The board shows a finished example (bus and bike) to compare with. Ask your two questions to your class or family, then draw both pictures. Which is quicker to read, and for which question?
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Finding 'neither' in a made-up walk-and-sport survey, with the reason for subtracting the overlap picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "A survey of 40 Year 8 students finds 22 walk to school, 15 play a sport and 9 do both (made up). How many do neither? Draw the two circles or a table on paper."
+  steps:
+    - ["Walk only: $22 - 9 = 13$. Sport only: $15 - 9 = 6$", "take the overlap out of each total"]
+    - ["$13 + 6 + 9 = 28$ do at least one", "add the three parts, with the overlap counted once"]
+    - ["$40 - 28 = 12$ do neither", "everyone else"]
+  picks:
+    - step: 2
+      q: "Why is the overlap counted only once?"
+      options: ["Students who do both are in both totals, so they must be counted once", "Everyone is in exactly one group, so 22 + 15 is right", "The 9 should be taken from the walkers only"]
+      answer: 0
+      feedback: [null, "22 + 15 = 37 counts the 9 twice.", "The 9 are in both totals, so both groups lose them to the overlap."]
+  answer: "12"
+  answerLabel: "Neither"
+  tolerance: 0
+  feedback:
+    - ["3", "That is 40 − 22 − 15, which takes the 'both' students away twice."]
+    - ["28", "That is how many do at least one. Neither is what is left of the 40."]
+  criteria:
+    - "I wrote the overlap, 9, first."
+    - "I counted the overlap once in the total."
+    - "My four parts add to 40."
+  explain: "13 + 6 + 9 = 28 do at least one, so 40 − 28 = 12 do neither. The four cells add to 40."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **School surveys.** Walk or ride? Sport or music? Every student falls in one of four cells.
+- **Clubs and rosters.** Count members of two clubs without counting the shared ones twice.
+- **Class work.** Survey your class and check the four cells add to the number surveyed.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask whether Mia or Jack chose unfairly."
   - "Modify: ask what happened to the spread when n grew."
   - "Make: ask why not always take the biggest sample."
+  - "Paper: the range of five samples is worked on paper; the page marks the number and the reason it is chance, then shows a model. Books out."
 stuck:
   - see: "A student thinks a different result means a mistake."
     ask: "Did the two samples hold the same students?"

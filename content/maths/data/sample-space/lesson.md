@@ -8,6 +8,7 @@ summary: "The sample space lists every possible outcome. When the outcomes are e
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A spinner is half red. Red, blue or green: three colours, so is each one a third? Spin it a thousand times and see."
+connection: game-spinner   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8184
   url: http://127.0.0.1:8184/index.html
@@ -48,6 +49,8 @@ check:
     - "$\\tfrac{1}{2}$"
   actual: "1/4. There are three colours, but they are not equally likely: blue is a quarter of the spinner, so P(blue) = 1/4."
 ```
+
+<figure class="situation" role="img" aria-label="A spinner split into half red on the left, a quarter blue at the top right and a quarter green at the bottom right. The question asks for the chance of blue."><svg viewBox="0 0 330 190" width="330" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><path d="M110 25 A70 70 0 0 0 110 165 L110 25 Z" fill="#D85A30" fill-opacity="0.3" stroke-width="1.5"/><path d="M110 95 L110 25 A70 70 0 0 1 180 95 Z" fill="#378ADD" fill-opacity="0.3" stroke-width="1.5"/><path d="M110 95 L180 95 A70 70 0 0 1 110 165 Z" fill="#639922" fill-opacity="0.3" stroke-width="1.5"/><text x="72" y="100" text-anchor="middle" fill="currentColor" stroke="none">red</text><text x="143" y="70" text-anchor="middle" fill="currentColor" stroke="none">blue</text><text x="143" y="132" text-anchor="middle" fill="currentColor" stroke="none">green</text><path d="M110 95 L128 48" stroke-width="2.5"/><text x="215" y="100" text-anchor="start" fill="currentColor" stroke="none" font-size="15">P(blue) = ?</text></svg></figure>
 
 Three colours, but are they the same size?
 
@@ -241,3 +244,43 @@ check:
 ```
 
 Then: design a bag with $P(\text{red}) = \tfrac{1}{3}$. What is the smallest bag that works?
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Counting equal sections on a made-up game spinner gives a probability, with the reason for counting picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "A board-game spinner has 8 equal sections: 1 is 'bonus', 3 are 'go back' and the rest are 'go on' (made up). What is P(go on)? Work it out on paper."
+  steps:
+    - ["8 equal sections, so 8 equally likely outcomes", "equal sections are equally likely, so we can count them"]
+    - ["$8 - 1 - 3 = 4$ sections say 'go on'", "the favourable outcomes"]
+    - ["$P(\\text{go on}) = \\tfrac{4}{8} = 0.5$", "favourable ÷ total"]
+  picks:
+    - step: 1
+      q: "Why can you count sections here?"
+      options: ["The sections are equal in size, so each is equally likely", "There are three kinds of result, so each has chance 1/3", "Bonus is rare, so it is left out"]
+      answer: 0
+      feedback: [null, "Three kinds of result, but they cover 1, 3 and 4 sections: not equally likely.", "Bonus is one of the 8 sections, so it counts."]
+  answer: "0.5"
+  answerLabel: "P(go on)"
+  tolerance: 0.01
+  feedback:
+    - ["4", "That counts the sections. Divide by the 8 sections to make a probability."]
+    - ["0.33", "That treats bonus, go back and go on as equally likely. They have 1, 3 and 4 sections."]
+  criteria:
+    - "I counted all 8 sections as the total."
+    - "I found the go on sections by taking away the others."
+    - "I wrote the probability as favourable over total."
+  explain: "8 − 1 − 3 = 4 sections say go on, so P = 4/8 = 0.5."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **Board games.** A designer splits a spinner so a bonus comes up about one spin in eight, then counts sections to check.
+- **Draws and raffles.** List every ticket first: that list is the sample space.
+- **Next lesson.** Predict and test: spin it and see how close the counts come.

@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Leo how many students he measured."
   - "Modify: ask how far apart the two medians are."
   - "Make: ask what word your estimate needs ('about')."
+  - "Paper: the canteen mean is worked on paper; the page marks the mean and the reason for 'about', then shows a model. Books out, and look at the pages."
 stuck:
   - see: "A student reports only the mean."
     ask: "How spread out are the values? What shape?"

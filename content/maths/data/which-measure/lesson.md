@@ -7,6 +7,7 @@ summary: "Choose the measure that tells the truth about the data. An outlier dra
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "One student gets 40 dollars a week; the rest get 5 to 8. 'The average is 12 dollars,' says the newspaper. Is that fair?"
+connection: median-house-price   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8181
   url: http://127.0.0.1:8181/index.html
@@ -210,3 +211,37 @@ check: { type: board, text: "Make 5 values where the mean is at least 3 more tha
 ```
 
 Then write a sentence someone could use to mislead with your mean.
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Choosing between a mean and a median for made-up house sales with one mansion, with the reason picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "A property report covers 5 sales this month (made up): \\$510 000, \\$540 000, \\$560 000, \\$590 000 and \\$2 400 000. The mean is \\$920 000. Which should the report quote as the typical price, and why? Work out the median on paper first."
+  steps:
+    - ["In order, the middle of 5 prices is \\$560 000", "the median is the middle value"]
+    - ["The mean, \\$920 000, is above four of the five sales", "the \\$2 400 000 drags it up"]
+    - ["Quote the median, \\$560 000", "a few very high prices pull the mean up and leave the median alone"]
+  picks:
+    - step: 3
+      q: "Why quote the median here?"
+      options: ["One very high sale pulls the mean up, and the median is not moved by it", "The median is always the better average", "The mean is wrong because it adds the prices"]
+      answer: 0
+      feedback: [null, "Not always: with no extreme values the mean is fine. It depends on the data.", "The mean is worked out correctly. It just is not typical here."]
+  criteria:
+    - "I put the five prices in order before choosing the middle."
+    - "I compared the mean with most of the sales."
+    - "My reason names the very high sale."
+  explain: "The median, \\$560 000, sits in the middle of the sales. The mean, \\$920 000, is pulled up by the \\$2 400 000 sale, so it is higher than four of the five. Remember these are only this month's sales."
+```
+
+Do this one in your book or on paper, one step per line, then pick the reason.
+
+**Also used in**
+
+- **House prices.** Reports use the median because a few very high or low sales can skew the average ([Westpac](https://www.westpac.com.au/personal-banking/home-loans/median-house-prices-explained/)).
+- **Pocket money and incomes.** One very large value can drag a mean away from what is typical.
+- **Class work.** Find data where the mean and median disagree, and say which one to quote.

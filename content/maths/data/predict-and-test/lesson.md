@@ -7,6 +7,7 @@ summary: "The expected number of times an outcome happens is its probability × 
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Roll a dice 60 times and count the sixes. How many should you expect, how far off is normal, and when should you suspect the dice?"
+connection: chance-of-rain   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8185
   url: http://127.0.0.1:8185/index.html
@@ -48,6 +49,8 @@ check:
     - "You can't say anything"
   actual: "About 10: 60 × 1/6 = 10. The real count will usually be near 10, but not always exactly 10."
 ```
+
+<figure class="situation" role="img" aria-label="A dice showing a six, then an arrow to 60 rolls, then a box with a question mark: how many sixes?"><svg viewBox="0 0 360 110" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="14"><rect x="20" y="25" width="60" height="60" rx="9" stroke-width="2"/><g fill="currentColor" stroke="none"><circle cx="39" cy="42" r="5"/><circle cx="39" cy="55" r="5"/><circle cx="39" cy="68" r="5"/><circle cx="61" cy="42" r="5"/><circle cx="61" cy="55" r="5"/><circle cx="61" cy="68" r="5"/></g><line x1="95" y1="55" x2="170" y2="55" stroke-width="1.5"/><path d="M162 49 L172 55 L162 61" stroke-width="1.5"/><text x="132" y="44" text-anchor="middle" fill="currentColor" stroke="none">60 rolls</text><rect x="190" y="25" width="150" height="60" rx="9" stroke-width="1.2"/><text x="265" y="52" text-anchor="middle" fill="currentColor" stroke="none">sixes: ?</text><text x="265" y="72" text-anchor="middle" fill="currentColor" stroke="none" font-size="12">(a fair dice)</text></svg></figure>
 
 What fraction of rolls should be a six?
 
@@ -236,3 +239,43 @@ check:
 ```
 
 Then: how many spins of the 3-red, 5-blue spinner to expect 30 reds?
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Using the forecast chance on a run of days gives a second expected-count problem, set out on paper, with the key step (probability times trials) picked as the reason."
+check:
+  type: reasoning
+  paper: true
+  q: "Over a school term, 40 days have a forecast of a 30% chance of rain (made up). About how many of those 40 days should have rain? Work it out on paper."
+  steps:
+    - ["$P(\\text{rain}) = 30\\% = 0.3$", "write the chance as a decimal"]
+    - ["$0.3 \\times 40 = 12$ days", "expected count = probability × number of trials"]
+    - ["Some terms will have 10 and some 14: 12 is the average, not a promise", "short runs vary"]
+  picks:
+    - step: 2
+      options: ["Multiply the probability by the number of days", "Add 30 and 40", "Divide 40 by 0.3"]
+      answer: 0
+      feedback: [null, "30 is a percentage, not a number of days. Chance times trials gives the count.", "Dividing by 0.3 would give the days needed to expect 40 rainy ones."]
+  answer: "12"
+  answerLabel: "Days with rain"
+  tolerance: 0.05
+  feedback:
+    - ["30", "That is the chance as a percentage. Out of 40 days, 30% is a smaller number."]
+    - ["0.3", "That is the probability. Multiply by the 40 days."]
+    - ["133", "That divides by 0.3. Multiply instead."]
+  criteria:
+    - "I turned 30% into 0.3 before multiplying."
+    - "I multiplied the probability by the 40 days."
+    - "I said 12 is what to expect on average, not exactly what will happen."
+  explain: "0.3 × 40 = 12 days. Some terms will have a few more or fewer: the expected count is a guide."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **Weather.** "30% chance of rain" means that on about 3 of every 10 days with this forecast, it rains.
+- **Games.** A designer picks a spinner's chances, then predicts how often a bonus will come up in a session.
+- **Class work.** Run a spinner 80 times and compare the counts with what you expected.

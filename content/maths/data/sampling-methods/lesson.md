@@ -8,6 +8,7 @@ summary: "A sample can be chosen at random, every so many people on a list, a fa
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "You need 20 students from a school of 200 for a sleep survey, and Year 7s sleep more than Year 10s. How do you pick 20 so the answer is fair?"
+connection: canteen-sample   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8335
   url: http://127.0.0.1:8335/index.html
@@ -204,3 +205,43 @@ check: { type: board, text: "Take 10 samples of 20 with a fair method of your ch
 ```
 
 Then take 10 convenience samples and compare. Write which method you would use for the sleep survey, and why.
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Sharing a made-up canteen sample across year groups in proportion, with the reason for that share picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "A school of 900 has 270 Year 7s, 270 Year 8s, 180 Year 9s and 180 Year 10s. The canteen takes a stratified sample of 60 students, in proportion to the year groups. How many Year 9s are in it? Work it out on paper."
+  steps:
+    - ["$180 \\div 900 = 0.2$", "Year 9's share of the school"]
+    - ["$0.2 \\times 60 = 12$ Year 9s", "the same share of the sample"]
+    - ["Choose the 12 at random from the Year 9 list", "random choice inside each year keeps it fair"]
+  picks:
+    - step: 2
+      q: "Why use the school's share, 0.2, for the sample?"
+      options: ["Each year gets the same share of the sample as it has of the school", "Each year should get the same number, 15", "The sample should come from the biggest year"]
+      answer: 0
+      feedback: [null, "Year 9 is a smaller group than Year 7, so it gets a smaller share. Equal numbers would over-count it.", "Taking only the biggest year leaves the others out."]
+  answer: "12"
+  answerLabel: "Year 9s in the sample"
+  tolerance: 0.01
+  feedback:
+    - ["15", "That splits the 60 equally among 4 years. Year 9 is a smaller group, so its share is smaller."]
+    - ["180", "That is the number of Year 9s in the school. Take their share of the 60."]
+  criteria:
+    - "I found Year 9's share of the whole school."
+    - "I applied the same share to the 60."
+    - "I said how the 12 would be chosen."
+  explain: "180 ÷ 900 = 0.2, and 0.2 × 60 = 12 Year 9s, chosen at random from that year's list."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **The canteen.** Ask all 900, or a fair sample of 60? Who you ask matters more than how many.
+- **Quality checks.** A factory tests every 50th phone off the line, a systematic sample.
+- **Polls.** Pollsters often take people from each group in proportion, so no group is left out.

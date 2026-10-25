@@ -5,6 +5,7 @@ goals:
   - I can list the sample space for a single event.
   - I can work out a probability as a fraction, decimal or percentage.
   - I can tell when outcomes are not equally likely, and use sizes or counts instead.
+struggle: "Treating every listed outcome as equally likely (three colours, so one third each). Ask: are the sections the same size? Count equal parts, not names."
 before: |
   Do the Run board first. Students need fractions, decimals and percentages (Number Foundations).
 
@@ -17,6 +18,7 @@ running:
   - "Investigate: write the sample space for each device on the board before any probability."
   - "Modify: for repeated labels, draw the spinner with A, A, B."
   - "Make: ask for the smallest bag with P(red) = 1/3."
+  - "Paper: the game-spinner question is worked on paper; the page marks the number and the reason for counting sections, then shows a model. Books out, and look at the pages."
 stuck:
   - see: "A student gives each colour 1/3 (Kai's mistake)."
     ask: "Is each colour the same size?"

@@ -8,6 +8,7 @@ summary: "A computer can repeat a chance experiment thousands of times in a seco
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "In a board game you roll two dice every turn. Which total should you hope for, and how sure can you be? Rolling by hand would take all lesson; a simulation takes a second."
+connection: penalty-shootout   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8332
   url: http://127.0.0.1:8332/index.html
@@ -42,6 +43,8 @@ check:
   options: ["12", "They will all come up about the same", "7"]
   actual: "7. More pairs make 7 (six of the 36) than any other total; 2 and 12 have just one pair each."
 ```
+
+<figure class="situation" role="img" aria-label="Two dice with question marks are rolled and added. A row of boxes shows the possible totals from 2 to 12, and the question is which total comes up most often."><svg viewBox="0 0 360 160" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><rect x="20" y="15" width="44" height="44" rx="8" stroke-width="2"/><text x="42" y="45" text-anchor="middle" fill="currentColor" stroke="none" font-size="18">?</text><text x="80" y="45" text-anchor="middle" fill="currentColor" stroke="none" font-size="18">+</text><rect x="96" y="15" width="44" height="44" rx="8" stroke-width="2"/><text x="118" y="45" text-anchor="middle" fill="currentColor" stroke="none" font-size="18">?</text><text x="160" y="45" text-anchor="start" fill="currentColor" stroke="none">= total</text><rect x="20" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="34" y="105" text-anchor="middle" fill="currentColor" stroke="none">2</text><rect x="50" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="64" y="105" text-anchor="middle" fill="currentColor" stroke="none">3</text><rect x="80" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="94" y="105" text-anchor="middle" fill="currentColor" stroke="none">4</text><rect x="110" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="124" y="105" text-anchor="middle" fill="currentColor" stroke="none">5</text><rect x="140" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="154" y="105" text-anchor="middle" fill="currentColor" stroke="none">6</text><rect x="170" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="184" y="105" text-anchor="middle" fill="currentColor" stroke="none">7</text><rect x="200" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="214" y="105" text-anchor="middle" fill="currentColor" stroke="none">8</text><rect x="230" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="244" y="105" text-anchor="middle" fill="currentColor" stroke="none">9</text><rect x="260" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="274" y="105" text-anchor="middle" fill="currentColor" stroke="none">10</text><rect x="290" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="304" y="105" text-anchor="middle" fill="currentColor" stroke="none">11</text><rect x="320" y="85" width="28" height="30" rx="4" stroke-width="1"/><text x="334" y="105" text-anchor="middle" fill="currentColor" stroke="none">12</text><text x="185" y="145" text-anchor="middle" fill="currentColor" stroke="none">Which total comes up most?</text></svg></figure>
 
 ## Run: 100 trials
 
@@ -193,3 +196,43 @@ check: { type: board, text: "Choose your own event on two dice, work out its pro
 ```
 
 Describe your result in a sentence: the event, its probability, the relative frequency after your trials, and whether they agree.
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Comparing a made-up shootout simulation with 0.8 to the fifth, with the reason for the comparison picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "A striker scores 4 penalties in 5. A simulation of 200 five-kick shootouts, each kick scoring with probability 0.8, had her score all five in 64 of them (made up). What is the relative frequency of 'all five'? Compare it with $0.8^5 \\approx 0.33$. Work it out on paper."
+  steps:
+    - ["$64 \\div 200 = 0.32$", "relative frequency = count ÷ trials"]
+    - ["$0.8^5 \\approx 0.33$", "the theoretical chance: five scores in a row, 0.8 each time"]
+    - ["0.32 is close to 0.33, so the simulation matches the 0.8 rate; 200 trials still vary a little", "compare the frequency with the probability"]
+  picks:
+    - step: 3
+      q: "What does comparing 0.32 with 0.33 tell you?"
+      options: ["The simulation is close to the theory, and a small gap is what chance gives in 200 trials", "The simulation is wrong because 0.32 is not 0.33", "The simulation proves the chance is exactly 0.32"]
+      answer: 0
+      feedback: [null, "A small gap is normal for a limited number of trials.", "A simulation estimates the chance. It does not prove an exact value."]
+  answer: "0.32"
+  answerLabel: "Relative frequency"
+  tolerance: 0.005
+  feedback:
+    - ["64", "That is the count. Divide by the 200 shootouts."]
+    - ["0.33", "That is the theoretical chance. The simulation's own relative frequency is 64 ÷ 200."]
+  criteria:
+    - "I divided the count by the 200 trials."
+    - "I put the simulated and theoretical values side by side."
+    - "I said what the gap means, with the number of trials in my sentence."
+  explain: "64 ÷ 200 = 0.32, close to 0.8⁵ ≈ 0.33. A small gap is expected from 200 trials."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **Sport.** A striker who scores 4 in 5 might score all five in a shootout about a third of the time. Simulate it, then check.
+- **Games.** Designers simulate thousands of plays instead of playing them.
+- **Class work.** Choose an event on two dice, predict its probability, then test it.

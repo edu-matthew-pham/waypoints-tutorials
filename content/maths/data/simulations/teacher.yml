@@ -20,6 +20,7 @@ running:
   - "Investigate: ask how many 12s Ella should expect in 20 rolls."
   - "Modify: ask what happens to the gap between f and P as trials grow."
   - "Make: ask for the probability before the Run button."
+  - "Paper: the shootout comparison is worked on paper; the page marks the relative frequency and the reason for comparing, then shows a model. Books out."
 stuck:
   - see: "A student says the simulation is wrong because 7 came up 15 times in 100, not 17."
     ask: "Would a real dice give exactly 17?"

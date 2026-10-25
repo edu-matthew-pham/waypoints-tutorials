@@ -8,6 +8,7 @@ summary: "Random samples from the same population give different results. That i
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Say two polls of the same election, taken the same week, give 52% and 48% for the same party (the numbers are made up for this lesson). Is one of them wrong?"
+connection: poll-margin   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8337
   url: http://127.0.0.1:8337/index.html
@@ -193,5 +194,46 @@ check: { type: board, text: "Find a sample size where the results of 10 samples 
 ```
 
 Write the smallest size that worked for you, and why you might not always choose a bigger one.
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Finding the spread of five made-up samples from one year group, with the reason it is not a real change picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "A class takes five random samples of 30 students from the same year group and records the percentage who walk to school (made up): 40, 53, 47, 50, 43. What is the range, in percentage points? Work it out on paper."
+  steps:
+    - ["Largest 53, smallest 40", "pick out the two ends"]
+    - ["$53 - 40 = 13$ percentage points", "range = largest take away smallest"]
+    - ["A gap of 13 points between samples of 30 from the same group is chance, so it does not show that walking has changed", "samples from one group vary"]
+  picks:
+    - step: 3
+      q: "Why doesn't a gap of 13 points show a change?"
+      options: ["Random samples from the same group vary by chance, so a gap this size is normal", "The year group must have changed between samples", "The 53% sample is right and the 40% sample is wrong"]
+      answer: 0
+      feedback: [null, "All five samples came from the same group at the same time.", "Both were fair samples. Each is just one draw of 30."]
+  answer: "13"
+  answerLabel: "Range (percentage points)"
+  tolerance: 0.01
+  feedback:
+    - ["53", "That is the largest value. The range is largest minus smallest."]
+    - ["46.6", "That is the mean. The range is largest minus smallest."]
+  criteria:
+    - "I found the largest and the smallest."
+    - "I subtracted the smallest from the largest."
+    - "My reason says why samples from one group differ."
+  explain: "53 − 40 = 13 points. Samples of 30 from one group vary by about this much, so two surveys differing by 13 points is not evidence of a change."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **Polls.** Two surveys of 30 students can say 40% and 53% walk to school without anything having changed.
+- **Reviews.** Five 5-star reviews say less than 500 reviews averaging 4.6: small samples swing more.
+- **Forecasts.** Run a model many times to see how much the results can wander.
+
 
 Sources: the two polls, the school and its students, and the forecast runs are made up for this lesson. No real poll or forecast is used.

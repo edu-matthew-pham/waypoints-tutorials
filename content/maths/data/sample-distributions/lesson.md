@@ -8,6 +8,7 @@ summary: "Display a sample's data, then report its shape, centre and spread, and
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "A news story says 'Teens sleep 8 hours a night.' Is that every teen, most teens, or a sample's average? A good report says which, and how the sample was chosen."
+connection: canteen-sample   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8336
   url: http://127.0.0.1:8336/index.html
@@ -47,6 +48,8 @@ check:
   options: ["Most dots in the middle, fewer towards the ends", "Dots spread evenly from lowest to highest", "Every dot at the same value"]
   actual: "Most in the middle, fewer at the ends: most students sleep a similar amount, and a few sleep much more or less."
 ```
+
+<figure class="situation" role="img" aria-label="An empty dot plot axis for hours of sleep from 5 to 12, with a dashed box where the 40 dots go and a question mark: what shape will they make?"><svg viewBox="0 0 360 150" width="360" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><line x1="30" y1="100" x2="330" y2="100" stroke-width="1.5"/><line x1="30" y1="100" x2="30" y2="106" stroke-width="1"/><text x="30" y="121" text-anchor="middle" fill="currentColor" stroke="none">5</text><line x1="73" y1="100" x2="73" y2="106" stroke-width="1"/><text x="73" y="121" text-anchor="middle" fill="currentColor" stroke="none">6</text><line x1="116" y1="100" x2="116" y2="106" stroke-width="1"/><text x="116" y="121" text-anchor="middle" fill="currentColor" stroke="none">7</text><line x1="159" y1="100" x2="159" y2="106" stroke-width="1"/><text x="159" y="121" text-anchor="middle" fill="currentColor" stroke="none">8</text><line x1="201" y1="100" x2="201" y2="106" stroke-width="1"/><text x="201" y="121" text-anchor="middle" fill="currentColor" stroke="none">9</text><line x1="244" y1="100" x2="244" y2="106" stroke-width="1"/><text x="244" y="121" text-anchor="middle" fill="currentColor" stroke="none">10</text><line x1="287" y1="100" x2="287" y2="106" stroke-width="1"/><text x="287" y="121" text-anchor="middle" fill="currentColor" stroke="none">11</text><line x1="330" y1="100" x2="330" y2="106" stroke-width="1"/><text x="330" y="121" text-anchor="middle" fill="currentColor" stroke="none">12</text><rect x="30" y="20" width="300" height="70" rx="6" stroke-width="1" stroke-dasharray="5 4"/><text x="180" y="52" text-anchor="middle" fill="currentColor" stroke="none">40 dots go here: what shape?</text><text x="180" y="75" text-anchor="middle" fill="currentColor" stroke="none" font-size="18">?</text><text x="180" y="142" text-anchor="middle" fill="currentColor" stroke="none">hours of sleep</text></svg></figure>
 
 ## Run: a sample of 40
 
@@ -200,3 +203,43 @@ check: { type: board, text: "Choose a fair method and a sample size, and take a 
 ```
 
 Write a short report: the method and size, the shape, the mean, median and range, and what it suggests about how much the school's students sleep. Then compare your estimate with the dashed line.
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Reporting a made-up canteen sample's mean as an estimate for the school, with the reason picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "The canteen asks a random sample of 8 students how many lunches they bought there last week (made up): 2, 3, 3, 4, 4, 5, 5, 6. Find the mean, then say what it tells the canteen about all 900 students. Work it out on paper."
+  steps:
+    - ["$2 + 3 + 3 + 4 + 4 + 5 + 5 + 6 = 32$", "add all 8 values"]
+    - ["$32 \\div 8 = 4$", "divide by how many values: the sample's mean"]
+    - ["The school's mean is about 4 lunches a week, from a random sample of 8", "a sample gives an estimate, and the report says how the sample was chosen"]
+  picks:
+    - step: 3
+      q: "Why say 'about 4' and name the sample?"
+      options: ["A random sample estimates the school's mean, but another sample would give a slightly different value", "Every student buys exactly 4 lunches", "The sample's mean is the school's mean, because the sample is part of the school"]
+      answer: 0
+      feedback: [null, "The values run from 2 to 6: the mean is the centre, not every student.", "A sample is only part of the school, so its mean is an estimate."]
+  answer: "4"
+  answerLabel: "Mean (lunches a week)"
+  tolerance: 0.01
+  feedback:
+    - ["32", "That is the total. Divide by the 8 students."]
+    - ["4.5", "That is the middle of 3 and 6, not the mean of all 8 values."]
+  criteria:
+    - "I added all 8 values before dividing."
+    - "I divided by 8, the number of students in the sample."
+    - "My sentence says 'about' and says how the sample was chosen."
+  explain: "32 ÷ 8 = 4. A random sample of 8 suggests the school's mean is about 4 lunches a week, give or take."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **The canteen.** A canteen asks a sample of students, then reports the typical answer and the spread for the whole school.
+- **News stories.** 'Teens sleep 8 hours' is a sample's centre. A good report says how the sample was chosen.
+- **Class work.** Take your own sample and write the report.

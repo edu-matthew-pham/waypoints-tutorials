@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Ava who chose the students."
   - "Modify: ask when a systematic sample goes wrong."
   - "Make: ask where each method's results sit."
+  - "Paper: the stratified share is worked on paper; the page marks the number and the reason, then shows a model. Books out, and look at the pages."
 stuck:
   - see: "A student thinks random means 'whoever I happen to pick'."
     ask: "Did every student have the same chance? Who decided?"

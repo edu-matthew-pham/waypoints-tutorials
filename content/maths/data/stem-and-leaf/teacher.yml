@@ -4,6 +4,7 @@ timing: "Predict and Run 8 min · Investigate 12 min · Modify 12 min · Practis
 goals:
   - I can build an ordered stem-and-leaf plot with a key.
   - I can read values, the median, the mode and the range from a stem-and-leaf plot.
+struggle: "Reading a leaf as a value on its own, and skipping a stem with no leaves. Ask them to say the whole number aloud (3 and 1 make 31) and to write every stem in order."
 before: |
   Do the Run board first. Students need Mean, median, mode and range.
 
@@ -16,6 +17,7 @@ running:
   - "Investigate: build a plot of the class's own data (arm spans, say) on the board."
   - "Modify: before the three-digit task, ask what the stems should be for 105."
   - "Make: collect answers; ask whether 35 has to appear."
+  - "Paper: students draw the timetable plot in their books first; the page marks the count and the reason for counting leaves, then shows a model. Books out."
 stuck:
   - see: "A student leaves out an empty stem (Jo's mistake)."
     ask: "Are there any tens between your smallest and largest stems with no values?"

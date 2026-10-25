@@ -8,6 +8,7 @@ summary: "A stem-and-leaf plot keeps every value and shows the shape: the tens a
 language: maths
 voice: { name: af_heart, speed: 1.1 }
 hook: "Thirty homework times in a list tell you very little. Sort them into a stem-and-leaf plot and the shape jumps out, and you can still read every value."
+connection: timetable-stem-leaf   # data/connections/maths.yml (documentation only)
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8182
   url: http://127.0.0.1:8182/index.html
@@ -43,6 +44,8 @@ check:
     - "3, 15 and 58"
   actual: "31, 35, 35 and 38. The stem 3 is the tens; each leaf is the units of one value."
 ```
+
+<figure class="situation" role="img" aria-label="One row of a stem-and-leaf plot: stem 3, leaves 1, 5, 5 and 8. Below it, four question marks stand for the four values the row shows."><svg viewBox="0 0 300 125" width="300" style="max-width:100%;height:auto" fill="none" stroke="currentColor" font-family="inherit" font-size="13"><text x="60" y="30" text-anchor="middle" fill="currentColor" stroke="none" font-size="11">stem</text><text x="110" y="30" text-anchor="start" fill="currentColor" stroke="none" font-size="11">leaves</text><text x="60" y="50" text-anchor="middle" fill="currentColor" stroke="none" font-size="15">3</text><line x1="85" y1="35" x2="85" y2="58" stroke-width="1.5"/><text x="110" y="50" text-anchor="middle" fill="currentColor" stroke="none">1</text><text x="138" y="50" text-anchor="middle" fill="currentColor" stroke="none">5</text><text x="166" y="50" text-anchor="middle" fill="currentColor" stroke="none">5</text><text x="194" y="50" text-anchor="middle" fill="currentColor" stroke="none">8</text><text x="20" y="95" text-anchor="start" fill="currentColor" stroke="none">values:</text><text x="110" y="95" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="138" y="95" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="166" y="95" text-anchor="middle" fill="currentColor" stroke="none">?</text><text x="194" y="95" text-anchor="middle" fill="currentColor" stroke="none">?</text></svg></figure>
 
 How many values are in that row?
 
@@ -233,3 +236,43 @@ check: { type: board, text: "Make a stem-and-leaf plot of 8 two-digit values wit
 ```
 
 Then: could you do it with no value of 35 at all?
+
+## Make: on paper
+
+```step
+stage: make
+insight: "Reading a made-up bus timetable as a stem-and-leaf plot, with the reason for counting leaves picked at the key step."
+check:
+  type: reasoning
+  paper: true
+  q: "A bus stop's timetable is a stem-and-leaf plot (made up): the stem is the hour and the leaves are the minutes. Row 7 has leaves 05, 20, 35 and 50. Row 8 has 10, 25 and 40. Row 9 has 00 and 30. How many buses leave from 7 am up to 9 am, not counting 9:00? Draw the plot on paper first."
+  steps:
+    - ["Row 7 reads 7:05, 7:20, 7:35 and 7:50", "stem is the hour, each leaf is the minutes of one bus"]
+    - ["Row 8 reads 8:10, 8:25 and 8:40", "the same way"]
+    - ["$4 + 3 = 7$ buses", "count the leaves in rows 7 and 8; row 9 is 9:00 and later"]
+  picks:
+    - step: 3
+      q: "Why count leaves, not stems?"
+      options: ["Each leaf is one bus; the stem only says the hour", "Each stem is one bus", "Add the stem and leaf values to get the number of buses"]
+      answer: 0
+      feedback: [null, "Row 7 has four buses but only one stem.", "The stem and leaf make a time, not a count."]
+  answer: "7"
+  answerLabel: "Buses"
+  tolerance: 0
+  feedback:
+    - ["2", "That counts the stems. Each leaf is one bus."]
+    - ["9", "That counts every leaf, including row 9. Stop before 9:00."]
+  criteria:
+    - "I drew the stems in order with a key."
+    - "I counted leaves, not stems."
+    - "I left out row 9."
+  explain: "Rows 7 and 8 hold 4 + 3 = 7 leaves, so 7 buses leave before 9 am."
+```
+
+Do this one in your book or on paper, one step per line, before you type the number.
+
+**Also used in**
+
+- **Timetables.** A stop's printed timetable is a stem-and-leaf plot: the hour is the stem, the minutes are the leaves.
+- **Sport and results.** A short list of times or scores sorts into a plot that shows the middle.
+- **Class work.** Sort your class's data into a plot and read its median.

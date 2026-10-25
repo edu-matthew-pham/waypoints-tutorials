@@ -4,6 +4,7 @@ timing: "Predict and Run 8 min · Investigate 12 min · Modify 10 min · Practis
 goals:
   - I can explain how an outlier affects the mean and the median.
   - I can choose the most useful measure of centre for a data set and a question, and justify it.
+struggle: "Reaching for the mean by habit. Ask: is any value far from the rest, and who would it mislead? Then which average describes most of the data?"
 before: |
   Do the Run board first. Students need Mean, median, mode and range.
 
@@ -16,6 +17,7 @@ running:
   - "Investigate: link house prices to real median prices in the news."
   - "Modify: collect different data sets that make the mean and median equal."
   - "Make: read out some misleading sentences and ask how to correct them."
+  - "Paper: the house-price question is worked on paper (median first); the page marks the reason and then shows a model. Books out, and look at the pages."
 stuck:
   - see: "A student always picks the mean (Sam's mistake)."
     ask: "How many values are bigger than the mean?"
@@ -38,3 +40,5 @@ explain: |
   - An outlier pulls the **mean** towards it, so with one the **median** usually describes a typical value better ($5, 6, 6, 7, 8, 40$: mean 12, median 6.5).
   - With no outliers, the **mean** is a fair summary because it uses every value.
   - For "which is most common?", use the **mode**.
+sources:
+  - { title: "Median house prices explained (Westpac): a few unusually high or low prices can skew the average", url: "https://www.westpac.com.au/personal-banking/home-loans/median-house-prices-explained/", checked: 2026-10-22 }

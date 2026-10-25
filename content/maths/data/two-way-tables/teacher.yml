@@ -20,6 +20,7 @@ running:
   - "Investigate: ask Lia how many like tea but not coffee."
   - "Modify: ask where 'both' goes in the table."
   - "Make: ask which picture answers 'how many ride a bike in all?' faster."
+  - "Paper: students draw the circles or table in their books first; the page marks the number and the reason for the overlap, then shows a model. Books out."
 stuck:
   - see: "A student writes the whole total in the 'only' part."
     ask: "Are some of those people in the overlap too?"
