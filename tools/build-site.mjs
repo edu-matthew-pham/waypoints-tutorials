@@ -28,6 +28,8 @@ import { searchBoxHtml, SEARCH_HINTS } from './search-view.mjs';
 import { coachPrompt } from './coach.mjs';
 import { loadProjects, skillLabel } from './projects.mjs';
 import { PROJECT_CSS, projectListBody, projectPageBody } from './project-view.mjs';
+import { loadBriefs, briefNodes } from './briefs.mjs';
+import { BRIEF_CSS, briefListBody, briefPageBody } from './briefs-view.mjs';
 import { prerequisites, theoryLinks } from './concepts.mjs';
 import { CONCEPTS } from './concepts-core.mjs';
 import { ideasTable } from './ideas-page.mjs';
@@ -550,6 +552,24 @@ function writeRecap(node, courseLessons) {
 // with its playground(s). Each "You'll use" chip links to where the skill was taught: the course's recap card, or the lesson.
 const PROJECTS = new Map(loadProjects(CONTENT_ROOT, (c) => PLAY[c]?.kind || 'turtle').map((s) => [s.course, s]));
 const PREREQS = prerequisites(loadDirMeta, CONTENT_ROOT);
+// Project briefs without code (tools/briefs.mjs): <course>/briefs/ lists them, <course>/briefs/<id>/ is a printable task sheet.
+const BRIEFS = new Map(loadBriefs(CONTENT_ROOT).map((s) => [s.course, s]));
+function writeBriefs(node, set) {
+  const bp = `${node.path}/briefs`, cur = loadCurriculum(node.path.split('/')[0]);
+  const lessonByName = (n) => lessons.find((l) => l.slug === `${node.path}/${n}`);
+  const afterText = (b) => { const l = lessonByName(b.after); return l ? `${l.order != null ? `lesson ${l.order}: ` : ''}${l.title}` : String(b.after); };
+  const mdb = new Marked();
+  mkdirSync(join(OUT, bp), { recursive: true });
+  const lup = '../'.repeat(bp.split('/').length);
+  const cards = set.briefs.map((b) => ({ id: b.id, title: b.title, after: afterText(b), goalText: firstSentence(String(b.goal || '').replace(/[*_`#]/g, '').split('\n')[0]) }));
+  writeFileSync(join(OUT, bp, 'index.html'), page(`Project briefs: ${node.title}`, `<style>${BRIEF_CSS}</style>` + briefListBody({ esc, title: node.title, cards }), '', navFor(bp, 'course', node.path)));
+  for (const b of set.briefs) {
+    const dp = `${bp}/${b.id}`;
+    mkdirSync(join(OUT, dp), { recursive: true });
+    writeFileSync(join(OUT, dp, 'index.html'), page(`${b.title}: a project brief`, `<style>${BRIEF_CSS}</style>` +
+      briefPageBody({ esc, md: (t) => mdb.parse(t), courseTitle: node.title, b, after: afterText(b), nodes: briefNodes(b, cur) }), '', navFor(dp, 'course', node.path)));
+  }
+}
 let PROJPICS = null;
 const PLAY_EXT = { python: 'py', html: 'html', makecode: 'ts', javascript: 'js', sql: 'sql' };
 // Basics nearly every program uses: never listed under "You also used".
@@ -626,7 +646,7 @@ for (const node of dirs.values()) {
     // recap: true in a course's index.md: a short recap page at <course>/recap/ (recapHtml, below), linked as a chip.
     const recap = node.meta?.recap === true;
     const practice = practiceSkills(node, courseLessons);
-    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '');
+    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '') + (BRIEFS.has(node.path) ? `<a class="chip" href="briefs/">Project briefs</a>` : '');
     if (recap) writeRecap(node, courseLessons);
     if (conceptualRef && !ref) {
       const refDir = `${node.path}/reference`;
@@ -635,6 +655,7 @@ for (const node of dirs.values()) {
         `<header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: reference</h1></header><div class="content">${new Marked().parse(readFileSync(join(CONTENT_ROOT, node.path, 'reference.md'), 'utf8'))}</div>`, '', navFor(refDir, 'course', node.path)));
     }
     if (PROJECTS.has(node.path)) writeProjects(node, PROJECTS.get(node.path));
+    if (BRIEFS.has(node.path)) writeBriefs(node, BRIEFS.get(node.path));
     if (practice.length) writePractice(node, practice);
     // One collapsed row per lesson: the whole sequence is visible; opening a row shows its steps.
     const row = (l) => {
@@ -922,6 +943,11 @@ for (const coursePath of teachCourses) {
     pset.projects.map((p) => `<details class="primer"><summary><b>${esc(p.title)}</b> <span class="muted">(after ${esc(p.after)}; ${esc(p.parts.flatMap((x) => x.uses.map((u) => skillLabel(x.language, u))).join(', '))})</span></summary>${md(p.goal)}` +
       `<p><b>Milestones:</b></p><ul>${(p.milestones || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` + (p.teacher ? md(p.teacher) : '') +
       p.parts.filter((x) => x.exampleCode).map((x) => codeBlock(highlightCode, x.exampleCode, HL[x.language] || 'python', `One possible solution${x.title ? `: ${x.title}` : ''}`)).join('') + `</details>`).join('') + `</section>` : '';
+  // Project briefs (tools/briefs.mjs): each brief's teacher notes and the criteria it evidences, for the teacher.
+  const bset = BRIEFS.get(coursePath), bcur = bset ? loadCurriculum(coursePath.split('/')[0]) : null;
+  const briefsGuide = bset ? `<section class="tunit" id="briefs"><h2>Project briefs</h2><p class="muted">Printable task sheets for assessment or extension: students make something, hand it in and explain their choices. The success criteria are the curriculum nodes' own. <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/briefs/">Open the briefs page</a></p>` +
+    bset.briefs.map((b) => `<details class="primer"><summary><b>${esc(b.title)}</b> <span class="muted">(after ${esc(b.after)})</span></summary>${md(String(b.goal || ''))}<p><b>Hand in:</b></p><ul>${(b.handin || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` +
+      `<p><b>Evidences:</b></p><ul>${briefNodes(b, bcur).filter((n) => !n.missing).map((n) => `<li>${esc(n.label)} <span class="muted">(${esc(n.code)} node ${n.n})</span>: ${esc(n.criteria.join('; '))}</li>`).join('')}</ul>` + (b.teacher ? md(String(b.teacher)) : '') + `</details>`).join('') + `</section>` : '';
   // Optional course-wide teacher guidance is authored as Markdown alongside index.md.
   // Unit-specific guidance already lives in primers/<unit-id>.md, shown above.
   const courseNotesFile = join(CONTENT_ROOT, coursePath, 'teacher.md');
@@ -938,7 +964,7 @@ for (const coursePath of teachCourses) {
     ? `<section class="tunit"><h2>Course teaching guidance</h2>${(mathsCourse ? mathsGuide.md : md)(readFileSync(courseNotesFile, 'utf8'))}</section>`
     : '';
   const intro = `<p>Each lesson works two ways. Students can work through the online tutorial at their own pace (it checks their answers and saves their progress in their browser), or you can teach it to the whole class from the slides, then send students into the tutorial for the Modify and Make steps.</p><p>Every lesson guide has plain-language notes, the answers to every check, a solution for every task, and slides and a worksheet for <a href="https://prepare.learningwaypoints.com/" target="_blank" rel="noopener">Waypoints Prepare</a>. These guide pages are not linked from student pages, but they are not secret either: keep printed Teacher editions for answers you do not want students to find.</p>`;
-  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a>${ideasPages.some((x) => coursePath.startsWith(x.path.split('/')[0] + '/')) ? ` · <a href="${'../'.repeat(coursePath.split('/').length)}${coursePath.split('/')[0]}/ideas/">Ideas across pathways</a>` : ''}</p></header>${intro}${courseResources}${courseNotes}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}${projectsGuide}`, `teach/${coursePath}`, coursePath));
+  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a>${ideasPages.some((x) => coursePath.startsWith(x.path.split('/')[0] + '/')) ? ` · <a href="${'../'.repeat(coursePath.split('/').length)}${coursePath.split('/')[0]}/ideas/">Ideas across pathways</a>` : ''}</p></header>${intro}${courseResources}${courseNotes}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}${projectsGuide}${briefsGuide}`, `teach/${coursePath}`, coursePath));
 }
 mkdirSync(join(OUT, 'teach'), { recursive: true });
 // Curriculum pointer pages (tools/pointer-pages.mjs): teacher-facing, linked only from here, draft and noindex until reviewed.

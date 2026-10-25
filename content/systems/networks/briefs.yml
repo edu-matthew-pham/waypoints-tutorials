@@ -1,0 +1,27 @@
+briefs:
+  - id: wifi-map
+    title: Map our Wi-Fi
+    after: packets
+    nodes: ["AC9TDI8K02 n1", "AC9TDI8K02 n2"]
+    goal: |
+      Where in your school is the network good, and where would a **cable** help?
+
+      Choose **four places** in the school and a **real use** at each one (for example a video call, a big download, or an online game). Measure how the network behaves in each place, then recommend where a wired connection would be worth adding and where Wi-Fi is enough.
+    handin:
+      - "A table: place, number of walls or distance from the router, download speed, and delay (ping), measured the same way each time."
+      - "A simple map or chart of your results."
+      - "A recommendation for each place: wired or Wi-Fi, and which property matters most for the use there (bandwidth, delay or reliability)."
+      - "A short explanation of one result that surprised you, in terms of packets: what is lost or delayed on the way."
+    milestones:
+      - "You have your teacher's permission and know which speed test to use, and you test only the school's network."
+      - "You have measured each place twice and noted anything that changed between tests."
+      - "Your results are in a table and on a map or chart."
+      - "Each recommendation gives a reason that uses bandwidth, delay or reliability."
+    stretch:
+      - "Compare a wired connection with Wi-Fi in the same room, if the school has a cable point."
+      - "Test at two different times of day and say what changed and why."
+      - "Say what you would measure next to find out whether a slow spot is the Wi-Fi or the internet beyond it."
+    teacher: |
+      Agree the speed test and the places with the IT team first: a speed test sends real data, so keep it to the school's network and to short tests, and students should never test other people's devices or accounts. Results vary from run to run, which is worth saying out loud: two tests in the same place are not identical, so one number is weak evidence. The strongest work matches the use to the property (delay for a game or call, bandwidth for a large download) rather than saying "more is better".
+
+      Look for students who blame the network for a slow site, when the slow part may be beyond the school: that is the difference between the Wi-Fi link and the whole journey.

@@ -809,3 +809,7 @@ Shared files the first version would touch: a new prompt beside `create/start-pr
 ## Built (25 Oct 2026, maths chat): `tiles` two brackets take a number in front of x (Year 10 batch 1)
 `playground-board/widgets/tiles.js`, `mode: binomial` only: `slider a:` / `slider b:` (or fixed `a: 2`), whole numbers 1 to 4, default 1, give (ax + p)(bx + q) as a rectangle with a·b x² tiles, b·p + a·q x-tiles and p·q ones. `target:` takes three numbers (A, B, C for Ax² + Bx + C) as well as two (B, C; A = 1). New values for checks: `a`, `b`, `n` (x² tiles), `A`; `r` now needs a·b = A too. With `a` and `b` unset every Year 9 board draws and reports exactly as before. Used by Special products and Factorising when x² has a number (`content/maths/algebra/`). Needs the full publish; the two lessons re-record their own clips only.
 >>>>>>> Stashed changes
+
+## Changed (25 Oct 2026, systems chat): project briefs for subjects without code
+
+New `tools/briefs.mjs` and `tools/briefs-view.mjs`; small hooks in `tools/build-site.mjs` (`BRIEFS`, `writeBriefs`, a chip and a teacher guide section, beside the open projects ones) and `tools/validate.mjs` (a briefs check). Any subject can add `content/<course>/briefs.yml` (AUTHORING › Project briefs); criteria come from the nodes in `data/curriculum/<subject>.json`. Used so far by How computers work.

@@ -234,4 +234,18 @@ else console.log('✓ error tasks: every planted error names its fault and an on
   for (const s of sets) n += s.projects.length;
   if (sets.length && !e) console.log(`✓ projects: ${n} briefs in ${sets.length} courses; every example uses the skills its brief lists`);
 }
+// Project briefs without code (content/<course>/briefs.yml): each names a lesson, 1 to 4 hand-ins, 2 to 4 milestones, and
+// curriculum nodes that exist (their criteria become "Show that you can").
+{
+  const { loadBriefs, checkBriefs } = await import('./briefs.mjs');
+  const { loadCurriculum } = await import('./curriculum-map.mjs');
+  const sets = loadBriefs(CONTENT_ROOT);
+  const course = (l) => l.slug.split('/').slice(0, -1).join('/');
+  let n = 0, e = 0;
+  for (const s of sets) for (const r of checkBriefs(s, (c) => lessons.filter((l) => course(l) === c), loadCurriculum(s.course.split('/')[0]))) {
+    if (r.level === 'error') { bad++; e++; console.error('✗ ' + r.msg); } else console.warn('⚠ ' + r.msg);
+  }
+  for (const s of sets) n += s.briefs.length;
+  if (sets.length && !e) console.log(`✓ briefs: ${n} project briefs in ${sets.length} courses; every node and lesson they name exists`);
+}
 process.exit(bad ? 1 : 0);

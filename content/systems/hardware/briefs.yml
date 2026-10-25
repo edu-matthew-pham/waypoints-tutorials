@@ -1,0 +1,27 @@
+briefs:
+  - id: pick-a-computer
+    title: A computer for the media club
+    after: choosing
+    nodes: ["AC9TDI8K01 n1", "AC9TDI8K01 n2", "AC9TDI8K01 n3"]
+    goal: |
+      The school media club edits video, and it can buy **one computer**. Your teacher sets the **budget**.
+
+      Find **two real computers** within the budget, from shop listings your teacher approves. Compare them against what video editing needs, choose one, and justify the choice. Then say what you would **upgrade first** if the budget grew, and what you left out to stay within it.
+    handin:
+      - "A table comparing the two computers: processor cores and speed, RAM, storage size and type, graphics, and price, with a plain-language line saying what each specification measures."
+      - "Your choice, with reasons that connect at least two specifications to what video editing does."
+      - "Your answer to: which specification is most likely to be the bottleneck for this job, and why?"
+      - "One thing you left out to stay in budget, and what it would cost the club."
+    milestones:
+      - "You have written down what video editing asks of a computer before you looked at any prices."
+      - "You have found two computers within the budget and noted every specification in your table."
+      - "You have named the likely bottleneck and checked it against each computer."
+      - "Your choice names what you gave up for it."
+    stretch:
+      - "Find a third computer that costs more, and say what the extra money buys."
+      - "Redo the choice for a different club that needs something else, such as a coding club or a games club."
+      - "Say how the answer would change if the footage were kept online instead of on the computer."
+    teacher: |
+      Set the budget locally, and have students take their listings from approved shops, because prices change. There is no single right computer: the work is the justification. Strong answers start from the job (video editing uses the processor and graphics heavily, needs enough RAM to hold the footage being worked on, and benefits from fast storage), then compare.
+
+      Common slips are the ones in Inside a computer: treating storage size as speed, treating RAM as storage, and picking the highest number in one column without saying which job it helps. The bottleneck question is the node's main idea: speeding up a part that is not the slowest part changes little.

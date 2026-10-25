@@ -165,7 +165,7 @@ Why: primary coverage of AC9TDI6K01–6K04 is uneven, and every Years 7–8 cour
 
 Plans for every remaining systems lesson: 18 in Data representation, Networks and Inside a computer, then 29 in Compression, Security, Cyber safety (all but Passwords), How a web page is made, The command line, From gates to a processor and the two CTF courses' lessons. Each has an `inquiry`, one or two unplugged activities and one class question (number or plain multiple choice); security, cyber and CTF plans stay defensive. The third batch is shorter than the first: trial a few with classes before writing more depth.
 
-## Proposed (25 Oct 2026, Matthew asked to track; not built): a project brief per course
+## Built (first batch) and proposed (25 Oct 2026, Matthew: build it): a project brief per course
 
 The gap: How computers work has no project briefs or assessment tasks (the CTF finales and the security review are closed puzzles, not tasks a teacher collects and marks). In Years 7–10 this strand is usually assessed through school-set projects, so one brief per course is the fix. Quizzes are not needed: the lessons already have checks.
 
@@ -173,6 +173,7 @@ The gap: How computers work has no project briefs or assessment tasks (the CTF f
 - **Format:** goal, a few milestones, what to hand in, success criteria. The code `projects.yml` format does not fit (it scans student code), so this needs a plain brief page per course, linked from the course's teacher strip.
 - **Ideas, one per course:** Data representation, design a code or a pixel badge and justify its size; Making data smaller, compare real files in several formats and say what is lost; Networks, measure Wi-Fi speed and delay around the school and recommend fixes; Inside a computer, spec a computer for a client brief within budget; Security and Cyber safety, a defensive threat model and privacy review of a made-up or school-approved app against the APPs; From gates to a processor, build and test a logic circuit (an alarm) in a simulator; Starting out, an unplugged packets message and what went wrong. Crossovers with Code (micro:bit counter, radio packets, data logger) link both ways.
 - **Start with** Data representation, Networks and Inside a computer.
+- **Built (first batch):** `briefs.yml` per course (`tools/briefs.mjs`, `tools/briefs-view.mjs`, hooks in `build-site.mjs` and `validate.mjs`; AUTHORING › Project briefs): a printable sheet per brief with steps, hand-in and "Show that you can", whose criteria are the named nodes' own (no framework mapping), a Project briefs chip on the course page and a section in the teacher guide. Briefs: Data representation (A badge as numbers, A message in bytes), Networks (Map our Wi-Fi), Inside a computer (A computer for the media club). Still to write: Making data smaller, Security and Cyber safety (defensive), From gates to a processor, Starting out, the two CTF courses (their finales already work as tasks), and Code crossovers. Not yet tried with a class.
 
 ## Next
 

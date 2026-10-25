@@ -1,0 +1,55 @@
+briefs:
+  - id: club-badge
+    title: A badge as numbers
+    after: bits-everywhere
+    nodes: ["AC9TDI8K03 n3", "AC9TDI8K04 n2"]
+    goal: |
+      The club wants a small **black and white badge** it can save and send as numbers, with no picture file.
+
+      Design a badge on an 8 by 8 grid. Turn it into **8 rows of 8 bits**, so that someone who only has your numbers can draw it exactly. Then work out **how much space** it takes, and how much more a **colour** version of the same badge would take, choosing the three numbers for its main colour.
+    handin:
+      - "Your badge drawn on an 8 by 8 grid."
+      - "Your 8 rows of bits, and which bit means black and which means white."
+      - "A partner's drawing made only from your bits, next to your original."
+      - "A short explanation of the size in bits and bytes, for black and white and for colour, including the three numbers you chose for the main colour and what colour they make, and one sentence on how a vector version of the badge would be stored instead."
+    milestones:
+      - "Your badge is drawn and every square is black or white."
+      - "Each row is written as 8 bits, in the same order as the grid."
+      - "A partner has redrawn the badge from your bits alone, and you fixed any difference."
+      - "You have worked out the size in bits and bytes, and the size in colour, and chosen the badge's colour numbers."
+    stretch:
+      - "A badge with four shades of grey: how many bits does each square need now?"
+      - "Write each row of your badge as one number from 0 to 255."
+      - "Make the biggest badge that fits in 100 bytes, and say how you worked it out."
+    teacher: |
+      A black and white 8 by 8 badge is 64 bits, which is 8 bytes. In colour, with 24 bits (three numbers from 0 to 255) per pixel, it is 64 pixels × 3 bytes, which is 192 bytes. Look for students who:
+
+      - treat "8 bits" as the number 8, instead of 8 places that can each be 0 or 1 (Bits, bytes and range);
+      - reverse a row, or read rows in a different order from the one they wrote;
+      - say a colour badge "has more bits" without saying why: each square now needs three numbers.
+
+      The partner redraw is the check that the encoding works. When it differs, the fix is usually the order of the bits, which is the point: both sides need the same rule.
+  - id: message-in-bytes
+    title: A message in bytes
+    after: bits-everywhere
+    nodes: ["AC9TDI8K03 n1", "AC9TDI8K03 n2", "AC9TDI8K04 n1", "AC9TDI8K04 n4"]
+    goal: |
+      Write a short message to a partner, but send it **only as bytes**: eight 0s and 1s for every character.
+
+      Choose a message of four to eight characters that has a **capital letter, a lower case letter and a space**. Turn it into character codes with a code table, then into bytes. Your partner decodes it using the same table. Then explain why your message took the space it did.
+    handin:
+      - "Your message in plain text, kept secret from your partner until they have decoded theirs."
+      - "A table with one row per character: the character, its code, and its byte."
+      - "Your partner's decoded message, and whether it matches."
+      - "A paragraph that follows one character from the letter, to its code, to its byte, and says what the bytes would mean to a program that treats them as something else."
+    milestones:
+      - "Each character has a code, looked up in the table."
+      - "Each code is written as a byte, and you checked one by adding up its place values."
+      - "Your partner decoded the message and you compared it with the original."
+      - "You can say how many bits the message takes in all."
+    stretch:
+      - "Add a digit and explain why its code is not the number it shows."
+      - "Show that the lower case version of a letter has a code 32 more than the capital."
+      - "Find the longest message that fits in 64 bits."
+    teacher: |
+      Students need a code table (the ASCII part of Unicode is enough). A message of 5 characters takes 40 bits, which is 5 bytes: check that this follows from 8 bits per character. Expect the same slips as the lessons: reading the digit 7 as the number seven when its code is 55, and putting the place values in the wrong order. The last handin item is the node's main idea: the same bytes can be read as text, as a colour or as sound, so a number only means something under an agreed encoding.
