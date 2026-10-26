@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is a story inside an argument fair, or a trick?"
+  prompts:
+    - "Does one family's story prove that every school needs a kit?"
+    - "What should a careful reader still ask after a moving story?"
+  notes: "A story makes an issue real, which is fair, but one story isn't evidence that something is common. A careful reader enjoys the story and still asks for the reasons."
+activities:
+  - at: predict
+    kind: activity
+    title: "Hybrid hunt"
+    minutes: 5
+    do: |
+      Hand out a few real hybrids: a recipe page, a charity flyer, a page from a diary novel, an advert. Pairs name the main purpose and the borrowed part.
+    notes: "Collect the borrowed parts on the board: story, recount, instructions, report."
+  - at: make
+    kind: discussion
+    title: "Guess the position"
+    minutes: 5
+    do: |
+      Students read only their opening story aloud. The class guesses the position before the writer reads the rest.
+    notes: "A right guess shows the story links to the point."
+questions:
+  - at: investigate
+    title: "Main purpose?"
+    type: question
+    q: "A council flyer starts with a story about a lost dog, then asks residents to microchip their pets. What is its main purpose?"
+    options: ["To persuade residents to microchip pets", "To tell a story about a lost dog", "To explain how microchips work"]
+    answer: 0
+    explain: "The story is borrowed to make residents care. The flyer's job is to get them to act."

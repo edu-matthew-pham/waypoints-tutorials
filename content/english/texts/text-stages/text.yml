@@ -1,0 +1,85 @@
+# Texts for "Every text has a plan" (cohesion board, parts mode). Each s line is a sentence with its stage, in the
+# right order; start: sets a different starting order. Recount stages: orientation, events, ending.
+
+# region: run
+widget: cohesion
+mode: parts
+roles: orientation event ending
+s orientation: Last Friday, Class 5B caught a bus to the science museum in the city.
+s event: First, we watched a show about lightning.
+s event: Next, we built paper bridges and tested how many coins each one could hold.
+s event: After lunch, we walked through a maze of mirrors.
+s ending: It was the best excursion of the year, and everyone wants to go back.
+# endregion
+
+# region: vary-order
+widget: cohesion
+mode: parts
+roles: orientation event ending
+label: off
+tools: order
+s orientation: On Tuesday, our school held its athletics carnival at the oval.
+s event: In the morning, every class ran the 100-metre sprint.
+s event: Before lunch, the Year 5 and 6 students did the long jump.
+s event: In the afternoon, the teachers raced the school captains in a relay.
+s ending: The teachers lost by a metre, and they are already asking for a rematch.
+start: 3,1,5,2,4
+# endregion
+
+# region: vary-email
+widget: cohesion
+mode: parts
+layout: blocks
+roles: orientation event ending
+s any: Hi Grandma,
+s orientation: On Saturday, Dad and I went fishing at the lake near our house.
+s event: We waited for two hours and caught nothing.
+s event: Then, just before we packed up, I caught a big redfin.
+s ending: Dad says it's the biggest fish anyone in our family has caught.
+s any: Love, Mia
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+roles: orientation event ending
+s orientation: In March, the Year 6 classes spent three days at a camp beside a river.
+s event: On the first day, we put up our tents and learned how to light a camp stove safely.
+s event: The next morning, we paddled canoes two kilometres down the river.
+para:
+s event: On the last night, each group performed a short play around the campfire.
+s event: On Friday, we packed up and caught the bus home.
+s ending: I was tired, but I learned that I can do more than I thought.
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+roles: orientation event ending
+tools: text add
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+roles: orientation event ending
+s orientation: Last weekend, my family went to the Royal Show.
+s event: First, we watched the sheepdog trials.
+s event: Then we rode the Ferris wheel.
+s ending: My feet were sore, but it was a great day out.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: orientation event ending
+answer: on
+s orientation: On Sunday, my brother and I rode our bikes to the dam.
+s event: We spotted a family of ducks near the edge.
+s event: Then it started to rain, so we rode home fast.
+s ending: We were soaked, but it was worth it.
+# endregion

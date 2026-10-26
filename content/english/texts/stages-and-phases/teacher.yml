@@ -1,0 +1,48 @@
+summary: "Students learn that stages have smaller phases inside them. They label an explanation's opening statement and the phases of its explanation sequence, catch phases written out of order, match signal words to stages, put a jumbled explanation back in order, label the stages of a review, and write and label their own explanation."
+time: 50
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 10 min · Practise 7 min · Make and own writing 13 min"
+goals:
+  - I can find the stages of an explanation and a review.
+  - I can find the phases inside a stage and put them in order.
+  - I can use signal words to tell where I am in a text.
+  - I can write an explanation with an opening statement and steps in order.
+struggle: "The jump from stages to phases: students can find the explanation sequence but treat it as one lump. The Try labels each phase separately on purpose. In the Vary, students who reorder by guesswork can be asked to follow the light: where is it now?"
+before: |
+  Do the Try board yourself: label the opening statement, then each step.
+
+  The one idea: stages are the big parts of a text, and phases are the smaller moves inside them. This lesson covers AC9E5LA03 nodes 1 to 4 (stages serve the purpose, phases within stages, language features signal structure, the same structure across modes) and AC9E6LA03 nodes 1 and 2 (stages and phases, characteristic structures of several text types). The Year 5 nodes are folded in here rather than in the warm-up, because phases only make sense inside a stage.
+
+  In genre teaching the explanation's stages are often called **phenomenon identification** and **explanation sequence**; the lesson says "opening statement" for the first. Each step is a phase. In the review, the description has two phases (what's there, what you can do).
+
+  The rain, rainbow, seed and puddle explanations are simplified for Years 5 to 7 but checked against general science references. The Riverbank Library is made up.
+running:
+  - "Predict: ask what a reader needs first before any steps make sense."
+  - "Try: after labelling, ask students to name each phase in one or two words (evaporate, condense, join, fall)."
+  - "Worked example: Nib's seed. Ask: could the shoot come before the root? What has to happen first?"
+  - "Vary: the spoken version. Ask what a video can add (pictures, pointing) and what it still needs (the steps in order)."
+  - "Make: partners read each other's steps one at a time and stop where a step doesn't follow."
+stuck:
+  - see: "A student labels every sentence of the rain explanation as the opening statement."
+    ask: "Which sentence would still make sense if it were the only one?"
+    fix: "The opening statement names what is explained. Every step after it is a phase."
+  - see: "A student orders the rainbow phases by sentence length or by guesswork."
+    ask: "Where is the light right now? Where does it go next?"
+    fix: "Follow the process: each phase needs the one before it."
+  - see: "A student labels the second description paragraph of the review as judgement."
+    ask: "Does this paragraph say what the library is like, or what the reviewer thinks of it?"
+    fix: "Description says what it is like; judgement weighs it up, often with words such as best or disappointing."
+stretch: "Find an explanation in a science textbook. Mark its opening statement and number its phases. Does any phase depend on a later one?"
+support: "A strip of numbered boxes for phases. Students write one step per box, in order, before typing."
+leads: |
+  Next in How texts are built: purpose shapes the text, where the same facts become a recount, a report and an argument.
+
+  Explanations come back in science and humanities: the same opening statement and sequence work for the water cycle, erosion or how a law is made.
+exit:
+  q: "In an explanation of how a volcano erupts, which phase must come before 'melted rock bursts out of the top'?"
+  a: "Gas and melted rock building up pressure underground. Each phase depends on the one before."
+explain: |
+  A text's big parts are **stages**. Smaller moves inside a stage are **phases**.
+
+  An **explanation** has an **opening statement** (what is being explained) and an **explanation sequence**. Each step in the sequence is a phase, in the order it happens.
+
+  **Signal words** show where you are: when, then and as a result mark the phases; best and disappointing mark a review's judgement.

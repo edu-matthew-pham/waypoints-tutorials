@@ -1,0 +1,66 @@
+# Texts for "Purpose shapes the text" (cohesion board). The same frog facts as a report, an argument and a recount.
+
+# region: run
+widget: cohesion
+mode: parts
+roles: general describe
+role general: General statement
+role describe: Description
+s general: Frogs are amphibians: animals that live part of their lives in water and part on land.
+s describe: Their skin is thin and moist, and they can take in oxygen through it as well as through their lungs.
+s describe: Most frogs hatch from eggs as tadpoles, which have tails and gills, then slowly grow legs and lose their tails.
+s describe: In Australia, frogs live everywhere from rainforests to deserts, where some burrow underground during dry spells.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+roles: position reason restate
+role restate: Restated position
+s position: Our school should build a frog pond in the garden.
+s reason: Frogs need clean, still water to breed, and the creek behind the school is getting dirtier.
+s reason: A pond would also let every class study frogs up close, from tadpoles to adults.
+s restate: For the frogs and for our learning, a pond is worth building this year.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 2
+p: [[Last Tuesday#a]], our class walked to the creek. [[First#a]], we counted the tadpoles. [[Then#a]] we heard a frog calling from the reeds. [[After lunch#a]], we drew what we had seen.
+p: Frogs are [[amphibians#b]]. Young frogs, called [[tadpoles#b]], breathe with [[gills#b]]. They change into adults through a process called [[metamorphosis#b]].
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+roles: general describe
+role general: General statement
+role describe: Description
+tools: text add
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+roles: general describe
+role general: General statement
+role describe: Description
+s general: Echidnas are small mammals covered in sharp spines.
+s describe: They use their long snouts and sticky tongues to eat ants and termites.
+s describe: Echidnas are one of the few mammals that lay eggs.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: recount report
+answer: on
+s recount: On Saturday, I rode my new bike to the skate park. First I tried the small ramp, and then I raced my sister home.
+para:
+s report: A bike is a two-wheeled vehicle powered by pedals. Its gears let the rider pedal comfortably up hills and on flat ground.
+# endregion

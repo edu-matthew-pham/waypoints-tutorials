@@ -1,0 +1,29 @@
+inquiry:
+  q: "Can a text with only true facts still mislead?"
+  prompts:
+    - "What did the canteen newsletter leave out?"
+    - "If a fact is in the last line, has the writer been honest?"
+  notes: "Yes. Order and omission shape what readers take away. That's not always dishonest (news has to choose), but a careful reader notices the choice."
+activities:
+  - at: predict
+    kind: activity
+    title: "Headline only"
+    minutes: 5
+    do: |
+      Read out three short news items, one sentence at a time. After each sentence, stop and ask the class to say the news in five words.
+    notes: "Well-written news lets them answer after sentence one."
+  - at: make
+    kind: discussion
+    title: "Two readers, one fact sheet"
+    minutes: 6
+    do: |
+      Groups get the bus facts and a reader card (families, the council, the bus driver). Each group writes the first sentence for their reader. Compare.
+    notes: "The facts are the same each time; only the order changes. Ask what each first sentence leaves for later."
+questions:
+  - at: investigate
+    title: "Main point?"
+    type: question
+    q: "Which sentence should lead a news item? A: 'The hall was built in 1975.' B: 'The hall will be closed next week for repairs.'"
+    options: ["B", "A"]
+    answer: 0
+    explain: "The closure is the news. When the hall was built is background."

@@ -1,0 +1,62 @@
+# Texts for "Patterns for ideas" (cohesion board). Parts mode labels each paragraph's pattern; chain mode colours
+# the signal words that show it.
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: cause compare problem claim
+role cause: Cause and effect
+role compare: Compare and contrast
+role problem: Problem and solution
+role claim: Claim and support
+s cause: In Term 1, our canteen stopped selling soft drinks and started selling cold water. As a result, students drink far less sugar at lunch.
+para:
+s compare: The old canteen and the new one both serve hot lunches. Unlike the old canteen, though, the new one has a salad bar.
+para:
+s problem: The canteen queue is so long that some students miss half of lunch. One way to fix this is to let students order online before school.
+para:
+s claim: The new canteen menu is healthier than the old one. For example, it has three kinds of salad and no deep-fried food.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: chain
+colours: 2
+p: [[Both#a]] the Murray cod and the platypus live in the Murray River. The cod is a fish, [[whereas#b]] the platypus is a mammal. The platypus breathes air, [[but#b]] the cod takes in oxygen through its gills. [[Unlike#b]] the cod, the platypus lays eggs. The two [[also#a]] hunt underwater for their food.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+roles: problem solution result
+role problem: Problem
+role solution: Solution
+role result: Result
+s problem: Every afternoon, cars crowd the road outside our school, and it is hard for younger students to cross safely.
+s problem: Parents park wherever they can, so many children walk between moving cars.
+s solution: Last term, the school started a walking bus: a teacher walks a group of students to a meeting point two streets away.
+s result: Now there are fewer cars at the gate, and crossing the road is much safer.
+# endregion
+
+# region: make
+widget: cohesion
+mode: chain
+tools: write
+p: Press Write your own. Write a paragraph of at least three sentences that uses one pattern: cause and effect, compare and contrast, or problem and solution.
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: chain
+as: student
+p: Our street flooded last week because the drains were blocked with leaves. As a result, three houses had water in their garages. The council has now cleared the drains, so the next storm should be less of a problem.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: chain
+colours: 1
+answer: on
+p: A storm knocked down power lines across the town. [[As a result#a]], the traffic lights stopped working, [[so#a]] police directed cars at the busiest corners. [[Because#a]] the shops had no power, many closed early.
+# endregion

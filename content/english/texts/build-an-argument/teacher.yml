@@ -1,0 +1,49 @@
+summary: "The course challenge, built on the genre teaching and learning cycle. Students take a model argument apart (position, reasons, restated position), put Nib's jumbled argument back in order, choose the joining words that carry an argument from reason to reason, and build their own argument on the board, then check it with a partner against a short checklist."
+time: 55
+timing: "Predict 4 min · Part 1 8 min · Part 2 7 min · Part 3 6 min · Part 4 20 min · Own writing 10 min"
+goals:
+  - I can name the stages of an argument and what each one does.
+  - I can put an argument's stages in order and link its reasons.
+  - I can build my own argument with a position, reasons with evidence and a restated position.
+struggle: "Part 4: students write reasons with no evidence ('Trees are good. Trees are nice.'). The checklist asks for evidence in every reason. Ask: how do you know? What would show the principal it's true?"
+before: |
+  Try Part 1 yourself, then write a quick argument in Part 4 to feel how long it takes.
+
+  The challenge follows the **genre teaching and learning cycle**: deconstruction (Part 1, take a model apart), joint construction (Parts 2 and 3, fix Nib's draft together), and independent construction (Part 4). It brings together AC9E6LA03 node 2 (characteristic stages of a text type), AC9E7LA03 node 1 (purpose drives structure) and AC9E8LA03 node 1 (structure and language serve the purpose).
+
+  The argument's stages are often called thesis, arguments and reinforcement of thesis; the lesson says position, reasons and restated position. Claim and support (Patterns for ideas) is the shape of each reason paragraph, and the Holding writing together course's Inside a paragraph goes deeper into evidence and explanation.
+
+  The board only checks that the stages are there and labelled. The quality (clear position, evidence, a restatement with nothing new) is judged with a partner or by you, with the checklist on the page. Nothing is marked by AI.
+running:
+  - "Predict: list the three stages on the board and keep them up for the whole lesson."
+  - "Part 1: ask where the evidence is in each reason paragraph."
+  - "Part 2: ask which word decides the order of the two reasons. (Also.)"
+  - "Part 3: ask what Therefore promises the reader."
+  - "Part 4: partners swap and use the checklist. One fix each before the lesson ends."
+stuck:
+  - see: "A student labels the restated position as a reason."
+    ask: "Does it give a new reason, or sum up the ones before?"
+    fix: "The restated position sums up and asks again. It adds nothing new."
+  - see: "A student's position is a question ('Should we have more trees?')."
+    ask: "What do you want the reader to do or agree to?"
+    fix: "Make it a statement: 'Our school should...'"
+  - see: "A student's reasons have no evidence."
+    ask: "How do you know? What happened, or what could you measure?"
+    fix: "Add one fact or example to each reason: a time, a number, something students said."
+stretch: "Add a short story at the start of your argument, as in Mixing text types. Does it make the argument stronger? Check that it links to your position."
+support: "A planning frame with four boxes: I want... · Reason 1 + evidence · Reason 2 + evidence · So, we should..."
+leads: |
+  This is the end of How texts are built. The argument returns in later English courses on judging and persuading, and on speaking to an audience.
+
+  Holding writing together (Inside a paragraph and Open and close) helps students make each reason paragraph and the restated position stronger.
+exit:
+  q: "An argument ends: 'Also, trees give homes to possums.' What's wrong with this as an ending?"
+  a: "It adds a new reason instead of restating the position. The ending should sum up the reasons and press the point again."
+explain: |
+  An **argument** has three stages:
+
+  - **Position:** what you want, in one clear sentence.
+  - **Reasons:** each in its own paragraph, with evidence.
+  - **Restated position:** the point again, summing up the reasons.
+
+  Joining words such as **Firstly**, **In addition** and **Therefore** carry the reader from one stage to the next.

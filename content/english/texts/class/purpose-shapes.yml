@@ -1,0 +1,29 @@
+inquiry:
+  q: "If you know the facts, does it matter what shape the text takes?"
+  prompts:
+    - "Would the principal read a frog report and decide to build a pond?"
+    - "What does an argument do with facts that a report doesn't?"
+  notes: "Facts don't arrange themselves. A report leaves the reader informed; an argument leaves them with a decision to make. Same facts, different jobs."
+activities:
+  - at: predict
+    kind: activity
+    title: "One fact, three jobs"
+    minutes: 5
+    do: |
+      Write one fact on the board ("Frogs need clean water to breed"). Pairs rewrite it for a recount, a report and an argument.
+    notes: "Listen for tense changes and should or would appearing in the argument."
+  - at: make
+    kind: discussion
+    title: "Drift check"
+    minutes: 4
+    do: |
+      Partners swap reports and underline any sentence that slips into another purpose (a story moment, an opinion).
+    notes: "Ask the writer to decide: cut it, or move it to a different text?"
+questions:
+  - at: investigate
+    title: "Which stages?"
+    type: question
+    q: "You want to tell your grandparents about the school play you were in. Which stages do you need?"
+    options: ["Orientation, events, ending", "Position, reasons, restated position", "General statement, descriptions"]
+    answer: 0
+    explain: "You are retelling something that happened, so it is a recount."

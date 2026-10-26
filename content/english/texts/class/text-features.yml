@@ -1,0 +1,29 @@
+inquiry:
+  q: "Can one text have more than one purpose?"
+  prompts:
+    - "Think of an advert that tells a little story. What is the story for?"
+    - "Can a report persuade without saying should?"
+  notes: "Yes, and Mixing text types (later in the course) is about exactly this. For now, find the main purpose: what is the text trying to do overall?"
+activities:
+  - at: predict
+    kind: activity
+    title: "Purpose detectives"
+    minutes: 5
+    do: |
+      Read aloud single sentences from a picture book, a science book and a newspaper opinion piece. Students hold up I, F or P cards (imaginative, informative, persuasive) and name the clue.
+    notes: "Collect the clues on the board. They become the features list."
+  - at: make
+    kind: discussion
+    title: "Swap and label"
+    minutes: 5
+    do: |
+      Students read one of their three Make sentences aloud. The class says which purpose it serves and why.
+    notes: "Disagreement is useful: a sentence that could be two purposes usually needs a clearer feature."
+questions:
+  - at: investigate
+    title: "Report or explanation?"
+    type: question
+    q: "'Because the moon's gravity pulls on the oceans, the sea rises and falls twice a day.' Report or explanation?"
+    options: ["Explanation", "Report"]
+    answer: 0
+    explain: "It tells why tides happen (because the moon's gravity pulls), so it is an explanation."

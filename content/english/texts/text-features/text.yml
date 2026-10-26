@@ -1,0 +1,82 @@
+# Texts for "Features that fit the job" (cohesion board). Parts mode labels each paragraph by its purpose; chain mode
+# colours the persuasive words.
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: story info persuade
+role story: Imaginative
+role info: Informative
+role persuade: Persuasive
+s story: Under the old gum tree, Ava found a rusty tin. Inside was a key and a note that said, "For whoever finds this."
+para:
+s info: Most gum trees, or eucalypts, grow naturally only in Australia. Their leaves contain an oil that gives the bush its strong smell.
+para:
+s persuade: The council must not cut down our old gum tree. It shades the whole playground, and it was here before the school was built. Write to the council today.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: chain
+colours: 1
+p: Our school [[must#a]] start a vegetable garden. It is the [[best#a]] way to learn where food comes from. Leaving that corner of the oval empty is a [[terrible#a]] waste. Every student [[should#a]] sign the petition today.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: blocks
+roles: report explain
+role report: Report
+s report: Little penguins are the smallest penguins in the world. They are about 30 centimetres tall, with blue-grey feathers on their backs.
+para:
+s explain: Penguins can't fly, but they swim fast. Their wings are stiff flippers, so each stroke pushes them through the water.
+para:
+s report: Bats are mammals that can fly. Most Australian bats eat insects, and some eat fruit and nectar.
+para:
+s explain: When a small bat hunts at night, it makes high-pitched calls. The echoes bounce back from insects, so the bat can tell where they are.
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+layout: blocks
+roles: story info persuade
+role story: Imaginative
+role info: Informative
+role persuade: Persuasive
+tools: text
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+layout: blocks
+roles: story info persuade
+role story: Imaginative
+role info: Informative
+role persuade: Persuasive
+s story: The wombat waddled out of the bush and stared at Lily's tent.
+s info: Wombats dig burrows with their strong front claws.
+s persuade: Drivers should slow down at night, because wombats often cross country roads after dark.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: story info persuade
+role story: Imaginative
+role info: Informative
+role persuade: Persuasive
+answer: on
+s info: Thunder is the sound lightning makes when it heats the air very quickly.
+para:
+s persuade: Every family should keep a torch ready in case a storm cuts the power.
+para:
+s story: Thunder shook the windows, and Jai buried his face in the dog's fur.
+# endregion

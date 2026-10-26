@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is a text that is easy to read always better?"
+  prompts:
+    - "Would a doctor want their medical notes written like a Year 2 poster?"
+    - "What would an expert lose if every technical word were removed?"
+  notes: "No. A text is good when it fits its reader. Technical words and long explanations are right for some readers and wrong for others."
+activities:
+  - at: predict
+    kind: activity
+    title: "Sign makeover"
+    minutes: 5
+    do: |
+      Show two or three real signs from around the school. Pairs decide who each one was written for and rewrite one for a different reader.
+    notes: "Listen for changes in both words and order."
+  - at: make
+    kind: discussion
+    title: "Be the reader"
+    minutes: 5
+    do: |
+      Partners read their Year 2 rewrites aloud. The listener plays a seven-year-old and raises a hand at any word they wouldn't know.
+    notes: "Count the hands. Fewer hands, better fit."
+questions:
+  - at: investigate
+    title: "Which reader?"
+    type: question
+    q: "'Hydrate regularly to maintain optimal performance.' Who is this written for?"
+    options: ["Adults, probably athletes or coaches", "Young children", "Anyone at all"]
+    answer: 0
+    explain: "Hydrate, maintain and optimal performance are adult, technical words. For children it would say 'Drink lots of water.'"

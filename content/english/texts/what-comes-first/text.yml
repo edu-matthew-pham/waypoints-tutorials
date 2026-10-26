@@ -1,0 +1,58 @@
+# Texts for "What comes first" (cohesion board, parts mode). News items put the main point first, details next and
+# background last.
+
+# region: run
+widget: cohesion
+mode: parts
+roles: main detail background
+role main: Main point
+role background: Background
+label: off
+tools: order
+s main: The school's new bus route starts next term and will cut the trip from the northern suburbs by 15 minutes.
+s detail: The bus will leave the shopping centre at 7:50 am and stop at four places on the way.
+s detail: About 60 students are expected to use it each day.
+s background: The idea came from last year's student survey, when many students said the old trip took too long.
+start: 3,1,4,2
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+roles: main detail background
+role main: Main point
+role background: Background
+s main: The junior playground reopened on Monday after a month of repairs.
+s detail: It now has a soft rubber surface and a new rope bridge.
+s detail: Students in Years 3 and 4 can use it at both breaks.
+s background: The old playground was closed in March after a slide cracked.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+roles: main detail background
+role main: Main point
+role background: Background
+tools: order
+s main: All outdoor sport is cancelled tomorrow because the temperature is forecast to reach 41 degrees.
+s detail: Students will have sport in the hall instead and should still bring their sports uniform.
+s detail: The cancellation covers every year level, including the Year 6 cricket match against Hillside School.
+s background: The school's heat rules cancel outdoor sport whenever the forecast is above 38 degrees.
+start: 4,2,1,3
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: main detail background
+role main: Main point
+role background: Background
+answer: on
+s main: From next week, the library will open at 8 am, half an hour earlier than now.
+para:
+s detail: Students can use the computers and the quiet room before school.
+para:
+s background: Many students asked for an earlier opening in last term's survey.
+# endregion

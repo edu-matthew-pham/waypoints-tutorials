@@ -1,0 +1,8 @@
+# Nib's news report for the "find the slip" task, one sentence per line.
+
+# region: nib
+Our fete committee met six times this year to plan the day.
+There were 25 stalls, including a cake stall and a dunk tank.
+Mrs Patel's lemon slice sold out by ten o'clock.
+In total, the fete raised $8,000 for new playground equipment.
+# endregion

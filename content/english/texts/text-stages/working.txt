@@ -1,0 +1,8 @@
+# Nib's recount for the "find the slip" task, one sentence per line.
+
+# region: nib
+Then we ate our lunch next to the lake.
+After that, we fed the ducks some oats.
+Later, it started to rain, so we ran to the car.
+It was a great day, even with the rain.
+# endregion

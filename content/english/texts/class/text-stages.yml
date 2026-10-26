@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do so many stories start by saying who, where and when?"
+  prompts:
+    - "What happens to a listener who doesn't know where a story took place?"
+    - "Can you think of a story that starts in the middle? Does it explain the scene later?"
+  notes: "The orientation lets the reader picture the events. Some stories start in the middle on purpose to hook the reader, but they still give the orientation soon after."
+activities:
+  - at: predict
+    kind: activity
+    title: "Tell it backwards"
+    minutes: 4
+    do: |
+      A volunteer tells the class about their weekend, ending first and orientation last. The class says what was hard to follow.
+    notes: "Students hear why the stages come in that order."
+  - at: make
+    kind: discussion
+    title: "Same recount, new form"
+    minutes: 5
+    do: |
+      Pairs pick a recount they wrote and decide how it would change as an email, a speech and a poster. Which stages stay?
+    notes: "All three stages usually stay; greetings, headings and layout change with the form."
+questions:
+  - at: investigate
+    title: "Which stage?"
+    type: question
+    q: "'After the concert, we all went out for pizza.' Which stage is this most likely to be?"
+    options: ["An event", "The orientation", "The ending"]
+    answer: 0
+    explain: "It tells something that happened, marked by the time words After the concert, so it is an event."

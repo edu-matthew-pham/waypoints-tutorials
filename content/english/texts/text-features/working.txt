@@ -1,0 +1,8 @@
+# Nib's information report for the "find the slip" task, one sentence per line.
+
+# region: nib
+Koalas are marsupials that live in eucalypt forests.
+They eat eucalyptus leaves and sleep for most of the day.
+I think koalas are the cutest animals in the world.
+A mother koala carries her joey in a pouch for about six months.
+# endregion

@@ -1,0 +1,9 @@
+# Nib's explanation for the "find the slip" task, one sentence per line.
+
+# region: nib
+A seed is a tiny plant with a store of food inside a tough coat.
+The shoot pushes up through the soil towards the light.
+When the seed is in damp, warm soil, it soaks up water and swells.
+The coat splits, and a root grows down into the soil.
+Once its first leaves open, the plant makes its own food from sunlight.
+# endregion

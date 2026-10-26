@@ -292,12 +292,13 @@ courses:
   title: How texts are built
   pathway: How texts work
   years: 6-8
-  status: planned
-  wave: 1
-  board: cohesion parts mode (label and order stages) + highlighter
-  summary: 'Stages and phases of reviews, discussions, explanations, recounts and arguments; idea structures (cause and effect,
-    compare and contrast, problem and solution); hybrids and twists. Genre cycle: take apart a model, build one together,
-    then write.'
+  status: built
+  wave: 0
+  board: cohesion (parts, chain, gaps)
+  summary: Stages and phases of recounts, reports, explanations, reviews and arguments; features by purpose; purpose drives
+    structure; idea patterns (cause and effect, compare and contrast, problem and solution, claim and support); what comes
+    first; built for a reader; hybrids; build-an-argument challenge (genre cycle). Years 9-10 nodes wait for the Years 9-10
+    phase (not wider steps).
 - id: reading
   title: Reading closely
   pathway: How texts work

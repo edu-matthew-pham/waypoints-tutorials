@@ -1,0 +1,81 @@
+# Texts for "Stages and phases" (cohesion board, parts mode). An explanation has an opening statement and an
+# explanation sequence; each step in the sequence is a phase. A review has context, description and judgement.
+
+# region: run
+widget: cohesion
+mode: parts
+roles: opening step
+role opening: Opening statement
+role step: Step in the sequence
+s opening: Rain is water that falls from clouds to the ground.
+para:
+s step: The sun heats water in oceans, lakes and rivers, and some of it evaporates into water vapour.
+s step: The warm, moist air rises and cools, and the vapour condenses into tiny droplets that form clouds.
+s step: Inside a cloud, droplets bump into each other and join, growing bigger and heavier.
+s step: When the drops are too heavy for the air to hold up, they fall as rain.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+roles: opening step
+role opening: Opening statement
+role step: Step in the sequence
+label: off
+tools: order
+s opening: A rainbow is an arc of colours that appears when sunlight shines through raindrops.
+s step: Sunlight enters a raindrop and bends, and its colours begin to spread apart.
+s step: The light reflects off the back of the drop.
+s step: It bends again as it leaves the drop, and the colours spread further apart.
+s step: Millions of drops do this at once, so you see an arc of colours with the sun behind you.
+start: 1,3,5,2,4
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: blocks
+roles: context description judgement
+s context: The new Riverbank Library opened in May, and it was built with families in mind.
+s description: Inside there are three floors: a children's area with a reading tunnel, a quiet study floor and a rooftop garden.
+s description: You can borrow books, board games and even fishing rods, and on Saturdays there is a free coding club.
+s judgement: The lifts are slow and the café is pricey, but this is the best new place in town for a rainy Saturday.
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+roles: opening step
+role opening: Opening statement
+role step: Step in the sequence
+tools: text add
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+roles: opening step
+role opening: Opening statement
+role step: Step in the sequence
+s opening: Toast turns brown because heat changes the bread's surface.
+s step: The toaster's wires glow and heat the bread.
+s step: The water near the surface dries out.
+s step: Then sugars and proteins on the dry surface react and turn brown.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+roles: opening step
+role opening: Opening statement
+role step: Step in the sequence
+answer: on
+s opening: A puddle dries up because its water evaporates into the air.
+para:
+s step: The sun warms the water in the puddle.
+s step: The fastest-moving water particles escape into the air as vapour.
+s step: Bit by bit, the puddle shrinks until it is gone.
+# endregion

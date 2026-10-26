@@ -1,0 +1,8 @@
+# Nib's report for the "find the slip" task, one sentence per line.
+
+# region: nib
+Frogs are amphibians that live in water and on land.
+Many frogs have long back legs for jumping.
+Last week our class went to the creek, and Mr Ali slipped in the mud.
+Most frogs lay their eggs in water.
+# endregion

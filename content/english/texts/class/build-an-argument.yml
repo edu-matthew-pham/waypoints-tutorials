@@ -1,0 +1,29 @@
+inquiry:
+  q: "What makes an argument convincing: the reasons, the evidence, or the order?"
+  prompts:
+    - "Would the tree argument work with no evidence at all?"
+    - "Would it work with the restated position first?"
+  notes: "All three matter. Reasons give the case, evidence makes it believable, and the order lets the reader follow it and remember the point."
+activities:
+  - at: predict
+    kind: activity
+    title: "Stages on the wall"
+    minutes: 4
+    do: |
+      Write Position, Reasons, Restated position on the board. As a class, build a spoken argument for one small change (a longer library time, say) and point to each stage as it is spoken.
+    notes: "Keep the three words up for the whole lesson."
+  - at: make
+    kind: discussion
+    title: "Checklist swap"
+    minutes: 8
+    do: |
+      Partners swap Part 4 arguments and use the checklist: one clear position, evidence in each reason, a restatement with nothing new. Each writer makes one fix.
+    notes: "Collect a strong example of evidence to read to the class."
+questions:
+  - at: end
+    title: "Which stage?"
+    type: question
+    q: "'Because of this, a crossing supervisor would make mornings safer and calmer for everyone.' Which stage is this most likely to be?"
+    options: ["The restated position", "The position", "A reason"]
+    answer: 0
+    explain: "It sums up (because of this) and presses the point again, so it is the restated position."

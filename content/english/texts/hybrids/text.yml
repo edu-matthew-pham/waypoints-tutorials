@@ -1,0 +1,88 @@
+# Texts for "Mixing text types" (cohesion board, parts mode). Hybrids borrow one type's stages inside another.
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: story position reason action
+role story: Story
+role action: Call to act
+s story: Last July, floodwater filled Jun's house in the night. For three nights his family slept in the school hall on borrowed mattresses.
+para:
+s position: Every school in our region should keep an emergency kit of blankets, mattresses and food.
+para:
+s reason: Floods and fires can arrive with little warning, and a school hall is often where families go first.
+para:
+s action: Ask your principal this week whether our school has a kit ready.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+layout: blocks
+roles: entry
+role entry: Diary entry
+label: off
+tools: order
+s entry: Monday 3 March. Mum says we're moving to Darwin. I don't want to leave my friends.
+s entry: Wednesday 5 March. Packed my room into six boxes. Found my old swimming ribbons.
+s entry: Saturday 8 March. Last day at the beach with Priya. We wrote our names in the sand.
+s entry: Monday 10 March. First day at the new school. A girl called Tess saved me a seat.
+start: 3,1,4,2
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: blocks
+roles: report recount procedure persuade
+role report: Report
+role recount: Recount
+role procedure: Instructions
+role persuade: Persuasion
+s report: The Riverbend Gaol Museum is a sandstone building from 1868 that held prisoners for almost a hundred years.
+para:
+s recount: Last spring, Year 6 students from Hillside School spent a night in the cells and wrote about every creak and footstep.
+para:
+s procedure: To book a visit, choose a date on the calendar, enter your group size and press Send.
+para:
+s persuade: Don't miss the night tours: they are the most exciting history lesson in town.
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+layout: blocks
+roles: story position reason
+role story: Story
+tools: text add
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+layout: blocks
+roles: story position reason
+role story: Story
+s story: Yesterday, Maya waited twenty minutes at the crossing outside our school because no car would stop for her.
+s position: Our school needs a crossing supervisor every morning and afternoon.
+s reason: A supervisor would stop the traffic, so younger students could cross safely and on time.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: recount procedure
+role recount: Recount
+role procedure: Instructions
+answer: on
+s recount: Every summer, Nonna made this lemonade on her back step, and the whole street came to drink it.
+para:
+s procedure: Squeeze six lemons into a large jug.
+s procedure: Stir in half a cup of sugar until it dissolves.
+s procedure: Add four cups of cold water and plenty of ice.
+# endregion

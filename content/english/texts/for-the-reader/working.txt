@@ -1,0 +1,8 @@
+# Nib's beach safety poster for Year 2, for the "find the slip" task, one line each.
+
+# region: nib
+Beach safety for Year 2
+Swim between the red and yellow flags.
+Rip currents are concentrated channels of water flowing seaward through the surf zone.
+If you get tired, float on your back and raise one arm.
+# endregion

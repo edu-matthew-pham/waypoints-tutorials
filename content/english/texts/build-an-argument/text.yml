@@ -1,0 +1,70 @@
+# Texts for "Challenge: build an argument" (cohesion board). An argument: position, reasons, restated position.
+
+# region: model
+widget: cohesion
+mode: parts
+layout: blocks
+roles: position reason restate
+role restate: Restated position
+s position: Our school should plant twenty more trees around the playground.
+s reason: First, trees give shade. On summer afternoons the asphalt near the canteen gets hot enough to burn bare skin, and there is almost nowhere to sit out of the sun.
+s reason: Trees also make the playground a better place to be. They cool the air around them, birds nest in them, and many students say green spaces help them feel calm.
+s restate: Shade, cooler air and a calmer playground: twenty trees would give us all three. We ask the school council to approve the planting this year.
+# endregion
+
+# region: order
+widget: cohesion
+mode: parts
+layout: blocks
+roles: position reason restate
+role restate: Restated position
+label: off
+tools: order
+s position: Our school needs a covered bike rack near the front gate.
+s reason: Right now, bikes are chained to the fence, where they get wet and are sometimes scratched by passing cars.
+s reason: A rack would also encourage more students to ride, which means fewer cars at drop-off.
+s restate: A covered rack would protect our bikes and clear the road at the gate, so it should be built this year.
+start: 3,4,1,2
+# endregion
+
+# region: joins
+widget: cohesion
+p: Our school should start a lunchtime chess club. [[{Firstly|However|Meanwhile}=Firstly]], chess teaches students to plan ahead. [[{In addition|For example|Instead}=In addition]], a club would give quieter students somewhere to go at lunch. [[{Therefore|But|Then}=Therefore]], we ask the principal to find a room and a teacher for Tuesdays.
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+layout: blocks
+roles: position reason restate
+role restate: Restated position
+tools: text add
+s any:
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+layout: blocks
+roles: position reason restate
+role restate: Restated position
+s position: Our school should have a water fountain on the oval.
+s reason: At sport, students have to walk all the way back to the main building to fill their bottles, and some just go without.
+s reason: A fountain would also save time, because classes could keep playing instead of lining up at the building.
+s restate: Students would drink more and lose less time, so a fountain on the oval is worth the cost.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: position reason restate
+role restate: Restated position
+answer: on
+s position: Every classroom should have a recycling bin for paper.
+s reason: Most of what goes in our classroom bins is paper, and none of it is recycled now.
+s restate: A paper bin in every room is a small change that would keep most of our rubbish out of landfill.
+# endregion

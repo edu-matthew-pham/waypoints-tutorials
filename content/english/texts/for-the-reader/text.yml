@@ -1,0 +1,58 @@
+# Texts for "Built for a reader" (cohesion board). Beach and sun safety, written for different readers.
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 2
+p: [[Swim#b]] between the red and yellow flags. [[Stay#b]] close to the lifeguards, so [[you#a]] can see them. If [[you#a]] get tired, [[float#b]] on [[your#a]] back and [[raise#b]] one arm. [[Ask#b]] an adult to come in the water with [[you#a]].
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+roles: hook step remind
+role remind: Reminder
+s hook: Heading to the beach this summer?
+s step: Swim between the red and yellow flags.
+s step: If you get tired, float on your back and raise one arm.
+s step: Keep a close eye on younger children in the water.
+s remind: Remember: the flags show where the lifeguards are watching.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: blocks
+roles: kids adults
+role kids: Young children
+role adults: Adults
+s kids: Put on your hat before you go outside. Your hat keeps the sun off your face!
+para:
+s adults: Children's skin burns quickly. Apply SPF 30 or higher sunscreen 20 minutes before they go outside, and reapply every two hours.
+para:
+s kids: Play in the shade when the sun is high. Trees make great sun umbrellas!
+para:
+s adults: UV levels are usually highest in the middle of the day, so plan outdoor activities for the morning or late afternoon where you can.
+# endregion
+
+# region: make
+widget: cohesion
+mode: chain
+tools: write
+p: Ultraviolet radiation from the sun can damage unprotected skin in as little as fifteen minutes. Individuals are advised to wear broad-brimmed hats, apply sunscreen and seek shade during periods of high UV.
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: chain
+as: student
+p: The sun can burn your skin very fast. Wear a big hat. Put on sunscreen. Play in the shade when it is hot.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: chain
+colours: 2
+answer: on
+p: [[Walk#b]] inside the library. [[Return#b]] [[your#a]] books on Friday. If [[you#a]] need help, [[ask#b]] at the desk.
+# endregion

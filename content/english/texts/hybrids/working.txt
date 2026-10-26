@@ -1,0 +1,8 @@
+# Nib's argument for the "find the slip" task, one sentence per line.
+
+# region: nib
+Last Friday, my friend Ava found a baby bird under the slide.
+We put it in a shoebox, and Ms Lin called the wildlife rescue.
+Our school should make lunch half an hour longer.
+Longer lunches would give students more time to eat and play.
+# endregion

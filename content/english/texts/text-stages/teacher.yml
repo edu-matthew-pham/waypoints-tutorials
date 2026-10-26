@@ -1,0 +1,46 @@
+summary: "An optional warm-up from Years 4 and 5. Students learn that a text is built in stages that each do a job, using the recount: orientation (who, where, when), events in time order, and an ending. They label the stages, put a jumbled recount back in order, find the stages inside an email, and write and label their own recount."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 8 min · Practise 5 min · Make and own writing 9 min"
+goals:
+  - I can name the stages of a recount and say what each one does.
+  - I can put a recount's events in time order.
+  - I can tell a text's form (an email, a speech) from its stages.
+  - I can write a recount with all three stages.
+struggle: "Students tend to label the first event as the orientation because it comes early. Ask: does this sentence tell us who, where and when, or something that happened?"
+before: |
+  Do the Try board yourself: click a sentence and choose Orientation, Event or Ending.
+
+  The one idea: each stage of a text does a job for the reader. This lesson covers AC9E4LA03 node 1 (stages serve a purpose). It also previews form versus stages (node 4), which the next lesson tags and checks. In genre teaching the ending is often called the **reorientation**; the lesson says "ending" for students.
+
+  The recount is the simplest staged text, so it is the way in. Later lessons apply the same question (what job does this part do?) to explanations, reviews, reports and arguments.
+running:
+  - "Predict: ask how students knew what would come next. They used the orientation without knowing its name."
+  - "Try: have students say the job of each sentence aloud before they label it."
+  - "Worked example: read Nib's recount aloud with the first line missing its context. Ask what the listener would ask first."
+  - "Vary: the email is the key point. Ask: what changes if Mia sends this as a voice message? (The form; the stages stay.)"
+  - "Make: partners swap and label each other's stages."
+stuck:
+  - see: "A student labels the first event as the orientation."
+    ask: "Does this sentence tell us who, where and when?"
+    fix: "The orientation sets the scene. The first thing that happens is an event."
+  - see: "A student labels Hi Grandma or Love, Mia."
+    ask: "Is a greeting part of what happened, or part of the email?"
+    fix: "Greetings and sign-offs belong to the form, so leave them unlabelled."
+  - see: "A student's Make recount has events out of order."
+    ask: "Which happened first? Which word tells the reader?"
+    fix: "Add time words: First, Next, After lunch, Finally."
+stretch: "Tell your recount aloud to a partner as if it were a voice message. Which stages did you keep? Did any change?"
+support: "A card with three boxes: Who, where, when? · What happened, in order? · How did it end?"
+leads: |
+  Next in How texts are built: features that fit each kind of text.
+
+  The same question, what job does this part do, opens every later lesson in this course: explanations, reports, arguments and hybrids.
+exit:
+  q: "Which stage is this, and how do you know? 'On Monday morning, our class planted twenty trees along the creek.'"
+  a: "The orientation. It tells you who (our class), where (along the creek) and when (Monday morning)."
+explain: |
+  A text is built in **stages**, and each stage does a job for the reader.
+
+  A **recount** has three: an **orientation** (who, where and when), the **events** in time order, and an **ending** (how it finished, or what the writer thought).
+
+  The stages stay the same whatever the **form**: an email, a speech or a story told aloud.

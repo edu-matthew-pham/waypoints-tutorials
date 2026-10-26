@@ -1,0 +1,45 @@
+summary: "Students learn that where an idea sits shapes how much it matters, and that a structure can also hide things. They put a news report's main point first and background last, catch Nib burying the main point, ask what a one-sided newsletter leaves out, label and reorder news items, and judge which order of the same facts suits which reader (an unmarked answer compared with models)."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 5 min · Practise 7 min · Make and own reading 15 min"
+goals:
+  - I can put the main point first for a reader in a hurry.
+  - I can say how the order of a text changes what a reader notices.
+  - I can ask what a text leaves out.
+struggle: "Students accept the order a text gives them. The canteen newsletter task is the turning point: every fact is true, yet the reader is steered. Ask: who gains from this order?"
+before: |
+  Do the Try board yourself: move the main point up and the background down.
+
+  The one idea: organisation shapes, and limits, meaning. This lesson covers AC9E8LY04 node 2 (how an author's organisational choices develop and limit meaning). News structure is the clearest case: the main point first (often called the **inverted pyramid**). The Make step is an open answer: there is no single right version, so it is compared with two model answers and a self-check, never marked.
+
+  Keep this about method, not politics: the bus, the fete, the canteen and the heat rules are all made up. The 38-degree rule is invented for the lesson; check your own school's policy before quoting one.
+running:
+  - "Predict: ask students to remember a headline from this week. Do they remember anything past the first line?"
+  - "Try: ask which sentence they'd keep if they could keep only one."
+  - "Worked example: the canteen newsletter. Ask who wrote it and what they wanted readers to think."
+  - "Practise: label first, then reorder. Ask why labelling first makes the ordering easy."
+  - "Make: share answers that chose differently for the same reader. Both can be right if the reason holds."
+stuck:
+  - see: "A student puts the background first because 'that's where it started'."
+    ask: "Is this a story told in time order, or news for a reader in a hurry?"
+    fix: "A recount goes in time order. News goes in order of importance."
+  - see: "A student labels a detail as the main point because it has a number in it."
+    ask: "Would the sentence make sense to someone who hadn't heard the news yet?"
+    fix: "The main point is the news itself. Details only make sense after it."
+  - see: "A student's Make answer only says which version is better."
+    ask: "Better for whom? And what does it push into the background?"
+    fix: "Use the self-check: a version for each reader, why, and what each one hides."
+stretch: "Find a real news story. Rewrite its first sentence so a different fact leads. How does the story feel now?"
+support: "Three labels on a card: Main point (the news) · Details (when, where, how many) · Background (how it came about)."
+leads: |
+  Next in How texts are built: built for a reader, where structure and language are chosen for a particular audience.
+
+  Asking what a text leaves out is a habit students use again in ICT's Investigating and judging information.
+exit:
+  q: "A school newsletter starts with three sentences about the new pool and ends with 'The pool will be closed for all of Term 1.' What does this order do?"
+  a: "It puts the good news in the spotlight and the closure where quick readers might miss it."
+explain: |
+  Where an idea sits changes how much it **matters**. What comes **first** gets the spotlight.
+
+  A **news report** puts the **main point** first, then **details**, then **background**, so a reader in a hurry still gets the news.
+
+  The order can also hide things. Ask what a text puts first, what it saves for last, and what it leaves out.

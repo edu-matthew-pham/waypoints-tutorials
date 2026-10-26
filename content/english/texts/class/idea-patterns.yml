@@ -1,0 +1,29 @@
+inquiry:
+  q: "Can the same facts be organised in more than one pattern?"
+  prompts:
+    - "Take 'the canteen queue is long'. What would a cause and effect paragraph say? A problem and solution one?"
+    - "Does the pattern change what the reader thinks matters?"
+  notes: "Yes. The same facts can explain why the queue is long, compare two canteens, or propose a fix. The pattern decides what the reader notices, which is why writers choose it on purpose."
+activities:
+  - at: predict
+    kind: activity
+    title: "Signal word hunt"
+    minutes: 5
+    do: |
+      Give pairs a page from a science or history textbook. They circle signal words and guess the main pattern of each paragraph.
+    notes: "Textbooks lean heavily on cause and effect, and on compare and contrast."
+  - at: make
+    kind: discussion
+    title: "Name my pattern"
+    minutes: 5
+    do: |
+      Students read their Make paragraph aloud. The class names the pattern and the signal word that gave it away.
+    notes: "If the class can't agree, the paragraph may switch patterns. Ask which one the writer meant."
+questions:
+  - at: investigate
+    title: "Which pattern?"
+    type: question
+    q: "'Paper bags break easily, whereas cloth bags last for years.' Which pattern?"
+    options: ["Compare and contrast", "Cause and effect", "Problem and solution"]
+    answer: 0
+    explain: "Whereas sets the two bags side by side to show a difference."

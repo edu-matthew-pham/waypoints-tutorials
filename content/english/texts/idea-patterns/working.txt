@@ -1,0 +1,9 @@
+# Nib's compare and contrast paragraph for the "find the slip" task, one sentence per line.
+
+# region: nib
+Possums and sugar gliders are both marsupials that live in trees.
+Possums are about the size of a cat.
+They have thick fur and a long tail that grips branches.
+They eat leaves, flowers and fruit.
+Possums are often seen in city gardens at night.
+# endregion

@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do explanations need their steps in order, when a description doesn't?"
+  prompts:
+    - "What happens to a reader if a step comes before the step it depends on?"
+    - "Could you describe a library in any order? Could you explain rain in any order?"
+  notes: "An explanation follows a process or a chain of causes, so the order is the meaning. A description can be organised many ways (top to bottom, most to least important)."
+activities:
+  - at: predict
+    kind: activity
+    title: "Human sequence"
+    minutes: 5
+    do: |
+      Hand five students one card each with a phase of the rain explanation (shuffled). The class directs them into the right order and says which word on each card helped.
+    notes: "Signal words (when, as, inside) and cause logic both help. Name each."
+  - at: make
+    kind: discussion
+    title: "Stop me when it breaks"
+    minutes: 5
+    do: |
+      A student reads their explanation one phase at a time. The class says stop if a step doesn't follow from the last.
+    notes: "Missing steps are more common than wrong ones. Ask: what happened in between?"
+questions:
+  - at: investigate
+    title: "Stage or phase?"
+    type: question
+    q: "In a review, 'The story follows two friends lost in a cave' is part of the description. Is it a stage or a phase?"
+    options: ["A phase of the description stage", "A stage of its own", "The judgement"]
+    answer: 0
+    explain: "Description is the stage. Telling the story is one phase of it; describing the characters or the pictures might be another."

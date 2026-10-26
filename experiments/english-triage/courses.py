@@ -49,9 +49,9 @@ course('expert', 'Writing like a subject expert', 'How writing works', '8-10', '
        'Technical and academic words, nominalisation, abstract nouns that sum up, quoting and referencing. Cross-linked from Science and humanities.',
        ext=all_nodes(code(9, 'LA06'), code(9, 'LA09'), code(10, 'LA08')) + nodes(code(9, 'LA04'), 2, 3))
 
-course('texts', 'How texts are built', 'How texts work', '6-8', 'planned', 1, 'cohesion parts mode (label and order stages) + highlighter',
+course('texts', 'How texts are built', 'How texts work', '6-8', 'built', 0, 'cohesion (parts, chain, gaps)',
        all_nodes(code(6, 'LA03'), code(7, 'LA03'), code(8, 'LA03'), code(6, 'LY03'), code(7, 'LY04'), code(8, 'LY04')),
-       'Stages and phases of reviews, discussions, explanations, recounts and arguments; idea structures (cause and effect, compare and contrast, problem and solution); hybrids and twists. Genre cycle: take apart a model, build one together, then write.',
+       'Stages and phases of recounts, reports, explanations, reviews and arguments; features by purpose; purpose drives structure; idea patterns (cause and effect, compare and contrast, problem and solution, claim and support); what comes first; built for a reader; hybrids; build-an-argument challenge (genre cycle). Years 9-10 nodes wait for the Years 9-10 phase (not wider steps).',
        warm=all_nodes(code(4, 'LA03'), code(5, 'LA03'), code(4, 'LY03'), code(5, 'LY03')),
        ext=all_nodes(code(9, 'LA03'), code(10, 'LA03'), code(9, 'LY04'), code(10, 'LY04')))
 

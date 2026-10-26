@@ -3,7 +3,7 @@ title: English
 order: 2.5
 map: true
 trail: units
-summary: "Short lessons on how English works: what makes writing hold together, how sentences are built and how word choices change meaning. Each one is a text to mark up on the screen, a worked example and a few checks, then the same move in your own writing. They are for introducing an idea or revisiting one, beside the reading, writing and talk in class, not instead of it."
+summary: "Short lessons on how English works: what makes writing hold together, how texts are built for a purpose, how sentences are built and how word choices change meaning. Each one is a text to mark up on the screen, a worked example and a few checks, then the same move in your own writing. They are for introducing an idea or revisiting one, beside the reading, writing and talk in class, not instead of it."
 pathways:
   - id: language
     title: How writing works
@@ -18,10 +18,10 @@ pathways:
   - id: texts
     title: How texts work
     summary: "Purpose and structure: how persuasive, explanation, analytical and narrative texts are put together, and how images and layout make meaning."
-    fit: "Coming later: take a model text apart, build one together, then write your own."
-    about: "Planned. Each lesson will follow the genre teaching and learning cycle: build the field, take a model text apart, build one together, then students write their own in class. The literary ideas course (point of view, structure, imagery and symbolism) will use short public-domain extracts and the class's own texts."
+    fit: "See the plan inside a text: take a model apart, build one together, then write your own."
+    about: "**How texts work** follows the text-structure thread of the Australian Curriculum: English (Version 9), across the Language and Literacy strands. The first course, **How texts are built**, covers stages and phases (AC9E4LA03 to AC9E8LA03), the features of each kind of text (AC9E4LY03, AC9E5LY03, AC9E6LY03) and how ideas are organised (AC9E7LY04, AC9E8LY04): recounts, reports, explanations, reviews and arguments, patterns such as cause and effect, what a structure puts first, texts built for a reader, and hybrids. Each lesson takes a model apart on the screen, then the student builds their own, ending with a challenge that follows the genre teaching and learning cycle. The Years 4–5 lessons are an optional warm-up; the Years 9–10 descriptors are left for later Years 9–10 work. Every text is written for the lesson, and nothing is marked by AI: the board checks the planted stages, and the student's own writing is checked against a checklist, by a partner or by you."
     courses:
-      - { title: How texts are built, stage: foundations, summary: "Stages and phases of persuasive, explanation, analytical and narrative texts, and how writers adapt them.", tagline: "See the plan inside a text, then use it." }
-      - { title: Images and layout, stage: foundations, summary: "How images, diagrams and layout make meaning in visual and multimodal texts.", tagline: "Read a picture as closely as a paragraph." }
+      - { path: english/texts, id: texts, stage: foundations, tagline: "See the plan inside a text, then use it." }
+      - { title: Images and layout, stage: foundations, after: [texts], summary: "How images, diagrams and layout make meaning in visual and multimodal texts.", tagline: "Read a picture as closely as a paragraph." }
       - { title: Literary ideas, stage: extensions, summary: "Point of view, narrative structure, imagery and symbolism, with short public-domain extracts.", tagline: "The tools writers use to make you feel something." }
 ---
