@@ -992,3 +992,7 @@ The mechanism was cheap (one run). The per-lesson work is not: every number the 
 
 ## Built (26 Oct 2026, orchestrating chat): Make a lesson › Other ways to start
 Optional lesson 8 in the Make one unit (`content/teachers/make-a-lesson/other-ways/`): which start fits (Make your own version, Start from a project, My path, a waypoint). Lesson text only, no clips; goes live with publish-lessons or the next full publish.
+
+## Built (26 Oct 2026, code chat; Matthew approved): how coding ideas build
+Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_IDEAS` in `tools/concepts-core.mjs` reordered by band with three new ideas (`sequence`, `input`, `compare`; `html: { 'input-value': 'input' }` in `SAME_IDEA`); new `tools/ideas-map.mjs` (pure data and helpers); `tools/ideas-page.mjs` draws the map and table; `tools/build-site.mjs` writes the page and adds idea chips to Code lesson guides; `tools/check-concepts` checks the map's data. Search picks up the new labels. Whole-site publish.
+
