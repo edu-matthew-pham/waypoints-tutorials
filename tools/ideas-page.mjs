@@ -4,6 +4,7 @@
 // another page can use it; build-site writes it to /teach/<subject>/ideas/.
 import { CORE_IDEAS, sameIdea } from './concepts-core.mjs';
 import { BANDS, IDEAS, BLOCK_COLOURS, exampleFor, unlocks } from './ideas-map.mjs';
+import { BAND_PICTURES } from './ideas-pictures.mjs';
 
 /** pathways: [{ id, title, courses: [{ path }] }] from a subject's index.md; lessons: parsed lessons with slug,
  *  title, order, language, introduces. Returns rows of { id, label, cells: [{ lesson, course } | null] }. */
@@ -55,7 +56,7 @@ export function ideasPageHtml({ title, pathways, rows, lessonHref, crumbHref = '
   const sections = BANDS.map((b) => {
     const rs = rows.filter((r) => IDEAS[r.id].band === b.id);
     if (!rs.length) return '';
-    return `<section class="wpi-sec" id="band-${esc(b.id)}"><h3>${esc(b.title)}</h3><p class="muted">${esc(b.intro || '')}</p>`
+    return `<section class="wpi-sec" id="band-${esc(b.id)}"><h3>${esc(b.title)}</h3><div class="wpi-head">${BAND_PICTURES[b.id] || ''}<p class="muted">${esc(b.intro || '')}</p></div>`
       + `<div class="wpi-wrap"><table class="wpi-table"><thead><tr><th>Idea</th>${pathways.map((pw) => `<th>${esc(pw.title)}</th>`).join('')}</tr></thead><tbody>`
       + rs.map((r) => {
         const x = IDEAS[r.id];
@@ -110,6 +111,10 @@ export function ideasPageHtml({ title, pathways, rows, lessonHref, crumbHref = '
 .wpi-table tbody th{font-weight:400;width:26%;min-width:210px}
 .wpi-table tbody th p{margin:6px 0 0}
 .wpi-why{margin:8px 0 24px;max-width:760px}.wpi-why p{margin:8px 0}
+.wpi-head{display:flex;gap:16px;align-items:center;margin:4px 0 10px}.wpi-head p{margin:0;max-width:360px}
+.wpi-pic{flex:0 0 auto;width:340px;max-width:100%;height:auto;color:var(--ink,#222);background:var(--card,#fff);border:1px solid var(--line,#e4e1da);border-radius:10px;padding:4px}
+.wpi-pic .wpi-t{fill:#2f6f5e}.wpi-pic .wpi-ts{stroke:#2f6f5e}
+@media (prefers-color-scheme:dark){.wpi-pic .wpi-t{fill:#7fd1b5}.wpi-pic .wpi-ts{stroke:#7fd1b5}}
 .wpi-sec{margin:22px 0 8px}.wpi-sec h3{margin:0 0 2px}.wpi-sec>p.muted{margin:0 0 8px}
 .wpi-jump{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 4px;font-size:14px}
 a.wpi-bandname{text-decoration:none}a.wpi-bandname:hover{text-decoration:underline}
@@ -123,6 +128,7 @@ a.wpi-bandname{text-decoration:none}a.wpi-bandname:hover{text-decoration:underli
 .wpi-table td{min-width:190px}
 @media (max-width:720px){
   .wpi-map:not(.picked) .wpi-lines{display:none}
+  .wpi-head{flex-direction:column;align-items:flex-start}
   .wpi-map.picked .wpi-lines path:not(.on-need):not(.on-next){display:none}
   .wpi-table td{min-width:0}
   .wpi-band{flex-direction:column;align-items:flex-start;gap:6px}
