@@ -2,8 +2,12 @@
 // snippets (including what must NOT match), and the lint on the real lessons with one tag changed at a time.
 import { conceptsIn, auditConcepts, prerequisites, theoryLinks } from './concepts.mjs';
 import { loadLessons, loadDirMeta, getSnippet, CONTENT_ROOT } from './lesson.mjs';
+import { checkIdeas } from './ideas-map.mjs';
 let fails = 0;
 const fail = (m) => { fails++; console.log('FAIL', m); };
+// How coding ideas build (tools/ideas-map.mjs): every need is a known idea, no loops, CORE_IDEAS in band order.
+for (const p of checkIdeas()) fail(`ideas map: ${p}`);
+console.log('ok   ideas map data');
 const sorted = (s) => JSON.stringify([...s].sort());
 const has = (code, ids) => { const got = conceptsIn(code); const ok = ids.every((i) => got.has(i)); ok ? console.log('ok  ', JSON.stringify(code).slice(0, 56), '→', ids.join(', ')) : fail(`${JSON.stringify(code)} should use ${ids}; got ${sorted(got)}`); };
 const lacks = (code, ids) => { const got = conceptsIn(code); const ok = ids.every((i) => !got.has(i)); ok ? console.log('ok  ', JSON.stringify(code).slice(0, 56), '↛', ids.join(', ')) : fail(`${JSON.stringify(code)} should not use ${ids}; got ${sorted(got)}`); };

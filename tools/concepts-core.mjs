@@ -313,19 +313,23 @@ export const THEORY = [
  *  is not aliased: a Python object is an instance of a class, a JavaScript `{ x: 5 }` is closer to a dict. */
 export const SAME_IDEA = {
   javascript: { array: 'list', 'array-index': 'list-index', 'for-count': 'repeat', return: 'return-value', property: 'attribute', math: 'math-fn', event: 'callback' },
-  html: { list: 'html-list', 'js-event': 'callback' },
+  html: { list: 'html-list', 'js-event': 'callback', 'input-value': 'input' },
 };
 export const sameIdea = (language, id) => SAME_IDEA[language]?.[id] || id;
-/** Core ideas every pathway teaches, in teaching order, with the name a teacher would use. */
+/** Core ideas every pathway teaches, in band order (tools/ideas-map.mjs › BANDS has the bands, needs and examples),
+ *  with the name a teacher would use. `sequence` is no lesson tag: it is each pathway's first lesson. */
 export const CORE_IDEAS = [
+  { id: 'sequence', label: 'Steps in order' },
   { id: 'variable', label: 'Variables' }, { id: 'variable-update', label: 'Changing a variable (x = x + 1)' },
+  { id: 'text-join', label: 'Joining text' }, { id: 'input', label: 'Asking the user' },
   { id: 'repeat', label: 'Repeat a number of times' }, { id: 'loop-index', label: 'The loop counter' },
-  { id: 'if', label: 'If' }, { id: 'else', label: 'Else' }, { id: 'and-or', label: 'And, or' },
-  { id: 'remainder', label: 'Remainder (%)' }, { id: 'random', label: 'Random numbers' },
+  { id: 'compare', label: 'Yes-or-no questions (comparing)' }, { id: 'if', label: 'If' }, { id: 'else', label: 'Else' },
+  { id: 'and-or', label: 'And, or' }, { id: 'bool-value', label: 'True or false in a variable' },
+  { id: 'while', label: 'While loops' },
+  { id: 'callback', label: 'Events (code that runs when something happens)' },
   { id: 'list', label: 'Lists' }, { id: 'list-index', label: 'A place in a list' }, { id: 'for-of', label: 'For each item' },
-  { id: 'while', label: 'While loops' }, { id: 'bool-value', label: 'True or false in a variable' },
   { id: 'function', label: 'Functions' }, { id: 'param', label: 'Parameters' }, { id: 'return-value', label: 'Returning a value' },
-  { id: 'callback', label: 'Events (code that runs when something happens)' }, { id: 'text-join', label: 'Joining text' },
+  { id: 'random', label: 'Random numbers' }, { id: 'remainder', label: 'Remainder (%)' },
 ];
 export const theoryIds = new Set(THEORY.map((c) => c.id));
 export const conceptIds = (language) => new Set((CONCEPTS[language] || []).map((c) => c.id));

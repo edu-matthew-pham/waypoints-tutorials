@@ -33,8 +33,9 @@ import { PROJECT_CSS, projectListBody, projectPageBody } from './project-view.mj
 import { loadBriefs, briefNodes } from './briefs.mjs';
 import { BRIEF_CSS, briefListBody, briefPageBody } from './briefs-view.mjs';
 import { prerequisites, theoryLinks } from './concepts.mjs';
-import { CONCEPTS } from './concepts-core.mjs';
-import { ideasTable } from './ideas-page.mjs';
+import { CONCEPTS, CORE_IDEAS, sameIdea } from './concepts-core.mjs';
+import { ideasTable, ideasPageHtml } from './ideas-page.mjs';
+import { IDEAS } from './ideas-map.mjs';
 import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
 import { MATH_JS } from './math-expr.mjs';
@@ -896,14 +897,9 @@ const ideasPages = SUBJECTS.filter((sub) => sub.pathways.length > 1 && !sub.teac
   if (!rows.some((r) => r.cells.filter(Boolean).length > 1)) return null;
   const dir = join(OUT, 'teach', sub.path, 'ideas');
   mkdirSync(dir, { recursive: true });
-  const cell = (c) => c ? `<a href="../../../${esc(c.lesson.slug)}/">${esc(c.lesson.title)}</a><span class="muted"> · ${esc(c.course)}</span>` : '<span class="muted">not yet</span>';
-  const body = `<header class="top"><a class="crumb" href="../../">← Teacher guides</a><h1>${esc(sub.title)}: ideas across pathways</h1><p class="lede">The same coding ideas turn up in every pathway, in each pathway's own order. Each cell is the lesson where that pathway first teaches the idea, so you can say "this is the <code>if</code> you met on the micro:bit" or move a student between pathways.</p></header>`
-    + `<div class="ideas-wrap"><table class="ideas"><thead><tr><th>Idea</th>${sub.pathways.map((pw) => `<th>${esc(pw.title)}</th>`).join('')}</tr></thead><tbody>`
-    + rows.map((r) => `<tr><th scope="row">${esc(r.label)}</th>${r.cells.map((c) => `<td>${cell(c)}</td>`).join('')}</tr>`).join('')
-    + `</tbody></table></div><p class="muted">Read from each lesson's <code>introduces:</code> tags. Pathways are options, not a sequence, so a gap means that pathway teaches the idea later or leaves it out, not that something is missing.</p>`;
-  const css = '<style>.ideas-wrap{overflow-x:auto}.ideas{border-collapse:collapse;width:100%;font-size:15px}.ideas th,.ideas td{border:1px solid var(--line,#e4e1da);padding:6px 8px;text-align:left;vertical-align:top}.ideas thead th{background:var(--card,#fff)}.ideas tbody th{font-weight:600;width:24%}</style>';
-  writeFileSync(join(dir, 'index.html'), teachPage(`${sub.title}: ideas across pathways`, css + body, `teach/${sub.path}/ideas`, null));
-  return { path: `${sub.path}/ideas/`, title: `${sub.title}: ideas across pathways` };
+  const title = `${sub.title}: how the ideas build`;
+  writeFileSync(join(dir, 'index.html'), teachPage(title, ideasPageHtml({ title, pathways: sub.pathways, rows, lessonHref: (slug) => `../../../${slug}/` }), `teach/${sub.path}/ideas`, null));
+  return { path: `${sub.path}/ideas/`, title };
 }).filter(Boolean);
 // Code review sheet (tools/review-sheet.mjs): our coverage and year guesses as a printable tick-sheet for teachers.
 {
@@ -937,7 +933,14 @@ for (const coursePath of teachCourses) {
     const isM = l.language === 'maths';
     const body = lessonGuideBody(l, { esc: isM ? mathsGuide.esc : esc, md: isM ? mathsGuide.md : md, snip, highlightCode, codeBlock, studentHref: `${'../'.repeat(l.depth + 1)}${l.slug}/`, course: node.title, unit: ctx.unit, files, blocks: (code) => blocksPic(code, '../'.repeat(teachPath(l).split('/').filter(Boolean).length)), diagram: (key, blank) => diagramPic(l, key, blank, '../'.repeat(teachPath(l).split('/').filter(Boolean).length)) });
     const katexCss = isM ? `<link rel="stylesheet" href="${'../'.repeat(l.depth + 1)}_katex/katex.min.css">` : '';
-    writeFileSync(join(dir, 'index.html'), teachPage(`Teacher guide: ${l.title}`, katexCss + body, `teach/${l.slug}`, coursePath));
+    // How coding ideas build: the core ideas this lesson introduces, each with what it needs, linked to the ideas page.
+    const ideasSub = l.slug.split('/')[0], ideasHere = ideasPages.some((x) => x.path === `${ideasSub}/ideas/`)
+      ? [...new Set((l.introduces || []).map((id) => sameIdea(l.language, id)))].filter((id) => IDEAS[id]) : [];
+    const ideaLabel = (id) => (CORE_IDEAS.find((c) => c.id === id)?.label || id).replace(/\s*\(.*\)$/, '');
+    const ideasHref = `${'../'.repeat(teachPath(l).split('/').filter(Boolean).length - 2)}ideas/`;
+    const ideaChips = ideasHere.length ? `<p class="wpi-lessonideas"><b>Core ideas this lesson introduces:</b> ${ideasHere.map((id) => `<a href="${ideasHref}#idea-${esc(id)}">${esc(ideaLabel(id))}</a>${IDEAS[id].hinge ? ' (a hinge idea)' : ''}${IDEAS[id].needs.length ? ` <span class="muted">needs ${esc(IDEAS[id].needs.map(ideaLabel).join(', '))}</span>` : ''}`).join('; ')}. <a href="${ideasHref}">How the ideas build</a></p>` : '';
+    const bodyWithIdeas = ideaChips ? body.replace('</header>', `</header>${ideaChips}`) : body;
+    writeFileSync(join(dir, 'index.html'), teachPage(`Teacher guide: ${l.title}`, katexCss + bodyWithIdeas, `teach/${l.slug}`, coursePath));
   }
   // Printable cheat sheets: one per unit, and one for the whole course.
   // Snippets for this course's language only, and the code students see in each lesson.
@@ -1041,13 +1044,13 @@ for (const coursePath of teachCourses) {
     ? `<section class="tunit"><h2>Course teaching guidance</h2>${(mathsCourse ? mathsGuide.md : md)(readFileSync(courseNotesFile, 'utf8'))}</section>`
     : '';
   const intro = `<p>Each lesson works two ways. Students can work through the online tutorial at their own pace (it checks their answers and saves their progress in their browser), or you can teach it to the whole class from the slides, then send students into the tutorial for the Modify and Make steps.</p><p>Every lesson guide has plain-language notes, the answers to every check, a solution for every task, and slides and a worksheet for <a href="https://prepare.learningwaypoints.com/" target="_blank" rel="noopener">Waypoints Prepare</a>. These guide pages are not linked from student pages, but they are not secret either: keep printed Teacher editions for answers you do not want students to find.</p>`;
-  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a>${ideasPages.some((x) => coursePath.startsWith(x.path.split('/')[0] + '/')) ? ` · <a href="${'../'.repeat(coursePath.split('/').length)}${coursePath.split('/')[0]}/ideas/">Ideas across pathways</a>` : ''}</p></header>${intro}${courseResources}${courseNotes}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}${projectsGuide}${briefsGuide}`, `teach/${coursePath}`, coursePath));
+  writeFileSync(join(courseDir, 'index.html'), teachPage(`Teacher guide: ${node.title}`, `${mathsCourse ? `<link rel="stylesheet" href="${'../'.repeat(coursePath.split('/').length + 1)}_katex/katex.min.css">` : ''}<header class="top"><a class="crumb" href="${'../'.repeat(coursePath.split('/').length)}">← Teacher guides</a><h1>Teacher guide: ${esc(node.title)}</h1><p class="lede">${esc(node.summary)}</p><p class="tmeta"><a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/">Open the student course</a>${ideasPages.some((x) => coursePath.startsWith(x.path.split('/')[0] + '/')) ? ` · <a href="${'../'.repeat(coursePath.split('/').length)}${coursePath.split('/')[0]}/ideas/">How the ideas build</a>` : ''}</p></header>${intro}${courseResources}${courseNotes}${sheets ? `<p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p>` : ''}${unitBlocks}${projectsGuide}${briefsGuide}`, `teach/${coursePath}`, coursePath));
 }
 mkdirSync(join(OUT, 'teach'), { recursive: true });
 // Curriculum pointer pages (tools/pointer-pages.mjs): teacher-facing, linked only from here, draft and noindex until reviewed.
 const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curriculum', `${sub}.json`))).map((sub) => buildPointerPages(sub, { OUT, page, navFor, esc, lessons, coverage: COVERAGE, courseTitle: (p) => dirNode(p).title }));
 const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, ${esc(p.span)}${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
-writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>${x.path.endsWith('review/') ? 'A printable tick-sheet: our course years and standards coverage, for you to correct.' : 'Each core idea, and the lesson where each pathway first teaches it.'}</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
+writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>${x.path.endsWith('review/') ? 'A printable tick-sheet: our course years and standards coverage, for you to correct.' : 'Which coding ideas need which first, in plain words, how each looks in each pathway and where it is first taught.'}</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
 
 writeFileSync(join(OUT, '.nojekyll'), '');
 // Pages keeps its custom domain only while the published branch has this file, and a rebuild publish replaces the branch.
