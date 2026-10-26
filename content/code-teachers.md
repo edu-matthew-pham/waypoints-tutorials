@@ -26,7 +26,7 @@ Every lesson names the hard part up front, so students know where to expect effo
 
 At the bottom of each course page is a **Teacher guide** link. It opens a guide for each lesson (goals, what to say, where students get stuck, an exit ticket, and solutions), a deck for Prepare, a worksheet, and printable cheat sheets for each unit and for the whole course. Open projects (briefs with a skills tracker and a "show your teacher" card) are on each course's Projects page.
 
-See also [Big ideas across the pathways](../teach/code/ideas/) for how loops, variables and the rest recur from course to course.
+See also [How coding ideas build](../teach/code/ideas/): the ideas every pathway shares (variables, loops, decisions and the rest), which ones must come first, and the few ideas each pathway adds, in plain words for teachers new to coding.
 
 ## What you need
 

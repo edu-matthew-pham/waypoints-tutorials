@@ -35,7 +35,7 @@ import { BRIEF_CSS, briefListBody, briefPageBody } from './briefs-view.mjs';
 import { prerequisites, theoryLinks } from './concepts.mjs';
 import { CONCEPTS, CORE_IDEAS, sameIdea } from './concepts-core.mjs';
 import { ideasTable, ideasPageHtml } from './ideas-page.mjs';
-import { IDEAS } from './ideas-map.mjs';
+import { IDEAS, PATHWAY_IDEAS } from './ideas-map.mjs';
 import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
 import { MATH_JS } from './math-expr.mjs';
@@ -820,7 +820,7 @@ for (const node of dirs.values()) {
     const viewToggle = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
       `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trails</button><button type="button" data-view="list">List for teachers</button></div>`;
     // Find a lesson (25 Oct 2026): the search box limited to this subject, with the ways teachers also look beside it.
-    const finders = [cur ? `<a href="map/">Curriculum map</a>` : '', node.path === 'code' ? `<a href="${up}teach/code/ideas/">Big ideas across pathways</a> · <a href="${up}teach/code/review/">Review sheet</a>` : ''].filter(Boolean);
+    const finders = [cur ? `<a href="map/">Curriculum map</a>` : '', node.path === 'code' ? `<a href="${up}teach/code/ideas/">How coding ideas build</a> · <a href="${up}teach/code/review/">Review sheet</a>` : ''].filter(Boolean);
     const subjSearch = searchBoxHtml({ root: up, subject: node.path, hint: SEARCH_HINTS[node.path] || SEARCH_HINTS[''], extra: finders.length ? `Or browse: ${finders.join(' · ')}` : '' });
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
@@ -848,6 +848,9 @@ for (const node of dirs.values()) {
         `<header class="top"><nav class="pswitch" aria-label="Pathways in ${esc(node.title)}"><a class="pall" href="../../">← All ${esc(node.title)} pathways</a>${pathways.map((x) => `<a href="../${esc(x.id)}/"${x === pw ? ' aria-current="page"' : ''}>${esc(x.title)}</a>`).join('')}</nav><h1>${esc(pw.title)}</h1>${pw.summary ? `<p class="lede">${esc(pw.summary)}</p>` : ''}</header>` +
         (useTrail ? view + `<div class="pview-map">${trail}</div>` : '') + `<div class="pview-list">` +
         (pw.about ? `<div class="pabout">${new Marked().parse(String(pw.about))}</div>` : '') +
+        // How coding ideas build › Part 2: this pathway's own ideas, linking to their section of the ideas page.
+        (() => { const gs = node.path === 'code' ? PATHWAY_IDEAS.filter((g) => g.pathway === pw.id) : [];
+          return gs.length ? `<div class="pabout wpt-pideas"><p><b>Ideas this pathway adds</b> to the ones every pathway shares: ${gs.map((g) => `${gs.length > 1 ? `${esc(g.title.replace(/^.*: /, ''))}: ` : ''}${g.ideas.map((x) => esc(x.label.toLowerCase())).join(', ')}`).join('; ')}. <a href="${pup}teach/code/ideas/#path-${esc(gs[0].id)}">See how they build on the shared ideas</a>.</p></div>` : ''; })() +
         (built ? '' : `<p class="pnote">Nothing to open here yet: these courses are being written. The other pathways teach the same big ideas, so you can start there.</p>`) +
         `<section class="pathway">${stages(pw, pup)}</section></div>` +
         '',
@@ -898,7 +901,7 @@ const ideasPages = SUBJECTS.filter((sub) => sub.pathways.length > 1 && !sub.teac
   const dir = join(OUT, 'teach', sub.path, 'ideas');
   mkdirSync(dir, { recursive: true });
   const title = `${sub.title}: how the ideas build`;
-  writeFileSync(join(dir, 'index.html'), teachPage(title, ideasPageHtml({ title, pathways: sub.pathways, rows, lessonHref: (slug) => `../../../${slug}/` }), `teach/${sub.path}/ideas`, null));
+  writeFileSync(join(dir, 'index.html'), teachPage(title, ideasPageHtml({ title, pathways: sub.pathways, rows, lessonHref: (slug) => `../../../${slug}/`, lessonInfo: (slug) => { const l = lessons.find((x) => x.slug === slug); return l && { title: l.title, course: dirNode(slug.split('/').slice(0, -1).join('/')).title }; } }), `teach/${sub.path}/ideas`, null));
   return { path: `${sub.path}/ideas/`, title };
 }).filter(Boolean);
 // Code review sheet (tools/review-sheet.mjs): our coverage and year guesses as a printable tick-sheet for teachers.
@@ -939,7 +942,9 @@ for (const coursePath of teachCourses) {
     const ideaLabel = (id) => (CORE_IDEAS.find((c) => c.id === id)?.label || id).replace(/\s*\(.*\)$/, '');
     const ideasHref = `${'../'.repeat(teachPath(l).split('/').filter(Boolean).length - 2)}ideas/`;
     const ideaChips = ideasHere.length ? `<p class="wpi-lessonideas"><b>Core ideas this lesson introduces:</b> ${ideasHere.map((id) => `<a href="${ideasHref}#idea-${esc(id)}">${esc(ideaLabel(id))}</a>${IDEAS[id].hinge ? ' (a hinge idea)' : ''}${IDEAS[id].needs.length ? ` <span class="muted">needs ${esc(IDEAS[id].needs.map(ideaLabel).join(', '))}</span>` : ''}`).join('; ')}. <a href="${ideasHref}">How the ideas build</a></p>` : '';
-    const bodyWithIdeas = ideaChips ? body.replace('</header>', `</header>${ideaChips}`) : body;
+    const pathHere = ideasPages.some((x) => x.path === `${ideasSub}/ideas/`) ? PATHWAY_IDEAS.flatMap((g) => g.ideas).filter((x) => x.lesson === l.slug) : [];
+    const pathChips = pathHere.length ? `<p class="wpi-lessonideas"><b>Pathway idea first taught here:</b> ${pathHere.map((x) => `<a href="${ideasHref}#idea-${esc(x.id)}">${esc(x.label)}</a>${x.hinge ? ' (a hinge idea)' : ''}`).join('; ')}.</p>` : '';
+    const bodyWithIdeas = (ideaChips || pathChips) ? body.replace('</header>', `</header>${ideaChips}${pathChips}`) : body;
     writeFileSync(join(dir, 'index.html'), teachPage(`Teacher guide: ${l.title}`, katexCss + bodyWithIdeas, `teach/${l.slug}`, coursePath));
   }
   // Printable cheat sheets: one per unit, and one for the whole course.

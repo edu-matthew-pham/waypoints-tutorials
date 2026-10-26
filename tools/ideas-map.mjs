@@ -19,7 +19,8 @@ export const BANDS = [
 // MakeCode examples are block shapes, one per line: "category: text", indented two spaces per level inside the
 // block above. Categories use MakeCode's own toolbox colours (BLOCK_COLOURS).
 export const BLOCK_COLOURS = { basic: '#1E90FF', input: '#D400D4', loops: '#00AA00', logic: '#00A4A6', variables: '#DC143C',
-  math: '#9400D3', functions: '#3455DB', arrays: '#E65722', text: '#B8860B' };
+  math: '#9400D3', functions: '#3455DB', arrays: '#E65722', text: '#B8860B',
+  radio: '#E3008C', sprites: '#4B7BEC', controller: '#D54322', game: '#8854D0', info: '#CF6A87' };
 
 /** Per idea: band, needs (ids that must come first), hinge, plain words, an optional note, and examples by tool
  *  (makecode: block lines; python and javascript: code; html: code, used when a pathway's example is HTML).
@@ -113,6 +114,62 @@ export const IDEAS = {
     makecode: ['math: remainder of count ÷ 2'], python: 'if i % 2 == 0:', javascript: 'if (i % 2 === 0) {' },
 };
 
+/** What each pathway adds (Part 2 of the ideas page): a few ideas of its own, which are often what a non-specialist
+ *  finds hardest because they aren't general coding. Each names the shared ideas it builds on (`builds`, ids in IDEAS),
+ *  plain words, a tiny example, and the lesson that first teaches it (`lesson`, a slug). `pathway` is the id in
+ *  content/code/index.md that this section's pointer sits on (micro:bit and Arcade are both MakeCode). */
+export const PATHWAY_IDEAS = [
+  { id: 'web', pathway: 'web', title: 'Web', intro: 'Making pages: what each part is, how it looks, and how code can change it.', ideas: [
+    { id: 'structure-style', label: 'What it is, and how it looks', builds: ['sequence'], lesson: 'code/html/selectors',
+      plain: 'HTML says what each part of a page is (a heading, a list, a link). CSS says how it looks. You can change the whole look without touching the content.',
+      code: { lang: 'html', text: '<h1>My club</h1>\n\nh1 { color: teal; }' } },
+    { id: 'box-tree', label: 'Boxes inside boxes', builds: ['structure-style'], lesson: 'code/html/html-nesting',
+      plain: 'Every part of a page is a box, and boxes sit inside other boxes, like folders inside folders. Laying out a page means arranging those boxes.',
+      code: { lang: 'html', text: '<section>\n  <h2>News</h2>\n  <p>…</p>\n</section>' } },
+    { id: 'fit-screens', label: 'One page, every screen', builds: ['box-tree'], lesson: 'code/css/flex-wrap',
+      plain: 'The same page rearranges its boxes to fit a phone or a big screen, instead of making a page for each.',
+      code: { lang: 'css', text: '.cards { display: flex;\n         flex-wrap: wrap; }' } },
+    { id: 'change-page', label: 'Code can change the page', builds: ['box-tree', 'callback'], lesson: 'code/dom/dom-change',
+      plain: 'JavaScript can find a part of the page and change it after the page has loaded, for example when someone clicks a button.',
+      code: { lang: 'javascript', text: 'document.querySelector("h1")\n  .textContent = "Welcome back!";' } },
+  ] },
+  { id: 'microbit', pathway: 'makecode', title: 'MakeCode: micro:bit', intro: 'A small computer you can hold: it runs all the time, senses the world and talks to other micro:bits.', ideas: [
+    { id: 'runs-forever', label: 'A program that never stops', builds: ['repeat'], lesson: 'code/microbit/microbit-forever',
+      plain: 'A micro:bit program usually runs in a "forever" loop, checking and reacting again and again until it is switched off, instead of running once and finishing.',
+      blocks: ['basic: forever', '  basic: show icon ♥', '  basic: show icon ♡'] },
+    { id: 'sensors', label: 'Reading the real world', builds: ['variable', 'compare'], lesson: 'code/microbit/microbit-sensors',
+      plain: 'Light, tilt and temperature arrive as numbers, so the program can store them, compare them and decide what to do.',
+      blocks: ['basic: forever', '  logic: if light level < 50 then', '    basic: show icon ☾'] },
+    { id: 'radio', label: 'Devices talking to each other', builds: ['callback'], lesson: 'code/microbit-play/microbit-radio',
+      plain: 'One micro:bit sends a number or a word by radio, and every micro:bit in the same group can receive it and react.',
+      blocks: ['radio: radio send number 1', 'radio: on radio received number', '  basic: show number'] },
+  ] },
+  { id: 'arcade', pathway: 'makecode', title: 'MakeCode: Arcade', intro: 'Making games: everything moves a little, many times a second.', ideas: [
+    { id: 'sprites', label: 'Sprites', builds: ['variable'], lesson: 'code/arcade/arcade-sprites',
+      plain: 'Each character or object in a game is a sprite: a small picture with a position and a speed that the game keeps track of.',
+      blocks: ['sprites: set hero to sprite of kind Player', 'controller: move hero with buttons'] },
+    { id: 'overlaps', label: 'When two sprites touch', builds: ['sprites', 'callback'], lesson: 'code/arcade/arcade-overlaps',
+      plain: 'When two sprites overlap, an event runs: a coin is collected, a life is lost. The kind of each sprite decides which event.',
+      blocks: ['sprites: on Player overlaps Food', '  info: change score by 1'] },
+    { id: 'game-loop', label: 'Every frame', builds: ['repeat', 'if'], lesson: 'code/arcade/arcade-if',
+      plain: 'Many times a second the game moves everything a little, checks what has happened and redraws the screen. Code can run on every one of those frames.',
+      blocks: ['game: on game update', '  logic: if hero x > 150 then', '    game: game over'] },
+  ] },
+  { id: 'python', pathway: 'python', title: 'Python', intro: 'From drawing to text programs and data: what Python adds once students leave the turtle.', ideas: [
+    { id: 'conversation', label: 'A program that talks', builds: ['input', 'text-join'], lesson: 'code/console/console-print',
+      plain: 'Printing text out and reading what someone types in, so a program can hold a conversation instead of drawing a picture.',
+      code: { lang: 'python', text: 'name = input("Your name? ")\nprint("Hi " + name)' } },
+    { id: 'text-not-number', label: 'Text that looks like a number', builds: ['input', 'variable'], lesson: 'code/console/console-numbers', hinge: true,
+      plain: 'Whatever someone types arrives as text, even "12". It has to be turned into a number before you can do sums with it.',
+      note: 'Students are often surprised that "12" + "1" gives "121".',
+      code: { lang: 'python', text: 'age = int(input("Age? "))\nprint(age + 1)' } },
+    { id: 'data-lasts', label: 'Data that lasts', builds: ['list'], lesson: 'code/deeper/deeper-save',
+      plain: 'Saving to a file so the data is still there after the program closes, like a game that remembers your progress.',
+      code: { lang: 'python', text: 'with open("save.txt", "w") as f:\n    f.write(str(score))' } },
+  ] },
+];
+export const pathwayIdea = (id) => PATHWAY_IDEAS.flatMap((g) => g.ideas.map((x) => ({ ...x, group: g }))).find((x) => x.id === id);
+
 /** The example a pathway shows: MakeCode blocks, else Python, else JavaScript (HTML when that's all an idea has). */
 export const TOOL_OF = { python: 'python', web: 'javascript', makecode: 'makecode' };
 export function exampleFor(id, pathwayId) {
@@ -152,6 +209,14 @@ export function checkIdeas() {
     if (ancestors(id).has(id)) out.push(`${id}: its needs loop back to itself`);
     if (BANDS[b]?.toolkit && x.needs.length) out.push(`${id}: toolkit ideas need nothing`);
     for (const line of x.makecode || []) { const m = line.trim().match(/^(\w+):/); if (!m || !BLOCK_COLOURS[m[1]]) out.push(`${id}: block line "${line}" has no known category`); }
+  }
+  const seen = new Set(Object.keys(IDEAS));
+  for (const g of PATHWAY_IDEAS) for (const x of g.ideas) {
+    if (seen.has(x.id)) out.push(`${x.id}: pathway idea id used twice`);
+    for (const b of x.builds) if (!seen.has(b) && !g.ideas.some((y) => y.id === b)) out.push(`${x.id}: builds on unknown idea ${b}`);
+    seen.add(x.id);
+    if (!x.plain || !x.lesson) out.push(`${x.id}: needs plain words and a lesson`);
+    for (const line of x.blocks || []) { const m = line.trim().match(/^(\w+):/); if (!m || !BLOCK_COLOURS[m[1]]) out.push(`${x.id}: block line "${line}" has no known category`); }
   }
   return out;
 }

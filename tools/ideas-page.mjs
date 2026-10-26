@@ -3,7 +3,7 @@
 // each idea needs first and a table by band with plain words and a tiny example per tool. Pure, so a test or
 // another page can use it; build-site writes it to /teach/<subject>/ideas/.
 import { CORE_IDEAS, sameIdea } from './concepts-core.mjs';
-import { BANDS, IDEAS, BLOCK_COLOURS, exampleFor, unlocks } from './ideas-map.mjs';
+import { BANDS, IDEAS, BLOCK_COLOURS, PATHWAY_IDEAS, exampleFor, unlocks } from './ideas-map.mjs';
 import { BAND_PICTURES } from './ideas-pictures.mjs';
 
 /** pathways: [{ id, title, courses: [{ path }] }] from a subject's index.md; lessons: parsed lessons with slug,
@@ -36,14 +36,15 @@ function blocksHtml(lines) {
   }).join('')}</div>`;
 }
 const exampleHtml = (ex) => !ex ? '' : ex.kind === 'blocks' ? blocksHtml(ex.lines) : `<pre class="wpi-code"><code>${esc(ex.code)}</code></pre>`;
+const pathExample = (x) => x.blocks ? blocksHtml(x.blocks) : x.code ? `<pre class="wpi-code"><code>${esc(x.code.text)}</code></pre>` : '';
 
 /** The page body (header, map, table, notes) with its own style and script. lessonHref(slug) gives a lesson's link. */
-export function ideasPageHtml({ title, pathways, rows, lessonHref, crumbHref = '../../' }) {
+export function ideasPageHtml({ title, pathways, rows, lessonHref, lessonInfo = () => null, crumbHref = '../../' }) {
   const byId = new Map(rows.map((r) => [r.id, r]));
   const nameOf = (id) => shortLabel(byId.get(id)?.label || id);
   const data = Object.fromEntries(rows.map((r) => [r.id, { label: shortLabel(r.label), needs: IDEAS[r.id].needs, unlocks: unlocks(r.id), plain: IDEAS[r.id].plain, hinge: !!IDEAS[r.id].hinge }]));
 
-  const map = `<section class="wpi-map" aria-label="Map of how the ideas build"><div class="wpi-mapinner">`
+  const map = `<section class="wpi-map" id="wpi-map" aria-label="Map of how the ideas build"><div class="wpi-mapinner">`
     + BANDS.map((b) => {
       const ids = rows.filter((r) => IDEAS[r.id].band === b.id).map((r) => r.id);
       return `<div class="wpi-band${b.toolkit ? ' wpi-tool' : ''}"><a class="wpi-bandname" href="#band-${esc(b.id)}">${esc(b.title)}</a><div class="wpi-nodes">${ids.map((id) =>
@@ -69,16 +70,42 @@ export function ideasPageHtml({ title, pathways, rows, lessonHref, crumbHref = '
           }).join('') + '</tr>';
       }).join('') + '</tbody></table></div></section>';
   }).join('');
-  const jump = `<nav class="wpi-jump" aria-label="Groups of ideas">${BANDS.map((b) => `<a href="#band-${esc(b.id)}">${esc(b.title.replace(/:.*/, ''))}</a>`).join('')}</nav>`;
+  // Part 2: what each pathway adds (PATHWAY_IDEAS). Each idea names the shared ideas it builds on.
+  const allPathIdeas = new Map(PATHWAY_IDEAS.flatMap((g) => g.ideas.map((x) => [x.id, x])));
+  const ideaLink = (id) => IDEAS[id] ? `<a href="#idea-${esc(id)}">${esc(nameOf(id))}</a>` : `<a href="#idea-${esc(id)}">${esc(allPathIdeas.get(id)?.label || id)}</a>`;
+  const part2 = PATHWAY_IDEAS.map((g) => `<section class="wpi-sec" id="path-${esc(g.id)}"><h3>${esc(g.title)}</h3><div class="wpi-head">${BAND_PICTURES[g.id] || ''}<p class="muted">${esc(g.intro)}</p></div>`
+    + `<div class="wpi-wrap"><table class="wpi-table wpi-ptable"><thead><tr><th>Idea</th><th>Looks like</th><th>First taught in</th></tr></thead><tbody>`
+    + g.ideas.map((x) => {
+      const li = lessonInfo(x.lesson);
+      return `<tr id="idea-${esc(x.id)}"><th scope="row"><b>${esc(x.label)}</b>${x.hinge ? ' <span class="wpi-badge">hinge</span>' : ''}<p>${esc(x.plain)}</p>${x.note ? `<p class="muted">${esc(x.note)}</p>` : ''}<p class="wpi-needs">Builds on: ${x.builds.map(ideaLink).join(', ')}</p></th>`
+        + `<td data-path="Looks like">${pathExample(x)}</td>`
+        + `<td data-path="First taught in"><p class="wpi-lesson">${li ? `<a href="${esc(lessonHref(x.lesson))}">${esc(li.title)}</a><span class="muted"> · ${esc(li.course)}</span>` : '<span class="muted">Not yet</span>'}</p></td></tr>`;
+    }).join('') + '</tbody></table></div></section>').join('');
+
+  // The sidebar (wide screens) or a sticky "Jump to" bar (phones): both parts, groups with their ideas, hinges dotted.
+  const tocIdea = (id, label, hinge) => `<li><a href="#idea-${esc(id)}" data-idea="${esc(id)}">${esc(label)}${hinge ? ' <span class="wpi-dot" title="hinge idea">●</span>' : ''}</a></li>`;
+  const toc = `<aside class="wpi-side"><details class="wpi-toc" open><summary>Jump to…</summary><nav aria-label="On this page">`
+    + `<p class="wpi-tochead">Shared by every pathway</p><ul>`
+    + `<li><a href="#wpi-map" data-sec="wpi-map">Map</a></li><li><a href="#wpi-why" data-sec="wpi-why">Why it matters</a></li>`
+    + BANDS.map((b) => { const rs = rows.filter((r) => IDEAS[r.id].band === b.id);
+      return `<li class="wpi-tg"><a href="#band-${esc(b.id)}" data-sec="band-${esc(b.id)}">${esc(b.title.replace(/:.*/, ''))}</a><ul>${rs.map((r) => tocIdea(r.id, nameOf(r.id), IDEAS[r.id].hinge)).join('')}</ul></li>`; }).join('')
+    + `</ul><p class="wpi-tochead">What each pathway adds</p><ul>`
+    + PATHWAY_IDEAS.map((g) => `<li class="wpi-tg"><a href="#path-${esc(g.id)}" data-sec="path-${esc(g.id)}">${esc(g.title)}</a><ul>${g.ideas.map((x) => tocIdea(x.id, x.label, x.hinge)).join('')}</ul></li>`).join('')
+    + `</ul></nav></details></aside>`;
   const body = `<header class="top"><a class="crumb" href="${esc(crumbHref)}">← Teacher guides</a><h1>${esc(title)}</h1>`
-    + `<p class="lede">Every pathway teaches the same few coding ideas, each in its own order and its own tool. Some ideas must come before others; the rest can come in any order. This page shows which is which, what each idea looks like in each tool, and where each pathway first teaches it.</p></header>`
+    + `<p class="lede">Every pathway teaches the same few coding ideas, each in its own order and its own tool. Some ideas must come before others; the rest can come in any order. Part 1 shows which is which, what each idea looks like in each tool, and where each pathway first teaches it. Part 2 adds the few ideas each pathway has of its own.</p></header>`
+    + `<div class="wpi-layout">${toc}<div class="wpi-main">`
+    + `<h2 class="wpi-part">Part 1: ideas every pathway shares</h2>`
     + map
-    + `<section class="wpi-why"><h2>Why these ideas matter, even if coding isn't your strength</h2>`
+    + `<section class="wpi-why" id="wpi-why"><h2>Why these ideas matter, even if coding isn't your strength</h2>`
     + `<p>You don't need to be a programmer to teach or use these ideas. They are about what a program does, not the exact words you type: the same idea looks different in blocks, Python and JavaScript, and the plain words below are enough to talk about it.</p>`
     + `<p>The ideas also matter when an AI tool helps write some of the code, as it increasingly does. Someone still has to say precisely what the program should do, check that it does it, and say what to change when it doesn't. That takes the ideas on this page, the hinge ideas most of all: a value that changes as the program runs, the loop counter, and the yes-or-no questions, where mistakes hide at the edges (does \u201cmore than 10\u201d include 10?). Typing the code by hand may matter less than it did; knowing what each part does, and predicting what it will do, matters as much as ever.</p></section>`
-    + `<h2>The ideas, in plain words</h2><p>Grouped as on the map. Each row says what the idea means, then how it looks in each pathway and the lesson where that pathway first teaches it. Pathways are options, not a sequence: a gap means that pathway teaches the idea later or leaves it out.</p>`
-    + jump + sections
-    + `<p class="muted">Read from each lesson's <code>introduces:</code> tags. MakeCode blocks are drawn here as plain shapes in MakeCode's colours, not screenshots.</p>`;
+    + `<h2>The shared ideas, in plain words</h2><p>Grouped as on the map. Each row says what the idea means, then how it looks in each pathway and the lesson where that pathway first teaches it. Pathways are options, not a sequence: a gap means that pathway teaches the idea later or leaves it out.</p>`
+    + sections
+    + `<h2 class="wpi-part" id="part-2">Part 2: what each pathway adds</h2><p>Each pathway also has a few ideas of its own. These are often what a teacher new to that tool finds hardest, because they are about the tool's world (pages, devices, games, text programs) rather than coding in general. Each says which shared ideas it builds on.</p>`
+    + part2
+    + `<p class="muted">Read from each lesson's <code>introduces:</code> tags. MakeCode blocks are drawn here as plain shapes in MakeCode's colours, not screenshots.</p>`
+    + `</div></div>`;
 
   const css = `<style>
 .wpi-map{margin:12px 0 28px}
@@ -116,7 +143,32 @@ export function ideasPageHtml({ title, pathways, rows, lessonHref, crumbHref = '
 .wpi-pic .wpi-t,.wpi-pic .wpi-tf{fill:#2f6f5e}.wpi-pic .wpi-ts{stroke:#2f6f5e}
 @media (prefers-color-scheme:dark){.wpi-pic .wpi-t,.wpi-pic .wpi-tf{fill:#7fd1b5}.wpi-pic .wpi-ts{stroke:#7fd1b5}}
 .wpi-sec{margin:22px 0 8px}.wpi-sec h3{margin:0 0 2px}.wpi-sec>p.muted{margin:0 0 8px}
-.wpi-jump{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 4px;font-size:14px}
+.wpi-part{margin-top:34px;padding-top:10px;border-top:2px solid var(--line,#e4e1da)}
+.wpi-layout{display:block}
+.wpi-toc{font-size:14px}
+.wpi-toc summary{cursor:pointer;font-weight:600;list-style:none}
+.wpi-toc summary::-webkit-details-marker{display:none}
+.wpi-toc summary::after{content:" ▾"}
+.wpi-toc ul{list-style:none;margin:0;padding:0}
+.wpi-toc li a{display:block;padding:3px 8px;border-radius:6px;color:var(--ink,#222);text-decoration:none;line-height:1.3}
+.wpi-toc li a:hover{background:var(--card,#f3f1ec)}
+.wpi-toc li a.on{background:#2f6f5e1f;color:#2f6f5e;font-weight:600}
+.wpi-toc .wpi-tg>ul{display:none;margin:0 0 4px 10px;border-left:2px solid var(--line,#e4e1da)}
+.wpi-toc .wpi-tg.open>ul{display:block}
+.wpi-toc .wpi-tg>ul a{font-size:13px;color:var(--muted,#6b6b6b)}
+.wpi-tochead{margin:12px 0 4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b6b6b)}
+.wpi-dot{color:#2f6f5e;font-size:9px;vertical-align:1px}
+@media (min-width:1100px){
+  .wrap{max-width:1220px}
+  .wpi-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:32px;align-items:start}
+  .wpi-side{position:sticky;top:calc(var(--nav,56px) + 14px);max-height:calc(100vh - var(--nav,56px) - 28px);overflow-y:auto;padding-right:4px}
+  .wpi-toc summary{display:none}
+}
+@media (max-width:1099.98px){
+  .js-wpi .wpi-side{position:sticky;top:var(--nav,56px);z-index:20;background:var(--bg,#fbfaf7);padding:8px 0;border-bottom:1px solid var(--line,#e4e1da);margin:0 0 12px}
+  .wpi-toc summary{padding:6px 12px;border:1px solid var(--line,#e4e1da);border-radius:8px;background:var(--card,#fff);display:inline-block}
+  .wpi-toc[open] nav{max-height:60vh;overflow-y:auto;margin-top:6px;padding:4px;border:1px solid var(--line,#e4e1da);border-radius:8px;background:var(--card,#fff)}
+}
 a.wpi-bandname{text-decoration:none}a.wpi-bandname:hover{text-decoration:underline}
 .wpi-table tr:target th,.wpi-table tr:target td{background:#2f6f5e14}
 .wpi-badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1px 6px;border-radius:4px;background:#2f6f5e;color:#fff;vertical-align:2px}
@@ -184,6 +236,29 @@ Object.keys(nodes).forEach(function(id){nodes[id].addEventListener('click',funct
 var t; window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(draw,100);});
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
 draw();
+})();
+(function(){
+var side=document.querySelector('.wpi-side'), det=side&&side.querySelector('.wpi-toc'); if(!det) return;
+document.documentElement.classList.add('js-wpi');
+var wide=window.matchMedia('(min-width:1100px)');
+function fit(){ det.open=wide.matches; } fit(); if(wide.addEventListener) wide.addEventListener('change',fit);
+det.addEventListener('click',function(e){ if(e.target.closest('a')&&!wide.matches) det.open=false; });
+var links={}, ideaLinks={};
+side.querySelectorAll('a[data-sec]').forEach(function(a){links[a.getAttribute('data-sec')]=a;});
+side.querySelectorAll('a[data-idea]').forEach(function(a){ideaLinks[a.getAttribute('data-idea')]=a;});
+var secs=Object.keys(links).map(function(id){return document.getElementById(id);}).filter(Boolean);
+var rows=Object.keys(ideaLinks).map(function(id){return document.getElementById('idea-'+id);}).filter(Boolean);
+function current(list){ var top=(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav'))||56)+80, best=null;
+  list.forEach(function(el){ if(el.getBoundingClientRect().top<=top) best=el; }); return best; }
+var ticking=false;
+function spy(){ ticking=false;
+  var s=current(secs), r=current(rows);
+  Object.keys(links).forEach(function(id){ var on=!!s&&s.id===id; links[id].classList.toggle('on',on); var li=links[id].parentNode; if(li.classList.contains('wpi-tg')) li.classList.toggle('open',on); });
+  Object.keys(ideaLinks).forEach(function(id){ var on=!!r&&r.id==='idea-'+id&&!!s&&s.contains(r); ideaLinks[id].classList.toggle('on',on); });
+  if(wide.matches&&s){ var a=links[s.id], sr=side.getBoundingClientRect(), ar=a.getBoundingClientRect(); if(ar.top<sr.top||ar.bottom>sr.bottom) side.scrollTop+=ar.top-sr.top-40; }
+}
+window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(spy);} },{passive:true});
+spy();
 })();</script>`;
   return css + body + js;
 }

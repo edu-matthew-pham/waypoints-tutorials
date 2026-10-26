@@ -77,7 +77,47 @@ const PICTURES = {
       + `<circle cx="${161 + g * 46}" cy="56" r="5" fill="${T}"/><circle cx="${177 + g * 46}" cy="56" r="5" fill="${T}"/>`).join('')
     + `<circle cx="300" cy="56" r="5" fill="${O}"/>` + text(300, 34, '1 left', `font-size="12" fill="${O}" font-weight="700"`)
     + text(230, 106, '7 % 2 = 1', 'font-size="13" font-weight="700"')),
+
+  // Part 2: what each pathway adds.
+  web: svg('The same nested boxes twice: on the left plain, labelled what it is; on the right coloured by CSS, labelled how it looks',
+    box(14, 26, 120, 76) + text(74, 20, 'what it is (HTML)', 'font-size="11.5"') + box(26, 40, 96, 52) + text(74, 54, 'section', 'font-size="11"')
+    + box(36, 60, 76, 12) + box(36, 76, 76, 12) + text(74, 70, 'h2', 'font-size="10"') + text(74, 86, 'p', 'font-size="10"')
+    + arrow(140, 64, 196, 64) + text(168, 56, '+ CSS', 'font-size="12" font-weight="700" class="wpi-t"')
+    + `<rect x="204" y="26" width="120" height="76" rx="8" fill="${T}" opacity=".18"/>` + box(204, 26, 120, 76) + text(264, 20, 'how it looks (CSS)', 'font-size="11.5"')
+    + `<rect x="216" y="40" width="96" height="52" rx="8" fill="#ffffff" opacity=".9" stroke="${O}" stroke-width="2"/>`
+    + `<rect x="226" y="60" width="76" height="12" rx="3" fill="${O}"/>` + `<rect x="226" y="77" width="56" height="5" rx="2.5" fill="#888" opacity=".7"/><rect x="226" y="84" width="66" height="5" rx="2.5" fill="#888" opacity=".7"/>`
+    + text(170, 118, 'boxes inside boxes; change the look, not the content', 'font-size="12" opacity=".75"'), 126),
+
+  microbit: ((HEART) => svg('A micro:bit running forever, reading a light level as a number, and sending a message by radio to another micro:bit',
+    `<rect x="40" y="38" width="76" height="64" rx="10" fill="none" stroke="currentColor" stroke-width="1.8"/>`
+    + [0, 1, 2, 3, 4].flatMap((r) => [0, 1, 2, 3, 4].map((c) => `<circle cx="${56 + c * 11}" cy="${48 + r * 11}" r="2.6" fill="${HEART.some(([y, x]) => y === r && x === c) ? O : 'currentColor'}" opacity="${HEART.some(([y, x]) => y === r && x === c) ? 1 : .25}"/>`)).join('')
+    + `<path d="M50,34 C50,12 106,12 106,30" fill="none" class="wpi-ts" stroke-width="1.8" marker-end="url(#wpia)"/>` + text(78, 12, 'forever', 'font-size="12" font-weight="700" class="wpi-t"')
+    + `<circle cx="16" cy="70" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/>` + [0, 1, 2, 3, 4, 5, 6, 7].map((k) => { const a = k * Math.PI / 4; return `<line x1="${(16 + 10 * Math.cos(a)).toFixed(1)}" y1="${(70 + 10 * Math.sin(a)).toFixed(1)}" x2="${(16 + 13 * Math.cos(a)).toFixed(1)}" y2="${(70 + 13 * Math.sin(a)).toFixed(1)}" stroke="currentColor" stroke-width="1.2"/>`; }).join('')
+    + text(78, 118, 'light: 180', 'font-size="12" font-weight="600"')
+    + [0, 1, 2].map((k) => `<path d="M${136 + k * 12},${54 - k * 6} q8,${16 + k * 6} 0,${32 + k * 12}" fill="none" stroke="${O}" stroke-width="1.8"/>`).join('')
+    + text(168, 40, 'radio', `font-size="12" font-weight="700" fill="${O}"`)
+    + `<rect x="196" y="46" width="60" height="50" rx="9" fill="none" stroke="currentColor" stroke-width="1.6"/>` + text(226, 76, '1', 'font-size="18" font-weight="700"')
+    + arrow(258, 71, 278, 71) + text(306, 75, 'reacts', 'font-size="12"')
+    + text(226, 118, 'another micro:bit', 'font-size="12" opacity=".75"'), 126))([[0,1],[0,3],[1,0],[1,1],[1,2],[1,3],[1,4],[2,0],[2,1],[2,2],[2,3],[2,4],[3,1],[3,2],[3,3],[4,2]]),
+
+  arcade: svg('Three frames of a game: a sprite moves a little each frame and, in the third, touches a coin and scores a point',
+    [0, 1, 2].map((f) => box(14 + f * 108, 24, 96, 66) + text(62 + f * 108, 18, `frame ${f + 1}`, 'font-size="11.5"')
+      + `<rect x="${24 + f * 108 + f * 22}" y="56" width="18" height="18" rx="3" class="wpi-tf"/>`
+      + `<circle cx="${86 + f * 108}" cy="${65}" r="7" fill="${f === 2 ? 'none' : '#E3B505'}" stroke="#B88A00" stroke-width="1.4" ${f === 2 ? 'opacity="0"' : ''}/>`).join('')
+    + text(294, 46, '+1', `font-size="16" font-weight="700" fill="${O}"`) + [[-14, 0], [14, 0], [0, -14], [-10, -10], [10, -10]].map(([dx, dy]) => `<line x1="${294 + dx * .6}" y1="${65 + dy * .6}" x2="${294 + dx}" y2="${65 + dy}" stroke="${O}" stroke-width="2"/>`).join('')
+    + text(170, 112, 'move a little, check, redraw: many times a second', 'font-size="12" opacity=".75"'), 122),
+
+  python: svg('A console conversation where the program asks a name and replies, and the text 12 joined to the text 1 giving 121 while the number 12 plus 1 gives 13',
+    `<rect x="12" y="20" width="168" height="78" rx="8" fill="#1d2430" stroke="currentColor" stroke-opacity=".35"/>`
+    + `<text x="24" y="44" font-family="ui-monospace,monospace" font-size="12" fill="#f3f1ec">Your name? <tspan fill="#7fd1b5">Sam</tspan></text>`
+    + `<text x="24" y="64" font-family="ui-monospace,monospace" font-size="12" fill="#f3f1ec">Hi Sam</text>`
+    + `<text x="24" y="84" font-family="ui-monospace,monospace" font-size="12" fill="#f3f1ec">Age? <tspan fill="#7fd1b5">12</tspan></text>`
+    + text(96, 114, 'a program that talks', 'font-size="12" opacity=".75"')
+    + text(262, 30, 'text or number?', 'font-size="12" font-weight="700"')
+    + text(262, 56, '"12" + "1" \u2192 "121"', `font-size="13" font-family="ui-monospace,monospace" fill="${O}"`)
+    + text(262, 82, '12 + 1 \u2192 13', 'font-size="13" font-family="ui-monospace,monospace" class="wpi-t"')
+    + text(262, 106, 'typing gives text first', 'font-size="11.5" opacity=".75"'), 122),
 };
 
-/** Each band's drawing, with its arrowhead id made unique so nine inline SVGs can share a page. */
+/** Each band's and pathway group's drawing, with its arrowhead id made unique so the inline SVGs can share a page. */
 export const BAND_PICTURES = Object.fromEntries(Object.entries(PICTURES).map(([k, v]) => [k, v.replaceAll('wpia', `wpia-${k}`)]));
