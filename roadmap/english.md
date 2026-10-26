@@ -23,6 +23,8 @@ Plan: Project doc `claude/english-pathway-plan.md` (26 Oct 2026; Matthew confirm
 
 `roadmap/english-master-plan.md` (also Project doc `claude/english-master-plan.md`) covers every Kit English node: 20 threads ("How English skills grow"), each node's modes (tutorial, own writing, open answer, workshop, speech shape, class only, early literacy programme), 17 drop-in courses, unit-type lists, boards, Explain-it-to-me pictures, build waves A to M and parked AI ideas. Node data: `data/curriculum/english-triage.yml`, made by `experiments/english-triage/` (README there). Years 6–8: 167 of 168 nodes in a planned course. A fresh-eyes review's fixes are folded in.
 
+Build handoff: Project doc `claude/handoff-english-build.md` (one chat at a time, in order; hands off when it gets too big).
+
 ## Next (proposed, not built)
 
 1. Pilot with a class; fix what it finds.
