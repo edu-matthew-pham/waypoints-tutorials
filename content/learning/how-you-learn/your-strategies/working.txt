@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib learns to test itself without notes, and it works brilliantly for the spelling quiz.
+Next, Nib gets a science question it doesn't understand at all.
+Nib decides to test itself without notes again, because that strategy always works.
+Nib still doesn't know what the question is asking.
+# endregion

@@ -1,0 +1,47 @@
+summary: "Students predict whether rereading or self-testing works better a week later, sort study habits by what research suggests rather than how they feel, find Nib's slip (familiar means learned) and learn to check instead of trusting the feeling of knowing. Typical width (Years 7 and 8): the same trap when an AI explains something."
+time: 40
+timing: "Engage 6 min · Explore 10 min · Explain 12 min · Elaborate 5 min · Evaluate 7 min"
+goals:
+  - I can explain why studying that feels easy can fool me.
+  - I can use a quick check without my notes to find out what I really know.
+struggle: "Students like rereading and highlighting and may feel told off. Say these are fine as a first step; the point is to add a check, not to ban anything."
+before: |
+  **The research, kept honest.** Students judge their learning poorly when material feels fluent and familiar (Bjork's "illusions of competence"; Koriat and Bjork). In a large review of study techniques, Dunlosky and colleagues (2013) rated practice testing and spreading practice out as high-utility and rereading and highlighting as low-utility, while noting the evidence comes mostly from particular tasks and ages. The lesson says "usually" and "often" for that reason, and says rereading and highlighting are fine as a first step.
+
+  **"Desirable difficulties."** Testing yourself feels harder and is worth it (Bjork). That's the message: hard can be good.
+
+  **Overlap with Does AI Help Us Learn?** That course's The illusion of competence and Offloading thinking lessons go further with AI and the research. This lesson links to them rather than repeating them.
+
+  **Nobody shares how they study.** The closing think is private.
+
+  Years 6: give the link with `?width=minimum` to hide the AI scenario.
+running:
+  - "Engage: vote, then ask who would feel more confident straight after, Ana or Ben. Often the class predicts Ana."
+  - "Explore: try it live. Give the class 60 seconds to reread a short list of 10 made-up words, then cover it and write as many as they can. Ask how confident they felt before writing."
+  - "Explain: think aloud: 'This looks familiar… but can I say it without looking? Let me try.'"
+  - "Evaluate: the private think stays private."
+stuck:
+  - see: "A student says rereading works for them."
+    ask: "How would you know? What would a check look like?"
+    fix: "Keep rereading if you like; add a quick test without the notes afterwards."
+  - see: "A student thinks hard means they're bad at it."
+    ask: "If it felt easy, would you be remembering or just recognising?"
+    fix: "Hard can be good: trying to remember is the learning happening."
+  - see: "A student thinks AI explanations are always bad for learning."
+    ask: "What could you do after reading one to check you've learned it?"
+    fix: "Help is fine. Check what you can do without it."
+stretch: "Plan a week of revision for a test using two 'feels harder, usually sticks' habits. When would you check yourself?"
+support: "One question on a card: 'Can I do it without looking?'"
+leads: |
+  Next: your strategies. Pick the right strategy for the kind of stuck you're in, and try one on a real task.
+
+  Links: Does AI Help Us Learn? › The illusion of competence, and Offloading thinking (Years 7 and up).
+exit:
+  q: "Why can rereading your notes make you feel ready when you're not?"
+  a: "The words look familiar, which feels like knowing, but you haven't checked whether you can do it without them."
+explain: |
+  When something looks **familiar**, it feels like you **know** it. That feeling can fool you.
+
+  So don't trust the feeling: **check it.** Cover your notes and write what you remember, try a question, or explain it out loud. If it's hard, that's the learning happening, and now you know where the gaps are.
+
+  Any help that makes a task feel easy, including AI, can fool you the same way. Use it, then check what you can do without it.

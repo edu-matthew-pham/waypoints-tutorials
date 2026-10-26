@@ -29,5 +29,6 @@ export const SEARCH_HINTS = {
   ict: 'Try spreadsheets, formulas, cells, Year 7',
   english: 'Try cohesion, pronouns, topic sentences, Year 7, or a code such as AC9E7LA04',
   ai: 'Try how AI works, ethics, prompts',
+  learning: 'Try planning, checking your work, stuck, revision, self-regulation',
   teachers: 'Try guides, Create, Make a lesson, AI tools',
 };

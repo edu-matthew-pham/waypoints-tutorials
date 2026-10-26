@@ -1,0 +1,36 @@
+inquiry:
+  q: "Are the people who got the bottle puzzle right smarter than the people who didn't?"
+  prompts:
+    - "What did the people who got it right do that the others didn't?"
+    - "Could anyone do that?"
+  notes: "Steer to the check, not the brain. Most adults answer $1. The difference is usually one small check."
+activities:
+  - at: predict
+    kind: activity
+    title: "Commit first"
+    minutes: 3
+    do: |
+      Read the bottle puzzle. Write your first answer down before anyone says anything. Don't change it.
+    notes: "Mini whiteboards, held up together. Don't reveal yet; let the class see the spread of answers."
+  - at: investigate
+    kind: activity
+    title: "Think aloud"
+    minutes: 4
+    do: |
+      Watch your teacher check an answer out loud, step by step.
+    notes: "Model it honestly: start with $1, check it out loud, notice it fails, and fix it. Showing the wobble is the point."
+  - at: end
+    kind: discussion
+    title: "Where else?"
+    minutes: 5
+    do: |
+      In pairs: name one task in another subject where a quick check would have saved you.
+    notes: "Keep it general (a kind of task, not a mark or a person). Collect a few aloud."
+questions:
+  - at: investigate
+    title: "The 'during' move"
+    type: question
+    q: "What's the quickest way to check the bottle answer?"
+    options: ["Put it back into the question and see if the total is $11", "Ask a friend", "Do it again faster"]
+    answer: 0
+    explain: "Putting an answer back into the question is a check that works for lots of maths and science tasks."

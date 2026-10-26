@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib has a quiz on the order of the planets tomorrow.
+Nib reads the notes page three times.
+The page looks really familiar now, so Nib must know it.
+In the quiz, Nib can only remember four of the eight planets.
+# endregion

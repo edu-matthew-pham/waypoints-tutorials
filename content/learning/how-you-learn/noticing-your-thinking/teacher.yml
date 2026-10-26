@@ -1,0 +1,50 @@
+summary: "Students commit to a fast answer on a trick puzzle, try a second one more carefully, sort which thoughts helped, find Nib's slip (trusting a fast answer), and name the before, during and after moves of self-regulated learning. Typical width (Years 7 and 8): the same moves on a science report."
+time: 40
+timing: "Engage and Explore 12 min · Explain 12 min · Elaborate 6 min · Evaluate 10 min"
+goals:
+  - I can explain why a fast first answer still needs a check.
+  - I can name one thing to do before, during and after a task.
+struggle: "Students who got the puzzle wrong may feel caught out. Say most adults get it wrong too; the point is what a check would have done, not who was right."
+before: |
+  **The idea.** Self-regulated learning (SRL) is how a learner plans, monitors and evaluates their own learning. This workshop names that as before, during and after, after students have felt the need for it. Don't name it first: let the puzzles do the work, then name what the careful solvers did.
+
+  **The puzzles** are versions of a well-known "reflective thinking" puzzle (the bat and ball, and the machines and widgets). The fast answers ($1, 10 minutes) are the common wrong ones, which is exactly why they work here.
+
+  **Nobody needs to be good at maths.** If a student says "I'm bad at maths", point out that the right answer needs a check, not a maths brain: put $1 back into the question and see what happens.
+
+  Years 6: give the link with `?width=minimum` to hide the science report scenario.
+running:
+  - "Engage: have everyone commit to an answer before anyone speaks (mini whiteboards or fingers up for options 1 to 4). Then reveal."
+  - "Explore: after the printers puzzle, ask who slowed down this time, and why."
+  - "Explain: think aloud as you check the bottle answer on the board: 'If the cap is $1… then the bottle is… so together…'. That's the 'during' move made visible."
+  - "Put before, during and after on the board and leave it up for the rest of the course."
+  - "Evaluate: the private think stays private. Don't collect it."
+stuck:
+  - see: "A student can't see why 50 cents is right."
+    ask: "If the cap is 50 cents and the bottle is $10 more, what does the bottle cost? What's the total?"
+    fix: "Put the answer back into the question and check the total."
+  - see: "A student says the puzzles are 'just trick questions'."
+    ask: "Do real tasks ever look easier than they are?"
+    fix: "A misread question in a test, a step skipped in an experiment: the same check helps."
+  - see: "A student thinks careful means slow."
+    ask: "How long did the check take compared with the fix?"
+    fix: "A check takes seconds. Careful is about when to check, not doing everything slowly."
+stretch: "Write your own trap puzzle where the fast answer is wrong, and the check that catches it."
+support: "Before, during and after on a card on the desk, with one question each: What's it asking? Does this make sense? Did it work?"
+leads: |
+  Next: who's steering? Steering how you learn is different from choosing what to learn.
+
+  Cards: the strategy cards (this course's Reference page) list moves for before, during and after.
+exit:
+  q: "Name one thing to do during a task to check it's going well."
+  a: "Ask whether it makes sense so far, or test an answer by putting it back into the question."
+explain: |
+  The first answer that pops into your head is often wrong, and that's normal. Careful learners do three small things:
+
+  **Before:** work out what the task is really asking, and make a plan.
+
+  **During:** keep checking. Does this make sense? Is it working?
+
+  **After:** look back. Did it work? What would you do differently?
+
+  That's **self-regulated learning**: steering your own learning.

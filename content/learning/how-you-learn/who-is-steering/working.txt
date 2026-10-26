@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib decides to learn to juggle three balls, all by itself.
+Nib thinks: I chose this myself, so I must be learning it well.
+Every day Nib throws the balls up for ten minutes without counting the catches.
+After a month, Nib still drops the third ball every time.
+# endregion

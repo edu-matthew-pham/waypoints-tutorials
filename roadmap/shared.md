@@ -68,7 +68,7 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Cue cards (agreed 27 Oct):** a `cue` mode on the existing `cohesion` board, not a new board. The student writes or pastes their script, clicks the key words, and the board makes one card per section (opening, each point, close). Light checks, said to be rough counts: every section has a card, about 12 words or fewer per card, cards well under a quarter of the script's words. A Print cards button gives index-card pages (no phones in class).
 - **Delivery is flexible (agreed 27 Oct):** writing the speech out word for word stays as the drafting step; what the shape discourages is reading it aloud word for word. The teacher picks how students deliver: from the full script, from a highlighted script (every word, key words highlighted: same board, different print layout), from cue cards (the default), or from memory. Students can move along that scale over the year.
 
-## Proposed: self-regulation strategies as an optional toolkit (27 Oct 2026; Matthew asked for it on the roadmap, not built)
+## Proposed: self-regulation strategies as an optional toolkit (27 Oct 2026; first slice built the same day: `roadmap/learning.md`)
 
 - **Why:** self-regulation (planning, monitoring and evaluating your own learning) is a skill to keep practising across subjects, like spelling, but mostly invisible. The aim is to make it visible. ACARA anchor: Personal and Social Capability (self-management) and Critical and Creative Thinking.
 - **Stance:** an extra tool in the arsenal, not part of every lesson. Lessons stay as they are; the toolkit sits beside them and comes in through the teacher layer and the class decks.
@@ -81,7 +81,13 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Cautions:** it depends on subject knowledge (another reason it lives inside subject lessons, not standalone); prompts compete for working memory during hard tasks, so keep it light; frame students' notes as their own record, not monitoring (no tracking).
 - **Links:** Does AI Help Us Learn? (cognitive offloading is a self-regulation question; Bjork's illusions of competence), Nib's notebook, Present mode, the `reasoning` check's self-check.
 - **Other research to draw on:** Dunlosky et al. (learning techniques), Bjork (desirable difficulties), Pekrun and Zimmerman on emotion and self-efficacy (the stuck moment handles feelings too), Loksa and Ko and Prather et al. (novice programmers' problem-solving stages). Don't overfit to one author.
-- **Open:** whether the student course is a short core (2–3 lessons) or cards only; which subject's cards come first; how deck inserts are authored (class plan field vs a shared insert library).
+- **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
+- **Open:** how deck inserts are authored (class plan field vs a shared insert library).
+
+## Changed by the Learning skills chat (27 Oct 2026): cards for a second subject
+
+- `tools/ict-cards.mjs`: `loadCardsFile` reads optional top-level `groups` (sections used instead of the course's units), `lede`, `search` and `more`; `ictCardsBody` takes `placeholder` and `more`. ICT pages are unchanged.
+- `tools/build-site.mjs`: card pages and search entries for `learning/*` too (card entries now carry their own subject in `sp`). `tools/validate.mjs`: checks `learning/*/cards.yml`. `tools/search-view.mjs` (`SEARCH_HINTS.learning`), `tools/search-index.mjs` (teacher page), `content/teachers/index.md` (menu link), `misconceptions.json` (four ids).
 
 ## Changed by the English chat (27 Oct 2026): `cohesion` board widget, English subject
 

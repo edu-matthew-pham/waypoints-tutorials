@@ -10,6 +10,7 @@ Split by workstream on 11 Oct 2026 so separate chats can work at the same time (
 - [`roadmap/learning-with-ai.md`](roadmap/learning-with-ai.md): Learning with AI (`content/ai/`: AI Foundations, Does AI Help Us Learn?, the Choosing AI tools guide), with `ai-review-fixes.md` (fixes still to do), `ai-tools-handoff.md` (tools work) and `ai-foundations-evidence-audit.md`. Added to this index 18 Oct 2026.
 - [`roadmap/ict.md`](roadmap/ict.md): ICT skills (`content/ict/`: spreadsheets, documents, files and judging information, taught by the ideas every app shares; the `sheet` board widget), added 25 Oct 2026.
 - [`roadmap/english.md`](roadmap/english.md): English (`content/english/`: Holding writing together, a cohesion course for Years 6–8 on the `cohesion` board widget, no AI marking), added 27 Oct 2026.
+- [`roadmap/learning.md`](roadmap/learning.md): Learning skills (`content/learning/`: How you learn best, an optional self-regulated learning course, and strategy cards for any subject), added 27 Oct 2026.
 - [`roadmap/before-year-7.md`](roadmap/before-year-7.md): Before Year 7, short maths and science catch-up lessons on the primary ideas Year 7 lessons rely on (its own chat), added 26 Oct 2026.
 - [`roadmap/shared.md`](roadmap/shared.md): shared and general: the build, publishing, home and plain pages, and shared tools.
 - [`roadmap/diagrams-plan.md`](roadmap/diagrams-plan.md): Mermaid diagrams across lesson parts, decks and worksheets (proposed 19 Oct 2026); the tools to follow it are in `shared.md` › Proposed: visual and quality tools.

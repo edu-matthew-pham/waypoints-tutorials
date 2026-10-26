@@ -1,0 +1,30 @@
+inquiry:
+  q: "Should school let students choose more of what they learn, or get better at steering what they're given?"
+  prompts:
+    - "What would you choose to learn if you could?"
+    - "Would you still need to plan and check?"
+    - "Is one more useful after you leave school?"
+  notes: "An open debate: there's no right answer, and good arguments exist both ways. Bring it back to the point that steering is needed either way."
+activities:
+  - at: run
+    kind: activity
+    title: "The grid"
+    minutes: 6
+    do: |
+      Draw a grid: who chose the goal (me / someone else) across the top, and checks how it's going (yes / no) down the side. Place each learner in it.
+    notes: "On the board, as a class. Mei (set, checks) is the one to linger on."
+  - at: end
+    kind: discussion
+    title: "Debate"
+    minutes: 8
+    do: |
+      Choose a side of the room: 'more choosing' or 'better steering'. Give one reason, then listen to the other side.
+    notes: "Let students change sides if they're persuaded, and ask what persuaded them. Keep reasons general, not about particular teachers."
+questions:
+  - at: investigate
+    title: "Which idea?"
+    type: question
+    q: "Taking three deep breaths before trying a hard question again is mostly…"
+    options: ["Everyday self-regulation", "Self-directed learning", "Neither"]
+    answer: 0
+    explain: "It's managing a feeling, which makes it easier to keep checking and adjusting."

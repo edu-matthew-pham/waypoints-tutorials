@@ -1,0 +1,35 @@
+inquiry:
+  q: "Why do people keep using a strategy that isn't working, like reading the question again and again?"
+  prompts:
+    - "Is it easier than trying something new?"
+    - "How would you notice a strategy isn't working?"
+  notes: "Familiar strategies feel safe. Noticing that one isn't working is itself the 'during' move."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Think aloud: which kind of stuck?"
+    minutes: 4
+    do: |
+      Watch your teacher get stuck on a question and talk through which strategy to try.
+    notes: "Pick a question from your own subject. Model: 'I've read it twice… I don't know what it wants. So: what is it asking? It wants… OK, now my first step is…'."
+  - at: modify
+    kind: activity
+    title: "Plan it"
+    minutes: 10
+    do: |
+      On your own: write the task, the strategy, and when in the task you'll use it. Keep it for yourself.
+    notes: "Quiet work. Circulate and help students without a task choose from the list. Don't collect."
+  - at: end
+    kind: info
+    title: "Did it help?"
+    do: |
+      We'll come back to this next week: did your strategy help? What would you change?
+    notes: "Set a date. Ask the class as a whole, hands up; nobody has to say what they chose."
+questions:
+  - at: investigate
+    title: "Which kind of stuck?"
+    type: question
+    q: "You've got an answer, but it seems far too big. Which strategy fits?"
+    options: ["Check your confidence: does it make sense?", "What is it asking?", "Make a plan"]
+    answer: 0
+    explain: "An answer that doesn't fit is a 'during' signal to check, perhaps by estimating."

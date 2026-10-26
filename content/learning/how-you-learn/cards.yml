@@ -1,0 +1,183 @@
+# Strategy cards for How you learn best (27 Oct 2026). Same shape as the ICT cards (tools/ict-cards.mjs), but grouped by
+# when you use a strategy (groups, below) instead of by unit, and the "apps" notes are what it looks like in each subject.
+lede: "One screen for each strategy, to look up when you need one, in any subject. Each card says when to use it, what to do, one thing to watch for, and what it looks like in different subjects. Pick the one that fits the kind of stuck you're in."
+search: "Search: a strategy, a subject, or a kind of stuck"
+more: ""
+groups:
+  - { id: before, title: "Before a task" }
+  - { id: during, title: "During a task" }
+  - { id: after, title: "After a task" }
+  - { id: code, title: "In Code" }
+cards:
+  - id: what-is-it-asking
+    title: "What is it asking?"
+    unit: before
+    lesson: your-strategies
+    idea: "Use it when you're not sure what to do or hand in. Many mistakes start with answering a different question."
+    steps:
+      - "Read the task once all the way through."
+      - "Say in one line what you have to find, make or hand in."
+      - "Underline the words that tell you how: 'explain', 'compare', 'show working', 'by Friday'."
+      - "Check: if you did exactly that, would you be finished?"
+    watch: "A task can look like one you've done before and ask for something different."
+    apps:
+      "Maths": "Which number is the answer meant to be? Check the units it asks for."
+      "Science": "What is the experiment trying to find out? Say it as a question."
+      "English": "What kind of text, for whom, and how long?"
+      "Code": "What should the program do? Say what goes in and what comes out."
+  - id: make-a-plan
+    title: "Make a plan"
+    unit: before
+    lesson: your-strategies
+    idea: "Use it when you understand the task but don't know where to start. A plan can be one line."
+    steps:
+      - "Write your first step, only the first."
+      - "Break a big task into three or four parts."
+      - "Stuck on the first step? Try a smaller or simpler version first."
+      - "Decide how you'll know each part is done."
+    watch: "A plan isn't a promise. Change it when you learn something."
+    apps:
+      "Maths": "Try the same question with smaller, easier numbers."
+      "Science": "List the steps of the method before you start."
+      "English": "Jot the three points of your paragraph or essay first."
+      "Code": "Get one small piece working, then add the next."
+  - id: predict-first
+    title: "Predict first"
+    unit: during
+    lesson: your-strategies
+    idea: "Use it before you work something out or run it. A guess gives you something to check against."
+    steps:
+      - "Before you work it out, guess the rough answer or what will happen."
+      - "Write the guess down so you can't change it."
+      - "Work it out or try it."
+      - "Compare: if it's very different, find out why."
+    watch: "A wrong prediction isn't a failure. It's the most useful kind, because it shows what you didn't expect."
+    apps:
+      "Maths": "Estimate first: about how big should the answer be?"
+      "Science": "Predict the result before the experiment."
+      "English": "Predict what the next paragraph will say, then read it."
+      "Code": "Say what the program will do before you run it."
+  - id: check-your-confidence
+    title: "Check your confidence"
+    unit: during
+    lesson: when-easy-fools-you
+    idea: "Use it when something feels easy or familiar. Feeling sure isn't the same as being right."
+    steps:
+      - "Ask: how sure am I, out of 10?"
+      - "Ask: how could I check without my notes or the answers?"
+      - "Do the check: put the answer back, try a question, or explain it."
+      - "If the check and the feeling disagree, trust the check."
+    watch: "Rereading makes things look familiar, which feels like knowing."
+    apps:
+      "Maths": "Put your answer back into the question. Does it work?"
+      "Science": "Does the answer make sense? A 400 kg apple doesn't."
+      "English": "Cover the text. Can you say its main idea in one sentence?"
+      "Code": "Run it with an input where you know the right output."
+  - id: explain-it-to-yourself
+    title: "Explain it to yourself"
+    unit: during
+    lesson: your-strategies
+    idea: "Use it when you can follow something but aren't sure why it works. Explaining shows the gaps."
+    steps:
+      - "Say each step out loud, or write it in your own words."
+      - "For each step, say why, not just what."
+      - "Mark the step you can't explain yet."
+      - "Go back to that step only."
+    watch: "Copying an explanation isn't the same as giving one. Close the book first."
+    apps:
+      "Maths": "Say why each line of working follows from the one before."
+      "Science": "Explain the result using the model or idea, not just what happened."
+      "English": "Explain why the writer chose that word or that order."
+      "Code": "Say what each line does, or write it as a comment."
+  - id: when-youre-stuck
+    title: "When you're stuck"
+    unit: during
+    lesson: your-strategies
+    idea: "Use it when you've been stuck for a while. First work out what kind of stuck it is."
+    steps:
+      - "Pause. Take a breath: frustration makes people guess."
+      - "Ask: is it the task (what is it asking?), the start (make a plan), or an answer that doesn't fit (check it)?"
+      - "Try the strategy that fits, for a few minutes."
+      - "Still stuck? Try another, or ask someone what kind of stuck they think it is."
+    watch: "Reading the same thing again and again rarely helps. Change what you're doing."
+    apps:
+      "Maths": "Try a smaller example, or draw it."
+      "Science": "Go back to the question the experiment was asking."
+      "English": "Talk it through out loud before you write."
+      "Code": "Read the error message, then test one small part."
+  - id: look-back
+    title: "Look back"
+    unit: after
+    lesson: noticing-your-thinking
+    idea: "Use it when you finish something or get it back marked. Next time starts here."
+    steps:
+      - "Ask: did it work? Did I do what the task asked?"
+      - "Find one thing that went well and one to change."
+      - "Ask: is this a mistake I've made before?"
+      - "Write the one change somewhere you'll see it next time."
+    watch: "Looking back isn't about the mark. It's about what you'll do differently."
+    apps:
+      "Maths": "Which kind of question lost marks? Practise that kind."
+      "Science": "Did the conclusion use the data?"
+      "English": "Reread it as a reader: where did it lose you?"
+      "Code": "Could you write it again without looking? What would you change?"
+  - id: code-say-what-it-does
+    title: "Say what it should do"
+    unit: code
+    lesson: your-strategies
+    idea: "Before you code: say what the program should do, with a few examples, so you know what 'working' means."
+    steps:
+      - "Write in one line what the program should do."
+      - "Write two or three examples: this input should give this output."
+      - "Include one awkward case: zero, an empty answer, a very big number."
+      - "Keep the examples to test with later."
+    watch: "If you can't say what it should do, coding it won't help yet."
+    apps:
+      "Python": "Write the examples as comments at the top."
+      "MakeCode": "Say what the micro:bit should show when each button is pressed."
+      "Web": "Sketch what the page should look like first."
+  - id: code-test-small
+    title: "Test a small piece"
+    unit: code
+    lesson: your-strategies
+    idea: "During: add a little, run it, check it. Small steps mean a problem is always in the last thing you changed."
+    steps:
+      - "Add one small piece: a line, a block, a tag."
+      - "Predict what it will do, then run it."
+      - "Check it against your examples."
+      - "Only then add the next piece."
+    watch: "Writing a lot before running anything makes bugs hard to find."
+    apps:
+      "Python": "Run after every few lines. Use print to see a value."
+      "MakeCode": "Watch the simulator after each block you add."
+      "Web": "Look at the preview after each tag or rule."
+  - id: code-read-the-error
+    title: "Read the error"
+    unit: code
+    lesson: your-strategies
+    idea: "When it breaks: the error message is a clue, not a telling-off. It usually says where to look."
+    steps:
+      - "Find the line number in the message."
+      - "Read the line, and the line above it."
+      - "Say in your own words what the message means."
+      - "Change one thing, then run it again."
+    watch: "The real mistake is often on the line before the one the error names, such as a missing bracket."
+    apps:
+      "Python": "The playground puts the line and a hint first: start there."
+      "MakeCode": "Look for red or grey blocks, or a block that isn't connected."
+      "Web": "Nothing appears? Check the tag before it is closed."
+  - id: code-trace-it
+    title: "Trace it"
+    unit: code
+    lesson: your-strategies
+    idea: "When it runs but does the wrong thing: be the computer. Step through it by hand and track every value."
+    steps:
+      - "Pick a small input."
+      - "Go line by line, writing down each variable's value."
+      - "Stop at the first line where a value isn't what you expected."
+      - "That's where to fix it."
+    watch: "Tracing what you meant to write instead of what you wrote. Read the actual code."
+    apps:
+      "Python": "Use a table: one column per variable, one row per line run."
+      "MakeCode": "Follow each block in order, especially loops and ifs."
+      "Web": "Find the rule that applies to the element, then check which one wins."

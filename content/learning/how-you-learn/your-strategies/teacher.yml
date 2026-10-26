@@ -1,0 +1,49 @@
+summary: "Students commit to a fix for a stuck learner, match kinds of stuck to strategies, find Nib's slip (one strategy for everything), sort seven general strategies into before, during and after, then choose one strategy to try on a real task from another subject this week. The strategy cards on the course Reference page are for using afterwards."
+time: 45
+timing: "Engage 5 min · Explore 10 min · Explain 12 min · Elaborate (own task) 12 min · Evaluate 6 min"
+goals:
+  - I can say what kind of stuck I'm in and choose a strategy that fits.
+  - I can plan to use one strategy on a real task in another subject.
+struggle: "Students may treat the seven strategies as a checklist to do every time. Stress: pick the one that fits, and try another if it doesn't help."
+before: |
+  **The transfer step is the point.** Knowing a strategy isn't the same as using it when it matters (Shyam Barr calls this the difference between having the umbrella and taking it out of the bag). The Elaborate step asks every student to plan one strategy on a real task from another subject. If you can, follow up in a later lesson with a quick "did it help?", without collecting what they chose.
+
+  **The strategies** are general ones with good research behind them: understanding the task (Winne and Hadwin), planning, predicting and checking confidence (metacognitive monitoring and calibration), self-explanation, and looking back (Zimmerman's self-reflection phase). Each has a card on the Reference page.
+
+  **Teaching one properly later.** For any strategy you want a class to really use, the teacher page (For Learning skills teachers) describes NEMO-T: Name, Explain, Model (a think-aloud), Opportunity to practise, Transfer.
+
+  **Nothing personal is shared.** Students write their task and strategy for themselves.
+running:
+  - "Engage: count how many chose 'read it again'. Name it as the most common choice, kindly."
+  - "Explain: put the seven strategies on the board as before, during and after; show the cards page on the projector."
+  - "Elaborate: give students a few minutes of quiet to choose their task and strategy; offer the list to anyone who has nothing on."
+  - "Close by saying when you'll ask 'did it help?' (next lesson or next week)."
+stuck:
+  - see: "A student can't think of a task."
+    ask: "What's due in any subject in the next week? Or pick one from the list."
+    fix: "The list in the lesson has a task for each subject."
+  - see: "A student picks every strategy."
+    ask: "Which one fits the hardest part of that task?"
+    fix: "One is enough. You can try another next time."
+  - see: "A student says they never get stuck."
+    ask: "When do you lose marks, or take longest?"
+    fix: "That's where 'Look back' or 'Check your confidence' help."
+stretch: "Write a strategy card of your own for a subject the course doesn't cover yet, in the same shape: the idea, three or four steps, and one thing to watch for."
+support: "The seven strategies on a card, with the 'ask yourself' question for each."
+leads: |
+  Next: use the strategy cards in any subject. Code teachers: the Code cards on the Reference page match the PRIMM steps (predict, test, read the error, trace).
+
+  Teachers: For Learning skills teachers has ideas for bringing a strategy into your own lessons.
+exit:
+  q: "Name the kind of stuck you're most often in, and one strategy that fits it."
+  a: "Any reasoned match, such as 'I don't know where to start' with 'Make a plan, or try a smaller version'."
+explain: |
+  There's no one strategy for everything. **First work out what kind of stuck you're in**, then pick a strategy that fits:
+
+  **Before:** What is it asking? Make a plan.
+
+  **During:** Predict first. Check your confidence. Explain it to yourself. When you're stuck, name the kind of stuck.
+
+  **After:** Look back.
+
+  If a strategy doesn't help, try another. Each one has a card to look up.

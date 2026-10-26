@@ -132,6 +132,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'For Learning with AI teachers', u: 'ai-teachers/', d: 'What the five AI courses are, the rules for using real AI, and where to start with a class.' },
     { t: 'For ICT skills teachers', u: 'ict-teachers/', d: 'What is built so far in ICT skills (five pilot courses: data, documents, files, judging information, staying safe), how it teaches, and what is planned.' },
     { t: 'For maths teachers', u: 'maths-teachers/', d: 'What is here for Years 7 and 8 maths and a ten-minute tour.' },
+    { t: 'For Learning skills teachers', u: 'learning-teachers/', d: 'Self-regulation across subjects: the plan, check and look back cycle, think-alouds, teaching a strategy (NEMO-T) and when to prompt it.' },
     { t: 'For English teachers', u: 'english-teachers/', d: 'What is built so far in English (a pilot course on cohesion), how the boards work without AI marking, and what is planned.' },
   ]) add({ ...p, s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', k: `${p.t} ${p.d} teacher teachers` });
   return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel, typical: (path) => typical.has(path) };

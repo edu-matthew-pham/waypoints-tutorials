@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+A pencil and a rubber cost $1.20 together. The pencil costs $1 more than the rubber.
+Nib reads it and thinks: what's the rubber?
+The answer 20 cents pops into Nib's head straight away, so it must be right.
+Nib writes 20 cents and moves on.
+# endregion

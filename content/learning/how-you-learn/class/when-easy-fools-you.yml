@@ -1,0 +1,29 @@
+inquiry:
+  q: "If testing yourself works better, why do so many people reread instead?"
+  prompts:
+    - "Which one feels better while you're doing it?"
+    - "Which one tells you bad news?"
+  notes: "Rereading feels good and gives no bad news. Self-testing feels harder and shows the gaps, which is exactly why it's useful."
+activities:
+  - at: run
+    kind: activity
+    title: "Ten words"
+    minutes: 5
+    do: |
+      Read the ten words on the board for one minute. How confident are you, out of 10? Now they're covered: write as many as you can.
+    notes: "Use ten unrelated made-up or everyday words. Compare confidence with the count. Most students overestimate."
+  - at: end
+    kind: discussion
+    title: "Swap one habit"
+    minutes: 5
+    do: |
+      In pairs: if you could add one check to the way people usually study, what would it be?
+    notes: "Keep it general ('people usually…'), not 'how do you study?'. Collect a few on the board."
+questions:
+  - at: investigate
+    title: "Familiar or known?"
+    type: question
+    q: "You recognise every word in your notes. What does that show?"
+    options: ["That they're familiar, not that you could write them without looking", "That you know it all", "Nothing at all"]
+    answer: 0
+    explain: "Recognising is easier than producing. A check without the notes shows the difference."

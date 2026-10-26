@@ -9,8 +9,15 @@ import { esc } from './lesson-view.mjs';
 
 /** Cards of a course folder (content/ict/<course>), or [] when it has none. */
 export function loadIctCards(courseDir) {
+  return loadCardsFile(courseDir).cards;
+}
+
+/** The whole cards.yml (27 Oct 2026, Learning skills): cards plus optional `groups` ([{id,title}], sections used in
+ *  place of the course's units), `lede` (the page's opening line), `search` (the search box hint) and `more` (the line under each card). */
+export function loadCardsFile(courseDir) {
   const f = join(courseDir, 'cards.yml');
-  return existsSync(f) ? (YAMLparse(readFileSync(f, 'utf8')).cards || []) : [];
+  const d = existsSync(f) ? (YAMLparse(readFileSync(f, 'utf8')) || {}) : {};
+  return { cards: d.cards || [], groups: Array.isArray(d.groups) ? d.groups : null, lede: d.lede || null, search: d.search || null, more: d.more ?? null };
 }
 
 /** Problems: missing fields, a lesson or unit that does not exist, a repeated id. */
@@ -40,15 +47,15 @@ export const ICT_CARD_CSS = `.ict-card{display:block;padding:14px 0;border-top:1
 export const ictCardText = (c) => [c.title, c.idea, ...(c.steps || []), c.watch || '', ...Object.entries(c.apps || {}).flat()].join(' ').toLowerCase();
 
 /** The reference page body. units: [{id,title}]; lessonTitle(folder) -> title. */
-export function ictCardsBody({ cards, units, lessonTitle }) {
+export function ictCardsBody({ cards, units, lessonTitle, placeholder = 'Search: a skill, or an app', more = 'Other apps work the same way; look for the same word in the menus.' }) {
   const card = (c) => `<article class="ref-item ict-card" id="${esc(c.id)}" data-text="${esc(ictCardText(c))}"><div><h3>${esc(c.title)}</h3><p>${esc(c.idea)}</p>` +
     `<ol>${c.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>` +
     (c.watch ? `<p class="ict-watch"><b>Watch for:</b> ${esc(c.watch)}</p>` : '') +
     `<dl class="ict-apps">${Object.entries(c.apps).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>` +
-    `<p class="ict-more">Other apps work the same way; look for the same word in the menus. Lesson: <a href="../${esc(c.lesson)}/">${esc(lessonTitle(c.lesson))}</a></p></div></article>`;
+    `<p class="ict-more">${more ? esc(more) + ' ' : ''}Lesson: <a href="../${esc(c.lesson)}/">${esc(lessonTitle(c.lesson))}</a></p></div></article>`;
   const secs = units.map((u) => ({ u, cs: cards.filter((c) => c.unit === u.id) })).filter((s) => s.cs.length)
     .map((s) => `<section class="ref-section"><h2 class="ref-group">${esc(s.u.title)}</h2>${s.cs.map(card).join('')}</section>`).join('');
-  const search = `<input type="search" id="ref-search" class="ref-search" placeholder="Search: a skill, or an app" aria-label="Search the cards"><p id="ref-none" class="lede" hidden></p>`;
+  const search = `<input type="search" id="ref-search" class="ref-search" placeholder="${esc(placeholder)}" aria-label="Search the cards"><p id="ref-none" class="lede" hidden></p>`;
   const script = `<script>(function(){var q=document.getElementById('ref-search'),none=document.getElementById('ref-none');q.addEventListener('input',function(){var w=q.value.toLowerCase().split(/\\s+/).filter(Boolean),n=0;document.querySelectorAll('.ref-section').forEach(function(sec){var any=false;sec.querySelectorAll('.ref-item').forEach(function(it){var t=it.dataset.text,hit=w.every(function(x){return t.indexOf(x)>=0});it.hidden=!hit;if(hit){any=true;n++}});sec.hidden=!any});none.hidden=n>0;none.textContent=n?'':'Nothing matches "'+q.value.trim()+'".'})})();</script>`;
   return `<style>${ICT_CARD_CSS}</style>${search}${secs}${script}`;
 }
