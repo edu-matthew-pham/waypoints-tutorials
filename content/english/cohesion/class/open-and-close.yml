@@ -1,0 +1,29 @@
+inquiry:
+  q: "Do short texts need an overview and a conclusion?"
+  prompts:
+    - "Would a three-sentence email need one?"
+    - "How long does a text have to be before a reader gets lost without one?"
+  notes: "Short texts often use one sentence for each (the topic sentence and a closing line). Longer texts need whole paragraphs. The job is the same."
+activities:
+  - at: predict
+    kind: activity
+    title: "Directions without the destination"
+    minutes: 3
+    do: |
+      Read out step-by-step directions to a place in the school without saying where it is. Then say the destination first and read them again.
+    notes: "Knowing the destination makes each step easier to follow. That is what an overview does."
+  - at: make
+    kind: discussion
+    title: "Overview and conclusion only"
+    minutes: 5
+    do: |
+      Students read only their overview and conclusion aloud. The class says whether they sound like a matching pair.
+    notes: "A good pair echoes the same words or ideas without copying."
+questions:
+  - at: investigate
+    title: "What's its job?"
+    type: question
+    q: "'In this report, I will explain how volcanoes form and why they erupt.' Which part of a text is this?"
+    options: ["Overview", "Body paragraph", "Conclusion", "Title"]
+    answer: 0
+    explain: "It says what the report will cover and in what order, which is an overview's job."

@@ -1,0 +1,65 @@
+# Texts for "Open and close" (cohesion board, parts mode, one block per paragraph).
+# The s lines are in the right order with their roles; start: sets a shuffled order.
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: overview body conclusion
+s overview: The platypus is one of the most unusual animals in the world. This report looks at three of its surprises: it lays eggs, it finds food with electricity, and the males are venomous.
+s body: Unlike almost every other mammal, the platypus lays eggs. A female lays one to three eggs in a burrow and keeps them warm by curling around them.
+s body: A platypus hunts underwater with its eyes, ears and nose closed. Its bill can sense the tiny electric signals made by the muscles of shrimps and worms.
+s body: Male platypuses have a sharp spur on each back leg. The spur can deliver venom that is very painful to people, though it has not killed anyone.
+s conclusion: Eggs, electric senses and venom make the platypus a puzzle that scientists are still studying. Next time you see one in a creek, you will know just how unusual it is.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+layout: blocks
+roles: overview body conclusion
+label: off
+tools: order
+s overview: The platypus is one of the most unusual animals in the world. This report looks at three of its surprises: it lays eggs, it finds food with electricity, and the males are venomous.
+s body: Unlike almost every other mammal, the platypus lays eggs. A female lays one to three eggs in a burrow and keeps them warm by curling around them.
+s body: A platypus hunts underwater with its eyes, ears and nose closed. Its bill can sense the tiny electric signals made by the muscles of shrimps and worms.
+s body: Male platypuses have a sharp spur on each back leg. The spur can deliver venom that is very painful to people, though it has not killed anyone.
+s conclusion: Eggs, electric senses and venom make the platypus a puzzle that scientists are still studying. Next time you see one in a creek, you will know just how unusual it is.
+start: 4,2,5,1,3
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: blocks
+roles: overview body conclusion
+tools: order
+s overview: Our school should start a vegetable garden. A garden would give students healthy food and a new way to learn.
+s body: First, a garden means fresh, healthy food. The canteen could use our tomatoes, beans and herbs, and students would be more likely to eat food they grew themselves.
+s body: A garden is also a place to learn. Science classes could study soil and plant growth, and maths classes could measure beds and record harvests.
+s conclusion: Healthy food and real learning are two strong reasons to dig in. We ask the principal to give us one corner of the oval to start our garden next term.
+start: 3,1,4,2
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+layout: blocks
+roles: overview body conclusion
+tools: text
+s overview:
+s body: Many Australian beaches have a rip current: a strong channel of water flowing away from the shore. Rips can look calm, with fewer waves breaking, which is why swimmers walk into them.
+s body: If you are caught in a rip, don't swim against it. Float, raise an arm to signal for help, or swim parallel to the beach until you are out of the current.
+s conclusion:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+layout: blocks
+roles: overview body conclusion
+s overview: Rip currents are one of the biggest dangers at Australian beaches. This text explains what a rip is and what to do if one catches you.
+s body: Many Australian beaches have a rip current.
+s body: If you are caught in a rip, don't swim against it.
+s conclusion: Knowing what a rip looks like, and how to float or swim out of one, could save your life. Always swim between the flags.
+# endregion

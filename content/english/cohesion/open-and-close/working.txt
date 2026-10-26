@@ -1,0 +1,9 @@
+# The plan for Nib's report on wombats, one paragraph per line. Students click the paragraph doing the wrong job.
+
+# region: nib
+Overview: Wombats are strong diggers with a clever way to protect themselves. This report covers their burrows and their tough back end.
+Body: Wombats dig burrows up to 30 metres long, with tunnels and rooms.
+Body: A wombat's rump is tough, so it can block its burrow with its back end.
+Body: When a predator chases it, the wombat dives into its burrow and plugs the entrance.
+Conclusion: Wombats also have cube-shaped droppings, which is very strange.
+# endregion

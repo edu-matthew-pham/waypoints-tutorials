@@ -27,6 +27,7 @@ export const SEARCH_HINTS = {
   systems: 'Try binary, networks, encryption, Year 9, or a standard such as AC9TDI8K03',
   engineering: 'Try gears, Arduino, CAD, 3D printing',
   ict: 'Try spreadsheets, formulas, cells, Year 7',
+  english: 'Try cohesion, pronouns, topic sentences, Year 7, or a code such as AC9E7LA04',
   ai: 'Try how AI works, ethics, prompts',
   teachers: 'Try guides, Create, Make a lesson, AI tools',
 };

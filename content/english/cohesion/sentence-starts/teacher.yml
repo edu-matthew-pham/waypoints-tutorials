@@ -1,0 +1,45 @@
+summary: "Students learn that the start of a sentence tells the reader what it is about, and the rest adds something new. When each start picks up something known, a paragraph flows. Moving a time, reason or contrast to the start puts it in the spotlight. Students choose between versions of the same sentence, find a start that jumps, and read the starts of their own paragraph."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 6 min · Practise 6 min · Make and own writing 10 min"
+goals:
+  - I can say what the start of a sentence tells the reader.
+  - I can choose the version of a sentence that flows from the one before.
+  - I can read the starts of my own sentences to check that my paragraph flows.
+struggle: "Both versions of each sentence are correct English, so students can feel there is no wrong answer. Ask them to read the paragraph aloud with each version and notice where they slow down."
+before: |
+  Do the Try board yourself: each gap offers the same sentence in two orders.
+
+  The one idea: start with something the reader already knows, end with something new. This is the "theme" idea from AC9E5LA04 (sentence and paragraph starting points). You don't need the word theme with students; "the start" works.
+
+  This is an optional warm-up from Year 5. Some of the "wrong" versions are passive (are run by, is used by). That isn't the lesson's point, but it's a good moment to notice that the passive can be useful when it puts the known thing first.
+running:
+  - "Predict: read both versions aloud. Which one makes you hold your breath?"
+  - "Try: before each choice, ask what the reader already knows at that point."
+  - "Worked example: read only the starts of Nib's paragraph aloud as a class. Where does the thread snap?"
+  - "Vary: here the start is chosen to put something in the spotlight. What does each writer want you to notice?"
+  - "Make: students read only the starts of their own sentences to a partner."
+stuck:
+  - see: "A student picks the version that sounds more interesting."
+    ask: "What did the last sentence end with? Which version starts with that?"
+    fix: "Known first, new last."
+  - see: "A student thinks every sentence must start with the same word."
+    ask: "Does the thread need the same word, or just something the reader already knows?"
+    fix: "They, their, these and a repeated key word all pick up the thread."
+  - see: "A student can't find the start of a sentence."
+    ask: "What is this sentence about?"
+    fix: "The start runs up to the main doing word (the verb)."
+stretch: "Take a paragraph from a science textbook. Underline every start. How many pick up something from the sentence before?"
+support: "A card: Known first, new last. Read the starts in a row."
+leads: |
+  Next in Holding writing together: repeating a key word on purpose.
+
+  The starts of paragraphs (topic sentences) come later in the course, in Guiding the reader.
+exit:
+  q: "Which version fits after 'Our class grew sunflowers.': 'Taller than the fence they grew by March.' or 'By March, they were taller than the fence.'? Why?"
+  a: "By March, they were taller than the fence. The start puts the time first and picks up the sunflowers (they); the new fact comes at the end."
+explain: |
+  The **start** of a sentence tells the reader what it is about. The rest adds something **new**.
+
+  A paragraph flows when each start picks up something the reader already knows: the same word, they, their or this.
+
+  Moving a time, reason or contrast to the start (After the storm, Because the bus was late, Although it was cold) puts it in the spotlight.

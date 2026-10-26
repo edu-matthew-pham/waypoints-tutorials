@@ -1,0 +1,43 @@
+# Texts for "Challenge: repair the report" (cohesion board). Facts written for the lesson.
+# [[word>?~a/b]] is an unclear pointing word: the right move is Not clear, then a fix.
+
+# region: links
+widget: cohesion
+p: [[Our class|class]] sorted the rubbish from [[the canteen bins|cbins]] and [[the classroom bins|rbins]] for one week. [[We>class]] weighed every bag. [[It>?~The canteen rubbish/The classroom rubbish]] was mostly food scraps. [[They>?~The classroom bins/The canteen bins]] were full of paper that could have been recycled. [[The food scraps|scraps]] weighed 23 kilograms, and [[they>scraps]] could all have gone into a compost bin.
+# endregion
+
+# region: joins
+widget: cohesion
+p: The classroom bins held 15 kilograms of paper. [[{However|So|First}=However]], our school has no paper recycling. [[{As a result|For example|Meanwhile}=As a result]], all of that paper goes to landfill. [[{Also|But|Finally}=Also]], we found 40 drink bottles that could have earned 10 cents each through the container deposit scheme.
+# endregion
+
+# region: order
+widget: cohesion
+mode: parts
+layout: blocks
+roles: overview body conclusion
+tools: order
+s overview: This report shows what our school throws away in a week and how we could throw away less. It looks at food scraps first, then paper and bottles.
+s body: Most of the canteen rubbish was food scraps, which weighed 23 kilograms in one week. All of it could have been composted.
+s body: The classroom bins held 15 kilograms of paper and 40 drink bottles. Paper and bottles can both be recycled.
+s conclusion: Food scraps, paper and bottles make up most of our rubbish, and all three could be kept out of landfill. We recommend a compost bin, paper recycling and a bottle collection.
+start: 3,4,1,2
+# endregion
+
+# region: explain
+widget: cohesion
+mode: parts
+roles: claim example explain
+tools: text add
+s claim: A compost bin would make the biggest difference to our rubbish.
+s example: Food scraps were the heaviest thing in our bins, at 23 kilograms in one week.
+# endregion
+
+# region: explain-solution
+widget: cohesion
+mode: parts
+roles: claim example explain
+s claim: A compost bin would make the biggest difference to our rubbish.
+s example: Food scraps were the heaviest thing in our bins, at 23 kilograms in one week.
+s explain: This shows that composting would cut more weight than recycling paper or bottles, because food is the biggest part of what we throw away.
+# endregion

@@ -1,0 +1,47 @@
+summary: "Students learn that pointing words (she, it, they, this, these) name nothing on their own: they point back to something the reader has met, and readers follow them back by meaning, not just by distance. They trace links with arrows on a short text, find the links themselves, then trace the links in their own sentences."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 5 min · Practise 7 min · Make and own writing 10 min"
+goals:
+  - I can say what a pointing word such as it or they points back to.
+  - I can check my answer by swapping it in.
+  - I can make sure a reader can follow the pointing words in my own writing.
+struggle: "Students read straight past pointing words, so at first they do not see that there is anything to trace. Slow them down with the swap-it-in test: read the sentence aloud with the answer in place of the word."
+before: |
+  Do the Try board yourself: click She, then click Ms Tran, and watch the arrow.
+
+  The one idea: a pointing word only works if the reader can follow it back. Readers go by meaning, not just by what is closest.
+
+  This is an optional warm-up from Year 4 (AC9E4LA04, pronouns and determiners as cohesive links). Skip it with a class that already traces pronouns confidently; the rest of the course assumes it. The word "pronoun" is used in the notes but not leaned on with students: the move matters more than the label here.
+
+  Every text is written for the lesson. Nothing on the board is marked by AI: the board knows where each planted word points.
+running:
+  - "Predict: students who choose the gum tree are going by distance. Ask: can a tree look for leaves?"
+  - "Try: if a student draws an arrow to the wrong place, ask them to read the sentence with their answer swapped in."
+  - "Worked example: Nib's slip is the closest-noun habit. Ask the class for a sentence where the closest noun is wrong."
+  - "Practise: no dotted lines here. Ask how they knew a word was a pointing word."
+  - "Make: swap screens with a partner and see if they can follow every arrow."
+stuck:
+  - see: "A student points It to the nearest noun every time."
+    ask: "Swap your answer in. Does the sentence still make sense?"
+    fix: "Use the swap-it-in test before drawing the arrow."
+  - see: "A student cannot find what This points to."
+    ask: "What made the next thing happen? Is it one word or the whole sentence?"
+    fix: "This and that often point to a whole idea. Click any word of the sentence it points to."
+  - see: "A student in Practise marks every small word."
+    ask: "Does that word name something, or point back to something?"
+    fix: "Only she, he, it, they, them, this, these and that point back here."
+stretch: "Find a sentence in a book or newspaper where a pointing word could mean two things. Rewrite it so it is clear."
+support: "A card with the three questions: Who or what? Look back. Swap it in."
+leads: |
+  Next in Holding writing together: joining words that show how two ideas connect.
+
+  The same tracing skill is used again in the course challenge, where some pointing words are not clear and need fixing.
+exit:
+  q: "'Ali gave his sister the ball because she asked nicely.' What does she point to, and how do you know?"
+  a: "His sister. Ali is a he, and swapping in 'his sister asked nicely' makes sense."
+explain: |
+  Words such as **she**, **it**, **they** and **this** don't name anything on their own. They **point back** to something you've already read.
+
+  To follow one back, ask who or what it could be, look back for something that fits, then **swap it in**. If the sentence still makes sense, you found it.
+
+  **This** and **that** can point back to a whole idea, not just one word.

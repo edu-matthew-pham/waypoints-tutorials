@@ -1555,6 +1555,32 @@ Vary, Practise, Make).
     standard). The checks are rough counts, not judgement: say so in teacher notes. Drive each check in a headless
     browser (the ICT boards test pattern: `.render-tmp/docs-test.mjs` style, an iframe of
     `_playground-board/index.html?id=t&kind=board&fresh=1&code=...`).
+  - `widget: cohesion` (English › Holding writing together, 27 Oct 2026): a short text on paper for how writing holds
+    together. The text is data: planted answers are marks in the setup, so a teacher's own text (no marks) or a
+    student's rewrite (`tools: write`) runs on the same board, checked by the student rather than the board. `mode:
+    link` (default) traces pointing words, `chain` colours word chains, `parts` labels and orders sentences or
+    paragraphs. Link and chain modes take one `p:` line per paragraph, with marks: `[[words|id]]` (something to point
+    back to), `[[words>id]]` (a pointing word and its answer; `id/id2` for several), `[[words>?~a/b]]` (a pointing word
+    that is not clear: the right move is Not clear, then fix it with a or b), `[[words#c]]` (a word or phrase in chain
+    c), and in any mode `[[{so|but|then}=but]]` (a gap: the choices, then the right ones). Text straight after a mark
+    joins the last word, so `[[word>id]].` keeps its full stop. Parts mode takes `s <role>: sentence` lines in the
+    right order (`s any:` is not checked; an empty `s any:` is a sentence to write), `para:` for a new paragraph,
+    `layout: inline | blocks` (one block per sentence, for whole paragraphs), `start: 3,1,2` (the starting order),
+    `roles:` (the labels offered, in order; built-in names for topic, detail, claim, example, quote, explain,
+    overview, body, conclusion and more, or `role explain: Explanation`) and `label: off` (an ordering task). Link
+    mode: `show: none` hides the dotted lines so students find the pointing words with the mark tool. Chain mode:
+    `colours: 1` to `4`. `tools:` `mark` (make any word a pointing word), `write` (rewrite the whole text: marks are
+    dropped), `order`, `label`, `text` (edit the selected sentence) and `add` (add and delete sentences). Values for
+    `when:` (all have an underscore): link `n_planted`, `n_links` (planted links showing), `n_traced`, `n_right`,
+    `n_wrong`, `n_unclear`, `n_unclear_found`, `n_fixed`, `n_flagged`, `n_marked` (the student's own), `n_arrows`;
+    chain `n_chain`, `n_chains`, `n_coloured`, `n_missed`, `n_stray`, `chains_ok` (planted chains all in one colour
+    that no other chain shares), `n_colours_used`, `max_chain`; gaps `n_gaps`, `n_gaps_set`, `n_gaps_right`, `gap_N`;
+    parts `n_s`, `n_roled`, `n_labelled`, `n_right`, `n_wrong`, `in_order`, `n_in_place`, `first_ok`, `last_ok`,
+    `n_empty`, `has_<role>`; always `n_words`, `n_sentences`, `n_connectives` (different joining words used) and
+    `is_written`. `npm run check-cohesion` builds every English board, checks no board check holds at the start, and
+    solves each board (every planted move made) to check it passes; a Make step's check is tried against the
+    `<region>-solution` region, and `as: student` there counts its marks as the student's own and the text as written.
+    The board only checks what can be checked: say so on steps where the student's own writing is the point.
 - **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

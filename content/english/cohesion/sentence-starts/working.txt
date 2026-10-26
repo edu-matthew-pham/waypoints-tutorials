@@ -1,0 +1,8 @@
+# Nib's paragraph for the "find the jump" task, one sentence per line. Students click the sentence that breaks the thread.
+
+# region: nib
+Bees live together in a hive.
+They build the hive from wax.
+A sticky substance called propolis is used by them to seal gaps.
+Inside the hive, the bees store honey for winter.
+# endregion

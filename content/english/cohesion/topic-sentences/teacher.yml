@@ -1,0 +1,43 @@
+summary: "Students learn that a topic sentence tells the reader what a paragraph is about, and the other sentences are details that belong to it. Topic sentences are often first, but not always. Students label topic sentences and details, find one at the end of a paragraph, move it to the start, and write and label their own paragraph."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 8 min · Practise 7 min · Make and own writing 12 min"
+goals:
+  - I can find the topic sentence of a paragraph, wherever it is.
+  - I can say how the details belong to the topic sentence.
+  - I can write a paragraph with a topic sentence and details that belong to it.
+struggle: "Students commonly label the first sentence as the topic sentence without reading the rest. The Vary step puts it last on purpose. Insist on reading the whole paragraph first."
+before: |
+  Do the Try board yourself: click a sentence and choose Topic sentence or Detail.
+
+  The one idea: the topic sentence is the one the others belong to, wherever it sits. This is AC9E7LA04 node 1 (cohesion at the paragraph level), a hinge for node 2 (overviews and conclusions), which comes next.
+
+  "Detail" covers examples, facts and reasons here. Later lessons split these into evidence and explanation.
+running:
+  - "Predict: ask what students did in their heads to answer. They read only the first sentences: that is skimming by topic sentence."
+  - "Try: ask which sentence the other three could be examples of."
+  - "Worked example: Nib's favourite colour is obviously off-topic. Ask for a sneakier off-topic sentence."
+  - "Vary: when the topic sentence comes last, what does the paragraph feel like? (Building up to a point.)"
+  - "Make: partners read only each other's topic sentence and guess what the paragraph says."
+stuck:
+  - see: "A student labels the first sentence as the topic sentence every time."
+    ask: "Read all of them. Which one could the others be examples of?"
+    fix: "Use the worked example's method: what do they share, and which sentence says it?"
+  - see: "A student labels two topic sentences in one paragraph."
+    ask: "Could one of them be an example of the other?"
+    fix: "One paragraph, one topic. The bigger idea is the topic sentence."
+  - see: "A student's Make topic sentence is a detail ('The canteen sells pies')."
+    ask: "Could you write two more sentences that are examples of this?"
+    fix: "Make it bigger: 'Our canteen has good food for every taste.'"
+stretch: "Find a paragraph in a textbook with no clear topic sentence. Write one for it."
+support: "A card: Read it all. What do they share? Which sentence says it?"
+leads: |
+  Next in Holding writing together: overviews and conclusions, the topic sentences of a whole text.
+
+  In Years 7 and 8 the same structure carries analytical paragraphs in English and other subjects, which comes later in the course (Inside a paragraph).
+exit:
+  q: "Which is the topic sentence? 'Koalas sleep up to 20 hours a day. Eucalyptus leaves give them little energy. Koalas spend most of their lives resting to save energy.'"
+  a: "Koalas spend most of their lives resting to save energy. The other two sentences are details that explain it, even though it comes last."
+explain: |
+  A **topic sentence** tells the reader what a paragraph is about. The other sentences are **details**: examples, facts and reasons that belong to it.
+
+  It is often first, but not always. To find it, read the whole paragraph, ask what the sentences share, and find the sentence that says it.

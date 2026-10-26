@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib reads both sentences: training every afternoon, then winning the final.
+Nib picks however, because it sounds like a grown-up word.
+Nib writes: Our team trained every afternoon. However, we won the final.
+Nib reads it back and it sounds a bit strange.
+# endregion

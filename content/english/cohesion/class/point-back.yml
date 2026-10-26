@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why can you understand 'It was looking for leaves' after one sentence, but not on its own?"
+  prompts:
+    - "What does It need before it can mean anything?"
+    - "What do you do in your head when you read It?"
+  notes: "Pointing words borrow their meaning from earlier in the text. Readers do the tracing without noticing, until it fails."
+activities:
+  - at: predict
+    kind: activity
+    title: "Arrows on the board"
+    minutes: 4
+    do: |
+      Write two sentences on the board: "The dog chased the ball into the pool. It was soaking wet." Ask students to come up and draw an arrow from It.
+    notes: "Both the dog and the ball could be soaking wet. Let the disagreement run: it sets up the idea that a pointing word can be unclear, which returns in the challenge."
+  - at: make
+    kind: discussion
+    title: "Swap and follow"
+    minutes: 4
+    do: |
+      Pairs swap their Make sentences. Can the partner say what every pointing word points to without asking?
+    notes: "Where a partner hesitates, the writer changes the pointing word to the name."
+questions:
+  - at: investigate
+    title: "Swap it in"
+    type: question
+    q: "'Mum put the plant on the windowsill because it needed more sun.' What does it point to?"
+    options: ["The plant", "The windowsill", "Mum", "The sun"]
+    answer: 0
+    explain: "Swap it in: 'the plant needed more sun' makes sense. A windowsill doesn't need sun."

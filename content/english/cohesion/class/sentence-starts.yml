@@ -1,0 +1,29 @@
+inquiry:
+  q: "If two sentences mean exactly the same, can one still be better?"
+  prompts:
+    - "Better for whom?"
+    - "Does it depend on what came just before?"
+  notes: "Yes: the better one depends on the sentence before it. On its own, neither is wrong. In a paragraph, the one that starts with something known flows."
+activities:
+  - at: predict
+    kind: activity
+    title: "Starts only"
+    minutes: 4
+    do: |
+      Show a short paragraph with everything hidden except the first three words of each sentence. Can the class say what the paragraph is about?
+    notes: "If the starts follow a thread, they can. Try it with a paragraph that jumps: they can't."
+  - at: make
+    kind: discussion
+    title: "Read me your starts"
+    minutes: 4
+    do: |
+      Pairs read only the starts of their Make sentences to each other. The listener says what the paragraph is about.
+    notes: "If the listener can't tell, the starts need to pick up a thread."
+questions:
+  - at: investigate
+    title: "Spotlight"
+    type: question
+    q: "Which version puts the reason in the spotlight?"
+    options: ["Because it was raining, the match was cancelled.", "The match was cancelled because it was raining.", "The match was cancelled.", "It was raining."]
+    answer: 0
+    explain: "The reason comes first, so the reader meets it before anything else."

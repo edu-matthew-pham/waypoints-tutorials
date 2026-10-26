@@ -1,0 +1,9 @@
+# Nib's paragraph for the "find the slip" task, one sentence per line.
+
+# region: nib
+Dogs need exercise every day.
+A short walk helps them stay at a healthy weight.
+Running at the park lets them use up energy.
+My favourite colour is blue.
+Dogs that don't get exercise can become bored and chew things.
+# endregion

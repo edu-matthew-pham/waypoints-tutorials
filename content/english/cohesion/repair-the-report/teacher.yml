@@ -1,0 +1,46 @@
+summary: "The course challenge: students repair a report on a school rubbish audit that has the right facts but is hard to follow. They fix unclear pointing words, choose joining words, put the paragraphs in the order the overview promises, and add a missing explanation, then run the same four checks on their own writing."
+time: 50
+timing: "Predict 4 min · Part 1 10 min · Part 2 6 min · Part 3 10 min · Part 4 10 min · Own writing 10 min"
+goals:
+  - I can find and fix the parts of a text that make it hard to follow.
+  - I can choose the right move for each problem.
+  - I can run the same checks on my own writing.
+struggle: "Part 1 is the hardest: students must decide which pointing words are clear before tracing. Some will trace It to one of the bins confidently. Ask whether the other bin could fit too."
+before: |
+  Try Part 1 yourself: trace We and they, then mark It and They as Not clear and choose a fix.
+
+  The challenge combines the course's moves: pointing words (warm-up), joining words (warm-up), word chains and repetition (fixing with a name), overviews and order (AC9E7LA04 node 2), and substantiation (AC9E8LA04 node 2). The rubbish figures are made up for the lesson but realistic for a school week. The 10-cent container refund is the amount in the ACT and NSW schemes; adjust for your state if needed.
+
+  Students who skipped the warm-up unit may need the reminder in Part 1: a pointing word is unclear when two things fit.
+running:
+  - "Predict: list the three problems on the board. Tick them off as the parts are done."
+  - "Part 1: ask a student who traced It to the canteen bins to read the sentence with the classroom bins swapped in. Does it still work?"
+  - "Part 2: name the job before choosing the word."
+  - "Part 3: ask which words in the overview decide the order."
+  - "Part 4: read three explanations aloud. Which one would convince the principal?"
+stuck:
+  - see: "A student traces every pointing word, including the unclear ones."
+    ask: "Could this point to anything else?"
+    fix: "If two things fit, it's not clear: name the thing instead."
+  - see: "A student reorders the report by guessing."
+    ask: "What does the overview say comes first?"
+    fix: "Follow the overview's order."
+  - see: "A student's explanation repeats the 23 kilograms."
+    ask: "Why does that number matter for the compost bin?"
+    fix: "Say what it shows: food is the biggest part, so composting cuts the most."
+stretch: "Write the paragraph for the bottle collection recommendation, with a claim, evidence and explanation. Then add it to the report in the right place."
+support: "The four-check card: Pointing words clear? Joining words right job? Order follows the overview? Evidence explained?"
+leads: |
+  This finishes Holding writing together. The four checks make a good editing checklist for any extended writing, in English or other subjects.
+
+  Coming later in How writing works: How sentences work, and Choosing words.
+exit:
+  q: "Name the four checks you used to repair the report."
+  a: "Pointing words are clear; joining words do the right job; paragraphs follow the overview's order; evidence is explained."
+explain: |
+  A text can have all the right facts and still be hard to follow. Four checks fix most of it:
+
+  - Is every **pointing word** clear? If two things fit, name the thing.
+  - Does each **joining word** do the right job?
+  - Do the paragraphs follow the **overview's** order?
+  - Is every piece of **evidence explained**?

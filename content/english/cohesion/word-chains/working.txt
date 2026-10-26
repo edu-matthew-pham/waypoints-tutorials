@@ -1,0 +1,8 @@
+# Nib's paragraph for the "find the slip" task, one sentence per line.
+
+# region: nib
+The vehicle was waiting outside the school at 8 o'clock.
+It was a white minibus with twelve seats.
+Our class climbed in and drove to the museum.
+The minibus was back at school by lunch.
+# endregion

@@ -1,0 +1,29 @@
+# Texts for "Where a sentence starts" (cohesion board). Each gap offers versions of the same sentence.
+
+# region: run
+widget: cohesion
+p: Wombats dig long burrows under the ground. [[{Their burrows can be up to 30 metres long.|Up to 30 metres is how long their burrows can be.}=Their burrows can be up to 30 metres long.]] [[{They stay inside on hot days, where it is cool.|Cool places underground are where they stay on hot days.}=They stay inside on hot days, where it is cool.]] Wombats have short, strong legs. [[{These short legs are perfect for digging.|Digging is what these short legs are perfect for.}=These short legs are perfect for digging.]]
+# endregion
+
+# region: vary
+widget: cohesion
+p: The school swimming carnival went ahead on Monday. [[{Although it was freezing, every student swam.|Every student swam, although it was freezing.}=Although it was freezing, every student swam.]] Nobody expected that.
+p: Half the class missed the start of the play. [[{Because the bus was late, they arrived after the first act.|They arrived after the first act because the bus was late.}=Because the bus was late, they arrived after the first act.]] The teacher has asked for an earlier bus next time.
+# endregion
+
+# region: practise
+widget: cohesion
+p: Our school put 40 solar panels on the hall roof last year. [[{The panels face north to catch the most sun.|North is the way the panels face, to catch the most sun.}=The panels face north to catch the most sun.]] [[{They make electricity whenever the sun is out.|Whenever the sun is out, electricity is made by them.}=They make electricity whenever the sun is out.]] [[{This electricity runs the lights and computers in the hall.|The lights and computers in the hall are run by this electricity.}=This electricity runs the lights and computers in the hall.]]
+# endregion
+
+# region: make
+widget: cohesion
+tools: write
+p: Press Write your own. Write four sentences about an animal, a place or a game.
+# endregion
+
+# region: make-solution
+widget: cohesion
+as: student
+p: Our cat Pepper sleeps all day. She wakes up at dinner time. Her favourite food is tuna. After dinner, she goes out to hunt moths.
+# endregion

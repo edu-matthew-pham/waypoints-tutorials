@@ -1,0 +1,49 @@
+summary: "Students learn the parts inside an argued paragraph: a claim, evidence (an example or a quotation) and an explanation of how the evidence supports the claim. They label the parts in a model paragraph about a short story written for the lesson, add a missing explanation, label a history paragraph, and write and label their own."
+time: 50
+timing: "Story and Predict 6 min · Try 5 min · Worked example 10 min · Vary 7 min · Practise 7 min · Make and own writing 15 min"
+goals:
+  - I can find the claim, the evidence and the explanation in a paragraph.
+  - I can explain how a piece of evidence supports a claim.
+  - I can write a paragraph with a claim, evidence and an explanation.
+struggle: "Students commonly write a claim and a quotation and stop, treating the quotation as self-evident. The explanation is the hard part: it is where the student's own thinking shows. Give the stem 'This shows that... because...'."
+before: |
+  Read the short story at the top of the lesson; it is written for this lesson, so it can be quoted freely.
+
+  The one idea: evidence needs an explanation joining it to the claim. This is AC9E8LA04 node 1 (paragraph internal structure: claim, example, quotation, substantiation), a hinge for node 2 (writing and revising substantiated paragraphs), which the Vary and Make steps cover. "Substantiation" is the curriculum's word; "explanation" is used with students.
+
+  Many schools teach a frame such as TEEL or PEEL. This lesson uses plain labels (claim, example, quotation, explanation) that map onto any of them; use your school's frame in class.
+
+  The board checks only that the parts are there and labelled. The quality of an explanation is judged by the student against the model, by a partner, or by you. Nothing is marked by AI.
+running:
+  - "Predict: ask students who said yes to explain how the quotation shows bravery. Their answer is the missing sentence."
+  - "Try: ask which sentence could be deleted without the reader noticing. (None, if the paragraph is strong.)"
+  - "Worked example: Nib's teacher's margin note is the question to ask of every quotation."
+  - "Vary: read some added explanations aloud. Which ones actually explain, and which retell?"
+  - "Make: partners read only the claim and the explanation. Do they connect?"
+stuck:
+  - see: "A student's explanation retells the quotation."
+    ask: "What does this show about the character? Why does it matter for your claim?"
+    fix: "Use the stem: This shows that... because..."
+  - see: "A student uses a long quotation."
+    ask: "Which few words do the work?"
+    fix: "Quote the shortest part that proves the point."
+  - see: "A student labels the claim as an example."
+    ask: "Is this sentence arguing something, or showing something?"
+    fix: "The claim argues; the example shows."
+stretch: "Write a second paragraph that argues the opposite claim (Mei is not brave, only impulsive), with its own evidence and explanation."
+support: "A paragraph frame: Claim: ___. For example, ___. The writer says '___'. This shows that ___ because ___."
+leads: |
+  Next in Holding writing together: the challenge, which repairs a report using every move in the course.
+
+  The same structure is used in science (claim, evidence, reasoning) and history (point, evidence, explanation). Name the link for students.
+exit:
+  q: "'Dogs make better pets than cats. My dog fetches the newspaper every morning.' What is missing, and write it."
+  a: "The explanation: for example, 'This shows that dogs can be trained to help, which makes them more useful pets.'"
+explain: |
+  A strong paragraph has three parts:
+
+  - a **claim**: what you argue
+  - **evidence**: an example in your own words, or a short quotation in the writer's exact words
+  - an **explanation**: how the evidence shows the claim
+
+  The explanation is the step most often missing. Start it with "This shows that...".

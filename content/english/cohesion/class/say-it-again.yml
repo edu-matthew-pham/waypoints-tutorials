@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is repeating a word bad writing?"
+  prompts:
+    - "When has someone told you not to repeat a word?"
+    - "When might repeating help a reader?"
+  notes: "Repetition is bad when it is lazy or adds nothing. It is good when it keeps the reader on the right thing. The kelp paragraph shows both."
+activities:
+  - at: predict
+    kind: activity
+    title: "Count the its"
+    minutes: 3
+    do: |
+      Show Version A of the kelp paragraph. Ask students to point to what each it and them means. Then show Version B.
+    notes: "The disagreement over A is the point."
+  - at: make
+    kind: discussion
+    title: "Chain check"
+    minutes: 4
+    do: |
+      Pairs swap Make paragraphs and colour each other's chains. Do they find the same chain the writer meant?
+    notes: "If the partner's chain is different, the writer's key word may not be clear."
+questions:
+  - at: investigate
+    title: "Same chain?"
+    type: question
+    q: "In a paragraph about a storm, which word continues the storm chain?"
+    options: ["tempest", "umbrella", "Tuesday", "school"]
+    answer: 0
+    explain: "Tempest means a violent storm, so it continues the chain."

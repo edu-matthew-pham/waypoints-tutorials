@@ -1,0 +1,30 @@
+# Texts for "What does it point back to?" (cohesion board: playground-board/widgets/cohesion.js).
+# [[words|id]] is something to point back to; [[word>id]] is a pointing word and its answer.
+
+# region: run
+widget: cohesion
+p: [[Ms Tran|tran]] gave [[our class|class]] [[a garden bed|bed]] near the library. [[She>tran]] said [[we>class]] could grow anything. [[It>bed]] gets sun all morning, so the class chose [[tomatoes and basil|plants]]. [[They>plants]] grow well together.
+# endregion
+
+# region: vary
+widget: cohesion
+p: [[The bus was forty minutes late|late]]. [[This>late]] meant we missed the start of the concert.
+# endregion
+
+# region: practise
+widget: cohesion
+show: none
+p: [[The Year 6 students|y6]] counted frogs at [[the school pond|pond]] every Friday. [[They>y6]] found eleven in March and twenty in May, after heavy rain had filled [[it>pond]] up. [[Each week there were more frogs than the week before|more]]. [[This>more]] showed the pond was healthy.
+# endregion
+
+# region: make
+widget: cohesion
+tools: write mark
+p: Press Write your own and write three sentences here about something your class did.
+# endregion
+
+# region: make-solution
+widget: cohesion
+as: student
+p: [[Our class|c]] went to [[the museum|m]] on Tuesday. [[It>m]] had a whale skeleton. [[We>c]] drew [[it>m]] for art.
+# endregion

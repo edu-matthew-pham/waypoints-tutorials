@@ -12,7 +12,7 @@ import { CORE_IDEAS, sameIdea } from './concepts-core.mjs';
 const LANG = { python: 'python turtle', makecode: 'makecode blocks micro:bit microbit arcade', html: 'html css web page website', javascript: 'javascript js p5' };
 // Standards entries: the curriculum files whose subjects have lessons on this site. The page for each is the
 // teacher pointer page (tools/pointer-pages.mjs).
-const STANDARD_SUBJECTS = ['maths', 'science', 'systems', 'digital-processes'];
+const STANDARD_SUBJECTS = ['maths', 'science', 'systems', 'digital-processes', 'english'];
 
 // Normalise text the way the browser does (site/search.js): lower case, "Year 8" / "yr 8" / "y8" -> year8.
 export const norm = (s) => String(s || '').toLowerCase()
@@ -110,7 +110,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
       // What a teacher sees under the title: lessons tagged to it, else the courses that generally cover it (said as such), else that nothing does yet.
       const note = tagged ? `${tagged} lesson${tagged > 1 ? 's' : ''} here` : cov && (cov.focus.length || cov.touches.length)
         ? [cov.focus.length ? (cov.all ? 'Main focus of every Code course' : `Main focus of ${tt(cov.focus.slice(0, 3))}${cov.focus.length > 3 ? ` and ${cov.focus.length - 3} more` : ''}`) : '', cov.touches.length ? `touched on in ${tt(cov.touches.slice(0, 3))}${cov.touches.length > 3 ? ` and ${cov.touches.length - 3} more` : ''}` : ''].filter(Boolean).join('; ') : 'no lessons yet';
-      add({ t: d.title, u: `teach/curriculum/${sub}/${d.code}/`, s: sub === 'maths' ? 'Maths' : sub === 'science' ? 'Science' : 'Digital Technologies', sp: sub === 'digital-processes' ? 'code' : sub, c: d.strand || '', y: yearsLabel(lo, hi), ty: 'standard',
+      add({ t: d.title, u: `teach/curriculum/${sub}/${d.code}/`, s: sub === 'maths' ? 'Maths' : sub === 'science' ? 'Science' : sub === 'english' ? 'English' : 'Digital Technologies', sp: sub === 'digital-processes' ? 'code' : sub, c: d.strand || '', y: yearsLabel(lo, hi), ty: 'standard',
         n: tagged + (cov && (cov.focus.length || cov.touches.length) ? 1 : 0), d: `${d.code} · ${note}`, k: [d.code, d.title, d.strand, d.description, yearTokens(lo, hi)].filter(Boolean).join(' ') });
     }
   }
@@ -132,6 +132,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'For Learning with AI teachers', u: 'ai-teachers/', d: 'What the five AI courses are, the rules for using real AI, and where to start with a class.' },
     { t: 'For ICT skills teachers', u: 'ict-teachers/', d: 'What is built so far in ICT skills (five pilot courses: data, documents, files, judging information, staying safe), how it teaches, and what is planned.' },
     { t: 'For maths teachers', u: 'maths-teachers/', d: 'What is here for Years 7 and 8 maths and a ten-minute tour.' },
+    { t: 'For English teachers', u: 'english-teachers/', d: 'What is built so far in English (a pilot course on cohesion), how the boards work without AI marking, and what is planned.' },
   ]) add({ ...p, s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', k: `${p.t} ${p.d} teacher teachers` });
   return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel, typical: (path) => typical.has(path) };
 }

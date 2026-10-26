@@ -1,0 +1,29 @@
+inquiry:
+  q: "Can a text with all the right facts still be bad writing?"
+  prompts:
+    - "What does a reader need besides the facts?"
+    - "Which of the four problems would annoy you most as a reader?"
+  notes: "Yes. Facts need to be connected and ordered so the reader can follow them. That connecting is cohesion."
+activities:
+  - at: predict
+    kind: activity
+    title: "Read it cold"
+    minutes: 4
+    do: |
+      Project the unrepaired report (Parts 1 and 2 as they start). Students read it once and jot down every place they got lost.
+    notes: "Collect the spots. Most will be the unclear It and They, which is Part 1."
+  - at: make
+    kind: discussion
+    title: "Four checks, your writing"
+    minutes: 6
+    do: |
+      Students apply the four checks to a recent piece of their own writing and share one fix with a partner.
+    notes: "This is the transfer the course is aiming at. Keep the four-check card on the wall."
+questions:
+  - at: end
+    title: "Which check?"
+    type: question
+    q: "A paragraph gives a figure and then moves on without saying what it shows. Which check catches it?"
+    options: ["Is the evidence explained?", "Are the pointing words clear?", "Do the joining words do the right job?", "Does the order follow the overview?"]
+    answer: 0
+    explain: "A figure with no explanation is evidence that hasn't been explained."

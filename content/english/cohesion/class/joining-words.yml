@@ -1,0 +1,29 @@
+inquiry:
+  q: "Can two sentences connect without a joining word at all?"
+  prompts:
+    - "Read 'It rained. We stayed in.' How do you know how these connect?"
+    - "When does a reader need the joining word to be written down?"
+  notes: "Readers can often guess the link, but a joining word removes the guess. In longer or harder writing, the guess gets harder and the joining word matters more."
+activities:
+  - at: predict
+    kind: activity
+    title: "Same facts, four joins"
+    minutes: 4
+    do: |
+      Write two facts on the board: "We had a test today. I studied last night." Ask four students to join them with however, so, also and because. Read each aloud.
+    notes: "Some joins make sense and some don't. The facts never changed: only the connection did."
+  - at: make
+    kind: discussion
+    title: "What's the job?"
+    minutes: 4
+    do: |
+      Pairs swap their Make writing and name the job of each joining word. Disagreements go to the class.
+    notes: "Where a pair disagrees, the writer may have meant one job and written another word."
+questions:
+  - at: investigate
+    title: "Which job?"
+    type: question
+    q: "What job does but do in 'The test was hard, but I finished it'?"
+    options: ["Turns against", "Adds", "Shows a result", "Shows time order"]
+    answer: 0
+    explain: "Finishing goes against what you might expect from a hard test."

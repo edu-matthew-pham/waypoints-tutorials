@@ -1,0 +1,29 @@
+inquiry:
+  q: "Does a quotation ever speak for itself?"
+  prompts:
+    - "Would every reader see the same thing in 'ran into the rain without a second thought'?"
+    - "What does the explanation add that the quotation can't?"
+  notes: "Different readers see different things in the same words. The explanation tells the reader which thing you see, and why it matters to your claim."
+activities:
+  - at: predict
+    kind: activity
+    title: "The trophy photo"
+    minutes: 3
+    do: |
+      Show a photo of a trophy and say "Our team is the best." Ask what else students would need to be convinced.
+    notes: "They'll ask how the trophy shows it: which competition, against whom. That is the explanation."
+  - at: make
+    kind: discussion
+    title: "Claim and explanation only"
+    minutes: 5
+    do: |
+      Volunteers read only their claim and their explanation. The class judges whether they connect.
+    notes: "If they connect, the evidence between them is doing its job."
+questions:
+  - at: investigate
+    title: "Which part?"
+    type: question
+    q: "'This suggests that Mei cares more about others than about herself.' Which part of a paragraph is this?"
+    options: ["Explanation", "Claim", "Example", "Quotation"]
+    answer: 0
+    explain: "It says what the evidence suggests, joining it back to the claim."

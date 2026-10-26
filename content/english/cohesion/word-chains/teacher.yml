@@ -1,0 +1,45 @@
+summary: "Students learn that a general word (the dog, the animal, the boat) can stand in for a specific one the reader has already met, making a word chain that keeps a text moving without repeating the same word. They colour word chains, trace general words back with arrows, and build a word chain in their own paragraph."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 6 min · Practise 6 min · Make and own writing 10 min"
+goals:
+  - I can find a general word that stands in for a specific one.
+  - I can say what specific thing a general word points back to.
+  - I can use a word chain in my own writing, with the specific word first.
+struggle: "Students read straight past general-for-specific links because they feel natural. The arrow in Vary helps: a general word points back, just like it."
+before: |
+  Do the Try board yourself: Biscuit, a kelpie, the dog and this clever animal are one chain.
+
+  The one idea: a general word can stand in for a specific one the reader already met. This is AC9E6LA04 node 2 (word associations: general for specific), a hinge for node 3 (using cohesive devices in their own writing), which the Make step covers.
+
+  "Word association" is the curriculum's term. "Word chain" works for students.
+running:
+  - "Predict: ask how students knew the vehicle was the tractor. Nobody told them."
+  - "Try: ask why she and them aren't coloured. (They are pointing words, which are a different kind of link.)"
+  - "Worked example: Nib's paragraph starts with the vehicle. Ask the class what they pictured before the minibus was named."
+  - "Vary: link mode is back. General words point back just like it and they."
+  - "Make: partners check that each general word comes after the specific one."
+stuck:
+  - see: "A student colours she and them in the chain."
+    ask: "Is she a word for the thing, or a word that points back to it?"
+    fix: "Leave pointing words uncoloured here: the chain is the naming words."
+  - see: "A student uses a general word that could mean two things."
+    ask: "If there are two dogs, which one is the dog?"
+    fix: "Use the name where two things fit."
+  - see: "A student's general word comes first."
+    ask: "What did your reader picture when they met that word?"
+    fix: "Name it specifically first, then use the general word."
+stretch: "Rewrite the Biscuit paragraph so it repeats Biscuit every time. Read both aloud. Which is better, and why?"
+support: "A list of general words: animal, dog, vehicle, place, city, tool, team, building, plant."
+leads: |
+  Next in Holding writing together: topic sentences that tell the reader what a paragraph is about.
+
+  Word chains come back in the challenge, where a general word in a report has nothing to point back to.
+exit:
+  q: "'We caught a flathead off the jetty. The fish was 40 centimetres long.' What does the fish link to, and why does it work?"
+  a: "The flathead. Fish is a general word for a flathead, and the flathead came first."
+explain: |
+  A **general** word can stand in for a **specific** one the reader has already met: a kelpie becomes **the dog**, then **the animal**.
+
+  These words make a **word chain** that keeps the reader on the same thing without repeating the same word.
+
+  It only works if the **specific word comes first**, and only one thing fits.

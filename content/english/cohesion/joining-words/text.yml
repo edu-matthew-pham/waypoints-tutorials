@@ -1,0 +1,29 @@
+# Texts for "Words that join ideas" (cohesion board). [[{a|b|c}=a]] is a gap: the choices, then the right one.
+
+# region: run
+widget: cohesion
+p: We planned a picnic in the park for Saturday. [[{However|So|Also}=However]], the forecast said there would be storms. [[{As a result|For example|Meanwhile}=As a result]], we moved the picnic into the school hall. [[{First|But|Because}=First]], we pushed the tables together. [[{Then|However|For example}=Then]], everyone set out the food.
+# endregion
+
+# region: vary
+widget: cohesion
+p: The class wanted to hold the art show on Friday. [[{However|Also|Then}=However]], the hall was booked for a concert. We had to find another day.
+p: The class wanted to hold the art show on Friday. [[{Also|However|So}=Also]], the hall was booked for a concert. Two good things were happening on the same night.
+# endregion
+
+# region: practise
+widget: cohesion
+p: We tested whether an egg floats in salty water. [[{First|Finally|However}=First]], we filled a jug with tap water and dropped the egg in. It sank. [[{Next|As a result|But}=Next]], we stirred in six spoons of salt. [[{After that|In addition|So}=After that]], we lowered the egg in again. This time it floated. Salt makes the water denser than the egg. [[{As a result|First|Then}=As a result]], the egg is pushed up. [[{Finally|However|Also}=Finally]], we wrote up our results.
+# endregion
+
+# region: make
+widget: cohesion
+tools: write
+p: Press Write your own. Write four or five sentences about something you made or did, step by step.
+# endregion
+
+# region: make-solution
+widget: cohesion
+as: student
+p: We made pancakes for breakfast. First, we mixed flour, eggs and milk. Then we heated the pan. The first pancake stuck, so we added more butter. Finally, we ate them with lemon.
+# endregion

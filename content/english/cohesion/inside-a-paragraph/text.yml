@@ -1,0 +1,58 @@
+# Texts for "Inside a paragraph" (cohesion board, parts mode).
+
+# region: run
+widget: cohesion
+mode: parts
+roles: claim example quote explain
+s claim: In the story, Mei is braver than she first seems.
+s example: At the start, she hides at the back of the shelter and won't look at the driver.
+s quote: But when the old man drops his wallet, she "ran into the rain without a second thought."
+s explain: Running into the rain she had been hiding from shows that her fear gives way the moment someone needs help.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+roles: claim example quote explain
+tools: text add
+s claim: By the end of the story, Mei is no longer hiding.
+s quote: After returning the wallet, she "sat down at the front."
+# endregion
+
+# region: vary-solution
+widget: cohesion
+mode: parts
+roles: claim example quote explain
+s claim: By the end of the story, Mei is no longer hiding.
+s quote: After returning the wallet, she "sat down at the front."
+s explain: This shows that helping the old man has changed her, because the front is where the driver and everyone else can see her.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+roles: claim example quote explain
+s claim: Canberra was planned as a city that fits its landscape.
+s example: Walter Burley Griffin and Marion Mahony Griffin, who won the competition to design it in 1912, used the surrounding hills as landmarks to line up the main lines of the city.
+s example: Their plan placed a large lake at the centre, and Lake Burley Griffin was filled in 1964.
+s explain: Lining the city up with the hills and building it around a lake shows that the designers worked with the land rather than flattening it.
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+roles: claim example quote explain
+tools: text add
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+roles: claim example quote explain
+s claim: The bus shelter shows how alone Mei feels.
+s quote: She waits "at the back of the shelter, hood up, eyes on her shoes."
+s explain: This shows she is hiding from everyone, even the driver who sees her every night.
+# endregion

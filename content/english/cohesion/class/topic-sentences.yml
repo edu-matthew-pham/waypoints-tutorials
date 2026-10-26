@@ -1,0 +1,29 @@
+inquiry:
+  q: "If every paragraph had its topic sentence first, would that be better writing?"
+  prompts:
+    - "Who gains when the topic sentence is first?"
+    - "When might a writer save the point for the end?"
+  notes: "First is easiest for a reader in a hurry and in information texts. Last can build suspense or a case, as in a persuasive paragraph. Both are choices."
+activities:
+  - at: predict
+    kind: activity
+    title: "Topic sentences only"
+    minutes: 4
+    do: |
+      Hand out a one-page article with only the first sentence of each paragraph visible. Ask pairs to write one line on what the article says. Then reveal the whole article.
+    notes: "Most pairs get close, because good writers put topic sentences first."
+  - at: make
+    kind: discussion
+    title: "Guess my paragraph"
+    minutes: 5
+    do: |
+      Students read only their topic sentence aloud. The class guesses what the details will be. The writer reads the details.
+    notes: "If the guesses miss, the topic sentence may be too narrow or too vague."
+questions:
+  - at: investigate
+    title: "Belongs or not?"
+    type: question
+    q: "Topic sentence: 'Our library is a great place to study.' Which detail does not belong?"
+    options: ["The library opens at 8 am.", "It has quiet desks by the window.", "Laptops can be borrowed for free.", "My brother plays basketball."]
+    answer: 3
+    explain: "Basketball has nothing to do with the library being a good place to study."

@@ -1,0 +1,34 @@
+# Texts for "Word chains" (cohesion board). Chain mode: [[words#a]]. Link mode: [[words|id]] and [[word>id]].
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 2
+p: [[Biscuit#a]] is [[a kelpie#a]] who lives on the farm next to our school. Every morning, [[the dog#a]] rounds up the [[sheep#b]]. She runs wide around [[the flock#b]] and brings them to the gate. The farmer says [[this clever animal#a]] can move [[the whole mob#b]] in five minutes.
+# endregion
+
+# region: vary
+widget: cohesion
+p: Grandpa bought [[a red kayak|kayak]] for our trip to [[Lake Burley Griffin|lake]]. We carried [[the boat>kayak]] to the edge of [[the water>lake]]. [[This small craft>kayak]] could carry two people.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 3
+p: [[Dr Amira Hassan#a]] built [[Kestrel#b]], a small robot that explores [[caves#c]]. [[The engineer#a]] worked on its wheels for three years. Last winter, [[the rover#b]] crawled deep into [[the tunnels#c]]. [[Hassan#a]] says [[the machine#b]] sends back photos of [[these dark places#c]] every day.
+# endregion
+
+# region: make
+widget: cohesion
+mode: chain
+tools: write
+p: Press Write your own. Write four sentences about a specific thing: your pet, a favourite place or a team.
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: chain
+as: student
+p: [[Ollie#a]] is our [[cat#a]]. [[The animal#a]] sleeps on [[the couch#b]] all day. [[That sofa#b]] is covered in fur. Mum says it needs a clean.
+# endregion

@@ -1,0 +1,69 @@
+# Texts for "Tell the reader what's coming" (cohesion board, parts mode).
+# "s topic:" and "s detail:" lines give each sentence's role, in the right order; "start:" sets a different starting order.
+
+# region: run
+widget: cohesion
+mode: parts
+roles: topic detail
+s topic: Lunchtime clubs give students a chance to try something new.
+s detail: The chess club meets on Mondays in the library.
+s detail: On Wednesdays, the garden club plants vegetables behind the canteen.
+s detail: Anyone can join the drama club, even if they have never acted before.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+roles: topic detail
+s topic: All of this shows that our school wastes a lot of water.
+s detail: The tap in the science room drips all day.
+s detail: The toilets near the oval have leaked since March.
+s detail: After sport, hoses are often left running on the field.
+start: 2,3,4,1
+# endregion
+
+# region: vary-order
+widget: cohesion
+mode: parts
+roles: topic detail
+tools: order
+label: off
+s topic: Our school wastes a lot of water.
+s detail: The tap in the science room drips all day.
+s detail: The toilets near the oval have leaked since March.
+s detail: After sport, hoses are often left running on the field.
+start: 2,3,4,1
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+roles: topic detail
+s topic: Bees matter to farmers.
+s detail: Almond trees need bees to carry pollen from flower to flower.
+s detail: Without bees, apple and cherry crops would be much smaller.
+para:
+s detail: We could plant flowers such as lavender near the oval.
+s detail: The garden club could build a bee hotel for native bees.
+s detail: Classes could stop spraying weeds near the vegetable beds.
+s topic: There are simple ways we can help bees at school.
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+roles: topic detail
+tools: text add
+s any:
+s any:
+s any:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+roles: topic detail
+s topic: Our school needs more shade.
+s detail: The playground gets very hot in summer.
+s detail: Many students have nowhere cool to sit at lunch.
+# endregion

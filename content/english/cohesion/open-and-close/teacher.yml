@@ -1,0 +1,45 @@
+summary: "Students learn that an overview (introduction) tells the reader where a whole text is going, body paragraphs each take one part in that order, and a conclusion pulls it together with nothing new. They label paragraphs by their job, reorder a shuffled text by following its overview, and write an overview and a conclusion for given body paragraphs."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 6 min · Practise 8 min · Make and own writing 13 min"
+goals:
+  - I can say what an overview and a conclusion do for a reader.
+  - I can check that the body paragraphs follow the overview's order.
+  - I can write an overview and a conclusion that guide a reader through my text.
+struggle: "Students often write a conclusion as a last new fact, or an overview that just repeats the title. Point them to the job: map at the start, pull together at the end."
+before: |
+  Do the Try board yourself: click each paragraph and choose its job.
+
+  The one idea: the overview and conclusion are the topic sentences of the whole text. This is AC9E7LA04 node 2 (structural cohesion devices), which depends on node 1 (topic sentences), the previous lesson.
+
+  The platypus facts are checked against general reference sources (egg-laying, electroreception, the male's venomous spur). The persuasive text and Nib's wombat report are written for the lesson.
+running:
+  - "Predict: ask what a reader does with a fact when they don't know what the text is about."
+  - "Try: ask which words in the overview tell you the conclusion is coming back to it."
+  - "Worked example: Nib's cube-shaped droppings are a great fact in the wrong place. Where should it go?"
+  - "Vary: the overview sets the body's order. Ask students to point to the words that decide it."
+  - "Make: read only the overview and conclusion aloud. Do they make sense as a pair?"
+stuck:
+  - see: "A student's overview repeats the title."
+    ask: "What parts will your text cover? Can you name them in order?"
+    fix: "Add the parts: 'This text explains what a rip is and what to do if one catches you.'"
+  - see: "A student's conclusion adds a new fact."
+    ask: "Did any body paragraph say that?"
+    fix: "Move the new fact into a body paragraph, or leave it out."
+  - see: "A student can't decide the body order in Vary."
+    ask: "What order does the overview name things in?"
+    fix: "Follow the overview's order."
+stretch: "Write a different overview for the platypus report that names the surprises in a different order. Then reorder the body to match."
+support: "A card: Overview = map. Body = one part each, in the map's order. Conclusion = pull it together, nothing new."
+leads: |
+  Next in Holding writing together: what goes inside a strong paragraph (claim, evidence and explanation).
+
+  Every subject's extended writing (science reports, history explanations) uses this structure. Reuse the Make step's frame in other classes.
+exit:
+  q: "A conclusion says 'Sharks have been around for 400 million years.' No paragraph mentioned this. What is wrong?"
+  a: "It adds a new fact. A conclusion pulls together what the text already said; the new fact belongs in a body paragraph."
+explain: |
+  An **overview** at the start says what the text is about and what it will cover, often in order.
+
+  Each **body paragraph** takes one part, in the order the overview gave.
+
+  A **conclusion** pulls it all together, often echoing the overview, and adds **nothing new**.

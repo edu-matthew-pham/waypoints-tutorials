@@ -11,6 +11,7 @@
     "nodes": "node tools/progressions.mjs --report",
     "check-nodes": "node tools/check-progressions.mjs",
     "check-forms": "node tools/check-forms.mjs",
+    "check-cohesion": "node tools/check-cohesion.mjs",
     "check-context": "node tools/check-context.mjs",
     "check-sheet": "node tools/check-sheet.mjs",
     "check-concepts": "node tools/check-concepts.mjs",

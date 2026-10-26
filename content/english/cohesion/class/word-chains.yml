@@ -1,0 +1,29 @@
+inquiry:
+  q: "How many different words can a text use for the same thing before the reader gets lost?"
+  prompts:
+    - "What helps the reader keep up?"
+    - "When does a new word start to sound like a new thing?"
+  notes: "As many as you like, if each new word clearly belongs to the thing already named. A word that could be something new (a second dog) breaks the chain."
+activities:
+  - at: predict
+    kind: activity
+    title: "From specific to general"
+    minutes: 4
+    do: |
+      Write a specific thing on the board, such as "a kookaburra". Ask the class for ever more general words for it (bird, animal, creature, it).
+    notes: "Each step up is a word a writer could use later in the chain."
+  - at: make
+    kind: discussion
+    title: "What did you picture?"
+    minutes: 4
+    do: |
+      Pairs read each other's Make paragraph aloud, stopping at each general word. The listener says what they picture.
+    notes: "If the listener pictures something else, the specific word may need to come earlier."
+questions:
+  - at: investigate
+    title: "Which word?"
+    type: question
+    q: "A paragraph starts 'The Sydney Opera House opened in 1973.' Which word could stand in for it later?"
+    options: ["the building", "the city", "the harbour", "the year"]
+    answer: 0
+    explain: "The building is a general word for the Opera House. The city and the harbour are different things."

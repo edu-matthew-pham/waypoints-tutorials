@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib finds the pointing word: it.
+Nib asks what it could be: one thing.
+Nib picks the closest thing before it: the bench.
+Nib writes: it means the bench.
+# endregion

@@ -1,0 +1,36 @@
+# Texts for "Say it again, on purpose" (cohesion board, chain mode). [[words#a]] belongs to chain a.
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 2
+p: [[Volcanoes#a]] form where melted rock pushes up through the Earth's crust. An erupting [[volcano#a]] can throw out [[ash#b]], gas and lava. The [[ash#b]] can travel hundreds of kilometres. [[Volcanic ash#b]] makes flying dangerous, so planes stay on the ground after a big [[eruption#a]].
+# endregion
+
+# region: vary
+widget: cohesion
+mode: chain
+colours: 2
+p: The [[drought#a]] lasted three years. During the [[dry spell#a]], farmers sold most of their sheep. Then, in 2020, the [[rain#b]] came back. Heavy [[rainfall#b]] filled the dams, and some low paddocks had [[floods#b]]. After years of [[dry#a]] weather, the farm was green again.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 3
+p: In January, a [[fire#a]] started near the national park. [[Firefighters#b]] worked through the night to stop the [[blaze#a]]. The [[crews#b]] were helped by [[volunteers#b]] from nearby towns. Many [[gum trees#c]] were burnt, but [[eucalypts#c]] can survive [[flames#a]]. Within weeks, new green shoots grew from the black [[trees#c]].
+# endregion
+
+# region: make
+widget: cohesion
+mode: chain
+tools: write
+p: Press Write your own. Write four sentences about one thing, such as a sport, an animal or a place.
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: chain
+as: student
+p: [[Netball#a]] is my favourite sport. I play [[the game#a]] every Saturday. Our [[netball#a]] team is called the Comets. We won every match this term.
+# endregion
