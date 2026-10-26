@@ -19,6 +19,10 @@ Plan: Project doc `claude/english-pathway-plan.md` (26 Oct 2026; Matthew confirm
 
 - **Review pass (27 Oct)**: a separate fresh-eyes review of every lesson; fixed: a not-really-ambiguous "It" in the challenge (now two genuinely unclear Its whose right fix the text decides: `?~*a/b`), an unplanted "a small robot" and hints that led students to colour pointing words in word chains, a hook that put the general word first, two arguable sentence-start answers, sea otters in a Tasmanian kelp forest (now rock lobsters), "eruption" in the volcano chain, antonyms described two ways, the challenge's "every move" claim, a joining-word example whose logic was off, a model conclusion that added a new point, the platypus egg count, a weak model explanation, a pointing word that failed its own swap test, and "we" planted but not taught.
 
+## Master plan (27 Oct 2026, draft for Matthew's review)
+
+`roadmap/english-master-plan.md` (also Project doc `claude/english-master-plan.md`) covers every Kit English node: 20 threads ("How English skills grow"), each node's modes (tutorial, own writing, open answer, workshop, speech shape, class only, early literacy programme), 17 drop-in courses, unit-type lists, boards, Explain-it-to-me pictures, build waves A to M and parked AI ideas. Node data: `data/curriculum/english-triage.yml`, made by `experiments/english-triage/` (README there). Years 6–8: 167 of 168 nodes in a planned course. A fresh-eyes review's fixes are folded in.
+
 ## Next (proposed, not built)
 
 1. Pilot with a class; fix what it finds.

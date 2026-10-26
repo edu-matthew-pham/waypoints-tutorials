@@ -1,0 +1,3602 @@
+# Every Kit English node (data/curriculum/english.json) sorted into a thread and the ways the site can support it. Made 27 Oct 2026 from the English master plan (Project doc claude/english-master-plan.md). Modes: learn = a tutorial on the board; write = the student uses it in their own writing on the site, self-checked; respond = an open answer compared with model answers; discuss = a workshop (prompt, pair and class talk); speak = the speech shape (plan on the site, deliver in class); class = class only; specialist = early literacy programmes, not planned for this site. Courses are drop-in skill sets, not a sequence; part says whether a node is the course core (nodes), a warm-up from earlier years (warm) or an extension (ext).
+threads:
+- id: relationships
+  title: Language for people and situations
+  strands: Language
+  summary: 'How we change our language for who we are talking to: formality, roles, identity, and including or excluding people.'
+  stages:
+    F-2: Notice that we talk differently at home and at school, and with friends and teachers.
+    3-4: Take turns and cooperate; spot formal and informal language and inclusive words.
+    5-6: See how language signals roles; move along a scale from slang to formal and choose the right level.
+    7-8: 'Language shows and builds who we are, and puts people in roles: leader, peer, outsider.'
+    9-10: Language can include or exclude, empower or disempower; spot the devices that do it.
+  codes: [AC9EFLA01, AC9E1LA01, AC9E2LA01, AC9E3LA01, AC9E4LA01, AC9E5LA01, AC9E6LA01, AC9E7LA01, AC9E8LA01, AC9E9LA01, AC9E10LA01]
+- id: evaluative
+  title: Judging, persuading and positioning
+  strands: Language and Literacy
+  summary: The words that carry opinions and values, from "I like it because" to bias, evidence and the hidden values in word
+    choice.
+  stages:
+    F-2: Say what you like and why, and move beyond "I liked it".
+    3-4: Words that show certainty and feeling; opinion words versus factual reporting.
+    5-6: Back up a claim instead of just asserting it; tell objective from subjective; spot bias.
+    7-8: The vocabulary of judgement; back a judgement with the text; irony and hyperbole; language that shifts with audience.
+    9-10: Judgement hidden in word choice, metaphor and allusion; the values behind the words; how fairly a perspective is
+      shown.
+  codes: [AC9EFLA02, AC9E1LA02, AC9E2LA02, AC9E3LA02, AC9E4LA02, AC9E5LA02, AC9E6LA02, AC9E7LA02, AC9E7LY03, AC9E8LA02, AC9E8LY03,
+    AC9E9LA02, AC9E9LY03, AC9E10LA02, AC9E10LY03]
+- id: structure
+  title: How texts are built for a purpose
+  strands: Language and Literacy
+  summary: 'Each kind of text has stages that do a job: recount, report, explanation, argument, review, and the hybrids and
+    twists writers make.'
+  stages:
+    F-2: 'Texts have purposes and shapes: stories, information, instructions, persuasion.'
+    3-4: Stages of recounts, reports, explanations and arguments, and the language each uses.
+    5-6: Stages and phases; features that serve the purpose; how structure and language work together on a reader.
+    7-8: Purpose drives structure; idea patterns such as cause and effect; hybrid texts.
+    9-10: How and why writers bend or break the usual structure, and how well a structure works.
+  codes: [AC9EFLA03, AC9EFLY01, AC9EFLY03, AC9E1LA03, AC9E1LY01, AC9E1LY03, AC9E2LA03, AC9E2LY01, AC9E2LY03, AC9E3LA03, AC9E3LY01,
+    AC9E3LY03, AC9E4LA03, AC9E4LY03, AC9E5LA03, AC9E5LY03, AC9E6LA03, AC9E6LY03, AC9E7LA03, AC9E7LY04, AC9E8LA03, AC9E8LY04,
+    AC9E9LA03, AC9E9LY04, AC9E10LA03, AC9E10LY04]
+- id: cohesion
+  title: Holding writing together
+  strands: Language
+  summary: 'What makes writing easy to follow: pointing words, joining words, sentence starts, word chains, paragraphs, overviews
+    and conclusions.'
+  stages:
+    F-2: Pronouns that point back to someone already named.
+    3-4: Paragraphs group ideas; joining words link sentences and order events.
+    5-6: Sentence starts guide the reader; repetition and word chains hold a text together.
+    7-8: Topic sentences, overviews and conclusions; claim, evidence and explanation inside a paragraph.
+    9-10: Nominalisation and connectives as a system; varying paragraph shape; joining paragraphs and images.
+  codes: [AC9E2LA04, AC9E3LA04, AC9E4LA04, AC9E5LA04, AC9E6LA04, AC9E7LA04, AC9E8LA04, AC9E9LA04, AC9E10LA04]
+- id: sentences
+  title: Building sentences
+  strands: Language
+  summary: From one complete idea to clauses, noun groups, complex and compound-complex sentences, and sentences shaped for
+    effect.
+  stages:
+    F-2: A sentence is a complete idea; word classes; simple and compound sentences.
+    3-4: Clauses, subject-verb agreement, verb types and tense, complex sentences, phrases that add detail.
+    5-6: Dependent clauses and their order, expanded noun groups, embedded clauses, precise verbs.
+    7-8: Compound-complex sentences, tense consistency, sentence shape as a deliberate choice.
+    9-10: Fragments and breaks for effect; judging which sentence structures work; syntax and style.
+  codes: [AC9EFLA05, AC9EFLA06, AC9E1LA06, AC9E1LA07, AC9E2LA06, AC9E2LA07, AC9E3LA06, AC9E3LA07, AC9E3LA08, AC9E4LA06, AC9E4LA07,
+    AC9E4LA08, AC9E4LA09, AC9E5LA05, AC9E5LA06, AC9E6LA05, AC9E6LA06, AC9E7LA05, AC9E7LA06, AC9E8LA05, AC9E9LA05, AC9E10LA05,
+    AC9E10LA06]
+- id: expert
+  title: Writing like a subject expert
+  strands: Language
+  summary: 'Specialist and academic words, nominalisation, quoting and referencing: the voice of writing in science, history
+    and English essays.'
+  stages:
+    7-8: Technical words, words with everyday and technical meanings, academic vocabulary, nominalisation.
+    9-10: Nouns that sum up and carry an argument; quoting and referencing; precise academic vocabulary.
+  codes: [AC9E7LA08, AC9E8LA06, AC9E8LA08, AC9E9LA06, AC9E9LA09, AC9E10LA08]
+- id: vocabulary
+  title: Choosing words
+  strands: Language
+  summary: 'Building vocabulary and choosing the word that fits: topic words, synonyms, word history, figurative language,
+    tone and mood.'
+  stages:
+    F-2: Topics have their own words; choose words on purpose.
+    3-4: Technical words, words with more than one meaning, synonyms and antonyms.
+    5-6: Specialist words, Greek and Latin roots, figurative and emotive language, words to talk about texts.
+    7-8: 'Technical and academic words: see Writing like a subject expert.'
+    9-10: How word choice builds tone, mood and style.
+  codes: [AC9EFLA08, AC9E1LA09, AC9E2LA09, AC9E3LA10, AC9E4LA11, AC9E5LA08, AC9E6LA08, AC9E9LA08]
+- id: punctuation
+  title: Punctuation for meaning
+  strands: Language
+  summary: From full stops to commas, apostrophes, colons, semicolons and dashes, and how authors bend the rules.
+  stages:
+    F-2: Capital letters and full stops, question marks, commas in lists.
+    3-4: Apostrophes, and punctuating dialogue.
+    5-6: Commas after an opening phrase and between clauses, apostrophes for plural and joint ownership.
+    7-8: Colons, brackets, semicolons and dashes to support meaning.
+    9-10: How authors use and bend punctuation for effect.
+  codes: [AC9EFLA09, AC9E1LA10, AC9E2LA10, AC9E3LA11, AC9E4LA12, AC9E5LA09, AC9E6LA09, AC9E7LA09, AC9E8LA09, AC9E10LA09]
+- id: images
+  title: Images and multimodal texts
+  strands: Language
+  summary: How pictures, diagrams, framing, angle, symbols and film choices make meaning alongside words.
+  stages:
+    F-2: Pictures tell us things the words do not.
+    3-4: Gaze, angle, distance and framing set up a relationship with the viewer.
+    5-6: Image sequence and juxtaposition; diagrams, tables, maps and graphs; cultural sensitivity of images.
+    7-8: Vectors, angle and social distance build a perspective; visual allusion in adverts.
+    9-10: Symbols in still and moving images; evaluating visual choices in representations.
+  codes: [AC9EFLA07, AC9E1LA08, AC9E2LA08, AC9E3LA09, AC9E4LA10, AC9E5LA07, AC9E6LA07, AC9E7LA07, AC9E8LA07, AC9E9LA07, AC9E10LA07]
+- id: contexts
+  title: Texts and their contexts
+  strands: Literature and Literacy
+  summary: How a text reflects when, where and by whom it was made, and how people and places are represented, including First
+    Nations and world literature.
+  stages:
+    F-2: Stories from many places and peoples, including First Nations Australian stories, connected to our own lives.
+    3-4: The same story told differently; texts from different times; themes.
+    5-6: What a text shows about its time and place; how context shapes a reader's response.
+    7-8: Ideas, issues and values in texts from different contexts; how technology changes reading and writing.
+    9-10: Representations of people and places as constructed, and judged against their context.
+  codes: [AC9EFLE01, AC9E1LE01, AC9E2LE01, AC9E3LE01, AC9E4LE01, AC9E4LY01, AC9E5LE01, AC9E5LY01, AC9E6LE01, AC9E6LY01, AC9E7LE01,
+    AC9E7LY01, AC9E8LE01, AC9E8LY01, AC9E9LE01, AC9E9LY01, AC9E10LE01, AC9E10LY01]
+- id: response
+  title: Responding to literature
+  strands: Literature
+  summary: Forming, justifying and comparing opinions and interpretations of literature, and judging its value.
+  stages:
+    F-2: Share feelings about a story and connect it to your own life.
+    3-4: Opinions grounded in experience; the effect of structure and language on a reader.
+    5-6: An opinion backed with literary terms and evidence; comparing two texts; other people's views.
+    7-8: Form and justify an opinion, weigh others' opinions; aesthetic and social value; opinions about style.
+    9-10: From first response to whole-text analysis; extending others' interpretations; ethical positions and world views.
+  codes: [AC9EFLE02, AC9E1LE02, AC9E2LE02, AC9E3LE02, AC9E4LE02, AC9E5LE02, AC9E6LE02, AC9E7LE02, AC9E7LE04, AC9E8LE02, AC9E9LE02,
+    AC9E9LE03, AC9E10LE02, AC9E10LE03, AC9E10LE04, AC9E10LE07]
+- id: craft
+  title: How authors craft literature
+  strands: Literature
+  summary: Character, setting, plot, point of view, style, literary devices and voice, and the effects they create.
+  stages:
+    F-2: Characters, settings and plots, and the words that create them.
+    3-4: Character techniques, setting and mood, plot tension, figurative language and word play.
+    5-6: Point of view and what it hides; an author's individual style.
+    7-8: Devices that create character and layers of meaning; how elements combine; tone through sentence patterns; positioning
+      readers.
+    9-10: Extended metaphor, allegory, symbolism and intertextuality; voice as a device.
+  codes: [AC9EFLE03, AC9E1LE03, AC9E2LE03, AC9E3LE03, AC9E4LE03, AC9E5LE03, AC9E6LE03, AC9E7LE03, AC9E7LE05, AC9E7LE06, AC9E8LE03,
+    AC9E8LE04, AC9E8LE05, AC9E9LE04, AC9E9LE05, AC9E10LE05, AC9E10LE06]
+- id: poetry
+  title: Sound, rhythm and imagery
+  strands: Literature
+  summary: Rhyme, rhythm, sound devices and imagery in poems, songs and stories.
+  stages:
+    F-2: Rhythm, rhyme and alliteration; invent your own sound patterns.
+    3-4: Imagery, sound devices, figurative language and word play, and their effect on the reader.
+    5-6: Simile, metaphor, personification, assonance and onomatopoeia; ballad rhythm.
+    7-10: 'Poetry continues inside How authors craft literature: layers of meaning, imagery, voice.'
+  codes: [AC9EFLE04, AC9E1LA04, AC9E1LE04, AC9E2LE04, AC9E3LE04, AC9E4LE04, AC9E5LE04, AC9E6LE04]
+- id: creating
+  title: Creating literary texts
+  strands: Literature
+  summary: Retelling, adapting and writing stories and poems, experimenting with devices, and editing for effect.
+  stages:
+    F-2: Retell and adapt a familiar story.
+    3-4: Plan and write stories using techniques from what you have read; edit with feedback.
+    5-6: Read as a writer, experiment with figurative language, adapt a source.
+    7-8: Experiment with devices for a purpose, then edit for effect.
+    9-10: Experimental and hybrid texts; a sustained voice.
+  codes: [AC9EFLE05, AC9E1LE05, AC9E2LE05, AC9E3LE05, AC9E4LE05, AC9E5LE05, AC9E6LE05, AC9E7LE07, AC9E8LE06, AC9E9LE06, AC9E10LE08]
+- id: reading
+  title: Reading and understanding
+  strands: Literacy
+  summary: 'Comprehension strategies: predicting, inferring, summarising, evaluating and comparing ideas, and finding your
+    way around a text.'
+  stages:
+    F-2: Predict, connect, retell and question while reading together.
+    3-4: Main idea and detail, inference, monitoring; navigating print and online texts.
+    5-6: Skim and scan, summarise, infer with evidence, judge sources, compare sources.
+    7-8: Infer beyond the literal, summarise extended texts, interpret and evaluate ideas and credibility.
+    9-10: Compare ideas between texts; interpret complex and abstract ideas.
+  codes: [AC9EFLA04, AC9EFLY05, AC9E1LA05, AC9E1LY05, AC9E2LA05, AC9E2LY05, AC9E3LA05, AC9E3LY05, AC9E4LA05, AC9E4LY04, AC9E4LY05,
+    AC9E5LY04, AC9E5LY05, AC9E6LY04, AC9E6LY05, AC9E7LY05, AC9E8LY05, AC9E9LY05, AC9E10LY05]
+- id: writing
+  title: Planning, writing and editing
+  strands: Literacy
+  summary: 'The writing process for any purpose: plan for purpose and audience, draft with deliberate choices, edit and publish.'
+  stages:
+    F-2: Write short texts with growing control, guided in class.
+    3-4: Plan, write, edit and publish with paragraphs, complex sentences and linked ideas.
+    5-6: Plan for purpose and audience; develop ideas with connectives and noun groups; edit against criteria.
+    7-8: Choose structures, language and devices on purpose; revise purposefully; publish for an audience.
+    9-10: Critical and analytical texts; experimenting with structure; reflecting on choices.
+  codes: [AC9EFLY06, AC9E1LY06, AC9E2LY06, AC9E3LY06, AC9E4LY06, AC9E5LY06, AC9E6LY06, AC9E7LY06, AC9E8LY06, AC9E9LY06, AC9E10LY06]
+- id: talk
+  title: Talking and listening
+  strands: Literacy
+  summary: 'Taking part in discussion: listening, building on others, questioning, and supporting or challenging what is said.'
+  stages:
+    F-2: Listen, take turns, speak clearly, respond to others.
+    3-4: Build on others' ideas and acknowledge other opinions.
+    5-6: Paraphrase and question to clarify; present and justify an opinion; formality in talk.
+    7-8: Evaluate spoken texts; support or challenge stated and implied meanings.
+    9-10: Analyse how a speaker positions listeners; discuss and present opinions on spoken texts.
+  codes: [AC9EFLY02, AC9E1LY02, AC9E2LY02, AC9E3LY02, AC9E4LY02, AC9E5LY02, AC9E6LY02, AC9E7LY02, AC9E8LY02, AC9E9LY02, AC9E10LY02]
+- id: presenting
+  title: Speaking to an audience
+  strands: Literacy
+  summary: Planning, rehearsing and delivering spoken and multimodal presentations, with voice and visual features chosen
+    for the audience.
+  stages:
+    F-2: Short talks with an opening, middle and end, and a voice the room can hear.
+    3-4: Plan, rehearse with feedback, and deliver structured presentations.
+    5-6: Elaborated ideas, technical vocabulary, voice and visual features chosen on purpose.
+    7-8: Presentations for a purpose and audience, crafted and rehearsed for effect.
+    9-10: Analytical presentations; rhetorical devices with a rationale.
+  codes: [AC9EFLY07, AC9E1LY07, AC9E2LY07, AC9E3LY07, AC9E4LY07, AC9E5LY07, AC9E6LY07, AC9E7LY07, AC9E8LY07, AC9E9LY07, AC9E10LY07]
+- id: spelling
+  title: Spelling and word parts
+  strands: Literacy
+  summary: Spelling through word parts, roots, generalisations and patterns, and spelling bent for effect.
+  stages:
+    3-4: Prefixes, suffixes, word families, homophones and spelling generalisations.
+    5-6: Base words, Greek and Latin roots, less common plurals, spelling generalisations.
+    7-8: Word parts and roots as a spelling tool; accurate spelling of complex words; correct sources for First Nations words.
+    9-10: Spelling bent for characterisation, humour and effect.
+  codes: [AC9E2LY11, AC9E2LY12, AC9E3LY09, AC9E3LY10, AC9E3LY12, AC9E4LY09, AC9E4LY10, AC9E4LY11, AC9E5LY08, AC9E5LY09, AC9E5LY10,
+    AC9E6LY08, AC9E6LY09, AC9E7LY08, AC9E8LY08, AC9E9LY08, AC9E10LY08]
+- id: early
+  title: Early reading, phonics and handwriting
+  strands: Literacy
+  summary: Foundation to Year 2 decoding, phonological awareness, letter-sound knowledge, high-frequency words and handwriting.
+  stages:
+    F-2: Phonological awareness, phonics, decoding, high-frequency words and handwriting.
+  codes: [AC9EFLY04, AC9EFLY08, AC9EFLY09, AC9EFLY10, AC9EFLY11, AC9EFLY12, AC9EFLY13, AC9EFLY14, AC9EFLY15, AC9E1LY04, AC9E1LY08,
+    AC9E1LY09, AC9E1LY10, AC9E1LY11, AC9E1LY12, AC9E1LY13, AC9E1LY14, AC9E1LY15, AC9E2LY04, AC9E2LY08, AC9E2LY09, AC9E2LY10,
+    AC9E3LY04, AC9E3LY08, AC9E3LY11, AC9E4LY08]
+courses:
+- id: cohesion
+  title: Holding writing together
+  pathway: How writing works
+  years: 6-8
+  status: built
+  wave: 0
+  board: cohesion (link, chain, parts)
+  summary: Pointing words, joining words, sentence starts, repetition and word chains, topic sentences, overviews and conclusions,
+    claim-evidence-explanation; repair-the-report challenge.
+- id: sentences
+  title: Building sentences
+  pathway: How writing works
+  years: 6-8
+  status: planned
+  wave: 1
+  board: 'new: sentence board (drag clause chunks, combine, reorder, switch voice)'
+  summary: Clauses and how they join, clause order and emphasis, noun groups, precise verbs and adverb groups, embedded clauses,
+    compound-complex sentences, tense consistency, and choosing a sentence shape on purpose.
+- id: punctuation
+  title: Punctuation for meaning
+  pathway: How writing works
+  years: 6-8
+  status: planned
+  wave: 1
+  board: sentence board, punctuation slots mode
+  summary: Commas that change meaning, colons, brackets, semicolons and dashes, each tried on sentences where the mark matters.
+- id: words
+  title: Language for people and situations
+  pathway: How writing works
+  years: 6-8
+  status: planned
+  wave: 1
+  board: 'new: word choice board (swap a word, place it on a scale)'
+  summary: Formality and register, language and identity, language that builds group roles, and words with shades of meaning
+    (formal, intense, positive or negative).
+- id: persuade
+  title: Judging and persuading
+  pathway: How writing works
+  years: 6-8
+  status: planned
+  wave: 1
+  board: cohesion chain mode (colour the opinion words) + word choice board
+  summary: Fact or opinion, emotive language and bias, the vocabulary of evaluation, backing up a judgement, irony and hyperbole,
+    and how language choices shift with audience and purpose.
+- id: expert
+  title: Writing like a subject expert
+  pathway: How writing works
+  years: 8-10
+  status: planned
+  wave: 3
+  board: sentence board (turn a process into a thing) + cohesion link mode
+  summary: Technical and academic words, nominalisation, abstract nouns that sum up, quoting and referencing. Cross-linked
+    from Science and humanities.
+- id: texts
+  title: How texts are built
+  pathway: How texts work
+  years: 6-8
+  status: planned
+  wave: 1
+  board: cohesion parts mode (label and order stages) + highlighter
+  summary: 'Stages and phases of reviews, discussions, explanations, recounts and arguments; idea structures (cause and effect,
+    compare and contrast, problem and solution); hybrids and twists. Genre cycle: take apart a model, build one together,
+    then write.'
+- id: reading
+  title: Reading closely
+  pathway: How texts work
+  years: 6-8
+  status: planned
+  wave: 2
+  board: highlighter (cohesion chain mode) + parts mode for summaries
+  summary: Main idea and summary, inferring beyond the literal, skimming and scanning, using a text's signposts, comparing
+    sources and judging credibility. Strategies on short texts, never test drill; links to ICT judging information.
+- id: images
+  title: Images and multimodal texts
+  pathway: How texts work
+  years: 6-8
+  status: planned
+  wave: 2
+  board: 'new: image board (drawn scenes with angle, distance, gaze and framing; panel sequences)'
+  summary: How diagrams, tables and maps carry meaning; vectors, angle and social distance; image sequence and juxtaposition;
+    visual allusion in made-up adverts.
+- id: editing
+  title: Plan, draft and edit
+  pathway: How texts work
+  years: 6-8
+  status: planned
+  wave: 3
+  board: cohesion write mode + reasoning check (self-check against criteria)
+  summary: 'The writing process as drop-in moves: plan for purpose and audience, draft with deliberate choices, and edit Nib''s
+    draft then your own against a checklist. Extended drafting stays in class.'
+- id: craft
+  title: How authors craft stories
+  pathway: Reading literature
+  years: 6-8
+  status: planned
+  wave: 2
+  board: cohesion chain and link modes on extracts + open answer
+  summary: Figurative and emotive language and the words to talk about it, character techniques, setting and mood, point of
+    view, an author's style, devices that build character and layers of meaning, tone through sentence patterns, and how texts
+    position readers. Extracts written for the site or public domain.
+- id: poetry
+  title: 'Poetry: sound and imagery'
+  pathway: Reading literature
+  years: 5-6
+  status: planned
+  wave: 2
+  board: cohesion chain mode (colour sound devices) + a stress-marking mode later
+  summary: Simile, metaphor and personification, alliteration, assonance and onomatopoeia, imagery that builds feeling, and
+    ballad rhythm on public-domain Australian ballads.
+- id: stories
+  title: Writing stories and poems
+  pathway: Reading literature
+  years: 6-8
+  status: planned
+  wave: 3
+  board: cohesion write mode + model texts
+  summary: Reading as a writer, experimenting with devices, adapting a source text, and editing for effect, in short pieces.
+    Longer drafting in class.
+- id: respond
+  title: Responding to literature
+  pathway: Reading literature
+  years: 6-8
+  status: second pass
+  wave: 3
+  board: workshop format + open-answer mode (model range, highlight your evidence)
+  summary: Forming and justifying an opinion, engaging with others' views, context and values, aesthetic and social value.
+    Works on the class text; the site scaffolds the talk and the write-up.
+- id: speaking
+  title: Speaking to an audience
+  pathway: Speaking and listening
+  years: 6-8
+  status: planned
+  wave: 2
+  board: speech shape + cohesion cue mode
+  summary: Purpose and audience, structure, script to cue cards, voice and visuals, rehearsal, and judging spoken texts from
+    transcripts. Delivery in class.
+- id: talk
+  title: Discussion moves
+  pathway: Speaking and listening
+  years: 6-8
+  status: second pass
+  wave: 3
+  board: workshop format; transcript boards
+  summary: Paraphrasing, questioning, building on and challenging others, and hearing stated and implied meaning. Talk moves
+    on cards, practised in class workshops.
+- id: spelling
+  title: Spelling through word parts
+  pathway: Words and spelling
+  years: 5-8
+  status: planned
+  wave: 3
+  board: 'new: word builder board + practice pages (new words each time)'
+  summary: Base words, prefixes and suffixes, Greek and Latin roots, spelling generalisations and word families, with endless
+    practice. Spelling for effect at 9-10.
+nodes:
+- node: AC9EFLA01 n1
+  thread: relationships
+  modes: [learn]
+- node: AC9EFLA01 n2
+  thread: relationships
+  modes: [learn]
+- node: AC9EFLA01 n3
+  thread: relationships
+  modes: [learn, class]
+  note: 'Foundation: asking and requesting is oral, in class.'
+- node: AC9E1LA01 n1
+  thread: relationships
+  modes: [learn, class]
+  note: Body language is seen and done in class.
+- node: AC9E1LA01 n2
+  thread: relationships
+  modes: [learn]
+- node: AC9E1LA01 n3
+  thread: relationships
+  modes: [learn]
+- node: AC9E1LA01 n4
+  thread: relationships
+  modes: [learn, class]
+  note: Gesture and expression are seen and done in class.
+- node: AC9E2LA01 n1
+  thread: relationships
+  modes: [learn]
+- node: AC9E2LA01 n2
+  thread: relationships
+  modes: [learn]
+- node: AC9E2LA01 n3
+  thread: relationships
+  modes: [learn]
+- node: AC9E3LA01 n1
+  thread: relationships
+  modes: [learn, class]
+  note: Turn-taking is practised in class.
+- node: AC9E3LA01 n2
+  thread: relationships
+  modes: [learn, class]
+  note: Body language is practised in class.
+- node: AC9E4LA01 n1
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E4LA01 n2
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E4LA01 n3
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E4LA01 n4
+  thread: relationships
+  modes: [learn, discuss]
+  course: words
+  part: warm
+  note: 'Cultural greeting conventions: learn the idea, discuss with the class; avoid stating any one community''s protocols
+    on the site. First Nations content: the site states the idea and points to the right sources and the class text; it never
+    supplies protocols, spellings or interpretations itself.'
+- node: AC9E5LA01 n1
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E5LA01 n2
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E5LA01 n3
+  thread: relationships
+  modes: [learn, discuss]
+  course: words
+  part: warm
+  note: 'Cultural communication norms: as above. First Nations content: the site states the idea and points to the right sources
+    and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E5LA01 n4
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E6LA01 n1
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: nodes
+- node: AC9E6LA01 n2
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: nodes
+- node: AC9E6LA01 n3
+  thread: relationships
+  modes: [learn, write]
+  course: words
+  part: nodes
+  note: Apply register in own writing, self-checked.
+- node: AC9E7LA01 n1
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: nodes
+- node: AC9E7LA01 n2
+  thread: relationships
+  modes: [learn, discuss]
+  course: words
+  part: nodes
+  note: Language creating identity is best argued about, after a board on examples.
+- node: AC9E8LA01 n1
+  thread: relationships
+  modes: [learn, write]
+  course: words
+  part: nodes
+- node: AC9E8LA01 n2
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: nodes
+- node: AC9E9LA01 n1
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: ext
+- node: AC9E9LA01 n2
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: ext
+- node: AC9E9LA01 n3
+  thread: relationships
+  modes: [learn, discuss]
+  course: words
+  part: ext
+  note: 'Empowerment as a mechanism: examples on the board, then discussion.'
+- node: AC9E10LA01 n1
+  thread: relationships
+  modes: [learn]
+  course: words
+  part: ext
+- node: AC9E10LA01 n2
+  thread: relationships
+  modes: [learn, respond]
+  course: words
+  part: ext
+- node: AC9E10LA01 n3
+  thread: relationships
+  modes: [learn, respond, discuss]
+  course: words
+  part: ext
+  note: 'Marginalising language: identify on planted examples, then judge and discuss.'
+- node: AC9EFLA02 n1
+  thread: evaluative
+  modes: [learn, class]
+  note: 'Foundation: mostly oral.'
+- node: AC9EFLA02 n2
+  thread: evaluative
+  modes: [class]
+  note: 'Gesture and speech together: oral, Foundation.'
+- node: AC9EFLA02 n3
+  thread: evaluative
+  modes: [learn, respond]
+- node: AC9E1LA02 n1
+  thread: evaluative
+  modes: [learn, respond]
+- node: AC9E1LA02 n2
+  thread: evaluative
+  modes: [learn, respond]
+- node: AC9E1LA02 n3
+  thread: evaluative
+  modes: [learn, respond]
+- node: AC9E2LA02 n1
+  thread: evaluative
+  modes: [learn]
+- node: AC9E2LA02 n2
+  thread: evaluative
+  modes: [learn, respond]
+- node: AC9E2LA02 n3
+  thread: evaluative
+  modes: [learn]
+- node: AC9E3LA02 n1
+  thread: evaluative
+  modes: [learn]
+- node: AC9E3LA02 n2
+  thread: evaluative
+  modes: [learn, respond]
+- node: AC9E4LA02 n1
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: warm
+- node: AC9E4LA02 n2
+  thread: evaluative
+  modes: [learn]
+  course: persuade
+  part: warm
+- node: AC9E4LA02 n3
+  thread: evaluative
+  modes: [learn]
+  course: persuade
+  part: warm
+- node: AC9E5LA02 n1
+  thread: evaluative
+  modes: [learn, write]
+  course: persuade
+  part: warm
+- node: AC9E5LA02 n2
+  thread: evaluative
+  modes: [learn, write]
+  course: persuade
+  part: warm
+- node: AC9E5LA02 n3
+  thread: evaluative
+  modes: [learn, write]
+  course: persuade
+  part: warm
+- node: AC9E6LA02 n1
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: nodes
+- node: AC9E6LA02 n2
+  thread: evaluative
+  modes: [learn, write, respond]
+  course: persuade
+  part: nodes
+- node: AC9E6LA02 n3
+  thread: evaluative
+  modes: [learn]
+  course: persuade
+  part: nodes
+- node: AC9E7LA02 n1
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: nodes
+- node: AC9E7LA02 n2
+  thread: evaluative
+  modes: [learn, write]
+  course: persuade
+  part: nodes
+  note: 'Substantiation: see it on a model, then substantiate own evaluation (links to Inside a paragraph).'
+- node: AC9E7LY03 n1
+  thread: evaluative
+  modes: [learn]
+  course: persuade
+  part: nodes
+- node: AC9E7LY03 n2
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: nodes
+- node: AC9E8LA02 n1
+  thread: evaluative
+  modes: [learn, write]
+  course: persuade
+  part: nodes
+- node: AC9E8LA02 n2
+  thread: evaluative
+  modes: [learn, write, respond]
+  course: persuade
+  part: nodes
+- node: AC9E8LY03 n1
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: nodes
+  note: 'Evaluate language choices for purpose: learn on models, then justify a view.'
+- node: AC9E8LY03 n2
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: nodes
+  note: 'Evaluate use of sources: learn on models, then justify a view.'
+- node: AC9E9LA02 n1
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: ext
+- node: AC9E9LA02 n2
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: ext
+- node: AC9E9LA02 n3
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: ext
+- node: AC9E9LY03 n1
+  thread: evaluative
+  modes: [learn]
+  course: persuade
+  part: ext
+- node: AC9E9LY03 n2
+  thread: evaluative
+  modes: [learn, respond, discuss]
+  course: persuade
+  part: ext
+  note: 'Judging fairness of a representation: contested, so discussion too.'
+- node: AC9E10LA02 n1
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: ext
+  note: 'Values revealed by word choice: board examples, then a written judgement.'
+- node: AC9E10LA02 n2
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: ext
+  note: 'Implied values: board examples, then a written judgement.'
+- node: AC9E10LY03 n1
+  thread: evaluative
+  modes: [learn, respond]
+  course: persuade
+  part: ext
+- node: AC9E10LY03 n2
+  thread: evaluative
+  modes: [learn, respond, discuss]
+  course: persuade
+  part: ext
+  note: 'Judging how language represents values: contested, so discussion too.'
+- node: AC9EFLA03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9EFLA03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9EFLA03 n3
+  thread: structure
+  modes: [learn, class]
+  note: 'Oral and image-based First Nations texts: experienced in class with community-appropriate texts; the site states
+    the idea only. First Nations content: the site states the idea and points to the right sources and the class text; it
+    never supplies protocols, spellings or interpretations itself.'
+- node: AC9EFLY01 n1
+  thread: structure
+  modes: [learn]
+- node: AC9EFLY01 n2
+  thread: structure
+  modes: [learn]
+- node: AC9EFLY03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9EFLY03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E1LA03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E1LA03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E1LA03 n3
+  thread: structure
+  modes: [learn]
+- node: AC9E1LY01 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E1LY01 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E1LY03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E1LY03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E1LY03 n3
+  thread: structure
+  modes: [learn]
+- node: AC9E2LA03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E2LA03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E2LA03 n3
+  thread: structure
+  modes: [learn, respond]
+- node: AC9E2LY01 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E2LY01 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E2LY03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E2LY03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E3LA03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E3LA03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E3LY01 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E3LY03 n1
+  thread: structure
+  modes: [learn]
+- node: AC9E3LY03 n2
+  thread: structure
+  modes: [learn]
+- node: AC9E4LA03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E4LA03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E4LA03 n3
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E4LA03 n4
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E4LY03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E4LY03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E4LY03 n3
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E5LA03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E5LA03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E5LA03 n3
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E5LA03 n4
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E5LY03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E5LY03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E5LY03 n3
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: warm
+- node: AC9E6LA03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E6LA03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E6LA03 n3
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E6LY03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E6LY03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E6LY03 n3
+  thread: structure
+  modes: [learn, respond]
+  course: texts
+  part: nodes
+  note: Evaluate text effectiveness and suggest improvements.
+- node: AC9E7LA03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E7LA03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E7LY04 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E7LY04 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E8LA03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E8LA03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E8LY04 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: nodes
+- node: AC9E8LY04 n2
+  thread: structure
+  modes: [learn, respond]
+  course: texts
+  part: nodes
+- node: AC9E9LA03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: ext
+- node: AC9E9LA03 n2
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: ext
+- node: AC9E9LA03 n3
+  thread: structure
+  modes: [learn, write]
+  course: texts
+  part: ext
+- node: AC9E9LY04 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: ext
+- node: AC9E9LY04 n2
+  thread: structure
+  modes: [learn, respond]
+  course: texts
+  part: ext
+  note: 'Evaluate impact of organisation: supported judgement.'
+- node: AC9E10LA03 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: ext
+- node: AC9E10LA03 n2
+  thread: structure
+  modes: [learn, respond]
+  course: texts
+  part: ext
+  note: 'Evaluate effectiveness: a supported judgement compared with models.'
+- node: AC9E10LY04 n1
+  thread: structure
+  modes: [learn]
+  course: texts
+  part: ext
+- node: AC9E10LY04 n2
+  thread: structure
+  modes: [learn, respond]
+  course: texts
+  part: ext
+  note: 'Evaluate effectiveness of organisation: supported judgement.'
+- node: AC9E2LA04 n1
+  thread: cohesion
+  modes: [learn]
+- node: AC9E2LA04 n2
+  thread: cohesion
+  modes: [learn, write]
+- node: AC9E2LA04 n3
+  thread: cohesion
+  modes: [learn]
+  note: 'Ellipsis: identify omitted words on the board.'
+- node: AC9E3LA04 n1
+  thread: cohesion
+  modes: [learn]
+- node: AC9E3LA04 n2
+  thread: cohesion
+  modes: [learn]
+- node: AC9E4LA04 n1
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: warm
+- node: AC9E4LA04 n2
+  thread: cohesion
+  modes: [learn, write]
+  course: cohesion
+  part: warm
+- node: AC9E4LA04 n3
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: warm
+- node: AC9E5LA04 n1
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: warm
+- node: AC9E5LA04 n2
+  thread: cohesion
+  modes: [learn, write]
+  course: cohesion
+  part: warm
+- node: AC9E5LA04 n3
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: warm
+- node: AC9E6LA04 n1
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: nodes
+- node: AC9E6LA04 n2
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: nodes
+- node: AC9E6LA04 n3
+  thread: cohesion
+  modes: [learn, write]
+  course: cohesion
+  part: nodes
+- node: AC9E7LA04 n1
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: nodes
+- node: AC9E7LA04 n2
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: nodes
+- node: AC9E8LA04 n1
+  thread: cohesion
+  modes: [learn, write]
+  course: cohesion
+  part: nodes
+- node: AC9E8LA04 n2
+  thread: cohesion
+  modes: [learn, write]
+  course: cohesion
+  part: nodes
+- node: AC9E9LA04 n1
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: ext
+- node: AC9E9LA04 n2
+  thread: cohesion
+  modes: [learn]
+  course: expert
+  part: ext
+- node: AC9E9LA04 n3
+  thread: cohesion
+  modes: [learn]
+  course: expert
+  part: ext
+- node: AC9E10LA04 n1
+  thread: cohesion
+  modes: [learn]
+  course: cohesion
+  part: ext
+- node: AC9E10LA04 n2
+  thread: cohesion
+  modes: [learn]
+  course: images
+  part: ext
+  note: 'Paragraph and image integration: board with a layout.'
+- node: AC9EFLA05 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9EFLA05 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9EFLA06 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9EFLA06 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA06 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA06 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA06 n3
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA06 n4
+  thread: sentences
+  modes: [learn]
+  note: 'The clause as a unit: board.'
+- node: AC9E1LA07 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA07 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA07 n3
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA07 n4
+  thread: sentences
+  modes: [learn]
+- node: AC9E1LA07 n5
+  thread: sentences
+  modes: [learn]
+- node: AC9E2LA06 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E2LA06 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E2LA06 n3
+  thread: sentences
+  modes: [learn, write]
+- node: AC9E2LA07 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E2LA07 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E2LA07 n3
+  thread: sentences
+  modes: [learn, write]
+- node: AC9E3LA06 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E3LA06 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E3LA07 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E3LA07 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E3LA08 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E3LA08 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E4LA06 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E4LA06 n2
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E4LA06 n3
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: warm
+- node: AC9E4LA07 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E4LA07 n2
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E4LA07 n3
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E4LA08 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E4LA08 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E4LA08 n3
+  thread: sentences
+  modes: [learn]
+- node: AC9E4LA09 n1
+  thread: sentences
+  modes: [learn]
+- node: AC9E4LA09 n2
+  thread: sentences
+  modes: [learn]
+- node: AC9E5LA05 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E5LA05 n2
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E5LA05 n3
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: warm
+- node: AC9E5LA06 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E5LA06 n2
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: warm
+- node: AC9E5LA06 n3
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: warm
+- node: AC9E6LA05 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E6LA05 n2
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: nodes
+- node: AC9E6LA05 n3
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: nodes
+- node: AC9E6LA06 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E6LA06 n2
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E6LA06 n3
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: nodes
+- node: AC9E7LA05 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E7LA05 n2
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: nodes
+- node: AC9E7LA05 n3
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E7LA05 n4
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E7LA06 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E7LA06 n2
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E8LA05 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: nodes
+- node: AC9E8LA05 n2
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: nodes
+- node: AC9E9LA05 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: ext
+- node: AC9E9LA05 n2
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: ext
+- node: AC9E9LA05 n3
+  thread: sentences
+  modes: [learn, write]
+  course: sentences
+  part: ext
+- node: AC9E10LA05 n1
+  thread: sentences
+  modes: [learn]
+  course: sentences
+  part: ext
+- node: AC9E10LA05 n2
+  thread: sentences
+  modes: [learn, respond]
+  course: sentences
+  part: ext
+  note: 'Evaluate effectiveness of sentence structures: supported judgement.'
+- node: AC9E10LA06 n1
+  thread: sentences
+  modes: [learn, respond]
+  course: sentences
+  part: ext
+- node: AC9E10LA06 n2
+  thread: sentences
+  modes: [learn, respond]
+  course: sentences
+  part: ext
+- node: AC9E10LA06 n3
+  thread: sentences
+  modes: [learn, respond]
+  course: sentences
+  part: ext
+- node: AC9E7LA08 n1
+  thread: expert
+  modes: [learn]
+  course: expert
+  part: nodes
+- node: AC9E7LA08 n2
+  thread: expert
+  modes: [learn]
+  course: expert
+  part: nodes
+- node: AC9E8LA06 n1
+  thread: expert
+  modes: [learn]
+  course: expert
+  part: nodes
+- node: AC9E8LA06 n2
+  thread: expert
+  modes: [learn, discuss]
+  course: expert
+  part: nodes
+- node: AC9E8LA08 n1
+  thread: expert
+  modes: [learn]
+  course: expert
+  part: nodes
+- node: AC9E8LA08 n2
+  thread: expert
+  modes: [learn, write]
+  course: expert
+  part: nodes
+- node: AC9E9LA06 n1
+  thread: expert
+  modes: [learn]
+  course: expert
+  part: ext
+- node: AC9E9LA06 n2
+  thread: expert
+  modes: [learn]
+  course: expert
+  part: ext
+- node: AC9E9LA09 n1
+  thread: expert
+  modes: [learn, write]
+  course: expert
+  part: ext
+- node: AC9E9LA09 n2
+  thread: expert
+  modes: [learn, discuss]
+  course: expert
+  part: ext
+- node: AC9E10LA08 n1
+  thread: expert
+  modes: [learn]
+  course: expert
+  part: ext
+- node: AC9E10LA08 n2
+  thread: expert
+  modes: [learn, write]
+  course: expert
+  part: ext
+- node: AC9EFLA08 n1
+  thread: vocabulary
+  modes: [learn]
+- node: AC9EFLA08 n2
+  thread: vocabulary
+  modes: [learn]
+- node: AC9E1LA09 n1
+  thread: vocabulary
+  modes: [learn]
+- node: AC9E1LA09 n2
+  thread: vocabulary
+  modes: [learn]
+- node: AC9E1LA09 n3
+  thread: vocabulary
+  modes: [learn]
+  note: 'First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E2LA09 n1
+  thread: vocabulary
+  modes: [learn]
+- node: AC9E2LA09 n2
+  thread: vocabulary
+  modes: [learn]
+- node: AC9E2LA09 n3
+  thread: vocabulary
+  modes: [learn, write]
+- node: AC9E3LA10 n1
+  thread: vocabulary
+  modes: [learn]
+- node: AC9E3LA10 n2
+  thread: vocabulary
+  modes: [learn]
+- node: AC9E4LA11 n1
+  thread: vocabulary
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E4LA11 n2
+  thread: vocabulary
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E4LA11 n3
+  thread: vocabulary
+  modes: [learn, write]
+  course: words
+  part: warm
+  note: 'New words in own writing. First Nations content: the site states the idea and points to the right sources and the
+    class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E5LA08 n1
+  thread: vocabulary
+  modes: [learn]
+  course: words
+  part: warm
+- node: AC9E5LA08 n2
+  thread: vocabulary
+  modes: [learn]
+  course: spelling
+  part: nodes
+- node: AC9E5LA08 n3
+  thread: vocabulary
+  modes: [learn]
+  course: spelling
+  part: nodes
+- node: AC9E6LA08 n1
+  thread: vocabulary
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E6LA08 n2
+  thread: vocabulary
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E6LA08 n3
+  thread: vocabulary
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E9LA08 n1
+  thread: vocabulary
+  modes: [learn, write]
+  course: craft
+  part: ext
+- node: AC9E9LA08 n2
+  thread: vocabulary
+  modes: [learn, write]
+  course: craft
+  part: ext
+- node: AC9E9LA08 n3
+  thread: vocabulary
+  modes: [learn]
+  course: craft
+  part: ext
+- node: AC9EFLA09 n1
+  thread: punctuation
+  modes: [learn]
+- node: AC9EFLA09 n2
+  thread: punctuation
+  modes: [learn]
+- node: AC9EFLA09 n3
+  thread: punctuation
+  modes: [learn]
+- node: AC9E1LA10 n1
+  thread: punctuation
+  modes: [learn]
+- node: AC9E1LA10 n2
+  thread: punctuation
+  modes: [learn, class]
+- node: AC9E1LA10 n3
+  thread: punctuation
+  modes: [learn]
+- node: AC9E1LA10 n4
+  thread: punctuation
+  modes: [learn, write]
+- node: AC9E2LA10 n1
+  thread: punctuation
+  modes: [learn]
+- node: AC9E2LA10 n2
+  thread: punctuation
+  modes: [learn]
+- node: AC9E3LA11 n1
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: warm
+- node: AC9E3LA11 n2
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: warm
+- node: AC9E4LA12 n1
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: warm
+- node: AC9E4LA12 n2
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: warm
+- node: AC9E5LA09 n1
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: warm
+- node: AC9E5LA09 n2
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: warm
+- node: AC9E5LA09 n3
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: warm
+- node: AC9E6LA09 n1
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: nodes
+- node: AC9E6LA09 n2
+  thread: punctuation
+  modes: [learn, write]
+  course: punctuation
+  part: nodes
+- node: AC9E6LA09 n3
+  thread: punctuation
+  modes: [learn, write, class]
+  course: punctuation
+  part: nodes
+  note: 'Commas across extended writing: practise on the site, check in class drafts.'
+- node: AC9E7LA09 n1
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: nodes
+- node: AC9E7LA09 n2
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: nodes
+- node: AC9E8LA09 n1
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: nodes
+- node: AC9E8LA09 n2
+  thread: punctuation
+  modes: [learn, write]
+  course: punctuation
+  part: nodes
+- node: AC9E10LA09 n1
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: ext
+- node: AC9E10LA09 n2
+  thread: punctuation
+  modes: [learn]
+  course: punctuation
+  part: ext
+- node: AC9EFLA07 n1
+  thread: images
+  modes: [learn]
+- node: AC9EFLA07 n2
+  thread: images
+  modes: [learn]
+- node: AC9E1LA08 n1
+  thread: images
+  modes: [learn]
+- node: AC9E1LA08 n2
+  thread: images
+  modes: [learn]
+- node: AC9E1LA08 n3
+  thread: images
+  modes: [learn]
+- node: AC9E2LA08 n1
+  thread: images
+  modes: [learn]
+- node: AC9E2LA08 n2
+  thread: images
+  modes: [learn]
+- node: AC9E2LA08 n3
+  thread: images
+  modes: [learn]
+- node: AC9E3LA09 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: warm
+- node: AC9E3LA09 n2
+  thread: images
+  modes: [learn, respond]
+  course: images
+  part: warm
+- node: AC9E4LA10 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: warm
+- node: AC9E4LA10 n2
+  thread: images
+  modes: [learn, respond]
+  course: images
+  part: warm
+- node: AC9E5LA07 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: warm
+- node: AC9E5LA07 n2
+  thread: images
+  modes: [learn]
+  course: images
+  part: warm
+- node: AC9E5LA07 n3
+  thread: images
+  modes: [learn, class]
+  course: images
+  part: warm
+  note: 'Sound and image in film: needs audio and film; done in class with the class film, the site gives the idea with stills.'
+- node: AC9E6LA07 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: nodes
+- node: AC9E6LA07 n2
+  thread: images
+  modes: [learn]
+  course: images
+  part: nodes
+- node: AC9E6LA07 n3
+  thread: images
+  modes: [learn, discuss]
+  course: images
+  part: nodes
+  note: 'Cultural sensitivity of images and maps for First Nations Australians: the principle on the site, judgement discussed
+    in class with local guidance. First Nations content: the site states the idea and points to the right sources and the
+    class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E7LA07 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: nodes
+- node: AC9E7LA07 n2
+  thread: images
+  modes: [learn, respond]
+  course: images
+  part: nodes
+- node: AC9E8LA07 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: nodes
+- node: AC9E8LA07 n2
+  thread: images
+  modes: [learn, respond]
+  course: images
+  part: nodes
+  note: 'Advertisement allusion: board on made-up adverts, then explain the layering.'
+- node: AC9E9LA07 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: ext
+- node: AC9E9LA07 n2
+  thread: images
+  modes: [learn, class]
+  course: images
+  part: ext
+  note: 'Moving images: film in class; the site uses stills and sequences.'
+- node: AC9E10LA07 n1
+  thread: images
+  modes: [learn]
+  course: images
+  part: ext
+- node: AC9E10LA07 n2
+  thread: images
+  modes: [learn, respond]
+  course: images
+  part: ext
+  note: 'Evaluate visual choices in representations: supported judgement.'
+- node: AC9EFLE01 n1
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9EFLE01 n2
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9EFLE01 n3
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E1LE01 n1
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E1LE01 n2
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E1LE01 n3
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E2LE01 n1
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E2LE01 n2
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E2LE01 n3
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E3LE01 n1
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E3LE01 n2
+  thread: contexts
+  modes: [discuss, class]
+  note: 'F–3 literature discussion happens around read-alouds in class. First Nations content: the site states the idea and
+    points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E4LE01 n1
+  thread: contexts
+  modes: [learn, respond, discuss]
+  note: 'First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E4LE01 n2
+  thread: contexts
+  modes: [learn, respond, discuss]
+  note: 'First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E4LE01 n3
+  thread: contexts
+  modes: [learn, respond, discuss]
+  note: 'First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E4LY01 n1
+  thread: contexts
+  modes: [learn, respond]
+  note: 'Compare two texts from different times: board with two short texts, then explain.'
+- node: AC9E4LY01 n2
+  thread: contexts
+  modes: [learn, respond, discuss]
+- node: AC9E5LE01 n1
+  thread: contexts
+  modes: [learn, respond]
+  course: respond
+  part: warm
+  note: 'Literary details carry context: identify on an extract, then explain. First Nations content: the site states the
+    idea and points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E5LE01 n2
+  thread: contexts
+  modes: [discuss, class]
+  course: respond
+  part: warm
+  note: 'First Nations literary contexts: through texts chosen by the school, with community guidance. First Nations content:
+    the site states the idea and points to the right sources and the class text; it never supplies protocols, spellings or
+    interpretations itself.'
+- node: AC9E5LE01 n3
+  thread: contexts
+  modes: [learn, respond]
+  course: respond
+  part: warm
+  note: 'Ballads (public-domain Australian ballads fit), then explain the context shown. First Nations content: the site states
+    the idea and points to the right sources and the class text; it never supplies protocols, spellings or interpretations
+    itself.'
+- node: AC9E5LY01 n1
+  thread: contexts
+  modes: [learn]
+  course: respond
+  part: warm
+  note: 'Vocabulary that marks time and place: board.'
+- node: AC9E5LY01 n2
+  thread: contexts
+  modes: [learn, respond, discuss]
+  course: respond
+  part: warm
+- node: AC9E5LY01 n3
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: warm
+- node: AC9E6LE01 n1
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+  note: 'First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E6LE01 n2
+  thread: contexts
+  modes: [discuss, class]
+  course: respond
+  part: nodes
+  note: 'Reading across diverse authors: the class text does this. First Nations content: the site states the idea and points
+    to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E6LE01 n3
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+  note: 'First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E6LY01 n1
+  thread: contexts
+  modes: [learn, respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E6LY01 n2
+  thread: contexts
+  modes: [learn, respond]
+  course: respond
+  part: nodes
+  note: 'Media texts and context: made-up adverts and news, then explain (links to ICT judging information).'
+- node: AC9E6LY01 n3
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E7LE01 n1
+  thread: contexts
+  modes: [learn, respond]
+  course: respond
+  part: nodes
+  note: 'Identify ideas and issues in context: on an extract, then explain. First Nations content: the site states the idea
+    and points to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E7LE01 n2
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+  note: 'Compare one idea across texts and contexts. First Nations content: the site states the idea and points to the right
+    sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E7LY01 n1
+  thread: contexts
+  modes: [learn, discuss]
+  course: respond
+  part: nodes
+  note: 'Technology and reading: explain on examples, discuss own habits.'
+- node: AC9E7LY01 n2
+  thread: contexts
+  modes: [learn, discuss]
+  course: respond
+  part: nodes
+  note: 'Technology and creating texts: examples, then discussion (links to Learning with AI).'
+- node: AC9E8LE01 n1
+  thread: contexts
+  modes: [learn, respond, discuss]
+  course: respond
+  part: nodes
+  note: 'First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E8LE01 n2
+  thread: contexts
+  modes: [respond, discuss, class]
+  course: respond
+  part: nodes
+  note: 'First Nations ways of being, knowing, thinking and doing: taught through the class text and local guidance, not stated
+    by the site. First Nations content: the site states the idea and points to the right sources and the class text; it never
+    supplies protocols, spellings or interpretations itself.'
+- node: AC9E8LY01 n1
+  thread: contexts
+  modes: [learn, respond]
+  course: respond
+  part: nodes
+  note: 'Features reflecting context: identify, then explain.'
+- node: AC9E9LE01 n1
+  thread: contexts
+  modes: [learn]
+  course: respond
+  part: ext
+  note: 'Representation is constructed: a board on made-up and public-domain examples. First Nations content: the site states
+    the idea and points to the right sources and the class text; it never supplies protocols, spellings or interpretations
+    itself.'
+- node: AC9E9LE01 n2
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+  note: 'How context shapes representation: interpretation. First Nations content: the site states the idea and points to
+    the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E9LY01 n1
+  thread: contexts
+  modes: [learn, respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E9LY01 n2
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E10LE01 n1
+  thread: contexts
+  modes: [learn, respond]
+  course: respond
+  part: ext
+  note: 'Analyse representations: identify choices, then explain. First Nations content: the site states the idea and points
+    to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E10LE01 n2
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+  note: 'Evaluate representations against context: interpretation. First Nations content: the site states the idea and points
+    to the right sources and the class text; it never supplies protocols, spellings or interpretations itself.'
+- node: AC9E10LY01 n1
+  thread: contexts
+  modes: [learn, respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E10LY01 n2
+  thread: contexts
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9EFLE02 n1
+  thread: response
+  modes: [discuss, class]
+  note: 'Foundation: feelings about a story, in class.'
+- node: AC9EFLE02 n2
+  thread: response
+  modes: [class]
+  note: Foundation response through drawing or talk.
+- node: AC9E1LE02 n1
+  thread: response
+  modes: [respond, discuss]
+- node: AC9E1LE02 n2
+  thread: response
+  modes: [learn, respond, discuss]
+- node: AC9E1LE02 n3
+  thread: response
+  modes: [learn, discuss]
+  note: 'Who is telling the story: an early point-of-view idea.'
+- node: AC9E2LE02 n1
+  thread: response
+  modes: [respond, discuss]
+- node: AC9E2LE02 n2
+  thread: response
+  modes: [respond, discuss]
+- node: AC9E3LE02 n1
+  thread: response
+  modes: [respond, discuss]
+- node: AC9E3LE02 n2
+  thread: response
+  modes: [respond, discuss]
+- node: AC9E4LE02 n1
+  thread: response
+  modes: [learn]
+  note: 'Name structure and language choices with metalanguage: board.'
+- node: AC9E4LE02 n2
+  thread: response
+  modes: [learn, respond]
+  note: 'Describe the effect of a choice: model answers.'
+- node: AC9E4LE02 n3
+  thread: response
+  modes: [respond, discuss]
+- node: AC9E5LE02 n1
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: warm
+- node: AC9E5LE02 n2
+  thread: response
+  modes: [learn, respond]
+  course: respond
+  part: warm
+  note: Literary terms in an opinion.
+- node: AC9E5LE02 n3
+  thread: response
+  modes: [learn, respond, discuss]
+  course: respond
+  part: warm
+- node: AC9E6LE02 n1
+  thread: response
+  modes: [learn]
+  course: respond
+  part: nodes
+  note: 'Compare features of two texts: a board with two extracts.'
+- node: AC9E6LE02 n2
+  thread: response
+  modes: [learn, respond]
+  course: respond
+  part: nodes
+  note: How differences in narrator and voice affect readers.
+- node: AC9E6LE02 n3
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E7LE02 n1
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E7LE02 n2
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E7LE04 n1
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E7LE04 n2
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E8LE02 n1
+  thread: response
+  modes: [learn, respond]
+  course: respond
+  part: nodes
+  note: 'Style as the sum of choices: identify, then judge.'
+- node: AC9E8LE02 n2
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: nodes
+- node: AC9E9LE02 n1
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E9LE02 n2
+  thread: response
+  modes: [respond, class]
+  course: respond
+  part: ext
+  note: Whole-text analysis needs the whole class text; the site scaffolds the write-up.
+- node: AC9E9LE02 n3
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E9LE03 n1
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E9LE03 n2
+  thread: response
+  modes: [discuss]
+  course: respond
+  part: ext
+  note: 'Collaborative criteria for literary value: a workshop.'
+- node: AC9E10LE02 n1
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E10LE02 n2
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E10LE03 n1
+  thread: response
+  modes: [learn, respond]
+  course: respond
+  part: ext
+  note: Trace aesthetic qualities to features.
+- node: AC9E10LE03 n2
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E10LE04 n1
+  thread: response
+  modes: [learn, respond, discuss]
+  course: respond
+  part: ext
+  note: 'Identify ethical positions: contested, so discussion.'
+- node: AC9E10LE04 n2
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9E10LE07 n1
+  thread: response
+  modes: [learn, respond]
+  course: respond
+  part: ext
+  note: Identify aesthetic qualities with metalanguage.
+- node: AC9E10LE07 n2
+  thread: response
+  modes: [respond, discuss]
+  course: respond
+  part: ext
+- node: AC9EFLE03 n1
+  thread: craft
+  modes: [learn, class]
+  note: 'Foundation: features of a read-aloud story.'
+- node: AC9EFLE03 n2
+  thread: craft
+  modes: [learn, class]
+  note: 'Foundation: kinds of story, in class.'
+- node: AC9E1LE03 n1
+  thread: craft
+  modes: [learn]
+- node: AC9E1LE03 n2
+  thread: craft
+  modes: [learn]
+- node: AC9E1LE03 n3
+  thread: craft
+  modes: [learn]
+- node: AC9E1LE03 n4
+  thread: craft
+  modes: [learn, discuss]
+  note: 'Plot, character and setting together: discussion.'
+- node: AC9E2LE03 n1
+  thread: craft
+  modes: [learn]
+- node: AC9E2LE03 n2
+  thread: craft
+  modes: [learn, write]
+- node: AC9E2LE03 n3
+  thread: craft
+  modes: [learn]
+- node: AC9E3LE03 n1
+  thread: craft
+  modes: [learn]
+- node: AC9E3LE03 n2
+  thread: craft
+  modes: [learn, write]
+- node: AC9E4LE03 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: warm
+- node: AC9E4LE03 n2
+  thread: craft
+  modes: [learn, write]
+  course: craft
+  part: warm
+- node: AC9E4LE03 n3
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: warm
+- node: AC9E5LE03 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: warm
+- node: AC9E5LE03 n2
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: warm
+- node: AC9E5LE03 n3
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: warm
+- node: AC9E6LE03 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E6LE03 n2
+  thread: craft
+  modes: [learn, respond, class]
+  course: craft
+  part: nodes
+  note: 'Style across two or more texts by one author needs real texts: the class reading, or bring-your-own-text.'
+- node: AC9E6LE03 n3
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: nodes
+- node: AC9E7LE03 n1
+  thread: craft
+  modes: [learn, write]
+  course: craft
+  part: nodes
+- node: AC9E7LE03 n2
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: nodes
+- node: AC9E7LE05 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E7LE05 n2
+  thread: craft
+  modes: [learn, write]
+  course: craft
+  part: nodes
+- node: AC9E7LE06 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E7LE06 n2
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: nodes
+- node: AC9E7LE06 n3
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: nodes
+- node: AC9E8LE03 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E8LE03 n2
+  thread: craft
+  modes: [learn, discuss, class]
+  course: craft
+  part: nodes
+  note: 'Film: watched in class; the site uses stills.'
+- node: AC9E8LE04 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: nodes
+- node: AC9E8LE04 n2
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: nodes
+  note: 'Intertextuality and aesthetic quality: explain in an open answer.'
+- node: AC9E8LE05 n1
+  thread: craft
+  modes: [learn, write]
+  course: craft
+  part: nodes
+- node: AC9E8LE05 n2
+  thread: craft
+  modes: [learn, write]
+  course: craft
+  part: nodes
+- node: AC9E9LE04 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: ext
+- node: AC9E9LE04 n2
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: ext
+  note: 'Evaluate an author''s style: supported judgement.'
+- node: AC9E9LE05 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: ext
+- node: AC9E9LE05 n2
+  thread: craft
+  modes: [learn, write]
+  course: craft
+  part: ext
+- node: AC9E9LE05 n3
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: ext
+- node: AC9E10LE05 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: ext
+- node: AC9E10LE05 n2
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: ext
+- node: AC9E10LE06 n1
+  thread: craft
+  modes: [learn]
+  course: craft
+  part: ext
+- node: AC9E10LE06 n2
+  thread: craft
+  modes: [learn, respond]
+  course: craft
+  part: ext
+  note: Compare and evaluate voice across poetry, novels and film.
+- node: AC9EFLE04 n1
+  thread: poetry
+  modes: [learn]
+- node: AC9EFLE04 n2
+  thread: poetry
+  modes: [learn]
+- node: AC9EFLE04 n3
+  thread: poetry
+  modes: [class]
+  note: 'Performing a rhyme: class.'
+- node: AC9E1LA04 n1
+  thread: poetry
+  modes: [learn]
+- node: AC9E1LA04 n2
+  thread: poetry
+  modes: [learn, write]
+- node: AC9E1LA04 n3
+  thread: poetry
+  modes: [learn]
+- node: AC9E1LE04 n1
+  thread: poetry
+  modes: [learn, write]
+- node: AC9E1LE04 n2
+  thread: poetry
+  modes: [learn, write]
+- node: AC9E1LE04 n3
+  thread: poetry
+  modes: [learn, write]
+- node: AC9E1LE04 n4
+  thread: poetry
+  modes: [write, class]
+  note: 'Inventing sound patterns: write and share.'
+- node: AC9E2LE04 n1
+  thread: poetry
+  modes: [learn]
+- node: AC9E2LE04 n2
+  thread: poetry
+  modes: [class]
+  note: 'Reproducing a rhythm aloud: class.'
+- node: AC9E2LE04 n3
+  thread: poetry
+  modes: [learn, write]
+- node: AC9E3LE04 n1
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: warm
+- node: AC9E3LE04 n2
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: warm
+- node: AC9E4LE04 n1
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: warm
+- node: AC9E4LE04 n2
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: warm
+- node: AC9E4LE04 n3
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: warm
+- node: AC9E5LE04 n1
+  thread: poetry
+  modes: [learn, write]
+  course: poetry
+  part: nodes
+- node: AC9E5LE04 n2
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: nodes
+- node: AC9E5LE04 n3
+  thread: poetry
+  modes: [learn, write]
+  course: poetry
+  part: nodes
+- node: AC9E6LE04 n1
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: nodes
+- node: AC9E6LE04 n2
+  thread: poetry
+  modes: [learn]
+  course: poetry
+  part: nodes
+- node: AC9E6LE04 n3
+  thread: poetry
+  modes: [learn, class]
+  course: poetry
+  part: nodes
+  note: 'Ballad rhythm: board marks the stresses on a public-domain ballad; reading aloud in class.'
+- node: AC9E6LE04 n4
+  thread: poetry
+  modes: [learn, write]
+  course: poetry
+  part: nodes
+- node: AC9EFLE05 n1
+  thread: creating
+  modes: [write]
+- node: AC9EFLE05 n2
+  thread: creating
+  modes: [class]
+  note: 'Role-play: class.'
+- node: AC9EFLE05 n3
+  thread: creating
+  modes: [write]
+- node: AC9E1LE05 n1
+  thread: creating
+  modes: [class]
+  note: 'Oral retelling: class.'
+- node: AC9E1LE05 n2
+  thread: creating
+  modes: [write]
+- node: AC9E1LE05 n3
+  thread: creating
+  modes: [write]
+- node: AC9E2LE05 n1
+  thread: creating
+  modes: [learn, write]
+- node: AC9E2LE05 n2
+  thread: creating
+  modes: [write]
+- node: AC9E2LE05 n3
+  thread: creating
+  modes: [write]
+- node: AC9E3LE05 n1
+  thread: creating
+  modes: [write]
+- node: AC9E3LE05 n2
+  thread: creating
+  modes: [write]
+- node: AC9E4LE05 n1
+  thread: creating
+  modes: [write]
+- node: AC9E4LE05 n2
+  thread: creating
+  modes: [write]
+- node: AC9E4LE05 n3
+  thread: creating
+  modes: [write, class]
+  note: 'Peer feedback and revision: a feedback card on the site, done in class.'
+- node: AC9E5LE05 n1
+  thread: creating
+  modes: [learn, write]
+  course: stories
+  part: warm
+- node: AC9E5LE05 n2
+  thread: creating
+  modes: [write]
+  course: stories
+  part: warm
+- node: AC9E5LE05 n3
+  thread: creating
+  modes: [write]
+  course: stories
+  part: warm
+- node: AC9E5LE05 n4
+  thread: creating
+  modes: [write]
+  course: stories
+  part: warm
+- node: AC9E6LE05 n1
+  thread: creating
+  modes: [learn, write]
+  course: stories
+  part: nodes
+- node: AC9E6LE05 n2
+  thread: creating
+  modes: [write]
+  course: stories
+  part: nodes
+- node: AC9E6LE05 n3
+  thread: creating
+  modes: [write]
+  course: stories
+  part: nodes
+- node: AC9E7LE07 n1
+  thread: creating
+  modes: [learn, write]
+  course: stories
+  part: nodes
+- node: AC9E7LE07 n2
+  thread: creating
+  modes: [write]
+  course: stories
+  part: nodes
+- node: AC9E8LE06 n1
+  thread: creating
+  modes: [write]
+  course: stories
+  part: nodes
+- node: AC9E8LE06 n2
+  thread: creating
+  modes: [write]
+  course: stories
+  part: nodes
+- node: AC9E9LE06 n1
+  thread: creating
+  modes: [write]
+  course: stories
+  part: ext
+- node: AC9E9LE06 n2
+  thread: creating
+  modes: [write]
+  course: stories
+  part: ext
+- node: AC9E10LE08 n1
+  thread: creating
+  modes: [write, class]
+  course: stories
+  part: ext
+  note: 'Sustained voice across a whole text: drafted over weeks in class; the site gives short exercises.'
+- node: AC9E10LE08 n2
+  thread: creating
+  modes: [write]
+  course: stories
+  part: ext
+- node: AC9E10LE08 n3
+  thread: creating
+  modes: [write]
+  course: stories
+  part: ext
+- node: AC9EFLA04 n1
+  thread: reading
+  modes: [specialist]
+  note: 'Print direction: early reading.'
+- node: AC9EFLA04 n2
+  thread: reading
+  modes: [specialist]
+  note: 'Book handling: early reading.'
+- node: AC9EFLA04 n3
+  thread: reading
+  modes: [learn, class]
+  note: 'Digital navigation basics: class with real devices.'
+- node: AC9EFLY05 n1
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9EFLY05 n2
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9EFLY05 n3
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9EFLY05 n4
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E1LA05 n1
+  thread: reading
+  modes: [learn]
+- node: AC9E1LA05 n2
+  thread: reading
+  modes: [learn]
+- node: AC9E1LA05 n3
+  thread: reading
+  modes: [learn]
+- node: AC9E1LY05 n1
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E1LY05 n2
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E1LY05 n3
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E1LY05 n4
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E2LA05 n1
+  thread: reading
+  modes: [learn]
+- node: AC9E2LA05 n2
+  thread: reading
+  modes: [learn]
+- node: AC9E2LA05 n3
+  thread: reading
+  modes: [learn]
+- node: AC9E2LY05 n1
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E2LY05 n2
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E2LY05 n3
+  thread: reading
+  modes: [discuss, class]
+  note: F–2 comprehension happens around shared reading in class.
+- node: AC9E3LA05 n1
+  thread: reading
+  modes: [learn]
+- node: AC9E3LA05 n2
+  thread: reading
+  modes: [learn]
+- node: AC9E3LY05 n1
+  thread: reading
+  modes: [learn]
+- node: AC9E3LY05 n2
+  thread: reading
+  modes: [learn, respond]
+- node: AC9E4LA05 n1
+  thread: reading
+  modes: [learn]
+- node: AC9E4LA05 n2
+  thread: reading
+  modes: [learn]
+- node: AC9E4LY04 n1
+  thread: reading
+  modes: [specialist]
+  note: 'Fluent reading: reading programme and class reading.'
+- node: AC9E4LY04 n2
+  thread: reading
+  modes: [specialist]
+  note: 'Self-correction while reading: reading programme and class reading.'
+- node: AC9E4LY05 n1
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+- node: AC9E4LY05 n2
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+- node: AC9E4LY05 n3
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+- node: AC9E4LY05 n4
+  thread: reading
+  modes: [learn, respond]
+  course: reading
+  part: warm
+- node: AC9E5LY04 n1
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+  note: 'Skimming and scanning: a timed board on a made-up page.'
+- node: AC9E5LY04 n2
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+- node: AC9E5LY04 n3
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+- node: AC9E5LY05 n1
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+- node: AC9E5LY05 n2
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+- node: AC9E5LY05 n3
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: warm
+  note: 'Evaluate sources: covered by ICT judging information; link there.'
+- node: AC9E6LY04 n1
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: nodes
+- node: AC9E6LY04 n2
+  thread: reading
+  modes: [learn, respond]
+  course: reading
+  part: nodes
+- node: AC9E6LY04 n3
+  thread: reading
+  modes: [learn, class]
+  course: reading
+  part: nodes
+  note: 'Selecting texts for research: links to ICT judging information; real research in class.'
+- node: AC9E6LY05 n1
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: nodes
+- node: AC9E6LY05 n2
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: nodes
+- node: AC9E6LY05 n3
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: nodes
+- node: AC9E7LY05 n1
+  thread: reading
+  modes: [learn, respond]
+  course: reading
+  part: nodes
+- node: AC9E7LY05 n2
+  thread: reading
+  modes: [learn, write]
+  course: reading
+  part: nodes
+  note: A written summary, compared with a model; extended texts need the class text or bring-your-own-text.
+- node: AC9E8LY05 n1
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: nodes
+- node: AC9E8LY05 n2
+  thread: reading
+  modes: [learn, respond]
+  course: reading
+  part: nodes
+  note: 'Evaluate credibility, including images: board, then a supported judgement.'
+- node: AC9E9LY05 n1
+  thread: reading
+  modes: [learn, respond]
+  course: reading
+  part: ext
+- node: AC9E9LY05 n2
+  thread: reading
+  modes: [learn, respond]
+  course: reading
+  part: ext
+  note: 'Compare ideas between texts: two short texts on a board, then an open answer.'
+- node: AC9E10LY05 n1
+  thread: reading
+  modes: [learn]
+  course: reading
+  part: ext
+- node: AC9E10LY05 n2
+  thread: reading
+  modes: [learn, respond]
+  course: reading
+  part: ext
+  note: 'Interpret abstract ideas: open answer with models.'
+- node: AC9EFLY06 n1
+  thread: writing
+  modes: [class]
+  note: F–1 writing is guided in class.
+- node: AC9EFLY06 n2
+  thread: writing
+  modes: [class]
+  note: F–1 writing is guided in class.
+- node: AC9EFLY06 n3
+  thread: writing
+  modes: [class]
+  note: F–1 writing is guided in class.
+- node: AC9E1LY06 n1
+  thread: writing
+  modes: [class]
+  note: F–1 writing is guided in class.
+- node: AC9E1LY06 n2
+  thread: writing
+  modes: [class]
+  note: F–1 writing is guided in class.
+- node: AC9E1LY06 n3
+  thread: writing
+  modes: [class]
+  note: F–1 writing is guided in class.
+- node: AC9E1LY06 n4
+  thread: writing
+  modes: [class]
+  note: F–1 writing is guided in class.
+- node: AC9E2LY06 n1
+  thread: writing
+  modes: [write]
+- node: AC9E2LY06 n2
+  thread: writing
+  modes: [write, class]
+- node: AC9E2LY06 n3
+  thread: writing
+  modes: [write]
+- node: AC9E3LY06 n1
+  thread: writing
+  modes: [write]
+- node: AC9E3LY06 n2
+  thread: writing
+  modes: [write]
+- node: AC9E3LY06 n3
+  thread: writing
+  modes: [write, class]
+- node: AC9E4LY06 n1
+  thread: writing
+  modes: [write]
+  course: editing
+  part: warm
+- node: AC9E4LY06 n2
+  thread: writing
+  modes: [write]
+  course: editing
+  part: warm
+- node: AC9E4LY06 n3
+  thread: writing
+  modes: [write]
+  course: editing
+  part: warm
+- node: AC9E5LY06 n1
+  thread: writing
+  modes: [write]
+  course: editing
+  part: warm
+- node: AC9E5LY06 n2
+  thread: writing
+  modes: [write]
+  course: editing
+  part: warm
+- node: AC9E5LY06 n3
+  thread: writing
+  modes: [write]
+  course: editing
+  part: warm
+- node: AC9E5LY06 n4
+  thread: writing
+  modes: [write, class]
+  course: editing
+  part: warm
+- node: AC9E6LY06 n1
+  thread: writing
+  modes: [write]
+  course: editing
+  part: nodes
+- node: AC9E6LY06 n2
+  thread: writing
+  modes: [write]
+  course: editing
+  part: nodes
+- node: AC9E6LY06 n3
+  thread: writing
+  modes: [write, class]
+  course: editing
+  part: nodes
+- node: AC9E7LY06 n1
+  thread: writing
+  modes: [learn, write]
+  course: editing
+  part: nodes
+- node: AC9E7LY06 n2
+  thread: writing
+  modes: [write]
+  course: editing
+  part: nodes
+- node: AC9E7LY06 n3
+  thread: writing
+  modes: [write, class]
+  course: editing
+  part: nodes
+- node: AC9E8LY06 n1
+  thread: writing
+  modes: [write]
+  course: editing
+  part: nodes
+- node: AC9E8LY06 n2
+  thread: writing
+  modes: [write]
+  course: editing
+  part: nodes
+- node: AC9E8LY06 n3
+  thread: writing
+  modes: [write]
+  course: editing
+  part: nodes
+- node: AC9E9LY06 n1
+  thread: writing
+  modes: [write]
+  course: editing
+  part: ext
+- node: AC9E9LY06 n2
+  thread: writing
+  modes: [write]
+  course: editing
+  part: ext
+- node: AC9E9LY06 n3
+  thread: writing
+  modes: [write, class]
+  course: editing
+  part: ext
+- node: AC9E10LY06 n1
+  thread: writing
+  modes: [learn, write]
+  course: editing
+  part: ext
+- node: AC9E10LY06 n2
+  thread: writing
+  modes: [write]
+  course: editing
+  part: ext
+- node: AC9E10LY06 n3
+  thread: writing
+  modes: [write, class]
+  course: editing
+  part: ext
+- node: AC9EFLY02 n1
+  thread: talk
+  modes: [discuss, class]
+- node: AC9EFLY02 n2
+  thread: talk
+  modes: [discuss, class]
+- node: AC9EFLY02 n3
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E1LY02 n1
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E1LY02 n2
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E1LY02 n3
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E2LY02 n1
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E2LY02 n2
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E2LY02 n3
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E3LY02 n1
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E3LY02 n2
+  thread: talk
+  modes: [learn, class]
+  note: 'Adjust language for the audience: examples, then class.'
+- node: AC9E4LY02 n1
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E4LY02 n2
+  thread: talk
+  modes: [discuss, class]
+- node: AC9E5LY02 n1
+  thread: talk
+  modes: [discuss, class]
+  course: talk
+  part: warm
+- node: AC9E5LY02 n2
+  thread: talk
+  modes: [discuss, class]
+  course: talk
+  part: warm
+- node: AC9E5LY02 n3
+  thread: talk
+  modes: [discuss, speak]
+  course: talk
+  part: warm
+  note: 'Present and justify an opinion: a short speech or a discussion turn.'
+- node: AC9E6LY02 n1
+  thread: talk
+  modes: [discuss, class]
+  course: talk
+  part: nodes
+- node: AC9E6LY02 n2
+  thread: talk
+  modes: [discuss, class]
+  course: talk
+  part: nodes
+- node: AC9E6LY02 n3
+  thread: talk
+  modes: [discuss, class]
+  course: talk
+  part: nodes
+  note: Develop arguments in discussion.
+- node: AC9E7LY02 n1
+  thread: talk
+  modes: [discuss, class]
+  course: talk
+  part: nodes
+- node: AC9E7LY02 n2
+  thread: talk
+  modes: [learn, discuss]
+  course: speaking
+  part: nodes
+  note: 'Evaluate features of spoken texts: transcript and a checklist.'
+- node: AC9E8LY02 n1
+  thread: talk
+  modes: [learn, discuss]
+  course: talk
+  part: nodes
+  note: 'Stated and implied meaning in a spoken text: a transcript on the board, then discussion.'
+- node: AC9E8LY02 n2
+  thread: talk
+  modes: [discuss, class]
+  course: talk
+  part: nodes
+- node: AC9E9LY02 n1
+  thread: talk
+  modes: [learn, discuss]
+  course: talk
+  part: ext
+  note: 'How a spoken text positions listeners: a transcript on the board.'
+- node: AC9E9LY02 n2
+  thread: talk
+  modes: [discuss, speak]
+  course: talk
+  part: ext
+  note: Present and discuss opinions on a spoken text.
+- node: AC9E10LY02 n1
+  thread: talk
+  modes: [learn, discuss]
+  course: talk
+  part: ext
+  note: 'Purposes and effects in spoken texts: transcript on the board.'
+- node: AC9E10LY02 n2
+  thread: talk
+  modes: [discuss, speak]
+  course: talk
+  part: ext
+  note: Present a developed opinion on a spoken text.
+- node: AC9EFLY07 n1
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9EFLY07 n2
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9E1LY07 n1
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9E1LY07 n2
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9E1LY07 n3
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9E2LY07 n1
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9E2LY07 n2
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9E2LY07 n3
+  thread: presenting
+  modes: [class]
+  note: F–2 presentations are guided in class.
+- node: AC9E3LY07 n1
+  thread: presenting
+  modes: [write, speak]
+- node: AC9E3LY07 n2
+  thread: presenting
+  modes: [speak, class]
+- node: AC9E4LY07 n1
+  thread: presenting
+  modes: [write, speak]
+  course: speaking
+  part: warm
+- node: AC9E4LY07 n2
+  thread: presenting
+  modes: [speak]
+  course: speaking
+  part: warm
+- node: AC9E4LY07 n3
+  thread: presenting
+  modes: [speak, class]
+  course: speaking
+  part: warm
+- node: AC9E5LY07 n1
+  thread: presenting
+  modes: [write, speak]
+  course: speaking
+  part: warm
+- node: AC9E5LY07 n2
+  thread: presenting
+  modes: [speak]
+  course: speaking
+  part: warm
+- node: AC9E5LY07 n3
+  thread: presenting
+  modes: [speak]
+  course: speaking
+  part: warm
+- node: AC9E5LY07 n4
+  thread: presenting
+  modes: [speak]
+  course: speaking
+  part: warm
+- node: AC9E6LY07 n1
+  thread: presenting
+  modes: [write, speak]
+  course: speaking
+  part: nodes
+- node: AC9E6LY07 n2
+  thread: presenting
+  modes: [speak, class]
+  course: speaking
+  part: nodes
+- node: AC9E6LY07 n3
+  thread: presenting
+  modes: [speak, class]
+  course: speaking
+  part: nodes
+- node: AC9E7LY07 n1
+  thread: presenting
+  modes: [write, speak]
+  course: speaking
+  part: nodes
+- node: AC9E7LY07 n2
+  thread: presenting
+  modes: [speak]
+  course: speaking
+  part: nodes
+- node: AC9E8LY07 n1
+  thread: presenting
+  modes: [write, speak]
+  course: speaking
+  part: nodes
+- node: AC9E8LY07 n2
+  thread: presenting
+  modes: [speak, class]
+  course: speaking
+  part: nodes
+- node: AC9E9LY07 n1
+  thread: presenting
+  modes: [write, speak]
+  course: speaking
+  part: ext
+- node: AC9E9LY07 n2
+  thread: presenting
+  modes: [speak]
+  course: speaking
+  part: ext
+- node: AC9E9LY07 n3
+  thread: presenting
+  modes: [speak, class]
+  course: speaking
+  part: ext
+- node: AC9E10LY07 n1
+  thread: presenting
+  modes: [write, speak]
+  course: speaking
+  part: ext
+- node: AC9E10LY07 n2
+  thread: presenting
+  modes: [write, speak, class]
+  course: speaking
+  part: ext
+- node: AC9E10LY07 n3
+  thread: presenting
+  modes: [speak, class]
+  course: speaking
+  part: ext
+- node: AC9E2LY11 n1
+  thread: spelling
+  modes: [specialist]
+  note: 'Phonics-based spelling: early literacy programme.'
+- node: AC9E2LY11 n2
+  thread: spelling
+  modes: [specialist]
+  note: 'Phonics-based spelling: early literacy programme.'
+- node: AC9E2LY12 n1
+  thread: spelling
+  modes: [learn]
+- node: AC9E2LY12 n2
+  thread: spelling
+  modes: [learn]
+- node: AC9E3LY09 n1
+  thread: spelling
+  modes: [specialist]
+  note: 'Phonics-based spelling: early literacy programme.'
+- node: AC9E3LY10 n1
+  thread: spelling
+  modes: [learn]
+- node: AC9E3LY10 n2
+  thread: spelling
+  modes: [learn]
+- node: AC9E3LY12 n1
+  thread: spelling
+  modes: [specialist]
+  note: 'Phonics-based spelling: early literacy programme.'
+- node: AC9E3LY12 n2
+  thread: spelling
+  modes: [learn]
+  note: 'Homophones in context: a board, as in Year 4.'
+- node: AC9E4LY09 n1
+  thread: spelling
+  modes: [specialist]
+  note: 'Complex vowel patterns: phonics programme.'
+- node: AC9E4LY09 n2
+  thread: spelling
+  modes: [learn]
+- node: AC9E4LY10 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E4LY10 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E4LY11 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E4LY11 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E5LY08 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E5LY08 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E5LY09 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E5LY09 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E5LY09 n3
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E5LY10 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E5LY10 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: warm
+- node: AC9E6LY08 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: nodes
+  note: Year 6 word study on complex words (not a phonics programme).
+- node: AC9E6LY08 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: nodes
+  note: Year 6 word study on complex words (not a phonics programme).
+- node: AC9E6LY08 n3
+  thread: spelling
+  modes: [class]
+  note: 'Decoding while reading independently: class reading.'
+- node: AC9E6LY09 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: nodes
+- node: AC9E6LY09 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: nodes
+- node: AC9E6LY09 n3
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: nodes
+- node: AC9E7LY08 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: nodes
+- node: AC9E7LY08 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: nodes
+- node: AC9E8LY08 n1
+  thread: spelling
+  modes: [learn, write]
+  course: spelling
+  part: nodes
+  note: Practice pages, then accurate spelling in own writing.
+- node: AC9E8LY08 n2
+  thread: spelling
+  modes: [learn, class]
+  course: spelling
+  part: nodes
+  note: 'Spelling Aboriginal and Torres Strait Islander words: point to the right sources (AIATSIS map, local community);
+    First Nations content: the site states the idea and points to the right sources and the class text; it never supplies
+    protocols, spellings or interpretations itself.'
+- node: AC9E9LY08 n1
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: ext
+  note: 'Spelling as characterisation: board on made-up dialogue.'
+- node: AC9E9LY08 n2
+  thread: spelling
+  modes: [learn]
+  course: spelling
+  part: ext
+- node: AC9E10LY08 n1
+  thread: spelling
+  modes: [learn, write]
+  course: spelling
+  part: ext
+  note: Practice pages, then accurate spelling in own writing.
+- node: AC9E10LY08 n2
+  thread: spelling
+  modes: [learn, write]
+  course: spelling
+  part: ext
+  note: Bending spelling for effect in own writing.
+- node: AC9EFLY04 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY04 n2
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY04 n3
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY08 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY08 n2
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY08 n3
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY09 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY09 n2
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY09 n3
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY09 n4
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY10 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY10 n2
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY10 n3
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY10 n4
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY11 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY11 n2
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY12 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY12 n2
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY13 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY14 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY14 n2
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY15 n1
+  thread: early
+  modes: [specialist]
+- node: AC9EFLY15 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY04 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY04 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY04 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY08 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY08 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY08 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY09 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY09 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY09 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY10 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY10 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY10 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY11 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY11 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY11 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY11 n4
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY12 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY12 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY12 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY13 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY13 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY14 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY14 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY15 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY15 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E1LY15 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY04 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY04 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY04 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY08 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY08 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY09 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY09 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY10 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY10 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E2LY10 n3
+  thread: early
+  modes: [specialist]
+- node: AC9E3LY04 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E3LY04 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E3LY08 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E3LY11 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E3LY11 n2
+  thread: early
+  modes: [specialist]
+- node: AC9E4LY08 n1
+  thread: early
+  modes: [specialist]
+- node: AC9E4LY08 n2
+  thread: early
+  modes: [specialist]
