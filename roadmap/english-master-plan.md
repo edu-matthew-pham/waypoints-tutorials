@@ -324,6 +324,6 @@ If any of these are picked up, they follow the existing rules:
 ## Open questions for Matthew
 
 1. Is the course list right? After the review, Choosing words became Language for people and situations, and figurative language moved into How authors craft stories.
-2. Should Years 3–4 lessons stay with the Before Year 7 roadmap, or should English cover them here as deeper warm-ups?
+2. Decided (27 Oct): Year 4–5 items that are the direct step before a Year 6 lesson stay in the courses as warm-ups; the other Year 3–4 items (about 60, listed in the data file with no `course:`) go to the Before Year 7 roadmap.
 3. Is the five-course start-here set the right one, and should the threads page come first in wave 1 or after a second course proves the pattern?
 4. How many chats should run in parallel for wave 1: one per course, or one chat building B to D in turn?
