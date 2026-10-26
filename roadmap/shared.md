@@ -59,6 +59,13 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 **Amended (25 Oct 2026, later):** search plus everything-at-once browsing was two extremes, and the pathway links had gone from the menu. Pathways are back under Subjects (links to their trail maps, so students are one click from a trail), and "List for teachers" on a subject page is now a one-screen index of pathways and courses (years, lesson counts); full cards stay on each pathway page. Trails stay the default view; the search box is unchanged.
 **Maths pathways, decided to wait (25 Oct 2026):** the four maths pathways (Algebra, Number, Geometry and measurement, Statistics and probability) merge the curriculum's six strands (Measurement with Space, Statistics with Probability). Kept as is: a pathway can hold one unit or an umbrella of two, so splitting a course later changes no navigation. ACARA's progressions divide Number into concepts and modelling, which our copy of the data does not carry; check the Kit data, and the curriculum map's strand rows, if teachers plan that way. Revisit after teacher feedback.
 
+## Proposed: a speech lesson shape for any subject (27 Oct 2026, English chat; Matthew agreed in principle, not built)
+
+- **Why:** speeches happen across subjects (a Year 7 science class gave climate change speeches), and English's speaking standards need the same support. The site helps with planning and reflecting; the speaking happens in class. No mode listens to students or judges delivery (no AI marking).
+- **Shape** (like `shape: 5e` or `shape: design`): Purpose and audience → Plan (opening, two or three points, close) → Script (an unmarked `reasoning` check with a model and a self-check) → Cue cards (cut the script to key words: the one new piece, a small board) → Rehearse (partner, or optionally PowerPoint's Speaker Coach where the school has Microsoft 365) → Present in class → Self-check and peer feedback (`reflect` checklist; a printable peer card on the guide).
+- **Split:** English teaches the speaking skills; other subjects use the shape for their content and link back to the English lessons.
+- **Open:** where it lives (a shape in Create, or a course in English other subjects link to); the cue-card board's design.
+
 ## Changed by the English chat (27 Oct 2026): `cohesion` board widget, English subject
 
 - New board widget `playground-board/widgets/cohesion.js` (script tag in `playground-board/index.html`, `.co-*` styles at the end of `style.css`): only English lessons use it, so no other clip re-records. AUTHORING › `widget: cohesion`; test `npm run check-cohesion`.
