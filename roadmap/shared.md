@@ -989,3 +989,6 @@ The mechanism was cheap (one run). The per-lesson work is not: every number the 
 - `tools/lesson-view.mjs`: parsons pieces in `data-subj=science` lessons wrap (`white-space:pre-wrap`; `.pcol` and `.piece` get `min-width:0`), so steps written as prose no longer push a page sideways at 390 px. Code lessons keep `pre` (indentation matters there).
 - `playground-board/widgets/sheet.js`: sheet fields fit a narrow board (inline `max-width:100%`, `min-width:0`, `box-sizing` on the field and its text box), fixing an 8 px sideways scroll in the chart settings (also on Working with data › Choose a chart). Inline rather than in `playground-board/style.css`, because that file is in every board clip's hash and would re-record them all.
 - `playground-board/widgets/sheet.js`: opt-in `tools: chart axis` ("Vertical axis starts at", `chart ymin:`, `ch_ymin`, `ch_zero`); default charts unchanged. Tested in `tools/check-sheet.mjs`.
+
+## Built (26 Oct 2026, orchestrating chat): Make a lesson › Other ways to start
+Optional lesson 8 in the Make one unit (`content/teachers/make-a-lesson/other-ways/`): which start fits (Make your own version, Start from a project, My path, a waypoint). Lesson text only, no clips; goes live with publish-lessons or the next full publish.
