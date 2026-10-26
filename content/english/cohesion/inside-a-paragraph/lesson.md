@@ -15,7 +15,7 @@ A paragraph that argues a point has parts inside it, each with a job:
 
 Here is a short story written for this lesson. The paragraphs below argue about it.
 
-> Mei always waited for the last bus at the back of the shelter, hood up, eyes on her shoes. She never looked at the driver. One wet night an old man stumbled on the step and his wallet slid into the gutter. Before anyone else moved, Mei ran into the rain without a second thought. She handed it back, dripping, and sat down at the front.
+> Mei always waited for the last bus at the back of the shelter, hood up, eyes on her shoes. She never looked at the driver. One wet night an old man stumbled on the step and his wallet slid into the gutter. Before anyone else moved, Mei ran into the rain without a second thought. She handed it back, dripping, and sat down at the front of the bus.
 
 ## Predict: what's missing?
 
@@ -24,7 +24,7 @@ stage: predict
 insight: "Committing to whether a claim plus a quotation is enough brings out the most common gap before the lesson names it."
 check:
   type: predict
-  q: "'Mei is braver than she seems. She ran into the rain without a second thought.' Is that paragraph finished?"
+  q: "'Mei is braver than she seems. She \"ran into the rain without a second thought.\"' Is that paragraph finished?"
   options: ["No: it doesn't say how running into the rain shows bravery", "Yes: the quotation proves it", "No: it needs a title", "Yes: it has a claim and a sentence"]
   actual: "No. It makes a claim and gives evidence, but it never says why running into the rain shows bravery. That explanation is the missing step."
 ```
@@ -37,8 +37,8 @@ insight: "Labelling each sentence's job in a complete paragraph shows what a str
 try: { playground: board, starter: "text.yml#run", height: 330 }
 hint: ["Click a sentence, then choose its job.", "The quotation is in quotation marks. The explanation says how the evidence shows the claim."]
 smaller:
-  check: { type: question, q: "'Running into the rain she had been hiding from shows that her fear gives way.' Is this evidence from the story, or the writer saying what the evidence shows?", options: ["The writer saying what it shows", "Evidence from the story"], answer: 0, feedback: [null, "The story never says her fear gives way. The paragraph's writer works that out."], explain: "Shows that is the writer explaining the evidence. That is the explanation." }
-check: { type: board, text: "Label the claim, the example, the quotation and the explanation.", when: "n_right = 4 and n_wrong = 0", explain: "The claim says Mei is braver than she seems, the example and quotation show her before and after, and the explanation says how running into the rain shows her fear giving way when someone needs help." }
+  check: { type: question, q: "'Acting first, in front of everyone, shows that her fear gives way.' Is this evidence from the story, or the writer saying what the evidence shows?", options: ["The writer saying what it shows", "Evidence from the story"], answer: 0, feedback: [null, "The story never says her fear gives way. The paragraph's writer works that out."], explain: "Shows that is the writer explaining the evidence. That is the explanation." }
+check: { type: board, text: "Label the claim, the example, the quotation and the explanation.", when: "n_right = 4 and n_wrong = 0", explain: "The claim says Mei is braver than she seems, the example and quotation show her before and after, and the explanation says how acting first, in front of everyone, shows her fear giving way when someone needs help." }
 ```
 
 Were you right about the unfinished paragraph? This one has the explanation the other was missing.
@@ -94,7 +94,7 @@ Now: what is the explanation's job?
 stage: modify
 insight: "Adding the explanation to a paragraph that lacks one is the exact repair node 2 asks for."
 try: { playground: board, starter: "text.yml#vary", height: 330 }
-hint: ["Click the quotation, then press Add a sentence after. Type your explanation in the box.", "Start with 'This shows that...' and say how moving to the front shows Mei has changed. Then label your sentence as the explanation."]
+hint: ["Click the quotation, then press Add a sentence after. Type your explanation in the box.", "Start with 'This shows that...' and say how sitting at the front shows Mei has changed. Then label your sentence as the explanation."]
 check: { type: board, text: "Add an explanation after the quotation and label it.", when: "has_explain = 1 and n_empty = 0", explain: "Your explanation joins the quotation back to the claim, so the reader doesn't have to work out why it matters." }
 ```
 
@@ -107,7 +107,7 @@ stage: practise
 insight: "The same parts work in other subjects: a history paragraph with examples and an explanation shows the structure transfers."
 try: { playground: board, starter: "text.yml#practise", height: 330 }
 hint: ["There are no quotations this time: the evidence is examples.", "Which sentence says how the examples show the claim?"]
-check: { type: board, text: "Label the claim, the two examples and the explanation.", when: "n_right = 4 and n_wrong = 0", explain: "The claim is that Canberra was planned to fit its landscape. Using the hills and building the lake are the examples, and the last sentence explains how they show the designers worked with the land." }
+check: { type: board, text: "Label the claim, the two examples and the explanation.", when: "n_right = 4 and n_wrong = 0", explain: "The claim is that Canberra was planned to fit its landscape. Using the hills and building the lake are the examples, and the last sentence explains how they show the designers fitted the city to the land." }
 ```
 
 ## Make: your own paragraph

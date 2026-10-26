@@ -17,6 +17,8 @@ Plan: Project doc `claude/english-pathway-plan.md` (26 Oct 2026; Matthew confirm
 - **Rules kept**: no LLM marking anywhere; every text written for the lesson (Canberra, platypus and rip-current facts checked against general reference sources); Nib is the novice whose slips students find (roadmap/shared.md › Nib), used here as a character in the text only.
 - Misconceptions added: `nearest-noun`, `connective-sounds-clever`, `start-with-new`, `never-repeat`, `general-before-specific`, `detail-off-topic`, `new-idea-in-conclusion`, `quote-speaks-for-itself`.
 
+- **Review pass (27 Oct)**: a separate fresh-eyes review of every lesson; fixed: a not-really-ambiguous "It" in the challenge (now two genuinely unclear Its whose right fix the text decides: `?~*a/b`), an unplanted "a small robot" and hints that led students to colour pointing words in word chains, a hook that put the general word first, two arguable sentence-start answers, sea otters in a Tasmanian kelp forest (now rock lobsters), "eruption" in the volcano chain, antonyms described two ways, the challenge's "every move" claim, a joining-word example whose logic was off, a model conclusion that added a new point, the platypus egg count, a weak model explanation, a pointing word that failed its own swap test, and "we" planted but not taught.
+
 ## Next (proposed, not built)
 
 1. Pilot with a class; fix what it finds.

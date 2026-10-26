@@ -14,7 +14,7 @@ before: |
   The board counts a chain as right when every planted word for that thing is in one colour and no other chain shares the colour. Words you think belong but were not planted show as strays: if a student makes a good case for one, they are right and the board is not.
 running:
   - "Predict: ask students who chose A what it means in sentence three."
-  - "Try: ask why eruption is in the volcano chain. Is it the same thing, or closely linked?"
+  - "Try: ask whether lava belongs in the ash chain. (It comes out of the volcano too, but it is a different thing.)"
   - "Worked example: compare Nib's 'They eat it' with a version that repeats the key words."
   - "Vary: opposites (dry and wet) make two chains that work against each other."
   - "Make: partners check for any it or they that could mean two things."
@@ -25,9 +25,9 @@ stuck:
   - see: "A student thinks repeating is always bad style."
     ask: "Read Version A of the kelp paragraph aloud. Where did you get lost?"
     fix: "Repeat where the reader needs it; use it where only one thing fits."
-  - see: "A student argues eruption is not the volcano."
-    ask: "Is it a new thing, or part of the same story?"
-    fix: "Good argument either way. Chains are about the reader staying on track, not exact sameness."
+  - see: "A student colours a word the board calls a stray, and argues it belongs."
+    ask: "Is it a word for the same thing, or something linked to it?"
+    fix: "Good argument either way. Chains are about the reader staying on track; the board only knows the words that were planted."
 stretch: "Find a speech (a famous one, or a school captain's) that repeats a phrase on purpose. Why does the speaker repeat it?"
 support: "A card: Key word. Same word, same-meaning word, opposite word. Repeat when it could mean two things."
 leads: |
@@ -40,6 +40,6 @@ exit:
 explain: |
   Writers repeat **key words** on purpose. Each repeat tells the reader the text is still about the same thing.
 
-  A word that means the **same** (dry spell for drought) or the **opposite** (rain against drought) can carry the chain too.
+  A word that means the **same** (dry spell for drought) carries the chain. A word that means the **opposite** (rain against drought) starts a second chain that answers the first.
 
   Repeat the key word when **it** or **they** could point to two things.

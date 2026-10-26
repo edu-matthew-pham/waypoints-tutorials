@@ -20,7 +20,7 @@ stage: predict
 insight: "Committing to how much an overview helps before seeing one makes its job concrete."
 check:
   type: predict
-  q: "A report starts straight in with 'A female lays one or two eggs in a burrow.' Another starts with 'This report looks at three surprises about the platypus.' Which gets the reader ready faster?"
+  q: "A report starts straight in with 'A female lays one to three eggs in a burrow.' Another starts with 'This report looks at three surprises about the platypus.' Which gets the reader ready faster?"
   options: ["The one that says what the report will look at", "The one that starts with a fact", "Both are the same", "Neither: the title does that job"]
   actual: "The one with the overview. The fact on its own leaves the reader asking whose eggs, and why we are talking about them. The overview says what is coming, so every fact has a place to go."
 ```

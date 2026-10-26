@@ -65,11 +65,11 @@ tasks:
       explain: "Line 2: Nib chose however because it sounds grown-up, without asking how the ideas connect. Winning followed from training, so the right job is a result: so, or as a result."
   - check:
       type: question
-      q: "'Plants need light. ___, the ones in the cupboard turned yellow.' Which joining word fits?"
+      q: "'The plants were left in a dark cupboard for a week. ___, their leaves turned yellow.' Which joining word fits?"
       options: ["As a result", "However", "In addition", "First"]
       answer: 0
-      feedback: [null, "However would mean the yellow plants go against needing light. They don't: they show it.", "In addition adds a new point. This is a consequence.", "First starts a list of steps. Nothing is being listed."]
-      explain: "The plants turned yellow because they had no light, so the second idea is a result."
+      feedback: [null, "However would mean yellow leaves are a surprise. After a week in the dark, they aren't.", "In addition adds a new point. This is a consequence.", "First starts a list of steps. Nothing is being listed."]
+      explain: "The leaves turned yellow because the plants had no light, so the second idea is a result."
 ```
 
 ### Choosing a joining word
@@ -91,12 +91,12 @@ Now sort some joining words by their job.
 
 ```step
 stage: modify
-insight: "Changing only the joining word between the same two ideas shows that the writer, not the facts, decides how ideas are connected."
+insight: "Changing only the joining word between the same two facts shows that the writer, not the facts, decides how ideas are connected."
 try: { playground: board, starter: "text.yml#vary", height: 260 }
 tasks:
   - starter: "text.yml#vary"
-    hint: ["Both gaps join the same two facts. The first sentence after each gap tells you what the writer wants to say.", "In the first, the hall being booked is a problem. In the second, it is just one more fact."]
-    check: { type: board, text: "Choose the joining word that makes each pair say what its last sentence says.", when: "n_gaps_right = 2", explain: "However shows the booked hall is a problem for the plan. Also just adds another fact. The facts are the same: the joining word changes the meaning." }
+    hint: ["Both gaps join the same two facts. The last sentence of each paragraph tells you what the writer wants to say.", "In the first, two events on one night are a problem. In the second, they are a bonus."]
+    check: { type: board, text: "Choose the joining word that makes each pair say what its last sentence says.", when: "n_gaps_right = 2", explain: "However shows the concert is a problem for the art show. Also adds the concert as a bonus. The facts are the same: the joining word changes the meaning." }
   - check:
       type: question
       q: "Why can't you swap however for therefore?"
@@ -116,7 +116,7 @@ tasks:
 stage: practise
 insight: "A recount needs time order and a reason, so students mix time words with a result word."
 try: { playground: board, starter: "text.yml#practise", height: 320 }
-hint: ["Most gaps here put steps in order. One gap explains why something happened.", "First, Next, After that and Finally put steps in order. As a result explains why."]
+hint: ["Most gaps here put steps in order. One gap explains why something happened.", "First, Next, After that and Finally put steps in order. As a result explains why. Each word fits best in only one place."]
 check: { type: board, text: "Choose a joining word for each of the five gaps.", when: "n_gaps_right = 5", explain: "First, Next, After that and Finally take the reader through the steps in order, and As a result says why the eggs float." }
 ```
 

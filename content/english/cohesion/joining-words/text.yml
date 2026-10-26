@@ -7,13 +7,13 @@ p: We planned a picnic in the park for Saturday. [[{However|So|Also}=However]], 
 
 # region: vary
 widget: cohesion
-p: The class wanted to hold the art show on Friday. [[{However|Also|Then}=However]], the hall was booked for a concert. We had to find another day.
-p: The class wanted to hold the art show on Friday. [[{Also|However|So}=Also]], the hall was booked for a concert. Two good things were happening on the same night.
+p: The art show is on Friday night. [[{However|Also|Then}=However]], the band concert is on Friday night too. Parents will have to choose one.
+p: The art show is on Friday night. [[{Also|However|First}=Also]], the band concert is on Friday night too. Parents can see both in one trip to school.
 # endregion
 
 # region: practise
 widget: cohesion
-p: We tested whether an egg floats in salty water. [[{First|Finally|However}=First]], we filled a jug with tap water and dropped the egg in. It sank. [[{Next|As a result|But}=Next]], we stirred in six spoons of salt. [[{After that|In addition|So}=After that]], we lowered the egg in again. This time it floated. Salt makes the water denser than the egg. [[{As a result|First|Then}=As a result]], the egg is pushed up. [[{Finally|However|Also}=Finally]], we wrote up our results.
+p: We tested whether an egg floats in salty water. [[{First|Finally|However}=First]], we filled a jug with tap water and dropped the egg in. It sank. [[{Next|As a result|But}=Next]], we took the egg out and stirred in six tablespoons of salt. [[{After that|In addition|For example}=After that]], we lowered the egg in again. This time it floated. Salt makes the water denser than the egg. [[{As a result|First|Then}=As a result]], the egg is pushed up. [[{Finally|However|Also}=Finally]], we wrote up our results.
 # endregion
 
 # region: make

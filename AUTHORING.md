@@ -1561,7 +1561,7 @@ Vary, Practise, Make).
     link` (default) traces pointing words, `chain` colours word chains, `parts` labels and orders sentences or
     paragraphs. Link and chain modes take one `p:` line per paragraph, with marks: `[[words|id]]` (something to point
     back to), `[[words>id]]` (a pointing word and its answer; `id/id2` for several), `[[words>?~a/b]]` (a pointing word
-    that is not clear: the right move is Not clear, then fix it with a or b), `[[words#c]]` (a word or phrase in chain
+    that is not clear: the right move is Not clear, then fix it with a or b; `?~*a/b` makes only a a right fix, when the rest of the text decides), `[[words#c]]` (a word or phrase in chain
     c), and in any mode `[[{so|but|then}=but]]` (a gap: the choices, then the right ones). Text straight after a mark
     joins the last word, so `[[word>id]].` keeps its full stop. Parts mode takes `s <role>: sentence` lines in the
     right order (`s any:` is not checked; an empty `s any:` is a sentence to write), `para:` for a new paragraph,

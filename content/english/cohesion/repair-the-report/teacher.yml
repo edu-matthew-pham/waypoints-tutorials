@@ -5,11 +5,11 @@ goals:
   - I can find and fix the parts of a text that make it hard to follow.
   - I can choose the right move for each problem.
   - I can run the same checks on my own writing.
-struggle: "Part 1 is the hardest: students must decide which pointing words are clear before tracing. Some will trace It to one of the bins confidently. Ask whether the other bin could fit too."
+struggle: "Part 1 is the hardest: students must decide which pointing words are clear before tracing, then choose the fix the facts support. Some will trace It to one kind of rubbish confidently. Ask whether the other could fit too, then ask which sentence settles it."
 before: |
-  Try Part 1 yourself: trace We and they, then mark It and They as Not clear and choose a fix.
+  Try Part 1 yourself: trace We and they, then mark both Its as Not clear and choose the fix the last sentence supports.
 
-  The challenge combines the course's moves: pointing words (warm-up), joining words (warm-up), word chains and repetition (fixing with a name), overviews and order (AC9E7LA04 node 2), and substantiation (AC9E8LA04 node 2). The rubbish figures are made up for the lesson but realistic for a school week. The 10-cent container refund is the amount in the ACT and NSW schemes; adjust for your state if needed.
+  The challenge combines four of the course's moves: pointing words (warm-up), joining words (warm-up), overviews and order (AC9E7LA04 node 2), and substantiation (AC9E8LA04 node 2). Fixing an unclear pointing word by naming the thing is the repetition move from Say it again. Word chains and topic sentences are not tested here. The rubbish figures are made up for the lesson but realistic for a school week. The 10-cent container refund applies in every state and territory.
 
   Students who skipped the warm-up unit may need the reminder in Part 1: a pointing word is unclear when two things fit.
 running:
@@ -21,7 +21,7 @@ running:
 stuck:
   - see: "A student traces every pointing word, including the unclear ones."
     ask: "Could this point to anything else?"
-    fix: "If two things fit, it's not clear: name the thing instead."
+    fix: "If two things fit, it's not clear: name the thing instead, and let the other facts decide which."
   - see: "A student reorders the report by guessing."
     ask: "What does the overview say comes first?"
     fix: "Follow the overview's order."

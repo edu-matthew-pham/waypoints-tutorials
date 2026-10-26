@@ -2,7 +2,7 @@
 
 # region: nib
 Nib writes a claim: Mei is kind.
-Nib adds a quotation: she "handed it back, dripping."
+Nib adds a quotation about the wallet: she "handed it back, dripping."
 Nib starts the next paragraph, because the quotation proves the claim.
 Nib's teacher writes in the margin: how does this show she is kind?
 # endregion

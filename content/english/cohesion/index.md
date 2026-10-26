@@ -10,5 +10,5 @@ units:
   - { id: words, title: Words that hold it together, summary: "Repeat a key word on purpose, and use word chains (a synonym, or a general word for a specific one) so the reader knows you are still on the same thing." }
   - { id: guide, title: Guiding the reader, summary: "A topic sentence says what a paragraph is about. An overview says where the text is going, and a conclusion says where it went." }
   - { id: inside, title: Inside a paragraph, summary: "A claim, the evidence for it and an explanation of how the evidence backs the claim up." }
-  - { id: challenge, title: "Challenge: repair the report", summary: "Fix a report that is hard to follow, using every move in the course." }
+  - { id: challenge, title: "Challenge: repair the report", summary: "Fix a report that is hard to follow: pointing words, joining words, the overview's order and explained evidence." }
 ---

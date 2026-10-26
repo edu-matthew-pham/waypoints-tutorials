@@ -11,7 +11,7 @@ before: |
 
   The one idea: a joining word says how the next idea connects to the last one, so swapping one changes the meaning.
 
-  This is an optional warm-up from Year 4 (AC9E4LA04 nodes 2 and 3: connectives between sentences, and temporal connectives). The four jobs (adds, turns, result, time) are a simplified set: Year 9 (AC9E9LA04) widens it to condition, conclusion and expansion. The word "connective" is in the notes; students can use "joining word".
+  This is an optional warm-up from Year 4 (AC9E4LA04 nodes 2 and 3: connectives between sentences, and temporal connectives). The four jobs (adds, turns, result, time) are a simplified set. AC9E4LA04 also names conditional connectives (if, unless), which this lesson leaves to class; Year 9 (AC9E9LA04) widens the set further to conclusion and expansion. The word "connective" is in the notes; students can use "joining word".
 running:
   - "Predict: ask students to read both versions aloud. Which one sounds like it makes sense?"
   - "Try: for each gap, ask the class to name the job before anyone picks a word."
@@ -33,7 +33,7 @@ support: "A card with four boxes (Adds, Turns, Result, Time) and three joining w
 leads: |
   Next in Holding writing together: where a sentence starts, and why the start tells the reader what it is about.
 
-  Joining words come back in the course challenge, where a report has some in the wrong job.
+  Joining words come back in the course challenge, where students choose them for gaps in a report.
 exit:
   q: "'The bus broke down. ___ we were late for school.' Which joining word fits, and what job does it do?"
   a: "So (or as a result): the second idea is a result of the first."

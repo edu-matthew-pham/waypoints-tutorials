@@ -16,7 +16,7 @@ p: Grandpa bought [[a red kayak|kayak]] for our trip to [[Lake Burley Griffin|la
 widget: cohesion
 mode: chain
 colours: 3
-p: [[Dr Amira Hassan#a]] built [[Kestrel#b]], a small robot that explores [[caves#c]]. [[The engineer#a]] worked on its wheels for three years. Last winter, [[the rover#b]] crawled deep into [[the tunnels#c]]. [[Hassan#a]] says [[the machine#b]] sends back photos of [[these dark places#c]] every day.
+p: [[Dr Amira Hassan#a]] built [[Kestrel#b]], [[a small robot#b]] that explores [[caves#c]]. [[The engineer#a]] worked on the robot's wheels for three years. Last winter, [[the rover#b]] crawled deep into [[the tunnels#c]]. [[Hassan#a]] says [[the machine#b]] sends back photos of [[these dark places#c]] every day.
 # endregion
 
 # region: make

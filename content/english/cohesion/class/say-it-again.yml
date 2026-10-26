@@ -10,7 +10,7 @@ activities:
     title: "Count the its"
     minutes: 3
     do: |
-      Show Version A of the kelp paragraph. Ask students to point to what each it and them means. Then show Version B.
+      Show Version A of the kelp paragraph (with rock lobsters). Ask students to point to what each it and them means. Then show Version B.
     notes: "The disagreement over A is the point."
   - at: make
     kind: discussion

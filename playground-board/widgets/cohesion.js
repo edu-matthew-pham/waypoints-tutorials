@@ -9,6 +9,7 @@
 //       [[words|id]]          something a later word can point back to (id: letters, numbers, _ )
 //       [[words>id]]          a linking word that points back to id (several right answers: id/id2)
 //       [[words>?~a/b]]       a linking word that is NOT clear: the right move is "Not clear", then fix it with a or b
+//       [[words>?~*a/b]]      the same, but only a is a right fix (the rest of the text decides): n_fixed counts a only
 //       [[words#c]]           a word or phrase in word chain c (chain mode)
 //       [[{so|but|then}=but]] a gap with a choice of words; the right ones after = (several: but/yet). Any mode.
 //   s topic: The sentence.                 parts mode: one line per sentence, named by its planted role (any: not checked)
@@ -78,7 +79,14 @@
         if ((mm = /^(.+?)>(.+)$/.exec(inner))) {
           g.type = 'link'; body = mm[1];
           var rhs = mm[2].trim();
-          if (rhs.charAt(0) === '?') { g.unclear = true; g.ans = []; g.opts = rhs.indexOf('~') > 0 ? rhs.slice(rhs.indexOf('~') + 1).split('/').map(function (s) { return s.trim(); }).filter(Boolean) : []; }
+          if (rhs.charAt(0) === '?') {
+            g.unclear = true; g.ans = []; g.opts = []; g.fixOk = [];
+            (rhs.indexOf('~') > 0 ? rhs.slice(rhs.indexOf('~') + 1).split('/') : []).forEach(function (o) {
+              o = o.trim(); if (!o) return;
+              if (o.charAt(0) === '*') { o = o.slice(1).trim(); g.fixOk.push(o); }
+              g.opts.push(o);
+            });
+          }
           else g.ans = rhs.split('/').map(function (s) { return s.trim(); });
         } else if ((mm = /^(.+?)\|(\w+)$/.exec(inner))) { g.type = 'target'; body = mm[1]; g.id = mm[2]; }
         else if ((mm = /^(.+?)#(\w+)$/.exec(inner))) { g.type = 'chain'; body = mm[1]; g.chain = mm[2]; }
@@ -206,7 +214,7 @@
         if (L.to) arrows++;
         if (g.unclear) {
           if (L.flag) { ufound++; ok++; } else if (L.to) bad++;
-          if (L.flag && L.fix) fixed++;
+          if (L.flag && L.fix && (!g.fixOk.length || g.fixOk.indexOf(L.fix) >= 0)) fixed++;
         } else {
           var tg = L.to && /^g\d+$/.test(L.to) ? m.groups[Number(L.to.slice(1))] : null;
           if (L.flag) bad++;
@@ -297,7 +305,7 @@
         st.marked.push(g.from); st.links['w' + g.from] = tj >= 0 ? { to: 'w' + m.groups[tj].from } : { flag: 1 };
       } else if (g.type === 'link') {
         if (m.show !== 'links') st.found.push(gi);
-        if (g.unclear) st.links['g' + gi] = { flag: 1, fix: g.opts[0] || '' };
+        if (g.unclear) st.links['g' + gi] = { flag: 1, fix: g.fixOk[0] || g.opts[0] || '' };
         else {
           var ti = -1; m.groups.forEach(function (h, hi) { if (ti < 0 && h.type === 'target' && g.ans.indexOf(h.id) >= 0) ti = hi; });
           st.links['g' + gi] = { to: 'g' + ti };

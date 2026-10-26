@@ -7,7 +7,7 @@ language: maths
 node: [AC9E6LA04 n1]
 hook: "You were told not to repeat words. So why does a good report say volcano five times?"
 ---
-You may have been told not to repeat words. But writers repeat **key words** on purpose: each repeat tells the reader "still the same thing". A word that means the same (a **synonym**) or the opposite (an **antonym**) can do the same job and add variety. Together, the repeats make a **chain** that runs through the text.
+You may have been told not to repeat words. But writers repeat **key words** on purpose: each repeat tells the reader "still the same thing". A word that means the same (a **synonym**) does the same job with a little variety. Together, the repeats make a **chain** that runs through the text. A word that means the **opposite** (an **antonym**) starts a second chain that runs against the first, which ties them together.
 
 ## Predict: which is easier to follow?
 
@@ -16,7 +16,7 @@ stage: predict
 insight: "Committing to which version is clearer challenges the rule 'never repeat a word' before the lesson explains why."
 check:
   type: predict
-  q: "Version A: 'The kelp forest is home to many animals. Sea urchins eat it. Otters eat them, which protects it.' Version B: 'The kelp forest is home to many animals. Sea urchins eat the kelp. Otters eat the urchins, which protects the forest.' Which is easier to follow?"
+  q: "Version A: 'The kelp forest is home to many animals. Sea urchins eat it. Rock lobsters eat them, which protects it.' Version B: 'The kelp forest is home to many animals. Sea urchins eat the kelp. Rock lobsters eat the urchins, which protects the forest.' Which is easier to follow?"
   options: ["Version B, which repeats the key words", "Version A, which avoids repeating", "Both are just as easy", "Neither makes sense"]
   actual: "Version B. In A, it and them could point to several things. B repeats kelp, urchins and forest, so the reader always knows which one is meant."
 ```
@@ -27,10 +27,10 @@ check:
 stage: run
 insight: "Colouring the repeats of each key word makes the threads holding the paragraph together visible."
 try: { playground: board, starter: "text.yml#run", height: 330 }
-hint: ["Pick Chain 1 and click every word about the volcano. Then pick Chain 2 and click every word about the ash.", "Volcanic ash belongs to the ash chain, even though it also says volcanic."]
+hint: ["Pick Chain 1 and click every word for the volcano. Then pick Chain 2 and click every word for the ash.", "Volcanic ash belongs to the ash chain, even though it also says volcanic."]
 smaller:
   check: { type: question, q: "Which word in the paragraph is the same thing as volcanoes?", options: ["volcano", "ash", "planes", "lava"], answer: 0, feedback: [null, "Ash comes out of a volcano. It gets its own chain.", "Planes are affected, but they aren't the volcano.", "Lava comes out of a volcano, like ash."], explain: "Volcano is the same key word repeated, so it goes in the volcano chain." }
-check: { type: board, text: "Colour two chains: every word for the volcano in one colour, every word for the ash in another.", when: "chains_ok = 2 and n_stray = 0", explain: "Two chains run through the paragraph: volcanoes, volcano and eruption, and ash, ash and volcanic ash. Each repeat tells the reader the text is still on that thing." }
+check: { type: board, text: "Colour two chains: every word for the volcano in one colour, every word for the ash in another.", when: "chains_ok = 2 and n_stray = 0", explain: "Two chains run through the paragraph: volcanoes, volcano and volcano, and ash, ash and volcanic ash. Each repeat tells the reader the text is still on that thing." }
 ```
 
 Were you right about the kelp? The repeats you coloured here did the same job as kelp, urchins and forest.
@@ -55,7 +55,7 @@ tasks:
       answer: 3
       fault: logic
       misconception: never-repeat
-      explain: "Line 3: 'They eat it' could mean the urchins eat the kelp, or the otters eat the urchins. Repeating the key words ('The urchins eat the kelp') makes it clear."
+      explain: "Line 3: 'They eat it' could mean the urchins eat the kelp, or the rock lobsters eat the urchins. Repeating the key words ('The urchins eat the kelp') makes it clear."
   - check:
       type: question
       q: "When is repeating a key word better than using it or they?"
@@ -87,7 +87,7 @@ stage: modify
 insight: "Changing what counts as a chain (synonyms and opposites, not just exact repeats) widens the move."
 try: { playground: board, starter: "text.yml#vary", height: 330 }
 hint: ["Chain 1 is the dry words: drought, dry spell, dry. Chain 2 is the wet words, which are the opposite.", "Rain, rainfall and floods all belong to the wet chain."]
-check: { type: board, text: "Colour the dry words in one chain and the wet words in another.", when: "chains_ok = 2 and n_stray = 0", explain: "Dry words and wet words run as two chains. Setting opposites against each other is another way to keep the reader on the topic." }
+check: { type: board, text: "Colour the dry words in one chain and the wet words in another.", when: "chains_ok = 2 and n_stray = 0", explain: "Dry words and wet words run as two chains. Because they are opposites, the wet chain keeps answering the dry one, and that ties the paragraph together." }
 ```
 
 ## Practise: three chains

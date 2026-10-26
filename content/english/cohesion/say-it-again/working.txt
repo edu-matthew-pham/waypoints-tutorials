@@ -2,7 +2,7 @@
 
 # region: nib
 Kelp forests grow along the coast of Tasmania.
-Sea urchins and otters live in the kelp forests.
+Sea urchins and rock lobsters live in the kelp forests.
 They eat it.
 This keeps the forest healthy.
 # endregion

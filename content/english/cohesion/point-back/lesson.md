@@ -8,7 +8,7 @@ language: maths
 node: [AC9E4LA04 n1]
 hook: "Read this: 'It was enormous. It moved slowly towards them.' What was enormous, and who is them? You cannot tell, because nothing came before."
 ---
-Some words don't name anything themselves. **She**, **it**, **they**, **them**, **this** and **these** point back to something the reader has already met. They save the writer from repeating the same words, but only if the reader can follow them back.
+Some words don't name anything themselves. **She**, **we**, **it**, **they**, **them**, **this** and **these** point back to something the reader has already met. They save the writer from repeating the same words, but only if the reader can follow them back.
 
 Nib is learning to write. Nib's notes in this course have a few slips for you to find.
 
@@ -71,7 +71,7 @@ tasks:
 ### Following a pointing word
 
 ```worked
-\text{Find the word} :: Spot a word that does not name anything itself: she, he, it, they, them, this, these, that.
+\text{Find the word} :: Spot a word that does not name anything itself: she, he, we, it, they, them, this, these, that.
 \text{Ask who or what} :: She is a person, it is one thing, they and these are more than one.
 \text{Look back} :: Read back for something that fits. The closest one is a good first guess, not the answer.
 \text{Swap it in} :: Put your answer in place of the word. If the sentence still makes sense, you found it.
@@ -92,7 +92,7 @@ try: { playground: board, starter: "text.yml#vary", height: 280 }
 tasks:
   - starter: "text.yml#vary"
     hint: ["Click This. Ask: what meant we missed the start? It is not one word.", "Click any word in the first sentence: the whole sentence is what This points back to."]
-    check: { type: board, text: "Draw the arrow from This back to what it points to.", when: "n_right = 1 and n_wrong = 0", explain: "This points back to the whole first sentence: the bus being forty minutes late. That is what made you miss the start." }
+    check: { type: board, text: "Draw the arrow from This back to what it points to.", when: "n_right = 1 and n_wrong = 0", explain: "This points back to the whole first sentence: the bus being forty minutes late. That is what made us miss the start." }
   - check:
       type: question
       q: "'The library has new beanbags. These are very popular at lunch.' What does These point to?"
@@ -113,7 +113,7 @@ stage: practise
 insight: "Removing the dotted lines makes students find the pointing words as well as trace them, which is what reading asks of them."
 try: { playground: board, starter: "text.yml#practise", height: 340 }
 hint: ["Press Mark a linking word, then click a word like they, it or this. Then click what it points back to.", "There are three. One of them points back to a whole idea."]
-check: { type: board, text: "Find the three pointing words, mark them and draw an arrow from each.", when: "n_links = 3 and n_right = 3", explain: "They points to the Year 6 students, it to the frog pond, and This to the whole idea of counting more frogs every week. Finding them is half the skill." }
+check: { type: board, text: "Find the three pointing words, mark them and draw an arrow from each.", when: "n_links = 3 and n_right = 3", explain: "They points to the Year 6 students, it to the school pond, and This to the whole idea that there were more frogs each week. Finding them is half the skill." }
 ```
 
 ## Make: your own

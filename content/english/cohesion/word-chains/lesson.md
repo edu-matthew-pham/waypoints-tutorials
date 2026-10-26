@@ -5,9 +5,9 @@ title: Word chains
 summary: "A general word can stand in for a specific one the reader has already met: a kelpie becomes the dog, then the animal. Readers link them without being told, which keeps a text moving without repeating the same word. It only works if the specific word comes first."
 language: maths
 node: [AC9E6LA04 n2, AC9E6LA04 n3]
-hook: "'Look at those apples. Granny Smiths are my favourite.' The second sentence never says apple. How do you know it is still about them?"
+hook: "'Grandpa bought a kelpie. The dog follows him everywhere.' The second sentence never says kelpie. How do you know it is the same animal?"
 ---
-A text can talk about the same thing with different words. A **general** word (dog, animal, boat, place) can stand in for a **specific** one the reader met earlier (a kelpie called Biscuit, a red kayak, Hobart). It works the other way too: Granny Smiths are a kind of apple. Together these words make a **word chain**.
+A text can talk about the same thing with different words. A **general** word (dog, animal, boat, place) can stand in for a **specific** one the reader met earlier (a kelpie called Biscuit, a red kayak, Hobart). Together these words make a **word chain**.
 
 ## Predict: is it the same thing?
 
@@ -27,10 +27,10 @@ check:
 stage: run
 insight: "Colouring the specific and general words for the same thing makes a word chain visible, including words that look nothing alike."
 try: { playground: board, starter: "text.yml#run", height: 330 }
-hint: ["Chain 1 is everything that means Biscuit. Chain 2 is everything that means the sheep.", "The dog and this clever animal are both Biscuit. The flock and the mob are both the sheep."]
+hint: ["Chain 1 is every naming word or phrase for Biscuit. Chain 2 is every naming word or phrase for the sheep. Leave pointing words such as she and them alone.", "The dog and this clever animal are both Biscuit. The flock and the mob are both the sheep."]
 smaller:
   check: { type: question, q: "Every morning, the dog rounds up the sheep. Which dog is it?", options: ["Biscuit, the kelpie", "A different dog", "You can't tell"], answer: 0, feedback: [null, "Only one dog has been named so far.", "The only dog the reader has met is Biscuit."], explain: "The dog is a general word for Biscuit, the kelpie the reader already met." }
-check: { type: board, text: "Colour two word chains: every word or phrase for Biscuit, and every word or phrase for the sheep.", when: "chains_ok = 2 and n_stray = 0", explain: "Biscuit, a kelpie, the dog and this clever animal are one chain. Sheep, the flock and the mob are another. The words change but the thing doesn't." }
+check: { type: board, text: "Colour two word chains: every naming word or phrase for Biscuit, and every one for the sheep (not she or them).", when: "chains_ok = 2 and n_stray = 0", explain: "Biscuit, a kelpie, the dog and this clever animal are one chain. Sheep, the flock and the mob are another. The words change but the thing doesn't." }
 ```
 
 Were you right about the tractor? Here the dog and this clever animal worked the same way.
@@ -98,8 +98,8 @@ check: { type: board, text: "Draw an arrow from each dotted general word back to
 stage: practise
 insight: "Three chains mixing names, repeats, synonyms and general words make students use every kind of link from the unit."
 try: { playground: board, starter: "text.yml#practise", height: 340 }
-hint: ["The paragraph is about a scientist, a robot and the caves it explores. Use one chain for each.", "The engineer is the scientist. The rover and the machine are the robot. The tunnels are the caves."]
-check: { type: board, text: "Colour three chains: the scientist, the robot and the caves.", when: "chains_ok = 3 and n_stray = 0", explain: "Dr Amira Hassan, the engineer and Hassan; Kestrel, the rover and the machine; caves, the tunnels and these dark places. Each chain mixes a name, a general word and a repeat." }
+hint: ["The paragraph is about an engineer, a robot and the caves it explores. Use one chain for each.", "Dr Amira Hassan is the engineer. Kestrel, the rover and the machine are the robot. The tunnels are the caves."]
+check: { type: board, text: "Colour three chains of naming words: the engineer, the robot and the caves.", when: "chains_ok = 3 and n_stray = 0", explain: "Dr Amira Hassan, the engineer and Hassan; Kestrel, a small robot, the rover and the machine; caves, the tunnels and these dark places. Each chain mixes a name, a general word and a repeat." }
 ```
 
 ## Make: your own chain
