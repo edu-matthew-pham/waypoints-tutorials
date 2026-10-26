@@ -300,6 +300,13 @@ Each wave can run as separate chats in parallel, with the rules below. Each chat
 - Tag every lesson with `node:` from the data file, and update the data file's `course:` if a lesson lands somewhere new.
 - Run `npm run check-cohesion` and `check-lesson-boards` if you use the cohesion board, and build the matching check for any new board.
 
+## Later: Years 9–10 in more detail (agreed 27 Oct, not scheduled)
+
+For now Years 9–10 come in as extensions inside the Years 6–8 courses. That covers every node, but thinly, because open answers and workshops matter much more at 9–10 (43 and 25 of 111 nodes). A later phase would plan 9–10 properly, after the open-answer upgrades (L) exist:
+- 9–10 lessons of their own in each course, not just extension steps;
+- possible 9–10 courses: analytical essay writing, critical and multimodal texts, rhetoric and speeches, representation and perspective;
+- the same node-by-node sort, re-run with the 9–10 courses added.
+
 ## Parked: AI ideas for later (speculative, not in any wave)
 
 The English plan works fully without AI. These ideas, some from tools like MagicSchool and some from the earlier "teach a novice" thinking, are parked:
