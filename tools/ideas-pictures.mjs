@@ -31,13 +31,16 @@ const PICTURES = {
     + text(229, 28, 'the counter, each time round', 'font-size="12" opacity=".75"')
     + text(160, 96, 'starts at 0', `font-size="12" fill="${O}" font-weight="700"`)),
 
-  decide: svg('A number line with a gate at 10: 9 is no, 11 is yes, and 10 depends on more than or more than or equal to',
-    `<rect x="20" y="48" width="150" height="8" fill="${O}" opacity=".35"/><rect x="170" y="48" width="150" height="8" fill="${T}" opacity=".45"/>`
-    + `<line x1="20" y1="52" x2="320" y2="52" stroke="currentColor" stroke-width="1.4"/>`
-    + [7, 8, 9, 10, 11, 12, 13].map((n, i) => `<line x1="${50 + i * 40}" y1="46" x2="${50 + i * 40}" y2="58" stroke="currentColor" stroke-width="1.2"/>` + text(50 + i * 40, 74, String(n), n === 10 ? 'font-weight="700"' : '')).join('')
-    + `<line x1="170" y1="22" x2="170" y2="60" stroke="currentColor" stroke-width="2.4"/>` + text(170, 17, 'score > 10 ?', 'font-size="12" font-weight="700"')
-    + text(90, 36, 'no', `fill="${O}" font-weight="700"`) + text(250, 36, 'yes', `class="wpi-t" font-weight="700"`)
-    + text(170, 98, 'at exactly 10: > says no, >= says yes', 'font-size="12" opacity=".8"')),
+  decide: svg('Is the score more than 10? On a number line, 7 to 10 are no and 11 to 13 are yes; 10 itself is no, because 10 is not more than 10',
+    `<rect x="20" y="50" width="170" height="8" fill="${O}" opacity=".3"/><rect x="190" y="50" width="130" height="8" class="wpi-tf" opacity=".4"/>`
+    + `<line x1="20" y1="54" x2="320" y2="54" stroke="currentColor" stroke-width="1.4"/>`
+    + `<line x1="190" y1="40" x2="190" y2="66" stroke="currentColor" stroke-width="2.2" stroke-dasharray="3 3"/>`
+    + [7, 8, 9, 10, 11, 12, 13].map((n, i) => `<circle cx="${50 + i * 40}" cy="54" r="6" ${n <= 10 ? `fill="${O}"` : 'class="wpi-tf"'}/>` + text(50 + i * 40, 78, String(n), n === 10 ? 'font-weight="700"' : '')).join('')
+    + text(170, 18, 'Is the score more than 10?', 'font-size="13" font-weight="700"')
+    + text(105, 40, 'no', `fill="${O}" font-weight="700"`) + text(255, 40, 'yes', `class="wpi-t" font-weight="700"`)
+    + `<circle cx="170" cy="54" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/>`
+    + text(170, 98, '10 is no: it isn\u2019t more than 10.', 'font-size="12" font-weight="600"')
+    + text(170, 114, '\u201cAt least 10\u201d would say yes. Edges like this hide mistakes.', 'font-size="11.5" opacity=".8"'), 124),
 
   until: svg('A loop that runs a round, asks whether lives are still above 0, goes round again on yes and stops on no',
     box(10, 40, 92, 40) + text(56, 65, 'play a round')

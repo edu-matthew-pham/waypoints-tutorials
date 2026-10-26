@@ -55,7 +55,7 @@ export const IDEAS = {
     python: 'for i in range(5):\n    forward(i * 20)', javascript: 'for (let i = 0; i < 5; i++) {\n  circle(i * 40, 50, 30);\n}' },
   compare: { band: 'decide', needs: ['variable'], hinge: true, fallback: 'if',
     plain: 'A question with a yes-or-no answer, such as "is the score more than 10?". Every decision is built on one.',
-    note: 'The question, not the "if" around it, is where most mistakes are (> or >=, = or ==).',
+    note: 'Most mistakes are in the question itself, often at the edge: does "more than 10" include 10? (It doesn\u2019t.)',
     makecode: ['logic: score > 10'], python: 'score > 10', javascript: 'score > 10' },
   if: { band: 'decide', needs: ['compare'],
     plain: 'Run some steps only when the answer to a question is yes.',

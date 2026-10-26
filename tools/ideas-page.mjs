@@ -75,7 +75,7 @@ export function ideasPageHtml({ title, pathways, rows, lessonHref, crumbHref = '
     + map
     + `<section class="wpi-why"><h2>Why these ideas matter, even if coding isn't your strength</h2>`
     + `<p>You don't need to be a programmer to teach or use these ideas. They are about what a program does, not the exact words you type: the same idea looks different in blocks, Python and JavaScript, and the plain words below are enough to talk about it.</p>`
-    + `<p>The ideas also matter when an AI tool helps write some of the code, as it increasingly does. Someone still has to say precisely what the program should do, check that it does it, and say what to change when it doesn't. That takes the ideas on this page, the hinge ideas most of all: a value that changes as the program runs, the loop counter, and the yes-or-no questions where the edge cases hide (more than, or more than or equal to?). Typing the code by hand may matter less than it did; knowing what each part does, and predicting what it will do, matters as much as ever.</p></section>`
+    + `<p>The ideas also matter when an AI tool helps write some of the code, as it increasingly does. Someone still has to say precisely what the program should do, check that it does it, and say what to change when it doesn't. That takes the ideas on this page, the hinge ideas most of all: a value that changes as the program runs, the loop counter, and the yes-or-no questions, where mistakes hide at the edges (does \u201cmore than 10\u201d include 10?). Typing the code by hand may matter less than it did; knowing what each part does, and predicting what it will do, matters as much as ever.</p></section>`
     + `<h2>The ideas, in plain words</h2><p>Grouped as on the map. Each row says what the idea means, then how it looks in each pathway and the lesson where that pathway first teaches it. Pathways are options, not a sequence: a gap means that pathway teaches the idea later or leaves it out.</p>`
     + jump + sections
     + `<p class="muted">Read from each lesson's <code>introduces:</code> tags. MakeCode blocks are drawn here as plain shapes in MakeCode's colours, not screenshots.</p>`;
@@ -113,8 +113,8 @@ export function ideasPageHtml({ title, pathways, rows, lessonHref, crumbHref = '
 .wpi-why{margin:8px 0 24px;max-width:760px}.wpi-why p{margin:8px 0}
 .wpi-head{display:flex;gap:16px;align-items:center;margin:4px 0 10px}.wpi-head p{margin:0;max-width:360px}
 .wpi-pic{flex:0 0 auto;width:340px;max-width:100%;height:auto;color:var(--ink,#222);background:var(--card,#fff);border:1px solid var(--line,#e4e1da);border-radius:10px;padding:4px}
-.wpi-pic .wpi-t{fill:#2f6f5e}.wpi-pic .wpi-ts{stroke:#2f6f5e}
-@media (prefers-color-scheme:dark){.wpi-pic .wpi-t{fill:#7fd1b5}.wpi-pic .wpi-ts{stroke:#7fd1b5}}
+.wpi-pic .wpi-t,.wpi-pic .wpi-tf{fill:#2f6f5e}.wpi-pic .wpi-ts{stroke:#2f6f5e}
+@media (prefers-color-scheme:dark){.wpi-pic .wpi-t,.wpi-pic .wpi-tf{fill:#7fd1b5}.wpi-pic .wpi-ts{stroke:#7fd1b5}}
 .wpi-sec{margin:22px 0 8px}.wpi-sec h3{margin:0 0 2px}.wpi-sec>p.muted{margin:0 0 8px}
 .wpi-jump{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 4px;font-size:14px}
 a.wpi-bandname{text-decoration:none}a.wpi-bandname:hover{text-decoration:underline}
