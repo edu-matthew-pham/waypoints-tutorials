@@ -9,7 +9,7 @@ This plan sits on top of the earlier decisions in `claude/english-pathway-plan.m
 - **Mostly drop-in skills, not a ladder.** A teacher picks the skill their class needs during a unit and teaches it. Most skills stand alone.
 - **Short chains only where they're real.** A few skills need an earlier one first, such as topic sentences before strong paragraphs. Those lessons say "do this first" and link to it.
 - **Progress means the same skill at a higher level.** A Year 4 and a Year 10 student both build paragraphs and argue points. What grows is subtlety, length and independence. So the curriculum is organised below as **threads**, each with what ACARA expects at each stage.
-- **Teachers plan by unit** (a novel study, a persuasive unit), not by standard. So each course is a set of drop-in lessons, and a "Which lessons fit your unit?" table maps unit types to courses.
+- **Teachers plan by unit and purpose** (a persuasive unit, a novel study), not by standard. So each course is a set of drop-in lessons, and ACARA's text purposes (analytical, imaginative, persuasive, informative, reflective, critical) are the ways in, with courses underneath.
 - **Grammar is taught in use.** Every Building sentences and Punctuation lesson ends with the move used in a short piece of a real text type, such as a paragraph of a review or a step of an explanation, not in isolated sentences. Plan, draft and edit comes early (wave 2) so the moves meet real writing.
 
 ## The numbers
@@ -216,22 +216,20 @@ What each course covers:
 - **Discussion moves:** paraphrasing, questioning, building on and challenging others, as talk-move cards practised in class workshops.
 - **Spelling through word parts:** base words, prefixes, suffixes, Greek and Latin roots, and spelling generalisations, with endless practice pages.
 
-### Which lessons fit your unit?
+### Ways in: ACARA's text purposes (decided 27 Oct)
 
-| Unit a teacher is running | Courses to draw on |
-|---|---|
-| Novel or short story study | How authors craft stories, Responding to literature, Reading closely, Holding writing together (analytical paragraphs) |
-| Persuasive writing | Judging and persuading, How texts are built (argument), Holding writing together, Language for people and situations, Plan, draft and edit |
-| Analytical essay | Holding writing together (claim, evidence, explanation), Judging and persuading (backing a judgement), Writing like a subject expert (quoting and referencing) |
-| Narrative and creative writing | Writing stories and poems, How authors craft stories, Building sentences, Punctuation (dialogue) |
-| Poetry | Poetry: sound and imagery (Years 5–6), How authors craft stories (layers of meaning and imagery, Years 7–10), Writing stories and poems |
-| Speeches and debates | Speaking to an audience, Judging and persuading, Discussion moves, How texts are built (argument) |
-| Media and visual texts | Images and multimodal texts, Judging and persuading, Reading closely (credibility) |
-| Information reports and explanations (any subject) | How texts are built, Writing like a subject expert, Building sentences, Holding writing together |
+Teachers plan units around a purpose. From Year 7 ACARA's writing and speaking descriptors name these purposes: imaginative, reflective, informative, persuasive and analytical, with critical added from Year 9. They are the main way into English on the site ("What are you teaching?"), with the courses underneath as skill sets. One course can sit under several purposes.
 
-### Start here: a first-year set
+| Purpose | Typical units | Courses to draw on |
+|---|---|---|
+| **Analytical** (interpreting, analysing) | Novel, short story or poetry study; analytical essay | How authors craft stories, Responding to literature, Holding writing together (claim, evidence, explanation), Reading closely, Writing like a subject expert (quoting) |
+| **Imaginative** | Narrative and creative writing, poetry writing | Writing stories and poems, How authors craft stories, Poetry, Building sentences, Punctuation (dialogue) |
+| **Persuasive** | Persuasive essay, speeches, debate | Judging and persuading, How texts are built (argument), Speaking to an audience, Discussion moves, Language for people and situations |
+| **Informative** | Reports and explanations, often in other subjects | How texts are built, Writing like a subject expert, Images and multimodal texts, Building sentences, Holding writing together |
+| **Reflective** | Journals, personal response, reflection on own writing | Responding to literature, Plan, draft and edit |
+| **Critical** (Years 9–10) | Media, representation, perspective | Judging and persuading (extensions), Images and multimodal texts, Responding to literature |
 
-Seventeen courses is too many to start with. For a school trying the site, the plan recommends five: **Holding writing together** (built), **How texts are built**, **Building sentences**, **Judging and persuading** and **How authors craft stories**, plus **Speaking to an audience** for a speech unit. These match the first two waves, and the English teacher page will say so.
+Not sure where to start? A first set of five covers most units: Holding writing together, How texts are built, Building sentences, Judging and persuading and How authors craft stories. This is a suggestion, not an ACARA sequence. Four of the five are also the threads Kit's data shows as most depended on (most prior-knowledge links and hinge nodes); Holding writing together is included because paragraph skills run through every unit.
 
 My path (`/my-path/`) already lets a teacher save a unit's lessons as one shareable link. A later step could ship these unit lists as ready-made paths.
 
@@ -325,5 +323,5 @@ If any of these are picked up, they follow the existing rules:
 
 1. Is the course list right? After the review, Choosing words became Language for people and situations, and figurative language moved into How authors craft stories.
 2. Decided (27 Oct): Year 4–5 items that are the direct step before a Year 6 lesson stay in the courses as warm-ups; the other Year 3–4 items (about 60, listed in the data file with no `course:`) go to the Before Year 7 roadmap.
-3. Is the five-course start-here set the right one, and should the threads page come first in wave 1 or after a second course proves the pattern?
+3. Decided (27 Oct): ACARA's text purposes are the ways in; the five-course set is a footnote suggestion. Still open: should the threads page come first in wave 1, or after a second course proves the pattern?
 4. How many chats should run in parallel for wave 1: one per course, or one chat building B to D in turn?
