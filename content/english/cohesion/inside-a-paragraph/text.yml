@@ -56,3 +56,13 @@ s claim: The bus shelter shows how alone Mei feels.
 s quote: She waits "at the back of the shelter, hood up, eyes on her shoes."
 s explain: This shows she is hiding from everyone, even the driver who sees her every night.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+roles: claim example quote explain
+answer: on
+s claim: In the story, Leo cares about his little sister more than he lets on.
+s quote: He grumbles about walking her home, yet when she trips he "was kneeling beside her before she could cry."
+s explain: This shows that his grumbling is just for show, because he is the first to help when she is hurt.
+# endregion

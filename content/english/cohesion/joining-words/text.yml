@@ -27,3 +27,9 @@ widget: cohesion
 as: student
 p: We made pancakes for breakfast. First, we mixed flour, eggs and milk. Then we heated the pan. The first pancake stuck, so we added more butter. Finally, we ate them with lemon.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+answer: on
+p: Our class raised $200 for the animal shelter. [[{Also|However}=Also]], we collected three boxes of old towels. [[{However|So}=However]], the shelter had no room to store them. [[{As a result|Also}=As a result]], we gave the towels to the vet clinic next door.
+# endregion

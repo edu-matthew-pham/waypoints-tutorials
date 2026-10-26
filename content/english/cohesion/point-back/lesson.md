@@ -6,6 +6,7 @@ title: What does it point back to?
 summary: "Words such as she, it, they and this do not name anything on their own. They point back to something the reader has already met, which saves repeating it. Reading well means following each one back, and writing well means making sure the reader can."
 language: maths
 node: [AC9E4LA04 n1]
+explainPicture: { ref: text.yml#explain-pic, caption: "She points back to Grandma and it to the camera. This points back to a whole idea: taking forty photos in one afternoon." }
 hook: "Read this: 'It was enormous. It moved slowly towards them.' What was enormous, and who is them? You cannot tell, because nothing came before."
 ---
 Some words don't name anything themselves. **She**, **we**, **it**, **they**, **them**, **this** and **these** point back to something the reader has already met. They save the writer from repeating the same words, but only if the reader can follow them back.

@@ -63,3 +63,15 @@ s body: Many Australian beaches have a rip current.
 s body: If you are caught in a rip, don't swim against it.
 s conclusion: Knowing what a rip looks like, and how to float or swim out of one, could save your life.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: overview body conclusion
+answer: on
+s overview: Our new playground has two big changes: a climbing net and a quiet garden.
+s body: The climbing net stretches between two poles and holds twenty students at once.
+s body: The quiet garden has benches and shade for anyone who wants a calm lunch.
+s conclusion: With the net for busy days and the garden for quiet ones, the playground now suits everyone.
+# endregion

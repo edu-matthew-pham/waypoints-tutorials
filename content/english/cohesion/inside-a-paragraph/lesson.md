@@ -5,6 +5,7 @@ title: Inside a paragraph
 summary: "A strong paragraph in an argument or analysis makes a claim, backs it with evidence (an example or a quotation) and then explains how the evidence supports the claim. The explanation is the step most often missing, and without it the reader has to do the writer's thinking."
 language: maths
 node: [AC9E8LA04 n1, AC9E8LA04 n2]
+explainPicture: { ref: text.yml#explain-pic, caption: "The claim says what the writer argues, the quotation is the evidence, and the explanation says how the evidence shows the claim." }
 hook: "Someone says 'Our team is the best' and shows you a photo of a trophy. Are you convinced? What else would you want to know?"
 ---
 A paragraph that argues a point has parts inside it, each with a job:

@@ -41,3 +41,9 @@ s claim: A compost bin would make the biggest difference to our rubbish.
 s example: Food scraps were the heaviest thing in our bins, at 23 kilograms in one week.
 s explain: This shows that composting would cut more weight than recycling paper or bottles, because food is the biggest part of what we throw away.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+answer: on
+p: [[Max|max]] lent [[Ben|ben]] [[his football|ball]] at lunch. [[He>?~*Ben/Max]] kicked [[it>ball]] over the fence. [[{As a result|However|First}=As a result]], Ben had to knock on the neighbour's door to get the ball back.
+# endregion

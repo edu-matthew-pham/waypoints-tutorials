@@ -32,3 +32,11 @@ mode: chain
 as: student
 p: [[Ollie#a]] is our [[cat#a]]. [[The animal#a]] sleeps on [[the couch#b]] all day. [[That sofa#b]] is covered in fur. Mum says it needs a clean.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+mode: chain
+colours: 2
+answer: on
+p: [[A wedge-tailed eagle#a]] circled above the paddock. [[The bird#a]] had spotted [[a rabbit#b]]. [[The hungry hunter#a]] dived, but [[the little animal#b]] escaped down its burrow.
+# endregion

@@ -5,6 +5,7 @@ title: Open and close
 summary: "An overview at the start tells the reader where a whole text is going, and a conclusion at the end tells them where it went. They are the topic sentences of the whole text. A good overview even sets the order of the paragraphs that follow."
 language: maths
 node: [AC9E7LA04 n2]
+explainPicture: { ref: text.yml#explain-pic, caption: "The overview names the net and the garden, the body paragraphs take them in that order, and the conclusion echoes both without adding anything new." }
 hook: "A friend gives you directions: turn left, go past three houses, turn right. Would it help if they first said 'It's the blue house at the end of the next street'?"
 ---
 A topic sentence tells the reader what a **paragraph** is about. A whole text has the same thing on a bigger scale:

@@ -27,3 +27,10 @@ widget: cohesion
 as: student
 p: Our cat Pepper sleeps all day. She wakes up at dinner time. Her favourite food is tuna. After dinner, she goes out to hunt moths.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+answer: on
+p: [[Penguins|pen]] nest on the island. [[They>pen]] come ashore at dusk.
+p: A big storm hit the island on Tuesday. [[{After the storm, the penguins stayed in their burrows for two days.|The penguins stayed in their burrows for two days after the storm.}=After the storm, the penguins stayed in their burrows for two days.]]
+# endregion

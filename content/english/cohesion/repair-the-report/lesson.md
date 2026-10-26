@@ -5,6 +5,7 @@ title: "Challenge: repair the report"
 summary: "Nib's group audited the school's rubbish and wrote a report, but it is hard to follow. Students repair it with four moves from the course: fix unclear pointing words, choose joining words that do the right job, put the paragraphs in the order the overview promises, and add the explanation a paragraph is missing."
 language: maths
 node: [AC9E7LA04 n2, AC9E8LA04 n2, AC9E6LA04 n3]
+explainPicture: { ref: text.yml#explain-pic, caption: "He could mean Max or Ben, so He is replaced with Ben. As a result says the trip next door happened because of the kick." }
 hook: "A report has all the right facts, but readers keep getting lost. Can you fix it without changing a single fact?"
 ---
 Nib's class weighed the rubbish in the school's bins for a week. Their facts are right, but the report is hard to follow. You will repair it in four parts, with four moves from this course: pointing words, joining words, the overview's order, and explaining evidence.

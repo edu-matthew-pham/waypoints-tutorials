@@ -6,6 +6,7 @@ title: Words that join ideas
 summary: "Joining words (connectives) such as however, so, also and then tell the reader how the next idea connects to the last one: it adds, it turns against, it follows as a result, or it comes next in time. They are not interchangeable: swap however for so and the meaning changes."
 language: maths
 node: [AC9E4LA04 n2, AC9E4LA04 n3]
+explainPicture: { ref: text.yml#explain-pic, caption: "Also adds a second gift, However turns against it, and As a result says what happened because of the problem." }
 hook: "'It rained all morning. So the match went ahead.' Something is wrong, but every word is spelled right. What is it?"
 ---
 Two sentences side by side don't say how they connect. A **joining word** (a connective) tells the reader: the next idea **adds** to the last one, **turns against** it, **follows from** it, or **comes next** in time.

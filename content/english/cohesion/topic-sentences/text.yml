@@ -67,3 +67,13 @@ s topic: Our school needs more shade.
 s detail: The playground gets very hot in summer.
 s detail: Many students have nowhere cool to sit at lunch.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+roles: topic detail
+answer: on
+s topic: Our library is more than a place to borrow books.
+s detail: Students can print and scan there at lunch.
+s detail: Once a term, an author visits to talk about writing.
+# endregion

@@ -6,6 +6,7 @@ title: Where a sentence starts
 summary: "The start of a sentence tells the reader what it is about, and the rest adds something new. When each start picks up from what came before, the paragraph flows. Moving a time, a reason or a contrast to the start gives it the spotlight."
 language: maths
 node: [AC9E5LA04 n1, AC9E5LA04 n2, AC9E5LA04 n3]
+explainPicture: { ref: text.yml#explain-pic, caption: "They picks up the penguins, which the reader already knows. Starting with After the storm picks up the storm and puts the time in the spotlight." }
 hook: "Two sentences say exactly the same thing in different orders. Why does one fit the paragraph and the other make you stop?"
 ---
 The **start** of a sentence tells the reader what the sentence is about. The rest of the sentence adds something **new** about it. When each start picks up something the reader already knows, the paragraph flows from one sentence to the next.

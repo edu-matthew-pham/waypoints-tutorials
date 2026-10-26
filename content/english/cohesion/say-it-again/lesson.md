@@ -5,6 +5,7 @@ title: Say it again, on purpose
 summary: "Repeating a key word on purpose, or swapping in a word that means the same (or the opposite), keeps the reader on the same thing from sentence to sentence. Repetition is a tool, not a mistake: it is clearer than it when it could point to two things."
 language: maths
 node: [AC9E6LA04 n1]
+explainPicture: { ref: text.yml#explain-pic, caption: "Heatwave is repeated, and hot spell means the same, so the text stays on the heat. Cool change and cooler start an opposite chain that answers the heat chain." }
 hook: "You were told not to repeat words. So why does a good report say volcano five times?"
 ---
 You may have been told not to repeat words. But writers repeat **key words** on purpose: each repeat tells the reader "still the same thing". A word that means the same (a **synonym**) does the same job with a little variety. Together, the repeats make a **chain** that runs through the text. A word that means the **opposite** (an **antonym**) starts a second chain that runs against the first, which ties them together.

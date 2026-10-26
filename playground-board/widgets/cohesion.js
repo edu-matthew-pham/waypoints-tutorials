@@ -20,6 +20,8 @@
 //   role explain: Explanation              a label's name on screen (built-in names for common roles)
 //   show: links | none                     link mode: dotted lines under the planted linking words (default), or none
 //                                          (students find them with the mark tool)
+//   answer: on                             start solved and read-only: every planted move made (arrows, fixes, colours,
+//                                          gaps, labels, order). For Explain-it-to-me pictures (explainPicture), never a step
 //   colours: 3                             chain mode: how many chain colours (1 to 4, default 3)
 //   label: on | off                        parts mode: whether students label sentences (default on; off for an ordering task)
 //   tools: mark write order label text add  what the student may do beyond the mode's own move (trace, colour, label)
@@ -141,6 +143,7 @@
     });
     if (s.label !== undefined) { if (!/^(on|off)$/i.test(s.label)) throw new Error('label: on or off.'); m.tools.label = /^on$/i.test(s.label); }
     if (s.show !== undefined) { if (!/^(links|none)$/i.test(s.show)) throw new Error('show: links or none.'); m.show = s.show.toLowerCase(); }
+    if (s.answer !== undefined) { if (!/^(on|off)$/i.test(s.answer)) throw new Error('answer: on or off.'); m.answer = /^on$/i.test(s.answer); }
     if (s.layout !== undefined) { if (!/^(inline|blocks)$/i.test(s.layout)) throw new Error('layout: inline or blocks.'); m.layout = s.layout.toLowerCase(); }
     if (s.colours !== undefined) { var c = Number(s.colours); if (!(c >= 1 && c <= 4 && c === Math.round(c))) throw new Error('colours: 1 to 4.'); m.colours = c; }
     if (mode === 'parts') {
@@ -342,7 +345,7 @@
 
   function report() {
     var v = values(M, S, written !== undefined);
-    B.save({ st: S, written: written });
+    if (!M.answer) B.save({ st: S, written: written });
     var out;
     if (M.mode === 'link') out = v.n_arrows + ' arrow' + (v.n_arrows === 1 ? '' : 's') + (v.n_flagged ? ', ' + v.n_flagged + ' marked not clear' : '');
     else if (M.mode === 'chain') out = v.n_coloured + ' coloured';
@@ -361,6 +364,7 @@
     return null;
   }
   function clickWord(i) {
+    if (M.answer) return;
     var gi = groupOfWord(i), g = gi >= 0 ? M.groups[gi] : null;
     if (M.mode === 'chain') {
       var key = g && (g.type === 'chain' || g.type === 'target') ? 'g' + gi : 'w' + i;
@@ -398,6 +402,12 @@
     M.tokens.forEach(function (t, i) {
       var pe = paras[t.p]; if (!pe) { pe = paras[t.p] = el('p', 'co-p'); order.push(t.p); openG = -1; wrap = null; }
       var g = t.g >= 0 ? M.groups[t.g] : null;
+      if (t.gap && M.answer) {   // the chosen word as text, not a menu, so a picture reads cleanly
+        pe.appendChild(el('span', 'co-gapans', S.gaps[t.g] >= 0 ? g.opts[S.gaps[t.g]] : '…'));
+        if (t.after) pe.appendChild(document.createTextNode(t.after));
+        pe.appendChild(document.createTextNode(' '));
+        openG = -1; wrap = null; return;
+      }
       if (t.gap) {
         var c = S.gaps[t.g], s = el('select', 'co-gap'); s.setAttribute('aria-label', 'Choose a word for gap ' + g.n);
         var blank = el('option', '', '…'); blank.value = ''; s.appendChild(blank);
@@ -412,6 +422,7 @@
       if (g) {
         if (openG !== t.g) {
           openG = t.g; wrap = el('span', 'co-g'); wrap.setAttribute('data-g', t.g);
+          if (M.answer && g.type === 'target' && M.groups.some(function (h) { return h.type === 'link' && !h.unclear && (h.ans || []).indexOf(g.id) >= 0; })) wrap.classList.add('co-target');   // what an arrow points to, the whole span
           var key = 'g' + t.g;
           if (g.type === 'link' && (M.show === 'links' || S.found.indexOf(t.g) >= 0)) {
             wrap.classList.add('co-link'); if (sel === key) wrap.classList.add('co-sel');
@@ -422,6 +433,10 @@
           if (M.mode === 'chain' && S.colours[key]) { wrap.style.background = FILLS[S.colours[key] - 1]; wrap.style.boxShadow = 'inset 0 -2px 0 ' + COLOURS[S.colours[key] - 1]; }
           pe.appendChild(wrap);
           if (g.type === 'link' && S.links[key] && S.links[key].fix) {
+            if (M.answer) {   // before and after: the unclear words struck through, then the fix
+              var was = M.tokens.slice(g.from, g.to + 1).map(function (x) { return x.w; }).join(' ');
+              pe.insertBefore(el('s', 'co-was', was), wrap); pe.insertBefore(document.createTextNode(' '), wrap);
+            }
             var fx = el('span', 'co-w', S.links[key].fix); fx.setAttribute('data-i', g.from); wrap.appendChild(fx);
             fx.addEventListener('click', function (ev) { ev.stopPropagation(); clickWord(g.from); });
             var tail = M.tokens[g.to].after; if (tail) pe.appendChild(document.createTextNode(tail));
@@ -435,7 +450,7 @@
       var mk = S.marked.indexOf(i) >= 0;
       if (mk) { w.classList.add('co-link', 'co-mine'); if (sel === 'w' + i) w.classList.add('co-sel'); if (S.links['w' + i] && S.links['w' + i].flag) w.classList.add('co-flag'); }
       if (M.mode === 'chain' && S.colours['w' + i]) { w.style.background = FILLS[S.colours['w' + i] - 1]; w.style.boxShadow = 'inset 0 -2px 0 ' + COLOURS[S.colours['w' + i] - 1]; }
-      w.setAttribute('tabindex', '0');
+      if (!M.answer) w.setAttribute('tabindex', '0');
       w.addEventListener('click', function (ev) { ev.stopPropagation(); clickWord(i); });
       w.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); clickWord(i); } });
       host.appendChild(w);
@@ -536,18 +551,25 @@
     var list = sentList(M, S), pe = null;
     list.forEach(function (x, i) {
       if (!pe || M.layout === 'blocks' || breakBefore(M, S, i)) { pe = el('p', 'co-p' + (M.layout === 'blocks' ? ' co-block' : '')); paper.appendChild(pe); }
-      var sp = el('span', 'co-s' + (selS === x.id ? ' co-sel' : '')); sp.setAttribute('tabindex', '0'); sp.setAttribute('data-s', x.id);
+      var sp = el('span', 'co-s' + (selS === x.id ? ' co-sel' : '')); if (!M.answer) sp.setAttribute('tabindex', '0'); sp.setAttribute('data-s', x.id);
       var lab = S.labels[x.id];
-      if (lab) { var tag = el('span', 'co-tag', roleName(M, lab)); tag.style.background = COLOURS[M.roles.indexOf(lab) % 4]; sp.appendChild(tag); }
-      sp.appendChild(document.createTextNode(sentText(S, x) || '(empty)'));
+      var txt = sentText(S, x) || '(empty)';
+      if (lab) {   // the label and the sentence's first word stay on one line, so a label never ends the line before its sentence
+        var tag = el('span', 'co-tag', roleName(M, lab)); tag.style.background = COLOURS[M.roles.indexOf(lab) % 4];
+        var cut = txt.search(/\s/), lead = el('span', 'co-lead'); lead.appendChild(tag);
+        lead.appendChild(document.createTextNode(cut < 0 ? txt : txt.slice(0, cut))); sp.appendChild(lead);
+        txt = cut < 0 ? '' : txt.slice(cut);
+      }
+      sp.appendChild(document.createTextNode(txt));
       if (!sentText(S, x)) sp.classList.add('co-blank');
-      sp.addEventListener('click', function () { selS = selS === x.id ? null : x.id; drawParts(); drawPartsBar(); });
-      sp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selS = selS === x.id ? null : x.id; drawParts(); drawPartsBar(); } });
+      if (!M.answer) sp.addEventListener('click', function () { selS = selS === x.id ? null : x.id; drawParts(); drawPartsBar(); });
+      if (!M.answer) sp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selS = selS === x.id ? null : x.id; drawParts(); drawPartsBar(); } });
       pe.appendChild(sp); pe.appendChild(document.createTextNode(' '));
     });
   }
   function drawPartsBar() {
-    var bar = ui.bar; bar.replaceChildren(); bar.hidden = false;
+    var bar = ui.bar; bar.replaceChildren(); bar.hidden = !!M.answer;
+    if (M.answer) return;
     var x = selS && sentList(M, S).filter(function (y) { return y.id === selS; })[0];
     if (!x) { bar.appendChild(el('p', 'co-none', 'Click a sentence to work on it.')); say(''); return; }
     say(M.tools.label ? 'Choose what this sentence does.' + (M.tools.order ? ' Move it if it is in the wrong place.' : '') : M.tools.order ? 'Use Move up and Move down to put it in its place.' : '');
@@ -593,7 +615,8 @@
       spec = B.spec; written = undefined; M = spec.co;
       var sv = fresh ? null : B.saved();
       if (sv && sv.written !== undefined && sv.written !== null) { try { M = build(spec, String(sv.written)); written = String(sv.written); if (M.mode === 'link') M.tools.mark = true; } catch (e) { M = spec.co; } }
-      M = copy(M); S = freshState(M);
+      M = copy(M); S = M.answer ? solve(M) : freshState(M);
+      if (M.answer) sv = null;
       if (sv && sv.st && typeof sv.st === 'object') {
         var o = sv.st;
         ['links', 'colours', 'gaps', 'labels', 'texts'].forEach(function (k) { if (o[k] && typeof o[k] === 'object') S[k] = o[k]; });
@@ -605,19 +628,20 @@
       ui = { writing: false };
       ui.bar = el('div', 'co-bar'); panel.appendChild(ui.bar);
       ui.tip = el('p', 'co-tip'); panel.appendChild(ui.tip);
-      var holder = el('div', 'co-holder');
+      var holder = el('div', 'co-holder' + (M.answer ? ' co-answer co-answer-' + M.mode : ''));
       ui.paper = el('div', 'co-paper');
       ui.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); ui.svg.setAttribute('class', 'co-svg'); ui.svg.setAttribute('aria-hidden', 'true');
       ui.svg.innerHTML = '<defs><marker id="co-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="co-headpath"/></marker></defs>';
       holder.appendChild(ui.paper); panel.appendChild(holder);
       var row = el('div', 'gbar');
       var again = el('button', '', 'Start again'); again.type = 'button'; again.addEventListener('click', B.restart); row.appendChild(again);
-      panel.appendChild(row);
+      if (M.answer) { ui.bar.hidden = true; ui.tip.hidden = true; } else panel.appendChild(row);
       ui.paper.addEventListener('click', function () { if (sel && M.mode === 'link') { sel = null; say('Click a dotted word to trace it.'); draw(); } });
       say(M.mode === 'link' ? (M.show === 'links' || written !== undefined ? 'Click a dotted word, then click the words it points back to.' : 'Press "Mark a linking word", then click a word that points back to something earlier.')
         : M.mode === 'chain' ? 'Pick a colour, then click the words that belong to the same chain.' : 'Click a sentence to work on it.');
       if (M.mode === 'link' && M.show === 'none' && !M.tools.mark) M.tools.mark = true;
       draw();
+      if (M.answer) ui.bar.hidden = true;
       if (!bound) { bound = true; window.addEventListener('resize', function () { if (ui && ui.paper && ui.paper.isConnected && M.mode === 'link' && !ui.writing) drawArrows(); }); }
       report();
     },

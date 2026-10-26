@@ -5,6 +5,7 @@ title: Word chains
 summary: "A general word can stand in for a specific one the reader has already met: a kelpie becomes the dog, then the animal. Readers link them without being told, which keeps a text moving without repeating the same word. It only works if the specific word comes first."
 language: maths
 node: [AC9E6LA04 n2, AC9E6LA04 n3]
+explainPicture: { ref: text.yml#explain-pic, caption: "The eagle comes first, then the bird and the hungry hunter. The rabbit comes first, then the little animal." }
 hook: "'Grandpa bought a kelpie. The dog follows him everywhere.' The second sentence never says kelpie. How do you know it is the same animal?"
 ---
 A text can talk about the same thing with different words. A **general** word (dog, animal, boat, place) can stand in for a **specific** one the reader met earlier (a kelpie called Biscuit, a red kayak, Hobart). Together these words make a **word chain**.

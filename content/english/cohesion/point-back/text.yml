@@ -28,3 +28,9 @@ widget: cohesion
 as: student
 p: [[Our class|c]] went to [[the museum|m]] on Tuesday. [[It>m]] had a whale skeleton. [[We>c]] drew [[it>m]] for art.
 # endregion
+
+# region: explain-pic
+widget: cohesion
+answer: on
+p: [[Grandma|gran]] gave me [[an old camera|cam]]. [[She>gran]] said [[it>cam]] still works. [[I took forty photos in one afternoon|photos]]. [[This>photos]] made Grandma laugh.
+# endregion

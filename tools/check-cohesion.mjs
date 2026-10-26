@@ -16,7 +16,7 @@ const B = { widget() {} };
 new Function('WPB', readFileSync(new URL('../playground-board/widgets/cohesion.js', import.meta.url), 'utf8') + '\n;')(B);
 const C = B.cohesionCore;
 
-let bad = 0, checked = 0, boards = 0;
+let bad = 0, checked = 0, boards = 0, pictures = 0;
 const fail = (m) => { bad++; console.log('✗ ' + m); };
 const only = process.argv[2];
 // A solution region with `as: student` stands for a student's own text: its linking words count as words the student
@@ -43,12 +43,27 @@ for (const l of loadLessons().filter((x) => (!only || x.slug.includes(only)))) {
     }
     if (s.config.smaller?.starter) items.push([s.id + '~smaller', s.config.smaller.starter, s.config.smaller.check?.type === 'board' ? s.config.smaller.check.when : null]);
   }
+  // Explain-it-to-me pictures: a cohesion setup must say answer: on (so the picture shows the finished markings) and solve.
+  const ep = lesson.explainPicture;
+  const epRef = typeof ep === 'string' ? ep : ep?.ref;
+  if (epRef) {
+    try {
+      const code = snippetFrom(read, epRef);
+      if (/^\s*widget:\s*cohesion\b/m.test(code)) {
+        pictures++;
+        const sp = C.specFromText(code), m = C.build(sp);
+        if (!m.answer) fail(`${l.slug} explainPicture (${epRef}): add "answer: on" so the picture shows the finished markings`);
+        C.values(m, C.solve(m), false);
+      }
+    } catch (e) { fail(`${l.slug} explainPicture (${epRef}): ${e.message}`); }
+  }
   for (const [id, ref, when] of items) {
     let starter;
     try { starter = snippetFrom(read, ref); } catch (e) { fail(`${l.slug} ${id}: ${e.message}`); continue; }
     if (!/^\s*widget:\s*cohesion\b/m.test(starter)) continue;
     boards++;
     let start, done;
+    if (/^\s*answer:\s*on\b/mi.test(starter)) fail(`${l.slug} ${id} (${ref}): answer: on starts the board solved, so it is for pictures only, never a step`);
     try { start = vars(starter, false); } catch (e) { fail(`${l.slug} ${id} (${ref}): the board cannot start: ${e.message}`); continue; }
     if (!when) continue;
     const [file, region] = String(ref).split('#');
@@ -64,5 +79,5 @@ for (const l of loadLessons().filter((x) => (!only || x.slug.includes(only)))) {
     } catch (e) { fail(`${l.slug} ${id}: ${e.message}`); }
   }
 }
-console.log(bad ? `\n${bad} problem(s)` : `✓ cohesion: ${boards} boards start, and ${checked} board checks fail at the start and pass when finished`);
+console.log(bad ? `\n${bad} problem(s)` : `✓ cohesion: ${boards} boards start, and ${checked} board checks fail at the start and pass when finished; ${pictures} explain pictures solve`);
 process.exit(bad ? 1 : 0);

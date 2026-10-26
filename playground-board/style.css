@@ -1041,3 +1041,14 @@ table.sh td.sh-copied { outline: 2px dashed var(--left); outline-offset: -2px; }
 .co-text { width: 100%; box-sizing: border-box; font: 14px system-ui, sans-serif; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg, #fff); color: inherit; resize: vertical; }
 @media (max-width: 480px) { .co-paper { padding: 18px 12px 8px; font-size: 16px; line-height: 2.2; } }
 .co-flag.co-fixed { text-decoration: none; }
+/* answer: on (pictures): solved and read-only. Link mode gets headroom for its arrows, which pass behind the words. */
+.co-gapans { background: #fffbe6; border: 1px solid #d4b106; border-radius: 5px; padding: 0 5px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.co-was { color: #b42318; text-decoration-thickness: 2px; }
+.co-target { background: #eef3fb; border-radius: 3px; }
+.co-answer .co-paper { pointer-events: none; max-width: 460px; }
+.co-answer-link .co-paper { padding-top: 64px; }
+.co-answer .co-p { position: relative; z-index: 1; }
+.co-answer .co-w { text-shadow: 0 0 3px #fff, 0 0 3px #fff; }
+.co-answer .co-svg { z-index: 0; }
+.co-lead { white-space: nowrap; }
+.co-paper { overflow-wrap: anywhere; }

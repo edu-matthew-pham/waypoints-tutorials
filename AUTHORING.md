@@ -1581,6 +1581,13 @@ Vary, Practise, Make).
     solves each board (every planted move made) to check it passes; a Make step's check is tried against the
     `<region>-solution` region, and `as: student` there counts its marks as the student's own and the text as written.
     The board only checks what can be checked: say so on steps where the student's own writing is the point.
+    `answer: on` starts the board solved and read-only (every planted move made: arrows and fixes, with an unclear
+    word struck through before its fix, what each arrow points to shaded as a whole, chains coloured, gaps shown as the chosen word, sentences labelled and in
+    order; no toolbar, no clicks or keys, nothing saved). It is for Explain-it-to-me pictures only: `explainPicture: { ref: text.yml#explain-pic,
+    caption: … }` with an `explain-pic` region that says `answer: on`. Write the picture's own short text (it shows
+    once the first Predict is locked, so it must not answer a Try, Vary or Practise board), keep each arrow's word on
+    the same line as its target (the picture is drawn on a 460px paper), and `check-cohesion` fails a step that
+    uses `answer: on` and a cohesion picture that does not.
 - **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

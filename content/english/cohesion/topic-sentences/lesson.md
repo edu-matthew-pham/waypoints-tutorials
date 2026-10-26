@@ -5,6 +5,7 @@ title: Tell the reader what's coming
 summary: "A topic sentence tells the reader what a paragraph is about, so every other sentence has somewhere to belong. It is often first, but not always. Reading only the topic sentences of a text should tell you what the whole text is about."
 language: maths
 node: [AC9E7LA04 n1]
+explainPicture: { ref: text.yml#explain-pic, caption: "The topic sentence says what the paragraph is about. Each detail gives one more thing the library offers." }
 hook: "You have one minute to find out what a two-page report says. Which sentences do you read?"
 ---
 A **topic sentence** tells the reader what a paragraph is about. The other sentences are **details**: examples, facts and reasons that belong to it. A reader in a hurry can read only the topic sentences and still follow the text.
