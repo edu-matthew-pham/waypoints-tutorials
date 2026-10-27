@@ -689,9 +689,9 @@ const BACKFROM_HTML = `<p class="wpt-backfrom" hidden></p><script>(function(){tr
 function linksHtml(cl) {
   if (!cl) return '';
   const a = (x) => x.reason
-    ? `<a href="${esc(x.href)}" title="${esc(x.where)}">${esc(x.title)}</a> <span class="clw">· ${x.kind === 'idea' ? 'idea' : 'teaches'}: ${esc(x.reason)}</span>`
+    ? `<a href="${esc(x.href)}" title="${esc([x.where, x.why].filter(Boolean).join(' · '))}">${esc(x.title)}</a> <span class="clw">· ${esc(x.reason)}</span>`
     : `<a href="${esc(x.href)}" title="${esc(x.label)}">${esc(x.title)}</a> <span class="clw">(${esc(x.where)})</span>`;
-  const row = (name, xs) => (xs.length ? `<p><b>${name}:</b> ${xs.map(a).join(' · ')}</p>` : '');
+  const row = (name, xs) => (xs.length ? `<p><b>${name}:</b> ${xs.map((x) => a({ ...x, reason: '' })).join(' · ')}</p>` : '');
   const seen = new Set(), before = [...(cl.catchUp || []), ...(cl.on || []), ...(cl.prior || [])].filter((x) => !seen.has(x.href) && seen.add(x.href));
   const back = before.length ? `<div class="wpt-prior"><b>What you should already know:</b><ul>${before.map((x) => `<li>${a(x)}</li>`).join('')}</ul></div>` : '';
   return `<div class="clinks">${back}${row('Put to work in', cl.in)}${row('Leads into', cl.leads || [])}</div>`;
