@@ -16,3 +16,8 @@ activities:
     minutes: 3
     do: |
       Walk round and look at three tiles. Guess each tile's rule from the picture before you read its code.
+self-regulation:
+  card: code-test-small
+  mode: nudge
+  at: make
+  notes: "Ask before anyone starts typing. If nobody mentions starting with one small piece (one square, one line), point at the card. Fewer prompts than earlier lessons is the aim."

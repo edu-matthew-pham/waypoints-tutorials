@@ -164,7 +164,7 @@ body.try-open{overflow:hidden}
 figure.diagram{margin:12px 0 18px}figure.diagram img{max-width:100%;height:auto;display:block}figure.diagram figcaption{font-size:13px;color:var(--muted);margin-top:4px}figure.dmis figcaption::before{content:'A drawing to question: ';font-weight:600}figure.shown{margin:10px 0 16px}figure.shown img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}figure.shown figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.expected figure{margin:8px 0 14px}details.expected img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}details.expected figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
-details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
+.wpt-strat{font-size:.9em;color:var(--muted);margin:.2em 0 .6em}details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 details.smaller{margin:12px 0;border:1px dashed var(--line);border-radius:10px;padding:0 16px}details.smaller>summary{cursor:pointer;font-weight:600;padding:10px 0}details.smaller[open]>summary{border-bottom:1px solid var(--line);margin-bottom:6px}details.smaller .check{margin:8px 0 12px}
 details.hints summary{cursor:pointer;font-weight:600;padding:10px 0}
 details.hints[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
@@ -775,7 +775,7 @@ export function lessonPageHtml(lesson, deps) {
     const body = md.parse(s.body) + videoHtml(c.video) + promptHtml(c.prompt, s.id);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
-    const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${md.parse(t)}</details>`).join('');
+    const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${i || !siteRoot ? '' : `<p class="wpt-strat">Before a hint: what kind of stuck is this? <a href="${esc(siteRoot)}learning/how-you-learn/cards/#when-youre-stuck">Try a strategy first</a></p>`}${md.parse(t)}</details>`).join('');
     const hints = smallerOf(s, s.tasks.length ? null : c, s.id) + hintsOf(c.hint);
     const checks = checkHtml(lesson, s, snippetNames, snippet, null, tx);
     // A Run step after a Predict step with a predict check shows "You predicted X. It actually did Y." after Run.

@@ -884,13 +884,15 @@ export function workItems(lesson) {
 /** Where a class activity or question goes in the deck: after the first step of that stage, or at the start or end. */
 export const CLASS_AT = ['start', 'predict', 'run', 'investigate', 'modify', 'make', 'end'];
 export const CLASS_KINDS = ['activity', 'discussion', 'check', 'info'];
+/** Deck strategy inserts (27 Oct 2026, roadmap/learning.md): teach = NEMO-T slides, show = a think-aloud, nudge = one open question. */
+export const STRATEGY_MODES = ['teach', 'show', 'nudge'];
 export const CLASS_CHECKS = ['question', 'number', 'trace', 'match'];
 
-/** content/<course>/class/<lesson>.yml: { inquiry: { q, prompts?, notes? }, activities: [{ at, title, do, notes?, kind?, minutes? }], questions: [{ at, title?, type, ...check }], staff?: { notes?, activities: [{ title, do, minutes? }] } } */
+/** content/<course>/class/<lesson>.yml: { 'self-regulation'?: { card, mode: teach|show|nudge, at, say?, task?, ask?, notes? }, inquiry: { q, prompts?, notes? }, activities: [{ at, title, do, notes?, kind?, minutes? }], questions: [{ at, title?, type, ...check }], staff?: { notes?, activities: [{ title, do, minutes? }] } } */
 function validateClassPlan(lesson, err) {
   const c = lesson.classPlan, w = "class plan";
   if (typeof c !== 'object' || Array.isArray(c)) return err(w, 'must be a mapping with activities and/or questions');
-  for (const k of Object.keys(c)) if (!['inquiry', 'activities', 'questions', 'staff'].includes(k)) err(w, `unknown field "${k}" (use inquiry, activities, questions, staff)`);
+  for (const k of Object.keys(c)) if (!['inquiry', 'activities', 'questions', 'staff', 'self-regulation'].includes(k)) err(w, `unknown field "${k}" (use inquiry, activities, questions, staff, self-regulation)`);
   if (c.staff !== undefined) {
     const S = c.staff;
     if (!S || typeof S !== 'object' || !Array.isArray(S.activities) || !S.activities.length) err(w, 'staff needs activities: what a staff committee does in this session');
@@ -908,6 +910,18 @@ function validateClassPlan(lesson, err) {
     else {
       if (q.prompts !== undefined && !(Array.isArray(q.prompts) && q.prompts.every((x) => typeof x === 'string'))) err(w, 'inquiry.prompts must be a list of text');
       if (q.notes !== undefined && typeof q.notes !== 'string') err(w, 'inquiry.notes must be text');
+    }
+  }
+  if (c['self-regulation'] !== undefined) {
+    const S = c['self-regulation'], ok = S && typeof S === 'object' && !Array.isArray(S);
+    if (!ok) err(w, 'self-regulation must be a mapping: card, mode, at (say for show)');
+    else {
+      for (const k of Object.keys(S)) if (!['card', 'mode', 'at', 'say', 'task', 'ask', 'notes'].includes(k)) err(w, `self-regulation: unknown field "${k}" (use card, mode, at, say, task, ask, notes)`);
+      if (typeof S.card !== 'string' || !S.card.trim()) err(w, 'self-regulation needs card: the id of a strategy card (learning/how-you-learn/cards.yml)');
+      if (!STRATEGY_MODES.includes(S.mode)) err(w, `self-regulation.mode must be one of ${STRATEGY_MODES.join(', ')}`);
+      if (!CLASS_AT.includes(S.at) || (!['start', 'end'].includes(S.at) && !lesson.steps.some((x) => x.config.stage === S.at))) err(w, `self-regulation.at must be a stage this lesson has, or start or end`);
+      if (S.mode === 'show' && !(typeof S.say === 'string' && S.say.trim())) err(w, 'self-regulation mode show needs say: what you say aloud as you use the strategy on this step (the think-aloud)');
+      for (const k of ['say', 'task', 'ask', 'notes']) if (S[k] !== undefined && typeof S[k] !== 'string') err(w, `self-regulation.${k} must be text`);
     }
   }
   const stages = new Set(lesson.steps.map((s) => s.config.stage));

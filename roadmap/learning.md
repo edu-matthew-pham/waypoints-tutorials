@@ -14,10 +14,16 @@
 
 - Four cards each for maths, science and English (groups `maths`, `science`, `english` in `cards.yml`, notes by topic or text purpose), beside the Code cards; 23 cards in all. The placeholder course on the pathway is gone. Teacher page updated.
 
-## Next (agreed in principle, not built)
+## Built (27 Oct 2026, later): deck inserts and the stuck link
 
-1. Optional deck inserts in Prepare: Teach it (NEMO-T, 3–4 slides), Show it (think-aloud), Nudge it (one open prompt). One per deck by default, roughly a third of a course's lessons, fading.
-2. A "try a strategy first" link at the stuck moment in lessons (before hints), worded as an open question.
+- **Deck inserts.** A class plan may carry one `self-regulation:` mapping (`card`, `mode: teach | show | nudge`, `at`, optional `say`, `task`, `ask`, `notes`). The deck builder draws the slides from the strategy card (`strategySlides` in `tools/teach.mjs`): teach = four NEMO-T slides (name and explain, watch me use it, now you try it, where else); show = one think-aloud slide, `say` required and put in the speaker note; nudge = one open question ("What might help you here?"). It only accepts ids from `learning/how-you-learn/cards.yml` (validate checks). Named `self-regulation:` so it is not mistaken for a general teaching-strategy slot. The guide's "In class" lists it. No effect on lesson pages or clips.
+- **Pilot, Python Foundations (3 of 11 lessons):** Repeat with a loop teaches Read the error; A value that grows shows Trace it; Challenge: a tile nudges Test a small piece.
+- **Stuck link.** The first hint panel on every lesson page opens with "Before a hint: what kind of stuck is this? Try a strategy first", linking to the When you're stuck card (`siteRoot` needed, so not in Create's preview). Whole-site publish.
+- Not tested: `npm run check-decks` needs the network (jsdelivr), which this sandbox lacks; run it where it can.
+
+## Next
+
+1. Pilot with a class, then decide whether to add inserts to other courses.
 
 ## Open
 

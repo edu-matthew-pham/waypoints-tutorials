@@ -119,6 +119,7 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recor
 
 ## Learning skills (roadmap/learning.md)
 - `content/learning/`: self-regulated learning for any subject (27 Oct 2026; not yet tried with a class). Course `learning/how-you-learn` *How you learn best* (Years 6–8, optional): four discussion-led `shape: 5e` workshops (`language: science`, no clips, no boards; Nib makes one slip per lesson), ending with a strategy planned on a real task from another subject. Strategy cards in its `cards.yml` (the ICT card format with top-level `groups`, `lede`, `search`, `more`; `tools/ict-cards.mjs`): general Before/During/After cards with notes per subject, plus Code cards. Teacher page `content/learning-teachers.md` (cycle, think-aloud, NEMO-T, prompting and fading). Nothing personal is asked; reflections are private.
+- Learning skills in lessons (27 Oct 2026): the first hint panel on every lesson page opens with a "Before a hint: what kind of stuck is this?" link to the When you're stuck card (`wpt-strat`); a class plan may carry one `self-regulation:` mapping (`card`, `mode: teach | show | nudge`, `at`, `say`) that adds deck slides from a strategy card (`strategySlides`, `tools/teach.mjs`; validate checks the card id). Pilot: three Python Foundations lessons. `check-decks` needs the network.
 
 ## Commands
 - `npm run validate`, `npm run render` (clips), `npm run build` (site), `npm run all`. A full `all` takes about 2 minutes.

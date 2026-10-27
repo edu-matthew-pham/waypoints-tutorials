@@ -42,3 +42,10 @@ questions:
     options: ["Up", "Down", "Right", "Left"]
     answer: 2
     explain: "Four turns of 90 make 360 degrees, a full turn, so the turtle faces right again. Any shape that closes up turns 360 degrees in total."
+self-regulation:
+  card: code-read-the-error
+  mode: teach
+  at: modify
+  task: "Change the loop count in your program, then break it on purpose (remove the colon) and read what Python says."
+  say: "Python says there is a problem on line 3. I'm not going to guess. I read the line number, look at that line, and read the message slowly. It points at the colon after range. I put it back and run again. It worked, so the message told me where to look."
+  notes: "The first indentation or colon slip tends to happen in this lesson, so the strategy is used straight away. Do this once and move on; later lessons only nudge."

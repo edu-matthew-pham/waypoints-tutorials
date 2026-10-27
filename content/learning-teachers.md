@@ -54,12 +54,16 @@ The research is clear on one thing: these strategies work best taught **inside**
 - **Feelings matter.** Frustration is often when students stop checking and start guessing. "This is the hard part, and that's normal" can do more than a strategy.
 - **It's the student's own record.** Plans and reflections are for the student, not something to collect or mark.
 
+## In the lessons and decks
+
+- **Stuck link.** The first hint on every lesson starts with a line asking what kind of stuck it is, with a link to the strategy cards.
+- **Deck inserts.** A few lesson decks carry one optional slide set, chosen by the lesson's class plan: *Teach it* (a short NEMO-T insert), *Show it* (a think-aloud) or *Nudge it* (one open prompt). Used on about a third of lessons or fewer, and the support fades.
+
 ## Planned, not built
 
 These are plans, not promises:
 
-- Optional slides to drop into a lesson deck: *Teach it* (a short NEMO-T insert), *Show it* (a think-aloud moment) and *Nudge it* (one prompt).
-- A "try a strategy first" link at the moment a student is stuck in a lesson, before the hints.
+- More lessons with an optional deck insert (so far three Python Foundations lessons).
 
 ## The research
 

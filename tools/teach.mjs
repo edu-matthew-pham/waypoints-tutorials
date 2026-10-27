@@ -68,6 +68,30 @@ const BADGE = {
   discussion: '<span style="background:#dbeafe; color:#1a1a1a; border:1.5px solid #3b82f6; padding:6px 18px; border-radius:8px; font-size:1em; font-weight:500;">💬 Discussion</span>',
 };
 
+/** Self-regulation inserts (27 Oct 2026, roadmap/learning.md): the class plan's `self-regulation:` line becomes slides from a
+ *  strategy card. teach = NEMO-T (name and explain, model, opportunity, transfer), show = one think-aloud, nudge = one open
+ *  question that fades the support. The card supplies the wording, so each lesson only says where, and what to say aloud. */
+export function strategySlides(S, card) {
+  if (!card) return [];
+  const note = (t) => (t ? `\n\n<!-- Speaker note: ${oneLine(t).replace(/-->/g, '- ->')} -->` : '');
+  const steps = (card.steps || []).map((x) => `- ${pt(x)}`).join('\n');
+  const aloud = S.say ? `Say aloud, in the first person: ${S.say}` : '';
+  const link = `[${card.title}: the strategy card](${SITE_URL}/learning/how-you-learn/cards/#${card.id})`;
+  if (S.mode === 'nudge') {
+    return [`${BADGE.discussion}\n\n## ${pt(S.ask || 'What might help you here?')}\n\nThink about what you have used before, then pick one thing to try first.\n\n${link}` + note(`${S.notes || ''} Ask this as an open question and wait. Do not name a strategy first: the aim is that students reach for one themselves (a prompt that fades). If nobody does, point at the card: ${card.title}.`)];
+  }
+  if (S.mode === 'show') {
+    return [`${BADGE.activity}\n\n## Watch me think: ${pt(card.title)}\n\n${steps}` + note(`Think-aloud (Model step of NEMO-T). ${aloud} Say what you are noticing, which step you are on and why, and let one thing go slightly wrong and be fixed. Students only listen; they do not copy yet. ${S.notes || ''}`)];
+  }
+  const apps = Object.entries(card.apps || {}).map(([k, v]) => `- **${pt(k)}:** ${pt(v)}`).join('\n');
+  return [
+    `${BADGE.discussion}\n\n## A strategy: ${pt(card.title)}\n\n${pt(card.idea)}\n\n${steps}` + note(`Name it and explain it (NEMO-T: Name, Explain). Say why it works, not only what to do. ${S.notes || ''}`),
+    `${BADGE.activity}\n\n## Watch me use it\n\n${S.task ? `**${pt(S.task)}**\n\n` : ''}Listen for each step of ${pt(card.title)}.` + note(`Model it with a think-aloud. ${aloud} Let one thing go slightly wrong so students hear you notice and recover.`),
+    `${BADGE.activity}\n\n## Now you try it\n\nUse ${pt(card.title)} on today's task. Tell your partner which step you did first.` + note('Opportunity: students use it straight away on the real task. Walk round and listen for the steps; do not rescue early.'),
+    `${BADGE.discussion}\n\n## Where else would this help?\n\n${apps || 'Think of another subject where you could use it.'}\n\n${link}` + note('Transfer: ask for one task from another class where it would help. Come back to this in a later lesson with a nudge, not a re-teach.'),
+  ];
+}
+
 /** Where a step's playground opens on the live site, full screen. */
 export const stepUrl = (lesson, step) => `${SITE_URL}/${lesson.slug}/?full=${step.id}#${step.id}`;
 export const teachPath = (lesson) => `teach/${lesson.slug}/`;
@@ -171,7 +195,7 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 ]);
 
 // ---------------------------------------------------------------- deck (Prepare Marp)
-export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = null }) {
+export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = null, strategyCard = () => null }) {
   lesson = forOutput(lesson);
   LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
@@ -230,6 +254,7 @@ export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = n
       slides.push(`${a.kind === 'info' ? '' : BADGE[a.kind || 'activity'] + '\n\n'}## ${pt(a.title)}${a.minutes ? ` <span style="font-size:.6em;color:#64748b">(${a.minutes} min)</span>` : ''}\n\n${prose(a.do)}` + note(a.notes || ''));
       if (a.diagram) { const ds = diagramSlide(a.diagram, a.title); if (ds) slides.push(ds); }
     }
+    if (CP['self-regulation']?.at === at) slides.push(...strategySlides(CP['self-regulation'], strategyCard(CP['self-regulation'].card)));
     (CP.questions || []).filter((q) => q.at === at).forEach((q, i) => {
       // A question about a drawing: the drawing first, on its own slide, then the question.
       if (q.diagram) { const ds = diagramSlide(q.diagram, q.title || 'Class question', { lead: String(q.q || '').length <= 90 ? q.q : '' }); if (ds) slides.push(ds); }
@@ -629,7 +654,7 @@ export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBloc
     sec('Timing', T.timing ? `<p>${esc(T.timing)}</p>` : '') +
     sec('Before class', T.before ? md(T.before) : '') +
     sec('Running the lesson', T.running ? `<ol>${T.running.map((r) => `<li>${md(r).replace(/^<p>|<\/p>\s*$/g, '')}</li>`).join('')}</ol>` : '') +
-    sec('In class', (lesson.classPlan?.inquiry || (lesson.classPlan?.activities || []).length || (lesson.classPlan?.questions || []).length) ? `<p class="muted">On the slides at these points. Students can do the whole lesson on their own; these are for the room. In the deck, the Run, Modify and Make slides have the live playground in them (the tutorial link is the backup), and the notes above are in each slide's speaker notes.</p><ul>${lesson.classPlan.inquiry ? `<li><b>Think, pair, share</b> <span class="muted">(start)</span><br>${esc(lesson.classPlan.inquiry.q)}${(lesson.classPlan.inquiry.prompts || []).length ? `<ul>${lesson.classPlan.inquiry.prompts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${lesson.classPlan.inquiry.notes ? `<p class="muted">${esc(lesson.classPlan.inquiry.notes)}</p>` : ''}</li>` : ''}${(lesson.classPlan.activities || []).map((a) => `<li><b>${esc(a.title)}</b> <span class="muted">(${esc(a.at)}${a.minutes ? `, ${a.minutes} min` : ''})</span>${md(a.do)}${a.notes ? `<p class="muted">${esc(a.notes)}</p>` : ''}</li>`).join('')}${(lesson.classPlan.questions || []).map((q, i) => { const p = checkParts(q, snip, `${lesson.slug}/class-${i}`); return `<li><b>${esc(q.title || 'Class question')}</b> <span class="muted">(${esc(q.at)})</span><br>${esc(p.q)}<br><span class="ans">${esc(p.answer)}</span>${p.explain ? `<br><span class="muted">${esc(p.explain)}</span>` : ''}</li>`; }).join('')}</ul>` : '') +
+    sec('In class', (lesson.classPlan?.inquiry || lesson.classPlan?.['self-regulation'] || (lesson.classPlan?.activities || []).length || (lesson.classPlan?.questions || []).length) ? `<p class="muted">On the slides at these points. Students can do the whole lesson on their own; these are for the room. In the deck, the Run, Modify and Make slides have the live playground in them (the tutorial link is the backup), and the notes above are in each slide's speaker notes.</p><ul>${lesson.classPlan.inquiry ? `<li><b>Think, pair, share</b> <span class="muted">(start)</span><br>${esc(lesson.classPlan.inquiry.q)}${(lesson.classPlan.inquiry.prompts || []).length ? `<ul>${lesson.classPlan.inquiry.prompts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${lesson.classPlan.inquiry.notes ? `<p class="muted">${esc(lesson.classPlan.inquiry.notes)}</p>` : ''}</li>` : ''}${lesson.classPlan['self-regulation'] ? (() => { const R = lesson.classPlan['self-regulation']; return `<li><b>Self-regulation: ${esc(R.mode)} it</b> <span class="muted">(${esc(R.at)})</span><br>Strategy card: ${esc(R.card)}${R.say ? `<p class="muted">Think aloud: ${esc(R.say)}</p>` : ''}</li>`; })() : ''}${(lesson.classPlan.activities || []).map((a) => `<li><b>${esc(a.title)}</b> <span class="muted">(${esc(a.at)}${a.minutes ? `, ${a.minutes} min` : ''})</span>${md(a.do)}${a.notes ? `<p class="muted">${esc(a.notes)}</p>` : ''}</li>`).join('')}${(lesson.classPlan.questions || []).map((q, i) => { const p = checkParts(q, snip, `${lesson.slug}/class-${i}`); return `<li><b>${esc(q.title || 'Class question')}</b> <span class="muted">(${esc(q.at)})</span><br>${esc(p.q)}<br><span class="ans">${esc(p.answer)}</span>${p.explain ? `<br><span class="muted">${esc(p.explain)}</span>` : ''}</li>`; }).join('')}</ul>` : '') +
     sec('Diagrams', diagramsHtml) +
     sec('With a staff committee', staffPlan(lesson.classPlan?.staff)) +
     sec('The hard part (on purpose)', T.struggle ? `<p>${esc(T.struggle)}</p>` : '') +

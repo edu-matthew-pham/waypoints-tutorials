@@ -48,6 +48,8 @@ import { deckFor, worksheetFor, cheatSheetFor, cheatSheetBody, unitSnippets, CHE
 
 const require = createRequire(import.meta.url);
 const { highlightCode } = require('./highlight.cjs');
+// Strategy cards (content/learning/how-you-learn/cards.yml) by id: class plans' `strategy:` lines draw deck slides from them.
+const STRATEGY_CARDS = new Map(loadCardsFile(join(CONTENT_ROOT, 'learning/how-you-learn')).cards.map((c) => [c.id, c]));
 const OUT = process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist';
 
 // Never build a site whose clips speak with the flite test voice (render.mjs records each voiced clip's engine in
@@ -928,7 +930,7 @@ for (const coursePath of teachCourses) {
     const dir = join(OUT, teachPath(l));
     mkdirSync(dir, { recursive: true });
     const snip = (ref) => getSnippet(l.dir, ref);
-    const ctx = { course: node.title, unit: unitOf(l)?.title || '', snip, blocks: (code) => blocksPic(code, `${SITE_URL}/`), diagram: (key, blank) => diagramPic(l, key, blank, `${SITE_URL}/`) };
+    const ctx = { course: node.title, unit: unitOf(l)?.title || '', snip, strategyCard: (id) => STRATEGY_CARDS.get(id) || null, blocks: (code) => blocksPic(code, `${SITE_URL}/`), diagram: (key, blank) => diagramPic(l, key, blank, `${SITE_URL}/`) };
     writeFileSync(join(dir, 'deck.md'), deckFor(l, ctx));
     writeFileSync(join(dir, 'worksheet.md'), worksheetFor(l, ctx));
     const files = [

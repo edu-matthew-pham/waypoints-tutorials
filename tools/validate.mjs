@@ -55,6 +55,11 @@ for (const sub of ['ict', 'learning']) for (const c of (exI(pjoin(CONTENT_ROOT, 
   errs.forEach((e) => console.error('✗ ' + e)); bad += errs.length;
   if (!errs.length) console.log(`✓ ${sub}/${c}/cards.yml: ${cards.length} cards, lessons and ${file.groups ? 'groups' : 'units'} match`);
 }
+// Class plans' self-regulation: lines name a real strategy card.
+{
+  const ids = new Set(loadCardsFile(pjoin(CONTENT_ROOT, 'learning/how-you-learn')).cards.map((c) => c.id));
+  for (const l of lessons) { const S = l.classPlan?.['self-regulation']; if (S && typeof S.card === 'string' && !ids.has(S.card)) { console.error(`✗ ${l.slug} class plan: self-regulation.card "${S.card}" is not a card in learning/how-you-learn/cards.yml`); bad++; } }
+}
 // Diagrams (warnings, never a failure): each stays small enough for a phone and a slide (AUTHORING.md › Diagrams).
 import { diagramItems, diagramWarnings } from './diagram-core.mjs';
 {

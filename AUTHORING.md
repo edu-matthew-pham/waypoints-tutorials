@@ -580,6 +580,12 @@ Keep optional artefacts such as journals and argument maps in teacher guidance, 
 **Class plan (12 Oct 2026).** The site is a complete self-paced lesson; the deck is where PRIMM's talk happens. A lesson can have `content/<course>/class/<lesson>.yml` (kept outside the lesson folder, so editing it never re-records clips). It adds slides to the deck and an "In class" section to the teacher guide:
 
 ```yaml
+self-regulation:         # optional, one per lesson (27 Oct 2026): a deck insert from a strategy card in learning/how-you-learn/cards.yml
+  card: code-read-the-error
+  mode: teach            # teach (4 NEMO-T slides) | show (a think-aloud; say is required) | nudge (one open question)
+  at: modify             # a stage the lesson has, or start | end
+  say: "What you say aloud while using it (speaker note)"
+  task: "Optional: what to do on the model slide"
 inquiry:                 # optional: a question the class can disagree about, shown as a Think, pair, share slide after the hook
   q: "Would you rather ... or ...? What could go wrong with each?"
   prompts: ["A follow-up that makes students take a side", "..."]
