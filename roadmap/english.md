@@ -66,3 +66,6 @@ Build handoff: Project doc `claude/handoff-english-build.md` (one chat at a time
   - **Rules kept**: all texts and sources made up; low-stakes topics only; the board never judges a student's own writing.
   - Misconceptions added: `opinion-in-report`, `bare-assertion`, `any-source-counts`, `emotive-in-news`, `both-sides-balanced`, `claim-without-backing`, `feature-misnamed`, `device-effect-flipped`, `effective-without-reason`.
 
+
+## Threads page (built 27 Oct 2026)
+`/teach/english/threads/` (`tools/threads-page.mjs`, `experiments/threads-smoke.mjs`, `npm run check-threads`): one section per thread in `english-triage.yml`, five stage rows (ACARA intent in plain words, lessons on the site, planned courses and class-only counts). Lessons are matched by `node:` to the triage node's thread and the stage from its code. Not a sequence. Next: landing page update (item 6).

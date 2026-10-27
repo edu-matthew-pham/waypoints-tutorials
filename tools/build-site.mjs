@@ -35,6 +35,7 @@ import { BRIEF_CSS, briefListBody, briefPageBody } from './briefs-view.mjs';
 import { prerequisites, theoryLinks } from './concepts.mjs';
 import { CONCEPTS, CORE_IDEAS, sameIdea } from './concepts-core.mjs';
 import { ideasTable, ideasPageHtml } from './ideas-page.mjs';
+import { threadsTable, threadsPageHtml } from './threads-page.mjs';
 import { IDEAS, PATHWAY_IDEAS } from './ideas-map.mjs';
 import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
@@ -960,6 +961,16 @@ const ideasPages = SUBJECTS.filter((sub) => sub.pathways.length > 1 && !sub.teac
   writeFileSync(join(dir, 'review.md'), rs.md);
   ideasPages.push({ path: 'code/review/', title: 'Code courses: which do you use? (review sheet)' });
 }
+// How English skills grow (tools/threads-page.mjs): each thread from Foundation to Year 10, with the lessons that practise it.
+if (existsSync('data/curriculum/english-triage.yml') && lessons.some((l) => l.slug.startsWith('english/'))) {
+  const triage = YAMLparse(readFileSync('data/curriculum/english-triage.yml', 'utf8'));
+  const dir = join(OUT, 'teach', 'english', 'threads');
+  mkdirSync(dir, { recursive: true });
+  const title = 'English: how skills grow';
+  const table = threadsTable(triage, lessons.filter((l) => l.slug.startsWith('english/')));
+  writeFileSync(join(dir, 'index.html'), teachPage(title, threadsPageHtml({ title, table, lessonHref: (slug) => `../../../${slug}/`, courseTitle: (slug) => dirNode(slug.split('/').slice(0, -1).join('/')).title }), 'teach/english/threads', null));
+  ideasPages.push({ path: 'english/threads/', title, blurb: 'Each English thread from Foundation to Year 10: what ACARA intends at each stage in plain words, and the lessons here that practise it.' });
+}
 for (const coursePath of teachCourses) {
   const node = dirNode(coursePath);
   const ls = lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === coursePath);
@@ -1100,7 +1111,7 @@ mkdirSync(join(OUT, 'teach'), { recursive: true });
 // Curriculum pointer pages (tools/pointer-pages.mjs): teacher-facing, linked only from here, draft and noindex until reviewed.
 const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curriculum', `${sub}.json`))).map((sub) => buildPointerPages(sub, { OUT, page, navFor, esc, lessons, coverage: COVERAGE, courseTitle: (p) => dirNode(p).title }));
 const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, ${esc(p.span)}${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
-writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>${x.path.endsWith('review/') ? 'A printable tick-sheet: our course years and standards coverage, for you to correct.' : 'Which coding ideas need which first, in plain words, how each looks in each pathway and where it is first taught.'}</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
+writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>${x.blurb || (x.path.endsWith('review/') ? 'A printable tick-sheet: our course years and standards coverage, for you to correct.' : 'Which coding ideas need which first, in plain words, how each looks in each pathway and where it is first taught.')}</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
 
 writeFileSync(join(OUT, '.nojekyll'), '');
 // Pages keeps its custom domain only while the published branch has this file, and a rebuild publish replaces the branch.

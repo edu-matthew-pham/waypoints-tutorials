@@ -4,6 +4,8 @@ summary: What is built so far in English (six pilot courses, on cohesion, text s
 ---
 ## What is here
 
+To see where a course sits across Foundation to Year 10, read [How English skills grow](../teach/english/threads/): each thread, what ACARA intends at each stage in plain words, and the lessons here that practise it.
+
 **This is a pilot.** Three courses are built. The first is [Holding writing together](../english/cohesion/): nine lessons on cohesion for Years 6 to 8, not yet tried with a class. It follows the cohesion thread of the Language strand through the years:
 
 - **Warm-up (optional, Years 4–5 ideas):** pointing words such as it, they and this (AC9E4LA04), joining words (AC9E4LA04) and where a sentence starts (AC9E5LA04). Skip these with a class that's secure.

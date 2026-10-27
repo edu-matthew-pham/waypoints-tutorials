@@ -117,6 +117,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
   for (const p of [
     { t: 'Create lessons and courses', u: 'code/create/', d: 'Write or paste a lesson, preview it with a live playground, and request it be added.' },
     { t: 'Code: ideas across pathways', u: 'teach/code/ideas/', d: 'Each core coding idea (variables, loops, if, lists) against Python, Web and MakeCode, linked to the lesson that introduces it.' },
+    { t: 'English: how skills grow', u: 'teach/english/threads/', d: 'Each English thread from Foundation to Year 10: what ACARA intends at each stage in plain words, and the lessons that practise it.' },
     { t: 'Code courses: which do you use? (review sheet)', u: 'teach/code/review/', d: 'A printable tick-sheet of our course years and standards coverage, for teachers to correct.' },
     { t: 'Make a lesson', u: 'teachers/make-a-lesson/', d: 'A short course on making your own lesson.' },
     { t: 'About these tutorials', u: 'about/', d: 'What the tutorials are, why they were made and how the lessons work.' },
