@@ -66,6 +66,18 @@ export const STAGE_INFO_PRIMER = {
   make: ['Apply', 'Use the idea on your own class text or topic.'],
   info: ['Info', ''],
 };
+/** Creating (shape: create, 27 Oct 2026): English's shape for making a text (written, creative or spoken). predict = Purpose and reader,
+ * run = See a model, investigate = Learn the strategy, modify = Try it with support, make = Make yours, info = Check. The student's
+ * own text is made in their own document (or out loud in class); the page guides and the student ticks each step. */
+export const STAGE_INFO_CREATE = {
+  predict: ['Purpose and reader', 'Who is it for, and what should it do for them? Decide before you start.'],
+  run: ['See a model', 'Look at a finished example and notice the choices that make it work.'],
+  investigate: ['Learn the strategy', 'One move, taught step by step, that you can use every time.'],
+  modify: ['Try it with support', 'Use the strategy on a given task, with a frame to help.'],
+  practise: ['Practise', 'Use it again on your own.'],
+  make: ['Make yours', 'Use the strategy on your own text, in your own document.'],
+  info: ['Check', 'Check your work against what good looks like, then with a partner or your teacher.'],
+};
 /** Speeches (shape: speech, 27 Oct 2026): a talk for any subject. Same stages, speech words: predict = Purpose and audience,
  * investigate = Plan, make = Script, modify = Cue cards, practise = Rehearse, info = Present and check. Rehearsing and presenting
  * happen in class; the page only plans, scripts, makes the cards and checks afterwards. */
@@ -751,11 +763,11 @@ export function lessonPageHtml(lesson, deps) {
     const s = t.replace(STAGE_PREFIX, '');
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
-  const isSci = (lesson.language === 'science' && lesson.shape !== 'primer' && lesson.shape !== 'speech') || lesson.shape === '5e';
-  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci || lesson.shape === 'speech'))];
+  const isSci = (lesson.language === 'science' && lesson.shape !== 'primer' && lesson.shape !== 'speech' && lesson.shape !== 'create') || lesson.shape === '5e';
+  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci || lesson.shape === 'speech' || lesson.shape === 'create'))];
   const tierAttr = (c) => (c.tier ? ` data-tier="${esc(c.tier)}"` : '');
   const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"${tierAttr(s.config)}><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
-  const SI = lesson.shape === 'speech' ? STAGE_INFO_SPEECH : lesson.shape === 'primer' ? STAGE_INFO_PRIMER : lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
+  const SI = lesson.shape === 'speech' ? STAGE_INFO_SPEECH : lesson.shape === 'create' ? STAGE_INFO_CREATE : lesson.shape === 'primer' ? STAGE_INFO_PRIMER : lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
   // Width tiers: steps marked typical or wider are extra contexts. A teacher sets the starting width with ?width=;
   // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
   const tiered = lesson.steps.some((s) => s.config.tier);

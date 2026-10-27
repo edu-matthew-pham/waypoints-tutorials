@@ -199,7 +199,7 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 // ---------------------------------------------------------------- deck (Prepare Marp)
 export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = null, strategyCard = () => null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech' || lesson.shape === 'create'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks; DIAGRAM = diagram;
   const T = lesson.teacher || {};
@@ -469,7 +469,7 @@ function traceTable(t, blanks) {
 // ---------------------------------------------------------------- worksheet (Prepare Print)
 export function worksheetFor(lesson, { course, unit, snip, blocks = null, diagram = null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech' || lesson.shape === 'create'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks; DIAGRAM = diagram;
   const T = lesson.teacher || {};
@@ -614,7 +614,7 @@ export const CHEAT_CSS = `.wrap{max-width:1000px}
 
 // ---------------------------------------------------------------- teacher guide pages (HTML bodies)
 export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files, blocks = null, diagram = null }) {
-  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech' || lesson.shape === 'create'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks; DIAGRAM = diagram;
   // MakeCode: the blocks picture, with the code one click away; code as text when there is no picture.

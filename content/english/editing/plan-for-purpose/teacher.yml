@@ -1,0 +1,39 @@
+summary: "A skeleton lesson in the Creating shape: students learn four planning questions (who, what, which shape, which words, each with a because), try them on a task you give with a frame, plan their own text in their own document and check it. Fill in the parts marked 'To fill in' before you teach it."
+time: 45
+timing: "Purpose and reader 5 min · Model 8 min · Strategy 8 min · Try with the frame 10 min · Plan your own 10 min · Check 4 min"
+goals:
+  - I can say who a text is for and what it should do for them.
+  - I can choose a structure and language for that reader, and say why.
+  - I can check a plan against what good looks like.
+struggle: "Students list content ('I'll talk about the garden, the vegetables, the worms') and stop. Ask 'who is reading, and what should it do for them?' and 'which words suit that reader, because…?'."
+before: |
+  **This is a skeleton.** Each step tells students what they will do and what good looks like, and ends with a tick. They tick when they have done the step the way you taught it; nothing on the site checks their plan. Their planning is done in their own document.
+
+  The one idea: plan *how* as well as *what*. This lesson covers AC9E7LY06 node 1 (a hinge node): identify the purpose and audience for a task, and name at least one structural and one language choice that serves it, with a reason. The four questions are a named strategy taught explicitly, which is the approach with the strongest evidence for teaching planning.
+
+  **To fill in before teaching:**
+  - *Purpose and reader:* one or two short writing tasks for students to read (for example, the same topic for two different readers).
+  - *See a model:* a finished plan with the reader, purpose, a structure choice and a language choice marked, each with its reason. A made-up topic is safest.
+  - *Try it with support:* the given task students plan with the frame.
+  - *Make yours:* which class writing task students plan.
+  - *Optional:* a board to sort plan choices to the reader they suit, if you want an on-screen activity.
+running:
+  - "Purpose and reader: put the two tasks side by side. Ask who each is for and what it should do."
+  - "See a model: ask students to point to the reason for each choice. Which reader is it for?"
+  - "Strategy: say the four questions together. Ask what the because adds."
+  - "Try with the frame: circulate and ask 'because…?' wherever a row has no reason."
+  - "Check: partners read a plan cold and say who it is for. If they can't, the plan needs a clearer reader."
+stuck:
+  - see: "A student's plan is a list of topics."
+    ask: "Who is reading this, and what should it do for them?"
+    fix: "Add rows 3 and 4 of the frame: which shape, which words, because…"
+  - see: "A student writes 'people' or 'everyone' as the reader."
+    ask: "Who will actually read it?"
+    fix: "Name a group: Year 3 students, parents, the principal."
+exit:
+  q: "The same topic is written for Year 3 and for the principal. Name one choice that would change, and why."
+  a: "Any choice with a reason that names the reader: 'shorter sentences and everyday words for Year 3, because they are younger readers'."
+explain: |
+  A full plan says **who** is reading, **what** the text should do, **which shape** suits it and **which words** suit it.
+
+  Every choice gets a **because** that names the reader or the purpose.
