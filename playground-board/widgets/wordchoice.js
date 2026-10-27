@@ -148,6 +148,8 @@
     B.post({ scope: { vars: v, points: {} }, text: plainText(M, S) }, out);
   }
   function change() { B.moved = true; draw(); report(); }
+  // Fixed, answer-blind order for display: sorted by a hash of the text, so list order never gives the answer away.
+  function hsh(t) { var h = 7; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) % 100003; return h; }
   function wordById(id) { return M.words.filter(function (w) { return w.id === id; })[0]; }
 
   function drawScale() {
@@ -164,7 +166,7 @@
     };
     if (!M.answer) {
       var tray = el('div', 'wc-tray'); tray.setAttribute('role', 'group'); tray.setAttribute('aria-label', 'Words to place');
-      var left = M.words.filter(function (w) { return !S.place[w.id]; });
+      var left = M.words.filter(function (w) { return !S.place[w.id]; }).sort(function (a, b) { return hsh(a.t) - hsh(b.t); });
       left.forEach(function (w) { tray.appendChild(chip(w)); });
       if (!left.length) tray.appendChild(el('span', 'wc-none', 'Every word is on the scale.'));
       paper.appendChild(tray);
@@ -201,7 +203,7 @@
         if (M.answer) { pe.appendChild(el('span', 'wc-word', c === undefined ? '…' : s.opts[c].t)); return; }
         var node = el('select', 'wc-slot'); node.setAttribute('aria-label', 'Word choice ' + s.n + ' of ' + M.slots.length);
         var blank = el('option', '', '…'); blank.value = ''; node.appendChild(blank);
-        s.opts.forEach(function (o, k) { var op = el('option', '', o.t); op.value = String(k); if (c === k) op.selected = true; node.appendChild(op); });
+        s.opts.map(function (o, k) { return { o: o, k: k }; }).sort(function (a, b) { return hsh(a.o.t) - hsh(b.o.t); }).forEach(function (z) { var o = z.o, k = z.k; var op = el('option', '', o.t); op.value = String(k); if (c === k) op.selected = true; node.appendChild(op); });
         node.addEventListener('change', function () { if (node.value === '') delete S.choice[s.n]; else S.choice[s.n] = Number(node.value); B.moved = true; report(); drawLive(); });
         pe.appendChild(node);
       });

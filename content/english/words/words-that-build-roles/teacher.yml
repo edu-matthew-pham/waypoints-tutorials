@@ -16,9 +16,9 @@ before: |
 
   The Practise board has one answer per line, chosen so a careful student would not argue two bands.
 
-  The Make check counts the pronouns I, me, we, us and our, and sentences. It cannot judge whether a newcomer would follow; partners should.
+  The Make check counts the words I, me, my, mine, we, us and our (not short forms such as we'll), and sentences. It cannot judge whether a newcomer would follow; partners should.
 
-  Reef Watch, RWL and every name are made up for the lesson. PPE is a real acronym for personal protective equipment. No student is asked about their own groups or background.
+  Reef Watch, RWL and every name are made up for the lesson. PPE is a real initialism for personal protective equipment; the lesson calls it an acronym, as the curriculum does. No student is asked about their own groups or background.
 running:
   - "Predict: ask what they would need to be told as a newcomer."
   - "Try: ask which word each line turns on."
@@ -28,9 +28,9 @@ stuck:
   - see: "A student says explaining a word makes the writer sound less expert."
     ask: "What is the announcement for?"
     fix: "An announcement aims to include readers. Explaining a word once helps everyone."
-  - see: "A student labels 'We will survey' as a boss line."
-    ask: "Who is in the 'we'?"
-    fix: "We puts the speaker beside the others, so it builds an equal role."
+  - see: "A student labels a 'we' line as a boss line."
+    ask: "Who is in the 'we', and what follows it: an order or an invitation?"
+    fix: "A we or us that includes the listener puts the speaker beside the others. A leader can also use we to give an order, so read the rest of the sentence."
 stretch: "Rewrite the Reef Watch lines for a visiting school group, and then for a government inspector. What changes?"
 support: "A word bank of acronyms and specialist terms from the Try board with plain explanations."
 leads: |

@@ -17,6 +17,6 @@ questions:
     title: "Which word has to change?"
     type: question
     q: "Which word in Nib's notice most needs to change for parents?"
-    options: ["Heaps", "Training", "Gym"]
+    options: ["Heaps", "Training", "Gym", "Thursday"]
     answer: 0
     explain: "Heaps is colloquial. Training and gym suit any reader."

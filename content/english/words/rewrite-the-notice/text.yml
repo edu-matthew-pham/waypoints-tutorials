@@ -4,7 +4,7 @@
 widget: wordchoice
 mode: scale
 bands: Slang | Colloquial | Conversational | Formal
-word a: Oval's heaps too wet, so training's in the gym. = 2
+word a: Oval's heaps too wet, so training's in the gym. = 1/2
 word b: Bring ya runners. = 1/2
 word c: Training starts at four. = 3
 word d: Cheers, Nib. = 2
@@ -17,7 +17,7 @@ widget: wordchoice
 mode: swap
 bands: Slang | Colloquial | Conversational | Formal
 before: Choose the formal wording for each gap.
-p: Training has been [[{bumped@1|moved@3|relocated@4}=relocated]] to the gym.
+p: Training has been [[{bumped@2|moved@3|relocated@4}=relocated]] to the gym.
 p: The oval is [[{heaps wet@2|too wet@3|unsuitable for use@4}=unsuitable for use]] after the rain.
 # endregion
 

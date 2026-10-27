@@ -29,7 +29,7 @@ stage: practise
 insight: "Placing sentences from the notice shows which ones already fit and which ones need to change."
 try: { playground: board, starter: "text.yml#scale", height: 480 }
 hint: ["Which sentences would you say to a friend?", "Which already sound official?"]
-check: { type: board, text: "Place each sentence from the notice on the scale.", when: "n_right = 6 and n_wrong = 0", explain: "Oval's heaps too wet is colloquial. Bring ya runners is between slang and colloquial. Training starts at four is conversational. Cheers, Nib is colloquial. Parents are invited to attend and We regret any inconvenience are formal." }
+check: { type: board, text: "Place each sentence from the notice on the scale.", when: "n_right = 6 and n_wrong = 0", explain: "Oval's heaps too wet and Bring ya runners are slang or colloquial. Training starts at four is conversational. Cheers, Nib is colloquial. Parents are invited to attend and We regret any inconvenience are formal." }
 ```
 
 ## Part 2: choose formal wording
@@ -39,7 +39,7 @@ stage: practise
 insight: "Choosing the formal word for two phrases applies the scale to the notice."
 try: { playground: board, starter: "text.yml#swap", height: 340 }
 hint: ["Which choice is the most official?", "Which would you not say aloud to a friend?"]
-check: { type: board, text: "Choose the formal wording for each gap.", when: "n_right = 2 and n_wrong = 0", explain: "Relocated and unsuitable for use are the formal choices. Bumped is slang, and moved and too wet are conversational." }
+check: { type: board, text: "Choose the formal wording for each gap.", when: "n_right = 2 and n_wrong = 0", explain: "Relocated and unsuitable for use are the formal choices. Bumped and heaps wet are colloquial, and moved and too wet are conversational." }
 ```
 
 ## Part 3: find the informal words
@@ -62,7 +62,7 @@ hint: ["Which words in Nib's notice have you found are informal?", "Who is readi
 check: { type: board, text: "Rewrite the notice formally in at least four sentences, with no short forms and no exclamation marks.", when: "is_written = 1 and n_contractions = 0 and n_exclaims = 0 and n_sentences >= 4", explain: "You wrote a formal notice. Swap with a partner and ask them to point to any word they would not say to the principal." }
 ```
 
-The board counts short forms, exclamation marks and sentences. It cannot tell whether your wording fits the readers, so ask a partner or your teacher.
+The board counts short forms, exclamation marks and sentences. It cannot see every short form (such as oval's), so check for 's yourself. It cannot tell whether your wording fits the readers, so ask a partner or your teacher.
 
 ## In your own writing
 

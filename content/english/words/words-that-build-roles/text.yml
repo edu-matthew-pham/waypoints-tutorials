@@ -9,14 +9,14 @@ roles: acronym specialist address pronoun
 role acronym: Acronym
 role specialist: Specialist term
 role address: Form of address
-role pronoun: Inclusive pronoun
+role pronoun: Inclusive pronoun (we or us)
 s acronym: Add your numbers to the RWL sheet.
 para:
 s specialist: Count the polyps on each colony.
 para:
 s address: Morning, Skipper.
 para:
-s pronoun: We will survey the north reef today.
+s pronoun: Let us all check the gear.
 para:
 s acronym: Bring your PPE to the briefing.
 para:
@@ -45,7 +45,7 @@ word b: Shall we start with the north reef? = 2
 word c: Could I carry that for you? = 3
 word d: Move over, I will do it. = 1
 word e: What do you think we should do? = 2
-word f: Tell me what you need and I will get it. = 3
+word f: What can I get you? = 3
 # endregion
 
 # region: make
@@ -65,7 +65,7 @@ widget: wordchoice
 mode: scale
 answer: on
 bands: Boss | Equal | Helper
-word a: Leave it to me. = 1
-word b: Let us do it together. = 2
+word a: Out of my way. = 1
+word b: Shall we do it together? = 2
 word c: Can I help with that? = 3
 # endregion

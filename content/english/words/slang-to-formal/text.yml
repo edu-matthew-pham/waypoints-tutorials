@@ -7,12 +7,12 @@ mode: scale
 bands: Slang | Colloquial | Conversational | Formal
 word a: That's lit. = 1
 word b: Heaps good, eh? = 2
-word c: I'm going to grab some lunch. = 3
+word c: I'm going to get some lunch. = 3
 word d: I will be taking my lunch break at noon. = 4
 word e: Nah, can't be bothered. = 1/2
 word f: I'm not sure about that idea. = 3
 word g: The committee has resolved to postpone the event. = 4
-word h: See ya later! = 2
+word h: See ya later! = 1/2
 # endregion
 
 # region: vary

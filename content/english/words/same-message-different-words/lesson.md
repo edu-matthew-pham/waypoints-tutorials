@@ -13,7 +13,7 @@ The same message can be said in many ways. Which words fit depends on **who is r
 - **Informal** words suit people you know well: *Thanks, mate!* They are short and relaxed.
 - **Formal** words suit a reader you do not know well, or who has authority: *Thank you for your help.* They are careful and complete.
 
-Informal is not wrong and formal is not more correct. Each fits some readers and some jobs.
+Which words fit depends on the reader and the job.
 
 **Inclusive** wording is a choice to make every reader feel the message is for them.
 
@@ -116,7 +116,7 @@ stage: make
 insight: "Writing a text to a friend and a note to a teacher about the same event puts two registers to use in one task."
 try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Pick one event, such as an excursion or a match.", "Write the message to your friend first, then the note to your teacher. How do the words change?"]
-check: { type: board, text: "Write at least four sentences: a text to a friend and a note to a teacher about the same event.", when: "n_sentences >= 4 and n_contractions >= 1", explain: "You wrote both messages. Ask a partner to point to the words that fit each reader and to say what changed between the two." }
+check: { type: board, text: "Write at least four sentences: a text to a friend and a note to a teacher about the same event, with at least one short form such as I'm or can't in the text.", when: "n_sentences >= 4 and n_contractions >= 1", explain: "You wrote both messages. Ask a partner to point to the words that fit each reader and to say what changed between the two." }
 ```
 
 The board counts short forms such as *don't* and *I'm*, which a friend text usually has. It cannot tell whether your words fit each reader. A partner or your teacher can.

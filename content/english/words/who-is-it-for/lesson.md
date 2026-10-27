@@ -6,14 +6,14 @@ summary: "Two things shape how formal to be: how well you know the person (famil
 language: maths
 node: [AC9E6LA01 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Three people, three sets of words. How well you know them and how much authority they have both change what you say." }
-hook: "You know your coach really well and you joke with them often. Do you word an email asking to miss training the same way as a message to a friend?"
+hook: "Two messages ask for the same favour, one to a cousin and one to a stranger who runs the hall. Would the words match?"
 ---
 Two things shape how formal your words should be.
 
 - **Familiarity**: how well you know the person. Close friends get relaxed words.
 - **Power**: who has more authority in the situation. A principal, a judge or a coach can decide things about you.
 
-The two can pull in different directions. You may know your coach very well, but your coach still has authority. The words you choose can be relaxed and respectful at once.
+The two cues can agree or pull in different directions. Think about both before you choose words.
 
 ## Predict: friend or boss?
 
@@ -35,8 +35,8 @@ insight: "Placing six situations on a casual-to-formal scale shows how familiari
 try: { playground: board, starter: "text.yml#run", height: 460 }
 hint: ["Who is more important in this situation, you or them?", "How well do you know them?"]
 smaller:
-  check: { type: question, q: "Which person would you use the most formal words with?", options: ["Your cousin", "A judge", "A classmate"], answer: 1, feedback: ["You know your cousin well and they have no authority over you.", null, "A classmate is your equal and you see them every day."], explain: "A judge is someone you do not know, with a lot of authority, so the words are the most formal." }
-check: { type: board, text: "Place each situation: casual, respectful or formal.", when: "n_right = 6 and n_wrong = 0", explain: "A cousin is casual, a new classmate is casual to respectful, a coach and a teacher are respectful, and the mayor and a judge are formal." }
+  check: { type: question, q: "Which person would you use the most formal words with?", options: ["Your best friend", "A council officer you have never met", "A neighbour your age"], answer: 1, feedback: ["You know your best friend well and they have no authority over you.", null, "A neighbour your age is your equal."], explain: "A council officer you have never met is both unknown and in authority, so the words are the most formal." }
+check: { type: board, text: "Place each situation: casual, respectful or formal.", when: "n_right = 6 and n_wrong = 0", explain: "A cousin is casual, a new classmate is casual to respectful, a coach is casual to respectful, a teacher is respectful to formal, and the mayor and a judge are formal." }
 ```
 
 ## Worked example: familiarity or power?
@@ -59,11 +59,11 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Here is Nib's reasoning before writing to Ms Rossi, one step at a time. One step leaves something out. Click it."
+      text: "Here is Nib's reasoning before writing to Ms Rossi, one step at a time. In one step Nib decides how to word the request using only one cue. Click it."
       answer: 3
       fault: logic
       misconception: familiarity-only
-      explain: "Step 3 decides using only how well Nib knows Ms Rossi. She also has power over Nib's extension, so the words need to be respectful too."
+      explain: "Step 3 decides using only how well Nib knows Ms Rossi (familiarity). She also has power over Nib's extension, so the words need to be respectful too."
   - check:
       type: question
       q: "Ava has played for her coach for three years and they joke often. She emails him to ask to miss training. Which opening fits?"
@@ -102,7 +102,7 @@ stage: practise
 insight: "Placing six readers on the scale applies the two cues to new situations."
 try: { playground: board, starter: "text.yml#practise", height: 460 }
 hint: ["Who has authority over you?", "Who do you know well?"]
-check: { type: board, text: "Place each reader: casual, respectful or formal.", when: "n_right = 6 and n_wrong = 0", explain: "A younger sibling is casual, a neighbour and a coach you like are respectful, a librarian you have never met is respectful to formal, and a minister and a school council committee are formal." }
+check: { type: board, text: "Place each reader: casual, respectful or formal.", when: "n_right = 6 and n_wrong = 0", explain: "A younger sibling is casual, a neighbour you know a little is casual to respectful, a coach you like is respectful, a librarian you have never met is respectful to formal, and a minister and a school council committee are formal." }
 ```
 
 ## Make: three openings
@@ -112,7 +112,7 @@ stage: make
 insight: "Writing three openings for three readers puts both cues to use in real messages."
 try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Who is each reader, and how well do you know them?", "Who has authority?"]
-check: { type: board, text: "Write three openings, two sentences each, for a friend, a coach you know well and the principal.", when: "n_sentences >= 6 and n_words >= 50", explain: "You wrote three openings. Ask a partner to say, for each one, how well you know the person and whether they have authority." }
+check: { type: board, text: "Write three openings, two sentences each (at least 50 words in all), for a friend, a coach you know well and the principal.", when: "n_sentences >= 6 and n_words >= 50", explain: "You wrote three openings. Ask a partner to say, for each one, how well you know the person and whether they have authority." }
 ```
 
 The board counts words and sentences. Whether each opening fits its reader is for you and a partner to judge.

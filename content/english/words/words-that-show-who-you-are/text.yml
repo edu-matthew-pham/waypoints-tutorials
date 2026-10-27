@@ -9,7 +9,7 @@ roles: sailing chess drama
 role sailing: Sailing club
 role chess: Chess club
 role drama: Drama club
-s sailing: Check the tide before we launch the dinghy.
+s sailing: Check the halyard before we launch the dinghy.
 para:
 s chess: He opened with a gambit and lost a knight.
 para:
@@ -35,7 +35,7 @@ p: The coach told the new player, "Meet at [[{the sports field gate@2|the old sp
 widget: cohesion
 mode: chain
 colours: 1
-p: At the club, the [[skipper#a]] checked the [[tide#a]] and the [[rigging#a]] before the [[dinghies#a]] were launched. Afterwards everyone had lunch and talked about school.
+p: At the club, Mia checked the [[halyard#a]] and the [[rigging#a]], then helped to [[reef#a]] the [[mainsail#a]]. Afterwards everyone had lunch and talked about school.
 # endregion
 
 # region: make

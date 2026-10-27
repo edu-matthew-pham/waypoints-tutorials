@@ -35,7 +35,7 @@ try: { playground: board, starter: "text.yml#run", height: 460 }
 hint: ["Which words describe a little cold? Which describe very cold?", "Picture the weather each word makes you think of."]
 smaller:
   check: { type: question, q: "'Freezing' and 'cool' both describe cold. Which describes more cold?", options: ["Freezing", "Cool", "They describe the same amount"], answer: 0, feedback: [null, "Cool is mild, a comfortable kind of cold.", "Both are about cold, but they sit at different strengths."], explain: "Freezing is a much stronger word than cool. They are synonyms, but not interchangeable." }
-check: { type: board, text: "Place each word for cold on the scale: mild, medium or extreme.", when: "n_right = 6 and n_wrong = 0", explain: "Cool and slightly cold are mild. Chilly is mild to medium, nippy is medium, icy is medium to extreme, and freezing is extreme." }
+check: { type: board, text: "Place each word for cold on the scale: mild, medium or extreme.", when: "n_right = 6 and n_wrong = 0", explain: "Cool and slightly cold are mild. Chilly and nippy are mild to medium, icy is medium to extreme, and freezing is extreme." }
 ```
 
 Was *trudged* the one that sounded tired? Words with similar meanings still have different shades.
@@ -103,7 +103,7 @@ stage: practise
 insight: "Placing six words for fear on a scale applies the idea of strength to a new set of synonyms."
 try: { playground: board, starter: "text.yml#practise", height: 460 }
 hint: ["Which words describe a small worry?", "Which words describe being afraid for your safety?"]
-check: { type: board, text: "Place each word for fear on the scale: mild, medium or strong.", when: "n_right = 6 and n_wrong = 0", explain: "Nervous and uneasy are mild. Scared and frightened are medium. Terrified and petrified are strong." }
+check: { type: board, text: "Place each word for fear on the scale: mild, medium or strong.", when: "n_right = 6 and n_wrong = 0", explain: "Nervous and uneasy are mild. Scared is mild to medium, and frightened is medium to strong. Terrified and petrified are strong." }
 ```
 
 ## Make: describe a stormy day
@@ -113,7 +113,7 @@ stage: make
 insight: "Describing a stormy day with exact words puts shades of meaning to use in a real piece of writing."
 try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Picture the storm at a beach. What do you see, hear and feel?", "Where could you swap a plain word like 'big' or 'bad' for an exact one?"]
-check: { type: board, text: "Write at least four sentences about a stormy day.", when: "n_sentences >= 4 and n_words >= 40", explain: "You wrote a description. Ask a partner to point to three exact words and say what each one adds that a plainer word would not." }
+check: { type: board, text: "Write at least four sentences (at least 40 words) about a stormy day.", when: "n_sentences >= 4 and n_words >= 40", explain: "You wrote a description. Ask a partner to point to three exact words and say what each one adds that a plainer word would not." }
 ```
 
 The board counts words and sentences only. Whether your words are exact is for you and a partner to check.

@@ -11,7 +11,7 @@ activities:
     minutes: 5
     do: |
       Two volunteers act a teacher and a student. The teacher gives three instructions and the student makes three requests. The class listens for the words.
-    notes: "Orders use verbs first; requests use could, may or please."
+    notes: "Orders tell; requests leave the other person a choice (could, may, would you mind)."
   - at: investigate
     kind: discussion
     title: "How other communities do it"

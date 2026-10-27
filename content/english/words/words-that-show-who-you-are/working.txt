@@ -1,8 +1,8 @@
-# Nib's thinking about Ravi, one step at a time.
+# Nib's thinking about Jo, one step at a time.
 
 # region: nib
-Ravi spoke to the visitor in short, quick sentences.
-He did not use a long greeting like I do.
-So Ravi must be rude.
-I will tell him to talk like me.
+Jo spoke to the visitor in short, quick sentences.
+Jo did not use a long greeting.
+So Jo must be rude.
+I will say hello to Jo.
 # endregion

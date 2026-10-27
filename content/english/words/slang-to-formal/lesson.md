@@ -6,16 +6,16 @@ summary: "Language sits on a scale from slang to formal: slang, colloquial, conv
 language: maths
 node: [AC9E6LA01 n1]
 explainPicture: { ref: text.yml#explain-pic, caption: "The same idea can be said in four ways. The words move along a scale from slang to formal." }
-hook: "'That's sick!' and 'That is most impressive.' mean about the same thing. Which one would you put in a report to the principal?"
+hook: "Two students describe the same excursion, one to a friend and one in a report. Would their words be the same?"
 ---
 Words change with the situation. A useful way to see it is a scale with four steps:
 
-- **Slang**: very casual words used by a close group. *That's lit.*
-- **Colloquial**: everyday, relaxed words. *Heaps good.*
-- **Conversational**: ordinary speech that most people would not mind hearing anywhere. *I'm going to get some lunch.*
-- **Formal**: full forms, exact words and no slang. *I will be taking my lunch break at noon.*
+- **Slang**: very casual words used by a close group. *That's sick!*
+- **Colloquial**: everyday, relaxed words. *Too easy, mate.*
+- **Conversational**: ordinary speech that most people would not mind hearing anywhere. *I'm heading to the library.*
+- **Formal**: full forms, exact words and no slang. *I shall be at the library until noon.*
 
-**Polite** and **formal** are different. You can be polite in a casual way (*Thanks so much, that's really kind!*), and you can be formal without being warm.
+**Polite** and **formal** are different. You can be polite in a casual way (*Cheers, that's really kind of you!*), and you can be formal without being warm.
 
 ## Predict: where does it sit?
 
@@ -24,9 +24,9 @@ stage: predict
 insight: "Predicting where an Australian everyday sentence sits on the scale previews the four steps."
 check:
   type: predict
-  q: "'No worries, I'll see you in the arvo.' Which step on the scale is this?"
+  q: "'Too easy, mate. See you this arvo.' Which step on the scale is this?"
   options: ["Slang", "Colloquial", "Conversational", "Formal"]
-  actual: "Colloquial. Words such as 'No worries' and 'arvo' are relaxed everyday speech, but most people use them, not only one small group."
+  actual: "Colloquial. Words such as 'Too easy' and 'arvo' are relaxed everyday speech, but most people use them, not only one small group."
 ```
 
 ## Try: place each on the scale
@@ -37,11 +37,11 @@ insight: "Placing eight sentences on a four-step scale shows how slang, colloqui
 try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["Which would a small group of friends use but a stranger might not follow?", "Which has full forms and no everyday shortcuts?"]
 smaller:
-  check: { type: question, q: "Which sentence is more formal?", options: ["I'm gonna grab lunch.", "I will take my lunch break now.", "They are equally formal"], answer: 1, feedback: ["'Gonna' is a relaxed spoken short form.", null, "One uses a short form and the other uses full forms."], explain: "The second uses full forms and no shortcuts, so it sits higher on the scale." }
-check: { type: board, text: "Place each sentence on the scale: slang, colloquial, conversational or formal.", when: "n_right = 8 and n_wrong = 0", explain: "That's lit is slang. Heaps good, eh? and See ya later! are colloquial. I'm going to grab some lunch and I'm not sure about that idea are conversational. I will be taking my lunch break and The committee has resolved are formal. Nah, can't be bothered sits between slang and colloquial." }
+  check: { type: question, q: "Which sentence is more formal?", options: ["I'm gonna head off.", "I will now depart.", "They are equally formal"], answer: 1, feedback: ["'Gonna' is a relaxed spoken short form.", null, "One uses a short form and the other uses full forms."], explain: "The second uses full forms and no shortcuts, so it sits higher on the scale." }
+check: { type: board, text: "Place each sentence on the scale: slang, colloquial, conversational or formal.", when: "n_right = 8 and n_wrong = 0", explain: "That's lit is slang. Heaps good, eh? is colloquial. See ya later! is slang or colloquial. I'm going to get some lunch and I'm not sure about that idea are conversational. I will be taking my lunch break and The committee has resolved are formal. Nah, can't be bothered sits between slang and colloquial." }
 ```
 
-Were you right about 'No worries, I'll see you in the arvo.'? Most words on the scale are about the group that uses them.
+Were you right about 'Too easy, mate. See you this arvo.'? Most words on the scale are about the group that uses them.
 
 ## Worked example: polite or formal?
 
@@ -119,7 +119,7 @@ hint: ["Which words in the message above are informal?", "How would the principa
 check: { type: board, text: "Rewrite the message formally in at least three sentences, with no short forms and no exclamation marks.", when: "is_written = 1 and n_contractions = 0 and n_exclaims = 0 and n_sentences >= 3", explain: "You wrote a formal message. Ask a partner to point to a word they would not say aloud to a friend, and check it is not in your text." }
 ```
 
-The board counts short forms, exclamation marks and sentences. It cannot tell whether your words are exact, so ask a partner or your teacher.
+The board counts short forms, exclamation marks and sentences. It cannot see every short form (such as oval's), so check for 's yourself. It cannot tell whether your words are exact, so ask a partner or your teacher.
 
 ## In your own writing
 

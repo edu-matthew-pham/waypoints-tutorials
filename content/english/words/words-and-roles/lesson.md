@@ -40,7 +40,7 @@ try: { playground: board, starter: "text.yml#run", height: 460 }
 hint: ["Which would you only say to friends? Which would you read on a school notice?", "Do any sit between two steps?"]
 smaller:
   check: { type: question, q: "Which is more formal: 'Move it!' or 'Please move along.'?", options: ["Move it!", "Please move along.", "They are equally formal"], answer: 1, feedback: ["Move it! is short and blunt, so it is less formal.", null, "The second adds a polite word and a fuller phrase, so it sits higher."], explain: "'Please move along.' is more careful and complete, so it sits higher on the scale." }
-check: { type: board, text: "Place each way of asking everyone to line up on the scale.", when: "n_right = 5 and n_wrong = 0", explain: "Oi, move it is very casual. Come on, let's go is casual. Line up at the door, please sits between neutral and polite. Could everyone please line up is polite. Students are requested to assemble is formal." }
+check: { type: board, text: "Place each way of asking everyone to line up on the scale.", when: "n_right = 5 and n_wrong = 0", explain: "Oi, move it is very casual. Come on, let's go is casual or very casual. Line up at the door, please sits between neutral and polite. Could everyone please line up is polite. Students are requested to assemble is formal." }
 ```
 
 ## Worked example: who is speaking?

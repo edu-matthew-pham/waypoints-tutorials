@@ -12,7 +12,7 @@ before: |
 
   This challenge covers AC9E6LA01 node 3: select language to suit a context, applying the scale and the reader cues from the course. The student text uses 'how formal the words are' and does not name **register**.
 
-  Part 1 accepts two bands for 'Bring ya runners.' because a careful student can argue slang or colloquial. Part 2 has a single formal answer per gap.
+  Part 1 accepts two bands for two lines because a careful student can argue slang or colloquial. Part 2 has a single formal answer per gap.
 
   The Part 4 check counts short forms, exclamation marks and sentences. It cannot judge whether the wording fits; a partner or you should.
 
@@ -23,7 +23,7 @@ running:
 stuck:
   - see: "A student keeps 'No worries' because it is polite."
     ask: "Polite or formal?"
-    fix: "It is polite and relaxed. A formal notice would say 'We regret any inconvenience'."
+    fix: "It is polite and relaxed. A formal notice would say 'Late arrivals are welcome'."
 stretch: "Rewrite the notice a second time for students in Year 3."
 support: "A list of Nib's informal words with a blank beside each for a formal replacement."
 leads: |

@@ -7,7 +7,7 @@ bands: Mild | Medium | Extreme
 word a: cool = 1
 word b: slightly cold = 1
 word c: chilly = 1/2
-word d: nippy = 2
+word d: nippy = 1/2
 word e: icy = 2/3
 word f: freezing = 3
 # endregion
@@ -27,8 +27,8 @@ mode: scale
 bands: Mild | Medium | Strong
 word a: nervous = 1
 word b: uneasy = 1
-word c: scared = 2
-word d: frightened = 2
+word c: scared = 1/2
+word d: frightened = 2/3
 word e: terrified = 3
 word f: petrified = 3
 # endregion

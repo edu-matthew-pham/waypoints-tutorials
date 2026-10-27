@@ -6,8 +6,8 @@ mode: scale
 bands: Casual | Respectful | Formal
 word a: Chatting with your cousin = 1
 word b: Asking a new classmate to share a table = 1/2
-word c: Asking your coach about training = 2
-word d: Writing to your teacher about homework = 2
+word c: Asking your coach about training = 1/2
+word d: Writing to your teacher about homework = 2/3
 word e: Writing to the mayor = 3
 word f: Speaking to a judge = 3
 # endregion
@@ -26,7 +26,7 @@ widget: wordchoice
 mode: scale
 bands: Casual | Respectful | Formal
 word a: Your younger sibling = 1
-word b: A neighbour you know a little = 2
+word b: A neighbour you know a little = 1/2
 word c: A coach you like = 2
 word d: A librarian you have never met = 2/3
 word e: A government minister = 3

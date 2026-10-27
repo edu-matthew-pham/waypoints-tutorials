@@ -1626,7 +1626,7 @@ Vary, Practise, Make).
     Values: `n_slots`, `n_set`, `n_right`, `n_wrong`, `slot_N`, `band_N`. Tone and word-chain tasks use the cohesion
     board's chain and parts modes. `npm run check-wordchoice` tests the widget and every wordchoice board in a lesson
     (it starts, the check fails at the start and passes solved, explain pictures say `answer: on`). Like the sentence
-    board, it never judges a student's own writing.
+    board, it never judges a student's own writing. Trays and swap choices are shown in a fixed, answer-blind order (hash of the text), so list order gives nothing away. A swap board shows each choice's band, so use `@n` where the band is the lesson idea, not where the task is to find the "best" word.
 - **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

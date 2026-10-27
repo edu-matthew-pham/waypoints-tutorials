@@ -6,14 +6,14 @@ summary: "The way we speak and write shows the groups we belong to, such as club
 language: maths
 node: [AC9E7LA01 n1, AC9E7LA01 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Words from a sailing club, a chess club and a drama club. Each group has words that signal that you belong." }
-hook: "Why would a sailor say 'tack' and a chess player say 'castle'? What does using a group's words say about you?"
+hook: "A surfer, a farmer and a nurse each have words the others would not follow. What do a group's words say about the people who use them?"
 ---
-We speak and write differently in different groups. A sailing club, a chess club and a drama club each have their own words. These are called **jargon** when only the group uses them.
+We speak and write differently in different groups. A sailing club, a chess club and a drama club each have their own words. These are the special words only that group uses.
 
 Our words do two things:
 
 - They **show** which groups we belong to.
-- They **help make** that belonging. When you join a club and start using its words, you become more a part of it.
+- They **help make** that belonging, because using a group's words is part of joining it.
 
 People speak in many ways, and every way works for the family, group or place that uses it. How a person speaks tells you nothing about whether they are clever, kind or rude.
 
@@ -37,8 +37,8 @@ insight: "Labelling six sentences by the club that would say them shows how grou
 try: { playground: board, starter: "text.yml#run", height: 500 }
 hint: ["Which words belong to boats, to board games or to the stage?", "Which word gave each one away?"]
 smaller:
-  check: { type: question, q: "Which club would most likely say 'hit your mark and wait for the cue'?", options: ["Sailing club", "Chess club", "Drama club"], answer: 2, feedback: ["Sailing talk is about boats, wind and water.", "Chess talk is about pieces and moves.", null], explain: "Marks and cues are stage words, so a drama club would say it." }
-check: { type: board, text: "Label each sentence by the club that would say it.", when: "n_right = 6", explain: "Tide, dinghy, tack and buoy belong to the sailing club. Gambit, knight and castled belong to the chess club. Mark, cue and understudy belong to the drama club." }
+  check: { type: question, q: "Which club would most likely say 'check the offside line before the kick'?", options: ["A football club", "A chess club", "A sailing club"], answer: 0, feedback: [null, "Chess talk is about pieces and moves.", "Sailing talk is about boats, wind and water."], explain: "Offside and kick are football words, so a football club would say it." }
+check: { type: board, text: "Label each sentence by the club that would say it.", when: "n_right = 6", explain: "Halyard, dinghy, tack and buoy belong to the sailing club. Gambit, knight and castled belong to the chess club. Mark, cue and understudy belong to the drama club." }
 ```
 
 Did 'Break a leg' mean good luck? Only people inside the group may know.
@@ -53,10 +53,10 @@ tasks:
       type: match
       q: "Match each way of speaking to what it can signal."
       pairs:
-        - ["Words only the group uses", "That you belong to the group"]
-        - ["A local way of speaking", "Where you come from"]
+        - ["Words only the group uses", "That you are part of that group"]
+        - ["A local way of speaking", "Which place you may be from"]
         - ["Switching to formal words", "That you are in a formal setting"]
-        - ["A friend's nickname", "That you are close"]
+        - ["Calling someone by a nickname", "That you know each other well"]
       explain: "Each feature signals something about the speaker's group or situation. None signals how good or bad a person is."
   - check:
       type: question
@@ -68,11 +68,11 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Here is Nib's thinking about Ravi, one step at a time. One step judges a person from how he speaks. Click it."
+      text: "Here is Nib's thinking about Jo, one step at a time. One step judges a person from how he speaks. Click it."
       answer: 3
       fault: logic
       misconception: language-judged
-      explain: "Step 3 says Ravi 'must be rude' from short sentences alone. People speak in many valid ways, and how someone speaks tells you nothing about their character."
+      explain: "Step 3 says Jo 'must be rude' from short sentences alone. People speak in many valid ways, and how someone speaks tells you nothing about their character."
 ```
 
 ### Match the feature to the signal
@@ -81,7 +81,7 @@ tasks:
 
 ### Spot the judgement
 
-## Vary: jargon for a newcomer
+## Vary: club words for a newcomer
 
 ```step
 stage: modify
@@ -97,8 +97,8 @@ check: { type: board, text: "Choose the wording a newcomer can follow.", when: "
 stage: practise
 insight: "Colouring the sailing words in a short note applies the idea of jargon to a new text."
 try: { playground: board, starter: "text.yml#practise", height: 340 }
-hint: ["Which words only sailors would use?", "Which words would anybody understand?"]
-check: { type: board, text: "Colour every sailing word in the note.", when: "chains_ok = 1 and n_stray = 0", explain: "Skipper, tide, rigging and dinghies are sailing words. Lunch and school are everyday words." }
+hint: ["Which words would you only know if you sailed?", "Which words would you hear in any school?"]
+check: { type: board, text: "Colour every sailing word in the note.", when: "chains_ok = 1 and n_stray = 0", explain: "Halyard, rigging, reef and mainsail are sailing words. Lunch and school are everyday words." }
 ```
 
 ## Make: a character speaks
@@ -119,7 +119,7 @@ The board counts sentences and quotation marks. Whether the words suit the chara
 stage: make
 tier: typical
 insight: "Noticing the words of a group you belong to puts the idea to use outside the board."
-check: { type: reflect, text: "I noticed a word or saying used by a group I belong to, and thought about what it shows." }
+check: { type: reflect, text: "I noticed a word or saying used by a school group or a club, and thought about what it shows." }
 ```
 
 ## Wider: one character, different places
@@ -130,13 +130,13 @@ tier: wider
 insight: "Showing one character in two places applies the idea of groups to a longer piece of writing at the same level."
 check:
   type: reasoning
-  q: "Write two lines of speech for the same character, one with the sailing club and one at home. Say what changes."
+  q: "Write two lines of speech for the same made-up character, one with the sailing club and one at lunch with friends. Say what changes."
   placeholder: "At the club, ... At home, ..."
   models:
     - title: "A strong answer"
-      text: "At the club: 'Check the tide before we launch.' At home: 'Can you pass the salt?' The club line has sailing words and the home line has everyday words. Both are the same person."
+      text: "At the club: 'Check the halyard before we launch.' At lunch: 'Can you pass the salt?' The club line has sailing words and the home line has everyday words. Both are the same person."
     - title: "A different view that also works"
-      text: "At the club she uses short, exact instructions. At home she is relaxed and jokes. The words change with the group, but she stays the same person."
+      text: "At the club she uses short, exact instructions. At lunch she is relaxed and jokes. The words change with the group, but she stays the same person."
   criteria: ["I wrote two lines.", "I said what changes.", "I did not say one version is better."]
   explain: "People move between groups and change their words, which is a skill, not a fault."
 ```

@@ -10,7 +10,7 @@ struggle: "Students rank ways of speaking as better or worse. Ask 'who uses thes
 before: |
   Do the Try board yourself: six lines, three made-up clubs.
 
-  The one idea: language shows identity and helps make belonging. This lesson covers AC9E7LA01 nodes 1 and 2: language and identity (expression and creation), and the idea that different ways of speaking are valid for their groups. The terms **jargon** and **register** are for you.
+  The one idea: language shows identity and helps make belonging. This lesson covers AC9E7LA01 nodes 1 and 2: language and identity (expression and creation), and the idea that different ways of speaking are valid for their groups. The terms **jargon** and **register** are for you; the student text says 'special club words'.
 
   Kit's hinge: students who treat some ways of speaking as 'wrong' go wrong later. The bug task and the wider step return to this.
 
@@ -23,7 +23,7 @@ running:
   - "Worked example: for the bug task, ask what other reasons could explain short sentences."
   - "Make: partners name the group the character belongs to."
 stuck:
-  - see: "A student says Ravi must speak badly."
+  - see: "A student says Jo must speak badly."
     ask: "Who is he talking to, and what works for them?"
     fix: "Different ways of speaking suit different groups and places. None shows character."
   - see: "A student says jargon is just showing off."
