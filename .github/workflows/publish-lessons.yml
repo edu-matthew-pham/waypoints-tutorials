@@ -90,8 +90,8 @@ jobs:
           npx playwright-core install --with-deps chromium
           # ffmpeg from npm (a prebuilt copy, 6.0 with libx264 and aac), because the Ubuntu mirror is sometimes very slow
           # (26 Oct: 69 MB took 24 minutes). If the download fails, fall back to apt as before.
-          if npm install --no-save --no-audit --no-fund --omit=optional ffmpeg-static@5.2.0 && sudo cp node_modules/ffmpeg-static/ffmpeg /usr/local/bin/ffmpeg; then
-            ffmpeg -version | head -1
+          if npm install --no-save --no-audit --no-fund --omit=optional ffmpeg-static@5.2.0 ffprobe-static@3.1.0 && sudo cp node_modules/ffmpeg-static/ffmpeg node_modules/ffprobe-static/bin/linux/x64/ffprobe /usr/local/bin/ && ffprobe -version >/dev/null; then
+            ffmpeg -version | head -1; ffprobe -version | head -1
           else
             echo "ffmpeg from npm failed, using apt"
             sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
