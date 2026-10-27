@@ -139,6 +139,12 @@ Found while building English: built lessons in every subject use site-authored m
 - **Possibly, after the audit:** a `kind: belief | craft` field in `misconceptions.json` (a wrong rule a student holds, or a context-dependent weakness such as a buried main point); fault types per subject (English: purpose, structure, link, audience, evidence) or none outside code; bug tasks that accept several lines or "missing between lines N and N+1"; a validate lint that lists misconceptions and wider steps that don't trace to Kit.
 - **Decided for English (27 Oct):** wider steps are breadth only; Years 9–10 nodes wait for their own phase (`roadmap/english.md`).
 
+## Changed by the code chat (28 Oct 2026): Pattern Trainer models in the `classifier` widget
+
+- `web-helpers/pattern-model.js` (new): reads a Pattern Trainer model file in the browser. `tools/build-playground.mjs` also copies it into the board's `vendor/` (it already goes beside students' pages with the other `web-helpers/`).
+- `tools/render.mjs` (cache section only, so nothing re-records): a `classifier` board clip's hash also counts `web-helpers/pattern-model.js`.
+- `playground-board/widgets/classifier.js` and AUTHORING › `widget: classifier`. Details: roadmap/code.md › Log, 28 Oct.
+
 ## Changed by the Learning skills chat (27 Oct 2026): cards for a second subject
 
 - `tools/ict-cards.mjs`: `loadCardsFile` reads optional top-level `groups` (sections used instead of the course's units), `lede`, `search` and `more`; `ictCardsBody` takes `placeholder` and `more`. ICT pages are unchanged.

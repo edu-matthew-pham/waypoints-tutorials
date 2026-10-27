@@ -1,12 +1,14 @@
-// Classifier: test an image model that students trained in Teachable Machine on a fixed test set, and optionally send
-// its predictions to a micro:bit over USB (Web Serial).
+// Classifier: test a picture model that students trained in the Pattern Trainer (tools.learningwaypoints.com/trainer/)
+// or Teachable Machine on a fixed test set, and optionally send its predictions to a micro:bit over USB (Web Serial).
 //   widget: classifier
 //   testset: recycling          the test set in media/classifier/<name>/test.json (images with a label and a group);
 //                               leave it out for a webcam-only board (driving a micro:bit or robot); "own" for the
 //                               students' own test photos (added on the board by class and group, kept in this browser
 //                               and shared by every board on the site that uses testset: own)
-//   model: ask                  students paste their shareable link (default); or a link or a path to a model folder
-//                               (relative to the board, e.g. media/classifier/recycling/demo/) for a demo or fallback
+//   model: ask                  students open their Pattern Trainer model file (my_model.json) or paste a Teachable
+//                               Machine shareable link (default); or, for a demo or fallback, a Teachable Machine link,
+//                               a path to a Teachable Machine model folder (relative to the board, e.g.
+//                               media/classifier/recycling/demo/) or a path to a Pattern Trainer model file (ending .json)
 //   classes: Paper, Plastic     the labels the test set expects (default: the test set's classes)
 //   groups: plain, messy        which groups to test (default all, in the test set's order)
 //   webcam: on                  a live webcam preview with the top label (not checked)
@@ -23,13 +25,19 @@
 //   for each "key:number" line the micro:bit sent (dist:23 -> in_dist). With testset: own, also n_photos, n_groups,
 //   photos_<label> (photos of each class), and acc_min (the lowest group's accuracy) once a model has run. Without a test set, only n_classes, has_<label>
 //   and the serial values.
-// The Teachable Machine library and TensorFlow.js (the versions its export uses) load only when this widget is used.
+// Pattern Trainer models are read by vendor/pattern-model.js (web-helpers/pattern-model.js, the twin of the starters'
+// pattern_model.py): MediaPipe and the picture model load from the Pattern Trainer's site, only when a Pattern Trainer
+// model is opened. Pictures only; a body-pose or sound model is refused. Its webcam frames are not mirrored (the trainer's
+// are not). The Teachable Machine library and TensorFlow.js (the versions its export uses) load only when a Teachable
+// Machine model is used.
 (function (B) {
   'use strict';
   var spec = null, set = null, model = null, modelUrl = '', results = null, st = null;
   var cache = {}, libs = null;
   var OWN = 'wp-classifier-own';      // students' own test photos: [{ label, group, src (a small JPEG data URL) }]
-  var LAST = 'wp-classifier-link';   // the last model a student loaded: later steps start with it (they paste a new one after retraining)
+  var LAST = 'wp-classifier-link';   // the last Teachable Machine link a student loaded: later steps start with it (they paste a new one after retraining)
+  var PT = 'wp-classifier-pt';       // or the text of the last Pattern Trainer model file they opened (only one of the two is kept)
+  var ptLib = null;
   var TM = /^https:\/\/teachablemachine\.withgoogle\.com\/models\/[\w-]+\/?$/;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
@@ -61,6 +69,60 @@
     return new Promise(function (ok, no) { var e = document.createElement('script'); e.src = src; e.onload = ok; e.onerror = function () { no(new Error('Could not load ' + src)); }; document.head.appendChild(e); });
   }
   function loadLibs() { return libs = libs || script('vendor/tf.min.js').then(function () { return script('vendor/teachablemachine-image.min.js'); }); }
+  function loadPtLib() { return ptLib = ptLib || script('vendor/pattern-model.js').catch(function (e) { ptLib = null; throw e; }); }
+  function hashText(t) { var h = 5381; for (var i = 0; i < t.length; i++) h = (h * 33 + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36) + '.' + t.length; }
+  function store(k, v) { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { /* private mode, or full */ } }
+
+  /** A Pattern Trainer model, shaped like a Teachable Machine one (the rest of the widget needs only these two). */
+  function ptAdapter(pm) {
+    return {
+      pt: pm,
+      getClassLabels: function () { return pm.classes.slice(); },
+      // Not mirrored: the Pattern Trainer's webcam is not, so a second argument (Teachable Machine's flip) is ignored.
+      predict: function (img) {
+        return pm.embed(img).then(function (v) { var s = pm.scores(v); return pm.classes.map(function (c, i) { return { className: c, probability: s[i] }; }); });
+      },
+    };
+  }
+
+  /** Use a Pattern Trainer model file's text: name is the file (or site path) it came from; mine = a student opened it. */
+  function usePt(text, name, mine) {
+    st.msg = 'Loading the picture model (about 35 MB the first time)…'; st.bad = false; st.busy = true; paint();
+    var pm;
+    loadPtLib().then(function () {
+      try { pm = window.PatternModel.fromText(text); } catch (e) {
+        if (e.code === 'not-model' || e.code === 'not-json') throw new Error('That is not a Pattern Trainer model file. In the Pattern Trainer, train your model, click Download, and open the my_model.json it gives you. (A Teachable Machine model goes in the link box instead.)');
+        throw e;
+      }
+      if (pm.type !== 'image') throw new Error('This is a ' + (pm.type === 'pose' ? 'body-pose' : 'sound') + ' model. This board tests picture models: in the Pattern Trainer choose Pictures, train, and download again.');
+      return window.PatternModel.ready();
+    }).then(function () {
+      model = ptAdapter(pm); modelUrl = 'pt:' + hashText(text); st.busy = false; st.file = name; st.link = '';
+      if (mine) {
+        B.save({ pt: true });
+        if (spec.model === 'ask') { store(PT, text); store(LAST, null); }
+      }
+      return run();
+    }).catch(function (e) {
+      if (window.console) console.warn('classifier: could not use the model file', name, e);
+      st.busy = false; st.bad = true; model = null; st.file = '';
+      st.msg = e.message || 'That model file could not be used.';
+      paint(); report();
+    });
+  }
+  function openFile(file) {
+    if (!file) return;
+    var r = new FileReader();
+    r.onload = function () { usePt(String(r.result), file.name, true); };
+    r.onerror = function () { st.msg = 'That file could not be read.'; st.bad = true; paint(); };
+    r.readAsText(file);
+  }
+  function loadPtPath(path) {
+    st.msg = 'Loading the model…'; st.busy = true; paint();
+    fetch(path, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('There is no model file at ' + path + '.'); return r.text(); })
+      .then(function (t) { usePt(t, path.split('/').pop(), false); })
+      .catch(function (e) { st.busy = false; st.bad = true; st.msg = e.message; paint(); report(); });
+  }
 
   /** A pasted link or a path, as the folder holding model.json and metadata.json; or a message saying what is wrong. */
   function folder(text) {
@@ -142,6 +204,8 @@
   }
 
   function loadModel(text) {
+    var t0 = String(text || '').trim();
+    if (/\.json$/i.test(t0) && !/^[a-z]+:/i.test(t0) && t0.indexOf('..') < 0) { loadPtPath(t0); return; }
     var f = folder(text);
     if (f.error) { st.msg = f.error; st.bad = true; paint(); return; }
     st.msg = 'Loading the model…'; st.bad = false; st.busy = true; paint();
@@ -151,9 +215,9 @@
       if (meta.packageName && !/image/.test(meta.packageName)) throw new Error('This is a ' + meta.packageName.replace(/^@teachablemachine\//, '') + ' model. This board tests image models: in Teachable Machine start an Image Project.');
       return window.tmImage.load(f.url + 'model.json', f.url + 'metadata.json');
     }).then(function (m) {
-      model = m; modelUrl = f.url; st.link = String(text).trim(); st.busy = false;
+      model = m; modelUrl = f.url; st.link = String(text).trim(); st.busy = false; st.file = '';
       B.save({ link: st.link });
-      try { if (spec.model === 'ask') localStorage.setItem(LAST, st.link); } catch (e) { /* private mode */ }
+      if (spec.model === 'ask') { store(LAST, st.link); store(PT, null); }
       return run();
     }).catch(function (e) {
       if (window.console) console.warn('classifier: could not load', f.url, e);
@@ -180,11 +244,17 @@
       cache[ck] = results = out; B.moved = true;
       checkClasses(labels);
       paint(); report();
+    }).catch(function (e) {
+      if (window.console) console.warn('classifier: could not test', e);
+      results = null; st.bad = true; st.msg = e.message || 'The model could not test the photos.';
+      paint(); report();
     });
   }
   function checkClasses(labels) {
     var missing = set.classes.filter(function (c) { return !labels.some(function (l) { return key(l) === key(c); }); });
-    st.msg = missing.length ? 'Your model has no class called "' + missing[0] + '". Rename the class in Teachable Machine, export again and paste the new link.' : '';
+    st.msg = !missing.length ? '' : 'Your model has no class called "' + missing[0] + '". ' + (model && model.pt
+      ? 'Rename the class in the Pattern Trainer, train again, download and open the new model file.'
+      : 'Rename the class in Teachable Machine, export again and paste the new link.');
     st.bad = !!missing.length;
   }
 
@@ -225,7 +295,7 @@
       if (model) model.getClassLabels().concat(spec.unsureOn ? ['Unsure'] : []).forEach(function (l) { v['sent_' + key(l)] = st.sentBy[key(l)] || 0; });
     }
     Object.keys(v).forEach(function (k) { v[k] = Math.round(v[k] * 1000) / 1000; });
-    B.say(model && results ? out : (spec.model === 'ask' && !st.busy ? 'Paste your model link, then Load.' : ''), false);
+    B.say(model && results ? out : (spec.model === 'ask' && !st.busy ? 'Open your model file (or paste a Teachable Machine link, then Load).' : ''), false);
     B.post({ scope: { vars: v, points: {} }, model: modelUrl, loaded: !!model, labels: model ? model.getClassLabels() : [] }, out);
   }
 
@@ -250,12 +320,16 @@
     if (!model) return;
     navigator.mediaDevices.getUserMedia({ video: { width: 224, height: 224 } }).then(function (stream) {
       var v = document.createElement('video'); v.muted = true; v.playsInline = true; v.srcObject = stream; v.play();
-      st.cam = { stream: stream, video: v, top: '', p: 0, since: 0, timer: 0 };
+      var c0 = st.cam = { stream: stream, video: v, top: '', p: 0, since: 0, timer: 0, busy: false };
       paint();
       st.cam.timer = setInterval(function () {
         if (!st.cam || v.readyState < 2) return;
-        // Flipped, like Teachable Machine's own webcam: its webcam samples are mirrored, so Left and Right stay Left and Right.
+        // Flipped for Teachable Machine, like its own webcam: its webcam samples are mirrored, so Left and Right stay Left
+        // and Right. Pattern Trainer models ignore the flip (the trainer's webcam is not mirrored).
+        if (c0.busy) return;
+        c0.busy = true;
         model.predict(v, true).then(function (pred) {
+          c0.busy = false;
           if (!st.cam) return;
           pred.sort(function (a, b) { return b.probability - a.probability; });
           var c = st.cam, top = pred[0].className, now = Date.now();
@@ -269,7 +343,7 @@
           var held = now - c.since >= 300 && (sure || spec.unsureOn);
           var again = spec.repeatMs && c.top === st.lastSent && now - st.lastAt >= spec.repeatMs;
           if (spec.serialOn && held && (c.top !== st.lastSent || again)) { st.lastSent = c.top; st.lastAt = now; send(c.top); }
-        });
+        }).catch(function (e) { c0.busy = false; if (window.console) console.warn('classifier: webcam', e); });
       }, 150);
     }).catch(function () { st.serialMsg = ''; st.msg = 'The webcam is blocked or missing. You can still test with the photos below.'; paint(); report(); });
   }
@@ -280,10 +354,20 @@
     var wrap = el('div', 'clwrap');
     // Load a model.
     if (spec.model === 'ask') {
+      // The Pattern Trainer's model file first; a Teachable Machine link still works.
+      var frow = el('div', 'clrow');
+      var fin = el('input'); fin.type = 'file'; fin.accept = '.json,application/json'; fin.hidden = true; fin.id = 'clptfile';
+      fin.addEventListener('change', function () { openFile(fin.files && fin.files[0]); fin.value = ''; });
+      var fb = el('button', 'go', st.busy ? 'Loading…' : 'Open your model file'); fb.type = 'button'; fb.disabled = st.busy; fb.id = 'clptopen';
+      fb.addEventListener('click', function () { fin.click(); });
+      frow.append(fb, fin);
+      if (st.file && model) frow.appendChild(el('span', 'clnote', 'Using ' + st.file));
+      wrap.appendChild(frow);
+      wrap.appendChild(el('p', 'clnote', 'Or a Teachable Machine link:'));
       var row = el('div', 'clrow');
       var inp = el('input', 'cllink'); inp.type = 'url'; inp.id = 'cllink'; inp.placeholder = 'https://teachablemachine.withgoogle.com/models/…/'; inp.value = st.link || '';
       inp.setAttribute('aria-label', 'Your model\'s shareable link');
-      var go = el('button', 'go', st.busy ? 'Loading…' : 'Load'); go.type = 'button'; go.disabled = st.busy;
+      var go = el('button', 'quiet', 'Load'); go.type = 'button'; go.disabled = st.busy;
       go.addEventListener('click', function () { loadModel(inp.value); });
       inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') loadModel(inp.value); });
       row.append(inp, go); wrap.appendChild(row);
@@ -385,17 +469,20 @@
 
   B.widget('classifier', {
     sections: ['gpanel'],
-    label: function () { return 'Test an image model'; },
+    label: function () { return 'Test a picture model'; },
     parse: parse,
     start: function (fresh) {
       spec = B.spec; stopCam(); model = null; results = null; modelUrl = '';
-      var saved = fresh ? null : B.saved(), last = '';
-      try { last = B.q.get('fresh') === '1' ? '' : localStorage.getItem(LAST) || ''; } catch (e) { /* private mode */ }
-      st = { link: saved && saved.link || last, msg: spec.testset ? 'Loading the test photos…' : '', bad: false, busy: false, cam: null, serialMsg: '', sent: 0, sentBy: {}, replies: 0, inVals: {}, log: [], lastSent: '', lastAt: 0 };
+      var saved = fresh ? null : B.saved(), last = '', lastPt = '';
+      try { if (B.q.get('fresh') !== '1') { last = localStorage.getItem(LAST) || ''; lastPt = localStorage.getItem(PT) || ''; } } catch (e) { /* private mode */ }
+      // This board's own last model if it had one, else the last one the student loaded on any board.
+      var usePtNow = spec.model === 'ask' && lastPt && (saved ? !!saved.pt : !last);
+      st = { link: saved && saved.link || (usePtNow ? '' : last), file: '', msg: spec.testset ? 'Loading the test photos…' : '', bad: false, busy: false, cam: null, serialMsg: '', sent: 0, sentBy: {}, replies: 0, inVals: {}, log: [], lastSent: '', lastAt: 0 };
       B.serial.listen(heard);
       var p = B.el('gpanel'); p.replaceChildren();
       testSet().then(function (s) {
         set = s; st.msg = ''; paint(); report();
+        if (usePtNow) { usePt(lastPt, 'your model file', false); return; }
         var start = spec.model !== 'ask' ? spec.model : st.link;
         if (start) loadModel(start);
       }).catch(function (e) { B.fail(e.message); });

@@ -1340,12 +1340,22 @@ Vary, Practise, Make).
     at the same distance are "could go either way". Because the model takes only the nearest effect, a species
     pushed both ways by paths of different lengths (rabbits when the dingo goes: the dingo no longer eats them, but
     the foxes that do have increased) is marked by hand with `either A: reason`.
-  - `widget: classifier` (AI; first used by `code/microbit-computer`): students train an image model in Teachable
-    Machine, export it with **Upload my model** and paste the link; the board tests it on a fixed set of photos.
+  - `widget: classifier` (AI; first used by `code/microbit-computer`): students train a picture model in the Pattern
+    Trainer (tools.learningwaypoints.com/trainer/), click **Download** and open the `my_model.json` it gives them with
+    **Open your model file**; or train in Teachable Machine, export with **Upload my model** and paste the link (kept
+    as a fallback, 28 Oct 2026). The board tests it on a fixed set of photos. Pattern Trainer files are read by
+    `web-helpers/pattern-model.js` (copied to the board's `vendor/`; the twin of the starters' `pattern_model.py`:
+    same checks, same self-check, same answers), which loads MediaPipe and the picture model (about 35 MB, once) from
+    the Pattern Trainer's site, so those lessons need that site to be up. Pictures only: a project file, a body-pose or
+    sound model, or a file that fails its self-check gets a message saying what to do. The file's text is kept in this
+    browser (`wp-classifier-pt`), so later steps start with it; opening a model file replaces a remembered Teachable
+    Machine link and the other way round.
     - `testset: recycling` (photos and labels in `playground-board/media/classifier/<name>/test.json`; the recycling set
       is made from TrashNet by `tools/classifier/make-recycling-set.py`, which also writes the two training zips),
       `groups: plain, messy` (which groups to test; default all), `classes: Paper, Plastic` (expected labels; default
-      the set's), `model: ask` (default; the last model a student loaded fills in) or a link or a folder on this site,
+      the set's), `model: ask` (default; the last model a student loaded fills in) or, for a demo or fallback, a
+      Teachable Machine link, a Teachable Machine model folder on this site, or a Pattern Trainer file on this site
+      (a path ending `.json`, relative to the board),
       `webcam: on` (live preview, not checked).
     - `serial: on`: a **Connect a micro:bit** button (Web Serial, 115200 baud; Chrome or Edge). Clicking a test photo
       sends its predicted label as a line; the webcam sends a label once it holds `threshold:` (default 0.8) for 300 ms
@@ -1354,11 +1364,12 @@ Vary, Practise, Make).
     - Values for `when:` checks (every name has an underscore): `acc_all`, `acc_<group>` (0 to 1), `n_correct`,
       `n_total`, `n_classes`, `has_<label>` (1 or 0), and with serial `n_sent`, `n_replies`, `in_<name>`. Examples:
       `"acc_messy >= 0.75"`, `"has_neither = 1 and acc_neither >= 0.75"`, `"n_sent >= 3"`. Training is not checked;
-      the model it makes is. The Teachable Machine library and TensorFlow.js load only when this widget is used.
+      the model it makes is. The Teachable Machine library and TensorFlow.js load only when a Teachable Machine model is used.
     - Leave out `testset:` for a webcam-only board (driving a robot): then `classes:` names the expected labels.
       `threshold Go: 0.95` gives one label its own threshold; `unsure: on` sends **Unsure** when no label holds its
       threshold; `repeat: 1` resends the current label every second (a heartbeat for a robot's watchdog). Extra values:
-      `sent_<label>` (times sent, including `sent_unsure`). The webcam is mirrored, as in Teachable Machine.
+      `sent_<label>` (times sent, including `sent_unsure`). The webcam is mirrored for a Teachable Machine model, as in
+      Teachable Machine, and not for a Pattern Trainer model, as in the Pattern Trainer.
     - `testset: own`: students add **their own test photos** on the board (a class, a group name such as desk or
       dim, then the photos), shrunk to 224 px and kept in this browser only (`wp-classifier-own`), shared by every
       `testset: own` board on the site and kept in step across a lesson's boards. With `classes:` the class is a

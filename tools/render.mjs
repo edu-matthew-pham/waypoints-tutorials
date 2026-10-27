@@ -87,7 +87,8 @@ function boardWidgetHash(lesson, step) {
     } catch { file = null; }
   }
   if (file) h.update(file).update(readFileSync(file));
-  else hashWalk(h, join('playground-board', 'widgets')); // cannot tell which widget: count them all (slower, never stale)
+  if (file && file.endsWith('classifier.js')) h.update(readFileSync(join('web-helpers', 'pattern-model.js'))); // its model reader, copied in by the build
+  else if (!file) hashWalk(h, join('playground-board', 'widgets')); // cannot tell which widget: count them all (slower, never stale)
   return h.digest('hex');
 }
 

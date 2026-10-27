@@ -183,6 +183,9 @@ export async function buildMathsPlayground(out = 'dist') {
     if (!existsSync(src)) throw new Error(`Missing ${src}. Run "npm ci" first.`);
     copyFileSync(src, join(dest, 'vendor', f));
   }
+  // And this for Pattern Trainer model files: our own reader (web-helpers/, also copied beside students' pages), which
+  // loads MediaPipe and the picture model from the Pattern Trainer's site when a model is opened.
+  copyFileSync(join(root, 'web-helpers', 'pattern-model.js'), join(dest, 'vendor', 'pattern-model.js'));
   const { MATH_JS } = await import('./math-expr.mjs');
   writeFileSync(join(dest, 'maths.js'), MATH_JS + '\n');
   stampPlayground(dest);
