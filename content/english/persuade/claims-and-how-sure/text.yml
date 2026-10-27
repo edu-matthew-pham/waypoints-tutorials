@@ -18,14 +18,14 @@ mode: swap
 bands: Possible | Probably | Certain
 before: Choose the word that fits what the evidence shows.
 p: Only 6 of 30 students reported sleeping badly, so homework [[{might@1|will probably@2|will@3}=might]] be affecting a few students.
-p: The radar is not clear yet, so it [[{will@3|might@1|is certain to@3}=might]] rain tonight.
+p: The radar shows rain two kilometres away and heading this way, so it [[{is certain to@3|will probably@2|might@1}=will probably]] rain at lunch.
 # endregion
 
 # region: practise
 widget: cohesion
 mode: chain
 colours: 1
-p: Sleep experts say that homework [[may#a]] cut into sleep. [[Some#a]] students [[often#a]] stay up late, and it [[seems#a]] that tired students find lessons harder. A tired class sits in the same room each morning.
+p: A class survey says that homework [[may#a]] cut into sleep. [[Some#a]] students [[often#a]] stay up late, and it [[seems#a]] that tired students find lessons harder. A tired class sits in the same room each morning.
 # endregion
 
 # region: make
@@ -47,7 +47,7 @@ widget: wordchoice
 mode: scale
 answer: on
 bands: Possible | Probably | Certain
-word a: It might rain. = 1
-word b: It will probably rain. = 2
-word c: It will rain. = 3
+word a: The bus could be late. = 1
+word b: The bus will probably be late. = 2
+word c: The bus will be late. = 3
 # endregion

@@ -21,7 +21,8 @@ questions:
   - at: investigate
     title: "Which feature?"
     type: question
-    q: "\"Join us this Saturday\" is…"
-    options: ["A question", "Speaking to the reader", "Repetition"]
-    answer: 1
-    explain: "It invites the reader directly."
+    q: "\"Your school needs you.\" is…"
+    options: ["Speaking to the reader", "A question with an obvious answer", "Repetition"]
+    answer: 0
+    feedback: [null, "It does not ask anything.", "No phrase comes round twice."]
+    explain: "It talks straight to the reader."

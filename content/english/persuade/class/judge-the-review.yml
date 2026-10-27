@@ -14,7 +14,8 @@ questions:
   - at: run
     title: "Which source fits?"
     type: question
-    q: "Who best supports \"the animation is brilliant\"?"
-    options: ["A film animator", "A stranger", "A friend of a friend"]
-    answer: 0
-    explain: "An animator knows how animation is made."
+    q: "Who best supports \"the songs are catchy\"?"
+    options: ["Someone who has only seen the poster", "A shop that sells film posters", "A music teacher who has listened to the songs"]
+    answer: 2
+    feedback: ["They have not heard the songs.", "They sell posters, not music.", null]
+    explain: "A person who heard the songs can speak to the claim."

@@ -21,7 +21,8 @@ questions:
   - at: investigate
     title: "Which device?"
     type: question
-    q: "'It's only a flood,' said the farmer, with water to his knees."
-    options: ["Exaggeration", "Understatement", "Sarcasm"]
+    q: "'I waited a hundred years for this bus.'"
+    options: ["Understatement", "Hyperbole (exaggeration)", "Sarcasm"]
     answer: 1
-    explain: "It plays down a big problem."
+    feedback: ["It makes the wait bigger, not smaller.", null, "Nobody is being mocked."]
+    explain: "A hundred years is an exaggeration."

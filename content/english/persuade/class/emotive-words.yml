@@ -22,6 +22,7 @@ questions:
     title: "Which pushes?"
     type: question
     q: "Which word pushes a feeling?"
-    options: ["tall", "dreadful", "wooden"]
+    options: ["metal", "vile", "tall"]
     answer: 1
-    explain: "Dreadful judges. Tall and wooden describe."
+    feedback: ["It names a material.", null, "It names a height."]
+    explain: "Vile judges. Metal and tall describe."

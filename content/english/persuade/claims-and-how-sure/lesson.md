@@ -6,18 +6,18 @@ summary: "A bare assertion is a claim with nothing behind it. A writer can back 
 language: maths
 node: [AC9E5LA02 n1, AC9E5LA02 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Words that say how sure the writer is. A reader can tell a guess from a promise." }
-hook: "'The park will close.' 'The park might close.' Same park. What changed about how sure the writer is?"
+hook: "'The match will be cancelled.' 'The match could be cancelled.' Same match. What changed about how sure the writer is?"
 ---
-A **bare assertion** is a claim with nothing behind it: *Everybody knows homework is pointless.* It sounds sure, but a reader has no reason to believe it.
+A **bare assertion** is a claim with nothing behind it: *The new timetable is a disaster.* It sounds sure, but a reader has no reason to believe it.
 
-A writer can **back up** a claim with evidence, such as a count, or with a named source. A writer can also **temper** a claim, which means soften it so it fits what the writer really knows. Four small moves do this:
+A writer can **back up** a claim with evidence, such as a count, or with a named source. A writer can also **temper** a claim, which means choose words so it is exactly as sure as what the writer knows. Four small moves do this:
 
-- A **can-or-will word**: *may*, *might*, *could*, *will*.
-- A **how-often word**: *sometimes*, *often*, *always*.
-- A **how-many word**: *some*, *most*, *all*.
+- A **can-or-will word**: *may*, *might* and *could* leave room for doubt; *will* and *must* leave none.
+- A **how-often word**: *sometimes* and *often* are careful; *always* and *never* are firm.
+- A **how-many word**: *some* and *most* are careful; *all* is firm.
 - A **distancing phrase**: *it seems that*, *research suggests*.
 
-A tempered claim is honest about its limits, so readers often trust the writer more.
+Pick the word that fits the evidence. A claim that admits its limits is honest, so readers often trust the writer more.
 
 ## Predict: which claim would you trust?
 
@@ -73,9 +73,9 @@ tasks:
   - check:
       type: question
       q: "A writer changes 'Homework ruins sleep' to 'Homework may cut into sleep for some students'. Why?"
-      options: ["The claim now admits its limits, which makes the writer easier to trust", "The claim now sounds more certain, so readers will not question it", "The writer has hidden their view so nobody can disagree"]
-      answer: 0
-      feedback: [null, "The new words make the claim less certain, not more.", "The view is still there. It now says how far it goes."]
+      options: ["The claim now sounds more certain, so readers will not question it", "The claim now admits its limits, which makes the writer easier to trust", "The writer has hidden their view so nobody can disagree"]
+      answer: 1
+      feedback: ["The new words make the claim less certain, not more.", null, "The view is still there. It now says how far it goes."]
       explain: "May and some show the claim has limits. A reader sees an honest writer and is more likely to trust the claim."
 ```
 
@@ -98,7 +98,7 @@ stage: modify
 insight: "Choosing a can-or-will word that fits the evidence shows how much a claim should say."
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 hint: ["How much evidence is there?", "Which word says no more than the evidence does?"]
-check: { type: board, text: "Choose the word that fits what the evidence shows.", when: "n_right = 2 and n_wrong = 0", explain: "Six of thirty is a small group, so 'might' fits. The radar is not clear yet, so 'might' also fits the rain." }
+check: { type: board, text: "Choose the word that fits what the evidence shows.", when: "n_right = 2 and n_wrong = 0", explain: "Six of thirty is a small group, so 'might' fits. Rain two kilometres away and heading this way makes 'will probably' fit." }
 ```
 
 ## Practise: find the softening words
@@ -118,10 +118,10 @@ stage: make
 insight: "Writing a claim, softening it and backing it up puts tempering to use."
 try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What do you really know about school lunches?", "Which word shows how sure you are?"]
-check: { type: board, text: "Write at least three sentences about school lunches: a claim softened with a word such as may, might, could or probably, and one thing that backs it up.", when: "n_sentences >= 3 and n_modals >= 1", explain: "You wrote a softened claim. Ask a partner to point to the word that shows how sure you are, and to the sentence that backs it up." }
+check: { type: board, text: "Write at least three sentences about school lunches: a claim with a word that says how sure you are (such as may, might, could, probably or will), and one thing that backs it up.", when: "n_sentences >= 3 and n_modals >= 1", explain: "You wrote a softened claim. Ask a partner to point to the word that shows how sure you are, and to the sentence that backs it up." }
 ```
 
-The board counts sentences and the words may, might, could, probably and a few others. It cannot tell whether your evidence is good, so ask a partner or your teacher.
+The board counts sentences and certainty words of either kind (may, might, will, always and others). It cannot tell whether your word fits your evidence, or whether the evidence is good, so ask a partner or your teacher.
 
 ## In your own writing
 

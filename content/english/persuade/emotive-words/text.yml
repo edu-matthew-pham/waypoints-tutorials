@@ -9,15 +9,15 @@ p: The [[magnificent#a]] new centre will bring [[exciting#a]] shops to town. Cri
 
 # region: vary
 widget: cohesion
-p: The new library is [[{ordinary|splendid|dreary}=splendid]] and everyone should visit it.
-p: The café served a [[{tasty|greasy|small}=greasy]] pie and I wish I had stayed home.
+p: The new library is [[{splendid|ordinary|dreary}=splendid]] and everyone should visit it.
+p: The café served a [[{tasty|round|greasy}=greasy]] pie and I wish I had stayed home.
 # endregion
 
 # region: practise
 widget: cohesion
 mode: chain
 colours: 2
-p: The [[sleek#a]] new Zephyr bike glides over bumps with [[effortless#a]] speed. Other bikes are [[clunky#b]] and [[heavy#b]]. The Zephyr comes in three colours.
+p: The [[sleek#a]] new Ripple bike rolls over bumps with [[effortless#a]] speed. Other bikes are [[clunky#b]] and [[ugly#b]]. The Ripple comes in three colours.
 # endregion
 
 # region: make

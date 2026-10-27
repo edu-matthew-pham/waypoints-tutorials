@@ -24,4 +24,5 @@ questions:
     q: "Only 4 of 30 students said so. Which word fits best?"
     options: ["All students", "Some students", "Every student"]
     answer: 1
+    feedback: ["Four of thirty is not all of them.", null, "Every student is far too strong."]
     explain: "Four of thirty is a few, so some fits."

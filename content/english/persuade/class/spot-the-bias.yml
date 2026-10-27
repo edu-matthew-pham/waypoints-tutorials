@@ -21,7 +21,8 @@ questions:
   - at: investigate
     title: "Which leans?"
     type: question
-    q: "Which phrase leans toward the council?"
-    options: ["The council voted", "The council wisely voted", "Some parents disagreed"]
+    q: "Which phrase leans toward the students?"
+    options: ["Some parents disagreed", "The council brushed students aside", "The council voted on Tuesday"]
     answer: 1
-    explain: "Wisely praises. The others report."
+    feedback: ["It reports what the parents did.", null, "It reports what happened."]
+    explain: "Brushed aside blames the council. The others report."

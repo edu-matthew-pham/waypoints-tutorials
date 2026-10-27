@@ -14,7 +14,7 @@ before: |
 
   Kit's hinge: tempering moves are a response to what a bare assertion lacks. The bug task and the question return to it.
 
-  The Make check counts a small list of words (may, might, could, would, will, should, must, probably, possibly, perhaps, certainly, definitely and a few more). It cannot see how-often or how-many words, and it cannot judge evidence.
+  The Make check counts words from a fixed list: could, might, may, should, would, must, will, probably, possibly, perhaps, certainly, definitely, likely, unlikely, always, never, sometimes, usually, often, seems and appears. These show certainty in either direction, so a student can pass with a firm word such as will. It does not see how-many words (some, most, all) or phrases such as research suggests, and it cannot judge evidence. Partners check that the word fits the evidence.
 
   Sources and examples are made up for the lesson.
 running:

@@ -6,37 +6,37 @@ mode: parts
 layout: inline
 roles: you question repeat verb
 role you: Speaks to the reader
-role question: Question that expects agreement
+role question: Question with an obvious answer
 role repeat: Repetition
 role verb: Strong verb
-s you: You can make a difference today.
-para:
 s question: Who wants a dirty beach?
+para:
+s you: We need your help this Saturday.
+para:
+s verb: Plastic strangles turtles.
 para:
 s repeat: Clean beaches, clean seas, clean futures.
 para:
-s verb: The tide dumped rubbish across the sand.
+s question: Would you want to swim there?
 para:
-s you: Join us this Saturday.
+s repeat: Every bag, every bottle, every can counts.
 para:
-s question: Isn't it time we acted?
+s you: Your voice counts.
 para:
-s repeat: We will not stop, we will not tire, we will not give in.
-para:
-s verb: Plastic strangles turtles.
+s verb: Oil smothers the reef.
 # endregion
 
 # region: vary
 widget: cohesion
-p: A poster to students: "[[{You can help|The undersigned respectfully request assistance}=You can help]] today."
-p: A letter to the council: "[[{Hey, fix it!|We request that the council act}=We request that the council act]] on the litter problem."
+p: A poster to students: "[[{The undersigned respectfully request assistance|You can help}=You can help]] today."
+p: A letter to the council: "[[{We request that the council act|Hey, fix it!}=We request that the council act]] on the litter problem."
 # endregion
 
 # region: practise
 widget: cohesion
 mode: chain
 colours: 2
-p: [[You#a]] can help. Plastic [[strangles#b]] turtles and [[chokes#b]] seabirds. [[Join us#a]] on Saturday.
+p: [[You#a]] can help. Fumes [[choke#b]] the town and waste [[clogs#b]] the drain. [[Join us#a]] on Saturday.
 # endregion
 
 # region: make
@@ -60,7 +60,7 @@ layout: inline
 answer: on
 roles: you question repeat verb
 role you: Speaks to the reader
-role question: Question that expects agreement
+role question: Question with an obvious answer
 role repeat: Repetition
 role verb: Strong verb
 s you: You can help.

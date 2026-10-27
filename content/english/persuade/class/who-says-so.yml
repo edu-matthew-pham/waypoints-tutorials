@@ -22,6 +22,7 @@ questions:
     title: "Which source fits?"
     type: question
     q: "Who would best know how long the canteen queue is?"
-    options: ["A student who stands in it every day", "A visiting singer", "A person who has never been to the school"]
-    answer: 0
+    options: ["A person who has never been to the school", "A student who stands in it every day", "A visiting singer"]
+    answer: 1
+    feedback: ["They have never seen it.", null, "Singing is not queue counting."]
     explain: "Someone who sees the queue knows it."

@@ -23,8 +23,8 @@ running:
   - "Make: partners circle any side-taking word."
 stuck:
   - see: "A student says the report is fair because it names both sides."
-    ask: "Read the words used for each side."
-    fix: "Reasonable and noisily take a side even though both are named."
+    ask: "Read the words used for each group. Are they treated the same way?"
+    fix: "One group gets a praising word and the other a blaming word, even though both are named."
   - see: "A student says no text can be fair."
     ask: "Can you say the same fact with plain words?"
     fix: "Yes, 'voted' and 'disagreed' are plain."

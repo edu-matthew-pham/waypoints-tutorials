@@ -2,15 +2,15 @@
 order: 5
 unit: core
 title: "Spot the bias"
-summary: "Bias is language that favours one side. A text can name both sides and still be biased through its word choices. The same facts can be worded to favour different people. Noticing the choices lets a reader weigh a text fairly."
+summary: "Bias is language that favours one side. A text can be biased through its word choices alone. The same facts can be worded to favour different people. Noticing the choices lets a reader weigh a text fairly."
 language: maths
 node: [AC9E6LA02 n3]
-explainPicture: { ref: text.yml#explain-pic, caption: "The same vote, worded two ways. Each wording favours a different side." }
-hook: "'A mere 40 people came.' 'A passionate 40 people came.' Same number. Which side is each writer on?"
+explainPicture: { ref: text.yml#explain-pic, caption: "The same match, worded three ways. Each wording leans differently." }
+hook: "'The coach strolled in.' 'The coach slunk in.' Same person, same door. Which writer likes the coach?"
 ---
 **Bias** means language that favours one side. A text can be biased even when every fact in it is true, because the **word choices** decide who looks good.
 
-A text can also name both sides and still lean. *Reasonable parents backed the rule, while others complained noisily* names two groups, but the words *reasonable* and *noisily* take a side.
+A text can talk about several groups, so look at the words used for each one.
 
 To weigh a text, ask: which words favour whom? A fair report picks plain words for every side.
 
@@ -21,9 +21,9 @@ stage: predict
 insight: "Predicting which side a wording favours previews that word choice can lean without false facts."
 check:
   type: predict
-  q: "A report says: 'The council wisely voted to ban phones.' Which side does the word 'wisely' favour?"
-  options: ["The council", "The students", "Neither, because it is only a fact"]
-  actual: "The council. 'Wisely' praises the decision. A fair report would say only that the council voted."
+  q: "A report says: 'The principal bravely announced the new timetable.' Which side does the word 'bravely' favour?"
+  options: ["Neither, because it is only a fact", "The principal", "The students"]
+  actual: "The principal. 'Bravely' praises the announcement. A fair report would say only that the principal announced it."
 ```
 
 ## Try: label the lean
@@ -34,7 +34,7 @@ insight: "Labelling six sentences by the side they favour shows how word choices
 try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["Which word takes a side?", "Is there a plain version of the same fact?"]
 smaller:
-  check: { type: question, q: "'The ban finally brings calm.' Which word leans?", options: ["ban", "finally", "calm"], answer: 1, feedback: ["Ban names the rule.", null, "Calm is the result, but finally is the lean."], explain: "Finally suggests the ban was long overdue, which favours it." }
+  check: { type: question, q: "'The council cunningly passed the ban.' Which word leans?", options: ["passed", "cunningly", "ban"], answer: 1, feedback: ["Passed reports what happened.", null, "Ban names the rule."], explain: "Cunningly suggests a sly trick, which leans against the council." }
 check: { type: board, text: "Label each sentence: favours the ban, against the ban, or neutral.", when: "n_right = 6", explain: "Wisely, finally and calm favour the ban. Heavy-handed, lifeline and forced to surrender are against it. The two plain sentences are neutral." }
 ```
 
@@ -52,10 +52,10 @@ tasks:
       options: ["Favours the council", "Favours the students"]
       items:
         - ["The sensible rule protects learning.", "Favours the council", "Sensible praises the council's rule."]
-        - ["The harsh rule punishes everyone.", "Favours the students", "Harsh and punishes criticise the rule."]
         - ["The council showed leadership.", "Favours the council", "Leadership praises the council."]
-        - ["The council ignored student voices.", "Favours the students", "Ignored criticises the council."]
+        - ["The harsh rule punishes everyone.", "Favours the students", "Harsh and punishes criticise the rule."]
         - ["A fair decision at last.", "Favours the council", "Fair and at last praise the decision."]
+        - ["The council ignored student voices.", "Favours the students", "Ignored criticises the council."]
         - ["A heavy-handed decision.", "Favours the students", "Heavy-handed criticises the decision."]
   - check:
       type: bug
@@ -68,9 +68,9 @@ tasks:
   - check:
       type: question
       q: "Two reports give the same number, 40 people. One says 'a mere 40' and one says 'a passionate 40'. What does this show?"
-      options: ["The same fact can be worded to favour different sides", "One report has the wrong number", "Numbers cannot be biased"]
-      answer: 0
-      feedback: [null, "Both give 40.", "The words around the number carry the lean."]
+      options: ["Numbers cannot be biased", "The same fact can be worded to favour different sides", "One report has the wrong number"]
+      answer: 1
+      feedback: ["The words around the number carry the lean.", null, "Both give 40."]
       explain: "Mere makes 40 sound small. Passionate makes 40 sound strong. The fact is the same."
 ```
 
@@ -93,7 +93,7 @@ stage: modify
 insight: "Choosing plain wording for each side shows how a fair report is written."
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 hint: ["Which word judges?", "Which word only reports?"]
-check: { type: board, text: "Choose the plain wording for a fair report.", when: "n_gaps_right = 2", explain: "Decided and some parents only report. Rammed through, sneaked in and pesky take a side." }
+check: { type: board, text: "Choose the plain wording for a fair report.", when: "n_gaps_right = 2", explain: "Decided and some parents only report. Rammed through, sneaked in, angry mob and pesky take a side." }
 ```
 
 ## Practise: colour who the word favours

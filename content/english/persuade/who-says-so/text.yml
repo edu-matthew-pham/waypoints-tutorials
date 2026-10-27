@@ -14,7 +14,7 @@ word f: The Year 8 count found 9 late buses in 10 days. = 2
 
 # region: vary
 widget: cohesion
-p: To check whether the oval drains well, ask [[{the groundskeeper|a famous singer|somebody}=the groundskeeper]].
+p: To check whether the lab equipment is safe, ask [[{a famous singer|somebody|the science technician}=the science technician]].
 p: To find a good mystery book, ask [[{a bus driver|the librarian|a friend of a cousin}=the librarian]].
 # endregion
 
@@ -23,11 +23,11 @@ widget: wordchoice
 mode: scale
 bands: Vague | Named but no fit | Named and fitting
 word a: Some experts say walking helps you think. = 1
-word b: A famous chef says the bus is usually late. = 2
+word b: Chef Bruno Aldo says the bus is usually late. = 2
 word c: A friend of my cousin says the pool is cold. = 1
 word d: The bus company's timetable shows the 8:10 runs on weekdays. = 3
-word e: The groundskeeper says the oval floods in heavy rain. = 3
-word f: The school nurse says tired students often get headaches. = 3
+word e: Mr Webb, who coaches the netball team, says the court is slippery after rain. = 3
+word f: Ms Kaur, the school nurse, says tired students often get headaches. = 3
 # endregion
 
 # region: make
@@ -46,7 +46,7 @@ p: The canteen queue is too long at lunch. Ms Reid, who supervises the canteen, 
 widget: wordchoice
 mode: scale
 answer: on
-bands: Vague | Specific
+bands: Vague source | Named source
 word a: Experts say it is safe. = 1
 word b: The engineer who built it says it is safe. = 2
 # endregion

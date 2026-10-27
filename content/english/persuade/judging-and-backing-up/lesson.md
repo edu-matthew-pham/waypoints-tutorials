@@ -5,14 +5,14 @@ title: "Judging and backing it up"
 summary: "Evaluative words say how a writer feels, what they think of a person's actions, or how good a thing is. A judgement is stronger when it is backed up with a detail from the text or a trusted outside source, and weaker when it stands alone."
 language: maths
 node: [AC9E7LA02 n1, AC9E7LA02 n2]
-explainPicture: { ref: text.yml#explain-pic, caption: "Three kinds of judging word for one book. A judgement backed by a detail is stronger." }
-hook: "'The ending is brilliant.' Why should anyone believe you? What would make it stronger?"
+explainPicture: { ref: text.yml#explain-pic, caption: "Three kinds of judging word: a feeling, a person and a thing. A judgement backed by a detail is stronger." }
+hook: "'The play was good.' Why should anyone believe you? What would make it stronger?"
 ---
 When we review a story, a film or an event, we use **judging words**. They come in three kinds:
 
-- **How it made me feel**: *thrilled*, *terrified*, *moved*.
-- **What I think of a person's actions**: *brave*, *cruel*, *loyal*.
-- **How good the thing is**: *graceful*, *clumsy*, *beautifully drawn*.
+- **How it made me feel**: *amused*, *anxious*.
+- **What I think of a person's actions**: *generous*, *selfish*.
+- **How good the thing is**: *smooth*, *dull*.
 
 A judgement on its own is easy to ignore. It is stronger when it is **backed up** with a detail from the text, such as what a character does, or with a trusted outside source. A review that does both is easier to believe.
 
@@ -36,11 +36,11 @@ insight: "Labelling six judging phrases by their kind shows that judging comes i
 try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["Is it about a feeling, a person or the thing itself?", "What is the word describing?"]
 smaller:
-  check: { type: question, q: "'Maya is loyal.' Which kind of judging is this?", options: ["How I felt", "What I think of a person's actions", "How good the thing is"], answer: 1, feedback: ["Loyal does not say how the reader felt.", null, "Loyal is not about the book's quality."], explain: "Loyal judges a person's actions, so it is the second kind." }
+  check: { type: question, q: "'Ben was sly.' Which kind of judging is this?", options: ["How I felt", "What I think of a person's actions", "How good the thing is"], answer: 1, feedback: ["Sly does not say how the reader felt.", null, "Sly is not about the book's quality."], explain: "Sly judges a person's actions, so it is the second kind." }
 check: { type: board, text: "Label each phrase: feeling, character or quality.", when: "n_right = 6", explain: "Thrilled and terrified are feelings. Brave and cruel judge people's actions. Graceful and beautifully drawn judge how good the thing is." }
 ```
 
-Which was hardest? Some words, like terrified, could describe the book or the reader. Ask what is being judged.
+Which was hardest? For each one, ask what is being judged: the book, a person or the reader.
 
 ## Worked example: is the judgement backed?
 
@@ -53,12 +53,12 @@ tasks:
       q: "How is each judgement backed up?"
       options: ["A detail from the text", "An outside source", "Not backed up"]
       items:
-        - ["Maya is brave: in chapter two she walks into the cave alone.", "A detail from the text", "It points to what Maya does."]
+        - ["The villain is so scary.", "Not backed up", "It gives no reason."]
+        - ["Ravi is honest: in chapter four he hands the lost purse to the office.", "A detail from the text", "It points to what Ravi does."]
         - ["The book is popular: the library lists it as borrowed 80 times this term.", "An outside source", "The library record is outside the book."]
-        - ["The ending is brilliant.", "Not backed up", "It gives no reason."]
-        - ["Tom is cruel, because he laughs when Maya falls.", "A detail from the text", "It points to what Tom does."]
-        - ["The writer is skilful: the librarian chose the book for book of the year.", "An outside source", "The librarian's choice is outside the book."]
         - ["The setting is amazing.", "Not backed up", "It gives no reason."]
+        - ["Tom is cruel, because he laughs when Maya falls.", "A detail from the text", "It points to what Tom does."]
+        - ["The writer is skilful: the librarian named it the school's book of the year.", "An outside source", "The librarian's choice is outside the book."]
   - check:
       type: bug
       code: "working.txt#nib"
@@ -70,9 +70,9 @@ tasks:
   - check:
       type: question
       q: "Why does adding a quote from the story make a review stronger?"
-      options: ["A reader can check the judgement against the story", "Quotes make the review longer", "Quotes show the reviewer reads a lot of books"]
-      answer: 0
-      feedback: [null, "Longer is not the same as stronger.", "That may be true, but it does not back up the judgement."]
+      options: ["Quotes show that the reviewer reads a lot", "Quotes make the whole review longer", "A reader can check the judgement"]
+      answer: 2
+      feedback: ["That may be true, but it does not back up the judgement.", "Longer is not the same as stronger.", null]
       explain: "A quote shows where the judgement comes from, so a reader can check it."
 ```
 
@@ -95,7 +95,7 @@ stage: modify
 insight: "Choosing the detail that backs a judgement shows that backing must match what is claimed."
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 hint: ["What exactly is the judgement?", "Which detail shows that?"]
-check: { type: board, text: "Choose the detail that backs each judgement.", when: "n_gaps_right = 2", explain: "Waiting at the cave for hours shows loyalty. Fog that hides the path and echoing sounds make the setting eerie." }
+check: { type: board, text: "Choose the detail that backs each judgement.", when: "n_gaps_right = 2", explain: "Giving half his lunch away shows generosity. Fog that hides the path and echoing sounds make the setting eerie." }
 ```
 
 ## Practise: find the judging words
@@ -115,7 +115,7 @@ stage: make
 insight: "Writing a review with a detail in quotation marks puts judging and backing up to use."
 try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What did you think of it?", "Which detail shows that?"]
-check: { type: board, text: "Write at least four sentences reviewing a book, film or event, and put one detail that backs a judgement in quotation marks.", when: "n_sentences >= 4 and n_quotes >= 1", explain: "You wrote a review with a detail. Ask a partner whether the detail really backs your judgement." }
+check: { type: board, text: "Write at least four sentences reviewing a book, film or event, and put one detail that backs a judgement in quotation marks (a phrase from the text, or what happened, in quotes).", when: "n_sentences >= 4 and n_quotes >= 1", explain: "You wrote a review with a detail. Ask a partner whether the detail really backs your judgement." }
 ```
 
 The board counts sentences and quotation marks. Whether the detail backs the judgement is for you and a partner to judge.

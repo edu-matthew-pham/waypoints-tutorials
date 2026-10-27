@@ -14,7 +14,7 @@ before: |
 
   Kit's hinge: students who conflate irony with sarcasm, or cannot identify understatement, cannot explain layers of meaning. The sort and the bug task return to it.
 
-  Each Try and Practise line has one defensible device. 'I'd die for a sandwich right now' is an everyday exaggeration.
+  Irony is taught as the opposite of what is said or expected: verbal irony in the Try lines, and simple situational irony in the sarcasm sort. Years 9 and 10 extend it. Each Try and Practise line has one defensible device. 'I'd die for a sandwich right now' is an everyday exaggeration.
 
   The Make check counts sentences and quotation marks. Partners name the devices. All lines are made up.
 running:
@@ -23,7 +23,7 @@ running:
   - "Make: partners name each device and the extra layer."
 stuck:
   - see: "A student calls 'a bit damp' hyperbole."
-    ask: "Is it making the flood bigger or smaller?"
+    ask: "Is it making the soaking bigger or smaller?"
     fix: "Smaller. That is understatement."
   - see: "A student says sarcasm and irony are the same."
     ask: "Is anyone being mocked?"
@@ -33,8 +33,8 @@ support: "Three cards: bigger, smaller, opposite, to point to."
 leads: |
   Next: the challenge, judge the review.
 exit:
-  q: "Name the device in 'a little rain', said by a farmer in a flood."
-  a: "Understatement: it plays the flood down."
+  q: "Name the device in 'Short walk,' said the guide, pointing at a three-day trek."
+  a: "Understatement: it plays the trek down."
 explain: |
   Irony says the opposite, hyperbole exaggerates and understatement plays down.
 

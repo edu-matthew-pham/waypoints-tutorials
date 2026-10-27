@@ -6,15 +6,15 @@ summary: "Irony says the opposite of what is meant, hyperbole exaggerates and un
 language: maths
 node: [AC9E8LA02 n1, AC9E8LA02 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Three devices. Each one says one thing and means another." }
-hook: "'What lovely weather,' she said, in the pouring rain. Does she mean it?"
+hook: "'Super speedy,' said Dad, watching the snail cross the path. Does he mean it?"
 ---
 Some writing says one thing and means another. Three devices do this:
 
-- **Irony**: saying the opposite of what is meant, so the reader sees the gap. *'What lovely weather,' she said, in the pouring rain.*
-- **Hyperbole**: exaggerating. *The queue stretched to the end of the universe.*
-- **Understatement**: playing down. *'A small hiccup,' said the captain, as the engine exploded.*
+- **Irony**: saying the opposite of what is meant, so the reader sees the gap. *'Super speedy,' said Dad, watching the snail cross the path.*
+- **Hyperbole**: exaggerating. *The soup was hot enough to melt the sun.*
+- **Understatement**: playing down. *'Not my best day,' said the pilot, as the plane lost a wing.*
 
-Each adds a layer beyond the literal words. **Sarcasm** is a sharp kind of irony used to mock someone. Irony does not have to mock anyone.
+Each adds a layer beyond the literal words. **Sarcasm** is a sharp kind of irony used to mock someone. Irony does not have to mock anyone, and it can be a situation that turns out the opposite of what you expect.
 
 ## Predict: does she mean it?
 
@@ -36,7 +36,7 @@ insight: "Labelling six lines by their device shows how each one says one thing 
 try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["Is it making a thing bigger, smaller, or the opposite?", "What would the plain version say?"]
 smaller:
-  check: { type: question, q: "'My bag weighs a tonne.' Which device exaggerates?", options: ["Hyperbole", "Understatement", "Irony"], answer: 0, feedback: [null, "Understatement plays things down.", "Irony says the opposite."], explain: "A bag cannot weigh a tonne. Exaggerating is hyperbole." }
+  check: { type: question, q: "'I could eat a horse.' Which device exaggerates?", options: ["Irony", "Hyperbole", "Understatement"], answer: 1, feedback: ["Irony says the opposite.", null, "Understatement plays things down."], explain: "Nobody can eat a horse. Exaggerating is hyperbole." }
 check: { type: board, text: "Label each line: exaggerates, plays down, or says the opposite.", when: "n_right = 6", explain: "A million times and the end of the universe exaggerate. A bit damp and a small hiccup play down. What lovely weather and I just love getting soaked say the opposite of what is meant." }
 ```
 
@@ -54,20 +54,20 @@ tasks:
       pairs:
         - ["Hyperbole (exaggeration)", "Makes a small thing feel huge"]
         - ["Understatement (playing down)", "Makes a big thing sound small"]
-        - ["Irony (saying the opposite)", "Shows the gap between what is said and what is meant"]
+        - ["Irony (the opposite of what is said or expected)", "Shows the reverse of the surface meaning"]
         - ["Sarcasm", "Irony used to mock someone"]
       explain: "Each device works by a gap between the words and the real size or meaning."
   - check:
       type: sort
-      q: "Is each line irony only, or sarcasm (irony that mocks someone)?"
+      q: "Is each line irony only (an outcome opposite to what you expect), or sarcasm (saying the opposite to mock someone)?"
       options: ["Irony only", "Sarcasm"]
       items:
-        - ["'What a lovely day,' said Ella, soaked in a storm.", "Irony only", "Nobody is mocked."]
         - ["'Great job,' said Sam, as Kim dropped the tray.", "Sarcasm", "It mocks Kim."]
-        - ["'I love waiting,' said the girl in the three-hour queue.", "Irony only", "Nobody is mocked."]
+        - ["A fire station burned down on the day of its safety talk.", "Irony only", "The outcome is the opposite of what you expect. Nobody is mocked."]
+        - ["A pest-control shop was overrun with mice.", "Irony only", "The outcome is the opposite of what you expect. Nobody is mocked."]
         - ["'Nice haircut,' he sneered.", "Sarcasm", "It mocks a person."]
-        - ["'How restful,' sighed the teacher in the noisy hall.", "Irony only", "Nobody is mocked."]
         - ["'Thanks a lot,' she said to the boy who pushed in.", "Sarcasm", "It mocks the boy."]
+        - ["A lifeguard needed rescuing from the pool.", "Irony only", "The outcome is the opposite of what you expect. Nobody is mocked."]
   - check:
       type: bug
       code: "working.txt#nib"
@@ -97,7 +97,7 @@ stage: modify
 insight: "Choosing words to finish a line in the right device shows how the gap is made."
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 hint: ["Is the device playing down or exaggerating?", "What would the plain version be?"]
-check: { type: board, text: "Choose the words that finish each device: understatement first, then exaggeration.", when: "n_gaps_right = 2", explain: "A bit of rain plays down a flood. Longer than the sea exaggerates the line." }
+check: { type: board, text: "Choose the words that finish each device: understatement first, then exaggeration.", when: "n_gaps_right = 2", explain: "A slight breeze plays down a toppled tent. Higher than the sky exaggerates the pile." }
 ```
 
 ## Practise: label the device
@@ -107,7 +107,7 @@ stage: practise
 insight: "Labelling six new lines applies the three devices to fresh examples."
 try: { playground: board, starter: "text.yml#practise", height: 520 }
 hint: ["What is the line doing to the size of the thing?", "Is the speaker saying the opposite?"]
-check: { type: board, text: "Label each line: exaggerates, plays down, or says the opposite.", when: "n_right = 6", explain: "A tonne and I'd die for exaggerate. A trifle warm and a little rain play down. Perfect timing and How exciting say the opposite of what is meant." }
+check: { type: board, text: "Label each line: exaggerates, plays down, or says the opposite.", when: "n_right = 6", explain: "A tonne and I'd die for exaggerate. A trifle warm and a minor wobble play down. Perfect timing and How exciting say the opposite of what is meant." }
 ```
 
 ## Make: a scene with devices
@@ -136,7 +136,7 @@ check: { type: reflect, text: "I found a real example of irony, exaggeration or 
 ```step
 stage: make
 tier: wider
-insight: "Writing a one-line headline with a device applies layered meaning to satire at the same level."
+insight: "Writing a one-line headline with a device applies layered meaning to funny writing at the same level."
 check:
   type: reasoning
   q: "Write a one-line headline for a made-up school news story that uses exaggeration. Say what is being made fun of and which word does it."
@@ -147,5 +147,5 @@ check:
     - title: "A different view that also works"
       text: "'Principal announces the biggest storm in history: a light shower.' It makes fun of overreacting to a small shower."
   criteria: ["I wrote a headline.", "I said what it makes fun of.", "I named the word that does the exaggerating."]
-  explain: "Satire uses devices to show a point while entertaining."
+  explain: "Funny writing can use devices to make a point while entertaining."
 ```

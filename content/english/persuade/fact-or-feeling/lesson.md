@@ -2,18 +2,18 @@
 order: 1
 unit: warmup
 title: "Fact or feeling?"
-summary: "A fact can be checked. An opinion shows what a writer thinks or feels. Thinking words (I think, I believe) and feeling words (wonderful, horrible) give an opinion away. Reports use plain words, numbers and verbs such as found or shows. Any kind of text can be factual or opinionated, depending on its purpose."
+summary: "A fact can be checked. An opinion shows what a writer thinks or feels. Thinking words (I think, I believe) and feeling words (terrific, awful) give an opinion away. Reports use plain words, numbers and verbs such as found or shows. Any kind of text can be factual or opinionated, depending on its purpose."
 language: maths
 node: [AC9E4LA02 n1, AC9E4LA02 n2, AC9E4LA02 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "One school fair, two sentences. One can be checked and one shows what the writer feels." }
-hook: "'The soup had 4 vegetables.' 'The soup was disgusting.' Which one could you check with a spoon and a list?"
+hook: "'The play ran for 40 minutes.' 'The play was tedious.' Which one could you check with a clock?"
 ---
 A **fact** can be checked. An **opinion** shows what someone thinks or feels, and people can disagree with it.
 
 Opinions leave clues:
 
 - **Thinking words** such as *I think*, *I believe* and *in my view*.
-- **Feeling words** such as *wonderful*, *horrible* and *boring*.
+- **Feeling words** such as *terrific*, *awful* and *dull*.
 
 Facts are usually written with plain words and numbers. Writers who report what they found often use words such as *found*, *shows* and *reports*. Which one a writer uses depends on what the text is for, not on whether it is a report or a review.
 
@@ -21,7 +21,7 @@ Facts are usually written with plain words and numbers. Writers who report what 
 
 ```step
 stage: predict
-insight: "Predicting which sentence gives an opinion previews that words like 'too many' judge, where a number only counts."
+insight: "Predicting which sentence gives an opinion previews that some words judge a number, where a number alone only counts."
 check:
   type: predict
   q: "Which sentence gives the writer's opinion?"
@@ -41,7 +41,7 @@ smaller:
 check: { type: board, text: "Label each sentence: fact or opinion.", when: "n_right = 6", explain: "Raised $840, forty students and finished at 3 pm can be checked, so they are facts. The best day, too crowded and horrible show what the writer thinks or feels." }
 ```
 
-Which one surprised you? 'Too crowded' sounds like a fact, but crowded for whom?
+Which one surprised you? Which could two people disagree about?
 
 ## Worked example: which words give it away?
 
@@ -71,9 +71,9 @@ tasks:
   - check:
       type: question
       q: "Which text could use plain, checkable language?"
-      options: ["Only a science report", "Any kind of text, such as a review that lists the measurements", "Only a news article"]
-      answer: 1
-      feedback: ["Many other texts can list facts too.", null, "News articles also include opinions, such as quotes."]
+      options: ["Only a news article", "Only a science report", "Any text, such as a review that lists measurements"]
+      answer: 2
+      feedback: ["News articles also include opinions, such as quotes.", "Many other texts can list facts too.", null]
       explain: "Any text can mix facts and opinions. The writer's purpose decides which words to use."
 ```
 
@@ -116,10 +116,10 @@ stage: make
 insight: "Writing facts and then an opinion about one place puts the two kinds of language to use."
 try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What facts can you count or check about the place?", "What do you think of it?"]
-check: { type: board, text: "Write at least four sentences about a place at school: three facts, then your opinion starting with I think.", when: "n_sentences >= 4 and n_first >= 1", explain: "You wrote facts and an opinion. Ask a partner to point to the sentence they could check, and the one they could argue with." }
+check: { type: board, text: "Write at least four sentences about a place at school: three facts, then your opinion (use at least one word such as I, my or we).", when: "n_sentences >= 4 and n_first >= 1", explain: "You wrote facts and an opinion. Ask a partner to point to the sentence they could check, and the one they could argue with." }
 ```
 
-The board counts sentences and the word I. Whether your facts can be checked is for you and a partner to judge.
+The board counts sentences and the words I, me, my, we, us and our. Whether your facts can be checked is for you and a partner to judge.
 
 ## In your own writing
 

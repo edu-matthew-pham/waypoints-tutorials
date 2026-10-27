@@ -23,7 +23,7 @@ s quality: The map on the cover is beautifully drawn.
 
 # region: vary
 widget: cohesion
-p: Maya is loyal: [[{she waits at the cave for hours|she wears a blue coat|the book has twelve chapters}=she waits at the cave for hours]].
+p: Ana is generous: [[{she wears a blue coat|the book has twelve chapters|she gives half her lunch to a hungry stranger}=she gives half her lunch to a hungry stranger]].
 p: The setting is eerie: [[{the author lives in a city|the fog hides the path and every sound echoes|the story is long}=the fog hides the path and every sound echoes]].
 # endregion
 
@@ -59,7 +59,7 @@ role character: What I think of a person's actions
 role quality: How good the thing is
 s feeling: I was delighted.
 para:
-s character: The captain was generous.
+s character: The captain was honest.
 para:
 s quality: The song is catchy.
 # endregion

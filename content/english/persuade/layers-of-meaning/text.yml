@@ -8,23 +8,23 @@ roles: big small opposite
 role big: Exaggerates
 role small: Plays down
 role opposite: Says the opposite
+s opposite: 'What lovely weather,' she said, shaking the rain off her coat.
+para:
 s big: I've told you a million times to close the gate.
 para:
 s small: 'It's a bit damp,' said the sailor, as the boat sank.
 para:
-s opposite: 'What lovely weather,' she said, shaking the rain off her coat.
-para:
-s big: The queue stretched to the end of the universe.
-para:
 s small: 'A small hiccup,' said the captain, as the engine exploded.
 para:
 s opposite: 'I just love getting soaked,' he said, running for cover.
+para:
+s big: The queue stretched to the end of the universe.
 # endregion
 
 # region: vary
 widget: cohesion
-p: The flood reached the roof, and the farmer called it [[{a bit of rain|the end of the world|a miracle}=a bit of rain]].
-p: The queue was [[{a little long|longer than the sea|short}=longer than the sea]].
+p: The tent blew over in the night, and Dad called it [[{the end of the world|a slight breeze|the worst storm ever}=a slight breeze]].
+p: The homework pile was [[{higher than the sky|a small stack|short}=higher than the sky]].
 # endregion
 
 # region: practise
@@ -39,11 +39,11 @@ s big: My bag weighs a tonne.
 para:
 s small: 'It is a trifle warm,' said the explorer, in the desert at noon.
 para:
-s opposite: 'Perfect timing,' groaned Lee, as the bus pulled away.
-para:
 s big: I'd die for a sandwich right now.
 para:
-s small: 'We have had a little rain,' said the farmer, standing in a flooded field.
+s opposite: 'Perfect timing,' groaned Lee, as the bus pulled away.
+para:
+s small: 'A minor wobble,' said the climber, hanging from the cliff.
 para:
 s opposite: 'How exciting,' she yawned, at the end of the three-hour talk.
 # endregion
@@ -73,7 +73,7 @@ role small: Plays down
 role opposite: Says the opposite
 s big: The line was a mile long.
 para:
-s small: 'A little spill,' he said, beside the flood.
+s small: 'Just a scratch,' she said, holding a broken arm.
 para:
 s opposite: 'Lovely,' she said, in the traffic jam.
 # endregion

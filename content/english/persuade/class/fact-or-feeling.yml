@@ -24,4 +24,5 @@ questions:
     q: "Which sentence can be checked?"
     options: ["The pool is cold.", "The pool is 25 metres long.", "The pool is the best."]
     answer: 1
+    feedback: ["Cold is a feeling, not a measurement.", null, "Best is a view."]
     explain: "A length can be measured. Cold and best are views."

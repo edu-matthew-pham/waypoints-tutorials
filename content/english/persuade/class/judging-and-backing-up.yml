@@ -22,6 +22,7 @@ questions:
     title: "Which backs it?"
     type: question
     q: "Which backs up \"The story is tense\"?"
-    options: ["The story has twelve chapters", "The door creaked and no one moved", "The author lives by the sea"]
-    answer: 1
+    options: ["The story has twelve chapters", "The author lives by the sea", "The door creaked and no one moved"]
+    answer: 2
+    feedback: ["It counts chapters. It shows nothing about tension.", "It is about the author, not the story.", null]
     explain: "A tense moment shows tension."

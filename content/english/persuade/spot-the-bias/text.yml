@@ -8,30 +8,30 @@ roles: pro anti plain
 role pro: Favours the ban
 role anti: Against the ban
 role plain: Neutral
-s pro: The council wisely voted to ban phones.
-para:
 s plain: The council voted to ban phones on Tuesday.
 para:
-s anti: The council's heavy-handed ban left students without a lifeline.
+s anti: Students were forced to surrender their phones.
+para:
+s pro: The council wisely voted to ban phones.
 para:
 s plain: Phones will be handed in at the office each morning.
 para:
-s pro: The ban finally brings calm to our noisy corridors.
+s anti: The council's heavy-handed ban left students without a lifeline.
 para:
-s anti: Students were forced to surrender their phones.
+s pro: The ban finally brings calm to our noisy corridors.
 # endregion
 
 # region: vary
 widget: cohesion
 p: The council [[{rammed through|decided|sneaked in}=decided]] a new phone rule on Tuesday.
-p: [[{Angry mob|Some parents|Pesky parents}=Some parents]] disagreed with the rule.
+p: [[{Some parents|Angry mob|Pesky parents}=Some parents]] disagreed with the rule.
 # endregion
 
 # region: practise
 widget: cohesion
 mode: chain
 colours: 2
-p: The council's [[thoughtful#a]] plan will protect learning, but the [[harsh#b]] rule leaves students [[powerless#b]]. Supporters call it a [[sensible#a]] step. The rule starts on Monday.
+p: The council's [[thoughtful#a]] plan begins next term, but the [[harsh#b]] rule leaves students [[powerless#b]]. Supporters call it a [[sensible#a]] step. The rule starts on Monday.
 # endregion
 
 # region: make
