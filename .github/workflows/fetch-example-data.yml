@@ -1,0 +1,134 @@
+name: Fetch example data (manual)
+
+# Runs only when started by hand: Actions tab > Fetch example data (manual) > Run workflow. No other trigger.
+# Downloads two public datasets from their official homes and commits a small, seeded subset to the orphan branch
+# `example-data` (never main, never gh-pages), so a Claude sandbox (which cannot reach these hosts) can train the
+# Pattern Detector brief B and C example models from them. Re-running replaces the branch's contents.
+#   - Rock Paper Scissors (Laurence Moroney; computer-generated hands; CC BY 4.0)
+#   - Speech Commands v0.02 (Pete Warden, Google; CC BY 4.0)
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Random seed for the subset"
+        default: "1"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Download the official files
+        run: |
+          set -e
+          mkdir -p raw && cd raw
+          curl -fsSL -o rps.zip https://storage.googleapis.com/download.tensorflow.org/data/rps.zip
+          curl -fsSL -o rps-test-set.zip https://storage.googleapis.com/download.tensorflow.org/data/rps-test-set.zip
+          curl -fsSL -o sc.tar.gz http://download.tensorflow.org/data/speech_commands_v0.02.tar.gz
+          sha256sum rps.zip rps-test-set.zip sc.tar.gz | tee ../sha256.txt
+          unzip -q rps.zip && unzip -q rps-test-set.zip
+          mkdir sc && tar -xzf sc.tar.gz -C sc
+
+      - name: Take a seeded subset
+        env:
+          SEED: ${{ inputs.seed }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, random, shutil, wave
+          seed = int(os.environ.get("SEED") or 1)
+          R = "raw"; OUT = "out"
+          shutil.rmtree(OUT, ignore_errors=True)
+          picked = {"seed": seed}
+
+          def take(src_dir, n, rng):
+              files = sorted(f for f in os.listdir(src_dir) if not f.startswith("."))
+              return rng.sample(files, min(n, len(files)))
+
+          # Rock Paper Scissors: 60 training pictures per class from the training set, 30 test pictures from the
+          # separate test set (different hands, made separately).
+          rng = random.Random(seed)
+          for split, src, n in (("train", f"{R}/rps", 60), ("test", f"{R}/rps-test-set", 30)):
+              for cls in ("rock", "paper", "scissors"):
+                  os.makedirs(f"{OUT}/rps/{split}/{cls}", exist_ok=True)
+                  for f in take(f"{src}/{cls}", n, rng):
+                      shutil.copy(f"{src}/{cls}/{f}", f"{OUT}/rps/{split}/{cls}/{f}")
+                      picked.setdefault(f"rps/{split}/{cls}", []).append(f)
+
+          # Speech Commands: four command words. Training clips come from the official training speakers and test
+          # clips from the official testing list, so no speaker is in both. One clip per speaker per word.
+          sc = f"{R}/sc"
+          testing = set(open(f"{sc}/testing_list.txt").read().split())
+          validation = set(open(f"{sc}/validation_list.txt").read().split())
+          def speaker(f): return f.split("_nohash_")[0]
+          def clips(word, want_test):
+              out, seen = [], set()
+              for f in sorted(os.listdir(f"{sc}/{word}")):
+                  rel = f"{word}/{f}"
+                  if (rel in testing) != want_test or rel in validation or speaker(f) in seen:
+                      continue
+                  seen.add(speaker(f)); out.append(f)
+              return out
+          rng = random.Random(seed)
+          for word in ("go", "stop", "up", "down"):
+              for split, n in (("train", 50), ("test", 25)):
+                  os.makedirs(f"{OUT}/speech/{split}/{word}", exist_ok=True)
+                  for f in rng.sample(clips(word, split == "test"), n):
+                      shutil.copy(f"{sc}/{word}/{f}", f"{OUT}/speech/{split}/{word}/{f}")
+                      picked.setdefault(f"speech/{split}/{word}", []).append(f)
+          # Words the app was not trained on, test only: 25 from the testing list across six other words.
+          others = []
+          for word in ("yes", "no", "left", "right", "on", "off"):
+              others += [(word, f) for f in clips(word, True)]
+          os.makedirs(f"{OUT}/speech/test/other-words", exist_ok=True)
+          for word, f in rng.sample(others, 25):
+              shutil.copy(f"{sc}/{word}/{f}", f"{OUT}/speech/test/other-words/{word}_{f}")
+              picked.setdefault("speech/test/other-words", []).append(f"{word}/{f}")
+          # Background noise: one-second slices. Training from five of the six recordings, test from the sixth.
+          def slices(name, n, split):
+              w = wave.open(f"{sc}/_background_noise_/{name}")
+              rate, frames = w.getframerate(), w.getnframes()
+              data = w.readframes(frames); width = w.getsampwidth(); ch = w.getnchannels()
+              os.makedirs(f"{OUT}/speech/{split}/background", exist_ok=True)
+              for k in range(n):
+                  start = rng.randrange(0, frames - rate)
+                  chunk = data[start * width * ch:(start + rate) * width * ch]
+                  out = wave.open(f"{OUT}/speech/{split}/background/{name[:-4]}_{start}.wav", "wb")
+                  out.setnchannels(ch); out.setsampwidth(width); out.setframerate(rate); out.writeframes(chunk); out.close()
+                  picked.setdefault(f"speech/{split}/background", []).append(f"{name}@{start}")
+          for name in ("doing_the_dishes.wav", "dude_miaowing.wav", "exercise_bike.wav", "pink_noise.wav", "white_noise.wav"):
+              slices(name, 10, "train")
+          slices("running_tap.wav", 25, "test")
+          json.dump(picked, open(f"{OUT}/selection.json", "w"), indent=1)
+          EOF
+          cp sha256.txt out/
+          cat > out/README.md <<'EOF'
+          # Example data for Pattern Detector briefs B and C
+
+          Made by the manual workflow `.github/workflows/fetch-example-data.yml` on `main`: a small, seeded subset
+          (`selection.json`) of two public datasets, downloaded from their official homes (`sha256.txt`). Not served by
+          the site. Used to train the brief B and C example models in the Pattern Trainer.
+
+          - `rps/`: **Rock Paper Scissors** by Laurence Moroney, CC BY 4.0
+            (https://laurencemoroney.com/datasets.html; files from download.tensorflow.org/data/rps.zip and
+            rps-test-set.zip). Computer-generated hands. `train/`: 60 per class from the training set. `test/`: 30 per
+            class from the separate test set.
+          - `speech/`: **Speech Commands v0.02** by Pete Warden (Google), CC BY 4.0
+            (https://arxiv.org/abs/1804.03209; file from download.tensorflow.org/data/speech_commands_v0.02.tar.gz).
+            `train/`: 50 clips each of go, stop, up and down from the training speakers (one clip per speaker), and
+            50 one-second slices of five background-noise recordings. `test/`: 25 clips per word from the official
+            testing speakers, 25 clips of six other words (`other-words/`), and 25 slices of a sixth noise recording.
+          EOF
+          du -sh out; find out -type f | wc -l
+
+      - name: Commit to the example-data branch
+        run: |
+          cd out
+          git init -q -b example-data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Example data subset (seed ${{ inputs.seed }}) from rps and Speech Commands v0.02"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" example-data
