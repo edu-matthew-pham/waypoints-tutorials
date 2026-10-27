@@ -273,3 +273,172 @@ projects:
       **A sample reflection** (strong): "When I tried a photo of myself leaning the other way, it said Upright and was 99% sure. My training photos all had me leaning to the left, so it never learned that leaning right is also leaning. I added 15 photos leaning right, retrained, and it now says Leaning at 0.94. My cut-off is 0.90 because my wrong answers on new people were all under 0.85 and my right ones all over 0.93. A simple rule would do better at telling whether my shoulders are level, because I can measure that exactly and explain it, and the model can only guess. If my app is wrong, someone with a sore back might think their posture is fine, so I made it say 'not sure' instead of guessing, and I tell the user it is only a reminder."
 
       **What a weaker reflection looks like:** "My app works well and the confidence was high." Ask: on which input did you not expect it to work, and what happened?
+  - id: combined
+    title: "C. Combined pattern detector"
+    goal: |
+      Build a Python app where **a trained model recognises something, and rules you write decide what to do about it.**
+
+      Each part does the job it is best at. The model handles the messy, real-world input, such as a photo, a pose or a sound. The rules handle the parts you can describe exactly: counting, scoring, looking things up, and deciding what to do when the model is not sure.
+
+      **Before you start:** you have built one rules-based app (project A) and one trained app (project B).
+
+      The parts fit together like this:
+
+      `input → trained model → label + how sure → your rules → response`
+
+      Your rules should use how sure the model is, not only its label. What does your app do when it is not sure?
+
+      Before you start, write one sentence: **who is it for, and what will it tell or do for them?**
+
+      **What to hand in**
+
+      - Your app: the `.py` file, your model file and any data files.
+      - A pipeline diagram, with the reason each part is a model or rules.
+      - A testing record for each part on its own and for the whole app, including inputs where the model was unsure or wrong.
+      - A reflection: which part caused the most problems, what you would change, and who could be affected if your app got it wrong.
+
+      **Check your app before you hand it in**
+
+      - **Clear result**, in words your user understands.
+      - **Honest about how sure it is**: low-confidence results are handled, not hidden.
+      - **Useful response** that needs both parts: take either part away and the response gets worse.
+      - **Fits your user**: settings or options they can change.
+      - **Tested** as a whole, not just part by part.
+
+      **Good habits.** Only record yourself, or people who have said yes. Check what is behind you before you record. Your pictures and sounds stay on your computer.
+    uses: [param, dict, and-or, return-value]
+    links:
+      - { label: "Pattern Trainer", href: "https://tools.learningwaypoints.com/trainer/", note: "collect examples, train, check, and download your model file" }
+      - { label: "The Pattern Trainer guide", href: "https://tools.learningwaypoints.com/trainer/guide.html", note: "collecting examples, training and checking, step by step" }
+      - { label: "Set up the starters (once per computer)", href: "https://github.com/edu-matthew-pham/pattern-detector-starters#set-up-once", note: "Python 3, then one install" }
+      - { label: "image_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/image_pattern_trainer.py", note: "the model part, for pictures" }
+      - { label: "pose_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/pose_pattern_trainer.py", note: "the model part, for body poses" }
+      - { label: "audio_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/audio_pattern_trainer.py", note: "the model part, for sounds" }
+      - { label: "choice_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/choice_rules.py", note: "a rules part: numbers and choices" }
+      - { label: "sound_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/sound_rules.py", note: "a rules part for sound: loudness and which note it is (uses measure.py)" }
+    example: combined-posture-streak.py
+    benchmark:
+      - { file: combined-finished-1.png, caption: "A posture break reminder: the model reads each photo, and rules count leaning checks in a row before suggesting a break." }
+      - { file: combined-finished-2.png, caption: "A secret knock door: the model hears each sound, and rules check the last three sounds against the secret pattern." }
+    reveal: true
+    milestones:
+      - text: "My problem and my user are clear, and my pipeline is drawn, with the reason each part is a model or rules."
+        hints:
+          - "Start with one sentence: who is it for, and what will it tell or do for them? Then say what the response needs that a model alone, or rules alone, could not give."
+          - "Draw boxes for the input, the model, the label and how sure it is, your rules, and the response. Put an arrow wherever one part hands something to the next."
+          - "Under each box, write why it is a model or rules. If you can describe it exactly, it is probably rules. If it is too messy to describe, it is probably the model."
+        way: |
+          # Pipeline:
+          #   photo -> MODEL (label + how sure) -> RULES (streak, cut-off, break) -> advice
+          #   MODEL: telling Upright from Leaning in a photo is too messy for rules.
+          #   RULES: counting checks in a row and choosing when to speak is exact.
+      - text: "I built and tested each part on its own."
+        hints:
+          - "Get your model part working first, from the closest trainer starter, and check what it says on a few inputs it has not seen."
+          - "Write your rules as a function that takes the model's answer as inputs, so you can test it with made-up labels and scores before the model is connected."
+          - "Make up the awkward readings on purpose: unsure, nobody there, and the same answer many times in a row. Write what you expect before you run them."
+        way: |
+          assert run([("Leaning", 0.97)] * 3) == (3, "Leaning for a while")
+          assert run([("Leaning", 0.97)] * 2 + [("Upright", 0.97)]) == (0, "Upright")  # upright resets it
+          assert run([("Leaning", 0.97)] * 2 + [("Leaning", 0.70)]) == (2, "Not sure")  # unsure changes nothing
+      - text: "I joined the parts, and my rules use how sure the model is."
+        hints:
+          - "Call the model first, then pass its label and its confidence to your rules function."
+          - "Decide what your rules do below your cut-off: ignore the answer, ask again, or say so. Whichever you choose, the user should be able to tell."
+          - "If your rules remember something between checks (a count, a score, a list), keep it in one place and change it in one place."
+        way: |
+          label, score = model.top(image)           # the MODEL part
+          streak = next_streak(streak, label, score)  # the RULES part
+          headline, advice = reply(streak, label, score, int(limit))
+      - text: "I tested the joins, including when the model was unsure or wrong, and I can say who would be affected."
+        hints:
+          - "Test the whole app on a run of inputs, not one at a time, and include one the model is unsure about and one it gets wrong."
+          - "Ask of each join: what does the rest of my app do with this answer? A confident wrong answer looks exactly like a confident right one, so what do your rules do with it?"
+          - "Decide who is affected if the app is wrong, and whether they would know. Then change one thing so the app handles it better, and test again."
+        way: |
+          if label is None or score < CUTOFF:
+              return streak
+    stretch:
+      - "Add a second setting your user can change, and test both settings across a whole run of inputs."
+      - "Make your rules less trusting: act on an answer only after it has repeated, and show in your testing record that one wrong answer no longer changes the result."
+      - "Swap the model part for a different mode (poses, pictures or sounds) and keep the rules, and note what you had to change."
+      - "Ideas to start from: a recipe helper, a singing or playing coach, a language revision game, a workout timer that counts only good form, or a local recycling guide."
+    teacher: |
+      **What this project is.** The joined-up half of the set. Project A used rules and project B used a trained model; here a model feeds rules. The learning is in the joins: what the rules do with the model's label and confidence, and what happens when the model is unsure or confidently wrong. A strong project cannot work with either part taken away.
+
+      **Running it.** Same as project B: students train in the browser-based Pattern Trainer, download a model file, and run a starter on their own laptop, adding rules of their own. Run an unchanged starter with its sample model on a school laptop beforehand. The "Check before class" and "For your IT team" notes in project B apply here too.
+
+      **When to offer it.** After students have built one app of each kind, since the pipeline diagram only makes sense when they have met both a rule and a trained model. If a class has done only A or only B, offer it as an extension.
+
+      **What to change when you adapt it**
+
+      - *Problem and user.* Students choose, or you set a shared context. Say which in the brief you hand out.
+      - *The model part.* Offer pictures, poses and sounds, or narrow it. Students may reuse the model they trained for project B.
+      - *The rules part.* The starters give simple examples to build from (`choice_rules.py`, `sound_rules.py`, `measure.py`); students may also write their own from scratch.
+      - *State.* Many good ideas need the app to remember something between checks (a streak, a score, a list), which Gradio keeps with `gr.State` as in the example. Offer a worked example in class if students have not met it, or pick ideas that avoid it.
+      - *Live video or sound.* The starters carry an optional live version. It runs the model on every frame, so test the speed on your laptops first.
+      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt. Change `uses:` in `projects.yml` if you want other skills.
+      - *Check your app.* This is the success criteria. Reword a line, add your own, or remove one. The marking points below follow the same order.
+      - *Hand-in.* Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student's own words on the hardest part.
+      - *Help.* Hints are on offer to everyone. "Show one way" opens after the milestones before it are ticked or every hint for it has been used. Both are listed as **Help used** on the card. Set `reveal: false` (or remove `reveal:`) to turn "Show one way" off.
+
+      **Marking points to look for** (replace with your own criteria):
+
+      - *Clear result.* Words the named user would understand, not a label and a number.
+      - *Honest about how sure it is.* Low confidence changes what the app does, and the user can tell. In the example, an unsure answer is not counted and the app says so.
+      - *Useful response that needs both parts.* Ask: "If I removed the model, what would the app do? If I removed the rules?" In the example, the model alone can only say Leaning or Upright, and the rules alone have nothing to count.
+      - *Fits the user.* A setting the user can change (the leaning limit in the example), and the student can say why.
+      - *Tested as a whole.* A record of runs of inputs through the whole app, not only one input at a time, with at least one unsure case and at least one wrong case, and what the student did about each.
+      - *Pipeline diagram.* Shows both parts and the hand-off between them, and gives a reason for each part, not just labels.
+      - *Reflection.* Names the part that caused the most trouble, a real input that broke a join, and who would be affected.
+
+      **Usual mistakes, and a question to ask.**
+
+      - *A model with a few rules stuck on the end.* The rules only rename the label. Ask: "What does the rules part know that the model does not?"
+      - *Ignoring confidence.* The app takes the label at face value. Ask: "What happens when the model is 60% sure?"
+      - *Testing the parts but not the joins.* Each part passes on its own, but the app fails together. Ask: "What is the first input that makes them disagree?"
+      - *Trusting a confident wrong answer.* A rule acts on every label as if it were true. Ask: "What does your app do if the model is sure and wrong?"
+      - *A pipeline diagram that is decoration.* It shows boxes but gives no reasons. Ask: "Why is this part not the other kind?"
+      - *Forgetting what the app remembers.* A count that never resets, or resets at the wrong time. Ask: "When does this go back to zero?"
+
+      **Ways it could look.** Students see two screenshots of finished apps where the model feeds the rules in different ways (a posture break reminder that counts leaning checks in a row, and a secret knock door that checks the last three sounds against a pattern): output only, never code. Both were made with the sample models and test files in the starters, so a model of your students' own will behave differently. In the first, the photo is hidden. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
+
+      **The example below** is one complete combined app: a posture break reminder on the starters' sample pose model. The model decides Upright or Leaning; the rules count leaning checks in a row (an unsure check changes nothing, an Upright check resets it), speak only past a limit the user sets, and are tested on their own with made-up readings before they are joined to the model. To run it, copy it into the starters folder beside `pattern_model.py` and the sample model, and run it like a starter. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
+
+      **A filled-in testing record** (the example app on the starters' sample test photos and changed copies of them; cut-off 0.90, limit 3; yours will look different):
+
+      *Rules on their own (made-up readings)*
+
+      | Readings in order | I expected | The rules said |
+      |---|---|---|
+      | Leaning (0.97) three times | streak 3, break message | streak 3, "Leaning for a while" |
+      | Leaning twice, then Upright | streak 0 | streak 0, "Upright" |
+      | Leaning twice, then Leaning at 0.70 | streak stays 2 | streak 2, "Not sure" |
+      | Leaning twice, then nobody found | streak stays 2 | streak 2, "I can't see you" |
+      | Leaning twice, limit set to 2 | break message | "Leaning for a while" |
+
+      *Model on its own*
+
+      | I tried | I expected | The model said | How sure |
+      |---|---|---|---|
+      | `person_upright.jpg` | Upright | Upright | 0.995 |
+      | `person_leaning.jpg` | Leaning | Leaning | 0.9996 |
+      | upright, mirrored | Upright | Leaning | 0.53 |
+      | leaning, mirrored (the other way) | Leaning | **Upright** | 0.9997 |
+      | `cat.jpg` | nobody | nobody found | n/a |
+
+      *The whole app, in runs of four checks*
+
+      | Run | Streak after each check | The app said at the end | Notes |
+      |---|---|---|---|
+      | leaning, leaning, leaning | 1, 2, 3 | "Leaning for a while" | ok |
+      | leaning, leaning, mirrored upright, leaning | 1, 2, 2, 3 | "Leaning for a while" | the unsure photo (0.53) was not counted, so it did not reset or add |
+      | leaning, leaning, upright, leaning | 1, 2, 0, 1 | "Leaning" | upright resets it |
+      | leaning, leaning, cat photo, leaning | 1, 2, 2, 3 | "Leaning for a while" | nobody found does not reset it: a design choice to discuss |
+      | leaning, leaning, **mirrored leaning**, leaning | 1, 2, **0**, 1 | "Leaning" | **the model was sure (0.9997) and wrong, so the streak reset and the reminder never came** |
+
+      The last run is the point of the project: every part passes on its own, and the whole app still fails, because the rules trust a confident wrong answer. Students may fix it in different ways (reset only after two Upright answers in a row, or a second check), and a fix that makes the rules less trusting is worth marking up. Note that the sample "Leaning" class is the upright photo tilted one way, so the sample model has learned that one tilt only.
+
+      **A sample reflection** (strong): "The model part caused the most trouble, but the real problem was where my rules trusted it. In my test run a photo of me leaning the other way was called Upright with 99% confidence, and my rules reset the streak, so the break reminder never came. Testing the model and the rules separately both passed. It only showed up when I ran four photos through the whole app. I changed the rules so the streak only resets after two Upright answers in a row, and retested the same run: the single wrong Upright no longer reset anything, and the reminder came on the fourth check, as it should have. If my app is wrong, someone could sit leaning for an hour without being told, so I made it say 'not sure' instead of guessing, and I say it is only a reminder."
+
+      **What a weaker reflection looks like:** "It works well and the model and the rules work together." Ask: which input did you expect to break it, and what happened?

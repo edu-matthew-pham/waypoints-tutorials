@@ -70,7 +70,7 @@ gr.Interface(
     title="Posture reminder",
     description="A photo of you at your desk, and a gentle reminder if you are leaning.",
     flagging_mode="never",
-).launch(server_port=7864, show_error=True)
+).launch(show_error=True)
 
 # Testing record (the sample model, cut-off 0.90; the full table is in the teacher notes):
 # I tried                      I expected   It said    How sure
