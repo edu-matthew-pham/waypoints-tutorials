@@ -688,7 +688,7 @@ const BACKFROM_HTML = `<p class="wpt-backfrom" hidden></p><script>(function(){tr
   `p.appendChild(l);p.hidden=false}}catch(e){}})();</script>`;
 function linksHtml(cl) {
   if (!cl) return '';
-  const a = (x) => `<a href="${esc(x.href)}" title="${esc(x.label)}">${esc(x.title)}</a> <span class="clw">(${esc(x.where)})</span>`;
+  const a = (x) => `<a href="${esc(x.href)}" title="${esc(x.label)}">${esc(x.title)}</a> <span class="clw">(${esc(x.where)}${x.reason ? ` · ${x.kind === 'idea' ? 'idea' : 'teaches'}: ${esc(x.reason)}` : ''})</span>`;
   const row = (name, xs) => (xs.length ? `<p><b>${name}:</b> ${xs.map(a).join(' · ')}</p>` : '');
   const seen = new Set(), before = [...(cl.catchUp || []), ...(cl.on || []), ...(cl.prior || [])].filter((x) => !seen.has(x.href) && seen.add(x.href));
   const back = before.length ? `<p class="wpt-prior"><b>What you should already know:</b> ${before.map(a).join(' · ')}</p>` : '';

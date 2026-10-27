@@ -4,8 +4,9 @@
 //
 // Two sources, both data the site already has; no guessing from titles or order alone:
 // - Progression nodes (maths, science, Digital systems, English): the node before this one in the same descriptor,
-//   or for node 1 the descriptor's prior knowledge, plus `uses:` (the same rule as the node check in progressions.mjs).
-//   A dependency links to a lesson tagged with that node (for a whole descriptor, the lesson with its highest node).
+//   plus `uses:` (the node check's rule in progressions.mjs, minus its "prior knowledge" step: a descriptor's prior list
+//   is broad, and Matthew chose the narrower links on 27 Oct 2026). A dependency links to a lesson tagged with that node
+//   (for a whole descriptor named in `uses:`, the lesson with its highest node).
 // - Code concepts (CONCEPTS languages): each idea the lesson's code uses or `assumes:` links to the earlier lesson that
 //   `introduces:` it (same language, as concepts.mjs auditConcepts decides "earlier").
 // Never linked: a lesson that comes later (same course, or a course that follows this one), a challenge-unit lesson
@@ -28,7 +29,8 @@ export function challengeTest(loadDirMeta, root) {
   return (l) => { const u = unitOf(course(l.slug)); return !!u && l.unit === u; };
 }
 
-/** slug -> [{ slug, label }] (label: what that lesson teaches that this one needs). */
+/** slug -> [{ slug, label, kind }] (label: what that lesson teaches that this one needs; kind: 'node' for a curriculum
+ *  node, 'idea' for a code idea found by the concept scan. Code has no standards tags, so its big ideas stand in). */
 export function priorLessons(lessons, { data, prereqs, read, isChallenge = () => false }) {
   const pos = new Map(lessons.map((l, i) => [l.slug, i]));
   const sameCourseLater = (e, l) => course(e.slug) === course(l.slug) && (e.order ?? 0) >= (l.order ?? 0);
@@ -53,7 +55,7 @@ export function priorLessons(lessons, { data, prereqs, read, isChallenge = () =>
   for (const l of lessons) {
     if (isCatchUp(l)) continue;
     const found = new Map();   // slug -> { lesson, labels: Set, score }
-    const add = (e, label, w = 1) => { if (!allowed(e, l)) return; const f = found.get(e.slug) || { lesson: e, labels: new Set(), score: 0 }; if (!f.labels.has(label)) { f.labels.add(label); f.score += w; } found.set(e.slug, f); };
+    const add = (e, label, w = 1, kind = 'node') => { if (!allowed(e, l)) return; const f = found.get(e.slug) || { lesson: e, labels: new Set(), kinds: new Set(), score: 0 }; if (!f.labels.has(label)) { f.labels.add(label); f.kinds.add(kind); f.score += w; } found.set(e.slug, f); };
 
     // Progression nodes.
     const mine = list(l.node).map(parseRef).filter((r) => r?.n);
@@ -61,7 +63,6 @@ export function priorLessons(lessons, { data, prereqs, read, isChallenge = () =>
     const deps = [];
     for (const r of mine) {
       if (r.n > 1) deps.push({ code: r.code, n: r.n - 1 });
-      else for (const c of data.get(r.code)?.prior || []) deps.push({ code: c, n: null });
     }
     for (const s of list(l.uses)) { const r = parseRef(s); if (r) deps.push(r); }
     for (const d of deps) {
@@ -85,12 +86,12 @@ export function priorLessons(lessons, { data, prereqs, read, isChallenge = () =>
       const need = [...new Set([...used, ...list(l.assumes).filter((id) => !theoryIds.has(id))])].filter((id) => !skip.has(id));
       for (const id of need) {
         const by = (introBy.get(id) || []).filter((e) => e.language === l.language && before(e, l));
-        if (by.length) add(by[by.length - 1], label(id));
+        if (by.length) add(by[by.length - 1], label(id), 1, 'idea');
       }
     }
 
     const ranked = [...found.values()].sort((a, b) => b.score - a.score || (pos.get(b.lesson.slug) ?? 0) - (pos.get(a.lesson.slug) ?? 0));
-    if (ranked.length) out.set(l.slug, ranked.slice(0, MAX_PRIOR).map((f) => ({ slug: f.lesson.slug, label: [...f.labels].join(', ') })));
+    if (ranked.length) out.set(l.slug, ranked.slice(0, MAX_PRIOR).map((f) => ({ slug: f.lesson.slug, label: [...f.labels].join(', '), labels: [...f.labels], kind: f.kinds.has('idea') && !f.kinds.has('node') ? 'idea' : 'node' })));
   }
   return out;
 }
@@ -109,5 +110,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const i = process.argv.indexOf('--sample');
   let rows = [...map.entries()];
   if (i > 0) { const n = Number(process.argv[i + 1]) || 30; let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647; rows = rows.map((r) => [rnd(), r]).sort((a, b) => a[0] - b[0]).slice(0, n).map((x) => x[1]).sort((a, b) => a[0].localeCompare(b[0])); }
-  for (const [slug, xs] of rows) console.log(`- ${title.get(slug)} (${slug})\n${xs.map((x) => `    ← ${title.get(x.slug)} (${x.slug}): ${x.label}`).join('\n')}`);
+  for (const [slug, xs] of rows) console.log(`- ${title.get(slug)} (${slug})\n${xs.map((x) => `    ← ${title.get(x.slug)} (${x.slug}) [${x.kind}]: ${x.label}`).join('\n')}`);
 }
