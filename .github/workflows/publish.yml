@@ -110,13 +110,7 @@ jobs:
           key: playwright-${{ hashFiles('package-lock.json') }}
 
       - name: Install the browser
-        run: |
-          # The Ubuntu mirror is sometimes very slow (26 Oct: 7 minutes for 25 MB); stop a crawling install after 7 minutes and try again.
-          for try in 1 2 3; do
-            timeout -k 10 420 npx playwright-core install --with-deps chromium && break
-            [ "$try" = 3 ] && exit 1
-            echo "browser install too slow, trying again ($try)"
-          done
+        run: npx playwright-core install --with-deps chromium
 
       - run: node tools/build-playground.mjs
       - uses: actions/download-artifact@v4
@@ -214,11 +208,7 @@ jobs:
       - name: Install site tools, browser and ffmpeg
         run: |
           npm ci --omit=optional
-          for try in 1 2 3; do
-            timeout -k 10 420 npx playwright-core install --with-deps chromium && break
-            [ "$try" = 3 ] && exit 1
-            echo "browser install too slow, trying again ($try)"
-          done
+          npx playwright-core install --with-deps chromium
           # The Ubuntu mirror is sometimes very slow (26 Oct: 69 MB took 24 minutes). Skip the optional extras
           # (hardware drivers, docs) and give up on a crawling download after 5 minutes, then try again.
           for try in 1 2 3; do

@@ -87,11 +87,7 @@ jobs:
         if: steps.changed.outputs.count != '0' && !inputs.dry_run
         run: |
           npm ci --omit=optional   # skip the sandbox-only bundled Chromium
-          for try in 1 2 3; do
-            timeout -k 10 420 npx playwright-core install --with-deps chromium && break
-            [ "$try" = 3 ] && exit 1
-            echo "browser install too slow, trying again ($try)"
-          done
+          npx playwright-core install --with-deps chromium
           # The Ubuntu mirror is sometimes very slow (26 Oct: 69 MB took 24 minutes). Skip the optional extras
           # (hardware drivers, docs) and give up on a crawling download after 5 minutes, then try again.
           for try in 1 2 3; do
