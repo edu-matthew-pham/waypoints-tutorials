@@ -412,7 +412,7 @@ export function parseLessonText(raw, slug = 'lesson') {
     teachers: meta.teachers ? String(meta.teachers).trim() : '',
     modules: Array.isArray(meta.modules) ? meta.modules.map(String) : [],
     language: meta.language || 'python',
-    shape: ['design', '5e', 'primer', 'speech', 'create'].includes(meta.shape) ? meta.shape : '',  // speech: a talk, any subject (Purpose and audience, Plan, Script, Cue cards, Rehearse, Present and check); design: a design-cycle project (Inquire, Develop, Create, Test, Evaluate); 5e: 5E words outside science (Digital systems); primer: one idea, any subject (Think first, The idea, Check, Apply)
+    shape: ['design', '5e', 'primer', 'speech'].includes(meta.shape) ? meta.shape : '',  // speech: a talk, any subject (Purpose and audience, Plan, Script, Cue cards, Rehearse, Present and check); design: a design-cycle project (Inquire, Develop, Create, Test, Evaluate); 5e: 5E words outside science (Digital systems); primer: one idea, any subject (Think first, The idea, Check, Apply)
     extensions: meta.extensions,                     // MakeCode extensions by key (MAKECODE_EXTENSIONS), e.g. [robot]
     app: meta.app || null,
     pacing: { ...DEFAULT_PACING, ...(meta.pacing || {}) },
