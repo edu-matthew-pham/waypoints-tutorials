@@ -84,7 +84,17 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
 - **Open:** how deck inserts are authored (class plan field vs a shared insert library).
 
-## Proposed: misconceptions and wider steps traced to Kit (27 Oct 2026, English chat; Matthew agreed to an audit in a new chat, not started)
+## Audit done (27 Oct 2026): misconceptions and wider steps against Kit (report only, nothing changed)
+
+Full report: Project doc `claude/kit-alignment-audit.md` (notes: `claude/kit-alignment-audit-notes.md`). Waiting for Matthew's decisions before any fix.
+
+- **Misconceptions:** none of the 79 read contradicts Kit (English all 16, maths 46 of 251 stratified, Systems 17 of 67). Kit names the same error in 14, covers the skill or topic in 31, says nothing in 33; 2 mis-tags found (`factor-pair-sign` in `non-monic-factorising`, `and-vs-or` in `data-clean`). 10 unused ids, 6 ids planted outside their `home`.
+- **Wider steps:** Science 15 of 24 read trace to Kit `width.wider`, 7 are same-level breadth, 2 go beyond Kit (isotopes weighted average, allotropes); Kit's own wider items include harder standards (Rf at Year 7, mass-energy at Year 9). English 2 of 2 trace. ICT 6 of 6 are breadth. AI's 37 wider steps are declared "for older students" (`content/ai/index.md`), which conflicts with AUTHORING › Width tiers.
+- **Kit data the site ignores:** the framework pairs five failure modes with the five response modes; Kit's glossary holds about 818 failure-mode entries (science and Digital Technologies); `import-curriculum.mjs` does not read them.
+- **Formats:** `fault:` is `logic` for nearly everything outside code. `kind: belief | craft` maps onto the framework's five failure types.
+- **Decisions needed from Matthew:** the width rule for AI; `kind` (two values or five); whether to fix the 2 mis-tags; when to import the glossary. Proposed `npm run check-kit-alignment` is not built.
+
+## Proposed: misconceptions and wider steps traced to Kit (27 Oct 2026, English chat; audit done, see above)
 
 Found while building English: built lessons in every subject use site-authored misconceptions and wider steps, and nothing checks them against Waypoints Kit.
 
