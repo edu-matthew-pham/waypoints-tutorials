@@ -30,6 +30,10 @@ const NO_MAKECODE = !!process.env.WP_NO_MAKECODE && process.env.WP_NO_MAKECODE !
 // run draws them), and the run still ends normally, so the publish workflow can publish what is done.
 const ONLY = process.env.WP_ONLY || '';
 const DEADLINE = Number(process.env.WP_DEADLINE) || 0;
+// WP_SHARD=k/n (0-based k): draw only every n-th picture still to draw in each section, starting at k, so n jobs can
+// draw in parallel (publish workflow, `draw` stage). A shard's pictures.json holds the unchanged pictures plus its own
+// drawings; tools/merge-pictures.mjs joins the shards' folders and manifests afterwards.
+const SHARD = /^(\d+)\/(\d+)$/.test(process.env.WP_SHARD || '') ? process.env.WP_SHARD.split('/').map(Number) : null;
 const outOfTime = () => DEADLINE > 0 && Date.now() / 1000 > DEADLINE;
 let leftForNextRun = 0;
 const failed = []; // pictures whose drawing threw: reported, skipped, and drawn again next run (never fails the run)
@@ -95,6 +99,7 @@ async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [], ex
     todo.forEach((j, n) => { if (got[n]) { manifest[j.id] = { ...live[j.id], hash: hashOf(j) }; seeded++; } else left.push(j); });
     todo = left;
   }
+  if (SHARD && !CHECK) todo = todo.filter((_, n) => n % SHARD[1] === SHARD[0]);
   stale += todo.length;
   if (CHECK) {
     for (const j of todo) if (old[j.id]) manifest[j.id] = old[j.id]; // keep entries; the real run decides

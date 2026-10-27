@@ -5,8 +5,10 @@ name: Build and publish (manual)
 # on the live site, records and draws only what is new (real Emma voice, MakeCode pictures), and publishes
 # the finished site to the gh-pages branch, which Pages serves.
 #
-# Three stages:
-#   plan     reuse what is live, draw new pictures, and share the clips to record out between parallel jobs
+# Five stages:
+#   prepare  reuse what is live (pictures that match are downloaded) and count the pictures still to draw
+#   draw     parallel jobs (one per 25 pictures, at most "jobs"), each drawing its share; skipped when nothing is new
+#   plan     join the drawn pictures and share the clips to record out between parallel jobs
 #   record   one job per share (up to "jobs", default 8), each recording its lessons' clips at real speed
 #   publish  lay the recorded clips over the live ones, keep the live version of anything a job missed, build, push
 on:
@@ -35,12 +37,14 @@ env:
   SITE: https://tutorials.learningwaypoints.com
 
 jobs:
-  plan:
+  # Reuse what is live: validate, download every picture whose hash matches, count the pictures still to draw.
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 30
     outputs:
-      stale: ${{ steps.plan.outputs.stale }}
-      matrix: ${{ steps.plan.outputs.matrix }}
+      stale: ${{ steps.pics.outputs.pictures_stale }}
+      draw_n: ${{ steps.draw.outputs.draw_n }}
+      draw_matrix: ${{ steps.draw.outputs.draw_matrix }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -61,19 +65,103 @@ jobs:
           node tools/build-playground.mjs
           node tools/render-pictures.mjs --seed "$SITE" --check
 
-      # Pictures come first: MakeCode explain clips show them, so they are part of those clips' hashes.
-      # After 70 minutes nothing new is drawn; what is left keeps its old entry and is drawn by the next run.
+      # One drawing job per 25 pictures still to draw (at most "jobs"); none when nothing is new.
+      - name: Share out the pictures to draw
+        id: draw
+        run: |
+          N=$(( (${{ steps.pics.outputs.pictures_stale }} + 24) / 25 ))
+          [ "$N" -gt "${{ inputs.jobs }}" ] && N=${{ inputs.jobs }}
+          echo "draw_n=$N" >> "$GITHUB_OUTPUT"
+          echo "draw_matrix=$(node -e "console.log(JSON.stringify([...Array($N).keys()]))")" >> "$GITHUB_OUTPUT"
+          echo "${{ steps.pics.outputs.pictures_stale }} picture(s) to draw in $N job(s)."
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pictures-seed
+          path: dist/_pictures
+          retention-days: 3
+
+  # Pictures come first: MakeCode explain clips show them, so they are part of those clips' hashes. Each job draws
+  # every n-th picture still to draw (WP_SHARD). After 70 minutes nothing new is drawn; what is left keeps its old
+  # entry and is drawn by the next run.
+  draw:
+    needs: prepare
+    if: needs.prepare.outputs.stale != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJSON(needs.prepare.outputs.draw_matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install site tools
+        run: npm ci --omit=optional
+
       - name: Cache the browser
-        if: steps.pics.outputs.pictures_stale != '0'
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ hashFiles('package-lock.json') }}
-      - name: Draw new pictures
-        if: steps.pics.outputs.pictures_stale != '0'
-        run: |
-          npx playwright-core install --with-deps chromium
-          WP_DEADLINE=$(( $(date +%s) + 70 * 60 )) node tools/render-pictures.mjs --seed "$SITE"
+
+      - name: Install the browser
+        run: npx playwright-core install --with-deps chromium
+
+      - run: node tools/build-playground.mjs
+      - uses: actions/download-artifact@v4
+        with:
+          name: pictures-seed
+          path: dist/_pictures
+
+      - name: Draw this job's pictures
+        run: WP_SHARD="${{ matrix.shard }}/${{ needs.prepare.outputs.draw_n }}" WP_DEADLINE=$(( $(date +%s) + 70 * 60 )) node tools/render-pictures.mjs --seed "$SITE"
+
+      # Uploaded even after a failure, so the pictures that did draw are used.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pictures-shard-${{ matrix.shard }}
+          path: dist/_pictures
+          retention-days: 3
+          if-no-files-found: ignore
+
+  # Join the drawn pictures, then share the clips to record out between parallel jobs.
+  plan:
+    needs: [prepare, draw]
+    if: ${{ !cancelled() && needs.prepare.result == 'success' && (needs.draw.result == 'success' || needs.draw.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    outputs:
+      stale: ${{ steps.plan.outputs.stale }}
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install site tools
+        run: npm ci --omit=optional   # skip the sandbox-only bundled Chromium
+
+      - run: node tools/build-playground.mjs
+      - uses: actions/download-artifact@v4
+        with:
+          name: pictures-seed
+          path: dist/_pictures
+      - uses: actions/download-artifact@v4
+        if: needs.draw.result == 'success'
+        with:
+          pattern: pictures-shard-*
+          path: shards
+      - name: Join the drawn pictures
+        if: needs.draw.result == 'success'
+        run: node tools/merge-pictures.mjs dist/_pictures shards/*
 
       - name: Share out the clips to record
         id: plan
