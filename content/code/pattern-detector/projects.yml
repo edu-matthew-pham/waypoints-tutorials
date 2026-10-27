@@ -122,3 +122,154 @@ projects:
       **A sample reflection** (strong): "My rules only check length, kinds of characters and a short list of common passwords, so 'Passw0rd!' is rated Strong even though guessers try it early. To catch it I would need to know every common pattern, such as swapping a letter for a number, and that list has no end. A model trained on many real leaked passwords could learn that pattern, though I could not say why it rated one weak. If my app is wrong, a student might trust a weak password. They would not know, because the app says Strong with confidence."
 
       **What a weaker reflection looks like:** "My app could be improved by adding more rules." Ask: which input, and how many rules would that take?
+  - id: trained
+    title: "B. Trained pattern detector"
+    goal: |
+      Build a Python app that **recognises your own groups of pictures, body poses or sounds, using a model you train yourself**, then responds in a way that helps someone.
+
+      Some things are easy for people to recognise but almost impossible to describe as rules. Every breed of dog, every angle and every kind of light would need its own rule. Instead you show the computer lots of examples of each group (a **class**), it finds its own patterns, and then it uses them on things it has never seen. Its confidence in an answer, a number from 0 to 1 (0.8 means 80% sure), is not the same as being right.
+
+      Before you start, write one sentence: **who is it for, and what will it tell or do for them?**
+
+      **What to hand in**
+
+      - Your app: the `.py` file and your model file.
+      - A testing record: input, what you expected, what the app said and how sure it was. Include at least five inputs it had not seen before, and at least two that are not in any of your classes.
+      - A reflection: what fooled it, what you changed because of it (more examples, a new class, a different cut-off), one thing a simple rule would do better than your model and why, and who could be affected if your app got it wrong.
+
+      **Check your app before you hand it in**
+
+      - **Clear result**, in words your user understands.
+      - **Honest about how sure it is**: it says when it is not sure instead of guessing.
+      - **Useful response**: advice, a next step or a score, not just a label.
+      - **Fits your user**: at least one setting or option they can change.
+      - **Tested** on things you did not train it on.
+
+      **Good habits.** Only record yourself, or people who have said yes. Check what is behind you before you record. Your pictures and sounds stay on your computer. The model file holds only your class names and trained numbers, but a saved project file also holds tiny copies of your photos (in Sounds mode, just sound scores), so do not share it if it shows people.
+    uses: [param, dict, compare, return-value]
+    links:
+      - { label: "Pattern Trainer", href: "https://tools.learningwaypoints.com/trainer/", note: "collect examples, train, check, and download your model file" }
+      - { label: "The Pattern Trainer guide", href: "https://tools.learningwaypoints.com/trainer/guide.html", note: "collecting examples, training and checking, step by step" }
+      - { label: "Set up the starters (once per computer)", href: "https://github.com/edu-matthew-pham/pattern-detector-starters#set-up-once", note: "Python 3, then one install" }
+      - { label: "image_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/image_pattern_trainer.py", note: "your classes are things in pictures" }
+      - { label: "pose_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/pose_pattern_trainer.py", note: "your classes are body poses" }
+      - { label: "audio_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/audio_pattern_trainer.py", note: "your classes are sounds" }
+    example: trained-posture.py
+    benchmark:
+      - { file: trained-finished-1.png, caption: "A posture reminder: a photo in, a verdict and what to do about it out, with a setting for how sure it must be." }
+      - { file: trained-finished-2.png, caption: "A door knock listener: a sound in, what was heard and what to do about it out." }
+    reveal: true
+    milestones:
+      - text: "My problem, my user and my classes are planned, and I have collected 20 or more examples of each."
+        hints:
+          - "Start with one sentence: who is it for, and what will it tell or do for them?"
+          - "Pick two to five classes that look (or sound) clearly different to you. Add a \"nothing\" class only if your app will often see none of the others."
+          - "Collect examples in different places, at different times and from different angles, not twenty copies of one situation. The model learns whatever is the same in all of them, including the background."
+        way: |
+          # Plan (written before training):
+          #   User:     a student at a desk.
+          #   Job:      remind them when they lean towards the screen.
+          #   Classes:  Upright, Leaning   (nobody in the picture is handled in the app)
+      - text: "I trained it, checked it, and tried hard to fool it."
+        hints:
+          - "Try new examples that were not used for training, and write down what you expect before you try each one."
+          - "Try to fool it: a new place, a different person who has said yes, a different angle, something that is not any of your classes. Note how sure it was, not just what it said."
+          - "Every time it gets one wrong, add examples like that one to the class it should have been, and train again. Write down what you changed."
+        way: |
+          # I tried                      I expected   It said    How sure
+          # upright, mirrored            Upright      Not sure   0.53
+          # upright, shrunk to 60 px     Upright      Not sure   0.59
+          # leaning, mirrored            Leaning      Upright    0.9997
+      - text: "My app runs, built from the closest starter with my model file and my ADAPT lines changed."
+        hints:
+          - "Run the starter exactly as it is first, with its sample model, so you know what working looks like."
+          - "Put your model file in the same folder as the starter, replacing the sample one, and run it again. Your class names come from the file."
+          - "Say something different for each class, and keep those messages together in one place so they are easy to change."
+        way: |
+          ADVICE = {
+              "Upright": "Nice. Keep your feet flat and your screen at eye level.",
+              "Leaning": "Sit back, drop your shoulders, and bring the screen up to eye level.",
+          }
+      - text: "I chose my cut-off from my testing, and I can name one thing a simple rule would do better."
+        hints:
+          - "Look down your testing record: how sure was it when it was right, and how sure was it when it was shaky or wrong? Pick the cut-off from those numbers, not a guess."
+          - "Remember that a model can be very sure and still wrong. A cut-off catches the shaky answers, not the confident mistakes."
+          - "For the rule: is there a part of your problem you could say exactly, with a measurement or a list, that the model only guesses?"
+        way: |
+          if score < cutoff:
+              return "Not sure", f"My best guess is {label} ({score:.0%}), but that is under your cut-off. Try again."
+          return label, ADVICE[label]
+    stretch:
+      - "Add a second setting your user can change, such as how many examples must agree, and test both settings."
+      - "Retrain with the examples that fooled it, and show in your testing record that the same inputs now work."
+      - "Ask someone who was not in your training examples to try it, and add what happens to your testing record."
+      - "Check the trainer's privacy claim yourself. Load it, then turn off Wi-Fi and train a model: if it still works, the work is happening on your computer. Or open your browser's developer tools (F12), click Network, clear it, then add examples and train, and see what appears."
+      - "Ideas to start from: a recycling helper, a plant health check, a hand-sign counter, a squat or plank coach, a gesture remote, a clap or knock command, an instrument identifier, or a doorbell, kettle and microwave listener."
+    teacher: |
+      **What this project is.** The trained half of a pair (project A uses rules; project C joins them). Students train a model from their own examples, build an app around it, and then test whether it can be trusted. The learning is in the testing and the reflection as much as in the app: new people, new places and things outside every class, and a cut-off picked from evidence rather than a guess.
+
+      **Running it.** Students train in the browser-based Pattern Trainer, download one small model file, and run a starter on their own laptop. Do the one-off setup before the lesson, or as a first step, and run an unchanged starter with its sample model on a school laptop beforehand.
+
+      **Check before class** (these vary by school; two minutes on one student-account laptop):
+
+      - *The trainer loads.* Open the Pattern Trainer in the browser students will use, and check the school filter does not block it.
+      - *The camera or microphone is allowed.* The picture and pose modes need the camera, and the sound mode needs the microphone (or students can upload sound files). Check the browser prompts and shows the permission.
+      - *The install works without help.* If students cannot install packages on their laptops, run the setup yourself or use shared machines.
+
+      **For your IT team.** The Pattern Trainer is a static page: it runs in the student's browser with no backend, database or accounts. Its libraries (TensorFlow.js, MediaPipe) and model files are in the trainer's repository and served from the same site, and its own code makes no `fetch`, XMLHttpRequest, WebSocket or beacon calls and uses no browser storage (checked against `waypoints-tools` at commit `8c7ec47`, 27 Oct 2026; the vendored libraries were not audited). The camera or microphone is requested through the normal browser prompt, only when a student picks that mode. The only file output is the model file, or a saved project, that the student chooses to download. The starters run on the student's laptop and need Python, `pip` access for one install, and the model files in their own repository. Your IT team will make its own call; the trainer's privacy page says the same in plain words. To see it yourself: load the trainer, switch off Wi-Fi, and train a model, or watch the Network tab in the browser's developer tools while you add examples.
+
+      **What to change when you adapt it**
+
+      - *Problem and user.* Students choose, or you set a shared context (a class, a club, a subject area). Say which in the brief you hand out.
+      - *Modes on offer.* Offer pictures, poses and sounds, or narrow it. Poses and sounds suit students who are not comfortable on camera, since poses use only 33 body points and sounds use no pictures.
+      - *Amount of data.* "20 or more examples of each class" is a prompt. Raise it for stronger models, or lower it for a short unit.
+      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt. Change `uses:` in `projects.yml` if you want other skills.
+      - *Check your app.* This is the success criteria. Reword a line, add your own, or remove one. The page lists them in the goal; the marking points below follow the same order.
+      - *Hand-in.* Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student's own words on the hardest part.
+      - *Help.* Hints are on offer to everyone. "Show one way" opens after the milestones before it are ticked or every hint for it has been used. Both are listed as **Help used** on the card. Set `reveal: false` (or remove `reveal:`) to turn "Show one way" off.
+
+      **Safety and consent.** Students record themselves or people who have said yes. Remind them to check what is behind them. Pictures and sounds stay on the student's computer; the model file has only class names and trained numbers; a saved project file in the trainer also holds tiny copies of photos, so it should not be shared if it shows people. Decide before the unit what students may keep and where.
+
+      **Marking points to look for** (replace with your own criteria):
+
+      - *Clear result.* The output names the class and says what it means for the named user, not a bare label or number.
+      - *Honest about how sure it is.* There is a cut-off, the app says "not sure" under it, and the student can say where the number came from. Look for a cut-off taken from the testing record, not a round number picked early. In the example, 0.90 sits above the shaky answers (0.53 and 0.59) and below every correct one (0.93 or more).
+      - *Useful response.* Each class leads to different advice or a next step. In the example, Upright and Leaning each get their own advice.
+      - *Fits the user.* There is a setting the user can change (the cut-off slider in the example) and the student can say why it helps this user.
+      - *Tested.* The record has at least five unseen inputs and at least two not in any class, with what was expected written before the result, and what the student changed in response.
+      - *Reflection.* Names a real input that fooled the model, says what was changed, makes a fair rule-versus-model point, and says who would be affected by a wrong answer.
+
+      **Usual mistakes, and a question to ask.**
+
+      - *Testing only the training examples.* Everything scores 0.99. Ask: "Which of these did the model not see before?"
+      - *Examples that are all the same.* Twenty near-identical photos or sounds. Ask: "What would change if you moved to a different room, or someone else did it?"
+      - *Trusting the confidence.* A high score is taken to mean right. Ask: "Is there an input it was very sure about and wrong?"
+      - *A cut-off picked by guessing.* Ask: "Which numbers in your testing record did you use to choose it?"
+      - *No \"nothing\" case.* The app always picks a class, even for something else. Ask: "What does it say if the camera sees an empty room?"
+      - *Class that is really the background.* All the "dog" photos are outdoors and all the "cat" photos indoors. Ask: "Would it still say cat in the garden?"
+
+      **Ways it could look.** Students see two screenshots of finished apps in different modes (a posture reminder from a pose model, a door knock listener from a sound model): output only, never code, so they show the standard without giving one answer to copy. Both were made with the sample models and test files in the starters, so a model of your own students' will behave differently. In the first, the photo is hidden. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
+
+      **The example below** is one complete trained app: a posture reminder built on the starters' sample pose model (`my_pose_model.json`, Upright and Leaning), with advice for each class, a "not sure" band, a cut-off slider and a few made-up tests of its wording. To run it, copy it into the starters folder beside `pattern_model.py` and the sample model, and run it like a starter. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
+
+      **A filled-in testing record** (the example app, run on the starters' sample test photos and changed copies of them; cut-off 0.90; yours will look different):
+
+      | I tried | I expected | The app said | How sure | Notes |
+      |---|---|---|---|---|
+      | `person_upright.jpg` | Upright | Upright | 0.995 | ok |
+      | `person_leaning.jpg` | Leaning | Leaning | 0.9996 | ok |
+      | upright, top half only | Upright | Upright | 0.997 | ok |
+      | leaning, top half only | Leaning | Leaning | 0.93 | ok, closest to the cut-off |
+      | upright, darkened | Upright | Upright | 0.993 | ok |
+      | leaning, darkened | Leaning | Leaning | 0.998 | ok |
+      | upright, shrunk to 60 pixels | Upright | Not sure | 0.59 | honest, did not guess |
+      | upright, mirrored | Upright | Not sure | 0.53 | honest, the model never saw this |
+      | leaning, mirrored (leaning the other way) | Leaning | **Upright** | 0.9997 | **wrong and sure**: no cut-off can catch it |
+      | upright, blurred | I can't see you | I can't see you | n/a | no person found |
+      | `cat.jpg` (in no class) | I can't see you | I can't see you | n/a | no person found |
+
+      The sample "Leaning" class is the upright photo tilted one way, so the model learned that one tilt and nothing else. A student who trains on real sitting will see different failures, but the lesson is the same: choosing a cut-off removes the shaky answers, and the mirrored photo shows why it cannot remove the confident ones.
+
+      **A sample reflection** (strong): "When I tried a photo of myself leaning the other way, it said Upright and was 99% sure. My training photos all had me leaning to the left, so it never learned that leaning right is also leaning. I added 15 photos leaning right, retrained, and it now says Leaning at 0.94. My cut-off is 0.90 because my wrong answers on new people were all under 0.85 and my right ones all over 0.93. A simple rule would do better at telling whether my shoulders are level, because I can measure that exactly and explain it, and the model can only guess. If my app is wrong, someone with a sore back might think their posture is fine, so I made it say 'not sure' instead of guessing, and I tell the user it is only a reminder."
+
+      **What a weaker reflection looks like:** "My app works well and the confidence was high." Ask: on which input did you not expect it to work, and what happened?
