@@ -193,17 +193,20 @@ function conceptLinks(lesson) {
   const tl = (THEORY_LINKS ||= theoryLinks(lessons)).get(lesson.slug) || { on: [], in: [] };
   const up = '../'.repeat(lesson.depth), bySlug = (s) => lessons.find((x) => x.slug === s);
   const where = (slug) => { const c = slug.split('/').slice(0, -1).join('/'); return `${dirNode(slug.split('/')[0]).title} › ${dirNode(c).title}`; };
+  // A brief description of what the linked lesson covers: the first sentence of its summary (about 130 characters at most).
+  const brief = (l) => { const t = String(l.summary || '').replace(/\s+/g, ' ').trim(), first = t.split(/(?<=[.!?])\s/)[0] || ''; return first.length > 130 ? first.slice(0, 127).replace(/[\s,;:(]+\S*$/, '') + '…' : first; };
   const one = ({ slug, label }) => { const l = bySlug(slug); if (!l) return null;
-    return { href: `${up}${slug}/`, title: l.title, where: where(slug), label }; };
+    return { href: `${up}${slug}/`, title: l.title, where: where(slug), label, reason: brief(l), kind: 'summary' }; };
   const on = tl.on.map(one).filter(Boolean), used = tl.in.map(one).filter(Boolean);
   const ci = catchUpIndex();
-  const plain = (l) => ({ href: `${up}${l.slug}/`, title: l.title, where: where(l.slug), label: l.title });
+  const plain = (l) => ({ href: `${up}${l.slug}/`, title: l.title, where: where(l.slug), label: l.title, reason: brief(l), kind: 'summary' });
   const catchUp = (ci.first.get(lesson.slug) || []).map(plain), leads = (ci.leads.get(lesson.slug) || []).map(plain);
   // Same-subject lessons this one relies on (tools/prior-links.mjs): after catch-up and theory links in the same row.
   PRIOR ||= priorLessons(lessons, { data: loadProgressions(), prereqs: prerequisites(loadDirMeta, CONTENT_ROOT), read: getSnippet, isChallenge: challengeTest(loadDirMeta, CONTENT_ROOT) });
-  const prior = (PRIOR.get(lesson.slug) || []).map((p) => { const o = one(p); // Short reason on the page: the idea or node names without their code examples, at most two.
+  const prior = (PRIOR.get(lesson.slug) || []).map((p) => { const o = one(p); // Why linked: the idea or node names without their code examples, at most two.
     const names = p.labels.map((t) => t.replace(/\s*\([^)]*\)/g, '').trim()), shown = names.slice(0, 2).join(', ') + (names.length > 2 ? ' …' : '');
-    return o && { ...o, reason: shown, kind: p.kind }; }).filter(Boolean);
+    // The page shows the linked lesson's own summary sentence; why it was linked (node or idea) goes in the hover text.
+    return o && { ...o, why: (p.kind === 'idea' ? 'idea: ' : 'node: ') + shown }; }).filter(Boolean);
   return on.length || used.length || catchUp.length || leads.length || prior.length ? { on, in: used, catchUp, leads, prior } : null;
 }
 
