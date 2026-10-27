@@ -3,7 +3,7 @@ title: English
 order: 2.5
 map: true
 trail: units
-summary: "Short lessons on how English works: what makes writing hold together, how texts are built for a purpose, how sentences are built and how word choices change meaning. Each one is a text to mark up on the screen, a worked example and a few checks, then the same move in your own writing. They are for introducing an idea or revisiting one, beside the reading, writing and talk in class, not instead of it."
+summary: "Short lessons on how English works: what makes writing hold together, how texts are built for a purpose, how sentences are built and how word choices change meaning. Each one is a text to mark up on the screen, a worked example and a few checks, then the same move in your own writing. They are Language-strand drop-ins: pull one into your own unit at the point your students need it. Reading and responding to texts, and writing whole pieces, are taught in your units, beside these lessons and not instead of them."
 pathways:
   - id: language
     title: How writing works
@@ -25,7 +25,6 @@ pathways:
     courses:
       - { path: english/texts, id: texts, stage: foundations, tagline: "See the plan inside a text, then use it." }
       - { title: Images and layout, stage: foundations, after: [texts], summary: "How images, diagrams and layout make meaning in visual and multimodal texts.", tagline: "Read a picture as closely as a paragraph." }
-      - { title: Literary ideas, stage: extensions, summary: "Point of view, narrative structure, imagery and symbolism, with short public-domain extracts.", tagline: "The tools writers use to make you feel something." }
   - id: speaking
     title: Speaking and listening
     summary: "Preparing a talk and judging a spoken text: purpose and audience, a plan, a script written for the ear, cue cards, register, voice, visuals and feedback."
@@ -33,22 +32,19 @@ pathways:
     about: "**Speaking and listening** follows the presenting thread of the Australian Curriculum: English (Version 9), from planning through rehearsing to delivering (AC9E4LY07 to AC9E8LY07), and the evaluation of spoken texts (AC9E7LY02). The first course, **Speaking to an audience**, plans, scripts and checks. **Rehearsing and presenting happen in class.** Nothing on the site listens to a talk or judges how anyone sounds; a partner or you do that, and each step says so. Spoken texts are judged from made-up transcripts."
     courses:
       - { path: english/speaking, id: speaking, stage: foundations, tagline: "Plan a talk, write it to be heard, and keep your voice in charge." }
-      - { title: Discussion moves, stage: foundations, after: [speaking], summary: "Taking part in discussion: building on others' ideas, disagreeing well and keeping a talk on track.", tagline: "Say it so the talk moves forward." }
 purposes:
   - id: analytical
     title: Analytical
     units: "Interpreting and analysing: novel, short story or poetry study; analytical essay."
+    note: "Reading and responding to a text is taught in your own unit, starting from the text. These lessons support the writing."
     courses:
-      - { title: How authors craft stories }
-      - { title: Responding to literature }
       - { path: english/cohesion, note: "claim, evidence, explanation" }
-      - { title: Reading closely }
+      - { path: english/texts, note: "argument" }
   - id: imaginative
     title: Imaginative
     units: "Narrative and creative writing; poetry writing."
+    note: "Whole stories and poems are written in your own unit. These lessons support the sentences and dialogue."
     courses:
-      - { title: Writing stories and poems }
-      - { title: How authors craft stories }
       - { path: english/sentences }
       - { path: english/punctuation, note: "dialogue" }
   - id: persuasive
@@ -59,7 +55,6 @@ purposes:
       - { path: english/texts, note: "argument" }
       - { path: english/words }
       - { path: english/speaking }
-      - { title: Discussion moves }
   - id: informative
     title: Informative
     units: "Reports and explanations, often in other subjects."
@@ -72,9 +67,10 @@ purposes:
   - id: reflective
     title: Reflective
     units: "Journals, personal response, reflecting on your own writing."
+    note: "Reflective writing is taught in your own unit. These lessons support the language."
     courses:
-      - { title: Responding to literature }
-      - { title: "Plan, draft and edit" }
+      - { path: english/words, note: "voice and tone" }
+      - { path: english/sentences }
   - id: critical
     title: Critical (Years 9-10)
     units: "Media, representation and perspective."
@@ -82,7 +78,6 @@ purposes:
     courses:
       - { path: english/persuade, note: "Years 6-8 start" }
       - { title: Images and multimodal texts }
-      - { title: Responding to literature }
 start:
   text: "A first set that covers most units:"
   courses:
@@ -90,6 +85,5 @@ start:
     - { path: english/texts }
     - { path: english/sentences }
     - { path: english/persuade }
-    - { title: How authors craft stories }
   after: "This is a suggestion, not a sequence. Paragraph skills run through every unit, which is why Holding writing together is first."
 ---

@@ -1,6 +1,6 @@
 ---
 title: Speaking to an audience
-summary: "Speaking for Years 6 to 8: plan a talk that has a point, write it to be heard, cut it down to cue cards, choose the right register, and use voice and visuals on purpose. Students plan and script on the board, judge made-up spoken texts from transcripts, and finish by preparing a short talk. Rehearsing and presenting happen in class: the site plans, scripts and checks, and never listens to anyone. The first unit (Years 4 to 5 ideas) is an optional warm-up. All the examples are made up."
+summary: "Speaking for Years 6 to 8: plan a talk that has a point, write it to be heard, cut it down to cue cards, choose the right register, and use voice and visuals on purpose. Students plan and script on the board, judge made-up spoken texts from transcripts, and finish by preparing a short talk. Rehearsing and presenting happen in class: the site plans, scripts and checks, and never listens to anyone. The first unit (Years 4 to 5 ideas) is an optional warm-up. All the examples are made up. Best used inside a unit that ends in a talk, not as a sequence on its own."
 tagline: "Plan a talk, write it to be heard, and keep your voice in charge."
 years: "6-8"
 order: 7

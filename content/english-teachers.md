@@ -1,6 +1,6 @@
 ---
 title: For English teachers
-summary: What is built so far in English (seven pilot courses, on cohesion, text structure, sentences, punctuation, word choice, judging language and preparing a talk), how it works without AI marking, and what is planned.
+summary: What is built so far in English (seven pilot courses, on cohesion, text structure, sentences, punctuation, word choice, judging language and preparing a talk), how it fits into your own units, how it works without AI marking, and what is planned.
 ---
 ## What is here
 
@@ -77,6 +77,12 @@ We'd like colleagues to try these with a class before we build more, so please t
 - **No AI marking, anywhere.** The board checks only what can be checked: where a planted word points, which joining word does the right job, which sentence is the topic sentence, whether the paragraphs follow the overview's order. Students' own writing lives in their own document and is checked by them against a model, by a partner, or by you. Each Make step says so.
 - **Every text is written for the lesson.** Nothing is copyrighted, so the texts can be quoted, projected and printed, and every planted link is exactly where the lesson needs it.
 
+## How this fits your English teaching
+
+These lessons are **Language-strand drop-ins**: pull one into your own unit at the point your students need it, such as word chains while they redraft a persuasive piece. Language skills can be taught on their own, which is why the lessons stand alone. Reading and responding to texts, and writing whole pieces, are different: they are planned from a text or a task, and a unit is what holds them together. Those are taught in your units, with these lessons beside them. We plan to show a worked unit as an example of how the pieces fit, not as a script to follow; it would change with your text or theme.
+
+Two courses lean towards Literacy, so they are best used inside a unit and not as a sequence on their own: *Judging and persuading* (inside a unit on persuasive or analytical reading and writing) and *Speaking to an audience* (inside a unit that ends in a talk).
+
 ## What it isn't
 
 The lessons are for introducing a move or revisiting one. They sit beside the reading, writing and talk in your class, not in place of it. They don't cover interpreting a whole literary text, delivering a talk (the site prepares it; you hear it), discussion, or sustained drafting over weeks: those need discussion and your feedback.
@@ -85,10 +91,9 @@ The lessons are for introducing a move or revisiting one. They sit beside the re
 
 These are plans, not promises. We'll propose each one for review before building it.
 
-1. **Your own text on the board.** The boards already treat text as data. Next, a teacher could paste a passage from the class novel and students could trace and colour it (self-checked, since the board can't know the answers for a text it hasn't seen). Using the passage would fall under your school's own copyright arrangements; the site would store nothing.
-2. **More Language strand courses:** Choosing words.
-3. **More of How texts work:** images and multimodal texts, and literary ideas with short public-domain extracts.
-4. **An open-response mode**, still with no AI marking: students place their answer among model answers of different quality, tick criteria and highlight their evidence, or take it to class discussion.
+1. **More Language strand lessons:** images and layout, and subject vocabulary and nominalisation (Years 7 and 8).
+2. **A worked unit,** starting with a persuasive composition unit: one complete example of how the lessons, your text or task and the curriculum fit together, with a prompt to adapt it to your own text or theme. A text-based unit would follow.
+3. **Later, only if teachers ask:** your own passage on the board (self-checked; your school's copyright arrangements would apply) and an open-response mode with no AI marking.
 
 ## For you
 
