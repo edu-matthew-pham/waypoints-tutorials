@@ -77,11 +77,11 @@ We'd like colleagues to try these with a class before we build more, so please t
 - **No AI marking, anywhere.** The board checks only what can be checked: where a planted word points, which joining word does the right job, which sentence is the topic sentence, whether the paragraphs follow the overview's order. Students' own writing lives in their own document and is checked by them against a model, by a partner, or by you. Each Make step says so.
 - **Every text is written for the lesson.** Nothing is copyrighted, so the texts can be quoted, projected and printed, and every planted link is exactly where the lesson needs it.
 
-## How this fits your English teaching
+## How you might use these
 
-These lessons are **Language-strand drop-ins**: pull one into your own unit at the point your students need it, such as word chains while they redraft a persuasive piece. Language skills can be taught on their own, which is why the lessons stand alone. Reading and responding to texts, and writing whole pieces, are different: they are planned from a text or a task, and a unit is what holds them together. Those are taught in your units, with these lessons beside them. We plan to show a worked unit as an example of how the pieces fit, not as a script to follow; it would change with your text or theme.
+You know your units and your classes, so treat this as a few ideas, not a plan. Each lesson teaches one move on its own, so you can use it wherever it helps: to introduce an idea, to revisit it, or as a short task inside a unit you're already teaching (word chains while students redraft a persuasive piece, say). How you weave it in is your call.
 
-Two courses lean towards Literacy, so they are best used inside a unit and not as a sequence on their own: *Judging and persuading* (inside a unit on persuasive or analytical reading and writing) and *Speaking to an audience* (inside a unit that ends in a talk).
+*Judging and persuading* and *Speaking to an audience* lean towards reading and presenting whole texts, so they may sit most naturally alongside a unit on that, with a text or task of your own. We'd be glad to hear how you actually use them.
 
 ## What it isn't
 
@@ -92,7 +92,7 @@ The lessons are for introducing a move or revisiting one. They sit beside the re
 These are plans, not promises. We'll propose each one for review before building it.
 
 1. **More Language strand lessons:** images and layout, and subject vocabulary and nominalisation (Years 7 and 8).
-2. **A worked unit,** starting with a persuasive composition unit: one complete example of how the lessons, your text or task and the curriculum fit together, with a prompt to adapt it to your own text or theme. A text-based unit would follow.
+2. **A worked unit,** perhaps starting with a persuasive composition unit: one example of how the lessons, a text or task and the curriculum could fit together, with a prompt to adapt it to your own text or theme. It would be an illustration to change, not a script. A text-based unit might follow.
 3. **Later, only if teachers ask:** your own passage on the board (self-checked; your school's copyright arrangements would apply) and an open-response mode with no AI marking.
 
 ## For you

@@ -3,7 +3,7 @@ title: English
 order: 2.5
 map: true
 trail: units
-summary: "Short lessons on how English works: what makes writing hold together, how texts are built for a purpose, how sentences are built and how word choices change meaning. Each one is a text to mark up on the screen, a worked example and a few checks, then the same move in your own writing. They are Language-strand drop-ins: pull one into your own unit at the point your students need it. Reading and responding to texts, and writing whole pieces, are taught in your units, beside these lessons and not instead of them."
+summary: "Short lessons on how English works: what makes writing hold together, how texts are built for a purpose, how sentences are built and how word choices change meaning. Each one is a text to mark up on the screen, a worked example and a few checks, then the same move in your own writing. Each lesson stands alone, so use them where they help in your own units: to introduce an idea, revisit one, or as a short task. They sit beside the reading, writing and talk in your class, not instead of it."
 pathways:
   - id: language
     title: How writing works
@@ -36,14 +36,14 @@ purposes:
   - id: analytical
     title: Analytical
     units: "Interpreting and analysing: novel, short story or poetry study; analytical essay."
-    note: "Reading and responding to a text is taught in your own unit, starting from the text. These lessons support the writing."
+    note: "Reading and responding to a text usually starts from the text itself. These lessons are for the writing around it."
     courses:
       - { path: english/cohesion, note: "claim, evidence, explanation" }
       - { path: english/texts, note: "argument" }
   - id: imaginative
     title: Imaginative
     units: "Narrative and creative writing; poetry writing."
-    note: "Whole stories and poems are written in your own unit. These lessons support the sentences and dialogue."
+    note: "These lessons are for the sentences and dialogue inside your students' own stories and poems."
     courses:
       - { path: english/sentences }
       - { path: english/punctuation, note: "dialogue" }
@@ -67,7 +67,7 @@ purposes:
   - id: reflective
     title: Reflective
     units: "Journals, personal response, reflecting on your own writing."
-    note: "Reflective writing is taught in your own unit. These lessons support the language."
+    note: "These lessons are for the language inside reflective writing."
     courses:
       - { path: english/words, note: "voice and tone" }
       - { path: english/sentences }
