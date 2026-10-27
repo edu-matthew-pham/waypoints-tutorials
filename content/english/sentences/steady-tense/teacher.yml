@@ -23,9 +23,9 @@ running:
   - "Worked example: read the diary aloud and ask where it sounded wrong."
   - "Make: partners underline the verbs and check each one."
 stuck:
-  - see: "A student labels 'arrive' past."
+  - see: "A student labels 'arrives' past."
     ask: "Does it say what already happened?"
-    fix: "Arrive is the present form. Compare with arrived."
+    fix: "Arrives is the present form. Compare with arrived."
   - see: "A student changes the other verbs to match the slip."
     ask: "Which tense does the first sentence set?"
     fix: "Match everything to the tense the text starts with."

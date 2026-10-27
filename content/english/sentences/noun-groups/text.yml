@@ -28,7 +28,7 @@ s head: bike
 # region: vary
 widget: sentence
 mode: build
-before: A tap in the kitchen dripped all night. Build the sentence around the noun group the shiny kitchen tap.
+before: A tap dripped all night. Build the sentence using the words the, shiny, kitchen and tap, then the rest of the sentence.
 tile d: tap
 tile a: the
 tile e: dripped all night
@@ -41,7 +41,7 @@ ans: a b c d e
 widget: cohesion
 mode: chain
 colours: 2
-p: The [[green#a]] [[tree#b]] frog sits on a [[wet#a]] [[gum#b]] leaf. Its [[tiny#a]], [[sticky#a]] feet grip the [[smooth#a]] surface.
+p: The [[tall#a]] [[gum#b]] tree shades a [[muddy#a]] [[creek#b]] bank. Its [[wide#a]], [[twisty#a]] branches reach over the [[cool#a]] water.
 # endregion
 
 # region: make

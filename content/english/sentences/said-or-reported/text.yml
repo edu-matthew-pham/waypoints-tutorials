@@ -30,8 +30,8 @@ ans: a b
 # region: practise
 widget: sentence
 mode: punct
-p: 'Where is the bridge[[{?|.|,}=?]]' asked Ben.
-p: 'The track is closed[[{,|.|?}=,]]' said the ranger.
+p: 'Can we swim today[[{?|.|,}=?]]' asked Zoe.
+p: 'The pool is warm[[{,|.|?}=,]]' said Kai.
 p: Ava said[[{,|.|;}=,]] 'I forgot my hat.'
 # endregion
 

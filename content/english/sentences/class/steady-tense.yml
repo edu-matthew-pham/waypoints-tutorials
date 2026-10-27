@@ -11,7 +11,7 @@ activities:
     minutes: 5
     do: |
       Say 'I walk to school.' Students say it for yesterday and for tomorrow. Ask which word changed.
-    notes: "Only the verb changes."
+    notes: "Only the verb and the time word change."
   - at: make
     kind: discussion
     title: "Verb check"

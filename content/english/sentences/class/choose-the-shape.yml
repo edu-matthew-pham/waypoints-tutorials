@@ -23,7 +23,7 @@ questions:
   - at: investigate
     title: "What does the clause do?"
     type: question
-    q: "'We reached the beach, where we set up camp.' Does the clause elaborate, extend or explain?"
+    q: "'The lights went out, which scared the little ones.' Does the clause elaborate, extend or explain?"
     options: ["Extends", "Explains", "Elaborates"]
     answer: 0
-    explain: "Where we set up camp adds something new about the beach, so it extends."
+    explain: "Which scared the little ones adds a result, so it extends."

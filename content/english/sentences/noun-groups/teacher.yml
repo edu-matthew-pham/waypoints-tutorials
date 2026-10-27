@@ -41,13 +41,13 @@ leads: |
   Noun groups are the base for embedded clauses (Detail inside a sentence), which are really a way to extend them.
 exit:
   q: "'My big brother's old red bike': name the head noun and one describer."
-  a: "The head noun is bike. Big, old and red are describers."
+  a: "The head noun is bike. Old and red are describers (big describes the brother, inside 'my big brother's')."
 explain: |
   A **noun group** is a noun and the words that tell more about it. The parts usually come in this order:
 
-  - **Determiner:** the, a, my, two
-  - **Describer:** old, noisy
-  - **Classifier:** fishing, school
-  - **Head noun:** boat, buses
+  - **Determiner:** this, some, our, three
+  - **Describer:** tiny, rusty
+  - **Classifier:** garden, tennis
+  - **Head noun:** gate, rackets
 
   The head noun is the main thing. A good noun group lets the reader picture exactly what is meant.

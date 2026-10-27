@@ -6,7 +6,7 @@ summary: "A main clause makes sense on its own. A dependent clause adds somethin
 language: maths
 node: [AC9E4LA06 n1, AC9E4LA06 n2, AC9E4LA06 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "Ava kept swimming can stand alone, so it is the main clause. Although the water was cold cannot, so it is the dependent clause. Although adds a surprise to the main idea." }
-hook: "'Because the water was high.' Is that a whole sentence?"
+hook: "'If you want to win.' Is that a whole sentence?"
 ---
 A **clause** is a group of words built around a verb. There are two kinds:
 
@@ -93,7 +93,7 @@ Now match the joining words.
 stage: modify
 insight: "Choosing the joining word that fits each sentence shows the word decides the meaning the dependent clause adds."
 try: { playground: board, starter: "text.yml#vary", height: 330 }
-hint: ["Read each sentence with each choice. Only one makes sense.", "Ask what the dependent clause is adding: a reason, a time, or how something was done."]
+hint: ["Read each sentence with each choice. Only one makes sense.", "Read each sentence aloud with each choice, and ask which one says what you mean."]
 check: { type: board, text: "Choose the joining word that fits each sentence.", when: "n_gaps_right = 3", explain: "Because gives the reason the match was cancelled, until says how long we wait, and as if says how Mia ran. The wrong choices make nonsense, which shows the joining word is doing real work." }
 ```
 
@@ -103,7 +103,7 @@ check: { type: board, text: "Choose the joining word that fits each sentence.", 
 stage: practise
 insight: "Colouring the joining words in a short text shows where each dependent clause starts."
 try: { playground: board, starter: "text.yml#practise", height: 300 }
-hint: ["Choose Chain 1, then click each word that joins a dependent clause to its main clause.", "There are three. Each one starts the extra part of its sentence."]
+hint: ["Choose Chain 1, then click each word that joins a dependent clause to its main clause.", "Each one starts the extra part of its sentence."]
 check: { type: board, text: "Colour the three joining words.", when: "chains_ok = 1 and n_stray = 0", explain: "After, while and If each start a dependent clause. They link the extra idea to the main one." }
 ```
 

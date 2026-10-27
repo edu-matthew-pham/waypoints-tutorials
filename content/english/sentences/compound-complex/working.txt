@@ -1,8 +1,8 @@
 # Nib's labels for the "find the wrong label" task, one sentence per line.
 
 # region: nib
-The tide came in. (simple)
-The tide came in, so we left. (compound)
-We left because the tide came in. (compound)
-Ava swam and Ben watched. (compound)
+The ferry sailed. (simple)
+The ferry sailed, but the storm grew. (compound)
+We waited because the storm grew. (compound)
+Mia rowed and Ravi steered. (compound)
 # endregion

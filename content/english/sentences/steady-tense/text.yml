@@ -46,5 +46,5 @@ widget: cohesion
 mode: chain
 answer: on
 colours: 1
-p: Yesterday we walked to the beach, and then we [[swim#a]] in the creek.
+p: Last night we cooked dinner, and then we [[watch#a]] a film.
 # endregion

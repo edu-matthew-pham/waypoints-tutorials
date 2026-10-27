@@ -23,7 +23,7 @@ questions:
   - at: investigate
     title: "Where is the clause?"
     type: question
-    q: "'The poem that Ava wrote won a prize.' Which words are the embedded clause?"
-    options: ["that Ava wrote", "The poem", "won a prize"]
+    q: "'The kite that Ben built flew highest.' Which words are the embedded clause?"
+    options: ["that Ben built", "The kite", "flew highest"]
     answer: 0
-    explain: "That Ava wrote sits right after poem and tells you which poem."
+    explain: "That Ben built sits right after kite and tells you which kite."

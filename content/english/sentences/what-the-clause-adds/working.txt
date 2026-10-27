@@ -2,7 +2,7 @@
 
 # region: nib
 Our school library closes at 1 pm.
-I think it should stay open at lunch.
+I think it should stay open at lunch because that is when students are free.
 It should stay open although many students need a quiet place to read.
-I hope you agree.
+I hope you agree, since it would help everyone.
 # endregion

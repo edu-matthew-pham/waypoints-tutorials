@@ -33,7 +33,7 @@
   'use strict';
   var MODES = ['build', 'punct', 'write'];
   var SUBORD = ['although', 'because', 'since', 'while', 'whereas', 'if', 'unless', 'when', 'whenever', 'before', 'after',
-    'until', 'though', 'even though', 'once', 'so that', 'as soon as'];
+    'until', 'though', 'once', 'so that', 'as soon as'];
   var COUNTS = ['commas', 'semicolons', 'colons', 'dashes', 'brackets', 'apostrophes', 'quotes', 'joiners', 'who', 'short', 'long'];
   var COUNT_LABEL = { commas: 'commas', semicolons: 'semicolons', colons: 'colons', dashes: 'dashes', brackets: 'brackets', apostrophes: 'apostrophes',
     quotes: 'quotation marks', joiners: 'joining words', who: 'who/which/whose', short: 'short sentences', long: 'long sentences' };

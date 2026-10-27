@@ -5,7 +5,7 @@
 widget: cohesion
 p: Mia has a dog. The dog barks all night. Folded: Mia has a dog [[{that barks all night|barks all night|and a dog}=that barks all night]].
 p: Ben met a ranger. The ranger knows the bush. Folded: Ben met a ranger [[{who knows the bush|knows the bush|but the ranger}=who knows the bush]].
-p: The oval floods. The oval is behind our school. Folded: The oval [[{which is behind our school|behind our school|and the oval}=which is behind our school]] floods.
+p: The oval floods. The oval is behind our school. Folded: The oval [[{which is behind our school|is behind our school|and the oval}=which is behind our school]] floods.
 # endregion
 
 # region: vary
@@ -23,7 +23,7 @@ ans: a b c
 widget: cohesion
 mode: chain
 colours: 1
-p: The ferry, [[which crosses the bay#a]], leaves at nine. My aunt, [[who runs the cafe#a]], bakes the pies. The track [[that leads to the lighthouse#a]] is steep. We rested at noon because it was hot.
+p: The ferry, [[which crosses the bay#a]], leaves at nine. My aunt, [[who runs the cafe#a]], bakes the pies. The path [[that winds up the hill#a]] is steep. We rested at noon because it was hot.
 # endregion
 
 # region: make
@@ -48,7 +48,7 @@ answer: on
 roles: main embedded
 role main: Main clause
 role embedded: Embedded clause
-s main: My sister,
-s embedded: who plays the cello,
-s main: practises daily.
+s main: The coach,
+s embedded: who wears a red cap,
+s main: blows the whistle.
 # endregion

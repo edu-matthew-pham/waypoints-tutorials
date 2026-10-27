@@ -26,7 +26,7 @@ running:
   - "Vary: ask what time clue pointed to each tense."
   - "Make: partners underline each precise verb and adverb group, and check the tense."
 stuck:
-  - see: "A student chooses 'sprinted' for 'ate'."
+  - see: "A student chooses 'stomped' for 'walked very quietly'."
     ask: "Does this verb mean the same as the wordy phrase?"
     fix: "Match meaning first. Test by saying the wordy phrase and the single verb side by side."
   - see: "A student's report switches between 'scored' and 'scores'."
@@ -47,7 +47,7 @@ exit:
 explain: |
   Three tools make a sentence more exact.
 
-  - **A precise verb:** *sprinted* says what *ran very fast* needs three words for.
+  - **A precise verb:** *gulped* says what *drank very quickly* needs three words for.
   - **The tense:** *scored* (past), *scores* (present), *will score* (future).
   - **An adverb group:** *very quietly* (how), *just outside* (where), *quite recently* (when).
 

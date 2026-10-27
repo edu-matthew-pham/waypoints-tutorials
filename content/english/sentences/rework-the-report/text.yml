@@ -4,10 +4,10 @@
 # region: fold
 widget: sentence
 mode: build
-before: The garden is behind the hall. The garden has four beds.
-tile c: has four beds
+before: The garden was behind the hall. The garden had four beds.
+tile c: had four beds
 tile a: the garden,
-tile b: which is behind the hall,
+tile b: which was behind the hall,
 decoy d: and the garden
 ans: a b c
 # endregion
@@ -21,7 +21,7 @@ p: Last term we planted beans in the garden. The soil was dry, so we [[water#a]]
 
 # region: shape
 widget: cohesion
-p: We hoped the beans would grow fast [[{, but|, because|, so}=, but]] they grew slowly. [[{Because the soil was dry|The soil was dry|And the soil was dry}=Because the soil was dry]], we watered every day. We picked the first pods in May[[{, which|, because|, but}=, which]] tasted sweet.
+p: We hoped the beans would grow fast [[{, but|, because|, so}=, but]] they grew slowly. [[{Because the soil was dry|The soil was dry|And the soil was dry}=Because the soil was dry]], we watered every day. The pods [[{which|because|but}=which]] we picked in May tasted sweet.
 # endregion
 
 # region: make
@@ -47,7 +47,7 @@ answer: on
 roles: main embedded
 role main: Main clause
 role embedded: Embedded clause
-s main: The garden,
-s embedded: which is behind the hall,
-s main: has four beds.
+s main: The beans,
+s embedded: which grew slowly,
+s main: were ready in May.
 # endregion

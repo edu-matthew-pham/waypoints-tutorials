@@ -23,7 +23,7 @@ questions:
   - at: investigate
     title: "Which is the classifier?"
     type: question
-    q: "'the old fishing boat': which word says what kind of boat?"
-    options: ["fishing", "old", "the"]
+    q: "'the cracked school bus': which word says what kind of bus?"
+    options: ["school", "cracked", "the"]
     answer: 0
-    explain: "Fishing says the kind. Old says what it is like."
+    explain: "School says the kind. Cracked says what it is like."

@@ -16,10 +16,12 @@ before: |
 
   The counts (short is five words or fewer, long is fifteen or more) are rough aids. They show a mix exists, not that the mix is good.
 
+  The three jobs are ACARA's broad view of a dependent clause. Time, condition and concession clauses (from What the clause adds) fall under them: a time clause usually extends, and a condition or concession qualifies the main idea. The board keeps to the clear cases and lets students argue the rest in discussion.
+
   The sentences are made up for the lesson.
 running:
   - "Predict: take a quick vote before showing the answer."
-  - "Try: ask which clause could stand as its own sentence (the extending ones can)."
+  - "Try: ask three questions in turn: does it describe a noun, does it say what happened as a result, does it say why?"
   - "Worked example: ask where a driver's eyes go first."
   - "Make: partners check the key instruction sits in a short sentence."
 stuck:

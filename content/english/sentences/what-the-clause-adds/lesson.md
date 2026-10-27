@@ -12,9 +12,9 @@ A dependent clause adds one of five kinds of information:
 
 - **Reason:** *because* the filter broke
 - **Purpose:** *so that* everyone can see
-- **Condition:** *unless* the rain stops
-- **Concession:** *although* it was wet (a point that goes against the main idea)
-- **Time:** *until* the bus left
+- **Condition:** *if* the creek rises
+- **Concession:** *although* the fare was high (a point that goes against the main idea)
+- **Time:** *after* the bell rang
 
 It can come before or after the main clause. What comes **first** gets the reader's attention first.
 
@@ -59,7 +59,7 @@ tasks:
         - ["so that", "Purpose", "So that says what something is for."]
         - ["as long as", "Condition", "As long as says what has to stay true."]
         - ["even though", "Concession", "Even though names a point that goes against the main idea."]
-        - ["whenever", "Time", "Whenever says when."]
+        - ["after", "Time", "After says when."]
   - check:
       type: bug
       code: "working.txt#nib"
@@ -99,7 +99,7 @@ insight: "Building the same sentence both ways shows the order can be changed wi
 try: { playground: board, starter: "text.yml#vary", height: 330 }
 tasks:
   - starter: "text.yml#vary"
-    hint: ["Click a piece to place it. The first piece you place starts the sentence.", "Put 'because the bus was late' first."]
+    hint: ["Click a piece to place it. The first piece you place starts the sentence.", "Read the result aloud. Does it say what you mean?"]
     check: { type: board, text: "Build the sentence with the reason first.", when: "first_a = 1 and in_order = 1", explain: "Because the bus was late, the excursion started late. The reader meets the reason first." }
   - starter: "text.yml#vary-b"
     hint: ["Take the pieces out, or use Move left and Move right.", "Now put the main clause first."]
@@ -116,7 +116,7 @@ tasks:
 stage: practise
 insight: "Choosing the joining word for a named relationship in context shows the relationship decides the word."
 try: { playground: board, starter: "text.yml#practise", height: 330 }
-hint: ["Read each sentence with each choice. Ask what the dependent clause is adding.", "The creek was only ankle deep, and the guide still wanted life jackets. That is a surprise."]
+hint: ["Read each sentence with each choice. Ask what the dependent clause is adding.", "Say each sentence aloud with your choice and listen for one that makes sense."]
 check: { type: board, text: "Choose the joining word that fits each sentence.", when: "n_gaps_right = 3", explain: "Because gives the reason the ferry stopped, so that gives the council's purpose, and although names a surprise: shallow water, yet life jackets." }
 ```
 

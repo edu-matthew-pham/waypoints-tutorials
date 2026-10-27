@@ -6,14 +6,14 @@ summary: "Sentences come in four shapes. A simple sentence has one main clause. 
 language: maths
 node: [AC9E7LA05 n1, AC9E7LA05 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Two main clauses joined by but, plus a dependent clause: a compound-complex sentence." }
-hook: "How many clauses are in 'The bus was late, but we waited because it was raining'?"
+hook: "Is a long sentence always a complicated one?"
 ---
 A clause has a verb that says what someone or something does or is. Count the clauses and see what joins them.
 
-- **Simple:** one main clause. *The bus arrived.*
-- **Compound:** two main clauses joined by *and, but, so* or *or*. *The bus arrived, and we climbed on.*
-- **Complex:** a main clause and a dependent clause. *We climbed on when the bus arrived.*
-- **Compound-complex:** two main clauses and a dependent clause. *The bus arrived, and we climbed on because it was raining.*
+- **Simple:** one main clause. *The kite soared.*
+- **Compound:** two main clauses joined by *and, but, so* or *or*. *The kite soared, and the children cheered.*
+- **Complex:** a main clause and a dependent clause. *The children cheered when the kite soared.*
+- **Compound-complex:** two main clauses and a dependent clause. *The kite soared, and the children cheered because the wind was strong.*
 
 ## Predict: count the clauses
 
@@ -65,13 +65,13 @@ tasks:
       answer: 3
       fault: logic
       misconception: shape-miscount
-      explain: "Line 3 is complex, not compound: 'because the tide came in' is a dependent clause, not a second main clause."
+      explain: "Line 3 is complex, not compound: 'because the storm grew' is a dependent clause, not a second main clause."
   - check:
       type: question
       q: "'The dog barked, and the cat ran.' Why is this compound and not complex?"
       options: ["Both parts could stand alone as sentences", "It has a comma", "It has the word and", "It is a long sentence"]
       answer: 0
-      feedback: [null, "Commas appear in all four shapes.", "And is a clue, but because can't make a compound sentence on its own.", "Length does not decide the shape."]
+      feedback: [null, "Commas appear in all four shapes.", "And is a clue, but the test is whether both parts could stand alone.", "Length does not decide the shape."]
       explain: "Both 'the dog barked' and 'the cat ran' could stand alone, so they are both main clauses. Two main clauses make a compound sentence."
 ```
 
@@ -93,8 +93,8 @@ tasks:
 stage: modify
 insight: "Building a compound-complex sentence from three clauses shows how a joining word and a dependent clause fit together."
 try: { playground: board, starter: "text.yml#vary", height: 330 }
-hint: ["Two of the three pieces are main clauses. Use a joining word between them.", "The dependent clause begins with a word like because and goes after the main clause it explains."]
-check: { type: board, text: "Build a sentence with two main clauses and one dependent clause.", when: "in_order = 1", explain: "The bus arrived, and we climbed on because it was raining has two main clauses joined by and, plus one dependent clause starting with because." }
+hint: ["Two of the three pieces could stand alone. The third cannot.", "Try the pieces in more than one order and read each aloud."]
+check: { type: board, text: "Build a sentence with two main clauses and one dependent clause.", when: "in_order = 1", explain: "Ava dived in and Ben followed although the pool was cold has two main clauses joined by and, plus one dependent clause starting with although. The dependent clause can also come first or in the middle, so more than one order works." }
 ```
 
 ## Practise: spot the dependent clause
@@ -103,7 +103,7 @@ check: { type: board, text: "Build a sentence with two main clauses and one depe
 stage: practise
 insight: "Colouring the dependent clauses in compound-complex sentences shows where the extra clause sits."
 try: { playground: board, starter: "text.yml#practise", height: 340 }
-hint: ["Find the joining word that starts a dependent clause: because, when, although, if.", "Colour the whole dependent clause, from its joining word to the end of the clause."]
+hint: ["A dependent clause cannot stand alone as a sentence. Find the parts that cannot.", "Colour the whole dependent clause, from its joining word to the end of the clause."]
 check: { type: board, text: "Colour the dependent clause in each sentence.", when: "chains_ok = 1 and n_stray = 0", explain: "In each sentence the dependent clause starts with a word like because, when, although or if." }
 ```
 

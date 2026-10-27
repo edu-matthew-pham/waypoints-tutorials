@@ -6,12 +6,12 @@ summary: "Direct speech quotes the speaker's exact words inside quotation marks.
 language: maths
 node: [AC9E4LA07 n1, AC9E4LA07 n2, AC9E4LA07 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "Same message, two ways. The first quotes the lifeguard's exact words. The second reports them: no quotation marks, and is becomes was." }
-hook: "'We are lost,' said Mia. Mia said they were lost. Which one lets you hear Mia?"
+hook: "'I am starving,' said Ravi. Ravi said he was starving. Which one lets you hear Ravi?"
 ---
 There are two ways to tell the reader what someone said.
 
-- **Direct speech** gives the exact words, inside quotation marks, with a saying verb and the speaker: *'We are lost,' said Mia.*
-- **Indirect speech** reports what was said, with no quotation marks: *Mia said they were lost.* The tense usually moves back (*are* becomes *were*) and the pronouns change (*we* becomes *they*).
+- **Direct speech** gives the exact words, inside quotation marks, with a saying verb and the speaker: *'The soup is hot,' said Dad.*
+- **Indirect speech** reports what was said, with no quotation marks: *Dad said the soup was hot.* The tense usually moves back (*is* becomes *was*) and the pronouns change (*I* becomes *he*, *we* becomes *they*).
 
 ## Predict: which one reports?
 
@@ -20,8 +20,8 @@ stage: predict
 insight: "Spotting the version with no quotation marks and a changed tense shows students that reporting changes the words as well as the punctuation."
 check:
   type: predict
-  q: "Ava said, 'I am tired.' Which version reports her words without quoting them?"
-  options: ["Ava said she was tired.", "Ava said, 'I am tired.'", "'She was tired,' said Ava.", "Ava said, 'she was tired.'"]
+  q: "Zoe said, 'I am tired.' Which version reports her words without quoting them?"
+  options: ["Zoe said she was tired.", "Zoe said, 'I am tired.'", "'She was tired,' said Zoe.", "Zoe said, 'she was tired.'"]
   actual: "'Ava said she was tired.' There are no quotation marks, I became she, and am became was. The other versions keep quotation marks."
 ```
 
@@ -92,7 +92,7 @@ Now sort the features.
 stage: modify
 insight: "Building the reported version from pieces shows that the speaker's words are rewritten, not just unquoted."
 try: { playground: board, starter: "text.yml#vary", height: 420 }
-hint: ["Ava is a girl and she is talking about herself. Which piece uses a word for 'she'?", "The report is made after the words were said, so the verb moves back in time."]
+hint: ["Who is speaking, and who is the report about?", "The report is made after the words were said."]
 check: { type: board, text: "Build the sentence that reports what Ava said.", when: "in_order = 1", explain: "Ava said she was hungry. I became she, and am became was. The two decoys keep the speaker's own words." }
 ```
 
@@ -102,7 +102,7 @@ check: { type: board, text: "Build the sentence that reports what Ava said.", wh
 stage: practise
 insight: "Choosing the mark that goes before the closing quotation mark shows that direct speech has its own punctuation rules."
 try: { playground: board, starter: "text.yml#practise", height: 400 }
-hint: ["Is the quoted part a question, or a statement followed by who said it?", "When the saying part comes after the speech, a comma usually closes a statement inside the quotation marks."]
+hint: ["Is each quoted part a question or a statement?", "Read each one aloud and listen to where the speaker's voice stops or goes up."]
 check: { type: board, text: "Choose the punctuation for each box.", when: "n_right = 3 and n_wrong = 0", explain: "A question mark closes a question, a comma closes a statement when the saying part follows, and a comma comes before the opening quotation mark when the saying part comes first." }
 ```
 

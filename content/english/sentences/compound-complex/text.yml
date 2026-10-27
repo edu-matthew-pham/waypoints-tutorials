@@ -22,11 +22,13 @@ s complex: Although she forgot her hat, Ava was ready.
 widget: sentence
 mode: build
 before: Build a sentence with two main clauses and a dependent clause.
-tile a: The bus arrived
-tile b: and we climbed on
-tile c: because it was raining
-decoy d: although the bus arrived
+tile a: Ava dived in
+tile b: and Ben followed
+tile c: although the pool was cold^
+decoy d: because the pool was cold and
 ans: a b c
+ans: a c b
+ans: c a b
 # endregion
 
 # region: practise

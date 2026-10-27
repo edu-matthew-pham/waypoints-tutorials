@@ -23,7 +23,7 @@ questions:
   - at: investigate
     title: "Which noun?"
     type: question
-    q: "'The track that leads to the lighthouse is steep.' Which noun does 'that leads to the lighthouse' tell about?"
-    options: ["track", "lighthouse", "steep"]
+    q: "'The shop that sells maps closes early.' Which noun does 'that sells maps' tell about?"
+    options: ["shop", "maps", "early"]
     answer: 0
-    explain: "The clause sits right after track, so it tells about the track."
+    explain: "The clause sits right after shop, so it tells about the shop."

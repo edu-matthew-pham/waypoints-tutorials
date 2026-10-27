@@ -5,8 +5,8 @@ title: Say more in fewer words
 summary: "Two choppy sentences about the same thing can fold into one. The second becomes an embedded clause that sits right after the noun it tells about, starting with who, which or that. The sentence carries the same facts in fewer words, and the reader meets them in one go."
 language: maths
 node: [AC9E8LA05 n1, AC9E8LA05 n2]
-explainPicture: { ref: text.yml#explain-pic, caption: "Two sentences fold into one: 'who plays the cello' sits right after 'sister'." }
-hook: "'My sister plays the cello. My sister practises daily.' Can you say both in one sentence without repeating 'my sister'?"
+explainPicture: { ref: text.yml#explain-pic, caption: "Two sentences fold into one: 'who wears a red cap' sits right after 'coach'." }
+hook: "'The pool is old. The pool is closed.' Can you say both in one sentence without repeating 'the pool'?"
 ---
 Two short sentences about the same thing can fold into one.
 
@@ -22,9 +22,9 @@ stage: predict
 insight: "Predicting the folded sentence shows students that the second sentence can slot in after the noun it describes."
 check:
   type: predict
-  q: "'My sister plays the cello. My sister practises daily.' Which single sentence says both without repeating 'my sister'?"
-  options: ["My sister, who plays the cello, practises daily.", "My sister plays the cello, my sister practises daily.", "My sister who practises daily, plays the cello and.", "Plays the cello, my sister practises daily."]
-  actual: "My sister, who plays the cello, practises daily. The second sentence folds in right after 'sister', so the noun is named only once."
+  q: "'The pool is old. The pool is closed.' Which single sentence says both without repeating 'the pool'?"
+  options: ["The pool, which is old, is closed.", "The pool is old, the pool is closed.", "The pool who is closed, is old and.", "Is old, the pool is closed."]
+  actual: "The pool, which is old, is closed. The second sentence folds in right after 'pool', so the noun is named only once."
 ```
 
 ## Try: fold the second sentence in
@@ -33,13 +33,13 @@ check:
 stage: run
 insight: "Choosing the embedded clause that folds in a second sentence shows the joining word for a person (who), a thing (which) or either (that)."
 try: { playground: board, starter: "text.yml#run", height: 420 }
-hint: ["The new clause goes right after the noun it tells about.", "Who is for people. Which and that are for things."]
+hint: ["The new clause goes right after the noun it tells about.", "Ask which words tell more about the noun, then which joining word fits."]
 smaller:
-  check: { type: question, q: "'Mia has a dog. The dog barks all night.' Which joining word folds the second sentence in?", options: ["that", "who", "because"], answer: 0, feedback: [null, "Who is for people, and a dog is not a person here.", "Because would add a reason, not fold in a detail."], explain: "That barks all night sits right after dog, so the sentence is 'Mia has a dog that barks all night.'" }
+  check: { type: question, q: "'Mia has a dog. The dog barks all night.' Which joining word folds the second sentence in?", options: ["that", "who", "because"], answer: 0, feedback: [null, "Who fits a person, so it does not fit a dog here.", "Because would add a reason, not fold in a detail."], explain: "That barks all night sits right after dog, so the sentence is 'Mia has a dog that barks all night.'" }
 check: { type: board, text: "Choose the words that fold each second sentence into the first.", when: "n_gaps_right = 3", explain: "Each choice puts the second sentence right after the noun it tells about, starting with who, which or that." }
 ```
 
-Were you right about your sister? The folded sentence names her only once.
+Were you right about the pool? The folded sentence names it only once.
 
 ## Worked example: what the embedded clause carries
 
@@ -63,7 +63,7 @@ tasks:
       answer: 3
       fault: logic
       misconception: choppy-pair
-      explain: "Line 3 still repeats 'the pool'. It folds to: The pool, which is old, is closed."
+      explain: "Line 3 still repeats 'the library'. It folds to: The library, which has a cafe, opens at nine."
   - check:
       type: question
       q: "'My neighbour, who lives next door, plays cricket.' What do we lose if we take out 'who lives next door'?"
@@ -111,11 +111,11 @@ check: { type: board, text: "Colour every embedded clause.", when: "chains_ok = 
 stage: make
 insight: "Writing a short review that folds details into embedded clauses puts the move to work in a real text type."
 try: { playground: board, starter: "text.yml#make", height: 380 }
-hint: ["Review a book, game or place. Say what it is, then add details with who, which or that.", "Fold two sentences into one wherever you repeat a noun."]
-check: { type: board, text: "Write at least four sentences, using who, which or whose at least twice.", when: "n_sentences >= 4 and n_who >= 2" , explain: "Your review has embedded clauses. Ask a partner to underline each one and name the noun it tells about." }
+hint: ["Review a book, game or place. Say what it is, then add details with who or which.", "Fold two sentences into one wherever you repeat a noun."]
+check: { type: board, text: "Write at least four sentences, using the words who, which or whose at least twice (the board counts only those three).", when: "n_sentences >= 4 and n_who >= 2", explain: "Your review has embedded clauses. Ask a partner to underline each one and name the noun it tells about." }
 ```
 
-The board counts sentences and the words who, which and whose. Whether your clauses sit next to the right noun is for a partner to check.
+The board counts sentences and the words who, which and whose; a clause starting with that is just as good but is not counted. Whether your clauses sit next to the right noun is for a partner to check.
 
 ## In your own writing
 

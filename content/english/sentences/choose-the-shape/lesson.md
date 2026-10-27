@@ -2,17 +2,17 @@
 order: 8
 unit: shapes
 title: Choose the shape for the job
-summary: "A dependent clause can elaborate (give more detail), extend (add something new) or explain (say why). A writer also chooses a short or long, simple, compound or complex sentence for the job: short for something that must be seen at once, longer to carry detail and reasons. Mixing them keeps a reader moving."
+summary: "A dependent clause can elaborate (describe a noun in more detail), extend (add something new) or explain (say why). A writer also chooses a short or long, simple, compound or complex sentence for the job: short for something that must be seen at once, longer to carry detail and reasons. Mixing them keeps a reader moving."
 language: maths
 node: [AC9E7LA05 n3, AC9E7LA05 n4]
-explainPicture: { ref: text.yml#explain-pic, caption: "The dependent clause says why, so the sentence explains." }
+explainPicture: { ref: text.yml#explain-pic, caption: "The dependent clause says why the team cheered, so it explains." }
 hook: "'Stop.' or 'Please stop, because there is a hole in the road ahead.' Which would you put on a sign?"
 ---
 A dependent clause adds one of three things.
 
-- **Elaborates:** gives more detail. *We found a cave that stretched deep under the hill.*
-- **Extends:** adds something new. *We reached the summit, where we ate lunch.*
-- **Explains:** says why. *We turned back because the path was flooded.*
+- **Elaborates:** describes a noun in more detail. *Ava bought a kite that had a long red tail.*
+- **Extends:** adds what happened as a result or next. *The rain stopped, which meant we could play outside.*
+- **Explains:** says why. *We stayed in because the oval was flooded.*
 
 Then a writer chooses the shape for the job: a short sentence for a warning, a longer one when the reader needs the detail or the reason.
 
@@ -34,10 +34,10 @@ check:
 stage: run
 insight: "Labelling what a dependent clause adds shows the three jobs: detail, something new, or a reason."
 try: { playground: board, starter: "text.yml#run", height: 520 }
-hint: ["Ask of the added clause: is it more detail about something, a new fact, or a reason?", "A reason answers 'why'. A new fact would still make sense as its own sentence."]
+hint: ["Ask what the added clause does: does it describe a noun, say what happened as a result, or say why?", "Test 'why': does the clause answer why the main clause happened?"]
 smaller:
-  check: { type: question, q: "'We turned back because the path was flooded.' What does the clause 'because the path was flooded' do?", options: ["Explains", "Elaborates", "Extends"], answer: 0, feedback: [null, "It does not describe a noun in more detail.", "It does not add a new fact; it gives the reason."], explain: "It answers why they turned back, so it explains." }
-check: { type: board, text: "Label what each dependent clause adds: elaborates, extends or explains.", when: "n_right = 6", explain: "Elaborates gives more detail, extends adds something new and explains says why." }
+  check: { type: question, q: "'We cancelled the picnic because it rained.' What does the clause 'because it rained' do?", options: ["Explains", "Elaborates", "Extends"], answer: 0, feedback: [null, "It does not describe a noun in more detail.", "It does not add a new fact; it gives the reason."], explain: "It answers why the picnic was cancelled, so it explains." }
+check: { type: board, text: "Label what each dependent clause adds: elaborates, extends or explains.", when: "n_right = 6", explain: "Elaborates describes a noun in more detail, extends adds a result or what happened next, and explains says why." }
 ```
 
 Were you right about the sign? The short one: read in one glance.
@@ -55,8 +55,7 @@ tasks:
         - ["A warning that must be read in a glance", "A short simple sentence"]
         - ["Two facts of equal weight", "A compound sentence"]
         - ["A fact with the reason for it", "A complex sentence with because"]
-        - ["A point that should stand out after a long sentence", "A very short sentence"]
-      explain: "Each job asks for a different shape. The short sentence stands out because it comes after longer ones."
+      explain: "Each job asks for a different shape: short for a glance, compound for two equal facts, complex for a reason."
   - check:
       type: bug
       code: "working.txt#nib"
@@ -68,9 +67,9 @@ tasks:
   - check:
       type: question
       q: "Why might a writer follow a long sentence with a very short one?"
-      options: ["The short one stands out and lands the point", "Short sentences are always correct", "The reader needs a rest", "It makes the text longer"]
+      options: ["The short one stands out and lands the point", "Short sentences are always correct", "Short sentences are easier to spell", "It makes the text longer"]
       answer: 0
-      feedback: [null, "No shape is always correct; the choice depends on the job.", "Readers do not need a rest; the contrast is a tool.", "Length of text is not the aim."]
+      feedback: [null, "No shape is always correct; the choice depends on the job.", "Spelling does not depend on sentence length.", "Length of text is not the aim."]
       explain: "After a long sentence full of detail, a short one catches attention and lands the main point."
 ```
 
@@ -92,8 +91,8 @@ tasks:
 stage: modify
 insight: "Building a sentence that extends the main idea shows a dependent clause can add something new, not only a reason."
 try: { playground: board, starter: "text.yml#vary", height: 330 }
-hint: ["The first piece says where we got to. The second adds what happened there.", "Where joins the two pieces and adds a new fact."]
-check: { type: board, text: "Build a sentence that extends the first idea.", when: "in_order = 1", explain: "We reached the summit, where we ate lunch adds a new fact about the summit with the word where." }
+hint: ["The first piece says what happened. The second says what that led to.", "Which joins the two pieces and adds the result."]
+check: { type: board, text: "Build a sentence that adds the result.", when: "in_order = 1", explain: "The keeper dropped the ball, which cost us the game adds the result with the word which." }
 ```
 
 ## Practise: spot the short and the long
@@ -113,7 +112,7 @@ stage: make
 insight: "Writing a notice with some short and some long sentences puts the choice of shape to work for a reader."
 try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Write what, when and what to bring. Put the most important instruction in a short sentence.", "Use at least one long sentence that gives detail or a reason."]
-check: { type: board, text: "Write at least five sentences, with at least one of five words or fewer and one of fifteen words or more.", when: "n_sentences >= 5 and n_short >= 1 and n_long >= 1", explain: "Your notice has a mix of short and long sentences. Ask a partner whether the short sentences carry the key instructions and the long ones carry the detail." }
+check: { type: board, text: "Write at least five sentences (not headings), with at least one of five words or fewer and one of fifteen words or more.", when: "n_sentences >= 5 and n_short >= 1 and n_long >= 1", explain: "Your notice has a mix of short and long sentences. Ask a partner whether the short sentences carry the key instructions and the long ones carry the detail." }
 ```
 
 The board counts sentence lengths. Whether the short ones carry the key points is for you and a partner to judge.

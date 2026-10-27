@@ -12,8 +12,8 @@ role explains: Explains (says why)
 s any: We found a cave
 s elaborates: that stretched deep under the hill.
 para:
-s any: We reached the summit,
-s extends: where we ate lunch.
+s any: Ben scored in the last minute,
+s extends: which won the match.
 para:
 s any: We turned back
 s explains: because the path was flooded.
@@ -21,8 +21,8 @@ para:
 s any: The market sells fruit
 s elaborates: that was picked this morning.
 para:
-s any: The tour ended at the harbour,
-s extends: where a ferry waited.
+s any: The bus broke down,
+s extends: which made us late.
 para:
 s any: Ava stayed home
 s explains: since she had a cold.
@@ -31,10 +31,10 @@ s explains: since she had a cold.
 # region: vary
 widget: sentence
 mode: build
-before: Build a sentence that adds something new about the summit.
-tile a: we reached the summit^
-tile b: where we ate lunch
-decoy c: because we ate lunch
+before: Build a sentence that adds what happened as a result.
+tile a: the keeper dropped the ball^
+tile b: which cost us the game
+decoy c: because it cost us the game
 ans: a b
 # endregion
 
@@ -65,6 +65,6 @@ answer: on
 roles: main explains
 role main: Main clause
 role explains: Explains (says why)
-s main: We turned back
-s explains: because the path was flooded.
+s main: The team cheered
+s explains: because they had won.
 # endregion

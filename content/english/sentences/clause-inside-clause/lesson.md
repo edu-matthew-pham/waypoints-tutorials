@@ -8,7 +8,7 @@ node: [AC9E6LA05 n1, AC9E6LA05 n2, AC9E6LA05 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "Who grew up in Darwin is tucked inside the main clause, right after the noun it tells about. Take it out and the sentence still stands." }
 hook: "'The boat, which Eli loved, sank.' Where did 'which Eli loved' come from?"
 ---
-An **embedded clause** (also called a relative clause) sits **inside** a main clause, right after the noun it tells about. It starts with *who*, *which*, *that* or *whose*.
+An **embedded clause** (also called a relative clause) sits **inside** a main clause, right after the noun it tells about. It usually starts with *who*, *which*, *that* or *whose*.
 
 - *My cousin, **who lives in Perth**, visits in June.*
 
@@ -68,7 +68,7 @@ tasks:
       answer: 3
       fault: logic
       misconception: embedded-misplaced
-      explain: "Line 3: 'in a book that sank' makes the book sink. The clause should sit right after the noun it tells about: 'Eli wrote about the boat that sank in a book.' or 'Eli wrote a book about the boat that sank.'"
+      explain: "Line 3: 'in a book that sank' makes the book sink. The clause should sit right after the noun it tells about: 'Eli wrote a book about the boat that sank.'"
   - check:
       type: question
       q: "'The bridge is closed. It crosses the creek.' A writer wants the closure to stay the main news and the creek to be a side detail. Which sentence does that?"
@@ -119,7 +119,7 @@ stage: make
 insight: "Writing a short biography with at least two embedded clauses puts the move to work where a writer packs in detail about a person."
 try: { playground: board, starter: "text.yml#make", height: 360 }
 hint: ["Choose a person you know or have made up. Write four sentences about them.", "Use who, which or whose at least twice to add detail inside a sentence, right after the noun it tells about."]
-check: { type: board, text: "Write at least four sentences of a short biography and use who, which or whose at least twice.", when: "n_sentences >= 4 and n_who >= 2", explain: "Your biography packs detail into its sentences. Ask a partner to point to each embedded clause and the noun it tells about." }
+check: { type: board, text: "Write at least four sentences of a short biography and use who, which or whose at least twice (the board counts only those three words).", when: "n_sentences >= 4 and n_who >= 2", explain: "Your biography packs detail into its sentences. Ask a partner to point to each embedded clause and the noun it tells about." }
 ```
 
 The board counts sentences and the words who, which and whose. Whether each clause sits right after its noun is for you and a partner to judge.

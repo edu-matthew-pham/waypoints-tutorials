@@ -23,7 +23,7 @@ questions:
   - at: investigate
     title: "Which relationship?"
     type: question
-    q: "'The council planted trees so that walkers would have shade.' What does the dependent clause add?"
+    q: "'Ava saved her money so that she could buy a kite.' What does the dependent clause add?"
     options: ["A purpose", "A reason", "A concession"]
     answer: 0
-    explain: "So that says what the trees were planted for."
+    explain: "So that says what Ava saved her money for."

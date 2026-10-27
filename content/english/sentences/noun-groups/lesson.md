@@ -6,16 +6,16 @@ summary: "A noun group is a noun with the words that tell more about it. The hea
 language: maths
 node: [AC9E5LA06 n1, AC9E5LA06 n2, AC9E5LA06 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "Every word in the noun group has a job: The points it out, red describes it, fire says what kind of engine, and engine is the head noun." }
-hook: "'The boat' or 'the old fishing boat from the harbour'. Which one could you draw?"
+hook: "'The racket' or 'our rusty old tennis racket'. Which one could you draw?"
 ---
 A **noun group** is a noun and the words around it that tell more about it. Its parts usually come in this order:
 
-- **Determiner:** points out or counts the noun (*the*, *a*, *my*, *two*)
-- **Describer** (adjective): says what it is like (*old*, *noisy*)
-- **Classifier:** says what kind it is (*fishing*, *school*)
-- **Head noun:** the main thing (*boat*, *buses*)
+- **Determiner:** points out or counts the noun (*this*, *some*, *our*, *three*)
+- **Describer** (adjective): says what it is like (*tiny*, *rusty*)
+- **Classifier:** says what kind it is (*garden*, *tennis*)
+- **Head noun:** the main thing (*gate*, *rackets*)
 
-Detail can also come after the head noun (*from the harbour*).
+Detail can also come after the head noun (*with a loose latch*).
 
 ## Predict: which is the main word?
 
@@ -106,7 +106,7 @@ stage: practise
 insight: "Colouring describers and classifiers separately shows the two jobs are different."
 try: { playground: board, starter: "text.yml#practise", height: 330 }
 hint: ["Chain 1 is for describers (what it is like). Chain 2 is for classifiers (what kind it is).", "Skip determiners such as The and Its. Ask of each word: does it say what kind of thing, or what it is like?"]
-check: { type: board, text: "Colour the describers (Chain 1) and the classifiers (Chain 2).", when: "chains_ok = 2 and n_stray = 0", explain: "Green, wet, tiny, sticky and smooth say what things are like. Tree and gum say what kind of frog and leaf." }
+check: { type: board, text: "Colour the describers (Chain 1) and the classifiers (Chain 2).", when: "chains_ok = 2 and n_stray = 0", explain: "Tall, muddy, wide, twisty and cool say what things are like. Gum and creek say what kind of tree and bank." }
 ```
 
 ## Make: a report with noun groups

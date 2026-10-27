@@ -5,12 +5,12 @@ title: Keep the tense steady
 summary: "The tense of a verb tells the reader when something happens: past (walked), present (walk) or future (will walk). A recount or story picks a tense and keeps it. A slip into another tense makes the reader wonder whether time has moved. A writer moves tense on purpose, with a time word, and not by accident."
 language: maths
 node: [AC9E7LA06 n1, AC9E7LA06 n2]
-explainPicture: { ref: text.yml#explain-pic, caption: "One slip, 'walk', in a past-tense recount. The reader wonders if time has jumped." }
+explainPicture: { ref: text.yml#explain-pic, caption: "One slip, 'watch', in a past-tense recount. The reader wonders if time has jumped." }
 hook: "'Yesterday we walked to the beach, and then we swim.' What went wrong, and why does it matter?"
 ---
 The tense of a verb tells the reader when.
 
-- **Past:** *walked*, *swam*, *was*
+- **Past:** *walked*, *swam*, *were*
 - **Present:** *walk*, *swim*, *is*
 - **Future:** *will walk*, *will swim*, *will be*
 
@@ -53,11 +53,11 @@ tasks:
       q: "Sort each verb form by its tense."
       options: ["Past", "Present", "Future"]
       items:
-        - ["walked", "Past", "It tells what already happened."]
+        - ["jumped", "Past", "It tells what already happened."]
         - ["swims", "Present", "It tells what happens now or often."]
         - ["will run", "Future", "Will plus a verb looks ahead."]
-        - ["was", "Past", "Was is the past of is."]
-        - ["arrive", "Present", "It is the present form of the verb."]
+        - ["grew", "Past", "Grew is the past of grow."]
+        - ["arrives", "Present", "It tells what happens now or often."]
         - ["will arrive", "Future", "Will plus a verb looks ahead."]
   - check:
       type: bug
@@ -94,7 +94,7 @@ tasks:
 stage: modify
 insight: "Choosing each verb form to match a recount shows how the context decides the tense."
 try: { playground: board, starter: "text.yml#vary", height: 320 }
-hint: ["The first sentence tells you the tense of the whole recount.", "Pick the form that matches the verbs around it."]
+hint: ["Read the sentence before each gap and ask when it is about.", "Pick the form that matches the verbs around it."]
 check: { type: board, text: "Choose the verb form that keeps the tense steady.", when: "n_gaps_right = 3", explain: "The recount is in the past, so each gap needs a past form: packed, set and reached." }
 ```
 
@@ -104,7 +104,7 @@ check: { type: board, text: "Choose the verb form that keeps the tense steady.",
 stage: practise
 insight: "Colouring the verbs that break the tense trains the eye to notice a slip while reading."
 try: { playground: board, starter: "text.yml#practise", height: 340 }
-hint: ["Read the first sentence to find the tense.", "Click only the verbs that do not match it."]
+hint: ["Work out the tense of the whole recount, then check each verb against it.", "Click only the verbs that do not match it."]
 check: { type: board, text: "Colour the two verbs that slip out of the past tense.", when: "chains_ok = 1 and n_stray = 0", explain: "The recount is in the past. The verbs 'carry' and 'sit' do not match, so they are the slips." }
 ```
 

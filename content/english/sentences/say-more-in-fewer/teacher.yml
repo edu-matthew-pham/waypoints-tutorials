@@ -28,14 +28,14 @@ stuck:
     fix: "Move it right after 'sister'."
   - see: "A student uses 'which' for a person."
     ask: "Is the noun a person or a thing?"
-    fix: "Use who for people, which or that for things."
+    fix: "Who usually fits a person and which a thing; that works for either. Check the clause reads naturally."
 stretch: "Fold three short sentences into one, and then ask whether the result is still easy to read."
 support: "A sentence strip: write the main clause on one strip and the clause on another, then slide the clause into place."
 leads: |
   Next in Building sentences: the challenge Rework the report.
 exit:
-  q: "Fold into one sentence: 'The ferry leaves at nine. The ferry crosses the bay.'"
-  a: "The ferry, which crosses the bay, leaves at nine. (Or: The ferry that crosses the bay leaves at nine.)"
+  q: "Fold into one sentence: 'The market opens at six. The market sells fresh fish.'"
+  a: "The market, which sells fresh fish, opens at six. (Or: The market that sells fresh fish opens at six.)"
 explain: |
   An embedded clause tells about a noun and sits right after it.
 

@@ -6,13 +6,13 @@ summary: "A precise verb can say what a verb and an adverb need two words for (r
 language: maths
 node: [AC9E6LA06 n1, AC9E6LA06 n2, AC9E6LA06 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "Dived does the work of jumped very quickly. A precise verb says in one word what a plain verb and an adverb need two for." }
-hook: "'Ran very fast' or 'sprinted'. Which one is the writer's best choice, and why?"
+hook: "'Drank very quickly' or 'gulped'. Which one is the writer's best choice, and why?"
 ---
 Three tools make a sentence more exact.
 
-- **A precise verb:** *sprinted* says what *ran very fast* needs three words for.
+- **A precise verb:** *gulped* says what *drank very quickly* needs three words for.
 - **The tense:** *scored* (past), *scores* (present) or *will score* (future) tells the reader when.
-- **An adverb group:** *very quietly* (how), *just outside* (where), *quite recently* (when) or *extremely* (how much) adds detail to a verb.
+- **An adverb group:** *very quietly* (how), *just outside* (where), *quite recently* (when) or *very much* (how much) adds detail to a verb.
 
 ## Predict: one word instead of three
 
@@ -32,9 +32,9 @@ check:
 stage: run
 insight: "Choosing the verb that matches each wordy phrase shows a precise verb does the work of a plain verb and an adverb."
 try: { playground: board, starter: "text.yml#run", height: 460 }
-hint: ["Read the wordy sentence, then choose the one verb that means the same.", "Cross out the wrong ones by testing: does it mean 'walked very quietly'?"]
+hint: ["Read the wordy sentence, then choose the one verb that means the same.", "Test each choice: does it mean the same as the wordy phrase?"]
 smaller:
-  check: { type: question, q: "Which single verb means 'ran very fast'?", options: ["sprinted", "jogged", "strolled"], answer: 0, feedback: [null, "Jogged is a slow, steady run.", "Strolled is a slow walk."], explain: "Sprinted means to run very fast, so it replaces ran very fast." }
+  check: { type: question, q: "Which single verb means 'drank very quickly'?", options: ["gulped", "sipped", "tasted"], answer: 0, feedback: [null, "Sipped is a slow, small drink.", "Tasted is a small try, not a quick drink."], explain: "Gulped means to drink very quickly, so it replaces drank very quickly." }
 check: { type: board, text: "Choose the single verb that means the same as each wordy phrase.", when: "n_gaps_right = 3", explain: "Crept means walked very quietly, studied means looked at very carefully, and devoured means ate very quickly. Each one replaces a plain verb and an adverb." }
 ```
 
@@ -92,7 +92,7 @@ Now match the phrases to verbs.
 stage: modify
 insight: "Choosing the verb form that fits each time clue shows the tense is set by when the event happens."
 try: { playground: board, starter: "text.yml#vary", height: 320 }
-hint: ["Look for a word that says when: yesterday, these days, next week.", "Past tense for what already happened, present for what is true now, will plus a verb for what is coming."]
+hint: ["Look for a word in each sentence that says when.", "Past tense for what already happened, present for what is true now, will plus a verb for what is coming."]
 check: { type: board, text: "Choose the verb form that fits each time clue.", when: "n_gaps_right = 3", explain: "Yesterday points to the past (visited), these days points to the present (leaves), and next week points to the future (will plant)." }
 ```
 
@@ -102,7 +102,7 @@ check: { type: board, text: "Choose the verb form that fits each time clue.", wh
 stage: practise
 insight: "Colouring adverb groups by what they add shows they are not all about how."
 try: { playground: board, starter: "text.yml#practise", height: 330 }
-hint: ["Chain 1 is how (manner), Chain 2 is when (time), Chain 3 is where (place).", "Click the whole adverb group, such as 'very early', not just one word."]
+hint: ["Chain 1 is how (manner), Chain 2 is when (time), Chain 3 is where (place).", "Click the whole adverb group, such as 'really slowly', not just one word."]
 check: { type: board, text: "Colour the adverb groups: how (Chain 1), when (Chain 2) and where (Chain 3).", when: "chains_ok = 3 and n_stray = 0", explain: "Quite softly and extremely carefully say how. Very early says when. Just outside says where." }
 ```
 
