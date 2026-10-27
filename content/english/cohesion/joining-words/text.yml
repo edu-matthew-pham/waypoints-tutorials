@@ -16,17 +16,7 @@ widget: cohesion
 p: We tested whether an egg floats in salty water. [[{First|Finally|However}=First]], we filled a jug with tap water and dropped the egg in. It sank. [[{Next|As a result|But}=Next]], we took the egg out and stirred in six tablespoons of salt. [[{After that|In addition|For example}=After that]], we lowered the egg in again. This time it floated. Salt makes the water denser than the egg. [[{As a result|First|Then}=As a result]], the egg is pushed up. [[{Finally|However|Also}=Finally]], we wrote up our results.
 # endregion
 
-# region: make
-widget: cohesion
-tools: write
-p: Press Write your own. Write four or five sentences about something you made or did, step by step.
-# endregion
 
-# region: make-solution
-widget: cohesion
-as: student
-p: We made pancakes for breakfast. First, we mixed flour, eggs and milk. Then we heated the pan. The first pancake stuck, so we added more butter. Finally, we ate them with lemon.
-# endregion
 
 # region: explain-pic
 widget: cohesion

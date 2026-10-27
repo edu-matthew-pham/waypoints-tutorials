@@ -44,17 +44,6 @@ colours: 2
 p: The [[tall#a]] [[gum#b]] tree shades a [[muddy#a]] [[creek#b]] bank. Its [[wide#a]], [[twisty#a]] branches reach over the [[cool#a]] water.
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: The Murray cod is a large freshwater fish. It lives in slow, muddy rivers across the southern inland. Its broad, mottled body helps it hide among fallen logs. The adult cod can grow to more than a metre long, and the biggest ones are many years old.
-# endregion
 
 # region: explain-pic
 widget: cohesion

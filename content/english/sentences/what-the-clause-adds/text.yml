@@ -1,5 +1,5 @@
 # Texts for "What the extra clause adds" (cohesion parts mode labels each dependent clause's relationship; the sentence
-# board builds the same sentence in both orders and counts a letter; gaps choose a joining word).
+# board builds the same sentence in both orders; gaps choose a joining word).
 
 # region: run
 widget: cohesion
@@ -50,20 +50,6 @@ ans: a b
 # region: practise
 widget: cohesion
 p: The ferry stopped running [[{until|because|so that}=because]] the wind was too strong. The council planted trees along the path [[{so that|although|until}=so that]] walkers would have shade. [[{Until|Because|Although}=Although]] the creek was only ankle deep, the guide made everyone wear a life jacket.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: joiners
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: joiners
-p: Dear Mrs Hart, I am writing to ask for a longer lunch break. Students need time to eat and play because we study hard all morning. If lunch were half an hour longer, more of us could join a club. Although the timetable is full, a longer lunch would help everyone concentrate in the afternoon.
 # endregion
 
 # region: explain-pic

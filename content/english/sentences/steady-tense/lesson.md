@@ -110,15 +110,18 @@ check: { type: board, text: "Colour the two verbs that slip out of the past tens
 
 ## Make: a diary entry
 
+In your own document, write a diary entry about a real day last week, or one you make up. Write at least five sentences (at least 50 words), in the order things happened. Use the past tense.
+
+Here is one example: "Last Saturday I **woke** up early because the sun **was** already shining. I **ate** breakfast and **packed** my bag. My cousin **arrived** at nine, and we **rode** our bikes to the park."
+
+When you finish, read only the verbs. Then swap with a partner. Underline every verb in each other's entry. Are they all in the past tense?
+
 ```step
 stage: make
 insight: "Writing a diary entry about a real day in one tense puts steady tense to work in a real text type."
-try: { playground: board, starter: "text.yml#make", height: 380 }
 hint: ["Write about a day last week, in the order it happened. Use the past tense.", "When you finish, read only the verbs and check each matches."]
-check: { type: board, text: "Write at least five sentences, at least 50 words.", when: "n_sentences >= 5 and n_words >= 50", explain: "Your diary is written. Ask a partner to underline each verb and check they are all in the past tense." }
+check: { type: reflect, text: "I wrote a diary entry of at least five sentences in the past tense, and a partner and I underlined every verb and checked that each one matches." }
 ```
-
-The board counts sentences and words. A partner or your teacher checks the tense.
 
 ## In your own writing
 

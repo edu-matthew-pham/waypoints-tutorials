@@ -113,15 +113,22 @@ check: { type: board, text: "Label each paragraph by the reader it was written f
 
 ## Make: rewrite for a younger reader
 
+Here is a sun safety text written for adults. Copy it into your own document.
+
+> Ultraviolet radiation from the sun can damage unprotected skin in as little as fifteen minutes. Individuals are advised to wear broad-brimmed hats, apply sunscreen and seek shade during periods of high UV.
+
+In your own document, rewrite it for a Year 2 student. Use at least three short sentences. Try commands (*Wear*, *Put on*, *Play*) and *you* or *your*. Use no word a seven-year-old wouldn't know.
+
+Here is one example: "The sun can burn **your** skin very fast. **Wear** a big hat. **Put on** sunscreen. **Play** in the shade when it is hot."
+
+Then swap with a partner and read your version to them as if they were seven. Use this checklist: short sentences, commands, *you* or *your*, and no hard words. Would they know what to do?
+
 ```step
 stage: make
 insight: "Rewriting an adult text for a child makes students choose structure and language for a reader, which they then judge."
-try: { playground: board, starter: "text.yml#make", height: 340 }
-hint: ["Press Write your own. Rewrite the sun safety text for a Year 2 student.", "Use at least three short sentences. Try commands (Wear, Put on, Play) and you or your."]
-check: { type: board, text: "Rewrite the text for a Year 2 reader in at least three sentences.", when: "is_written = 1 and n_sentences >= 3", explain: "Read your version to a partner as if they were seven. Would they understand every word? Would they know what to do?" }
+hint: ["Who will read this? Imagine a seven-year-old. What should they do after reading it?", "Cut long words first (ultraviolet, individuals). Then try commands: Wear, Put on, Play."]
+check: { type: reflect, text: "I rewrote the sun safety text for a Year 2 reader in at least three short sentences, and a partner and I checked it against the list: short sentences, commands, you or your, and no hard words." }
 ```
-
-The board checks that you rewrote it. Use this checklist with a partner: short sentences, commands, you or your, and no word a seven-year-old wouldn't know.
 
 ## In your own writing
 

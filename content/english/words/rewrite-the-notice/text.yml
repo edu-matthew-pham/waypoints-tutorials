@@ -1,4 +1,4 @@
-# Texts for the challenge "Rewrite the notice" (scale, swap, chain, write).
+# Texts for the challenge "Rewrite the notice" (scale, swap, chain).
 
 # region: scale
 widget: wordchoice
@@ -26,21 +26,6 @@ widget: cohesion
 mode: chain
 colours: 1
 p: [[Hey#a]] everyone, the oval is [[heaps#a]] too wet, so training is in the gym. Bring [[ya#a]] runners and a drink bottle. [[Cheers#a]], Nib. P.S. [[No worries#a]] if you are late.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: contractions exclaims
-start: "Hey everyone! The oval's heaps too wet, so training's in the gym on Thursday at four. Bring ya runners and a drink bottle. No worries if you're late. Cheers, Nib"
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: contractions exclaims
-p: Training has been relocated to the gym on Thursday at four, because the oval is unsuitable for use. Students are asked to bring their runners and a drink bottle. Parents are invited to attend. We regret any inconvenience.
 # endregion
 
 # region: explain-pic

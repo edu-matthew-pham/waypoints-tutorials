@@ -35,19 +35,7 @@ para:
 s adults: UV levels are usually highest in the middle of the day, so plan outdoor activities for the morning or late afternoon where you can.
 # endregion
 
-# region: make
-widget: cohesion
-mode: chain
-tools: write
-p: Ultraviolet radiation from the sun can damage unprotected skin in as little as fifteen minutes. Individuals are advised to wear broad-brimmed hats, apply sunscreen and seek shade during periods of high UV.
-# endregion
 
-# region: make-solution
-widget: cohesion
-mode: chain
-as: student
-p: The sun can burn your skin very fast. Wear a big hat. Put on sunscreen. Play in the shade when it is hot.
-# endregion
 
 # region: explain-pic
 widget: cohesion

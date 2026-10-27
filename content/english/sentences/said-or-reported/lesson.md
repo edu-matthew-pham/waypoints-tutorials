@@ -108,15 +108,18 @@ check: { type: board, text: "Choose the punctuation for each box.", when: "n_rig
 
 ## Make: a newsletter item
 
+In your own document, write a short newsletter item (at least three sentences) about a school event, such as a sports day, a concert or a visit. Quote one person's exact words inside quotation marks. Report what a second person said, with no quotation marks.
+
+Here is one example: On Friday our school held its swimming carnival. 'I have never heard such cheering,' said the principal. The captain told the crowd that the Blue team **had won**.
+
+Then swap with a partner. Find the quoted sentence and the reported sentence. Does the quote have its marks and its punctuation? Has the report lost its marks, and moved its tense and pronouns?
+
 ```step
 stage: make
 insight: "Writing a newsletter item that quotes one person and reports another puts both kinds of speech to work for a reader."
-try: { playground: board, starter: "text.yml#make", height: 360 }
 hint: ["Choose a school event: a sports day, a concert or a visit. Write what happened.", "Quote one person's exact words in quotation marks, and report what a second person said without quoting them."]
-check: { type: board, text: "Write at least three sentences of a newsletter item. Include quotation marks around one person's exact words.", when: "n_sentences >= 3 and n_quotes >= 1", explain: "Your item uses direct speech to let the reader hear one person. Ask a partner to find the sentence where you reported speech instead, and check the tense and pronouns changed." }
+check: { type: reflect, text: "I wrote a newsletter item that quotes one person and reports what another said, and a partner and I checked the quotation marks, the tense and the pronouns." }
 ```
-
-The board counts sentences and opening quotation marks. Whether your reported speech has changed its tense and pronouns is for you and a partner to judge.
 
 ## In your own writing
 

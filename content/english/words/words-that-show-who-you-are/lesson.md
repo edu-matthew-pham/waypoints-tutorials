@@ -103,15 +103,18 @@ check: { type: board, text: "Colour every sailing word in the note.", when: "cha
 
 ## Make: a character speaks
 
+In your own document, write a short scene of at least four sentences with a character who speaks at least twice. Put the spoken words in quotation marks. Choose words that show which group the character belongs to, such as a club, a team or a crew.
+
+Here is one example: Dev unrolled the sail and shouted, 'Ready about!' 'Ready,' called Priya from the tiller. They waited for the wind to fill the sail.
+
+Then swap with a partner. Which group does the character belong to, and which words told you?
+
 ```step
 stage: make
 insight: "Writing a short scene with a character shows how word choice builds a character's group and place."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Which group does your character belong to?", "Which words would they use that others would not?"]
-check: { type: board, text: "Write at least four sentences with a character speaking at least twice, in quotation marks.", when: "n_sentences >= 4 and n_quotes >= 2", explain: "You wrote a short scene. Ask a partner which group your character belongs to, and which words told them." }
+check: { type: reflect, text: "I wrote a short scene with a character speaking at least twice, and a partner and I found the words that show which group the character belongs to." }
 ```
-
-The board counts sentences and quotation marks. Whether the words suit the character is for you and a partner to judge.
 
 ## In your own writing
 

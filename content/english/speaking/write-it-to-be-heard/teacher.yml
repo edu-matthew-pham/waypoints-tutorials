@@ -11,7 +11,7 @@ before: |
 
   The one idea: a script is written for the ear. This lesson covers AC9E5LY07 node 2 (complex sentences and specialist vocabulary in spoken presentation). The criteria say the complexity must be audible, so the lesson does not ban complex sentences: a short sentence with *because* in it is good speech. What fails is the long sentence with a clause tucked in the middle.
 
-  The Practise board counts sentences, how many have 15 or more words and the different joining words (because, when, until and the like). The check needs three or more sentences, none long, and at least one joining word, so a student has to keep one short complex sentence (AC9E5LY07 n2). The count is a rough aid: a 14-word sentence can still be hard to say, and "a. b. c." would pass, so listen to it. The student's script is judged by saying it aloud to a partner.
+  The Practise step has no board: students rewrite the long sentence in their own document, with three or more sentences under 15 words and at least one joining word, so they keep one short complex sentence (AC9E5LY07 n2). Fifteen words is a rough guide: a 14-word sentence can still be hard to say. The real test is saying it aloud to a partner, who listens for where the breath runs out.
 
   The Make step is a reasoning check, so nothing is marked. The two models differ on purpose: one opens with a question to the room, the other states the main idea first.
 
@@ -21,6 +21,7 @@ running:
   - "Try: ask what each signpost tells a listener."
   - "Worked example: ask a student to read Nib's third line aloud. Where does the class lose the thread?"
   - "Vary: ask for the version a speaker would not want to say. Why not?"
+  - "Practise: students rewrite in their own document, then say it aloud to a partner."
   - "Make: partners read each other's four sentences aloud. The writer listens for where the reader trips."
 stuck:
   - see: "A student reads the script silently and says it is fine."

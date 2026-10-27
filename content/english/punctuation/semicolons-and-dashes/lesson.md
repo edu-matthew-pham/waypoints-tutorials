@@ -110,25 +110,18 @@ check: { type: board, text: "Choose the mark for each box.", when: "n_right = 5 
 
 ## Make: describe a place
 
+In your own document, describe a place you know well, such as a beach, a playground or a street. Write at least four sentences. Use a semicolon between two related sentences, and a pair of dashes for an aside or a single dash for a surprise. Use a spaced en dash (–), or a spaced hyphen ( - ) if that is easier to type.
+
+Here is one example: "The beach at dawn is quiet. The waves are small**;** the sand is cold and smooth. A single gull **–** the only one in sight **–** circles above the rocks. Then the sun rises **–** and everything glows."
+
+Then swap with a partner. Check that each side of the semicolon could stand alone, and say what each dash does.
+
 ```step
 stage: make
 insight: "Writing a short description with a semicolon and dashes puts the marks to work in a real text type."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Describe a place you know well: a beach, a playground, a street.", "Use a semicolon between two related sentences, and a pair of dashes for an aside or a single dash for a surprise."]
-check: { type: board, text: "Write at least four sentences with a semicolon and a dash.", when: "n_sentences >= 4 and n_semicolons >= 1 and n_dashes >= 1", explain: "Your description has a semicolon and a dash. Ask a partner to check that each side of the semicolon could stand alone, and to say what each dash does." }
+check: { type: reflect, text: "I wrote a description of at least four sentences with a semicolon and a dash, and a partner and I checked that each side of the semicolon could stand alone and said what each dash does." }
 ```
-
-The board counts semicolons and dashes. Whether each one does its job is for you and a partner to check.
-
-## In your own writing
-
-```step
-stage: make
-tier: typical
-insight: "Checking each semicolon or dash in real writing against its job puts the rule to use outside the board."
-check: { type: reflect, text: "I checked a semicolon or a dash in my own writing and could say what it does." }
-```
-
 ## Wider: the same idea, two marks
 
 ```step

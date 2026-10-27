@@ -108,15 +108,18 @@ check: { type: board, text: "Place each line: boss, equal or helper.", when: "n_
 
 ## Make: a club announcement
 
+In your own document, write an announcement for a made-up club, at least four sentences. Write for readers who include newcomers. Use *I*, *me*, *my*, *we*, *us* or *our* at least twice, and explain any special club word.
+
+Here is one example: "**We** are starting a chess club at lunchtime on Tuesdays. Everyone is welcome, including people who have never played. **I** will bring spare boards and show you the basics. **Our** first game is next week in the library."
+
+Then swap with a partner. Would a newcomer follow every word? What role do your pronouns give you?
+
 ```step
 stage: make
 insight: "Writing an announcement for a made-up club puts roles and welcoming wording to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Who is the announcement for, including newcomers?", "Where could you say we or our to include the readers?"]
-check: { type: board, text: "Write an announcement of at least four sentences that uses I, me, my, we, us or our at least twice (short forms such as we're do not count).", when: "n_first >= 2 and n_sentences >= 4", explain: "You wrote an announcement. Ask a partner whether a newcomer would follow every word, and what role your pronouns give you." }
+check: { type: reflect, text: "I wrote a club announcement of at least four sentences that uses I, we or our at least twice, and a partner and I checked that a newcomer would follow every word." }
 ```
-
-The board counts the words I, me, my, mine, we, us and our (not short forms such as we'll) and sentences. Whether a newcomer would follow is for you and a partner to judge.
 
 ## In your own writing
 

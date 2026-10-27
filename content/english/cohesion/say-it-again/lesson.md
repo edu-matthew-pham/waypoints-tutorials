@@ -103,12 +103,19 @@ check: { type: board, text: "Colour three chains: the fire, the firefighters and
 
 ## Make: your own chain
 
+In your own document, write four sentences about one thing, such as a sport, an animal or a place. Repeat its name at least once, and use a word that means the same at least once.
+
+Then use the highlighter in your document to colour the chain: every word that stands for that one thing.
+
+Here is one example: "**Netball** is my favourite sport. I play **the game** every Saturday. Our **netball** team is called the Comets. We won every match this term." The chain is *Netball*, *the game* and *netball*.
+
+Then swap with a partner. Highlight each other's chain without asking. Do you find the same words the writer meant?
+
 ```step
 stage: make
 insight: "Writing a paragraph with a deliberate chain and then colouring it is the production half of the node."
-try: { playground: board, starter: "text.yml#make", height: 340 }
-hint: ["Press Write your own and write four sentences about one thing, such as a sport, an animal or a place.", "Repeat its name at least once and use a word that means the same at least once. Then colour the chain."]
-check: { type: board, text: "Write at least four sentences about one thing, then colour a chain of at least three words for it.", when: "is_written = 1 and max_chain >= 3", explain: "Your chain shows the reader your paragraph stays on one thing. Is any it or they unclear? Repeat the word there." }
+hint: ["Choose one thing you know well and write four sentences about it.", "Say its name more than once, and use another word for it once. Where an it or they could mean two things, which would be clearer?"]
+check: { type: reflect, text: "I wrote four sentences about one thing, highlighted a chain of at least three words for it, and a partner found the same chain." }
 ```
 
 ## In your own writing

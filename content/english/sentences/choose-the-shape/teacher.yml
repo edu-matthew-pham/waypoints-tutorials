@@ -1,6 +1,6 @@
-summary: "Students learn that a dependent clause can elaborate, extend or explain, and that a writer chooses short or long, simple, compound or complex sentences for the job. They label what clauses add, match jobs to shapes, catch a sentence too long for a notice, build an extending sentence, colour short and long sentences and write a school fair notice."
+summary: "Students learn that a dependent clause can elaborate, extend or explain, and that a writer chooses short or long, simple, compound or complex sentences for the job. They label what clauses add, match jobs to shapes, catch a sentence too long for a notice, build an extending sentence, colour short and long sentences and write a school fair notice in their own document."
 time: 50
-timing: "Predict and Try 10 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make and own writing 18 min"
+timing: "Predict and Try 10 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make (in their own document) and own writing 18 min"
 goals:
   - I can say whether a dependent clause elaborates, extends or explains.
   - I can choose a short or long sentence for the job.
@@ -14,7 +14,7 @@ before: |
 
   Elaborating gives more detail about something already named, extending adds a related new fact, and explaining gives a reason. Items on the board were chosen so one label clearly fits; a few real sentences can sit between labels, and students can argue them in discussion.
 
-  The counts (short is five words or fewer, long is fifteen or more) are rough aids. They show a mix exists, not that the mix is good.
+  The Make step gives rough lengths (short is five words or fewer, long is fifteen or more). Students count in their own document and check with a partner; the site counts nothing. A mix existing does not make it a good mix.
 
   The three jobs are ACARA's broad view of a dependent clause. Time, condition and concession clauses (from What the clause adds) fall under them: a time clause usually extends, and a condition or concession qualifies the main idea. The board keeps to the clear cases and lets students argue the rest in discussion.
 
@@ -23,7 +23,7 @@ running:
   - "Predict: take a quick vote before showing the answer."
   - "Try: ask three questions in turn: does it describe a noun, does it say what happened as a result, does it say why?"
   - "Worked example: ask where a driver's eyes go first."
-  - "Make: partners check the key instruction sits in a short sentence."
+  - "Make: students write in their own document, then partners check the key instruction sits in a short sentence."
 stuck:
   - see: "A student labels 'since she had a cold' as extends."
     ask: "Does the clause answer why?"

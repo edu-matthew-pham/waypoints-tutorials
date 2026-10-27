@@ -1,5 +1,5 @@
 # Texts for "Verbs that do the work" (cohesion gaps choose the precise verb and the tense; chain mode colours adverb
-# groups by what they add; the sentence board counts a match report).
+# groups by what they add).
 
 # region: run
 widget: cohesion
@@ -20,17 +20,6 @@ colours: 3
 p: We arrived [[very early#b]] and waited [[just outside#c]]. The ranger spoke [[quite softly#a]] and checked the gate [[extremely carefully#a]].
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: Our team played Hillside on Saturday morning. The striker sprinted down the wing and crossed the ball. Hillside's keeper dived but missed it. The crowd roared as the ball hit the net. Our captain lifted the trophy, and everyone cheered very loudly. We won by two goals after a tough, exciting match.
-# endregion
 
 # region: explain-pic
 widget: cohesion

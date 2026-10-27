@@ -1,4 +1,4 @@
-# Texts for "Who says so?" (scale places claims by source; gaps choose a fitting source; write counts).
+# Texts for "Who says so?" (scale places claims by source; gaps choose a fitting source).
 
 # region: run
 widget: wordchoice
@@ -28,18 +28,6 @@ word c: A friend of my cousin says the pool is cold. = 1
 word d: The bus company's timetable shows the 8:10 runs on weekdays. = 3
 word e: Mr Webb, who coaches the netball team, says the court is slippery after rain. = 3
 word f: Ms Kaur, the school nurse, says tired students often get headaches. = 3
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: The canteen queue is too long at lunch. Ms Reid, who supervises the canteen, says about sixty students arrive at once. She thinks a second serving window would help the queue move faster at lunch.
 # endregion
 
 # region: explain-pic

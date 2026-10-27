@@ -1,4 +1,4 @@
-# Texts for "Layers of meaning" (parts labels the device; gaps finish a device; write counts quotes).
+# Texts for "Layers of meaning" (parts labels the device; gaps finish a device).
 
 # region: run
 widget: cohesion
@@ -46,20 +46,6 @@ para:
 s small: 'A minor wobble,' said the climber, hanging from the cliff.
 para:
 s opposite: 'How exciting,' she yawned, at the end of the three-hour talk.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: quotes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: quotes
-p: The bus broke down on the hill. 'A minor delay,' said the driver, as smoke poured from the engine. 'We will be here until the end of time,' groaned Mia. The sun set slowly over the stopped bus.
 # endregion
 
 # region: explain-pic

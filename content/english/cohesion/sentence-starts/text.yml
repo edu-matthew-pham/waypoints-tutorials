@@ -16,17 +16,7 @@ widget: cohesion
 p: Our school put 40 solar panels on the hall roof last year. [[{The panels face north to catch the most sun.|North is the way the panels face, to catch the most sun.}=The panels face north to catch the most sun.]] [[{They make electricity whenever the sun is out.|Whenever the sun is out, electricity is made by them.}=They make electricity whenever the sun is out.]] [[{This electricity runs the lights and computers in the hall.|The lights and computers in the hall are run by this electricity.}=This electricity runs the lights and computers in the hall.]]
 # endregion
 
-# region: make
-widget: cohesion
-tools: write
-p: Press Write your own. Write four sentences about an animal, a place or a game.
-# endregion
 
-# region: make-solution
-widget: cohesion
-as: student
-p: Our cat Pepper sleeps all day. She wakes up at dinner time. Her favourite food is tuna. After dinner, she goes out to hunt moths.
-# endregion
 
 # region: explain-pic
 widget: cohesion

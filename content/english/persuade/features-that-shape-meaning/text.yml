@@ -1,4 +1,4 @@
-# Texts for "Features that shape meaning" (parts labels the feature; gaps choose wording; chain colours two features; write counts short sentences).
+# Texts for "Features that shape meaning" (parts labels the feature; gaps choose wording; chain colours two features).
 
 # region: run
 widget: cohesion
@@ -37,20 +37,6 @@ widget: cohesion
 mode: chain
 colours: 2
 p: [[You#a]] can help. Fumes [[choke#b]] the town and waste [[clogs#b]] the drain. [[Join us#a]] on Saturday.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: short
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: short
-p: Our garden needs you. Who wants weeds? Pick up your litter. A tidy garden grows better beans and a happier school. Join us on Friday.
 # endregion
 
 # region: explain-pic

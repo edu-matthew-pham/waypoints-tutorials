@@ -17,17 +17,7 @@ show: none
 p: [[The Year 6 students|y6]] counted frogs at [[the school pond|pond]] every Friday. [[They>y6]] found eleven in March and twenty in May, after heavy rain had filled [[it>pond]] up. [[Each week there were more frogs than the week before|more]]. [[This>more]] showed the pond was healthy.
 # endregion
 
-# region: make
-widget: cohesion
-tools: write mark
-p: Press Write your own and write three sentences here about something your class did.
-# endregion
 
-# region: make-solution
-widget: cohesion
-as: student
-p: [[Our class|c]] went to [[the museum|m]] on Tuesday. [[It>m]] had a whale skeleton. [[We>c]] drew [[it>m]] for art.
-# endregion
 
 # region: explain-pic
 widget: cohesion

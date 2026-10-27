@@ -109,21 +109,15 @@ check: { type: board, text: "Colour the three joining words.", when: "chains_ok 
 
 ## Make: a recount with extras
 
+In your own document, write at least three sentences of a recount, such as a school excursion or a day out. Use at least two different joining words, such as *when*, *because*, *after*, *until* or *while*.
+
+Here is one example: "On Tuesday our class visited the wetlands. We wore boots **because** the ground was muddy. **After** we ate lunch, we counted the birds."
+
+Then swap with a partner. Point to each dependent clause and say what it adds: when, why, what must be true or how. Could it stand alone?
+
 ```step
 stage: make
 insight: "Writing three sentences of a recount with two different joining words puts complex sentences to work in a real text type."
-try: { playground: board, starter: "text.yml#make", height: 330 }
 hint: ["Think of a school excursion or a day out. Write what happened.", "Use at least two different joining words, such as when, because, after, until or while."]
-check: { type: board, text: "Write at least three sentences of a recount and use at least two different joining words.", when: "n_sentences >= 3 and n_joiners >= 2", explain: "Your recount uses dependent clauses to add when and why. Ask a partner to point to each dependent clause and say whether it could stand alone." }
-```
-
-The board counts sentences and joining words. Whether each dependent clause really cannot stand alone is for you and a partner to judge.
-
-## In your own writing
-
-```step
-stage: make
-tier: typical
-insight: "Checking a real piece of writing for dependent clauses that stand alone puts the move to use outside the board."
-check: { type: reflect, text: "I read a recount of my own and checked that each dependent clause is joined to a main clause, so none is left as a sentence on its own." }
+check: { type: reflect, text: "I wrote a recount with at least two joining words, and a partner and I checked that no dependent clause is left on its own as a sentence." }
 ```

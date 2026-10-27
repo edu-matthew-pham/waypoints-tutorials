@@ -1,4 +1,4 @@
-# Texts for "Fact or feeling?" (parts labels fact or opinion; swap chooses the fact wording; chain colours opinion words; write counts).
+# Texts for "Fact or feeling?" (parts labels fact or opinion; swap chooses the fact wording; chain colours opinion words).
 
 # region: run
 widget: cohesion
@@ -34,20 +34,6 @@ widget: cohesion
 mode: chain
 colours: 1
 p: The new skate park is [[fantastic#a]]. I [[think#a]] it is the [[best#a]] place in town, although the big ramps are [[scary#a]]. It opened in March and has three ramps.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: first
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: first
-p: The library has four computers. It opens at eight each morning. There are two hundred books about space. I think it is the best room in the school.
 # endregion
 
 # region: explain-pic

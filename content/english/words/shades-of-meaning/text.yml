@@ -1,4 +1,4 @@
-# Texts for "Shades of meaning" (scale places words by strength; swap chooses the word that matches; write counts).
+# Texts for "Shades of meaning" (scale places words by strength; swap chooses the word that matches).
 
 # region: run
 widget: wordchoice
@@ -31,18 +31,6 @@ word c: scared = 1/2
 word d: frightened = 2/3
 word e: terrified = 3
 word f: petrified = 3
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: The storm roared over the bay, and the waves crashed against the jetty. A fierce wind whipped the sand into our faces. We sheltered under a dripping awning and watched the boats rock wildly. By evening the sky cleared and the sea settled into a calm, silvery sheet.
 # endregion
 
 # region: explain-pic

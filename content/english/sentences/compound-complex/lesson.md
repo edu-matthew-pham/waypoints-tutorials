@@ -109,15 +109,18 @@ check: { type: board, text: "Colour the dependent clause in each sentence.", whe
 
 ## Make: a note home
 
+In your own document, write a short note to a parent about a school event. Write at least four sentences. Include at least one compound sentence and one complex sentence. Try one compound-complex sentence for the most important news.
+
+Here is one example: "On Friday our class visited the museum. We left early **because** the bus came at eight. The guide showed us a model ship, **and** she explained how it sailed **when** the wind was strong."
+
+Then swap with a partner. Label each sentence simple, compound, complex or compound-complex. Do you agree with each label?
+
 ```step
 stage: make
 insight: "Writing a short note that uses a compound, a complex and a compound-complex sentence puts all the shapes to work in a real text."
-try: { playground: board, starter: "text.yml#make", height: 380 }
 hint: ["Write to a parent about a school event. Include at least one compound and one complex sentence.", "Try one compound-complex sentence for the most important news."]
-check: { type: board, text: "Write at least four sentences, using at least two joining words that start dependent clauses.", when: "n_sentences >= 4 and n_joiners >= 2", explain: "Your note uses joining words that start dependent clauses. Ask a partner to label each sentence simple, compound, complex or compound-complex." }
+check: { type: reflect, text: "I wrote a note home of at least four sentences with a compound, a complex and a compound-complex sentence, and a partner and I agreed on each sentence's shape." }
 ```
-
-The board counts sentences and joining words. Whether your shapes are what you meant is for you and a partner to check.
 
 ## In your own writing
 

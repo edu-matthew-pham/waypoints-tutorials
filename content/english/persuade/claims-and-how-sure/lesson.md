@@ -113,15 +113,18 @@ check: { type: board, text: "Colour every softening word.", when: "chains_ok = 1
 
 ## Make: a claim that earns trust
 
+In your own document, write at least three sentences about school lunches. Include a claim with a word that says how sure you are (such as *may*, *might*, *could*, *probably* or *will*), and at least one thing that backs it up.
+
+Here is one example: "School lunches **may** be too small for older students. A survey in my class found that **most** of us are hungry by two o'clock. The canteen **might** sell bigger rolls."
+
+Then swap with a partner. Point to the word that shows how sure the writer is, and to the sentence that backs the claim up. Does the word fit the evidence?
+
 ```step
 stage: make
 insight: "Writing a claim, softening it and backing it up puts tempering to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What do you really know about school lunches?", "Which word shows how sure you are?"]
-check: { type: board, text: "Write at least three sentences about school lunches: a claim with a word that says how sure you are (such as may, might, could, probably or will), and one thing that backs it up.", when: "n_sentences >= 3 and n_modals >= 1", explain: "You wrote a softened claim. Ask a partner to point to the word that shows how sure you are, and to the sentence that backs it up." }
+check: { type: reflect, text: "I wrote a claim about school lunches with a word that shows how sure I am and something that backs it up, and a partner and I checked that the word fits the evidence." }
 ```
-
-The board counts sentences and certainty words of either kind (may, might, will, always and others). It cannot tell whether your word fits your evidence, or whether the evidence is good, so ask a partner or your teacher.
 
 ## In your own writing
 

@@ -111,15 +111,18 @@ check: { type: board, text: "Colour the describers (Chain 1) and the classifiers
 
 ## Make: a report with noun groups
 
+In your own document, write four sentences of an information report about an animal, a place or an object. Make it at least 40 words. Build each noun group with a determiner, at least one describer or classifier, and a head noun.
+
+Here is one example: "The Murray cod is **a large freshwater fish**. It lives in **slow, muddy rivers** across the southern inland. **Its broad, mottled body** helps it hide among fallen logs."
+
+Then swap with a partner. Circle each noun group in each other's report. Does each one have a head noun and at least one describer or classifier?
+
 ```step
 stage: make
 insight: "Writing four sentences of an information report puts noun groups to work, where precision matters most."
-try: { playground: board, starter: "text.yml#make", height: 340 }
 hint: ["Choose an animal, a place or an object. Write four sentences for an information report.", "Build each noun group with a determiner, at least one describer or classifier, and a head noun."]
-check: { type: board, text: "Write at least four sentences of an information report, at least 40 words.", when: "n_sentences >= 4 and n_words >= 40", explain: "Your report gives the reader a precise picture. Ask a partner to circle each noun group and check it has a head noun and at least one describer or classifier." }
+check: { type: reflect, text: "I wrote an information report of four sentences, and a partner and I circled each noun group and checked it has a head noun and a describer or classifier." }
 ```
-
-The board counts sentences and words. It cannot tell a noun group from other words, so a partner or your teacher checks them.
 
 ## In your own writing
 

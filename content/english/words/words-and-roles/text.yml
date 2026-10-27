@@ -1,5 +1,5 @@
 # Texts for "Words and roles" (scale places words on a five-step formality scale and by listener; swap chooses words
-# for a speaker; write counts a request).
+# for a speaker).
 
 # region: run
 widget: wordchoice
@@ -31,20 +31,6 @@ word c: Mrs Tran, I've finished my work. = 2
 word d: Mr Lee, may I go to the library? = 2
 word e: Excuse me, is this seat taken? = 3
 word f: Sorry to bother you, do you know the time? = 3
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: contractions exclaims
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: contractions exclaims
-p: Dear Ms Tran, I am writing to ask whether our class may start a chess club at lunchtime. We would meet in the library on Tuesdays. I would supervise the setting up, and Mr Lee has agreed to help. Thank you for considering this request.
 # endregion
 
 # region: explain-pic

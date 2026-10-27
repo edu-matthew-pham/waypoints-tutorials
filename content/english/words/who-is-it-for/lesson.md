@@ -107,15 +107,18 @@ check: { type: board, text: "Place each reader: casual, respectful or formal.", 
 
 ## Make: three openings
 
+In your own document, write three openings for three readers: a friend, a coach you know well and the principal. Write two sentences for each, at least six sentences in all. Think about how well you know each person and whether they have authority.
+
+Here is one example, for a friend: "Hey Sam, are you free after school? I found a good spot for the project." Your coach and the principal need different words.
+
+Then swap with a partner. For each opening, say how well the writer knows the person and whether the person has authority.
+
 ```step
 stage: make
 insight: "Writing three openings for three readers puts both cues to use in real messages."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Who is each reader, and how well do you know them?", "Who has authority?"]
-check: { type: board, text: "Write three openings, two sentences each (at least 50 words in all), for a friend, a coach you know well and the principal.", when: "n_sentences >= 6 and n_words >= 50", explain: "You wrote three openings. Ask a partner to say, for each one, how well you know the person and whether they have authority." }
+check: { type: reflect, text: "I wrote three openings for a friend, a coach and the principal, and a partner and I said how well I know each person and whether they have authority." }
 ```
-
-The board counts words and sentences. Whether each opening fits its reader is for you and a partner to judge.
 
 ## In your own writing
 

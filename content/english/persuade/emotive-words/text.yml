@@ -1,4 +1,4 @@
-# Texts for "Words that push a feeling" (chain colours praise and criticism; gaps choose the pushing word; write counts).
+# Texts for "Words that push a feeling" (chain colours praise and criticism; gaps choose the pushing word).
 
 # region: run
 widget: cohesion
@@ -18,20 +18,6 @@ widget: cohesion
 mode: chain
 colours: 2
 p: The [[sleek#a]] new Ripple bike rolls over bumps with [[effortless#a]] speed. Other bikes are [[clunky#b]] and [[ugly#b]]. The Ripple comes in three colours.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: exclaims
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: exclaims
-p: The canteen has a warm, friendly feel. Its fresh rolls are delicious. The queue, however, is a dreary crawl. The tables are sticky and the floor is filthy.
 # endregion
 
 # region: explain-pic

@@ -19,19 +19,7 @@ colours: 3
 p: [[Dr Amira Hassan#a]] built [[Kestrel#b]], [[a small robot#b]] that explores [[caves#c]]. [[The engineer#a]] worked on the robot's wheels for three years. Last winter, [[the rover#b]] crawled deep into [[the tunnels#c]]. [[Hassan#a]] says [[the machine#b]] sends back photos of [[these dark places#c]] every day.
 # endregion
 
-# region: make
-widget: cohesion
-mode: chain
-tools: write
-p: Press Write your own. Write four sentences about a specific thing: your pet, a favourite place or a team.
-# endregion
 
-# region: make-solution
-widget: cohesion
-mode: chain
-as: student
-p: [[Ollie#a]] is our [[cat#a]]. [[The animal#a]] sleeps on [[the couch#b]] all day. [[That sofa#b]] is covered in fur. Mum says it needs a clean.
-# endregion
 
 # region: explain-pic
 widget: cohesion

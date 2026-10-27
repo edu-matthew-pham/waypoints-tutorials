@@ -33,20 +33,6 @@ colours: 1
 p: [[After#a]] the bell rang, the students walked to the hall. They sat quietly [[while#a]] the principal spoke. [[If#a]] it rains, the assembly will move inside.
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-counts: joiners
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: joiners
-p: On Tuesday our class visited the wetlands. We wore boots because the ground was muddy. After we ate lunch, we counted the birds.
-# endregion
-
 # region: explain-pic
 widget: cohesion
 mode: parts

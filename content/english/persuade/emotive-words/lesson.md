@@ -108,15 +108,18 @@ check: { type: board, text: "Colour the words that praise the Ripple one colour 
 
 ## Make: one place, two feelings
 
+In your own document, write at least four sentences about the school canteen: two that praise it, then two that criticise it. Use no more than one exclamation mark.
+
+Here is one example: "The canteen has a **warm**, **friendly** feel. Its fresh rolls are **delicious**. The queue, however, is a **dreary** crawl. The tables are **sticky** and the floor is **filthy**."
+
+Then swap with a partner. Circle the words that push each feeling. Which words could you swap for plain reporting words?
+
 ```step
 stage: make
 insight: "Writing about one place twice, once to praise and once to criticise, puts emotive words to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Which words would make a reader like the canteen?", "Which would make a reader dislike it?"]
-check: { type: board, text: "Write at least four sentences about the canteen: two that praise it, then two that criticise it, with no more than one exclamation mark.", when: "n_sentences >= 4 and n_exclaims <= 1", explain: "You wrote two views of one place. Ask a partner to circle the words that push each feeling." }
+check: { type: reflect, text: "I wrote two sentences that praise the canteen and two that criticise it, and a partner and I circled the words that push each feeling." }
 ```
-
-The board counts sentences and exclamation marks. It cannot find your emotive words, so ask a partner to circle them.
 
 ## In your own writing
 

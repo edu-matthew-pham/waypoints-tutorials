@@ -113,25 +113,18 @@ check: { type: board, text: "Choose the mark for each box.", when: "n_right = 5 
 
 ## Make: an information note
 
+In your own document, write a short note for families about an excursion or an event. Write at least four sentences. Use a colon to introduce what to bring, and brackets for extra detail such as a time or a place.
+
+Here is one example: "Our class excursion is on Friday. Please bring three things**:** a hat, a drink bottle and sunscreen. The bus **(**booked by Mr Lee**)** leaves at nine. We will return by three."
+
+Then swap with a partner. Cover the colon and its list, and check that a whole sentence comes before it. Then cover the bracketed part and check that what is left still makes sense.
+
 ```step
 stage: make
 insight: "Writing an information note with a colon and brackets puts both marks to work in a real text type."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Write a note for families about an excursion or an event.", "Use a colon to introduce what to bring, and brackets for extra detail such as a time or a place."]
-check: { type: board, text: "Write at least four sentences with a colon and brackets.", when: "n_sentences >= 4 and n_colons >= 1 and n_brackets >= 1", explain: "Your note has a colon and brackets. Ask a partner to cover the colon and check a whole sentence comes before it, then to cover the bracketed part and check what is left still makes sense." }
+check: { type: reflect, text: "I wrote an information note of at least four sentences with a colon and brackets, and a partner and I covered the colon and the brackets to check what was left still made sense." }
 ```
-
-The board counts colons and brackets. Whether they are in the right place is for you and a partner to check.
-
-## In your own writing
-
-```step
-stage: make
-tier: typical
-insight: "Testing each colon and bracket in real writing puts the two tests to use outside the board."
-check: { type: reflect, text: "I tested a colon or a bracket in my own writing by covering the part around it." }
-```
-
 ## Wider: a colon in a science report
 
 ```step

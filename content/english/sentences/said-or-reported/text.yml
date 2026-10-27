@@ -1,5 +1,5 @@
 # Texts for "Said or reported" (cohesion board parts mode labels sentences; the sentence board builds a reported
-# sentence, chooses punctuation in speech and counts a newsletter item).
+# sentence and chooses punctuation in speech).
 
 # region: run
 widget: cohesion
@@ -33,20 +33,6 @@ mode: punct
 p: 'Can we swim today[[{?|.|,}=?]]' asked Zoe.
 p: 'The pool is warm[[{,|.|?}=,]]' said Kai.
 p: Ava said[[{,|.|;}=,]] 'I forgot my hat.'
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: quotes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: quotes
-p: On Friday our school held its swimming carnival. "I have never heard such cheering," said the principal. The captain told the crowd that the Blue team had won.
 # endregion
 
 # region: explain-pic

@@ -1,5 +1,5 @@
 # Texts for "Keep the tense steady" (cohesion parts mode labels sentences by tense; gaps choose the matching form;
-# chain mode colours the verbs that slip; the sentence board counts a diary entry).
+# chain mode colours the verbs that slip).
 
 # region: run
 widget: cohesion
@@ -29,17 +29,6 @@ colours: 1
 p: Last summer we hiked up the hill. The path was steep, so we [[carry#a]] our bags slowly. At the top the view was wide, and we [[sit#a]] on a rock to rest. We ate lunch and went home.
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: Last Saturday I woke up early because the sun was already shining. I ate breakfast and packed my bag. My cousin arrived at nine, and we rode our bikes to the park. We found a quiet spot under a tree and unpacked our lunch. Later we kicked a ball until the sky turned orange.
-# endregion
 
 # region: explain-pic
 widget: cohesion

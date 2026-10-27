@@ -119,15 +119,22 @@ check: { type: board, text: "Find the three pointing words, mark them and draw a
 
 ## Make: your own
 
+In your own document, write three sentences about something your class did. Use *she*, *he*, *it*, *they* or *this* at least twice.
+
+Then use the highlighter in your document. Colour each pointing word, and colour what it points back to the same colour.
+
+Here is one example: "Our class went to the museum on Tuesday. **It** had a whale skeleton. **We** drew **it** for art." Here *It* and the second *it* point back to the museum, and *We* points back to our class.
+
+Then swap with a partner. Can your partner say what every pointing word points to without asking you?
+
 ```step
 stage: make
 insight: "Writing their own sentences and tracing their own pointing words moves the skill from reading into writing."
-try: { playground: board, starter: "text.yml#make", height: 340 }
-hint: ["Press Write your own and write three sentences about something your class did. Use she, he, it, they or this at least twice.", "Press Done writing, then Mark a linking word, and draw an arrow from each pointing word. Can a partner follow every arrow?"]
-check: { type: board, text: "Write three sentences of your own with at least two pointing words, then mark and trace each one.", when: "is_written = 1 and n_marked >= 2 and n_arrows >= 2", explain: "Every arrow lands on something a reader met earlier, so your reader never has to guess." }
+hint: ["Think of a trip, a game or a project your class did. Write three sentences about it.", "Highlight a pointing word and what it points back to in the same colour. If you can't find the second one, a reader can't either."]
+check: { type: reflect, text: "I wrote three sentences with at least two pointing words, highlighted each one with what it points back to, and a partner could follow every one." }
 ```
 
-If one of your arrows was hard to draw, a reader would struggle there too. Change the word to the name.
+If a partner hesitated at one of your pointing words, change it to the name.
 
 ## In your own writing
 
@@ -138,4 +145,4 @@ insight: "Checking a piece of their own class writing applies the move where it 
 check: { type: reflect, text: "I picked a paragraph I wrote this term, found every she, he, it, they and this, and checked I could say what each one points back to. Where I couldn't, I changed it to the name." }
 ```
 
-Pencil arrows on a printed page work just as well as the board.
+Pencil arrows on a printed page work well too.

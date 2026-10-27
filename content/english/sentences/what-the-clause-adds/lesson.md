@@ -122,15 +122,18 @@ check: { type: board, text: "Choose the joining word that fits each sentence.", 
 
 ## Make: a letter to the principal
 
+In your own document, write a letter to the principal asking for something you would like the school to change. Write at least four sentences. Use at least three different joining words from this lesson, such as *because*, *so that*, *unless*, *although* or *until*. Start at least one sentence with its dependent clause.
+
+Here is one example: "Dear Mrs Hart, I am writing to ask for a longer lunch break. Students need time to eat and play **because** we study hard all morning. **If** lunch were half an hour longer, more of us could join a club. **Although** the timetable is full, a longer lunch would help everyone concentrate in the afternoon."
+
+Then swap with a partner. Point to each joining word and say what its clause adds: a reason, a purpose, a condition, a concession or a time. Which clause does each sentence put first, and why?
+
 ```step
 stage: make
 insight: "Writing four sentences of a persuasive letter with three different joining words puts the relationships to work for an argument."
-try: { playground: board, starter: "text.yml#make", height: 360 }
 hint: ["Choose something you would like the school to change. Write to the principal.", "Use at least three different joining words from this lesson, such as because, so that, unless, although or until. Start at least one sentence with its dependent clause."]
-check: { type: board, text: "Write at least four sentences of a letter to the principal and use at least three different joining words.", when: "n_sentences >= 4 and n_joiners >= 3", explain: "Your letter uses dependent clauses to give reasons, purposes and conditions. Ask a partner which clause each sentence puts first, and why." }
+check: { type: reflect, text: "I wrote a letter to the principal with at least three different joining words, and a partner and I named what each dependent clause adds and which clause comes first." }
 ```
-
-The board counts sentences and joining words. Whether each clause adds the relationship you meant is for you and a partner to judge.
 
 ## In your own writing
 

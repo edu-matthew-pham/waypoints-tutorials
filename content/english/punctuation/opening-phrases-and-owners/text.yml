@@ -1,5 +1,5 @@
 # Texts for "Opening phrases and shared owners" (the sentence board's punct mode chooses a comma or none; cohesion
-# gaps choose owner words; write mode counts a newsletter item).
+# gaps choose owner words).
 
 # region: run
 widget: sentence
@@ -23,20 +23,6 @@ p: The swimmers climbed out[[{,|nothing}=nothing]] at the end of the long hot af
 p: Inside the dusty box under the bed[[{,|nothing}=,]] Ava found her diary.
 p: Ava found her diary[[{,|nothing}=nothing]] inside the dusty box under the bed.
 p: On a rainy morning in the middle of July[[{,|nothing}=,]] the whole class visited the museum.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: commas apostrophes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: commas apostrophes
-p: On Thursday morning our class visited the botanic gardens. Beside the lily pond near the entrance, we sketched the water plants. Mia and Ravi's drawing of the frog won the class prize. After a long day in the sun, everyone slept on the bus ride home.
 # endregion
 
 # region: explain-pic

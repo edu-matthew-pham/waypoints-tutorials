@@ -108,15 +108,18 @@ check: { type: board, text: "Colour the adverb groups: how (Chain 1), when (Chai
 
 ## Make: a match report
 
+In your own document, write a match report of at least five sentences (at least 50 words) about a match or game you know, or one you make up. Tell what happened in the order it happened. Use at least two precise verbs and two adverb groups. Keep to the past tense.
+
+Here is one example: "Our team played Hillside on Saturday morning. The striker **sprinted** down the wing and **crossed** the ball. Hillside's keeper **dived** but missed it. The crowd roared as the ball hit the net. Our captain lifted the trophy, and everyone cheered **very loudly**."
+
+Then swap with a partner. Underline each precise verb and each adverb group in each other's report. Is every verb in the past tense? Does each adverb group help?
+
 ```step
 stage: make
 insight: "Writing five sentences of a match report uses precise verbs, past tense and adverb groups where they help a reader see the match."
-try: { playground: board, starter: "text.yml#make", height: 380 }
 hint: ["Choose a match or a game you know (or make one up). Write what happened, in the order it happened.", "Use at least two precise verbs and two adverb groups. Keep to the past tense."]
-check: { type: board, text: "Write at least five sentences of a match report, at least 50 words.", when: "n_sentences >= 5 and n_words >= 50", explain: "Your report tells what happened. Ask a partner to underline each precise verb and each adverb group, and check every verb is in the past tense." }
+check: { type: reflect, text: "I wrote a match report of at least five sentences with precise verbs, adverb groups and the past tense, and a partner and I underlined them and checked each one." }
 ```
-
-The board counts sentences and words. Whether your verbs are precise, your tense is steady and your adverb groups help is for you and a partner to judge.
 
 ## In your own writing
 

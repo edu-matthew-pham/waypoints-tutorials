@@ -109,25 +109,18 @@ check: { type: board, text: "Choose a comma or no comma for each box.", when: "n
 
 ## Make: a recount of an excursion
 
+In your own document, write a short recount of an excursion or an event at school. Write at least four sentences with at least three commas. Include something you packed or saw as a list, a sentence that starts with a clause like 'When we arrived', and something someone said, in speech marks.
+
+Here is one example: "On Friday our class walked to the creek. When we arrived**,** Mia unpacked torches**,** maps and rope. 'Stay together**,**' said our teacher. After a short rest**,** we headed back to school."
+
+Then swap with a partner. Find each comma and say which job it does: list, opening clause or speech.
+
 ```step
 stage: make
 insight: "Writing a short recount with a list, an opening clause and speech puts all three comma jobs to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Write about an excursion or an event at school.", "Include something you packed or saw as a list, a sentence that starts with a clause like 'When we arrived', and something someone said."]
-check: { type: board, text: "Write at least four sentences with at least three commas and some speech.", when: "n_sentences >= 4 and n_commas >= 3 and n_quotes >= 1", explain: "Your recount has commas and speech. Ask a partner to find each comma and say which job it does: list, opening clause or speech." }
+check: { type: reflect, text: "I wrote a recount of at least four sentences with at least three commas and some speech, and a partner and I found each comma and named its job." }
 ```
-
-The board counts commas and speech. Whether each comma does a job is for you and a partner to check.
-
-## In your own writing
-
-```step
-stage: make
-tier: typical
-insight: "Checking each comma in real writing against the three jobs puts the rule to use outside the board."
-check: { type: reflect, text: "I checked each comma in a piece of my own writing and could name its job." }
-```
-
 ## Wider: commas in a science method
 
 ```step

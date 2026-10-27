@@ -123,15 +123,18 @@ check: { type: board, text: "Choose a joining word for each of the five gaps.", 
 
 ## Make: your own joins
 
+In your own document, write a recount of four or five sentences about something you made or did, step by step. Use at least three different joining words. At least one should not be about time: try *however*, *so*, *also* or *as a result*.
+
+Here is one example: "We made pancakes for breakfast. **First**, we mixed flour, eggs and milk. **Then** we heated the pan. The first pancake stuck, **so** we added more butter. **Finally**, we ate them with lemon."
+
+Then swap with a partner. Name the job of each other's joining words: adds, turns against, shows a result or shows time order. Do you agree? Where you don't, did the writer mean a different job?
+
 ```step
 stage: make
 insight: "Writing their own short recount with three different joining words moves the choice from picking to producing."
-try: { playground: board, starter: "text.yml#make", height: 340 }
-hint: ["Press Write your own and write four or five sentences about something you made or did, step by step.", "Use at least three different joining words, and at least one that is not about time: however, so, also, as a result."]
-check: { type: board, text: "Write at least four sentences that use at least three different joining words.", when: "is_written = 1 and n_sentences >= 4 and n_connectives >= 3", explain: "Your joining words tell the reader how each idea connects. Read it aloud: does each one do the job you meant?" }
+hint: ["Think of something you made or did. Write what happened, step by step.", "Use at least three different joining words, and at least one that is not about time: however, so, also, as a result."]
+check: { type: reflect, text: "I wrote a recount with at least three different joining words, and a partner and I agreed on the job each one does." }
 ```
-
-The board only counts your joining words. Whether each one does the right job is for you (and a partner) to check.
 
 ## In your own writing
 

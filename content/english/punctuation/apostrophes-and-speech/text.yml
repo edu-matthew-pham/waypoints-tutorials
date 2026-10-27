@@ -1,5 +1,5 @@
 # Texts for "Apostrophes and speech marks" (cohesion gaps choose words with apostrophes; the sentence board's punct
-# mode chooses speech punctuation and write mode counts a scene).
+# mode chooses speech punctuation).
 
 # region: run
 widget: cohesion
@@ -20,20 +20,6 @@ p: 'Where are the oars[[{?|,|.}=?]]' asked Ravi.
 widget: cohesion
 p: Two dogs live behind the shop. Mia [[{hasn't|has'nt|hasnt}=hasn't]] seen the [[{dogs|dog's|dogs'}=dogs']] kennel yet.
 p: The puppy wagged [[{it's|its|its'}=its]] tail because [[{it's|its|its'}=it's]] nearly dinner time.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: quotes apostrophes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: quotes apostrophes
-p: The bus was late again. 'I can't wait any longer,' said Zoe. Her brother's bag sat on the bench beside her. 'We'll walk,' he said, 'if it doesn't rain.'
 # endregion
 
 # region: explain-pic

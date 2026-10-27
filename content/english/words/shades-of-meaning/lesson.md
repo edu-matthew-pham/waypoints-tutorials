@@ -108,15 +108,18 @@ check: { type: board, text: "Place each word for fear on the scale: mild, medium
 
 ## Make: describe a stormy day
 
+In your own document, write a description of a stormy day, at least four sentences and about 40 words. Picture it at a beach. Choose exact words for what you see, hear and feel, and swap any plain word such as *big* or *bad* for a stronger, more exact one.
+
+Here is one example: "The storm **roared** over the bay, and the waves **crashed** against the jetty. A **fierce** wind **whipped** the sand into our faces."
+
+Then swap with a partner. Point to three exact words and say what each adds that a plainer word would not.
+
 ```step
 stage: make
 insight: "Describing a stormy day with exact words puts shades of meaning to use in a real piece of writing."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Picture the storm at a beach. What do you see, hear and feel?", "Where could you swap a plain word like 'big' or 'bad' for an exact one?"]
-check: { type: board, text: "Write at least four sentences (at least 40 words) about a stormy day.", when: "n_sentences >= 4 and n_words >= 40", explain: "You wrote a description. Ask a partner to point to three exact words and say what each one adds that a plainer word would not." }
+check: { type: reflect, text: "I wrote a description of a stormy day with exact words, and a partner and I found three words that each add something a plainer word would not." }
 ```
-
-The board counts words and sentences only. Whether your words are exact is for you and a partner to check.
 
 ## In your own writing
 

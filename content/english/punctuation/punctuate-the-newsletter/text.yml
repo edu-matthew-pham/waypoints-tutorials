@@ -1,5 +1,5 @@
 # Texts for "Challenge: punctuate the newsletter" (cohesion gaps choose owner words; the sentence board's punct mode
-# chooses marks; write mode counts a whole paragraph the student punctuates).
+# chooses marks).
 
 # region: apostrophes
 widget: cohesion
@@ -26,21 +26,6 @@ p: We need[[{:|;|,|nothing}=nothing]] volunteers for the cake stall.
 p: Ava swept the stage[[{:|;|,|nothing}=;]] Ben set out the chairs.
 p: The reason was clear[[{:|;|,|nothing}=:]] the cakes had sold out.
 p: Because the sun was strong[[{:|;|,|nothing}=,]] we moved the stalls into the shade.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: commas colons quotes
-p: The school fair is on Saturday Mrs Tran our principal will open it at ten When the gates open the first stall to fill will be the cake stall Last year the cakes sold out by noon this year we are baking more Ravi said we will need three things flour eggs and sugar
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: commas colons quotes
-p: The school fair is on Saturday. Mrs Tran, our principal, will open it at ten. When the gates open, the first stall to fill will be the cake stall. Last year the cakes sold out by noon; this year we are baking more. Ravi said, 'We will need three things: flour, eggs and sugar.'
 # endregion
 
 # region: explain-pic

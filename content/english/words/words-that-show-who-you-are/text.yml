@@ -1,5 +1,5 @@
 # Texts for "Words that show who you are" (parts labels club jargon; swap chooses wording for a newcomer;
-# chain colours sailing words; write counts quotes).
+# chain colours sailing words).
 
 # region: run
 widget: cohesion
@@ -36,20 +36,6 @@ widget: cohesion
 mode: chain
 colours: 1
 p: At the club, Mia checked the [[halyard#a]] and the [[rigging#a]], then helped to [[reef#a]] the [[mainsail#a]]. Afterwards everyone had lunch and talked about school.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: quotes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: quotes
-p: Mia stood at the edge of the stage. 'Hit your mark,' said the director. 'I know,' whispered Mia. She waited for the cue and stepped into the light.
 # endregion
 
 # region: explain-pic

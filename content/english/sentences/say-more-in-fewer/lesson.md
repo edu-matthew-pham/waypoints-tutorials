@@ -107,15 +107,18 @@ check: { type: board, text: "Colour every embedded clause.", when: "chains_ok = 
 
 ## Make: a review
 
+In your own document, write a short review of a book, game or place. Write at least four sentences. Say what it is, then fold details in with *who*, *which* or *whose* at least twice. Fold two sentences into one wherever you repeat a noun.
+
+Here is one example: "The Lost Lighthouse is a book that I could not put down. Its hero, **who is only twelve**, finds a map **which leads to a hidden cave**. The cave, **whose walls glitter**, holds the secret of the wrecked ship."
+
+Then swap with a partner. Underline each embedded clause and the noun it follows. Does each clause sit right next to the noun it tells about?
+
 ```step
 stage: make
 insight: "Writing a short review that folds details into embedded clauses puts the move to work in a real text type."
-try: { playground: board, starter: "text.yml#make", height: 380 }
 hint: ["Review a book, game or place. Say what it is, then add details with who or which.", "Fold two sentences into one wherever you repeat a noun."]
-check: { type: board, text: "Write at least four sentences, using the words who, which or whose at least twice (the board counts only those three).", when: "n_sentences >= 4 and n_who >= 2", explain: "Your review has embedded clauses. Ask a partner to underline each one and name the noun it tells about." }
+check: { type: reflect, text: "I wrote a review of at least four sentences with at least two embedded clauses, and a partner and I checked that each clause sits next to the noun it tells about." }
 ```
-
-The board counts sentences and the words who, which and whose; a clause starting with that is just as good but is not counted. Whether your clauses sit next to the right noun is for a partner to check.
 
 ## In your own writing
 

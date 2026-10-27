@@ -39,19 +39,7 @@ s solution: Last term, the school started a walking bus: a teacher walks a group
 s result: Now there are fewer cars at the gate, and crossing the road is much safer.
 # endregion
 
-# region: make
-widget: cohesion
-mode: chain
-tools: write
-p: Press Write your own. Write a paragraph of at least three sentences that uses one pattern: cause and effect, compare and contrast, problem and solution, or claim and support.
-# endregion
 
-# region: make-solution
-widget: cohesion
-mode: chain
-as: student
-p: Our street flooded last week because the drains were blocked with leaves. As a result, three houses had water in their garages. The council has now cleared the drains, so the next storm should be less of a problem.
-# endregion
 
 # region: explain-pic
 widget: cohesion

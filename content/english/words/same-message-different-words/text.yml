@@ -1,5 +1,5 @@
 # Texts for "Same message, different words" (the word choice board's scale places words in a band; swap chooses a
-# word and shows where it sits; write mode counts a pair of messages).
+# word and shows where it sits).
 
 # region: run
 widget: wordchoice
@@ -30,20 +30,6 @@ before: Choose the wording that includes everyone.
 p: Dear [[{mums and dads@1|families@2}=families]], the fair starts at ten.
 p: Good morning, [[{boys and girls@1|everyone@2}=everyone]]!
 p: The [[{policeman@1|police officer@2}=police officer]] spoke to our class.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: contractions exclaims
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: contractions exclaims
-p: Hey Zoe, our excursion to the museum was awesome! We didn't even have to wait in line. Dear Mr Lee, thank you for organising the excursion to the museum. The class learned a great deal about the dinosaur display.
 # endregion
 
 # region: explain-pic

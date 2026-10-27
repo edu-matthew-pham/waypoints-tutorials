@@ -1,4 +1,4 @@
-# Texts for "Judging and backing it up" (parts labels the kind; gaps choose backing; chain colours judging words; write counts quotes).
+# Texts for "Judging and backing it up" (parts labels the kind; gaps choose backing; chain colours judging words).
 
 # region: run
 widget: cohesion
@@ -32,20 +32,6 @@ widget: cohesion
 mode: chain
 colours: 1
 p: The film is [[stunning#a]] and the lead actor is [[courageous#a]], but the music is [[dreadful#a]]. Some scenes last ten minutes.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: quotes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: quotes
-p: The school play was funny and warm. The lead actor was confident because he never forgot a line. My favourite moment was when the dog barked and he said, 'Even the audience is cast tonight.' The costumes were bright and well made.
 # endregion
 
 # region: explain-pic

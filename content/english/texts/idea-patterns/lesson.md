@@ -110,15 +110,18 @@ check: { type: board, text: "Label each sentence as part of the problem, the sol
 
 ## Make: your own pattern
 
+In your own document, write a paragraph of at least three sentences in one pattern: cause and effect, compare and contrast, problem and solution, or claim and support. Choose the pattern first. Use at least two signal or joining words, such as *because*, *so*, *as a result*, *but*, *also*, *whereas* or *unlike*.
+
+Here is one example, in cause and effect: "Our street flooded last week **because** the drains were blocked with leaves. **As a result**, three houses had water in their garages. The water **then** took two days to drain away."
+
+Then swap with a partner. Without being told, name each other's pattern and the signal words that showed it. Is the pattern carried through the whole paragraph?
+
 ```step
 stage: make
 insight: "Writing a paragraph in one chosen pattern, with its signal words, makes the pattern a writing tool."
-try: { playground: board, starter: "text.yml#make", height: 340 }
 hint: ["Choose a pattern first. Cause and effect: something that happened and why. Compare and contrast: two things. Problem and solution: a problem you know. Claim and support: a point and an example.", "Use at least two signal or joining words, such as because, so, as a result, but, also, whereas or unlike."]
-check: { type: board, text: "Write a paragraph of at least three sentences in one pattern, using at least two signal or joining words.", when: "is_written = 1 and n_sentences >= 3 and n_connectives >= 2", explain: "Your paragraph has a pattern the reader can follow. Ask a partner to name your pattern without being told." }
+check: { type: reflect, text: "I wrote a paragraph of at least three sentences in one pattern with at least two signal words, and a partner named my pattern without being told." }
 ```
-
-The board counts your sentences and joining words. Whether your pattern is clear and carried through is for your partner to judge.
 
 ## In your own writing
 

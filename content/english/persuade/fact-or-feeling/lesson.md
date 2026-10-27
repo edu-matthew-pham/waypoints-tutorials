@@ -111,15 +111,18 @@ check: { type: board, text: "Colour every opinion word in the review.", when: "c
 
 ## Make: three facts and an opinion
 
+In your own document, write at least four sentences about a place at school: three facts, then your opinion. Use at least one word such as *I*, *my* or *we* in the opinion.
+
+Here is one example: "The library has four computers. It opens at eight each morning. There are two hundred books about space. **I think** it is the **best** room in the school."
+
+Then swap with a partner. Point to a sentence you could check, and to the one you could argue with.
+
 ```step
 stage: make
 insight: "Writing facts and then an opinion about one place puts the two kinds of language to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What facts can you count or check about the place?", "What do you think of it?"]
-check: { type: board, text: "Write at least four sentences about a place at school: three facts, then your opinion (use at least one word such as I, my or we).", when: "n_sentences >= 4 and n_first >= 1", explain: "You wrote facts and an opinion. Ask a partner to point to the sentence they could check, and the one they could argue with." }
+check: { type: reflect, text: "I wrote three facts and an opinion about a place at school, and a partner and I found the sentence we could check and the one we could argue with." }
 ```
-
-The board counts sentences and the words I, me, my, we, us and our. Whether your facts can be checked is for you and a partner to judge.
 
 ## In your own writing
 

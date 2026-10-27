@@ -109,15 +109,18 @@ check: { type: board, text: "Place each source: vague (nobody you could find), n
 
 ## Make: add a source
 
+In your own document, write at least three sentences (at least 30 words in all): a claim about the school, and a named source who knows about it. Say what the source knows or has seen.
+
+Here is one example: "The canteen queue is too long at lunch. **Ms Reid, who supervises the canteen**, says about sixty students arrive at once. She thinks a second serving window would help the queue move faster at lunch."
+
+Then swap with a partner. Does the person you named really know about the claim? Could a reader find them and ask?
+
 ```step
 stage: make
 insight: "Writing a claim and naming a fitting source puts the idea to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Who at your school knows about this?", "What could you ask them?"]
-check: { type: board, text: "Write at least three sentences (at least 30 words in all): a claim about the school, and a named source who knows about it.", when: "n_sentences >= 3 and n_words >= 30", explain: "You wrote a claim with a source. Ask a partner whether the person you named really knows about it." }
+check: { type: reflect, text: "I wrote a claim about the school and named a source who knows about it, and a partner and I checked that the source fits." }
 ```
-
-The board counts sentences and words. Whether the source fits is for you and a partner to judge.
 
 ## In your own writing
 

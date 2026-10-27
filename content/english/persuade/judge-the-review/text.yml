@@ -1,4 +1,4 @@
-# Texts for the challenge "Judge the review" (parts labels features; gaps judge sources; scale judges parts; write counts quotes).
+# Texts for the challenge "Judge the review" (parts labels features; gaps judge sources; scale judges parts).
 
 # region: run
 widget: cohesion
@@ -37,20 +37,6 @@ word b: Many people love it. = 1
 word c: A shop owner who has not seen the film says it is superb. = 1
 word d: The cinema manager, who has watched every showing, says families come back to see it twice. = 2
 word e: A teacher who showed the first ten minutes to her class says every child stayed in their seat. = 2
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: quotes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: quotes
-p: The review would persuade most parents. It uses warm words such as 'heart-melting hero' that suit a family film. It names a critic and a librarian, which gives parents people to trust. However, 'everyone knows it will win awards' is weak because nothing backs it.
 # endregion
 
 # region: explain-pic

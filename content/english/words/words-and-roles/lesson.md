@@ -111,15 +111,18 @@ check: { type: board, text: "Place each line by who it is said to: a close frien
 
 ## Make: ask the principal
 
+In your own document, write an email to the principal asking for something, such as a lunchtime club or a change to a rule. Write at least four sentences. Use full forms, such as *do not* and not *don't*, and leave out exclamation marks. Say what you want and why the principal might agree.
+
+Here is one example: "Dear Ms Tran, I am writing to ask whether our class may start a chess club at lunchtime. We would meet in the library on Tuesdays. Thank you for considering this request."
+
+Then swap with a partner. Find the word or phrase that makes it a request and not an order.
+
 ```step
 stage: make
 insight: "Writing an email that asks the principal for something puts the words for a person in charge to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What do you want to ask for, and why would the principal agree?", "How would you word it so it sounds like a request, not an order?"]
-check: { type: board, text: "Write at least four sentences asking the principal for something, with no short forms and no exclamation marks.", when: "n_sentences >= 4 and n_contractions = 0 and n_exclaims = 0", explain: "You wrote a careful request. Ask a partner to find the word that makes it a request and not an order." }
+check: { type: reflect, text: "I wrote a request to the principal in at least four sentences, and a partner and I found the words that make it a request and not an order." }
 ```
-
-The board counts short forms and exclamation marks, which a careful email to a person in charge usually does not have. It cannot tell whether your request sounds polite. A partner or your teacher can.
 
 ## In your own writing
 

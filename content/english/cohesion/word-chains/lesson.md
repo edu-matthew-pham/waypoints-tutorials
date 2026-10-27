@@ -105,12 +105,19 @@ check: { type: board, text: "Colour three chains of naming words: the engineer, 
 
 ## Make: your own chain
 
+In your own document, write four sentences about a specific thing: your pet, a favourite place or a team. Name it first. Then use a general word for it at least once (the dog, the town, the team).
+
+Then use the highlighter in your document. Colour the chain for your thing in one colour, and a second chain in another colour if you have one.
+
+Here is one example: "**Ollie** is our **cat**. **The animal** sleeps on **the couch** all day. **That sofa** is covered in fur." *Ollie*, *cat* and *the animal* are one chain. *The couch* and *That sofa* are a second one.
+
+Then swap with a partner. Does every general word come after the specific one it stands for? Could any of them be a different thing?
+
 ```step
 stage: make
 insight: "Writing a paragraph with a deliberate word chain, including a general word, is the node's production step."
-try: { playground: board, starter: "text.yml#make", height: 340 }
-hint: ["Press Write your own and write four sentences about a specific thing: your pet, a favourite place, a team.", "Name it first, then use a general word for it at least once (the dog, the town, the team). Then colour two chains."]
-check: { type: board, text: "Write at least four sentences, then colour a word chain of at least three words, plus a second chain.", when: "is_written = 1 and max_chain >= 3 and n_colours_used >= 2", explain: "Your chains show the reader how your paragraph stays on track. Does every general word come after the specific one?" }
+hint: ["Choose one specific thing, such as your pet, a favourite place or a team, and name it in your first sentence.", "Use a general word for it later (the dog, the town, the team). Does the reader already know what it stands for?"]
+check: { type: reflect, text: "I wrote four sentences with a specific word first and a general word after it, highlighted my chain, and a partner agreed each general word points back to the right thing." }
 ```
 
 ## In your own writing

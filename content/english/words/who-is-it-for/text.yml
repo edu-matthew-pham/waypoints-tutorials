@@ -1,4 +1,4 @@
-# Texts for "Who is it for?" (scale places situations; swap chooses a greeting; write counts).
+# Texts for "Who is it for?" (scale places situations; swap chooses a greeting).
 
 # region: run
 widget: wordchoice
@@ -31,18 +31,6 @@ word c: A coach you like = 2
 word d: A librarian you have never met = 2/3
 word e: A government minister = 3
 word f: A school council committee reading your proposal = 3
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: Hey Sam, are you free after school? I found a good spot for the project. Hi Coach, I hope you are well. Could I please miss training on Thursday? Dear Ms Chen, I am writing to ask about the school fair. I would like to run a stall that raises money for the library.
 # endregion
 
 # region: explain-pic

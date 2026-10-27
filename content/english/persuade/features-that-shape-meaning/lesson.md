@@ -111,15 +111,18 @@ check: { type: board, text: "Colour the words that speak to the reader one colou
 
 ## Make: a short poster
 
+In your own document, write a poster of at least four sentences about keeping a school garden tidy. Include at least two short sentences (five words or fewer). Use at least two language features on purpose, such as a question to the reader, repetition, a direct invitation or strong verbs.
+
+Here is one example: "Our garden needs you. **Who wants weeds?** Pick up your litter. A tidy garden grows better beans and a happier school. **Join us on Friday.**"
+
+Then swap with a partner. Name two features in the poster and say what each does to the reader.
+
 ```step
 stage: make
 insight: "Writing a poster uses features on purpose."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Who is the poster for?", "Which feature will you use to nudge them?"]
-check: { type: board, text: "Write a poster of at least four sentences about keeping a school garden tidy, with at least two short sentences (five words or fewer).", when: "n_sentences >= 4 and n_short >= 2", explain: "You wrote a poster. Ask a partner to name two features you used and what each does." }
+check: { type: reflect, text: "I wrote a poster of at least four sentences with two short ones, and a partner and I named two features and what each does." }
 ```
-
-The board counts sentences and short sentences. It cannot find your features, so ask a partner to name them.
 
 ## In your own writing
 

@@ -107,15 +107,18 @@ check: { type: board, text: "Colour the short sentence (Chain 1) and the two lon
 
 ## Make: a notice for the school fair
 
+In your own document, write a notice for the school fair. Write at least five sentences (not headings). Say what, when and what to bring. Put the most important instruction in a short sentence of five words or fewer. Use at least one long sentence of fifteen words or more that gives detail or a reason.
+
+Here is one example: "The school fair is on Saturday. It will run from nine until three, and every class has built a stall that sells something they made themselves. **Come early.** The cake stall always sells out before ten, since the baking is so popular. **Bring a bag for everything you buy.**"
+
+Then swap with a partner. Do the short sentences carry the key instructions? Do the long ones carry the detail and the reasons?
+
 ```step
 stage: make
 insight: "Writing a notice with some short and some long sentences puts the choice of shape to work for a reader."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Write what, when and what to bring. Put the most important instruction in a short sentence.", "Use at least one long sentence that gives detail or a reason."]
-check: { type: board, text: "Write at least five sentences (not headings), with at least one of five words or fewer and one of fifteen words or more.", when: "n_sentences >= 5 and n_short >= 1 and n_long >= 1", explain: "Your notice has a mix of short and long sentences. Ask a partner whether the short sentences carry the key instructions and the long ones carry the detail." }
+check: { type: reflect, text: "I wrote a notice of at least five sentences with short sentences for the key instructions and a long one for detail, and a partner and I checked the mix." }
 ```
-
-The board counts sentence lengths. Whether the short ones carry the key points is for you and a partner to judge.
 
 ## Go wider: the same choice in science
 

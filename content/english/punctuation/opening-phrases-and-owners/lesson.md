@@ -119,21 +119,15 @@ check: { type: board, text: "Choose a comma or no comma for each box.", when: "n
 
 ## Make: a newsletter item
 
+In your own document, write a short newsletter item about a class excursion or a school event. Write at least four sentences. Start at least two of them with a long opening phrase and put a comma after it. Include at least one apostrophe, for something that belongs to a person or a group.
+
+Here is one example: "On Thursday morning our class visited the botanic gardens. Beside the lily pond near the entrance**,** we sketched the water plants. Mia and Ravi**'s** drawing of the frog won the class prize. After a long day in the sun**,** everyone slept on the bus ride home."
+
+Then swap with a partner. Point to each opening phrase and check a comma follows it. Say what each apostrophe shows.
+
 ```step
 stage: make
 insight: "Writing a short newsletter item with long opening phrases and an owner puts both marks to work in a real text type."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Write about a class excursion or a school event.", "Start at least two sentences with a long phrase, and include something that belongs to a person or a group."]
-check: { type: board, text: "Write at least four sentences, with at least two commas and at least one apostrophe.", when: "n_sentences >= 4 and n_commas >= 2 and n_apostrophes >= 1", explain: "Your item has commas and an apostrophe. Ask a partner to point to each opening phrase and check a comma follows it, and to say what each apostrophe shows." }
-```
-
-The board counts commas and apostrophes. Whether each one is in the right place is for you and a partner to check.
-
-## In your own writing
-
-```step
-stage: make
-tier: typical
-insight: "Looking for long opening phrases in real writing puts the comma check to use outside the board."
-check: { type: reflect, text: "I found a sentence in my own writing that starts with a long phrase and checked it has a comma after it." }
+check: { type: reflect, text: "I wrote a newsletter item of at least four sentences with a comma after each long opening phrase and at least one apostrophe, and a partner and I checked each comma and said what each apostrophe shows." }
 ```

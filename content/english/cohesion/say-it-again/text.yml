@@ -21,19 +21,7 @@ colours: 3
 p: In January, a [[fire#a]] started near the national park. [[Firefighters#b]] worked through the night to stop the [[blaze#a]]. The [[crews#b]] were helped by [[volunteers#b]] from nearby towns. Many [[gum trees#c]] were burnt, but [[eucalypts#c]] can survive [[flames#a]]. Within weeks, new green shoots grew from the black [[trees#c]].
 # endregion
 
-# region: make
-widget: cohesion
-mode: chain
-tools: write
-p: Press Write your own. Write four sentences about one thing, such as a sport, an animal or a place.
-# endregion
 
-# region: make-solution
-widget: cohesion
-mode: chain
-as: student
-p: [[Netball#a]] is my favourite sport. I play [[the game#a]] every Saturday. Our [[netball#a]] team is called the Comets. We won every match this term.
-# endregion
 
 # region: explain-pic
 widget: cohesion

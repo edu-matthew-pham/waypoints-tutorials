@@ -111,15 +111,18 @@ check: { type: board, text: "Choose the wording that includes everyone.", when: 
 
 ## Make: two messages about one event
 
+In your own document, pick one event, such as an excursion or a match. Write two short messages about it: a text to a friend and a note to a teacher. Write at least four sentences in all. Use at least one short form, such as *I'm* or *can't*, in the text to your friend.
+
+Here is one example: "Hey Zoe, our excursion to the museum was awesome! We **didn't** even have to wait in line." and "Dear Mr Lee, thank you for organising the excursion to the museum. The class learned a great deal about the dinosaur display."
+
+Then swap with a partner. Point to the words that fit each reader. What changed between the two messages?
+
 ```step
 stage: make
 insight: "Writing a text to a friend and a note to a teacher about the same event puts two registers to use in one task."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Pick one event, such as an excursion or a match.", "Write the message to your friend first, then the note to your teacher. How do the words change?"]
-check: { type: board, text: "Write at least four sentences: a text to a friend and a note to a teacher about the same event, with at least one short form such as I'm or can't in the text.", when: "n_sentences >= 4 and n_contractions >= 1", explain: "You wrote both messages. Ask a partner to point to the words that fit each reader and to say what changed between the two." }
+check: { type: reflect, text: "I wrote a text to a friend and a note to a teacher about one event, and a partner and I found the words that fit each reader." }
 ```
-
-The board counts short forms such as *don't* and *I'm*, which a friend text usually has. It cannot tell whether your words fit each reader. A partner or your teacher can.
 
 ## In your own writing
 

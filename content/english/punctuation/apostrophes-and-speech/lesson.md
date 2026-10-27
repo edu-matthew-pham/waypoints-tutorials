@@ -107,21 +107,15 @@ check: { type: board, text: "Choose the correct word for each gap.", when: "n_ga
 
 ## Make: a scene with talk
 
+In your own document, write a short scene from a story with two characters talking, at a bus stop or a campsite. Write at least four sentences. Put at least one piece of speech in speech marks, and use at least two apostrophes.
+
+Here is one example: "The bus was late again. 'I **can't** wait any longer,' said Zoe. Her **brother's** bag sat on the bench beside her. '**We'll** walk,' he said, 'if it **doesn't** rain.'"
+
+Then swap with a partner. Point to each apostrophe and say its job: letters left out, or an owner. Check that every spoken part ends inside its closing speech mark.
+
 ```step
 stage: make
 insight: "Writing a short scene with speech and apostrophes puts both marks to work in a real text type."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Write a short scene from a story: two characters talking at the bus stop or at a campsite.", "Use speech marks for what they say, and at least two apostrophes."]
-check: { type: board, text: "Write at least four sentences, with at least one piece of speech in speech marks and at least two apostrophes.", when: "n_sentences >= 4 and n_quotes >= 1 and n_apostrophes >= 2", explain: "Your scene has speech and apostrophes. Ask a partner to check that each apostrophe stands for missing letters or shows an owner, and that every spoken part ends inside its closing mark." }
-```
-
-The board counts speech marks and apostrophes. Whether each one is in the right place is for you and a partner to check.
-
-## In your own writing
-
-```step
-stage: make
-tier: typical
-insight: "Checking each apostrophe in a real piece of writing puts the check to use outside the board."
-check: { type: reflect, text: "I checked every apostrophe in a piece of my own writing and fixed at least one that did not belong or was in the wrong place." }
+check: { type: reflect, text: "I wrote a scene of at least four sentences with speech in speech marks and at least two apostrophes, and a partner and I checked that each apostrophe has a job and each spoken part ends inside its closing mark." }
 ```

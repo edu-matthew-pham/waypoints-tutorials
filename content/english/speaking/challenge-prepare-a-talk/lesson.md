@@ -39,15 +39,18 @@ The board checks that every line has words and a label. Whether the plan suits y
 
 ## Script: write it to be heard
 
+In your own document, write the opening and your first point as a script. Use four or more sentences, none of them 15 words or longer. Use at least one joining word such as *because*, *when* or *until*. Choose words and a register that suit your class.
+
+Here is one example, from Nib's lunch talk: "Who here has ever wished lunch were a bit longer? Today I want to show you how to get ten more minutes. **First**, the queue wastes time. Last week the last student was served after nine minutes. That is nine minutes of lunch gone, **because** the line is slow."
+
+Then say your script aloud to a partner. Could you say each sentence in one breath? Did your partner follow it the first time? Does your register suit your class?
+
 ```step
 stage: make
-insight: "Writing the opening and first point of the script with the board's counts shows whether the script is built for the ear, though only a spoken test can tell."
-try: { playground: board, starter: "text.yml#script", height: 460 }
+insight: "Writing the opening and first point of the script in their own document, then saying it aloud, shows whether the script is built for the ear, which only a spoken test can tell."
 hint: ["Could you say each sentence in one breath?", "Which signpost word will tell your listeners where they are?"]
-check: { type: board, text: "Write the opening and your first point as four or more sentences, none of them 15 words or longer, and use at least one joining word such as because, when or until.", when: "is_written = 1 and n_sentences >= 4 and n_long = 0 and n_joiners >= 1", explain: "The board counts four or more sentences, none long, and at least one joining word. Read it aloud to a partner: could you say each sentence in one breath? Did you choose a register that suits your class?" }
+check: { type: reflect, text: "I wrote the opening and my first point as four or more short sentences with at least one joining word, and a partner could follow it when I said it aloud." }
 ```
-
-The board counts sentences, how many are long and joining words. It cannot hear your script or tell if your register suits your class, so say it aloud and ask a partner.
 
 ## Cue cards: say it, don't read it
 

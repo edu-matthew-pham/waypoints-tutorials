@@ -1,5 +1,5 @@
 # Texts for "Choose the shape for the job" (cohesion parts mode labels what a dependent clause adds; the sentence
-# board builds an extending sentence and counts short and long sentences; chain mode colours short and long ones).
+# board builds an extending sentence; chain mode colours short and long ones).
 
 # region: run
 widget: cohesion
@@ -45,17 +45,6 @@ colours: 2
 p: [[The storm rolled across the bay all afternoon, and by evening every boat had been dragged high onto the sand.#b]] [[Then it stopped.#a]] [[When the clouds finally cleared, the whole town walked down to the shore to see what the waves had left behind.#b]] The beach was covered in seaweed and driftwood.
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: The school fair is on Saturday. It will run from nine until three, and every class has built a stall that sells something they made themselves. Come early. The cake stall always sells out before ten, since the baking is so popular. Bring a bag for everything you buy.
-# endregion
 
 # region: explain-pic
 widget: cohesion

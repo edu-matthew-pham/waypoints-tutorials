@@ -1,4 +1,4 @@
-# Texts for "Spot the bias" (parts labels the lean; gaps choose plain wording; chain colours who words favour; write counts).
+# Texts for "Spot the bias" (parts labels the lean; gaps choose plain wording; chain colours who words favour).
 
 # region: run
 widget: cohesion
@@ -32,20 +32,6 @@ widget: cohesion
 mode: chain
 colours: 2
 p: The council's [[thoughtful#a]] plan begins next term, but the [[harsh#b]] rule leaves students [[powerless#b]]. Supporters call it a [[sensible#a]] step. The rule starts on Monday.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: exclaims
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: exclaims
-p: Some students want the canteen to open earlier. They say many arrive hungry. The canteen manager says there is not enough staff before nine. The school council will discuss both views next week.
 # endregion
 
 # region: explain-pic

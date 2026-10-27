@@ -1,5 +1,5 @@
 # Texts for "A clause inside a clause" (cohesion parts mode labels each part; the sentence board builds a sentence
-# with an embedded clause and counts a biography; chain mode colours embedded clauses).
+# with an embedded clause; chain mode colours embedded clauses).
 
 # region: run
 widget: cohesion
@@ -46,19 +46,6 @@ colours: 1
 p: My aunt, [[who runs a bakery#a]], sells pies. The pies [[that she bakes#a]] sell out by noon. She closes early because she starts at four. The shop shuts after the last customer leaves.
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-counts: who
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: who
-p: My grandfather, who was born in Hobart, worked on the ferries for forty years. He kept a diary which he wrote in every night. His ferry, whose engine was loud, crossed the river twice an hour. Everyone who rode it knew his name.
-# endregion
 
 # region: explain-pic
 widget: cohesion

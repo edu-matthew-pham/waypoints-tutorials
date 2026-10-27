@@ -1,5 +1,5 @@
 # Texts for "Commas that change meaning" (cohesion parts label the job of each comma; the sentence board's punct
-# mode chooses a comma or none; write mode counts a recount).
+# mode chooses a comma or none).
 
 # region: run
 widget: cohesion
@@ -39,20 +39,6 @@ p: Because the track was steep[[{,|nothing}=,]] we walked slowly.
 p: The creek[[{,|nothing}=nothing]] rose quickly.
 p: Ava asked[[{,|nothing}=,]] 'Is the path open?'
 p: Although it was late[[{,|nothing}=,]] the shop stayed open.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: commas quotes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: commas quotes
-p: On Friday our class walked to the creek. When we arrived, Mia unpacked torches, maps and rope. 'Stay together,' said our teacher. After a short rest, we headed back to school.
 # endregion
 
 # region: explain-pic

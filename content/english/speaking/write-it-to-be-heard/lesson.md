@@ -103,15 +103,24 @@ check: { type: board, text: "Choose the version of each sentence that a speaker 
 
 ## Practise: from the page to the ear
 
+Here is one long written sentence. Copy it into your own document.
+
+> The oval, which has been wet since the storm last week and which the groundskeeper says will not be usable until the drains are cleared, is why all training has moved to the gym, where space is limited.
+
+In your own document, rewrite it as three or more sentences for a speaker to say. Keep every sentence under 15 words. Use at least one joining word such as *because*, *when* or *until*.
+
+Here is one example, for a different sentence. Written: "The pool, which closed on Monday after a leak was found under the deep end and which the council says will stay shut until the repairs finish, is why lessons have moved to the hall." Spoken: "The pool closed on Monday. A leak was found under the deep end. It will stay shut **until** the repairs finish. So lessons have moved to the hall."
+
+Then say your sentences aloud to a partner. Can they follow it without looking? Where did either of you run out of breath?
+
 ```step
 stage: practise
-insight: "Reworking a long written sentence into several spoken ones uses the counts the board gives without letting them decide what sounds natural."
-try: { playground: board, starter: "text.yml#practise", height: 400 }
+insight: "Reworking a long written sentence into several spoken ones makes students listen for where the breath runs out, not count words."
 hint: ["Where does the sentence change from one idea to the next?", "Could you say each piece in a single breath?"]
-check: { type: board, text: "Rewrite the sentence as three or more sentences, with none of them 15 words or longer, and use at least one joining word such as because, when or until.", when: "is_written = 1 and n_sentences >= 3 and n_long = 0 and n_joiners >= 1", explain: "The board counts three or more sentences, none of them long, and at least one joining word. Read them aloud to a partner: does each one fit in a breath, and does the joining word sound natural?" }
+check: { type: reflect, text: "I rewrote the long sentence as three or more short sentences with at least one joining word, and I said it aloud to a partner who could follow it." }
 ```
 
-The board counts sentences, how many are long and joining words. A short sentence with a joining word is a complex sentence you can say in one breath. It cannot hear your script, so say it aloud to a partner and ask if they could follow it.
+A short sentence with a joining word is a complex sentence you can say in one breath. Listen for where the breath runs out.
 
 ## Make: the start of a script
 

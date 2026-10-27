@@ -1,4 +1,4 @@
-# Texts for "Challenge: prepare a talk" (cohesion parts and cue, sentence write).
+# Texts for "Challenge: prepare a talk" (cohesion parts and cue).
 
 # region: plan
 widget: cohesion
@@ -31,19 +31,7 @@ s detail: Two Year 10 volunteers have offered to serve.
 s close: Say it again: queue, window, helpers. Then ask the class to support the idea.
 # endregion
 
-# region: script
-widget: sentence
-mode: write
-counts: short long
-# endregion
 
-# region: script-solution
-widget: sentence
-mode: write
-as: student
-counts: short long
-p: Who here has ever wished lunch were a bit longer? Today I want to show you how to get ten more minutes. First, the queue wastes time. Last week the last student was served after nine minutes. That is nine minutes of lunch gone, because the line is slow. The canteen has a spare window that is never opened.
-# endregion
 
 # region: cards
 widget: cohesion

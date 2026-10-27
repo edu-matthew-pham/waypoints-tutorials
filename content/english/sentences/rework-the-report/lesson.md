@@ -56,15 +56,22 @@ check: { type: board, text: "Choose the words that fit the job in each sentence.
 
 ## Part 4: rework a choppy paragraph
 
+Copy this choppy paragraph into your own document:
+
+> The garden was behind the hall. The garden had four beds. We planted beans in the first bed. The beans grew slowly. We watered the plants every day. The plants were healthy.
+
+Rework it without changing a fact. Write at least four sentences. Use *who*, *which* or *whose* at least once. Use at least two joining words, such as *because* or *until*. Keep one short sentence of five words or fewer to land the end, and make one sentence long, fifteen words or more.
+
+Here is a different choppy paragraph, reworked: "The kitchen, **which** smelled of toast, was full. We waited **until** the bell rang **because** nobody wanted to be late. Then we ran."
+
+Then swap with a partner. Tick off every fact from the choppy paragraph in the new one. Did any fact change or go missing? Does it read well?
+
 ```step
 stage: make
 insight: "Reworking a choppy paragraph with all the moves is the course's main transfer task."
-try: { playground: board, starter: "text.yml#make", height: 440 }
 hint: ["Fold two sentences about the same thing with which or who.", "Join two ideas with a word like because or until, and keep a short sentence to land the end."]
-check: { type: board, text: "Rework the paragraph: at least four sentences, using who, which or whose once, at least two joining words such as because or until, one short sentence and one long one.", when: "is_written = 1 and n_sentences >= 4 and n_who >= 1 and n_joiners >= 2 and n_short >= 1 and n_long >= 1", explain: "Your paragraph has folded detail, joined ideas and a mix of lengths. Ask a partner whether it says the same facts as the choppy version." }
+check: { type: reflect, text: "I reworked the choppy paragraph in my own document with a folded clause, at least two joining words and a mix of short and long sentences, and a partner and I checked that every fact is still there." }
 ```
-
-The board counts words, sentences and joining words, and it cannot tell whether you reworked the paragraph or only added to it. Whether the facts are the same and the paragraph reads well is for a partner or your teacher to judge.
 
 ## In your own writing
 

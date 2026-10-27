@@ -54,15 +54,22 @@ check: { type: board, text: "Colour every informal word in the note.", when: "ch
 
 ## Part 4: rewrite the notice
 
+Here is Nib's whole notice.
+
+> Hey everyone! The oval's heaps too wet, so training's in the gym on Thursday at four. Bring ya runners and a drink bottle. No worries if you're late. Cheers, Nib
+
+In your own document, copy the notice and rewrite it for parents and the principal, in at least four sentences. Use full forms, such as *do not* and not *don't*. Leave out slang and exclamation marks. Keep the news: where, when, what to bring and what to do if late.
+
+Here is a model after you have tried: "Training will now be held in the gym on Thursday at four, because the oval is too wet to use. Students should bring their runners and a drink bottle. Students who arrive late may join the session when they arrive. Regards, Nib"
+
+Then swap with a partner. Underline any word they would not say to the principal. Check for short forms hiding in words such as *oval's*. Does every piece of news still make it through?
+
 ```step
 stage: make
 insight: "Rewriting the whole notice formally puts the scale and the reader to use together."
-try: { playground: board, starter: "text.yml#make", height: 460 }
 hint: ["Which words in Nib's notice have you found are informal?", "Who is reading, and what do they need to know?"]
-check: { type: board, text: "Rewrite the notice formally in at least four sentences, with no short forms and no exclamation marks.", when: "is_written = 1 and n_contractions = 0 and n_exclaims = 0 and n_sentences >= 4", explain: "You wrote a formal notice. Swap with a partner and ask them to point to any word they would not say to the principal." }
+check: { type: reflect, text: "I rewrote Nib's notice for parents in at least four sentences, and a partner and I checked for slang, short forms and exclamation marks, and that all the news was still there." }
 ```
-
-The board counts short forms, exclamation marks and sentences. It cannot see every short form (such as oval's), so check for 's yourself. It cannot tell whether your wording fits the readers, so ask a partner or your teacher.
 
 ## In your own writing
 

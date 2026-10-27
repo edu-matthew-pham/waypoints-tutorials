@@ -112,15 +112,18 @@ check: { type: board, text: "Label each line: exaggerates, plays down, or says t
 
 ## Make: a scene with devices
 
+In your own document, write a short scene of at least four sentences. Include two spoken lines in quotation marks: one that plays something down (understatement) and one that blows something up (exaggeration).
+
+Here is one example: The bus broke down on the hill. "**A minor delay**," said the driver, as smoke poured from the engine. "**We will be here until the end of time**," groaned Mia. The sun set slowly over the stopped bus.
+
+Then swap with a partner. Name the device in each spoken line and say what it adds to the scene.
+
 ```step
 stage: make
 insight: "Writing a short scene with understatement and exaggeration in speech puts devices to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What happens in your scene?", "Which line plays it down, and which blows it up?"]
-check: { type: board, text: "Write a short scene of at least four sentences, with two spoken lines in quotation marks: one that plays something down and one that exaggerates.", when: "n_sentences >= 4 and n_quotes >= 2", explain: "You wrote a scene. Ask a partner to name the device in each spoken line and what it adds." }
+check: { type: reflect, text: "I wrote a scene of at least four sentences with one line that plays something down and one that exaggerates, and a partner and I named the device in each." }
 ```
-
-The board counts sentences and quotation marks. It cannot tell which device you used, so ask a partner to name them.
 
 ## In your own writing
 

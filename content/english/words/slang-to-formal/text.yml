@@ -1,5 +1,5 @@
 # Texts for "From slang to formal" (scale places sentences on four steps; swap chooses formal wording;
-# chain colours informal words; write counts short forms).
+# chain colours informal words).
 
 # region: run
 widget: wordchoice
@@ -29,21 +29,6 @@ widget: cohesion
 mode: chain
 colours: 1
 p: Dear Ms Ortiz, We [[reckon#a]] the library needs [[heaps#a]] more books. Some of the old ones are [[rubbish#a]] and the shelves are full of [[stuff#a]] nobody reads. We would be grateful if you could consider our request.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: contractions exclaims
-start: "Hey Mr Hall! We reckon the oval's heaps too muddy for footy, so can we use the gym instead? It'd be awesome!"
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: contractions exclaims
-p: Dear Mr Hall, We believe that the oval is too muddy for football training. We would like to ask whether we may use the gym instead. Thank you for considering our request.
 # endregion
 
 # region: explain-pic

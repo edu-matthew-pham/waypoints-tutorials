@@ -29,7 +29,7 @@ The third course is [Building sentences](../english/sentences/): eleven lessons 
 - **Shapes:** simple, compound, complex and compound-complex sentences, and choosing the shape for the job (AC9E7LA05), steady tense (AC9E7LA06), and embedded clauses that say more in fewer words (AC9E8LA05).
 - **Challenge:** rework a choppy report by folding, steadying the tense and choosing shapes.
 
-The board is a small sentence on paper: students click tiles into order, pick the mark for each slot, or write in a text box that shows rough counts (words, sentences, joining words, who or which). The counts are aids. They never say whether the writing is good; a partner or you do that, and each step says so. The plain idea is taught first and the term (such as embedded clause) is named once, with ACARA's term in the teacher notes. Where an answer is defensible, the board marks it correct or leaves the item out.
+The board is a small sentence on paper: students click tiles into order or pick the mark for each slot. Nothing on the site takes or checks a student's own writing. Each Make step gives the brief, the criteria and an example, the student writes in their own document (Google Docs or OneNote), and a partner or you read it. The plain idea is taught first and the term (such as embedded clause) is named once, with ACARA's term in the teacher notes. Where an answer is defensible, the board marks it correct or leaves the item out.
 
 The fourth course is [Punctuation for meaning](../english/punctuation/): six lessons for Years 6 to 8, also not yet tried with a class.
 
@@ -37,7 +37,7 @@ The fourth course is [Punctuation for meaning](../english/punctuation/): six les
 - **Marks that change meaning:** the three jobs of a comma (AC9E6LA09), colons and brackets (AC9E7LA09), semicolons and dashes (AC9E8LA09).
 - **Challenge:** punctuate a school newsletter that has no punctuation, then check the commas in a piece of their own writing.
 
-Students choose a mark for each slot in a sentence, so every mark is tied to a job in the sentence. The board only marks choices with one defensible answer. Dashes, brackets and the comma before the last *and* of a list are style choices, so the board counts them and a partner or you judge them.
+Students choose a mark for each slot in a sentence, so every mark is tied to a job in the sentence. The board only marks choices with one defensible answer. Dashes, brackets and the comma before the last *and* of a list are style choices, so the board leaves them out and a partner or you judge them in the student's own writing.
 
 The fifth course is [Language for people and situations](../english/words/): eight lessons for Years 6 to 8, not yet tried with a class.
 
@@ -53,7 +53,7 @@ The sixth course is [Judging and persuading](../english/persuade/): nine lessons
 - **Core:** emotive words and bias (AC9E6LA02), judging and backing it up (AC9E7LA02), language features that shape meaning (AC9E7LY03), and irony, exaggeration and understatement (AC9E8LA02).
 - **Challenge:** judge a made-up film review for its audience and sources, and write a verdict (AC9E8LY03).
 
-Every text is made up and low-stakes (a phone rule, a film, a canteen); no real, contested topics. The board labels, colours and places planted words; the student's own writing is only counted, and a partner or you judge whether the evidence is good, whether a word takes a side and which device was used.
+Every text is made up and low-stakes (a phone rule, a film, a canteen); no real, contested topics. The board labels, colours and places planted words; the student's own writing stays in their own document, and a partner or you judge whether the evidence is good, whether a word takes a side and which device was used.
 
 The seventh course is [Speaking to an audience](../english/speaking/): nine lessons for Years 6 to 8, not yet tried with a class.
 
@@ -73,8 +73,8 @@ We'd like colleagues to try these with a class before we build more, so please t
 ## How it teaches
 
 - **A text to mark up.** Each lesson has a short text on the screen. Students draw arrows from a pointing word back to what it points to, colour word chains, choose joining words in gaps, and label or reorder sentences and paragraphs.
-- **One move per lesson**, then the same move in their own writing on the board, then (optionally) in a piece of class writing.
-- **No AI marking, anywhere.** The board checks only what can be checked: where a planted word points, which joining word does the right job, which sentence is the topic sentence, whether the paragraphs follow the overview's order. Students' own writing is checked by them against a model, by a partner, or by you. The board says so on those steps.
+- **One move per lesson**, then the same move in their own writing in their own document (the Make step is the direction), then (optionally) in a piece of class writing.
+- **No AI marking, anywhere.** The board checks only what can be checked: where a planted word points, which joining word does the right job, which sentence is the topic sentence, whether the paragraphs follow the overview's order. Students' own writing lives in their own document and is checked by them against a model, by a partner, or by you. Each Make step says so.
 - **Every text is written for the lesson.** Nothing is copyrighted, so the texts can be quoted, projected and printed, and every planted link is exactly where the lesson needs it.
 
 ## What it isn't

@@ -1,5 +1,5 @@
 # Texts for "Simple, compound, complex" (cohesion parts mode labels whole sentences by shape; the sentence board
-# builds a compound-complex sentence; chain mode colours dependent clauses; the sentence board counts a note home).
+# builds a compound-complex sentence; chain mode colours dependent clauses; the sentence board is used only for planted answers).
 
 # region: run
 widget: cohesion
@@ -38,17 +38,6 @@ colours: 1
 p: The tide came in, so we left [[because the sand was getting wet#a]]. Ava kept swimming [[although the water was cold#a]], and Ben cheered. [[When the siren sounded#a]], the swimmers climbed out, but the lifeguards stayed.
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: On Friday our class visited the museum. We left early because the bus came at eight. The guide showed us a model ship, and she explained how it sailed when the wind was strong. Please remember to pack a hat, since the day will be warm.
-# endregion
 
 # region: explain-pic
 widget: cohesion

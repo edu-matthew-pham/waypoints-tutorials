@@ -114,15 +114,18 @@ check: { type: board, text: "Colour the two embedded clauses.", when: "chains_ok
 
 ## Make: a short biography
 
+In your own document, write four sentences of a short biography of a person you know or have made up. Use *who*, *which* or *whose* at least twice to add detail inside a sentence, right after the noun it tells about.
+
+Here is one example: "My grandfather, **who was born in Hobart**, worked on the ferries for forty years. His ferry, **whose engine was loud**, crossed the river twice an hour."
+
+Then swap with a partner. Point to each embedded clause and the noun it tells about. Does each clause sit right after its noun?
+
 ```step
 stage: make
 insight: "Writing a short biography with at least two embedded clauses puts the move to work where a writer packs in detail about a person."
-try: { playground: board, starter: "text.yml#make", height: 360 }
 hint: ["Choose a person you know or have made up. Write four sentences about them.", "Use who, which or whose at least twice to add detail inside a sentence, right after the noun it tells about."]
-check: { type: board, text: "Write at least four sentences of a short biography and use who, which or whose at least twice (the board counts only those three words).", when: "n_sentences >= 4 and n_who >= 2", explain: "Your biography packs detail into its sentences. Ask a partner to point to each embedded clause and the noun it tells about." }
+check: { type: reflect, text: "I wrote a short biography with at least two embedded clauses, and a partner and I checked that each clause sits right after the noun it tells about." }
 ```
-
-The board counts sentences and the words who, which and whose. Whether each clause sits right after its noun is for you and a partner to judge.
 
 ## In your own writing
 

@@ -108,15 +108,18 @@ check: { type: board, text: "Colour the words that favour the council one colour
 
 ## Make: a fair report
 
+In your own document, write at least four sentences reporting a disagreement about the school canteen. Name both sides, use plain words that take no side, and use no exclamation marks.
+
+Here is one example: "Some students want the canteen to open earlier. They say many arrive hungry. The canteen manager says there is not enough staff before nine. The school council will discuss both views next week."
+
+Then swap with a partner. Circle any word that takes a side. Does each side get a fair say?
+
 ```step
 stage: make
 insight: "Writing a fair report that names both sides puts the idea to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What did each side want?", "Which plain words describe it?"]
-check: { type: board, text: "Write at least four sentences reporting a disagreement about the school canteen, naming both sides, with no exclamation marks.", when: "n_sentences >= 4 and n_exclaims = 0", explain: "You wrote a report. Ask a partner to circle any word that takes a side." }
+check: { type: reflect, text: "I wrote a fair report of at least four sentences that names both sides, and a partner and I checked that no word takes a side." }
 ```
-
-The board counts sentences and exclamation marks. It cannot find a word that takes a side, so ask a partner to circle them.
 
 ## In your own writing
 

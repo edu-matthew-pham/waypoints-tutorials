@@ -110,15 +110,18 @@ check: { type: board, text: "Colour every judging word in the review.", when: "c
 
 ## Make: a short review
 
+In your own document, write at least four sentences reviewing a book, film or event. Back up one judgement with a detail in quotation marks (a phrase from the text, or what happened, in quotes).
+
+Here is one example: "The school play was funny and warm. The lead actor was confident because he never forgot a line. My favourite moment was when the dog barked and he said, **'Even the audience is cast tonight.'** The costumes were bright and well made."
+
+Then swap with a partner. Does the detail really back up your judgement?
+
 ```step
 stage: make
 insight: "Writing a review with a detail in quotation marks puts judging and backing up to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["What did you think of it?", "Which detail shows that?"]
-check: { type: board, text: "Write at least four sentences reviewing a book, film or event, and put one detail that backs a judgement in quotation marks (a phrase from the text, or what happened, in quotes).", when: "n_sentences >= 4 and n_quotes >= 1", explain: "You wrote a review with a detail. Ask a partner whether the detail really backs your judgement." }
+check: { type: reflect, text: "I wrote a review of at least four sentences with a detail in quotation marks, and a partner and I checked that the detail backs my judgement." }
 ```
-
-The board counts sentences and quotation marks. Whether the detail backs the judgement is for you and a partner to judge.
 
 ## In your own writing
 

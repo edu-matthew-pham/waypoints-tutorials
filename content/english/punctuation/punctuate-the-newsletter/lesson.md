@@ -54,16 +54,22 @@ check: { type: board, text: "Choose the mark for each box.", when: "n_right = 5 
 
 ## Part 4: punctuate a whole paragraph
 
+Copy this paragraph into your own document. It has no punctuation and no capital letters after the first word, so you will add them.
+
+> The school fair is on Saturday Mrs Tran our principal will open it at ten When the gates open the first stall to fill will be the cake stall Last year the cakes sold out by noon this year we are baking more Ravi said we will need three things flour eggs and sugar
+
+Punctuate it. Put in the capital letters and full stops first. Then add at least four commas, a colon and speech marks around what Ravi said.
+
+Here is one model, so you can compare after you have tried: "The school fair is on Saturday. Mrs Tran, our principal, will open it at ten. When the gates open, the first stall to fill will be the cake stall. Last year the cakes sold out by noon; this year we are baking more. Ravi said, 'We will need three things: flour, eggs and sugar.'"
+
+Then swap with a partner. Point to every mark and say its job. Where you chose differently, talk about which version reads better.
+
 ```step
 stage: make
 insight: "Punctuating a whole paragraph makes students decide each mark in context, as they do in extended writing."
-try: { playground: board, starter: "text.yml#make", height: 460 }
 hint: ["Where does each sentence end? Put the capital letters and full stops in first.", "Read it aloud. Where does your voice stop, and where does a reader need help to follow the meaning?"]
-check: { type: board, text: "Punctuate the paragraph: at least four sentences, at least four commas, a colon and speech marks.", when: "n_sentences >= 4 and n_commas >= 4 and n_colons >= 1 and n_quotes >= 1", explain: "Your paragraph has sentences, commas, a colon and speech marks. Swap with a partner and ask them to find each comma and say its job." }
+check: { type: reflect, text: "I punctuated the paragraph with capital letters, full stops, at least four commas, a colon and speech marks, and a partner and I named the job of each mark." }
 ```
-
-The board counts marks. It cannot tell whether each one is in the right place. A partner or your teacher can.
-
 ## In your own writing
 
 ```step

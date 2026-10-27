@@ -1,5 +1,4 @@
-# Texts for "Words that build roles" (parts labels kinds of word; swap welcomes newcomers; scale boss/equal/helper;
-# write counts first-person pronouns).
+# Texts for "Words that build roles" (parts labels kinds of word; swap welcomes newcomers; scale boss/equal/helper).
 
 # region: run
 widget: cohesion
@@ -46,18 +45,6 @@ word c: Could I carry that for you? = 3
 word d: Move over, I will do it. = 1
 word e: What do you think we should do? = 2
 word f: What can I get you? = 3
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-p: We are starting a chess club at lunchtime on Tuesdays. Everyone is welcome, including people who have never played. I will bring spare boards and show you the basics. Our first game is next week in the library.
 # endregion
 
 # region: explain-pic

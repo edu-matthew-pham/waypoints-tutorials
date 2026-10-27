@@ -104,15 +104,18 @@ check: { type: board, text: "Choose the version of each sentence that keeps the 
 
 ## Make: your own starts
 
+In your own document, write a paragraph of at least four sentences about an animal, a place or a game. Make each sentence start with something the reader already knows.
+
+Here is one example: "Our cat **Pepper** sleeps all day. **She** wakes up at dinner time. **Her favourite food** is tuna. **After dinner**, she goes out to hunt moths." The starts all pick up the cat or what the cat does.
+
+Then read only the first few words of each sentence aloud, in a row, to a partner. Can your partner say what the paragraph is about from the starts alone?
+
 ```step
 stage: make
 insight: "Writing a paragraph and then reading only its starts turns the check into a habit for their own writing."
-try: { playground: board, starter: "text.yml#make", height: 340 }
-hint: ["Press Write your own and write four sentences about an animal, a place or a game.", "Then read only the start of each sentence. Does each one pick up something from before?"]
-check: { type: board, text: "Write a paragraph of at least four sentences, then read only the starts of each sentence aloud.", when: "is_written = 1 and n_sentences >= 4", explain: "If your starts follow a thread, your reader can follow your paragraph." }
+hint: ["Choose an animal, a place or a game you know well and write four sentences about it.", "Read only the start of each sentence. Does each one pick up something from before?"]
+check: { type: reflect, text: "I wrote a paragraph of at least four sentences, read only the starts aloud to a partner, and my partner could say what it was about." }
 ```
-
-The board only checks that you wrote it. Reading the starts aloud, to yourself or a partner, is the real check.
 
 ## In your own writing
 

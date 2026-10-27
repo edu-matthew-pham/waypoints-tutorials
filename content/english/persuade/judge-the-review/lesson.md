@@ -108,15 +108,18 @@ check: { type: board, text: "Place each part by its source: weak if nobody is na
 
 ## Make: write your verdict
 
+In your own document, write a verdict of at least four sentences on whether the *Lantern Cove* review persuades parents. Say what works, for whom and why. Quote at least one phrase from the review in quotation marks, and say what it shows.
+
+Here is one example, about a different made-up review: "The review of *Quiet Hill* would persuade teenagers. It says the music is 'loud enough to rattle your ribs', which suits that audience. However, 'a hit with everyone' is weak, because no one is named."
+
+Then swap with a partner. Does the quoted phrase really support the judgement? Is there a reason for each point, and an audience named?
+
 ```step
 stage: make
 insight: "Writing a verdict with evidence from the review puts judging language and sources to use."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Would the review persuade parents? Why?", "Which words from the review show that?"]
-check: { type: board, text: "Write a verdict of at least four sentences on whether the review persuades parents, quoting at least one phrase from the review in quotation marks.", when: "n_sentences >= 4 and n_quotes >= 1", explain: "You wrote a verdict. Ask a partner whether your quoted phrase really supports your judgement." }
+check: { type: reflect, text: "I wrote a verdict of at least four sentences with a quoted phrase from the review, and a partner and I checked that the phrase supports my judgement." }
 ```
-
-The board counts sentences and quotation marks. It cannot judge your verdict. A partner or your teacher can.
 
 ## In your own writing
 

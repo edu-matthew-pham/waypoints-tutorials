@@ -1,6 +1,6 @@
-summary: "Students learn the four sentence shapes: simple, compound, complex and compound-complex. They label whole sentences, sort sentences, catch a wrong label, build a compound-complex sentence, colour dependent clauses and write a short note home."
+summary: "Students learn the four sentence shapes: simple, compound, complex and compound-complex. They label whole sentences, sort sentences, catch a wrong label, build a compound-complex sentence, colour dependent clauses and write a short note home in their own document."
 time: 50
-timing: "Predict and Try 10 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make and own writing 16 min"
+timing: "Predict and Try 10 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make (in their own document) and own writing 16 min"
 goals:
   - I can find the main and dependent clauses in a sentence.
   - I can name a sentence as simple, compound, complex or compound-complex.
@@ -19,7 +19,7 @@ running:
   - "Predict: count the clauses aloud together."
   - "Try: after labelling, ask which clue showed the shape."
   - "Worked example: ask why a dependent clause cannot make a sentence compound."
-  - "Make: partners label each sentence in the note."
+  - "Make: students write in their own document, then partners label each sentence in the note."
 stuck:
   - see: "A student labels 'Ava swam and cheered' compound."
     ask: "How many subjects does it have?"

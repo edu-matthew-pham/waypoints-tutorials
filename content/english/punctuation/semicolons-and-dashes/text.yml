@@ -1,5 +1,5 @@
 # Texts for "Semicolons and dashes" (cohesion parts label each mark's job; the sentence board's build mode joins
-# two main clauses; punct mode chooses a mark; write mode counts a description).
+# two main clauses; punct mode chooses a mark).
 
 # region: run
 widget: cohesion
@@ -41,20 +41,6 @@ p: When the rain eased[[{,|;|nothing}=,]] we walked down to the creek.
 p: Mia packed the torch[[{,|;|nothing}=;]] Ravi packed the rope.
 p: The old bridge[[{,|;|nothing}=nothing]] was closed for repairs.
 p: Because the road was flooded[[{,|;|nothing}=,]] the bus took a detour.
-# endregion
-
-# region: make
-widget: sentence
-mode: write
-counts: semicolons dashes
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: semicolons dashes
-p: The beach at dawn is quiet. The waves are small; the sand is cold and smooth. A single gull – the only one in sight – circles above the rocks. Then the sun rises – and everything glows.
 # endregion
 
 # region: explain-pic

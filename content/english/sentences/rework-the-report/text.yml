@@ -1,4 +1,4 @@
-# Texts for "Challenge: rework the report" (sentence board builds a folded sentence and counts the reworked paragraph;
+# Texts for "Challenge: rework the report" (sentence board builds a folded sentence;
 # chain mode colours tense slips; gaps choose shapes).
 
 # region: fold
@@ -24,20 +24,6 @@ widget: cohesion
 p: We hoped the beans would grow fast [[{, but|, because|, so}=, but]] they grew slowly. [[{Because the soil was dry|The soil was dry|And the soil was dry}=Because the soil was dry]], we watered every day. The pods [[{which|because|but}=which]] we picked in May tasted sweet.
 # endregion
 
-# region: make
-widget: sentence
-mode: write
-counts: who, joiners
-p: The garden was behind the hall. The garden had four beds. We planted beans in the first bed. The beans grew slowly. We watered the plants every day. The plants were healthy.
-# endregion
-
-# region: make-solution
-widget: sentence
-mode: write
-as: student
-counts: who, joiners
-p: The garden, which stood behind the hall, had four beds. We planted beans in the first bed, but they grew slowly because the soil was dry. We watered them every day until the first shoots appeared. The plants thrived.
-# endregion
 
 # region: explain-pic
 widget: cohesion

@@ -111,15 +111,22 @@ check: { type: board, text: "Colour every informal word in the note.", when: "ch
 
 ## Make: write it formally
 
+Here is a message a student wrote to the principal, Mr Hall. It sounds like a text to a friend.
+
+> Hey Mr Hall! We reckon the oval's heaps too muddy for footy, so can we use the gym instead? It'd be awesome!
+
+In your own document, copy the message and rewrite it formally, in at least three sentences. Use full forms, such as *do not* and not *don't*. Leave out slang and exclamation marks, and keep the same news and the same request.
+
+Here is one example of a different message: instead of "Yeah, we're gonna be late, sorry!", write "We will arrive a little after the start. We apologise for the delay."
+
+Then swap with a partner. Underline any word they would not say to the principal, and check for short forms hiding in words such as *oval's*.
+
 ```step
 stage: make
 insight: "Rewriting an informal message formally puts the formal wording to use in a real piece of writing."
-try: { playground: board, starter: "text.yml#make", height: 400 }
 hint: ["Which words in the message above are informal?", "How would the principal say it in a report?"]
-check: { type: board, text: "Rewrite the message formally in at least three sentences, with no short forms and no exclamation marks.", when: "is_written = 1 and n_contractions = 0 and n_exclaims = 0 and n_sentences >= 3", explain: "You wrote a formal message. Ask a partner to point to a word they would not say aloud to a friend, and check it is not in your text." }
+check: { type: reflect, text: "I rewrote the message formally in at least three sentences, and a partner and I checked for slang, short forms and exclamation marks." }
 ```
-
-The board counts short forms, exclamation marks and sentences. It cannot see every short form (such as oval's), so check for 's yourself. It cannot tell whether your words are exact, so ask a partner or your teacher.
 
 ## In your own writing
 
