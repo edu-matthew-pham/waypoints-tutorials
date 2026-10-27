@@ -505,7 +505,7 @@ copyFileSync(join('site', 'check.js'), join(OUT, 'check.js')); // the Check your
 // Search (25 Oct 2026): the index is built here from the same data the pages use; site/search.js searches it in the browser.
 const COVERAGE = loadCoverage('.', COURSES.map((c) => c.path).filter((p) => p.startsWith('code/')));
 for (const e of COVERAGE.std.values()) for (const p of [...e.focus, ...e.touches]) if (!COURSES.some((c) => c.path === p)) throw new Error(`data/curriculum/code-coverage.yml: ${e.code} names "${p}", which is not a course`);
-const SEARCH = makeSearch({ lessons, dirNode, courses: COURSES, subjects: SUBJECTS, pathwayOf, play: PLAY, coverage: COVERAGE });
+const SEARCH = makeSearch({ lessons, dirNode, courses: [...COURSES, ...loadProjects(CONTENT_ROOT, () => 'turtle').filter((st) => !COURSES.some((c) => c.path === st.course)).map((st) => ({ path: st.course, title: dirNode(st.course).title, order: dirNode(st.course).order }))], subjects: SUBJECTS, pathwayOf, play: PLAY, coverage: COVERAGE });
 // ICT cards are found by search too, beside their lessons.
 for (const [path, cards] of ICT_CARDS) for (const c of cards) SEARCH.entries.push({ t: c.title, u: `${path}/reference/#${c.id}`, s: dirNode(path.split('/')[0]).title, sp: path.split('/')[0], c: dirNode(path).title, y: '', ty: 'card', d: c.idea.length > 150 ? c.idea.slice(0, 147).replace(/\s+\S*$/, '') + '…' : c.idea, k: normSearch(ictCardText(c)) });
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
@@ -700,7 +700,7 @@ function writeProjects(node, set) {
       const step = { id: `part-${i + 1}`, config: { try: { playground: x.playground, height: x.height || (x.playground === 'microbit' || x.playground === 'arcade' ? 640 : 520) } } };
       const starter = x.starter ?? ((PLAY[node.path]?.kind === x.playground && PLAY[node.path]?.code) || (x.language === 'python' ? 'from turtle import *\n\n' : ''));
       const known = [...where.keys()].filter((id) => !ALSO_SKIP.has(id) && (CONCEPTS[x.language] || []).some((c) => c.id === id)).map((id) => ({ id, label: skillLabel(x.language, { id }) }));
-      return { title: x.title, language: x.language, play: `${dp}/part-${i + 1}`, ext: PLAY_EXT[x.language] || 'txt', known,
+      return { title: x.title, external: x.playground === 'external', language: x.language, play: `${dp}/part-${i + 1}`, ext: PLAY_EXT[x.language] || 'txt', known,
         uses: x.uses.map((u) => ({ id: u.id, label: skillLabel(x.language, u), href: href(u.id, dup) })),
         embed: x.playground === 'external' ? externalBox(x, i) : tryEmbed(fake, step, starter || '', dup, '', null, VERSIONS) };
     });
@@ -858,7 +858,7 @@ for (const node of dirs.values()) {
         const row = (c) => {
           if (!c.path) return `<li class="later">${esc(c.title || '')}<span>coming later</span></li>`;
           const [lo, hi] = SEARCH.yearsOfCourse(c.path), n = lessonCount(c.path);
-          return `<li><a href="${up}${esc(c.path)}/">${esc(dirs.get(c.path)?.title || c.path)}</a><span>${lo != null ? `${esc(SEARCH.yearsLabel(lo, hi, SEARCH.typical(c.path)))} · ` : ''}${n} lesson${n === 1 ? '' : 's'}</span></li>`;
+          return `<li><a href="${up}${esc(c.path)}/">${esc(dirs.get(c.path)?.title || c.path)}</a><span>${lo != null ? `${esc(SEARCH.yearsLabel(lo, hi, SEARCH.typical(c.path)))} · ` : ''}${n === 0 && PROJECTS.get(c.path) ? `${PROJECTS.get(c.path).projects.length} project${PROJECTS.get(c.path).projects.length === 1 ? '' : 's'}` : `${n} lesson${n === 1 ? '' : 's'}`}</span></li>`;
         };
         const cs = pw.courses || [], f = cs.filter((c) => (c.stage || 'foundations') === 'foundations'), x = cs.filter((c) => c.stage === 'extensions');
         return `<section><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)} <span aria-hidden="true">›</span></a></h2><ul>${f.map(row).join('')}${x.length ? `<li class="pst">Then</li>${x.map(row).join('')}` : ''}</ul></section>`;

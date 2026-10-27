@@ -100,3 +100,20 @@ projects:
       - *Boundary off by one* (`<` where `<=` was meant). Ask: "What happens at exactly 8?"
 
       **The example below** is one complete rules app (a password checker with a strict-mode setting, a list of common passwords, an honest "not sure" and a small testing record). It is for you, to calibrate marking. Students who unlock "Show one way" see only a short piece of it for the milestone they are on. If a student chooses a password checker, expect to see something different from this one.
+
+      **A filled-in testing record** (the example password checker; yours will look different):
+
+      | I typed | Strict | I expected | The app said | Notes |
+      |---|---|---|---|---|
+      | (nothing) | off | ask for a password | Type a password first. | ok |
+      | PASSWORD | off | Weak | Weak: "the most guessed password" | capitals still caught |
+      | abc1234 | off | Weak | Weak: 7 characters, 1 more | one under the boundary |
+      | abc12345 | off | Strong | Strong | exactly 8: on the boundary |
+      | abcdefgh | off | OK | OK: only one kind of character | ok |
+      | !!!!!!!! | off | Not sure | Not sure: no rule fits | honest, no guess |
+      | abc12345 | on | Weak | Weak: 8 characters, 4 more | strict mode moves the boundary |
+      | Passw0rd! | off | Weak (I guessed) | Strong | surprise: a common pattern, but my rules cannot see it. Goes in the reflection. |
+
+      **A sample reflection** (strong): "My rules only check length, kinds of characters and a short list of common passwords, so 'Passw0rd!' is rated Strong even though guessers try it early. To catch it I would need to know every common pattern, such as swapping a letter for a number, and that list has no end. A model trained on many real leaked passwords could learn that pattern, though I could not say why it rated one weak. If my app is wrong, a student might trust a weak password. They would not know, because the app says Strong with confidence."
+
+      **What a weaker reflection looks like:** "My app could be improved by adding more rules." Ask: which input, and how many rules would that take?

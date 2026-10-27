@@ -35,6 +35,8 @@ export const PROJECT_CSS = `
 .pjext h3{font-size:1rem;margin:0 0 6px}.pjext ul{margin:0 0 8px;padding-left:1.2em}.pjext li{margin:4px 0}.pjext li span{color:var(--muted)}
 .pjext details{margin-top:6px}.pjext summary{cursor:pointer;color:var(--accent);font-size:14.5px}.pjext textarea{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;min-height:7em}
 .pjext small{color:var(--muted);display:block;margin-top:4px}
+.pjprint{float:right}
+@media print{nav,.crumb,.cfoot,.pjhbtn,.pjhint,.pjway,.pjprint,.pjpaste,.pjext summary,.pjext details,.pjbtn,#pj-badge,#pj-dialog{display:none!important}body{background:#fff}.pjbox{break-inside:avoid;border-color:#999}.pjms input{appearance:auto}}
 .pjpart h2{font-size:1.1rem;margin:22px 0 6px}
 dialog.pjshow{max-width:min(720px,94vw);width:100%;border:3px solid var(--accent);border-radius:20px;padding:26px 30px;background:var(--card);color:var(--ink)}
 dialog.pjshow::backdrop{background:rgba(0,0,0,.55)}
@@ -62,7 +64,7 @@ export function projectPageBody({ esc, md, course, courseTitle, p, after, pic, b
     (p.reveal === true && m.way ? `<button type="button" class="pjhbtn" data-way-btn="${i}" disabled>Show one way</button><div class="pjway" data-way="${i}" hidden><small>One way to do this step (yours can differ):</small><pre><code>${esc(m.way)}</code></pre></div>` : '') + `</li>`).join('');
   const stretch = (p.stretch || []).length ? `<section class="pjbox"><h2>Make it yours</h2><ul>${p.stretch.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>` : '';
   const skills = parts.map((pt, i) => `${parts.length > 1 ? `<p><b>${esc(pt.title)}</b></p>` : ''}<div class="pjskills">${pt.uses.map((u) => skillChip(esc, pt, i, u)).join('')}</div><p class="pj-also" data-part="${i}"></p>`).join('');
-  return `<header class="top"><a class="crumb" href="../">← ${esc(courseTitle)}: projects</a><h1>${esc(p.title)}</h1></header>` +
+  return `<header class="top"><a class="crumb" href="../">← ${esc(courseTitle)}: projects</a>${parts.some((x) => x.external) ? `<button type="button" class="pjbtn ghost pjprint" onclick="window.print()">Print this brief</button>` : ''}<h1>${esc(p.title)}</h1></header>` +
     `<div class="pjtop"><div><p class="pjafter">Open project${after ? ` · after ${esc(after)}` : ''}</p><div class="pjgoal">${md(String(p.goal || ''))}</div></div>` +
     (pic ? `<figure><img src="${esc(pic.src)}" alt="One way it could look" width="${pic.w}" height="${pic.h}"><figcaption>One way it could look. Yours will be different.</figcaption></figure>` : '') + `</div>` +
     (bench.length ? `<section class="pjbox pjbench"><h2>Ways it could look when it works</h2><p>These show a finished project at about the level to aim for. Yours will be different, and that is fine.</p><div class="pjbenchrow">${bench.map((b) => `<figure><img src="${esc(b.src)}" alt="${esc(b.caption)}" width="${b.w}" height="${b.h}" loading="lazy"><figcaption>${esc(b.caption)}</figcaption></figure>`).join('')}</div></section>` : '') +
