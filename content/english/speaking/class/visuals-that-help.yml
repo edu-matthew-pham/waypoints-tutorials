@@ -21,10 +21,10 @@ activities:
     notes: "Good answers are charts, maps and drawings. A student who suggests more text should say what it adds."
 questions:
   - at: investigate
-    title: "Which visual adds?"
+    title: "Add, repeat or distract?"
     type: question
-    q: "A speaker says, 'Last year we recycled twice as much as the year before.' Which visual adds the most?"
-    options: ["The sentence 'We recycled twice as much' in large letters", "A cartoon of a recycling bin that bounces", "Two bars side by side, one twice the height of the other", "A photo of the school gate"]
+    q: "A speaker says, 'This tap has been broken for a month.' The slide shows a photo of the broken tap. What does the photo do?"
+    options: ["Repeats the words, so it should go", "Distracts, because photos always do", "Adds something the words cannot: what the broken tap looks like", "Nothing, because the speaker said it already"]
     answer: 2
-    feedback: ["That repeats the speaker. Listeners read it and stop listening.", "It moves and has no information. It distracts.", null, "It is about the school, but it shows nothing about the recycling."]
-    explain: "Two bars show 'twice as much' at a glance. The picture does what the words cannot do as quickly."
+    feedback: ["The words say the tap is broken. The photo shows how it looks, which the words do not.", "A photo that fits the point helps. A photo with nothing to do with the point distracts.", null, "Showing it adds something the speaker cannot say in a few words."]
+    explain: "A photo of the thing shows what words cannot. The speaker's words and the photo do different jobs."

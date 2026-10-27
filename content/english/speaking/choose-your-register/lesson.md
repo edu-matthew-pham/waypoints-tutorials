@@ -42,8 +42,8 @@ insight: "Placing spoken lines on a scale from casual to formal gives students a
 try: { playground: board, starter: "text.yml#run", height: 480 }
 hint: ["Which lines would you say to a friend? Which would you say to a visitor?", "Which lines would you say to an important guest, such as a mayor?"]
 smaller:
-  check: { type: question, q: "Which line would you say to a friend?", options: ["We recommend that the school adopts this proposal.", "I reckon it's a ripper idea.", "Good morning, Mr Singh."], answer: 1, feedback: ["That is formal. It sounds like a written recommendation.", null, "That is polite and a little formal, the way you would greet a teacher or a visitor."], explain: "'Reckon' and 'ripper' are casual words, the kind you use with friends." }
-check: { type: board, text: "Place each spoken line on the scale: casual, everyday or formal.", when: "n_right = 6 and n_wrong = 0", explain: "Hey guys and I reckon it's a ripper idea are casual. Good morning, everyone and I think it is a good idea are everyday. Good morning, Mr Singh, and We recommend that the school adopts this proposal are formal." }
+  check: { type: question, q: "Which line would you say to a friend?", options: ["Our esteemed guests are most welcome.", "Hey, grab a seat!", "Please take a seat."], answer: 1, feedback: ["That is very formal, the kind of line for a ceremony.", null, "That is polite and everyday. You would say it to most people."], explain: "'Hey' and 'grab' are casual words, the kind you use with friends." }
+check: { type: board, text: "Place each spoken line on the scale: casual, everyday or formal.", when: "n_right = 6 and n_wrong = 0", explain: "Hey guys and I reckon it's a ripper idea are casual. Good morning, everyone and I think it is a good idea are everyday. Good morning, Mr Singh, and We recommend that the school adopt this proposal are formal." }
 ```
 
 Were you right about whether it matters? The words carry a message about the listeners as well as about the topic.
@@ -68,7 +68,7 @@ tasks:
       answer: 4
       fault: logic
       misconception: register-one-size
-      explain: "Line 4: 'Yo, the queue's a joke' is casual and gives only Nib's feeling. The other lines are formal and state facts. For the council, Nib should say what happens, with a number: 'Students wait up to fifteen minutes.'"
+      explain: "Line 4: 'Yo, the queue's a joke' is casual and gives only Nib's feeling. The other lines are formal and state facts. For the council, Nib should say what happens, with a number the council can check."
   - check:
       type: question
       q: "Why not use the most formal register for every talk?"
@@ -110,8 +110,8 @@ check: { type: board, text: "Choose the formal wording for each gap.", when: "n_
 stage: practise
 insight: "Finding the casual words in a speech for the principal applies the scale to a whole script."
 try: { playground: board, starter: "text.yml#practise", height: 380 }
-hint: ["Which words would you not say to a visitor?", "Which greeting and goodbye are too casual?"]
-check: { type: board, text: "Colour every casual word or phrase in the speech.", when: "chains_ok = 1 and n_stray = 0", explain: "Hey, mate, reckon, heaps and Catch you later are the casual words. The rest of the speech is already everyday or formal." }
+hint: ["Which words would you change before saying this to the principal?", "Which words would you only use with a friend?"]
+check: { type: board, text: "This speech is for the principal. Colour every word or phrase that is too casual for the principal.", when: "chains_ok = 1 and n_stray = 0", explain: "Hey, mate, reckon, heaps and Catch you later are the casual words. The rest of the speech is already everyday or formal." }
 ```
 
 ## Make: choose and explain a register

@@ -21,10 +21,10 @@ activities:
     notes: "The hands go up at the tucked-in clause. That is where to split."
 questions:
   - at: investigate
-    title: "Say the main idea twice"
+    title: "When to explain a word"
     type: question
-    q: "A speaker wants listeners to remember one idea. Which is the best plan for a three-minute talk?"
-    options: ["Say it once, in the middle, so it is hard to miss", "Say it near the start and again in the close, in different words", "Say it ten times, in exactly the same words", "Never say it, so listeners work it out for themselves"]
-    answer: 1
-    feedback: ["In the middle it can be lost between other ideas. Listeners cannot look back.", null, "Ten repeats of the same words would sound odd and wear listeners out.", "Listeners cannot reread. If they do not catch the idea, it is gone."]
-    explain: "Near the start tells listeners what to listen for. In the close, in new words, it gives them a second chance to catch it."
+    q: "A speaker uses the word 'habitat' in a talk to Year 5. When is the best moment to say what it means?"
+    options: ["Right after using it, in the same breath", "Never, because listeners will look it up", "In the close, so everyone remembers", "Before the talk starts, in the title"]
+    answer: 0
+    feedback: [null, "Listeners cannot look anything up while the talk goes on. They lose the thread.", "By the close they may have lost the point of the word.", "A title gives no time to explain, and the word is not yet being used."]
+    explain: "The listener needs the meaning at the moment of the word. Say it, then say what it means."

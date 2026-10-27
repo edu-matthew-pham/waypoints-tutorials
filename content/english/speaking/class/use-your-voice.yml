@@ -10,7 +10,7 @@ activities:
     title: "Seven ways to say it"
     minutes: 5
     do: |
-      Write 'I never said he stole it' on the board with seven words. Say it seven times, stressing a different word each time. Ask students to say what each one means.
+      Write 'I never said he took it back' on the board. Say it seven times, stressing a different word each time. Ask students to say what each one means.
     notes: "Each stress changes the meaning. Students hear how much one word's weight carries."
   - at: make
     kind: activity
@@ -23,8 +23,8 @@ questions:
   - at: investigate
     title: "Which setting?"
     type: question
-    q: "A speaker lowers their voice almost to a whisper for one sentence so that the room goes quiet and leans in. Which setting is this?"
-    options: ["Pace", "Pitch", "Volume", "Tone"]
-    answer: 2
-    feedback: ["Pace is about speed and pauses. The speaker did not say it faster or slower.", "Pitch is how high or low, rising or falling. A whisper is about how loud.", null, "Tone is the feeling in the voice. The key change here is how loud."]
-    explain: "Dropping almost to a whisper changes the volume. It makes listeners go quiet and lean in."
+    q: "A speaker's voice rises at the end of a statement, so that it sounds like a question. Which setting changed?"
+    options: ["Pitch", "Pace", "Volume", "Tone"]
+    answer: 0
+    feedback: [null, "Pace is how fast, or where the speaker pauses. The speed did not change.", "Volume is how loud. Nothing here is about loud or soft.", "Tone is the feeling in the voice. The rise is about how high the voice goes."]
+    explain: "Rising or falling is a change in pitch. A rise at the end of a statement can make it sound unsure."

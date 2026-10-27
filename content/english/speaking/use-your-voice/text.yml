@@ -18,9 +18,9 @@ s pace: Slow down when you say the number.
 s volume: Say the warning louder than the rest.
 s pitch: Let your voice rise at the end of the question.
 s tone: Use a warm, kind voice to say sorry.
-s pace: Speed up when the story gets exciting.
+s pace: Talk faster through the quick part of the story.
 s volume: Say the secret very softly.
-s pitch: Make your voice higher to show surprise.
+s pitch: Let your voice go high on the surprising word.
 s tone: Sound serious when you talk about the accident.
 start: 3,6,1,8,5,2,7,4
 # endregion
@@ -37,5 +37,5 @@ widget: cohesion
 mode: chain
 colours: 1
 answer: on
-p: Who took the bike? [[Sam#a]] took the bike.
+p: The cake was not stolen. It was [[borrowed#a]].
 # endregion

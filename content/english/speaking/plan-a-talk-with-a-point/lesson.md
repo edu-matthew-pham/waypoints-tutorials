@@ -78,6 +78,13 @@ tasks:
       answer: 2
       feedback: ["There is nothing special about eight. The trouble is time and memory.", "More details would make a long list even harder to follow.", null, "The opening comes first so listeners know where they are going."]
       explain: "People hold only a few ideas from a talk they hear once. Two or three points, each with a detail, is what two minutes can carry."
+  - check:
+      type: question
+      q: "Nib wants Year 5 to learn how to fold a paper plane. Which way of presenting suits the listeners and the purpose?"
+      options: ["A talk alone, because talks are quicker", "A talk with Nib folding a plane in front of them as each step is said", "A poster only, because Year 5 can read", "A list of steps read out without stopping"]
+      answer: 1
+      feedback: ["Folding is hard to follow from words alone, and speed is not the goal.", null, "A poster could work for reading, but the purpose here is to show how, and a speaker can do that live.", "Listeners cannot hold a list of steps, and they cannot see what is being folded."]
+      explain: "The purpose is to show how, so the best choice shows it. A talk with a live demonstration lets listeners see each step as they hear it. Choosing how to present is part of planning."
 ```
 
 ### Aim first
@@ -96,6 +103,8 @@ Now: why is a topic not enough?
 
 ### How many points?
 
+### Which way to present?
+
 ## Vary: put the plan in order
 
 ```step
@@ -110,10 +119,10 @@ check: { type: board, text: "Put the plan in order: the opening first, each poin
 
 ```step
 stage: investigate
-insight: "Writing a short plan and labelling it puts the aim, the audience and the four jobs of a plan to work together."
+insight: "Writing a short plan with three points and labelling it puts the aim, the audience and the four jobs of a plan to work together."
 try: { playground: board, starter: "text.yml#make", height: 520 }
 hint: ["Who is listening, and what should they do afterwards?", "Which fact or example makes each point believable?"]
-check: { type: board, text: "Write a line for each part of the plan, then label each one. Every line needs words in it.", when: "n_empty = 0 and n_right = 6", explain: "You wrote a plan with an opening, two points that each have a detail, and a close. Read just your opening and close to a partner: do they sound like the same talk?" }
+check: { type: board, text: "Write a line for each part of the plan: an opening, three points that each have a detail, and a close. Label each one. Every line needs words in it.", when: "n_empty = 0 and n_right = 8", explain: "Every line has words and a label. Read just your opening and close to a partner: do they sound like the same talk?" }
 ```
 
 The board checks that every line has words and a label. It cannot tell whether your plan suits Year 5, so ask a partner: could they say what you want them to do?

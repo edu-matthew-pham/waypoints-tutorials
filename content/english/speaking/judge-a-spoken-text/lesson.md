@@ -40,7 +40,7 @@ insight: "Labelling the features in a short made-up speech builds the vocabulary
 try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["What is this line doing for the listeners: asking, joining, repeating, informing or asking them to act?", "Which line gives something that could be checked?"]
 smaller:
-  check: { type: question, q: "'First, let's talk about the oval.' What is the word 'First' doing?", options: ["Asking the listeners a question", "Telling the listeners where they are in the talk", "Giving a fact"], answer: 1, feedback: ["There is no question in it.", null, "It is not a fact. It is a word that sets up the next point."], explain: "'First' is a signpost. It tells listeners that the first point is starting." }
+  check: { type: question, q: "'Next, let's look at the cost.' What is the word 'Next' doing?", options: ["Asking the listeners a question", "Telling the listeners where they are in the talk", "Giving a fact"], answer: 1, feedback: ["There is no question in it.", null, "It is not a fact. It is a word that sets up the next point."], explain: "'Next' is a signpost. It tells listeners that a new part is starting." }
 check: { type: board, text: "Label each line with the feature it uses: a question to the listeners, a signpost, a repeat, a fact or a call to act.", when: "n_right = 6 and n_wrong = 0", explain: "The first line asks the listeners something. First and Second are signposts. The line that says loud three times is a repeat. The noise-meter reading is a fact. The last line asks the listeners to act." }
 ```
 
@@ -108,8 +108,8 @@ check: { type: board, text: "Label each marked line: does the delivery help the 
 stage: practise
 insight: "Colouring the words that address the listeners shows one language feature a transcript makes easy to find."
 try: { playground: board, starter: "text.yml#practise", height: 360 }
-hint: ["Which words talk straight to the people in the room?", "Which words describe things, not people?"]
-check: { type: board, text: "Colour every word that speaks straight to the listeners.", when: "chains_ok = 1 and n_stray = 0", explain: "You, we and your talk straight to the listeners. The rest of the words describe the tap and the queue." }
+hint: ["Which words name the people in the room?", "Which words describe things, not people?"]
+check: { type: board, text: "Colour every word that names the listeners or includes them.", when: "chains_ok = 1 and n_stray = 0", explain: "You, we and your name the listeners or include them. The other words describe the tap and the queue." }
 ```
 
 ## Make: judge a feature

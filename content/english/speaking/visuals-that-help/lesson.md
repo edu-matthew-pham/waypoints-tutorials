@@ -119,7 +119,7 @@ check:
   placeholder: "Visual 1: ... It shows ... While it is up I will say ... It adds ..."
   models:
     - title: "A strong answer"
-      text: "Visual 1: a photo of the garden beds in spring and in winter, side by side. While it is up I will say 'This is what a month of watering looks like.' It adds the difference, which words would take a long time to describe. Visual 2: a simple drawing of a watering roster, with the days and names. While it is up I will say 'Here is who waters when.' It adds the layout, which listeners can see at a glance."
+      text: "Visual 1: a photo of the garden beds in spring and in winter, side by side. While it is up I will say 'This is how the garden changes with the seasons.' It adds the difference, which words would take a long time to describe. Visual 2: a simple drawing of a watering roster, with the days and names. While it is up I will say 'Here is who waters when.' It adds the layout, which listeners can see at a glance."
     - title: "A different approach that also works"
       text: "Visual 1: a labelled diagram of a seed growing into a plant, with a few words on it. I will say 'Here is what happens under the soil.' It adds the hidden parts, which nobody can see without a picture. Visual 2: a real bean seedling that I hold up. I will say 'This one is two weeks old.' It adds the real size and feel, which a slide could not."
   criteria: ["I planned two visuals.", "I said what each shows and what I will say while it is up.", "I said what each adds that my words could not."]

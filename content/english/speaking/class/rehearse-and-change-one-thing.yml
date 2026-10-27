@@ -1,8 +1,8 @@
 inquiry:
   q: "What is the most useful thing a listener can tell a speaker?"
   prompts:
-    - "Think of a time you got a comment on a piece of work. What made it useful, or not?"
-    - "What would you want a listener to say about your talk?"
+    - "Nib's partner says 'That was good.' What could Nib do with that?"
+    - "What would Nib want a listener to say instead?"
   notes: "Keep it about work, not people. Students usually say 'something I can do about it'. That is the test for specific feedback."
 activities:
   - at: predict
@@ -23,8 +23,8 @@ questions:
   - at: investigate
     title: "Make it useful"
     type: question
-    q: "A listener says 'Be more confident.' Which version could the speaker act on?"
-    options: ["Be much more confident.", "You looked at the floor for the whole opening, so I felt you weren't sure.", "Confidence is important.", "You sounded confident, I guess."]
+    q: "A listener says, 'You were a bit all over the place.' Which version could the speaker act on?"
+    options: ["You were very all over the place.", "You said 'um' before every point, and I noticed it most in point three.", "Being organised is important.", "You seemed organised, I guess."]
     answer: 1
-    feedback: ["It repeats the instruction and says nothing more about what to change.", null, "It is a general remark about confidence, not about this talk.", "It is a guess, not something the listener heard or saw."]
-    explain: "The useful version says what the listener saw and where. The speaker can lift their eyes in the opening."
+    feedback: ["It repeats the verdict and says nothing more about what to change.", null, "It is a general remark about organising, not about this talk.", "It is a guess, not something the listener heard or saw."]
+    explain: "The useful version says what the listener heard and where. The speaker can fix the 'um' before each point."

@@ -10,7 +10,7 @@ p: [[First#a]], let's talk about the oval. It is wet, and it stays wet for days.
 # region: vary
 widget: cohesion
 p: [[{Tides result from lunar gravitational attraction.|The moon pulls on the sea, and that makes the tide.}=The moon pulls on the sea, and that makes the tide.]]
-p: [[{Erosion means wind and water wear the land away.|Erosion, defined as the wearing away of land by wind and water, is occurring.}=Erosion means wind and water wear the land away.]]
+p: [[{The cliff is subject to erosion, as is well documented.|Erosion means wind and water wear the land away.}=Erosion means wind and water wear the land away.]]
 p: [[{Improvement was observed among most participants.|Most of the people in the trial got better.}=Most of the people in the trial got better.]]
 # endregion
 
@@ -32,5 +32,5 @@ p: The oval has been wet since the storm last week. The groundskeeper says it ca
 # region: explain-pic
 widget: cohesion
 answer: on
-p: [[{Tides result from lunar gravitational attraction.|The moon pulls on the sea, and that makes the tide.}=The moon pulls on the sea, and that makes the tide.]]
+p: [[{Cessation of lessons is signalled at fifteen hundred hours.|The bell rings at three. Then we all pack up.}=The bell rings at three. Then we all pack up.]]
 # endregion

@@ -38,7 +38,7 @@ insight: "Picking key words from a short script on the cue board shows that each
 try: { playground: board, starter: "text.yml#run", height: 560 }
 hint: ["Click the words you would need to say each part. Click one again to take it off.", "If you only had these words in front of you, could you say the whole part?"]
 smaller:
-  check: { type: question, q: "Which is better on a cue card for the opening of a talk about a lost property box?", options: ["Good morning, Year 5. Today I want to talk about our lost property box.", "lost property box", "Today I"], answer: 1, feedback: ["That is the whole sentence. The speaker would read it, not say it.", null, "Those words would not bring the topic back to mind."], explain: "The words that carry the idea are lost property box. The rest, the speaker can say without a cue." }
+  check: { type: question, q: "Which is better on a cue card for the opening of a talk about a new school garden?", options: ["Good morning, everyone. Today I would like to talk about our new school garden.", "Today I would", "school garden"], answer: 2, feedback: ["That is the whole sentence. The speaker would read it, not say it.", "Those words would not bring the topic back to mind.", null], explain: "The words that carry the idea are school garden. The rest, the speaker can say without a cue." }
 check: { type: board, text: "Pick key words so that every section has a card, and no card holds more than 6 words.", when: "n_cards = n_sections and n_over = 0", explain: "You gave each part of the talk a short card. Cover the script and look only at your cards: could you say each part?" }
 ```
 
@@ -64,7 +64,7 @@ tasks:
       answer: 3
       fault: logic
       misconception: cards-are-script
-      explain: "Card 3 is the script copied out in full. Nib will read it, not say it. It needs only the key words, such as: Second, nobody checks, months."
+      explain: "Card 3 is the script with almost nothing cut. Nib will read it, not say it. It needs only the key words, such as: Second, nobody checks, months."
   - check:
       type: question
       q: "Nib's talk says 17 drink bottles were handed in last term. What should go on the card for that part?"
@@ -107,7 +107,7 @@ stage: practise
 insight: "Adding the quarter rule makes students choose among key words, not tick every word that seems useful."
 try: { playground: board, starter: "text.yml#practise", height: 600 }
 hint: ["Which of your key words could you leave out and still remember the part?", "Which one word could stand for a whole sentence?"]
-check: { type: board, text: "Pick key words so that every section has a card, no card holds more than 6 words, and the key words are no more than a quarter of the script.", when: "n_cards = n_sections and n_over = 0 and key_pct <= 25", explain: "Your cards hold only a small part of the script, so you will have to say the rest. That is what makes it a talk instead of a reading." }
+check: { type: board, text: "Pick key words so that every section has a card, no card holds more than 8 words, and the key words are no more than a quarter of the script.", when: "n_cards = n_sections and n_over = 0 and key_pct <= 25", explain: "The board counts a card in every section, none over 8 words, and key words at or below a quarter of the script. Cover the script and say each part from the cards to see whether your key words are enough." }
 ```
 
 The board counts how many words you picked and how long each card is. It cannot tell if they are the right words. Cover your script and say a part from the card to find out.
@@ -119,7 +119,7 @@ stage: make
 insight: "Cutting a script for a talk students will really give, then printing cards, moves the skill to their own work."
 try: { playground: board, starter: "text.yml#make", height: 620 }
 hint: ["Which words bring each part back?", "Which number or name must be right?"]
-check: { type: board, text: "Pick key words so that every section has a card, no card holds more than 8 words, and the key words are no more than a quarter of the script.", when: "n_cards = n_sections and n_over = 0 and key_pct <= 25", explain: "Your cards are short and cover every part. Press Print cue cards, cut them out and say the talk to a partner using only the cards." }
+check: { type: board, text: "Pick key words so that every section has a card, no card holds more than 8 words, and the key words are no more than a quarter of the script.", when: "n_cards = n_sections and n_over = 0 and key_pct <= 25", explain: "The board counts a card in every section, none over 8 words, and key words at or below a quarter of the script. Press Print cue cards, cut them out and say the talk to a partner using only the cards." }
 ```
 
 The board has a script to practise on. To use a script of your own, press **Use my own script**, paste it with one paragraph for each part, then press **Done writing**. **Print cue cards** makes the cards (two across a page), and **Print highlighted script** prints the whole script with your key words marked.

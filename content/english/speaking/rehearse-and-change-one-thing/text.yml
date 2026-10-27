@@ -43,6 +43,6 @@ mode: parts
 layout: blocks
 roles: specific vague
 answer: on
-s specific: I couldn't hear the last sentence.
-s vague: That was good.
+s specific: You paused after the date, and I caught it.
+s vague: Fine.
 # endregion

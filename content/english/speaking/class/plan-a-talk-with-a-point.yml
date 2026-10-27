@@ -21,10 +21,10 @@ activities:
     notes: "If the partner cannot say it, the opening and close do not match the aim."
 questions:
   - at: investigate
-    title: "What is its job?"
+    title: "What is missing?"
     type: question
-    q: "'So remember: choose, meet, read. Come to the library next Thursday.' Which part of a plan is this?"
-    options: ["The opening", "A point", "The close", "A detail"]
-    answer: 2
-    feedback: ["An opening would say what the talk is about and why to listen.", "A point is one main idea. This line repeats the three points.", null, "A detail is a fact or example. This line asks the listener to do something."]
-    explain: "It says the main ideas again and tells listeners what to do, which is the close's job."
+    q: "A plan has an opening, three points and a close, but no details. What will listeners most likely miss?"
+    options: ["The opening, because it comes first", "Anything that makes each point believable, such as a fact or an example", "The close, because it is short", "Nothing, because points are enough"]
+    answer: 1
+    feedback: ["The opening is there. What is missing is under each point.", null, "The close is there. Details sit with the points.", "A point on its own is only a claim. Listeners need something to back it."]
+    explain: "A detail is the fact or example that makes a point believable. Without one, each point is just a claim."

@@ -11,6 +11,8 @@ s point:
 s detail:
 s point:
 s detail:
+s point:
+s detail:
 s close:
 # endregion
 
@@ -24,7 +26,9 @@ s point: First, the lunch queue wastes time.
 s detail: Last week it took nine minutes for the last student to be served.
 s point: Second, a second serving window would fix it.
 s detail: The canteen has a spare window that is never opened.
-s close: Say it again: queue, window, ten minutes. Then ask the class to support the idea.
+s point: Third, helpers are easy to find.
+s detail: Two Year 10 volunteers have offered to serve.
+s close: Say it again: queue, window, helpers. Then ask the class to support the idea.
 # endregion
 
 # region: script
@@ -38,7 +42,7 @@ widget: sentence
 mode: write
 as: student
 counts: short long
-p: Who here has ever wished lunch were a bit longer? Today I want to show you how to get ten more minutes. First, the queue wastes time. Last week the last student was served after nine minutes. That is nine minutes of lunch gone. The canteen has a spare window that is never opened.
+p: Who here has ever wished lunch were a bit longer? Today I want to show you how to get ten more minutes. First, the queue wastes time. Last week the last student was served after nine minutes. That is nine minutes of lunch gone, because the line is slow. The canteen has a spare window that is never opened.
 # endregion
 
 # region: cards
@@ -69,8 +73,8 @@ mode: parts
 layout: blocks
 roles: opening point detail close
 answer: on
-s opening: Ask who has ever wished lunch were longer. Then say there is a way to get ten more minutes.
-s point: First, the lunch queue wastes time.
-s detail: The last student was served after nine minutes.
-s close: Say it again: queue, window, ten minutes. Then ask the class to back the idea.
+s opening: Ask who has ever missed a notice on the board. Then say there is an easy way to fix it.
+s point: First, the board is too small.
+s detail: Ten notices are pinned over each other by Monday.
+s close: Say it again: bigger board, fewer missed notices. Then ask the class to back the idea.
 # endregion

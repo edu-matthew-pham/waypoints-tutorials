@@ -5,7 +5,7 @@ title: "Challenge: prepare a talk"
 shape: speech
 summary: "Students prepare a one-minute talk for a real audience in five parts: plan it, write the script, cut it to cue cards, rehearse with a partner and give it in class, then check the talk against the plan. The site plans, scripts and checks. Rehearsing and presenting happen in class, and a partner or the teacher judges the delivery."
 language: maths
-node: [AC9E4LY07 n3, AC9E6LY07 n3, AC9E8LY07 n2]
+node: [AC9E4LY07 n3, AC9E6LY07 n3, AC9E8LY07 n1, AC9E8LY07 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "A plan for a one-minute talk: an opening, two points with a detail each, and a close." }
 hook: "A talk is a few minutes of speaking and a lot of choices behind it. Can you make every one of them on purpose?"
 ---
@@ -32,7 +32,7 @@ stage: investigate
 insight: "Writing a plan for a talk on a chosen change in the school puts the aim, the audience and the four parts of a plan together."
 try: { playground: board, starter: "text.yml#plan", height: 520 }
 hint: ["What do you want your class to do after your talk?", "Which fact or example makes each point believable?"]
-check: { type: board, text: "Write a line for each part of your plan, then label each one. Every line needs words in it.", when: "n_empty = 0 and n_right = 6", explain: "You have an opening, two points that each have a detail, and a close. Say your aim in one sentence to a partner: 'After my talk, my class will …'." }
+check: { type: board, text: "Write a line for each part of your plan: an opening, three points that each have a detail, and a close. Label each one. Every line needs words in it.", when: "n_empty = 0 and n_right = 8", explain: "Every line has words and a label. Say your aim in one sentence to a partner: 'After my talk, my class will …'." }
 ```
 
 The board checks that every line has words and a label. Whether the plan suits your class is for a partner or your teacher to judge.
@@ -44,10 +44,10 @@ stage: make
 insight: "Writing the opening and first point of the script with the board's counts shows whether the script is built for the ear, though only a spoken test can tell."
 try: { playground: board, starter: "text.yml#script", height: 460 }
 hint: ["Could you say each sentence in one breath?", "Which signpost word will tell your listeners where they are?"]
-check: { type: board, text: "Write the opening and your first point as four or more sentences, none of them 15 words or longer.", when: "is_written = 1 and n_sentences >= 4 and n_long = 0", explain: "Your script has short sentences that a listener can hold. Read it aloud to a partner: could you say each sentence in one breath? Did you choose a register that suits your class?" }
+check: { type: board, text: "Write the opening and your first point as four or more sentences, none of them 15 words or longer, and use at least one joining word such as because, when or until.", when: "is_written = 1 and n_sentences >= 4 and n_long = 0 and n_joiners >= 1", explain: "The board counts four or more sentences, none long, and at least one joining word. Read it aloud to a partner: could you say each sentence in one breath? Did you choose a register that suits your class?" }
 ```
 
-The board counts sentences and how many are long. It cannot hear your script or tell if your register suits your class, so say it aloud and ask a partner.
+The board counts sentences, how many are long and joining words. It cannot hear your script or tell if your register suits your class, so say it aloud and ask a partner.
 
 ## Cue cards: say it, don't read it
 
@@ -56,16 +56,34 @@ stage: modify
 insight: "Cutting a script to cue cards with the limits from the cue-card lesson turns the written script into something a speaker can say."
 try: { playground: board, starter: "text.yml#cards", height: 640 }
 hint: ["Which words would bring each part back?", "Which number or name must be right?"]
-check: { type: board, text: "Pick key words so that every section has a card, no card holds more than 8 words, and the key words are no more than a quarter of the script.", when: "n_cards = n_sections and n_over = 0 and key_pct <= 25", explain: "Your cards are short and cover every part. Press Print cue cards, cut them out and keep them for the rehearsal." }
+check: { type: board, text: "Pick key words so that every section has a card, no card holds more than 8 words, and the key words are no more than a quarter of the script.", when: "n_cards = n_sections and n_over = 0 and key_pct <= 25", explain: "The board counts a card in every section, none over 8 words, and key words at or below a quarter of the script. Press Print cue cards, cut them out and keep them for the rehearsal." }
 ```
 
 The board has a script to practise on. To use your own, press **Use my own script**, paste it with one paragraph for each part, then press **Done writing**. **Print cue cards** makes the cards.
+
+## Features: choose a voice and a visual
+
+```step
+stage: practise
+insight: "Choosing one voice setting and one visual for the talk, and justifying each for the listeners, is the plan-and-justify part of AC9E8LY07 n1 and is compared with models, not marked."
+check:
+  type: reasoning
+  q: "Choose one voice setting (pace, volume, pitch or tone) and one visual for your talk. For each, say where in your talk you will use it, and why it suits your purpose and your listeners."
+  placeholder: "I will slow down at ... because ... My visual is ... It adds ... for my listeners because ..."
+  models:
+    - title: "A strong answer"
+      text: "Voice: I will slow down and get a little louder on 'one more window', because it is the request and I want my class to catch it. Visual: a bar chart of how long the queue takes each day, shown in point one. It adds the pattern, which my words would take too long to say, and it helps my class see that the problem is real."
+    - title: "A different plan that also works"
+      text: "Voice: I will use a warm, steady tone in my opening, because I want my class to feel I am on their side. Visual: a simple drawing of the canteen with the spare window marked, shown in point two. It adds the layout, so listeners can picture where the window is."
+  criteria: ["I chose a voice setting and a visual.", "I said where in my talk each goes.", "I said why each suits my purpose and my listeners."]
+  explain: "There is no one right plan. What matters is that each choice is made on purpose and has a reason that links it to the listeners."
+```
 
 ## Rehearse: with a partner, in class
 
 ```step
 stage: practise
-insight: "The rehearsal happens in class. The step is the student's record that they rehearsed with a partner, used the checklist and changed one thing."
+insight: "The rehearsal happens in class. The step is the student's own report that they rehearsed with a partner, used the checklist and changed one thing."
 check: { type: reflect, text: "I rehearsed my talk with a partner in class, listened to their feedback on the checklist, changed one thing and said it again." }
 ```
 
@@ -78,7 +96,7 @@ Use the same checklist as in the rehearsal lesson. Your partner ticks what they 
 - One thing to keep: …
 - One thing to change: …
 
-Choose a voice setting to use on purpose, such as slowing down for your most important line, and plan one visual that adds something your words cannot. Your teacher can tell you what is allowed in your class.
+Your teacher can tell you what is allowed in your class.
 
 ## Present and check: against your plan
 

@@ -142,7 +142,7 @@ check:
 
 ```step
 stage: make
-insight: "The rehearsal itself happens in class. The site's step is the record that the student rehearsed, got specific feedback and changed one thing."
+insight: "The rehearsal itself happens in class. The site's step is the student's own report that they rehearsed, got specific feedback and changed one thing."
 check: { type: reflect, text: "I rehearsed my talk with a partner in class, used the checklist, got one specific piece of feedback, changed one thing and said it again. I can say whether the change did what I meant." }
 ```
 

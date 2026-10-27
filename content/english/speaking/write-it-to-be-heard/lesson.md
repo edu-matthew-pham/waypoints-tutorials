@@ -97,7 +97,7 @@ Now: why say the main idea twice?
 stage: modify
 insight: "Choosing the spoken version of each idea shows that the same facts can be set up for the eye or for the ear."
 try: { playground: board, starter: "text.yml#vary", height: 380 }
-hint: ["Read each choice aloud, quietly. Which one runs out of breath?", "Which choice explains the special word as it uses it?"]
+hint: ["Read each choice aloud, quietly. Which one runs out of breath?", "Which one could you say to Year 5 without them needing a dictionary?"]
 check: { type: board, text: "Choose the version of each sentence that a speaker could say aloud.", when: "n_gaps_right = 3", explain: "In each pair, the spoken version is shorter, says one idea at a time and explains the special word as it goes. The other version would suit a report, where the reader can look back." }
 ```
 
@@ -108,10 +108,10 @@ stage: practise
 insight: "Reworking a long written sentence into several spoken ones uses the counts the board gives without letting them decide what sounds natural."
 try: { playground: board, starter: "text.yml#practise", height: 400 }
 hint: ["Where does the sentence change from one idea to the next?", "Could you say each piece in a single breath?"]
-check: { type: board, text: "Rewrite the sentence as three or more sentences, with none of them 15 words or longer.", when: "is_written = 1 and n_sentences >= 3 and n_long = 0", explain: "You turned one long written sentence into short ones that a listener can hold. Read them aloud to a partner: does each one fit in a breath?" }
+check: { type: board, text: "Rewrite the sentence as three or more sentences, with none of them 15 words or longer, and use at least one joining word such as because, when or until.", when: "is_written = 1 and n_sentences >= 3 and n_long = 0 and n_joiners >= 1", explain: "The board counts three or more sentences, none of them long, and at least one joining word. Read them aloud to a partner: does each one fit in a breath, and does the joining word sound natural?" }
 ```
 
-The board counts sentences and how many are long. It cannot hear your script, so say it aloud to a partner and ask if they could follow it.
+The board counts sentences, how many are long and joining words. A short sentence with a joining word is a complex sentence you can say in one breath. It cannot hear your script, so say it aloud to a partner and ask if they could follow it.
 
 ## Make: the start of a script
 

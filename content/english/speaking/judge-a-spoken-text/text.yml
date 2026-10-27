@@ -7,7 +7,7 @@ layout: blocks
 roles: question signpost repeat fact call
 s question: Has anyone here ever wanted ten minutes of quiet at lunch?
 s signpost: First, let's talk about the oval.
-s repeat: The oval is loud. The quad is loud. The library is loud.
+s repeat: The oval is loud, loud, loud.
 s fact: Last term the noise meter in the library read eighty-five on a busy lunch.
 s signpost: Second, let's talk about what quiet does.
 s call: So give us a quiet corner.
@@ -41,8 +41,8 @@ mode: parts
 layout: blocks
 roles: question signpost repeat call
 answer: on
-s question: Has anyone here ever wanted ten minutes of quiet?
-s signpost: First, let's talk about the oval.
-s repeat: Loud, loud, loud.
-s call: So give us a quiet corner.
+s question: Who here likes lemon slice?
+s signpost: Next, let's look at the prices.
+s repeat: Cheap, cheap, cheap.
+s call: So come to the stall on Friday.
 # endregion

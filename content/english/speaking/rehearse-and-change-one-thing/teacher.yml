@@ -1,6 +1,6 @@
 summary: "Students tell specific feedback from vague feedback, make a vague comment specific, choose the one change to make first and say how they will know it worked. They then rehearse with a partner in class using a short checklist, and tick the step when they have done it."
 time: 45
-timing: "Predict and Try 8 min · Worked example 8 min · Vary and Practise 10 min · Make 8 min · Rehearsal in class 10 min"
+timing: "Predict and Try 9 min · Worked example 8 min · Vary and Practise 10 min · Make 8 min · Rehearsal in class 10 min"
 goals:
   - I can tell feedback I can act on from feedback I cannot.
   - I can give a partner specific feedback about what I heard and saw.
@@ -39,8 +39,8 @@ leads: |
 
   The same feedback habit works in any subject: a science presentation, a drama scene, a sports skill.
 exit:
-  q: "A partner says 'Speak up.' Make that comment specific."
-  a: "Any comment that says where and what: 'The last two sentences were too quiet for me to hear at the back.'"
+  q: "A partner says 'Nice job.' Make that comment specific."
+  a: "Any comment that says what the listener heard or saw, and where."
 explain: |
   **Specific** feedback says what the listener heard or saw, and where. **Vague** feedback gives a verdict or a general instruction.
 

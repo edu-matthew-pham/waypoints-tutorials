@@ -28,10 +28,10 @@ activities:
     notes: "Keep it low-stakes and supportive. Offer a second go. Tick the delivery criteria from what you see and hear."
 questions:
   - at: end
-    title: "What was the plan for?"
+    title: "Which part failed?"
     type: question
-    q: "After her talk, a student says, 'I planned to slow down at the close, but I sped up.' What is the most useful next step?"
-    options: ["Decide she is a bad speaker", "Put the plan away and speak without one", "Mark the slow-down on her card and rehearse the close again", "Give the same talk without a close"]
+    q: "A listener says, 'Your talk was well planned, but I couldn't tell what you wanted us to do.' Which part of the plan most needs fixing?"
+    options: ["The opening, because it came first", "The details, because there were too few", "The close, because it should say what listeners should do", "The register, because it was too formal"]
     answer: 2
-    feedback: ["One slip does not say that, and it is not a useful judgement.", "The plan is how she noticed. It is a tool, not a test.", null, "The close is where listeners are asked to act. Cutting it would lose that."]
-    explain: "Comparing the plan with what happened shows what to change. Marking the cue and rehearsing it again is the next step."
+    feedback: ["The opening tells listeners what the talk is about. It does not usually say what to do.", "Details back up points. The problem here is the request.", null, "Register is about how formal the talk sounds. The listener's problem is the ask."]
+    explain: "The close says the main idea again and tells listeners what to do. If listeners cannot say what was asked, the close needs fixing."

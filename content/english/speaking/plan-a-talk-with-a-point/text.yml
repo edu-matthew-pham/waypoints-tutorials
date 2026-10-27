@@ -6,11 +6,11 @@ mode: parts
 layout: blocks
 roles: opening point detail close
 s opening: Ask the room who has ever finished a book and wanted to tell someone. Then say the book club is for exactly that.
-s point: Point one: you choose the books.
+s point: Members choose the books.
 s detail: Last term the club voted for a graphic novel about a robot.
-s point: Point two: you meet people from other classes.
+s point: Members meet people from other classes.
 s detail: Two Year 6 members run the quiz at the end of each meeting.
-s point: Point three: it meets at lunchtime, so you miss no lessons.
+s point: The club meets at lunchtime, so no lessons are missed.
 s detail: It starts at ten past one on Thursdays and finishes before the bell.
 s close: Say it again: choose, meet, read. Then ask them to come to the library next Thursday.
 # endregion
@@ -44,6 +44,8 @@ s point:
 s detail:
 s point:
 s detail:
+s point:
+s detail:
 s close:
 # endregion
 
@@ -52,12 +54,14 @@ widget: cohesion
 mode: parts
 layout: blocks
 roles: opening point detail close
-s opening: Ask Year 5 who has ever been lost on the first day at a new school. Then say there are two things that would have helped.
+s opening: Ask Year 5 who has ever been lost on the first day at a new school. Then say there are three things that would have helped.
 s point: First, every classroom has its room number on the door.
 s detail: The number is beside the door in big black numbers, so you can read it from the corridor.
 s point: Second, the office will help you with anything.
 s detail: A student helper sits at the front desk at recess.
-s close: Say it again: look for the number, ask at the office. Then ask them to tell a new student.
+s point: Third, there is a map on the wall of the quad.
+s detail: It has a red dot that says you are here.
+s close: Say it again: look for the number, ask at the office, check the map. Then ask them to tell a new student.
 # endregion
 
 # region: explain-pic

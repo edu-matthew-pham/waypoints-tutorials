@@ -5,7 +5,7 @@ title: Use your voice on purpose
 summary: "A speaker has four voice settings: pace, volume, pitch and tone. Used on purpose, they show listeners what matters and how to feel about it; left on one setting, they hide it. Students choose the word to stress, name voice features in delivery notes, find a delivery plan that hides the most important line, match delivery to what the words say, and plan their own delivery. Saying it aloud happens in class."
 language: maths
 node: [AC9E5LY07 n3, AC9E6LY07 n2, AC9E7LY07 n2]
-explainPicture: { ref: text.yml#explain-pic, caption: "The question tells listeners what they already know, so the new information gets the stress." }
+explainPicture: { ref: text.yml#explain-pic, caption: "One word carries the weight, and the meaning follows it." }
 hook: "Two speakers say the very same words. One sounds sure, the other sounds like she is guessing. What changed, if the words did not?"
 ---
 Your voice has four settings you can change while you talk:
@@ -72,7 +72,7 @@ tasks:
       options: ["The speaker is sad", "The words and the tone do not agree, so they may think the speaker is joking or does not mean it", "The speaker is being formal", "Nothing, because the words are the same as a sad version"]
       answer: 1
       feedback: ["A bright tone sounds happy, not sad.", null, "Formality is about word choice and manner, not this mismatch.", "The tone changes how the words come across, even if the words stay the same."]
-      explain: "Listeners read the tone as well as the words. If they disagree, listeners trust the tone, so the speaker should match them."
+      explain: "Listeners read the tone as well as the words. If they disagree, listeners often believe the tone, so the speaker should match them."
 ```
 
 ### Four settings
@@ -80,7 +80,7 @@ tasks:
 ```worked
 \text{Pace} :: Slow down for what matters. Speed up for what is quick or exciting.
 \text{Volume} :: Louder for emphasis. Softer for a secret or a serious moment.
-\text{Pitch} :: Rising for a question. Falling to sound sure and finished.
+\text{Pitch} :: Rising on a yes or no question. Falling to sound sure and finished.
 \text{Tone} :: Warm, serious or excited. Match it to the words.
 \text{Stress} :: The weight on the new information in a sentence.
 ```

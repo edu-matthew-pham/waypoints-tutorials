@@ -6,10 +6,10 @@ mode: scale
 bands: Casual | Everyday | Formal
 word a: Hey guys, listen up! = 1
 word b: Good morning, everyone. = 2
-word c: Good morning, Mr Singh, and welcome. = 3
+word c: Good morning, Mr Singh. On behalf of the school, welcome. = 3
 word d: I reckon it's a ripper idea. = 1
 word e: I think it is a good idea. = 2
-word f: We recommend that the school adopts this proposal. = 3
+word f: We recommend that the school adopt this proposal. = 3
 # endregion
 
 # region: vary
@@ -25,7 +25,7 @@ p: The fair [[{was a total ripper@1|went really well@2|has been a great success@
 widget: cohesion
 mode: chain
 colours: 1
-p: [[Hey#a]] everyone, thanks for coming. I [[reckon#a]] the sports day was a great success, [[mate#a]]. There were [[heaps#a]] of events, and every house took part. The winners will be announced at assembly. [[Catch you later#a]].
+p: [[Hey#a]] everyone, welcome to our sports day. I [[reckon#a]] the sports day was a great success, [[mate#a]]. There were [[heaps#a]] of events, and every house took part. The winners will be announced at assembly. [[Catch you later#a]].
 # endregion
 
 # region: explain-pic
@@ -33,6 +33,6 @@ widget: wordchoice
 mode: scale
 answer: on
 bands: To a friend | To the principal
-word a: The queue's a joke. = 1
-word b: Students wait up to fifteen minutes. = 2
+word a: Mate, that was a ripper! = 1
+word b: I am delighted to welcome you. = 2
 # endregion
