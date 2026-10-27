@@ -88,13 +88,14 @@ jobs:
         run: |
           npm ci --omit=optional   # skip the sandbox-only bundled Chromium
           npx playwright-core install --with-deps chromium
-          # The Ubuntu mirror is sometimes very slow (26 Oct: 69 MB took 24 minutes). Skip the optional extras
-          # (hardware drivers, docs) and give up on a crawling download after 5 minutes, then try again.
-          for try in 1 2 3; do
-            sudo timeout 300 apt-get -o Acquire::Retries=3 install -y --no-install-recommends ffmpeg && break
-            [ "$try" = 3 ] && exit 1
-            echo "ffmpeg download too slow, trying again ($try)"
-          done
+          # ffmpeg from npm (a prebuilt copy, 6.0 with libx264 and aac), because the Ubuntu mirror is sometimes very slow
+          # (26 Oct: 69 MB took 24 minutes). If the download fails, fall back to apt as before.
+          if npm install --no-save --no-audit --no-fund --omit=optional ffmpeg-static@5.2.0 && sudo cp node_modules/ffmpeg-static/ffmpeg /usr/local/bin/ffmpeg; then
+            ffmpeg -version | head -1
+          else
+            echo "ffmpeg from npm failed, using apt"
+            sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+          fi
           node tools/build-playground.mjs
 
       - name: Validate lessons
