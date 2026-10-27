@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why tuck detail inside a sentence instead of adding another sentence?"
+  prompts:
+    - "Read 'My aunt runs a bakery. She sells pies.' Then 'My aunt, who runs a bakery, sells pies.' What changed?"
+    - "Which part is now the main news?"
+  notes: "The embedded clause keeps the extra detail in the background so the reader's eye stays on the main clause. Two short sentences give both ideas the same weight."
+activities:
+  - at: predict
+    kind: activity
+    title: "Cut and paste"
+    minutes: 6
+    do: |
+      Write a sentence with an embedded clause on a strip of paper. Students cut out the embedded clause and read what is left, then paste it back in a different place and read what it now means.
+    notes: "Putting the clause after the wrong noun gives funny sentences, which makes the 'right after its noun' rule memorable."
+  - at: make
+    kind: discussion
+    title: "Point to the noun"
+    minutes: 5
+    do: |
+      Partners swap biographies. They point to each embedded clause and the noun it tells about.
+    notes: "If a clause has no noun to point to, ask whether it is really a clause joined at the end."
+questions:
+  - at: investigate
+    title: "Where is the clause?"
+    type: question
+    q: "'The poem that Ava wrote won a prize.' Which words are the embedded clause?"
+    options: ["that Ava wrote", "The poem", "won a prize"]
+    answer: 0
+    explain: "That Ava wrote sits right after poem and tells you which poem."

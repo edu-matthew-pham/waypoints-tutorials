@@ -1,0 +1,29 @@
+inquiry:
+  q: "When is it right to change tense in the middle of a text?"
+  prompts:
+    - "Read a recount and a set of instructions aloud. Which tense does each use?"
+    - "What if a story gives a character's words in the present?"
+  notes: "A change is fine when the time really changes, or in dialogue. The problem is the accidental change."
+activities:
+  - at: predict
+    kind: activity
+    title: "Time machine"
+    minutes: 5
+    do: |
+      Say 'I walk to school.' Students say it for yesterday and for tomorrow. Ask which word changed.
+    notes: "Only the verb changes."
+  - at: make
+    kind: discussion
+    title: "Verb check"
+    minutes: 5
+    do: |
+      Partners underline the verbs in each other's diary and tick each one that matches the tense.
+    notes: "If a verb does not match, ask the writer which tense they meant."
+questions:
+  - at: investigate
+    title: "Which tense?"
+    type: question
+    q: "'Next month we will visit the zoo.' Which tense is it?"
+    options: ["Future", "Past", "Present"]
+    answer: 0
+    explain: "Will visit looks ahead, so it is future."

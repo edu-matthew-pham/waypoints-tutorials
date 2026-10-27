@@ -1,0 +1,53 @@
+summary: "Students learn that a noun group is a noun and the words that tell more about it, in the order determiner, describer, classifier, head noun. They label three noun groups, match each part to its job, catch a noun group too thin to picture, ask what a longer one does, build a sentence around one, colour describers and classifiers, and write four sentences of an information report."
+time: 45
+timing: "Predict and Try 10 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make and own writing 13 min"
+goals:
+  - I can find the head noun of a noun group.
+  - I can name the determiner, describer and classifier, and put them in order.
+  - I can tell when a noun group is too thin and rebuild it.
+  - I can use precise noun groups in an information report.
+struggle: "Students call every word before the head noun an adjective. Ask 'does this word say what it is like, or what kind of thing it is?' Classifiers are the hard part: try swapping them with 'very' (very old boat works, very fishing boat does not)."
+before: |
+  Do the Try board yourself: three noun groups, eleven words.
+
+  The one idea: a noun group is built around a head noun, and each other word has a job. This lesson covers AC9E5LA06 nodes 1 to 3 (components of a noun group, combining modifiers in order, noun group expansion for effect).
+
+  ACARA's words are **determiner**, **adjective** and **classifier**. The lesson says **describer** for adjective, and names the term once. A **classifier** says what kind of thing it is (fishing boat, school bus, fire engine); these are all nouns doing the work of an adjective.
+
+  The board only plants classifiers that are clearly kinds (fishing, school, fire, tree, gum) and avoids materials (wooden, plastic), where describer and classifier can both be argued.
+
+  Detail after the head noun (the boat from the harbour) is mentioned in the intro but is not labelled on the board.
+running:
+  - "Predict: ask which word the whole group is about."
+  - "Try: after labelling, ask what would change if you removed the describer. The classifier?"
+  - "Worked example: Nib's report. Ask what a reader could draw from 'a thing on its face'."
+  - "Vary: ask why 'the kitchen shiny tap' sounds wrong."
+  - "Make: partners circle each noun group and check for a head noun and a describer or classifier."
+stuck:
+  - see: "A student labels 'fishing' as a describer."
+    ask: "Does it say what the boat is like, or what kind of boat it is?"
+    fix: "Classifiers say the kind. You can have a fishing boat that is old, but not a very fishing boat."
+  - see: "A student puts the classifier before the describer."
+    ask: "Read it aloud: the fishing old boat. Does it sound right?"
+    fix: "The usual order is determiner, describer, classifier, head noun."
+  - see: "A student's report uses 'nice' and 'good' as describers."
+    ask: "What exactly is nice about it? Could a reader picture it?"
+    fix: "Replace vague describers with ones that say something you could check or see."
+stretch: "Rewrite 'the platypus has a bill' with a noun group of five or more words. Then cut it back to the version that still pictures the bill and does not feel crowded."
+support: "A noun group card: four boxes in order (determiner, describer, classifier, head noun) with two examples each."
+leads: |
+  Next in Building sentences: a clause tucked inside another, which can add detail to a noun.
+
+  Noun groups are the base for embedded clauses (Detail inside a sentence), which are really a way to extend them.
+exit:
+  q: "'My big brother's old red bike': name the head noun and one describer."
+  a: "The head noun is bike. Big, old and red are describers."
+explain: |
+  A **noun group** is a noun and the words that tell more about it. The parts usually come in this order:
+
+  - **Determiner:** the, a, my, two
+  - **Describer:** old, noisy
+  - **Classifier:** fishing, school
+  - **Head noun:** boat, buses
+
+  The head noun is the main thing. A good noun group lets the reader picture exactly what is meant.

@@ -1,0 +1,50 @@
+# Texts for "Keep the tense steady" (cohesion parts mode labels sentences by tense; gaps choose the matching form;
+# chain mode colours the verbs that slip; the sentence board counts a diary entry).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: past present future
+role past: Past
+role present: Present
+role future: Future
+s past: Yesterday we visited the farm.
+s present: The bus leaves at eight every morning.
+s future: Next week our class will plant a garden.
+s past: Ava swam across the creek last summer.
+s future: Tomorrow Ben will bring the ball.
+s present: The river runs behind our school.
+# endregion
+
+# region: vary
+widget: cohesion
+p: Last Sunday our family went camping. We [[{packed|pack|will pack}=packed]] the car early. Dad [[{set|sets|will set}=set]] up the tent by the lake. By noon we [[{reached|reach|will reach}=reached]] the top of the hill.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: Last summer we hiked up the hill. The path was steep, so we [[carry#a]] our bags slowly. At the top the view was wide, and we [[sit#a]] on a rock to rest. We ate lunch and went home.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: Last Saturday I woke up early because the sun was already shining. I ate breakfast and packed my bag. My cousin arrived at nine, and we rode our bikes to the park. We found a quiet spot under a tree and unpacked our lunch. Later we kicked a ball until the sky turned orange.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: chain
+answer: on
+colours: 1
+p: Yesterday we walked to the beach, and then we [[swim#a]] in the creek.
+# endregion

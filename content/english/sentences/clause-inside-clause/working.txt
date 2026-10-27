@@ -1,0 +1,8 @@
+# Nib's biography for the "find the slip" task, one sentence per line.
+
+# region: nib
+Eli Brandt grew up in a small town in Queensland.
+He became a sailor and later a writer.
+Eli wrote about the boat in a book that sank.
+The book, which sold well, is still in print.
+# endregion

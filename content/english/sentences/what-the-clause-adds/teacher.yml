@@ -1,0 +1,54 @@
+summary: "Students learn that a dependent clause adds one of five kinds of information (reason, purpose, condition, concession, time) and that the clause that comes first gets noticed first. They label five dependent clauses, sort joining words, catch a joining word that makes the wrong relationship, build one sentence in both orders, choose joining words in context and write a letter to the principal."
+time: 50
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 7 min · Practise 5 min · Make and own writing 18 min"
+goals:
+  - "I can name what a dependent clause adds: reason, purpose, condition, concession or time."
+  - I can choose the joining word that makes the relationship I mean.
+  - I can put a dependent clause first or last, and say what changes.
+  - I can use complex sentences to argue in a letter.
+struggle: "Students treat all joining words as the same job. Ask 'what is this clause adding: why, what for, what must be true, a surprise, or when?' before they pick a word."
+before: |
+  Do the Try board yourself: five dependent clauses, five relationships.
+
+  The one idea: the joining word decides the relationship, and the order decides what is noticed first. This lesson covers AC9E5LA05 nodes 1 to 3 (types of logical relationship, clause ordering and prominence, using complex sentences for effect).
+
+  ACARA names the relationships reason, purpose, condition, concession and time. **Concession** is a clause that admits a point against the main idea (although, even though); the lesson says so in plain words.
+
+  Reason and purpose can feel close. A reason says why something happened (because students were getting sunburnt); a purpose says what it is for (so that everyone can sit down). The board only plants clear examples.
+
+  The clause-order effects are tendencies, not rules: a fronted dependent clause tends to set the scene or build to the main idea, and a trailing one tends to give the news first. The Make step is judged by a partner, not the board.
+running:
+  - "Predict: ask why a writer would admit a downside before the good news."
+  - "Try: after labelling, ask which clause could swap to the other end, and what the reader would notice first."
+  - "Worked example: Nib's letter. Ask what Nib actually means, then which joining word says that."
+  - "Vary: build both orders. Ask which one a news headline would pick."
+  - "Make: partners point to each joining word and say which relationship it makes."
+stuck:
+  - see: "A student labels 'because' as a purpose."
+    ask: "Is the clause saying why it happened, or what it is for?"
+    fix: "Reason looks back at a cause; purpose looks ahead at an aim."
+  - see: "A student builds the sentence one way and says the task is done."
+    ask: "Can the same two clauses go the other way round?"
+    fix: "Both orders keep the facts. The order changes what is noticed first."
+  - see: "A student's letter uses the same joining word each time."
+    ask: "What does each clause add? Could one of them be a purpose or a condition instead?"
+    fix: "Try a different relationship for at least one sentence."
+stretch: "Take one fact (the library closes at 1 pm) and write four sentences that each add a different relationship. Which one would persuade a principal best?"
+support: "A relationship card: five boxes (reason, purpose, condition, concession, time) with two joining words each."
+leads: |
+  Next in Building sentences: noun groups, which pack detail around a noun.
+
+  Dependent clauses and their order are used again in Detail inside a sentence (embedded clauses) and in Shaping sentences (compound-complex sentences).
+exit:
+  q: "'Unless the rain stops, the picnic will move inside.' What does the dependent clause add, and what does it put first?"
+  a: "It adds a condition, and it puts the condition first, so the reader meets what has to be true before the result."
+explain: |
+  A dependent clause adds one of five things:
+
+  - **Reason:** because
+  - **Purpose:** so that
+  - **Condition:** unless, as long as
+  - **Concession:** although, even though (a point against the main idea)
+  - **Time:** until, whenever
+
+  The clause that comes **first** is what the reader notices first. A writer can put it first or last to change the emphasis.

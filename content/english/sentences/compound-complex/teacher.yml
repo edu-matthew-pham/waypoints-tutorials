@@ -1,0 +1,43 @@
+summary: "Students learn the four sentence shapes: simple, compound, complex and compound-complex. They label whole sentences, sort sentences, catch a wrong label, build a compound-complex sentence, colour dependent clauses and write a short note home."
+time: 50
+timing: "Predict and Try 10 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make and own writing 16 min"
+goals:
+  - I can find the main and dependent clauses in a sentence.
+  - I can name a sentence as simple, compound, complex or compound-complex.
+  - I can build a sentence of each shape.
+  - I can use a mix of shapes in a short note.
+struggle: "Students count commas or length instead of clauses. Ask 'how many verbs, and could each part stand alone?' before they name the shape."
+before: |
+  Do the Try board yourself: six sentences, four labels.
+
+  The one idea: the shape comes from counting main and dependent clauses. This lesson covers AC9E7LA05 nodes 1 and 2 (simple, compound and complex sentences, then compound-complex).
+
+  ACARA's term for the joining words in a compound sentence is **coordinating conjunctions** (and, but, so, or). The joining words that start a dependent clause are **subordinating conjunctions** (because, when, although, if). The lesson names them as joining words that join equal clauses or add a dependent clause.
+
+  Sentences are made up for the lesson. Items on the board avoid arguable cases, such as a verb-less fragment or 'and' joining only two verbs ('Ava swam and cheered' is simple with one subject).
+running:
+  - "Predict: count the clauses aloud together."
+  - "Try: after labelling, ask which clue showed the shape."
+  - "Worked example: ask why a dependent clause cannot make a sentence compound."
+  - "Make: partners label each sentence in the note."
+stuck:
+  - see: "A student labels 'Ava swam and cheered' compound."
+    ask: "How many subjects does it have?"
+    fix: "Only one subject (Ava), so it is one main clause with two verbs: simple."
+  - see: "A student labels any sentence with a comma as compound."
+    ask: "Could the part after the comma stand alone?"
+    fix: "If it cannot, it is dependent, and the sentence is complex."
+stretch: "Rewrite a compound sentence from your own writing as a complex sentence and say what changes in the meaning."
+support: "A clause card: write one clause per card and move them around."
+leads: |
+  Next in Building sentences: choosing the shape for the job.
+exit:
+  q: "'We packed, and we left because it was late.' Which shape is it?"
+  a: "Compound-complex: two main clauses (we packed, we left) and one dependent clause (because it was late)."
+explain: |
+  Count the clauses to name the shape.
+
+  - **Simple:** one main clause.
+  - **Compound:** two main clauses joined by and, but, so or or.
+  - **Complex:** a main clause and a dependent clause.
+  - **Compound-complex:** two main clauses and a dependent clause.

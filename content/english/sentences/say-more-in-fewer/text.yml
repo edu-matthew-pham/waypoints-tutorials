@@ -1,0 +1,54 @@
+# Texts for "Say more in fewer words" (cohesion gaps choose the folded form; the sentence board builds a folded
+# sentence and counts a review; chain mode colours embedded clauses).
+
+# region: run
+widget: cohesion
+p: Mia has a dog. The dog barks all night. Folded: Mia has a dog [[{that barks all night|barks all night|and a dog}=that barks all night]].
+p: Ben met a ranger. The ranger knows the bush. Folded: Ben met a ranger [[{who knows the bush|knows the bush|but the ranger}=who knows the bush]].
+p: The oval floods. The oval is behind our school. Folded: The oval [[{which is behind our school|behind our school|and the oval}=which is behind our school]] floods.
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: My sister plays the cello. My sister practises daily.
+tile c: practises daily
+tile a: my sister,
+tile b: who plays the cello,
+decoy d: and she
+ans: a b c
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: The ferry, [[which crosses the bay#a]], leaves at nine. My aunt, [[who runs the cafe#a]], bakes the pies. The track [[that leads to the lighthouse#a]] is steep. We rested at noon because it was hot.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: who
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: who
+p: The Lost Lighthouse is a book that I could not put down. Its hero, who is only twelve, finds a map which leads to a hidden cave. The cave, whose walls glitter, holds the secret of the wrecked ship. Anyone who likes adventure will enjoy it.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: main embedded
+role main: Main clause
+role embedded: Embedded clause
+s main: My sister,
+s embedded: who plays the cello,
+s main: practises daily.
+# endregion

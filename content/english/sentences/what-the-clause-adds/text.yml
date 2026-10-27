@@ -1,0 +1,79 @@
+# Texts for "What the extra clause adds" (cohesion parts mode labels each dependent clause's relationship; the sentence
+# board builds the same sentence in both orders and counts a letter; gaps choose a joining word).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: reason purpose condition concession time
+role reason: Reason
+role purpose: Purpose
+role condition: Condition
+role concession: Concession
+role time: Time
+s any: The school bought shade sails
+s reason: because students were getting sunburnt.
+para:
+s purpose: So that everyone can sit down,
+s any: the canteen has added more tables.
+para:
+s condition: Unless the rain stops,
+s any: the picnic will be held in the hall.
+para:
+s concession: Although the oval was wet,
+s any: the game went ahead.
+para:
+s any: The cleaners worked
+s time: until the last bus left.
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: The bus was late. The excursion started late.
+tile a: because the bus was late^
+tile b: the excursion started late
+ans: a b
+ans: b a
+# endregion
+
+# region: vary-b
+widget: sentence
+mode: build
+before: The bus was late. The excursion started late.
+tile a: because the bus was late^
+tile b: the excursion started late
+ans: b a
+ans: a b
+# endregion
+
+# region: practise
+widget: cohesion
+p: The ferry stopped running [[{until|because|so that}=because]] the wind was too strong. The council planted trees along the path [[{so that|although|until}=so that]] walkers would have shade. [[{Unless|Because|Although}=Although]] the creek was only ankle deep, the guide made everyone wear a life jacket.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: joiners
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: joiners
+p: Dear Mrs Hart, I am writing to ask for a longer lunch break. Students need time to eat and play because we study hard all morning. If lunch were half an hour longer, more of us could join a club. Although the timetable is full, a longer lunch would help everyone concentrate in the afternoon.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: concession main
+role concession: Concession
+role main: Main clause
+s concession: Even though she was nervous,
+s main: Ava stood up and spoke.
+# endregion

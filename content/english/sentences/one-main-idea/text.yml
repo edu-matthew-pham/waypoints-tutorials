@@ -1,0 +1,60 @@
+# Texts for "One main idea, one extra" (cohesion board parts mode labels each clause; gaps choose a joining word;
+# chain mode colours joining words; the sentence board's write mode counts joining words).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: main dependent
+role main: Main clause
+role dependent: Dependent clause
+s dependent: Because it was raining,
+s main: the match was cancelled.
+para:
+s main: The class waited
+s dependent: until the bus arrived.
+para:
+s dependent: If the creek rises,
+s main: the track will close.
+para:
+s main: Mia sang
+s dependent: while she washed the dishes.
+# endregion
+
+# region: vary
+widget: cohesion
+p: The match was cancelled [[{because|until|unless}=because]] the oval was flooded. We will wait under the shelter [[{until|because|although}=until]] the rain stops. Mia ran home [[{as if|until|unless}=as if]] a dog was chasing her.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: [[After#a]] the bell rang, the students walked to the hall. They sat quietly [[while#a]] the principal spoke. [[If#a]] it rains, the assembly will move inside.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: joiners
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: joiners
+p: On Tuesday our class visited the wetlands. We wore boots because the ground was muddy. After we ate lunch, we counted the birds.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: main dependent
+role main: Main clause
+role dependent: Dependent clause
+s main: Ava kept swimming
+s dependent: although the water was cold.
+# endregion

@@ -1,0 +1,8 @@
+# Nib's information report for the "find the slip" task, one sentence per line.
+
+# region: nib
+The platypus is a small, shy animal.
+It finds food with a thing on its face.
+Its dense brown fur keeps it warm in cold water.
+It lays eggs in a riverbank burrow.
+# endregion

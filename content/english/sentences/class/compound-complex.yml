@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is a longer sentence always a more complicated one?"
+  prompts:
+    - "Read 'The extremely tall, friendly lifeguard waved.' How many clauses?"
+    - "Read 'We left.' Is it simple? Is it still a sentence?"
+  notes: "Length and shape are different. A long simple sentence has one main clause. A short sentence can still be compound."
+activities:
+  - at: predict
+    kind: activity
+    title: "Clause cards"
+    minutes: 5
+    do: |
+      Hand out cards with one clause each. Pairs join them into a compound or complex sentence and read it aloud.
+    notes: "Notice which joining word they reach for."
+  - at: make
+    kind: discussion
+    title: "Label the note"
+    minutes: 5
+    do: |
+      Partners label each sentence in the note. They check each label by counting main and dependent clauses.
+    notes: "Disagreements are the useful part: count the verbs."
+questions:
+  - at: investigate
+    title: "Which shape?"
+    type: question
+    q: "'Ben ran, but Ava walked.' Which shape is it?"
+    options: ["Compound", "Simple", "Complex"]
+    answer: 0
+    explain: "Two main clauses joined by but make a compound sentence."

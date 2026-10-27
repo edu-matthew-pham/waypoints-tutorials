@@ -1,0 +1,39 @@
+# Texts for "Verbs that do the work" (cohesion gaps choose the precise verb and the tense; chain mode colours adverb
+# groups by what they add; the sentence board counts a match report).
+
+# region: run
+widget: cohesion
+p: Wordy: The cat walked very quietly across the roof. Sharper: The cat [[{crept|stomped|sprinted}=crept]] across the roof.
+p: Wordy: He looked at the map very carefully. Sharper: He [[{glanced at|studied|ignored}=studied]] the map.
+p: Wordy: Ben ate his lunch very quickly. Sharper: Ben [[{devoured|nibbled|sipped}=devoured]] his lunch.
+# endregion
+
+# region: vary
+widget: cohesion
+p: Yesterday our class [[{visits|visited|will visit}=visited]] the farm. These days the bus [[{left|leaves|will leave}=leaves]] at eight each morning. Next week our class [[{planted|will plant|was planting}=will plant]] a garden.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 3
+p: We arrived [[very early#b]] and waited [[just outside#c]]. The ranger spoke [[quite softly#a]] and checked the gate [[extremely carefully#a]].
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: Our team played Hillside on Saturday morning. The striker sprinted down the wing and crossed the ball. Hillside's keeper dived but missed it. The crowd roared as the ball hit the net. Our captain lifted the trophy, and everyone cheered very loudly. We won by two goals after a tough, exciting match.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+answer: on
+p: Wordy: The goalkeeper jumped very quickly to her left. Sharper: The goalkeeper [[{dived|walked|waited}=dived]] to her left.
+# endregion

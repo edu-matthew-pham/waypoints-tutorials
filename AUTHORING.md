@@ -1594,6 +1594,29 @@ Vary, Practise, Make).
     once the first Predict is locked, so it must not answer a Try, Vary or Practise board), keep each arrow's word on
     the same line as its target (the picture is drawn on a 460px paper), and `check-cohesion` fails a step that
     uses `answer: on` and a cohesion picture that does not.
+  - `widget: sentence` (English › Building sentences, 27 Oct 2026): a sentence on paper that the student builds,
+    punctuates or writes. `mode: build`: `tile id: text` (written as it sits mid-sentence, lower case; a trailing `^`
+    adds a comma when the tile is first; the first tile is capitalised), `decoy id: text` (a piece that does not belong),
+    `ans: a b` (one or more right orders; the check harness solves with the first, so a task that needs another order
+    gets its own region with that order first), `end:` (default `.`), `before:` (the prompt). The student clicks a tray
+    tile to place it (after the selected placed tile, else at the end), clicks a placed tile to select it, then Move
+    left, Move right, Take it out or Done. `mode: punct`: `p:` lines with slots `[[{,|;|nothing}=;]]`. A mark with no
+    space before it joins the word before; one with a space before and none after joins the next word (an opening
+    bracket); a mark with spaces both sides stands alone (a dash). `nothing` means no mark. Slots start unset. `mode:
+    write`: a text box, with `p:` lines as a starting text and `counts:` naming extra counts to show
+    (`commas semicolons colons dashes brackets apostrophes quotes joiners who short long`). It counts only and says so
+    on the board; it never judges the writing. Values for `when:`: build `n_tiles`, `n_placed`, `n_decoys_used`,
+    `in_order`, `first_ok`, `has_<id>`, `first_<id>`; punct `n_slots`, `n_set`, `n_right`, `n_wrong`, `slot_N`; write
+    `is_written`, `n_commas`, `n_semicolons`, `n_colons`, `n_dashes`, `n_brackets`, `n_apostrophes`, `n_quotes` (opening
+    quotation marks), `n_joiners` (different joining words that start a dependent clause), `n_who` (who, which, whose),
+    `n_short` (sentences of 5 words or fewer), `n_long` (15 or more), `longest`, `shortest`; always `n_words` and
+    `n_sentences`. Labelling parts of a sentence and choosing a word still use the cohesion board (parts mode, gaps and
+    chain mode). `answer: on` (read-only, for Explain-it-to-me pictures) works as on the cohesion board. `npm run
+    check-sentence` tests the widget, then every sentence board in a lesson: it builds, the check fails at the start
+    and passes when solved, Make steps pass against `<region>-solution` with `as: student`, explain pictures say
+    `answer: on`, and no step does. Counts are rough aids: say in the step and teacher notes that the student's own
+    writing is judged by the student, a partner or the teacher, and that if an answer is defensible it is marked
+    correct or left out.
 - **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

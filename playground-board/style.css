@@ -1052,3 +1052,33 @@ table.sh td.sh-copied { outline: 2px dashed var(--left); outline-offset: -2px; }
 .co-answer .co-svg { z-index: 0; }
 .co-lead { white-space: nowrap; }
 .co-paper { overflow-wrap: anywhere; }
+
+/* Sentence: build a sentence from pieces, choose punctuation, or write and see counts (widgets/sentence.js).
+   The paper keeps its own colours in dark mode, like the cohesion board. */
+.se-bar { border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 8px 10px; }
+.se-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.se-bar button { font: 13px system-ui, sans-serif; padding: 5px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: inherit; cursor: pointer; }
+.se-bar button.se-off { opacity: .45; }
+.se-tip { margin: 0; font-size: 14px; color: var(--muted); min-height: 1.3em; }
+.se-holder { position: relative; }
+.se-paper { box-sizing: border-box; width: 100%; max-width: 640px; margin: 0 auto; background: #fff; color: #1b1b1b; border: 1px solid #c9c9c9; box-shadow: 0 1px 4px rgba(0,0,0,.18); padding: 22px 22px 14px; font: 18px/1.7 Georgia, "Times New Roman", serif; overflow-wrap: anywhere; }
+.se-p { margin: 0 0 12px; line-height: 2.2; }
+.se-before { margin: 0 0 14px; font-size: 16px; color: #333; }
+.se-tray, .se-strip { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px; border-radius: 8px; min-height: 46px; box-sizing: border-box; }
+.se-tray { background: #f3f4f6; margin-bottom: 10px; }
+.se-strip { border: 2px dashed #9aa3b2; margin-bottom: 10px; }
+.se-strip-answer { border-style: solid; border-color: #c9c9c9; }
+.se-tile { font: 16px/1.3 Georgia, serif; padding: 6px 12px; border: 1px solid #8a93a3; border-radius: 8px; background: #fff; color: #1b1b1b; cursor: pointer; text-align: left; }
+.se-tile:hover { background: #eef3fb; }
+.se-tile:focus-visible { outline: 2px solid #3a7bd5; outline-offset: 1px; }
+.se-placed { background: #e6eefb; border-color: #3a7bd5; }
+.se-strip-answer .se-placed { cursor: default; }
+.se-sel { outline: 2px solid #3a7bd5; outline-offset: 2px; background: #d3e2fa; }
+.se-none { font: 14px system-ui, sans-serif; color: #5b6472; }
+.se-read { margin: 4px 0 8px; font-size: 17px; }
+.se-slot { font: 15px system-ui, sans-serif; padding: 1px 2px; border: 1px solid #8a8a8a; border-radius: 5px; background: #fffbe6; color: #1b1b1b; margin: 0 1px; }
+.se-mark { background: #fffbe6; border: 1px solid #d4b106; border-radius: 5px; padding: 0 5px; margin: 0 1px; font-weight: 700; }
+.se-area { width: 100%; box-sizing: border-box; font: 17px/1.5 Georgia, serif; padding: 8px; border: 1px solid #c9c9c9; border-radius: 6px; resize: vertical; background: #fff; color: #1b1b1b; }
+.se-counts { margin: 8px 0 0; font: 13px system-ui, sans-serif; color: #5b6472; }
+.se-answer .se-paper { pointer-events: none; max-width: 460px; }
+@media (max-width: 480px) { .se-paper { padding: 16px 12px 8px; font-size: 16px; } }

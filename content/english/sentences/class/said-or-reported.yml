@@ -1,0 +1,29 @@
+inquiry:
+  q: "When would a writer rather quote someone than report what they said?"
+  prompts:
+    - "Read a short quote from a news story aloud, then read the report of it. Which would you remember?"
+    - "Which kind would a writer use for a long meeting? For a heated argument?"
+  notes: "Quote when the exact words or the voice matter. Report when only the information matters. News and recounts usually use both."
+activities:
+  - at: predict
+    kind: activity
+    title: "Telephone report"
+    minutes: 6
+    do: |
+      One student whispers a short sentence to a partner, who reports it aloud to the class ('She said she was...'). The class says which words changed.
+    notes: "Most reports will move the tense back and change the pronoun, which shows the pattern without teaching it."
+  - at: make
+    kind: discussion
+    title: "Find the report"
+    minutes: 5
+    do: |
+      Partners swap newsletter items. Each finds the quoted sentence and the reported sentence, and checks the report has no quotation marks and has moved its tense.
+    notes: "If both sentences are quoted, the writer may not have tried a report. Ask them to turn one of them into a report."
+questions:
+  - at: investigate
+    title: "Quote or report?"
+    type: question
+    q: "'We have won!' cried the captain. Which is the reported version?"
+    options: ["The captain cried that they had won.", "The captain cried, 'We have won.'", "'They had won,' cried the captain."]
+    answer: 0
+    explain: "It has no quotation marks, and we have became they had."

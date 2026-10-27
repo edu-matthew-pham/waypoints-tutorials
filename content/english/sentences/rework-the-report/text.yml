@@ -1,0 +1,53 @@
+# Texts for "Challenge: rework the report" (sentence board builds a folded sentence and counts the reworked paragraph;
+# chain mode colours tense slips; gaps choose shapes).
+
+# region: fold
+widget: sentence
+mode: build
+before: The garden is behind the hall. The garden has four beds.
+tile c: has four beds
+tile a: the garden,
+tile b: which is behind the hall,
+decoy d: and the garden
+ans: a b c
+# endregion
+
+# region: tense
+widget: cohesion
+mode: chain
+colours: 1
+p: Last term we planted beans in the garden. The soil was dry, so we [[water#a]] it every day. The beans grew slowly, and in May we [[pick#a]] the first pods. Everyone tasted them.
+# endregion
+
+# region: shape
+widget: cohesion
+p: We hoped the beans would grow fast [[{, but|, because|, so}=, but]] they grew slowly. [[{Because the soil was dry|The soil was dry|And the soil was dry}=Because the soil was dry]], we watered every day. We picked the first pods in May[[{, which|, because|, but}=, which]] tasted sweet.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: who, joiners
+p: The garden was behind the hall. The garden had four beds. We planted beans in the first bed. The beans grew slowly. We watered the plants every day. The plants were healthy.
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: who, joiners
+p: The garden, which stood behind the hall, had four beds. We planted beans in the first bed, but they grew slowly because the soil was dry. We watered them every day until the first shoots appeared. The plants thrived.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: main embedded
+role main: Main clause
+role embedded: Embedded clause
+s main: The garden,
+s embedded: which is behind the hall,
+s main: has four beds.
+# endregion

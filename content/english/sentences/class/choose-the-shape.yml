@@ -1,0 +1,29 @@
+inquiry:
+  q: "Who decides whether a sentence is too long?"
+  prompts:
+    - "Read a road sign aloud. How long can it be?"
+    - "Read a paragraph from a novel. How long can it be?"
+  notes: "The reader and the job decide. A driver has a second, a reader of a novel has minutes."
+activities:
+  - at: predict
+    kind: activity
+    title: "Glance test"
+    minutes: 5
+    do: |
+      Show a sentence for two seconds, then hide it. Students write what it said. Repeat with a short and a long one.
+    notes: "The short sentence is remembered; the long one is lost."
+  - at: make
+    kind: discussion
+    title: "Find the key sentence"
+    minutes: 5
+    do: |
+      Partners read each other's notice and underline the instruction a reader must not miss. Is it in a short sentence?
+    notes: "If the key instruction is buried, suggest splitting the sentence."
+questions:
+  - at: investigate
+    title: "What does the clause do?"
+    type: question
+    q: "'We reached the beach, where we set up camp.' Does the clause elaborate, extend or explain?"
+    options: ["Extends", "Explains", "Elaborates"]
+    answer: 0
+    explain: "Where we set up camp adds something new about the beach, so it extends."

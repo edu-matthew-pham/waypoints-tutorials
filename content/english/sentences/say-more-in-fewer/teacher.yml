@@ -1,0 +1,45 @@
+summary: "Students fold two choppy sentences about the same thing into one by turning the second into an embedded clause with who, which or that. They choose folded forms, match clauses to their nouns, find a sentence still choppy, build a folded sentence, colour embedded clauses and write a short review."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 5 min · Practise 5 min · Make and own writing 17 min"
+goals:
+  - I can fold a second sentence into the first with who, which or that.
+  - I can say which noun an embedded clause tells about.
+  - I can say what is lost if the clause is taken out.
+  - I can write a review that carries its details in embedded clauses.
+struggle: "Students put the clause at the end of the sentence, so it tells about the wrong noun. Ask 'which word does this clause tell about?' and move the clause next to it."
+before: |
+  Do the Try board yourself: three pairs, three folded forms.
+
+  The one idea: an embedded clause tells about a noun, sits right after it, and lets a writer say more in fewer words. This lesson covers AC9E8LA05 nodes 1 and 2 (what embedded clauses are and how they function; embedded clauses expanding ideas).
+
+  An **embedded clause** (also called a relative clause) is a dependent clause inside a noun group, starting with who, which, that or whose. Lesson 5 introduced the idea; this lesson uses it to tighten writing, so concision is the focus.
+
+  Commas: a clause that adds extra detail takes commas (My sister, who plays the cello, practises daily); a clause that says which one needs none (The student who won smiled). The boards treat only clear cases. Punctuation for meaning teaches the choice.
+
+  The sentences are made up for the lesson.
+running:
+  - "Predict: have pairs say the folded sentence aloud before looking at the options."
+  - "Try: ask which noun each folded clause tells about."
+  - "Worked example: ask which fact would disappear if the clause went."
+  - "Make: partners underline each embedded clause and the noun it follows."
+stuck:
+  - see: "A student writes 'My sister practises daily, who plays the cello.'"
+    ask: "Which word does 'who plays the cello' tell about?"
+    fix: "Move it right after 'sister'."
+  - see: "A student uses 'which' for a person."
+    ask: "Is the noun a person or a thing?"
+    fix: "Use who for people, which or that for things."
+stretch: "Fold three short sentences into one, and then ask whether the result is still easy to read."
+support: "A sentence strip: write the main clause on one strip and the clause on another, then slide the clause into place."
+leads: |
+  Next in Building sentences: the challenge Rework the report.
+exit:
+  q: "Fold into one sentence: 'The ferry leaves at nine. The ferry crosses the bay.'"
+  a: "The ferry, which crosses the bay, leaves at nine. (Or: The ferry that crosses the bay leaves at nine.)"
+explain: |
+  An embedded clause tells about a noun and sits right after it.
+
+  - **Before:** The cafe sells hot pies. The cafe closes at four.
+  - **After:** The cafe, which sells hot pies, closes at four.
+
+  The same facts, in fewer words.

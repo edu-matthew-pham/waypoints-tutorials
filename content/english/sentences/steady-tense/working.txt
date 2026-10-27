@@ -1,0 +1,8 @@
+# Nib's diary entry for the "find the slip" task, one sentence per line.
+
+# region: nib
+Last Saturday we went to the creek.
+We found a log and sat on it.
+Then we walk along the bank to the bridge.
+Ava saw a heron by the water.
+# endregion

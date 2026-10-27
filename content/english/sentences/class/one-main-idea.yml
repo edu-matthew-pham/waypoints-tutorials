@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do writers use dependent clauses instead of lots of short sentences?"
+  prompts:
+    - "Say 'The match was cancelled. The oval was flooded.' Now say it with because. What does the joining word do that the full stop did not?"
+    - "Which version would you rather read in a long recount?"
+  notes: "The joining word tells the reader how the two ideas connect. Two short sentences leave the reader to work that out. A complex sentence says it, and a long text reads more smoothly."
+activities:
+  - at: predict
+    kind: activity
+    title: "Stand-alone test"
+    minutes: 5
+    do: |
+      Read out parts of sentences from a class novel or textbook. Students stand if the part could be a whole sentence on its own and sit if it could not.
+    notes: "Choose parts that begin with a joining word and parts that don't. Stand-up and sit-down makes the test physical."
+  - at: make
+    kind: discussion
+    title: "Point to the extra"
+    minutes: 5
+    do: |
+      Partners read each other's recounts and point to every dependent clause. The writer says what it adds: when, why, what must be true or how.
+    notes: "If a partner can't find the joining word, the writer may have used two short sentences. Ask whether a joining word would help."
+questions:
+  - at: investigate
+    title: "Main or dependent?"
+    type: question
+    q: "'While the kettle boiled, Ava found two mugs.' Which part is the dependent clause?"
+    options: ["While the kettle boiled", "Ava found two mugs", "Neither"]
+    answer: 0
+    explain: "While starts a part that adds a time and cannot stand alone. Ava found two mugs could be a whole sentence."

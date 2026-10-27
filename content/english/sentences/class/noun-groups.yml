@@ -1,0 +1,29 @@
+inquiry:
+  q: "How much detail does a noun group need?"
+  prompts:
+    - "Read 'the boat'. Then 'the old fishing boat from the harbour'. What can you picture now?"
+    - "When would a long noun group be too much?"
+  notes: "A noun group is as long as the reader needs it to be. Too thin and the reader cannot picture it. Too crowded and it slows the sentence. The text's purpose decides."
+activities:
+  - at: predict
+    kind: activity
+    title: "Draw it"
+    minutes: 6
+    do: |
+      Read out a noun group ('the old fishing boat') and ask pairs to draw it. Then read a thinner one ('the boat') and compare drawings.
+    notes: "The comparison shows how much more the long group tells."
+  - at: make
+    kind: discussion
+    title: "Circle the groups"
+    minutes: 5
+    do: |
+      Partners swap reports and circle each noun group. The writer names the head noun and the describers.
+    notes: "If a circled group has no head noun, it is not a noun group. If it has no detail, ask what the reader cannot see."
+questions:
+  - at: investigate
+    title: "Which is the classifier?"
+    type: question
+    q: "'the old fishing boat': which word says what kind of boat?"
+    options: ["fishing", "old", "the"]
+    answer: 0
+    explain: "Fishing says the kind. Old says what it is like."

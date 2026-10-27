@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is a shorter text always a better text?"
+  prompts:
+    - "Read two choppy sentences and the folded one. Which sounds smoother?"
+    - "Can a text be too folded?"
+  notes: "Folding saves words and joins ideas, but too many clauses in one sentence is hard to follow. Mix folded and short sentences."
+activities:
+  - at: predict
+    kind: activity
+    title: "Fold it"
+    minutes: 5
+    do: |
+      Write two choppy sentences on the board. Pairs say the folded sentence aloud, then agree on one.
+    notes: "Listen for where they put the clause."
+  - at: make
+    kind: discussion
+    title: "Underline and point"
+    minutes: 5
+    do: |
+      Partners underline each embedded clause in a review and draw an arrow to the noun it tells about.
+    notes: "If the arrow is long, move the clause."
+questions:
+  - at: investigate
+    title: "Which noun?"
+    type: question
+    q: "'The track that leads to the lighthouse is steep.' Which noun does 'that leads to the lighthouse' tell about?"
+    options: ["track", "lighthouse", "steep"]
+    answer: 0
+    explain: "The clause sits right after track, so it tells about the track."

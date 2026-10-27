@@ -1,0 +1,29 @@
+inquiry:
+  q: "Is a longer verb always a better verb?"
+  prompts:
+    - "Read 'She said she was fine' and 'She insisted she was fine'. Which is more exact? Which is better?"
+    - "When is plain 'said' the best choice?"
+  notes: "A precise verb is one that fits the meaning. Plain 'said' is often right, especially in dialogue where the words carry the feeling. The aim is to choose on purpose, not to find a bigger word."
+activities:
+  - at: predict
+    kind: activity
+    title: "Mime the verb"
+    minutes: 5
+    do: |
+      Write 'walked' on the board. Students mime it. Then call out 'tiptoed', 'stomped' and 'trudged' for the class to mime. Ask what each shows that 'walked' does not.
+    notes: "The difference between the miming shows what a precise verb adds."
+  - at: make
+    kind: discussion
+    title: "Underline and check"
+    minutes: 5
+    do: |
+      Partners underline the precise verbs and adverb groups in each other's reports. They check every verb is in the past tense.
+    notes: "If a report switches tense, mark where and ask which tense they meant."
+questions:
+  - at: investigate
+    title: "Which one verb?"
+    type: question
+    q: "Which single verb means 'spoke in a very loud voice'?"
+    options: ["shouted", "whispered", "mumbled"]
+    answer: 0
+    explain: "Shouted means to speak very loudly. Whispered is quiet and mumbled is unclear."

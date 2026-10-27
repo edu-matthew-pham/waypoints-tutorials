@@ -1,0 +1,22 @@
+inquiry:
+  q: "How do we know a rewrite is better and not just different?"
+  prompts:
+    - "Read the choppy and the reworked version aloud. What does the listener notice?"
+    - "Did any fact change?"
+  notes: "Better means the same facts, easier to follow. The fact check matters as much as the style."
+activities:
+  - at: make
+    kind: discussion
+    title: "Fact check"
+    minutes: 5
+    do: |
+      Pairs swap reworked paragraphs. The reader ticks each fact from the choppy version in the new one.
+    notes: "A missing fact means the fold lost something."
+questions:
+  - at: make
+    title: "Which move?"
+    type: question
+    q: "Two sentences both start with 'The pool'. Which move helps most?"
+    options: ["Fold them into one with which", "Make both longer", "Change the tense", "Add a short sentence"]
+    answer: 0
+    explain: "Folding removes the repeated noun and keeps both facts."

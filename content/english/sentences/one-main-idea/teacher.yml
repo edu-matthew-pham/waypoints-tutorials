@@ -1,0 +1,49 @@
+summary: "Students learn that a sentence can have a main clause, which stands alone, and a dependent clause, which adds when, why, if or how and cannot. They label both halves of four sentences, match joining words to what they add, catch a dependent clause left as a sentence, choose the joining word that fits, colour joining words, and write three sentences of a recount."
+time: 45
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make and own writing 15 min"
+goals:
+  - I can tell a main clause from a dependent clause.
+  - I can name the joining word and what it adds (when, why, what must be true, how).
+  - I can spot a dependent clause left on its own as a sentence.
+  - I can write a recount that uses complex sentences.
+struggle: "Students label by position (the first part is the main clause) or by length. Ask 'could this part be a whole sentence on its own?' and let them test each part aloud."
+before: |
+  Do the Try board yourself: four sentences, two kinds of clause.
+
+  The one idea: a main clause stands alone and a dependent clause adds to it. This lesson covers AC9E4LA06 nodes 1 to 3 (independent and dependent clauses, subordinating conjunctions and the relationships they create, and writing complex sentences). ACARA says **independent clause**; the lesson says **main clause**, and names the term once so you can search for it. A **subordinating conjunction** appears as a **joining word**.
+
+  The board labels what is planted. It never judges a student's own sentences: the Make step counts sentences and joining words, and a partner or you decide whether each dependent clause really cannot stand alone.
+
+  All the sentences are made up for the lesson. Dependent clauses are not the same as sentence fragments the student writes by accident, but the bug task shows how a dependent clause on its own becomes one.
+running:
+  - "Predict: ask what the class would expect to hear next after 'When the bell rang,'."
+  - "Try: after labelling, ask which part could be moved to the other end of its sentence. (All four can.)"
+  - "Worked example: Nib's recount. Ask what a reader wants to know after 'Because the water was high.'"
+  - "Vary: ask students to say what the wrong choices would mean, to hear why they make nonsense."
+  - "Make: partners point to each dependent clause and test whether it could stand alone."
+stuck:
+  - see: "A student labels 'the match was cancelled' as dependent because it comes second."
+    ask: "Could 'the match was cancelled' be a whole sentence on its own?"
+    fix: "Test by position-free question: can it stand alone? The order can change, so the test is the only reliable one."
+  - see: "A student leaves the joining word out of the dependent clause."
+    ask: "Is 'it was raining' the whole extra part, or does 'because' belong to it too?"
+    fix: "The joining word starts the dependent clause and is part of it."
+  - see: "A student's Make recount has a dependent clause as a sentence on its own."
+    ask: "Read it aloud. Do you want to hear what happens next?"
+    fix: "Join it to a main clause, with a comma if it comes first."
+stretch: "Take one main clause (the class visited the wetlands) and write four sentences that add a different kind of dependent clause: when, why, what must be true, how. Which gives the most useful information to a reader?"
+support: "A sentence card: a box for the main clause, a box for the extra, and a list of joining words."
+leads: |
+  Next in Building sentences: how to say what people said, and how the order of clauses changes what a reader notices.
+
+  Complex sentences are the base for embedded clauses (Detail inside a sentence) and compound-complex sentences (Shaping sentences).
+exit:
+  q: "'We stayed inside until the storm passed.' Which part is the dependent clause, and what does it add?"
+  a: "'Until the storm passed' is the dependent clause. It adds a time: how long they stayed inside."
+explain: |
+  A **clause** is a group of words built around a verb.
+
+  - A **main clause** makes sense on its own.
+  - A **dependent clause** adds extra information and cannot stand alone. It starts with a **joining word**: because, until, if, after, while.
+
+  Ask of any part: could this be a whole sentence on its own? If not, it depends on another clause. The joining word tells the reader what the extra part adds: when, why, what must be true, or how.

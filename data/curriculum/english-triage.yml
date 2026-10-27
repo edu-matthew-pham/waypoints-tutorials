@@ -248,9 +248,9 @@ courses:
   title: Building sentences
   pathway: How writing works
   years: 6-8
-  status: planned
+  status: built
   wave: 1
-  board: 'new: sentence board (drag clause chunks, combine, reorder, switch voice)'
+  board: sentence (build, punct, write) with cohesion parts, chain and gaps
   summary: Clauses and how they join, clause order and emphasis, noun groups, precise verbs and adverb groups, embedded clauses,
     compound-complex sentences, tense consistency, and choosing a sentence shape on purpose.
 - id: punctuation

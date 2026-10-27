@@ -1,0 +1,8 @@
+# Nib's letter to the principal for the "find the slip" task, one sentence per line.
+
+# region: nib
+Our school library closes at 1 pm.
+I think it should stay open at lunch.
+It should stay open although many students need a quiet place to read.
+I hope you agree.
+# endregion

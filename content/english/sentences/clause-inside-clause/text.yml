@@ -1,0 +1,74 @@
+# Texts for "A clause inside a clause" (cohesion parts mode labels each part; the sentence board builds a sentence
+# with an embedded clause and counts a biography; chain mode colours embedded clauses).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: main embedded end
+role main: Main clause
+role embedded: Embedded clause
+role end: Clause joined at the end
+s main: The old mill,
+s embedded: which stands beside the river,
+s main: is a museum.
+para:
+s main: The walkers,
+s embedded: who were tired,
+s main: sat down.
+para:
+s main: The track is closed
+s end: because the creek is high.
+para:
+s main: The ranger
+s embedded: who knew the track
+s main: led the way.
+para:
+s main: The class went home
+s end: after the storm passed.
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: The bridge is closed. It crosses the creek.
+tile c: is closed
+decoy d: because it crosses the creek
+tile a: the bridge,
+tile b: which crosses the creek,
+ans: a b c
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: My aunt, [[who runs a bakery#a]], sells pies. The pies [[that she bakes#a]] sell out by noon. She closes early because she starts at four. The shop shuts after the last customer leaves.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: who
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: who
+p: My grandfather, who was born in Hobart, worked on the ferries for forty years. He kept a diary which he wrote in every night. His ferry, whose engine was loud, crossed the river twice an hour. Everyone who rode it knew his name.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: main embedded
+role main: Main clause
+role embedded: Embedded clause
+s main: Our teacher,
+s embedded: who grew up in Darwin,
+s main: loves the wet season.
+# endregion

@@ -1,0 +1,42 @@
+summary: "The challenge draws the course together. Students rework Nib's school garden report: they fold two sentences into one, keep the tense steady, choose joining words that fit the job, and then rework a choppy paragraph by combining, embedding and varying length."
+time: 50
+timing: "Predict 3 min · Parts 1 to 3 18 min · Part 4 20 min · Own writing 9 min"
+goals:
+  - I can fold two sentences about the same thing into one.
+  - I can find and fix a verb that slips out of the tense.
+  - I can choose a joining word that fits the job.
+  - I can rework a choppy paragraph without changing its facts.
+struggle: "Students make every sentence long. Ask 'which sentence should the reader see at a glance?' and keep that one short."
+before: |
+  Do each part yourself first: one fold, one tense check, one shape choice, then the paragraph.
+
+  This revisits AC9E7LA06 node 2 and AC9E8LA05 node 2 in one task, and draws on the whole course (clauses, relationships, noun groups, shapes).
+
+  Part 4 starts with a choppy paragraph. The board counts sentences, who/which/whose, joining words, and short and long sentences. These are rough aids to show the moves were tried, not proof the paragraph is good. A partner reads it for the facts and the flow.
+
+  The report is made up for the lesson.
+running:
+  - "Predict: ask what each of the reader's complaints points to."
+  - "Parts 1 to 3: pairs, with a quick whole-class check after each."
+  - "Part 4: pairs rework; then swap with another pair for a fact check."
+stuck:
+  - see: "A student's reworked paragraph is one very long sentence."
+    ask: "Which sentence should the reader notice first?"
+    fix: "Keep it short, and fold the detail into the sentences around it."
+  - see: "A student drops a fact when folding."
+    ask: "Can you find every fact from the choppy version?"
+    fix: "Tick each fact off in the new version."
+stretch: "Rework a paragraph from a class novel the other way: unpack a long sentence into short ones. What changes?"
+support: "A fold frame: [noun], which/who [detail], [rest of the sentence]."
+leads: |
+  Next in English: punctuation for meaning, which marks these clauses so the reader sees them.
+exit:
+  q: "Name one move you used on the report and what it fixed."
+  a: "Folding fixed the repeated noun; steady tense fixed the jump in time; choosing a shape fixed sentences that all sounded the same."
+explain: |
+  Rework a choppy report with four moves.
+
+  - **Fold** two sentences about the same thing into one.
+  - **Keep the tense steady.**
+  - **Choose the shape** that fits the job.
+  - **Mix lengths** so the key point stands out.

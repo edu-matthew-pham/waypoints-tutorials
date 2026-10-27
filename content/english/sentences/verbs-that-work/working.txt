@@ -1,0 +1,8 @@
+# Nib's match report for the "find the slip" task, one sentence per line.
+
+# region: nib
+Our team played Hillside on Saturday.
+The striker ran very fast down the wing.
+She kicked the ball into the net.
+The crowd cheered.
+# endregion

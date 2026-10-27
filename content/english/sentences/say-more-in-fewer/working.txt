@@ -1,0 +1,7 @@
+# Nib's folded sentences for the "still choppy" task, one sentence per line.
+
+# region: nib
+The cafe, which sells hot pies, closes at four.
+The ranger, who knows the bush, led the walk.
+The pool is old. The pool is closed.
+# endregion

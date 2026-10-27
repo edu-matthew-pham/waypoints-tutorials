@@ -1,0 +1,8 @@
+# Nib's recount for the "find the slip" task, one sentence per line.
+
+# region: nib
+Ms Lin asked us to line up for the bus.
+Ava said that she was tired.
+Max told his mum that I am hungry.
+Then the bell rang.
+# endregion

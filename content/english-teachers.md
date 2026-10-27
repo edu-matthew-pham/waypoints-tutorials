@@ -1,10 +1,10 @@
 ---
 title: For English teachers
-summary: What is built so far in English (two pilot courses, on cohesion and text structure), how it works without AI marking, and what is planned.
+summary: What is built so far in English (three pilot courses, on cohesion, text structure and sentences), how it works without AI marking, and what is planned.
 ---
 ## What is here
 
-**This is a pilot.** Two courses are built. The first is [Holding writing together](../english/cohesion/): nine lessons on cohesion for Years 6 to 8, not yet tried with a class. It follows the cohesion thread of the Language strand through the years:
+**This is a pilot.** Three courses are built. The first is [Holding writing together](../english/cohesion/): nine lessons on cohesion for Years 6 to 8, not yet tried with a class. It follows the cohesion thread of the Language strand through the years:
 
 - **Warm-up (optional, Years 4–5 ideas):** pointing words such as it, they and this (AC9E4LA04), joining words (AC9E4LA04) and where a sentence starts (AC9E5LA04). Skip these with a class that's secure.
 - **Words that hold it together:** repetition on purpose and word chains (AC9E6LA04).
@@ -19,6 +19,15 @@ The second course is [How texts are built](../english/texts/): nine lessons on t
 - **Organising ideas:** cause and effect, compare and contrast, problem and solution, claim and support, and what a structure puts first or leaves out (AC9E7LY04, AC9E8LY04).
 - **Built for a reader:** structure and language chosen for an audience, and hybrid texts (AC9E6LY03, AC9E8LA03).
 - **Challenge:** build an argument, following the genre teaching and learning cycle (take a model apart, build one together, then write).
+
+The third course is [Building sentences](../english/sentences/): eleven lessons on how sentences are built, for Years 6 to 8, also not yet tried with a class. Grammar is taught in use, so each lesson ends in a short piece of a real text type (a match report, a note home, a notice, a diary entry, a review).
+
+- **Warm-up (optional, Years 4–5 ideas):** one main idea in a sentence (AC9E4LA06), direct and reported speech (AC9E4LA07), what a dependent clause adds (AC9E5LA05) and noun groups (AC9E5LA06).
+- **Detail:** a clause inside a clause (AC9E6LA05) and precise verbs, tense and adverb groups (AC9E6LA06).
+- **Shapes:** simple, compound, complex and compound-complex sentences, and choosing the shape for the job (AC9E7LA05), steady tense (AC9E7LA06), and embedded clauses that say more in fewer words (AC9E8LA05).
+- **Challenge:** rework a choppy report by folding, steadying the tense and choosing shapes.
+
+The board is a small sentence on paper: students click tiles into order, pick the mark for each slot, or write in a text box that shows rough counts (words, sentences, joining words, who or which). The counts are aids. They never say whether the writing is good; a partner or you do that, and each step says so. The plain idea is taught first and the term (such as embedded clause) is named once, with ACARA's term in the teacher notes. Where an answer is defensible, the board marks it correct or leaves the item out.
 
 The Years 9–10 text-structure descriptors (judging when breaking a pattern works) are left for later Years 9–10 work rather than added as harder steps. The optional "wider" steps add other contexts at the same level.
 

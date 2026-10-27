@@ -1,0 +1,52 @@
+summary: "Students learn that an embedded clause sits inside a main clause, straight after the noun it tells about, and starts with who, which, that or whose. They label five sentences, sort sentences by clause type, catch an embedded clause that drifted from its noun, choose the construction that keeps the main news main, build a sentence with one, colour embedded clauses and write a short biography."
+time: 50
+timing: "Predict and Try 10 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make and own writing 18 min"
+goals:
+  - I can find an embedded clause and the noun it tells about.
+  - I can tell an embedded clause from a clause joined at the end.
+  - I can use an embedded clause to add detail without a new sentence.
+  - I can write a short biography with embedded clauses.
+struggle: "Students mix up the two kinds of dependent clause. Ask 'does it come right after a noun and tell me more about it, or does it add a reason, a time or a condition to the whole idea?'"
+before: |
+  Do the Try board yourself: five sentences, 13 parts.
+
+  The one idea: an embedded clause sits inside a main clause, after the noun it tells about. This lesson covers AC9E6LA05 nodes 1 to 3 (what an embedded clause is, using it to elaborate, using it in extended writing).
+
+  ACARA's term is **embedded clause**, also called a **relative clause**. The board labels a main clause that has been split by an embedded clause in both parts as 'Main clause'; the part before and after are one clause, which the explanation says.
+
+  Commas: a clause that adds extra detail about a named person or thing (My cousin, who lives in Perth) takes commas; a clause that tells you which one (The ranger who knew the track) does not. The board plants both and only labels the clause. The lesson never asks students to choose commas here: Punctuation for meaning covers that.
+
+  The biography is a short, made-up or familiar person. Check that students are not writing about a classmate in a way that could embarrass them.
+running:
+  - "Predict: ask what the librarian sentence tells you with and without the clause."
+  - "Try: after labelling, ask which clause could be removed without breaking the sentence, and which could not."
+  - "Worked example: Nib's biography. Ask what silly thing the sentence now says."
+  - "Vary: ask what the decoy would change."
+  - "Make: partners point to each embedded clause and the noun it tells about."
+stuck:
+  - see: "A student labels 'because the creek is high' as embedded."
+    ask: "Does it sit right after a noun and tell you about it?"
+    fix: "It adds a reason to the whole idea, so it is joined at the end."
+  - see: "A student starts an embedded clause with because or after."
+    ask: "Does that word tell you more about a noun, or add a reason or a time to the whole idea?"
+    fix: "Embedded clauses start with who, which, that or whose and sit right after the noun they tell about."
+  - see: "A student places the clause at the end: 'He wrote a book, which sold well.'"
+    ask: "Which noun is the clause about?"
+    fix: "Both work. Move it right after the noun if there is any chance of confusion."
+stretch: "Take a paragraph of four short sentences about one person and rewrite it with two embedded clauses. Which version would you rather read, and why?"
+support: "A cut-it-out card: a sentence on a strip of paper, with the embedded clause on a flap that can be folded back."
+leads: |
+  Next in Building sentences: verbs, tenses and adverb groups that sharpen what a sentence says.
+
+  Embedded clauses are the base for Year 8's lesson on packing an idea into fewer words (Shaping sentences).
+exit:
+  q: "'The cod that Mia caught was huge.' Which words are the embedded clause, and which noun does it tell you about?"
+  a: "'That Mia caught' is the embedded clause. It tells you about the cod."
+explain: |
+  An **embedded clause** sits **inside** a main clause, right after the noun it tells about. It starts with who, which, that or whose.
+
+  - *My cousin, **who lives in Perth**, visits in June.*
+
+  A clause joined at the **end** starts with a joining word (because, after) and adds a reason, a time or a condition to the whole idea.
+
+  An embedded clause adds detail without starting a new sentence, so the main news stays in the main clause.

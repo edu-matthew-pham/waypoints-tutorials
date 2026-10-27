@@ -1,0 +1,8 @@
+# Nib's recount for the "find the slip" task, one sentence per line.
+
+# region: nib
+On Friday our class walked to the creek.
+We stopped when we reached the old bridge.
+Because the water was high.
+Ms Okafor told us to stay back.
+# endregion

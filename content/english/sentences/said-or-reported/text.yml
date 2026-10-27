@@ -1,0 +1,62 @@
+# Texts for "Said or reported" (cohesion board parts mode labels sentences; the sentence board builds a reported
+# sentence, chooses punctuation in speech and counts a newsletter item).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: direct indirect
+role direct: Direct speech
+role indirect: Indirect speech
+s direct: 'We are lost,' said Mia.
+s indirect: Mia said they were lost.
+s direct: Ben asked, 'Where is the bridge?'
+s indirect: Ben asked where the bridge was.
+s indirect: The ranger told us to stay on the track.
+s direct: 'Stay on the track,' the ranger told us.
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: Ava said, 'I am hungry.' Report what she said.
+tile b: she was hungry
+decoy c: I am hungry
+tile a: Ava said
+decoy d: I was hungry
+ans: a b
+# endregion
+
+# region: practise
+widget: sentence
+mode: punct
+p: 'Where is the bridge[[{?|.|,}=?]]' asked Ben.
+p: 'The track is closed[[{,|.|?}=,]]' said the ranger.
+p: Ava said[[{,|.|;}=,]] 'I forgot my hat.'
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: quotes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: quotes
+p: On Friday our school held its swimming carnival. "I have never heard such cheering," said the principal. The captain told the crowd that the Blue team had won.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+answer: on
+roles: direct indirect
+role direct: Direct speech
+role indirect: Indirect speech
+s direct: 'The pool is closed,' said the lifeguard.
+s indirect: The lifeguard said the pool was closed.
+# endregion

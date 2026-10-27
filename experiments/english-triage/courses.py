@@ -21,7 +21,7 @@ course('cohesion', 'Holding writing together', 'How writing works', '6-8', 'buil
        'Pointing words, joining words, sentence starts, repetition and word chains, topic sentences, overviews and conclusions, claim-evidence-explanation; repair-the-report challenge.',
        warm=all_nodes(code(4, 'LA04'), code(5, 'LA04')), ext=nodes(code(9, 'LA04'), 1) + nodes(code(10, 'LA04'), 1))
 
-course('sentences', 'Building sentences', 'How writing works', '6-8', 'planned', 1, 'new: sentence board (drag clause chunks, combine, reorder, switch voice)',
+course('sentences', 'Building sentences', 'How writing works', '6-8', 'built', 1, 'sentence (build, punct, write) with cohesion parts, chain and gaps',
        all_nodes(code(6, 'LA05'), code(7, 'LA05'), code(8, 'LA05'), code(6, 'LA06'), code(7, 'LA06')),
        'Clauses and how they join, clause order and emphasis, noun groups, precise verbs and adverb groups, embedded clauses, compound-complex sentences, tense consistency, and choosing a sentence shape on purpose.',
        warm=all_nodes(code(4, 'LA06'), code(5, 'LA05'), code(5, 'LA06'), code(4, 'LA07')),

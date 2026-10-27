@@ -1,0 +1,62 @@
+# Texts for "Simple, compound, complex" (cohesion parts mode labels whole sentences by shape; the sentence board
+# builds a compound-complex sentence; chain mode colours dependent clauses; the sentence board counts a note home).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: simple compound complex cc
+role simple: Simple
+role compound: Compound
+role complex: Complex
+role cc: Compound-complex
+s simple: The bus arrived.
+s compound: The bus arrived, and we climbed on.
+s complex: We climbed on when the bus arrived.
+s cc: The bus arrived, and we climbed on because it was raining.
+s compound: Ava packed her bag, but she forgot her hat.
+s complex: Although she forgot her hat, Ava was ready.
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: Build a sentence with two main clauses and a dependent clause.
+tile a: The bus arrived
+tile b: and we climbed on
+tile c: because it was raining
+decoy d: although the bus arrived
+ans: a b c
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: The tide came in, so we left [[because the sand was getting wet#a]]. Ava kept swimming [[although the water was cold#a]], and Ben cheered. [[When the siren sounded#a]], the swimmers climbed out, but the lifeguards stayed.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: On Friday our class visited the museum. We left early because the bus came at eight. The guide showed us a model ship, and she explained how it sailed when the wind was strong. Please remember to pack a hat, since the day will be warm.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: main dependent
+role main: Main clause
+role dependent: Dependent clause
+s main: The bus was late,
+s main: but we waited
+s dependent: because it was raining.
+# endregion

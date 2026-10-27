@@ -1,0 +1,70 @@
+# Texts for "Choose the shape for the job" (cohesion parts mode labels what a dependent clause adds; the sentence
+# board builds an extending sentence and counts short and long sentences; chain mode colours short and long ones).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: elaborates extends explains
+role elaborates: Elaborates (more detail)
+role extends: Extends (something new)
+role explains: Explains (says why)
+s any: We found a cave
+s elaborates: that stretched deep under the hill.
+para:
+s any: We reached the summit,
+s extends: where we ate lunch.
+para:
+s any: We turned back
+s explains: because the path was flooded.
+para:
+s any: The market sells fruit
+s elaborates: that was picked this morning.
+para:
+s any: The tour ended at the harbour,
+s extends: where a ferry waited.
+para:
+s any: Ava stayed home
+s explains: since she had a cold.
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: Build a sentence that adds something new about the summit.
+tile a: we reached the summit^
+tile b: where we ate lunch
+decoy c: because we ate lunch
+ans: a b
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 2
+p: [[The storm rolled across the bay all afternoon, and by evening every boat had been dragged high onto the sand.#b]] [[Then it stopped.#a]] [[When the clouds finally cleared, the whole town walked down to the shore to see what the waves had left behind.#b]] The beach was covered in seaweed and driftwood.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: The school fair is on Saturday. It will run from nine until three, and every class has built a stall that sells something they made themselves. Come early. The cake stall always sells out before ten, since the baking is so popular. Bring a bag for everything you buy.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: main explains
+role main: Main clause
+role explains: Explains (says why)
+s main: We turned back
+s explains: because the path was flooded.
+# endregion

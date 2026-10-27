@@ -1,0 +1,29 @@
+inquiry:
+  q: "Does it matter which clause comes first?"
+  prompts:
+    - "Read 'Although the walk was long, the group finished before dark' and 'The group finished before dark although the walk was long'. Which would make a better headline?"
+    - "When would you want the reader to meet the difficulty first?"
+  notes: "The same facts can build to a relief (difficulty first) or lead with the news (result first). The right order depends on what the text is doing."
+activities:
+  - at: predict
+    kind: activity
+    title: "Swap the order"
+    minutes: 5
+    do: |
+      Give pairs three sentences from a class text that start with a dependent clause. They rewrite each with the dependent clause last and say what changed.
+    notes: "Most will say the result feels more direct. Some will say it loses the build-up."
+  - at: make
+    kind: discussion
+    title: "Which does it add?"
+    minutes: 5
+    do: |
+      Partners swap letters and name what each dependent clause adds. The writer checks that is what they meant.
+    notes: "If the partner names a different relationship, discuss whether the joining word or the meaning needs to change."
+questions:
+  - at: investigate
+    title: "Which relationship?"
+    type: question
+    q: "'The council planted trees so that walkers would have shade.' What does the dependent clause add?"
+    options: ["A purpose", "A reason", "A concession"]
+    answer: 0
+    explain: "So that says what the trees were planted for."
