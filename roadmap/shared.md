@@ -295,10 +295,10 @@ The stage list under a lesson's intro (Predict: …, Try: …, and so on) was th
 
 Timings from runs 36 to 42 (25 to 27 Oct): drawing new pictures took 8, 15 and 22 minutes in the three big runs, all in one job before clips could be planned; recording was steady at 18 to 20 minutes per job; but record-job setup took 22 to 39 minutes on 6 of 16 jobs (runs 40, 41) because the Ubuntu mirror ran at about 49 kB/s (ffmpeg's 69 MB took 24 minutes, Playwright's 25 MB of fonts 8 minutes). Small runs cost 20 to 30 minutes of fixed work (clip planning 2 to 6, "fill in unchanged clips" 2 to 6).
 
-- `72f0150`: ffmpeg installs with `--no-install-recommends`, a 5 minute limit and up to 3 tries (publish.yml and publish-lessons.yml). The second `apt-get update` is gone. Playwright's `--with-deps` install is unchanged and can still be slow on a bad mirror.
+- `72f0150`: ffmpeg installs with `--no-install-recommends`, a 5 minute limit and up to 3 tries (publish.yml and publish-lessons.yml). The second `apt-get update` is gone. Playwright's `--with-deps` install got the same treatment in `40a9999` (7 minute limit, up to 3 tries; draw and record jobs and publish-lessons.yml).
 - `ee87973`: pictures are drawn in parallel `draw` jobs (one per 25 pictures still to draw, at most "jobs"; `WP_SHARD=k/n`; `tools/merge-pictures.mjs` joins them in `plan`). Tested locally on one section only.
 
-Check on the first run: draw-job time against the old 8 to 22 minutes, ffmpeg install time, and whether 25 pictures per job is the right size (each job pays a few minutes of setup). Still open: the fixed costs above (planning and fill-in grow with the whole site, not with what changed), caching the Playwright system packages, narrower clip hashes and one browser per job (the last two need `render.mjs` edits, which re-record every clip).
+First run (#44, 27 Oct): 55 minutes in all (69 and 95 before). Draw jobs took 1 to 2.4 minutes each, except one that spent 6.8 minutes in the browser install; record setup was normal on 7 of 8 jobs (worst 12.8 minutes, was 22 to 39). Still to check: that the browser install retry keeps setup at a couple of minutes, and whether 25 pictures per job is the right size (each job pays a few minutes of setup). Still open: the fixed costs above (planning and fill-in grow with the whole site, not with what changed), narrower clip hashes and one browser per job (the last two need `render.mjs` edits, which re-record every clip).
 
 ## Done (11 Oct 2026): parallel clip recording
 
