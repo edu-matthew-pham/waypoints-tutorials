@@ -42,7 +42,7 @@ pathways:
     title: Before Year 7
     summary: Short catch-up lessons for the ideas Year 7 maths builds on, from tenths to probability.
     fit: "Start here if a Year 7 lesson feels like it skips something. One idea at a time, none of them required."
-    about: "Twelve short lessons, one idea and one common mistake each, about 15 to 20 minutes. Most ideas come from Years 4 to 6. Each Year 7 lesson that leans on one shows a **Catch up first** link. They are optional: a Year 7 student can finish every Year 7 course without them."
+    about: "Twelve short lessons, one idea and one common mistake each, about 15 to 20 minutes. Most ideas come from Years 4 to 6. Each Year 7 lesson that leans on one lists it under **What you should already know**. They are optional: a Year 7 student can finish every Year 7 course without them."
     courses:
       - { path: maths/before-year-7, stage: foundations, tagline: "One idea at a time, from tenths to probability." }
 ---

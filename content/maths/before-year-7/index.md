@@ -1,6 +1,6 @@
 ---
 title: Before Year 7 maths
-summary: Twelve short catch-up lessons for the maths ideas that Year 7 lessons build on, mostly from Years 4 to 6. Each is one idea and one common mistake, about 15 to 20 minutes. Do one when a Year 7 lesson says "Catch up first", or try them in any order. None of them is needed to finish Year 7.
+summary: Twelve short catch-up lessons for the maths ideas that Year 7 lessons build on, mostly from Years 4 to 6. Each is one idea and one common mistake, about 15 to 20 minutes. Do one when a Year 7 lesson lists it under "What you should already know", or try them in any order. None of them is needed to finish Year 7.
 tagline: One idea at a time, from tenths to probability.
 order: 9
 units:

@@ -172,7 +172,7 @@ function diagramHtml(lesson, v, key) {
 
 // Before Year 7 (26 Oct 2026, roadmap/before-year-7.md): short catch-up lessons in `maths/before-year-7` and
 // `science/before-year-7`, tagged `node:` with the Year 3-6 standards they teach. A lesson that lists one of those nodes
-// in `assumes:` gets a "Catch up first" row, and the catch-up lesson gets "Leads into" back.
+// in `assumes:` gets a "What you should already know" link, and the catch-up lesson gets "Leads into" back.
 const isCatchUp = (l) => /^(maths|science)\/before-year-7\//.test(l.slug);
 const refList = (v) => (Array.isArray(v) ? v : v ? [v] : []).map((x) => String(x).trim().replace(/\s+/g, ' '));
 let CATCH = null;
@@ -186,7 +186,7 @@ function catchUpIndex() {
 }
 
 // "Builds on" and "Put to work in": lessons linked by a theory concept (tools/concepts-core.mjs THEORY), across subjects;
-// plus "Catch up first" and "Leads into" for Before Year 7 lessons (by assumed node).
+// plus "What you should already know" and "Leads into" for Before Year 7 lessons (by assumed node).
 let THEORY_LINKS = null;
 function conceptLinks(lesson) {
   const tl = (THEORY_LINKS ||= theoryLinks(lessons)).get(lesson.slug) || { on: [], in: [] };

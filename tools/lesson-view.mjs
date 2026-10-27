@@ -676,12 +676,15 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
  * The complete lesson page.
  * deps: { Marked, highlightCode, snippet(ref), clipHtml(step), tryHtml(step), crumb: {href, title}, source }
  */
-/** Lessons linked by a theory concept (deps.conceptLinks from build-site): "Builds on" and "Put to work in". */
+/** Lessons linked by prior knowledge (deps.conceptLinks from build-site). Backward links (Before Year 7 catch-up
+ *  lessons by node, then lessons that introduce an assumed theory concept) share one row, "What you should already
+ *  know" (27 Oct 2026, roadmap/shared.md); forward links stay "Put to work in" and "Leads into". */
 function linksHtml(cl) {
   if (!cl) return '';
   const a = (x) => `<a href="${esc(x.href)}" title="${esc(x.label)}">${esc(x.title)}</a> <span class="clw">(${esc(x.where)})</span>`;
   const row = (name, xs) => (xs.length ? `<p><b>${name}:</b> ${xs.map(a).join(' · ')}</p>` : '');
-  return `<div class="clinks">${row('Catch up first', cl.catchUp || [])}${row('Builds on', cl.on)}${row('Put to work in', cl.in)}${row('Leads into', cl.leads || [])}</div>`;
+  const seen = new Set(), before = [...(cl.catchUp || []), ...(cl.on || [])].filter((x) => !seen.has(x.href) && seen.add(x.href));
+  return `<div class="clinks">${row('What you should already know', before)}${row('Put to work in', cl.in)}${row('Leads into', cl.leads || [])}</div>`;
 }
 
 // A video hosted elsewhere (step `video:`): YouTube or Vimeo as a privacy-friendly embed, a file as a player, else a link.
@@ -762,7 +765,7 @@ export function lessonPageHtml(lesson, deps) {
       board = tryHtml(stand).replace(' loading="lazy"', '').replace(/<iframe([^>]*) src="/, '<iframe$1 data-src="');
     }
     const lead = checkHtml(lesson, s, snippetNames, snippet, null, tx, { k: v.check, key: `${lesson.slug}/${id}~smaller`, play: `${lesson.slug}/${id}~smaller` });
-    return `<details class="smaller"><summary>Need a smaller step?</summary>${v.code ? codeOf(v.code) : ''}${board}${lead}</details>`;
+    return `<details class="smaller"><summary>Build up to it</summary>${v.code ? codeOf(v.code) : ''}${board}${lead}</details>`;
   };
   const steps = lesson.steps.map((s) => {
     const c = s.config;
