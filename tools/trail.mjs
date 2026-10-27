@@ -200,7 +200,7 @@ export function trailHtml(layout, up, esc, opts = {}) {
     const after = n.parents.length ? `<small class="tafter">After ${esc(n.parents.map((p) => short(byId.get(p).title)).join(' and '))}</small>` : '';
     const href = n.portal ? `../${esc(n.pathwayId)}/` : n.path ? `${esc(up + n.path)}/${n.unit ? `#unit-${esc(n.unit)}` : ''}` : '';
     const tag = href ? 'a' : 'button';
-    const meta = n.portal ? `${n.pathway} pathway` : n.soon ? 'Coming later' : `${n.group ? `${n.group} · ` : ''}${n.lessons} ${n.lessons === 1 ? 'lesson' : 'lessons'}`;
+    const meta = n.portal ? `${n.pathway} pathway` : n.soon ? 'Coming later' : `${n.group ? `${n.group} · ` : ''}${n.lessons === 0 && projects(n) ? `${projects(n)} ${projects(n) === 1 ? 'project' : 'projects'}` : `${n.lessons} ${n.lessons === 1 ? 'lesson' : 'lessons'}`}`;
     const kind = n.portal ? 'is-portal' : n.soon ? 'is-soon' : 'is-todo';
     const inner = n.portal ? '↗' : n.soon ? '' : String(n.lessons);
     return `<${tag} class="tnode ${kind}${n.units ? ' has-units' : ''}" data-id="${esc(n.id)}"${href ? ` href="${href}"` : ' type="button"'} style="grid-column:${n.col + 1};grid-row:${n.row};--c:${n.col}">` +
