@@ -1,0 +1,29 @@
+inquiry:
+  q: "What does a semicolon say that a full stop does not?"
+  prompts:
+    - "Read two related sentences with a full stop, then with a semicolon. What changes?"
+    - "When would you choose a dash?"
+  notes: "The semicolon says the two ideas belong together. The dash adds a pause."
+activities:
+  - at: predict
+    kind: activity
+    title: "Stand alone?"
+    minutes: 5
+    do: |
+      Write 'The shop was closed we went home' on the board. Ask a student to say each side as its own sentence.
+    notes: "Both stand alone, so a comma is not enough."
+  - at: make
+    kind: discussion
+    title: "Say what each mark does"
+    minutes: 5
+    do: |
+      Partners find each semicolon and dash in the description and say what it does.
+    notes: "If a mark has no job, ask whether to take it out."
+questions:
+  - at: investigate
+    title: "Which join?"
+    type: question
+    q: "Which sentence joins its two clauses correctly?"
+    options: ["The wind rose; the boats came in.", "The wind rose, the boats came in.", "The wind rose; so the boats came in."]
+    answer: 0
+    explain: "Both clauses stand alone and are related. A comma alone is not enough, and 'so' with a semicolon is not needed."

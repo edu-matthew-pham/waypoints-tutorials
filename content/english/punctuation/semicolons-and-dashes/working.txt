@@ -1,0 +1,8 @@
+# Nib's beach diary for the "two sentences stuck together" task, one sentence per line.
+
+# region: nib
+We arrived at the beach just after nine.
+The tide was high, the beach was closed.
+After a short wait, we walked along the rocks.
+The rock pools were full of tiny crabs.
+# endregion

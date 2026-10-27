@@ -1,0 +1,47 @@
+summary: "Students learn that a semicolon joins two closely related main clauses, that a pair of dashes sets off an aside and that a single dash adds a pause or a surprise. They label each mark's job, sort joins that work from joins that need fixing, spot two sentences stuck together with a comma, build a sentence with a semicolon, choose marks and write a short description."
+time: 45
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make and own writing 14 min"
+goals:
+  - I can join two related main clauses with a semicolon.
+  - I can tell when a comma alone is not enough.
+  - I can use a pair of dashes for an aside and a single dash for a pause or surprise.
+  - I can check my own semicolons and dashes.
+struggle: "Students put a semicolon before a clause that cannot stand alone, or join two sentences with a comma. Ask 'could each side stand alone?'. If not, a semicolon does not belong. If both could, a comma is not enough."
+before: |
+  Do the Try board yourself: six sentences, label the mark.
+
+  The one idea: each mark depends on what stands on each side, and each sets a tone. This lesson covers AC9E8LA09 nodes 1 and 2.
+
+  The usual name for this fault is a **comma splice**; the lesson says 'two sentences stuck together with a comma' and the misconception is filed as comma-splice.
+
+  A full stop is also correct for two main clauses. The boards avoid it as an option, so no item depends on it. A semicolon is a choice about how closely the ideas belong.
+
+  Dashes: the lesson uses a spaced en dash (–), as the Australian Style Manual does. Typing it takes a shortcut on most devices; a spaced hyphen ( - ) counts on the board, and students may use it in the Make step.
+
+  A pair of dashes, a pair of brackets and a pair of commas can all hold an aside. The last lesson taught brackets as the quiet one, dashes as the emphatic one.
+
+  The sentences are made up for the lesson.
+running:
+  - "Predict: ask 'could each side stand alone?', before choosing."
+  - "Try: read a sentence aloud with each mark and listen to the difference."
+  - "Worked example: for each sort item, say each side aloud as its own sentence."
+  - "Vary: say what the comma version does to the sentence."
+  - "Make: partners say what each mark does in the description."
+stuck:
+  - see: "A student writes 'We stayed home; because it was raining.'"
+    ask: "Could 'because it was raining' stand alone?"
+    fix: "It cannot. Use a comma or no mark: We stayed home because it was raining."
+  - see: "A student writes 'The creek rose, we turned back.'"
+    ask: "Could each side stand alone?"
+    fix: "Both could. A comma alone sticks them together. Use a semicolon or a full stop."
+stretch: "Write the same two clauses three ways: with a semicolon, with a full stop and with a dash. How does each read?"
+support: "Two sentence strips that can be placed side by side and joined with a card marked ;"
+leads: |
+  Next in Punctuation for meaning: punctuate the newsletter, a challenge using every mark.
+exit:
+  q: "Fix with a semicolon or dashes: The rain stopped, the sun came out. My neighbour the one with the dog is moving."
+  a: "The rain stopped; the sun came out. My neighbour – the one with the dog – is moving."
+explain: |
+  A semicolon joins two main clauses that belong together. A comma alone is not enough.
+
+  A pair of dashes sets off an aside. A single dash adds a pause or a surprise.

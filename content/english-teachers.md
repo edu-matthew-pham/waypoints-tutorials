@@ -1,6 +1,6 @@
 ---
 title: For English teachers
-summary: What is built so far in English (three pilot courses, on cohesion, text structure and sentences), how it works without AI marking, and what is planned.
+summary: What is built so far in English (four pilot courses, on cohesion, text structure, sentences and punctuation), how it works without AI marking, and what is planned.
 ---
 ## What is here
 
@@ -29,6 +29,14 @@ The third course is [Building sentences](../english/sentences/): eleven lessons 
 
 The board is a small sentence on paper: students click tiles into order, pick the mark for each slot, or write in a text box that shows rough counts (words, sentences, joining words, who or which). The counts are aids. They never say whether the writing is good; a partner or you do that, and each step says so. The plain idea is taught first and the term (such as embedded clause) is named once, with ACARA's term in the teacher notes. Where an answer is defensible, the board marks it correct or leaves the item out.
 
+The fourth course is [Punctuation for meaning](../english/punctuation/): six lessons for Years 6 to 8, also not yet tried with a class.
+
+- **Warm-up (optional, Years 3–5 ideas):** apostrophes and speech marks (AC9E3LA11, AC9E4LA12), and commas after opening phrases and apostrophes for shared owners (AC9E5LA09).
+- **Marks that change meaning:** the three jobs of a comma (AC9E6LA09), colons and brackets (AC9E7LA09), semicolons and dashes (AC9E8LA09).
+- **Challenge:** punctuate a school newsletter that has no punctuation, then check the commas in a piece of their own writing.
+
+Students choose a mark for each slot in a sentence, so every mark is tied to a job in the sentence. The board only marks choices with one defensible answer. Dashes, brackets and the comma before the last *and* of a list are style choices, so the board counts them and a partner or you judge them.
+
 The Years 9–10 text-structure descriptors (judging when breaking a pattern works) are left for later Years 9–10 work rather than added as harder steps. The optional "wider" steps add other contexts at the same level.
 
 We'd like colleagues to try these with a class before we build more, so please tell us what worked and what didn't.
@@ -49,7 +57,7 @@ The lessons are for introducing a move or revisiting one. They sit beside the re
 These are plans, not promises. We'll propose each one for review before building it.
 
 1. **Your own text on the board.** The boards already treat text as data. Next, a teacher could paste a passage from the class novel and students could trace and colour it (self-checked, since the board can't know the answers for a text it hasn't seen). Using the passage would fall under your school's own copyright arrangements; the site would store nothing.
-2. **More Language strand courses:** How sentences work, and Choosing words.
+2. **More Language strand courses:** Choosing words.
 3. **More of How texts work:** images and multimodal texts, and literary ideas with short public-domain extracts.
 4. **An open-response mode**, still with no AI marking: students place their answer among model answers of different quality, tick criteria and highlight their evidence, or take it to class discussion.
 

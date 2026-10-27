@@ -1,0 +1,22 @@
+inquiry:
+  q: "How do you know a mark belongs?"
+  prompts:
+    - "Pick a mark in your paragraph. What is its job?"
+    - "What would the reader lose if it were missing?"
+  notes: "Every mark has a job in the structure. If it has none, take it out."
+activities:
+  - at: make
+    kind: discussion
+    title: "Name each mark"
+    minutes: 8
+    do: |
+      Partners swap paragraphs and point to every mark, saying its job. Where a partner cannot say, they discuss whether it belongs.
+    notes: "Accept dashes or brackets for an aside, and ask which reads better."
+questions:
+  - at: make
+    title: "Which is best?"
+    type: question
+    q: "Which sentence is punctuated best?"
+    options: ["Ravi said, 'We need flour, eggs and sugar.'", "Ravi said 'We need, flour, eggs and sugar.'", "Ravi said; 'We need flour eggs and sugar.'"]
+    answer: 0
+    explain: "A comma comes before the speech and between the first items of the list."

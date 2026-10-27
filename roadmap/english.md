@@ -37,6 +37,11 @@ Plan: Project doc `claude/english-pathway-plan.md` (26 Oct 2026; Matthew confirm
   - **Decisions with Matthew**: two batches (this one, then Punctuation for meaning); the three punctuation warm-ups merge into two; plain idea first and the term named once (ACARA term in teacher notes); if an answer is defensible, mark it correct or leave the item out; counts on a student's own writing are rough aids, not an audit of learning.
   - Misconceptions added: `clause-alone`, `speech-not-shifted`, `wrong-relationship`, `vague-noun`, `embedded-misplaced`, `weak-verb`, `shape-miscount`, `one-shape`, `tense-slip`, `choppy-pair`. `courses.py` marks the course built.
 
+- **Course** `english/punctuation`, Punctuation for meaning (28 Oct 2026, build handoff item 3 batch 2, not yet tried with a class): Years 6–8, six lessons, same shape. Warm-up (optional, Years 3–5): 1 Apostrophes and speech (AC9E3LA11 n1–n2, AC9E4LA12 n1–n2), 2 Opening phrases and shared owners (AC9E5LA09 n1–n3). Core: 3 Commas that change meaning (AC9E6LA09 n1–n2), 4 Colons and brackets (AC9E7LA09 n1–n2), 5 Semicolons and dashes (AC9E8LA09 n1–n2). Challenge: 6 Punctuate the newsletter (AC9E6LA09 n3). AC9E10LA09 waits for Years 9–10.
+  - **Board**: the `sentence` widget's `punct` slots and `write` counts, plus cohesion parts and gaps; `n_apostrophes` now ignores speech marks.
+  - **Rules kept**: one defensible answer per slot, so dashes, brackets and the Oxford comma are counted, not marked; single quotation marks; no comma before the final `and`.
+  - Misconceptions added: `apostrophe-plural`, `opening-phrase-comma`, `comma-as-pause`, `colon-mid-clause`, `comma-splice`. `courses.py` marks the course built.
+
 ## Master plan (27 Oct 2026, draft for Matthew's review)
 
 `roadmap/english-master-plan.md` (also Project doc `claude/english-master-plan.md`) covers every Kit English node: 20 threads ("How English skills grow"), each node's modes (tutorial, own writing, open answer, workshop, speech shape, class only, early literacy programme), 17 drop-in courses, unit-type lists, boards, Explain-it-to-me pictures, build waves A to M and parked AI ideas. Node data: `data/curriculum/english-triage.yml`, made by `experiments/english-triage/` (README there). Years 6–8: 167 of 168 nodes in a planned course. A fresh-eyes review's fixes are folded in.

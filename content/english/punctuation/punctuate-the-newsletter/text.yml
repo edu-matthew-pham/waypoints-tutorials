@@ -1,0 +1,51 @@
+# Texts for "Challenge: punctuate the newsletter" (cohesion gaps choose owner words; the sentence board's punct mode
+# chooses marks; write mode counts a whole paragraph the student punctuates).
+
+# region: apostrophes
+widget: cohesion
+p: The [[{teachers|teacher's|teachers'}=teachers']] room is being painted, so all the teachers are meeting in the library.
+p: [[{Its|It's}=It's]] the last week of term, and the fair is on Saturday.
+p: Ava and Ben built a stall together. It is [[{Ava and Ben's|Ava's and Ben's|Avas and Bens}=Ava and Ben's]] stall.
+# endregion
+
+# region: commas
+widget: sentence
+mode: punct
+p: On Friday afternoon at the school oval[[{,|nothing}=,]] our team will play its final match.
+p: Please bring a hat[[{,|nothing}=,]] a drink bottle and sunscreen.
+p: When the whistle blows[[{,|nothing}=,]] everyone must return to class.
+p: Mr Lee said[[{,|nothing}=,]] 'Walk to the hall.'
+p: The new library[[{,|nothing}=nothing]] opens on Monday.
+# endregion
+
+# region: colons
+widget: sentence
+mode: punct
+p: The school fair has three stalls[[{:|;|,|nothing}=:]] cakes, books and plants.
+p: We need[[{:|;|,|nothing}=nothing]] volunteers for the cake stall.
+p: The hall was packed[[{:|;|,|nothing}=;]] there was no room left.
+p: The reason was clear[[{:|;|,|nothing}=:]] the cakes had sold out.
+p: Because the sun was strong[[{:|;|,|nothing}=,]] we moved the stalls into the shade.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: commas colons quotes
+p: The school fair is on Saturday Mrs Tran our principal will open it at ten When the gates open the first stall to fill will be the cake stall Last year the cakes sold out by noon this year we are baking more Ravi said we will need three things flour eggs and sugar
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: commas colons quotes
+p: The school fair is on Saturday. Mrs Tran, our principal, will open it at ten. When the gates open, the first stall to fill will be the cake stall. Last year the cakes sold out by noon; this year we are baking more. Ravi said, 'We will need three things: flour, eggs and sugar.'
+# endregion
+
+# region: explain-pic
+widget: sentence
+mode: punct
+answer: on
+p: Ravi said[[{,|nothing}=,]] 'The fair starts at ten.'
+# endregion

@@ -13,7 +13,7 @@ pathways:
     courses:
       - { path: english/cohesion, id: cohesion, stage: foundations, tagline: "Make your writing easy to follow, sentence to sentence and paragraph to paragraph." }
       - { path: english/sentences, id: sentences, stage: foundations, tagline: "Build sentences that say exactly what you mean." }
-      - { title: Punctuation for meaning, stage: foundations, summary: "Commas that change meaning, colons, brackets, semicolons and dashes, each tried on sentences where the mark matters.", after: [sentences], tagline: "Choose the mark that makes your meaning clear." }
+      - { path: english/punctuation, id: punctuation, stage: foundations, after: [sentences], tagline: "Choose the mark that makes your meaning clear." }
       - { title: Choosing words, stage: foundations, summary: "Formality and register, objective and subjective language, modality, connotation, and word parts and origins.", after: [cohesion], tagline: "Pick the word that fits the reader and the job." }
       - { title: Writing like a subject expert, stage: extensions, summary: "Nominalisation, academic and technical vocabulary, and the voice of writing in science and humanities.", after: [cohesion], tagline: "Sound like a scientist, a historian or a reviewer." }
   - id: texts

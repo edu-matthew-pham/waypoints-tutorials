@@ -27,7 +27,7 @@ course('sentences', 'Building sentences', 'How writing works', '6-8', 'built', 1
        warm=all_nodes(code(4, 'LA06'), code(5, 'LA05'), code(5, 'LA06'), code(4, 'LA07')),
        ext=all_nodes(code(9, 'LA05'), code(10, 'LA05'), code(10, 'LA06')))
 
-course('punctuation', 'Punctuation for meaning', 'How writing works', '6-8', 'planned', 1, 'sentence board, punctuation slots mode',
+course('punctuation', 'Punctuation for meaning', 'How writing works', '6-8', 'built', 1, 'sentence (punct, build, write) with cohesion parts and gaps',
        all_nodes(code(6, 'LA09'), code(7, 'LA09'), code(8, 'LA09')),
        'Commas that change meaning, colons, brackets, semicolons and dashes, each tried on sentences where the mark matters.',
        warm=all_nodes(code(5, 'LA09'), code(3, 'LA11'), code(4, 'LA12')), ext=all_nodes(code(10, 'LA09')))

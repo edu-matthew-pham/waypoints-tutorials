@@ -257,9 +257,9 @@ courses:
   title: Punctuation for meaning
   pathway: How writing works
   years: 6-8
-  status: planned
+  status: built
   wave: 1
-  board: sentence board, punctuation slots mode
+  board: sentence (punct, build, write) with cohesion parts and gaps
   summary: Commas that change meaning, colons, brackets, semicolons and dashes, each tried on sentences where the mark matters.
 - id: words
   title: Language for people and situations

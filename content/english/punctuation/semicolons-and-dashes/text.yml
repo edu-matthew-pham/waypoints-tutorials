@@ -1,0 +1,65 @@
+# Texts for "Semicolons and dashes" (cohesion parts label each mark's job; the sentence board's build mode joins
+# two main clauses; punct mode chooses a mark; write mode counts a description).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: semi pair single
+role semi: Semicolon
+role pair: Pair of dashes
+role single: Single dash
+s semi: Ava loves swimming; Ben prefers running.
+para:
+s pair: Our teacher – a keen birdwatcher – spotted the owl.
+para:
+s single: We opened the box – it was empty.
+para:
+s semi: Our team lost the first game; we won the next two.
+para:
+s pair: The bridge – built in 1920 – is closed.
+para:
+s single: She turned the key – and the engine roared.
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: Build one sentence from two related main clauses.
+tile a: the creek was flooded;
+tile b: we took the long way home
+tile c: past the old mill.
+decoy d: the creek was flooded,
+ans: a b c
+# endregion
+
+# region: practise
+widget: sentence
+mode: punct
+p: The oval was soaked[[{,|;|nothing}=;]] the match was called off.
+p: When the rain eased[[{,|;|nothing}=,]] we walked down to the creek.
+p: Mia packed the torch[[{,|;|nothing}=;]] Ravi packed the rope.
+p: The old bridge[[{,|;|nothing}=nothing]] was closed for repairs.
+p: Because the road was flooded[[{,|;|nothing}=,]] the bus took a detour.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: semicolons dashes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: semicolons dashes
+p: The beach at dawn is quiet. The waves are small; the sand is cold and smooth. A single gull – the only one in sight – circles above the rocks. Then the sun rises – and everything glows.
+# endregion
+
+# region: explain-pic
+widget: sentence
+mode: punct
+answer: on
+p: The wind dropped[[{,|;|nothing}=;]] the sea went still.
+# endregion

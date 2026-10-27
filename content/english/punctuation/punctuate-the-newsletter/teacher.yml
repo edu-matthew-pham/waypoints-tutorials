@@ -1,0 +1,44 @@
+summary: "Students put the punctuation back into Nib's school fair newsletter in four parts: apostrophes, commas, colons and semicolons, and then a whole paragraph. They finish by checking the commas in a piece of their own writing."
+time: 50
+timing: "Predict 3 min · Parts 1 to 3 18 min · Part 4 12 min · Own writing 10 min · Wider 7 min"
+goals:
+  - I can use apostrophes for owners and short forms.
+  - I can use commas for lists, opening clauses and speech.
+  - I can use a colon or a semicolon where a whole clause stands on each side.
+  - I can find and fix a comma problem in my own writing.
+struggle: "In Part 4 students add marks everywhere, or only full stops. Ask them to name each comma's job aloud. If they cannot, they take the comma out."
+before: |
+  Do Parts 1 to 3 yourself and punctuate the Part 4 paragraph.
+
+  This is the AC9E6LA09 node 3 challenge: commas used accurately in extended writing, with at least two of the three jobs (lists, separating a dependent clause, dialogue) and self-editing. The other marks in the course are in the boards too.
+
+  The boards check marks with a clear answer. Dashes and brackets are style choices (an aside can sit in commas, dashes or brackets), so no board item depends on them. Students may use them in Part 4.
+
+  Part 4 starts from a paragraph with no punctuation at all. The board counts commas, colons and speech marks. It cannot tell whether a mark is correct or well chosen: a partner checks, or you do.
+
+  The wider step is peer editing, which the node's wider width names. It is the same level, not a harder one.
+
+  The newsletter is made up for the lesson.
+running:
+  - "Predict: let students argue for a mark before the answer."
+  - "Parts 1 to 3: ask 'what is on each side of the gap?'"
+  - "Part 4: pairs read the paragraph aloud, and one student names each mark's job."
+  - "Own writing: students edit a real piece from another subject."
+stuck:
+  - see: "A student puts a comma after 'Ravi' in 'Ravi said we will need...'"
+    ask: "What is the comma for?"
+    fix: "The comma comes after 'said', before the speech. Between a subject and its verb there is none."
+  - see: "A student leaves out the colon after 'three things'."
+    ask: "Is 'Ravi said we will need three things' a whole clause? What does it promise?"
+    fix: "The clause promises a list. A colon introduces it."
+stretch: "Swap your punctuated paragraph with a partner who used dashes where you used commas. Whose version reads better, and why?"
+support: "Ask students to punctuate one sentence at a time and read it aloud before moving to the next."
+leads: |
+  This ends Punctuation for meaning. Later phases return to punctuation in longer texts.
+exit:
+  q: "Punctuate: Last week our class visited the museum Ava asked can we see the dinosaurs"
+  a: "Last week, our class visited the museum. Ava asked, 'Can we see the dinosaurs?'"
+explain: |
+  Put each mark where its job is: apostrophes for owners and short forms, commas for lists, opening clauses and speech, colons and semicolons for whole clauses.
+
+  Read the paragraph aloud and name each mark's job.
