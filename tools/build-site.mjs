@@ -201,7 +201,9 @@ function conceptLinks(lesson) {
   const catchUp = (ci.first.get(lesson.slug) || []).map(plain), leads = (ci.leads.get(lesson.slug) || []).map(plain);
   // Same-subject lessons this one relies on (tools/prior-links.mjs): after catch-up and theory links in the same row.
   PRIOR ||= priorLessons(lessons, { data: loadProgressions(), prereqs: prerequisites(loadDirMeta, CONTENT_ROOT), read: getSnippet, isChallenge: challengeTest(loadDirMeta, CONTENT_ROOT) });
-  const prior = (PRIOR.get(lesson.slug) || []).map(one).filter(Boolean);
+  const prior = (PRIOR.get(lesson.slug) || []).map((p) => { const o = one(p); // Short reason on the page: the idea or node names without their code examples, at most two.
+    const names = p.labels.map((t) => t.replace(/\s*\([^)]*\)/g, '').trim()), shown = names.slice(0, 2).join(', ') + (names.length > 2 ? ' …' : '');
+    return o && { ...o, reason: shown, kind: p.kind }; }).filter(Boolean);
   return on.length || used.length || catchUp.length || leads.length || prior.length ? { on, in: used, catchUp, leads, prior } : null;
 }
 
