@@ -84,6 +84,10 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
 - **Open:** how deck inserts are authored (class plan field vs a shared insert library).
 
+## Decided (27 Oct 2026, Matthew): year grouping is not width
+
+Wider steps add contexts at the same level and demand; content for older students is not width, in any subject, AI included. Nothing in a wider tier is acceleration. This reverses the AI courses' "wider steps for older students" (`content/ai/index.md`) and the 18 Oct fold of the Years 9 to 10 candidate into wider steps (`roadmap/learning-with-ai.md`). The 37 AI wider steps are sorted in Project doc `claude/ai-wider-steps-sort.md`: keep 18, reshape 10, move 9 (policy, law or research reading; a separate optional course or optional steps). No lesson, `index.md`, `CLAUDE.md` or `AUTHORING.md` text has changed yet. The English build no longer waits on this audit.
+
 ## Audit done (27 Oct 2026): misconceptions and wider steps against Kit (report only, nothing changed)
 
 Full report: Project doc `claude/kit-alignment-audit.md` (notes: `claude/kit-alignment-audit-notes.md`). Waiting for Matthew's decisions before any fix.
