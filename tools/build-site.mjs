@@ -195,8 +195,9 @@ function conceptLinks(lesson) {
   const tl = (THEORY_LINKS ||= theoryLinks(lessons)).get(lesson.slug) || { on: [], in: [] };
   const up = '../'.repeat(lesson.depth), bySlug = (s) => lessons.find((x) => x.slug === s);
   const where = (slug) => { const c = slug.split('/').slice(0, -1).join('/'); return `${dirNode(slug.split('/')[0]).title} › ${dirNode(c).title}`; };
-  // A brief description of what the linked lesson covers: the first sentence of its summary (about 130 characters at most).
-  const brief = (l) => { const t = String(l.summary || '').replace(/\s+/g, ' ').trim(), first = t.split(/(?<=[.!?])\s/)[0] || ''; return first.length > 130 ? first.slice(0, 127).replace(/[\s,;:(]+\S*$/, '') + '…' : first; };
+  // A brief description of what the linked lesson covers: a hand-written line in data/link-blurbs.json when the first sentence of its summary is long, else that sentence (about 130 characters at most).
+  let BLURBS = {}; try { BLURBS = JSON.parse(readFileSync('data/link-blurbs.json', 'utf8')); } catch { BLURBS = {}; }
+  const brief = (l) => { if (BLURBS[l.slug]) return BLURBS[l.slug]; const t = String(l.summary || '').replace(/\s+/g, ' ').trim(), first = t.split(/(?<=[.!?])\s/)[0] || ''; return first.length > 130 ? first.slice(0, 127).replace(/[\s,;:(]+\S*$/, '') + '…' : first; };
   const one = ({ slug, label }) => { const l = bySlug(slug); if (!l) return null;
     return { href: `${up}${slug}/`, title: l.title, where: where(slug), label, reason: brief(l), kind: 'summary' }; };
   const on = tl.on.map(one).filter(Boolean), used = tl.in.map(one).filter(Boolean);
