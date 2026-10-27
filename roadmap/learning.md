@@ -25,6 +25,11 @@
 
 1. Pilot with a class, then decide whether to add inserts to other courses.
 
+## Parked (27 Oct 2026)
+
+- A course teacher-guide list of which lessons carry a `self-regulation:` insert and which card, derived from the class plans (no new field), plus search entries so "think-aloud" or "read the error" find those lessons. Wait until more than the three pilot lessons have inserts.
+- No general `teaching:` field for other strategies (PRIMM, 5E, worked examples, retrieval): `shape:`, stages and the class plan's `kind` already carry them, and nothing would check a tag the way the card-id check does here.
+
 ## Open
 
 - Pilot with a class; follow up the workshop-4 "did it help?".
