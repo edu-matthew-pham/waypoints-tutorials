@@ -39,15 +39,24 @@ if (dataEl) {
     });
     paintBadge();
   }
+  function report(i, code) {
+    used[i] = conceptsIn(code, D.parts[i].language);
+    me.usedBy = { ...(me.usedBy || {}), [i]: [...used[i]] };
+    me.code[i] = code;
+    store(); paintSkills();
+  }
   window.addEventListener('message', (e) => {
     const m = e.data;
     if (e.origin !== location.origin || !m || m.wp !== 'run' || typeof m.code !== 'string') return;
     const i = D.parts.findIndex((p) => p.play === m.id);
-    if (i < 0) return;
-    used[i] = conceptsIn(m.code, D.parts[i].language);
-    me.usedBy = { ...(me.usedBy || {}), [i]: [...used[i]] };
-    me.code[i] = m.code;
-    store(); paintSkills();
+    if (i >= 0) report(i, m.code);
+  });
+  // Projects that run on the student's own computer (playground: external): the same scan on pasted code.
+  document.querySelectorAll('.pjpaste').forEach((t) => {
+    const i = +t.dataset.part;
+    t.value = me.code[i] || '';
+    let timer;
+    t.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => report(i, t.value), 300); });
   });
 
   // Milestones, reflection, claim.

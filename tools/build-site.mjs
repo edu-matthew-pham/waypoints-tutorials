@@ -302,6 +302,16 @@ for (const l of lessons) {
   }
 }
 
+// A course of Open projects only (playground: external, no lessons) is still a course: its index.md, a course page with a Projects chip.
+for (const set of loadProjects(CONTENT_ROOT, () => 'turtle')) {
+  if (lessons.some((l) => l.slug.startsWith(`${set.course}/`))) continue;
+  const segs = set.course.split('/');
+  for (let i = 0; i < segs.length; i++) {
+    const parent = dirNode(segs.slice(0, i).join('/')), child = dirNode(segs.slice(0, i + 1).join('/'));
+    if (!parent.kids.has(segs[i])) parent.kids.set(segs[i], { kind: 'dir', title: child.title, summary: child.summary, order: child.order, audience: child.meta?.audience });
+  }
+}
+
 // Coach prompts (tools/coach.mjs) for courses with `coach: true` in their index.md: on the recap page behind ?coach=1, and in the teacher guide.
 {
   const prog = loadProgressions();
@@ -638,11 +648,16 @@ function taughtWhere(course) {
   return where;
 }
 const firstSentence = (t) => { const m = t.match(/^.{20,}?[.!?](?=\s|$)/); const s = m ? m[0] : t; return s.length > 170 ? s.slice(0, s.lastIndexOf(' ', 165)) + '…' : s; };
+// A project whose app runs on the student's own computer (playground: external): links to the tools, and an optional paste box.
+function externalBox(x, i) {
+  return `<div class="pjbox pjext"><h3>Where you'll work</h3><p>This project runs on your own computer, not in this page.</p><ul>${x.links.map((l) => `<li><a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label)}</a>${l.note ? ` <span>· ${esc(l.note)}</span>` : ''}</li>`).join('')}</ul>` +
+    `<details><summary>Optional: paste your code to light up the skills it uses</summary><textarea class="pjpaste" data-part="${i}" spellcheck="false" aria-label="Paste your code here"></textarea><small>Nothing is sent anywhere. It stays in this browser, and Download my code saves it.</small></details></div>`;
+}
 function writeProjects(node, set) {
   const pp = `${node.path}/projects`, up = '../'.repeat(pp.split('/').length + 1);
   const where = taughtWhere(node.path);
   const lessonByName = (n) => lessons.find((l) => l.slug === `${node.path}/${n}`);
-  const afterText = (p) => { const l = lessonByName(p.after); return l ? `${l.order != null ? `lesson ${l.order}: ` : ''}${l.title}` : String(p.after); };
+  const afterText = (p) => { if (!p.after) return ''; const l = lessonByName(p.after); return l ? `${l.order != null ? `lesson ${l.order}: ` : ''}${l.title}` : String(p.after); };
   const href = (id, from) => {
     const l = where.get(id); if (!l) return '';
     const c = l.slug.split('/').slice(0, -1).join('/'), name = l.slug.split('/').pop();
@@ -677,7 +692,7 @@ function writeProjects(node, set) {
       const known = [...where.keys()].filter((id) => !ALSO_SKIP.has(id) && (CONCEPTS[x.language] || []).some((c) => c.id === id)).map((id) => ({ id, label: skillLabel(x.language, { id }) }));
       return { title: x.title, language: x.language, play: `${dp}/part-${i + 1}`, ext: PLAY_EXT[x.language] || 'txt', known,
         uses: x.uses.map((u) => ({ id: u.id, label: skillLabel(x.language, u), href: href(u.id, dup) })),
-        embed: tryEmbed(fake, step, starter || '', dup, '', null, VERSIONS) };
+        embed: x.playground === 'external' ? externalBox(x, i) : tryEmbed(fake, step, starter || '', dup, '', null, VERSIONS) };
     });
     const data = { key: `${node.path}/${p.id}`, id: p.id, milestones: p.milestones || [], hints: (p.msx || []).map((m) => m.hints || []), reveal: p.reveal === true, parts: parts.map(({ embed, title, ...rest }) => rest) };
     mkdirSync(join(OUT, dp), { recursive: true });
@@ -762,6 +777,17 @@ for (const node of dirs.values()) {
       (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : '') +
       (courseLessons.some((l) => l.teacher) ? `<p class="ptools">For teachers: <a href="${up}teach/${node.path}/">Teacher guide</a> (notes, answers, solutions, slides and worksheets)</p>` : ''),
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (PROJECTS.has(node.path) ? `<script type="module" src="${up}project.js"></script>` : '') + COPY_JS, navFor(node.path, 'course', node.path)));
+    continue;
+  }
+  if (!courseLessons.length && !isRoot && PROJECTS.has(node.path)) {
+    // A course of Open projects only (playground: external): a small course page, the projects, and the teacher guide.
+    writeProjects(node, PROJECTS.get(node.path));
+    const pset = PROJECTS.get(node.path);
+    writeFileSync(join(outDir, 'index.html'), page(node.title,
+      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools"><a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a></nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>` +
+      `<ul class="lessons">${pset.projects.map((p) => `<li><a href="projects/${esc(p.id)}/"><b>${esc(p.title)}</b><span>${esc(firstSentence(String(p.goal || '').replace(/[*_`#]/g, '').split('\n')[0]))}</span></a></li>`).join('')}</ul>` +
+      `<p class="cfoot">Badges are saved in this browser only. Nothing is sent anywhere.</p><p class="ptools">For teachers: <a href="${up}teach/${node.path}/">Teacher guide</a> (adapting the projects, marking points, the example solutions)</p>`,
+      `<script type="module" src="${up}project.js"></script>`, navFor(node.path, 'course', node.path)));
     continue;
   }
   // A folder with pathways (code/index.md): each pathway lists its courses in order, foundations then
@@ -901,7 +927,7 @@ const md = (t) => tmd.parse(String(t || ''));
 const mmd = new Marked().use(markedMath);
 const mathsGuide = { md: (t) => mmd.parse(String(t || '')), esc: (t) => textWithMath(t, esc) };
 const snippetById = new Map(Object.values(snippetFiles).flatMap((d) => d.groups.flatMap((g) => g.items.map((i) => [snippetId(i.label), i]))));
-const teachCourses = [...new Set(lessons.filter((l) => l.teacher).map((l) => l.slug.split('/').slice(0, -1).join('/')))];
+const teachCourses = [...new Set([...lessons.filter((l) => l.teacher).map((l) => l.slug.split('/').slice(0, -1).join('/')), ...[...PROJECTS.keys()].filter((c) => !lessons.some((l) => l.slug.startsWith(`${c}/`)))])];
 const teachPage = (title, body, pagePath, coursePath) => page(title, `<style>${TEACH_CSS}</style>${body}`, `<script>${TEACH_JS}</script>`, navFor(pagePath, 'home', coursePath));
 // Ideas across pathways (tools/ideas-page.mjs): one teacher page per subject with pathways, each core idea against
 // each pathway, linked to the lesson that introduces it. Linked from the teacher guide index and the subject's course guides.
@@ -1034,8 +1060,8 @@ for (const coursePath of teachCourses) {
   // Open projects (tools/projects.mjs): each brief, its notes and one possible solution (its example), for the teacher.
   const pset = PROJECTS.get(coursePath);
   const HL = { python: 'python', html: 'html', makecode: 'typescript', javascript: 'javascript', sql: 'sql' };
-  const projectsGuide = pset ? `<section class="tunit" id="projects"><h2>Open projects</h2><p class="muted">Self-paced briefs students can pick up after the lesson named on each. Students tick their own milestones and claim a badge; the page lights the skills their code uses. Badges stay in the student's browser: ask them to press Show your teacher. <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/projects/">Open the projects page</a></p>` +
-    pset.projects.map((p) => `<details class="primer"><summary><b>${esc(p.title)}</b> <span class="muted">(after ${esc(p.after)}; ${esc(p.parts.flatMap((x) => x.uses.map((u) => skillLabel(x.language, u))).join(', '))})</span></summary>${md(p.goal)}` +
+  const projectsGuide = pset ? `<section class="tunit" id="projects"><h2>Open projects</h2><p class="muted">Self-paced briefs students can pick up (after the lesson named on each, where one is named). Students tick their own milestones and claim a badge; the page lights the skills their code uses. Badges stay in the student's browser: ask them to press Show your teacher. <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/projects/">Open the projects page</a></p>` +
+    pset.projects.map((p) => `<details class="primer"><summary><b>${esc(p.title)}</b> <span class="muted">(${p.after ? `after ${esc(p.after)}; ` : ''}${esc(p.parts.flatMap((x) => x.uses.map((u) => skillLabel(x.language, u))).join(', '))})</span></summary>${md(p.goal)}` +
       `<p><b>Milestones:</b></p><ul>${(p.msx || []).map((m) => `<li>${esc(m.text)}${(m.hints || []).length ? `<ol class="muted">${m.hints.map((h) => `<li>${esc(h)}</li>`).join('')}</ol>` : ''}${m.way ? `<div class="muted">Students can earn this piece (reveal on): <code>${esc(m.way).replace(/\n/g, '<br>')}</code></div>` : ''}</li>`).join('')}</ul>` + (p.teacher ? md(p.teacher) : '') +
       p.parts.filter((x) => x.exampleCode).map((x) => codeBlock(highlightCode, x.exampleCode, HL[x.language] || 'python', `One possible solution${x.title ? `: ${x.title}` : ''}`)).join('') + `</details>`).join('') + `</section>` : '';
   // Project briefs (tools/briefs.mjs): each brief's teacher notes and the criteria it evidences, for the teacher.

@@ -1,0 +1,102 @@
+playground: external
+projects:
+  - id: rules
+    title: "A. Rules-based pattern detector"
+    goal: |
+      Build a Python app that **sorts an input into groups using rules you write yourself**, then responds in a way that helps someone.
+
+      Some problems can be described exactly: does the message contain this phrase? Is the soil drier than this? For those, rules are quick and predictable, and you can always say why the app answered as it did. When it is wrong, you can find the rule and fix it.
+
+      Before you start, write one sentence: **who is it for, and what will it help them do?**
+
+      **What to hand in**
+
+      - Your app: the `.py` file and any data files (your dictionary or lists).
+      - Your rules in plain English: a short list or a flowchart.
+      - A testing record: input, expected result, what the app did, with boundary cases.
+      - A reflection: what your rules can't handle, and who could be affected if your app got it wrong.
+
+      **Check your app before you hand it in**
+
+      - **Clear result**, in words your user understands.
+      - **Honest**: says when an input doesn't match any rule.
+      - **Useful response**: advice, a next step or an explanation, not just a label.
+      - **Fits your user**: at least one setting or option they can change.
+      - **Tested** on edge cases, not just the ones you designed it for.
+    uses: [param, elif, dict, return-value]
+    links:
+      - { label: "Set up the starters (once per computer)", href: "https://github.com/edu-matthew-pham/pattern-detector-starters#set-up-once", note: "Python 3, then one install" }
+      - { label: "text_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/text_rules.py", note: "your input is text someone types; rules look phrases up in a dictionary" }
+      - { label: "choice_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/choice_rules.py", note: "your input is answers to a few questions; rules use numbers and choices" }
+      - { label: "colour_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/colour_rules.py", note: "your input is a photo; rules use how much of it is each colour" }
+      - { label: "sound_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/sound_rules.py", note: "your input is a sound; rules use how loud it is and which note it is" }
+    example: rules-password.py
+    reveal: true
+    milestones:
+      - text: "My problem, my user and my rules are written in plain English."
+        hints:
+          - "Start with one sentence: who is it for, and what will it help them do?"
+          - "List your groups, then ask of each one: what can I check to tell it apart?"
+          - "Write each rule as a sentence first, such as \"if the soil is drier than 30%, water it\". Turning it into an if comes later."
+        way: |
+          # Rules in plain English (written first, before any code):
+          #   1. Nothing typed                    -> ask for a password.
+          #   2. On the list of common passwords  -> Weak, whatever its length.
+          #   3. Shorter than the minimum length  -> Weak, say how many more characters.
+      - text: "My app runs, built from the closest starter with its ADAPT lines changed."
+        hints:
+          - "Run the starter exactly as it is first, so you know what working looks like."
+          - "Change one ADAPT line at a time and run it again, so you know which change broke it."
+          - "Put the numbers your rules use together at the top, so they are easy to find and change after testing."
+        way: |
+          if len(password) < min_length:
+              return "Weak", f"{len(password)} characters. Aim for at least {min_length} ({min_length - len(password)} more)."
+      - text: "I tested the edges and fixed what broke."
+        hints:
+          - "Try an input exactly on the boundary of a rule, then one just either side of it."
+          - "Try nothing at all, odd spellings, and something your rules were never meant for."
+          - "Write what you expect before you run each test, so a surprise is easy to spot. A testing record can be as simple as what you typed, any settings, and the first word you expect back."
+        way: |
+          ("abc1234", False, "Weak"),     # 7 characters: one under the boundary
+          ("abc12345", False, "Strong"),  # exactly 8: on the boundary
+      - text: "I can say what my rules can't handle, and why a trained model might do better."
+        hints:
+          - "Find one input where your app gives a poor answer, and ask how many rules it would take to get it right."
+          - "Think about who is affected if the app is wrong, and whether they would know it was wrong."
+    stretch:
+      - "Add a second setting your user can change, and test both settings at the boundaries."
+      - "Keep your phrases or lists in a file, so someone else can add to them without touching the code."
+      - "Ask a friend who is not in your class to try to break it, and add their input to your testing record."
+      - "Ideas to start from: a phrase decoder, maths working feedback, waste sorting, plant care, a password checker, a colour checker, a classroom noise meter or tuning helper."
+    teacher: |
+      **What this project is.** The rules-based half of a pair (project B trains a model instead; project C joins them). Students sort an input into groups with rules they write, respond usefully, and then test and reflect honestly. The learning is in the testing and the reflection as much as in the app: at the boundary of a rule, with an empty input, and with the case no rule covers.
+
+      **Running it.** Each student works on their own laptop from a starter (links on the project page). Do the one-off setup before the lesson, or as a first step, and run an unchanged starter on a school laptop beforehand. Project A needs no camera or microphone; the photo and sound starters also accept uploaded files.
+
+      **What to change when you adapt it**
+
+      - *Problem and user.* Students choose, or you set a shared context (a class, a club, a subject area). Say which in the brief you hand out.
+      - *Starters on offer.* Offer all four, fewer to narrow the choice, or add a starter of your own in the same style (a header comment, `# ADAPT:` lines, a short ideas list).
+      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt. Change `uses:` in `projects.yml` if you want other skills.
+      - *Check your app.* This is the success criteria. Reword a line, add your own, or remove one. The page lists them in the goal; the marking points below follow the same order.
+      - *Hand-in.* Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student's own words on the hardest part.
+      - *Help.* Hints are on offer to everyone. "Show one way" opens after the milestones before it are ticked or every hint for it has been used. Both are listed as **Help used** on the card, so you can see it when you mark. Set `reveal: false` (or remove `reveal:`) to turn "Show one way" off.
+
+      **Marking points to look for** (replace with your own criteria):
+
+      - *Clear result.* The output is a word or sentence the named user would understand, not a variable name or number.
+      - *Honest.* Some input leads to "I don't know" or "none of my rules fits", and the app does not pick a group anyway. In the example, symbols-only input is not rated.
+      - *Useful response.* Each result comes with a reason, advice or next step. In the example, "Weak" always says why and how many characters are missing.
+      - *Fits the user.* There is a setting the user can change (strict mode in the example) and the student can say why it helps this user.
+      - *Tested.* The record includes an empty input, input exactly on a boundary (the example tests 7 and 8 characters), input that is nearly right (capital letters, a stray space), and something the rules were not made for.
+      - *Reflection.* Names a real input that fails, says why more rules would not fix it, and says who would be affected, not just "it might be wrong".
+
+      **Usual mistakes, and a question to ask.**
+
+      - *Rules that overlap.* Two rules both fit and the first one wins by accident. Ask: "Which rule fires for this input, and is that the one you meant?" (A rule order that matters should be written down.)
+      - *Numbers buried in the code.* Boundaries typed in several places drift apart. Ask: "If you change this cut-off after testing, how many lines do you edit?"
+      - *Testing only the easy cases.* All tests pass because they were designed to. Ask: "What is the smallest change to this input that should flip the answer?"
+      - *A label with no reason.* The app says "Weak" and nothing else. Ask: "What would the user do next?"
+      - *Boundary off by one* (`<` where `<=` was meant). Ask: "What happens at exactly 8?"
+
+      **The example below** is one complete rules app (a password checker with a strict-mode setting, a list of common passwords, an honest "not sure" and a small testing record). It is for you, to calibrate marking. Students who unlock "Show one way" see only a short piece of it for the milestone they are on. If a student chooses a password checker, expect to see something different from this one.

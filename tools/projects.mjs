@@ -24,6 +24,10 @@
 //       parts:                            optional, for a crossover: one playground each (title, playground,
 //         - { title: The micro:bit, playground: microbit, uses: [...], example: x.ts, starter: ... }
 //
+//   playground: external                  (25 Oct 2026 add-on, 27 Oct) for apps that run on the student's own computer, such as the Pattern
+//                                         Detector starters: no embedded editor. The part lists links: [{ label, href, note }] ("Where you'll
+//                                         work") and the page offers an optional paste box that runs the same skill scan on code the student
+//                                         pastes. after: is optional when every part is external (the course may have no lessons at all).
 // A part's playground defaults to the course's (turtle, html, dom, microbit, arcade); the scan reads its language.
 // The project page lights a "You'll use" chip when the student's own code uses it (concepts-core in the browser).
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
@@ -31,7 +35,7 @@ import { join } from 'node:path';
 import { parse as YAMLparse } from 'yaml';
 import { conceptIds, conceptsIn, CONCEPTS } from './concepts-core.mjs';
 
-export const LANG_OF = { turtle: 'python', python: 'python', html: 'html', dom: 'html', microbit: 'makecode', arcade: 'makecode', p5: 'javascript' };
+export const LANG_OF = { external: 'python', turtle: 'python', python: 'python', html: 'html', dom: 'html', microbit: 'makecode', arcade: 'makecode', p5: 'javascript' };
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 /** Every course's briefs: [{ course, file, dir, projects: [...] }], parts filled in. defaultPlay(course) names the course's playground. */
@@ -45,7 +49,7 @@ export function loadProjects(root, defaultPlay) {
         const file = join(dir, e.name);
         const data = YAMLparse(readFileSync(file, 'utf8')) || {};
         const projects = (Array.isArray(data.projects) ? data.projects : []).map((p) => {
-          const parts = (Array.isArray(p.parts) && p.parts.length ? p.parts : [{ playground: p.playground, uses: p.uses, example: p.example, starter: p.starter, answers: p.answers, height: p.height }])
+          const parts = (Array.isArray(p.parts) && p.parts.length ? p.parts : [{ playground: p.playground, uses: p.uses, example: p.example, starter: p.starter, answers: p.answers, height: p.height, links: p.links }])
             .map((x) => {
               const playground = x.playground || data.playground || defaultPlay(rel);
               const read = (f) => (f && existsSync(join(dir, 'projects', f)) ? readFileSync(join(dir, 'projects', f), 'utf8') : null);
@@ -55,6 +59,7 @@ export function loadProjects(root, defaultPlay) {
                 example: x.example || null, exampleCode: read(x.example),
                 starter: typeof x.starter === 'string' ? (x.starter.includes('\n') || !read(x.starter) ? x.starter : read(x.starter)) : null,
                 height: Number(x.height) || null,
+                links: (Array.isArray(x.links) ? x.links : []).map((l) => ({ label: String(l?.label || ''), href: String(l?.href || ''), note: String(l?.note || '') })),
                 answers: Array.isArray(x.answers) ? x.answers.map(String) : [], // console examples: what is typed at each input(), for the picture
 
               };
@@ -84,7 +89,8 @@ export function checkProjects(set, lessonsIn) {
     if (seen.has(p.id)) err(`${tag} is listed twice`); seen.add(p.id);
     if (!p.title) err(`${tag} has no title`);
     if (!p.goal) err(`${tag} has no goal`);
-    if (!p.after || !names.has(String(p.after))) err(`${tag}: after: names no lesson of ${set.course} (${p.after})`);
+    const allExternal = p.parts.length > 0 && p.parts.every((x) => x.playground === 'external');
+    if (!(allExternal && !p.after) && (!p.after || !names.has(String(p.after)))) err(`${tag}: after: names no lesson of ${set.course} (${p.after})`);
     const ms = Array.isArray(p.milestones) ? p.milestones : [];
     if (ms.length < 2 || ms.length > 4) err(`${tag} needs 2 to 4 milestones (it has ${ms.length})`);
     if ((p.benchmark || []).length > 2) err(`${tag}: benchmark: has ${p.benchmark.length} pictures (2 at most)`);
@@ -102,11 +108,15 @@ export function checkProjects(set, lessonsIn) {
     }
     for (const [i, part] of p.parts.entries()) {
       const pt = p.parts.length > 1 ? `${tag} part ${i + 1}` : tag;
-      if (!LANG_OF[part.playground]) err(`${pt}: no playground for projects called "${part.playground}" (turtle, html, dom, microbit, arcade)`);
+      if (!LANG_OF[part.playground]) err(`${pt}: no playground for projects called "${part.playground}" (turtle, html, dom, microbit, arcade, external)`);
       const ids = conceptIds(part.language);
       if (!part.uses.length) err(`${pt} lists no skills (uses:)`);
       if (part.uses.length > 4) warn(`${pt} lists ${part.uses.length} skills: keep it to 3 or 4, so students build, not tick boxes`);
       for (const u of part.uses) if (!ids.has(u.id)) err(`${pt}: uses: "${u.id}" is not a ${part.language} concept (tools/concepts-core.mjs)`);
+      if (part.playground === 'external') {
+        if (!part.links.length) err(`${pt}: an external project needs links: (where the student works)`);
+        for (const l of part.links) if (!l.label || !/^https:\/\//.test(l.href)) err(`${pt}: a link needs a label and an https:// address (${l.label || l.href})`);
+      }
       if (part.example && part.exampleCode == null) err(`${pt}: example ${part.example} is not in ${set.course}/projects/`);
       if (part.exampleCode != null) {
         const found = conceptsIn(part.exampleCode, part.language);
