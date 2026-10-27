@@ -27,6 +27,7 @@ import { reviewSheet } from './review-sheet.mjs';
 import { makeSearch, norm as normSearch } from './search-index.mjs';
 import { loadCoverage, shortCode } from './coverage.mjs';
 import { searchBoxHtml, SEARCH_HINTS, SEARCH_CSS } from './search-view.mjs';
+import { purposesHtml } from './purposes-view.mjs';
 import { coachPrompt } from './coach.mjs';
 import { loadProjects, skillLabel } from './projects.mjs';
 import { PROJECT_CSS, projectListBody, projectPageBody } from './project-view.mjs';
@@ -868,9 +869,12 @@ for (const node of dirs.values()) {
     // Find a lesson (25 Oct 2026): the search box limited to this subject, with the ways teachers also look beside it.
     const finders = [cur ? `<a href="map/">Curriculum map</a>` : '', node.path === 'code' ? `<a href="${up}teach/code/ideas/">How coding ideas build</a> · <a href="${up}teach/code/review/">Review sheet</a>` : ''].filter(Boolean);
     const subjSearch = searchBoxHtml({ root: up, subject: node.path, hint: SEARCH_HINTS[node.path] || SEARCH_HINTS[''], extra: finders.length ? `Or browse: ${finders.join(' · ')}` : '' });
+    // A subject's `purposes:` (English): "What are you teaching?" cards under the search box (tools/purposes-view.mjs).
+    const purposesBlock = Array.isArray(node.meta?.purposes) ? purposesHtml({ purposes: node.meta.purposes, start: node.meta.start,
+      href: (p) => `${up}${p}/`, titleOf: (p) => { if (!dirs.has(p)) throw new Error(`${node.path}/index.md: purposes names no course "${p}"`); return dirs.get(p).title; } }) : '';
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
-      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${heads ? '' : mapLink}` +
+      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${purposesBlock}${heads ? '' : mapLink}` +
       // With trails, students start on the trailheads; the curriculum map card follows them (both views).
       (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${pindex}</div>${mapLink}` : body) + create,
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (heads ? `<script src="${up}trailheads.js" data-root="${up}" defer></script>` : ''), navFor(node.path, 'home')));

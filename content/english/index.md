@@ -26,4 +26,62 @@ pathways:
       - { path: english/texts, id: texts, stage: foundations, tagline: "See the plan inside a text, then use it." }
       - { title: Images and layout, stage: foundations, after: [texts], summary: "How images, diagrams and layout make meaning in visual and multimodal texts.", tagline: "Read a picture as closely as a paragraph." }
       - { title: Literary ideas, stage: extensions, summary: "Point of view, narrative structure, imagery and symbolism, with short public-domain extracts.", tagline: "The tools writers use to make you feel something." }
+purposes:
+  - id: analytical
+    title: Analytical
+    units: "Interpreting and analysing: novel, short story or poetry study; analytical essay."
+    courses:
+      - { title: How authors craft stories }
+      - { title: Responding to literature }
+      - { path: english/cohesion, note: "claim, evidence, explanation" }
+      - { title: Reading closely }
+  - id: imaginative
+    title: Imaginative
+    units: "Narrative and creative writing; poetry writing."
+    courses:
+      - { title: Writing stories and poems }
+      - { title: How authors craft stories }
+      - { path: english/sentences }
+      - { path: english/punctuation, note: "dialogue" }
+  - id: persuasive
+    title: Persuasive
+    units: "Persuasive essay, speeches, debate."
+    courses:
+      - { path: english/persuade }
+      - { path: english/texts, note: "argument" }
+      - { path: english/words }
+      - { title: Speaking to an audience }
+      - { title: Discussion moves }
+  - id: informative
+    title: Informative
+    units: "Reports and explanations, often in other subjects."
+    courses:
+      - { path: english/texts }
+      - { path: english/cohesion }
+      - { path: english/sentences }
+      - { title: Writing like a subject expert }
+      - { title: Images and multimodal texts }
+  - id: reflective
+    title: Reflective
+    units: "Journals, personal response, reflecting on your own writing."
+    courses:
+      - { title: Responding to literature }
+      - { title: "Plan, draft and edit" }
+  - id: critical
+    title: Critical (Years 9-10)
+    units: "Media, representation and perspective."
+    note: "Our built courses are Years 6-8. The Years 9-10 extensions are planned."
+    courses:
+      - { path: english/persuade, note: "Years 6-8 start" }
+      - { title: Images and multimodal texts }
+      - { title: Responding to literature }
+start:
+  text: "A first set that covers most units:"
+  courses:
+    - { path: english/cohesion }
+    - { path: english/texts }
+    - { path: english/sentences }
+    - { path: english/persuade }
+    - { title: How authors craft stories }
+  after: "This is a suggestion, not a sequence. Paragraph skills run through every unit, which is why Holding writing together is first."
 ---

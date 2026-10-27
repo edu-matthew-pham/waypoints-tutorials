@@ -69,3 +69,6 @@ Build handoff: Project doc `claude/handoff-english-build.md` (one chat at a time
 
 ## Threads page (built 27 Oct 2026)
 `/teach/english/threads/` (`tools/threads-page.mjs`, `experiments/threads-smoke.mjs`, `npm run check-threads`): one section per thread in `english-triage.yml`, five stage rows (ACARA intent in plain words, lessons on the site, planned courses and class-only counts). Lessons are matched by `node:` to the triage node's thread and the stage from its code. Not a sequence. Next: landing page update (item 6).
+
+## Ways in: purpose cards (built 27 Oct 2026)
+The English page now opens with six purpose cards and a start-set line (`purposes:` and `start:` in `content/english/index.md`, `tools/purposes-view.mjs`, `npm run check-purposes`). Add a course under a purpose by editing that list; a `title:` entry shows as coming later until it has a `path:`. Next: wave 2.
