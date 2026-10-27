@@ -40,6 +40,7 @@ import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
 import { MATH_JS } from './math-expr.mjs';
 import { loadProgressions } from './progressions.mjs';
+import { priorLessons, challengeTest } from './prior-links.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
 import { loadCardsFile, ictCardsBody, ictCardText } from './ict-cards.mjs';
@@ -187,7 +188,7 @@ function catchUpIndex() {
 
 // "Builds on" and "Put to work in": lessons linked by a theory concept (tools/concepts-core.mjs THEORY), across subjects;
 // plus "What you should already know" and "Leads into" for Before Year 7 lessons (by assumed node).
-let THEORY_LINKS = null;
+let THEORY_LINKS = null, PRIOR = null;
 function conceptLinks(lesson) {
   const tl = (THEORY_LINKS ||= theoryLinks(lessons)).get(lesson.slug) || { on: [], in: [] };
   const up = '../'.repeat(lesson.depth), bySlug = (s) => lessons.find((x) => x.slug === s);
@@ -198,7 +199,10 @@ function conceptLinks(lesson) {
   const ci = catchUpIndex();
   const plain = (l) => ({ href: `${up}${l.slug}/`, title: l.title, where: where(l.slug), label: l.title });
   const catchUp = (ci.first.get(lesson.slug) || []).map(plain), leads = (ci.leads.get(lesson.slug) || []).map(plain);
-  return on.length || used.length || catchUp.length || leads.length ? { on, in: used, catchUp, leads } : null;
+  // Same-subject lessons this one relies on (tools/prior-links.mjs): after catch-up and theory links in the same row.
+  PRIOR ||= priorLessons(lessons, { data: loadProgressions(), prereqs: prerequisites(loadDirMeta, CONTENT_ROOT), read: getSnippet, isChallenge: challengeTest(loadDirMeta, CONTENT_ROOT) });
+  const prior = (PRIOR.get(lesson.slug) || []).map(one).filter(Boolean);
+  return on.length || used.length || catchUp.length || leads.length || prior.length ? { on, in: used, catchUp, leads, prior } : null;
 }
 
 function buildLesson(lesson, parentTitle, course) {
