@@ -1,6 +1,6 @@
 ---
 title: For English teachers
-summary: What is built so far in English (five pilot courses, on cohesion, text structure, sentences, punctuation and word choice), how it works without AI marking, and what is planned.
+summary: What is built so far in English (six pilot courses, on cohesion, text structure, sentences, punctuation, word choice and judging language), how it works without AI marking, and what is planned.
 ---
 ## What is here
 
@@ -44,6 +44,14 @@ The fifth course is [Language for people and situations](../english/words/): eig
 - **Challenge:** rewrite a notice that has the right news in the wrong voice.
 
 Students place words on a scale or choose a word in a sentence and see where it sits. All examples are made up; no student is asked about their own family, language or background. The cultural-conventions nodes (AC9E4LA01 n4, AC9E5LA01 n3) are left to class with your school's local guidance, Aboriginal and Torres Strait Islander education staff or community members, and AIATSIS; the site does not supply protocols. The board only marks choices with one defensible answer, accepting two bands where a careful student could argue either.
+
+The sixth course is [Judging and persuading](../english/persuade/): nine lessons for Years 6 to 8, not yet tried with a class.
+
+- **Warm-up (optional, Years 4–5 ideas):** fact and opinion words (AC9E4LA02), how sure a claim sounds and what backs it up (AC9E5LA02 n1–n2), and who says so (AC9E5LA02 n3).
+- **Core:** emotive words and bias (AC9E6LA02), judging and backing it up (AC9E7LA02), language features that shape meaning (AC9E7LY03), and irony, exaggeration and understatement (AC9E8LA02).
+- **Challenge:** judge a made-up film review for its audience and sources, and write a verdict (AC9E8LY03).
+
+Every text is made up and low-stakes (a phone rule, a film, a canteen); no real, contested topics. The board labels, colours and places planted words; the student's own writing is only counted, and a partner or you judge whether the evidence is good, whether a word takes a side and which device was used.
 
 The Years 9–10 text-structure descriptors (judging when breaking a pattern works) are left for later Years 9–10 work rather than added as harder steps. The optional "wider" steps add other contexts at the same level.
 

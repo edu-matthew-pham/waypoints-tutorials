@@ -594,5 +594,14 @@
   "polite-is-formal": {"home": "english/words/slang-to-formal", "text": "Treating a friendly, polite line as formal, because being kind and being official are not told apart."},
   "familiarity-only": {"home": "english/words/who-is-it-for", "text": "Choosing words using only how well the reader is known, and leaving out that the reader has authority."},
   "language-judged": {"home": "english/words/words-that-show-who-you-are", "text": "Judging a person's character from how they speak, when every way of speaking is valid for its group."},
-  "insider-language": {"home": "english/words/words-that-build-roles", "text": "Using a group's acronyms and special words with a newcomer without explaining them, so the newcomer is left out."}
+  "insider-language": {"home": "english/words/words-that-build-roles", "text": "Using a group's acronyms and special words with a newcomer without explaining them, so the newcomer is left out."},
+  "opinion-in-report": {"home": "english/persuade/fact-or-feeling", "text": "Putting an opinion into a report, so the writing sounds like a view and not a finding."},
+  "bare-assertion": {"home": "english/persuade/claims-and-how-sure", "text": "Treating a claim as proven because it sounds sure or because everybody says so, when nothing backs it up."},
+  "any-source-counts": {"home": "english/persuade/who-says-so", "text": "Treating any named or reported source as strong evidence, whether or not it knows about the claim."},
+  "emotive-in-news": {"home": "english/persuade/emotive-words", "text": "Using emotive words in a report that is meant to stay neutral, so the report pushes a feeling."},
+  "both-sides-balanced": {"home": "english/persuade/spot-the-bias", "text": "Believing a report is balanced because it names both sides, even when its word choices favour one."},
+  "claim-without-backing": {"home": "english/persuade/judging-and-backing-up", "text": "Making a judgement and giving no detail or source, so a reader has nothing to check."},
+  "feature-misnamed": {"home": "english/persuade/features-that-shape-meaning", "text": "Naming a language feature wrongly, so the explanation of its effect does not fit."},
+  "device-effect-flipped": {"home": "english/persuade/layers-of-meaning", "text": "Giving a device the wrong effect, such as saying understatement makes a problem sound bigger."},
+  "effective-without-reason": {"home": "english/persuade/judge-the-review", "text": "Calling a language choice good or effective without saying for whom or why."}
 }

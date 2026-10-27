@@ -1,0 +1,43 @@
+# Texts for "Words that push a feeling" (chain colours praise and criticism; gaps choose the pushing word; write counts).
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 2
+p: The [[magnificent#a]] new centre will bring [[exciting#a]] shops to town. Critics call it a [[hideous#b]] concrete [[monster#b]]. The building will open in May.
+# endregion
+
+# region: vary
+widget: cohesion
+p: The new library is [[{ordinary|splendid|dreary}=splendid]] and everyone should visit it.
+p: The café served a [[{tasty|greasy|small}=greasy]] pie and I wish I had stayed home.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 2
+p: The [[sleek#a]] new Zephyr bike glides over bumps with [[effortless#a]] speed. Other bikes are [[clunky#b]] and [[heavy#b]]. The Zephyr comes in three colours.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: exclaims
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: exclaims
+p: The canteen has a warm, friendly feel. Its fresh rolls are delicious. The queue, however, is a dreary crawl. The tables are sticky and the floor is filthy.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: chain
+colours: 2
+answer: on
+p: The [[lovely#a]] park has [[shady#a]] trees. The car park is a [[bleak#b]] slab of [[dull#b]] concrete.
+# endregion

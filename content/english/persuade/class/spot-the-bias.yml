@@ -1,0 +1,27 @@
+inquiry:
+  q: "How can a true report still lean?"
+  prompts: ["Describe a school match result to a friend on the winning side and a friend on the losing side.", "What changes?"]
+  notes: "Low-stakes topics only."
+activities:
+  - at: predict
+    kind: activity
+    title: "Winning side, losing side"
+    minutes: 5
+    do: |
+      Pairs report the same match from each side.
+    notes: "Listen for the single words that lean."
+  - at: investigate
+    kind: discussion
+    title: "Is plain possible?"
+    minutes: 5
+    do: |
+      Ask: can a report ever be plain? What would it use?
+    notes: "Aim for yes, with effort."
+questions:
+  - at: investigate
+    title: "Which leans?"
+    type: question
+    q: "Which phrase leans toward the council?"
+    options: ["The council voted", "The council wisely voted", "Some parents disagreed"]
+    answer: 1
+    explain: "Wisely praises. The others report."

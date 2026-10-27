@@ -1,0 +1,41 @@
+summary: "Students see that a named source who knows the topic is stronger than a vague one, sort sources by whether they know the claim, find a vague source, and write a claim with a fitting source."
+time: 45
+timing: "Predict and Try 8 min · Worked example 12 min · Vary and Practise 10 min · Make and own writing 15 min"
+goals:
+  - "I can tell a vague source from a specific one."
+  - "I can say whether a source knows about a claim."
+  - "I can say why a named source persuades."
+  - "I can write a claim and name a fitting source."
+struggle: "Students trust any title or any name. Ask 'does this person know about this particular thing?'."
+before: |
+  Do the Practise board yourself: six sources, three bands.
+
+  The one idea: a named source helps most when it knows about the claim. This lesson covers AC9E5LA02 node 3: why a specific, authoritative source persuades more than a general one, and judging authority in context. The terms **attribution** and **authority** are for you.
+
+  The Practise board has one answer per line. 'A famous chef says the bus is usually late' is named but does not fit; a chef is not a bus expert.
+
+  The Vary step uses gaps, not the swap board, so the board does not show the answer.
+
+  All sources and people are made up for the lesson.
+running:
+  - "Predict: ask who could be found and asked."
+  - "Try: ask 'could you look this up?' of each."
+  - "Make: partners say whether the source knows."
+stuck:
+  - see: "A student says 'Experts say' is strong because experts know."
+    ask: "Which experts? About what?"
+    fix: "Naming the group does not let a reader check."
+  - see: "A student accepts a famous person on any topic."
+    ask: "Is it their topic?"
+    fix: "Fame is not knowledge of this claim."
+stretch: "Find a real claim in an advertisement and say what its source is."
+support: "A card with two questions: 'Who is it?' and 'Do they know?'."
+leads: |
+  Next: emotive words and bias.
+exit:
+  q: "Name two questions to ask about a source."
+  a: "Who is it, so I could check? Do they know about this topic?"
+explain: |
+  A named source who knows the topic persuades more than 'someone says'.
+
+  Ask who it is, and whether they know about this claim.

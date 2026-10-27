@@ -1,0 +1,64 @@
+# Texts for "Fact or feeling?" (parts labels fact or opinion; swap chooses the fact wording; chain colours opinion words; write counts).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: fact opinion
+role fact: Fact (can be checked)
+role opinion: Opinion (a view)
+s fact: The fair raised $840 for the library.
+para:
+s opinion: The fair was the best day of the year.
+para:
+s opinion: I think the cake stall was too crowded.
+para:
+s fact: Forty students ran a stall.
+para:
+s opinion: The music was horrible.
+para:
+s fact: The fair finished at 3 pm.
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Gives an opinion | Reports a fact
+before: Choose the wording that reports a fact.
+p: The bus was [[{dreadfully late@1|ten minutes late@2}=ten minutes late]] this morning.
+p: The library [[{is the loveliest room@1|has 40 computers@2}=has 40 computers]] for students.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: The new skate park is [[fantastic#a]]. I [[think#a]] it is the [[best#a]] place in town, although the big ramps are [[scary#a]]. It opened in March and has three ramps.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: first
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: first
+p: The library has four computers. It opens at eight each morning. There are two hundred books about space. I think it is the best room in the school.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: fact opinion
+role fact: Fact (can be checked)
+role opinion: Opinion (a view)
+s fact: The hall seats 300 people.
+para:
+s opinion: The hall is gloomy.
+# endregion

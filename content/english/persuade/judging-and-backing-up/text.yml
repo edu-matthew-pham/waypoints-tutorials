@@ -1,0 +1,65 @@
+# Texts for "Judging and backing it up" (parts labels the kind; gaps choose backing; chain colours judging words; write counts quotes).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: feeling character quality
+role feeling: How it made me feel
+role character: What I think of a person's actions
+role quality: How good the thing is
+s feeling: I was thrilled by the ending.
+para:
+s character: Maya is a brave and loyal friend.
+para:
+s quality: The writing is graceful and clear.
+para:
+s feeling: The chase scene left me terrified.
+para:
+s character: Tom's trick was cruel.
+para:
+s quality: The map on the cover is beautifully drawn.
+# endregion
+
+# region: vary
+widget: cohesion
+p: Maya is loyal: [[{she waits at the cave for hours|she wears a blue coat|the book has twelve chapters}=she waits at the cave for hours]].
+p: The setting is eerie: [[{the author lives in a city|the fog hides the path and every sound echoes|the story is long}=the fog hides the path and every sound echoes]].
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: The film is [[stunning#a]] and the lead actor is [[courageous#a]], but the music is [[dreadful#a]]. Some scenes last ten minutes.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: quotes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: quotes
+p: The school play was funny and warm. The lead actor was confident because he never forgot a line. My favourite moment was when the dog barked and he said, 'Even the audience is cast tonight.' The costumes were bright and well made.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: feeling character quality
+role feeling: How it made me feel
+role character: What I think of a person's actions
+role quality: How good the thing is
+s feeling: I was delighted.
+para:
+s character: The captain was generous.
+para:
+s quality: The song is catchy.
+# endregion

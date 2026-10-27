@@ -1,0 +1,8 @@
+# Nib's paragraph about the reef (the 'vague source' task).
+
+# region: nib
+Reef Watch counted 31 healthy corals at the north site.
+Marine biologist Dr Lina Ortiz says warm water bleaches coral.
+A friend of my cousin says the reef is dying fast.
+The reef guide's logbook records the water at 29 degrees.
+# endregion

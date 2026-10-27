@@ -1,0 +1,27 @@
+inquiry:
+  q: "What makes a judgement worth believing?"
+  prompts: ["Think of a film you liked.", "What is one detail that shows why?"]
+  notes: "Made-up or school examples."
+activities:
+  - at: predict
+    kind: activity
+    title: "Why do you think so?"
+    minutes: 5
+    do: |
+      Pairs state a judgement about the canteen and ask each other for a detail.
+    notes: "Listen for a detail."
+  - at: investigate
+    kind: discussion
+    title: "Quotes and sources"
+    minutes: 5
+    do: |
+      Ask: when would you use a quote and when a source?
+    notes: "Aim for fitting the judgement."
+questions:
+  - at: investigate
+    title: "Which backs it?"
+    type: question
+    q: "Which backs up \"The story is tense\"?"
+    options: ["The story has twelve chapters", "The door creaked and no one moved", "The author lives by the sea"]
+    answer: 1
+    explain: "A tense moment shows tension."

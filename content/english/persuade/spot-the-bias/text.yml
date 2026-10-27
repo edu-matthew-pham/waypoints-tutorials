@@ -1,0 +1,65 @@
+# Texts for "Spot the bias" (parts labels the lean; gaps choose plain wording; chain colours who words favour; write counts).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: pro anti plain
+role pro: Favours the ban
+role anti: Against the ban
+role plain: Neutral
+s pro: The council wisely voted to ban phones.
+para:
+s plain: The council voted to ban phones on Tuesday.
+para:
+s anti: The council's heavy-handed ban left students without a lifeline.
+para:
+s plain: Phones will be handed in at the office each morning.
+para:
+s pro: The ban finally brings calm to our noisy corridors.
+para:
+s anti: Students were forced to surrender their phones.
+# endregion
+
+# region: vary
+widget: cohesion
+p: The council [[{rammed through|decided|sneaked in}=decided]] a new phone rule on Tuesday.
+p: [[{Angry mob|Some parents|Pesky parents}=Some parents]] disagreed with the rule.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 2
+p: The council's [[thoughtful#a]] plan will protect learning, but the [[harsh#b]] rule leaves students [[powerless#b]]. Supporters call it a [[sensible#a]] step. The rule starts on Monday.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: exclaims
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: exclaims
+p: Some students want the canteen to open earlier. They say many arrive hungry. The canteen manager says there is not enough staff before nine. The school council will discuss both views next week.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: pro anti plain
+role pro: Favours the team
+role anti: Against the team
+role plain: Neutral
+s pro: The team played brilliantly.
+para:
+s anti: The team stumbled badly.
+para:
+s plain: The team scored three goals.
+# endregion

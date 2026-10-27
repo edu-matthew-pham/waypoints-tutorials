@@ -1,0 +1,27 @@
+inquiry:
+  q: "How can words say one thing and mean another?"
+  prompts: ["Say 'lovely weather' on a rainy day.", "What did your voice do?"]
+  notes: "Three devices. Low-stakes lines only."
+activities:
+  - at: predict
+    kind: activity
+    title: "Say it with a straight face"
+    minutes: 5
+    do: |
+      Pairs say the same line as a plain line, then with irony.
+    notes: "Listen for the gap."
+  - at: investigate
+    kind: discussion
+    title: "Irony or sarcasm?"
+    minutes: 5
+    do: |
+      Ask: when does irony become sarcasm?
+    notes: "Aim for mocking someone."
+questions:
+  - at: investigate
+    title: "Which device?"
+    type: question
+    q: "'It's only a flood,' said the farmer, with water to his knees."
+    options: ["Exaggeration", "Understatement", "Sarcasm"]
+    answer: 1
+    explain: "It plays down a big problem."

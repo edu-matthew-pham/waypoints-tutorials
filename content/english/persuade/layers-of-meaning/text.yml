@@ -1,0 +1,79 @@
+# Texts for "Layers of meaning" (parts labels the device; gaps finish a device; write counts quotes).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: big small opposite
+role big: Exaggerates
+role small: Plays down
+role opposite: Says the opposite
+s big: I've told you a million times to close the gate.
+para:
+s small: 'It's a bit damp,' said the sailor, as the boat sank.
+para:
+s opposite: 'What lovely weather,' she said, shaking the rain off her coat.
+para:
+s big: The queue stretched to the end of the universe.
+para:
+s small: 'A small hiccup,' said the captain, as the engine exploded.
+para:
+s opposite: 'I just love getting soaked,' he said, running for cover.
+# endregion
+
+# region: vary
+widget: cohesion
+p: The flood reached the roof, and the farmer called it [[{a bit of rain|the end of the world|a miracle}=a bit of rain]].
+p: The queue was [[{a little long|longer than the sea|short}=longer than the sea]].
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: inline
+roles: big small opposite
+role big: Exaggerates
+role small: Plays down
+role opposite: Says the opposite
+s big: My bag weighs a tonne.
+para:
+s small: 'It is a trifle warm,' said the explorer, in the desert at noon.
+para:
+s opposite: 'Perfect timing,' groaned Lee, as the bus pulled away.
+para:
+s big: I'd die for a sandwich right now.
+para:
+s small: 'We have had a little rain,' said the farmer, standing in a flooded field.
+para:
+s opposite: 'How exciting,' she yawned, at the end of the three-hour talk.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: quotes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: quotes
+p: The bus broke down on the hill. 'A minor delay,' said the driver, as smoke poured from the engine. 'We will be here until the end of time,' groaned Mia. The sun set slowly over the stopped bus.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: big small opposite
+role big: Exaggerates
+role small: Plays down
+role opposite: Says the opposite
+s big: The line was a mile long.
+para:
+s small: 'A little spill,' he said, beside the flood.
+para:
+s opposite: 'Lovely,' she said, in the traffic jam.
+# endregion

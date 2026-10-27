@@ -1,0 +1,27 @@
+inquiry:
+  q: "How do features change what we feel?"
+  prompts: ["Say the same message as a poster and as a letter.", "Which features changed?"]
+  notes: "Four features, plain names."
+activities:
+  - at: predict
+    kind: activity
+    title: "Poster voice"
+    minutes: 5
+    do: |
+      Pairs say a short message as a poster and as a letter.
+    notes: "Listen for features."
+  - at: investigate
+    kind: discussion
+    title: "Same message, different reader"
+    minutes: 5
+    do: |
+      Ask: which feature suits a poster? A letter?
+    notes: "Aim for audience and purpose."
+questions:
+  - at: investigate
+    title: "Which feature?"
+    type: question
+    q: "\"Join us this Saturday\" is…"
+    options: ["A question", "Speaking to the reader", "Repetition"]
+    answer: 1
+    explain: "It invites the reader directly."

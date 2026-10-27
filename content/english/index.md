@@ -15,7 +15,7 @@ pathways:
       - { path: english/sentences, id: sentences, stage: foundations, tagline: "Build sentences that say exactly what you mean." }
       - { path: english/punctuation, id: punctuation, stage: foundations, after: [sentences], tagline: "Choose the mark that makes your meaning clear." }
       - { path: english/words, id: words, stage: foundations, after: [cohesion], tagline: "Pick the words that fit the reader and the job." }
-      - { title: Judging and persuading, stage: foundations, summary: "Objective and subjective language, modality, connotation and emotive words.", after: [words], tagline: "Spot how words nudge a reader, and choose your own." }
+      - { path: english/persuade, id: persuade, stage: foundations, after: [words], tagline: "Spot how words nudge a reader, and choose your own." }
       - { title: Writing like a subject expert, stage: extensions, summary: "Nominalisation, academic and technical vocabulary, and the voice of writing in science and humanities.", after: [cohesion], tagline: "Sound like a scientist, a historian or a reviewer." }
   - id: texts
     title: How texts work

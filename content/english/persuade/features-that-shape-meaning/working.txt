@@ -1,0 +1,8 @@
+# Nib explains a feature of a poster.
+
+# region: nib
+The poster says 'Join us this Saturday.'
+This speaks straight to the reader.
+It is a question, so it asks for an answer.
+It makes the reader feel part of the team.
+# endregion

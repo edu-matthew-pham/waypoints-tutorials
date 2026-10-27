@@ -1,0 +1,8 @@
+# Nib's 'balanced' report on the phone rule.
+
+# region: nib
+The council met to discuss the phone rule.
+Parents spoke for and against the rule.
+Reasonable parents backed the rule, while others complained noisily.
+The vote was 6 to 3.
+# endregion

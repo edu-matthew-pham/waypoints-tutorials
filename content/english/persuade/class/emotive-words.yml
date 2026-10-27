@@ -1,0 +1,27 @@
+inquiry:
+  q: "How do words push a feeling?"
+  prompts: ["Describe the school hall in a report and then in an advertisement.", "What changed?"]
+  notes: "Report words and emotive words."
+activities:
+  - at: predict
+    kind: activity
+    title: "Praise and criticise"
+    minutes: 5
+    do: |
+      Pairs describe the same room twice, once to praise it and once to criticise it.
+    notes: "Listen for the single words that change the feeling."
+  - at: investigate
+    kind: discussion
+    title: "When is it fair?"
+    minutes: 5
+    do: |
+      Ask: when is an emotive word fair, and when is it not?
+    notes: "Aim for purpose."
+questions:
+  - at: investigate
+    title: "Which pushes?"
+    type: question
+    q: "Which word pushes a feeling?"
+    options: ["tall", "dreadful", "wooden"]
+    answer: 1
+    explain: "Dreadful judges. Tall and wooden describe."

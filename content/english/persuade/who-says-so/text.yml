@@ -1,0 +1,52 @@
+# Texts for "Who says so?" (scale places claims by source; gaps choose a fitting source; write counts).
+
+# region: run
+widget: wordchoice
+mode: scale
+bands: Vague source | Named source
+word a: Some experts say the oval needs drainage. = 1
+word b: The groundskeeper, Mr Tran, who looks after the oval, says it needs drainage. = 2
+word c: People say the library is too hot. = 1
+word d: The library's temperature log shows 31 degrees at noon. = 2
+word e: They say the bus is always late. = 1
+word f: The Year 8 count found 9 late buses in 10 days. = 2
+# endregion
+
+# region: vary
+widget: cohesion
+p: To check whether the oval drains well, ask [[{the groundskeeper|a famous singer|somebody}=the groundskeeper]].
+p: To find a good mystery book, ask [[{a bus driver|the librarian|a friend of a cousin}=the librarian]].
+# endregion
+
+# region: practise
+widget: wordchoice
+mode: scale
+bands: Vague | Named but no fit | Named and fitting
+word a: Some experts say walking helps you think. = 1
+word b: A famous chef says the bus is usually late. = 2
+word c: A friend of my cousin says the pool is cold. = 1
+word d: The bus company's timetable shows the 8:10 runs on weekdays. = 3
+word e: The groundskeeper says the oval floods in heavy rain. = 3
+word f: The school nurse says tired students often get headaches. = 3
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: The canteen queue is too long at lunch. Ms Reid, who supervises the canteen, says about sixty students arrive at once. She thinks a second serving window would help the queue move faster at lunch.
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: Vague | Specific
+word a: Experts say it is safe. = 1
+word b: The engineer who built it says it is safe. = 2
+# endregion

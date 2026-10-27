@@ -1,0 +1,73 @@
+# Texts for "Features that shape meaning" (parts labels the feature; gaps choose wording; chain colours two features; write counts short sentences).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: you question repeat verb
+role you: Speaks to the reader
+role question: Question that expects agreement
+role repeat: Repetition
+role verb: Strong verb
+s you: You can make a difference today.
+para:
+s question: Who wants a dirty beach?
+para:
+s repeat: Clean beaches, clean seas, clean futures.
+para:
+s verb: The tide dumped rubbish across the sand.
+para:
+s you: Join us this Saturday.
+para:
+s question: Isn't it time we acted?
+para:
+s repeat: We will not stop, we will not tire, we will not give in.
+para:
+s verb: Plastic strangles turtles.
+# endregion
+
+# region: vary
+widget: cohesion
+p: A poster to students: "[[{You can help|The undersigned respectfully request assistance}=You can help]] today."
+p: A letter to the council: "[[{Hey, fix it!|We request that the council act}=We request that the council act]] on the litter problem."
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 2
+p: [[You#a]] can help. Plastic [[strangles#b]] turtles and [[chokes#b]] seabirds. [[Join us#a]] on Saturday.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: short
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: short
+p: Our garden needs you. Who wants weeds? Pick up your litter. A tidy garden grows better beans and a happier school. Join us on Friday.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: you question repeat verb
+role you: Speaks to the reader
+role question: Question that expects agreement
+role repeat: Repetition
+role verb: Strong verb
+s you: You can help.
+para:
+s question: Who wants litter?
+para:
+s repeat: Reuse, reduce, recycle.
+para:
+s verb: Rubbish smothers the creek.
+# endregion

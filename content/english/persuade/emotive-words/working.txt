@@ -1,0 +1,8 @@
+# Nib's news report on a council meeting (the 'pushing word in a report' task).
+
+# region: nib
+The council met on Tuesday.
+It voted 5 to 4 to extend the bus route.
+Furious residents stormed out of the hall.
+The new route will start in March.
+# endregion

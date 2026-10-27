@@ -1,0 +1,27 @@
+inquiry:
+  q: "How sure should a claim sound?"
+  prompts: ["Say one claim you are sure of and one you are not.", "What words show the difference?"]
+  notes: "A claim should be as sure as its evidence."
+activities:
+  - at: predict
+    kind: activity
+    title: "Sure or not sure?"
+    minutes: 5
+    do: |
+      Read five claims aloud. Students show a thumb up if sure, sideways if probably and down if possible.
+    notes: "Point to the word that decides."
+  - at: investigate
+    kind: discussion
+    title: "Why soften?"
+    minutes: 5
+    do: |
+      Ask: why would a careful writer say may? Collect reasons.
+    notes: "Aim for honest about limits."
+questions:
+  - at: investigate
+    title: "Which fits?"
+    type: question
+    q: "Only 4 of 30 students said so. Which word fits best?"
+    options: ["All students", "Some students", "Every student"]
+    answer: 1
+    explain: "Four of thirty is a few, so some fits."

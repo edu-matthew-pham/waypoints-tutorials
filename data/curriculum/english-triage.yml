@@ -274,9 +274,9 @@ courses:
   title: Judging and persuading
   pathway: How writing works
   years: 6-8
-  status: planned
+  status: built
   wave: 1
-  board: cohesion chain mode (colour the opinion words) + word choice board
+  board: cohesion chain and parts (label and colour opinion words) + wordchoice scale
   summary: Fact or opinion, emotive language and bias, the vocabulary of evaluation, backing up a judgement, irony and hyperbole,
     and how language choices shift with audience and purpose.
 - id: expert

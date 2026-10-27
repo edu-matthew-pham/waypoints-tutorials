@@ -1,0 +1,27 @@
+inquiry:
+  q: "How can you tell a fact from an opinion?"
+  prompts: ["Say one fact and one opinion about our school.", "How do you know which is which?"]
+  notes: "Facts can be checked. Opinions show a view."
+activities:
+  - at: predict
+    kind: activity
+    title: "Fact or view?"
+    minutes: 5
+    do: |
+      Read five sentences aloud. Students stand for fact and sit for opinion.
+    notes: "Let students argue the sentences that could be either."
+  - at: investigate
+    kind: discussion
+    title: "Can a review have facts?"
+    minutes: 5
+    do: |
+      Ask: can a review of a film have facts in it? Collect examples.
+    notes: "Aim for any text can have both."
+questions:
+  - at: investigate
+    title: "Which is a fact?"
+    type: question
+    q: "Which sentence can be checked?"
+    options: ["The pool is cold.", "The pool is 25 metres long.", "The pool is the best."]
+    answer: 1
+    explain: "A length can be measured. Cold and best are views."

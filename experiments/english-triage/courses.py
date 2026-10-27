@@ -38,7 +38,7 @@ course('words', 'Language for people and situations', 'How writing works', '6-8'
        warm=all_nodes(code(4, 'LA01'), code(5, 'LA01'), code(4, 'LA11')) + nodes(code(5, 'LA08'), 1),
        ext=all_nodes(code(9, 'LA01'), code(10, 'LA01')))
 
-course('persuade', 'Judging and persuading', 'How writing works', '6-8', 'planned', 1, 'cohesion chain mode (colour the opinion words) + word choice board',
+course('persuade', 'Judging and persuading', 'How writing works', '6-8', 'built', 1, 'cohesion chain and parts (label and colour opinion words) + wordchoice scale',
        all_nodes(code(6, 'LA02'), code(7, 'LA02'), code(8, 'LA02'), code(7, 'LY03'), code(8, 'LY03')),
        'Fact or opinion, emotive language and bias, the vocabulary of evaluation, backing up a judgement, irony and hyperbole, and how language choices shift with audience and purpose.',
        warm=all_nodes(code(4, 'LA02'), code(5, 'LA02')),

@@ -1,0 +1,8 @@
+# Nib's science report on soils (the 'opinion in a report' task).
+
+# region: nib
+The experiment tested three kinds of soil.
+The sandy soil drained in 12 seconds.
+Clay soil is horrible because it is so sticky.
+The loam soil held the most water.
+# endregion

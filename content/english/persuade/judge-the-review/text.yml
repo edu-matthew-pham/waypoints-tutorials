@@ -1,0 +1,70 @@
+# Texts for the challenge "Judge the review" (parts labels features; gaps judge sources; scale judges parts; write counts quotes).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: strong source bare device
+role strong: Strong judging words
+role source: Named source
+role bare: Bare assertion
+role device: Exaggeration
+s strong: The brave little tugboat is a heart-melting hero.
+para:
+s strong: The harbour glows in glorious gold light.
+para:
+s source: Critic Ana Reyes, who has reviewed films for twenty years, calls the first scene 'a wave of pure wonder'.
+para:
+s source: The school librarian who runs the film club says it kept her group silent for two hours.
+para:
+s device: The final chase lasts about a million years, and you will want every minute.
+para:
+s bare: Everyone knows it will win awards.
+# endregion
+
+# region: vary
+widget: cohesion
+p: To support the claim that the animation is brilliant, the best source is [[{a film animator who has worked on three cartoons|a school librarian|a friend of a friend}=a film animator who has worked on three cartoons]].
+p: To support the claim that young children enjoyed it, the best source is [[{a teacher who showed it to a Year 2 class and watched them|a film critic who prefers old black-and-white films|someone who read the poster}=a teacher who showed it to a Year 2 class and watched them]].
+# endregion
+
+# region: practise
+widget: wordchoice
+mode: scale
+bands: Weak for this audience | Works for this audience
+word a: Experts agree it is a masterpiece. = 1
+word b: Many people love it. = 1
+word c: A shop owner who has not seen the film says it is superb. = 1
+word d: The cinema manager, who has watched every showing, says families come back to see it twice. = 2
+word e: The little tugboat chugs bravely into every storm. = 2
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: quotes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: quotes
+p: The review would persuade most parents. It uses warm words such as 'heart-melting hero' that suit a family film. It names a critic and a librarian, which gives parents people to trust. However, 'everyone knows it will win awards' is weak because nothing backs it.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: strong source bare
+role strong: Strong judging words
+role source: Named source
+role bare: Bare assertion
+s strong: The hero is heart-melting.
+para:
+s source: The critic Ana Reyes calls it wonderful.
+para:
+s bare: Everyone knows it is great.
+# endregion

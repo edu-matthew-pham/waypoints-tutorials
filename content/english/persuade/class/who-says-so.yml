@@ -1,0 +1,27 @@
+inquiry:
+  q: "Who should we believe, and why?"
+  prompts: ["Think of a claim you heard this week.", "Who said it, and did they know?"]
+  notes: "Made-up or school examples only."
+activities:
+  - at: predict
+    kind: activity
+    title: "Who would you ask?"
+    minutes: 5
+    do: |
+      Name five problems at school. Students say who they would ask about each.
+    notes: "Listen for who knows."
+  - at: investigate
+    kind: discussion
+    title: "Is fame enough?"
+    minutes: 5
+    do: |
+      Ask: can a famous person be wrong about a topic outside their work?
+    notes: "Aim for knowing the topic."
+questions:
+  - at: investigate
+    title: "Which source fits?"
+    type: question
+    q: "Who would best know how long the canteen queue is?"
+    options: ["A student who stands in it every day", "A visiting singer", "A person who has never been to the school"]
+    answer: 0
+    explain: "Someone who sees the queue knows it."

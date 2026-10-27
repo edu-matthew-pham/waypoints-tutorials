@@ -1,0 +1,8 @@
+# Nib's reasons for a vegetable garden (the 'bare assertion' task).
+
+# region: nib
+A trial garden grew 40 kilograms of beans last term.
+A class survey found most students would join.
+Everybody knows gardens make students happier.
+The canteen said it could use fresh beans in two dishes.
+# endregion

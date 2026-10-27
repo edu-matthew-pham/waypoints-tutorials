@@ -1,0 +1,8 @@
+# Nib's explanation of a line.
+
+# region: nib
+The captain says, 'A small hiccup,' as the engine explodes.
+This is understatement.
+It makes the problem sound huge.
+The captain stays calm, which is funny.
+# endregion
