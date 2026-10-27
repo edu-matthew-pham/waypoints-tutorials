@@ -59,7 +59,7 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 **Amended (25 Oct 2026, later):** search plus everything-at-once browsing was two extremes, and the pathway links had gone from the menu. Pathways are back under Subjects (links to their trail maps, so students are one click from a trail), and "List for teachers" on a subject page is now a one-screen index of pathways and courses (years, lesson counts); full cards stay on each pathway page. Trails stay the default view; the search box is unchanged.
 **Maths pathways, decided to wait (25 Oct 2026):** the four maths pathways (Algebra, Number, Geometry and measurement, Statistics and probability) merge the curriculum's six strands (Measurement with Space, Statistics with Probability). Kept as is: a pathway can hold one unit or an umbrella of two, so splitting a course later changes no navigation. ACARA's progressions divide Number into concepts and modelling, which our copy of the data does not carry; check the Kit data, and the curriculum map's strand rows, if teachers plan that way. Revisit after teacher feedback.
 
-## Proposed: support both uses, and "Build up to this" at two sizes (27 Oct 2026, Matthew; wording agreed, nothing built)
+## Proposed: support both uses, "What you should already know" and "Build up to this" (27 Oct 2026, Matthew; wording agreed, nothing built)
 
 - **Decided: the site supports both uses.** Full class units, or backup, recap and extra learning when needed. Teachers and students decide how to use it; the site doesn't pick one. Matthew's reason for valuing the second: teaching every lesson from the site would get monotonous (same shape, same screen), while teachers bring the variety (discussion, hands-on work, real robots, group tasks). This fits what is already decided: the scope is checking and re-teaching understanding, and the decks are what make a lesson work for a class.
 - **One principle, two sizes:** meet students where they are, build up from firm ground, then come back to the original task.
@@ -67,15 +67,16 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
   - *Big, across lessons:* the lesson this one builds on. Partly built: "Catch up first" (Before Year 7 only) and "Builds on" (theory concepts only).
   - *The "come back" half matters at both sizes.* Without it students can stay on the easier version.
 - **Wording (agreed 27 Oct):** positive, about building up rather than going backwards.
-  - Student link at both sizes: **"Build up to this"** (the in-lesson fold could read "Build up to it"). Matthew's view: it may seem unfamiliar at first but becomes familiar with use, so use it everywhere and the same way.
-  - One **"Foundations"** row on a lesson page in place of "Catch up first" and "Builds on" (e.g. "Foundations for this: Year 6 catch-up lesson, Text as numbers, Variables"). "Put to work in" and "Leads into" stay as they are, pointing forward. Matthew was not certain merging is right; treat as the working choice.
+  - Two jobs, two labels:
+    - **"What you should already know"** (decided 27 Oct): one reference row on a lesson page, merging "Catch up first" and "Builds on" (same idea: prior knowledge). Lists the lessons this one relies on, e.g. "What you should already know: Year 6 catch-up lesson, Text as numbers, Variables". "Put to work in" and "Leads into" stay as they are, pointing forward.
+    - **"Build up to this"**: the scaffold, used only when needed. It is the in-lesson fold (replacing "Need a smaller step?") and the prompt that sends a stuck student to the lessons in the row above. Matthew's view: it may seem unfamiliar at first but becomes familiar with use, so use it everywhere and the same way.
 - **What it needs (not built):**
-  - *A Foundations link on every lesson,* to the one or two lessons it builds on in the same subject, not only Before Year 7 and theory concepts. The data is mostly there (`after:`, `assumes:`, progression nodes). A stuck student can work back until they hit solid ground without anyone diagnosing the gap, which is the self-regulation skill in action (`roadmap/learning.md`).
-  - *A return link* ("Back to <lesson>") on a lesson reached from a Foundations link.
+  - *A "What you should already know" row on every lesson,* to the one or two lessons it builds on in the same subject, not only Before Year 7 and theory concepts. The data is mostly there (`after:`, `assumes:`, progression nodes). A stuck student can work back until they hit solid ground without anyone diagnosing the gap, which is the self-regulation skill in action (`roadmap/learning.md`).
+  - *A return link* ("Back to <lesson>") on a lesson reached from that row.
   - *A quick "do you already know this?" check at the start,* so a student can tell whether to build up first. Maths already does this with a short retrieval question.
   - *Every lesson makes sense on its own,* and is findable by idea ("I don't get loops", "what's a ratio"): part of the navigation and search rethink.
 - **Caution:** optional help is mostly used by students who are already doing fine, so teachers pointing students to a specific lesson by link stays the main way in.
-- **Open:** whether to rename `smaller:`'s label now or with the Foundations row; how much of the first meeting with "Build up to this" needs a teacher to introduce it (e.g. a line in the class decks).
+- **Open:** whether to rename `smaller:`'s label now or with the new row; how much of the first meeting with "Build up to this" needs a teacher to introduce it (e.g. a line in the class decks).
 
 ## Proposed: a speech lesson shape for any subject (27 Oct 2026, English chat; Matthew agreed in principle, not built)
 
