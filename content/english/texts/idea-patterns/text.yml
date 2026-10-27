@@ -16,14 +16,14 @@ s compare: The old canteen and the new one both serve hot lunches. Unlike the ol
 para:
 s problem: The canteen queue is so long that some students miss half of lunch. One way to fix this is to let students order online before school.
 para:
-s claim: The new canteen menu is healthier than the old one. For example, it has three kinds of salad and no deep-fried food.
+s claim: The new canteen menu is good for our health. For example, it has three kinds of salad and no deep-fried food.
 # endregion
 
 # region: vary
 widget: cohesion
 mode: chain
 colours: 2
-p: [[Both#a]] the Murray cod and the platypus live in the Murray River. The cod is a fish, [[whereas#b]] the platypus is a mammal. The platypus breathes air, [[but#b]] the cod takes in oxygen through its gills. [[Unlike#b]] the cod, the platypus lays eggs. The two [[also#a]] hunt underwater for their food.
+p: [[Both#a]] the Murray cod and the platypus live in the Murray River. The cod is a fish, [[whereas#b]] the platypus is a mammal. The platypus breathes air, [[but#b]] the cod takes in oxygen through its gills. [[Unlike#b]] the cod, the platypus feeds its young on milk. The two [[also#a]] hunt underwater for their food.
 # endregion
 
 # region: practise
@@ -43,7 +43,7 @@ s result: Now there are fewer cars at the gate, and crossing the road is much sa
 widget: cohesion
 mode: chain
 tools: write
-p: Press Write your own. Write a paragraph of at least three sentences that uses one pattern: cause and effect, compare and contrast, or problem and solution.
+p: Press Write your own. Write a paragraph of at least three sentences that uses one pattern: cause and effect, compare and contrast, problem and solution, or claim and support.
 # endregion
 
 # region: make-solution
@@ -58,5 +58,5 @@ widget: cohesion
 mode: chain
 colours: 1
 answer: on
-p: A storm knocked down power lines across the town. [[As a result#a]], the traffic lights stopped working, [[so#a]] police directed cars at the busiest corners. [[Because#a]] the shops had no power, many closed early.
+p: A storm knocked down power lines across the town. [[Since#a]] the traffic lights had stopped working, police directed cars at the busiest corners. The shops had no power, and [[this meant#a]] many closed early.
 # endregion

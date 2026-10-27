@@ -34,7 +34,7 @@ check:
 stage: practise
 insight: "Labelling a model argument's stages is the 'deconstruction' step of the genre cycle: see the plan before using it."
 try: { playground: board, starter: "text.yml#model", height: 470 }
-hint: ["Click a paragraph, then choose Position, Reason or Restated position.", "The first and last paragraphs both say what the writer wants. The last one also sums up the reasons."]
+hint: ["Click a paragraph, then choose Position, Reason or Restated position.", "Ask of each paragraph: does it say what the writer wants, give one reason with evidence, or sum up and ask again?"]
 smaller:
   check: { type: question, q: "'Our school should plant twenty more trees around the playground.' What job does this sentence do?", options: ["It gives the position", "It gives a reason", "It restates the position at the end"], answer: 0, feedback: [null, "A reason says why. This says what the writer wants.", "It comes first, before any reasons."], explain: "It says what the writer wants, so it is the position." }
 check: { type: board, text: "Label the position, the two reasons and the restated position.", when: "n_right = 4 and n_wrong = 0", explain: "The position comes first. Each reason has its own paragraph with evidence (hot asphalt, cooler air and calm). The last paragraph sums up the reasons and presses the request again." }
@@ -56,7 +56,7 @@ check: { type: board, text: "Put Nib's argument in order: position, the reasons,
 stage: practise
 insight: "Choosing joining words inside an argument shows how the reasons are linked and how the ending follows from them."
 try: { playground: board, starter: "text.yml#joins", height: 300 }
-hint: ["For each gap, ask: is this the first reason, another reason, or what follows from all of them?", "Therefore says the request follows from the reasons."]
+hint: ["For each gap, ask: is this the first reason, another reason, or what follows from all of them?", "Read the last sentence: is it another reason, or what the writer asks for because of the reasons?"]
 check: { type: board, text: "Choose a joining word for each gap.", when: "n_gaps_right = 3", explain: "Firstly introduces the first reason, In addition adds a second, and Therefore says the request follows from them. The joining words show the argument's plan." }
 ```
 

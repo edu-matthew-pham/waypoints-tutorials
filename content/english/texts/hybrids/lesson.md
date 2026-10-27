@@ -5,7 +5,7 @@ title: Mixing text types
 summary: "Writers mix text types on purpose. A charity letter opens with a true story so the reader cares before the reasons arrive; a novel is told as diary entries so the reader learns things day by day; a recipe starts with a memory. A hybrid works when each borrowed part does a job for the main purpose, and the story links back to the point."
 language: maths
 node: [AC9E6LA03 n3, AC9E8LA03 n2]
-explainPicture: { ref: text.yml#explain-pic, caption: "A recipe that starts with a memory: the recount makes you care about the lemonade, then the instructions tell you how to make it." }
+explainPicture: { ref: text.yml#explain-pic, caption: "A science blog post that mixes types: the recount says what the class saw, then the explanation says how it works." }
 hook: "A letter asking for donations starts: 'Last July, floodwater filled Jun's house in the night.' Is it a story, or something else?"
 ---
 Writers often **mix** text types on purpose. The result is a **hybrid**.
@@ -51,7 +51,7 @@ tasks:
   - check:
       type: question
       q: "Why might an argument start with a short true story?"
-      options: ["So the reader cares about a real person before the reasons arrive", "Because every argument must start with a story", "To fill space before the real argument", "So the writer doesn't need any reasons"]
+      options: ["So the reader cares before the reasons arrive", "Because every argument has to start with a story", "To fill space before the real argument begins", "So the writer doesn't need to give any reasons"]
       answer: 0
       feedback: [null, "Many arguments start with a position. A story is one choice.", "If the story were filler, it would weaken the argument.", "The story makes the reader care; the reasons still have to convince them."]
       explain: "A story makes the issue real. The reasons and the call to act then have someone to be about."
@@ -102,7 +102,7 @@ tasks:
   - check:
       type: question
       q: "Why might a writer tell this story as diary entries instead of an ordinary story?"
-      options: ["The reader hears the narrator's feelings as they happen, and knows only what she knows each day", "Diary entries are shorter, so they are easier to write", "Diaries don't need an orientation", "Stories can't include dates"]
+      options: ["The reader lives each day with her, knowing only what she knows", "Diary entries are shorter, so they are easier to write", "Diaries don't need an orientation or an ending", "Ordinary stories can't include dates or days"]
       answer: 0
       feedback: [null, "Easy to write isn't the reason a writer chooses a form.", "Each entry still sets the scene with a date, and the first entry orients the reader.", "Plenty of stories include dates. The diary form does more than add them."]
       explain: "The diary form puts the reader inside each day: worried on Monday, sad on Saturday, relieved at the new school. That's an effect an ordinary story told afterwards can't give in the same way."

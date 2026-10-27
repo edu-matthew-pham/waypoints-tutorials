@@ -39,6 +39,17 @@ s ending: Dad says it's the biggest fish anyone in our family has caught.
 s any: Love, Mia
 # endregion
 
+# region: vary-email-solution
+widget: cohesion
+mode: parts
+layout: blocks
+roles: orientation event ending
+s orientation: On Saturday, Dad and I went fishing at the lake near our house.
+s event: We waited for two hours and caught nothing.
+s event: Then, just before we packed up, I caught a big redfin.
+s ending: Dad says it's the biggest fish anyone in our family has caught.
+# endregion
+
 # region: practise
 widget: cohesion
 mode: parts
@@ -47,8 +58,8 @@ s orientation: In March, the Year 6 classes spent three days at a camp beside a 
 s event: On the first day, we put up our tents and learned how to light a camp stove safely.
 s event: The next morning, we paddled canoes two kilometres down the river.
 para:
+s event: On the second afternoon, we hiked up to a lookout above the river.
 s event: On the last night, each group performed a short play around the campfire.
-s event: On Friday, we packed up and caught the bus home.
 s ending: I was tired, but I learned that I can do more than I thought.
 # endregion
 

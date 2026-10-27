@@ -48,7 +48,8 @@
   // Joining words counted in a student's own writing (n_connectives: how many different ones it uses).
   var CONNECTIVES = ['however', 'but', 'although', 'instead', 'on the other hand', 'even so', 'so', 'therefore', 'as a result',
     'because', 'this means', 'also', 'in addition', 'and then', 'then', 'next', 'after that', 'finally', 'first', 'firstly',
-    'meanwhile', 'later', 'for example', 'for instance', 'if', 'unless', 'since', 'while', 'when', 'before', 'after', 'soon'];
+    'meanwhile', 'later', 'for example', 'for instance', 'if', 'unless', 'since', 'while', 'when', 'before', 'after', 'soon',
+    'whereas', 'unlike', 'similarly', 'in contrast'];
 
   // ---------- the pure part (tools/check-cohesion.mjs uses it as B.cohesionCore) ----------
   var words = function (t) { return (String(t).match(/\S+/g) || []).length; };

@@ -14,7 +14,7 @@ before: |
 
   Patterns can mix: a problem and solution paragraph usually has causes in it. Ask for the main pattern, the one that organises the whole paragraph.
 
-  The cod and platypus facts were checked against general reference sources (both live in the Murray–Darling system; the platypus is an egg-laying mammal that breathes air). The canteen, the walking bus and the town storm are made up.
+  The cod and platypus facts were checked against general reference sources (both live in the Murray–Darling system; the platypus is a mammal that breathes air and feeds its young on milk). The canteen, the walking bus and the town storm are made up.
 running:
   - "Predict: ask which two words gave it away."
   - "Try: after labelling, ask how the same canteen could be written in each of the other three patterns."
@@ -22,8 +22,8 @@ running:
   - "Vary: ask students to add one more alike signal and one more different signal to the cod paragraph."
   - "Make: partners name each other's pattern before the writer says what it is."
 stuck:
-  - see: "A student labels the claim and support paragraph as compare and contrast because it says 'healthier than'."
-    ask: "Is the paragraph about both menus, or making a point about one and backing it up?"
+  - see: "A student labels the claim and support paragraph as cause and effect."
+    ask: "Is the paragraph saying what caused something, or making a point and backing it up?"
     fix: "Find the job of the whole paragraph. For example is the signal for support."
   - see: "A student colours 'the platypus' as a different signal."
     ask: "Is that word showing a difference, or naming one of the things being compared?"
@@ -38,8 +38,8 @@ leads: |
 
   Claim and support is the shape of the analytical paragraph in Holding writing together (Inside a paragraph), and of each reason in the challenge argument.
 exit:
-  q: "'Many students forget their hats, so the school now sells cheap hats at the office.' Which pattern, and which word shows it?"
-  a: "Problem and solution (forgotten hats, then the fix). So links the problem to what the school did about it."
+  q: "'Many students forget their hats. One way to fix this is to sell cheap hats at the office.' Which pattern, and which words show it?"
+  a: "Problem and solution: forgotten hats are the problem, and One way to fix this introduces the solution."
 explain: |
   Ideas inside a text follow **patterns**:
 

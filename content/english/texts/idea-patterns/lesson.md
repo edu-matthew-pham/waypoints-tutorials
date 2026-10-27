@@ -5,7 +5,7 @@ title: Patterns for ideas
 summary: "Inside a text, ideas are organised in patterns: cause and effect, compare and contrast, problem and solution, or claim and support. Signal words show the pattern (as a result, unlike, one way to fix this, for example), and the writer chooses the pattern that fits what the text is for."
 language: maths
 node: [AC9E7LY04 n1, AC9E7LY04 n2, AC9E8LY04 n1]
-explainPicture: { ref: text.yml#explain-pic, caption: "As a result, so and because are signal words. Each one links an effect to its cause, so the paragraph uses a cause and effect pattern." }
+explainPicture: { ref: text.yml#explain-pic, caption: "Since and this meant are signal words. Each one links an effect to its cause, so the paragraph uses a cause and effect pattern." }
 hook: "'Both' and 'unlike' appear in the first two sentences of a paragraph. What is the paragraph going to do?"
 ---
 Inside a text, ideas are organised in **patterns**. Four common ones:
@@ -66,7 +66,7 @@ tasks:
       explain: "Line 2: Nib describes possums and never mentions gliders again. A compare and contrast paragraph needs both sides: 'Possums are about the size of a cat, whereas sugar gliders could sit in your hand.'"
   - check:
       type: question
-      q: "A science report needs to show why a creek floods after heavy storms. Which pattern fits best?"
+      q: "A science text needs to show why a creek floods after heavy storms. Which pattern fits best?"
       options: ["Cause and effect", "Compare and contrast", "Claim and support", "Problem and solution"]
       answer: 0
       feedback: [null, "There's nothing to compare: the job is to show why something happens.", "It's not arguing a point; it's showing how one thing leads to another.", "Floods are a problem, but the report's job here is to explain why they happen, not how to fix them."]
@@ -114,7 +114,7 @@ check: { type: board, text: "Label each sentence as part of the problem, the sol
 stage: make
 insight: "Writing a paragraph in one chosen pattern, with its signal words, makes the pattern a writing tool."
 try: { playground: board, starter: "text.yml#make", height: 340 }
-hint: ["Choose a pattern first. Cause and effect: something that happened and why. Compare and contrast: two things. Problem and solution: a problem you know.", "Use at least two signal or joining words, such as because, so, as a result, but or also."]
+hint: ["Choose a pattern first. Cause and effect: something that happened and why. Compare and contrast: two things. Problem and solution: a problem you know. Claim and support: a point and an example.", "Use at least two signal or joining words, such as because, so, as a result, but, also, whereas or unlike."]
 check: { type: board, text: "Write a paragraph of at least three sentences in one pattern, using at least two signal or joining words.", when: "is_written = 1 and n_sentences >= 3 and n_connectives >= 2", explain: "Your paragraph has a pattern the reader can follow. Ask a partner to name your pattern without being told." }
 ```
 

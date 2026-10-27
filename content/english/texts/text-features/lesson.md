@@ -107,14 +107,14 @@ tasks:
   - check:
       type: question
       q: "A water-saving poster shows a cartoon frog called Drip sitting on a tap and saying 'Turn me off!' Why does the poster use a character?"
-      options: ["A friendly character makes the message easy to notice and remember", "Frogs are what the poster is about", "Every poster must have a character", "To tell a story with a beginning, middle and end"]
+      options: ["A friendly character makes the message stick", "Frogs are what the water-saving poster is about", "Every poster has to have a character on it", "To tell a story with a beginning, middle and end"]
       answer: 0
       feedback: [null, "The poster is about saving water. Drip is there to deliver the message.", "Many posters have no character at all.", "One line from Drip isn't a story. Drip just carries the message."]
       explain: "Persuasive texts often borrow a character so the message feels friendly and sticks. The character delivers the message rather than starring in a story."
   - check:
       type: question
       q: "The gum tree paragraph is turned into a poster for the school gate. What changes?"
-      options: ["The form changes; the opinion, reasons and call to act stay", "It becomes an informative text", "It no longer needs reasons", "Nothing changes at all"]
+      options: ["The form changes; the persuasive features stay", "It becomes an informative text about gum trees", "It no longer needs any reasons, only a picture", "Nothing changes at all, not even the layout"]
       answer: 0
       feedback: [null, "A poster can still persuade. The purpose hasn't changed.", "A persuasive poster still needs reasons, even if they are short.", "The layout, size and pictures change. That is the form."]
       explain: "A poster is a form. The persuasive features go with the purpose, so they stay, even if the words get shorter and pictures are added."

@@ -23,7 +23,7 @@ questions:
   - at: investigate
     title: "Which stage?"
     type: question
-    q: "'After the concert, we all went out for pizza.' Which stage is this most likely to be?"
+    q: "'During the interval, we bought ice creams in the foyer.' Which stage is this most likely to be?"
     options: ["An event", "The orientation", "The ending"]
     answer: 0
-    explain: "It tells something that happened, marked by the time words After the concert, so it is an event."
+    explain: "It tells something that happened in the middle, marked by the time words During the interval, so it is an event."

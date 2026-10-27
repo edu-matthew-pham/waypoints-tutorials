@@ -33,7 +33,7 @@ check:
 stage: run
 insight: "Labelling a report's stages shows its purpose (to describe) in its shape: say what it is, then describe it."
 try: { playground: board, starter: "text.yml#run", height: 340 }
-hint: ["Click a sentence, then choose General statement or Description.", "One sentence says what frogs are. The others each describe one thing about them."]
+hint: ["Click a sentence, then choose General statement or Description.", "Ask of each sentence: is it about frogs as a whole, or about one part of their lives?"]
 smaller:
   check: { type: question, q: "'Frogs are amphibians: animals that live part of their lives in water and part on land.' What is this sentence doing?", options: ["Saying what frogs are", "Describing one detail about frogs", "Giving an opinion about frogs"], answer: 0, feedback: [null, "It covers all frogs, not one detail such as their skin.", "There's no should or best here."], explain: "It classifies frogs, so it is the general statement that opens the report." }
 check: { type: board, text: "Label the general statement and each description.", when: "n_right = 4 and n_wrong = 0", explain: "The first sentence says what frogs are. Each description covers one aspect: their skin, how they grow, where they live." }
@@ -101,12 +101,12 @@ insight: "Labelling an argument built from the same frog facts shows how a new p
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 tasks:
   - starter: "text.yml#vary"
-    hint: ["Click a sentence, then choose Position, Reason or Restated position.", "The first and last sentences both say what the writer wants. Which one comes first?"]
+    hint: ["Click a sentence, then choose Position, Reason or Restated position.", "Ask of each sentence: does it say what the writer wants, give a reason why, or press the point again at the end?"]
     check: { type: board, text: "Label the position, the reasons and the restated position.", when: "n_right = 4 and n_wrong = 0", explain: "The position says what the writer wants. The frog facts (clean water to breed, studying them up close) have become reasons. The last sentence restates the position so the reader leaves with it." }
   - check:
       type: question
       q: "Why does an argument restate its position at the end, when a report doesn't need to?"
-      options: ["To leave the reader with what the writer wants them to think or do", "Because every text must end by repeating its first sentence", "To add a new reason the reader hasn't heard", "Because the writer ran out of facts"]
+      options: ["To leave the reader with what the writer wants", "Because every text must end by repeating its first sentence", "To add a new reason the reader hasn't heard yet", "Because the writer has run out of facts to give"]
       answer: 0
       feedback: [null, "A report ends when the description is complete. It doesn't need to repeat anything.", "A new reason at the end would need its own paragraph and evidence.", "Restating is a choice that serves the purpose."]
       explain: "An argument's purpose is to persuade, so it ends by pressing the position again. A report's purpose is to describe, so it ends when the description is done."

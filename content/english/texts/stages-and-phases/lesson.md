@@ -33,7 +33,7 @@ check:
 stage: run
 insight: "Labelling the opening statement and each step makes the sequence visible as a chain of phases."
 try: { playground: board, starter: "text.yml#run", height: 380 }
-hint: ["Click a sentence, then choose Opening statement or Step in the sequence.", "Only one sentence says what rain is. Every other sentence is one step in how it forms."]
+hint: ["Click a sentence, then choose Opening statement or Step in the sequence.", "Ask of each sentence: does it say what is being explained, or one thing that happens on the way to rain?"]
 smaller:
   check: { type: question, q: "'The warm, moist air rises and cools, and the vapour condenses into tiny droplets.' What is this sentence doing?", options: ["Giving one step in how rain forms", "Saying what rain is", "Giving an opinion about rain"], answer: 0, feedback: [null, "The first sentence already said what rain is.", "There's no opinion here, only a process."], explain: "It is one phase of the explanation sequence: a single step in the process." }
 check: { type: board, text: "Label the opening statement and each step in the sequence.", when: "n_right = 5 and n_wrong = 0", explain: "The first sentence names what is explained. The four steps are phases of the sequence: evaporation, then condensation into clouds, then droplets joining, then falling as rain." }
@@ -50,7 +50,7 @@ tasks:
   - check:
       type: question
       q: "What is a phase?"
-      options: ["A smaller move inside a stage, such as one step in an explanation sequence", "Another name for a paragraph", "The last stage of a text", "A sentence with a joining word in it"]
+      options: ["A smaller move inside a stage, such as one step", "Another name for a paragraph in a long text", "The last stage of a text, after the others", "Any sentence that has a joining word in it"]
       answer: 0
       feedback: [null, "A paragraph can hold several phases, or one phase can take several paragraphs.", "Phases happen inside any stage, not just the last.", "Joining words often signal a phase, but a phase is about the job, not the words."]
       explain: "Stages are the big parts. Phases are the smaller moves that build each stage."
@@ -67,7 +67,7 @@ tasks:
       q: "Match each set of signal words to the stage or phase it usually marks."
       pairs:
         - ["When, then, as a result", "Steps in an explanation sequence"]
-        - ["Rain is...", "An explanation's opening statement"]
+        - ["This is how rain forms.", "An explanation's opening statement"]
         - ["Brilliant, disappointing, worth seeing", "A review's judgement"]
         - ["First, next, after lunch", "Events in a recount"]
       explain: "Writers use different words in different stages. The words are clues to where you are in the text."
@@ -117,7 +117,7 @@ tasks:
 stage: practise
 insight: "A review has different stages, and its description has two phases, so students apply 'what job does this part do?' to a new type."
 try: { playground: board, starter: "text.yml#practise", height: 430 }
-hint: ["A review tells you what it is (context), what it's like (description) and what the reviewer thinks (judgement).", "Two paragraphs describe the library: what's there, then what you can do. They are both description."]
+hint: ["A review tells you what it is (context), what it's like (description) and what the reviewer thinks (judgement).", "Ask of each paragraph: is it setting the scene, saying what the library is like, or weighing it up?"]
 check: { type: board, text: "Label each paragraph of the review as context, description or judgement.", when: "n_right = 4 and n_wrong = 0", explain: "The first gives the context (a new library, built for families). The description has two phases: what's inside, then what you can do. The last paragraph is the judgement, with best as its signal word." }
 ```
 

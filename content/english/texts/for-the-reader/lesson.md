@@ -70,7 +70,7 @@ tasks:
   - check:
       type: question
       q: "A beach safety guide for parents adds a paragraph on how to spot a rip current, with a diagram. Why include it for parents but not on the Year 2 poster?"
-      options: ["Parents can use the detail to keep children away from rips; a young child needs one simple rule", "Parents enjoy longer texts", "Diagrams are too hard to draw for children", "Year 2 students don't go to the beach"]
+      options: ["Parents can act on the detail; a young child needs one simple rule", "Parents like longer texts with more pictures in them", "Diagrams are too hard to draw for young children", "Year 2 students don't usually go to the beach"]
       answer: 0
       feedback: [null, "Length isn't the goal. Detail is added because this reader can use it.", "Plenty of children's texts have diagrams. The question is what this reader needs.", "They do go. That's why they get a poster."]
       explain: "The structure grows or shrinks for the reader. Parents can act on the detail; a young child needs a rule they can remember in the water."
@@ -97,8 +97,8 @@ Now match each feature to what it does.
 stage: modify
 insight: "Labelling a safety poster's stages shows structure, not only words, is chosen for the reader: a hook, steps to follow, then a reminder."
 try: { playground: board, starter: "text.yml#vary", height: 330 }
-hint: ["Click a sentence, then choose Hook, Step or Reminder.", "The question at the top pulls the reader in. The last line repeats the main idea."]
-check: { type: board, text: "Label the hook, the steps and the reminder.", when: "n_right = 5 and n_wrong = 0", explain: "The question hooks the reader, the three commands are the steps to follow, and the reminder repeats why the flags matter. A poster read in seconds needs exactly this shape." }
+hint: ["Click a sentence, then choose Hook, Step or Reminder.", "Ask of each line: does it pull the reader in, tell them something to do, or repeat the main rule?"]
+check: { type: board, text: "Label the hook, the steps and the reminder.", when: "n_right = 5 and n_wrong = 0", explain: "The question hooks the reader, the three commands are the steps to follow, and the reminder repeats the main rule, swim between the flags. A poster read in seconds needs exactly this shape." }
 ```
 
 ## Practise: who is it for?

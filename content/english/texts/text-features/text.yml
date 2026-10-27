@@ -31,7 +31,7 @@ roles: report explain
 role report: Report
 s report: Little penguins are the smallest penguins in the world. They are about 30 centimetres tall, with blue-grey feathers on their backs.
 para:
-s explain: Penguins can't fly, but they swim fast. Their wings are stiff flippers, so each stroke pushes them through the water.
+s explain: When a penguin dives, it beats its stiff, flipper-like wings. Each stroke pushes against the water, so the penguin shoots forward.
 para:
 s report: Bats are mammals that can fly. Most Australian bats eat insects, and some eat fruit and nectar.
 para:

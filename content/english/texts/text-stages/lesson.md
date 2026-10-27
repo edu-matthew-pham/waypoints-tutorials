@@ -103,7 +103,7 @@ tasks:
     check: { type: board, text: "Put the recount in order: orientation, the events in time order, then the ending.", when: "in_order = 1", explain: "The orientation sets the scene, the time words put the events in order, and the ending finishes the story of the day." }
   - starter: "text.yml#vary-email"
     hint: ["Hi Grandma and Love, Mia are part of the email's form. Leave them without a label.", "Label the other four sentences with their stages."]
-    check: { type: board, text: "Mia's recount is an email. Label the four sentences that are stages of the recount.", when: "n_right = 4 and n_wrong = 0", explain: "The greeting and sign-off belong to the email form. Inside them, Mia's recount has an orientation, two events and an ending, the same stages as any recount." }
+    check: { type: board, text: "Mia's recount is an email. Label the four sentences that are stages of the recount.", when: "n_right = 4 and n_wrong = 0 and n_labelled = 4", explain: "The greeting and sign-off belong to the email form. Inside them, Mia's recount has an orientation, two events and an ending, the same stages as any recount." }
 ```
 
 ### Put it in order
@@ -116,7 +116,7 @@ tasks:
 stage: practise
 insight: "A recount over two paragraphs shows the stages can stretch: the events fill more than one paragraph, but the orientation and ending still frame them."
 try: { playground: board, starter: "text.yml#practise", height: 380 }
-hint: ["There is one orientation and one ending. Everything in between is an event.", "The second paragraph is still events until the last sentence."]
+hint: ["Ask what job each sentence does: set the scene, tell something that happened, or look back on the whole camp.", "Ask of each sentence in the second paragraph: is this something that happened, or the writer looking back on the whole camp?"]
 check: { type: board, text: "Label every sentence as the orientation, an event or the ending.", when: "n_right = 6 and n_wrong = 0", explain: "The orientation is the first sentence, the four middle sentences are events in time order across both paragraphs, and the last sentence is the ending: what the writer learned." }
 ```
 

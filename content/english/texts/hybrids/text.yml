@@ -76,13 +76,11 @@ s reason: A supervisor would stop the traffic, so younger students could cross s
 widget: cohesion
 mode: parts
 layout: blocks
-roles: recount procedure
+roles: recount explain
 role recount: Recount
-role procedure: Instructions
+role explain: Explanation
 answer: on
-s recount: Every summer, Nonna made this lemonade on her back step, and the whole street came to drink it.
+s recount: Last week our class stood a stick of celery in a glass of blue water. By the next morning, its leaves had turned blue.
 para:
-s procedure: Squeeze six lemons into a large jug.
-s procedure: Stir in half a cup of sugar until it dissolves.
-s procedure: Add four cups of cold water and plenty of ice.
+s explain: Water travels up the stalk through thin tubes. As water evaporates from the leaves, more is pulled up behind it, carrying the dye.
 # endregion

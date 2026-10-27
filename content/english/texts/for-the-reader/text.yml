@@ -4,7 +4,7 @@
 widget: cohesion
 mode: chain
 colours: 2
-p: [[Swim#b]] between the red and yellow flags. [[Stay#b]] close to the lifeguards, so [[you#a]] can see them. If [[you#a]] get tired, [[float#b]] on [[your#a]] back and [[raise#b]] one arm. [[Ask#b]] an adult to come in the water with [[you#a]].
+p: [[Swim#b]] between the red and yellow flags. [[Stay#b]] close to the lifeguards, so they can see [[you#a]]. If [[you#a]] get tired, [[float#b]] on [[your#a]] back and [[raise#b]] one arm. [[Ask#b]] an adult to come in the water with [[you#a]].
 # endregion
 
 # region: vary
@@ -15,8 +15,8 @@ role remind: Reminder
 s hook: Heading to the beach this summer?
 s step: Swim between the red and yellow flags.
 s step: If you get tired, float on your back and raise one arm.
-s step: Keep a close eye on younger children in the water.
-s remind: Remember: the flags show where the lifeguards are watching.
+s step: Ask an adult to come in the water with you.
+s remind: Remember: always swim between the flags.
 # endregion
 
 # region: practise
@@ -28,7 +28,7 @@ role kids: Young children
 role adults: Adults
 s kids: Put on your hat before you go outside. Your hat keeps the sun off your face!
 para:
-s adults: Children's skin burns quickly. Apply SPF 30 or higher sunscreen 20 minutes before they go outside, and reapply every two hours.
+s adults: Children's skin burns quickly. Apply SPF 50 or higher sunscreen 20 minutes before they go outside, and reapply every two hours.
 para:
 s kids: Play in the shade when the sun is high. Trees make great sun umbrellas!
 para:

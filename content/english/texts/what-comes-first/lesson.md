@@ -25,7 +25,7 @@ stage: predict
 insight: "Predicting that readers remember what comes first sets up the idea that order shapes meaning."
 check:
   type: predict
-  q: "Two news reports use the same facts about a new school bus. One starts with the 15 minutes it saves. The other starts with its $40,000 cost. Which fact will most readers of each report remember?"
+  q: "Two news reports use the same facts about a new school bus. One starts with the 15 minutes it saves. The other starts with the $40,000 a year it costs. Which fact will most readers of each report remember?"
   options: ["Whichever fact comes first", "Whichever fact comes last", "The number with the dollar sign", "Both facts equally"]
   actual: "Whichever comes first. Readers give the opening the most attention, and many stop reading soon after. The writer's choice of what goes first shapes what readers take away."
 ```
@@ -55,7 +55,7 @@ tasks:
       q: "Why do news reports usually put the main point first?"
       options: ["Many readers stop early, so they still get the news", "The main point is always the shortest sentence", "Background is boring, so it goes last", "It is a rule that every text must follow"]
       answer: 0
-      feedback: [null, "Length doesn't decide the order.", "Background can be interesting. It goes last because readers need it least.", "Other texts, such as stories and arguments, often save their biggest moment."]
+      feedback: [null, "Length doesn't decide the order.", "Background can be interesting. It goes last because readers need it least.", "Stories often save their biggest moment for the end. News doesn't."]
       explain: "News is built for readers who may stop at any point. Putting the main point first means even a quick reader leaves with it."
   - check:
       type: bug
@@ -68,7 +68,7 @@ tasks:
   - check:
       type: question
       q: "A canteen newsletter lists three good things about the new menu: more salads, less sugar and shorter queues. It doesn't mention that prices went up. What does this structure do?"
-      options: ["It shows only one side, so readers may never think about the price rise", "It gives a balanced report of the new menu", "It is a recount of the canteen's year", "Nothing: every fact in it is true"]
+      options: ["It shows one side, so readers may miss the price rise", "It gives a fair and balanced report of the new menu", "It retells the canteen's year as a recount", "Nothing, because every fact in it is true"]
       answer: 0
       feedback: [null, "Balanced would include the price rise too.", "There's no orientation or events in time order.", "True facts can still leave readers with half the picture."]
       explain: "What a structure leaves out shapes meaning as much as what it puts first. A careful reader asks: what isn't here?"
