@@ -84,6 +84,16 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
 - **Open:** how deck inserts are authored (class plan field vs a shared insert library).
 
+## Proposed: misconceptions and wider steps traced to Kit (27 Oct 2026, English chat; Matthew agreed to an audit in a new chat, not started)
+
+Found while building English: built lessons in every subject use site-authored misconceptions and wider steps, and nothing checks them against Waypoints Kit.
+
+- **What Kit has:** no misconception field in any subject (`tools/kit-nodes.mjs` says so). Each node does have `criteria` (success criteria, some written as a misconception to avoid, such as "Does not treat all connectives as interchangeable", AC9E4LA04 n2), `hinge` and `hinge_reason`, `modes` with reasons, and `width` (minimum, typical, wider statements). Create's primer and the pointer pages already use these; built lessons don't.
+- **What the site has:** `misconceptions.json` (ids with a home lesson, written by each chat), `fault: syntax | runtime | logic | design` on error tasks (AUTHORING › Error tasks, made for code; all 16 English bug tasks say `logic`), and `tier: typical | wider` steps (AUTHORING › Width tiers: "more contexts, never harder content"; see also Speculative: width for faster students, above).
+- **Proposed audit (all subjects):** for each built lesson, check its planted misconceptions against its nodes' `criteria`, `hinge_reason` and mode reasons, and its `tier: wider` steps against `width.wider`. Report mismatches (a wider step that is really acceleration, a misconception with no Kit basis where Kit names one, a Kit criterion misconception no lesson plants). Report first; fix with Matthew's say.
+- **Possibly, after the audit:** a `kind: belief | craft` field in `misconceptions.json` (a wrong rule a student holds, or a context-dependent weakness such as a buried main point); fault types per subject (English: purpose, structure, link, audience, evidence) or none outside code; bug tasks that accept several lines or "missing between lines N and N+1"; a validate lint that lists misconceptions and wider steps that don't trace to Kit.
+- **Decided for English (27 Oct):** wider steps are breadth only; Years 9–10 nodes wait for their own phase (`roadmap/english.md`).
+
 ## Changed by the Learning skills chat (27 Oct 2026): cards for a second subject
 
 - `tools/ict-cards.mjs`: `loadCardsFile` reads optional top-level `groups` (sections used instead of the course's units), `lede`, `search` and `more`; `ictCardsBody` takes `placeholder` and `more`. ICT pages are unchanged.
