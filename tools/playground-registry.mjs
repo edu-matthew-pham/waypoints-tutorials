@@ -44,5 +44,6 @@ export const LESSON_PROFILES={
  inquiry:{label:'Concept inquiry: 5E',language:'science',shape:'5e',sequence:[['predict','Engage'],['run','Explore'],['investigate','Explain'],['modify','Elaborate'],['info','Evaluate']]},
  reading:{label:'Reading / explanation',language:'python',shape:'',sequence:[['info','Read'],['info','Check your understanding']]},
  primer:{label:'Primer: one idea',language:'science',shape:'primer',sequence:[['predict','Think first'],['investigate','The idea'],['investigate','Worked example'],['practise','Check'],['make','Apply']]},
+ speech:{label:'Speech: plan, script, cue cards',language:'science',shape:'speech',sequence:[['predict','Purpose and audience'],['investigate','Plan'],['make','Script'],['modify','Cue cards'],['practise','Rehearse'],['info','Present and check']]},
  none:{label:'None: free steps',language:'science',shape:'primer',sequence:[['info','Step 1']]},
 };

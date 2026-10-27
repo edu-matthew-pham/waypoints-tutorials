@@ -6,6 +6,12 @@ const PLAIN_TEXT={
  'Worked example':'Apply the idea to one example, one step at a time, saying why at each step.',
  'Check':'A short check: can students use the idea on a new example?',
  'Apply':'Students use the idea on their own class text or topic, then compare with a model answer.',
+ 'Purpose and audience':'Who is listening, and what should they know, think or do afterwards? Ask students to decide before they plan.',
+ 'Plan':'Opening, two or three points and a close. Students plan the shape before writing any words.',
+ 'Script':'Students write the talk to be heard: short sentences, one idea at a time, then compare with a model and tick the self-check.',
+ 'Cue cards':'Students cut the script to key words (a card per section) so they can say it, not read it.',
+ 'Rehearse':'Rehearsal happens in class: with a partner or a mirror, then change one thing. Say what to listen for.',
+ 'Present and check':'The talk is given in class. Students check it against their plan, and a classmate gives specific feedback.',
  'Step 1':'Add your own steps. Give each a stage, or keep them as information.',
 };
 export function starterFiles({title='My lesson',profile='coding',playgroundId='turtle',board=null}={}){
@@ -16,12 +22,12 @@ export function starterFiles({title='My lesson',profile='coding',playgroundId='t
  const header=Object.entries(metadata).map(([k,v])=>typeof v==='object'?`${k}:\n${Object.entries(v).map(([a,b])=>`  ${a}: ${JSON.stringify(b)}`).join('\n')}`:`${k}: ${JSON.stringify(v)}`).join('\n');
  const ref=p?p.file+'#start':null;
  const steps=shape.sequence.map(([stage,label])=>{
-  const activity=p&&(stage==='run'||(profile==='design'&&stage==='make')||(profile==='reading'&&label==='Read')||(['primer','none'].includes(profile)&&(label==='The idea'||label==='Step 1')));
+  const activity=p&&(stage==='run'||(profile==='design'&&stage==='make')||(profile==='reading'&&label==='Read')||(profile==='speech'&&label==='Cue cards')||(['primer','none'].includes(profile)&&(label==='The idea'||label==='Step 1')));
   const config=`stage: ${stage}`+(activity?`\ntry: { starter: "${ref}", height: 420${p.id==='turtle'?'':`, playground: ${p.id}`} }`:'');
   const text=stage==='predict'?'Commit to a prediction before opening the activity. What would you expect, and why?':stage==='investigate'?'Explain what changed and why. Refer to specific observations or steps.':stage==='modify'?'Change one thing. Predict its effect and check what happens.':stage==='make'?'Apply the idea to a new example and explain how you checked it.':stage==='practise'?'Try a new example independently, then explain your reasoning.':activity?'Run the activity and compare it with your prediction.':'What did you learn? What would you check next?';
   const plain=PLAIN_TEXT[label];
   // The primer's Apply step shows the write, compare and self-check check (an unmarked reasoning check).
-  const extra=profile==='primer'&&label==='Apply'?'\ncheck:\n  type: reasoning\n  q: "Use the idea on your own class text or topic. Write two or three sentences."\n  models:\n    - "A short model answer that uses the idea, for students to compare with."\n  criteria:\n    - "I used the idea, not just the topic."\n    - "I gave a reason or evidence."':'';
+  const extra=profile==='speech'&&label==='Script'?'\ncheck:\n  type: reasoning\n  q: "Write the opening and the first point of your talk, as you would say it."\n  models:\n    - "A short model opening and first point, written to be heard."\n  criteria:\n    - "My opening tells the listener what the talk is about."\n    - "My sentences are short enough to say in one breath."':profile==='primer'&&label==='Apply'?'\ncheck:\n  type: reasoning\n  q: "Use the idea on your own class text or topic. Write two or three sentences."\n  models:\n    - "A short model answer that uses the idea, for students to compare with."\n  criteria:\n    - "I used the idea, not just the topic."\n    - "I gave a reason or evidence."':'';
   return `## ${label}\n\n\`\`\`step\n${config}${extra}\n\`\`\`\n\n${plain&&!activity?plain:text}\n`;
  }).join('\n');
  const files={'lesson.md':`---\n${header}\n---\nOne idea to investigate. Replace this introduction with the topic and learning goal.\n\n${steps}`};

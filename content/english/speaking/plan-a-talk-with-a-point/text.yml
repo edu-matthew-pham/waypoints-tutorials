@@ -1,0 +1,73 @@
+# Texts for "Plan a talk that has a point" (cohesion board, parts mode, one block per planned line).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+s opening: Ask the room who has ever finished a book and wanted to tell someone. Then say the book club is for exactly that.
+s point: Point one: you choose the books.
+s detail: Last term the club voted for a graphic novel about a robot.
+s point: Point two: you meet people from other classes.
+s detail: Two Year 6 members run the quiz at the end of each meeting.
+s point: Point three: it meets at lunchtime, so you miss no lessons.
+s detail: It starts at ten past one on Thursdays and finishes before the bell.
+s close: Say it again: choose, meet, read. Then ask them to come to the library next Thursday.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+label: off
+tools: order
+s opening: Ask the room how long their last shower was. Then say there are three easy ways to save water at home.
+s point: First, turn the tap off while you brush your teeth.
+s detail: A running tap can waste a bucket of water in a minute.
+s point: Second, collect the cold water you run while the shower warms up.
+s detail: A bucket of it is enough to water a pot plant.
+s point: Third, report a dripping tap.
+s detail: A tap that drips all day wastes litres, and the waste adds up.
+s close: Say it again: brush, bucket, drip. Then ask everyone to pick one way to try this week.
+start: 5,2,8,1,7,3,6,4
+# endregion
+
+# region: make
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+tools: text
+s opening:
+s point:
+s detail:
+s point:
+s detail:
+s close:
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+s opening: Ask Year 5 who has ever been lost on the first day at a new school. Then say there are two things that would have helped.
+s point: First, every classroom has its room number on the door.
+s detail: The number is beside the door in big black numbers, so you can read it from the corridor.
+s point: Second, the office will help you with anything.
+s detail: A student helper sits at the front desk at recess.
+s close: Say it again: look for the number, ask at the office. Then ask them to tell a new student.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+answer: on
+s opening: Ask who has ever sat on a hard chair to read. Then say the library has twelve new beanbags.
+s point: The beanbags are for reading, not for sleeping.
+s detail: They sit in the quiet corner, away from the door.
+s close: Say it again: read, book, relax. Then ask them to try one this week.
+# endregion

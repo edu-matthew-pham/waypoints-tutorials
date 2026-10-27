@@ -1053,6 +1053,40 @@ table.sh td.sh-copied { outline: 2px dashed var(--left); outline-offset: -2px; }
 .co-lead { white-space: nowrap; }
 .co-paper { overflow-wrap: anywhere; }
 
+/* Cohesion cue mode (Speaking to an audience): a script in sections, key words picked, one cue card per section.
+   The paper keeps its own light colours; the cards below it follow the page theme. */
+.co-cue-sec { margin: 0 0 6px; }
+.co-cue-sec .co-p { margin: 2px 0 8px; line-height: 2.1; }
+.co-cue-lab { display: inline-block; font: 600 11px/1.5 system-ui, sans-serif; color: #fff; background: #5b6472; border-radius: 4px; padding: 0 7px; }
+.co-w.co-key { background: #ffe066; box-shadow: inset 0 -2px 0 #e0a800; font-weight: 600; }
+.co-cuebox { margin-top: 10px; }
+.co-cuesum { margin: 0 0 8px; font-size: 14px; color: var(--muted); }
+.co-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+.co-card { box-sizing: border-box; border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 8px 10px; min-height: 66px; }
+.co-card h4 { margin: 0 0 4px; font: 600 12px system-ui, sans-serif; color: var(--muted); }
+.co-card .co-ckeys { margin: 0 0 4px; font: 600 15px/1.4 system-ui, sans-serif; overflow-wrap: anywhere; }
+.co-card .co-cn { font: 12px system-ui, sans-serif; color: var(--muted); }
+.co-card.co-over { border-color: #b42318; }
+.co-card.co-over .co-cn { color: #b42318; font-weight: 600; }
+.co-card.co-empty .co-ckeys { font-weight: 400; font-size: 13px; color: var(--muted); }
+.co-answer-cue .co-cuebox { margin-top: 6px; }
+.co-answer-cue .co-card { background: #fff; color: #1b1b1b; border-color: #c9c9c9; }
+.co-answer-cue .co-card h4, .co-answer-cue .co-card .co-cn { color: #5b6472; }
+.co-bar button.co-print { background: transparent; }
+#co-printsheet { display: none; }
+@media print {
+  body.co-printing main { display: none !important; }
+  body.co-printing #co-printsheet { display: block; color: #000; background: #fff; }
+  @page { margin: 12mm; }
+  body.co-printing #co-printsheet.co-ps-cards { display: flex; flex-wrap: wrap; align-content: flex-start; }
+  .co-pcard { box-sizing: border-box; width: 92mm; height: 58mm; border: 1px dashed #777; padding: 5mm; break-inside: avoid; overflow: hidden; }
+  .co-pname { font: 600 9pt system-ui, sans-serif; color: #444; text-transform: uppercase; letter-spacing: .04em; }
+  .co-pkeys { margin-top: 3mm; font: 600 19pt/1.3 system-ui, sans-serif; }
+  .co-pscript { margin: 0 0 6mm; font: 14pt/1.9 Georgia, "Times New Roman", serif; break-inside: avoid; }
+  .co-pscript .co-pname { display: block; margin-bottom: 1mm; }
+  .co-pkey { font-weight: 700; background: #ffe066; -webkit-print-color-adjust: exact; print-color-adjust: exact; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+}
+
 /* Sentence: build a sentence from pieces, choose punctuation, or write and see counts (widgets/sentence.js).
    The paper keeps its own colours in dark mode, like the cohesion board. */
 .se-bar { border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 8px 10px; }

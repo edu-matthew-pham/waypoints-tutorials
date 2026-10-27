@@ -1,0 +1,8 @@
+# Nib's slide plan for a talk about a second bike rack, one slide per line.
+
+# region: nib
+Slide 1: A photo of bikes lying on the ground by the fence.
+Slide 2: Every sentence Nib will say about the problem, typed out in full.
+Slide 3: A bar chart: 40 students ride, 8 bike spots.
+Slide 4: A drawing of how the new rack would hold the bikes in two rows.
+# endregion

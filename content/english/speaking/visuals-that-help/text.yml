@@ -1,0 +1,48 @@
+# Texts for "Visuals that help" (cohesion parts and gaps).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: adds repeats distracts
+s adds: A photo of bikes lying on the ground by the fence.
+s repeats: A slide with the sentence the speaker is about to say, typed out word for word.
+s adds: A bar chart: 40 students ride, 8 bike spots.
+s distracts: A spinning cartoon bike that circles for the whole talk.
+s adds: A simple map of the school with the new rack marked.
+s repeats: Five bullet points that say exactly what the speaker says next.
+s distracts: A busy picture of fireworks used as a background behind the words.
+s adds: A drawing of how the new rack would hold the bikes in two rows.
+start: 4,1,7,3,8,2,6,5
+# endregion
+
+# region: vary
+widget: cohesion
+p: The speaker says the queue gets longer each week. The slide shows [[{a line graph of the queue length each week|the sentence 'The queue gets longer each week'|a clip of a dancing cartoon bus}=a line graph of the queue length each week]].
+p: The speaker explains how a worm farm works. The slide shows [[{a paragraph about worms|a labelled drawing of the layers inside the bin|a cartoon worm wearing sunglasses}=a labelled drawing of the layers inside the bin]].
+p: The speaker says the old oval is twice the size of the new one. The slide shows [[{a picture of a football|the words 'twice the size'|the two ovals drawn side by side to the same scale}=the two ovals drawn side by side to the same scale]].
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: blocks
+roles: adds repeats distracts
+s adds: A photo of the coral before and after the storm.
+s repeats: The same three sentences the speaker says, copied onto the slide.
+s distracts: A flashing banner that changes colour every second.
+s adds: A graph of how much coral is left each year.
+s repeats: The title of the talk, read out, then typed again as a caption.
+s distracts: A joke picture of a cat that has nothing to do with the reef.
+start: 5,2,6,1,3,4
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: adds repeats
+answer: on
+s adds: A graph of the queue length each week.
+s repeats: A slide with the same sentence the speaker is saying.
+# endregion

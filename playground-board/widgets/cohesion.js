@@ -4,7 +4,7 @@
 // the planted answers are marks in the setup, so the same board takes a teacher's own text (no marks: students mark
 // and trace themselves, checked by the student, not the board) or a student's own writing (`tools: write`).
 //   widget: cohesion
-//   mode: link | chain | parts             trace links (default), colour word chains, or label and order sentences
+//   mode: link | chain | parts | cue       trace links (default), colour word chains, label and order sentences, or cut a script to cue cards
 //   p: Mia planted [[the beans|beans]]. [[They>beans]] grew.    one line per paragraph (link and chain modes). Marks:
 //       [[words|id]]          something a later word can point back to (id: letters, numbers, _ )
 //       [[words>id]]          a linking word that points back to id (several right answers: id/id2)
@@ -23,6 +23,12 @@
 //   answer: on                             start solved and read-only: every planted move made (arrows, fixes, colours,
 //                                          gaps, labels, order). For Explain-it-to-me pictures (explainPicture), never a step
 //   colours: 3                             chain mode: how many chain colours (1 to 4, default 3)
+//   cue mode (27 Oct 2026, Speaking to an audience): one "p opening: text" line per section of a script (the name is one word:
+//       opening, point1, point2, close; "role point1: Point 1" sets what shows). Students click the words they would need to say
+//       it; each section makes one cue card. [[words#k]] plants an example set of key words (for answer: on pictures and a
+//       solution region only). max: 12 is the most words a card may hold (3 to 40). Print cue cards and Print highlighted
+//       script buttons make index-card and whole-script pages. tools: write lets a student paste their own script (one
+//       paragraph per section). The board only counts; it never judges which words are the right ones.
 //   label: on | off                        parts mode: whether students label sentences (default on; off for an ordering task)
 //   tools: mark write order label text add  what the student may do beyond the mode's own move (trace, colour, label)
 //     mark = make any word a linking word · write = rewrite the whole text (marks are dropped) ·
@@ -34,6 +40,8 @@
 //   chain: n_chain (planted chain words or phrases), n_coloured, n_missed, n_stray, chains_ok, n_colours_used, max_chain
 //   gaps (any mode): n_gaps, n_gaps_set, n_gaps_right, gap_1, gap_2, ... (the chosen option's number, 0 = none)
 //   parts: n_s, n_roled, n_labelled, n_right, n_wrong, in_order, n_in_place, first_ok, last_ok, n_empty, has_<role>
+//   cue: n_sections, n_cards (sections with at least one key word), n_missing, n_key_words, max_card_words, n_over (cards over max),
+//        script_words, key_pct (key words as a whole-number percentage of the script)
 //   always: n_words, n_sentences, n_connectives (different joining words used), is_written (1 once the student has rewritten the text)
 (function (B) {
   'use strict';
@@ -110,8 +118,8 @@
   /** The setup (as core.js reads it: spec.items) into a model. Throws a plain message. */
   function build(s, written) {
     var mode = String(s.mode || 'link').toLowerCase();
-    if (['link', 'chain', 'parts'].indexOf(mode) < 0) throw new Error('mode: link, chain or parts.');
-    var m = { mode: mode, tokens: [], groups: [], sents: [], breaks: [], tools: {}, roles: [], names: {}, layout: 'inline', show: 'links', colours: 3, start: null };
+    if (['link', 'chain', 'parts', 'cue'].indexOf(mode) < 0) throw new Error('mode: link, chain, parts or cue.');
+    var m = { mode: mode, tokens: [], groups: [], sents: [], breaks: [], tools: {}, roles: [], names: {}, layout: 'inline', show: 'links', colours: 3, start: null, secNames: [], max: 12 };
     var para = 0, paraLines = 0;
     if (mode === 'parts') m.tools.label = true;
     s.items.forEach(function (it) {
@@ -119,6 +127,7 @@
       if (it.kind === 'p') {
         if (mode === 'parts') throw new Error(where + ': parts mode uses "s role: sentence" lines, not p:.');
         if (written === undefined) readPara(it.value, para, m, where);
+        m.secNames.push(it.name ? String(it.name).toLowerCase() : '');
         para++; paraLines++;
       } else if (it.kind === 's') {
         if (mode !== 'parts') throw new Error(where + ': s lines are for mode: parts.');
@@ -133,6 +142,7 @@
       }
     });
     if (written !== undefined) {
+      m.secNames = [];
       String(written).split(/\n\s*\n|\n/).forEach(function (pt, i) { if (pt.trim()) { readPlain(pt, para, m); para++; } });
       if (!m.tokens.length) m.tokens.push({ w: '(empty)', p: 0, g: -1 });
     }
@@ -147,6 +157,13 @@
     if (s.answer !== undefined) { if (!/^(on|off)$/i.test(s.answer)) throw new Error('answer: on or off.'); m.answer = /^on$/i.test(s.answer); }
     if (s.layout !== undefined) { if (!/^(inline|blocks)$/i.test(s.layout)) throw new Error('layout: inline or blocks.'); m.layout = s.layout.toLowerCase(); }
     if (s.colours !== undefined) { var c = Number(s.colours); if (!(c >= 1 && c <= 4 && c === Math.round(c))) throw new Error('colours: 1 to 4.'); m.colours = c; }
+    if (mode === 'cue') {
+      if (s.max !== undefined) { var mx = Number(s.max); if (!(mx >= 3 && mx <= 40 && mx === Math.round(mx))) throw new Error('max: the most words a card may hold, 3 to 40 (default 12).'); m.max = mx; }
+      m.groups.forEach(function (g) {
+        if (g.type === 'gap') throw new Error('cue mode has no gaps.');
+        if (g.type !== 'chain' || g.chain !== 'k') throw new Error('cue mode only takes [[words#k]] marks (the key words of an example set of cards).');
+      });
+    }
     if (mode === 'parts') {
       var planted = [];
       m.sents.forEach(function (x) { if (x.role !== 'any' && planted.indexOf(x.role) < 0) planted.push(x.role); });
@@ -172,7 +189,7 @@
 
   /** A new state for this model. */
   function freshState(m) {
-    var st = { links: {}, marked: [], found: [], colours: {}, gaps: {}, labels: {}, texts: {}, added: [], removed: [], order: null };
+    var st = { links: {}, marked: [], found: [], colours: {}, gaps: {}, labels: {}, texts: {}, keys: {}, added: [], removed: [], order: null };
     if (m.mode === 'parts') st.order = m.start ? m.start.map(function (i) { return m.sents[i].id; }) : m.sents.map(function (x) { return x.id; });
     return st;
   }
@@ -257,6 +274,14 @@
       v.n_colours_used = Object.keys(used).length;
       v.max_chain = Object.keys(sizes).reduce(function (a, c) { return Math.max(a, sizes[c]); }, 0);
     }
+    if (m.mode === 'cue') {
+      var secs = {}, keysN = 0, total = 0;
+      m.tokens.forEach(function (t, i) { if (!t.w) return; var o = secs[t.p] = secs[t.p] || { k: 0 }; total++; if (st.keys[i]) { o.k++; keysN++; } });
+      var sids = Object.keys(secs), nCards = 0, nOver = 0, longest = 0;
+      sids.forEach(function (id) { var o = secs[id]; if (o.k) nCards++; if (o.k > m.max) nOver++; if (o.k > longest) longest = o.k; });
+      v.n_sections = sids.length; v.n_cards = nCards; v.n_missing = sids.length - nCards; v.n_key_words = keysN;
+      v.max_card_words = longest; v.n_over = nOver; v.script_words = total; v.key_pct = total ? Math.round(100 * keysN / total) : 0;
+    }
     if (m.mode === 'parts') {
       var list = sentList(m, st), labelled = 0, right2 = 0, wrong2 = 0, roled = 0, place = 0, empty = 0;
       var orig = m.sents.map(function (x) { return x.id; });
@@ -318,11 +343,33 @@
     });
     var cols = {}, nc = 0;
     m.groups.forEach(function (g, gi) { if (g.type === 'chain') { if (!cols[g.chain]) cols[g.chain] = (nc++ % m.colours) + 1; st.colours['g' + gi] = cols[g.chain]; } });
+    if (m.mode === 'cue') m.groups.forEach(function (g) { if (g.type === 'chain') for (var ki = g.from; ki <= g.to; ki++) st.keys[ki] = 1; });
     if (m.mode === 'parts') {
       st.order = m.sents.map(function (x) { return x.id; });
       m.sents.forEach(function (x) { st.labels[x.id] = x.role !== 'any' ? x.role : m.roles[0]; });
     }
     return st;
+  }
+
+  /** What a cue card is called: the planted name (opening, point2), or by place (first, middle, last). */
+  function cueName(m, k, total) {
+    var nm = m.secNames && m.secNames[k];
+    if (nm) { var mm = /^([a-z]+)(\d+)$/.exec(nm); return m.names[nm] || (mm ? roleName(m, mm[1]) + ' ' + mm[2] : roleName(m, nm)); }
+    if (k === 0) return 'Opening';
+    if (k === total - 1 && total > 1) return 'Close';
+    return total > 3 ? 'Point ' + k : 'Point';
+  }
+  /** One card per section: its key words in order (runs of neighbouring key words stay together). */
+  function cueCards(m, st) {
+    var secs = [], idx = {};
+    m.tokens.forEach(function (t, i) {
+      if (!t.w) return;
+      var sc = idx[t.p]; if (!sc) { sc = idx[t.p] = { runs: [], n: 0, cur: null }; secs.push(sc); }
+      if (st.keys[i]) { if (!sc.cur) { sc.cur = []; sc.runs.push(sc.cur); } sc.cur.push(t.w); sc.n++; } else sc.cur = null;
+    });
+    return secs.map(function (sc, k) {
+      return { name: cueName(m, k, secs.length), n: sc.n, over: sc.n > m.max, runs: sc.runs.map(function (r) { return r.join(' ').replace(/[.,;:!?]+$/, ''); }) };
+    });
   }
 
   /** The same line reader as core.js (for Node checks). */
@@ -337,7 +384,7 @@
     });
     return s;
   }
-  B.cohesionCore = { build: build, freshState: freshState, values: values, solve: solve, plainText: plainText, specFromText: specFromText };
+  B.cohesionCore = { build: build, freshState: freshState, values: values, solve: solve, plainText: plainText, specFromText: specFromText, cueCards: cueCards };
 
   // ---------- on the page ----------
   var spec, M, S, ui, sel = null, tool = 'trace', paint = 1, selS = null, written, bound = false;
@@ -350,6 +397,7 @@
     var out;
     if (M.mode === 'link') out = v.n_arrows + ' arrow' + (v.n_arrows === 1 ? '' : 's') + (v.n_flagged ? ', ' + v.n_flagged + ' marked not clear' : '');
     else if (M.mode === 'chain') out = v.n_coloured + ' coloured';
+    else if (M.mode === 'cue') out = v.n_cards + ' of ' + v.n_sections + ' cards, ' + v.n_key_words + ' key words';
     else out = v.n_labelled + ' of ' + v.n_s + ' labelled';
     if (v.n_gaps) out += ', ' + v.n_gaps_set + ' of ' + v.n_gaps + ' gaps chosen';
     B.post({ scope: { vars: v, points: {} }, text: plainText(M, S) }, out);
@@ -366,6 +414,13 @@
   }
   function clickWord(i) {
     if (M.answer) return;
+    if (M.mode === 'cue') {
+      var had = document.activeElement && document.activeElement.getAttribute && document.activeElement.getAttribute('data-i') === String(i);
+      if (S.keys[i]) delete S.keys[i]; else S.keys[i] = 1;
+      change();
+      if (had) { var again = ui.paper.querySelector('.co-w[data-i="' + i + '"]'); if (again) again.focus(); }   // the redraw replaced the word: keep the keyboard where it was
+      return;
+    }
     var gi = groupOfWord(i), g = gi >= 0 ? M.groups[gi] : null;
     if (M.mode === 'chain') {
       var key = g && (g.type === 'chain' || g.type === 'target') ? 'g' + gi : 'w' + i;
@@ -522,7 +577,11 @@
       })(c);
       row.appendChild(btn('Rub out', function () { paint = 0; draw(); }, paint === 0));
     }
-    if (M.tools.write && M.mode !== 'parts') row.appendChild(btn(ui.writing ? 'Done writing' : 'Write your own', toggleWrite, !!ui.writing));
+    if (M.mode === 'cue' && !M.answer && !ui.writing) {
+      row.appendChild(btn('Print cue cards', function () { printCue('cards'); }, undefined, 'co-print'));
+      row.appendChild(btn('Print highlighted script', function () { printCue('script'); }, undefined, 'co-print'));
+    }
+    if (M.tools.write && M.mode !== 'parts') row.appendChild(btn(ui.writing ? 'Done writing' : (M.mode === 'cue' ? 'Use my own script' : 'Write your own'), toggleWrite, !!ui.writing));
     bar.appendChild(row);
     bar.hidden = !row.children.length;
   }
@@ -533,7 +592,7 @@
     var t = ui.area.value;
     try { var m2 = build(spec, t); M = m2; } catch (e) { say(e.message); return; }
     written = t; S = freshState(M); sel = null; ui.writing = false; tool = 'trace';
-    say(M.mode === 'link' ? 'Now press "Mark a linking word" and click a word that points back.' : 'Now colour the words that belong together.');
+    say(M.mode === 'link' ? 'Now press "Mark a linking word" and click a word that points back.' : M.mode === 'cue' ? 'Now click the key words in each section.' : 'Now colour the words that belong together.');
     if (M.mode === 'link') M.tools.mark = true;
     change();
   }
@@ -542,9 +601,77 @@
     ui.area = el('textarea', 'co-area'); ui.area.rows = 7; ui.area.value = written !== undefined ? written : plainText(M, S);
     ui.area.setAttribute('aria-label', 'Your own text');
     paper.appendChild(ui.area); ui.svg.setAttribute('height', 0);
-    say('Write or paste your own paragraph. Press Done writing when you are ready to mark it.');
+    say(M.mode === 'cue' ? 'Write or paste your script. Give each section (the opening, each point, the close) its own paragraph. Press Done writing when you are ready to pick key words.' : 'Write or paste your own paragraph. Press Done writing when you are ready to mark it.');
     ui.area.focus();
   }
+
+  // ---------- cue mode ----------
+  function drawCards() {
+    var box = el('div', 'co-cuebox'), cs = cueCards(M, S);
+    if (!M.answer) {
+      var v = values(M, S, written !== undefined);
+      box.appendChild(el('p', 'co-cuesum', 'Cards: ' + v.n_cards + ' of ' + v.n_sections + ' sections have key words. Longest card: ' + v.max_card_words + ' word' + (v.max_card_words === 1 ? '' : 's') + ' (a card holds ' + M.max + ' at most). Key words are ' + v.key_pct + '% of the script.'));
+    }
+    var grid = el('div', 'co-cards');
+    cs.forEach(function (c) {
+      var card = el('div', 'co-card' + (c.over ? ' co-over' : '') + (c.n ? '' : ' co-empty'));
+      card.appendChild(el('h4', '', c.name));
+      card.appendChild(el('p', 'co-ckeys', c.n ? c.runs.join('  \u00b7  ') : 'Click key words in this section.'));
+      if (c.n) card.appendChild(el('span', 'co-cn', c.n + ' word' + (c.n === 1 ? '' : 's') + (c.over ? ': over the limit' : '')));
+      grid.appendChild(card);
+    });
+    box.appendChild(grid);
+    return box;
+  }
+  function drawCue() {
+    var paper = ui.paper; paper.replaceChildren();
+    var secs = [], idx = {};
+    M.tokens.forEach(function (t, i) { var l = idx[t.p]; if (!l) { l = idx[t.p] = []; secs.push(l); } l.push(i); });
+    secs.forEach(function (list, k) {
+      var wrap = el('div', 'co-cue-sec'), pe = el('p', 'co-p');
+      wrap.appendChild(el('span', 'co-cue-lab', cueName(M, k, secs.length)));
+      list.forEach(function (i) {
+        var t = M.tokens[i], w = el('span', 'co-w' + (S.keys[i] ? ' co-key' : ''), t.w); w.setAttribute('data-i', i);
+        if (!M.answer) {
+          w.setAttribute('tabindex', '0'); w.setAttribute('role', 'button'); w.setAttribute('aria-pressed', S.keys[i] ? 'true' : 'false');
+          w.addEventListener('click', function (ev) { ev.stopPropagation(); clickWord(i); });
+          w.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); clickWord(i); } });
+        }
+        pe.appendChild(w);
+        if (t.after) pe.appendChild(document.createTextNode(t.after));
+        pe.appendChild(document.createTextNode(' '));
+      });
+      wrap.appendChild(pe); paper.appendChild(wrap);
+    });
+    if (M.answer) paper.appendChild(drawCards()); else ui.cards.replaceChildren(drawCards());
+  }
+  /** The print page: index cards (a card per section) or the whole script with key words marked. Hidden on screen. */
+  function cuePrintSheet(kind) {
+    var host = document.getElementById('co-printsheet');
+    if (!host) { host = el('div'); host.id = 'co-printsheet'; document.body.appendChild(host); }
+    host.replaceChildren(); host.className = 'co-ps co-ps-' + kind;
+    if (kind === 'cards') {
+      cueCards(M, S).forEach(function (c) {
+        var card = el('div', 'co-pcard'); card.appendChild(el('div', 'co-pname', c.name));
+        card.appendChild(el('div', 'co-pkeys', c.runs.join('  \u00b7  '))); host.appendChild(card);
+      });
+    } else {
+      var secs = [], idx = {};
+      M.tokens.forEach(function (t, i) { var l = idx[t.p]; if (!l) { l = idx[t.p] = []; secs.push(l); } l.push(i); });
+      secs.forEach(function (list, k) {
+        var pe = el('p', 'co-pscript'); pe.appendChild(el('span', 'co-pname', cueName(M, k, secs.length)));
+        list.forEach(function (i, at) {
+          var t = M.tokens[i], next = list[at + 1], joined = S.keys[i] && next !== undefined && S.keys[next];   // a run of key words is one highlight
+          pe.appendChild(el('span', S.keys[i] ? 'co-pkey' : '', t.w + (t.after || '') + (joined || !S.keys[i] ? ' ' : '')));
+          if (S.keys[i] && !joined) pe.appendChild(document.createTextNode(' '));
+        });
+        host.appendChild(pe);
+      });
+    }
+    document.body.classList.add('co-printing');
+  }
+  B.cuePrintSheet = cuePrintSheet;
+  function printCue(kind) { cuePrintSheet(kind); try { window.print(); } finally { document.body.classList.remove('co-printing'); } }
 
   // ---------- parts mode ----------
   function drawParts() {
@@ -605,6 +732,7 @@
     if (M.mode === 'parts') { drawParts(); drawPartsBar(); return; }
     drawBar();
     if (ui.writing) return;
+    if (M.mode === 'cue') { drawCue(); return; }
     drawText(); drawArrows();
   }
 
@@ -620,7 +748,7 @@
       if (M.answer) sv = null;
       if (sv && sv.st && typeof sv.st === 'object') {
         var o = sv.st;
-        ['links', 'colours', 'gaps', 'labels', 'texts'].forEach(function (k) { if (o[k] && typeof o[k] === 'object') S[k] = o[k]; });
+        ['links', 'colours', 'gaps', 'labels', 'texts', 'keys'].forEach(function (k) { if (o[k] && typeof o[k] === 'object') S[k] = o[k]; });
         ['marked', 'found', 'added', 'removed'].forEach(function (k) { if (Array.isArray(o[k])) S[k] = o[k]; });
         if (M.mode === 'parts' && Array.isArray(o.order) && o.order.length) S.order = o.order;
       }
@@ -634,12 +762,13 @@
       ui.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); ui.svg.setAttribute('class', 'co-svg'); ui.svg.setAttribute('aria-hidden', 'true');
       ui.svg.innerHTML = '<defs><marker id="co-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="co-headpath"/></marker></defs>';
       holder.appendChild(ui.paper); panel.appendChild(holder);
+      ui.cards = el('div', 'co-cardsholder'); if (M.mode === 'cue' && !M.answer) panel.appendChild(ui.cards);
       var row = el('div', 'gbar');
       var again = el('button', '', 'Start again'); again.type = 'button'; again.addEventListener('click', B.restart); row.appendChild(again);
       if (M.answer) { ui.bar.hidden = true; ui.tip.hidden = true; } else panel.appendChild(row);
       ui.paper.addEventListener('click', function () { if (sel && M.mode === 'link') { sel = null; say('Click a dotted word to trace it.'); draw(); } });
       say(M.mode === 'link' ? (M.show === 'links' || written !== undefined ? 'Click a dotted word, then click the words it points back to.' : 'Press "Mark a linking word", then click a word that points back to something earlier.')
-        : M.mode === 'chain' ? 'Pick a colour, then click the words that belong to the same chain.' : 'Click a sentence to work on it.');
+        : M.mode === 'chain' ? 'Pick a colour, then click the words that belong to the same chain.' : M.mode === 'cue' ? 'Click the words you would need to say it. Each section makes one cue card.' : 'Click a sentence to work on it.');
       if (M.mode === 'link' && M.show === 'none' && !M.tools.mark) M.tools.mark = true;
       draw();
       if (M.answer) ui.bar.hidden = true;

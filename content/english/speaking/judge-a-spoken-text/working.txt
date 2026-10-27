@@ -1,0 +1,9 @@
+# Nib's notes on the quiet-corner speech, one note each.
+
+# region: nib
+Note 1: The speech opens with a question to the listeners.
+Note 2: The words loud, loud, loud are a repeat that makes the noise feel everywhere.
+Note 3: The speaker spoke too fast because she was nervous.
+Note 4: The noise-meter reading is a fact that listeners could check.
+Note 5: The last line is a call to act: give us a quiet corner.
+# endregion

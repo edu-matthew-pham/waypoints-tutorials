@@ -1,0 +1,30 @@
+inquiry:
+  q: "Is it cheating to use cards?"
+  prompts:
+    - "What does an audience notice if the speaker reads from a page?"
+    - "What does a speaker lose if they have nothing at all?"
+  notes: "Cards are a tool, like a map. The goal is to look at the listeners. Some speakers use none, some use a highlighted script. The choice depends on the talk and the speaker."
+activities:
+  - at: predict
+    kind: activity
+    title: "Say it from three words"
+    minutes: 4
+    do: |
+      Each student invents a 20-second story about a dragon who starts at the school, and writes three words that would bring it back. Partners swap and tell the story from the other student's three words.
+    notes: "Stories come back from three words if the words are well chosen."
+  - at: make
+    kind: discussion
+    title: "Cover it and say it"
+    minutes: 5
+    do: |
+      Students cover their script and say one part from the card to a partner. The partner says which word, if any, the speaker looked for and did not find.
+    notes: "Listen for the word that was missing. That is the one to add."
+questions:
+  - at: investigate
+    title: "How many cards?"
+    type: question
+    q: "A talk has an opening, two points and a close. The speaker makes three cards: the opening, point one and point two. What is the problem?"
+    options: ["Three cards is too many for a short talk", "The close has no card, and it is the part the speaker most needs to get right", "Cards should only be made for the points", "Nothing, because the speaker will remember the close"]
+    answer: 1
+    feedback: ["Four parts need four cards. The number follows the talk.", null, "The opening and the close need cards too. They are what the listeners are left with.", "Speakers often lose the close when they are nervous or short of time."]
+    explain: "Every part of the talk needs a card, and the close most of all. It is the last thing listeners hear."

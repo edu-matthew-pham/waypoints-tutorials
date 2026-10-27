@@ -1,0 +1,47 @@
+summary: "Students tell specific feedback from vague feedback, make a vague comment specific, choose the one change to make first and say how they will know it worked. They then rehearse with a partner in class using a short checklist, and tick the step when they have done it."
+time: 45
+timing: "Predict and Try 8 min · Worked example 8 min · Vary and Practise 10 min · Make 8 min · Rehearsal in class 10 min"
+goals:
+  - I can tell feedback I can act on from feedback I cannot.
+  - I can give a partner specific feedback about what I heard and saw.
+  - I can change one thing and say whether it worked.
+struggle: "Students give kind but vague feedback ('good job'). Ask 'what did you hear, and where?'. Students who receive it say 'okay' and change nothing."
+before: |
+  Do the Try board yourself: eight comments, two labels.
+
+  The one idea: feedback is useful when it names what was heard or seen, and one change is enough to learn from. This lesson covers AC9E4LY07 node 2 (a hinge node: rehearse with a peer, name one specific piece of voice feedback received, and make at least one change to delivery based on it) and AC9E8LY07 node 2 (rehearse and deliver for effect, and reflect on the intended and actual effect of voice choices).
+
+  **The site covers the preparation and the self-check; the rehearsal happens in class.** The site cannot listen to a rehearsal or a partner, and no step records one. The step 'Rehearse with a partner' is a tick the student gives once they have done it. For AC9E4LY07 node 2 the evidence that the student rehearsed with a peer, named a specific piece of feedback and made a change is what you see and hear in class, and what the student writes or says in the step. A short checklist for the listener is in the lesson text; print it or put it on the board. Part of AC9E8LY07 node 2 (delivering) is covered in the challenge lesson, in class. This is a case where the site gives partial coverage of a node; a marker for that is proposed in roadmap/english.md.
+
+  The Try and Practise boards label comments as specific or vague. Each comment has one defensible label: a specific comment says what was heard or seen and where; a vague one gives a verdict or a general instruction. The Vary board gives the specific rewording of each vague comment. The Make step is a reasoning check, so nothing is marked. Either of the two models is a good answer.
+
+  The comments, Nib and the partner are made up for the lesson. Use the checklist in pairs only; do not ask students to give feedback to the whole class or to be rated.
+running:
+  - "Predict: ask what Nib would do tomorrow because of 'That was good'."
+  - "Try: ask for the question that tells you whether a comment is specific: 'what did they hear or see, and where?'."
+  - "Worked example: ask students to turn Nib's entry 2 into a comment Nib could use."
+  - "Vary: ask which rewording the speaker could act on in one minute."
+  - "Rehearse in class: pairs rehearse a short talk or part of one. The listener uses the checklist and writes one thing to keep and one to change. The speaker changes one thing and says it again. Then the pair swap."
+stuck:
+  - see: "A student's feedback is 'it was good'."
+    ask: "What was good? Where?"
+    fix: "Add the what and the where: 'The opening question got my attention.'"
+  - see: "A student changes three things at once."
+    ask: "If it got better, which change did it?"
+    fix: "Change one thing. Say it again. Then decide on the next change."
+  - see: "A student takes feedback as criticism and argues."
+    ask: "What did your partner hear or see? Is it true?"
+    fix: "Ask the partner to say where it happened. Then try the change."
+stretch: "Rehearse a third time. Change a different thing and say which of the two changes helped more."
+support: "The checklist in the lesson text. Sentence starter: 'When you … I could/couldn't …'."
+leads: |
+  Next: the challenge, where students plan, script and cut down a short talk, then give it in class.
+
+  The same feedback habit works in any subject: a science presentation, a drama scene, a sports skill.
+exit:
+  q: "A partner says 'Speak up.' Make that comment specific."
+  a: "Any comment that says where and what: 'The last two sentences were too quiet for me to hear at the back.'"
+explain: |
+  **Specific** feedback says what the listener heard or saw, and where. **Vague** feedback gives a verdict or a general instruction.
+
+  Change **one thing** between rehearsals so you can tell whether it helped.

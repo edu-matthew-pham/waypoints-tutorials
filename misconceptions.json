@@ -603,5 +603,13 @@
   "claim-without-backing": {"home": "english/persuade/judging-and-backing-up", "text": "Making a judgement and giving no detail or source, so a reader has nothing to check."},
   "feature-misnamed": {"home": "english/persuade/features-that-shape-meaning", "text": "Naming a language feature wrongly, so the explanation of its effect does not fit."},
   "device-effect-flipped": {"home": "english/persuade/layers-of-meaning", "text": "Giving a device the wrong effect, such as saying understatement makes a problem sound bigger."},
-  "effective-without-reason": {"home": "english/persuade/judge-the-review", "text": "Calling a language choice good or effective without saying for whom or why."}
+  "effective-without-reason": {"home": "english/persuade/judge-the-review", "text": "Calling a language choice good or effective without saying for whom or why."},
+  "close-new-idea": {"home": "english/speaking/plan-a-talk-with-a-point", "text": "A new idea is put into the close of a talk, where the listener has no time to take it in, because the speaker remembers something at the end instead of fixing the plan."},
+  "read-it-out": {"home": "english/speaking/write-it-to-be-heard", "text": "A script is written like an essay and read out, with long sentences and clauses tucked in the middle, because the writer is thinking of a reader who can look back, not a listener who hears it once."},
+  "cards-are-script": {"home": "english/speaking/cue-cards", "text": "The cue card holds the whole script copied out, so the speaker reads it instead of speaking, because writing more on the card feels safer than trusting the key words."},
+  "register-one-size": {"home": "english/speaking/choose-your-register", "text": "One way of speaking is used for every audience (a joke-filled chat to the principal, or a formal speech to a Year 5 class), because the speaker picks the register they are most comfortable with, not the one the listeners expect."},
+  "voice-one-setting": {"home": "english/speaking/use-your-voice", "text": "A talk is delivered in one steady pace, volume and tone from start to finish, because the speaker aims to get through it, not to use the voice to show what matters."},
+  "transcript-has-voice": {"home": "english/speaking/judge-a-spoken-text", "text": "A transcript is judged as if it showed how the talk sounded, when a transcript has the words only; pace, pitch, volume and pauses are not on the page unless someone marked them."},
+  "slides-repeat-speech": {"home": "english/speaking/visuals-that-help", "text": "The slides repeat what the speaker says, word for word, so the listeners read ahead and stop listening, because the speaker uses the slide as the script."},
+  "feedback-vague": {"home": "english/speaking/rehearse-and-change-one-thing", "text": "Feedback after a rehearsal is general ('it was good', 'speak up') and cannot be acted on, because the listener names a feeling and not what they heard or saw."}
 }

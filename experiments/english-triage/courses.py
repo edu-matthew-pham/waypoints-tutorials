@@ -94,7 +94,7 @@ course('respond', 'Responding to literature', 'Reading literature', '6-8', 'seco
        warm=all_nodes(code(5, 'LE02'), code(5, 'LE01'), code(5, 'LY01')),
        ext=all_nodes(code(9, 'LE02'), code(10, 'LE02'), code(9, 'LE01'), code(10, 'LE01'), code(9, 'LE03'), code(10, 'LE03'), code(10, 'LE04'), code(10, 'LE07'), code(9, 'LY01'), code(10, 'LY01')))
 
-course('speaking', 'Speaking to an audience', 'Speaking and listening', '6-8', 'planned', 2, 'speech shape + cohesion cue mode',
+course('speaking', 'Speaking to an audience', 'Speaking and listening', '6-8', 'built', 2, 'speech shape + cohesion cue mode',
        all_nodes(code(6, 'LY07'), code(7, 'LY07'), code(8, 'LY07')) + nodes(code(7, 'LY02'), 2),
        'Purpose and audience, structure, script to cue cards, voice and visuals, rehearsal, and judging spoken texts from transcripts. Delivery in class.',
        warm=all_nodes(code(4, 'LY07'), code(5, 'LY07')), ext=all_nodes(code(9, 'LY07'), code(10, 'LY07')))

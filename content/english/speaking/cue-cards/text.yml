@@ -1,0 +1,91 @@
+# Texts for "From script to cue cards" (cohesion board, cue mode). [[words#k]] plants an example set of key words.
+
+# region: run
+widget: cohesion
+mode: cue
+max: 6
+p opening: Good morning, Year 5. Today I want to talk about our lost property box. It is overflowing, and I think we can fix that.
+p point1: First, most of the things in it have no name on them. Nobody can tell whose jumper or drink bottle it is.
+p point2: Second, nobody checks the box. Things sit there for months and then get thrown out.
+p close: So please, put your name on your things, and check the box on Fridays. A tidy box means fewer lost jumpers.
+# endregion
+
+# region: run-solution
+widget: cohesion
+mode: cue
+max: 6
+p opening: Good morning, Year 5. Today I want to talk about our [[lost property box#k]]. It is overflowing, and I think we can fix that.
+p point1: [[First#k]], most of the things in it have [[no name#k]] on them. Nobody can tell whose [[jumper#k]] or drink bottle it is.
+p point2: [[Second#k]], [[nobody checks#k]] the box. Things sit there for [[months#k]] and then get thrown out.
+p close: So please, put your [[name#k]] on your things, and [[check#k]] the box on [[Fridays#k]]. A tidy box means fewer lost jumpers.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: cue
+max: 5
+p opening: Hello, everyone. I am here to ask you to join the garden club. We meet every Tuesday at lunch.
+p point1: First, you will grow food you can eat. Last term we grew tomatoes, beans and enough basil for the whole canteen.
+p close: So come along this Tuesday and bring a hat. The beans are waiting.
+# endregion
+
+# region: vary-solution
+widget: cohesion
+mode: cue
+max: 5
+p opening: Hello, everyone. I am here to ask you to join the [[garden club#k]]. We meet every [[Tuesday#k]] at lunch.
+p point1: First, you will [[grow food#k]] you can eat. Last term we grew [[tomatoes#k]], beans and enough [[basil#k]] for the whole canteen.
+p close: So come along this [[Tuesday#k]] and [[bring a hat#k]]. The beans are waiting.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: cue
+max: 6
+p opening: Good morning, everyone. Have you ever needed ten minutes of quiet and had nowhere to go? Today I will explain why our school needs a quiet room.
+p point1: First, lunchtime is loud. The oval, the quad and the library are all full of noise, so students who want calm have to sit on the steps.
+p point2: Second, a quiet room helps everyone. When students can reset for ten minutes, they come back to class ready to learn, and teachers get fewer interruptions.
+p close: So here is my request. Give us one small room, a few cushions and a sign on the door. Then lunchtime works for everyone.
+# endregion
+
+# region: practise-solution
+widget: cohesion
+mode: cue
+max: 6
+p opening: Good morning, everyone. Have you ever needed [[ten minutes of quiet#k]] and had nowhere to go? Today I will explain why our school needs a [[quiet room#k]].
+p point1: [[First#k]], [[lunchtime#k]] is [[loud#k]]. The oval, the quad and the library are all full of noise, so students who want calm have to sit on the [[steps#k]].
+p point2: [[Second#k]], a quiet room helps everyone. When students can [[reset#k]] for [[ten minutes#k]], they come back to class ready to learn, and teachers get [[fewer interruptions#k]].
+p close: So here is my request. Give us one [[small room#k]], a few [[cushions#k]] and a [[sign#k]] on the door. Then lunchtime works for everyone.
+# endregion
+
+# region: make
+widget: cohesion
+mode: cue
+max: 8
+tools: write
+p opening: Hello, Year 7. I want to ask you a question: how do you get to school? If you ride, you know the problem.
+p point1: First, there are only eight bike spots, and forty students ride. That means bikes lean on fences and fall over.
+p point2: Second, a new rack costs less than you think. Local businesses have offered to share the cost, so the school would pay very little.
+p close: So let's ask the principal for a bigger rack. More spots, fewer fallen bikes, and a safer ride to school.
+# endregion
+
+# region: make-solution
+widget: cohesion
+mode: cue
+max: 8
+tools: write
+p opening: Hello, Year 7. I want to ask you a question: [[how do you get to school#k]]? If you ride, you know the problem.
+p point1: [[First#k]], there are only [[eight bike spots#k]], and [[forty students#k]] ride. That means bikes lean on fences and fall over.
+p point2: [[Second#k]], a new rack [[costs less#k]] than you think. Local businesses have offered to [[share the cost#k]], so the school would pay very little.
+p close: So let's ask the principal for a [[bigger rack#k]]. More spots, fewer fallen bikes, and a safer ride to school.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: cue
+max: 6
+answer: on
+p opening: Hello, everyone. Today I want to talk about [[the school bubblers#k]]. Three of them are broken.
+p point1: First, [[students queue#k]] at the one tap that works. Some of them [[miss lunch#k]] by the time they reach the front.
+p close: So please, [[fix the bubblers#k]] this term. A long queue for water should not be part of our day.
+# endregion

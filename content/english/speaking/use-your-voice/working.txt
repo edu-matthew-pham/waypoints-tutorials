@@ -1,0 +1,8 @@
+# Nib's delivery notes for a talk about the wet steps, one line each.
+
+# region: nib
+Opening: warm tone, medium pace, a smile.
+Point 1: steady pace, say 'the steps get wet when it rains'.
+Warning: 'Do not run on the wet steps.' Say it fast and quietly so it takes less time.
+Close: pause, then a slower, warm 'Please walk.'
+# endregion

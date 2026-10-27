@@ -1,0 +1,30 @@
+inquiry:
+  q: "Can you judge a talk you cannot hear?"
+  prompts:
+    - "What would you lose if you only had the words?"
+    - "What would you still be able to say about the talk?"
+  notes: "A transcript shows the shape of the talk and its language, not its sound. Both answers are useful. A strong judge says which is which."
+activities:
+  - at: predict
+    kind: activity
+    title: "Same words, different sound"
+    minutes: 4
+    do: |
+      Read the same two sentences twice: first flat and fast, then slowly with weight on the key word. Ask students what the transcript would look like in each case.
+    notes: "The transcript is the same. The talk is not. That is what a transcript leaves out."
+  - at: investigate
+    kind: discussion
+    title: "Prove it from the words"
+    minutes: 5
+    do: |
+      For each of Nib's notes, ask students to point to the words in the transcript that prove it. Stop at the note with nothing to point to.
+    notes: "The unsupported note is about how the speech sounded and how the speaker felt."
+questions:
+  - at: investigate
+    title: "What does the repeat do?"
+    type: question
+    q: "A speaker says, 'The tap is dry. The tap is dry. The tap is dry.' What is the likely effect on listeners?"
+    options: ["It makes the speech shorter", "It shows the speaker has run out of ideas", "It hammers the point home, so listeners remember the problem", "It tells listeners the tap has been fixed"]
+    answer: 2
+    feedback: ["It makes the speech a little longer, not shorter.", "A repeat is a choice. It is used on purpose to stress a point.", null, "It says the opposite: the tap is still dry."]
+    explain: "A repeat puts the same words in front of the listeners again and again, so the point sticks. This is the effect a judge should name."

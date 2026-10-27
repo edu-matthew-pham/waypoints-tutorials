@@ -1,0 +1,48 @@
+# Texts for "Judge a spoken text" (cohesion parts and chain).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: question signpost repeat fact call
+s question: Has anyone here ever wanted ten minutes of quiet at lunch?
+s signpost: First, let's talk about the oval.
+s repeat: The oval is loud. The quad is loud. The library is loud.
+s fact: Last term the noise meter in the library read eighty-five on a busy lunch.
+s signpost: Second, let's talk about what quiet does.
+s call: So give us a quiet corner.
+start: 4,1,6,3,5,2
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+layout: blocks
+roles: helps hurts
+s helps: [slows down] Only two of the twelve taps work.
+s hurts: [mumbles] Please stay off the steps.
+s helps: [pauses] So give us a quiet corner.
+s hurts: [rushes past] The main point is that the oval is too loud.
+s helps: [louder] Do not touch the wires.
+s hurts: [jokey tone] Sadly, the school pet has died.
+start: 5,2,6,1,4,3
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: [[You#a]] know the feeling. [[We#a]] have all stood in that queue. Imagine the tap is dry and [[your#a]] bottle is empty. The tap is dry. The queue is long.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: question signpost repeat call
+answer: on
+s question: Has anyone here ever wanted ten minutes of quiet?
+s signpost: First, let's talk about the oval.
+s repeat: Loud, loud, loud.
+s call: So give us a quiet corner.
+# endregion

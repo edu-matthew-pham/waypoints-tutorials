@@ -1,0 +1,76 @@
+# Texts for "Challenge: prepare a talk" (cohesion parts and cue, sentence write).
+
+# region: plan
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+tools: text
+s opening:
+s point:
+s detail:
+s point:
+s detail:
+s close:
+# endregion
+
+# region: plan-solution
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+s opening: Ask the class who has ever wished lunch were a bit longer. Then say there is a simple way to get ten more minutes.
+s point: First, the lunch queue wastes time.
+s detail: Last week it took nine minutes for the last student to be served.
+s point: Second, a second serving window would fix it.
+s detail: The canteen has a spare window that is never opened.
+s close: Say it again: queue, window, ten minutes. Then ask the class to support the idea.
+# endregion
+
+# region: script
+widget: sentence
+mode: write
+counts: short long
+# endregion
+
+# region: script-solution
+widget: sentence
+mode: write
+as: student
+counts: short long
+p: Who here has ever wished lunch were a bit longer? Today I want to show you how to get ten more minutes. First, the queue wastes time. Last week the last student was served after nine minutes. That is nine minutes of lunch gone. The canteen has a spare window that is never opened.
+# endregion
+
+# region: cards
+widget: cohesion
+mode: cue
+max: 8
+tools: write
+p opening: Who here has ever wished lunch were a bit longer? Today I want to show you how to get ten more minutes.
+p point1: First, the queue wastes time. Last week the last student was served after nine minutes. That is nine minutes of lunch gone.
+p point2: Second, a second serving window would fix it. The canteen has a spare window that is never opened, and two helpers could run it.
+p close: So please back the idea. One more window, ten more minutes, and a lunch that is really a lunch.
+# endregion
+
+# region: cards-solution
+widget: cohesion
+mode: cue
+max: 8
+tools: write
+p opening: Who here has ever wished [[lunch#k]] were a bit longer? Today I want to show you how to get [[ten more minutes#k]].
+p point1: [[First#k]], the [[queue wastes time#k]]. Last week the last student was served after [[nine minutes#k]]. That is nine minutes of lunch gone.
+p point2: [[Second#k]], a [[second serving window#k]] would fix it. The canteen has a spare window that is never opened, and [[two helpers#k]] could run it.
+p close: So please back the idea. [[One more window#k]], ten more minutes, and a lunch that is really a lunch.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: opening point detail close
+answer: on
+s opening: Ask who has ever wished lunch were longer. Then say there is a way to get ten more minutes.
+s point: First, the lunch queue wastes time.
+s detail: The last student was served after nine minutes.
+s close: Say it again: queue, window, ten minutes. Then ask the class to back the idea.
+# endregion

@@ -1,0 +1,11 @@
+# Nib's plan for a talk to Year 5 about the new library beanbags, one line each.
+
+# region: nib
+Opening: Ask who has ever read in a really uncomfortable chair.
+Point 1: The new beanbags are for reading, not for sleeping.
+Detail: There are twelve, and they sit in the quiet corner.
+Point 2: You can book a beanbag for lunchtime.
+Detail: The booking sheet is on the library door.
+Close: Say it again: read, book, relax. Then ask them to try one this week.
+Close: Finish by telling them the library now has a new printer for homework.
+# endregion

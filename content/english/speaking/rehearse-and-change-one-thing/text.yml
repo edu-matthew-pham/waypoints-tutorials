@@ -1,0 +1,48 @@
+# Texts for "Rehearse and change one thing" (cohesion parts and gaps).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: specific vague
+s specific: I couldn't hear the last sentence.
+s vague: That was good.
+s specific: You sped up on the numbers, so I lost them.
+s vague: Speak up.
+s specific: Your voice went up at the end of the facts, so they sounded like questions.
+s vague: It was boring.
+s specific: You read the cards for the whole second point.
+s vague: Be more confident.
+start: 4,1,7,3,8,5,2,6
+# endregion
+
+# region: vary
+widget: cohesion
+p: Nib's partner says, 'That was good.' A more useful comment would be [[{Good job overall.|You slowed down on the number, and I remembered it.|I thought it was fine.}=You slowed down on the number, and I remembered it.]]
+p: Nib's partner says, 'Speak up.' A more useful comment would be [[{The last two sentences were too quiet for me to hear at the back.|Louder.|Be bolder.}=The last two sentences were too quiet for me to hear at the back.]]
+p: Nib's partner says, 'You were fast.' A more useful comment would be [[{Try harder to slow down.|You were quite fast.|You sped up in the second point and I lost the numbers.}=You sped up in the second point and I lost the numbers.]]
+# endregion
+
+# region: practise
+widget: cohesion
+mode: parts
+layout: blocks
+roles: specific vague
+s specific: You paused before 'one more helper', and it made me listen.
+s vague: Nice.
+s specific: I lost you when you read the cards without looking up.
+s vague: It was okay.
+s specific: The warning was quieter than the rest of the talk.
+s vague: Try harder.
+start: 3,6,1,5,2,4
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+roles: specific vague
+answer: on
+s specific: I couldn't hear the last sentence.
+s vague: That was good.
+# endregion

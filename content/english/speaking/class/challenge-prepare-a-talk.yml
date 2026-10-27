@@ -1,0 +1,37 @@
+inquiry:
+  q: "What makes a talk worth listening to?"
+  prompts:
+    - "Think of a talk at assembly that you remember. What did the speaker do?"
+    - "What did they not do?"
+  notes: "Students name a clear point, a voice that varied and a speaker who looked up. These are the things the course has covered."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Say your aim"
+    minutes: 4
+    do: |
+      Partners read each other's plan and say the aim back: 'After this talk, my class will …'. If they cannot, the plan needs an aim.
+    notes: "This catches talks that are only topics. Fix the aim before the script."
+  - at: end
+    kind: activity
+    title: "Rehearse and change one thing"
+    minutes: 12
+    do: |
+      Pairs rehearse from their cards. The listener uses the checklist and writes one thing to keep and one to change. The speaker changes one thing and says it again. Then the pair swap.
+    notes: "Stop any pair whose feedback is only 'good'. Ask 'what did you hear, and where?'."
+  - at: end
+    kind: activity
+    title: "Give the talk"
+    minutes: 20
+    do: |
+      Each student gives their talk from cards. Listeners use the checklist and give one specific comment to each speaker, in pairs afterwards or on a slip.
+    notes: "Keep it low-stakes and supportive. Offer a second go. Tick the delivery criteria from what you see and hear."
+questions:
+  - at: end
+    title: "What was the plan for?"
+    type: question
+    q: "After her talk, a student says, 'I planned to slow down at the close, but I sped up.' What is the most useful next step?"
+    options: ["Decide she is a bad speaker", "Put the plan away and speak without one", "Mark the slow-down on her card and rehearse the close again", "Give the same talk without a close"]
+    answer: 2
+    feedback: ["One slip does not say that, and it is not a useful judgement.", "The plan is how she noticed. It is a tool, not a test.", null, "The close is where listeners are asked to act. Cutting it would lose that."]
+    explain: "Comparing the plan with what happened shows what to change. Marking the cue and rehearsing it again is the next step."

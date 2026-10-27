@@ -1,0 +1,30 @@
+inquiry:
+  q: "What is the most useful thing a listener can tell a speaker?"
+  prompts:
+    - "Think of a time you got a comment on a piece of work. What made it useful, or not?"
+    - "What would you want a listener to say about your talk?"
+  notes: "Keep it about work, not people. Students usually say 'something I can do about it'. That is the test for specific feedback."
+activities:
+  - at: predict
+    kind: activity
+    title: "Good, but what?"
+    minutes: 4
+    do: |
+      Ask a volunteer to say a short line aloud twice. After each, the class says one comment. Collect them on the board and sort them into 'I could change something' and 'I could not'.
+    notes: "Lines like 'good' and 'loud' land in the second group, which leads into the Try board."
+  - at: make
+    kind: activity
+    title: "Rehearse, listen, change one thing"
+    minutes: 12
+    do: |
+      In pairs, the speaker says a short part of their talk. The listener uses the checklist and writes one thing to keep and one to change. The speaker changes one thing and says it again. Then the pair swap.
+    notes: "Walk round and listen for specific comments. Stop any pair whose feedback is only 'good'. Ask 'what did you hear, and where?'."
+questions:
+  - at: investigate
+    title: "Make it useful"
+    type: question
+    q: "A listener says 'Be more confident.' Which version could the speaker act on?"
+    options: ["Be much more confident.", "You looked at the floor for the whole opening, so I felt you weren't sure.", "Confidence is important.", "You sounded confident, I guess."]
+    answer: 1
+    feedback: ["It repeats the instruction and says nothing more about what to change.", null, "It is a general remark about confidence, not about this talk.", "It is a guess, not something the listener heard or saw."]
+    explain: "The useful version says what the listener saw and where. The speaker can lift their eyes in the opening."

@@ -478,6 +478,18 @@ step gets its own slide. For written claims, explanations and arguments use the 
 The lesson shape guide in Create's prompts (`create/shape-guide.mjs`) covers sequence, guidance and width, including reading
 Waypoints Kit node files for success criteria, misconceptions, width and `response_modes`.
 
+### Speeches (`shape: speech`)
+
+`shape: speech` (27 Oct 2026) is for a lesson that gets students ready to give a talk, in any subject (English's Speaking to an
+audience course, a science speech on climate change). It names the stages in speech words on the same stages as every shape:
+`predict` = **Purpose and audience**, `investigate` = **Plan** (opening, two or three points, close), `make` = **Script**,
+`modify` = **Cue cards**, `practise` = **Rehearse**, `info` = **Present and check**. Steps may come in any order and any can
+be left out. The page plans, scripts and checks; **rehearsing and presenting happen in class**, so those steps say so and
+carry a `running:` line in `teacher.yml`. Nothing listens to students or judges delivery. Use `language: science` (no board) or
+the board's language; a `reasoning` check (write, compare with a model, tick the self-check) suits the Script step, and the
+cohesion board's `mode: cue` makes the cards (AUTHORING › `widget: cohesion`). Decks and worksheets use the step titles; the
+first step is "Purpose and audience", not a prediction. In Create it is the **Speech: plan, script, cue cards** structure.
+
 ### `insight:` (what the step is for)
 
 A step or a task can have `insight: "..."`: one sentence on what students should come to see. It is shown to teachers only, in **For teachers › What each step is for**.
@@ -1596,6 +1608,22 @@ Vary, Practise, Make).
     once the first Predict is locked, so it must not answer a Try, Vary or Practise board), keep each arrow's word on
     the same line as its target (the picture is drawn on a 460px paper), and `check-cohesion` fails a step that
     uses `answer: on` and a cohesion picture that does not.
+    **`mode: cue` (27 Oct 2026, English › Speaking to an audience):** a script cut down to cue cards. One `p <name>: text`
+    line per section of the script (`opening`, `point1`, `point2`, `close`; `role point1: Point 1` sets the name shown, and
+    sections with no name are called Opening, Point n and Close by place). The student clicks the words they would need to
+    say it (a word is a key word until clicked again; the keyboard works) and the board shows one card per section, with
+    the key words in order and a word count. `max: 12` (3 to 40) is the most words a card may hold; a card over it is
+    marked. `[[words#k]]` plants an example set of key words, used only for `answer: on` pictures and `-solution` regions:
+    a student's board starts with none picked, and cue mode takes no other marks and no gaps. `tools: write` adds **Use my
+    own script** (paste a script, one paragraph per section). **Print cue cards** (index-card pages, two across) and **Print
+    highlighted script** (the whole script, key words highlighted) are on the board's toolbar, for delivery from cards or
+    from a highlighted script. The board counts and never judges which words are the right ones. Values for `when:`:
+    `n_sections`, `n_cards` (sections with at least one key word), `n_missing`, `n_key_words`, `max_card_words`, `n_over`
+    (cards over the limit), `script_words`, `key_pct` (key words as a whole-number percentage of the script). A check text
+    must say what it counts, such as "a card in every section, none over 12 words, and the key words no more than a
+    quarter of the script" (`n_cards = n_sections and n_over = 0 and key_pct <= 25`). `npm run check-cue` tests the core,
+    checks that each model set of cards follows those limits and that a check using them says so;
+    `node experiments/cue-smoke.mjs` tests the page and the print sheets in a headless browser (build the boards first).
   - `widget: sentence` (English › Building sentences, 27 Oct 2026): a sentence on paper that the student builds,
     punctuates or writes. `mode: build`: `tile id: text` (written as it sits mid-sentence, lower case; a trailing `^`
     adds a comma when the tile is first; the first tile is capitalised), `decoy id: text` (a piece that does not belong),

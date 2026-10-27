@@ -1,0 +1,30 @@
+inquiry:
+  q: "How much of a talk can a listener keep?"
+  prompts:
+    - "Think of a talk you heard at assembly. What can you still say from it?"
+    - "Why do you think that part stayed?"
+  notes: "Use assembly, not a named person's talk. Listen for one idea, not a list. That is the point of an aim."
+activities:
+  - at: predict
+    kind: activity
+    title: "Say it back"
+    minutes: 4
+    do: |
+      Read a made-up announcement (one idea, one detail, one action) aloud once. Ask students to write down everything they remember. Then read a second announcement with seven ideas and do the same.
+    notes: "The count of what they remember is the point: most hold two or three."
+  - at: investigate
+    kind: discussion
+    title: "Say the aim back"
+    minutes: 5
+    do: |
+      Partners swap plans. Each reads the opening and close and says the aim: 'After this talk, I will …'.
+    notes: "If the partner cannot say it, the opening and close do not match the aim."
+questions:
+  - at: investigate
+    title: "What is its job?"
+    type: question
+    q: "'So remember: choose, meet, read. Come to the library next Thursday.' Which part of a plan is this?"
+    options: ["The opening", "A point", "The close", "A detail"]
+    answer: 2
+    feedback: ["An opening would say what the talk is about and why to listen.", "A point is one main idea. This line repeats the three points.", null, "A detail is a fact or example. This line asks the listener to do something."]
+    explain: "It says the main ideas again and tells listeners what to do, which is the close's job."

@@ -1,0 +1,9 @@
+# Nib's script for the principal and the school council about the bus queue, one line each.
+
+# region: nib
+Good afternoon, Principal and members of the council.
+I would like to report a problem with the bus queue after school.
+Students wait up to fifteen minutes in the sun before the first bus leaves.
+Yo, the queue's a joke, honestly.
+We recommend that a second bus lane is opened at three o'clock.
+# endregion

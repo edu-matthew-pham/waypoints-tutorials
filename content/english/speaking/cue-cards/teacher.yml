@@ -1,0 +1,47 @@
+summary: "Students pick the key words that bring each part of a script back to mind on the cue board, find the card that is really a script, cut three scripts down with a card limit and a quarter-of-the-script limit, and print cards for a talk of their own."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary and Practise 12 min · Make 10 min · Own class 5 min"
+goals:
+  - I can pick the key words that bring a part of my talk back to mind.
+  - I can keep each cue card short enough to take in at a glance.
+  - I can print cue cards and say my talk from them.
+struggle: "Students copy the script onto the cards 'just in case'. Ask them to cover the script and say a part from the card: the words they did not need are the ones to cut."
+before: |
+  Do the Try board yourself: click the words you would need, then read the cards.
+
+  The one idea: a cue card is a reminder, not a copy. The lesson is tagged AC9E6LY07 node 1 (organise ideas and choose vocabulary for a presentation), because choosing key words is choosing the vocabulary that carries each part. Delivery from the cards happens in class (node 3 of the same descriptor is tagged on the challenge).
+
+  What the board counts: a key word is any word the student clicks; neighbouring key words stay together on a card, and a full stop, comma, colon, semicolon, question mark or exclamation mark after a key word is dropped. A card is "over" when it holds more than the limit named in the step (6, 5 or 8). The percentage is key words as a share of the script, rounded to a whole number. The board never judges which words are the right ones; a student tests that by covering the script and speaking.
+
+  Print cue cards makes index-card pages two across (92 by 58 mm cards). Print highlighted script prints the whole script with the key words marked, for a speaker who wants more on the page. Both open the browser's print dialog.
+
+  The lost property box, garden club, quiet room and bike rack scripts are made up for the lesson.
+running:
+  - "Predict: ask what they would need on a card to say the days of the week in order. Most say 'almost nothing'."
+  - "Try: ask what a card is, if the script is the talk."
+  - "Worked example: ask what Nib would do with card 3 in front of an audience."
+  - "Vary: with five words allowed, ask which words had to go."
+  - "Make: partners say a part of the talk from the cards while the speaker covers the script. Rehearse and present in class."
+stuck:
+  - see: "A student clicks nearly every word."
+    ask: "If you could only keep one word from this sentence, which would you keep?"
+    fix: "Cut to the word or phrase that carries the idea."
+  - see: "A student's cards are empty for one part."
+    ask: "How will you remember this part?"
+    fix: "Add one or two key words for it. Every part needs a card."
+  - see: "A student picks only the first words of each sentence."
+    ask: "Do those words bring the idea back, or just the start?"
+    fix: "Pick the words that name the idea, not the ones that start the sentence."
+stretch: "Make a second set of cards with half as many words. Say the talk from them, and decide which set worked better and why."
+support: "A card: Cover the script. Say the part. Which word did you need? Keep only those."
+leads: |
+  Next: choosing the register that suits the listeners.
+
+  Cue cards work in any subject's talk. A science report can put the key term, the number and the conclusion on each card.
+exit:
+  q: "Nib's card for a part of the talk has three whole sentences on it. What is wrong, and what should be on it?"
+  a: "It is the script. Nib will read it instead of speaking. The card should hold only the key words, and any number or name that has to be right."
+explain: |
+  A **cue card** holds the **key words** for one part of the talk, so you can look up and **say** it instead of reading it.
+
+  Keep each card short. Put on it what you are most likely to forget: an idea word, a number or a name.

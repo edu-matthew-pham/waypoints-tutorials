@@ -1,0 +1,38 @@
+# Texts for "Choose your register" (wordchoice scale and swap, cohesion chain and parts).
+
+# region: run
+widget: wordchoice
+mode: scale
+bands: Casual | Everyday | Formal
+word a: Hey guys, listen up! = 1
+word b: Good morning, everyone. = 2
+word c: Good morning, Mr Singh, and welcome. = 3
+word d: I reckon it's a ripper idea. = 1
+word e: I think it is a good idea. = 2
+word f: We recommend that the school adopts this proposal. = 3
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Casual | Everyday | Formal
+before: Choose the formal wording for each gap.
+p: On behalf of the committee, I [[{wanna say thanks@1|want to thank@2|would like to thank@3}=would like to thank]] our guests.
+p: The fair [[{was a total ripper@1|went really well@2|has been a great success@3}=has been a great success]] this year.
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: [[Hey#a]] everyone, thanks for coming. I [[reckon#a]] the sports day was a great success, [[mate#a]]. There were [[heaps#a]] of events, and every house took part. The winners will be announced at assembly. [[Catch you later#a]].
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: To a friend | To the principal
+word a: The queue's a joke. = 1
+word b: Students wait up to fifteen minutes. = 2
+# endregion

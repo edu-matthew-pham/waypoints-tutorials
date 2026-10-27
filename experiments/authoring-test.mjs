@@ -33,4 +33,11 @@ assert.equal(pl.shape,'primer');assert.ok(pl.steps.some(s=>s.config.check?.type=
 const md=stages=>'---\ntitle: T\nsummary: S\nlanguage: science\nshape: primer\n---\n'+stages.map((s,i)=>`## Step ${i+1}\n\n\`\`\`step\nstage: ${s}\n\`\`\`\n\nText.\n`).join('\n');
 assert.deepEqual(validateLessonCore(parseLessonText(md(['make','predict','info','investigate','predict']),'o'),()=>undefined),[],'any stage order validates');
 assert.equal(STAGE_INFO_PRIMER.make[0],'Apply');
+// Speech shape (27 Oct 2026): a profile, a starter that validates, and speech words on the page.
+{const {STAGE_INFO_SPEECH}=await import('../tools/lesson-view.mjs');
+assert.equal(LESSON_PROFILES.speech.shape,'speech');assert.equal(STAGE_INFO_SPEECH.predict[0],'Purpose and audience');assert.equal(STAGE_INFO_SPEECH.modify[0],'Cue cards');
+const sp=starterFiles({profile:'speech',playgroundId:'none',title:'A talk'}),sl=parseLessonText(sp['lesson.md'],'s');
+assert.equal(sl.shape,'speech');assert.deepEqual(sl.steps.map(s=>s.title),['Purpose and audience','Plan','Script','Cue cards','Rehearse','Present and check']);
+assert.ok(sl.steps.some(s=>s.config.check?.type==='reasoning'),'the speech starter shows a script check');
+assert.deepEqual(validateLessonCore(sl,()=>undefined),[],'the speech starter validates');}
 console.log('Lesson shape guide in both prompts; Primer and None starters; any stage order');}

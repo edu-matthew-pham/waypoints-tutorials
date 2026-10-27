@@ -1,0 +1,9 @@
+# Nib's script about the school bubblers, one sentence per line.
+
+# region: nib
+Good morning, Year 5. Today I want to talk about our school bubblers.
+Three of them are broken, and that is a problem.
+The bubblers by the oval, which were fitted a long time ago before the new courts were built, are among the three that we cannot use, so students line up at the single working tap.
+So here is my idea: fix them this term.
+In short, three broken bubblers means a long queue for water.
+# endregion

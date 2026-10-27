@@ -26,6 +26,14 @@ pathways:
       - { path: english/texts, id: texts, stage: foundations, tagline: "See the plan inside a text, then use it." }
       - { title: Images and layout, stage: foundations, after: [texts], summary: "How images, diagrams and layout make meaning in visual and multimodal texts.", tagline: "Read a picture as closely as a paragraph." }
       - { title: Literary ideas, stage: extensions, summary: "Point of view, narrative structure, imagery and symbolism, with short public-domain extracts.", tagline: "The tools writers use to make you feel something." }
+  - id: speaking
+    title: Speaking and listening
+    summary: "Preparing a talk and judging a spoken text: purpose and audience, a plan, a script written for the ear, cue cards, register, voice, visuals and feedback."
+    fit: "Use these before a class talk: plan it, script it, cut it to cards, then rehearse and give it in class."
+    about: "**Speaking and listening** follows the presenting thread of the Australian Curriculum: English (Version 9), from planning through rehearsing to delivering (AC9E4LY07 to AC9E8LY07), and the evaluation of spoken texts (AC9E7LY02). The first course, **Speaking to an audience**, plans, scripts and checks. **Rehearsing and presenting happen in class.** Nothing on the site listens to a talk or judges how anyone sounds; a partner or you do that, and each step says so. Spoken texts are judged from made-up transcripts."
+    courses:
+      - { path: english/speaking, id: speaking, stage: foundations, tagline: "Plan a talk, write it to be heard, and keep your voice in charge." }
+      - { title: Discussion moves, stage: foundations, after: [speaking], summary: "Taking part in discussion: building on others' ideas, disagreeing well and keeping a talk on track.", tagline: "Say it so the talk moves forward." }
 purposes:
   - id: analytical
     title: Analytical
@@ -50,7 +58,7 @@ purposes:
       - { path: english/persuade }
       - { path: english/texts, note: "argument" }
       - { path: english/words }
-      - { title: Speaking to an audience }
+      - { path: english/speaking }
       - { title: Discussion moves }
   - id: informative
     title: Informative

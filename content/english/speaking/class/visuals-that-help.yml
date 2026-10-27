@@ -1,0 +1,30 @@
+inquiry:
+  q: "Does a talk need slides at all?"
+  prompts:
+    - "What can a speaker do without slides that a slide cannot do?"
+    - "What can a slide show that a speaker cannot say?"
+  notes: "Some of the best talks have no slides. The question for each visual is what it adds. If nothing, leave it out."
+activities:
+  - at: predict
+    kind: activity
+    title: "Read it and listen"
+    minutes: 4
+    do: |
+      Show a slide with a paragraph of text. Say a different paragraph about the same topic aloud. Ask students what they remember, and which they followed.
+    notes: "Most follow the text and lose the speaker, which shows how reading beats listening."
+  - at: investigate
+    kind: discussion
+    title: "What could go on slide 2?"
+    minutes: 5
+    do: |
+      Ask pairs to decide what Nib could put on slide 2 so it adds something. Collect ideas and ask what each shows that the words cannot.
+    notes: "Good answers are charts, maps and drawings. A student who suggests more text should say what it adds."
+questions:
+  - at: investigate
+    title: "Which visual adds?"
+    type: question
+    q: "A speaker says, 'Last year we recycled twice as much as the year before.' Which visual adds the most?"
+    options: ["The sentence 'We recycled twice as much' in large letters", "A cartoon of a recycling bin that bounces", "Two bars side by side, one twice the height of the other", "A photo of the school gate"]
+    answer: 2
+    feedback: ["That repeats the speaker. Listeners read it and stop listening.", "It moves and has no information. It distracts.", null, "It is about the school, but it shows nothing about the recycling."]
+    explain: "Two bars show 'twice as much' at a glance. The picture does what the words cannot do as quickly."

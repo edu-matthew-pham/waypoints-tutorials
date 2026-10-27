@@ -1,0 +1,36 @@
+# Texts for "Write it to be heard" (cohesion chain and gaps, sentence write).
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 1
+p: [[First#a]], let's talk about the oval. It is wet, and it stays wet for days. [[Second#a]], let's talk about the gym. It is dry, and it is big. [[So#a]] my idea is simple: train in the gym when it rains. [[In short#a]], wet oval, dry gym.
+# endregion
+
+# region: vary
+widget: cohesion
+p: [[{Tides result from lunar gravitational attraction.|The moon pulls on the sea, and that makes the tide.}=The moon pulls on the sea, and that makes the tide.]]
+p: [[{Erosion means wind and water wear the land away.|Erosion, defined as the wearing away of land by wind and water, is occurring.}=Erosion means wind and water wear the land away.]]
+p: [[{Improvement was observed among most participants.|Most of the people in the trial got better.}=Most of the people in the trial got better.]]
+# endregion
+
+# region: practise
+widget: sentence
+mode: write
+counts: short long
+start: "The oval, which has been wet since the storm last week and which the groundskeeper says will not be usable until the drains are cleared, is why all training has moved to the gym, where space is limited."
+# endregion
+
+# region: practise-solution
+widget: sentence
+mode: write
+as: student
+counts: short long
+p: The oval has been wet since the storm last week. The groundskeeper says it cannot be used until the drains are cleared. So all training has moved to the gym. Space there is limited.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+answer: on
+p: [[{Tides result from lunar gravitational attraction.|The moon pulls on the sea, and that makes the tide.}=The moon pulls on the sea, and that makes the tide.]]
+# endregion

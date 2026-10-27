@@ -1,0 +1,8 @@
+# Nib's four cue cards for a talk about the lost property box, one card per line.
+
+# region: nib
+Card 1: lost property box
+Card 2: First, no name, jumper
+Card 3: Second, nobody checks the box. Things sit there for months and then get thrown out. It is a waste of good jumpers.
+Card 4: name, check, Fridays
+# endregion

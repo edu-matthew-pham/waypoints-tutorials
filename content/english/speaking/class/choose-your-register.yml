@@ -1,0 +1,30 @@
+inquiry:
+  q: "Who decides what is the right way to speak?"
+  prompts:
+    - "Do you speak the same way at home, at lunch and in class?"
+    - "What do listeners expect, and where does that come from?"
+  notes: "Every way of speaking is valid for its group. The lesson is about matching a talk to its listeners, not ranking ways of speaking. Keep the examples about the made-up talks."
+activities:
+  - at: predict
+    kind: activity
+    title: "One message, three voices"
+    minutes: 4
+    do: |
+      Say 'The oval is closed today' three times: to a close friend, to the class, to a visiting official. Ask what changed each time.
+    notes: "Students hear word choice, pace and tone change together. Name register once."
+  - at: investigate
+    kind: discussion
+    title: "Which line would the council remember?"
+    minutes: 5
+    do: |
+      Read Nib's script aloud. Ask the class which line the council would remember, and what they would think of Nib because of it.
+    notes: "The casual line stands out. The council would judge Nib by it, which shows register carries a message of its own."
+questions:
+  - at: investigate
+    title: "Fact or view?"
+    type: question
+    q: "A speaker reports the results of a school survey to the council. Which sentence is objective?"
+    options: ["The survey was really annoying to fill in.", "Everyone will agree the canteen is awful.", "Of the 120 students asked, 84 said the queue is too long.", "I feel the queue is terrible."]
+    answer: 2
+    feedback: ["That is the speaker's feeling about the survey, not a result.", "It claims everyone agrees and gives no evidence. It is opinion.", null, "That is the speaker's own feeling, which is subjective."]
+    explain: "Objective language states what was found, with figures. The others give the speaker's feelings or a view."

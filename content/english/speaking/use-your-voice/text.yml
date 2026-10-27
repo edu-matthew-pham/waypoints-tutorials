@@ -1,0 +1,41 @@
+# Texts for "Use your voice on purpose" (cohesion chain, parts and gaps).
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 1
+p: Who is coming on Friday? [[Maya#a]] is coming on Friday.
+p: When is Maya coming? Maya is coming on [[Friday#a]].
+p: Is Maya coming or going? Maya is [[coming#a]] on Friday.
+# endregion
+
+# region: vary
+widget: cohesion
+mode: parts
+layout: blocks
+roles: pace volume pitch tone
+s pace: Slow down when you say the number.
+s volume: Say the warning louder than the rest.
+s pitch: Let your voice rise at the end of the question.
+s tone: Use a warm, kind voice to say sorry.
+s pace: Speed up when the story gets exciting.
+s volume: Say the secret very softly.
+s pitch: Make your voice higher to show surprise.
+s tone: Sound serious when you talk about the accident.
+start: 3,6,1,8,5,2,7,4
+# endregion
+
+# region: practise
+widget: cohesion
+p: 'We raised four thousand dollars for the flood appeal.' [[{Say it in a flat, fast voice.|Say it with a proud, steady tone.|Whisper it and look at the floor.}=Say it with a proud, steady tone.]]
+p: 'Do not touch the wires.' [[{Say it quickly and softly.|Say it slowly and clearly, a little louder.|Say it in a bouncy voice.}=Say it slowly and clearly, a little louder.]]
+p: 'You won the prize!' [[{Say it in a flat voice.|Say it in a slow, sad tone.|Let your pitch rise and say it with energy.}=Let your pitch rise and say it with energy.]]
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: chain
+colours: 1
+answer: on
+p: Who took the bike? [[Sam#a]] took the bike.
+# endregion

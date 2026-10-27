@@ -1,0 +1,49 @@
+summary: "Students plan, script and cut down a one-minute talk on a change they would like to see in the school, rehearse it with a partner in class, give it in class, and check what they did against what they planned. The site plans, scripts and checks; delivery is yours to see."
+time: 60
+timing: "Predict and plan 12 min · Script 12 min · Cue cards 10 min · Rehearse in class 12 min · Present in class (over one or two lessons) · Check against the plan 8 min"
+goals:
+  - I can plan, script and cut down a short talk for a real audience.
+  - I can rehearse it with a partner and change one thing because of their feedback.
+  - I can compare what I meant my voice to do with what it did.
+struggle: "Students prepare well and then read the script. Ask them to put the script away before they present; the cards are the only page in their hand."
+before: |
+  Do the plan board yourself with a topic of your own, then print the cards.
+
+  The one idea: the whole course in one piece of work. This lesson is tagged AC9E4LY07 node 3, AC9E6LY07 node 3 and AC9E8LY07 node 2, which are about **delivering** a talk. **The site covers the preparing and the self-check; you see the delivery.** Nothing here listens to a talk, and no step records one. Tick the node's criteria from what you see and hear in class: a clear structure with an opening and a close, at least one complex sentence said aloud, at least one deliberate voice choice (pace, volume, pitch or tone varied for effect), a theme with at least three points where the descriptor asks for them, and a precise topic word or two. The student's reasoning at the end gives their own account of the intended and actual effect of one voice choice, which is what AC9E8LY07 node 2 asks them to reflect on. A partial-coverage marker for steps like these is proposed in roadmap/english.md.
+
+  Choose the audience (the class, a Year 5 buddy class, parents at an event) and the time (about a minute). Students choose a change for the school, so the topic is theirs; no one is asked anything personal. Keep topics low-stakes and school-based. Nib's lunch example in the plan and cards boards is made up for the lesson.
+
+  What the boards count: the plan board counts filled lines and correct labels; the script board counts sentences and those with 15 or more words; the cue board counts cards, words per card (limit 8) and key words as a share of the script (a quarter at most). None of them judges the content. Whether the plan suits the class, whether the register fits and whether the script sounds natural are for a partner or you to judge by listening.
+
+  Print cue cards gives index cards two across a page. Print highlighted script is there for a student who needs more on the page.
+running:
+  - "Predict: ask which of the earlier lessons the listener's verdict is about."
+  - "Plan: partners say the aim back. If they cannot, it needs fixing before the script."
+  - "Script: students read it aloud once, quietly, and mark where they run out of breath."
+  - "Cue cards: cover the script and say one part from the cards. Add a word where they got stuck."
+  - "Rehearse: pairs use the checklist, then change one thing and say it again. In class."
+  - "Present: each student gives the talk, from cards. Listeners use the checklist. Allow a second go for anyone who wants it."
+  - "Check: the reasoning step is written after presenting. Read a few to see what students noticed about their own voice."
+stuck:
+  - see: "A student reads the script aloud, word for word, when presenting."
+    ask: "What are the cards for?"
+    fix: "Put the script away. Cards only. Pause and look up between parts."
+  - see: "A student's talk runs well over the time."
+    ask: "Which point would your listeners miss least?"
+    fix: "Cut a point or a detail. A shorter talk said well is better."
+  - see: "A student freezes when presenting."
+    ask: "What is the first key word on your first card?"
+    fix: "Offer a second go, perhaps to a partner first. Do not press."
+stretch: "Give the talk a second time to a different audience, such as Year 5, and change the register and one visual."
+support: "The cue board's sample script, a checklist card, and a partner who listens first. Rehearse to a partner before the class."
+leads: |
+  Next: the course Discussion moves (planned) takes the same attention to listeners into talk with others.
+
+  The same preparing steps work for any subject's oral task: a science report, a history talk, a drama monologue.
+exit:
+  q: "Name one choice you made in your talk and say what you meant it to do for your listeners."
+  a: "Any choice with its reason: 'I slowed down at the close so the request would be heard.'"
+explain: |
+  A talk is prepared in steps: a **plan** with an aim, a **script** written for the ear, **cue cards** with the key words, a **rehearsal** with a partner and one change.
+
+  Then you **present** and **check** what you meant against what happened.

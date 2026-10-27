@@ -66,6 +66,18 @@ export const STAGE_INFO_PRIMER = {
   make: ['Apply', 'Use the idea on your own class text or topic.'],
   info: ['Info', ''],
 };
+/** Speeches (shape: speech, 27 Oct 2026): a talk for any subject. Same stages, speech words: predict = Purpose and audience,
+ * investigate = Plan, make = Script, modify = Cue cards, practise = Rehearse, info = Present and check. Rehearsing and presenting
+ * happen in class; the page only plans, scripts, makes the cards and checks afterwards. */
+export const STAGE_INFO_SPEECH = {
+  predict: ['Purpose and audience', 'Who is listening, and what should they know, think or do afterwards? Decide before you plan.'],
+  run: ['Try', 'Try it and compare with what you thought.'],
+  investigate: ['Plan', 'Opening, two or three points, and a close. Plan the shape before you write a word.'],
+  make: ['Script', 'Write it to be heard: short sentences, one idea at a time.'],
+  modify: ['Cue cards', 'Cut your script down to the key words you need to say it, not read it.'],
+  practise: ['Rehearse', 'Say it aloud to a partner or a mirror, then change one thing.'],
+  info: ['Present and check', 'Present in class, then check it against your plan.'],
+};
 const TIER_LABEL = { typical: 'Typical', wider: 'Wider' };
 export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
 
@@ -739,11 +751,11 @@ export function lessonPageHtml(lesson, deps) {
     const s = t.replace(STAGE_PREFIX, '');
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
-  const isSci = (lesson.language === 'science' && lesson.shape !== 'primer') || lesson.shape === '5e';
-  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci))];
+  const isSci = (lesson.language === 'science' && lesson.shape !== 'primer' && lesson.shape !== 'speech') || lesson.shape === '5e';
+  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci || lesson.shape === 'speech'))];
   const tierAttr = (c) => (c.tier ? ` data-tier="${esc(c.tier)}"` : '');
   const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"${tierAttr(s.config)}><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
-  const SI = lesson.shape === 'primer' ? STAGE_INFO_PRIMER : lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
+  const SI = lesson.shape === 'speech' ? STAGE_INFO_SPEECH : lesson.shape === 'primer' ? STAGE_INFO_PRIMER : lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
   // Width tiers: steps marked typical or wider are extra contexts. A teacher sets the starting width with ?width=;
   // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
   const tiered = lesson.steps.some((s) => s.config.tier);

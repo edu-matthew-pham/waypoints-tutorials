@@ -177,6 +177,8 @@ let E5 = false;   // 5E words: science, or shape: 5e
 let DESIGN = false;
 // Primers (shape: primer) use their own step titles (Think first, The idea, Check, Apply), not PRIMM or 5E words.
 let PRIMER = false;
+// Speeches (shape: speech) are primer-like (the step's own title, text-only Plan slides), with speech headings: the first step is Purpose and audience, not a prediction.
+let SPEECH = false;
 const fence = (code, lang = LANG) => '```' + lang + '\n' + String(code).replace(/\n$/, '') + '\n```';
 
 // Diagrams (tools/diagram-core.mjs). Decks carry the Mermaid source in a ```mermaid block, which Waypoints Prepare draws
@@ -197,7 +199,7 @@ const checksOf = (lesson) => lesson.steps.flatMap((s) => [
 // ---------------------------------------------------------------- deck (Prepare Marp)
 export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = null, strategyCard = () => null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks; DIAGRAM = diagram;
   const T = lesson.teacher || {};
@@ -310,7 +312,7 @@ export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = n
     const code = c.code ? snip(c.code) : '';
     if (stage === 'predict' && !DESIGN) {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
-      slides.push(`${BADGE.discussion}\n\n## ${PRIMER ? 'Think first' : E5 ? 'Engage: predict' : 'Predict'}\n\n${code ? showCode(code, s) + '\n\n' : ''}${k ? `**${k.q}**${k.options ? '\n\n' + k.options.map((o) => `- ${o}`).join('\n') : ''}` : prose(s.body)}` + note(`${k?.answer ? `What happens: ${k.answer}` : ''} Take two or three predictions before anyone runs it.`));
+      slides.push(`${BADGE.discussion}\n\n## ${SPEECH ? title : PRIMER ? 'Think first' : E5 ? 'Engage: predict' : 'Predict'}\n\n${code ? showCode(code, s) + '\n\n' : ''}${k ? `**${k.q}**${k.options ? '\n\n' + k.options.map((o) => `- ${o}`).join('\n') : ''}` : prose(s.body)}` + note(`${k?.answer ? `What happens: ${k.answer}` : ''} ${SPEECH ? 'Take two or three answers from the class before moving on.' : 'Take two or three predictions before anyone runs it.'}`));
       classSlides('predict');
       // Run it live right after the vote, before the answer is shown: the next Run step's playground or board goes in
       // here, and that step then adds no slide of its own (its note comes along).
@@ -467,7 +469,7 @@ function traceTable(t, blanks) {
 // ---------------------------------------------------------------- worksheet (Prepare Print)
 export function worksheetFor(lesson, { course, unit, snip, blocks = null, diagram = null }) {
   lesson = forOutput(lesson);
-  LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks; DIAGRAM = diagram;
   const T = lesson.teacher || {};
@@ -494,7 +496,7 @@ export function worksheetFor(lesson, { course, unit, snip, blocks = null, diagra
     let part = '';
     if (stage === 'predict' && !DESIGN) {
       const k = c.check?.type === 'predict' ? checkPartsMd(c.check, snip, s.id) : null;
-      part = `## ${PRIMER ? 'Think first' : E5 ? 'Engage' : 'Predict'}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}My prediction, and why:\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
+      part = `## ${SPEECH ? title : PRIMER ? 'Think first' : E5 ? 'Engage' : 'Predict'}\n\n${prose(s.body)}${code ? '\n\n' + codeMd(code) : ''}` + keep(`${k ? `**${k.q}**\n\n${k.options ? k.options.map((o) => `☐ ${o}`).join('\n\n') + '\n\n' : ''}` : ''}${SPEECH ? 'My answer, and why:' : 'My prediction, and why:'}\n\n{{lines-3}}`) + tnote(k?.answer ? `**What happens:** ${k.answer}` : '');
     } else if (stage === 'run') {
       part = `## ${PRIMER ? 'Try' : E5 ? 'Explore' : 'Run'}\n\n${PRIMER ? 'Try it in the tutorial' : LANG === 'maths' || E5 ? 'Try it on the board in the tutorial' : 'Run the program in the tutorial'}. Was your prediction right? What was different?\n\n{{lines-2}}`;
     } else if (stage === 'investigate' || stage === 'practise' || (E5 && stage === 'modify') || (DESIGN && stage === 'predict')) {
@@ -612,7 +614,7 @@ export const CHEAT_CSS = `.wrap{max-width:1000px}
 
 // ---------------------------------------------------------------- teacher guide pages (HTML bodies)
 export function lessonGuideBody(lesson, { esc, md, snip, highlightCode, codeBlock, studentHref, course, unit, files, blocks = null, diagram = null }) {
-  LANG = lesson.language || 'python'; PRIMER = lesson.shape === 'primer'; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
+  LANG = lesson.language || 'python'; SPEECH = lesson.shape === 'speech'; PRIMER = lesson.shape === 'primer' || SPEECH; E5 = (LANG === 'science' && !PRIMER) || lesson.shape === '5e';
   DESIGN = lesson.shape === 'design';
   BLOCKS = blocks; DIAGRAM = diagram;
   // MakeCode: the blocks picture, with the code one click away; code as text when there is no picture.

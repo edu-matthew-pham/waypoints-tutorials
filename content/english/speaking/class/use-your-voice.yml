@@ -1,0 +1,30 @@
+inquiry:
+  q: "Can a voice say something the words do not?"
+  prompts:
+    - "Say 'Thanks a lot' so that it means thanks. Now say it so that it means the opposite."
+    - "What changed? The words did not."
+  notes: "Students hear tone, pace and pitch change meaning. Keep to made-up lines so no one is put on the spot."
+activities:
+  - at: predict
+    kind: activity
+    title: "Seven ways to say it"
+    minutes: 5
+    do: |
+      Write 'I never said he stole it' on the board with seven words. Say it seven times, stressing a different word each time. Ask students to say what each one means.
+    notes: "Each stress changes the meaning. Students hear how much one word's weight carries."
+  - at: make
+    kind: activity
+    title: "Say it, then name it"
+    minutes: 7
+    do: |
+      In pairs, each student says their three planned lines to a partner. The partner says which voice setting they heard change and what it made them feel or want to do.
+    notes: "The partner's report is the evidence for the criteria. Students who heard nothing change should try again with a bigger change."
+questions:
+  - at: investigate
+    title: "Which setting?"
+    type: question
+    q: "A speaker lowers their voice almost to a whisper for one sentence so that the room goes quiet and leans in. Which setting is this?"
+    options: ["Pace", "Pitch", "Volume", "Tone"]
+    answer: 2
+    feedback: ["Pace is about speed and pauses. The speaker did not say it faster or slower.", "Pitch is how high or low, rising or falling. A whisper is about how loud.", null, "Tone is the feeling in the voice. The key change here is how loud."]
+    explain: "Dropping almost to a whisper changes the volume. It makes listeners go quiet and lean in."

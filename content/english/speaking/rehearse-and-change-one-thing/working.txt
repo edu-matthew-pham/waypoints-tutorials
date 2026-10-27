@@ -1,0 +1,8 @@
+# Nib's rehearsal log, one entry each.
+
+# region: nib
+Entry 1: Partner said the last sentence was too quiet. Nib said it louder and slower.
+Entry 2: Partner said, 'It was good.' Nib changed nothing.
+Entry 3: Partner said Nib sped up on the numbers. Nib slowed down and paused after each.
+Entry 4: Partner said Nib read the cards for the whole second point. Nib learned point two.
+# endregion
