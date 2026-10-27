@@ -133,7 +133,9 @@ jobs:
   # Join the drawn pictures, then share the clips to record out between parallel jobs.
   plan:
     needs: [prepare, draw]
-    if: ${{ !cancelled() && needs.prepare.result == 'success' && (needs.draw.result == 'success' || needs.draw.result == 'skipped') }}
+    # A failed drawing job does not stop the run (like a failed recording job): the shards that finished are joined, and
+    # pictures nobody drew keep their old entry and are drawn by the next run. Not after a cancel.
+    if: ${{ !cancelled() && needs.prepare.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 100
     outputs:
@@ -155,13 +157,16 @@ jobs:
           name: pictures-seed
           path: dist/_pictures
       - uses: actions/download-artifact@v4
-        if: needs.draw.result == 'success'
+        if: needs.draw.result != 'skipped'
         with:
           pattern: pictures-shard-*
           path: shards
       - name: Join the drawn pictures
-        if: needs.draw.result == 'success'
+        if: needs.draw.result != 'skipped'
         run: node tools/merge-pictures.mjs dist/_pictures shards/*
+      - name: Note failed drawing jobs
+        if: needs.draw.result == 'failure'
+        run: echo "::warning::A drawing job failed (see its log). Its pictures are missing; clips that show them are recorded without and mend themselves, and the next run draws them. Run this workflow again."
 
       - name: Share out the clips to record
         id: plan
