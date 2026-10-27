@@ -7,7 +7,7 @@ goals:
   - "I can explain why a design that passes its code tests may still sort badly."
 struggle: "Students treat 100% on their own five items as proof. Hold the 20-item test set back until Test."
 before: |
-  Real light readings depend on room light and how the item passes the sensor; a shade or an LED lighting the item helps. The Servo library is a recipe until the class has met libraries. Links: Code › Train a recycling sorter (Teachable Machine) for the stretch route.
+  Real light readings depend on room light and how the item passes the sensor; a shade or an LED lighting the item helps. The Servo library is a recipe until the class has met libraries. Links: Code › Train a recycling sorter (Pattern Trainer) for the stretch route.
 
   If you assess with MYP Design, the steps line up with the criteria:
     - **A Inquiring and analysing:** the brief, its criteria and constraints, and research into parts (Inquire).
@@ -22,7 +22,7 @@ stuck:
   - see: "Accuracy is poor."
     ask: "What do the misses have in common?"
     fix: "Calibrate the threshold with real items, or shield the sensor from room light."
-stretch: "The Teachable Machine route: compare its accuracy with the light sensor's on the same 20 items."
+stretch: "The trained-model route: compare its accuracy with the light sensor's on the same 20 items."
 support: "A servo recipe card and a results table for the 20 items."
 leads: |
   Other Years 9–10 projects: Two-motor drive base, Lift.

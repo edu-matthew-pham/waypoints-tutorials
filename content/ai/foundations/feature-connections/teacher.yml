@@ -7,7 +7,7 @@ goals:
 before: |
   Use the board without accounts. It is one hand-adjusted decision unit, not a trained neural network.
   The score is colour weight × (+0.5 for yellow, −0.5 for green) + shape weight × (+0.5 for long, −0.5 for round). Above zero is banana, below zero is apple, and exactly zero is "unsure" (a tie: the clues cancel out).
-  Optional extension, with school approval: train an image classifier in Teachable Machine (https://teachablemachine.withgoogle.com/) and test unfamiliar photos. Unlike the hand-adjusted unit, the image model learns its weights from examples.
+  Optional extension, with school approval: train an image classifier in the Pattern Trainer (https://tools.learningwaypoints.com/trainer/, photos stay on the computer; Teachable Machine also works) and test unfamiliar photos. Unlike the hand-adjusted unit, the image model learns its weights from examples.
 running:
   - "Ask for a prediction before each test."
   - "Have students change one factor and explain the result."

@@ -21,7 +21,7 @@ stuck:
     fix: "distances[i][0] is the nearest; try a limit of about 10."
 stretch: Find the island model's mistakes and explain them (some species live on more than one island).
 support: Give students the kneighbors line, and ask them to write the if.
-leads: "The micro:bit and the computer course trains Teachable Machine models; the same limits apply. Discuss large language models with the same three questions: what data, how tested, what it cannot do."
+leads: "The micro:bit and the computer course trains picture models in the Pattern Trainer, and Pattern Detector projects puts one in a Python app; the same limits apply. Discuss large language models with the same three questions: what data, how tested, what it cannot do."
 exit:
   q: "Why can a model be 100% sure and still wrong?"
   a: "Its confidence only compares the answers it knows (here, the votes of its nearest examples); it does not know when an input is unlike anything it has seen."

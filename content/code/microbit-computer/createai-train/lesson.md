@@ -7,7 +7,7 @@ language: makecode
 explainPicture: motion.ts#log
 hook: "A smartwatch counts your steps and knows when you start running, without a camera and without sending anything to a computer. A small model on the watch reads its motion sensor."
 ---
-In Teachable Machine the model learned from **photos** and ran on the **computer**. In **micro:bit CreateAI** it learns from **movements**, measured by the micro:bit's motion sensor (the **accelerometer**), and the finished model runs **on the micro:bit**.
+In the Pattern Trainer the model learned from **photos** and ran on the **computer**. In **micro:bit CreateAI** it learns from **movements**, measured by the micro:bit's motion sensor (the **accelerometer**), and the finished model runs **on the micro:bit**.
 
 **You need:** a micro:bit (a **V2** to run the model on the micro:bit later), a battery pack, and **Chrome or Edge**. CreateAI connects by Bluetooth, or by radio through a second micro:bit plugged into the computer; it shows you which.
 
@@ -76,7 +76,7 @@ tasks:
       explain: "Same idea as the recycling sorter: the model only knows the examples it was given. Add the variety it is missing."
   - check:
       type: question
-      q: "The Teachable Machine sorter ran on the computer. This model runs on the micro:bit. Which is true?"
+      q: "The Pattern Trainer sorter ran on the computer. This model runs on the micro:bit. Which is true?"
       options: ["Once downloaded, it works on battery power with no computer, camera or connection", "It still needs the computer to think", "It sends your movements to the internet", "It only works while CreateAI is open"]
       answer: 0
       explain: "The model is copied into the micro:bit's program. A V2 runs it by itself, like the model in a smartwatch."

@@ -8,7 +8,7 @@ before: |
   The board uses a small genuine 2-2-1 sigmoid neural network with backpropagation.
   It sees only colour and shape, not photographs. No account or online model is needed.
   The lesson ends by linking back to Unit 1: chatbots are very large neural networks trained to predict the next word.
-  Optional extension, with school approval: train an image model in Teachable Machine (https://teachablemachine.withgoogle.com/) and test photos not used in training. An image model processes much richer information than two hand-chosen clues; neither guarantees correct predictions.
+  Optional extension, with school approval: train an image model in the Pattern Trainer (https://tools.learningwaypoints.com/trainer/, photos stay on the computer; Teachable Machine also works) and test photos not used in training. An image model processes much richer information than two hand-chosen clues; neither guarantees correct predictions.
 running:
   - "Have students record a prediction before training."
   - "Reset the network whenever comparing training datasets."

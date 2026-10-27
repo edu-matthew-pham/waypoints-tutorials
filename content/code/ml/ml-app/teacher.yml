@@ -23,7 +23,7 @@ stuck:
     fix: Add the parameter for the new slider, in the same order.
 stretch: Show the three species' vote shares as a bar chart (gr.BarPlot with a small DataFrame), or add a Dropdown to choose the model (neighbours or tree).
 support: Give students the third slider line, and ask them to add the column and the parameter.
-leads: "The optional last lesson looks at what models get wrong. The micro:bit and the computer course trains a model on movement with Teachable Machine."
+leads: "The optional last lesson looks at what models get wrong. The micro:bit and the computer course trains picture models in the Pattern Trainer and a model on movement with CreateAI."
 exit:
   q: "Why does the app say 60% sure for some penguins?"
   a: "Only 3 of the 5 most similar penguins in the data are that species, so the measurements sit between two species."

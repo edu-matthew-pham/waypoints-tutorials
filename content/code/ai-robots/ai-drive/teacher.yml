@@ -1,4 +1,4 @@
-summary: Students drive a robot with hand gestures recognised by their own Teachable Machine model; each label becomes a mode the robot acts on until the next label.
+summary: Students drive a robot with hand gestures recognised by their own Pattern Trainer model; each label becomes a mode the robot acts on until the next label.
 time: 50
 timing: "Predict and Run 8 min · Drive with your model 15 min (typical) · Investigate 8 min · Modify 10 min · Make 10 min"
 goals:
@@ -8,11 +8,13 @@ goals:
 before: |
   **The idea:** the model only names a gesture (Forward, Left…). The board sends that word to a **bridge** micro:bit on the computer, which passes it on by radio to the robot. The robot's **on radio received string** remembers the word as its **mode**, and **forever** acts on the mode until a new word arrives. So when the hand leaves the camera, the robot keeps going: the problem the next lesson fixes.
 
-  **Prerequisites:** Robotics challenges (modes, radio remote) and micro:bit and the computer (training in Teachable Machine, serial, the radio bridge). The bridge program is printed in the lesson.
+  **Prerequisites:** Robotics challenges (modes, radio remote) and micro:bit and the computer (training in the Pattern Trainer, serial, the radio bridge). The bridge program is printed in the lesson.
 
   **Without robots:** the simulator's buttons stand in for the model (A Left, B Right, A+B Forward, logo Stop), and with radio it shows two robots, each driven by the other micro:bit. The model step is typical.
 
-  **With robots:** per pair, a robot with its micro:bit, a second micro:bit as the bridge on a data cable, Chrome or Edge, and a webcam. Give each pair its own radio group. Gestures are hands only; photos stay in the browser, and Upload my model shares the model, not the photos.
+  **With robots:** per pair, a robot with its micro:bit, a second micro:bit as the bridge on a data cable, Chrome or Edge, and a webcam. Give each pair its own radio group. Gestures are hands only; photos stay in the browser, and the model file holds no photos. The board's webcam is not mirrored, like the Pattern Trainer's, so Left stays Left.
+
+  **Teachable Machine still works:** a student who trains there can export with **Upload my model** and paste the link into the box under **Open your model file**. Its webcam is mirrored; the Pattern Trainer's is not.
 running:
   - "Predict: many say it stops. Ask: what does forever do when no new message arrives?"
   - "Run: watch the other robot, as in Remote control."
@@ -24,7 +26,7 @@ stuck:
     fix: "Connect the bridge on the board; match the radio groups."
   - see: "The robot stops whatever gesture is shown."
     ask: "Do your class names match the words in the robot's ifs exactly?"
-    fix: "Rename the classes (Forward, Left, Right, Stop), export and paste the new link."
+    fix: "Rename the classes (Forward, Left, Right, Stop), train again, download and open the new file."
   - see: "The robot jerks between moves."
     ask: "Does the model flicker between two gestures?"
     fix: "Add more varied photos of the confused gestures, or hold each gesture still."

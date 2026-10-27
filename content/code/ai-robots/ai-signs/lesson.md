@@ -8,7 +8,7 @@ extensions: [robot]
 explainPicture: robot.ts#predict
 hook: "A self-driving car that brakes for a plastic bag is annoying. One that drives through a stop sign is dangerous. Its designers make it much more careful about some decisions than others."
 ---
-This time the model reads **printed signs**: [print the four signs](../../../_playground-board/media/classifier/signs/print.html) (**Go**, **Left**, **Right**, **Stop**) and train a class for each, holding the sign at different distances, angles and light.
+This time the model reads **printed signs**: [print the four signs](../../../_playground-board/media/classifier/signs/print.html) (**Go**, **Left**, **Right**, **Stop**) and train a class for each in the Pattern Trainer, holding the sign at different distances, angles and light. Download the new model and open it on the board below.
 
 The board on this page does not treat every label the same: it sends **Go** only when the model is **95%** sure, and the others at **70%**. Anything less is **Unsure**.
 

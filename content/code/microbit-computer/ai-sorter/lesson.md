@@ -2,15 +2,15 @@
 order: 4
 unit: ai
 title: Train a recycling sorter
-summary: Train an image model in Teachable Machine, then test it on photos it has never seen. It works on photos like its training photos and fails on others, so to fix a model you change its data.
+summary: Train a picture model in the Pattern Trainer, then test it on photos it has never seen. It works on photos like its training photos and fails on others, so to fix a model you change its data.
 language: makecode
 hook: "Recycling centres use cameras and trained models to sort paper from plastic on a fast conveyor belt. Before a centre trusts one, someone has to test it on items it has never seen."
 ---
-A recycling centre wants a camera that sorts **Paper** from **Plastic**. You will train a model in **Teachable Machine**, then test it on the board's photos: paper and plastic items your model has never seen, in different places and light.
+A recycling centre wants a camera that sorts **Paper** from **Plastic**. You will train a model in the **Pattern Trainer**, then test it on the board's photos: paper and plastic items your model has never seen, in different places and light.
 
-**To train a model:** open [Teachable Machine](https://teachablemachine.withgoogle.com/train/image) in a new tab and choose **Image Project**, then **Standard**. Name one class **Paper** and one **Plastic**, add about 20 photos of each, and click **Train Model**. Then click **Export Model**, choose **Upload my model**, and copy the link it gives you into the board.
+**To train a model:** open the [Pattern Trainer](https://tools.learningwaypoints.com/trainer/) in a new tab and choose **Pictures**. Name the first class **Paper**, then **+ Add a class** and name it **Plastic**. Add about 20 photos of each (hold the item up to the camera and **Hold to record**, or **Upload photos**), and click **Train model**. Then click **Download my_model.json**, and on the board click **Open your model file** and choose it.
 
-**No webcam, or no paper and plastic on your desk?** Download photos to upload instead (in each class, choose **Upload** and select every photo in its folder): [plain photos](../../../_playground-board/media/classifier/recycling/recycling-biased.zip) and [varied photos](../../../_playground-board/media/classifier/recycling/recycling-good.zip).
+**No webcam, or no paper and plastic on your desk?** Download photos to upload instead (unzip them, then in each class choose **Upload photos** and select every photo in its folder): [plain photos](../../../_playground-board/media/classifier/recycling/recycling-biased.zip) and [varied photos](../../../_playground-board/media/classifier/recycling/recycling-good.zip).
 
 ## Predict
 
@@ -30,10 +30,10 @@ check:
 stage: run
 insight: "Seeing the plain and messy scores side by side settles the prediction: the model works on photos like its training photos."
 try: { playground: board, starter: "boards.yml#try", height: 760 }
-check: { type: board, text: "Train two classes (Paper and Plastic) on one plain background, paste your link and test it.", when: "n_total = 16" }
+check: { type: board, text: "Train two classes (Paper and Plastic) on one plain background, open your model file and test it.", when: "n_total = 16" }
 ```
 
-Train **Paper** and **Plastic** with about 20 photos each, all on the same plain desk (or upload the **plain photos**). Paste your link and click **Load**. Compare the **plain background** and **messy bench** scores.
+Train **Paper** and **Plastic** with about 20 photos each, all on the same plain desk (or upload the **plain photos**). Download your model and **Open your model file** on the board. Compare the **plain background** and **messy bench** scores.
 
 ## Read the results
 
@@ -110,7 +110,7 @@ tasks:
 
 ### Backgrounds
 
-Retrain your model with photos of the items on **at least three different backgrounds** (or upload the **varied photos**). Export, paste the new link and **Load**.
+Retrain your model with photos of the items on **at least three different backgrounds** (or upload the **varied photos**). Download it again and open the new file on the board.
 
 ### Unbalanced classes
 

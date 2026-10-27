@@ -44,7 +44,7 @@ try: { playground: board, starter: "boards.yml#send", height: 760 }
 check: { type: board, text: "Connect your micro:bit and send at least three labels.", when: "n_sent >= 3" }
 ```
 
-Paste your model's link and click **Load**, then **Connect a micro:bit** and choose it in the list. Click a test photo to send its label, or use the webcam: it sends a label once the same label has held above 80% confidence for a moment. Watch the micro:bit.
+Your model from last lesson loads by itself (or click **Open your model file** and choose your `my_model.json`). Then **Connect a micro:bit** and choose it in the list. Click a test photo to send its label, or use the webcam: it sends a label once the same label has held above 80% confidence for a moment. Watch the micro:bit.
 
 ## Investigate
 

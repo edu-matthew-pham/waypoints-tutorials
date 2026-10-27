@@ -2,7 +2,7 @@
 order: 8
 unit: capstone
 title: "Capstone: your own AI sorter"
-summary: Choose a sorting problem, build a fair test set first, train and improve a Teachable Machine model until every group passes, connect a micro:bit build that acts safely on its labels, and report what it still gets wrong.
+summary: Choose a sorting problem, build a fair test set first, train and improve a Pattern Trainer model until every group passes, connect a micro:bit build that acts safely on its labels, and report what it still gets wrong.
 language: makecode
 explainPicture: build.ts#sol-build
 hook: "Engineers who build an AI system are asked two questions before it is used: how did you test it, and when does it fail? This time the problem, the data and the answers are yours."
@@ -21,7 +21,7 @@ check: { type: reflect, text: "I wrote down my problem, my classes (including Ne
 Write in your book or a document:
 
 1. The **problem** and who it helps.
-2. The **classes** (with exact names, as you will type them in Teachable Machine), including **Neither**.
+2. The **classes** (with exact names, as you will type them in the Pattern Trainer), including **Neither**.
 3. **Where** it will be used: the background, the light, the distance. These become your test groups.
 4. What the **micro:bit** does for each label, and what it does when it is **unsure**.
 
@@ -45,7 +45,7 @@ try: { playground: board, starter: "boards.yml#photos", height: 760 }
 check: { type: board, text: "Get 80% or more overall, with no group below 60%.", when: "acc_all >= 0.8 and acc_min >= 0.6" }
 ```
 
-Train in Teachable Machine (new photos, not your test photos), export with **Upload my model**, and paste the link. Find the **weakest group**, work out what its failures share, change the training data, and test again. Keep a note of each change and its scores.
+Train in the [Pattern Trainer](https://tools.learningwaypoints.com/trainer/) (new photos, not your test photos), click **Download my_model.json**, and open it here with **Open your model file**. Find the **weakest group**, work out what its failures share, change the training data, and test again. Keep a note of each change and its scores.
 
 ## Milestone 3: the build
 

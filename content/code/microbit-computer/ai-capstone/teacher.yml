@@ -8,6 +8,8 @@ goals:
 before: |
   **The capstone** brings the course together on a problem each student (or pair) chooses. The order matters: **test set first**, from photos the model never trains on, in groups that match where it will be used (place, light, distance). The board keeps the test photos **in the student's browser only** (testset: own); they are shrunk to small squares and never uploaded. Remind students not to photograph people.
 
+  **Training:** in the Pattern Trainer; students open the downloaded `my_model.json` on the board after each retrain. **Teachable Machine still works:** a student who trains there can export with **Upload my model** and paste the link into the box under **Open your model file**. Its webcam is mirrored; the Pattern Trainer's is not.
+
   **Milestones:** (1) at least 24 test photos in at least 3 groups; (2) 80% overall with no group under 60% (the board's acc_min); (3) a micro:bit program with a branch per label, a safe else and a reply; (4) the whole system on the webcam (typical: needs a micro:bit). The report is the assessment piece: scores by group before and after, the data changes made, and the limits.
 
   **Choosing problems:** steer away from people (faces, emotions, who someone is) and anything where a wrong answer could hurt someone. Good problems have objects students can bring in. Two to four classes plus Neither is plenty.

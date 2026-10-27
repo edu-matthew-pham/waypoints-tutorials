@@ -32,7 +32,7 @@ support: "Give the six main colours: red 255,0,0; green 0,255,0; blue 0,0,255; y
 leads: |
   Next: Shapes as numbers (vector pictures and 3D models).
 
-  Code links: turtle's `color()` takes RGB amounts; the Teachable Machine lessons train on images, which the model sees as these numbers. Later: why each amount stops at 255 (How many patterns?), and compressing images (Years 9–10).
+  Code links: turtle's `color()` takes RGB amounts; the Pattern Trainer lessons (micro:bit and the computer) train on images, which the model sees as these numbers. Later: why each amount stops at 255 (How many patterns?), and compressing images (Years 9–10).
 exit:
   q: "What colour is 0, 255, 0? How many numbers store a 3 × 2 image?"
   a: "Green. 3 × 2 = 6 pixels × 3 = 18 numbers."

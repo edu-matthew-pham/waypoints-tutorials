@@ -12,7 +12,7 @@ Before anything goes on the site, a set of automatic checks runs. Every model an
 
 Everything runs in the student's browser. Their code runs on their own device, not on a server. Progress is saved only in that browser, there are no accounts, and our pages send nothing anywhere. If a student changes computers or clears their browser, their ticks start again, but the lessons are always there.
 
-A few lessons open tools made by others, such as Microsoft MakeCode for micro:bit and Arcade, or Google's Teachable Machine for training a model. Those tools load from their own sites and follow their own privacy terms; the lesson tells you when one is used.
+A few lessons open tools made by others, such as Microsoft MakeCode for micro:bit and Arcade, or Google's Teachable Machine (kept as a fallback for our own Pattern Trainer). Those tools load from their own sites and follow their own privacy terms; the lesson tells you when one is used.
 
 Some later Python courses run real Python libraries in the browser, which means a larger first download and, for a few lessons, live data from other sites. School filters differ, so before teaching them, [check your school](../check/) on a student device.
 

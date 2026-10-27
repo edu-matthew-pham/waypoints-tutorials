@@ -7,7 +7,7 @@ goals:
 before: |
   The board is a transparent teaching model: it copies the label of the nearest examples. It is not a neural network.
   The two clues (colour and shape) are deliberately too few for real fruit; let students find this.
-  Optional extension, with school approval: train an image classifier in Teachable Machine (https://teachablemachine.withgoogle.com/) with two fruit classes and test photos not used in training. Ask the same questions: what examples were used, what did it predict, what surprised you? A real image classifier learns much richer features than the board. The board alone is the complete core route.
+  Optional extension, with school approval: train an image classifier in the Pattern Trainer (https://tools.learningwaypoints.com/trainer/, photos stay on the computer; Teachable Machine also works) with two fruit classes and test photos not used in training. Ask the same questions: what examples were used, what did it predict, what surprised you? A real image classifier learns much richer features than the board. The board alone is the complete core route.
 running:
   - "Engage: ask what a sorter taught only long yellow bananas would do with other bananas."
   - "Explore: insist on a prediction before each test."

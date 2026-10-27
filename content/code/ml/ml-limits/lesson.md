@@ -109,4 +109,4 @@ check:
   explain: "Models copy the patterns in their data, including unfair ones. Real uses need fair testing, human review and a clear statement of limits."
 ```
 
-You have built models by hand, used a real library and put a model in an app. The same ideas (examples, fair tests, honest limits) are behind every machine-learning system, from Teachable Machine to large language models.
+You have built models by hand, used a real library and put a model in an app. The same ideas (examples, fair tests, honest limits) are behind every machine-learning system, from the Pattern Trainer to large language models.

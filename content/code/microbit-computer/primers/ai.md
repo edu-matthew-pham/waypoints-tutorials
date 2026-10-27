@@ -3,7 +3,7 @@ title: Training a model in 5 minutes
 ---
 ## The idea in plain words
 
-A **model** learns to sort things from **examples** you give it, not from rules you write. In **Teachable Machine** you give it photos for each class (Paper, Plastic), click Train, and it learns patterns in the photos.
+A **model** learns to sort things from **examples** you give it, not from rules you write. In the **Pattern Trainer** you give it photos for each class (Paper, Plastic), click Train, and it learns patterns in the photos.
 
 - It works on new photos that look like its training photos, and fails on ones that don't.
 - **Test it fairly**: on photos it has never seen, in groups for the conditions where it will be used (messy bench, low light). Accuracy = correct ÷ total, for each group.
@@ -20,15 +20,15 @@ A model is a student who learned from one textbook's pictures: great on question
 
 ## Try it yourself (5 minutes)
 
-1. Download the plain photos from **Train a recycling sorter** and upload them into Teachable Machine.
-2. Train, export with Upload my model, and paste the link into the board.
+1. Download the plain photos from **Train a recycling sorter**, unzip them and upload them into the Pattern Trainer (tools.learningwaypoints.com/trainer/, choose **Pictures**).
+2. Click **Train model**, then **Download my_model.json**, and open it on the board with **Open your model file**.
 3. Compare the plain and messy bench scores.
 
 ## Questions students ask
 
 - **"It got my items right, why is the score low?"** The test photos are different: other items, places and light.
 - **"Can I change a setting to fix it?"** Change the photos instead.
-- **"Is the link private?"** Anyone with it can use the model; it does not contain the photos.
+- **"Where do my photos go?"** Nowhere: they stay in the browser. The model file holds class names and numbers, not photos.
 
 ## How it connects
 

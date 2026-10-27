@@ -8,6 +8,8 @@ goals:
 before: |
   **The idea:** the model sends only a word. The receiving program gives it meaning, so both sides must agree on the exact words (capital letters included), and the program needs a sensible action for anything else.
 
+  **The model:** the board opens the student's Pattern Trainer model from last lesson by itself (it keeps the file in the browser); otherwise they choose `my_model.json` with **Open your model file**. **Teachable Machine still works:** a student who trains there can export with **Upload my model** and paste the link into the box under **Open your model file**. Its webcam is mirrored; the Pattern Trainer's is not.
+
   **How it works:** the board (in Chrome or Edge) connects to the micro:bit with **Web Serial** at 115200 baud, MakeCode's default. When students click a test photo, the board sends its predicted label as a line of text; with the webcam, it sends a label once it has held above 80% confidence for a moment and differs from the last one sent. Lines the micro:bit sends back (**serial write value** gives `bin:1`) appear on the board.
 
   **Hardware:** a micro:bit and USB cable per pair; for Make, a second micro:bit and a small servo on P0. The MakeCode simulator cannot receive serial, so the board steps need real micro:bits. The hardware steps are marked typical, so students without hardware can still complete the lesson.

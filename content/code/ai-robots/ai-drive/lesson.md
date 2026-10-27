@@ -45,9 +45,9 @@ try: { playground: board, starter: "boards.yml#drive", height: 700 }
 check: { type: board, text: "Drive the robot with your gestures: send Forward and Stop at least once each.", when: "sent_forward >= 1 and sent_stop >= 1" }
 ```
 
-1. In Teachable Machine, train four classes named exactly **Forward**, **Left**, **Right** and **Stop** (a hand sign each), and export with **Upload my model**.
+1. In the [Pattern Trainer](https://tools.learningwaypoints.com/trainer/) (**Pictures**), train four classes named exactly **Forward**, **Left**, **Right** and **Stop** (a hand sign each), and click **Download my_model.json**.
 2. Download the robot program to the robot's micro:bit, and the **bridge program** below to a second micro:bit plugged into the computer.
-3. Paste your model link, click **Load**, **Connect a micro:bit** (the bridge), then **Try it on the webcam**.
+3. Click **Open your model file** and choose it, then **Connect a micro:bit** (the bridge), then **Try it on the webcam**.
 
 The bridge program (from A radio bridge):
 
@@ -71,7 +71,7 @@ tasks:
   - check:
       type: question
       q: "Where is it decided that Left means turn left slowly?"
-      options: ["In the robot's program", "In Teachable Machine", "In the bridge micro:bit", "In the board"]
+      options: ["In the robot's program", "In the Pattern Trainer", "In the bridge micro:bit", "In the board"]
       answer: 0
       explain: "The model sends the word Left. The robot's if turns that word into wheel speeds."
   - check:

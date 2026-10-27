@@ -86,7 +86,7 @@ tasks:
 
 ### The plan
 
-Stretch route: replace the light sensor with the Teachable Machine classifier from Code › micro:bit and the computer, sending its label to the board over serial.
+Stretch route: replace the light sensor with a picture model trained in the Pattern Trainer and tested on the classifier board from Code › micro:bit and the computer, sending its label to the board over serial.
 
 ## Create: build it
 

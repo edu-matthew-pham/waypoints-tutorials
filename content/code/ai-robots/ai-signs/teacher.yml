@@ -12,6 +12,8 @@ before: |
 
   **Materials:** the printable signs (linked in the lesson; two to an A4 page, colour if possible). Training tip: hold each sign at different distances and angles, in different light, and add a **Nothing** class (no sign) if the model guesses a sign for an empty frame.
 
+  **Teachable Machine still works:** a student who trains there can export with **Upload my model** and paste the link into the box under **Open your model file**. Its webcam is mirrored; the Pattern Trainer's is not.
+
   **Without robots:** the simulator's buttons stand in for the model; the board step is typical.
 running:
   - "Predict: ask for a reason with each answer: what breaks?"
