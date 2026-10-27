@@ -31,6 +31,9 @@ projects:
       - { label: "colour_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/colour_rules.py", note: "your input is a photo; rules use how much of it is each colour" }
       - { label: "sound_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/sound_rules.py", note: "your input is a sound; rules use how loud it is and which note it is" }
     example: rules-password.py
+    benchmark:
+      - { file: rules-finished-1.png, caption: "A study method picker: sliders and choices in, steps and reasons out." }
+      - { file: rules-finished-2.png, caption: "A working checker: typed text in, a tick or cross for each step out." }
     reveal: true
     milestones:
       - text: "My problem, my user and my rules are written in plain English."
@@ -98,6 +101,8 @@ projects:
       - *Testing only the easy cases.* All tests pass because they were designed to. Ask: "What is the smallest change to this input that should flip the answer?"
       - *A label with no reason.* The app says "Weak" and nothing else. Ask: "What would the user do next?"
       - *Boundary off by one* (`<` where `<=` was meant). Ask: "What happens at exactly 8?"
+
+      **Ways it could look.** Students see two screenshots of finished apps that work quite differently (a study method picker, a working checker): output only, never code, so they show the standard without giving one answer to copy. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
 
       **The example below** is one complete rules app (a password checker with a strict-mode setting, a list of common passwords, an honest "not sure" and a small testing record). It is for you, to calibrate marking. Students who unlock "Show one way" see only a short piece of it for the milestone they are on. If a student chooses a password checker, expect to see something different from this one.
 

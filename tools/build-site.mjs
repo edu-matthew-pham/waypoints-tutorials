@@ -686,6 +686,11 @@ function writeProjects(node, set) {
     return { src: `${from}_pictures/${r.mk ? 'makecode-out/projects' : 'projects'}/${k}.png?v=${r.hash || ''}`, w: Math.round(r.w / (r.div || 2)), h: Math.round(r.h / (r.div || 2)) };
   };
   const benchOf = (p, from) => (p.benchmark || []).map((b, n) => {
+    if (b.image) { // a screenshot of a finished app: copied as it is; its size is in the PNG header (taken at 2x)
+      const buf = readFileSync(b.path), dest = join(OUT, '_pictures', 'projects', node.path);
+      mkdirSync(dest, { recursive: true }); writeFileSync(join(dest, `${p.id}-bench-${n + 1}.png`), buf);
+      return { src: `${from}_pictures/projects/${node.path}/${p.id}-bench-${n + 1}.png`, w: Math.round(buf.readUInt32BE(16) / 2), h: Math.round(buf.readUInt32BE(20) / 2), caption: b.caption };
+    }
     const r = PROJPICS[`${node.path}/${p.id}-bench-${n + 1}`];
     return r ? { src: `${from}_pictures/projects/${node.path}/${p.id}-bench-${n + 1}.png?v=${r.hash || ''}`, w: Math.round(r.w / (r.div || 2)), h: Math.round(r.h / (r.div || 2)), caption: b.caption } : null;
   }).filter(Boolean);

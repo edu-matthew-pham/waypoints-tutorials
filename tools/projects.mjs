@@ -66,7 +66,11 @@ export function loadProjects(root, defaultPlay) {
             });
           const msx = (Array.isArray(p.milestones) ? p.milestones : []).map((m) => (typeof m === 'string' ? { text: m } : { text: String(m?.text ?? ''), hints: Array.isArray(m?.hints) ? m.hints.map(String) : [], way: m?.way ? String(m.way).replace(/\s+$/, '') : '', part: Number(m?.part) || 1 }));
           const read = (f) => (f && existsSync(join(dir, 'projects', f)) ? readFileSync(join(dir, 'projects', f), 'utf8') : null);
-          const benchmark = (Array.isArray(p.benchmark) ? p.benchmark : []).map((b) => ({ file: String(b?.file || ''), caption: String(b?.caption || ''), code: read(String(b?.file || '')) }));
+          const benchmark = (Array.isArray(p.benchmark) ? p.benchmark : []).map((b) => {
+            // A .png benchmark is a screenshot of a finished app (external projects): shown as is, never drawn by render-pictures.
+            const file = String(b?.file || ''), image = /\.png$/i.test(file) && existsSync(join(dir, 'projects', file));
+            return { file, caption: String(b?.caption || ''), image, path: image ? join(dir, 'projects', file) : null, code: image ? '' : read(file) };
+          });
           return { ...p, milestones: msx.map((m) => m.text), msx, benchmark, parts };
         });
         out.push({ course: rel, file, dir, projects });

@@ -426,4 +426,5 @@ Question: is full PRIMM on every small snippet the best use of it? Research behi
 ## Pattern Detector projects (27 Oct 2026)
 - Decided: the briefs A (rules), B (trained), C (combined) are a course of their own, `code/pattern-detector` ("Pattern Detector projects", extension after `code/ml`), separate from `ml`; whether `ml` is later merged or replaced is open.
 - Built: `playground: external` for Open projects (links box, paste-to-scan box, optional `after:`), projects-only courses, brief A with hints, "Show one way" (pieces of `rules-password.py`), a teacher guide on adapting and marking points.
-- Not done: B and C (B waits for the school-laptop test; its example waits for it too); benchmarks (two finished-app pictures per brief; needs Gradio screenshots); search-index entries and years for a lesson-less course (check `npm run build` search output); a try with real teachers.
+- Also built (27 Oct): course deck, Print button, testing record and sample reflection, benchmark screenshots for A (real Gradio apps, cropped PNGs), search entry and trail count for a lesson-less course.
+- Not done: B and C (B waits for the school-laptop test; its example waits for it too); benchmarks for B and C; search-index entries and years for a lesson-less course (check `npm run build` search output); a try with real teachers.
