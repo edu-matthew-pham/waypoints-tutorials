@@ -90,6 +90,8 @@ Wider steps add contexts at the same level and demand; content for older student
 
 Provision (Matthew, 27 Oct): years are suggestions only, never rules for school adoption. A course, lesson or step may say "usually Years 7 to 9" as a teacher note; nothing gates, hides or tiers content by year, and a school may use any course with any class. Wording for `fit:` and descriptions: "usually Years X to Y", not "for older students".
 
+Proposed, not built (27 Oct): optional content that is not width. `tier` is the only way to make a step optional, so optional steps pose as width. Suggested: a separate step-level marker (`optional: school | evidence | ...`), not needed to finish, shown under its own label and outside the width control. The 9 AI steps that are not width split into school context (5, need the school's own policies) and optional evidence (4, study or law reading). Per-step sort and options A, B and C: Project doc `claude/ai-wider-steps-sort.md`. Shared format: waiting for Matthew.
+
 ## Audit done (27 Oct 2026): misconceptions and wider steps against Kit (report only, nothing changed)
 
 Full report: Project doc `claude/kit-alignment-audit.md` (notes: `claude/kit-alignment-audit-notes.md`). Waiting for Matthew's decisions before any fix.
