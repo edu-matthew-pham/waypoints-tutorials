@@ -88,6 +88,8 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 
 Wider steps add contexts at the same level and demand; content for older students is not width, in any subject, AI included. Nothing in a wider tier is acceleration. This reverses the AI courses' "wider steps for older students" (`content/ai/index.md`) and the 18 Oct fold of the Years 9 to 10 candidate into wider steps (`roadmap/learning-with-ai.md`). The 37 AI wider steps are sorted in Project doc `claude/ai-wider-steps-sort.md`: keep 18, reshape 10, move 9 (policy, law or research reading; a separate optional course or optional steps). No lesson, `index.md`, `CLAUDE.md` or `AUTHORING.md` text has changed yet. The English build no longer waits on this audit.
 
+Provision (Matthew, 27 Oct): years are suggestions only, never rules for school adoption. A course, lesson or step may say "usually Years 7 to 9" as a teacher note; nothing gates, hides or tiers content by year, and a school may use any course with any class. Wording for `fit:` and descriptions: "usually Years X to Y", not "for older students".
+
 ## Audit done (27 Oct 2026): misconceptions and wider steps against Kit (report only, nothing changed)
 
 Full report: Project doc `claude/kit-alignment-audit.md` (notes: `claude/kit-alignment-audit-notes.md`). Waiting for Matthew's decisions before any fix.
