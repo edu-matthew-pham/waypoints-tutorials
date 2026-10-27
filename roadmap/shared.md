@@ -59,6 +59,23 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 **Amended (25 Oct 2026, later):** search plus everything-at-once browsing was two extremes, and the pathway links had gone from the menu. Pathways are back under Subjects (links to their trail maps, so students are one click from a trail), and "List for teachers" on a subject page is now a one-screen index of pathways and courses (years, lesson counts); full cards stay on each pathway page. Trails stay the default view; the search box is unchanged.
 **Maths pathways, decided to wait (25 Oct 2026):** the four maths pathways (Algebra, Number, Geometry and measurement, Statistics and probability) merge the curriculum's six strands (Measurement with Space, Statistics with Probability). Kept as is: a pathway can hold one unit or an umbrella of two, so splitting a course later changes no navigation. ACARA's progressions divide Number into concepts and modelling, which our copy of the data does not carry; check the Kit data, and the curriculum map's strand rows, if teachers plan that way. Revisit after teacher feedback.
 
+## Proposed: tutorials as a help guide, and "step back" at two sizes (27 Oct 2026, Matthew, discussion; nothing built)
+
+- **Positioning (leaning, not decided):** the tutorials as backup, recap and extra learning when needed, not the main way a class learns everything. Teaching every lesson from the site would get monotonous: same shape, same screen. Teachers bring the variety (discussion, hands-on work, real robots, group tasks). This fits what is already decided: the scope is checking and re-teaching understanding, not exam practice, and the decks are what make a lesson work for a class. Every tutorial still works as a class unit for teachers who want that; the student-facing wording leads with help.
+- **One principle, two sizes:** meet students where they are, step back to firm ground, then come back to the original task.
+  - *Small, inside a lesson:* stuck on this problem? Try an easier one first. Built: `smaller:` ("Need a smaller step?", above).
+  - *Big, across lessons:* stuck on this lesson? Go back to the one it builds on. Partly built: "Catch up first" (Before Year 7 only) and "Builds on" (theory concepts only).
+  - *The "come back" half matters at both sizes.* Without it students can stay on the easier version.
+- **What a help guide needs that a course doesn't:**
+  - *Every lesson makes sense on its own,* since students arrive at the point of being stuck, not at lesson 1.
+  - *A quick "do you already know this?" check at the start,* so a student can tell whether to step back. Maths already does this with a short retrieval question.
+  - *A step-back link on every lesson,* to the one or two lessons it builds on in the same subject, not only Before Year 7 and theory concepts. The data is mostly there (`after:`, `assumes:`, progression nodes). A student who is stuck can walk back until they hit solid ground without anyone diagnosing the gap for them, which is the self-regulation skill in action (`roadmap/learning.md`).
+  - *A return link* on the step-back lesson ("Back to <lesson>") when the student came from a step-back link.
+  - *Findable by idea* ("I don't get loops", "what's a ratio"), not only by course: part of the navigation and search rethink.
+- **Wording:** one student phrase for both sizes, e.g. "Need a step back?", so the idea is the same wherever it appears.
+- **Caution:** optional help is mostly used by students who are already doing fine. Teachers pointing students to a specific lesson by link stays the main way in.
+- **Open:** whether to decide the positioning now or after the pilot; the exact wording; which link rows (Catch up first, Builds on) fold into one "Need a step back?" row.
+
 ## Proposed: a speech lesson shape for any subject (27 Oct 2026, English chat; Matthew agreed in principle, not built)
 
 - **Why:** speeches happen across subjects (a Year 7 science class gave climate change speeches), and English's speaking standards need the same support. The site helps with planning and reflecting; the speaking happens in class. No mode listens to students or judges delivery (no AI marking).
