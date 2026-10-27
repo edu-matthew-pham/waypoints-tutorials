@@ -587,5 +587,8 @@
   "opening-phrase-comma": {"home": "english/punctuation/opening-phrases-and-owners", "text": "A long phrase at the start of a sentence is left without a comma, because the reader can follow it without a pause and the writer does not hear where the main part starts."},
   "comma-as-pause": {"home": "english/punctuation/commas-that-change-meaning", "text": "A comma goes wherever the voice pauses, even between a subject and its verb, so the writer splits a sentence where it should stay whole."},
   "colon-mid-clause": {"home": "english/punctuation/colons-and-brackets", "text": "A colon goes wherever a list or reason follows, even in the middle of a clause such as after 'because', so the writer splits a clause that is not yet complete."},
-  "comma-splice": {"home": "english/punctuation/semicolons-and-dashes", "text": "A comma is enough to join two sentences, so the writer sticks two main clauses together with a comma alone."}
+  "comma-splice": {"home": "english/punctuation/semicolons-and-dashes", "text": "A comma is enough to join two sentences, so the writer sticks two main clauses together with a comma alone."},
+  "one-register": {"home": "english/words/same-message-different-words", "text": "Writing the same way to everyone, without noticing that a friend and a principal need different words."},
+  "synonyms-interchangeable": {"home": "english/words/shades-of-meaning", "text": "A synonym can be swapped in for any similar word, so the shade or strength of meaning is ignored."},
+  "command-to-authority": {"home": "english/words/words-and-roles", "text": "Giving an order to someone in charge, because the writer does not notice that a request is expected."}
 }

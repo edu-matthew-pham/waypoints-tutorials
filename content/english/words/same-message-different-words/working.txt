@@ -1,0 +1,8 @@
+# Nib's request to the principal for the "wrong words for the reader" task, one sentence per line.
+
+# region: nib
+Dear Ms Tran,
+I am writing to ask whether our class may use the hall on Friday.
+We reckon it'll be heaps good for everyone.
+Thank you for considering my request.
+# endregion

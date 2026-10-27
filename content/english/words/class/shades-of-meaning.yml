@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do writers choose one word over a similar one?"
+  prompts:
+    - "Say 'The dog ran' with three different verbs. Does the picture change?"
+    - "When is the plainer word the better choice?"
+  notes: "Word choice sets the strength and the feeling. The plain word is best when the plain meaning is enough."
+activities:
+  - at: predict
+    kind: activity
+    title: "Same verb, different picture"
+    minutes: 5
+    do: |
+      Write 'The dog ___ across the yard.' on the board. Students suggest verbs; the class says what picture each makes.
+    notes: "Shade is part of meaning."
+  - at: make
+    kind: discussion
+    title: "Three exact words"
+    minutes: 5
+    do: |
+      Partners point to three exact words in each other's writing and say what each adds.
+    notes: "If a word adds nothing, ask what a plainer word would lose."
+questions:
+  - at: investigate
+    title: "Which is stronger?"
+    type: question
+    q: "Which word describes the strongest feeling?"
+    options: ["annoyed", "furious", "cross"]
+    answer: 1
+    explain: "Furious is a very strong form of anger. Annoyed and cross are milder."

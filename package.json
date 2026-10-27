@@ -13,6 +13,7 @@
     "check-forms": "node tools/check-forms.mjs",
     "check-cohesion": "node tools/check-cohesion.mjs",
     "check-sentence": "node tools/check-sentence.mjs",
+    "check-wordchoice": "node tools/check-wordchoice.mjs",
     "check-context": "node tools/check-context.mjs",
     "check-sheet": "node tools/check-sheet.mjs",
     "check-concepts": "node tools/check-concepts.mjs",

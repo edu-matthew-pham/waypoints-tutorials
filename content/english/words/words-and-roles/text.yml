@@ -1,0 +1,58 @@
+# Texts for "Words and roles" (scale places words on a five-step formality scale and by listener; swap chooses words
+# for a speaker; write counts a request).
+
+# region: run
+widget: wordchoice
+mode: scale
+bands: Very casual | Casual | Neutral | Polite | Formal
+word a: Oi, move it! = 1
+word b: Come on, let's go! = 1/2
+word c: Line up at the door, please. = 3/4
+word d: Could everyone please line up at the door? = 4
+word e: Students are requested to assemble at the main entrance. = 5
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Casual | Neutral | Formal
+before: Choose the words that fit each speaker.
+p: A student asks the teacher: "[[{Give me@1|Could I please have@2|I want@1}=Could I please have]] an extra day?"
+p: The teacher tells the class: "[[{Maybe pack away@1|Please pack away@2|If it is not too much trouble, would anyone mind packing away@3}=Please pack away]] your books."
+# endregion
+
+# region: practise
+widget: wordchoice
+mode: scale
+bands: To a close friend | To a teacher | To a stranger
+word a: Hey, wait up! = 1
+word b: Dude, check this out. = 1
+word c: Mrs Tran, I've finished my work. = 2
+word d: Mr Lee, may I go to the library? = 2
+word e: Excuse me, is this seat taken? = 3
+word f: Sorry to bother you, do you know the time? = 3
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: contractions exclaims
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: contractions exclaims
+p: Dear Ms Tran, I am writing to ask whether our class may start a chess club at lunchtime. We would meet in the library on Tuesdays. I would supervise the setting up, and Mr Lee has agreed to help. Thank you for considering this request.
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: Asks | Shares an idea | Gives an order
+word a: Could I please leave early? = 1
+word b: Shall we start with the map? = 2
+word c: Stand behind the line. = 3
+# endregion

@@ -1,0 +1,8 @@
+# Nib's lake diary for the "word with the wrong shade" task, one sentence per line.
+
+# region: nib
+The class walked to the lake.
+A gentle breeze drifted across the water.
+Mia shrieked softly to Ben.
+We ate our lunch under a tree.
+# endregion

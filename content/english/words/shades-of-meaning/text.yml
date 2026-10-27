@@ -1,0 +1,56 @@
+# Texts for "Shades of meaning" (scale places words by strength; swap chooses the word that matches; write counts).
+
+# region: run
+widget: wordchoice
+mode: scale
+bands: Mild | Medium | Extreme
+word a: cool = 1
+word b: slightly cold = 1
+word c: chilly = 1/2
+word d: nippy = 2
+word e: icy = 2/3
+word f: freezing = 3
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Mild | Medium | Strong
+before: Choose the word that matches what happened.
+p: It was only a light drizzle, so the weather was [[{damp@1|stormy@3|ferocious@3}=damp]] outside.
+p: The wind knocked down fences, so the weather was [[{breezy@1|stormy@3|pleasant@1}=stormy]] last night.
+# endregion
+
+# region: practise
+widget: wordchoice
+mode: scale
+bands: Mild | Medium | Strong
+word a: nervous = 1
+word b: uneasy = 1
+word c: scared = 2
+word d: frightened = 2
+word e: terrified = 3
+word f: petrified = 3
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: The storm roared over the bay, and the waves crashed against the jetty. A fierce wind whipped the sand into our faces. We sheltered under a dripping awning and watched the boats rock wildly. By evening the sky cleared and the sea settled into a calm, silvery sheet.
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: Quiet | Ordinary | Loud
+word a: whispered = 1
+word b: said = 2
+word c: shouted = 3
+# endregion

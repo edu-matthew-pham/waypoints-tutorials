@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do we change our words for different people?"
+  prompts:
+    - "Say 'thank you' to a friend, then to a teacher. What changed?"
+    - "When would the friendly version be a mistake?"
+  notes: "The reader and the purpose decide. Neither version is more correct."
+activities:
+  - at: predict
+    kind: activity
+    title: "Two readers"
+    minutes: 5
+    do: |
+      Choose one message, such as asking to leave the room. Students say it to a pretend friend, then to a pretend principal. What changes?
+    notes: "Listen for short forms, titles and softer requests."
+  - at: investigate
+    kind: discussion
+    title: "Other cultures' ways of greeting"
+    minutes: 5
+    do: |
+      Use your school's local guidance on greeting and addressing Elders (AC9E4LA01 node 4). Students listen first.
+    notes: "This site does not supply protocols. Draw on local staff, community guidance and AIATSIS, not on student guesses."
+questions:
+  - at: investigate
+    title: "Which fits?"
+    type: question
+    q: "Which message fits a thank-you note to a visiting speaker?"
+    options: ["Thanks heaps, you were awesome!", "Thank you for visiting our school; the talk was very interesting.", "Cheers for coming, that was great."]
+    answer: 1
+    explain: "A guest is a reader we do not know well, so careful, complete wording fits."

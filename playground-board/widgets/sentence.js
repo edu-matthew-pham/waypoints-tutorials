@@ -18,7 +18,7 @@
 //           after (an opening bracket); a space each side = stands alone (a dash). Slots start unset.
 //     p: The creek was low[[{,|;|nothing}=;]] the walkers crossed it.      one line per paragraph
 //   write   A box to write in; the board counts. p: lines give a starting text (to rewrite) or nothing to start empty.
-//     counts: commas semicolons colons dashes brackets apostrophes quotes joiners who short long
+//     counts: commas semicolons colons dashes brackets apostrophes quotes joiners who short long contractions exclaims modals first
 //                                             extra counts to show beside words and sentences
 //   all     answer: on  starts solved and read-only, for Explain-it-to-me pictures (explainPicture), never a step
 //           as: student (write, in a -solution region) counts the text as the student's own writing
@@ -34,9 +34,13 @@
   var MODES = ['build', 'punct', 'write'];
   var SUBORD = ['although', 'because', 'since', 'while', 'whereas', 'if', 'unless', 'when', 'whenever', 'before', 'after',
     'until', 'though', 'once', 'so that', 'as soon as'];
-  var COUNTS = ['commas', 'semicolons', 'colons', 'dashes', 'brackets', 'apostrophes', 'quotes', 'joiners', 'who', 'short', 'long'];
+  var MODAL = ['could', 'might', 'may', 'should', 'would', 'must', 'will', 'probably', 'possibly', 'perhaps', 'certainly', 'definitely',
+    'likely', 'unlikely', 'always', 'never', 'sometimes', 'usually', 'often', 'seems', 'appears'];
+  var FIRST = ['i', 'me', 'my', 'mine', 'we', 'us', 'our'];
+  var COUNTS = ['commas', 'semicolons', 'colons', 'dashes', 'brackets', 'apostrophes', 'quotes', 'joiners', 'who', 'short', 'long', 'contractions', 'exclaims', 'modals', 'first'];
   var COUNT_LABEL = { commas: 'commas', semicolons: 'semicolons', colons: 'colons', dashes: 'dashes', brackets: 'brackets', apostrophes: 'apostrophes',
-    quotes: 'quotation marks', joiners: 'joining words', who: 'who/which/whose', short: 'short sentences', long: 'long sentences' };
+    quotes: 'quotation marks', joiners: 'joining words', who: 'who/which/whose', short: 'short sentences', long: 'long sentences',
+    contractions: 'short forms (don\'t, I\'m)', exclaims: 'exclamation marks', modals: 'certainty words (might, always)', first: 'I/we words' };
 
   // ---------- the pure part (tools/check-sentence.mjs uses it as B.sentenceCore) ----------
   var copy = function (o) { return JSON.parse(JSON.stringify(o)); };
@@ -194,6 +198,9 @@
       v.n_apostrophes = count(text, /[a-z]['’][a-z]/gi) + count(text, /s['’](?=[\s.,;:!?)]|$)/gi); v.n_quotes = count(text, /(^|[\s(])['‘“"]/g);
       v.n_joiners = SUBORD.filter(function (c) { return low.indexOf(' ' + c + ' ') >= 0; }).length;
       v.n_who = count(low, / (who|which|whose) /g);
+      v.n_contractions = count(text, /[a-z]n['’]t\b|\b[a-z]+['’](m|re|ve|ll|d)\b|\b(it|that|let|he|she|there|what|here|who)['’]s\b/gi); v.n_exclaims = count(text, /!/g);
+      v.n_modals = MODAL.reduce(function (n, w) { return n + count(low, new RegExp(' ' + w + ' ', 'g')); }, 0);
+      v.n_first = FIRST.reduce(function (n, w) { return n + count(low, new RegExp(' ' + w + ' ', 'g')); }, 0);
       v.n_short = lens.filter(function (n) { return n <= 5; }).length; v.n_long = lens.filter(function (n) { return n >= 15; }).length;
       v.longest = lens.length ? Math.max.apply(null, lens) : 0; v.shortest = lens.length ? Math.min.apply(null, lens) : 0;
     }

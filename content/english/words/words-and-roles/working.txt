@@ -1,0 +1,8 @@
+# Nib's message to the coach for the "order to someone in charge" task, one line at a time.
+
+# region: nib
+Hi Coach,
+Thanks for the extra training on Wednesday.
+Tell me the time of Saturday's match.
+See you there.
+# endregion

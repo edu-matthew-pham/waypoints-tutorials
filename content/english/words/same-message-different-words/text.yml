@@ -1,0 +1,57 @@
+# Texts for "Same message, different words" (the word choice board's scale places words in a band; swap chooses a
+# word and shows where it sits; write mode counts a pair of messages).
+
+# region: run
+widget: wordchoice
+mode: scale
+bands: Informal | Neutral | Formal
+word a: Gimme a pen. = 1
+word b: Got a spare pen, mate? = 1
+word c: Can I borrow a pen, please? = 2
+word d: Do you have a spare pen? = 1/2
+word e: Would it be possible to borrow a pen? = 3
+word f: I wonder if I might borrow a pen. = 3
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Informal | Neutral | Formal
+before: Choose the opening that fits each reader.
+p: A text to a friend: [[{Hey@1|Dear Madam@3|To whom it may concern@3}=Hey]], are you coming to the park?
+p: A letter to the principal: [[{Hey@1|Dear Ms Tran@3|Yo@1}=Dear Ms Tran]], I am writing to ask about the hall.
+# endregion
+
+# region: practise
+widget: wordchoice
+mode: swap
+bands: Leaves people out | Includes everyone
+before: Choose the wording that includes everyone.
+p: Dear [[{mums and dads@1|families@2}=families]], the fair starts at ten.
+p: Good morning, [[{boys and girls@1|everyone@2}=everyone]]!
+p: The [[{policeman@1|police officer@2}=police officer]] spoke to our class.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: contractions exclaims
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: contractions exclaims
+p: Hey Zoe, our excursion to the museum was awesome! We didn't even have to wait in line. Dear Mr Lee, thank you for organising the excursion to the museum. The class learned a great deal about the dinosaur display.
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: Informal | Neutral | Formal
+word a: Catch you soon! = 1
+word b: Goodbye for now. = 2
+word c: I look forward to hearing from you. = 3
+# endregion

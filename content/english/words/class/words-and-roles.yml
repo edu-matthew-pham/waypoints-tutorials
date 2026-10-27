@@ -1,0 +1,29 @@
+inquiry:
+  q: "How do your words show your role?"
+  prompts:
+    - "Say the same request as a student, as a team captain and as a stranger."
+    - "What changes?"
+  notes: "Titles, orders and requests signal roles. Formality has many steps."
+activities:
+  - at: predict
+    kind: activity
+    title: "Orders and requests"
+    minutes: 5
+    do: |
+      Two volunteers act a teacher and a student. The teacher gives three instructions and the student makes three requests. The class listens for the words.
+    notes: "Orders use verbs first; requests use could, may or please."
+  - at: investigate
+    kind: discussion
+    title: "How other communities do it"
+    minutes: 5
+    do: |
+      Use your school's local guidance on communication norms (AC9E5LA01 node 3). Students listen first.
+    notes: "This site does not supply protocols. Draw on local staff, community guidance and AIATSIS, not on student guesses."
+questions:
+  - at: investigate
+    title: "Which signals authority?"
+    type: question
+    q: "Which line signals the person in charge?"
+    options: ["Could I please swap seats?", "Swap seats now.", "Would you mind if we swapped seats?"]
+    answer: 1
+    explain: "A direct order signals authority. The other two ask."
