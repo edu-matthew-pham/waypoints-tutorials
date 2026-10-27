@@ -1,0 +1,47 @@
+summary: Students train a two-class picture model in the Pattern Trainer, test it on the board on photos it hasn't seen, read the starter's classify function, and run the same my_model.json in the Python starter on their own computer.
+time: 40
+timing: "Predict 3 min · Train and try 12 min · Investigate 10 min · Run it in Python 15 min"
+goals:
+  - I can train a picture model and download it as my_model.json.
+  - I can test a model on photos it has never seen and say how sure it is.
+  - I can load my model in a Python app and change what it says.
+before: |
+  **The idea:** a model is trained on examples in one place (the Pattern Trainer, a web page) and used in another (a Python app), and what travels between them is one small file of class names and numbers. This lesson does that path once, with two things from the student's desk, before any project.
+
+  **Before class:** the starters need installing once per computer (Python 3, then `pip install -r requirements.txt`, about 0.5 GB, no TensorFlow; [setup](https://github.com/edu-matthew-pham/pattern-detector-starters#set-up-once)). Do it before the lesson, or the last step becomes an install lesson. On a student laptop on the school network, check tools.learningwaypoints.com/trainer/ loads (about 35 MB the first time, for the trainer and again for the board) and the camera is allowed. Without a camera, students use **Upload photos** with photos they have.
+
+  **Privacy:** training happens in the browser and photos never leave the computer (the trainer's Privacy page shows how to check). The board keeps students' test photos in this browser only. `my_model.json` holds class names and numbers, no photos. Train on things, not people.
+
+  **Where this sits:** the first step of Pattern Detector projects, after Apps with Gradio. It needs Gradio apps, `if`/`else` and f-strings; the trainer does the training and `pattern_model.py` hides numpy. Machine learning with Gradio shows how a model works inside; either can come first.
+running:
+  - "Predict: take a show of hands. Most say 'I don't know'."
+  - "Train and try: 10 minutes. Ask: what did it say about the thing that was neither, and how sure was it?"
+  - "Investigate: everyone opens my_model.json in a text editor. Point out there is no photo in it."
+  - "Run it in Python: pair students whose install worked with those whose didn't."
+stuck:
+  - see: "The board says the file is not a model file, or is a project file."
+    ask: "Did you click Download my_model.json (not Save project)?"
+    fix: "Download the model and open my_model.json."
+  - see: "The board or the trainer says the picture model didn't load."
+    ask: "Can this computer open tools.learningwaypoints.com?"
+    fix: "Ask for the site to be allowed on the school network, then reload."
+  - see: "The Python app still says Cat or Coffee."
+    ask: "Which my_model.json is in the starters folder?"
+    fix: "Replace the sample with your download (same name, my_model.json), then run the app again."
+  - see: "ModuleNotFoundError: No module named 'mediapipe' (or gradio)."
+    ask: "Is the starters' .venv switched on in this terminal?"
+    fix: "Activate .venv (see the setup), or run pip install -r requirements.txt."
+stretch: "Add a third class, Neither, with photos of other things. Does the thing that was neither now get the right answer?"
+support: "Train in pairs on one laptop; skip the Python step and do it at the start of Brief B."
+leads: "Next: Brief B (a model you train) builds an app around this model; Brief A (rules you write) can come first. Real world: photo apps, recycling sorters and parcel scanners are a trained model inside an app."
+exit:
+  q: "What is inside my_model.json, and why can the same file work in the trainer, on the board and in Python?"
+  a: "Class names and the trained numbers. Each side turns a picture into numbers the same way, then runs the same trained numbers on them."
+explain: |
+  A **model** is trained on examples, then used inside an app.
+
+  - The **Pattern Trainer** turns each photo into numbers and learns from them.
+  - **my_model.json** keeps only your class names and the trained numbers: no photos.
+  - In Python, `model.top(image)` gives the most likely class and how sure the model is (0 to 1).
+  - A model always picks one of its classes, so the app's **threshold** decides when to say it isn't sure.
+struggle: "Moving the downloaded file into the starters folder in place of the sample. Ask students to say out loud which folder the app reads from before they run it."

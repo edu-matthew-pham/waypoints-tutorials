@@ -8,7 +8,7 @@ html: true
 
 **Sort things into groups, then make the answer useful to someone**
 
-<!-- Speaker note: This deck opens and closes the projects. The project pages carry the milestones, hints and checklist. Adapt freely: the problem, the user and the starters are yours to set. -->
+<!-- Speaker note: This deck opens and closes the projects: the shared opening, then a few slides per brief (A rules, B a trained model, C both), then the closings. Show only the brief your class is on. The project pages carry the milestones, hints and checklist. Adapt freely: the problem, the user and the starters are yours to set. -->
 
 ---
 
@@ -36,7 +36,7 @@ Which would you use to tell a **cat** from a **dog**?
 
 ---
 
-## Opening · Why start with rules?
+## Brief A · Why rules?
 
 - You can say exactly what each rule checks
 - The app can always explain its answer
@@ -46,7 +46,7 @@ Which would you use to tell a **cat** from a **dog**?
 
 ---
 
-## Opening · Your project
+## Brief A · Your project
 
 1. Write who it is for and what it helps them do
 2. Write your rules in plain English first
@@ -58,7 +58,7 @@ Everyone's app is different. Hints are there if you need them, and your teacher 
 
 ---
 
-## Opening · Check your app
+## Brief A · Check your app
 
 - **Clear result**, in words your user understands
 - **Honest**: says when no rule matches
@@ -68,20 +68,77 @@ Everyone's app is different. Hints are there if you need them, and your teacher 
 
 ---
 
+## Brief B · Why a model?
+
+- It copes with inputs too messy for rules: photos, poses, sounds
+- You teach it with **examples**, not instructions
+
+**The trade-off:** it can be **sure and wrong**, and it can't tell you why.
+
+**What would you need to show it so it works where your user is?**
+
+<!-- Speaker note: Students who did the first lesson have already trained one model and run it in Python. Ask what their model said about the thing that was neither. -->
+
+---
+
+## Brief B · Your project
+
+1. Write who it is for and what it helps them do
+2. Collect examples in the Pattern Trainer, in the places it will be used
+3. Keep some photos or sounds back to **test** it on
+4. Download your model into the starter, then change what it says
+5. Decide how sure it must be before it says so
+
+---
+
+## Brief B · Check your app
+
+- **Clear result**, in words your user understands
+- **Honest about how sure it is**: says when it isn't sure
+- **Useful response**: advice or a next step, not just a label
+- **Fits your user**: a setting they can change
+- **Tested** on things it was not trained on
+
+---
+
+## Brief C · Both together
+
+The model **reads** the input. Your rules **decide** what to do with it.
+
+- Count: three leaning checks in a row means a break
+- Remember: the last three sounds must match the secret knock
+- Combine: a model's answer and a number the user gives
+
+**Test each part alone first, then the whole thing.**
+
+<!-- Speaker note: The example's main finding is worth telling: every part passed alone, but one confident wrong answer from the model reset the count, so the reminder never came. -->
+
+---
+
+## Brief C · Check your app
+
+- **Clear result**, in words your user understands
+- **Honest about how sure it is**: unsure answers are handled, not hidden
+- **Useful response** that needs both parts
+- **Fits your user**: settings they can change
+- **Tested** as a whole, not just part by part
+
+---
+
 ## Closing · What broke at the edges?
 
 Share one input where your app gave a poor answer.
 
-- Was it exactly on a boundary?
-- Was it something your rules never expected?
+- Was it exactly on a boundary, or something it never saw?
+- Was the model sure, even though it was wrong?
 - Would the user have known it was wrong?
 
 ---
 
-## Closing · What rules cannot do
+## Closing · Rules, a model, or both?
 
-Some inputs have too many details to write rules for: every breed, angle and light in a photo.
+Rules need you to think of every case. A model needs examples of every case.
 
-**Where would your app need a model that learns instead?**
+**Which did your problem need, and what would you change next time?**
 
 **Who is affected if your app is wrong, and would they know?**

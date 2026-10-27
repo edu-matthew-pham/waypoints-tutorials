@@ -68,7 +68,7 @@ export function projectPageBody({ esc, md, course, courseTitle, p, after, pic, b
     `<div class="pjtop"><div><p class="pjafter">Open project${after ? ` · after ${esc(after)}` : ''}</p><div class="pjgoal">${md(String(p.goal || ''))}</div></div>` +
     (pic ? `<figure><img src="${esc(pic.src)}" alt="One way it could look" width="${pic.w}" height="${pic.h}"><figcaption>One way it could look. Yours will be different.</figcaption></figure>` : '') + `</div>` +
     (bench.length ? `<section class="pjbox pjbench"><h2>Ways it could look when it works</h2><p>These show a finished project at about the level to aim for. Yours will be different, and that is fine.</p><div class="pjbenchrow">${bench.map((b) => `<figure><img src="${esc(b.src)}" alt="${esc(b.caption)}" width="${b.w}" height="${b.h}" loading="lazy"><figcaption>${esc(b.caption)}</figcaption></figure>`).join('')}</div></section>` : '') +
-    `<section class="pjbox"><h2>You'll use</h2><p>These light up when your code uses them. Click one to see where you learned it.</p>${skills}</section>` +
+    `<section class="pjbox"><h2>You'll use</h2><p>${parts.some((x) => x.external) ? 'These light up when code you paste uses them. The starters already use some of them, so check the parts you wrote use them too.' : 'These light up when your code uses them.'} Click one to see where you learned it.</p>${skills}</section>` +
     parts.map((pt) => `<section class="pjpart">${parts.length > 1 ? `<h2>${esc(pt.title)}</h2>` : ''}${pt.embed}</section>`).join('') +
     `<section class="pjbox"><h2>Milestones</h2><p>Tick each one when it is true of your project. Nobody marks it: be honest with yourself.</p><ul class="pjms">${ms}</ul></section>` +
     stretch +

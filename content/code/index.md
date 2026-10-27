@@ -8,7 +8,7 @@ pathways:
     title: Python
     summary: From drawing with a turtle to apps, games and machine learning.
     fit: "Start here to type real code: drawing first, then apps, games and data."
-    about: "Start with **Python Foundations with Turtle**: commands, loops, variables, decisions and lists. **Python functions and events** follows: your own functions, modules and events, ending in a game you build in milestones. The **console bridge** then shows the same logic as text in and text out, and every extension starts from it: deeper Python in the console, web apps with Gradio (and machine learning after both, then the Pattern Detector projects), and games."
+    about: "Start with **Python Foundations with Turtle**: commands, loops, variables, decisions and lists. **Python functions and events** follows: your own functions, modules and events, ending in a game you build in milestones. The **console bridge** then shows the same logic as text in and text out, and every extension starts from it: deeper Python in the console, web apps with Gradio (then the Pattern Detector projects, the easier way into machine learning: train a model, build an app around it), machine learning inside out after both Gradio and Data detective, and games."
     courses:
       - { path: code/python-foundations, stage: foundations }
       - { path: code/python-functions, stage: foundations, after: [code/python-foundations] }
@@ -18,7 +18,7 @@ pathways:
       - { path: code/deeper, stage: extensions, after: [code/console] }
       - { path: code/gradio, stage: extensions, after: [code/console] }
       - { path: code/ml, stage: extensions, after: [code/data] }
-      - { path: code/pattern-detector, stage: extensions, after: [code/ml] }
+      - { path: code/pattern-detector, stage: extensions, after: [code/gradio] }
       - { path: code/games, stage: extensions, after: [code/objects] }
       - { path: code/sql, stage: extensions, after: [code/data] }
       - { path: code/flask, stage: extensions, after: [code/console, code/html] }

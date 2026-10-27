@@ -80,7 +80,7 @@ projects:
 
       - *Problem and user.* Students choose, or you set a shared context (a class, a club, a subject area). Say which in the brief you hand out.
       - *Starters on offer.* Offer all four, fewer to narrow the choice, or add a starter of your own in the same style (a header comment, `# ADAPT:` lines, a short ideas list).
-      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt. Change `uses:` in `projects.yml` if you want other skills.
+      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt: the unchanged starters already light some of it, or all (the page tells students so), so it shows which skills are in play, not that a student wrote them. Read the code for that. Change `uses:` in `projects.yml` if you want other skills.
       - *Check your app.* This is the success criteria. Reword a line, add your own, or remove one. The page lists them in the goal; the marking points below follow the same order.
       - *Hand-in.* Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student's own words on the hardest part.
       - *Help.* Hints are on offer to everyone. "Show one way" opens after the milestones before it are ticked or every hint for it has been used. Both are listed as **Help used** on the card, so you can see it when you mark. Set `reveal: false` (or remove `reveal:`) to turn "Show one way" off.
@@ -156,7 +156,7 @@ projects:
       - { label: "audio_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/audio_pattern_trainer.py", note: "your classes are sounds" }
     example: trained-posture.py
     benchmark:
-      - { file: trained-finished-1.png, caption: "A posture reminder: a photo in, a verdict and what to do about it out, with a setting for how sure it must be." }
+      - { file: trained-finished-1.png, caption: "A posture reminder: a photo in, a verdict and what to do about it out, with a setting for how sure it must be. (The photo is hidden here.)" }
       - { file: trained-finished-2.png, caption: "A door knock listener: a sound in, what was heard and what to do about it out." }
     reveal: true
     milestones:
@@ -223,7 +223,7 @@ projects:
       - *Problem and user.* Students choose, or you set a shared context (a class, a club, a subject area). Say which in the brief you hand out.
       - *Modes on offer.* Offer pictures, poses and sounds, or narrow it. Poses and sounds suit students who are not comfortable on camera, since poses use only 33 body points and sounds use no pictures.
       - *Amount of data.* "20 or more examples of each class" is a prompt. Raise it for stronger models, or lower it for a short unit.
-      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt. Change `uses:` in `projects.yml` if you want other skills.
+      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt: the unchanged starters already light some of it, or all (the page tells students so), so it shows which skills are in play, not that a student wrote them. Read the code for that. Change `uses:` in `projects.yml` if you want other skills.
       - *Check your app.* This is the success criteria. Reword a line, add your own, or remove one. The page lists them in the goal; the marking points below follow the same order.
       - *Hand-in.* Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student's own words on the hardest part.
       - *Help.* Hints are on offer to everyone. "Show one way" opens after the milestones before it are ticked or every hint for it has been used. Both are listed as **Help used** on the card. Set `reveal: false` (or remove `reveal:`) to turn "Show one way" off.
@@ -248,7 +248,7 @@ projects:
       - *No \"nothing\" case.* The app always picks a class, even for something else. Ask: "What does it say if the camera sees an empty room?"
       - *Class that is really the background.* All the "dog" photos are outdoors and all the "cat" photos indoors. Ask: "Would it still say cat in the garden?"
 
-      **Ways it could look.** Students see two screenshots of finished apps in different modes (a posture reminder from a pose model, a door knock listener from a sound model): output only, never code, so they show the standard without giving one answer to copy. Both were made with the sample models and test files in the starters, so a model of your own students' will behave differently. In the first, the photo is hidden. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
+      **Ways it could look.** Students see two screenshots of finished apps in different modes (a posture reminder from a pose model, a door knock listener from a sound model): output only, never code, so they show the standard without giving one answer to copy. Both were made with the sample models and test files in the starters, so a model of your own students' will behave differently. In the first, the photo (a person) is hidden, and its caption says so. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
 
       **The example below** is one complete trained app: a posture reminder built on the starters' sample pose model (`my_pose_model.json`, Upright and Leaning), with advice for each class, a "not sure" band, a cut-off slider and a few made-up tests of its wording. To run it, copy it into the starters folder beside `pattern_model.py` and the sample model, and run it like a starter. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
 
@@ -318,8 +318,8 @@ projects:
       - { label: "sound_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/sound_rules.py", note: "a rules part for sound: loudness and which note it is (uses measure.py)" }
     example: combined-posture-streak.py
     benchmark:
-      - { file: combined-finished-1.png, caption: "A posture break reminder: the model reads each photo, and rules count leaning checks in a row before suggesting a break." }
       - { file: combined-finished-2.png, caption: "A secret knock door: the model hears each sound, and rules check the last three sounds against the secret pattern." }
+      - { file: combined-finished-1.png, caption: "A posture break reminder: the model reads each photo, and rules count leaning checks in a row before suggesting a break. (The photo is hidden here.)" }
     reveal: true
     milestones:
       - text: "My problem and my user are clear, and my pipeline is drawn, with the reason each part is a model or rules."
@@ -377,7 +377,7 @@ projects:
       - *The rules part.* The starters give simple examples to build from (`choice_rules.py`, `sound_rules.py`, `measure.py`); students may also write their own from scratch.
       - *State.* Many good ideas need the app to remember something between checks (a streak, a score, a list), which Gradio keeps with `gr.State` as in the example. Offer a worked example in class if students have not met it, or pick ideas that avoid it.
       - *Live video or sound.* The starters carry an optional live version. It runs the model on every frame, so test the speed on your laptops first.
-      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt. Change `uses:` in `projects.yml` if you want other skills.
+      - *The skills list.* "You'll use" lights up from pasted code and is only a prompt: the unchanged starters already light some of it, or all (the page tells students so), so it shows which skills are in play, not that a student wrote them. Read the code for that. Change `uses:` in `projects.yml` if you want other skills.
       - *Check your app.* This is the success criteria. Reword a line, add your own, or remove one. The marking points below follow the same order.
       - *Hand-in.* Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student's own words on the hardest part.
       - *Help.* Hints are on offer to everyone. "Show one way" opens after the milestones before it are ticked or every hint for it has been used. Both are listed as **Help used** on the card. Set `reveal: false` (or remove `reveal:`) to turn "Show one way" off.
@@ -401,7 +401,7 @@ projects:
       - *A pipeline diagram that is decoration.* It shows boxes but gives no reasons. Ask: "Why is this part not the other kind?"
       - *Forgetting what the app remembers.* A count that never resets, or resets at the wrong time. Ask: "When does this go back to zero?"
 
-      **Ways it could look.** Students see two screenshots of finished apps where the model feeds the rules in different ways (a posture break reminder that counts leaning checks in a row, and a secret knock door that checks the last three sounds against a pattern): output only, never code. Both were made with the sample models and test files in the starters, so a model of your students' own will behave differently. In the first, the photo is hidden. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
+      **Ways it could look.** Students see two screenshots of finished apps where the model feeds the rules in different ways (a secret knock door that checks the last three sounds against a pattern, and a posture break reminder that counts leaning checks in a row): output only, never code. Both were made with the sample models and test files in the starters, so a model of your students' own will behave differently. In the posture one, the photo (a person) is hidden, and its caption says so. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
 
       **The example below** is one complete combined app: a posture break reminder on the starters' sample pose model. The model decides Upright or Leaning; the rules count leaning checks in a row (an unsure check changes nothing, an Upright check resets it), speak only past a limit the user sets, and are tested on their own with made-up readings before they are joined to the model. To run it, copy it into the starters folder beside `pattern_model.py` and the sample model, and run it like a starter. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
 

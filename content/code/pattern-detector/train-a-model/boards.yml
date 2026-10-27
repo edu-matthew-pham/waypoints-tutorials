@@ -1,0 +1,7 @@
+# Open the model file the student just downloaded, and test it on a few photos it has not seen (kept in this browser).
+
+# region: open
+widget: classifier
+testset: own
+webcam: on
+# endregion
